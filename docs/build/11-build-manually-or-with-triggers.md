@@ -1,0 +1,171 @@
+---
+title: "Build Manually or Automatically with Webhooks and Triggers"
+metaTitle: "Build Manually or Automatically with Webhooks and Triggers"
+metaDescription: "Build Manually or Automatically with Webhooks and Triggers"
+---
+# Build Manually or Automatically with Webhooks and Triggers
+
+There are multiple ways to trigger a build in Appcircle. You can run builds manually or automate the build process with various triggers.
+
+## Manual Build
+
+As the name states, your build profile will not build your application until you tell it to. You can browse branches in your Git repository and select any commit from any branch you need to build. To initiate a manual build, just press the "Build Now" button next to the commits under a branch.
+
+![](<../assets/image (173).png>)
+
+
+
+### Workflows for Manual Builds
+
+For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](build-manually-or-with-triggers.md#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](build-manually-or-with-triggers.md#trigger-priorities).
+
+![](<../assets/image (190).png>)
+
+
+
+## Automatic Build
+
+Builds can be triggered with various triggers such as every push to the repository, pull/merge requests, or tagged pushes. This requires the following:
+
+* Webhook connection to the repository
+* Enabling auto build in the build configuration of a specific branch
+* Setting up build triggers
+
+
+
+There are two options to set up webhooks for automatic builds:
+
+* You can [authorize the Appcircle app](adding-a-build-profile/#connecting-to-a-cloud-git-provider) for GitHub, Bitbucket, or GitLab repositories for direct integration. The triggers will be available for use immediately. (You can skip the next part about the webhook setup.)
+* For the repository connections through SSH, you can add the specific webhook for that build profile manually to the compatible git provider. This enables the git provider to send a POST request to Appcircle for the selected events, which you can then use for triggers.
+
+
+
+### Enabling Automatic Builds
+
+To enable automatic builds for a branch, open the [Build Configuration](build-profile-configuration.md) and scroll down to the Auto Build section. Auto builds will be initiated based on the matching global trigger rules for that branch.
+
+![](<../assets/image (191).png>)
+
+
+
+### Setting Up Manual Webhooks for SSH and Public Repositories
+
+For repositories connected through SSH, you can set up triggers with webhooks in compatible repository providers.
+
+When you connect a repository through SSH or through a public URL, the Webhook URL option will be enabled in the context menu of the build profile, accessible from the top of the profile details.&#x20;
+
+![](<../assets/image (174).png>)
+
+If the git provider is detected, a compatible URL will be displayed automatically. If not, you will be first prompted to select the provider to display the webhook URL.
+
+You can copy this URL and paste it in the related section in the git provider repository settings with the copy button.
+
+You can also regenerate the URL to invalidate/revoke the previous one with the refresh button.
+
+![](<../assets/image (175).png>)
+
+
+
+Please refer to the following guides to set up webhooks in various git providers:
+
+* GitHub: [https://docs.github.com/en/developers/webhooks-and-events/webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks)
+* Bitbucket: [https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/](https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/)
+* GitLab: [https://docs.gitlab.com/ee/user/project/integrations/webhooks.html](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
+* AWS CodeCommit: [https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify.html](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify.html)
+* Azure DevOps: [https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops](https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops)&#x20;
+
+In essence, you need to find the Webhooks section under the repository settings and paste the payload URL. You can then select the relevant events for the triggers, some examples of which are branch/tag creation/removal, pull requests, and pushes.
+
+:::info
+
+
+You can also use[ appcircle-cli](broken-reference) to trigger your builds from the command line as well.
+
+:::
+
+
+
+## Managing Triggers for Autobuilds
+
+To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
+
+![](<../assets/image (176).png>)
+
+
+
+The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](build-manually-or-with-triggers.md#wildcard-reference) for branch names to trigger builds.
+
+You also need to select a workflow for each trigger and the build will be run with that trigger for the specified branch. You can build the same branch with different workflows (e.g. production or development) or you can use the same workflow for multiple branches (e.g. multiple feature branches built with the develop workflow).
+
+
+
+#### Auto build on every push
+
+Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
+
+![](<../assets/image (177).png>)
+
+
+
+#### Auto build pull/merge requests
+
+Appcircle will start building your application whenever you initiate a pull request or merge request from the source branch(es) to the target branch.
+
+The build will be done with the pull/merge result using the selected workflow. This allows testing the PR/MR result before the actual approval of the request.
+
+![](<../assets/image (179).png>)
+
+
+
+#### Selective auto build with specific tags
+
+Appcircle will start building your application with the selected workflow whenever you perform a push with certain tags to your Git repository. Your project will be built automatically only if the push has the tags you specify or you can specify a wildcard tag to build all tagged pushes.
+
+This allows build scenarios like building only specific pushes that has the "release" in the tag.
+
+![](<../assets/image (180).png>)
+
+
+
+## Further Automatic Build Subjects
+
+### Trigger Priorities
+
+If you set up multiple triggers, specific branch definitions will take priority over wildcard definitions. Below is an example:
+
+Assume that you have a branch named `development` with three push triggers
+
+* Trigger branch: `*` -> Trigger Workflow: Workflow 1&#x20;
+* Trigger branch: `development` -> Trigger Workflow: Workflow 2&#x20;
+* Trigger branch: `develop*` -> Trigger Workflow: Workflow 3
+
+When there is a push or PR for the development branch, the second trigger (the one with Workflow 2) will be used to initiate a build.
+
+###
+
+### Wildcard Reference
+
+You can specify branch names or tags with an asterisk wildcard to automate builds. Below are some examples:
+
+| Pattern       | Description                                           |
+| ------------- | ----------------------------------------------------- |
+| `*-fix`       | Build if it ends with `-fix`                          |
+| `fix-*`       | Build if it starts with `fix-`                        |
+| `*-fix-*`     | Build if it `-fix-` is present anywhere in the name   |
+| `fix-*-build` | Build if it starts with `fix-` and ends with `-build` |
+| `*`           | Build everything                                      |
+
+
+
+### How to enable triggers for AWS CodeCommit repositories? <a href="how-to-enable-triggers-for-aws-codecommit-repositories" id="how-to-enable-triggers-for-aws-codecommit-repositories"></a>
+
+Appcircle supports AWS CodeCommit triggers through an Amazon SNS topic.
+
+For more information, please refer to: [https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-sns.html](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-sns.html)
+
+After you follow the steps in the referenced document above to create a trigger, you need to create a notification rule under CodeCommit Settings as shown below to add a webhook URL.![](https://gblobscdn.gitbook.com/assets%2F-M2n-6BSnI3ZeBvlRun0%2F-MV6AMEohqBTWDyhvlc-%2F-MV6HqZp-pujQ-\_jBR0z%2F2.png?alt=media\&token=1826ece5-5be2-4543-9820-3bb952bbb512)
+
+Then select the "Enable raw message delivery" option while adding the webhook URL as a subscription to the topic.
+
+![](https://gblobscdn.gitbook.com/assets%2F-M2n-6BSnI3ZeBvlRun0%2F-MV6AMEohqBTWDyhvlc-%2F-MV6H6D5MttzsknGW5F2%2F1.png?alt=media\&token=4f28f549-3839-4d3b-a528-e5e37f6afbea)
+

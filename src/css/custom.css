@@ -1,0 +1,88 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #FF8114;
+  --ifm-color-primary-dark: #EA6B00;
+  --ifm-color-primary-darker: #CE5D00;
+  --ifm-color-primary-darkest: #AC4C00;
+  --ifm-color-primary-light: #FF9E51;
+  --ifm-color-primary-lighter: #FFC79E;
+  --ifm-color-primary-lightest: #FFDEC9;
+  --ifm-code-font-size: 95%;
+  --ifm-navbar-background-color: #0e1f3b;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.section-title.theme-doc-sidebar-item-category-level-1 .menu__list-item-collapsible {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin: 36px auto 16px 0;
+  letter-spacing: 0.05rem;
+  color: var(--ifm-font-color-base);
+}
+
+.theme-doc-sidebar-item-category-level-2 .menu__list-item-collapsible {
+  text-transform: none !important;
+  font-size: 0.875rem !important;
+  margin: 8px auto 0 0 !important;
+  letter-spacing: 0.00rem !important;
+  color: var(--ifm-font-color-base);
+}
+
+.section-title .menu__list-item-collapsible:hover {
+  background: none;
+}
+
+.menu__list-item {
+  font-size: 0.875rem;
+  margin: 8px auto 8px 0;
+}
+
+.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-3 a {
+  color: #666;
+}
+
+.theme-doc-sidebar-item-category.theme-doc-sidebar-item-category-level-2 ul.menu__list {
+  border-left: 1px solid #CCC;
+  padding-left: 0px;
+  margin-left: 16px;
+  margin-bottom: 24px;
+}
+
+.navbar__logo {
+  height: 1.6rem;
+}
+
+.menu__link {
+  line-height: 1.38;
+  color: var(--ifm-font-color-base);
+}
+
+.section-title .menu__list-item-collapsible .menu__link {
+  line-height: 1.5;
+  color: var(--ifm-color-primary-dark);
+}
+
+.theme-doc-sidebar-item-category .theme-doc-sidebar-item-category-level-2 .menu__list-item-collapsible .menu__link {
+  line-height: 1.38;
+  color: var(--ifm-font-color-base)
+}
+
+.navbar__items--right .navbar__link {
+  color: #CCC;
+}

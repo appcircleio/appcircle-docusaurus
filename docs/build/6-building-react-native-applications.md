@@ -1,0 +1,160 @@
+---
+title: "Building React Native Applications"
+metaTitle: "Building React Native Applications"
+metaDescription: "Building React Native Applications"
+---
+# Building React Native Applications
+
+You can build your React Native applications in Appcircle for iOS or Android platforms.
+
+:::info
+
+
+Appcircle will use your `package.json` file to determine and use the dependencies of your application.
+
+:::
+
+### Creating a React Native Build Profile
+
+Simply create a new build profile as usual and select your target operating system as iOS or Android. Select **React Native** for **Target Platform**.
+
+![](../assets/13-01-RN\_NewProfile.jpg)
+
+Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
+
+{% content-ref url="adding-a-build-profile/" %}
+[adding-a-build-profile](adding-a-build-profile/)
+{% endcontent-ref %}
+
+### Build Configuration for React Native Applications
+
+Build configuration options are very similar to native iOS or Android applications. You can select configuration details, build triggers, signing identities and distribution options.
+
+### Build Configuration for React Native iOS applications
+
+Click on the gear icon on top right to access the build configuration. The first step will be the enter project details. You can enter details manually or click on the Fetch button to retrieve them from your project.
+
+Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
+
+**Share your iOS schemes**
+
+iOS schemes must be marked as shared in order to build your application outside of Xcode. If your application doesn't have a shared scheme, it can only be built using Xcode.
+
+You can check the shared option in your Xcode's scheme manager to mark your application's scheme as shared.
+
+:::caution
+
+Please don't forget to add additional scheme files to your version control.
+
+:::
+
+Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in Build Configuration window.
+
+![](../assets/ios-fetch.png)
+
+### Build Configuration for React Native Android applications
+
+Click on the gear icon on the top right to access the build configuration. The first step will be the build project details. You can enter details manually or click on the Fetch button to retrieve them from your project.
+
+![](../assets/ios-fetch.png)
+
+### Sending the Build Status to the Repository Providers
+
+At the bottom of the config tab, you will the **Set Commit Build Status **option.
+
+![](<../assets/image (8).png>)
+
+When this option is enabled, the build status for that commit is shared with the repository provider.
+
+![](<../assets/image (213).png>)
+
+![](../assets/appcircle-github-commit-status-pass.png)
+
+### Build Triggers
+
+Triggers, is common for both iOS and Android.
+
+Appcircle allows you to trigger builds manually or automatically using build triggers.
+
+* On push: Whenever code is pushed to a configured branch, the build is triggered.
+* On a tagged push: Whenever a tagged commit is pushed, the build is triggered for that commit. Commits without any tags are ignored.
+* On push with selective tags: Whenever a commit includes one of the typed in tags, the build is triggered. You can specify tags with Unix shell-style wildcards to trigger builds.
+
+
+
+### Signing React Native iOS applications
+
+The next step on build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](../signing-identities/ios-certificates-and-provisioning-profiles.md) section.
+
+:::info
+
+
+You can get both unsigned and signed build artifacts based on your configuration.
+
+:::
+
+![](../assets/ios-signing.png)
+
+### Signing React Native Android applications
+
+Here, please select the Android Keystore you added in the [Android Keystores](../signing-identities/android-keystores.md) section.
+
+:::info
+
+
+You can get both unsigned and signed build artifacts based on your configuration. Please note that unsigned builds will not be distributed by email.
+
+:::
+
+![](../assets/ios-signing.png)
+
+### Distribution (Deployment) Configuration
+
+The next step on build configuration is Distribution.
+
+You can select a previously created distribution profile or create a new one in this window. Use the top input box to enter a name for the new distribution profile you want to create. Press enter or click on the green + icon on the right to create the distribution profile.
+
+Finally, check Auto Distribute if you want your build to be deployed to the Testing Distribution automatically and Auto Deployment if you want the build to be deployed to Store Submission automatically.
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+:::info
+
+
+Any previous build can be deployed to the Distribute module without the need for rebuilding.
+
+:::
+
+###
+
+### Environment Variables
+
+The final tab is to add environment variables to the build. For advanced use cases, you can define variables and secrets to be incorporated during the build in the Environment Variables submodule so that you don’t need to store certain keys and configurations within the repository.
+
+Please refer to the following document for more information on environment variables:
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+###
+
+### Build workflows for React Native applications
+
+Once you complete your build configuration, you can edit your build workflow. React Native builds have additional steps for Node and Yarn commands. You can also arrange, add or remove workflow steps using Appcircle's workflow editor and the Workflow Marketplace.
+
+To learn more about Appcircle's Workflow editor, see the corresponding page below:
+
+{% content-ref url="../workflows/why-to-use-workflows.md" %}
+[why-to-use-workflows.md](../workflows/why-to-use-workflows.md)
+{% endcontent-ref %}
+
+###
+
+### Starting a React Native Build and After a Build
+
+To start your first build, just press the start build button – the play button under the actions columns (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in realtime.
+
+Once your build is complete, you can now download the binary file or deploy it to distribute module manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at anytime.

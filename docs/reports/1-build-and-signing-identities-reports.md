@@ -1,0 +1,42 @@
+---
+title: "Build and Signing Identities Reports"
+metaTitle: "Build and Signing Identities Reports"
+metaDescription: "Build and Signing Identities Reports"
+---
+# Build and Signing Identities Reports
+
+## Build History
+
+This report is accessible from the Build module.
+
+Build History Report contains the list of build sessions initiated in a given time period.
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+Each build session is defined as an initiated manual or automatic build for a commit under a branch of a build profile.
+
+The duration indicates the minutes spent by the build agent for the specified build operation. This value only includes the actual duration that the agent was active, including the agent boot duration but excluding the queue wait duration.&#x20;
+
+The date and time are displayed in the current timezone.
+
+![](<../assets/image (11).png>)
+
+## Signing History
+
+This report is accessible from the Signing Identities module.
+
+The Signing History Report contains the list of builds selected for signing in a given time period.
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+Each signed build is listed with the utilized provisioning profile name for iOS and the utilized keystore name for Android.&#x20;
+
+Since the primary objective of this report is to provide visibility on who used which signing identity and when this report includes all builds that consumed a signing identity from the centralized Signing Identities module regardless of the status of the build or the signing operation. (e.g. if the build failed for some reason or if the signing identity is incompatible with the selected project)
+
+The date and time are displayed in the current timezone.
+
+![](<../assets/image (12).png>)
