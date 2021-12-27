@@ -17,6 +17,8 @@ This document outlines the use of the "Preview on Device" feature within the Dis
 
 Please follow the steps below to run your app online: (For the demonstration of these steps, you can check our introduction video at [https://www.youtube.com/watch?v=OUoZFGqJFdM](https://www.youtube.com/watch?v=OUoZFGqJFdM))
 
+https://www.youtube.com/watch?v=OUoZFGqJFdM
+
 1. [Create a distribution profile and add an app version](create-or-select-a-distribution-profile.md). You can then just press the "Preview on Device" button to run it.\
 
 2. For iOS apps, you need to [build your app from source](../build/adding-a-build-profile/) with the [Xcode Build for iOS Simulator workflow step](../workflows/ios-specific-workflow-steps.md#xcodebuild-for-ios-simulator)** **enabled (it is enabled by default) and then [send it to the Distribute module](../build/after-a-build.md). (IPA files are not supported as per Apple's restrictions.)\

@@ -3,6 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const remarkoembed = require('@agentofuser/remark-oembed');
+const rlc = require('remark-link-card');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -23,6 +25,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          remarkPlugins:[remarkoembed.default,rlc],
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
