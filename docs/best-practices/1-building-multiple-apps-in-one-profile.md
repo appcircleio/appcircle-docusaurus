@@ -27,7 +27,7 @@ For this task, the developer should configure those from Android Studio or Xcode
 
 The Android Developers document has a detailed guide on how to configure build variants and product flavors:
 
-https://developer.android.com/studio/build/build-variants"
+https://developer.android.com/studio/build/build-variants
 
 The assets that you can directly change with the `productFlavor`
 
