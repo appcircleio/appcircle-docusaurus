@@ -1,9 +1,10 @@
 ---
-title: "What are Workflows and How to Use Workflows?"
-metaTitle: "What are Workflows and How to Use Workflows?"
-metaDescription: "What are Workflows and How to Use Workflows?"
+title: 'What are Workflows and How to Use Workflows?'
+metaTitle: 'What are Workflows and How to Use Workflows?'
+metaDescription: 'What are Workflows and How to Use Workflows?'
 ---
-# What are Workflows and How to Use Workflows?
+
+# What are Workflows and How to Use Them?
 
 A workflow is a ladder of steps taken to build your applications.
 
@@ -17,39 +18,27 @@ Please note that modifying workflow steps may cause your builds to fail, so utmo
 
 :::
 
-
-
 ### Setting Up Workflows
 
 To access the workflow editor for a build profile, click the Workflows button in the context menu of the build profile, accessible from the top of the profile details.
 
 ![](<../assets/image (181).png>)
 
-
-
 The workflow list will be displayed. To view the [Workflow Steps](why-to-use-workflows.md#worfklow-steps) of a workflow, click on it from the workflow list.
 
 ![](<../assets/image (197).png>)
 
-
-
-To create a new workflow,  press the "New" button at the top of the workflow list and select a template from the default workflows. Then edit the workflow name and press enter.
+To create a new workflow, press the "New" button at the top of the workflow list and select a template from the default workflows. Then edit the workflow name and press enter.
 
 ![](<../assets/image (198).png>)
-
-
 
 To rename/delete a current workflow, press the "Edit" button at the top of the workflow list and then click on the context menu that appears next to the workflow items.
 
 ![](<../assets/image (183).png>)
 
-
-
 You can use the "Clone" option to create a new workflow based on the currently available ones. You can [select different workflows for different build scenarios](../build/build-manually-or-with-triggers.md#setting-and-managing-autobuild-triggers) (e.g. separate workflows for production and development).
 
 ![](<../assets/image (184).png>)
-
-
 
 ### Worfklow Steps
 
@@ -58,8 +47,6 @@ You can use the "Clone" option to create a new workflow based on the currently a
 Appcircle will build your application with the steps defined in the workflow. Steps will be executed in order from the top to the bottom.
 
 You can customize each step for specific configurations with your application structure. Step parameters can be modified, outputs of each step can be used in another step and step versions can be selected accordingly.
-
-
 
 ### Workflow Marketplace
 
@@ -79,7 +66,7 @@ You will see the Workflow Marketplace on the right and your Workflow steps on th
 
 You can also reorder steps so that they will be executed in the order you specify.
 
-![](../assets/08-08-WF\_Reorder.gif)
+![](../assets/08-08-WF_Reorder.gif)
 
 ###
 
@@ -89,9 +76,9 @@ Each workflow step has its own set of configuration options, which can be set by
 
 The first three items are common for all steps and they are set individually for each step:
 
-* **Step Execution Active:** To enable/disable the step execution without removing it from the workflow
-* **Continue with the next step even if this step fails:** If a step is optional or if its result should not cause a build failure, you can select this option to continue the workflow in case of the failure of this specific step. In the default workflows, this option is turned on for certain steps.
-* **Workflow Step Version: **You can select a specific version of a step with which to execute your build. If you select a version with an asterisk (\*), you will receive the minor updates to the workflow step automatically. The major versions may include added or removed input fields and manual version selection is required for major version updates.&#x20;
+- **Step Execution Active:** To enable/disable the step execution without removing it from the workflow
+- **Continue with the next step even if this step fails:** If a step is optional or if its result should not cause a build failure, you can select this option to continue the workflow in case of the failure of this specific step. In the default workflows, this option is turned on for certain steps.
+- **Workflow Step Version: **You can select a specific version of a step with which to execute your build. If you select a version with an asterisk (\*), you will receive the minor updates to the workflow step automatically. The major versions may include added or removed input fields and manual version selection is required for major version updates.&#x20;
 
 The items in the "Inputs" section are specific to that step. The reserved environment variables are assigned to these fields by default and the values of these variables are set in the build configuration.
 
