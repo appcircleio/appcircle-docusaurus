@@ -75,7 +75,7 @@ The assets that you can directly change with the Schemes
 - Plist file
 - App Icon
 
-<!-- ![](<../assets/image (216).png>) -->
+<!-- ![](<https://cdn.appcircle.io/docs/assets/image (216).png>) -->
 
 &#x20;For more information about iOS Multiple Targets, navigate to the [Apple Help Documentation](https://help.apple.com/xcode/mac/current/#/dev38419576c)&#x20;
 

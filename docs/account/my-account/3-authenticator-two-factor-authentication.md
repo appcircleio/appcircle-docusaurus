@@ -1,8 +1,9 @@
 ---
-title: "Authenticator (Two Factor Authentication/2FA)"
-metaTitle: "Authenticator (Two Factor Authentication/2FA)"
-metaDescription: "Authenticator (Two Factor Authentication/2FA)"
+title: 'Authenticator (Two Factor Authentication/2FA)'
+metaTitle: 'Authenticator (Two Factor Authentication/2FA)'
+metaDescription: 'Authenticator (Two Factor Authentication/2FA)'
 ---
+
 # Authenticator (Two Factor Authentication/2FA)
 
 Navigate to the [Authenticator page](https://auth.appcircle.io/auth/realms/appcircle/account/totp) through your account.
@@ -11,8 +12,8 @@ In this screen, you can manage your 2FA connection and create new keys. Simply s
 
 Appcircle supports those services out of the box:
 
-* FreeOTP
-* Google Authenticator
+- FreeOTP
+- Google Authenticator
 
 :::tip
 
@@ -20,26 +21,25 @@ You can use any other authenticator service which supports generation of SHA1 OT
 
 :::
 
-![](<../../assets/image (220).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (220).png>)
 
 However, if you use another Authenticator service and you can't scan the QR code, you can also select **Unable to scan? **field and fill the information accordingly.
 
-![](<../../assets/image (221).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (221).png>)
 
 After the code is successfully entered, assign it a friendly name and click on **Save.**
 
-![](<../../assets/image (219).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (219).png>)
 
 The newly created OTP will be under effect the next time you login. Your current login session will not be terminated(you will not be logged out).
 
-![](<../../assets/image (231).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (231).png>)
 
 #### CLI Log In with 2FA
 
 Currently, CLI does not support 2FA connection. You can use the CLI without 2FA connection, even if you have 2FA set up in your account.
 
 :::info
-
 
 #### Locked out of your Account?
 

@@ -1,8 +1,9 @@
 ---
-title: "Adding an App Store Connect API Key"
-metaTitle: "Adding an App Store Connect API Key"
-metaDescription: "Adding an App Store Connect API Key"
+title: 'Adding an App Store Connect API Key'
+metaTitle: 'Adding an App Store Connect API Key'
+metaDescription: 'Adding an App Store Connect API Key'
 ---
+
 # Adding an App Store Connect API Key
 
 You can add, delete and manage iOS Certificates and Provisioning Profiles manually using Appcircle. There is also an easier way. By linking your Apple Developer account to Appcircle, you can see a list of certificates and provisioning profiles and pick the ones you want to use for building and distributing.
@@ -13,7 +14,7 @@ To link your Apple Developer account, **you need an App Store Connect API Key** 
 
 Go to [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) and login with your account.
 
-![](<../assets/app-store-connect-logged-in-low (1).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/app-store-connect-logged-in-low (1).jpg>)
 
 :::caution
 
@@ -23,11 +24,11 @@ Make sure that the correct team is selected on the top right. For developer acco
 
 Once the team is correct, select **Users and Access** from the menu:
 
-![](<../assets/app-store-connect-logged-in-selected-low (1).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/app-store-connect-logged-in-selected-low (1).jpg>)
 
 After navigating to **Users and Access**, you will see 4 tabs next to the title. Select the **Keys** tab. Then make sure that **App Store Connect API** is selected from the list on the left.
 
-![](<../assets/api-keys-tab-low (1).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/api-keys-tab-low (1).jpg>)
 
 ## Generating a New Key
 
@@ -39,11 +40,11 @@ Only Account Holders can enable the API Key generation. If you see a disabled **
 
 :::
 
-![](<../assets/api-keys-add-new-low (1).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/api-keys-add-new-low (1).jpg>)
 
 A modal popup will ask you to enter a name and add roles for this key:
 
-![](../assets/api-keys-new-modal-low.jpg)
+![](https://cdn.appcircle.io/docs/assets/api-keys-new-modal-low.jpg)
 
 :::caution
 
@@ -57,7 +58,7 @@ To see a list of permissions each role has, visit: [https://developer.apple.com/
 
 After generating the key, download the key file by pressing Download API Key next to it.
 
-![](<../assets/download-api-key-low (2).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/download-api-key-low (2).jpg>)
 
 :::caution
 
@@ -69,24 +70,23 @@ After generating the key, download the key file by pressing Download API Key nex
 
 Adding a key to Appcircle is pretty easy. **Go to your organization** by either selecting the bottom left button from the toolbar, or picking it from the menu:&#x20;
 
-![](../assets/appcircle-admin-low.jpg)
+![](https://cdn.appcircle.io/docs/assets/appcircle-admin-low.jpg)
 
 On the Organization screen, select **Add New **on **App Store Connect API Keys **list item**:**
 
-![](../assets/appcircle-organization-low.jpg)
+![](https://cdn.appcircle.io/docs/assets/appcircle-organization-low.jpg)
 
 On the form, upload the **.p8** key file downloaded from App Store Connect:
 
-![](../assets/form-new-key-2-low.jpg)
+![](https://cdn.appcircle.io/docs/assets/form-new-key-2-low.jpg)
 
 Fill in the rest of the form. You can find the **Key ID** and **Issuer ID** from App Store Connect Panel here:
 
-![](<../assets/keyid-issuerid-low (1).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/keyid-issuerid-low (1).jpg>)
 
 Copy and paste them to the form in Appcircle, give it a name, and save.
 
 :::info
-
 
 You can add multiple keys. We'll ask you which key to use while downloading a certificate.
 

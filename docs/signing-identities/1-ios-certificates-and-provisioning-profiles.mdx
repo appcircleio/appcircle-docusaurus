@@ -90,11 +90,11 @@ There is no need for device registration, but Apple requires the binary to be pr
 
 When you go to add a new Provisioning Profile, you'll see the option **Get Provisioning Profiles from App Store Connect**. Select it to see the list of identities fetched from Apple.
 
-![](../assets/add-certificates-2-low.jpg)
+![](https://cdn.appcircle.io/docs/assets/add-certificates-2-low.jpg)
 
 You can select to download the provisioning profile from the list. **If you don't want Appcircle to keep the provisioning profile**, you can make our build agents to keep a reference. This way, our agents will fetch the profiles** before every build and dismiss them **when the build is finalized.
 
-![](../assets/certificate-list-2-low.jpg)
+![](https://cdn.appcircle.io/docs/assets/certificate-list-2-low.jpg)
 
 After saving, you can **skip to step 3**.
 
@@ -110,11 +110,11 @@ All types of iOS certificates are supported, including development, ad hoc, in-h
 
 Click on "Add New" button to upload or create your iOS Certificate.
 
-![](../assets/02-01-Add-iOS-Certificates.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-01-Add-iOS-Certificates.jpg)
 
 You can either upload your readily available certificate bundle (P12) along with the bundle password or create a certificate signing request (CSR) to generate a new certificate from the Apple Developer portal and then upload the certificate (CER) to create a certificate bundle (P12). No Mac device is needed.
 
-![](../assets/02-02-Add-iOS-Certificates.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-02-Add-iOS-Certificates.jpg)
 
 To generate your iOS certificates, simply fill in your details and Appcircle will provide a CSR (certificate signing request) which you can use on Apple Developer Portal to generate your signing certificate.
 
@@ -124,21 +124,21 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 - Upload the CER file to the signing identities module by clicking on the upload button next to the CSR file.
 - Your CSR will now be converted to a P12 file as an iOS signing certificate. (Please note that the P12 file comes with an empty password.)&#x20;
 
-![](../assets/02-07-Generate-iOS-Cert.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-07-Generate-iOS-Cert.jpg)
 
 To upload your iOS certificate, select "Upload Certificate Bundle (.p12)" button and upload your pre-obtained iOS certificate file.
 
-![](../assets/02-02-Upload-iOS-Certificates.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-02-Upload-iOS-Certificates.jpg)
 
 You can see a list of your created or uploaded certificates. Each certificate will display the certificate name, certificate type (development, ad-hoc, in-house, or app store distribution) along with expiration dates.
 
-![](../assets/02-08-CertificateList.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-08-CertificateList.jpg)
 
 ### 2. Upload iOS Provisioning Profiles
 
 Simply upload your provisioning profiles obtained from the Apple Developer portal.
 
-![](../assets/02-03-Upload-Provisioning-Profile.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-03-Upload-Provisioning-Profile.jpg)
 
 :::info
 
@@ -150,13 +150,13 @@ You can list and manage your provisioning profiles here. If there is a matching 
 
 You can also see the matching application ID and expiration date of the profiles here.
 
-![](../assets/02-07-Provision-Details.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-07-Provision-Details.jpg)
 
 ### **3. Assign signing identities in the Build module for distribution**
 
 For both iOS or Android build projects, you need to assign your signing identities to your build profile for distribution. The distribution-ready binaries will be signed with the selected signing identities both in manual and automatic distribution cases.
 
-![](../assets/03-02-iOS-Build-Signing.jpg)
+![](https://cdn.appcircle.io/docs/assets/03-02-iOS-Build-Signing.jpg)
 
 :::info
 

@@ -1,15 +1,14 @@
 ---
-title: "Testing Portal: Logging in and Downloading Binaries"
-metaTitle: "Testing Portal: Logging in and Downloading Binaries"
-metaDescription: "Testing Portal: Logging in and Downloading Binaries"
+title: 'Testing Portal: Logging in and Downloading Binaries'
+metaTitle: 'Testing Portal: Logging in and Downloading Binaries'
+metaDescription: 'Testing Portal: Logging in and Downloading Binaries'
 ---
+
 # Testing Portal: Logging in and Downloading Binaries
 
 Appcircle has a separate distribution screen designed to make it easy for test group developers and testers download the distributed applications easily.
 
 For iOS and Android, the testers can login from the link shared and then view all the versions shared with them. Downloading iOS and Android binaries are done through the specific flows of each OS.
-
-
 
 When a build is shared with testers, each tester will receive an email with a link to download the binary file and other details like version number and release notes.
 
@@ -23,9 +22,7 @@ The accounts used in the testing portal are completely independent from Appcircl
 
 :::
 
-![Enrollment and Login pages of the Appcircle Testing Portal](../assets/10-14-EnrollLogin.jpg)
-
-
+![Enrollment and Login pages of the Appcircle Testing Portal](https://cdn.appcircle.io/docs/assets/10-14-EnrollLogin.jpg)
 
 Once logged in, users can now distributions separated by distribution profile and release version. Files can be downloaded with one click.
 
@@ -37,4 +34,4 @@ For installing Android apps, you may need to grant the web browser "install apps
 
 :::
 
-![Download screens seen on a mobile phone and a tablet device.](../assets/10-15-DownloadDevices.jpg)
+![Download screens seen on a mobile phone and a tablet device.](https://cdn.appcircle.io/docs/assets/10-15-DownloadDevices.jpg)

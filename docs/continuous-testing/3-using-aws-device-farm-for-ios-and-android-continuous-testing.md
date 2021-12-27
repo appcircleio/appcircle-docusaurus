@@ -21,9 +21,9 @@ followed by the "AWS Device Farm Deploy and Run" step to the workflow from the [
 
 If you just want to run tests, you can also remove other build steps such as "Android Build" or "Xcodebuild for Devices".
 
-![Android workflow for AWS Device Farm](<../assets/image (102).png>)
+![Android workflow for AWS Device Farm](<https://cdn.appcircle.io/docs/assets/image (102).png>)
 
-![iOS workflow for AWS Device Farm](<../assets/image (103).png>)
+![iOS workflow for AWS Device Farm](<https://cdn.appcircle.io/docs/assets/image (103).png>)
 
 Once these steps are added, press save to exit the workflow edit mode and click on the AWS Device Farm step.
 
@@ -81,8 +81,8 @@ https://docs.aws.amazon.com/cli/latest/reference/devicefarm/schedule-run.html
 
 After you save your settings, you can run the build and the step will be executed accordingly. You can view the details of the AWS Device Farm Deploy and Run step in the build logs:
 
-![](<../assets/image (105).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (105).png>)
 
 The full details of the tests are accessible in the [AWS Device Farm console](https://console.aws.amazon.com/devicefarm/).
 
-![](<../assets/image (104).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (104).png>)

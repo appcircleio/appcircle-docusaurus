@@ -12,13 +12,13 @@ There are multiple ways to trigger a build in Appcircle. You can run builds manu
 
 As the name states, your build profile will not build your application until you tell it to. You can browse branches in your Git repository and select any commit from any branch you need to build. To initiate a manual build, just press the "Build Now" button next to the commits under a branch.
 
-![](<../assets/image (173).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (173).png>)
 
 ### Workflows for Manual Builds
 
 For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](build-manually-or-with-triggers.md#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](build-manually-or-with-triggers.md#trigger-priorities).
 
-![](<../assets/image (190).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (190).png>)
 
 ## Automatic Build
 
@@ -37,7 +37,7 @@ There are two options to set up webhooks for automatic builds:
 
 To enable automatic builds for a branch, open the [Build Configuration](./build-profile-configuration.md) and scroll down to the Auto Build section. Auto builds will be initiated based on the matching global trigger rules for that branch.
 
-![](<../assets/image (191).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (191).png>)
 
 ### Setting Up Manual Webhooks for SSH and Public Repositories
 
@@ -45,7 +45,7 @@ For repositories connected through SSH, you can set up triggers with webhooks in
 
 When you connect a repository through SSH or through a public URL, the Webhook URL option will be enabled in the context menu of the build profile, accessible from the top of the profile details.&#x20;
 
-![](<../assets/image (174).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (174).png>)
 
 If the git provider is detected, a compatible URL will be displayed automatically. If not, you will be first prompted to select the provider to display the webhook URL.
 
@@ -53,7 +53,7 @@ You can copy this URL and paste it in the related section in the git provider re
 
 You can also regenerate the URL to invalidate/revoke the previous one with the refresh button.
 
-![](<../assets/image (175).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (175).png>)
 
 Please refer to the following guides to set up webhooks in various git providers:
 
@@ -75,7 +75,7 @@ You can also use[ appcircle-cli](broken-reference) to trigger your builds from t
 
 To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
 
-![](<../assets/image (176).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (176).png>)
 
 The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](build-manually-or-with-triggers.md#wildcard-reference) for branch names to trigger builds.
 
@@ -85,7 +85,7 @@ You also need to select a workflow for each trigger and the build will be run wi
 
 Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
 
-![](<../assets/image (177).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (177).png>)
 
 #### Auto build pull/merge requests
 
@@ -93,7 +93,7 @@ Appcircle will start building your application whenever you initiate a pull requ
 
 The build will be done with the pull/merge result using the selected workflow. This allows testing the PR/MR result before the actual approval of the request.
 
-![](<../assets/image (179).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (179).png>)
 
 #### Selective auto build with specific tags
 
@@ -101,7 +101,7 @@ Appcircle will start building your application with the selected workflow whenev
 
 This allows build scenarios like building only specific pushes that has the "release" in the tag.
 
-![](<../assets/image (180).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (180).png>)
 
 ## Further Automatic Build Subjects
 

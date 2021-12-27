@@ -1,8 +1,9 @@
 ---
-title: "My Organization and Team Management"
-metaTitle: "My Organization and Team Management"
-metaDescription: "My Organization and Team Management"
+title: 'My Organization and Team Management'
+metaTitle: 'My Organization and Team Management'
+metaDescription: 'My Organization and Team Management'
 ---
+
 # My Organization and Team Management
 
 Organizations in Appcircle are separate units with separate "workspaces" that allow collaboration on the same apps with a team.
@@ -15,20 +16,15 @@ Billing management is also per-organization basis so that you can work with diff
 
 :::info
 
-
 Team management with fine-grained roles and integration with enterprise identity systems are available in the enterprise plan. Please [contact us](https://appcircle.io/contact) for more information.
 
 :::
-
-
 
 ### Accessing the My Organization Screen
 
 The "My Organization" screen is accessible from the button with the organization name initials at the bottom left and it contains all operations to manage an organization.
 
-![](<../assets/image (162).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (162).png>)
 
 ### Organization Name and ID Management
 
@@ -38,7 +34,7 @@ In the left column under the organization management screen, you can change your
 
 To update these details, simply enter the new values and press _Update_.
 
-![](<../assets/image (36).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (36).png>)
 
 ###
 
@@ -54,7 +50,7 @@ If you are on the Starter Plan, you can only add one new organization. To create
 
 :::
 
-![](<../assets/image (39).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (39).png>)
 
 #### Switching Organizations
 
@@ -64,14 +60,13 @@ Each organization is isolated from each other, and switching means that you will
 
 :::info
 
-
 Once you select your organization, you will only see the profiles, artifacts, and reports belonging to that organization in all modules.
 
 You can switch between organizations at any time without any data loss.
 
 :::
 
-![](<../assets/image (40).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (40).png>)
 
 #### Leaving or Deleting an Organization
 
@@ -83,13 +78,12 @@ You will be prompted before the leave/delete operation.
 
 Both leaving and deleting are irreversible operations and it is advised to use them with caution:
 
-* If you leave an organization, only an Owner can add you back, even if you were an Owner.
-* If you delete an organization, you will lose ALL platform data including apps, profiles, and artifacts.
-
+- If you leave an organization, only an Owner can add you back, even if you were an Owner.
+- If you delete an organization, you will lose ALL platform data including apps, profiles, and artifacts.
 
 :::
 
-![](<../assets/image (41).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (41).png>)
 
 ###
 
@@ -113,7 +107,7 @@ The user will be then shown in a "Pending" state until the invitation is accepte
 
 Once a user accepts an invite, it will be added to the team as a Member with read only access. You can change the role of any user, including yourself, with the "Manage Roles" button next to the user ID. You can also delete a user by pressing the delete button.
 
-![](<../assets/image (151).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (151).png>)
 
 ####
 
@@ -123,5 +117,4 @@ Once you click the "Manage Roles" button, you will be presented with a detailed 
 
 You can see the full list of the available roles below:
 
-![](../assets/screenshot-my.appcircle.io-2021.02.11-23\_27\_39.png)
-
+![](https://cdn.appcircle.io/docs/assets/screenshot-my.appcircle.io-2021.02.11-23_27_39.png)

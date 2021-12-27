@@ -1,8 +1,9 @@
 ---
-title: "Connecting to GitHub"
-metaTitle: "Connecting to GitHub"
-metaDescription: "Connecting to GitHub"
+title: 'Connecting to GitHub'
+metaTitle: 'Connecting to GitHub'
+metaDescription: 'Connecting to GitHub'
 ---
+
 # Connecting to GitHub
 
 If you authorize Appcircle to access your repositories on GitHub, you can select the repository that you want to connect in the next screen.
@@ -13,19 +14,18 @@ In such a case, only the selected repositories will be listed. To be able to vie
 
 :::info
 
-
 For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. GitHub App is more secure and newer way implemented by GitHub to external apps to communicate within GitHub in a better fashion.&#x20;
 
 :::
 
-![](<../../assets/image (240).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (240).png>)
 
 After you click on **GitHub**, the following screen will appear. This will let you choose between selecting a repository which you are already authorized Appcircle to do or ask your consent about authorizing more repositories.
 
-![](<../../assets/image (232).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (232).png>)
 
 When you successfully authorize your repository or repositories, the following screen will appear to let you select one for connection:
 
-![](<../../assets/image (236).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (236).png>)
 
 After the connection is successful, you can [view your newly created profile](https://docs.appcircle.io/build/adding-a-build-profile#view-the-newly-created-build-profile) and start building!

@@ -1,15 +1,16 @@
 ---
-title: "Connecting to Public Repository"
-metaTitle: "Connecting to Public Repository"
-metaDescription: "Connecting to Public Repository"
+title: 'Connecting to Public Repository'
+metaTitle: 'Connecting to Public Repository'
+metaDescription: 'Connecting to Public Repository'
 ---
+
 # Connecting to Public Repository
 
 Since public repositories doesn't require any authentication or connection, the actions that can be taken with public repositories are limited. You will only have read only access towards the specified repository. Only use public repositories if you plan to use the profile for:
 
-* Testing & Previewing Appcircle
-* Benchmarking build times to see how fast we are 🚀&#x20;
-* Not planning to use the profile for long term
+- Testing & Previewing Appcircle
+- Benchmarking build times to see how fast we are 🚀&#x20;
+- Not planning to use the profile for long term
 
 #### Using a Git Provider?
 
@@ -17,9 +18,9 @@ If your repository is located under these providers, Appcircle has built-in supp
 
 For more information on your provider, see the links below:
 
-* [Github](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-github)
-* [Bitbucket](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-bitbucket)
-* [Gitlab](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-gitlab)
+- [Github](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-github)
+- [Bitbucket](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-bitbucket)
+- [Gitlab](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-gitlab)
 
 #### Using a Private Git Server?
 
@@ -35,11 +36,11 @@ Clicking **Quick start using the sample repository **will also connect the relev
 
 :::
 
-![](<../../assets/image (237).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (237).png>)
 
 After you click on **Connect to a Public Repository**, the following screen will appear and let you enter an URI
 
-![](<../../assets/image (241).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (241).png>)
 
 Enter the URL of your repository, or continue with sample project if you plan to preview Appcircle.
 
@@ -52,7 +53,6 @@ Public connection refers to the HTTP(s) connection by Git Providers. SSH links i
 After the connection is successful, you can [view your newly created profile](https://docs.appcircle.io/build/adding-a-build-profile#view-the-newly-created-build-profile) and start building!
 
 :::info
-
 
 ### Webhook Events
 

@@ -1,8 +1,9 @@
 ---
-title: "Send Apps to Google Play Console"
-metaTitle: "Send Apps to Google Play Console"
-metaDescription: "Send Apps to Google Play Console"
+title: 'Send Apps to Google Play Console'
+metaTitle: 'Send Apps to Google Play Console'
+metaDescription: 'Send Apps to Google Play Console'
 ---
+
 # Send Apps to Google Play Console
 
 Appcircle supports sending APK and AAB binaries to Google Play Console through the Store Submission module.
@@ -14,21 +15,17 @@ You can send the same binary for testing to a pre-release track or to the produc
 Before uploading a binary to the store, please make sure that an application listing is created in Google Play and the initial binary is manually uploaded with the same keystore and the application ID (package name). Otherwise, the store upload process will fail. This is a known limitation of Google Play, which is in place for security purposes.
 
 You also need to have a Google Service Account and its key as a JSON file. Please refer to the following document for more information about service accounts:\
-&#x20;[https://developers.google.com/android-publisher/getting\_started#using\_a\_service\_account](https://developers.google.com/android-publisher/getting\_started#using\_a\_service\_account)
-
-
+&#x20;[https://developers.google.com/android-publisher/getting_started#using_a_service_account](https://developers.google.com/android-publisher/getting_started#using_a_service_account)
 
 ### Adding a Google Play Developer API Key
 
 To send apps from Appcircle, you need to provide a Google Developer API key. To add a key, go to [My Organization](../account/my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section. The add key screen will be displayed.
 
-[Create a key in JSON format in the Google Developer Console](https://developers.google.com/android-publisher/getting\_started#using\_a\_service\_account) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
+[Create a key in JSON format in the Google Developer Console](https://developers.google.com/android-publisher/getting_started#using_a_service_account) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
 
 Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
 
-![](<../assets/image (92).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (92).png>)
 
 ### Deploying the Binary from the Distribute Module
 
@@ -36,9 +33,7 @@ You can deploy the binaries to the Store Submit module from the [Distribute Modu
 
 Select a binary in the list and press "Send to Store Submit Module" from the top left menu. The package name of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
-![](<../assets/image (69).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (69).png>)
 
 ### Store Submit Profile Details
 
@@ -46,9 +41,7 @@ Once deployed, the binary will be available in the related store submission prof
 
 There are three actions available for each version in the version list. The first action displays a screen where you can initiate the store upload. The second action allows you to view the logs of the latest upload of that binary and the third action button allows you to delete that version.
 
-![](<../assets/image (89).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (89).png>)
 
 ### Sending Apps to Google Play Console
 
@@ -60,7 +53,7 @@ With the next option, [select a release track](https://support.google.com/google
 
 When you press the "Send App" button, the binary will be uploaded to the Google Play Console.
 
-![](<../assets/image (91).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (91).png>)
 
 ###
 
@@ -70,9 +63,7 @@ The upload status of the binary can be tracked on the same screen.
 
 Once the process is complete, you can click on the status or click on the "View Logs" button to see the logs. If the upload is successful, you can submit this binary to the store from the "App releases" section in the Google Play Dashboard under the selected track.
 
-![](<../assets/image (74).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (74).png>)
 
 ### Troubleshooting Common Google Play Upload Errors
 
@@ -86,13 +77,11 @@ The binary sent to Google Play must be production-ready, so you can encounter ce
 
 `APK was signed with the wrong key.` : The binary is signed with a different keystore than the previous version. - You need to change the keystore in the build configuration and rebuild the app.
 
-
-
 ### Deleting Google Play Store Submit Profiles
 
 Either for freeing up space purposes or if you wish to not use the Store Submit module, you can delete your store submit profile. Click on the three dot menu on the profile card:
 
-![](<../assets/image (207).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (207).png>)
 
 #### Delete a Single Store Submit Version
 
@@ -100,12 +89,11 @@ If you want to free up space but you don't want to lose your Store Submit profil
 
 Click on the three dot menu on the version, and click on the Delete Version
 
-![](<../assets/image (206).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (206).png>)
 
 After typing the name, your version will be deleted.
 
 :::info
-
 
 In order to free up storage on your organization, you should also remove the other references pointing to the artifact. In example, if you have the same artifact on the builds, you should also delete those artifacts as well.
 

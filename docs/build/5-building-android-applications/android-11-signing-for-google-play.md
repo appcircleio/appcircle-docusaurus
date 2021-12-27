@@ -26,7 +26,7 @@ In order to keep your config in Appcircle, you need to Navigate through:
 3. Edit the **Android Sign** workflow
 4. Set V2 Sign to either **true **or **false.**
 
-![](<../../assets/image (247).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (247).png>)
 
 Alternatively, you can accomplish the same within environment variables. The environment variable for this action is `AC_V2_SIGN` . More information is found at the document below:
 

@@ -1,8 +1,9 @@
 ---
-title: "Build Profile Configuration Overview"
-metaTitle: "Build Profile Configuration Overview"
-metaDescription: "Build Profile Configuration Overview"
+title: 'Build Profile Configuration Overview'
+metaTitle: 'Build Profile Configuration Overview'
+metaDescription: 'Build Profile Configuration Overview'
 ---
+
 # Build Profile Configuration Overview
 
 Configuring a build profile has some basic steps that need to be completed before starting a build.
@@ -13,9 +14,7 @@ Every build profile needs to know project details regardless of the project bein
 
 You can also enable or disable automatic builds for the current branch.
 
-![](<../assets/image (169).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (169).png>)
 
 ### Signing configuration
 
@@ -23,7 +22,7 @@ Both iOS and Android applications need to be digitally signed by their developer
 
 iOS certificates and Android keystores can be generated within Appcircle or pre-obtained certificates can be uploaded. iOS provisioning profiles need to be obtained from Apple Developer account and uploaded to Appcircle.
 
-![](<../assets/image (170).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (170).png>)
 
 ###
 
@@ -37,17 +36,13 @@ You can select a previously created distribution profile or create a new one on 
 
 Finally, check Auto Distribute if you want your build to be deployed to the Testing Distribution automatically and Auto Deployment if you want the build to be deployed to Store Submission automatically.
 
-![](<../assets/image (171).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (171).png>)
 
 ### Environment variables configuration
 
 You can define variables and secrets to be incorporated during the build in the Environment Variables submodule so that you don't need to store certain keys and configurations within the repository.
 
-![](<../assets/image (172).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (172).png>)
 
 ### Workflows and Triggers
 
@@ -55,5 +50,4 @@ For advanced configuration, you can utilize [workflows](../workflows/why-to-use-
 
 These options are available at the profile level in the profile context menu.
 
-![](<../assets/image (188).png>)
-
+![](<https://cdn.appcircle.io/docs/assets/image (188).png>)

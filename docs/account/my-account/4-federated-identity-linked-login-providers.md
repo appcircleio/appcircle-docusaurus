@@ -1,8 +1,9 @@
 ---
-title: "Federated Identity (Linked Login Providers)"
-metaTitle: "Federated Identity (Linked Login Providers)"
-metaDescription: "Federated Identity (Linked Login Providers)"
+title: 'Federated Identity (Linked Login Providers)'
+metaTitle: 'Federated Identity (Linked Login Providers)'
+metaDescription: 'Federated Identity (Linked Login Providers)'
 ---
+
 # Federated Identity (Linked Login Providers)
 
 In this screen, you can manage the linked accounts for login. You can link a new account by pressing **Add **and following the permission prompts displayed by the provider or you can disconnect an account by pressing **Remove**.
@@ -13,11 +14,10 @@ If you signed up with an identity provider, you need to set a password to login 
 
 :::info
 
-
 Identity providers linked for login purposes are managed independently from the accounts linked for repository connections. (i.e. Disconnecting GitHub or Bitbucket from My Account does not break the repository connections.)
 
 :::
 
-![](<../../assets/image (21).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (21).png>)
 
 ###

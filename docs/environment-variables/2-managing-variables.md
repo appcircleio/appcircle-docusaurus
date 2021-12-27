@@ -1,30 +1,26 @@
 ---
-title: "Creating and Using Environment Variables"
-metaTitle: "Creating and Using Environment Variables"
-metaDescription: "Creating and Using Environment Variables"
+title: 'Creating and Using Environment Variables'
+metaTitle: 'Creating and Using Environment Variables'
+metaDescription: 'Creating and Using Environment Variables'
 ---
+
 # Creating and Using Environment Variables
 
 ### Creating environment variable groups
 
 To create an environment variable group, select Environment Variables from the build module. Click on the orange + icon and enter the name of the group into the input box, press enter to save the group name and create the group.
 
-![](<../assets/image (76).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (76).png>)
 
 ### &#x20;Adding key and text-based value pairs
 
 To add an environment variable to the group, select the "Text" tab from the top and use the inputs below. Enter a key name, then enter the value for the key and press enter.
 
-![](<../assets/image (77).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (77).png>)
 
 You can add as many environment variables as you need.&#x20;
 
 :::info
-
 
 Variables that need to be secret can be hidden using the lock icon. Such variables cannot be viewed by the users during the build process.
 
@@ -32,9 +28,7 @@ Variables that need to be secret can be hidden using the lock icon. Such variabl
 
 Please note that some environment variables may need to be duplicated to be used in different groups for different purposes.
 
-![](<../assets/image (78).png>)
-
-
+![](<https://cdn.appcircle.io/docs/assets/image (78).png>)
 
 ### Adding files as environment variables
 
@@ -44,9 +38,9 @@ To add a file, select the "File" tab from the top and enter a key name from the 
 
 Then press add to upload the file.
 
-![](<../assets/image (79).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (79).png>)
 
-![](<../assets/image (80).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (80).png>)
 
 ###
 
@@ -60,4 +54,4 @@ Here, you can see a list of previously created environment variable groups. Sele
 
 Then in workflows, you can specify the environment variable for use.
 
-![](<../assets/09-12-EnvVars (1).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/09-12-EnvVars (1).jpg>)
