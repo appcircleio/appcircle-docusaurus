@@ -25,7 +25,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins:[remarkoembed.default,rlc],
+          remarkPlugins: [remarkoembed.default, rlc],
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -48,7 +48,7 @@ const config = {
         title: '',
         logo: {
           alt: 'Appcircle Docs',
-          src: 'https://seyf.ams3.cdn.digitaloceanspaces.com/appcircle/logo.svg',
+          src: 'https://cdn.appcircle.io/docs/logo.svg',
         },
         items: [
           {
