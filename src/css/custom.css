@@ -18,6 +18,7 @@
   --ifm-color-primary-lightest: #ffdec9;
   --ifm-code-font-size: 95%;
   --ifm-navbar-background-color: #0e1f3b;
+  --ifm-footer-background-color: #142d57;
   --ifm-font-family-base: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,
     BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
@@ -141,13 +142,13 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 /* oembed */
-iframe[src*="youtube.com"] {
+iframe[src*='youtube.com'] {
   width: 600px !important;
   height: 400px !important;
 }
 
 @media (max-width: 550px) {
-  iframe[src*="youtube.com"] {
+  iframe[src*='youtube.com'] {
     width: 300px !important;
     height: 200px !important;
   }
@@ -171,9 +172,9 @@ iframe[src*="youtube.com"] {
   transition: background 200ms ease-in-out 0s, box-shadow 200ms ease-in-out 0s;
 }
 
-.rlc-container:hover{
-  background-color: rgba(80,80,80, 0.1);
-  box-shadow: 0 4px 5px 2px rgba(80,80,80, 0.2);
+.rlc-container:hover {
+  background-color: rgba(80, 80, 80, 0.1);
+  box-shadow: 0 4px 5px 2px rgba(80, 80, 80, 0.2);
 }
 
 .rlc-info {
@@ -197,7 +198,7 @@ iframe[src*="youtube.com"] {
   font-size: 0.875rem;
   color: #333;
   overflow: hidden;
-  line-height:1rem;
+  line-height: 1rem;
   height: 2rem;
 }
 
@@ -230,4 +231,8 @@ iframe[src*="youtube.com"] {
   height: 100%;
   border-bottom-right-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
+}
+
+.footer {
+  background-color: #142d57;
 }

@@ -28,11 +28,7 @@ const config = {
           remarkPlugins: [remarkoembed.default, rlc],
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: '/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -77,12 +73,19 @@ const config = {
       },
       footer: {
         style: 'dark',
+        logo: {
+          src: 'https://cdn.appcircle.io/docs/docs-footer-logo.png',
+          alt: 'Facebook Open Source Logo',
+          href: 'https://appcircle.io',
+          width: 40,
+          height: 40,
+        },
         links: [
           {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Documentation',
                 to: '/docs/intro',
               },
               {
@@ -108,12 +111,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/appcircleio/appcircle-docusaurus',
               },
             ],
           },
