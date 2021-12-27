@@ -1,8 +1,11 @@
 ---
-title: "Running iOS Unit & UI Tests"
-metaTitle: "Running iOS Unit & UI Tests"
-metaDescription: "Running iOS Unit & UI Tests"
+title: 'Running iOS Unit & UI Tests'
+metaTitle: 'Running iOS Unit & UI Tests'
+metaDescription: 'Running iOS Unit & UI Tests'
 ---
+
+import ContentRef from '@site/src/components/ContentRef';
+
 # Running iOS Unit & UI Tests
 
 Appcircle helps you perform unit and UI tests for your iOS applications at once.
@@ -27,9 +30,7 @@ Simply go to your build workflow and add a custom script after the **Xcode Selec
 
 See the following page on our documentation to learn more about creating custom workflow steps:
 
-{% content-ref url="../workflows/why-to-use-workflows.md" %}
-[why-to-use-workflows.md](../workflows/why-to-use-workflows.md)
-{% endcontent-ref %}
+<ContentRef url="../workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
 
 We will use a Ruby script here to tell Appcircle to run our unit and UI tests.
 
@@ -87,4 +88,4 @@ Unit & UI test results will be packed along with the `.ipa` file generated after
 
 If you don't sign your build artifact, your test results will be included in the `xcarchive` file. You can alternatively disable your build and sign steps in your workflow and get only test results without building or signing your application.
 
-You can use 3rd party tools like :link: [**XCParse**](https://github.com/ChargePoint/xcparse) or :link: [**XCTestHTMLReport**](https://github.com/TitouanVanBelle/XCTestHTMLReport)** **to view your test results in a more user-friendly way.
+You can use 3rd party tools like :link: [**XCParse**](https://github.com/ChargePoint/xcparse) or :link: [**XCTestHTMLReport**](https://github.com/TitouanVanBelle/XCTestHTMLReport)\*\* \*\*to view your test results in a more user-friendly way.

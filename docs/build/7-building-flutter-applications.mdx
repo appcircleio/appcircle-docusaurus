@@ -1,13 +1,10 @@
 ---
-title: "Building Flutter Mobile Applications"
-metaTitle: "Building Flutter Mobile Applications"
-metaDescription: "Building Flutter Mobile Applications"
+title: 'Building Flutter Mobile Applications'
+metaTitle: 'Building Flutter Mobile Applications'
+metaDescription: 'Building Flutter Mobile Applications'
 ---
----
-title: "Syntax Highlighting"
-metaTitle: "Syntax Highlighting is the meta title tag for this page"
-metaDescription: "This is the meta description for this page"
----
+
+import ContentRef from '@site/src/components/ContentRef';
 
 # Building Flutter Mobile Applications
 
@@ -21,13 +18,9 @@ Simply create a new build profile as usual and select your target operating syst
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
-{% content-ref url="adding-a-build-profile/" %}
-[adding-a-build-profile](adding-a-build-profile/)
-{% endcontent-ref %}
+<ContentRef url="build/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 To test drive the Appcircle platform for Flutter app builds, you can also use our sample Flutter App by forking it or adding it as a public repository: [https://github.com/appcircleio/appcircle-sample-flutter](https://github.com/appcircleio/appcircle-sample-flutter)
-
-
 
 ### Build Configuration for Flutter Applications <a href="build-configuration-for-react-native-applications" id="build-configuration-for-react-native-applications"></a>
 
@@ -51,8 +44,6 @@ Click on the gear icon on the top right to access the build configuration. For F
 
 ![](<../assets/image (3).png>)
 
-
-
 ### Build Configuration for Flutter Web applications <a href="build-configuration-for-react-native-android-applications" id="build-configuration-for-react-native-android-applications"></a>
 
 Flutter Web apps are built alongside with iOS or Android Flutter apps. For more information please refer to the following guide:
@@ -60,8 +51,6 @@ Flutter Web apps are built alongside with iOS or Android Flutter apps. For more 
 {% content-ref url="building-flutter-web-applications.md" %}
 [building-flutter-web-applications.md](building-flutter-web-applications.md)
 {% endcontent-ref %}
-
-
 
 ### Sending the Build Status to the Repository Providers
 
@@ -81,9 +70,9 @@ The next section, Triggers, is common for both iOS and Android.
 
 Appcircle allows you to trigger builds manually or automatically using build triggers.
 
-* On push: Whenever code is pushed to a configured branch, the build is triggered.
-* On a tagged push: Whenever a tagged commit is pushed, the build is triggered for that commit. Commits without any tags are ignored.
-* On push with selective tags: Whenever a commit includes one of the typed in tags, the build is triggered. You can specify tags with Unix shell-style wildcards to trigger builds.
+- On push: Whenever code is pushed to a configured branch, the build is triggered.
+- On a tagged push: Whenever a tagged commit is pushed, the build is triggered for that commit. Commits without any tags are ignored.
+- On push with selective tags: Whenever a commit includes one of the typed in tags, the build is triggered. You can specify tags with Unix shell-style wildcards to trigger builds.
 
 {% content-ref url="build-manually-or-with-triggers.md" %}
 [build-manually-or-with-triggers.md](build-manually-or-with-triggers.md)
@@ -121,7 +110,6 @@ Finally, check Auto Distribute if you want your build to be deployed to the Test
 
 :::info
 
-
 Any previous build can be deployed to the Distribute module without the need for rebuilding.
 
 :::
@@ -146,19 +134,13 @@ Once you complete your build configuration, you can edit your build workflow. Fl
 
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
-{% content-ref url="../workflows/why-to-use-workflows.md" %}
-[why-to-use-workflows.md](../workflows/why-to-use-workflows.md)
-{% endcontent-ref %}
-
-
+<ContentRef url="../workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
 
 ### How to Set a Specific Flutter Version for the Build
 
 To change the Flutter version, open the Flutter Install workflow step from the workflow editor and set the version under the "Selected Flutter Version" field.
 
 ![](<../assets/image (167).png>)
-
-
 
 ### Starting a Flutter Build and After a Build
 
