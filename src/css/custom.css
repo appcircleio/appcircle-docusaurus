@@ -5,16 +5,27 @@
  */
 
 /* You can override the default Infima variables here. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
 :root {
-  --ifm-color-primary: #FF8114;
-  --ifm-color-primary-dark: #EA6B00;
-  --ifm-color-primary-darker: #CE5D00;
-  --ifm-color-primary-darkest: #AC4C00;
-  --ifm-color-primary-light: #FF9E51;
-  --ifm-color-primary-lighter: #FFC79E;
-  --ifm-color-primary-lightest: #FFDEC9;
+  --ifm-color-primary: #ff8114;
+  --ifm-color-primary-dark: #ea6b00;
+  --ifm-color-primary-darker: #ce5d00;
+  --ifm-color-primary-darkest: #ac4c00;
+  --ifm-color-primary-light: #ff9e51;
+  --ifm-color-primary-lighter: #ffc79e;
+  --ifm-color-primary-lightest: #ffdec9;
   --ifm-code-font-size: 95%;
   --ifm-navbar-background-color: #0e1f3b;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,
+    BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --ifm-heading-font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+    sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --doc-sidebar-width: 350px;
+  letter-spacing: -0.02rem;
 }
 
 .docusaurus-highlight-code-line {
@@ -40,7 +51,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   text-transform: none !important;
   font-size: 0.875rem !important;
   margin: 8px auto 0 0 !important;
-  letter-spacing: 0.00rem !important;
+  letter-spacing: 0rem !important;
   color: var(--ifm-font-color-base);
 }
 
@@ -58,7 +69,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 .theme-doc-sidebar-item-category.theme-doc-sidebar-item-category-level-2 ul.menu__list {
-  border-left: 1px solid #CCC;
+  border-left: 1px solid #ccc;
   padding-left: 0px;
   margin-left: 16px;
   margin-bottom: 24px;
@@ -80,9 +91,51 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .theme-doc-sidebar-item-category .theme-doc-sidebar-item-category-level-2 .menu__list-item-collapsible .menu__link {
   line-height: 1.38;
-  color: var(--ifm-font-color-base)
+  color: var(--ifm-font-color-base);
 }
 
 .navbar__items--right .navbar__link {
-  color: #CCC;
+  color: #ccc;
+}
+
+.content-ref-card {
+  padding: 16px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  margin-bottom: 36px;
+  vertical-align: middle;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.content-ref-card:hover {
+  text-decoration: none;
+}
+
+.content-ref-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.content-ref-card:hover::after {
+  opacity: 1;
+}
+
+.content-ref-card .file-icon {
+  max-width: 48px;
+  margin-right: 16px;
 }
