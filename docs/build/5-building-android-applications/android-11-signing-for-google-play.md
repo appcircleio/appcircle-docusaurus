@@ -8,7 +8,7 @@ metaDescription: 'Android 11+ Signing for Google Play'
 
 As per Google's update on Android 11 behavior changes, there is an important (breaking) change regarding app signing
 
-{% embed url="https://developer.android.com/about/versions/11/behavior-changes-11#minimum-signature-scheme" %}
+https://developer.android.com/about/versions/11/behavior-changes-11#minimum-signature-scheme
 
 > Apps that target Android 11 (API level 30) that are currently only signed using APK Signature Scheme v1 must now also be signed using [APK Signature Scheme v2](https://source.android.com/security/apksigning/v2) or higher. Users can't install or update apps that are only signed with APK Signature Scheme v1 on devices that run Android 11.
 
