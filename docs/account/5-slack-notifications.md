@@ -10,7 +10,7 @@ Appcircle supports sending notifications to Slack for the major events in all mo
 
 ### Connecting Appcircle to Slack
 
-An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](my-organization.md) screen and press the "Connect" button next to Slack under the "Connections" section.
+An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](./my-organization) screen and press the "Connect" button next to Slack under the "Connections" section.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (64).png>)
 

@@ -12,8 +12,8 @@ const config = {
   tagline: 'Guides and Docs for Appcircle.io',
   url: 'https://docs.appcircle.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'ignore',
+  onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/favicon.ico',
   organizationName: 'appcircleio', // Usually your GitHub org/user name.
   projectName: 'appcircle-docusaurus', // Usually your repo name.
@@ -86,11 +86,13 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/docs/intro',
+                type: 'doc',
+                to: 'docs/intro',
               },
               {
                 label: 'Release Notes',
-                to: '/docs/updates/release-notes',
+                type: 'doc',
+                to: 'docs/updates/release-notes',
               },
             ],
           },
