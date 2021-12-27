@@ -29,8 +29,7 @@ const config = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -86,7 +85,7 @@ const config = {
               {
                 label: 'Release Notes',
                 to: '/docs/updates/release-notes',
-              }
+              },
             ],
           },
           {
@@ -94,7 +93,7 @@ const config = {
             items: [
               {
                 label: 'Slack',
-                href: 'https://slack.appcircle.io'
+                href: 'https://slack.appcircle.io',
               },
               {
                 label: 'Twitter',
@@ -121,6 +120,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['ruby'],
       },
     }),
 };
