@@ -1,8 +1,11 @@
 ---
-title: "Using Environment Variables in iOS Projects"
-metaTitle: "Using Environment Variables in iOS Projects"
-metaDescription: "Using Environment Variables in iOS Projects"
+title: 'Using Environment Variables in iOS Projects'
+metaTitle: 'Using Environment Variables in iOS Projects'
+metaDescription: 'Using Environment Variables in iOS Projects'
 ---
+
+import ContentRef from '@site/src/components/ContentRef';
+
 # Using Environment Variables in iOS Projects
 
 We strongly recommend using environment variables if you need to use sensitive or variable data in your projects. Using sensitive data such as API keys and passwords may cause security flaws or keeping frequently changing variables may increase your development time.
@@ -33,7 +36,6 @@ API_URL = api.appcircle.com
 ```
 
 :::info
-
 
 Please note that Xcode will treat double slashes // as comment delimiters even if it’s a URL. That’s why you may exclude the `https://` portion of your URLs or use different symbols to be replaced later in your code.
 
@@ -69,7 +71,7 @@ Final step in Xcode will be calling the variables from your code's view controll
 ```swift
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+
     self.lblVersion.text =  [NSString stringWithFormat:@"v%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
     self.lblApi.text = [NSString stringWithFormat:@"Api URL: %@\nApi KEY: %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"API_URL"],[[NSBundle mainBundle] objectForInfoDictionaryKey:@"API_KEY"]];
 }
@@ -80,9 +82,7 @@ Final step in Xcode will be calling the variables from your code's view controll
 
 You can create environment variable groups and key/value pairs in these groups. To learn more about creating environment variables in Appcircle please see the following page:
 
-{% content-ref url="managing-variables.md" %}
-[managing-variables.md](managing-variables.md)
-{% endcontent-ref %}
+<ContentRef url="./managing-variables">Managing Variables</ContentRef>
 
 Once you update your project with `.xcconfig` files, you can create environment variable groups and include different values of the same environment variable to be used in different stages of your application like development or production.
 
@@ -90,9 +90,7 @@ Once you update your project with `.xcconfig` files, you can create environment 
 
 To be able to use these variables in your project, we need to replace the values in our `.xcconfig` file using a custom script workflow step. To get more information about creating and using custom scripts, please check the following page:
 
-{% content-ref url="../integrations/working-with-custom-scripts/" %}
-[working-with-custom-scripts](../integrations/working-with-custom-scripts/)
-{% endcontent-ref %}
+<ContentRef url="../integrations/working-with-custom-scripts">Working with Custom Scripts</ContentRef>
 
 In our example here, we will use a Bash script to replace the values in our .xcconfig file.&#x20;
 

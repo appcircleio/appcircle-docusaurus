@@ -1,14 +1,16 @@
 ---
-title: "Send Apps to App Store Connect and TestFlight"
-metaTitle: "Send Apps to App Store Connect and TestFlight"
-metaDescription: "Send Apps to App Store Connect and TestFlight"
+title: 'Send Apps to App Store Connect and TestFlight'
+metaTitle: 'Send Apps to App Store Connect and TestFlight'
+metaDescription: 'Send Apps to App Store Connect and TestFlight'
 ---
+
+import ContentRef from '@site/src/components/ContentRef';
+
 # Send Apps to App Store Connect and TestFlight
 
 Appcircle supports sending IPA binaries to App Store Connect and TestFlight through the Store Submission module.
 
 :::info
-
 
 Both App Store Connect and TestFlight use the same binary pool, so once you send a binary to any of the destinations, it can be used across App Store Connect for testing and app releases.
 
@@ -20,28 +22,24 @@ Before uploading a binary to the store, please make sure that an application lis
 
 You also need to provide either:
 
-* &#x20;An App Store Connect API Key as a P8 file along with the key ID and the issuer ID. This is the recommended authentication method. Please refer to the following document for more information about the App Store Connect API key:\
-  [https://developer.apple.com/documentation/appstoreconnectapi/creating\_api\_keys\_for\_app\_store\_connect\_api](https://developer.apple.com/documentation/appstoreconnectapi/creating\_api\_keys\_for\_app\_store\_connect\_api)
+- &#x20;An App Store Connect API Key as a P8 file along with the key ID and the issuer ID. This is the recommended authentication method. Please refer to the following document for more information about the App Store Connect API key:\
+  [https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api)
 
 or
 
-* An Apple Developer ID with an app-specific password. Please refer to the following document for more information about the app-specific passwords: [https://support.apple.com/en-us/HT204397](https://support.apple.com/en-us/HT204397)
-
-
+- An Apple Developer ID with an app-specific password. Please refer to the following document for more information about the app-specific passwords: [https://support.apple.com/en-us/HT204397](https://support.apple.com/en-us/HT204397)
 
 ### Adding an App Store Connect API Key (Recommended Method) <a href="adding-a-google-play-developer-api-key" id="adding-a-google-play-developer-api-key"></a>
 
 To send apps from Appcircle, you need to provide an App Store Connect API key. To add a key, go to [My Organization](../account/my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "App Store Connect API Keys" item under the Connections section. The add key screen will be displayed.
 
-[Create an API key in App Store Connect](https://developer.apple.com/documentation/appstoreconnectapi/creating\_api\_keys\_for\_app\_store\_connect\_api) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
+[Create an API key in App Store Connect](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
 
 With the next option, enter the key ID and the issuer ID that can be obtained from the [keys section in App Store Connect](https://appstoreconnect.apple.com/access/api).
 
 Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
 
 ![](<../assets/image (93).png>)
-
-
 
 ### Adding an Apple Developer ID <a href="adding-a-google-play-developer-api-key" id="adding-a-google-play-developer-api-key"></a>
 
@@ -53,13 +51,9 @@ With the next option, enter the application Apple ID that can be obtained from t
 
 Then enter a user-friendly name to identify the credentials in the lists and press save. You can use this Apple ID in multiple apps without the need for reentering the credentials at every upload process.
 
-{% content-ref url="../account/adding-an-app-store-connect-api-key.md" %}
-[adding-an-app-store-connect-api-key.md](../account/adding-an-app-store-connect-api-key.md)
-{% endcontent-ref %}
+<ContentRef url="../account/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
 ![](<../assets/image (94).png>)
-
-
 
 ### Deploying the Binary from the Distribute Module
 
@@ -68,8 +62,6 @@ You can deploy the binaries to the Store Submit module from the [Distribute Modu
 Select a binary in the list and press "Send to Store Submit Module" from the top left menu. The bundle ID of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
 ![](<../assets/image (84).png>)
-
-
 
 ### Store Submit Profile Details
 
@@ -85,7 +77,6 @@ There are three actions available for each version in the version list. The firs
 
 :::info
 
-
 Both App Store Connect and TestFlight use the same binary pool, so once you send a binary to any of the destinations, it can be used across App Store Connect for testing and app releases.&#x20;
 
 :::
@@ -98,8 +89,6 @@ When you press the "Send App" button, the binary will be uploaded to App Store C
 
 ![](<../assets/image (96).png>)
 
-
-
 ### Viewing the Binary Upload Status
 
 The upload status of the binary can be tracked on the same screen.
@@ -107,8 +96,6 @@ The upload status of the binary can be tracked on the same screen.
 Once the process is complete, you can click on the status or click on the "View Logs" button to see the logs. If the upload is successful, the app will be visible under the builds section in the TestFlight tab as well as in the builds list in the Add Build dialog in the App Store tab.
 
 ![](<../assets/image (88).png>)
-
-
 
 ### Deleting App Store Connect Profiles
 
@@ -127,7 +114,6 @@ Click on the three dot menu on the version, and click on the Delete Version
 After typing the name, your version will be deleted.
 
 :::info
-
 
 In order to free up storage in your organization, you should also remove the other references pointing to the artifact. For example, if you have the same artifact on the builds, you should also delete those artifacts as well.
 

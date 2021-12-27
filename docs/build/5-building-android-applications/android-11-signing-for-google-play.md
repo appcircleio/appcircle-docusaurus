@@ -1,8 +1,9 @@
 ---
-title: "Android 11+ Signing for Google Play"
-metaTitle: "Android 11+ Signing for Google Play"
-metaDescription: "Android 11+ Signing for Google Play"
+title: 'Android 11+ Signing for Google Play'
+metaTitle: 'Android 11+ Signing for Google Play'
+metaDescription: 'Android 11+ Signing for Google Play'
 ---
+
 # Android 11+ Signing for Google Play
 
 As per Google's update on Android 11 behavior changes, there is an important (breaking) change regarding app signing
@@ -13,8 +14,8 @@ As per Google's update on Android 11 behavior changes, there is an important (br
 
 In order to adapt your Application, you need to enable V2 Signing through either:
 
-* Appcircle (Recommended)
-* In your Project
+- Appcircle (Recommended)
+- In your Project
 
 ### Enable V2 Sign in Appcircle
 
@@ -29,15 +30,15 @@ In order to keep your config in Appcircle, you need to Navigate through:
 
 Alternatively, you can accomplish the same within environment variables. The environment variable for this action is `AC_V2_SIGN` . More information is found at the document below:
 
-{% content-ref url="../../environment-variables/appcircle-specific-environment-variables.md" %}
-[appcircle-specific-environment-variables.md](../../environment-variables/appcircle-specific-environment-variables.md)
-{% endcontent-ref %}
+<ContentRef url="../environment-variables/why-to-use-environment-variables-and-secrets">
+  Why to Use Environment Variables and Secrets?
+</ContentRef>
 
 ### Enable V2 Sign Through the Android Project (build.gradle)
 
 Alternatively, you can use `build.gradle` instead to specify the signing you will use.
 
-The current Android Sign step in Appcircle utilizes [jarsigner to sign apps](https://developer.android.com/studio/build/building-cmdline#bundle\_build\_gradle) with the APK Signature Scheme v1 and the alternative _apksigner _cannot be used to sign app bundles (AAB).
+The current Android Sign step in Appcircle utilizes [jarsigner to sign apps](https://developer.android.com/studio/build/building-cmdline#bundle_build_gradle) with the APK Signature Scheme v1 and the alternative \_apksigner \_cannot be used to sign app bundles (AAB).
 
 The solution for this is to utilize signing in gradle within the app. A sample build.gradle file that utilizes APK Signature Scheme v2 can be found at [https://github.com/appcircleio/appcircle-sample-android/blob/v2-sign/app/build.gradle](https://github.com/appcircleio/appcircle-sample-android/blob/v2-sign/app/build.gradle) and the sample code can be seen below:
 
