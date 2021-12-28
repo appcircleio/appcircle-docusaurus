@@ -236,3 +236,15 @@ iframe[src*='youtube.com'] {
 .footer {
   background-color: #142d57;
 }
+
+.navbar__toggle {
+  color: #FFFFFF;  
+}
+
+.navbar-sidebar {
+  background-color: var(--ifm-background-surface-color);
+}
+
+.navbar-sidebar__brand {
+  background-color: var(--ifm-navbar-background-color);
+}
