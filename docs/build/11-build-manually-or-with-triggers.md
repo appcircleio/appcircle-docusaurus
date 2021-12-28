@@ -137,8 +137,8 @@ Appcircle supports AWS CodeCommit triggers through an Amazon SNS topic.
 
 For more information, please refer to: [https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-sns.html](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-sns.html)
 
-After you follow the steps in the referenced document above to create a trigger, you need to create a notification rule under CodeCommit Settings as shown below to add a webhook URL.![](https://gblobscdn.gitbook.com/assets%2F-M2n-6BSnI3ZeBvlRun0%2F-MV6AMEohqBTWDyhvlc-%2F-MV6HqZp-pujQ-_jBR0z%2F2.png?alt=media&token=1826ece5-5be2-4543-9820-3bb952bbb512)
+After you follow the steps in the referenced document above to create a trigger, you need to create a notification rule under CodeCommit Settings as shown below to add a webhook URL.![](<https://cdn.appcircle.io/docs/assets/codecommit-settings.png>)
 
 Then select the "Enable raw message delivery" option while adding the webhook URL as a subscription to the topic.
 
-![](https://gblobscdn.gitbook.com/assets%2F-M2n-6BSnI3ZeBvlRun0%2F-MV6AMEohqBTWDyhvlc-%2F-MV6H6D5MttzsknGW5F2%2F1.png?alt=media&token=4f28f549-3839-4d3b-a528-e5e37f6afbea)
+![](<https://cdn.appcircle.io/docs/assets/enable-raw-message-delivery.png>)
