@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 You can build your Flutter applications in Appcircle for iOS or Android platforms.
 
-### Creating a Flutter Build Profile <a href="creating-a-react-native-build-profile" id="creating-a-react-native-build-profile"></a>
+### Creating a Flutter Build Profile
 
 Simply create a new build profile as usual and select your target operating system as iOS or Android. Select **Flutter **for **Target Platform**.
 
@@ -22,11 +22,11 @@ Once your build profile is created, click on it and connect your Git repository.
 
 To test drive the Appcircle platform for Flutter app builds, you can also use our sample Flutter App by forking it or adding it as a public repository: [https://github.com/appcircleio/appcircle-sample-flutter](https://github.com/appcircleio/appcircle-sample-flutter)
 
-### Build Configuration for Flutter Applications <a href="build-configuration-for-react-native-applications" id="build-configuration-for-react-native-applications"></a>
+### Build Configuration for Flutter Applications
 
 Build configuration options are very similar to native iOS or Android applications. You can select configuration details, build triggers, signing identities and distribution options.
 
-### Build Configuration for Flutter iOS applications <a href="build-configuration-for-react-native-ios-applications" id="build-configuration-for-react-native-ios-applications"></a>
+### Build Configuration for Flutter iOS applications
 
 Click on the gear icon on the top right to access the build configuration. The first step will be the entering project details. You can enter these details manually or click on the Fetch button to retrieve them from your project to detect the correct path for the Xcode project automatically.
 
@@ -36,15 +36,15 @@ You can also select a specific Xcode version if you have certain dependencies or
 
 ![](<https://cdn.appcircle.io/docs/assets/image (2).png>)
 
-### &#x20;<a href="build-configuration-for-react-native-android-applications" id="build-configuration-for-react-native-android-applications"></a>
+### &#x20;
 
-### Build Configuration for Flutter Android applications <a href="build-configuration-for-react-native-android-applications" id="build-configuration-for-react-native-android-applications"></a>
+### Build Configuration for Flutter Android applications 
 
 Click on the gear icon on the top right to access the build configuration. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
 
 ![](<https://cdn.appcircle.io/docs/assets/image (3).png>)
 
-### Build Configuration for Flutter Web applications <a href="build-configuration-for-react-native-android-applications" id="build-configuration-for-react-native-android-applications"></a>
+### Build Configuration for Flutter Web applications 
 
 Flutter Web apps are built alongside with iOS or Android Flutter apps. For more information please refer to the following guide:
 
@@ -62,7 +62,7 @@ When this option is enabled, the build status for that commit is shared with the
 
 ![](https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png)
 
-### Build Triggers <a href="triggers" id="triggers"></a>
+### Build Triggers
 
 The next section, Triggers, is common for both iOS and Android.
 
@@ -80,15 +80,15 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 
 ### Signing Flutter iOS Applications
 
-The next step in the build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](../signing-identities/ios-certificates-and-provisioning-profiles.md) section.
+The next step in the build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](../signing-identities/ios-certificates-and-provisioning-profiles) section.
 
 For signing iOS apps, press add, select the bundle ID from the first dropdown and then select a compatible provisioning profile (added from the signing identities module) from the second dropdown.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (4).png>)
 
-### Signing Flutter Android applications <a href="signing-react-native-android-applications" id="signing-react-native-android-applications"></a>
+### Signing Flutter Android Applications
 
-Here, please select the Android Keystore you added in the [Android Keystores](../signing-identities/android-keystores.md) section. For signing Android apps, simply select a keystore (added from the signing identities module).
+Here, please select the Android Keystore you added in the [Android Keystores](../signing-identities/android-keystores) section. For signing Android apps, simply select a keystore (added from the signing identities module).
 
 ![](<https://cdn.appcircle.io/docs/assets/image (5).png>)
 
@@ -112,9 +112,9 @@ Any previous build can be deployed to the Distribute module without the need for
 
 :::
 
-### &#x20;<a href="environment-variables" id="environment-variables"></a>
+### &#x20;<
 
-### Environment Variables <a href="environment-variables" id="environment-variables"></a>
+### Environment Variables
 
 The final tab is to add environment variables to the build. For advanced use cases, you can define variables and secrets to be incorporated during the build in the Environment Variables submodule so that you don’t need to store certain keys and configurations within the repository.
 

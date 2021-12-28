@@ -17,7 +17,7 @@ To start, you need to add the
 - "Android Build for UI Testing" step for Android
 - "Xcodebuild Build for Testing" step for iOS
 
-followed by the "AWS Device Farm Deploy and Run" step to the workflow from the [workflow marketplace](../workflows/why-to-use-workflows.md#workflow-marketplace).
+followed by the "AWS Device Farm Deploy and Run" step to the workflow from the [workflow marketplace](../workflows/why-to-use-workflows#workflow-marketplace).
 
 If you just want to run tests, you can also remove other build steps such as "Android Build" or "Xcodebuild for Devices".
 
@@ -35,12 +35,12 @@ The input values are as follows:
 
 :::info
 
-It is highly recommended to add the keys as [secret environment variables](../environment-variables/managing-variables.md) instead of typing them here for security purposes.
+It is highly recommended to add the keys as [secret environment variables](../environment-variables/managing-variables) instead of typing them here for security purposes.
 
 :::
 
-- AWS Project ARN: The ARN of the project for deploy and run. ([see below](using-aws-device-farm-for-ios-and-android-continuous-testing.md#how-to-get-the-arn-values))
-- AWS Device Pool Arn: The ARN of the device pool for the run. ([see below](using-aws-device-farm-for-ios-and-android-continuous-testing.md#how-to-get-the-arn-values))
+- AWS Project ARN: The ARN of the project for deploy and run. ([see below](using-aws-device-farm-for-ios-and-android-continuous-testing#how-to-get-the-arn-values))
+- AWS Device Pool Arn: The ARN of the device pool for the run. ([see below](using-aws-device-farm-for-ios-and-android-continuous-testing#how-to-get-the-arn-values))
 - AWS Device Farm Run Name Prefix: The name prefix for the run to be scheduled. AWS Device Farm Run Test Type: The type of the test for the run.
 - AWS Device Farm File Upload Time Out: Time out duration (seconds) for the test file upload. The step is skipped if the time out is reached.
 - Maximum Waiting Time for Run Test Results: Time out duration (seconds) for the AWS Device Farm run. The step is skipped if this duration is reached, but the test execution continues in AWS Device Farm.

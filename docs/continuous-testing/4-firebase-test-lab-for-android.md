@@ -35,17 +35,17 @@ As the final step, go to the [Google Developers Console API Library page](https:
 
 ### Firebase Test Lab Authentication Configuration in Appcircle
 
-To start, go to the environment variables section and add the service account JSON key created in the previous step as a [new environment variable](../environment-variables/managing-variables.md#create-environment-variable-groups-and-add-key-value-pairs). Take a note of the variable name, which will be necessary in the workflow configuration.
+To start, go to the environment variables section and add the service account JSON key created in the previous step as a [new environment variable](../environment-variables/managing-variables#create-environment-variable-groups-and-add-key-value-pairs). Take a note of the variable name, which will be necessary in the workflow configuration.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (52).png>)
 
-Then [select the related environment variable group](../environment-variables/managing-variables.md#use-environment-variable-groups-in-builds) in the build configuration of the project that will be using Firebase Test Lab.
+Then [select the related environment variable group](../environment-variables/managing-variables#use-environment-variable-groups-in-builds) in the build configuration of the project that will be using Firebase Test Lab.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (59).png>)
 
 ### Build Workflow Configuration for Firebase Test Lab
 
-To utilize Firebase Test Lab in your builds, open the [workflow editor](../workflows/why-to-use-workflows.md) and add the "Firebase Test Lab for Android" step after the build or sign steps. If you want to run instrumentation tests, also add the "Android Build for UI Testing" step before the Firebase Test Lab step.
+To utilize Firebase Test Lab in your builds, open the [workflow editor](../workflows/why-to-use-workflows) and add the "Firebase Test Lab for Android" step after the build or sign steps. If you want to run instrumentation tests, also add the "Android Build for UI Testing" step before the Firebase Test Lab step.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (53).png>)
 

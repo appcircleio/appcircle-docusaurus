@@ -10,7 +10,7 @@ The Appcircle API supports authentication with a _Personal Access Token_. The to
 
 ### Generating/Managing the Personal Access Tokens
 
-To generate a personal access token, go to the [My Organization](../account/my-organization.md#accessing-the-my-organization-screen) screen in the Appcircle dashboard. The personal access token section is located on the bottom left.
+To generate a personal access token, go to the [My Organization](../account/my-organization#accessing-the-my-organization-screen) screen in the Appcircle dashboard. The personal access token section is located on the bottom left.
 
 Press the "Generate Token" button to generate your first token.
 

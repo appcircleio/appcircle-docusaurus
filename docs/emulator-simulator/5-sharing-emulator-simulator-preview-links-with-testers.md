@@ -12,7 +12,7 @@ To open the share dialog, just press on the "Share" button on the top right of t
 
 ![](<https://cdn.appcircle.io/docs/assets/image (128).png>)
 
-In the share screen, you can select the [testing groups created previously](../distribute/testing-groups.md) that will receive this version of your application. Alternatively, you can enter the individual email addresses of the testers to send them the application.
+In the share screen, you can select the [testing groups created previously](../distribute/testing-groups) that will receive this version of your application. Alternatively, you can enter the individual email addresses of the testers to send them the application.
 
 You can also add a message to testers including testing instructions and release notes.
 

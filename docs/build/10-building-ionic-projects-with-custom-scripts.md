@@ -11,9 +11,9 @@ You can use the following project as an example for running Ionic builds in Appc
 
 The sample project is built with Vue though other Ionic project types can also be built in a similar manner. For the build, Capacitor is recommended and this document is based on projects configured to be built with Capacitor in Android Studio or Xcode.
 
-To build an Ionic project, first, add and configure it like a [React Native project](building-react-native-applications.md).
+To build an Ionic project, first, add and configure it like a [React Native project](building-react-native-applications).
 
-One important point to take note is that `capacitor-cordova-android-plugins` folder is automatically added to .gitignore file, but it is required during the build. The folder can be removed from the .gitignore or it can be regenerated during the build; though the former is recommended for a successful [Fetch](build-profile-configuration.md#project-details-configuration) operation. For more information, you can refer to the following Git issue for Capacitor: [https://github.com/ionic-team/capacitor/issues/1628](https://github.com/ionic-team/capacitor/issues/1628)
+One important point to take note is that `capacitor-cordova-android-plugins` folder is automatically added to .gitignore file, but it is required during the build. The folder can be removed from the .gitignore or it can be regenerated during the build; though the former is recommended for a successful [Fetch](build-profile-configuration#project-details-configuration) operation. For more information, you can refer to the following Git issue for Capacitor: [https://github.com/ionic-team/capacitor/issues/1628](https://github.com/ionic-team/capacitor/issues/1628)
 
 You can then add the custom scripts before the build steps and run the build normally.
 

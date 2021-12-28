@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ## 2.8.0 - 2021-10-25 - Improved Build Logging, Refresh Repository Connection, Persistent Notifications
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - A branch or a commit is missing? You can refresh repository connections for GitLab, GitHub, and Bitbucket repositories. Just look for the refresh icon on top of the branch list.
 
@@ -20,7 +20,7 @@ import ContentRef from '@site/src/components/ContentRef';
 - Removed unnecessary version texts from build steps on log panels.
 - Build logging is improved for larger projects that have half a million lines of build logs.
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Sometimes recent build logs were not displaying properly. Fixed.
 - Branch pinning was not syncing between browsers.
@@ -30,7 +30,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ## 2.7.0 - 2021-09-29 - Xcode 13.0 Support, Carthage on Workflows, Renaming Workflow Steps
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - You can now rename workflow steps.
 - Carthage Dependency Manager for iOS is available as a workflow step
@@ -45,7 +45,7 @@ import ContentRef from '@site/src/components/ContentRef';
 - Workflow name added as the title of the build logs detail screen.
 - Small UI improvements
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Fixed a bug where pasting SSH private key would add newlines to the key.&#x20;
 - Fetch details on branch config defaults to Xcode 12.5.x instead of 12.0.
@@ -63,7 +63,7 @@ To set up an API Key, check this guide:
 
 After adding an API Key, you can add new signing identities from the Signing Identities section. For more information on how to add identities and use them, check out [Signing Identities guide](https://docs.appcircle.io/signing-identities/ios-certificates-and-provisioning-profiles#1-get-ios-certificates-and-provisioning-profiles-from-apple).
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - Flutter version `2.5.0` is released in their stable channel. You can now use this latest stable version on Appcircle.
 
@@ -98,7 +98,7 @@ If your app targets Android 11, please read the following documentation to enabl
 
 https://docs.appcircle.io/build/building-android-applications/android-11-signing-for-google-play#enable-v2-sign-in-appcircle
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - iOS builds will be using Xcode 13 Beta 5 if 13.0.x is selected as Xcode version.
 - Appcircle is now more secure with Two Factor Authentication 🔒 Refer to [this documentation](https://docs.appcircle.io/account/my-account/authenticator-two-factor-authentication) to secure your account 🔑
@@ -118,7 +118,7 @@ This release focuses on stability with optimizing the logging of the builds.
 
 Within this release as prior to the previous release, Appcircle also supports [Xcode 13 Beta 4](https://developer.apple.com/documentation/Xcode-Release-Notes/xcode-13-beta-release-notes). When 13.0.x from the Xcode Version is selected, the Xcode version will be Xcode 13 Beta 4.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - iOS builds will be using Xcode 13 Beta 4 if 13.0.x is selected as Xcode version.
 - Added metadata (Organization ID, OS version etc.) at the beginning of the Build Logs
@@ -130,7 +130,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 
 - Commit Status on PR/CR is more detailed than before, you can track your progress(not only fail/success) as well, integrated with CI/CD progresses of the repository providers. More info is located at [Sending the build status to repository providers](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) documentation
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Fixed a bug that on **Save **button not being activated while chaning config values on Store Submit&#x20;
 - Fixed a bug that the build tab was showing an empty column when the branch is deleted
@@ -145,7 +145,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 
 Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.apple.com/documentation/Xcode-Release-Notes/xcode-13-beta-release-notes). When 13.0.x from the Xcode Version is selected, it will be using Xcode 13 Beta 2.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - iOS builds will be using Xcode 13 Beta 2 if 13.0.x is selected as Xcode version.
 - iOS builds will be using Xcode 12.5.1 if 12.5.x is selected as Xcode version.
@@ -164,7 +164,7 @@ Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.
   Accessing Repositories in Internal Networks (Firewalls)
 </ContentRef>
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Fixed a bug that **Config **section appearing disabled when connected to the repository for the first time
 - Fixed a bug that causes Store Submit modules to not show correct progress while the upload is in progress.
@@ -188,7 +188,7 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 
 :::
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - You can specify which Xcode version to use on your builds. This can also be specified on the repository and will be seamlessly fetched from the relevant repository during the **Fetch Details** Process. Available versions: 13.0, 12.5, 12.4, 12.3, 12.2, 12.1, 12.0, 11.7, 11.6, 11.5, 11.4, 11.3, 11.2, 11.1 and 11.0
   - Latest Xcode 13 beta is used on 13.0.x
@@ -204,7 +204,7 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 - Added better icons for Git providers when connecting to the repository.
 - Whitelist IPs are under update process, you can follow the process under [Accessing Repositories in Internal Networks](https://docs.appcircle.io/infrastructure/accessing-repositories-in-internal-networks-firewalls) document.
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Fixed a bug that the same commit not appearing on multiple branches.
 - Fixed a bug that new SSH connections being unable to fetch config.&#x20;
@@ -213,10 +213,10 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 
 This release includes the release of Appcircle GitHub app and the share app previews along with feature improvements.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - [Appcircle GitHub App](../build/adding-a-build-profile/#connecting-to-a-cloud-git-provider-github-bitbucket-and-gitlab) - You can now connect to GitHub with the Appcircle GitHub app as an alternative to the oAuth connection.
-- [Share App Preview Links](../distribute/create-or-select-a-distribution-profile.md#auto-send-your-build-to-the-testers) - You can now share in-browser app preview links automatically with the testers as an alternative to app binaries. No physical device needed for testing.
+- [Share App Preview Links](../distribute/create-or-select-a-distribution-profile#auto-send-your-build-to-the-testers) - You can now share in-browser app preview links automatically with the testers as an alternative to app binaries. No physical device needed for testing.
 
 ### :muscle:Improvement
 
@@ -224,7 +224,7 @@ This release includes the release of Appcircle GitHub app and the share app prev
 - New status bar for live build tracking and quick team switching
 - Workflow and trigger user interface improvements
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Workflow and trigger fixes
 - User interface fixes
@@ -234,11 +234,11 @@ This release includes the release of Appcircle GitHub app and the share app prev
 
 This is a major release with the complete revamp of the build workflows and autobuild triggers for repository-level workflows and triggers along with the new PR/MR trigger option.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
-- [Repository-level workflows](../workflows/why-to-use-workflows.md) - You can now define multiple workflows in a build profile and assign them to multiple branches or assign multiple workflows to the same branch. You can also clone workflows for easier management.
-- [Repository-level triggers](../build/build-manually-or-with-triggers.md#setting-and-managing-triggers-for-autobuilds) - You can now specify triggers in the build profile level with wildcards for branch names and workflow selection for each trigger for higher flexibility and manageability of the build profiles.
-- [Pull request/merge request triggers](../build/build-manually-or-with-triggers.md#auto-build-pull-merge-requests) - You can now trigger builds whenever you initiate a pull request or merge request from a source branch to the target branch. The build will be done with the pull/merge result. This allows testing the PR/MR result before the actual approval of the request.
+- [Repository-level workflows](../workflows/why-to-use-workflows) - You can now define multiple workflows in a build profile and assign them to multiple branches or assign multiple workflows to the same branch. You can also clone workflows for easier management.
+- [Repository-level triggers](../build/build-manually-or-with-triggers#setting-and-managing-triggers-for-autobuilds) - You can now specify triggers in the build profile level with wildcards for branch names and workflow selection for each trigger for higher flexibility and manageability of the build profiles.
+- [Pull request/merge request triggers](../build/build-manually-or-with-triggers#auto-build-pull-merge-requests) - You can now trigger builds whenever you initiate a pull request or merge request from a source branch to the target branch. The build will be done with the pull/merge result. This allows testing the PR/MR result before the actual approval of the request.
 
 ### :muscle:Improvement
 
@@ -246,7 +246,7 @@ This is a major release with the complete revamp of the build workflows and auto
 - User interface improvements
 - Performance improvements
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - License management fixes
 - User interface fixes
@@ -255,7 +255,7 @@ This is a major release with the complete revamp of the build workflows and auto
 
 This major release introduces the Appcircle CLI and a new customer portal for billing and plan management along with the Appcircle distribute API.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - Appcircle CLI - You can now access the Appcircle platform from the command line for custom pipelines or advanced automation use cases. [Appcircle CLI is available on npm](https://www.npmjs.com/package/appcircle-cli).
 - Appcircle Distribute API - On top of the previously released build APIs, the distribute module APIs are now available for programmatic access.
@@ -266,7 +266,7 @@ This major release introduces the Appcircle CLI and a new customer portal for bi
 - Account and organization deletion improvements
 - Plan upgrade and downgrade improvements
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Webhook trigger fixes
 - Emulator/simulator issue reporting fixes
@@ -276,7 +276,7 @@ This major release introduces the Appcircle CLI and a new customer portal for bi
 
 This release introduces the Appcircle API with the build module and all around experience features in various areas.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - Appcircle API - You can now utilize the Appcircle API for programmatic access to the platform features. This release includes the build module APIs.
 - Personal Access Token - You can generate a token to access the Appcircle API
@@ -292,7 +292,7 @@ This release introduces the Appcircle API with the build module and all around e
 - Webhook URL management improvements
 - Logging and reporting optimizations
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Webhook support fixes
 - SSH connection fixes
@@ -302,7 +302,7 @@ This release introduces the Appcircle API with the build module and all around e
 
 This release introduces the two most requested features along with the enterprise-grade role management.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - Copy/Set Branch Configuration - You can now copy the configuration from a branch to other branches in the same build profile for easy replication of the same configuration.&#x20;
 - Webhooks for Git - With the webhook support for the compatible git providers, you can enable build triggers through SSH connections without the need for app authorization
@@ -314,7 +314,7 @@ This release introduces the two most requested features along with the enterpris
 - SSH connection improvements
 - User interface optimizations
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Slack notification fixes
 - Environment variable management fixes
@@ -325,7 +325,7 @@ This release introduces the two most requested features along with the enterpris
 
 This release includes support for Slack notifications for the major events in all modules along with minor features and fixes.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - Slack Notifications for All Modules - You can now get notified for Signing Identity, Distribute and Store Submit module events through Slack (in addition to the Build module).&#x20;
 - Storage Management - You can now delete build artifacts and app versions in select plans.
@@ -339,7 +339,7 @@ This release includes support for Slack notifications for the major events in al
 - Improved FAQ and troubleshooting
 - User interface improvements towards better guidance
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - User interface issues in Safari
 - Repository connection issues
@@ -349,7 +349,7 @@ This release includes support for Slack notifications for the major events in al
 
 This release includes the automatic public store deployment feature and the introduction of a new Starter-based upgrade plan for higher Emulator/Simulator minutes.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - Auto deployment to the Store Submit Module - You can now deploy your builds automatically to the Store Submit Module by enabling the setting in the build configuration
 - Auto upload to Public Stores - You can now upload deployed apps automatically to Google Play Console and App Store Connect
@@ -362,7 +362,7 @@ This release includes the automatic public store deployment feature and the intr
 - Under-the-hood Standalone Emulator/Simulator improvements
 - Billing and plan info view improvements
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Public store credential management fixes
 - Various user interface fixes
@@ -372,7 +372,7 @@ This release includes the automatic public store deployment feature and the intr
 
 This release is a maintenance update with all around improvements.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 - Direct signing identity uploads in the build module - You can add signing identities directly from the build configuration if the signing identities module is empty.
 
@@ -384,7 +384,7 @@ This release is a maintenance update with all around improvements.
 - File size display and upload dialog improvements
 - Various user interface improvements
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Repository connection fixes
 - Preview on device report update period fix
@@ -397,7 +397,7 @@ This release is a maintenance update with all around improvements.
 
 This release includes the new in-Browser Emulator/Simulator module and Amazon Device Farm Support.
 
-### &#x20;🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### &#x20;🆕 New Feature
 
 - Standalone Emulator for web sites and app uploads - You can now use the "Preview on Device" feature as a standalone module with support for direct uploads and web site previews.
 - Device preview share - Just like sending apps to the testers, you can now share in-browser app preview links with the testers.
@@ -409,7 +409,7 @@ This release includes the new in-Browser Emulator/Simulator module and Amazon De
 - Preview on device fixes in line with the Standalone Emulator
 - Android 11 and iOS 14 support in device previews
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - GitLab branch listing fix
 - Large file upload fix
@@ -419,7 +419,7 @@ This release includes the new in-Browser Emulator/Simulator module and Amazon De
 
 This release includes experience improvements along with support for Flutter Web builds.
 
-### &#x20;🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### &#x20;🆕 New Feature
 
 - Flutter Web Support - You can now build your Flutter Web apps along with Flutter iOS and Android apps.
 - Centralized Credentials for Store Uploads - for Google Play and App Store Connect uploads, the credentials can now be saved for reuse.
@@ -431,7 +431,7 @@ This release includes experience improvements along with support for Flutter Web
 - User experience improvements in the Store Submit module
 - User experience improvements in the Environment Variables Module
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Theme-related UI fixes
 - Store upload fixes
@@ -446,7 +446,7 @@ This is of course just a start of a long journey. Follow us on Twitter [@appcirc
 
 For any questions, feedback or feature requests, just drop us a message using the in-app messaging or raise an issue in Appcircle GitHub: [https://github.com/appcircleio](https://github.com/appcircleio)
 
-### &#x20;🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### &#x20;🆕 New Feature
 
 - Send apps to Public Stores - You can now send your apps to App Store Connect through the App Store Connect API.&#x20;
 - Theme support with Dark Mode - There is an Appcircle for everyone. You can now select between Light, Dark and the Darker modes.
@@ -457,7 +457,7 @@ For any questions, feedback or feature requests, just drop us a message using th
 - Xcode 12 GM support&#x20;
 - User experience improvements in line with the theme support
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 - Multimodule support fix
 - Billing plan fixes

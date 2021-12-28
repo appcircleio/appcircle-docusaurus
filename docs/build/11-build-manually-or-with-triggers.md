@@ -16,7 +16,7 @@ As the name states, your build profile will not build your application until you
 
 ### Workflows for Manual Builds
 
-For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](build-manually-or-with-triggers.md#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](build-manually-or-with-triggers.md#trigger-priorities).
+For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](build-manually-or-with-triggers#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](build-manually-or-with-triggers#trigger-priorities).
 
 ![](<https://cdn.appcircle.io/docs/assets/image (190).png>)
 
@@ -35,7 +35,7 @@ There are two options to set up webhooks for automatic builds:
 
 ### Enabling Automatic Builds
 
-To enable automatic builds for a branch, open the [Build Configuration](./build-profile-configuration.md) and scroll down to the Auto Build section. Auto builds will be initiated based on the matching global trigger rules for that branch.
+To enable automatic builds for a branch, open the [Build Configuration](./build-profile-configuration) and scroll down to the Auto Build section. Auto builds will be initiated based on the matching global trigger rules for that branch.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (191).png>)
 
@@ -67,7 +67,7 @@ In essence, you need to find the Webhooks section under the repository settings 
 
 :::info
 
-You can also use[ appcircle-cli](broken-reference) to trigger your builds from the command line as well.
+You can also use[ appcircle-cli](../appcircle-api/about-the-appcircle-cli) to trigger your builds from the command line as well.
 
 :::
 
@@ -77,7 +77,7 @@ To set up or manage the build triggers, click the Triggers button in the context
 
 ![](<https://cdn.appcircle.io/docs/assets/image (176).png>)
 
-The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](build-manually-or-with-triggers.md#wildcard-reference) for branch names to trigger builds.
+The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](#wildcard-reference) for branch names to trigger builds.
 
 You also need to select a workflow for each trigger and the build will be run with that trigger for the specified branch. You can build the same branch with different workflows (e.g. production or development) or you can use the same workflow for multiple branches (e.g. multiple feature branches built with the develop workflow).
 
@@ -131,7 +131,7 @@ You can specify branch names or tags with an asterisk wildcard to automate build
 | `fix-*-build` | Build if it starts with `fix-` and ends with `-build` |
 | `*`           | Build everything                                      |
 
-### How to enable triggers for AWS CodeCommit repositories? <a href="how-to-enable-triggers-for-aws-codecommit-repositories" id="how-to-enable-triggers-for-aws-codecommit-repositories"></a>
+### How to enable triggers for AWS CodeCommit repositories?
 
 Appcircle supports AWS CodeCommit triggers through an Amazon SNS topic.
 

@@ -46,7 +46,7 @@ You can define variables and secrets to be incorporated during the build in the 
 
 ### Workflows and Triggers
 
-For advanced configuration, you can utilize [workflows](../workflows/why-to-use-workflows.md) and for automatic builds, you can utilize [triggers](build-manually-or-with-triggers.md#automatic-build).
+For advanced configuration, you can utilize [workflows](../workflows/why-to-use-workflows) and for automatic builds, you can utilize [triggers](build-manually-or-with-triggers#automatic-build).
 
 These options are available at the profile level in the profile context menu.
 

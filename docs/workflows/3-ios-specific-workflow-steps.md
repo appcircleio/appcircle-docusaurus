@@ -36,13 +36,13 @@ https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-c
 
 ## Xcodebuild for Devices (Archive & Export)
 
-This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](../distribute/create-or-select-a-distribution-profile.md) feature or any other means of iOS distribution.
+This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](../distribute/create-or-select-a-distribution-profile) feature or any other means of iOS distribution.
 
 https://github.com/appcircleio/appcircle-ios-build-sign-component
 
 ## Xcodebuild for iOS Simulator
 
-This step builds your application for the iOS Simulator in x86 architecture which is required for the [**Preview on Device**](../distribute/preview-on-device.md) feature. This step creates an unsigned `xarchive` file.
+This step builds your application for the iOS Simulator in x86 architecture which is required for the [**Preview on Device**](../distribute/preview-on-device) feature. This step creates an unsigned `xarchive` file.
 
 https://github.com/appcircleio/appcircle-ios-build-simulator
 

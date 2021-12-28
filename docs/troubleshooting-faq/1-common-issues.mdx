@@ -36,7 +36,7 @@ Please refer to [this guide for the commands to generate a compatible key pair](
 
 The only available option for connecting to the internal/on-premise repositories is to use SSH and whitelist Appcircle resources if the repositories are not accessible from the public internet.
 
-Please refer to [this guide for connecting to the repositories in internal networks](../infrastructure/accessing-repositories-in-internal-networks-firewalls.md).
+Please refer to [this guide for connecting to the repositories in internal networks](../infrastructure/accessing-repositories-in-internal-networks-firewalls).
 
 ### How to connect to AWS CodeCommit repositories through SSH?
 
@@ -82,10 +82,10 @@ If you are unable to determine the exact cause, feel free to get in touch with A
 
 ### Troubleshooting Workflow Steps for Build Failures
 
-Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](../workflows/why-to-use-workflows.md) and get a build to help isolate the cause of the issue.
+Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](../workflows/why-to-use-workflows) and get a build to help isolate the cause of the issue.
 
 - **iOS Sign Errors: **If the selected provisioning profile does not match with the selected bundle ID or if the certificate is not valid, you may have an issue in the iOS signing step. In this case, you may try getting an unsigned build
-- **Xcode Build for Simulator step: **This step is required to use the [Preview on Device](../distribute/preview-on-device.md) feature and it requires the app to be built for the x86 architecture. In some projects, there may be dependencies that are not compatible with x86. In this case, please remove this step from the workflow or remove the conflicting dependencies to get a successful build.
+- **Xcode Build for Simulator step: **This step is required to use the [Preview on Device](../distribute/preview-on-device) feature and it requires the app to be built for the x86 architecture. In some projects, there may be dependencies that are not compatible with x86. In this case, please remove this step from the workflow or remove the conflicting dependencies to get a successful build.
 - **Android Sign Errors: **If you encounter errors while signing your Android app, you can remove this step to get an unsigned build or you can configure the app signing within your project.
 
 ### The Build is Taking Too Long
@@ -109,7 +109,7 @@ Your iOS application project needs to have a shared scheme in order to be built 
 3. Scheme container needs to be set to the corresponding Xcode project or workspace
 4. Please do not forget to add your `.xcscheme` file to version control so it will be uploaded to your Git repository
 
-For details on iOS builds please refer to [**Building iOS Applications**](../build/building-ios-applications.md)\*\*\*\*
+For details on iOS builds please refer to [**Building iOS Applications**](../build/building-ios-applications)\*\*\*\*
 
 ### **Cocoapods Errors Due to Missing xcworkspace**
 
@@ -143,7 +143,7 @@ In this case, you need to upgrade the Swift version in the project settings in X
 
 ### I received a google-services.json Error but I don't want to push this file to the repository
 
-Secret files such as the google-services.json can be added as a [secret environment variable](../environment-variables/managing-variables.md#adding-files-as-environment-variables) and then [selected in the build configuration](../build/build-profile-configuration.md#environment-variables-configuration).
+Secret files such as the google-services.json can be added as a [secret environment variable](../environment-variables/managing-variables#adding-files-as-environment-variables) and then [selected in the build configuration](../build/build-profile-configuration#environment-variables-configuration).
 
 Then, you can add a custom script step before the Android build step and move the file to the expected path during the build with a code like the following (where the secret environment variable is named as `GOOGLE_SERVICES_JSON`) :
 
@@ -207,9 +207,9 @@ You can access how to change your node version and other relative information ab
 
 ### No files or multiple files were received from autodistribute&#x20;
 
-A successful distribution depends on a correctly signed binary. Please check if the [signing configuration](../build/build-profile-configuration.md#signing-configuration) is correct.
+A successful distribution depends on a correctly signed binary. Please check if the [signing configuration](../build/build-profile-configuration#signing-configuration) is correct.
 
-You can also check the list of the [generated build artifacts](../build/after-a-build.md) to confirm the output. In Android, you can also check the `ac_post_process_output.json` file in the build artifacts to see if the APKs are signed or not.
+You can also check the list of the [generated build artifacts](../build/after-a-build) to confirm the output. In Android, you can also check the `ac_post_process_output.json` file in the build artifacts to see if the APKs are signed or not.
 
 In Android, please also check if gradle sign is being used for the selected build variant. If gradle sign works alongside with Appcircle signing, you will receive multiple APKs.
 

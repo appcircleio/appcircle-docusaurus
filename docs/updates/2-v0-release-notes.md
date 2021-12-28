@@ -13,7 +13,7 @@ This is of course just a start of a long journey. Follow us on Twitter [@appcirc
 
 For any questions, feedback or feature requests, just drop us a message using the in-app messaging or raise an issue in Appcircle GitHub: [https://github.com/appcircleio](https://github.com/appcircleio)
 
-### &#x20;🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### &#x20;🆕 New Feature
 
 * Send apps to Public Stores - You can now send your apps to App Store Connect through the App Store Connect API.&#x20;
 * Theme support with Dark Mode - There is an Appcircle for everyone. You can now select between Light, Dark and the Darker modes.
@@ -24,7 +24,7 @@ For any questions, feedback or feature requests, just drop us a message using th
 * Xcode 12 GM support&#x20;
 * User experience improvements in line with the theme support
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 * Multimodule support fix
 * Billing plan fixes
@@ -34,7 +34,7 @@ For any questions, feedback or feature requests, just drop us a message using th
 
 This release includes the last mile changes in the platform.
 
-### &#x20;🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### &#x20;🆕 New Feature
 
 * GitLab Support - You can now connect to your GitLab repositories just like GitHub and BitBucket.
 * Plan Upgrades - The plan upgrades are now available. You can upgrade to a higher [Appcircle plan](https://appcircle.io/pricing) of your choosing for larger workloads and organizations. (The free tier is being preserved as is.)
@@ -46,7 +46,7 @@ This release includes the last mile changes in the platform.
 * Enriched Slack message format
 * AAB file support in the Distribute module for Google Play uploads&#x20;
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 * Google Play upload fixes
 * iOS simulator build fixes
@@ -57,7 +57,7 @@ This release includes the last mile changes in the platform.
 
 This release brings in the initial versions of some of the long-awaited features.
 
-### &#x20;🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### &#x20;🆕 New Feature
 
 * Send apps to Public Stores - You can now send your apps to Google Play Dashboard (App Store Connect support coming in the next release)
 * Slack notifications - You can now send build start and end status to a selected Slack channel
@@ -70,7 +70,7 @@ This release brings in the initial versions of some of the long-awaited features
 * Reports interface improvements
 * Improved help texts and guidance across the product
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 * App download issues related with the CDN
 * Log viewer fixes
@@ -79,7 +79,7 @@ This release brings in the initial versions of some of the long-awaited features
 
 This is a feature release along with a specific focus on storage-related improvements.
 
-### &#x20;🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### &#x20;🆕 New Feature
 
 * New log viewer - The log viewer is redesigned with a new viewer engine. It's now faster and less resource-consuming and provides an improved viewing experience with
   * Step-based outline
@@ -94,7 +94,7 @@ This is a feature release along with a specific focus on storage-related improve
 * Increased performance for artifact and app downloads with a new CDN
 * Increased security for signing identity and secret storage with Vault
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 * An issue where certain types of keystores caused a signing error
 * Flutter build configuration saving issue
@@ -104,7 +104,7 @@ This is a feature release along with a specific focus on storage-related improve
 
 This is a maintenance release with under-the-hood experience and performance improvements.
 
-### &#x20;🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### &#x20;🆕 New Feature
 
 * File support in environment variables - You can now add files as environment variables and use them in the build workflows (e.g. key files in JSON format or scripts)
 * Build status in the branch list - You can now see the last build status of each branch in the branch list&#x20;
@@ -121,7 +121,7 @@ This is a maintenance release with under-the-hood experience and performance imp
 * Increased log viewer performance, especially in logs with large sizes
 * Additional option fields in Flutter build configuration
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 * Log viewer fixes
 * Organization management fixes
@@ -138,7 +138,7 @@ This update also introduces new ways to manage workflow steps and user experienc
 
 :::
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 * New infrastructure - The platform is moved to the final release environment. You will be getting all around higher performance and responsiveness.&#x20;
 * Organization and team management - In our last release, this feature was in the preview stage and now it is widely available with fixes and polishes. You can now create or join organizations and collaborate on the same workspace with multiple members.&#x20;
@@ -149,7 +149,7 @@ This update also introduces new ways to manage workflow steps and user experienc
 * User interface improvements - we made small changes to improve your experience further
 * Improvements in the workflow steps to minimize potential failures
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 * Reports fixes
 * Minor user interface fixes
@@ -158,7 +158,7 @@ This update also introduces new ways to manage workflow steps and user experienc
 
 This update comes with the Xcode 12 Beta support right after its announcement and the new organization and team management features. This update also includes under-the-hood improvements in performance and user experience.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 * Xcode 12 beta support - You can select Xcode 12 beta in the build configuration for iOS 14 readiness.
 * Smart build queue management - We are introducing a new way to manage the build queues for an improved build experience.
@@ -170,7 +170,7 @@ This update comes with the Xcode 12 Beta support right after its announcement an
 * User interface improvements - we made small changes to improve your experience further
 * Framework updates and the related under-the-hood improvements
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 * We fixed a few issues regarding the account management feature released last week.
 * Minor user interface fixes
@@ -179,7 +179,7 @@ This update comes with the Xcode 12 Beta support right after its announcement an
 
 In this update, we are introducing the account management interface.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 * Account Management Interface - You can now manage your details, change your password, connect to identity providers, access the list of current sessions, and view the identity logs in the My Account section.
 * New Identity Providers - No need for email and password to register and login. You can use GitHub, Bitbucket, Google or Microsoft to login to your dashboard. If you already have an account with email, you can link an identity provider from the My Account section.
@@ -190,7 +190,7 @@ In this update, we are introducing the account management interface.
 * Updates in the Flutter workflow steps.
 * iOS build agent performance improvements. (You may see its effects later this week as we roll out the new build agents.)
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 * We fixed a few issues regarding the reporting feature released last week.
 
@@ -198,7 +198,7 @@ In this update, we are introducing the account management interface.
 
 This is a major update, with the highlight being the Flutter build support.
 
-### 🆕 New Feature <a href="new-feature" id="new-feature"></a>
+### 🆕 New Feature
 
 * Flutter Support - You can now build Flutter projects for iOS and Android. It also works with the workflows, so you can configure your Flutter builds in a powerful way just like the other frameworks supported by the Appcircle Build Module.
 * New Reports - After the previous update bringing in the reporting feature, we now added new reports to the Distribute and Signing Identities module. These enterprise-grade reports are aimed to increase your visibility over the distribution processes.
@@ -208,7 +208,7 @@ This is a major update, with the highlight being the Flutter build support.
 * Updates in the workflow steps and sample applications.
 * iOS build agent updates - as the new major version Xcode is drawing near, we updated our primary iOS build agents to Catalina to ensure future Xcode compatibility.
 
-### 🐞 Fixed <a href="fixed" id="fixed"></a>
+### 🐞 Fixed
 
 * We squashed a number of UI issues.
 
@@ -248,7 +248,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :new: New Feature
 
-* React Native support - You can now build iOS and Android applications developed with React Native. React Native build workflows allow you to select your Node version and run additional NPM/Yarn commands. :link: [**Building React Native Applications**](../build/building-react-native-applications.md)****
+* React Native support - You can now build iOS and Android applications developed with React Native. React Native build workflows allow you to select your Node version and run additional NPM/Yarn commands. :link: [**Building React Native Applications**](../build/building-react-native-applications)****
 
 ### :muscle: Improvement
 
@@ -276,16 +276,16 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :muscle: Improvement
 
-* If a build has multiple APK file outputs, each APK file will be included in the distribution module and can be downloaded separately. :link: [**Testing Portal**](../distribute/downloading-binaries.md)****
+* If a build has multiple APK file outputs, each APK file will be included in the distribution module and can be downloaded separately. :link: [**Testing Portal**](../distribute/downloading-binaries)****
 * Distribution emails and distribution portal is now showing application name with version.
 * Notifications window is improved and now shows better information including color codes and more details about events.
-* Environment variables in Git Clone workflow step are updated. :link: [**Git Clone Step**](broken-reference)****
+* Environment variables in Git Clone workflow step are updated.
 * Help page is updated with links to [**Appcircle Documentation**](https://docs.appcircle.io), Appcircle Contact Form and [**Appcircle Slack Workspace**](https://slack.appcircle.io).
 * Miscellaneous UI improvements.
 
 ### :lady\_beetle: Fixed
 
-* Information displayed on Distribution Module cards is fixed. The last updated field shows the latest file date in the profile and the Last shared field shows the last time the distribution was performed. :link: [**Distribution Profiles**](../distribute/create-or-select-a-distribution-profile.md)****
+* Information displayed on Distribution Module cards is fixed. The last updated field shows the latest file date in the profile and the Last shared field shows the last time the distribution was performed. :link: [**Distribution Profiles**](../distribute/create-or-select-a-distribution-profile)****
 
 ## v0.3.23 - 2020-04-03
 

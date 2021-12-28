@@ -47,7 +47,7 @@ The repository directory is an output of the Git Clone step and its patch can be
 {% tab title="Bash" %}
 ```bash
 cd $AC_REPOSITORY_DIR
-cat README.md
+cat README
 ```
 {% endtab %}
 {% endtabs %}
