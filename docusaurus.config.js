@@ -126,6 +126,11 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ['ruby'],
       },
+      algolia: {
+        apiKey: '0664a9795ced4a4b187cd8b010ec9f5d',
+        indexName: 'appcircle',
+        appId: 'MLYVQZS3BY',
+      },
     }),
 };
 
