@@ -174,8 +174,10 @@ iframe[src*='youtube.com'] {
 }
 
 .rlc-container:hover {
-  background-color: rgba(80, 80, 80, 0.1);
+  background-color: var(--ifm-card-background-color);
   box-shadow: 0 4px 5px 2px rgba(80, 80, 80, 0.2);
+  color: inherit;
+  text-decoration: none;
 }
 
 .rlc-info {
