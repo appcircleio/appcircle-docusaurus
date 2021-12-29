@@ -223,6 +223,11 @@ iframe[src*='youtube.com'] {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: var(--ifm-link-color);
+}
+
+.rlc-url:hover {
+  color: var(--ifm-link-hover-color);
 }
 
 .rlc-image-container {
