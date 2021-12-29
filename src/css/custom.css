@@ -159,17 +159,18 @@ iframe[src*='youtube.com'] {
   width: 100%;
   max-width: 800px;
   max-height: 120px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2rem 0;
 
   color: black;
   text-decoration: none;
 
-  border: 1px solid black;
   border-radius: 0.25rem;
   display: flex;
   align-items: stretch;
 
   transition: background 200ms ease-in-out 0s, box-shadow 200ms ease-in-out 0s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  background-color: var(--ifm-card-background-color);
 }
 
 .rlc-container:hover {
@@ -179,19 +180,21 @@ iframe[src*='youtube.com'] {
 
 .rlc-info {
   overflow: hidden;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem 1rem 1.25rem;
   flex: 4 1 100px;
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  font-size: 0.75rem;
 }
 
 .rlc-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 4px;
+  font-weight: 500;
 }
 
 .rlc-description {
@@ -214,7 +217,7 @@ iframe[src*='youtube.com'] {
 }
 
 .rlc-url {
-  font-size: 1rem;
+  font-size: 0.75rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -222,7 +225,7 @@ iframe[src*='youtube.com'] {
 
 .rlc-image-container {
   position: relative;
-  flex: 1 1 100px;
+  flex: 1 1 54px;
 }
 
 .rlc-image {
@@ -247,4 +250,12 @@ iframe[src*='youtube.com'] {
 
 .navbar-sidebar__brand {
   background-color: var(--ifm-navbar-background-color);
+}
+
+html[data-theme='dark'] .rlc-container {
+  color:white;
+}
+
+html[data-theme='dark'] .rlc-description {
+  color: #AAA;  ;
 }
