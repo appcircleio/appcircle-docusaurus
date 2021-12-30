@@ -16,28 +16,21 @@ As the name states, your build profile will not build your application until you
 
 ### Workflows for Manual Builds
 
-For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](build-manually-or-with-triggers#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](build-manually-or-with-triggers#trigger-priorities).
+For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](./build-manually-or-with-triggers#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](./build-manually-or-with-triggers#trigger-priorities).
 
-![](<https://cdn.appcircle.io/docs/assets/image (190).png>)
+![](<https://cdn.appcircle.io/docs/assets/push-triggers.jpg>)
 
 ## Automatic Build
 
 Builds can be triggered with various triggers such as every push to the repository, pull/merge requests, or tagged pushes. This requires the following:
 
 - Webhook connection to the repository
-- Enabling auto build in the build configuration of a specific branch
 - Setting up build triggers
 
 There are two options to set up webhooks for automatic builds:
 
 - You can [authorize the Appcircle app](./adding-a-build-profile/#connecting-to-a-cloud-git-provider) for GitHub, Bitbucket, or GitLab repositories for direct integration. The triggers will be available for use immediately. (You can skip the next part about the webhook setup.)
 - For the repository connections through SSH, you can add the specific webhook for that build profile manually to the compatible git provider. This enables the git provider to send a POST request to Appcircle for the selected events, which you can then use for triggers.
-
-### Enabling Automatic Builds
-
-To enable automatic builds for a branch, open the [Build Configuration](./build-profile-configuration) and scroll down to the Auto Build section. Auto builds will be initiated based on the matching global trigger rules for that branch.
-
-![](<https://cdn.appcircle.io/docs/assets/image (191).png>)
 
 ### Setting Up Manual Webhooks for SSH and Public Repositories
 
@@ -71,11 +64,11 @@ You can also use[ appcircle-cli](../appcircle-api/about-the-appcircle-cli) to tr
 
 :::
 
-## Managing Triggers for Autobuilds
+## Managing Triggers for Builds
 
 To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
 
-![](<https://cdn.appcircle.io/docs/assets/image (176).png>)
+![](<https://cdn.appcircle.io/docs/assets/managing-triggers-for-builds.jpg>)
 
 The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](#wildcard-reference) for branch names to trigger builds.
 
@@ -85,7 +78,9 @@ You also need to select a workflow for each trigger and the build will be run wi
 
 Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
 
-![](<https://cdn.appcircle.io/docs/assets/image (177).png>)
+![](<https://cdn.appcircle.io/docs/assets/push-triggers-full.jpg>)
+
+You must choose a fallback configuration in case the triggered branch doesn't have a configuration. This becomes useful for wildcard triggers for newly created branches.
 
 #### Auto build pull/merge requests
 
