@@ -53,7 +53,7 @@ Auto send feature lets your applications to be distributed to specific testing g
 
 To enable the auto send feature, you need to create testing groups and add testers into these groups.
 
-<ContentRef url="./testing-groups">Testing Groups</ContentRef>
+<ContentRef url="../testing-groups">Testing Groups</ContentRef>
 
 Under the Auto Send tab in the settings, you can see the testing groups you have created earlier. Just enable each testing group you want to have your application sent automatically whenever a new version is deployed.
 
