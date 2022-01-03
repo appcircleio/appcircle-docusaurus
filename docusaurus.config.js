@@ -30,6 +30,7 @@ const config = {
           editUrl: 'https://github.com/appcircleio/appcircle-docusaurus/tree/master/',
           routeBasePath: '/',
         },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
