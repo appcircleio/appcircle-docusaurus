@@ -133,6 +133,15 @@ const config = {
         appId: 'MLYVQZS3BY',
       },
     }),
+  plugins: [
+    [
+      '@docusaurus/plugin-google-analytics',
+      {
+        trackingID: 'UA-40954643-12',
+        anonymizeIP: true,
+      },
+    ],
+  ],
 };
 
 module.exports = config;
