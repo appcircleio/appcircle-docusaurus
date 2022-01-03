@@ -49,14 +49,12 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            to: 'intro',
             position: 'left',
             label: 'Documentation',
           },
           {
-            type: 'doc',
-            docId: 'updates/release-notes',
+            to: 'updates/release-notes',
             position: 'left',
             label: 'Release Notes',
           },

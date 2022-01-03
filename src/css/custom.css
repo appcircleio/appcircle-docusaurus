@@ -28,6 +28,7 @@
   --doc-sidebar-width: 350px;
   letter-spacing: -0.02rem;
   --ifm-h1-font-size: 1.875rem;
+  --ifm-navbar-link-color: var(--ifm-color-primary-lightest);
 }
 
 h1,
