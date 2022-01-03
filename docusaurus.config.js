@@ -49,7 +49,7 @@ const config = {
         },
         items: [
           {
-            to: 'intro',
+            to: '/',
             position: 'left',
             label: 'Documentation',
           },
