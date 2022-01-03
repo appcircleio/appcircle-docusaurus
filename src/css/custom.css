@@ -27,6 +27,12 @@
     'Segoe UI Symbol';
   --doc-sidebar-width: 350px;
   letter-spacing: -0.02rem;
+  --ifm-h1-font-size: 1.875rem;
+}
+
+h1,
+.markdown h1:first-child {
+  --ifm-h1-font-size: 1.875rem;
 }
 
 .docusaurus-highlight-code-line {
@@ -248,7 +254,7 @@ iframe[src*='youtube.com'] {
 }
 
 .navbar__toggle {
-  color: #FFFFFF;  
+  color: #ffffff;
 }
 
 .navbar-sidebar {
@@ -260,9 +266,9 @@ iframe[src*='youtube.com'] {
 }
 
 html[data-theme='dark'] .rlc-container {
-  color:white;
+  color: white;
 }
 
 html[data-theme='dark'] .rlc-description {
-  color: #AAA;  ;
+  color: #aaa;
 }
