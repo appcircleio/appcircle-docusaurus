@@ -11,7 +11,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Once your build is complete, you can now download the binary file or deploy it to distribute module manually (if autodistribute is enabled, it will be sent automatically after a successful build).
 
-You can also view or download your build logs anytime.Smartface builds work very similar to any iOS or Android builds. Appcircle can build mobile applications developed with Smartface Cloud IDE flawlessly.&#x20;
+You can also view or download your build logs anytime.Smartface builds work very similar to any iOS or Android builds. Appcircle can build mobile applications developed with Smartface Cloud IDE flawlessly.
 
 Smartface projects are single-code based and can be built into both iOS and Android applications using Appcircle.
 
@@ -23,7 +23,7 @@ Please note that you need to create separate build profiles for iOS and Android 
 
 ### Build Configuration
 
-The overall workflow for Smartface builds is almost the same as the iOS and Android build steps explained earlier.&#x20;
+The overall workflow for Smartface builds is almost the same as the iOS and Android build steps explained earlier.
 
 ### Triggers
 

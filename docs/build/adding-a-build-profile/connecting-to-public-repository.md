@@ -10,7 +10,7 @@ sidebar_position: 1
 Since public repositories doesn't require any authentication or connection, the actions that can be taken with public repositories are limited. You will only have read only access towards the specified repository. Only use public repositories if you plan to use the profile for:
 
 - Testing & Previewing Appcircle
-- Benchmarking build times to see how fast we are 🚀&#x20;
+- Benchmarking build times to see how fast we are 🚀
 - Not planning to use the profile for long term
 
 #### Using a Git Provider?
@@ -47,7 +47,7 @@ Enter the URL of your repository, or continue with sample project if you plan to
 
 :::tip
 
-Public connection refers to the HTTP(s) connection by Git Providers. SSH links in public repositories are not accepted.&#x20;
+Public connection refers to the HTTP(s) connection by Git Providers. SSH links in public repositories are not accepted.
 
 :::
 

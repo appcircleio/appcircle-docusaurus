@@ -8,7 +8,7 @@ sidebar_position: 3
 
 In certain cases, the source codes of the apps may be stored in internal repositories instead of the cloud providers. If these internal repositories are accessible from the public internet, then you can use Appcircle without any additional configuration.
 
-However, if your repositories are within an internal network/behind a firewall, which is usually the case with enterprises, the network configuration of these repositories must be configured for external access.&#x20;
+However, if your repositories are within an internal network/behind a firewall, which is usually the case with enterprises, the network configuration of these repositories must be configured for external access.;
 
 Appcircle requires direct access to the repositories for the following use cases:
 

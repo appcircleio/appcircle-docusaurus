@@ -69,7 +69,7 @@ After generating the key, download the key file by pressing Download API Key nex
 
 ## Linking Appcircle with App Store Connect
 
-Adding a key to Appcircle is pretty easy. **Go to your organization** by either selecting the bottom left button from the toolbar, or picking it from the menu:&#x20;
+Adding a key to Appcircle is pretty easy. **Go to your organization** by either selecting the bottom left button from the toolbar, or picking it from the menu:
 
 ![](https://cdn.appcircle.io/docs/assets/appcircle-admin-low.jpg)
 

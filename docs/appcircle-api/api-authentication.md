@@ -33,13 +33,13 @@ A curl-based API call sample is as follows:
 
 First generate an authorization token using the Auth API with the personal access token specified as "Personal-Access-Token":
 
-```http
+```bash
 curl -X POST "https://auth.appcircle.io/auth/v1/token" -H  "accept: application/json" -H  "Content-Type: application/x-www-form-urlencoded" -d "pat=Personal-Access-Token"
 ```
 
 Then use the generated auth token specified as "Auth-Token-Goes-Here":
 
-```http
+```bash
 curl -X GET "https://api.appcircle.io/distribution/v2/profiles" -H  "accept: application/json" -H  "Authorization: Auth-Token-Goes-Here"
 ```
 

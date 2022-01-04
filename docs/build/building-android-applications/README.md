@@ -30,7 +30,7 @@ At the bottom of the config tab, you will the **Set Commit Build Status **option
 
 ![](<https://cdn.appcircle.io/docs/assets/image (8).png>)
 
-When this option is enabled, the build status for that commit is shared with the repository provider.&#x20;
+When this option is enabled, the build status for that commit is shared with the repository provider.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (213).png>)
 
@@ -84,7 +84,7 @@ Any previous build can be deployed to the Distribute module without the need for
 
 ### Environment Variables
 
-The final step on build configuration is Environment Variables.&#x20;
+The final step on build configuration is Environment Variables.
 
 Appcircle Build module is simple and powerful. You can get your builds instantly just with a few clicks, advanced management of builds is also possible with the environment variables and workflows.
 
@@ -122,7 +122,7 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build.
 
-At the build profile page, you can see your branches are listed on the left and commits on the right.&#x20;
+At the build profile page, you can see your branches are listed on the left and commits on the right.
 
 ![](https://cdn.appcircle.io/docs/assets/android-build.png)
 

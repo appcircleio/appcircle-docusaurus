@@ -46,7 +46,7 @@ Please note that Xcode will treat double slashes // as comment delimiters even i
 
 You may want to use different values of the same environment variables for different stages of your application. For example, an API endpoint may need to be different for the development and production stages.
 
-Xcode allows you to include and inherit build configuration files and use different configuration files for different targets of your project.&#x20;
+Xcode allows you to include and inherit build configuration files and use different configuration files for different targets of your project.;
 
 Here's a sample code showing importing the main `config.xcconfig` file into a `development.xcconfig` file and alter the value of a variable:
 
@@ -61,7 +61,7 @@ APPLICATION_NAME = $(inherited) DEV
 
 ### Accessing build configuration values from your project
 
-Now that we have our build configuration files ready, we need to tell our project to use the values from these files for certain variables.&#x20;
+Now that we have our build configuration files ready, we need to tell our project to use the values from these files for certain variables.;
 
 Xcode’s Info tab in the configuration window refers to the target’s `info.plist` file, which is compiled during the build process into the application bundle. Here, by simply adding a reference to the `$(API_URL)` variable, you can access its value from your bundle.
 
@@ -93,7 +93,7 @@ To be able to use these variables in your project, we need to replace the values
 
 <ContentRef url="../integrations/working-with-custom-scripts">Working with Custom Scripts</ContentRef>
 
-In our example here, we will use a Bash script to replace the values in our .xcconfig file.&#x20;
+In our example here, we will use a Bash script to replace the values in our .xcconfig file.;
 
 ```bash
 echo "API_URL : ${API_URL}"

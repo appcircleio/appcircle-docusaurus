@@ -48,7 +48,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🐞 Fixed
 
-- Fixed a bug where pasting SSH private key would add newlines to the key.&#x20;
+- Fixed a bug where pasting SSH private key would add newlines to the key.;
 - Fetch details on branch config defaults to Xcode 12.5.x instead of 12.0.
 - Custom script workflow step didn't select any language initially. It selects bash now.
 - Fixed some merge commits not triggering auto-build issue.
@@ -97,13 +97,13 @@ The default Node version which Appcircle uses to build React Native apps are upg
 
 If your app targets Android 11, please read the following documentation to enable V2 Signing in your Build Profile:
 
-https://docs.appcircle.io/build/building-android-applications/android-11-signing-for-google-play#enable-v2-sign-in-appcircle
+https://docs.appcircle.io/build/building-android-applications/android-signing-for-google-play#enable-v2-sign-in-appcircle
 
 ### 🆕 New Feature
 
 - iOS builds will be using Xcode 13 Beta 5 if 13.0.x is selected as Xcode version.
 - Appcircle is now more secure with Two Factor Authentication 🔒 Refer to [this documentation](https://docs.appcircle.io/account/my-account/authenticator-two-factor-authentication) to secure your account 🔑
-- Appcircle now supports Android V2 Signature Scheme out of the box.&#x20;
+- Appcircle now supports Android V2 Signature Scheme out of the box.;
 
 ### :muscle:Improvement
 
@@ -113,7 +113,7 @@ https://docs.appcircle.io/build/building-android-applications/android-11-signing
 
 - If you use a single profile to produce multiple apps, we have written a [new documentation](https://docs.appcircle.io/building-multiple-apps-in-one-profile) about how to utilize your Product Variants(Android) or Multiple Targets(iOS) within Appcircle!
 
-## 2.4.0 - 2021-07-30 - Xcode 13 Beta 4 & Manual Build Workflow Select&#x20;
+## 2.4.0 - 2021-07-30 - Xcode 13 Beta 4 & Manual Build Workflow Select;
 
 This release focuses on stability with optimizing the logging of the builds.
 
@@ -133,11 +133,11 @@ Within this release as prior to the previous release, Appcircle also supports [X
 
 ### 🐞 Fixed
 
-- Fixed a bug that on **Save **button not being activated while chaning config values on Store Submit&#x20;
+- Fixed a bug that on **Save **button not being activated while chaning config values on Store Submit;
 - Fixed a bug that the build tab was showing an empty column when the branch is deleted
 - \[UI] Fixed the style of Delete button on the version list of Testing Distribution
 
-### &#x20; 📑 Documentation
+### ; 📑 Documentation
 
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#artifact-storage-is-full) of how to delete old artifacts.
 - Improved [Sending the build status to repository providers](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) section for better CI/CD pipeline tracking.
@@ -154,7 +154,7 @@ Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.
 
 ### :muscle:Improvement
 
-- New profiles with Flutter iOS will have `--no-codesign`\*\* \*\*and `--verbose` parameters as default for easier debugging.&#x20;
+- New profiles with Flutter iOS will have `--no-codesign`\*\* \*\*and `--verbose` parameters as default for easier debugging.;
 - Increased allocated size over each build, now you can build bigger projects on Appcircle 🎉
 - Further optimizations towards Android side of builds. Build times are considerably faster on Android 🎉
 - The Date\&Time which Appcircle uses on their logs now will show the local time instead of the server time.
@@ -185,7 +185,7 @@ This release includes the new Xcode 13.0, a new CLI look\&feel and marketplace t
 
 Since April 26, Apple removed the support of Store Submission for pre Xcode 12.0 and iOS SDK 14.0 compiled apps. Make sure that your Xcode version is greater or equal to Xcode 12.0 under your repository config.
 
-More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](https://developer.apple.com/news/?id=ib31uj1j)&#x20;
+More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](https://developer.apple.com/news/?id=ib31uj1j);
 
 :::
 
@@ -208,7 +208,7 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 ### 🐞 Fixed
 
 - Fixed a bug that the same commit not appearing on multiple branches.
-- Fixed a bug that new SSH connections being unable to fetch config.&#x20;
+- Fixed a bug that new SSH connections being unable to fetch config.;
 
 ## 2.1.5 - 2021-05-10 - GitHub App for Repository Connections
 
@@ -221,7 +221,7 @@ This release includes the release of Appcircle GitHub app and the share app prev
 
 ### :muscle:Improvement
 
-- Improved new workflow addition&#x20;
+- Improved new workflow addition;
 - New status bar for live build tracking and quick team switching
 - Workflow and trigger user interface improvements
 
@@ -284,7 +284,7 @@ This release introduces the Appcircle API with the build module and all around e
 - Webhook support for AWS CodeCommit and Azure DevOps git repositories
 - In-browser emulator/simulator rotation and restart features
 - In-browser emulator/simulator issue reporting - You can now share screenshots and notes over email while running an app preview.
-- System message trace ID - You can now get the trace ID for each system message for easier troubleshooting.&#x20;
+- System message trace ID - You can now get the trace ID for each system message for easier troubleshooting.;
 
 ### :muscle:Improvement
 
@@ -305,9 +305,9 @@ This release introduces the two most requested features along with the enterpris
 
 ### 🆕 New Feature
 
-- Copy/Set Branch Configuration - You can now copy the configuration from a branch to other branches in the same build profile for easy replication of the same configuration.&#x20;
+- Copy/Set Branch Configuration - You can now copy the configuration from a branch to other branches in the same build profile for easy replication of the same configuration.;
 - Webhooks for Git - With the webhook support for the compatible git providers, you can enable build triggers through SSH connections without the need for app authorization
-- Advanced Role Management - You can now set submodule based access&#x20;
+- Advanced Role Management - You can now set submodule based access;
 
 ### :muscle:Improvement
 
@@ -328,7 +328,7 @@ This release includes support for Slack notifications for the major events in al
 
 ### 🆕 New Feature
 
-- Slack Notifications for All Modules - You can now get notified for Signing Identity, Distribute and Store Submit module events through Slack (in addition to the Build module).&#x20;
+- Slack Notifications for All Modules - You can now get notified for Signing Identity, Distribute and Store Submit module events through Slack (in addition to the Build module).;
 - Storage Management - You can now delete build artifacts and app versions in select plans.
 - Branch Pinning in Build Profiles - You can pin the primarily used branches in build profiles for easy access.
 
@@ -346,7 +346,7 @@ This release includes support for Slack notifications for the major events in al
 - Repository connection issues
 - App preview sharing fixes
 
-## 1.4.0 - 2020-12-08 - Auto Store Deployments and Emulator Starter Plan&#x20;
+## 1.4.0 - 2020-12-08 - Auto Store Deployments and Emulator Starter Plan;
 
 This release includes the automatic public store deployment feature and the introduction of a new Starter-based upgrade plan for higher Emulator/Simulator minutes.
 
@@ -398,7 +398,7 @@ This release is a maintenance update with all around improvements.
 
 This release includes the new in-Browser Emulator/Simulator module and Amazon Device Farm Support.
 
-### &#x20;🆕 New Feature
+### ;🆕 New Feature
 
 - Standalone Emulator for web sites and app uploads - You can now use the "Preview on Device" feature as a standalone module with support for direct uploads and web site previews.
 - Device preview share - Just like sending apps to the testers, you can now share in-browser app preview links with the testers.
@@ -420,11 +420,11 @@ This release includes the new in-Browser Emulator/Simulator module and Amazon De
 
 This release includes experience improvements along with support for Flutter Web builds.
 
-### &#x20;🆕 New Feature
+### ;🆕 New Feature
 
 - Flutter Web Support - You can now build your Flutter Web apps along with Flutter iOS and Android apps.
 - Centralized Credentials for Store Uploads - for Google Play and App Store Connect uploads, the credentials can now be saved for reuse.
-- Apple ID with App-specific password support for App Store Connect uploads.&#x20;
+- Apple ID with App-specific password support for App Store Connect uploads.;
 
 ### :muscle:Improvement
 
@@ -447,15 +447,15 @@ This is of course just a start of a long journey. Follow us on Twitter [@appcirc
 
 For any questions, feedback or feature requests, just drop us a message using the in-app messaging or raise an issue in Appcircle GitHub: [https://github.com/appcircleio](https://github.com/appcircleio)
 
-### &#x20;🆕 New Feature
+### ;🆕 New Feature
 
-- Send apps to Public Stores - You can now send your apps to App Store Connect through the App Store Connect API.&#x20;
+- Send apps to Public Stores - You can now send your apps to App Store Connect through the App Store Connect API.;
 - Theme support with Dark Mode - There is an Appcircle for everyone. You can now select between Light, Dark and the Darker modes.
 - Upload to Amazon S3 step - You can now deploy any file or folder to an Amazon S3 bucket with the new workflow step.
 
 ### :muscle:Improvement
 
-- Xcode 12 GM support&#x20;
+- Xcode 12 GM support;
 - User experience improvements in line with the theme support
 
 ### 🐞 Fixed

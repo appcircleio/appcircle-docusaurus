@@ -57,7 +57,7 @@ For this purpose, you need to get the UDID information of your test devices, reg
 
 Please note that every time you add a new device, you have to regenerate the provisioning profile and reupload it to Appcircle. (Regeneration of the associated certificate is not necessary as long as it is valid.)
 
-For more information on getting the UDID and registering it, please refer to the following Apple Developer guide. This guide walks you through all the steps necessary to get a device assigned to your Apple Developer account: [https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices)&#x20;
+For more information on getting the UDID and registering it, please refer to the following Apple Developer guide. This guide walks you through all the steps necessary to get a device assigned to your Apple Developer account: [https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices);
 
 You can use the Appcircle Distribute module to deploy apps built with an ad hoc profile. (If the receiving device is registered, of course.)
 
@@ -79,7 +79,7 @@ You can use the Appcircle Distribute module or the Enterprise App Store module (
 
 There is no need for device registration, but Apple requires the binary to be protected and not open for public download, so you can use the enrollment feature of the Appcircle Distribute module to protect the app distribution.
 
-## Using the Appcircle Signing Identities Module for iOS&#x20;
+## Using the Appcircle Signing Identities Module for iOS;
 
 ### 1. Get iOS Provisioning Profiles from Apple
 
@@ -123,7 +123,7 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 - Upload it to the Apple Developer Portal for certificate creation
 - Download your generated CER file from the Apple Developer portal
 - Upload the CER file to the signing identities module by clicking on the upload button next to the CSR file.
-- Your CSR will now be converted to a P12 file as an iOS signing certificate. (Please note that the P12 file comes with an empty password.)&#x20;
+- Your CSR will now be converted to a P12 file as an iOS signing certificate. (Please note that the P12 file comes with an empty password.);
 
 ![](https://cdn.appcircle.io/docs/assets/02-07-Generate-iOS-Cert.jpg)
 

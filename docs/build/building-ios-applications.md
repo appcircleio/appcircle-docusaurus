@@ -9,7 +9,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Building iOS Applications
 
-Building iOS applications may be complex and confusing. Appcircle will help you smooth the process and doesn't require any additional configuration files from you.&#x20;
+Building iOS applications may be complex and confusing. Appcircle will help you smooth the process and doesn't require any additional configuration files from you.
 
 Before starting your first iOS app build, please make sure you first create a build profile and connect your Git repository to your build profile. You can refer to the page below for this step:
 
@@ -111,7 +111,7 @@ Any previous build can be deployed to the Distribute module without the need for
 
 ### Environment Variables
 
-The final step on build configuration is Environment Variables.&#x20;
+The final step on build configuration is Environment Variables.
 
 Appcircle Build module is simple and powerful. You can get your builds instantly just with a few clicks, advanced management of builds is also possible with the environment variables and workflows.
 
@@ -147,7 +147,7 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build.
 
-At the build profile page, you can see your branches are listed on the left and commits on the right.&#x20;
+At the build profile page, you can see your branches are listed on the left and commits on the right.
 
 ![](https://cdn.appcircle.io/docs/assets/start-build.png)
 

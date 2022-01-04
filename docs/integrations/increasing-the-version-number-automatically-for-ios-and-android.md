@@ -6,7 +6,7 @@ sidebar_position: 5
 ---
 # Increasing the Version Number Automatically for iOS and Android
 
-Appcircle provides a reserved environment variable that returns the latest build number:&#x20;
+Appcircle provides a reserved environment variable that returns the latest build number:;
 
 `AC_BUILD_NUMBER`
 

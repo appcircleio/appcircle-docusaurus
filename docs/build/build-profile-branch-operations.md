@@ -31,7 +31,7 @@ The branch will be moved to the top with a pinned indicator. You can unpin the b
 
 Once you [configure a branch](build-profile-configuration.md), you can easily replicate the same configuration in any other branch without the need to configure each branch separately.
 
-After a branch is configured from the config screen, its status will change from "Configuration pending" to "Configured". In the configured branches, the "Copy Configuration" button will be active under the branch context menu.&#x20;
+After a branch is configured from the config screen, its status will change from "Configuration pending" to "Configured". In the configured branches, the "Copy Configuration" button will be active under the branch context menu.
 
 To copy a configuration, press the "Copy Configuration" button in the source branch context menu and then press the "Set Copied Configuration" in the destination branch context menu.
 

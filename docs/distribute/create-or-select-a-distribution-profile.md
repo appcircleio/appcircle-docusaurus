@@ -150,7 +150,7 @@ After sending your application to testing groups, you can track the actions of t
 
 ### Delete a Distribution Profile
 
-In order to remove clutter and/or free up storage, you can delete an entire profile in a single click.&#x20;
+In order to remove clutter and/or free up storage, you can delete an entire profile in a single click.;
 
 - Click on the three dot on the top right of the profile menu
 - Click `Delete`
@@ -178,7 +178,7 @@ On edit mode, you will be able to select multiple entries. Select the versions y
 
 #### Delete a Single Distribution Profile Version
 
-As an alternative method to bulk delete versions, you can delete a single version at the three dot menu on the top right of the screen.&#x20;
+As an alternative method to bulk delete versions, you can delete a single version at the three dot menu on the top right of the screen.;
 
 ![](<https://cdn.appcircle.io/docs/assets/image (205).png>)
 

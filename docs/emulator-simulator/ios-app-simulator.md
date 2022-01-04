@@ -53,4 +53,4 @@ If your app is not compatible with the x86 architecture or if it is one of the b
 
 ![](<https://cdn.appcircle.io/docs/assets/image (121).png>)
 
-&#x20;
+;

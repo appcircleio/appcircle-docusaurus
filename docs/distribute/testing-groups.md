@@ -9,7 +9,7 @@ sidebar_position: 2
 
 Testing group helps you manage and group your testers and distribute different versions of different applications based on your testing needs like OS versions, features and devices etc.
 
-With the testing groups feature, you can define various groups for different audiences. For instance, in an enterprise, you may want to create groups such as testing team, marketing, management, and any other functional group. For an app developer, testing groups can be created for customers and apps. This allows streamlined management of binary sharing flows. You can send apps manually to these groups or associate different distribution profiles with different groups for auto send.&#x20;
+With the testing groups feature, you can define various groups for different audiences. For instance, in an enterprise, you may want to create groups such as testing team, marketing, management, and any other functional group. For an app developer, testing groups can be created for customers and apps. This allows streamlined management of binary sharing flows. You can send apps manually to these groups or associate different distribution profiles with different groups for auto send.;
 
 You can list, add, edit and manage your groups and testers from this module.
 

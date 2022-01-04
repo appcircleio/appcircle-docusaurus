@@ -9,7 +9,7 @@ sidebar_position: 8
 
 If your app supports Flutter Web, you can also build the Flutter web app along with the [Flutter iOS or Android build](building-flutter-applications.md).
 
-With Appcircle, you can manage your entire Flutter build workflows both for mobile and web without the need for any third party solutions.&#x20;
+With Appcircle, you can manage your entire Flutter build workflows both for mobile and web without the need for any third party solutions.
 
 Flutter Web Build is available as a workflow step in the workflow marketplace. Just configure your project as you would for iOS or Android and add the Flutter Build for Web step anywhere after the Flutter Install step to include a web build in the workflow.
 

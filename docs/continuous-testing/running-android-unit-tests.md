@@ -19,7 +19,7 @@ We will create a local unit test here as an example and show you how to run the 
 
 First, please add test dependencies to your `build.gradle` file:
 
-```java
+```groovy
 dependencies {
     // Required for local unit tests (JUnit 4 framework)
     testImplementation 'junit:junit:4.12'

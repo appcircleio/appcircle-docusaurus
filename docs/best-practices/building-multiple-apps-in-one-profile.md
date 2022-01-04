@@ -48,7 +48,7 @@ This method will not be required in common scenarios. Unless you have a special 
 
 :::
 
-For example, the script below will change the variant if the built branch is `release` .&#x20;
+For example, the script below will change the variant if the built branch is `release` .
 
 :::tip
 
@@ -78,7 +78,7 @@ The assets that you can directly change with the Schemes
 
 <!-- ![](<https://cdn.appcircle.io/docs/assets/image (216).png>) -->
 
-&#x20;For more information about iOS Multiple Targets, navigate to the [Apple Help Documentation](https://help.apple.com/xcode/mac/current/#/dev38419576c)&#x20;
+For more information about iOS Multiple Targets, navigate to the [Apple Help Documentation](https://help.apple.com/xcode/mac/current/#/dev38419576c)
 
 ###
 

@@ -39,7 +39,7 @@ Alternatively, you can accomplish the same within environment variables. The env
 
 Alternatively, you can use `build.gradle` instead to specify the signing you will use.
 
-The current Android Sign step in Appcircle utilizes [jarsigner to sign apps](https://developer.android.com/studio/build/building-cmdline#bundle_build_gradle) with the APK Signature Scheme v1 and the alternative \_apksigner \_cannot be used to sign app bundles (AAB).
+The current Android Sign step in Appcircle utilizes [jarsigner to sign apps](https://developer.android.com/studio/build/building-cmdline#bundle_build_gradle) with the APK Signature Scheme v1 and the alternative _apksigner_ cannot be used to sign app bundles (AAB).
 
 The solution for this is to utilize signing in gradle within the app. A sample build.gradle file that utilizes APK Signature Scheme v2 can be found at [https://github.com/appcircleio/appcircle-sample-android/blob/v2-sign/app/build.gradle](https://github.com/appcircleio/appcircle-sample-android/blob/v2-sign/app/build.gradle) and the sample code can be seen below:
 

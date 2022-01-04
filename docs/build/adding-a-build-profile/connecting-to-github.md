@@ -15,7 +15,7 @@ In such a case, only the selected repositories will be listed. To be able to vie
 
 :::info
 
-For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. GitHub App is more secure and newer way implemented by GitHub to external apps to communicate within GitHub in a better fashion.&#x20;
+For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. GitHub App is more secure and newer way implemented by GitHub to external apps to communicate within GitHub in a better fashion.
 
 :::
 

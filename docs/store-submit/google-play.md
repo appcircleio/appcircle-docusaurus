@@ -16,7 +16,7 @@ You can send the same binary for testing to a pre-release track or to the produc
 Before uploading a binary to the store, please make sure that an application listing is created in Google Play and the initial binary is manually uploaded with the same keystore and the application ID (package name). Otherwise, the store upload process will fail. This is a known limitation of Google Play, which is in place for security purposes.
 
 You also need to have a Google Service Account and its key as a JSON file. Please refer to the following document for more information about service accounts:\
-&#x20;[https://developers.google.com/android-publisher/getting_started#using_a_service_account](https://developers.google.com/android-publisher/getting_started#using_a_service_account)
+;[https://developers.google.com/android-publisher/getting_started#using_a_service_account](https://developers.google.com/android-publisher/getting_started#using_a_service_account)
 
 ### Adding a Google Play Developer API Key
 
@@ -30,7 +30,7 @@ Then enter a user-friendly name to identify the key in the lists and press save.
 
 ### Deploying the Binary from the Distribute Module
 
-You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).&#x20;
+You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).;
 
 Select a binary in the list and press "Send to Store Submit Module" from the top left menu. The package name of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 

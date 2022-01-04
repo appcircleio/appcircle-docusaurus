@@ -23,7 +23,7 @@ Before uploading a binary to the store, please make sure that an application lis
 
 You also need to provide either:
 
-- &#x20;An App Store Connect API Key as a P8 file along with the key ID and the issuer ID. This is the recommended authentication method. Please refer to the following document for more information about the App Store Connect API key:\
+- ;An App Store Connect API Key as a P8 file along with the key ID and the issuer ID. This is the recommended authentication method. Please refer to the following document for more information about the App Store Connect API key:\
   [https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api)
 
 or
@@ -58,7 +58,7 @@ Then enter a user-friendly name to identify the credentials in the lists and pre
 
 ### Deploying the Binary from the Distribute Module
 
-You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for App Store (signed with an App Store Distribution certificate).&#x20;
+You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for App Store (signed with an App Store Distribution certificate).;
 
 Select a binary in the list and press "Send to Store Submit Module" from the top left menu. The bundle ID of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
@@ -78,11 +78,11 @@ There are three actions available for each version in the version list. The firs
 
 :::info
 
-Both App Store Connect and TestFlight use the same binary pool, so once you send a binary to any of the destinations, it can be used across App Store Connect for testing and app releases.&#x20;
+Both App Store Connect and TestFlight use the same binary pool, so once you send a binary to any of the destinations, it can be used across App Store Connect for testing and app releases.;
 
 :::
 
-When you press the "Upload to App Store Connect" button, you will be prompted to select an authentication method: with an App Store Connect API Key or with an Apple Developer ID using an app-specific password.&#x20;
+When you press the "Upload to App Store Connect" button, you will be prompted to select an authentication method: with an App Store Connect API Key or with an Apple Developer ID using an app-specific password.;
 
 When you select an option, if you don't have a previously saved API key or Apple ID, you will be prompted to add one. If you have saved keys or IDs, you can select them from the list.
 

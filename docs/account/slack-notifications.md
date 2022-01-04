@@ -35,7 +35,7 @@ To enable notifications for a specific event, first select the Slack channel tha
 
 ### Disconnecting Slack
 
-If you want to disconnect or reauthorize the Slack connection, scroll down to the end of the management screen and press the "Disconnect" button.&#x20;
+If you want to disconnect or reauthorize the Slack connection, scroll down to the end of the management screen and press the "Disconnect" button.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (137).png>)
 

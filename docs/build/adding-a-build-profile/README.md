@@ -19,7 +19,7 @@ The Build Module is the first step to automate your CI/CD processes via Appcircl
 
 ## Create a build profile (app)
 
-A build profile is an app that you can build in a target OS and framework.&#x20;
+A build profile is an app that you can build in a target OS and framework.
 
 To create your first build profile, click on the orange "Add New" button on the top left of the screen.
 
@@ -67,7 +67,7 @@ In order to delete a build, simply click on the Three Dot and click delete.
 
 After the prompt, the profile will be deleted.
 
-In order to free up storage in your organization, you should also remove the other references pointing to the artifact. In example, if you have the same artifact on the testing distribution, you should also delete those artifacts as well.&#x20;
+In order to free up storage in your organization, you should also remove the other references pointing to the artifact. In example, if you have the same artifact on the testing distribution, you should also delete those artifacts as well.
 
 Is your artifact storage full? Learn more about freeing up space [here](../../troubleshooting-faq/common-issues.md#artifact-storage-is-full).
 

@@ -23,7 +23,7 @@ Once the service account is created, click on the three dot menu next to the ser
 
 ![](<https://cdn.appcircle.io/docs/assets/image (50).png>)
 
-Select the key format as "JSON" and download the created key. We will be using this key for Appcircle to be able to deploy apps to Firebase Test Lab.&#x20;
+Select the key format as "JSON" and download the created key. We will be using this key for Appcircle to be able to deploy apps to Firebase Test Lab.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (51).png>)
 

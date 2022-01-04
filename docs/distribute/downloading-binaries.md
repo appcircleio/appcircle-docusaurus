@@ -13,7 +13,7 @@ For iOS and Android, the testers can login from the link shared and then view al
 
 When a build is shared with testers, each tester will receive an email with a link to download the binary file and other details like version number and release notes.
 
-When the link is clicked, users will then be redirected to the distribution portal.&#x20;
+When the link is clicked, users will then be redirected to the distribution portal.;
 
 If your distribution requires enrollment, users will be asked to create an enrollment account. If your distribution requires a login, users will be asked to log into the distribution portal.
 

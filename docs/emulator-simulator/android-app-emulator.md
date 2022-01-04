@@ -9,7 +9,7 @@ sidebar_position: 1
 
 Appcircle online Android Emulator allows you to upload APK files and run them on an Android device in the browser without the need for Android Studio or any downloads.
 
-To use the Android Emulator, you need to have an APK file that is compatible with the x86 architecture.&#x20;
+To use the Android Emulator, you need to have an APK file that is compatible with the x86 architecture.;
 
 To start, click the Emulator/Simulator button from the left menu and then click the "Upload an APK" button.
 
@@ -41,4 +41,4 @@ If your app is not compatible with the x86 architecture or if it is one of the b
 
 ![](<https://cdn.appcircle.io/docs/assets/image (111).png>)
 
-&#x20;
+;

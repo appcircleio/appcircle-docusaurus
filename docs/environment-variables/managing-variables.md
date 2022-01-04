@@ -13,13 +13,13 @@ To create an environment variable group, select Environment Variables from the b
 
 ![](<https://cdn.appcircle.io/docs/assets/image (76).png>)
 
-### &#x20;Adding key and text-based value pairs
+### Adding key and text-based value pairs
 
 To add an environment variable to the group, select the "Text" tab from the top and use the inputs below. Enter a key name, then enter the value for the key and press enter.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (77).png>)
 
-You can add as many environment variables as you need.&#x20;
+You can add as many environment variables as you need.
 
 :::info
 
@@ -42,6 +42,13 @@ Then press add to upload the file.
 ![](<https://cdn.appcircle.io/docs/assets/image (79).png>)
 
 ![](<https://cdn.appcircle.io/docs/assets/image (80).png>)
+
+:::info
+
+When you upload a file as an environment variable, file name is not preserved. The reason of this to prevent file name conflicts. You can upload different files with same name and can use their keys to refer them. You need to use your key to find the location of this file and then you can read the contents of this file.
+
+:::
+
 
 ###
 

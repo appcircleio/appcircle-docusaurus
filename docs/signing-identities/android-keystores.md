@@ -35,7 +35,7 @@ Builds with debug type will be signed with a default keystore and don't need a k
 
 ### In-Project Keystore Usage
 
-You can alternatively have your signing details stored in your Gradle file and use your in-project keystore to sign your app.&#x20;
+You can alternatively have your signing details stored in your Gradle file and use your in-project keystore to sign your app.;
 
 Go to build workflow editor and disable Sign Application step to use your keystore in your Gradle file.
 

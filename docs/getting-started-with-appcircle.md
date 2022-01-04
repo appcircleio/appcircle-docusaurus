@@ -27,7 +27,7 @@ A basic lifecycle of a mobile application can be broken down into 5 steps:
 
 Your mobile applications must be digitally signed to be able to distributed, tested and, submitted to app stores.
 
-For iOS applications, you must have a signing certificate and provisioning profiles to be able to run your application on real devices and submit them to Apple Appstore.&#x20;
+For iOS applications, you must have a signing certificate and provisioning profiles to be able to run your application on real devices and submit them to Apple Appstore.
 
 <ContentRef url="signing-identities/ios-certificates-and-provisioning-profiles">
   iOS Certificates &amp; Provisioning Profiles
@@ -43,7 +43,7 @@ For Android applications, you need to create a keystore file to sign your applic
 
 Building your mobile applications is very easy with Appcircle no matter what platform and language you are using. You can connect your repositories from GitHub, Bitbucket, or GitLab to Appcircle.
 
-You can also connect to public repositories directly or use SSH for custom repository connections. If you want to try out Appcircle, you can find sample apps for different frameworks in [Appcircle GitHub](https://github.com/appcircleio?q=sample).&#x20;
+You can also connect to public repositories directly or use SSH for custom repository connections. If you want to try out Appcircle, you can find sample apps for different frameworks in [Appcircle GitHub](https://github.com/appcircleio?q=sample).
 
 Appcircle will fetch all your branches and commits in your repository and lets you build any commit you want to test your application.
 
@@ -67,9 +67,9 @@ You can also automate your build process by telling Appcircle to automatically b
 
 ### Distribute Your Applications
 
-Distribution is a very major and important step for testing and deploying a mobile application.&#x20;
+Distribution is a very major and important step for testing and deploying a mobile application.
 
-You can use Preview On Device feature to simulate your app on a real device and see how everything works.&#x20;
+You can use Preview On Device feature to simulate your app on a real device and see how everything works.
 
 <ContentRef url="distribute/preview-on-device">
   Preview on Device (Emulator/Simulator) in the Distribute Module
@@ -85,7 +85,6 @@ If you have a team of testers, you can create testing groups and distribute buil
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 
-&#x20;
 
 ### Submit to the Public App Stores
 

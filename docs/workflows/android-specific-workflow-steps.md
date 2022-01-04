@@ -49,7 +49,7 @@ Builds your test applications with gradlew. Runs `./gradlew clean ${module}:asse
 
 ## Android Unit Tests
 
-This step runs the unit tests of the project.&#x20;
+This step runs the unit tests of the project.;
 
 [https://github.com/appcircleio/appcircle-android-unit-test-component](https://github.com/appcircleio/appcircle-android-unit-test-component)
 

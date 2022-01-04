@@ -9,7 +9,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Workflow Marketplace
 
-You can find the full list of available workflow steps in our workflow marketplace at:&#x20;
+You can find the full list of available workflow steps in our workflow marketplace at:;
 
 https://appcircle.io/workflow-marketplace/
 

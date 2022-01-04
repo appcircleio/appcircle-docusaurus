@@ -33,11 +33,11 @@ Appcircle supports using a 3rd party computer to perform builds. You can create 
 
 ### Available Xcode Versions
 
-Our macOS build agents have Xcode versions 13.2.x, 13.1.x, 13.0, 12.5, 12.4, 12.3, 12.2, 12.1, 12.0, 11.7, 11.6, 11.5, 11.4, 11.3, 11.2, 11.1 and 11.0 available.&#x20;
+Our macOS build agents have Xcode versions 13.2.x, 13.1.x, 13.0, 12.5, 12.4, 12.3, 12.2, 12.1, 12.0, 11.7, 11.6, 11.5, 11.4, 11.3, 11.2, 11.1 and 11.0 available.;
 
 ### macOS Build Agent Stacks
 
-There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.&#x20;
+There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.;
 
 Here are some of the most important packages installed in our macOS agents used for iOS builds:
 

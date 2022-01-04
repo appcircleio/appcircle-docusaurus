@@ -13,7 +13,7 @@ Android developers can use environment variables using Gradle’s module-level b
 
 In the `android` block of your `build.gradle` file, specify a new `buildConfigField` method as shown below:
 
-```java title="build.gradle"
+```groovy title="build.gradle"
 android {
    defaultConfig {
        // Create a new variable here to be used in your code
@@ -58,7 +58,7 @@ Don’t forget to tell your build configuration to use the proper environment va
 
 ![](<https://cdn.appcircle.io/docs/assets/Screenshot 2020-04-22 10.29.27.png>)
 
-Appcircle will use the values from the environment variables from the designated group for the branch you are building your application from.&#x20;
+Appcircle will use the values from the environment variables from the designated group for the branch you are building your application from.;
 
 During the build process, `build.gradle` file in your module will use the values from the environment variables and your application will use these values during the runtime:
 

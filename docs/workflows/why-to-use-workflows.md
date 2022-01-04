@@ -53,7 +53,7 @@ You can customize each step for specific configurations with your application st
 
 Appcircle's powerful Workflow Editor has a built-in Workflow Marketplace that allows you to select and insert an unlimited amount of steps to your workflow.
 
-You can find the full list of available workflow steps in our workflow marketplace at:&#x20;
+You can find the full list of available workflow steps in our workflow marketplace at:;
 
 [https://appcircle.io/workflow-marketplace/](https://appcircle.io/workflow-marketplace/)
 
@@ -79,7 +79,7 @@ The first three items are common for all steps and they are set individually for
 
 - **Step Execution Active:** To enable/disable the step execution without removing it from the workflow
 - **Continue with the next step even if this step fails:** If a step is optional or if its result should not cause a build failure, you can select this option to continue the workflow in case of the failure of this specific step. In the default workflows, this option is turned on for certain steps.
-- **Workflow Step Version: **You can select a specific version of a step with which to execute your build. If you select a version with an asterisk (\*), you will receive the minor updates to the workflow step automatically. The major versions may include added or removed input fields and manual version selection is required for major version updates.&#x20;
+- **Workflow Step Version: **You can select a specific version of a step with which to execute your build. If you select a version with an asterisk (\*), you will receive the minor updates to the workflow step automatically. The major versions may include added or removed input fields and manual version selection is required for major version updates.;
 
 The items in the "Inputs" section are specific to that step. The reserved environment variables are assigned to these fields by default and the values of these variables are set in the build configuration.
 

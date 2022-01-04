@@ -6,7 +6,7 @@ sidebar_position: 2
 ---
 # Android Build Infrastructure
 
-For each Android build, Appcircle creates a brand new virtual machine running Debian Linux (v. 10).&#x20;
+For each Android build, Appcircle creates a brand new virtual machine running Debian Linux (v. 10).;
 
 Virtual machines are created and they become ready for build within seconds.
 
@@ -27,7 +27,7 @@ Appcircle supports using a 3rd party computer to perform builds. You can create 
 
 ### Linux image stacks
 
-There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.&#x20;
+There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.;
 
 Here are some most important packages installed in our Linux images used for Android builds:
 

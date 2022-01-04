@@ -7,6 +7,27 @@ sidebar_position: 2
 
 # Custom Script Samples
 
+### Changing JAVA version
+
+If you want to change the JAVA version for your Android project, you can achieve this by changing the JAVA_HOME environment variable. Appcircle currently has OpenJDK 8(default) and OpenJDK 11. You can use the below custom script before your build step for this task.
+Appcirle Android build uses OpenJDK 8 as a default. Build machines also have OpenJDK 11 as well. You can use the below custom script to change your JAVA_HOME environment variable.
+
+```bash
+echo "Default JAVA "$JAVA_HOME
+echo "OpenJDK 8 "$JAVA_HOME_8_X64
+echo "OpenJDK 11 "$JAVA_HOME_11_X64
+
+# Change JAVA_HOME to OPENJDK 11
+echo "JAVA_HOME=$JAVA_HOME_11_X64" >> $AC_ENV_FILE_PATH
+```
+
+Create a custom script like above and put it above your Android build step.
+
+![](<https://cdn.appcircle.io/docs/assets/change-java.png>)
+
+
+![](<https://cdn.appcircle.io/docs/assets/change-java-wf.png>)
+
 ### Deploying Apps to Firebase App Distribution
 
 Appcircle Distribute module provides an integrated and automated enterprise-grade solution for distributing apps to the testers, but if you want to use other solutions for app distribution, you can do so with custom scripts. You can use the following script below to deploy apps to Firebase App Distribution automatically from the Appcircle Build module.

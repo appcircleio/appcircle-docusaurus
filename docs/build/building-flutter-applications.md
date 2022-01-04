@@ -37,8 +37,6 @@ You can also select a specific Xcode version if you have certain dependencies or
 
 ![](<https://cdn.appcircle.io/docs/assets/image (2).png>)
 
-### &#x20;
-
 ### Build Configuration for Flutter Android applications 
 
 Click on the gear icon on the top right to access the build configuration. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
@@ -112,8 +110,6 @@ Finally, check Auto Distribute if you want your build to be deployed to the Test
 Any previous build can be deployed to the Distribute module without the need for rebuilding.
 
 :::
-
-### &#x20;<
 
 ### Environment Variables
 

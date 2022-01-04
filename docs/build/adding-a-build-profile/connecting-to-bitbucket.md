@@ -40,7 +40,7 @@ Fill the relevant information about your Bitbucket self-hosted module. If you ar
 
 ### Connection Notice
 
-For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the internet.&#x20;
+For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the internet.
 
 :::
 

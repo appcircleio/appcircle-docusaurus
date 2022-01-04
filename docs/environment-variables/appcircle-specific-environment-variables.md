@@ -51,6 +51,8 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_ANDROID\_ALIAS\_PASSWORD     | Selected alias password                  |
 | AC\_V2\_SIGN                     | Specifies if signing will use V2         |
 | AC\_ANDROID\_APP\_ANALYSIS\_PATH | Location of the app analyzer JSON file   |
+| JAVA\_HOME\_8\_X64               | OpenJDK 8 Location                       |
+| JAVA\_HOME\_11\_X64              | OpenJDK 11 Location                      |
 
 ### iOS specific environment variables
 

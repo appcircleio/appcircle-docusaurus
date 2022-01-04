@@ -18,7 +18,7 @@ Appcircle is free to register and use with full features at [https://appcircle.i
 
 :::
 
-### See something that's not documented here?&#x20;
+### See something that's not documented here?
 
 Send us a request and we will get it in: [Appcircle Support](https://appcircle.io/support/)
 

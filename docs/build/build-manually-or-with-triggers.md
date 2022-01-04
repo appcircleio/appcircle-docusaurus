@@ -37,7 +37,7 @@ There are two options to set up webhooks for automatic builds:
 
 For repositories connected through SSH, you can set up triggers with webhooks in compatible repository providers.
 
-When you connect a repository through SSH or through a public URL, the Webhook URL option will be enabled in the context menu of the build profile, accessible from the top of the profile details.&#x20;
+When you connect a repository through SSH or through a public URL, the Webhook URL option will be enabled in the context menu of the build profile, accessible from the top of the profile details.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (174).png>)
 
@@ -55,7 +55,7 @@ Please refer to the following guides to set up webhooks in various git providers
 - Bitbucket: [https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/](https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/)
 - GitLab: [https://docs.gitlab.com/ee/user/project/integrations/webhooks.html](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
 - AWS CodeCommit: [https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify.html](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify.html)
-- Azure DevOps: [https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops](https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops)&#x20;
+- Azure DevOps: [https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops](https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops)
 
 In essence, you need to find the Webhooks section under the repository settings and paste the payload URL. You can then select the relevant events for the triggers, some examples of which are branch/tag creation/removal, pull requests, and pushes.
 
@@ -107,8 +107,8 @@ If you set up multiple triggers, specific branch definitions will take priority 
 
 Assume that you have a branch named `development` with three push triggers
 
-- Trigger branch: `*` -> Trigger Workflow: Workflow 1&#x20;
-- Trigger branch: `development` -> Trigger Workflow: Workflow 2&#x20;
+- Trigger branch: `*` -> Trigger Workflow: Workflow 1
+- Trigger branch: `development` -> Trigger Workflow: Workflow 2
 - Trigger branch: `develop*` -> Trigger Workflow: Workflow 3
 
 When there is a push or PR for the development branch, the second trigger (the one with Workflow 2) will be used to initiate a build.

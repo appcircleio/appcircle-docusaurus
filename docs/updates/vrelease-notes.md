@@ -14,15 +14,15 @@ This is of course just a start of a long journey. Follow us on Twitter [@appcirc
 
 For any questions, feedback or feature requests, just drop us a message using the in-app messaging or raise an issue in Appcircle GitHub: [https://github.com/appcircleio](https://github.com/appcircleio)
 
-### &#x20;🆕 New Feature
+### ;🆕 New Feature
 
-* Send apps to Public Stores - You can now send your apps to App Store Connect through the App Store Connect API.&#x20;
+* Send apps to Public Stores - You can now send your apps to App Store Connect through the App Store Connect API.;
 * Theme support with Dark Mode - There is an Appcircle for everyone. You can now select between Light, Dark and the Darker modes.
 * Upload to Amazon S3 step - You can now deploy any file or folder to an Amazon S3 bucket with the new workflow step.
 
 ### :muscle:Improvement
 
-* Xcode 12 GM support&#x20;
+* Xcode 12 GM support;
 * User experience improvements in line with the theme support
 
 ### 🐞 Fixed
@@ -35,7 +35,7 @@ For any questions, feedback or feature requests, just drop us a message using th
 
 This release includes the last mile changes in the platform.
 
-### &#x20;🆕 New Feature
+### ;🆕 New Feature
 
 * GitLab Support - You can now connect to your GitLab repositories just like GitHub and BitBucket.
 * Plan Upgrades - The plan upgrades are now available. You can upgrade to a higher [Appcircle plan](https://appcircle.io/pricing) of your choosing for larger workloads and organizations. (The free tier is being preserved as is.)
@@ -45,7 +45,7 @@ This release includes the last mile changes in the platform.
 ### :muscle:Improvement
 
 * Enriched Slack message format
-* AAB file support in the Distribute module for Google Play uploads&#x20;
+* AAB file support in the Distribute module for Google Play uploads;
 
 ### 🐞 Fixed
 
@@ -58,7 +58,7 @@ This release includes the last mile changes in the platform.
 
 This release brings in the initial versions of some of the long-awaited features.
 
-### &#x20;🆕 New Feature
+### ;🆕 New Feature
 
 * Send apps to Public Stores - You can now send your apps to Google Play Dashboard (App Store Connect support coming in the next release)
 * Slack notifications - You can now send build start and end status to a selected Slack channel
@@ -80,7 +80,7 @@ This release brings in the initial versions of some of the long-awaited features
 
 This is a feature release along with a specific focus on storage-related improvements.
 
-### &#x20;🆕 New Feature
+### ;🆕 New Feature
 
 * New log viewer - The log viewer is redesigned with a new viewer engine. It's now faster and less resource-consuming and provides an improved viewing experience with
   * Step-based outline
@@ -105,10 +105,10 @@ This is a feature release along with a specific focus on storage-related improve
 
 This is a maintenance release with under-the-hood experience and performance improvements.
 
-### &#x20;🆕 New Feature
+### ;🆕 New Feature
 
 * File support in environment variables - You can now add files as environment variables and use them in the build workflows (e.g. key files in JSON format or scripts)
-* Build status in the branch list - You can now see the last build status of each branch in the branch list&#x20;
+* Build status in the branch list - You can now see the last build status of each branch in the branch list;
 
 :::info
 
@@ -141,11 +141,11 @@ This update also introduces new ways to manage workflow steps and user experienc
 
 ### 🆕 New Feature
 
-* New infrastructure - The platform is moved to the final release environment. You will be getting all around higher performance and responsiveness.&#x20;
-* Organization and team management - In our last release, this feature was in the preview stage and now it is widely available with fixes and polishes. You can now create or join organizations and collaborate on the same workspace with multiple members.&#x20;
+* New infrastructure - The platform is moved to the final release environment. You will be getting all around higher performance and responsiveness.;
+* Organization and team management - In our last release, this feature was in the preview stage and now it is widely available with fixes and polishes. You can now create or join organizations and collaborate on the same workspace with multiple members.;
 * Build step skipping controls - To avoid complete build failures in case of optional steps, you can now set each step individually to "skip to the next step if it fails".
 
-### &#x20;:muscle:Improvement
+### ;:muscle:Improvement
 
 * User interface improvements - we made small changes to improve your experience further
 * Improvements in the workflow steps to minimize potential failures
@@ -166,7 +166,7 @@ This update comes with the Xcode 12 Beta support right after its announcement an
 * Organization and team management (early access feature) - You can now create or join organizations and collaborate on the same workspace with multiple members. This feature is still in early access mode, so you may encounter issues with certain use cases.
 * Sample projects in the build module - When connecting to a repository, you can directly select a  sample Appcircle project if you want to test drive the platform or if you don't have a repository in hand.
 
-### &#x20;:muscle:Improvement
+### ;:muscle:Improvement
 
 * User interface improvements - we made small changes to improve your experience further
 * Framework updates and the related under-the-hood improvements

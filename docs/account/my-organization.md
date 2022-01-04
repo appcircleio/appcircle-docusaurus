@@ -11,9 +11,9 @@ Organizations in Appcircle are separate units with separate "workspaces" that al
 
 Each user is the owner of their individual organization by default. You can create additional organizations as needed or join an existing one.
 
-&#x20;All apps (build profiles, distribution profiles, etc.) created under an organization is accessible by all the members of that organization.
+All apps (build profiles, distribution profiles, etc.) created under an organization is accessible by all the members of that organization.
 
-Billing management is also per-organization basis so that you can work with different plans with a single account. (e.g. You can be a member of two different organizations at the same time: an individual organization for personal projects under the free plan and another organization for your company under the enterprise plan.)&#x20;
+Billing management is also per-organization basis so that you can work with different plans with a single account. (e.g. You can be a member of two different organizations at the same time: an individual organization for personal projects under the free plan and another organization for your company under the enterprise plan.)
 
 :::info
 

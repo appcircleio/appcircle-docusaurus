@@ -15,7 +15,7 @@ To start, click the Emulator/Simulator button from the left menu and then click 
 
 ![](<https://cdn.appcircle.io/docs/assets/image (123).png>)
 
-&#x20;Enter the web site URL to access and click on the "Launch Simulator" button.
+;Enter the web site URL to access and click on the "Launch Simulator" button.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (124).png>)
 

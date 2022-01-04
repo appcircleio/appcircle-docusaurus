@@ -48,7 +48,7 @@ To enable triggered auto builds with webhooks for SSH repository connections, pl
 
 ### Connection Notice
 
-For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the internet.&#x20;
+For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the internet.
 
 :::
 
