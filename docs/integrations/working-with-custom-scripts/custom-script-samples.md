@@ -21,12 +21,18 @@ echo "OpenJDK 11 "$JAVA_HOME_11_X64
 echo "JAVA_HOME=$JAVA_HOME_11_X64" >> $AC_ENV_FILE_PATH
 ```
 
-Create a custom script like above and put it above your Android build step.
+Create a custom script like above and put it **above** your Android build step.
 
 ![](<https://cdn.appcircle.io/docs/assets/change-java.png>)
 
 
 ![](<https://cdn.appcircle.io/docs/assets/change-java-wf.png>)
+
+:::info
+
+Please be aware that this custom script affects any step that comes after. Therefore you should use this step as a standalone step not as a part of any custom script.
+
+:::
 
 ### Deploying Apps to Firebase App Distribution
 

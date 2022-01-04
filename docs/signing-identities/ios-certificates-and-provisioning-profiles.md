@@ -159,6 +159,12 @@ For both iOS or Android build projects, you need to assign your signing identiti
 
 ![](https://cdn.appcircle.io/docs/assets/03-02-iOS-Build-Signing.jpg)
 
+:::warning
+
+If your app has multiple targets such as watchOS, Widgets etc, you need to add all the provisioning profiles for every bundle id. Click **+** button and add related bundle id and provisioning profile.
+
+:::
+
 :::info
 
 [Have questions? Contact us here.](https://appcircle.io/support/)
