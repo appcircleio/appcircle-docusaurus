@@ -11,6 +11,12 @@ Appcircle supports sending APK and AAB binaries to Google Play Console through t
 
 You can send the same binary for testing to a pre-release track or to the production track.
 
+:::info
+
+Store upload will use an account's build time and concurrency
+:::
+
+
 ### Prerequisites
 
 Before uploading a binary to the store, please make sure that an application listing is created in Google Play and the initial binary is manually uploaded with the same keystore and the application ID (package name). Otherwise, the store upload process will fail. This is a known limitation of Google Play, which is in place for security purposes.

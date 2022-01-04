@@ -31,6 +31,13 @@ Once your build profile is created, click on it and connect your Git repository.
 
 Build configuration options are very similar to native iOS or Android applications. You can select configuration details, build triggers, signing identities and distribution options.
 
+### Private Modules
+
+If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
+
+<ContentRef url="./adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+
+
 ### Build Configuration for React Native iOS applications
 
 Click on the gear icon on top right to access the build configuration. The first step will be the enter project details. You can enter details manually or click on the Fetch button to retrieve them from your project.

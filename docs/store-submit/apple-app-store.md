@@ -17,6 +17,12 @@ Both App Store Connect and TestFlight use the same binary pool, so once you send
 
 :::
 
+:::info
+
+Store upload will use an account's build time and concurrency
+:::
+
+
 ### Prerequisites
 
 Before uploading a binary to the store, please make sure that an application listing is created in App Store Connect. Otherwise, the store upload process will fail.

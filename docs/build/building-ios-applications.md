@@ -43,6 +43,12 @@ Please don't forget to add additional scheme files to your version control.
 
 :::
 
+### Private Modules
+
+If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
+
+<ContentRef url="./adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+
 #### Selecting the Xcode Version and Switching to the Xcode Beta
 
 Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in Build Configuration window.

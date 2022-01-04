@@ -24,6 +24,12 @@ First, we need to set up the build configuration.
 
 Click on the gear icon on the top right to access the build configuration. First step will be the build project details. You can enter details manually or click on the Fetch Details button to retrieve them from your project.
 
+### Private Modules
+
+If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
+
+<ContentRef url="../adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+
 ### Sending the Build Status to the Repository Providers
 
 At the bottom of the config tab, you will the **Set Commit Build Status **option.
