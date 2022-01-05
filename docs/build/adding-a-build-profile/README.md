@@ -71,8 +71,8 @@ In order to free up storage in your organization, you should also remove the oth
 
 Is your artifact storage full? Learn more about freeing up space [here](../../troubleshooting-faq/common-issues.md#artifact-storage-is-full).
 
-:::info
+### Need help?
 
-[Have questions? Contact us here.](https://appcircle.io/support/)
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
 
-:::
+https://join.slack.com/t/appcircleio/signup

@@ -73,3 +73,9 @@ AWS CodeCommit requires the creation of a dedicated user for repository connecti
 
 - Once you login with the newly generated user and copy the repository URL in SSH format, you will receive URL as follows: `ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/MyDemoRepo`
 - For the SSH connection to be initialized, you need to add the public key to your URL to have it in the following format, which then can be entered in Appcircle to be used in SSH connections.`ssh://Your-SSH-Key-ID@git-codecommit.us-east-2.amazonaws.com/v1/repos/MyDemoRepo`
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup

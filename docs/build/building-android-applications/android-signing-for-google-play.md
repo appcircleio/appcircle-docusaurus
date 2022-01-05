@@ -63,3 +63,9 @@ buildTypes {
     }
 }
 ```
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup

@@ -35,7 +35,6 @@ If your project uses private modules, don't forget the add necessary SSH keys to
 
 <ContentRef url="./adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
-
 ### Build Configuration for Flutter iOS applications
 
 Click on the gear icon on the top right to access the build configuration. The first step will be the entering project details. You can enter these details manually or click on the Fetch button to retrieve them from your project to detect the correct path for the Xcode project automatically.
@@ -46,13 +45,13 @@ You can also select a specific Xcode version if you have certain dependencies or
 
 ![](<https://cdn.appcircle.io/docs/assets/image (2).png>)
 
-### Build Configuration for Flutter Android applications 
+### Build Configuration for Flutter Android applications
 
 Click on the gear icon on the top right to access the build configuration. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
 
 ![](<https://cdn.appcircle.io/docs/assets/image (3).png>)
 
-### Build Configuration for Flutter Web applications 
+### Build Configuration for Flutter Web applications
 
 Flutter Web apps are built alongside with iOS or Android Flutter apps. For more information please refer to the following guide:
 
@@ -163,10 +162,10 @@ As of Flutter 1.21, the Flutter SDK includes the full Dart SDK. So if you have F
 <Tabs>
   <TabItem value="ios" label="iOS" default>
 
-   ```bash
- brew tap dart-lang/dart
- brew install dart
- ```
+```bash
+brew tap dart-lang/dart
+brew install dart
+```
 
   </TabItem>
   <TabItem value="android" label="Android">
@@ -177,7 +176,13 @@ As of Flutter 1.21, the Flutter SDK includes the full Dart SDK. So if you have F
  sudo sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
  sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
  sudo apt-get install dart
- ```
+```
 
   </TabItem>
 </Tabs>
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup

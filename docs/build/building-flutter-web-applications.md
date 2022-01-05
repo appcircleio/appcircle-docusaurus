@@ -4,6 +4,7 @@ metaTitle: Building Flutter Web Applications
 metaDescription: Building Flutter Web Applications
 sidebar_position: 8
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -42,10 +43,10 @@ As of Flutter 1.21, the Flutter SDK includes the full Dart SDK. So if you have F
 <Tabs>
   <TabItem value="ios" label="iOS" default>
 
-   ```bash
- brew tap dart-lang/dart
- brew install dart
- ```
+```bash
+brew tap dart-lang/dart
+brew install dart
+```
 
   </TabItem>
   <TabItem value="android" label="Android">
@@ -56,7 +57,13 @@ As of Flutter 1.21, the Flutter SDK includes the full Dart SDK. So if you have F
  sudo sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
  sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
  sudo apt-get install dart
- ```
+```
 
   </TabItem>
 </Tabs>
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup

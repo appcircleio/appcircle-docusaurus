@@ -151,3 +151,9 @@ Your build will be distributed automatically if you had set up Auto Distribute e
 <ContentRef url="../../build/after-a-build">After a Build</ContentRef>
 
 ![](https://cdn.appcircle.io/docs/assets/android-distribute.png)
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup

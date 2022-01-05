@@ -44,3 +44,9 @@ Once you confirm the copy operation, the configuration in the destination will b
 Please note that if the contents of the destination branch is not compatible with the selected options, you may get build errors.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (146).png>)
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup

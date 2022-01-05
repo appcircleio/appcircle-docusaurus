@@ -37,7 +37,6 @@ If your project uses private modules, don't forget the add necessary SSH keys to
 
 <ContentRef url="./adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
-
 ### Build Configuration for React Native iOS applications
 
 Click on the gear icon on top right to access the build configuration. The first step will be the enter project details. You can enter details manually or click on the Fetch button to retrieve them from your project.
@@ -161,3 +160,9 @@ To start your first build, just press the start build button – the play button
 Once your build is complete, you can now download the binary file or deploy it to distribute module manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at anytime.
 
 <ContentRef url="../build/after-a-build">After a Build</ContentRef>
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup

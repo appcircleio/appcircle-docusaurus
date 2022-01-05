@@ -4,6 +4,7 @@ metaTitle: Building Ionic Projects with Custom Scripts
 metaDescription: Building Ionic Projects with Custom Scripts
 sidebar_position: 10
 ---
+
 # Building Ionic Projects with Custom Scripts
 
 Appcircle provides Ionic projects through custom scripts.
@@ -18,8 +19,6 @@ One important point to take note is that `capacitor-cordova-android-plugins` fol
 
 You can then add the custom scripts before the build steps and run the build normally.
 
-
-
 ### Android Custom Script for Ionic Builds
 
 For Android, add the following script before the "Android Build" step.
@@ -27,14 +26,12 @@ For Android, add the following script before the "Android Build" step.
 ```bash
 set -e
 set -x
- 
+
 cd $AC_REPOSITORY_DIR
- 
+
 npm install -g @ionic/cli
 ionic capacitor copy android
 ```
-
-
 
 ### iOS Custom Script for Ionic Builds
 
@@ -46,8 +43,14 @@ set -x
 
 cd $AC_REPOSITORY_DIR
 
-npm install 
+npm install
 -g @ionic/cli
 
 ionic capacitor copy ios
 ```
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup

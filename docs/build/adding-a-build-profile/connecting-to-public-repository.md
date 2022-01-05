@@ -60,3 +60,9 @@ After the connection is successful, you can [view your newly created profile](./
 Keep in mind that certain hook events **will not work **with a public connection.
 
 :::
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup

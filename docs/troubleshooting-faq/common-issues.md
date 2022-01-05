@@ -124,7 +124,7 @@ If you don't want to push the xcworkspace to the repository, you can alternative
 
 ### Cocoapods Errros Due to Version Mismatch
 
-If you don't set the version of Cocoapods in your Cocoapods Install step, Appcircle installs Cocoapods according to your _Podfile.lock_ file. Don't forget to commit your Podfile.lock file to have the correct version. 
+If you don't set the version of Cocoapods in your Cocoapods Install step, Appcircle installs Cocoapods according to your _Podfile.lock_ file. Don't forget to commit your Podfile.lock file to have the correct version.
 
 ### Provisioning Profile Error
 
@@ -157,7 +157,7 @@ In this case, you need to upgrade the Swift version in the project settings in X
 
 ## Android-Specific Issues
 
-###  Gradle build daemon disappeared unexpectedly
+### Gradle build daemon disappeared unexpectedly
 
 If you receive a Gradle error similar to the following, it usually indicates a problem with UTF-8 characters in your project or environment variables.
 
@@ -168,6 +168,7 @@ org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemo
     at org.gradle.launcher.daemon.client.DaemonClient.executeBuild(DaemonClient.java:162)
     at org.gradle.launcher.daemon.client.DaemonClient.execute(DaemonClient.java:125)
 ```
+
 Please edit your **gradle.properties** file and add `file.encoding=utf-8` line.
 
 ### I received a google-services.json Error but I don't want to push this file to the repository
@@ -265,5 +266,9 @@ Older builds and/or testing distributions will use almost all of your storage. I
 In order for storage to be freed up, you should also remove the other references pointing to the artifact. In example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds respectively.
 
 If you still can't solve your issues, ask on our Slack page. Our community and our support engineers will help you whenever they're available:
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
 
 https://join.slack.com/t/appcircleio/signup

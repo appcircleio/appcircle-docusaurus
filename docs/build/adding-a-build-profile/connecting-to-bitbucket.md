@@ -65,3 +65,9 @@ Appcircle needs admin permission to function properly. The admin permission is n
 #### Authorizing a Distinct Repository Through Bitbucket
 
 Bitbucket provides SSH option to authorize a single repository. However, this method of connection is unavailable within Appcircle.
+
+### Need help?
+
+Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
+
+https://join.slack.com/t/appcircleio/signup
