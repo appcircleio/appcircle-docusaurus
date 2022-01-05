@@ -292,6 +292,10 @@ html[data-theme='dark'] .rlc-description {
     border-right: none !important;
   }
 
+  [class*='docItemCol'] {
+    padding: 0 1rem 0 4rem !important;
+  }
+
   .padding-top--md {
     padding-top: 2.5rem !important;
   }
