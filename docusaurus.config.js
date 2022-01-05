@@ -92,11 +92,11 @@ const config = {
       footer: {
         style: 'dark',
         logo: {
-          src: 'https://cdn.appcircle.io/docs/docs-footer-logo.png',
-          alt: 'Facebook Open Source Logo',
+          src: 'https://cdn.appcircle.io/docs/footer-logo-full.png',
+          alt: 'Appcircle Logo',
           href: 'https://appcircle.io',
-          width: 40,
-          height: 40,
+          width: 160,
+          height: 33,
         },
         links: [
           {
