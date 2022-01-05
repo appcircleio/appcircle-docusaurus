@@ -288,12 +288,8 @@ html[data-theme='dark'] .rlc-description {
 }
 
 @media (min-width: 997px) {
-  [class^='docItemCol'] {
-    padding: 0 1rem 0 4rem !important;
-  }
-
-  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocItem-styles-module {
-    padding: 0 1rem 0 4rem !important;
+  [class^='docSidebarContainer'] {
+    border-right: none !important;
   }
 
   .padding-top--md {
