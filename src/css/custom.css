@@ -288,14 +288,8 @@ html[data-theme='dark'] .rlc-description {
 }
 
 @media (min-width: 997px) {
-  .sidebar_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
-    max-height: none !important;
-    padding-bottom: 4rem;
-    padding-top: calc(var(--ifm-navbar-height) + 2rem) !important;
-  }
-
-  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
-    border-right: none !important;
+  [class^='docItemCol'] {
+    padding: 0 1rem 0 4rem !important;
   }
 
   .docItemCol_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocItem-styles-module {
