@@ -230,6 +230,7 @@ iframe[src*='youtube.com'] {
 .rlc-url-container {
   display: flex;
   align-items: center;
+  margin-top: 8px;
 }
 
 .rlc-favicon {
