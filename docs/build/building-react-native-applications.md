@@ -161,8 +161,6 @@ Once your build is complete, you can now download the binary file or deploy it t
 
 <ContentRef url="../build/after-a-build">After a Build</ContentRef>
 
-### Need help?
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
-Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
-
-https://join.slack.com/t/appcircleio/signup
+<NeedHelp />

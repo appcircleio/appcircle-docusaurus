@@ -5,6 +5,7 @@ metaDescription: 'Connecting to Bitbucket'
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 # Connecting to Bitbucket
 
@@ -66,8 +67,4 @@ Appcircle needs admin permission to function properly. The admin permission is n
 
 Bitbucket provides SSH option to authorize a single repository. However, this method of connection is unavailable within Appcircle.
 
-### Need help?
-
-Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
-
-https://join.slack.com/t/appcircleio/signup
+<NeedHelp />

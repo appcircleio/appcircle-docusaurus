@@ -267,8 +267,6 @@ In order for storage to be freed up, you should also remove the other references
 
 If you still can't solve your issues, ask on our Slack page. Our community and our support engineers will help you whenever they're available:
 
-### Need help?
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
-Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
-
-https://join.slack.com/t/appcircleio/signup
+<NeedHelp />

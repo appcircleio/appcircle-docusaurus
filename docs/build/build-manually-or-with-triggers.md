@@ -141,8 +141,6 @@ Then select the "Enable raw message delivery" option while adding the webhook UR
 
 ![](https://cdn.appcircle.io/docs/assets/enable-raw-message-delivery.png)
 
-### Need help?
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
-Get help from Appcircle's support team, or see how others are using Appcircle by joining our Slack Channel.
-
-https://join.slack.com/t/appcircleio/signup
+<NeedHelp />
