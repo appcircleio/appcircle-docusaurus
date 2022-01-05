@@ -4,6 +4,7 @@ metaTitle: Send Apps to Google Play Console
 metaDescription: Send Apps to Google Play Console
 sidebar_position: 1
 ---
+import ContentRef from '@site/src/components/ContentRef';
 
 # Send Apps to Google Play Console
 
@@ -21,14 +22,22 @@ Store upload will use an account's build time and concurrency
 
 Before uploading a binary to the store, please make sure that an application listing is created in Google Play and the initial binary is manually uploaded with the same keystore and the application ID (package name). Otherwise, the store upload process will fail. This is a known limitation of Google Play, which is in place for security purposes.
 
-You also need to have a Google Service Account and its key as a JSON file. Please refer to the following document for more information about service accounts:\
-;[https://developers.google.com/android-publisher/getting_started#using_a_service_account](https://developers.google.com/android-publisher/getting_started#using_a_service_account)
+You also need to have a Google Service Account and its key as a JSON file. Please refer to the following document for more information about service accounts
+
+<ContentRef url="/account/adding-google-play-service-account">
+  Adding Google Play Service Accounts
+</ContentRef>
+
 
 ### Adding a Google Play Developer API Key
 
 To send apps from Appcircle, you need to provide a Google Developer API key. To add a key, go to [My Organization](../account/my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section. The add key screen will be displayed.
 
 [Create a key in JSON format in the Google Developer Console](https://developers.google.com/android-publisher/getting_started#using_a_service_account) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
+
+<ContentRef url="/account/adding-google-play-service-account">
+  Adding Google Play Service Accounts
+</ContentRef>
 
 Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
 
