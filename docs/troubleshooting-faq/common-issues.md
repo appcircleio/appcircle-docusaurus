@@ -176,7 +176,6 @@ Secret files such as the google-services.json can be added as a [secret environm
 
 Then, you can add a custom script step before the Android build step and move the file to the expected path during the build with a code like the following (where the secret environment variable is named as `GOOGLE_SERVICES_JSON`) :
 
-
 ```bash
 cd $AC_REPOSITORY_DIR/
 mv $GOOGLE_SERVICES_JSON $AC_REPOSITORY_DIR/app
@@ -264,3 +263,7 @@ Older builds and/or testing distributions will use almost all of your storage. I
 #### [Refer here to delete an App Store Connect Profile](../store-submit/apple-app-store.md#deleting-app-store-connect-profiles)
 
 In order for storage to be freed up, you should also remove the other references pointing to the artifact. In example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds respectively.
+
+If you still can't solve your issues, ask on our Slack page. Our community and our support engineers will help you whenever they're available:
+
+https://join.slack.com/t/appcircleio/signup
