@@ -59,13 +59,32 @@ const config = {
             label: 'Release Notes',
           },
           {
-            href: 'https://appcircle.io',
-            label: 'Appcircle.io',
+            href: 'https://appcircle.io/blog',
+            label: 'Blog',
             position: 'right',
           },
           {
-            href: 'https://github.com/appcircleio/appcircle-docusaurus',
-            label: 'GitHub',
+            href: 'https://appcircle.io/start',
+            label: 'Dashboard',
+            position: 'right',
+          },
+          {
+            type: 'dropdown',
+            items: [
+              {
+                label: 'Slack',
+                href: 'https://join.slack.com/t/appcircleio/signup',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/appcircleio',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/appcircleio',
+              },
+            ],
+            label: 'Community',
             position: 'right',
           },
         ],
@@ -100,11 +119,15 @@ const config = {
             items: [
               {
                 label: 'Slack',
-                href: 'https://slack.appcircle.io',
+                href: 'https://join.slack.com/t/appcircleio/signup',
               },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/appcircleio',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/appcircleio',
               },
             ],
           },
