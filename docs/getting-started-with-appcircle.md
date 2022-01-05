@@ -19,7 +19,7 @@ Appcircle supports mobile applications developed in Swift/Objective-C, Java/Kotl
 
 Before going through with the documentation, you can also view the following introductory video about Appcircle:
 
-https://www.youtube.com/watch?v=OUoZFGqJFdM
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OUoZFGqJFdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 A basic lifecycle of a mobile application can be broken down into 5 steps:
 
@@ -84,7 +84,6 @@ If you have a team of testers, you can create testing groups and distribute buil
 <ContentRef url="distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
-
 
 ### Submit to the Public App Stores
 

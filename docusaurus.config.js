@@ -3,7 +3,6 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const remarkoembed = require('@agentofuser/remark-oembed');
 const rlc = require('remark-link-card');
 
 /** @type {import('@docusaurus/types').Config} */
@@ -25,7 +24,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [remarkoembed.default, rlc],
+          remarkPlugins: [rlc],
           // Please change this to your repo.
           editUrl: 'https://github.com/appcircleio/appcircle-docusaurus/tree/master/',
           routeBasePath: '/',
@@ -146,7 +145,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['ruby','groovy','java'],
+        additionalLanguages: ['ruby', 'groovy', 'java'],
       },
       algolia: {
         apiKey: '0664a9795ced4a4b187cd8b010ec9f5d',

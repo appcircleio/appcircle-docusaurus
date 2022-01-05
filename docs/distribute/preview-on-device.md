@@ -17,7 +17,7 @@ This document outlines the use of the "Preview on Device" feature within the Dis
 
 Please follow the steps below to run your app online: (For the demonstration of these steps, you can check our introduction video at [https://www.youtube.com/watch?v=OUoZFGqJFdM](https://www.youtube.com/watch?v=OUoZFGqJFdM))
 
-https://www.youtube.com/watch?v=OUoZFGqJFdM
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OUoZFGqJFdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 1. [Create a distribution profile and add an app version](create-or-select-a-distribution-profile.md). You can then just press the "Preview on Device" button to run it.\
 
