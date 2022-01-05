@@ -92,8 +92,13 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .theme-doc-sidebar-item-category.theme-doc-sidebar-item-category-level-2 ul.menu__list {
   border-left: 1px solid #ccc;
   padding-left: 0px;
-  margin-left: 0px;
+  margin-left: 16px;
   margin-bottom: 24px;
+}
+
+.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-3.menu__list-item a.menu__link {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .navbar__logo {
