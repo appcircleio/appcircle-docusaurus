@@ -208,6 +208,18 @@ If the pubspec.yaml file is not present in the default project path, it cannot b
 
 For reference, please refer to the [Android Flutter Build](https://github.com/appcircleio/appcircle-android-flutter-build-component) and [iOS Flutter Build](https://github.com/appcircleio/appcircle-ios-flutter-build-component) components.
 
+### File not found error
+
+You may get an error like below when you're building an Android project.
+
+```
+lib/src/core/dependency/myservice.dart:12:8: Error: Error when reading ‘lib/src/data/repositories/CustomerRepository.dart’: No such file or directory
+```
+
+This error usually indicates that you didn't name your files according to Dart convention. Linux file system is case sensitive whereas Windows and macOS are not. So if your repository has `customerrepository.dart` but you're importing as `CustomerRepository.dart`, it will not work on Linux machines. To prevent this error, please rename your files and make them all lower case. Please read the following documentation related to styling and naming your files.
+
+https://dart.dev/guides/language/effective-dart/style#do-name-libraries-and-source-files-using-lowercase_with_underscores
+
 ## React Native-Specific Issues
 
 ### NPM/Yarn specific errors
