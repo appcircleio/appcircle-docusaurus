@@ -29,7 +29,7 @@ This report is accessible from the Signing Identities module.
 
 The Signing History Report contains the list of builds selected for signing in a given time period.
 
-<ContentRef url="../signing-identities/">Signing Identities</ContentRef>
+<ContentRef url="/signing-identities/">Signing Identities</ContentRef>
 
 Each signed build is listed with the utilized provisioning profile name for iOS and the utilized keystore name for Android.;
 

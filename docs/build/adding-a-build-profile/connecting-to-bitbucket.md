@@ -47,7 +47,7 @@ For Appcircle to connect to the Self Hosted GitLab Instance, your connection mus
 
 Is your self-hosted GitLab instance under enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
 
-<ContentRef url="../../infrastructure/accessing-repositories-in-internal-networks-firewalls">
+<ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls">
   Accessing Repositories in Internal Networks (Firewalls)
 </ContentRef>
 

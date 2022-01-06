@@ -253,7 +253,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :muscle: Improvement
 
-* New Workflow Marketplace Steps - We are improving our Workflow Marketplace with more workflow steps that will help you perform more tasks in less time. Workflow steps are organized better for each platform and new workflow steps like Android Unit Tests and Android Lint are now available. :link: [**Workflow Marketplace**](https://docs.appcircle.io/workflows/why-to-use-workflows.md#workflow-marketplace)****
+* New Workflow Marketplace Steps - We are improving our Workflow Marketplace with more workflow steps that will help you perform more tasks in less time. Workflow steps are organized better for each platform and new workflow steps like Android Unit Tests and Android Lint are now available. :link: [**Workflow Marketplace**](https://docs.appcircle.io/workflows/why-to-use-workflows#workflow-marketplace)****
 * Run Unit & UI Tests - You can now run Android unit tests and iOS unit & UI tests with corresponding workflow steps. Test results will be gathered and included in the downloadable artifacts archive.
 
 ## v0.3.25 - 2020-04-17

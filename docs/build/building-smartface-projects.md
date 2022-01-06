@@ -45,7 +45,7 @@ In the Signing page, select the proper signing certificates for iOS or Android a
 
 On the Distribution page, create a new distribution profile or select a previous profile you created earlier. You can also enable auto distribution feature if you need to.
 
-<ContentRef url="../distribute/create-or-select-a-distribution-profile">
+<ContentRef url="/distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 
@@ -65,7 +65,7 @@ You can define variables and secrets to be incorporated during the build in the 
 
 Please see the following page for more information about environment variables:
 
-<ContentRef url="../environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
@@ -89,7 +89,7 @@ Any custom operation during the build can be executed through the Custom Script 
 
 For details on using Appcircle's workflow editor, please see the related page below:
 
-<ContentRef url="../workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
 
 ### Start Build
 
@@ -113,7 +113,7 @@ You can safely close the build log window, it won't affect the status of your bu
 
 Your build will be distributed automatically if you had set up auto build earlier. You can also manually distribute builds at any time you like.
 
-<ContentRef url="../build/after-a-build">After a Build</ContentRef>
+<ContentRef url="/build/after-a-build">After a Build</ContentRef>
 
 ![](https://cdn.appcircle.io/docs/assets/03-06-iOS-Build-AfterBuild.jpg)
 

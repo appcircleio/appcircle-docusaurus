@@ -21,7 +21,7 @@ Simply create a new build profile as usual and select your target operating syst
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
-<ContentRef url="./adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 To test drive the Appcircle platform for Flutter app builds, you can also use our sample Flutter App by forking it or adding it as a public repository: [https://github.com/appcircleio/appcircle-sample-flutter](https://github.com/appcircleio/appcircle-sample-flutter)
 
@@ -33,7 +33,7 @@ Build configuration options are very similar to native iOS or Android applicatio
 
 If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="./adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 ### Build Configuration for Flutter iOS applications
 
@@ -55,7 +55,7 @@ Click on the gear icon on the top right to access the build configuration. For F
 
 Flutter Web apps are built alongside with iOS or Android Flutter apps. For more information please refer to the following guide:
 
-<ContentRef url="./building-flutter-web-applications">Building Flutter Web Applications</ContentRef>
+<ContentRef url="/build/building-flutter-web-applications">Building Flutter Web Applications</ContentRef>
 
 ### Sending the Build Status to the Repository Providers
 
@@ -79,7 +79,7 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 - On a tagged push: Whenever a tagged commit is pushed, the build is triggered for that commit. Commits without any tags are ignored.
 - On push with selective tags: Whenever a commit includes one of the typed in tags, the build is triggered. You can specify tags with Unix shell-style wildcards to trigger builds.
 
-<ContentRef url="./build-manually-or-with-triggers">
+<ContentRef url="/build/build-manually-or-with-triggers">
   Build Manually or Automatically with Webhooks and Triggers
 </ContentRef>
 
@@ -109,7 +109,7 @@ You can select a previously created distribution profile or create a new one in 
 
 Finally, check Auto Distribute if you want your build to be deployed to the Testing Distribution automatically and Auto Deployment if you want the build to be deployed to Store Submission automatically.
 
-<ContentRef url="../distribute/create-or-select-a-distribution-profile">
+<ContentRef url="/distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 
@@ -125,7 +125,7 @@ The final tab is to add environment variables to the build. For advanced use cas
 
 Please refer to the following document for more information on environment variables:
 
-<ContentRef url="../environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
@@ -137,7 +137,7 @@ Once you complete your build configuration, you can edit your build workflow. Fl
 
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
-<ContentRef url="../workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
 
 ### How to Set a Specific Flutter Version for the Build
 

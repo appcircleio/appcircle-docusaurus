@@ -58,7 +58,7 @@ With the next option, enter the application Apple ID that can be obtained from t
 
 Then enter a user-friendly name to identify the credentials in the lists and press save. You can use this Apple ID in multiple apps without the need for reentering the credentials at every upload process.
 
-<ContentRef url="../account/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
+<ContentRef url="/account/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
 ![](<https://cdn.appcircle.io/docs/assets/image (94).png>)
 

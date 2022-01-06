@@ -225,7 +225,7 @@ Appcircle uses the lts(Long Term Support) node version by default.
 
 You can access how to change your node version and other relative information about workflow steps and configurations on the page below:
 
-<ContentRef url="../workflows/react-native-specific-workflow-steps">React Native Specific Workflow Steps</ContentRef>
+<ContentRef url="/workflows/react-native-specific-workflow-steps">React Native Specific Workflow Steps</ContentRef>
 
 ## App Distribution Troubleshooting
 

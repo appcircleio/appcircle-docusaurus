@@ -35,7 +35,7 @@ Build configuration options are very similar to native iOS or Android applicatio
 
 If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="./adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 ### Build Configuration for React Native iOS applications
 
@@ -119,7 +119,7 @@ You can select a previously created distribution profile or create a new one in 
 
 Finally, check Auto Distribute if you want your build to be deployed to the Testing Distribution automatically and Auto Deployment if you want the build to be deployed to Store Submission automatically.
 
-<ContentRef url="../distribute/create-or-select-a-distribution-profile">
+<ContentRef url="/distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 
@@ -137,7 +137,7 @@ The final tab is to add environment variables to the build. For advanced use cas
 
 Please refer to the following document for more information on environment variables:
 
-<ContentRef url="../environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
@@ -149,7 +149,7 @@ Once you complete your build configuration, you can edit your build workflow. Re
 
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
-<ContentRef url="../workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
 
 ###
 
@@ -159,7 +159,7 @@ To start your first build, just press the start build button – the play button
 
 Once your build is complete, you can now download the binary file or deploy it to distribute module manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at anytime.
 
-<ContentRef url="../build/after-a-build">After a Build</ContentRef>
+<ContentRef url="/build/after-a-build">After a Build</ContentRef>
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

@@ -83,7 +83,7 @@ Final step in Xcode will be calling the variables from your code's view controll
 
 You can create environment variable groups and key/value pairs in these groups. To learn more about creating environment variables in Appcircle please see the following page:
 
-<ContentRef url="./managing-variables">Managing Variables</ContentRef>
+<ContentRef url="/environment-variables/managing-variables">Managing Variables</ContentRef>
 
 Once you update your project with `.xcconfig` files, you can create environment variable groups and include different values of the same environment variable to be used in different stages of your application like development or production.
 
@@ -91,7 +91,7 @@ Once you update your project with `.xcconfig` files, you can create environment 
 
 To be able to use these variables in your project, we need to replace the values in our `.xcconfig` file using a custom script workflow step. To get more information about creating and using custom scripts, please check the following page:
 
-<ContentRef url="../integrations/working-with-custom-scripts">Working with Custom Scripts</ContentRef>
+<ContentRef url="/integrations/working-with-custom-scripts">Working with Custom Scripts</ContentRef>
 
 In our example here, we will use a Bash script to replace the values in our .xcconfig file.;
 

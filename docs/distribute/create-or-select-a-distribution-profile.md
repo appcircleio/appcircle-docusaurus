@@ -53,7 +53,7 @@ Auto send feature lets your applications to be distributed to specific testing g
 
 To enable the auto send feature, you need to create testing groups and add testers into these groups.
 
-<ContentRef url="../testing-groups">Testing Groups</ContentRef>
+<ContentRef url="/distribute/testing-groups">Testing Groups</ContentRef>
 
 Under the Auto Send tab in the settings, you can see the testing groups you have created earlier. Just enable each testing group you want to have your application sent automatically whenever a new version is deployed.
 
@@ -99,7 +99,7 @@ Only signed builds will be distributed. Unsigned builds cannot be distributed.
 
 For detailed information about multiple flavors, refer to this documentation:
 
-<ContentRef url="../best-practices/building-multiple-apps-in-one-profile">Building Multiple Apps in One Profile</ContentRef>
+<ContentRef url="/best-practices/building-multiple-apps-in-one-profile">Building Multiple Apps in One Profile</ContentRef>
 
 If your Android application has multiple product flavors, Appcircle will create a build for each flavor of your application and let you distribute them at once. A common usage to multi-flavor applications can be free and paid versions of the same application.
 

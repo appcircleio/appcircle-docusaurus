@@ -13,7 +13,7 @@ Appcircle offers in-browser iOS simulators and Android emulators. If you deploy 
 
 This document outlines the use of the "Preview on Device" feature within the Distribute module. For standalone emulators/simulators, please refer to the following guide:
 
-<ContentRef url="../emulator-simulator/android-app-emulator">Emulator / Simulators</ContentRef>
+<ContentRef url="/emulator-simulator/android-app-emulator">Emulator / Simulators</ContentRef>
 
 Please follow the steps below to run your app online: (For the demonstration of these steps, you can check our introduction video at [https://www.youtube.com/watch?v=OUoZFGqJFdM](https://www.youtube.com/watch?v=OUoZFGqJFdM))
 

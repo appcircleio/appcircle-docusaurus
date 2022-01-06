@@ -42,7 +42,7 @@ public class SampleFragmentDetail extends Fragment {
 
 Appcircle allows you to create groups of environment variables to be used during your builds. You can create environment variable groups for different branches of your project like development, staging, and production.
 
-<ContentRef url="./managing-variables">Managing Variables</ContentRef>
+<ContentRef url="/environment-variables/managing-variables">Managing Variables</ContentRef>
 
 Going forward on our sample above, you may want to use different API endpoints for development, staging, and production.
 

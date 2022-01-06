@@ -31,7 +31,7 @@ Simply go to your build workflow and add a custom script after the **Xcode Selec
 
 See the following page on our documentation to learn more about creating custom workflow steps:
 
-<ContentRef url="../workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
 
 We will use a Ruby script here to tell Appcircle to run our unit and UI tests.
 

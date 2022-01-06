@@ -60,7 +60,7 @@ With this release, we're adding the ability to connect to Apple for easier iOS C
 
 To set up an API Key, check this guide:
 
-<ContentRef url="../account/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
+<ContentRef url="/account/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
 After adding an API Key, you can add new signing identities from the Signing Identities section. For more information on how to add identities and use them, check out [Signing Identities guide](https://docs.appcircle.io/signing-identities/ios-certificates-and-provisioning-profiles#1-get-ios-certificates-and-provisioning-profiles-from-apple).
 
@@ -158,10 +158,10 @@ Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.
 - Increased allocated size over each build, now you can build bigger projects on Appcircle 🎉
 - Further optimizations towards Android side of builds. Build times are considerably faster on Android 🎉
 - The Date\&Time which Appcircle uses on their logs now will show the local time instead of the server time.
-- Code gloss-over for [Appcircle CLI](https://www.npmjs.com/package/appcircle-cli).
+- Code gloss-over for [Appcircle CLI](https://www.npmjs.com/package/@appcircle/cli).
 - If you are using an internal network, check the IP addresses you need whitelist through the document below:
 
-<ContentRef url="../infrastructure/accessing-repositories-in-internal-networks-firewalls">
+<ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls">
   Accessing Repositories in Internal Networks (Firewalls)
 </ContentRef>
 
@@ -193,7 +193,7 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 
 - You can specify which Xcode version to use on your builds. This can also be specified on the repository and will be seamlessly fetched from the relevant repository during the **Fetch Details** Process. Available versions: 13.0, 12.5, 12.4, 12.3, 12.2, 12.1, 12.0, 11.7, 11.6, 11.5, 11.4, 11.3, 11.2, 11.1 and 11.0
   - Latest Xcode 13 beta is used on 13.0.x
-- [Appcircle CLI ](https://www.npmjs.com/package/appcircle-cli)has a fresh look\&feel and lots of new features along with it.
+- [Appcircle CLI ](https://www.npmjs.com/package/@appcircle/cli)has a fresh look\&feel and lots of new features along with it.
 - [Export Build Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps#export-build-artifacts) has been added for a separate step. You can remove this step and upload your files elsewhere if your artifacts have a need to be on-premise.
 - [Setting build status](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) updates to the repository providers - You can now send updates about a commit to the repository providers for a complete CI/CD experience.
 - A new workflow setting, **Always run this step even if the previous steps fail** has been added. The steps which have this enabled will always run.
@@ -203,7 +203,7 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 
 - iOS Build Servers are optimized to reduce the queue time & better performance.
 - Added better icons for Git providers when connecting to the repository.
-- Whitelist IPs are under update process, you can follow the process under [Accessing Repositories in Internal Networks](https://docs.appcircle.io/infrastructure/accessing-repositories-in-internal-networks-firewalls) document.
+- Whitelist IPs are under update process, you can follow the process under [Accessing Repositories in Internal Networks](https://docs.appcircle.io/infrastructure/accessing-repositories-in-internal-networks-firewalls/) document.
 
 ### 🐞 Fixed
 
@@ -258,7 +258,7 @@ This major release introduces the Appcircle CLI and a new customer portal for bi
 
 ### 🆕 New Feature
 
-- Appcircle CLI - You can now access the Appcircle platform from the command line for custom pipelines or advanced automation use cases. [Appcircle CLI is available on npm](https://www.npmjs.com/package/appcircle-cli).
+- Appcircle CLI - You can now access the Appcircle platform from the command line for custom pipelines or advanced automation use cases. [Appcircle CLI is available on npm](https://www.npmjs.com/package/@appcircle/cli).
 - Appcircle Distribute API - On top of the previously released build APIs, the distribute module APIs are now available for programmatic access.
 - New Customer Portal - Billing and plan management is now easier and more flexible with the new customer portal.
 

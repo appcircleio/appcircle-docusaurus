@@ -13,11 +13,11 @@ Building iOS applications may be complex and confusing. Appcircle will help you 
 
 Before starting your first iOS app build, please make sure you first create a build profile and connect your Git repository to your build profile. You can refer to the page below for this step:
 
-<ContentRef url="../build/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 After connecting your repository, please add or create your iOS certificate and provisioning profile. You can refer to the page below for this step:
 
-<ContentRef url="../signing-identities/ios-certificates-and-provisioning-profiles">
+<ContentRef url="/signing-identities/ios-certificates-and-provisioning-profiles">
   iOS Certificates and Provisioning Profiles
 </ContentRef>
 
@@ -47,7 +47,7 @@ Please don't forget to add additional scheme files to your version control.
 
 If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="./adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 #### Selecting the Xcode Version and Switching to the Xcode Beta
 
@@ -81,7 +81,7 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 
 You can visit the following page for details on build triggers:
 
-<ContentRef url="../build/build-manually-or-with-triggers">
+<ContentRef url="/build/build-manually-or-with-triggers">
   Build Manually or Automatically with Webhooks and Triggers
 </ContentRef>
 
@@ -103,7 +103,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 The next step on build configuration is Distribution. You can create a new distribution profile at this screen or select a previous profile you created earlier. You can also enable auto deployment features if you need to.
 
-<ContentRef url="../distribute/create-or-select-a-distribution-profile">
+<ContentRef url="/distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 
@@ -125,7 +125,7 @@ You can define variables and secrets to be incorporated during the build in the 
 
 Please see the following page for more information about environment variables:
 
-<ContentRef url="../environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
@@ -145,7 +145,7 @@ Any custom operation during the build can be executed through the Custom Script 
 
 For details on using Appcircle's workflow editor, please see the related page below:
 
-<ContentRef url="../workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
 
 ###
 
@@ -175,7 +175,7 @@ You can safely close the build log window, it won't affect the status of your bu
 
 Your build will be distributed automatically if you had set up auto build earlier. You can also manually distribute builds at any time you like.
 
-<ContentRef url="../build/after-a-build">After a Build</ContentRef>
+<ContentRef url="/build/after-a-build">After a Build</ContentRef>
 
 ![](https://cdn.appcircle.io/docs/assets/build-distribute.png)
 

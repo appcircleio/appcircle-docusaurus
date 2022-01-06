@@ -64,7 +64,7 @@ Simply go to your build workflow and add a custom script after the **Sign Applic
 
 See the following page on our documentation to learn more about creating custom workflow steps:
 
-<ContentRef url="../integrations/working-with-custom-scripts">Working with Custom Scripts</ContentRef>
+<ContentRef url="/integrations/working-with-custom-scripts">Working with Custom Scripts</ContentRef>
 
 Add the following Bash script to your custom script step:
 

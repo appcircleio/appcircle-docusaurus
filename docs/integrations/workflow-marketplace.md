@@ -19,4 +19,4 @@ https://github.com/appcircleio
 
 You can also find all the compatible workflow steps within the workflow editor:
 
-<ContentRef url="../workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
