@@ -31,7 +31,18 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_METADATA\_OUTPUT\_PATH | Metadata output file path                                                                          |
 | AC\_GIT\_URL               | Git URL of the repository                                                                          |
 | AC\_GIT\_COMMIT            | The Git commit that is built                                                                       |
+| AC\_COMMIT\_MESSAGE        | Commit message                                                                                     |
+| AC\_COMMIT\_TAGS           | Commit tags                                                                                        |
 | AC\_GIT\_BRANCH            | The Git branch that is built (eg: master)                                                          |
+| AC\_GIT\_TARGET\_COMMIT    | Target commit for a Pull or Merge Request                                                          |
+| AC\_GIT\_TARGET\_BRANCH    | Target branch for a Pull or Merge Request                                                          |
+| AC\_GIT\_PR                | Set to `true` if the workflow started for a Pull or Merge Request                                  |
+| AC\_PULL\_NUMBER           | Pull or Merge Request Number                                                                       |
+| AC\_IS\_SUCCESS            | Set to `true` if the previous step was successful                                                  |
+| AC\_WORKFLOW\_ID           | Workflow UUID                                                                                      |
+| AC\_WORKFLOW\_NAME         | Workflow Name                                                                                      |
+| AC\_PURPOSE                | **Purpose of the Workflow** <br />_Metadata_ = 0<br /> _Build_ = 1<br /> _StoreSubmit_ = 2<br />_Merge_ = 3<br />_TagBuild_ = 4|
+
 
 ### Android specific environment variables
 
