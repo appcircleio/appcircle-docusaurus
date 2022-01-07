@@ -58,3 +58,15 @@ https://github.com/appcircleio/appcircle-ios-build-for-testing
 This step performs unit and UI tests for your iOS applications. This does not "build" your app, but uses the "xcodebuild" command to run tests. To build your app for testing, please refer to the previous workflow step.
 
 https://github.com/appcircleio/appcircle-ios-test-component/
+
+## Slather
+
+This step converts Xcode's test results to different formats by using [Slather](https://github.com/SlatherOrg/slather/). This workflow must be run **after** [Xcodebuild for Unit and UI Tests](#xcodebuild-for-unit-and-ui-tests) step.
+
+https://github.com/appcircleio/appcircle-slather-component
+
+## Tuist
+
+This step installs [Tuist](https://wwww.tuist.io/) and runs `tuist generate` with given options.
+
+https://github.com/appcircleio/appcircle-tuist-component
