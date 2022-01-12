@@ -33,6 +33,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_GIT\_COMMIT            | The Git commit that is built                                                                       |
 | AC\_COMMIT\_MESSAGE        | Commit message                                                                                     |
 | AC\_COMMIT\_TAGS           | Commit tags                                                                                        |
+| AC\_BUILD\_NUMBER          | Build number (`Fetch Details` is counted as Build)                                                 |
 | AC\_GIT\_BRANCH            | The Git branch that is built (eg: master)                                                          |
 | AC\_GIT\_TARGET\_COMMIT    | Target commit for a Pull or Merge Request                                                          |
 | AC\_GIT\_TARGET\_BRANCH    | Target branch for a Pull or Merge Request                                                          |

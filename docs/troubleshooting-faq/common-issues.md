@@ -222,6 +222,19 @@ https://dart.dev/guides/language/effective-dart/style#do-name-libraries-and-sour
 
 ## React Native-Specific Issues
 
+### ERR_OSSL_EVP_UNSUPPORTED
+
+If you receive an error similar to the following, it’s likely that your application or a module you’re using is attempting to use an algorithm or key size which is no longer allowed by default with OpenSSL 3.0.
+
+```
+ opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+```  
+
+You can either use the command-line option, `--openssl-legacy-provider` to your build scripts or change your node version to v16.x
+
 ### NPM/Yarn specific errors
 
 If you face problems during NPM/Yarn install steps on Appcircle but not on your local machine, you should confirm the following steps:
