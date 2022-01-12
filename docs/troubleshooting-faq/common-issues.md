@@ -233,7 +233,7 @@ If you receive an error similar to the following, it’s likely that your applic
   code: 'ERR_OSSL_EVP_UNSUPPORTED'
 ```  
 
-You can either use the command-line option, `--openssl-legacy-provider` to your build scripts or change your node version to v16.x
+You can either add the command-line option, `--openssl-legacy-provider` to your build scripts or change your node version to v16.x
 
 ### NPM/Yarn specific errors
 
