@@ -230,6 +230,15 @@ This error usually indicates that you didn't name your files according to Dart c
 
 https://dart.dev/guides/language/effective-dart/style#do-name-libraries-and-source-files-using-lowercase_with_underscores
 
+### Firebase Version
+Your build may fail with following error
+
+```
+[!] `GoogleAppMeasurement` requires CocoaPods version `>= 1.10.2`, which is not satisfied by your current version, `1.10.1`.
+```
+
+Please edit your workflow and change the Cocoapods version. You may also set the Cocoapods version if you commit your `Podfile.lock` to your repository.
+
 ## React Native-Specific Issues
 
 ### ERR_OSSL_EVP_UNSUPPORTED
