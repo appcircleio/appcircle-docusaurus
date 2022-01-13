@@ -157,6 +157,16 @@ In this case, you need to upgrade the Swift version in the project settings in X
 
 ## Android-Specific Issues
 
+### Gradle build after Bintray shutdown
+
+```
+  > Could not resolve com.google.protobuf:protobuf-java-util:3.09.0.
+      > Could not get resource 'https://jcenter.bintray.com/com/google/protobuf/protobuf-java-util/3.09.0/protobuf-java-util-3.09.0.pom'.
+        > Could not GET 'https://jcenter.bintray.com/com/google/protobuf/protobuf-java-util/3.09.0/protobuf-java-util-3.09.0.pom'. Received status code 502 from server: Bad Gateway
+```
+
+You may experience gradle build errors if your project uses Bintray resources. Since JFrog has shutdown Bintray on May 1, 2021. You should update your gradle file and move to Maven Central. Replace `jcenter()` with `mavenCentral()` in all your `build.gradle` files. Please be aware that some of your dependencies may not exist on Maven.
+
 ### Gradle build daemon disappeared unexpectedly
 
 If you receive a Gradle error similar to the following, it usually indicates a problem with UTF-8 characters in your project or environment variables.

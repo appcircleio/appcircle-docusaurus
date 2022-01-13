@@ -34,6 +34,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_COMMIT\_MESSAGE        | Commit message                                                                                     |
 | AC\_COMMIT\_TAGS           | Commit tags                                                                                        |
 | AC\_BUILD\_NUMBER          | Build number (`Fetch Details` is counted as Build)                                                 |
+| AC\_BUILD\_TIMESTAMP       | Build time stamp                                                                                   |
 | AC\_GIT\_BRANCH            | The Git branch that is built (eg: master)                                                          |
 | AC\_GIT\_TARGET\_COMMIT    | Target commit for a Pull or Merge Request                                                          |
 | AC\_GIT\_TARGET\_BRANCH    | Target branch for a Pull or Merge Request                                                          |
@@ -42,6 +43,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_IS\_SUCCESS            | Set to `true` if the previous step was successful                                                  |
 | AC\_WORKFLOW\_ID           | Workflow UUID                                                                                      |
 | AC\_WORKFLOW\_NAME         | Workflow Name                                                                                      |
+| AC\_PLATFORM\_TYPE         | **Platform Type** ObjectiveCSwift, JavaKotlin, Smartface, ReactNative, Flutter                     |
 | AC\_PURPOSE                | **Purpose of the Workflow** <br />_Metadata_ = 0<br /> _Build_ = 1<br /> _StoreSubmit_ = 2<br />_Merge_ = 3<br />_TagBuild_ = 4|
 
 
@@ -51,7 +53,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | -------------------------------- | ---------------------------------------- |
 | ANDROID\_HOME                    | Android SDK installation directory       |
 | AC\_MODULE                       | Selected Android module                  |
-| AC\_VARIANT                      | Selected Android variant                 |
+| AC\_VARIANTS                     | Selected Android variant                 |
 | AC\_OUTPUT\_TYPE                 | Selected output type of Android artifact |
 | AC\_APK\_PATH                    | Generated APK file path                  |
 | AC\_AAB\_PATH                    | Generated AAB file path                  |
