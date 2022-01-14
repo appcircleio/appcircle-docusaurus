@@ -237,7 +237,34 @@ Your build may fail with following error
 [!] `GoogleAppMeasurement` requires CocoaPods version `>= 1.10.2`, which is not satisfied by your current version, `1.10.1`.
 ```
 
-Please edit your workflow and change the Cocoapods version. You may also set the Cocoapods version if you commit your `Podfile.lock` to your repository.
+Please edit your workflow and add **Cocoapods Install** step and change the Cocoapods version. You may also set the Cocoapods version if you commit your `Podfile.lock` to your repository.
+
+### CocoaPods could not find compatible versions for pod "Amplify"
+When does this occur?
+
+On the first iOS build after upgrading the version of the Amplify packages in your pubspec.yaml.
+Example
+
+Below is an example of what the error will look like:
+
+```
+[!] CocoaPods could not find compatible versions for pod "Amplify":
+  In snapshot (Podfile.lock):
+    Amplify (= 1.6.0)
+  In Podfile:
+    amplify_auth_cognito (from `.symlinks/plugins/amplify_auth_cognito/ios`) was resolved to 0.0.1, which depends on
+      Amplify (> 1.9.2)
+You have either:
+ * out-of-date source repos which you can update with `pod repo update` or with `pod install --repo-update`.
+ * changed the constraints of dependency `Amplify` inside your development pod `amplify_auth_cognito`.
+   You should run `pod update Amplify` to apply changes you've made.
+```
+
+**Suggested resolution**
+
+- Option 1 (recommended): Run `pod update Amplify AWSPluginsCore AmplifyPlugins` from the ios dir. This will update the pods that are used by the amplify flutter packages.
+- Option 2: Delete the `Podfile.lock` (in the ios dir) and rebuild. A new Podfile.lock will be generated. Please note, this may cause other non amplify related dependencies to be updated as well.
+- Option 3: Run pod update from the ios dir. This should update your `Podfile.lock` file. Please note, this may cause other non amplify related dependencies to be updated as well.
 
 ## React Native-Specific Issues
 
