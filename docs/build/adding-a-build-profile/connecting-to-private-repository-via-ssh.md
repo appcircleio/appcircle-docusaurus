@@ -48,6 +48,10 @@ To enable triggered auto builds with webhooks for SSH repository connections, pl
 
 ### Connection Notice
 
+If your SSH server runs on a different port, you should add the port number to your connection string.
+
+`ssh://git@mydomain.com:port/path/to/repo.git`
+
 For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the internet.
 
 :::
