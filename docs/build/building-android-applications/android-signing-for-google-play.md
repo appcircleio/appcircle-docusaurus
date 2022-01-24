@@ -46,15 +46,22 @@ The solution for this is to utilize signing in gradle within the app. A sample b
 ```groovy
 signingConfigs {
     release {
-        storeFile file("${System.getenv("AC_ANDROID_KEYSTORE_PATH")}")
-        storePassword "${System.getenv("AC_ANDROID_KEYSTORE_PASSWORD")}"
-        keyAlias "${System.getenv("AC_ANDROID_ALIAS")}"
-        keyPassword "${System.getenv("AC_ANDROID_ALIAS_PASSWORD")}"
-        v2SigningEnabled true
-        v1SigningEnabled true
+      if (System.getenv('AC_APPCIRCLE')) { // new configuration for Appcircle
+          println 'Running on Appcircle'
+          keyAlias "${System.getenv("AC_ANDROID_ALIAS")}"
+          keyPassword "${System.getenv("AC_ANDROID_ALIAS_PASSWORD")}"
+          storeFile file("${System.getenv("AC_ANDROID_KEYSTORE_PATH")}")
+          storePassword "${System.getenv("AC_ANDROID_KEYSTORE_PASSWORD")}"
+      } else {
+          println 'Running on local' // Your old configuration
+          keyAlias keystoreProperties['keyAlias']
+          keyPassword keystoreProperties['keyPassword']
+          storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+          storePassword keystoreProperties['storePassword']
+      }
     }
 }
-
+// Rest of your build.gradle
 buildTypes {
     release {
         minifyEnabled false
@@ -63,6 +70,11 @@ buildTypes {
     }
 }
 ```
+:::warning
+
+If you sign with gradle, you need to remove `Android Sign` step from your workflow.
+
+:::
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
