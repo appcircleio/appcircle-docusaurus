@@ -169,13 +169,13 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 /* oembed */
 iframe[src*='youtube.com'] {
   width: 600px !important;
-  height: 400px !important;
+  height: 338px !important;
 }
 
 @media (max-width: 550px) {
   iframe[src*='youtube.com'] {
     width: 300px !important;
-    height: 200px !important;
+    height: 170px !important;
   }
 }
 
