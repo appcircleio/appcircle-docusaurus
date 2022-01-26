@@ -170,6 +170,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 iframe[src*='youtube.com'] {
   width: 600px !important;
   height: 338px !important;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 550px) {
