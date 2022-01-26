@@ -7,6 +7,64 @@ sidebar_position: 1
 
 # What are Workflows and How to Use Them?
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="ios"
+  values={[
+    { label: 'iOS', value: 'ios' },
+    { label: 'Android', value: 'android' },
+    { label: 'React Native', value: 'reactnative' },
+    { label: 'Flutter', value: 'flutter' },
+  ]}
+>
+  <TabItem value="ios">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/WOQedZ15z6s"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </TabItem>
+  <TabItem value="android">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/FcZv2cCnGFA"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </TabItem>
+  <TabItem value="reactnative">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/bo0fWk9cATA"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </TabItem>
+  <TabItem value="flutter">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/vKFfNvJvRDs"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </TabItem>
+</Tabs>
+
 A workflow is a ladder of steps taken to build your applications.
 
 Each step has a different purpose and the workflow can be customized by modifying step parameters and inputs, running custom scripts, or re-ordering steps.
