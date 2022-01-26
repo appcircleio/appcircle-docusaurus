@@ -9,6 +9,8 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Create a Distribution Profile and Sharing with Testers
 
+<iframe width="600" height="315" src="https://www.youtube.com/embed/vZ3p5uZZcmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
 
 :::info
