@@ -101,6 +101,10 @@ This allows build scenarios like building only specific pushes that has the "rel
 
 ![](<https://cdn.appcircle.io/docs/assets/image (180).png>)
 
+### Prevent auto build with [skip ci]
+
+If your commit message contains `[skip ci]` or `[ci skip]`, Appcircle will skip the build for that commit.
+
 ## Further Automatic Build Subjects
 
 ### Trigger Priorities
