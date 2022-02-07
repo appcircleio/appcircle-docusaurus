@@ -97,4 +97,6 @@ Send a binary to Google Play.
 
 <ContentRef url="/store-submit/google-play">Send Apps to Google Play Console</ContentRef>
 
-🛠 Huawei App Gallery support is also on the way.
+Send a binary to Huawei AppGallery.
+
+<ContentRef url="/store-submit/huawei-app-gallery">Send Apps to Huawei AppGallery</ContentRef>
