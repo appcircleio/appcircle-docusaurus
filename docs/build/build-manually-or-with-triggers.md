@@ -99,6 +99,14 @@ This allows build scenarios like building only specific pushes that has the "rel
 
 ![](<https://cdn.appcircle.io/docs/assets/image (180).png>)
 
+### Skipping a workflow
+
+If your commit message includes `[skip ci]` or `[ci skip]`, your workflow will be skipped.
+
+### Retrying a workflow
+
+If your Merge Request comment includes `[retry]`, your workflow will be retried.
+
 ## Further Automatic Build Subjects
 
 ### Trigger Priorities

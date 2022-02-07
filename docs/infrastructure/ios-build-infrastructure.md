@@ -45,6 +45,7 @@ Here are some of the most important packages installed in our macOS agents used 
 | ------------------ | --------- |
 | Bash               | 3.2.57    |
 | Homebrew           | 2.3.0     |
+| Java (OpenJDK)     | 11.0.2    |
 | Git                | 2.24.3    |
 | Gzip (Apple)       | 287.100.2 |
 | LibreSSL (OpenSSL) | 2.8.3     |
