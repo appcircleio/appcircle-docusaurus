@@ -9,13 +9,52 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.8.1 - 2022-02-07 - Huawei AppGallery, New Components, Improved Triggers
+
+### 🆕 New Feature
+
+- Huawei AppGallery support added. You can submit your apk or aab files to Huawei AppGallery.
+- Java 11 added to iOS agents
+- Slather,Tuist and Badge components added
+- You can now see all your running builds from the status bar and cancel them.
+- Skip the Workflow if the commit message includes `[skip ci] or [ci skip]`
+- Start Merge/Pull Request workflow if commit message includes `[retry]`
+
+### :muscle: Improvement
+
+- Triggers updated. 
+- New environment variables added.
+- Downloading build logs directly added to the menu.
+- Workflow components updated.
+- Error messages are clarified for build permissions. 
+
+### 🐞 Fixed
+
+- Gitlab Merge Request Webhook fixed
+- Browser UI issues fixed
+- Sometimes progress bar was showing on the wrong branch. Fixed.
+
+### 📑 Documentation
+
+- Added [Huawei App Gallery](https://docs.appcircle.io/store-submit/huawei-app-gallery) section for sending your apps to Huawei App Gallery.
+- Added [Huawei App Gallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei App Gallery API Key.
+- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
+- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#provisioning-profile-error) for Provisioning Profiles.
+- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#missing-entitlements) for Missing Entitlements​
+- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#gradle-build-after-bintray-shutdown) for Bintray deprecation
+- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#no-pubspecyaml-file-found-error) for Flutter build errors
+- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#file-not-found-error) for Flutter file naming errors
+- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#firebase-version) for Flutter Firebase version
+- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#err_ossl_evp_unsupported) for React native apps
+
+
 ## 2.8.0 - 2021-10-25 - Improved Build Logging, Refresh Repository Connection, Persistent Notifications
 
 ### 🆕 New Feature
 
 - A branch or a commit is missing? You can refresh repository connections for GitLab, GitHub, and Bitbucket repositories. Just look for the refresh icon on top of the branch list.
 
-### \***\*:muscle:**Improvement\*\*
+### :muscle: Improvement
 
 - Build Notifications will sync between browsers and devices now.
 - Removed unnecessary version texts from build steps on log panels.
@@ -37,7 +76,7 @@ import ContentRef from '@site/src/components/ContentRef';
 - Carthage Dependency Manager for iOS is available as a workflow step
 - Xcode 13.0 Public release is available.
 
-### \***\*:muscle:**Improvement\*\*
+### :muscle: Improvement
 
 - We've added build number next to version number on artifacts distributed to testers.
 - Improved commit and build listing for very large projects.
