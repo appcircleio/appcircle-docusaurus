@@ -9,6 +9,8 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # iOS Certificates & Provisioning Profiles
 
+<iframe width="600" height="315" src="https://www.youtube.com/embed/BTmOJTn3kuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 You need to have your iOS Certificates and Provisioning Profiles ready to be able to build and deploy your applications to Apple Appstore.
 
 :::info
@@ -19,7 +21,7 @@ However, unsigned binaries cannot be installed on actual devices; therefore they
 
 :::
 
-You can obtain your developer certificates and provisioning profiles from the Apple Developer Portal: 
+You can obtain your developer certificates and provisioning profiles from the Apple Developer Portal:
 
 [https://developer.apple.com/support/code-signing/](https://developer.apple.com/support/code-signing/)
 

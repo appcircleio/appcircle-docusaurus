@@ -70,11 +70,6 @@ buildTypes {
     }
 }
 ```
-:::warning
-
-If you sign with gradle, you need to remove `Android Sign` step from your workflow.
-
-:::
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
