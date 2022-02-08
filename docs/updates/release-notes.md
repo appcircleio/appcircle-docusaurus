@@ -13,19 +13,19 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🆕 New Feature
 
-- Huawei AppGallery support added. You can submit your apk or aab files to Huawei AppGallery.
+- [Huawei App Gallery](https://docs.appcircle.io/store-submit/huawei-app-gallery) support added. You can submit your apk or aab files to Huawei AppGallery.
 - Java 11 added to iOS agents
-- Slather,Tuist and Badge components added
+- [Slather](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#slather),[Tuist](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#tuist) and Badge components added
 - You can now see all your running builds from the status bar and cancel them.
-- Skip the Workflow if the commit message includes `[skip ci] or [ci skip]`
-- Start Merge/Pull Request workflow if commit message includes `[retry]`
+- [Skip the Workflow](https://docs.appcircle.io/build/build-manually-or-with-triggers/#skipping-a-workflow) if the commit message includes `[skip ci]` or `[ci skip]`
+- [Retry Merge/Pull Request workflow](https://docs.appcircle.io/build/build-manually-or-with-triggers/#retrying-a-workflow) if commit message includes `[retry]`
 
 ### :muscle: Improvement
 
-- Triggers updated. 
-- New environment variables added.
-- Downloading build logs directly added to the menu.
-- Workflow components updated.
+- [Triggers updated](https://docs.appcircle.io/build/build-manually-or-with-triggers/#auto-build-on-every-push). You can use a default config for new branches. You no longer need to configure every branch. 
+- [New environment variables](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables/) added for commit message, build number, PR number, time stamp. 
+- You can now download build logs directly from the menu.
+- [Node Install](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps#install-node) step uses `lts` version as default. 
 - Error messages are clarified for build permissions. 
 
 ### 🐞 Fixed
