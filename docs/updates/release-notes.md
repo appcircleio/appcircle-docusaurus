@@ -9,7 +9,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
-## 2.8.1 - 2022-02-07 - Huawei AppGallery, New Components, Improved Triggers
+## 2.9.1 - 2022-02-07 - Huawei AppGallery, New Components, Improved Triggers
 
 ### 🆕 New Feature
 
@@ -18,7 +18,7 @@ import ContentRef from '@site/src/components/ContentRef';
 - [Slather](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#slather),[Tuist](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#tuist) and Badge components added
 - You can now see all your running builds from the status bar and cancel them.
 - [Skip the Workflow](https://docs.appcircle.io/build/build-manually-or-with-triggers/#skipping-a-workflow) if the commit message includes `[skip ci]` or `[ci skip]`
-- [Retry Merge/Pull Request workflow](https://docs.appcircle.io/build/build-manually-or-with-triggers/#retrying-a-workflow) if commit message includes `[retry]`
+- [Retry Merge/Pull Request workflow](https://docs.appcircle.io/build/build-manually-or-with-triggers/#retrying-a-workflow) if the comment includes `[retry]`
 
 ### :muscle: Improvement
 
@@ -47,6 +47,20 @@ import ContentRef from '@site/src/components/ContentRef';
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#firebase-version) for Flutter Firebase version
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#err_ossl_evp_unsupported) for React native apps
 
+## 2.9.0 - New Build Profile Detail UI, Better Artifact Upload Times
+
+### 🆕 New Feature
+
+- We have a brand new build profile detail UI! This new UI aims ease the access to workflows and triggers. It also has some improvements on onboarding.
+
+### :muscle: Improvement
+
+- Improved typography throughout the app. Working on more improvements and UI changes.
+- We've improved artifact upload times drastically.
+
+### 🐞 Fixed
+
+- Fixed an issue where build logs were cut in half when multiple browser tabs were displaying the same build logs.
 
 ## 2.8.0 - 2021-10-25 - Improved Build Logging, Refresh Repository Connection, Persistent Notifications
 
