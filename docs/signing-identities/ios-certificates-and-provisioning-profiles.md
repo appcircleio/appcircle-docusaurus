@@ -117,17 +117,39 @@ Click on "Add New" button to upload or create your iOS Certificate.
 
 You can either upload your readily available certificate bundle (P12) along with the bundle password or create a certificate signing request (CSR) to generate a new certificate from the Apple Developer portal and then upload the certificate (CER) to create a certificate bundle (P12). No Mac device is needed.
 
+## Creating P12 File Without Mac
+
 ![](https://cdn.appcircle.io/docs/assets/02-02-Add-iOS-Certificates.jpg)
 
 To generate your iOS certificates, simply fill in your details and Appcircle will provide a CSR (certificate signing request) which you can use on Apple Developer Portal to generate your signing certificate.
 
-- Download your CSR file
-- Upload it to the Apple Developer Portal for certificate creation
-- Download your generated CER file from the Apple Developer portal
-- Upload the CER file to the signing identities module by clicking on the upload button next to the CSR file.
-- Your CSR will now be converted to a P12 file as an iOS signing certificate. (Please note that the P12 file comes with an empty password.);
+- Create a CSR File
 
 ![](https://cdn.appcircle.io/docs/assets/02-07-Generate-iOS-Cert.jpg)
+
+
+- Download your CSR file
+- Go to Apple Developer Portal and select Certificates, IDs & Profiles -> Certificates from the left menu
+![](https://cdn.appcircle.io/docs/assets/apple-addcertificate.png)
+
+-  Select the type of certificate you want to create. If you want to distribute to TestFlight,Adhoc or AppStore, you should select Apple Distribution. If you're creating a certificate for local development environment, you should select Apple Development.
+
+![](https://cdn.appcircle.io/docs/assets/apple-select-certificate-type.png)
+
+- Upload the csr file you have created on Appcircle
+
+![](https://cdn.appcircle.io/docs/assets/apple-selectscr.png)
+
+- Download your generated CER file from the Apple Developer portal
+
+- Upload the CER file to the signing identities module by clicking on the upload button next to the CSR file.
+
+![](https://cdn.appcircle.io/docs/assets/ac-csr-list.png)
+![](https://cdn.appcircle.io/docs/assets/ac-createp12.png)
+
+- Your CSR will now be converted to a P12 file as an iOS signing certificate. (Please note that the P12 file comes with an empty password.)
+
+## Uploading P12 Certificate
 
 To upload your iOS certificate, select "Upload Certificate Bundle (.p12)" button and upload your pre-obtained iOS certificate file.
 
