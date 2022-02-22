@@ -385,3 +385,15 @@ html[data-theme='dark'] div.quick-start-guides a.ios > svg path {
     padding-top: 2.5rem !important;
   }
 }
+
+@media screen and (max-width: 966px) {
+  div.quick-start-guides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  div.module-guides {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
