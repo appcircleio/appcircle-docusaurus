@@ -414,6 +414,12 @@ div.community a span {
   display: inline-block;
 }
 
+html[data-theme='dark'] div.community a,
+html[data-theme='dark'] div.quick-start-guides a,
+html[data-theme='dark'] div.module-guides a {
+  border: 2px solid rgba(255, 255, 255, 0.1)
+} 
+
 @media (min-width: 997px) {
   [class^='docSidebarContainer'] {
     border-right: none !important;
