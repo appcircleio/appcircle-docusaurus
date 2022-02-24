@@ -368,8 +368,50 @@ div.quick-start-guides a span {
   display: inline-block;
 }
 
-html[data-theme='dark'] div.quick-start-guides a.ios > svg path {
-  fill: white;
+div.community {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+div.community a {
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1rem 0.6rem;
+  display: block;
+  color: var(--ifm-heading-color);
+}
+
+div.community a img {
+  display: block;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 40px;
+}
+
+div.community a.twitter svg {
+  display: block;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 40px;
+}
+
+div.community a h5 {
+  font-size: 18px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.25rem;
+  margin-top: 2rem;
+}
+
+div.community a span {
+  font-size: 14px;
+  line-height: 1.25;
+  display: inline-block;
 }
 
 @media (min-width: 997px) {
