@@ -48,11 +48,29 @@ The cache is stored as a single archive file. Cache push and pull components wor
 
 When you drag and drop cache push component to your workflow, it comes with pre-defined values according to your project type. For example, for android projects it comes with pre-defined gradle cache paths which should be useful for most Android apps.
 
-If you need more paths to cache or need to change paths according to your project, you can customize included and excluded paths. All path updates will be reflected to archived cache file on your next build. For patterns that can be used in included and excluded paths is explained in detail, see following component link for more information.
+If you need more paths to cache or need to change paths according to your project, you can customize included and excluded paths as you wish. All path updates will be reflected to archived cache file on your next build.
 
-You can not reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of build pipeline from "Download Artifacts". Also build logs has some information about cache mechanism with how included and excluded paths are processed.
+Cache push uses a pattern in order to select files and folders. Although the pattern is not a regexp, it's closer to a shell glob. For example, `~/Library/Caches/CocoaPods` will select "Cocoapods" folder from home as a whole. Or for an android project you can cache home ".gradle" folder with `~/.gradle` include path and exclude all ".lock" files from there with `.gradle/**/*.lock` exclude path. For patterns that can be used in included and excluded paths is explained in detail [here](https://github.com/appcircleio/appcircle-cache-push-component#included--excluded-paths).
 
-You can not delete specific cache file from UI but if you have a problem with cache file, you can change your cache label to a new one to go on with clean cache. System will automatically clean up unreachable cache files periodically.
+:::warning
+
+Keep in mind that included paths and cache push step's workflow order are closely related with each other. For example, if you include a path from repository and you place cache push step before git clone step, cache push won't find that path since they're not git cloned yet. Although that's not a fatal error for cache push, it will inform you about unreachable paths on build logs. You can review and resolve those kinds of issues from build logs.
+
+:::
+
+You can not reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of build pipeline from "Download Artifacts > ac_cache.zip". Also build logs have some useful information about cache mechanism with how included and excluded paths are processed. You can see produced cache file size from build logs. (Size of cache file affects upload and download durations.)
+
+:::warning
+
+You can not delete specific cache file from UI but if you have a problem with cache file and need a fresh one, you can change your cache label to a new one to go on with clean cache.
+
+:::
+
+:::info
+
+System automatically cleans unreachable and obsolete cache files periodically. For this reason, it's not guaranteed to reach a previous used cache file by using previous cache label in build. Also it’s a good idea to build your workflow in a way that your build won’t fail if the cache can’t be accessed.
+
+:::
 
 [https://github.com/appcircleio/appcircle-cache-push-component](https://github.com/appcircleio/appcircle-cache-push-component)
 
@@ -60,6 +78,12 @@ You can not delete specific cache file from UI but if you have a problem with ca
 
 Cache push uploads cache archive file to remote location as we explained in detail above. On the other hand cache pull downloads and extracts that archive file in build pipeline. All files and folders are extracted to original locations that came from.
 
-Cache push and pull components work in coordination on the same cache file. For this reason in order to download the pushed cache, cache pull must have the same cache label used in cache push. Also you can have more than one push and pull pairs in the same build pipeline according to your needs.
+:::warning
+
+Cache push and pull components should work in coordination on the same cache file. For this reason in order to download the pushed cache, cache pull must have the same cache label used in cache push.
+
+:::
+
+Also you can have more than one push and pull pairs in the same build pipeline according to your needs.
 
 [https://github.com/appcircleio/appcircle-cache-pull-component](https://github.com/appcircleio/appcircle-cache-pull-component)
