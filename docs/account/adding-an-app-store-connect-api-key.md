@@ -7,6 +7,8 @@ sidebar_position: 4
 
 # Adding an App Store Connect API Key
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A0OgvrX5L-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 You can add, delete and manage iOS Certificates and Provisioning Profiles manually using Appcircle. There is also an easier way. By linking your Apple Developer account to Appcircle, you can see a list of certificates and provisioning profiles and pick the ones you want to use for building and distributing.
 
 To link your Apple Developer account, **you need an App Store Connect API Key** from Apple's **App Store Connect Panel**.
