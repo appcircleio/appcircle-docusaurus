@@ -9,6 +9,18 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.2 - 2022-03-16 - SSO Login for Enterprise, Cached Builds
+
+### 🆕 New Feature
+
+- [SSO Login](https://docs.appcircle.io/account/sso/single-sign-on) is now available for all Enterprise accounts. You can connect your SAML and OpenID Provider right now!
+- [Cached Builds](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-push) are available to all. You can now use the Cache Push and Cache Pull components on your workflows to cache your dependencies and speed up your builds.
+
+### 🐞 Fixed
+
+- Browser UI issues fixed
+
+
 ## 2.9.1 - 2022-02-07 - Huawei AppGallery, New Components, Improved Triggers
 
 ### 🆕 New Feature
