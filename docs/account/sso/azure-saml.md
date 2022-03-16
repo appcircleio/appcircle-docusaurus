@@ -90,7 +90,7 @@ You need to select users/groups in Azure AD to enable SSO. All members of your A
 ![](<https://cdn.appcircle.io/docs/assets/azuressosettings4.png>)
 
 
-- Instead of writing all the settings of SAML, you can download the settings file from Okta and upload it. Click the **Download** button next to the **Federation Metadata XML** link to download the XML file.
+- Instead of writing all the settings of SAML, you can download the settings file from Azure AD and upload it. Click the **Download** button next to the **Federation Metadata XML** link to download the XML file.
 
 ![](<https://cdn.appcircle.io/docs/assets/azuressosettings5.png>)
 
