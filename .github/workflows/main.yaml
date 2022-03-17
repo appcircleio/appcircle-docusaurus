@@ -1,6 +1,9 @@
 on:
   push:
-    branches: [ master,feature/algolia ]
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
 
 jobs:
   scan:
