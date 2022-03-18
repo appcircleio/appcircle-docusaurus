@@ -1,12 +1,11 @@
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
-  workflow_dispatch:
+on: [deployment_status, workflow_dispatch]
+
 jobs:
-  scan:
+  update-docsearch:
+    name: Update DocSearch
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' ||
+        (github.event.deployment.environment == 'production' && github.event.deployment_status.state == 'success')
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -15,9 +14,8 @@ jobs:
           APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
           API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         run: |
-          CONFIG="$(cat algolia.config.json)"
-          docker run -i --rm \
+          docker run \
                   -e APPLICATION_ID=$APPLICATION_ID \
                   -e API_KEY=$API_KEY \
-                  -e CONFIG="${CONFIG}" \
+                  -e "CONFIG=$(cat ./algolia.config.json | jq -r tostring)" \
                   algolia/docsearch-scraper 
