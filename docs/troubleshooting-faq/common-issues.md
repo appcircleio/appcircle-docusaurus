@@ -157,6 +157,10 @@ In this case, you need to upgrade the Swift version in the project settings in X
 
 ## Android-Specific Issues
 
+### chmod: cannot access './gradlew': No such file or directory
+
+Every Android project has a `gradlew` file in the main repository directory. If the Android Build step can't find this file, you need to edit your workflow, find the Android Build Step and edit the `PROJECT PATH`. If your `gradlew` file is in the `android` folder, you need to write, `./android` in the edit box.
+
 ### Gradle build after Bintray shutdown
 
 ```
