@@ -13,7 +13,7 @@
   .sidebar {
     display: flex;
     flex-direction: column;
-    max-height: none !important;
+    max-height: 100vh;
     padding-bottom: 4rem;
     padding-top: calc(var(--ifm-navbar-height) + 2rem) !important;
     height: 100%;
@@ -72,6 +72,7 @@
     transform: rotate(180deg);
     margin-top: 4px;
   }
+
   html[dir='rtl'] .collapseSidebarButtonIcon {
     transform: rotate(0);
   }
