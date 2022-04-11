@@ -6,11 +6,11 @@ sidebar_position: 1
 ---
 # iOS Build Infrastructure
 
-Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running `macOS X (v.10.15 Catalina)` or `macOS X (v.10.16 Big Sur)`
+Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running `macOS (v.10.15 Catalina)` or `macOS (v.12.3.1 Monterey)`
 
 :::tip
 
-For Xcode version **13.0.x** and **12.5.x**, `macOS X (v.10.16 Big Sur)` is used. For every other versions, `macOS X (v.10.15 Catalina)` is used.
+For Xcode version **13.0.x** and **12.5.x**, `macOS (v.12.3.1 Monterey)` is used. For every other versions, `macOS (v.10.15 Catalina)` is used.
 
 :::
 
@@ -25,6 +25,14 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 :::
 
+### M1 Macs
+
+We've started providing M1 Mac mini's to select enterprise customers starting from April 2022. We'll gradually enable M1 Macs to all enterprise customers first, and then to all plans.
+
+If you'd like an M1 Mac for your builds, please request an invite:
+
+https://appcircle.io/request-an-invite-for-m1-macs/
+
 ### Using your own computer for build
 
 Appcircle supports using a 3rd party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
@@ -33,7 +41,7 @@ Appcircle supports using a 3rd party computer to perform builds. You can create 
 
 ### Available Xcode Versions
 
-Our macOS build agents have Xcode versions 13.2.x, 13.1.x, 13.0, 12.5, 12.4, 12.3, 12.2, 12.1, 12.0, 11.7, 11.6, 11.5, 11.4, 11.3, 11.2, 11.1 and 11.0 available.;
+Our macOS build agents have Xcode versions 13.3.x, 13.2.x, 13.1.x, 13.0, 12.5, 12.4, 12.3, 12.2, 12.1, 12.0, 11.7, 11.6, 11.5, 11.4, 11.3, 11.2, 11.1 and 11.0 available.;
 
 ### macOS Build Agent Stacks
 
