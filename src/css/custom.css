@@ -297,7 +297,7 @@ html[data-theme='dark'] .rlc-description {
 .intro-visual {
   padding: 3rem 2rem 1rem 2rem;
   background-color: rgba(255, 164, 99, 0.3);
-  border: 2px solid var(--ifm-color-primary-light);
+  border: 1px solid var(--ifm-color-primary-light);
   border-radius: 7px;
   margin-bottom: 4rem;
 }
@@ -321,7 +321,7 @@ div.module-guides {
 div.module-guides a {
   color: var(--ifm-heading-color);
   border-radius: 7px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1rem;
 }
 
@@ -335,7 +335,7 @@ div.module-guides span {
   font-size: 14px;
 }
 
-div.quick-start-guides a.ios > svg path {
+div.quick-start-guides a.ios>svg path {
   fill: black;
 }
 
@@ -347,7 +347,7 @@ div.quick-start-guides {
 
 div.quick-start-guides a {
   border-radius: 7px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 1rem 0.6rem;
   display: block;
@@ -376,7 +376,7 @@ div.community {
 
 div.community a {
   border-radius: 7px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 1rem 0.6rem;
   display: block;
