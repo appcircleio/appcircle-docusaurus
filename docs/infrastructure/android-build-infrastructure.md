@@ -4,16 +4,16 @@ metaTitle: Android Build Infrastructure
 metaDescription: Android Build Infrastructure
 sidebar_position: 2
 ---
+
 # Android Build Infrastructure
 
-For each Android build, Appcircle creates a brand new virtual machine running Debian Linux (v. 10).;
+For each Android build, Appcircle creates a brand new virtual machine running Debian Linux (v. 11).;
 
 Virtual machines are created and they become ready for build within seconds.
 
 During the build process, you can install any dependencies and run commands using custom scrip steps in the build workflow. This gives you complete control over your build and the virtual machine.
 
 :::info
-
 
 Please note that virtual machines are wiped off after a build is executed (no matter success or fail) and anything you installed in the virtual machine will be gone.
 
