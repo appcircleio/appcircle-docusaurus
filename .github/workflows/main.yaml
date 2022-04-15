@@ -4,8 +4,7 @@ jobs:
   update-docsearch:
     name: Update DocSearch
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' ||
-        (github.event.deployment.environment == 'production' && github.event.deployment_status.state == 'success')
+    if: github.event_name == 'workflow_dispatch' || github.event.deployment_status.state == 'success'
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
