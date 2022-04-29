@@ -77,7 +77,7 @@ The user will only be displayed a trust warning for the first time they are runn
 
 There are certain limitations that are mandated by the Apple Developer Enterprise program agreement such as the apps can only be used for work purposes by the actual employees of the enterprise, so it's not a free-for-all certificate to bypass the App Store processes. Apple reserves the right to revoke your certificate at any time in case of a violation.
 
-You can use the Appcircle Distribute module or the Enterprise App Store module (coming soon) to deploy apps built with an enterprise profile to any device.
+You can use the Appcircle Distribute module or the Enterprise App Store module to deploy apps built with an enterprise profile to any device.
 
 There is no need for device registration, but Apple requires the binary to be protected and not open for public download, so you can use the enrollment feature of the Appcircle Distribute module to protect the app distribution.
 
