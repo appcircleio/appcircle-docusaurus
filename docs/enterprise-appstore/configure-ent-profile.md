@@ -66,12 +66,8 @@ You can only send **one** version to live and beta channels. When you send anoth
 ### Unpublish
 You can remove any build from Live or Beta channels by selecting the **Unpublish** menu from the actions. 
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-unpublish.png>)
-
 ### Notify Users
 You can send an email to your users by selecting the **Notify** menu from the actions. 
-
-![](<https://cdn.appcircle.io/docs/assets/entstore-notify.png>)
 
 Your users will receive an email with the subject and message you entered in this form. Users will be able to download the program by clicking the link in the incoming email.
 
@@ -79,8 +75,6 @@ Your users will receive an email with the subject and message you entered in thi
 ### Other Actions
 If you want to share the link to a specific version without sending an email, you can select the **Share** menu from the actions. You can also download and delete versions from the list by selecting corresponding menus.
 
-
-![](<https://cdn.appcircle.io/docs/assets/entstore-unpublish.png>)
 
 :::info
 
