@@ -340,6 +340,12 @@ Older builds and/or testing distributions will use almost all of your storage. I
 
 In order for storage to be freed up, you should also remove the other references pointing to the artifact. In example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds respectively.
 
+:::caution
+
+It may take a couple of minutes to see the change in your account after you have deleted some artifacts.
+
+:::
+
 If you still can't solve your issues, ask on our Slack page. Our community and our support engineers will help you whenever they're available:
 
 import NeedHelp from '@site/docs/\_need-help.mdx';

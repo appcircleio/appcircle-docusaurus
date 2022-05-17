@@ -33,18 +33,26 @@ Here are some most important packages installed in our Linux images used for And
 
 | Package             | Version |
 | ------------------- | ------- |
-| Apt Package Manager | 1.8.2   |
-| Bash                | 5.0.4   |
-| GNU Binutils        | 2.31.1  |
-| Bzip2               | 1.0.6   |
-| Curl                | 7.64.0  |
-| GCC                 | 8.3.0   |
-| Git                 | 2.20.1  |
+| Apt Package Manager | 2.2.4   |
+| Bash                | 5.1.2   |
+| GNU Binutils        | 2.35.2  |
+| Bzip2               | 1.0.8   |
+| Curl                | 7.74.0  |
+| GCC                 | 10.2.1  |
+| Git                 | 2.35.1  |
+| Git LFS             | 2.13.2  |
 | Gradle              | 4.4.1   |
-| Gzip                | 1.9.3   |
-| Java-common         | 0.71    |
+| Gzip                | 1.10.4  |
+| Java                | 11.0.12 |
+| Maven               | 3.8.5   |
+| Node JS             | 16.14.2 |
 | OpenSSL             | 1.1.1   |
-| Perl                | 5.28    |
-| Python              | 2.7.16  |
-| Rake                | 12.3.1  |
-| Ruby                | 2.5.1   |
+| Perl                | 5.32.1  |
+| Python              | 3.9.2   |
+| Rake                | 13.0.6  |
+| Rbenv               | 1.2.0   |
+| Ruby                | 2.7.5   |
+| Unzip               | 6.00    |
+| Wget                | 1.21    |
+| Yarn                | 1.22.18 |
+| Zip                 | 3.0     |
