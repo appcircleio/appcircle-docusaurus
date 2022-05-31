@@ -145,6 +145,7 @@ To change the Flutter version, open the Flutter Install workflow step from the w
 
 ![](<https://cdn.appcircle.io/docs/assets/image (167).png>)
 
+You can also set the preferred Flutter version on config screen. If you don't set any version, `stable` version will be used.
 ### Starting a Flutter Build and After a Build
 
 To start your first build, just press the start build button – the play button under the actions columns (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in realtime.

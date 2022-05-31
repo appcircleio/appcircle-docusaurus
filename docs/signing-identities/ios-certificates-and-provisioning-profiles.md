@@ -157,6 +157,12 @@ To upload your iOS certificate, select "Upload Certificate Bundle (.p12)" button
 
 You can see a list of your created or uploaded certificates. Each certificate will display the certificate name, certificate type (development, ad-hoc, in-house, or app store distribution) along with expiration dates.
 
+:::caution
+
+If your password contains special characters such as `$` and `#`, your workflow may fail with `MAC verification failed during PKCS12 import` message. If you receive such an error, please export your P12 file by removing that symbol.
+
+:::
+
 ![](https://cdn.appcircle.io/docs/assets/02-08-CertificateList.jpg)
 
 ### 2. Upload iOS Provisioning Profiles

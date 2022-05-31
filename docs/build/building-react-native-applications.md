@@ -55,7 +55,7 @@ Please don't forget to add additional scheme files to your version control.
 
 :::
 
-Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in Build Configuration window.
+Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in the Build Configuration window. You can also set the preferred NodeJS version on this screen. If you don't set any version, `lts` version will be used.
 
 ![](https://cdn.appcircle.io/docs/assets/ios-fetch.png)
 

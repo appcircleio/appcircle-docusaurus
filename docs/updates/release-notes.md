@@ -9,6 +9,26 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.10 - 2022-05-31 - iOS Version Management, Enterprise Store Customizations
+
+### 🆕 New Feature
+
+- [Enterprise Store Customizations](https://docs.appcircle.io/enterprise-appstore/customize-ent-store). You can connect your subdomain as Enterprise Store.
+- [NodeJS Version Selection](https://docs.appcircle.io/build/building-react-native-applications#build-configuration-for-react-native-ios-applications) You can now directly set the NodeJS version on config screen.
+- [Flutter Version Selection](https://docs.appcircle.io/build/building-flutter-applications#how-to-set-a-specific-flutter-version-for-the-build) You can now directly set the Flutter version on the config screen.
+- [iOS Versioning](https://docs.appcircle.io/versioning/ios-version) You can manage build and version numbers directly with UI.
+
+### :muscle: Improvement
+- [Android Stack](https://docs.appcircle.io/infrastructure/android-build-infrastructure) Android Build Infrastructure updated. Now the default JAVA version is 11.
+- [iOS Stack](https://docs.appcircle.io/infrastructure/ios-build-infrastructure) iOS Build Infrastructure updated. Xcode 13.4 added to iOS agents.
+- [Workflow Management](https://docs.appcircle.io/workflows/why-to-use-workflows#setting-up-workflows) You can now import or export your workflows as a YAML file.
+- [Appcircle CLI Update](https://www.npmjs.com/package/@appcircle/cli) Getting Live and Beta versions added to CLI.
+- When you download the logs, the profile and branch names will be added to the file name.
+
+### 🐞 Fixed
+
+- Browser UI issues fixed
+
 ## 2.9.2 - 2022-03-16 - SSO Login for Enterprise, Cached Builds
 
 ### 🆕 New Feature
