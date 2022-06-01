@@ -161,6 +161,8 @@ const config = {
         anonymizeIP: true,
       },
     ],
+    'docusaurus-plugin-sass'
+    
   ],
 };
 

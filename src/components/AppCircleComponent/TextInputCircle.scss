@@ -1,0 +1,16 @@
+.TextInputCircle{
+  margin-top: 5px;
+
+  &_Label{
+      color: #5b799e;
+      font-weight: 500;
+      font-size: 15px;
+    }
+  
+    &_bottomText{
+      font-size: 11px;
+      color: #a5b5c9;
+      margin-top: 5px;
+      letter-spacing: .36px;
+    }
+  }

@@ -1,22 +1,16 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import "./Select.scss";
 const Select = (props) => {
   return (
     <>
       <select
-        style={{
-          background: "#edf0f4",
-          border: "1px solid #e1e6ef",
-          borderRadius: 5,
-          padding: 7,
-          marginTop: 11
-        }}
+        className="Select"
         value={props.value}
         onChange={(e) => props.onChange(e.target.value)}
       >
         {props.options.map((c) => (
-            
           <option
+            className="Option"
             style={{ color: "#445b77", fontSize: 15 }}
             key={c.label}
             value={c.value}
