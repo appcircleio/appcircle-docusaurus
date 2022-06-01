@@ -16,3 +16,6 @@ export const TextInputCircle = (props) => {
     </div>
   );
 };
+
+export default TextInputCircle
+

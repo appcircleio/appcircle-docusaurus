@@ -1,119 +1,175 @@
-import React, { useState } from "react";
-import Switch from "./Switch";
-import Select from "./Select";
-import TextInput from "./TextInput";
-import Toggle from "./Toggle";
+import React, { useState, useEffect } from "react";
 import ToggleCircle from "./AppCircleComponent/ToggleCircle";
-import { TextInputCircle } from "./AppCircleComponent/TextInputCircle";
+import TextInputCircle from "./AppCircleComponent/TextInputCircle";
 import SelectCircle from "./AppCircleComponent/SelectCircle";
 
 export default function VersionPlayground() {
-  const [enableBuildNumber, setEnableBuildNumber] = useState(false);
-  const [buildNumber, setBuildNumber] = useState("5");
-  const [versionNumber, setVersionNumber] = useState("1.2.3");
-  const [enableBuildVersioning, setEnableBuildVersioning] = useState(false);
-  const [selectOmitZeroPatchVersion, setSelectOmitZeroPatchVersion] =
-    useState(false);
-  const [versionStrategy, setversionStrategy] = useState("keep");
+    const [buildNumber, setBuildNumber] = useState("5");
+    const [versionNumber, setVersionNumber] = useState("1.2.3");
+    const [buildOffset, setBuildOffset] = useState("1");
+    const [versionOffset, setVersionOffset] = useState("0");
+    const [newBuildNumber, setNewBuildNumber] = useState("5");
+    const [newVersionNumber, setNewVersionNumber] = useState("1.2.3");
 
-  const [toggleCheckedBuild, setToggleCheckedBuild] = useState(false);
-  const [toggleCheckedVersion, setToggleCheckedVersion] = useState(false);
+    const [omitZero, setOmitZero] = useState(false);
+    const [versionStrategy, setVersionStrategy] = useState("keep");
 
-  const [value, setValue] = useState("");
+    const [toggleCheckedBuild, setToggleCheckedBuild] = useState(false);
+    const [toggleCheckedVersion, setToggleCheckedVersion] = useState(false);
 
-  const buildSources = [
-    { label: "Environment Variable", value: "env" },
-    { label: "Xcode (Info.plist)", value: "xcode" },
-  ];
+    const versionStrategies = [
+        { label: "Keep", value: "keep" },
+        { label: "Major", value: "major" },
+        { label: "Minor", value: "minor" },
+        { label: "Patch", value: "patch" },
+    ];
 
-  const envSources = [
-    { label: "Environment Variable", value: "env" },
-    { label: "App Store", value: "appstore" },
-    { label: "Xcode (Info.plist)", value: "xcode" },
-  ];
+    const handleChange = (e) => {
+        setToggleCheckedBuild(e.target.checked);
+    };
+    const handleChangeVersion = (e) => {
+        setToggleCheckedVersion(e.target.checked);
+    };
 
-  const versionStrategies = [
-    { label: "Keep", value: "keep" },
-    { label: "Major", value: "major" },
-    { label: "Minor", value: "minor" },
-    { label: "Patch", value: "patch" },
-  ];
+    const handleBuildNumber = (e) => {
+        setBuildNumber(e.target.value);
+    };
 
-  const handleInput = (e) => {
-    setValue(e.target.value);
-  };
-  const handleChange = (e) => {
-    setToggleCheckedBuild(e.target.checked);
-  };
-  const handleChangeVersion = (e) => {
-    setToggleCheckedVersion(e.target.checked);
-  };
+    const handleVersionNumber = (e) => {
+        setVersionNumber(e.target.value);
+    };
 
-  return (
-    <div>
-      <TextInputCircle
-        // bottom text is not visible if bottomText is false
-        title="Build Number"
-        bottomText={false}
-        value={value}
-        onChange={handleInput}
-      />
-      <TextInputCircle
-        // bottom text is not visible if bottomText is false
-        title="Version Number"
-        bottomText={false}
-        value={value}
-        onChange={handleInput}
-      />
-      <ToggleCircle
-        toggleTitle="UPDATE BUILD NUMBER WHILE BUILDING"
-        toggleDesc="Appcircle will apply the build number while building based on your settings below. Code in your repository won't change.
-        Code in your repository won’t change"
-        checked={toggleCheckedBuild}
-        disabled={false}
-        onChange={handleChange}
-        offstyle="#a5b5c9"
-        onstyle="var(--ifm-color-primary)"
-      />
-      {toggleCheckedBuild && (
-        <TextInputCircle
-          title="Build Offset"
-          // bottom text is not visible if bottomText is false
-          bottomText={false}
-          value={value}
-          onChange={handleInput}
-        />
-      )}
-      <ToggleCircle
-        toggleTitle="UPDATE VERSION NUMBER WHILE BUILDING"
-        toggleDesc="Appcircle will apply the version number stated below while building.
-        Code in your repository won’t change"
-        checked={toggleCheckedVersion}
-        disabled={false}
-        onChange={handleChangeVersion}
-        offstyle="#a5b5c9"
-        onstyle="var(--ifm-color-primary)"
-      />
-      {toggleCheckedVersion && (
-        <>
-          <TextInputCircle
-            // bottom text is not visible if bottomText is false
-            title="Version Offset"
-            bottomText={false}
-            value={value}
-            onChange={handleInput}
-          />
-          <SelectCircle
-            // bottom text is not visible if bottomText is false
-            title="Version Strategy"
-            options={versionStrategies}
-            value={versionStrategy}
-            onChange={setversionStrategy}
-          />
-        </>
-      )}
-    </div>
-  );
-}
+    const calculateBuildNumber = () => {
+        const calculated = (parseInt(buildOffset) || 0) + (parseInt(buildNumber) || 0);
+        setNewBuildNumber(calculated);
+    };
 
-//  value={enableBuildVersioning ? versionStrategy: versionStrategies[0]}
+    const calculateVersionNumber = () => {
+        const version_array = versionNumber.split('.').map(Number);
+        const offset = parseInt(versionOffset) || 0;
+        switch (versionStrategy) {
+            case 'patch':
+                version_array[2] = (version_array[2] || 0) + offset;
+                break;
+            case 'minor':
+                version_array[1] = (version_array[1] || 0) + offset;
+                version_array[2] = version_array[2] = 0;
+                break;
+            case 'major':
+                version_array[0] = (version_array[0] || 0) + offset;
+                version_array[1] = version_array[1] = 0;
+                version_array[1] = version_array[2] = 0;
+                break;
+            default:
+                break;
+        }
+
+        if (omitZero && version_array[2] == 0) {
+            version_array.pop();
+        }
+        setNewVersionNumber(version_array.join('.'));
+    };
+
+    useEffect(() => {
+        calculateBuildNumber();
+    }, [buildNumber, buildOffset]);
+
+    useEffect(() => {
+        calculateVersionNumber();
+    }, [versionNumber, versionOffset, versionStrategy, omitZero]);
+
+
+    return (
+        <div>
+            <TextInputCircle
+                // bottom text is not visible if bottomText is false
+                title="Build Number"
+                bottomText={false}
+                value={buildNumber}
+                name="buildNumber"
+                onChange={handleBuildNumber}
+            />
+            <TextInputCircle
+                // bottom text is not visible if bottomText is false
+                title="Version Number"
+                bottomText={false}
+                value={versionNumber}
+                name="versionNumber"
+                onChange={handleVersionNumber}
+            />
+
+            <ToggleCircle
+                toggleTitle="UPDATE BUILD NUMBER WHILE BUILDING"
+                toggleDesc="Appcircle will apply the build number while building based on your settings below."
+                checked={toggleCheckedBuild}
+                disabled={false}
+                onChange={handleChange}
+                offstyle="#a5b5c9"
+                onstyle="var(--ifm-color-primary)"
+            />
+            {toggleCheckedBuild && (
+                <>
+                    <TextInputCircle
+                        title="Build Offset"
+                        // bottom text is not visible if bottomText is false
+                        bottomText={false}
+                        value={buildOffset}
+                        onChange={(e) => setBuildOffset(e.target.value)}
+                    />
+                    <TextInputCircle
+                        // bottom text is not visible if bottomText is false
+                        title="Calculated Build Number"
+                        bottomText={false}
+                        value={newBuildNumber}
+                    />
+                </>
+            )}
+            <ToggleCircle
+                toggleTitle="UPDATE VERSION NUMBER WHILE BUILDING"
+                toggleDesc="Appcircle will apply the version number while building based on your settings below."
+                checked={toggleCheckedVersion}
+                disabled={false}
+                onChange={handleChangeVersion}
+                offstyle="#a5b5c9"
+                onstyle="var(--ifm-color-primary)"
+            />
+            {toggleCheckedVersion && (
+                <>
+                    <TextInputCircle
+                        // bottom text is not visible if bottomText is false
+                        title="Version Offset"
+                        bottomText={false}
+                        value={versionOffset}
+                        onChange={(e) => setVersionOffset(e.target.value)}
+                    />
+                    <SelectCircle
+                        // bottom text is not visible if bottomText is false
+                        title="Version Strategy"
+                        options={versionStrategies}
+                        value={versionStrategy}
+                        onChange={setVersionStrategy}
+                    />
+
+                    <TextInputCircle
+                        // bottom text is not visible if bottomText is false
+                        title="Calculated Version Number"
+                        bottomText={false}
+                        value={newVersionNumber}
+                    />
+
+                    <ToggleCircle
+                        toggleTitle="Omit Zero Patch Version"
+                        toggleDesc="If true omits zero in patch version(so 42.10.0 will become 42.10 and 42.10.1 will remain 42.10.1), default is false"
+                        checked={omitZero}
+                        disabled={false}
+                        onChange={(e) => setOmitZero(e.target.checked)}
+                        offstyle="#a5b5c9"
+                        onstyle="var(--ifm-color-primary)"
+                    />
+
+
+                </>
+            )}
+        </div>
+    );
+};
