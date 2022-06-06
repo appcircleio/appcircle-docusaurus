@@ -57,7 +57,7 @@ The list of currently available Xcode versions can be found in the following doc
 
 By default, the most recent stable version of Xcode is selected. If available, you can also switch to the most recent Xcode beta at the top of the list.
 
-![](https://cdn.appcircle.io/docs/assets/04-01b-Build-Conf-Prj.jpg)
+![](<https://cdn.appcircle.io/docs/assets/ios-fetch.png>)
 
 ### Sending the Build Status to the Repository Providers
 

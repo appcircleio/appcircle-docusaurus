@@ -15,7 +15,7 @@ Every build profile needs to know project details regardless of the project bein
 
 You can also enable or disable automatic builds for the current branch.
 
-![](<https://cdn.appcircle.io/docs/assets/image (169).png>)
+![](<https://cdn.appcircle.io/docs/assets/ios-fetch.png>)
 
 ### Signing configuration
 
