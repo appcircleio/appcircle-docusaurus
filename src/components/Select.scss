@@ -16,3 +16,13 @@
 .Option {
   color: #445b77;
 }
+
+
+html[data-theme="dark"] .Select {
+  background-color: #2d2d2d ;
+  border: 1px solid #343538;
+  color: #b8bfc8;
+}
+html[data-theme="dark"] .Option {
+  color: #b8bfc8;
+}
