@@ -57,13 +57,13 @@ Please don't forget to add additional scheme files to your version control.
 
 Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in the Build Configuration window. You can also set the preferred NodeJS version on this screen. If you don't set any version, `lts` version will be used.
 
-![](https://cdn.appcircle.io/docs/assets/ios-fetch.png)
+![](https://cdn.appcircle.io/docs/assets/reactnative-ios-settings.png)
 
 ### Build Configuration for React Native Android applications
 
 Click on the gear icon on the top right to access the build configuration. The first step will be the build project details. You can enter details manually or click on the Fetch button to retrieve them from your project.
 
-![](https://cdn.appcircle.io/docs/assets/ios-fetch.png)
+![](https://cdn.appcircle.io/docs/assets/reactnative-android-settings.png)
 
 ### Sending the Build Status to the Repository Providers
 

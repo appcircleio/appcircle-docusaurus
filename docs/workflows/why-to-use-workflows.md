@@ -87,7 +87,7 @@ The workflow list will be displayed. To view the [Workflow Steps](why-to-use-wor
 
 ![](<https://cdn.appcircle.io/docs/assets/image (197).png>)
 
-To create a new workflow, press the "New" button at the top of the workflow list and select a template from the default workflows. Then edit the workflow name and press enter.
+To create a new workflow, press the "New" button at the top of the workflow list and select a template from the default workflows. Then edit the workflow name and press enter. You can also upload your workflow as a YAML file.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (198).png>)
 
@@ -115,7 +115,7 @@ You can find the full list of available workflow steps in our workflow marketpla
 
 [https://appcircle.io/workflow-marketplace/](https://appcircle.io/workflow-marketplace/)
 
-You can add platform-specific workflow steps, custom scripts, and other steps into your workflow and re-order them as you like. You can also remove the steps you don't need.
+You can add platform-specific workflow steps, custom scripts, and other steps into your workflow and re-order them as you like. You can also remove the steps you don't need. You can backup your current workflow by clicking the **Download YAML** button at the bottom.
 
 To access the Workflow Marketplace, go to the Workflow Editor and click on the Edit button:
 
