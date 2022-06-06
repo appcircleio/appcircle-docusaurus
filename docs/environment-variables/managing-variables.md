@@ -50,8 +50,6 @@ When you upload a file as an environment variable, file name is not preserved. T
 :::
 
 
-###
-
 ### Using environment variable groups in builds
 
 Environment variable groups can be used in builds to extend the workflow and add additional actions to workflow steps.
@@ -63,3 +61,13 @@ Here, you can see a list of previously created environment variable groups. Sele
 Then in workflows, you can specify the environment variable for use.
 
 ![](<https://cdn.appcircle.io/docs/assets/09-12-EnvVars (1).jpg>)
+
+### Creating environment variables on the fly 
+
+If you want to create environment variables on the fly, you should write those environment variables to a special file called `AC_ENV_FILE_PATH`. For example, if we want to create a build number based on a timestamp and use it in the next steps we can use the followıng custom script.
+
+```bash
+ echo "BUILD_NUMBER=$(date +%s)" >> $AC_ENV_FILE_PATH
+```
+
+Any step after this custom script can access the `$BUILD_NUMBER` environment variable. 
