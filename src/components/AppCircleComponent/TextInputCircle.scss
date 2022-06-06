@@ -1,0 +1,20 @@
+.TextInputCircle {
+  margin: 10px 0px;
+
+  &_Label {
+    color: #5b799e;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  &_bottomText {
+    font-size: 11px;
+    color: #a5b5c9;
+    margin-top: 5px;
+    letter-spacing: 0.36px;
+  }
+}
+
+html[data-theme="dark"] .TextInputCircle_Label label {
+  color: #96a0ac;
+}

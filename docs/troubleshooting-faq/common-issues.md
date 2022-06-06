@@ -292,6 +292,21 @@ If you face problems during NPM/Yarn install steps on Appcircle but not on your 
 - [x] Make sure that your packages support the node version you use.
 - [x] Make sure that the file interactions that is done on `preinstall` and/or `postinstall` scrips are suitable to be executed on a different machine
 
+### Disable Flipper SDK on iOS
+
+Flipper can be a good tool for debugging your applications. It still gets built even if it's not being used for release builds. To speed up your builds, Flipper can be disabled on Appcircle by making the Flipper SDK inclusion conditional.
+
+Example Podfile modification:
+
+```ruby
+  if !ENV['AC_APPCIRCLE']
+    use_flipper!
+    post_install do |installer|
+      flipper_post_install(installer)
+    end
+  end
+```
+
 :::tip
 
 Appcircle uses the lts(Long Term Support) node version by default.

@@ -113,7 +113,14 @@ Any previous build can be deployed to the Distribute module without the need for
 
 :::
 
-###
+### Versioning
+
+The versioning tab will allow you to change the build or version number during the build. You can increase the build number or version number by using different sources and strategies. 
+
+<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
+  Managing iOS Build and Version Numbers
+</ContentRef>
+
 
 ### Environment Variables
 
