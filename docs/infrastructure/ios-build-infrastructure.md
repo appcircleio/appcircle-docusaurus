@@ -50,17 +50,35 @@ Here are some of the most important packages installed in our macOS agents used 
 
 `macOS Monterey v.12.4`
 
-| Package            | Version   |
-| ------------------ | --------- |
-| Bash               | 3.2.57    |
-| Homebrew           | 2.3.0     |
-| Java (OpenJDK)     | 11.0.2    |
-| Git                | 2.24.3    |
-| Gzip (Apple)       | 287.100.2 |
-| LibreSSL (OpenSSL) | 2.8.3     |
-| Node               | 14.3.0    |
-| Perl               | 5.18.4    |
-| Python             | 2.7.16    |
-| Rake               | 12.3.2    |
-| Ruby               | 2.6.3     |
-| RVM                | 1.29.10   |
+| Package            | Version    |
+| ------------------ | ---------- |
+| Bash               | 3.2.57     |
+| Bundle             | 2.3.9      |
+| Carthage           | 0.38.0     |
+| Curl               | 7.79.1     |
+| Homebrew           | 3.4.2      |
+| Java (OpenJDK)     | 11.0.2     |
+| Fastlane           | 2.204.3    |
+| Gem                | 3.1.6      |
+| Git                | 2.35.1     |
+| Git LFS            | 3.1.2      |
+| Gzip (Apple)       | 353.100.22 |
+| LibreSSL (OpenSSL) | 2.8.3      |
+| ImageMagick        | 7.1.0      |
+| Maven              | 3.8.4      |
+| N                  | 8.0.2      |
+| Node               | 16.14.0    |
+| Npm                | 8.3.1      |
+| Perl               | 5.30.3     |
+| Pod                | 1.11.2     |
+| Pip                | 21.3.1     |
+| Python             | 3.9.10     |
+| Rake               | 13.0.1     |
+| Ruby               | 2.7.5      |
+| Rbenv              | 1.2.0      |
+| Sdkman             | 5.14.0     |
+| Slather            | 2.7.2      |
+| Unzip              | 6.00       |
+| Xcodeproj          | 1.21.0     |
+| Yarn               | 1.22.17    |
+| Zip                | 3.0        |
