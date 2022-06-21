@@ -20,7 +20,7 @@ import ContentRef from '@site/src/components/ContentRef';
 - [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=build) New API endpoint added to start a build with provided environment variables.
 
 ### :muscle: Improvement
-- [iOS Stack](https://docs.appcircle.io/infrastructure/ios-build-infrastructure) Monterery is upgraded to 12.4 for macOS agents.
+- [iOS Stack](https://docs.appcircle.io/infrastructure/ios-build-infrastructure) Monterey is upgraded to 12.4 for macOS agents.
 - Log window is improved. It is more performant and stable.
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#issues-in-connecting-to-the-repositories-with-ssh) for multiple SSH keys.
 
