@@ -31,7 +31,7 @@ To resolve, go to Organization Settings ->Third-party access and press edit next
 
 For the SSH connections, a key pair in PEM format is required. The public key is entered/stored in the Git provider while the private key is entered in Appcircle.
 
-Please refer to [this guide for the commands to generate a compatible key pair](../build/adding-a-build-profile/#connecting-to-a-private-repository-with-ssh) for SSH connections.
+Please refer to [this guide for the commands to generate a compatible key pair](/build/adding-a-build-profile/connecting-to-private-repository-via-ssh) for SSH connections.
 
 Using multiple SSH keys is not recommended. Instead, you should create a single SSH key that has access to all the private modules. 
 
