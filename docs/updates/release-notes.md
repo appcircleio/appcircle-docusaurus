@@ -13,7 +13,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🆕 New Feature
 
-- [Release Notes Component](/integrations/managing-release-notes). You can create release notes with Publish Release Notes component.
+- [Release Notes Component](/integrations/managing-release-notes) You can create release notes with Publish Release Notes component.
 - [Enterprise Store](/enterprise-appstore/customize-ent-store) Certificate Details added to Enterprise Store.
 - [Enterprise Store](/enterprise-appstore/enterprise-reports) Detailed reports are added to Enterprise Store.
 - [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=signing-identity) New API endpoints added to Certificate and Provisioning profiles upload.

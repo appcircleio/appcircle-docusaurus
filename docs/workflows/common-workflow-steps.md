@@ -90,6 +90,6 @@ Also you can have more than one push and pull pairs in the same build pipeline a
 
 ## Release Notes
 
-You can use Publish Release Notes Component component to create release notes during your workflow.
+You can use Release Notes component to create release notes during your workflow.
 
 [https://github.com/appcircleio/appcircle-release-notes-component](https://github.com/appcircleio/appcircle-release-notes-component)

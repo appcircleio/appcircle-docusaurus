@@ -7,7 +7,7 @@ sidebar_position: 7
 
 # Publishing Release Notes
 
-You can use [Publish Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/)component to create release notes during your workflow. You can enrich the contents of your release notes with environment variables or with Ruby snippets. If you want to add your own release notes as a file, you can also give the path to the file. This component creates **release-notes.txt** with given options and copies to *$AC_OUTPUT_DIR* path. This release notes will be used for the following places:
+You can use [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/) to create release notes during your workflow. You can enrich the contents of your release notes with environment variables or with Ruby snippets. If you want to add your own release notes as a file, you can also give the path to the file. This component creates **release-notes.txt** with given options and copies to *$AC_OUTPUT_DIR* path. This release notes will be used for the following places:
 
 - Distribution Portal
 - Enterprise Store
@@ -64,4 +64,4 @@ Git Log:
 - Jane: Initial commit
 ```
 
-Please check [Release Component](https://github.com/appcircleio/appcircle-release-notes-component/) documentation for more information.
+Please check [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/) documentation for more information.
