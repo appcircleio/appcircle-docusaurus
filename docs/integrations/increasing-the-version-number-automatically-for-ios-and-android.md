@@ -4,6 +4,9 @@ metaTitle: Increasing the Version Number Automatically for iOS and Android
 metaDescription: Increasing the Version Number Automatically for iOS and Android
 sidebar_position: 5
 ---
+
+import ContentRef from '@site/src/components/ContentRef';
+
 # Increasing the Version Number Automatically for iOS and Android
 
 Appcircle provides a reserved environment variable that returns the latest build number:;
@@ -36,18 +39,8 @@ if (System.getenv("AC_APPCIRCLE")) {
 ```
 
 
+For iOS, you should use the Versioning Tab on your config screen to manage the build and version number. Please check the following document to learn more about the iOS Versioning system.
 
-For iOS, you need to include this in a custom script step as a ruby or a bash script that modifies the `Info.plist` file before the build.
-
-It is up to you how to reflect the build number to the app, but one common practice is to set the `CFBundleVersion` value as the value of `AC_BUILD_NUMBER`.
-
-An example custom bash script for this purpose is as follows:
-
-```bash
-set -e
-set -x
-/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $AC_BUILD_NUMBER" "$AC_REPOSITORY_DIR/<path-to-plist>/Info.plist"
-```
-
-**Make sure you enter the path to your Plist file correctly.**
-
+<ContentRef url="/versioning/ios-version">
+  iOS Versioning
+</ContentRef>

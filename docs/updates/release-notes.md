@@ -9,6 +9,25 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.11 - 2022-06-20 - Release Notes Component, Enterprise Store Improvements
+
+### 🆕 New Feature
+
+- [Release Notes Component](/integrations/managing-release-notes) You can create release notes with Publish Release Notes component.
+- [Enterprise Store](/enterprise-appstore/customize-ent-store) Certificate Details added to Enterprise Store.
+- [Enterprise Store](/enterprise-appstore/enterprise-reports) Detailed reports are added to Enterprise Store.
+- [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=signing-identity) New API endpoints added to Certificate and Provisioning profiles upload.
+- [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=build) New API endpoint added to start a build with provided environment variables.
+
+### :muscle: Improvement
+- [iOS Stack](/infrastructure/ios-build-infrastructure) Monterey is upgraded to 12.4 for macOS agents.
+- Log window is improved. It is more performant and stable.
+- Added [FAQ section](/troubleshooting-faq/common-issues#issues-in-connecting-to-the-repositories-with-ssh) for multiple SSH keys.
+
+### 🐞 Fixed
+
+- Store Submit logs show properly.
+
 ## 2.9.10 - 2022-05-31 - iOS Version Management, Enterprise Store Customizations
 
 ### 🆕 New Feature

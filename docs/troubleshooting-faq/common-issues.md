@@ -31,7 +31,38 @@ To resolve, go to Organization Settings ->Third-party access and press edit next
 
 For the SSH connections, a key pair in PEM format is required. The public key is entered/stored in the Git provider while the private key is entered in Appcircle.
 
-Please refer to [this guide for the commands to generate a compatible key pair](../build/adding-a-build-profile/#connecting-to-a-private-repository-with-ssh) for SSH connections.
+Please refer to [this guide for the commands to generate a compatible key pair](/build/adding-a-build-profile/connecting-to-private-repository-via-ssh) for SSH connections.
+
+Using multiple SSH keys is not recommended. Instead, you should create a single SSH key that has access to all the private modules. 
+
+If you want to use multiple SSH keys, you need to complete the below steps:
+
+- Add your SSH key(s) as environment variable group as a file.
+- Select that environment group on your config screen
+- Use the below custom script to add that key.
+- Each key name should be unique. Appcircle's Activate SSH component uses `appcircle_ssh` as a key name.
+
+```bash
+set -e
+
+if [ -z "$MY_OTHER_SSH_KEY" ]
+then
+echo "MY_OTHER_SSH_KEY is not provided. Skipping step."
+exit 0
+fi
+echo "Create a file to save the RSA SSH private key"
+mkdir -p ~/.ssh
+echo "$AC_REPOSITORY_SSH_KEY" >> ~/.ssh/appcircle_new_ssh
+chmod 600 ~/.ssh/appcircle_new_ssh
+
+echo "Starting a new ssh-agent"
+eval $(ssh-agent)
+
+echo "Add the SSH private key to the ssh-agent"
+ssh-add ~/.ssh/appcircle_new_ssh
+echo "Exporting SSH_AUTH_SOCK=$SSH_AUTH_SOCK"
+echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $AC_ENV_FILE_PATH
+```
 
 ### Accessing internal/on-premise repositories
 

@@ -137,6 +137,14 @@ You can also add a message to testers including testing instructions and release
 
 ![](https://cdn.appcircle.io/docs/assets/06-07a-SendToTesterGroups.jpg)
 
+You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message 
+
+```ruby
+Branch: $AC_GIT_BRANCH
+Commit Hash:  <%= ENV['AC_GIT_COMMIT'][0..6] %>
+Commit Message: $AC_COMMIT_MESSAGE
+```
+
 ###
 
 ### Tracking your distribution
