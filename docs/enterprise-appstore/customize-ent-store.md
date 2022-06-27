@@ -5,6 +5,8 @@ metaDescription: Customize Enterprise Store
 sidebar_position: 3
 ---
 
+import ContentRef from '@site/src/components/ContentRef';
+
 # Customize Your Enterprise Store
 
 
@@ -48,3 +50,33 @@ After creating the DNS settings, type your custom domain name, select your certi
 
 ![](<https://cdn.appcircle.io/docs/assets/entstore-customdomain.png>)
 
+## SSO Integration
+
+You can enable SSO for your Enterprise Store. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please turn on the toggle that says **Enable SSO**. After you have enabled the SSO, please click the **Create** link to configure the SSO, according to your provider.
+
+![](<https://cdn.appcircle.io/docs/assets/entstore-ssotoogle.png>)
+
+
+:::info
+
+If you're configuring SAML Provider, you must set `https://auth.appcircle.io/auth/realms/store` as Audience URI (SP Entity ID).
+
+:::
+
+
+## Identity Providers​
+
+You can follow the below documents to connect your identity providers. If your Identity Provider is not on the list, you can follow any OpenID or SAML integration guide from the below list to find out the parameters.
+
+- [Auth0 OpenID](../account/sso/auth-openid.md)
+- [Auth0 SAML](../account/sso/auth-saml.md)
+- [Azure AD SAML](../account/sso/azure-saml.md)
+- [Okta OpenID](../account/sso/okta-openid.md)
+- [Okta SAML](../account/sso/okta-saml.md)
+- [OneLogin SAML](../account/sso/onelogin-saml.md)
+
+Please check the below document to learn more about SSO integration.
+
+<ContentRef url="/account/sso/single-sign-on">
+  Single Sign-On
+</ContentRef>
