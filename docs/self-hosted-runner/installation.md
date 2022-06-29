@@ -11,7 +11,7 @@ todo
 
 ## Installation
 
-Adding a self-hosted runner requires that you download, install and register Appcircle runner to your organization.
+Adding a self-hosted runner requires that you download, register and configure Appcircle runner in your environment.
 
 ### 1. Download
 
@@ -43,7 +43,7 @@ Using generated token (AAT), register self-hosted runner to your organization wi
 ./ac-runner register -t ${AAT} -n ${Runner Name} -p {Runner Pool}
 ```
 
-### 3. Install Tools
+### 3. Configure
 
 For build pipeline, you need to install some workflow required build tools.
 
