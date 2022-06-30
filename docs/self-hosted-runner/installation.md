@@ -137,7 +137,7 @@ Below are some example configurations which shows you some sample runner configu
 Install and start self-hosted runner service.
 
 ```bash
-./ac-runner service -i
+./ac-runner service -c install
 ```
 
 Once you complete this step, its state should be seen as `Online` Self-hosted Runners" list.
