@@ -1,8 +1,8 @@
 ---
-title: Installing Self-Hosted Runner
-metaTitle: Installing Self-Hosted Runner
-metaDescription: Installing Self-Hosted Runner
-sidebar_position: 1
+title: Installation
+metaTitle: Installation
+metaDescription: Installation
+sidebar_position: 2
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,7 +15,7 @@ The following operating systems are supported for the self-hosted runner.
 **Linux**
 
 - Ubuntu 20.04 or later
-- Debian 10 or later
+- Debian 11 or later
   
 **MacOS**
 
@@ -25,6 +25,17 @@ The following processor architectures are supported for operating systems.
 
 - `x64` Linux, macOS
 - `arm64` macOS only
+  
+To install and execute runner, you will need to have root access. Being able to run `sudo` (sudoer) is sufficient for runner operations.
+
+Also you need to have the following tools installed on your system:
+
+- curl
+- unzip
+
+These tools are already installed on most operating systems or can be got from default package managers.
+  
+@FIXME add system disk space requirements
 
 ## Installation
 
@@ -41,7 +52,7 @@ Download the latest self-hosted runner package.
   <TabItem value="osx-x64" label="macOS x64" default>
 
    ```bash
-curl -o appcircle-runner-osx-x64-1.0.0.zip -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-x64-1.0.0.zip
+curl -o appcircle-runner-osx-x64-1.0.0.zip -# -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-x64-1.0.0.zip
 ```
 
 Extract self-hosted runner package.
@@ -54,7 +65,7 @@ unzip -o -u appcircle-runner-osx-x64-1.0.0.zip
   <TabItem value="osx-arm64" label="macOS arm64">
 
    ```bash
-curl -o appcircle-runner-osx-arm64-1.0.0.zip -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-arm64-1.0.0.zip
+curl -o appcircle-runner-osx-arm64-1.0.0.zip -# -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-arm64-1.0.0.zip
 ```
 
 Extract self-hosted runner package.
@@ -68,7 +79,7 @@ unzip -o -u appcircle-runner-osx-arm64-1.0.0.zip
   <TabItem value="linux-x64" label="Linux x64">
 
    ```bash
-curl -o appcircle-runner-linux-x64-1.0.0.zip -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-linux-x64-1.0.0.zip
+curl -o appcircle-runner-linux-x64-1.0.0.zip -# -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-linux-x64-1.0.0.zip
 ```
 
 Extract self-hosted runner package.
@@ -104,7 +115,7 @@ It's `enabled` by default but its state should be `Offline` by now.
 
 You need to install some workflow required build tools once before executing any build pipeline.
 
-You can install iOS platform tools, android platform tools or both of them for your requirements.
+You can install iOS platform tools, android platform tools or both of them according to your requirements.
 
 Below are some example configurations which shows you some sample runner configuration scenarios:
 
@@ -140,7 +151,7 @@ Install and start self-hosted runner service.
 ./ac-runner service -c install
 ```
 
-Once you complete this step, its state should be seen as `Online` Self-hosted Runners" list.
+Once you complete this step, its state should be seen as `Online` in "Self-hosted Runners" list.
 
 ### 5. Build App
 
