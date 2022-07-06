@@ -1,7 +1,7 @@
 ---
-title: Installation
-metaTitle: Installation
-metaDescription: Installation
+title: Add Self-hosted Runner
+metaTitle: Add Self-hosted Runner
+metaDescription: Add Self-hosted Runner
 sidebar_position: 2
 ---
 
