@@ -107,6 +107,22 @@ Using generated token, register self-hosted runner to your organization with des
 ./ac-runner register -t ${Access Token} -n ${Runner Name} -p ${Runner Pool}
 ```
 
+For example, below command is registering runner named "monterey-12_4" with pool named "Arm64_pool" to specified organization with access token.
+
+```bash
+./ac-runner register -t aat_XVY27uHw7W1GA_cw5Vut0p_WOzHeYeJ2ZkTbqAVE3GX -n monterey-12_4 -p Arm64_pool
+```
+
+:::info
+
+Access token is required only for registration process and it can be used for any self-hosted runner, many times until revoked.
+
+Revoking access token itself is not affecting already registered runners. You can't register new self-hosted runners to organization with revoked token anymore.
+
+Only one valid access token can be used actively for an organization. There is no hard-limit on token generation and revoke. Acccording to your security requirements, you can revoke and generate new access token anytime you want.
+
+:::
+
 Once you complete this step, you will see new added runner at "Build > Self-hosted Runners" list.
 
 It's `enabled` by default but its state should be `Offline` by now.
