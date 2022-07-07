@@ -67,6 +67,14 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_ANDROID\_APP\_ANALYSIS\_PATH | Location of the app analyzer JSON file   |
 | JAVA\_HOME\_8\_X64               | OpenJDK 8 Location                       |
 | JAVA\_HOME\_11\_X64              | OpenJDK 11 Location                      |
+| AC\_BUILD\_NUMBER\_SOURCE        | Build Number Source for Versioning       |
+| AC\_ANDROID\_BUILD\_NUMBER       | Build Number for Versioning              |
+| AC\_BUILD\_OFFSET                | Build Number Offset for Versioning       |
+| AC\_VERSION\_NUMBER\_SOURCE      | Version Number Source for Versioning     |
+| AC\_ANDROID\_VERSION\_NUMBER     | Version Number for Versioning            |
+| AC\_ANDROID\_VERSION\_STRATEGY   | Version Increment Strategy               |
+| AC\_VERSION\_OFFSET              | Version Number Offset for Versioning     |
+| AC\_FLAVOR                       | Flavor for Versioning                    |
 
 ### iOS specific environment variables
 
@@ -84,6 +92,17 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_PROVISIONING\_PROFILES   | URLs of the provisioning profiles                                                     |
 | AC\_EXPORT\_DIR              | Specifies the path that contains `ipa`, `exportOptions.plist`and other exported files |
 | AC\_BUNDLE\_IDENTIFIERS      | Specifies the project bundle identifiers                                              |
+| AC\_BUILD\_NUMBER\_SOURCE    | Build Number Source for Versioning                                                    |
+| AC\_IOS\_BUILD\_NUMBER       | Build Number for Versioning                                                           |
+| AC\_BUILD\_OFFSET            | Build Number Offset for Versioning                                                    |
+| AC\_VERSION\_NUMBER\_SOURCE  | Version Number Source for Versioning                                                  |
+| AC\_IOS\_VERSION\_NUMBER     | Version Number for Versioning                                                         |
+| AC\_IOS\_VERSION\_STRATEGY   | Version Increment Strategy                                                            |
+| AC\_VERSION\_OFFSET          | Version Number Offset for Versioning                                                  |
+| AC\_BUNDLE\_ID               | Bundle Id for Versioning                                                              |
+| AC\_APPSTORE\_COUNTRY        | App Store Country for Versioning                                                      |
+| AC\_TARGETS                  | iOS Targets for Versioning                                                            |
+| AC\_IOS_CONFIGURATION\_NAME  | Configuration name for Versioning                                                     |
 
 ### Smartface specific environment variables
 

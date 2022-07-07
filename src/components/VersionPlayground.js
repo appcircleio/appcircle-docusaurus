@@ -4,7 +4,7 @@ import TextInputCircle from "./AppCircleComponent/TextInputCircle";
 import SelectCircle from "./AppCircleComponent/SelectCircle";
 import "./Calculated.scss";
 
-export default function VersionPlayground() {
+export default function VersionPlayground(props) {
   const [buildNumber, setBuildNumber] = useState("5");
   const [versionNumber, setVersionNumber] = useState("1.2.3");
   const [buildOffset, setBuildOffset] = useState("1");
@@ -17,6 +17,7 @@ export default function VersionPlayground() {
 
   const [toggleCheckedBuild, setToggleCheckedBuild] = useState(false);
   const [toggleCheckedVersion, setToggleCheckedVersion] = useState(false);
+  const {title, subtitle} = props;
 
   const versionStrategies = [
     { label: "Keep", value: "keep" },
@@ -84,7 +85,7 @@ export default function VersionPlayground() {
     <div>
       <TextInputCircle
         // bottom text is not visible if bottomText is false
-        title="Build Number"
+        title={title}
         bottomText={false}
         value={buildNumber}
         name="buildNumber"
@@ -92,7 +93,7 @@ export default function VersionPlayground() {
       />
       <TextInputCircle
         // bottom text is not visible if bottomText is false
-        title="Version Number"
+        title={subtitle}
         bottomText={false}
         value={versionNumber}
         name="versionNumber"
@@ -100,8 +101,8 @@ export default function VersionPlayground() {
       />
 
       <ToggleCircle
-        toggleTitle="UPDATE BUILD NUMBER WHILE BUILDING"
-        toggleDesc="Appcircle will apply the build number while building based on your settings below."
+        toggleTitle={`UPDATE ${title.toUpperCase()} WHILE BUILDING`}
+        toggleDesc={`Appcircle will apply the ${title.toLowerCase()} while building based on your settings below.`}
         checked={toggleCheckedBuild}
         disabled={false}
         onChange={handleChange}
@@ -111,7 +112,7 @@ export default function VersionPlayground() {
       {toggleCheckedBuild && (
         <>
           <TextInputCircle
-            title="Build Offset"
+            title={title + " Offset"}
             // bottom text is not visible if bottomText is false
             bottomText={false}
             value={buildOffset}
@@ -119,14 +120,14 @@ export default function VersionPlayground() {
           />
           <div className="Calculated">
             <label>
-              Calculated Build Number: <span>{newBuildNumber}</span>
+              Calculated {title}: <span>{newBuildNumber}</span>
             </label>
           </div>
         </>
       )}
       <ToggleCircle
-        toggleTitle="UPDATE VERSION NUMBER WHILE BUILDING"
-        toggleDesc="Appcircle will apply the version number while building based on your settings below."
+        toggleTitle={`UPDATE ${subtitle.toUpperCase()} WHILE BUILDING`}
+        toggleDesc={`Appcircle will apply the ${subtitle.toLowerCase()} while building based on your settings below.`}
         checked={toggleCheckedVersion}
         disabled={false}
         onChange={handleChangeVersion}
@@ -137,7 +138,7 @@ export default function VersionPlayground() {
         <>
           <TextInputCircle
             // bottom text is not visible if bottomText is false
-            title="Version Offset"
+            title={subtitle + " Offset"}
             bottomText={false}
             value={versionOffset}
             onChange={(e) => setVersionOffset(e.target.value)}
@@ -162,7 +163,7 @@ export default function VersionPlayground() {
 
           <div className="Calculated">
             <label>
-              Calculated Version Number: <span>{newVersionNumber}</span>
+              Calculated {subtitle}: <span>{newVersionNumber}</span>
             </label>
           </div>
         </>

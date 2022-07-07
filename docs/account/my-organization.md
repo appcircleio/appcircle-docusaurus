@@ -118,4 +118,49 @@ Once you click the "Manage Roles" button, you will be presented with a detailed 
 
 You can see the full list of the available roles below:
 
+## General Permissions
+
+Full access allows users to view and manage the contents of the modules. This permission allows users to create, delete, and modify the contents of the module. 
+
+Read only access only allows users to see the content or list of the modules. The modification doesn't allow any modification.
+
+If the access is set as None, users can't access that module.
+
+## Special Permissions
+
+Some modules have different permissions besides general permissions
+
+**STORE SUBMIT MODULE PERMISSIONS**
+
+Upload apps to Google Play, Huawei, and App Store
+
+|Permission|Explanation|
+|----------|-----------|
+| Upload apps to Google Play and App Store | User can upload apps to all stores|
+| Upload apps to Google Play Console | User can upload apps to only Google Play, Huawei|
+| Upload apps to Google Play Console | User can upload apps to only App Store|
+| Read Only | User can't upload any apps to stores|
+
+**ORGANIZATION MANAGEMENT PERMISSIONS**
+
+Manage the organization and add, remove and manage members
+
+**BILLING MANAGEMENT PERMISSIONS**
+
+Manage the subscription, payment details, and invoices
+
+**THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS**
+
+Connect to or disconnect from third-party service providers such as Slack, Jira
+
+**ENTERPRISE STORE PERMISSIONS**
+
+Manage and Upload Apps to Enterprise Store
+
+|Permission|Explanation|
+|----------|-----------|
+|Manage Enterprise Settings & Apps | User can modify both Enterprise Store settings and the uploaded apps|
+|Upload Apps to Enterprise Store | User can only apps.|
+|Read Only Access| Can only see the profiles|
+
 ![](https://cdn.appcircle.io/docs/assets/screenshot-my.appcircle.io-2021.02.11-23_27_39.png)

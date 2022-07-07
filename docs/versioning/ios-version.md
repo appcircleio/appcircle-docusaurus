@@ -2,7 +2,7 @@
 title: iOS Versioning
 metaTitle: iOS Versioning
 metaDescription: iOS Versioning
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
@@ -12,7 +12,7 @@ import VersionPlayground from '@site/src/components/VersionPlayground';
 
 In order to manage build and version numbers with Appcircle, two requirements must be met:
 
-- The build or Version Management toggle must be turned on and required input values must be entered
+- The build's Version Management toggle must be turned on and required input values must be entered
 - **Increment Build and Version Number** component 2.0.* or higher must be in your workflow
 
 ![](<https://cdn.appcircle.io/docs/assets/ios-versioning1.png>)
@@ -156,4 +156,4 @@ end
 
 You can use the below playground to test the effect of different options
 
-<VersionPlayground/>
+<VersionPlayground title="Build Number" subtitle="Version Number"/>
