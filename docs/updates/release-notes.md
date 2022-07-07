@@ -9,20 +9,38 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.12 - 2022-07-07 - Android Version Management, Enterprise Store Improvements
+
+### 🆕 New Feature
+
+- [Android Versioning](../versioning/android-version.md) You can manage version code and version name directly with UI.
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) You can change the display picture of your apps.
+
+### :muscle: Improvement
+- Added Open menu to actions list on build profiles.
+- [Enterprise Store](../enterprise-appstore/enterprise-reports.md) App usage reports update more frequently.
+- [My Organization](../account/my-organization.md) Access Management document updated.
+
+### 🐞 Fixed
+
+- Creating a new branch without a commit was not triggering a build. This is fixed.
+- SSO UI issues fixed
+- Android Build Tools 31.0.0 corrupted error message fixed.
+
 ## 2.9.11 - 2022-06-20 - Release Notes Component, Enterprise Store Improvements
 
 ### 🆕 New Feature
 
-- [Release Notes Component](/integrations/managing-release-notes) You can create release notes with Publish Release Notes component.
-- [Enterprise Store](/enterprise-appstore/customize-ent-store) Certificate Details added to Enterprise Store.
-- [Enterprise Store](/enterprise-appstore/enterprise-reports) Detailed reports are added to Enterprise Store.
+- [Release Notes Component](../integrations/managing-release-notes.md) You can create release notes with Publish Release Notes component.
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) Certificate Details added to Enterprise Store.
+- [Enterprise Store](../enterprise-appstore/enterprise-reports.md) Detailed reports are added to Enterprise Store.
 - [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=signing-identity) New API endpoints added to Certificate and Provisioning profiles upload.
 - [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=build) New API endpoint added to start a build with provided environment variables.
 
 ### :muscle: Improvement
-- [iOS Stack](/infrastructure/ios-build-infrastructure) Monterey is upgraded to 12.4 for macOS agents.
+- [iOS Stack](../infrastructure/ios-build-infrastructure.md) Monterey is upgraded to 12.4 for macOS agents.
 - Log window is improved. It is more performant and stable.
-- Added [FAQ section](/troubleshooting-faq/common-issues#issues-in-connecting-to-the-repositories-with-ssh) for multiple SSH keys.
+- Added [FAQ section](../troubleshooting-faq/common-issues.md#issues-in-connecting-to-the-repositories-with-ssh) for multiple SSH keys.
 
 ### 🐞 Fixed
 
