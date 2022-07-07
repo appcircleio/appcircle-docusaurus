@@ -35,7 +35,13 @@ Also you need to have the following tools installed on your system:
 
 These tools are already installed on most operating systems or can be got from default package managers.
   
-@FIXME add system disk space requirements
+You need minimum 30GB free disk space for self-hosted runner to install tools. Xcode disk space requirement is not included in this value. According to your selection of Xcode versions you need more disk space for successful installation.
+
+Minimum hardware requirements for self-hosted runner can be:
+
+- 80-100GB or more free disk space
+- 2 or more cores CPU (x64, arm64)
+- 8 gigabytes (GB) or more RAM
 
 ## Installation
 
