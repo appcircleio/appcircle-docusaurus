@@ -141,6 +141,14 @@ Below are some example configurations which shows you some sample runner configu
 ./ac-runner install -o ios
 ```
 
+:::warning
+
+If your operating system is macOS 11 (Big Sur), then the default selected Xcode version will not be compatible for your system.
+
+Set `-x` argument explicitly with one of the compatible versions. You can select 12.5, 13.0, 13.1 or 13.2 version for Xcode.
+
+:::
+
 - Install only iOS platform tools with Xcode versions 12.5.x and 13.3.x
 
 ```bash
