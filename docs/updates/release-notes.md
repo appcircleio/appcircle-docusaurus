@@ -19,7 +19,7 @@ import ContentRef from '@site/src/components/ContentRef';
 ### :muscle: Improvement
 - Added Open menu to actions list on build profiles.
 - [Enterprise Store](../enterprise-appstore/enterprise-reports.md) App usage reports update more frequently.
-- [My Organization](../account/my-organization.md) Access Management document udapted.
+- [My Organization](../account/my-organization.md) Access Management document updated.
 
 ### 🐞 Fixed
 
