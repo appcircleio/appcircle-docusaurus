@@ -1,0 +1,89 @@
+---
+title: Launchd/Systemd Service
+metaTitle: Launchd/Systemd Service
+metaDescription: Launchd/Systemd Service
+sidebar_position: 5
+---
+
+# Overview
+
+After registration and configuration of self-hosted runner, you need to install launchd or systemd service to start runner as a daemon. Launchd service is used for macOS, systemd service is used for Linux.
+
+Self-hosted runner periodically checks for build jobs and dequeues eligible job for pipeline execution. So, it's always up in background and works non-interactively. When service is installed successfully, it will be automatically started on operating system boot without any manual intervention.
+
+Runner service keeps its logs at `$HOME/appcircle-runner` path. There are two log files:
+
+- stdout.log
+- stderr.log
+
+`stdout.log` is connected to standard out of service and `stderr.log` is connected to standard error of service.
+
+`stdout.log` file has build job log. You can see same build log as web UI while pipeline is executing:
+
+```bash
+tail -f stdout.log
+```
+
+Logs are rotated daily and are kept at most 7 days historically.
+
+Old logs can be found under `service.logs` directory. Each archived log file has date suffix and compressed by gzip. If you need to view an archived log, you can use `gzip -dk LOG_FILE.gz` to extract archive file.
+
+## Install
+
+```bash
+./ac-runner service -c install
+```
+
+Installs and starts self-hosted runner service. It's used once, while installing and configuring self-hosted runner.
+
+## Status
+
+```bash
+./ac-runner service -c status
+```
+
+You can see current service status of self-hosted runner (up or down).
+
+## Start
+
+```bash
+./ac-runner service -c start
+```
+
+Starts runner service if it's stopped. If runner service is down for some reason, you can try start manually.
+
+## Stop
+
+```bash
+./ac-runner service -c stop
+```
+
+You can disable self-hosted runner from web UI. See details in [here](https://docs.appcircle.io/self-hosted-runner/manage-runners).
+
+If you need to disable self-hosted runner from CLI, you can use service stop option. Service start from CLI will enable runner again.
+
+:::info
+
+Launchd or systemd service start and stop actions doesn't affect "Enabled" toggle button state on "Self-hosted Runners" list.
+
+When a self-hosted runner service is stopped from CLI, you will see it as `Offline`. When service is started, it will become `Online`.
+
+:::
+
+## Restart
+
+```bash
+./ac-runner service -c restart
+```
+
+It's equivalent to stop and start with a single command.
+
+## Uninstall
+
+```bash
+./ac-runner service -c uninstall
+```
+
+Stops self-hosted runner service and removes launchd/systemd service entries.
+
+It reverts service install process. When you uninstall service, its service logs also will be removed.
