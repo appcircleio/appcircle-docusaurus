@@ -9,7 +9,7 @@ sidebar_position: 4
 
 When you add a new self-hosted runner to your organization, it appears at "Self-hosted Runners" list with its pool.
 
-Pool creation is managed automatically while registering a self-hosted runner from CLI. If a pool doesn't exist in your organizationi, system creates that pool and adds runner into that pool. If you choose a pool name existing in organization, your runner will be added to that existing pool.
+Pool creation is managed automatically while registering a self-hosted runner from CLI. If a pool doesn't exist in your organization, system creates that pool and adds runner into that pool. If you choose a pool name existing in organization, your runner will be added to that existing pool.
 
 # Select Pool for Build Profile
 
@@ -37,7 +37,7 @@ Changing runner pool doesn't affect current running builds on pool. It will affe
 
 :::
 
-# Remove Self-hosted Pool
+# Delete Self-hosted Pool
 
 Pool removal is managed automatically while removing or moving runner. If you remove a self-hosted runner and its pool doesn't have any other runners in that pool, then empty pool is deleted automatically and you won't see it in self-hosted runners list or build profile config. Same behaviour happens when you move a self-hosted runner from one pool to another.
 
@@ -48,5 +48,11 @@ This action removes pool and its runners all together. Previously assigned build
 :::info
 
 Removing or deleting self-hosted pools doesn't affect running build jobs on that pool. On-going build jobs will be completed but that self-hosted pool won't get any new build job from queue.
+
+:::
+
+:::warning
+
+When a self-hosted pool is deleted from organization for any reason, its related build profiles will return to `default` pool automatically which is Appcircle cloud. So build jobs will go on with Appcircle cloud automatically.
 
 :::
