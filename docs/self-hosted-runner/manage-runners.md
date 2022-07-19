@@ -77,6 +77,6 @@ If there is no runner left in self-hosted pool, it will be deleted automatically
 
 :::warning
 
-When a self-hosted pool is deleted from organization for any reason, its related build profiles will return to `default` pool automatically which is Appcircle cloud. So build jobs will go on with Appcircle cloud automatically.
+When a self-hosted pool is deleted from organization for any reason, its related build profiles will return to `default` pool automatically which is Appcircle cloud. So build jobs will go on with Appcircle-hosted runners automatically.
 
 :::

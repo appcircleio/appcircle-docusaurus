@@ -21,13 +21,17 @@ You can choose your self-hosted pools or Appcircle Cloud anytime you want and sw
 
 :::warning
 
-Keep in mind that, pool selection is important for build pipeline success. Your self-hosted runners in that pool should have required capabilities for the selected build proile. For example, if your pool has only android tools configured in its runners you can't build an iOS app in that pool.
+Keep in mind that, pool selection is important for build pipeline success. Your self-hosted runners in that pool should have required capabilities for the selected build profile.
+
+For example, if your pool has only android tools configured in its runners you can't build an iOS app in that pool. Or if you have runners with only Xcode 13.3 in your pool, your Xcode 13.4 selected build profile won't be executed in that pool.
 
 :::
 
 :::info
 
-You can not define or select specific self-hosted runner in a pool. When a build job enters queue, it will be selected by any of the runner in that pool. So, as a best practice, organize your poold homogeneously. Pools should have runners which have similar tools and capabilities. Machine architecture (arm64, x86_64) can also be taken into account when orgnizing self-hosted pools.
+You can not define or select specific self-hosted runner in a pool. When a build job enters queue, it will be selected by any of the runner in that pool. So, as a best practice, try to organize your pool homogeneously.
+
+Pools should have runners which have similar tools and capabilities. Machine architecture (arm64, x86_64) can also be taken into account when orgnizing self-hosted pools.
 
 :::
 
@@ -53,6 +57,6 @@ Removing or deleting self-hosted pools doesn't affect running build jobs on that
 
 :::warning
 
-When a self-hosted pool is deleted from organization for any reason, its related build profiles will return to `default` pool automatically which is Appcircle cloud. So build jobs will go on with Appcircle cloud automatically.
+When a self-hosted pool is deleted from organization for any reason, its related build profiles will return to `default` pool automatically which is Appcircle cloud. So build jobs will go on with Appcircle-hosted runners automatically.
 
 :::
