@@ -80,3 +80,31 @@ If there is no runner left in self-hosted pool, it will be deleted automatically
 When a self-hosted pool is deleted from organization for any reason, its related build profiles will return to `default` pool automatically which is Appcircle cloud. So build jobs will go on with Appcircle-hosted runners automatically.
 
 :::
+
+# Adding Xcode After Install
+
+You can add more Xcode versions side-by-side or more up-to-date Xcode any time after installation.
+
+```bash
+./ac-runner xcode -v {Xcode Version}
+```
+
+Xcode version argument is similar to xcode argument on [installation](https://docs.appcircle.io/self-hosted-runner/installation#3-configure). You can give one or more versions comma-seperated.
+
+For example, below command will install Xcode 13.1.x
+
+```bash
+./ac-runner xcode -v 13.1
+```
+
+For example, below command will install both Xcode 13.1.x and 12.5.x side-by-side
+
+```bash
+./ac-runner xcode -v 13.1,12.5
+```
+
+:::info
+
+Adding Xcode to self-hosted runner doesn't require service restart. Newly added Xcode versions will be enabled immediately without any manual intervention.
+
+:::
