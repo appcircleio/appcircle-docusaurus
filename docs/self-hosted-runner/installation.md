@@ -58,26 +58,26 @@ Download the latest self-hosted runner package.
   <TabItem value="osx-x64" label="macOS x64" default>
 
    ```bash
-curl -o appcircle-runner-osx-x64-1.0.0-b9a10c6-70.zip -# -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-x64-1.0.0-b9a10c6-70.zip
+curl -o appcircle-runner-osx-x64-1.3.5-1e6d6b4-71.zip -# -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-x64-1.3.5-1e6d6b4-71.zip
 ```
 
 Extract self-hosted runner package.
 
    ```bash
-unzip -o -u appcircle-runner-osx-x64-1.0.0-b9a10c6-70.zip
+unzip -o -u appcircle-runner-osx-x64-1.3.5-1e6d6b4-71.zip
 ```
 
   </TabItem>
   <TabItem value="osx-arm64" label="macOS arm64">
 
    ```bash
-curl -o appcircle-runner-osx-arm64-1.0.0-b9a10c6-70.zip -# -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-arm64-1.0.0-b9a10c6-70.zip
+curl -o appcircle-runner-osx-arm64-1.3.5-1e6d6b4-71.zip -# -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-arm64-1.3.5-1e6d6b4-71.zip
 ```
 
 Extract self-hosted runner package.
 
    ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.0.0-b9a10c6-70.zip
+unzip -o -u appcircle-runner-osx-arm64-1.3.5-1e6d6b4-71.zip
 ```
 
   </TabItem>
@@ -85,13 +85,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.0.0-b9a10c6-70.zip
   <TabItem value="linux-x64" label="Linux x64">
 
    ```bash
-curl -o appcircle-runner-linux-x64-1.0.0-b9a10c6-70.zip -# -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-linux-x64-1.0.0-b9a10c6-70.zip
+curl -o appcircle-runner-linux-x64-1.3.5-1e6d6b4-71.zip -# -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-linux-x64-1.3.5-1e6d6b4-71.zip
 ```
 
 Extract self-hosted runner package.
 
    ```bash
-unzip -o -u appcircle-runner-linux-x64-1.0.0-b9a10c6-70.zip
+unzip -o -u appcircle-runner-linux-x64-1.3.5-1e6d6b4-71.zip
 ```
 
   </TabItem>
