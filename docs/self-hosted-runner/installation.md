@@ -39,7 +39,7 @@ You need minimum 30GB free disk space for self-hosted runner to install tools. X
 
 Minimum hardware requirements for self-hosted runner can be:
 
-- 80-100GB or more free disk space
+- 100GB or more free disk space
 - 2 or more cores CPU (x64, arm64)
 - 8 gigabytes (GB) or more RAM
 
