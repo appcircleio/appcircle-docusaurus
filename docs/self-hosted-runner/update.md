@@ -14,9 +14,6 @@ When a new version of self-hosted runner is released, you can update runner with
 
 ## 1. Update Runner
 
-@FIXME below dev bucket URLs in download section will replaced with prod cdn bucket.
-( https://cdn.appcircle.io < https://storage.googleapis.com/appcircle-dev-common )
-
 Download and extract the latest self-hosted runner package.
 
 <Tabs>

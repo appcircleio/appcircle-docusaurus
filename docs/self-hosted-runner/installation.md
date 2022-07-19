@@ -49,9 +49,6 @@ Adding a self-hosted runner requires that you download, register and configure A
 
 ### 1. Download
 
-@FIXME below dev bucket URLs in download section will replaced with prod cdn bucket.
-( https://cdn.appcircle.io < https://storage.googleapis.com/appcircle-dev-common )
-
 Download the latest self-hosted runner package.
 
 <Tabs>

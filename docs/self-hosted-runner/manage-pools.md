@@ -45,4 +45,8 @@ If you want to remove pool manually or remove group of runners with pool removal
 
 This action removes pool and its runners all together. Previously assigned build profiles will be mapped to "Default" pool and until you assign them to another self-hosted pool, their build jobs will be sent to Appcircle Cloud.
 
-@FIXME what happens when i remove "running" pool?
+:::info
+
+Removing or deleting self-hosted pools doesn't affect running build jobs on that pool. On-going build jobs will be completed but that self-hosted pool won't get any new build job from queue.
+
+:::
