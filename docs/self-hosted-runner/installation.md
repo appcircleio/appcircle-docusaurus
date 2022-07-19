@@ -105,7 +105,7 @@ cd appcircle-runner
 
 ### 2. Register
 
-Go to your organization's **integration** settings and generate agent access token (AAT).
+Go to your organization's **integration** settings and generate runner access token.
 
 Using generated token, register self-hosted runner to your organization with desired name and pool.
 
@@ -113,7 +113,7 @@ Using generated token, register self-hosted runner to your organization with des
 ./ac-runner register -t ${Access Token} -n ${Runner Name} -p ${Runner Pool}
 ```
 
-For example, below command is registering runner named "monterey-12_4" with pool named "Arm64_pool" to specified organization with access token.
+For example, below command is registering runner named "monterey-12_4" with pool named "Arm64_pool" to specified organization with generated access token.
 
 ```bash
 ./ac-runner register -t aat_XVY27uHw7W1GA_cw5Vut0p_WOzHeYeJ2ZkTbqAVE3GX -n monterey-12_4 -p Arm64_pool
@@ -172,6 +172,14 @@ Set `-x` argument explicitly with one of the compatible versions. You can select
 ```bash
 ./ac-runner install -o ios,android -x 13.2
 ```
+
+:::warning
+
+While configuring self-hosted runner, platform argument (`-o`) doesn't work as append strategy. Your latest platform argument will be self-hosted runner's final platform.
+
+Let's assume, you installed iOS platform tools at first with `-o ios` and then want to add also android platform in order to build both iOS and android apps. Using `-o android` will be wrong argument. You must use `-o ios,android` for this purpose.
+
+:::
 
 ### 4. Run Service
 
