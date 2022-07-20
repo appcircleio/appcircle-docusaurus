@@ -72,13 +72,17 @@ When a self-hosted runner service is stopped from CLI, you will see it as `Offli
 
 :::warning
 
-You should be careful for running pipelines while stopping self-hosted runner service. When you stop service, it will immediately terminate self-hosted runner process and build job will be cut. Sometimes this situation may not be a problem for you, because you can retry build job with another online self-hosted runner.
+You should be careful for running pipelines while stopping self-hosted runner service. When you stop service, it will immediately terminate self-hosted runner process and build job will be cut. It will be still shown as in-progress build but actually it's not working. It will stuck in that state until build timeout.
 
-But if it's an unacceptable case for you, then you should check current state of runner from "Self-hosted Runners" list before stopping self-hosted runner service. You can also follow instantly service log `stdout.log` for running build job. When runner becomes idle, you can stop service. You can also use "disable" toggle button from "self-hosted runners" list in order to prevent runner getting new build job.
+Sometimes this situation may not be a problem for you, because you can cancel and retry build job with another online self-hosted runner. But if it's an unacceptable case for you, then you should check current state of runner from "Self-hosted Runners" list before stopping self-hosted runner service.
+
+You can also follow instantly service log `stdout.log` for running build job. When runner becomes idle, you can stop service safely.
+
+While waiting runner to complete its job, you can use "disable" toggle button from "self-hosted runners" list in order to prevent runner getting new build job from queue.
 
 Service restart and uninstall processes have also same situation since they have service stop implicitly.
 
-::::
+:::
 
 ## Restart
 
