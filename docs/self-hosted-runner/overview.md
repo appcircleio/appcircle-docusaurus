@@ -41,3 +41,15 @@ The only requirement for using self-hosted runners is to be in **Enterprise** pl
 Runner pools are a way of grouping may runners with similar build capabilities and assigning them to build profiles with a single click. You can group and organize your runners according to installed platform tools, operating systems or architectures. You can use any number of pools for your needs.
 
 You can use any text for your pool naming according to your requirements. Pools are added automatically while adding self-hosted runners. Then you will find your runner and its pool in "Build > Self-hosted Runners" list. When your runner is ready for build, you can choose your runner pool from "Build Profile > Config" section and send build jobs to those group of runners.
+
+## Limitations
+
+Self-hosted runner usage is limited with your current plan's monthly quotas. Same hard limits of `enterprise` plan is applied to both self-hosted and Appcircle-hosted runners.
+
+For example, you can not start a new build when you exceeded the number of builds that can be initiated in a month. Your self-hosted runners will be kept in your organization. You can manage them and you can add new runners, but can not use them for build job. When your monthly quotas are renewed, you can go on with self-hosted builds.
+
+When your `enterprise` plan expires or doesn't renew on time, self-hosted runner usage will also be limited with your downgraded plan. In this case, you can not build apps with self-hosted runners although your build quota is sufficient. You can't add new self-hosted runners even if you have runner access token created previously before downgrade.
+
+Your existing self-hosted runners will be kept in system and won't be removed by us. When you upgrade to `enterprise` plan again, you can go on using your self-hosted runners as usual.
+
+If you don't upgrade to `enterprise` plan, you can only use Appcircle-hosted runners which is default pool.
