@@ -190,7 +190,27 @@ Once you complete this step, its state should be seen as `Online` in "Self-hoste
 
 :::info
 
-You can install and run only one instance of self-hosted runner on a machine. If you need concurrency and multiple instances of self-hosted runner on a single bare-metal and you don't have multiple bare-metals, then you should use virtualization infrastructure. You can install multiple VMs on a single bare-metal and deploy self-hosted runner to each VM seperately.
+You can install and run only one instance of self-hosted runner on a machine.
+
+If you need concurrency or multiple instances of self-hosted runner on a single bare-metal but don't have multiple bare-metals, then you should use virtualization infrastructure.
+
+You can install multiple VMs on a single bare-metal and deploy self-hosted runner to each VM seperately.
+
+:::
+
+:::warning
+
+You can also add or change platform tools after start of runner service.
+
+For example, you configure runner with iOS platform tools using `-o ios` at first, then add android platform tools with `-o ios,android` to build both iOS and android apps.
+
+Install command used for runner configuration, both adds tools to your system and makes some configurations for them. In order to activate changes and updates completely, you should restart runner service after configuration is done successfully.
+
+```bash
+./ac-runner service -c restart
+```
+
+Restarting runner service will first stop service and start it again. See [here](https://docs.appcircle.io/self-hosted-runner/runner-service) for more details about runner service operations.
 
 :::
 
