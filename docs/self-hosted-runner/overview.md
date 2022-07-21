@@ -48,8 +48,8 @@ Self-hosted runner usage is limited with your current plan's monthly quotas. Sam
 
 For example, you can not start a new build when you exceeded the number of builds that can be initiated in a month. Your self-hosted runners will be kept in your organization. You can manage them and you can add new runners, but can not use them for build job. When your monthly quotas are renewed, you can go on with self-hosted builds.
 
-When your `enterprise` plan expires or doesn't renew on time, self-hosted runner usage will also be limited with your downgraded plan. In this case, you can not build apps with self-hosted runners although your build quota is sufficient. You can't add new self-hosted runners even if you have runner access token created previously before downgrade.
+When your `enterprise` plan expires or doesn't renew on time, self-hosted runner usage will also be limited with your downgraded plan. In this case, you can not build apps with self-hosted runners although your build quota is sufficient. You can't add new self-hosted runners even if you have runner access token created previously before downgrade. You can see list of existing self-hosted runners but can not see pool or runner details. You can't delete any pool or runner and can't enable or disable any runner.
 
-Your existing self-hosted runners will be kept in system and won't be removed by us. When you upgrade to `enterprise` plan again, you can go on using your self-hosted runners as usual.
+Your existing self-hosted runners will be kept in system as-is and won't be removed by us. When you upgrade to `enterprise` plan again, you can go on using your self-hosted runners as usual.
 
 If you don't upgrade to `enterprise` plan, you can only use Appcircle-hosted runners which is default pool.
