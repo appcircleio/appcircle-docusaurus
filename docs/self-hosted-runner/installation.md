@@ -34,14 +34,14 @@ Also you need to have the following tools installed on your system:
 - unzip
 
 These tools are already installed on most operating systems or can be got from default package managers.
-  
-You need minimum 30GB free disk space for self-hosted runner to install tools. Xcode disk space requirement is not included in this value. According to your selection of Xcode versions you need more disk space for successful installation.
 
 Minimum hardware requirements for self-hosted runner can be:
 
 - 100GB or more free disk space
 - 2 or more cores CPU (x64, arm64)
 - 8 gigabytes (GB) or more RAM
+  
+Minimum required disk space should be enough both for iOS and android platforms. But that value is only for one Xcode version. According to your selection of Xcode versions you need more disk space for successful installation.
 
 ## Installation
 
@@ -55,26 +55,26 @@ Download the latest self-hosted runner package.
   <TabItem value="osx-x64" label="macOS x64" default>
 
    ```bash
-curl -o appcircle-runner-osx-x64-1.3.5-d5675b0-73.zip -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-x64-1.3.5-d5675b0-73.zip
+curl -o appcircle-runner-osx-x64-1.3.5.zip -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.3.5.zip
 ```
 
 Extract self-hosted runner package.
 
    ```bash
-unzip -o -u appcircle-runner-osx-x64-1.3.5-d5675b0-73.zip
+unzip -o -u appcircle-runner-osx-x64-1.3.5.zip
 ```
 
   </TabItem>
   <TabItem value="osx-arm64" label="macOS arm64">
 
    ```bash
-curl -o appcircle-runner-osx-arm64-1.3.5-d5675b0-73.zip -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-osx-arm64-1.3.5-d5675b0-73.zip
+curl -o appcircle-runner-osx-arm64-1.3.5.zip -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.3.5.zip
 ```
 
 Extract self-hosted runner package.
 
    ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.3.5-d5675b0-73.zip
+unzip -o -u appcircle-runner-osx-arm64-1.3.5.zip
 ```
 
   </TabItem>
@@ -82,13 +82,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.3.5-d5675b0-73.zip
   <TabItem value="linux-x64" label="Linux x64">
 
    ```bash
-curl -o appcircle-runner-linux-x64-1.3.5-d5675b0-73.zip -L https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/appcircle-runner-linux-x64-1.3.5-d5675b0-73.zip
+curl -o appcircle-runner-linux-x64-1.3.5.zip -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.3.5.zip
 ```
 
 Extract self-hosted runner package.
 
    ```bash
-unzip -o -u appcircle-runner-linux-x64-1.3.5-d5675b0-73.zip
+unzip -o -u appcircle-runner-linux-x64-1.3.5.zip
 ```
 
   </TabItem>
