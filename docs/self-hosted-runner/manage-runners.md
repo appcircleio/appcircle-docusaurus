@@ -92,7 +92,7 @@ When a self-hosted pool is deleted from organization for any reason, its related
 You can add more Xcode versions side-by-side or more up-to-date Xcode any time after installation.
 
 ```bash
-./ac-runner xcode -v {Xcode Version}
+./ac-runner xcode -v ${Xcode Version}
 ```
 
 Xcode version argument is similar to xcode argument on [installation](/self-hosted-runner/installation#3-configure). You can give one or more versions comma-seperated.
