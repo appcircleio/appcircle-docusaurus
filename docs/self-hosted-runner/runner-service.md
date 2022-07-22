@@ -28,7 +28,7 @@ Logs are rotated daily and are kept at most 7 days historically.
 
 Old logs can be found under `service.logs` directory. Each archived log file has date suffix and compressed by gzip. If you need to view an archived log, you can use `gzip -dk LOG_FILE.gz` to extract archive file.
 
-## Install
+### Install
 
 ```bash
 ./ac-runner service -c install
@@ -36,7 +36,7 @@ Old logs can be found under `service.logs` directory. Each archived log file has
 
 Installs and starts self-hosted runner service. It's used once, while installing and configuring self-hosted runner.
 
-## Status
+### Status
 
 ```bash
 ./ac-runner service -c status
@@ -44,7 +44,7 @@ Installs and starts self-hosted runner service. It's used once, while installing
 
 You can see current service status of self-hosted runner (up or down).
 
-## Start
+### Start
 
 ```bash
 ./ac-runner service -c start
@@ -52,15 +52,17 @@ You can see current service status of self-hosted runner (up or down).
 
 Starts runner service if it's stopped. If runner service is down for some reason, you can try start manually.
 
-## Stop
+### Stop
 
 ```bash
 ./ac-runner service -c stop
 ```
 
-You can disable self-hosted runner from web UI. See details in [here](https://docs.appcircle.io/self-hosted-runner/manage-runners).
+You can disable self-hosted runner from web UI. (See, [here](/self-hosted-runner/manage-runners) for details)
 
-If you need to disable self-hosted runner from CLI, you can use service stop option. Service start from CLI will enable runner again.
+If you need to disable self-hosted runner from CLI, you can use service stop option.
+
+Service start from CLI will enable runner again.
 
 :::info
 
@@ -84,7 +86,7 @@ Service restart and uninstall processes have also same situation since they have
 
 :::
 
-## Restart
+### Restart
 
 ```bash
 ./ac-runner service -c restart
@@ -92,12 +94,10 @@ Service restart and uninstall processes have also same situation since they have
 
 It's equivalent to stop and start with a single command.
 
-## Uninstall
+### Uninstall
 
 ```bash
 ./ac-runner service -c uninstall
 ```
 
-Stops self-hosted runner service and removes launchd/systemd service entries.
-
-It reverts service install process. When you uninstall service, its service logs also will be removed.
+Stops self-hosted runner service and removes launchd/systemd service entries. It reverts service install process.

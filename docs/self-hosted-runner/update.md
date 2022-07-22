@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 When a new version of self-hosted runner is released, you can update runner with below steps.
 
-## 1. Update Runner
+### 1. Update Runner
 
 Download and extract the latest self-hosted runner package.
 
@@ -65,11 +65,11 @@ Change directory into extracted `appcircle-runner` folder for following steps.
 cd appcircle-runner
 ```
 
-## 2. Reinstall Service
+### 2. Reinstall Service
 
 Although we change self-hosted runner files with above update step, we need to restart runner service in order to activate latest updates.
 
-Some updates may also contain systemd or launchd service updates. For this reason, on every update reinstalling service is suggested.
+Some updates may also contain systemd or launchd service updates. For this reason, on every update, reinstalling service is suggested.
 
 Reinstalling service also contains runner restart operations and doesn't affect self-hosted runner logs or produced artifacts.
 

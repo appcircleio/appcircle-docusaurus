@@ -104,6 +104,8 @@ cd appcircle-runner
 
 Go to your organization's **integration** settings and generate runner access token.
 
+![](https://cdn.appcircle.io/docs/assets/self-hosted-runner-access-token-01.png)
+
 Using generated token, register self-hosted runner to your organization with desired name and pool.
 
 ```bash
@@ -174,7 +176,9 @@ Set `-x` argument explicitly with one of the compatible versions. You can select
 
 While configuring self-hosted runner, platform argument (`-o`) doesn't work as append strategy. Your latest platform argument will be self-hosted runner's final platform.
 
-Let's assume, you installed iOS platform tools at first with `-o ios` and then want to add also android platform in order to build both iOS and android apps. Using `-o android` will be wrong argument. You must use `-o ios,android` for this purpose.
+Let's assume, you installed iOS platform tools at first with `-o ios` and then want to add also android platform in order to build both iOS and android apps.
+
+Using `-o android` in this case will be wrong argument. You must use `-o ios,android` for this purpose.
 
 :::
 
@@ -190,9 +194,9 @@ Once you complete this step, its state should be seen as `Online` in "Self-hoste
 
 :::info
 
-You can install and run only one instance of self-hosted runner on a machine.
+You can install and run only one instance of self-hosted runner on a physical machine.
 
-If you need concurrency or multiple instances of self-hosted runner on a single bare-metal but don't have multiple bare-metals, then you should use virtualization infrastructure.
+If you need concurrency or multiple instances of self-hosted runner but don't have multiple bare-metals, then you should use virtualization infrastructure.
 
 You can install multiple VMs on a single bare-metal and deploy self-hosted runner to each VM seperately.
 
@@ -210,13 +214,15 @@ Install command used for runner configuration, both adds tools to your system an
 ./ac-runner service -c restart
 ```
 
-Restarting runner service will first stop service and start it again. See [here](https://docs.appcircle.io/self-hosted-runner/runner-service) for more details about runner service operations.
+Restarting runner service will first stop service and start it again.
+
+See [here](/self-hosted-runner/runner-service) for more details about runner service operations.
 
 :::
 
 ### 5. Build App
 
-Now your runner is waiting for build jobs. In order to use your self-hosted runner pool;
+Congratulations, now your runner is waiting for build jobs. In order to use your self-hosted runner pool;
 
 - Find your app's build profile in "Build Profiles"
 - Click on "Config" to open branch config details

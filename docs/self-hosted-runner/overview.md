@@ -5,7 +5,6 @@ metaDescription: Overview & Concepts
 sidebar_position: 1
 ---
 
-# Overview
 
 Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines. By this way, you can build and test your apps on your choice of architectures. You have full control over the build environment especially for hardware and operating system.
 
