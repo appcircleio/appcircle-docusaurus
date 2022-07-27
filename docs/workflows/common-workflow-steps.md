@@ -93,3 +93,9 @@ Also you can have more than one push and pull pairs in the same build pipeline a
 You can use Release Notes component to create release notes during your workflow.
 
 [https://github.com/appcircleio/appcircle-release-notes-component](https://github.com/appcircleio/appcircle-release-notes-component)
+
+## SonarQube
+
+You can use SonarQube component to check your code quality.
+
+[https://github.com/appcircleio/appcircle-sonarqube-component](https://github.com/appcircleio/appcircle-sonarqube-component)

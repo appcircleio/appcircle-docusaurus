@@ -2,7 +2,7 @@
 title: My Organization and Team Management
 metaTitle: My Organization and Team Management
 metaDescription: My Organization and Team Management
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # My Organization and Team Management

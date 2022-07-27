@@ -38,6 +38,11 @@ if (System.getenv("AC_APPCIRCLE")) {
 }
 ```
 
+If you want to have better control over `versionCode` and `versionName` management, you may also use the Android Versioning component. Please check the following document for more information.
+
+<ContentRef url="/versioning/android-version">
+  Android Versioning
+</ContentRef>
 
 For iOS, you should use the Versioning Tab on your config screen to manage the build and version number. Please check the following document to learn more about the iOS Versioning system.
 

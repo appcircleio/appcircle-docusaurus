@@ -2,7 +2,7 @@
 title: Adding a Google Play Service Account
 metaTitle: Adding a Google Play Service Account
 metaDescription: Adding a Google Play Service Account
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Adding a Google Play Service Account
