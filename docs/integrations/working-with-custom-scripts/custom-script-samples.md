@@ -52,7 +52,7 @@ The sample script is as follows:
 #
 # Deploy a binary to Firebase App Distribution
 #
-npm install -g firebase-tools
+curl -sL firebase.tools | bash
 
 firebase appdistribution:distribute $AC_EXPORT_DIR/Runner.ipa --app $FIREBASE_APP_ID --release-notes "Release Notes..." --token $FIREBASE_TOKEN --groups "testers"
 ```

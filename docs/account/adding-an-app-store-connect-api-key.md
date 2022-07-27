@@ -2,7 +2,7 @@
 title: Adding an App Store Connect API Key
 metaTitle: Adding an App Store Connect API Key
 metaDescription: Adding an App Store Connect API Key
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Adding an App Store Connect API Key

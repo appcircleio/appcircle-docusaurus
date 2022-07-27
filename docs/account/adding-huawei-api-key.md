@@ -2,7 +2,7 @@
 title: Adding Huawei AppGallery API Key
 metaTitle: Adding Huawei AppGallery API Key
 metaDescription: Adding Huawei AppGallery API Key
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # Adding Huawei AppGallery API Key

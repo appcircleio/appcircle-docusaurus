@@ -9,6 +9,23 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.13 - 2022-07-27 - Self-hosted Runners, Artifacts Management, Automatic iOS Code Signing
+
+### 🆕 New Feature
+- [Self-Hosted Runners](../self-hosted-runner/overview.md) Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines. 
+- [Automatic iOS Code Signing](../signing-identities/ios-certificates-and-provisioning-profiles.md) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
+- [Artifacts Management](../account/artifacts.md) You can set the retention period for your build artifacts.
+- [SonarQube Component](../workflows/common-workflow-steps.md) You can use SonarQube for iOS and Android projects.
+
+### :muscle: Improvement
+- Slack messages updated to include store name and distribution links.
+- Android v2 signing support improved.
+
+### 🐞 Fixed
+
+- `Get help with build errors` link fixed.
+- Renaming build profiles fixed.
+
 ## 2.9.12 - 2022-07-07 - Android Version Management, Enterprise Store Improvements
 
 ### 🆕 New Feature

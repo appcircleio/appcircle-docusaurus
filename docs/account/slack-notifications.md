@@ -2,7 +2,7 @@
 title: Slack Notifications
 metaTitle: Slack Notifications
 metaDescription: Slack Notifications
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # Slack Notifications
