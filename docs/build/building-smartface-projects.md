@@ -25,13 +25,6 @@ Please note that you need to create separate build profiles for iOS and Android 
 
 The overall workflow for Smartface builds is almost the same as the iOS and Android build steps explained earlier.
 
-### Triggers
-
-You don't have to specify project meta data for Smartface projects. Only specify build triggers here.
-
-![](<https://cdn.appcircle.io/docs/assets/05-01-SmartfaceBuilds (1).jpg>)
-
-###
 
 ### Signing
 

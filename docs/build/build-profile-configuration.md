@@ -5,6 +5,8 @@ metaDescription: Build Profile Configuration Overview
 sidebar_position: 2
 ---
 
+import ContentRef from '@site/src/components/ContentRef';
+
 # Build Profile Configuration Overview
 
 Configuring a build profile has some basic steps that need to be completed before starting a build.
@@ -13,7 +15,12 @@ Configuring a build profile has some basic steps that need to be completed befor
 
 Every build profile needs to know project details regardless of the project being iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle.
 
-You can also enable or disable automatic builds for the current branch.
+You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
+
+
+<ContentRef url="/self-hosted-runner/overview">
+  Self-Hosted Runners
+</ContentRef>
 
 ![](<https://cdn.appcircle.io/docs/assets/ios-fetch.png>)
 
