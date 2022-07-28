@@ -13,7 +13,7 @@ Configuring a build profile has some basic steps that need to be completed befor
 
 Every build profile needs to know project details regardless of the project being iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle.
 
-You can also enable or disable automatic builds for the current branch.
+You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
 
 ![](<https://cdn.appcircle.io/docs/assets/ios-fetch.png>)
 

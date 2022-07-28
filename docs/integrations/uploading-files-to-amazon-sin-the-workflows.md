@@ -19,7 +19,7 @@ Once added, press save to exit the workflow edit mode and click on the Amazon S3
 
 The input values are as follows:
 
-- AWS Input File Path: This is the file/folder name to be uploaded to S3. You can specify the full path or you can specify the output of another step an environment variable. (e.g. \_$AC_ARCHIVE_PATH \_allows you to upload the output of the Xcode Build for Devices step)
+- AWS Input File Path: This is the file/folder name to be uploaded to S3. You can specify the full path or you can specify the output of another step an environment variable. (e.g. `$AC_ARCHIVE_PATH` allows you to upload the output of the Xcode Build for Devices step)
 - AWS Access Key ID: Enter the AWS access key ID. [For more information, you can refer here.](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
 - AWS Secret Access Key: Enter the secret access key associated with the ID entered above. [For more information, you can refer here.](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
 - AWS Bucket Name: Enter the S3 bucket name as the deployment target.
