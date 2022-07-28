@@ -146,7 +146,12 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ['ruby', 'groovy', 'java'],
-      }
+      },
+      algolia: {
+        apiKey: '0664a9795ced4a4b187cd8b010ec9f5d',
+        indexName: 'appcircle',
+        appId: 'MLYVQZS3BY',
+      },
     }),
   plugins: [
     [
