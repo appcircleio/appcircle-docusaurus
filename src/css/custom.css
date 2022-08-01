@@ -449,3 +449,11 @@ html[data-theme='dark'] div.module-guides a {
     grid-template-columns: 1fr;
   }
 }
+
+button[class*='toggleButton'] svg[class*='lightToggleIcon'] path {
+  fill: white;
+}
+
+button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
+  fill: var(--ifm-navbar-background-color);
+}
