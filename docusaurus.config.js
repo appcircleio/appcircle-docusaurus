@@ -17,6 +17,7 @@ const config = {
   organizationName: 'appcircleio', // Usually your GitHub org/user name.
   projectName: 'appcircle-docusaurus', // Usually your repo name.
 
+
   presets: [
     [
       'classic',
@@ -151,19 +152,20 @@ const config = {
         apiKey: '0664a9795ced4a4b187cd8b010ec9f5d',
         indexName: 'appcircle',
         appId: 'MLYVQZS3BY',
+        contextualSearch: false,
       },
     }),
-  plugins: [
-    [
-      '@docusaurus/plugin-google-analytics',
-      {
-        trackingID: 'UA-40954643-12',
-        anonymizeIP: true,
-      },
+    plugins: [
+      [
+        '@docusaurus/plugin-google-analytics',
+        {
+          trackingID: 'UA-40954643-12',
+          anonymizeIP: true,
+        },
+      ],
+      'docusaurus-plugin-sass'
     ],
-    'docusaurus-plugin-sass'
-    
-  ],
+  
 };
 
 module.exports = config;

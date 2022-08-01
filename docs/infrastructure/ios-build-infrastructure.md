@@ -30,7 +30,7 @@ We've started providing M1 Mac mini's to select enterprise customers starting fr
 
 If you'd like an M1 Mac for your builds, please request an invite:
 
-https://appcircle.io/request-an-invite-for-m1-macs/
+https://www.appcircle.io/contact
 
 ### Using your own computer for build
 

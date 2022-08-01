@@ -216,7 +216,7 @@ Install command used for runner configuration, both adds tools to your system an
 
 Restarting runner service will first stop service and start it again.
 
-See [here](/self-hosted-runner/runner-service) for more details about runner service operations.
+See [here](../self-hosted-runner/runner-service.md) for more details about runner service operations.
 
 :::
 

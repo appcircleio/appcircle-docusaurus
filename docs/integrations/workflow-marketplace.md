@@ -11,7 +11,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 You can find the full list of available workflow steps in our workflow marketplace at:;
 
-https://appcircle.io/workflow-marketplace/
+https://www.appcircle.io/integrations
 
 All workflow steps are open source and you are welcome to add your own steps or contribute to the currently available steps on Appcircle GitHub:
 

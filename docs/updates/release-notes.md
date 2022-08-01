@@ -336,7 +336,7 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 - [Export Build Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps#export-build-artifacts) has been added for a separate step. You can remove this step and upload your files elsewhere if your artifacts have a need to be on-premise.
 - [Setting build status](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) updates to the repository providers - You can now send updates about a commit to the repository providers for a complete CI/CD experience.
 - A new workflow setting, **Always run this step even if the previous steps fail** has been added. The steps which have this enabled will always run.
-- [Appcircle Marketplace](https://appcircle.io/workflow-marketplace/) has been released. Checking which features are supported built-in has never been easier!
+- [Appcircle Marketplace](https://www.appcircle.io/integrations/) has been released. Checking which features are supported built-in has never been easier!
 
 ### :muscle:Improvement
 
