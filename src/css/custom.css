@@ -264,12 +264,15 @@ iframe[src*='youtube.com'] {
 .rlc-image-container {
   position: relative;
   flex: 1 1 54px;
+  justify-content: center;
 }
 
 .rlc-image {
   object-fit: contain;
   width: 100%;
-  height: 100%;
+  height: 100% !important;
+  max-height: 75%;
+  margin-top: 7.5%;
   border-bottom-right-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
@@ -448,4 +451,12 @@ html[data-theme='dark'] div.module-guides a {
     display: grid;
     grid-template-columns: 1fr;
   }
+}
+
+button[class*='toggleButton'] svg[class*='lightToggleIcon'] path {
+  fill: white;
+}
+
+button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
+  fill: var(--ifm-navbar-background-color);
 }
