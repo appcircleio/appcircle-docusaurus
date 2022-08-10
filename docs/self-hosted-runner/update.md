@@ -82,3 +82,13 @@ In order to reinstall systemd or launchd service, first uninstall and then insta
 ```bash
 ./ac-runner service -c install
 ```
+
+:::info
+
+When you complete update successfully, you will see updated **version** in "Self-hosted Runners" list in [here](../self-hosted-runner/manage-runners#monitoring-self-hosted-runners).
+
+```bash
+./ac-runner --version
+```
+
+:::
