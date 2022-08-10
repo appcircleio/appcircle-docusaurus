@@ -112,11 +112,17 @@ Using generated token, register self-hosted runner to your organization with des
 ./ac-runner register -t ${Access Token} -n ${Runner Name} -p ${Runner Pool}
 ```
 
-For example, below command is registering runner named "monterey-12_4" with pool named "Arm64_pool" to specified organization with generated access token.
+Runner name is the text that you identify your self-hosted runner in your organization. You can use any suitable text for runner naming according to your requirements. You will find registered self-hosted runner in "Self-hosted Runners" list with the given name.
+
+Runner pool is the text which identifies the runner pool in your organization. You can use any suitable text for pool naming according to your requirements. You will use given pool name at build profile settings and also see registered self-hosted runner in "Self-hosted Runners" list with the given pool name.
+
+For example, below command is registering runner named "monterey-12_4" with pool named "Arm64_pool" to specified organization with using generated runner access token.
 
 ```bash
 ./ac-runner register -t aat_XVY27uHw7W1GA_cw5Vut0p_WOzHeYeJ2ZkTbqAVE3GX -n monterey-12_4 -p Arm64_pool
 ```
+
+For more details on runner and pool, see [Manage Self-hosted Pools](../self-hosted-runner/manage-pools.md) and [Manage Self-hosted Runners](../self-hosted-runner/manage-runners.md) in docs.
 
 :::info
 
@@ -172,9 +178,9 @@ Set `-x` argument explicitly with one of the compatible versions. You can select
 ./ac-runner install -o ios,android -x 13.2
 ```
 
-:::warning
+:::caution
 
-While configuring self-hosted runner, platform argument (`-o`) doesn't work as append strategy. Your latest platform argument will be self-hosted runner's final platform.
+While configuring self-hosted runner, platform argument (`-o`) doesn't work as append strategy. Your latest platform argument will be self-hosted runner's **final** platform.
 
 Let's assume, you installed iOS platform tools at first with `-o ios` and then want to add also android platform in order to build both iOS and android apps.
 
@@ -202,7 +208,7 @@ You can install multiple VMs on a single bare-metal and deploy self-hosted runne
 
 :::
 
-:::warning
+:::tip
 
 You can also add or change platform tools after start of runner service.
 
