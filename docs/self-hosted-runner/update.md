@@ -20,26 +20,26 @@ Download and extract the latest self-hosted runner package.
   <TabItem value="osx-x64" label="macOS x64" default>
 
    ```bash
-curl -o appcircle-runner-osx-x64-1.3.5.zip -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.3.5.zip
+curl -o appcircle-runner-osx-x64-1.3.6.zip -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.3.6.zip
 ```
 
 Extract self-hosted runner package.
 
    ```bash
-unzip -o -u appcircle-runner-osx-x64-1.3.5.zip
+unzip -o -u appcircle-runner-osx-x64-1.3.6.zip
 ```
 
   </TabItem>
   <TabItem value="osx-arm64" label="macOS arm64">
 
    ```bash
-curl -o appcircle-runner-osx-arm64-1.3.5.zip -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.3.5.zip
+curl -o appcircle-runner-osx-arm64-1.3.6.zip -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.3.6.zip
 ```
 
 Extract self-hosted runner package.
 
    ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.3.5.zip
+unzip -o -u appcircle-runner-osx-arm64-1.3.6.zip
 ```
 
   </TabItem>
@@ -47,13 +47,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.3.5.zip
   <TabItem value="linux-x64" label="Linux x64">
 
    ```bash
-curl -o appcircle-runner-linux-x64-1.3.5.zip -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.3.5.zip
+curl -o appcircle-runner-linux-x64-1.3.6.zip -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.3.6.zip
 ```
 
 Extract self-hosted runner package.
 
    ```bash
-unzip -o -u appcircle-runner-linux-x64-1.3.5.zip
+unzip -o -u appcircle-runner-linux-x64-1.3.6.zip
 ```
 
   </TabItem>
@@ -82,3 +82,13 @@ In order to reinstall systemd or launchd service, first uninstall and then insta
 ```bash
 ./ac-runner service -c install
 ```
+
+:::info
+
+When you complete update successfully, you will see updated **version** in "Self-hosted Runners" list in [here](../self-hosted-runner/manage-runners#monitoring-self-hosted-runners).
+
+```bash
+./ac-runner --version
+```
+
+:::
