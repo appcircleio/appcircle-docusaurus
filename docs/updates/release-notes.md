@@ -9,6 +9,22 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.14 - 2022-08-18 - New Dashboard, Appium Server and SwiftLint components
+
+### 🆕 New Feature
+- [New Dashboard](https://my.appcircle.io) Appcircle has a brand new dashboard that shows an overview of your account.
+- [Artifacts Management](../account/artifacts.md) You can set the retention period for your build artifacts.
+- [Appium Server Component](../workflows/common-workflow-steps.md) You can use Appium Server for iOS and Android projects.
+- [SwiftLint Component](../workflows/ios-specific-workflow-steps.md) You can use Swiftlint for iOS projects.
+
+### :muscle: Improvement
+- Empty states are added for all modules.
+- [Self-Hosted Runners](../self-hosted-runner/overview.md) Self hosted documentation updated.
+- Docs updated to Docusaurus v2.0.1
+
+### 🐞 Fixed
+- Sharing Simulator URL fixed.
+
 ## 2.9.13 - 2022-07-27 - Self-hosted Runners, Artifacts Management, Automatic iOS Code Signing
 
 ### 🆕 New Feature

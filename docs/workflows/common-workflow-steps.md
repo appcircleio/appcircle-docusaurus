@@ -99,3 +99,9 @@ You can use Release Notes component to create release notes during your workflow
 You can use SonarQube component to check your code quality.
 
 [https://github.com/appcircleio/appcircle-sonarqube-component](https://github.com/appcircleio/appcircle-sonarqube-component)
+
+## Appium Server
+
+This step installs [Appium Server](https://appium.io//) and starts it..
+
+https://github.com/appcircleio/appcircle-appium-component

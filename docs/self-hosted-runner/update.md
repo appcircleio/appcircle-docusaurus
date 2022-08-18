@@ -85,7 +85,7 @@ In order to reinstall systemd or launchd service, first uninstall and then insta
 
 :::info
 
-When you complete update successfully, you will see updated **version** in "Self-hosted Runners" list in [here](../self-hosted-runner/manage-runners#monitoring-self-hosted-runners).
+When you complete update successfully, you will see updated **version** in "Self-hosted Runners" list in [here](../self-hosted-runner/manage-runners.md#monitoring-self-hosted-runners).
 
 ```bash
 ./ac-runner --version

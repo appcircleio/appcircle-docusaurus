@@ -70,3 +70,9 @@ https://github.com/appcircleio/appcircle-slather-component
 This step installs [Tuist](https://wwww.tuist.io/) and runs `tuist generate` with given options.
 
 https://github.com/appcircleio/appcircle-tuist-component
+
+## SwiftLint
+
+This step installs [SwiftLint](https://github.com/realm/SwiftLint/) and runs swiftlint with given options.
+
+https://github.com/appcircleio/appcircle-swiftlint-component
