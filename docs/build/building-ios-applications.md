@@ -136,7 +136,7 @@ Please see the following page for more information about environment variables:
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
-![](https://cdn.appcircle.io/docs/assets/image (172).png)
+![](<https://cdn.appcircle.io/docs/assets/image (172).png>)
 
 Please click on the Save button and close this modal.
 

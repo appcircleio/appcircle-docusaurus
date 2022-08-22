@@ -30,7 +30,7 @@ The overall workflow for Smartface builds is almost the same as the iOS and Andr
 
 In the Signing page, select the proper signing certificates for iOS or Android applications.
 
-![](https://cdn.appcircle.io/docs/assets/image (170).png)
+![](<https://cdn.appcircle.io/docs/assets/image (170).png>)
 
 ###
 
@@ -48,7 +48,7 @@ Any previous build can be deployed to the Distribute module without the need for
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/image (171).png)
+![](<https://cdn.appcircle.io/docs/assets/image (171).png>)
 
 ###
 
@@ -62,7 +62,7 @@ Please see the following page for more information about environment variables:
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
-![](https://cdn.appcircle.io/docs/assets/image (172).png)
+![](<https://cdn.appcircle.io/docs/assets/image (172).png>)
 
 Please click on the Save button and close this modal.
 
