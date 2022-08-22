@@ -5,7 +5,7 @@ metaDescription: Send Apps to App Store Connect and TestFlight
 sidebar_position: 2
 ---
 
-import ContentRef from '@site/src/components/ContentRef';
+import ContentRef from '@site/src/components/ContentRef'
 
 # Send Apps to App Store Connect and TestFlight
 
@@ -29,7 +29,7 @@ Before uploading a binary to the store, please make sure that an application lis
 
 You also need to provide either:
 
-- ;An App Store Connect API Key as a P8 file along with the key ID and the issuer ID. This is the recommended authentication method. Please refer to the following document for more information about the App Store Connect API key:\
+- An App Store Connect API Key as a P8 file along with the key ID and the issuer ID. This is the recommended authentication method. Please refer to the following document for more information about the App Store Connect API key:\
   [https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api)
 
 or
@@ -38,7 +38,7 @@ or
 
 ### Adding an App Store Connect API Key (Recommended Method)
 
-To send apps from Appcircle, you need to provide an App Store Connect API key. To add a key, go to [My Organization](../account/my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "App Store Connect API Keys" item under the Connections section. The add key screen will be displayed.
+To send apps from Appcircle, you need to provide an App Store Connect API key. To add a key, go to [My Organization](../account/my-organization.md) Integrations tab and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "App Store Connect API Keys" item under the Connections section. The add key screen will be displayed.
 
 [Create an API key in App Store Connect](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
 
@@ -48,25 +48,11 @@ Then enter a user-friendly name to identify the key in the lists and press save.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (93).png>)
 
-### Adding an Apple Developer ID
-
-To send apps from Appcircle, you can alternatively provide an Apple Developer ID. To add a new Apple ID, go to [My Organization](../account/my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Apple Developer IDs" item under the Connections section. The add key screen will be displayed.
-
-[Create an app-specific password on the Apple ID account page](https://support.apple.com/en-us/HT204397) and enter it here along with the Apple ID email for authentication.
-
-With the next option, enter the application Apple ID that can be obtained from the [App Information section in App Store Connect](https://help.apple.com/app-store-connect/#/dev219b53a88).
-
-Then enter a user-friendly name to identify the credentials in the lists and press save. You can use this Apple ID in multiple apps without the need for reentering the credentials at every upload process.
-
-<ContentRef url="/account/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
-
-![](<https://cdn.appcircle.io/docs/assets/image (94).png>)
-
 ### Deploying the Binary from the Distribute Module
 
-You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for App Store (signed with an App Store Distribution certificate).;
+You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for App Store (signed with an App Store Distribution certificate).
 
-Select a binary in the list and press "Send to Store Submit Module" from the top left menu. The bundle ID of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
+Select a binary in the list and press "Send to Store Submit for App Store" from the top left menu. The bundle ID of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (84).png>)
 
@@ -84,11 +70,11 @@ There are three actions available for each version in the version list. The firs
 
 :::info
 
-Both App Store Connect and TestFlight use the same binary pool, so once you send a binary to any of the destinations, it can be used across App Store Connect for testing and app releases.;
+Both App Store Connect and TestFlight use the same binary pool, so once you send a binary to any of the destinations, it can be used across App Store Connect for testing and app releases.
 
 :::
 
-When you press the "Upload to App Store Connect" button, you will be prompted to select an authentication method: with an App Store Connect API Key or with an Apple Developer ID using an app-specific password.;
+When you press the "Upload to App Store Connect" button, you will be prompted to select an authentication method: with an App Store Connect API Key or with an Apple Developer ID using an app-specific password.
 
 When you select an option, if you don't have a previously saved API key or Apple ID, you will be prompted to add one. If you have saved keys or IDs, you can select them from the list.
 
