@@ -21,7 +21,7 @@ As the name states, your build profile will not build your application until you
 
 For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](#trigger-priorities).
 
-![](<https://cdn.appcircle.io/docs/assets/image (190).png>)
+![](https://cdn.appcircle.io/docs/assets/push-triggers.jpg)
 
 ## Automatic Build
 

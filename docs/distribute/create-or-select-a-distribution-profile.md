@@ -37,18 +37,6 @@ Once you create the distribution profile, you can now customize its settings. Cl
 
 ![](<https://cdn.appcircle.io/docs/assets/image (153).png>)
 
-### Using authentication for distribution
-
-Under the Authentication tab in the settings, you can select a preferred authentication method for sharing your application.
-
-- **None**: No authentication, anyone with the link can download binary files
-- **Individual Enrollment**: Each tester will enroll their own user account to log in and download the binary files
-- **Static Username and Password**: One single username and password for all testers
-
-![](<https://cdn.appcircle.io/docs/assets/image (154).png>)
-
-###
-
 ### Auto send your build to the testers
 
 Auto send feature lets your applications to be distributed to specific testing groups whenever a new version is deployed.
@@ -67,7 +55,23 @@ The second section allows you to share the in-browser preview links of the deplo
 
 Your application will be sent to the related testing groups as soon as your build is complete.
 
-###
+### Using authentication for distribution
+
+Under the Authentication tab in the settings, you can select a preferred authentication method for sharing your application.
+
+- **None**: No authentication, anyone with the link can download binary files
+- **Static Username and Password**: One single username and password for all testers
+
+![](<https://cdn.appcircle.io/docs/assets/image (154).png>)
+
+### Using public link for distribution
+
+You may also enable public link for your distribution. If you enable public distribution, anyone who has the link can access all artifacts of the distribution profile.
+
+
+![](<https://cdn.appcircle.io/docs/assets/image (155).png>)
+
+
 
 ### Manually upload your version
 
@@ -135,7 +139,7 @@ Click on the Share with Testers button and select the testing groups you created
 
 You can also add a message to testers including testing instructions and release notes.
 
-![](https://cdn.appcircle.io/docs/assets/06-07a-SendToTesterGroups.jpg)
+![](https://cdn.appcircle.io/docs/assets/06-07a-SendToTesterGroups.png)
 
 You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message 
 
@@ -156,7 +160,7 @@ After sending your application to testing groups, you can track the actions of t
 - **Login, No Download** - Means your tester has logged in (for authenticated distributions) and at the download screen but has not downloaded the binary file yet
 - **Downloaded** - Means your tester clicked and downloaded the binary file
 
-![](<https://cdn.appcircle.io/docs/assets/06-03-ProfileMain (2).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/06-03-ProfileMain (2).png>)
 
 ### Delete a Distribution Profile
 

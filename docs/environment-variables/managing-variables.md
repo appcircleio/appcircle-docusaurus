@@ -60,7 +60,7 @@ Here, you can see a list of previously created environment variable groups. Sele
 
 Then in workflows, you can specify the environment variable for use.
 
-![](<https://cdn.appcircle.io/docs/assets/09-12-EnvVars (1).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/image (172).png>)
 
 ### Creating environment variables on the fly 
 

@@ -77,11 +77,11 @@ Adding a key to Appcircle is pretty easy. **Go to your organization** by either 
 
 On the Organization screen, select **Add New **on **App Store Connect API Keys **list item**:**
 
-![](https://cdn.appcircle.io/docs/assets/appcircle-organization-low.jpg)
+![](https://cdn.appcircle.io/docs/assets/appcircle-organization-low.png)
 
 On the form, upload the **.p8** key file downloaded from App Store Connect:
 
-![](https://cdn.appcircle.io/docs/assets/form-new-key-2-low.jpg)
+![](<https://cdn.appcircle.io/docs/assets/image (93).png>)
 
 Fill in the rest of the form. You can find the **Key ID** and **Issuer ID** from App Store Connect Panel here:
 

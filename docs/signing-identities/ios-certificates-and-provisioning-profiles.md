@@ -105,7 +105,7 @@ After saving, you can **skip to step 3**.
 
 Simply upload your provisioning profiles obtained from the Apple Developer portal.
 
-![](https://cdn.appcircle.io/docs/assets/02-03-Upload-Provisioning-Profile.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-03-Upload-Provisioning-Profile.png)
 
 :::info
 
@@ -117,7 +117,7 @@ You can list and manage your provisioning profiles here. If there is a matching 
 
 You can also see the matching application ID and expiration date of the profiles here.
 
-![](https://cdn.appcircle.io/docs/assets/02-07-Provision-Details.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-07-Provision-Details.png)
 
 
 ### 3. Generate Or Upload iOS Certificates
@@ -132,19 +132,19 @@ All types of iOS certificates are supported, including development, ad hoc, in-h
 
 Click on "Add New" button to upload or create your iOS Certificate.
 
-![](https://cdn.appcircle.io/docs/assets/02-01-Add-iOS-Certificates.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-01-Add-iOS-Certificates.png)
 
 You can either upload your readily available certificate bundle (P12) along with the bundle password or create a certificate signing request (CSR) to generate a new certificate from the Apple Developer portal and then upload the certificate (CER) to create a certificate bundle (P12). No Mac device is needed.
 
 ## Creating P12 File Without Mac
 
-![](https://cdn.appcircle.io/docs/assets/02-02-Add-iOS-Certificates.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-02-Add-iOS-Certificates.png)
 
 To generate your iOS certificates, simply fill in your details and Appcircle will provide a CSR (certificate signing request) which you can use on Apple Developer Portal to generate your signing certificate.
 
 - Create a CSR File
 
-![](https://cdn.appcircle.io/docs/assets/02-07-Generate-iOS-Cert.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-07-Generate-iOS-Cert.png)
 
 
 - Download your CSR file
@@ -172,7 +172,7 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 
 To upload your iOS certificate, select "Upload Certificate Bundle (.p12)" button and upload your pre-obtained iOS certificate file.
 
-![](https://cdn.appcircle.io/docs/assets/02-02-Upload-iOS-Certificates.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-02-Upload-iOS-Certificates.png)
 
 You can see a list of your created or uploaded certificates. Each certificate will display the certificate name, certificate type (development, ad-hoc, in-house, or app store distribution) along with expiration dates.
 
@@ -182,7 +182,7 @@ If your password contains special characters such as `$` and `#`, your workflow 
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/02-08-CertificateList.jpg)
+![](https://cdn.appcircle.io/docs/assets/02-08-CertificateList.png)
 
 ### Assign signing identities in the Build module for distribution
 

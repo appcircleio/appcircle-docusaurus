@@ -52,6 +52,12 @@ You can define variables and secrets to be incorporated during the build in the 
 
 ![](<https://cdn.appcircle.io/docs/assets/image (172).png>)
 
+### Versioning configuration
+
+You can set custom rules to manage the versioning of your app. You can increase both the build number and version number according to the rules you set.
+
+![](<https://cdn.appcircle.io/docs/assets/image (173).png>)
+
 ### Workflows and Triggers
 
 For advanced configuration, you can utilize [workflows](../workflows/why-to-use-workflows.md) and for automatic builds, you can utilize [triggers](build-manually-or-with-triggers.md#automatic-build).

@@ -142,7 +142,7 @@ You can safely close the build log window, it won't affect the status of your bu
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/04-18-Build-Building.jpg)
+![](https://cdn.appcircle.io/docs/assets/04-18-Build-Building.png)
 
 **Distribute Your Build**
 

@@ -31,7 +31,7 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
 
 ### Adding a Google Play Developer API Key
 
-To send apps from Appcircle, you need to provide a Google Developer API key. To add a key, go to [My Organization](../account/my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section. The add key screen will be displayed.
+To send apps from Appcircle, you need to provide a Google Developer API key. To add a key, go to [My Organization](../account/my-organization.md) Integratiion tab and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section. The add key screen will be displayed.
 
 [Create a key in JSON format in the Google Developer Console](https://developers.google.com/android-publisher/getting_started#using_a_service_account) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
 
@@ -47,7 +47,7 @@ Then enter a user-friendly name to identify the key in the lists and press save.
 
 You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).;
 
-Select a binary in the list and press "Send to Store Submit Module" from the top left menu. The package name of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
+Select a binary in the list and press "Send to Store Submit for Play Store" from the top left menu. The package name of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (69).png>)
 

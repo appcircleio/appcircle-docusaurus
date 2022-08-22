@@ -97,7 +97,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/04-04a-Build-Conf-Dist (1).jpg>)
+![](<https://cdn.appcircle.io/docs/assets/image (170).png>)
 
 ### Distribution
 
@@ -136,7 +136,7 @@ Please see the following page for more information about environment variables:
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
-![](https://cdn.appcircle.io/docs/assets/04-04a-Build-Conf-Env.jpg)
+![](https://cdn.appcircle.io/docs/assets/image (172).png)
 
 Please click on the Save button and close this modal.
 
@@ -174,7 +174,7 @@ You can safely close the build log window, it won't affect the status of your bu
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/03-06b-iOS-Build-Building.jpg)
+![](https://cdn.appcircle.io/docs/assets/03-06b-iOS-Build-Building.png)
 
 ---
 
