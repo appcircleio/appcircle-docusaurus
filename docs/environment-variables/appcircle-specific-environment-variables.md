@@ -41,6 +41,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_GIT\_PR                | Set to `true` if the workflow started for a Pull or Merge Request                                  |
 | AC\_PULL\_NUMBER           | Pull or Merge Request Number                                                                       |
 | AC\_IS\_SUCCESS            | Set to `true` if the previous step was successful                                                  |
+| AC\_TEST\_RESULT\_PATH     | Test Result Path                                                                                   |
 | AC\_WORKFLOW\_ID           | Workflow UUID                                                                                      |
 | AC\_WORKFLOW\_NAME         | Workflow Name                                                                                      |
 | AC\_PLATFORM\_TYPE         | **Platform Type** ObjectiveCSwift, JavaKotlin, Smartface, ReactNative, Flutter                     |
@@ -103,6 +104,9 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_APPSTORE\_COUNTRY        | App Store Country for Versioning                                                      |
 | AC\_TARGETS                  | iOS Targets for Versioning                                                            |
 | AC\_IOS_CONFIGURATION\_NAME  | Configuration name for Versioning                                                     |
+| AC\_AUTOSIGN\_CRED\_PATH     | App Store Connect API Key Path. **Only active if automatic signing is turned on.**    |
+| AC\_AUTOSIGN\_KEY            | App Store Connect API Key Id.  **Only active if automatic signing is turned on.**     |
+| AC\_AUTOSIGN\_ISSUER\_ID     | App Store Connect API Issuer Id.  **Only active if automatic signing is turned on.**  |
 
 ### Smartface specific environment variables
 

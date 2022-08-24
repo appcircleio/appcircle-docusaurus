@@ -64,7 +64,7 @@ Then in workflows, you can specify the environment variable for use.
 
 ### Creating environment variables on the fly 
 
-If you want to create environment variables on the fly, you should write those environment variables to a special file called `AC_ENV_FILE_PATH`. For example, if we want to create a build number based on a timestamp and use it in the next steps we can use the followıng custom script.
+If you want to create environment variables on the fly, you should write those environment variables to a special file called `AC_ENV_FILE_PATH`. For example, if we want to create a build number based on a timestamp and use it in the next steps we can use the following custom script.
 
 ```bash
  echo "BUILD_NUMBER=$(date +%s)" >> $AC_ENV_FILE_PATH

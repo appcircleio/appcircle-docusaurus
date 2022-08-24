@@ -15,7 +15,7 @@ There are multiple ways to trigger a build in Appcircle. You can run builds manu
 
 As the name states, your build profile will not build your application until you tell it to. You can browse branches in your Git repository and select any commit from any branch you need to build. To initiate a manual build, just press the "Build Now" button next to the commits under a branch.
 
-![](https://cdn.appcircle.io/docs/assets/push-triggers.jpg)
+![](<https://cdn.appcircle.io/docs/assets/image (168).png>)
 
 ### Workflows for Manual Builds
 
