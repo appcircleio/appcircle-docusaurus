@@ -132,7 +132,7 @@ At the build profile page, you can see your branches are listed on the left and 
 
 ![](https://cdn.appcircle.io/docs/assets/android-build.png)
 
-You can start the build by clicking on Build Now to the right of each commit.
+You can start the build by clicking on **Build** to the right of each commit.
 
 Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
 

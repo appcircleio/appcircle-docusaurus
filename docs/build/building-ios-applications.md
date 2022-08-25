@@ -164,7 +164,7 @@ At the build profile page, you can see your branches are listed on the left and 
 
 ![](https://cdn.appcircle.io/docs/assets/start-build.png)
 
-You can start the build by clicking on the Build Now button to the right of each commit.
+You can start the build by clicking on the **Build** button to the right of each commit.
 
 Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
 
