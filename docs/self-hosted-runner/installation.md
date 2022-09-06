@@ -43,6 +43,36 @@ Minimum hardware requirements for self-hosted runner can be:
   
 Minimum required disk space should be enough both for iOS and android platforms. But that value is only for one Xcode version. According to your selection of Xcode versions you need more disk space for successful installation.
 
+:::info
+
+For linux installations, you can also prefer docker container for supported distributions. You can install linux package of self-hosted runner on a running docker container same as bare-metals.
+
+**But you must select a docker image with `systemd` support enabled.**
+
+You can either install and configure `systemd` on docker by yourself, or choose from preconfigured images.
+
+See [here](https://developers.redhat.com/blog/2019/04/24/how-to-run-systemd-in-a-container) for more detailed information about `systemd` in a container.
+
+Or, as a quick alternative, you can use docker images from [here](https://hub.docker.com/r/jrei/systemd-ubuntu) for `ubuntu` containers.
+
+Let's assume, you selected ready-to-use `ubuntu:20.04` image from there.
+
+First you should start container with command below.
+
+```bash
+docker run -d --name systemd-ubuntu --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-ubuntu:20.04
+```
+
+Log in to running container with bash, interactively.
+
+```bash
+docker exec -it systemd-ubuntu /bin/bash
+```
+
+From now on, you will follow same installation steps seen below as other environments.
+
+:::
+
 ## Installation
 
 Adding a self-hosted runner requires that you download, register and configure Appcircle runner in your environment.
