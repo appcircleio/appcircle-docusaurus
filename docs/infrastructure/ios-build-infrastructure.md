@@ -6,11 +6,11 @@ sidebar_position: 1
 ---
 # iOS Build Infrastructure
 
-Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running `macOS (v.10.15.7 Catalina)` or `macOS (v.12.4 Monterey)`
+Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running `macOS (v.10.15.7 Catalina)` or `macOS (v.12.5.1 Monterey)`
 
 :::tip
 
-For Xcode versions **14.0.x**, **13.4.x**, **13.3.x**, **13.2.x**, **13.1.x**, **13.0.x** and **12.5.x**, `macOS (v.12.4 Monterey)` is used. For every other versions, `macOS (v.10.15.7 Catalina)` is used.
+For Xcode versions **14.0.x**, **13.4.x**, **13.3.x**, **13.2.x**, **13.1.x**, **13.0.x** and **12.5.x**, `macOS (v.12.5.1 Monterey)` is used. For every other versions, `macOS (v.10.15.7 Catalina)` is used.
 
 :::
 
@@ -48,7 +48,7 @@ There are many pre-installed packages in virtual machines. You can get a full li
 
 Here are some of the most important packages installed in our macOS agents used for iOS builds:
 
-`macOS Monterey v.12.4`
+`macOS Monterey v.12.5.1`
 
 | Package            | Version    |
 | ------------------ | ---------- |
