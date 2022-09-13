@@ -16,7 +16,7 @@ For example, on `macOS arm64` installation default emulator on self-hosted runne
   Device: pixel_3a (Google)
     Path: $HOME/.android/avd/Pixel_3a.avd
   Target: Google Play (Google Inc.)
-Based on: Android 10.0 (Q)
+Based on: Android 9.0 (Pie)
  Tag/ABI: google_apis_playstore/arm64-v8a
 ```
 
