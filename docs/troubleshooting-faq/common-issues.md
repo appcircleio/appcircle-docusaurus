@@ -21,6 +21,11 @@ You will need to go to your Github, Bitbucket, or GitLab account and revoke acce
 
 Please check if you have owner/admin access in the specific organization from which the repositories will be connected. Appcircle does not allow connections to the repositories with a member-level access.
 
+### Error accessing the repository. Please check if the repository exists or if you have the required privileges.
+
+- Only members who have admin role on repository or are owner of the organization can install the Github App in an organization that owns that repository.
+- Only members who have admin role on a repository or are owner of the organization can connect a repository to a profile.
+
 ### Unable to grant access to a GitHub organization
 
 If you are unable to grant access to a specific organization while connecting to GitHub, it is likely that the permission for Appcircle needs an update from the organization application access settings.
