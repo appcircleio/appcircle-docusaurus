@@ -59,7 +59,7 @@ const config = {
             label: 'Release Notes',
           },
           {
-            href: 'https://appcircle.io/blog',
+            href: 'https://blog.appcircle.io',
             label: 'Blog',
             position: 'right',
           },
