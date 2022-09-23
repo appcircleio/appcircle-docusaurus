@@ -170,6 +170,21 @@ If you receive a provisioning profile error similar to the following, it usually
 
 In such an error, please check if the correct bundle ID is selected for the build. This is especially the case if you are using different bundle IDs for different release types such as debug or release.
 
+
+`Signing for "MyPod" requires a development team. Select a development team in the Signing & Capabilities editor`
+
+Your Cocoapods dependencies may also show this error when you try to build your project with Xcode 14. To prevent this, you may add the following snippet to your Podfile
+
+```ruby
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings["DEVELOPMENT_TEAM"] = "YOUR Team ID"
+      end
+    end
+end
+```
+
 ### Missing Entitlements
 
 If you receive an error similar to the following, it generally means your provisioning profile doesn't have the entitlements of your project.
@@ -209,7 +224,7 @@ You may experience gradle build errors if your project uses Bintray resources. S
 
 ### Gradle build daemon disappeared unexpectedly
 
-If you receive a Gradle error similar to the following, it usually indicates a problem with UTF-8 characters in your project or environment variables.
+If you receive a Gradle error similar to the following, it can happen due to 2 reasons
 
 ```
 org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
@@ -219,7 +234,8 @@ org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemo
     at org.gradle.launcher.daemon.client.DaemonClient.execute(DaemonClient.java:125)
 ```
 
-Please edit your **gradle.properties** file and add `file.encoding=utf-8` line.
+- Problem with UTF-8 characters in your project or environment variable. Please edit your **gradle.properties** file and add `file.encoding=utf-8` line.
+- You have edited **gradle.properties** and put some arguments to the `org.gradle.jvmargs` section. When you modify default JVM arguments, it resets the default `MaxMetaspaceSize` property. You should always add `-XX:MaxMetaspaceSize=256m` to this section to prevent unlimited memory allocation.
 
 ### I received a google-services.json Error but I don't want to push this file to the repository
 
