@@ -105,3 +105,9 @@ You can use SonarQube component to check your code quality.
 This step installs [Appium Server](https://appium.io//) and starts it..
 
 https://github.com/appcircleio/appcircle-appium-component
+
+## Firebase App Distribution
+
+Send your apps to be distributed via Firebase App Distribution
+
+[https://github.com/appcircleio/appcircle-firebase-distribution-component](https://github.com/appcircleio/appcircle-firebase-distribution-component)
