@@ -63,8 +63,22 @@ Appcircle needs admin permission to function properly. The admin permission is n
 
 :::
 
-#### Authorizing a Distinct Repository Through Bitbucket
+:::warning
 
-Bitbucket provides SSH option to authorize a single repository. However, this method of connection is unavailable within Appcircle.
+Bitbucket doesn't allow scoped repository permissions like GitHub. Therefore the token you add can access all the repositories of the token's owner. When you're adding a token, it's better to create a new bot user or a project and give access to only the required repositories for build to succeed. 
+
+:::
+
+You may create access token to specific project or a repository which can help you to restrict the access level of the token.
+
+### Create HTTP access tokens for projects or repositories
+HTTP access tokens can be created for teams to grant permissions at the project or repository level rather than for specific users.
+
+To create an HTTP access token for a project or repository (requires project or repository admin permissions):
+
+- From either the Project or Repository settings, select HTTP access tokens.
+- Select Create token.
+- Set the token name, permissions, and expiry.
+
 
 <NeedHelp />

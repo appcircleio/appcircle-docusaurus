@@ -9,6 +9,25 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.15 - 2022-09-30 - Fortify On Demand and Firebase App Distribution components
+
+### 🆕 New Feature
+- [Fortify On Demand Component](../workflows/common-workflow-steps.md) You can use Fortify On Demand uploader for all your projects.
+- [Firebase App Distribution Component](../workflows/common-workflow-steps.md) You can use Firebase App Distribution to distribute your builds.
+- [Wait for Android Emulator](../workflows/android-specific-workflow-steps.md) You must use this step before your UI tests to wait for the Android emulator to start.
+
+### :muscle: Improvement
+- Navigation and repository refresh speed improved.,
+- Linux agents are more powerful now. They also support nested virtualizations therefore you may use Android emulators.
+- Xcode default version number is changed to 13.4.x
+- Android Emulator added to agents. The added emulator is based on Android 9.0 image. You may install additional emulators by using `sdkmanager`. Please check [Android Infrastructure](../infrastructure/android-build-infrastructure.md) to learn more. In order to use the emulator, you need to add the Wait for Android Emulator step to your workflow.
+
+### 🐞 Fixed
+- Bitbucket commit messages now show properly.
+- `AC_PULL_NUMBER` environment variable added for Pull/Merge Requests.
+- Changing assignee no longer triggers a build for Gitlab Merge Request.
+- Build statuses correctly shows on the main dashboard.
+
 ## 2.9.14 - 2022-08-18 - New Dashboard, Appium Server and SwiftLint components
 
 ### 🆕 New Feature

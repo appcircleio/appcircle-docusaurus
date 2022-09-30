@@ -57,6 +57,10 @@ curl -sL firebase.tools | bash
 firebase appdistribution:distribute $AC_EXPORT_DIR/Runner.ipa --app $FIREBASE_APP_ID --release-notes "Release Notes..." --token $FIREBASE_TOKEN --groups "testers"
 ```
 
+You may also use our Firebase App Distribution Component for this process.
+
+https://github.com/appcircleio/appcircle-firebase-distribution-component
+
 ### Send email notification when a build is complete
 
 You can send notification emails when your build is complete so that you or your teammates will know the build status.

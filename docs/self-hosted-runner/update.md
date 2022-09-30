@@ -69,7 +69,7 @@ cd appcircle-runner
 
 Self-hosted runner updates may include tool upgrades or introduce new required tools for build pipeline. So we need to rerun configuration step same as before. It will check installed tools quickly, and will update only required tools.
 
-To remember what configuration step was, please refer to [this](/self-hosted-runner/installation#3-configure) page.
+To remember what configuration step was, please refer to [this](../self-hosted-runner/installation.md#3-configure) page.
 
 ## 3. Reinstall Service
 

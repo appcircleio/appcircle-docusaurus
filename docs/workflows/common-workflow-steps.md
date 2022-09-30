@@ -102,7 +102,7 @@ You can use SonarQube component to check your code quality.
 
 ## Appium Server
 
-This step installs [Appium Server](https://appium.io//) and starts it..
+This step installs [Appium Server](https://appium.io/) and starts it.
 
 https://github.com/appcircleio/appcircle-appium-component
 
@@ -111,3 +111,9 @@ https://github.com/appcircleio/appcircle-appium-component
 Send your apps to be distributed via Firebase App Distribution
 
 [https://github.com/appcircleio/appcircle-firebase-distribution-component](https://github.com/appcircleio/appcircle-firebase-distribution-component)
+
+## Fortify On Demand
+
+This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment
+
+https://github.com/appcircleio/appcircle-fod-mobile-assessment

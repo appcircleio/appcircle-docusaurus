@@ -58,3 +58,9 @@ This step runs the unit tests of the project.;
 This step visualizes the whole dependency tree for every [configuration](https://docs.gradle.org/current/userguide/declaring\_dependencies.html#sec:what-are-dependency-configurations) available in the project.
 
 [https://github.com/appcircleio/appcircle-dependency-report](https://github.com/appcircleio/appcircle-dependency-report)
+
+## Wait for Android Emulator
+
+This step waits for Android Emulator to boot. You must use this step before running any UI tests.
+
+[https://github.com/appcircleio/appcircle-android-wait-emulator](https://github.com/appcircleio/appcircle-android-wait-emulator)
