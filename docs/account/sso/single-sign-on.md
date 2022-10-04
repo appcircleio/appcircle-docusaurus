@@ -32,6 +32,12 @@ Appcircle supports both OpenID and SAML Identity providers. You can follow the b
 - [Okta SAML](./okta-saml.md)
 - [OneLogin SAML](./onelogin-saml.md)
 
+:::info
+
+Two-factor authentication (2FA) can only be enabled by your SSO provider. Please check their documentation to learn how to enable it.
+
+:::
+
 ### Testing SSO
 
 - When you connect your Identity Provider, please open a new incognito window and test the SSO integration.
