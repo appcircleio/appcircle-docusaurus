@@ -9,6 +9,17 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.16 - 2022-10-07 - Triggers fallback config, Netrc, Bundlletool and Detekt components
+
+### 🆕 New Feature
+- [Fallback config](../build/build-manually-or-with-triggers.md) added for Pull/Merge Requests and Tag triggers.
+- [Netrc component](../workflows/common-workflow-steps.md) You can use this component to add credentials for hosts such as your repositories or external hosts.
+- [Bundletool Component](../workflows/android-specific-workflow-steps.md) You can use this component to create universal apk from the aab.
+- [Detekt](../workflows/android-specific-workflow-steps.md) You can use this component to run your detekt gradle task.
+
+### :muscle: Improvement
+- [Added FAQs](../troubleshooting-faq/common-issues.md) related to Xcode 14 and code signing errors.
+
 ## 2.9.15 - 2022-09-30 - Fortify On Demand and Firebase App Distribution components
 
 ### 🆕 New Feature

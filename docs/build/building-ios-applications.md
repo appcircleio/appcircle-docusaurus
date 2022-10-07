@@ -49,6 +49,10 @@ If your project uses private modules, don't forget the add necessary SSH keys to
 
 <ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
+You may also use `Authenticate with netrc` step to access your private modules.
+
+https://github.com/appcircleio/appcircle-netrc-component
+
 #### Selecting the Xcode Version and Switching to the Xcode Beta
 
 Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in Build Configuration window.

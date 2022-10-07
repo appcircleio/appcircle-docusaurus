@@ -89,7 +89,7 @@ You must choose a fallback configuration in case the triggered branch doesn't ha
 
 Appcircle will start building your application whenever you initiate a pull request or merge request from the source branch(es) to the target branch.
 
-The build will be done with the pull/merge result using the selected workflow. This allows testing the PR/MR result before the actual approval of the request.
+The build will be done with the pull/merge result using the selected workflow. This allows testing of the PR/MR result before the actual approval of the request. This trigger will use the destination's branch config when the workflow starts. However, you may override the config by choosing **Fallback Config**.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (179).png>)
 
@@ -97,7 +97,7 @@ The build will be done with the pull/merge result using the selected workflow. T
 
 Appcircle will start building your application with the selected workflow whenever you perform a push with certain tags to your Git repository. Your project will be built automatically only if the push has the tags you specify or you can specify a wildcard tag to build all tagged pushes.
 
-This allows build scenarios like building only specific pushes that has the "release" in the tag.
+This allows build scenarios like building only specific pushes that has the "release" in the tag. This trigger will use tag's branch config when the workflow starts. However, you may override the config by choosing **Fallback Config**.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (180).png>)
 

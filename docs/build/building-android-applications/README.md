@@ -30,6 +30,10 @@ If your project uses private modules, don't forget the add necessary SSH keys to
 
 <ContentRef url="../adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
+You may also use `Authenticate with netrc` step to access your private modules.
+
+https://github.com/appcircleio/appcircle-netrc-component
+
 ### Sending the Build Status to the Repository Providers
 
 At the bottom of the config tab, you will the **Set Commit Build Status **option.

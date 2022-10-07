@@ -35,6 +35,10 @@ If your project uses private modules, don't forget the add necessary SSH keys to
 
 <ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
+You may also use `Authenticate with netrc` step to access your private modules.
+
+https://github.com/appcircleio/appcircle-netrc-component
+
 ### Build Configuration for Flutter iOS applications
 
 Click on the gear icon on the top right to access the build configuration. The first step will be the entering project details. You can enter these details manually or click on the Fetch button to retrieve them from your project to detect the correct path for the Xcode project automatically.

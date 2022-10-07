@@ -37,6 +37,10 @@ If your project uses private modules, don't forget the add necessary SSH keys to
 
 <ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
+You may also use `Authenticate with netrc` step to access your private modules.
+
+https://github.com/appcircleio/appcircle-netrc-component
+
 ### Build Configuration for React Native iOS applications
 
 Click on the gear icon on top right to access the build configuration. The first step will be the enter project details. You can enter details manually or click on the Fetch button to retrieve them from your project.

@@ -64,3 +64,15 @@ This step visualizes the whole dependency tree for every [configuration](https:/
 This step waits for Android Emulator to boot. You must use this step before running any UI tests.
 
 [https://github.com/appcircleio/appcircle-android-wait-emulator](https://github.com/appcircleio/appcircle-android-wait-emulator)
+
+## Bundle Universal Apk
+
+This step generates an universal APK from an AAB.
+
+[https://github.com/appcircleio/appcircle-bundletool-component](https://github.com/appcircleio/appcircle-bundletool-component)
+
+## Detekt
+
+This step runs detekt gradle task.
+
+[https://github.com/appcircleio/appcircle-detekt-component](https://github.com/appcircleio/appcircle-detekt-component)

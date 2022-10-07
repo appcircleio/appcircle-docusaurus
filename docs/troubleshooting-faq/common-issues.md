@@ -173,7 +173,10 @@ In such an error, please check if the correct bundle ID is selected for the buil
 
 `Signing for "MyPod" requires a development team. Select a development team in the Signing & Capabilities editor`
 
-Your Cocoapods dependencies may also show this error when you try to build your project with Xcode 14. To prevent this, you may add the following snippet to your Podfile
+Your Cocoapods dependencies may also show this error when you try to build your project with Xcode 14. To prevent this, you may try one of the following workarounds.
+
+1. Signing with your own certificates. This requires uploading both development and distribution certificates. Therefore you either need to upload appropriate provisioning profiles or turn on [Automatic Code Signing](../signing-identities/ios-certificates-and-provisioning-profiles.md#automatic-signing).
+
 
 ```ruby
 post_install do |installer|
@@ -182,6 +185,20 @@ post_install do |installer|
         config.build_settings["DEVELOPMENT_TEAM"] = "YOUR Team ID"
       end
     end
+end
+```
+
+2. Skip signing pod bundles
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+      target.build_configurations.each do |config|
+          config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+      end
+    end
+  end
 end
 ```
 
@@ -321,6 +338,30 @@ You have either:
 - Option 1 (recommended): Run `pod update Amplify AWSPluginsCore AmplifyPlugins` from the ios dir. This will update the pods that are used by the amplify flutter packages.
 - Option 2: Delete the `Podfile.lock` (in the ios dir) and rebuild. A new Podfile.lock will be generated. Please note, this may cause other non amplify related dependencies to be updated as well.
 - Option 3: Run pod update from the ios dir. This should update your `Podfile.lock` file. Please note, this may cause other non amplify related dependencies to be updated as well.
+
+### Cocoapods Error
+
+`Signing for "MyPod" requires a development team. Select a development team in the Signing & Capabilities editor`
+
+If you are using Xcode 14 and your Flutter version is less than 3.3, your build may fail with above message. You should modify your Podfile according to below snippet. Flutter 3.3 fixes this bug.  [Related Flutter Issue](https://github.com/flutter/flutter/issues/111757)
+
+```ruby
+post_install do |installer|
+ installer.pods_project.targets.each do |target|
+   flutter_additional_macos_build_settings(target)
+
+   target_is_resource_bundle = target.respond_to?(:product_type) && target.product_type == 'com.apple.product-type.bundle'
+   target.build_configurations.each do |build_configuration|
+     if target_is_resource_bundle
+       build_configuration.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+       build_configuration.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
+       build_configuration.build_settings['CODE_SIGNING_IDENTITY'] = '-'
+       build_configuration.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = '-'
+     end
+   end
+  end
+end
+```
 
 ## React Native-Specific Issues
 

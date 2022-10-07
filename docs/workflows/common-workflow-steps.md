@@ -117,3 +117,9 @@ Send your apps to be distributed via Firebase App Distribution
 This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment
 
 https://github.com/appcircleio/appcircle-fod-mobile-assessment
+
+## Authenticate with netrc
+
+The `.netrc` file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file. However, if you want to use the .netrc file with curl, you need to append the `-n` command line parameter. You may also use the `--netrc-optional` parameter if you don't always use the `.netrc` file with curl.
+
+https://github.com/appcircleio/appcircle-netrc-component
