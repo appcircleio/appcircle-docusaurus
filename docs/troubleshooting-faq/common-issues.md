@@ -122,7 +122,7 @@ If you are unable to determine the exact cause, feel free to get in touch with A
 Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](../workflows/why-to-use-workflows.md) and get a build to help isolate the cause of the issue.
 
 - **iOS Sign Errors: **If the selected provisioning profile does not match with the selected bundle ID or if the certificate is not valid, you may have an issue in the iOS signing step. In this case, you may try getting an unsigned build
-- **Xcode Build for Simulator step: **This step is required to use the [Preview on Device](../distribute/preview-on-device.md) feature and it requires the app to be built for the x86 architecture. In some projects, there may be dependencies that are not compatible with x86. In this case, please remove this step from the workflow or remove the conflicting dependencies to get a successful build.
+- **Xcode Build for Simulator step: **This step builds your target for x86 architecture. In some projects, there may be dependencies that are not compatible with x86. In this case, please remove this step from the workflow or remove the conflicting dependencies to get a successful build.
 - **Android Sign Errors: **If you encounter errors while signing your Android app, you can remove this step to get an unsigned build or you can configure the app signing within your project.
 
 ### The Build is Taking Too Long

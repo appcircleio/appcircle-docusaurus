@@ -43,7 +43,7 @@ https://github.com/appcircleio/appcircle-ios-build-sign-component
 
 ## Xcodebuild for iOS Simulator
 
-This step builds your application for the iOS Simulator in x86 architecture which is required for the [**Preview on Device**](../distribute/preview-on-device.md) feature. This step creates an unsigned `xarchive` file.
+This step builds your application for the iOS Simulator in x86 architecture. This step creates an unsigned `xarchive` file.
 
 https://github.com/appcircleio/appcircle-ios-build-simulator
 
