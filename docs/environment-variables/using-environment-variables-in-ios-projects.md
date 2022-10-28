@@ -101,6 +101,4 @@ echo "API_KEY : ${API_KEY}"
 bash $AC_REPOSITORY_DIR/Appcircle/environment.sh $AC_REPOSITORY_DIR/Appcircle/development.xcconfig
 ```
 
-During the build process, this Bash script will replace the values in the .xcconfig file with the environment variables created earlier. When we complete our build, we can now preview our application on Appcircle's emulator to see the values we set in environment variables on our application's page:
-
-![](https://cdn.appcircle.io/docs/assets/env-var-ios-06.jpg)
+During the build process, this Bash script will replace the values in the .xcconfig file with the environment variables created earlier.

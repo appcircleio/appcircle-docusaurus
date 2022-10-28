@@ -69,12 +69,6 @@ You can also automate your build process by telling Appcircle to automatically b
 
 Distribution is a very major and important step for testing and deploying a mobile application.
 
-You can use Preview On Device feature to simulate your app on a real device and see how everything works.
-
-<ContentRef url="/distribute/preview-on-device">
-  Preview on Device (Emulator/Simulator) in the Distribute Module
-</ContentRef>
-
 Create testing groups, add testers to testing groups and assign these groups to distribution profiles to distribute your build to testers so that they can download and install applications on their devices.
 
 <ContentRef url="/distribute/testing-groups">Testing Groups</ContentRef>

@@ -47,22 +47,7 @@ Mobile CI/CD for All
 <h5>Distribute to groups of testers</h5>
 <span>Distribute your apps after a build or manually</span>
 </a>
-<a class="emulator" href="/emulator-simulator/android-app-emulator">
-<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2256_18223)">
-<path d="M17.2656 5.95001H4.83437C4.07331 5.95001 3.45312 6.57019 3.45312 7.33126V26.6688C3.45312 27.4312 4.07331 28.05 4.83437 28.05H17.2656C18.0281 28.05 18.6469 27.4312 18.6469 26.6688V7.33126C18.6469 6.57019 18.0281 5.95001 17.2656 5.95001ZM17.2656 23.9063H4.83437V8.71251H17.2656V23.9063Z" fill="#5B799E"/>
-<path d="M9.6687 11.475H6.9062C6.52498 11.475 6.21558 11.7844 6.21558 12.1657V14.9282C6.21558 15.3094 6.52498 15.6188 6.9062 15.6188H9.6687C10.0499 15.6188 10.3593 15.3094 10.3593 14.9282V12.1657C10.3593 11.7844 10.0499 11.475 9.6687 11.475ZM9.6687 17H6.9062C6.52498 17 6.21558 17.3094 6.21558 17.6907V20.4532C6.21558 20.8344 6.52498 21.1438 6.9062 21.1438H9.6687C10.0499 21.1438 10.3593 20.8344 10.3593 20.4532V17.6907C10.3593 17.3094 10.0499 17 9.6687 17ZM15.1937 11.475H12.4312C12.05 11.475 11.7406 11.7844 11.7406 12.1657V14.9282C11.7406 15.3094 12.05 15.6188 12.4312 15.6188H15.1937C15.5749 15.6188 15.8843 15.3094 15.8843 14.9282V12.1657C15.8843 11.7844 15.5749 11.475 15.1937 11.475Z" fill="#5B799E"/>
-</g>
-<defs>
-<clipPath id="clip0_2256_18223">
-<rect width="22.1" height="22.1" fill="white" transform="translate(0 5.95001)"/>
-</clipPath>
-</defs>
-</svg>
 
-<h5>Try your apps on the Emulator</h5>
-<span>Use our in-browser emulator to try your apps.</span>
-</a>
 <a class="store-submit" href="/store-submit/apple-app-store">
 
 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
