@@ -34,19 +34,3 @@ Each line indicates an individual share operation conducted using the "Share wit
 The date and time are displayed in the current timezone.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (14).png>)
-
-## App Preview Report
-
-This report is accessible from the Distribute module.
-
-App Preview Report list of in-browser simulator/emulator device minutes consumed in a given time period.
-
-<ContentRef url="../distribute/preview-on-device">
-  Preview on Device (Emulator/Simulator) in the Distribute Module
-</ContentRef>
-
-Each line indicates the total daily consumption of device minutes for a specific app version across multiple sessions. The number of sessions is based on every new device session launched, whether through switching device types or OS versions or closing the window and then relaunching the simulator/emulator.
-
-The date and time are displayed in the current timezone.
-
-![](<https://cdn.appcircle.io/docs/assets/image (15).png>)

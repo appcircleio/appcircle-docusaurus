@@ -49,8 +49,6 @@ Under the Auto Send tab in the settings, you can see the testing groups you have
 
 The first section allows you to share the deployed binaries automatically with the selected groups. They will receive a link to download the specific version on their mobile devices.
 
-The second section allows you to share the in-browser preview links of the deployed binaries. They will receive a link to run the in-browser Appcircle Emulator/Simulator without the need for actual devices.
-
 ![](<https://cdn.appcircle.io/docs/assets/image (192).png>)
 
 Your application will be sent to the related testing groups as soon as your build is complete.
