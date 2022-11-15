@@ -196,6 +196,9 @@ post_install do |installer|
     if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
       target.build_configurations.each do |config|
           config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+          config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
+          config.build_settings['CODE_SIGNING_IDENTITY'] = '-'
+          config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = '-'
       end
     end
   end
