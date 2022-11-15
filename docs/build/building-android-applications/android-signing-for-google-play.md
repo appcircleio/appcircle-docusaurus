@@ -5,6 +5,9 @@ metaDescription: Android 11+ Signing for Google Play
 sidebar_position: 11
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Android 11+ Signing for Google Play
 
 As per Google's update on Android 11 behavior changes, there is an important (breaking) change regarding app signing
@@ -43,6 +46,10 @@ The current Android Sign step in Appcircle utilizes [jarsigner to sign apps](htt
 
 The solution for this is to utilize signing in gradle within the app. A sample build.gradle file that utilizes APK Signature Scheme v2 can be found at [https://github.com/appcircleio/appcircle-sample-android/blob/v2-sign/app/build.gradle](https://github.com/appcircleio/appcircle-sample-android/blob/v2-sign/app/build.gradle) and the sample code can be seen below:
 
+
+<Tabs>
+  <TabItem value="groovy" label="build.gradle" default>
+
 ```groovy
 signingConfigs {
     release {
@@ -65,11 +72,49 @@ signingConfigs {
 buildTypes {
     release {
         minifyEnabled false
-        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         signingConfig signingConfigs.release
     }
 }
 ```
+
+
+  </TabItem>
+  <TabItem value="kotlin" label="build.gradle.kts">
+
+```kotlin
+signingConfigs {
+    create("release") {
+        if (System.getenv()["AC_APPCIRCLE"].toBoolean()) { // new configuration for Appcircle
+            println("Running on Appcircle")
+            storeFile = file(System.getenv()["AC_ANDROID_KEYSTORE_PATH"])
+            storePassword = System.getenv()["AC_ANDROID_KEYSTORE_PASSWORD"]
+            keyAlias = System.getenv()["AC_ANDROID_ALIAS"]
+            keyPassword = System.getenv()["AC_ANDROID_ALIAS_PASSWORD"]
+        } else {
+            println("Running on local") // Your old configuration
+            storeFile = file(keystoreProperties.getProperty("storeFile"))
+            storePassword = keystoreProperties.getProperty("storePassword")
+            keyAlias = keystoreProperties.getProperty("keyAlias")
+            keyPassword = keystoreProperties.getProperty("keyPassword")
+        }
+    }
+}
+// Rest of your build.gradle.kts
+buildTypes {
+    getByName("release") {
+        isMinifyEnabled = false
+        signingConfig = signingConfigs.getByName("release")
+    }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+
+
+
+
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
