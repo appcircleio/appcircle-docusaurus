@@ -118,6 +118,14 @@ This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres
 
 https://github.com/appcircleio/appcircle-fod-mobile-assessment
 
+## Code Reviews with Danger
+
+Danger runs during your CI process and gives teams the chance to automate common code review chores. This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your team’s norms. Leaving humans to think about harder problems.
+
+https://github.com/appcircleio/appcircle-danger-component
+
+https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews
+
 ## Authenticate with netrc
 
 The `.netrc` file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file. However, if you want to use the .netrc file with curl, you need to append the `-n` command line parameter. You may also use the `--netrc-optional` parameter if you don't always use the `.netrc` file with curl.
