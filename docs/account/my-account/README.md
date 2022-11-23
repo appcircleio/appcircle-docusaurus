@@ -10,12 +10,13 @@ The "My Account" screen is accessible from the bottom left hover menu and it con
 
 Current headlines and the actions you can complete are listed below:
 
-* My Details
-* Change Password
-* Authenticator (Two Factor Authentication)
-* Federated Identity (Linked Login Providers)
-* Active Sessions
-* Authentication Logs
+* [My Details](./my-details)
+* [Change Password](.change-password)
+* [Authenticator (Two Factor Authentication)](./authenticator-two-factor-authentication)
+* [Federated Identity (Linked Login Providers)](./federated-identity-linked-login-providers)
+* [Active Sessions](./active-sessions)
+* [Authentication Logs](./authentication-logs)
+* [Delete Account](./delete-account)
 
 In order to see the details, check the submenu of this documentation page.
 
