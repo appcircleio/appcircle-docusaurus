@@ -11,7 +11,7 @@ The "My Account" screen is accessible from the bottom left hover menu and it con
 Current headlines and the actions you can complete are listed below:
 
 * [My Details](./my-details)
-* [Change Password](.change-password)
+* [Change Password](./change-password)
 * [Authenticator (Two Factor Authentication)](./authenticator-two-factor-authentication)
 * [Federated Identity (Linked Login Providers)](./federated-identity-linked-login-providers)
 * [Active Sessions](./active-sessions)
