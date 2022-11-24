@@ -36,6 +36,7 @@ If you're using the self-hosted version of Bitbucket or GitLab, you may need to 
 
 - 34.147.2.16
 - 77.92.96.46
+- 162.19.204.13
 
 ## Repository Owner
 
