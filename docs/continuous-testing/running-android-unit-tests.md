@@ -79,3 +79,58 @@ mv app/build/test-results $AC_OUTPUT_DIR
 This simple Bash script will trigger your unit test and output the test results to be packed along with your binary files. You will get the test results both in `xml` and `html` formats.
 
 ![](<https://cdn.appcircle.io/docs/assets/Screenshot 2020-04-28 20.47.05.png>)
+
+### Generating Test Report
+
+Appcircle has [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) which can show the result of your tests and code coverage in a beautiful UI.
+
+![](https://cdn.appcircle.io/docs/assets/test-reports1.png)
+
+You must add this component **after** running your tests so that it can parse test results. Your workflow should look like the below.
+
+![](https://cdn.appcircle.io/docs/assets/test-reports8.png)
+
+[Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. This component supports the following Test and Coverage Formats
+
+- Xcode
+- JUnit
+- JaCoCo
+- Cobertura
+- lcov.info
+
+You must configure the **Test Report Component** and enter the path of code coverage and test results paths. For example, if you run your tests with an emulator, your files will be generated in the following folders.
+
+- **Code Coverage Files:** $AC_REPOSITORY_DIR/app/build/reports/coverage/androidTest/debug/connected/
+- **Test Results:** $AC_REPOSITORY_DIR/app/build/outputs/androidTest-results/connected/
+
+You must configure the component to parse those folders.
+
+![](https://cdn.appcircle.io/docs/assets/test-reports9.png)
+
+
+:::warning
+
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, some of your tests may fail. If Test Report Component doesn't run, reports will not be generated. You should turn on the following toggles so that Test Report Component always runs whether your tests fail or pass.
+
+- Always run this step even if the previous steps fail 
+- Continue with the next step even if this step fails
+
+:::
+
+![](https://cdn.appcircle.io/docs/assets/test-reports3.png)
+
+:::caution
+
+If you're using UI Tests with Emulators, you must select Intel Device since M1 Virtual Machines don't support nested virtualization. 
+
+:::
+
+### Showing Test Reports
+
+Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
+
+![](https://cdn.appcircle.io/docs/assets/test-reports5.png)
+
+![](https://cdn.appcircle.io/docs/assets/test-reports6.png)
+
+![](https://cdn.appcircle.io/docs/assets/test-reports7.png)
