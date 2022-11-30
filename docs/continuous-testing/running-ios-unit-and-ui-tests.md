@@ -6,6 +6,7 @@ sidebar_position: 1
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import NarrowImage from '@site/src/components/NarrowImage';
 
 # Running iOS Unit & UI Tests
 
@@ -64,7 +65,7 @@ If you add [Test Report Component](https://github.com/appcircleio/appcircle-test
 
 You must add this component **after** the `Xcodebuild for Unit and UI Tests` so that it can parse test results. Your workflow should look like the below.
 
-![](https://cdn.appcircle.io/docs/assets/test-reports2.png)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports2.png" />
 
 [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. To show coverage results, you must enable **Code Coverage** in Xcode's scheme settings. 
 
@@ -79,7 +80,7 @@ There's one important setting that you should change. If any workflow steps fail
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/test-reports3.png)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports3.png" />
 
 ### Showing Test Reports
 

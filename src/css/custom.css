@@ -170,6 +170,16 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   margin-right: 16px;
 }
 
+.image-narrow {
+  max-width: 70%;
+}
+
+@media (max-width: 550px) {
+  .image-narrow {
+    max-width: 100%;
+  }
+}
+
 /* oembed */
 iframe[src*='youtube.com'] {
   width: 600px !important;

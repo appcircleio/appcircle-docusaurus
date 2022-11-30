@@ -6,6 +6,7 @@ sidebar_position: 2
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import NarrowImage from '@site/src/components/NarrowImage';
 
 # Running Android Unit Tests
 
@@ -84,11 +85,11 @@ This simple Bash script will trigger your unit test and output the test results 
 
 Appcircle has [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) which can show the result of your tests and code coverage in a beautiful UI.
 
-![](https://cdn.appcircle.io/docs/assets/test-reports1.png)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports1.png" />
 
 You must add this component **after** running your tests so that it can parse test results. Your workflow should look like the below.
 
-![](https://cdn.appcircle.io/docs/assets/test-reports8.png)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports8.png" />
 
 [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. This component supports the following Test and Coverage Formats
 
@@ -105,8 +106,7 @@ You must configure the **Test Report Component** and enter the path of code cove
 
 You must configure the component to parse those folders.
 
-![](https://cdn.appcircle.io/docs/assets/test-reports9.png)
-
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports9.png" />
 
 :::warning
 
@@ -117,7 +117,7 @@ There's one important setting that you should change. If any workflow steps fail
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/test-reports3.png)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports3.png" />
 
 :::caution
 
