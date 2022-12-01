@@ -158,7 +158,7 @@ After sending your application to testing groups, you can track the actions of t
 - **Login, No Download** - Means your tester has logged in (for authenticated distributions) and at the download screen but has not downloaded the binary file yet
 - **Downloaded** - Means your tester clicked and downloaded the binary file
 
-![](<https://cdn.appcircle.io/docs/assets/06-03-ProfileMain (2).png>)
+![](<https://cdn.appcircle.io/docs/assets/image (158).png>)
 
 ### Delete a Distribution Profile
 
