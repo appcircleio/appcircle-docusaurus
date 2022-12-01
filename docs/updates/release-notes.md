@@ -9,6 +9,20 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.17 - 2022-12-01 - Test Reports
+
+### 🆕 New Feature
+- Test Reports added for [iOS](../continuous-testing/running-ios-unit-and-ui-tests.md) and [Android](../continuous-testing/running-android-unit-tests.md). Please check their documentation to learn how to set up your workflows.
+- [Danger](../workflows/common-workflow-steps.md#code-reviews-with-danger) component added. Danger runs during your CI process and gives teams the chance to automate common code review chores 
+- The emulator feature is removed.
+
+### :muscle: Improvement
+- Performance improvements for the Dashboard
+- Announcement button ⚡️ added to Dashboard. You can check that section for product announcements.
+- Wildcard Provisioning Profile support for manual code signing
+- Setting environment variables via the `AC_ENV_FILE_PATH` environment variable now works on failed steps as well.
+- Xcode versions older than 12.5 removed.
+
 ## 2.9.16 - 2022-10-07 - Triggers fallback config, Netrc, Bundlletool and Detekt components
 
 ### 🆕 New Feature
