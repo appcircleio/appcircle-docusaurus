@@ -5,6 +5,8 @@ metaDescription: Slack Notifications
 sidebar_position: 8
 ---
 
+import NarrowImage from '@site/src/components/NarrowImage';
+
 # Slack Notifications
 
 Appcircle supports sending notifications to Slack for the major events in all modules. You can connect Appcircle to your Slack workspace to set up module based event notifications to be sent to the selected channels.
@@ -41,4 +43,4 @@ If you want to disconnect or reauthorize the Slack connection, scroll down to th
 
 The full list of the available options can be viewed as follows:
 
-![](https://cdn.appcircle.io/docs/assets/screenshot-my.appcircle.io-2021.02.11-00_01_23.png)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/screenshot-my.appcircle.io-2021.02.11-00_01_23.png" />

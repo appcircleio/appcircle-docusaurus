@@ -5,6 +5,8 @@ metaDescription: Okta SAML
 sidebar_position: 6
 ---
 
+import NarrowImage from '@site/src/components/NarrowImage';
+
 # Okta SAML
 
 Appcircle supports [Okta](https://www.okta.com/) as OpenID or SAML provider. 
@@ -69,7 +71,7 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Enter the alias you picked.
 
-![](<https://cdn.appcircle.io/docs/assets/sso-alias.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 

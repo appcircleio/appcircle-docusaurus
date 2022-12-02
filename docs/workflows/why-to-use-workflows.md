@@ -9,6 +9,7 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NarrowImage from '@site/src/components/NarrowImage';
 
 <Tabs
   defaultValue="ios"
@@ -89,7 +90,7 @@ The workflow list will be displayed. To view the [Workflow Steps](why-to-use-wor
 
 To create a new workflow, press the "New" button at the top of the workflow list and select a template from the default workflows. Then edit the workflow name and press enter. You can also upload your workflow as a YAML file.
 
-![](<https://cdn.appcircle.io/docs/assets/image (198).png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(198).png" />
 
 To rename/delete a current workflow, press the "Edit" button at the top of the workflow list and then click on the context menu that appears next to the workflow items.
 
@@ -101,7 +102,7 @@ You can use the "Clone" option to create a new workflow based on the currently a
 
 ### Worfklow Steps
 
-![](<https://cdn.appcircle.io/docs/assets/image (185).png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(185).png" />
 
 Appcircle will build your application with the steps defined in the workflow. Steps will be executed in order from the top to the bottom.
 

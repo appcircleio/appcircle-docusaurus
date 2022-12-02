@@ -5,6 +5,8 @@ metaDescription: My Organization and Team Management
 sidebar_position: 4
 ---
 
+import NarrowImage from '@site/src/components/NarrowImage';
+
 # My Organization and Team Management
 
 Organizations in Appcircle are separate units with separate "workspaces" that allow collaboration on the same apps with a team.
@@ -163,4 +165,4 @@ Manage and Upload Apps to Enterprise Store
 |Upload Apps to Enterprise Store | User can only apps.|
 |Read Only Access| Can only see the profiles|
 
-![](https://cdn.appcircle.io/docs/assets/screenshot-my.appcircle.io-2021.02.11-23_27_39.png)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/screenshot-my.appcircle.io-2021.02.11-23_27_39.png" />

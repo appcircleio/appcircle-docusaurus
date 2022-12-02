@@ -6,6 +6,7 @@ sidebar_position: 3
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import NarrowImage from '@site/src/components/NarrowImage';
 
 # Customize Your Enterprise Store
 
@@ -22,7 +23,7 @@ You can customize the appearance of your store by going to Customize section.
 
 You can also add a username and password for your store and change your store's domain. You must set two different usernames and passwords for live and beta apps. The username of the live and beta section must be different. 
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-settings.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-settings.png" />
 
 **Custom Domain**
 
@@ -48,7 +49,7 @@ The below screenshot shows an example configuration screen from Cloudflare.
 
 After creating the DNS settings, type your custom domain name, select your certificate and update the configuration. DNS changes can take time to propagate. You may have to wait a few minutes or hours to see the redirect.
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-customdomain.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-customdomain.png" />
 
 ## SSO Integration
 

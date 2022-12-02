@@ -5,6 +5,8 @@ metaDescription: Delete Account
 sidebar_position: 7
 ---
 
+import NarrowImage from '@site/src/components/NarrowImage';
+
 # Delete Account
 
 Accounts can only be deleted by the owner. 
@@ -15,4 +17,4 @@ Accounts can only be deleted by the owner.
 
 - Click **Delete Account** link and confirm the dialog.
 
-![](<https://cdn.appcircle.io/docs/assets/myaccount-delete2.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/myaccount-delete2.png" />

@@ -61,5 +61,3 @@ Don’t forget to tell your build configuration to use the proper environment va
 Appcircle will use the values from the environment variables from the designated group for the branch you are building your application from.;
 
 During the build process, `build.gradle` file in your module will use the values from the environment variables and your application will use these values during the runtime:
-
-![](<https://cdn.appcircle.io/docs/assets/Screenshot 2020-04-22 10.30.24.png>)

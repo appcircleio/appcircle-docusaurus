@@ -5,6 +5,8 @@ metaDescription: Azure AD SAML
 sidebar_position: 4
 ---
 
+import NarrowImage from '@site/src/components/NarrowImage';
+
 # Azure AD SAML
 
 Appcircle supports [Azure AD](https://azure.microsoft.com/en-us/) as a SAML provider. 
@@ -109,7 +111,7 @@ You need to select users/groups in Azure AD to enable SSO. All members of your A
 
 - Enter the alias you picked.
 
-![](<https://cdn.appcircle.io/docs/assets/sso-alias.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 
