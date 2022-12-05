@@ -5,6 +5,7 @@ metaDescription: Appcircle Onboarding
 sidebar_position: 2
 ---
 
+import ContentRef from '@site/src/components/ContentRef';
 
 # Appcircle Onboarding
 
@@ -32,11 +33,9 @@ If your projects builds without an error, you need to complete the following sec
 
 ## Firewall
 
-If you're using the self-hosted version of Bitbucket or GitLab, you may need to give access to Appcircle from the firewall. Please allow the following IP addresses
-
-- 34.147.2.16
-- 77.92.96.46
-- 162.19.204.13
+<ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls/">
+Accessing Repositories in Internal Networks (Firewalls)
+</ContentRef>
 
 ## Repository Owner
 
