@@ -18,7 +18,16 @@ Appcircle requires direct access to the repositories for the following use cases
 If the repositories cannot be exposed to the public internet in general, the following Appcircle platform IP addresses must be allowed through the firewall (whitelisted) to access such repositories:
 
 * 34.147.2.16
-* 77.92.96.46
 * 162.19.204.13
+* 77.92.96.46
+* 77.92.124.2/27
+
+:::caution
+
+If the provided IP address is a subnet defined in CIDR notation, you need to allow the entire subnet on your network.
+
+For example, 77.92.124.2/27 means all IP addresses between 77.92.124.1 and 77.92.124.30 (`77.92.124.1`, `77.92.124.2`, `77.92.124.3`, and so on, all the way to and including `77.92.124.30`) that must be whitelisted on your firewall.
+
+:::
 
 You can then [connect to the repository through SSH](../build/adding-a-build-profile/#connect-your-repository) just like connecting to any Git provider.
