@@ -5,6 +5,8 @@ metaDescription: Okta OpenID
 sidebar_position: 5
 ---
 
+import NarrowImage from '@site/src/components/NarrowImage';
+
 # Okta OpenID
 
 Appcircle supports [Okta](https://www.okta.com/) as OpenID or SAML provider. 
@@ -79,7 +81,7 @@ https://customer_name_here.okta.com/oauth2/default/.well-known/openid-configurat
 
 - Enter the alias you picked.
 
-![](<https://cdn.appcircle.io/docs/assets/sso-alias.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 

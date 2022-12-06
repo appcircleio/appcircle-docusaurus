@@ -6,6 +6,7 @@ sidebar_position: 1
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import NarrowImage from '@site/src/components/NarrowImage';
 
 # Enterprise Store
 
@@ -39,7 +40,7 @@ There are several ways to create an Enterprise build profile. You can either man
 
 - Click the **Add New App** button to open the upload panel.
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-selectfile.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-selectfile.png" />
 
 - Choose your APK or IPA file and click the **Upload** button.
 - If you have uploaded a valid APK or IPA file, you should see your brand new profile
@@ -50,7 +51,7 @@ There are several ways to create an Enterprise build profile. You can either man
 
 - Go to your build profile, hit the config button, and enable **Publish Enterprise App Store**.
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-buildconfig.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-buildconfig.png" />
 
 - Whenever you create a new *signed* build, that build will be sent to Enterprise App Store.
 - You can also manually send your APK or IPA files by hitting the **...** button and selecting **Distribute Binary**

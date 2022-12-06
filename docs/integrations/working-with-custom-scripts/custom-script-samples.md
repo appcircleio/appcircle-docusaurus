@@ -5,6 +5,8 @@ metaDescription: Custom Script Samples
 sidebar_position: 2
 ---
 
+import NarrowImage from '@site/src/components/NarrowImage';
+
 # Custom Script Samples
 
 ### Changing JAVA version
@@ -24,10 +26,9 @@ echo "JAVA_HOME=$JAVA_HOME_8_X64" >> $AC_ENV_FILE_PATH
 
 Create a custom script like above and put it **above** your Android build step.
 
-![](<https://cdn.appcircle.io/docs/assets/change-java.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/change-java.png" />
 
-
-![](<https://cdn.appcircle.io/docs/assets/change-java-wf.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/change-java-wf.png" />
 
 :::info
 

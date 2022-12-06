@@ -5,6 +5,8 @@ metaDescription: Auth0 OpenID
 sidebar_position: 2
 ---
 
+import NarrowImage from '@site/src/components/NarrowImage';
+
 # Auth0 OpenID
 
 Appcircle supports [Auth0](https://auth0.com/) as OpenID or as SAML provider. 
@@ -74,7 +76,7 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Enter the alias you picked.
 
-![](<https://cdn.appcircle.io/docs/assets/sso-alias.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 

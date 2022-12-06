@@ -57,7 +57,7 @@ Here are some of the most important packages installed in our macOS agents used 
 | Carthage           | 0.38.0     |
 | Curl               | 7.79.1     |
 | Homebrew           | 3.4.2      |
-| Java (OpenJDK)     | 11.0.2     |
+| Java (OpenJDK)     | 11.0.17    |
 | Fastlane           | 2.204.3    |
 | Gem                | 3.1.6      |
 | Git                | 2.35.1     |
