@@ -9,6 +9,23 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.18 - 2022-12-06 - M1 Machines
+
+### 🆕 New Feature
+- We have a big announcement today :tada: We have added an M1 Mac mini machines to our infrastructure and enabled them for every account. Both Android and iOS builds will benefit from the blazing fast M1 machines. We expect this change to be smooth for most of the users. Please be aware of the following issues.
+
+**Firewall**:
+
+If you’re using self hosted services and allowed Appcircle IPs in your firewall, you need to update your allowed IP list. Please check the following document.
+
+<ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls/">
+Accessing Repositories in Internal Networks (Firewalls)
+</ContentRef>
+
+**Intel Pool**:
+
+If your builds fail on M1 pool or if you’re not ready for the M1 migration, please go to your branch’s config screen and choose Default Intel Pool from the dropdown menu.
+
 ## 2.9.17 - 2022-12-01 - Test Reports
 
 ### 🆕 New Feature
