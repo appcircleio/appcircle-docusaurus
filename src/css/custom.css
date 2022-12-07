@@ -198,6 +198,16 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   margin-bottom: 6rem;
 }
 
+@media screen and (max-width: 640px) {
+  .feature-cards {
+    display: grid;
+    gap: 36px;
+    padding: 0 0;
+    grid-template-columns: 1fr;
+    margin-bottom: 6rem;
+  }
+}
+
 .feature-cards .enterprise-app-store {
   background: linear-gradient(180deg, #2B394F 0%, #0F1C32 100%);
   border-radius: 12px;
@@ -219,6 +229,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   width: auto;
   margin: 0 auto;
   display: block;
+  object-fit: contain;
 }
 
 .feature-cards .self-hosted-runners {
@@ -242,6 +253,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   width: auto;
   margin: 0 auto;
   display: block;
+  object-fit: contain;
 }
 
 .feature-cards .self-hosted-runners .feature-card-info {
@@ -478,12 +490,67 @@ html[data-theme='dark'] .rlc-description {
   color: #0F203A;
 }
 
+@media screen and (max-width: 640px) {
+  .intro-visual {
+    padding: 2rem 2rem 2.25rem 2rem;
+    margin: 0;
+    width: 100%;
+    background-color: #EEF3FA;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.intro-text {
+  margin-right: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.intro-text p {
+  color: #1753AE !important;
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 16px;
+}
+
+.intro-image {
+  max-width: 100%;
+}
+
+.intro-image img {
+  width: auto;
+  object-fit: contain;
+}
+
+.intro-visual h5 {
+  font-size: 64px;
+  margin-bottom: 0.25rem;
+  margin-top: 3rem;
+  letter-spacing: -0.04em;
+  font-family: greycliff-cf, sans-serif;
+  line-height: 64px;
+  font-weight: 800;
+  color: #0F203A;
+}
+}
+
 .intro-cards {
   font-family: greycliff-cf, sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 36px;
   padding: 4rem 4.375rem;
+}
+
+@media screen and (max-width: 640px) {
+  .intro-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 5rem 1rem;
+  }
 }
 
 .intro-card h3 {
@@ -615,6 +682,8 @@ html[data-theme='dark'] section.navigation-cards a p {
   gap: 32px;
 }
 
+
+
 .community a {
   border-radius: 33px;
   padding: 13px 26px;
@@ -667,6 +736,15 @@ html[data-theme='dark'] section.navigation-cards a p {
   margin: 0;
   font-weight: 700;
   font-family: var(--ifm-heading-font-family);
+}
+
+@media screen and (max-width: 640px) {
+  .community {
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 @media (min-width: 997px) {
