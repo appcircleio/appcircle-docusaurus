@@ -21,7 +21,7 @@ Before going through with the documentation, you can also view the following int
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OUoZFGqJFdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-A basic lifecycle of a mobile application can be broken down into 5 steps:
+A basic lifecycle of a mobile application can be broken down into 4 steps:
 
 ### Create or Add Signing Identities
 

@@ -4,24 +4,67 @@ metaTitle: 'Appcircle Documentation'
 metaDescription: 'Appcircle Documentation'
 sidebar_position: 1
 slug: /
-hide_table_of_contents: false
+hide_table_of_contents: true
+hide_title: true
+breadcrumbs: false
 ---
-
-# Appcircle Documentation
-
-Learn to use Appcircle for your mobile CI/CD processes with developer guides, sample applications, and other information you will need.
+import NewBadge from '@site/src/components/NewBadge';
 
 <div class="intro-visual">
 
-![](https://cdn.appcircle.io/docs/assets/intro-graphic-2.png)
-
-<h5 class="intro-visual-header">
-Mobile CI/CD for All
+<div class="intro-text"><h5 class="intro-visual-header">
+Build.<br/>Test.<br/>Distribute.
 </h5>
-<p>Build your applications and run scripts. Distribute to testers and testing platforms. Submit your apps to app stores. All automatically.</p>
+<p>Make better, safer mobile app releases with Appcircle.</p>
+</div>
+<div className="intro-image"><img src="https://cdn.appcircle.io/docs/assets/docs-intro-header.png" /></div>
 </div>
 
-#### Popular Topics
+<section class="intro-cards">
+      <div class="intro-card">
+            <h3><a href="/tutorials/quick-start">Foundations</a></h3>
+            <p><strong>New to Appcircle?</strong> Get started by adding your Obj-C/Swift, Java/Kotlin, React Native, Flutter app first.</p>
+      </div>
+      <div class="intro-card">
+            <h3><a href="/build/adding-a-build-profile">Building Your Apps</a></h3>
+            <p>Learn about setting up your repository, creating workflows and how to automatically trigger a build.</p>
+      </div>
+      <div class="intro-card">
+            <h3><a href="/store-submit/apple-app-store">Send to Testers & Stores</a></h3>
+            <p>Add testers, set up your builds to be auto distributed to them and Apple App Store, Testflight, Google Play, Huawei App Gallery and Firebase.</p>
+      </div>
+      <div class="intro-card">
+            <h3><a href="/store-submit/apple-app-store">Running Unit & UI Tests</a></h3>
+            <p>Learn how to run Unit and UI tests and see detailed reports on which ones have failed and why.</p>
+      </div>
+</section>
+
+<section class="feature-cards">
+      <div class="enterprise-app-store">
+            <div className="feature-card-image"><img src="https://cdn.appcircle.io/docs/assets/feature-card-eas.png" /></div>
+            <div className="feature-card-info">
+                  <NewBadge />
+                  <h4>Create your own app store.</h4>
+                  <p>Some apps are not meant to be on App Stores. That’s why we’re introducing Enterprise App Store. A way for you to distribute your internal apps.</p>
+                  <a href="/enterprise-appstore/add-ent-profile" className="feature-card-learn-more eas">
+                        Learn how
+                  </a>
+            </div>
+      </div>
+      <div class="self-hosted-runners">
+            <div className="feature-card-image"><img src="https://cdn.appcircle.io/docs/assets/feature-card-self-hosted-runners.png" /></div>
+            <div className="feature-card-info">
+                  <NewBadge />
+                  <h4>Self-Hosted Runners</h4>
+                  <p>Want to use your own build machines? Just install our runner scripts to the machines you want to use for your iOS / Android builds.</p>
+                  <a href="/self-hosted-runner/overview" className="feature-card-learn-more runner">
+                        Runner guides
+                  </a>
+            </div>
+      </div>
+</section>
+
+### Most Popular
 
 <div class="module-guides">
 <a class="build" href="/build/adding-a-build-profile/">
@@ -59,84 +102,26 @@ Mobile CI/CD for All
 </a>
 </div>
 
-#### Quick Start Guides
+## Dive Deeper into Appcircle
 
-<div class="quick-start-guides">
-<a class="ios" href="/tutorials/quick-start/how-to-add-an-ios-app">
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M28.3139 0C28.582 2.34155 27.5959 4.69366 26.1404 6.3864C24.6799 8.07589 22.29 9.3922 19.9468 9.21821C19.6303 6.91894 20.8116 4.52943 22.1627 3.02856C23.6708 1.33745 26.2134 0.0813037 28.3139 0ZM35.8725 13.6557C35.4222 13.9247 31.3471 16.3588 31.3979 21.2552C31.4535 27.1665 36.6897 29.223 36.9873 29.3399C36.9943 29.3426 36.9986 29.3443 37 29.3449C36.9972 29.3528 36.9919 29.369 36.984 29.393C36.8529 29.7932 36.0074 32.3741 34.1077 35.0346C32.368 37.472 30.5645 39.8965 27.7198 39.9461C26.3523 39.9711 25.4387 39.5925 24.4887 39.1987C23.4948 38.7867 22.461 38.3583 20.8261 38.3583C19.1127 38.3583 18.0309 38.8001 16.9888 39.2257C16.0859 39.5944 15.2129 39.9509 13.9849 39.9973C11.2403 40.0973 9.14836 37.3655 7.39416 34.9378C3.80599 29.971 1.06563 20.9015 4.74801 14.7818C6.57265 11.7411 9.84088 9.8158 13.3866 9.76539C14.9141 9.73959 16.3942 10.3026 17.6895 10.7953C18.6799 11.1721 19.5623 11.5077 20.2753 11.5077C20.9158 11.5077 21.7745 11.1833 22.7758 10.8049C24.3522 10.2093 26.2819 9.48009 28.2697 9.67351C29.6302 9.72717 33.4526 10.1987 35.9061 13.6354C35.8995 13.6396 35.8882 13.6463 35.8725 13.6557Z" fill="white"/>
-</svg>
-<h5>iOS</h5>
-<span>Learn how to start building Swift/Obj-C apps.</span>
+<section class="community">
+<a class="slack" href="https://slack.appcircle.io">
+<img src="https://storage.googleapis.com/appcircle-prod-common/docs/assets/slack-logo.png" />
+<span>Slack Community</span>
 </a>
-<a class="android" href="/tutorials/quick-start/how-to-add-an-android-app">
-
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M28.2846 25.1543C27.9881 25.1544 27.6982 25.0665 27.4516 24.9018C27.2051 24.7371 27.0129 24.503 26.8994 24.2291C26.7858 23.9552 26.7561 23.6538 26.8139 23.363C26.8717 23.0721 27.0144 22.805 27.224 22.5953C27.4337 22.3856 27.7008 22.2427 27.9916 22.1848C28.2824 22.1269 28.5838 22.1566 28.8578 22.27C29.1317 22.3834 29.3659 22.5755 29.5307 22.822C29.6955 23.0685 29.7834 23.3584 29.7835 23.6549C29.783 24.0523 29.625 24.4334 29.344 24.7145C29.063 24.9955 28.682 25.1537 28.2846 25.1543V25.1543ZM11.7154 25.1543C11.4189 25.1544 11.129 25.0665 10.8825 24.9018C10.6359 24.7371 10.4437 24.503 10.3302 24.2291C10.2167 23.9552 10.1869 23.6538 10.2447 23.363C10.3025 23.0721 10.4452 22.805 10.6548 22.5953C10.8645 22.3856 11.1316 22.2427 11.4224 22.1848C11.7132 22.1269 12.0146 22.1566 12.2886 22.27C12.5625 22.3834 12.7967 22.5755 12.9615 22.822C13.1263 23.0685 13.2142 23.3584 13.2143 23.6549C13.2139 24.0523 13.0559 24.4334 12.7749 24.7145C12.4939 24.9956 12.1129 25.1538 11.7154 25.1543V25.1543ZM28.8222 16.1245L31.818 10.9357C31.859 10.8649 31.8856 10.7866 31.8963 10.7055C31.907 10.6243 31.9017 10.5418 31.8805 10.4627C31.8594 10.3836 31.8229 10.3095 31.7731 10.2445C31.7233 10.1795 31.6612 10.125 31.5903 10.084C31.5194 10.0431 31.4412 10.0164 31.36 10.0057C31.2789 9.99498 31.1964 10.0003 31.1173 10.0215C31.0382 10.0426 30.964 10.0791 30.8991 10.1289C30.8341 10.1787 30.7796 10.2408 30.7386 10.3117L27.7049 15.566C25.3851 14.5073 22.7797 13.9177 19.9997 13.9177C17.2197 13.9177 14.6146 14.5081 12.2948 15.566L9.26141 10.3117C9.2205 10.2408 9.16601 10.1787 9.10108 10.1289C9.03615 10.079 8.96204 10.0425 8.88297 10.0213C8.80391 10.0001 8.72145 9.99465 8.64029 10.0053C8.55914 10.016 8.48088 10.0426 8.40999 10.0835C8.3391 10.1244 8.27696 10.1789 8.22712 10.2438C8.17728 10.3087 8.14072 10.3828 8.11953 10.4619C8.09833 10.541 8.09292 10.6234 8.10359 10.7046C8.11426 10.7857 8.14082 10.864 8.18174 10.9349L11.1778 16.1245C6.0334 18.9226 2.5147 24.1306 2 30.2838H38C37.4847 24.1306 33.9663 18.9226 28.8222 16.1245" fill="#3DDC84"/>
-</svg>
-<h5>Android</h5>
-<span>Learn how to start building Java / Kotlin apps.</span>
-</a>
-<a class="react-native" href="/tutorials/quick-start/how-to-add-a-react-native-app">
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M19.9667 23.3201C21.815 23.3201 23.3133 21.8217 23.3133 19.9734C23.3133 18.1251 21.815 16.6267 19.9667 16.6267C18.1183 16.6267 16.62 18.1251 16.62 19.9734C16.62 21.8217 18.1183 23.3201 19.9667 23.3201Z" fill="#00D8FF"/>
-<path d="M19.9667 27.64C15.2667 27.64 11.1601 27.0867 8.08673 26.0333C6.0934 25.3533 4.40007 24.4466 3.1934 23.4133C1.9134 22.32 1.2334 21.1266 1.2334 19.9733C1.2334 17.76 3.66007 15.5933 7.7334 14.18C11.0667 13.02 15.4134 12.3733 19.9601 12.3733C24.4267 12.3733 28.7134 13 32.0267 14.1466C33.9667 14.8133 35.6001 15.68 36.7601 16.64C38.0201 17.6933 38.6867 18.8466 38.6867 19.9733C38.6867 22.2733 35.9734 24.6 31.6001 26.0467C28.5067 27.0733 24.3734 27.64 19.9667 27.64ZM19.9667 13.9733C15.6534 13.9733 11.3867 14.6 8.26673 15.6866C4.52007 16.9933 2.84007 18.78 2.84007 19.9733C2.84007 21.2133 4.64673 23.1666 8.60673 24.52C11.5134 25.5133 15.4467 26.04 19.9667 26.04C24.2067 26.04 28.1601 25.5066 31.1001 24.5266C35.2134 23.16 37.0934 21.2066 37.0934 19.9733C37.0934 19.34 36.6134 18.5933 35.7401 17.8666C34.7334 17.0266 33.2667 16.26 31.5134 15.6533C28.3601 14.5733 24.2601 13.9733 19.9667 13.9733Z" fill="#00D8FF"/>
-<path d="M12.3733 36.6533C11.6933 36.6533 11.0933 36.5066 10.5867 36.2133C8.67334 35.1066 8.00668 31.9199 8.81334 27.6866C9.47334 24.2133 11.0867 20.1333 13.36 16.1933C15.5933 12.3266 18.2733 8.92658 20.92 6.62658C22.4667 5.27992 24.0333 4.29325 25.4467 3.77325C26.9867 3.20658 28.32 3.20658 29.2933 3.76658C31.2867 4.91325 31.9467 8.43325 31.0134 12.9399C30.3534 16.1399 28.78 19.9999 26.58 23.8199C24.2333 27.8866 21.7 31.1666 19.2533 33.3066C17.6667 34.6933 16.0333 35.7066 14.54 36.2333C13.76 36.5133 13.0267 36.6533 12.3733 36.6533ZM14.0467 16.5933L14.74 16.9933C12.5867 20.7266 10.9933 24.7333 10.38 27.9866C9.64001 31.8866 10.3533 34.2333 11.38 34.8266C11.6333 34.9733 11.9667 35.0533 12.3733 35.0533C13.7 35.0533 15.7867 34.2133 18.2 32.1066C20.5133 30.0866 22.9333 26.9399 25.1933 23.0266C27.3133 19.3533 28.82 15.6599 29.4467 12.6266C30.32 8.37992 29.5667 5.77992 28.4933 5.15992C27.9467 4.84658 27.06 4.88658 25.9933 5.27992C24.76 5.73325 23.3667 6.61992 21.9667 7.83992C19.4533 10.0266 16.8867 13.2799 14.74 16.9999L14.0467 16.5933Z" fill="#00D8FF"/>
-<path d="M27.56 36.6732C25.7467 36.6732 23.4467 35.5799 21.0467 33.5132C18.3667 31.2066 15.64 27.7732 13.36 23.8332C11.12 19.9666 9.52 15.9466 8.84667 12.4999C8.45333 10.4866 8.38 8.6399 8.63333 7.15323C8.91333 5.53323 9.57333 4.3799 10.5533 3.81323C12.54 2.6599 15.92 3.84657 19.36 6.90657C21.8 9.07323 24.36 12.3666 26.5667 16.1799C28.92 20.2466 30.5 24.0799 31.1267 27.2666C31.5334 29.3332 31.6 31.2532 31.3134 32.8132C31.0067 34.4732 30.3134 35.6532 29.3134 36.2332C28.8134 36.5266 28.22 36.6732 27.56 36.6732ZM14.7467 23.0332C16.9067 26.7666 19.5867 30.1466 22.0933 32.2999C25.1 34.8866 27.4867 35.4466 28.52 34.8466C29.5934 34.2266 30.38 31.6866 29.5667 27.5799C28.9667 24.5666 27.4534 20.8999 25.1867 16.9866C23.06 13.3132 20.6133 10.1599 18.3 8.10657C15.06 5.22657 12.4333 4.5799 11.36 5.1999C10.8133 5.51323 10.4067 6.30657 10.2133 7.42657C9.99333 8.7199 10.06 10.3732 10.42 12.1932C11.06 15.4666 12.5933 19.3132 14.7467 23.0332Z" fill="#00D8FF"/>
-</svg>
-<h5>React Native</h5>
-<span>Learn how to start building React Native apps.</span>
-</a>
-<a class="flutter" href="/tutorials/quick-start/how-to-add-a-flutter-app">
-
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M33.864 18.4939H22.8686L13.2483 28.1162L18.7446 33.613L33.864 18.4939Z" fill="#54C5F8"/>
-<path d="M10.4988 25.3672L5 19.8685L22.8684 2H33.8639L10.4988 25.3672Z" fill="#54C5F8"/>
-<path d="M18.7446 33.6129L22.8685 37.7368H33.864L24.2434 28.1162L18.7446 33.6129Z" fill="#01579B"/>
-<path d="M18.7446 33.6129L26.8992 30.7903L24.2434 28.1162L18.7446 33.6129Z" fill="url(#paint0_linear_2256_18184)"/>
-<path d="M18.7446 22.6177L13.2471 28.1152L18.7446 33.6128L24.2422 28.1152L18.7446 22.6177Z" fill="#29B6F6"/>
-<path d="M33.8639 18.494L24.2433 28.1142L33.8639 37.737H22.8684L18.7445 33.613L13.2461 28.1142L22.8688 18.4936H33.8639V18.494ZM22.8684 2L5 19.8685L10.4988 25.3673L33.8639 2H22.8684Z" fill="url(#paint1_radial_2256_18184)"/>
-<defs>
-<linearGradient id="paint0_linear_2256_18184" x1="20.3485" y1="34.6752" x2="24.4435" y2="30.5802" gradientUnits="userSpaceOnUse">
-<stop stop-color="#1A237E" stop-opacity="0.4"/>
-<stop offset="1" stop-color="#1A237E" stop-opacity="0"/>
-</linearGradient>
-<radialGradient id="paint1_radial_2256_18184" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(5.81235 4.43661) scale(43.7221)">
-<stop stop-color="white" stop-opacity="0.1"/>
-<stop offset="1" stop-color="white" stop-opacity="0"/>
-</radialGradient>
-</defs>
-</svg>
-<h5>Flutter</h5>
-<span>Learn how to start building Flutter apps.</span>
-</a>
-</div>
-
-#### Join the Community
-
-<div class="community">
 <a class="videos" href="https://www.youtube.com/c/Appcircle">
 <img src="https://storage.googleapis.com/appcircle-prod-common/docs/assets/youtube-logo.png" />
-<h5>Videos</h5>
-<span>Watch tutorials, explanatory videos, webinars and component deep dives</span>
+<span>How-To Videos</span>
 </a>
-<a class="slack" href="https://slack.appcircle.io">
 
-<img src="https://storage.googleapis.com/appcircle-prod-common/docs/assets/slack-logo.png" />
-
-<h5>Slack Community</h5>
-<span>Chat with fellow developers, learn about best practices, ask questions, request for features and stay informed about Appcircle releases</span>
-</a>
 <a class="twitter" href="https://twitter.com/appcircleio">
  <svg width="41" height="34" viewBox="0 0 41 34" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path d="M36.6933 8.54828C36.7181 8.90995 36.7181 9.27162 36.7181 9.63662C36.7181 20.7583 28.3197 33.5849 12.9629 33.5849V33.5783C8.42645 33.5849 3.98423 32.275 0.165283 29.805C0.82492 29.885 1.48786 29.9249 2.15246 29.9266C5.9119 29.9299 9.56387 28.6583 12.5215 26.3166C8.94887 26.2483 5.81601 23.9 4.72157 20.4716C5.97306 20.715 7.26258 20.6649 8.49093 20.3266C4.59593 19.5333 1.79371 16.0833 1.79371 12.0766C1.79371 12.0399 1.79371 12.0049 1.79371 11.9699C2.95428 12.6216 4.25371 12.9833 5.5829 13.0233C1.9144 10.5516 0.78359 5.63162 2.99891 1.78495C7.23778 7.04328 13.4919 10.2399 20.2057 10.5783C19.5328 7.65495 20.452 4.59162 22.621 2.53662C25.9837 -0.650051 31.2724 -0.486718 34.4333 2.90162C36.3031 2.52995 38.0952 1.83828 39.7352 0.858283C39.112 2.80662 37.8076 4.46162 36.0651 5.51328C37.72 5.31662 39.3368 4.86995 40.8594 4.18828C39.7385 5.88162 38.3267 7.35662 36.6933 8.54828Z" fill="#1ea1f2" />
 </svg>
-
-<h5>Twitter</h5>
-<span>Follow us on twitter for latest news</span>
+<span>Follow us on Twitter</span>
 </a>
-</div>
+</section>
 
-#### See something that's not documented here?
+### See something that's not documented here?
 
 Send us a request and we will get it in: [Appcircle Support](https://appcircle.io/support/)
