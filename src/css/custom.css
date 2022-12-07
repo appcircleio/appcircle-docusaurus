@@ -257,7 +257,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 .feature-cards .self-hosted-runners .feature-card-info {
-  color: #99B0FB;
+  color: #FFFFFF;
 }
 
 
@@ -267,7 +267,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   align-items: center;
   text-align: center;
   margin: 0 3rem;
-  color: #C1C3C7;
+  color: #FFFFFF;
   font-size: 14px;
   line-height: 18px;
 }
@@ -305,7 +305,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .feature-card-learn-more.runner {
   background-color: #99B0FB;
-  color: #091E85;
+  color: #060f3e;
 }
 
 @media (max-width: 550px) {
