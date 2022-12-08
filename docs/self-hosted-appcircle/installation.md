@@ -2,7 +2,7 @@
 title: Installation
 metaTitle: Install Self-hosted Appcircle
 metaDescription: Install Self-hosted Appcircle
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Overview
