@@ -18,6 +18,28 @@ But you're not limited with these options. You can configure other git providers
 
 Following sections will give you more details about adding other git providers.
 
+:::info
+
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation.md#3-configure) section in docs, understood configuration made there and scenarios told there.
+
+:::
+
+:::caution
+
+Current working directory is assumed `appcircle-server` for following steps. See [here](./installation.md#1-download) for installation details.
+
+:::
+
+:::caution
+
+`global.yml` configuration file is located under **export** folder.
+
+- `projects/${YOUR_PROJECT}/export`
+
+You can see an example project configuration from [here](installation.md#3-configure).
+
+:::
+
 ### Connecting to Private Repository via SSH
 
 To enable "Connect via SSH" git provider option, add below configuration to `global.yaml`.
@@ -69,9 +91,9 @@ If we don't do the configuration at installation, then after editing `global.yml
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation.md#3-configure) section in docs, understood configuration made there and scenarios told there.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation.md#3-configure) section in docs and applied example scenario.
 
-Current working directory is assumed `appcircle-server` for following steps.
+Following steps are using example project as project naming, which was told there.
 
 :::
 
