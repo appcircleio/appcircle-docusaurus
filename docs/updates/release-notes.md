@@ -415,7 +415,7 @@ This release includes the release of Appcircle GitHub app and the share app prev
 
 ### 🆕 New Feature
 
-- [Appcircle GitHub App](../build/adding-a-build-profile/#connecting-to-a-cloud-git-provider-github-bitbucket-and-gitlab) - You can now connect to GitHub with the Appcircle GitHub app as an alternative to the oAuth connection.
+- [Appcircle GitHub App](../build/adding-a-build-profile/connecting-to-github.md)  - You can now connect to GitHub with the Appcircle GitHub app as an alternative to the oAuth connection.
 - [Share App Preview Links](../distribute/create-or-select-a-distribution-profile.md#auto-send-your-build-to-the-testers) - You can now share in-browser app preview links automatically with the testers as an alternative to app binaries. No physical device needed for testing.
 
 ### :muscle:Improvement
