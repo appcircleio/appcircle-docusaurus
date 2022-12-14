@@ -130,6 +130,16 @@ Change directory into extracted `appcircle-runner` folder for following steps.
 cd appcircle-runner
 ```
 
+:::caution
+
+By default, self-hosted runner package is bundled with configuration for Appcircle-hosted cloud.
+
+:reminder_ribbon: If you're planning to use runner with [self-hosted appcircle](../self-hosted-appcircle/overview.md) server, you must change `ASPNETCORE_BASE_API_URL` value in `appsettings.json` configuration file before going on.
+
+Please refer to details [here](../self-hosted-appcircle/installation.md#connecting-runners) for sample configuration change.
+
+:::
+
 ### 2. Register
 
 Go to your organization's **integration** settings and generate runner access token.
