@@ -1,0 +1,123 @@
+---
+title: Git Providers
+metaTitle: Configure Git Providers
+metaDescription: Configure Git Providers
+sidebar_position: 3
+---
+
+# Overview
+
+With default installation, self-hosted appcircle comes with two git providers:
+
+- Self-hosted Bitbucket
+- Self-hosted GitLab
+
+![](https://cdn.appcircle.io/docs/assets/be-850-default-git-providers.png)
+
+But you're not limited with these options. You can configure other git providers and use them within your self-hosted appcircle, same as in cloud.
+
+Following sections will give you more details about adding other git providers.
+
+:::info
+
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation.md#3-configure) section in docs, understood configuration made there and scenarios told there.
+
+:::
+
+:::caution
+
+Current working directory is assumed `appcircle-server` for following steps. See [here](./installation.md#1-download) for installation details.
+
+:::
+
+:::caution
+
+`global.yml` configuration file is located under **export** folder.
+
+- `projects/${YOUR_PROJECT}/export`
+
+You can see an example project configuration from [here](installation.md#3-configure).
+
+:::
+
+### Connecting to Private Repository via SSH
+
+To enable "Connect via SSH" git provider option, add below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    ssh:
+      enabled: true
+```
+
+![](https://cdn.appcircle.io/docs/assets/be-850-connect-via-SSH.png)
+
+For more details about "Connect via SSH" usage, see related docs in [here](../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
+
+### Connecting to Public Repository
+
+To enable "Connect to a Public Repository" git provider option, add below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    publicRepository:
+      enabled: true
+```
+
+![](https://cdn.appcircle.io/docs/assets/be-850-connect-to-public-repository.png)
+
+For more details about "Connect to a Public Repository" usage, see related docs in [here](../build/adding-a-build-profile/connecting-to-public-repository.md).
+
+### Applying Git Provider Changes
+
+You can add git providers at [installation](./installation.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
+
+Let's assume we want to enable both "Connect via SSH" and "Connect to a Public Repository" options. Then we need to add below section to our `global.yml`.
+
+```yaml
+build:
+  oauths:
+    ssh:
+      enabled: true
+    publicRepository:
+      enabled: true
+```
+
+If we do this at installation time then there is no extra step to take. These options will be enabled on first boot without any extra effort.
+
+If we don't do the configuration at installation, then after editing `global.yml` we need to apply below steps to activate changes.
+
+:::info
+
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation.md#3-configure) section in docs and applied example scenario.
+
+Following steps are using example project as project naming, which was told there.
+
+:::
+
+1. Shutdown appcircle server.
+
+```bash
+cd projects/spacetech/export
+docker compose down
+```
+
+2. Apply configuration changes.
+
+```bash
+cd ../../../
+./ac-self-hosted.sh -n "spacetech"
+```
+
+3. Boot appcircle server.
+
+```bash
+cd projects/spacetech/export
+docker compose up -d
+```
+
+On complete, refresh your browser and login to appcircle with your account. You should see new git providers on repository connection page. :tada:
+
+![](https://cdn.appcircle.io/docs/assets/be-850-sample-enable-both-options.png)
