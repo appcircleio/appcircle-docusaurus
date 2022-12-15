@@ -112,6 +112,12 @@ Send your apps to be distributed via Firebase App Distribution
 
 [https://github.com/appcircleio/appcircle-firebase-distribution-component](https://github.com/appcircleio/appcircle-firebase-distribution-component)
 
+## Firebase Upload dSYM
+
+Upload your debug symbols to Firebase Crashlytics
+
+https://github.com/appcircleio/appcircle-firebase-dsym-upload-component
+
 ## Fortify On Demand
 
 This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment
@@ -137,3 +143,9 @@ https://github.com/appcircleio/appcircle-netrc-component
 This component checks the file size and either warn or fail the workflow.
 
 https://github.com/appcircleio/appcircle-filesize-component
+
+## Testinium
+
+This component runs your test plans with Testinium.
+
+https://github.com/appcircleio/appcircle-testinium-component
