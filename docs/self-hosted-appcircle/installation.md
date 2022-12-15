@@ -86,6 +86,32 @@ You can also use the long option `--install-package` for the same purpose.
 
 Make sure the script was executed without any error. Script will print installed and required packages when executed. Some packages may need manual installation on some linux distributions. Check command output for warnings and follow directives given in the output.
 
+:::info
+
+Docker engine is one of our major dependencies. So, its version is also important for appcircle server runtime.
+
+Older docker versions may be incompatible for our operations. Docker versions above `20.10.11` should be preferred to eliminate any compatibility issues.
+
+If your linux distribution has an out of date docker version, please update distribution's package repository or install latest docker from [here](https://docs.docker.com/engine/install/).
+
+:::
+
+:::info
+
+Self-hosted appcircle server is only compatible with [docker compose V2](https://docs.docker.com/compose/compose-v2/) and the new `docker compose` command.
+
+The new compose V2, which supports the compose command as part of the docker CLI, is available with latest docker versions.
+
+If you installed docker previously by yourself to the system, please verify that docker compose plugin is also installed correctly by checking the version.
+
+```bash
+docker compose version
+```
+
+If `docker-compose-plugin` is missing in your system, follow its [docs](https://docs.docker.com/compose/install/linux/) to install docker compose V2 manually.
+
+:::
+
 ### 3. Configure
 
 First we need to find a name to our self-hosted appcircle installation. It will be the unique project name.
@@ -104,7 +130,47 @@ Then our command to execute will be:
 ./ac-self-hosted.sh -n "spacetech"
 ```
 
-The folder contains `global.yaml`, `user-secret` files and `export` folder.
+:::info
+
+#### Artifact Registry Credentials: Cred.json
+
+Before we configure and run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull docker images for appcircle server services.
+
+Although it's not required immediately at configuration steps, it's required while we're starting appcircle server. Otherwise it can not pull docker images from our artifact registry.
+
+For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash script configures docker engine with appropriate credentials. If you don't have the key file, bash script gives error with a detailed message about the requirement.
+
+When you buy an enterprise license for self-hosted appcircle, you will get a credentials JSON key file which enables you to login our artifact registry. For example, assume our fictive company is Space Tech.
+
+You've got `space-tech-cred.json` key file and dowloaded it into `~/Downloads` folder.
+
+First you need to copy that key file into self-hosted appcircle root directory.
+
+```bash
+cp ~/Downloads/space-tech-cred.json cred.json
+```
+
+After that you can execute below command.
+
+```bash
+./ac-self-hosted.sh -n "spacetech"
+```
+
+You should see
+
+> "Docker login cred not found. Trying to login now..."
+
+in command output and then
+
+> "Login Succeeded"
+
+which shows us successful artifact registry login.
+
+If you get any error for some reason at this step, you can remove `~/.docker/config` file to reset and execute same command again to retake same steps.
+
+:::
+
+On `ac-self-hosted.sh` execution complete, the folder contains `global.yaml`, `user-secret` files and `export` folder.
 
 ```txt
 projects
@@ -159,6 +225,14 @@ storeWeb:
     enabled: true
     domain: store.example.com
 ```
+
+:::caution
+
+In later steps, other system subdomains will be concatted to main domain. For this reason, `external.mainDomain` in configuration file must always begin with `.` character as prefix.
+
+You can see a list of these subdomains in [here](./installation.md#4-dns-settings).
+
+:::
 
 As an example, we can change some variables like below according to our fictive company setup.
 
@@ -248,7 +322,51 @@ Note that after changes made to yaml files, you must execute the script again fo
 ./ac-self-hosted.sh -n "spacetech"
 ```
 
-### 4. Run Server
+### 4. DNS Settings
+
+Appcircle server has some subdomains for different services. So, you need to add them to DNS server in your network before running server.
+
+- api
+- auth
+- dist
+- hook
+- my
+- resource
+- store
+- (optional) Enterprise App Store's Custom Domain
+
+:::info
+
+If your configuration (`global.yml`) has setting `storeWeb.customDomain.enabled:true`, it means that you will use a custom domain for Enterprise App Store. So, its value (`storeWeb.customDomain.domain`) must be configured on DNS server along with other system subdomains.
+
+:::
+
+Below is an example DNS configuration that is compatible with our sample scenario.
+
+![](https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png)
+
+For testing purposes, you can also edit `/etc/hosts` file of clients in your network. If you have a dedicated DNS server, you don't need this.
+
+But if you don't have a DNS server and want to try appcircle server in your local network, adding below entries to `/etc/hosts` file will enable you to use self-hosted appcircle server.
+
+```txt
+35.241.181.2    api.appcircle.spacetech.com
+35.241.181.2    auth.appcircle.spacetech.com
+35.241.181.2    dist.appcircle.spacetech.com
+35.241.181.2    hook.appcircle.spacetech.com
+35.241.181.2    my.appcircle.spacetech.com
+35.241.181.2    resource.appcircle.spacetech.com
+35.241.181.2    store.appcircle.spacetech.com
+35.241.181.2    store.spacetech.com
+```
+
+:::caution
+
+IP value `35.241.181.2` used in above settings is just for example. You need to replace it with your appcircle server's network IP.
+
+:::
+
+### 5. Run Server
 
 Appcircle server's modules are run on Docker Engine as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
 
@@ -286,26 +404,6 @@ projects/
     └── user-secret
 ```
 
-Before we run self-hosted appcircle, we need to set artifact registry credentials in order to pull docker images for services. When you buy an enterprise license for self-hosted appcircle, you will get a credentials JSON file which enables you to login our artifact registry. For example, assume for our fictive company we got `space-tech-cred.json` and dowloaded it into `~/Downloads` folder.
-
-Copy credentials file into self-hosted appcircle root directory.
-
-```bash
-cp ~/Downloads/space-tech-cred.json cred.json
-```
-
-Using that JSON file you need to execute below command.
-
-```bash
-./ac-self-hosted.sh -n "spacetech"
-```
-
-You should see "Docker login cred not found. Trying to login now..." in command output and then "Login Succeeded" which shows us successful artifact registry login.
-
-If you get any error for some reason at this step, you can remove `~/.docker/config` file to reset and execute same command again to retake same steps.
-
-Now you are ready to run self-hosted appcircle.
-
 Change into the directory that exists `compose.yaml` file.
 
 ```bash
@@ -330,7 +428,27 @@ If everything is okay, then you should see service statuses as "running", "runni
 
 ![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-container-health.png)
 
-Open your browser and go to URL `https://my.appcircle.spacetech.com`. You should see login page.
+:::info
+
+Self-hosted appcircle server uses some ports for internal and external communication. So, these ports must be unused on system and dedicated to only appcircle server usage.
+
+- [external] `80`
+- [external] `443`
+- [internal] `8200`
+
+"External" ports are open to public network. For example, `https` requests done for server web UI uses port `443`.
+
+"Internal" ports are not reachable from public network and for only internal communication between appcircle server services.
+
+You can get a list of up-to-date ports used by docker with below command.
+
+```bash
+sudo netstat -tulpn | grep LISTEN | grep docker
+```
+
+:::
+
+Open your browser and go to URL `http://my.appcircle.spacetech.com`. You should see login page.
 
 ![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-login-page.png)
 
@@ -341,3 +459,129 @@ Login to self-hosted appcircle with `initialUsername` and `initialPassword` that
 You can also login to enterprise app store with configured custom URL `store.spacetech.com`.
 
 ![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-enterprise-app-store.png)
+
+:::info
+
+Although you can run export multiple times with different project names, you can run only one of them as an appcircle server instance.
+
+With default installation steps, reserved ports are the same for all exports. For this reason, when you run `docker compose up -d` first instance will reserve open ports to itself. And later `docker compose up -d` commands for other projects will get errors like "port is already allocated".
+
+:::
+
+:::info
+
+For now, self-hosted appcircle server is a single node solution. You can not scale it by adding more nodes with other bare-metals or VMs.
+
+Because it has a self-contained architecture with all its data side-by-side its docker services. Every node can only use its internal volumes and data on host.
+
+:::
+
+## Reset Configuration
+
+If you have made a mistake at installation steps, especially at configuration, you can reconfigure your server after installation.
+
+All configuration updates requires appcircle server restart. So resetting configuration should start with stopping appcircle server.
+
+Change into the export directory which has `compose.yaml` file.
+
+```bash
+cd projects/spacetech/export
+```
+
+Stop appcircle server services.
+
+```bash
+docker compose down
+```
+
+On complete, you can check list of running services with command below. Its response should be empty.
+
+```bash
+docker compose ps
+```
+
+Then go back to your configuration and change settings as done previously at [configure](./installation.md#3-configure) step.
+
+When you're ready for a new export, in root directory execute below command again as done previously.
+
+:::info
+
+For our example scenario, root directory is `appcircle-server` as seen [here](./installation.md#1-download). And project name is "spacetech".
+
+:::
+
+```bash
+./ac-self-hosted.sh -n "spacetech"
+```
+
+Now you are ready to restart self-hosted appcircle.
+
+Change into the directory that exists `compose.yaml` file.
+
+```bash
+cd projects/spacetech/export
+```
+
+Run appcircle server services.
+
+```bash
+docker compose up -d
+```
+
+:::caution
+
+Some configuration changes may require data cleanup with extra steps which means data loss if you use appcircle server for some time.
+
+For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" requires docker volume prune which results with data cleanup.
+
+So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
+
+To begin reconfiguration with data cleanup, use below command while stopping appcircle server.
+
+```bash
+docker compose down -v
+```
+
+It will print removed volumes at command output.
+
+Below command will remove all unused local volumes which is useful for a clean start.
+
+```bash
+docker volume prune -f
+```
+
+:::
+
+## Connecting Runners
+
+When you complete installation successfully by following above steps, you're ready for your first build. :tada:
+
+But in order to run build pipelines, you need to install and connect self-hosted runners. We have dedicated section for installation and configuration of self-hosted runners.
+
+Follow and apply related guidelines in [here](../self-hosted-runner/installation.md).
+
+Self-hosted runner section in docs, has all details about runners and their configuration.
+
+:::caution
+
+By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
+
+- `https://api.appcircle.io/build/v1`
+
+:point_up: You need to change its value with your self-hosted appcircle server's API URL.
+
+Assuming our sample scenario explained above, its value should be
+
+- `http://api.appcircle.spacetech.com/build/v1`
+
+for our example configuration.
+
+:reminder_ribbon: After [download](../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+
+Please note that, you should do this before [register](../self-hosted-runner/installation.md#2-register).
+
+:::
+
+Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted appcircle server should run on a dedicated machine itself.
+
+You can install any number of runners regarding to your needs and connect them to self-hosted appcircle server.
