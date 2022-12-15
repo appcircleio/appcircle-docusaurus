@@ -9,6 +9,21 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.19 - 2022-12-14 - Testinium and Firebase dSYM Upload components
+
+### 🆕 New Feature
+- [Testinium](../workflows/common-workflow-steps.md#testinium) component added. This component allows you to run your test plans on [Testinium](https://testinium.com)
+- [Firebase dSYM Upload](../workflows/common-workflow-steps.md#firebase-upload-dsym) component added. You may use this component to upload Debug Symbols to Firebase.
+
+### :muscle: Improvement
+- Xcode and NodeJS version selection added to Smartface projects
+- Help document links added to SSO section.
+
+### 🐞 Fixed
+- Github authentication issue is solved.
+- Account delete bug fixed.
+- Refresh button refreshes correctly and shows forced pushes as well.
+
 ## 2.9.18 - 2022-12-06 - M1 Machines
 
 ### 🆕 New Feature
