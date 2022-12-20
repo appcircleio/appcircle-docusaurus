@@ -12,7 +12,7 @@ By this way, you can build and test your apps on your choice of architectures. Y
 
 When we look at self-hosted Appcircle deployment as a whole, we will see below arhitecture in execution.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted.drawio.png)
+![](https://cdn.appcircle.io/docs/assets/self-hosted_appcircle.png)
 
 With the help of self-hosted runners as connected agents, you can have whole Appcircle in your own infrastructure and use all Appcircle features in your private cloud without any limitations.
 
