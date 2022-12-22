@@ -9,6 +9,21 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.20 - 2022-12-22 - Xcode 14.2, Google Play Draft Submission
+
+### 🆕 New Feature
+- Xcode 14.2 added to both Intel and M1 machines
+- Submit Release as Draft. If your app has no presence on Google Play you may send it as a draft.
+
+### :muscle: Improvement
+- Repository connection errors are shown properly.
+- UI improvements for Environment Variables and Testing groups.
+- [Flutter Test Component](https://github.com/appcircleio/appcircle-flutter-test-component) creates a JUnit report which can be consumed by the [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component).
+
+### 🐞 Fixed
+- `[skip ci]` commit message also works on Pull/Merge Requests. If you have open PR, sending a commit with `[ci skip]` or `[ci skip]` message will not trigger a workflow.
+- [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) now handles multiple reports in the same folder.
+
 ## 2.9.19 - 2022-12-14 - Testinium and Firebase dSYM Upload components
 
 ### 🆕 New Feature
