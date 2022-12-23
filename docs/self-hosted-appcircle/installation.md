@@ -117,10 +117,8 @@ If `docker-compose-plugin` is missing in your system, follow its [docs](https://
 First we need to find a name to our self-hosted appcircle installation. It will be the unique project name.
 
 ```bash
-./ac-self-hosted.sh -n "your-project"
+./ac-self-hosted.sh -n "${YOUR_PROJECT}"
 ```
-
-The new project folder named “your-project” will be created in the `projects` folder after the above command has been successfully executed.
 
 Let's assume we have company named as Space Tech. Then our project name can be "spacetech". For following steps, we will give examples based on this fictive company for better understanding.
 
@@ -181,9 +179,23 @@ projects
     └── user-secret
 ```
 
-At this point, the `compose.yaml` file is generated in `projects/your-project/export` path. But some custom environment variables are not configured for your environment. So we need to configure them.
+At this point, the `compose.yaml` file is generated in `projects/${YOUR_PROJECT}/export` path. But some custom environment variables are not configured for your environment. So we need to configure them.
 
-`global.yaml` and `user-secret` files are standard yaml files to configure custom variables for your environment. `global.yaml` file is in human-readable form but `user-secret` is in base64 encoded form. `user-secret` is a complementary file for `global.yaml`. You can keep all your environment variables in `global.yml` but if you don't want to keep some secrets visible in `global.yml`, you can keep them in `user-secret`. Following sections will have examples for both use cases.
+`global.yaml` and `user-secret` files are standard yaml files to configure custom variables for your environment.
+
+`global.yaml` file is in human-readable form but `user-secret` is in base64 encoded form.
+
+You can keep all your environment variables in `global.yaml` but if you don't want to keep some secrets visible in `global.yaml`, you should keep them in `user-secret`.
+
+:::caution
+
+`user-secret` is a complementary file for `global.yaml`. Although it's usage is optional, it's used actively when it has defined values.
+
+So, keep in mind that values kept in `user-secret` always overrides same values in `global.yaml`.
+
+If you want a secret used from `global.yml`, then it should not be in `user-secret`. You should remove its definition from `user-secret`.
+
+:::
 
 `global.yaml` has some initial and example values preset when it's generated.
 
@@ -314,7 +326,26 @@ We have `user-secret` filled in successfully and don't need `projects/spacetech/
 rm projects/spacetech/secret.yaml
 ```
 
-For more details about yaml keys and values, please refer to online docs.
+:::caution
+
+On your first export, which makes `global.yaml` template for you, also creates an empty template file for `user-secret` as seen below:
+
+```bash
+base64 -d projects/spacetech/user-secret
+```
+
+```yaml
+smtpServer:
+  password: 
+keycloak:
+  initialPassword: 
+```
+
+If you prefer defining above variables in `global.yaml`, then they should not be in `user-secret`.
+
+If you defined all of them in `global.yaml`,simply remove `user-secret` before next steps.
+
+:::
 
 Note that after changes made to yaml files, you must execute the script again for the changes to take effect as shown below.
 
@@ -337,7 +368,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 
 :::info
 
-If your configuration (`global.yml`) has setting `storeWeb.customDomain.enabled:true`, it means that you will use a custom domain for Enterprise App Store. So, its value (`storeWeb.customDomain.domain`) must be configured on DNS server along with other system subdomains.
+If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled:true`, it means that you will use a custom domain for Enterprise App Store. So, its value (`storeWeb.customDomain.domain`) must be configured on DNS server along with other system subdomains.
 
 :::
 
@@ -370,7 +401,7 @@ IP value `35.241.181.2` used in above settings is just for example. You need to 
 
 Appcircle server's modules are run on Docker Engine as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
 
-`projects/your-project/export` path will have all exported envrionment for self-hosted appcircle services along with `compose.yaml`.
+`projects/${YOUR_PROJECT}/export` path will have all exported envrionment for self-hosted appcircle services along with `compose.yaml`.
 
 ```text
 projects/
@@ -425,6 +456,10 @@ So it may need up to ~20 min to system be up according to your internet connecti
 :::
 
 If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
+
+```bash
+docker compose ps
+```
 
 ![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-container-health.png)
 

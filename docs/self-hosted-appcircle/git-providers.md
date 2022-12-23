@@ -32,9 +32,9 @@ Current working directory is assumed `appcircle-server` for following steps. See
 
 :::caution
 
-`global.yml` configuration file is located under **export** folder.
+`global.yaml` configuration file is located under **project** folder.
 
-- `projects/${YOUR_PROJECT}/export`
+- `projects/${YOUR_PROJECT}`
 
 You can see an example project configuration from [here](installation.md#3-configure).
 
@@ -74,7 +74,7 @@ For more details about "Connect to a Public Repository" usage, see related docs 
 
 You can add git providers at [installation](./installation.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
 
-Let's assume we want to enable both "Connect via SSH" and "Connect to a Public Repository" options. Then we need to add below section to our `global.yml`.
+Let's assume we want to enable both "Connect via SSH" and "Connect to a Public Repository" options. Then we need to add below section to our `global.yaml`.
 
 ```yaml
 build:
@@ -87,7 +87,7 @@ build:
 
 If we do this at installation time then there is no extra step to take. These options will be enabled on first boot without any extra effort.
 
-If we don't do the configuration at installation, then after editing `global.yml` we need to apply below steps to activate changes.
+If we don't do the configuration at installation, then after editing `global.yaml` we need to apply below steps to activate changes.
 
 :::info
 
