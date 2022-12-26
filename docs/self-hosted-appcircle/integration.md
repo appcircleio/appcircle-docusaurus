@@ -2,7 +2,7 @@
 title: Integrations
 metaTitle: Integrate Appcircle With Other Tools
 metaDescription: Integrate Appcircle With Other Tools
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 # Integrations

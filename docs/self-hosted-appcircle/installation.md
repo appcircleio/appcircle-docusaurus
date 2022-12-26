@@ -1,5 +1,5 @@
 ---
-title: Installation
+title: Install
 metaTitle: Install Self-hosted Appcircle
 metaDescription: Install Self-hosted Appcircle
 sidebar_position: 2
