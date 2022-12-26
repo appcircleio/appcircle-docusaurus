@@ -193,7 +193,7 @@ You can keep all your environment variables in `global.yaml` but if you don't wa
 
 So, keep in mind that values kept in `user-secret` always overrides same values in `global.yaml`.
 
-If you want a secret used from `global.yml`, then it should not be in `user-secret`. You should remove its definition from `user-secret`.
+If you want a secret used from `global.yaml`, then it should not be in `user-secret`. You should remove its definition from `user-secret`.
 
 :::
 
