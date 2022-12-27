@@ -76,3 +76,9 @@ https://github.com/appcircleio/appcircle-tuist-component
 This step installs [SwiftLint](https://github.com/realm/SwiftLint/) and runs swiftlint with given options.
 
 https://github.com/appcircleio/appcircle-swiftlint-component
+
+## BrowserStack App Automate - XCUI
+
+Run your XCUI tests on BrowserStack App Automate.
+
+[https://github.com/appcircleio/appcircle-browserstack-xcui-component](https://github.com/appcircleio/appcircle-browserstack-xcui-component)
