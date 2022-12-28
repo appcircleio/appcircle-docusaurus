@@ -12,8 +12,8 @@ import ContentRef from '@site/src/components/ContentRef';
 ## 2.9.21 - 2022-12-28 - BrowserStack App Automate
 
 ### 🆕 New Feature
-- [BrowserStack App Automate - Espresso](../workflows/ios-specific-workflow-steps.md#browserstack-app-automate---xcui) component added
-- [BrowserStack App Automate - XCUI](../workflows/android-specific-workflow-steps.md#browserstack-app-automate---espresso) component added
+- [BrowserStack App Automate - Espresso](../workflows/android-specific-workflow-steps.md#browserstack-app-automate---espresso) component added
+- [BrowserStack App Automate - XCUI](../workflows/ios-specific-workflow-steps.md#browserstack-app-automate---xcui) component added
 
 ### :muscle: Improvement
 - Component YAML structure is improved. YAML files support markdown.
@@ -21,7 +21,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🐞 Fixed
 - `[retry]` comment now works on BitBucket. If your workflow failed, writing `[retry]` as a comment will start your workflow again.
-- If the owner of the repository changes, you will see a new authentication dialog. After authentication, Appcircle will correctly refresh the token on behalf new user.
+- If the owner of the repository changes, you will see a new authentication dialog. After authentication, Appcircle will correctly refresh the token on behalf of the new user.
 - Slack connection bug fixed.
 
 ## 2.9.20 - 2022-12-22 - Xcode 14.2, Google Play Draft Submission
