@@ -76,3 +76,9 @@ This step generates an universal APK from an AAB.
 This step runs detekt gradle task.
 
 [https://github.com/appcircleio/appcircle-detekt-component](https://github.com/appcircleio/appcircle-detekt-component)
+
+## BrowserStack App Automate - Espresso
+
+Run your Espresso tests on BrowserStack App Automate. You need to add **Android Build for UI Testing** before this step to create the required `$AC_APK_PATH` and `$AC_TEST_APK_PATH` files.
+
+[https://github.com/appcircleio/appcircle-browserstack-espresso-component](https://github.com/appcircleio/appcircle-browserstack-espresso-component)
