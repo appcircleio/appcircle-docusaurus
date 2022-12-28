@@ -79,6 +79,6 @@ https://github.com/appcircleio/appcircle-swiftlint-component
 
 ## BrowserStack App Automate - XCUI
 
-Run your XCUI tests on BrowserStack App Automate.
+Run your XCUI tests on BrowserStack App Automate. You need to add **Xcodebuild Build for Testing** before this step to create the required `$AC_TEST_IPA_PATH` and `$AC_UITESTS_RUNNER_PATH` files.
 
 [https://github.com/appcircleio/appcircle-browserstack-xcui-component](https://github.com/appcircleio/appcircle-browserstack-xcui-component)
