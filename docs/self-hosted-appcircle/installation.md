@@ -477,19 +477,16 @@ If everything is okay, then you should see service statuses as "running", "runni
 docker compose ps
 ```
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-container-health.png)
+![](https://cdn.appcircle.io/docs/assets/be-962-docker-compose-ps.png)
 
 :::info
 
-Self-hosted appcircle server uses some ports for internal and external communication. So, these ports must be unused on system and dedicated to only appcircle server usage.
+Self-hosted appcircle server uses some ports for communication.
 
-- [external] `80`
-- [external] `443`
-- [internal] `8200`
+Below ports must be unused on system and dedicated to only appcircle server usage.
 
-"External" ports are open to public network. For example, `https` requests done for server web UI uses port `443`.
-
-"Internal" ports are not reachable from public network and for only internal communication between appcircle server services.
+- `80`
+- `443`
 
 You can get a list of up-to-date ports used by docker with below command.
 
