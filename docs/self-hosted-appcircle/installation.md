@@ -96,6 +96,22 @@ If your linux distribution has an out of date docker version, please update dist
 
 :::
 
+:::caution
+
+#### Docker Engine Installation
+
+Self-hosted appcircle server is only compatible with official installation methods listed in [here](https://docs.docker.com/engine/install/).
+
+On some Linux distributions you can select docker engine at setup stage, but it's not recommended since some distributions have unofficial installation methods.
+
+For instance, when you select docker engine at setup on Ubuntu installation, Ubuntu installs docker engine via [snap](https://snapcraft.io/install/docker/ubuntu) which will result with an incompatible docker installation.
+
+In this case, you should not include docker engine to Ubuntu installation. If you want, you can install docker engine later with official [installation](https://docs.docker.com/engine/install/ubuntu/) steps.
+
+Or, as a better choice, you can leave docker engine installation to self-hosted appcircle server installation script since we have automated installation for Debian derivatives which include `apt` package manager.
+
+:::
+
 :::info
 
 Self-hosted appcircle server is only compatible with [docker compose V2](https://docs.docker.com/compose/compose-v2/) and the new `docker compose` command.
