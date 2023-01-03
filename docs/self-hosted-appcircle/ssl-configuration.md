@@ -7,11 +7,11 @@ sidebar_position: 6
 
 # Overview
 
-Although auto-generated `global.yaml` template has HTTPS enabled by default, in our sample scenario and configuration was HTTPS disabled to keep it simple to understand. Refer [here](./installation.md#3-configure) for sample configuration told at installation.
+Although auto-generated `global.yaml` template has "HTTPS enabled" by default, in our sample scenario and configuration it was "HTTPS disabled" to keep it simple to understand. Refer [here](./installation.md#3-configure) for sample configuration told at installation.
 
 SSL configuration has some specific details for its own use cases and it should have a dedicated section.
 
-So, in this section we will document all details about configuring HTTPS with your own certificates for own domain.
+So, in this section we will document all the details about configuring HTTPS with your own certificates for your own domain.
 
 :::caution
 
@@ -23,7 +23,7 @@ Self-hosted appcircle server does not support using a proxy, load balancer or so
 
 For now, self-hosted appcircle server does not have Let’s Encrypt integration or an automated way of renewing certificates.
 
-You should manage certifacates from configuration file manually and renew them with same method when expired.
+You should manage certificates from configuration file manually and renew them with same method when expired.
 
 :::
 
@@ -81,7 +81,7 @@ nginx:
 
 :::caution
 
-You must use the full certificate chain, in the correct order, to prevent SSL errors when clients connect. For example, _"unable to verify the first certificate"_.
+You must use the full certificate chain, in the correct order, to prevent SSL errors when clients connect. For example, you may get an _"unable to verify the first certificate"_ error on a missing case.
 
 Order should be like this: first the server certificate, then all intermediate certificates, and finally the root CA.
 
