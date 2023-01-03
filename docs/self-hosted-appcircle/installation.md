@@ -96,6 +96,22 @@ If your linux distribution has an out of date docker version, please update dist
 
 :::
 
+:::caution
+
+#### Docker Engine Installation
+
+Self-hosted appcircle server is only compatible with official installation methods listed in [here](https://docs.docker.com/engine/install/).
+
+On some Linux distributions you can select docker engine at setup stage, but it's not recommended since some distributions have unofficial installation methods.
+
+For instance, when you select docker engine at setup on Ubuntu installation, Ubuntu installs docker engine via [snap](https://snapcraft.io/install/docker/ubuntu) which will result with an incompatible docker installation.
+
+In this case, you should not include docker engine to Ubuntu installation. If you want, you can install docker engine later with official [installation](https://docs.docker.com/engine/install/ubuntu/) steps.
+
+Or, as a better choice, you can leave docker engine installation to self-hosted appcircle server installation script since we have automated installation for Debian derivatives which include `apt` package manager.
+
+:::
+
 :::info
 
 Self-hosted appcircle server is only compatible with [docker compose V2](https://docs.docker.com/compose/compose-v2/) and the new `docker compose` command.
@@ -295,6 +311,41 @@ For our example, we configured below values:
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`.  We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
 
+:::caution
+
+#### Initial Password
+
+`keycloak.initialPassword` value can not be empty since default organization's admin user will login with that password.
+
+Same as in cloud, it must be compatible with Appcircle password policy;
+
+- minimum character **length must be at least 6**
+- must contain at least **one lower** case character
+- must contain at least **one upper** case character
+- must contain at least **one numerical** digit
+
+#### Troubleshooting
+
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running appcircle server](./installation.md#5-run-server).
+
+```txt
+service "keycloak_migration" didn't completed successfully: exit 1
+```
+
+In this case, before updating initial password in `global.yaml`, you need to **stop** partially started docker services with below command. See [reset configuration](./installation.md#reset-configuration) section for more details.
+
+```bash
+docker compose down -v
+```
+
+After updating initial password, to activate changes, you need to do fresh export before running services.
+
+```bash
+./ac-self-hosted.sh -n "spacetech"
+```
+
+:::
+
 As seen in above items, we choose to set some secrets in `user-secret` file. So we need to take additional steps to complete configuration. If you set them as plain text in `global.yaml` then you don't need to take `user-secret` steps.
 
 First create your secret yaml configuration as plain text like below.
@@ -461,19 +512,16 @@ If everything is okay, then you should see service statuses as "running", "runni
 docker compose ps
 ```
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-container-health.png)
+![](https://cdn.appcircle.io/docs/assets/be-962-docker-compose-ps.png)
 
 :::info
 
-Self-hosted appcircle server uses some ports for internal and external communication. So, these ports must be unused on system and dedicated to only appcircle server usage.
+Self-hosted appcircle server uses some ports for communication.
 
-- [external] `80`
-- [external] `443`
-- [internal] `8200`
+Below ports must be unused on system and dedicated to only appcircle server usage.
 
-"External" ports are open to public network. For example, `https` requests done for server web UI uses port `443`.
-
-"Internal" ports are not reachable from public network and for only internal communication between appcircle server services.
+- `80`
+- `443`
 
 You can get a list of up-to-date ports used by docker with below command.
 
