@@ -112,6 +112,13 @@ Send your apps to be distributed via Firebase App Distribution
 
 [https://github.com/appcircleio/appcircle-firebase-distribution-component](https://github.com/appcircleio/appcircle-firebase-distribution-component)
 
+## Firebase Deployment
+
+Deploy your web applications to Firebase Hosting
+
+https://github.com/appcircleio/appcircle-firebase-deploy-component
+
+
 ## Firebase Upload dSYM
 
 Upload your debug symbols to Firebase Crashlytics
