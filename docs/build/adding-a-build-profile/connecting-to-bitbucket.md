@@ -81,4 +81,23 @@ To create an HTTP access token for a project or repository (requires project or 
 - Set the token name, permissions, and expiry.
 
 
+### Check Token
+
+You can follow the steps below to check if your token is valid. 
+
+- Open the terminal and issue the following command
+
+```bash
+curl --user name:password http://YOUR_BITBUCKET_HOST/rest/api/1.0/repos
+```
+
+Above command should out your projects. If you don't see an output, please check your token and Bitbucket address. 
+
+:::caution
+
+Please also make sure that the output doesn't show any reference to `localhost`. If you see `localhost`,  you need to configure Bitbucket and put the correct address of your Bitbucket instance.
+
+:::
+
+
 <NeedHelp />

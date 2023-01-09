@@ -65,6 +65,24 @@ Appcircle needs admin permission to function properly. The admin permission is n
 
 :::
 
+### Check Token
+
+You can follow the steps below to check if your token is valid. 
+
+- Open the terminal and issue the following command
+
+```bash
+curl "http://YOUR_GITLAB_HOST/api/v4/projects?private_token=YOUR_TOKEN"
+```
+
+Above command should out your projects. If you don't see an output, please check your token and GitLab address. 
+
+:::caution
+
+Please also make sure that the output doesn't show any reference to `localhost`. If you see `localhost`,  you need to configure GitLab and put the correct address of your GitLab instance.
+
+:::
+
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
 <NeedHelp />
