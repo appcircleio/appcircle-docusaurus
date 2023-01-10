@@ -514,6 +514,28 @@ docker compose ps
 
 ![](https://cdn.appcircle.io/docs/assets/be-962-docker-compose-ps.png)
 
+:::caution
+
+#### Vault
+
+All secret data, including the API keys, signing identities, environment variables, and secrets are stored in an HashiCorp Vault. OAuth tokens and SSH keys, used in build pipeline, are also stored securely in HashiCorp Vault.
+
+Vault is a tool for securely accessing secrets. It's an important and required service for whole self-hosted appcircle server. If it's status is `unhealthy`, secrets will be inaccessible and most CI/CD functions won't work properly.
+
+For this reason, **before starting to use self-hosted appcircle server** within your organization, make sure you check **vault service** status in container list above. Its **status must be `healthy`**.
+
+While you're working on configuration back and forth, it's status may become `unhealthy` in some way. 
+
+In this case, stop all services with data cleanup.
+
+```bash
+docker compose down -v
+```
+
+Then make a new export and start services. Refer to [reset configuration](./installation.md#reset-configuration) section for more details.
+
+:::
+
 :::info
 
 Self-hosted appcircle server uses some ports for communication.
