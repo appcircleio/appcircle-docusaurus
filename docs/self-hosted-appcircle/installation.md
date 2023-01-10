@@ -406,7 +406,7 @@ Note that after changes made to yaml files, you must execute the script again fo
 
 ### 4. DNS Settings
 
-Appcircle server has some subdomains for different services. So, you need to add them to DNS server in your network before running server.
+Appcircle server has some subdomains for different services. So, you need to add them to DNS in your network before running server.
 
 - api
 - auth
@@ -419,7 +419,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 
 :::info
 
-If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled:true`, it means that you will use a custom domain for Enterprise App Store. So, its value (`storeWeb.customDomain.domain`) must be configured on DNS server along with other system subdomains.
+If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled:true`, it means that you will use a custom domain for Enterprise App Store. So, its value (`storeWeb.customDomain.domain`) must be configured on DNS along with other system subdomains.
 
 :::
 
@@ -427,26 +427,63 @@ Below is an example DNS configuration that is compatible with our sample scenari
 
 ![](https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png)
 
-For testing purposes, you can also edit `/etc/hosts` file of clients in your network. If you have a dedicated DNS server, you don't need this.
+If you have a dedicated DNS, adding subdomains will be enough to run self-hosted appcircle server in an easy and quick way.
 
-But if you don't have a DNS server and want to try appcircle server in your local network, adding below entries to `/etc/hosts` file will enable you to use self-hosted appcircle server.
+You can also make DNS settings later, when you complete all configuration and testing.
+
+Until you're satisfied with your setup, you can use `/etc/hosts` file for both self-hosted appcircle server and connected clients. You can run whole system, test all functionality and your configuration with using the `/etc/hosts` file.
+
+Following section will give you the details for this use case.
+
+#### Using `/etc/hosts` for DNS Settings
+
+The hosts file contains the Internet Protocol (IP) host names and addresses for the local host and other hosts in the network. This file is used to resolve a name into an address (that is, to translate a host name into its IP).
+
+So, you can use hosts file like DNS by adding all required subdomains with their mapped IP address.
+
+Entries in the hosts file have the following format:
 
 ```txt
-35.241.181.2    api.appcircle.spacetech.com
-35.241.181.2    auth.appcircle.spacetech.com
-35.241.181.2    dist.appcircle.spacetech.com
-35.241.181.2    hook.appcircle.spacetech.com
-35.241.181.2    my.appcircle.spacetech.com
-35.241.181.2    resource.appcircle.spacetech.com
-35.241.181.2    store.appcircle.spacetech.com
-35.241.181.2    store.spacetech.com
+Address  HostName
 ```
 
-:::caution
+On self-hosted appcircle server, you should add below entries to the `/etc/hosts` file.
 
-IP value `35.241.181.2` used in above settings is just for example. You need to replace it with your appcircle server's network IP.
+```txt
+0.0.0.0  api.appcircle.spacetech.com
+0.0.0.0  auth.appcircle.spacetech.com
+0.0.0.0  dist.appcircle.spacetech.com
+0.0.0.0  hook.appcircle.spacetech.com
+0.0.0.0  my.appcircle.spacetech.com
+0.0.0.0  resource.appcircle.spacetech.com
+0.0.0.0  store.appcircle.spacetech.com
+0.0.0.0  store.spacetech.com
+```
 
-:::
+For clients that will connect to self-hosted appcircle server, either self-hosted runners or end-users using their browsers for web UI, should add external IP of the server to their `/etc/hosts` files. External IP is the address of self-hosted appcircle server that other hosts in the network can reach to server using that address.
+
+You can get external IP of self-hosted appcircle server with below command.
+
+```bash
+hostname -I | awk '{print $1}'
+```
+
+Let's assume we got value `35.241.181.2` as an example.
+
+Other clients that connect to the server should add below entries to their `/etc/hosts` files.
+
+```txt
+35.241.181.2  api.appcircle.spacetech.com
+35.241.181.2  auth.appcircle.spacetech.com
+35.241.181.2  dist.appcircle.spacetech.com
+35.241.181.2  hook.appcircle.spacetech.com
+35.241.181.2  my.appcircle.spacetech.com
+35.241.181.2  resource.appcircle.spacetech.com
+35.241.181.2  store.appcircle.spacetech.com
+35.241.181.2  store.spacetech.com
+```
+
+With this network setup, you can run and test both self-hosted appcircle server and connected self-hosted runners with all functionality.
 
 ### 5. Run Server
 
