@@ -9,6 +9,19 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 2.9.22 - 2023-01-16 - Adhoc Improvements
+
+### 🆕 New Feature
+- [Apple Devices](../distribute/apple-devices.md) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
+- [Firebase Deployment ](../workflows/common-workflow-steps.md#firebase-deployment) component added.
+
+### :muscle: Improvement
+- [Firebase App Distribution](../workflows/common-workflow-steps.md#firebase-app-distribution) component support service account.
+- UI improvements for the custom script editor.
+
+### 🐞 Fixed
+- If you revert a commit and force push it, Appcircle will correctly handle this situation.
+
 ## 2.9.21 - 2022-12-28 - BrowserStack App Automate
 
 ### 🆕 New Feature
