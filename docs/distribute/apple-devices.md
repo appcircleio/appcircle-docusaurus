@@ -63,6 +63,11 @@ If the installation process succeeds, you'll be forwarded to the following scree
 <NarrowImage src="https://cdn.appcircle.io/docs/assets/adhoc-profile-success.png" width="300" />
 
 
+### Deleting Devices from List
+
+You can remove devices from Appcircle's list by selecting the devices and clicking **Delete from List** button. Please be aware that this action only removes the device from Appcircle. This action will not have any effect on the registration status of the device in the
+Apple Developer portal.
+
 ## Add to Provisioning Profile
 
 After you registered your devices, you need to add those devices to provisioning profiles. Registered devices can be added to provisioning profiles manually or automatically. 
