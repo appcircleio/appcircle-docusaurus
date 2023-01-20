@@ -41,11 +41,11 @@ Fill the relevant information about your Bitbucket self-hosted module. If you ar
 
 ### Connection Notice
 
-For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the internet.
+For Appcircle to connect to the Self Hosted Bitbucket Instance, your connection must be reachable over the internet.
 
 :::
 
-Is your self-hosted GitLab instance under enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
+Is your self-hosted Bitbucket instance under enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
 
 <ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls">
   Accessing Repositories in Internal Networks (Firewalls)
@@ -91,7 +91,7 @@ You can follow the steps below to check if your token is valid.
 curl --user name:password http://YOUR_BITBUCKET_HOST/rest/api/1.0/repos
 ```
 
-Above command should out your projects. If you don't see an output, please check your token and Bitbucket address. 
+Above command should print out your projects. If you don't see an output, please check your token and Bitbucket address. 
 
 :::caution
 
