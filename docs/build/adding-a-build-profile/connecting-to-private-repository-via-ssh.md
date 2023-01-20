@@ -52,7 +52,7 @@ If your SSH server runs on a different port, you should add the port number to y
 
 `ssh://git@mydomain.com:port/path/to/repo.git`
 
-For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the internet.
+For Appcircle to connect to the self hosted repositories, your connection must be reachable over the internet.
 
 :::
 

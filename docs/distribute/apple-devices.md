@@ -98,7 +98,7 @@ Go to your distribution profile and then click the **Settings/Apple Devices Regi
 
 ![](<https://cdn.appcircle.io/docs/assets/adhoc-profile-auto.png>)
 
-By enabling this setting, every registered device will be automatically added to selected provisioning profiles.
+By enabling this setting, every registered device will be automatically added to the selected build profile's configured branch.
 
 :::tip
 

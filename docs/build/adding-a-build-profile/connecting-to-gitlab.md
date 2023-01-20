@@ -75,7 +75,7 @@ You can follow the steps below to check if your token is valid.
 curl "http://YOUR_GITLAB_HOST/api/v4/projects?private_token=YOUR_TOKEN"
 ```
 
-Above command should out your projects. If you don't see an output, please check your token and GitLab address. 
+Above command should print out your projects. If you don't see an output, please check your token and GitLab address. 
 
 :::caution
 
