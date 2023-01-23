@@ -15,11 +15,11 @@ You can use [Jira Component](https://github.com/appcircleio/appcircle-jira-compo
 
 ## Credentials
 
-In order to use Jira Component, you need to configure the component and add the necessary credentials. It is strongly advised to add the credentials of your Jira instance with environment variables.
+In order to use Jira Component, you need to configure the component and add the necessary credentials. It is strongly advised to add the credentials of your Jira instance with locked environment variables.
 
 - `AC_JIRA_HOST`: Jira Host. Your Jira subdomain. Example: `mysubdomain.atlassian.net`
-- `AC_JIRA_EMAIL`: Jira Email. Email of Jira user. Please add this using **locked** environment variables.
-- `AC_JIRA_TOKEN`: API Token. User's API Token. Please add this using **locked** environment variables. You can create your token from [here](https://id.atlassian.com/manage-profile/security/api-tokens)
+- `AC_JIRA_EMAIL`: Jira Email. Email of Jira user. 
+- `AC_JIRA_TOKEN`: API Token. User's API Token. You can create your token from [here](https://id.atlassian.com/manage-profile/security/api-tokens)
 
 ![](<https://cdn.appcircle.io/docs/assets/jira-component2.png>)
 
