@@ -23,11 +23,18 @@ This step builds your Android application for the architectures specified in you
 
 :::
 
+## Gradle Runner
+
+This step runs given Gradle task.
+
+[https://github.com/appcircleio/appcircle-android-gradle-task-component](https://github.com/appcircleio/appcircle-android-gradle-task-component)
+
 ## Android Sign
 
 This step signs your APK or App Bundle with the given Android keystore and exports a binary file compatible with Android devices.
 
 [https://github.com/appcircleio/appcircle-android-sign-component](https://github.com/appcircleio/appcircle-android-sign-component)
+
 
 ## Android App Post-Processor
 
