@@ -156,3 +156,9 @@ https://github.com/appcircleio/appcircle-filesize-component
 This component runs your test plans with Testinium.
 
 https://github.com/appcircleio/appcircle-testinium-component
+
+## Maestro Cloud Upload
+
+This component uploasd both your app binary and flows to Maestro Cloud.
+
+https://github.com/appcircleio/appcircle-maestro-cloud-upload-component
