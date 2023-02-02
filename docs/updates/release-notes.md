@@ -9,14 +9,14 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
-## 2.9.23 - 2023-02-01 - LDAP, Jira, Microsoft Teams
+## 2.9.23 - 2023-02-02 - LDAP, Jira, Microsoft Teams
 
 ### 🆕 New Feature
 - [LDAP Login](../enterprise-appstore/customize-ent-store.md#ldap-login) added to Enterprise Store.
 - [Jira](../integrations/jira-integration.md) component added.
 - [Microsoft Teams](../account/teams-notifications.md) integration added.
-- [Gradle Runner](../workflows/android-specific-workflow-steps.md#gradle-runner)
-- [Maestro Cloud Upload](../workflows/common-workflow-steps.md#maestro-cloud-upload)
+- [Gradle Runner](../workflows/android-specific-workflow-steps.md#gradle-runner) component added.
+- [Maestro Cloud Upload](../workflows/common-workflow-steps.md#maestro-cloud-upload) component added.
 
 ### :muscle: Improvement
 - UI improvements for the Enterprise Store login options.

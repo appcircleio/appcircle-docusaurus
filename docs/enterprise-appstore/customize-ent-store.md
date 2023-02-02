@@ -49,6 +49,12 @@ After creating the DNS settings, type your custom domain name, select your certi
 
 Appcircle supports Static, SSO, and LDAP login.
 
+:::info
+
+SSO and LDAP login is only available for  Enterprise accounts. Only the Organization owner or users with **Manage Enterprise Settings & Apps** rights can change the login settings.
+
+:::
+
 ### Static Login
 
 You can set a different username and password for live and beta apps. The usernames of the live and beta section must be different. 
