@@ -94,7 +94,7 @@ Please check the below document to learn more about SSO integration.
 
 ### LDAP Login
 
-In order to create an LDAP login, first click the **Activate** link next to the LDAP login. If you select **Enable LDAP Login**, your previous login options will be disabled and LDAP login will be enabled. Click the **Details** link and then click the **Create** link. 
+In order to create an LDAP login, first click the **Activate** link next to the LDAP login. If you select **Enable LDAP Login**, your previous login options will be disabled and LDAP login will be enabled. Click the **Details** link and then click the **Create** link. Appcircle supports multiple LDAP providers. You can add multiple LDAP servers with different settings. 
 
 ![](<https://cdn.appcircle.io/docs/assets/entstore-ldapenable.png>)
 

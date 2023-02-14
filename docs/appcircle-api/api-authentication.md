@@ -54,3 +54,7 @@ appcircle login ${pat}
 ```
 
 Then copy the result and set it as the `AC_ACCESS_TOKEN` environment variable.
+
+### API Documentation
+
+Please check the [documentation](https://api.appcircle.io/openapi/index.html) to learn more about Appcircle API.
