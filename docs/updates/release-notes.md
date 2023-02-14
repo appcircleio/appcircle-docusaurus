@@ -16,17 +16,17 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Feature
 - [Multiple LDAP](../enterprise-appstore/customize-ent-store.md#ldap-login) support added for Enterprise Store. <CloudBadge/> <SelfHostedBadge/>
-- [Self-signed certificate](../self-hosted-appcircle/ssl-configuration.md) support added for Appcircle server external services such as Git providers(Gitlab,Bitbucket) <SelfHostedBadge/>
+- [Self-signed certificate](../self-hosted-appcircle/ssl-configuration.md) support added for Appcircle server and external services such as Git providers(Gitlab,Bitbucket) <SelfHostedBadge/>
 
 ### :muscle: Improvement
 - Onboarding of React Native Android project is improved.  <CloudBadge/> <SelfHostedBadge/>
 - Flutter iOS build component improved. <CloudBadge/> <SelfHostedBadge/> 
 - [Feedback form](https://my.appcircle.io/help) added to help section. <CloudBadge/> <SelfHostedBadge/> 
-- CSS and Icon handling is updated to improve performance of Enterprise Store. <CloudBadge/> <SelfHostedBadge/> 
+- CSS and Icon handling is updated to improve the performance of the Enterprise Store. <CloudBadge/> <SelfHostedBadge/> 
 - Self-hosted instances can be installed from a single Docker registry. <SelfHostedBadge/>
 - Self-hosted instances can start without an active internet connection. <SelfHostedBadge/>
 - Public and SSH repository options are added to default profile options. <SelfHostedBadge/>
-- Improvements were made to logging system to prevent big log files.  <SelfHostedBadge/>
+- Improvements were made to the logging system to prevent big log files.  <SelfHostedBadge/>
 
 
 ### 🐞 Fixed
