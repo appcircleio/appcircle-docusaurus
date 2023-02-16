@@ -30,7 +30,7 @@ Overall process is similar with private repository connection through SSH, but A
 
 :::caution
 
-Gitlab's version must be **13.12.90** or higher.
+GitLab's version must be **13.12.9** or higher.
 
 :::
 
