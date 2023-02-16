@@ -294,6 +294,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   background: linear-gradient(180deg, #2B394F 0%, #0F1C32 100%);
   letter-spacing: 0.1em;
   border-radius: 43px;
+  opacity: 0.3;
   color: #FFF;
   padding: 5px 10px;
   font-size: 10px;
@@ -305,6 +306,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   background: linear-gradient(180deg, #1142A2 0%, #091C84 100%);
   letter-spacing: 0.1em;
   border-radius: 43px;
+  opacity: 0.3;
   color: #FFF;
   padding: 5px 10px;
   font-size: 10px;
