@@ -28,7 +28,13 @@ After the connection is successful, you can [view your newly created profile](./
 
 Overall process is similar with private repository connection through SSH, but Appcircle allows to directly connect through GitLab Self Hosted URL.
 
-First, select **GitLab **and\*\* **then **Connect Self-hosted GitLab\*\* through the menu:
+:::caution
+
+GitLab's version must be **13.12.9** or higher.
+
+:::
+
+First, select **GitLab** and then **Connect Self-hosted GitLab** through the menu:
 
 ![](<https://cdn.appcircle.io/docs/assets/image (242).png>)
 

@@ -29,7 +29,13 @@ After the connection is successful, you can [view your newly created profile](./
 
 Overall process is similar with private repository connection through SSH, but Appcircle allows to directly connect through Bitbucket Self Hosted URL.
 
-First, select **Bitbucket **and\*\* **then **Connect Self-hosted Bitbucket\*\* through the menu:
+:::caution
+
+Bitbucket's version must be **7.14** or higher.
+
+:::
+
+First, select **Bitbucket** then **Connect Self-hosted Bitbucket** through the menu:
 
 ![](<https://cdn.appcircle.io/docs/assets/image (229).png>)
 
