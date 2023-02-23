@@ -254,8 +254,16 @@ org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemo
     at org.gradle.launcher.daemon.client.DaemonClient.execute(DaemonClient.java:125)
 ```
 
-- Problem with UTF-8 characters in your project or environment variable. Please edit your **gradle.properties** file and add `file.encoding=utf-8` line.
+```
+Unexpected error while writing dex file using d8: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+java.lang.RuntimeException: java.lang.OutOfMemoryError: Java heap space
+```
+
+- Problem with UTF-8 characters in your project or environment variable. Please edit your **gradle.properties** file and add `-Dfile.encoding=UTF-8` argument to `org.gradle.jvmargs` section.
 - You have edited **gradle.properties** and put some arguments to the `org.gradle.jvmargs` section. When you modify default JVM arguments, it resets the default `MaxMetaspaceSize` property. You should always add `-XX:MaxMetaspaceSize=256m` to this section to prevent unlimited memory allocation.
+
+If you're using DexGuard, you may need to above modifications to your DexGuard configuration as well.
 
 ### I received a google-services.json Error but I don't want to push this file to the repository
 
