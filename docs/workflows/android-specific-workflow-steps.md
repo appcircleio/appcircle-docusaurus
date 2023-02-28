@@ -89,3 +89,9 @@ This step runs detekt gradle task.
 Run your Espresso tests on BrowserStack App Automate. You need to add **Android Build for UI Testing** before this step to create the required `$AC_APK_PATH` and `$AC_TEST_APK_PATH` files.
 
 [https://github.com/appcircleio/appcircle-browserstack-espresso-component](https://github.com/appcircleio/appcircle-browserstack-espresso-component)
+
+## AppSweep Mobile Security Testing
+
+Scan your Android app using [AppSweep](https://appsweep.guardsquare.com)
+
+[https://github.com/appcircleio/appcircle-appsweep-component](https://github.com/appcircleio/appcircle-appsweep-component)

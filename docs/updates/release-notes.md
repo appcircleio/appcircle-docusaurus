@@ -11,6 +11,29 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.0.1 - 2023-02-28 - AppSweep, Self-hosted Improvements
+
+### 🆕 New Feature
+- [AppSweep Mobile Security Testing](../workflows/android-specific-workflow-steps.md#appsweep-mobile-security-testing) component added. <CloudBadge/> <SelfHostedBadge/>
+- [Self-signed certificate](../self-hosted-appcircle/ssl-configuration.md) support added for Testing Distribution. <SelfHostedBadge/>
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) is now available in German and Turkish languages in addition to English. To switch to your preferred language, simply navigate to the language settings on your store homepage and select either German or Turkish. <CloudBadge/> <SelfHostedBadge/>
+- [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=enterprisestore) are added to directly download IPA or APK files from Enterprise Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+- New line is added to SSH private key if it doesn't exist. <CloudBadge/> <SelfHostedBadge/>
+- API key selection is now mandatory for all app submissions on Google Play. <CloudBadge/> <SelfHostedBadge/> 
+- Autofill button respects the selected pool. <CloudBadge/> <SelfHostedBadge/> 
+- Self-hosted Gitlab onboarding screen is improved. <CloudBadge/> <SelfHostedBadge/> 
+- Default pools are removed from Self-hosted instances. <SelfHostedBadge/> 
+
+### 🐞 Fixed
+- Email address parse error fixed for Distribution profiles. <CloudBadge/> <SelfHostedBadge/> 
+- Test reports are correctly created for branches even if they don't have any configuration. <CloudBadge/> <SelfHostedBadge/> 
+- Dashboard no longer shows builds started with autofill. <CloudBadge/> <SelfHostedBadge/>  
+- Cache pull and Cache Pull components are fixed. <SelfHostedBadge/> 
+-[Enterprise Store](../enterprise-appstore/customize-ent-store.md) live and beta channels access managament bug fixed <CloudBadge/> <SelfHostedBadge/>
+- Store Submit permission bug fixed. <SelfHostedBadge/> 
+
 ## 3.0.0 - 2023-02-14 - LDAP, Self-hosted Improvements
 
 ### 🆕 New Feature
