@@ -17,7 +17,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - [AppSweep Mobile Security Testing](../workflows/android-specific-workflow-steps.md#appsweep-mobile-security-testing) component added. <CloudBadge/> <SelfHostedBadge/>
 - [Self-signed certificate](../self-hosted-appcircle/ssl-configuration.md) support added for Testing Distribution. <SelfHostedBadge/>
 - [Enterprise Store](../enterprise-appstore/customize-ent-store.md) is now available in German and Turkish languages in addition to English. To switch to your preferred language, simply navigate to the language settings on your store homepage and select either German or Turkish. <CloudBadge/> <SelfHostedBadge/>
-- [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=enterprisestore) are added to directly download IPA or APK files from Enterprise Store by using a PAT.
+- [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=enterprisestore) are added to directly download IPA or APK files from Enterprise Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 - New line is added to SSH private key if it doesn't exist. <CloudBadge/> <SelfHostedBadge/>
