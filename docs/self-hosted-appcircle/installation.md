@@ -11,16 +11,18 @@ Following sections give you detailed information about system requirements, inst
 
 ## Prerequisites
 
-The following operating systems are supported for the self-hosted appcircle.
+Below are the hardware and OS requirements for self-hosted appcircle installaion.
 
-**Linux**
+### Supported Linux Distributions
+
+Self-hosted appcircle server can only be installed on Linux operating system.
 
 - Ubuntu 20.04 or later
 - Debian 11 or later
 - CentOS 8 or later
 - RHEL 8 or later
-  
-Only `x64` processor architecture is supported by now for Linux distributions.
+
+### Hardware Requirements
 
 Minimum hardware requirements for self-hosted appcircle can be:
 
@@ -28,7 +30,53 @@ Minimum hardware requirements for self-hosted appcircle can be:
 - 4 or more cores CPU
 - 8 or more gigabytes (GB) RAM
 
-These hardware specs are minumum requirements for execution but higher numbers will be better especially for increased number of users.
+:point_up: These hardware specs are minimum requirements for basic execution and it can be used only for quick evaluation or development purposes.
+
+:::caution
+
+CPU arhitecture must be AMD or Intel 64-bit arch (`x86_64`).
+
+:::
+
+:::info
+
+If you have enough RAM and a recent CPU, performance of appcircle server can be limited by hard drive seek times. So, having a fast drive like a solid state drive (SSD) improves runtime.
+
+:::
+
+Higher numbers will be better especially for increased number of users.
+
+For an enterprise installation, **minimum** hardware requirements are
+
+- 500GB SSD
+- 8 CPU
+- 16GB RAM
+
+For production environments, **recommended** hardware requirements are
+
+- 1TB SSD
+- 32 CPU
+- 64GB RAM
+
+:::caution
+
+#### Swap
+
+Using **swap** file lets self-hosted appcircle server exceed the size of available physical memory. On memory pressure system will go on its operations with minimal degradation, when SSD used as hardware.
+
+So, we are recommending **swap** file usage on Linux.
+
+Its size should be minimum half of the RAM size. For example if you have 64 GB RAM, then you should choose minimum 32 GB swap file size. 64 GB will be better.
+
+#### Swappiness
+
+The `swappiness` parameter configures how often your system swaps data out of RAM to the swap space. So, it's an important setting for swap usage and affects performance.
+
+`10` is recommended value for `swappiness`.
+
+:books: For details on how to configure **swap** and `swappiness` parameter, follow guide in [here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-22-04).
+
+:::
 
 ## Installation
 
