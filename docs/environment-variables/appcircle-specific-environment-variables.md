@@ -32,6 +32,11 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_GIT\_URL               | Git URL of the repository                                                                          |
 | AC\_GIT\_COMMIT            | The Git commit that is built                                                                       |
 | AC\_COMMIT\_MESSAGE        | Commit message                                                                                     |
+| AC\_COMMIT\_AUTHOR\_EMAIL  | The email of the author of the commit.                                                             |
+| AC\_COMMIT\_AUTHOR\_NAME   | The name of the author of the commit.                                                              |
+| AC\_COMMIT\_AUTHOR\_SUBJECT| The subject of the  commit.                                                                        |
+| AC\_TAG\_AUTHOR\_EMAIL     | The email of the author of the tag.                                                                |
+| AC\_TAG\_ANNOTATED\_MESSAGE| The annotated messafe of the tag.                                                                  |
 | AC\_COMMIT\_TAGS           | Commit tags                                                                                        |
 | AC\_BUILD\_NUMBER          | Build number (`Fetch Details` is counted as Build)                                                 |
 | AC\_BUILD\_TIMESTAMP       | Build time stamp                                                                                   |

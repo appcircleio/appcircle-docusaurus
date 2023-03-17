@@ -11,6 +11,31 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.1.0 - 2023-03-17 - StoreSubmit, Self-hosted Improvements
+
+### 🆕 New Feature
+- Submissions to [Google Play Console](../store-submit/google-play.md) and [Huawei AppGallery](../store-submit/huawei-app-gallery.md) will now begin from the build agents. <CloudBadge/> <SelfHostedBadge/>
+- It is now possible to localize some login form texts on the [Enterprise Store](../enterprise-appstore/customize-ent-store.md) when LDAP login is activated. <SelfHostedBadge/>
+
+### :muscle: Improvement
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) language selection page is improved. <CloudBadge/> <SelfHostedBadge/>
+- `AC_COMMIT_AUTHOR_EMAIL`, `AC_COMMIT_SUBJECT`, and `AC_COMMIT_MESSAGE` [Environment Variables](../environment-variables/appcircle-specific-environment-variables.md) added to build agents. <CloudBadge/> <SelfHostedBadge/>
+- Unauthenticated internal SMTP server support added for Self-Hosted Appcircle. <SelfHostedBadge/>
+- `global.yaml` content is improved with new configuration options. <SelfHostedBadge/> 
+- Confusing initial `user-secret` file generation is removed. <SelfHostedBadge/> 
+- New command line parameters added for Self-Hosted Appcircle CLI. <SelfHostedBadge/> 
+
+### 🐞 Fixed
+- Huawei AppGallery App ID saving bug fixed. <CloudBadge/> <SelfHostedBadge/>
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) 2FA login bug fixed. <CloudBadge/> <SelfHostedBadge/>
+- Appcircle now shows a warning if it can't reach your repository due to network problems. <CloudBadge/> <SelfHostedBadge/> 
+- Fixed broken downloads on Enterprise Store when an app has a name in non-ASCII characters. <CloudBadge/> <SelfHostedBadge/>
+- Minor localization fixes were done on Enterprise Store for the Turkish language. <CloudBadge/> <SelfHostedBadge/>
+- Minor fixes were done on SSH key format and SSH repo connections.  <CloudBadge/> <SelfHostedBadge/>
+- Enterprise Store settings' broken UI fixed when the custom domain is disabled. <SelfHostedBadge/>
+- Dashboard no longer shows builds started for store submission. <CloudBadge/> <SelfHostedBadge/>
+- Dashboard no longer shows builds from deleted build profiles. <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.0.1 - 2023-02-28 - AppSweep, Self-hosted Improvements
 
 ### 🆕 New Feature
@@ -31,7 +56,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Test reports are correctly created for branches even if they don't have any configuration. <CloudBadge/> <SelfHostedBadge/> 
 - Dashboard no longer shows builds started with autofill. <CloudBadge/> <SelfHostedBadge/>  
 - Cache pull and Cache Pull components are fixed. <SelfHostedBadge/> 
--[Enterprise Store](../enterprise-appstore/customize-ent-store.md) live and beta channels access managament bug fixed <CloudBadge/> <SelfHostedBadge/>
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) live and beta channels access managament bug fixed <CloudBadge/> <SelfHostedBadge/>
 - Store Submit permission bug fixed. <SelfHostedBadge/> 
 
 ## 3.0.0 - 2023-02-14 - LDAP, Self-hosted Improvements
