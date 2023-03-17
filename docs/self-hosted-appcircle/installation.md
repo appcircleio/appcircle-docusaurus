@@ -181,7 +181,7 @@ If `docker-compose-plugin` is missing in your system, follow its [docs](https://
 First we need to find a name to our self-hosted appcircle installation. It will be the unique project name.
 
 ```bash
-./ac-self-hosted.sh -n "${YOUR_PROJECT}"
+./ac-self-hosted.sh -n "${YOUR_PROJECT}" export
 ```
 
 Let's assume we have company named as Space Tech. Then our project name can be "spacetech". For following steps, we will give examples based on this fictive company for better understanding.
@@ -189,7 +189,7 @@ Let's assume we have company named as Space Tech. Then our project name can be "
 Then our command to execute will be:
 
 ```bash
-./ac-self-hosted.sh -n "spacetech"
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
 :::info
@@ -215,7 +215,7 @@ cp ~/Downloads/space-tech-cred.json cred.json
 After that you can execute below command.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech"
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
 You should see
@@ -389,7 +389,7 @@ docker compose down -v
 After updating initial password, to activate changes, you need to do fresh export before running services.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech"
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
 :::
@@ -449,7 +449,7 @@ If you defined all of them in `global.yaml`,simply remove `user-secret` before n
 Note that after changes made to yaml files, you must execute the script again for the changes to take effect as shown below.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech"
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
 ### 4. DNS Settings
@@ -701,7 +701,7 @@ For our example scenario, root directory is `appcircle-server` as seen [here](./
 :::
 
 ```bash
-./ac-self-hosted.sh -n "spacetech"
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
 Now you are ready to restart self-hosted appcircle.

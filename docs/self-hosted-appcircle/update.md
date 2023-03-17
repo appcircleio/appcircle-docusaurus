@@ -93,7 +93,7 @@ In most cases, you don't need to change anything in your configuration. So, abov
 Then execute below command to update server.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech"
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
 For other details and troubleshooting, you can refer to [configuration](./installation.md#3-configure) section in installation docs.

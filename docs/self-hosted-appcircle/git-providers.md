@@ -108,7 +108,7 @@ docker compose down
 
 ```bash
 cd ../../../
-./ac-self-hosted.sh -n "spacetech"
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
 3. Boot appcircle server.
