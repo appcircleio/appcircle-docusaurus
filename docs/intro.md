@@ -55,7 +55,7 @@ Build.<br/>Test.<br/>Distribute.
             <div className="feature-card-image"><img src="https://cdn.appcircle.io/docs/assets/feature-card-self-hosted-runners.png" /></div>
             <div className="feature-card-info">
                   <NewBadge />
-                  <h4>Self-Hosted Runners</h4>
+                  <h4>Self-Hosted Appcircle</h4>
                   <p>Want to use your own build machines? Just install our runner scripts to the machines you want to use for your iOS / Android builds.</p>
                   <a href="/self-hosted-runner/overview" className="feature-card-learn-more runner">
                         Runner guides
