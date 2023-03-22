@@ -32,13 +32,25 @@ ssh-keygen -t rsa -b 4096 -P '' -f ./appcircle-ssh -m PEM
   </TabItem>
   <TabItem value="windows" label="Windows">
 
+**PowerShell**
+
 ```bash
 ssh-keygen -t rsa -b 4096 -P '""' -f ./appcircle-ssh -m PEM
 ```
+**Command Prompt**
+
+```bash
+ssh-keygen -t rsa -b 4096 -P "" -f ./appcircle-ssh -m PEM
+```
+
   </TabItem>
 </Tabs>
 
+:::caution
 
+SSH keys generated should not contain a password. If ssh-keygen prompts you for a password, simply press Enter to skip the password prompt. Verify that your `appcircle-ssh` file was created without the header `Proc-Type: 4, ENCRYPTED`.
+
+:::
 
 Two files will be created as `appcircle-ssh.pub` (Public key) and `appcircle-ssh` (Private key)
 
