@@ -5,6 +5,8 @@ metaDescription: 'Connecting to Private Repository via SSH'
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Connecting to Private Repository via SSH
 
@@ -20,9 +22,23 @@ For the SSH key field in the repository connection, the private key is required.
 
 To generate a new key pair, you can run the following command:
 
+
+<Tabs>
+  <TabItem value="linux" label="macOS/Linux" default>
+
 ```bash
 ssh-keygen -t rsa -b 4096 -P '' -f ./appcircle-ssh -m PEM
 ```
+  </TabItem>
+  <TabItem value="windows" label="Windows">
+
+```bash
+ssh-keygen -t rsa -b 4096 -P '""' -f ./appcircle-ssh -m PEM
+```
+  </TabItem>
+</Tabs>
+
+
 
 Two files will be created as `appcircle-ssh.pub` (Public key) and `appcircle-ssh` (Private key)
 
