@@ -71,7 +71,7 @@ To use this feature, an enterprise license is required.
 
 If you have an enterprise license, you can create child organizations from the  organization by navigating to the "My Organization" page, clicking on the "Create Child Organization" button, and entering the necessary details for the child organization.
 
-![](<https://storage.googleapis.com/appcircle-prod-common/docs/assets/My-Organizatnion-Child-Create.png>)
+![](<https://cdn.appcircle.io/docs/assets/My-Organizatnion-Child-Create.png>)
 
 Multiple child organizations can be created from a single organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Child Organization feature, businesses can create and manage multiple child organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
 
@@ -91,7 +91,7 @@ You can switch between organizations at any time without any data loss.
 
 :::
 
-![](<https://storage.googleapis.com/appcircle-prod-common/docs/assets/My-Organization-Switch.png>)
+![](<https://cdn.appcircle.io/docs/assets/My-Organization-Switch.png>)
 
 #### Leaving or Deleting an Organization
 
