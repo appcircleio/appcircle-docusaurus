@@ -65,6 +65,12 @@ Two-factor authentication (2FA) can only be enabled by your SSO provider. Please
 
 :::caution
 
+Child organization can't enable SSO.
+
+:::
+
+:::caution
+
 When you connect your Identity Provider, please open a new incognito window and test the SSO integration. Please only log off when you can log in with SSO credentials. If the connection doesn't work, you need to review your settings. 
 
 :::

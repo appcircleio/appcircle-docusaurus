@@ -55,9 +55,31 @@ If you are on the Starter Plan, you can only add one new organization. To create
 
 ![](<https://cdn.appcircle.io/docs/assets/image (39).png>)
 
+
+#### Adding a Child Organization
+
+Appcircle's Child Organization feature allows you to create multiple child organizations from your organization, providing a way to manage different teams and projects separately. With this feature, each child organization is linked to the organization.
+
+
+It's worth noting that child organizations are very similar to the organization. When you are inside a child organization, you will have access to all the features and functionality that are available in your  organization. Any licenses  associated with the main organization will also be applicable to the child organization.
+
+:::caution
+
+To use this feature, an enterprise license is required.
+
+:::
+
+If you have an enterprise license, you can create child organizations from the  organization by navigating to the "My Organization" page, clicking on the "Create Child Organization" button, and entering the necessary details for the child organization.
+
+![](<https://storage.googleapis.com/appcircle-prod-common/docs/assets/My-Organizatnion-Child-Create.png>)
+
+Multiple child organizations can be created from a single organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Child Organization feature, businesses can create and manage multiple child organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
+
+
+
 #### Switching Organizations
 
-Once you create an organization or accept an organization invite, you will be switched to that organization automatically. To switch between organizations, press the "Switch Organization" button on the top-right (three-dots button) and select an organization from the menu. The currently selected one is indicated with a check mark.
+Once you create an organization or accept an organization invite, you will be switched to that organization automatically. To switch between organizations, press the quick team switching button on the bottom-left on status bar and select an organization from the menu. The currently selected one is indicated with a check mark.
 
 Each organization is isolated from each other, and switching means that you will switch to the "workspace" of that organization.
 
@@ -69,7 +91,7 @@ You can switch between organizations at any time without any data loss.
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (40).png>)
+![](<https://storage.googleapis.com/appcircle-prod-common/docs/assets/My-Organization-Switch.png>)
 
 #### Leaving or Deleting an Organization
 
