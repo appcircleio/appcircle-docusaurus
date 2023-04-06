@@ -56,12 +56,12 @@ If you are on the Starter Plan, you can only add one new organization. To create
 ![](<https://cdn.appcircle.io/docs/assets/image (39).png>)
 
 
-#### Adding a Child Organization
+#### Adding a Sub Organization
 
-Appcircle's Child Organization feature allows you to create multiple child organizations from your organization, providing a way to manage different teams and projects separately. With this feature, each child organization is linked to the organization.
+Appcircle's Sub Organization feature allows you to create multiple sub organizations from your organization, providing a way to manage different teams and projects separately. With this feature, each sub organization is linked to the organization.
 
 
-It's worth noting that child organizations are very similar to the organization. When you are inside a child organization, you will have access to all the features and functionality that are available in your  organization. Any licenses  associated with the main organization will also be applicable to the child organization.
+It's worth noting that sub organizations are very similar to the organization. When you are inside a sub organization, you will have access to all the features and functionality that are available in your  organization. Any licenses  associated with the organization will also be applicable to the sub organization.
 
 :::caution
 
@@ -69,11 +69,11 @@ To use this feature, an enterprise license is required.
 
 :::
 
-If you have an enterprise license, you can create child organizations from the  organization by navigating to the "My Organization" page, clicking on the "Create Child Organization" button, and entering the necessary details for the child organization.
+If you have an enterprise license, you can create sub organizations from the  organization by navigating to the "My Organization" page, clicking on the "Create Sub Organization" button, and entering the necessary details for the sub organization.
 
-![](<https://cdn.appcircle.io/docs/assets/My-Organizatnion-Child-Create.png>)
+![](<https://cdn.appcircle.io/docs/assets/My-Organization-Sub-Create.png>)
 
-Multiple child organizations can be created from a single organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Child Organization feature, businesses can create and manage multiple child organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
+Multiple sub organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub Organization feature, businesses can create and manage multiple sub organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
 
 
 
