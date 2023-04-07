@@ -33,7 +33,7 @@ You can now add your project-wide variables into the `.xcconfig` file:
 // Application name
 APPLICATION_NAME = Appcircle
 // API endpoint
-API_URL = api.appcircle.com
+API_URL = api.appcircle.io
 ```
 
 :::info

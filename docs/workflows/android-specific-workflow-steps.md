@@ -95,3 +95,9 @@ Run your Espresso tests on BrowserStack App Automate. You need to add **Android 
 Scan your Android app using [AppSweep](https://appsweep.guardsquare.com)
 
 [https://github.com/appcircleio/appcircle-appsweep-component](https://github.com/appcircleio/appcircle-appsweep-component)
+
+## App Center Android Distribution
+
+Distribute APK,AAB and mapping files to [App Center](https://appcenter.ms/). You need enter your token, owner, app and group names to distribute your binaries.
+
+[https://github.com/appcircleio/appcircle-android-appcenter-distribute-component](https://github.com/appcircleio/appcircle-android-appcenter-distribute-component)
