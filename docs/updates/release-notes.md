@@ -11,6 +11,27 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.2.0 - 2023-04-07 - Resign, Sub Organizations
+
+### 🆕 New Feature
+- [Resigning](../distribute/resign.md) iOS and Android binaries added to Test Distribution module. <CloudBadge/> <SelfHostedBadge/>
+- Enterprise customers can create [sub organizations](../account/my-organization.md) to manage their users. <CloudBadge/> <SelfHostedBadge/>
+- [App Center iOS Distribution](../workflows/ios-specific-workflow-steps.md#app-center-ios-distribution) component added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center Android Distribution](../workflows/android-specific-workflow-steps.md#app-center-android-distribution) component added. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+- Build profile list UI is improved <CloudBadge/> <SelfHostedBadge/>
+- Extra notes added to [SSH](../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) key generation for Windows users. <CloudBadge/> <SelfHostedBadge/>
+- User's default branch is listed at the top. <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixed
+- Gitlab double trigger bug fixed. <CloudBadge/> <SelfHostedBadge/>
+- Gitlab Self-Hosted access token now longer shows inside build logs. <CloudBadge/> <SelfHostedBadge/>
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) 2FA Safari bug fixed. <SelfHostedBadge/>
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) localization bug fixed. <CloudBadge/> <SelfHostedBadge/>
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) Download bug is fixed for slow networks. <SelfHostedBadge/>
+
+
 ## 3.1.0 - 2023-03-17 - StoreSubmit, Self-hosted Improvements
 
 ### 🆕 New Feature
