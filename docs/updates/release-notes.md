@@ -16,8 +16,8 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### 🆕 New Feature
 - [Resigning](../distribute/resign.md) iOS and Android binaries added to Test Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can create [sub organizations](../account/my-organization.md) to manage their users. <CloudBadge/> <SelfHostedBadge/>
-- [App Center iOS Distribution](../workflows/ios-specific-workflow-steps.md#app-center-ios-distribution) component added. <CloudBadge/> <SelfHostedBadge/>
-- [App Center Android Distribution](../workflows/android-specific-workflow-steps.md#app-center-android-distribution) component added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center iOS Distribution](../workflows/ios-specific-workflow-steps.md#app-center-ios-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center Android Distribution](../workflows/android-specific-workflow-steps.md#app-center-android-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 - Build profile list UI is improved <CloudBadge/> <SelfHostedBadge/>
