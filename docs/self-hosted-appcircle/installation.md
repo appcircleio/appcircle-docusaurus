@@ -215,7 +215,7 @@ cp ~/Downloads/space-tech-cred.json cred.json
 After that you can execute below command.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech" export
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 You should see
@@ -571,16 +571,11 @@ projects/
     └── user-secret
 ```
 
-Change into the directory that exists `compose.yaml` file.
-
-```bash
-cd projects/spacetech/export
-```
-
 Run appcircle server services.
 
 ```bash
-docker compose up -d
+./ac-self-hosted.sh -n "spacetech" up
+
 ```
 
 :::info
