@@ -204,7 +204,7 @@ Although it's rare, self-hosted appcircle may require also self-hosted runner up
 
 If it's required, it will be announced in self-hosted appcircle release notes with minimum supported runner version.
 
-In order to update your self-hosted runners, refer to [update self-hosted runner](../self-hosted-runner/update.md) section in docs.
+In order to update your self-hosted runners, refer to [update self-hosted runner](./self-hosted-runner/update.md) section in docs.
 
 For other details and troubleshooting, you can refer to [connecting runners](./installation.md#connecting-runners) section in installation docs.
 

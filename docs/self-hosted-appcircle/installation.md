@@ -748,7 +748,7 @@ When you complete installation successfully by following above steps, you're rea
 
 But in order to run build pipelines, you need to install and connect self-hosted runners. We have dedicated section for installation and configuration of self-hosted runners.
 
-Follow and apply related guidelines in [here](../self-hosted-runner/installation.md).
+Follow and apply related guidelines in [here](./self-hosted-runner/installation.md).
 
 Self-hosted runner section in docs, has all details about runners and their configuration.
 
@@ -766,9 +766,9 @@ Assuming our sample scenario explained above, its value should be
 
 for our example configuration.
 
-:reminder_ribbon: After [download](../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:reminder_ribbon: After [download](./self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
 
-Please note that, you should do this before [register](../self-hosted-runner/installation.md#2-register).
+Please note that, you should do this before [register](./self-hosted-runner/installation.md#2-register).
 
 :::
 
