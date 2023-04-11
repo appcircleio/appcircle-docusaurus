@@ -192,46 +192,6 @@ Then our command to execute will be:
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-:::info
-
-#### Artifact Registry Credentials: Cred.json
-
-Before we configure and run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull docker images for appcircle server services.
-
-Although it's not required immediately at configuration steps, it's required while we're starting appcircle server. Otherwise it can not pull docker images from our artifact registry.
-
-For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash script configures docker engine with appropriate credentials. If you don't have the key file, bash script gives error with a detailed message about the requirement.
-
-When you buy an enterprise license for self-hosted appcircle, you will get a credentials JSON key file which enables you to login our artifact registry. For example, assume our fictive company is Space Tech.
-
-You've got `space-tech-cred.json` key file and dowloaded it into `~/Downloads` folder.
-
-First you need to copy that key file into self-hosted appcircle root directory.
-
-```bash
-cp ~/Downloads/space-tech-cred.json cred.json
-```
-
-After that you can execute below command.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" up
-```
-
-You should see
-
-> "Docker login cred not found. Trying to login now..."
-
-in command output and then
-
-> "Login Succeeded"
-
-which shows us successful artifact registry login.
-
-If you get any error for some reason at this step, you can remove `~/.docker/config` file to reset and execute same command again to retake same steps.
-
-:::
-
 On `ac-self-hosted.sh` execution complete, the folder contains `global.yaml`, `user-secret` files and `export` folder.
 
 ```txt
@@ -575,8 +535,47 @@ Run appcircle server services.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
-
 ```
+
+:::info
+
+#### Artifact Registry Credentials: Cred.json
+
+Before we run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull docker images for appcircle server services.
+
+Although it's not required immediately at configuration steps, it's required while we're starting appcircle server. Otherwise it can not pull docker images from our artifact registry.
+
+For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash script configures docker engine with appropriate credentials. If you don't have the key file, bash script gives error with a detailed message about the requirement.
+
+When you buy an enterprise license for self-hosted appcircle, you will get a credentials JSON key file which enables you to login our artifact registry. For example, assume our fictive company is Space Tech.
+
+You've got `space-tech-cred.json` key file and dowloaded it into `~/Downloads` folder.
+
+First you need to copy that key file into self-hosted appcircle root directory.
+
+```bash
+cp ~/Downloads/space-tech-cred.json cred.json
+```
+
+After that you can execute below command.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+You should see
+
+> "Docker login cred not found. Trying to login now..."
+
+in command output and then
+
+> "Login Succeeded"
+
+which shows us successful artifact registry login.
+
+If you get any error for some reason at this step, you can remove `~/.docker/config` file to reset and execute same command again to retake same steps.
+
+:::
 
 :::info
 
