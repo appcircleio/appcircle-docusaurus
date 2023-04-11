@@ -90,13 +90,13 @@ You need to have the following tools installed on your system:
 Download the latest self-hosted appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.1.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.2.1.zip
 ```
 
 Extract self-hosted appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.1.0.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.2.1.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -191,46 +191,6 @@ Then our command to execute will be:
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
 ```
-
-:::info
-
-#### Artifact Registry Credentials: Cred.json
-
-Before we configure and run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull docker images for appcircle server services.
-
-Although it's not required immediately at configuration steps, it's required while we're starting appcircle server. Otherwise it can not pull docker images from our artifact registry.
-
-For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash script configures docker engine with appropriate credentials. If you don't have the key file, bash script gives error with a detailed message about the requirement.
-
-When you buy an enterprise license for self-hosted appcircle, you will get a credentials JSON key file which enables you to login our artifact registry. For example, assume our fictive company is Space Tech.
-
-You've got `space-tech-cred.json` key file and dowloaded it into `~/Downloads` folder.
-
-First you need to copy that key file into self-hosted appcircle root directory.
-
-```bash
-cp ~/Downloads/space-tech-cred.json cred.json
-```
-
-After that you can execute below command.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" export
-```
-
-You should see
-
-> "Docker login cred not found. Trying to login now..."
-
-in command output and then
-
-> "Login Succeeded"
-
-which shows us successful artifact registry login.
-
-If you get any error for some reason at this step, you can remove `~/.docker/config` file to reset and execute same command again to retake same steps.
-
-:::
 
 On `ac-self-hosted.sh` execution complete, the folder contains `global.yaml`, `user-secret` files and `export` folder.
 
@@ -571,17 +531,51 @@ projects/
     └── user-secret
 ```
 
-Change into the directory that exists `compose.yaml` file.
-
-```bash
-cd projects/spacetech/export
-```
-
 Run appcircle server services.
 
 ```bash
-docker compose up -d
+./ac-self-hosted.sh -n "spacetech" up
 ```
+
+:::info
+
+#### Artifact Registry Credentials: Cred.json
+
+Before we run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull docker images for appcircle server services.
+
+Although it's not required immediately at configuration steps, it's required while we're starting appcircle server. Otherwise it can not pull docker images from our artifact registry.
+
+For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash script configures docker engine with appropriate credentials. If you don't have the key file, bash script gives error with a detailed message about the requirement.
+
+When you buy an enterprise license for self-hosted appcircle, you will get a credentials JSON key file which enables you to login our artifact registry. For example, assume our fictive company is Space Tech.
+
+You've got `space-tech-cred.json` key file and dowloaded it into `~/Downloads` folder.
+
+First you need to copy that key file into self-hosted appcircle root directory.
+
+```bash
+cp ~/Downloads/space-tech-cred.json cred.json
+```
+
+After that you can execute below command.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+You should see
+
+> "Docker login cred not found. Trying to login now..."
+
+in command output and then
+
+> "Login Succeeded"
+
+which shows us successful artifact registry login.
+
+If you get any error for some reason at this step, you can remove `~/.docker/config` file to reset and execute same command again to retake same steps.
+
+:::
 
 :::info
 
@@ -748,7 +742,7 @@ When you complete installation successfully by following above steps, you're rea
 
 But in order to run build pipelines, you need to install and connect self-hosted runners. We have dedicated section for installation and configuration of self-hosted runners.
 
-Follow and apply related guidelines in [here](../self-hosted-runner/installation.md).
+Follow and apply related guidelines in [here](./self-hosted-runner/installation.md).
 
 Self-hosted runner section in docs, has all details about runners and their configuration.
 
@@ -766,9 +760,9 @@ Assuming our sample scenario explained above, its value should be
 
 for our example configuration.
 
-:reminder_ribbon: After [download](../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:reminder_ribbon: After [download](./self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
 
-Please note that, you should do this before [register](../self-hosted-runner/installation.md#2-register).
+Please note that, you should do this before [register](./self-hosted-runner/installation.md#2-register).
 
 :::
 

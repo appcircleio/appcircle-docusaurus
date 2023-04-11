@@ -1,7 +1,7 @@
 {
   "label": "Self-Hosted Runner",
-  "position": 10,
-  "collapsed": false,
-  "collapsible": false,
+  "position": 3,
+  "collapsed": true,
+  "collapsible": true,
   "className": "section-title"
 }
