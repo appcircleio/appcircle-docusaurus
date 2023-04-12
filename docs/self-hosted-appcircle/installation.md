@@ -346,10 +346,15 @@ In this case, before updating initial password in `global.yaml`, you need to **s
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-After updating initial password, to activate changes, you need to do fresh export before running services.
+After updating initial password, to activate changes, you need to do fresh export.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
+```
+
+Now you can run services again. It should complete without any error.
+
+```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
