@@ -591,18 +591,26 @@ So it may need up to ~20 min to system be up according to your internet connecti
 
 :::
 
-If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
+Now you can check system health and gain an overview of the status.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
-If you want to get detailed about docker services, you may run the following commands.
+It will give a quick health summary. You should see below message on success.
+
+```
+ All services are running successfully. Project name is spacetech
+```
+
+If you want to get details about docker services, you may run the following commands.
 
 ```bash
 cd projects/spacetech/export
 docker compose ps
 ```
+
+If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
 
 ![](https://cdn.appcircle.io/docs/assets/be-962-docker-compose-ps.png)
 
