@@ -737,7 +737,6 @@ To begin reconfiguration with data cleanup, use below command while stopping app
 
 ```bash
 /ac-self-hosted.sh -n "spacetech" reset
-
 ```
 
 It will remove all unused local volumes which is useful for a clean start.

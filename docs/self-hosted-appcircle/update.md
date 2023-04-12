@@ -112,7 +112,6 @@ All process is same as in installation, so refer to [DNS settings](./installatio
 
 In order to get docker image updates for appcircle server services, we need to pull them from remote artifact repository.
 
-
 To activate image updates, first stop all running docker containers.
 
 ```bash
@@ -135,17 +134,13 @@ When complete, check service statuses.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
-
 ```
-If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
-
 
 You may also print the image hashes and script's version by using the below command.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" version
 ```
-
 
 :::caution
 
