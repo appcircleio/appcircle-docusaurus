@@ -11,7 +11,7 @@ Depending on which Xcode version you select, Appcircle creates a brand new virtu
 - If your selected pool from config is "Default Intel Pool", virtual machine will be macOS Monterey `v.12.5.1 `.
 - If your selected pool from config is "Default M1 Pool", virtual machine will be macOS Monterey `v.12.6`.
 
-macOS images run on a fresh Docker environment for stability and performance. They are created just for your build and become ready within seconds.
+macOS images run on a fresh virtual machines for stability and performance. They are created just for your build and become ready within seconds.
 
 During the build process, you can install any dependencies and run commands using "custom script" steps in the build workflow. This gives you complete control over your build and the virtual machine.
 

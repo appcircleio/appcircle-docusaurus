@@ -112,71 +112,40 @@ All process is same as in installation, so refer to [DNS settings](./installatio
 
 In order to get docker image updates for appcircle server services, we need to pull them from remote artifact repository.
 
-`projects/your-project/export` path has all the exported envrionment for self-hosted appcircle services along with `compose.yaml`. For example,
-
-```text
-projects/
-└── spacetech
-    ├── export
-    │   ├── agent-cache
-    │   ├── api-gateway
-    │   ├── build
-    │   ├── common.env
-    │   ├── compose.yaml
-    │   ├── distribution
-    │   ├── keycloak
-    │   ├── keycloak-migration
-    │   ├── license
-    │   ├── minio
-    │   ├── mongo
-    │   ├── nginx
-    │   ├── notification
-    │   ├── postgres
-    │   ├── report
-    │   ├── rijndael
-    │   ├── signing-identity
-    │   ├── store
-    │   ├── store-submit
-    │   ├── tester-web
-    │   ├── vault
-    │   ├── webApp
-    │   └── webhook
-    ├── generated-secret.yaml
-    ├── global.yaml
-    └── user-secret
-```
-
-Change into the directory that exists `compose.yaml` file.
-
-```bash
-cd projects/spacetech/export
-```
-
-Pull docker images.
-
-```bash
-docker compose pull
-```
 
 To activate image updates, first stop all running docker containers.
 
 ```bash
-docker compose down
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+Upgrade images.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" upgrade
 ```
 
 Then start with below command.
 
 ```bash
-docker compose up -d
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 When complete, check service statuses.
 
 ```bash
-docker compose ps
+./ac-self-hosted.sh -n "spacetech" check
+
+```
+If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
+
+
+You may also print the image hashes and script's version by using the below command.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" version
 ```
 
-If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
 
 :::caution
 
