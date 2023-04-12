@@ -343,13 +343,19 @@ service "keycloak_migration" didn't completed successfully: exit 1
 In this case, before updating initial password in `global.yaml`, you need to **stop** partially started docker services with below command. See [reset configuration](./installation.md#reset-configuration) section for more details.
 
 ```bash
-docker compose down -v
+./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-After updating initial password, to activate changes, you need to do fresh export before running services.
+After updating initial password, to activate changes, you need to do fresh export.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
+```
+
+Now you can run services again. It should complete without any error.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 :::
@@ -585,11 +591,26 @@ So it may need up to ~20 min to system be up according to your internet connecti
 
 :::
 
-If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
+Now you can check system health and gain an overview of the status.
 
 ```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+It will give a quick health summary. You should see below message on success.
+
+```
+ All services are running successfully. Project name is spacetech
+```
+
+If you want to get details about docker services, you may run the following commands.
+
+```bash
+cd projects/spacetech/export
 docker compose ps
 ```
+
+If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
 
 ![](https://cdn.appcircle.io/docs/assets/be-962-docker-compose-ps.png)
 
@@ -608,7 +629,7 @@ While you're working on configuration back and forth, it's status may become `un
 In this case, stop all services with data cleanup.
 
 ```bash
-docker compose down -v
+./ac-self-hosted.sh -n "spacetech" reset
 ```
 
 Then make a new export and start services. Refer to [reset configuration](./installation.md#reset-configuration) section for more details.
@@ -666,23 +687,21 @@ If you have made a mistake at installation steps, especially at configuration, y
 
 All configuration updates requires appcircle server restart. So resetting configuration should start with stopping appcircle server.
 
-Change into the export directory which has `compose.yaml` file.
-
-```bash
-cd projects/spacetech/export
-```
-
 Stop appcircle server services.
 
 ```bash
-docker compose down
+./ac-self-hosted.sh -n "spacetech" down
 ```
 
-On complete, you can check list of running services with command below. Its response should be empty.
+On complete, you can check list of running services with command below.
 
 ```bash
-docker compose ps
+./ac-self-hosted.sh -n "spacetech" check
 ```
+
+Its response should be something like below.
+
+`WARNING:Services are not started. Project name is spacetech`
 
 Then go back to your configuration and change settings as done previously at [configure](./installation.md#3-configure) step.
 
@@ -700,16 +719,10 @@ For our example scenario, root directory is `appcircle-server` as seen [here](./
 
 Now you are ready to restart self-hosted appcircle.
 
-Change into the directory that exists `compose.yaml` file.
-
-```bash
-cd projects/spacetech/export
-```
-
 Run appcircle server services.
 
 ```bash
-docker compose up -d
+/ac-self-hosted.sh -n "spacetech" up
 ```
 
 :::caution
@@ -723,16 +736,10 @@ So, we suggest you to be sure with your configuration before using it in product
 To begin reconfiguration with data cleanup, use below command while stopping appcircle server.
 
 ```bash
-docker compose down -v
+/ac-self-hosted.sh -n "spacetech" reset
 ```
 
-It will print removed volumes at command output.
-
-Below command will remove all unused local volumes which is useful for a clean start.
-
-```bash
-docker volume prune -f
-```
+It will remove all unused local volumes which is useful for a clean start.
 
 :::
 
