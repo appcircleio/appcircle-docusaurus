@@ -687,7 +687,6 @@ If you have made a mistake at installation steps, especially at configuration, y
 
 All configuration updates requires appcircle server restart. So resetting configuration should start with stopping appcircle server.
 
-
 Stop appcircle server services.
 
 ```bash
@@ -700,10 +699,9 @@ On complete, you can check list of running services with command below.
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
- Its response should be something like below.
+Its response should be something like below.
 
- `WARNING:Services are not started. Project name is spacetech`
-
+`WARNING:Services are not started. Project name is spacetech`
 
 Then go back to your configuration and change settings as done previously at [configure](./installation.md#3-configure) step.
 
