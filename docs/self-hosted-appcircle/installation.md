@@ -592,6 +592,13 @@ If everything is okay, then you should see service statuses as "running", "runni
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
+If you want to get detailed about docker services, you may run the following commands.
+
+```bash
+cd projects/spacetech/export
+docker compose ps
+```
+
 ![](https://cdn.appcircle.io/docs/assets/be-962-docker-compose-ps.png)
 
 :::caution
