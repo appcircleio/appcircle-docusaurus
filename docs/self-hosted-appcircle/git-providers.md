@@ -100,7 +100,7 @@ Following steps are using example project as project naming, which was told ther
 1. Shutdown appcircle server.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech" down"
+./ac-self-hosted.sh -n "spacetech" down
 ```
 
 2. Apply configuration changes.
@@ -113,7 +113,6 @@ Following steps are using example project as project naming, which was told ther
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
-
 ```
 
 On complete, refresh your browser and login to appcircle with your account. You should see new git providers on repository connection page. :tada:
