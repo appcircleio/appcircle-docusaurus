@@ -314,3 +314,28 @@ You should use the full certificate chain for `publicKey` similar to main domain
 For now, self-hosted appcircle does not support usage of password protected private keys for Enterprise App Store custom domains.
 
 :::
+
+### External Services
+
+If you are using external services that have self-signed SSL certificates, you will need to add their public certificate to the `global.yaml` file.. You can add **multiple** certificates to the `ca` section. If you are using multiple services, you will need to add each certificate to this section. When editing the yaml file, pay close attention to the indentation to ensure the file is properly formatted.
+
+```yaml
+
+external:
+  scheme: https
+  mainDomain: ".appcircle.spacetech.com"
+  ca: |
+    -----BEGIN CERTIFICATE-----
+    MIIEvTCCAyWgAwIBAgIQNVqUQw+7fmeXJBAtns5HyjANBgkqhkiG9w0BAQsFADB3
+    MR4wHAYDVQQKExVta2NlcnQgZGV2ZWxvcG1lbnQgQ0ExJjAkBgNVBAsMHW9zYm94
+    ...
+    nLRbwHOoq7hHwg==
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+    MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+    ...
+    Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+    -----END CERTIFICATE-----
+
+```
