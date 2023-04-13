@@ -614,6 +614,25 @@ If everything is okay, then you should see service statuses as "running", "runni
 
 ![](https://cdn.appcircle.io/docs/assets/be-962-docker-compose-ps.png)
 
+### Docker Registry
+
+If your organization uses another registry(harbor, nexus) to clone Appcircle images, you need to add your registry to the `global.yaml` file. 
+
+```yaml
+image:
+  registry:
+    url: europe-west1-docker.pkg.dev/appcircle/docker-registry
+    username: 
+    password:
+    requiredLogin: true
+```
+
+- `url`: Registry URL.
+- `username`: Username of the registry.
+- `password`: Password of the registry.
+- `requiredLogin`: If this variable is set to true, the script will use the `username` and `password` variables to login to the registry. If the end-user is logged in to his artifact registry manually, then this variable should be false.
+
+
 :::caution
 
 #### Vault
