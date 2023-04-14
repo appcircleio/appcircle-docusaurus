@@ -618,10 +618,78 @@ If everything is okay, then you should see service statuses as "running", "runni
 
 If your organization uses another registry(harbor, nexus) to clone Appcircle images, you need to add your registry to the `global.yaml` file. 
 
+**Mirroring Appcircle Images**
+
+To use your local registry, you must download Appcircle's Docker images to your local repository. Follow the below steps to push Appcircle's Docker images to your registry.
+
+- Transfer `cred.json` file to a server which has access to Appcircle's docker registry.
+- Login to Appcircle's registry
+
+```bash
+cat cred.json | docker login -u _json_key --password-stdin  europe-west1-docker.pkg.dev/appcircle/docker-registry
+```
+
+You should see `Login Succeeded` message 
+
+- Pull images from Appcircle's registry and push to your registry. If your registry is at  `reg.appcircle.spacetech.com/appcircle` you can use below bash script to pull images. Run this script in a folder which has **docker-images.txt** file. This file has the name of the images. You can find this file inside Appcircle's Self-Hosted package.
+
+```bash
+#!/bin/bash
+
+# Set the source registry URL
+SRC_REGISTRY_URL="europe-west1-docker.pkg.dev/appcircle/docker-registry"
+
+# Set the destination registry URL
+DEST_REGISTRY_URL="reg.appcircle.spacetech.com/appcircle"
+
+# Loop through each line of the file and pull, tag, and push the Docker image
+while read IMAGE_NAME; do
+    echo "Pulling image: $IMAGE_NAME"
+    docker pull $IMAGE_NAME
+    if [ $? -eq 0 ]; then
+        echo "Image pulled successfully: $IMAGE_NAME"
+        # Replace source registry URL  with the new registry URL
+        IMAGE_TAG="${IMAGE_NAME/$SRC_REGISTRY_URL/$DEST_REGISTRY_URL}"
+        # Tag the image with the destination registry URL and repository name
+        docker tag $IMAGE_NAME $IMAGE_TAG
+        # Push the tagged image to the destination registry
+        docker push $IMAGE_TAG
+        if [ $? -eq 0 ]; then
+            echo "Image pushed successfully: $IMAGE_NAME"
+        else
+            echo "Failed to push image: $IMAGE_NAME"
+        fi
+    else
+        echo "Failed to pull image: $IMAGE_NAME"
+    fi
+done < docker-images.txt
+```
+
+
+:::info
+
+If your registry is not using `https`, you may get an error during docker push step. You need to add your registry as insecure registry. Edit the `daemon.json` file, whose default location is `/etc/docker/daemon.json` on Linux.
+
+If the daemon.json file does not exist, create it. Assuming there are no other settings in the file, it should have the following contents:
+
+```json
+{
+  "insecure-registries" : ["http://reg.appcircle.spacetech.com"]
+}
+```
+
+After this modification, restart docker or server to apply new settings.
+
+:::
+
+
+- After you mirrored Appcircle's images to your registry, you need to write the same registry address(**reg.appcircle.spacetech.com/appcircle**) to your global.yaml file
+
+
 ```yaml
 image:
   registry:
-    url: europe-west1-docker.pkg.dev/appcircle/docker-registry
+    url: reg.appcircle.spacetech.com/appcircle
     username: 
     password:
     requiredLogin: true
@@ -631,6 +699,18 @@ image:
 - `username`: Username of the registry.
 - `password`: Password of the registry.
 - `requiredLogin`: If this variable is set to true, the script will use the `username` and `password` variables to login to the registry. If the end-user is logged in to his artifact registry manually, then this variable should be false.
+
+- Create new export 
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Run appcircle server services.
+
+```bash
+/ac-self-hosted.sh -n "spacetech" up
+```
 
 
 :::caution
