@@ -7,6 +7,7 @@ sidebar_position: 2
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ContentRef from '@site/src/components/ContentRef';
 
 # Prerequisites
 
@@ -72,6 +73,14 @@ docker exec -it systemd-ubuntu /bin/bash
 From now on, you will follow same installation steps seen below as other environments.
 
 :::
+
+### Self-Signed Certificates
+
+If you're using self-signed certificates, you need to follow the below document to add your certificates to runners.
+
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner/custom-certificates">
+  Self-Signed Certificates
+</ContentRef>
 
 ## Installation
 
