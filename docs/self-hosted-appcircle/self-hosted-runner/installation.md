@@ -74,14 +74,6 @@ From now on, you will follow same installation steps seen below as other environ
 
 :::
 
-### Self-Signed Certificates
-
-If you're using self-signed certificates, you need to follow the below document to add your certificates to runners.
-
-<ContentRef url="/self-hosted-appcircle/self-hosted-runner/custom-certificates">
-  Self-Signed Certificates
-</ContentRef>
-
 ## Installation
 
 Adding a self-hosted runner requires that you download, register and configure Appcircle runner in your environment.
@@ -236,6 +228,14 @@ Let's assume, you installed iOS platform tools at first with `-o ios` and then w
 Using `-o android` in this case will be wrong argument. You must use `-o ios,android` for this purpose.
 
 :::
+
+#### Self-Signed Certificates
+
+If you're using self-signed certificates, you need to follow the below document to add your certificates to runners.
+
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner/custom-certificates">
+  Self-Signed Certificates
+</ContentRef>
 
 ### 4. Run Service
 
