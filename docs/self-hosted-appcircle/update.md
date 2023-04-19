@@ -25,6 +25,20 @@ Below steps does not affect or destroy your data. Update process keeps your data
 
 :::
 
+:::info
+
+To determine the current version of either a project or the script itself, use the version command provided with the script. This will display the script version and any docker image hashes associated with the project. If no docker images are found, the command will output script version only.
+
+Note that a project name is required to execute the version command.
+
+For example, to find the version for a project named "spacetech", run the following command:
+
+```bash
+./ac-self-hosted.sh -n "spacetech" version
+```
+
+:::
+
 ### 1. Download Latest
 
 Download the latest self-hosted appcircle package.
