@@ -31,6 +31,8 @@ To determine the current version of either a project or the script itself, use t
 
 Note that a project name is required to execute the version command.
 
+Also Note that you'll need to have Docker Compose version 2.14.1 or later installed in order to use the version command.
+
 For example, to find the version for a project named "spacetech", run the following command:
 
 ```bash
