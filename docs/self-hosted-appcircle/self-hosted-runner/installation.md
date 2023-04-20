@@ -73,6 +73,16 @@ From now on, you will follow same installation steps seen below as other environ
 
 :::
 
+:::tip
+
+#### macOS VM
+
+Appcircle provides ready-to-use macOS VM image especially for enterprise installations. It can be run on macOS Monterey or Ventura `arm64` host.
+
+See details in [here](https://cdn.appcircle.io/docs/assets/how-to-operate-macos-vm-0dd0dc9.pdf).
+
+:::
+
 ## Installation
 
 Adding a self-hosted runner requires that you download, register and configure Appcircle runner in your environment.
