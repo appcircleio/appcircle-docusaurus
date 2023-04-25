@@ -314,7 +314,7 @@ storeWeb:
 For our example, we configured below values:
 
 - `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
-- `external.mainDomain` is set as a subdomain of our example company's main domain.
+- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](./installation.md#4-dns-settings) for more details.
 - `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
@@ -807,6 +807,24 @@ Its response should be something like below.
 
 `WARNING:Services are not started. Project name is spacetech`
 
+:::caution
+
+Some configuration changes may require data cleanup with extra steps which means data loss if you use appcircle server for some time.
+
+For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.xxxx` settings requires docker volume prune which results with data cleanup.
+
+So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
+
+To begin reconfiguration with data cleanup, use below command while stopping appcircle server.
+
+```bash
+/ac-self-hosted.sh -n "spacetech" reset
+```
+
+It will remove all unused local volumes which is useful for a clean start.
+
+:::
+
 Then go back to your configuration and change settings as done previously at [configure](./installation.md#3-configure) step.
 
 When you're ready for a new export, in root directory execute below command again as done previously.
@@ -828,24 +846,6 @@ Run appcircle server services.
 ```bash
 /ac-self-hosted.sh -n "spacetech" up
 ```
-
-:::caution
-
-Some configuration changes may require data cleanup with extra steps which means data loss if you use appcircle server for some time.
-
-For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" requires docker volume prune which results with data cleanup.
-
-So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
-
-To begin reconfiguration with data cleanup, use below command while stopping appcircle server.
-
-```bash
-/ac-self-hosted.sh -n "spacetech" reset
-```
-
-It will remove all unused local volumes which is useful for a clean start.
-
-:::
 
 ## Connecting Runners
 
