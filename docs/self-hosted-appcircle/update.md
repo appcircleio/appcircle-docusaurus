@@ -1,5 +1,5 @@
 ---
-title: Update
+title: Update Server
 metaTitle: Update Self-hosted Appcircle
 metaDescription: Update Self-hosted Appcircle
 sidebar_position: 3

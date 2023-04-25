@@ -1,7 +1,7 @@
 ---
-title: Add Self-hosted Runner
-metaTitle: Add Self-hosted Runner
-metaDescription: Add Self-hosted Runner
+title: Install Runner
+metaTitle: Install Runner
+metaDescription: Install Runner
 sidebar_position: 2
 ---
 
@@ -16,7 +16,7 @@ The following operating systems are supported for the self-hosted runner.
 
 - Ubuntu 20.04 or later
 - Debian 11 or later
-  
+
 **MacOS**
 
 - MacOS 11 (Big Sur) or later
@@ -25,7 +25,7 @@ The following processor architectures are supported for operating systems.
 
 - `x64` Linux, macOS
 - `arm64` macOS only
-  
+
 To install and execute runner, you will need to have root access. Being able to run `sudo` (sudoer) is sufficient for runner operations.
 
 Also you need to have the following tools installed on your system:
@@ -40,7 +40,7 @@ Minimum hardware requirements for self-hosted runner can be:
 - 100GB or more free disk space
 - 2 or more cores CPU (x64, arm64)
 - 8 gigabytes (GB) or more RAM
-  
+
 Minimum required disk space should be enough both for iOS and android platforms. But that value is only for one Xcode version. According to your selection of Xcode versions you need more disk space for successful installation.
 
 :::info
@@ -84,26 +84,26 @@ Download the latest self-hosted runner package.
 <Tabs>
   <TabItem value="osx-x64" label="macOS x64" default>
 
-   ```bash
+```bash
 curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.3.11.zip
 ```
 
 Extract self-hosted runner package.
 
-   ```bash
+```bash
 unzip -o -u appcircle-runner-osx-x64-1.3.11.zip
 ```
 
   </TabItem>
   <TabItem value="osx-arm64" label="macOS arm64">
 
-   ```bash
+```bash
 curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.3.11.zip
 ```
 
 Extract self-hosted runner package.
 
-   ```bash
+```bash
 unzip -o -u appcircle-runner-osx-arm64-1.3.11.zip
 ```
 
@@ -111,13 +111,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.3.11.zip
 
   <TabItem value="linux-x64" label="Linux x64">
 
-   ```bash
+```bash
 curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.3.11.zip
 ```
 
 Extract self-hosted runner package.
 
-   ```bash
+```bash
 unzip -o -u appcircle-runner-linux-x64-1.3.11.zip
 ```
 
