@@ -1,7 +1,7 @@
 ---
-title: Manage Self-hosted Pools
-metaTitle: Manage Self-hosted Pools
-metaDescription: Manage Self-hosted Pools
+title: Manage Pools
+metaTitle: Manage Pools
+metaDescription: Manage Pools
 sidebar_position: 4
 ---
 

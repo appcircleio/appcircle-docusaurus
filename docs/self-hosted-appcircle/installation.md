@@ -1,5 +1,5 @@
 ---
-title: Install
+title: Install Server
 metaTitle: Install Self-hosted Appcircle
 metaDescription: Install Self-hosted Appcircle
 sidebar_position: 2
@@ -226,10 +226,10 @@ If you want a secret used from `global.yaml`, then it should not be in `user-sec
 ```yaml
 ---
 environment: Production
-enableErrorHandling: "true"
+enableErrorHandling: 'true'
 external:
   scheme: https
-  mainDomain: ".example.com"
+  mainDomain: '.example.com'
 
 smtpServer:
   user:
@@ -275,11 +275,11 @@ As an example, we can change some variables like below according to our fictive 
 ```yaml
 ---
 environment: Production
-enableErrorHandling: "true"
+enableErrorHandling: 'true'
 external:
   scheme: http
-  mainDomain: ".appcircle.spacetech.com"
-  
+  mainDomain: '.appcircle.spacetech.com'
+
 smtpServer:
   user: o***y*****@v******.net
   from: o***y*****@v******.net
@@ -314,9 +314,9 @@ storeWeb:
 For our example, we configured below values:
 
 - `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
-- `external.mainDomain` is set as a subdomain of our example company's main domain.
+- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](./installation.md#4-dns-settings) for more details.
 - `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
-- `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`.  We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
+- `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
 
 :::caution
@@ -401,9 +401,9 @@ base64 -d projects/spacetech/user-secret
 
 ```yaml
 smtpServer:
-  password: 
+  password:
 keycloak:
-  initialPassword: 
+  initialPassword:
 ```
 
 If you prefer defining above variables in `global.yaml`, then they should not be in `user-secret`.
@@ -624,7 +624,7 @@ Vault is a tool for securely accessing secrets. It's an important and required s
 
 For this reason, **before starting to use self-hosted appcircle server** within your organization, make sure you check **vault service** status in container list above. Its **status must be `healthy`**.
 
-While you're working on configuration back and forth, it's status may become `unhealthy` in some way. 
+While you're working on configuration back and forth, it's status may become `unhealthy` in some way.
 
 In this case, stop all services with data cleanup.
 
@@ -720,7 +720,7 @@ If the daemon.json file does not exist, create it. Assuming there are no other s
 
 ```json
 {
-  "insecure-registries" : ["http://reg.appcircle.spacetech.com"]
+  "insecure-registries": ["http://reg.appcircle.spacetech.com"]
 }
 ```
 
@@ -807,6 +807,24 @@ Its response should be something like below.
 
 `WARNING:Services are not started. Project name is spacetech`
 
+:::caution
+
+Some configuration changes may require data cleanup with extra steps which means data loss if you use appcircle server for some time.
+
+For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.*` settings requires docker volume prune which results with data cleanup.
+
+So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
+
+To begin reconfiguration with data cleanup, use below command while stopping appcircle server.
+
+```bash
+/ac-self-hosted.sh -n "spacetech" reset
+```
+
+It will remove all unused local volumes which is useful for a clean start.
+
+:::
+
 Then go back to your configuration and change settings as done previously at [configure](./installation.md#3-configure) step.
 
 When you're ready for a new export, in root directory execute below command again as done previously.
@@ -828,24 +846,6 @@ Run appcircle server services.
 ```bash
 /ac-self-hosted.sh -n "spacetech" up
 ```
-
-:::caution
-
-Some configuration changes may require data cleanup with extra steps which means data loss if you use appcircle server for some time.
-
-For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" requires docker volume prune which results with data cleanup.
-
-So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
-
-To begin reconfiguration with data cleanup, use below command while stopping appcircle server.
-
-```bash
-/ac-self-hosted.sh -n "spacetech" reset
-```
-
-It will remove all unused local volumes which is useful for a clean start.
-
-:::
 
 ## Connecting Runners
 

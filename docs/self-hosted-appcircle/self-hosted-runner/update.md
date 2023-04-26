@@ -1,7 +1,7 @@
 ---
-title: Update Self-hosted Runner
-metaTitle: Update Self-hosted Runner
-metaDescription: Update Self-hosted Runner
+title: Update Runner
+metaTitle: Update Runner
+metaDescription: Update Runner
 sidebar_position: 6
 ---
 
@@ -19,26 +19,26 @@ Download and extract the latest self-hosted runner package.
 <Tabs>
   <TabItem value="osx-x64" label="macOS x64" default>
 
-   ```bash
+```bash
 curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.3.11.zip
 ```
 
 Extract self-hosted runner package.
 
-   ```bash
+```bash
 unzip -o -u appcircle-runner-osx-x64-1.3.11.zip
 ```
 
   </TabItem>
   <TabItem value="osx-arm64" label="macOS arm64">
 
-   ```bash
+```bash
 curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.3.11.zip
 ```
 
 Extract self-hosted runner package.
 
-   ```bash
+```bash
 unzip -o -u appcircle-runner-osx-arm64-1.3.11.zip
 ```
 
@@ -46,13 +46,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.3.11.zip
 
   <TabItem value="linux-x64" label="Linux x64">
 
-   ```bash
+```bash
 curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.3.11.zip
 ```
 
 Extract self-hosted runner package.
 
-   ```bash
+```bash
 unzip -o -u appcircle-runner-linux-x64-1.3.11.zip
 ```
 

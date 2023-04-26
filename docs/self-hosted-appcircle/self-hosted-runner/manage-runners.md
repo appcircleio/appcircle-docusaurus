@@ -1,7 +1,7 @@
 ---
-title: Manage Self-hosted Runners
-metaTitle: Manage Self-hosted Runners
-metaDescription: Manage Self-hosted Runners
+title: Manage Runners
+metaTitle: Manage Runners
+metaDescription: Manage Runners
 sidebar_position: 3
 ---
 
