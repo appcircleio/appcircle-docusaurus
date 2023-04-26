@@ -811,7 +811,7 @@ Its response should be something like below.
 
 Some configuration changes may require data cleanup with extra steps which means data loss if you use appcircle server for some time.
 
-For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.xxxx` settings requires docker volume prune which results with data cleanup.
+For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.*` settings requires docker volume prune which results with data cleanup.
 
 So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
 
