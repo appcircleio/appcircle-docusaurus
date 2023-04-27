@@ -25,7 +25,6 @@ You will then see that Slack is connected. To manage the notification settings o
 
 ![](<https://cdn.appcircle.io/docs/assets/image (135).png>)
 
-###
 
 ### Setting Up Module-Based Notifications in the Slack Settings
 
