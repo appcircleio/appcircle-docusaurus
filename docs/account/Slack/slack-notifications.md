@@ -2,7 +2,7 @@
 title: Slack Notifications
 metaTitle: Slack Notifications
 metaDescription: Slack Notifications
-sidebar_position: 8
+sidebar_position: 1
 ---
 
 import NarrowImage from '@site/src/components/NarrowImage';
@@ -13,7 +13,7 @@ Appcircle supports sending notifications to Slack for the major events in all mo
 
 ### Connecting Appcircle to Slack
 
-An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](./my-organization.md) screen and press the "Connect" button next to Slack under the "Connections" section.
+An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](../my-organization.md) screen and press the "Connect" button next to Slack under the "Connections" section.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (64).png>)
 
@@ -25,7 +25,6 @@ You will then see that Slack is connected. To manage the notification settings o
 
 ![](<https://cdn.appcircle.io/docs/assets/image (135).png>)
 
-###
 
 ### Setting Up Module-Based Notifications in the Slack Settings
 
