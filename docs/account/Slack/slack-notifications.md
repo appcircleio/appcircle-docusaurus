@@ -2,7 +2,7 @@
 title: Slack Notifications
 metaTitle: Slack Notifications
 metaDescription: Slack Notifications
-sidebar_position: 8
+sidebar_position: 1
 ---
 
 import NarrowImage from '@site/src/components/NarrowImage';
