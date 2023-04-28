@@ -11,6 +11,23 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.3.0 - 2023-04-27 - Data Theorem Mobile Secure, App Center CodePush
+
+### 🆕 New Feature
+- [Data Theorem Mobile Secure](../workflows/common-workflow-steps.md#data-theorem-mobile-secure) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center CodePush](../workflows/react-native-specific-workflow-steps.md#app-center-codepush) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- Latest five build status added to build profile. <CloudBadge/> <SelfHostedBadge/>
+- [Slack Bot](../account/slack/appcircle-slack-bot.md) added. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+- SVG images are updated <CloudBadge/> <SelfHostedBadge/>
+- Build profile card design is improved. <CloudBadge/> <SelfHostedBadge/>
+- Color scheme and icons are updated for dark themes. <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixed
+- [Huawei AppGallery](../store-submit/huawei-app-gallery.md) submission bug fixed.  <SelfHostedBadge/>
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) 2FA localization bug fixed. <SelfHostedBadge/>
+
 ## 3.2.0 - 2023-04-07 - Resign, Sub Organizations
 
 ### 🆕 New Feature

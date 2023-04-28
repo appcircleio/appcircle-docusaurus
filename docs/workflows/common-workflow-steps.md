@@ -162,3 +162,9 @@ https://github.com/appcircleio/appcircle-testinium-component
 This component uploasd both your app binary and flows to Maestro Cloud.
 
 https://github.com/appcircleio/appcircle-maestro-cloud-upload-component
+
+## Data Theorem Mobile Secure
+
+This component scans your app using Mobile Secure
+
+https://github.com/appcircleio/appcircle-datatheorem-component
