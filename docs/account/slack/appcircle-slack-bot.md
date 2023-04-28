@@ -11,7 +11,11 @@ import NarrowImage from '@site/src/components/NarrowImage';
 
 Appcircle supports some operations such as `start build`, which you can do in [appcircle.io](https://my.appcircle.io/), with the help of `Appcircle Slack Bot`. By adding the `Appcircle Bot` to your Slack workspace, you can streamline your CI/CD pipeline using specific commands in selected channels.
 
-**Note:** There is currently no Slack integration available on the self-hosted Appcircle. However, we are actively working on it and it will be available for use on the self-hosted Appcircle in the near future.
+:::info
+
+There is currently no Slack integration available on the self-hosted Appcircle. However, we are actively working on it and it will be available for use on the self-hosted Appcircle in the near future.
+
+:::
 
 ### Adding Appcircle Bot to Slack
 
