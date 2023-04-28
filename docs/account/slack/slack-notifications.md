@@ -11,6 +11,12 @@ import NarrowImage from '@site/src/components/NarrowImage';
 
 Appcircle supports sending notifications to Slack for the major events in all modules. You can connect Appcircle to your Slack workspace to set up module based event notifications to be sent to the selected channels.
 
+:::info
+
+There is currently no Slack integration available on the self-hosted Appcircle. However, we are actively working on it and it will be available for use on the self-hosted Appcircle in the near future.
+
+:::
+
 ### Connecting Appcircle to Slack
 
 An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](../my-organization.md) screen and press the "Connect" button next to Slack under the "Connections" section.
