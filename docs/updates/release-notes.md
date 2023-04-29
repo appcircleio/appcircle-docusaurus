@@ -23,6 +23,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - SVG images are updated <CloudBadge/> <SelfHostedBadge/>
 - Build profile card design is improved. <CloudBadge/> <SelfHostedBadge/>
 - Color scheme and icons are updated for dark themes. <CloudBadge/> <SelfHostedBadge/>
+- Lots of UI and text improvements were made for better UX. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 - [Huawei AppGallery](../store-submit/huawei-app-gallery.md) submission bug fixed.  <SelfHostedBadge/>
