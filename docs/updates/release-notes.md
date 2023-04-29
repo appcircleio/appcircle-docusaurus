@@ -27,6 +27,12 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### 🐞 Fixed
 - [Huawei AppGallery](../store-submit/huawei-app-gallery.md) submission bug fixed.  <SelfHostedBadge/>
 - [Enterprise Store](../enterprise-appstore/customize-ent-store.md) 2FA localization bug fixed. <SelfHostedBadge/>
+- Fixed a bug that makes users unable to login to the enterprise app store in some cases. <CloudBadge/>
+- Fixed a bug that gives an unexpected error on project `export` on self-hosted server installations. <SelfHostedBadge/>
+- Fixed a bug that gives an unexpected error on project `up` when there is no vault image in the system. <SelfHostedBadge/>
+- The default license duration for the self-hosted package is updated to 3 months for demo use cases. <SelfHostedBadge/>
+- Fixed broken tag triggers which was missing to start build on some cases.  <CloudBadge/> <SelfHostedBadge/>
+- Store submit workflows are updated for the latest Fastlane version. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.2.0 - 2023-04-07 - Resign, Sub Organizations
 
