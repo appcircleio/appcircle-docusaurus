@@ -26,7 +26,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🐞 Fixed
 - [Huawei AppGallery](../store-submit/huawei-app-gallery.md) submission bug fixed.  <SelfHostedBadge/>
-- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) 2FA localization bug fixed. <SelfHostedBadge/>
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) The background image bug was fixed on the login page. <SelfHostedBadge/>
 - Fixed a bug that makes users unable to login to the enterprise app store in some cases. <CloudBadge/>
 - Fixed a bug that gives an unexpected error on project `export` on self-hosted server installations. <SelfHostedBadge/>
 - Fixed a bug that gives an unexpected error on project `up` when there is no vault image in the system. <SelfHostedBadge/>
