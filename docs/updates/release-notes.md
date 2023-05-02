@@ -11,6 +11,30 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.3.0 - 2023-04-27 - Data Theorem Mobile Secure, App Center CodePush
+
+### 🆕 New Feature
+- [Data Theorem Mobile Secure](../workflows/common-workflow-steps.md#data-theorem-mobile-secure) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center CodePush](../workflows/react-native-specific-workflow-steps.md#app-center-codepush) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- Latest five build status added to build profile. <CloudBadge/> <SelfHostedBadge/>
+- [Slack Bot](../account/slack/appcircle-slack-bot.md) added. <CloudBadge/>
+
+### :muscle: Improvement
+- SVG images are updated <CloudBadge/> <SelfHostedBadge/>
+- Build profile card design is improved. <CloudBadge/> <SelfHostedBadge/>
+- Color scheme and icons are updated for dark themes. <CloudBadge/> <SelfHostedBadge/>
+- Lots of UI and text improvements were made for better UX. <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixed
+- [Huawei AppGallery](../store-submit/huawei-app-gallery.md) submission bug fixed.  <SelfHostedBadge/>
+- [Enterprise Store](../enterprise-appstore/customize-ent-store.md) The background image bug was fixed on the login page. <SelfHostedBadge/>
+- Fixed a bug that makes users unable to login to the enterprise app store in some cases. <CloudBadge/>
+- Fixed a bug that gives an unexpected error on project `export` on self-hosted server installations. <SelfHostedBadge/>
+- Fixed a bug that gives an unexpected error on project `up` when there is no vault image in the system. <SelfHostedBadge/>
+- The default license duration for the self-hosted package is updated to 3 months for demo use cases. <SelfHostedBadge/>
+- Fixed broken tag triggers which was missing to start build on some cases.  <CloudBadge/> <SelfHostedBadge/>
+- Store submit workflows are updated for the latest Fastlane version. <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.2.0 - 2023-04-07 - Resign, Sub Organizations
 
 ### 🆕 New Feature

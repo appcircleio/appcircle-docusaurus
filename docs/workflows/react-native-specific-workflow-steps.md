@@ -22,5 +22,9 @@ You may want to use npm or Yarn package manager to install specific dependencies
 
 [https://github.com/appcircleio/appcircle-npm-yarn-component](https://github.com/appcircleio/appcircle-npm-yarn-component)
 
+## App Center CodePush
 
+Release a React Native update to [App Center](https://appcenter.ms/) CodePush. You need enter your token, owner, app name to distribute your updates.
+
+[https://github.com/appcircleio/appcenter-codepush-component](https://github.com/appcircleio/appcenter-codepush-component)
 
