@@ -764,7 +764,7 @@ To use Sonatype Nexus as your proxy registry, you should follow the below steps.
 - Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
 - For the authentication section, should you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file.
 - For ssl, the recommended way is to use reverse proxy.
-- After you created the repository, you should add the below section to the `global.yaml` file with your repository url, username and password.
+- After you created the repository, you should add the below section to the `global.yaml` file with your `nexus repository url`, `nexus username` and `nexus password`. If you can access your nexus repository without authentication, you can leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
 
 ```yaml
 image:
@@ -777,7 +777,7 @@ image:
 
 :::info
 
-- The end of the repository url in `global.yaml` should be /appcircle/docker-registry to proxy Appcircle's registry.
+- The end of the repository url in `global.yaml` should be `/appcircle/docker-registry` to proxy Appcircle's registry.
 
 :::
 
