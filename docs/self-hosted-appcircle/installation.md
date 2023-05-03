@@ -755,6 +755,40 @@ image:
 /ac-self-hosted.sh -n "spacetech" up
 ```
 
+##### Using Sonatype Nexus as Proxy Registry
+
+To use Sonatype Nexus as your proxy registry, you should follow the below steps.
+
+- Create a new repository in Nexus with the type of `docker (proxy)`.
+- Set the `Registry Name` name and `port` as your wish.
+- Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
+- For the authentication section, should you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file.
+- For ssl, the recommended way is to use reverse proxy.
+- After you created the repository, you should add the below section to the `global.yaml` file with your repository url, username and password.
+
+```yaml
+image:
+  registry:
+    url: reg.appcircle.spacetech.com:8443/appcircle/docker-registry
+    username:
+    password:
+    requiredLogin: true
+```
+
+:::info
+
+- The end of the repository url in `global.yaml` should be /appcircle/docker-registry to proxy Appcircle's registry.
+
+:::
+
+:::caution
+
+- If you face any issue about manifest not found when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from Nexus Proxy Registry.
+- By looking at the mirroring images script above, you can pull images from the proxy repository with a similar script. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
+- Nexus may have some issues when pulling images in parallel.
+
+:::
+
 ### :tada: Ready
 
 Open your browser and go to URL `http://my.appcircle.spacetech.com`. You should see login page.
