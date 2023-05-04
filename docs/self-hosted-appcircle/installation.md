@@ -690,7 +690,7 @@ SRC_REGISTRY_URL="europe-west1-docker.pkg.dev/appcircle/docker-registry"
 DEST_REGISTRY_URL="reg.appcircle.spacetech.com/appcircle"
 
 # Loop through each line of the file and pull, tag, and push the Docker image
-while read IMAGE_NAME; do
+while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
     echo "Pulling image: $IMAGE_NAME"
     docker pull $IMAGE_NAME
     if [ $? -eq 0 ]; then
