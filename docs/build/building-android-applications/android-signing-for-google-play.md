@@ -96,12 +96,7 @@ signingConfigs {
     }
 }
 // Rest of your build.gradle.kts
-buildTypes {
-    getByName("release") {
-        isMinifyEnabled = false
-        signingConfig = signingConfigs.getByName("release")
-    }
-}
+
 ```
 
   </TabItem>
