@@ -70,7 +70,7 @@ Here are some of the most important packages installed in our iOS build agents u
 | Gzip (Apple)       | 353.100.22       | 353.100.22      | 353.100.22 |
 | LibreSSL (OpenSSL) | 2.8.3            | 3.3.6           | 2.8.3      |
 | ImageMagick        | 7.1.0            | 7.1.0           | 7.1.0      |
-| Maven              | 3.8.4            | n/A             | n/A        |
+| Maven              | n/A              | n/A             | n/A        |
 | N                  | 9.0.1            | 9.0.1           | 8.0.2      |
 | Node               | 16.18.1          | 16.20.0         | 16.14.0    |
 | Npm                | 8.19.2           | 8.19.4          | 8.3.1      |
@@ -81,7 +81,7 @@ Here are some of the most important packages installed in our iOS build agents u
 | Rake               | 13.0.1           | 13.0.1          | 13.0.1     |
 | Ruby               | 2.7.5            | 2.7.5           | 2.7.5      |
 | Rbenv              | 1.2.0            | 1.2.0           | 1.2.0      |
-| Sdkman             | 5.14.0           | n/A             | n/A        |
+| Sdkman             | n/A              | n/A             | n/A        |
 | Slather            | 2.7.2            | 2.7.4           | 2.7.2      |
 | Unzip              | 6.00             | 6.00            | 6.00       |
 | Xcodeproj          | 1.22.0           | 1.22.0          | 1.21.0     |
