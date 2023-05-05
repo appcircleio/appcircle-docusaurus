@@ -70,12 +70,7 @@ signingConfigs {
     }
 }
 // Rest of your build.gradle
-buildTypes {
-    release {
-        minifyEnabled false
-        signingConfig signingConfigs.release
-    }
-}
+
 ```
 
 
