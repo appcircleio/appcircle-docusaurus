@@ -102,10 +102,79 @@ signingConfigs {
   </TabItem>
 </Tabs>
 
+:::warning
+
+You need to either sign with Appcircle Android Sign Step or via Gradle. If you're using Appcircle's Android sign step, remove `signingConfig signingConfigs.release` block from your `build.gradle`.
+
+:::
 
 
+:::info
+
+If you're using **Gradle** to sign your APK file, you may need to add `v1SigningEnabled` and `v2SigningEnabled` to your signing configurations to install your APK file to both old and new Android versions.
 
 
+<Tabs>
+  <TabItem value="groovy" label="build.gradle" default>
+
+```groovy
+signingConfigs {
+    release {
+      if (System.getenv('AC_APPCIRCLE')) { // new configuration for Appcircle
+          println 'Running on Appcircle'
+          keyAlias "${System.getenv("AC_ANDROID_ALIAS")}"
+          keyPassword "${System.getenv("AC_ANDROID_ALIAS_PASSWORD")}"
+          storeFile file("${System.getenv("AC_ANDROID_KEYSTORE_PATH")}")
+          storePassword "${System.getenv("AC_ANDROID_KEYSTORE_PASSWORD")}"
+          v2SigningEnabled true
+          v1SigningEnabled true
+
+      } else {
+          println 'Running on local' // Your old configuration
+          keyAlias keystoreProperties['keyAlias']
+          keyPassword keystoreProperties['keyPassword']
+          storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+          storePassword keystoreProperties['storePassword']
+      }
+    }
+}
+// Rest of your build.gradle
+
+```
+
+
+  </TabItem>
+  <TabItem value="kotlin" label="build.gradle.kts">
+
+```kotlin
+signingConfigs {
+    create("release") {
+        if (System.getenv()["AC_APPCIRCLE"].toBoolean()) { // new configuration for Appcircle
+            println("Running on Appcircle")
+            storeFile = file(System.getenv()["AC_ANDROID_KEYSTORE_PATH"])
+            storePassword = System.getenv()["AC_ANDROID_KEYSTORE_PASSWORD"]
+            keyAlias = System.getenv()["AC_ANDROID_ALIAS"]
+            keyPassword = System.getenv()["AC_ANDROID_ALIAS_PASSWORD"]
+            isV1SigningEnabled = true
+            isV2SigningEnabled = true
+
+        } else {
+            println("Running on local") // Your old configuration
+            storeFile = file(keystoreProperties.getProperty("storeFile"))
+            storePassword = keystoreProperties.getProperty("storePassword")
+            keyAlias = keystoreProperties.getProperty("keyAlias")
+            keyPassword = keystoreProperties.getProperty("keyPassword")
+        }
+    }
+}
+// Rest of your build.gradle.kts
+```
+
+  </TabItem>
+</Tabs>
+
+
+:::
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
