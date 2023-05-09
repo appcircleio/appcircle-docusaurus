@@ -9,15 +9,15 @@ sidebar_position: 1
 
 Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running.
 
-- If your selected pool from config is "Default Intel Pool", virtual machine will be macOS Monterey `v12.5.1 `.
+- If your selected pool from config is "Default Intel Pool", virtual machine will be macOS Monterey `v12.5.1`.
 
-- If your selected pool from config is "Default M1 Pool", there is two option for virtual machine.
-- If you select Xcode 14.3 or later, virtual machine will be macOS Ventura `v13.2.1 `.
-- If you select Xcode 14.2 or earlier, virtual machine will be macOS Big Sur `v12.5.1 `.
+- If your selected pool from config is "Default M1 Pool", there are two options for virtual machine.
+  - If you select Xcode 14.3 or later, virtual machine will be macOS Ventura `v13.2.1`.
+  - If you select Xcode 14.2 or earlier, virtual machine will be macOS Monterey `v12.5.1`.
 
 :::caution
 
-If you select Xcode 14.3 or later and Default Intel Pool, your build will not start. Because Xcode 14.3 or later requires a Mac running macOS Ventura 13.0 or later.
+If you select Xcode 14.3 or later and "Default Intel Pool", your build will not start. Because Xcode 14.3 or later requires a Mac running macOS Ventura 13.0 or later.
 
 :::
 
