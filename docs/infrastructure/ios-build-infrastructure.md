@@ -36,7 +36,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 Our macOS build agents have Xcode versions 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
 
 :::caution
-Xcode 14.3 requires a Mac running macOS Ventura 13.0 or later.
+Xcode `14.3.x` requires a Mac running macOS Ventura 13.0 or later.
 :::
 
 ### Using your own computer for build
@@ -51,11 +51,12 @@ There are many pre-installed packages in virtual machines. You can get a full li
 
 Here are some of the most important packages installed in our iOS build agents used for iOS builds:
 
-- For Default M1 Pool Xcode 14.3 or later `macOS Ventura v.13.2.1`
-- For Default M1 Pool Xcode 14.2 or earlier `macOS Monterey v.12.5.1`
-- For Default Intel Pool `macOS Monterey v.12.5.1`
+- For "Default M1 Pool" Xcode `14.3.x` or later `macOS Ventura v13.2.1`
+- For "Default M1 Pool" Xcode `14.2.x` or earlier `macOS Monterey v12.5.1`
+- For "Default Intel Pool" `macOS Monterey v12.5.1`
+  - :memo: Supports Xcode versions up to `14.2.x`
 
-| Package            | M1 Pool Monterey | M1 Pool Ventura | Intel Pool | 
+| Package            | M1 Pool Monterey | M1 Pool Ventura | Intel Pool |
 | ------------------ | ---------------- | --------------- | ---------- |
 | Bash               | 3.2.57           | 3.2.57          | 3.2.57     |
 | Bundle             | 2.1.4            | 2.1.4           | 2.3.9      |
@@ -65,7 +66,7 @@ Here are some of the most important packages installed in our iOS build agents u
 | Java (OpenJDK)     | 11.0.14          | 11.0.14         | 11.0.2     |
 | Gem                | 3.1.6            | 3.1.6           | 3.1.6      |
 | Fastlane           | 2.211.0          | 2.212.2         | 2.204.3    |
-| Git                | 2.38.1           | 2.39.0          | 2.35.1     | 
+| Git                | 2.38.1           | 2.39.0          | 2.35.1     |
 | Git LFS            | 3.2.0            | 3.3.0           | 3.1.2      |
 | Gzip (Apple)       | 353.100.22       | 353.100.22      | 353.100.22 |
 | LibreSSL (OpenSSL) | 2.8.3            | 3.3.6           | 2.8.3      |
