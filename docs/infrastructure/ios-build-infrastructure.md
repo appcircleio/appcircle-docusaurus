@@ -4,12 +4,22 @@ metaTitle: iOS Build Infrastructure
 metaDescription: iOS Build Infrastructure
 sidebar_position: 1
 ---
+
 # iOS Build Infrastructure
 
-Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running. 
+Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running.
 
-- If your selected pool from config is "Default Intel Pool", virtual machine will be macOS Monterey `v.12.5.1 `.
-- If your selected pool from config is "Default M1 Pool", virtual machine will be macOS Monterey `v.12.6`.
+- If your selected pool from config is "Default Intel Pool", virtual machine will be macOS Monterey `v12.5.1`.
+
+- If your selected pool from config is "Default M1 Pool", there are two options for virtual machine.
+  - If you select Xcode 14.3 or later, virtual machine will be macOS Ventura `v13.2.1`.
+  - If you select Xcode 14.2 or earlier, virtual machine will be macOS Monterey `v12.5.1`.
+
+:::caution
+
+If you select Xcode 14.3 or later and "Default Intel Pool", your build will not start. Because Xcode 14.3 or later requires a Mac running macOS Ventura 13.0 or later.
+
+:::
 
 macOS images run on a fresh virtual machines for stability and performance. They are created just for your build and become ready within seconds.
 
@@ -23,59 +33,58 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ### Available Xcode Versions
 
-Our macOS build agents have Xcode versions 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
+Our macOS build agents have Xcode versions 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
 
-### M1 Macs
-
-We've started providing M1 Mac mini's to select enterprise customers starting from April 2022. We'll gradually enable M1 Macs to all enterprise customers first, and then to all plans.
-
-If you'd like an M1 Mac for your builds, please request an invite:
-
-https://www.appcircle.io/contact
+:::caution
+Xcode `14.3.x` requires a Mac running macOS Ventura 13.0 or later.
+:::
 
 ### Using your own computer for build
 
 Appcircle supports using a 3rd party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
 
-[**Get in touch with Appcircle if you need enterprise features.**](https://appcircle.io/support)
+[**You can find more information about using your own infrastructure for build here.**](/docs/self-hosted-appcircle/self-hosted-runner/overview.md)
 
-### macOS Build Agent Stacks
+### iOS Build Agent Stacks
 
 There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in "custom script" steps.
 
-Here are some of the most important packages installed in our macOS agents used for iOS builds:
+Here are some of the most important packages installed in our iOS build agents used for iOS builds:
 
-`macOS Monterey v.12.5.1`
+- For "Default M1 Pool" Xcode `14.3.x` or later `macOS Ventura v13.2.1`
+- For "Default M1 Pool" Xcode `14.2.x` or earlier `macOS Monterey v12.5.1`
+- For "Default Intel Pool" `macOS Monterey v12.5.1`
+  - :memo: Supports Xcode versions up to `14.2.x`
 
-| Package            | Version    |
-| ------------------ | ---------- |
-| Bash               | 3.2.57     |
-| Bundle             | 2.3.9      |
-| Carthage           | 0.38.0     |
-| Curl               | 7.79.1     |
-| Homebrew           | 3.4.2      |
-| Java (OpenJDK)     | 11.0.17    |
-| Fastlane           | 2.204.3    |
-| Gem                | 3.1.6      |
-| Git                | 2.35.1     |
-| Git LFS            | 3.1.2      |
-| Gzip (Apple)       | 353.100.22 |
-| LibreSSL (OpenSSL) | 2.8.3      |
-| ImageMagick        | 7.1.0      |
-| Maven              | 3.8.4      |
-| N                  | 8.0.2      |
-| Node               | 16.14.0    |
-| Npm                | 8.3.1      |
-| Perl               | 5.30.3     |
-| Pod                | 1.11.2     |
-| Pip                | 21.3.1     |
-| Python             | 3.9.10     |
-| Rake               | 13.0.1     |
-| Ruby               | 2.7.5      |
-| Rbenv              | 1.2.0      |
-| Sdkman             | 5.14.0     |
-| Slather            | 2.7.2      |
-| Unzip              | 6.00       |
-| Xcodeproj          | 1.21.0     |
-| Yarn               | 1.22.17    |
-| Zip                | 3.0        |
+| Package            | M1 Pool Monterey | M1 Pool Ventura | Intel Pool |
+| ------------------ | ---------------- | --------------- | ---------- |
+| Bash               | 3.2.57           | 3.2.57          | 3.2.57     |
+| Bundle             | 2.1.4            | 2.1.4           | 2.3.9      |
+| Carthage           | 0.38.0           | 0.38.0          | 0.38.0     |
+| Curl               | 7.79.1           | 7.86.0          | 7.79.1     |
+| Homebrew           | 3.6.11           | 3.6.16          | 3.4.2      |
+| Java (OpenJDK)     | 11.0.14          | 11.0.14         | 11.0.2     |
+| Gem                | 3.1.6            | 3.1.6           | 3.1.6      |
+| Fastlane           | 2.211.0          | 2.212.2         | 2.204.3    |
+| Git                | 2.38.1           | 2.39.0          | 2.35.1     |
+| Git LFS            | 3.2.0            | 3.3.0           | 3.1.2      |
+| Gzip (Apple)       | 353.100.22       | 353.100.22      | 353.100.22 |
+| LibreSSL (OpenSSL) | 2.8.3            | 3.3.6           | 2.8.3      |
+| ImageMagick        | 7.1.0            | 7.1.0           | 7.1.0      |
+| Maven              | 3.8.6            | 3.9.1           | 3.8.4      |
+| N                  | 9.0.1            | 9.0.1           | 8.0.2      |
+| Node               | 16.18.1          | 16.20.0         | 16.14.0    |
+| Npm                | 8.19.2           | 8.19.4          | 8.3.1      |
+| Perl               | 5.30.3           | 5.30.3          | 5.30.3     |
+| Pod                | 1.11.3           | 1.12.1          | 1.11.2     |
+| Pip                | 22.2.2           | 22.3.1          | 21.3.1     |
+| Python             | 3.10.8           | 3.10.9          | 3.9.10     |
+| Rake               | 13.0.1           | 13.0.1          | 13.0.1     |
+| Ruby               | 2.7.5            | 2.7.5           | 2.7.5      |
+| Rbenv              | 1.2.0            | 1.2.0           | 1.2.0      |
+| Sdkman             | 5.16.0           | 5.18.1          | 5.14.0     |
+| Slather            | 2.7.2            | 2.7.4           | 2.7.2      |
+| Unzip              | 6.00             | 6.00            | 6.00       |
+| Xcodeproj          | 1.22.0           | 1.22.0          | 1.21.0     |
+| Yarn               | 1.22.19          | 1.22.19         | 1.22.17    |
+| Zip                | 3.0              | 3.0             | 3.0        |
