@@ -11,6 +11,22 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.3.2 - 2023-05-10 - Xcode 14.3,FTP Upload 
+
+### 🆕 New Feature
+- [Xcode 14.3](../infrastructure/ios-build-infrastructure.md) added to build agents. Since Xcode 14.3 only runs on Ventura, M1 infrastructure is also updated. Please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
+- [FTP Upload](../workflows/common-workflow-steps.md#ftp-upload) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+- [Data Theorem Mobile Secure](../workflows/common-workflow-steps.md#data-theorem-mobile-secure) workflow step updated. <CloudBadge/> <SelfHostedBadge/>
+- New options added to [Android Resign](../distribute/resign.md). <CloudBadge/> <SelfHostedBadge/>
+- Sub-organizations can see their download reports. <CloudBadge/> <SelfHostedBadge/>
+- Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
+- Build trigger screen is improved. <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixed
+- Fixed a bug that makes users unable to add their GitHub repositories. <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.3.0 - 2023-04-27 - Data Theorem Mobile Secure, App Center CodePush
 
 ### 🆕 New Feature

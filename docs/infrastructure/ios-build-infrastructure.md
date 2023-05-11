@@ -43,7 +43,7 @@ Xcode `14.3.x` requires a Mac running macOS Ventura 13.0 or later.
 
 Appcircle supports using a 3rd party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
 
-[**You can find more information about using your own infrastructure for build here.**](/docs/self-hosted-appcircle/self-hosted-runner/overview.md)
+[**You can find more information about using your own infrastructure for build here.**](../self-hosted-appcircle/self-hosted-runner/overview.md))
 
 ### iOS Build Agent Stacks
 
