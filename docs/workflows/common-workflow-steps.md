@@ -151,6 +151,13 @@ This component checks the file size and either warn or fail the workflow.
 
 https://github.com/appcircleio/appcircle-filesize-component
 
+## FTP Upload
+
+This component uploads file or folders to given FTP server.
+
+https://github.com/appcircleio/appcircle-ftp-upload-component
+
+
 ## Testinium
 
 This component runs your test plans with Testinium.

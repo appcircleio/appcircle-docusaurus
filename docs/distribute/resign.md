@@ -91,8 +91,9 @@ You can either select the files from the list or upload APK, and AAB files by cl
 
 This form will show the following details of the original binary.
 
-3. Select the correct keystore and click the **Sign** button to sign your binary
+3. Select the correct keystore and click the **Sign** button to sign your binary. You may also change the Package ID, Version Name and Version Code.
 
+![](<https://cdn.appcircle.io/docs/assets/resign4.png>)
 
 ## Binary Details
 
