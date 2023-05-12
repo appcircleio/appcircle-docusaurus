@@ -33,7 +33,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - [Data Theorem Mobile Secure](../workflows/common-workflow-steps.md#data-theorem-mobile-secure) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [App Center CodePush](../workflows/react-native-specific-workflow-steps.md#app-center-codepush) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - Latest five build status added to build profile. <CloudBadge/> <SelfHostedBadge/>
-- [Slack Bot](../account/slack/appcircle-slack-bot.md) added. <CloudBadge/>
+- [Slack Bot](../account/slack/appcircle-bot-for-slack.md) added. <CloudBadge/>
 
 ### :muscle: Improvement
 - SVG images are updated <CloudBadge/> <SelfHostedBadge/>
