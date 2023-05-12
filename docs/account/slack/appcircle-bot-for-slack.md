@@ -1,19 +1,25 @@
 ---
-title: Appcircle Slack Bot
-metaTitle: Appcircle Slack Bot Integration and Usage
-metaDescription: Appcircle Slack Bot Integration and Usage
+title: Appcircle Bot For Slack
+metaTitle: Appcircle Bot for Slack Integration and Usage
+metaDescription: Appcircle Bot for Slack Integration and Usage
 sidebar_position: 2
 ---
 
 import NarrowImage from '@site/src/components/NarrowImage';
 
-# Appcircle Slack Bot
+# Appcircle Bot for Slack
 
-Appcircle supports some operations such as `start build`, which you can do in [appcircle.io](https://my.appcircle.io/), with the help of `Appcircle Slack Bot`. By adding the `Appcircle Bot` to your Slack workspace, you can streamline your CI/CD pipeline using specific commands in selected channels.
+Appcircle is a comprehensive mobile CI/CD platform that automates the build, test, and deployment processes for mobile app development.
+
+By adding `Appcircle Bot` to your Slack workspace, you gain the ability to perform the same actions available on [appcircle.io](https://my.appcircle.io/) directly within Slack, including:
+
+- :package: Start a build based on your chosen profile, branch, and workflow.
+- :outbox_tray: Send the selected version to your preferred test profiles or email addresses.
+- :mailbox: Send the designated version to the `Submit Store` for review and distribution.  
 
 :::info
 
-There is currently no Slack integration available on the self-hosted Appcircle. However, we are actively working on it and it will be available for use on the self-hosted Appcircle in the near future.
+There is currently no integration of Slack available on the self-hosted Appcircle. However, we are actively working on it and it will be available for use on the self-hosted Appcircle in the near future.
 
 :::
 
@@ -23,17 +29,17 @@ Please note that only the person who added the `Appcircle Bot` to the Slack work
 
 To add the `Appcircle Bot` to the workspace, you can choose one of the two options below:
 
-1. You can use the `Slack App Directory` to add the `Appcircle Bot` to the workspace.
+1. You can use the button below to add the `Appcircle Bot` to the workspace.
 
-   ![](https://cdn.appcircle.io/docs/assets/slack-bot-0.png)
-
-2. You can use the button below to add the `Appcircle Bot` to the workspace.
-
-   <a href="https://slack.com/oauth/v2/authorize?client_id=4982900113170.4983351339554&scope=app_mentions:read,channels:history,channels:manage,channels:read,chat:write,chat:write.customize,commands,groups:read,groups:write,im:read,im:write,mpim:read,mpim:write,team:read,users:read&user_scope="><img alt="Add to Slack - slack-bot-01.png" height="44" width="140" src="https://cdn.appcircle.io/docs/assets/slack-bot-01.png"/></a>
+   <a href="https://slackbot.appcircle.io/slack/install"><img alt="Add to Slack - slack-bot-01.png" height="44" width="140" src="https://cdn.appcircle.io/docs/assets/slack-bot-01.png"/></a>
 
    Then, you need to allow the `Appcircle Bot` application.
    
    ![](https://cdn.appcircle.io/docs/assets/slack-bot-02.png)
+
+2. You can use the `Slack App Directory` to add the `Appcircle Bot` to the workspace.
+
+   ![](https://cdn.appcircle.io/docs/assets/slack-bot-0.png)
 
 You will then see that Slack is connected.
 
