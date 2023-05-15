@@ -9,8 +9,8 @@ sidebar_position: 2
 
 For each Android build, Appcircle creates a brand new virtual machine;
 
-If you select "Default Intel Pool", virtual machine will be Debian 11 Bullseye.
-If you select "Default M1 Pool", virtual machine will be macOS Ventura 13.2.1 or macOS Monterey 12.6.
+- If you select "Default Intel Pool", virtual machine will be Debian 11 Bullseye.
+- If you select "Default M1 Pool", virtual machine will be macOS Ventura `13.2.1` or macOS Monterey `12.6`.
 
 :::info
 
@@ -69,11 +69,11 @@ Based on: Android 11.0 (R)
 
 Appcircle supports using a 3rd party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
 
-[**Get in touch with Appcircle if you need enterprise features.**](https://appcircle.io/support)
+[**You can find more information about using your own infrastructure for build here.**](../self-hosted-appcircle/self-hosted-runner/overview.md)
 
-### Linux image stacks
+### Android Build Agent Stacks
 
-There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.;
+There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.
 
 Here are some most important packages installed in our Linux and macOS images used for Android builds:
 
