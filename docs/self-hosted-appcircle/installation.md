@@ -781,6 +781,12 @@ image:
 
 :::
 
+:::info
+
+To see example configuration screenshots, you can check [first](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-1.png) [second](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-2.png) [third](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png) screenshots of nexus repository.
+
+:::
+
 :::caution
 
 - If you face any issue about manifest not found when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from Nexus Proxy Registry.
