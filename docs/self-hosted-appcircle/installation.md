@@ -755,6 +755,53 @@ image:
 /ac-self-hosted.sh -n "spacetech" up
 ```
 
+##### Using Sonatype Nexus as Proxy Registry
+
+To use Sonatype Nexus as your proxy registry, you should follow the below steps.
+
+- Create a new repository in Nexus with the type of `docker (proxy)`.
+- Set the `Registry Name` name and `port` as you wish.
+- Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
+- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file.
+- For SSL, the recommended way is to use a reverse proxy in front of Nexus.
+- After you created the repository, you should add the below section to the `global.yaml` file with your Nexus `repository url`, `username` and `password`.
+- If you can access your Nexus repository without authentication, you should leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
+
+```yaml
+image:
+  registry:
+    url: reg.appcircle.spacetech.com:8443/appcircle/docker-registry
+    username:
+    password:
+    requiredLogin: true
+```
+
+:::caution
+
+In order to proxy Appcircle's registry, the repository url in `global.yaml` must end with `/appcircle/docker-registry`.
+
+:::
+
+:::tip
+
+You can see some example configuration screenshots below for Nexus UI.
+
+- [Proxy repository settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-1.png)
+- [Remote storage settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-2.png)
+- [Authentication settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
+
+:::
+
+:::info
+
+If you face any issue about "manifest not found" when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from Nexus proxy registry.
+
+By looking at the [mirroring images](./installation.md#mirroring-appcircle-images) script above, you can pull images from the proxy repository with a similar script. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
+
+Nexus may have some issues when pulling images in parallel.
+
+:::
+
 ### :tada: Ready
 
 Open your browser and go to URL `http://my.appcircle.spacetech.com`. You should see login page.
