@@ -175,7 +175,7 @@ Manage the subscription, payment details, and invoices
 
 **THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS**
 
-Connect to or disconnect from third-party service providers such as Slack, Jira
+Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams.
 
 **ENTERPRISE STORE PERMISSIONS**
 
