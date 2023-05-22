@@ -43,7 +43,7 @@ https://github.com/appcircleio/appcircle-ios-build-sign-component
 
 ## Xcodebuild for iOS Simulator
 
-This step builds your application for the iOS Simulator in x86 architecture. This step creates an unsigned `xarchive` file.
+This step builds your application for the iOS Simulator in x86_64 or arm64 architecture. This step creates an unsigned `xarchive` file. You may also optionally install the application for given simulator.
 
 https://github.com/appcircleio/appcircle-ios-build-simulator
 
