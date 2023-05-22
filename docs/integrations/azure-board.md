@@ -7,7 +7,7 @@ sidebar_position: 9
 
 # Azure Board Integration
 
-Azure Boards is a powerful project management tool offered by Microsoft Azure that enables teams to efficiently plan, track, and discuss their work all in one place. Whether you are embarking on a software development project, managing a complex product launch, or organizing a cross-functional team's activities, Azure Boards provides a centralized hub for collaboration and visibility. With its comprehensive set of features, including customizable work items, agile boards, reporting capabilities, and seamless integration with other Azure DevOps services, Azure Boards empowers teams to stay organized, prioritize tasks, and deliver high-quality results collaboratively and efficiently.
+Azure Boards is a standalone service within the Azure DevOps suite that helps teams plan, track, and discuss work across the entire software development process. It provides a flexible, customizable platform for managing work items, such as user stories, bugs, tasks, and issues, so you can track your work item's progress throughout the development lifecycle.
 
 You can use [Azure Board Component](https://github.com/appcircleio/appcircle-azure-board-component/) to add a comment and change the status of your issues according to the status of your workflow. 
 
@@ -49,7 +49,7 @@ open(env_var_path, 'a') { |f|
 }
 ```
 
-## Changing Stae
+## Changing State
 
 If you add state names for successful and failed steps(`AC_AZUREBOARD_FAIL_STATE`, `AC_AZUREBOARD_SUCCESS_STATE`), the Azure Board component will automatically change the status of your issue according to the state of your workflow.
 
