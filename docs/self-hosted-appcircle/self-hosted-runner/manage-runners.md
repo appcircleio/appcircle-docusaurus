@@ -95,7 +95,7 @@ You can add more Xcode versions side-by-side or more up-to-date Xcode any time a
 ./ac-runner xcode -v ${Xcode Version}
 ```
 
-Xcode version argument is similar to xcode argument on [installation](../self-hosted-runner/installation.md#3-configure). You can give one or more versions comma-seperated.
+Xcode version argument is similar to xcode argument on [installation](../self-hosted-runner/installation.md#3-configure). You can give one or more versions comma-separated.
 
 For example, below command will install Xcode 13.1.x:
 

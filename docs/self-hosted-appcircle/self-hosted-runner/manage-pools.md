@@ -37,7 +37,7 @@ For example, if your pool has only android tools configured in its runners, you 
 
 You can not define or select specific self-hosted runner in a pool. When a build job enters queue, it will be selected by any of the runner in that pool. So, as a best practice, try to organize your pool homogeneously.
 
-Pools should have runners which have similar tools and capabilities. Machine architecture (arm64, x86_64) can also be taken into account when orgnizing self-hosted pools.
+Pools should have runners which have similar tools and capabilities. Machine architecture (arm64, x86_64) can also be taken into account when organizing self-hosted pools.
 
 :::
 
@@ -49,7 +49,7 @@ Changing runner pool doesn't affect current running builds on pool. It will affe
 
 ### Delete Self-hosted Pool
 
-Pool removal is managed automatically while removing or moving runner. If you remove a self-hosted runner and its pool doesn't have any other runners in that pool, then empty pool is deleted automatically and you won't see it in self-hosted runners list or build profile config tab. Same behaviour happens when you move a self-hosted runner from one pool to another.
+Pool removal is managed automatically while removing or moving runner. If you remove a self-hosted runner and its pool doesn't have any other runners in that pool, then empty pool is deleted automatically and you won't see it in self-hosted runners list or build profile config tab. Same behavior happens when you move a self-hosted runner from one pool to another.
 
 If you want to remove pool manually or remove group of runners with pool removal, click on pool name at "Self-hosted Runners" list and use "Delete" button at the bottom of pool details.
 

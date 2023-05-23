@@ -199,7 +199,7 @@ You should see "Connection Secure" icon in browser's address bar which shows suc
 
 By default, when you enable HTTPS for `external.scheme`, NGINX listens for unencrypted HTTP traffic on port 80 but redirects them as HTTPS with 301 response code automatically.
 
-You don't need to do any manuel configuration to redirect HTTP requests to HTTPS.
+You don't need to do any manual configuration to redirect HTTP requests to HTTPS.
 
 :::
 
@@ -243,7 +243,7 @@ storeWeb:
 
 When you use wildcard certificate for main domain, you don't need to create an extra certificate for enterprise app store domain.
 
-Although your wildcard certficate does not include "Store Prefix", on self-hosted Appcircle server installations "Store Prefix" is not used actively since there is only one organization.
+Although your wildcard certificate does not include "Store Prefix", on self-hosted Appcircle server installations "Store Prefix" is not used actively since there is only one organization.
 
 Prefixed web requests will always be redirected to default store subdomain. And store subdomain is covered by your wildcard certificate.
 

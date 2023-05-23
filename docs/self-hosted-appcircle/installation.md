@@ -11,7 +11,7 @@ Following sections give you detailed information about system requirements, inst
 
 ## Prerequisites
 
-Below are the hardware and OS requirements for self-hosted Appcircle installaion.
+Below are the hardware and OS requirements for self-hosted Appcircle installation.
 
 ### Supported Linux Distributions
 
@@ -34,7 +34,7 @@ Minimum hardware requirements for self-hosted Appcircle can be:
 
 :::caution
 
-CPU arhitecture must be AMD or Intel 64-bit arch (`x86_64`).
+CPU architecture must be AMD or Intel 64-bit arch (`x86_64`).
 
 :::
 
@@ -503,7 +503,7 @@ With this network setup, you can run and test both self-hosted Appcircle server 
 
 Appcircle server's modules are run on Docker Engine as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
 
-`projects/${YOUR_PROJECT}/export` path will have all exported envrionment for self-hosted Appcircle services along with `compose.yaml`.
+`projects/${YOUR_PROJECT}/export` path will have all exported environment for self-hosted Appcircle services along with `compose.yaml`.
 
 ```text
 projects/
@@ -555,7 +555,7 @@ For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash scri
 
 When you buy an enterprise license for self-hosted appcircle, you will get a credentials JSON key file which enables you to login our artifact registry. For example, assume our fictive company is Space Tech.
 
-You've got `space-tech-cred.json` key file and dowloaded it into `~/Downloads` folder.
+You've got `space-tech-cred.json` key file and downloaded it into `~/Downloads` folder.
 
 First you need to copy that key file into self-hosted Appcircle root directory.
 

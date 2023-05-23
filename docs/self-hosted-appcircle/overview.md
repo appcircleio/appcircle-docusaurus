@@ -9,7 +9,7 @@ Self-hosted Appcircle enables you to use your own systems and infrastructure for
 
 By this way, you can build and test your apps on your choice of architectures. You have full control over the build environment. You can also customize your Appcircle installation with various options.
 
-When we look at self-hosted Appcircle deployment as a whole, we will see below arhitecture in execution.
+When we look at self-hosted Appcircle deployment as a whole, we will see below architecture in execution.
 
 ![](https://cdn.appcircle.io/docs/assets/self-hosted_appcircle_v5.png)
 
