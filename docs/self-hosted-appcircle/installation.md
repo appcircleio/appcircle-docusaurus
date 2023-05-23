@@ -240,17 +240,6 @@ smtpServer:
   ssl:
   auth:
   starttls:
-recaptcha:
-  requirement: DISABLED # REQUIRED vs DISABLED
-bruteForce:
-  bruteForceProtected: 'true'
-  permanentLockout: 'false'
-  maxFailureWaitSeconds: '900'
-  minimumQuickLoginWaitSeconds: '60'
-  waitIncrementSeconds: '60'
-  quickLoginCheckMilliSeconds: '1000'
-  maxDeltaTimeSeconds: '43200'
-  failureFactor: '30'
 keycloak:
   initialUsername: admin@example.com
   enabledRegistration: true
@@ -289,17 +278,6 @@ smtpServer:
   ssl: 'false'
   auth: 'true'
   starttls: 'true'
-recaptcha:
-  requirement: DISABLED # REQUIRED vs DISABLED
-bruteForce:
-  bruteForceProtected: 'true'
-  permanentLockout: 'false'
-  maxFailureWaitSeconds: '900'
-  minimumQuickLoginWaitSeconds: '60'
-  waitIncrementSeconds: '60'
-  quickLoginCheckMilliSeconds: '1000'
-  maxDeltaTimeSeconds: '43200'
-  failureFactor: '30'
 keycloak:
   initialUsername: admin@spacetech.com
   enabledRegistration: true
