@@ -7,7 +7,7 @@ sidebar_position: 3
 
 # Overview
 
-As in cloud, we're releasing regular updates for self-hosted appcircle server. You should keep your instance up-to-date in order to get latest features, bug fixes and improvements.
+As in cloud, we're releasing regular updates for self-hosted Appcircle server. You should keep your instance up-to-date in order to get latest features, bug fixes and improvements.
 
 When a new version of self-hosted appcirle is released, you can update with below steps.
 
@@ -21,7 +21,7 @@ When you're in trouble with update, it will be useful to review details and warn
 
 :::info
 
-Below steps does not affect or destroy your data. Update process keeps your data and schema compatible with latest self-hosted appcircle server by using incremental migrations all handled automatically.
+Below steps does not affect or destroy your data. Update process keeps your data and schema compatible with latest self-hosted Appcircle server by using incremental migrations all handled automatically.
 
 :::
 
@@ -43,13 +43,13 @@ Also, note that you'll need to have Docker Compose version 2.14.1 or later insta
 
 ### 1. Download Latest
 
-Download the latest self-hosted appcircle package.
+Download the latest self-hosted Appcircle package.
 
 ```bash
 curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.2.2.zip
 ```
 
-Extract self-hosted appcircle package into folder.
+Extract self-hosted Appcircle package into folder.
 
 ```bash
 unzip -o -u appcircle-server-linux-x64-3.2.2.zip -d appcircle-server
@@ -65,7 +65,7 @@ For other details and troubleshooting, you can refer to [download](./installatio
 
 ### 2. Update Packages
 
-Although it's rare, update may have new packages or package updates. Those are the tools that self-hosted appcircle depends on. So they should be kept up-to-date same as appcircle server.
+Although it's rare, update may have new packages or package updates. Those are the tools that self-hosted Appcircle depends on. So they should be kept up-to-date same as Appcircle server.
 
 :::caution
 
@@ -116,7 +116,7 @@ For other details and troubleshooting, you can refer to [configuration](./instal
 
 :::info
 
-Although it's rare, self-hosted appcircle may have a new service with its dedicated subdomain.
+Although it's rare, self-hosted Appcircle may have a new service with its dedicated subdomain.
 
 If it was announced in release notes, you need to add new subdomain to your DNS server.
 
@@ -126,7 +126,7 @@ All process is same as in installation, so refer to [DNS settings](./installatio
 
 ### 4. Update Images
 
-In order to get docker image updates for appcircle server services, we need to pull them from remote artifact repository.
+In order to get docker image updates for Appcircle server services, we need to pull them from remote artifact repository.
 
 To activate image updates, first stop all running docker containers.
 
@@ -160,7 +160,7 @@ You may also print the image hashes and script's version by using the below comm
 
 :::caution
 
-Please keep in mind that, restarting docker containers will stop all services until all started again. So, it will take some time and during that duration self-hosted appcircle server will be unreachable.
+Please keep in mind that, restarting docker containers will stop all services until all started again. So, it will take some time and during that duration self-hosted Appcircle server will be unreachable.
 
 For this reason, you may prefer to execute this step on an idle time in order to minimize its negative effects on your users.
 
@@ -180,9 +180,9 @@ But if you want or need to reset your data for some reason, you can follow [rese
 
 :::info
 
-Although it's rare, self-hosted appcircle may require also self-hosted runner update. Because on some cases, it may bring some breaking changes for older runners.
+Although it's rare, self-hosted Appcircle may require also self-hosted runner update. Because on some cases, it may bring some breaking changes for older runners.
 
-If it's required, it will be announced in self-hosted appcircle release notes with minimum supported runner version.
+If it's required, it will be announced in self-hosted Appcircle release notes with minimum supported runner version.
 
 In order to update your self-hosted runners, refer to [update self-hosted runner](./self-hosted-runner/update.md) section in docs.
 

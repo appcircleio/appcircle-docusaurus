@@ -11,11 +11,11 @@ Following sections give you detailed information about system requirements, inst
 
 ## Prerequisites
 
-Below are the hardware and OS requirements for self-hosted appcircle installaion.
+Below are the hardware and OS requirements for self-hosted Appcircle installaion.
 
 ### Supported Linux Distributions
 
-Self-hosted appcircle server can only be installed on Linux operating system.
+Self-hosted Appcircle server can only be installed on Linux operating system.
 
 - Ubuntu 20.04 or later
 - Debian 11 or later
@@ -24,7 +24,7 @@ Self-hosted appcircle server can only be installed on Linux operating system.
 
 ### Hardware Requirements
 
-Minimum hardware requirements for self-hosted appcircle can be:
+Minimum hardware requirements for self-hosted Appcircle can be:
 
 - 100GB or more free disk space
 - 4 or more cores CPU
@@ -40,7 +40,7 @@ CPU arhitecture must be AMD or Intel 64-bit arch (`x86_64`).
 
 :::info
 
-If you have enough RAM and a recent CPU, performance of appcircle server can be limited by hard drive seek times. So, having a fast drive like a solid state drive (SSD) improves runtime.
+If you have enough RAM and a recent CPU, performance of Appcircle server can be limited by hard drive seek times. So, having a fast drive like a solid state drive (SSD) improves runtime.
 
 :::
 
@@ -62,7 +62,7 @@ For production environments, **recommended** hardware requirements are
 
 #### Swap
 
-Using **swap** file lets self-hosted appcircle server exceed the size of available physical memory. On memory pressure system will go on its operations with minimal degradation, when SSD used as hardware.
+Using **swap** file lets self-hosted Appcircle server exceed the size of available physical memory. On memory pressure system will go on its operations with minimal degradation, when SSD used as hardware.
 
 So, we are recommending **swap** file usage on Linux.
 
@@ -87,13 +87,13 @@ You need to have the following tools installed on your system:
 - curl
 - unzip
 
-Download the latest self-hosted appcircle package.
+Download the latest self-hosted Appcircle package.
 
 ```bash
 curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.2.2.zip
 ```
 
-Extract self-hosted appcircle package into folder.
+Extract self-hosted Appcircle package into folder.
 
 ```bash
 unzip -o -u appcircle-server-linux-x64-3.2.2.zip -d appcircle-server
@@ -136,7 +136,7 @@ Make sure the script was executed without any error. Script will print installed
 
 :::info
 
-Docker engine is one of our major dependencies. So, its version is also important for appcircle server runtime.
+Docker engine is one of our major dependencies. So, its version is also important for Appcircle server runtime.
 
 Older docker versions may be incompatible for our operations. Docker versions above `20.10.11` should be preferred to eliminate any compatibility issues.
 
@@ -148,7 +148,7 @@ If your linux distribution has an out of date docker version, please update dist
 
 #### Docker Engine Installation
 
-Self-hosted appcircle server is only compatible with official installation methods listed in [here](https://docs.docker.com/engine/install/).
+Self-hosted Appcircle server is only compatible with official installation methods listed in [here](https://docs.docker.com/engine/install/).
 
 On some Linux distributions you can select docker engine at setup stage, but it's not recommended since some distributions have unofficial installation methods.
 
@@ -156,13 +156,13 @@ For instance, when you select docker engine at setup on Ubuntu installation, Ubu
 
 In this case, you should not include docker engine to Ubuntu installation. If you want, you can install docker engine later with official [installation](https://docs.docker.com/engine/install/ubuntu/) steps.
 
-Or, as a better choice, you can leave docker engine installation to self-hosted appcircle server installation script since we have automated installation for Debian derivatives which include `apt` package manager.
+Or, as a better choice, you can leave docker engine installation to self-hosted Appcircle server installation script since we have automated installation for Debian derivatives which include `apt` package manager.
 
 :::
 
 :::info
 
-Self-hosted appcircle server is only compatible with [docker compose V2](https://docs.docker.com/compose/compose-v2/) and the new `docker compose` command.
+Self-hosted Appcircle server is only compatible with [docker compose V2](https://docs.docker.com/compose/compose-v2/) and the new `docker compose` command.
 
 The new compose V2, which supports the compose command as part of the docker CLI, is available with latest docker versions.
 
@@ -178,7 +178,7 @@ If `docker-compose-plugin` is missing in your system, follow its [docs](https://
 
 ### 3. Configure
 
-First we need to find a name to our self-hosted appcircle installation. It will be the unique project name.
+First we need to find a name to our self-hosted Appcircle installation. It will be the unique project name.
 
 ```bash
 ./ac-self-hosted.sh -n "${YOUR_PROJECT}" export
@@ -334,7 +334,7 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running appcircle server](./installation.md#5-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](./installation.md#5-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
@@ -441,11 +441,11 @@ Below is an example DNS configuration that is compatible with our sample scenari
 
 ![](https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png)
 
-If you have a dedicated DNS, adding subdomains will be enough to run self-hosted appcircle server in an easy and quick way.
+If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
 You can also make DNS settings later, when you complete all configuration and testing.
 
-Until you're satisfied with your setup, you can use `/etc/hosts` file for both self-hosted appcircle server and connected clients. You can run whole system, test all functionality and your configuration with using the `/etc/hosts` file.
+Until you're satisfied with your setup, you can use `/etc/hosts` file for both self-hosted Appcircle server and connected clients. You can run whole system, test all functionality and your configuration with using the `/etc/hosts` file.
 
 Following section will give you the details for this use case.
 
@@ -461,7 +461,7 @@ Entries in the hosts file have the following format:
 Address  HostName
 ```
 
-On self-hosted appcircle server, you should add below entries to the `/etc/hosts` file.
+On self-hosted Appcircle server, you should add below entries to the `/etc/hosts` file.
 
 ```txt
 0.0.0.0  api.appcircle.spacetech.com
@@ -474,9 +474,9 @@ On self-hosted appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  store.spacetech.com
 ```
 
-For clients that will connect to self-hosted appcircle server, either self-hosted runners or end-users using their browsers for web UI, should add external IP of the server to their `/etc/hosts` files. External IP is the address of self-hosted appcircle server that other hosts in the network can reach to server using that address.
+For clients that will connect to self-hosted Appcircle server, either self-hosted runners or end-users using their browsers for web UI, should add external IP of the server to their `/etc/hosts` files. External IP is the address of self-hosted Appcircle server that other hosts in the network can reach to server using that address.
 
-You can get external IP of self-hosted appcircle server with below command.
+You can get external IP of self-hosted Appcircle server with below command.
 
 ```bash
 hostname -I | awk '{print $1}'
@@ -497,13 +497,13 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  store.spacetech.com
 ```
 
-With this network setup, you can run and test both self-hosted appcircle server and connected self-hosted runners with all functionality.
+With this network setup, you can run and test both self-hosted Appcircle server and connected self-hosted runners with all functionality.
 
 ### 5. Run Server
 
 Appcircle server's modules are run on Docker Engine as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
 
-`projects/${YOUR_PROJECT}/export` path will have all exported envrionment for self-hosted appcircle services along with `compose.yaml`.
+`projects/${YOUR_PROJECT}/export` path will have all exported envrionment for self-hosted Appcircle services along with `compose.yaml`.
 
 ```text
 projects/
@@ -537,7 +537,7 @@ projects/
     └── user-secret
 ```
 
-Run appcircle server services.
+Run Appcircle server services.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
@@ -547,9 +547,9 @@ Run appcircle server services.
 
 #### Artifact Registry Credentials: Cred.json
 
-Before we run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull docker images for appcircle server services.
+Before we run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull docker images for Appcircle server services.
 
-Although it's not required immediately at configuration steps, it's required while we're starting appcircle server. Otherwise it can not pull docker images from our artifact registry.
+Although it's not required immediately at configuration steps, it's required while we're starting Appcircle server. Otherwise it can not pull docker images from our artifact registry.
 
 For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash script configures docker engine with appropriate credentials. If you don't have the key file, bash script gives error with a detailed message about the requirement.
 
@@ -557,7 +557,7 @@ When you buy an enterprise license for self-hosted appcircle, you will get a cre
 
 You've got `space-tech-cred.json` key file and dowloaded it into `~/Downloads` folder.
 
-First you need to copy that key file into self-hosted appcircle root directory.
+First you need to copy that key file into self-hosted Appcircle root directory.
 
 ```bash
 cp ~/Downloads/space-tech-cred.json cred.json
@@ -620,9 +620,9 @@ If everything is okay, then you should see service statuses as "running", "runni
 
 All secret data, including the API keys, signing identities, environment variables, and secrets are stored in an HashiCorp Vault. OAuth tokens and SSH keys, used in build pipeline, are also stored securely in HashiCorp Vault.
 
-Vault is a tool for securely accessing secrets. It's an important and required service for whole self-hosted appcircle server. If it's status is `unhealthy`, secrets will be inaccessible and most CI/CD functions won't work properly.
+Vault is a tool for securely accessing secrets. It's an important and required service for whole self-hosted Appcircle server. If it's status is `unhealthy`, secrets will be inaccessible and most CI/CD functions won't work properly.
 
-For this reason, **before starting to use self-hosted appcircle server** within your organization, make sure you check **vault service** status in container list above. Its **status must be `healthy`**.
+For this reason, **before starting to use self-hosted Appcircle server** within your organization, make sure you check **vault service** status in container list above. Its **status must be `healthy`**.
 
 While you're working on configuration back and forth, it's status may become `unhealthy` in some way.
 
@@ -638,9 +638,9 @@ Then make a new export and start services. Refer to [reset configuration](./inst
 
 :::info
 
-Self-hosted appcircle server uses some ports for communication.
+Self-hosted Appcircle server uses some ports for communication.
 
-Below ports must be unused on system and dedicated to only appcircle server usage.
+Below ports must be unused on system and dedicated to only Appcircle server usage.
 
 - `80`
 - `443`
@@ -749,7 +749,7 @@ image:
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-- Run appcircle server services.
+- Run Appcircle server services.
 
 ```bash
 /ac-self-hosted.sh -n "spacetech" up
@@ -761,7 +761,7 @@ Open your browser and go to URL `http://my.appcircle.spacetech.com`. You should 
 
 ![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-login-page.png)
 
-Login to self-hosted appcircle with `initialUsername` and `initialPassword` that we have configured in above steps. For our example, user name is `admin@spacetech.com`.
+Login to self-hosted Appcircle with `initialUsername` and `initialPassword` that we have configured in above steps. For our example, user name is `admin@spacetech.com`.
 
 ![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-dashboard-page.png)
 
@@ -771,7 +771,7 @@ You can also login to enterprise app store with configured custom URL `store.spa
 
 :::info
 
-Although you can run export multiple times with different project names, you can run only one of them as an appcircle server instance.
+Although you can run export multiple times with different project names, you can run only one of them as an Appcircle server instance.
 
 With default installation steps, reserved ports are the same for all exports. For this reason, when you run `docker compose up -d` first instance will reserve open ports to itself. And later `docker compose up -d` commands for other projects will get errors like "port is already allocated".
 
@@ -779,7 +779,7 @@ With default installation steps, reserved ports are the same for all exports. Fo
 
 :::info
 
-For now, self-hosted appcircle server is a single node solution. You can not scale it by adding more nodes with other bare-metals or VMs.
+For now, self-hosted Appcircle server is a single node solution. You can not scale it by adding more nodes with other bare-metals or VMs.
 
 Because it has a self-contained architecture with all its data side-by-side its docker services. Every node can only use its internal volumes and data on host.
 
@@ -789,9 +789,9 @@ Because it has a self-contained architecture with all its data side-by-side its 
 
 If you have made a mistake at installation steps, especially at configuration, you can reconfigure your server after installation.
 
-All configuration updates requires appcircle server restart. So resetting configuration should start with stopping appcircle server.
+All configuration updates requires Appcircle server restart. So resetting configuration should start with stopping Appcircle server.
 
-Stop appcircle server services.
+Stop Appcircle server services.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
@@ -809,13 +809,13 @@ Its response should be something like below.
 
 :::caution
 
-Some configuration changes may require data cleanup with extra steps which means data loss if you use appcircle server for some time.
+Some configuration changes may require data cleanup with extra steps which means data loss if you use Appcircle server for some time.
 
 For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.*` settings requires docker volume prune which results with data cleanup.
 
 So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
 
-To begin reconfiguration with data cleanup, use below command while stopping appcircle server.
+To begin reconfiguration with data cleanup, use below command while stopping Appcircle server.
 
 ```bash
 /ac-self-hosted.sh -n "spacetech" reset
@@ -841,7 +841,7 @@ For our example scenario, root directory is `appcircle-server` as seen [here](./
 
 Now you are ready to restart self-hosted appcircle.
 
-Run appcircle server services.
+Run Appcircle server services.
 
 ```bash
 /ac-self-hosted.sh -n "spacetech" up
@@ -863,7 +863,7 @@ By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_U
 
 - `https://api.appcircle.io/build/v1`
 
-:point_up: You need to change its value with your self-hosted appcircle server's API URL.
+:point_up: You need to change its value with your self-hosted Appcircle server's API URL.
 
 Assuming our sample scenario explained above, its value should be
 
@@ -877,6 +877,6 @@ Please note that, you should do this before [register](./self-hosted-runner/inst
 
 :::
 
-Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted appcircle server should run on a dedicated machine itself.
+Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted Appcircle server should run on a dedicated machine itself.
 
-You can install any number of runners regarding to your needs and connect them to self-hosted appcircle server.
+You can install any number of runners regarding to your needs and connect them to self-hosted Appcircle server.
