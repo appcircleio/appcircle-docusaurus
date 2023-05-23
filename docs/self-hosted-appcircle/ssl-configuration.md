@@ -27,6 +27,16 @@ You should manage certificates from configuration file manually and renew them w
 
 :::
 
+:::info
+
+If your cert format `PKCS#7` (known as p7b or p7c) , you can convert it to pem format with openssl. See the example command below.
+
+```bash
+$ openssl pkcs7 -print_certs -in cert.p7b -out cert.pem
+```
+
+:::
+
 ## Configure HTTPS
 
 First of all, you need to set `external.scheme` as `https` at `global.yaml` to enable HTTPS for all [subdomains](./installation.md#4-dns-settings).
