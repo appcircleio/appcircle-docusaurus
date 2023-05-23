@@ -427,11 +427,21 @@ Until you're satisfied with your setup, you can use `/etc/hosts` file for both s
 
 Following section will give you the details for this use case.
 
-#### Using `/etc/hosts` for DNS Settings
+#### Using `hosts` file for DNS Settings
 
 The hosts file contains the Internet Protocol (IP) host names and addresses for the local host and other hosts in the network. This file is used to resolve a name into an address (that is, to translate a host name into its IP).
 
 So, you can use hosts file like DNS by adding all required subdomains with their mapped IP address.
+
+:::info
+
+Hosts file is located at :
+
+`/etc/hosts` on Linux and MacOS
+
+`C:\Windows\System32\drivers\etc\hosts` on Windows
+
+:::
 
 Entries in the hosts file have the following format:
 
