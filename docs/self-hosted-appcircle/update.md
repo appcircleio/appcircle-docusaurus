@@ -37,8 +37,6 @@ For example, to find the version for a project named "spacetech", run the follow
 ./ac-self-hosted.sh -n "spacetech" version
 ```
 
-Also, note that you'll need to have Docker Compose version 2.14.1 or later installed in order to use the version command.
-
 :::
 
 ### 1. Download Latest
