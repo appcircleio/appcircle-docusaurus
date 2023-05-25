@@ -197,7 +197,7 @@ You can install iOS platform tools, android platform tools or both of them accor
 
 Below are some example configurations which shows you some sample runner configuration scenarios:
 
-- Install only iOS platform tools with default Xcode (13.4.x)
+- Install only iOS platform tools with default Xcode (14.2.x)
 
 ```bash
 ./ac-runner install -o ios
