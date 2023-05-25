@@ -228,7 +228,7 @@ If you want a secret used from `global.yaml`, then it should not be in `user-sec
 environment: Production
 enableErrorHandling: 'true'
 external:
-  scheme: https
+  scheme: http
   mainDomain: '.example.com'
 
 smtpServer:
