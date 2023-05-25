@@ -435,11 +435,10 @@ So, you can use hosts file like DNS by adding all required subdomains with their
 
 :::info
 
-Hosts file is located at :
+Hosts file is located at:
 
-`/etc/hosts` on Linux and MacOS
-
-`C:\Windows\System32\drivers\etc\hosts` on Windows
+- `/etc/hosts` on Linux and MacOS
+- `C:\Windows\System32\drivers\etc\hosts` on Windows
 
 :::
 
