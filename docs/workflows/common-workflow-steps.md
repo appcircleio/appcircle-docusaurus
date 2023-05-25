@@ -175,3 +175,9 @@ https://github.com/appcircleio/appcircle-maestro-cloud-upload-component
 This component scans your app using Mobile Secure
 
 https://github.com/appcircleio/appcircle-datatheorem-component
+
+## Repeato Mobile Test Automation
+
+This component creates and automates UI tests for iOS and Android. 
+
+https://github.com/appcircleio/appcircle-repeato-component
