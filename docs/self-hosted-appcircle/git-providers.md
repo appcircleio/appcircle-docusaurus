@@ -7,7 +7,7 @@ sidebar_position: 4
 
 # Overview
 
-With default installation, self-hosted appcircle comes with two git providers:
+With default installation, self-hosted Appcircle comes with two git providers:
 
 - Self-hosted Bitbucket
 - Self-hosted GitLab
@@ -97,7 +97,7 @@ Following steps are using example project as project naming, which was told ther
 
 :::
 
-1. Shutdown appcircle server.
+1. Shutdown Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
@@ -109,12 +109,12 @@ Following steps are using example project as project naming, which was told ther
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-3. Boot appcircle server.
+3. Boot Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-On complete, refresh your browser and login to appcircle with your account. You should see new git providers on repository connection page. :tada:
+On complete, refresh your browser and login to Appcircle with your account. You should see new git providers on repository connection page. :tada:
 
 ![](https://cdn.appcircle.io/docs/assets/be-850-sample-enable-both-options.png)

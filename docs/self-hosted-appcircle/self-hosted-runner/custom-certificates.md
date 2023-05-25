@@ -7,7 +7,7 @@ sidebar_position: 8
 
 # Overview
 
-If you're using self-signed certificates in your environment, the same certificates must also be added to runners. It can be your self-hosted appcircle server or your own git repositories.
+If you're using self-signed certificates in your environment, the same certificates must also be added to runners. It can be your self-hosted Appcircle server or your own git repositories.
 
 If you don't add and trust those self-signed certificates, runner will most probably get SSL connection errors while trying to access those resources.
 

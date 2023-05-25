@@ -15,15 +15,25 @@ So, in this section we will document all the details about configuring HTTPS wit
 
 :::caution
 
-Self-hosted appcircle server does not support using a proxy, load balancer or some other external device to terminate SSL. You should do it inside appcircle instance with configuration told in below sections.
+Self-hosted Appcircle server does not support using a proxy, load balancer or some other external device to terminate SSL. You should do it inside Appcircle instance with configuration told in below sections.
 
 :::
 
 :::info
 
-For now, self-hosted appcircle server does not have Let’s Encrypt integration or an automated way of renewing certificates.
+For now, self-hosted Appcircle server does not have Let’s Encrypt integration or an automated way of renewing certificates.
 
 You should manage certificates from configuration file manually and renew them with same method when expired.
+
+:::
+
+:::info
+
+If your cert format `PKCS#7` (known as p7b or p7c) , you can convert it to pem format with openssl. See the example command below.
+
+```bash
+$ openssl pkcs7 -print_certs -in cert.p7b -out cert.pem
+```
 
 :::
 
@@ -48,7 +58,7 @@ You can see an example project configuration from [here](installation.md#3-confi
 
 :::caution
 
-Changing `external.scheme` from `http` to `https` or from `https` to `http` after using appcircle server some time, requires configuration reset which results with data cleanup.
+Changing `external.scheme` from `http` to `https` or from `https` to `http` after using Appcircle server some time, requires configuration reset which results with data cleanup.
 
 So, we suggest you to be sure with your configuration before using it in production environment.
 
@@ -97,7 +107,7 @@ Refer to [installation](./installation.md#3-configure) docs for details of `user
 
 :::caution
 
-For now, self-hosted appcircle does not support usage of password protected private keys.
+For now, self-hosted Appcircle does not support usage of password protected private keys.
 
 :::
 
@@ -199,7 +209,7 @@ You should see "Connection Secure" icon in browser's address bar which shows suc
 
 By default, when you enable HTTPS for `external.scheme`, NGINX listens for unencrypted HTTP traffic on port 80 but redirects them as HTTPS with 301 response code automatically.
 
-You don't need to do any manuel configuration to redirect HTTP requests to HTTPS.
+You don't need to do any manual configuration to redirect HTTP requests to HTTPS.
 
 :::
 
@@ -243,7 +253,7 @@ storeWeb:
 
 When you use wildcard certificate for main domain, you don't need to create an extra certificate for enterprise app store domain.
 
-Although your wildcard certficate does not include "Store Prefix", on self-hosted appcircle server installations "Store Prefix" is not used actively since there is only one organization.
+Although your wildcard certificate does not include "Store Prefix", on self-hosted Appcircle server installations "Store Prefix" is not used actively since there is only one organization.
 
 Prefixed web requests will always be redirected to default store subdomain. And store subdomain is covered by your wildcard certificate.
 
@@ -311,7 +321,7 @@ You should use the full certificate chain for `publicKey` similar to main domain
 
 :::caution
 
-For now, self-hosted appcircle does not support usage of password protected private keys for Enterprise App Store custom domains.
+For now, self-hosted Appcircle does not support usage of password protected private keys for Enterprise App Store custom domains.
 
 :::
 
