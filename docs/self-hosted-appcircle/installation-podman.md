@@ -1,5 +1,5 @@
 ---
-title: Install Server
+title: Install Server (Podman)
 metaTitle: Install Self-hosted Appcircle
 metaDescription: Install Self-hosted Appcircle
 sidebar_position: 2
@@ -17,10 +17,14 @@ Below are the hardware and OS requirements for self-hosted Appcircle installatio
 
 Self-hosted Appcircle server can only be installed on Linux operating system.
 
-- Ubuntu 20.04 or later
-- Debian 11 or later
 - CentOS 8 or later
 - RHEL 8 or later
+
+:::info
+
+We are working on Ubuntu and Debian support. It will be available soon.
+
+:::
 
 ### Hardware Requirements
 
@@ -77,6 +81,80 @@ The `swappiness` parameter configures how often your system swaps data out of RA
 :books: For details on how to configure **swap** and `swappiness` parameter, follow guide in [here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-22-04).
 
 :::
+
+### Podman Requirements
+
+The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.0.0 or higher.
+
+#### Podman Network Stack
+
+To ensure successful operation of the Appcircle server, it is required to switch from the CNI network stack to Netavark if Podman is bundled with CNI. You can see your network stack by running:
+
+```bash
+podman info | grep -i networkBackend
+```
+
+You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark. 
+  
+```bash
+sudo dnf install -y netavark
+```  
+Once the installation is complete, please follow these steps to configure Podman:
+- Edit the /usr/share/containers/containers.conf file.
+- Add the following content to the [network] section:
+```bash
+network_backend="netavark"
+```
+- Save the file.
+- Reset Podman by running the command: `podman system reset`.
+- Reboot the system using the command: `reboot` .
+
+#### Overcoming Privileged Port Limitations
+
+When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443. If you wish to use ports 80 and 443 without running Podman as root, you have three options available:
+
+- The easiest option is, lowering down the privileged port limit to 80. This way you can run the Appcircle server on port 80 and 443 without running Podman as root. After you run the below command, do not forget to configure Appcircle to listen on 80 and 443 ports. This can be done by running the following command:
+
+```bash
+sudo sysctl net.ipv4.ip_unprivileged_port_start=80
+````
+
+- Second option is to use a port forwarding tool like socat. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories, create a shell script, and create a systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
+
+```bash
+sudo dnf install -y socat
+```
+  
+```bash
+#!/bin/bash
+
+# Save this file to /usr/local/bin/redirect-ports.sh
+# And don't forget to make it executable with chmod +x /usr/local/bin/redirect-ports.sh
+
+# Redirect port 80 to 8080
+socat TCP-LISTEN:80,fork TCP:localhost:8080
+
+# Redirect port 443 to 8443
+socat TCP-LISTEN:443,fork TCP:localhost:8443
+```
+
+```bash
+[Unit]
+Description=Port Redirect Service
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /usr/local/bin/redirect-ports.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable port-redirect.service
+sudo systemctl start port-redirect.service
+```
 
 ## Installation
 
