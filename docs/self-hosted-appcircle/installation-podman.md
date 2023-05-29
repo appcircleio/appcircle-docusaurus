@@ -84,7 +84,7 @@ The `swappiness` parameter configures how often your system swaps data out of RA
 
 ### Podman Requirements
 
-The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.0.0 or higher.
+The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.3.0 or higher.
 
 #### Podman Network Stack
 
@@ -242,7 +242,7 @@ Make sure the script was executed without any error. Script will print installed
 
 Podman is one of our major dependencies. So, its version is also important for Appcircle server runtime.
 
-Older podman versions may be incompatible for our operations. Podman versions above `4.0.0` should be preferred to eliminate any compatibility issues.
+Older podman versions may be incompatible for our operations. Podman versions above `4.3.0` should be preferred to eliminate any compatibility issues.
 
 <!-- If your linux distribution has an out of date docker version, please update distribution's package repository or install latest docker from [here](https://docs.docker.com/engine/install/). -->
 
