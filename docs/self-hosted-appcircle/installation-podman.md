@@ -15,7 +15,7 @@ Below are the hardware and OS requirements for self-hosted Appcircle installatio
 
 ### Supported Linux Distributions
 
-Self-hosted Appcircle server can only be installed on Linux operating system.
+Self-hosted Appcircle server utilizing Podman, can only be installed on Linux operating system.
 
 - CentOS 8 or later
 - RHEL 8 or later

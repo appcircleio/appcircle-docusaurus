@@ -15,7 +15,7 @@ Below are the hardware and OS requirements for self-hosted Appcircle installatio
 
 ### Supported Linux Distributions
 
-Self-hosted Appcircle server can only be installed on Linux operating system.
+Self-hosted Appcircle server utilizing Docker, can only be installed on Linux operating system.
 
 - Ubuntu 20.04 or later
 - Debian 11 or later
