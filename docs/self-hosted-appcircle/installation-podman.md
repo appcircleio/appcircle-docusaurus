@@ -153,6 +153,18 @@ sudo systemctl enable port-redirect-443.service
 sudo systemctl start port-redirect-443.service
 ```
 
+#### Rebooting the Server
+
+Currently we do not support automatic startup of the Appcircle server on system boot.
+
+:::caution
+
+If you reboot the server, you will need to run the "up" command again to start the Appcircle server.
+
+:::
+
+
+
 ## Installation
 
 ### 1. Download
