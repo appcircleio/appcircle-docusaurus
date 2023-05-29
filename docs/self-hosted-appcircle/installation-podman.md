@@ -163,7 +163,24 @@ If you reboot the server, you will need to run the "up" command again to start t
 
 :::
 
+### Firewalld Requirements
 
+If you are using firewalld, you need to open the 80 and 443 ports for the Appcircle server.
+
+```bash
+sudo firewall-cmd --add-port=80/tcp --permanent
+sudo firewall-cmd --add-port=443/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+To check if the ports are open, you can run the following command:
+
+```bash
+sudo firewall-cmd --list-ports
+```
+<!-- :::info
+If you don't use port-forwarding, you need to open 8080 and 8443 ports instead of 80 and 443.
+::: -->
 
 ## Installation
 
@@ -684,9 +701,13 @@ Self-hosted Appcircle server uses some ports for communication.
 
 Below ports must be unused on system and dedicated to only Appcircle server usage.
 
+
 - `80`
 - `443`
+- `8080`
+- `8443`
 
+Appcircle server will listen on `8080` and `8443` ports by default for HTTP and HTTPS connections.
 You can get a list of up-to-date ports used by podman with below command.
 
 ```bash
