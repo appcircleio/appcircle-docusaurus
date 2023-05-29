@@ -113,32 +113,33 @@ network_backend="netavark"
 
 When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443. If you wish to use ports 80 and 443 without running Podman as root, you some options available:
 
-- Best option is to use a port forwarding tool like socat. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories, create a shell script, and create a systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
+- Best option is to use a port forwarding tool like socat. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories and create two systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
 
 ```bash
 sudo dnf install -y socat
 ```
-  
+
 ```bash
-#!/bin/bash
+[Unit]
+## Save this file as /etc/systemd/system/port-redirect-80.service
+Description=Port Redirect Service - Port 80
+After=network.target
 
-# Save this file to /usr/local/bin/redirect-ports.sh
-# And don't forget to make it executable with chmod +x /usr/local/bin/redirect-ports.sh
+[Service]
+ExecStart=/usr/bin/socat TCP4-LISTEN:80,fork TCP4:localhost:8080
 
-# Redirect port 80 to 8080
-socat TCP-LISTEN:80,fork,reuseaddr TCP:localhost:8080
-
-# Redirect port 443 to 8443
-socat TCP-LISTEN:443,fork,reuseaddr TCP:localhost:8443
+[Install]
+WantedBy=multi-user.target
 ```
 
 ```bash
 [Unit]
-Description=Port Redirect Service
+## Save this file as /etc/systemd/system/port-redirect-443.service
+Description=Port Redirect Service - Port 443
 After=network.target
 
 [Service]
-ExecStart=/bin/bash /usr/local/bin/redirect-ports.sh
+ExecStart=/usr/bin/socat TCP4-LISTEN:443,fork TCP4:localhost:8080
 
 [Install]
 WantedBy=multi-user.target
@@ -146,8 +147,10 @@ WantedBy=multi-user.target
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable port-redirect.service
-sudo systemctl start port-redirect.service
+sudo systemctl enable port-redirect-80.service
+sudo systemctl start port-redirect-80.service
+sudo systemctl enable port-redirect-443.service
+sudo systemctl start port-redirect-443.service
 ```
 
 ## Installation
