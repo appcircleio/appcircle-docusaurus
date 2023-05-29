@@ -36,7 +36,7 @@ Current working directory is assumed `appcircle-server` for following steps. See
 
 - `projects/${YOUR_PROJECT}`
 
-You can see an example project configuration from [here](installation.md#3-configure).
+You can see an example project configuration from [here](installation-docker.md#3-configure).
 
 :::
 
