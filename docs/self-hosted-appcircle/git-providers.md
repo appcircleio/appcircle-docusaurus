@@ -20,13 +20,13 @@ Following sections will give you more details about adding other git providers.
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation.md#3-configure) section in docs, understood configuration made there and scenarios told there.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation-docker.md#3-configure) section in docs, understood configuration made there and scenarios told there.
 
 :::
 
 :::caution
 
-Current working directory is assumed `appcircle-server` for following steps. See [here](./installation.md#1-download) for installation details.
+Current working directory is assumed `appcircle-server` for following steps. See [here](./installation-docker.md#1-download) for installation details.
 
 :::
 
@@ -72,7 +72,7 @@ For more details about "Connect to a Public Repository" usage, see related docs 
 
 ### Applying Git Provider Changes
 
-You can add git providers at [installation](./installation.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
+You can add git providers at [installation](./installation-docker.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
 
 Let's assume we want to enable both "Connect via SSH" and "Connect to a Public Repository" options. Then we need to add below section to our `global.yaml`.
 
@@ -91,7 +91,7 @@ If we don't do the configuration at installation, then after editing `global.yam
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation.md#3-configure) section in docs and applied example scenario.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation-docker.md#3-configure) section in docs and applied example scenario.
 
 Following steps are using example project as project naming, which was told there.
 
