@@ -714,8 +714,10 @@ Below ports must be unused on system and dedicated to only Appcircle server usag
 Appcircle server will listen on `8080` and `8443` ports by default for HTTP and HTTPS connections.
 You can get a list of up-to-date ports used by podman with below command.
 
+Filter rootlessport to see ports used by podman.
+Filter socat to see ports used by port forwarder tool socket. 
 ```bash
-sudo netstat -tulpn | grep LISTEN | grep podman
+sudo netstat -tulpn | grep LISTEN | grep -E 'rootlessport|socat'
 ```
 
 :::
