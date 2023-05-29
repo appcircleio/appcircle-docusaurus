@@ -86,29 +86,6 @@ The `swappiness` parameter configures how often your system swaps data out of RA
 
 The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.3.0 or higher.
 
-#### Podman Network Stack
-
-To ensure successful operation of the Appcircle server, it is required to switch from the CNI network stack to Netavark if Podman is bundled with CNI. You can see your network stack by running:
-
-```bash
-podman info | grep -i networkBackend
-```
-
-You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark. 
-  
-```bash
-sudo dnf install -y netavark
-```  
-Once the installation is complete, please follow these steps to configure Podman:
-- Edit the /usr/share/containers/containers.conf file.
-- Add the following content to the [network] section:
-```bash
-network_backend="netavark"
-```
-- Save the file.
-- Reset Podman by running the command: `podman system reset`.
-- Reboot the system using the command: `reboot` .
-
 #### Overcoming Privileged Port Limitations
 
 When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443. If you wish to use ports 80 and 443 without running Podman as root, you some options available:
@@ -246,6 +223,33 @@ Older podman versions may be incompatible for our operations. Podman versions ab
 
 <!-- If your linux distribution has an out of date docker version, please update distribution's package repository or install latest docker from [here](https://docs.docker.com/engine/install/). -->
 
+:::
+
+#### Podman Network Stack
+
+To ensure successful operation of the Appcircle server, it is required to switch from the CNI network stack to Netavark if Podman is bundled with CNI. You can see your network stack by running:
+
+```bash
+podman info | grep -i networkBackend
+```
+
+You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark. 
+  
+```bash
+sudo dnf install -y netavark
+```  
+Once the installation is complete, please follow these steps to configure Podman:
+- Edit the /usr/share/containers/containers.conf file.
+- Add the following content to the [network] section:
+```bash
+network_backend="netavark"
+```
+- Save the file.
+- Reset Podman by running the command: `podman system reset`.
+- Reboot the system using the command: `reboot` .
+
+:::caution
+If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
 :::
 
 ### 3. Configure
