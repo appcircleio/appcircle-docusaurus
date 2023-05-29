@@ -239,7 +239,9 @@ You can switch to Netavark network stack by simply installing Netavark and confi
 sudo dnf install -y netavark
 ```  
 Once the installation is complete, please follow these steps to configure Podman:
-- Edit the /usr/share/containers/containers.conf file.
+- Copy the /usr/share/containers/containers.conf file to /etc/containers/containers.conf.
+- `sudo cp /usr/share/containers/containers.conf /etc/containers/container.conf`
+- Edit the /etc/containers/containers.conf file.
 - Add the following content to the [network] section:
 ```bash
 network_backend="netavark"
