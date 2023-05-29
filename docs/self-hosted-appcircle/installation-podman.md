@@ -221,8 +221,6 @@ Podman is one of our major dependencies. So, its version is also important for A
 
 Older podman versions may be incompatible for our operations. Podman versions above `4.3.0` should be preferred to eliminate any compatibility issues.
 
-<!-- If your linux distribution has an out of date docker version, please update distribution's package repository or install latest docker from [here](https://docs.docker.com/engine/install/). -->
-
 :::
 
 #### Podman Network Stack
@@ -248,7 +246,7 @@ network_backend="netavark"
 ```
 - Save the file.
 - Reset Podman by running the command: `podman system reset`.
-- Reboot the system using the command: `reboot` .
+- Reboot the system using the command: `sudo reboot` .
 
 :::caution
 If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
@@ -675,7 +673,7 @@ cd projects/spacetech/export
 podman-compose ps
 ```
 
-If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
+If everything is okay, then you should see service statuses as "up", "up (healthy)" or "exited (0)".
 
 ![](https://cdn.appcircle.io/docs/assets/be-962-docker-compose-ps.png)
 
