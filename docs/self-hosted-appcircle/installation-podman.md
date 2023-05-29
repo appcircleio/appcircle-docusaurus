@@ -606,9 +606,9 @@ Run Appcircle server services.
 
 #### Artifact Registry Credentials: Cred.json
 
-Before we run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull podman images for Appcircle server services.
+Before we run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull container images for Appcircle server services.
 
-Although it's not required immediately at configuration steps, it's required while we're starting Appcircle server. Otherwise it can not pull podman images from our artifact registry.
+Although it's not required immediately at configuration steps, it's required while we're starting Appcircle server. Otherwise it can not pull container images from our artifact registry.
 
 For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash script configures podman with appropriate credentials. If you don't have the key file, bash script gives error with a detailed message about the requirement.
 
@@ -644,7 +644,7 @@ If you get any error for some reason at this step, you can remove `${XDG_RUNTIME
 
 :::info
 
-At first run, it will pull once all podman images needed from artifact registry. Also there are some migration steps taken for once which prepares system for other operations.
+At first run, it will pull once all container images needed from artifact registry. Also there are some migration steps taken for once which prepares system for other operations.
 
 So it may need up to ~20 min to system be up according to your internet connection speed and CPU power. But recurrent boots will take a couple of minutes and will have shorter durations.
 
@@ -722,7 +722,7 @@ If your organization uses another registry (harbor, nexus etc.), in order to clo
 
 ##### Mirroring Appcircle Images
 
-To use your local registry, you must download Appcircle's podman images to your local repository. Follow the below steps to push Appcircle's podman images to your registry.
+To use your local registry, you must download Appcircle's container images to your local repository. Follow the below steps to push Appcircle's container images to your registry.
 
 - Transfer `cred.json` file to a server which has access to Appcircle's image registry.
 - Login to Appcircle's registry.
