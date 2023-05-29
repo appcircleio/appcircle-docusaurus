@@ -599,8 +599,6 @@ docker compose ps
 
 If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
 
-![](https://cdn.appcircle.io/docs/assets/be-962-docker-compose-ps.png)
-
 :::caution
 
 #### Vault
