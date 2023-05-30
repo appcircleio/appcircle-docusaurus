@@ -103,7 +103,7 @@ Description=Port Redirect Service - Port 80
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/socat TCP4-LISTEN:80,fork TCP4:localhost:8080
+ExecStart=/usr/bin/socat TCP-LISTEN:80,fork,reuseaddr TCP:127.0.0.1:8080
 
 [Install]
 WantedBy=multi-user.target
@@ -116,7 +116,7 @@ Description=Port Redirect Service - Port 443
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/socat TCP4-LISTEN:443,fork TCP4:localhost:8080
+ExecStart=/usr/bin/socat TCP-LISTEN:443,fork,reuseaddr TCP:127.0.0.1:8443
 
 [Install]
 WantedBy=multi-user.target
