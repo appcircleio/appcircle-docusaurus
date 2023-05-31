@@ -1,5 +1,5 @@
 ---
-title: Install Server (Docker)
+title: Install Server (Podman)
 metaTitle: Install Self-hosted Appcircle
 metaDescription: Install Self-hosted Appcircle
 sidebar_position: 2
@@ -15,12 +15,16 @@ Below are the hardware and OS requirements for self-hosted Appcircle installatio
 
 ### Supported Linux Distributions
 
-Self-hosted Appcircle server utilizing Docker, can only be installed on Linux operating system.
+Self-hosted Appcircle server utilizing Podman, can only be installed on Linux operating system.
 
-- Ubuntu 20.04 or later
-- Debian 11 or later
-- CentOS 8 or later
+- CentOS Stream 8 or later
 - RHEL 8 or later
+
+:::info
+
+We are working on Ubuntu and Debian support. It will be available soon.
+
+:::
 
 ### Hardware Requirements
 
@@ -78,6 +82,72 @@ The `swappiness` parameter configures how often your system swaps data out of RA
 
 :::
 
+### Podman Requirements
+
+The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.3.0 or higher.
+
+#### Overcoming Privileged Port Limitations
+
+When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443.
+
+If you want to use ports 80 and 443 without running Podman as root, you need to take some extra steps.
+
+Best option is to use a port forwarding tool like socat. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories and create two systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
+
+```bash
+sudo dnf install -y socat
+```
+
+```bash
+[Unit]
+## Save this file as /etc/systemd/system/port-redirect-80.service
+Description=Port Redirect Service - Port 80
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/socat TCP-LISTEN:80,fork,reuseaddr TCP:127.0.0.1:8080
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+[Unit]
+## Save this file as /etc/systemd/system/port-redirect-443.service
+Description=Port Redirect Service - Port 443
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/socat TCP-LISTEN:443,fork,reuseaddr TCP:127.0.0.1:8443
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable port-redirect-80.service
+sudo systemctl start port-redirect-80.service
+sudo systemctl enable port-redirect-443.service
+sudo systemctl start port-redirect-443.service
+```
+
+### Firewalld Requirements
+
+If you are using firewalld, you need to open the 80 and 443 ports for the Appcircle server.
+
+```bash
+sudo firewall-cmd --add-port=80/tcp --permanent
+sudo firewall-cmd --add-port=443/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+To check if the ports are open, you can run the following command:
+
+```bash
+sudo firewall-cmd --list-ports
+```
+
 ## Installation
 
 ### 1. Download
@@ -114,7 +184,7 @@ You need to have the following tools installed on your system.
 - openssl
 - gomplate
 - yq
-- docker
+- podman
 
 The good news is that the ac-self-hosted.sh script installs all the necessary tools if they are not already installed on your system.
 
@@ -136,44 +206,47 @@ Make sure the script was executed without any error. Script will print installed
 
 :::info
 
-Docker engine is one of our major dependencies. So, its version is also important for Appcircle server runtime.
+Podman is one of our major dependencies. So, its version is also important for Appcircle server runtime.
 
-Older docker versions may be incompatible for our operations. Docker versions above `20.10.11` should be preferred to eliminate any compatibility issues.
-
-If your linux distribution has an out of date docker version, please update distribution's package repository or install latest docker from [here](https://docs.docker.com/engine/install/).
+Older podman versions may be incompatible for our operations. Podman versions above `4.3.0` should be preferred to eliminate any compatibility issues.
 
 :::
 
-:::caution
+#### Podman Network Stack
 
-#### Docker Engine Installation
-
-Self-hosted Appcircle server is only compatible with official installation methods listed in [here](https://docs.docker.com/engine/install/).
-
-On some Linux distributions you can select docker engine at setup stage, but it's not recommended since some distributions have unofficial installation methods.
-
-For instance, when you select docker engine at setup on Ubuntu installation, Ubuntu installs docker engine via [snap](https://snapcraft.io/install/docker/ubuntu) which will result with an incompatible docker installation.
-
-In this case, you should not include docker engine to Ubuntu installation. If you want, you can install docker engine later with official [installation](https://docs.docker.com/engine/install/ubuntu/) steps.
-
-Or, as a better choice, you can leave docker engine installation to self-hosted Appcircle server installation script since we have automated installation for Debian derivatives which include `apt` package manager.
-
-:::
-
-:::info
-
-Self-hosted Appcircle server is only compatible with [docker compose V2](https://docs.docker.com/compose/compose-v2/) and the new `docker compose` command.
-
-The new compose V2, which supports the compose command as part of the docker CLI, is available with latest docker versions.
-
-If you installed docker previously by yourself to the system, please verify that docker compose plugin is also installed correctly by checking the version.
+To ensure successful operation of the Appcircle server, it is required to switch from the CNI network stack to Netavark if Podman is bundled with CNI. You can see your network stack by running:
 
 ```bash
-docker compose version
+podman info | grep -i networkBackend
 ```
 
-If `docker-compose-plugin` is missing in your system, follow its [docs](https://docs.docker.com/compose/install/linux/) to install docker compose V2 manually.
+You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark.
+  
+```bash
+sudo dnf install -y netavark
+```
 
+Once the installation is complete, please follow these steps to configure Podman:
+
+- Copy the /usr/share/containers/containers.conf file to /etc/containers/containers.conf.
+
+```bash
+sudo cp /usr/share/containers/containers.conf /etc/containers/container.conf
+```
+
+- Edit the /etc/containers/containers.conf file.
+- Add the following content to the [network] section:
+
+```bash
+network_backend="netavark"
+```
+
+- Save the file.
+- Reset Podman by running the command: `podman system reset`
+- Reboot the system using the command: `sudo reboot`
+
+:::caution
+If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
 :::
 
 ### 3. Configure
@@ -255,7 +328,7 @@ storeWeb:
 
 In later steps, other system subdomains will be concatted to main domain. For this reason, `external.mainDomain` in configuration file must always begin with `.` character as prefix.
 
-You can see a list of these subdomains in [here](./installation.md#4-dns-settings).
+You can see a list of these subdomains in [here](./installation-podman.md#4-dns-settings).
 
 :::
 
@@ -292,7 +365,7 @@ storeWeb:
 For our example, we configured below values:
 
 - `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
-- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](./installation.md#4-dns-settings) for more details.
+- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](./installation-podman.md#4-dns-settings) for more details.
 - `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
@@ -312,13 +385,13 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](./installation.md#5-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](./installation-podman.md#5-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
 ```
 
-In this case, before updating initial password in `global.yaml`, you need to **stop** partially started docker services with below command. See [reset configuration](./installation.md#reset-configuration) section for more details.
+In this case, before updating initial password in `global.yaml`, you need to **stop** partially started podman services with below command. See [reset configuration](./installation-podman.md#reset-configuration) section for more details.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" reset
@@ -488,7 +561,7 @@ With this network setup, you can run and test both self-hosted Appcircle server 
 
 ### 5. Run Server
 
-Appcircle server's modules are run on Docker Engine as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
+Appcircle server's modules are run on Podman as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
 
 `projects/${YOUR_PROJECT}/export` path will have all exported environment for self-hosted Appcircle services along with `compose.yaml`.
 
@@ -534,11 +607,11 @@ Run Appcircle server services.
 
 #### Artifact Registry Credentials: Cred.json
 
-Before we run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull docker images for Appcircle server services.
+Before we run self-hosted appcircle, we need to set artifact registry credentials. Using credentials JSON key file, we will pull container images for Appcircle server services.
 
-Although it's not required immediately at configuration steps, it's required while we're starting Appcircle server. Otherwise it can not pull docker images from our artifact registry.
+Although it's not required immediately at configuration steps, it's required while we're starting Appcircle server. Otherwise it can not pull container images from our artifact registry.
 
-For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash script configures docker engine with appropriate credentials. If you don't have the key file, bash script gives error with a detailed message about the requirement.
+For this reason, it's a part of the configuration. `ac-self-hosted.sh` bash script configures podman with appropriate credentials. If you don't have the key file, bash script gives error with a detailed message about the requirement.
 
 When you buy an enterprise license for self-hosted appcircle, you will get a credentials JSON key file which enables you to login our artifact registry. For example, assume our fictive company is Space Tech.
 
@@ -558,7 +631,7 @@ After that you can execute below command.
 
 You should see
 
-> "Docker login cred not found. Trying to login now..."
+> "Podman login cred not found. Trying to login now..."
 
 in command output and then
 
@@ -566,13 +639,13 @@ in command output and then
 
 which shows us successful artifact registry login.
 
-If you get any error for some reason at this step, you can remove `~/.docker/config` file to reset and execute same command again to retake same steps.
+If you get any error for some reason at this step, you can remove `${XDG_RUNTIME_DIR}/containers/auth.json` file to reset and execute same command again to retake same steps.
 
 :::
 
 :::info
 
-At first run, it will pull once all docker images needed from artifact registry. Also there are some migration steps taken for once which prepares system for other operations.
+At first run, it will pull once all container images needed from artifact registry. Also there are some migration steps taken for once which prepares system for other operations.
 
 So it may need up to ~20 min to system be up according to your internet connection speed and CPU power. But recurrent boots will take a couple of minutes and will have shorter durations.
 
@@ -590,14 +663,14 @@ It will give a quick health summary. You should see below message on success.
  All services are running successfully. Project name is spacetech
 ```
 
-If you want to get details about docker services, you may run the following commands.
+If you want to get details about podman services, you may run the following commands.
 
 ```bash
 cd projects/spacetech/export
-docker compose ps
+podman-compose ps
 ```
 
-If everything is okay, then you should see service statuses as "running", "running (healthy)" or "exited (0)".
+If everything is okay, then you should see service statuses as "up", "up (healthy)" or "exited (0)".
 
 :::caution
 
@@ -617,7 +690,7 @@ In this case, stop all services with data cleanup.
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-Then make a new export and start services. Refer to [reset configuration](./installation.md#reset-configuration) section for more details.
+Then make a new export and start services. Refer to [reset configuration](./installation-podman.md#reset-configuration) section for more details.
 
 :::
 
@@ -629,12 +702,28 @@ Below ports must be unused on system and dedicated to only Appcircle server usag
 
 - `80`
 - `443`
+- `8080`
+- `8443`
 
-You can get a list of up-to-date ports used by docker with below command.
+Appcircle server will listen on `8080` and `8443` ports by default for HTTP and HTTPS connections.
+You can get a list of up-to-date ports used by podman with below command.
 
 ```bash
-sudo netstat -tulpn | grep LISTEN | grep docker
+sudo netstat -tulpn | grep LISTEN | grep -E 'rootlessport|socat'
 ```
+
+- Filter "rootlessport" to see ports used by podman.
+- Filter "socat" to see ports used by port forwarder tool socket.
+
+:::
+
+:::caution
+
+##### Rebooting the Server
+
+Currently, we do not support automatic startup of the Appcircle server on system boot when Podman is selected as the container engine.
+
+If you reboot the server, you will need to run the "up" command again to start the Appcircle server.
 
 :::
 
@@ -644,13 +733,13 @@ If your organization uses another registry (harbor, nexus etc.), in order to clo
 
 ##### Mirroring Appcircle Images
 
-To use your local registry, you must download Appcircle's Docker images to your local repository. Follow the below steps to push Appcircle's Docker images to your registry.
+To use your local registry, you must download Appcircle's container images to your local repository. Follow the below steps to push Appcircle's container images to your registry.
 
-- Transfer `cred.json` file to a server which has access to Appcircle's docker registry.
+- Transfer `cred.json` file to a server which has access to Appcircle's image registry.
 - Login to Appcircle's registry.
 
 ```bash
-cat cred.json | docker login -u _json_key --password-stdin  europe-west1-docker.pkg.dev/appcircle/docker-registry
+cat cred.json | podman login -u _json_key --password-stdin  europe-west1-docker.pkg.dev/appcircle/docker-registry
 ```
 
 You should see `Login Succeeded` message.
@@ -677,15 +766,15 @@ DEST_REGISTRY_URL="reg.appcircle.spacetech.com/appcircle"
 # Loop through each line of the file and pull, tag, and push the Docker image
 while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
     echo "Pulling image: $IMAGE_NAME"
-    docker pull $IMAGE_NAME
+    podman pull $IMAGE_NAME
     if [ $? -eq 0 ]; then
         echo "Image pulled successfully: $IMAGE_NAME"
         # Replace source registry URL  with the new registry URL
         IMAGE_TAG="${IMAGE_NAME/$SRC_REGISTRY_URL/$DEST_REGISTRY_URL}"
         # Tag the image with the destination registry URL and repository name
-        docker tag $IMAGE_NAME $IMAGE_TAG
+        podman tag $IMAGE_NAME $IMAGE_TAG
         # Push the tagged image to the destination registry
-        docker push $IMAGE_TAG
+        podman push $IMAGE_TAG
         if [ $? -eq 0 ]; then
             echo "Image pushed successfully: $IMAGE_NAME"
         else
@@ -699,17 +788,15 @@ done < docker-images.txt
 
 :::info
 
-If your registry is not using `https`, you may get an error during docker push step. You need to add your registry as insecure registry. Edit the `daemon.json` file, whose default location is `/etc/docker/daemon.json` on Linux.
+If your registry is not using `https`, you may get an error during podman push step. You need to add your registry as insecure registry. Create a file named `myregistry.conf` in `/etc/containers/registries.conf.d/` folder. It should have the following content.
 
-If the daemon.json file does not exist, create it. Assuming there are no other settings in the file, it should have the following contents:
-
-```json
-{
-  "insecure-registries": ["http://reg.appcircle.spacetech.com"]
-}
+```bash
+[[registry]]
+location = "registry.mycluster.williamlieurance.com:5000"
+insecure = true
 ```
 
-After this modification, restart docker or server to apply new settings.
+After this modification, restart podman or server to apply new settings.
 
 :::
 
@@ -781,7 +868,7 @@ You can see some example configuration screenshots below for Nexus UI.
 
 If you face any issue about "manifest not found" when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from Nexus proxy registry.
 
-By looking at the [mirroring images](./installation.md#mirroring-appcircle-images) script above, you can pull images from the proxy repository with a similar script. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
+By looking at the [mirroring images](./installation-podman.md#mirroring-appcircle-images) script above, you can pull images from the proxy repository with a similar script. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
 
 Nexus may have some issues when pulling images in parallel.
 
@@ -805,7 +892,7 @@ You can also login to enterprise app store with configured custom URL `store.spa
 
 Although you can run export multiple times with different project names, you can run only one of them as an Appcircle server instance.
 
-With default installation steps, reserved ports are the same for all exports. For this reason, when you run `docker compose up -d` first instance will reserve open ports to itself. And later `docker compose up -d` commands for other projects will get errors like "port is already allocated".
+With default installation steps, reserved ports are the same for all exports. For this reason, when you run `./ac-self-hosted.sh -n spacetech up` first instance will reserve open ports to itself. And later `./ac-self-hosted.sh -n spacetech up` commands for other projects will get errors like "port is already allocated".
 
 :::
 
@@ -813,7 +900,7 @@ With default installation steps, reserved ports are the same for all exports. Fo
 
 For now, self-hosted Appcircle server is a single node solution. You can not scale it by adding more nodes with other bare-metals or VMs.
 
-Because it has a self-contained architecture with all its data side-by-side its docker services. Every node can only use its internal volumes and data on host.
+Because it has a self-contained architecture with all its data side-by-side its podman services. Every node can only use its internal volumes and data on host.
 
 :::
 
@@ -843,7 +930,7 @@ Its response should be something like below.
 
 Some configuration changes may require data cleanup with extra steps which means data loss if you use Appcircle server for some time.
 
-For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.*` settings requires docker volume prune which results with data cleanup.
+For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.*` settings requires podman volume prune which results with data cleanup.
 
 So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
 
@@ -857,13 +944,13 @@ It will remove all unused local volumes which is useful for a clean start.
 
 :::
 
-Then go back to your configuration and change settings as done previously at [configure](./installation.md#3-configure) step.
+Then go back to your configuration and change settings as done previously at [configure](./installation-podman.md#3-configure) step.
 
 When you're ready for a new export, in root directory execute below command again as done previously.
 
 :::info
 
-For our example scenario, root directory is `appcircle-server` as seen [here](./installation.md#1-download). And project name is "spacetech".
+For our example scenario, root directory is `appcircle-server` as seen [here](./installation-podman.md#1-download). And project name is "spacetech".
 
 :::
 
