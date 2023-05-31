@@ -132,16 +132,6 @@ sudo systemctl enable port-redirect-443.service
 sudo systemctl start port-redirect-443.service
 ```
 
-#### Rebooting the Server
-
-Currently we do not support automatic startup of the Appcircle server on system boot.
-
-:::caution
-
-If you reboot the server, you will need to run the "up" command again to start the Appcircle server.
-
-:::
-
 ### Firewalld Requirements
 
 If you are using firewalld, you need to open the 80 and 443 ports for the Appcircle server.
@@ -721,6 +711,16 @@ Filter socat to see ports used by port forwarder tool socket.
 ```bash
 sudo netstat -tulpn | grep LISTEN | grep -E 'rootlessport|socat'
 ```
+
+:::
+
+:::caution
+
+##### Rebooting the Server
+
+Currently, we do not support automatic startup of the Appcircle server on system boot when Podman is selected as the container engine.
+
+If you reboot the server, you will need to run the "up" command again to start the Appcircle server.
 
 :::
 
