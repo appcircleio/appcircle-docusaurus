@@ -147,9 +147,6 @@ To check if the ports are open, you can run the following command:
 ```bash
 sudo firewall-cmd --list-ports
 ```
-<!-- :::info
-If you don't use port-forwarding, you need to open 8080 and 8443 ports instead of 80 and 443.
-::: -->
 
 ## Installation
 
@@ -223,22 +220,30 @@ To ensure successful operation of the Appcircle server, it is required to switch
 podman info | grep -i networkBackend
 ```
 
-You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark. 
+You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark.
   
 ```bash
 sudo dnf install -y netavark
-```  
+```
+
 Once the installation is complete, please follow these steps to configure Podman:
+
 - Copy the /usr/share/containers/containers.conf file to /etc/containers/containers.conf.
-- `sudo cp /usr/share/containers/containers.conf /etc/containers/container.conf`
+
+```bash
+sudo cp /usr/share/containers/containers.conf /etc/containers/container.conf
+```
+
 - Edit the /etc/containers/containers.conf file.
 - Add the following content to the [network] section:
+
 ```bash
 network_backend="netavark"
 ```
+
 - Save the file.
-- Reset Podman by running the command: `podman system reset`.
-- Reboot the system using the command: `sudo reboot` .
+- Reset Podman by running the command: `podman system reset`
+- Reboot the system using the command: `sudo reboot`
 
 :::caution
 If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
@@ -695,7 +700,6 @@ Self-hosted Appcircle server uses some ports for communication.
 
 Below ports must be unused on system and dedicated to only Appcircle server usage.
 
-
 - `80`
 - `443`
 - `8080`
@@ -704,11 +708,12 @@ Below ports must be unused on system and dedicated to only Appcircle server usag
 Appcircle server will listen on `8080` and `8443` ports by default for HTTP and HTTPS connections.
 You can get a list of up-to-date ports used by podman with below command.
 
-Filter rootlessport to see ports used by podman.
-Filter socat to see ports used by port forwarder tool socket. 
 ```bash
 sudo netstat -tulpn | grep LISTEN | grep -E 'rootlessport|socat'
 ```
+
+- Filter "rootlessport" to see ports used by podman.
+- Filter "socat" to see ports used by port forwarder tool socket.
 
 :::
 
