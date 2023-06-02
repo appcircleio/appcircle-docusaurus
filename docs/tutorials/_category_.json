@@ -1,7 +1,10 @@
 {
     "label": "Tutorials",
     "position": 3,
-    "collapsed": false,
-    "collapsible": false,
-    "className": "section-title"
+    "collapsed": true,
+    "collapsible": true,
+    "customProps": {
+        "icon": "hello"
+      },
+    "className": "section-title tutorial"
 }

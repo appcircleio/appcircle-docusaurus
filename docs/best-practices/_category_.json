@@ -1,7 +1,7 @@
 {
   "label": "Best Practices",
   "position": 19,
-  "collapsed": false,
-  "collapsible": false,
-  "className": "section-title"
+  "collapsed": true,
+  "collapsible": true,
+  "className": "section-title best-practices"
 }
