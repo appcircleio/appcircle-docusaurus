@@ -817,3 +817,94 @@ button[class*='toggleButton'] svg[class*='lightToggleIcon'] path {
 button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
   fill: var(--ifm-navbar-background-color);
 }
+
+/* Section icons. */
+
+
+.section-title > div >a::before {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px; /* adjust this value to control the padding between the image and the link */
+  filter: invert(55%) sepia(79%) saturate(1940%) hue-rotate(349deg) brightness(101%) contrast(101%); /* https://codepen.io/sosuke/pen/Pjoqqp */
+}
+
+
+.section-title.tutorial > div >a::before {
+  background-image: url(../../static/img/sidebar/tutorial.svg);
+}
+
+.section-title.account > div >a::before {
+  background-image: url(../../static/img/sidebar/account.svg);
+}
+
+.section-title.api > div >a::before {
+  background-image: url(../../static/img/sidebar/api.svg);
+}
+
+.section-title.build > div >a::before {
+  background-image: url(../../static/img/sidebar/build.svg);
+}
+
+.section-title.workflows > div >a::before {
+  background-image: url(../../static/img/sidebar/workflows.svg);
+}
+
+.section-title.integrations > div >a::before {
+  background-image: url(../../static/img/sidebar/integrations.svg);
+}
+
+.section-title.continuous-testing > div >a::before {
+  background-image: url(../../static/img/sidebar/continuous-testing.svg);
+}
+
+.section-title.environment-variables > div >a::before {
+  background-image: url(../../static/img/sidebar/environment-variables.svg);
+}
+
+.section-title.versioning > div >a::before {
+  background-image: url(../../static/img/sidebar/versioning.svg);
+}
+
+.section-title.infrastructure > div >a::before {
+  background-image: url(../../static/img/sidebar/infrastructure.svg);
+}
+
+.section-title.self-hosted > div >a::before {
+  background-image: url(../../static/img/sidebar/self-hosted.svg);
+}
+
+.section-title.signing-identities > div >a::before {
+  background-image: url(../../static/img/sidebar/signing-identities.svg);
+}
+
+.section-title.distribute> div >a::before {
+  background-image: url(../../static/img/sidebar/distribute.svg);
+}
+
+.section-title.enterprise-store > div >a::before {
+  background-image: url(../../static/img/sidebar/enterprise-store.svg);
+}
+
+.section-title.store-submit > div >a::before {
+  background-image: url(../../static/img/sidebar/store-submit.svg);
+}
+
+.section-title.reports > div >a::before {
+  background-image: url(../../static/img/sidebar/reports.svg);
+}
+
+.section-title.faq > div >a::before {
+  background-image: url(../../static/img/sidebar/faq.svg);
+}
+
+.section-title.updates > div >a::before {
+  background-image: url(../../static/img/sidebar/updates.svg);
+}
+
+.section-title.best-practices > div >a::before {
+  background-image: url(../../static/img/sidebar/best-practices.svg);
+}

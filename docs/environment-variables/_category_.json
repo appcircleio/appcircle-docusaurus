@@ -1,7 +1,7 @@
 {
   "label": "Environment Variables",
   "position": 8,
-  "collapsed": false,
-  "collapsible": false,
-  "className": "section-title"
+  "collapsed": true,
+  "collapsible": true,
+  "className": "section-title environment-variables"
 }
