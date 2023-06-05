@@ -22,15 +22,15 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### :muscle: Improvement
 - [Xcode Build for Simulator](../workflows/ios-specific-workflow-steps.md#xcodebuild-for-ios-simulator) workflow step updated. The new version allows you to create both x86_64 and arm64 simulator builds. This step can optionally install the simulator builds to run UI tests on the simulator. <CloudBadge/> <SelfHostedBadge/>
 - [Test Report](../continuous-testing/running-ios-unit-and-ui-tests.md) step tries to parse JUnit files if it can't find .xctestresult files. This can be useful if your testing framework(BrowserStack, Repeato, etc.) is producing JUnit reports. <CloudBadge/> <SelfHostedBadge/>
-- [Wait for Android Emulator](../workflows/android-specific-workflow-steps.md#wait-for-android-emulator) step updated to install optional APK after the emulator boots.
-- The default Xcode version is bumped to 14.2 for new projects.
+- [Wait for Android Emulator](../workflows/android-specific-workflow-steps.md#wait-for-android-emulator) step updated to install optional APK after the emulator boots.  <CloudBadge/> <SelfHostedBadge/>
+- The default Xcode version is bumped to 14.2 for new projects.  <CloudBadge/> <SelfHostedBadge/>
 - Sub-organizations can see their download reports. <CloudBadge/> <SelfHostedBadge/>
 - Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
 - Build trigger screen is improved. <CloudBadge/> <SelfHostedBadge/>
 - [Self-hosted Runer](../self-hosted-appcircle/self-hosted-runner/installation.md) installation script updated for new Xcode versions and other tools. <SelfHostedBadge/>
-- The default configuration file that contains [Self-hosted Server](../self-hosted-appcircle/installation.md) settings is simplified.
-- The [Self-hosted Server](../self-hosted-appcircle/installation.md) package has a text file that contains a list of container services.
-- [Self-hosted Server](../self-hosted-appcircle/installation.md) Podman support added.
+- The default configuration file that contains [Self-hosted Server](../self-hosted-appcircle/installation.md) settings is simplified. <SelfHostedBadge/>
+- The [Self-hosted Server](../self-hosted-appcircle/installation.md) package has a text file that contains a list of container services. <SelfHostedBadge/>
+- [Self-hosted Server](../self-hosted-appcircle/installation.md) Podman support added. <SelfHostedBadge/>
 - [Self-hosted Server](../self-hosted-appcircle/installation.md) installation script `version` command updated to fix Podman compatibility. <SelfHostedBadge/>
 - New script added [Self-hosted Server](../self-hosted-appcircle/installation.md) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
 - New script added [Self-hosted Server](../self-hosted-appcircle/installation.md) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
