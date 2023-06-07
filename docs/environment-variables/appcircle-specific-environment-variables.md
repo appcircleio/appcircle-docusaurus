@@ -74,6 +74,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_ANDROID\_APP\_ANALYSIS\_PATH | Location of the app analyzer JSON file   |
 | JAVA\_HOME\_8\_X64               | OpenJDK 8 Location                       |
 | JAVA\_HOME\_11\_X64              | OpenJDK 11 Location                      |
+| JAVA\_HOME\_17\_X64              | OpenJDK 17 Location                      |
 | AC\_BUILD\_NUMBER\_SOURCE        | Build Number Source for Versioning       |
 | AC\_ANDROID\_BUILD\_NUMBER       | Build Number for Versioning              |
 | AC\_BUILD\_OFFSET                | Build Number Offset for Versioning       |

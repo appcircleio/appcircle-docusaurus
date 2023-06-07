@@ -11,17 +11,19 @@ import NarrowImage from '@site/src/components/NarrowImage';
 
 ### Changing JAVA version
 
-If you want to change the JAVA version for your Android project, you can achieve this by changing the JAVA_HOME environment variable. Appcircle currently has OpenJDK 11(default) and OpenJDK 8. You can use the below custom script before your build step for this task.
+If you want to change the JAVA version for your Android project, you can achieve this by changing the JAVA_HOME environment variable. Appcircle currently has OpenJDK 11(default), OpenJDK 8 and OpenJDK 17. You can use the below custom script before your build step for this task.
 
-Appcirle Android build uses OpenJDK 11 as a default. Build machines also have OpenJDK 8 as well. You can use the below custom script to change your JAVA_HOME environment variable.
+Appcircle Android build uses OpenJDK 11 as a default. Build machines also have OpenJDK 8 and OpenJDK 17 as well. You can use the below custom script to change your JAVA_HOME environment variable.
 
 ```bash
-echo "Default JAVA "$JAVA_HOME
-echo "OpenJDK 8 "$JAVA_HOME_8_X64
-echo "OpenJDK 11 "$JAVA_HOME_11_X64
+echo "Default JAVA" $JAVA_HOME
 
-# Change JAVA_HOME to OPENJDK 8
-echo "JAVA_HOME=$JAVA_HOME_8_X64" >> $AC_ENV_FILE_PATH
+echo "OpenJDK 8" $JAVA_HOME_8_X64
+echo "OpenJDK 11" $JAVA_HOME_11_X64
+echo "OpenJDK 17" $JAVA_HOME_17_X64
+
+# Change JAVA_HOME to OPENJDK 17
+echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $AC_ENV_FILE_PATH
 ```
 
 Create a custom script like above and put it **above** your Android build step.
