@@ -232,7 +232,7 @@ Once the installation is complete, please follow these steps to configure Podman
 - Copy the /usr/share/containers/containers.conf file to /etc/containers/containers.conf.
 
 ```bash
-sudo cp /usr/share/containers/containers.conf /etc/containers/container.conf
+sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
 ```
 
 - Edit the /etc/containers/containers.conf file.
