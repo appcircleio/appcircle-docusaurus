@@ -43,7 +43,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 ### Build Configuration for React Native iOS applications
 
-Click on the gear icon on top right to access the build configuration. The first step will be the enter project details. You can enter details manually or click on the Fetch button to retrieve them from your project.
+First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
@@ -65,7 +65,7 @@ Major Xcode versions are available for building in Appcircle. You can select the
 
 ### Build Configuration for React Native Android applications
 
-Click on the gear icon on the top right to access the build configuration. The first step will be the build project details. You can enter details manually or click on the Fetch button to retrieve them from your project.
+First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 ![](https://cdn.appcircle.io/docs/assets/reactnative-android-settings.png)
 
@@ -113,7 +113,6 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/ios-signing.png)
 
 ### Distribution (Deployment) Configuration
 

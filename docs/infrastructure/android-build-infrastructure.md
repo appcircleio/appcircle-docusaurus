@@ -30,6 +30,10 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 :::
 
+### Java Version
+
+Build agents have Java 8, 11, and 17 installed. Java 11 is set as the default version. If you want to use a different Java version. please follow [this document](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version)
+
 ### Emulator
 
 Build agents have Pixel_3a Android 9.0 emulator pre-installed. You may add or remove other emulators by using `sdkmanager`.
