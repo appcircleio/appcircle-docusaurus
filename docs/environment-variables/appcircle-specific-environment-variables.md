@@ -8,7 +8,7 @@ sidebar_position: 3
 
 Here is a list of pre-defined environment variables in Appcircle.
 
-These reserved environment variables are either predetermined by Appcircle or they are set in the build configuration.
+These reserved environment variables are either predetermined by Appcircle or are set in the build configuration.
 
 You can check how these environment variables are utilized within the related workflow step. For instance, you can set the Xcode version of a build profile through the [build configuration](../build/building-ios-applications.md#selecting-the-xcode-version-and-switching-to-the-xcode-beta), which will then set this value as the `AC_XCODE_VERSION` environment variable.
 
@@ -34,9 +34,9 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_COMMIT\_MESSAGE        | Commit message                                                                                     |
 | AC\_COMMIT\_AUTHOR\_EMAIL  | The email of the author of the commit.                                                             |
 | AC\_COMMIT\_AUTHOR\_NAME   | The name of the author of the commit.                                                              |
-| AC\_COMMIT\_AUTHOR\_SUBJECT| The subject of the  commit.                                                                        |
+| AC\_COMMIT\_AUTHOR\_SUBJECT| The subject of the commit.                                                                        |
 | AC\_TAG\_AUTHOR\_EMAIL     | The email of the author of the tag.                                                                |
-| AC\_TAG\_ANNOTATED\_MESSAGE| The annotated messafe of the tag.                                                                  |
+| AC\_TAG\_ANNOTATED\_MESSAGE| The annotated message of the tag.                                                                  |
 | AC\_COMMIT\_TAGS           | Commit tags                                                                                        |
 | AC\_BUILD\_NUMBER          | Build number (`Fetch Details` is counted as Build)                                                 |
 | AC\_BUILD\_TIMESTAMP       | Build time stamp                                                                                   |
@@ -47,6 +47,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_PULL\_NUMBER           | Pull or Merge Request Number                                                                       |
 | AC\_PROVIDER\_NAME         | **Git Provider** Github,GithubApp,Gitlab,GitlabSelfHosted,Bitbucket,BitbucketServer                |
 | AC\_IS\_SUCCESS            | Set to `true` if the previous step was successful                                                  |
+| AC\_LOGFILE                | Build log path                                                                                     |
 | AC\_TEST\_RESULT\_PATH     | Test Result Path                                                                                   |
 | AC\_WORKFLOW\_ID           | Workflow UUID                                                                                      |
 | AC\_WORKFLOW\_NAME         | Workflow Name                                                                                      |
@@ -90,7 +91,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | ---------------------------- | ------------------------------------------------------------------------------------- |
 | AC\_XCODE\_LIST\_DIR         | Specifies the Xcode folder list path                                                  |
 | AC\_SCHEME                   | Specifies the project scheme for build                                                |
-| AC\_ARCHIVE\_FLAGS           | Specifies the extra Xcodebuild flag. For example : `-configuration DEBUG`             |
+| AC\_ARCHIVE\_FLAGS           | Specifies the extra Xcodebuild flag. For example: `-configuration DEBUG`             |
 | AC\_XCODE\_VERSION           | Specifies the Xcode version                                                           |
 | AC\_ARCHIVE\_PATH            | Archive path                                                                          |
 | AC\_ARCHIVE\_METADATA\_PATH  | Archive metadata path                                                                 |

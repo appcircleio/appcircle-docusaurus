@@ -1,7 +1,7 @@
 {
   "label": "Enterprise App Store",
   "position": 12,
-  "collapsed": false,
-  "collapsible": false,
-  "className": "section-title"
+  "collapsed": true,
+  "collapsible": true,
+  "className": "section-title enterprise-store"
 }

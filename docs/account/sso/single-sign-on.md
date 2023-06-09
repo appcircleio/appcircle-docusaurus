@@ -21,7 +21,7 @@ Only Enterprise accounts support SSO.
 
 ### Enable SSO
 
-SSO can only be enabled by the organization's administrator. To start, go to [My Organization](../my-organization.md) screen and press the "Enable SSO" button under the "SSO Integration" section.
+SSO can only be enabled by the organization's administrator. To start, go to [My Organization](../my-organization.md) Integration screen and press the "Enable SSO" button under the "SSO Integration" section.
 
 ### Identity Providers
 

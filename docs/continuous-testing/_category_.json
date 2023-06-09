@@ -1,7 +1,7 @@
 {
   "label": "Continuous Testing",
   "position": 7,
-  "collapsed": false,
-  "collapsible": false,
-  "className": "section-title"
+  "collapsed": true,
+  "collapsible": true,
+  "className": "section-title continuous-testing"
 }

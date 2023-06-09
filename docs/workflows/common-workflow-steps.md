@@ -181,3 +181,9 @@ https://github.com/appcircleio/appcircle-datatheorem-component
 This component creates and automates UI tests for iOS and Android. 
 
 https://github.com/appcircleio/appcircle-repeato-component
+
+## Snyk Scan Security
+
+By utilizing this step, you will be able to test your project dependencies for vulnerabilities during builds and use Snyk to monitor your projects.
+
+https://github.com/appcircleio/appcircle-snyk-scan-secure-component

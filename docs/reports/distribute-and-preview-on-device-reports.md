@@ -1,11 +1,11 @@
 ---
-title: Distribute and Preview on Device Reports
-metaTitle: Distribute and Preview on Device Reports
-metaDescription: Distribute and Preview on Device Reports
+title: Distribute Reports
+metaTitle: Distribute Reports
+metaDescription: Distribute Reports
 sidebar_position: 2
 ---
 
-# Distribute and Preview on Device Reports
+# Distribute Reports
 
 ## App Versions Report
 

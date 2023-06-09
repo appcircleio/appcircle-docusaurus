@@ -20,9 +20,7 @@ When you are done with the steps above, you can now start building your Android 
 
 ### Build Configuration
 
-First, we need to set up the build configuration.
-
-Click on the gear icon on the top right to access the build configuration. First step will be the build project details. You can enter details manually or click on the Fetch Details button to retrieve them from your project.
+First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 ### Private Modules
 
@@ -126,17 +124,17 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 <ContentRef url="../../workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
 
-###
 
 ### Start Build
 
-You are now ready to start your first build.
+You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
-At the build profile page, you can see your branches are listed on the left and commits on the right.
+![](https://cdn.appcircle.io/docs/assets/start-build.png)
+
+Select a configuration, workflow, commit id and click on **Start Build button**
 
 ![](https://cdn.appcircle.io/docs/assets/android-build.png)
 
-You can start the build by clicking on **Build** to the right of each commit.
 
 Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
 

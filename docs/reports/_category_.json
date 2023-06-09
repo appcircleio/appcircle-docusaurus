@@ -1,7 +1,7 @@
 {
   "label": "Reports",
   "position": 15,
-  "collapsed": false,
-  "collapsible": false,
-  "className": "section-title"
+  "collapsed": true,
+  "collapsible": true,
+  "className": "section-title reports"
 }

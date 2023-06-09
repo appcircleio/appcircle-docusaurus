@@ -11,6 +11,37 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.4.0 - 2023-06-09 - Build Profile Improvements, Azure Boards 
+
+### 🆕 New Feature
+- [Xcode 15.0 Beta](../infrastructure/ios-build-infrastructure.md) added to build agents. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
+- [Java 17](../infrastructure/android-build-infrastructure.md) added to build agents. <CloudBadge/> <SelfHostedBadge/>
+- [Build Profile](../build/adding-a-build-profile/README.md) configurations are separated from branchs. It is now easier to see and manage configs from a single location. <CloudBadge/> <SelfHostedBadge/>
+- [Azure Boards](../integrations/azure-board.md) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [Repeato](../workflows/common-workflow-steps.md#repeato-mobile-test-automation) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [Snyk Secure Scan](../workflows/common-workflow-steps.md#snyk-scan-security) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+- [Xcode Build for Simulator](../workflows/ios-specific-workflow-steps.md#xcodebuild-for-ios-simulator) workflow step updated. The new version allows you to create both x86_64 and arm64 simulator builds. This step can optionally install the simulator builds to run UI tests on the simulator. <CloudBadge/> <SelfHostedBadge/>
+- [Test Report](../continuous-testing/running-ios-unit-and-ui-tests.md) step tries to parse JUnit files if it can't find .xctestresult files. This can be useful if your testing framework(BrowserStack, Repeato, etc.) is producing JUnit reports. <CloudBadge/> <SelfHostedBadge/>
+- [Wait for Android Emulator](../workflows/android-specific-workflow-steps.md#wait-for-android-emulator) step updated to install optional APK after the emulator boots.  <CloudBadge/> <SelfHostedBadge/>
+- The default Xcode version is bumped to 14.2 for new projects.  <CloudBadge/> <SelfHostedBadge/>
+- Sub-organizations can see their download reports. <CloudBadge/> <SelfHostedBadge/>
+- Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
+- Build trigger screen is improved. <CloudBadge/> <SelfHostedBadge/>
+- [Self-hosted Runer](../self-hosted-appcircle/self-hosted-runner/installation.md) installation script updated for new Xcode versions and other tools. <SelfHostedBadge/>
+- The default configuration file that contains [Self-hosted Server](../self-hosted-appcircle/installation.md) settings is simplified. <SelfHostedBadge/>
+- The [Self-hosted Server](../self-hosted-appcircle/installation.md) package has a text file that contains a list of container services. <SelfHostedBadge/>
+- [Self-hosted Server](../self-hosted-appcircle/installation.md) Podman support added. <SelfHostedBadge/>
+- [Self-hosted Server](../self-hosted-appcircle/installation.md) installation script `version` command updated to fix Podman compatibility. <SelfHostedBadge/>
+- New script added [Self-hosted Server](../self-hosted-appcircle/installation.md) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
+- New script added [Self-hosted Server](../self-hosted-appcircle/installation.md) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
+
+### 🐞 Fixed
+- Strict URL check is removed when users try to add Azure repositories. <CloudBadge/> <SelfHostedBadge/>
+- An error that was occurring when you tried to add a sub-org on self-hosted Appcircle is fixed. <SelfHostedBadge/>
+- Some minor cases that were occurring on the [Self-hosted Server](../self-hosted-appcircle/installation.md)   boot process are fixed. <SelfHostedBadge/>
+
 ## 3.3.2 - 2023-05-10 - Xcode 14.3,FTP Upload 
 
 ### 🆕 New Feature

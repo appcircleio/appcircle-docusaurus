@@ -56,7 +56,7 @@ There are several ways to create an Enterprise build profile. You can either man
 - Whenever you create a new *signed* build, that build will be sent to Enterprise App Store.
 - You can also manually send your APK or IPA files by hitting the **...** button and selecting **Distribute Binary**
 
-![](<https://cdn.appcircle.io/docs/assets/07-01-Output.jpg>)
+![](<https://cdn.appcircle.io/docs/assets/android-distribute.png>)
 
 
 After you created a build profile, you can manage the deployment and access settings by visiting that profile.
