@@ -42,7 +42,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 ### Build Configuration for Flutter iOS applications
 
-Click on the gear icon on the top right to access the build configuration. The first step will be the entering project details. You can enter these details manually or click on the Fetch button to retrieve them from your project to detect the correct path for the Xcode project automatically.
+First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
@@ -52,7 +52,7 @@ You can also select a specific Xcode version if you have certain dependencies or
 
 ### Build Configuration for Flutter Android applications
 
-Click on the gear icon on the top right to access the build configuration. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
+First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
 
 ![](<https://cdn.appcircle.io/docs/assets/image (3).png>)
 
@@ -96,13 +96,14 @@ The next step in the build configuration is Signing. Here, please select the pro
 
 For signing iOS apps, press add, select the bundle ID from the first dropdown and then select a compatible provisioning profile (added from the signing identities module) from the second dropdown.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(4).png" />
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(5).png" />
+
 
 ### Signing Flutter Android Applications
 
 Here, please select the Android Keystore you added in the [Android Keystores](../signing-identities/android-keystores.md) section. For signing Android apps, simply select a keystore (added from the signing identities module).
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(5).png" />
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(4).png" />
 
 ###
 
@@ -153,11 +154,15 @@ To change the Flutter version, open the Flutter Install workflow step from the w
 You can also set the preferred Flutter version on config screen. If you don't set any version, `stable` version will be used.
 ### Starting a Flutter Build and After a Build
 
-To start your first build, just press the start build button – the play button under the actions columns (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in realtime.
+You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
-Once your build is complete, you can now download the binary file or deploy it to distribute module manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at anytime.
 
-![](<https://cdn.appcircle.io/docs/assets/image (7).png>)
+![](https://cdn.appcircle.io/docs/assets/start-build.png)
+
+Select a configuration, workflow, commit id and click on **Start Build button**
+
+![](https://cdn.appcircle.io/docs/assets/start-build-configuration.png)
+
 
 :::info
 

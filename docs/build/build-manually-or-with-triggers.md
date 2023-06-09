@@ -13,7 +13,7 @@ There are multiple ways to trigger a build in Appcircle. You can run builds manu
 
 ## Manual Build
 
-As the name states, your build profile will not build your application until you tell it to. You can browse branches in your Git repository and select any commit from any branch you need to build. To initiate a manual build, just press the **Build** button next to the commits under a branch.
+As the name states, your build profile will not build your application until you tell it to. You can browse branches in your Git repository and select any commit from any branch you need to build. To initiate a manual build, just press the **Start Build** button.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (168).png>)
 
@@ -71,7 +71,7 @@ You can also use[ appcircle-cli](../appcircle-api/about-the-appcircle-cli.md) to
 
 To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
 
-![](https://cdn.appcircle.io/docs/assets/managing-triggers-for-builds.jpg)
+![](https://cdn.appcircle.io/docs/assets/managing-triggers-for-builds.png)
 
 The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](#wildcard-reference) for branch names to trigger builds.
 
@@ -81,15 +81,15 @@ You also need to select a workflow for each trigger and the build will be run wi
 
 Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
 
-![](https://cdn.appcircle.io/docs/assets/push-triggers-full.jpg)
+![](https://cdn.appcircle.io/docs/assets/push-triggers-full.png)
 
-You must choose a fallback configuration in case the triggered branch doesn't have a configuration. This becomes useful for wildcard triggers for newly created branches.
+You must choose both workflow and a configuration when you're setting up a trigger.
 
 #### Auto build pull/merge requests
 
 Appcircle will start building your application whenever you initiate a pull request or merge request from the source branch(es) to the target branch.
 
-The build will be done with the pull/merge result using the selected workflow. This allows testing of the PR/MR result before the actual approval of the request. This trigger will use the destination's branch config when the workflow starts. However, you may override the config by choosing **Fallback Config**.
+The build will be done with the pull/merge result using the selected workflow. This allows testing of the PR/MR result before the actual approval of the request.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (179).png>)
 
@@ -97,7 +97,7 @@ The build will be done with the pull/merge result using the selected workflow. T
 
 Appcircle will start building your application with the selected workflow whenever you perform a push with certain tags to your Git repository. Your project will be built automatically only if the push has the tags you specify or you can specify a wildcard tag to build all tagged pushes.
 
-This allows build scenarios like building only specific pushes that has the "release" in the tag. This trigger will use tag's branch config when the workflow starts. However, you may override the config by choosing **Fallback Config**.
+This allows build scenarios like building only specific pushes that has the "release" in the tag. 
 
 ![](<https://cdn.appcircle.io/docs/assets/image (180).png>)
 
@@ -122,8 +122,6 @@ Assume that you have a branch named `development` with three push triggers
 - Trigger branch: `develop*` -> Trigger Workflow: Workflow 3
 
 When there is a push or PR for the development branch, the second trigger (the one with Workflow 2) will be used to initiate a build.
-
-###
 
 ### Wildcard Reference
 

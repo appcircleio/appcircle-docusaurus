@@ -15,35 +15,15 @@ To find a specific branch, just start typing in the name in the branch search ba
 
 ![](<https://cdn.appcircle.io/docs/assets/image (138).png>)
 
-####
-
 ### Pinning Branches to the Top for Faster Access
 
-If you are using a branch frequently such as develop or master, you can pin it to the top. To pin a branch, open the context menu on the top right corner of the branch list item and press "Pin Item".
+If you are using a branch frequently such as develop or master, you can pin it to the top. To pin a branch, clin on pin icon next to the branch name.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (139).png>)
 
-The branch will be moved to the top with a pinned indicator. You can unpin the branch by pressing the "Remove Pin" button in the branch context menu.
+The branch will be moved to the top with a pinned indicator. You can unpin the branch by pressing pin button again.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (142).png>)
-
-### Replicating the Build Configurations Across Branches
-
-Once you [configure a branch](build-profile-configuration.md), you can easily replicate the same configuration in any other branch without the need to configure each branch separately.
-
-After a branch is configured from the config screen, its status will change from "Configuration pending" to "Configured". In the configured branches, the "Copy Configuration" button will be active under the branch context menu.
-
-To copy a configuration, press the "Copy Configuration" button in the source branch context menu and then press the "Set Copied Configuration" in the destination branch context menu.
-
-![Source branch](<https://cdn.appcircle.io/docs/assets/image (143).png>)
-
-![Destination branch](<https://cdn.appcircle.io/docs/assets/image (144).png>)
-
-Once you confirm the copy operation, the configuration in the destination will be set with the exact same options in the source branch and any current configuration will be overwritten
-
-Please note that if the contents of the destination branch is not compatible with the selected options, you may get build errors.
-
-![](<https://cdn.appcircle.io/docs/assets/image (146).png>)
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

@@ -86,15 +86,14 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 ### Start Build
 
-You are now ready to start your first build.
+You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
-At the build profile page, you can see your branches are listed on the left and commits on the right.
 
-![](<https://cdn.appcircle.io/docs/assets/01-06-Connect-Repository (1).png>)
+![](https://cdn.appcircle.io/docs/assets/start-build.png)
 
-You can start the build by clicking on the arrow icon to the right of each commit.
+Select a configuration, workflow, commit id and click on **Start Build button**
 
-Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
+![](https://cdn.appcircle.io/docs/assets/start-build-configuration.png)
 
 :::info
 

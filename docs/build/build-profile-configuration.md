@@ -11,9 +11,26 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Configuring a build profile has some basic steps that need to be completed before starting a build.
 
+### Creating a configuration
+
+You may create **Distribution** configuration to send your app to public stores or create **Testing** configuration to send your app to testers. Configurations allow you to set different certificates, distribution channels that can be used with different workflows.
+
+- Click on **Configurations** to create configurations for different scenarios. 
+
+![](<https://cdn.appcircle.io/docs/assets/image (168).png>)
+
+- Click on **New** button to create your first configuration.
+
+![](<https://cdn.appcircle.io/docs/assets/create-build-configuration1.png>)
+
+- You may change the name of the configuration or delete the ones you don't need.
+
+![](<https://cdn.appcircle.io/docs/assets/create-build-configuration2.png>)
+
+
 ### Project details configuration
 
-Every build profile needs to know project details regardless of the project being iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle.
+Every build profile needs to know project details regardless of the project being iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle if you click on **Autofill** button.
 
 You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
 
@@ -31,8 +48,6 @@ Both iOS and Android applications need to be digitally signed by their developer
 iOS certificates and Android keystores can be generated within Appcircle or pre-obtained certificates can be uploaded. iOS provisioning profiles need to be obtained from Apple Developer account and uploaded to Appcircle.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (170).png>)
-
-###
 
 ### Distribution configuration
 
