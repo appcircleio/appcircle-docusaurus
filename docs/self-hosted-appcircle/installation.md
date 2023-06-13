@@ -188,11 +188,11 @@ sudo systemctl stop docker
 
 - Move the existing Docker data directory to the new location
 ```bash
-sudo mv /var/lib/docker /home/appcircle/docker
+sudo mv /var/lib/docker $HOME/docker
 ```
 - Create a softlink from default location to new location
 ```bash
-sudo ln -s /home/user/docker /var/lib/docker
+sudo ln -s $HOME/docker /var/lib/docker
 ```
 
 - Restart the docker engine
