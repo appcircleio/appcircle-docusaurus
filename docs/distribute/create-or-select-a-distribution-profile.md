@@ -67,6 +67,8 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 To add your SSO and LDAP details, go to [My Organization](../account/my-organization.md) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
 
+<ContentRef url="/account/sso-ldap-login">SSO & LDAP Login</ContentRef>
+
 ### Device Registration (iOS Only)
 
 You may enable this option to automatically register devices in the Apple Developer Portal and update your Ad Hoc provisioning profiles. You must select App Store Connect API Key, a build profile, and a configuration.
