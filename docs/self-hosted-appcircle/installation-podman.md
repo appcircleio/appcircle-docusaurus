@@ -235,6 +235,11 @@ sudo cp /usr/share/containers/containers.conf /etc/containers/container.conf
 ```
 
 - Edit the /etc/containers/containers.conf file.
+
+```bash
+sudo vim /etc/containers/container.conf
+```
+
 - Add the following content to the [network] section:
 
 ```bash
