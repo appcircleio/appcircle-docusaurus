@@ -61,7 +61,7 @@ This section covers the installation process of the Appcircle Server on the Red 
   - pypi.org
   - files.pythonhosted.org
 
-## Installing Appcircle Server on Ubuntu with Docker
+## Installing Appcircle Server on Ubuntu with Docker
 
 This section covers the installation process of the Appcircle Server on the Ubuntu operating system using Docker.
 
@@ -80,9 +80,7 @@ This section covers the installation process of the Appcircle Server on the Ubun
   - download.docker.com
   - tr.archive.ubuntu.com
 
-You should 
-
-## Installing Appcircle Server on Ubuntu with Podman
+## Installing Appcircle Server on Ubuntu with Podman
 
 This section covers the installation process of the Appcircle Server on the Ubuntu operating system using Podman.
 
@@ -127,7 +125,7 @@ This section covers the installation process of the Appcircle runner with virtua
 - `VM Image` and `Run Scripts`
   - storage.googleapis.com
 
-## Runtime Externel Resources
+## Runtime Externel Resources
 
 ### Dependencies
 
@@ -145,7 +143,7 @@ This section covers the installation process of the Appcircle runner with virtua
   - cdn.cocoapods.org
   - github.com/CocoaPods/Specs
 
-### Test Distributions
+### Test Distributions
 
 - `Firebase`
   - firebaseappdistribution.googleapis.com
