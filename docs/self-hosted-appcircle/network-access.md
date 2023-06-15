@@ -127,7 +127,7 @@ This section covers the external resource domains during the installation proces
 
 ## Runtime Externel Resources
 
-This section addresses the utilization of external resources during the build, publish, store, and submit processes on the Appcircle runner.
+This section addresses the utilization of external resources during the build, publish, store submit and other processes on the Appcircle runner.
 
 ### Dependencies
 
