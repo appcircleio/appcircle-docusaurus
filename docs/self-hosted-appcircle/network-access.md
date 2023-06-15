@@ -23,7 +23,7 @@ If you are hosting a yum or apt package repository locally, you do not need to a
 
 ## Installing Appcircle Server on RHEL with Docker
 
-This section covers the installation process of the Appcircle Server on the Red Hat Enterprise Linux (RHEL) operating system using Docker.
+This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Docker.
 
 - `Appcircle server zip` and `Container Images`
   - cdn.appcircle.io
@@ -42,7 +42,7 @@ This section covers the installation process of the Appcircle Server on the Red 
 
 ## Installing Appcircle Server on RHEL with Podman
 
-This section covers the installation process of the Appcircle Server on the Red Hat Enterprise Linux (RHEL) operating system using Podman.
+This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Podman.
 
 - `Appcircle server zip` and `Container Images`
   - cdn.appcircle.io
@@ -63,7 +63,7 @@ This section covers the installation process of the Appcircle Server on the Red 
 
 ## Installing Appcircle Server on Ubuntu with Docker
 
-This section covers the installation process of the Appcircle Server on the Ubuntu operating system using Docker.
+This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Docker.
 
 - `Appcircle server zip` and `Container Images`
   - cdn.appcircle.io
@@ -82,7 +82,7 @@ This section covers the installation process of the Appcircle Server on the Ubun
 
 ## Installing Appcircle Server on Ubuntu with Podman
 
-This section covers the installation process of the Appcircle Server on the Ubuntu operating system using Podman.
+This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Podman.
 
 - `Appcircle server zip` and `Container Images`
   - cdn.appcircle.io
@@ -105,7 +105,7 @@ This section covers the installation process of the Appcircle Server on the Ubun
 
 ## Installing Appcircle Runner Macos Virtual Machine
 
-This section covers the installation process of the Appcircle runner with virtual machine [Appcircle provides](./self-hosted-runner/installation#macos-vm).  
+This section covers the external resource domains during the installation process of the Appcircle runner with a virtual machine [Appcircle provides](./self-hosted-runner/installation#macos-vm).  
 
 - `homebrew`
   - raw.githubusercontent.com
@@ -126,6 +126,8 @@ This section covers the installation process of the Appcircle runner with virtua
   - storage.googleapis.com
 
 ## Runtime Externel Resources
+
+This section addresses the utilization of external resources during the build, publish, store, and submit processes on the Appcircle runner.
 
 ### Dependencies
 
