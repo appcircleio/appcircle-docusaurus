@@ -98,9 +98,10 @@ Best option is to use a port forwarding tool like socat. This way you can forwar
 sudo dnf install -y socat
 ```
 
+Save the file below as `port-redirect-80.service` in `/etc/systemd/system/` directory.
+
 ```bash
 [Unit]
-## Save this file as /etc/systemd/system/port-redirect-80.service
 Description=Port Redirect Service - Port 80
 After=network.target
 
@@ -111,9 +112,10 @@ ExecStart=/usr/bin/socat TCP-LISTEN:80,fork,reuseaddr TCP:127.0.0.1:8080
 WantedBy=multi-user.target
 ```
 
+Save the file below as `port-redirect-443.service` in `/etc/systemd/system/` directory.
+
 ```bash
 [Unit]
-## Save this file as /etc/systemd/system/port-redirect-443.service
 Description=Port Redirect Service - Port 443
 After=network.target
 
@@ -123,6 +125,8 @@ ExecStart=/usr/bin/socat TCP-LISTEN:443,fork,reuseaddr TCP:127.0.0.1:8443
 [Install]
 WantedBy=multi-user.target
 ```
+
+Then, one by one, execute the below commands to activate port redirections.
 
 ```bash
 sudo systemctl daemon-reload
@@ -231,7 +235,7 @@ Once the installation is complete, please follow these steps to configure Podman
 - Copy the /usr/share/containers/containers.conf file to /etc/containers/containers.conf.
 
 ```bash
-sudo cp /usr/share/containers/containers.conf /etc/containers/container.conf
+sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
 ```
 
 - Edit the /etc/containers/containers.conf file.
