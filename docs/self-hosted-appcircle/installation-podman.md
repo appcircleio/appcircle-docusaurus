@@ -98,8 +98,8 @@ Best option is to use a port forwarding tool like socat. This way you can forwar
 sudo dnf install -y socat
 ```
 
+Save the file below as `port-redirect-80.service` in `/etc/systemd/system/` directory.
 
-Save the file below as /etc/systemd/system/port-redirect-80.service
 ```bash
 [Unit]
 Description=Port Redirect Service - Port 80
@@ -112,7 +112,8 @@ ExecStart=/usr/bin/socat TCP-LISTEN:80,fork,reuseaddr TCP:127.0.0.1:8080
 WantedBy=multi-user.target
 ```
 
-Save the file below as /etc/systemd/system/port-redirect-443.service
+Save the file below as `port-redirect-443.service` in `/etc/systemd/system/` directory.
+
 ```bash
 [Unit]
 Description=Port Redirect Service - Port 443
@@ -124,6 +125,8 @@ ExecStart=/usr/bin/socat TCP-LISTEN:443,fork,reuseaddr TCP:127.0.0.1:8443
 [Install]
 WantedBy=multi-user.target
 ```
+
+Then, one by one, execute the below commands to activate port redirections.
 
 ```bash
 sudo systemctl daemon-reload
