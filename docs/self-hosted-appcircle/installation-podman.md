@@ -254,55 +254,66 @@ network_backend="netavark"
 If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
 :::
 
-#### Podman data location changing
-In certain scenarios, you may encounter situations where the available free space on the root directory (/) is limited. However, you might have ample free space in a different directory, such as $HOME or /opt. In such cases, you can modify the Docker data location path to utilize the available space on the desired directory.
+#### Change the Podman Data Location
 
-These are the steps to change docker data location path:
+In certain scenarios, you may encounter situations where the available free space on the root directory (`/`) is limited. However, you might have ample free space in a different directory, such as `$HOME` or `/opt`.
+
+In such cases, you can modify the Podman data location path to utilize the available space in the desired directory.
+
+These are the steps to change podman data location path:
 
 :::caution
 If you have selinux enabled, you should disable it temporarily before changing podman data location.
+
 ```bash
 sudo setenforce 0
-``` 
+```
+
 :::
 
 :::caution
 Podman data path may vary according to users.
 
-If you will use podman with root user, the data path is `/var/lib/containers`
+- If you will use podman with the root user, the data path is `/var/lib/containers`.
+- If you will use podman with regular user, the data path is `$HOME/.local/share/containers`.
 
-If you will use podman with regular user, the data path is `$HOME/.local/share/containers/`
+Please be sure about your podman data path.
 
-Please be sure about your podman data path. 
-
-The commands below are shown for root user. Please change acording to your data path 
+The commands below are shown for the root user. Please change it according to your data path.
 :::
 
-- Stop podman service
+- Stop the podman service.
+
 ```bash
 sudo systemctl stop podman
 ```
 
-- Move the existing Podman data directory to the new location
+- Move the existing Podman data directory to the new location.
+
 ```bash
-sudo mv /var/lib/containers $HOME/podman/containers
+sudo mv /var/lib/containers $HOME/podman
 ```
 
-- Create a softlink from default location to new location
+- Create a softlink from default location to the new location.
+
 ```bash
-sudo ln -s $HOME/podman/containers /var/lib/containers
+sudo ln -s $HOME/podman /var/lib/containers
 ```
 
-- Restart the podman service
+- Restart the podman service.
+
 ```bash
 sudo systemctl start podman
 ```
 
 :::caution
-You have disabled selinux which may cause security issues. If you want to enable selinux again, you can run the command below.
+
+If you want to enable selinux again, you can run the following command.
+
 ```bash
 sudo setenforce 1
 ```
+
 :::
 
 ### 3. Configure
