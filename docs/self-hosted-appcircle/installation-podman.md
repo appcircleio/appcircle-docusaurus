@@ -308,7 +308,7 @@ sudo systemctl start podman
 
 :::caution
 
-If you want to enable selinux again, you can run the following command.
+If you disabled selinux and want to enable it again, you can run the following command.
 
 ```bash
 sudo setenforce 1
