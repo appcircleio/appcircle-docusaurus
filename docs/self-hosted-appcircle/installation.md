@@ -176,26 +176,34 @@ If `docker-compose-plugin` is missing in your system, follow its [docs](https://
 
 :::
 
-#### Docker data location changing
-In certain scenarios, you may encounter situations where the available free space on the root directory (/) is limited. However, you might have ample free space in a different directory, such as $HOME or /opt. In such cases, you can modify the Docker data location path to utilize the available space on the desired directory.
+#### Change the Docker Data Location
+
+In certain scenarios, you may encounter situations where the available free space on the root directory (`/`) is limited. However, you might have ample free space in a different directory, such as `$HOME` or `/opt`.
+
+In such cases, you can modify the Docker data location path to utilize the available space in the desired directory.
 
 These are the steps to change docker data location path:
 
-- Stop docker engine
+- Stop the docker engine.
+
 ```bash
 sudo systemctl stop docker
 ```
 
-- Move the existing Docker data directory to the new location
+- Move the existing Docker data directory to the new location.
+
 ```bash
 sudo mv /var/lib/docker $HOME/docker
 ```
-- Create a softlink from default location to new location
+
+- Create a softlink from default location to the new location.
+
 ```bash
 sudo ln -s $HOME/docker /var/lib/docker
 ```
 
-- Restart the docker engine
+- Start the docker engine.
+
 ```bash
 sudo systemctl start docker
 ```
