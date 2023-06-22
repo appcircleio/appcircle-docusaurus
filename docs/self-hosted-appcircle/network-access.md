@@ -32,13 +32,9 @@ This section covers the external resource domains during the installation proces
 - `install script` and `docker rpm files`
   - storage.googleapis.com
 
-- `tar`, `jq`, `curl`, `unzip` and `openssl`
+- `tar`, `curl` and `unzip` 
   - subscription.rhsm.redhat.com
   - cdn.redhat.com
-
-- `gomplate` and `yq`
-  - github.com
-  - objects.githubusercontent.com
 
 ## Installing Appcircle Server on RHEL with Podman
 
@@ -48,13 +44,9 @@ This section covers the external resource domains during the installation proces
   - cdn.appcircle.io
   - europe-west1-docker.pkg.dev
 
-- `jq`, `curl`, `unzip`, `openssl`, `socat`, `netavark`, `podman`
+- `curl`, `unzip`, `socat`, `netavark`and `podman`
   - subscription.rhsm.redhat.com
   - cdn.redhat.com
-
-- `gomplate`, `yq`
-  - github.com
-  - objects.githubusercontent.com
 
 - `podman-compose`
   - pypi.python.org
@@ -69,16 +61,12 @@ This section covers the external resource domains during the installation proces
   - cdn.appcircle.io
   - europe-west1-docker.pkg.dev
 
-- `jq`, `curl`, `unzip`, `openssl`
+- `curl` and `unzip`
   - archive.ubuntu.com
-
-- `gomplate`, `yq`
-  - github.com
-  - objects.githubusercontent.com
 
 - `docker`
   - download.docker.com
-  - tr.archive.ubuntu.com
+  - archive.ubuntu.com
 
 ## Installing Appcircle Server on Ubuntu with Podman
 
@@ -88,12 +76,8 @@ This section covers the external resource domains during the installation proces
   - cdn.appcircle.io
   - europe-west1-docker.pkg.dev
 
-- `jq`, `curl`, `unzip`, `openssl`
+- `curl`, `unzip`, `netavark` and `socat`
   - archive.ubuntu.com
-
-- `gomplate`, `yq`
-  - github.com
-  - objects.githubusercontent.com
 
 - `Podman` and `podman-compose`
   - download.opensuse.org
