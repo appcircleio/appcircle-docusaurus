@@ -136,6 +136,15 @@ Some of the dependencies such as `CocoaPods` and `Fastlane` use Ruby Gems.
 
 - rubygems.org
 
+Gradle wrapper needs access to below URL to download Gradle
+
+- services.gradle.org
+
+Android Build Tools need access to following URLs to download new build tools and NDKs
+
+- dl-ssl.google.com/android/repository
+- dl.google.com/android/repository
+
 All the maven repositories inside `build.gradle` must be added to the allow-list.
 
 For example;
@@ -167,6 +176,7 @@ Google Play
 Huawei AppGallery
 
 - connect-api.cloud.huawei.com
+- developer.huawei.com
 - developerfile7.hicloud.com
 
 :::caution
