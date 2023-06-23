@@ -7,79 +7,81 @@ sidebar_position: 7
 
 # Overview
 
-This page provides guidance on configuring and enabling external network access for self-hosted Appcircle server and runner. 
+This page provides guidance on configuring and enabling external network access for self-hosted Appcircle server and runner.
 
-When deploying the self-hosted Appcircle server and runner, there are scenarios where the application needs to establish connections to external resources over the network. 
-These connections may be required to download operating system dependencies, pull Docker images from registries or access external services such as mobile application build depedencies.
+When deploying the self-hosted Appcircle server and runner, there are scenarios where the application needs to establish connections to external resources over the network. These connections are required to download operating system dependencies, pull Docker images from registries, or access external services such as mobile application build dependencies.
 
-Enabling external network access is essential to ensure the smooth operation and functionality of self-hosted applications. 
-By establishing connections to external resources, self-hosted applications can access the necessary components, data, and services that are vital for their execution.
+Enabling external network access is essential to ensuring the smooth operation and functionality of self-hosted applications. By establishing connections to external resources, self-hosted applications can access the necessary components, data, and services that are vital for their execution.
 
-You can see different scenerios below according to how would you want to install Appcircle server and runner. 
+You can see different scenarios below according to how you want to install the Appcircle server and runner.
 
 :::info
-If you are hosting a yum or apt package repository locally, you do not need to allow external domains for RHEL and Ubuntu repos. 
+If you are hosting a yum or apt package repository locally on your network, you do not need to allow external domains for RHEL and Ubuntu repos.
 :::
 
-## Installing Appcircle Server on RHEL with Docker
+## External Resources Access When Installing or Upgrading
+
+Below you can find the network access details required when installing or upgrading a self-hosted Appcircle server and runner.
+
+### Appcircle Server on RHEL with Docker
 
 This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Docker.
 
-- `Appcircle server zip` and `Container Images`
+- Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
   - europe-west1-docker.pkg.dev
 
-- `install script` and `docker rpm files`
+- Offline docker install script and docker `rpm` files:
   - storage.googleapis.com
 
-- `tar`, `curl` and `unzip` 
+- `tar`, `curl` and `unzip` tools:
   - subscription.rhsm.redhat.com
   - cdn.redhat.com
 
-## Installing Appcircle Server on RHEL with Podman
+### Appcircle Server on RHEL with Podman
 
 This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Podman.
 
-- `Appcircle server zip` and `Container Images`
+- Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
   - europe-west1-docker.pkg.dev
 
-- `curl`, `unzip`, `socat`, `netavark`and `podman`
+- `curl`, `unzip`, `socat`, `netavark` and `podman` tools:
   - subscription.rhsm.redhat.com
   - cdn.redhat.com
 
-- `podman-compose`
+- `podman-compose` tool:
   - pypi.python.org
   - pypi.org
   - files.pythonhosted.org
 
-## Installing Appcircle Server on Ubuntu with Docker
+### Appcircle Server on Ubuntu with Docker
 
 This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Docker.
 
-- `Appcircle server zip` and `Container Images`
+- Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
   - europe-west1-docker.pkg.dev
 
-- `curl` and `unzip`
+- `curl` and `unzip` tools:
   - archive.ubuntu.com
 
-- `docker`
+- `docker`:
   - download.docker.com
   - archive.ubuntu.com
 
-## Installing Appcircle Server on Ubuntu with Podman
+### Appcircle Server on Ubuntu with Podman
 
 This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Podman.
 
-- `Appcircle server zip` and `Container Images`
+- Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
   - europe-west1-docker.pkg.dev
 
-- `curl`, `unzip`, `netavark` and `socat`
+- `curl`, `unzip`, `netavark` and `socat` tools:
   - archive.ubuntu.com
 
-- `Podman` and `podman-compose`
+- `podman` and `podman-compose` tool:
   - download.opensuse.org
   - archive.ubuntu.com
   - ftp.gwdg.de
@@ -87,77 +89,90 @@ This section covers the external resource domains during the installation proces
   - pypi.org
   - files.pythonhosted.org
 
-## Installing Appcircle Runner Macos Virtual Machine
+### Appcircle Runner as Ready-to-Use MacOS Virtual Machine
 
-This section covers the external resource domains during the installation process of the Appcircle runner with a virtual machine [Appcircle provides](./self-hosted-runner/installation#macos-vm).  
+This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](./self-hosted-runner/installation#macos-vm).  
 
-- `homebrew`
+- `homebrew` tool:
   - raw.githubusercontent.com
   - github.com
   - api.github.com
   - api.apple-cloudkit.com
   - formulae.brew.sh
 
-- `tart`
+- `tart` tool:
   - github.com
   - api.github.com
   - objects.githubusercontent.com
   - api.apple-cloudkit.com
-  - www.google-analytics.com
+  - google-analytics.com
   - europe-west1-1.gcp.cloud2.influxdata.com
 
-- `VM Image` and `Run Scripts`
+- macOS VM image and the `run.sh` script:
   - storage.googleapis.com
 
-## Runtime Externel Resources
+## External Resources Access When Running Build Pipeline
 
-This section addresses the utilization of external resources during the build, publish, store submit and other processes on the Appcircle runner.
+This section addresses the utilization of external resources during the build, publish, store submit, and other processes on the Appcircle runner.
 
-### Dependencies
+### Build
 
-- Appcircle’s workflow `components` are hosted on Github.
-  - github.com/appcircleio/
+Appcircle’s workflow components are hosted on GitHub and they're `git` cloned while running pipeline.
 
-- Some of Appcircle’s dependencies such as `CocoaPods` and `Fastlane` use Ruby Gems.
-  - rubygems.org
+- github.com/appcircleio/
 
-- All the `maven repositories` inside the `build.gradle` must be added to list. For example:
-  - maven.google.com
-  - repo.maven.apache.org/maven2
+Some of the dependencies such as `CocoaPods` and `Fastlane` use Ruby Gems.
 
-- If you’re using `Cocoapods`, and if your `Podfile` is using other spec repository they also must be allowed.
-  - cdn.cocoapods.org
-  - github.com/CocoaPods/Specs
+- rubygems.org
 
-### Test Distributions
+All the maven repositories inside `build.gradle` must be added to the allow-list.
 
-- `Firebase`
-  - firebaseappdistribution.googleapis.com
+For example;
 
-- `App Center`
-  - api.appcenter.ms
+- maven.google.com
+- repo.maven.apache.org/maven2
 
-### Store Submission
+If you’re using CocoaPods and if your `Podfile` is using another spec repository, they also must be allowed.
 
-- Google Play
-  - www.googleapis.com
+- cdn.cocoapods.org
+- github.com/CocoaPods/Specs
 
-- Huawei AppGallery
-  - connect-api.cloud.huawei.com
-  - developerfile7.hicloud.com
+### Testing Distribution
 
-:::caution 
-Please be aware that subdomain (developerfile7) may change in the future and it is dynamically returned by https//connect-api.cloud.huawei.com
-:::
+Firebase:
 
-- App Store
-  - For Appcircle, following endpoints must be allowed
-    - https://contentdelivery.itunes.apple.com
+- firebaseappdistribution.googleapis.com
+
+App Center:
+
+- api.appcenter.ms
+
+### Store Submit
+
+Google Play
+
+- www.googleapis.com
+
+Huawei AppGallery
+
+- connect-api.cloud.huawei.com
+- developerfile7.hicloud.com
 
 :::caution
-Apple App Store connects to several endpoints during upload. 
 
-Those endpoints are documented at https://help.apple.com/itc/transporteruserguide/en.lproj/static.html Endpoints may change in future.
+Please be aware that the subdomain above (`developerfile7`) may change in the future, and it is dynamically returned by the `https://connect-api.cloud.huawei.com` endpoint.
+
+:::
+
+App Store
+
+- contentdelivery.itunes.apple.com
+- api.appstoreconnect.apple.com
+
+:::caution
+Apple App Store connects to several endpoints during upload.
+
+Those endpoints are documented at [here](https://help.apple.com/itc/transporteruserguide/en.lproj/static.html). The endpoints may change in future.
 :::
 
 | **Server**                                     | **IP Address** | **TCP Port** | **UDP Port** |
