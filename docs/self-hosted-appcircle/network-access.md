@@ -108,6 +108,17 @@ This section covers the external resource domains during the installation proces
   - google-analytics.com
   - europe-west1-1.gcp.cloud2.influxdata.com
 
+:::info
+
+Homebrew gathers anonymous analytics using InfluxDB. The below domains are related to Homebrew analytics when installing a package via the `brew` command.
+
+- google-analytics.com
+- europe-west1-1.gcp.cloud2.influxdata.com
+
+If you don't want to enable these URLs or you aren’t comfortable with this, you can opt out of Homebrew analytics by following the instructions [here](https://docs.brew.sh/Analytics#opting-out).
+
+:::
+
 - macOS VM image and the `run.sh` script:
   - storage.googleapis.com
 
