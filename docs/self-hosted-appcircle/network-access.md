@@ -226,3 +226,13 @@ Those endpoints are documented at [here](https://help.apple.com/itc/transporteru
 | [vgr0906.apple.com](http://vgr0906.apple.com/) | 17.57.20.146   | 33001        | 33001-33500  |
 | [vgr0907.apple.com](http://vgr0907.apple.com/) | 17.57.20.147   | 33001        | 33001-33500  |
 | [vgr0908.apple.com](http://vgr0908.apple.com/) | 17.57.20.148   | 33001        | 33001-33500  |
+
+:::caution
+
+Although Appcircle runners are responsible for the submission of iOS apps to the App Store, the **server also has some features that need access to the App Store Connect API**, like runners. For example, get devices from the App Store, get certificates or provisioning profiles, etc.
+
+So, you should enable the **below API access on the server** for those features:
+
+- api.appstoreconnect.apple.com
+
+:::
