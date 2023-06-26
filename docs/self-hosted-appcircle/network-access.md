@@ -29,7 +29,7 @@ This section covers the external resource domains during the installation proces
 
 - Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
-  - europe-west1-docker.pkg.dev
+  - europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 - Offline docker install script and docker `rpm` files:
   - storage.googleapis.com
@@ -44,7 +44,7 @@ This section covers the external resource domains during the installation proces
 
 - Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
-  - europe-west1-docker.pkg.dev
+  - europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 - `curl`, `unzip`, `socat`, `netavark` and `podman` tools:
   - subscription.rhsm.redhat.com
@@ -61,7 +61,7 @@ This section covers the external resource domains during the installation proces
 
 - Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
-  - europe-west1-docker.pkg.dev
+  - europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 - `curl` and `unzip` tools:
   - archive.ubuntu.com
@@ -76,7 +76,7 @@ This section covers the external resource domains during the installation proces
 
 - Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
-  - europe-west1-docker.pkg.dev
+  - europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 - `curl`, `unzip`, `netavark` and `socat` tools:
   - archive.ubuntu.com
@@ -136,11 +136,11 @@ Some of the dependencies such as `CocoaPods` and `Fastlane` use Ruby Gems.
 
 - rubygems.org
 
-Gradle wrapper needs access to below URL to download Gradle
+The Gradle wrapper needs access to the below URL to download Gradle.
 
 - services.gradle.org
 
-Android Build Tools need access to following URLs to download new build tools and NDKs
+Android Build Tools need access to the following URLs to download new build tools and NDKs:
 
 - dl-ssl.google.com/android/repository
 - dl.google.com/android/repository
