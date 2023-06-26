@@ -29,10 +29,11 @@ This section covers the external resource domains during the installation proces
 
 - Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
+  - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 - Offline docker install script and docker `rpm` files:
-  - storage.googleapis.com
+  - storage.googleapis.com/appcircle-dev-common/self-hosted
 
 - `tar`, `curl` and `unzip` tools:
   - subscription.rhsm.redhat.com
@@ -44,6 +45,7 @@ This section covers the external resource domains during the installation proces
 
 - Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
+  - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 - `curl`, `unzip`, `socat`, `netavark` and `podman` tools:
@@ -61,6 +63,7 @@ This section covers the external resource domains during the installation proces
 
 - Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
+  - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 - `curl` and `unzip` tools:
@@ -76,6 +79,7 @@ This section covers the external resource domains during the installation proces
 
 - Appcircle server `zip` archive and container images:
   - cdn.appcircle.io
+  - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 - `curl`, `unzip`, `netavark` and `socat` tools:
@@ -120,7 +124,7 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 :::
 
 - macOS VM image and the `run.sh` script:
-  - storage.googleapis.com
+  - storage.googleapis.com/appcircle-dev-common/self-hosted
 
 ## External Resources Access When Running Build Pipeline
 
