@@ -2,7 +2,7 @@
 title: Git Providers
 metaTitle: Configure Git Providers
 metaDescription: Configure Git Providers
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 # Overview
@@ -20,13 +20,13 @@ Following sections will give you more details about adding other git providers.
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation.md#3-configure) section in docs, understood configuration made there and scenarios told there.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](../install-server/docker.md#3-configure) section in docs, understood configuration made there and scenarios told there.
 
 :::
 
 :::caution
 
-Current working directory is assumed `appcircle-server` for following steps. See [here](./installation.md#1-download) for installation details.
+Current working directory is assumed `appcircle-server` for following steps. See [here](../install-server/docker.md#1-download) for installation details.
 
 :::
 
@@ -36,7 +36,7 @@ Current working directory is assumed `appcircle-server` for following steps. See
 
 - `projects/${YOUR_PROJECT}`
 
-You can see an example project configuration from [here](installation.md#3-configure).
+You can see an example project configuration from [here](../install-server/docker.md#3-configure).
 
 :::
 
@@ -53,7 +53,7 @@ build:
 
 ![](https://cdn.appcircle.io/docs/assets/be-850-connect-via-SSH.png)
 
-For more details about "Connect via SSH" usage, see related docs in [here](../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
+For more details about "Connect via SSH" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
 
 ### Connecting to Public Repository
 
@@ -68,11 +68,11 @@ build:
 
 ![](https://cdn.appcircle.io/docs/assets/be-850-connect-to-public-repository.png)
 
-For more details about "Connect to a Public Repository" usage, see related docs in [here](../build/adding-a-build-profile/connecting-to-public-repository.md).
+For more details about "Connect to a Public Repository" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-public-repository.md).
 
 ### Applying Git Provider Changes
 
-You can add git providers at [installation](./installation.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
+You can add git providers at [installation](../install-server/docker.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
 
 Let's assume we want to enable both "Connect via SSH" and "Connect to a Public Repository" options. Then we need to add below section to our `global.yaml`.
 
@@ -91,7 +91,7 @@ If we don't do the configuration at installation, then after editing `global.yam
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](./installation.md#3-configure) section in docs and applied example scenario.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](../install-server/docker.md#3-configure) section in docs and applied example scenario.
 
 Following steps are using example project as project naming, which was told there.
 
