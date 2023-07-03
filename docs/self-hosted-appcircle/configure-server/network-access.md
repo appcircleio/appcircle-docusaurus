@@ -95,7 +95,7 @@ This section covers the external resource domains during the installation proces
 
 ### Appcircle Runner as Ready-to-Use MacOS Virtual Machine
 
-This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](./self-hosted-runner/installation#macos-vm).  
+This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](../self-hosted-runner/installation#macos-vm).  
 
 - `homebrew` tool:
   - raw.githubusercontent.com
@@ -175,7 +175,7 @@ App Center:
 
 Google Play
 
-- www.googleapis.com
+- `www.googleapis.com`
 
 Huawei AppGallery
 
