@@ -2,7 +2,7 @@
 title: Git Providers
 metaTitle: Configure Git Providers
 metaDescription: Configure Git Providers
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 # Overview

@@ -2,7 +2,7 @@
 title: Manage Runners
 metaTitle: Manage Runners
 metaDescription: Manage Runners
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 ### Monitoring Self-hosted Runners

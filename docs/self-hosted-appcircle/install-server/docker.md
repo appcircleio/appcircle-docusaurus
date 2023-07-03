@@ -1,7 +1,7 @@
 ---
-title: Install Server (Docker)
-metaTitle: Install Self-hosted Appcircle
-metaDescription: Install Self-hosted Appcircle
+title: Docker
+metaTitle: Docker
+metaDescription: Appcircle Server on Docker
 sidebar_position: 2
 ---
 

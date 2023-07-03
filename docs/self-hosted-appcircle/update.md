@@ -1,7 +1,7 @@
 ---
-title: Update Server
-metaTitle: Update Self-hosted Appcircle
-metaDescription: Update Self-hosted Appcircle
+title: Upgrade Server
+metaTitle: Upgrade Server
+metaDescription: Upgrade Server
 sidebar_position: 3
 ---
 

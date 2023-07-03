@@ -1,7 +1,7 @@
 ---
-title: Install Server (Podman)
-metaTitle: Install Self-hosted Appcircle
-metaDescription: Install Self-hosted Appcircle
+title: Podman
+metaTitle: Podman
+metaDescription: Appcircle Server on Podman
 sidebar_position: 2
 ---
 

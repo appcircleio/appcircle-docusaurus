@@ -2,7 +2,7 @@
 title: SSL Configuration
 metaTitle: Configure SSL for HTTPS
 metaDescription: Configure SSL for HTTPS
-sidebar_position: 6
+sidebar_position: 3
 ---
 
 # Overview

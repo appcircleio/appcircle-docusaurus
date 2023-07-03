@@ -1,7 +1,7 @@
 ---
-title: Install Runner
-metaTitle: Install Runner
-metaDescription: Install Runner
+title: Installation
+metaTitle: Installation
+metaDescription: Installation
 sidebar_position: 2
 ---
 

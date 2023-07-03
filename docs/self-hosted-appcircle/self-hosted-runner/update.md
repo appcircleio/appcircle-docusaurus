@@ -1,8 +1,8 @@
 ---
-title: Update Runner
-metaTitle: Update Runner
-metaDescription: Update Runner
-sidebar_position: 6
+title: Upgrade Runner
+metaTitle: Upgrade Runner
+metaDescription: Upgrade Runner
+sidebar_position: 3
 ---
 
 import Tabs from '@theme/Tabs';

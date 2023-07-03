@@ -1,8 +1,8 @@
 ---
-title: Launchd/Systemd Service
-metaTitle: Launchd/Systemd Service
-metaDescription: Launchd/Systemd Service
-sidebar_position: 5
+title: Service Configuration
+metaTitle: Service Configuration
+metaDescription: Service Configuration
+sidebar_position: 3
 ---
 
 # Overview

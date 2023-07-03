@@ -2,7 +2,7 @@
 title: Manage Pools
 metaTitle: Manage Pools
 metaDescription: Manage Pools
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 ### Monitoring Self-hosted Pools

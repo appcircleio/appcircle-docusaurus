@@ -2,7 +2,7 @@
 title: Network Access
 metaTitle: Network Access
 metaDescription: Networks Access of Appcircle Server and Runner
-sidebar_position: 7
+sidebar_position: 4
 ---
 
 # Overview
