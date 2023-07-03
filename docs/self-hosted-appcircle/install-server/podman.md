@@ -399,7 +399,7 @@ storeWeb:
 
 In later steps, other system subdomains will be concatted to main domain. For this reason, `external.mainDomain` in configuration file must always begin with `.` character as prefix.
 
-You can see a list of these subdomains in [here](./podman#4-dns-settings).
+You can see a list of these subdomains in [here](./podman.md#4-dns-settings).
 
 :::
 
@@ -436,7 +436,7 @@ storeWeb:
 For our example, we configured below values:
 
 - `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
-- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](./podman#4-dns-settings) for more details.
+- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](./podman.md#4-dns-settings) for more details.
 - `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
@@ -456,13 +456,13 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](./podman#5-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](./podman.md#5-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
 ```
 
-In this case, before updating initial password in `global.yaml`, you need to **stop** partially started podman services with below command. See [reset configuration](./podman#reset-configuration) section for more details.
+In this case, before updating initial password in `global.yaml`, you need to **stop** partially started podman services with below command. See [reset configuration](./podman.md#reset-configuration) section for more details.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" reset
@@ -761,7 +761,7 @@ In this case, stop all services with data cleanup.
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-Then make a new export and start services. Refer to [reset configuration](./podman#reset-configuration) section for more details.
+Then make a new export and start services. Refer to [reset configuration](./podman.md#reset-configuration) section for more details.
 
 :::
 
@@ -939,7 +939,7 @@ You can see some example configuration screenshots below for Nexus UI.
 
 If you face any issue about "manifest not found" when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from Nexus proxy registry.
 
-By looking at the [mirroring images](./podman#mirroring-appcircle-images) script above, you can pull images from the proxy repository with a similar script. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
+By looking at the [mirroring images](./podman.md#mirroring-appcircle-images) script above, you can pull images from the proxy repository with a similar script. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
 
 Nexus may have some issues when pulling images in parallel.
 
@@ -1015,13 +1015,13 @@ It will remove all unused local volumes which is useful for a clean start.
 
 :::
 
-Then go back to your configuration and change settings as done previously at [configure](./podman#3-configure) step.
+Then go back to your configuration and change settings as done previously at [configure](./podman.md#3-configure) step.
 
 When you're ready for a new export, in root directory execute below command again as done previously.
 
 :::info
 
-For our example scenario, root directory is `appcircle-server` as seen [here](./podman#1-download). And project name is "spacetech".
+For our example scenario, root directory is `appcircle-server` as seen [here](./podman.md#1-download). And project name is "spacetech".
 
 :::
 
@@ -1043,7 +1043,7 @@ When you complete installation successfully by following above steps, you're rea
 
 But in order to run build pipelines, you need to install and connect self-hosted runners. We have dedicated section for installation and configuration of self-hosted runners.
 
-Follow and apply related guidelines in [here](../self-hosted-runner/installation).
+Follow and apply related guidelines in [here](../self-hosted-runner/installation.md).
 
 Self-hosted runner section in docs, has all details about runners and their configuration.
 
@@ -1061,9 +1061,9 @@ Assuming our sample scenario explained above, its value should be
 
 for our example configuration.
 
-:reminder_ribbon: After [download](../self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:reminder_ribbon: After [download](../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
 
-Please note that, you should do this before [register](../self-hosted-runner/installation#2-register).
+Please note that, you should do this before [register](../self-hosted-runner/installation.md#2-register).
 
 :::
 
