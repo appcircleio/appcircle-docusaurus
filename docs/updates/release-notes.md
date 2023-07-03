@@ -31,17 +31,17 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
 - Build trigger screen is improved. <CloudBadge/> <SelfHostedBadge/>
 - [Self-hosted Runer](../self-hosted-appcircle/self-hosted-runner/installation.md) installation script updated for new Xcode versions and other tools. <SelfHostedBadge/>
-- The default configuration file that contains [Self-hosted Server](../self-hosted-appcircle/installation.md) settings is simplified. <SelfHostedBadge/>
-- The [Self-hosted Server](../self-hosted-appcircle/installation.md) package has a text file that contains a list of container services. <SelfHostedBadge/>
-- [Self-hosted Server](../self-hosted-appcircle/installation.md) Podman support added. <SelfHostedBadge/>
-- [Self-hosted Server](../self-hosted-appcircle/installation.md) installation script `version` command updated to fix Podman compatibility. <SelfHostedBadge/>
-- New script added [Self-hosted Server](../self-hosted-appcircle/installation.md) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
-- New script added [Self-hosted Server](../self-hosted-appcircle/installation.md) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
+- The default configuration file that contains [Self-hosted Server](../self-hosted-appcircle/install-server/docker.md) settings is simplified. <SelfHostedBadge/>
+- The [Self-hosted Server](../self-hosted-appcircle/install-server/docker.md) package has a text file that contains a list of container services. <SelfHostedBadge/>
+- [Self-hosted Server](../self-hosted-appcircle/install-server/docker.md) Podman support added. <SelfHostedBadge/>
+- [Self-hosted Server](../self-hosted-appcircle/install-server/docker.md) installation script `version` command updated to fix Podman compatibility. <SelfHostedBadge/>
+- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/docker.md) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
+- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/docker.md) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
 
 ### 🐞 Fixed
 - Strict URL check is removed when users try to add Azure repositories. <CloudBadge/> <SelfHostedBadge/>
 - An error that was occurring when you tried to add a sub-org on self-hosted Appcircle is fixed. <SelfHostedBadge/>
-- Some minor cases that were occurring on the [Self-hosted Server](../self-hosted-appcircle/installation.md)   boot process are fixed. <SelfHostedBadge/>
+- Some minor cases that were occurring on the [Self-hosted Server](../self-hosted-appcircle/install-server/docker.md)   boot process are fixed. <SelfHostedBadge/>
 
 ## 3.3.2 - 2023-05-10 - Xcode 14.3,FTP Upload 
 
@@ -133,7 +133,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Feature
 - [AppSweep Mobile Security Testing](../workflows/android-specific-workflow-steps.md#appsweep-mobile-security-testing) component added. <CloudBadge/> <SelfHostedBadge/>
-- [Self-signed certificate](../self-hosted-appcircle/ssl-configuration.md) support added for Testing Distribution. <SelfHostedBadge/>
+- [Self-signed certificate](../self-hosted-appcircle/configure-server/ssl-configuration.md) support added for Testing Distribution. <SelfHostedBadge/>
 - [Enterprise Store](../enterprise-appstore/customize-ent-store.md) is now available in German and Turkish languages in addition to English. To switch to your preferred language, simply navigate to the language settings on your store homepage and select either German or Turkish. <CloudBadge/> <SelfHostedBadge/>
 - [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=enterprisestore) are added to directly download IPA or APK files from Enterprise Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
 
@@ -156,8 +156,8 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Feature
 - [Multiple LDAP](../enterprise-appstore/customize-ent-store.md#ldap-login) support added for Enterprise Store. <CloudBadge/> <SelfHostedBadge/>
-- [Self-signed certificate](../self-hosted-appcircle/ssl-configuration.md) support added for Appcircle server. <SelfHostedBadge/>
-- [Self-signed certificate](../self-hosted-appcircle/ssl-configuration.md) support added for external services such as Git providers (Gitlab, Bitbucket etc.) <SelfHostedBadge/>
+- [Self-signed certificate](../self-hosted-appcircle/configure-server/ssl-configuration.md) support added for Appcircle server. <SelfHostedBadge/>
+- [Self-signed certificate](../self-hosted-appcircle/configure-server/ssl-configuration.md) support added for external services such as Git providers (Gitlab, Bitbucket etc.) <SelfHostedBadge/>
 
 ### :muscle: Improvement
 - Onboarding of React Native Android project is improved.  <CloudBadge/> <SelfHostedBadge/>

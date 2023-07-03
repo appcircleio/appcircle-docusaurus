@@ -1,8 +1,8 @@
 ---
-title: Self-Signed Certificates
-metaTitle: Self-Signed Certificates
-metaDescription: Self-Signed Certificates
-sidebar_position: 8
+title: Self-signed Certificates
+metaTitle: Self-signed Certificates
+metaDescription: Self-signed Certificates
+sidebar_position: 5
 ---
 
 # Overview

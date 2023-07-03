@@ -1,7 +1,7 @@
 ---
-title: Overview & Concepts
-metaTitle: Overview & Concepts
-metaDescription: Overview & Concepts
+title: Overview
+metaTitle: Overview
+metaDescription: Overview
 sidebar_position: 1
 ---
 
