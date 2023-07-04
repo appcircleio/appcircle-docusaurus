@@ -12,7 +12,7 @@ Depending on which Xcode version you select, Appcircle creates a brand new virtu
 - If your selected pool from config is "Default Intel Pool", virtual machine will be macOS Monterey `v12.5.1`.
 
 - If your selected pool from config is "Default M1 Pool", there are two options for virtual machine.
-  - If you select Xcode 14.3 or later, virtual machine will be macOS Ventura `v13.2.1`.
+  - If you select Xcode 14.3 or later, virtual machine will be macOS Ventura `v13.3.1`.
   - If you select Xcode 14.2 or earlier, virtual machine will be macOS Monterey `v12.5.1`.
 
 :::caution
@@ -33,7 +33,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ### Available Xcode Versions
 
-Our macOS build agents have Xcode versions 15.0, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
+Our macOS build agents have Xcode versions 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
 
 :::caution
 Xcode `14.3.x` or higher Xcode versions require a Mac running macOS Ventura 13.0 or later.
@@ -61,17 +61,17 @@ Here are some of the most important packages installed in our iOS build agents u
 | Bash               | 3.2.57           | 3.2.57          | 3.2.57     |
 | Bundle             | 2.1.4            | 2.1.4           | 2.3.9      |
 | Carthage           | 0.38.0           | 0.38.0          | 0.38.0     |
-| Curl               | 7.79.1           | 7.86.0          | 7.79.1     |
+| Curl               | 7.79.1           | 7.87.0          | 7.79.1     |
 | Homebrew           | 3.6.11           | 3.6.16          | 3.4.2      |
 | Java (OpenJDK)     | 11.0.14          | 11.0.14         | 11.0.2     |
 | Gem                | 3.1.6            | 3.1.6           | 3.1.6      |
-| Fastlane           | 2.211.0          | 2.212.2         | 2.204.3    |
+| Fastlane           | 2.211.0          | 2.213.0         | 2.204.3    |
 | Git                | 2.38.1           | 2.39.0          | 2.35.1     |
 | Git LFS            | 3.2.0            | 3.3.0           | 3.1.2      |
-| Gzip (Apple)       | 353.100.22       | 353.100.22      | 353.100.22 |
+| Gzip (Apple)       | 353.100.22       | 403.100.6       | 353.100.22 |
 | LibreSSL (OpenSSL) | 2.8.3            | 3.3.6           | 2.8.3      |
 | ImageMagick        | 7.1.0            | 7.1.0           | 7.1.0      |
-| Maven              | 3.8.6            | 3.9.1           | 3.8.4      |
+| Maven              | 3.8.6            | 3.9.2           | 3.8.4      |
 | N                  | 9.0.1            | 9.0.1           | 8.0.2      |
 | Node               | 16.18.1          | 16.20.0         | 16.14.0    |
 | Npm                | 8.19.2           | 8.19.4          | 8.3.1      |
