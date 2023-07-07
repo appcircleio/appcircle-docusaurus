@@ -25,19 +25,19 @@ To apply the changes, please follow these steps:
 - Down the server
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" down
+./ac-self-hosted.sh -n "spacetech" down
 ```
 
 - Export the updated global.vaml
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" export
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
 - Up the server
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" up
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 After the server is up and healthy, when you click `Sign up with e-mail` button, you should see
