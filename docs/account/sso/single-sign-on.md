@@ -18,10 +18,9 @@ Only Enterprise accounts support SSO.
 
 :::
 
-
 ### Enable SSO
 
-SSO can only be enabled by the organization's administrator. To start, go to [My Organization](../my-organization.md) Integration screen and press the "Enable SSO" button under the "SSO Integration" section.
+SSO can only be enabled by the organization's administrator. To start, go to [My Organization](../my-organization.md) Integration screen and press the "Enable Login" button under the "APPCIRCLE LOGIN" section.
 
 ### Identity Providers
 
@@ -45,7 +44,7 @@ Two-factor authentication (2FA) can only be enabled by your SSO provider. Please
 - When you connect your Identity Provider, please open a new incognito window and test the SSO integration.
 - Click the **Continue with SSO** button.
 
-![](<https://cdn.appcircle.io/docs/assets/sso-loginbutton.png>)
+![](https://cdn.appcircle.io/docs/assets/sso-loginbutton.png)
 
 - Enter the alias you picked.
 
@@ -53,12 +52,11 @@ Two-factor authentication (2FA) can only be enabled by your SSO provider. Please
 
 - You should first see the below confirmation screen.
 
-![](<https://cdn.appcircle.io/docs/assets/sso-linkaccount.png>)
-
+![](https://cdn.appcircle.io/docs/assets/sso-linkaccount.png)
 
 - After you confirmed account linking, you will get an email.
 
-![](<https://cdn.appcircle.io/docs/assets/sso-confirmlink.png>)
+![](https://cdn.appcircle.io/docs/assets/sso-confirmlink.png)
 
 - You can now access your account with SSO integration when you confirm the email.
 - After you enable the SSO, you can only log in to your account with the SSO link. Your old credentials won't work anymore.
@@ -71,6 +69,6 @@ Child organization can't enable SSO.
 
 :::caution
 
-When you connect your Identity Provider, please open a new incognito window and test the SSO integration. Please only log off when you can log in with SSO credentials. If the connection doesn't work, you need to review your settings. 
+When you connect your Identity Provider, please open a new incognito window and test the SSO integration. Please only log off when you can log in with SSO credentials. If the connection doesn't work, you need to review your settings.
 
 :::
