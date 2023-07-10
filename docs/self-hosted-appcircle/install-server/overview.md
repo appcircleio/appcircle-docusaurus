@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Appcircle Application Installation Overview
 
-This document provides an overview of the steps required to install the Appcircle server on the server. For detailed instructions, please refer to the corresponding pages mentioned below.
+This document provides an overview of the steps required to install the Appcircle application on your infrastructure. For detailed instructions, please refer to the corresponding pages mentioned below.
 
 ## Server Installation:
 
