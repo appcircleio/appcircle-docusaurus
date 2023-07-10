@@ -2,7 +2,7 @@
 title: Podman
 metaTitle: Podman
 metaDescription: Appcircle Server on Podman
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Overview
@@ -225,7 +225,7 @@ podman info | grep -i networkBackend
 ```
 
 You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark.
-  
+
 ```bash
 sudo dnf install -y netavark
 ```
