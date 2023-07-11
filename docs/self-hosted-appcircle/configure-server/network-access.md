@@ -28,11 +28,15 @@ Below you can find the network access details required when installing or upgrad
 This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Docker.
 
 - Appcircle server `zip` archive and container images:
+
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
+  - www.googleapis.com
+  - storage.googleapis.com
 
 - Offline docker install script and docker `rpm` files:
+
   - storage.googleapis.com/appcircle-dev-common/self-hosted
 
 - `tar`, `curl` and `unzip` tools:
@@ -44,11 +48,15 @@ This section covers the external resource domains during the installation proces
 This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Podman.
 
 - Appcircle server `zip` archive and container images:
+
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
+  - www.googleapis.com
+  - storage.googleapis.com
 
 - `curl`, `unzip`, `socat`, `netavark` and `podman` tools:
+
   - subscription.rhsm.redhat.com
   - cdn.redhat.com
 
@@ -62,11 +70,15 @@ This section covers the external resource domains during the installation proces
 This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Docker.
 
 - Appcircle server `zip` archive and container images:
+
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
+  - www.googleapis.com
+  - storage.googleapis.com
 
 - `curl` and `unzip` tools:
+
   - archive.ubuntu.com
 
 - `docker`:
@@ -78,11 +90,15 @@ This section covers the external resource domains during the installation proces
 This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Podman.
 
 - Appcircle server `zip` archive and container images:
+
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
+  - www.googleapis.com
+  - storage.googleapis.com
 
 - `curl`, `unzip`, `netavark` and `socat` tools:
+
   - archive.ubuntu.com
 
 - `podman` and `podman-compose` tool:
@@ -95,9 +111,10 @@ This section covers the external resource domains during the installation proces
 
 ### Appcircle Runner as Ready-to-Use MacOS Virtual Machine
 
-This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](../self-hosted-runner/installation.md#macos-vm).  
+This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](../self-hosted-runner/installation.md#macos-vm).
 
 - `homebrew` tool:
+
   - raw.githubusercontent.com
   - github.com
   - api.github.com
