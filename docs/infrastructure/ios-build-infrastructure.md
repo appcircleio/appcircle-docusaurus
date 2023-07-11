@@ -51,7 +51,7 @@ There are many pre-installed packages in virtual machines. You can get a full li
 
 Here are some of the most important packages installed in our iOS build agents used for iOS builds:
 
-- For "Default M1 Pool" Xcode `14.3.x` or later `macOS Ventura v13.2.1`
+- For "Default M1 Pool" Xcode `14.3.x` or later `macOS Ventura v13.3.1`
 - For "Default M1 Pool" Xcode `14.2.x` or earlier `macOS Monterey v12.5.1`
 - For "Default Intel Pool" `macOS Monterey v12.5.1`
   - :memo: Supports Xcode versions up to `14.2.x`
