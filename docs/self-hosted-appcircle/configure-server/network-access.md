@@ -40,6 +40,7 @@ This section covers the external resource domains during the installation proces
   - storage.googleapis.com/appcircle-dev-common/self-hosted
 
 - `tar`, `curl` and `unzip` tools:
+
   - subscription.rhsm.redhat.com
   - cdn.redhat.com
 
