@@ -105,7 +105,7 @@ This section covers the external resource domains during the installation proces
 
 This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](../self-hosted-runner/installation.md#macos-vm).
 
-- `homebrew` & `macOS command line` tool:
+- `homebrew` tool:
 
   - raw.githubusercontent.com
   - github.com
@@ -119,6 +119,12 @@ This section covers the external resource domains during the installation proces
   - swdist.apple.com
   - swscan.apple.com
   - ocsp2.apple.com
+
+:::info
+
+Homebrew installs the latest version of Xcode Command Line Tools as a dependency. `*.apple.com` domains are used for that purpose.
+
+:::
 
 - `tart` tool:
   - github.com
