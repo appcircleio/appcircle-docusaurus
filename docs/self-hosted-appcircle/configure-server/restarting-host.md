@@ -5,6 +5,9 @@ metaDescription: Restarting Host and Appcircle Server
 sidebar_position: 6
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Overview
 
 In this section, we will discuss how to enable automatic startup of your Appcircle server.
@@ -13,9 +16,12 @@ For Docker users, there are built-in mechanisms that handle container restarts, 
 
 However, Podman users will need to create a systemd unit service to ensure the application starts automatically upon server reboot.
 
-<Tabs defaultValue="docker" values={[
-{ label: 'Docker', value: 'docker' },
-{ label: 'Podman', value: 'podman' },
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
 ]}>
 
 <TabItem value="docker">
@@ -89,6 +95,38 @@ Please change the the fields below in the service file:
 sudo systemctl daemon-relaod
 sudo systemctl enable appcircle-server.service
 ```
+
+</TabItem>
+
+</Tabs>
+
+### Common Steps
+
+These steps are common to both Docker and Podman installations:
+
+1. Common Step 1
+2. Common Step 2
+3. Common Step 3
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+## Docker title again
+
+This is docker title
+
+</TabItem>
+
+<TabItem value="podman">
+## Podman title again
+
+This is podman title
 
 </TabItem>
 
