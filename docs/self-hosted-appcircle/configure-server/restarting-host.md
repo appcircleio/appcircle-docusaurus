@@ -1,0 +1,85 @@
+---
+title: Restarting Host
+metaTitle: Restarting Host and Appcircle Server
+metaDescription: Restarting Host and Appcircle Server
+sidebar_position: 6
+---
+
+# Overview
+
+In this section, we will discuss how to enable automatic startup of your Appcircle server.
+
+For Docker users, there are built-in mechanisms that handle container restarts, eliminating the need for manual intervention.
+
+However, Podman users will need to create a systemd unit service to ensure the application starts automatically upon server reboot.
+
+<Tabs defaultValue="docker" values={[
+{ label: 'Docker', value: 'docker' },
+{ label: 'Podman', value: 'podman' },
+]}>
+
+<TabItem value="docker">
+
+## Docker
+
+With Docker, you can rely on the built-in restart policies to handle the automatic startup of your Appcircle server.
+
+Docker will automatically restart them if the host server reboots.
+
+This eliminates the need for any additional steps or configurations to ensure your application restarts upon server restart.
+
+</TabItem>
+
+<TabItem value="podman">
+
+## Podman
+
+When using Podman, you will need to create a systemd unit service to enable automatic startup of your application containers.
+
+By creating a systemd unit file and configuring it to launch your Appcircle server, you can ensure that your application starts automatically upon server reboot.
+
+To create a systemd unit service for automatic startup of Appcircle server, you can follow these steps:
+
+:::info
+For the steps below, you need sudo permission.
+:::
+
+- Create a unit service file and edit it:
+
+```bash
+sudo vim /etc/systemd/system/appcircle-server.service
+```
+
+- Add the following content to the file:
+
+```systemd
+[Unit]
+Description=Podman Appcircle
+Wants=network-online.target
+After=network-online.target
+RequiresMountsFor=%t/containers
+
+[Service]
+Environment=PODMAN_SYSTEMD_UNIT=%n
+User=berk
+Group=berk
+TimeoutStopSec=600
+PreStart=/usr/bin/loginctl enable-linger berk
+ExecStart=/bin/bash /home/berk/ac-script-self-hosted/ac-self-hosted.sh -n burakberk up
+
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
+```
+
+- Reload the systemd daemon and enable the Appcircle service:
+
+```bash
+sudo systemctl daemon-relaod
+sudo systemctl enable appcircle-server.service
+```
+
+</TabItem>
+
+</Tabs>
