@@ -99,35 +99,3 @@ sudo systemctl enable appcircle-server.service
 </TabItem>
 
 </Tabs>
-
-### Common Steps
-
-These steps are common to both Docker and Podman installations:
-
-1. Common Step 1
-2. Common Step 2
-3. Common Step 3
-
-<Tabs
-defaultValue="docker"
-groupId="container-engine"
-values={[
-{label: 'Docker', value: 'docker'},
-{label: 'Podman', value: 'podman'},
-]}>
-
-<TabItem value="docker">
-## Docker title again
-
-This is docker title
-
-</TabItem>
-
-<TabItem value="podman">
-## Podman title again
-
-This is podman title
-
-</TabItem>
-
-</Tabs>
