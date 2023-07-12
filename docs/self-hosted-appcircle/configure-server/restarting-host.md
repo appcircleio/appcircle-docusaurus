@@ -54,24 +54,34 @@ sudo vim /etc/systemd/system/appcircle-server.service
 
 ```systemd
 [Unit]
-Description=Podman Appcircle
+Description=Appcircle Server
 Wants=network-online.target
 After=network-online.target
 RequiresMountsFor=%t/containers
 
 [Service]
 Environment=PODMAN_SYSTEMD_UNIT=%n
-User=berk
-Group=berk
-TimeoutStopSec=600
-PreStart=/usr/bin/loginctl enable-linger berk
-ExecStart=/bin/bash /home/berk/ac-script-self-hosted/ac-self-hosted.sh -n burakberk up
+User=spacetech-user
+Group=spacetech-group
+TimeoutStopSec=1000
+PreStart=/usr/bin/loginctl enable-linger spacetech-user
+ExecStart=/bin/bash /home/spacetech-user/appcircle-server/ac-self-hosted.sh -n spacetech up
 
 Type=oneshot
 
 [Install]
 WantedBy=multi-user.target
 ```
+
+:::caution
+Please change the the fields below in the service file:
+
+- User > Change to your username
+- Group > Change to your group
+- PreStart > change the spacetech-user to your username
+- ExecStart > change the script path and project name which is spacetech in the example
+
+:::
 
 - Reload the systemd daemon and enable the Appcircle service:
 
