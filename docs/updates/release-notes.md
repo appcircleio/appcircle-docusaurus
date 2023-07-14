@@ -11,6 +11,39 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.5.0 - 2023-07-13 - Configuration, Workflow Improvements, New Autofill Feature
+
+### 🆕 New Feature
+- [ ] Added the "Autofill" option when creating a new build profile and connecting it with the service. <CloudBadge/> <SelfHostedBadge/>
+- [Xcode 15.0 Beta-4](../infrastructure/ios-build-infrastructure.md) added to build agents. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+- Added the feature that [LDAP and SSO](../sso/account/sso-ldap-login.md) settings  can be made once and all sub-organizations can use this setting. <CloudBadge/> <SelfHostedBadge/>
+- Previous [Configuration and Workflow](../build/adding-a-build-profile) files can be downloaded in the Configuration and Workflow sections. The ability to create configuration and workflow by re-uploading downloaded .yaml files has been improved. <CloudBadge/> <SelfHostedBadge/>
+-  On the [self-hosted](../self-hosted-appcircle) side, the feature of adding priority has been developed for online and offline runners. <CloudBadge/> <SelfHostedBadge/>
+- [ ] A sequential numbering improvement was made in the naming while creating the new configuration and workflow.  <CloudBadge/> <SelfHostedBadge/>
+- [ ] The ability to send files from the dist module to the enterprise store added. <CloudBadge/> <SelfHostedBadge/>
+- [ ] Made an improvement to prevent the subordinate from accessing the details on the 'corporate settings' page.<CloudBadge/> <SelfHostedBadge/>
+- Improved that the M1 repository is automatically selected in case of [Xcode](../infrastructure/ios-build-infrastructure.md) version 14.3.x and above.<CloudBadge/> <SelfHostedBadge/>
+- Improved the display of device name if there is an available device on the [IOS provisioning](../distribute/apple-devices.md) profile side.<CloudBadge/> <SelfHostedBadge/>
+- [ ] Subtitle would also have to be searched for components. This development has been done. <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixed
+- Fixed an issue where the user could not create a [sub-organization](../account/my-organization.md) even though they had the required permission.<CloudBadge/> <SelfHostedBadge/>
+- [ ] Fixed issue with file permissions when exporting a project for self-hosted uses. <SelfHostedBadge/>
+- Fixed the problem of adding the same name while uploading the [configuration](../build/adding-a-build-profile). <CloudBadge/> <SelfHostedBadge/>
+- [ ] The permissions of the applications in the Huawei appgallery that depend on the permission to view the applications in the [Store submit](../store-submit/google-play.md) section has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- [ ] The problem that the save button is not active after the changes made in the organization pool has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- [ ] Fixed a double slash (//) bug on the webhook link that caused the triggers to not work. <CloudBadge/> <SelfHostedBadge/>
+- [ ] The error that the change indicator appears even though there is no change in some tabs in the config modal has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- [ ] Apple Devices Improved not sending Device enrollment link if Auto enrollment is disabled. <CloudBadge/> <SelfHostedBadge/>
+- [ ] Fixed configuration creation error without giving any name. <CloudBadge/> <SelfHostedBadge/>
+- Fixing UI bugs in search field in [Distribution](../distribute/create-or-select-a-distribution-profile.md) module. <CloudBadge/> <SelfHostedBadge/>
+- [ ] Fixed a bug that caused triggers to be deleted. <CloudBadge/> <SelfHostedBadge/>
+- [ ] The error that the save button is not active when I change the [offset](../versioning/ios-version.md) part of the build number has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- [ ] Fixed unsigned owners error on files that are not resigned in test deployment part. <CloudBadge/> <SelfHostedBadge/>
+- [ ] Fixed some icons appearing properly in dark mode. <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.4.0 - 2023-06-09 - Build Profile Improvements, Azure Boards 
 
 ### 🆕 New Feature
