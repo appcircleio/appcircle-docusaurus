@@ -29,10 +29,31 @@ You should manage certificates from configuration file manually and renew them w
 
 :::info
 
-If your cert format `PKCS#7` (known as p7b or p7c) , you can convert it to pem format with openssl. See the example command below.
+If your cert format `PKCS#7` (known as p7b or p7c) , you can convert it to pem format with openssl.
+
+See the example command below:
 
 ```bash
 openssl pkcs7 -print_certs -in cert.p7b -out cert.pem
+```
+
+:::
+
+:::info
+
+If your cert format is PFX (known as p12), you can convert it to pem format with openssl.
+
+See the example command below:
+
+```bash
+# Extract the cert
+openssl pkcs12 -in cert.p12 -clcerts -nokeys -out cert.pem
+
+# Extract the key without password
+openssl pkcs12 -in cert.p12 -nocerts -nodes -out key.pem
+# or
+# Extract the key with password
+openssl pkcs12 -in cert.p12 -nocerts -out key.pem
 ```
 
 :::
@@ -135,7 +156,7 @@ J8lYxh0PCOmuCZ02FAvoi0r8
 -----END PRIVATE KEY-----
 ```
 
-And we have `_wildcard.appcircle.spacetech.com.crt` as public certificate file for our sample domain. It's a full chain certificate file which has  server certificate, all intermediate certificates, and finally the root CA.
+And we have `_wildcard.appcircle.spacetech.com.crt` as public certificate file for our sample domain. It's a full chain certificate file which has server certificate, all intermediate certificates, and finally the root CA.
 
 ```bash
 $ cat _wildcard.appcircle.spacetech.com.crt
@@ -348,7 +369,7 @@ If your external service has **Subordinate CA** (sub CA) in certificate chain, i
 ```yaml
 external:
   scheme: https
-  mainDomain: ".appcircle.spacetech.com"
+  mainDomain: '.appcircle.spacetech.com'
   ca: |
     -----BEGIN CERTIFICATE-----
     MIIEvTCCAyWgAwIBAgIQNVqUQw+7fmeXJBAtns5HyjANBgkqhkiG9w0BAQsFADB3
