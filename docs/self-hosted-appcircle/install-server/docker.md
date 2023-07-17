@@ -165,7 +165,7 @@ You can install docker on RHEL 8.6 and later with the command below:
 
 ```bash
 curl -sSL -o install-docker.sh "https://storage.googleapis.com/appcircle-dev-common/self-hosted/rpm-packages/install-docker.sh" && \
-chmod +x install-docker.sh && \ 
+chmod +x install-docker.sh && \
 ./install-docker.sh
 ```
 
