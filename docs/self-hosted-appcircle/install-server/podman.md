@@ -225,7 +225,7 @@ podman info | grep -i networkBackend
 ```
 
 You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark.
-  
+
 ```bash
 sudo dnf install -y netavark
 ```
@@ -792,9 +792,11 @@ sudo netstat -tulpn | grep LISTEN | grep -E 'rootlessport|socat'
 
 ##### Rebooting the Server
 
-Currently, we do not support automatic startup of the Appcircle server on system boot when Podman is selected as the container engine.
+By default, the Appcircle server containers do not start automatically upon rebooting the host server when podman used as container engine.
 
-If you reboot the server, you will need to run the "up" command again to start the Appcircle server.
+To enable automatic startup of the Appcircle server containers, additional steps are required.
+
+For detailed instructions on configuring the automatic startup of the server containers upon server reboot, please refer to the [Restarting Host](../configure-server/restarting-host.md) page.
 
 :::
 
