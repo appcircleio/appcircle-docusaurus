@@ -161,6 +161,17 @@ Or, as a better choice, you can leave docker engine installation to self-hosted 
 :::
 
 :::info
+You can install docker on RHEL 8.6 and later with the command below:
+
+```bash
+curl -sSL -o install-docker.sh "https://storage.googleapis.com/appcircle-dev-common/self-hosted/rpm-packages/install-docker.sh" && \
+chmod +x install-docker.sh && \
+./install-docker.sh
+```
+
+:::
+
+:::info
 
 Self-hosted Appcircle server is only compatible with [docker compose V2](https://docs.docker.com/compose/compose-v2/) and the new `docker compose` command.
 
