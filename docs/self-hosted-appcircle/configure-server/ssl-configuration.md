@@ -41,18 +41,25 @@ openssl pkcs7 -print_certs -in cert.p7b -out cert.pem
 
 :::info
 
-If your cert format is PFX (known as p12), you can convert it to pem format with openssl.
+If your cert format is `PFX` (known as p12), you can convert it to pem format with openssl.
 
-See the example command below:
+See the example commands below:
+
+- Extract the cert from archive.
 
 ```bash
-# Extract the cert
 openssl pkcs12 -in cert.p12 -clcerts -nokeys -out cert.pem
+```
 
-# Extract the key without password
+- Extract the key without password.
+
+```bash
 openssl pkcs12 -in cert.p12 -nocerts -nodes -out key.pem
-# or
-# Extract the key with password
+```
+
+- Extract the key with password.
+
+```bash
 openssl pkcs12 -in cert.p12 -nocerts -out key.pem
 ```
 
