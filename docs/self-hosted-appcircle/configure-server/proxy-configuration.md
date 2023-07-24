@@ -14,7 +14,7 @@ In this document, we will explore the configuration of a proxy server to enable 
 
 We will cover Docker and Podman, providing step-by-step instructions to set up and utilize the proxy server effectively.
 
-Using proxies on Appcircle containers ensurs smooth connectivity to external resources.
+Using proxies on Appcircle containers ensures smooth connectivity to external resources.
 
 ### Enable Proxy Settings On The Appcircle Server
 
@@ -22,7 +22,7 @@ First, you should enable proxy settings on the host server.
 
 To do that you can follow the steps below:
 
-- For non-shel processes, edit `/etc/environment`.
+- For non-shell processes, edit the `/etc/environment`.
 
 ```bash
 sudo vim /etc/environment
