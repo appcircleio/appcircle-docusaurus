@@ -18,6 +18,13 @@ Using proxies on Appcircle containers ensures smooth connectivity to external re
 
 ### Enable Proxy Settings On The Appcircle Server
 
+For a typical proxy configuration, you need to know the arguments for these parameters:
+
+- Username if the proxy has authentication. For example, `user`
+- Password if the proxy has authentication. For example, `password`
+- Hostname or IP of the proxy server. For example, `proxy.spacetech.com`
+- Port of the proxy server. For example, `8080`
+
 First, you should enable proxy settings on the host server.
 
 To do that you can follow the steps below:
