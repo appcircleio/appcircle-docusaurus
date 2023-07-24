@@ -108,7 +108,11 @@ vi noProxy.sh
 ```bash
 #!/usr/bin/env bash
 set -e
-compose_file="projects/spacetech/export/compose.yaml"
+
+projectName="spacetech"
+authUrl="auth.appcircle.spacetech.com"
+
+compose_file="projects/${projectName}/export/compose.yaml"
 
 hostname_values=$(yq eval '.services | to_entries | .[].value.hostname' "$compose_file" | grep -v "null" | sort -u)
 hostname_values_comma=$(echo "$hostname_values" | sed ':a;N;$!ba;s/\n/,/g')
@@ -121,8 +125,8 @@ no_proxy_value_comma="$hostname_values_comma,$service_values_comma"
 echo "no_proxy=${no_proxy_value_comma},${no_proxy}" >> /etc/environment
 echo "NO_PROXY=${no_proxy_value_comma},${NO_PROXY}" >> /etc/environment
 
-echo "export no_proxy=${no_proxy_value_comma},${no_proxy},auth.appcircle.spacetech.com" >> /etc/profile.d/proxy.sh
-echo "export NO_PROXY=${no_proxy_value_comma},${NO_PROXY},auth.appcircle.spacetech.com" >> /etc/profile.d/proxy.sh
+echo "export no_proxy=${no_proxy_value_comma},${no_proxy},${authUrl}" >> /etc/profile.d/proxy.sh
+echo "export NO_PROXY=${no_proxy_value_comma},${NO_PROXY},${authUrl}" >> /etc/profile.d/proxy.sh
 
 echo "NoProxy settings enabled successfully"
 echo ""
@@ -130,8 +134,27 @@ echo "IMPORTANT!!!!"
 echo "Please open a new terminal session to changes take effect."
 ```
 
+:::info
+This script needs yq as dependency while getting hostname and service names from `compose.yml`
+
+Normally, yq is installed with [Appcircle server installation](../install-server/docker.md#2-packages).
+:::
+
 :::caution
 Don't forget to change the project name `spacetech` and the url `auth.appcircle.spacetech.com` for your needs while copying from above.
+
+You can find your auth url by following the steps:
+
+- View your `global.yaml` file.
+
+```bash
+cat projects/spacetech/global.yml
+```
+
+- Find the `external.mainDomain` variable.
+- It should be something like `.appcircle.spacetech.com`
+- Add `auth.` as prefix. So your auth url should be `auth.appcircle.spacetech.com`
+
 :::
 
 - Give run permission to the script.
