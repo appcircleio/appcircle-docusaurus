@@ -223,6 +223,12 @@ vi ~/.docker/config.json
 }
 ```
 
+- Restart your docker engine systemd service.
+
+```bash
+sudo systemctl restart docker
+```
+
   </TabItem>
 
   <TabItem value="podman" label="Podman">
