@@ -16,6 +16,22 @@ We will cover Docker and Podman, providing step-by-step instructions to set up a
 
 Using proxies on Appcircle containers ensures smooth connectivity to external resources.
 
+### Down Your Appcircle Server
+
+- At first, you should down your server and make the configuration for the overall stability of the host machine.
+
+- Go to your `appcircle-server` folder.
+
+```bash
+cd ./appcircle-server
+```
+
+- Down the Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
 ### Enable Proxy Settings On The Appcircle Server
 
 For a typical proxy configuration, you need to know the arguments for these parameters:
@@ -25,7 +41,7 @@ For a typical proxy configuration, you need to know the arguments for these para
 - Hostname or IP of the proxy server. For example, `proxy.spacetech.com`
 - Port of the proxy server. For example, `8080`
 
-First, you should enable proxy settings on the host server.
+For next, you should enable proxy settings on the host server.
 
 To do that you can follow the steps below:
 
@@ -216,9 +232,21 @@ vi ~/.docker/config.json
   </TabItem>
 </Tabs>
 
-### Run Your Appcircle Server
+### Up Your Appcircle Server
 
 After configuring the proxy settings on the host server, you can run your Appcircle server.
+
+- Go to your `appcircle-server` folder.
+
+```bash
+cd ./appcircle-server
+```
+
+- Up the Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
 
 Your containers will be able to connect external resources through the proxy now.
 
