@@ -92,14 +92,14 @@ Currently we do not support proxies that requires to install it's own certificat
 
 ### Edit `no_proxy` Variable for Internal Container Network
 
-In order not to break the connection of the containers with each other, we must add the service names to the `no_proxy` env variable.
+In order not to break the connection of the containers with each other, we must add the service names to the `no_proxy` and `NO_PROXY` environment variables.
 
-You can follow the steps below to edit `no_proxy`.
+You can follow the steps below to edit these variables correctly.
 
-- Go to your `appcircle-server` directory and create a shell script names `noProxy.sh`
+- Go to your `appcircle-server` directory and create a shell script named `noProxy.sh`
 
 ```bash
-cd ~/appcircle-server/
+cd appcircle-server/
 vi noProxy.sh
 ```
 
