@@ -25,7 +25,7 @@ To do that you can follow the steps below:
 - For non-shell processes, edit the `/etc/environment`.
 
 ```bash
-sudo vim /etc/environment
+sudo vi /etc/environment
 ```
 
 - Add the content below to the `/etc/environment` file.
@@ -43,7 +43,7 @@ no_proxy=localhost,127.0.0.1,gitlab.spacetech.com,registry.spacetech.com
 - For shell processes, edit `/etc/profile.d/proxy.sh`.
 
 ```bash
-sudo vim /etc/profile.d/proxy.sh
+sudo vi /etc/profile.d/proxy.sh
 ```
 
 - Add the content below to the `/etc/profile.d/proxy.sh` file.
@@ -76,7 +76,7 @@ You can follow the steps below to edit `no_proxy`.
 
 ```bash
 cd ~/appcircle-server/
-vim noProxy.sh
+vi noProxy.sh
 ```
 
 - Add the content below to the `noProxy.sh` file.
@@ -132,7 +132,7 @@ echo $no_proxy
 - Edit the docker configuration file:
 
 ```bash
-vim ~/.docker/config.json
+vi ~/.docker/config.json
 ```
 
 - Add the your proxy settings to the configuration file like below. Paste your `no_proxy` variables to the `noProxy` section on the conf file.
