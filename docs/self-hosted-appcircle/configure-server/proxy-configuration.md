@@ -221,3 +221,9 @@ vi ~/.docker/config.json
 After configuring the proxy settings on the host server, you can run your Appcircle server.
 
 Your containers will be able to connect external resources through the proxy now.
+
+### Maintenance of `no_proxy` env variables
+
+Appcircle server is getting updates regularly and there might be a new container service in the `compose.yml` file.
+
+To keep stability of the system, you should go back to [Edit no_proxy Settings for Internal Container Network step](#edit-no_proxy-variable-for-internal-container-network) and take the steps on each update.
