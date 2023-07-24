@@ -33,12 +33,24 @@ sudo vi /etc/environment
 ```env
 HTTP_PROXY=http://user:password@proxy.spacetech.com:8080/
 HTTPS_PROXY=http://user:password@proxy.spacetech.com:8080/
-NO_PROXY=localhost,127.0.0.1,gitlab.spacetech.com,registry.spacetech.com
+NO_PROXY=localhost,127.0.0.1
 
 http_proxy=http://user:password@proxy.spacetech.com:8080/
 https_proxy=http://user:password@proxy.spacetech.com:8080/
-no_proxy=localhost,127.0.0.1,gitlab.spacetech.com,registry.spacetech.com
+no_proxy=localhost,127.0.0.1
 ```
+
+:::tip
+
+#### `no_proxy` Configuration
+
+`no_proxy` and `NO_PROXY` should be used for your corporate intranet services that should be kept away from the proxy.
+You can add all the required domains or IPs separated by a comma. Below are some example cases that are common for a typical enterprise installation.
+
+- Git provider (GitLab, Bitbucket, etc.) For example, `gitlab.spacetech.com`
+- Proxy Repository (Nexus, Harbor, etc.) For example, `registry.spacetech.com`
+
+:::
 
 - For shell processes, edit `/etc/profile.d/proxy.sh`.
 
@@ -51,12 +63,17 @@ sudo vi /etc/profile.d/proxy.sh
 ```env
 export HTTP_PROXY=http://user:password@proxy.spacetech.com:8080/
 export HTTPS_PROXY=http://user:password@proxy.spacetech.com:8080/
-export NO_PROXY=localhost,127.0.0.1,gitlab.spacetech.com,registry.spacetech.com
+export NO_PROXY=localhost,127.0.0.1
 
 export http_proxy=http://user:password@proxy.spacetech.com:8080/
 export https_proxy=http://user:password@proxy.spacetech.com:8080/
-export no_proxy=localhost,127.0.0.1,gitlab.spacetech.com,registry.spacetech.com
+export no_proxy=localhost,127.0.0.1
 ```
+
+:::caution
+For system integrity, the proxy settings in here should be the same as the above settings in `/etc/environment`.
+Also see the `no_proxy` tip explained [there](#no_proxy-configuration).
+:::
 
 :::info
 Don't forget to change `user`, `password`, `proxy host`, `proxy port` and `no_proxy` for your needs while copying from above.
