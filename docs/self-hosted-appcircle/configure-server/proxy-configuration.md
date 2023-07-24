@@ -134,6 +134,18 @@ echo "Please open a new terminal session to changes take effect."
 Don't forget to change the project name `spacetech` and the url `auth.appcircle.spacetech.com` for your needs while copying from above.
 :::
 
+- Give run permission to the script.
+
+```bash
+chmod +x ./noProxy.sh
+```
+
+- Run with sudo privileges
+
+```bash
+sudo ./noProxy.sh
+```
+
 :::caution
 Don't forget to start a new terminal session for the changes to take effect.
 :::
