@@ -145,14 +145,13 @@ Don't forget to change the project name `spacetech` and the url `auth.appcircle
 
 You can find your auth url by following the steps:
 
-- View your `global.yaml` file.
+- View your `mainDomain` variable in the `global.yaml` file.
 
 ```bash
-cat projects/spacetech/global.yml
+yq '.external.mainDomain' projects/burakberk/global.yaml
 ```
 
-- Find the `external.mainDomain` variable.
-- It should be something like `.appcircle.spacetech.com`
+- This value should be something like `.appcircle.spacetech.com`
 - Add `auth.` as prefix. So your auth url should be `auth.appcircle.spacetech.com`
 
 :::
