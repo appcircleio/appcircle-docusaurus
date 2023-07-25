@@ -8,31 +8,37 @@ sidebar_position: 7
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Using Proxy On Appcircle Server
-
 In this document, we will explore the configuration of a proxy server to enable internet connectivity from your Appcircle containers for accessing external resources.
 
 We will cover Docker and Podman, providing step-by-step instructions to set up and utilize the proxy server effectively.
 
 Using proxies on Appcircle containers ensures smooth connectivity to external resources.
 
-### Down Your Appcircle Server
+:::info
 
-- At first, you should down your server and make the configuration for the overall stability of the host machine.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](../install-server/docker.md#3-configure) section in docs and applied example scenario.
 
-- Go to your `appcircle-server` folder.
+Following steps are using example project as project naming, which was told there.
+
+:::
+
+## 1. Stop Appcircle Server
+
+At first, you must shut down your server and configure it when it is stopped for the overall stability of the host machine.
+
+- Go to the `appcircle-server` folder.
 
 ```bash
-cd ./appcircle-server
+cd appcircle-server
 ```
 
-- Down the Appcircle server.
+- Stop the server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
 ```
 
-### Enable Proxy Settings On The Appcircle Server
+## 2. Configure Proxy for the Server
 
 For a typical proxy configuration, you need to know the arguments for these parameters:
 
@@ -41,7 +47,19 @@ For a typical proxy configuration, you need to know the arguments for these para
 - Hostname or IP of the proxy server. For example, `proxy.spacetech.com`
 - Port of the proxy server. For example, `8080`
 
-For next, you should enable proxy settings on the host server.
+:::info
+
+If your proxy server has no authentication, you should ignore the `user` and `password` values in the below sample codes and configurations.
+
+:::
+
+:::info
+
+You can also use the IP of the proxy server if it does not have a dedicated domain name.
+
+:::
+
+Next, you should enable proxy settings on the host server.
 
 To do that you can follow the steps below:
 
@@ -65,7 +83,7 @@ no_proxy=localhost,127.0.0.1
 
 :::tip
 
-#### `no_proxy` Configuration
+### `no_proxy` Configuration
 
 `no_proxy` and `NO_PROXY` should be used for your corporate intranet services that should be kept away from the proxy.
 You can add all the required domains or IPs separated by a comma. Below are some example cases that are common for a typical enterprise installation.
@@ -75,7 +93,7 @@ You can add all the required domains or IPs separated by a comma. Below are some
 
 :::
 
-- For shell processes, edit `/etc/profile.d/proxy.sh`.
+- For shell processes, edit the `/etc/profile.d/proxy.sh`.
 
 ```bash
 sudo vi /etc/profile.d/proxy.sh
@@ -99,27 +117,32 @@ Also see the `no_proxy` tip explained [there](#no_proxy-configuration).
 :::
 
 :::info
-Don't forget to change `user`, `password`, `proxy host`, `proxy port` and `no_proxy` for your needs while copying from above.
+Don't forget to change `user`, `password`, proxy `host`, proxy `port`, and `no_proxy` settings for your needs while copying from above.
 :::
 
 :::caution
 Currently we do not support proxies that requires to install it's own certificate.
 :::
 
-### Edit `no_proxy` Variable for Internal Container Network
+### Edit `no_proxy` for Internal Container Network
 
 In order not to break the connection of the containers with each other, we must add the service names to the `no_proxy` and `NO_PROXY` environment variables.
 
 You can follow the steps below to edit these variables correctly.
 
-- Go to your `appcircle-server` directory and create a shell script named `noProxy.sh`
+- Go to the `appcircle-server` folder.
 
 ```bash
-cd appcircle-server/
+cd appcircle-server
+```
+
+- Create a shell script named `noProxy.sh`.
+
+```bash
 vi noProxy.sh
 ```
 
-- Add the content below to the `noProxy.sh` file.
+- Add the content below to the `noProxy.sh` script.
 
 ```bash
 #!/usr/bin/env bash
@@ -144,16 +167,16 @@ echo "NO_PROXY=${no_proxy_value_comma},${NO_PROXY}" >> /etc/environment
 echo "export no_proxy=${no_proxy_value_comma},${no_proxy},${authUrl}" >> /etc/profile.d/proxy.sh
 echo "export NO_PROXY=${no_proxy_value_comma},${NO_PROXY},${authUrl}" >> /etc/profile.d/proxy.sh
 
-echo "NoProxy settings enabled successfully"
+echo "No_Proxy settings enabled successfully."
 echo ""
-echo "IMPORTANT!!!!"
+echo "IMPORTANT!"
 echo "Please open a new terminal session to changes take effect."
 ```
 
 :::info
-This script needs yq as dependency while getting hostname and service names from `compose.yml`
+The above script needs `yq` as a dependency while getting hostnames and services from `compose.yaml`.
 
-Normally, yq is installed with [Appcircle server installation](../install-server/docker.md#2-packages).
+Normally, `yq` is expected to be installed within the Appcircle [server installation](../install-server/docker.md#2-packages) steps.
 :::
 
 :::caution
@@ -164,21 +187,27 @@ You can find your auth url by following the steps:
 - View your `mainDomain` variable in the `global.yaml` file.
 
 ```bash
-yq '.external.mainDomain' projects/burakberk/global.yaml
+yq '.external.mainDomain' projects/spacetech/global.yaml
 ```
 
-- This value should be something like `.appcircle.spacetech.com`
-- Add `auth.` as prefix. So your auth url should be `auth.appcircle.spacetech.com`
+- This value should be something like `.appcircle.spacetech.com`.
+- Add `auth` as prefix. So your auth url should be `auth.appcircle.spacetech.com`.
+
+You can also use the below one-line command to print the auth URL.
+
+```bash
+echo "auth$(yq '.external.mainDomain' projects/spacetech/global.yaml)"
+```
 
 :::
 
-- Give run permission to the script.
+- Give execute permission to the script.
 
 ```bash
-chmod +x ./noProxy.sh
+chmod +x noProxy.sh
 ```
 
-- Run with sudo privileges
+- Execute the script with sudo privileges.
 
 ```bash
 sudo ./noProxy.sh
@@ -188,28 +217,28 @@ sudo ./noProxy.sh
 Don't forget to start a new terminal session for the changes to take effect.
 :::
 
-### Enable Proxy Settings On Container Engine
+## 3. Enable Settings on the Container Engine
 
 <Tabs groupId="operating-systems">
   <TabItem value="docker" label="Docker">
   
-After you enabled proxy settings on the host server, you should also edit docker's configuration file to notify docker that there is proxy settings to use.
+After you enable proxy settings on the host server, you must also edit the Docker's configuration file to notify the container runtime engine that there are proxy settings to use.
 
-You can follow the steps below to enable proxy settings on docker engine:
+You can follow the steps below to enable proxy settings on the Docker:
 
-- Cat the `no_proxy` variables of the server and copy it.
+- Print the value of the `no_proxy` variable to the terminal and copy it.
 
 ```bash
 echo $no_proxy
 ```
 
-- Edit the docker configuration file:
+- Edit the Docker configuration file. It creates if it does not exist.
 
 ```bash
 vi ~/.docker/config.json
 ```
 
-- Add the your proxy settings to the configuration file like below. Paste your `no_proxy` variables to the `noProxy` section on the conf file.
+- Add the proxy settings to the configuration file like below. Paste the copied `no_proxy` variable to the `noProxy` section on the configuration file.
 
 ```json
 {
@@ -217,47 +246,54 @@ vi ~/.docker/config.json
     "default": {
       "httpProxy": "http://user:password@proxy.spacetech.com:8080",
       "httpsProxy": "http://user:password@proxy.spacetech.com:8080",
-      "noProxy": "...,web_event,webhook,localhost,127.0.0.1,gitlab.burakberk.dev,..."
+      "noProxy": "localhost,127.0.0.1"
     }
   }
 }
 ```
 
-- Restart your docker engine systemd service.
+:::caution
+The Docker file `config.json` might exist on the system. If that's the case, then you should **only add the `proxies` section** of the JSON above to the configuration file.
+:::
 
-```bash
-sudo systemctl restart docker
-```
+:::caution
+For system integrity, the proxy settings in here should be the same as the above settings in `/etc/environment`.
+Also see the `no_proxy` tip explained [there](#no_proxy-configuration).
+:::
+
+The configuration becomes active after saving the file, you don’t need to restart Docker. However, the configuration only applies to new containers, and doesn’t affect existing containers.
+
+So, if you stop the server as the first step in this document, then you can go on with the next step. If not, it's time to [stopping the server](#1-stop-appcircle-server) before going on.
 
   </TabItem>
 
   <TabItem value="podman" label="Podman">
   
-  If you followed until here, you don't need take extra actions. 
+  If you followed until here, you don't need to take extra actions for the Podman container engine.
   
   </TabItem>
 </Tabs>
 
-### Up Your Appcircle Server
+## 4. Start Appcircle Server
 
-After configuring the proxy settings on the host server, you can run your Appcircle server.
+After configuring the proxy settings on the host, you can start your Appcircle server.
 
-- Go to your `appcircle-server` folder.
+- Go to the `appcircle-server` folder.
 
 ```bash
-cd ./appcircle-server
+cd appcircle-server
 ```
 
-- Up the Appcircle server.
+- Start the server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-Your containers will be able to connect external resources through the proxy now.
+Your containers will be able to connect to external resources through the proxy now.
 
-### Maintenance of `no_proxy` env variables
+## Maintenance of `no_proxy` Variables
 
-Appcircle server is getting updates regularly and there might be a new container service in the `compose.yml` file.
+The Appcircle server is getting updates regularly, and there might be a new container service in the `compose.yaml` file.
 
-To keep stability of the system, you should go back to [Edit no_proxy Settings for Internal Container Network step](#edit-no_proxy-variable-for-internal-container-network) and take the steps on each update.
+To maintain the stability of the system, you should go back to the [Edit `no_proxy` for Internal Container Network](#edit-no_proxy-for-internal-container-network) step and re-apply the operations done there on every upgrade.
