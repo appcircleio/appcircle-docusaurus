@@ -159,13 +159,14 @@ hostname_values_comma=$(echo "$hostname_values" | sed ':a;N;$!ba;s/\n/,/g')
 service_values=$(yq eval '.services | keys' "$compose_file" | sed 's/^..//' | sort -u)
 service_values_comma=$(echo "$service_values" | sed ':a;N;$!ba;s/\n/,/g')
 
-no_proxy_value_comma="$hostname_values_comma,$service_values_comma"
+no_proxy_value_comma="$hostname_values_comma,$service_values_comma,$no_proxy,$authUrl"
+new_no_proxy="$(echo $no_proxy_value_comma | tr ',' '\n' | sort -u | tr '\n' ',')"
 
-echo "no_proxy=${no_proxy_value_comma},${no_proxy}" >> /etc/environment
-echo "NO_PROXY=${no_proxy_value_comma},${NO_PROXY}" >> /etc/environment
+sed -i "s/^no_proxy=.*/no_proxy=$new_no_proxy/" /etc/environment
+sed -i "s/^NO_PROXY=.*/NO_PROXY=$new_no_proxy/" /etc/environment
 
-echo "export no_proxy=${no_proxy_value_comma},${no_proxy},${authUrl}" >> /etc/profile.d/proxy.sh
-echo "export NO_PROXY=${no_proxy_value_comma},${NO_PROXY},${authUrl}" >> /etc/profile.d/proxy.sh
+sed -i "s/^export no_proxy=.*/export no_proxy=$new_no_proxy/" /etc/profile.d/proxy.sh
+sed -i "s/^export NO_PROXY=.*/export NO_PROXY=$new_no_proxy/" /etc/profile.d/proxy.sh
 
 echo "No_Proxy settings enabled successfully."
 echo ""
