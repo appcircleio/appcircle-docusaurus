@@ -792,7 +792,7 @@ sudo netstat -tulpn | grep LISTEN | grep -E 'rootlessport|socat'
 
 ##### Rebooting the Server
 
-By default, the Appcircle server containers do not start automatically upon rebooting the host server when podman used as container engine.
+By default, the Appcircle server containers do not start automatically upon rebooting the host when podman is used as the container engine.
 
 To enable automatic startup of the Appcircle server containers, additional steps are required.
 
