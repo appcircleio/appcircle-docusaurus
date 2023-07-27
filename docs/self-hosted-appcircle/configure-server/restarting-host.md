@@ -30,7 +30,7 @@ values={[
 
 With Docker, you can rely on the built-in restart policies to handle the automatic startup of your Appcircle server.
 
-Docker will automatically restart them if the host reboots.
+Docker will automatically restart the server services if the host reboots.
 
 This eliminates the need for any additional steps or configurations to ensure your application restarts upon host restart.
 
@@ -69,10 +69,10 @@ RequiresMountsFor=%t/containers
 Environment=PODMAN_SYSTEMD_UNIT=%n
 User=${USER}
 Group=${GROUP}
-TimeoutStopSec=60
 ExecStartPre=/usr/bin/loginctl enable-linger ${USER}
 ExecStart=/bin/bash ${APPCIRCLE_SERVER_DIR}/ac-self-hosted.sh -n spacetech up
 Type=oneshot
+RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
