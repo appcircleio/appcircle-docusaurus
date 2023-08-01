@@ -34,7 +34,7 @@ cd appcircle-server
 - Edit the global.yaml of the project
 
 ```bash
-vim ./projects/spactech/global.yaml
+vi ./projects/spactech/global.yaml
 ```
 
 - Find the keycloak entry and add `userLookupDecisionStrategy` to it:
@@ -43,7 +43,7 @@ vim ./projects/spactech/global.yaml
 ---
 keycloak:
   initialUsername: admin@spacetech.com
-  initialPassword: Spacetech123
+  initialPassword: Spacetech123!
   enabledRegistration: true
   userLookupDecisionStrategy: affirmative
 ---
