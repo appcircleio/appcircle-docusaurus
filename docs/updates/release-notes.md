@@ -11,6 +11,23 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.6.0 - 2023-08-03 - Azure Integration, Adding Quick repo with Azure, Using Auth 2.0 Features, Environment Variables Using Improvements
+
+### 🆕 New Feature
+- Added support for using [Webhook](../build/adding-a-build-profile/connecting-to-github.md) with OAuth 2.0 and Personal Access Token on Azure. <CloudBadge/> <SelfHostedBadge/>
+- [ ] In order to add repositories on the Azure provider, the ability to quickly add repositories after the first permission is provided on the new project add screen. <CloudBadge/> <SelfHostedBadge/>
+- [ ]  Quick add feature has been brought to the new project add screen for Azure self-hosted uses. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+- The ability to use information such as [SSH, PAT](../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md), which is required for adding new projects with SSH, has been added with environment variables. <CloudBadge/> <SelfHostedBadge/>
+- The [TagModel](../build/build-manually-or-with-triggers.md) now includes the name and email of the user who created the tag. <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixed
+- [ ] Fixed a bug that users were experiencing when adding to the provisining profile. <CloudBadge/> <SelfHostedBadge/>
+- [ ] Fixed a bug that caused [endpoints](../appcircle-api/about-the-appcircle-cli.md) to not appear in the webhook module on Swagger. <CloudBadge/> <SelfHostedBadge/>
+- [ ] If I use "release-android-all" only the initial configuration is triggered fixed. <CloudBadge/> <SelfHostedBadge/>
+- [ ] Fixed the issue of [invitation](../account/my-organization.md) email duration sent via Appcircle. <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.5.0 - 2023-07-13 - Configuration, Workflow Improvements, New Autofill Feature
 
 ### 🆕 New Feature
