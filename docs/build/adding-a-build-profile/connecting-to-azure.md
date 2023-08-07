@@ -78,14 +78,14 @@ You can follow the steps below to check if your token is valid.
 - Open the terminal and issue the following command
 
 ```bash
-curl "http://YOUR_GITLAB_HOST/api/v4/projects?private_token=YOUR_TOKEN"
+curl "http://YOUR_AZURE_HOST/api/v4/projects?private_token=YOUR_TOKEN"
 ```
 
-Above command should print out your projects. If you don't see an output, please check your token and GitLab address. 
+Above command should print out your projects. If you don't see an output, please check your token and Azure address. 
 
 :::caution
 
-Please also make sure that the output doesn't show any reference to `localhost`. If you see `localhost`,  you need to configure GitLab and put the correct address of your GitLab instance.
+Please also make sure that the output doesn't show any reference to `localhost`. If you see `localhost`,  you need to configure Azure and put the correct address of your GitLab instance.
 
 :::
 
