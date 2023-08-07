@@ -1,20 +1,20 @@
 ---
-title: 'Connecting to GitLab'
-metaTitle: 'Connecting to GitLab'
-metaDescription: 'Connecting to GitLab'
+title: 'Connecting to Azure'
+metaTitle: 'Connecting to Azure'
+metaDescription: 'Connecting to Azure'
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
 
-# Connecting to GitLab
+# Connecting to Azure
 
-## Connecting to gitlab.com
+## Connecting to azure.com
 
-If you authorize Appcircle to access your repositories on GitLab, you can select the repository that you want to connect in the next screen.
+If you authorize Appcircle to access your repositories on Azure, you can select the repository that you want to connect in the next screen.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (238).png>)
 
-After you click on **GitLab**, the following screen will appear. This will let you choose between selecting a repository which you are already authorized Appcircle to do or ask your consent about authorizing more repositories.
+After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository which you are already authorized Appcircle to do or ask your consent about authorizing more repositories.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (235).png>)
 
@@ -26,19 +26,19 @@ After the connection is successful, you can [view your newly created profile](./
 
 ## Connecting to GitLab Self Hosted Repository
 
-Overall process is similar with private repository connection through SSH, but Appcircle allows to directly connect through GitLab Self Hosted URL.
+Overall process is similar with private repository connection through SSH, but Appcircle allows to directly connect through Azure Self Hosted URL.
 
 :::caution
 
-GitLab's version must be **13.12.9** or higher.
+Azure's version must be **13.12.9** or higher.
 
 :::
 
-First, select **GitLab** and then **Connect Self-hosted GitLab** through the menu:
+First, select **Azure** and then **Connect Self-hosted Azure** through the menu:
 
 ![](<https://cdn.appcircle.io/docs/assets/image (242).png>)
 
-Fill the relevant information about your Gitlab self-hosted module. If you are not sure what those are, contact your system administrator.
+Fill the relevant information about your Azure self-hosted module. If you are not sure what those are, contact your system administrator.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (243).png>)
 
@@ -46,11 +46,11 @@ Fill the relevant information about your Gitlab self-hosted module. If you are n
 
 ### Connection Notice
 
-For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the internet.
+For Appcircle to connect to the Self Hosted Azure Instance, your connection must be reachable over the internet.
 
 :::
 
-Is your self-hosted GitLab instance under enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
+Is your self-hosted Azure instance under enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
 
 <ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls">
   Accessing Repositories in Internal Networks (Firewalls)
@@ -58,7 +58,7 @@ Is your self-hosted GitLab instance under enterprise firewall? Learn which IP ad
 
 ### Token Creation
 
-GitLab has two kinds of token at their Self Hosted instance:
+Azure has two kinds of token at their Self Hosted instance: //burası düzelecek
 
 - [Personal Access Token](https://docs.gitlab.com/ee/security/token_overview.html#personal-access-tokens)
 - [Project Access Token](https://docs.gitlab.com/ee/security/token_overview.html#project-access-tokens)
