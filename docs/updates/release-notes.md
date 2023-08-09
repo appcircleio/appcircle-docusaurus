@@ -11,6 +11,27 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.6.0 - 2023-08-03 - Azure DevOps Integration, Using Environment Variables On Git Integrations
+
+### 🆕 New Feature
+- Now you can connect repositories from Azure DevOps Services and Azure DevOps Server for your builds. <CloudBadge/> <SelfHostedBadge/>
+- Added support for using [webhook](../account/webhooks.md) with OAuth 2.0 and the Personal Access Token on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
+- The quick add feature has been added to the new project screen for both Azure DevOps Services and Azure DevOps Server. <CloudBadge/> <SelfHostedBadge/>
+- LDAP, user lookup decision strategy can be configured in global.yaml. See [LDAP settings](../self-hosted-appcircle/configure-server/ldap-settings.md) for details. <SelfHostedBadge/>
+
+### :muscle: Improvement
+- The ability to use information such as [SSH and PAT](../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md), that is required for adding new projects with SSH has been added with environment variables. <CloudBadge/> <SelfHostedBadge/>
+- The [Tag Model](../build/build-manually-or-with-triggers.md) now includes the name and email of the user who created the tag. <CloudBadge/> <SelfHostedBadge/>
+- The self-hosted script can now be called from anywhere in the OS. <SelfHostedBadge/>
+
+### 🐞 Fixed
+- Fixed a bug that users were experiencing when adding to the provisioning profile. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that caused [endpoints](../appcircle-api/api-authentication.md) to not appear in the webhook module on Swagger. <CloudBadge/> <SelfHostedBadge/>
+- When an event matches the trigger rules, all satisfied triggers will be executed. <CloudBadge/> <SelfHostedBadge/>
+- The user is redirected to the "invitation expired" page when the [invitation](../account/my-organization.md) link is timed out. <CloudBadge/> <SelfHostedBadge/>
+- The health check command was fixed, and it now reports the correct state both for Podman and Docker. <SelfHostedBadge/>
+- The missing service on the Podman installation was fixed. <SelfHostedBadge/>
+
 ## 3.5.0 - 2023-07-13 - Configuration, Workflow Improvements, New Autofill Feature
 
 ### 🆕 New Feature
