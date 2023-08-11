@@ -14,7 +14,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ## 3.6.0 - 2023-08-03 - Azure DevOps Integration, Using Environment Variables On Git Integrations
 
 ### 🆕 New Feature
-- Now you can connect repositories from Azure DevOps Services and Azure DevOps Server for your builds. <CloudBadge/> <SelfHostedBadge/>
+- Now you can connect repositories from [Azure DevOps Services](../docs/build/adding-a-build-profile/connecting-to-azure.md) and Azure DevOps Server for your builds. <CloudBadge/> <SelfHostedBadge/>
 - Added support for using [webhook](../account/webhooks.md) with OAuth 2.0 and the Personal Access Token on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
 - The quick add feature has been added to the new project screen for both Azure DevOps Services and Azure DevOps Server. <CloudBadge/> <SelfHostedBadge/>
 - LDAP, user lookup decision strategy can be configured in global.yaml. See [LDAP settings](../self-hosted-appcircle/configure-server/ldap-settings.md) for details. <SelfHostedBadge/>
