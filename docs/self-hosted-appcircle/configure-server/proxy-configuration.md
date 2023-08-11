@@ -116,6 +116,14 @@ For system integrity, the proxy settings in here should be the same as the above
 Also see the `no_proxy` tip explained [there](#no_proxy-configuration).
 :::
 
+- Close the terminal and open a new session.
+
+:::caution
+To make the changes take effect, please open a brand new terminal session.
+
+Otherwise, you won't succeed in the following steps.
+:::
+
 :::info
 Don't forget to change `user`, `password`, proxy `host`, proxy `port`, and `no_proxy` settings for your needs while copying from above.
 :::
@@ -214,8 +222,12 @@ chmod +x noProxy.sh
 sudo ./noProxy.sh
 ```
 
+- Close the terminal and open a new session.
+
 :::caution
-Don't forget to start a new terminal session for the changes to take effect.
+To make the changes take effect, please open a brand new terminal session.
+
+Otherwise, you won't succeed in the following steps.
 :::
 
 ## 3. Enable Settings on the Container Engine
