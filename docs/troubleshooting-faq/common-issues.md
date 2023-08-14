@@ -396,6 +396,30 @@ If you face problems during NPM/Yarn install steps on Appcircle but not on your 
 - [x] Make sure that your packages support the node version you use.
 - [x] Make sure that the file interactions that is done on `preinstall` and/or `postinstall` scrips are suitable to be executed on a different machine
 
+#### Queries to registry.yarnpkg.com return a `404/500/...`
+
+First, you should check the [NPM status page](https://yarnpkg.com/getting-started/qa#queries-to-registryyarnpkgcom-return-a-404500-is-it-down) for possible availability issues.
+
+Our runners have yarn classic (1.x) by default. On the other hand, yarn modern (2.x) has stability improvements that fix these kinds of network errors. You can see [here](https://yarnpkg.com/getting-started/qa#why-should-you-upgrade-to-yarn-modern) for details.
+
+Upgrading to the latest versions is critical to a fast and stable yarn experience. So, if you're getting these kinds of errors in your build pipeline, we recommend upgrading your yarn version.
+
+You can see the steps to do upgrade in the following section. 👇
+
+#### Upgrading From Yarn 1 to Yarn 2 in Pipeline
+
+1. Add a "Custom Script" step to your workflow before the "npm/Yarn Commands" step.
+2. It should be a bash script and should have the below content.
+
+```bash
+cd $AC_REPOSITORY_DIR
+yarn set version berry
+yarn --version
+yarn config set -H enableImmutableInstalls false
+```
+
+When you run the pipeline again with an up-to-date workflow, you should see the upgraded yarn version in your build logs.
+
 ### Disable Flipper SDK on iOS
 
 Flipper can be a good tool for debugging your applications. It still gets built even if it's not being used for release builds. To speed up your builds, Flipper can be disabled on Appcircle by making the Flipper SDK inclusion conditional.
