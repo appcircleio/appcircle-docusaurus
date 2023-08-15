@@ -71,3 +71,21 @@ If you want to create environment variables on the fly, you should write those e
 ```
 
 Any step after this custom script can access the `$BUILD_NUMBER` environment variable. 
+
+### Using Environment Variables in Project Creation
+
+You can use environment variables when creating your project with SSH. You can use personal access tokens or SSH Public key variables in environment variables according to your needs by defining them once.
+
+You can create an environment variable and enter the key value for the Personal Access Token.
+
+![](<https://cdn.appcircle.io/docs/assets/variable-group-PAT.png>)
+
+![](<https://cdn.appcircle.io/docs/assets/vg-repo-pat.png>)
+
+:::info
+If you are going to use a Private SSH key, you need to upload it as a file.
+:::
+
+![](<https://cdn.appcircle.io/docs/assets/varible-group-SSH.png>)
+
+![](<https://cdn.appcircle.io/docs/assets/vg-repo-ssh.png>)
