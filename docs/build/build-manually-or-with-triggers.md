@@ -81,7 +81,7 @@ You also need to select a workflow for each trigger and the build will be run wi
 
 Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
 
-![](https://cdn.appcircle.io/docs/assets/push-triggers-full.png)
+![](https://cdn.appcircle.io/docs/assets/every-push-last.png)
 
 You must choose both workflow and a configuration when you're setting up a trigger.
 
@@ -95,7 +95,7 @@ The build will be done with the pull/merge result using the selected workflow. T
 Make sure that the names of the source branch and the target branch are spelled correctly.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (179).png>)
+![](<https://cdn.appcircle.io/docs/assets/mr-pr-last.png>)
 
 :::info
 If spaces are used in the name, Appcircle will trim it without spaces.
@@ -114,7 +114,7 @@ Appcircle will start building your application with the selected workflow whenev
 
 This allows build scenarios like building only specific pushes that has the "release" in the tag. 
 
-![](<https://cdn.appcircle.io/docs/assets/image (180).png>)
+![](<https://cdn.appcircle.io/docs/assets/tag-last.png>)
 
 ### Skipping a workflow
 
