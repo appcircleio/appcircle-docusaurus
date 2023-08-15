@@ -5,6 +5,8 @@ metaDescription: Creating and Using Environment Variables
 sidebar_position: 2
 ---
 
+import ContentRef from '@site/src/components/ContentRef';
+
 # Creating and Using Environment Variables
 
 ### Creating environment variable groups
@@ -72,11 +74,15 @@ If you want to create environment variables on the fly, you should write those e
 
 Any step after this custom script can access the `$BUILD_NUMBER` environment variable. 
 
-### Using Environment Variables in Project Creation
+### Using Environment Variables For SSH And PAT (Personal Access Token) Connections of the Git Provider
 
-You can use environment variables when creating your project with SSH. You can use personal access tokens or SSH Public key variables in environment variables according to your needs by defining them once.
+You can use personal access tokens or SSH Private Key variables from environment variables according to your needs by defining them once.
 
+So you can add environment variables and use them in multiple projects. Also, this usage allows you to update all your projects at once when there is a change to the SSH key or PAT.
+
+:::info
 You can create an environment variable and enter the key value for the Personal Access Token.
+:::
 
 ![](<https://cdn.appcircle.io/docs/assets/variable-group-PAT.png>)
 
@@ -89,3 +95,9 @@ If you are going to use a Private SSH key, you need to upload it as a file.
 ![](<https://cdn.appcircle.io/docs/assets/varible-group-SSH.png>)
 
 ![](<https://cdn.appcircle.io/docs/assets/vg-repo-ssh.png>)
+
+:::caution
+If your SSH public key is not defined on the Git Provider, Appcircle will not be able to connect to your repository. First, you will need to add your public key to the Git provider.
+:::
+
+<ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Repository via SSH</ContentRef>
