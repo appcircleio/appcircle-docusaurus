@@ -14,7 +14,7 @@ This also improves security and maintains control over user authentication.
 Disabling the sign-up function eliminates the risk of unauthorized user registrations and enforces the use of authenticated accounts through SSO integration.
 
 :::caution
-Please be aware that in order to disable or enable the signup button again, you must **`reset`** your application data.
+Please be aware that in order to disable or enable the sign-up button again, you must **`reset`** your application data.
 :::
 
 To do that, can you follow the steps below:
@@ -42,10 +42,10 @@ To apply the changes, please follow these steps:
 ./ac-self-hosted.sh -n "spacetech" down
 ```
 
-- Reset the Appcircle Server
+- Reset the Appcircle server
 
 :::caution
-Be aware that all of your application data, including your build profile and application configurations, will be **deleted** when you run **`reset`** command.
+Be aware that all of your application data, including your build profiles and application configurations, will be **deleted** when you run the **`reset`** command.
 :::
 
 ```bash
