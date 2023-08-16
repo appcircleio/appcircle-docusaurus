@@ -58,11 +58,11 @@ You can then run the `cat ./appcircle-ssh` command and enter its output to Appci
 
 Select **Connect via SSH **through the connection selection
 
-![](<https://cdn.appcircle.io/docs/assets/image (246).png>)
+![](<https://cdn.appcircle.io/docs/assets/main-connection-via-ssh2.png>)
 
 Then, enter your relevant information to connect to the private repository:
 
-![](<https://cdn.appcircle.io/docs/assets/image (228).png>)
+![](<https://cdn.appcircle.io/docs/assets/ssh-connection-2.png>)
 
 After the connection is successful, you can [view your newly created profile](./README.md#view-the-newly-created-build-profile) and start building!
 

@@ -37,11 +37,11 @@ Clicking **Quick start using the sample repository **will also connect the relev
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (237).png>)
+![](<https://cdn.appcircle.io/docs/assets/main-connection.png>)
 
-After you click on **Connect to a Public Repository**, the following screen will appear and let you enter an URI
+After you click on **Connect via URL**, the following screen will appear and let you enter an URI
 
-![](<https://cdn.appcircle.io/docs/assets/image (241).png>)
+![](<https://cdn.appcircle.io/docs/assets/connect-via-url.png>)
 
 Enter the URL of your repository, or continue with sample project if you plan to preview Appcircle.
 
