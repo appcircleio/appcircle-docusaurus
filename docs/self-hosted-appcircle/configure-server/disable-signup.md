@@ -13,7 +13,13 @@ This also improves security and maintains control over user authentication.
 
 Disabling the sign-up function eliminates the risk of unauthorized user registrations and enforces the use of authenticated accounts through SSO integration.
 
-To do that, can you change the `.keycloak.enabledRegistration` setting in the `global.yaml` file.
+:::caution
+Please be aware that in order to disable or enable the sign-up button again, you must **`reset`** your application data.
+:::
+
+To do that, you should follow the steps below:
+
+- Change the `.keycloak.enabledRegistration` setting in the `global.yaml` file.
 
 ```yaml
 keycloak:
@@ -34,6 +40,16 @@ To apply the changes, please follow these steps:
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Reset the Appcircle server
+
+:::caution
+Be aware that all of your application data, including your build profiles and application configurations, will be **deleted** when you run the **`reset`** command.
+:::
+
+```bash
+./ac-self-hosted.sh -n "spacetech" reset
 ```
 
 - Apply configuration changes
