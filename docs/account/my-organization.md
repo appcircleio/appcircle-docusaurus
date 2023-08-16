@@ -152,7 +152,7 @@ If the access is set as None, users can't access that module.
 
 ## Special Permissions
 
-Some modules have different permissions besides general permissions. You can customize permissions of team membet specifically.
+Some modules have different permissions besides general permissions. You can customize the permissions for team members specifically.
 
 **BUILD PROFILE PERMISSIONS**
 
@@ -160,7 +160,7 @@ Permissions can be customized for build profiles.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can change configuration, workflows, triggers and start Build.|
+| Full Access | User can change configuration, workflows, triggers and start build.|
 | Read Only | User can start build, but can not see configuration, workflow and trigger details.|
 | None | User can not reach any details of build profiles.|
 
@@ -174,16 +174,15 @@ Permissions can be customized for environment variable.
 | Read Only | User can only see variable groups and its details. |
 | None | User can not reach any details of environment variables. |
 
-**SIGNIN AND IDENTITY MANAGEMENT PERMISSIONS**
+**SIGNING IDENTITY MANAGEMENT PERMISSIONS**
 
-Permissions can be customized for signin and identity management.
+Permissions can be customized for signing identity management.
 
 |Permission|Explanation|
 |----------|-----------|
 | Full Access | User can see, delete and add new certificates, provisionings and keys. |
 | Read Only | User can only see certificates, provisioning and keys.|
-| None | User can not reach any details of signin identity. |
-
+| None | User can not reach any details of signing identity. |
 
 **DISTRIBUTION PROFILE PERMISSIONS**
 
@@ -204,7 +203,6 @@ Permissions can be customized for testing groups.
 | Full Access | User can see, create and delete testing groups, add new test user to groups. |
 | Read Only | User can only see testing groups and test users. Can not add or delete test user. |
 | None | User can not reach any details of testing group. |
-
 
 **STORE SUBMIT MODULE PERMISSIONS**
 
