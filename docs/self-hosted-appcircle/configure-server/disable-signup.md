@@ -17,7 +17,7 @@ Disabling the sign-up function eliminates the risk of unauthorized user registra
 Please be aware that in order to disable or enable the sign-up button again, you must **`reset`** your application data.
 :::
 
-To do that, can you follow the steps below:
+To do that, you should follow the steps below:
 
 - Change the `.keycloak.enabledRegistration` setting in the `global.yaml` file.
 
