@@ -16,7 +16,7 @@ If you authorize Appcircle to access your repositories on GitLab, you can select
 
 After you click on **GitLab**, the following screen will appear. This will let you choose between selecting a repository which you are already authorized Appcircle to do or ask your consent about authorizing more repositories.
 
-![](<https://cdn.appcircle.io/docs/assets/image (235).png>)
+![](<https://cdn.appcircle.io/docs/assets/gitlab-main.png>)
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
@@ -34,7 +34,7 @@ GitLab's version must be **13.12.9** or higher.
 
 :::
 
-First, select **GitLab** and then **Connect Self-hosted GitLab** through the menu:
+First, select **GitLab** and then **Connect to a Self-Managed GitLab Instance** through the menu:
 
 ![](<https://cdn.appcircle.io/docs/assets/gitlab-self-hosted2.png>)
 
