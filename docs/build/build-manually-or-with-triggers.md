@@ -128,7 +128,7 @@ If your Merge Request comment includes `[retry]`, your workflow will be retried.
 
 ### Trigger Priorities
 
-If you set up multiple triggers, specific branch definitions will take priority over wildcard definitions. Below is an example:
+If you set multiple triggers, certain branch definitions will not take precedence over wildcard definitions. They will all start at the same time. Below is an example:
 
 Assume that you have a branch named `development` with three push triggers
 
@@ -136,7 +136,7 @@ Assume that you have a branch named `development` with three push triggers
 - Trigger branch: `development` -> Trigger Workflow: Workflow 2
 - Trigger branch: `develop*` -> Trigger Workflow: Workflow 3
 
-When there is a push or PR for the development branch, the second trigger (the one with Workflow 2) will be used to initiate a build.
+When there is a push or PR for the development branch, all triggers (since the word "development" contains both "*" and "develop*") will be used to start a different build for each branch. At this point, a total of three compilations will begin.
 
 ### Wildcard Reference
 
