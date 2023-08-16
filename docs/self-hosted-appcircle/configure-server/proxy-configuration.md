@@ -156,9 +156,20 @@ vi noProxy.sh
 #!/usr/bin/env bash
 set -e
 
-projectName="spacetech"
-authUrl="auth.appcircle.spacetech.com"
+projectName="burakberk"
 
+main_domain=$(yq '.external.mainDomain' ./projects/${projectName}/global.yaml)
+api_domain="api${main_domain}"
+auth_domain="auth${main_domain}"
+dist_domain="dist${main_domain}"
+hook_domain="hook${main_domain}"
+my_domain="my${main_domain}"
+resource_domain="resource${main_domain}"
+store_domain="store${main_domain}"
+
+custom_store_domain=$(yq '.storeWeb.customDomain.domain' ./projects/${projectName}/global.yaml)
+
+internal_domains="${api_domain},${auth_domain},${dist_domain},${hook_domain},${my_domain},${resource_domain},${store_domain},${custom_store_domain}"
 compose_file="projects/${projectName}/export/compose.yaml"
 
 hostname_values=$(yq eval '.services | to_entries | .[].value.hostname' "$compose_file" | grep -v "null" | sort -u)
@@ -167,8 +178,8 @@ hostname_values_comma=$(echo "$hostname_values" | sed ':a;N;$!ba;s/\n/,/g')
 service_values=$(yq eval '.services | keys' "$compose_file" | sed 's/^..//' | sort -u)
 service_values_comma=$(echo "$service_values" | sed ':a;N;$!ba;s/\n/,/g')
 
-no_proxy_value_comma="$hostname_values_comma,$service_values_comma,$no_proxy,$authUrl"
-new_no_proxy="$(echo $no_proxy_value_comma | tr ',' '\n' | sort -u | tr '\n' ',')"
+no_proxy_value_comma="$hostname_values_comma,$service_values_comma,$no_proxy,$internal_domains"
+new_no_proxy="$(echo "$no_proxy_value_comma" | tr ',' '\n' | sort -u | tr '\n' ',')"
 
 sed -i "s/^no_proxy=.*/no_proxy=$new_no_proxy/" /etc/environment
 sed -i "s/^NO_PROXY=.*/NO_PROXY=$new_no_proxy/" /etc/environment
@@ -189,25 +200,7 @@ Normally, `yq` is expected to be installed within the Appcircle [server installa
 :::
 
 :::caution
-Don't forget to change the project name `spacetech` and the url `auth.appcircle.spacetech.com` for your needs while copying from above.
-
-You can find your auth url by following the steps:
-
-- View your `mainDomain` variable in the `global.yaml` file.
-
-```bash
-yq '.external.mainDomain' projects/spacetech/global.yaml
-```
-
-- This value should be something like `.appcircle.spacetech.com`.
-- Add `auth` as prefix. So your auth url should be `auth.appcircle.spacetech.com`.
-
-You can also use the below one-line command to print the auth URL.
-
-```bash
-echo "auth$(yq '.external.mainDomain' projects/spacetech/global.yaml)"
-```
-
+Don't forget to change the project name `spacetech` for your needs while copying from above.
 :::
 
 - Give execute permission to the script.
