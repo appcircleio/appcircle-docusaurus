@@ -152,7 +152,57 @@ If the access is set as None, users can't access that module.
 
 ## Special Permissions
 
-Some modules have different permissions besides general permissions
+Some modules have different permissions besides general permissions. You can customize the permissions for team members specifically.
+
+**BUILD PROFILE PERMISSIONS**
+
+Permissions can be customized for build profiles.
+
+|Permission|Explanation|
+|----------|-----------|
+| Full Access | User can change configuration, workflows, triggers and start build.|
+| Read Only | User can start build, but can not see configuration, workflow and trigger details.|
+| None | User can not reach any details of build profiles.|
+
+**ENVIRONMENT VARIABLE PERMISSIONS**
+
+Permissions can be customized for environment variable.
+
+|Permission|Explanation|
+|----------|-----------|
+| Full Access | User can see variable groups, add new variable and delete existing variable or variable groups. |
+| Read Only | User can only see variable groups and its details. |
+| None | User can not reach any details of environment variables. |
+
+**SIGNING IDENTITY MANAGEMENT PERMISSIONS**
+
+Permissions can be customized for signing identity management.
+
+|Permission|Explanation|
+|----------|-----------|
+| Full Access | User can see, delete and add new certificates, provisionings and keys. |
+| Read Only | User can only see certificates, provisioning and keys.|
+| None | User can not reach any details of signing identity. |
+
+**DISTRIBUTION PROFILE PERMISSIONS**
+
+Permissions can be customized for distribution profiles.
+
+|Permission|Explanation|
+|----------|-----------|
+| Full Access | User can see, create and delete new distribution profiles and customize its settings. |
+| Read Only | User can only see distribution profiles. Can not change settings. |
+| None | User can not reach any details of distribution profiles. |
+
+**TESTING GROUP PERMISSIONS**
+
+Permissions can be customized for testing groups.
+
+|Permission|Explanation|
+|----------|-----------|
+| Full Access | User can see, create and delete testing groups, add new test user to groups. |
+| Read Only | User can only see testing groups and test users. Can not add or delete test user. |
+| None | User can not reach any details of testing group. |
 
 **STORE SUBMIT MODULE PERMISSIONS**
 
