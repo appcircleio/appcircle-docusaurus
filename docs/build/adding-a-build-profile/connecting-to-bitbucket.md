@@ -35,7 +35,7 @@ Bitbucket's version must be **7.14** or higher.
 
 :::
 
-First, select **Bitbucket** then **Connect Self-hosted Bitbucket** through the menu:
+First, select **Bitbucket** then **Connect to a Bitbucket Server** through the menu:
 
 ![](<https://cdn.appcircle.io/docs/assets/bt-connect-self.png>)
 

@@ -29,7 +29,7 @@ If you plan to use Appcircle to connect your private repository, please refer to
 
 ### Public Repository Connection
 
-When you enter the profile after the build, the following screen will appear. Click on **Connect to a Public Repository **to connect a public repository.
+When you enter the profile after the build, the following screen will appear. Click on **Connect via URL** to connect a public repository.
 
 :::tip
 
