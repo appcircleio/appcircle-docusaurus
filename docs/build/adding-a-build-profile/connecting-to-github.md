@@ -11,7 +11,7 @@ If you authorize Appcircle to access your repositories on GitHub, you can select
 
 If you are a part of an organization, you can also connect your organization's repositories too. To grant Appcircle permission to access the repositories of an organization, you need to have the necessary privileges at the organization level. For GitHub, you have to provide selective access to specific repositories.
 
-In such a case, only the selected repositories will be listed. To be able to view other repositories, you must grant access for them under the Applications section in the account/organization settings screen on GitHub. You can directly access this screen by clicking on the **Missing a repository? Grant access from github.com**.
+In such a case, only the selected repositories will be listed. To be able to view other repositories, you must grant access for them under the Applications section in the account/organization settings screen on GitHub. You can directly access this screen by clicking on the **Missing a repository? Grant access from Github**.
 
 :::info
 
