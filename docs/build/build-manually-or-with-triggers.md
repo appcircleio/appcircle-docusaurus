@@ -136,10 +136,10 @@ Assume that you have a branch named `development` with three push triggers
 - Trigger branch: `development` -> Trigger Workflow: Workflow 2
 - Trigger branch: `develop*` -> Trigger Workflow: Workflow 3
 
-When there is a push or PR for the development branch, all triggers (since the word `development` contains both `*` and `develop*`) will be used to start a different build for each branch. At this point, a total of three compilations will begin.
+When there is a push or PR for the development branch, all triggers (since the word `development` contains both `*` and `develop*`) will be used to start a different build for each branch. At this point, a total of three build pipelines will begin.
 
 :::info
-If you have an agent and multiple triggered builds, Appcircle will automatically queue them.
+If multiple triggered builds exceed your plan's concurrency limits, Appcircle will automatically queue them, and all of them will be executed unless you cancel.
 :::
 
 ### Wildcard Reference
