@@ -160,9 +160,9 @@ Permissions can be customized for build profiles.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can change configuration, workflows, triggers and start build.|
-| Read Only | User can start build, but can not see configuration, workflow and trigger details.|
-| None | User can not reach any details of build profiles.|
+| Full Access | The user can change configuration, workflows, and triggers and start building.|
+| Read Only | The user can start building but can't see configuration, workflow, or trigger details. |
+| None | The user can't reach any details about build profiles.|
 
 **ENVIRONMENT VARIABLE PERMISSIONS**
 
@@ -170,9 +170,9 @@ Permissions can be customized for environment variable.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can see variable groups, add new variable and delete existing variable or variable groups. |
-| Read Only | User can only see variable groups and its details. |
-| None | User can not reach any details of environment variables. |
+| Full Access | The user can see variable groups, add new variables, and delete existing variables or variable groups.|
+| Read Only | The user can only see variable groups and their details. But it cannot take any action.|
+| None | The user cannot access any details about environment variables.|
 
 **SIGNING IDENTITY MANAGEMENT PERMISSIONS**
 
@@ -180,9 +180,9 @@ Permissions can be customized for signing identity management.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can see, delete and add new certificates, provisionings and keys. |
-| Read Only | User can only see certificates, provisioning and keys.|
-| None | User can not reach any details of signing identity. |
+| Full Access | The user can see, delete, and add new certificates, provisionings, and keys.|
+| Read Only | The user can only see certificates, provisioning, and keys.|
+| None | User can not reach any details of signing identity.|
 
 **DISTRIBUTION PROFILE PERMISSIONS**
 
@@ -190,9 +190,9 @@ Permissions can be customized for distribution profiles.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can see, create and delete new distribution profiles and customize its settings. |
-| Read Only | User can only see distribution profiles. Can not change settings. |
-| None | User can not reach any details of distribution profiles. |
+| Full Access | The user can see, create, and delete new distribution profiles and customize their settings.|
+| Read Only | The user can only see distribution profiles. Can't change settings. |
+| None | The user can't find any details about distribution profiles.|
 
 **TESTING GROUP PERMISSIONS**
 
@@ -200,28 +200,30 @@ Permissions can be customized for testing groups.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can see, create and delete testing groups, add new test user to groups. |
-| Read Only | User can only see testing groups and test users. Can not add or delete test user. |
-| None | User can not reach any details of testing group. |
+| Full Access | The user can see, create, and delete testing groups and add new test users to groups.|
+| Read Only |The user can only see testing groups and test users. Can not add or delete test users. |
+| None | The user cannot find any details about the testing group.|
 
 **STORE SUBMIT MODULE PERMISSIONS**
 
-Upload apps to Google Play, Huawei, and App Store
+Upload apps to Google Play, Huawei, and App Store.
 
 |Permission|Explanation|
 |----------|-----------|
-| Upload apps to Google Play and App Store | User can upload apps to all stores|
-| Upload apps to Google Play Console | User can upload apps to only Google Play, Huawei|
-| Upload apps to Google Play Console | User can upload apps to only App Store|
-| Read Only | User can't upload any apps to stores|
+| Upload apps to Google Play Console & Huawei AppGallery Console. | The user can upload apps to Google Play and Huawei AppGallery.|
+| Upload apps to the App Store Console | The user can upload apps only to the App Store.|
+| Read-Only Access| The user can't upload any apps to the stores. It can only view applications belonging to its own organization.|
+:::info
+Google Play and Huawei AppGallery permissions are managed in one place. When this permission is used, it will apply to both platforms.
+:::
 
 **ORGANIZATION MANAGEMENT PERMISSIONS**
 
-Manage the organization and add, remove and manage members
+Manage the organization and add, remove and manage members.
 
 **BILLING MANAGEMENT PERMISSIONS**
 
-Manage the subscription, payment details, and invoices
+Manage the subscription, payment details, and invoices.
 
 **THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS**
 
@@ -229,12 +231,12 @@ Connect to or disconnect from third-party service providers such as Slack, Micro
 
 **ENTERPRISE STORE PERMISSIONS**
 
-Manage and Upload Apps to Enterprise Store
+Manage and Upload Apps to Enterprise Store.
 
 |Permission|Explanation|
 |----------|-----------|
-|Manage Enterprise Settings & Apps | User can modify both Enterprise Store settings and the uploaded apps|
-|Upload Apps to Enterprise Store | User can only apps.|
-|Read Only Access| Can only see the profiles|
+|Manage Enterprise Settings & Apps | The user can modify both Enterprise Store settings and the uploaded apps.|
+|Upload apps to the Enterprise Store | The user can only use apps.|
+|Read-Only Access| Can only see the profiles|
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/screenshot-my.appcircle.io-2021.02.11-23_27_39.png" />
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/permission-all-image.png" />
