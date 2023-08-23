@@ -17,6 +17,10 @@ You can customize the appearance of your store by going to Customize section.
 
 ![](<https://cdn.appcircle.io/docs/assets/entstore-customize.png>)
 
+:::caution
+Customizing and setting up your store can only be done through the main organization.
+:::
+
 ## Advanced Settings
 
 **Custom Domain**
