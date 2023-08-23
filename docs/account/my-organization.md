@@ -237,6 +237,6 @@ Manage the subscription, payment details, and invoices.
 
 **THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS**
 
-Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams.
+Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams, Google Play Developer API Keys, App Store Connect API Keys, Huawei AppGallery Developer API Keys etc.
 
 <NarrowImage src="https://cdn.appcircle.io/docs/assets/permission-all-image.png" />
