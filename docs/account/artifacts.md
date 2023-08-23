@@ -14,7 +14,7 @@ The logs and artifacts of your build profiles can be managed on the artifacts se
 
 :::caution
 
-Only build and distribution artifacts are deleted in this section. Artifacts of Enterprise App Store published applications will not be deleted.
+Only build and distribution artifacts are deleted in this section. Artifacts of the Enterprise App Store and Store submitted published applications will not be deleted.
 
 :::
 
