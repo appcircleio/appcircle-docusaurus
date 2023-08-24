@@ -34,6 +34,26 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 Build agents have Java 8, 11, and 17 installed. Java 11 is set as the default version. If you want to use a different Java version. please follow [this document](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version)
 
+When you select "Default Intel Pool" for Android builds, the following JDK locations are available within the environment variables:
+
+- **JAVA_HOME_8_X64**: `/usr/local/openjdk-8`
+- **JAVA_HOME_11_X64**: `/root/.sdkman/candidates/java/11.0.12-open`
+- **JAVA_HOME_17_X64**: -
+
+:::caution
+We're deprecating Intel-based runners and transitioning our customers to Apple silicon (M1)-based build machines. 
+
+Currently, JDK 17 is not pre-installed on the "Default Intel Pool", and Intel-based runners are not actively maintained.
+
+If your app does not specifically require an Intel-based build machine, we suggest you use "Default M1 Pool", since it has much more build capacity and the latest updates.
+:::
+
+When you select "Default M1 Pool" for Android builds, the following JDK locations are available within the environment variables:
+
+- **JAVA_HOME_8_X64**: `/Users/appcircle/.sdkman/candidates/java/8.0.332-zulu`
+- **JAVA_HOME_11_X64**: `/Users/appcircle/.sdkman/candidates/java/11.0.14-zulu`
+- **JAVA_HOME_17_X64**: `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`
+
 ### Emulator
 
 Build agents have Pixel_3a Android 9.0 emulator pre-installed. You may add or remove other emulators by using `sdkmanager`.
