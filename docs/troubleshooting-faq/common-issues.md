@@ -232,6 +232,43 @@ In this case, you need to upgrade the Swift version in the project settings in X
 
 Every Android project has a `gradlew` file in the main repository directory. If the Android Build step can't find this file, you need to edit your workflow, find the Android Build Step and edit the `PROJECT PATH`. If your `gradlew` file is in the `android` folder, you need to write, `./android` in the edit box.
 
+### How can I change the JDK version for autofill?
+
+Appcircle currently has OpenJDK 11 (default), OpenJDK 8, and OpenJDK 17. If you want to use a different Java version for your build pipeline, you can follow the steps [here](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version) and add a custom script to your workflow.
+
+But unfortunately, you cannot use custom scripts for autofill operations, which make it easy to fill in configuration details while adding a new build profile.
+
+For the autofill, we have two options to choose from.
+
+#### 1. Change `JAVA_HOME` using `gradle.properties`
+
+You can add the `org.gradle.java.home` entry to the `gradle.properties` file in your Android project.
+
+For example, the below entry can be used to change the default Java version to 17 for the "Default M1 Pool".
+
+```properties
+org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu
+```
+
+You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure.md#java-version) Java section.
+
+#### 2. Change `JAVA_HOME` using environment variables
+
+You can use the [environment variables](../environment-variables/managing-variables.md) to enable the JDK version your project requires.
+
+For example, you can take the following steps to change the default Java version to 17.
+
+- Create a variable group that has a variable with the properties below.
+  - The key should be `JAVA_HOME`.
+  - Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`.
+- Go to the configuration section of the build profile that you want to autofill.
+- Go to the 'Env. Variables' tab in configuration.
+  - You should see the variable group that you created in the list.
+- Select the variable group that has `JAVA_HOME` and 'Save' settings.
+- Go back to the config tab and start autofilling there.
+
+You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure.md#java-version) Java section.
+
 ### Gradle build after Bintray shutdown
 
 ```
