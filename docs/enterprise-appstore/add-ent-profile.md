@@ -49,9 +49,9 @@ There are several ways to create an Enterprise build profile. You can either man
 
 ### Sending from Distribution
 
-- Go to your build profile, hit the config button, and enable **Publish Enterprise App Store**.
+- Go to your build profile, hit the config button, and enable **Automatically Distribute to Enterprise App Store**.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-buildconfig.png" />
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/ent-appstore.png" />
 
 - Whenever you create a new *signed* build, that build will be sent to Enterprise App Store.
 - You can also manually send your APK or IPA files by hitting the **...** button and selecting **Distribute Binary**
