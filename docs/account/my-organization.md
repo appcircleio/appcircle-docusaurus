@@ -45,16 +45,15 @@ To update these details, simply enter the new values and press _Update_.
 
 #### Adding an Organization
 
-To add a new organization, press the "Create New Organization" button on the top-right (denoted by a plus sign) and type in the Organization Name and ID. The organization will be created with the specified values and your role will be set as the owner.
+To add a new organization, press the "Create New Organization" button on the top-right (denoted by a plus sign) and type in the Organization Name. The organization will be created with the specified name and your role will be set as the owner.
 
 :::caution
 
-If you are on the Starter Plan, you can only add one new organization. To create more organizations, you need to upgrade to a higher plan.
+If you are on the Starter Plan, you cannot add a new organization. To create more organizations, you need to upgrade to a higher plan.
 
 :::
 
 ![](<https://cdn.appcircle.io/docs/assets/image (39).png>)
-
 
 #### Adding a Sub Organization
 
@@ -229,7 +228,7 @@ Manage and Upload Apps to Enterprise Store.
 
 **ORGANIZATION MANAGEMENT PERMISSIONS**
 
-The user can create the organization, add and remove members, and manage their permissions.
+The user can create organization or sub organization within license limits, add and remove members, and manage their permissions.
 
 **BILLING MANAGEMENT PERMISSIONS**
 
