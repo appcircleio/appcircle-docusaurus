@@ -26,7 +26,7 @@ You can add multiple users to beta and live channels by hitting the Tab key.
 <NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-useraccess.png" />
 
 :::caution
-If you work for a subsidiary, you can only see apps belonging to that organization. However, if the app is published, it will appear in the parent organization's showcase.
+If you work for a sub-organization, you can only see the apps belonging to that organization. However, if the app is published, it will also appear in the parent organization's showcase.
 :::
 
 
