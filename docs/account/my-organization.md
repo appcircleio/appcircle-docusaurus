@@ -45,16 +45,15 @@ To update these details, simply enter the new values and press _Update_.
 
 #### Adding an Organization
 
-To add a new organization, press the "Create New Organization" button on the top-right (denoted by a plus sign) and type in the Organization Name and ID. The organization will be created with the specified values and your role will be set as the owner.
+To add a new organization, press the "Create New Organization" button on the top-right (denoted by a plus sign) and type in the Organization Name. The organization will be created with the specified name and your role will be set as the owner.
 
 :::caution
 
-If you are on the Starter Plan, you can only add one new organization. To create more organizations, you need to upgrade to a higher plan.
+If you are on the Starter Plan, you cannot add a new organization. To create more organizations, you need to upgrade to a higher plan.
 
 :::
 
 ![](<https://cdn.appcircle.io/docs/assets/image (39).png>)
-
 
 #### Adding a Sub Organization
 
@@ -160,9 +159,9 @@ Permissions can be customized for build profiles.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can change configuration, workflows, triggers and start build.|
-| Read Only | User can start build, but can not see configuration, workflow and trigger details.|
-| None | User can not reach any details of build profiles.|
+| Full Access | The user can change configuration, workflows, and triggers and start building.|
+| Read Only | The user can only start the build, view logs, and download logs. |
+| None | The user cannot reach any details about build profiles.|
 
 **ENVIRONMENT VARIABLE PERMISSIONS**
 
@@ -170,9 +169,9 @@ Permissions can be customized for environment variable.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can see variable groups, add new variable and delete existing variable or variable groups. |
-| Read Only | User can only see variable groups and its details. |
-| None | User can not reach any details of environment variables. |
+| Full Access | The user can see variable groups, add new variables, and delete existing variable groups or variables.|
+| Read Only | The user can only see variable groups and their details.|
+| None | The user cannot reach any details about environment variables.|
 
 **SIGNING IDENTITY MANAGEMENT PERMISSIONS**
 
@@ -180,9 +179,9 @@ Permissions can be customized for signing identity management.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can see, delete and add new certificates, provisionings and keys. |
-| Read Only | User can only see certificates, provisioning and keys.|
-| None | User can not reach any details of signing identity. |
+| Full Access | The user can see, delete, and add new certificates, provisionings, and keys.|
+| Read Only | The user can only see certificates, provisioning, and keys.|
+| None | The user cannot reach any details about signing identity.|
 
 **DISTRIBUTION PROFILE PERMISSIONS**
 
@@ -190,9 +189,9 @@ Permissions can be customized for distribution profiles.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can see, create and delete new distribution profiles and customize its settings. |
-| Read Only | User can only see distribution profiles. Can not change settings. |
-| None | User can not reach any details of distribution profiles. |
+| Full Access | The user can see, create, and delete new distribution profiles and customize their settings.|
+| Read Only | The user can only view distribution profiles.|
+| None | The user cannot reach any details about distribution profiles.|
 
 **TESTING GROUP PERMISSIONS**
 
@@ -200,41 +199,43 @@ Permissions can be customized for testing groups.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | User can see, create and delete testing groups, add new test user to groups. |
-| Read Only | User can only see testing groups and test users. Can not add or delete test user. |
-| None | User can not reach any details of testing group. |
+| Full Access | The user can see, create, and delete testing groups and add new test users to groups.|
+| Read Only | The user can only view testing groups and test users.|
+| None | The user cannot reach any details about the testing group.|
 
 **STORE SUBMIT MODULE PERMISSIONS**
 
-Upload apps to Google Play, Huawei, and App Store
+Upload apps to Google Play, Huawei, and App Store.
 
 |Permission|Explanation|
 |----------|-----------|
-| Upload apps to Google Play and App Store | User can upload apps to all stores|
-| Upload apps to Google Play Console | User can upload apps to only Google Play, Huawei|
-| Upload apps to Google Play Console | User can upload apps to only App Store|
-| Read Only | User can't upload any apps to stores|
-
-**ORGANIZATION MANAGEMENT PERMISSIONS**
-
-Manage the organization and add, remove and manage members
-
-**BILLING MANAGEMENT PERMISSIONS**
-
-Manage the subscription, payment details, and invoices
-
-**THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS**
-
-Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams.
+| Upload apps to Google Play Console & Huawei AppGallery Console. | The user can upload apps to Google Play and Huawei AppGallery.|
+| Upload apps to the App Store Console | The user can upload apps only to the App Store.|
+| Read-Only Access| The user can only view applications belonging to their own organization.|
+:::info
+Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
+:::
 
 **ENTERPRISE STORE PERMISSIONS**
 
-Manage and Upload Apps to Enterprise Store
+Manage and Upload Apps to Enterprise Store.
 
 |Permission|Explanation|
 |----------|-----------|
-|Manage Enterprise Settings & Apps | User can modify both Enterprise Store settings and the uploaded apps|
-|Upload Apps to Enterprise Store | User can only apps.|
-|Read Only Access| Can only see the profiles|
+|Manage Enterprise Settings & Apps | The user can modify both Enterprise Store settings and the uploaded apps.|
+|Upload apps to the Enterprise Store | The user can only use apps.|
+|Read-Only Access| The user can only view the profiles.|
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/screenshot-my.appcircle.io-2021.02.11-23_27_39.png" />
+**ORGANIZATION MANAGEMENT PERMISSIONS**
+
+The user can create organization or sub organization within license limits, add and remove members, and manage their permissions.
+
+**BILLING MANAGEMENT PERMISSIONS**
+
+Manage the subscription, payment details, and invoices.
+
+**THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS**
+
+Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams, Google Play Developer API Keys, App Store Connect API Keys, Huawei AppGallery Developer API Keys etc.
+
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/permission-all-image.png" />
