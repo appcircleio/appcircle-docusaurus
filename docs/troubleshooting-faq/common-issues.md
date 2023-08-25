@@ -258,14 +258,14 @@ You can use the [environment variables](../environment-variables/managing-variab
 
 For example, you can take the following steps to change the default Java version to 17.
 
-- Create a variable group that has a variable with the properties below.
-  - The key should be `JAVA_HOME`.
-  - Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`.
-- Go to the configuration section of the build profile that you want to autofill.
-- Go to the 'Env. Variables' tab in configuration.
-  - You should see the variable group that you created in the list.
-- Select the variable group that has `JAVA_HOME` and 'Save' settings.
-- Go back to the config tab and start autofilling there.
+1. Create a variable group that has a variable with the properties below.
+    1. The key should be `JAVA_HOME`.
+    1. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`.
+1. Go to the configuration section of the build profile that you want to autofill.
+1. Go to the 'Env. Variables' tab in configuration.
+    1. You should see the variable group that you created in the list.
+1. Select the variable group that has `JAVA_HOME` and 'Save' settings.
+1. Go back to the config tab and start autofilling there.
 
 You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure.md#java-version) Java section.
 
