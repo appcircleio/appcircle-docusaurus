@@ -181,13 +181,8 @@ cd appcircle-server
 
 ### 2. Packages
 
-You need to have the following tools installed on your system.
+You need to have the following tool(s) installed on your system.
 
-- jq
-- curl
-- openssl
-- gomplate
-- yq
 - podman
 
 The good news is that the ac-self-hosted.sh script installs all the necessary tools if they are not already installed on your system.
