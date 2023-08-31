@@ -80,6 +80,17 @@ You can use personal access tokens or SSH Private Key variables from environment
 
 So you can add environment variables and use them in multiple projects. Also, this usage allows you to update all your projects at once when there is a change to the SSH key or PAT.
 
+:::caution
+There are two uses for variable group naming here.
+If the variable group nomenclature contains a space, the usage will be as follows:
+
+$"Variable Group:Key"
+
+If the variable group nomenclature contains a use without spaces, it will be used like this:
+
+$VariableGroup:Key
+:::
+
 :::info
 You can create an environment variable and enter the key value for the Personal Access Token.
 :::
