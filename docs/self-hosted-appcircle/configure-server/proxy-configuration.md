@@ -156,7 +156,7 @@ vi noProxy.sh
 #!/usr/bin/env bash
 set -e
 
-projectName="burakberk"
+projectName="spacetech"
 
 main_domain=$(yq '.external.mainDomain' ./projects/${projectName}/global.yaml)
 api_domain="api${main_domain}"
