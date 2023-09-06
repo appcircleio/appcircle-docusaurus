@@ -158,6 +158,12 @@ sudo ./helper-tools/no-proxy.sh ${projectName}
 sudo ./helper-tools/no-proxy.sh spacetech
 ```
 
+:::caution
+You should run the script from the parent directory of the `no-proxy.sh` script.
+
+Be aware that if you run the script like `./no-proxy spacetech`, it will fail.
+:::
+
 - Restart your terminal session.
 
 :::caution
