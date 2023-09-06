@@ -144,86 +144,24 @@ You can follow the steps below to edit these variables correctly.
 cd appcircle-server
 ```
 
-- Create a shell script named `noProxy.sh`.
+- Inside the `helper-tools` directory you will see a script file called `no-proxy.sh`.
+
+- Execute the script with sudo privileges and give your project as argument.
 
 ```bash
-vi noProxy.sh
+sudo ./helper-tools/no-proxy.sh ${projectName}
 ```
 
-- Add the content below to the `noProxy.sh` script.
+- For example if your project name is "spacetech", you should run the command like below.
 
 ```bash
-#!/usr/bin/env bash
-set -e
-
-depsPath="$(pwd)/deps/bin"
-export PATH="$PATH:${depsPath}"
-
-projectName="spacetech"
-
-main_domain=$(yq '.external.mainDomain' ./projects/${projectName}/global.yaml)
-api_domain="api${main_domain}"
-auth_domain="auth${main_domain}"
-dist_domain="dist${main_domain}"
-hook_domain="hook${main_domain}"
-my_domain="my${main_domain}"
-resource_domain="resource${main_domain}"
-store_domain="store${main_domain}"
-
-custom_store_domain=$(yq '.storeWeb.customDomain.domain' ./projects/${projectName}/global.yaml)
-
-internal_domains="${api_domain},${auth_domain},${dist_domain},${hook_domain},${my_domain},${resource_domain},${store_domain},${custom_store_domain}"
-compose_file="projects/${projectName}/export/compose.yaml"
-
-hostname_values=$(yq eval '.services | to_entries | .[].value.hostname' "$compose_file" | grep -v "null" | sort -u)
-hostname_values_comma=$(echo "$hostname_values" | sed ':a;N;$!ba;s/\n/,/g')
-
-service_values=$(yq eval '.services | keys' "$compose_file" | sed 's/^..//' | sort -u)
-service_values_comma=$(echo "$service_values" | sed ':a;N;$!ba;s/\n/,/g')
-
-no_proxy_value_comma="$hostname_values_comma,$service_values_comma,$no_proxy,$internal_domains"
-new_no_proxy="$(echo "$no_proxy_value_comma" | tr ',' '\n' | sort -u | tr '\n' ',')"
-
-sed -i "s/^no_proxy=.*/no_proxy=$new_no_proxy/" /etc/environment
-sed -i "s/^NO_PROXY=.*/NO_PROXY=$new_no_proxy/" /etc/environment
-
-sed -i "s/^export no_proxy=.*/export no_proxy=$new_no_proxy/" /etc/profile.d/proxy.sh
-sed -i "s/^export NO_PROXY=.*/export NO_PROXY=$new_no_proxy/" /etc/profile.d/proxy.sh
-
-echo "No_Proxy settings enabled successfully."
-echo ""
-echo "IMPORTANT!"
-echo "Please open a new terminal session to changes take effect."
+sudo ./helper-tools/no-proxy.sh spacetech
 ```
 
-:::info
-The above script needs `yq` as a dependency while getting hostnames and services from `compose.yaml`.
-
-Normally, `yq` is expected to be installed within the Appcircle [server installation](../install-server/docker.md#2-packages) steps.
-:::
+- Restart your terminal session.
 
 :::caution
-Don't forget to change the project name `spacetech` for your needs while copying from above.
-:::
-
-- Give execute permission to the script.
-
-```bash
-chmod +x noProxy.sh
-```
-
-- Execute the script with sudo privileges.
-
-```bash
-sudo ./noProxy.sh
-```
-
-- Close the terminal and open a new session.
-
-:::caution
-To make the changes take effect, please open a brand new terminal session.
-
-Otherwise, you won't succeed in the following steps.
+Don't forget to start a new terminal session after you run command above for the changes to take effect.
 :::
 
 ## 3. Enable Settings on the Container Engine
