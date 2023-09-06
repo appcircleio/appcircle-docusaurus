@@ -76,16 +76,9 @@ Any step after this custom script can access the `$BUILD_NUMBER` environment var
 
 ### Using Environment Variables For SSH And PAT (Personal Access Token) Connections of the Git Provider
 
-You can use personal access tokens or SSH Private Key variables from environment variables according to your needs by defining them once.
+You can use personal access tokens or SSH private keys from the environment variables according to your needs by defining them once.
 
-So you can add environment variables and use them in multiple projects. Also, this usage allows you to update all your projects at once when there is a change to the SSH key or PAT.
-
-:::caution
-There are two uses for variable group naming here.
-If the variable group nomenclature contains a space, the usage will be as follows:
-
-$"Variable Group:Key"
-:::
+So you can add environment variables and use them in multiple projects. Also, this usage allows you to update all your projects at once when there is a change to the SSH private key, or PAT.
 
 :::info
 You can create an environment variable and enter the key value for the Personal Access Token.
@@ -96,13 +89,7 @@ You can create an environment variable and enter the key value for the Personal 
 ![](<https://cdn.appcircle.io/docs/assets/vg-repo-pat.png>)
 
 :::info
-If you are going to use a Private SSH key, you need to upload it as a file.
-:::
-
-:::caution
-If the variable group nomenclature contains a use without spaces, it will be used like this:
-
-$VariableGroup:Key
+If you are going to use an SSH private key, you need to upload it as a file.
 :::
 
 ![](<https://cdn.appcircle.io/docs/assets/variable-group-ssh-main.png>)
@@ -110,7 +97,24 @@ $VariableGroup:Key
 ![](<https://cdn.appcircle.io/docs/assets/variable-group-ssh-key-3.png>)
 
 :::caution
-If your SSH public key is not defined on the Git Provider, Appcircle will not be able to connect to your repository. First, you will need to add your public key to the Git provider.
+There are two use cases for the variable group naming here.
+
+If the variable group nomenclature contains space, the usage will be as follows:
+
+```txt
+$"Variable Group:Key"
+```
+
+If the variable group nomenclature does not contain any space, it will be used like this:
+
+```txt
+$VariableGroup:Key
+```
+
+:::
+
+:::caution
+If your SSH public key is not defined on the Git provider, Appcircle will not be able to connect to your repository. First, you will need to add your public key to the Git provider.
 :::
 
 <ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Repository via SSH</ContentRef>
