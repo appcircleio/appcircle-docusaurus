@@ -85,17 +85,13 @@ There are two uses for variable group naming here.
 If the variable group nomenclature contains a space, the usage will be as follows:
 
 $"Variable Group:Key"
-
-If the variable group nomenclature contains a use without spaces, it will be used like this:
-
-$VariableGroup:Key
 :::
 
 :::info
 You can create an environment variable and enter the key value for the Personal Access Token.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/variable-group-PAT.png>)
+![](<https://cdn.appcircle.io/docs/assets/variable-group-SSH-2.png>)
 
 ![](<https://cdn.appcircle.io/docs/assets/vg-repo-pat.png>)
 
@@ -103,9 +99,15 @@ You can create an environment variable and enter the key value for the Personal 
 If you are going to use a Private SSH key, you need to upload it as a file.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/varible-group-SSH.png>)
+:::caution
+If the variable group nomenclature contains a use without spaces, it will be used like this:
 
-![](<https://cdn.appcircle.io/docs/assets/vg-repo-ssh.png>)
+$VariableGroup:Key
+:::
+
+![](<https://cdn.appcircle.io/docs/assets/variable-group-ssh-main.png>)
+
+![](<https://cdn.appcircle.io/docs/assets/variable-group-ssh-key-3.png>)
 
 :::caution
 If your SSH public key is not defined on the Git Provider, Appcircle will not be able to connect to your repository. First, you will need to add your public key to the Git provider.
