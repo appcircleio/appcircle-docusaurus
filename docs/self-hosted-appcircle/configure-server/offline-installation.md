@@ -29,13 +29,12 @@ sudo ./ac-self-hosted.sh -i`
 ```
 
 - curl
-- jq
 - unzip
 - docker | podman
 
 ### Auth Requirement
 
-During the installation of the Self-Hosted Appcircle Server, it is essential to have the `creds.json` file provided to you upon purchasing the license.
+During the installation of the Self-Hosted Appcircle Server, it is essential to have the `cred.json` file provided to you upon purchasing the license.
 This `cred.json` file is necessary to access offline Docker images.
 Without this file, you will not be able to access the offline Docker images required for the installation.
 
@@ -52,7 +51,7 @@ Run the below command to install all required container images to your container
 This command will download container images, and load them to the selected container engine at installing required tools section.
 
 :::info
-If you configured a registry url for container engine in global.yaml, downloaded images will be retagged with your custom registry url.
+If you configured a registry url for container engine in global.yaml, downloaded images will be re-tagged with your custom registry url.
 So the offline installation step is compatible with your custom registries.
 :::
 
@@ -66,17 +65,16 @@ You don't need to change your global.yaml or reset your data.
 Updating your Appcircle server with offline container images is fully-compatible with your already installed Appcircle server.
 :::
 
-Firstly, you need to update your appcircle-server installation script.
-Download the latest self-hosted Appcircle package.
+Firstly, you need to update your Appcircle server package.
+
+After you install and unzip the Appcircle server package, you can return to this page to continue with the update process.
+
+To do that, you can reefer to the [Upgrade Server page](../update#1-download-latest).
+
+After you update the self hosted package, you can go into the Appcircle server directory.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.4.0.zip
-```
-
-Extract self-hosted Appcircle package into folder.
-
-```bash
-unzip -o -u appcircle-server-linux-x64-3.4.0.zip -d appcircle-server
+cd appcircle-server
 ```
 
 You can check your script version.
@@ -85,6 +83,10 @@ So you will see which Appcircle server version images will be downloaded and loa
 ```bash
 ./ac-self-hosted.sh -n "spacetech" version
 ```
+
+:::info
+You should change the "spacetech" as your project name.
+:::
 
 Down your system
 
@@ -102,6 +104,18 @@ Run your server again
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
+```
+
+Check that if your services are healthy
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+Check your image ids and digests
+
+```bash
+./ac-self-hosted.sh -n "spacetech" version
 ```
 
 :::caution
