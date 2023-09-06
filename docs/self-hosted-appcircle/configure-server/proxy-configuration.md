@@ -156,6 +156,9 @@ vi noProxy.sh
 #!/usr/bin/env bash
 set -e
 
+depsPath="$(pwd)/deps/bin"
+export PATH="$PATH:${depsPath}"
+
 projectName="spacetech"
 
 main_domain=$(yq '.external.mainDomain' ./projects/${projectName}/global.yaml)
