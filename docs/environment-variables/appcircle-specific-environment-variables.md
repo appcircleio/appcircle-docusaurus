@@ -39,7 +39,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_TAG\_ANNOTATED\_MESSAGE| The annotated message of the tag.                                                                  |
 | AC\_COMMIT\_TAGS           | Commit tags                                                                                        |
 | AC\_BUILD\_NUMBER          | Build number (`Fetch Details` is counted as Build)                                                 |
-| AC\_BUILD\_TIMESTAMP       | Build time stamp                                                                                   |
+| AC\_BUILD\_TIMESTAMP       | Build timestamp (Unix timestamp format)                                                                                   |
 | AC\_GIT\_BRANCH            | The Git branch that is built (eg: master)                                                          |
 | AC\_GIT\_TARGET\_COMMIT    | Target commit for a Pull or Merge Request                                                          |
 | AC\_GIT\_TARGET\_BRANCH    | Target branch for a Pull or Merge Request                                                          |
