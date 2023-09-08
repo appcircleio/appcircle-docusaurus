@@ -1,7 +1,7 @@
 ---
-title: Email Connection and Notifications Subscribtion
-metaTitle: Email Connection and Notifications Subscribtion
-metaDescription: Email Connection and Notifications Subscribtion
+title: Email Connection and Notifications Subscription
+metaTitle: Email Connection and Notifications Subscription
+metaDescription: Email Connection and Notifications Subscription
 sidebar_position: 3
 ---
 
