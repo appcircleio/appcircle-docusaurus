@@ -11,13 +11,12 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
-## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Report Page
+## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Reports
 
 ### 🆕 New Feature
 
-- We added a new admin report for the queue waiting report. Now users can see the queue status and waiting durations of each build, fetch, store submit, and resign process. <SelfHostedBadge/>
-
-- You can now send e-mail notifications for most actions taken within Appcircle (build start, store submit, etc.). <CloudBadge/> <SelfHostedBadge/>
+- We added a new admin report for the queue waiting report. Now self-hosted enterprise customers can see the queue status and waiting durations of each build, fetch, store submit, and resign process. <SelfHostedBadge/>
+- You can now send [email notifications](../account/email-connection.md) for most actions taken within Appcircle (build start, store submit, etc.). <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
