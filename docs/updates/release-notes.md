@@ -21,9 +21,9 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### :muscle: Improvement
 
 - Removed profile names will now appear as "Deleted" in corporate store reports. <CloudBadge/> <SelfHostedBadge/>
-- The active build section now displays the email address of the user who created the profile, not the email address that started the build. <CloudBadge/> <SelfHostedBadge/>
+- The active build section now shows the email address that started the build, not the email address of the user who created the profile. <CloudBadge/> <SelfHostedBadge/>
 - Now if there is a space character in the [variable group](../environment-variables/managing-variables.md) name, it can be used as $"Variable Group:Key".
-- [Configuration](../build/build-profile-configuration.md) and workflows of previous builds can now be downloaded with .yaml extension in the build history section of the admin panel. <CloudBadge/> <SelfHostedBadge/>
+- [Configurations](../build/build-profile-configuration.md) of previous builds can now be downloaded with .yaml extension in the build history section of the admin panel. <CloudBadge/> <SelfHostedBadge/>
 - Provided a more focused interface for subsidiary administrators by hiding the "Customize" and "Settings" sections in the Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
 - Unsubscribe and resubscribe features are enabled for email notifications, distribution, and the enterprise store. <CloudBadge/> <SelfHostedBadge/>
 
