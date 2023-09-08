@@ -20,22 +20,22 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### :muscle: Improvement
 
--  Removed profile names will now appear as "Deleted" in corporate store reports. <CloudBadge/> <SelfHostedBadge/>
--  The active build section now displays the email address of the user who created the profile, not the email address that started the build. <CloudBadge/> <SelfHostedBadge/>
--  Now if there is a space character in the [variable group](../environment-variables/managing-variables.md) name, it can be used as $"Variable Group:Key".
--  [Configuration](../build/build-profile-configuration.md) and workflows of previous builds can now be downloaded with .yaml extension in the build history section of the admin panel. <CloudBadge/> <SelfHostedBadge/>
--  Provided a more focused interface for subsidiary administrators by hiding the "Customize" and "Settings" sections in the Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
--  Unsubscribe and resubscribe features are enabled for email notifications, distribution, and the enterprise store. <CloudBadge/> <SelfHostedBadge/>
+- Removed profile names will now appear as "Deleted" in corporate store reports. <CloudBadge/> <SelfHostedBadge/>
+- The active build section now displays the email address of the user who created the profile, not the email address that started the build. <CloudBadge/> <SelfHostedBadge/>
+- Now if there is a space character in the [variable group](../environment-variables/managing-variables.md) name, it can be used as $"Variable Group:Key".
+- [Configuration](../build/build-profile-configuration.md) and workflows of previous builds can now be downloaded with .yaml extension in the build history section of the admin panel. <CloudBadge/> <SelfHostedBadge/>
+- Provided a more focused interface for subsidiary administrators by hiding the "Customize" and "Settings" sections in the Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
+- Unsubscribe and resubscribe features are enabled for email notifications, distribution, and the enterprise store. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
--  The confusion regarding the use of Turkish characters when creating [workflows](../workflows/why-to-use-workflows.md)  and configurations has been resolved. Turkish characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
--  The error in [permission management](../account/my-organization.md) in the environment variables section has been fixed. <CloudBadge/> <SelfHostedBadge/>
--  The problem with the build transaction texts above the branch name in the Branch section being mixed up has been fixed. <CloudBadge/> <SelfHostedBadge/>
--  The error in permission management in the [Enterprise Store](../enterprise-appstore/add-ent-profile.md) section has been fixed. <CloudBadge/> <SelfHostedBadge/>
--  The configuration-side incorrect display of inactive steps at the beginning has been corrected. <CloudBadge/> <SelfHostedBadge/>
--  The problem of creating groups without a group name and with an existing name on the API's side has been fixed. <CloudBadge/> <SelfHostedBadge/>
--  Optional steps won't affect build status anymore. If "Continue with the next step even if this step fails" is selected, your build status will not turn failed. <CloudBadge/> <SelfHostedBadge/>
+- The confusion regarding the use of Turkish characters when creating [workflows](../workflows/why-to-use-workflows.md)  and configurations has been resolved. Turkish characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
+- The error in [permission management](../account/my-organization.md) in the environment variables section has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The problem with the build transaction texts above the branch name in the Branch section being mixed up has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The error in permission management in the [Enterprise Store](../enterprise-appstore/add-ent-profile.md) section has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The configuration-side incorrect display of inactive steps at the beginning has been corrected. <CloudBadge/> <SelfHostedBadge/>
+- The problem of creating groups without a group name and with an existing name on the API's side has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Optional steps won't affect build status anymore. If "Continue with the next step even if this step fails" is selected, your build status will not turn failed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.6.0 - 2023-08-03 - Azure DevOps Integration, Using Environment Variables On Git Integrations
 
