@@ -116,6 +116,14 @@ For system integrity, the proxy settings in here should be the same as the above
 Also see the `no_proxy` tip explained [there](#no_proxy-configuration).
 :::
 
+- Close the terminal and open a new session.
+
+:::caution
+To make the changes take effect, please open a brand new terminal session.
+
+Otherwise, you won't succeed in the following steps.
+:::
+
 :::info
 Don't forget to change `user`, `password`, proxy `host`, proxy `port`, and `no_proxy` settings for your needs while copying from above.
 :::
@@ -136,86 +144,38 @@ You can follow the steps below to edit these variables correctly.
 cd appcircle-server
 ```
 
-- Create a shell script named `noProxy.sh`.
-
-```bash
-vi noProxy.sh
-```
-
-- Add the content below to the `noProxy.sh` script.
-
-```bash
-#!/usr/bin/env bash
-set -e
-
-projectName="spacetech"
-authUrl="auth.appcircle.spacetech.com"
-
-compose_file="projects/${projectName}/export/compose.yaml"
-
-hostname_values=$(yq eval '.services | to_entries | .[].value.hostname' "$compose_file" | grep -v "null" | sort -u)
-hostname_values_comma=$(echo "$hostname_values" | sed ':a;N;$!ba;s/\n/,/g')
-
-service_values=$(yq eval '.services | keys' "$compose_file" | sed 's/^..//' | sort -u)
-service_values_comma=$(echo "$service_values" | sed ':a;N;$!ba;s/\n/,/g')
-
-no_proxy_value_comma="$hostname_values_comma,$service_values_comma,$no_proxy,$authUrl"
-new_no_proxy="$(echo $no_proxy_value_comma | tr ',' '\n' | sort -u | tr '\n' ',')"
-
-sed -i "s/^no_proxy=.*/no_proxy=$new_no_proxy/" /etc/environment
-sed -i "s/^NO_PROXY=.*/NO_PROXY=$new_no_proxy/" /etc/environment
-
-sed -i "s/^export no_proxy=.*/export no_proxy=$new_no_proxy/" /etc/profile.d/proxy.sh
-sed -i "s/^export NO_PROXY=.*/export NO_PROXY=$new_no_proxy/" /etc/profile.d/proxy.sh
-
-echo "No_Proxy settings enabled successfully."
-echo ""
-echo "IMPORTANT!"
-echo "Please open a new terminal session to changes take effect."
-```
-
-:::info
-The above script needs `yq` as a dependency while getting hostnames and services from `compose.yaml`.
-
-Normally, `yq` is expected to be installed within the Appcircle [server installation](../install-server/docker.md#2-packages) steps.
-:::
+Inside the `helper-tools` directory, there is a bash script file called `no-proxy.sh`.
 
 :::caution
-Don't forget to change the project name `spacetech` and the url `auth.appcircle.spacetech.com` for your needs while copying from above.
 
-You can find your auth url by following the steps:
+The `no-proxy.sh` helper tool exists in self-hosted server versions `3.7.1` or later.
 
-- View your `mainDomain` variable in the `global.yaml` file.
-
-```bash
-yq '.external.mainDomain' projects/spacetech/global.yaml
-```
-
-- This value should be something like `.appcircle.spacetech.com`.
-- Add `auth` as prefix. So your auth url should be `auth.appcircle.spacetech.com`.
-
-You can also use the below one-line command to print the auth URL.
-
-```bash
-echo "auth$(yq '.external.mainDomain' projects/spacetech/global.yaml)"
-```
+If you have an older version installed, please [upgrade](../update.md) your self-hosted server to a newer version. If upgrading is not possible, you should contact us for support.
 
 :::
 
-- Give execute permission to the script.
+- Execute the script with sudo privileges and give your project as argument.
 
 ```bash
-chmod +x noProxy.sh
+sudo ./helper-tools/no-proxy.sh ${YOUR_PROJECT}
 ```
 
-- Execute the script with sudo privileges.
+For example if your project name is "spacetech", you should run the command like below.
 
 ```bash
-sudo ./noProxy.sh
+sudo ./helper-tools/no-proxy.sh spacetech
 ```
 
 :::caution
-Don't forget to start a new terminal session for the changes to take effect.
+You must run the script from the parent directory of the `no-proxy.sh` script.
+
+Be aware that if you run the script like `./no-proxy spacetech`, it will fail.
+:::
+
+- Restart your terminal session.
+
+:::caution
+Don't forget to start a new terminal session after you run command above for the changes to take effect.
 :::
 
 ## 3. Enable Settings on the Container Engine
