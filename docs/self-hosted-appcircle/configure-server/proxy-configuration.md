@@ -157,7 +157,7 @@ If you have an older version installed, please upgrade your self-hosted server t
 - Execute the script with sudo privileges and give your project as argument.
 
 ```bash
-sudo ./helper-tools/no-proxy.sh ${projectName}
+sudo ./helper-tools/no-proxy.sh ${YOUR_PROJECT}
 ```
 
 - For example if your project name is "spacetech", you should run the command like below.
