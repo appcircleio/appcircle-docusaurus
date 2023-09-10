@@ -150,7 +150,7 @@ Inside the `helper-tools` directory, there is a bash script file called `no-prox
 
 The `no-proxy.sh` helper tool exists in self-hosted server versions `3.7.1` or later.
 
-If you have an older version installed, please upgrade your self-hosted server to a newer version. If upgrading is not possible, you should contact us for support.
+If you have an older version installed, please [upgrade](../update.md) your self-hosted server to a newer version. If upgrading is not possible, you should contact us for support.
 
 :::
 
@@ -160,14 +160,14 @@ If you have an older version installed, please upgrade your self-hosted server t
 sudo ./helper-tools/no-proxy.sh ${YOUR_PROJECT}
 ```
 
-- For example if your project name is "spacetech", you should run the command like below.
+For example if your project name is "spacetech", you should run the command like below.
 
 ```bash
 sudo ./helper-tools/no-proxy.sh spacetech
 ```
 
 :::caution
-You should run the script from the parent directory of the `no-proxy.sh` script.
+You must run the script from the parent directory of the `no-proxy.sh` script.
 
 Be aware that if you run the script like `./no-proxy spacetech`, it will fail.
 :::
