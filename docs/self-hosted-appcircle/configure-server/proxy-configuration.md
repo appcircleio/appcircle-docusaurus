@@ -144,7 +144,15 @@ You can follow the steps below to edit these variables correctly.
 cd appcircle-server
 ```
 
-- Inside the `helper-tools` directory you will see a script file called `no-proxy.sh`.
+Inside the `helper-tools` directory, there is a bash script file called `no-proxy.sh`.
+
+:::caution
+
+The `no-proxy.sh` helper tool exists in self-hosted server versions `3.7.1` or later.
+
+If you have an older version installed, please upgrade your self-hosted server to a newer version. If upgrading is not possible, you should contact us for support.
+
+:::
 
 - Execute the script with sudo privileges and give your project as argument.
 
