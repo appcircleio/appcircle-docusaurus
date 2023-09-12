@@ -108,13 +108,13 @@ You should change the "spacetech" as your project name.
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-- Check that if your services are healthy.
+- Check that your services are healthy.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
-- Check your image ids and digests.
+- Check your image IDs and digests.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" version
