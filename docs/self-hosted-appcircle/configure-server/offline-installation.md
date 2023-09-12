@@ -51,7 +51,7 @@ Run the below command to install all required container images to your container
 This command will download container images and load them to the selected container engine in the "Installing Required Tools" section.
 
 :::info
-If you configured a registry url for container engine in global.yaml, downloaded images will be re-tagged with your custom registry url.
+If you configured a registry url for container engine in `global.yaml`, downloaded images will be re-tagged with your custom registry url.
 So the offline installation step is compatible with your custom registries.
 :::
 
@@ -61,7 +61,7 @@ If you installed self-hosted Appcircle server before and you want to update your
 You can update your container images with this method too.
 
 :::info
-You don't need to change your global.yaml or reset your data.
+You don't need to change your `global.yaml` or reset your data.
 Updating your Appcircle server with offline container images is fully compatible with your already-installed Appcircle server.
 :::
 
