@@ -71,14 +71,16 @@ After you install and unzip the Appcircle server package, you can return to this
 
 To do that, you can go to the [Upgrade Server page](../update#1-download-latest).
 
-After you update the self-hosted package, you can go into the Appcircle server directory.
+After you update the self-hosted package:
+
+- You can go into the Appcircle server directory.
 
 ```bash
 cd appcircle-server
 ```
 
-You can check your script's version.
-So you will see which Appcircle server version images will be downloaded and loaded to container engine.
+- You can check your script's version.
+  So you will see which Appcircle server version images will be downloaded and loaded to container engine.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" version
@@ -88,31 +90,31 @@ So you will see which Appcircle server version images will be downloaded and loa
 You should change the "spacetech" as your project name.
 :::
 
-Down your system.
+- Down your system.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
 ```
 
-Get the offline container images and update your local images.
+- Get the offline container images and update your local images.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" load
 ```
 
-Run your server again.
+- Run your server again.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-Check that if your services are healthy.
+- Check that if your services are healthy.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
-Check your image ids and digests.
+- Check your image ids and digests.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" version
