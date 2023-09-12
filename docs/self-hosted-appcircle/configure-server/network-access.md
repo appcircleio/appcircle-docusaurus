@@ -32,12 +32,15 @@ This section covers the external resource domains during the installation proces
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
+  - www.googleapis.com
+  - storage.googleapis.com
 
 - Offline docker install script and docker `rpm` files:
 
   - storage.googleapis.com/appcircle-dev-common/self-hosted
 
 - `tar`, `curl` and `unzip` tools:
+
   - subscription.rhsm.redhat.com
   - cdn.redhat.com
 
@@ -50,6 +53,8 @@ This section covers the external resource domains during the installation proces
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
+  - www.googleapis.com
+  - storage.googleapis.com
 
 - `curl`, `unzip`, `socat`, `netavark` and `podman` tools:
 
@@ -70,6 +75,8 @@ This section covers the external resource domains during the installation proces
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
+  - www.googleapis.com
+  - storage.googleapis.com
 
 - `curl` and `unzip` tools:
 
@@ -88,6 +95,8 @@ This section covers the external resource domains during the installation proces
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
+  - www.googleapis.com
+  - storage.googleapis.com
 
 - `curl`, `unzip`, `netavark` and `socat` tools:
 
@@ -112,19 +121,6 @@ This section covers the external resource domains during the installation proces
   - api.github.com
   - api.apple-cloudkit.com
   - formulae.brew.sh
-  - swcdn.apple.com
-  - xp.apple.com
-  - pancake.apple.com
-  - gdmf.apple.com
-  - swdist.apple.com
-  - swscan.apple.com
-  - ocsp2.apple.com
-
-:::info
-
-Homebrew installs the latest version of Xcode Command Line Tools as a dependency. `*.apple.com` domains are used for that purpose.
-
-:::
 
 - `tart` tool:
   - github.com
