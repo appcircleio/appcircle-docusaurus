@@ -17,6 +17,8 @@ Here you will find how to use the Appcircle server's offline container images.
 
 ### Software Requirements
 
+To use `load` command , your self hosted script version must be `3.7.1` or greater.
+
 You should install the tools below. But there is good news: these are already installed if you followed one of the installation pages and ran the command below.
 
 :::caution
