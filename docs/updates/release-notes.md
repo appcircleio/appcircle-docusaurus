@@ -26,7 +26,6 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - If there is a space character in the [variable group](../environment-variables/managing-variables.md#using-environment-variables-for-ssh-and-pat-personal-access-token-connections-of-the-git-provider) name, it can be used within double quotes while connecting the repository. <CloudBadge/> <SelfHostedBadge/>
   - `$"Variable Group:Key"`
 - Self-hosted enterprise customers can download the [configurations](../build/build-profile-configuration.md) of previous builds with the `.yaml` extension in "Build Details" section of the admin panel. <SelfHostedBadge/>
-- Provided a more focused interface for subsidiary administrators by hiding the "Customize" and "Settings" sections in the Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
 - Unsubscribe and resubscribe features are enabled for email notifications, distribution, and the enterprise store. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
