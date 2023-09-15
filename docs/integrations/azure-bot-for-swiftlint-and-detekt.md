@@ -98,7 +98,7 @@ When the workflow is completed, Appcircle, with the help of this step, will post
 
 You can easily access the details through the comment and reach the build log via the link. This is how your open PR will appear when the step is completed.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-status.png>)
+![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-status-change.png>)
 
 ![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-comment.png>)
 
