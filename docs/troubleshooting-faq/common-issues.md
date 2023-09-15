@@ -342,10 +342,13 @@ For CI servers and headless environments, generate a new token with firebase log
 ⚠  Unable to fetch the CLI MOTD and remote config.
 ```
 
-If you receive this error message, you should check the following two points:
+If you encounter this error message, please review the following two points:
 
-1. **Validate Firebase Token**: Ensure that your login information is valid according to the token or service account you use. You can test it locally with the same token/service account to verify its authenticity.
-2. **Review Proxy Settings**: If you are certain that your validation is correct, then you should review your CA certificates are defined for NodeJS. You can check CA certificates with `echo $NODE_EXTRA_CA_CERTS`.
+1. **Verify Your Firebase Credentials**: Ensure that your login information is valid, as per the token or service account you are using. You can test it locally using the same token or service account to confirm its authenticity.
+2. **Check CA Certificates**:  If you are certain that your credentials are correct, then you should also confirm that your CA certificates are properly defined for NodeJS. You can check CA certificates using the following command:
+```bash
+echo $NODE_EXTRA_CA_CERTS
+```
 
 
 ## Flutter-Specific Issues
