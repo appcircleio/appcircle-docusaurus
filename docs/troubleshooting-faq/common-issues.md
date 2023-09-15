@@ -331,6 +331,23 @@ You may get this error message when the provided password doesn't match the keys
 
 If you are using a debug keystore, simply re-generate it. Otherwise, please make sure you have the correct keystore/password combination.
 
+### Firebase Errors
+
+#### Authentication Error: Your credentials are no longer valid.
+
+Error detail:
+```
+Error: failed to upload release. Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+For CI servers and headless environments, generate a new token with firebase login:ci
+⚠  Unable to fetch the CLI MOTD and remote config.
+```
+
+If you receive this error message, you should check the following two points:
+
+1. **Validate Firebase Token**: Ensure that your login information is valid according to the token or service account you use. You can test it locally with the same token/service account to verify its authenticity.
+2. **Review Proxy Settings**: If you are certain that your validation is correct, then you should review your CA certificates are defined for NodeJS. You can check CA certificates with `echo $NODE_EXTRA_CA_CERTS`.
+
+
 ## Flutter-Specific Issues
 
 ### No pubspec.yaml file found error
