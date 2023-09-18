@@ -1,7 +1,7 @@
 ---
 title: Azure Bot for SwiftLint and Detekt
-metaTitle: Azure Bot For SwiftLint and Detekt
-metaDescription: Azure Bot For SwiftLint and Detekt
+metaTitle: Azure Bot for SwiftLint and Detekt
+metaDescription: Azure Bot for SwiftLint and Detekt
 sidebar_position: 9
 ---
 
