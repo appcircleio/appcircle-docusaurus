@@ -128,8 +128,8 @@ In order to keep free disk space sufficient for build pipelines, we're packaging
 
 You can find more information about the build infrastructure in the documents below:
 
-- [iOS Build Infrastructure](https://docs.appcircle.io/infrastructure/ios-build-infrastructure)
-- [Android Build Infrastructure](https://docs.appcircle.io/infrastructure/android-build-infrastructure)
+- [iOS Build Infrastructure](../../infrastructure/ios-build-infrastructure.md)
+- [Android Build Infrastructure](../../infrastructure/android-build-infrastructure.md)
 
 ## Create Base Images
 
@@ -212,7 +212,7 @@ Edit `appsettings.json` with your favorite editor. (nano, vi etc.)
 
 Runner will register to server defined in `ASPNETCORE_BASE_API_URL` and take build jobs from there.
 
-Create runner access token from appcircle server and register runner to server. See details in [here](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/installation#2-register).
+Create runner access token from appcircle server and register runner to server. See details in [here](../self-hosted-runner/installation.md#2-register).
 
 For example,
 
@@ -344,7 +344,7 @@ touch $HOME/runner1/.stop
 
 Creating `.stop` file prevents creating new instance by `run.sh` on shutdown.
 
-If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/runner-service#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
+If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](../self-hosted-runner/configure-runner/runner-service.md#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
 
 On the other hand if you want to stop runner immediately for whatever reason or it's in idle state, you can SSH into runner and run shutdown command.
 
@@ -402,7 +402,7 @@ On some cases, you may need to update to your macOS base images in order to make
 Below are the ones that frequently occur, but not limited to them.
 
 - Your team might use a tool frequently in build pipeline, that's not included in Appcircle macOS image. Installing that tool into the image once will save build time. Your build pipeline will be more efficient and optimized.
-- You may prefer to get iOS and android tool updates by using [self-hosted runner update](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/update) method instead of getting fresh macOS VM image. When you get fresh macOS image you may need to make your custom configurations again.
+- You may prefer to get iOS and android tool updates by using [self-hosted runner update](../self-hosted-runner/update.md) method instead of getting fresh macOS VM image. When you get fresh macOS image you may need to make your custom configurations again.
 - You may need to make persistent proxy configuration for your internal network requirements.
 - You may need to add your corporate's self-signed root CAs to macOS VM image in order to succeed SSL connections.
 
@@ -487,7 +487,7 @@ screen -d -m $HOME/runner2/run.sh vm02
 
 In this case, you need to focus on self-hosted runner issues inside macOS VM (guest).
 
-In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/overview) details.
+In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](./overview.md) details.
 
 - You can check your macOS guest for possible system issues. (disk space, network connectivity etc.)
 - If you have custom proxy settings on macOS guest, check these settings.
