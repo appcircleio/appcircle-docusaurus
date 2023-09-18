@@ -150,7 +150,7 @@ You can find more information about the build infrastructure in the documents be
 
 ## Create Base Images
 
-### Create Base Runner VMs
+### Create Base Runner VMs
 
 Apple's virtualization framework allows us to run up to two macOS VMs on host.
 
@@ -161,7 +161,7 @@ When you list VMs with `tart list`, you should see our extracted VM image in lis
 In the steps below, we will create 2 base images named vm01 and vm02.
 
 :::tip
-The VM01 base image is derived from our base image, and subsequently, the VM02 base image is created from the VM01 base image.
+The VM01 base image is derived from our base image, and subsequently, the VM02 base image will be created from the VM01 base image.
 
 This approach eliminates the need to redo all the configurations applied to VM01 when setting up VM02, ensuring efficiency and consistency across both virtual machines.
 :::
@@ -177,15 +177,11 @@ Create VM image for runner1.
 tart clone macOS_230606 vm01
 ```
 
-<!-- Create VM image for runner2.
-
-```bash
-tart clone macOS_230606 vm02
-``` -->
-
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
 
 ### Configure Base Runner VMs
+
+#### Configure Runner 1
 
 Start runner1 VM image for configuration.
 
@@ -207,15 +203,15 @@ ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 
 #### Configure Base Runner's NTP Settings
 
-MacOS VMs try to update their date and time using network time protocol (ntp) by default.
+MacOS VMs try to update their date and time using network time protocol (NTP) by default.
 
 If your organization has limited the network access for the Appcircle runner machine, the VM may be unable to reach the servers responsible for updating its date and time settings.
 
-In a situation like that, you organization might have a ntp server for internal usage.
+In a situation like that, you organization might have a NTP server for internal usage.
 
-You can configure your macOS runner VM to use your organization's own ntp server.
+You can configure your macOS runner VM to use your organization's own NTP server.
 
-You can use the helper script named `configure_ntp.sh` that comes with runner package and configure the ntp settings.
+You can use the helper script named `configure_ntp.sh` that comes with runner package and configure the NTP settings.
 
 In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
 
@@ -225,27 +221,27 @@ cd /Volumes/agent-disk/appcircle-runner
 
 So, the following commands will assume that current working directory is `/Volumes/agent-disk/appcircle-runner`.
 
-To configure ntp settings:
+To configure NTP settings:
 
-- The ip address of ntp server should be known
+- The ip address of NTP server should be known
 
-- Network access should be allowed from Appcircle runner to the ntp server.
+- Network access should be allowed from Appcircle runner to the NTP server.
 
 - You will find a script named `configure_ntp.sh` in your `scripts` folder inside the `appcircle-runner` directory.
 
-- Run the script and give the ntp server ip as argument like the example below:
+- Run the script and give the NTP server ip as argument like the example below:
 
 ```bash
 ./scripts/configure_ntp.sh "10.10.1.50"
 ```
 
 :::caution
-You should change "10.10.1.50" to the ntp server of your organization in the example above
+You should change "10.10.1.50" to the NTP server of your organization in the example above
 :::
 
 #### Trust The Root Certificate of Your Organization
 
-If the resources you want to connect to such as Gitlab, Nexus, use a self signed certificate, you should also trust the root cert of your organization in your Appcircle runner VMs.
+If the resources you want to connect to such as Gitlab, Nexus, use a self-signed certificate, you should also trust the root cert of your organization in your Appcircle runner VMs.
 
 Trusting your organization's root certificate on the OS is crucial.
 
@@ -253,7 +249,7 @@ Because the runner will connect to the Appcircle server over HTTPS, the SSL cert
 
 Furthermore, if the runner attempts to access external web sites, the requests will most likely be intercepted by the proxy and re-signed with a self-issued certificate that is also signed by the root certificate.
 
-You can use the helper script named `install_cert.sh` that comes with your runner package and configure the ntp settings.
+You can use the helper script named `install_cert.sh` that comes with your runner package and configure the NTP settings.
 
 - You will find a script named `install_cert.sh` in your scripts folder inside the `appcircle-runner` directory.
 
@@ -329,6 +325,18 @@ If "runner1" is online, we can shutdown VM since configuration is done with succ
 sudo shutdown -h now
 ```
 
+#### Configure Runner 2
+
+As we configured the runner1 (vm01), we can clone vm01 to vm02.
+
+So we won't need to reconfigure NTP, self-signed SSL and other configurations you made to vm01.
+
+Create VM image for runner2 from runner1.
+
+```bash
+tart clone vm01 vm02
+```
+
 Start runner2 image for configuration.
 
 ```bash
@@ -341,9 +349,11 @@ SSH login into running macOS VM.
 ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm02)
 ```
 
-After login, configuration steps are the same as "runner1". So, we don't need to repeat same commands again.
+After login, configuration steps for Appcircle runner service are the same as "runner1". So, we don't need to repeat same commands again.
 
 The only difference should be runner naming. It must be unique. For the second runner, just give a different name. For example, "runner2".
+
+Refer to the [Configure Appcircle Runner Service](#configure-appcircle-runner-service) for detailed Appcircle runner service configuration.
 
 After shutdown, we're ready to run instances from `vm01` and `vm02` base VM images.
 
@@ -594,23 +604,23 @@ In order to be able to investigate root cause, you should learn the basics of se
 
 This case is related with broken datetime synchronization between runner and server.
 
-Both server and runner should synchronize their times with relevant `ntp` services. Timezone difference is not important. Datetime must be correct in their timezones.
+Both server and runner should synchronize their times with relevant `NTP` services. Timezone difference is not important. Datetime must be correct in their timezones.
 
 If runner doesn't have network access to an NTP server on the internet, you can also configure it to use your internal NTP server.
 
 For updating macOS base image see [related section](#update-base-images) above.
 
-For configuring NTP settings, see [Configure Base Runner's NTP Settings](#configure-base-runners-ntp-settings) section above.
+For configuring NTP settings, see [Configure Base Runner's NTP Settings](#configure-base-runners-NTP-settings) section above.
 
 ### I am facing "SSL cert is not valid yet" error in our builds.
 
 This problem is again related to your macOS VM date time being out of date.
 
-To fix that, you should sync the VMs' datetime with your organization's ntp server.
+To fix that, you should sync the VMs' datetime with your organization's NTP server.
 
 For updating macOS base image see [related section](#update-base-images) above.
 
-For configuring NTP settings, see [Configure Base Runner's NTP Settings](#configure-base-runners-ntp-settings) section above.
+For configuring NTP settings, see [Configure Base Runner's NTP Settings](#configure-base-runners-NTP-settings) section above.
 
 ### Runners are offline and I noticed that macOS host has been reboot
 
