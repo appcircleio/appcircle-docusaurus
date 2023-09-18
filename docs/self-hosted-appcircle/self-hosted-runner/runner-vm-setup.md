@@ -79,6 +79,15 @@ By keeping the system awake, you ensure uninterrupted accessibility to your Appc
 
 This continuous availability is critical for running builds, as it guarantees that your builds can find runners online.
 
+We suggest disabling those power settings to make it behave like a server station.
+
+```bash
+sudo pmset -a sleep 0
+sudo pmset -a powernap 0
+sudo pmset -a disksleep 0
+sudo pmset -a displaysleep 0
+```
+
 ## Download MacOS VM
 
 Download macOS VM from Appcircle bucket.
@@ -535,14 +544,9 @@ When you install a fresh macOS on a mac device, it comes with predefined power s
 
 So, most probably, your macOS host sleeps when there is no UI interaction, and awakes on SSH login.
 
-We suggest disabling those power settings to make it behave like a server station.
+To do that, please configure your power settings on the host machine.
 
-```bash
-sudo pmset -a sleep 0
-sudo pmset -a powernap 0
-sudo pmset -a disksleep 0
-sudo pmset -a displaysleep 0
-```
+You can re-check the [Configure Power Settings](#3-configure-power-settings) title for power management of host.
 
 ### I want to make some configurations to macOS base image but need desktop UI for them
 
