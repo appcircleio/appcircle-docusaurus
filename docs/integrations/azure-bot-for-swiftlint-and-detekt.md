@@ -59,7 +59,7 @@ You can easily access the details through the comment and reach the build log vi
 
 https://github.com/appcircleio/appcircle-ios-azure-bot-for-swiftlint-component
 
-### Azure DevOps Bot For Android
+### Azure DevOps Bot for Detekt
 
 #### Step 1
 
