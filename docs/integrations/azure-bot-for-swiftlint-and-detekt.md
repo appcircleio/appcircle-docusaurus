@@ -1,17 +1,17 @@
 ---
-title: Azure Bot for Swiftlint and Detekt
-metaTitle: Azure Bot For Swiftlint and Detekt
-metaDescription: Azure Bot For Swiftlint and Detekt
+title: Azure Bot for SwiftLint and Detekt
+metaTitle: Azure Bot For SwiftLint and Detekt
+metaDescription: Azure Bot For SwiftLint and Detekt
 sidebar_position: 9
 ---
 
 import NarrowImage from '@site/src/components/NarrowImage';
 
-# Azure Bot for Swiftlint and Detekt
+# Azure Bot for SwiftLint and Detekt
 
 With the Azure DevOps Bot integration, you can analyze your SwiftLint and Detekt reports and post the report details under the opened PR. You can also modify the PR status. For integration, there are some steps to follow that are necessary for each platform.
 
-### Azure DevOps Bot for Swiftlint
+### Azure DevOps Bot for SwiftLint
 
 #### Step 1
 
