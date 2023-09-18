@@ -1,26 +1,22 @@
-# Azure Bot For iOS and Android
+# Azure Bot For Swiftlint and Detekt
 
 With the Azure DevOps Bot integration, you can analyze your SwiftLint and Detekt reports and post the report details under the opened PR. You can also modify the PR status. For integration, there are some steps to follow that are necessary for each platform.
 
-### Azure DevOps Bot For iOS
+### Azure DevOps Bot for Swiftlint
 
 #### Step 1
 
 First, to generate the report output, the [SwiftLint](../workflows/ios-specific-workflow-steps.md#swiftlint) component needs to be added to the workflow. We add the SwiftLint component after the CocoaPods install step.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-swift-lint-step.png>)
+To use the Azure Bot, we add the 'Azure DevOps Bot for SwiftLint Report' step right after running SwiftLint.
+
+![](<https://cdn.appcircle.io/docs/assets/workflowtips-ios-wf.png>)
 
 #### Step 2
 
-To use the Azure Bot, we add the 'Azure DevOps Bot for SwiftLint Report' step right after running SwiftLint.
-
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-azure-bot-step.png>)
-
-#### Step 3
-
 You will find the variables that need to be specified inside the bot component. These can be provided either by adding them to environment variables or by directly entering values within the component.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-bot-step-details.png>)
+![](<https://cdn.appcircle.io/docs/assets/workflowtips-ios-wf-details.png>)
 
 :::caution
 Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables/why-to-use-environment-variables-and-secrets.md) and encrypting variables like tokens that could pose a security risk.
@@ -28,7 +24,7 @@ Since one of the required variables will be the Azure DevOps Personal Access Tok
 
 ![](<https://cdn.appcircle.io/docs/assets/workflowtips-azure-bot-env-var.png>)
 
-#### Step 4
+#### Step 3
 
 After setting all the variables, you can open a PR through your Azure DevOps organization to trigger the bot.
 
