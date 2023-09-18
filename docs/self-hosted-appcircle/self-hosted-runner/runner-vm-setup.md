@@ -150,11 +150,21 @@ You can find more information about the build infrastructure in the documents be
 
 ## Create Base Images
 
+### Create Base Runner VMs
+
 Apple's virtualization framework allows us to run up to two macOS VMs on host.
 
-Each runner must register to the self-hosted appcircle server with a unique name and configuration. So we will need two VM base images.
+Each runner must register to the self-hosted Appcircle server with a unique name and configuration. So we will need two VM base images.
 
 When you list VMs with `tart list`, you should see our extracted VM image in list.
+
+In the steps below, we will create 2 base images named vm01 and vm02.
+
+:::tip
+The VM01 base image is derived from our base image, and subsequently, the VM02 base image is created from the VM01 base image.
+
+This approach eliminates the need to redo all the configurations applied to VM01 when setting up VM02, ensuring efficiency and consistency across both virtual machines.
+:::
 
 ```txt
 Source Name         Size
@@ -167,13 +177,15 @@ Create VM image for runner1.
 tart clone macOS_230606 vm01
 ```
 
-Create VM image for runner2.
+<!-- Create VM image for runner2.
 
 ```bash
 tart clone macOS_230606 vm02
-```
+``` -->
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
+
+### Configure Base Runner VMs
 
 Start runner1 VM image for configuration.
 
@@ -193,7 +205,47 @@ ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 
 ---
 
-In macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
+#### Configure Base Runner's NTP Settings
+
+MacOS VMs try to update their date and time using network time protocol (ntp) by default.
+
+If your organization has limited the network access for the Appcircle runner machine, the VM may be unable to reach the servers responsible for updating its date and time settings.
+
+In a situation like that, you organization might have a ntp server for internal usage.
+
+You can configure your macOS runner VM to use your organization's own ntp server.
+
+You can use the helper script that comes with runner package and configure ntp settings easily.
+
+In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
+
+```bash
+cd /Volumes/agent-disk/appcircle-runner
+```
+
+So, the following commands will assume that current working directory is `/Volumes/agent-disk/appcircle-runner`.
+
+To configure ntp settings:
+
+- The ip address of ntp server should be known
+
+- Network access should be allowed from Appcircle runner to the ntp server.
+
+- You will find a `configure_ntp.sh` script in your `scripts` folder inside the `appcircle-runner` directory.
+
+- Run the script and give the ntp server ip as argument like the example below:
+
+```bash
+./scripts/configure_ntp.sh "10.10.1.50"
+```
+
+:::caution
+You should change "10.10.1.50" to the ntp server of your organization in the example above
+:::
+
+#### Configure Appcircle Runner Service
+
+In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
 
 ```bash
 cd /Volumes/agent-disk/appcircle-runner
