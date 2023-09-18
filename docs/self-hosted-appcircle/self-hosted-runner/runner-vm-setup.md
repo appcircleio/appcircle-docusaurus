@@ -602,6 +602,16 @@ For updating macOS base image see [related section](#update-base-images) above.
 
 For configuring NTP settings, see [Configure Base Runner's NTP Settings](#configure-base-runners-ntp-settings) section above.
 
+### I am facing "SSL cert is not valid yet" error in our builds.
+
+This problem is again related to your macOS VM date time being out of date.
+
+To fix that, you should sync the VMs' datetime with your organization's ntp server.
+
+For updating macOS base image see [related section](#update-base-images) above.
+
+For configuring NTP settings, see [Configure Base Runner's NTP Settings](#configure-base-runners-ntp-settings) section above.
+
 ### Runners are offline and I noticed that macOS host has been reboot
 
 If there is no system crash, one reason for an unintentional reboot may be caused by automatic updates.
