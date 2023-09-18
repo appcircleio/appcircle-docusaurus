@@ -215,7 +215,7 @@ In a situation like that, you organization might have a ntp server for internal 
 
 You can configure your macOS runner VM to use your organization's own ntp server.
 
-You can use the helper script that comes with runner package and configure ntp settings easily.
+You can use the helper script named `configure_ntp.sh` that comes with runner package and configure the ntp settings.
 
 In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
 
@@ -231,7 +231,7 @@ To configure ntp settings:
 
 - Network access should be allowed from Appcircle runner to the ntp server.
 
-- You will find a `configure_ntp.sh` script in your `scripts` folder inside the `appcircle-runner` directory.
+- You will find a script named `configure_ntp.sh` in your `scripts` folder inside the `appcircle-runner` directory.
 
 - Run the script and give the ntp server ip as argument like the example below:
 
@@ -242,6 +242,32 @@ To configure ntp settings:
 :::caution
 You should change "10.10.1.50" to the ntp server of your organization in the example above
 :::
+
+#### Trust The Root Cert of Your Organization
+
+You should also trust the root cert of your organization in your Appcircle runner VMs.
+
+Trusting your organization's root certificate on the OS is crucial.
+
+Because the runner will connect to the Appcircle server over HTTPS, the SSL certificate will be signed with your organization's root certificate.
+
+Furthermore, if the runner attempts to access external web sites, the requests will most likely be intercepted by the proxy and re-signed with a self-issued certificate that is also signed by the root certificate.
+
+You can use the helper script named `install_cert.sh` that comes with your runner package and configure the ntp settings.
+
+- You will find a script named `install_cert.sh` in your scripts folder inside the `appcircle-runner` directory.
+
+- Run the script like the example below:
+
+```bash
+./scripts/install_cert.sh
+```
+
+- The script will ask you to enter a url. Please give the url of the Appcircle server you installed.
+
+- Hit enter and check the results.
+
+- Your organization's root ca cert is now trusted on the machine, Java, Ruby and Nodejs.
 
 #### Configure Appcircle Runner Service
 
