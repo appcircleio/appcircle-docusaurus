@@ -1,34 +1,39 @@
-# Azure Bot For iOS and Android
+---
+title: Azure Bot for SwiftLint and Detekt
+metaTitle: Azure Bot for SwiftLint and Detekt
+metaDescription: Azure Bot for SwiftLint and Detekt
+sidebar_position: 9
+---
+
+import NarrowImage from '@site/src/components/NarrowImage';
+
+# Azure Bot for SwiftLint and Detekt
 
 With the Azure DevOps Bot integration, you can analyze your SwiftLint and Detekt reports and post the report details under the opened PR. You can also modify the PR status. For integration, there are some steps to follow that are necessary for each platform.
 
-### Azure DevOps Bot For iOS
+### Azure DevOps Bot for SwiftLint
 
 #### Step 1
 
 First, to generate the report output, the [SwiftLint](../workflows/ios-specific-workflow-steps.md#swiftlint) component needs to be added to the workflow. We add the SwiftLint component after the CocoaPods install step.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-swift-lint-step.png>)
+To use the Azure Bot, we add the 'Azure DevOps Bot for SwiftLint Report' step right after running SwiftLint.
+
+![](<https://cdn.appcircle.io/docs/assets/workflowtips-ios-wf.png>)
 
 #### Step 2
 
-To use the Azure Bot, we add the 'Azure DevOps Bot for SwiftLint Report' step right after running SwiftLint.
-
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-azure-bot-step.png>)
-
-#### Step 3
-
 You will find the variables that need to be specified inside the bot component. These can be provided either by adding them to environment variables or by directly entering values within the component.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-bot-step-details.png>)
+![](<https://cdn.appcircle.io/docs/assets/workflowtips-ios-wf-details.png>)
 
 :::caution
 Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables/why-to-use-environment-variables-and-secrets.md) and encrypting variables like tokens that could pose a security risk.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-azure-bot-env-var.png>)
+![](<https://cdn.appcircle.io/docs/assets/workflowtips-env-var-full.png>)
 
-#### Step 4
+#### Step 3
 
 After setting all the variables, you can open a PR through your Azure DevOps organization to trigger the bot.
 
@@ -54,7 +59,7 @@ You can easily access the details through the comment and reach the build log vi
 
 https://github.com/appcircleio/appcircle-ios-azure-bot-for-swiftlint-component
 
-### Azure DevOps Bot For Android
+### Azure DevOps Bot for Detekt
 
 #### Step 1
 
@@ -64,13 +69,13 @@ The first step for Android is to add the [Detekt](../integrations/../workflows/a
 Please make sure to run the Azure Bot component after Detekt. Otherwise, the **Azure DevOps Bot For Detekt Component** won't function.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-wf.png>)
+![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-wf-step.png>)
 
 #### Step 2
 
 You will find the variables that need to be specified within the bot component. You can provide these variables either by adding them to environment variables or by directly entering their values within the component.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-step.png>)
+![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-wf-details.png>)
 
 :::caution
 Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables/why-to-use-environment-variables-and-secrets.md) and encrypting variables like tokens that could pose a security risk.
@@ -100,6 +105,6 @@ You can easily access the details through the comment and reach the build log vi
 
 ![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-status-change.png>)
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-comment.png>)
+<NarrowImage src="https://cdn.appcircle.io/docs/assets/workflowtips-android-comment.png" />
 
 https://github.com/appcircleio/appcircle-android-azure-bot-for-detekt-component
