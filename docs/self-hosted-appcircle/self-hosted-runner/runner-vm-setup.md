@@ -243,9 +243,9 @@ To configure ntp settings:
 You should change "10.10.1.50" to the ntp server of your organization in the example above
 :::
 
-#### Trust The Root Cert of Your Organization
+#### Trust The Root Certificate of Your Organization
 
-You should also trust the root cert of your organization in your Appcircle runner VMs.
+If the resources you want to connect to such as Gitlab, Nexus, use a self signed certificate, you should also trust the root cert of your organization in your Appcircle runner VMs.
 
 Trusting your organization's root certificate on the OS is crucial.
 
@@ -267,7 +267,7 @@ You can use the helper script named `install_cert.sh` that comes with your runn
 
 - Hit enter and check the results.
 
-- Your organization's root ca cert is now trusted on the machine, Java, Ruby and Nodejs.
+- Your organization's root ca cert is now trusted on the OS, Java, Ruby and Nodejs.
 
 #### Configure Appcircle Runner Service
 
@@ -599,6 +599,8 @@ Both server and runner should synchronize their times with relevant `ntp` servic
 If runner doesn't have network access to an NTP server on the internet, you can also configure it to use your internal NTP server.
 
 For updating macOS base image see [related section](#update-base-images) above.
+
+For configuring NTP settings, see [Configure Base Runner's NTP Settings](#configure-base-runners-ntp-settings) section above.
 
 ### Runners are offline and I noticed that macOS host has been reboot
 
