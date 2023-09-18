@@ -71,6 +71,14 @@ Create VMs root folder in tart home.
 mkdir $HOME/.tart/vms
 ```
 
+### 3. Configure Power Settings
+
+Configuring power settings on macOS to prevent the system from entering sleep mode is vital when deploying it as a Appcircle runner.
+
+By keeping the system awake, you ensure uninterrupted accessibility to your Appcircle runners, preventing any potential offline cases caused by the system going to sleep.
+
+This continuous availability is critical for running builds, as it guarantees that your builds can find runners online.
+
 ## Download MacOS VM
 
 Download macOS VM from Appcircle bucket.
