@@ -347,7 +347,7 @@ If you encounter this error message, please review the following two points:
 1. **Verify Your Firebase Credentials**: Ensure that your login information is valid, as per the token or service account you are using. You can test it locally using the same token or service account to confirm its authenticity.
 2. **Check CA Certificates**:  If you are certain that your credentials are correct, then you should also confirm that your CA certificates are properly defined for NodeJS. You can check CA certificates using the following command:
 ```bash
-echo $NODE_EXTRA_CA_CERTS
+cat $NODE_EXTRA_CA_CERTS
 ```
 
 
