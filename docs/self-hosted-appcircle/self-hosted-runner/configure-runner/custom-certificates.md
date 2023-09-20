@@ -66,3 +66,7 @@ Enter a URL or 'q' to quit: q
 ```
 
 After the script completes, the operating system, Java (11), Ruby and NodeJS trust the root cert.
+
+:::caution
+Please exit from the current terminal session and start a new one for changes to take effect.
+:::
