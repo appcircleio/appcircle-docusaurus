@@ -907,3 +907,7 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
 .section-title.best-practices > div >a::before {
   background-image: url(../../static/img/sidebar/best-practices.svg);
 }
+
+.hidden {
+  display: none !important;
+}
