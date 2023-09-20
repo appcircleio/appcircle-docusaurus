@@ -211,23 +211,23 @@ So, the following commands will assume that current working directory is `/Volum
 
 #### Configure Base Runner's NTP Settings
 
-MacOS VMs try to update their date and time using network time protocol (NTP) by default.
+MacOS VMs try to update their date and time using the network time protocol (NTP) by default.
 
-If your organization has limited the network access for the Appcircle runner machine, the VM may be unable to reach the servers responsible for updating its date and time settings.
+If your organization has limited network access for the Appcircle runner machine, the VM may be unable to reach the servers responsible for updating its date and time settings.
 
-In a situation like that, you organization might have a NTP server for internal usage.
+In a situation like that, your organization might have an NTP server for internal usage.
 
 You can configure your macOS runner VM to use your organization's own NTP server.
 
-You can use the helper script named `configure_ntp.sh` that comes with runner package and configure the NTP settings.
+You can use the helper script named `configure_ntp.sh` that comes with the runner package to configure the NTP settings.
 
 To configure NTP settings:
 
-- The ip address or url of the NTP server should be known
+- The IP address or URL of the NTP server should be known.
 
-- Network access should be allowed from Appcircle runner to the NTP server.
+- Network access should be allowed from the app runner to the NTP server.
 
-- You will find a script named `configure_ntp.sh` in your `scripts` folder inside the `appcircle-runner` directory.
+- You will find a script named `configure_ntp.sh` in the `scripts` folder inside the `app-runner` directory.
 
 - Run the script and give the NTP server ip as argument like the example below:
 
@@ -236,12 +236,12 @@ To configure NTP settings:
 ```
 
 :::caution
-You should change "10.10.1.50" to the NTP server of your organization in the example above
+You should change "10.10.1.50" to the NTP server of your organization in the example above.
 :::
 
 #### Trust The Root Certificate of Your Organization
 
-If the resources you want to connect to such as Gitlab, Nexus, use a self-signed certificate, you should also trust the root cert of your organization in your Appcircle runner VMs.
+If the resources you want to connect to, such as GitLab and Nexus, use a self-signed certificate, you should also trust the root certificate of your organization in your Appcircle runner VMs.
 
 Trusting your organization's root certificate on the OS is crucial.
 
@@ -251,7 +251,7 @@ Furthermore, if the runner attempts to access external web sites, the requests w
 
 You can use the helper script named `install_cert.sh` that comes with your runner package and configure the NTP settings.
 
-- You will find a script named `install_cert.sh` in your scripts folder inside the `appcircle-runner` directory.
+- You will find a script named `install_cert.sh` in your scripts folder inside the `Appcircle-runner` directory.
 
 - Run the script like the example below:
 
@@ -259,11 +259,11 @@ You can use the helper script named `install_cert.sh` that comes with your runn
 ./scripts/install_cert.sh
 ```
 
-- The script will ask you to enter a url. Please give the url of the Appcircle server you installed.
+- The script will ask you to enter a URL. Please give the URL of the Appcircle server you installed.
 
 - Hit enter and check the results.
 
-- Your organization's root ca cert is now trusted on the OS, Java, Ruby and Nodejs.
+- Your organization's root CA cert is now trusted on the OS, Java, Ruby, and Node.js.
 
 #### Configure Appcircle Runner Service
 
