@@ -345,11 +345,15 @@ For CI servers and headless environments, generate a new token with firebase log
 If you encounter this error message, please review the following two points:
 
 1. **Verify Your Firebase Credentials**: Ensure that your login information is valid, as per the token or service account you are using. You can test it locally using the same token or service account to confirm its authenticity.
-2. **Check CA Certificates**:  If you are certain that your credentials are correct, then you should also confirm that your CA certificates are properly defined for NodeJS. You can check CA certificates using the following command:
+2. **Check CA Certificates**: If you are a `self-hosted Appcircle user` and you are certain that your credentials are correct, then you should also confirm that your CA certificates are properly defined for NodeJS. You can check CA certificates using the following command:
+
 ```bash
 cat $NODE_EXTRA_CA_CERTS
 ```
 
+:::info
+Point 2 exclusively applies to users who have opted for self-hosted solutions. For those utilizing Appcircle from the cloud platform (appcircle.io), there is no need to consider this particular point. Therefore, it is advisable to place primary emphasis on Point 1.
+:::
 
 ## Flutter-Specific Issues
 
