@@ -201,6 +201,14 @@ ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 
 ---
 
+In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
+
+```bash
+cd /Volumes/agent-disk/appcircle-runner
+```
+
+So, the following commands will assume that current working directory is `/Volumes/agent-disk/appcircle-runner`.
+
 #### Configure Base Runner's NTP Settings
 
 MacOS VMs try to update their date and time using network time protocol (NTP) by default.
@@ -213,17 +221,9 @@ You can configure your macOS runner VM to use your organization's own NTP server
 
 You can use the helper script named `configure_ntp.sh` that comes with runner package and configure the NTP settings.
 
-In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
-
-```bash
-cd /Volumes/agent-disk/appcircle-runner
-```
-
-So, the following commands will assume that current working directory is `/Volumes/agent-disk/appcircle-runner`.
-
 To configure NTP settings:
 
-- The ip address of NTP server should be known
+- The ip address or url of the NTP server should be known
 
 - Network access should be allowed from Appcircle runner to the NTP server.
 
