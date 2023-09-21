@@ -89,7 +89,7 @@ If the `install_cert.sh` can't auto-detect the root CA, follow the steps below:
 
 - Get your organization's root CA and copy it.
 
-- Go to the `appcircle-runner` and `scripts` folder.
+- Go to the `appcircle-runner` and `scripts` directory.
 
 - Create a file named `rootca.crt` and paste the rootca inside it.
 
