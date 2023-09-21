@@ -76,7 +76,7 @@ mkdir $HOME/.tart/vms
 Download macOS VM from Appcircle bucket.
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_230606.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_230921.tar.gz
 ```
 
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
@@ -86,13 +86,13 @@ If you encounter network interruption, just run the same command again. It shoul
 **Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
 
 ```bash
-md5 macOS_230606.tar.gz
+md5 macOS_230921.tar.gz
 ```
 
 After a couple of minutes later you should see the output below.
 
 ```bash
-MD5 (macOS_230606.tar.gz) = 6b6bcb5ecb3a45acd48cbc886b6b3817
+MD5 (macOS_230921.tar.gz) = a86e96952bf538a086d1f35f67c4bc00
 ```
 
 ---
@@ -100,13 +100,13 @@ MD5 (macOS_230606.tar.gz) = 6b6bcb5ecb3a45acd48cbc886b6b3817
 Create folder for VM.
 
 ```bash
-mkdir $HOME/.tart/vms/macOS_230606
+mkdir $HOME/.tart/vms/macOS_230921
 ```
 
 Extract archive into VMs folder.
 
 ```bash
-tar -zxf macOS_230606.tar.gz --directory $HOME/.tart/vms/macOS_230606
+tar -zxf macOS_230921.tar.gz --directory $HOME/.tart/vms/macOS_230921
 ```
 
 It may take a little to complete. Be patient and wait return of command.
@@ -114,15 +114,15 @@ It may take a little to complete. Be patient and wait return of command.
 You can track progress of extraction by monitoring VM folder size.
 
 ```bash
-du -sh $HOME/.tart/vms/macOS_230606
+du -sh $HOME/.tart/vms/macOS_230921
 ```
 
-**Note:** This macOS VM image contains the same tools as in the "default m1 pool" in Appcircle Cloud. The only difference is the bundled Xcode versions. It comes with the Xcode versions below:
+**Note:** This macOS VM image contains the same tools as in the "Default M1 Pool" in Appcircle Cloud. The only difference is the bundled Xcode versions. It comes with the Xcode versions below:
 
+- `15.0.x`
 - `14.3.x`
 - `14.2.x`
 - `14.1.x`
-- `13.4.x`
 
 In order to keep free disk space sufficient for build pipelines, we're packaging the latest and most frequently used Xcode versions. But you can also install other Xcode versions yourself if required.
 
@@ -130,6 +130,12 @@ You can find more information about the build infrastructure in the documents be
 
 - [iOS Build Infrastructure](../../infrastructure/ios-build-infrastructure.md)
 - [Android Build Infrastructure](../../infrastructure/android-build-infrastructure.md)
+
+:::caution
+We're bumping the VM macOS version according to Xcode requirements. So the latest VM image,`macOS_230921`, includes Ventura `13.5.2` pre-installed and needs Ventura host to run. It doesn't support running on older hosts like Monterey, Big Sur, etc.
+
+If you don't need the latest Xcode and you want to run an older version of the macOS VM image that supports running on a Monterey host, contact us through our support channels.
+:::
 
 ## Create Base Images
 
@@ -141,19 +147,19 @@ When you list VMs with `tart list`, you should see our extracted VM image in lis
 
 ```txt
 Source Name         Size
-local  macOS_230606 167
+local  macOS_230921 167
 ```
 
 Create VM image for runner1.
 
 ```bash
-tart clone macOS_230606 vm01
+tart clone macOS_230921 vm01
 ```
 
 Create VM image for runner2.
 
 ```bash
-tart clone macOS_230606 vm02
+tart clone macOS_230921 vm02
 ```
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
@@ -256,7 +262,7 @@ At this stage your VM list returned by `tart list` should be like below.
 
 ```txt
 Source Name         Size
-local  macOS_230606 167
+local  macOS_230921 167
 local  vm01         130
 local  vm02         130
 ```
@@ -321,7 +327,7 @@ We can see running instances on macOS host with `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_230606                              167
+local  macOS_230921                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -352,7 +358,7 @@ First you need to have to find out online runner's VM name from `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_230606                              167
+local  macOS_230921                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -385,7 +391,7 @@ After shutdown, you won't see anymore instance from `vm01` on `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_230606                              167
+local  macOS_230921                              167
 local  vm01                                      130
 local  vm02                                      130
 local  vm02-9f1fc62a-f43c-40f3-98d0-523ed9a67042 130
