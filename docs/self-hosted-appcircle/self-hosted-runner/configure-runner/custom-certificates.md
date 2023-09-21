@@ -72,7 +72,41 @@ NodeJS doesn't use the system CA store so you need to take extra steps.
 
 For self-sigend certificates, you have two options:
 
-1. Add the `NODE_EXTRA_CA_CERTS="rootCA.pem"`  environment variable. It is possible to add multiple certificates in a single file.
+1. Add the `NODE_EXTRA_CA_CERTS="rootCA.pem"` environment variable. It is possible to add multiple certificates in a single file.
 2. Add the `NODE_TLS_REJECT_UNAUTHORIZED=0` environment variable. This completely disables SSL verification (not recommended).
 
 :::
+
+## Adding Certificates Manually
+
+In situations where automatic root certificate detection may not work, the bash script provides a user-friendly manual trust method.
+
+Users can supply the root certificate themselves to the `install_cert.sh` script.
+
+Once imported, your system and some programming languages will trust the certificate, ensuring secure connections to the server.
+
+If the `install_cert.sh` can't auto-detect the root CA, follow the steps below:
+
+- Get your organization's root CA and copy it.
+
+- Go to the `appcircle-runner` and `scripts` folder.
+
+- Create a file named `rootca.crt` and paste the rootca inside it.
+
+```bash
+vi rootca.crt
+```
+
+- To use the `install_cert.sh` in manual mode, you should provide the root CA and a url to test the connection.
+
+```bash
+./install_cert.sh <path to the CA cert> <url to test connection>
+```
+
+- For example, if you saved the root CA in the `rootca.crt` file and want to test the connection to the Appcircle server, see the example below:
+
+```bash
+./install_cert.sh rootca.crt api.appcircle.spacetech.com
+```
+
+- After the script completes successfully, the root certificate will be trusted in your system.
