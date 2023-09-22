@@ -231,7 +231,7 @@ To configure NTP settings:
 
 - The IP address or URL of the NTP server should be known.
 
-- Network access should be allowed from the app runner to the NTP server.
+- Network access should be allowed from the Appcircle runner to the NTP server.
 
 - You will find a script named `configure_ntp.sh` in the `scripts` folder inside the `app-runner` directory.
 
