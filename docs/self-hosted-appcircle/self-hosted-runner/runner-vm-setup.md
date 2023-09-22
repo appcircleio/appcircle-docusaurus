@@ -277,14 +277,6 @@ For more detailed usage, you can check the [Self-signed Certificates Page](./con
 
 #### Configure Appcircle Runner Service
 
-In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
-
-```bash
-cd /Volumes/agent-disk/appcircle-runner
-```
-
-So, the following commands will assume that current working directory is `/Volumes/agent-disk/appcircle-runner`.
-
 ---
 
 **Note:** Runner logs are kept in `$HOME/appcircle-runner` folder.
