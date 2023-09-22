@@ -271,6 +271,10 @@ You can use the helper script named `install_cert.sh` that comes with your runn
 
 - Your organization's root CA cert is now trusted on the OS, Java, Ruby, and Node.js.
 
+:::info
+For more detailed usage, you can check the [Self-signed Certificates Page](./configure-runner/custom-certificates.md)
+:::
+
 #### Configure Appcircle Runner Service
 
 In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
