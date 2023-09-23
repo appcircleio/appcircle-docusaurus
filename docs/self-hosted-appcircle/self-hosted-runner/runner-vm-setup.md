@@ -359,7 +359,7 @@ After login, configuration steps for Appcircle runner service are the same as "r
 
 The only difference should be runner naming. It must be unique. For the second runner, just give a different name. For example, "runner2".
 
-Refer to the [Configure Appcircle Runner Service](#configure-appcircle-runner-service) for detailed Appcircle runner service configuration.
+Refer to the [Configure Runner Service](#3-configure-runner-service) for detailed Appcircle runner service configuration.
 
 After shutdown, we're ready to run instances from `vm01` and `vm02` base VM images.
 

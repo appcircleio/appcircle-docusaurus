@@ -71,3 +71,41 @@ After the script is complete, the operating system, default Java (`11`), Ruby, a
 :::caution
 Please exit from the current terminal session and start a new one for changes to take effect.
 :::
+
+### Adding Certificates Manually
+
+In situations where automatic root certificate detection may not work, the bash script provides a user-friendly manual trust method.
+
+Users can supply the root certificates themselves locally to the tool and import them.
+
+Once imported, the operating system and other tools listed above will trust the certificate, ensuring secure connections to the server, just like getting them from a URL.
+
+If `install_cert.sh` can't auto-detect the root CA from URL, follow the steps below to import it from disk:
+
+- Get your organization's root CA and copy its content.
+
+- Go to the `scripts` directory, which is in the `appcircle-runner` directory.
+
+- Create a file named `rootca.crt` and paste the root CA content inside it.
+
+```bash
+vi rootca.crt
+```
+
+:::info
+Alternatively, you can push the certificate files to the runner disk and use them directly as certificate arguments.
+:::
+
+- To use the `install_cert.sh` in manual mode, you should provide the root CA and a URL to test the connection.
+
+```bash
+./install_cert.sh <path to the CA cert> <url to test connection>
+```
+
+For example, if you saved the root CA in the `rootca.crt` file and want to import and test the connection to the Appcircle server, see the example below:
+
+```bash
+./install_cert.sh rootca.crt api.appcircle.spacetech.com
+```
+
+After the script completes successfully, the certificate will be trusted in your system.
