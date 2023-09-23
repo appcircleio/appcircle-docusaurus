@@ -71,12 +71,29 @@ Create VMs root folder in tart home.
 mkdir $HOME/.tart/vms
 ```
 
+### 3. Configure Power Settings
+
+Configuring power settings on macOS to prevent the system from entering sleep mode is vital when deploying it as an Appcircle runner.
+
+By keeping the system awake, you ensure uninterrupted accessibility to your Appcircle runners, preventing any potential offline cases caused by the system going to sleep.
+
+This continuous availability is critical for running builds, as it guarantees that your builds can find runners online.
+
+We suggest disabling those power settings to make it behave like a server station.
+
+```bash
+sudo pmset -a sleep 0
+sudo pmset -a powernap 0
+sudo pmset -a disksleep 0
+sudo pmset -a displaysleep 0
+```
+
 ## Download MacOS VM
 
 Download macOS VM from Appcircle bucket.
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_230606.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_230921.tar.gz
 ```
 
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
@@ -86,13 +103,13 @@ If you encounter network interruption, just run the same command again. It shoul
 **Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
 
 ```bash
-md5 macOS_230606.tar.gz
+md5 macOS_230921.tar.gz
 ```
 
 After a couple of minutes later you should see the output below.
 
 ```bash
-MD5 (macOS_230606.tar.gz) = 6b6bcb5ecb3a45acd48cbc886b6b3817
+MD5 (macOS_230921.tar.gz) = a86e96952bf538a086d1f35f67c4bc00
 ```
 
 ---
@@ -100,13 +117,13 @@ MD5 (macOS_230606.tar.gz) = 6b6bcb5ecb3a45acd48cbc886b6b3817
 Create folder for VM.
 
 ```bash
-mkdir $HOME/.tart/vms/macOS_230606
+mkdir $HOME/.tart/vms/macOS_230921
 ```
 
 Extract archive into VMs folder.
 
 ```bash
-tar -zxf macOS_230606.tar.gz --directory $HOME/.tart/vms/macOS_230606
+tar -zxf macOS_230921.tar.gz --directory $HOME/.tart/vms/macOS_230921
 ```
 
 It may take a little to complete. Be patient and wait return of command.
@@ -114,15 +131,15 @@ It may take a little to complete. Be patient and wait return of command.
 You can track progress of extraction by monitoring VM folder size.
 
 ```bash
-du -sh $HOME/.tart/vms/macOS_230606
+du -sh $HOME/.tart/vms/macOS_230921
 ```
 
-**Note:** This macOS VM image contains the same tools as in the "default m1 pool" in Appcircle Cloud. The only difference is the bundled Xcode versions. It comes with the Xcode versions below:
+**Note:** This macOS VM image contains the same tools as in the "Default M1 Pool" in Appcircle Cloud. The only difference is the bundled Xcode versions. It comes with the Xcode versions below:
 
+- `15.0.x`
 - `14.3.x`
 - `14.2.x`
 - `14.1.x`
-- `13.4.x`
 
 In order to keep free disk space sufficient for build pipelines, we're packaging the latest and most frequently used Xcode versions. But you can also install other Xcode versions yourself if required.
 
@@ -131,32 +148,46 @@ You can find more information about the build infrastructure in the documents be
 - [iOS Build Infrastructure](../../infrastructure/ios-build-infrastructure.md)
 - [Android Build Infrastructure](../../infrastructure/android-build-infrastructure.md)
 
+:::caution
+We're bumping the VM macOS version according to Xcode requirements. So the latest VM image,`macOS_230921`, includes Ventura `13.5.2` pre-installed and needs Ventura host to run. It doesn't support running on older hosts like Monterey, Big Sur, etc.
+
+If you don't need the latest Xcode and you want to run an older version of the macOS VM image that supports running on a Monterey host, contact us through our support channels.
+:::
+
 ## Create Base Images
+
+### Create Base Runner VMs
 
 Apple's virtualization framework allows us to run up to two macOS VMs on host.
 
-Each runner must register to the self-hosted appcircle server with a unique name and configuration. So we will need two VM base images.
+Each runner must register to the self-hosted Appcircle server with a unique name and configuration. So we will need two VM base images.
 
 When you list VMs with `tart list`, you should see our extracted VM image in list.
 
+In the steps below, we will create 2 base images named vm01 and vm02.
+
+:::tip
+The `vm01` base image is derived from our base image, and subsequently, the `vm02` base image will be created from the `vm01` base image.
+
+This approach eliminates the need to redo all the configurations applied to `vm01` when setting up `vm02`, ensuring efficiency and consistency across both virtual machines.
+:::
+
 ```txt
 Source Name         Size
-local  macOS_230606 167
+local  macOS_230921 167
 ```
 
 Create VM image for runner1.
 
 ```bash
-tart clone macOS_230606 vm01
-```
-
-Create VM image for runner2.
-
-```bash
-tart clone macOS_230606 vm02
+tart clone macOS_230921 vm01
 ```
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
+
+### Configure Base Runner VMs
+
+#### Configure Runner 1
 
 Start runner1 VM image for configuration.
 
@@ -176,13 +207,79 @@ ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 
 ---
 
-In macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
+In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
 
 ```bash
 cd /Volumes/agent-disk/appcircle-runner
 ```
 
 So, the following commands will assume that current working directory is `/Volumes/agent-disk/appcircle-runner`.
+
+##### 1. Configure Base Runner's NTP Settings
+
+MacOS VMs try to update their date and time using the network time protocol (NTP) by default.
+
+If your organization has limited network access for the Appcircle runner machine, the VM may be unable to reach the servers responsible for updating its date and time settings.
+
+In a situation like that, your organization might have an NTP server for internal usage.
+
+You can configure your macOS runner VM to use your organization's own NTP server.
+
+You can use the helper script named `configure_ntp.sh` that comes with the runner package to configure the NTP settings.
+
+To configure NTP settings:
+
+- The IP address or URL of the NTP server should be known.
+
+- Network access should be allowed from the Appcircle runner to the NTP server.
+
+- You will find a script named `configure_ntp.sh` in the `scripts` folder inside the `appcircle-runner` directory.
+
+- Run the script and give the NTP server IP (or URL) as an argument, like the example below:
+
+```bash
+./scripts/configure_ntp.sh "10.10.1.50"
+```
+
+:::caution
+You should change "10.10.1.50" to the NTP server address of your organization in the example above.
+:::
+
+##### 2. Trust The Root Certificates of Your Organization
+
+If the resources you want to connect use a self-signed certificate, you should also trust the root certificate of your organization in your Appcircle runner VMs. These resources can be:
+
+- Git providers (GitLab, Bitbucket, Azure DevOps, etc.)
+- Self-hosted Appcircle server
+- Proxy server for network access
+
+Trusting your organization's root certificate on the OS is crucial.
+
+Because the runner will try to connect to these resources over HTTPS and the SSL certificate will be signed with your organization's root certificate.
+
+Furthermore, if the runner attempts to access external web sites, the requests will most likely be intercepted by the proxy and re-signed with a self-issued certificate that is also signed by the root certificate.
+
+You can use the helper script named `install_cert.sh` that comes with your runner package to configure the certificates.
+
+- You will find a script named `install_cert.sh` in the `scripts` folder inside the `appcircle-runner` directory.
+
+- Run the script like the example below:
+
+```bash
+./scripts/install_cert.sh
+```
+
+- The script will ask you to enter a URL. Please give the URL of the resource that you need to connect to from the runner.
+
+- Hit "enter" and check the results.
+
+- Your organization's root CA certificate is now trusted on the OS, Java, Ruby, and Node.js.
+
+:::info
+For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates.md#adding-certificates) page.
+:::
+
+##### 3. Configure Runner Service
 
 ---
 
@@ -234,6 +331,18 @@ If "runner1" is online, we can shutdown VM since configuration is done with succ
 sudo shutdown -h now
 ```
 
+#### Configure Runner 2
+
+As we configured the runner1 (vm01), we can clone vm01 to vm02.
+
+So we won't need to reconfigure NTP settings, self-signed SSL certificates, or other configurations that we made for vm01.
+
+Create VM image for runner2 from runner1.
+
+```bash
+tart clone vm01 vm02
+```
+
 Start runner2 image for configuration.
 
 ```bash
@@ -246,9 +355,11 @@ SSH login into running macOS VM.
 ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm02)
 ```
 
-After login, configuration steps are the same as "runner1". So, we don't need to repeat same commands again.
+After login, configuration steps for Appcircle runner service are the same as "runner1". So, we don't need to repeat same commands again.
 
 The only difference should be runner naming. It must be unique. For the second runner, just give a different name. For example, "runner2".
+
+Refer to the [Configure Appcircle Runner Service](#configure-appcircle-runner-service) for detailed Appcircle runner service configuration.
 
 After shutdown, we're ready to run instances from `vm01` and `vm02` base VM images.
 
@@ -256,7 +367,7 @@ At this stage your VM list returned by `tart list` should be like below.
 
 ```txt
 Source Name         Size
-local  macOS_230606 167
+local  macOS_230921 167
 local  vm01         130
 local  vm02         130
 ```
@@ -321,7 +432,7 @@ We can see running instances on macOS host with `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_230606                              167
+local  macOS_230921                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -352,7 +463,7 @@ First you need to have to find out online runner's VM name from `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_230606                              167
+local  macOS_230921                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -385,7 +496,7 @@ After shutdown, you won't see anymore instance from `vm01` on `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_230606                              167
+local  macOS_230921                              167
 local  vm01                                      130
 local  vm02                                      130
 local  vm02-9f1fc62a-f43c-40f3-98d0-523ed9a67042 130
@@ -499,11 +610,23 @@ In order to be able to investigate root cause, you should learn the basics of se
 
 This case is related with broken datetime synchronization between runner and server.
 
-Both server and runner should synchronize their times with relevant `ntp` services. Timezone difference is not important. Datetime must be correct in their timezones.
+Both server and runner should synchronize their times with relevant NTP services. Timezone difference is not important. Datetime must be correct in their timezones.
 
 If runner doesn't have network access to an NTP server on the internet, you can also configure it to use your internal NTP server.
 
 For updating macOS base image see [related section](#update-base-images) above.
+
+For configuring NTP settings, see [Configure Base Runner's NTP Settings](#1-configure-base-runners-ntp-settings) section above.
+
+### I am facing "SSL cert is not valid yet" error in our builds
+
+This problem is again related to your macOS VM date and time being out of date.
+
+To fix that, you should sync the VMs' date and time with your organization's NTP server.
+
+For updating macOS base image see [related section](#update-base-images) above.
+
+For configuring NTP settings, see [Configure Base Runner's NTP Settings](#1-configure-base-runners-ntp-settings) section above.
 
 ### Runners are offline and I noticed that macOS host has been reboot
 
@@ -527,14 +650,9 @@ When you install a fresh macOS on a mac device, it comes with predefined power s
 
 So, most probably, your macOS host sleeps when there is no UI interaction, and awakes on SSH login.
 
-We suggest disabling those power settings to make it behave like a server station.
+To do that, please configure your power settings on the host machine.
 
-```bash
-sudo pmset -a sleep 0
-sudo pmset -a powernap 0
-sudo pmset -a disksleep 0
-sudo pmset -a displaysleep 0
-```
+You can re-check the [Configure Power Settings](#3-configure-power-settings) title for power management on the host.
 
 ### I want to make some configurations to macOS base image but need desktop UI for them
 
