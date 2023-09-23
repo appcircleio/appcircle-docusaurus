@@ -17,6 +17,7 @@ While adding root CAs and sub CAs to host, you should consider the following loc
 - `ca-certificates`, `ca-trust` (linux)
 - Ruby's `DEFAULT_CERT_DIR`
 - Java's keystore `cacerts`
+- Node.js `NODE_EXTRA_CA_CERTS`
 
 ## Adding Certificates
 
@@ -26,9 +27,9 @@ If your runner version `1.3.12` or later, you can find it in the `scripts` direc
 
 If your runner version is older than `1.3.12`, then you can follow one of the steps below:
 
-- [Upgrade](../update.md#1-update-runner) the Appcircle runner to 1.3.12 or later
+- [Upgrade](../update.md#1-update-runner) the Appcircle runner to `1.3.12` or later
 
-- If you can't upgrade the Appcircle runner, you can [download the latest](../update.md#1-update-runner) Runner package and get script.
+- If you can't upgrade the Appcircle runner, you can [download the latest](../update.md#1-update-runner) runner package and get the script from there after you extract the archive.
 
 Execute the bash script like below.
 
@@ -65,7 +66,7 @@ Enter a URL or 'q' to quit: q
 %
 ```
 
-After the script completes, the operating system, Java (11), Ruby and NodeJS trust the root cert.
+After the script is complete, the operating system, default Java (`11`), Ruby, and Node.js trust the root certificate.
 
 :::caution
 Please exit from the current terminal session and start a new one for changes to take effect.
