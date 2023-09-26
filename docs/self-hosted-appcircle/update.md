@@ -61,6 +61,16 @@ cd appcircle-server
 
 For other details and troubleshooting, you can refer to [download](./install-server/docker.md#1-download) section in installation docs.
 
+:::info
+
+After the version 3.7.1, the container image versions will be the same version of the Appcircle zip package you downloaded.
+
+If you download an older version of the Appcircle zip package, the container images will also be lower versions.
+
+So as a result, you will downgrade the Appcircle server if you download an older version zip package.
+
+:::
+
 ### 2. Update Packages
 
 Although it's rare, update may have new packages or package updates. Those are the tools that self-hosted Appcircle depends on. So they should be kept up-to-date same as Appcircle server.
