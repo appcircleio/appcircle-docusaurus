@@ -35,7 +35,7 @@ When you create an account, an individual organization for you is created by def
 
 In the left column under the organization management screen, you can change your organization name, which is a descriptive name, and you can change your unique organization ID, which is used for identification purposes for that specific organization.
 
-To update these details, simply enter the new values and press _Update_.
+To update these details, simply enter the new values and press _Update_.S
 
 ![](<https://cdn.appcircle.io/docs/assets/image (36).png>)
 
