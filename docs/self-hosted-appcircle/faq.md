@@ -1,0 +1,84 @@
+---
+title: Troubleshooting & FAQ
+metaTitle: Troubleshooting & FAQ
+metaDescription: Troubleshooting & FAQ
+sidebar_position: 4
+---
+
+# Overview
+
+This section is designed to help you quickly find answers to common questions and provide you with a better understanding of Appcircle server and Appcircle Runner.
+
+## Appcircle Server FaQ
+
+### Can I change the password of initial user?
+
+- For now, you shouldn't change the initial user password you defined in the `global.yaml`.
+
+### Does Appcircle support LDAP Login?
+
+- Appcircle supports LDAP login on the Appcircle tester page and the Appcircle enterprise store page.
+- Appcircle doesn't support LDAP login on the Appcircle dashboard, where you login to create build profiles and other developer-related jobs.
+
+### We can't send mails to outside domains.
+
+- Lets say your company's domain is `spacetech.com`. And you can send mail from Appcircle to `user@spacetech.com`, but you can't send mail to `user@gmail.com`. You should check SMTP configuration and allow SMTP to send mail to outside domains.
+
+### While installing Appcircle server with Podman, `minio` containers can't get healthy status.
+
+- The podman network backend should be `netavark`. You can check the current settings with the command below:
+
+```bash
+podman info | grep -i networkBackend
+```
+
+- There should not be any proxy settings on the Appcircle server. You should configure proxy settings according to the [Proxy Configuration](./configure-server/proxy-configuration.md) document page.
+
+### We are facing `manifest not found` error when we run `up` command.
+
+- If you are using Nexus registry and are facing `manifest not found` error, this is normal. Nexus proxy has a bug while pulling multiple container images. You should pull images one by one as a workaround.
+
+- To pull images one by one, you can edit the [script here](./install-server/podman.md#mirroring-appcircle-images) and create a new shell script. Then pull images one by one with this script. So you won't face `manifest not found` error any more.
+
+### Where should we download the zip package while we are updating?
+
+Download the zip package of the appcircle server and extract it to the same folder as the already existing Appcircle server folder. Your data and configuration will be saved while updating.
+
+### How to change docker or podman's data location?
+
+- If your free space is `/app` instead of `/`, you should change the data location of docker or podman.
+
+- For more details for docker data location changing, you can refer to the [Change the Docker Data Location](./install-server/docker.md#change-the-docker-data-location) title.
+
+- For more details for podman data location changing, you can refer to the [Change the Docker Data Location](./install-server/podman.md#change-the-podman-data-location) title.
+
+### I'm offline on the Appcircle dashboard on my browser.
+
+- You should trust the Appcircle's or your organizations root CA certificate on your computer.
+
+## Appcircle Runner FaQ
+
+### We are facing self signed certificate error on builds.
+
+- The certificate of your organization should be trusted on the Appcircle runner virtual machines.
+- You refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates.md) page for more details.
+
+### We are facing ssl certificated is not valid yet error on builds.
+
+- The runner VMs cannot connect to the servers to update their date and time due to network restrictions.
+
+- You should configure ntp server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](./self-hosted-runner/runner-vm-setup.md#update-base-images) section.
+
+- For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup.md#1-configure-base-runners-ntp-settings) section and follow the steps.
+
+### We can't register Appcircle runner to the Appcircle server
+
+- First, you should check if your Appcircle runner can access to the Appcircle server. You can run the command below to test this. You should change the example Appcircle URL for yourself.
+
+```bash
+curl -v https://api.appcircle.spacetech.com
+```
+
+- You should check if there is a self-signed SSL problem. You can refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates.md) page to trust the root CA certificate of your organization.
+
+- If you already trusted the root CA cert, you should check the Appcircle server's certificate. If it is too long, like 5 years, it should be trusted from the graphical user interface. You should open the `keychain Access` application from gui and add the Appcircle server's certificate. After that, you should click the certificate and select `Always trust`.
