@@ -86,7 +86,7 @@ You can create an environment variable and enter the key value for the Personal 
 
 ![](<https://cdn.appcircle.io/docs/assets/variable-group-SSH-2.png>)
 
-![](<https://cdn.appcircle.io/docs/assets/vg-repo-pat.png>)
+![](<https://cdn.appcircle.io/docs/assets/repocon-azure.png>)
 
 :::info
 If you are going to use an SSH private key, you need to upload it as a file.
@@ -94,7 +94,7 @@ If you are going to use an SSH private key, you need to upload it as a file.
 
 ![](<https://cdn.appcircle.io/docs/assets/variable-group-ssh-main.png>)
 
-![](<https://cdn.appcircle.io/docs/assets/variable-group-ssh-key-3.png>)
+![](<https://cdn.appcircle.io/docs/assets/sshconn-var.png>)
 
 :::caution
 There are two use cases for the variable group naming here.
