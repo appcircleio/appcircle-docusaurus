@@ -63,9 +63,9 @@ For other details and troubleshooting, you can refer to [download](./install-ser
 
 :::info
 
-After the version 3.7.1, the container image versions will be the same version of the Appcircle zip package you downloaded.
+After version `3.7.1`, the container image versions, pulled from the Appcircle artifact registry, will be the same version of the Appcircle zip package you downloaded.
 
-If you download an older version of the Appcircle zip package, the container images will also be lower versions.
+In this case, if you download an older version of the Appcircle zip package, the container images will also be older versions.
 
 So as a result, you will downgrade the Appcircle server if you download an older version zip package.
 
