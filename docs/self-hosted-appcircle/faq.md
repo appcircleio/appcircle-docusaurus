@@ -7,7 +7,7 @@ sidebar_position: 4
 
 # Overview
 
-This section is designed to help you quickly find answers to common questions and provide you with a better understanding of Appcircle server and Appcircle Runner.
+This section is designed to help you quickly find answers to common questions and provide you with a better understanding of Appcircle server and runner.
 
 ## Appcircle Server FAQ
 
@@ -25,7 +25,7 @@ Appcircle doesn't support LDAP login on the Appcircle dashboard, where you login
 
 Let's say your company's domain is `spacetech.com`. And you can send mail from Appcircle to `user@spacetech.com`, but you can't send mail to `user@gmail.com`.
 
-You should check the SMTP configuration and allow SMTP to send mail to outside domains.
+You should check the SMTP configuration and allow SMTP server to send mail to outside domains.
 
 ### While installing the Appcircle server with Podman, `minio` containers can't get healthy status.
 
