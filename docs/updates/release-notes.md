@@ -11,6 +11,47 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.8.0 - 2023-10-02 - Multiple Git Providers Support, Config Clone, Pool Base XCode Version Selection
+
+### 🆕 New Feature
+
+- The user can add multiple Git providers and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/> <SelfHostedBadge/>
+- The XCode list of agents integrated into the custom pool can be displayed dynamically in the build configuration, and the user can choose which XCode to build with.  <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+
+- You can now quickly copy a configuration. <CloudBadge/> <SelfHostedBadge/>
+- Wait times in Queue Waiting Reports are now shown in minutes instead of seconds. <CloudBadge/> <SelfHostedBadge/>
+- If the user selects any step that has the "Continue even if this step fail" option and gets an exception during the build, this build's status is displayed as "Warning". <CloudBadge/> <SelfHostedBadge/>
+- For multiple Azure organizations, we used to require all organizations oAuth and 3rd Party policies to be enabled; we only get allowed organizations repositories from now on. If you are able to list repositories from different organizations, make sure these settings are enabled in each organization. <CloudBadge/> <SelfHostedBadge/>
+- Improved Suborganization Experience in the Enterprise App Store by hiding the "Customize" and "Settings" sections, providing a more focused interface for suborganization administrators. <CloudBadge/> <SelfHostedBadge/>
+- The "default M1 pool" has the latest Xcode 15.0 release available on runners. Please test your workflows extensively. <SelfHostedBadge/>
+- The self-hosted Appcircle server now supports proxies with a self-signed certificate. <SelfHostedBadge/>
+- Users can more easily switch to the self-hosted version of their choice. <SelfHostedBadge/>
+- Added the NTP configuration helper tool to the self-hosted runner package. <SelfHostedBadge/>
+- Added self-signed certificate management for Node.JS to the certificate installer tool. <SelfHostedBadge/>
+- Now, in the event of an error or warning in the Swiftlint output, you have the option to display a summary of the report as a comment on the corresponding pull request in the Azure repository. If an error occurs, it will be marked as a failed pull request, and you can access the swiftlin_result.txt output and build logs through the provided link in the comment. <CloudBadge> <SelfHostedBadge/>
+
+### 🐞 Fixed
+
+- Corrected "Compilation Time" to "Waiting Time" in the Queue Waiting Report header. <CloudBadge> <SelfHostedBadge/>
+- The role management error in the "Apple Devices" section in the Testing Distribution module has been fixed. <CloudBadge> <SelfHostedBadge/>
+- Fixed the issue of not being able to distribute to the selected configuration in the Testing Distribution module. <CloudBadge> <SelfHostedBadge/>
+- Fixed the issue where the branch list could not be updated when the user permission for the Build module was set to "Read Only Access”. <CloudBadge> <SelfHostedBadge/>
+- Fixed the issue where this build does not appear in the list when the build starts. <CloudBadge> <SelfHostedBadge/>
+- Users without permission were sending requests to the service when browsing pages. This error has been fixed. <CloudBadge> <SelfHostedBadge/>
+- In the Store Submit module, the "Huawei App ID" field in the Huawei AppGallery section was disabled. This error has been fixed. <CloudBadge> <SelfHostedBadge/>
+- Flickering on the screen due to line overlap in the build module has been prevented. <CloudBadge> <SelfHostedBadge/>
+- When an invalid email was entered in the email integration module, other options were reset. This problem has been fixed.<CloudBadge> <SelfHostedBadge/>
+- The wrong dialog modal was opening in the "never deleted" section for the deletion of an artifact. This problem has been fixed, and an extra description has been added. <CloudBadge> <SelfHostedBadge/>
+- When there was a workflow of the same name, there was a confusion of names. This error has been fixed. <CloudBadge> <SelfHostedBadge/>
+- An error message is now displayed to the user when an invalid workflow name is entered. <CloudBadge> <SelfHostedBadge/>
+- Fixed the data refresh error when the version is deleted in the "Apple Devices" section of the Testing Distribution module. <CloudBadge> <SelfHostedBadge/>
+- Fixed the page crash problem on the trigger side. <CloudBadge> <SelfHostedBadge/>
+- Added a toast message that the operation to download the deleted configuration in the admin panel is invalid. <CloudBadge> <SelfHostedBadge/>
+- Selection adhoc auto device register on distribution profile settings state issue has been fixed. <CloudBadge> <SelfHostedBadge/>
+
+
 ## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Reports
 
 ### 🆕 New Feature
