@@ -137,9 +137,34 @@ Each workflow step has its own set of configuration options, which can be set by
 The first three items are common for all steps and they are set individually for each step:
 
 - **Step Execution Active:** To enable/disable the step execution without removing it from the workflow
-- **Continue with the next step even if this step fails:** If a step is optional or if its result should not cause a build failure, you can select this option to continue the workflow in case of the failure of this specific step. In the default workflows, this option is turned on for certain steps.
-- **Workflow Step Version: **You can select a specific version of a step with which to execute your build. If you select a version with an asterisk (\*), you will receive the minor updates to the workflow step automatically. The major versions may include added or removed input fields and manual version selection is required for major version updates.;
+
+- **Continue with the next step even if this step fails:** If a step is optional or its result should not cause a build error, you can select this option to continue the workflow if this particular step fails. In default workflows, this option is on for specific steps. And since this step is active, the build status will appear as "Warning" when other steps in the build are successful. (Detailed explanation about this step is given at the bottom).
+
+- **Workflow Step Version:** You can select a specific version of a step with which to execute your build. If you select a version with an asterisk (\*), you will receive the minor updates to the workflow step automatically. The major versions may include added or removed input fields and manual version selection is required for major version updates.;
 
 The items in the "Inputs" section are specific to that step. The reserved environment variables are assigned to these fields by default and the values of these variables are set in the build configuration.
 
 ![](<https://cdn.appcircle.io/docs/assets/image (187).png>)
+
+#### Build Warning Status
+
+When we start a build, if we have activated the "Continue with the next step even if this step fails" setting for a component we use in the workflow and this step fails during the build, Appcircle will show the build status as "Warning" if the build is completed successfully for other steps.
+
+To activate this setting, we first add a failed component to the workflow. For example, if we write a script that will fail in Custom Script,
+
+![](<https://cdn.appcircle.io/docs/assets/status-warning-1.png>)
+
+![](<https://cdn.appcircle.io/docs/assets/status-warning-2.png>)
+
+For this step, we activate the "Continue with the next step even if this step fails" feature.
+
+We are starting a build.
+
+![](<https://cdn.appcircle.io/docs/assets/status-warning-3.png>)
+
+And the build status will appear as "Warning.
+
+![](<https://cdn.appcircle.io/docs/assets/status-warning-4.png>)
+
+
+
