@@ -49,6 +49,10 @@ And another one is created identical to the configuration we want to clone.
 The naming here is created by adding "_copy_1" to the end of the main configuration name. For each configuration to be copied from now on, the naming will be incremented as "_copy_ 1-2-3" in the form of "_copy_ 1-2-3... " incrementally.
 :::
 
+:::caution
+Although the system gives a unique name for the copied configuration by default, you can give this configuration a new name.
+:::
+
 
 ### Project details configuration
 

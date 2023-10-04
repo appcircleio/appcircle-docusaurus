@@ -138,7 +138,7 @@ The first three items are common for all steps and they are set individually for
 
 - **Step Execution Active:** To enable/disable the step execution without removing it from the workflow
 
-- **Continue with the next step even if this step fails:** If a step is optional or its result should not cause a build error, you can select this option to continue the workflow if this particular step fails. In default workflows, this option is on for specific steps. And since this step is active, the build status will appear as "Warning" when other steps in the build are successful. (Detailed explanation about this step is given at the bottom).
+- **Continue with the next step even if this step fails:** If a step is optional or its result should not cause a build error, you can select this option to continue the workflow if this particular step fails. In default workflows, this option is on for specific steps. And since this step is active, the build status will appear as "Warning" when other steps in the build are successful. (Detailed explanation about this step is given in the Appcircle [Warning Status documentation.](#build-warning-status)).
 
 - **Workflow Step Version:** You can select a specific version of a step with which to execute your build. If you select a version with an asterisk (\*), you will receive the minor updates to the workflow step automatically. The major versions may include added or removed input fields and manual version selection is required for major version updates.;
 

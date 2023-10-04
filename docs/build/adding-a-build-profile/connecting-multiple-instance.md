@@ -1,22 +1,26 @@
 ---
 title: 'Connecting to Multiple Instance'
-metaTitle: 'Multiple Instances Using Git Providers (Bitbucket, Gitlab, Azure)'
-metaDescription: 'Multiple Instances Using Git Providers (Bitbucket, Gitlab, Azure)'
+metaTitle: 'Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure)'
+metaDescription: 'Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure DevOps)'
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
 
-### Multiple Instances Using Git Providers (Bitbucket, Gitlab, Azure)
+### Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure DevOps)
 
-Multiple connection features have been introduced for connections made with PAT (Personnel Access Token) on Bitbucket, Azure, or Gitlab. Thus, it is possible to add Bitbucket, Azure, or Gitlab servers located in different environments by a single user.
+Multiple connection features have been introduced for connections made with PAT (Personnel Access Token) on Bitbucket, Azure DevOps, or GitLab. Thus, it is possible to add Bitbucket, Azure DevOps, or GitLab servers located in different environments by a single user.
 
-For example, the same user can connect to two different instances, such as dev1.azure.campaignname.com and
-We can also give it to dev2.azure.campaignname.com.
+For example, the same user can connect to two different instances, such as dev1.azure.companyname.com and
+We can also give it to dev2.azure.companyname.com.
 
-Similar examples are dev1.gitlab.campaignname.com and dev2.gitlab.campaignname.com or dev.bitbucket.campaignname.com and prod.bitbucket.campaignname.com.
+Similar examples are dev1.gitlab.companyname.com and dev2.gitlab.companyname.com or dev.bitbucket.companyname.com and prod.bitbucket.companyname.com.
 
 :::caution
 In order to use this feature, it is necessary to create a PAT on the provider.
+:::
+
+:::info
+To add a git provider, PAT support is sufficient. There is no distinction between self-hosted and cloud-based.
 :::
 
 If we give a connection example for Azure,
@@ -31,7 +35,11 @@ Then click on the "Connect to an Azure DevOps Server" button in the window that 
 
 In the next window, fill in the relevant fields and click on the "Connect" button.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-m-repo-2.png>)
+![](<https://cdn.appcircle.io/docs/assets/azure-m-new.png>)
+
+After the connection, the connected instances will appear on the new repository adding screen as follows:
+
+![](<https://cdn.appcircle.io/docs/assets/azure-m-last.png>)
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

@@ -19,20 +19,11 @@ https://github.com/appcircleio/appcircle-xcode-select-component
 
 ### Pool-Based Xcode Version Selection
 
-When self-hosted agents connect, they provide the build platform information they can receive builds for, along with any available Xcode versions. In the self-hosted collection, this information is updated and maintained. The goal is to allow the selection of an Xcode version specific to the agent during the build process instead of using the default Xcode.
+A version other than the Xcode versions on the configuration page should not be entered manually as the Xcode select workflow argument.
+Because the Xcode versions on the configuration page are the versions installed on Mac runners.
+Entering an unavailable Xcode version may cause the build to fail.
 
-If we are working with multiple machines on the iOS side, we can now define Xcode versions specific to the agent pool.
-
-Accordingly, you can make specific pool selections and set your configurations.
-
-
-<b>Example Macpool 1:</b>
-
-![](<https://cdn.appcircle.io/docs/assets/macpool1.png>)
-
-<b> Example Macpool 2:</b>
-
-![](<https://cdn.appcircle.io/docs/assets/macpool2.png>)
+You can review the documentation for detailed information about [Xcode version selection.](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools.md/#pool-based-xcode-version-selection)
 
 ## Cocoapods Install
 
