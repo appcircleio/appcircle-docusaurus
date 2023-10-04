@@ -29,7 +29,7 @@ First of all, we select the relevant Git provider from the add new repository sc
 
 ![](<https://cdn.appcircle.io/docs/assets/azure-m-repo.png>)
 
-Then click on the "Connect to an Azure DevOps Server" button in the window that opens;
+Then click on the "Connect to an Azure DevOps Server" button in the window that opens.
 
 ![](<https://cdn.appcircle.io/docs/assets/azure-m-repo-1.png>)
 
@@ -37,7 +37,7 @@ In the next window, fill in the relevant fields and click on the "Connect" butto
 
 ![](<https://cdn.appcircle.io/docs/assets/azure-m-new.png>)
 
-After the connection, the connected instances will appear on the new repository adding screen as follows:
+After the connection, the connected instances will appear on the new repository adding screen as follows.
 
 ![](<https://cdn.appcircle.io/docs/assets/azure-m-last.png>)
 
