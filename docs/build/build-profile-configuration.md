@@ -27,6 +27,31 @@ You may create **Distribution** configuration to send your app to public stores 
 
 ![](<https://cdn.appcircle.io/docs/assets/create-build-configuration2.png>)
 
+### Clone Configuration
+
+If you have a configuration that you use constantly or want to quickly copy a configuration, you can use the "Configuration Clone" feature.
+
+The configuration clone feature will speed up your projects where you use many configurations.
+
+First of all, we open the configuration process by clicking the edit button.
+
+![](<https://cdn.appcircle.io/docs/assets/clone-1.png>)
+
+Then click on the three dots next to the configuration we want to copy, and click on the "Clone" button in the mini window that opens.
+
+![](<https://cdn.appcircle.io/docs/assets/clone-2.png>)
+
+And another one is created identical to the configuration we want to clone. 
+
+![](<https://cdn.appcircle.io/docs/assets/clone-3.png>)
+
+:::info
+The naming here is created by adding "_copy_1" to the end of the main configuration name. For each configuration to be copied from now on, the name will be incremented to be unique.
+:::
+
+:::tip
+Although the system gives a unique name for the copied configuration by default, you can give this configuration a new name using "Rename".
+:::
 
 ### Project details configuration
 

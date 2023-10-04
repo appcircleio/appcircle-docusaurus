@@ -2,6 +2,7 @@
 title: 'Connecting to Private Repository via SSH'
 metaTitle: 'Connecting to Private Repository via SSH'
 metaDescription: 'Connecting to Private Repository via SSH'
+sidebar_position: 6
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

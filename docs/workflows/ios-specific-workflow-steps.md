@@ -17,6 +17,16 @@ This step is used to specify the Xcode version to be used during the build proce
 
 https://github.com/appcircleio/appcircle-xcode-select-component
 
+:::info
+### Pool-Based Xcode Version Selection
+
+A version other than the Xcode versions on the configuration page should not be entered manually as the Xcode select workflow argument.
+Because the Xcode versions on the configuration page are the versions installed on runners.
+Entering an unavailable Xcode version may cause the build to fail.
+
+You can review the documentation for detailed information about the Xcode version selection [here](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools.md/#pool-based-xcode-version-selection).
+:::
+
 ## Cocoapods Install
 
 Runs the Cocoapods install command for dependency management.

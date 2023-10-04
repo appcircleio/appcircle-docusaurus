@@ -2,7 +2,7 @@
 title: Connecting to Public Repository
 metaTitle: Connecting to Public Repository
 metaDescription: Connecting to Public Repository
-sidebar_position: 1
+sidebar_position: 5
 ---
 
 # Connecting to Public Repository
