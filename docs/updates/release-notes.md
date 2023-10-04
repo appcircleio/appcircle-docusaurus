@@ -15,14 +15,14 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Feature
 
-- The user can add multiple Git providers and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/><SelfHostedBadge/>
-- The XCode list of agents integrated into the custom pool can be displayed dynamically in the build configuration, and the user can choose which XCode to build with. <CloudBadge/> <SelfHostedBadge/>
+- The user can add [multiple Git providers](../build/adding-a-build-profile/connecting-multiple-instance.md) and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/><SelfHostedBadge/>
+- The [Xcode version](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection) list of agents integrated into the custom pool can be displayed dynamically in the build configuration, and the user can choose which Xcode version to build with. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
-- You can now quickly copy a configuration <CloudBadge/> <SelfHostedBadge/>
+- You can now quickly [copy a configuration](../build/build-profile-configuration#clone-configuration) <CloudBadge/> <SelfHostedBadge/>
 - Wait times in Queue Waiting Reports are now shown in minutes instead of seconds. <CloudBadge/> <SelfHostedBadge/>
-- If the user selects any step that has the "Continue even if this step fail" option and gets an exception during the build, this build's status is displayed as "Warning". <CloudBadge/> <SelfHostedBadge/>
+- If the user selects any step that has the "Continue even if this step fail" option and gets an exception during the build, this build's status is displayed as ["Warning"](../workflows/why-to-use-workflows/#build-warning-status). <CloudBadge/> <SelfHostedBadge/>
 - For multiple [Azure](/build/adding-a-build-profile/connecting-to-azure) organizations, we used to require all organizations oAuth and 3rd Party policies to be enabled; we only get allowed organizations repositories from now on. If you are able to list repositories from different organizations, make sure these settings are enabled in each organization. <CloudBadge/> <SelfHostedBadge/>
 - Improved Suborganization Experience in the Enterprise App Store by hiding the "Customize" and "Settings" sections, providing a more focused interface for suborganization administrators. <CloudBadge/> <SelfHostedBadge/>
 - The "default M1 pool" has the latest [Xcode 15.0](../build/building-ios-applications.md) release available on runners. <SelfHostedBadge/>
