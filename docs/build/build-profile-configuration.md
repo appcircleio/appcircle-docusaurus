@@ -46,13 +46,12 @@ And another one is created identical to the configuration we want to clone.
 ![](<https://cdn.appcircle.io/docs/assets/clone-3.png>)
 
 :::info
-The naming here is created by adding "_copy_1" to the end of the main configuration name. For each configuration to be copied from now on, the naming will be incremented as "_copy_ 1-2-3" in the form of "_copy_ 1-2-3... " incrementally.
+The naming here is created by adding "_copy_1" to the end of the main configuration name. For each configuration to be copied from now on, the name will be incremented to be unique.
 :::
 
-:::caution
-Although the system gives a unique name for the copied configuration by default, you can give this configuration a new name.
+:::tip
+Although the system gives a unique name for the copied configuration by default, you can give this configuration a new name using "Rename".
 :::
-
 
 ### Project details configuration
 
