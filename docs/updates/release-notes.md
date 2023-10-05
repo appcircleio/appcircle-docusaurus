@@ -15,7 +15,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Feature
 
-- The user can add [multiple Git providers](../build/adding-a-build-profile/connecting-multiple-instance.md) and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/><SelfHostedBadge/>
+- The user can add [multiple Git providers](../build/adding-a-build-profile/connecting-multiple-instance) and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/><SelfHostedBadge/>
 - The [Xcode version](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection) list of agents integrated into the custom pool can be displayed dynamically in the build configuration, and the user can choose which Xcode version to build with. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
@@ -44,7 +44,7 @@ request, and you can access the swiftlin_result.txt output and build logs throug
 - Users without permission were sending requests to the service when browsing pages. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - In the Store Submit module, the "Huawei App ID" field in the [Huawei AppGallery](../store-submit/huawei-app-gallery.md) section was disabled. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Flickering on the screen due to line overlap in the build module has been prevented. <CloudBadge/> <SelfHostedBadge/>
-- When an invalid email was entered in the [email integration](../account/email-connection.md) module, other options were reset. This problem has been fixed.<CloudBadge/> <SelfHostedBadge/>
+- When an invalid email was entered in the [email integration](../account/email-connection) module, other options were reset. This problem has been fixed.<CloudBadge/> <SelfHostedBadge/>
 - The wrong dialog modal was opening in the "never deleted" section for the deletion of an artifact. This problem has been fixed, and an extra description has been added. <CloudBadge/> <SelfHostedBadge/>
 - When there was a workflow of the same name, there was a confusion of names. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - An error message is now displayed to the user when an invalid workflow name is entered. <CloudBadge/> <SelfHostedBadge/>
