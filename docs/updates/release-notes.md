@@ -15,7 +15,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Feature
 
-- The user can add [multiple Git providers](../build/adding-a-build-profile/connecting-multiple-instance) and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/> <SelfHostedBadge/>
+- The user can add [multiple instances](../build/adding-a-build-profile/connecting-multiple-instance) of the Git providers and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/> <SelfHostedBadge/>
 - The [Xcode version](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection) list of runners is integrated into the custom pool selection. It can be displayed dynamically in the build configuration, and the user can choose which Xcode version to build with. <CloudBadge/> <SelfHostedBadge/>
 - You can now quickly [copy a configuration](../build/build-profile-configuration#clone-configuration) and create a new one from that configuration. <CloudBadge/> <SelfHostedBadge/>
 
