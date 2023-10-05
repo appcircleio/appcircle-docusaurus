@@ -34,22 +34,22 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🐞 Fixed
 
-- Corrected "Compilation Time" to "Waiting Time" in the Queue Waiting Report header. <CloudBadge/> <SelfHostedBadge/>
-- The role management error in the "Apple Devices" section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the "Waiting Duration" title in the Queue Waiting Reports header. <SelfHostedBadge/>
+- The role management error in the [Apple Devices](../distribute/apple-devices.md) section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue of not being able to distribute to the selected configuration in the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md) module. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the issue where the branch list could not be updated when the user [permission](../account/my-organization.md) for the Build module was set to "Read Only Access". <CloudBadge/> <SelfHostedBadge/>
-- Fixed the issue where this build does not appear in the list when the build starts. <CloudBadge/> <SelfHostedBadge/>
-- Users without permission were sending requests to the service when browsing pages. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
-- In the Store Submit module, the "Huawei App ID" field in the [Huawei AppGallery](../store-submit/huawei-app-gallery.md) section was disabled. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
-- Flickering on the screen due to line overlap in the build module has been prevented. <CloudBadge/> <SelfHostedBadge/>
-- When an invalid email was entered in the [email integration](../account/email-connection) module, other options were reset. This problem has been fixed.<CloudBadge/> <SelfHostedBadge/>
-- The wrong dialog modal was opening in the "never deleted" section for the deletion of an artifact. This problem has been fixed, and an extra description has been added. <CloudBadge/> <SelfHostedBadge/>
-- When there was a workflow of the same name, there was a confusion of names. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the issue where the branch list could not be refreshed when the user [permission](../account/my-organization.md) for the Build module was set to "Read Only Access". <CloudBadge/> <SelfHostedBadge/>
+- Fixed the issue where the build does not appear in the list when the build starts. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the bug that users without permission were sending requests to the service when browsing pages. <CloudBadge/> <SelfHostedBadge/>
+- In the Store Submit module, the "Huawei App ID" field in the [Huawei AppGallery](../store-submit/huawei-app-gallery.md) section was disabled. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Flickering on the screen due to line overlap in the build module has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- When an invalid email was entered in the [email integration](../account/email-connection) module, other options were reset. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The wrong dialog modal was opening in the "never delete" option selected for the deletion of an artifact. It's been fixed, and an extra description has been added. <CloudBadge/> <SelfHostedBadge/>
+- When there was a workflow step of the same name, there was a confusion of names. It's has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - An error message is now displayed to the user when an invalid workflow name is entered. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the data refresh error when the version is deleted in the "Apple Devices" section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the page crash problem on the [trigger](../build/build-manually-or-with-triggers.md) side. <CloudBadge/> <SelfHostedBadge/>
-- Added a toast message that the operation to download the deleted configuration in the admin panel is invalid. <CloudBadge/> <SelfHostedBadge/>
-- Selection adhoc auto device register on distribution profile settings state issue has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the data refresh error when the version is deleted in the [Apple Devices](../distribute/apple-devices.md) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the page crash problem when the user clicks on the [Triggers](../build/build-manually-or-with-triggers.md). <CloudBadge/> <SelfHostedBadge/>
+- Added a toast message that is shown when the user tries to download the deleted configuration in the admin panel. <CloudBadge/> <SelfHostedBadge/>
+- The case that selection of the adhoc auto device register on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Reports
 
