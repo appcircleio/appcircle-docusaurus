@@ -49,7 +49,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Fixed the data refresh error when the version is deleted in the [Apple Devices](../distribute/apple-devices.md) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the page crash problem when the user clicks on the [Triggers](../build/build-manually-or-with-triggers.md). <CloudBadge/> <SelfHostedBadge/>
 - Added a toast message that is shown when the user tries to download the deleted configuration in the admin panel. <CloudBadge/> <SelfHostedBadge/>
-- The case that selection of the adhoc auto device register on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The case that selection of the adhoc [auto device register](../distribute/apple-devices.md#automatically-adding-registered-devices-to-the-provisioning-profile) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Reports
 
