@@ -11,35 +11,33 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
-## 3.8.0 - 2023-10-02 - Multiple Git Providers Support, Config Clone, Pool Base XCode Version Selection
+## 3.8.0 - 2023-10-02 - Multiple Git Providers Support, Config Clone, Pool-Based Xcode Version Selection
 
 ### 🆕 New Feature
 
-- The user can add [multiple Git providers](../build/adding-a-build-profile/connecting-multiple-instance) and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/><SelfHostedBadge/>
-- The [Xcode version](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection) list of agents integrated into the custom pool can be displayed dynamically in the build configuration, and the user can choose which Xcode version to build with. <CloudBadge/> <SelfHostedBadge/>
+- The user can add [multiple Git providers](../build/adding-a-build-profile/connecting-multiple-instance) and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/> <SelfHostedBadge/>
+- The [Xcode version](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection) list of runners is integrated into the custom pool selection. It can be displayed dynamically in the build configuration, and the user can choose which Xcode version to build with. <CloudBadge/> <SelfHostedBadge/>
+- You can now quickly [copy a configuration](../build/build-profile-configuration#clone-configuration) and create a new one from that configuration. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
-- You can now quickly [copy a configuration](../build/build-profile-configuration#clone-configuration) <CloudBadge/> <SelfHostedBadge/>
-- Wait times in Queue Waiting Reports are now shown in minutes instead of seconds. <CloudBadge/> <SelfHostedBadge/>
-- If the user selects any step that has the "Continue even if this step fail" option and gets an exception during the build, this build's status is displayed as ["Warning"](../workflows/why-to-use-workflows/#build-warning-status). <CloudBadge/> <SelfHostedBadge/>
-- For multiple [Azure](/build/adding-a-build-profile/connecting-to-azure) organizations, we used to require all organizations oAuth and 3rd Party policies to be enabled; we only get allowed organizations repositories from now on. If you are able to list repositories from different organizations, make sure these settings are enabled in each organization. <CloudBadge/> <SelfHostedBadge/>
-- Improved Suborganization Experience in the Enterprise App Store by hiding the "Customize" and "Settings" sections, providing a more focused interface for suborganization administrators. <CloudBadge/> <SelfHostedBadge/>
-- The "default M1 pool" has the latest [Xcode 15.0](../build/building-ios-applications.md) release available on runners. <SelfHostedBadge/>
-- The self-hosted Appcircle server now supports proxies with a [self-signed certificate.](../self-hosted-appcircle/self-hosted-runner/installation.md) <SelfHostedBadge/>
-- Users can more easily switch to the self-hosted version of their choice. <SelfHostedBadge/>
-- Added the NTP configuration helper tool to the self-hosted runner package. <SelfHostedBadge/>
-- Added self-signed certificate management for Node.JS to the certificate installer tool. <SelfHostedBadge/>
-- Now, in the event of an error or warning in the [Swiftlint](../workflows/ios-specific-workflow-steps.md) output, you have the option to display a summary of the report as a
-comment on the corresponding pull request in the Azure repository. If an error occurs, it will be marked as a failed pull 
-request, and you can access the swiftlin_result.txt output and build logs through the provided link in the comment. <CloudBadge/> <SelfHostedBadge/>
+- Waiting times in Queue Waiting Reports are now shown in minutes instead of seconds. <SelfHostedBadge/>
+- If the user selects any step that has the "Continue with the next step even if this step fails" option and gets a failure during the build on that step, this build's status is displayed as [Warning](../workflows/why-to-use-workflows/#build-warning-status). <CloudBadge/> <SelfHostedBadge/>
+- Fixed the case that users belonging to more than one organization on [Azure DevOps](/build/adding-a-build-profile/connecting-to-azure) could not bind repository. <CloudBadge/> <SelfHostedBadge/>
+- Improved suborganization experience in the Enterprise App Store by hiding the "Customize" and "Settings" sections, providing a more focused interface for suborganization administrators. <CloudBadge/> <SelfHostedBadge/>
+- The latest stable version of [Xcode 15.0](../build/building-ios-applications.md) is available on both cloud and self-hosted runners. <SelfHostedBadge/> <CloudBadge/>
+- The self-hosted Appcircle server now supports proxies with a [self-signed certificate.](../self-hosted-appcircle/configure-server/proxy-configuration.md) <SelfHostedBadge/>
+- Users can more easily switch to the self-hosted version of their choice by only [downloading](../self-hosted-appcircle/update.md#1-download-latest) the server package. <SelfHostedBadge/>
+- Added the [NTP configuration](../self-hosted-appcircle/self-hosted-runner/runner-vm-setup.md#1-configure-base-runners-ntp-settings) helper tool to the self-hosted runner package. <SelfHostedBadge/>
+- Added self-signed certificate management for Node.JS to the [certificate installer](../self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates.md#adding-certificates) tool. <SelfHostedBadge/>
+- Now you can analyze your [SwiftLint](../integrations/azure-bot-for-swiftlint-and-detekt.md#azure-devops-bot-for-swiftlint) and [Detekt](../integrations/azure-bot-for-swiftlint-and-detekt.md#azure-devops-bot-for-detekt) reports and post the report details under the opened PR on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
 - Corrected "Compilation Time" to "Waiting Time" in the Queue Waiting Report header. <CloudBadge/> <SelfHostedBadge/>
 - The role management error in the "Apple Devices" section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the issue of not being able to distribute to the selected configuration in the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md) module. <CloudBadg/> <SelfHostedBadge/>
-- Fixed the issue where the branch list could not be updated when the user [permission](../account/my-organization.md) for the Build module was set to "Read Only Access”. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the issue of not being able to distribute to the selected configuration in the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md) module. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the issue where the branch list could not be updated when the user [permission](../account/my-organization.md) for the Build module was set to "Read Only Access". <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue where this build does not appear in the list when the build starts. <CloudBadge/> <SelfHostedBadge/>
 - Users without permission were sending requests to the service when browsing pages. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - In the Store Submit module, the "Huawei App ID" field in the [Huawei AppGallery](../store-submit/huawei-app-gallery.md) section was disabled. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
