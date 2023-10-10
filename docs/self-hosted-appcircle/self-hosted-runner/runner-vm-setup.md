@@ -217,9 +217,9 @@ So, the following commands will assume that current working directory is `/Volum
 
 ##### 1. Update the Runner Package
 
-You may have installed the latest runner VM image, but the runner package may not be up-to-date.
+You may have installed the latest Appcircle runner VM image, but the Appcircle runner package may not be up-to-date.
 
-You can follow the steps below to check the runner package version and update if it isn't the latest version.
+You can follow the steps below to check the Appcircle runner package version and update if it isn't the latest version.
 
 - Check the version of the current package.
 
@@ -229,9 +229,15 @@ You can follow the steps below to check the runner package version and update if
 
 - Check the latest version from the [Upgrade Runner](./update.md#1-update-runner) page.
 
-- If your version is not up to date, please follow the [Update Runner](./update.md#1-update-runner) section to update the runner package.
+:::info
 
-- You don't need to read `Reconfigure`, and later. You will see how to configure the runner on this page.
+You should run the `curl` and `unzip` commands on the `/Volumes/agent-disk/` path.
+
+:::
+
+- If your version is not up to date, please follow the [Update Runner](./update.md#1-update-runner) section to update the Appcircle runner package.
+
+- You don't need to read `Reconfigure` title and later. You will see how to configure the runner on this page.
 
 ##### 2. Configure Base Runner's NTP Settings
 
