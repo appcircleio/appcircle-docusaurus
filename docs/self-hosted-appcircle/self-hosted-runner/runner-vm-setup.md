@@ -215,7 +215,7 @@ cd /Volumes/agent-disk/appcircle-runner
 
 So, the following commands will assume that current working directory is `/Volumes/agent-disk/appcircle-runner`.
 
-##### 1. Update the Runner Package
+##### 1. Check the Runner Package Version
 
 You may have installed the latest Appcircle runner VM image, but the Appcircle runner package may not be up-to-date.
 
