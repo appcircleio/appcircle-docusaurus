@@ -204,6 +204,25 @@ post_install do |installer|
   end
 end
 ```
+### Adding Additional Command to Xcodebuild for Devices Step
+To address the need to add a new command after completing the "xcodebuild" command in the "Xcodebuild for devices" step, you can follow the following approach:
+
+- Disable "Xcodebuild for Devices" step in your workflow
+- Add a new "Custom Script" component instead of Xcodebuild for Devices Step
+- Go to Appcircle github profile and this [repository](https://github.com/appcircleio/appcircle-ios-build-sign-component)
+- Copy all codes of "main.rb" file and paste it to new "Custom Script" and change as Ruby in execute type.
+- Change name as Custom Xcodebuild for Devices this custom script.
+- In ruby code of this, you can add to end of 412.line of code command what you want
+```
+command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\""
+```
+#### For Example
+
+When you're asked to reduce the verbosity of logs, you can achieve this `| grep -A 5 error:`  by adding the following command to the command line to decrease the clutter in the log file:
+
+```
+command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\" | grep -A 5 error:"
+```
 
 ### Missing Entitlements
 
