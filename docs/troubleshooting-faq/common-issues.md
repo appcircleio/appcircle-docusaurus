@@ -212,22 +212,49 @@ To address the need to add a new command after completing the `xcodebuild` comma
 - Disable "Xcodebuild for Devices" step in your workflow.
 - Add a new "Custom Script" component instead of "Xcodebuild for Devices" step.
 - Go to Appcircle github profile and navigate to the [repository](https://github.com/appcircleio/appcircle-ios-build-sign-component).
-- Copy all code lines from the `main.rb` file and paste them into the new "Custom Script".
-- Change "Execute With" as **Ruby**.
+- Copy all code lines from the `main.rb` file and paste them into the new "Custom Script" that you just added in your workflow.
 - Change the name as "Custom Xcodebuild for Devices" for this custom script.
-- In the ruby code, you can required codes to the end of `command`add to end of 412.line of code command what you want
+- Change "Execute With" picker as **Ruby**.
+- In the ruby code, you can required codes to the end of `xcodebuild command` add to end.
+- To do this, there is `archive function` in Ruby code. Find this function.
 
+```ruby
+## Archive Functions
+def archive()
+  extname = File.extname($project_path)
+  command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\"" 
+  ........
+  ## Other code lines of Archive Function 
+```
+- End of this function, before running `run_command` function, you can add these lines be able to add additional command.
 
+```ruby
+  ## Other code lines of Archive Function 
+  ........
+  command.concat(" ")
+  command.concat("Write your command that you want to add here")
+  command.concat(" ")
+
+  run_command(command,false)
+end
 ```
-command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\""
-```
+
 #### For Example
 
 When you're asked to reduce the verbosity of logs, you can achieve this `| grep -A 5 error:`  by adding the following command to the command line to decrease the clutter in the log file:
 
+```ruby
+ ## Other code lines of Archive Function 
+  ........
+  command.concat(" ")
+  command.concat(" | grep -A 5 error:")
+  command.concat(" ")
+
+  run_command(command,false)
+end
 ```
-command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\" | grep -A 5 error:"
-```
+
+After this, when `run_command` function runs, your new command that you added will being automatically added to `xcodebuild command`
 
 ### Missing Entitlements
 
