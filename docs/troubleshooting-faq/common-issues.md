@@ -215,22 +215,26 @@ To address the need to add a new command after completing the `xcodebuild` comma
 - Copy all code lines from the `main.rb` file and paste them into the new "Custom Script" that you just added in your workflow.
 - Change the name as "Custom Xcodebuild for Devices" for this custom script.
 - Change "Execute With" picker as **Ruby**.
-- In the ruby code, you can required codes to the end of `xcodebuild command` add to end.
-- To do this, there is `archive function` in Ruby code. Find this function.
+- In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
+
+There is an `archive()` function in the Ruby code. First, find the function in the code.
 
 ```ruby
 ## Archive Functions
 def archive()
   extname = File.extname($project_path)
-  command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\"" 
-  ........
-  ## Other code lines of Archive Function 
+  command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\""
+  ...
+  ## Other code lines of archive() function
+  ...
 ```
-- End of this function, before running `run_command` function, you can add these lines be able to add additional command.
+
+At the end of this function, before running the `run_command()` function, you can add these lines to be able to add additional commands.
 
 ```ruby
-  ## Other code lines of Archive Function 
-  ........
+  ...
+  ## Other code lines of archive() function
+  ...
   command.concat(" ")
   command.concat("Write your command that you want to add here")
   command.concat(" ")
@@ -241,11 +245,12 @@ end
 
 #### For Example
 
-When you're asked to reduce the verbosity of logs, you can achieve this `| grep -A 5 error:`  by adding the following command to the command line to decrease the clutter in the log file:
+When you need to reduce the verbosity of the `xcodebuild` logs, you can achieve this by appending the `| grep -A 5 error:` command to the `xcodebuild` command to decrease the clutter in the log file.
 
 ```ruby
- ## Other code lines of Archive Function 
-  ........
+  ...
+  ## Other code lines of archive() function
+  ...
   command.concat(" ")
   command.concat(" | grep -A 5 error:")
   command.concat(" ")
@@ -254,7 +259,7 @@ When you're asked to reduce the verbosity of logs, you can achieve this `| grep 
 end
 ```
 
-After this, when `run_command` function runs, your new command that you added will being automatically added to `xcodebuild command`
+Now, the `run_command()` function will execute your customized `xcodebuild` command.
 
 ### Missing Entitlements
 
