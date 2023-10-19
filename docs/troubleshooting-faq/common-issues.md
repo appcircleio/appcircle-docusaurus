@@ -204,15 +204,20 @@ post_install do |installer|
   end
 end
 ```
-### Adding Additional Command to Xcodebuild for Devices Step
-To address the need to add a new command after completing the "xcodebuild" command in the "Xcodebuild for devices" step, you can follow the following approach:
 
-- Disable "Xcodebuild for Devices" step in your workflow
-- Add a new "Custom Script" component instead of Xcodebuild for Devices Step
-- Go to Appcircle github profile and this [repository](https://github.com/appcircleio/appcircle-ios-build-sign-component)
-- Copy all codes of "main.rb" file and paste it to new "Custom Script" and change as Ruby in execute type.
-- Change name as Custom Xcodebuild for Devices this custom script.
-- In ruby code of this, you can add to end of 412.line of code command what you want
+### Adding Additional Command to Xcodebuild for Devices Step
+
+To address the need to add a new command after completing the `xcodebuild` command in the "Xcodebuild for Devices" step, you can follow the following approach:
+
+- Disable "Xcodebuild for Devices" step in your workflow.
+- Add a new "Custom Script" component instead of "Xcodebuild for Devices" step.
+- Go to Appcircle github profile and navigate to the [repository](https://github.com/appcircleio/appcircle-ios-build-sign-component).
+- Copy all code lines from the `main.rb` file and paste them into the new "Custom Script".
+- Change "Execute With" as **Ruby**.
+- Change the name as "Custom Xcodebuild for Devices" for this custom script.
+- In the ruby code, you can required codes to the end of `command`add to end of 412.line of code command what you want
+
+
 ```
 command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\""
 ```
@@ -279,12 +284,12 @@ For example, you can take the following steps to change the default Java version
 
 1. Create a variable group that has a variable with the properties below.
     1. The key should be `JAVA_HOME`.
-    1. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`.
-1. Go to the configuration section of the build profile that you want to autofill.
-1. Go to the 'Env. Variables' tab in configuration.
+    2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`.
+2. Go to the configuration section of the build profile that you want to autofill.
+3. Go to the 'Env. Variables' tab in configuration.
     1. You should see the variable group that you created in the list.
-1. Select the variable group that has `JAVA_HOME` and 'Save' settings.
-1. Go back to the config tab and start autofilling there.
+4. Select the variable group that has `JAVA_HOME` and 'Save' settings.
+5. Go back to the config tab and start autofilling there.
 
 You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure.md#java-version) Java section.
 
