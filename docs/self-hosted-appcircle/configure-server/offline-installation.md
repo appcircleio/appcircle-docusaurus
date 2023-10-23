@@ -95,10 +95,10 @@ Please check your project name by listing the `./projects` directory, and **don'
 :::
 
 ```bash
-./ac-self-hosted.sh -n spacetech load -y
+./ac-self-hosted.sh -n spacetech load
 ```
 
-- The `-y` flag in the above command is to automatically load offline container images.
+- The script will ask you to automatically load offline container images. Click `y` to accept.
 
 - After the load process completes, you can see the imported container images with your container engine.
 
@@ -184,9 +184,9 @@ You should change the "spacetech" as your project name.
 
 - Get the offline container images and update your local images.
 
-```bash
-./ac-self-hosted.sh -n "spacetech" load
-```
+  - If your Appcircle server has no internet access, check the usage for [Install on a Server With No Internet Access](#install-on-a-server-with-no-internet-access)
+
+  - If your Appcircle server has internet access, check the usage for [Install on a Server With Internet Access](#install-on-a-server-with-internet-access)
 
 - Run your server again.
 
@@ -205,16 +205,6 @@ You should change the "spacetech" as your project name.
 ```bash
 ./ac-self-hosted.sh -n "spacetech" version
 ```
-
-:::caution
-Updating your server using offline images may result in a server downgrade.
-The downloaded and installed images will override the existing images that were installed with offline packages or downloaded to your system.
-It is important to note that the offline container images to be installed are specifically tied to your ac-self-hosted.sh script version.
-
-However, updating the script version to the latest does not guarantee that you will download the latest images with minor updates or patches.
-
-To ensure you obtain the latest version of container images, please follow the instructions provided in the update section.
-:::
 
 :::caution
 This steps will result in system downtime.
