@@ -31,9 +31,9 @@ This section covers the external resource domains during the installation proces
 
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
+  - storage.googleapis.com/appcircle-self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
   - www.googleapis.com
-  - storage.googleapis.com
 
 - Offline docker install script and docker `rpm` files:
 
@@ -52,9 +52,9 @@ This section covers the external resource domains during the installation proces
 
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
+  - storage.googleapis.com/appcircle-self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
   - www.googleapis.com
-  - storage.googleapis.com
 
 - `curl`, `unzip`, `socat`, `netavark` and `podman` tools:
 
@@ -74,9 +74,9 @@ This section covers the external resource domains during the installation proces
 
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
+  - storage.googleapis.com/appcircle-self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
   - www.googleapis.com
-  - storage.googleapis.com
 
 - `curl` and `unzip` tools:
 
@@ -94,9 +94,9 @@ This section covers the external resource domains during the installation proces
 
   - cdn.appcircle.io
   - storage.googleapis.com/appcircle-dev-common/self-hosted
+  - storage.googleapis.com/appcircle-self-hosted
   - europe-west1-docker.pkg.dev/appcircle/docker-registry
   - www.googleapis.com
-  - storage.googleapis.com
 
 - `curl`, `unzip`, `netavark` and `socat` tools:
 
