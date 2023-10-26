@@ -121,6 +121,19 @@ This section covers the external resource domains during the installation proces
   - api.github.com
   - api.apple-cloudkit.com
   - formulae.brew.sh
+  - swcdn.apple.com
+  - xp.apple.com
+  - pancake.apple.com
+  - gdmf.apple.com
+  - swdist.apple.com
+  - swscan.apple.com
+  - ocsp2.apple.com
+
+:::info
+
+Homebrew installs the latest version of Xcode Command Line Tools as a dependency. `*.apple.com` domains are used for that purpose.
+
+:::
 
 - `tart` tool:
   - github.com
