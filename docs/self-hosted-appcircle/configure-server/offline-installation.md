@@ -26,6 +26,12 @@ You must to follow one of the Appcircle server installation methods (docker or p
 Before running the server, you can install container images offline.
 :::
 
+#### For Downloading From Another Machine
+
+- curl
+
+#### For Loading Images On Appcircle Server Machine
+
 ```bash
 sudo ./ac-self-hosted.sh -i`
 ```
