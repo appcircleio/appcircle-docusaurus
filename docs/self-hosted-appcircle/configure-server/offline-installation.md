@@ -33,7 +33,7 @@ Before running the server, you can install container images offline.
 #### For Loading Images On Appcircle Server Machine
 
 ```bash
-sudo ./ac-self-hosted.sh -i`
+sudo ./ac-self-hosted.sh -i
 ```
 
 - curl
