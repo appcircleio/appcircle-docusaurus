@@ -9,11 +9,11 @@ sidebar_position: 1
 
 Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running.
 
-- If your selected pool from config is "Default Intel Pool", virtual machine will be macOS Monterey `v12.5.1`.
+- If your selected pool from config is "Default Intel Pool", virtual machine will be macOS Monterey `12.5.1`.
 
 - If your selected pool from config is "Default M1 Pool", there are two options for virtual machine.
-  - If you select Xcode 14.3 or later, virtual machine will be macOS Ventura `v13.4.1`.
-  - If you select Xcode 14.2 or earlier, virtual machine will be macOS Monterey `v12.5.1`.
+  - If you select Xcode 14.3 or later, virtual machine will be macOS Ventura `13.5.2`.
+  - If you select Xcode 14.2 or earlier, virtual machine will be macOS Monterey `12.6`.
 
 :::caution
 
@@ -21,7 +21,7 @@ If you select Xcode 14.3 or later and "Default Intel Pool", your build will not 
 
 :::
 
-macOS images run on a fresh virtual machines for stability and performance. They are created just for your build and become ready within seconds.
+MacOS images run on fresh virtual machines for stability and performance. They are created just for your build and become ready within seconds.
 
 During the build process, you can install any dependencies and run commands using "custom script" steps in the build workflow. This gives you complete control over your build and the virtual machine.
 
@@ -31,29 +31,23 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 :::
 
-### Available Xcode Versions
+## Available Xcode Versions
 
-Our macOS build agents have Xcode versions 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
+Our macOS build agents have Xcode versions 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
 
 :::caution
 Xcode `14.3.x` or higher Xcode versions require a Mac running macOS Ventura 13.0 or later.
 :::
 
-### Using your own computer for build
+## iOS Build Agent Stacks
 
-Appcircle supports using a 3rd party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
-
-[**You can find more information about using your own infrastructure for build here.**](../self-hosted-appcircle/self-hosted-runner/overview.md))
-
-### iOS Build Agent Stacks
-
-There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in "custom script" steps.
+There are many pre-installed packages on virtual machines. You can get a full list of pre-installed packages by running Bash commands in "custom script" steps.
 
 Here are some of the most important packages installed in our iOS build agents used for iOS builds:
 
-- For "Default M1 Pool" Xcode `14.3.x` or later `macOS Ventura v13.4.1`
-- For "Default M1 Pool" Xcode `14.2.x` or earlier `macOS Monterey v12.5.1`
-- For "Default Intel Pool" `macOS Monterey v12.5.1`
+- For "Default M1 Pool" Xcode `14.3.x` or later macOS Ventura `13.5.2`
+- For "Default M1 Pool" Xcode `14.2.x` or earlier macOS Monterey `12.6`
+- For "Default Intel Pool" macOS Monterey `12.5.1`
   - :memo: Supports Xcode versions up to `14.2.x`
 
 | Package            | M1 Pool Monterey | M1 Pool Ventura | Intel Pool |
@@ -61,19 +55,19 @@ Here are some of the most important packages installed in our iOS build agents u
 | Bash               | 3.2.57           | 3.2.57          | 3.2.57     |
 | Bundle             | 2.1.4            | 2.1.4           | 2.3.9      |
 | Carthage           | 0.38.0           | 0.38.0          | 0.38.0     |
-| Curl               | 7.79.1           | 7.88.1          | 7.79.1     |
+| Curl               | 7.79.1           | 8.1.2           | 7.79.1     |
 | Homebrew           | 3.6.11           | 3.6.16          | 3.4.2      |
 | Java (OpenJDK)     | 11.0.14          | 11.0.14         | 11.0.2     |
 | Gem                | 3.1.6            | 3.1.6           | 3.1.6      |
-| Fastlane           | 2.211.0          | 2.213.0         | 2.204.3    |
+| Fastlane           | 2.211.0          | 2.214.0         | 2.204.3    |
 | Git                | 2.38.1           | 2.39.0          | 2.35.1     |
 | Git LFS            | 3.2.0            | 3.3.0           | 3.1.2      |
 | Gzip (Apple)       | 353.100.22       | 403.100.6       | 353.100.22 |
 | LibreSSL (OpenSSL) | 2.8.3            | 3.3.6           | 2.8.3      |
 | ImageMagick        | 7.1.0            | 7.1.0           | 7.1.0      |
-| Maven              | 3.8.6            | 3.9.3           | 3.8.4      |
+| Maven              | 3.8.6            | 3.9.4           | 3.8.4      |
 | N                  | 9.0.1            | 9.0.1           | 8.0.2      |
-| Node               | 16.18.1          | 16.20.1         | 16.14.0    |
+| Node               | 16.18.1          | 16.20.2         | 16.14.0    |
 | Npm                | 8.19.2           | 8.19.4          | 8.3.1      |
 | Perl               | 5.30.3           | 5.30.3          | 5.30.3     |
 | Pod                | 1.11.3           | 1.12.1          | 1.11.2     |
@@ -82,9 +76,15 @@ Here are some of the most important packages installed in our iOS build agents u
 | Rake               | 13.0.1           | 13.0.1          | 13.0.1     |
 | Ruby               | 2.7.5            | 2.7.5           | 2.7.5      |
 | Rbenv              | 1.2.0            | 1.2.0           | 1.2.0      |
-| Sdkman             | 5.16.0           | 5.18.1          | 5.14.0     |
+| Sdkman             | 5.16.0           | 5.18.2          | 5.14.0     |
 | Slather            | 2.7.2            | 2.7.4           | 2.7.2      |
 | Unzip              | 6.00             | 6.00            | 6.00       |
 | Xcodeproj          | 1.22.0           | 1.22.0          | 1.21.0     |
 | Yarn               | 1.22.19          | 1.22.19         | 1.22.17    |
 | Zip                | 3.0              | 3.0             | 3.0        |
+
+### Using your own computer for build
+
+Appcircle supports using a third-party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
+
+[**You can find more information about using your own infrastructure for build here.**](../self-hosted-appcircle/self-hosted-runner/overview.md)

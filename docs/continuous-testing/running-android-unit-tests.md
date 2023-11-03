@@ -70,9 +70,8 @@ See the following page on our documentation to learn more about creating custom 
 Add the following Bash script to your custom script step:
 
 ```bash
-set -ex
 cd $AC_REPOSITORY_DIR
-./gradlew test
+./gradlew testRelease # or you can use 'testDebug'
 mv app/build/reports/tests $AC_OUTPUT_DIR
 mv app/build/test-results $AC_OUTPUT_DIR
 ```
