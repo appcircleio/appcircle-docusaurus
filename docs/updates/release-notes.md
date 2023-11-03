@@ -27,7 +27,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Now the user can create a reference branch. <CloudBadge/> <SelfHostedBadge/>
 - A new field has been created for filtering reports. Users will now be able to filter by organization. <CloudBadge/> <SelfHostedBadge/>
 - The [public link](../distribute/create-or-select-a-distribution-profile#using-public-link-for-distribution) in the test deployment area will now be available regardless of authentication type. <CloudBadge/> <SelfHostedBadge/>
-- There can now be multiple instances with the same name, and the user can select one of them. <CloudBadge/> <SelfHostedBadge/>
+- There can now be [multiple instances](../build/adding-a-build-profile/connecting-multiple-instance) with the same name, and the user can select one of them. <CloudBadge/> <SelfHostedBadge/>
 - If [environment variables](../environment-variables/managing-variables.md) are available, now users will be able to download them in JSON format. <CloudBadge/> <SelfHostedBadge/>
 - Previously, you could only select one profile for test deployment. Now you can select multiple profiles in the [distribution](../distribute/create-or-select-a-distribution-profile.md) profile settings. <CloudBadge/> <SelfHostedBadge/>
 
