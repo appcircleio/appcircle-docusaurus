@@ -8,6 +8,7 @@ sidebar_position: 11
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NarrowImage from '@site/src/components/NarrowImage';
+import ContentRef from '@site/src/components/ContentRef';
 
 # Android 11+ Signing for Google Play
 
