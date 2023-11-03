@@ -11,6 +11,39 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.9.0 - 2023-11-01 - Self-Hosted Ldap Login, Download Environment Variables, Change the PAT by Profile
+
+### 🆕 New Feature
+
+- A new field has been introduced on the admin page for self-hosted. Server Settings. A new section for setting LDAP login settings has been added to Server Settings for self-hosted. <SelfHostedBadge/>
+- Non-private profiles will now be able to change their PAT by clicking on the link. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+
+- Removed the icon from the Commit ID redirect link. <CloudBadge/> <SelfHostedBadge/>
+- A parent organization can access its children's build history, signing history, application sharing report, enterprise store report, and queue wait reports. <CloudBadge/> <SelfHostedBadge/>
+- The "Default M1 Pool" runners have [Xcode 15.1 beta-1](../build/building-ios-applications.md) installed. As this is a beta release, please test your workflows thoroughly. <CloudBadge/> <SelfHostedBadge/>
+- Improvements have been made to the [email notification](../account/email-connection) format for compilation events. <CloudBadge/> <SelfHostedBadge/>
+- Now the user can create a reference branch. <CloudBadge/> <SelfHostedBadge/>
+- A new field has been created for filtering reports. Users will now be able to filter by organization. <CloudBadge/> <SelfHostedBadge/>
+- The [public link](../distribute/create-or-select-a-distribution-profile#using-public-link-for-distribution) in the test deployment area will now be available regardless of authentication type. <CloudBadge/> <SelfHostedBadge/>
+- There can now be multiple instances with the same name, and the user can select one of them. <CloudBadge/> <SelfHostedBadge/>
+- If [environment variables](../environment-variables/managing-variables.md) are available, now users will be able to download them in JSON format. <CloudBadge/> <SelfHostedBadge/>
+- Previously, you could only select one profile for test deployment. Now you can select multiple profiles in the [distribution](../distribute/create-or-select-a-distribution-profile.md) profile settings. <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixed
+
+- Builds that took longer than an hour showed the wrong time on the left side of the screen. This has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- While reviewing the build logs in the admin panel, if there is no build log, we were not showing the user an error. Now it is shown as a toast message. <CloudBadge/> <SelfHostedBadge/>
+- The bug that occurred if there were no screenshots in the test project has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- A problem related to component caching in the [runner](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-runners.md) has been resolved. <SelfHostedBadge/>
+- Without user [permission](../account/my-organization#special-permissions), requests on the relevant screens are no longer sent to the service, so no warnings are displayed. <CloudBadge/> <SelfHostedBadge/>
+- We were not showing the status of the request with the loader when a request was sent for workflows; this problem has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Some spelling errors at the beginning of the workflow have been fixed, and a user-friendly appearance has been provided. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the error that occurred when test users emails were written in capital letters. <CloudBadge/> <SelfHostedBadge/>
+- In the general profile tab in the [distribution profile](../distribute/create-or-select-a-distribution-profile.md), the incorrect screen movement that occurred when the switch was disabled and reactivated was fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed unnecessary requests that go on report screens in the case of being a [sub-organization](../account/my-organization#working-with-multiple-organizations). <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.8.0 - 2023-10-02 - Multiple Git Providers Support, Config Clone, Pool-Based Xcode Version Selection
 
 ### 🆕 New Feature
