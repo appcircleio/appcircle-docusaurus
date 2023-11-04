@@ -35,7 +35,7 @@ feature_name = branch.split('/')[1].upcase
 puts feature_name
 
 # Write Environment Variable
-open(env_var_path, 'a') { |f|
+open(ENV['AC_ENV_FILE_PATH'], 'a') { |f|
     f.puts "AC_JIRA_ISSUE=#{feature_name}"
 }
 ```

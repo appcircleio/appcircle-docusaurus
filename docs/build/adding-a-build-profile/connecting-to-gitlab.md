@@ -2,6 +2,7 @@
 title: 'Connecting to GitLab'
 metaTitle: 'Connecting to GitLab'
 metaDescription: 'Connecting to GitLab'
+sidebar_position: 2
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

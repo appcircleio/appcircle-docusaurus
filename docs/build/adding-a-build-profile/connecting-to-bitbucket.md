@@ -2,6 +2,7 @@
 title: 'Connecting to Bitbucket'
 metaTitle: 'Connecting to Bitbucket'
 metaDescription: 'Connecting to Bitbucket'
+sidebar_position: 3
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

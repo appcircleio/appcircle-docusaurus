@@ -205,6 +205,62 @@ post_install do |installer|
 end
 ```
 
+### Adding Additional Command to Xcodebuild for Devices Step
+
+To address the need to add a new command after completing the `xcodebuild` command in the "Xcodebuild for Devices" step, you can follow the following approach:
+
+- Disable "Xcodebuild for Devices" step in your workflow.
+- Add a new "Custom Script" component instead of "Xcodebuild for Devices" step.
+- Go to Appcircle github profile and navigate to the [repository](https://github.com/appcircleio/appcircle-ios-build-sign-component).
+- Copy all code lines from the `main.rb` file and paste them into the new "Custom Script" that you just added in your workflow.
+- Change the name as "Custom Xcodebuild for Devices" for this custom script.
+- Change "Execute With" picker as **Ruby**.
+- In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
+
+There is an `archive()` function in the Ruby code. First, find the function in the code.
+
+```ruby
+## Archive Functions
+def archive()
+  extname = File.extname($project_path)
+  command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\""
+  ...
+  ## Other code lines of archive() function
+  ...
+```
+
+At the end of this function, before running the `run_command()` function, you can add these lines to be able to add additional commands.
+
+```ruby
+  ...
+  ## Other code lines of archive() function
+  ...
+  command.concat(" ")
+  command.concat("Write your command that you want to add here")
+  command.concat(" ")
+
+  run_command(command,false)
+end
+```
+
+#### For Example
+
+When you need to reduce the verbosity of the `xcodebuild` logs, you can achieve this by appending the `| grep -A 5 error:` command to the `xcodebuild` command to decrease the clutter in the log file.
+
+```ruby
+  ...
+  ## Other code lines of archive() function
+  ...
+  command.concat(" ")
+  command.concat(" | grep -A 5 error:")
+  command.concat(" ")
+
+  run_command(command,false)
+end
+```
+
+Now, the `run_command()` function will execute your customized `xcodebuild` command.
+
 ### Missing Entitlements
 
 If you receive an error similar to the following, it generally means your provisioning profile doesn't have the entitlements of your project.
@@ -260,12 +316,12 @@ For example, you can take the following steps to change the default Java version
 
 1. Create a variable group that has a variable with the properties below.
     1. The key should be `JAVA_HOME`.
-    1. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`.
-1. Go to the configuration section of the build profile that you want to autofill.
-1. Go to the 'Env. Variables' tab in configuration.
+    2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`.
+2. Go to the configuration section of the build profile that you want to autofill.
+3. Go to the 'Env. Variables' tab in configuration.
     1. You should see the variable group that you created in the list.
-1. Select the variable group that has `JAVA_HOME` and 'Save' settings.
-1. Go back to the config tab and start autofilling there.
+4. Select the variable group that has `JAVA_HOME` and 'Save' settings.
+5. Go back to the config tab and start autofilling there.
 
 You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure.md#java-version) Java section.
 
@@ -330,6 +386,31 @@ If you do not select a keystore in the build configuration, you need to disable 
 You may get this error message when the provided password doesn't match the keystore file.
 
 If you are using a debug keystore, simply re-generate it. Otherwise, please make sure you have the correct keystore/password combination.
+
+### Firebase Errors
+
+#### Authentication Error: Your credentials are no longer valid.
+
+Error detail:
+
+```txt
+Error: failed to upload release. Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+For CI servers and headless environments, generate a new token with firebase login:ci
+⚠  Unable to fetch the CLI MOTD and remote config.
+```
+
+If you encounter this error message, please review the following two points:
+
+1. **Verify Your Firebase Credentials**: Ensure that your login information is valid, as per the token or service account you are using. You can test it locally using the same token or service account to confirm its authenticity.
+2. **Check CA Certificates**: If you are a **self-hosted Appcircle user** and you are certain that your credentials are correct, then you should also confirm that your CA certificates are properly defined for NodeJS. You can check CA certificates using the following command:
+
+```bash
+cat $NODE_EXTRA_CA_CERTS
+```
+
+:::caution
+Point 2 exclusively applies to users who have opted for self-hosted solutions. For those utilizing Appcircle from the cloud platform (appcircle.io), there is no need to consider this particular point.
+:::
 
 ## Flutter-Specific Issues
 

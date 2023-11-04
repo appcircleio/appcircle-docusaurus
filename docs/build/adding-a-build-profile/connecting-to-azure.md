@@ -2,6 +2,7 @@
 title: 'Connecting to Azure DevOps'
 metaTitle: 'Connecting to Azure DevOps'
 metaDescription: 'Connecting to Azure DevOps'
+sidebar_position: 4
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

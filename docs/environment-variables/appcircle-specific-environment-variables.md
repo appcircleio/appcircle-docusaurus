@@ -53,6 +53,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_WORKFLOW\_NAME         | Workflow Name                                                                                      |
 | AC\_PLATFORM\_TYPE         | **Platform Type** ObjectiveCSwift, JavaKotlin, Smartface, ReactNative, Flutter                     |
 | AC\_PURPOSE                | **Purpose of the Workflow** <br />_Metadata_ = 0<br /> _Build_ = 1<br /> _StoreSubmit_ = 2<br />_Merge_ = 3<br />_TagBuild_ = 4|
+| AC\_TRIGGER\_REASON        |  The trigger reason that causes the building to start. Values it can take: `User`, `Commit`, `Tag`, `PullRequest` |
 
 
 ### Android specific environment variables

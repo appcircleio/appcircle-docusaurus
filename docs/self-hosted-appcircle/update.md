@@ -44,13 +44,13 @@ For example, to find the version for a project named "spacetech", run the follow
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.7.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.8.1.zip
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.7.0.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.8.1.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -60,6 +60,16 @@ cd appcircle-server
 ```
 
 For other details and troubleshooting, you can refer to [download](./install-server/docker.md#1-download) section in installation docs.
+
+:::info
+
+After version `3.7.1`, the container image versions, pulled from the Appcircle artifact registry, will be the same version of the Appcircle zip package you downloaded.
+
+In this case, if you download an older version of the Appcircle zip package, the container images will also be older versions.
+
+So as a result, you will downgrade the Appcircle server if you download an older version zip package.
+
+:::
 
 ### 2. Update Packages
 

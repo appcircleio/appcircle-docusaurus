@@ -11,6 +11,46 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.8.0 - 2023-10-02 - Multiple Git Providers Support, Config Clone, Pool-Based Xcode Version Selection
+
+### 🆕 New Feature
+
+- The user can add [multiple instances](../build/adding-a-build-profile/connecting-multiple-instance) of the Git providers and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/> <SelfHostedBadge/>
+- The [Xcode version](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection) list of runners is integrated into the custom pool selection. It can be displayed dynamically in the build configuration, and the user can choose which Xcode version to build with. <CloudBadge/> <SelfHostedBadge/>
+- You can now quickly [copy a configuration](../build/build-profile-configuration#clone-configuration) and create a new one from that configuration. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+
+- Waiting times in Queue Waiting Reports are now shown in minutes instead of seconds. <SelfHostedBadge/>
+- If the user selects any step that has the "Continue with the next step even if this step fails" option and gets a failure during the build on that step, this build's status is displayed as [Warning](../workflows/why-to-use-workflows/#build-warning-status). <CloudBadge/> <SelfHostedBadge/>
+- Fixed the case that users belonging to more than one organization on [Azure DevOps](/build/adding-a-build-profile/connecting-to-azure) could not bind repository. <CloudBadge/> <SelfHostedBadge/>
+- Improved suborganization experience in the Enterprise App Store by hiding the "Customize" and "Settings" sections, providing a more focused interface for suborganization administrators. <CloudBadge/> <SelfHostedBadge/>
+- The latest stable version of [Xcode 15.0](../build/building-ios-applications.md) is available on both cloud and self-hosted runners. <SelfHostedBadge/> <CloudBadge/>
+- The self-hosted Appcircle server now supports proxies with a [self-signed certificate.](../self-hosted-appcircle/configure-server/proxy-configuration.md) <SelfHostedBadge/>
+- Users can more easily switch to the self-hosted version of their choice by only [downloading](../self-hosted-appcircle/update.md#1-download-latest) the server package. <SelfHostedBadge/>
+- Added the [NTP configuration](../self-hosted-appcircle/self-hosted-runner/runner-vm-setup.md#1-configure-base-runners-ntp-settings) helper tool to the self-hosted runner package. <SelfHostedBadge/>
+- Added self-signed certificate management for Node.JS to the [certificate installer](../self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates.md#adding-certificates) tool. <SelfHostedBadge/>
+- Now you can analyze your [SwiftLint](../integrations/azure-bot-for-swiftlint-and-detekt.md#azure-devops-bot-for-swiftlint) and [Detekt](../integrations/azure-bot-for-swiftlint-and-detekt.md#azure-devops-bot-for-detekt) reports and post the report details under the opened PR on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixed
+
+- Fixed the "Waiting Duration" title in the Queue Waiting Reports header. <SelfHostedBadge/>
+- The role management error in the [Apple Devices](../distribute/apple-devices.md) section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the issue of not being able to distribute to the selected configuration in the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md) module. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the issue where the branch list could not be refreshed when the user [permission](../account/my-organization.md) for the Build module was set to "Read Only Access". <CloudBadge/> <SelfHostedBadge/>
+- Fixed the issue where the build does not appear in the list when the build starts. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the bug that users without permission were sending requests to the service when browsing pages. <CloudBadge/> <SelfHostedBadge/>
+- In the Store Submit module, the "Huawei App ID" field in the [Huawei AppGallery](../store-submit/huawei-app-gallery.md) section was disabled. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Flickering on the screen due to line overlap in the build module has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- When an invalid email was entered in the [email integration](../account/email-connection) module, other options were reset. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The wrong dialog modal was opening in the "never delete" option selected for the deletion of an artifact. It's been fixed, and an extra description has been added. <CloudBadge/> <SelfHostedBadge/>
+- When there was a workflow step of the same name, there was a confusion of names. It's has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- An error message is now displayed to the user when an invalid workflow name is entered. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the data refresh error when the version is deleted in the [Apple Devices](../distribute/apple-devices.md) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the page crash problem when the user clicks on the [Triggers](../build/build-manually-or-with-triggers.md). <CloudBadge/> <SelfHostedBadge/>
+- Added a toast message that is shown when the user tries to download the deleted configuration in the admin panel. <CloudBadge/> <SelfHostedBadge/>
+- The case that selection of the adhoc [auto device register](../distribute/apple-devices.md#automatically-adding-registered-devices-to-the-provisioning-profile) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Reports
 
 ### 🆕 New Feature
@@ -26,7 +66,6 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - If there is a space character in the [variable group](../environment-variables/managing-variables.md#using-environment-variables-for-ssh-and-pat-personal-access-token-connections-of-the-git-provider) name, it can be used within double quotes while connecting the repository. <CloudBadge/> <SelfHostedBadge/>
   - `$"Variable Group:Key"`
 - Self-hosted enterprise customers can download the [configurations](../build/build-profile-configuration.md) of previous builds with the `.yaml` extension in "Build Details" section of the admin panel. <SelfHostedBadge/>
-- Provided a more focused interface for subsidiary administrators by hiding the "Customize" and "Settings" sections in the Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
 - Unsubscribe and resubscribe features are enabled for email notifications, distribution, and the enterprise store. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed

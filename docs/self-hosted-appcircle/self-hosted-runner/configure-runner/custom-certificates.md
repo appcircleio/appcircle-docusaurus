@@ -17,21 +17,21 @@ While adding root CAs and sub CAs to host, you should consider the following loc
 - `ca-certificates`, `ca-trust` (linux)
 - Ruby's `DEFAULT_CERT_DIR`
 - Java's keystore `cacerts`
+- Node.js `NODE_EXTRA_CA_CERTS`
 
 ## Adding Certificates
 
 The self-hosted runner has a command-line tool to help you install the required certificates. When called, it connects to the given host via the URL and extracts the root CA. It adds the root CA to the locations listed above.
 
-If your runner version `1.3.12` or later, you can find it in the root directory of the runner installation.
+If your runner version `1.3.12` or later, you can find it in the `scripts` directory inside the Appcircle runner directory.
 
-If your runner version is older, then you can get it from Appcircle CDN with the below commands.
+If your runner version is older than `1.3.12`, then you can follow one of the steps below:
 
-```bash
-curl -L -O https://storage.googleapis.com/appcircle-dev-common/self-hosted/install_cert.sh
-chmod u+x install_cert.sh
-```
+- [Upgrade](../update.md#1-update-runner) the Appcircle runner to `1.3.12` or later
 
-Simply execute the bash script.
+- If you can't upgrade the Appcircle runner, you can [download the latest](../update.md#1-update-runner) runner package and get the script from there after you extract the archive.
+
+Execute the bash script like below.
 
 ```bash
 ./install_cert.sh
@@ -66,13 +66,46 @@ Enter a URL or 'q' to quit: q
 %
 ```
 
-:::info
+After the script is complete, the operating system, default Java (`11`), Ruby, and Node.js trust the root certificate.
 
-NodeJS doesn't use the system CA store so you need to take extra steps.
-
-For self-sigend certificates, you have two options:
-
-1. Add the `NODE_EXTRA_CA_CERTS="rootCA.pem"`  environment variable. It is possible to add multiple certificates in a single file.
-2. Add the `NODE_TLS_REJECT_UNAUTHORIZED=0` environment variable. This completely disables SSL verification (not recommended).
-
+:::caution
+Please exit from the current terminal session and start a new one for changes to take effect.
 :::
+
+### Adding Certificates Manually
+
+In situations where automatic root certificate detection may not work, the bash script provides a user-friendly manual trust method.
+
+Users can supply the root certificates themselves locally to the tool and import them.
+
+Once imported, the operating system and other tools listed above will trust the certificate, ensuring secure connections to the server, just like getting them from a URL.
+
+If `install_cert.sh` can't auto-detect the root CA from URL, follow the steps below to import it from disk:
+
+- Get your organization's root CA and copy its content.
+
+- Go to the `scripts` directory, which is in the `appcircle-runner` directory.
+
+- Create a file named `rootca.crt` and paste the root CA content inside it.
+
+```bash
+vi rootca.crt
+```
+
+:::info
+Alternatively, you can push the certificate files to the runner disk and use them directly as certificate arguments.
+:::
+
+- To use the `install_cert.sh` in manual mode, you should provide the root CA and a URL to test the connection.
+
+```bash
+./install_cert.sh <path to the CA cert> <url to test connection>
+```
+
+For example, if you saved the root CA in the `rootca.crt` file and want to import and test the connection to the Appcircle server, see the example below:
+
+```bash
+./install_cert.sh rootca.crt api.appcircle.spacetech.com
+```
+
+After the script completes successfully, the certificate will be trusted in your system.

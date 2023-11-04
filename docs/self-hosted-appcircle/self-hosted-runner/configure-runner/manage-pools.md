@@ -47,6 +47,22 @@ Changing runner pool doesn't affect current running builds on pool. It will affe
 
 :::
 
+#### Pool-Based Xcode Version Selection
+
+When self-hosted runners connect, they provide the build platform information they can receive builds for, along with any available Xcode versions. In the self-hosted collection, this information is updated and maintained. The goal is to allow the selection of an Xcode version specific to the runner during the build process instead of using the default Xcode.
+
+If we are working with multiple machines on the iOS side, we can now define Xcode versions specific to the runner pool.
+
+Accordingly, you can make specific pool selections and set your configurations.
+
+<b>Example Macpool 1:</b>
+
+![](<https://cdn.appcircle.io/docs/assets/macpool1.png>)
+
+<b> Example Macpool 2:</b>
+
+![](<https://cdn.appcircle.io/docs/assets/macpool2.png>)
+
 ### Delete Self-hosted Pool
 
 Pool removal is managed automatically while removing or moving runner. If you remove a self-hosted runner and its pool doesn't have any other runners in that pool, then empty pool is deleted automatically and you won't see it in self-hosted runners list or build profile config tab. Same behavior happens when you move a self-hosted runner from one pool to another.
