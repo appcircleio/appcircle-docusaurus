@@ -102,7 +102,7 @@ Please check your project name by listing the `./projects` directory, and **don'
 :::
 
 ```bash
-./ac-self-hosted.sh -n spacetech load
+./ac-self-hosted.sh -n "spacetech" load
 ```
 
 After the load process completes, you should see the imported container images with your container engine.
@@ -127,83 +127,71 @@ If the container registry that your organization has is not reliable or has conn
 
 For this scenario to work, you should have an internet access on the Appcircle server.
 
-- Run the below command to install all required container images to your container engine.
+Run the below command to install all required container images to your container engine.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" load
 ```
 
 :::info
-If you have configured a custom registry url in the `global.yaml`, downloaded images will be re-tagged with your custom registry url.
+If you have configured a custom registry url in `global.yaml`, downloaded images will be re-tagged with your custom registry url.
+
 So the offline installation step is compatible with your custom registries.
 :::
 
 :::info
-The script will ask you if you want to import automatically.
-
-If you want to import all the images, press `y` to accept.
-
-If you don't want the all images but a few, you can press `n`. After this, you should handle the issues for your own.
-
-This command will download container images and load them to the selected container engine in the "Installing Required Tools" section.
+This command will download container images and load them into the container engine that you use in your system. (Docker or Podman)
 :::
 
-- Now you are ready to `up` the Appcircle server. You can refer back to the [Run Server](../install-server/docker.md#5-run-server) section.
+Now you are ready to `up` (start) the Appcircle server. You can refer back to the [Run Server](../install-server/docker.md#5-run-server) section for details.
 
-## Update
+## Upgrade
 
-If you installed self-hosted Appcircle server before and you want to update your self-hosted Appcircle server but you can't download container images somehow.
-You can update your container images with this method too.
+If you installed a self-hosted Appcircle server before and you want to upgrade your self-hosted Appcircle server but you can't somehow download container images, you can update your container images with this method too.
 
 :::info
 You don't need to change your `global.yaml` or reset your data.
-Updating your Appcircle server with offline container images is fully compatible with your already-installed Appcircle server.
+
+Upgrading your Appcircle server with offline container images is fully compatible with your already-installed Appcircle server.
 :::
 
-Firstly, you need to update your Appcircle server package.
+First, you need to update your self-hosted Appcircle server package. After you [download and unzip](../update.md#1-download-latest) the Appcircle server package, you can return to this page and follow the instructions below.
 
-After you install and unzip the Appcircle server package, you can return to this page to continue with the update process.
-
-To do that, you can go to the [Upgrade Server page](../update#1-download-latest).
-
-After you update the self-hosted package:
-
-- You can go into the Appcircle server directory.
+- Go into the self-hosted Appcircle server directory.
 
 ```bash
 cd appcircle-server
 ```
 
-- You can check your script's version.
-  So you will see which Appcircle server version images will be downloaded and loaded to container engine.
+- You can check the server version. So you will see which Appcircle server version images will be downloaded and loaded into the container engine.
 
 ```bash
 ./ac-self-hosted.sh --version
 ```
 
-:::info
-You should change the "spacetech" as your project name.
-:::
-
-- Down your system.
+- Shutdown the Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
 ```
 
+:::caution
+You should change the "spacetech" value in above command with your project name.
+:::
+
 - Get the offline container images and update your local images.
 
-  - If your Appcircle server has no internet access, check the usage for [Install on a Server With No Internet Access](#install-on-a-server-with-no-internet-access)
+  - If your Appcircle server has no internet access, follow the instructions at [Install on a Server With No Internet Access](#install-on-a-server-with-no-internet-access) section.
 
-  - If your Appcircle server has internet access, check the usage for [Install on a Server With Internet Access](#install-on-a-server-with-internet-access)
+  - If your Appcircle server has internet access, follow the instructions at [Install on a Server With Internet Access](#install-on-a-server-with-internet-access) section.
 
-- Run your server again.
+- Start the Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-- Check that your services are healthy.
+- Check that your services are healthy and the Appcircle server is ready-to-use.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
@@ -216,7 +204,9 @@ You should change the "spacetech" as your project name.
 ```
 
 :::caution
-This steps will result in system downtime.
-It is recommended to perform this update during a maintenance window when users have been notified and there is no active usage of the system.
-Ideally, scheduling the update for a time such as 03:00 am, when user activity is typically minimal, will minimize disruptions.
+Those steps above will result in system downtime.
+
+It is recommended to perform those operations during a maintenance window when users have been notified and there is no active usage of the system.
+
+Ideally, scheduling the update for a time such as 03:00 am, when user activity is typically minimal, will minimize service disruptions.
 :::
