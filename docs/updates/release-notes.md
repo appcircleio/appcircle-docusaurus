@@ -36,6 +36,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Removed the obsolete icon from the Commit ID redirect link in the build profile details. <CloudBadge/> <SelfHostedBadge/>
 - The cache size was bumped to 4 GB while using the [cache push](../workflows/common-workflow-steps.md#cache-push) in the build pipeline. <SelfHostedBadge/>
 - We made improvements to the self-hosted server [SSL configuration](../self-hosted-appcircle/configure-server/ssl-configuration.md) for enhanced security. <SelfHostedBadge/>
+- The [Testinium](../workflows/common-workflow-steps.md#testinium) workflow step has the latest improvements from customer feedback and enhanced stability. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
