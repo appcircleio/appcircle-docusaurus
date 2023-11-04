@@ -21,6 +21,8 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Added a new environment variable called [AC_TRIGGER_REASON](../environment-variables/appcircle-specific-environment-variables.md#ios--android-common-environment-variables) that specifies the trigger that causes the build to start. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 Pool" runners have [Xcode 15.1 beta-1](../build/building-ios-applications.md) installed. As this is a beta release, please test your workflows thoroughly. <CloudBadge/> <SelfHostedBadge/>
 - A new filter has been added for filtering reports. Users will now be able to filter by organization and sub organization. <CloudBadge/> <SelfHostedBadge/>
+- New commands "download" and "load" were introduced to the self-hosted Appcircle server in order to support offline installation scenarios <SelfHostedBadge/>
+- The self-hosted Appcircle server now supports Secure LDAP, aka LDAPS, that encrypts the authentication process for enhanced security. <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -32,6 +34,8 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - A bug that prevented failed builds from sending notifications to the MS Teams application has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Previously, you could only select one profile for test deployment. Now you can select multiple profiles in the [distribution](../distribute/create-or-select-a-distribution-profile.md) profile settings. <CloudBadge/> <SelfHostedBadge/>
 - Removed the obsolete icon from the Commit ID redirect link in the build profile details. <CloudBadge/> <SelfHostedBadge/>
+- The cache size was bumped to 4 GB while using the [cache push](../workflows/common-workflow-steps.md#cache-push) in the build pipeline. <SelfHostedBadge/>
+- We made improvements to the self-hosted server [SSL configuration](../self-hosted-appcircle/configure-server/ssl-configuration.md) for enhanced security. <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
@@ -46,6 +50,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Fixed the error that occurred when test users emails were written in capital letters. <CloudBadge/> <SelfHostedBadge/>
 - In the general profile tab in the [distribution profile](../distribute/create-or-select-a-distribution-profile.md), the incorrect screen movement that occurred when the switch was disabled and reactivated was fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed unnecessary requests that go on report screens in the case of being a [sub organization](../account/my-organization#working-with-multiple-organizations). <CloudBadge/> <SelfHostedBadge/>
+- Fixed missing versioning for the [HashiCorp Vault](https://blog.appcircle.io/article/security-in-appcircle) container image on the self-hosted server. <SelfHostedBadge/>
 
 ## 3.8.0 - 2023-10-02 - Multiple Git Providers Support, Config Clone, Pool-Based Xcode Version Selection
 
