@@ -21,7 +21,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Added a new environment variable called [AC_TRIGGER_REASON](../environment-variables/appcircle-specific-environment-variables.md#ios--android-common-environment-variables) that specifies the trigger that causes the build to start. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 Pool" runners have [Xcode 15.1 beta-1](../build/building-ios-applications.md) installed. As this is a beta release, please test your workflows thoroughly. <CloudBadge/> <SelfHostedBadge/>
 - A new filter has been added for filtering reports. Users will now be able to filter by organization and sub organization. <CloudBadge/> <SelfHostedBadge/>
-- New commands "download" and "load" were introduced to the self-hosted Appcircle server in order to support offline installation scenarios. <SelfHostedBadge/>
+- New commands [download and load](../self-hosted-appcircle/configure-server/offline-installation.md) were introduced to the self-hosted Appcircle server in order to support offline installation scenarios. <SelfHostedBadge/>
 - The self-hosted Appcircle server now supports Secure LDAP, aka LDAPS, that encrypts the authentication process for enhanced security. <SelfHostedBadge/>
 
 ### :muscle: Improvement
