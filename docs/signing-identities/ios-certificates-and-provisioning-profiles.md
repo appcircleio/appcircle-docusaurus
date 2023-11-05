@@ -24,7 +24,7 @@ However, unsigned binaries cannot be installed on actual devices; therefore they
 
 You can obtain your developer certificates and provisioning profiles from the Apple Developer Portal:
 
-[https://developer.apple.com/support/code-signing/](https://developer.apple.com/support/code-signing/)
+https://developer.apple.com/support/code-signing/
 
 ## iOS Code Signing Overview
 

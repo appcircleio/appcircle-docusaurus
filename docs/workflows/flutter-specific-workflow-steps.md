@@ -38,10 +38,10 @@ This component builds your Flutter project for Android with the [Flutter SDK](ht
 
 This component builds your Flutter project for iOS with the [Flutter SDK](https://github.com/flutter/flutter).
 
-[https://github.com/appcircleio/appcircle-ios-flutter-build-component](https://github.com/appcircleio/appcircle-ios-flutter-build-component)
+https://github.com/appcircleio/appcircle-ios-flutter-build-component
 
 ## ​Flutter Build for Web
 
 This component builds a web app with the [Flutter SDK](https://flutter.dev/docs/deployment/web#building-the-app-for-release).
 
-[https://github.com/appcircleio/appcircle-flutter-web-build-component](https://github.com/appcircleio/appcircle-flutter-web-build-component)
+https://github.com/appcircleio/appcircle-flutter-web-build-component

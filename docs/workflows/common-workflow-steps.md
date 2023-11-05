@@ -18,25 +18,25 @@ This is a built-in step present within the build agent and executed before every
 
 This step sets up your SSH key in the build machine if you used one to connect your repository. This allows the build machine to connect to your private repository using your SSH key.
 
-[https://github.com/appcircleio/appcircle-activate-ssh-key-component](https://github.com/appcircleio/appcircle-activate-ssh-key-component)
+https://github.com/appcircleio/appcircle-activate-ssh-key-component
 
 ## Custom Scripts
 
 You can use custom scripts for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the build agent and you can use any functionality of the virtual machine as you need.
 
-[https://github.com/appcircleio/appcircle-custom-script-component/](https://github.com/appcircleio/appcircle-custom-script-component/)
+https://github.com/appcircleio/appcircle-custom-script-component/
 
 ## Git Clone
 
 Clones the Git repository to the build agent with the given arguments.
 
-[https://github.com/appcircleio/appcircle-git-clone-component](https://github.com/appcircleio/appcircle-git-clone-component)
+https://github.com/appcircleio/appcircle-git-clone-component
 
 ## Export Build Artifacts
 
 Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download from the artifacts section of the completed build.
 
-[https://github.com/appcircleio/appcircle-export-build-artifacts](https://github.com/appcircleio/appcircle-export-build-artifacts)
+https://github.com/appcircleio/appcircle-export-build-artifacts
 
 ## Cache Push
 
@@ -72,7 +72,7 @@ System automatically cleans unreachable and obsolete cache files periodically. F
 
 :::
 
-[https://github.com/appcircleio/appcircle-cache-push-component](https://github.com/appcircleio/appcircle-cache-push-component)
+https://github.com/appcircleio/appcircle-cache-push-component
 
 ## Cache Pull
 
@@ -96,19 +96,19 @@ These variables can be adjusted within the **Cache Label** field, as indicated b
 
 Also you can have more than one push and pull pairs in the same build pipeline according to your needs.
 
-[https://github.com/appcircleio/appcircle-cache-pull-component](https://github.com/appcircleio/appcircle-cache-pull-component)
+https://github.com/appcircleio/appcircle-cache-pull-component
 
 ## Release Notes
 
 You can use Release Notes component to create release notes during your workflow.
 
-[https://github.com/appcircleio/appcircle-release-notes-component](https://github.com/appcircleio/appcircle-release-notes-component)
+https://github.com/appcircleio/appcircle-release-notes-component
 
 ## SonarQube
 
 You can use SonarQube component to check your code quality.
 
-[https://github.com/appcircleio/appcircle-sonarqube-component](https://github.com/appcircleio/appcircle-sonarqube-component)
+https://github.com/appcircleio/appcircle-sonarqube-component
 
 ## Appium Server
 
@@ -120,7 +120,7 @@ https://github.com/appcircleio/appcircle-appium-component
 
 Send your apps to be distributed via Firebase App Distribution
 
-[https://github.com/appcircleio/appcircle-firebase-distribution-component](https://github.com/appcircleio/appcircle-firebase-distribution-component)
+https://github.com/appcircleio/appcircle-firebase-distribution-component
 
 ## Firebase Deployment
 

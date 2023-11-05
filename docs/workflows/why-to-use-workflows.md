@@ -114,7 +114,7 @@ Appcircle's powerful Workflow Editor has a built-in Workflow Marketplace that al
 
 You can find the full list of available workflow steps in our workflow marketplace at:;
 
-[https://www.appcircle.io/integrations/](https://www.appcircle.io/integrations/)
+https://www.appcircle.io/integrations/
 
 You can add platform-specific workflow steps, custom scripts, and other steps into your workflow and re-order them as you like. You can also remove the steps you don't need. You can backup your current workflow by clicking the **Download YAML** button at the bottom.
 

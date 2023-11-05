@@ -14,13 +14,13 @@ You can find the full list of available workflow steps in our [workflow marketpl
 
 Smartface Generator step is specific to the Smartface projects and it generates an Android Studio project for building Android applications.
 
-[https://github.com/appcircleio/appcircle-android-smartface-eject-component](https://github.com/appcircleio/appcircle-android-smartface-eject-component)
+https://github.com/appcircleio/appcircle-android-smartface-eject-component
 
 ## Smartface Generator for iOS
 
 Smartface Generator step is specific to the Smartface projects and it generates an Xcode project for building iOS applications.
 
-[https://github.com/appcircleio/appcircle-android-smartface-eject-component](https://github.com/appcircleio/appcircle-android-smartface-eject-component)
+https://github.com/appcircleio/appcircle-android-smartface-eject-component
 
 
 
