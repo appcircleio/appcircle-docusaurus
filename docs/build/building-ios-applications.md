@@ -6,6 +6,7 @@ sidebar_position: 4
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 
 # Building iOS Applications
 
@@ -51,7 +52,7 @@ If your project uses private modules, don't forget the add necessary SSH keys to
 
 You may also use `Authenticate with netrc` step to access your private modules.
 
-https://github.com/appcircleio/appcircle-netrc-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-netrc-component" title="Appcircle NetRC Component"/>
 
 #### Selecting the Xcode Version and Switching to the Xcode Beta
 

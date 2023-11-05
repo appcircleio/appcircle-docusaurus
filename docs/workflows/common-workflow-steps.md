@@ -6,6 +6,8 @@ sidebar_position: 2
 ---
 # Common Workflow Steps
 
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
+
 The steps listed below are common across all build profiles regardless of the target OS and platform.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
@@ -18,25 +20,25 @@ This is a built-in step present within the build agent and executed before every
 
 This step sets up your SSH key in the build machine if you used one to connect your repository. This allows the build machine to connect to your private repository using your SSH key.
 
-https://github.com/appcircleio/appcircle-activate-ssh-key-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-activate-ssh-key-component" title="Appcircle Activate SSH Key Component"/>
 
 ## Custom Scripts
 
 You can use custom scripts for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the build agent and you can use any functionality of the virtual machine as you need.
 
-https://github.com/appcircleio/appcircle-custom-script-component/
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-custom-script-component/" title="Appcircle Custom Script Component/"/>
 
 ## Git Clone
 
 Clones the Git repository to the build agent with the given arguments.
 
-https://github.com/appcircleio/appcircle-git-clone-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-git-clone-component" title="Appcircle Git Clone Component"/>
 
 ## Export Build Artifacts
 
 Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download from the artifacts section of the completed build.
 
-https://github.com/appcircleio/appcircle-export-build-artifacts
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-export-build-artifacts" title="Appcircle Export Build Artifacts"/>
 
 ## Cache Push
 
@@ -72,7 +74,7 @@ System automatically cleans unreachable and obsolete cache files periodically. F
 
 :::
 
-https://github.com/appcircleio/appcircle-cache-push-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-cache-push-component" title="Appcircle Cache Push Component"/>
 
 ## Cache Pull
 
@@ -96,104 +98,106 @@ These variables can be adjusted within the **Cache Label** field, as indicated b
 
 Also you can have more than one push and pull pairs in the same build pipeline according to your needs.
 
-https://github.com/appcircleio/appcircle-cache-pull-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-cache-pull-component" title="Appcircle Cache Pull Component"/>
 
 ## Release Notes
 
 You can use Release Notes component to create release notes during your workflow.
 
-https://github.com/appcircleio/appcircle-release-notes-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-release-notes-component" title="appcircle Release Notes Component"/>
 
 ## SonarQube
 
 You can use SonarQube component to check your code quality.
 
-https://github.com/appcircleio/appcircle-sonarqube-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-sonarqube-component" title="Appcircle SonarQube Component"/>
 
 ## Appium Server
 
 This step installs [Appium Server](https://appium.io/) and starts it.
 
-https://github.com/appcircleio/appcircle-appium-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-appium-component" title="Appcircle Appium Component"/>
 
 ## Firebase App Distribution
 
 Send your apps to be distributed via Firebase App Distribution
 
-https://github.com/appcircleio/appcircle-firebase-distribution-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-firebase-distribution-component" title="Appcircle Firebase Distribution Component"/>
 
 ## Firebase Deployment
 
 Deploy your web applications to Firebase Hosting
 
-https://github.com/appcircleio/appcircle-firebase-deploy-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-firebase-deploy-component" title="Appcircle Firebase Deploy Component"/>
 
 
 ## Firebase Upload dSYM
 
 Upload your debug symbols to Firebase Crashlytics
 
-https://github.com/appcircleio/appcircle-firebase-dsym-upload-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-firebase-dsym-upload-component" title="Appcircle Firebase dSYm Upload Component"/>
 
 ## Fortify On Demand
 
 This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment
 
-https://github.com/appcircleio/appcircle-fod-mobile-assessment
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-fod-mobile-assessment" title="Appcircle Fod Mobile Assessment"/>
 
 ## Code Reviews with Danger
 
 Danger runs during your CI process and gives teams the chance to automate common code review chores. This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your team’s norms. Leaving humans to think about harder problems.
 
-https://github.com/appcircleio/appcircle-danger-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-danger-component" title="Appcircle Danger Component"/>
 
-https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews
+<ExternalUrlRef url="https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews" title="Appcirlce Danger CI Article"/>
+
 
 ## Authenticate with netrc
 
 The `.netrc` file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file. However, if you want to use the .netrc file with curl, you need to append the `-n` command line parameter. You may also use the `--netrc-optional` parameter if you don't always use the `.netrc` file with curl.
 
-https://github.com/appcircleio/appcircle-netrc-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-netrc-component" title="Appcircle Netrc Component"/>
 
 ## File size check
 
 This component checks the file size and either warn or fail the workflow.
 
-https://github.com/appcircleio/appcircle-filesize-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-filesize-component" title="Appcircle Filesize Component"/>
 
 ## FTP Upload
 
 This component uploads file or folders to given FTP server.
 
-https://github.com/appcircleio/appcircle-ftp-upload-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-ftp-upload-component" title="Appcircle FTP Upload Component"/>
+
 
 
 ## Testinium
 
 This component runs your test plans with Testinium.
 
-https://github.com/appcircleio/appcircle-testinium-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-testinium-component" title="Appcircle Testinium Component"/>
 
 ## Maestro Cloud Upload
 
 This component uploasd both your app binary and flows to Maestro Cloud.
 
-https://github.com/appcircleio/appcircle-maestro-cloud-upload-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-maestro-cloud-upload-component" title="Appcircle Maestro Cloud Upload Component"/>
 
 ## Data Theorem Mobile Secure
 
 This component scans your app using Mobile Secure
 
-https://github.com/appcircleio/appcircle-datatheorem-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-datatheorem-component" title="Appcircle Datatheorem Component"/>
 
 ## Repeato Mobile Test Automation
 
 This component creates and automates UI tests for iOS and Android. 
 
-https://github.com/appcircleio/appcircle-repeato-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-repeato-component" title="Appcircle Repeato Component"/>
 
 ## Snyk Scan Security
 
 By utilizing this step, you will be able to test your project dependencies for vulnerabilities during builds and use Snyk to monitor your projects.
 
-https://github.com/appcircleio/appcircle-snyk-scan-secure-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-snyk-scan-secure-component" title="Appcircle Snyk Scan and Secure Component"/>

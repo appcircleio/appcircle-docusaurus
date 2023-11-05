@@ -8,6 +8,7 @@ sidebar_position: 1
 import ContentRef from '@site/src/components/ContentRef';
 import SelfHostedBadge from '@site/src/components/SelfHostedBadge';
 import CloudBadge from '@site/src/components/CloudBadge';
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 
 # Latest Release Notes
 
@@ -714,7 +715,9 @@ The default Node version which Appcircle uses to build React Native apps are upg
 
 If your app targets Android 11, please read the following documentation to enable V2 Signing in your Build Profile:
 
-https://docs.appcircle.io/build/building-android-applications/android-signing-for-google-play#enable-v2-sign-in-appcircle
+<ContentRef url="build/building-android-applications/android-signing-for-google-play#enable-v2-sign-in-appcircle">
+Enable V2 Sign on Appcircle
+</ContentRef>
 
 ### 🆕 New Feature
 

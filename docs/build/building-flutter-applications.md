@@ -9,6 +9,7 @@ import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 
 # Building Flutter Mobile Applications
 
@@ -38,7 +39,7 @@ If your project uses private modules, don't forget the add necessary SSH keys to
 
 You may also use `Authenticate with netrc` step to access your private modules.
 
-https://github.com/appcircleio/appcircle-netrc-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-netrc-component" title="Appcircle NetRC Component"/>
 
 ### Build Configuration for Flutter iOS applications
 

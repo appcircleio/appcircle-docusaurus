@@ -7,6 +7,7 @@ sidebar_position: 1
 
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 
 # Running iOS Unit & UI Tests
 
@@ -36,8 +37,7 @@ See the following page on our documentation to learn more about adding new workf
 
 To learn more about **Xcodebuild for Unit and UI Tests** step, visit its source on Github:
 
-https://github.com/appcircleio/appcircle-ios-test-component
-
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-ios-test-component" title="Appcircle iOS Test Component"/>
 
 ### Getting test results
 

@@ -22,7 +22,7 @@ Although iOS apps can be signed with Ad-Hoc provisioning profiles for in-house d
 
 If you have more than 100 users and don't want to deal with device enrollment, you need to use sign your apps with Enterprise Certificate. Please check the Apple's Enterprise program for more information.
 
-https://developer.apple.com/programs/enterprise/
+<ExternalUrlRef url="https://developer.apple.com/programs/enterprise/" title=""/>
 
 ### Adding a Profile
 

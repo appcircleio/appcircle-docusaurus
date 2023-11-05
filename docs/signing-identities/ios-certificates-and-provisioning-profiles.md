@@ -7,6 +7,7 @@ sidebar_position: 1
 
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 
 # iOS Certificates & Provisioning Profiles
 
@@ -24,7 +25,7 @@ However, unsigned binaries cannot be installed on actual devices; therefore they
 
 You can obtain your developer certificates and provisioning profiles from the Apple Developer Portal:
 
-https://developer.apple.com/support/code-signing/
+<ExternalUrlRef url="https://developer.apple.com/support/code-signing/" title="Apple Code Signing Documentation"/>
 
 ## iOS Code Signing Overview
 

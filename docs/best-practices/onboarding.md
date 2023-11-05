@@ -55,14 +55,18 @@ If your repo is Self Hosted with Gitlab or Bitbucket, your repo will be added wi
 
 You will need to generate Personal Access Token or Project Access Token for Gitlab. Personal Access Token allows to access all the repositories of that person. Project Access Token allows to access all the repositories under the specified project.
 
-https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-gitlab/
+<ContentRef url="/build/adding-a-build-profile/connecting-to-gitlab/">
+Connecting to GitLab
+</ContentRef>
 
 **Bitbucket**
 
 Bitbucket also allows using repository tokens to access a single repository.
 Personal Access Token allows to access all the repositories of that person. Project Access Token allows to access all the repositories under the specified project.
 
-https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-bitbucket
+<ContentRef url="/build/adding-a-build-profile/connecting-to-bitbucket">
+Connecting to BitBucket
+</ContentRef>
 
 Appcircle needs admin permission to function properly. The admin permission is needed to create relevant WebHooks automatically.
 
@@ -81,13 +85,17 @@ If the extra libraries you use are in a private repo, these repositories must be
 
 You will need to create a new SSH key and upload the public key to your Repo and the private key to Appcircle. These files can be created easily by following the document below.
 
-https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-private-repository-via-ssh
+<ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">
+SSH Private Key
+</ContentRef>
 
 ### Netrc File
 
 The .netrc file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file
 
-https://docs.appcircle.io/workflows/common-workflow-steps/#authenticate-with-netrc
+<ContentRef url="/workflows/common-workflow-steps/#authenticate-with-netrc">
+NetRC Authentication
+</ContentRef>
 
 ## Signing
 
@@ -118,15 +126,25 @@ When the above credentials are provided, Xcode automatically creates provisionin
 
 The only thing that needs to be installed for Android is the keystore file you used to sign the project. Simply uploading this file will often not be sufficient for signing. You will also need to make changes to the build.gradle file and sign it with the keystore installed on the Appcircle environment. Please check the following document for this process.
 
-https://docs.appcircle.io/build/building-android-applications/android-signing-for-google-play/#enable-v2-sign-through-the-android-project-buildgradle
+<ContentRef url="/build/building-android-applications/android-signing-for-google-play#enable-v2-sign-through-the-android-project-buildgradle">
+Enable V2 Signing
+</ContentRef>
 
 ## Integrations
 
 App Store, Google Play, or Huawei App Gallery keys must be added to Appcircle to upload IPA or APK files. To create these files, the following documents can be followed.
 
-https://docs.appcircle.io/store-submit/google-play
-https://docs.appcircle.io/store-submit/apple-app-store
-https://docs.appcircle.io/store-submit/huawei-app-gallery
+<ContentRef url="/store-submit/google-play">
+Store Submit - Google Play
+</ContentRef>
+
+<ContentRef url="/store-submit/apple-app-store">
+Store Submit - Apple App Store
+</ContentRef>
+
+<ContentRef url="/store-submit/huawei-app-gallery">
+Store Submit - Huawei App Gallery
+</ContentRef>
 
 ## Extra suggestions
 
@@ -134,11 +152,17 @@ https://docs.appcircle.io/store-submit/huawei-app-gallery
 
 - It will be better to manage confidential or constantly changing information with Environment Variables. This will allow you to get different outputs by selecting different variable groups without changing your code.
 
-https://docs.appcircle.io/environment-variables/managing-variables/#creating-environment-variable-groups
+<ContentRef url="/environment-variables/managing-variables#creating-environment-variable-groups">
+Environment Variable Groups
+</ContentRef>
 
-https://docs.appcircle.io/environment-variables/using-environment-variables-in-ios-projects/#using-different-values-for-different-stages
+<ContentRef url="/environment-variables/using-environment-variables-in-ios-projects#using-different-values-for-different-stages">
+Using Different Values for Different Stages
+</ContentRef>
 
-https://docs.appcircle.io/environment-variables/using-environment-variables-in-android-projects
+<ContentRef url="/environment-variables/using-environment-variables-in-android-projects">
+Using Environment Variables in Android Projects
+</ContentRef>
 
 - It is important that the versions you use for React Native and Flutter are written on the config screen. If you don't set a version, it will be built with the latest version.
 - If you are using React Native, you can turn off Flipper with the following change in the Podfile. This will shorten your build times.

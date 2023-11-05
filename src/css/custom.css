@@ -185,6 +185,11 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   margin-right: 16px;
 }
 
+.rlc-url-container .link-icon {
+  max-width: 48px;
+  margin-right: 16px;
+}
+
 .image-narrow {
   max-width: 70%;
 }
@@ -436,14 +441,14 @@ html[data-theme='dark'] .rlc-container:hover {
 
 .rlc-image-container {
   position: relative;
-  flex: 1 1 54px;
-  justify-content: center;
+  flex: 1;
 }
 
 .rlc-image {
   object-fit: contain;
-  width: 100%;
+  width: 40%;
   height: 100% !important;
+  margin-left: 45%;
   max-height: 75%;
   margin-top: 7.5%;
   border-bottom-right-radius: 0.25rem;

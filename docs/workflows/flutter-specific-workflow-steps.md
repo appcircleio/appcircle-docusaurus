@@ -4,6 +4,9 @@ metaTitle: Flutter Specific Workflow Steps
 metaDescription: Flutter Specific Workflow Steps
 sidebar_position: 6
 ---
+
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
+
 # Flutter Specific Workflow Steps
 
 The steps listed below are specific to the Flutter build profiles.
@@ -38,10 +41,10 @@ This component builds your Flutter project for Android with the [Flutter SDK](ht
 
 This component builds your Flutter project for iOS with the [Flutter SDK](https://github.com/flutter/flutter).
 
-https://github.com/appcircleio/appcircle-ios-flutter-build-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-ios-flutter-build-component" title="Appcircle Flutter iOS Build Component"/>
 
 ## ​Flutter Build for Web
 
 This component builds a web app with the [Flutter SDK](https://flutter.dev/docs/deployment/web#building-the-app-for-release).
 
-https://github.com/appcircleio/appcircle-flutter-web-build-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-flutter-web-build-component" title="Appcircle Flutter Web Build Component"/>

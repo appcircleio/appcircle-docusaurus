@@ -6,6 +6,7 @@ sidebar_position: 2
 ---
 
 import NarrowImage from '@site/src/components/NarrowImage';
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 
 # Custom Script Samples
 
@@ -62,7 +63,7 @@ firebase appdistribution:distribute $AC_EXPORT_DIR/Runner.ipa --app $FIREBASE_AP
 
 You may also use our Firebase App Distribution Component for this process.
 
-https://github.com/appcircleio/appcircle-firebase-distribution-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-firebase-distribution-component" title="Appcircle Firebase Distribution Component"/>
 
 ### Send email notification when a build is complete
 

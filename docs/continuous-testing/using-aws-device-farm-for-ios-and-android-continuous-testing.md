@@ -5,6 +5,8 @@ metaDescription: Using AWS Device Farm for iOS and Android Continuous Testing
 sidebar_position: 3
 ---
 
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
+
 # Using AWS Device Farm for iOS and Android Continuous Testing
 
 AWS Device Farm is an application testing service that enables you to run your tests concurrently on multiple mobile devices to speed up the execution of your tests and generates videos and logs to help you quickly identify issues with your app.
@@ -76,9 +78,10 @@ aws devicefarm list-device-pools --arn MyProjectARN
 
 For the details of the other AWS Device Farm-specific parameters, please refer to the following documents:
 
-https://docs.aws.amazon.com/cli/latest/reference/devicefarm/create-upload.html
+<ExternalUrlRef url="https://docs.aws.amazon.com/cli/latest/reference/devicefarm/create-upload.html" title="AWS Device Farm Create and Upload"/>
 
-https://docs.aws.amazon.com/cli/latest/reference/devicefarm/schedule-run.html
+<ExternalUrlRef url="https://docs.aws.amazon.com/cli/latest/reference/devicefarm/schedule-run.html" title="AWS Device Farm Schedule Run"/>
+
 
 After you save your settings, you can run the build and the step will be executed accordingly. You can view the details of the AWS Device Farm Deploy and Run step in the build logs:
 
