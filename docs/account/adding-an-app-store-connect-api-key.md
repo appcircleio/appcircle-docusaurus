@@ -5,6 +5,8 @@ metaDescription: Adding an App Store Connect API Key
 sidebar_position: 5
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Adding an App Store Connect API Key
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A0OgvrX5L-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -17,7 +19,7 @@ To link your Apple Developer account, **you need an App Store Connect API Key** 
 
 Go to [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) and login with your account.
 
-![](<https://cdn.appcircle.io/docs/assets/app-store-connect-logged-in-low (1).jpg>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/app-store-connect-logged-in-low (1).jpg' />
 
 :::caution
 
@@ -27,11 +29,11 @@ Make sure that the correct team is selected on the top right. For developer acco
 
 Once the team is correct, select **Users and Access** from the menu:
 
-![](<https://cdn.appcircle.io/docs/assets/app-store-connect-logged-in-selected-low (1).jpg>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/app-store-connect-logged-in-selected-low (1).jpg' />
 
 After navigating to **Users and Access**, you will see 4 tabs next to the title. Select the **Keys** tab. Then make sure that **App Store Connect API** is selected from the list on the left.
 
-![](<https://cdn.appcircle.io/docs/assets/api-keys-tab-low (1).jpg>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/api-keys-tab-low (1).jpg' />
 
 ## Generating a New Key
 
@@ -43,7 +45,7 @@ Only Account Holders can enable the API Key generation. If you see a disabled **
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/api-keys-add-new-low (1).jpg>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/api-keys-add-new-low (1).jpg' />
 
 A modal popup will ask you to enter a name and add roles for this key:
 
@@ -61,7 +63,7 @@ To see a list of permissions each role has, visit: [https://developer.apple.com/
 
 After generating the key, download the key file by pressing Download API Key next to it.
 
-![](<https://cdn.appcircle.io/docs/assets/download-api-key-low (2).jpg>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/download-api-key-low (2).jpg' />
 
 :::caution
 
@@ -81,11 +83,11 @@ On the Organization screen, select **Add New **on **App Store Connect API Keys *
 
 On the form, upload the **.p8** key file downloaded from App Store Connect:
 
-![](<https://cdn.appcircle.io/docs/assets/image (93).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (93).png' />
 
 Fill in the rest of the form. You can find the **Key ID** and **Issuer ID** from App Store Connect Panel here:
 
-![](<https://cdn.appcircle.io/docs/assets/keyid-issuerid-low (1).jpg>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/keyid-issuerid-low (1).jpg' />
 
 Copy and paste them to the form in Appcircle, give it a name, and save.
 

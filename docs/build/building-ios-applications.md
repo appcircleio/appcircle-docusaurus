@@ -5,6 +5,7 @@ metaDescription: Building iOS Applications
 sidebar_position: 4
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Building iOS Applications
@@ -29,7 +30,7 @@ First, we need to set up a build configuration. Select the configuration from th
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
-![](<https://cdn.appcircle.io/docs/assets/ios-fetch.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-fetch.png' />
 
 **Share your iOS schemes**
 
@@ -61,17 +62,17 @@ The list of currently available Xcode versions can be found in the following doc
 
 By default, the most recent stable version of Xcode is selected. If available, you can also switch to the most recent Xcode beta at the top of the list.
 
-![](<https://cdn.appcircle.io/docs/assets/ios-fetch.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-fetch.png' />
 
 ### Sending the Build Status to the Repository Providers
 
 At the bottom of the config tab, you will the **Set Commit Build Status **option.
 
-![](<https://cdn.appcircle.io/docs/assets/image (8).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (8).png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
-![](<https://cdn.appcircle.io/docs/assets/image (213).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (213).png' />
 
 ![](https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png)
 
@@ -101,7 +102,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (170).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (170).png' />
 
 ### Distribution
 
@@ -140,7 +141,7 @@ Please see the following page for more information about environment variables:
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
-![](<https://cdn.appcircle.io/docs/assets/image (172).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (172).png' />
 
 Please click on the Save button and close this modal.
 

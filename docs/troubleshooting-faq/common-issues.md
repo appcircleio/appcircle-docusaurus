@@ -5,6 +5,7 @@ metaDescription: Common Issues and Troubleshooting
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Common Issues and Troubleshooting
@@ -101,11 +102,11 @@ For more information, please refer to: [https://docs.aws.amazon.com/codecommit/l
 
 After you follow the steps in the referenced document above to create a trigger, you need to create a notification rule under CodeCommit Settings as shown below to add a webhook URL.
 
-![](<https://cdn.appcircle.io/docs/assets/2 (1).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2 (1).png' />
 
 Then select the "Enable raw message delivery" option while adding the webhook URL as a subscription to the topic.
 
-![](<https://cdn.appcircle.io/docs/assets/1 (1).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/1 (1).png' />
 
 ## General Build Troubleshooting
 

@@ -5,6 +5,7 @@ metaDescription: 'Connecting to Azure DevOps'
 sidebar_position: 4
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Connecting to Azure DevOps
@@ -28,15 +29,15 @@ If you don't enable third-party application access via the Oauth setting, you ca
 
 If you authorize Appcircle to access your repositories on Azure DevOps, you can select the repository that you want to connect in the next screen.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-connection-1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-connection-1.png' />
 
 After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or ask your consent about authorizing more repositories.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-connection-3.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-connection-3.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
-![](<https://cdn.appcircle.io/docs/assets/azure-connection-6.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-connection-6.png' />
 
 After the connection is successful, you can [view your newly created profile](./README.md#view-the-newly-created-build-profile) and start building!
 
@@ -54,11 +55,11 @@ Azure DevOps Server version must be **Azure DevOps Server Express 2022** or high
 
 First, select **Azure ** and then **Connect to an Azure DevOps Server** through the menu:
 
-![](<https://cdn.appcircle.io/docs/assets/azure-connection-2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-connection-2.png' />
 
 Fill in the relevant information about your Azure DevOps Server. If you are not sure what those are, contact your system administrator.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-connection-5.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-connection-5.png' />
 
 :::info
 For the server URL variable, it should use your URL without a path.

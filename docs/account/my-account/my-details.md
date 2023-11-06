@@ -5,6 +5,8 @@ metaDescription: My Details
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # My Details
 
 In this screen, you can change your email address and specify your name.
@@ -15,4 +17,4 @@ If you change your email address, you will be asked to verify the new address.
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (18).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (18).png' />

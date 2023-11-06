@@ -5,6 +5,7 @@ metaDescription: After a Build
 sidebar_position: 12
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # After a Build
@@ -53,7 +54,7 @@ If you want to free up space from your Artifact Storage, you can delete older bu
 
 To do that, simply navigate to the Builds tab and select the builds, then click on the Delete icon
 
-![](<https://cdn.appcircle.io/docs/assets/image (211).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (211).png' />
 
 :::tip
 

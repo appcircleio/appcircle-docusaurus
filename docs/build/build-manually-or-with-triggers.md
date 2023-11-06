@@ -5,6 +5,8 @@ metaDescription: Build Manually or Automatically with Webhooks and Triggers
 sidebar_position: 11
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Build Manually or Automatically with Webhooks and Triggers
 
 There are multiple ways to trigger a build in Appcircle. You can run builds manually or automate the build process with various triggers.
@@ -15,7 +17,7 @@ There are multiple ways to trigger a build in Appcircle. You can run builds manu
 
 As the name states, your build profile will not build your application until you tell it to. You can browse branches in your Git repository and select any commit from any branch you need to build. To initiate a manual build, just press the **Start Build** button.
 
-![](<https://cdn.appcircle.io/docs/assets/image (168).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (168).png' />
 
 ### Workflows for Manual Builds
 
@@ -41,7 +43,7 @@ For repositories connected through SSH, you can set up triggers with webhooks in
 
 When you connect a repository through SSH or through a public URL, the Webhook URL option will be enabled in the context menu of the build profile, accessible from the top of the profile details.
 
-![](<https://cdn.appcircle.io/docs/assets/image (174).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (174).png' />
 
 If the git provider is detected, a compatible URL will be displayed automatically. If not, you will be first prompted to select the provider to display the webhook URL.
 
@@ -49,7 +51,7 @@ You can copy this URL and paste it in the related section in the git provider re
 
 You can also regenerate the URL to invalidate/revoke the previous one with the refresh button.
 
-![](<https://cdn.appcircle.io/docs/assets/image (175).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (175).png' />
 
 Please refer to the following guides to set up webhooks in various git providers:
 
@@ -95,7 +97,7 @@ The build will be done with the pull/merge result using the selected workflow. T
 Make sure that the names of the source branch and the target branch are spelled correctly.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/mr-pr-last.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mr-pr-last.png' />
 
 :::info
 If spaces are used in the name, Appcircle will trim it without spaces.
@@ -106,7 +108,7 @@ If spaces are used in the name, Appcircle will trim it without spaces.
 
 Now you will be able to trigger different workflows in the same source branch and target branch on Appcircle at once. As soon as the trigger is triggered, Appcircle will start running all the triggered triggers in the build queue, starting from the first place in the established trigger queue.
 
-![](<https://cdn.appcircle.io/docs/assets/mr-pr-trigger-1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mr-pr-trigger-1.png' />
 
 #### Selective auto build with specific tags
 
@@ -114,7 +116,7 @@ Appcircle will start building your application with the selected workflow whenev
 
 This allows build scenarios like building only specific pushes that has the "release" in the tag. 
 
-![](<https://cdn.appcircle.io/docs/assets/tag-last.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/tag-last.png' />
 
 ### Skipping a workflow
 
