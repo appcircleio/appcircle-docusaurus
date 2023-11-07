@@ -76,15 +76,15 @@ iOS certificates and Android keystores can be generated within Appcircle or pre-
 
 ### Distribution configuration
 
-Distribution is a critical step when it comes to test your application on real devices. You may need multiple testers and test groups to download, install and test your application and make sure it works on different devices and operating system versions.
+Deployment is a critical step when it comes to testing your app on real devices. You may need multiple testers and testing groups to download, install, test your app, and make sure it works on different devices and operating system versions.
 
-Distribution configuration allows you to set up which testing groups will receive your application after the build is complete. You can manually send your binary file to testers or Appcircle can do this for you.
+Deployment configuration allows you to set which test groups will receive your application after the build is complete. You can manually submit your binary to testers, or Appcircle can do it for you.
 
-You can select a previously created distribution profile or create a new one on this window. Use the top input box to enter a name for the new distribution profile you want to create. Press enter or click on the green + icon on the right to create the distribution profile.
+In this window, you can select one or more of the previously created distribution profiles or create a new one. You can use the "Manage Distribution Profiles" button above to quickly manage distribution profiles.
 
-Finally, check Auto Distribute if you want your build to be deployed to the Testing Distribution automatically and Auto Deployment if you want the build to be deployed to Store Submission automatically.
+Finally, check Auto Deploy if you want your build to be automatically deployed to Test Deployment, or check Auto Deploy if you want your build to be automatically deployed to Store Shipping.
 
-![](<https://cdn.appcircle.io/docs/assets/image (171).png>)
+![](<https://cdn.appcircle.io/docs/assets/multiple-dist-build-1.png>)
 
 ### Environment variables configuration
 
