@@ -247,6 +247,10 @@ In the next step for completing custom script settings, the `AC_COMPILER_INDEX_S
 $compiler_index_store_enable = AC_COMPILER_INDEX_STORE_ENABLE
 ```
 
+:::caution
+You should find the line with `compiler_index_store_enable` and replace it with the above statement. 
+:::
+
 After these variables were set. There is an `archive()` function in the Ruby code. First, find the function in the code.
 
 ```ruby
