@@ -3,7 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const rlc = require('remark-link-card');
+const rlc = require('remark-link-card').bind(null, { cache: true });
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -16,8 +16,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'appcircleio', // Usually your GitHub org/user name.
   projectName: 'appcircle-docusaurus', // Usually your repo name.
-
-
+  staticDirectories: ['public', 'static'],
   presets: [
     [
       'classic',

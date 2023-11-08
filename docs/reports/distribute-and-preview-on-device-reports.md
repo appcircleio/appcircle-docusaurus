@@ -5,6 +5,8 @@ metaDescription: Distribute Reports
 sidebar_position: 2
 ---
 
+import ContentRef from '@site/src/components/ContentRef';
+
 # Distribute Reports
 
 ## App Versions Report

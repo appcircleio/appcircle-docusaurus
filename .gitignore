@@ -4,6 +4,9 @@
 # Production
 /build
 
+# Cache
+public/remark-link-card/**
+
 # Generated files
 .docusaurus
 .cache-loader
