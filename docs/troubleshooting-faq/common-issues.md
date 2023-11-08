@@ -218,10 +218,10 @@ To address the need to add a new command after completing the `xcodebuild` comma
 - In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
 
 :::caution
-Before running the script. Some variables must be changed and added new variables in custom script first.
+Before running the script, some variables must be changed, and new variables must be added to the custom script.
 :::
 
-First this global variable line should be changed like this in global variables.
+First, the `output_path` global variable should be changed like below in global variables.
 
 ```ruby
 ...
@@ -230,7 +230,7 @@ First this global variable line should be changed like this in global variables.
 $output_path = env_has_key("AC_OUTPUT_DIR")
 ```
 
-After this you need to add some parameters in your custom script. Below parameters should be added right after global variables.
+After this, you need to add some parameters to your custom script. The parameters below should be added right after global variables.
 
 ```ruby
 AC_COMPILER_INDEX_STORE_ENABLE = "NO"
@@ -241,7 +241,7 @@ AC_ARCHIVE_METADATA_PATH = "AC_ARCHIVE_METADATA_PATH"
 AC_EXPORT_DIR = "AC_EXPORT_DIR"
 ```
 
-Next step for completing custom script settings, `AC_COMPILER_INDEX_STORE_ENABLE` parameter should be equaled with following parameter.
+In the next step for completing custom script settings, the `AC_COMPILER_INDEX_STORE_ENABLE` parameter should be equaled with the following parameter:
 
 ```ruby
 $compiler_index_store_enable = AC_COMPILER_INDEX_STORE_ENABLE
