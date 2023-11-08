@@ -217,7 +217,37 @@ To address the need to add a new command after completing the `xcodebuild` comma
 - Change "Execute With" picker as **Ruby**.
 - In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
 
-There is an `archive()` function in the Ruby code. First, find the function in the code.
+:::caution
+Before running the script, some variables must be changed, and new variables must be added to the custom script.
+:::
+
+First, the `output_path` global variable should be changed like below in global variables.
+
+```ruby
+...
+## Other global variables
+...
+$output_path = env_has_key("AC_OUTPUT_DIR")
+```
+
+After this, you need to add some parameters to your custom script. The parameters below should be added right after global variables.
+
+```ruby
+AC_COMPILER_INDEX_STORE_ENABLE = "NO"
+AC_METHOD_FOR_EXPORT = "auto-detect"
+AC_DELETE_ARCHIVE = "false"
+AC_ARCHIVE_PATH = "AC_ARCHIVE_PATH"
+AC_ARCHIVE_METADATA_PATH = "AC_ARCHIVE_METADATA_PATH"
+AC_EXPORT_DIR = "AC_EXPORT_DIR"
+```
+
+In the next step for completing custom script settings, the `AC_COMPILER_INDEX_STORE_ENABLE` parameter should be equaled with the following parameter:
+
+```ruby
+$compiler_index_store_enable = AC_COMPILER_INDEX_STORE_ENABLE
+```
+
+After these variables were set. There is an `archive()` function in the Ruby code. First, find the function in the code.
 
 ```ruby
 ## Archive Functions
@@ -229,7 +259,7 @@ def archive()
   ...
 ```
 
-At the end of this function, before running the `run_command()` function, you can add these lines to be able to add additional commands.
+At the end of this function, before running the `run_command_simple()` function, you can add these lines to be able to add additional commands.
 
 ```ruby
   ...
@@ -239,7 +269,7 @@ At the end of this function, before running the `run_command()` function, you ca
   command.concat("Write your command that you want to add here")
   command.concat(" ")
 
-  run_command(command,false)
+  run_command_simple(command)
 end
 ```
 
@@ -255,11 +285,11 @@ When you need to reduce the verbosity of the `xcodebuild` logs, you can achieve 
   command.concat(" | grep -A 5 error:")
   command.concat(" ")
 
-  run_command(command,false)
+  run_command_simple(command)
 end
 ```
 
-Now, the `run_command()` function will execute your customized `xcodebuild` command.
+Now, the `run_command_simple()` function will execute your customized `xcodebuild` command.
 
 ### Missing Entitlements
 
