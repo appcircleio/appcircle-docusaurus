@@ -11,9 +11,9 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ## Connecting to Azure DevOps Services Cloud
 
-### Pre Requiements
+### Requirements
 
-You must enable Third-Party application access via OAuth. To do that, you can follow the steps:
+You must enable third-party application access via OAuth. To do that, you can follow the steps:
 
 - Go to https://dev.azure.com
 - Click to Organization setting from the left sidebar.
@@ -28,7 +28,7 @@ If you don't enable third-party application access via the Oauth setting, you ca
 
 If you authorize Appcircle to access your repositories on Azure DevOps, you can select the repository that you want to connect in the next screen.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-connection-1.png>)
+![](<https://cdn.appcircle.io/docs/assets/azure-connect-main.png>)
 
 After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or ask your consent about authorizing more repositories.
 
@@ -49,26 +49,30 @@ TFS is not compatible with Azure DevOps Server on Appcircle.
 :::
 
 :::caution
-Azure DevOps Server version must be **Azure DevOps Server Express 2022** or higher.
+Azure DevOps Server version must be **Azure DevOps Server 2020** or higher.
 :::
 
-First, select **Azure ** and then **Connect to an Azure DevOps Server** through the menu:
+First, select **Azure** and then **Connect to an Azure DevOps Server** through the menu:
 
-![](<https://cdn.appcircle.io/docs/assets/azure-connection-2.png>)
+![](<https://cdn.appcircle.io/docs/assets/azure-con-2.png>)
 
 Fill in the relevant information about your Azure DevOps Server. If you are not sure what those are, contact your system administrator.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-connection-5.png>)
+![](<https://cdn.appcircle.io/docs/assets/azure-con-5.png>)
+
+:::info
+Appcircle allows multiple instance connections. Here, you can give the connection a name so you can group the connections together.
+:::
 
 :::info
 For the server URL variable, it should use your URL without a path.
-For Example: https://azure.spacetech.com
+
+For example: https://azure.spacetech.com
 :::
 
 :::info
 For the owner name variable, it should use your collection name on self-hosted.
 :::
-
 
 :::caution
 
