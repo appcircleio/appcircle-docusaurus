@@ -269,7 +269,7 @@ At the end of this function, before running the `run_command_simple()` function,
   command.concat("Write your command that you want to add here")
   command.concat(" ")
 
-  run_command_simple(command,false)
+  run_command_simple(command)
 end
 ```
 
@@ -285,7 +285,7 @@ When you need to reduce the verbosity of the `xcodebuild` logs, you can achieve 
   command.concat(" | grep -A 5 error:")
   command.concat(" ")
 
-  run_command_simple(command,false)
+  run_command_simple(command)
 end
 ```
 
