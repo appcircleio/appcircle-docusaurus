@@ -217,6 +217,30 @@ To address the need to add a new command after completing the `xcodebuild` comma
 - Change "Execute With" picker as **Ruby**.
 - In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
 
+:::caution
+Before running the script. Some variables must be changed and added new variables in custom script first.
+:::
+
+First this global variable line should be changed like this in global variables.
+
+```ruby
+...
+## Other global variables
+...
+$output_path = env_has_key("AC_OUTPUT_DIR")
+```
+
+After this you need to add some parameters in your custom script. Above parameters should be added right after global variables.
+
+```ruby
+AC_COMPILER_INDEX_STORE_ENABLE = "NO"
+AC_METHOD_FOR_EXPORT = "auto-detect"
+AC_DELETE_ARCHIVE = "false"
+AC_ARCHIVE_PATH = "AC_ARCHIVE_PATH"
+AC_ARCHIVE_METADATA_PATH = "AC_ARCHIVE_METADATA_PATH"
+AC_EXPORT_DIR = "AC_EXPORT_DIR"
+```
+
 There is an `archive()` function in the Ruby code. First, find the function in the code.
 
 ```ruby
