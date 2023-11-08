@@ -88,6 +88,30 @@ sudo pmset -a disksleep 0
 sudo pmset -a displaysleep 0
 ```
 
+### 4. Configure Power Failure Settings
+
+Power failure settings allow a Mac to restart automatically after a power outage or failure. Activating this on a Mac mini server ensures the server comes back online automatically if power is lost, avoiding downtime.
+
+:::info
+For now, Appcircle runners doesn't support auto start when the macOS Host restarts.
+
+You should connect with ssh and [start the VMs](#start-vm)
+:::
+
+To configure power failure settings, you can run the command below 👇.
+
+```bash
+sudo /usr/sbin/systemsetup -setrestartpowerfailure on
+```
+
+:::info
+If your machine doesn't support this feature, you will get the message below 👇.
+
+`Restart After Power Failure: Not supported on this machine.`
+
+You can ignore power failure settings if not supported.
+:::
+
 ## Download MacOS VM
 
 Download macOS VM from Appcircle bucket.
