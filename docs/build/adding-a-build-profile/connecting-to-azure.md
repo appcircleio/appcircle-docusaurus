@@ -11,9 +11,9 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ## Connecting to Azure DevOps Services Cloud
 
-### Pre Requiements
+### Requirements
 
-You must enable Third-Party application access via OAuth. To do that, you can follow the steps:
+You must enable third-party application access via OAuth. To do that, you can follow the steps:
 
 - Go to https://dev.azure.com
 - Click to Organization setting from the left sidebar.
@@ -52,7 +52,7 @@ TFS is not compatible with Azure DevOps Server on Appcircle.
 Azure DevOps Server version must be **Azure DevOps Server 2020** or higher.
 :::
 
-First, select **Azure ** and then **Connect to an Azure DevOps Server** through the menu:
+First, select **Azure** and then **Connect to an Azure DevOps Server** through the menu:
 
 ![](<https://cdn.appcircle.io/docs/assets/azure-con-2.png>)
 
@@ -61,18 +61,18 @@ Fill in the relevant information about your Azure DevOps Server. If you are not 
 ![](<https://cdn.appcircle.io/docs/assets/azure-con-5.png>)
 
 :::info
-Appcircle allows multiple instance connections. Here you can give the link a name so you can group the links together.
+Appcircle allows multiple instance connections. Here, you can give the connection a name so you can group the connections together.
 :::
 
 :::info
 For the server URL variable, it should use your URL without a path.
-For Example: https://azure.spacetech.com
+
+For example: https://azure.spacetech.com
 :::
 
 :::info
-Appcircle allows multiple instance connections. Here, you can give the link a name so you can group the links together.
+For the owner name variable, it should use your collection name on self-hosted.
 :::
-
 
 :::caution
 
