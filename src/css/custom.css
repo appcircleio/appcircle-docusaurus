@@ -911,3 +911,18 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
 .hidden {
   display: none !important;
 }
+
+/* Customized Image and screenshots */
+
+img {
+  display: flex;
+  align-self: center;
+  margin: auto;
+  max-height: 650px;
+}
+
+.screenshot {
+  -webkit-filter: drop-shadow(3px 3px 3px #888 );
+  filter: drop-shadow(3px 3px 3px #888);
+  margin-bottom: 24px;
+}

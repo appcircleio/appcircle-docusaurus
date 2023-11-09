@@ -5,6 +5,8 @@ metaDescription: Building Multiple Apps in One Profile
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Building Multiple Apps in One Profile
 
 Depending on the structure of your project(s), at one point there might be a need to produce more than one application from a single codebase.
@@ -76,7 +78,7 @@ The assets that you can directly change with the Schemes
 - Plist file
 - App Icon
 
-<!-- ![](<https://cdn.appcircle.io/docs/assets/image (216).png>) -->
+<!-- <Screenshot url='https://cdn.appcircle.io/docs/assets/image (216).png' /> -->
 
 For more information about iOS Multiple Targets, navigate to the [Apple Help Documentation](https://help.apple.com/xcode/mac/current/#/dev38419576c)
 

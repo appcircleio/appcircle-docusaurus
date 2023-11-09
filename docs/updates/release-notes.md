@@ -5,6 +5,7 @@ metaDescription: Latest Release Notes
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import SelfHostedBadge from '@site/src/components/SelfHostedBadge';
 import CloudBadge from '@site/src/components/CloudBadge';
@@ -742,7 +743,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 - Added metadata (Organization ID, OS version etc.) at the beginning of the Build Logs
 - While manually building the workflow, Appcircle now lets you choose which workflow to trigger:
 
-![](<https://cdn.appcircle.io/docs/assets/image (215).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (215).png' />
 
 ### :muscle:Improvement
 

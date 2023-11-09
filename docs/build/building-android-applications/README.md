@@ -4,6 +4,7 @@ metaTitle: 'Building Android Applications'
 metaDescription: 'Building Android Applications'
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Building Android Applications
@@ -36,11 +37,11 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 At the bottom of the config tab, you will the **Set Commit Build Status **option.
 
-![](<https://cdn.appcircle.io/docs/assets/image (8).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (8).png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
-![](<https://cdn.appcircle.io/docs/assets/image (213).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (213).png' />
 
 ![](https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png)
 
