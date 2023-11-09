@@ -122,3 +122,108 @@ The `affirmative` strategy ensures that the authentication process checks all LD
 If the "spacetechuser" provides an incorrect password that does not match the user's credentials in any of the LDAP configurations, the authentication process will continue checking all the other LDAPs.
 
 If it finds a matching username with the correct password in any of the other LDAP configurations, the user will be granted access.
+
+# Appcircle Login with LDAP
+
+Appcircle Login with LDAP aims to provide an alternative authentication solution via the LDAP server. Appcircle's LDAP integration allows businesses to integrate existing directory services, especially Active Directory, directly into the Appcircle login process. This integration simplifies user management.
+
+The LDAP distinguished name (DN) is associated with existing Appcircle registered users when:
+- The existing user signs in to GitLab with LDAP for the first time.
+- The LDAP email address is the email address of an existing Appcircle user. If the LDAP email attribute isn’t found in the Appcircle user database, a new user is created.
+
+If an existing Appcircle user wants to enable LDAP sign-in for themselves, they should:
+- Check that their Appcircle user email address matches their LDAP user email address.
+- Sign in to Appcircle by using their LDAP credentials.
+
+:::caution
+This feature only provides a solution for self-hosted applications.
+:::
+
+#### Attribute Configuration Settings
+
+LDAP users must have an email address, regardless of whether or not it’s used to sign in. 
+
+Appcircle uses these LDAP attributes to create an account for the LDAP user. The specified attribute can be either:
+- The attribute Username LDAP Attribute as a string. For example,'mail'.
+
+|Settings|Description|Requried|Examples|
+|----------|-----------|----------|-----------|
+|Username LDAP Attribute|Name of LDAP attribute, which is mapped as username. For many LDAP server vendors it can be 'uid'. For Active directory it can be 'sAMAccountName' or 'cn'.|Yes|mail,email|
+
+### Adding LDAP Configuration
+
+- To get started, click on the Admin button from the left menu.
+
+![](https://cdn.appcircle.io/docs/assets/ldap-1.png)
+
+- Go to the Self-Hosted Settings screen.
+
+![](https://cdn.appcircle.io/docs/assets/ldap-2.png)
+
+- And press the Connect button next to LDAP Login.
+
+![](https://cdn.appcircle.io/docs/assets/ldap-3.png)
+
+- Click on the Create button to create your LDAP.
+
+![](https://cdn.appcircle.io/docs/assets/ldap-4.png)
+
+- Enter the details of your LDAP configurations.
+
+![](https://cdn.appcircle.io/docs/assets/ldap-5.png)
+
+:::caution
+After configuring LDAP, to test the configuration use the from adding LDAP config page bottom "Test" buttons. If the LDAP configuration is incorrect or cannot be accessed, they can log in with the initial users.
+:::
+
+![](https://cdn.appcircle.io/docs/assets/ldap-8.png)
+
+:::info
+Appcircle supports multiple LDAP configurations. If you are using multiple LDAP configurations and a user exists in both LDAPs, user authentication will look at the LDAP order. The "Order" field when adding an LDAP configuration is required to do this ordering. An LDAP configuration with an order value of 1 will be used before an LDAP configuration with an order value of 2 in user authentication.
+:::
+
+![](https://cdn.appcircle.io/docs/assets/ldap-9.png)
+
+### Appcircle Login Page Settings
+
+In this area, you can manage the creation of new users using the "Sign up by email" button and the renewal of passwords using the "Forgot password" button.
+
+#### User Registration
+
+If this setting is on, your users can register to Appcircle and perform operations with this user except LDAP management. If you want only your LDAP users to log in to the system, you need to keep this setting off.
+
+![](https://cdn.appcircle.io/docs/assets/ldap-6.png)
+
+:::info
+If this setting is off, the "Sign up by email" button will not appear on the Appcircle login page.
+:::
+
+#### Forgot Password
+
+If this setting is on, your users can renew their passwords themselves. If you want your users' password management operations to be done via LDAP, you should keep this setting off.
+
+![](https://cdn.appcircle.io/docs/assets/ldap-7.png)
+
+:::info
+If this setting is off, the "Forgot Password" button will not appear on the Appcircle login page.
+:::
+
+### Remove User From LDAP Server
+
+In the event that the LDAP configuration is deleted, users coming from LDAP or previously linked users cannot log in to the system. And logged-in users are automatically logged out.
+
+# Remove LDAP Configuration
+
+You can quickly remove your saved LDAP configuration via Appcircle. For this
+
+- To delete an LDAP configuration, press the "Manage" button next to the LDAP Login option on the Self-Hosted Settings page.
+
+![](https://cdn.appcircle.io/docs/assets/ldap-10.png)
+
+- In the window that opens, select the LDAP configuration you want to delete and click on the "Remove" button. After confirmation, the LDAP configuration will be deleted from Appcircle.
+
+![](https://cdn.appcircle.io/docs/assets/ldap-11.png)
+
+:::info
+When a user on LDAP is deleted, the user can no longer log in to Appcircle. If a user logged in to Appcircle with an LDAP configuration is removed from the LDAP configuration, the user will not be able to register in Appcircle. This user is also removed from the corporate organization in Appcircle.
+:::
