@@ -90,49 +90,28 @@ sudo pmset -a displaysleep 0
 
 ## Download MacOS VM
 
-Download macOS VM from Appcircle bucket.
+To download and extract the Appcircle runner vm image, you can run the command below.
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_230921.tar.gz
+curl -fsSL -O https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/scripts/install_vm.sh && \
+nohup bash install_vm.sh &
 ```
 
-If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
-
----
-
-**Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
+It may take a little to complete. You can see the logs with the command below.
 
 ```bash
-md5 macOS_230921.tar.gz
+tail -f nohup.out
 ```
 
-After a couple of minutes later you should see the output below.
+:::info
+You can close the ssh session while the script is running. The download and extract process will go on in the background.
 
-```bash
-MD5 (macOS_230921.tar.gz) = a86e96952bf538a086d1f35f67c4bc00
-```
+But be aware that there might be some errors while downloading and extracting the VM image. Please keep an eye on the logs.
+:::
 
----
-
-Create folder for VM.
-
-```bash
-mkdir $HOME/.tart/vms/macOS_230921
-```
-
-Extract archive into VMs folder.
-
-```bash
-tar -zxf macOS_230921.tar.gz --directory $HOME/.tart/vms/macOS_230921
-```
-
-It may take a little to complete. Be patient and wait return of command.
-
-You can track progress of extraction by monitoring VM folder size.
-
-```bash
-du -sh $HOME/.tart/vms/macOS_230921
-```
+:::info
+If you face any error while downloading the VM image, please delete the corrupted VM image file and run the `curl` command block above 👆.
+:::
 
 **Note:** This macOS VM image contains the same tools as in the "Default M1 Pool" in Appcircle Cloud. The only difference is the bundled Xcode versions. It comes with the Xcode versions below:
 
