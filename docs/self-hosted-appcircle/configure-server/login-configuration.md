@@ -2,7 +2,7 @@
 title: Login Configuration
 metaTitle: Login Configuration
 metaDescription: Disable Signup or Reset Password
-sidebar_position: 10
+sidebar_position: 5
 ---
 
 ## Login Configuration
