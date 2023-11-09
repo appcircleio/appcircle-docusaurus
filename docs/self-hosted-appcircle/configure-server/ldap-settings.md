@@ -128,7 +128,7 @@ If it finds a matching username with the correct password in any of the other LD
 Appcircle Login with LDAP aims to provide an alternative authentication solution via the LDAP server. Appcircle's LDAP integration allows businesses to integrate existing directory services, especially Active Directory, directly into the Appcircle login process. This integration simplifies user management.
 
 The LDAP distinguished name (DN) is associated with existing Appcircle registered users when:
-- The existing user signs in to GitLab with LDAP for the first time.
+- The existing user signs in to Appcircle with LDAP for the first time.
 - The LDAP email address is the email address of an existing Appcircle user. If the LDAP email attribute isn’t found in the Appcircle user database, a new user is created.
 
 If an existing Appcircle user wants to enable LDAP sign-in for themselves, they should:
@@ -173,13 +173,13 @@ Appcircle uses these LDAP attributes to create an account for the LDAP user. The
 ![](https://cdn.appcircle.io/docs/assets/ldap-5.png)
 
 :::caution
-After configuring LDAP, to test the configuration use the from adding LDAP config page bottom "Test" buttons. If the LDAP configuration is incorrect or cannot be accessed, they can log in with the initial users.
+After configuring LDAP, to test the configuration use the from adding LDAP config page bottom "Test" buttons.
 :::
 
 ![](https://cdn.appcircle.io/docs/assets/ldap-8.png)
 
 :::info
-Appcircle supports multiple LDAP configurations. If you are using multiple LDAP configurations and a user exists in both LDAPs, user authentication will look at the LDAP order. The "Order" field when adding an LDAP configuration is required to do this ordering. An LDAP configuration with an order value of 1 will be used before an LDAP configuration with an order value of 2 in user authentication.
+Appcircle supports multiple LDAP configurations. If you are using multiple LDAP configurations and a user exists in both LDAPs, user authentication will look at the LDAP order. The "Order" field when adding a LDAP configuration is required to do this ordering. A LDAP configuration with an order value of 1 will be used before a LDAP configuration with an order value of 2 in user authentication.
 :::
 
 ![](https://cdn.appcircle.io/docs/assets/ldap-9.png)
@@ -210,13 +210,13 @@ If this setting is off, the "Forgot Password" button will not appear on the Appc
 
 ### Remove User From LDAP Server
 
-In the event that the LDAP configuration is deleted, users coming from LDAP or previously linked users cannot log in to the system. And logged-in users are automatically logged out.
+If the user is deleted via LDAP, users coming from LDAP or previously connected users cannot log in to the system. And users who are logged in are automatically logged out.
 
 # Remove LDAP Configuration
 
 You can quickly remove your saved LDAP configuration via Appcircle. For this
 
-- To delete an LDAP configuration, press the "Manage" button next to the LDAP Login option on the Self-Hosted Settings page.
+- To delete a LDAP configuration, press the "Manage" button next to the LDAP Login option on the Self-Hosted Settings page.
 
 ![](https://cdn.appcircle.io/docs/assets/ldap-10.png)
 
@@ -225,5 +225,11 @@ You can quickly remove your saved LDAP configuration via Appcircle. For this
 ![](https://cdn.appcircle.io/docs/assets/ldap-11.png)
 
 :::info
-When a user on LDAP is deleted, the user can no longer log in to Appcircle. If a user logged in to Appcircle with an LDAP configuration is removed from the LDAP configuration, the user will not be able to register in Appcircle. This user is also removed from the corporate organization in Appcircle.
+When a user on LDAP is deleted, the user can no longer log in to Appcircle. If a user logged in to Appcircle with a LDAP configuration is removed from the LDAP configuration, the user will not be able to register in Appcircle. This user is also removed from the corporate organization in Appcircle.
+:::
+
+## Troubleshooting
+
+:::info
+If the LDAP configuration is incorrect or cannot be accessed, they can log in with the initial users.
 :::
