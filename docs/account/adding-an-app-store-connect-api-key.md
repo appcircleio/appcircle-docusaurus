@@ -49,7 +49,7 @@ Only Account Holders can enable the API Key generation. If you see a disabled **
 
 A modal popup will ask you to enter a name and add roles for this key:
 
-![](https://cdn.appcircle.io/docs/assets/api-keys-new-modal-low.jpg)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/api-keys-new-modal-low.jpg' />
 
 :::caution
 
@@ -75,11 +75,11 @@ After generating the key, download the key file by pressing Download API Key nex
 
 Adding a key to Appcircle is pretty easy. **Go to your organization** by either selecting the bottom left button from the toolbar, or picking it from the menu:
 
-![](https://cdn.appcircle.io/docs/assets/appcircle-admin-low.jpg)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-admin-low.jpg' />
 
 On the Organization screen, select **Add New **on **App Store Connect API Keys **list item**:**
 
-![](https://cdn.appcircle.io/docs/assets/appcircle-organization-low.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-organization-low.png' />
 
 On the form, upload the **.p8** key file downloaded from App Store Connect:
 

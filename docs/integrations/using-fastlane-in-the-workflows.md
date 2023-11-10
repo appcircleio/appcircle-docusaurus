@@ -17,7 +17,7 @@ To use fastlane, Appcircle expects the presence of a fastfile in your repository
 
 ### Adding fastlane to the Appcircle Build Workflow as a Step
 
-![](https://cdn.appcircle.io/docs/assets/Fastlane-Appcircle.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/Fastlane-Appcircle.png' />
 
 1. To utilize _fastlane_ in your builds, open the [workflow editor](../workflows/why-to-use-workflows.md) and add the “**fastlane**” step after the "**Git Clone**" step. If you want to run a specific _fastlane_ command, you can add a "**Custom Script**" step anywhere after the _fastlane_ step.
 2. Once added, click on the _fastlane_ step to configure it. Fastlane is easy to use with Appcircle just with two options.

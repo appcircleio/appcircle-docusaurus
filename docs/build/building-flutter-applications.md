@@ -73,7 +73,7 @@ When this option is enabled, the build status for that commit is shared with the
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (213).png' />
 
-![](https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png' />
 
 ### Build Triggers
 
@@ -158,11 +158,11 @@ You can also set the preferred Flutter version on config screen. If you don't se
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
 
-![](https://cdn.appcircle.io/docs/assets/start-build.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
-![](https://cdn.appcircle.io/docs/assets/start-build-configuration.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build-configuration.png' />
 
 
 :::info

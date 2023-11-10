@@ -128,7 +128,7 @@ You will see the Workflow Marketplace on the right and your Workflow steps on th
 
 You can also reorder steps so that they will be executed in the order you specify.
 
-![](https://cdn.appcircle.io/docs/assets/08-08-WF_Reorder.gif)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/08-08-WF_Reorder.gif' />
 
 ###
 

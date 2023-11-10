@@ -153,6 +153,13 @@ const config = {
         appId: 'MLYVQZS3BY',
         contextualSearch: false,
       },
+      imageZoom: {
+        selector: '.screenshot, .image-narrow',
+        options: { // medium-zoom options
+          margin: 24,
+          scrollOffset: 0
+        },
+      },
     }),
     plugins: [
       [
@@ -162,7 +169,8 @@ const config = {
           anonymizeIP: true,
         },
       ],
-      'docusaurus-plugin-sass'
+      'docusaurus-plugin-sass',
+      'plugin-image-zoom'
     ],
   
 };

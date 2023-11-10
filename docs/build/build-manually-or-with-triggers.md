@@ -23,7 +23,7 @@ As the name states, your build profile will not build your application until you
 
 For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](#trigger-priorities).
 
-![](https://cdn.appcircle.io/docs/assets/push-triggers.jpg)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/push-triggers.jpg' />
 
 ## Automatic Build
 
@@ -73,7 +73,7 @@ You can also use[ appcircle-cli](../appcircle-api/about-the-appcircle-cli.md) to
 
 To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
 
-![](https://cdn.appcircle.io/docs/assets/managing-triggers-for-builds.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/managing-triggers-for-builds.png' />
 
 The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](#wildcard-reference) for branch names to trigger builds.
 
@@ -83,7 +83,7 @@ You also need to select a workflow for each trigger and the build will be run wi
 
 Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
 
-![](https://cdn.appcircle.io/docs/assets/every-push-last.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/every-push-last.png' />
 
 You must choose both workflow and a configuration when you're setting up a trigger.
 
@@ -164,11 +164,11 @@ For more information, please refer to: [https://docs.aws.amazon.com/codecommit/l
 
 After you follow the steps in the referenced document above to create a trigger, you need to create a notification rule under CodeCommit Settings as shown below to add a webhook URL.
 
-![](https://cdn.appcircle.io/docs/assets/codecommit-settings.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/codecommit-settings.png' />
 
 Then select the "Enable raw message delivery" option while adding the webhook URL as a subscription to the topic.
 
-![](https://cdn.appcircle.io/docs/assets/enable-raw-message-delivery.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/enable-raw-message-delivery.png' />
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

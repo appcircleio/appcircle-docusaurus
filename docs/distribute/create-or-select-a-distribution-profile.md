@@ -152,7 +152,7 @@ Click on the Share with Testers button and select the testing groups you created
 
 You can also add a message to testers including testing instructions and release notes.
 
-![](https://cdn.appcircle.io/docs/assets/06-07a-SendToTesterGroups.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/06-07a-SendToTesterGroups.png' />
 
 You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message 
 

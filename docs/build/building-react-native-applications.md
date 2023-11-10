@@ -22,7 +22,7 @@ Appcircle will use your `package.json` file to determine and use the dependencie
 
 Simply create a new build profile as usual and select your target operating system as iOS or Android. Select **React Native** for **Target Platform**.
 
-![](https://cdn.appcircle.io/docs/assets/13-01-RN_NewProfile.jpg)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/13-01-RN_NewProfile.jpg' />
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
@@ -62,13 +62,13 @@ Please don't forget to add additional scheme files to your version control.
 
 Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in the Build Configuration window. You can also set the preferred NodeJS version on this screen. If you don't set any version, `lts` version will be used.
 
-![](https://cdn.appcircle.io/docs/assets/reactnative-ios-settings.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/reactnative-ios-settings.png' />
 
 ### Build Configuration for React Native Android applications
 
 First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
-![](https://cdn.appcircle.io/docs/assets/reactnative-android-settings.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/reactnative-android-settings.png' />
 
 ### Sending the Build Status to the Repository Providers
 
@@ -80,7 +80,7 @@ When this option is enabled, the build status for that commit is shared with the
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (213).png' />
 
-![](https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png' />
 
 ### Build Triggers
 
@@ -102,7 +102,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/ios-signing.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-signing.png' />
 
 ### Signing React Native Android applications
 
