@@ -921,7 +921,7 @@ img {
   max-height: 650px;
 }
 
-.screenshot {
+.screenshot, image-narrow {
   -webkit-filter: drop-shadow(3px 3px 3px #888 );
   filter: drop-shadow(3px 3px 3px #888);
   margin-bottom: 24px;

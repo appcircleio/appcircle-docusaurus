@@ -8,6 +8,7 @@ sidebar_position: 2
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ContentRef from '@site/src/components/ContentRef';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Prerequisites
 
@@ -155,7 +156,7 @@ Please refer to details [here](../install-server/docker.md#connecting-runners) f
 
 Go to your organization's **integration** settings and generate runner access token.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-runner-access-token-01.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-runner-access-token-01.png' />
 
 Using generated token, register self-hosted runner to your organization with desired name and pool.
 
