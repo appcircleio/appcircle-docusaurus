@@ -206,6 +206,39 @@ post_install do |installer|
 end
 ```
 
+### Minimum Deployment Target Error
+
+After the release of Apple iOS 17, if your project contains pods or targets that are below a certain iOS version, you will encounter an error related to the simulator, as simulators no longer support versions below a specific iOS version. 
+
+You will encounter an error like the following during the 'Xcodebuild for Devices' step:
+
+```
+ld: file not found: /Volumes/xcode.14.x/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphoneos.a 
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+```
+
+To prevent this error, please update the minimum deployment iOS versions for the targets in your project. For your pods, you can use the following script in your `Podfile`:
+
+```
+config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+```
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+      target.build_configurations.each do |config|
+        ...
+        ## Other config settings
+        ...
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+
+      end
+    end
+  end
+end
+```
+
 ### Adding Additional Command to Xcodebuild for Devices Step
 
 To address the need to add a new command after completing the `xcodebuild` command in the "Xcodebuild for Devices" step, you can follow the following approach:
