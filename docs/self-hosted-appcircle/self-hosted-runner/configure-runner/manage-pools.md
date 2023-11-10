@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 When you add a new self-hosted runner to your organization, it appears at "Self-hosted Runners" list with its pool.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-runner-runners-selected-runner-01.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-runner-runners-selected-runner-01.png' />
 
 Pool creation is managed automatically while registering a self-hosted runner from CLI.
 
@@ -21,7 +21,7 @@ If a pool doesn't exist in your organization, system creates that pool and adds 
 
 Self-hosted pools are visible as a list in "Build Profiles". Open your app's build profile, click on "Config" button and you will find pools at "Config" tab in build profile settings.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-runner-config-pool-list-01.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-runner-config-pool-list-01.png' />
 
 If you don't have any self-hosted pool yet, list will have only "Default" pool which is Appcircle cloud.
 
@@ -71,7 +71,7 @@ Pool removal is managed automatically while removing or moving runner. If you re
 
 If you want to remove pool manually or remove group of runners with pool removal, click on pool name at "Self-hosted Runners" list and use "Delete" button at the bottom of pool details.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-runner-pool-detail-01.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-runner-pool-detail-01.png' />
 
 A confirmation dialog will be visible for your approval. Type pool name into textbox and click on delete.
 

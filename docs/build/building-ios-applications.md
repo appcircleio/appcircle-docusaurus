@@ -74,7 +74,7 @@ When this option is enabled, the build status for that commit is shared with the
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (213).png' />
 
-![](https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png' />
 
 ### Build Triggers
 
@@ -165,11 +165,11 @@ For details on using Appcircle's workflow editor, please see the related page be
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
 
-![](https://cdn.appcircle.io/docs/assets/start-build.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
-![](https://cdn.appcircle.io/docs/assets/start-build-configuration.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build-configuration.png' />
 
 
 Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
@@ -180,7 +180,7 @@ You can safely close the build log window, it won't affect the status of your bu
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/03-06b-iOS-Build-Building.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/03-06b-iOS-Build-Building.png' />
 
 ---
 
@@ -190,7 +190,7 @@ Your build will be distributed automatically if you had set up auto build earlie
 
 <ContentRef url="/build/after-a-build">After a Build</ContentRef>
 
-![](https://cdn.appcircle.io/docs/assets/build-distribute.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-distribute.png' />
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

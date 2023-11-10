@@ -129,8 +129,8 @@ If you're using UI Tests with Emulators, you must select Intel Device since M1 V
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
 
-![](https://cdn.appcircle.io/docs/assets/test-reports5.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports5.png' />
 
-![](https://cdn.appcircle.io/docs/assets/test-reports6.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports6.png' />
 
-![](https://cdn.appcircle.io/docs/assets/test-reports7.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports7.png' />

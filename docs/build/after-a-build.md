@@ -32,7 +32,7 @@ If you disable signing or don't use any signing identities, iOS output will be a
 
 To download or manually distribute your builds, go to your distribution profile and click on the builds tab to see your past builds. Click on the actions icon of the build you want to download or distribute.
 
-![](https://cdn.appcircle.io/docs/assets/build-distribute.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-distribute.png' />
 
 You can now download the binary file or send it to distribute the module manually.
 

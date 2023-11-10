@@ -43,7 +43,7 @@ When this option is enabled, the build status for that commit is shared with the
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (213).png' />
 
-![](https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png' />
 
 ### Build Triggers
 
@@ -71,7 +71,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/android-config.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-config.png' />
 
 ###
 
@@ -105,7 +105,7 @@ Please see the following page for more information about environment variables:
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
-![](https://cdn.appcircle.io/docs/assets/android-env.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-env.png' />
 
 Please click on the Save button and close this modal.
 
@@ -130,11 +130,11 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
-![](https://cdn.appcircle.io/docs/assets/start-build.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
-![](https://cdn.appcircle.io/docs/assets/android-build.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-build.png' />
 
 
 Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
@@ -145,7 +145,7 @@ You can safely close the build log window, it won't affect the status of your bu
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/04-18-Build-Building.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/04-18-Build-Building.png' />
 
 **Distribute Your Build**
 
@@ -153,7 +153,7 @@ Your build will be distributed automatically if you had set up Auto Distribute e
 
 <ContentRef url="../../build/after-a-build">After a Build</ContentRef>
 
-![](https://cdn.appcircle.io/docs/assets/android-distribute.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-distribute.png' />
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

@@ -79,7 +79,7 @@ Any custom operation during the build can be executed through the Custom Script 
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/03-05a-Smf-Build-Workflow.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/03-05a-Smf-Build-Workflow.png' />
 
 For details on using Appcircle's workflow editor, please see the related page below:
 
@@ -90,11 +90,11 @@ For details on using Appcircle's workflow editor, please see the related page be
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
 
-![](https://cdn.appcircle.io/docs/assets/start-build.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
-![](https://cdn.appcircle.io/docs/assets/start-build-configuration.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build-configuration.png' />
 
 :::info
 
@@ -108,7 +108,7 @@ Your build will be distributed automatically if you had set up auto build earlie
 
 <ContentRef url="/build/after-a-build">After a Build</ContentRef>
 
-![](https://cdn.appcircle.io/docs/assets/03-06-iOS-Build-AfterBuild.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/03-06-iOS-Build-AfterBuild.png' />
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
