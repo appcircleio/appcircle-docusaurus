@@ -163,6 +163,45 @@ If you don't want to push the xcworkspace to the repository, you can alternative
 
 If you don't set the version of Cocoapods in your Cocoapods Install step, Appcircle installs Cocoapods according to your _Podfile.lock_ file. Don't forget to commit your Podfile.lock file to have the correct version.
 
+### Xcode 15 Known Issue
+
+After the release of Xcode 15, some notable known issues have surfaced. One of them is the `DT_TOOLCHAIN_DIR cannot be used to evaluate` error.
+
+When encountering this error, you will see the following log durint the Xcodebuild for Devices step;
+
+```
+DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_DIR instead (in target 'One of Project Target Name' from project 'Pods')
+```
+We observed that this error occurs with Cocoapods version 1.12.1. Therefore, to resolve this issue, you can either update your local Cocoapods version and make a new commit, or update the Cocoapods version during the workflow steps at the Cocoapods Install step.
+
+
+![](<https://cdn.appcircle.io/docs/assets/faq-cocoapods-version.png>)
+
+:::info
+The resolution for this error is available in Cocoapods version 1.13.0.
+:::
+:::caution
+If you still encounter the same error, you can address it by making the following changes in your Podfile:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      
+      xcconfig_path = config.base_configuration_reference.real_path
+      xcconfig = File.read(xcconfig_path)
+      xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
+      File.open(xcconfig_path, "w") { |file| file << xcconfig_mod }
+    end
+  end
+end
+```
+:::
+:::warning
+If you still encounter this issue after updating the Cocoapods version, please update your minimum deployment target version. If this does not resolve the issue, you can use the script mentioned above.
+:::
+
 ### Provisioning Profile Error
 
 If you receive a provisioning profile error similar to the following, it usually indicates a mismatch between the bundle ID selected in the build configuration and the provisioning profile.
