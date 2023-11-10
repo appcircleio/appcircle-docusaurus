@@ -155,7 +155,7 @@ const config = {
         contextualSearch: false,
       },
       imageZoom: {
-        selector: 'img',
+        selector: '.screenshot, image-narrow',
         options: { // medium-zoom options
           margin: 24,
           scrollOffset: 0
