@@ -233,3 +233,7 @@ When a user on LDAP is deleted, the user can no longer log in to Appcircle. If a
 :::info
 If the LDAP configuration is incorrect or cannot be accessed, they can log in with the initial users.
 :::
+
+import NeedHelp from '@site/docs/\_need-help.mdx';
+
+<NeedHelp />
