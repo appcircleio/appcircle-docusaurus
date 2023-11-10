@@ -123,7 +123,7 @@ If the "spacetechuser" provides an incorrect password that does not match the us
 
 If it finds a matching username with the correct password in any of the other LDAP configurations, the user will be granted access.
 
-# Appcircle Login with LDAP
+## Appcircle Login with LDAP
 
 Appcircle Login with LDAP aims to provide an alternative authentication solution via the LDAP server. Appcircle's LDAP integration allows businesses to integrate existing directory services, especially Active Directory, directly into the Appcircle login process. This integration simplifies user management.
 
