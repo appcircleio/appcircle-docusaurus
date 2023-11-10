@@ -5,6 +5,8 @@ metaDescription: What are Workflows and How to Use Workflows?
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # What are Workflows and How to Use Them?
 
 import Tabs from '@theme/Tabs';
@@ -82,11 +84,11 @@ Please note that modifying workflow steps may cause your builds to fail, so utmo
 
 To access the workflow editor for a build profile, click the Workflows button in the context menu of the build profile, accessible from the top of the profile details.
 
-![](<https://cdn.appcircle.io/docs/assets/image (181).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (181).png' />
 
 The workflow list will be displayed. To view the [Workflow Steps](why-to-use-workflows.md#worfklow-steps) of a workflow, click on it from the workflow list.
 
-![](<https://cdn.appcircle.io/docs/assets/image (197).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (197).png' />
 
 To create a new workflow, press the "New" button at the top of the workflow list and select a template from the default workflows. Then edit the workflow name and press enter. You can also upload your workflow as a YAML file.
 
@@ -94,11 +96,11 @@ To create a new workflow, press the "New" button at the top of the workflow list
 
 To rename/delete a current workflow, press the "Edit" button at the top of the workflow list and then click on the context menu that appears next to the workflow items.
 
-![](<https://cdn.appcircle.io/docs/assets/image (183).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (183).png' />
 
 You can use the "Clone" option to create a new workflow based on the currently available ones. You can [select different workflows for different build scenarios](../build/build-manually-or-with-triggers.md) (e.g. separate workflows for production and development).
 
-![](<https://cdn.appcircle.io/docs/assets/image (184).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (184).png' />
 
 ### Worfklow Steps
 
@@ -120,7 +122,7 @@ You can add platform-specific workflow steps, custom scripts, and other steps in
 
 To access the Workflow Marketplace, go to the Workflow Editor and click on the Edit button:
 
-![](<https://cdn.appcircle.io/docs/assets/image (186).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (186).png' />
 
 You will see the Workflow Marketplace on the right and your Workflow steps on the left. You can now drag and drop steps into your workflow. Any unwanted workflow steps can be removed by clicking on the delete button on the right side of each step.
 
@@ -144,7 +146,7 @@ The first three items are common for all steps and they are set individually for
 
 The items in the "Inputs" section are specific to that step. The reserved environment variables are assigned to these fields by default and the values of these variables are set in the build configuration.
 
-![](<https://cdn.appcircle.io/docs/assets/image (187).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (187).png' />
 
 #### Build Warning Status
 
@@ -152,16 +154,16 @@ When we start a build, if we have activated the "Continue with the next step eve
 
 In order to simulate the warning state and see its results on the pipeline, we can basically write a script that will fail in Custom Script.
 
-![](<https://cdn.appcircle.io/docs/assets/status-warning-1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-1.png' />
 
 "Continue with the next step even if this step fails" must be `on` in this case.
 
-![](<https://cdn.appcircle.io/docs/assets/status-warning-2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-2.png' />
 
 We are starting a build, and we see that it fails in the pipeline.
 
-![](<https://cdn.appcircle.io/docs/assets/status-warning-3.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-3.png' />
 
 And the build status will now appear as "Warning".
 
-![](<https://cdn.appcircle.io/docs/assets/status-warning-4.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-4.png' />

@@ -5,6 +5,8 @@ metaDescription: Manage Pools
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 ### Monitoring Self-hosted Pools
 
 When you add a new self-hosted runner to your organization, it appears at "Self-hosted Runners" list with its pool.
@@ -57,11 +59,11 @@ Accordingly, you can make specific pool selections and set your configurations.
 
 <b>Example Macpool 1:</b>
 
-![](<https://cdn.appcircle.io/docs/assets/macpool1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/macpool1.png' />
 
 <b> Example Macpool 2:</b>
 
-![](<https://cdn.appcircle.io/docs/assets/macpool2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/macpool2.png' />
 
 ### Delete Self-hosted Pool
 
