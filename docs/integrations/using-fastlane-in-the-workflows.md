@@ -5,6 +5,8 @@ metaDescription: Using Fastlane in the Workflows
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Using Fastlane in the Workflows
 
 Appcircle supports _fastlane_ for build automation as a supplementary feature to Appcircle's own build automation.
@@ -23,7 +25,7 @@ To use fastlane, Appcircle expects the presence of a fastfile in your repository
 4. With the "**Fastlane Lane**" option, you can specify which lane to use.
 5. Once everything is set up, press **Save** to save your step configuration. Then you can configure and run your build just like any other app.
 
-![](<https://cdn.appcircle.io/docs/assets/image (68).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (68).png' />
 
 Appcircle also supports building and signing the app independently with the "Build" and "Sign" steps in the workflow. These steps can be used in parallel with _fastlane_.
 

@@ -5,6 +5,7 @@ metaDescription: Common Issues and Troubleshooting
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Common Issues and Troubleshooting
@@ -101,11 +102,11 @@ For more information, please refer to: [https://docs.aws.amazon.com/codecommit/l
 
 After you follow the steps in the referenced document above to create a trigger, you need to create a notification rule under CodeCommit Settings as shown below to add a webhook URL.
 
-![](<https://cdn.appcircle.io/docs/assets/2 (1).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2 (1).png' />
 
 Then select the "Enable raw message delivery" option while adding the webhook URL as a subscription to the topic.
 
-![](<https://cdn.appcircle.io/docs/assets/1 (1).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/1 (1).png' />
 
 ## General Build Troubleshooting
 
@@ -217,7 +218,41 @@ To address the need to add a new command after completing the `xcodebuild` comma
 - Change "Execute With" picker as **Ruby**.
 - In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
 
-There is an `archive()` function in the Ruby code. First, find the function in the code.
+:::caution
+Before running the script, some variables must be changed, and new variables must be added to the custom script.
+:::
+
+First, the `output_path` global variable should be changed like below in global variables.
+
+```ruby
+...
+## Other global variables
+...
+$output_path = env_has_key("AC_OUTPUT_DIR")
+```
+
+After this, you need to add some parameters to your custom script. The parameters below should be added right after global variables.
+
+```ruby
+AC_COMPILER_INDEX_STORE_ENABLE = "NO"
+AC_METHOD_FOR_EXPORT = "auto-detect"
+AC_DELETE_ARCHIVE = "false"
+AC_ARCHIVE_PATH = "AC_ARCHIVE_PATH"
+AC_ARCHIVE_METADATA_PATH = "AC_ARCHIVE_METADATA_PATH"
+AC_EXPORT_DIR = "AC_EXPORT_DIR"
+```
+
+In the next step for completing custom script settings, the `AC_COMPILER_INDEX_STORE_ENABLE` parameter should be equaled with the following parameter:
+
+```ruby
+$compiler_index_store_enable = AC_COMPILER_INDEX_STORE_ENABLE
+```
+
+:::caution
+You should find the line with `compiler_index_store_enable` and replace it with the above statement. 
+:::
+
+After these variables were set. There is an `archive()` function in the Ruby code. First, find the function in the code.
 
 ```ruby
 ## Archive Functions
@@ -229,7 +264,7 @@ def archive()
   ...
 ```
 
-At the end of this function, before running the `run_command()` function, you can add these lines to be able to add additional commands.
+At the end of this function, before running the `run_command_simple()` function, you can add these lines to be able to add additional commands.
 
 ```ruby
   ...
@@ -239,7 +274,7 @@ At the end of this function, before running the `run_command()` function, you ca
   command.concat("Write your command that you want to add here")
   command.concat(" ")
 
-  run_command(command,false)
+  run_command_simple(command)
 end
 ```
 
@@ -255,11 +290,11 @@ When you need to reduce the verbosity of the `xcodebuild` logs, you can achieve 
   command.concat(" | grep -A 5 error:")
   command.concat(" ")
 
-  run_command(command,false)
+  run_command_simple(command)
 end
 ```
 
-Now, the `run_command()` function will execute your customized `xcodebuild` command.
+Now, the `run_command_simple()` function will execute your customized `xcodebuild` command.
 
 ### Missing Entitlements
 

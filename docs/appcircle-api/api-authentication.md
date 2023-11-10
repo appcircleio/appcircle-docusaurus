@@ -5,6 +5,8 @@ metaDescription: API and CLI Authentication
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # API and CLI Authentication
 
 The Appcircle API supports authentication with a _Personal Access Token_. The token for each user will have the same permissions with the user within the organization and each organization require a separate personal access token.
@@ -15,15 +17,15 @@ To generate a personal access token, go to the [My Organization](../account/my-o
 
 Press the "Generate Token" button to generate your first token.
 
-![](<https://cdn.appcircle.io/docs/assets/image (163).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (163).png' />
 
 The token will then be generated and displayed above. Please make sure that you save the token before navigating away from the page as it will be displayed only once for security reasons.
 
-![](<https://cdn.appcircle.io/docs/assets/image (164).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (164).png' />
 
 If you want to revoke a previously generated token, press "Revoke Token" and confirm. You can then generate a new token if you would like.
 
-![](<https://cdn.appcircle.io/docs/assets/image (165).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (165).png' />
 
 ### Using the Token for API Authentication
 

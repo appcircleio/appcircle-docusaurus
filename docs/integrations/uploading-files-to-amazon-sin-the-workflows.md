@@ -5,6 +5,8 @@ metaDescription: Uploading Files to Amazon S3 with the Workflows
 sidebar_position: 3
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Uploading Files to Amazon S3 with the Workflows
 
 Amazon Simple Storage Service (S3) is an object storage service provided by AWS. It can be used to store build artifacts for various use cases.
@@ -13,7 +15,7 @@ With the "File Upload to Amazon S3" step in Appcircle, you can directly upload a
 
 To start, add the "File Upload to Amazon S3" step to the workflow from the [workflow marketplace](../workflows/why-to-use-workflows.md#workflow-marketplace). You can add it anywhere within the workflow and multiple times as needed to upload specific files or folders. For instance, you can add it after the build step to deploy the build outputs.
 
-![](<https://cdn.appcircle.io/docs/assets/image (81).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (81).png' />
 
 Once added, press save to exit the workflow edit mode and click on the Amazon S3 step.
 
@@ -33,8 +35,8 @@ It is highly recommended to add the keys as [secret environment variables](../en
 
 As for the output, the specified files and the folders are deployed to a newly created directory as `s3://bucket-name/timestamp` to avoid any conflicts and potential overwrites.
 
-![](<https://cdn.appcircle.io/docs/assets/image (82).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (82).png' />
 
 After you save your settings, you can run the build and the step will be executed accordingly. You can view the details of the upload operation in the build logs:
 
-![](<https://cdn.appcircle.io/docs/assets/image (83).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (83).png' />
