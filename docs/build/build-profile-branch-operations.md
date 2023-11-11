@@ -19,7 +19,7 @@ To find a specific branch, just start typing in the name in the branch search ba
 
 ### Pinning Branches to the Top for Faster Access
 
-If you are using a branch frequently such as develop or master, you can pin it to the top. To pin a branch, clin on pin icon next to the branch name.
+If you are using a branch frequently such as develop or master, you can pin it to the top. To pin a branch, click on pin icon next to the branch name.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (139).png' />
 

@@ -66,7 +66,7 @@ By default, the most recent stable version of Xcode is selected. If available, y
 
 ### Sending the Build Status to the Repository Providers
 
-At the bottom of the config tab, you will the **Set Commit Build Status **option.
+At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (8).png' />
 
@@ -122,7 +122,7 @@ Any previous build can be deployed to the Distribute module without the need for
 
 The versioning tab will allow you to change the build or version number during the build. You can increase the build number or version number by using different sources and strategies. 
 
-<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/versioning/ios-version">
   Managing iOS Build and Version Numbers
 </ContentRef>
 
