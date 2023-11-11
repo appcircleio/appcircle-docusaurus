@@ -5,6 +5,8 @@ metaDescription: Manage Runners
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 ### Monitoring Self-hosted Runners
 
 When you add a new self-hosted runner to your organization, it appears at "Self-hosted Runners" list with `Offline` state. You can see your runner in list with given name and pool from CLI.
@@ -23,7 +25,7 @@ Self-hosted runners list has also other quick details which give your overview f
 
 - "State" shows your self-hosted runner's current build status. For example, it can be `idle` when runner is waiting for a build job and `running` when it's executing build job.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-runner-runners-01.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-runner-runners-01.png' />
 
 You can **disable** self-hosted runner from list, using toggle button on right-hand side. When runner is disabled, it won't accept build job anymore. Disabling runner, doesn't affect currently running build pipeline on runner. It will complete its executing job. When complete, it won't take any new build job from queue until you **enable** it again. Using same toggle button you can enable self-hosted runner.
 
@@ -63,7 +65,7 @@ Moving self-hosted runner from one pool to another doesn't require service resta
 
 If you want to remove your self-hosted runner for any reason, click on runner name to open details view. Here you can see details of your runner. (its pool, create and update times etc.)
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-runner-runner-detail-01.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-runner-runner-detail-01.png' />
 
 Click on delete button at the bottom of the page. A confirmation dialog will be visible for your approval. Type runner name into textbox and click on delete.
 

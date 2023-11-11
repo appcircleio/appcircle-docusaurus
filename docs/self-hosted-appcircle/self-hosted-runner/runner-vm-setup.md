@@ -215,7 +215,47 @@ cd /Volumes/agent-disk/appcircle-runner
 
 So, the following commands will assume that current working directory is `/Volumes/agent-disk/appcircle-runner`.
 
-##### 1. Configure Base Runner's NTP Settings
+##### 1. Check the Runner Version
+
+You may have installed the latest Appcircle runner VM image, but the Appcircle runner may not be up-to-date.
+
+You can follow the steps below to check the Appcircle runner version and upgrade if it isn't the latest version.
+
+- Check the version of the current installation.
+
+```bash
+./ac-runner --version
+```
+
+- Check the latest version from the [Upgrade Runner](./update.md#1-update-runner) page.
+
+- If your version is not up to date, please follow the [Update Runner](./update.md#1-update-runner) section in the page.
+
+:::caution
+
+You should run the `curl` and `unzip` commands on the `/Volumes/agent-disk/` path.
+
+Since you're in the `appcircle-runner` directory now, please change the directory one level up.
+
+:::
+
+You don't need to apply the `Reconfigure Runner` section. But the `Reinstall Service` section is necessary since the latest version may also have some service updates.
+
+When you complete update successfully, you should see the updated version in `--version` output.
+
+Go to the `appcircle-runner` directory.
+
+```bash
+cd appcircle-runner
+```
+
+Check the version of the runner.
+
+```bash
+./ac-runner --version
+```
+
+##### 2. Configure Base Runner's NTP Settings
 
 MacOS VMs try to update their date and time using the network time protocol (NTP) by default.
 
@@ -245,7 +285,7 @@ To configure NTP settings:
 You should change "10.10.1.50" to the NTP server address of your organization in the example above.
 :::
 
-##### 2. Trust The Root Certificates of Your Organization
+##### 3. Trust The Root Certificates of Your Organization
 
 If the resources you want to connect use a self-signed certificate, you should also trust the root certificate of your organization in your Appcircle runner VMs. These resources can be:
 
@@ -279,7 +319,7 @@ You can use the helper script named `install_cert.sh` that comes with your runn
 For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates.md#adding-certificates) page.
 :::
 
-##### 3. Configure Runner Service
+##### 4. Configure Runner Service
 
 ---
 

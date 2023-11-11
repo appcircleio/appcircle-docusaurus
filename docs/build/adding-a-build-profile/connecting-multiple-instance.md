@@ -5,6 +5,7 @@ metaDescription: 'Multiple Instances Using Git Providers (Bitbucket, GitLab, Azu
 sidebar_position: 7
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 ### Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure DevOps)
@@ -27,19 +28,19 @@ See below steps for an example case from Azure DevOps.
 
 First of all, we select the relevant Git provider from the add new repository screen.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-m-repo.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-repo.png' />
 
 Then click on the "Connect to an Azure DevOps Server" button in the window that opens.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-m-repo-1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-repo-1.png' />
 
 In the next window, fill in the relevant fields and click on the "Connect" button.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-m-new.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-new.png' />
 
 After the connection, the connected instances will appear on the new repository adding screen as follows.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-m-last.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-last.png' />
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

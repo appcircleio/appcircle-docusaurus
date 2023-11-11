@@ -5,13 +5,15 @@ metaDescription: Jira Integration
 sidebar_position: 8
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Jira Integration
 
 Jira is a software development tool used for issue tracking, project management, and agile software development. It allows users to plan, track, and release software projects. Jira's core functionality includes the ability to create and assign tasks, track progress and status, and collaborate with team members
 
 You can use [Jira Component](https://github.com/appcircleio/appcircle-jira-component/) to add a comment and change the status of your issues according to the status of your workflow. 
 
-![](<https://cdn.appcircle.io/docs/assets/jira-component1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/jira-component1.png' />
 
 ## Credentials
 
@@ -21,7 +23,7 @@ In order to use Jira Component, you need to configure the component and add the 
 - `AC_JIRA_EMAIL`: Jira Email. Email of Jira user. 
 - `AC_JIRA_TOKEN`: API Token. User's API Token. You can create your token from [here](https://id.atlassian.com/manage-profile/security/api-tokens)
 
-![](<https://cdn.appcircle.io/docs/assets/jira-component2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/jira-component2.png' />
 
 ## Configuring Component
 
@@ -35,7 +37,7 @@ feature_name = branch.split('/')[1].upcase
 puts feature_name
 
 # Write Environment Variable
-open(env_var_path, 'a') { |f|
+open(ENV['AC_ENV_FILE_PATH'], 'a') { |f|
     f.puts "AC_JIRA_ISSUE=#{feature_name}"
 }
 ```
