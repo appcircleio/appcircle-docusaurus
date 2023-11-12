@@ -71,7 +71,7 @@ An example of environment variables downloaded as a JSON file:
 [
   {
     "key": "API_URL",
-    "value": "https://api.example. com",
+    "value": "https://api.example.com",
     "isSecret": false,
     "id": "API_URL"
   },
@@ -89,7 +89,7 @@ An example of environment variables downloaded as a JSON file:
   },
   {
     "key": "myFile",
-    "value": "mykeys. json",
+    "value": "mykeys.json",
     "isSecret": false,
     "id": "myFile"
   }
@@ -98,7 +98,7 @@ An example of environment variables downloaded as a JSON file:
 
 As seen in the example above;
 
-- if the **isSecret** value is `true`, the value part is empty
+- if the **isSecret** value is `true`, the value is empty
 - if the **isSecret** value is `false`, it has visible value
 
 :::
