@@ -5,6 +5,8 @@ metaDescription: Artifacts
 sidebar_position: 3
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Artifacts
 
 The logs and artifacts of your build profiles can be managed on the artifacts section.Build artifacts and logs are deleted according to retention period. Artifacts retention period depends on your license.
@@ -18,4 +20,4 @@ Only build and distribution artifacts are deleted in this section. Artifacts of 
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/account-artifacts.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/account-artifacts.png' />

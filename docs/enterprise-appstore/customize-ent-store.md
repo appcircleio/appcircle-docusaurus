@@ -5,6 +5,7 @@ metaDescription: Customize Enterprise Store
 sidebar_position: 3
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
 
@@ -15,7 +16,7 @@ import NarrowImage from '@site/src/components/NarrowImage';
 
 You can customize the appearance of your store by going to Customize section.
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-customize.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-customize.png' />
 
 :::caution
 Customizing and setting up your store can only be done through the main organization.
@@ -40,7 +41,7 @@ Open your DNS provider's website and add a CNAME with the below details
 
 The below screenshot shows an example configuration screen from Cloudflare.
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-cname.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-cname.png' />
 
 
 **Updating Settings**
@@ -69,7 +70,7 @@ You can set a different username and password for live and beta apps. The userna
 
 You may also use SSO for your Enterprise Store. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please turn on the toggle that says **Enable SSO**. After you have enabled the SSO, please click the **Create** link to configure the SSO, according to your provider.
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-ssotoggle.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-ssotoggle.png' />
 
 
 :::info
@@ -100,9 +101,9 @@ Please check the below document to learn more about SSO integration.
 
 In order to create an LDAP login, first click the **Activate** link next to the LDAP login. If you select **Enable LDAP Login**, your previous login options will be disabled and LDAP login will be enabled. Click the **Details** link and then click the **Create** link. Appcircle supports multiple LDAP providers. You can add multiple LDAP servers with different settings. 
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-ldapenable.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-ldapenable.png' />
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-ldapcreate.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-ldapcreate.png' />
 
 
 **Configuration**
@@ -168,11 +169,11 @@ After you have configured the main LDAP settings, you need to configure the **Us
 
 After you have configured LDAP, you can use **Test Connection** and **Test Authentication** to check the connection and credentials.
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-testconnection.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-testconnection.png' />
 
 
 ### Two-factor Authentication
 
 To further protect your logins, you may add Two-factor Authentication(2FA) to your LDAP integration. Appcircle supports both email and SMS 2FA authentication. 
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-2fa.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-2fa.png' />

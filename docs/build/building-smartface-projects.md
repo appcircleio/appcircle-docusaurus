@@ -5,6 +5,7 @@ metaDescription: Building Smartface Projects
 sidebar_position: 9
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Building Smartface Projects
@@ -30,7 +31,7 @@ The overall workflow for Smartface builds is almost the same as the iOS and Andr
 
 In the Signing page, select the proper signing certificates for iOS or Android applications.
 
-![](<https://cdn.appcircle.io/docs/assets/image (170).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (170).png' />
 
 ###
 
@@ -48,7 +49,7 @@ Any previous build can be deployed to the Distribute module without the need for
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (171).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (171).png' />
 
 ###
 
@@ -62,7 +63,7 @@ Please see the following page for more information about environment variables:
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
-![](<https://cdn.appcircle.io/docs/assets/image (172).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (172).png' />
 
 Please click on the Save button and close this modal.
 
@@ -78,7 +79,7 @@ Any custom operation during the build can be executed through the Custom Script 
 
 :::
 
-![](https://cdn.appcircle.io/docs/assets/03-05a-Smf-Build-Workflow.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/03-05a-Smf-Build-Workflow.png' />
 
 For details on using Appcircle's workflow editor, please see the related page below:
 
@@ -89,11 +90,11 @@ For details on using Appcircle's workflow editor, please see the related page be
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
 
-![](https://cdn.appcircle.io/docs/assets/start-build.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
-![](https://cdn.appcircle.io/docs/assets/start-build-configuration.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build-configuration.png' />
 
 :::info
 
@@ -101,13 +102,13 @@ You can safely close the build log window, it won't affect the status of your bu
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/03-06b-iOS-Build-Building.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/03-06b-iOS-Build-Building.png' />
 
 Your build will be distributed automatically if you had set up auto build earlier. You can also manually distribute builds at any time you like.
 
 <ContentRef url="/build/after-a-build">After a Build</ContentRef>
 
-![](https://cdn.appcircle.io/docs/assets/03-06-iOS-Build-AfterBuild.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/03-06-iOS-Build-AfterBuild.png' />
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

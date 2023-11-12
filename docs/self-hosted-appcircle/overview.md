@@ -5,13 +5,15 @@ metaDescription: Overview & Concepts
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 Self-hosted Appcircle enables you to use your own systems and infrastructure for all cloud features.
 
 By this way, you can build and test your apps on your choice of architectures. You have full control over the build environment. You can also customize your Appcircle installation with various options.
 
 When we look at self-hosted Appcircle deployment as a whole, we will see below architecture in execution.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted_appcircle_v8.drawio.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted_appcircle_v8.drawio.png' />
 
 To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/self-hosted_appcircle_v8.drawio.png). It will open the diagram in new browser tab.
 

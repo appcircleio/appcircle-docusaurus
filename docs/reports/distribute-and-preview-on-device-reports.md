@@ -5,6 +5,8 @@ metaDescription: Distribute Reports
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Distribute Reports
 
 ## App Versions Report
@@ -21,7 +23,7 @@ Each version is defined as an app binary for iOS and Android deployed manually o
 
 The date and time are displayed in the current timezone.
 
-![](<https://cdn.appcircle.io/docs/assets/image (13).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (13).png' />
 
 ## App Sharing Report
 
@@ -33,4 +35,4 @@ Each line indicates an individual share operation conducted using the "Share wit
 
 The date and time are displayed in the current timezone.
 
-![](<https://cdn.appcircle.io/docs/assets/image (14).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (14).png' />
