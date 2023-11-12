@@ -77,15 +77,17 @@ iOS certificates and Android keystores can be generated within Appcircle or pre-
 
 ### Distribution configuration
 
-Deployment is a critical step when it comes to testing your app on real devices. You may need multiple testers and testing groups to download, install, test your app, and make sure it works on different devices and operating system versions.
+Distribution is a critical step when it comes to testing your app on real devices. You may need multiple testers and testing groups to download, install, test your app, and make sure it works on different devices and operating system versions.
 
-Deployment configuration allows you to set which test groups will receive your application after the build is complete. You can manually submit your binary to testers, or Appcircle can do it for you.
+Distribution configuration allows you to set which testing groups will receive your application after the build is complete. You can manually submit your binary to testers, or Appcircle can do it for you.
 
 In this window, you can select one or more of the previously created distribution profiles or create a new one. You can use the "Manage Distribution Profiles" button above to quickly manage distribution profiles.
 
-Finally, check Auto Deploy if you want your build to be automatically deployed to Test Deployment, or check Auto Deploy if you want your build to be automatically deployed to Store Shipping.
+Finally, check "Automatically Distribute to Testers" if you want your build to be automatically distributed to the selected testers or testing groups.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1.png' />
+
+You can also use other toggles on there to automatically distribute your app to the Enterprise App Store or Store Submit modules.
 
 ### Environment variables configuration
 
