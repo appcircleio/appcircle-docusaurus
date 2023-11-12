@@ -120,7 +120,7 @@ unzip -o -u appcircle-runner-osx-x64-1.4.4.zip
 ```
 
   </TabItem>
-  
+
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
