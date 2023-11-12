@@ -22,8 +22,15 @@ For the SSH key field in the repository connection, the private key is required.
 
 :::
 
-To generate a new key pair, you can run the following command:
+:::caution
 
+If you are using Azure Devops Server as a git provider, its version must be 2022 or later.
+
+Azure Devops Server 2020 and older versions are not supported due to reduced security.
+
+:::
+
+To generate a new key pair, you can run the following command:
 
 <Tabs>
   <TabItem value="linux" label="macOS/Linux" default>
@@ -31,6 +38,7 @@ To generate a new key pair, you can run the following command:
 ```bash
 ssh-keygen -t rsa -b 4096 -P '' -f ./appcircle-ssh -m PEM
 ```
+
   </TabItem>
   <TabItem value="windows" label="Windows">
 
@@ -39,6 +47,7 @@ ssh-keygen -t rsa -b 4096 -P '' -f ./appcircle-ssh -m PEM
 ```bash
 ssh-keygen -t rsa -b 4096 -P '""' -f ./appcircle-ssh -m PEM
 ```
+
 **Command Prompt**
 
 ```bash
