@@ -5,6 +5,8 @@ metaDescription: Disable Signup or Reset Password
 sidebar_position: 5
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 ## Overview
 
 Self-hosted Appcircle server `3.9.0` or later versions support enabling or disabling "User Registration" and "Forgot Password" from the "Self-Hosted Settings" admin page.
@@ -25,38 +27,32 @@ Also, keeping the forgotten password flow open allows users to reset their passw
 
 It will be better to disable forgotten password flow after you enable LDAP or SSO for authentication.
 
-## Disabling User Registration
+## Login Settings
 
-- To disable `User Registration`, access your Appcircle from your preferred web browser.
+In this area, you can manage the creation of new users using the "Sign up with e-mail" button and the renewal of passwords using the "Forgot Password?" button.
 
-- Navigate to the `Admin` and `Self-Hosted Settings` page.
+You can reach "Login Settings" by navigating to "Admin > Self-Hosted Settings" page.
 
-![](https://cdn.appcircle.io/docs/assets/user-registration.png)
+### User Registration
 
-- To disable `User Registration`, deselect the related toggle as shown in the example above 👆.
+If this setting is `on`, your users can register to Appcircle and perform operations with this user except LDAP or other authentication methods. If you want only your LDAP users to log in to the system, you need to keep this setting `off`.
 
-- Click the save button to apply the settings.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-6.png' />
 
-- To verify that `User Registration` has been disabled, you can log out from the current account.
+Click on the "Save button to apply the settings.
 
-- As shown in the image below, users are now unable to register with email.
+:::info
+If this setting is `off`, the "Sign up with e-mail" button will not appear on the Appcircle login page.
+:::
 
-![](https://cdn.appcircle.io/docs/assets/user-registration-disabled.png)
+### Forgot Password
 
-## Disabling the Forgot Password Feature
+If this setting is `on`, your users can renew their passwords themselves. If you want your users' password management operations to be done via LDAP or other authentication methods, you should keep this setting `off`.
 
-- To disable the `Forgot Password` feature, access your Appcircle from your preferred web browser.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-7.png' />
 
-- Navigate to the `Admin` and `Self-Hosted Settings` page.
+Click on the "Save" button to apply the settings.
 
-![](https://cdn.appcircle.io/docs/assets/forgot-password.png)
-
-- To disable `Forgot Password`, deselect the related toggle as shown in the example above 👆.
-
-- Click the save button to apply the settings.
-
-- To verify that the `Forgot Password` feature has been disabled, you can log out from the current account.
-
-- As shown in the image below, users are now unable to reset their password using the `Forgot Password` feature.
-
-![](https://cdn.appcircle.io/docs/assets/forgot-password-disabled.png)
+:::info
+If this setting is `off`, the "Forgot Password?" button will not appear on the Appcircle login page.
+:::
