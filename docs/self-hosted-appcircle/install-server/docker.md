@@ -5,6 +5,8 @@ metaDescription: Appcircle Server on Docker
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Overview
 
 Following sections give you detailed information about system requirements, installation and configuration steps. After following directives successfully, you will get a running Appcircle instance on your infrastructure.
@@ -90,13 +92,13 @@ You need to have the following tools installed on your system:
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.9.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.9.1.zip
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.9.0.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.9.1.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -455,7 +457,7 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-![](https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png' />
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
@@ -829,15 +831,15 @@ Nexus may have some issues when pulling images in parallel.
 
 Open your browser and go to URL `http://my.appcircle.spacetech.com`. You should see login page.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-login-page.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-login-page.png' />
 
 Login to self-hosted Appcircle with `initialUsername` and `initialPassword` that we have configured in above steps. For our example, user name is `admin@spacetech.com`.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-dashboard-page.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-dashboard-page.png' />
 
 You can also login to enterprise app store with configured custom URL `store.spacetech.com`.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-enterprise-app-store.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-enterprise-app-store.png' />
 
 :::info
 

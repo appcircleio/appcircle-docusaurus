@@ -5,6 +5,7 @@ metaDescription: Building Flutter Mobile Applications
 sidebar_position: 7
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
 import Tabs from '@theme/Tabs';
@@ -18,7 +19,7 @@ You can build your Flutter applications in Appcircle for iOS or Android platform
 
 Simply create a new build profile as usual and select your target operating system as iOS or Android. Select **Flutter **for **Target Platform**.
 
-![](<https://cdn.appcircle.io/docs/assets/image (1).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (1).png' />
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
@@ -48,13 +49,13 @@ Your iOS project needs to have an **Xcode project** or an **Xcode workspace** an
 
 You can also select a specific Xcode version if you have certain dependencies or if you want to test your build on a specific version.
 
-![](<https://cdn.appcircle.io/docs/assets/image (2).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (2).png' />
 
 ### Build Configuration for Flutter Android applications
 
 First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
 
-![](<https://cdn.appcircle.io/docs/assets/image (3).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (3).png' />
 
 ### Build Configuration for Flutter Web applications
 
@@ -66,13 +67,13 @@ Flutter Web apps are built alongside with iOS or Android Flutter apps. For more 
 
 At the bottom of the config tab, you will the **Set Commit Build Status **option.
 
-![](<https://cdn.appcircle.io/docs/assets/image (8).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (8).png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
-![](<https://cdn.appcircle.io/docs/assets/image (213).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (213).png' />
 
-![](https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-github-commit-status-pass.png' />
 
 ### Build Triggers
 
@@ -139,7 +140,7 @@ Please refer to the following document for more information on environment varia
 
 Once you complete your build configuration, you can edit your build workflow. Flutter builds have additional steps for Flutter commands. You can also arrange, add or remove workflow steps using Appcircle's workflow editor and Workflow Marketplace.
 
-![](<https://cdn.appcircle.io/docs/assets/image (6).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (6).png' />
 
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
@@ -157,11 +158,11 @@ You can also set the preferred Flutter version on config screen. If you don't se
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
 
-![](https://cdn.appcircle.io/docs/assets/start-build.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
-![](https://cdn.appcircle.io/docs/assets/start-build-configuration.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build-configuration.png' />
 
 
 :::info

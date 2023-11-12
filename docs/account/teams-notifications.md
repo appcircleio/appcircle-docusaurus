@@ -5,6 +5,7 @@ metaDescription: Microsoft Teams Notifications
 sidebar_position: 9
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
 
 # Microsoft Teams Notifications
@@ -21,25 +22,25 @@ In order to get notifications, the administrator of the channel should add an in
 
 - Search for **Incoming Webhook** and click Configure
 
-![](<https://cdn.appcircle.io/docs/assets/msteams-configure2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure2.png' />
 
 - Give your webhook a name and save it. It will give you a webhook URL
 
-![](<https://cdn.appcircle.io/docs/assets/msteams-configure3.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure3.png' />
 
 ### Connecting Appcircle to Microsoft Teams
 
 An Appcircle organization can be associated with a single Teams channel. To start, go to [My Organization](./my-organization.md) screen and press the "Connect" button next to Microsoft Teams under the "Connections" section.
 
-![](<https://cdn.appcircle.io/docs/assets/integrations-teams.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/integrations-teams.png' />
 
 Write the webhook URL that you created in the previous step and select the events you want to receive. You can set up notifications for the major events in each module (Build, Signing Identities, Distribute and Store Submission).
 
-![](<https://cdn.appcircle.io/docs/assets/msteams-configure4.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure4.png' />
 
 
 ### Disconnecting Microsoft Teams
 
 If you want to disconnect or reauthorize the Microsoft Teams connection, scroll down to the end of the management screen and press the "Disconnect" button.
 
-![](<https://cdn.appcircle.io/docs/assets/msteams-configure5.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure5.png' />

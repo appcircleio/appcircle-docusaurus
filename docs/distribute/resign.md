@@ -5,6 +5,7 @@ metaDescription: Resign Binaries
 sidebar_position: 6
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
 
 # Resigning
@@ -21,12 +22,12 @@ To sign an iOS binary, you need a valid certificate and provisioning profile. Ap
 
 You can either select the files from the list or upload IPA, xcarchive files by clicking the **Upload New Version** button at the bottom.
 
-![](<https://cdn.appcircle.io/docs/assets/resign1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
 
 
 2. Click the... button and select **Resign Binary**
 
-![](<https://cdn.appcircle.io/docs/assets/resign2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
 
 This form will show the following details of the original binary.
 
@@ -71,7 +72,7 @@ You must select a provisioning profile for each target. Otherwise resigning will
 
 3. Fill in the details for resign process and hit the **Sign** button
 
-![](<https://cdn.appcircle.io/docs/assets/resign3.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign3.png' />
 
 ## Resigning Android Binaries
 
@@ -82,18 +83,18 @@ To sign an Android binary, you need a valid keystore file. Appcircle supports bo
 
 You can either select the files from the list or upload APK, and AAB files by clicking the **Upload New Version** button at the bottom.
 
-![](<https://cdn.appcircle.io/docs/assets/resign1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
 
 
 2. Click the... button and select **Resign Binary**
 
-![](<https://cdn.appcircle.io/docs/assets/resign2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
 
 This form will show the following details of the original binary.
 
 3. Select the correct keystore and click the **Sign** button to sign your binary. You may also change the Package ID, Version Name and Version Code.
 
-![](<https://cdn.appcircle.io/docs/assets/resign4.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign4.png' />
 
 ## Binary Details
 
@@ -101,15 +102,15 @@ This form will show the following details of the original binary.
 
 You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
 
-![](<https://cdn.appcircle.io/docs/assets/resign1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
 
 2. Click the... button and select **Binary Details**
 
-![](<https://cdn.appcircle.io/docs/assets/resign2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
 
 3. This window will show basic information about your binary.
 
-![](<https://cdn.appcircle.io/docs/assets/resign6.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign6.png' />
 
 
 ## Resign History
@@ -118,16 +119,16 @@ You can either select the files from the list or upload binaries by clicking the
 
 You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
 
-![](<https://cdn.appcircle.io/docs/assets/resign1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
 
 
 2. Click the... button and select **Resign History**
 
-![](<https://cdn.appcircle.io/docs/assets/resign2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
 
 3. Each signing process will be listed for that binary. If you click the **View Log** button, you can get more details about the process.
 
-![](<https://cdn.appcircle.io/docs/assets/resign5.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/resign5.png' />
 
 :::info
 

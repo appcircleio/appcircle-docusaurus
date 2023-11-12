@@ -6,6 +6,7 @@ sidebar_position: 4
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Using Environment Variables in iOS Projects
 
@@ -19,11 +20,11 @@ Xcode allows you to create build configuration files commonly known as `xcconfig
 
 Simply create a new file by selecting **File > New** from Xcode menu and choose **Configuration Settings File** under **Other** section in the Xcode window.
 
-![](https://cdn.appcircle.io/docs/assets/env-var-ios-02.jpg)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/env-var-ios-02.jpg' />
 
 Once you create your `.xcconfig` file, you can now assign it to your targets in Configurations window:
 
-![](https://cdn.appcircle.io/docs/assets/env-var-ios-03.jpg)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/env-var-ios-03.jpg' />
 
 ### Adding variables into build configuration file
 
@@ -65,7 +66,7 @@ Now that we have our build configuration files ready, we need to tell our projec
 
 Xcode’s Info tab in the configuration window refers to the target’s `info.plist` file, which is compiled during the build process into the application bundle. Here, by simply adding a reference to the `$(API_URL)` variable, you can access its value from your bundle.
 
-![](https://cdn.appcircle.io/docs/assets/env-var-ios-04.jpg)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/env-var-ios-04.jpg' />
 
 Final step in Xcode will be calling the variables from your code's view controller:
 
@@ -87,7 +88,7 @@ You can create environment variable groups and key/value pairs in these groups. 
 
 Once you update your project with `.xcconfig` files, you can create environment variable groups and include different values of the same environment variable to be used in different stages of your application like development or production.
 
-![](https://cdn.appcircle.io/docs/assets/env-var-ios-05.jpg)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/env-var-ios-05.jpg' />
 
 To be able to use these variables in your project, we need to replace the values in our `.xcconfig` file using a custom script workflow step. To get more information about creating and using custom scripts, please check the following page:
 

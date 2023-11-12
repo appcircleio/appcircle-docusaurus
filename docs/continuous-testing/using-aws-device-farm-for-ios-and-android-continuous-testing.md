@@ -5,6 +5,8 @@ metaDescription: Using AWS Device Farm for iOS and Android Continuous Testing
 sidebar_position: 3
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Using AWS Device Farm for iOS and Android Continuous Testing
 
 AWS Device Farm is an application testing service that enables you to run your tests concurrently on multiple mobile devices to speed up the execution of your tests and generates videos and logs to help you quickly identify issues with your app.
@@ -82,8 +84,8 @@ https://docs.aws.amazon.com/cli/latest/reference/devicefarm/schedule-run.html
 
 After you save your settings, you can run the build and the step will be executed accordingly. You can view the details of the AWS Device Farm Deploy and Run step in the build logs:
 
-![](<https://cdn.appcircle.io/docs/assets/image (105).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (105).png' />
 
 The full details of the tests are accessible in the [AWS Device Farm console](https://console.aws.amazon.com/devicefarm/).
 
-![](<https://cdn.appcircle.io/docs/assets/image (104).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (104).png' />

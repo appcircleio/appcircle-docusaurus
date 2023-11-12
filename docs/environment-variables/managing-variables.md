@@ -5,6 +5,7 @@ metaDescription: Creating and Using Environment Variables
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Creating and Using Environment Variables
@@ -13,13 +14,13 @@ import ContentRef from '@site/src/components/ContentRef';
 
 To create an environment variable group, select Environment Variables from the build module. Click on the orange + icon and enter the name of the group into the input box, press enter to save the group name and create the group.
 
-![](<https://cdn.appcircle.io/docs/assets/image (76).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (76).png' />
 
 ### Adding key and text-based value pairs
 
 To add an environment variable to the group, select the "Text" tab from the top and use the inputs below. Enter a key name, then enter the value for the key and press enter.
 
-![](<https://cdn.appcircle.io/docs/assets/image (77).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (77).png' />
 
 You can add as many environment variables as you need.
 
@@ -31,7 +32,7 @@ Variables that need to be secret can be hidden using the lock icon. Such variabl
 
 Please note that some environment variables may need to be duplicated to be used in different groups for different purposes.
 
-![](<https://cdn.appcircle.io/docs/assets/image (78).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (78).png' />
 
 ### Adding files as environment variables
 
@@ -41,9 +42,9 @@ To add a file, select the "File" tab from the top and enter a key name from the 
 
 Then press add to upload the file.
 
-![](<https://cdn.appcircle.io/docs/assets/image (79).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (79).png' />
 
-![](<https://cdn.appcircle.io/docs/assets/image (80).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (80).png' />
 
 :::info
 
@@ -51,6 +52,56 @@ When you upload a file as an environment variable, file name is not preserved. T
 
 :::
 
+### Download Environment Variables
+
+You can download and view environment variables in **JSON** format. For this, you can use the "Download" button by clicking on the three dots next to one of the variable groups under "Build > Environment Variables > Variable Groups".
+
+In the downloaded file content, you will see a structure as **key-value** pairs.
+
+Here you can view text and file-based variables. However, only the name of the environment variables you added as a file will appear. The related file will not be downloaded.
+
+In addition, if the value part of the environment variable is set to hidden during the text-based environment variable addition process, the "isSecret" value will be `true` and the value will be empty in the downloaded file. If it is not hidden, this value will be `false`, and the value will be visible completely.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/down-variables.png' />
+
+:::info
+An example of environment variables downloaded as a JSON file:
+
+```json
+[
+  {
+    "key": "API_URL",
+    "value": "https://api.example.com",
+    "isSecret": false,
+    "id": "API_URL"
+  },
+  {
+    "anahtar": "API_KEY",
+    "value": "",
+    "isSecret": true,
+    "id": "API_KEY"
+  },
+  {
+    "key": "API_SECRET",
+    "value": "",
+    "isSecret": true,
+    "id": "API_SECRET"
+  },
+  {
+    "key": "myFile",
+    "value": "mykeys.json",
+    "isSecret": false,
+    "id": "myFile"
+  }
+]
+```
+
+As seen in the example above;
+
+- if the **isSecret** value is `true`, the value is empty
+- if the **isSecret** value is `false`, it has visible value
+
+:::
 
 ### Using environment variable groups in builds
 
@@ -62,7 +113,7 @@ Here, you can see a list of previously created environment variable groups. Sele
 
 Then in workflows, you can specify the environment variable for use.
 
-![](<https://cdn.appcircle.io/docs/assets/image (172).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (172).png' />
 
 ### Creating environment variables on the fly 
 
@@ -84,17 +135,17 @@ So you can add environment variables and use them in multiple projects. Also, th
 You can create an environment variable and enter the key value for the Personal Access Token.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/variable-group-SSH-2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/variable-group-SSH-2.png' />
 
-![](<https://cdn.appcircle.io/docs/assets/repocon-azure.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/repocon-azure.png' />
 
 :::info
 If you are going to use an SSH private key, you need to upload it as a file.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/variable-group-ssh-main.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/variable-group-ssh-main.png' />
 
-![](<https://cdn.appcircle.io/docs/assets/sshconn-var.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sshconn-var.png' />
 
 :::caution
 There are two use cases for the variable group naming here.

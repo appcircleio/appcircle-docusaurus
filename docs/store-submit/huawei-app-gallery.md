@@ -4,6 +4,8 @@ metaTitle: Send Apps to Huawei AppGallery
 metaDescription: Send Apps to Huawei AppGallery
 sidebar_position: 3
 ---
+
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Send Apps to Huawei AppGallery
@@ -41,13 +43,13 @@ To send apps from Appcircle, you need to provide a Huawei AppGallery Developer A
 
 Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
 
-![](<https://cdn.appcircle.io/docs/assets/huawei-1addkey.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-1addkey.png' />
 
 ### Uploading your Keystore file
 
 Your upload keystore file should also be uploaded to Huawei AppGallery. Follow the [AppGallery documentation](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-appsigning-newapp-0000001052418290#EN-US_TOPIC_0000001052418290__section1959661616436) to convert your keystore file and upload it to `App Signing` section on AppGallery.
 
-![](<https://cdn.appcircle.io/docs/assets/huawei-8signing.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-8signing.png' />
 
 
 ### Deploying the Binary from the Distribute Module
@@ -56,7 +58,7 @@ You can deploy the binaries to the Store Submit module from the [Distribute Modu
 
 Select a binary in the list and press "Send to Store Submit for AppGallery" from the top right menu. The package name of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
-![](<https://cdn.appcircle.io/docs/assets/huawei-2sendstore.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-2sendstore.png' />
 
 ### Store Submit Profile Details
 
@@ -64,7 +66,7 @@ Once deployed, the binary will be available in the related store submission prof
 
 There are three actions available for each version in the version list. The first action displays a screen where you can initiate the store upload. The second action allows you to view the logs of the latest upload of that binary and the third action button allows you to delete that version.
 
-![](<https://cdn.appcircle.io/docs/assets/huawei-3upload.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-3upload.png' />
 
 ### Sending Apps to Huawei AppGallery Console
 
@@ -76,7 +78,7 @@ With the next option, write the [Huawei App ID](https://developer.huawei.com/con
 
 When you press the "Send App" button, the binary will be uploaded to the Huawei AppGallery Console.
 
-![](<https://cdn.appcircle.io/docs/assets/huawei-4select.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-4select.png' />
 
 
 ### Viewing the Binary Upload Status
@@ -85,7 +87,7 @@ The upload status of the binary can be tracked on the same screen.
 
 Once the process is complete, you can click on the status or click on the "View Logs" button to see the logs. If the upload is successful, you can submit this binary to the store from the "Version Information" section in the Huawei AppGallery Dashboard.
 
-![](<https://cdn.appcircle.io/docs/assets/huawei-5status.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-5status.png' />
 
 ### Troubleshooting Common Huawei AppGallery Upload Errors
 
@@ -103,7 +105,7 @@ Error during uploading your package. This may happen if your bundle identifier i
 
 Either for freeing up space purposes or if you wish to not use the Store Submit module, you can delete your store submit profile. Click on the three dot menu on the profile card:
 
-![](<https://cdn.appcircle.io/docs/assets/huawei-6deteleprofile.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-6deteleprofile.png' />
 
 #### Delete a Single Store Submit Version
 
@@ -111,7 +113,7 @@ If you want to free up space but you don't want to lose your Store Submit profil
 
 Click on the three dot menu on the version, and click on the Delete Version
 
-![](<https://cdn.appcircle.io/docs/assets/huawei-7deletebuild.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-7deletebuild.png' />
 
 After typing the name, your version will be deleted.
 
