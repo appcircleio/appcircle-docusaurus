@@ -24,9 +24,9 @@ For the SSH key field in the repository connection, the private key is required.
 
 :::caution
 
-If you are using Azure Devops Server, it must be 2022 or later.
+If you are using Azure Devops Server as a git provider, its version must be 2022 or later.
 
-Azure Devops Server 2020 and lower versions are not supported due to reduced security.
+Azure Devops Server 2020 and older versions are not supported due to reduced security.
 
 :::
 
