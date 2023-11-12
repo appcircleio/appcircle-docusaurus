@@ -67,7 +67,7 @@ In addition, if the value part of the environment variable is set to hidden duri
 :::info
 An example of environment variables downloaded as a JSON file:
 
-```txt
+```json
 [
   {
     "key": "API_URL",
