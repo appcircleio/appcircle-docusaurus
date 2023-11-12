@@ -5,6 +5,8 @@ metaDescription: Authenticator (Two Factor Authentication/2FA)
 sidebar_position: 3
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Authenticator (Two Factor Authentication/2FA)
 
 Navigate to the [Authenticator page](https://auth.appcircle.io/auth/realms/appcircle/account/totp) through your account.
@@ -22,19 +24,19 @@ You can use any other authenticator service which supports generation of SHA1 OT
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (220).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (220).png' />
 
 However, if you use another Authenticator service and you can't scan the QR code, you can also select **Unable to scan? **field and fill the information accordingly.
 
-![](<https://cdn.appcircle.io/docs/assets/image (221).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (221).png' />
 
 After the code is successfully entered, assign it a friendly name and click on **Save.**
 
-![](<https://cdn.appcircle.io/docs/assets/image (219).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (219).png' />
 
 The newly created OTP will be under effect the next time you login. Your current login session will not be terminated(you will not be logged out).
 
-![](<https://cdn.appcircle.io/docs/assets/image (231).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (231).png' />
 
 #### CLI Log In with 2FA
 

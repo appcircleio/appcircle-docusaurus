@@ -5,6 +5,7 @@ metaDescription: Delete Account
 sidebar_position: 7
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
 
 # Delete Account
@@ -12,7 +13,7 @@ import NarrowImage from '@site/src/components/NarrowImage';
 Accounts can only be deleted by the owner. 
 
 - Please log in to your account navigate to **My Account**. 
-![](<https://cdn.appcircle.io/docs/assets/myaccount-delete1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-delete1.png' />
 
 
 - Click **Delete Account** link and confirm the dialog.

@@ -5,6 +5,8 @@ metaDescription: Enterprise Store Reports
 sidebar_position: 4
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Enterprise Store Reports
 
 
@@ -24,4 +26,4 @@ You can filter your results by users, date, or app name. It is also possible to 
 If you are working for a sub-organization, you can only see the reports of the applications belonging to that organization in the reports section.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-reports.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-reports.png' />
