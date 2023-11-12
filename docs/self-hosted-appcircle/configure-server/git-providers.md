@@ -5,6 +5,8 @@ metaDescription: Configure Git Providers
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Overview
 
 With default installation, self-hosted Appcircle comes with two git providers:
@@ -12,7 +14,7 @@ With default installation, self-hosted Appcircle comes with two git providers:
 - Self-hosted Bitbucket
 - Self-hosted GitLab
 
-![](https://cdn.appcircle.io/docs/assets/be-850-default-git-providers.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-850-default-git-providers.png' />
 
 But you're not limited with these options. You can configure other git providers and use them within your self-hosted appcircle, same as in cloud.
 
@@ -51,7 +53,7 @@ build:
       enabled: true
 ```
 
-![](https://cdn.appcircle.io/docs/assets/be-850-connect-via-SSH.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-850-connect-via-SSH.png' />
 
 For more details about "Connect via SSH" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
 
@@ -66,7 +68,7 @@ build:
       enabled: true
 ```
 
-![](https://cdn.appcircle.io/docs/assets/be-850-connect-to-public-repository.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-850-connect-to-public-repository.png' />
 
 For more details about "Connect to a Public Repository" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-public-repository.md).
 
@@ -117,4 +119,4 @@ Following steps are using example project as project naming, which was told ther
 
 On complete, refresh your browser and login to Appcircle with your account. You should see new git providers on repository connection page. :tada:
 
-![](https://cdn.appcircle.io/docs/assets/be-850-sample-enable-both-options.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-850-sample-enable-both-options.png' />

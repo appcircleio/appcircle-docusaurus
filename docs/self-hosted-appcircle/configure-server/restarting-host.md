@@ -82,7 +82,7 @@ As seen above, some fields have variables(`${.}`) that **must be replaced with t
 
 :::caution
 You must edit the fields in the service file before enabling the service.
-::::
+:::
 
 - **User:** Replace `${USER}` with your logged in user which is expected to be the owner of the Appcircle server directory.
 
