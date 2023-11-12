@@ -5,25 +5,25 @@ metaDescription: Disable Signup or Reset Password
 sidebar_position: 5
 ---
 
-## Login Configuration
+## Overview
 
-With the self-hosted Appcircle server `v3.9.0`, you can enable/disable user signup feature and forgot password feature from the self-hosted admin page.
+Self-hosted Appcircle server `3.9.0` or later versions support enabling or disabling "User Registration" and "Forgot Password" from the "Self-Hosted Settings" admin page.
 
-If your organization has configured LDAP or OAuth authentication for Appcircle users, you may want to disable the email signup feature.
+If your organization has configured LDAP or SSO authentication for the Appcircle users, you may want to disable the email signup flow.
 
-Allowing email signup could result in having users registered both through LDAP/OAuth and through email.
+Allowing email signup could result in having users registered both through LDAP/SSO and through email.
 
-This can create duplicated users and make user management more difficult. Disabling email signup ensures all users are created through your centralized LDAP or OAuth provider, avoiding duplication.
+This can create duplicate users and make user management more difficult. Disabling email signup ensures all users are created through your centralized LDAP or SSO provider, avoiding duplication.
 
-Just keep in mind that disabling email signup means new users will need to be created directly in your LDAP or OAuth provider first before they can sign in to Appcircle.
+Just keep in mind that disabling email signup means new users will need to be created directly in your LDAP or SSO provider first before they can sign in to Appcircle.
 
 Disabling email signup also prevents unwanted or unknown users from signing up for accounts through the email flow.
 
-With LDAP or OAuth, only users explicitly added to those systems can gain access, keeping tighter control over who can login to Appcircle.
+With LDAP or SSO, only users explicitly added to those systems can gain access, keeping tighter control over who can login to Appcircle.
 
-Also keeping the forgot password feature opened allows users to reset their password. If a user reset his/her password, the user will be no longer LDAP user.
+Also, keeping the forgotten password flow open allows users to reset their password. But keep in mind that if a user resets his or her password, the user will no longer be an LDAP user.
 
-You might want to keep in mind to disable forgot password feature after you enable LDAP or OAUTH.
+It will be better to disable forgotten password flow after you enable LDAP or SSO for authentication.
 
 ## Disabling User Registration
 
