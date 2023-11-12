@@ -52,6 +52,56 @@ When you upload a file as an environment variable, file name is not preserved. T
 
 :::
 
+### Download Environment Variables
+
+You can download and view environment variables in **JSON** format. For this, you can use the "Download" button by clicking on the three dots next to one of the variable groups under "Build > Environment Variables > Variable Groups".
+
+In the downloaded file content, you will see a structure as **key-value** pairs.
+
+Here you can view text and file-based variables. However, only the name of the environment variables you added as a file will appear. The related file will not be downloaded.
+
+In addition, if the value part of the environment variable is set to hidden during the text-based environment variable addition process, the "isSecret" value will be `true` and the value will be empty in the downloaded file. If it is not hidden, this value will be `false`, and the value will be visible completely.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/down-variables.png' />
+
+:::info
+An example of environment variables downloaded as a JSON file:
+
+```json
+[
+  {
+    "key": "API_URL",
+    "value": "https://api.example.com",
+    "isSecret": false,
+    "id": "API_URL"
+  },
+  {
+    "anahtar": "API_KEY",
+    "value": "",
+    "isSecret": true,
+    "id": "API_KEY"
+  },
+  {
+    "key": "API_SECRET",
+    "value": "",
+    "isSecret": true,
+    "id": "API_SECRET"
+  },
+  {
+    "key": "myFile",
+    "value": "mykeys.json",
+    "isSecret": false,
+    "id": "myFile"
+  }
+]
+```
+
+As seen in the example above;
+
+- if the **isSecret** value is `true`, the value is empty
+- if the **isSecret** value is `false`, it has visible value
+
+:::
 
 ### Using environment variable groups in builds
 
