@@ -6,6 +6,7 @@ sidebar_position: 4
 ---
 
 import NarrowImage from '@site/src/components/NarrowImage';
+import Screenshot from '@site/src/components/Screenshot';
 
 # My Organization and Team Management
 
@@ -27,7 +28,7 @@ Team management with fine-grained roles and integration with enterprise identity
 
 The "My Organization" screen is accessible from the button with the organization name initials at the bottom left and it contains all operations to manage an organization.
 
-![](<https://cdn.appcircle.io/docs/assets/image (162).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (162).png' />
 
 ### Organization Name and ID Management
 
@@ -37,7 +38,7 @@ In the left column under the organization management screen, you can change your
 
 To update these details, simply enter the new values and press _Update_.
 
-![](<https://cdn.appcircle.io/docs/assets/image (36).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (36).png' />
 
 ###
 
@@ -53,7 +54,7 @@ If you are on the Starter Plan, you cannot add a new organization. To create mor
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (39).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (39).png' />
 
 #### Adding a Sub Organization
 
@@ -70,7 +71,7 @@ To use this feature, an enterprise license is required.
 
 If you have an enterprise license, you can create sub organizations from the  organization by navigating to the "My Organization" page, clicking on the "Create Sub Organization" button, and entering the necessary details for the sub organization.
 
-![](<https://cdn.appcircle.io/docs/assets/My-Organization-Sub-Create.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/My-Organization-Sub-Create.png' />
 
 Multiple sub organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub Organization feature, businesses can create and manage multiple sub organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
 
@@ -90,7 +91,7 @@ You can switch between organizations at any time without any data loss.
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/My-Organization-Switch.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/My-Organization-Switch.png' />
 
 #### Leaving or Deleting an Organization
 
@@ -107,7 +108,7 @@ Both leaving and deleting are irreversible operations and it is advised to use t
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (41).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (41).png' />
 
 ###
 
@@ -131,7 +132,7 @@ The user will be then shown in a "Pending" state until the invitation is accepte
 
 Once a user accepts an invite, it will be added to the team as a Member with read only access. You can change the role of any user, including yourself, with the "Manage Roles" button next to the user ID. You can also delete a user by pressing the delete button.
 
-![](<https://cdn.appcircle.io/docs/assets/image (151).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (151).png' />
 
 ####
 

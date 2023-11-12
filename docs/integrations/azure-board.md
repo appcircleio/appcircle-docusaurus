@@ -5,19 +5,21 @@ metaDescription: Azure Boards Integration
 sidebar_position: 9
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Azure Boards Integration
 
 Azure Boards is a standalone service within the Azure DevOps suite that helps teams plan, track, and discuss work across the entire software development process. It provides a flexible, customizable platform for managing work items, such as user stories, bugs, tasks, and issues, so you can track your work item's progress throughout the development lifecycle.
 
 You can use [Azure Boards Component](https://github.com/appcircleio/appcircle-azure-boards-component/) to add a comment and change the status of your issues according to the status of your workflow. 
 
-![](<https://cdn.appcircle.io/docs/assets/azure-component1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-component1.png' />
 
 ## Credentials
 
 In order to use Azure Boards Component, you need to configure the component and add the necessary credentials. It is strongly advised to add the credentials of your Azure instance with locked environment variables.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-component2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-component2.png' />
 
 
 - `AC_AZUREBOARD_INSTANCE`: Instance. If you're using a self-hosted instance, write the instance URL.
@@ -29,7 +31,7 @@ In order to use Azure Boards Component, you need to configure the component and 
 
 After creating the above environment variables, please don't forget to select and save them.
 
-![](<https://cdn.appcircle.io/docs/assets/azure-component3.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-component3.png' />
 
 
 ## Configuring Component

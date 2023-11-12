@@ -5,6 +5,7 @@ metaDescription: Running Android Unit Tests
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
 
@@ -78,7 +79,7 @@ mv app/build/test-results $AC_OUTPUT_DIR
 
 This simple Bash script will trigger your unit test and output the test results to be packed along with your binary files. You will get the test results both in `xml` and `html` formats.
 
-![](<https://cdn.appcircle.io/docs/assets/Screenshot 2020-04-28 20.47.05.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/Screenshot 2020-04-28 20.47.05.png' />
 
 ### Generating Test Report
 
@@ -128,8 +129,8 @@ If you're using UI Tests with Emulators, you must select Intel Device since M1 V
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
 
-![](https://cdn.appcircle.io/docs/assets/test-reports5.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports5.png' />
 
-![](https://cdn.appcircle.io/docs/assets/test-reports6.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports6.png' />
 
-![](https://cdn.appcircle.io/docs/assets/test-reports7.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports7.png' />

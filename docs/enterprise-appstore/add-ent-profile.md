@@ -5,6 +5,7 @@ metaDescription: Add a Profile
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
 
@@ -32,11 +33,11 @@ There are several ways to create an Enterprise build profile. You can either man
 
 - Click the Enterprise App Store button on the left menu bar. 
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-select.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-select.png' />
 
 - If you haven't created any profile before, you will see the following screen.
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-manual-add.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-manual-add.png' />
 
 - Click the **Add New App** button to open the upload panel.
 
@@ -45,7 +46,7 @@ There are several ways to create an Enterprise build profile. You can either man
 - Choose your APK or IPA file and click the **Upload** button.
 - If you have uploaded a valid APK or IPA file, you should see your brand new profile
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-profilelist.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-profilelist.png' />
 
 ### Sending from Distribution
 
@@ -56,7 +57,7 @@ There are several ways to create an Enterprise build profile. You can either man
 - Whenever you create a new *signed* build, that build will be sent to Enterprise App Store.
 - You can also manually send your APK or IPA files by hitting the **...** button and selecting **Distribute Binary**
 
-![](<https://cdn.appcircle.io/docs/assets/android-distribute.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-distribute.png' />
 
 
 After you created a build profile, you can manage the deployment and access settings by visiting that profile.
