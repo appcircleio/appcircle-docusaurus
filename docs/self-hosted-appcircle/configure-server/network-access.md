@@ -90,7 +90,7 @@ storage.googleapis.com/appcircle-dev-common/self-hosted
 
 - These tools are `tar`, `curl` and `unzip`
 
-- If you are hosting yum repository locally on your network, you don't need these accesses.
+- If you are hosting yum repository locally on your network, you don't need these URLs.
 
 ```access_list
 subscription.rhsm.redhat.com
@@ -164,7 +164,7 @@ files.pythonhosted.org
 
 - These tools are `tar`, `curl` and `unzip`
 
-- If you are hosting yum repository locally on your network, you don't need these accesses.
+- If you are hosting yum repository locally on your network, you don't need these URLs.
 
 ```access_list
 subscription.rhsm.redhat.com
@@ -235,7 +235,7 @@ archive.ubuntu.com
 
 - These tools are `tar`, `curl` and `unzip`
 
-- If you are hosting yum repository locally on your network, you don't need these accesses.
+- If you are hosting yum repository locally on your network, you don't need these URLs.
 
 ```access_list
 archive.ubuntu.com
@@ -294,7 +294,7 @@ www.googleapis.com/oauth2/v4/token
 
 ##### `podman` and `podman-compose` tools (required):
 
-- If you want to install Podman and podman-compose with Appcircle server install script, the Appcircle server machine needs these accesses.
+- If you want to install Podman and podman-compose with Appcircle server install script, the Appcircle server machine needs these URLs.
 
 ```access_list
 download.opensuse.org
@@ -311,7 +311,7 @@ files.pythonhosted.org
 
 - These tools are `tar`, `curl` and `unzip`
 
-- If you are hosting yum repository locally on your network, you don't need these accesses.
+- If you are hosting yum repository locally on your network, you don't need these URLs.
 
 ```access_list
 archive.ubuntu.com
