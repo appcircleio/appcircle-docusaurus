@@ -324,20 +324,22 @@ archive.ubuntu.com
 
 This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](../self-hosted-runner/installation.md#macos-vm).
 
-- `homebrew` tool:
+- `homebrew` tool (required):
 
-  - raw.githubusercontent.com
-  - github.com
-  - api.github.com
-  - api.apple-cloudkit.com
-  - formulae.brew.sh
-  - swcdn.apple.com
-  - xp.apple.com
-  - pancake.apple.com
-  - gdmf.apple.com
-  - swdist.apple.com
-  - swscan.apple.com
-  - ocsp2.apple.com
+```access_list
+raw.githubusercontent.com
+github.com
+api.github.com
+api.apple-cloudkit.com
+formulae.brew.sh
+swcdn.apple.com
+xp.apple.com
+pancake.apple.com
+gdmf.apple.com
+swdist.apple.com
+swscan.apple.com
+ocsp2.apple.com
+```
 
 :::info
 
@@ -345,13 +347,16 @@ Homebrew installs the latest version of Xcode Command Line Tools as a dependency
 
 :::
 
-- `tart` tool:
-  - github.com
-  - api.github.com
-  - objects.githubusercontent.com
-  - api.apple-cloudkit.com
-  - google-analytics.com
-  - europe-west1-1.gcp.cloud2.influxdata.com
+- `tart` tool (required):
+
+```access_list
+github.com
+api.github.com
+objects.githubusercontent.com
+api.apple-cloudkit.com
+google-analytics.com
+europe-west1-1.gcp.cloud2.influxdata.com
+```
 
 :::info
 
@@ -364,8 +369,11 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 
 :::
 
-- macOS VM image and the `run.sh` script:
-  - storage.googleapis.com/appcircle-dev-common/self-hosted
+- macOS VM image and the `run.sh` script (required):
+
+```access_list
+storage.googleapis.com/appcircle-dev-common/self-hosted
+```
 
 ## External Resources Access When Running Build Pipeline
 
