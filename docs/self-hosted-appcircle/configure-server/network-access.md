@@ -73,7 +73,7 @@ europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 ```access_list
 storage.googleapis.com/appcircle-self-hosted
-www.googleapis.com
+www.googleapis.com/oauth2/v4/token
 ```
 
 ##### Offline docker install script and docker `rpm` files (optional):
@@ -145,7 +145,7 @@ europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 ```access_list
 storage.googleapis.com/appcircle-self-hosted
-www.googleapis.com
+www.googleapis.com/oauth2/v4/token
 ```
 
 ##### `podman-compose` tool (required):
@@ -219,7 +219,7 @@ europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 ```access_list
 storage.googleapis.com/appcircle-self-hosted
-www.googleapis.com
+www.googleapis.com/oauth2/v4/token
 ```
 
 ##### `docker` installation (required):
@@ -289,7 +289,7 @@ europe-west1-docker.pkg.dev/appcircle/docker-registry
 
 ```access_list
 storage.googleapis.com/appcircle-self-hosted
-www.googleapis.com
+www.googleapis.com/oauth2/v4/token
 ```
 
 ##### `podman` and `podman-compose` tools (required):
