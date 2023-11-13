@@ -19,30 +19,81 @@ You can see different scenarios below according to how you want to install the A
 If you are hosting a yum or apt package repository locally on your network, you do not need to allow external domains for RHEL and Ubuntu repos.
 :::
 
-## External Resources Access When Installing or Upgrading
+## Appcircle Server Install and Update
 
-Below you can find the network access details required when installing or upgrading a self-hosted Appcircle server and runner.
+Below you can find the network access details required when installing or upgrading a self-hosted Appcircle server.
 
 ### Appcircle Server on RHEL with Docker
 
 This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Docker.
 
-- Appcircle server `zip` archive and container images:
+##### If you are a PoC customer, Appcircle server `zip` package (optional):
 
-  - cdn.appcircle.io
-  - storage.googleapis.com/appcircle-dev-common/self-hosted
-  - storage.googleapis.com/appcircle-self-hosted
-  - europe-west1-docker.pkg.dev/appcircle/docker-registry
-  - www.googleapis.com
+- If you are a PoC customer and want to install or update the Appcircle server, the Appcircle server machine needs to access to this URL to download `Appcircle Server zip package`.
 
-- Offline docker install script and docker `rpm` files:
+- If you are a licensed user, Appcircle server machine don't need this access.
 
-  - storage.googleapis.com/appcircle-dev-common/self-hosted
+- If you want to download the `zip package` and copy it manually, then Appcircle server machine don't need this access.
 
-- `tar`, `curl` and `unzip` tools:
+```access_list
+cdn.appcircle.io
+```
 
-  - subscription.rhsm.redhat.com
-  - cdn.redhat.com
+##### If you are a licensed customer, Appcircle server `zip` package (optional):
+
+- If you are a licensed customer and want to install or update the Appcircle server, the Appcircle server machine needs to access to this URL to download `Appcircle Server zip package`.
+
+- If you are a PoC user, Appcircle server machine don't need this access.
+
+- If you want to download the `zip package` and copy it manually, then Appcircle server machine don't need this access.
+
+```access_list
+storage.googleapis.com/appcircle-dev-common/self-hosted
+```
+
+##### If you don't have an image registry like `Harbor`, `Nexus` and want Appcircle server to access to the Appcircle image registry (optional):
+
+- If you have your own image registry and want to mirror or proxy the Appcircle container images, then your Appcircle server doesn't need to access to the origin container image registry directly.
+
+- If you don't have a image registry, the Appcircle server needs to access to this URL.
+
+```access_list
+europe-west1-docker.pkg.dev/appcircle/docker-registry
+```
+
+##### If you want to install Appcircle server with offline packages (optional):
+
+- If you want to install Appcircle server without internet connection, a zip package should be downloaded and transferred to the Appcircle server machine.
+
+- This zip package can be downloaded by another machine and transferred to the Appcircle server. If you plan to do that, the Appcircle server doesn't need to access to these URLs.
+
+```access_list
+storage.googleapis.com/appcircle-self-hosted
+www.googleapis.com
+```
+
+##### Offline docker install script and docker `rpm` files (optional):
+
+- If you want to install `Docker` on your RHEL from Appcircle resources, then Appcircle server machine need to access to these URLs.
+
+```access_list
+storage.googleapis.com/appcircle-dev-common/self-hosted
+```
+
+##### System tools (optional)
+
+- Appcircle server requires some tools to be installed.
+
+- These tools are `tar`, `curl` and `unzip`
+
+- If you are hosting yum repository locally on your network, you don't need these accesses.
+
+```access_list
+subscription.rhsm.redhat.com
+
+cdn.redhat.com
+
+```
 
 ### Appcircle Server on RHEL with Podman
 
