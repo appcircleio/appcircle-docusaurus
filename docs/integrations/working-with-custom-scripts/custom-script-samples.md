@@ -5,6 +5,7 @@ metaDescription: Custom Script Samples
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
 import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 
@@ -47,7 +48,7 @@ Appcircle Distribute module provides an integrated and automated enterprise-grad
 - `FIREBASE_TOKEN` must be obtained through a local console. Please follow the [instructions here](https://firebase.google.com/docs/cli#cli-ci-systems) to set up the Firebase CLI locally and then you can request a token with the `firebase login:ci `command.
 - `FIREBASE_APP_ID` can be obtained from the Firebase Dashboard under the settings screen:
 
-![](<https://cdn.appcircle.io/docs/assets/image (133).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (133).png' />
 
 The sample script is as follows:
 

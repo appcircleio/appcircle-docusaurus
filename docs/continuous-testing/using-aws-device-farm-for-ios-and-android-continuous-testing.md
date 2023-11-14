@@ -6,6 +6,7 @@ sidebar_position: 3
 ---
 
 import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Using AWS Device Farm for iOS and Android Continuous Testing
 
@@ -85,8 +86,8 @@ For the details of the other AWS Device Farm-specific parameters, please refer t
 
 After you save your settings, you can run the build and the step will be executed accordingly. You can view the details of the AWS Device Farm Deploy and Run step in the build logs:
 
-![](<https://cdn.appcircle.io/docs/assets/image (105).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (105).png' />
 
 The full details of the tests are accessible in the [AWS Device Farm console](https://console.aws.amazon.com/devicefarm/).
 
-![](<https://cdn.appcircle.io/docs/assets/image (104).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (104).png' />

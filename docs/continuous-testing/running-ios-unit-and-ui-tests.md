@@ -8,6 +8,7 @@ sidebar_position: 1
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
 import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Running iOS Unit & UI Tests
 
@@ -23,7 +24,7 @@ You can create unit tests in Xcode using the **Test Navigator**. Open the **Test
 
 You can now use XCTAssert functions to test your models or other assets.
 
-![](https://cdn.appcircle.io/docs/assets/14-01-iOS-Unit-Tests.jpg)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/14-01-iOS-Unit-Tests.jpg' />
 
 ### Performing iOS application tests in Appcircle
 
@@ -61,7 +62,7 @@ Optionally, you can use 3rd party tools like :link: [**XCParse**](https://github
 
 If you add [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
 
-![](https://cdn.appcircle.io/docs/assets/test-reports1.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports1.png' />
 
 You must add this component **after** the `Xcodebuild for Unit and UI Tests` so that it can parse test results. Your workflow should look like the below.
 
@@ -69,7 +70,7 @@ You must add this component **after** the `Xcodebuild for Unit and UI Tests` so 
 
 [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. To show coverage results, you must enable **Code Coverage** in Xcode's scheme settings. 
 
-![](https://cdn.appcircle.io/docs/assets/test-reports4.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports4.png' />
 
 :::warning
 
@@ -86,8 +87,8 @@ There's one important setting that you should change. If any workflow steps fail
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
 
-![](https://cdn.appcircle.io/docs/assets/test-reports5.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports5.png' />
 
-![](https://cdn.appcircle.io/docs/assets/test-reports6.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports6.png' />
 
-![](https://cdn.appcircle.io/docs/assets/test-reports7.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports7.png' />
