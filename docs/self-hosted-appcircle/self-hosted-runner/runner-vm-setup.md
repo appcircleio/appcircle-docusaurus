@@ -90,6 +90,54 @@ sudo pmset -a displaysleep 0
 
 ## Download MacOS VM
 
+### Download the macOS VM Image Manually
+
+Download macOS VM from Appcircle bucket.
+
+```bash
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_230921.tar.gz
+```
+
+If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
+
+---
+
+**Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
+
+```bash
+md5 macOS_230921.tar.gz
+```
+
+After a couple of minutes later you should see the output below.
+
+```bash
+MD5 (macOS_230921.tar.gz) = a86e96952bf538a086d1f35f67c4bc00
+```
+
+---
+
+Create folder for VM.
+
+```bash
+mkdir $HOME/.tart/vms/macOS_230921
+```
+
+Extract archive into VMs folder.
+
+```bash
+tar -zxf macOS_230921.tar.gz --directory $HOME/.tart/vms/macOS_230921
+```
+
+It may take a little to complete. Be patient and wait return of command.
+
+You can track progress of extraction by monitoring VM folder size.
+
+```bash
+du -sh $HOME/.tart/vms/macOS_230921
+```
+
+### Download the macOS VM Image Automatically
+
 To download and extract the Appcircle runner vm image, you can run the command below.
 
 ```bash
