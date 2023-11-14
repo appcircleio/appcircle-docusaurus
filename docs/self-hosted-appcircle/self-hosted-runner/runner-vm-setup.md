@@ -93,8 +93,9 @@ sudo pmset -a displaysleep 0
 To download and extract the Appcircle runner vm image, you can run the command below.
 
 ```bash
-curl -fsSL -O https://storage.googleapis.com/appcircle-dev-common/self-hosted/runner/scripts/install_vm.sh && \
-nohup bash install_vm.sh &
+curl -O -L https://raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts/main/install_vm.sh && \
+chmod +x install_vm.sh && \
+nohup ./install_vm.sh &
 ```
 
 It may take a little to complete. You can see the logs with the command below.
