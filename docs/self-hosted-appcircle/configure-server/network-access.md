@@ -156,6 +156,7 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 
 - macOS VM image and the `run.sh` script:
   - storage.googleapis.com/appcircle-dev-common/self-hosted
+  - raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts
 
 ## External Resources Access When Running Build Pipeline
 
