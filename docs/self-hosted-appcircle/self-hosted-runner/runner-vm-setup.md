@@ -136,9 +136,9 @@ You can track progress of extraction by monitoring VM folder size.
 du -sh $HOME/.tart/vms/macOS_230921
 ```
 
-### Download the macOS VM Image Automatically
+### Download the macOS VM Image With Script
 
-To download and extract the Appcircle runner vm image, you can run the command below.
+To download and extract the Appcircle runner vm image on the background automatically, you can run the command below.
 
 ```bash
 curl -O -L https://raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts/main/install_vm.sh && \
