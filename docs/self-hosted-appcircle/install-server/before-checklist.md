@@ -2,7 +2,7 @@
 title: Before Installation Checklist
 metaTitle: Before Installation Checklist
 metaDescription: Before Installation Checklist
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 ## Overview
