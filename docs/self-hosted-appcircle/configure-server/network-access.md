@@ -32,7 +32,7 @@ Below you can find the network access details required when installing or upgrad
 
 This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Podman.
 
-##### `podman-compose` tool (required):
+##### `podman-compose` tool:
 
 - You must download the podman-compose tool from python pip libraries.
 
@@ -46,7 +46,7 @@ pypi.org/pypi/pip/json
 files.pythonhosted.org/packages/
 ```
 
-##### System tools (optional):
+##### System tools:
 
 - The Appcircle server requires some tools to be installed.
 
@@ -65,7 +65,7 @@ cdn.redhat.com
 
 This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Docker.
 
-##### Offline docker install script and docker `rpm` files (optional):
+##### Offline docker install script and docker `rpm` files:
 
 - If you want to install `Docker` on your RHEL from Appcircle resources, then the Appcircle server machine needs to access these URLs.
 
@@ -73,7 +73,7 @@ This section covers the external resource domains during the installation proces
 storage.googleapis.com/appcircle-dev-common/self-hosted
 ```
 
-##### System tools (optional):
+##### System tools:
 
 - The Appcircle server requires some tools to be installed.
 
@@ -92,14 +92,14 @@ cdn.redhat.com
 
 This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Docker.
 
-##### `docker` installation (required):
+##### `docker` installation:
 
 ```access_list
 download.docker.com
 archive.ubuntu.com
 ```
 
-##### System tools (optional):
+##### System tools:
 
 - The Appcircle server requires some tools to be installed.
 
@@ -117,7 +117,7 @@ archive.ubuntu.com
 
 This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Podman.
 
-##### `podman` and `podman-compose` tools (required):
+##### `podman` and `podman-compose` tools:
 
 - If you want to install Podman and podman-compose with the Appcircle server install script, the Appcircle server machine needs these URLs.
 
@@ -130,7 +130,7 @@ pypi.org
 files.pythonhosted.org
 ```
 
-##### System tools (optional)
+##### System tools:
 
 - The Appcircle server requires some tools to be installed.
 
@@ -145,7 +145,7 @@ archive.ubuntu.com
   </TabItem>
 </Tabs>
 
-##### If you are a PoC customer, Appcircle server `zip` package (optional):
+##### If you are a PoC customer, Appcircle server `zip` package:
 
 - If you are a PoC customer and want to install or update the Appcircle server, the Appcircle server machine needs to access this URL to download the `Appcircle Server zip package`.
 
@@ -157,7 +157,7 @@ archive.ubuntu.com
 cdn.appcircle.io
 ```
 
-##### If you are a licensed customer, Appcircle server `zip` package (optional):
+##### If you are a licensed customer, Appcircle server `zip` package:
 
 - If you are a licensed customer and want to install or update the Appcircle server, the Appcircle server machine needs to access this URL to download the `Appcircle Server zip package`.
 
@@ -169,7 +169,7 @@ cdn.appcircle.io
 storage.googleapis.com/appcircle-dev-common/self-hosted
 ```
 
-##### If you don't have an image registry like `Harbor`, `Nexus` and want the Appcircle server to access the Appcircle image registry (optional):
+##### If you don't have an image registry like `Harbor`, `Nexus` and want the Appcircle server to access the Appcircle image registry:
 
 - If you have your own image registry and want to mirror or proxy the Appcircle container images, then your Appcircle server doesn't need to access the origin container image registry directly.
 
@@ -179,7 +179,7 @@ storage.googleapis.com/appcircle-dev-common/self-hosted
 europe-west1-docker.pkg.dev/appcircle/docker-registry
 ```
 
-##### If you want to install the Appcircle server with offline packages (optional):
+##### If you want to install the Appcircle server with offline packages:
 
 - If you want to install the Appcircle server without an internet connection, a zip package should be downloaded and transferred to the Appcircle server machine.
 
