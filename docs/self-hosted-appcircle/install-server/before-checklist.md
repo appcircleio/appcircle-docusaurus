@@ -110,7 +110,7 @@ vm.swappiness=10
   - [ ] resource.appcircle.spacetech.local
   - [ ] store.appcircle.spacetech.local
 - [ ] All of these subdomains should resolve to the same server IP address which is Appcircle server.
-- [ ] See details in [here.](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#4-dns-settings)
+- [ ] See details in [here.](./docker.md#4-dns-settings)
 
 ### Obtain a SSL Certificate
 
@@ -144,18 +144,18 @@ vm.swappiness=10
 - [ ] If you are using Gitlab, Azure Devops Server, Bitbucket:
   - [ ] Create a Appcircle user. Give it permissions for the repositories.
   - [ ] Create a personal access token that has sufficient permissions.
-  - For details like token permissions, check the [Appcircle documentation](https://docs.appcircle.io/build/adding-a-build-profile/#connect-your-repository).
+  - For details like token permissions, check the [Connect Your Repository Page](../../build/adding-a-build-profile#connect-your-repository).
 - [ ] If you are using any other git server:
   - [ ] Create a public private ssh key pair.
   - [ ] Configure your Appcircle git user's public ssh keys and upload the public ssh key you created.
-  - For details, you can check the [Appcircle documentation](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-private-repository-via-ssh).
+  - For details, you can check the [Connect via SSH Page](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
 
 ### Create necessary firewall rules for Appcircle server to install necessary dependencies
 
 - [ ] You need a computer which has web browser and have access to the Appcircle server.
   - We will use Appcircle server from the web browser.
   - So the firewall rule should be from your computer to the Appcircle server machine.
-- [ ] You must get other detailed URLs from [Network Access Page](https://docs.appcircle.io/self-hosted-appcircle/configure-server/network-access)
+- [ ] You must get other detailed URLs from [Network Access Page For an Appcircle Server](../configure-server/network-access.md)
   - You might install Appcircle server on RHEL or Ubuntu with docker or podman.
   - See titles for your scenario and get url from there.
 - [ ] You need to create firewall rules from Appcircle server to your git repositories:
@@ -177,7 +177,7 @@ vm.swappiness=10
 
 ### Create necessary firewall rules for Appcircle runner to build mobile applications
 
-- [ ] You can get detailed urls from [Network Access Page](https://docs.appcircle.io/self-hosted-appcircle/configure-server/network-access/#external-resources-access-when-running-build-pipeline)
+- [ ] You can get detailed urls from [Network Access Page For an Appcircle Runner](../configure-server/network-access.md#external-resources-access-when-running-build-pipeline)
 - [ ] Appcircle Runner should be able to access to the Appcircle server. Create a firewall rule:
   - from: Appcircle runner
   - to: Appcircle server
