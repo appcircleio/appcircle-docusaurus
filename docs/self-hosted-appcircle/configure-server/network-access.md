@@ -43,7 +43,7 @@ pypi.python.org/simple/python-dotenv/
 pypi.org/simple/python-dotenv/
 pypi.python.org/pypi/pip/json
 pypi.org/pypi/pip/json
-files.pythonhosted.org
+files.pythonhosted.org/packages/
 ```
 
 ##### System tools (optional):
