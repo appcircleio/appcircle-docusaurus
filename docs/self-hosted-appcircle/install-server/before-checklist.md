@@ -17,25 +17,25 @@ Please ensure all the checks are completed for a smooth installation process.
 
 ### Check the OS
 
-- RHEL 8 or later.
+- If you are using RHEL, it should be RHEL 8 or later.
 
 ```bash
 cat /etc/redhat-release
 ```
 
-- Ubuntu 20.04 or later.
+- If you are using Ubuntu, it should be Ubuntu 20.04 or later.
 
 ```bash
 cat /etc/os-release
 ```
 
-- Debian 11 or later.
+- If you are using Debian, it should be Debian 11 or later.
 
 ```bash
 cat /etc/os-release
 ```
 
-- CentOS 8 or later.
+- If you are using CentOS, it should be CentOS 8 or later.
 
 ```bash
 cat /etc/centos-release
@@ -43,25 +43,31 @@ cat /etc/centos-release
 
 ### Check the CPU Core
 
-- Minimum 8 core.
-- Recommended 32 core.
+- Minimum CPU core count should be 8 core.
+- Recommended and expected CPU core count is 32 core.
 
 ```bash
 nproc --all
 ```
 
-### Check the CPU Architechture.
+### Check the CPU Architecture.
 
-- must be x86_64.
+- The CPU architecture must be x86_64.
 
 ```bash
 uname -i
 ```
 
+- If the command above 👆 doesn't work, you may try the command below 👇.
+
+```bash
+arch
+```
+
 ### Check the Ram.
 
-- Minimum 16GB.
-- Recommended 64GB.
+- Minimum Ram size should be 16GB.
+- Recommended and expected Ram size is 64GB.
 
 ```bash
 free -h
@@ -69,31 +75,30 @@ free -h
 
 ### Check the Disk.
 
-- Minimum 500GB.
-- Recommended 1TB.
-- SSD is a better choice.
+- Minimum disk size should be 500GB.
+- Recommended and expected disk size is 1TB.
+- SSD is better and recommended choice for faster disk operations.
 
 ```bash
 df -h
 ```
 
-### Check the Swappines Settings.
+### Check the Swappiness Settings.
 
-- Should be 10
+- The swappiness configuration should be 10.
 
-```
+```bash
 sudo cat /proc/sys/vm/swappiness
-sudo sysctl vm.swappiness=10
-sudo vim /etc/sysctl.conf
-vm.swappiness=10
 ```
+
+- If the output is not 10, you can see the details [in here](docker.md#swappiness)
 
 ### Configure the DNS Settings.
 
-- Create a subdomain name from your companies domain name.
-- If your company name is "Spacetech", and your domain is spacetech.local, see the steps below 👇.
-- You should determine a subdomain like `appcircle` or `appcircle-test` or `appctest`.
-- This domain (appcircle.spacetech.local) will have 7 sub domains.
+- Create a subdomain name under your company's domain name.
+- If your company name is "Spacetech", and your domain is `spacetech.com`, see the steps below 👇.
+- You should determine a subdomain like `appcircle` or `appcircle-test` or `appctest` for Appcircle.
+- This domain (`appcircle.spacetech.com`) will have 7 sub domains.
   - api
   - auth
   - dist
@@ -102,35 +107,35 @@ vm.swappiness=10
   - resource
   - store
 - [ ] Create the 7 domain name entries on your domain server.
-  - [ ] api.appcircle.spacetech.local
-  - [ ] auth.appcircle.spacetech.local
-  - [ ] dist.appcircle.spacetech.local
-  - [ ] hook.appcircle.spacetech.local
-  - [ ] my.appcircle.spacetech.local
-  - [ ] resource.appcircle.spacetech.local
-  - [ ] store.appcircle.spacetech.local
-- [ ] All of these subdomains should resolve to the same server IP address which is Appcircle server.
-- [ ] See details in [here.](./docker.md#4-dns-settings)
+  - [ ] api.appcircle.spacetech.com
+  - [ ] auth.appcircle.spacetech.com
+  - [ ] dist.appcircle.spacetech.com
+  - [ ] hook.appcircle.spacetech.com
+  - [ ] my.appcircle.spacetech.com
+  - [ ] resource.appcircle.spacetech.com
+  - [ ] store.appcircle.spacetech.com
+- [ ] All of these subdomains should resolve to the same server IP address which is the Appcircle server.
+- [ ] You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
 
 ### Obtain a SSL Certificate
 
 - [ ] You should create only one SSL certificate.
-- [ ] The SSL certificate should cover the all 7 domain names which you have seen in the previous step.
+- [ ] The SSL certificate should cover the all 7 domain names which you have seen in the [Configure DNS](#configure-the-dns-settings) section above.
 - [ ] The SSL certificate should be in pem format.
 - [ ] The SSL certificate private key must not have passphrase.
 - [ ] Get the root CA certificate of your company.
 - [ ] Get the intermediate CA certificate of your company if it exists.
 
-### Obtain SMTP Settings
+### Obtain the SMTP Settings
 
-- [ ] Get the IP address or host name of the smtp server.
-- [ ] Get the port number of the smtp server.
-- [ ] Learn if the SMTP server is using SSL.
-- [ ] Learn if the SMTP server is using STARTTLS.
-- Note: SSL and STARTTLS are _not_ the same thing.
+- [ ] Get the IP address or host name of the SMTP server.
+- [ ] Get the port number of the SMTP server.
+- [ ] Learn if the SMTP server is using `SSL`.
+- [ ] Learn if the SMTP server is using `STARTTLS`.
+- Note: `SSL` and `STARTTLS` are **not** the same thing.
 - If the SMTP server needs auth:
-  - [ ] Create a user for Appcircle on the smtp server.
-  - [ ] Get the password of Appcircle user on the smtp server.
+  - [ ] Create a user for Appcircle on the SMTP server.
+  - [ ] Get the password of Appcircle user on the SMTP server.
 - [ ] Contact to the System Admin get required permissions to send email with Appcircle user with the SMTP server.
 - [ ] Create the firewall rules.
 - [ ] Create a firewall rule from your Appcircle server to the SMTP server.
@@ -169,10 +174,10 @@ vm.swappiness=10
     - to: your git server (github, ...)
     - port 22
     - test command: curl -v telnet://gitserver.spacetech.com:22
-- [ ] You need to create firewall rules from Appcircle server to your smtp server:
+- [ ] You need to create firewall rules from Appcircle server to your SMTP server:
   - from: Appcircle server
-  - to: your smtp server
-  - port: your smtp server's port (25 / 465 / 587)
+  - to: your SMTP server
+  - port: your SMTP server's port (25 / 465 / 587)
   - test command: curl -v telnet://smtp.spacetech.com:587
 
 ### Create necessary firewall rules for Appcircle runner to build mobile applications
@@ -191,3 +196,7 @@ vm.swappiness=10
     - from: Appcircle runner
     - to: your git server (azure, github, ...)
     - port 22
+
+```
+
+```
