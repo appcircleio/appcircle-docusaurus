@@ -77,6 +77,29 @@ For the owner name variable, it should use your collection name on self-hosted.
 
 :::caution
 
+### Azure Devops Server That Is Upgraded From a TFS Server
+
+If your Azure Devops Server is upgraded from a TFS server, you should identify your Azure Devops Server URL.
+
+- Copy a repository clone URL for any git repository.
+
+- Check if your URL has unexpected "path" like in the example URL below 👇:
+
+```bash
+https://git.spacetech.local/tfs/DefaultCollection/MOBILE_IOS/_git/wallet
+```
+
+- If there is a path between your domain (git.spacetech.local) and your collection name (DefaultCollection), you should give that path as prefix as owner name to the Appcircle.
+
+- For example:
+  - Server URL: https://git.spacetech.local
+  - Owner Name: tfs/DefaultCollection
+  - Personal Access Token: 54rdrkce6wa4d22kf75lhmq4hosgx7iy7h76cc62y77oguombnnq
+
+:::
+
+:::caution
+
 ### Connection Notice
 
 For Appcircle to connect to the Azure DevOps Server Instance, your connection must be reachable over the network.
