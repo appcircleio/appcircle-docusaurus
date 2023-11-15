@@ -123,7 +123,7 @@ vm.swappiness=10
 
 ### Obtain SMTP Settings
 
-- [ ] Get the ip address or host name of the smtp server.
+- [ ] Get the IP address or host name of the smtp server.
 - [ ] Get the port number of the smtp server.
 - [ ] Learn if the SMTP server is using SSL.
 - [ ] Learn if the SMTP server is using STARTTLS.
