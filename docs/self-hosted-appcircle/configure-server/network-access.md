@@ -113,36 +113,6 @@ archive.ubuntu.com
 
   </TabItem>
   
-  <TabItem value="ubuntu-podman" label="Ubuntu with Podman">
-
-This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Podman.
-
-##### `podman` and `podman-compose` tools (required):
-
-- If you want to install Podman and podman-compose with Appcircle server install script, the Appcircle server machine needs these URLs.
-
-```access_list
-download.opensuse.org
-archive.ubuntu.com
-ftp.gwdg.de
-pypi.python.org
-pypi.org
-files.pythonhosted.org
-```
-
-##### System tools (optional)
-
-- Appcircle server requires some tools to be installed.
-
-- These tools are `tar`, `curl` and `unzip`
-
-- If you are hosting yum repository locally on your network, you don't need these URLs.
-
-```access_list
-archive.ubuntu.com
-```
-
-  </TabItem>
 </Tabs>
 
 ##### If you are a PoC customer, Appcircle server `zip` package (optional):
