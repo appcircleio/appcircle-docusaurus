@@ -109,6 +109,26 @@ These options are available at the profile level in the profile context menu.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (188).png' />
 
+### Connection Settings
+
+**"Connection Settings"** in the build profile is an available feature that is used after a local connection to a repository via the Git provider.
+
+"Connection Settings" shows token information for the linked repository. (PAT, oAuth) This information includes **"Provider Name, Code, Expire Access Token Date, Expire Refresh Token Date, Refresh Token, and Token".**  It also shows the user who created this profile.
+
+To access this feature, you can click on the "Connection Settings" button under the repository name and URL. On the right side, the above information will be displayed in the pop-up window.
+
+**OAuth**
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-1.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-2.png' />
+
+**Personal Access Token**
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-3.png' />
+
+:::caution
+If you added your repository via multiple instances using PAT (Personal Access Token), the "Connection Settings" field will look different. You can review the [**Connecting Multiple Instances**](../build/adding-a-build-profile/connecting-multiple-instance.md#connection-settings-for-multiple-instances) page for using "Connection Settings" on multiple instances.
+:::
+
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
 <NeedHelp />
