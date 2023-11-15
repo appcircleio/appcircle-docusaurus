@@ -37,8 +37,12 @@ This section covers the external resource domains during the installation proces
 - You must download the podman-compose tool from python pip libraries.
 
 ```access_list
-pypi.python.org
-pypi.org
+pypi.python.org/simple/podman-compose
+pypi.org/simple/podman-compose/
+pypi.python.org/simple/python-dotenv/
+pypi.org/simple/python-dotenv/
+pypi.python.org/pypi/pip/json
+pypi.org/pypi/pip/json
 files.pythonhosted.org
 ```
 
