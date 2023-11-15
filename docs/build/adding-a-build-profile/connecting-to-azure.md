@@ -88,13 +88,13 @@ If your Azure Devops Server is upgraded from a TFS server, you should identify y
 - Check if your URL has unexpected "path" like in the example URL below 👇:
 
 ```bash
-https://git.spacetech.local/tfs/DefaultCollection/MOBILE_IOS/_git/wallet
+https://azure.spacetech.com/tfs/DefaultCollection/MOBILE_IOS/_git/wallet
 ```
 
-- If there is a path between your domain (git.spacetech.local) and your collection name (DefaultCollection), you should give that path as prefix as owner name to the Appcircle.
+- If there is a path between your domain (azure.spacetech.com) and your collection name (DefaultCollection), you should give that path as prefix as owner name to the Appcircle.
 
 - For example:
-  - Server URL: https://git.spacetech.local
+  - Server URL: https://azure.spacetech.com
   - Owner Name: tfs/DefaultCollection
   - Personal Access Token: 54rdrkce6wa4d22kf75lhmq4hosgx7iy7h76cc62y77oguombnnq
 
