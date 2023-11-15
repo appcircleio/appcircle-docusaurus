@@ -79,7 +79,7 @@ For the owner name variable, it should use your collection name on self-hosted.
 
 ### Connection Notice
 
-For Appcircle to connect to the Azure DevOps Server Instance, your connection must be reachable over the internet.
+For Appcircle to connect to the Azure DevOps Server Instance, your connection must be reachable over the network.
 
 :::
 
