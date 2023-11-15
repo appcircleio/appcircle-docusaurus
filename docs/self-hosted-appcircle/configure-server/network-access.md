@@ -52,7 +52,7 @@ files.pythonhosted.org/packages/
 
 - These tools are `tar`, `curl`, `unzip` and `Podman`.
 
-- If you are hosting a yum repository locally on your network, you don't need these URLs.
+- If you are hosting a `yum` repository locally on your network, you don't need these URLs.
 
 ```access_list
 subscription.rhsm.redhat.com
@@ -79,7 +79,7 @@ storage.googleapis.com/appcircle-dev-common/self-hosted
 
 - These tools are `tar`, `curl` and `unzip`.
 
-- If you are hosting a yum repository locally on your network, you don't need these URLs.
+- If you are hosting a `yum` repository locally on your network, you don't need these URLs.
 
 ```access_list
 subscription.rhsm.redhat.com
@@ -105,7 +105,7 @@ archive.ubuntu.com
 
 - These tools are `tar`, `curl` and `unzip`.
 
-- If you are hosting a yum repository locally on your network, you don't need these URLs.
+- If you are hosting a `apt` repository locally on your network, you don't need these URLs.
 
 ```access_list
 archive.ubuntu.com
