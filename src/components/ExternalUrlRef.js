@@ -1,5 +1,4 @@
 import React from 'react';
-import LinkIcon from '@site/static/img/link.svg';
 
 export default function ExternalUrlRef({ url, title }) {
   return (
@@ -13,7 +12,7 @@ export default function ExternalUrlRef({ url, title }) {
         </div>
       </div>
       <div class="rlc-image-container">
-        <LinkIcon className='rlc-image'/>
+        <img className='rlc-image' src='https://cdn.appcircle.io/docs/assets/appcircle-logo.png' />
       </div>
     </a>
   );

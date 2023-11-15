@@ -3,7 +3,6 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const rlc = require('remark-link-card');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -25,7 +24,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [rlc],
+          remarkPlugins: [],
           // Please change this to your repo.
           editUrl: 'https://github.com/appcircleio/appcircle-docusaurus/tree/master/',
           routeBasePath: '/',

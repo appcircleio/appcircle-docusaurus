@@ -446,9 +446,8 @@ html[data-theme='dark'] .rlc-container:hover {
 
 .rlc-image {
   object-fit: contain;
-  width: 40%;
   height: 100% !important;
-  margin-left: 45%;
+  margin-left: 30%;
   max-height: 75%;
   margin-top: 7.5%;
   border-bottom-right-radius: 0.25rem;
