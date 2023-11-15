@@ -68,11 +68,11 @@ Build.<br/>Test.<br/>Distribute.
 
 <section class="community">
 <a class="slack" href="https://slack.appcircle.io">
-<img src="https://storage.googleapis.com/appcircle-prod-common/docs/assets/slack-logo.png" />
+<img src="https://cdn.appcircle.io/docs/assets/slack-logo.png" />
 <span>Slack Community</span>
 </a>
 <a class="videos" href="https://www.youtube.com/c/Appcircle">
-<img src="https://storage.googleapis.com/appcircle-prod-common/docs/assets/youtube-logo.png" />
+<img src="https://cdn.appcircle.io/docs/assets/youtube-logo.png" />
 <span>How-To Videos</span>
 </a>
 
