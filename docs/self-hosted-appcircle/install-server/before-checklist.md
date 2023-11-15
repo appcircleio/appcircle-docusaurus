@@ -7,7 +7,7 @@ sidebar_position: 4
 
 ## Overview
 
-This document provides a checklist to be followed before installing the Self-Hosted Appcircle.
+This page provides a checklist to be followed before installing the Self-Hosted Appcircle.
 
 It includes checks for the operating system, CPU core and architecture, RAM, disk, swappiness settings, DNS settings, SSL certificate, SMTP settings, Git server configuration, and necessary firewall rules.
 
