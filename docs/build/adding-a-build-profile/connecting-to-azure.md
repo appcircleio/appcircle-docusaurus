@@ -61,19 +61,21 @@ Fill in the relevant information about your Azure DevOps Server. If you are not 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azure-con-5.png' />
 
-:::info
-Appcircle allows multiple instance connections. Here, you can give the connection a name so you can group the connections together.
-:::
+- `Connection Name`: Appcircle allows multiple instance connections. Here, you can give the connection a name so you can group the connections together.
 
-:::info
-For the server URL variable, it should use your URL without a path.
+  - For example: InternalAzure
 
-For example: https://azure.spacetech.com
-:::
+- `Server URL`: It should use your URL without a path.
 
-:::info
-For the owner name variable, it should use your collection name on self-hosted.
-:::
+  - For example: https://azure.spacetech.com
+
+- `Owner Name`: It should use your collection name on self-hosted. You can see collections on the left side when you open your Azure Devops Server home page.
+
+  - For example: DefaultCollection
+
+- `Personal Access Token`: It should use the personal access token which you have created earlier and has enough permissions.
+
+  - For example: 54rdrkce6wa4d22kf75lhmq4hosgx7iy7h76cc62y77oguombnnq
 
 :::caution
 
