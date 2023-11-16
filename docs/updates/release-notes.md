@@ -71,7 +71,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The latest stable version of [Xcode 15.0](../build/building-ios-applications.md) is available on both cloud and self-hosted runners. <SelfHostedBadge/> <CloudBadge/>
 - The self-hosted Appcircle server now supports proxies with a [self-signed certificate.](../self-hosted-appcircle/configure-server/proxy-configuration.md) <SelfHostedBadge/>
 - Users can more easily switch to the self-hosted version of their choice by only [downloading](../self-hosted-appcircle/update.md#1-download-latest) the server package. <SelfHostedBadge/>
-- Added the [NTP configuration](../self-hosted-appcircle/self-hosted-runner/runner-vm-setup.md#1-configure-base-runners-ntp-settings) helper tool to the self-hosted runner package. <SelfHostedBadge/>
+- Added the [NTP configuration](../self-hosted-appcircle/self-hosted-runner/runner-vm-setup.md#2-configure-base-runners-ntp-settings) helper tool to the self-hosted runner package. <SelfHostedBadge/>
 - Added self-signed certificate management for Node.JS to the [certificate installer](../self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates.md#adding-certificates) tool. <SelfHostedBadge/>
 - Now you can analyze your [SwiftLint](../integrations/azure-bot-for-swiftlint-and-detekt.md#azure-devops-bot-for-swiftlint) and [Detekt](../integrations/azure-bot-for-swiftlint-and-detekt.md#azure-devops-bot-for-detekt) reports and post the report details under the opened PR on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
 
