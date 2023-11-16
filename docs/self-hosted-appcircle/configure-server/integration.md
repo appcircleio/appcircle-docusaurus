@@ -48,9 +48,9 @@ Explanation of each key
 
 Appcircle supports both OpenID and SAML Identity providers. You can follow the below documents to connect your identity providers. If your Identity Provider is not on the list, you can follow any OpenID or SAML integration guide from the below list to find out the parameters.
 
-- [Auth0 OpenID](https://docs.appcircle.io/account/sso/auth-openid/)
-- [Auth0 SAML](https://docs.appcircle.io/account/sso/auth-saml/)
-- [Azure AD SAML](https://docs.appcircle.io/account/sso/azure-saml/)
-- [Okta OpenID](https://docs.appcircle.io/account/sso/okta-openid/)
-- [Okta SAML](https://docs.appcircle.io/account/sso/okta-saml/)
-- [OneLogin SAML](https://docs.appcircle.io/account/sso/onelogin-saml/)
+- [Auth0 OpenID](/account/sso/auth-openid/)
+- [Auth0 SAML](/account/sso/auth-saml/)
+- [Azure AD SAML](/account/sso/azure-saml/)
+- [Okta OpenID](/account/sso/okta-openid/)
+- [Okta SAML](/account/sso/okta-saml/)
+- [OneLogin SAML](/account/sso/onelogin-saml/)

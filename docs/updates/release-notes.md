@@ -547,15 +547,15 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 🆕 New Feature
 
-- [Enterprise Store Customizations](https://docs.appcircle.io/enterprise-appstore/customize-ent-store). You can connect your subdomain as Enterprise Store.
-- [NodeJS Version Selection](https://docs.appcircle.io/build/building-react-native-applications#build-configuration-for-react-native-ios-applications) You can now directly set the NodeJS version on config screen.
-- [Flutter Version Selection](https://docs.appcircle.io/build/building-flutter-applications#how-to-set-a-specific-flutter-version-for-the-build) You can now directly set the Flutter version on the config screen.
-- [iOS Versioning](https://docs.appcircle.io/versioning/ios-version) You can manage build and version numbers directly with UI.
+- [Enterprise Store Customizations](/enterprise-appstore/customize-ent-store). You can connect your subdomain as Enterprise Store.
+- [NodeJS Version Selection](/build/building-react-native-applications#build-configuration-for-react-native-ios-applications) You can now directly set the NodeJS version on config screen.
+- [Flutter Version Selection](/build/building-flutter-applications#how-to-set-a-specific-flutter-version-for-the-build) You can now directly set the Flutter version on the config screen.
+- [iOS Versioning](/versioning/ios-version) You can manage build and version numbers directly with UI.
 
 ### :muscle: Improvement
-- [Android Stack](https://docs.appcircle.io/infrastructure/android-build-infrastructure) Android Build Infrastructure updated. Now the default JAVA version is 11.
-- [iOS Stack](https://docs.appcircle.io/infrastructure/ios-build-infrastructure) iOS Build Infrastructure updated. Xcode 13.4 added to iOS agents.
-- [Workflow Management](https://docs.appcircle.io/workflows/why-to-use-workflows#setting-up-workflows) You can now import or export your workflows as a YAML file.
+- [Android Stack](/infrastructure/android-build-infrastructure) Android Build Infrastructure updated. Now the default JAVA version is 11.
+- [iOS Stack](/infrastructure/ios-build-infrastructure) iOS Build Infrastructure updated. Xcode 13.4 added to iOS agents.
+- [Workflow Management](/workflows/why-to-use-workflows#setting-up-workflows) You can now import or export your workflows as a YAML file.
 - [Appcircle CLI Update](https://www.npmjs.com/package/@appcircle/cli) Getting Live and Beta versions added to CLI.
 - When you download the logs, the profile and branch names will be added to the file name.
 
@@ -567,8 +567,8 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 🆕 New Feature
 
-- [SSO Login](https://docs.appcircle.io/account/sso/single-sign-on) is now available for all Enterprise accounts. You can connect your SAML and OpenID Provider right now!
-- [Cached Builds](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-push) are available to all. You can now use the Cache Push and Cache Pull components on your workflows to cache your dependencies and speed up your builds.
+- [SSO Login](/account/sso/single-sign-on) is now available for all Enterprise accounts. You can connect your SAML and OpenID Provider right now!
+- [Cached Builds](/workflows/common-workflow-steps/#cache-push) are available to all. You can now use the Cache Push and Cache Pull components on your workflows to cache your dependencies and speed up your builds.
 
 ### 🐞 Fixed
 
@@ -579,19 +579,19 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 🆕 New Feature
 
-- [Huawei App Gallery](https://docs.appcircle.io/store-submit/huawei-app-gallery) support added. You can submit your apk or aab files to Huawei AppGallery.
+- [Huawei App Gallery](/store-submit/huawei-app-gallery) support added. You can submit your apk or aab files to Huawei AppGallery.
 - Java 11 added to iOS agents
-- [Slather](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#slather),[Tuist](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#tuist) and Badge components added
+- [Slather](/workflows/ios-specific-workflow-steps#slather),[Tuist](/workflows/ios-specific-workflow-steps#tuist) and Badge components added
 - You can now see all your running builds from the status bar and cancel them.
-- [Skip the Workflow](https://docs.appcircle.io/build/build-manually-or-with-triggers/#skipping-a-workflow) if the commit message includes `[skip ci]` or `[ci skip]`
-- [Retry Merge/Pull Request workflow](https://docs.appcircle.io/build/build-manually-or-with-triggers/#retrying-a-workflow) if the comment includes `[retry]`
+- [Skip the Workflow](/build/build-manually-or-with-triggers/#skipping-a-workflow) if the commit message includes `[skip ci]` or `[ci skip]`
+- [Retry Merge/Pull Request workflow](/build/build-manually-or-with-triggers/#retrying-a-workflow) if the comment includes `[retry]`
 
 ### :muscle: Improvement
 
-- [Triggers updated](https://docs.appcircle.io/build/build-manually-or-with-triggers/#auto-build-on-every-push). You can use a default config for new branches. You no longer need to configure every branch. 
-- [New environment variables](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables/) added for commit message, build number, PR number, time stamp. 
+- [Triggers updated](/build/build-manually-or-with-triggers/#auto-build-on-every-push). You can use a default config for new branches. You no longer need to configure every branch. 
+- [New environment variables](/environment-variables/appcircle-specific-environment-variables/) added for commit message, build number, PR number, time stamp. 
 - You can now download build logs directly from the menu.
-- [Node Install](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps#install-node) step uses `lts` version as default. 
+- [Node Install](/workflows/react-native-specific-workflow-steps#install-node) step uses `lts` version as default. 
 - Error messages are clarified for build permissions. 
 
 ### 🐞 Fixed
@@ -602,16 +602,16 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 📑 Documentation
 
-- Added [Huawei App Gallery](https://docs.appcircle.io/store-submit/huawei-app-gallery) section for sending your apps to Huawei App Gallery.
-- Added [Huawei App Gallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei App Gallery API Key.
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#provisioning-profile-error) for Provisioning Profiles.
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#missing-entitlements) for Missing Entitlements​
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#gradle-build-after-bintray-shutdown) for Bintray deprecation
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#no-pubspecyaml-file-found-error) for Flutter build errors
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#file-not-found-error) for Flutter file naming errors
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#firebase-version) for Flutter Firebase version
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#err_ossl_evp_unsupported) for React native apps
+- Added [Huawei App Gallery](/store-submit/huawei-app-gallery) section for sending your apps to Huawei App Gallery.
+- Added [Huawei App Gallery](/account/adding-huawei-api-key) section for creating Huawei App Gallery API Key.
+- Added [FAQ section](/troubleshooting-faq/common-issues#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
+- Added [FAQ section](/troubleshooting-faq/common-issues#provisioning-profile-error) for Provisioning Profiles.
+- Added [FAQ section](/troubleshooting-faq/common-issues#missing-entitlements) for Missing Entitlements​
+- Added [FAQ section](/troubleshooting-faq/common-issues#gradle-build-after-bintray-shutdown) for Bintray deprecation
+- Added [FAQ section](/troubleshooting-faq/common-issues#no-pubspecyaml-file-found-error) for Flutter build errors
+- Added [FAQ section](/troubleshooting-faq/common-issues#file-not-found-error) for Flutter file naming errors
+- Added [FAQ section](/troubleshooting-faq/common-issues#firebase-version) for Flutter Firebase version
+- Added [FAQ section](/troubleshooting-faq/common-issues#err_ossl_evp_unsupported) for React native apps
 
 ## 2.9.0 - New Build Profile Detail UI, Better Artifact Upload Times
 
@@ -681,7 +681,7 @@ To set up an API Key, check this guide:
 
 <ContentRef url="/account/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
-After adding an API Key, you can add new signing identities from the Signing Identities section. For more information on how to add identities and use them, check out [Signing Identities guide](https://docs.appcircle.io/signing-identities/ios-certificates-and-provisioning-profiles#1-get-ios-certificates-and-provisioning-profiles-from-apple).
+After adding an API Key, you can add new signing identities from the Signing Identities section. For more information on how to add identities and use them, check out [Signing Identities guide](/signing-identities/ios-certificates-and-provisioning-profiles#1-get-ios-certificates-and-provisioning-profiles-from-apple).
 
 ### 🆕 New Feature
 
@@ -691,8 +691,8 @@ After adding an API Key, you can add new signing identities from the Signing Ide
 
 Within this release, we bring fully built-in Appcircle support for your Self Hosted (Enterprise) for:
 
-- [Bitbucket Self Hosted](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-bitbucket#connecting-to-bitbucket-self-hosted-repository)
-- [GitLab Self Hosted](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-gitlab#connecting-to-gitlab-self-hosted-repository)
+- [Bitbucket Self Hosted](/build/adding-a-build-profile/connecting-to-bitbucket#connecting-to-bitbucket-self-hosted-repository)
+- [GitLab Self Hosted](/build/adding-a-build-profile/connecting-to-gitlab#connecting-to-gitlab-self-hosted-repository)
 
 solutions. Click on them to see how to connect your self hosted repository within Appcircle!
 
@@ -710,7 +710,7 @@ Your current GitHub OAuth connection will stay as is. However, Appcircle recomme
 
 ### Disclaimer for React Native Users
 
-The default Node version which Appcircle uses to build React Native apps are upgraded from v13 to v16. If your app relies on v13 or another specific version of Node, [refer to this documentation](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps#install-node) to configure your node version. You can change your node version on your workflow settings at **Install Node** step.
+The default Node version which Appcircle uses to build React Native apps are upgraded from v13 to v16. If your app relies on v13 or another specific version of Node, [refer to this documentation](/workflows/react-native-specific-workflow-steps#install-node) to configure your node version. You can change your node version on your workflow settings at **Install Node** step.
 
 :::
 
@@ -723,16 +723,16 @@ Enable V2 Sign on Appcircle
 ### 🆕 New Feature
 
 - iOS builds will be using Xcode 13 Beta 5 if 13.0.x is selected as Xcode version.
-- Appcircle is now more secure with Two Factor Authentication 🔒 Refer to [this documentation](https://docs.appcircle.io/account/my-account/authenticator-two-factor-authentication) to secure your account 🔑
+- Appcircle is now more secure with Two Factor Authentication 🔒 Refer to [this documentation](/account/my-account/authenticator-two-factor-authentication) to secure your account 🔑
 - Appcircle now supports Android V2 Signature Scheme out of the box.;
 
 ### :muscle:Improvement
 
-- Repository Connection now has a new look and feel! Refer to [this documentation](https://docs.appcircle.io/build/adding-a-build-profile#connect-your-repository) to see the new connection screens or dive right into the connection module to check our new simplified experience!
+- Repository Connection now has a new look and feel! Refer to [this documentation](/build/adding-a-build-profile#connect-your-repository) to see the new connection screens or dive right into the connection module to check our new simplified experience!
 
 ### 📑 Documentation
 
-- If you use a single profile to produce multiple apps, we have written a [new documentation](https://docs.appcircle.io/building-multiple-apps-in-one-profile) about how to utilize your Product Variants(Android) or Multiple Targets(iOS) within Appcircle!
+- If you use a single profile to produce multiple apps, we have written a [new documentation](/building-multiple-apps-in-one-profile) about how to utilize your Product Variants(Android) or Multiple Targets(iOS) within Appcircle!
 
 ## 2.4.0 - 2021-07-30 - Xcode 13 Beta 4 & Manual Build Workflow Select;
 
@@ -750,7 +750,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 
 ### :muscle:Improvement
 
-- Commit Status on PR/CR is more detailed than before, you can track your progress(not only fail/success) as well, integrated with CI/CD progresses of the repository providers. More info is located at [Sending the build status to repository providers](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) documentation
+- Commit Status on PR/CR is more detailed than before, you can track your progress(not only fail/success) as well, integrated with CI/CD progresses of the repository providers. More info is located at [Sending the build status to repository providers](/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) documentation
 
 ### 🐞 Fixed
 
@@ -760,8 +760,8 @@ Within this release as prior to the previous release, Appcircle also supports [X
 
 ### ; 📑 Documentation
 
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#artifact-storage-is-full) of how to delete old artifacts.
-- Improved [Sending the build status to repository providers](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) section for better CI/CD pipeline tracking.
+- Added [FAQ section](/troubleshooting-faq/common-issues#artifact-storage-is-full) of how to delete old artifacts.
+- Improved [Sending the build status to repository providers](/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) section for better CI/CD pipeline tracking.
 
 ## 2.3.0 - 2021-06-28 - Xcode Version Updates
 
@@ -794,7 +794,7 @@ Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.
 
 ### 📑 Documentation
 
-- Added [React Native Specific FAQ](https://docs.appcircle.io/troubleshooting-faq/common-issues#react-native-specific-issues) section
+- Added [React Native Specific FAQ](/troubleshooting-faq/common-issues#react-native-specific-issues) section
 
 ## 2.2.0 - 2021-06-16 - Xcode Version and CLI Improvements
 
@@ -815,8 +815,8 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 - You can specify which Xcode version to use on your builds. This can also be specified on the repository and will be seamlessly fetched from the relevant repository during the **Fetch Details** Process. Available versions: 13.0, 12.5, 12.4, 12.3, 12.2, 12.1, 12.0, 11.7, 11.6, 11.5, 11.4, 11.3, 11.2, 11.1 and 11.0
   - Latest Xcode 13 beta is used on 13.0.x
 - [Appcircle CLI ](https://www.npmjs.com/package/@appcircle/cli)has a fresh look\&feel and lots of new features along with it.
-- [Export Build Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps#export-build-artifacts) has been added for a separate step. You can remove this step and upload your files elsewhere if your artifacts have a need to be on-premise.
-- [Setting build status](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) updates to the repository providers - You can now send updates about a commit to the repository providers for a complete CI/CD experience.
+- [Export Build Artifacts](/workflows/common-workflow-steps#export-build-artifacts) has been added for a separate step. You can remove this step and upload your files elsewhere if your artifacts have a need to be on-premise.
+- [Setting build status](/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) updates to the repository providers - You can now send updates about a commit to the repository providers for a complete CI/CD experience.
 - A new workflow setting, **Always run this step even if the previous steps fail** has been added. The steps which have this enabled will always run.
 - [Appcircle Marketplace](https://www.appcircle.io/integrations/) has been released. Checking which features are supported built-in has never been easier!
 
@@ -824,7 +824,7 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 
 - iOS Build Servers are optimized to reduce the queue time & better performance.
 - Added better icons for Git providers when connecting to the repository.
-- Whitelist IPs are under update process, you can follow the process under [Accessing Repositories in Internal Networks](https://docs.appcircle.io/infrastructure/accessing-repositories-in-internal-networks-firewalls/) document.
+- Whitelist IPs are under update process, you can follow the process under [Accessing Repositories in Internal Networks](/infrastructure/accessing-repositories-in-internal-networks-firewalls/) document.
 
 ### 🐞 Fixed
 
