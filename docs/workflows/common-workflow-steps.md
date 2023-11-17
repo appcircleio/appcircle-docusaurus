@@ -101,40 +101,6 @@ Also you can have more than one push and pull pairs in the same build pipeline a
 
 [https://github.com/appcircleio/appcircle-cache-pull-component](https://github.com/appcircleio/appcircle-cache-pull-component)
 
-## Audit Permission Changes
-
-With this component, you can check the permissions defined for your application in your project and see them directly if there is a change.
-
-If an added or removed permission is detected, Appcircle will alert you about this change.
-
-This component takes a reference branch, writes its permissions to a text file, and caches this file. When used on a branch for which a comparison is desired, it compares the permissions of the reference branch with those of the branch in question and detects any changes.
-
-:::info
-Keep in mind that, for the comparison to be made based on the reference branch, this component needs to be run once in the workflow of the branch from which you're taking the reference. This is only required for the initial run.
-:::
-
-A reference branch variable should be entered for permissions that will be referenced. If a component reference branch build is being performed, it will cache the permissions. If a build from another branch is being performed, it will attempt to determine the differences between the reference branch permissions and the current branch permissions by pulling the cached permissions.
-
-![](<https://cdn.appcircle.io/docs/assets/workflow-steps-permissionReferance.png>)
-
-If a component is run in a branch different from the one specified as a reference, and a permission change is detected, the workflow will automatically be aborted, and the build will fail. If you don't want this to happen, you need to enable the `Continue with the next step even if this step fails` toggle.
-
-![](<https://cdn.appcircle.io/docs/assets/workflow-steps-permissionWarning.png>)
-
-If this toggle is turned on, the workflow will continue without being aborted, and it will appear as a `Warning` when the build is completed.
-
-:::info
-If the component does not detect a permission change relative to the referenced branch, it will continue with the normal flow of the workflow without breaking it.
-:::
-:::caution
-This component operates in a way that breaks the workflow when it detects a permission difference. Please note that if you do not enable the `Continue with the next step even if this step fails` toggle, the build will automatically fail.
-:::
-:::warning
-This component works by identifying the differences based on the permissions of the branch provided as a reference. If it is not run at least once in the reference branch, it will throw an error and will not be able to detect permission differences.
-:::
-
-[https://github.com/appcircleio/appcircle-ios-permission-check-component](https://github.com/appcircleio/appcircle-ios-permission-check-component)
-
 ## Release Notes
 
 You can use Release Notes component to create release notes during your workflow.
