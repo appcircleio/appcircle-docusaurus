@@ -91,6 +91,16 @@ Your new device will be added to the newly created provisioning profile. New pro
 
 Appcircle will also update all build profiles with updated provisioning profiles.
 
+### Openning the application on a new Device
+
+If the application is requested to be opened on a device with a newly added UDID, the application version should be re-signed using the re-sign binary process and the version including the new device should be resubmitted.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/apple-device-resign.png' />
+
+After the 'Resign binary' option is selected, the relevant provisioning must be chosen in the displayed screen. After this selection process, Appcircle will re-sign the application.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/apple-device-certificate.png' />
+
 ### Automatically adding registered devices to the provisioning profile 
 
 You can add registered devices to selected provisioning profiles by editing your distribution profile's settings.
