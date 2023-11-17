@@ -5,6 +5,8 @@ metaDescription: iOS Specific Workflow Steps
 sidebar_position: 3
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # iOS Specific Workflow Steps
 
 The steps listed below are specific to the iOS build profiles.
@@ -83,11 +85,11 @@ Keep in mind that, for the comparison to be made based on the reference branch, 
 
 A reference branch variable should be entered for permissions that will be referenced. If a component reference branch build is being performed, it will cache the permissions. If a build from another branch is being performed, it will attempt to determine the differences between the reference branch permissions and the current branch permissions by pulling the cached permissions.
 
-![](<https://cdn.appcircle.io/docs/assets/workflow-steps-permissionReferance.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-steps-permissionReferance.png' />
 
 If a component is run in a branch different from the one specified as a reference, and a permission change is detected, the workflow will automatically be aborted, and the build will fail. If you don't want this to happen, you need to enable the `Continue with the next step even if this step fails` toggle.
 
-![](<https://cdn.appcircle.io/docs/assets/workflow-steps-permissionWarning.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-steps-permissionWarning.png' />
 
 If this toggle is turned on, the workflow will continue without being aborted, and it will appear as a `Warning` when the build is completed.
 
