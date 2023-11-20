@@ -9,12 +9,15 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Overview
 
-With default installation, self-hosted Appcircle comes with two git providers:
+With default installation, self-hosted Appcircle comes with the git providers below:
 
 - Self-hosted Bitbucket
 - Self-hosted GitLab
+- Self-hosted Azure Devops
+- Connect via URL
+- Connect via SSH
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-850-default-git-providers.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers.png' />
 
 But you're not limited with these options. You can configure other git providers and use them within your self-hosted appcircle, same as in cloud.
 
@@ -42,54 +45,99 @@ You can see an example project configuration from [here](../install-server/docke
 
 :::
 
-### Connecting to Private Repository via SSH
+### Connect via SSH
 
-To enable "Connect via SSH" git provider option, add below configuration to `global.yaml`.
+To disable "Connect via SSH" git provider option, add below configuration to `global.yaml`.
 
 ```yaml
 build:
   oauths:
     ssh:
-      enabled: true
+      enabled: false
 ```
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-850-connect-via-SSH.png' />
+If you want to re-enable "Connect via SSH" again, you can set the `enabled` to `true`.
 
 For more details about "Connect via SSH" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
 
-### Connecting to Public Repository
+### Connect via URL
 
-To enable "Connect to a Public Repository" git provider option, add below configuration to `global.yaml`.
+To disable "Connect via URL" git provider option, add below configuration to `global.yaml`.
 
 ```yaml
 build:
   oauths:
     publicRepository:
-      enabled: true
+      enabled: false
 ```
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-850-connect-to-public-repository.png' />
+If you want to re-enable "Connect via URL" again, you can set the `enabled` to `true`.
 
-For more details about "Connect to a Public Repository" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-public-repository.md).
+For more details about "Connect via URL" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-public-repository.md).
+
+### Connect to Azure Devops Server
+
+To disable "Azure" git provider option, add below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    azureDevopsServer:
+      enabled: false
+```
+
+If you want to re-enable "Azure" again, you can set the `enabled` to `true`.
+
+For more details about "Azure" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-azure.md).
+
+### Connect to Gitlab
+
+To disable "Gitlab" git provider option, add below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    gitlabSelfHosted:
+      enabled: false
+```
+
+If you want to re-enable "Gitlab" again, you can set the `enabled` to `true`.
+
+For more details about "Gitlab" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-gitlab.md).
+
+### Connect to Bitbucket Server
+
+To disable "Bitbucket" git provider option, add below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    bitbucketServer:
+      enabled: false
+```
+
+If you want to re-enable "Bitbucket" again, you can set the `enabled` to `true`.
+
+For more details about "Bitbucket" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-bitbucket.md).
 
 ### Applying Git Provider Changes
 
-You can add git providers at [installation](../install-server/docker.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
+You can add or remove git providers at [installation](../install-server/docker.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
 
-Let's assume we want to enable both "Connect via SSH" and "Connect to a Public Repository" options. Then we need to add below section to our `global.yaml`.
+Let's assume we want to disable both "Connect via SSH" and "Connect via URL" options. Then we need to add below section to our `global.yaml`.
 
 ```yaml
 build:
   oauths:
     ssh:
-      enabled: true
+      enabled: false
     publicRepository:
-      enabled: true
+      enabled: false
 ```
 
-If we do this at installation time then there is no extra step to take. These options will be enabled on first boot without any extra effort.
+If we do this at installation time then there is no extra step to take. These options will be disabled on first boot without any extra effort.
 
-If we don't do the configuration at installation, then after editing `global.yaml` we need to apply below steps to activate changes.
+If we don't do the configuration at installation, then after editing `global.yaml`, we need to apply below steps to activate changes.
 
 :::info
 
