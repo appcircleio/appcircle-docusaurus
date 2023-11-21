@@ -61,7 +61,7 @@ Every build profile needs to know project details regardless of the project bein
 You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
 
 
-<ContentRef url="/self-hosted-runner/overview">
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner/overview">
   Self-Hosted Runners
 </ContentRef>
 
