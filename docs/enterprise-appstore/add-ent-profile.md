@@ -68,4 +68,4 @@ The above tasks can also be initiated by our Appcircle CLI. Please check the App
 
 :::
 
-<ContentRef url="/appcircle-api/about-the-appcircle-cli">Appcircle CLI</ContentRef>
+<ContentRef url="/appcircle-api">Appcircle CLI</ContentRef>
