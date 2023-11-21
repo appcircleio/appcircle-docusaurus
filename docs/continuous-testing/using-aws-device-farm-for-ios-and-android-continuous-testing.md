@@ -5,6 +5,7 @@ metaDescription: Using AWS Device Farm for iOS and Android Continuous Testing
 sidebar_position: 3
 ---
 
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Using AWS Device Farm for iOS and Android Continuous Testing
@@ -78,9 +79,10 @@ aws devicefarm list-device-pools --arn MyProjectARN
 
 For the details of the other AWS Device Farm-specific parameters, please refer to the following documents:
 
-https://docs.aws.amazon.com/cli/latest/reference/devicefarm/create-upload.html
+<ExternalUrlRef url="https://docs.aws.amazon.com/cli/latest/reference/devicefarm/create-upload.html" title="AWS Device Farm Create and Upload"/>
 
-https://docs.aws.amazon.com/cli/latest/reference/devicefarm/schedule-run.html
+<ExternalUrlRef url="https://docs.aws.amazon.com/cli/latest/reference/devicefarm/schedule-run.html" title="AWS Device Farm Schedule Run"/>
+
 
 After you save your settings, you can run the build and the step will be executed accordingly. You can view the details of the AWS Device Farm Deploy and Run step in the build logs:
 

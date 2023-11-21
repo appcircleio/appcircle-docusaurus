@@ -8,6 +8,7 @@ sidebar_position: 3
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 
 # Connecting to Bitbucket
 
@@ -63,7 +64,7 @@ Is your self-hosted Bitbucket instance under enterprise firewall? Learn which IP
 
 Bitbucket has **Personal Access Token** to authorize the user. Relevant guide:
 
-https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html
+<ExternalUrlRef url="https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html" title="BitBucket Personal Access Tokens Documentation"/>
 
 :::info
 

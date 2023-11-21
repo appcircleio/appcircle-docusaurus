@@ -7,6 +7,7 @@ sidebar_position: 9
 
 import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 
 # Azure Bot for SwiftLint and Detekt
 
@@ -58,7 +59,7 @@ You can easily access the details through the comment and reach the build log vi
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-pr-comment.png' />
 
-https://github.com/appcircleio/appcircle-ios-azure-bot-for-swiftlint-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-ios-azure-bot-for-swiftlint-component" title="Appcircle iOS Azure Bot for SwiftLint Component"/>
 
 ### Azure DevOps Bot for Detekt
 
@@ -108,4 +109,4 @@ You can easily access the details through the comment and reach the build log vi
 
 <NarrowImage src="https://cdn.appcircle.io/docs/assets/workflowtips-android-comment.png" />
 
-https://github.com/appcircleio/appcircle-android-azure-bot-for-detekt-component
+<ExternalUrlRef url="https://github.com/appcircleio/appcircle-android-azure-bot-for-detekt-component" title="Appcircle Android Azure Bot for Detect Component"/>

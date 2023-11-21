@@ -5,6 +5,7 @@ metaDescription: Building Multiple Apps in One Profile
 sidebar_position: 1
 ---
 
+import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Building Multiple Apps in One Profile
@@ -30,7 +31,7 @@ For this task, the developer should configure those from Android Studio or Xcode
 
 The Android Developers document has a detailed guide on how to configure build variants and product flavors:
 
-https://developer.android.com/studio/build/build-variants
+<ExternalUrlRef url="https://developer.android.com/studio/build/build-variants" />
 
 The assets that you can directly change with the `productFlavor`
 
@@ -38,9 +39,9 @@ The assets that you can directly change with the `productFlavor`
 - App Name
 - App Icon
 
-For more information, check the Android Developer Document on `productFlavor`
+For more information, check the Android Developer Documentation on `productFlavor`
 
-https://developer.android.com/reference/tools/gradle-api/4.2/com/android/build/api/dsl/ProductFlavor
+<ExternalUrlRef url="https://developer.android.com/reference/tools/gradle-api/4.2/com/android/build/api/dsl/ProductFlavor" title="Android Developer Documentation on productFlavor"/>
 
 #### How to Change Variant Programmatically on Appcircle
 
