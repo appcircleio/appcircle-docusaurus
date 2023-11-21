@@ -35,7 +35,7 @@ In order to keep your config in Appcircle, you need to Navigate through:
 
 Alternatively, you can accomplish the same within environment variables. The environment variable for this action is `AC_V2_SIGN` . More information is found at the document below:
 
-<ContentRef url="../environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="../environment-variables">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
