@@ -664,7 +664,7 @@ screen -d -m $HOME/runner2/run.sh vm02
 
 In this case, you need to focus on self-hosted runner issues inside macOS VM (guest).
 
-In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](./overview.md) details.
+In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](./index.md) details.
 
 - You can check your macOS guest for possible system issues. (disk space, network connectivity etc.)
 - If you have custom proxy settings on macOS guest, check these settings.

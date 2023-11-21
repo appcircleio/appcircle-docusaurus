@@ -151,7 +151,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### :muscle: Improvement
 - Added the feature that [LDAP and SSO](../account/sso-ldap-login.md) settings  can be made once and all sub-organizations can use this setting. <CloudBadge/> <SelfHostedBadge/>
 - Previous [Configuration and Workflow](../build/adding-a-build-profile) files can be downloaded in the Configuration and Workflow sections. The ability to create configuration and workflow by re-uploading downloaded `.yaml` files has been improved. <CloudBadge/> <SelfHostedBadge/>
-- On the [self-hosted](../self-hosted-appcircle/self-hosted-runner/overview.md) side, the feature of adding priority has been developed for online and offline runners. <CloudBadge/> <SelfHostedBadge/>
+- On the [self-hosted](../self-hosted-appcircle/self-hosted-runner) side, the feature of adding priority has been developed for online and offline runners. <CloudBadge/> <SelfHostedBadge/>
 - Sequential numbering improvement was made in the naming while creating the new configuration and workflow. <CloudBadge/> <SelfHostedBadge/>
 - The ability to send files from the Testing Distribution module to the Enterprise App Store added. <CloudBadge/> <SelfHostedBadge/>
 - Made an improvement to prevent the subordinate from accessing the details on the 'corporate settings' page. <CloudBadge/> <SelfHostedBadge/>
@@ -482,7 +482,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### :muscle: Improvement
 - Empty states are added for all modules.
-- [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner/overview.md) Self hosted documentation updated.
+- [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner) Self hosted documentation updated.
 - Docs updated to Docusaurus v2.0.1
 
 ### 🐞 Fixed
@@ -491,7 +491,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 ## 2.9.13 - 2022-07-27 - Self-hosted Runners, Artifacts Management, Automatic iOS Code Signing
 
 ### 🆕 New Feature
-- [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner/overview.md) Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines. 
+- [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner) Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines. 
 - [Automatic iOS Code Signing](../signing-identities/ios-certificates-and-provisioning-profiles.md) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
 - [Artifacts Management](../account/artifacts.md) You can set the retention period for your build artifacts.
 - [SonarQube Component](../workflows/common-workflow-steps.md) You can use SonarQube for iOS and Android projects.
