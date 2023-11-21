@@ -238,7 +238,7 @@ sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
 - Edit the /etc/containers/containers.conf file.
 
 ```bash
-sudo vim /etc/containers/container.conf
+sudo vim /etc/containers/containers.conf
 ```
 
 - Add the following content to the [network] section:
@@ -248,8 +248,18 @@ network_backend="netavark"
 ```
 
 - Save the file.
-- Reset Podman by running the command: `podman system reset`
-- Reboot the system using the command: `sudo reboot`
+
+- Reset Podman:
+
+```bash
+podman system reset
+```
+
+- Reboot the system:
+
+```bash
+sudo reboot
+```
 
 :::caution
 If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
