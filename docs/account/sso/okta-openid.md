@@ -22,19 +22,19 @@ Only Enterprise accounts support SSO.
 
 SSO can only be enabled by the organization's administrator. To start, go to [My Organization](../my-organization.md) screen and click the **Enable Login** button under the **APPCIRCLE LOGIN** section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/enable-sso_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/enable-sso_v3.png' />
 
 ### Configure Appcircle and Okta
 
 - Select Setup an OpenID Provider
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-form.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-form_v2.png' />
 
 - Pick an alias and display name for your organization. Please pick a short and rememberable alias.
 
 - This screen will auto-generate an URL for the next step
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid1_v2.png' />
 
 - Login to your [Okta](https://www.okta.com/) account and navigate to Applications and then click "Create App Integration".
 
@@ -64,11 +64,11 @@ https://customer_name_here.okta.com/oauth2/default/.well-known/openid-configurat
 
 - Go back to Appcircle, upload this JSON file by clicking the button under **Import OpenID configuration**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid1_v2.png' />
 
 - Check all the settings on this page and confirm that Authorization and Token URLs are imported correctly. Enter your **Client ID** and **Client Secret**. Modify the settings as below.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid2_v2.png' />
 
 ### Testing SSO
 
