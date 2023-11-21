@@ -13,7 +13,7 @@ Appcircle is a mobile CI/CD platform which makes it easy for you to manage the l
 
 :::tip
 
-Appcircle supports mobile applications developed in Swift/Objective-C, Java/Kotlin, React Native, Flutter and Smartface for both iOS and Android.
+Appcircle supports mobile applications developed in Swift/Objective-C, Java/Kotlin, React Native and Flutter for both iOS and Android.
 
 :::
 

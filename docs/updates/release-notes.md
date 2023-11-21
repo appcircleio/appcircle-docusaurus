@@ -403,7 +403,6 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - [Firebase dSYM Upload](../workflows/common-workflow-steps.md#firebase-upload-dsym) component added. You may use this component to upload Debug Symbols to Firebase.
 
 ### :muscle: Improvement
-- Xcode and NodeJS version selection added to Smartface projects
 - Help document links added to SSO section.
 
 ### 🐞 Fixed
@@ -787,7 +786,6 @@ Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.
 
 - Fixed a bug that **Config **section appearing disabled when connected to the repository for the first time
 - Fixed a bug that causes Store Submit modules to not show correct progress while the upload is in progress.
-- Fixed a bug that Copy\&Set Configurations not working properly on **Smartface Android **profiles**.**
 
 ### 📑 Documentation
 
@@ -977,7 +975,6 @@ This release includes the automatic public store deployment feature and the intr
 ### :muscle:Improvement
 
 - Store Submit Module improvements
-- Configuration tab in Smartface projects
 - Under-the-hood Standalone Emulator/Simulator improvements
 - Billing and plan info view improvements
 
