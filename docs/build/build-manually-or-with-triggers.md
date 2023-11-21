@@ -103,6 +103,17 @@ Make sure that the names of the source branch and the target branch are spelled 
 If spaces are used in the name, Appcircle will trim it without spaces.
 :::
 
+:::info
+If you are using Azure DevOps Server or Azure DevOps Services Cloud as a Git provider, the Appcircle build trigger will not run for PR status updates (Approve, Approve with suggestions, Wait for author, Reject) or action changes (Complete, Mark as draft, Abandon).
+
+Appcircle will only run the trigger for PR creation or PR updates.
+
+**PR Status:**
+<Screenshot url='https://cdn.appcircle.io/docs/assets/pr-1.png' />
+
+**PR Action:**
+<Screenshot url='https://cdn.appcircle.io/docs/assets/pr-2.png' />
+:::
 
 #### Triggering different workflows at the same time
 
