@@ -7,7 +7,6 @@ sidebar_position: 7
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import NarrowImage from '@site/src/components/NarrowImage';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -97,14 +96,14 @@ The next step in the build configuration is Signing. Here, please select the pro
 
 For signing iOS apps, press add, select the bundle ID from the first dropdown and then select a compatible provisioning profile (added from the signing identities module) from the second dropdown.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png" />
+<Screenshot src="https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png" />
 
 
 ### Signing Flutter Android Applications
 
 Here, please select the Android Keystore you added in the [Android Keystores](../signing-identities/android-keystores.md) section. For signing Android apps, simply select a keystore (added from the signing identities module).
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/build-configuration-android-signing.png" />
+<Screenshot src="https://cdn.appcircle.io/docs/assets/build-configuration-android-signing.png" />
 
 ###
 
@@ -150,7 +149,7 @@ To learn more about Appcircle's Workflow editor, see the corresponding page belo
 
 To change the Flutter version, open the Flutter Install workflow step from the workflow editor and set the version under the "Selected Flutter Version" field.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/build-configuration-flutter-select-version-workflow.png" />
+<Screenshot src="https://cdn.appcircle.io/docs/assets/build-configuration-flutter-select-version-workflow.png" />
 
 You can also set the preferred Flutter version on config screen. If you don't set any version, `stable` version will be used.
 ### Starting a Flutter Build and After a Build
