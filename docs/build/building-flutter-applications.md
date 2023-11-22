@@ -158,11 +158,11 @@ You can also set the preferred Flutter version on config screen. If you don't se
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build-configuration.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build-modal.png' />
 
 
 :::info
