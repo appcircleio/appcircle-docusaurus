@@ -18,7 +18,7 @@ You may create **Distribution** configuration to send your app to public stores 
 
 - Click on **Configurations** to create configurations for different scenarios. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (168).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-inside.png' />
 
 - Click on **New** button to create your first configuration.
 
