@@ -65,7 +65,7 @@ You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
   Self-Hosted Runners
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-fetch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-fetch.png' />
 
 ### Signing configuration
 
@@ -73,7 +73,7 @@ Both iOS and Android applications need to be digitally signed by their developer
 
 iOS certificates and Android keystores can be generated within Appcircle or pre-obtained certificates can be uploaded. iOS provisioning profiles need to be obtained from Apple Developer account and uploaded to Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (170).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png' />
 
 ### Distribution configuration
 
@@ -93,13 +93,13 @@ You can also use other toggles on there to automatically distribute your app to 
 
 You can define variables and secrets to be incorporated during the build in the Environment Variables submodule so that you don't need to store certain keys and configurations within the repository.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (172).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
 ### Versioning configuration
 
 You can set custom rules to manage the versioning of your app. You can increase both the build number and version number according to the rules you set.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (173).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-versioning.png' />
 
 ### Workflows and Triggers
 
