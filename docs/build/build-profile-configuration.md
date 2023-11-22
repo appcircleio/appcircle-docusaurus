@@ -18,15 +18,15 @@ You may create **Distribution** configuration to send your app to public stores 
 
 - Click on **Configurations** to create configurations for different scenarios. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-inside.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-configuration-showcase.png' />
 
 - Click on **New** button to create your first configuration.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-build-configuration1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-another-configuration.png' />
 
-- You may change the name of the configuration or delete the ones you don't need.
+- You may change the name of the configuration or delete the ones you don't need. To do that, click on the edit button shown and three dot on the configuration you want to edit/delete.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-build-configuration2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/clone-1.png' />
 
 ### Clone Configuration
 
@@ -107,7 +107,7 @@ For advanced configuration, you can utilize [workflows](../workflows/why-to-use-
 
 These options are available at the profile level in the profile context menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (188).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-workflow-trigger-showcase.png' />
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
