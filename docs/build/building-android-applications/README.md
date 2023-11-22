@@ -37,7 +37,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 At the bottom of the config tab, you will the **Set Commit Build Status **option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (8).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-android-build-commit-status.png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 

@@ -68,7 +68,7 @@ By default, the most recent stable version of Xcode is selected. If available, y
 
 At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (8).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-ios-build-commit-status.png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 

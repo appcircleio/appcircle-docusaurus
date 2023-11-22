@@ -67,7 +67,7 @@ Flutter Web apps are built alongside with iOS or Android Flutter apps. For more 
 
 At the bottom of the config tab, you will the **Set Commit Build Status **option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (8).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-flutter-build-commit-status.png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
