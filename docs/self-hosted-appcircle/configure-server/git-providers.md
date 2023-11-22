@@ -165,6 +165,6 @@ Following steps are using example project as project naming, which was told ther
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-On complete, refresh your browser and login to Appcircle with your account. You should see new git providers on repository connection page. :tada:
+On complete, refresh your browser and login to Appcircle with your account. You should see that "Connect via SSH" and "Connect via URL" option is disabled on repository connection page. :tada:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-850-sample-enable-both-options.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-ssh-url-disabled.png' />
