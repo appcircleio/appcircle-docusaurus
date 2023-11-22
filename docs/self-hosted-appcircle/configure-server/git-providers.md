@@ -19,9 +19,9 @@ With default installation, self-hosted Appcircle comes with the git providers be
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers.png' />
 
-But you're not limited with these options. You can configure other git providers and use them within your self-hosted appcircle, same as in cloud.
+But you're not limited with these options. You can configure the git providers and use them within your self-hosted appcircle, same as in cloud.
 
-Following sections will give you more details about adding other git providers.
+Following sections will give you more details about removing or adding other git providers.
 
 :::info
 
