@@ -13,6 +13,8 @@ A sustained LDAP brute force attack could result in user accounts being locked o
 
 To mitigate this risk, Appcircle's server can be configured to block repeated failed login attempts for a set duration before allowing additional attempts.
 
+Appcircle server's brute-force algorithm is based on successive failed attempts, not failed attempts over a period of time.
+
 :::info
 
 ### Required Appcircle Server Version
@@ -23,16 +25,9 @@ If you want to enable LDAP brute-force settings, the Appcircle server version mu
 
 ## Default Values
 
-The Appcircle server comes pre-configured with default settings, different for store and distribution side, for brute force attack protection that should be carefully considered:
+Appcircle server comes with brute-force protection turned off by default.
 
-- Testing Distribution
-  - Max Failure Count: 3
-  - Max Lock Duration: 600 (in second)
-- Enterprise App Store
-  - Max Failure Count: 3
-  - Max Lock Duration: 600 (in second)
-
-While convenient, the default settings may not provide adequate alignment with your LDAP server's account lockout policies.
+It is completely up to your needs to set this.
 
 ## Defining the Correct Values
 
