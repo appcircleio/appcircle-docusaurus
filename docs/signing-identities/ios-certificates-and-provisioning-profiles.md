@@ -6,7 +6,6 @@ sidebar_position: 1
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # iOS Certificates & Provisioning Profiles
@@ -95,11 +94,11 @@ There is no need for device registration, but Apple requires the binary to be pr
 
 When you go to add a new Provisioning Profile, you'll see the option **Get Provisioning Profiles from App Store Connect**. Select it to see the list of identities fetched from Apple.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/download-provisioning.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-provision-app-store.png" />
 
 You can select to download the provisioning profile from the list. **If you don't want Appcircle to keep the provisioning profile**, you can make our build agents to keep a reference. This way, our agents will fetch the profiles** before every build and dismiss them **when the build is finalized.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/provisioning-list.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-provision-profile-allow-download.png" />
 
 After saving, you can **skip to step 3**.
 
@@ -199,7 +198,7 @@ Automatic signing allows you to sign your application without uploading any prov
 - Both Developer and Distribution certificates must be added to Appcircle.
 - App Store Connect Key must be added to Appcircle. 
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/auto-codesign.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-configuration-auto-code-sign.png" />
 
 You must also select distribution type from the dropdown menu. If you're uploading your app to App Store or TestFlight, you should select **App Store**. If you're uploading your app to Adhoc or Appcircle's distribution module, you should select **Adhoc**. Please check [Apple's documentation](https://developer.apple.com/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles) for more details.
 
