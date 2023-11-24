@@ -5,7 +5,6 @@ metaDescription: Azure AD SAML
 sidebar_position: 4
 ---
 
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Azure AD SAML
@@ -109,7 +108,7 @@ You need to select users/groups in Azure AD to enable SSO. All members of your A
 
 - Enter the alias you picked.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 

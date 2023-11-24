@@ -5,7 +5,6 @@ metaDescription: Okta OpenID
 sidebar_position: 5
 ---
 
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Okta OpenID
@@ -79,7 +78,7 @@ https://customer_name_here.okta.com/oauth2/default/.well-known/openid-configurat
 
 - Enter the alias you picked.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 

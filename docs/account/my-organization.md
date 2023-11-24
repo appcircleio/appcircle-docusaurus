@@ -5,7 +5,6 @@ metaDescription: My Organization and Team Management
 sidebar_position: 4
 ---
 
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # My Organization and Team Management
@@ -28,7 +27,7 @@ Team management with fine-grained roles and integration with enterprise identity
 
 The "My Organization" screen is accessible from the button with the organization name initials at the bottom left and it contains all operations to manage an organization.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (162).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-organization.png' />
 
 ### Organization Name and ID Management
 
@@ -238,5 +237,3 @@ Manage the subscription, payment details, and invoices.
 **THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS**
 
 Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams, Google Play Developer API Keys, App Store Connect API Keys, Huawei AppGallery Developer API Keys etc.
-
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/permission-all-image.png" />

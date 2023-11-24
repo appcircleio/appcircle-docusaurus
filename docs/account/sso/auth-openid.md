@@ -5,7 +5,6 @@ metaDescription: Auth0 OpenID
 sidebar_position: 2
 ---
 
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Auth0 OpenID
@@ -73,7 +72,7 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Enter the alias you picked.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 
