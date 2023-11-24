@@ -6,8 +6,8 @@ import React from 'react';
  * @param param0 
  * @returns 
  */
-export default function Screenshot({ url, height, width }) {
+export default function Screenshot({ url }) {
   return (
-    <img className="screenshot" src={url} style={{ height, width }}></img>
+    <img className="screenshot" src={url}></img>
   );
 }
