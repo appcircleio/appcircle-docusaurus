@@ -7,7 +7,6 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import NarrowImage from '@site/src/components/NarrowImage';
 
 # Enterprise Store
 
@@ -33,17 +32,16 @@ There are several ways to create an Enterprise build profile. You can either man
 
 - Click the Enterprise App Store button on the left menu bar. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-select.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-main-menu.png' />
 
-- If you haven't created any profile before, you will see the following screen.
+- If you haven't created any profile before, you will see the following screen. Click the **Add New App** button to open the upload panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-manual-add.png' />
-
-- Click the **Add New App** button to open the upload panel.
-
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-selectfile.png" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-create-no-apps.png' />
 
 - Choose your APK or IPA file and click the **Upload** button.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-binary-file-upload.png" />
+
 - If you have uploaded a valid APK or IPA file, you should see your brand new profile
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-profilelist.png' />
@@ -52,7 +50,7 @@ There are several ways to create an Enterprise build profile. You can either man
 
 - Go to your build profile, hit the config button, and enable **Automatically Distribute to Enterprise App Store**.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/ent-appstore.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-enable-build-configuration.png" />
 
 - Whenever you create a new *signed* build, that build will be sent to Enterprise App Store.
 - You can also manually send your APK or IPA files by hitting the **...** button and selecting **Distribute Binary**
