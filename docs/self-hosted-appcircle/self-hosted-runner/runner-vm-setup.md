@@ -158,6 +158,8 @@ You can close the ssh session while the script is running. The download and extr
 But be aware that there might be some errors while downloading and extracting the VM image. Please keep an eye on the logs.
 :::
 
+### MacOS VM Information
+
 :::info
 If you face any error while downloading the VM image, please delete the corrupted VM image file and run the `curl` command block above 👆.
 :::
