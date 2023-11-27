@@ -5,6 +5,7 @@ metaDescription: Send Apps to App Store Connect and TestFlight
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef'
 
 # Send Apps to App Store Connect and TestFlight
@@ -46,7 +47,7 @@ With the next option, enter the key ID and the issuer ID that can be obtained fr
 
 Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
 
-![](<https://cdn.appcircle.io/docs/assets/image (93).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (93).png' />
 
 ### Deploying the Binary from the Distribute Module
 
@@ -54,7 +55,7 @@ You can deploy the binaries to the Store Submit module from the [Distribute Modu
 
 Select a binary in the list and press "Send to Store Submit for App Store" from the top left menu. The bundle ID of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
-![](<https://cdn.appcircle.io/docs/assets/image (84).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (84).png' />
 
 ### Store Submit Profile Details
 
@@ -62,7 +63,7 @@ Once deployed, the binary will be available in the related store submission prof
 
 There are three actions available for each version in the version list. The first action displays a screen where you can initiate the store upload to the specified destination. The second action allows you to view the logs of the latest upload of that binary and the third action allows you to delete that version.
 
-![](<https://cdn.appcircle.io/docs/assets/image (95).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (95).png' />
 
 ###
 
@@ -80,7 +81,7 @@ When you select an option, if you don't have a previously saved API key or Apple
 
 When you press the "Send App" button, the binary will be uploaded to App Store Connect.
 
-![](<https://cdn.appcircle.io/docs/assets/image (96).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (96).png' />
 
 ### Viewing the Binary Upload Status
 
@@ -88,13 +89,13 @@ The upload status of the binary can be tracked on the same screen.
 
 Once the process is complete, you can click on the status or click on the "View Logs" button to see the logs. If the upload is successful, the app will be visible under the builds section in the TestFlight tab as well as in the builds list in the Add Build dialog in the App Store tab.
 
-![](<https://cdn.appcircle.io/docs/assets/image (88).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (88).png' />
 
 ### Deleting App Store Connect Profiles
 
 Either for freeing up space purposes or if you wish to not use the Store Submit module, you can delete your App Store Connect. Click on the three dot menu on the profile card:
 
-![](<https://cdn.appcircle.io/docs/assets/image (208).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (208).png' />
 
 #### Delete a Single Store Submit Version
 
@@ -102,7 +103,7 @@ If you want to free up space but you don't want to lose your Store Submit profil
 
 Click on the three dot menu on the version, and click on the Delete Version
 
-![](<https://cdn.appcircle.io/docs/assets/image (209).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (209).png' />
 
 After typing the name, your version will be deleted.
 

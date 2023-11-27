@@ -5,6 +5,7 @@ metaDescription: Latest Release Notes
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import SelfHostedBadge from '@site/src/components/SelfHostedBadge';
 import CloudBadge from '@site/src/components/CloudBadge';
@@ -15,9 +16,9 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Feature
 
-- "Self-hosted Settings" has been introduced on the admin page for self-hosted Appcircle server. It includes "LDAP login" for configuring LDAP user authentication and other "Login Settings". <SelfHostedBadge/>
+- "Self-hosted Settings" has been introduced on the admin page for self-hosted Appcircle server. It includes [LDAP Login](../self-hosted-appcircle/configure-server/ldap-settings.md#appcircle-login-with-ldap) for configuring LDAP user authentication and [Login Settings](../self-hosted-appcircle/configure-server/login-configuration.md#login-settings) for other login configuration options. <SelfHostedBadge/>
 - Users are now allowed to manage their connections to private repositories after connecting their profiles. <CloudBadge/> <SelfHostedBadge/>
-- Now users are able to download the [environment variables](../environment-variables/managing-variables.md) in JSON format. <CloudBadge/> <SelfHostedBadge/>
+- Now users are able to download the [environment variables](../environment-variables/managing-variables.md#download-environment-variables) in JSON format. <CloudBadge/> <SelfHostedBadge/>
 - Added a new environment variable called [AC_TRIGGER_REASON](../environment-variables/appcircle-specific-environment-variables.md#ios--android-common-environment-variables) that specifies the trigger that causes the build to start. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 Pool" runners have [Xcode 15.1 beta-1](../build/building-ios-applications.md) installed. As this is a beta release, please test your workflows thoroughly. <CloudBadge/> <SelfHostedBadge/>
 - A new filter has been added for filtering reports. Users will now be able to filter by organization and sub organization. <CloudBadge/> <SelfHostedBadge/>
@@ -32,7 +33,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - We now support Azure DevOps Server 2020 connection while adding a [build profile](../build/adding-a-build-profile/connecting-to-azure.md). <CloudBadge/> <SelfHostedBadge/>
 - The [public link](../distribute/create-or-select-a-distribution-profile.md#using-public-link-for-distribution) in the test deployment area will now be available regardless of authentication type. <CloudBadge/> <SelfHostedBadge/>
 - A bug that prevented failed builds from sending notifications to the MS Teams application has been fixed. <CloudBadge/> <SelfHostedBadge/>
-- Previously, you could only select one profile for test deployment. Now you can select multiple profiles in the [distribution](../distribute/create-or-select-a-distribution-profile.md) profile settings. <CloudBadge/> <SelfHostedBadge/>
+- Previously, you could only select one profile for test deployment. Now you can select [multiple profiles in the distribution](../build/build-profile-configuration.md#distribution-configuration) profile settings. <CloudBadge/> <SelfHostedBadge/>
 - Removed the obsolete icon from the Commit ID redirect link in the build profile details. <CloudBadge/> <SelfHostedBadge/>
 - The cache size was bumped to 4 GB while using the [cache push](../workflows/common-workflow-steps.md#cache-push) in the build pipeline. <SelfHostedBadge/>
 - We made improvements to the self-hosted server [SSL configuration](../self-hosted-appcircle/configure-server/ssl-configuration.md) for enhanced security. <SelfHostedBadge/>
@@ -70,7 +71,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The latest stable version of [Xcode 15.0](../build/building-ios-applications.md) is available on both cloud and self-hosted runners. <SelfHostedBadge/> <CloudBadge/>
 - The self-hosted Appcircle server now supports proxies with a [self-signed certificate.](../self-hosted-appcircle/configure-server/proxy-configuration.md) <SelfHostedBadge/>
 - Users can more easily switch to the self-hosted version of their choice by only [downloading](../self-hosted-appcircle/update.md#1-download-latest) the server package. <SelfHostedBadge/>
-- Added the [NTP configuration](../self-hosted-appcircle/self-hosted-runner/runner-vm-setup.md#1-configure-base-runners-ntp-settings) helper tool to the self-hosted runner package. <SelfHostedBadge/>
+- Added the [NTP configuration](../self-hosted-appcircle/self-hosted-runner/runner-vm-setup.md#2-configure-base-runners-ntp-settings) helper tool to the self-hosted runner package. <SelfHostedBadge/>
 - Added self-signed certificate management for Node.JS to the [certificate installer](../self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates.md#adding-certificates) tool. <SelfHostedBadge/>
 - Now you can analyze your [SwiftLint](../integrations/azure-bot-for-swiftlint-and-detekt.md#azure-devops-bot-for-swiftlint) and [Detekt](../integrations/azure-bot-for-swiftlint-and-detekt.md#azure-devops-bot-for-detekt) reports and post the report details under the opened PR on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
 
@@ -402,7 +403,6 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - [Firebase dSYM Upload](../workflows/common-workflow-steps.md#firebase-upload-dsym) component added. You may use this component to upload Debug Symbols to Firebase.
 
 ### :muscle: Improvement
-- Xcode and NodeJS version selection added to Smartface projects
 - Help document links added to SSO section.
 
 ### 🐞 Fixed
@@ -742,7 +742,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 - Added metadata (Organization ID, OS version etc.) at the beginning of the Build Logs
 - While manually building the workflow, Appcircle now lets you choose which workflow to trigger:
 
-![](<https://cdn.appcircle.io/docs/assets/image (215).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (215).png' />
 
 ### :muscle:Improvement
 
@@ -786,7 +786,6 @@ Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.
 
 - Fixed a bug that **Config **section appearing disabled when connected to the repository for the first time
 - Fixed a bug that causes Store Submit modules to not show correct progress while the upload is in progress.
-- Fixed a bug that Copy\&Set Configurations not working properly on **Smartface Android **profiles**.**
 
 ### 📑 Documentation
 
@@ -976,7 +975,6 @@ This release includes the automatic public store deployment feature and the intr
 ### :muscle:Improvement
 
 - Store Submit Module improvements
-- Configuration tab in Smartface projects
 - Under-the-hood Standalone Emulator/Simulator improvements
 - Billing and plan info view improvements
 

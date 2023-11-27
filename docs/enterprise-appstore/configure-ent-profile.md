@@ -5,6 +5,7 @@ metaDescription: Configure a Profile
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
 
@@ -17,7 +18,7 @@ After you have created your profile, it is time to configure it and send it to d
 
 You can add users to your live and beta channels by clicking the **Settings** button. 
 
-![](<https://cdn.appcircle.io/docs/assets/entstore-versionlist.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-versionlist.png' />
 
 
 You can add multiple users to beta and live channels by hitting the Tab key.
