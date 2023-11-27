@@ -69,7 +69,7 @@ Fill in the relevant information about your Azure DevOps Server. If you are not 
 
   - For example: https://azure.spacetech.com
 
-- `Owner Name`: It should use your collection name on self-hosted. You can see collections on the left side when you open your Azure Devops Server home page.
+- `Owner Name`: It should use your collection name on Azure Devops Server. You can see collections on the left side when you open your Azure Devops Server home page.
 
   - For example: DefaultCollection
 
