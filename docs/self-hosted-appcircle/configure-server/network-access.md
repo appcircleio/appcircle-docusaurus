@@ -241,7 +241,7 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 
 :::
 
-- macOS VM image and the `run.sh` script (required):
+- macOS VM image and the runner starter script (required):
 
 ```access_list
 storage.googleapis.com/appcircle-dev-common/self-hosted
