@@ -19,7 +19,7 @@ With default installation, self-hosted Appcircle comes with the git providers be
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers.png' />
 
-But you're not limited with these options. You can configure the git providers and use them within your self-hosted appcircle, same as in cloud.
+But you're not limited with these options. You can configure the git providers and use them within your self-hosted Appcircle server, same as in cloud.
 
 Following sections will give you more details about removing or adding other git providers.
 
@@ -60,6 +60,8 @@ If you want to re-enable "Connect via SSH" again, you can set the `enabled` to `
 
 For more details about "Connect via SSH" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
 
+To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+
 ### Connect via URL
 
 To disable "Connect via URL" git provider option, add below configuration to `global.yaml`.
@@ -74,6 +76,8 @@ build:
 If you want to re-enable "Connect via URL" again, you can set the `enabled` to `true`.
 
 For more details about "Connect via URL" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-public-repository.md).
+
+To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
 ### Connect to Azure Devops Server
 
@@ -90,6 +94,8 @@ If you want to re-enable "Azure" again, you can set the `enabled` to `true`.
 
 For more details about "Azure" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-azure.md).
 
+To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+
 ### Connect to Gitlab
 
 To disable "Gitlab" git provider option, add below configuration to `global.yaml`.
@@ -104,6 +110,8 @@ build:
 If you want to re-enable "Gitlab" again, you can set the `enabled` to `true`.
 
 For more details about "Gitlab" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-gitlab.md).
+
+To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
 ### Connect to Bitbucket Server
 
@@ -120,6 +128,8 @@ If you want to re-enable "Bitbucket" again, you can set the `enabled` to `true`.
 
 For more details about "Bitbucket" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-bitbucket.md).
 
+To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+
 ### Applying Git Provider Changes
 
 You can add or remove git providers at [installation](../install-server/docker.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
@@ -135,9 +145,9 @@ build:
       enabled: false
 ```
 
-If we do this at installation time then there is no extra step to take. These options will be disabled on first boot without any extra effort.
+If we **do** this at installation time then there is no extra step to take. These options will be disabled on first boot without any extra effort.
 
-If we don't do the configuration at installation, then after editing `global.yaml`, we need to apply below steps to activate changes.
+If we **don't do** the configuration at installation, then after editing `global.yaml`, we need to apply below steps to activate changes.
 
 :::info
 
