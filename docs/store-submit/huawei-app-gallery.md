@@ -49,7 +49,7 @@ Then enter a user-friendly name to identify the key in the lists and press save.
 
 Your upload keystore file should also be uploaded to Huawei AppGallery. Follow the [AppGallery documentation](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-appsigning-newapp-0000001052418290#EN-US_TOPIC_0000001052418290__section1959661616436) to convert your keystore file and upload it to `App Signing` section on AppGallery.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-8signing.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/huawei-8signing.png' width='3482px' height='1558px' />
 
 
 ### Deploying the Binary from the Distribute Module

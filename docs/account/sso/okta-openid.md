@@ -38,19 +38,19 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Login to your [Okta](https://www.okta.com/) account and navigate to Applications and then click "Create App Integration".
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktacreateapp.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oktacreateapp.png' width='2880px' height='1176px' />
 
 - Select "OIDC - OpenID Connect" as Sign In Method and then select **Web Application** as application type
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktawebapp.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oktawebapp.png' width='1727px' height='1507px' />
 
 - Navigate to settings of the app and note, **Client ID** and **Client Secret**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktaopenidsettings1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oktaopenidsettings1.png' width='2880px' height='1165px' />
 
 - Add the Appcircle Redirect URL to **Sign-in redirect URLs**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktaopenidsettings2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oktaopenidsettings2.png' width='1584px' height='661px' />
 
 - Instead of writing all the settings of OpenID, you can download the settings file from Okta and upload it.
 

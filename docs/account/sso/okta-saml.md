@@ -38,23 +38,23 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Login to your [Okta](https://www.okta.com/) account and navigate to Applications and then click **Create App Integration**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktacreateapp.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oktacreateapp.png' width='2880px' height='1176px' />
 
 - Select **SAML 2.0** as Sign In Method
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktacreatesaml.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oktacreatesaml.png' width='1900px' height='1107px' />
 
 - Pick a name and optional logo for the app.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings1.png' width='2160px' height='1096px' />
 
 - Add the Appcircle Redirect URL to **Single sign on URL** write `https://auth.appcircle.io/auth/realms/appcircle` for the **Audience URI (SP Entity ID)** and select `EmailAddress` for the Name ID format.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings2.png' width='1326px' height='1080px' />
 
 - Instead of writing all the settings of SAML, you can download the settings file from Okta and upload it. Click the "Identity Provider metadata" link to download the XML file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings3.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings3.png' width='1316px' height='1104px' />
 
 - Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
 

@@ -38,7 +38,7 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Login to your [OneLogin](https://www.onelogin.com/) account and navigate to Applications and then click **Add App**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oneloginaddapp.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oneloginaddapp.png' width='2880px' height='876px' />
 
 - Write Appcircle to edit box and select it from the search results.
 
@@ -46,15 +46,15 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Pick a name and optional logo for the app and click **Save**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oneloginsettings1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oneloginsettings1.png' width='2880px' height='1172px' />
 
 - Write the alias that you have created earlier and click **Save**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oneloginsettings2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oneloginsettings2.png' width='2812px' height='1010px' />
 
 - Instead of writing all the settings of SAML, you can download the settings file from OneLogin and upload it. Click the **More Actions** button and click **SAML Metadata**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oneloginsettings3.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oneloginsettings3.png' width='534px' height='446px' />
 
 - Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
 

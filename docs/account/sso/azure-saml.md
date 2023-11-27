@@ -38,23 +38,23 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Log in to [Azure AD](https://azure.microsoft.com/en-us/) as an admin and navigate to **Azure Services** and then click **Azure Active Directory**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp1.png' width='2870px' height='1530px' />
 
 - Click **Enterprise applications**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp2.png' width='2468px' height='1170px' />
 
 - Click **New application**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp3.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp3.png' width='2880px' height='544px' />
 
 - Click **Create your own application**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp4.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp4.png' width='2880px' height='1488px' />
 
 - Give a name for your application and select **Integrate another application you don't find in the gallery (Non-gallery)** and click **Create**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp5.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp5.png' width='1162px' height='1596px' />
 
 ### Adding Users
 
@@ -62,37 +62,37 @@ You need to select users/groups in Azure AD to enable SSO. All members of your A
 
 - Select **Users and groups** and click **Add user/group**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azureaddusers.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azureaddusers.png' width='2880px' height='1506px' />
 
 - Click **Add Assignment**, find the users from the list, and click **Select**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azureaddassignment1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azureaddassignment1.png' width='2880px' height='1600px' />
 
 - Finally, click the **Assign** button to confirm the assignment.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azureaddassignment2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azureaddassignment2.png' width='1390px' height='1498px' />
 
 ### Configuring SSO
 
 - Click **Single sign-on** and select **SAML**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings1.png' width='2880px' height='1550px' />
 
 - Click **Edit** button on **Basic SAML Configuration** section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings2.png' width='2880px' height='1540px' />
 
 - Add the Appcircle Redirect URL to **Reply URL (Assertion Consumer Service URL)** write `https://auth.appcircle.io/auth/realms/appcircle` for the **Identifier (Entity ID)** and select `EmailAddress` for the Name ID format.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings3.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings3.png' width='1716px' height='1557px' />
 
 - Edit the attributes according to the below screenshot.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings4.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings4.png' width='2880px' height='1474px' />
 
 - Instead of writing all the settings of SAML, you can download the settings file from Azure AD and upload it. Click the **Download** button next to the **Federation Metadata XML** link to download the XML file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings5.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings5.png' width='2880px' height='1538px' />
 
 - Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
 

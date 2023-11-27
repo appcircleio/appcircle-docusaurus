@@ -26,11 +26,11 @@ An Appcircle organization can be associated with a single Slack workspace. To st
 
 Provide permission to the Appcircle app on Slack so that the channel list can be fetched for selection and the status can be sent as a message.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (65).png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/image (65).png' width='538px' height='552px' />
 
 You will then see that Slack is connected. To manage the notification settings or to disconnect, press the "Manage" button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (135).png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/image (135).png' width='2726px' height='1402px' />
 
 
 ### Setting Up Module-Based Notifications in the Slack Settings

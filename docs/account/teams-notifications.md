@@ -22,11 +22,11 @@ In order to get notifications, the administrator of the channel should add an in
 
 - Search for **Incoming Webhook** and click Configure
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure2.png' width='1592px' height='1558px' />
 
 - Give your webhook a name and save it. It will give you a webhook URL
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure3.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure3.png' width='1594px' height='1483px' />
 
 ### Connecting Appcircle to Microsoft Teams
 

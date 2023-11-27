@@ -15,51 +15,51 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
 2. Enable the Google Play Developer API for your Google Cloud Project. Login with your account, then head over to **Credentials -> Create Credentials**, and then click **Service account**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service01.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service01.png' width='2878px' height='1470px' />
 
 3. This screen will forward you to the **Create service account** page. Fill in the details of your service account. According to the service name you set, an automatic **Service account ID** will be created.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service03.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service03.png' width='2736px' height='1454px' />
 
 4. Please select `Editor` in the Role dropdown.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service04.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service04.png' width='2736px' height='1454px' />
 
 5. Click Done to save this account.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service05.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service05.png' width='2736px' height='1454px' />
 
 6. Click **Manage service accounts** to open manage page.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service05-1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service05-1.png' width='2878px' height='1470px' />
 
 7. Find the account you have just created. Click three dots on the Actions column, and then click **Manage keys**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service06.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service06.png' width='2736px' height='1454px' />
 
 8. Click **ADD KEY** and then click **Create new key**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service07.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service07.png' width='2736px' height='1454px' />
 
 9. Download your key as JSON and save it.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service08.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service08.png' width='2736px' height='1454px' />
 
 10. Switch to the **PERMISSIONS** tab and click on **GRANT ACCESS**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service09.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service09.png' width='2878px' height='1470px' />
 
 11. Select the email, generated in step 6 in the **Add principals** field then click **SAVE** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service09-1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service09-1.png' width='2878px' height='1470px' />
 
 12. Go to [Google Play Console](https://play.google.com/console) and login with your account and then head over to **User and permissions** and then click **Invite new users**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service09-2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service09-2.png' width='2878px' height='1470px' />
 
 13. Add the email, generated in step 6 in the **E-mail address** field.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service12.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/google-service12.png' width='2878px' height='1470px' />
 
 14. Check the permissions of your account key and make sure this account has access to Releases and then click **Invite User**.
 

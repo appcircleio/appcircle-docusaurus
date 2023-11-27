@@ -38,15 +38,15 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Login to your [Auth0](https://auth0.com/) account and navigate to Applications and then click **Create Application**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authcreateapp.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authcreateapp.png' width='2518px' height='485px' />
 
 - Select **Regular Web Applications** and give a name
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authwebapp.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authwebapp.png' width='2558px' height='1060px' />
 
 - Navigate to **Addons** of the app and enable the SAML option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authsamlsettings1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authsamlsettings1.png' width='1095px' height='460px' />
 
 - Click the SAML button and change the settings. For the Callback URL write down the callback URL you have created earlier. For the settings, paste the below JSON
 
@@ -59,11 +59,11 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 }
 ```
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authsamlsettings2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authsamlsettings2.png' width='650px' height='873px' />
 
 - Instead of writing all the settings of SAML, you can download the settings file from Auth0 and upload it. Navigate to the **Usage** and then click the **Download** button to download the XML file
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authsamlsettings3.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authsamlsettings3.png' width='635px' height='792px' />
 
 - Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
 

@@ -152,15 +152,15 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 
 - Download your CSR file
 - Go to Apple Developer Portal and select Certificates, IDs & Profiles -> Certificates from the left menu
-<Screenshot url='https://cdn.appcircle.io/docs/assets/apple-addcertificate.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/apple-addcertificate.png' width='2880px' height='1454px' />
 
 -  Select the type of certificate you want to create. If you want to distribute to TestFlight,Adhoc or AppStore, you should select Apple Distribution. If you're creating a certificate for local development environment, you should select Apple Development.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/apple-select-certificate-type.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/apple-select-certificate-type.png' width='2796px' height='1218px' />
 
 - Upload the csr file you have created on Appcircle
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/apple-selectscr.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/apple-selectscr.png' width='2596px' height='844px' />
 
 - Download your generated CER file from the Apple Developer portal
 
