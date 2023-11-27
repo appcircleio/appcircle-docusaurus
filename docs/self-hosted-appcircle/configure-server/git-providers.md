@@ -58,7 +58,7 @@ build:
 
 If you want to re-enable "Connect via SSH" again, you can set the `enabled` to `true`.
 
-For more details about "Connect via SSH" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
+For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
@@ -75,7 +75,7 @@ build:
 
 If you want to re-enable "Connect via URL" again, you can set the `enabled` to `true`.
 
-For more details about "Connect via URL" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-public-repository.md).
+For more details about "Connect via URL" usage, see related docs in the [Connect via URL](../../build/adding-a-build-profile/connecting-to-public-repository.md) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
@@ -92,7 +92,7 @@ build:
 
 If you want to re-enable "Azure" again, you can set the `enabled` to `true`.
 
-For more details about "Azure" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-azure.md).
+For more details about "Azure" usage, see related docs in the [Connecting to Azure DevOps](../../build/adding-a-build-profile/connecting-to-azure.md) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
@@ -109,7 +109,7 @@ build:
 
 If you want to re-enable "Gitlab" again, you can set the `enabled` to `true`.
 
-For more details about "Gitlab" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-gitlab.md).
+For more details about "Gitlab" usage, see related docs in the [Connecting to GitLab](../../build/adding-a-build-profile/connecting-to-gitlab.md) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
@@ -126,7 +126,7 @@ build:
 
 If you want to re-enable "Bitbucket" again, you can set the `enabled` to `true`.
 
-For more details about "Bitbucket" usage, see related docs in [here](../../build/adding-a-build-profile/connecting-to-bitbucket.md).
+For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](../../build/adding-a-build-profile/connecting-to-bitbucket.md) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
