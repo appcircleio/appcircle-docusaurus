@@ -94,6 +94,8 @@ This section covers the external resource domains during the installation proces
 
 ##### `docker` installation:
 
+- If you want to install `Docker` on your Ubuntu, then the Appcircle server machine needs to access these URLs.
+
 ```access_list
 download.docker.com
 archive.ubuntu.com
