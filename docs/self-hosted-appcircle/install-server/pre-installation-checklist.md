@@ -91,14 +91,15 @@ df -h
 sudo cat /proc/sys/vm/swappiness
 ```
 
-- If the output is not 10, you can see the details [here](docker.md#swappiness)
+- If the output is not 10, you can see the details [here](docker.md#swappiness).
 
 ### Configure the DNS Settings.
 
-- Create a subdomain name under your company's domain name.
-- If your company name is "Spacetech", and your domain is `spacetech.com`, see the steps below.
-- You should determine a subdomain like `appcircle` or `appcircle-test` or `appctest` for Appcircle.
-- This domain (`appcircle.spacetech.com`) will have 7 subdomains.
+- Create a subdomain under your company's primary domain name.
+
+- For example, if your company is "Spacetech" with the domain `spacetech.com`, you could create a subdomain like `appcircle.spacetech.com` or `appcircle-test.spacetech.com` to assign to the Appcircle server.
+
+- This domain (`appcircle.spacetech.com`) should have 7 subdomains which should resolve to the ip address of the Appcircle server.
   - api
   - auth
   - dist
@@ -115,7 +116,8 @@ sudo cat /proc/sys/vm/swappiness
   - [ ] resource.appcircle.spacetech.com
   - [ ] store.appcircle.spacetech.com
 - [ ] All of these subdomains should resolve to the same server IP address which is the Appcircle server.
-- [ ] You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
+
+- You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
 
 ### Obtain an SSL Certificate
 
