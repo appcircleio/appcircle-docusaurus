@@ -87,7 +87,7 @@ The upload status of the binary can be tracked on the same screen.
 
 Once the process is complete, you can click on the status or click on the "View Logs" button to see the logs. If the upload is successful, you can submit this binary to the store from the "Version Information" section in the Huawei AppGallery Dashboard.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-5status.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/storesubmit-appgallery-version-logs.png' />
 
 ### Troubleshooting Common Huawei AppGallery Upload Errors
 

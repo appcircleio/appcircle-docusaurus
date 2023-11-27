@@ -99,7 +99,7 @@ The binary sent to Google Play must be production-ready, so you can encounter ce
 
 Either for freeing up space purposes or if you wish to not use the Store Submit module, you can delete your store submit profile. Click on the three dot menu on the profile card:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (207).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/storesubmit-playstore-delete.png' />
 
 #### Delete a Single Store Submit Version
 
@@ -107,7 +107,7 @@ If you want to free up space but you don't want to lose your Store Submit profil
 
 Click on the three dot menu on the version, and click on the Delete Version
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (206).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/storesubmit-playstore-version-delete.png' />
 
 After typing the name, your version will be deleted.
 
