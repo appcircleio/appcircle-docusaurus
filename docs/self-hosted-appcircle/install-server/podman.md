@@ -238,7 +238,7 @@ sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
 - Edit the /etc/containers/containers.conf file.
 
 ```bash
-sudo vim /etc/containers/containers.conf
+sudo vi /etc/containers/containers.conf
 ```
 
 - Add the following content to the [network] section:
