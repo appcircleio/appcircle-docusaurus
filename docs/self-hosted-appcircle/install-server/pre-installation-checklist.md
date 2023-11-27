@@ -121,8 +121,7 @@ sudo cat /proc/sys/vm/swappiness
 
 ### Obtain an SSL Certificate
 
-- [ ] You should create only one SSL certificate.
-- [ ] The SSL certificate should cover all 7 domain names which you have seen in the [Configure DNS](#configure-the-dns-settings) section above.
+- [ ] You should create only one SSL certificate that covers all 7 domain names which you have seen in the [Configure DNS](#configure-the-dns-settings) section above.
 - [ ] The SSL certificate should be in PEM format.
 - [ ] The SSL certificate private key must not have a passphrase.
 - [ ] Obtain the root CA certificate of your company.
