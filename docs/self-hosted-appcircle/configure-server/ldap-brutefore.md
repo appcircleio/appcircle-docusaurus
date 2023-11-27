@@ -55,7 +55,7 @@ Following these best practices will allow Appcircle to effectively function as a
 
 We are assuming that you have installed the Appcircle server with version `v3.10.0` or later, and configured the LDAP settings from the UI.
 
-To configure Appcircle server, you can follow the steps below:
+To configure LDAP brute-force settings on the Appcircle server, you can follow the steps below:
 
 - SSH into the Appcircle server.
 
@@ -100,6 +100,14 @@ keycloak:
       maxFailureCount: 10
       maxLockDuration: 3600
 ```
+
+:::info
+
+`maxFailureCount`: This variable represents the needed count of successive failed attempts to block user.
+
+`maxLockDuration`: This variable expresses the time in seconds required to unblock the user.
+
+:::
 
 - Export the new variables.
 
