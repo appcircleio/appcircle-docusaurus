@@ -155,40 +155,44 @@ sudo cat /proc/sys/vm/swappiness
   - [ ] Create a public-private SSH key pair.
   - [ ] Configure your Appcircle git user's public SSH keys and upload the public SSH key you created.
   - For details, you can check the [Connect via SSH Page](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
+  - [ ] Create a firewall rule from the Appcircle server to the git server.
 
 ### Create Necessary Firewall Rules for Appcircle Server to Install Necessary Dependencies
 
 - [ ] You need a computer which has a web browser and has access to the Appcircle server.
-  - We will use the Appcircle server from the web browser.
-  - So the firewall rule should be from your computer to the Appcircle server machine.
-- [ ] You must obtain other detailed URLs from [Network Access Page For an Appcircle Server](../configure-server/network-access.md)
-  - You might install the Appcircle server on RHEL or Ubuntu with Docker or Podman.
-  - See titles for your scenario and get the URL from there.
+  - You will use the Appcircle from a web browser.
+  - [ ] Create a firewall rule should be from your computer to the Appcircle server machine.
+    - from: A computer with a web browser
+    - to: The Appcircle server
+    - port: 80 & 443
 - [ ] You need to create firewall rules from the Appcircle server to your git repositories:
   - [ ] If you are using GitLab, Azure DevOps Server or Bitbucket, the firewall rule should be:
-    - from: Appcircle server
-    - to: your GitLab, Azure DevOps Server or Bitbucket server
-    - port: 443
+    - from: The Appcircle server
+    - to: The GitLab, Azure DevOps Server or Bitbucket server
+    - port: 80 & 443
     - test command: curl -v telnet://gitserver.spacetech.com:443
   - [ ] If you are using any other git repos:
     - from: Appcircle server
-    - to: your git server (GitHub, ...)
+    - to: The git server (GitHub, ...)
     - port: 22
     - test command: curl -v telnet://gitserver.spacetech.com:22
 - [ ] You need to create firewall rules from the Appcircle server to your SMTP server:
-  - from: Appcircle server
-  - to: your SMTP server
-  - port: your SMTP server's port (25 / 465 / 587)
+  - from: The Appcircle server
+  - to: The SMTP server
+  - port: The SMTP server's port (25 / 465 / 587)
   - test command: curl -v telnet://smtp.spacetech.com:587
+- [ ] You must obtain the rest of detailed URLs from [Network Access Page For an Appcircle Server](../configure-server/network-access.md)
+  - You might install the Appcircle server on RHEL or Ubuntu with Docker or Podman.
+  - See titles for your scenario and get the URL from there.
 
 ### Create Necessary Firewall Rules for Appcircle Runner to Build Mobile Applications
 
-- [ ] You can get detailed URLs from [Network Access Page For an Appcircle Runner](../configure-server/network-access.md#external-resources-access-when-running-build-pipeline)
 - [ ] The Appcircle Runner should be able to access the Appcircle server. Create a firewall rule:
   - from: Appcircle runner
   - to: Appcircle server
   - port: 443
 - [ ] The Appcircle Runner should be able to access the git server. Create a firewall rule:
+
   - [ ] If you are using GitLab or Bitbucket, the firewall rule should be:
     - from: Appcircle runner
     - to: your GitLab or Bitbucket server
@@ -198,6 +202,4 @@ sudo cat /proc/sys/vm/swappiness
     - to: your git server (Azure, GitHub, ...)
     - port: 22
 
-```
-
-```
+- [ ] You can get detailed URLs from [Network Access Page For an Appcircle Runner](../configure-server/network-access.md#external-resources-access-when-running-build-pipeline)
