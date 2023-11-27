@@ -2,7 +2,7 @@
 title: Delete Account
 metaTitle: Delete Account
 metaDescription: Delete Account
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
