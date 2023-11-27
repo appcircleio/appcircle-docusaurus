@@ -85,7 +85,7 @@ ls -l ./projects
 vi projects/spacetech/global.yaml
 ```
 
-- Find the keycloak entry and add or edit the missing brute-force keys to it. For example;
+- Find the `keycloak` entry and add or edit the missing `bruteForce` key to it. For example;
 
 ```yaml
 keycloak:
