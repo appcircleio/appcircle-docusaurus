@@ -151,7 +151,7 @@ archive.ubuntu.com
 
 - If you are a licensed user, the Appcircle server machine doesn't need this access.
 
-- If you want to download the `zip package` and copy it manually, then the Appcircle server machine doesn't need this access.
+- If you want to download the `zip package` and copy it manually (with `scp` or `ftp`), then the Appcircle server machine doesn't need this access.
 
 ```access_list
 cdn.appcircle.io
@@ -163,7 +163,7 @@ cdn.appcircle.io
 
 - If you are a PoC user, the Appcircle server machine doesn't need this access.
 
-- If you want to download the `zip package` and copy it manually, then the Appcircle server machine doesn't need this access.
+- If you want to download the `zip package` and copy it manually (with `scp` or `ftp`), then the Appcircle server machine doesn't need this access.
 
 ```access_list
 storage.googleapis.com/appcircle-dev-common/self-hosted
