@@ -138,8 +138,7 @@ sudo cat /proc/sys/vm/swappiness
   - [ ] Create a user for Appcircle on the SMTP server.
   - [ ] Obtain the password of the Appcircle user on the SMTP server.
 - [ ] Contact the System Admin to get required permissions to send email with the Appcircle user via the SMTP server.
-- [ ] Create the firewall rules.
-- [ ] Create a firewall rule from your Appcircle server to the SMTP server.
+- [ ] Create a firewall rule from the Appcircle server to the SMTP server.
 
 ### Configure the Git Server
 
@@ -147,6 +146,7 @@ sudo cat /proc/sys/vm/swappiness
   - [ ] [Android Sample Repo](https://github.com/appcircleio/appcircle-sample-android)
   - [ ] [iOS Sample Repo](https://github.com/appcircleio/appcircle-sample-ios)
 - [ ] Create an Appcircle user on the git server (Azure DevOps, GitLab, GitHub, Bitbucket).
+- [ ] Give the required permissions to the Appcircle user to clone and edit the repositories.
 - [ ] If you are using GitLab, Azure DevOps Server, Bitbucket:
   - [ ] Create an Appcircle user. Give it permissions for the repositories.
   - [ ] Create a personal access token that has sufficient permissions.
