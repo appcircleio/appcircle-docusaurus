@@ -5,8 +5,8 @@ import React from 'react';
  *
  * @returns 
  */
-export default function Screenshot({ url, width = 0, height = 0 }) {
+export default function Screenshot({ url, width = 0, height = 0, maxHeight = '650px' }) {
   return (
-    <img className="external-screenshot" src={url} width={width} height={height}></img>
+    <img className="external-screenshot" src={url} width={width} height={height} style={{maxHeight}}></img>
   );
 }
