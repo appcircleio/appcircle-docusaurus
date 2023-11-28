@@ -42,7 +42,7 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Write Appcircle to edit box and select it from the search results.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oneloginfindapp.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/oneloginfindapp.png' width='2880px' height='671px' />
 
 - Pick a name and optional logo for the app and click **Save**
 
