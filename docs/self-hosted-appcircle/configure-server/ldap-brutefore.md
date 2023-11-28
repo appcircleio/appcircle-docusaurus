@@ -124,7 +124,7 @@ keycloak:
 - Start the Appcircle server with new brute-force variables.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech" start
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 - Check the health of the services.
