@@ -315,7 +315,7 @@ If you receive an error similar to the following, the selected Xcode version in 
 
 In this case, you need to upgrade the Swift version in the project settings in Xcode and once the build is confirmed to be working locally in the specific Xcode version, it can be retried in Appcircle with the same Xcode version.
 
-<Screenshot url='https://lh6.googleusercontent.com/4klo-II3_K0S6tqj51Na6b9HLzq2dHH6mXftliHMNZjM1s_hyDLTS3nxn9SrXFhAxRuPmjshiSoljMLbumXBMHJIReS3E-6Fsq4ANGJIQtIuYie6L-5CuoIfqfXLe_6IEBoJv-rb' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/swift-version-upgrade.png' />
 
 ## Android-Specific Issues
 
