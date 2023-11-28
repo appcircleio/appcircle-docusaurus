@@ -6,11 +6,11 @@ import React from 'react';
  * @param {height} | Width in pixels.
  * @returns 
  */
-export default function ExternalScreenshot({ url, width = 0, height = 0 }) {
+export default function ExternalScreenshot({ url, width = 0, height = 0, maxHeight }) {
   const widthNumber = parseInt(width);
   const heightNumber = parseInt(height);
   const aspectRatio = widthNumber / heightNumber;
-  const maxHeight = 898 / (aspectRatio); 
+  const calculatedMaxHeight = 898 / (aspectRatio); 
   /**
    * Here's what's going on here:
    * Since we provide the width height as pixels, we first extract the 'px' part. E.g. '3090px' becomes 3090.
@@ -19,6 +19,6 @@ export default function ExternalScreenshot({ url, width = 0, height = 0 }) {
    * 898 is the maxWidth of the parent. 930 is the maximum width and 32 is with margins of 16px from each side. 
    */
   return (
-    <img className="external-screenshot" src={url} width={width} height={height} style={{ maxHeight }}></img>
+    <img className="external-screenshot" src={url} width={width} height={height} style={{ maxHeight: maxHeight || calculatedMaxHeight }}></img>
   );
 }
