@@ -14,15 +14,15 @@ This is of course just a start of a long journey. Follow us on Twitter [@appcirc
 
 For any questions, feedback or feature requests, just drop us a message using the in-app messaging or raise an issue in Appcircle GitHub: [https://github.com/appcircleio](https://github.com/appcircleio)
 
-### ;🆕 New Feature
+### 🆕 New Feature
 
-* Send apps to Public Stores - You can now send your apps to App Store Connect through the App Store Connect API.;
+* Send apps to Public Stores - You can now send your apps to App Store Connect through the App Store Connect API.
 * Theme support with Dark Mode - There is an Appcircle for everyone. You can now select between Light, Dark and the Darker modes.
 * Upload to Amazon S3 step - You can now deploy any file or folder to an Amazon S3 bucket with the new workflow step.
 
 ### :muscle:Improvement
 
-* Xcode 12 GM support;
+* Xcode 12 GM support
 * User experience improvements in line with the theme support
 
 ### 🐞 Fixed
@@ -35,7 +35,7 @@ For any questions, feedback or feature requests, just drop us a message using th
 
 This release includes the last mile changes in the platform.
 
-### ;🆕 New Feature
+### 🆕 New Feature
 
 * GitLab Support - You can now connect to your GitLab repositories just like GitHub and BitBucket.
 * Plan Upgrades - The plan upgrades are now available. You can upgrade to a higher [Appcircle plan](https://appcircle.io/pricing) of your choosing for larger workloads and organizations. (The free tier is being preserved as is.)
@@ -45,7 +45,7 @@ This release includes the last mile changes in the platform.
 ### :muscle:Improvement
 
 * Enriched Slack message format
-* AAB file support in the Distribute module for Google Play uploads;
+* AAB file support in the Distribute module for Google Play uploads
 
 ### 🐞 Fixed
 
@@ -58,7 +58,7 @@ This release includes the last mile changes in the platform.
 
 This release brings in the initial versions of some of the long-awaited features.
 
-### ;🆕 New Feature
+### 🆕 New Feature
 
 * Send apps to Public Stores - You can now send your apps to Google Play Dashboard (App Store Connect support coming in the next release)
 * Slack notifications - You can now send build start and end status to a selected Slack channel
@@ -80,7 +80,7 @@ This release brings in the initial versions of some of the long-awaited features
 
 This is a feature release along with a specific focus on storage-related improvements.
 
-### ;🆕 New Feature
+### 🆕 New Feature
 
 * New log viewer - The log viewer is redesigned with a new viewer engine. It's now faster and less resource-consuming and provides an improved viewing experience with
   * Step-based outline
@@ -105,10 +105,10 @@ This is a feature release along with a specific focus on storage-related improve
 
 This is a maintenance release with under-the-hood experience and performance improvements.
 
-### ;🆕 New Feature
+### 🆕 New Feature
 
 * File support in environment variables - You can now add files as environment variables and use them in the build workflows (e.g. key files in JSON format or scripts)
-* Build status in the branch list - You can now see the last build status of each branch in the branch list;
+* Build status in the branch list - You can now see the last build status of each branch in the branch list
 
 :::info
 
@@ -141,11 +141,11 @@ This update also introduces new ways to manage workflow steps and user experienc
 
 ### 🆕 New Feature
 
-* New infrastructure - The platform is moved to the final release environment. You will be getting all around higher performance and responsiveness.;
-* Organization and team management - In our last release, this feature was in the preview stage and now it is widely available with fixes and polishes. You can now create or join organizations and collaborate on the same workspace with multiple members.;
+* New infrastructure - The platform is moved to the final release environment. You will be getting all around higher performance and responsiveness.
+* Organization and team management - In our last release, this feature was in the preview stage and now it is widely available with fixes and polishes. You can now create or join organizations and collaborate on the same workspace with multiple members.
 * Build step skipping controls - To avoid complete build failures in case of optional steps, you can now set each step individually to "skip to the next step if it fails".
 
-### ;:muscle:Improvement
+### :muscle:Improvement
 
 * User interface improvements - we made small changes to improve your experience further
 * Improvements in the workflow steps to minimize potential failures
@@ -166,7 +166,7 @@ This update comes with the Xcode 12 Beta support right after its announcement an
 * Organization and team management (early access feature) - You can now create or join organizations and collaborate on the same workspace with multiple members. This feature is still in early access mode, so you may encounter issues with certain use cases.
 * Sample projects in the build module - When connecting to a repository, you can directly select a  sample Appcircle project if you want to test drive the platform or if you don't have a repository in hand.
 
-### ;:muscle:Improvement
+### :muscle:Improvement
 
 * User interface improvements - we made small changes to improve your experience further
 * Framework updates and the related under-the-hood improvements
@@ -222,7 +222,7 @@ Invite codes are removed from registration with the platform and everyone can re
 ### :new: New Feature
 
 * Reporting Feature - you can now view the reports for the Preview on Device feature in the dashboard. Other reports will also be released soon.
-* Open Source Workflow Components - All the workflow components in the [Workflow Marketplace](https://docs.appcircle.io/workflows/why-to-use-workflows#workflow-marketplace) are now available at GitHub: [https://github.com/appcircleio/appcircle-workflow-components](https://github.com/appcircleio/appcircle-workflow-components). Feel free to contribute with your own workflow steps. Default workflow definitions are also available on GitHub
+* Open Source Workflow Components - All the workflow components in the [Workflow Marketplace](/workflows/why-to-use-workflows#workflow-marketplace) are now available at GitHub: [https://github.com/appcircleio/appcircle-workflow-components](https://github.com/appcircleio/appcircle-workflow-components). Feel free to contribute with your own workflow steps. Default workflow definitions are also available on GitHub
 * Direct Documentation Access - The fields in the workflow and the build configuration screens are now linked with the documentation. You can directly view the related help document by clicking on the info button next to the specific fields.
 
 ### :muscle: Improvement
@@ -242,8 +242,8 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :new: New Feature
 
-* Authentication with an SSH Key - You can now use your private SSH keys to connect your private repositories to Appcircle. Appcircle will use your SSH key to create a secure connection to your Git repository. :link: [**Connecting Your Git Repository**](https://docs.appcircle.io/build/adding-a-build-profile#connect-your-repository)****
-* Workflow Marketplace - Appcircle's improved workflow window now includes Workflow Marketplace that allows you to add and remove additional workflow steps. We will be improving the marketplace steps constantly and adding new functionalities you can add to your build workflow. :link: [**Workflow Marketplace**](https://docs.appcircle.io/workflows/why-to-use-workflows#workflow-marketplace)****
+* Authentication with an SSH Key - You can now use your private SSH keys to connect your private repositories to Appcircle. Appcircle will use your SSH key to create a secure connection to your Git repository. :link: [**Connecting Your Git Repository**](/build/adding-a-build-profile#connect-your-repository)****
+* Workflow Marketplace - Appcircle's improved workflow window now includes Workflow Marketplace that allows you to add and remove additional workflow steps. We will be improving the marketplace steps constantly and adding new functionalities you can add to your build workflow. :link: [**Workflow Marketplace**](/workflows/why-to-use-workflows#workflow-marketplace)****
 
 ## v0.3.26 - 2020-04-26
 
@@ -253,7 +253,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :muscle: Improvement
 
-* New Workflow Marketplace Steps - We are improving our Workflow Marketplace with more workflow steps that will help you perform more tasks in less time. Workflow steps are organized better for each platform and new workflow steps like Android Unit Tests and Android Lint are now available. :link: [**Workflow Marketplace**](https://docs.appcircle.io/workflows/why-to-use-workflows#workflow-marketplace)****
+* New Workflow Marketplace Steps - We are improving our Workflow Marketplace with more workflow steps that will help you perform more tasks in less time. Workflow steps are organized better for each platform and new workflow steps like Android Unit Tests and Android Lint are now available. :link: [**Workflow Marketplace**](/workflows/why-to-use-workflows#workflow-marketplace)****
 * Run Unit & UI Tests - You can now run Android unit tests and iOS unit & UI tests with corresponding workflow steps. Test results will be gathered and included in the downloadable artifacts archive.
 
 ## v0.3.25 - 2020-04-17
@@ -262,7 +262,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 * Appcircle now supports any public Git repository without needing to authenticate using your Github, BitBucket, or Gitlab account. Simply enter the URL of your repository and Appcircle will connect your project from there. \
   \
-  For further information please see: :link: [**Connecting a repository**](https://docs.appcircle.io/build/adding-a-build-profile#connect-your-repository)****
+  For further information please see: :link: [**Connecting a repository**](/build/adding-a-build-profile#connect-your-repository)****
 
 ### :muscle: Improvement
 
@@ -281,7 +281,7 @@ Invite codes are removed from registration with the platform and everyone can re
 * Distribution emails and distribution portal is now showing application name with version.
 * Notifications window is improved and now shows better information including color codes and more details about events.
 * Environment variables in Git Clone workflow step are updated.
-* Help page is updated with links to [**Appcircle Documentation**](https://docs.appcircle.io), Appcircle Contact Form and [**Appcircle Slack Workspace**](https://slack.appcircle.io).
+* Help page is updated with links to [**Appcircle Documentation**](/), Appcircle Contact Form and [**Appcircle Slack Workspace**](https://slack.appcircle.io).
 * Miscellaneous UI improvements.
 
 ### :lady\_beetle: Fixed
