@@ -5,6 +5,8 @@ metaDescription: Android Build Infrastructure
 sidebar_position: 2
 ---
 
+import ContentRef from '@site/src/components/ContentRef';
+
 # Android Build Infrastructure
 
 For each Android build, Appcircle creates a brand new virtual machine;
@@ -125,4 +127,6 @@ Here are some most important packages installed in our Linux and macOS images us
 
 Appcircle supports using a third-party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
 
-[**You can find more information about using your own infrastructure for build here.**](../self-hosted-appcircle/self-hosted-runner/overview.md)
+<ContentRef url="../self-hosted-appcircle/self-hosted-runner">
+Appcircle Self-hosted Runner
+</ContentRef>

@@ -2,7 +2,7 @@
 title: Build Manually or Automatically with Webhooks and Triggers
 metaTitle: Build Manually or Automatically with Webhooks and Triggers
 metaDescription: Build Manually or Automatically with Webhooks and Triggers
-sidebar_position: 11
+sidebar_position: 10
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
