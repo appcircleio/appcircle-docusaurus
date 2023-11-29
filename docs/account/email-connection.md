@@ -17,7 +17,7 @@ This feature allows users with specified email addresses to be notified by email
 
 Appcircle email notification can work independently for each module. For example, you can send notifications to different people for events under the Build module and to different people for store submission operations.
 
-You can also define more than one email address for a module and send notifications. Scroll down and check the other modules which you can tweak.
+You can also define more than one email address for a module and send notifications. Scroll down and check out the other modules that you can tweak.
 
 :::
 
