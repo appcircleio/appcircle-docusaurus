@@ -45,7 +45,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - While reviewing the build logs in the admin panel, if there is no build log, we were not showing the user an error. Now it is shown as a toast message. <CloudBadge/> <SelfHostedBadge/>
 - The bug that occurred if there were no screenshots in the test project has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - A problem related to component caching in the runner has been resolved. <CloudBadge/> <SelfHostedBadge/>
-- Without user [permission](../account/my-organization#special-permissions), requests on the relevant screens are no longer sent to the service, so no warnings are displayed. <CloudBadge/> <SelfHostedBadge/>
+- Without user [permission](../account/my-organization#advanced-role-management), requests on the relevant screens are no longer sent to the service, so no warnings are displayed. <CloudBadge/> <SelfHostedBadge/>
 - We were not showing the status of the request with the loader when a request was sent for workflows; this problem has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Some spelling errors at the beginning of the workflow have been fixed, and a user-friendly appearance has been provided. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that prevented logging in to the Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
@@ -180,7 +180,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### 🆕 New Feature
 - [Xcode 15.0 Beta](../infrastructure/ios-build-infrastructure.md) added to build agents. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
 - [Java 17](../infrastructure/android-build-infrastructure.md) added to build agents. <CloudBadge/> <SelfHostedBadge/>
-- [Build Profile](../build/adding-a-build-profile/README.md) configurations are separated from branchs. It is now easier to see and manage configs from a single location. <CloudBadge/> <SelfHostedBadge/>
+- [Build Profile](../build/adding-a-build-profile) configurations are separated from branchs. It is now easier to see and manage configs from a single location. <CloudBadge/> <SelfHostedBadge/>
 - [SSO and LDAP Login](../account/sso-ldap-login.md) added to Testing Distribution. <CloudBadge/> <SelfHostedBadge/>
 - [Azure Boards](../integrations/azure-board.md) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [Repeato](../workflows/common-workflow-steps.md#repeato-mobile-test-automation) workflow step added. <CloudBadge/> <SelfHostedBadge/>

@@ -34,7 +34,7 @@ Builds can be triggered with various triggers such as every push to the reposito
 
 There are two options to set up webhooks for automatic builds:
 
-- You can [authorize the Appcircle app](./adding-a-build-profile/README.md#connect-your-repository) for GitHub, Bitbucket, or GitLab repositories for direct integration. The triggers will be available for use immediately. (You can skip the next part about the webhook setup.)
+- You can [authorize the Appcircle app](./adding-a-build-profile/#connect-your-repository) for GitHub, Bitbucket, or GitLab repositories for direct integration. The triggers will be available for use immediately. (You can skip the next part about the webhook setup.)
 - For the repository connections through SSH, you can add the specific webhook for that build profile manually to the compatible git provider. This enables the git provider to send a POST request to Appcircle for the selected events, which you can then use for triggers.
 
 ### Setting Up Manual Webhooks for SSH and Public Repositories
