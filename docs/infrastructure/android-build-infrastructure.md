@@ -128,5 +128,5 @@ Here are some most important packages installed in our Linux and macOS images us
 Appcircle supports using a third-party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
 
 <ContentRef url="../self-hosted-appcircle/self-hosted-runner">
-Appcircle Self Hosted Runner
+Appcircle Self-hosted Runner
 </ContentRef>
