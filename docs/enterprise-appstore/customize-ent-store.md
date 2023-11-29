@@ -41,7 +41,7 @@ Open your DNS provider's website and add a CNAME with the below details
 
 The below screenshot shows an example configuration screen from Cloudflare.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-cname.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/entstore-cname.png' width='1100px' height='486px' />
 
 
 **Updating Settings**

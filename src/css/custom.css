@@ -930,3 +930,11 @@ img {
   filter: drop-shadow(3px 3px 3px #888);
   margin-bottom: 24px;
 }
+
+.external-screenshot {
+  -webkit-filter: drop-shadow(3px 3px 3px #888 );
+  filter: drop-shadow(3px 3px 3px #888);
+  margin-bottom: 24px;
+  object-fit: scale-down;
+  max-width: 100%;
+}

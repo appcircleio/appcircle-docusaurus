@@ -36,11 +36,11 @@ To add the `Appcircle Bot` to the workspace, you can choose one of the two optio
 
    Then, you need to allow the `Appcircle Bot` application.
    
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-02.png' />
+   <ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-02.png' width='720px' height='457px' />
 
 2. You can use the `Slack App Directory` to add the `Appcircle Bot` to the workspace.
 
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-0.png' />
+   <ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-0.png' width='1118px' height='704px' />
 
 You will then see that Slack is connected.
 
@@ -50,15 +50,15 @@ To connect `Appcircle Bot` to your account, you need to use the `Personal Access
 
 You can reach the `Enter the PAT` screen with the `Add Personal Access Token` button on the `Home` tab when the application is opened.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-1.png' width='1254px' height='777px' />
 
 Enter the PAT on the mini screen that appears.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-2.png' width='1254px' height='777px' />
 
 If you enter the password correctly, you will receive a confirmation message from `Appcircle Bot`.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-3.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-3.png' width='1254px' height='777px' />
 
 If you want to update the PAT, you can follow the above steps for the new PAT.
 
@@ -68,11 +68,11 @@ To be able to use the `Appcircle Bot` commands, you need to add it to a channel.
 
 To add `Appcircle Bot` to the channel, right-click on the app and click the `View app details`.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-4.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-4.png' width='1118px' height='557px' />
 
 Click the ` + Add this app to a channel` button on the screen that appears.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-5.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-5.png' width='1124px' height='558px' />
 
 ### Starting a Build with Appcircle Bot
 
@@ -80,11 +80,11 @@ Start a new build by typing `/build` in the channel where `Appcircle Bot` has be
 
 On the screen that appears, select the profile you want to build.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-6.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-6.png' width='1391px' height='883px' />
 
 Select a configured branch and a workflow, then start the build. Please note that selecting an unconfigured branch will result in an error. Only Smartface builds do not require configuration.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-7.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-7.png' width='1257px' height='820px' />
 
 If the selections are correct, you will receive a confirmation message from `Appcircle Bot`.
 
@@ -94,11 +94,11 @@ Start a new distribution to testers by typing `/distribute` in the channel where
 
 On the screen that appears, select the testing profile you want to distribute.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-8.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-8.png' width='1257px' height='820px' />
 
 Select a version to send, then press the `Share with Testers` button. Please note that you should not select app bundle (AAB) files because `AAB` files are only valid for Google Play submission, and they cannot be shared with testers or previewed on the device.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-9.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-9.png' width='1257px' height='820px' />
 
 On the screen that appears, fill in the following fields:
 - Select one or more `testing groups` from the options. You can create a new `testing group` via [appcircle.io](https://my.appcircle.io/).
@@ -107,11 +107,11 @@ On the screen that appears, fill in the following fields:
 
 After filling in the required fields, press the `Share` button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-10.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-10.png' width='1389px' height='811px' />
 
 Preview your choices on the screen that appears. You can remove email addresses or testing groups, and correct the messages to be sent to the testers. Then press the `Next` button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-10.0.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-10.0.png' width='1389px' height='811px' />
 
 
 If the selections are correct, you will receive a confirmation message from `Appcircle Bot`.
@@ -122,14 +122,14 @@ Send the built and signed app by typing `/storesubmit` in the channel where `App
 
 On the screen that appears, select the `Distribution Profile` you want to send.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-11.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-11.png' width='1257px' height='820px' />
 
 Select a version to send, and press the `Send for Store Submit` button. Please note that selecting an unconfigured branch will result in an error.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-12.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-12.png' width='1257px' height='820px' />
 
 On the screen that appears, select the `Store` you want to send, and press the `Send to Store Submit` button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-13.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-13.png' width='1262px' height='785px' />
 
 If the selections are correct, you will receive a confirmation message from `Appcircle Bot`.

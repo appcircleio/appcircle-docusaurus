@@ -38,23 +38,23 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Login to your [Auth0](https://auth0.com/) account and navigate to Applications and then click **Create Application**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authcreateapp.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authcreateapp.png' width='2518px' height='485px' />
 
 - Select **Regular Web Applications** and give a name
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authwebapp.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authwebapp.png' width='2558px' height='1060px' />
 
 - Navigate to settings of the app and note, **Client ID** and **Client Secret**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authopenidsettings1.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authopenidsettings1.png' width='1654px' height='1257px' />
 
 - Add the Appcircle Redirect URL to your allowed list
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authopenidsettings2.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authopenidsettings2.png' width='1636px' height='1266px' />
 
 - Instead of writing all the settings of OpenID, you can download the settings file from Auth0 and upload it. Navigate to the **OpenID Configuration** address and download that JSON file to your computer.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/authopenidsettings3.png' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/authopenidsettings3.png' width='1616px' height='1109px' />
 
 - Go back to Appcircle, upload this JSON file by clicking the button under **Import OpenID configuration**
 

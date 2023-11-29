@@ -33,7 +33,7 @@ Once the team is correct, select **Users and Access** from the menu:
 
 After navigating to **Users and Access**, you will see 4 tabs next to the title. Select the **Keys** tab. Then make sure that **App Store Connect API** is selected from the list on the left.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/api-keys-tab-low (1).jpg' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/api-keys-tab-low (1).jpg' width='3098px' height='652px' />
 
 ## Generating a New Key
 
@@ -45,11 +45,11 @@ Only Account Holders can enable the API Key generation. If you see a disabled **
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/api-keys-add-new-low (1).jpg' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/api-keys-add-new-low (1).jpg' width='3094px' height='1052px' />
 
 A modal popup will ask you to enter a name and add roles for this key:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/api-keys-new-modal-low.jpg' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/api-keys-new-modal-low.jpg' width='3120px' height='1400px' />
 
 :::caution
 
@@ -63,7 +63,7 @@ To see a list of permissions each role has, visit: [https://developer.apple.com/
 
 After generating the key, download the key file by pressing Download API Key next to it.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/download-api-key-low (2).jpg' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/download-api-key-low (2).jpg' width='3102px' height='1078px' />
 
 :::caution
 
@@ -87,7 +87,7 @@ On the form, upload the **.p8** key file downloaded from App Store Connect:
 
 Fill in the rest of the form. You can find the **Key ID** and **Issuer ID** from App Store Connect Panel here:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/keyid-issuerid-low (1).jpg' />
+<ExternalScreenshot url='https://cdn.appcircle.io/docs/assets/keyid-issuerid-low (1).jpg' width='3082px' height='1194px' />
 
 Copy and paste them to the form in Appcircle, give it a name, and save.
 

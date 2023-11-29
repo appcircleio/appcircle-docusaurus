@@ -5,6 +5,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
 import ContentRef from '@site/src/components/ContentRef';
 import ExternalUrlRef from '@site/src/components/ExternalUrlRef';
+import ExternalScreenshot from '@site/src/components/ExternalScreenshot';
 
 /**
  * Note to contributor:
@@ -21,5 +22,6 @@ export default {
   Screenshot,
   NarrowImage,
   ContentRef,
-  ExternalUrlRef
+  ExternalUrlRef,
+  ExternalScreenshot
 };
