@@ -626,7 +626,7 @@ On some distributed apps, the **Access Denied** error can be bypassed by one of 
 
 Older builds and/or testing distributions will use almost all of your storage. If your artifact storage is full, you can free up some of the old artifacts.
 
-#### [Refer here to delete a build profile](../build/adding-a-build-profile/README.md#delete-a-build-profile)
+#### [Refer here to delete a build profile](../build/adding-a-build-profile/#delete-a-build-profile)
 
 #### [Refer here to delete specific builds from your build profile](../build/after-a-build.md#delete-specific-builds)
 
