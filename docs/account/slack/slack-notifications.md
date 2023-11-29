@@ -40,7 +40,7 @@ To enable notifications for a specific event, first select the Slack channel tha
 
 :::caution
 
-Due to a technical limitiation, subscribing events to a private Slack channel(s) are not possible due to this moment.
+Due to a technical limitation, subscribing events to a private Slack channel(s) is not possible at this moment.
 
 :::
 
@@ -48,9 +48,9 @@ Due to a technical limitiation, subscribing events to a private Slack channel(s)
 
 :::info
 
-You can customize which Slack events to get by selecting/deselecting specific events. You can also set different Slack channels for different kind of events.
+You can customize which Slack events to get by selecting or deselecting specific events. You can also set different Slack channels for different kinds of events.
 
-Keep scrolling down on Appcircle to see full list of events.
+Keep scrolling down on Appcircle to see the full list of events.
 
 :::
 
