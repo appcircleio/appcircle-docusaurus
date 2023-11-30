@@ -26,7 +26,7 @@ Simply create a new build profile as usual and select your target operating syst
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
-<ContentRef url="../build/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 ### Build Configuration for React Native Applications
 
@@ -141,7 +141,7 @@ The final tab is to add environment variables to the build. For advanced use cas
 
 Please refer to the following document for more information on environment variables:
 
-<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/environment-variables">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 

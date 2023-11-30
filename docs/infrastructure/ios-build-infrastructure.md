@@ -5,6 +5,8 @@ metaDescription: iOS Build Infrastructure
 sidebar_position: 1
 ---
 
+import ContentRef from '@site/src/components/ContentRef';
+
 # iOS Build Infrastructure
 
 Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running.
@@ -87,4 +89,6 @@ Here are some of the most important packages installed in our iOS build agents u
 
 Appcircle supports using a third-party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
 
-[**You can find more information about using your own infrastructure for build here.**](../self-hosted-appcircle/self-hosted-runner/overview.md)
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner">
+Appcircle Self-hosted Runner
+</ContentRef>

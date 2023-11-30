@@ -425,7 +425,7 @@ After login, configuration steps for Appcircle runner service are the same as "r
 
 The only difference should be runner naming. It must be unique. For the second runner, just give a different name. For example, "runner2".
 
-Refer to the [Configure Runner Service](#3-configure-runner-service) for detailed Appcircle runner service configuration.
+Refer to the [Configure Runner Service](#4-configure-runner-service) for detailed Appcircle runner service configuration.
 
 After shutdown, we're ready to run instances from `vm01` and `vm02` base VM images.
 
@@ -664,7 +664,7 @@ screen -d -m $HOME/runner2/run.sh vm02
 
 In this case, you need to focus on self-hosted runner issues inside macOS VM (guest).
 
-In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](./overview.md) details.
+In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](./index.md) details.
 
 - You can check your macOS guest for possible system issues. (disk space, network connectivity etc.)
 - If you have custom proxy settings on macOS guest, check these settings.
@@ -682,7 +682,7 @@ If runner doesn't have network access to an NTP server on the internet, you can 
 
 For updating macOS base image see [related section](#update-base-images) above.
 
-For configuring NTP settings, see [Configure Base Runner's NTP Settings](#1-configure-base-runners-ntp-settings) section above.
+For configuring NTP settings, see [Configure Base Runner's NTP Settings](#2-configure-base-runners-ntp-settings) section above.
 
 ### I am facing "SSL cert is not valid yet" error in our builds
 
@@ -692,7 +692,7 @@ To fix that, you should sync the VMs' date and time with your organization's NTP
 
 For updating macOS base image see [related section](#update-base-images) above.
 
-For configuring NTP settings, see [Configure Base Runner's NTP Settings](#1-configure-base-runners-ntp-settings) section above.
+For configuring NTP settings, see [Configure Base Runner's NTP Settings](#2-configure-base-runners-ntp-settings) section above.
 
 ### Runners are offline and I noticed that macOS host has been reboot
 
