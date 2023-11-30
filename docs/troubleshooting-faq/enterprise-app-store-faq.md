@@ -29,7 +29,7 @@ Yes. You can customize your logo, primary and secondary color and the main text 
 
 ### How will users enter my App Store?
 
-Once you go to your store's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligable on Starter, Developer and Professional plans. Please contact sales@appcircle.io to request custom domains).
+Once you go to your store's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter, Developer, and Professional plans. Please contact sales@appcircle.io to request custom domains).
 
 ## Technical Questions
 
