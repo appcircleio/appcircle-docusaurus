@@ -33,11 +33,11 @@ In order to keep your config in Appcircle, you need to Navigate through:
 
 <NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(247).png" />
 
-Alternatively, you can accomplish the same within environment variables. The environment variable for this action is `AC_V2_SIGN` . More information is found at the document below:
+Alternatively, you can accomplish the same within environment variables. The environment variable for this action is `AC_V2_SIGN`.
 
-<ContentRef url="../environment-variables">
-  Why to Use Environment Variables and Secrets?
-</ContentRef>
+:::tip
+You can find more information about why to use them and how to use them in the [Environment Variables](../../environment-variables) section.
+:::
 
 ### Enable V2 Sign Through the Android Project (build.gradle)
 
