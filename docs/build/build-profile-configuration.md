@@ -60,9 +60,8 @@ Every build profile needs to know project details regardless of the project bein
 
 You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
 
-
-<ContentRef url="/self-hosted-runner/overview">
-  Self-Hosted Runners
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner">
+  Self-hosted Runners
 </ContentRef>
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ios-fetch.png' />

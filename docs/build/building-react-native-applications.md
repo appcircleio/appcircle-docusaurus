@@ -26,7 +26,7 @@ Simply create a new build profile as usual and select your target operating syst
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
-<ContentRef url="../build/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 ### Build Configuration for React Native Applications
 
