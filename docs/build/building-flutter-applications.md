@@ -132,7 +132,7 @@ The final tab is to add environment variables to the build. For advanced use cas
 
 Please refer to the following document for more information on environment variables:
 
-<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/environment-variables">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 

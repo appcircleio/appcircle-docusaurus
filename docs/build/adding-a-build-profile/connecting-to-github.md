@@ -31,7 +31,7 @@ When you successfully authorize your repository or repositories, the following s
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (236).png' />
 
-After the connection is successful, you can [view your newly created profile](./README.md#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](./#view-the-newly-created-build-profile) and start building!
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

@@ -28,7 +28,7 @@ You can easily run your Unit and UI tests for your iOS applications during build
 </svg>
 
 </ListCard>
-<ListCard title="Firebase Test Lab" description="Learn to deploy your app to Firebase Test Lab to run automated tests." href="/tutorials/quick-start/how-to-add-a-flutter-app" customClass="firebase">
+<ListCard title="Firebase Test Lab" description="Learn to deploy your app to Firebase Test Lab to run automated tests." href="/tutorials/how-to-add-a-flutter-app" customClass="firebase">
 <svg width="30" height="43" viewBox="0 0 30 43" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1612_1229)">
 <mask id="mask0_1612_1229" style={{maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="43">

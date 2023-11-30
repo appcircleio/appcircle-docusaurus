@@ -137,7 +137,7 @@ You can define variables and secrets to be incorporated during the build in the 
 
 Please see the following page for more information about environment variables:
 
-<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/environment-variables">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
