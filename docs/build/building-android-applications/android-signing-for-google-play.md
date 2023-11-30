@@ -7,7 +7,7 @@ sidebar_position: 11
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Screenshot from '@site/src/components/NarrowImage';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Android 11+ Signing for Google Play
 
