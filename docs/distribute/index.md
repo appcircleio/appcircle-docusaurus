@@ -15,10 +15,9 @@ In order to share your builds with testers, you can create distribution profiles
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-start.png' />
 
-> Note that an empty Testing Distribution profile named as **Send to Myself** will be created automatically for you.
+> Note that an empty Testing Distribution profile named **Send to Myself** will be created automatically for you.
 
 :::info
 
-A distribution profile corresponds to the multiple versions of the same application for iOS and Android. You do not need to create multiple Testing Distribution profiles for iOS&Android application of the same Application.
-
+A distribution profile corresponds to the multiple versions of the same application for iOS and Android. You do not need to create multiple Testing Distribution profiles for iOS and Android applications of the same application.
 :::
