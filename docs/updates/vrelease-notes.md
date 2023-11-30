@@ -45,7 +45,7 @@ This release includes the last mile changes in the platform.
 ### :muscle:Improvement
 
 * Enriched Slack message format
-* AAB file support in the Distribute module for Google Play uploads;
+* AAB file support in the Testing Distribution for Google Play uploads;
 
 ### 🐞 Fixed
 

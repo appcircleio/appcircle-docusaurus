@@ -37,4 +37,4 @@ The full output of the _fastlane_ execution can be viewed in the build log in re
 
 ### Deploying the Build Output
 
-You can use _fastlane_ to deploy the built apps to the supported third-party services supported or you can use the [Appcircle Distribute module](../distribute/create-or-select-a-distribution-profile.md) to share the app with the testers or send it to the public app stores.
+You can use _fastlane_ to deploy the built apps to the supported third-party services supported or you can use the [Appcircle Testing Distribution](../distribute/create-or-select-a-distribution-profile.md) to share the app with the testers or send it to the public app stores.

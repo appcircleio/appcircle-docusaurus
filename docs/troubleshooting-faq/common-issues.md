@@ -612,7 +612,7 @@ In Android, please also check if gradle sign is being used for the selected buil
 
 ### Deleted versions still occupy storage space
 
-The master version of any artifact deployed from the Build to the Distribute module is stored within the build artifacts section. Once you delete such a version from the Distribute module, only the reference is removed and the binary is still available within the build artifacts of the related build. You also need to remove the binary from the build artifacts to save storage.
+The master version of any artifact deployed from the Build to the Testing Distribution is stored within the build artifacts section. Once you delete such a version from the Testing Distribution, only the reference is removed and the binary is still available within the build artifacts of the related build. You also need to remove the binary from the build artifacts to save storage.
 
 ### Access Denied on builds
 

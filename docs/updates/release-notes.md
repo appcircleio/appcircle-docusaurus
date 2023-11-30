@@ -877,7 +877,7 @@ This major release introduces the Appcircle CLI and a new customer portal for bi
 ### 🆕 New Feature
 
 - Appcircle CLI - You can now access the Appcircle platform from the command line for custom pipelines or advanced automation use cases. [Appcircle CLI is available on npm](https://www.npmjs.com/package/@appcircle/cli).
-- Appcircle Distribute API - On top of the previously released build APIs, the distribute module APIs are now available for programmatic access.
+- Appcircle Distribute API - On top of the previously released build APIs, the Testing Distribution APIs are now available for programmatic access.
 - New Customer Portal - Billing and plan management is now easier and more flexible with the new customer portal.
 
 ### :muscle:Improvement

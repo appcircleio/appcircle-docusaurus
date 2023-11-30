@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
 
-Select the Distribute module from the left and click on the Add New button. Give a name to your distribution profile.
+Select the Testing Distribution from the left and click on the Add New button. Give a name to your distribution profile.
 
 :::info
 

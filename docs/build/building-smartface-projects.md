@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Building Smartface Projects
 
-Once your build is complete, you can now download the binary file or deploy it to distribute module manually (if autodistribute is enabled, it will be sent automatically after a successful build).
+Once your build is complete, you can now download the binary file or deploy it to Testing Distribution manually (if autodistribute is enabled, it will be sent automatically after a successful build).
 
 You can also view or download your build logs anytime.Smartface builds work very similar to any iOS or Android builds. Appcircle can build mobile applications developed with Smartface Cloud IDE flawlessly.
 
@@ -45,7 +45,7 @@ On the Distribution page, create a new distribution profile or select a previous
 
 :::info
 
-Any previous build can be deployed to the Distribute module without the need for rebuilding
+Any previous build can be deployed to the Testing Distribution without the need for rebuilding
 
 :::
 
