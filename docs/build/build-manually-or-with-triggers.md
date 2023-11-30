@@ -65,7 +65,7 @@ In essence, you need to find the Webhooks section under the repository settings 
 
 :::info
 
-You can also use[ appcircle-cli](../appcircle-api/about-the-appcircle-cli.md) to trigger your builds from the command line as well.
+You can also use[ appcircle-cli](../appcircle-api) to trigger your builds from the command line as well.
 
 :::
 
