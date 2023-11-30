@@ -45,7 +45,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - While reviewing the build logs in the admin panel, if there is no build log, we were not showing the user an error. Now it is shown as a toast message. <CloudBadge/> <SelfHostedBadge/>
 - The bug that occurred if there were no screenshots in the test project has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - A problem related to component caching in the runner has been resolved. <CloudBadge/> <SelfHostedBadge/>
-- Without user [permission](../account/my-organization#special-permissions), requests on the relevant screens are no longer sent to the service, so no warnings are displayed. <CloudBadge/> <SelfHostedBadge/>
+- Without user [permission](../account/my-organization#advanced-role-management), requests on the relevant screens are no longer sent to the service, so no warnings are displayed. <CloudBadge/> <SelfHostedBadge/>
 - We were not showing the status of the request with the loader when a request was sent for workflows; this problem has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Some spelling errors at the beginning of the workflow have been fixed, and a user-friendly appearance has been provided. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that prevented logging in to the Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
@@ -151,7 +151,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### :muscle: Improvement
 - Added the feature that [LDAP and SSO](../account/sso-ldap-login.md) settings  can be made once and all sub-organizations can use this setting. <CloudBadge/> <SelfHostedBadge/>
 - Previous [Configuration and Workflow](../build/adding-a-build-profile) files can be downloaded in the Configuration and Workflow sections. The ability to create configuration and workflow by re-uploading downloaded `.yaml` files has been improved. <CloudBadge/> <SelfHostedBadge/>
-- On the [self-hosted](../self-hosted-appcircle/self-hosted-runner/overview.md) side, the feature of adding priority has been developed for online and offline runners. <CloudBadge/> <SelfHostedBadge/>
+- On the [self-hosted](../self-hosted-appcircle/self-hosted-runner) side, the feature of adding priority has been developed for online and offline runners. <CloudBadge/> <SelfHostedBadge/>
 - Sequential numbering improvement was made in the naming while creating the new configuration and workflow. <CloudBadge/> <SelfHostedBadge/>
 - The ability to send files from the Testing Distribution module to the Enterprise App Store added. <CloudBadge/> <SelfHostedBadge/>
 - Made an improvement to prevent the subordinate from accessing the details on the 'corporate settings' page. <CloudBadge/> <SelfHostedBadge/>
@@ -180,7 +180,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### 🆕 New Feature
 - [Xcode 15.0 Beta](../infrastructure/ios-build-infrastructure.md) added to build agents. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
 - [Java 17](../infrastructure/android-build-infrastructure.md) added to build agents. <CloudBadge/> <SelfHostedBadge/>
-- [Build Profile](../build/adding-a-build-profile/README.md) configurations are separated from branchs. It is now easier to see and manage configs from a single location. <CloudBadge/> <SelfHostedBadge/>
+- [Build Profile](../build/adding-a-build-profile) configurations are separated from branchs. It is now easier to see and manage configs from a single location. <CloudBadge/> <SelfHostedBadge/>
 - [SSO and LDAP Login](../account/sso-ldap-login.md) added to Testing Distribution. <CloudBadge/> <SelfHostedBadge/>
 - [Azure Boards](../integrations/azure-board.md) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [Repeato](../workflows/common-workflow-steps.md#repeato-mobile-test-automation) workflow step added. <CloudBadge/> <SelfHostedBadge/>
@@ -481,7 +481,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### :muscle: Improvement
 - Empty states are added for all modules.
-- [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner/overview.md) Self hosted documentation updated.
+- [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner) Self hosted documentation updated.
 - Docs updated to Docusaurus v2.0.1
 
 ### 🐞 Fixed
@@ -490,7 +490,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 ## 2.9.13 - 2022-07-27 - Self-hosted Runners, Artifacts Management, Automatic iOS Code Signing
 
 ### 🆕 New Feature
-- [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner/overview.md) Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines. 
+- [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner) Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines. 
 - [Automatic iOS Code Signing](../signing-identities/ios-certificates-and-provisioning-profiles.md) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
 - [Artifacts Management](../account/artifacts.md) You can set the retention period for your build artifacts.
 - [SonarQube Component](../workflows/common-workflow-steps.md) You can use SonarQube for iOS and Android projects.
@@ -875,7 +875,7 @@ This major release introduces the Appcircle CLI and a new customer portal for bi
 ### 🆕 New Feature
 
 - Appcircle CLI - You can now access the Appcircle platform from the command line for custom pipelines or advanced automation use cases. [Appcircle CLI is available on npm](https://www.npmjs.com/package/@appcircle/cli).
-- Appcircle Distribute API - On top of the previously released build APIs, the distribute module APIs are now available for programmatic access.
+- Appcircle Distribute API - On top of the previously released build APIs, the Testing Distribution APIs are now available for programmatic access.
 - New Customer Portal - Billing and plan management is now easier and more flexible with the new customer portal.
 
 ### :muscle:Improvement

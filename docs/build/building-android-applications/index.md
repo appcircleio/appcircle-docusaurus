@@ -85,7 +85,7 @@ The next step on build configuration is Distribution. You can create a new distr
 
 :::info
 
-Any previous build can be deployed to the Distribute module without the need for rebuilding.
+Any previous build can be deployed to the Testing Distribution without the need for rebuilding.
 
 :::
 
@@ -99,7 +99,7 @@ You can define variables and secrets to be incorporated during the build in the 
 
 Please see the following page for more information about environment variables:
 
-<ContentRef url="../../environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="../../environment-variables">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 

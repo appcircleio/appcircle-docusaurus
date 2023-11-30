@@ -129,7 +129,7 @@ Finally, check Auto Distribute if you want your build to be deployed to the Test
 
 :::info
 
-Any previous build can be deployed to the Distribute module without the need for rebuilding.
+Any previous build can be deployed to the Testing Distribution without the need for rebuilding.
 
 :::
 
@@ -139,7 +139,7 @@ The final tab is to add environment variables to the build. For advanced use cas
 
 Please refer to the following document for more information on environment variables:
 
-<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/environment-variables">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
@@ -155,7 +155,7 @@ To learn more about Appcircle's Workflow editor, see the corresponding page belo
 
 To start your first build, just press the start build button – the play button under the actions columns (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in realtime.
 
-Once your build is complete, you can now download the binary file or deploy it to distribute module manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at anytime.
+Once your build is complete, you can now download the binary file or deploy it to Testing Distribution manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at anytime.
 
 <ContentRef url="/build/after-a-build">After a Build</ContentRef>
 
