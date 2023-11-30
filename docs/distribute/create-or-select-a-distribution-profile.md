@@ -1,7 +1,7 @@
 ---
-title: Create a Distribution Profile and Sharing with Testers
-metaTitle: Create a Distribution Profile and Sharing with Testers
-metaDescription: Create a Distribution Profile and Sharing with Testers
+title: Create a Testing Distribution Profile and Sharing with Testers
+metaTitle: Create a Testing Distribution Profile and Sharing with Testers
+metaDescription: Create a Testing Distribution Profile and Sharing with Testers
 sidebar_position: 1
 ---
 
@@ -9,23 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NarrowImage from '@site/src/components/NarrowImage';
 
-# Create a Distribution Profile and Sharing with Testers
-
-<iframe width="600" height="315" src="https://www.youtube.com/embed/vZ3p5uZZcmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
-
-:::info
-
-A distribution profile corresponds to the multiple versions of the same application for iOS and Android.
-
-:::
-
-###
-
-### Create a distribution profile
-
-Select the Distribute module from the left and click on the Add New button. Give a name to your distribution profile.
+Select the Testing Distribution from the left and click on the Add New button. Give a name to your distribution profile.
 
 :::info
 

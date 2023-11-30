@@ -114,7 +114,7 @@ The next step on build configuration is Distribution. You can create a new distr
 
 :::info
 
-Any previous build can be deployed to the Distribute module without the need for rebuilding.
+Any previous build can be deployed to the Testing Distribution without the need for rebuilding.
 
 :::
 

@@ -41,7 +41,7 @@ Please be aware that this custom script affects any step that comes after. There
 
 ### Deploying Apps to Firebase App Distribution
 
-Appcircle Distribute module provides an integrated and automated enterprise-grade solution for distributing apps to the testers, but if you want to use other solutions for app distribution, you can do so with custom scripts. You can use the following script below to deploy apps to Firebase App Distribution automatically from the Appcircle Build module.
+Appcircle Testing Distribution provides an integrated and automated enterprise-grade solution for distributing apps to the testers, but if you want to use other solutions for app distribution, you can do so with custom scripts. You can use the following script below to deploy apps to Firebase App Distribution automatically from the Appcircle Build module.
 
 - The binary to be deployed can be obtained with the related environment variable. `AC_EXPORT_DIR` and the binary path.
 - `FIREBASE_TOKEN` must be obtained through a local console. Please follow the [instructions here](https://firebase.google.com/docs/cli#cli-ci-systems) to set up the Firebase CLI locally and then you can request a token with the `firebase login:ci `command.

@@ -122,7 +122,7 @@ Finally, check Auto Distribute if you want your build to be deployed to the Test
 
 :::info
 
-Any previous build can be deployed to the Distribute module without the need for rebuilding.
+Any previous build can be deployed to the Testing Distribution without the need for rebuilding.
 
 :::
 
