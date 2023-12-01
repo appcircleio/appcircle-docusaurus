@@ -88,24 +88,19 @@ Appcircle allows you to trigger builds manually or automatically using build tri
   Build Manually or Automatically with Webhooks and Triggers
 </ContentRef>
 
-###
-
 ### Signing Flutter iOS Applications
 
 The next step in the build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](../signing-identities/ios-certificates-and-provisioning-profiles.md) section.
 
 For signing iOS apps, press add, select the bundle ID from the first dropdown and then select a compatible provisioning profile (added from the signing identities module) from the second dropdown.
 
-<Screenshot src="https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png" />
-
+<Screenshot url="https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png" />
 
 ### Signing Flutter Android Applications
 
 Here, please select the Android Keystore you added in the [Android Keystores](../signing-identities/android-keystores.md) section. For signing Android apps, simply select a keystore (added from the signing identities module).
 
-<Screenshot src="https://cdn.appcircle.io/docs/assets/build-configuration-android-signing.png" />
-
-###
+<Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-android-signing.png" />
 
 ### Distribution (Deployment) Configuration
 
@@ -149,7 +144,7 @@ To learn more about Appcircle's Workflow editor, see the corresponding page belo
 
 To change the Flutter version, open the Flutter Install workflow step from the workflow editor and set the version under the "Selected Flutter Version" field.
 
-<Screenshot src="https://cdn.appcircle.io/docs/assets/build-configuration-flutter-select-version-workflow.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-flutter-select-version-workflow.png" />
 
 You can also set the preferred Flutter version on config screen. If you don't set any version, `stable` version will be used.
 ### Starting a Flutter Build and After a Build
