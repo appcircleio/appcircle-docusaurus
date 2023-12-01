@@ -22,7 +22,7 @@ Appcircle will use your `package.json` file to determine and use the dependencie
 
 Simply create a new build profile as usual and select your target operating system as iOS or Android. Select **React Native** for **Target Platform**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/13-01-RN_NewProfile.jpg' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-profile.png' />
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
@@ -62,19 +62,19 @@ Please don't forget to add additional scheme files to your version control.
 
 Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in the Build Configuration window. You can also set the preferred NodeJS version on this screen. If you don't set any version, `lts` version will be used.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/reactnative-ios-settings.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-ios.png' />
 
 ### Build Configuration for React Native Android applications
 
 First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/reactnative-android-settings.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-android.png' />
 
 ### Sending the Build Status to the Repository Providers
 
 At the bottom of the config tab, you will the **Set Commit Build Status **option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (8).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-ios-build-commit-status.png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -102,7 +102,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-signing.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-signing-empty.png' />
 
 ### Signing React Native Android applications
 
@@ -133,8 +133,6 @@ Any previous build can be deployed to the Testing Distribution without the need 
 
 :::
 
-###
-
 ### Environment Variables
 
 The final tab is to add environment variables to the build. For advanced use cases, you can define variables and secrets to be incorporated during the build in the Environment Variables submodule so that you don’t need to store certain keys and configurations within the repository.
@@ -145,8 +143,6 @@ Please refer to the following document for more information on environment varia
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
-###
-
 ### Build workflows for React Native applications
 
 Once you complete your build configuration, you can edit your build workflow. React Native builds have additional steps for Node and Yarn commands. You can also arrange, add or remove workflow steps using Appcircle's workflow editor and the Workflow Marketplace.
@@ -154,8 +150,6 @@ Once you complete your build configuration, you can edit your build workflow. Re
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
 <ContentRef url="/workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
-
-###
 
 ### Starting a React Native Build and After a Build
 

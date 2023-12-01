@@ -7,7 +7,7 @@ sidebar_position: 11
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import NarrowImage from '@site/src/components/NarrowImage';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Android 11+ Signing for Google Play
 
@@ -31,7 +31,7 @@ In order to keep your config in Appcircle, you need to Navigate through:
 3. Edit the **Android Sign** workflow
 4. Set V2 Sign to either **true **or **false.**
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(247).png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-android-v2-sign.png" />
 
 Alternatively, you can accomplish the same within environment variables. The environment variable for this action is `AC_V2_SIGN`.
 
