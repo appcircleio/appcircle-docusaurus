@@ -118,11 +118,11 @@ You can find the full list of available workflow steps in our workflow marketpla
 
 You can add platform-specific workflow steps, custom scripts, and other steps into your workflow and re-order them as you like. You can also remove the steps you don't need. You can backup your current workflow by clicking the **Download YAML** button at the bottom.
 
-To access the Workflow Marketplace, go to the Workflow Editor and click on the Edit button:
-
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-ios-download-yaml-showcase.png' />
 
-You will see the Workflow Marketplace on the right and your Workflow steps on the left. You can now drag and drop steps into your workflow. Any unwanted workflow steps can be removed by clicking on the delete button on the right side of each step.
+To access the Workflow Marketplace, click on the **Manage Workflow** button. You will see the Workflow Marketplace on the right and your Workflow steps on the left.
+
+You can now drag and drop steps into your workflow. Any unwanted workflow steps can be removed by clicking on the delete button on the right side of each step.
 
 You can also reorder steps so that they will be executed in the order you specify.
 
