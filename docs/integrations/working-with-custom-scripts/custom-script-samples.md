@@ -6,7 +6,6 @@ sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-import NarrowImage from '@site/src/components/NarrowImage';
 
 # Custom Script Samples
 
@@ -29,9 +28,9 @@ echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $AC_ENV_FILE_PATH
 
 Create a custom script like above and put it **above** your Android build step.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/change-java.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow.png" />
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/change-java-wf.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow-detail.png" />
 
 :::info
 
