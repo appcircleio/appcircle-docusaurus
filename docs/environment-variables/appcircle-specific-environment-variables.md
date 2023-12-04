@@ -98,8 +98,8 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_ARCHIVE\_METADATA\_PATH  | Archive metadata path                                                                 |
 | AC\_SIMULATOR\_ARCHIVE\_PATH | Simulator archive path description                                                    |
 | AC\_METADATA\_OUTPUT\_PATH   | Metadata output file description                                                      |
-| AC\_CERTIFICATES             | URLs of the certificates                                                              |
-| AC\_PROVISIONING\_PROFILES   | URLs of the provisioning profiles                                                     |
+| AC\_CERTIFICATES             | Paths of the certificates                                                              |
+| AC\_PROVISIONING\_PROFILES   | Paths of the provisioning profiles                                                     |
 | AC\_EXPORT\_DIR              | Specifies the path that contains `ipa`, `exportOptions.plist`and other exported files |
 | AC\_BUNDLE\_IDENTIFIERS      | Specifies the project bundle identifiers                                              |
 | AC\_BUILD\_NUMBER\_SOURCE    | Build Number Source for Versioning                                                    |
