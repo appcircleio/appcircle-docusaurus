@@ -7,7 +7,6 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import NarrowImage from '@site/src/components/NarrowImage';
 
 # Configure a Profile
 
@@ -18,13 +17,13 @@ After you have created your profile, it is time to configure it and send it to d
 
 You can add users to your live and beta channels by clicking the **Settings** button. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-versionlist.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-detail-setting-button.png' />
 
 
 You can add multiple users to beta and live channels by hitting the Tab key.
 
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-useraccess.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-detail-setting-access-users.png" />
 
 :::caution
 If you work for a sub-organization, you can only see the apps belonging to that organization. However, if the app is published, it will also appear in the parent organization's showcase.
@@ -37,7 +36,7 @@ If you enabled  **Publish Enterprise Store** settings in your config, all the ne
 
 Click the **Add Version** button and select IPA or APK file and hit the **Upload** button.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-upload.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-android-apk-upload.png" />
 
 
 :::caution
@@ -50,7 +49,7 @@ Make sure that the bundle id matches your current profile and version or build n
 
 Apps can be sent to Beta or Live channels by hitting the ... button and then selecting the **Publish** menu. 
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-publish.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-publish-button.png" />
 
 
 You can select the channel and write a summary and release notes for your release. When you hit the **Publish** button that particular build will be available to all beta users.
@@ -60,7 +59,7 @@ You can send a version to Live Channel in two ways
 - Click the **Publish** button and select **Live** for the channel
 - Click the ... button for any beta build and select **Go Live** from the menu.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-golive.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-golive-button.png" />
 
 
 :::info
