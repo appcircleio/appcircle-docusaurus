@@ -315,7 +315,7 @@ If you receive an error similar to the following, the selected Xcode version in 
 
 In this case, you need to upgrade the Swift version in the project settings in Xcode and once the build is confirmed to be working locally in the specific Xcode version, it can be retried in Appcircle with the same Xcode version.
 
-<Screenshot url='https://lh6.googleusercontent.com/4klo-II3_K0S6tqj51Na6b9HLzq2dHH6mXftliHMNZjM1s_hyDLTS3nxn9SrXFhAxRuPmjshiSoljMLbumXBMHJIReS3E-6Fsq4ANGJIQtIuYie6L-5CuoIfqfXLe_6IEBoJv-rb' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/swift-version-upgrade.png' />
 
 ## Android-Specific Issues
 
@@ -612,7 +612,7 @@ In Android, please also check if gradle sign is being used for the selected buil
 
 ### Deleted versions still occupy storage space
 
-The master version of any artifact deployed from the Build to the Distribute module is stored within the build artifacts section. Once you delete such a version from the Distribute module, only the reference is removed and the binary is still available within the build artifacts of the related build. You also need to remove the binary from the build artifacts to save storage.
+The master version of any artifact deployed from the Build to the Testing Distribution is stored within the build artifacts section. Once you delete such a version from the Testing Distribution, only the reference is removed and the binary is still available within the build artifacts of the related build. You also need to remove the binary from the build artifacts to save storage.
 
 ### Access Denied on builds
 
@@ -626,7 +626,7 @@ On some distributed apps, the **Access Denied** error can be bypassed by one of 
 
 Older builds and/or testing distributions will use almost all of your storage. If your artifact storage is full, you can free up some of the old artifacts.
 
-#### [Refer here to delete a build profile](../build/adding-a-build-profile/README.md#delete-a-build-profile)
+#### [Refer here to delete a build profile](../build/adding-a-build-profile/#delete-a-build-profile)
 
 #### [Refer here to delete specific builds from your build profile](../build/after-a-build.md#delete-specific-builds)
 

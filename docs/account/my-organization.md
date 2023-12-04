@@ -133,27 +133,21 @@ Once a user accepts an invite, it will be added to the team as a Member with rea
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (151).png' />
 
-####
+### Advanced Role Management
 
-#### Advanced Role Management
+Once you click the "Manage Roles" button, you will be presented with a detailed selection of roles for each module.
 
-Once you click the "Manage Roles" button, you will be presented with a detailed selection of roles for each module. Here, you can assign the Owner role to a user for full access or you can select specific read or write roles for use cases like developers or testers or billing administrators.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-all-image_v2.png' />
+
+Here, you can assign the Owner role to a user for full access or you can select specific read or write roles for use cases like developers or testers or billing administrators.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-owner-image.png' />
 
 You can see the full list of the available roles below:
 
-## General Permissions
+---
 
-Full access allows users to view and manage the contents of the modules. This permission allows users to create, delete, and modify the contents of the module. 
-
-Read only access only allows users to see the content or list of the modules. The modification doesn't allow any modification.
-
-If the access is set as None, users can't access that module.
-
-## Special Permissions
-
-Some modules have different permissions besides general permissions. You can customize the permissions for team members specifically.
-
-**BUILD PROFILE PERMISSIONS**
+### BUILD PROFILE PERMISSIONS
 
 Permissions can be customized for build profiles.
 
@@ -163,7 +157,7 @@ Permissions can be customized for build profiles.
 | Read Only | The user can only start the build, view logs, and download logs. |
 | None | The user cannot reach any details about build profiles.|
 
-**ENVIRONMENT VARIABLE PERMISSIONS**
+### ENVIRONMENT VARIABLE PERMISSIONS
 
 Permissions can be customized for environment variable.
 
@@ -173,7 +167,7 @@ Permissions can be customized for environment variable.
 | Read Only | The user can only see variable groups and their details.|
 | None | The user cannot reach any details about environment variables.|
 
-**SIGNING IDENTITY MANAGEMENT PERMISSIONS**
+### SIGNING IDENTITY MANAGEMENT PERMISSIONS
 
 Permissions can be customized for signing identity management.
 
@@ -183,7 +177,7 @@ Permissions can be customized for signing identity management.
 | Read Only | The user can only see certificates, provisioning, and keys.|
 | None | The user cannot reach any details about signing identity.|
 
-**DISTRIBUTION PROFILE PERMISSIONS**
+### DISTRIBUTION PROFILE PERMISSIONS
 
 Permissions can be customized for distribution profiles.
 
@@ -193,7 +187,7 @@ Permissions can be customized for distribution profiles.
 | Read Only | The user can only view distribution profiles.|
 | None | The user cannot reach any details about distribution profiles.|
 
-**TESTING GROUP PERMISSIONS**
+### TESTING GROUP PERMISSIONS
 
 Permissions can be customized for testing groups.
 
@@ -203,7 +197,7 @@ Permissions can be customized for testing groups.
 | Read Only | The user can only view testing groups and test users.|
 | None | The user cannot reach any details about the testing group.|
 
-**STORE SUBMIT MODULE PERMISSIONS**
+### STORE SUBMIT MODULE PERMISSIONS
 
 Upload apps to Google Play, Huawei, and App Store.
 
@@ -216,7 +210,7 @@ Upload apps to Google Play, Huawei, and App Store.
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
 :::
 
-**ENTERPRISE STORE PERMISSIONS**
+### ENTERPRISE STORE PERMISSIONS
 
 Manage and Upload Apps to Enterprise Store.
 
@@ -226,14 +220,14 @@ Manage and Upload Apps to Enterprise Store.
 |Upload apps to the Enterprise Store | The user can only use apps.|
 |Read-Only Access| The user can only view the profiles.|
 
-**ORGANIZATION MANAGEMENT PERMISSIONS**
+### ORGANIZATION MANAGEMENT PERMISSIONS
 
 The user can create organization or sub organization within license limits, add and remove members, and manage their permissions.
 
-**BILLING MANAGEMENT PERMISSIONS**
+### BILLING MANAGEMENT PERMISSIONS
 
 Manage the subscription, payment details, and invoices.
 
-**THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS**
+### THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS
 
 Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams, Google Play Developer API Keys, App Store Connect API Keys, Huawei AppGallery Developer API Keys etc.
