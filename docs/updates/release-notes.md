@@ -12,7 +12,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
-## 4.0.0 - 2023-12-01 - Connections Page, Disconnect Profile and Change Provider
+## 3.10.0 - 2023-12-01 - Connections Page, Disconnect Profile and Change Provider
 
 ### 🆕 New Feature
 
