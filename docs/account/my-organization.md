@@ -5,7 +5,6 @@ metaDescription: My Organization and Team Management
 sidebar_position: 4
 ---
 
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # My Organization and Team Management
@@ -28,7 +27,7 @@ Team management with fine-grained roles and integration with enterprise identity
 
 The "My Organization" screen is accessible from the button with the organization name initials at the bottom left and it contains all operations to manage an organization.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (162).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-organization.png' />
 
 ### Organization Name and ID Management
 

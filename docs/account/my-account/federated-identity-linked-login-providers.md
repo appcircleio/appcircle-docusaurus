@@ -21,6 +21,6 @@ Identity providers linked for login purposes are managed independently from the 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (21).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-federated-identities.png' />
 
 ###
