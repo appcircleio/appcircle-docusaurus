@@ -22,7 +22,7 @@ Build.<br/>Test.<br/>Distribute.
 
 <section class="intro-cards">
       <div class="intro-card">
-            <h3><a href="/tutorials/quick-start">Foundations</a></h3>
+            <h3><a href="/tutorials">Foundations</a></h3>
             <p><strong>New to Appcircle?</strong> Get started by adding your Obj-C/Swift, Java/Kotlin, React Native, Flutter app first.</p>
       </div>
       <div class="intro-card">
@@ -57,7 +57,7 @@ Build.<br/>Test.<br/>Distribute.
                   <NewBadge />
                   <h4>Self-Hosted Appcircle</h4>
                   <p>Want to use your own build machines? Just install our runner scripts to the machines you want to use for your iOS / Android builds.</p>
-                  <a href="/self-hosted-appcircle/overview" className="feature-card-learn-more runner">
+                  <a href="/self-hosted-appcircle" className="feature-card-learn-more runner">
                         Learn More
                   </a>
             </div>
@@ -68,11 +68,11 @@ Build.<br/>Test.<br/>Distribute.
 
 <section class="community">
 <a class="slack" href="https://slack.appcircle.io">
-<img src="https://storage.googleapis.com/appcircle-prod-common/docs/assets/slack-logo.png" />
+<img src="https://cdn.appcircle.io/docs/assets/slack-logo.png" />
 <span>Slack Community</span>
 </a>
 <a class="videos" href="https://www.youtube.com/c/Appcircle">
-<img src="https://storage.googleapis.com/appcircle-prod-common/docs/assets/youtube-logo.png" />
+<img src="https://cdn.appcircle.io/docs/assets/youtube-logo.png" />
 <span>How-To Videos</span>
 </a>
 

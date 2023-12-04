@@ -82,7 +82,7 @@ On the screen that appears, select the profile you want to build.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-6.png' />
 
-Select a configured branch and a workflow, then start the build. Please note that selecting an unconfigured branch will result in an error. Only Smartface builds do not require configuration.
+Select a configured branch and a workflow, then start the build. Please note that selecting an unconfigured branch will result in an error.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-7.png' />
 

@@ -5,7 +5,6 @@ metaDescription: Enable SSO
 sidebar_position: 1
 ---
 
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Single Sign-On
@@ -49,7 +48,7 @@ Two-factor authentication (2FA) can only be enabled by your SSO provider. Please
 
 - Enter the alias you picked.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 
