@@ -113,7 +113,7 @@ Here, you can see a list of previously created environment variable groups. Sele
 
 Then in workflows, you can specify the environment variable for use.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (172).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
 ### Creating environment variables on the fly 
 

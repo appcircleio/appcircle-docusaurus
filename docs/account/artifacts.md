@@ -20,4 +20,4 @@ Only build and distribution artifacts are deleted in this section. Artifacts of 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/account-artifacts.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-artifacts.png' />

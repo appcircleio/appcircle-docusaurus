@@ -5,7 +5,6 @@ metaDescription: Azure AD SAML
 sidebar_position: 4
 ---
 
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Azure AD SAML
@@ -22,13 +21,13 @@ Only Enterprise accounts support SSO.
 
 SSO can only be enabled by the organization's administrator. To start, go to [My Organization](../my-organization.md) screen and click the **Enable Login** button under the **APPCIRCLE LOGIN** section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/enable-sso_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/enable-sso_v3.png' />
 
 ### Configure Appcircle and Azure AD
 
 - Select **Setup SAML SSO Provider**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-form.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-form_v2.png' />
 
 - Pick an alias and display name for your organization. Please pick a short and rememberable alias.
 
@@ -109,7 +108,7 @@ You need to select users/groups in Azure AD to enable SSO. All members of your A
 
 - Enter the alias you picked.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 

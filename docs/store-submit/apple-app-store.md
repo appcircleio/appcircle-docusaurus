@@ -49,9 +49,9 @@ Then enter a user-friendly name to identify the key in the lists and press save.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (93).png' />
 
-### Deploying the Binary from the Distribute Module
+### Deploying the Binary from the Testing Distribution
 
-You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for App Store (signed with an App Store Distribution certificate).
+You can deploy the binaries to the Store Submit module from the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for App Store (signed with an App Store Distribution certificate).
 
 Select a binary in the list and press "Send to Store Submit for App Store" from the top left menu. The bundle ID of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 

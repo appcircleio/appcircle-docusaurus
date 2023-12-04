@@ -6,12 +6,10 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-
-# What are Workflows and How to Use Them?
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import NarrowImage from '@site/src/components/NarrowImage';
+
+# What are Workflows and How to Use Them?
 
 <Tabs
   defaultValue="ios"
@@ -92,7 +90,7 @@ The workflow list will be displayed. To view the [Workflow Steps](why-to-use-wor
 
 To create a new workflow, press the "New" button at the top of the workflow list and select a template from the default workflows. Then edit the workflow name and press enter. You can also upload your workflow as a YAML file.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(198).png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-create-edit.png" />
 
 To rename/delete a current workflow, press the "Edit" button at the top of the workflow list and then click on the context menu that appears next to the workflow items.
 
@@ -104,7 +102,7 @@ You can use the "Clone" option to create a new workflow based on the currently a
 
 ### Worfklow Steps
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(185).png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-ios-showcase.png" />
 
 Appcircle will build your application with the steps defined in the workflow. Steps will be executed in order from the top to the bottom.
 
@@ -120,11 +118,11 @@ You can find the full list of available workflow steps in our workflow marketpla
 
 You can add platform-specific workflow steps, custom scripts, and other steps into your workflow and re-order them as you like. You can also remove the steps you don't need. You can backup your current workflow by clicking the **Download YAML** button at the bottom.
 
-To access the Workflow Marketplace, go to the Workflow Editor and click on the Edit button:
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-ios-download-yaml-showcase.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (186).png' />
+To access the Workflow Marketplace, click on the **Manage Workflow** button. You will see the Workflow Marketplace on the right and your Workflow steps on the left.
 
-You will see the Workflow Marketplace on the right and your Workflow steps on the left. You can now drag and drop steps into your workflow. Any unwanted workflow steps can be removed by clicking on the delete button on the right side of each step.
+You can now drag and drop steps into your workflow. Any unwanted workflow steps can be removed by clicking on the delete button on the right side of each step.
 
 You can also reorder steps so that they will be executed in the order you specify.
 

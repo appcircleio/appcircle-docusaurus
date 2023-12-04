@@ -29,7 +29,7 @@ You will find the variables that need to be specified inside the bot component. 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-ios-swiftlint-details.png' />
 
 :::caution
-Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables/why-to-use-environment-variables-and-secrets.md) and encrypting variables like tokens that could pose a security risk.
+Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables) and encrypting variables like tokens that could pose a security risk.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-swiftlint-env-var.png' />
@@ -79,7 +79,7 @@ You will find the variables that need to be specified within the bot component. 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-android-detekt-workflow-details.png' />
 
 :::caution
-Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables/why-to-use-environment-variables-and-secrets.md) and encrypting variables like tokens that could pose a security risk.
+Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables) and encrypting variables like tokens that could pose a security risk.
 :::
 
 #### Step 3
