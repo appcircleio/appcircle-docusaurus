@@ -7,7 +7,6 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import NarrowImage from '@site/src/components/NarrowImage';
 
 Select the Testing Distribution from the left and click on the Add New button. Give a name to your distribution profile.
 
@@ -108,19 +107,18 @@ If your Android application has multiple product flavors, Appcircle will create 
 
 When you build and distribute an application with multiple flavors, and `.apk` file will be created for each flavor. When the build is distributed, all of the binaries will be seen on the distribution profile:
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(250).png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/testing-android-multi-flavor.png" />
 
 #### How to see the multiple flavor results
 
 If you also want to download or see the output, you can check through the following steps:
 
-- Click on the **Builds** tab on your desired branch
 - Click the three dot under the actions tab
 - Click **Artifacts** to see all the build outputs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (249).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/testing-android-multi-flavor-download-artifacts.png' />
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(248).png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/testing-android-multi-flavor-artifacts.png" />
 
 :::info
 
@@ -181,11 +179,11 @@ If you don't want to delete an entire distribution profile but free up the past 
 
 Click on the `Edit` Text to toggle edit mode:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (202).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/testing-delete-multiple-edit-button.png' />
 
 On edit mode, you will be able to select multiple entries. Select the versions you wish to delete, and click on the `Delete` Text on the top right of the versions:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (204).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/testing-delete-multiple-delete-button.png' />
 
 #### Delete a Single Distribution Profile Version
 
