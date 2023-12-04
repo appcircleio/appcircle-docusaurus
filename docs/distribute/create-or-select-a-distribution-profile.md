@@ -165,7 +165,7 @@ In order to remove clutter and/or free up storage, you can delete an entire prof
 - Click `Delete`
 - Go through the confirmation dialog
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (200).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/testing-delete-distribution-profile.png' />
 
 :::info
 
