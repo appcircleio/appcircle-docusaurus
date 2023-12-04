@@ -52,9 +52,9 @@ Your upload keystore file should also be uploaded to Huawei AppGallery. Follow t
 <Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-8signing.png' />
 
 
-### Deploying the Binary from the Distribute Module
+### Deploying the Binary from the Testing Distribution
 
-You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Huawei AppGallery. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).;
+You can deploy the binaries to the Store Submit module from the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Huawei AppGallery. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).;
 
 Select a binary in the list and press "Send to Store Submit for AppGallery" from the top right menu. The package name of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
