@@ -30,11 +30,11 @@ Below you can find the network access details required when installing or upgrad
   
   <TabItem value="rhel-podman" label="RHEL with Podman" default>
 
-This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Podman.
+This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL distribution using Podman.
 
 ##### `podman-compose` tool:
 
-- You must download the podman-compose tool from python pip libraries.
+- You must download the podman-compose tool from python pip repositories.
 
 ```access_list
 pypi.python.org/simple/podman-compose
@@ -63,11 +63,11 @@ cdn.redhat.com
 
   <TabItem value="rhel-docker" label="RHEL with Docker">
 
-This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Docker.
+This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL distribution using Docker.
 
 ##### Offline docker install script and docker `rpm` files:
 
-- If you want to install `Docker` on your RHEL from Appcircle resources, then the Appcircle server machine needs to access these URLs.
+- If you want to install `Docker` on your RHEL from Appcircle resources, then the Appcircle server host needs to access these URLs.
 
 ```access_list
 storage.googleapis.com/appcircle-dev-common/self-hosted
@@ -90,11 +90,11 @@ cdn.redhat.com
   
   <TabItem value="ubuntu-docker" label="Ubuntu with Docker">
 
-This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Docker.
+This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu distribution using Docker.
 
 ##### `docker` installation:
 
-- If you want to install `Docker` on your Ubuntu, then the Appcircle server machine needs to access these URLs.
+- If you want to install `Docker` on your Ubuntu, then the Appcircle server host needs to access these URLs.
 
 ```access_list
 download.docker.com
@@ -107,7 +107,7 @@ archive.ubuntu.com
 
 - These tools are `tar`, `curl` and `unzip`.
 
-- If you are hosting a `apt` repository locally on your network, you don't need these URLs.
+- If you are hosting an `apt` repository locally on your network, you don't need these URLs.
 
 ```access_list
 archive.ubuntu.com
