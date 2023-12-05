@@ -119,23 +119,23 @@ archive.ubuntu.com
 
 ##### If you are a PoC customer, Appcircle server `zip` package:
 
-- If you are a PoC customer and want to install or update the Appcircle server, the Appcircle server machine needs to access this URL to download the `Appcircle Server zip package`.
+- If you are a PoC customer and want to install or update the Appcircle server, the Appcircle host machine needs to access this URL to download the Appcircle server `zip` package.
 
-- If you are a licensed user, the Appcircle server machine doesn't need this access.
+- If you are an enterprise-licensed customer, the Appcircle server host doesn't need this access.
 
-- If you want to download the `zip package` and copy it manually (with `scp` or `ftp`), then the Appcircle server machine doesn't need this access.
+- If you want to download the `zip` package and copy it manually (with `scp` or `ftp`), then the Appcircle server host doesn't need this access.
 
 ```access_list
 cdn.appcircle.io
 ```
 
-##### If you are a licensed customer, Appcircle server `zip` package:
+##### If you are an enterprise-licensed customer, Appcircle server `zip` package:
 
-- If you are a licensed customer and want to install or update the Appcircle server, the Appcircle server machine needs to access this URL to download the `Appcircle Server zip package`.
+- If you are an enterprise-licensed customer and want to install or update the Appcircle server, the Appcircle server host needs to access this URL to download the Appcircle server `zip` package.
 
-- If you are a PoC user, the Appcircle server machine doesn't need this access.
+- If you are a PoC customer, the Appcircle server machine doesn't need this access.
 
-- If you want to download the `zip package` and copy it manually (with `scp` or `ftp`), then the Appcircle server machine doesn't need this access.
+- If you want to download the `zip` package and copy it manually (with `scp` or `ftp`), then the Appcircle server machine doesn't need this access.
 
 ```access_list
 storage.googleapis.com/appcircle-dev-common/self-hosted
