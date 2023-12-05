@@ -162,7 +162,7 @@ storage.googleapis.com/appcircle-self-hosted
 www.googleapis.com/oauth2/v4/token
 ```
 
-## Appcircle Runner as Ready-to-Use MacOS Virtual Machine
+## Appcircle Runner Install as Ready-to-Use MacOS Virtual Machine
 
 This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](../self-hosted-runner/installation.md#macos-vm).
 
@@ -217,7 +217,17 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 storage.googleapis.com/appcircle-dev-common/self-hosted
 ```
 
-## External Resources Access When Running Build Pipeline
+## Appcircle Server Runtime
+
+Although Appcircle runners are responsible for the submission of iOS apps to the App Store, the server also has some features that need access to the App Store Connect API, like runners.
+
+For example, get devices from the App Store, get certificates or provisioning profiles, verify the uploaded certificates, etc.
+
+So, you should enable the below API access on the server for those features:
+
+- api.appstoreconnect.apple.com
+
+## Appcircle Runner Runtime
 
 This section addresses the utilization of external resources during the build, publish, store submit, and other processes on the Appcircle runner.
 
@@ -317,13 +327,3 @@ Those endpoints are documented at [here](https://help.apple.com/itc/transporteru
 | [vgr0906.apple.com](http://vgr0906.apple.com/) | 17.57.20.146   | 33001        | 33001-33500  |
 | [vgr0907.apple.com](http://vgr0907.apple.com/) | 17.57.20.147   | 33001        | 33001-33500  |
 | [vgr0908.apple.com](http://vgr0908.apple.com/) | 17.57.20.148   | 33001        | 33001-33500  |
-
-:::caution
-
-Although Appcircle runners are responsible for the submission of iOS apps to the App Store, the **server also has some features that need access to the App Store Connect API**, like runners. For example, get devices from the App Store, get certificates or provisioning profiles, etc.
-
-So, you should enable the **below API access on the server** for those features:
-
-- api.appstoreconnect.apple.com
-
-:::
