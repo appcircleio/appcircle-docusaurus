@@ -32,6 +32,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The caching mechanism used when choosing between [test distribution authentication](../distribute/create-or-select-a-distribution-profile.md#using-authentication-for-distribution) options has been disabled. <CloudBadge/> <SelfHostedBadge/>
 - You can no longer add or build Smartface projects. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle no longer supports purchases via Appsumo, and there is no Appsumo filter in the admin panel license list. <CloudBadge/>
+- Appcircle online documentation got several updates and improvements, including search, screenshots, and content that provides a better user experience. <CloudBadge/>
 
 ### 🐞 Fixed
 
