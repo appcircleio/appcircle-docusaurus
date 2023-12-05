@@ -30,7 +30,7 @@ First, we need to set up a build configuration. Select the configuration from th
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-fetch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-fetch.png' />
 
 **Share your iOS schemes**
 
@@ -62,13 +62,13 @@ The list of currently available Xcode versions can be found in the following doc
 
 By default, the most recent stable version of Xcode is selected. If available, you can also switch to the most recent Xcode beta at the top of the list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-fetch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-fetch.png' />
 
 ### Sending the Build Status to the Repository Providers
 
 At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (8).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-ios-build-commit-status.png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -102,7 +102,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (170).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png' />
 
 ### Distribution
 
@@ -114,7 +114,7 @@ The next step on build configuration is Distribution. You can create a new distr
 
 :::info
 
-Any previous build can be deployed to the Distribute module without the need for rebuilding.
+Any previous build can be deployed to the Testing Distribution without the need for rebuilding.
 
 :::
 
@@ -137,11 +137,11 @@ You can define variables and secrets to be incorporated during the build in the 
 
 Please see the following page for more information about environment variables:
 
-<ContentRef url="/environment-variables/why-to-use-environment-variables-and-secrets">
+<ContentRef url="/environment-variables">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (172).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
 Please click on the Save button and close this modal.
 
@@ -165,11 +165,11 @@ For details on using Appcircle's workflow editor, please see the related page be
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/start-build-configuration.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build-modal.png' />
 
 
 Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
@@ -180,7 +180,7 @@ You can safely close the build log window, it won't affect the status of your bu
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/03-06b-iOS-Build-Building.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-ios-build-workflow.png' />
 
 ---
 
@@ -190,7 +190,7 @@ Your build will be distributed automatically if you had set up auto build earlie
 
 <ContentRef url="/build/after-a-build">After a Build</ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-distribute.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-distribute-artifacts.png' />
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

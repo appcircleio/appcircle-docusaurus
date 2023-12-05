@@ -22,7 +22,7 @@ Build.<br/>Test.<br/>Distribute.
 
 <section class="intro-cards">
       <div class="intro-card">
-            <h3><a href="/tutorials/quick-start">Foundations</a></h3>
+            <h3><a href="/tutorials">Foundations</a></h3>
             <p><strong>New to Appcircle?</strong> Get started by adding your Obj-C/Swift, Java/Kotlin, React Native, Flutter app first.</p>
       </div>
       <div class="intro-card">
@@ -57,7 +57,7 @@ Build.<br/>Test.<br/>Distribute.
                   <NewBadge />
                   <h4>Self-Hosted Appcircle</h4>
                   <p>Want to use your own build machines? Just install our runner scripts to the machines you want to use for your iOS / Android builds.</p>
-                  <a href="/self-hosted-appcircle/overview" className="feature-card-learn-more runner">
+                  <a href="/self-hosted-appcircle" className="feature-card-learn-more runner">
                         Learn More
                   </a>
             </div>

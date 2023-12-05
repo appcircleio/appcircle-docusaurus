@@ -45,9 +45,9 @@ Then enter a user-friendly name to identify the key in the lists and press save.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (92).png' />
 
-### Deploying the Binary from the Distribute Module
+### Deploying the Binary from the Testing Distribution
 
-You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).;
+You can deploy the binaries to the Store Submit module from the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).;
 
 Select a binary in the list and press "Send to Store Submit for Play Store" from the top left menu. The package name of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
@@ -99,7 +99,7 @@ The binary sent to Google Play must be production-ready, so you can encounter ce
 
 Either for freeing up space purposes or if you wish to not use the Store Submit module, you can delete your store submit profile. Click on the three dot menu on the profile card:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (207).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/storesubmit-playstore-delete.png' />
 
 #### Delete a Single Store Submit Version
 
@@ -107,7 +107,7 @@ If you want to free up space but you don't want to lose your Store Submit profil
 
 Click on the three dot menu on the version, and click on the Delete Version
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (206).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/storesubmit-playstore-version-delete.png' />
 
 After typing the name, your version will be deleted.
 
