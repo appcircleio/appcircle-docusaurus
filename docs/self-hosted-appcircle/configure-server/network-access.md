@@ -141,9 +141,9 @@ cdn.appcircle.io
 storage.googleapis.com/appcircle-dev-common/self-hosted
 ```
 
-##### If you don't have an image registry like `Harbor`, `Nexus` and want the Appcircle server to access the Appcircle image registry:
+##### If you don't have a proxy registry like `Harbor` or `Nexus`, and want to use container images directly from Appcircle:
 
-- If you have your own image registry and want to mirror or proxy the Appcircle container images, then your Appcircle server doesn't need to access the origin container image registry directly.
+- If you have your own proxy registry and want to mirror the Appcircle container images, then your Appcircle server doesn't need to access the origin container image registry directly.
 
 - If you don't have an image registry, the Appcircle server needs to access this URL.
 
@@ -151,11 +151,11 @@ storage.googleapis.com/appcircle-dev-common/self-hosted
 europe-west1-docker.pkg.dev/appcircle/docker-registry
 ```
 
-##### If you want to install the Appcircle server with offline packages:
+##### If you want to install the Appcircle server using offline packages:
 
-- If you want to install the Appcircle server without an internet connection, a zip package should be downloaded and transferred to the Appcircle server machine.
+- If you want to install the Appcircle server without an internet connection, a `zip` package should be downloaded and transferred to the Appcircle server host.
 
-- This zip package can be downloaded by another machine and transferred to the Appcircle server. If you plan to do that, the Appcircle server doesn't need to access these URLs.
+- This `zip` package can be downloaded from another host and transferred to the actual Appcircle server. If you plan to do that, the Appcircle server doesn't need to access these URLs.
 
 ```access_list
 storage.googleapis.com/appcircle-self-hosted
