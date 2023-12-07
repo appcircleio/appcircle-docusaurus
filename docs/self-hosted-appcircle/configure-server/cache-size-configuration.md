@@ -2,7 +2,7 @@
 title: Cache Size Configuration
 metaTitle: Cache Size Configuration
 metaDescription: Cache Size Configuration
-sidebar_position: 9
+sidebar_position: 11
 ---
 
 Appcircle has a limit for cache sizes that can be pushed or pulled on the build workflows.

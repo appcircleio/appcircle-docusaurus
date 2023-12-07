@@ -2,7 +2,7 @@
 title: LDAP Brute Force
 metaTitle: LDAP Brute Force Settings
 metaDescription: LDAP Brute Force Settings
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 ## Overview
