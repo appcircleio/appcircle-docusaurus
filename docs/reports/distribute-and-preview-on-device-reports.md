@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 ## App Versions Report
 
-This report is accessible from the Distribute module.
+This report is accessible from the Testing Distribution.
 
 App Versions Report contains the list of binaries deployed to a distribution profile in a given time period.
 
@@ -27,7 +27,7 @@ The date and time are displayed in the current timezone.
 
 ## App Sharing Report
 
-This report is accessible from the Distribute module.
+This report is accessible from the Testing Distribution.
 
 App Sharing Report list of app versions sent to the testers in a given time period.
 
