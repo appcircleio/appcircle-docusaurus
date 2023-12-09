@@ -28,7 +28,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The URL format validation used when adding Git provider [instances](../build/adding-a-build-profile/connecting-multiple-instance.md) has been removed for self-hosted environments. <SelfHostedBadge/>
 - The [Testinium](../workflows/common-workflow-steps.md#testinium) workflow component parses result summary and outputs in seperate environment variables. <CloudBadge/> <SelfHostedBadge/>
 - A user-friendly format has been introduced in the [testing distribution](../distribute/create-or-select-a-distribution-profile.md) emails. <CloudBadge/> <SelfHostedBadge/>
-- Brute-force protection and the ability to configure it have been added when logging into the Enterprise App Store and Testing Distribution via the LDAP method in self-hosted use. <SelfHostedBadge/>
+- [Brute-force protection](../self-hosted-appcircle/configure-server/ldap-brutefore.md) and the ability to configure it have been added when logging into the Enterprise App Store and Testing Distribution via the LDAP method in self-hosted use. <SelfHostedBadge/>
 - The caching mechanism used when choosing between Testing Distribution [authentication](../distribute/create-or-select-a-distribution-profile.md#using-authentication-for-distribution) options has been disabled for the sake of quick response. <CloudBadge/> <SelfHostedBadge/>
 - You can no longer add or build Smartface projects to Appcircle. Smartface support has been removed. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle no longer supports purchases via Appsumo, and there is no Appsumo featured license supported on Appcircle. <CloudBadge/>
