@@ -53,11 +53,19 @@ Following these best practices will allow the Appcircle server to effectively fu
 
 ## Configuring the Appcircle Server
 
-We are assuming that you have installed the Appcircle server with version `v3.10.0` or later, and configured the LDAP settings from the UI.
+We are assuming that you have installed the Appcircle server with version `3.10.0` or later and configured the LDAP settings from the UI.
+
+:::caution
+
+LDAP brute-force settings can be configured for only **Testing Distribution** and **Enterprise App Store** modules.
+
+[Appcircle login with LDAP](../configure-server/ldap-settings.md#appcircle-login-with-ldap) is not supported and is out-of-scope for the brute-force settings.
+
+:::
 
 To configure LDAP brute-force settings on the Appcircle server, you can follow the steps below:
 
-- SSH into the Appcircle server.
+- Log in to Appcircle server with SSH or remote connection.
 
 - Go to the `appcircle-server` directory.
 
@@ -65,7 +73,7 @@ To configure LDAP brute-force settings on the Appcircle server, you can follow t
 cd appcircle-server
 ```
 
-- Edit the `global.yaml` of your project.
+- Edit the `global.yaml` file of your project.
 
 :::info
 
@@ -82,15 +90,20 @@ ls -l ./projects
 :::
 
 ```bash
-vi projects/spacetech/global.yaml
+vi ./projects/spacetech/global.yaml
 ```
 
-- Find the `keycloak` entry and add or edit the missing `bruteForce` key to it. For example;
+- Find the `keycloak` entry and add or edit the missing `bruteForce` key to it.
+
+For the Testing Distribution module, you must use the `distribution` section.
+
+For the Enterprise App Store module, you must use the `store` section.
+
+See the example configuration below:
 
 ```yaml
 keycloak:
-  initialUsername: admin@spacetech.local
-  initialPassword: SuperSecretPassword1234%!
+  initialUsername: admin@example.com
   enabledRegistration: true
   bruteForce:
     distribution:
@@ -103,32 +116,34 @@ keycloak:
 
 :::info
 
-`maxFailureCount`: This variable represents the needed count of successive failed attempts to block user.
-
-`maxLockDuration`: This variable expresses the time in seconds required to unblock the user.
+- `maxFailureCount`: The needed count of successive failed attempts to block user.
+- `maxLockDuration`: The time in seconds required to unblock the user.
 
 :::
 
-- Export the new variables.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" export
-```
-
-- Stop the Appcircle server.
+- Shutdown Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
 ```
 
-- Start the Appcircle server with new brute-force variables.
+- Apply configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Boot Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-- Check the health of the services.
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
 ```
+
+:::
