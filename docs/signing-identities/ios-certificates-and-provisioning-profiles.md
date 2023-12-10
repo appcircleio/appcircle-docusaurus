@@ -6,7 +6,6 @@ sidebar_position: 1
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # iOS Certificates & Provisioning Profiles
@@ -19,7 +18,7 @@ You need to have your iOS Certificates and Provisioning Profiles ready to be abl
 
 For app builds, the signing identities are not mandatory. (e.g. you can use unsigned apps to run on the simulator or for use on third party platforms that resign your app such as AWS Device Farm)
 
-However, unsigned binaries cannot be installed on actual devices; therefore they cannot be used in the Appcircle Distribute module.
+However, unsigned binaries cannot be installed on actual devices; therefore they cannot be used in the Appcircle Testing Distribution.
 
 :::
 
@@ -63,13 +62,13 @@ Please note that every time you add a new device, you have to regenerate the pro
 
 For more information on getting the UDID and registering it, please refer to the following Apple Developer guide. This guide walks you through all the steps necessary to get a device assigned to your Apple Developer account: [https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices);
 
-You can use the Appcircle Distribute module to deploy apps built with an ad hoc profile. (If the receiving device is registered, of course.)
+You can use the Appcircle Testing Distribution to deploy apps built with an ad hoc profile. (If the receiving device is registered, of course.)
 
 **3. App Store:** Used for submitting applications to the Apple App Store.
 
 App Store profiles allow you to build store-ready versions of your app to be submitted to the App Store or to TestFlight. You can use the Appcircle Store Submit module to upload apps signed with an App Store profile to App Store Connect.
 
-You cannot use the Appcircle Distribute module to deploy apps built with an App Store profile. (You can still share the binary but it cannot be installed on the target device.) The only valid target is for the apps signed with this profile is App Store Connect.
+You cannot use the Appcircle Testing Distribution to deploy apps built with an App Store profile. (You can still share the binary but it cannot be installed on the target device.) The only valid target is for the apps signed with this profile is App Store Connect.
 
 **4. Enterprise (In-House):** Used for in-house application distribution for the enterprises enrolled in the Apple Developer Enterprise Program.
 
@@ -79,9 +78,9 @@ The user will only be displayed a trust warning for the first time they are runn
 
 There are certain limitations that are mandated by the Apple Developer Enterprise program agreement such as the apps can only be used for work purposes by the actual employees of the enterprise, so it's not a free-for-all certificate to bypass the App Store processes. Apple reserves the right to revoke your certificate at any time in case of a violation.
 
-You can use the Appcircle Distribute module or the Enterprise App Store module to deploy apps built with an enterprise profile to any device.
+You can use the Appcircle Testing Distribution or the Enterprise App Store module to deploy apps built with an enterprise profile to any device.
 
-There is no need for device registration, but Apple requires the binary to be protected and not open for public download, so you can use the enrollment feature of the Appcircle Distribute module to protect the app distribution.
+There is no need for device registration, but Apple requires the binary to be protected and not open for public download, so you can use the enrollment feature of the Appcircle Testing Distribution to protect the app distribution.
 
 ## Using the Appcircle Signing Identities Module for iOS
 
@@ -95,11 +94,11 @@ There is no need for device registration, but Apple requires the binary to be pr
 
 When you go to add a new Provisioning Profile, you'll see the option **Get Provisioning Profiles from App Store Connect**. Select it to see the list of identities fetched from Apple.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/download-provisioning.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-provision-app-store.png" />
 
 You can select to download the provisioning profile from the list. **If you don't want Appcircle to keep the provisioning profile**, you can make our build agents to keep a reference. This way, our agents will fetch the profiles** before every build and dismiss them **when the build is finalized.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/provisioning-list.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-provision-profile-allow-download.png" />
 
 After saving, you can **skip to step 3**.
 
@@ -199,7 +198,7 @@ Automatic signing allows you to sign your application without uploading any prov
 - Both Developer and Distribution certificates must be added to Appcircle.
 - App Store Connect Key must be added to Appcircle. 
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/auto-codesign.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-configuration-auto-code-sign.png" />
 
 You must also select distribution type from the dropdown menu. If you're uploading your app to App Store or TestFlight, you should select **App Store**. If you're uploading your app to Adhoc or Appcircle's distribution module, you should select **Adhoc**. Please check [Apple's documentation](https://developer.apple.com/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles) for more details.
 

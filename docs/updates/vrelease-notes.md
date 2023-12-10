@@ -45,7 +45,7 @@ This release includes the last mile changes in the platform.
 ### :muscle:Improvement
 
 * Enriched Slack message format
-* AAB file support in the Distribute module for Google Play uploads;
+* AAB file support in the Testing Distribution for Google Play uploads;
 
 ### 🐞 Fixed
 
@@ -313,7 +313,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 * When a build is canceled, related working agents are killed immediately to improve performance.
 * Ruby version is updated to 2.6.5 on iOS virtual machines and 2.5.5 for Android virtual machines.
-* New parameters are added to iOS native & Smartface specific Build, Sign and Simulator workflow steps.
+* New parameters are added to iOS native specific Build, Sign and Simulator workflow steps.
 * Exit codes are now shown on the log window.
 
 ### :lady\_beetle: Fixed

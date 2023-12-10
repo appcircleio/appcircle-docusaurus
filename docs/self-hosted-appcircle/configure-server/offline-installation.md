@@ -17,7 +17,7 @@ Here you will find how to use the Appcircle server's offline container images.
 
 ### Software Requirements
 
-To use the `download` or `load` commands, the self-hosted Appcircle server version must be `3.8.1` or later.
+To use the `download` or `load` commands, the self-hosted Appcircle server version must be `3.9.0` or later.
 
 You need some tools for offline installation or upgrade. These are already installed if you followed one of the installation pages (Docker or Podman) and ran the command below.
 

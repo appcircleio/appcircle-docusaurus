@@ -19,7 +19,7 @@ Appcircle currently doesn't publish release notes to TestFlight. Since TestFligh
 
 Release Notes component should be in your workflow to create rich release notes. It is suggested that it should be just before the Export Build Artifacts step so that you can have access to the all build artifacts such as git commit message, test results or build logs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/report-component.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-edit.png' />
 
 ## Example Release Notes
 
