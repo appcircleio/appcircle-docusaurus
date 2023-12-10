@@ -2,7 +2,7 @@
 title: LDAP Settings
 metaTitle: LDAP Lookup Decision Settings
 metaDescription: LDAP Lookup Decision Settings
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

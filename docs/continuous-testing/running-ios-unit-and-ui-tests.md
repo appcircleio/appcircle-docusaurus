@@ -6,7 +6,6 @@ sidebar_position: 1
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
-import NarrowImage from '@site/src/components/NarrowImage';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Running iOS Unit & UI Tests
@@ -62,11 +61,11 @@ Optionally, you can use 3rd party tools like :link: [**XCParse**](https://github
 
 If you add [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-report-overview.png' />
 
 You must add this component **after** the `Xcodebuild for Unit and UI Tests` so that it can parse test results. Your workflow should look like the below.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-overview.png" />
 
 [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. To show coverage results, you must enable **Code Coverage** in Xcode's scheme settings. 
 
@@ -81,14 +80,14 @@ There's one important setting that you should change. If any workflow steps fail
 
 :::
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-report-steps-on.png" />
 
 ### Showing Test Reports
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-result-overview.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-ui-detail.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-coverage.png' />
