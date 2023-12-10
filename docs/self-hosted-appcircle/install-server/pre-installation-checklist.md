@@ -5,93 +5,102 @@ metaDescription: Pre-Installation Checklist
 sidebar_position: 2
 ---
 
-## Overview
-
-This page provides a checklist to be followed before installing the Self-Hosted Appcircle.
-
-It includes checks for the operating system, CPU core and architecture, RAM, disk, swappiness settings, DNS settings, SSL certificate, SMTP settings, Git server configuration, and necessary firewall rules.
+This page provides a checklist to be followed before installing the self-hosted Appcircle.
 
 Please ensure all the checks are completed for a smooth installation process.
 
-## Self-Hosted Appcircle Pre-Installation Checklist
+## Server Checklist
 
 ### Check the Operating System
 
-- If you are using RHEL, it should be RHEL 8 or later.
+- [ ] If you are using RHEL, it should be **RHEL 8 or later**.
 
 ```bash
 cat /etc/redhat-release
 ```
 
-- If you are using Ubuntu, it should be Ubuntu 20.04 or later.
+- [ ] If you are using Ubuntu, it should be **Ubuntu 20.04 or later**.
 
 ```bash
 cat /etc/os-release
 ```
 
-- If you are using Debian, it should be Debian 11 or later.
+- [ ] If you are using Debian, it should be **Debian 11 or later**.
 
 ```bash
 cat /etc/os-release
 ```
 
-- If you are using CentOS, it should be CentOS 8 or later.
+- [ ] If you are using CentOS, it should be **CentOS 8 or later**.
 
 ```bash
 cat /etc/centos-release
 ```
 
-### Check the CPU Core
+### Check the CPU Cores
 
-- Minimum CPU core count should be 8 cores.
-- Recommended and expected CPU core count is 32 cores.
+- [ ] Minimum CPU core count should be **8 cores**.
+  - For enterprise installations and production environments, **16 or 32 CPU cores** are recommended.
 
 ```bash
 nproc --all
 ```
 
-### Check the CPU Architecture.
+### Check the CPU Architecture
 
-- The CPU architecture must be x86_64.
+- [ ] The CPU architecture must be **x86_64**.
 
 ```bash
 uname -i
 ```
 
-- If the command above doesn't work, you may try the command below.
+If the command above doesn't work, you can try the command below.
 
 ```bash
 arch
 ```
 
-### Check the RAM.
+### Check the RAM Size
 
-- Minimum RAM size should be 16GB.
-- Recommended and expected RAM size is 64GB.
+- [ ] Minimum RAM size should be **16 GB**.
+  - For enterprise installations and production environments, **32 GB or 64 GB of RAM** is recommended.
 
 ```bash
 free -h
 ```
 
-### Check the Disk.
+### Check the Disk Size
 
-- Minimum disk size should be 500GB.
-- Recommended and expected disk size is 1TB.
-- SSD is a better and recommended choice for faster disk operations.
+- [ ] Minimum disk size should be **500 GB**.
+  - For enterprise installations and production environments, **1 TB of disk space** is recommended.
 
 ```bash
 df -h
 ```
 
-### Check the Swappiness Settings.
+:::info
+Keep in mind that **SSDs** are a better and **recommended** choice for faster disk operations.
+:::
 
-- The swappiness configuration should be 10.
+### Check the Swap Size
+
+- [ ] The swap size should be minimum half of the RAM size.
+
+```bash
+free -h
+```
+
+If you don't have any swap space or it's insufficient, you can find the configuration details [here](docker.md#swap).
+
+### Check the Swappiness
+
+- [ ] The swappiness configuration should be **10**.
 
 ```bash
 sudo cat /proc/sys/vm/swappiness
 ```
 
-- If the output is not 10, you can see the details [here](docker.md#swappiness).
+If the output is not 10, you can find the configuration details [here](docker.md#swappiness).
 
 ### Configure the DNS Settings.
 
