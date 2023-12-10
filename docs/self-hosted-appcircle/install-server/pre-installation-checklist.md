@@ -202,4 +202,4 @@ sudo cat /proc/sys/vm/swappiness
     - to: your git server (Azure, GitHub, ...)
     - port: 22
 
-- [ ] You can get detailed URLs from [Network Access Page For an Appcircle Runner](../configure-server/network-access.md#external-resources-access-when-running-build-pipeline)
+- [ ] You can get detailed URLs from [Network Access Page For an Appcircle Runner](../configure-server/network-access.md#appcircle-runner-runtime)
