@@ -7,8 +7,6 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Overview
-
 With default installation, self-hosted Appcircle comes with the connection options below:
 
 - Bitbucket
@@ -45,75 +43,7 @@ You can see an example project configuration from [here](../install-server/docke
 
 :::
 
-### Connect via SSH
-
-To disable "Connect via SSH" git provider option, add below configuration to `global.yaml`.
-
-```yaml
-build:
-  oauths:
-    ssh:
-      enabled: false
-```
-
-If you want to re-enable "Connect via SSH" again, you can set the `enabled` to `true`.
-
-For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) page.
-
-To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
-
-### Connect via URL
-
-To disable "Connect via URL" git provider option, add below configuration to `global.yaml`.
-
-```yaml
-build:
-  oauths:
-    publicRepository:
-      enabled: false
-```
-
-If you want to re-enable "Connect via URL" again, you can set the `enabled` to `true`.
-
-For more details about "Connect via URL" usage, see related docs in the [Connect via URL](../../build/adding-a-build-profile/connecting-to-public-repository.md) page.
-
-To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
-
-### Connect to Azure Devops Server
-
-To disable "Azure" git provider option, add below configuration to `global.yaml`.
-
-```yaml
-build:
-  oauths:
-    azureDevopsServer:
-      enabled: false
-```
-
-If you want to re-enable "Azure" again, you can set the `enabled` to `true`.
-
-For more details about "Azure" usage, see related docs in the [Connecting to Azure DevOps](../../build/adding-a-build-profile/connecting-to-azure.md) page.
-
-To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
-
-### Connect to Gitlab
-
-To disable "Gitlab" git provider option, add below configuration to `global.yaml`.
-
-```yaml
-build:
-  oauths:
-    gitlabSelfHosted:
-      enabled: false
-```
-
-If you want to re-enable "Gitlab" again, you can set the `enabled` to `true`.
-
-For more details about "Gitlab" usage, see related docs in the [Connecting to GitLab](../../build/adding-a-build-profile/connecting-to-gitlab.md) page.
-
-To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
-
-### Connect to Bitbucket Server
+## Connect to Bitbucket Server
 
 To disable "Bitbucket" git provider option, add below configuration to `global.yaml`.
 
@@ -130,7 +60,75 @@ For more details about "Bitbucket" usage, see related docs in the [Connecting to
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
-### Applying Git Provider Changes
+## Connect to Azure Devops Server
+
+To disable "Azure" git provider option, add below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    azureDevopsServer:
+      enabled: false
+```
+
+If you want to re-enable "Azure" again, you can set the `enabled` to `true`.
+
+For more details about "Azure" usage, see related docs in the [Connecting to Azure DevOps](../../build/adding-a-build-profile/connecting-to-azure.md) page.
+
+To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+
+## Connect to Self-Managed GitLab
+
+To disable "Gitlab" git provider option, add below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    gitlabSelfHosted:
+      enabled: false
+```
+
+If you want to re-enable "Gitlab" again, you can set the `enabled` to `true`.
+
+For more details about "Gitlab" usage, see related docs in the [Connecting to GitLab](../../build/adding-a-build-profile/connecting-to-gitlab.md) page.
+
+To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+
+## Connect via SSH
+
+To disable "Connect via SSH" git provider option, add below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    ssh:
+      enabled: false
+```
+
+If you want to re-enable "Connect via SSH" again, you can set the `enabled` to `true`.
+
+For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) page.
+
+To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+
+## Connect via URL
+
+To disable "Connect via URL" git provider option, add below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    publicRepository:
+      enabled: false
+```
+
+If you want to re-enable "Connect via URL" again, you can set the `enabled` to `true`.
+
+For more details about "Connect via URL" usage, see related docs in the [Connect via URL](../../build/adding-a-build-profile/connecting-to-public-repository.md) page.
+
+To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+
+## Applying Git Provider Changes
 
 You can add or remove git providers at [installation](../install-server/docker.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
 
