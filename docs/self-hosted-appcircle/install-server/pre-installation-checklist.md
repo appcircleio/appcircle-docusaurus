@@ -102,31 +102,30 @@ sudo cat /proc/sys/vm/swappiness
 
 If the output is not 10, you can find the configuration details [here](docker.md#swappiness).
 
-### Configure the DNS Settings.
+### Configure the DNS Settings
 
-- Create a subdomain under your company's primary domain name.
+- [ ] Create a subdomain under your company's primary domain name.
 
-- For example, if your company is "Spacetech" with the domain `spacetech.com`, you could create a subdomain like `appcircle.spacetech.com` or `appcircle-test.spacetech.com` to assign to the Appcircle server.
+For example, if your company is "Spacetech" with the domain `spacetech.com`, you can create a subdomain like `appcircle.spacetech.com` or `appcircle-test.spacetech.com` to assign to the Appcircle server.
 
-- This domain (`appcircle.spacetech.com`) should have 7 subdomains which should resolve to the ip address of the Appcircle server.
-  - api
-  - auth
-  - dist
-  - hook
-  - my
-  - resource
-  - store
-- [ ] Create the 7 domain name entries on your domain server.
-  - [ ] api.appcircle.spacetech.com
-  - [ ] auth.appcircle.spacetech.com
-  - [ ] dist.appcircle.spacetech.com
-  - [ ] hook.appcircle.spacetech.com
-  - [ ] my.appcircle.spacetech.com
-  - [ ] resource.appcircle.spacetech.com
-  - [ ] store.appcircle.spacetech.com
-- [ ] All of these subdomains should resolve to the same server IP address which is the Appcircle server.
+It will be the **main domain** for the self-hosted Appcircle server.
 
-- You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
+The main domain (`appcircle.spacetech.com`, for instance.) should have seven subdomains which should resolve to the IP address of the Appcircle server.
+
+These subdomains are **api**, **auth**, **dist**, **hook**, **my**, **resource** and **store**.
+
+- [ ] Create these seven domain name entries on your DNS.
+  - [ ] `api.appcircle.spacetech.com`
+  - [ ] `auth.appcircle.spacetech.com`
+  - [ ] `dist.appcircle.spacetech.com`
+  - [ ] `hook.appcircle.spacetech.com`
+  - [ ] `my.appcircle.spacetech.com`
+  - [ ] `resource.appcircle.spacetech.com`
+  - [ ] `store.appcircle.spacetech.com`
+
+- [ ] All of these subdomains should resolve to the same server IP address, which is the Appcircle server.
+
+You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
 
 ### Obtain an SSL Certificate
 
