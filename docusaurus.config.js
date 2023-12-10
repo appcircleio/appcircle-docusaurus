@@ -149,9 +149,9 @@ const config = {
         additionalLanguages: ['ruby', 'groovy', 'java','kotlin'],
       },
       algolia: {
-        apiKey: '0664a9795ced4a4b187cd8b010ec9f5d',
+        apiKey: 'b56a5dc4e52ec9e97ad93981cc668c4a',
         indexName: 'appcircle',
-        appId: 'MLYVQZS3BY',
+        appId: '4U9FKQJ034',
         contextualSearch: false,
       },
       imageZoom: {

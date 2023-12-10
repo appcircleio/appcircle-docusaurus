@@ -7,7 +7,6 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import NarrowImage from '@site/src/components/NarrowImage';
 
 # Customize Your Enterprise Store
 
@@ -16,7 +15,7 @@ import NarrowImage from '@site/src/components/NarrowImage';
 
 You can customize the appearance of your store by going to Customize section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-customize.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-customize-overview.png' />
 
 :::caution
 Customizing and setting up your store can only be done through the main organization.
@@ -48,7 +47,7 @@ The below screenshot shows an example configuration screen from Cloudflare.
 
 After creating the DNS settings, type your custom domain name, select your certificate, and update the configuration. DNS changes can take time to propagate. You may have to wait a few minutes or hours to see the redirect.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-customdomain.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-settings-custom-domain.png" />
 
 ## Authentication
 
@@ -64,7 +63,7 @@ SSO and LDAP login is only available for  Enterprise accounts. Only the Organiza
 
 You can set a different username and password for live and beta apps. The usernames of the live and beta section must be different. 
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/entstore-settings.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-settings.png" />
 
 ### SSO Login
 

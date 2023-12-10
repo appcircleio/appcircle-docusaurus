@@ -32,7 +32,7 @@ However, if you use another Authenticator service and you can't scan the QR code
 
 After the code is successfully entered, assign it a friendly name and click on **Save.**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (219).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-authenticator.png' />
 
 The newly created OTP will be under effect the next time you login. Your current login session will not be terminated(you will not be logged out).
 

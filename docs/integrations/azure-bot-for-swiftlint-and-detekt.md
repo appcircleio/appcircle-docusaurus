@@ -20,19 +20,19 @@ First, to generate the report output, the [SwiftLint](../workflows/ios-specific-
 
 To use the Azure Bot, we add the 'Azure DevOps Bot for SwiftLint Report' step right after running SwiftLint.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-ios-wf.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-ios-swiftlint.png' />
 
 #### Step 2
 
 You will find the variables that need to be specified inside the bot component. These can be provided either by adding them to environment variables or by directly entering values within the component.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-ios-wf-details.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-ios-swiftlint-details.png' />
 
 :::caution
-Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables/why-to-use-environment-variables-and-secrets.md) and encrypting variables like tokens that could pose a security risk.
+Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables) and encrypting variables like tokens that could pose a security risk.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-env-var-full.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-swiftlint-env-var.png' />
 
 #### Step 3
 
@@ -70,16 +70,16 @@ The first step for Android is to add the [Detekt](../integrations/../workflows/a
 Please make sure to run the Azure Bot component after Detekt. Otherwise, the **Azure DevOps Bot For Detekt Component** won't function.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-android-wf-step.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-android-detekt-workflow.png' />
 
 #### Step 2
 
 You will find the variables that need to be specified within the bot component. You can provide these variables either by adding them to environment variables or by directly entering their values within the component.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-android-wf-details.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-android-detekt-workflow-details.png' />
 
 :::caution
-Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables/why-to-use-environment-variables-and-secrets.md) and encrypting variables like tokens that could pose a security risk.
+Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables) and encrypting variables like tokens that could pose a security risk.
 :::
 
 #### Step 3
