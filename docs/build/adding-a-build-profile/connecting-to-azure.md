@@ -61,25 +61,40 @@ Fill in the relevant information about your Azure DevOps Server. If you are not 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azure-con-5.png' />
 
-:::info
-Appcircle allows multiple instance connections. Here, you can give the connection a name so you can group the connections together.
-:::
+- **Connection Name**: Appcircle allows multiple instance connections. Here, you can give the connection a name so you can group the connections together.
+  - For example: `InternalAzure`
 
-:::info
-For the server URL variable, it should use your URL without a path.
+- **Azure DevOps Server URL**: Use the server URL without a path. If the server has a custom port, it should be appended to the URL using `:` in front of the port.
+  - For example: `https://azure.spacetech.com`
 
-For example: https://azure.spacetech.com
-:::
+- **Owner Username**: Use the collection name on the Azure Devops Server. You can see collections on the left-hand side when you open your Azure Devops Server home page.
+  - For example: `DefaultCollection`
 
-:::info
-For the owner name variable, it should use your collection name on self-hosted.
+- **Personal Access Token**: Use the personal access token that you created earlier and that has enough permissions.
+  - For example: `54rdrkce6wa4d22kf75lhmq4hosgx7iy7h76cc62y77oguombnnq`
+
+:::caution
+
+### Azure Devops Server That Is Upgraded From a TFS Server
+
+If your Azure Devops Server is upgraded from a TFS server, you should identify your Azure Devops Server URL.
+
+- Copy a repository clone URL for any git repository.
+- Check if your URL has an unexpected **path** in the URL.
+  - For example: `https://azure.spacetech.com/tfs/DefaultCollection/MOBILE_IOS/_git/wallet`
+- If there is a path between your domain (`azure.spacetech.com`) and your collection name (`DefaultCollection`), you must give that path (`tfs`) as a prefix in the "Owner Username".
+  - For example, the fields should have values like below.
+    - Azure DevOps Server URL: `https://azure.spacetech.com`
+    - Owner Username: `tfs/DefaultCollection`
+    - Personal Access Token: `54rdrkce6wa4d22kf75lhmq4hosgx7iy7h76cc62y77oguombnnq`
+
 :::
 
 :::caution
 
 ### Connection Notice
 
-For Appcircle to connect to the Azure DevOps Server Instance, your connection must be reachable over the internet.
+For Appcircle to connect to the Azure DevOps Server instance, your connection must be reachable over the network.
 
 :::
 
