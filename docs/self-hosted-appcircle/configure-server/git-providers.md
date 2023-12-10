@@ -15,7 +15,7 @@ With default installation, self-hosted Appcircle comes with the connection optio
 - Connect via SSH
 - Connect via URL
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers-v2.png' />
 
 But you're not limited with these options. You can configure the git providers and use them within your self-hosted Appcircle server, same as in cloud.
 
@@ -185,4 +185,4 @@ Following steps are using example project as project naming, which was told ther
 
 On complete, refresh your browser and login to Appcircle with your account. You should see that "Connect via SSH" and "Connect via URL" option is disabled on the connection page. :tada:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-ssh-url-disabled.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-ssh-url-disabled-v2.png' />
