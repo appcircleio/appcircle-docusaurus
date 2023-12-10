@@ -45,7 +45,7 @@ You can see an example project configuration from [here](../install-server/docke
 
 ## Connect to Bitbucket Server
 
-To disable "Bitbucket" git provider option, add below configuration to `global.yaml`.
+To disable the "Bitbucket" option, add the below configuration to `global.yaml`.
 
 ```yaml
 build:
@@ -62,7 +62,7 @@ To apply the changes, please follow [Applying Git Provider Changes](#applying-gi
 
 ## Connect to Azure Devops Server
 
-To disable "Azure" git provider option, add below configuration to `global.yaml`.
+To disable the "Azure" option, add the below configuration to `global.yaml`.
 
 ```yaml
 build:
@@ -79,7 +79,7 @@ To apply the changes, please follow [Applying Git Provider Changes](#applying-gi
 
 ## Connect to Self-Managed GitLab
 
-To disable "Gitlab" git provider option, add below configuration to `global.yaml`.
+To disable the "GitLab" option, add the below configuration to `global.yaml`.
 
 ```yaml
 build:
@@ -88,15 +88,15 @@ build:
       enabled: false
 ```
 
-If you want to re-enable "Gitlab" again, you can set the `enabled` to `true`.
+If you want to re-enable "GitLab" again, you can set the `enabled` to `true`.
 
-For more details about "Gitlab" usage, see related docs in the [Connecting to GitLab](../../build/adding-a-build-profile/connecting-to-gitlab.md) page.
+For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](../../build/adding-a-build-profile/connecting-to-gitlab.md) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
 ## Connect via SSH
 
-To disable "Connect via SSH" git provider option, add below configuration to `global.yaml`.
+To disable the "Connect via SSH" option, add the below configuration to `global.yaml`.
 
 ```yaml
 build:
@@ -113,7 +113,7 @@ To apply the changes, please follow [Applying Git Provider Changes](#applying-gi
 
 ## Connect via URL
 
-To disable "Connect via URL" git provider option, add below configuration to `global.yaml`.
+To disable the "Connect via URL" option, add the below configuration to `global.yaml`.
 
 ```yaml
 build:
