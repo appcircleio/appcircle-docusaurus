@@ -123,13 +123,13 @@ These subdomains are **api**, **auth**, **dist**, **hook**, **my**, **resource**
   - [ ] `resource.appcircle.spacetech.com`
   - [ ] `store.appcircle.spacetech.com`
 
-- [ ] All of these subdomains should resolve to the same server IP address, which is the Appcircle server.
+- [ ] All of these domain names should resolve to the same server IP address, which is the Appcircle server.
 
 You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
 
 ### Obtain an SSL Certificate
 
-- [ ] You should create only one SSL certificate that covers all 7 domain names which you have seen in the [Configure DNS](#configure-the-dns-settings) section above.
+- [ ] You should create only one SSL certificate that covers all seven domain names which you have seen in the [Configure DNS](#configure-the-dns-settings) section above.
 - [ ] The SSL certificate should be in PEM format.
 - [ ] The SSL certificate private key must not have a passphrase.
 - [ ] Obtain the root CA certificate of your company.
@@ -141,73 +141,61 @@ You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
 - [ ] Obtain the port number of the SMTP server.
 - [ ] Determine if the SMTP server is using `SSL`.
 - [ ] Determine if the SMTP server is using `STARTTLS`.
-- Note: `SSL` and `STARTTLS` are **not** the same thing.
+  - :warning: `SSL` and `STARTTLS` are **not** the same thing.
 - If the SMTP server requires authentication:
   - [ ] Create a user for Appcircle on the SMTP server.
   - [ ] Obtain the password of the Appcircle user on the SMTP server.
-- [ ] Contact the System Admin to get required permissions to send email with the Appcircle user via the SMTP server.
-- [ ] Create a firewall rule from the Appcircle server to the SMTP server.
+- [ ] Contact the system admin to get required permissions to send email with the Appcircle user via the SMTP server.
+- [ ] Create a firewall rule (or permission) from the Appcircle server to the SMTP server.
 
 ### Configure the Git Server
 
 - [ ] Import Appcircle Android and/or iOS sample repositories on your local git server.
   - [ ] [Android Sample Repo](https://github.com/appcircleio/appcircle-sample-android)
   - [ ] [iOS Sample Repo](https://github.com/appcircleio/appcircle-sample-ios)
-- [ ] Create an Appcircle user on the git server (Azure DevOps, GitLab, GitHub, Bitbucket).
+- [ ] Create an Appcircle user on the git server (GitLab, Azure DevOps, Bitbucket).
 - [ ] Give the required permissions to the Appcircle user to clone and edit the repositories.
-- [ ] If you are using GitLab, Azure DevOps Server, Bitbucket:
+- If you are using GitLab, Azure DevOps, Bitbucket:
   - [ ] Create an Appcircle user. Give it permissions for the repositories.
   - [ ] Create a personal access token that has sufficient permissions.
-  - For details like token permissions, check the [Connect Your Repository Page](../../build/adding-a-build-profile#connect-your-repository).
-- [ ] If you are using any other git server:
+    - For details like token permissions, check the [connect your repository](../../build/adding-a-build-profile#connect-your-repository) section.
+- If you are using any other git server:
   - [ ] Create a public-private SSH key pair.
   - [ ] Configure your Appcircle git user's public SSH keys and upload the public SSH key you created.
-  - For details, you can check the [Connect via SSH Page](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md).
-  - [ ] Create a firewall rule from the Appcircle server to the git server.
+    - For details, you can check the [connect via SSH](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) section.
+- [ ] Create a firewall rule (or permission) from the Appcircle server to the git server.
 
-### Create Necessary Firewall Rules for Appcircle Server to Install Necessary Dependencies
+### Network Access for Installation
 
-- [ ] You need a computer which has a web browser and has access to the Appcircle server.
-  - You will use the Appcircle from a web browser.
-  - [ ] Create a firewall rule should be from your computer to the Appcircle server machine.
-    - from: A computer with a web browser
-    - to: The Appcircle server
-    - port: 80 & 443
-- [ ] You need to create firewall rules from the Appcircle server to your git repositories:
-  - [ ] If you are using GitLab, Azure DevOps Server or Bitbucket, the firewall rule should be:
-    - from: The Appcircle server
-    - to: The GitLab, Azure DevOps Server or Bitbucket server
-    - port: 80 & 443
-    - test command: curl -v telnet://gitserver.spacetech.com:443
-  - [ ] If you are using any other git repos:
-    - from: Appcircle server
-    - to: The git server (GitHub, ...)
-    - port: 22
-    - test command: curl -v telnet://gitserver.spacetech.com:22
-- [ ] You need to create firewall rules from the Appcircle server to your SMTP server:
-  - from: The Appcircle server
-  - to: The SMTP server
-  - port: The SMTP server's port (25 / 465 / 587)
-  - test command: curl -v telnet://smtp.spacetech.com:587
-- [ ] You must obtain the rest of detailed URLs from [Network Access Page For an Appcircle Server](../configure-server/network-access.md)
-  - You might install the Appcircle server on RHEL or Ubuntu with Docker or Podman.
-  - See titles for your scenario and get the URL from there.
+According to the selected Linux distribution and installation method, you need to configure firewall rules (or permissions) for the Appcircle server. All required domains that are used for installation are detailed in the [network access](../configure-server/network-access.md) section.
 
-### Create Necessary Firewall Rules for Appcircle Runner to Build Mobile Applications
+- [ ] Review the [network access](../configure-server/network-access.md#appcircle-server-install-and-update) section and be sure that the listed domains are reachable from the Appcircle server.
 
-- [ ] The Appcircle Runner should be able to access the Appcircle server. Create a firewall rule:
-  - from: Appcircle runner
-  - to: Appcircle server
-  - port: 443
-- [ ] The Appcircle Runner should be able to access the git server. Create a firewall rule:
+## Runner Checklist
 
-  - [ ] If you are using GitLab or Bitbucket, the firewall rule should be:
-    - from: Appcircle runner
-    - to: your GitLab or Bitbucket server
-    - port: 443
-  - [ ] If you are using any other git repos:
-    - from: Appcircle runner
-    - to: your git server (Azure, GitHub, ...)
-    - port: 22
+### Network Access for Installation
 
-- [ ] You can get detailed URLs from [Network Access Page For an Appcircle Runner](../configure-server/network-access.md#appcircle-runner-runtime)
+The Appcircle runner should be able to access the Appcircle server.
+
+- [ ] Create a firewall rule (or permission) from the Appcircle runner to the Appcircle server.
+
+:::info
+Port depends on the configured `external.scheme` ("http" or "https") in the `global.yaml`.
+
+It's `443` by default.
+:::
+
+The Appcircle runner should be able to access to the git provider
+
+- [ ] Create a firewall rule (or permission) from the Appcircle runner to the git server.
+
+:::info
+Port depends on the selected connection method. Default values can be:
+
+- HTTP(s): `80` or `443`
+- SSH: `22`
+
+If your git server has a custom port for git servcies, then you should use that port.
+:::
+
+- [ ] Review the [network access](../configure-server/network-access.md#appcircle-runner-install-as-ready-to-use-macos-virtual-machine) section and be sure that the listed domains are reachable from the Appcircle runner.
