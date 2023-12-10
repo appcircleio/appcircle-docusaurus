@@ -143,6 +143,16 @@ build:
       enabled: false
 ```
 
+:::caution
+
+You should have only one `build.oauths` section in your `global.yaml` file.
+
+Keep in mind that if you have multiple `build.oauths` sections in `global.yaml`, then the last one will be used in the Appcircle server runtime.
+
+Be careful while configuring different connection options at the same time. Union them under one `build.oauths` section in the `global.yaml`.
+
+:::
+
 If we **do** this at installation time then there is no extra step to take. These options will be disabled on first boot without any extra effort.
 
 If we **don't do** the configuration at installation, then after editing `global.yaml`, we need to apply below steps to activate changes.
