@@ -9,13 +9,13 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Overview
 
-With default installation, self-hosted Appcircle comes with the git providers below:
+With default installation, self-hosted Appcircle comes with the connection options below:
 
-- Self-hosted Bitbucket
-- Self-hosted GitLab
-- Self-hosted Azure Devops
-- Connect via URL
+- Bitbucket
+- Azure
+- GitLab
 - Connect via SSH
+- Connect via URL
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers.png' />
 
