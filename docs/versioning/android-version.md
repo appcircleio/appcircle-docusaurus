@@ -7,17 +7,19 @@ sidebar_position: 1
 
 import ContentRef from '@site/src/components/ContentRef';
 import VersionPlayground from '@site/src/components/VersionPlayground';
-import NarrowImage from '@site/src/components/NarrowImage';
+import Screenshot from '@site/src/components/Screenshot';
 
 ## Enabling Version Management
 
 In order to manage version code and version name with Appcircle, two requirements must be met:
 
-- The build's Version Management toggle must be turned on and required input values must be entered
-- **Increment Build and Version Number** component 1.0.* or higher must be in your workflow
+- The build's Version Management toggle must be turned on and required input values must be entered.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/android-versioning1.png" />
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/android-versioning2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/versioning-android-configuration.png" />
+
+- **Increment Build and Version Number** component `1.0.*` or higher must be in your workflow.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/versioning-android-workflow.png" />
 
 The Versioning tab manages the input values of the component. It is not recommended to change the values of the component with the workflow editor. Instead, it would be best if you always used the Versioning UI to manage the settings.
 

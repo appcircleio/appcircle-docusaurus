@@ -2,7 +2,7 @@
 title: Docker
 metaTitle: Docker
 metaDescription: Appcircle Server on Docker
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

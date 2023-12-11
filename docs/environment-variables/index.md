@@ -17,4 +17,4 @@ Environment variables have a key and a secret value that can be defined manually
 
 You can create groups of environment variables and import these groups to your builds to customize your builds with additional parameters.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (172).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />

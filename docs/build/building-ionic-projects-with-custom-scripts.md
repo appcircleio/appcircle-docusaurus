@@ -2,7 +2,7 @@
 title: Building Ionic Projects with Custom Scripts
 metaTitle: Building Ionic Projects with Custom Scripts
 metaDescription: Building Ionic Projects with Custom Scripts
-sidebar_position: 10
+sidebar_position: 9
 ---
 
 # Building Ionic Projects with Custom Scripts
