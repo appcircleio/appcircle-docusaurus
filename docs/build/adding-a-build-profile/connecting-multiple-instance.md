@@ -42,19 +42,23 @@ After the connection, the connected instances will appear on the new repository 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-last-1.png' />
 
-Additionally, when we enter an instance, we can view it here with the name we gave it.
+Additionally, when we click on an instance, we can see it here with the name we gave it.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-new-2.png' />
 
 :::caution
-The instance name for each Git provider must be unique. For example, if you create an instance named "Instance" for Azure DevOps Server, you cannot reconnect an instance named "Instance" for Azure DevOps Server. However, you can connect an instance with that name for GitLab or Bitbucket Server.
+The instance name for each Git provider must be unique.
+
+For example, if you create an instance named "Instance" for Azure DevOps Server, you cannot reconnect an instance named "Instance" for Azure DevOps Server.
+
+However, you can connect an instance with that name for GitLab or Bitbucket Server.
 :::
 
 ### Connection Settings for Multiple Instances
 
-When we connect a repository using PAT (Personal Access Token) on multiple instances, you can use the "Connection Settings" field to view the PAT information and change the PAT information if there is a previously defined connection.
+When we connect a repository using PAT (Personal Access Token) on multiple instances, you can use the "Connection Settings" button to view the PAT information and change the PAT information if there is a previously defined connection.
 
-When we connect a repository using PAT over multiple instances, "User Mail and PAT" information appears in the "Connection Settings" field.
+When we connect a repository using PAT over multiple instances, User Email and PAT list appears in the "Connection Settings".
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-3.png' />
 
