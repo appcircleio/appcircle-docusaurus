@@ -1,7 +1,7 @@
 ---
-title: Using The Connections
-metaTitle: Using The Connections
-metaDescription: Using The Connections
+title: Using the Connections
+metaTitle: Using the Connections
+metaDescription: Using the Connections
 sidebar_position: 11
 ---
 
@@ -9,14 +9,14 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Connections
 
-The Connections page is a feature where we can check and edit the connections of the Git providers we are connected to. You can access this page from the left bar in the Builds module.
+The Connections page is a feature where we can check and edit the connections of the Git providers we are connected to. You can access this page from the left bar in the Build module.
 
 On this page, you can view **OAuth** and **PAT** (Personal Access Token) connections.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-all-main.png' />
 
 :::info
-If you have not previously linked to a Git provider on Appcircle, i.e., created a profile and linked a repository, no link will appear on this page.
+If you have not previously connected to a Git provider on Appcircle, i.e., created a profile and not connected a repository, you will not see any connection on this page.
 :::
 
 ## Managing OAuth Connections
