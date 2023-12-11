@@ -43,18 +43,20 @@ If we reconnect this profile, not only the related build profile but also all ot
 
 ### Reconnect OAuth Connections
 
-If we want to reconnect to the Git provider, we can use the refresh token button. The refresh token is received when connecting to the Git provider and is used as needed (reconnecting, token expiration).
+If we want to reconnect to the Git provider, we can use the **Refresh Token** button.
+
+The `refresh token` is received while connecting to the Git provider, and it's used when needed, for instance, in reconnection or token expiration cases.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-reconnect.png' />
 
-Refresh reconnects all previously linked and disconnected profiles of the corresponding Git provider in Appcircle. Here again, all affected profiles are shown.
+The refreshing connection action reconnects all previously linked and disconnected build profiles of the corresponding Git provider in Appcircle. Here again, all affected build profiles will be shown.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-reconnect-modal.png' />
 
-After clicking the Refresh Token button, Appcircle will redirect us to the relevant Git provider's page. After giving the necessary permissions there, the connection will be restored.
+When the **Refresh Token** button is clicked, Appcircle redirects to the relevant Git provider's page. After giving the necessary permissions there, the connection will be restored.
 
 :::info
-If the connection to the Git provider is active and the Refresh Token button is clicked, Appcircle will re-establish the connection.
+If the connection to the Git provider is active and the **Refresh Token** button is clicked, Appcircle will re-establish the connection.
 :::
 
 ## Managing PAT Connections
