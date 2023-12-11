@@ -23,20 +23,22 @@ If you have not previously connected to a Git provider on Appcircle, i.e., creat
 
 ### Revoke OAuth Connections
 
-Revoke Token revokes the token from the Git provider on the Appcircle side. On the provider side, the token is still active and available. Appcircle cannot revoke the token from the provider.
+**Revoke Token** revokes the token of the Git provider on the Appcircle side. On the Git provider side, the token is still active and available. Appcircle cannot revoke the token from the provider.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-oauth-revoke.png' />
 
-A revoked Git connection disconnects all profiles connected to the respective provider. For this, Appcircle shows a warning screen. Here you can see all affected profiles.
+A revoked connection disconnects all build profiles connected to the respective Git provider. In this case, Appcircle shows a clear warning message. Here, you can see all the affected profiles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-revoke-modal.png' />
 
-When we cancel a Git provider, the cancel button is now removed. When reconnecting using the Refresh Token button, the Revoke Token button will be active again.
+When we revoke a Git provider successfully, the "Revoke Token" button disappears. If we reconnect using the **Refresh Token** button, the "Revoke Token" button will appear again.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-revoked.png' />
 
-:::caution
-If we open one of the affected profiles after applying for a revoke for a Git provider, the profile's Appcircle shows us that the profile is nonconnected. If we reconnect this profile, not only the related project but also all other profiles belonging to this Git provider will be connected. 
+:::info
+If we open one of the affected build profiles after applying a revoke for a Git provider, we should see the disconnected build profile state in the UI.
+
+If we reconnect this profile, not only the related build profile but also all other build profiles belonging to that Git provider will be connected.
 :::
 
 ### Reconnect OAuth Connections
