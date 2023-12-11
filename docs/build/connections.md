@@ -61,27 +61,32 @@ If the connection to the Git provider is active and the **Refresh Token** button
 
 ## Managing PAT Connections
 
-The PAT field lists the profiles we connect with.
+The PAT connection list section on the right-hand side has a list of connections that were made using a personal access token.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-pat-main.png' />
 
-:::info
-The list first shows the logo of the Git provider we're connecting to, then the name we gave to the profile or connection (when multiple instances are used), and finally the URL of the Git provider we're connecting to.
-:::
+The list first shows the logo of the Git provider we're connecting to, then the name we gave to the connection (when multiple instances are used), and finally the URL of the Git provider we're connecting to.
 
 ### Editing PAT Connections
+
 We can see the details of the PAT connection with the **Edit** button on the right side. These are **Provider**, **Instance URL**, **Token Owner**, **Token**, and **PAT**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-pat-detail.png' />
 
-In the edit screen, we can change the PAT (Personal Access Token) value. However, we must make sure that the value we change here is correct and that it was created by the Git provider. Otherwise, the affected profile or profiles will not be connected.
+In the **Connection Edit**, we can change the PAT (Personal Access Token) value.
+
+However, we must make sure that the value we change here is correct and that it was created on the Git provider correctly. Otherwise, the affected build profile or profiles will not be connected.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-pat-edit.png' />
 
 :::caution
-In the Edit screen, you can see the profiles where PAT is used under "Affected Build Profiles". Changing a PAT value will affect all profiles shown here.
+In the **Connection Edit**, you can see the build profiles where PAT is used under "Affected Build Profiles".
+
+Changing a PAT value will affect all the build profiles shown here.
 :::
 
 :::tip
-When editing PAT connections, you can also write the PAT value using environment variables. You can review [Using Environment Variables For SSH And PAT (Personal Access Token) Connections of the Git Provider](../environment-variables/managing-variables.md#using-environment-variables-for-ssh-and-pat-personal-access-token-connections-of-the-git-provider) page.
+While editing PAT connections, you can also write the PAT value using environment variables.
+
+You can review [Using Environment Variables For SSH And PAT (Personal Access Token) Connections](../environment-variables/managing-variables.md#using-environment-variables-for-ssh-and-pat-personal-access-token-connections-of-the-git-provider) page for details.
 :::
