@@ -61,8 +61,9 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service12.png' />
 
-14. Check the permissions of your account key and make sure this account has access to Releases and then click **Invite User**.
+14. Check the permissions of your user and make sure this account has access to **Releases**, **Store presence** and **App access** (for read-only ones) then click **Invite User**.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11-1.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11.png' />
 
 Your account key is ready. To add a key, go to [My Organization](./my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section.
