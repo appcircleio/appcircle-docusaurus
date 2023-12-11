@@ -105,7 +105,7 @@ If the output is "Linger=no", this means that your linger option is disabled and
 Otherwise if you see "Linger=yes", this means that your linger option is enabled and no need extra configuration.
 
 :::caution
-If the `linger` option is set to `no`, you must enable it to run Appcircle server on the background.
+If the `linger` option is set to `no`, you must enable it to run Appcircle server in the background.
 :::
 
 To enable the `linger` option, you can use the command below:
