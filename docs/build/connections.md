@@ -79,5 +79,5 @@ In the Edit screen, you can see the profiles where PAT is used under "Affected B
 :::
 
 :::tip
-When editing PAT connections, you can also write the PAT value using environment variables. You can see how to use environment variables on this page.
+When editing PAT connections, you can also write the PAT value using environment variables. You can review [Using Environment Variables For SSH And PAT (Personal Access Token) Connections of the Git Provider](../environment-variables/managing-variables.md#using-environment-variables-for-ssh-and-pat-personal-access-token-connections-of-the-git-provider) page.
 :::
