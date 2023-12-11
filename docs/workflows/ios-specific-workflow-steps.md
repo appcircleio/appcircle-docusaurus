@@ -98,3 +98,9 @@ Run your XCUI tests on BrowserStack App Automate. You need to add **Xcodebuild B
 Distribute IPA and dSYM files to [App Center](https://appcenter.ms/). You need enter your token, owner, app and group names to distribute your binaries.
 
 [https://github.com/appcircleio/appcircle-ios-appcenter-distribute-component](https://github.com/appcircleio/appcircle-ios-appcenter-distribute-component)
+
+## Appdome-Build-2Secure for iOS
+
+This integration enables the activation of security and app protection features, facilitating the building and signing of mobile apps.
+
+[https://github.com/appcircleio/appcircle-ios-appdome-component](https://github.com/appcircleio/appcircle-ios-appdome-component)

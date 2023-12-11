@@ -245,7 +245,7 @@ Using `-o android` in this case will be wrong argument. You must use `-o ios,and
 
 If you're using self-signed certificates, you need to follow the below document to add your certificates to runners.
 
-<ContentRef url="/self-hosted-appcircle/self-hosted-runner/custom-certificates">
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates">
   Self-Signed Certificates
 </ContentRef>
 

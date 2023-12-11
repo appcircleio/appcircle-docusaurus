@@ -1,15 +1,18 @@
 ---
 title: Network Access
 metaTitle: Network Access
-metaDescription: Networks Access of Appcircle Server and Runner
+metaDescription: Network Access for Appcircle Server and Runner
 sidebar_position: 4
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Overview
 
-This page provides guidance on configuring and enabling external network access for self-hosted Appcircle server and runner.
+This page provides guidance on configuring and enabling external network access for a self-hosted Appcircle server and runner.
 
-When deploying the self-hosted Appcircle server and runner, there are scenarios where the application needs to establish connections to external resources over the network. These connections are required to download operating system dependencies, pull Docker images from registries, or access external services such as mobile application build dependencies.
+When deploying a self-hosted Appcircle server and runner, there are scenarios where the application needs to establish connections to external resources over the network. These connections are required to download operating system dependencies, pull Docker images from registries, or access external services such as mobile application build dependencies.
 
 Enabling external network access is essential to ensuring the smooth operation and functionality of self-hosted applications. By establishing connections to external resources, self-hosted applications can access the necessary components, data, and services that are vital for their execution.
 
@@ -19,115 +22,166 @@ You can see different scenarios below according to how you want to install the A
 If you are hosting a yum or apt package repository locally on your network, you do not need to allow external domains for RHEL and Ubuntu repos.
 :::
 
-## External Resources Access When Installing or Upgrading
+## Appcircle Server Install and Update
 
-Below you can find the network access details required when installing or upgrading a self-hosted Appcircle server and runner.
+Below you can find the network access details required when installing or upgrading a self-hosted Appcircle server.
 
-### Appcircle Server on RHEL with Docker
+<Tabs>
+  
+  <TabItem value="rhel-podman" label="RHEL with Podman" default>
 
-This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Docker.
+This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL distribution using Podman.
 
-- Appcircle server `zip` archive and container images:
+##### `podman-compose` tool:
 
-  - cdn.appcircle.io
-  - storage.googleapis.com/appcircle-dev-common/self-hosted
-  - storage.googleapis.com/appcircle-self-hosted
-  - europe-west1-docker.pkg.dev/appcircle/docker-registry
-  - www.googleapis.com
+- You must download the podman-compose tool from python pip repositories.
 
-- Offline docker install script and docker `rpm` files:
+```access_list
+pypi.python.org/simple/podman-compose
+pypi.org/simple/podman-compose/
+pypi.python.org/simple/python-dotenv/
+pypi.org/simple/python-dotenv/
+pypi.python.org/pypi/pip/json
+pypi.org/pypi/pip/json
+files.pythonhosted.org/packages/
+```
 
-  - storage.googleapis.com/appcircle-dev-common/self-hosted
+##### System tools:
 
-- `tar`, `curl` and `unzip` tools:
+- The Appcircle server requires some tools to be installed.
 
-  - subscription.rhsm.redhat.com
-  - cdn.redhat.com
+- These tools are `tar`, `curl`, `unzip` and `Podman`.
 
-### Appcircle Server on RHEL with Podman
+- If you are hosting a `yum` repository locally on your network, you don't need these URLs.
 
-This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL operating system using Podman.
+```access_list
+subscription.rhsm.redhat.com
+cdn.redhat.com
+```
 
-- Appcircle server `zip` archive and container images:
+  </TabItem>
 
-  - cdn.appcircle.io
-  - storage.googleapis.com/appcircle-dev-common/self-hosted
-  - storage.googleapis.com/appcircle-self-hosted
-  - europe-west1-docker.pkg.dev/appcircle/docker-registry
-  - www.googleapis.com
+  <TabItem value="rhel-docker" label="RHEL with Docker">
 
-- `curl`, `unzip`, `socat`, `netavark` and `podman` tools:
+This section covers the external resource domains during the installation process of the Appcircle Server on the RHEL distribution using Docker.
 
-  - subscription.rhsm.redhat.com
-  - cdn.redhat.com
+##### Offline docker install script and docker `rpm` files:
 
-- `podman-compose` tool:
-  - pypi.python.org
-  - pypi.org
-  - files.pythonhosted.org
+- If you want to install `Docker` on your RHEL from Appcircle resources, then the Appcircle server host needs to access these URLs.
 
-### Appcircle Server on Ubuntu with Docker
+```access_list
+storage.googleapis.com/appcircle-dev-common/self-hosted
+```
 
-This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Docker.
+##### System tools:
 
-- Appcircle server `zip` archive and container images:
+- The Appcircle server requires some tools to be installed.
 
-  - cdn.appcircle.io
-  - storage.googleapis.com/appcircle-dev-common/self-hosted
-  - storage.googleapis.com/appcircle-self-hosted
-  - europe-west1-docker.pkg.dev/appcircle/docker-registry
-  - www.googleapis.com
+- These tools are `tar`, `curl` and `unzip`.
 
-- `curl` and `unzip` tools:
+- If you are hosting a `yum` repository locally on your network, you don't need these URLs.
 
-  - archive.ubuntu.com
+```access_list
+subscription.rhsm.redhat.com
+cdn.redhat.com
+```
 
-- `docker`:
-  - download.docker.com
-  - archive.ubuntu.com
+  </TabItem>
+  
+  <TabItem value="ubuntu-docker" label="Ubuntu with Docker">
 
-### Appcircle Server on Ubuntu with Podman
+This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu distribution using Docker.
 
-This section covers the external resource domains during the installation process of the Appcircle Server on the Ubuntu operating system using Podman.
+##### `docker` installation:
 
-- Appcircle server `zip` archive and container images:
+- If you want to install `Docker` on your Ubuntu, then the Appcircle server host needs to access these URLs.
 
-  - cdn.appcircle.io
-  - storage.googleapis.com/appcircle-dev-common/self-hosted
-  - storage.googleapis.com/appcircle-self-hosted
-  - europe-west1-docker.pkg.dev/appcircle/docker-registry
-  - www.googleapis.com
+```access_list
+download.docker.com
+archive.ubuntu.com
+```
 
-- `curl`, `unzip`, `netavark` and `socat` tools:
+##### System tools:
 
-  - archive.ubuntu.com
+- The Appcircle server requires some tools to be installed.
 
-- `podman` and `podman-compose` tool:
-  - download.opensuse.org
-  - archive.ubuntu.com
-  - ftp.gwdg.de
-  - pypi.python.org
-  - pypi.org
-  - files.pythonhosted.org
+- These tools are `tar`, `curl` and `unzip`.
 
-### Appcircle Runner as Ready-to-Use MacOS Virtual Machine
+- If you are hosting an `apt` repository locally on your network, you don't need these URLs.
+
+```access_list
+archive.ubuntu.com
+```
+
+  </TabItem>
+  
+</Tabs>
+
+##### If you are a PoC customer, Appcircle server `zip` package:
+
+- If you are a PoC customer and want to install or update the Appcircle server, the Appcircle server host needs to access this URL to download the Appcircle server `zip` package.
+
+- If you are an enterprise-licensed customer, the Appcircle server host doesn't need this access.
+
+- If you want to download the `zip` package and copy it manually (with `scp` or `ftp`), then the Appcircle server host doesn't need this access.
+
+```access_list
+cdn.appcircle.io
+```
+
+##### If you are an enterprise-licensed customer, Appcircle server `zip` package:
+
+- If you are an enterprise-licensed customer and want to install or update the Appcircle server, the Appcircle server host needs to access this URL to download the Appcircle server `zip` package.
+
+- If you are a PoC customer, the Appcircle server host doesn't need this access.
+
+- If you want to download the `zip` package and copy it manually (with `scp` or `ftp`), then the Appcircle server host doesn't need this access.
+
+```access_list
+storage.googleapis.com/appcircle-dev-common/self-hosted
+```
+
+##### If you don't have a proxy registry like `Harbor` or `Nexus`, and want to use container images directly from Appcircle:
+
+- If you have your own proxy registry and want to mirror the Appcircle container images, then your Appcircle server doesn't need to access the origin container image registry directly.
+
+- If you don't have an image registry, the Appcircle server needs to access this URL.
+
+```access_list
+europe-west1-docker.pkg.dev/appcircle/docker-registry
+```
+
+##### If you want to install the Appcircle server using offline packages:
+
+- If you want to install the Appcircle server without an internet connection, a `zip` package should be downloaded and transferred to the Appcircle server host.
+
+- This `zip` package can be downloaded from another host and transferred to the actual Appcircle server. If you plan to do that, the Appcircle server doesn't need to access these URLs.
+
+```access_list
+storage.googleapis.com/appcircle-self-hosted
+www.googleapis.com/oauth2/v4/token
+```
+
+## Appcircle Runner Install as Ready-to-Use MacOS Virtual Machine
 
 This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](../self-hosted-runner/installation.md#macos-vm).
 
-- `homebrew` tool:
+- `homebrew` tool (required):
 
-  - raw.githubusercontent.com
-  - github.com
-  - api.github.com
-  - api.apple-cloudkit.com
-  - formulae.brew.sh
-  - swcdn.apple.com
-  - xp.apple.com
-  - pancake.apple.com
-  - gdmf.apple.com
-  - swdist.apple.com
-  - swscan.apple.com
-  - ocsp2.apple.com
+```access_list
+raw.githubusercontent.com
+github.com
+api.github.com
+api.apple-cloudkit.com
+formulae.brew.sh
+swcdn.apple.com
+xp.apple.com
+pancake.apple.com
+gdmf.apple.com
+swdist.apple.com
+swscan.apple.com
+ocsp2.apple.com
+```
 
 :::info
 
@@ -135,13 +189,16 @@ Homebrew installs the latest version of Xcode Command Line Tools as a dependency
 
 :::
 
-- `tart` tool:
-  - github.com
-  - api.github.com
-  - objects.githubusercontent.com
-  - api.apple-cloudkit.com
-  - google-analytics.com
-  - europe-west1-1.gcp.cloud2.influxdata.com
+- `tart` tool (required):
+
+```access_list
+github.com
+api.github.com
+objects.githubusercontent.com
+api.apple-cloudkit.com
+google-analytics.com
+europe-west1-1.gcp.cloud2.influxdata.com
+```
 
 :::info
 
@@ -154,16 +211,29 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 
 :::
 
-- macOS VM image and the `run.sh` script:
-  - storage.googleapis.com/appcircle-dev-common/self-hosted
+- macOS VM image and the runner starter script (required):
 
-## External Resources Access When Running Build Pipeline
+```access_list
+storage.googleapis.com/appcircle-dev-common/self-hosted
+```
+
+## Appcircle Server Runtime
+
+Although Appcircle runners are responsible for the submission of iOS apps to the App Store, the server also has some features that need access to the App Store Connect API, like runners.
+
+For example, get devices from the App Store, get certificates or provisioning profiles, verify the uploaded certificates, etc.
+
+So, you should enable the below API access on the server for those features:
+
+- api.appstoreconnect.apple.com
+
+## Appcircle Runner Runtime
 
 This section addresses the utilization of external resources during the build, publish, store submit, and other processes on the Appcircle runner.
 
 ### Build
 
-Appcircle’s workflow components are hosted on GitHub and they're `git` cloned while running pipeline.
+Appcircle’s workflow components are hosted on GitHub and they're `git` cloned while running the pipeline.
 
 - github.com/appcircleio/
 
@@ -226,9 +296,9 @@ App Store
 - api.appstoreconnect.apple.com
 
 :::caution
-Apple App Store connects to several endpoints during upload.
+The Apple App Store connects to several endpoints during upload.
 
-Those endpoints are documented at [here](https://help.apple.com/itc/transporteruserguide/en.lproj/static.html). The endpoints may change in future.
+Those endpoints are documented at [here](https://help.apple.com/itc/transporteruserguide/en.lproj/static.html). The endpoints may change in the future.
 :::
 
 | **Server**                                     | **IP Address** | **TCP Port** | **UDP Port** |
@@ -257,13 +327,3 @@ Those endpoints are documented at [here](https://help.apple.com/itc/transporteru
 | [vgr0906.apple.com](http://vgr0906.apple.com/) | 17.57.20.146   | 33001        | 33001-33500  |
 | [vgr0907.apple.com](http://vgr0907.apple.com/) | 17.57.20.147   | 33001        | 33001-33500  |
 | [vgr0908.apple.com](http://vgr0908.apple.com/) | 17.57.20.148   | 33001        | 33001-33500  |
-
-:::caution
-
-Although Appcircle runners are responsible for the submission of iOS apps to the App Store, the **server also has some features that need access to the App Store Connect API**, like runners. For example, get devices from the App Store, get certificates or provisioning profiles, etc.
-
-So, you should enable the **below API access on the server** for those features:
-
-- api.appstoreconnect.apple.com
-
-:::

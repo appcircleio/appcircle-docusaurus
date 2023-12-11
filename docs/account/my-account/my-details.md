@@ -17,4 +17,4 @@ If you change your email address, you will be asked to verify the new address.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (18).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-edit-account.png' />

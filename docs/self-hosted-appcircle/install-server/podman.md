@@ -2,7 +2,7 @@
 title: Podman
 metaTitle: Podman
 metaDescription: Appcircle Server on Podman
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -238,7 +238,7 @@ sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
 - Edit the /etc/containers/containers.conf file.
 
 ```bash
-sudo vim /etc/containers/container.conf
+sudo vi /etc/containers/containers.conf
 ```
 
 - Add the following content to the [network] section:
@@ -248,8 +248,18 @@ network_backend="netavark"
 ```
 
 - Save the file.
-- Reset Podman by running the command: `podman system reset`
-- Reboot the system using the command: `sudo reboot`
+
+- Reset Podman:
+
+```bash
+podman system reset
+```
+
+- Reboot the system:
+
+```bash
+sudo reboot
+```
 
 :::caution
 If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
