@@ -23,7 +23,7 @@ After you click on **Bitbucket**, the following screen will appear. This will le
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (236).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-bitbucket-gitlab.png' />
 
 After the connection is successful, you can [view your newly created profile](./#view-the-newly-created-build-profile) and start building!
 

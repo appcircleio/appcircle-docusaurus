@@ -6,6 +6,7 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 # Connecting to GitHub
 
@@ -29,10 +30,8 @@ After you click on **GitHub**, the following screen will appear. This will let y
 
 When you successfully authorize your repository or repositories, the following screen will appear to let you select one for connection:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (236).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-github.png' />
 
 After the connection is successful, you can [view your newly created profile](./#view-the-newly-created-build-profile) and start building!
-
-import NeedHelp from '@site/docs/\_need-help.mdx';
 
 <NeedHelp />

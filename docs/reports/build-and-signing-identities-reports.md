@@ -22,7 +22,13 @@ The duration indicates the minutes spent by the build agent for the specified bu
 
 The date and time are displayed in the current timezone.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (11).png' />
+You can filter the report pages according to the organization.
+
+:::info
+In the filtering options, you can only view and select the organization and sub-organization you belong to.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-history-new.png' />
 
 ## Signing History
 
@@ -38,4 +44,10 @@ Since the primary objective of this report is to provide visibility on who used 
 
 The date and time are displayed in the current timezone.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (12).png' />
+You can filter the report pages according to the organization.
+
+:::info
+In the filtering options, you can only view and select the organization and sub-organization you belong to.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/signing-history-new.png' />

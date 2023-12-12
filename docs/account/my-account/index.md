@@ -15,7 +15,6 @@ Current headlines and the actions you can complete are listed below:
 * [Authenticator (Two Factor Authentication)](./authenticator-two-factor-authentication.md)
 * [Federated Identity (Linked Login Providers)](./federated-identity-linked-login-providers.md)
 * [Active Sessions](./active-sessions.md)
-* [Authentication Logs](./authentication-logs.md)
 * [Delete Account](./delete-account.md)
 
 In order to see the details, check the submenu of this documentation page.

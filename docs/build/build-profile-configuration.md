@@ -18,15 +18,15 @@ You may create **Distribution** configuration to send your app to public stores 
 
 - Click on **Configurations** to create configurations for different scenarios. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (168).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-configuration-showcase.png' />
 
 - Click on **New** button to create your first configuration.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-build-configuration1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-another-configuration.png' />
 
-- You may change the name of the configuration or delete the ones you don't need.
+- You may change the name of the configuration or delete the ones you don't need. To do that, click on the edit button shown and three dot on the configuration you want to edit/delete.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-build-configuration2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/clone-1.png' />
 
 ### Clone Configuration
 
@@ -64,7 +64,7 @@ You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
   Self-hosted Runners
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-fetch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-fetch.png' />
 
 ### Signing configuration
 
@@ -72,7 +72,7 @@ Both iOS and Android applications need to be digitally signed by their developer
 
 iOS certificates and Android keystores can be generated within Appcircle or pre-obtained certificates can be uploaded. iOS provisioning profiles need to be obtained from Apple Developer account and uploaded to Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (170).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png' />
 
 ### Distribution configuration
 
@@ -92,13 +92,13 @@ You can also use other toggles on there to automatically distribute your app to 
 
 You can define variables and secrets to be incorporated during the build in the Environment Variables submodule so that you don't need to store certain keys and configurations within the repository.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (172).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
 ### Versioning configuration
 
 You can set custom rules to manage the versioning of your app. You can increase both the build number and version number according to the rules you set.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (173).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-versioning.png' />
 
 ### Workflows and Triggers
 
@@ -106,7 +106,29 @@ For advanced configuration, you can utilize [workflows](../workflows/why-to-use-
 
 These options are available at the profile level in the profile context menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (188).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-workflow-trigger-showcase.png' />
+
+### Connection Settings
+
+After connecting build profile to a Git provider, we can see the **"Connection Settings"** button in the build profile details.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-1.png' />
+
+You can click on the "Connection Settings" button under the build profile name and URL to see the detailed information about the connection. (PAT, oAuth)
+
+#### OAuth
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-2.png' />
+
+#### Personal Access Token (PAT)
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-3.png' />
+
+:::caution
+If you added your repository via **multiple instances** using PAT (Personal Access Token), the "Connection Settings" will look different.
+
+You can review the [**Connecting Multiple Instances**](../build/adding-a-build-profile/connecting-multiple-instance.md#connection-settings-for-multiple-instances) page for using "Connection Settings" on multiple instances.
+:::
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

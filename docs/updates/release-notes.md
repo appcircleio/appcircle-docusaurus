@@ -12,6 +12,41 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.10.0 - 2023-12-01 - Connections Page, Disconnect Profile and Change Provider
+
+### 🆕 New Feature
+
+- Added [Connections](../build/connections.md) to the Build module, where all connections (OAuth, PAT) can be viewed and edited. From here, you can disconnect, reconnect, and view the build profiles affected by the connections. <CloudBadge/> <SelfHostedBadge/>
+- You can now disconnect and connect to another repository or Git provider without deleting the link to an added profile. You can also change PATs for connections made with PAT. <CloudBadge/> <SelfHostedBadge/>
+- The [Testinium](../workflows/common-workflow-steps.md#testinium) workflow component now tries several times in case of an error from the Testinium APIs. <CloudBadge/> <SelfHostedBadge/>
+- The [Appdome-Build-2Secure](../workflows/ios-specific-workflow-steps.md#appdome-build-2secure-for-ios) for iOS component was added, which is the integration that allows activating security and app protection features. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+
+- Now builds that result in a [warning](../workflows/why-to-use-workflows.md#build-warning-status) will also appear as a warning in the branch list. <CloudBadge/> <SelfHostedBadge/>
+- Appcircle builds can now be displayed as “Appcircle/BuildProfileId” in pipelines on Git providers. <CloudBadge/> <SelfHostedBadge/>
+- The URL format validation used when adding Git provider [instances](../build/adding-a-build-profile/connecting-multiple-instance.md) has been removed for self-hosted environments. <SelfHostedBadge/>
+- The [Testinium](../workflows/common-workflow-steps.md#testinium) workflow component parses result summary and outputs in seperate environment variables. <CloudBadge/> <SelfHostedBadge/>
+- A user-friendly format has been introduced in the [testing distribution](../distribute/create-or-select-a-distribution-profile.md) emails. <CloudBadge/> <SelfHostedBadge/>
+- [Brute-force protection](../self-hosted-appcircle/configure-server/ldap-brutefore.md) and the ability to configure it have been added when logging into the Enterprise App Store and Testing Distribution via the LDAP method in self-hosted use. <SelfHostedBadge/>
+- The caching mechanism used when choosing between Testing Distribution [authentication](../distribute/create-or-select-a-distribution-profile.md#using-authentication-for-distribution) options has been disabled for the sake of quick response. <CloudBadge/> <SelfHostedBadge/>
+- You can no longer add or build Smartface projects to Appcircle. Smartface support has been removed. <CloudBadge/> <SelfHostedBadge/>
+- Appcircle no longer supports purchases via Appsumo, and there is no Appsumo featured license supported on Appcircle. <CloudBadge/>
+- Appcircle online documentation got several updates and improvements, including search, screenshots, and content that provides a better user experience. <CloudBadge/>
+
+### 🐞 Fixed
+
+- The loader did not appear when loading the [Enterprise App Store](../enterprise-appstore/add-ent-profile.md) page, the confusion caused by this has been fixed by adding the loader. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug when adding profiles using the [SSH connection](../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) method. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug during the [configuration cloning](../build/build-profile-configuration.md#clone-configuration) process. <CloudBadge/> <SelfHostedBadge/>
+- Page redirection issues were occurring on plan upgrade, this problem has been fixed. <CloudBadge/>
+- Fixed an issue with the [Xcodebuild for Devices](../build/building-ios-applications.md) workflow step getting stuck in the build pipeline until timing out in some cases. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused a build to be started in Appcircle when one of the _Approve_, _Approve with Recommendations_, _Wait for Author_, or _Reject_ activities was selected on pull requests when using the [Azure DevOps](../build/build-manually-or-with-triggers.md#managing-triggers-for-builds) Git provider. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that prevented screenshots from being displayed as a result of the [Unit and UI Tests](../continuous-testing/running-ios-unit-and-ui-tests.md) in the test results section. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the issue that caused multiple builds to be launched when only one trigger was set on Appcircle and a trigger was triggered. <CloudBadge/> <SelfHostedBadge/>
+- The incorrect "Configuration" information in the [e-mail notification](../account/email-connection.md) sent as a result of the build in simultaneous build triggers has been corrected. <CloudBadge/> <SelfHostedBadge/>
+- When the [Environment Variables](../environment-variables/managing-variables.md) file was created from scratch and values were entered and downloaded, the downloaded file appeared empty. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.9.0 - 2023-11-01 - LDAP Support for User Authentication, Change the PAT by Build Profile, Download Environment Variables
 
 ### 🆕 New Feature
@@ -875,7 +910,7 @@ This major release introduces the Appcircle CLI and a new customer portal for bi
 ### 🆕 New Feature
 
 - Appcircle CLI - You can now access the Appcircle platform from the command line for custom pipelines or advanced automation use cases. [Appcircle CLI is available on npm](https://www.npmjs.com/package/@appcircle/cli).
-- Appcircle Distribute API - On top of the previously released build APIs, the distribute module APIs are now available for programmatic access.
+- Appcircle Distribute API - On top of the previously released build APIs, the Testing Distribution APIs are now available for programmatic access.
 - New Customer Portal - Billing and plan management is now easier and more flexible with the new customer portal.
 
 ### :muscle:Improvement
