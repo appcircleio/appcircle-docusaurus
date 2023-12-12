@@ -25,11 +25,11 @@ A build profile is an app that you can build in a target OS and framework.
 
 To create your first build profile, click on the orange "Add New" button on the top left of the screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/01-01-Adding-A-Build-Profile (2).jpg' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile.png' />
 
 Enter a name for your build profile and select the target operating system (iOS or Android) and target platform.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (224).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-build-profile-ios-connection.png' />
 
 ## Connect your repository
 
@@ -41,7 +41,7 @@ If you authorize Appcircle to connect to your Github, BitBucket, or GitLab accou
 
 To test drive Appcircle, you can find various sample projects in the [Appcircle GitHub page](https://github.com/appcircleio?q=sample) or you can just press on the **Quick start using the sample repository** button to populate the repository URL field with a compatible project based on the selected framework.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (233).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-connection.png' />
 
 Refer to the relative documents under this page about the connections and differences between connection types:
 
@@ -57,15 +57,15 @@ You will see your build profile once it has been created. Click on the build pro
 
 Appcircle will then pull your branches, commits, and other information from your repository.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (244).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-aftermath.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (168).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-inside.png' />
 
 ### Delete a Build Profile
 
 In order to delete a build, simply click on the Three Dot and click delete.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (245).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-delete-box.png' />
 
 After the prompt, the profile will be deleted.
 

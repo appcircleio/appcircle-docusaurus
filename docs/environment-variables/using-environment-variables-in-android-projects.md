@@ -57,7 +57,7 @@ Create an environment variable with the same name in each group and set the prop
 
 Don’t forget to tell your build configuration to use the proper environment variable group during the build process:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (172).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
 Appcircle will use the values from the environment variables from the designated group for the branch you are building your application from.;
 

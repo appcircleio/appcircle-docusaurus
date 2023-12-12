@@ -57,6 +57,18 @@ For more details on changing the location of Podman data, refer to the [Change t
 
 You should trust the Appcircle's or your organization's root CA certificate on your computer.
 
+### We are getting the "potentially insufficient UIDs or GIDs" error while using Podman.
+
+You should check the user ID and group ID of your current account.
+
+```bash
+id
+```
+
+The user ID and group ID should be four-digit numbers. (For example, 1000, 1002, etc.)
+
+If your user ID and group ID are very large, you may get this error. In this case, you should create a new user and group with regular IDs.
+
 ## Appcircle Runner FAQ
 
 ### We are facing a self-signed certificate error on builds.
@@ -71,7 +83,7 @@ The runner VMs cannot connect to the servers to update their date and time due t
 
 You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](./self-hosted-runner/runner-vm-setup.md#update-base-images) section.
 
-For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup.md#1-configure-base-runners-ntp-settings) section and follow the steps.
+For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup.md#2-configure-base-runners-ntp-settings) section and follow the steps.
 
 ### We can't register Appcircle runner to the server.
 
