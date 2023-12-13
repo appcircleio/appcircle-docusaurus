@@ -1,14 +1,11 @@
 ---
-title: Using Disconnect, Reconnect And Change Provider From Build Profile
-metaTitle: Using Disconnect, Reconnect And Change Provider From Build Profile
-metaDescription: Using Disconnect, Reconnect And Change Provider From Build Profile
-sidebar_position: 11
+title: Disconnect, Reconnect And Change Connection From Build Profile
+metaTitle: Disconnect, Reconnect And Change Connection From Build Profile
+metaDescription: Disconnect, Reconnect And Change Connection From Build Profile
+sidebar_position: 12
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-
-
-# Using Disconnect, Reconnect And Change Provider From Build Profile
 
 You can see the connection details from the Git provider of a repository by clicking the **"Connection Settings"** button in the profile.
 
