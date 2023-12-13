@@ -7,24 +7,28 @@ sidebar_position: 12
 
 import Screenshot from '@site/src/components/Screenshot';
 
-You can see the connection details from the Git provider of a repository by clicking the **"Connection Settings"** button in the profile.
+You can see the connection details by clicking the **"Connection Settings"** button in the build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-new-main.png' />
 
-### OAUTH Connection 
+Different types of connections have different connection details in the connection settings.
 
-The information here will be **"Provider"**, **"Token Owner"**, **"Code"**, **"Expire Access Token Date"**, **"Expire Refresh Token Date"**, **"Refresh Token"**, and **"Token"**.
+### OAuth Connection
+
+For an OAuth connection, the details will be **"Provider"**, **"Token Owner"**, **"Code"**, **"Expire Access Token Date"**, **"Expire Refresh Token Date"**, **"Refresh Token"**, and **"Token"**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connection-last-1n.png' />
 
 ### PAT Connection
 
-The information here will be **"Token Owner"**, and **"Personal Access Token"**.
+For a PAT (personal access token) connection, the details will be **"Token Owner"**, and **"Personal Access Token"**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connection-last-3n.png' />
 
 :::info
-In this section, you can view the PATs you have previously added, if any, and change them profile-specific. You only need to make sure that the modified token has authorisations for the relevant repository.
+In this section, you can view the PATs you have previously added, if any, and change them profile-specific.
+
+You only need to make sure that the modified token has the required authorizations for the relevant repository.
 :::
 
 ## Disconnect Profile
