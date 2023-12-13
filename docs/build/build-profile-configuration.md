@@ -108,6 +108,28 @@ These options are available at the profile level in the profile context menu.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-workflow-trigger-showcase.png' />
 
+### Connection Settings
+
+After connecting build profile to a Git provider, we can see the **"Connection Settings"** button in the build profile details.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-1.png' />
+
+You can click on the "Connection Settings" button under the build profile name and URL to see the detailed information about the connection. (PAT, oAuth)
+
+#### OAuth
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-2.png' />
+
+#### Personal Access Token (PAT)
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-3.png' />
+
+:::caution
+If you added your repository via **multiple instances** using PAT (Personal Access Token), the "Connection Settings" will look different.
+
+You can review the [**Connecting Multiple Instances**](../build/adding-a-build-profile/connecting-multiple-instance.md#connection-settings-for-multiple-instances) page for using "Connection Settings" on multiple instances.
+:::
+
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
 <NeedHelp />

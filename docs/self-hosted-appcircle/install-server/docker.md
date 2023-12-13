@@ -92,13 +92,13 @@ You need to have the following tools installed on your system:
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.9.1.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.10.0.zip
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.9.1.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.10.0.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -787,7 +787,7 @@ To use Sonatype Nexus as your proxy registry, you should follow the below steps.
 - Create a new repository in Nexus with the type of `docker (proxy)`.
 - Set the `Registry Name` name and `port` as you wish.
 - Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
-- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file.
+- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file. See the sample screenshot [here.](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
 - For SSL, the recommended way is to use a reverse proxy in front of Nexus.
 - After you created the repository, you should add the below section to the `global.yaml` file with your Nexus `repository url`, `username` and `password`.
 - If you can access your Nexus repository without authentication, you should leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
