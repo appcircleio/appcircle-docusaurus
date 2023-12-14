@@ -33,29 +33,32 @@ You only need to make sure that the modified token has the required authorizatio
 
 ## Disconnect Profile
 
-You can disconnect the relevant profile from the Git provider with the “Disconnect” button in this window. 
+You can disconnect the build profile from the Git provider by using the **Disconnect** button below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/disconnect-1.png' />
 
-If you click the “Disconnect” button in this window, Appcircle will bring up a warning screen:
+When you click on the "Disconnect" button, Appcircle will bring up a warning dialog box for confirmation.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/disconnect-2.png' />
 
-And then Appcircle will bring us a screen to quickly reconnect the profile:
+When we open a disconnected build profile, Appcircle will bring us a popup to quickly **Reconnect** build the profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/disconnect-3.png' />
 
-If you do not want to connect again at that moment, you can do so later by clicking the "Reconnect" button next to the "Connections Settings" icon.
+If you do not want to connect again at that moment, you can do it later by clicking the "Reconnect" button next to the "Connection Settings".
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/reconnect-button.png' />
 
-
 :::info
-If you disconnect a profile, only that profile is disconnected from the Git provider. And if you link a profile again, only the relevant profile link will be provided again.
+If you disconnect a build profile, only that build profile is disconnected from the Git provider.
+
+When you reconnect a build profile again, only the relevant build profile will be connected again.
+
+On the other hand, connection operations done from the  affects all relevant build build profiles using that connections.
 :::
 
 :::caution
-If the Revoke Token transaction is made for the Git provider from the connections page and a reconnection is made from a previously added profile through this Git provider, all profiles connected through the relevant Git provider are reconnected.
+On the other hand, connection operations done from **[Connections](./connections.md)** affect all relevant build profiles using those connections.
 :::
 
 ## Change Provider and Reconnect
