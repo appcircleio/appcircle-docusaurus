@@ -17,7 +17,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### 🆕 New Feature
 
 - Added [Connections](../build/connections.md) to the Build module, where all connections (OAuth, PAT) can be viewed and edited. From here, you can disconnect, reconnect, and view the build profiles affected by the connections. <CloudBadge/> <SelfHostedBadge/>
-- You can now disconnect and connect to another repository or Git provider without deleting the link to an added profile. You can also change PATs for connections made with PAT. <CloudBadge/> <SelfHostedBadge/>
+- You can now [disconnect and reconnect](../build/reconnect-change-provider.md) to another repository or Git provider without deleting the link to an added profile. You can also change PATs for connections made with PAT. <CloudBadge/> <SelfHostedBadge/>
 - The [Testinium](../workflows/common-workflow-steps.md#testinium) workflow component now tries several times in case of an error from the Testinium APIs. <CloudBadge/> <SelfHostedBadge/>
 - The [Appdome-Build-2Secure](../workflows/ios-specific-workflow-steps.md#appdome-build-2secure-for-ios) for iOS component was added, which is the integration that allows activating security and app protection features. <CloudBadge/> <SelfHostedBadge/>
 
