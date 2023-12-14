@@ -53,8 +53,6 @@ If you do not want to connect again at that moment, you can do it later by click
 If you disconnect a build profile, only that build profile is disconnected from the Git provider.
 
 When you reconnect a build profile again, only the relevant build profile will be connected again.
-
-On the other hand, connection operations done from the  affects all relevant build build profiles using that connections.
 :::
 
 :::caution
