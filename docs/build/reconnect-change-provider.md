@@ -91,6 +91,4 @@ You can select one of the listed options and switch to that one without consider
 
 :::info
 While changing the Git provider, your previous builds, tests, configurations, workflows, triggers and branch list will not be deleted.
-
-Only the remaining branches from the previous connection will be collected below in your branch list, and the new branches will appear at the top.
 :::
