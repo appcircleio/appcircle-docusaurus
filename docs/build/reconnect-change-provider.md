@@ -7,6 +7,8 @@ sidebar_position: 12
 
 import Screenshot from '@site/src/components/Screenshot';
 
+## Connection Settings
+
 You can see the connection details by clicking the **"Connection Settings"** button in the build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-new-main.png' />
