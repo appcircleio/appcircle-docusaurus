@@ -28,6 +28,8 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The motto on the login and sign-up pages has been changed to reflect our up-to-date vision. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 Pool" has the latest stable [Xcode 15.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_1-release-notes) update available on runners and can be used for iOS builds. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 Pool" has [Xcode 15.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_2-release-notes) beta-1 installed on runners. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
+- The LDAP configuration section in settings has a help button that redirects to the relevant documentation page for configuration details. <SelfHostedBadge/>
+- A new type of role **Operator** has been added to the build profile roles that can also trigger builds. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
