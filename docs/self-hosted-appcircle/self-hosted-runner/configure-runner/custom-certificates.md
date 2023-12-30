@@ -109,3 +109,39 @@ For example, if you saved the root CA in the `rootca.crt` file and want to impor
 ```
 
 After the script completes successfully, the certificate will be trusted in your system.
+
+### Adding Proxy Certificates
+
+If you want to trust the root certificates of the proxy server which you use to connect internet, you can follow the steps below.
+
+- The proxy env variables `HTTP_PROXY` and `HTTPS_PROXY` should be configured.
+
+- You can check if the `HTTP_PROXY` is set with the command below:
+
+```bash
+echo "$HTTP_PROXY"
+```
+
+:::caution
+There 2 rules you must consider.
+
+- The `HTTP_PROXY` variable shouldn't contain username or password.
+
+- The `HTTP_PROXY` variable shouldn't end with "/".
+
+For example:
+Valid -> proxy.spacetech.com:8080 or 10.20.0.1:8080
+Invalid -> proxy.spacetech.com:8080/ or 10.20.0.1:8080/ or username:password@proxy.spacetech.com
+:::
+
+- Run the `install_cert.sh` script with no arguments.
+
+```bash
+./install_cert.sh
+```
+
+- When the URL is asked, you can input a URL address which you can access with proxy.
+
+- For the runner can access to the `github.com` with proxy only, you can input `github.com`.
+
+- The script will try
