@@ -42,6 +42,11 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Fixed an issue that caused the [invited user](../account/my-organization.md#managing-team-members) not to be redirected to the sign up page if they were not registered. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the authentication logs section was not visible. <CloudBadge/>
 - The error with the email hint text falling into the email field on the login and sign up pages has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the [Xcodebuild for Unit and UI Tests](../workflows/ios-specific-workflow-steps#xcodebuild-for-unit-and-ui-tests) workflow step, which was stuck in the build pipeline until timeout in some cases. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the crash in the [Export Build Artifacts](../workflows/common-workflow-steps#export-build-artifacts) workflow step that occurs while uploading files in the artifacts that have 0 bytes of length or no content. <CloudBadge/> <SelfHostedBadge/>
+- The bundler version bug has been fixed in the [Fastlane](../integrations/using-fastlane-in-the-workflows/#adding-fastlane-to-the-appcircle-build-workflow-as-a-step) workflow step by pinning the last bundler version compatible with the ruby version that's included in build agents. <CloudBadge/> <SelfHostedBadge/>
+- The permission error that occurred while using the [Authenticate with Netrc](../workflows/common-workflow-steps#authenticate-with-netrc) workflow step was fixed. <CloudBadge/> <SelfHostedBadge/>
+- The command line parameter order has been changed to fetch provisioning profiles for signing first, which fixes the broken auto-sign feature in the [Xcodebuild for Devices](../workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) workflow step. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.10.0 - 2023-12-01 - Connections Page, Disconnect Profile and Change Provider
 
