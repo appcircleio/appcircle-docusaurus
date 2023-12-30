@@ -12,36 +12,36 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
-## 3.11.0 - 2023-12-27 - Publish Module, Change Profile Owner, OTP Service Integration
+## 3.11.0 - 2023-12-27 - Publish Module, Change Build Profile Owner, Custom Authentication Integration
 
 ### 🆕 New Feature
 
-- A new module called **Publish** is introduced in beta, which helps manage Apple App Store, Google Play Store, Huawei AppGallery deployments more efficiency, you can now modify publishing flows, add custom scripts, control flow logic. <CloudBadge/> <SelfHostedBadge/>
+- A new module called **Publish** is introduced in beta, which helps manage App Store, Google Play, and Huawei AppGallery deployments with more efficiency. You can now modify publishing flows, add custom scripts, and control flow logic. <CloudBadge/> <SelfHostedBadge/>
+- Members in the same [organization](../account/my-organization.md) can take ownership of previously added build profiles. <CloudBadge/> <SelfHostedBadge/>
+- The user can now add a new PAT (Personal Access Token) via the [Connections](../build/connections.md#managing-pat-connections) page without creating a new build profile. <CloudBadge/> <SelfHostedBadge/>
+- Enterprise customers can integrate their own authentication and OTP services and use them in conjunction with LDAP configuration on self-hosted installations. <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
-- People in the same [team](../account/my-organization.md) can take ownership of previously added profiles. <CloudBadge/> <SelfHostedBadge/>
-- The user can now add a new PAT (Personal Access Token) via the [**Connections**](../build/connections.md) page without opening a new profile. <CloudBadge/> <SelfHostedBadge/>
-- Now the starting workflow step logs can show the email address of the user who triggered the current build. <CloudBadge/> <SelfHostedBadge/>
-- Now enterprises can integrate their own OTP service. <SelfHostedBadge/>
-- Users who have reached their configuration limit will no longer be able to use Autofill when adding a new profile. <CloudBadge/> <SelfHostedBadge/>
-- The motto on the login and sign-up page has been updated. <CloudBadge/> <SelfHostedBadge/>
+- The starting workflow step in the build log shows the email address of the user who triggered the current build. <CloudBadge/> <SelfHostedBadge/>
+- Users who have reached the build limit on their licenses will no longer be able to use Autofill while adding a new profile. <CloudBadge/> <SelfHostedBadge/>
+- The motto on the login and sign-up pages has been changed to reflect our up-to-date vision. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
-- Fixed an issue where a connected profile would appear as if it had not been connected before. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where a connected build profile would appear as if it had not been connected before. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue that caused the user to completely restrict their own [privileges](../account/my-organization.md#managing-the-team-under-an-organization) when alone in an organization. <CloudBadge/> <SelfHostedBadge/>
-- A bug fix was implemented to enable task allocation agent based on architecture in M1 and Intel pools. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue with first-time [connections to the Gitlab](../build/adding-a-build-profile/connecting-to-gitlab.md) provider. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the case where the build pipeline was executed on a non-selected wrong pool, which was affecting the default Intel and M1 pools. <CloudBadge/>
+- Fixed an issue that was affecting the first-time [connections to the GitLab](../build/adding-a-build-profile/connecting-to-gitlab.md) provider. <CloudBadge/> <SelfHostedBadge/>
 - The bug was fixed in the re-creation of a connection that had been disconnected and had its [token revoked](../build/connections.md#revoke-oauth-connections). <CloudBadge/> <SelfHostedBadge/>
 - Fixed a redirect issue when the user tried to connect to any Git provider without an active connection. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue with the [XUnit test](../continuous-testing/running-ios-unit-and-ui-tests.md) result screenshot in the test results section. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue that occurred in the branch list after [changing the git provider](../build/reconnect-change-provider.md) in linked profiles. It is no longer possible to configure a branch that does not exist in the branch list in the new Git provider. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue that caused environment variables to be created with the same name in the same [environment variable](../environment-variables/managing-variables.md) group on the API side. <CloudBadge/> <SelfHostedBadge/>
-- An error that occurred after closing the repository list while trying to change the Git provider of a profile connected to a repository has been fixed. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue that caused the [invited user](../account/my-organization.md#managing-team-members) not to be redirected to the registration page if they were not registered. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue where the authentication logs section was not visible. <CloudBadge/> <SelfHostedBadge/>
-- The error with the email hint text falling into the email field on the login and registration page has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue with the [Unit and UI test](../continuous-testing/running-ios-unit-and-ui-tests.md) screenshots in the test reports. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that occurred in the branch list and commits after [changing the git provider](../build/reconnect-change-provider.md#change-git-provider-and-reconnect) connection at the build profile. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused environment variables to be created with the same name in the same [environment variable](../environment-variables/managing-variables.md) group on the API. <CloudBadge/> <SelfHostedBadge/>
+- An error that occurred after closing the repository list while trying to change the Git provider of a build profile connected to a repository has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused the [invited user](../account/my-organization.md#managing-team-members) not to be redirected to the sign up page if they were not registered. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where the authentication logs section was not visible. <CloudBadge/>
+- The error with the email hint text falling into the email field on the login and sign up pages has been fixed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.10.0 - 2023-12-01 - Connections Page, Disconnect Profile and Change Provider
 
