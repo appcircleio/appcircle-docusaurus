@@ -69,6 +69,55 @@ The user ID and group ID should be four-digit numbers. (For example, 1000, 1002,
 
 If your user ID and group ID are very large, you may get this error. In this case, you should create a new user and group with regular IDs.
 
+### We want to change the Enterprise App Store custom domain. What should we do?
+
+You can add or update the custom domain from the `global.yaml` of your project.
+
+- Go to the `appcircle-server` directory.
+
+- Find the project name by listing the `projects` directory.
+
+```bash
+ls -l ./projects
+```
+
+- Down the Appcircle server. Be careful; this will cause downtime.
+
+```bash
+./ac-self-hosted.sh -n spacetech down
+```
+
+:::caution
+`spacetech` in the command above is an example project name. Please use your own project name.
+:::
+
+- Edit the required section with the updated domain:
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+```yaml
+storeWeb:
+  customDomain:
+    enabled: true
+    domain: store.spacetech.com
+```
+
+- Export the new changes.
+
+```bash
+./ac-self-hosted.sh -n spacetech export
+```
+
+- Up your Appcircle server with new variables.
+
+```bash
+./ac-self-hosted.sh -n spacetech up
+```
+
+- Now you can access the Enterprise App Store with the new domain.
+
 ## Appcircle Runner FAQ
 
 ### We are facing a self-signed certificate error on builds.
