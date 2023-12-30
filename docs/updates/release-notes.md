@@ -26,6 +26,8 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The starting workflow step in the build log shows the email address of the user who triggered the current build. <CloudBadge/> <SelfHostedBadge/>
 - Users who have reached the build limit on their licenses will no longer be able to use Autofill while adding a new profile. <CloudBadge/> <SelfHostedBadge/>
 - The motto on the login and sign-up pages has been changed to reflect our up-to-date vision. <CloudBadge/> <SelfHostedBadge/>
+- The "Default M1 Pool" has the latest stable [Xcode 15.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_1-release-notes) update available on runners and can be used for iOS builds. <CloudBadge/> <SelfHostedBadge/>
+- The "Default M1 Pool" has [Xcode 15.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_2-release-notes) beta-1 installed on runners. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
@@ -44,7 +46,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The error with the email hint text falling into the email field on the login and sign up pages has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the [Xcodebuild for Unit and UI Tests](../workflows/ios-specific-workflow-steps#xcodebuild-for-unit-and-ui-tests) workflow step, which was stuck in the build pipeline until timeout in some cases. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the crash in the [Export Build Artifacts](../workflows/common-workflow-steps#export-build-artifacts) workflow step that occurs while uploading files in the artifacts that have 0 bytes of length or no content. <CloudBadge/> <SelfHostedBadge/>
-- The bundler version bug has been fixed in the [Fastlane](../integrations/using-fastlane-in-the-workflows/#adding-fastlane-to-the-appcircle-build-workflow-as-a-step) workflow step by pinning the last bundler version compatible with the ruby version that's included in build agents. <CloudBadge/> <SelfHostedBadge/>
+- The bundler version bug has been fixed in the [Fastlane](../integrations/using-fastlane-in-the-workflows/#adding-fastlane-to-the-appcircle-build-workflow-as-a-step) workflow step by pinning the last bundler version compatible with the ruby version that's included in build runners. <CloudBadge/> <SelfHostedBadge/>
 - The permission error that occurred while using the [Authenticate with Netrc](../workflows/common-workflow-steps#authenticate-with-netrc) workflow step was fixed. <CloudBadge/> <SelfHostedBadge/>
 - The command line parameter order has been changed to fetch provisioning profiles for signing first, which fixes the broken auto-sign feature in the [Xcodebuild for Devices](../workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) workflow step. <CloudBadge/> <SelfHostedBadge/>
 
