@@ -20,6 +20,8 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Members in the same [organization](../account/my-organization.md) can take ownership of previously added build profiles. <CloudBadge/> <SelfHostedBadge/>
 - The user can now add a new PAT (Personal Access Token) via the [Connections](../build/connections.md#managing-pat-connections) page without creating a new build profile. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can integrate their own authentication and OTP services and use them in conjunction with LDAP configuration on self-hosted installations. <SelfHostedBadge/>
+- The configuration file [global.yaml](../self-hosted-appcircle/install-server/docker#3-configure) now has a validator that helps users configure the settings correctly on export and prevents them from starting the server with broken settings. <SelfHostedBadge/>
+- The [certificate installer](../self-hosted-appcircle/install-server/docker#3-configure) tool now supports extracting proxy server certificates, which enable the runner to connect through a proxy without any SSL certificate error. <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -30,6 +32,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The "Default M1 Pool" has [Xcode 15.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_2-release-notes) beta-1 installed on runners. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
 - The LDAP configuration section in settings has a help button that redirects to the relevant documentation page for configuration details. <SelfHostedBadge/>
 - A new type of role **Operator** has been added to the build profile roles that can also trigger builds. <CloudBadge/> <SelfHostedBadge/>
+- You can change the [Enterprise App Store](../self-hosted-appcircle/configure-server/ssl-configuration#enterprise-app-store) settings (domain, etc.) after installation without any `reset` action. <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
@@ -51,6 +54,12 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The bundler version bug has been fixed in the [Fastlane](../integrations/using-fastlane-in-the-workflows/#adding-fastlane-to-the-appcircle-build-workflow-as-a-step) workflow step by pinning the last bundler version compatible with the ruby version that's included in build runners. <CloudBadge/> <SelfHostedBadge/>
 - The permission error that occurred while using the [Authenticate with Netrc](../workflows/common-workflow-steps#authenticate-with-netrc) workflow step was fixed. <CloudBadge/> <SelfHostedBadge/>
 - The command line parameter order has been changed to fetch provisioning profiles for signing first, which fixes the broken auto-sign feature in the [Xcodebuild for Devices](../workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) workflow step. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the errors thrown while using the [Bitbucket](../build/adding-a-build-profile/connecting-to-bitbucket) connection in build profiles. <CloudBadge/> <SelfHostedBadge/>
+- In the [Azure DevOps Server 2020](../build/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository) version, the trigger was malfunctioning due to the different JSON format received after a merge operation following a PR (Pull Request). It was fixed. <CloudBadge/> <SelfHostedBadge/>
+- The bug that prevents users from [changing their emails](../account/my-account/my-details) was fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug about [`no_proxy`](../self-hosted-appcircle/configure-server/proxy-configuration#2-configure-proxy-for-the-server) environment variables that broke the network connection of the self-hosted Appcircle server. <SelfHostedBadge/>
+- Fixed bug that causes version output to be incorrect when [artifact registry](../self-hosted-appcircle/install-server/docker#using-3rd-party-or-self-hosted-artifact-registry) has port in URL. <SelfHostedBadge/>
+- Fixed corrupted `check` command output in Ubuntu-based Linux [distributions](../self-hosted-appcircle/install-server/docker#supported-linux-distributions). <SelfHostedBadge/>
 
 ## 3.10.0 - 2023-12-01 - Connections Page, Disconnect Profile and Change Provider
 
