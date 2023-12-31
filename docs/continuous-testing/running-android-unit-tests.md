@@ -120,7 +120,7 @@ There's one important setting that you should change. If any workflow steps fail
 
 :::caution
 
-If you're using UI Tests with Emulators, you must select Intel Device since M1 Virtual Machines don't support nested virtualization. Unit tests can work for both pools.
+If you're using UI tests with emulators, you must select an Intel device (**Default Intel Pool**) since M1 virtual machines (**Default M1 Pool**) don't support nested virtualization. Unit tests can work for both pools.
 
 :::
 
