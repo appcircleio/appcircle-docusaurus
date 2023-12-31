@@ -98,7 +98,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_ARCHIVE\_METADATA\_PATH  | Archive metadata path                                                                 |
 | AC\_SIMULATOR\_ARCHIVE\_PATH | Simulator archive path description                                                    |
 | AC\_METADATA\_OUTPUT\_PATH   | Metadata output file description                                                      |
-| AC\_CERTIFICATES             | Paths of the certificates. To access the file path, the variable is stored as follows: 'a_cert_pass\|a_cert_path\|b_cert_pass\|b_cert_path'. If there is no password, the storage format is still maintained: '\|a_cert_path'                         |
+| AC\_CERTIFICATES             | Concatenated strings of 'cert_pass\|cert_path' combined with a pipe ('\|') character that have the paths of the certificates and their passwords if they exist. <br/><br/> For instance, when we have two certificates A and B that require passwords, then it should be like 'a_cert_pass\|a_cert_path\|b_cert_pass\|b_cert_path'. <br/><br/> If there is no password, its field will be empty, like '\|a_cert_path'.                         |
 | AC\_PROVISIONING\_PROFILES   | Paths of the provisioning profiles                                                    |
 | AC\_EXPORT\_DIR              | Specifies the path that contains `ipa`, `exportOptions.plist`and other exported files |
 | AC\_BUNDLE\_IDENTIFIERS      | Specifies the project bundle identifiers                                              |
