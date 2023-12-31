@@ -18,3 +18,7 @@ Accounts can only be deleted by the owner.
 - Click **Delete Account** link and confirm the dialog.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/myaccount-delete-account-prompt.png" />
+
+:::info
+After this confirmation, your account will be deleted within the day.
+:::
