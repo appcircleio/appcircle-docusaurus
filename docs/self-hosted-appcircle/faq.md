@@ -168,3 +168,35 @@ curl -v https://api.appcircle.spacetech.com
 You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates.md) page to trust the root CA certificate of your organization.
 
 If you already trusted the root CA cert, you should check the Appcircle server's certificate. If it is too long, like 5 years, it should be trusted using the graphical user interface. You should open the Keychain Access application from the GUI and add the Appcircle server's certificate. After that, you should click on the certificate and select "Always trust".
+
+### We are facing "LoginName too long" error while running the `screen` command.
+
+The `screen` command has a bug with long usernames which has been fixed in the new versions.
+
+If you are facing this error while trying to run runners, you should update the `screen` tool in the host machine.
+
+You can follow the steps below to update the `screen` tool:
+
+- Check the current version
+
+```bash
+screen --version
+```
+
+- Install the new version
+
+```bash
+brew install screen
+```
+
+- Open a new terminal session
+
+:::caution
+If you don't open a new terminal session, the screen tool won't be updated.
+:::
+
+- Re-check the version.
+
+```bash
+screen --version
+```
