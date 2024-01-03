@@ -69,6 +69,69 @@ The user ID and group ID should be four-digit numbers. (For example, 1000, 1002,
 
 If your user ID and group ID are very large, you may get this error. In this case, you should create a new user and group with regular IDs.
 
+### How can we change default sub-domains?
+
+:::caution
+This operation needs `reset` which deletes all your data like "Build Profiles", "Certificates" etc on Appcircle Server.
+:::
+
+You can change default subdomains as your needs. For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com`, you can follow the step below:
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+:::info
+`spacetech` is example project name. Please check your own project name from under the `./projects` directory.
+:::
+
+- Down your project.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Edit the `global.yaml` of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+```yaml
+keycloak:
+  external:
+    subdomain: auth-appcircle
+webApp:
+  external:
+    subdomain: my-appcircle
+apiGateway:
+  external:
+    subdomain: api-appcircle
+testerWeb:
+  external:
+    subdomain: dist-appcircle
+storeWeb:
+  external:
+    subdomain: store-appcircle
+webEvent:
+  external:
+    subdomain: hook-appcircle
+resource:
+  domain: resource-appcircle
+```
+
+:::caution
+If the keys are already exist in the `global.yaml`, you should just update or add the missing keys.
+
+For example you must have `keycloak` key in the global.yaml already. You must just add the `keycloak.external.subdomain` section.
+:::
+
+- `reset`, `export` and `up` the Appcircle Server
+
+For details, you can follow [Reset Configuration](./install-server/docker.md/#reset-configuration) section in the documentation.
+
 ## Appcircle Runner FAQ
 
 ### We are facing a self-signed certificate error on builds.
