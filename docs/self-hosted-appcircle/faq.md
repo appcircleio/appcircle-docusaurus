@@ -156,6 +156,10 @@ The `reset` is optional, if you are installing for the first time (You must neve
 
 For details, you can follow [Reset Configuration](./install-server/docker.md/#reset-configuration) section in the documentation.
 
+:::info
+If you have configured the Appcircle server as `https`, you may want to change the nginx SSL certificate and key if the certificate doesn't contain the new domains.
+:::
+
 ## Appcircle Runner FAQ
 
 ### We are facing a self-signed certificate error on builds.
