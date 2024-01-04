@@ -75,7 +75,11 @@ If your user ID and group ID are very large, you may get this error. In this cas
 This operation needs `reset` which deletes all your data like "Build Profiles", "Certificates" etc on Appcircle Server.
 :::
 
-You can change default subdomains as your needs. For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com`, you can follow the step below:
+You can change default subdomains as your needs at the first installation time of the Appcircle server.
+
+If you have already installed the Appcircle server and want to change the subdomains, you can reset the data and move on.
+
+For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com`, you can follow the step below:
 
 - Go to the `appcircle-server` directory.
 
@@ -87,13 +91,13 @@ cd appcircle-server
 `spacetech` is example project name. Please check your own project name from under the `./projects` directory.
 :::
 
-- Down your project.
+- If your server is up and running, down your project.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
 ```
 
-- Edit the `global.yaml` of your project.
+- Edit the `global.yaml` of your project for subdomains.
 
 ```bash
 vi ./projects/spacetech/global.yaml
@@ -128,7 +132,27 @@ If the keys are already exist in the `global.yaml`, you should just update or ad
 For example you must have `keycloak` key in the global.yaml already. You must just add the `keycloak.external.subdomain` section.
 :::
 
+- Edit the `global.yaml` of your project for the main domain.
+
+```yaml
+external:
+  mainDomain: '.spacetech.com'
+```
+
+:::info
+
+- After you change the main domain and the subdomains, you can merge them in your mind to find full domain.
+
+- For example, in the example below:
+  - Main domain: `.spacetech.com`
+  - Web app domain: `my-appcircle`
+  - So you will use `my-appcircle.spacetech.com` as full domain.
+
+:::
+
 - `reset`, `export` and `up` the Appcircle Server
+
+The `reset` is optional, if you are installing for the first time (You must never have run the `up` command.), you don't the reset. You can continue with the `export` and the `up` commands.
 
 For details, you can follow [Reset Configuration](./install-server/docker.md/#reset-configuration) section in the documentation.
 
