@@ -69,7 +69,7 @@ The user ID and group ID should be four-digit numbers. (For example, 1000, 1002,
 
 If your user ID and group ID are very large, you may get this error. In this case, you should create a new user and group with regular IDs.
 
-### How can we change default sub-domains?
+### How can we change the default sub-domains?
 
 :::caution
 This operation needs `reset` which deletes all your data like "Build Profiles", "Certificates" etc on Appcircle Server.
