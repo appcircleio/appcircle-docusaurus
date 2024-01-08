@@ -115,6 +115,7 @@ The main domain (`appcircle.spacetech.com`, for instance.) should have seven sub
 These subdomains are **api**, **auth**, **dist**, **hook**, **my**, **resource** and **store**.
 
 - [ ] Create these seven domain name entries on your DNS.
+
   - [ ] `api.appcircle.spacetech.com`
   - [ ] `auth.appcircle.spacetech.com`
   - [ ] `dist.appcircle.spacetech.com`
@@ -163,7 +164,7 @@ You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
   - [ ] Create a public-private SSH key pair.
   - [ ] Configure your Appcircle git user's public SSH keys and upload the public SSH key you created.
     - For details, you can check the [connect via SSH](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) section.
-- [ ] Create a firewall rule (or permission) from the Appcircle server to the git server.
+- [ ] Create a firewall rule (or permission) between the Appcircle server and the git server in both directions.
 
 ### Network Access for Installation
 
