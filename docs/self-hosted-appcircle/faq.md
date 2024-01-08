@@ -71,27 +71,41 @@ If your user ID and group ID are very large, you may get this error. In this cas
 
 ### We want to change the Enterprise App Store custom domain. What should we do?
 
-You can add or update the custom domain from the `global.yaml` of your project.
+You can change the custom domain settings of Enterprise App Store from the `global.yaml` configuration file.
+
+:::caution
+We are assuming that you have installed the Appcircle server with version `3.11.0` or later for this operation.
+:::
+
+- Log in to the Appcircle server with SSH or a remote connection.
 
 - Go to the `appcircle-server` directory.
 
-- Find the project name by listing the `projects` directory.
+```bash
+cd appcircle-server
+```
+
+:::info
+
+The `spacetech` in the example codes below are example project name.
+
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
 
 ```bash
 ls -l ./projects
 ```
 
-- Down the Appcircle server. Be careful; this will cause downtime.
-
-```bash
-./ac-self-hosted.sh -n spacetech down
-```
-
-:::caution
-`spacetech` in the command above is an example project name. Please use your own project name.
 :::
 
-- Edit the required section with the updated domain:
+- Shutdown Appcircle server. Keep in mind that, this will cause downtime.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Edit the `global.yaml` file of your project.
 
 ```bash
 vi ./projects/spacetech/global.yaml
@@ -104,19 +118,28 @@ storeWeb:
     domain: store.spacetech.com
 ```
 
-- Export the new changes.
+- Apply configuration changes.
 
 ```bash
-./ac-self-hosted.sh -n spacetech export
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
-- Up your Appcircle server with new variables.
+- Boot Appcircle server.
 
 ```bash
-./ac-self-hosted.sh -n spacetech up
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
-- Now you can access the Enterprise App Store with the new domain.
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+:::
+
+Now you can access the Enterprise App Store with the new store domain settings.
 
 ## Appcircle Runner FAQ
 
