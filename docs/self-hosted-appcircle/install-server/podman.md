@@ -88,33 +88,33 @@ The `swappiness` parameter configures how often your system swaps data out of RA
 
 The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.3.0 or higher.
 
-#### Enabling The Linger Option
+#### Enabling the Linger Option
 
-To ensure uninterrupted operation of our Appcircle server's background processes, you **must** enable the `linger` option on the host system.
+To ensure uninterrupted operation of the Appcircle server's background processes, you must enable the **linger** option on the host system.
 
 Enabling this option allows the podman containers to persist even after user logouts, ensuring continuous functionality.
 
-Check if `linger` option is enabled for the current user:
+Check if the **linger** option is enabled for the current user with the below command.
 
 ```bash
 loginctl show-user "$USER" --property=Linger
 ```
 
-If the output is "Linger=no", this means that your linger option is disabled and you can't run the Appcircle server on the background.
+If you see `Linger=yes`, it means that the option is enabled and you do not need extra configuration.
 
-Otherwise if you see "Linger=yes", this means that your linger option is enabled and no need extra configuration.
+If the output is `Linger=no`, this means that the option is disabled and you cannot run the Appcircle server in the background.
 
 :::caution
-If the `linger` option is set to `no`, you must enable it to run Appcircle server in the background.
+If the **linger** option is set to `no`, you must enable it to run the Appcircle server in the background.
 :::
 
-To enable the `linger` option, you can use the command below:
+To enable the linger option, you can use the command below:
 
 ```bash
 loginctl enable-linger
 ```
 
-You can run the Appcircle server on the background now.
+You can run the Appcircle server in the background now.
 
 #### Overcoming Privileged Port Limitations
 
