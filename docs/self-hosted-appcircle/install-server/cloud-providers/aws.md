@@ -137,7 +137,7 @@ sudo apt upgrade
 ls -l "$HOME"
 ```
 
-- You can go into the appcircle-server directory to start configuring the Appcircle
+- You can go into the `appcircle-server` directory to start configuring the Appcircle
 
 ```bash
 cd "$HOME/appcircle-server"
