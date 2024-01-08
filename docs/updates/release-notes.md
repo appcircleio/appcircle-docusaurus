@@ -12,12 +12,61 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.11.0 - 2023-12-27 - Publish Module, Change Build Profile Owner, Custom Authentication Integration
+
+### 🆕 New Feature
+
+- A new module called **Publish** is introduced in beta, which helps manage App Store, Google Play, and Huawei AppGallery deployments with more efficiency. You can now modify publishing flows, add custom scripts, and control flow logic. <CloudBadge/> <SelfHostedBadge/>
+- Members in the same [organization](../account/my-organization.md) can take ownership of previously added build profiles. <CloudBadge/> <SelfHostedBadge/>
+- The user can now add a new PAT (Personal Access Token) via the [Connections](../build/connections.md#managing-pat-connections) page without creating a new build profile. <CloudBadge/> <SelfHostedBadge/>
+- Enterprise customers can integrate their own authentication and OTP services and use them in conjunction with LDAP configuration on self-hosted installations. <SelfHostedBadge/>
+- The configuration file [global.yaml](../self-hosted-appcircle/install-server/docker#3-configure) now has a validator that helps users configure the settings correctly on export and prevents them from starting the server with broken settings. <SelfHostedBadge/>
+- The [certificate installer](../self-hosted-appcircle/install-server/docker#3-configure) tool now supports extracting proxy server certificates, which enable the runner to connect through a proxy without any SSL certificate error. <SelfHostedBadge/>
+
+### :muscle: Improvement
+
+- The starting workflow step in the build log shows the email address of the user who triggered the current build. <CloudBadge/> <SelfHostedBadge/>
+- Users who have reached the build limit on their licenses will no longer be able to use Autofill while adding a new profile. <CloudBadge/> <SelfHostedBadge/>
+- The motto on the login and sign-up pages has been changed to reflect our up-to-date vision. <CloudBadge/> <SelfHostedBadge/>
+- The "Default M1 Pool" has the latest stable [Xcode 15.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_1-release-notes) update available on runners and can be used for iOS builds. <CloudBadge/> <SelfHostedBadge/>
+- The "Default M1 Pool" has [Xcode 15.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_2-release-notes) beta-1 installed on runners. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
+- The LDAP configuration section in settings has a help button that redirects to the relevant documentation page for configuration details. <SelfHostedBadge/>
+- A new type of role **Operator** has been added to the build profile roles that can also trigger builds. <CloudBadge/> <SelfHostedBadge/>
+- You can change the [Enterprise App Store](../self-hosted-appcircle/configure-server/ssl-configuration#enterprise-app-store) settings (domain, etc.) after installation without any `reset` action. <SelfHostedBadge/>
+
+### 🐞 Fixed
+
+- Fixed an issue where a connected build profile would appear as if it had not been connected before. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused the user to completely restrict their own [privileges](../account/my-organization.md#managing-the-team-under-an-organization) when alone in an organization. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the case where the build pipeline was executed on a non-selected wrong pool, which was affecting the default Intel and M1 pools. <CloudBadge/>
+- Fixed an issue that was affecting the first-time [connections to the GitLab](../build/adding-a-build-profile/connecting-to-gitlab.md) provider. <CloudBadge/> <SelfHostedBadge/>
+- The bug was fixed in the re-creation of a connection that had been disconnected and had its [token revoked](../build/connections.md#revoke-oauth-connections). <CloudBadge/> <SelfHostedBadge/>
+- Fixed a redirect issue when the user tried to connect to any Git provider without an active connection. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue with the [Unit and UI test](../continuous-testing/running-ios-unit-and-ui-tests.md) screenshots in the test reports. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that occurred in the branch list and commits after [changing the git provider](../build/reconnect-change-provider.md#change-git-provider-and-reconnect) connection at the build profile. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused environment variables to be created with the same name in the same [environment variable](../environment-variables/managing-variables.md) group on the API. <CloudBadge/> <SelfHostedBadge/>
+- An error that occurred after closing the repository list while trying to change the Git provider of a build profile connected to a repository has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused the [invited user](../account/my-organization.md#managing-team-members) not to be redirected to the sign up page if they were not registered. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where the authentication logs section was not visible. <CloudBadge/>
+- The error with the email hint text falling into the email field on the login and sign up pages has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the [Xcodebuild for Unit and UI Tests](../workflows/ios-specific-workflow-steps#xcodebuild-for-unit-and-ui-tests) workflow step, which was stuck in the build pipeline until timeout in some cases. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the crash in the [Export Build Artifacts](../workflows/common-workflow-steps#export-build-artifacts) workflow step that occurs while uploading files in the artifacts that have 0 bytes of length or no content. <CloudBadge/> <SelfHostedBadge/>
+- The bundler version bug has been fixed in the [Fastlane](../integrations/using-fastlane-in-the-workflows/#adding-fastlane-to-the-appcircle-build-workflow-as-a-step) workflow step by pinning the last bundler version compatible with the ruby version that's included in build runners. <CloudBadge/> <SelfHostedBadge/>
+- The permission error that occurred while using the [Authenticate with Netrc](../workflows/common-workflow-steps#authenticate-with-netrc) workflow step was fixed. <CloudBadge/> <SelfHostedBadge/>
+- The command line parameter order has been changed to fetch provisioning profiles for signing first, which fixes the broken auto-sign feature in the [Xcodebuild for Devices](../workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) workflow step. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the errors thrown while using the [Bitbucket](../build/adding-a-build-profile/connecting-to-bitbucket) connection in build profiles. <CloudBadge/> <SelfHostedBadge/>
+- In the [Azure DevOps Server 2020](../build/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository) version, the trigger was malfunctioning due to the different JSON format received after a merge operation following a PR (Pull Request). It was fixed. <CloudBadge/> <SelfHostedBadge/>
+- The bug that prevents users from [changing their emails](../account/my-account/my-details) was fixed. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug about [`no_proxy`](../self-hosted-appcircle/configure-server/proxy-configuration#2-configure-proxy-for-the-server) environment variables that broke the network connection of the self-hosted Appcircle server. <SelfHostedBadge/>
+- Fixed bug that causes version output to be incorrect when [artifact registry](../self-hosted-appcircle/install-server/docker#using-3rd-party-or-self-hosted-artifact-registry) has port in URL. <SelfHostedBadge/>
+- Fixed corrupted `check` command output in Ubuntu-based Linux [distributions](../self-hosted-appcircle/install-server/docker#supported-linux-distributions). <SelfHostedBadge/>
+
 ## 3.10.0 - 2023-12-01 - Connections Page, Disconnect Profile and Change Provider
 
 ### 🆕 New Feature
 
-- Added **Connections** to the Build module, where all connections (OAuth, PAT) can be viewed and edited. From here, you can disconnect, reconnect, and view the build profiles affected by the connections. <CloudBadge/> <SelfHostedBadge/>
-- You can now disconnect and connect to another repository or Git provider without deleting the link to an added profile. You can also change PATs for connections made with PAT. <CloudBadge/> <SelfHostedBadge/>
+- Added [Connections](../build/connections.md) to the Build module, where all connections (OAuth, PAT) can be viewed and edited. From here, you can disconnect, reconnect, and view the build profiles affected by the connections. <CloudBadge/> <SelfHostedBadge/>
+- You can now [disconnect and reconnect](../build/reconnect-change-provider.md) to another repository or Git provider without deleting the link to an added profile. You can also change PATs for connections made with PAT. <CloudBadge/> <SelfHostedBadge/>
 - The [Testinium](../workflows/common-workflow-steps.md#testinium) workflow component now tries several times in case of an error from the Testinium APIs. <CloudBadge/> <SelfHostedBadge/>
 - The [Appdome-Build-2Secure](../workflows/ios-specific-workflow-steps.md#appdome-build-2secure-for-ios) for iOS component was added, which is the integration that allows activating security and app protection features. <CloudBadge/> <SelfHostedBadge/>
 

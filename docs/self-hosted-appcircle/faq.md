@@ -57,6 +57,18 @@ For more details on changing the location of Podman data, refer to the [Change t
 
 You should trust the Appcircle's or your organization's root CA certificate on your computer.
 
+### We are getting the "potentially insufficient UIDs or GIDs" error while using Podman.
+
+You should check the user ID and group ID of your current account.
+
+```bash
+id
+```
+
+The user ID and group ID should be four-digit numbers. (For example, 1000, 1002, etc.)
+
+If your user ID and group ID are very large, you may get this error. In this case, you should create a new user and group with regular IDs.
+
 ## Appcircle Runner FAQ
 
 ### We are facing a self-signed certificate error on builds.

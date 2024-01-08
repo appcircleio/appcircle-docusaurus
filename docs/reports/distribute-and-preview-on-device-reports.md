@@ -23,7 +23,13 @@ Each version is defined as an app binary for iOS and Android deployed manually o
 
 The date and time are displayed in the current timezone.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (13).png' />
+You can filter the report pages according to the organization.
+
+:::info
+In the filtering options, you can only view and select the organization and sub-organization you belong to.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/app-version-new.png' />
 
 ## App Sharing Report
 
@@ -35,4 +41,10 @@ Each line indicates an individual share operation conducted using the "Share wit
 
 The date and time are displayed in the current timezone.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (14).png' />
+You can filter the report pages according to the organization.
+
+:::info
+In the filtering options, you can only view and select the organization and sub-organization you belong to.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/app-sharing-new.png' />
