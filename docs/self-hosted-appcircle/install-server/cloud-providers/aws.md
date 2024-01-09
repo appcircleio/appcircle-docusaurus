@@ -5,6 +5,8 @@ metaDescription: Appcircle Server on AWS
 sidebar_position: 1
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 ## Overview
 
 An Appcircle server Amazon Machine Image (AMI) is a pre-configured template used to create virtual servers, known as instances, in the Amazon Web Services (AWS) environment.
@@ -53,6 +55,8 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 - Login to the AWS console with your account.
 
+- Select the region from right upper corner.
+
 - Head to the EC2 menu to create EC2 instance.
 
 - Click on "Launch Instance" button from the EC2 dashboard.
@@ -86,7 +90,7 @@ After you meet all the requirements discussed above, you can follow the steps be
 
   - You can see the recommended storage sizes in the [Hardware Requirements](../docker.md#hardware-requirements) section.
 
-- You can see an example configuration in the screenshot below 👇:
+- You can see an example configuration in the screenshots below 👇:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws1-name-ami.png' />
 
@@ -163,4 +167,6 @@ cd "$HOME/appcircle-server"
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws8-dashboard.png' />
 
-- 🎉 You can start using the Appcircle. For the tutorials, you can head to the [Tutorials](../../../tutorials) page.
+- 🎉 You can now enjoy using the Appcircle and build your mobile applications.
+
+- 📚 For the quick start tutorials for building mobile apps, you can head to the [Tutorials](../../../tutorials) page.
