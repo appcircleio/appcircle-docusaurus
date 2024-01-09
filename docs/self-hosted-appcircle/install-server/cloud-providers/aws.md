@@ -25,15 +25,15 @@ Think of it as a snapshot of a server that includes the operating system, necess
 
 Before using the Appcircle server AMI, there is a couple of things that you need to handle.
 
+- AWS Account
+
+You must have an active AWS account with appropriate permissions to launch EC2 instances and work with other related services.
+
 - Understanding of AWS Services
 
 A basic understanding of Amazon Web Services (AWS) services, particularly EC2 (Elastic Compute Cloud), is beneficial.
 
-Users should be familiar with instance creation, networking, security groups, and storage configurations.
-
-- AWS Account
-
-You must have an active AWS account with appropriate permissions to launch EC2 instances and work with other related services.
+You should be familiar with instance creation, networking, security groups, and storage configurations.
 
 - Networking and Security Configuration
 
@@ -45,7 +45,7 @@ You need an SSH key pair to access to the server that you will create securely.
 
 - Linux System Configuration
 
-Basic familiarity with Linux system configurations and commands is essential since this document will use some linux commands.
+Basic familiarity with Linux system configurations and commands is essential since this document will use linux commands.
 
 ## Creating an Appcircle Server From the AMI
 
@@ -78,9 +78,11 @@ After you meet all the requirements discussed above, you can follow the steps be
 
   - We will use the default VPC.
   - Allow HTTP and HTTPS traffic from the internet.
+    - This is required for accessing to the Appcircle dashboard.
   - You can restrict the SSH request by specifying the source IP addresses.
+    - SSH is also required to access to the server.
 
-- For PoC, you can select 100GB for PoC setup.
+- For storage, you can select 100GB for a PoC setup.
 
   - You can see the recommended storage sizes in the [Hardware Requirements](../docker.md#hardware-requirements) section.
 
@@ -100,7 +102,7 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws5-instance-running.png' />
 
-## Connecting to the Appcircle Server EC2 Instance
+## Configuring Appcircle Server EC2 Instance
 
 After you have successfully created an EC2 instance from the Appcircle server AMI, you can follow the steps below to configure it.
 
@@ -124,6 +126,8 @@ ssh -i "/home/spacetech/.ssh/id_rsa" ubuntu@34.205.139.17
 
 - The SSH command may ask you to add this server to the known hosts list. You can write `yes` and hit enter.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws6-ssh.png' />
+
 - After you connect to the Appcircle instance, the first thing you should do is a system update. Although the Appcircle AMI is up to date, it is recommended that you perform security updates again.
 
 ```bash
@@ -143,8 +147,20 @@ ls -l "$HOME"
 cd "$HOME/appcircle-server"
 ```
 
-//TODO
+- If you are licensed user, you should get the licensed Appcircle zip package from us.
 
-- If you are licensed user, you should get the licensed package from us.
+  - Please contact us with a communication channel if you don't have it already.
 
 - In the `appcircle-server` directory, copy the content of `cred.json` file you received from us to a file named `cred.json`. The file name is important.
+
+  - If you don't have `cred.json` file, you can contact us to get it.
+
+- The Appcircle server is ready to be [Configured](../docker.md#3-configure) for your project.
+
+- You should also handle the [DNS](../docker.md#4-dns-settings) settings. Create `A` and `CNAME` record for your instances.
+
+- After the configuration and running the server, you can access to the Appcircle dashboard with the [domain](../docker.md#4-dns-settings) of your server.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws8-dashboard.png' />
+
+- 🎉 You can start using the Appcircle. For the tutorials, you can head to the [Tutorials](../../../tutorials) page.
