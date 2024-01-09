@@ -21,9 +21,7 @@ To run the diagnostic script and create a diagnostic file to check current syste
 
 You can run the `diagnostic.sh` script and create the diagnostic files which will help you to track configuration of your server.
 
-When you run the script, there will be a `diagnostic` and `diagnostic.tar.gz` file.
-
-You can read the `diagnostic` with a text editor or you can share the `diagnostic.tar.gz` file with us.
+When you run the script, there will be a `diagnostic.tar.gz` file which you can share with us.
 
 :::caution
 Diagnostic script needs `sudo` permission to read some system files.
@@ -33,6 +31,12 @@ For better results, you should run the script with the user which you use to run
 The diagnostic script can asks for sudo password, you can write the password and hit enter to continue.
 :::
 
+To use the script, you should go to the `appcircle-server` directory on your Appcircle server.
+
+```bash
+cd appcircle-server
+```
+
 Example commands:
 
 - Run with default settings which will create the files discussed above:
@@ -41,7 +45,7 @@ Example commands:
 ./helper-tools/diagnostic.sh
 ```
 
-- Change the output file names:
+- Change the output file name to `custom.tar.gz`:
 
 ```bash
 ./helper-tools/diagnostic.sh --output "custom"
