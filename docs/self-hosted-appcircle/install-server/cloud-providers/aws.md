@@ -120,11 +120,13 @@ Please wait patiently while the AWS is creating your Appcircle server instance.
 
 You can check the subscription in the "AWS Marketplace Subscriptions" service in the AWS console.
 
+If the instance is not created within 2 hours, you can follow the steps above and launch it again.
+
 :::
 
 - You can head to the EC2 Instances page to see if your server is up and running.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws5-instance-running.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws18-instance-running.png' />
 
 ## Configuring Appcircle Server EC2 Instance
 
