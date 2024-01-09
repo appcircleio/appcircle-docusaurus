@@ -92,15 +92,35 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 - You can see an example configuration in the screenshots below 👇:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws1-name-ami.png' />
+- AMI configuration:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws2-type-sshkey.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws9-ami1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws10-ami2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws11-ami3.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws3-network.png' />
+- Instance type and SSH key configuration:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws4-storage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws14-instance-type.png' />
+
+- Network configuration:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws15-network.png' />
+
+- Storage configuration:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws16-storage.png' />
 
 - You can click on the `Launch Instance` button to create the instance with the configuration you made.
+
+:::info
+
+The instance creation may take some time due to AWS AMI subscriptions.
+
+Please wait patiently while the AWS is creating your Appcircle server instance.
+
+You can check the subscription in the "AWS Marketplace Subscriptions" service in the AWS console.
+
+:::
 
 - You can head to the EC2 Instances page to see if your server is up and running.
 
