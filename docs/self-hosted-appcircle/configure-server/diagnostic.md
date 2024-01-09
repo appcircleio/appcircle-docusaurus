@@ -45,10 +45,10 @@ Example commands:
 ./helper-tools/diagnostic.sh
 ```
 
-- Change the output file name to `custom.tar.gz`:
+- Change the output file name to `diagnostic-report.tar.gz`:
 
 ```bash
-./helper-tools/diagnostic.sh --output "custom"
+./helper-tools/diagnostic.sh --output "diagnostic-report"
 ```
 
 - Check the help message:
