@@ -17,7 +17,7 @@ With its ability to gather crucial data such as systemd services, installed pack
 
 To run the diagnostic script and create a diagnostic file to check current system configuration, you can follow the steps below.
 
-### Creating a file to share
+### Creating a File to Share
 
 You can run the `diagnostic.sh` script and create the diagnostic files which will help you to track configuration of your server.
 
@@ -59,7 +59,7 @@ Example commands:
 ./helper-tools/diagnostic.sh --version
 ```
 
-### Printing diagnostic information to the terminal
+### Printing Diagnostic Information to the Terminal
 
 If you want to write the diagnostic output to the terminal instead of a file, you can run the command below:
 
