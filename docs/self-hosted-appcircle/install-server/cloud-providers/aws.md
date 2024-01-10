@@ -17,15 +17,15 @@ Think of it as a snapshot of a server that includes the operating system, necess
 
 ### Appcircle Requirements
 
-- You should contact us to get the license file for accessing to the Appcircle Google cloud resources such as container images.
+- You should contact us to get the license file for accessing to the Appcircle Google cloud resources, such as container images.
 
-- If you are a licensed user, you should contact us to the licensed Appcircle server package with your actual license.
+- If you are a licensed user, you should contact us about the licensed Appcircle server package with your actual license.
 
 - If you are a PoC user, you can go on with the package located in the AMI.
 
 ### Technical Requirements
 
-Before using the Appcircle server AMI, there is a couple of things that you need to handle.
+Before using the Appcircle server AMI, there are a couple of things that you need to handle.
 
 - AWS Account
 
@@ -47,21 +47,21 @@ You need an SSH key pair to access to the server that you will create securely.
 
 - Linux System Configuration
 
-Basic familiarity with Linux system configurations and commands is essential since this document will use linux commands.
+Basic familiarity with Linux system configurations and commands is essential since this document will use Linux commands.
 
 ## Creating an Appcircle Server From the AMI
 
 After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle server from the AMI.
 
-- Login to the AWS console with your account.
+- Log in to the AWS console with your account.
 
-- Select the region from right upper corner.
+- Select the region from the right upper corner.
 
-- Head to the EC2 menu to create EC2 instance.
+- Head to the EC2 menu to create an EC2 instance.
 
-- Click on "Launch Instance" button from the EC2 dashboard.
+- Click on the "Launch Instance" button from the EC2 dashboard.
 
-- You should fill the required fields as your needs such as:
+- You should fill out the required fields as per your needs, such as:
 
   - Instance name
   - AMI
@@ -72,11 +72,11 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 - Select the AMI.
 
-- We will use `t2.xlarge` instance type since it meets the minimum requirements.
+- We will use the `t2.xlarge` instance type since it meets the minimum requirements.
 
-  - For details you can head to the [Hardware Requirements](../docker.md#hardware-requirements) section.
+  - For details, you can head to the [Hardware Requirements](../docker.md#hardware-requirements) section.
 
-- Select an existing Key pair or click on "Create new key pair" button if you don't have any on the AWS console.
+- Select an existing key pair or click on the "Create new key pair" button if you don't have any on the AWS console.
 
 - For the network settings:
 
@@ -146,10 +146,10 @@ After you have successfully created an EC2 instance from the Appcircle server AM
 
 - Get the IP address of the instance from EC2 dashboard.
 
-- Use a SSH tool like `Putty` on windows, `ssh` command on macOS and linux to connect to the instance.
+- Use a SSH tool like `Putty` on windows, `ssh` command on macOS and Linux to connect to the instance.
 
 :::info
-The `ssh` command below is for macOS and linux. The other commands are same after you connect to the instance.
+The `ssh` command below is for macOS and Linux. The other commands are same after you connect to the instance.
 :::
 
 - Locate the SSH private key of the public key if you used to create the instance.
