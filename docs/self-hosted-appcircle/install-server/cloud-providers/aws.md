@@ -128,15 +128,29 @@ If the instance is not created within 2 hours, you can follow the steps above an
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws18-instance-running.png' />
 
+- To enable SSH access, head to the security group settings of your "Appcircle server".
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws19-ssh1.png' />
+
+- Edit the inbound rules to add SSH access.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws20-ssh2.png' />
+
+- Add the SSH rule for ip addresses you want hit "Save Rules" button to save the settings.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws21-ssh3.png' />
+
 ## Configuring Appcircle Server EC2 Instance
 
 After you have successfully created an EC2 instance from the Appcircle server AMI, you can follow the steps below to configure it.
 
-- Get the IP address of the instance.
+- Get the IP address of the instance from EC2 dashboard.
 
-- Use and SSH tool like `Putty` on windows, `ssh` command on macOS and linux to connect to the instance.
+- Use a SSH tool like `Putty` on windows, `ssh` command on macOS and linux to connect to the instance.
 
-  - The `ssh` command below is for macOS and linux. The other commands are same after you connect to the instance.
+:::info
+The `ssh` command below is for macOS and linux. The other commands are same after you connect to the instance.
+:::
 
 - Locate the SSH private key of the public key if you used to create the instance.
 
