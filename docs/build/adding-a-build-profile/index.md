@@ -29,7 +29,7 @@ To create your first build profile, click on the orange "Add New" button on the 
 
 Enter a name for your build profile and select the target operating system (iOS or Android) and target platform.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-build-profile-ios-connection.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-build-profile-ios-connection-new.png' />
 
 ## Connect your repository
 
@@ -42,6 +42,14 @@ If you authorize Appcircle to connect to your Github, BitBucket, or GitLab accou
 To test drive Appcircle, you can find various sample projects in the [Appcircle GitHub page](https://github.com/appcircleio?q=sample) or you can just press on the **Quick start using the sample repository** button to populate the repository URL field with a compatible project based on the selected framework.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-connection.png' />
+
+When the "Autofill" feature is activated on the next screen, the repository selection screen, Appcircle will directly create a configuration after the connection and fill in the necessary fields.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/autofill.png' />
+
+:::caution
+If you do not have a build limit for your account, Appcircle will not be able to **Autofill** your account.
+:::
 
 Refer to the relative documents under this page about the connections and differences between connection types:
 
