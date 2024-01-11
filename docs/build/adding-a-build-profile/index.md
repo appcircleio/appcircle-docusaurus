@@ -48,7 +48,7 @@ When the "Autofill" feature is activated on the next screen, the repository sele
 <Screenshot url='https://cdn.appcircle.io/docs/assets/autofill.png' />
 
 :::caution
-If you do not have a build limit for your account, Appcircle will not be able to **Autofill** your account.
+If you do not have a build limit for your account, Appcircle will not be able to **Autofill** your profile.
 :::
 
 Refer to the relative documents under this page about the connections and differences between connection types:
