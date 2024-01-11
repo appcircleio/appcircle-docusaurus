@@ -1,5 +1,5 @@
 ---
-title: Disconnect, Reconnect And Change Connection From Build Profile
+title: Disconnect, Reconnect, Change Connection, Change Owner From Build Profile
 metaTitle: Disconnect, Reconnect And Change Connection From Build Profile
 metaDescription: Disconnect, Reconnect And Change Connection From Build Profile
 sidebar_position: 12
@@ -92,3 +92,33 @@ You can select one of the listed options and switch to that one without consider
 :::info
 While changing the Git provider, your previous builds, tests, configurations, workflows, triggers and branch list will not be deleted.
 :::
+
+## Change Owner
+
+The authority of a profile can now be changed without the need to create a new profile on Appcircle. The **"Change Owner"** button in the **Connections** menu will do this job.
+
+:::info
+To use this feature, the user must have previously connected the relevant Git provider on Appcircle via OAuth.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/owner-main.png' />
+
+When you browse the same profile with a different user within the same organization, the **"Change Owner"** button will be visible in the window that opens when we click on the **"Connection Settings"** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/owner-modal.png' />
+
+:::info
+The profile owner will not see the **"Change Owner"** button in the **"Connection Settings"** menu for their profile.
+:::
+
+After clicking on the **"Change Owner"** button, after you give your approval on the confirmation screen that appears, the process of taking over the profile for the relevant user will start.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/owner-warning.png' />
+
+:::caution
+Profile ownership change will be valid for users who are in the same organization and have **"Manage Build"** authorization. In addition, the user who wants to take over ownership must also have access to this repository on the relevant Git provider.
+:::
+
+After the process is finished, click on the **"Connection Settings"** button again, and in the window that opens in the **"Token Owner"** field, the **"Change Owner"** button will not appear because we are now the profile owner.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/owner-changed.png' />
