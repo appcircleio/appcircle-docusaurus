@@ -201,8 +201,42 @@ cd "$HOME/appcircle-server"
 
 - After the configuration and running the server, you can access to the Appcircle dashboard with the [domain](../docker.md#4-dns-settings) of your server.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws8-dashboard.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws22-dashboard.png' />
 
 - 🎉 You can now enjoy using the Appcircle and build your mobile applications.
 
 - 📚 For the quick start tutorials for building mobile apps, you can head to the [Tutorials](../../../tutorials) page.
+
+## Connecting Runners
+
+When you complete installation successfully by following above steps, you're ready for your first build. :tada:
+
+But in order to run build pipelines, you need to install and connect self-hosted runners. We have dedicated section for installation and configuration of self-hosted runners.
+
+Follow and apply related guidelines in [here](../self-hosted-runner/installation.md).
+
+Self-hosted runner section in docs, has all details about runners and their configuration.
+
+:::caution
+
+By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
+
+- `https://api.appcircle.io/build/v1`
+
+:point_up: You need to change its value with your self-hosted Appcircle server's API URL.
+
+Assuming our sample scenario explained above, its value should be
+
+- `http://api.appcircle.spacetech.com/build/v1`
+
+for our example configuration.
+
+:reminder_ribbon: After [download](../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+
+Please note that, you should do this before [register](../self-hosted-runner/installation.md#2-register).
+
+:::
+
+Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted Appcircle server should run on a dedicated machine itself.
+
+You can install any number of runners regarding to your needs and connect them to self-hosted Appcircle server.
