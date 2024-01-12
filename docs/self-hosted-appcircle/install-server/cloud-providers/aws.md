@@ -96,10 +96,16 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 - You can see an example configuration in the screenshots below 👇:
 
-- AMI configuration:
+- Click ""Browse more AMIs" button to search for Appcircle AMI :
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws9-ami1.png' />
+
+- Search for "Appcircle" in the "AWS Marketplace AMIs" tab and click "Select" on the AMI:
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws10-ami2.png' />
+
+- Click "Continue" to select Appcircle server AMI.
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws11-ami3.png' />
 
 - Instance type and SSH key configuration:
