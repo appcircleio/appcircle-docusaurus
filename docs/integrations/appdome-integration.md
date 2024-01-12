@@ -57,13 +57,13 @@ Ensure the [environment variable group](https://docs.appcircle.io/environment-va
 - **iOS Certificate File Path (mandatory):** Paths of the certificate file with a .p12 extension. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
 - **iOS Certificate Password (mandatory):** Password for the added certificate. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
 
-### Step 3: Start build
+## Step 3: Start build
 
 Start the build with the configuration and workflow you set in Appdome.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appdome-blog-3.png' />
 
-### Step 4: Get DevSecOps Certified and secured app with Build-2Secure
+## Step 4: Get DevSecOps Certified and secured app with Build-2Secure
 
 The Appdome step produces a protected app (APK, IPA, or AAB) and a Certified Secure™.
 
