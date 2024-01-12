@@ -197,13 +197,15 @@ ls -l "$HOME"
 cd "$HOME/appcircle-server"
 ```
 
-- If you are licensed user, you should get the licensed Appcircle zip package from us.
+:::info
 
-  - Please contact us with a communication channel if you don't have it already.
+**If you are licensed user**, you should get the licensed Appcircle zip package via contacting us and [Update](../../update.md) the package in the server.
 
-- In the `appcircle-server` directory, copy the content of `cred.json` file you received from us to a file named `cred.json`. The file name is important.
+Also, in the `appcircle-server` directory, copy the content of `cred.json` file you received from us to a file named `cred.json`. Please ensure that the file name is `cred.json`.
 
-  - If you don't have `cred.json` file, you can contact us to get it.
+Please contact us with a communication channel if you don't have the licensed package and `cred.json` already.
+
+:::
 
 - The Appcircle server is ready to be [Configured](../docker.md#3-configure) for your project.
 
