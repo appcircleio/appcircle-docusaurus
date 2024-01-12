@@ -7,7 +7,6 @@ sidebar_position: 11
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Integration Appdome
 
 [Appdome Build-2Secure](https://apis.appdome.com/docs/integrate-in-cicd) automates the integration of advanced security features, adaptive protections, code-signing, and certification processes into mobile applications, enhancing security without the need for manual coding or code analysis.
 
