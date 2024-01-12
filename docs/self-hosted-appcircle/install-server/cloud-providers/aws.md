@@ -59,7 +59,11 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 - Head to the EC2 menu to create an EC2 instance.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws23-region-menu.png' />
+
 - Click on the "Launch Instance" button from the EC2 dashboard.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws24-launch-ec2.png' />
 
 - You should fill out the required fields as per your needs, such as:
 
