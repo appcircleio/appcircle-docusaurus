@@ -207,11 +207,11 @@ Please contact us with a communication channel if you don't have the licensed pa
 
 :::
 
-- The Appcircle server is ready to be [Configured](../docker.md#3-configure) for your project.
+- The Appcircle server is ready to be [configured](../docker.md#3-configure) for your project.
 
 - You should also handle the [DNS](../docker.md#4-dns-settings) settings. Create `A` and `CNAME` record for your instance.
 
-- After the configuration and running the server, you can access to the Appcircle dashboard with the [domain](../docker.md#4-dns-settings) of your server.
+- After the configuration and [running the server](../docker.md#5-run-server), you can access to the Appcircle dashboard with the [domain](../docker.md#4-dns-settings) of your server.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws22-dashboard.png' />
 
