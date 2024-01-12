@@ -7,7 +7,6 @@ sidebar_position: 11
 
 import Screenshot from '@site/src/components/Screenshot';
 
-
 [Appdome Build-2Secure](https://apis.appdome.com/docs/integrate-in-cicd) automates the integration of advanced security features, adaptive protections, code-signing, and certification processes into mobile applications, enhancing security without the need for manual coding or code analysis.
 
 For detailed information on the benefits Appdome adds to your mobile app, refer to the blog post: [Elevate Your Mobile App Security with Appdome and A Guide to Integration with Appcircle](https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-and-a-guide-to-integration-with-appcircle).
@@ -32,29 +31,35 @@ Enter confidential information as [secret environment variables](https://docs.ap
 Ensure the [environment variable group](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the configuration.
 :::
 
-### For common inputs:
+Below is the list of inputs that are required to use Appdome Build-2Secure for iOS and Android.
 
-- **App File Path or Environment Variable (mandatory):** IPA file path should be accessible from Appcircle. Use `$AC_EXPORT_DIR/<myappname>.ipa` as the default value.
-- **iOS Entitlement File Paths (mandatory):** Obtain from Xcode. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/extract-and-use-ios-entitlements-files-for-signing-secured-ios-app/).
-- **iOS Provisioning Profiles (mandatory):** Paths of the provisioning profiles. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
-- **iOS Certificate File Path (mandatory):** Paths of the certificate file with a .p12 extension. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
-- **iOS Certificate Password (mandatory):** Password for the added certificate. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
+:::info
+Optional inputs are marked as `(optional)` explicitly. Otherwise that's a mandatory input which must have a valid value.
+:::
 
-### For Android inputs:
+### Common Inputs
 
-- **App File URL or Environment Variable (mandatory):** Pass the app URL or app path accessible from Appcircle. Use `AC_APK_PATH` or `AC_AAB_PATH` as default values.
+- **App File Path or Environment Variable:** IPA file path should be accessible from Appcircle. Use `$AC_EXPORT_DIR/<myappname>.ipa` as the default value.
+- **iOS Entitlement File Paths:** Obtain from Xcode. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/extract-and-use-ios-entitlements-files-for-signing-secured-ios-app/).
+- **iOS Provisioning Profiles:** Paths of the provisioning profiles. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
+- **iOS Certificate File Path:** Paths of the certificate file with a .p12 extension. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
+- **iOS Certificate Password:** Password for the added certificate. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
+
+### Android Specific Inputs
+
+- **App File URL or Environment Variable:** Pass the app URL or app path accessible from Appcircle. Use `AC_APK_PATH` or `AC_AAB_PATH` as default values.
 - **Google Play Signing (optional):** If true, distribute through the Google Play App Signing program. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/automatic-code-signing-for-secured-android-apps-on-appdome/).
 - **Build with Logs (optional):** If "true", enable diagnostic logs. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/test-secured-mobile-apps/appdome-diagnostic-logs-for-troubleshooting-secured-apps/).
 
-### For iOS inputs:
+### iOS Specific Inputs
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appdome-blog-2.png' />
 
-- **App File Path or Environment Variable (mandatory):** IPA file path should be accessible from Appcircle. Use `$AC_EXPORT_DIR/<myappname>.ipa` as the default value.
-- **iOS Entitlement File Paths (mandatory):** Obtain from Xcode. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/extract-and-use-ios-entitlements-files-for-signing-secured-ios-app/).
-- **iOS Provisioning Profiles (mandatory):** Paths of the provisioning profiles. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
-- **iOS Certificate File Path (mandatory):** Paths of the certificate file with a .p12 extension. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
-- **iOS Certificate Password (mandatory):** Password for the added certificate. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
+- **App File Path or Environment Variable:** IPA file path should be accessible from Appcircle. Use `$AC_EXPORT_DIR/<myappname>.ipa` as the default value.
+- **iOS Entitlement File Paths:** Obtain from Xcode. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/extract-and-use-ios-entitlements-files-for-signing-secured-ios-app/).
+- **iOS Provisioning Profiles:** Paths of the provisioning profiles. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
+- **iOS Certificate File Path:** Paths of the certificate file with a .p12 extension. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
+- **iOS Certificate Password:** Password for the added certificate. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
 
 ## Step 3: Start build
 
