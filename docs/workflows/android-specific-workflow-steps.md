@@ -102,8 +102,13 @@ Distribute APK,AAB and mapping files to [App Center](https://appcenter.ms/). You
 
 [https://github.com/appcircleio/appcircle-android-appcenter-distribute-component](https://github.com/appcircleio/appcircle-android-appcenter-distribute-component)
 
-## Appdome-Build-2Secure for Android
+## Appdome Build-2Secure for Android
 
-This integration enables the activation of security and app protection features, facilitating the building and signing of mobile apps.
+Appdome Build-2Secure is a comprehensive automated solution that seamlessly integrates advanced security features, adaptive protections, code-signing, and certification processes into mobile applications, enhancing security without the need for manual coding or code analysis.
 
+For detailed information on the benefits Appdome Build-2Secure adds to your mobile app, refer to the blog post:
+
+[https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-and-a-guide-to-integration-with-appcircle](https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-and-a-guide-to-integration-with-appcircle)
+
+Source codes of Appdome Build-2Secure for Android integration:
 [https://github.com/appcircleio/appcircle-android-appdome-component](https://github.com/appcircleio/appcircle-android-appdome-component)
