@@ -17,11 +17,11 @@ Think of it as a snapshot of a server that includes the operating system, necess
 
 ### Appcircle Requirements
 
-- You should contact us to get the license file for accessing to the Appcircle Google cloud resources, such as container images.
+- You should contact us to get the license file for accessing to the Appcircle Google cloud resources.
 
 - If you are a licensed user, you should contact us about the licensed Appcircle server package with your actual license.
 
-- If you are a PoC user, you can go on with the package located in the AMI.
+- If you don't apply a license, you can go on with the package located in the AMI and use Appcircle server as a "Starter plan" user.
 
 ### Technical Requirements
 
