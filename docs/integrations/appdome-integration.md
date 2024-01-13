@@ -93,6 +93,6 @@ Moreover, you can access the source code for this integration on GitHub:
 
 [https://github.com/appcircleio/appcircle-ios-appdome-component](https://github.com/appcircleio/appcircle-ios-appdome-component)
 
-- For **Android** Appdome Build-2Secure source code,, visit the following repository:
+- For **Android** Appdome Build-2Secure source code, visit the following repository:
 
 [https://github.com/appcircleio/appcircle-android-appdome-component](https://github.com/appcircleio/appcircle-android-appdome-component)
