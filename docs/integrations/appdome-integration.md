@@ -51,8 +51,8 @@ Optional inputs are marked as `(optional)` explicitly. Otherwise that's a mandat
 
 - **App File Path:** The app URL or path that's accessible from Appcircle.
   - Use `$AC_APK_PATH` or `$AC_AAB_PATH` as default values.
-- **Google Play Signing (optional):** If true, distribute through the Google Play App Signing program. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/automatic-code-signing-for-secured-android-apps-on-appdome/).
-- **Build with Logs (optional):** If "true", enable diagnostic logs. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/test-secured-mobile-apps/appdome-diagnostic-logs-for-troubleshooting-secured-apps/).
+- **Google Play Signing (optional):** If `true`, distribute through the Google Play App Signing program. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/automatic-code-signing-for-secured-android-apps-on-appdome/).
+- **Build with Logs (optional):** If `true`, enable diagnostic logs. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/test-secured-mobile-apps/appdome-diagnostic-logs-for-troubleshooting-secured-apps/).
 
 ### iOS Specific Inputs
 
