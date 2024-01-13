@@ -6,10 +6,13 @@ sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import ContentRef from '@site/src/components/ContentRef';
 
 [Appdome Build-2Secure](https://apis.appdome.com/docs/integrate-in-cicd) automates the integration of advanced security features, adaptive protections, code-signing, and certification processes into mobile applications, enhancing security without the need for manual coding or code analysis.
 
-For detailed information on the benefits Appdome adds to your mobile app, refer to the blog post: [Elevate Your Mobile App Security with Appdome and A Guide to Integration with Appcircle](https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-and-a-guide-to-integration-with-appcircle).
+For detailed information on the benefits Appdome Build-2Secure adds to your mobile app, refer to the blog post:
+
+<ContentRef url="https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-and-a-guide-to-integration-with-appcircle">Elevate Your Mobile App Security with Appdome and A Guide to Integration with Appcircle</ContentRef>
 
 ## Step 1: Add Appdome Build-2Secure step in your workflows
 
