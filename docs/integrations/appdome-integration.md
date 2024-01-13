@@ -14,13 +14,13 @@ For detailed information on the benefits Appdome Build-2Secure adds to your mobi
 
 <ContentRef url="https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-and-a-guide-to-integration-with-appcircle">Elevate Your Mobile App Security with Appdome and A Guide to Integration with Appcircle</ContentRef>
 
-## Step 1: Add Appdome Build-2Secure step in your workflows
+### Step 1: Add the Appdome Build-2Secure step to your workflow
 
 Ensure that your application (APK, AAB, or IPA) is built before adding the Appdome Build-2Secure step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/video-appdome-blog-1.gif' />
 
-## Step 2: Configure the Appdome Build-2Secure step inputs
+### Step 2: Configure the Appdome Build-2Secure step inputs
 
 Fill in the Appdome Build-2Secure component inputs with the Appdome credential.
 
@@ -40,21 +40,21 @@ Below is the list of inputs that are required to use Appdome Build-2Secure for i
 Optional inputs are marked as `(optional)` explicitly. Otherwise that's a mandatory input which must have a valid value.
 :::
 
-### Common Inputs
+#### Common Inputs
 
 - **Appdome API Key:** Get this key from Appdome. Follow [this document](https://apis.appdome.com/docs/getting-started#getting-and-resetting-your-appdomes-build2secure-api-token) for more information.
 - **Appdome Fusion Set ID:** Get this ID from Appdome. Follow [this document](https://apis.appdome.com/docs/getting-started#getting-a-fusion-sets-id) for more information.
 - **Appdome Team ID (optional):** If you use a team account, insert your team's ID. Follow [this document](https://apis.appdome.com/docs/getting-started#getting-a-teams-id) for more information.
 - **Signing Method:** Automatically sign applications using the Appdome service. Follow [this document](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/automatic-code-signing-for-secured-android-apps-on-appdome/) for more information.
 
-### Android Specific Inputs
+#### Android Specific Inputs
 
 - **App File Path:** The app URL or path that's accessible from Appcircle.
   - Use `$AC_APK_PATH` or `$AC_AAB_PATH` as default values.
 - **Google Play Signing (optional):** If `true`, distribute through the Google Play App Signing program. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/automatic-code-signing-for-secured-android-apps-on-appdome/).
 - **Build with Logs (optional):** If `true`, enable diagnostic logs. Details [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/test-secured-mobile-apps/appdome-diagnostic-logs-for-troubleshooting-secured-apps/).
 
-### iOS Specific Inputs
+#### iOS Specific Inputs
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appdome-blog-2.png' />
 
@@ -65,13 +65,13 @@ Optional inputs are marked as `(optional)` explicitly. Otherwise that's a mandat
 - **iOS Certificate File Path:** Paths of the certificate file with a `.p12` extension. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
 - **iOS Certificate Password:** Password for the added certificate. Details [here](https://www.appdome.com/dev-sec-blog/best-practices-for-signing-ios-applications/).
 
-## Step 3: Start build
+### Step 3: Start build
 
 Start the build with the configuration set and workflow that you configured for Appdome.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appdome-blog-3.png' />
 
-## Step 4: Get DevSecOps Certified and secured app with Build-2Secure
+### Step 4: Get DevSecOps Certified and Secured App
 
 The Appdome step produces a protected app (APK, IPA, or AAB) and a [Certified Secure™](https://www.appdome.com/certified-secure-mobile-devsecops-certification/), ensuring that the mobile application has undergone a thorough security certification process, meeting the highest standards of security and protection.
 
