@@ -71,7 +71,7 @@ Start the build with the configuration set and workflow that you configured for 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appdome-blog-3.png' />
 
-## Step 4: Get DevSecOps Certified and Secured App
+### Step 4: Get DevSecOps Certified and Secured App
 
 The Appdome step produces a protected app (APK, IPA, or AAB) and a [Certified Secure™](https://www.appdome.com/certified-secure-mobile-devsecops-certification/), ensuring that the mobile application has undergone a thorough security certification process, meeting the highest standards of security and protection.
 
