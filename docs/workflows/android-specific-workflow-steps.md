@@ -110,4 +110,4 @@ Appdome Build-2Secure is a comprehensive automated solution that seamlessly inte
 
 For detailed information on the benefits Appdome Build-2Secure adds to your mobile app, refer to the blog post:
 
-[https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-and-a-guide-to-integration-with-appcircle](https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-and-a-guide-to-integration-with-appcircle)
+[https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integration](https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integration)
