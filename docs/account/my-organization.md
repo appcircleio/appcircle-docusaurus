@@ -137,11 +137,11 @@ Once a user accepts an invite, it will be added to the team as a Member with rea
 
 Once you click the "Manage Roles" button, you will be presented with a detailed selection of roles for each module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-all-image_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-all-v3.png' />
 
 Here, you can assign the Owner role to a user for full access or you can select specific read or write roles for use cases like developers or testers or billing administrators.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-owner-image.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-owner-v2.png' />
 
 You can see the full list of the available roles below:
 
@@ -153,8 +153,9 @@ Permissions can be customized for build profiles.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | The user can change configuration, workflows, and triggers and start building.|
-| Read Only | The user can only start the build, view logs, and download logs. |
+| Manager | The user can change configuration, workflows, and triggers and start building.|
+| Operator | The user can only start the build, view logs, and download logs.|
+| Viewer | The user can only view and download logs.|
 | None | The user cannot reach any details about build profiles.|
 
 ### ENVIRONMENT VARIABLE PERMISSIONS
@@ -163,8 +164,8 @@ Permissions can be customized for environment variable.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | The user can see variable groups, add new variables, and delete existing variable groups or variables.|
-| Read Only | The user can only see variable groups and their details.|
+| Manager | The user can see variable groups, add new variables, and delete existing variable groups or variables.|
+| Viewer | The user can only see variable groups and their details.|
 | None | The user cannot reach any details about environment variables.|
 
 ### SIGNING IDENTITY MANAGEMENT PERMISSIONS
@@ -173,8 +174,8 @@ Permissions can be customized for signing identity management.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | The user can see, delete, and add new certificates, provisionings, and keys.|
-| Read Only | The user can only see certificates, provisioning, and keys.|
+| Manager | The user can see, delete, and add new certificates, provisionings, and keys.|
+| Viewer | The user can only see certificates, provisioning, and keys.|
 | None | The user cannot reach any details about signing identity.|
 
 ### DISTRIBUTION PROFILE PERMISSIONS
@@ -183,8 +184,8 @@ Permissions can be customized for distribution profiles.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | The user can see, create, and delete new distribution profiles and customize their settings.|
-| Read Only | The user can only view distribution profiles.|
+| Manager | The user can see, create, and delete new distribution profiles and Apple Devices and customize their settings.|
+| Viewer | The user can only view distribution profiles and Apple Devices.|
 | None | The user cannot reach any details about distribution profiles.|
 
 ### TESTING GROUP PERMISSIONS
@@ -193,8 +194,8 @@ Permissions can be customized for testing groups.
 
 |Permission|Explanation|
 |----------|-----------|
-| Full Access | The user can see, create, and delete testing groups and add new test users to groups.|
-| Read Only | The user can only view testing groups and test users.|
+| Manager | The user can see, create, and delete testing groups and add new test users to groups.|
+| Viewer | The user can only view testing groups and test users.|
 | None | The user cannot reach any details about the testing group.|
 
 ### STORE SUBMIT MODULE PERMISSIONS
@@ -203,9 +204,34 @@ Upload apps to Google Play, Huawei, and App Store.
 
 |Permission|Explanation|
 |----------|-----------|
-| Upload apps to Google Play Console & Huawei AppGallery Console. | The user can upload apps to Google Play and Huawei AppGallery.|
+| Upload apps to Google Play Console & Huawei AppGallery Console | The user can upload apps to Google Play and Huawei AppGallery.|
 | Upload apps to the App Store Console | The user can upload apps only to the App Store.|
 | Read-Only Access| The user can only view applications belonging to their own organization.|
+:::info
+Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
+:::
+
+### PUBLISH MODULE IOS PERMISSIONS
+
+Publish apps to App Store.
+
+|Permission|Explanation|
+|----------|-----------|
+| Manager | The user can make changes to the publish flow, publish settings, start publish to the App Store, add or delete a new app version, and view and download logs.|
+| Operator | The user can start publishing to the App Store and view and download publish settings, publish flow, and logs.|
+| Viewer | The user can only view the iOS application list and logs for the application.|
+| None | The user cannot reach any details about the iOS Publish.|
+
+### PUBLISH MODULE ANDROID PERMISSIONS
+
+Publish apps to Google Play, Huawei.
+
+|Permission|Explanation|
+|----------|-----------|
+| Manager | The user can make changes to the publish flow, publish settings, start publish to the Google Play And  Huawei AppGallery, add or delete a new app version, and view and download logs.|
+| Operator | The user can start publishing to the Google Play and Huawei AppGallery and view and download publish settings, publish flow, and logs.|
+| Viewer | The user can only view the Android application list and logs for the application.|
+| None | The user cannot reach any details about the Android Publish.|
 :::info
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
 :::
@@ -216,18 +242,30 @@ Manage and Upload Apps to Enterprise Store.
 
 |Permission|Explanation|
 |----------|-----------|
-|Manage Enterprise Settings & Apps | The user can modify both Enterprise Store settings and the uploaded apps.|
-|Upload apps to the Enterprise Store | The user can only use apps.|
-|Read-Only Access| The user can only view the profiles.|
+| Manage Enterprise Settings & Apps | The user can modify both Enterprise Store settings and the uploaded apps.|
+| Upload apps to Enterprise Store | The user can only use apps.|
+| Read-Only Access| The user can only view the profiles.|
 
 ### ORGANIZATION MANAGEMENT PERMISSIONS
 
 The user can create organization or sub organization within license limits, add and remove members, and manage their permissions.
 
+|Permission|Explanation|
+|----------|-----------|
+| Manager | The user can manage all user permissions and statuses within license limits.|
+
 ### BILLING MANAGEMENT PERMISSIONS
 
 Manage the subscription, payment details, and invoices.
 
+|Permission|Explanation|
+|----------|-----------|
+| Manager | The user can manage subscription, payment details, and invoices|
+
 ### THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS
 
 Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams, Google Play Developer API Keys, App Store Connect API Keys, Huawei AppGallery Developer API Keys etc.
+
+|Permission|Explanation|
+|----------|-----------|
+| Manager | The user can manage third-party service providers connection and disconnection. |
