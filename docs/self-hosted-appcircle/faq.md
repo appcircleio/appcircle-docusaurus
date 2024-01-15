@@ -116,23 +116,26 @@ apiGateway:
 testerWeb:
   external:
     subdomain: dist-appcircle
-storeWeb:
-  external:
-    subdomain: store-appcircle
 webEvent:
   external:
     subdomain: hook-appcircle
-resource:
-  domain: resource-appcircle
+minio:
+  external:
+    subdomain: resource-appcircle
+storeWeb:
+  external:
+    subdomain: store-appcircle
 ```
 
 :::caution
 If the keys are already exist in the `global.yaml`, you should just update or add the missing keys.
 
 For example you must have `keycloak` key in the global.yaml already. You must just add the `keycloak.external.subdomain` section.
+
+There should also be the `storeWeb` key in the global.yaml.
 :::
 
-- Edit the `global.yaml` of your project for the main domain.
+- Edit the `mainDomain` of your project in the `global.yaml` file.
 
 ```yaml
 external:
