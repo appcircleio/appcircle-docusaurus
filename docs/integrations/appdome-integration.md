@@ -12,7 +12,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 For detailed information on the benefits Appdome Build-2Secure adds to your mobile app, refer to the blog post:
 
-<ContentRef url="https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-and-a-guide-to-integration-with-appcircle">Elevate Your Mobile App Security with Appdome and A Guide to Integration with Appcircle</ContentRef>
+<ContentRef url="https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integration">Elevate Your Mobile App Security with Appdome Integration</ContentRef>
 
 ### Step 1: Add the Appdome Build-2Secure step to your workflow
 
