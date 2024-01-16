@@ -47,7 +47,7 @@ You need an SSH key pair to access to the server that you will create securely.
 
 Basic familiarity with Linux system configurations and commands is essential since this document will use Linux commands.
 
-## Creating an Appcircle Server From the AMI
+## Creating an Appcircle Server from the AMI
 
 After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle server from the AMI.
 
@@ -63,42 +63,15 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws24-launch-ec2.png' />
 
-- You should fill out the required fields as per your needs, such as:
+You should fill out the required fields as per your needs. Please follow the below steps for a sample instance configuration.
 
-  - Instance name
-  - AMI
-  - Instance type
-  - Key pair (optional but required for secure access)
-  - Network settings
-  - Storage
+- Enter an instance name in the "Name and Tags" field. For example, "My Appcircle Server".
 
-- Select the AMI.
-
-- We will use the `t2.xlarge` instance type since it meets the minimum requirements.
-
-  - For details, you can head to the [Hardware Requirements](../docker.md#hardware-requirements) section.
-
-- Select an existing key pair or click on the "Create new key pair" button if you don't have any on the AWS console.
-
-- For the network settings:
-
-  - We will use the default VPC.
-  - Allow HTTP and HTTPS traffic from the internet.
-    - This is required for accessing to the Appcircle dashboard.
-  - You can restrict the SSH request by specifying the source IP addresses.
-    - SSH is also required to access to the server.
-
-- For storage, you can select 100GB for a PoC setup.
-
-  - You can see the recommended storage sizes in the [Hardware Requirements](../docker.md#hardware-requirements) section.
-
-- You can see an example configuration in the screenshots below 👇:
-
-- Click ""Browse more AMIs" button to search for Appcircle AMI :
+- In order to select the AMI, click on the "Browse more AMIs" button and search for the Appcircle server AMI.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws9-ami1.png' />
 
-- Search for "Appcircle" in the "AWS Marketplace AMIs" tab and click "Select" on the AMI:
+- Search for "Appcircle" in the "AWS Marketplace AMIs" tab and click on the "Select" button for the AMI.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws10-ami2.png' />
 
@@ -106,45 +79,58 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws11-ami3.png' />
 
-- Instance type and SSH key configuration:
+- We will use the `t3.2xlarge` instance type for our sample configuration since it meets the minimum requirements for the vCPU count.
+
+:::info
+For the details about minimum hardware requirements, you should see the [Hardware Requirements](../docker.md#hardware-requirements) section.
+:::
+
+- Select an existing key pair or click on the "Create new key pair" button if you don't have any on the AWS console.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws14-instance-type.png' />
 
-- Network configuration:
+- For the network settings:
+  - We will use the default VPC created on the form.
+  - Allow HTTP and HTTPS traffic from the internet.
+    - This is required for accessing the Appcircle server dashboard.
+  - You can restrict the SSH connection by specifying the source IP addresses.
+    - **SSH is also required** to access the server from the command line.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws15-network.png' />
 
-- Storage configuration:
+- For storage, you can select a minimum 100-GB disk for a PoC setup or testing purposes.
+
+:::info
+You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](../docker.md#hardware-requirements) section.
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws16-storage.png' />
 
-- You can click on the `Launch Instance` button to create the instance with the configuration you made.
+Now you're ready to click on the **Launch Instance** button to create the instance with the configuration you made.
 
 :::info
+The instance creation may take some time due to the AWS AMI subscriptions.
 
-The instance creation may take some time due to AWS AMI subscriptions.
-
-Please wait patiently while the AWS is creating your Appcircle server instance.
+Please wait patiently while AWS creates your Appcircle server instance. If the instance is not created within 2 hours, you can follow the steps above and launch it again.
 
 You can check the subscription in the "AWS Marketplace Subscriptions" service in the AWS console.
-
-If the instance is not created within 2 hours, you can follow the steps above and launch it again.
-
 :::
 
-- You can head to the EC2 Instances page to see if your server is up and running.
+You can head to the EC2 **Instances** page to see if your server is up and running.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws18-instance-running.png' />
 
-- To enable SSH access, head to the security group settings of your "Appcircle server".
+**To enable SSH access,** head to the security group settings of your instance. It's required for later configuration steps.
+
+For our sample server instance above, select "My Appcircle Server" instance and click on the "Security" tab.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws19-ssh1.png' />
 
-- Edit the inbound rules to add SSH access.
+Edit the inbound rules to enable SSH access to your Appcircle server instance.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws20-ssh2.png' />
 
-- Add the SSH rule for ip addresses you want hit "Save Rules" button to save the settings.
+Add an SSH rule for the IP addresses you want, and click on the "Save Rules" button to activate the settings.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws21-ssh3.png' />
 
