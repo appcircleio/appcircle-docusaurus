@@ -25,25 +25,25 @@ If you are a licensed user, you should contact us about the licensed Appcircle s
 
 Before using the Appcircle server AMI, there are a couple of things that you need to handle.
 
-- AWS Account
+#### AWS Account
 
 You must have an active AWS account with appropriate permissions to launch EC2 instances and work with other related services.
 
-- Understanding of AWS Services
+#### Understanding of AWS Services
 
 A basic understanding of Amazon Web Services (AWS) services, particularly EC2 (Elastic Compute Cloud), is beneficial.
 
 You should be familiar with instance creation, networking, security groups, and storage configurations.
 
-- Networking and Security Configuration
+##### 1. Networking and Security Configuration
 
-You might need to configure networking aspects such as Virtual Private Cloud (VPC), subnets, route tables, and security groups to properly integrate the instance within their network environment and manage access controls.
+You might need to configure networking aspects such as Virtual Private Cloud (VPC), subnets, route tables, and security groups to properly integrate the instance within the network environment and manage access controls.
 
-- SSH Key Pairs for Secure Access
+##### 2. SSH Key Pairs for Secure Access
 
 You need an SSH key pair to access to the server that you will create securely.
 
-- Linux System Configuration
+##### 3. Linux System Configuration
 
 Basic familiarity with Linux system configurations and commands is essential since this document will use Linux commands.
 
