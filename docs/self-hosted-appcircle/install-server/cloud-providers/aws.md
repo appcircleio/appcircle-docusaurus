@@ -134,35 +134,70 @@ Add an SSH rule for the IP addresses you want, and click on the "Save Rules" but
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws21-ssh3.png' />
 
-## Configuring Appcircle Server EC2 Instance
+## Configuring the Appcircle Server Instance
+
+### Connect via SSH
 
 After you have successfully created an EC2 instance from the Appcircle server AMI, you can follow the steps below to configure it.
 
 - Get the IP address of the instance from EC2 dashboard.
+  - Networking > Networking Details > Public IPv4 address
+  - Or, Instance > Details > Public IPv4 address
 
-- Use a SSH tool like `Putty` on windows, `ssh` command on macOS and Linux to connect to the instance.
+- Locate the SSH key pair, especially the private key, that you've created or used while configuring the instance.
+
+- Get an SSH connection tool like `putty` on Windows or `ssh` on macOS and Linux to connect to the instance.
 
 :::info
-The `ssh` command below is for macOS and Linux. The other commands are same after you connect to the instance.
+The `ssh` command below is for macOS and Linux. The other commands are the same after you connect to the instance.
 :::
 
-- Locate the SSH private key of the public key if you used to create the instance.
+Using **private key** and **IP address**, you can connect to the instance with SSH as seen below.
 
 ```bash
-ssh -i "/path/to/your/private/ssh/key" ubuntu@ip-address-of-the-instance
+ssh -i "/path/to/your/private/key" ubuntu@ip-address-of-the-instance
 ```
 
-- For example 👇:
+:::info
+The default user for the Appcircle AMI is `ubuntu`.
+
+So, let's assume that your instance IP address is `34.205.139.17` and your private SSH key path is `/home/spacetech/.ssh/id_rsa`.
+
+You can connect to the instance using the below command on macOS or Linux.
 
 ```bash
 ssh -i "/home/spacetech/.ssh/id_rsa" ubuntu@34.205.139.17
 ```
 
-- The SSH command may ask you to add this server to the known hosts list. You can write `yes` and hit enter.
+:::
+
+:::tip
+When you "Create new key pair" while creating the instance from Appcircle AMI, the downloaded private key might cause a permission error when you try to connect to the instance. For instance;
+
+> ... Permissions 0644 for 'MyCICDSSHKey.pem' are too open.
+> It is required that zour private key files are NOT accessible by others.
+> This private key will be ignored. ...
+
+In this case, you need to change the permissions of the private key using the below command before connecting.
+
+```bash
+chmod 600 "/path/to/your/private/key"
+```
+
+It will be a one-time-operation that should be done once per private key.
+
+:::
+
+:::info
+The SSH command may ask you to add this server to the list of known hosts. You should write `yes` and hit enter.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws6-ssh.png' />
 
-- After you connect to the Appcircle instance, the first thing you should do is a system update. Although the Appcircle AMI is up to date, it is recommended that you perform security updates again.
+:::
+
+### Configure Server
+
+After you successfuly connect to the Appcircle instance, the first thing you should do is start a system update. Although the Appcircle AMI is up-to-date, it is recommended that you perform security updates again.
 
 ```bash
 sudo apt update && \
