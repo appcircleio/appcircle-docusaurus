@@ -17,11 +17,9 @@ Think of it as a snapshot of a server that includes the operating system, necess
 
 ### Appcircle Requirements
 
-- You should contact us to get the license file for accessing to the Appcircle Google cloud resources.
+If you don't apply a license, you can go on with the package located in the AMI and use the Appcircle server as a "Starter Plan" user. But it's recommended to purchase a license from Appcircle that will increment the license limits and enable you to access the Appcircle Google cloud resources for future upgrades.
 
-- If you are a licensed user, you should contact us about the licensed Appcircle server package with your actual license.
-
-- If you don't apply a license, you can go on with the package located in the AMI and use Appcircle server as a "Starter plan" user.
+If you are a licensed user, you should contact us about the licensed Appcircle server package that includes your actual license.
 
 ### Technical Requirements
 
