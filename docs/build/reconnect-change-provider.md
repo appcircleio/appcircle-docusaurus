@@ -83,6 +83,10 @@ After you select the relevant Git repository and "Save", the build profile will 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/repo-success-c.png' />
 
+:::caution
+After changing the git provider and reconnecting the repository, Appcircle does not allow build with old branches in the branch list. Old branches will be unusable.
+:::
+
 :::tip
 While switching from one connection to another type of connection, the older connection method is not important.
 
