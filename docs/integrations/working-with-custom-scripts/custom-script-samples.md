@@ -38,6 +38,63 @@ Please be aware that this custom script affects any step that comes after. There
 
 :::
 
+### Pipeline Break on Low Test Coverage
+
+This document provides a sample custom script written in Ruby that can be integrated into your CI/CD pipeline to enforce a minimum test coverage threshold. The script is designed to break the pipeline if the covered test result falls below a specified percentage.
+
+:::caution
+
+Please note that this custom script must be placed after the [**Test Reports**](http://localhost:3000/workflows/android-specific-workflow-steps#test-reports-for-android) step in the workflow..
+
+:::
+
+```ruby
+require 'json'
+
+def env_has_key(key)
+    !ENV[key].nil? && ENV[key] != '' ? ENV[key] : abort("Missing #{key}.")
+end
+
+output_dir = env_has_key('AC_OUTPUT_DIR')
+
+def read_json_file(file_path)
+  JSON.parse(File.read(file_path))
+end
+
+def extract_line_coverage(json_data)
+  json_data['coverage']['lineCoverage']
+end
+
+begin
+file_path = "#{output_dir}/test_results.json" 
+json_data = read_json_file(file_path)
+line_coverage = extract_line_coverage(json_data)
+
+puts "Current Line Coverage: % #{line_coverage * 100}"
+
+min_coverage = 2.0
+puts "Minimum coverage percentage: #{min_coverage}"
+
+if (line_coverage * 100) < min_coverage 
+    puts "Coverage is #{line_coverage} and below minimum coverage percentage given #{min_coverage}. \nExiting."
+    exit (1)
+else
+    puts "Coverage is above the threshold. It is clear."
+end
+
+rescue StandardError => e
+  puts "An error occurred: #{e.message}"
+end
+```
+
+:::info
+
+Please feel free to edit the following variables according to your own data:
+- `test_result_file_path`: The file path of the test result file from which to retrieve the covered percentage value.
+- `min_coverage`: The minimum percentage required for the pipeline to continue without breaking.
+
+:::
+
 ### Deploying Apps to Firebase App Distribution
 
 Appcircle Testing Distribution provides an integrated and automated enterprise-grade solution for distributing apps to the testers, but if you want to use other solutions for app distribution, you can do so with custom scripts. You can use the following script below to deploy apps to Firebase App Distribution automatically from the Appcircle Build module.
@@ -63,49 +120,3 @@ firebase appdistribution:distribute $AC_EXPORT_DIR/Runner.ipa --app $FIREBASE_AP
 You may also use our Firebase App Distribution Component for this process.
 
 https://github.com/appcircleio/appcircle-firebase-distribution-component
-
-### Send email notification when a build is complete
-
-You can send notification emails when your build is complete so that you or your teammates will know the build status.
-
-Here's a sample Bash script to send emails from a custom script step:
-
-```bash
-#!/usr/bin/env bash
-#
-# Send an email when a build is completed in Appcircle.
-#
-
-# Email address for the receipent
-RCP_ADDRESS="receipent@example.com"
-CC_ADDRESS="cc_receipent@example.com"
-
-# Subject line for email
-EMAIL_SUBJECT="Appcircle Build"
-
-# Send a corresponding email for successful builds.
-
-echo "Build completed successfully, sending email notification."
-echo -e "Your build in Appcircle is completed successfully." | mail -s "Build completed with success." ${RCP_ADDRESS} -c ${CC_ADDRESS}
-echo "Email notification sent."
-```
-
-###
-
-### Send Slack notification when a build is complete
-
-Appcircle supports a wide range of options for sending notifications to Slack, but you can also send any custom messages to Slack with custom scripts.
-
-If you have a Slack webhook created, you can send a message to your Slack channel with a single line of Bash script.
-
-You can refer to Slack's webhook documentation here: :link: [**Creating Slack webhooks**](https://api.slack.com/tutorials/slack-apps-hello-world)
-
-
-```bash
-#!/usr/bin/env bash
-#
-# Send a Slack notification when a build is completed in Appcircle.
-#
-
-curl -X POST -H 'Content-type: application/json' --data '{"text":"Appcircle build is completed successfully!"}' SLACK_WEBHOOK_URL
-```

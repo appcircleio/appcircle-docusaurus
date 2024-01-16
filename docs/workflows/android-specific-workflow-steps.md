@@ -60,6 +60,18 @@ This step runs the unit tests of the project.;
 
 [https://github.com/appcircleio/appcircle-android-unit-test-component](https://github.com/appcircleio/appcircle-android-unit-test-component)
 
+## Test Reports for Android
+
+This component provides detailed reports and insights on the results of Android app tests conducted.
+
+For detailed information on the usage of **Test Reports for Android**, please refer to the documentation:
+
+[https://docs.appcircle.io/continuous-testing/running-android-unit-tests#generating-test-report](https://docs.appcircle.io/continuous-testing/running-android-unit-tests#generating-test-report)
+
+You can use the following source code link to comment and update the status of your issues according to the progress of your workflow:
+
+[https://github.com/appcircleio/appcircle-test-report-component](https://github.com/appcircleio/appcircle-test-report-component)
+
 ## Android Dependency Report
 
 This step visualizes the whole dependency tree for every [configuration](https://docs.gradle.org/current/userguide/declaring\_dependencies.html#sec:what-are-dependency-configurations) available in the project.
