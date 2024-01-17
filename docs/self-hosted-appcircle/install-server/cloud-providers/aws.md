@@ -135,6 +135,10 @@ Add an SSH rule for the IP addresses you want, and click on the "Save Rules" but
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws21-ssh3.png' />
 
+:::tip
+If you want to also send `ping` requests to the instance for health check purposes, you should also add another rule with the type "All ICMP-IPv4" while editing the inbound rules.
+:::
+
 ## Configuring the Appcircle Server Instance
 
 ### Connect via SSH
