@@ -46,9 +46,37 @@ Fill the relevant information about your Gitlab self-hosted module. If you are n
 
 :::caution
 
+### Outbound Requests
+
+When you connect a Gitlab repository via creating a profile on Appcircle, Appcircle tries to create webhooks on the Gitlab repository.
+
+If your Appcircle server has a local IP address like `10.10.140.20`, you may get error while connecting the repository.
+
+To solve this issue, the IP or the Appcircle api subdomain name should be allowed for outbound requests on the Gitlab admin panel.
+
+You can follow the steps below to update outbound requests:
+
+- You must get access to the `Admin Area / Dashboard` of the Gitlab server.
+
+- Expand the "Settings" button at the bottom left.
+
+- Click on the "Network" button to access network settings.
+
+- Expand the "Outbound" requests, add the IP address or the `api` subdomain of the Appcircle server.
+
+- If you are accessing to the Appcircle via `my.appcircle.spacetech.com`, then the `api` domain is `api.appcircle.spacetech.com`
+
+- See the example configuration screenshot below 👇:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2545-sample-configuration.png' />
+
+:::
+
+:::caution
+
 ### Connection Notice
 
-For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the internet.
+For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the network.
 
 :::
 
@@ -75,7 +103,7 @@ Appcircle needs admin permission to function properly. The admin permission is n
 
 ### Check Token
 
-You can follow the steps below to check if your token is valid. 
+You can follow the steps below to check if your token is valid.
 
 - Open the terminal and issue the following command
 
@@ -83,11 +111,11 @@ You can follow the steps below to check if your token is valid.
 curl "http://YOUR_GITLAB_HOST/api/v4/projects?private_token=YOUR_TOKEN"
 ```
 
-Above command should print out your projects. If you don't see an output, please check your token and GitLab address. 
+Above command should print out your projects. If you don't see an output, please check your token and GitLab address.
 
 :::caution
 
-Please also make sure that the output doesn't show any reference to `localhost`. If you see `localhost`,  you need to configure GitLab and put the correct address of your GitLab instance.
+Please also make sure that the output doesn't show any reference to `localhost`. If you see `localhost`, you need to configure GitLab and put the correct address of your GitLab instance.
 
 :::
 
