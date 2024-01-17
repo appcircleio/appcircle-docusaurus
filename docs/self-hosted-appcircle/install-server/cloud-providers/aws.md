@@ -105,6 +105,12 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](../docker.md#hardware-requirements) section.
 :::
 
+:::caution
+Keep in mind that the pre-configured swap also consumes disk space, and its size is as large as the memory size.
+
+So, although a minimum 100-GB disk is enough to run the Appcircle server, we recommend a minimum 200-GB disk space for long-term usage.
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws16-storage.png' />
 
 Now you're ready to click on the **Launch Instance** button to create the instance with the configuration you made.
