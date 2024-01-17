@@ -6,6 +6,7 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
@@ -197,20 +198,20 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 
 ### Configure Server
 
-After you successfuly connect to the Appcircle instance, the first thing you should do is start a system update. Although the Appcircle AMI is up-to-date, it is recommended that you perform security updates again.
+After you successfully connect to the Appcircle instance, the first thing you should do is start a system update. Although the Appcircle AMI is up-to-date, it is recommended that you perform security updates again.
 
 ```bash
 sudo apt update && \
 sudo apt upgrade
 ```
 
-- The Appcircle Server directory is located in the `$HOME` directory.
+The Appcircle server directory is located in the `$HOME` directory as the `appcircle-server` folder.
 
 ```bash
 ls -l "$HOME"
 ```
 
-- You can go into the `appcircle-server` directory to start configuring the Appcircle
+Change the current working directory to that folder.
 
 ```bash
 cd "$HOME/appcircle-server"
@@ -218,35 +219,29 @@ cd "$HOME/appcircle-server"
 
 :::info
 
-**If you are licensed user**, you should get the licensed Appcircle zip package via contacting us and [Update](../../update.md) the package in the server.
+**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](../../update.md) the pre-installed package in the instance.
 
-Also, in the `appcircle-server` directory, copy the content of `cred.json` file you received from us to a file named `cred.json`. Please ensure that the file name is `cred.json`.
+Also, put the `cred.json` file you received from us into the `appcircle-server` folder.
 
-Please contact us with a communication channel if you don't have the licensed package and `cred.json` already.
+Please [contact us](https://appcircle.io/support/) to purchase an enterprise license if you don't have one.
 
 :::
 
-- The Appcircle server is ready to be [configured](../docker.md#3-configure) for your project.
+Now you're ready to configure the Appcircle server according to your needs. Follow the detailed [configuration](../docker.md#3-configure) steps.
 
-- You should also handle the [DNS](../docker.md#4-dns-settings) settings. Create `A` and `CNAME` record for your instance.
+You should also configure the [DNS](../docker.md#4-dns-settings) settings for your Appcircle server instance. Create `A` and `CNAME` records for your instance.
 
-- After the configuration and [running the server](../docker.md#5-run-server), you can access to the Appcircle dashboard with the [domain](../docker.md#4-dns-settings) of your server.
+After the configuration is done, [run the server](../docker.md#5-run-server) and go to the Appcircle server dashboard using the main [domain](../docker.md#4-dns-settings) you defined.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws22-dashboard.png' />
 
-- 🎉 You can now enjoy using the Appcircle and build your mobile applications.
-
-- 📚 For the quick start tutorials for building mobile apps, you can head to the [Tutorials](../../../tutorials) page.
-
 ## Connecting Runners
 
-When you complete installation successfully by following above steps, you're ready for your first build. :tada:
+When you complete installation successfully by following the above steps, you're ready for your first build. :tada:
 
-But in order to run build pipelines, you need to install and connect self-hosted runners. We have dedicated section for installation and configuration of self-hosted runners.
+But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply related the guidelines [here](../../self-hosted-runner/installation.md).
 
-Follow and apply related guidelines in [here](../../self-hosted-runner/installation.md).
-
-Self-hosted runner section in docs, has all details about runners and their configuration.
+The self-hosted runner section in the documents has all the details about runners and their configuration.
 
 :::caution
 
@@ -256,18 +251,22 @@ By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_U
 
 :point_up: You need to change its value with your self-hosted Appcircle server's API URL.
 
-Assuming our sample scenario explained above, its value should be
+Assuming our sample scenario explained in [configuration](../docker.md#3-configure), its value should be
 
 - `http://api.appcircle.spacetech.com/build/v1`
 
-for our example configuration.
+for our sample scenario.
 
-:reminder_ribbon: After [download](../../self-hosted-runner/installation.md#2-register), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:reminder_ribbon: After [download](../../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
 
-Please note that, you should do this before [register](../../self-hosted-runner/installation.md#2-register).
+Please note that you should do this before [registering](../../self-hosted-runner/installation.md#2-register).
 
 :::
 
-Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted Appcircle server should run on a dedicated machine itself.
+Considering system performance, it will be good to install self-hosted runners on other machines. A self-hosted Appcircle server should run on a dedicated machine itself.
 
-You can install any number of runners regarding to your needs and connect them to self-hosted Appcircle server.
+You can install any number of runners according to your needs and connect them to a self-hosted Appcircle server.
+
+<NeedHelp />
+
+Have questions? [Contact us here.](https://appcircle.io/support/)
