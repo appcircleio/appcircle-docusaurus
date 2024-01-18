@@ -145,7 +145,7 @@ Now you can access the Enterprise App Store with the new store domain settings.
 
 The first thing you should check is `PAT` permissions.
 
-If you are sure that `PAT` has the required permissions, you can check `Outbound Request` configuration of your Gitlab server. For more details about that, you can head to the [Outbound Request Configuration](../build/adding-a-build-profile/connecting-to-gitlab.md#outbound-requests) section.
+If you are sure that `PAT` has the required permissions, you can check `Outbound Request` configuration of your Gitlab server. For more details about that, you can refer to the [Outbound Request Configuration](../build/adding-a-build-profile/connecting-to-gitlab.md#outbound-requests) section.
 
 ## Appcircle Runner FAQ
 
