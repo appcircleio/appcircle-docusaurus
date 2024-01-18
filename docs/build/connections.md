@@ -67,27 +67,33 @@ The PAT connection list section on the right-hand side has a list of connections
 
 The list first shows the logo of the Git provider we're connecting to, then the name we gave to the connection (when multiple instances are used), and finally the URL of the Git provider we're connecting to.
 
-### Adding New PAT
+### Adding PAT Connection
 
-The "Add New" button at the top of the PAT connection list on the right side allows us to add PAT (Personal Access Token) without making a profile connection.
+The "Add New" button at the top of the PAT connection list on the right side allows us to add PAT (Personal Access Token) without creating a new build profile. Then you can use that PAT connection on existing build profiles or while adding a new build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/add-new-main.png' />
 
-After clicking on the "Add New" button, Appcircle will ask us to select a Git provider and fill in the necessary information according to the Git provider, just like in the build profile addition screen.
+After clicking on the "Add New" button, Appcircle will ask us to select a Git provider and fill in the necessary information according to the Git provider, just like in the build profile PAT connection.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-select-provider.png' />
 
 :::info
-The nomenclature in the **"Connection Name"** section must be unique for each Git provider. For example, if you have created a PAT named "Example" for GitHub, you cannot create another PAT with the same name for GitHub. But you can create a PAT named "Example" for the GitLab provider.
+The name you defined in the **Connection Name** section must be unique for each Git provider.
+
+For example, if you have created a PAT named "my-secret-pat" for GitHub, you cannot create another PAT with the same name for GitHub.
+
+But you can create a PAT named "my-secret-pat" for GitLab or Bitbucket, for instance.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-fill-provider-new-1.png' />
 
 :::info
-In Azure DevOps Server connections on Appcircle, **"Owner Name "** field corresponds to **"Collection Name "** on Azure.
+In Azure DevOps Server connections, the **Owner Username** field on Appcircle corresponds to the **Collection Name** on Azure.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connection-success-pat.png' />
+
+Now you're ready to use the added PAT connection in your build profiles. While making a new connection, you can see the PAT connection in the available connections list after selecting Git provider.
 
 ### Editing PAT Connections
 
