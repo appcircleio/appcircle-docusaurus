@@ -217,6 +217,13 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 storage.googleapis.com/appcircle-dev-common/self-hosted
 ```
 
+- macOS vm install script (optional):
+
+```access_list
+raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts
+storage.googleapis.com/storage/v1/b/appcircle-dev-common
+```
+
 ## Appcircle Server Runtime
 
 Although Appcircle runners are responsible for the submission of iOS apps to the App Store, the server also has some features that need access to the App Store Connect API, like runners.
