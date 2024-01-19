@@ -217,7 +217,7 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 storage.googleapis.com/appcircle-dev-common/self-hosted
 ```
 
-- macOS vm install script (optional):
+- macOS vm install script (required if you want automatic install):
 
 ```access_list
 raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts
