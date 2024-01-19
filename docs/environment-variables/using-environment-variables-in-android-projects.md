@@ -5,6 +5,7 @@ metaDescription: Using Environment Variables in Android Projects
 sidebar_position: 5
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Using Environment Variables in Android Projects
@@ -48,15 +49,15 @@ Going forward on our sample above, you may want to use different API endpoints f
 
 To create different values of the same variable, simply create an environment variable group for each branch:
 
-![](<https://cdn.appcircle.io/docs/assets/image (76).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (76).png' />
 
 Create an environment variable with the same name in each group and set the proper values for each branch.
 
-![](<https://cdn.appcircle.io/docs/assets/image (80).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (80).png' />
 
 Don’t forget to tell your build configuration to use the proper environment variable group during the build process:
 
-![](<https://cdn.appcircle.io/docs/assets/image (172).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
 Appcircle will use the values from the environment variables from the designated group for the branch you are building your application from.;
 

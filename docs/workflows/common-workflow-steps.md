@@ -4,6 +4,9 @@ metaTitle: Common Workflow Steps
 metaDescription: Common Workflow Steps
 sidebar_position: 2
 ---
+
+import Screenshot from '@site/src/components/Screenshot';
+
 # Common Workflow Steps
 
 The steps listed below are common across all build profiles regardless of the target OS and platform.
@@ -90,7 +93,7 @@ In the event that you need to utilize the cached folder in an alternate branch o
 
 These variables can be adjusted within the **Cache Label** field, as indicated by the red highlight in the accompanying image. Simply replace them with the branch or project ID that corresponds to your intended usage.
 
-![](<https://cdn.appcircle.io/docs/assets/cache-01.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/cache-01.png' />
 
 :::
 

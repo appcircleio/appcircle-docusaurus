@@ -5,6 +5,8 @@ metaDescription: Webhooks
 sidebar_position: 11
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Webhooks
 
 Appcircle will notify external services via webhooks when a certain event occurs. When the events you specified happen, we'll send a POST request in JSON format to the URLs you
@@ -14,15 +16,15 @@ provide.
 
 Multiple webhooks can be created for different events and build profiles. To start, go to [My Organization](./my-organization.md) Integration screen and press the **Manage** button next to Webhook under the ** Connections**  section.
 
-![](<https://cdn.appcircle.io/docs/assets/webhook1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-integration-webhook.png' />
 
 - Click Add Webhook button to create your webhook
 
-![](<https://cdn.appcircle.io/docs/assets/webhook2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook2.png' />
 
 - Fill in the details of your webhook
 
-![](<https://cdn.appcircle.io/docs/assets/webhook3.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook3.png' />
 
 **Webhook Scope:** 
 
@@ -71,11 +73,11 @@ You may also check the `timestamp` of the payload to prevent replay attacks. You
 
 You can check all the webhooks Appcircle sends to your endpoint by clicking the... button and then clicking the **Request History** section.
 
-![](<https://cdn.appcircle.io/docs/assets/webhook4.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook4.png' />
 
 You can see all the requests and their results by clicking on them.
 
-![](<https://cdn.appcircle.io/docs/assets/webhook5.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook5.png' />
 
 
 ### Editing Webhook

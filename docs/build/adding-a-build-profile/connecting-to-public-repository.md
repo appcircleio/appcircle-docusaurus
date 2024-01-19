@@ -5,6 +5,8 @@ metaDescription: Connecting to Public Repository
 sidebar_position: 5
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Connecting to Public Repository
 
 Since public repositories doesn't require any authentication or connection, the actions that can be taken with public repositories are limited. You will only have read only access towards the specified repository. Only use public repositories if you plan to use the profile for:
@@ -37,11 +39,11 @@ Clicking **Quick start using the sample repository **will also connect the relev
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/main-connection.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/main-connection.png' />
 
 After you click on **Connect via URL**, the following screen will appear and let you enter an URI
 
-![](<https://cdn.appcircle.io/docs/assets/connect-via-url.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connect-via-url.png' />
 
 Enter the URL of your repository, or continue with sample project if you plan to preview Appcircle.
 
@@ -51,7 +53,7 @@ Public connection refers to the HTTP(s) connection by Git Providers. SSH links i
 
 :::
 
-After the connection is successful, you can [view your newly created profile](./README.md#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](./#view-the-newly-created-build-profile) and start building!
 
 :::info
 

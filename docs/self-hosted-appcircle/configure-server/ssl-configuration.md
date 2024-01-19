@@ -355,7 +355,7 @@ For now, self-hosted Appcircle does not support usage of password protected priv
 
 ## External Services
 
-If you are using external services that have self-signed SSL certificates, you will need to add their public certificate to the `global.yaml` file.
+If you are using external services that have self-signed SSL certificates, you will need to add their public certificate to the `global.yaml` file. These external services can be self-hosted git providers like GitLab, Azure Devops Server, Bitbucket, or LDAP servers used for authentication.
 
 You can add **multiple** certificates to the `external.ca` section. If you are using multiple services, you will need to add each certificate to this section.
 

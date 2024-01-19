@@ -5,8 +5,8 @@ metaDescription: Running Android Unit Tests
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import NarrowImage from '@site/src/components/NarrowImage';
 
 # Running Android Unit Tests
 
@@ -78,17 +78,17 @@ mv app/build/test-results $AC_OUTPUT_DIR
 
 This simple Bash script will trigger your unit test and output the test results to be packed along with your binary files. You will get the test results both in `xml` and `html` formats.
 
-![](<https://cdn.appcircle.io/docs/assets/Screenshot 2020-04-28 20.47.05.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/Screenshot 2020-04-28 20.47.05.png' />
 
 ### Generating Test Report
 
 Appcircle has [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) which can show the result of your tests and code coverage in a beautiful UI.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-overview.png" />
 
 You must add this component **after** running your tests so that it can parse test results. Your workflow should look like the below.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports8.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-workflow.png" />
 
 [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. This component supports the following Test and Coverage Formats
 
@@ -100,12 +100,12 @@ You must add this component **after** running your tests so that it can parse te
 
 You must configure the **Test Report Component** and enter the path of code coverage and test results paths. For example, if you run your tests with an emulator, your files will be generated in the following folders.
 
-- **Code Coverage Files:** $AC_REPOSITORY_DIR/app/build/reports/coverage/androidTest/debug/connected/
-- **Test Results:** $AC_REPOSITORY_DIR/app/build/outputs/androidTest-results/connected/
+- **Code Coverage Files:** `$AC_COVERAGE_RESULT_PATH`
+- **Test Results:** `$AC_OUTPUT_DIR/test-results`
 
 You must configure the component to parse those folders.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports9.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-workflow.png" />
 
 :::warning
 
@@ -116,11 +116,11 @@ There's one important setting that you should change. If any workflow steps fail
 
 :::
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/test-reports3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-steps-on.png" />
 
 :::caution
 
-If you're using UI Tests with Emulators, you must select Intel Device since M1 Virtual Machines don't support nested virtualization. 
+If you're using UI tests with emulators, you must select an Intel device (**Default Intel Pool**) since M1 virtual machines (**Default M1 Pool**) don't support nested virtualization. Unit tests can work for both pools.
 
 :::
 
@@ -128,8 +128,8 @@ If you're using UI Tests with Emulators, you must select Intel Device since M1 V
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
 
-![](https://cdn.appcircle.io/docs/assets/test-reports5.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-result-overview.png' />
 
-![](https://cdn.appcircle.io/docs/assets/test-reports6.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-ui-detail.png' />
 
-![](https://cdn.appcircle.io/docs/assets/test-reports7.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-coverage.png' />

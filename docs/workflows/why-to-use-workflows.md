@@ -5,11 +5,11 @@ metaDescription: What are Workflows and How to Use Workflows?
 sidebar_position: 1
 ---
 
-# What are Workflows and How to Use Them?
-
+import Screenshot from '@site/src/components/Screenshot';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import NarrowImage from '@site/src/components/NarrowImage';
+
+# What are Workflows and How to Use Them?
 
 <Tabs
   defaultValue="ios"
@@ -82,27 +82,27 @@ Please note that modifying workflow steps may cause your builds to fail, so utmo
 
 To access the workflow editor for a build profile, click the Workflows button in the context menu of the build profile, accessible from the top of the profile details.
 
-![](<https://cdn.appcircle.io/docs/assets/image (181).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (181).png' />
 
 The workflow list will be displayed. To view the [Workflow Steps](why-to-use-workflows.md#worfklow-steps) of a workflow, click on it from the workflow list.
 
-![](<https://cdn.appcircle.io/docs/assets/image (197).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (197).png' />
 
 To create a new workflow, press the "New" button at the top of the workflow list and select a template from the default workflows. Then edit the workflow name and press enter. You can also upload your workflow as a YAML file.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(198).png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-create-edit.png" />
 
 To rename/delete a current workflow, press the "Edit" button at the top of the workflow list and then click on the context menu that appears next to the workflow items.
 
-![](<https://cdn.appcircle.io/docs/assets/image (183).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (183).png' />
 
 You can use the "Clone" option to create a new workflow based on the currently available ones. You can [select different workflows for different build scenarios](../build/build-manually-or-with-triggers.md) (e.g. separate workflows for production and development).
 
-![](<https://cdn.appcircle.io/docs/assets/image (184).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (184).png' />
 
 ### Worfklow Steps
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/image%20(185).png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-ios-showcase.png" />
 
 Appcircle will build your application with the steps defined in the workflow. Steps will be executed in order from the top to the bottom.
 
@@ -118,15 +118,15 @@ You can find the full list of available workflow steps in our workflow marketpla
 
 You can add platform-specific workflow steps, custom scripts, and other steps into your workflow and re-order them as you like. You can also remove the steps you don't need. You can backup your current workflow by clicking the **Download YAML** button at the bottom.
 
-To access the Workflow Marketplace, go to the Workflow Editor and click on the Edit button:
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-ios-download-yaml-showcase.png' />
 
-![](<https://cdn.appcircle.io/docs/assets/image (186).png>)
+To access the Workflow Marketplace, click on the **Manage Workflow** button. You will see the Workflow Marketplace on the right and your Workflow steps on the left.
 
-You will see the Workflow Marketplace on the right and your Workflow steps on the left. You can now drag and drop steps into your workflow. Any unwanted workflow steps can be removed by clicking on the delete button on the right side of each step.
+You can now drag and drop steps into your workflow. Any unwanted workflow steps can be removed by clicking on the delete button on the right side of each step.
 
 You can also reorder steps so that they will be executed in the order you specify.
 
-![](https://cdn.appcircle.io/docs/assets/08-08-WF_Reorder.gif)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/08-08-WF_Reorder.gif' />
 
 ###
 
@@ -144,7 +144,7 @@ The first three items are common for all steps and they are set individually for
 
 The items in the "Inputs" section are specific to that step. The reserved environment variables are assigned to these fields by default and the values of these variables are set in the build configuration.
 
-![](<https://cdn.appcircle.io/docs/assets/image (187).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (187).png' />
 
 #### Build Warning Status
 
@@ -152,16 +152,16 @@ When we start a build, if we have activated the "Continue with the next step eve
 
 In order to simulate the warning state and see its results on the pipeline, we can basically write a script that will fail in Custom Script.
 
-![](<https://cdn.appcircle.io/docs/assets/status-warning-1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-1.png' />
 
 "Continue with the next step even if this step fails" must be `on` in this case.
 
-![](<https://cdn.appcircle.io/docs/assets/status-warning-2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-2.png' />
 
 We are starting a build, and we see that it fails in the pipeline.
 
-![](<https://cdn.appcircle.io/docs/assets/status-warning-3.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-3.png' />
 
 And the build status will now appear as "Warning".
 
-![](<https://cdn.appcircle.io/docs/assets/status-warning-4.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-4.png' />

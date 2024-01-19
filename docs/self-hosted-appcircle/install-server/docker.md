@@ -2,8 +2,10 @@
 title: Docker
 metaTitle: Docker
 metaDescription: Appcircle Server on Docker
-sidebar_position: 2
+sidebar_position: 3
 ---
+
+import Screenshot from '@site/src/components/Screenshot';
 
 # Overview
 
@@ -90,13 +92,13 @@ You need to have the following tools installed on your system:
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.9.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.11.1.zip
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.9.0.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.11.1.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -455,7 +457,7 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-![](https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png' />
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
@@ -785,7 +787,7 @@ To use Sonatype Nexus as your proxy registry, you should follow the below steps.
 - Create a new repository in Nexus with the type of `docker (proxy)`.
 - Set the `Registry Name` name and `port` as you wish.
 - Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
-- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file.
+- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file. See the sample screenshot [here.](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
 - For SSL, the recommended way is to use a reverse proxy in front of Nexus.
 - After you created the repository, you should add the below section to the `global.yaml` file with your Nexus `repository url`, `username` and `password`.
 - If you can access your Nexus repository without authentication, you should leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
@@ -829,15 +831,15 @@ Nexus may have some issues when pulling images in parallel.
 
 Open your browser and go to URL `http://my.appcircle.spacetech.com`. You should see login page.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-login-page.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-login-page.png' />
 
 Login to self-hosted Appcircle with `initialUsername` and `initialPassword` that we have configured in above steps. For our example, user name is `admin@spacetech.com`.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-dashboard-page.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-dashboard-page.png' />
 
 You can also login to enterprise app store with configured custom URL `store.spacetech.com`.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-enterprise-app-store.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-enterprise-app-store.png' />
 
 :::info
 

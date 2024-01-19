@@ -6,6 +6,7 @@ sidebar_position: 2
 ---
 
 import NarrowImage from '@site/src/components/NarrowImage';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Appcircle Bot for Slack
 
@@ -35,11 +36,11 @@ To add the `Appcircle Bot` to the workspace, you can choose one of the two optio
 
    Then, you need to allow the `Appcircle Bot` application.
    
-   ![](https://cdn.appcircle.io/docs/assets/slack-bot-02.png)
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-02.png' />
 
 2. You can use the `Slack App Directory` to add the `Appcircle Bot` to the workspace.
 
-   ![](https://cdn.appcircle.io/docs/assets/slack-bot-0.png)
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-0.png' />
 
 You will then see that Slack is connected.
 
@@ -49,15 +50,15 @@ To connect `Appcircle Bot` to your account, you need to use the `Personal Access
 
 You can reach the `Enter the PAT` screen with the `Add Personal Access Token` button on the `Home` tab when the application is opened.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-1.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-1.png' />
 
 Enter the PAT on the mini screen that appears.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-2.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-2.png' />
 
 If you enter the password correctly, you will receive a confirmation message from `Appcircle Bot`.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-3.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-3.png' />
 
 If you want to update the PAT, you can follow the above steps for the new PAT.
 
@@ -67,11 +68,11 @@ To be able to use the `Appcircle Bot` commands, you need to add it to a channel.
 
 To add `Appcircle Bot` to the channel, right-click on the app and click the `View app details`.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-4.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-4.png' />
 
 Click the ` + Add this app to a channel` button on the screen that appears.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-5.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-5.png' />
 
 ### Starting a Build with Appcircle Bot
 
@@ -79,11 +80,11 @@ Start a new build by typing `/build` in the channel where `Appcircle Bot` has be
 
 On the screen that appears, select the profile you want to build.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-6.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-6.png' />
 
-Select a configured branch and a workflow, then start the build. Please note that selecting an unconfigured branch will result in an error. Only Smartface builds do not require configuration.
+Select a configured branch and a workflow, then start the build. Please note that selecting an unconfigured branch will result in an error.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-7.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-7.png' />
 
 If the selections are correct, you will receive a confirmation message from `Appcircle Bot`.
 
@@ -93,11 +94,11 @@ Start a new distribution to testers by typing `/distribute` in the channel where
 
 On the screen that appears, select the testing profile you want to distribute.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-8.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-8.png' />
 
 Select a version to send, then press the `Share with Testers` button. Please note that you should not select app bundle (AAB) files because `AAB` files are only valid for Google Play submission, and they cannot be shared with testers or previewed on the device.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-9.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-9.png' />
 
 On the screen that appears, fill in the following fields:
 - Select one or more `testing groups` from the options. You can create a new `testing group` via [appcircle.io](https://my.appcircle.io/).
@@ -106,11 +107,11 @@ On the screen that appears, fill in the following fields:
 
 After filling in the required fields, press the `Share` button.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-10.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-10.png' />
 
 Preview your choices on the screen that appears. You can remove email addresses or testing groups, and correct the messages to be sent to the testers. Then press the `Next` button.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-10.0.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-10.0.png' />
 
 
 If the selections are correct, you will receive a confirmation message from `Appcircle Bot`.
@@ -121,14 +122,14 @@ Send the built and signed app by typing `/storesubmit` in the channel where `App
 
 On the screen that appears, select the `Distribution Profile` you want to send.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-11.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-11.png' />
 
 Select a version to send, and press the `Send for Store Submit` button. Please note that selecting an unconfigured branch will result in an error.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-12.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-12.png' />
 
 On the screen that appears, select the `Store` you want to send, and press the `Send to Store Submit` button.
 
-![](https://cdn.appcircle.io/docs/assets/slack-bot-13.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-13.png' />
 
 If the selections are correct, you will receive a confirmation message from `Appcircle Bot`.

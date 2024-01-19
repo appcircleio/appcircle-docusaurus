@@ -5,7 +5,7 @@ metaDescription: My Organization and Team Management
 sidebar_position: 4
 ---
 
-import NarrowImage from '@site/src/components/NarrowImage';
+import Screenshot from '@site/src/components/Screenshot';
 
 # My Organization and Team Management
 
@@ -27,7 +27,7 @@ Team management with fine-grained roles and integration with enterprise identity
 
 The "My Organization" screen is accessible from the button with the organization name initials at the bottom left and it contains all operations to manage an organization.
 
-![](<https://cdn.appcircle.io/docs/assets/image (162).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-organization.png' />
 
 ### Organization Name and ID Management
 
@@ -37,7 +37,7 @@ In the left column under the organization management screen, you can change your
 
 To update these details, simply enter the new values and press _Update_.
 
-![](<https://cdn.appcircle.io/docs/assets/image (36).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (36).png' />
 
 ###
 
@@ -53,7 +53,7 @@ If you are on the Starter Plan, you cannot add a new organization. To create mor
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (39).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (39).png' />
 
 #### Adding a Sub Organization
 
@@ -70,7 +70,7 @@ To use this feature, an enterprise license is required.
 
 If you have an enterprise license, you can create sub organizations from the  organization by navigating to the "My Organization" page, clicking on the "Create Sub Organization" button, and entering the necessary details for the sub organization.
 
-![](<https://cdn.appcircle.io/docs/assets/My-Organization-Sub-Create.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/My-Organization-Sub-Create.png' />
 
 Multiple sub organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub Organization feature, businesses can create and manage multiple sub organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
 
@@ -90,7 +90,7 @@ You can switch between organizations at any time without any data loss.
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/My-Organization-Switch.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/My-Organization-Switch.png' />
 
 #### Leaving or Deleting an Organization
 
@@ -107,7 +107,7 @@ Both leaving and deleting are irreversible operations and it is advised to use t
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (41).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (41).png' />
 
 ###
 
@@ -131,29 +131,23 @@ The user will be then shown in a "Pending" state until the invitation is accepte
 
 Once a user accepts an invite, it will be added to the team as a Member with read only access. You can change the role of any user, including yourself, with the "Manage Roles" button next to the user ID. You can also delete a user by pressing the delete button.
 
-![](<https://cdn.appcircle.io/docs/assets/image (151).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (151).png' />
 
-####
+### Advanced Role Management
 
-#### Advanced Role Management
+Once you click the "Manage Roles" button, you will be presented with a detailed selection of roles for each module.
 
-Once you click the "Manage Roles" button, you will be presented with a detailed selection of roles for each module. Here, you can assign the Owner role to a user for full access or you can select specific read or write roles for use cases like developers or testers or billing administrators.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-all-image_v2.png' />
+
+Here, you can assign the Owner role to a user for full access or you can select specific read or write roles for use cases like developers or testers or billing administrators.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-owner-image.png' />
 
 You can see the full list of the available roles below:
 
-## General Permissions
+---
 
-Full access allows users to view and manage the contents of the modules. This permission allows users to create, delete, and modify the contents of the module. 
-
-Read only access only allows users to see the content or list of the modules. The modification doesn't allow any modification.
-
-If the access is set as None, users can't access that module.
-
-## Special Permissions
-
-Some modules have different permissions besides general permissions. You can customize the permissions for team members specifically.
-
-**BUILD PROFILE PERMISSIONS**
+### BUILD PROFILE PERMISSIONS
 
 Permissions can be customized for build profiles.
 
@@ -163,7 +157,7 @@ Permissions can be customized for build profiles.
 | Read Only | The user can only start the build, view logs, and download logs. |
 | None | The user cannot reach any details about build profiles.|
 
-**ENVIRONMENT VARIABLE PERMISSIONS**
+### ENVIRONMENT VARIABLE PERMISSIONS
 
 Permissions can be customized for environment variable.
 
@@ -173,7 +167,7 @@ Permissions can be customized for environment variable.
 | Read Only | The user can only see variable groups and their details.|
 | None | The user cannot reach any details about environment variables.|
 
-**SIGNING IDENTITY MANAGEMENT PERMISSIONS**
+### SIGNING IDENTITY MANAGEMENT PERMISSIONS
 
 Permissions can be customized for signing identity management.
 
@@ -183,7 +177,7 @@ Permissions can be customized for signing identity management.
 | Read Only | The user can only see certificates, provisioning, and keys.|
 | None | The user cannot reach any details about signing identity.|
 
-**DISTRIBUTION PROFILE PERMISSIONS**
+### DISTRIBUTION PROFILE PERMISSIONS
 
 Permissions can be customized for distribution profiles.
 
@@ -193,7 +187,7 @@ Permissions can be customized for distribution profiles.
 | Read Only | The user can only view distribution profiles.|
 | None | The user cannot reach any details about distribution profiles.|
 
-**TESTING GROUP PERMISSIONS**
+### TESTING GROUP PERMISSIONS
 
 Permissions can be customized for testing groups.
 
@@ -203,7 +197,7 @@ Permissions can be customized for testing groups.
 | Read Only | The user can only view testing groups and test users.|
 | None | The user cannot reach any details about the testing group.|
 
-**STORE SUBMIT MODULE PERMISSIONS**
+### STORE SUBMIT MODULE PERMISSIONS
 
 Upload apps to Google Play, Huawei, and App Store.
 
@@ -216,7 +210,7 @@ Upload apps to Google Play, Huawei, and App Store.
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
 :::
 
-**ENTERPRISE STORE PERMISSIONS**
+### ENTERPRISE STORE PERMISSIONS
 
 Manage and Upload Apps to Enterprise Store.
 
@@ -226,16 +220,14 @@ Manage and Upload Apps to Enterprise Store.
 |Upload apps to the Enterprise Store | The user can only use apps.|
 |Read-Only Access| The user can only view the profiles.|
 
-**ORGANIZATION MANAGEMENT PERMISSIONS**
+### ORGANIZATION MANAGEMENT PERMISSIONS
 
 The user can create organization or sub organization within license limits, add and remove members, and manage their permissions.
 
-**BILLING MANAGEMENT PERMISSIONS**
+### BILLING MANAGEMENT PERMISSIONS
 
 Manage the subscription, payment details, and invoices.
 
-**THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS**
+### THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS
 
 Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams, Google Play Developer API Keys, App Store Connect API Keys, Huawei AppGallery Developer API Keys etc.
-
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/permission-all-image.png" />

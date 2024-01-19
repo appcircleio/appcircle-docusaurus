@@ -2,9 +2,10 @@
 title: After a Build
 metaTitle: After a Build
 metaDescription: After a Build
-sidebar_position: 12
+sidebar_position: 13
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # After a Build
@@ -31,7 +32,7 @@ If you disable signing or don't use any signing identities, iOS output will be a
 
 To download or manually distribute your builds, go to your distribution profile and click on the builds tab to see your past builds. Click on the actions icon of the build you want to download or distribute.
 
-![](https://cdn.appcircle.io/docs/assets/build-distribute.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-distribute-artifacts.png' />
 
 You can now download the binary file or send it to distribute the module manually.
 
@@ -53,7 +54,7 @@ If you want to free up space from your Artifact Storage, you can delete older bu
 
 To do that, simply navigate to the Builds tab and select the builds, then click on the Delete icon
 
-![](<https://cdn.appcircle.io/docs/assets/image (211).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-delete-specific.png' />
 
 :::tip
 

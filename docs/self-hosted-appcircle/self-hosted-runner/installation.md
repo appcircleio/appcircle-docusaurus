@@ -8,6 +8,7 @@ sidebar_position: 2
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ContentRef from '@site/src/components/ContentRef';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Prerequisites
 
@@ -93,29 +94,30 @@ Adding a self-hosted runner requires that you download, register and configure A
 Download the latest self-hosted runner package.
 
 <Tabs>
-  <TabItem value="osx-x64" label="macOS x64" default>
+  <TabItem value="osx-arm64" label="macOS arm64" default>
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.4.4.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.4.5.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-x64-1.4.4.zip
+unzip -o -u appcircle-runner-osx-arm64-1.4.5.zip
 ```
 
   </TabItem>
-  <TabItem value="osx-arm64" label="macOS arm64">
+
+  <TabItem value="osx-x64" label="macOS x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.4.4.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.4.5.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.4.4.zip
+unzip -o -u appcircle-runner-osx-x64-1.4.5.zip
 ```
 
   </TabItem>
@@ -123,13 +125,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.4.4.zip
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.4.4.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.4.5.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-linux-x64-1.4.4.zip
+unzip -o -u appcircle-runner-linux-x64-1.4.5.zip
 ```
 
   </TabItem>
@@ -155,7 +157,7 @@ Please refer to details [here](../install-server/docker.md#connecting-runners) f
 
 Go to your organization's **integration** settings and generate runner access token.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-runner-access-token-01.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-runner-access-token-01.png' />
 
 Using generated token, register self-hosted runner to your organization with desired name and pool.
 
@@ -243,7 +245,7 @@ Using `-o android` in this case will be wrong argument. You must use `-o ios,and
 
 If you're using self-signed certificates, you need to follow the below document to add your certificates to runners.
 
-<ContentRef url="/self-hosted-appcircle/self-hosted-runner/custom-certificates">
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates">
   Self-Signed Certificates
 </ContentRef>
 

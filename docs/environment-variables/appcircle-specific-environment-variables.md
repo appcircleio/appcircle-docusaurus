@@ -51,7 +51,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_TEST\_RESULT\_PATH     | Test Result Path                                                                                   |
 | AC\_WORKFLOW\_ID           | Workflow UUID                                                                                      |
 | AC\_WORKFLOW\_NAME         | Workflow Name                                                                                      |
-| AC\_PLATFORM\_TYPE         | **Platform Type** ObjectiveCSwift, JavaKotlin, Smartface, ReactNative, Flutter                     |
+| AC\_PLATFORM\_TYPE         | **Platform Type** ObjectiveCSwift, JavaKotlin, ReactNative, Flutter                     |
 | AC\_PURPOSE                | **Purpose of the Workflow** <br />_Metadata_ = 0<br /> _Build_ = 1<br /> _StoreSubmit_ = 2<br />_Merge_ = 3<br />_TagBuild_ = 4|
 | AC\_TRIGGER\_REASON        |  The trigger reason that causes the building to start. Values it can take: `User`, `Commit`, `Tag`, `PullRequest` |
 
@@ -92,14 +92,14 @@ For more information on the inputs of the steps and how the variables in the fol
 | ---------------------------- | ------------------------------------------------------------------------------------- |
 | AC\_XCODE\_LIST\_DIR         | Specifies the Xcode folder list path                                                  |
 | AC\_SCHEME                   | Specifies the project scheme for build                                                |
-| AC\_ARCHIVE\_FLAGS           | Specifies the extra Xcodebuild flag. For example: `-configuration DEBUG`             |
+| AC\_ARCHIVE\_FLAGS           | Specifies the extra Xcodebuild flag. For example: `-configuration DEBUG`              |
 | AC\_XCODE\_VERSION           | Specifies the Xcode version                                                           |
 | AC\_ARCHIVE\_PATH            | Archive path                                                                          |
 | AC\_ARCHIVE\_METADATA\_PATH  | Archive metadata path                                                                 |
 | AC\_SIMULATOR\_ARCHIVE\_PATH | Simulator archive path description                                                    |
 | AC\_METADATA\_OUTPUT\_PATH   | Metadata output file description                                                      |
-| AC\_CERTIFICATES             | URLs of the certificates                                                              |
-| AC\_PROVISIONING\_PROFILES   | URLs of the provisioning profiles                                                     |
+| AC\_CERTIFICATES             | Concatenated strings of 'cert_pass\|cert_path' combined with a pipe ('\|') character that have the paths of the certificates and their passwords if they exist. <br/><br/> For instance, when we have two certificates A and B that require passwords, then it should be like 'a_cert_pass\|a_cert_path\|b_cert_pass\|b_cert_path'. <br/><br/> If there is no password, its field will be empty, like '\|a_cert_path'.                         |
+| AC\_PROVISIONING\_PROFILES   | Paths of the provisioning profiles                                                    |
 | AC\_EXPORT\_DIR              | Specifies the path that contains `ipa`, `exportOptions.plist`and other exported files |
 | AC\_BUNDLE\_IDENTIFIERS      | Specifies the project bundle identifiers                                              |
 | AC\_BUILD\_NUMBER\_SOURCE    | Build Number Source for Versioning                                                    |
@@ -116,10 +116,3 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_AUTOSIGN\_CRED\_PATH     | App Store Connect API Key Path. **Only active if automatic signing is turned on.**    |
 | AC\_AUTOSIGN\_KEY            | App Store Connect API Key Id.  **Only active if automatic signing is turned on.**     |
 | AC\_AUTOSIGN\_ISSUER\_ID     | App Store Connect API Issuer Id.  **Only active if automatic signing is turned on.**  |
-
-### Smartface specific environment variables
-
-| Variable                       | Description              |
-| ------------------------------ | ------------------------ |
-| AC\_SMARTFACE\_PLAYER\_VERSION | Smartface player version |
-| AC\_SMARTFACE\_CLI\_VERSION    | Smartface CLI version    |

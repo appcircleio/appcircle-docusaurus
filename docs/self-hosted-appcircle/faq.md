@@ -57,6 +57,90 @@ For more details on changing the location of Podman data, refer to the [Change t
 
 You should trust the Appcircle's or your organization's root CA certificate on your computer.
 
+### We are getting the "potentially insufficient UIDs or GIDs" error while using Podman.
+
+You should check the user ID and group ID of your current account.
+
+```bash
+id
+```
+
+The user ID and group ID should be four-digit numbers. (For example, 1000, 1002, etc.)
+
+If your user ID and group ID are very large, you may get this error. In this case, you should create a new user and group with regular IDs.
+
+### We want to change the Enterprise App Store custom domain. What should we do?
+
+You can change the custom domain settings of Enterprise App Store from the `global.yaml` configuration file.
+
+:::caution
+We are assuming that you have installed the Appcircle server with version `3.11.0` or later for this operation.
+:::
+
+- Log in to the Appcircle server with SSH or a remote connection.
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+:::info
+
+The `spacetech` in the example codes below are example project name.
+
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
+
+```bash
+ls -l ./projects
+```
+
+:::
+
+- Shutdown Appcircle server. Keep in mind that, this will cause downtime.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+```yaml
+storeWeb:
+  customDomain:
+    enabled: true
+    domain: store.spacetech.com
+```
+
+- Apply configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Boot Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+:::
+
+Now you can access the Enterprise App Store with the new store domain settings.
+
 ## Appcircle Runner FAQ
 
 ### We are facing a self-signed certificate error on builds.
@@ -71,7 +155,7 @@ The runner VMs cannot connect to the servers to update their date and time due t
 
 You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](./self-hosted-runner/runner-vm-setup.md#update-base-images) section.
 
-For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup.md#1-configure-base-runners-ntp-settings) section and follow the steps.
+For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup.md#2-configure-base-runners-ntp-settings) section and follow the steps.
 
 ### We can't register Appcircle runner to the server.
 

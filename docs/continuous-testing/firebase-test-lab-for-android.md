@@ -5,6 +5,8 @@ metaDescription: Using Firebase Test Lab for Android Continuous Testing
 sidebar_position: 4
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Using Firebase Test Lab for Android Continuous Testing
 
 Appcircle is integrated with Firebase Test Lab for continuous testing. You can build your app in Appcircle and deploy it directly to the Firebase Test Lab to run automated tests.
@@ -13,48 +15,54 @@ Appcircle is integrated with Firebase Test Lab for continuous testing. You can b
 
 To start with the [Firebase Test Lab](https://firebase.google.com/products/test-lab), you need to have an associated Firebase Project, which is created in the [Firebase console](https://console.firebase.google.com). Go to the console, press the "Add Project" button and specify the project name and the other settings:
 
-![](<https://cdn.appcircle.io/docs/assets/image (45).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (45).png' />
 
 After your project is created, go to the [Google Cloud Platform console](https://console.cloud.google.com/iam-admin/serviceaccounts/) to create a service account. Press the "Create Service Account" button and follow the prompts to create a service account with the **Editor** role:
 
-![](<https://cdn.appcircle.io/docs/assets/image (49).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (49).png' />
 
 Once the service account is created, click on the three dot menu next to the service account and press "Create Key".
 
-![](<https://cdn.appcircle.io/docs/assets/image (50).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (50).png' />
 
 Select the key format as "JSON" and download the created key. We will be using this key for Appcircle to be able to deploy apps to Firebase Test Lab.
 
-![](<https://cdn.appcircle.io/docs/assets/image (51).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (51).png' />
 
 As the final step, go to the [Google Developers Console API Library page](https://console.developers.google.com/apis/library) and find and enable the following APIs:
 
 - Google Cloud Testing API
 - Cloud Tool Results API.
 
-![](<https://cdn.appcircle.io/docs/assets/image (61).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (61).png' />
 
 ### Firebase Test Lab Authentication Configuration in Appcircle
 
 To start, go to the environment variables section and add the service account JSON key created in the previous step as a [new environment variable](../environment-variables/managing-variables.md#creating-environment-variable-groups). Take a note of the variable name, which will be necessary in the workflow configuration.
 
-![](<https://cdn.appcircle.io/docs/assets/image (52).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-environment.png' />
 
 Then [select the related environment variable group](../environment-variables/managing-variables.md#using-environment-variable-groups-in-builds) in the build configuration of the project that will be using Firebase Test Lab.
 
-![](<https://cdn.appcircle.io/docs/assets/image (59).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-config-env-select.png' />
 
 ### Build Workflow Configuration for Firebase Test Lab
 
 To utilize Firebase Test Lab in your builds, open the [workflow editor](../workflows/why-to-use-workflows.md) and add the "Firebase Test Lab for Android" step after the build or sign steps. If you want to run instrumentation tests, also add the "Android Build for UI Testing" step before the Firebase Test Lab step.
 
-![](<https://cdn.appcircle.io/docs/assets/image (53).png>)
+:::caution
+
+If you want to run **robo** test, it is highly recommended to not add **Android Build for UI Testing** step.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-workflow-select.png' />
 
 If you want to use the UI Test Build output or the Signed Build output in Firebase Test Lab, add any of these steps before the Firebase Test Lab step and take a note of the output path of these steps. You will need this environment variable for testing configuration.
 
-![](<https://cdn.appcircle.io/docs/assets/image (54).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-ui-test-workflow.png' />
 
-![](<https://cdn.appcircle.io/docs/assets/image (56).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-android-sign-workflow.png' />
 
 Before the build, the last task is to configure the Firebase Test Lab for Android step:
 
@@ -68,14 +76,14 @@ Before the build, the last task is to configure the Firebase Test Lab for Androi
 
 Once everything is set up, press save to save your step configuration. Then you can configure and run your build just like any other app.
 
-![](<https://cdn.appcircle.io/docs/assets/image (55).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-android-firebase-workflow.png' />
 
 ### Viewing the Firebase Test Lab Step Results
 
 Once your build is done, you can view the results of the Firebase Test Lab step in the build logs.
 
-![](<https://cdn.appcircle.io/docs/assets/image (62).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-android-test-result.png' />
 
 The full details of the tests are accessible in the [Firebase console](https://console.firebase.google.com) and in your Google Cloud Storage bucket for analysis.
 
-![](<https://cdn.appcircle.io/docs/assets/image (63).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (63).png' />

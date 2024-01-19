@@ -2,8 +2,10 @@
 title: Podman
 metaTitle: Podman
 metaDescription: Appcircle Server on Podman
-sidebar_position: 3
+sidebar_position: 4
 ---
+
+import Screenshot from '@site/src/components/Screenshot';
 
 # Overview
 
@@ -86,6 +88,34 @@ The `swappiness` parameter configures how often your system swaps data out of RA
 
 The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.3.0 or higher.
 
+#### Enabling the Linger Option
+
+To ensure uninterrupted operation of the Appcircle server's background processes, you must enable the **linger** option on the host system.
+
+Enabling this option allows the podman containers to persist even after user logouts, ensuring continuous functionality.
+
+Check if the **linger** option is enabled for the current user with the below command.
+
+```bash
+loginctl show-user "$USER" --property=Linger
+```
+
+If you see `Linger=yes`, it means that the option is enabled and you do not need extra configuration.
+
+If the output is `Linger=no`, this means that the option is disabled and you cannot run the Appcircle server in the background.
+
+:::caution
+If the **linger** option is set to `no`, you must enable it to run the Appcircle server in the background.
+:::
+
+To enable the linger option, you can use the command below:
+
+```bash
+loginctl enable-linger
+```
+
+You can run the Appcircle server in the background now.
+
 #### Overcoming Privileged Port Limitations
 
 When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443.
@@ -164,13 +194,13 @@ You need to have the following tools installed on your system:
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.9.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.11.1.zip
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.9.0.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.11.1.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -236,7 +266,7 @@ sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
 - Edit the /etc/containers/containers.conf file.
 
 ```bash
-sudo vim /etc/containers/container.conf
+sudo vi /etc/containers/containers.conf
 ```
 
 - Add the following content to the [network] section:
@@ -246,8 +276,18 @@ network_backend="netavark"
 ```
 
 - Save the file.
-- Reset Podman by running the command: `podman system reset`
-- Reboot the system using the command: `sudo reboot`
+
+- Reset Podman:
+
+```bash
+podman system reset
+```
+
+- Reboot the system:
+
+```bash
+sudo reboot
+```
 
 :::caution
 If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
@@ -556,7 +596,7 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-![](https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png' />
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
@@ -902,7 +942,7 @@ To use Sonatype Nexus as your proxy registry, you should follow the below steps.
 - Create a new repository in Nexus with the type of `docker (proxy)`.
 - Set the `Registry Name` name and `port` as you wish.
 - Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
-- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file.
+- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file. See the sample screenshot [here.](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
 - For SSL, the recommended way is to use a reverse proxy in front of Nexus.
 - After you created the repository, you should add the below section to the `global.yaml` file with your Nexus `repository url`, `username` and `password`.
 - If you can access your Nexus repository without authentication, you should leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
@@ -946,15 +986,15 @@ Nexus may have some issues when pulling images in parallel.
 
 Open your browser and go to URL `http://my.appcircle.spacetech.com`. You should see login page.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-login-page.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-login-page.png' />
 
 Login to self-hosted Appcircle with `initialUsername` and `initialPassword` that we have configured in above steps. For our example, user name is `admin@spacetech.com`.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-dashboard-page.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-dashboard-page.png' />
 
 You can also login to enterprise app store with configured custom URL `store.spacetech.com`.
 
-![](https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-enterprise-app-store.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted-appcircle-enterprise-app-store.png' />
 
 :::info
 

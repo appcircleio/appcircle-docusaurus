@@ -5,6 +5,8 @@ metaDescription: Federated Identity (Linked Login Providers)
 sidebar_position: 4
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Federated Identity (Linked Login Providers)
 
 In this screen, you can manage the linked accounts for login. You can link a new account by pressing **Add **and following the permission prompts displayed by the provider or you can disconnect an account by pressing **Remove**.
@@ -19,6 +21,6 @@ Identity providers linked for login purposes are managed independently from the 
 
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/image (21).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-federated-identities.png' />
 
 ###

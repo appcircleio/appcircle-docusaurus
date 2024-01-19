@@ -4,6 +4,8 @@ metaTitle: Send Apps to Google Play Console
 metaDescription: Send Apps to Google Play Console
 sidebar_position: 1
 ---
+
+import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
 # Send Apps to Google Play Console
@@ -41,15 +43,15 @@ To send apps from Appcircle, you need to provide a Google Developer API key. To 
 
 Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
 
-![](<https://cdn.appcircle.io/docs/assets/image (92).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (92).png' />
 
-### Deploying the Binary from the Distribute Module
+### Deploying the Binary from the Testing Distribution
 
-You can deploy the binaries to the Store Submit module from the [Distribute Module](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).;
+You can deploy the binaries to the Store Submit module from the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).;
 
 Select a binary in the list and press "Send to Store Submit for Play Store" from the top left menu. The package name of the binary will be matched automatically if there is an existing store submission profile. If not, a new store submission profile will be created automatically.
 
-![](<https://cdn.appcircle.io/docs/assets/image (69).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (69).png' />
 
 ### Store Submit Profile Details
 
@@ -57,7 +59,7 @@ Once deployed, the binary will be available in the related store submission prof
 
 There are three actions available for each version in the version list. The first action displays a screen where you can initiate the store upload. The second action allows you to view the logs of the latest upload of that binary and the third action button allows you to delete that version.
 
-![](<https://cdn.appcircle.io/docs/assets/image (89).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (89).png' />
 
 ### Sending Apps to Google Play Console
 
@@ -69,7 +71,7 @@ With the next option, [select a release track](https://support.google.com/google
 
 When you press the "Send App" button, the binary will be uploaded to the Google Play Console.
 
-![](<https://cdn.appcircle.io/docs/assets/image (91).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (91).png' />
 
 ###
 
@@ -79,7 +81,7 @@ The upload status of the binary can be tracked on the same screen.
 
 Once the process is complete, you can click on the status or click on the "View Logs" button to see the logs. If the upload is successful, you can submit this binary to the store from the "App releases" section in the Google Play Dashboard under the selected track.
 
-![](<https://cdn.appcircle.io/docs/assets/image (74).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (74).png' />
 
 ### Troubleshooting Common Google Play Upload Errors
 
@@ -97,7 +99,7 @@ The binary sent to Google Play must be production-ready, so you can encounter ce
 
 Either for freeing up space purposes or if you wish to not use the Store Submit module, you can delete your store submit profile. Click on the three dot menu on the profile card:
 
-![](<https://cdn.appcircle.io/docs/assets/image (207).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/storesubmit-playstore-delete.png' />
 
 #### Delete a Single Store Submit Version
 
@@ -105,7 +107,7 @@ If you want to free up space but you don't want to lose your Store Submit profil
 
 Click on the three dot menu on the version, and click on the Delete Version
 
-![](<https://cdn.appcircle.io/docs/assets/image (206).png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/storesubmit-playstore-version-delete.png' />
 
 After typing the name, your version will be deleted.
 

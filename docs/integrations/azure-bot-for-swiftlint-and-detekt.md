@@ -2,9 +2,10 @@
 title: Azure Bot for SwiftLint and Detekt
 metaTitle: Azure Bot for SwiftLint and Detekt
 metaDescription: Azure Bot for SwiftLint and Detekt
-sidebar_position: 9
+sidebar_position: 10
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
 
 # Azure Bot for SwiftLint and Detekt
@@ -19,19 +20,19 @@ First, to generate the report output, the [SwiftLint](../workflows/ios-specific-
 
 To use the Azure Bot, we add the 'Azure DevOps Bot for SwiftLint Report' step right after running SwiftLint.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-ios-wf.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-ios-swiftlint.png' />
 
 #### Step 2
 
 You will find the variables that need to be specified inside the bot component. These can be provided either by adding them to environment variables or by directly entering values within the component.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-ios-wf-details.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-ios-swiftlint-details.png' />
 
 :::caution
-Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables/why-to-use-environment-variables-and-secrets.md) and encrypting variables like tokens that could pose a security risk.
+Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables) and encrypting variables like tokens that could pose a security risk.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-env-var-full.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-swiftlint-env-var.png' />
 
 #### Step 3
 
@@ -55,7 +56,7 @@ When the workflow is completed, Appcircle, with the help of this step, will post
 
 You can easily access the details through the comment and reach the build log via the link. This is how your open PR will appear when the step is completed.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-pr-comment.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-pr-comment.png' />
 
 https://github.com/appcircleio/appcircle-ios-azure-bot-for-swiftlint-component
 
@@ -69,16 +70,16 @@ The first step for Android is to add the [Detekt](../integrations/../workflows/a
 Please make sure to run the Azure Bot component after Detekt. Otherwise, the **Azure DevOps Bot For Detekt Component** won't function.
 :::
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-wf-step.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-android-detekt-workflow.png' />
 
 #### Step 2
 
 You will find the variables that need to be specified within the bot component. You can provide these variables either by adding them to environment variables or by directly entering their values within the component.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-wf-details.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-android-detekt-workflow-details.png' />
 
 :::caution
-Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables/why-to-use-environment-variables-and-secrets.md) and encrypting variables like tokens that could pose a security risk.
+Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables) and encrypting variables like tokens that could pose a security risk.
 :::
 
 #### Step 3
@@ -103,7 +104,7 @@ When the workflow is completed, Appcircle, with the help of this step, will post
 
 You can easily access the details through the comment and reach the build log via the link. This is how your open PR will appear when the step is completed.
 
-![](<https://cdn.appcircle.io/docs/assets/workflowtips-android-status-change.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-android-status-change.png' />
 
 <NarrowImage src="https://cdn.appcircle.io/docs/assets/workflowtips-android-comment.png" />
 

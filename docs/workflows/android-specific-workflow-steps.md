@@ -101,3 +101,13 @@ Scan your Android app using [AppSweep](https://appsweep.guardsquare.com)
 Distribute APK,AAB and mapping files to [App Center](https://appcenter.ms/). You need enter your token, owner, app and group names to distribute your binaries.
 
 [https://github.com/appcircleio/appcircle-android-appcenter-distribute-component](https://github.com/appcircleio/appcircle-android-appcenter-distribute-component)
+
+## Appdome Build-2Secure for Android
+
+Appdome Build-2Secure is a comprehensive automated solution that seamlessly integrates advanced security features, adaptive protections, code-signing, and certification processes into mobile applications, enhancing security without the need for manual coding or code analysis.
+
+[https://github.com/appcircleio/appcircle-android-appdome-component](https://github.com/appcircleio/appcircle-android-appdome-component)
+
+For detailed information on the benefits Appdome Build-2Secure adds to your mobile app, refer to the blog post:
+
+[https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integration](https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integration)

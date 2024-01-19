@@ -5,7 +5,7 @@ metaDescription: Enable SSO
 sidebar_position: 1
 ---
 
-import NarrowImage from '@site/src/components/NarrowImage';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Single Sign-On
 
@@ -44,19 +44,19 @@ Two-factor authentication (2FA) can only be enabled by your SSO provider. Please
 - When you connect your Identity Provider, please open a new incognito window and test the SSO integration.
 - Click the **Continue with SSO** button.
 
-![](https://cdn.appcircle.io/docs/assets/sso-loginbutton.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-loginbutton.png' />
 
 - Enter the alias you picked.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
 - You should first see the below confirmation screen.
 
-![](https://cdn.appcircle.io/docs/assets/sso-linkaccount.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-linkaccount.png' />
 
 - After you confirmed account linking, you will get an email.
 
-![](https://cdn.appcircle.io/docs/assets/sso-confirmlink.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-confirmlink.png' />
 
 - You can now access your account with SSO integration when you confirm the email.
 - After you enable the SSO, you can only log in to your account with the SSO link. Your old credentials won't work anymore.

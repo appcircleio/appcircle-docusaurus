@@ -5,6 +5,8 @@ metaDescription: Adding a Google Play Service Account
 sidebar_position: 6
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Adding a Google Play Service Account
 
 Google Service Account is required to upload your binary to Google Play Store. This JSON key must be added to your account to publish apps to Google Play.
@@ -13,54 +15,60 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
 2. Enable the Google Play Developer API for your Google Cloud Project. Login with your account, then head over to **Credentials -> Create Credentials**, and then click **Service account**.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service01.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service01.png' />
 
 3. This screen will forward you to the **Create service account** page. Fill in the details of your service account. According to the service name you set, an automatic **Service account ID** will be created.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service03.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service03.png' />
 
 4. Please select `Editor` in the Role dropdown.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service04.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service04.png' />
 
 5. Click Done to save this account.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service05.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service05.png' />
 
 6. Click **Manage service accounts** to open manage page.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service05-1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service05-1.png' />
 
 7. Find the account you have just created. Click three dots on the Actions column, and then click **Manage keys**.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service06.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service06.png' />
 
 8. Click **ADD KEY** and then click **Create new key**.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service07.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service07.png' />
 
 9. Download your key as JSON and save it.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service08.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service08.png' />
 
 10. Switch to the **PERMISSIONS** tab and click on **GRANT ACCESS**.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service09.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service09.png' />
 
 11. Select the email, generated in step 6 in the **Add principals** field then click **SAVE** button.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service09-1.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service09-1.png' />
 
 12. Go to [Google Play Console](https://play.google.com/console) and login with your account and then head over to **User and permissions** and then click **Invite new users**.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service09-2.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service09-2.png' />
 
 13. Add the email, generated in step 6 in the **E-mail address** field.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service12.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service12.png' />
 
-14. Check the permissions of your account key and make sure this account has access to Releases and then click **Invite User**.
+14. Check the permissions of your user.
 
-![](<https://cdn.appcircle.io/docs/assets/google-service11.png>)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11-1.png' />
 
-Your account key is ready. To add a key, go to [My Organization](./my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section.
+Make sure this account has access to **Releases**, **Store presence**, and **App access** (for read-only ones).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11.png' />
+
+Then click **Invite User**. Your account key is ready. 🎉
+
+To add a key, go to [My Organization](./my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section.
