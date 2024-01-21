@@ -83,6 +83,12 @@ After you select the relevant Git repository and "Save", the build profile will 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/repo-success-c.png' />
 
+:::caution
+After changing the Git provider and reconnecting the repository, you can use the existing branches that are also available in the new repository. When you try to **Start Build** with these branches, you should see the up-to-date "Commit ID" from the new repository.
+
+Unavailable branches from the old repository connection will be inactive. You can see them in the branch list, but Appcircle does not allow building with the branches that do not exist in the new repository. These kinds of branches will be unusable.
+:::
+
 :::tip
 While switching from one connection to another type of connection, the older connection method is not important.
 
