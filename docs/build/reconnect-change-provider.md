@@ -95,10 +95,10 @@ While changing the Git provider, your previous builds, tests, configurations, wo
 
 ## Change Owner
 
-The authority of a profile can now be changed without the need to create a new profile on Appcircle. The **"Change Owner"** button in the **Connections** menu will do this job.
+The **token owner** of a build profile can now be changed without the need to create a new build profile on Appcircle. The **Change Owner** button in the build profile **connection** detail will help you change the token ownership so that you can resolve the broken connections or misconfigured repository authorization cases easily by yourself.
 
 :::info
-To use this feature, the user must have previously connected the relevant Git provider on Appcircle via OAuth.
+To use this feature, the user must have previously connected the relevant Git provider on Appcircle via [OAuth](connections.md#managing-oauth-connections).
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/owner-main.png' />
