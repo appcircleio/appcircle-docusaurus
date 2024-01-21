@@ -121,6 +121,6 @@ The connection ownership change will be permitted for users who are in the same 
 In addition, the user who wants to take ownership of the connection must also have access to the repository on the relevant Git provider.
 :::
 
-After the process is finished, click on the **"Connection Settings"** button again, and in the window that opens in the **"Token Owner"** field, the **"Change Owner"** button will not appear because we are now the profile owner.
+When the process is completed successfully, you can click on the **Connection Settings** button again to see the changed ownership of the build profile connection. In the window that's opened, there won't be a **Change Owner** button because you are now the profile owner.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/owner-changed.png' />
