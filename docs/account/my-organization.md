@@ -252,7 +252,7 @@ The user can create organization or sub organization within license limits, add 
 
 |Permission|Explanation|
 |----------|-----------|
-| Manager | The user can manage all user permissions and statuses within license limits.|
+| Manager | The user can manage all member permissions and other organization properties mentioned above within license limits.|
 
 ### BILLING MANAGEMENT PERMISSIONS
 
@@ -260,7 +260,7 @@ Manage the subscription, payment details, and invoices.
 
 |Permission|Explanation|
 |----------|-----------|
-| Manager | The user can manage subscription, payment details, and invoices|
+| Manager | The user can manage subscriptions, payment details, and invoices.|
 
 ### THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS
 
@@ -268,4 +268,4 @@ Connect to or disconnect from third-party service providers such as Slack, Micro
 
 |Permission|Explanation|
 |----------|-----------|
-| Manager | The user can manage third-party service providers connection and disconnection. |
+| Manager | The user can manage third-party service provider connections and disconnections.|
