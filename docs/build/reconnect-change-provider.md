@@ -95,10 +95,14 @@ While changing the Git provider, your previous builds, tests, configurations, wo
 
 ## Change Owner
 
-The **token owner** of a build profile can now be changed without the need to create a new build profile on Appcircle. The **Change Owner** button in the build profile **connection** detail will help you change the token ownership so that you can resolve the broken connections or misconfigured repository authorization cases easily by yourself.
+The **token owner** of a build profile can now be changed without the need to create a new build profile on Appcircle. The **Change Owner** button in the build profile **Connection** detail will help you change the token ownership so that you can resolve the broken connections or misconfigured repository authorization cases easily by yourself.
 
 :::info
-To use this feature, the user must have previously connected the relevant Git provider on Appcircle via [OAuth](connections.md#managing-oauth-connections).
+To use this feature, the user must have previously connected to the relevant Git provider on Appcircle via [OAuth](connections.md#managing-oauth-connections).
+:::
+
+:::info
+The build profile owners will not see the **Change Owner** button in the **Connection** detail for their build profiles.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/owner-main.png' />
@@ -106,10 +110,6 @@ To use this feature, the user must have previously connected the relevant Git pr
 When you browse the same profile with a different user within the same organization, the **"Change Owner"** button will be visible in the window that opens when we click on the **"Connection Settings"** button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/owner-modal.png' />
-
-:::info
-The profile owner will not see the **"Change Owner"** button in the **"Connection Settings"** menu for their profile.
-:::
 
 After clicking on the **"Change Owner"** button, after you give your approval on the confirmation screen that appears, the process of taking over the profile for the relevant user will start.
 
