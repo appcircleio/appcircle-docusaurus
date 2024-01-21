@@ -43,12 +43,12 @@ To test drive Appcircle, you can find various sample projects in the [Appcircle 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-connection.png' />
 
-When the "Autofill" feature is activated on the next screen, the repository selection screen, Appcircle will directly create a configuration after the connection and fill in the necessary fields.
+When the "Autofill" toggle is activated on the **Select Repository** popup, Appcircle will try to create a default configuration using the selected repository and fill in the necessary fields.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/autofill.png' />
 
 :::caution
-If you do not have a build limit for your account, Appcircle will not be able to **Autofill** your profile.
+When you have exceeded the build limit of your plan, Appcircle will not be able to **Autofill** your build profile, although you activated the toggle.
 :::
 
 Refer to the relative documents under this page about the connections and differences between connection types:
