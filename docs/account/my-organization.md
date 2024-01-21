@@ -236,6 +236,12 @@ Publish apps to Google Play, Huawei.
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
 :::
 
+:::tip
+**Publish Variables** permissions in the Publish module are dependent on the iOS or Android permissions that you configure for the Publish module.
+
+For instance, when you give "viewer" permission to a user for iOS or Android, this permission will also make the user "viewer" for the **Publish Variables**. When you give "manager" permission to a user for iOS or Android, this permission also makes the user "manager" for the **Publish Variables**.
+:::
+
 ### ENTERPRISE STORE PERMISSIONS
 
 Manage and Upload Apps to Enterprise Store.
