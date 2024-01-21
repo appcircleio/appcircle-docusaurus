@@ -1,7 +1,7 @@
 ---
-title: Disconnect, Reconnect, Change Connection, Change Owner From Build Profile
-metaTitle: Disconnect, Reconnect And Change Connection From Build Profile
-metaDescription: Disconnect, Reconnect And Change Connection From Build Profile
+title: Disconnect, Reconnect, Change Connection and Change Owner From Build Profile
+metaTitle: Disconnect, Reconnect, Change Connection and Change Owner From Build Profile
+metaDescription: Disconnect, Reconnect, Change Connection and Change Owner From Build Profile
 sidebar_position: 12
 ---
 
