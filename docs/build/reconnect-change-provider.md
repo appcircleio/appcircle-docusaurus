@@ -84,7 +84,9 @@ After you select the relevant Git repository and "Save", the build profile will 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/repo-success-c.png' />
 
 :::caution
-After changing the git provider and reconnecting the repository, Appcircle does not allow build with old branches in the branch list. Old branches will be unusable.
+After changing the Git provider and reconnecting the repository, you can use the existing branches that are also available in the new repository. When you try to **Start Build** with these branches, you should see the up-to-date "Commit ID" from the new repository.
+
+Unavailable branches from the old repository connection will be inactive. You can see them in the branch list, but Appcircle does not allow building with the branches that do not exist in the new repository. These kinds of branches will be unusable.
 :::
 
 :::tip
