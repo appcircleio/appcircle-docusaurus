@@ -13,6 +13,10 @@ The diagnostic tool allows users to efficiently troubleshoot issues by identifyi
 
 With its ability to gather crucial data such as systemd services, installed packages, and container engine configurations, the diagnostic tool streamlines the process of diagnosing and resolving issues.
 
+:::info
+Appcircle server `v3.12.0` or higher is required for the `diagnostic` tool.
+:::
+
 ## Running the Tool
 
 To run the diagnostic tool and create a diagnostic file to check current system configuration, you can follow the steps below.
