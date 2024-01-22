@@ -14,7 +14,7 @@ The diagnostic tool allows users to efficiently troubleshoot issues by identifyi
 With its ability to gather crucial data such as systemd services, runner configuration, installed packages and environment configurations, the diagnostic tool streamlines the process of diagnosing and resolving issues.
 
 :::info
-Appcircle runner `v1.4.6` is required for the `diagnostic` tool.
+Appcircle runner `v1.4.6` or higher is required for the `diagnostic` tool.
 :::
 
 ## Running the Tool
