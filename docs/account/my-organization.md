@@ -158,6 +158,14 @@ Permissions can be customized for build profiles.
 | Viewer | The user can only view and download logs.|
 | None | The user cannot reach any details about build profiles.|
 
+
+:::info
+Manager or Operator Build Profile permission can distribute binary if user has Manager or Operator Distribution permission.
+:::
+
+:::info
+Manager, Operator and Viewer Build Profile permissions can view Self-Hosted Runners but cannot modify the configuration.
+:::
 ### ENVIRONMENT VARIABLE PERMISSIONS
 
 Permissions can be customized for environment variable.
@@ -185,8 +193,21 @@ Permissions can be customized for distribution profiles.
 |Permission|Explanation|
 |----------|-----------|
 | Manager | The user can see, create, and delete new distribution profiles and Apple Devices and customize their settings.|
+| Operator| The user can only send to testing and view distribution profiles and Apple Devices.|
 | Viewer | The user can only view distribution profiles and Apple Devices.|
 | None | The user cannot reach any details about distribution profiles.|
+
+:::info
+Manager or Operator Distribution Profile permission can send to enterprise appstore if user has Manager, Uploader or Operator Enterprise Store permission.
+:::
+
+:::info
+Manager or Operator Distribution Profile permission can send to publish if user has Manager or Operator Publish Android and Manager or Operator iOS permission.
+:::
+
+:::info
+Manager or Operator Distribution Profile permission can resign binary if user has Manager or Viewer Signing Identity Management permission.
+:::
 
 ### TESTING GROUP PERMISSIONS
 
@@ -218,8 +239,8 @@ Publish apps to App Store.
 |Permission|Explanation|
 |----------|-----------|
 | Manager | The user can make changes to the publish flow, publish settings, start publish to the App Store, add or delete a new app version, and view and download logs.|
-| Operator | The user can start publishing to the App Store and view and download publish settings, publish flow, and logs.|
-| Viewer | The user can only view the iOS application list and logs for the application.|
+| Operator | The user can start publishing to the App Store and download artifacts and view publish settings, publish flow, and logs.|
+| Viewer | The user can only download artifacts and view the iOS application list and logs for the application.|
 | None | The user cannot reach any details about the iOS Publish.|
 
 ### PUBLISH MODULE ANDROID PERMISSIONS
@@ -229,8 +250,8 @@ Publish apps to Google Play, Huawei.
 |Permission|Explanation|
 |----------|-----------|
 | Manager | The user can make changes to the publish flow, publish settings, start publish to the Google Play And  Huawei AppGallery, add or delete a new app version, and view and download logs.|
-| Operator | The user can start publishing to the Google Play and Huawei AppGallery and view and download publish settings, publish flow, and logs.|
-| Viewer | The user can only view the Android application list and logs for the application.|
+| Operator | The user can start publishing to the Google Play and Huawei AppGallery and download artifacts and view publish settings, publish flow, and logs.|
+| Viewer | The user can only download artifacts and view the Android application list and logs for the application.|
 | None | The user cannot reach any details about the Android Publish.|
 :::info
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
@@ -248,13 +269,15 @@ Manage and Upload Apps to Enterprise Store.
 
 |Permission|Explanation|
 |----------|-----------|
-| Manage Enterprise Settings & Apps | The user can modify both Enterprise Store settings and the uploaded apps.|
-| Upload apps to Enterprise Store | The user can only use apps.|
-| Read-Only Access| The user can only view the profiles.|
+| Manager | The user can do anything Uploader can do and modify Enterprise Settings including create/update/delete store authentication (LDAP, SSO and Static Login), customize the store and modify store domain settings.|
+| Uploader | The user can only create/update/delete enterprise store profiles, create/update/delete appversions, publish/notify to beta/live stores, download artifacts and view the profiles.|
+| Operator | The user can only publish/notify to beta/live stores, download artifacts and view the profiles.|
+| Viewer| The user can only view the profiles.|
 
 ### ORGANIZATION MANAGEMENT PERMISSIONS
 
-The user can create organization or sub organization within license limits, add and remove members, and manage their permissions.
+The user can create organization or sub organization within license limits, add and remove members, and manage their permissions. 
+Also user can view Self-Hosted Runners and change configuration.
 
 |Permission|Explanation|
 |----------|-----------|
