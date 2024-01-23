@@ -25,7 +25,9 @@ To run the diagnostic tool and create a diagnostic file to check current system 
 
 You can run the `diagnostic.sh` tool and create the diagnostic files which will help you to track configuration of your server.
 
-When you run the tool, there will be a `diagnostic-${datetime}.tar.gz` file which you can share with us. The "${datetime}" is a dynamic variable which is the date and time you run the script. Date time format is: `yyyymmddHHMMSS` For example: `diagnostic-20240109064747.tar.gz`
+When you run the tool, there will be a `diagnostic-${datetime}.tar.gz` file which you can share with us.
+
+The "${datetime}" is a dynamic variable which is the date and time you run the script. Date time format is: `yyyymmddHHMMSS` For example: `diagnostic-20240109064747.tar.gz`
 
 :::caution
 Diagnostic tool needs `sudo` permission to read some system files.
