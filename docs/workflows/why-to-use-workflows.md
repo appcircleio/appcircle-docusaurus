@@ -146,6 +146,68 @@ The items in the "Inputs" section are specific to that step. The reserved enviro
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (187).png' />
 
+### Using Output Variables
+
+Appcircle can generate output for each workflow after the workflow components are run during build. These outputs can be assigned to default variables to be used in the next steps.
+
+If we examine the **"Android Sign"** step of an Android project, we see that it gives the output **"Signed_APK_PATH"**. After running this step in this workflow, it will show us the directory of the produced file.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/output-var-main.png' />
+
+:::info
+In order to use the relevant output, previously assigned variables cannot be changed.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/outputvar-custom-1.png' />
+
+After the build process, we can see the equivalent of the **"AC_SIGNED_APK_PATH"** variable that we printed on the screen in the Custom Script.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/outputvar-custom-2.png' />
+
+:::info
+Each output variable produced can only be used within the relevant build. After the build is finished, a variable belonging to the previous build will not be available during the new build.
+:::
+
+#### Workflow Components That Can Produce Output Variable
+
+|Platform|Component Name|Output Variables|
+|----------|----------|-----------|
+|Common|Activate SSH Private Key  |SSH_AUTH_SOCK |
+|Common|Upload Files to Amazon S3  |AC_AWS_UPLOAD_URL |
+|Android|Appdome Build-2Secure for Android  |AC_APPDOME_SECURED_APK_PATH, AC_APPDOME_SECURED_AAB_PATH, AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH, AC_APPDOME_CERTIFICATE_PATH |
+|Android|Android Build|AC_APK_PATH, AC_AAB_PATH|
+|Android|Android Build for UI Testing|AC_APK_PATH, AC_TEST_APK_PATH|
+|Android|Increment Build and Version Number|AC_ANDROID_NEW_VERSION_CODE, AC_ANDROID_NEW_VERSION_NAME|
+|Android|Android Dependency Report|AC_ANDROID_DEPENDENCY_REPORT_PATH|
+|Android|Flutter Build for Android|AC_APK_PATH, AC_AAB_PATH|
+|Android|Android App Post-Processor|AC_ANDROID_POST_PROCESS_OUTPUT_PATH|
+|Android|Android Re-Sign|AC_SIGNED_APK_PATH, AC_SIGNED_AAB_PATH|
+|Android|Android Sign|AC_SIGNED_APK_PATH, AC_SIGNED_AAB_PATH|
+|Android|Test Reports|AC_TEST_REPORT_JSON_PATH|
+|Android|Android Unit Tests|AC_TEST_RESULT_PATH|
+|Android|AppSweep Mobile Security Testing|AC_APPSWEEP_URL|
+|Common|AWS Device Farm Deploy and Run|AWS_RUN_ARN, AWS_TEST_RESULT, AWS_OUTPUT_DEVICEPOOL_ARN, AWS_OUTPUT_APPUPLOAD_ARN|
+|Android|Bundle Universal Apk|AC_SIGNED_APK_PATH|
+|Common|Flutter Install|PATH|
+|Common|Flutter Test|AC_TEST_RESULT_PATH|
+|Common|Flutter Build for Web|AC_FLUTTER_WEB_PATH|
+|Common|Git Clone|AC_REPOSITORY_DIR|
+|iOS|Appdome Build-2Secure for iOS|AC_APPDOME_SECURED_IPA_PATH, AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH, AC_APPDOME_CERTIFICATE_PATH|
+|iOS|Xcodebuild Build for Testing|AC_TEST_APP_PATH, AC_UITESTS_RUNNER_PATH, AC_XCTEST_PATH, AC_UITESTS_RUNNER_IPA_PATH, AC_XCTEST_ZIP_PATH, AC_TEST_IPA_PATH|
+|iOS|Xcodebuild for Devices|AC_ARCHIVE_PATH, AC_ARCHIVE_METADATA_PATH, AC_EXPORT_DIR|
+|iOS|Xcodebuild for iOS Simulator|AC_SIMULATOR_APP_PATH|
+|iOS|Increment Build and Version Number|AC_IOS_NEW_BUILD_NUMBER|
+|iOS|Install Certificates & Profiles|AC_KEYCHAIN_PATH, AC_KEYCHAIN_PASSWORD|
+|iOS|Xcodebuild for Unit and UI Tests|AC_TEST_RESULT_PATH|
+|iOS|Test Reports|AC_TEST_REPORT_JSON_PATH|
+|Android|Android Metadata|AC_METADATA_OUTPUT_PATH|
+|Common|Repeato Test Runner|AC_REPEATO_REPORT, AC_REPEATO_JUNIT_REPORT, AC_TEST_RESULT_PATH|
+|iOS|Slather|AC_SLATHER_OUTPUT_PATH|
+|iOS|Swiftlint|AC_LINT_OUTPUT_PATH|
+|Common|Testinium|AC_TESTINIUM_RESULT_FAILURE_SUMMARY, AC_TESTINIUM_RESULT_ERROR_SUMMARY, AC_TESTINIUM_RESULT_SUCCESS_SUMMARY|
+|iOS|Xcode Select|XCODE_DEVELOPER_DIR_PATH|
+|Common|Snyk Scan Security|AC_SNYK_REPORT, AC_SNYK_MONITOR_EXPLORE_LINK|
+
 #### Build Warning Status
 
 When we start a build, if we have activated the "Continue with the next step even if this step fails" setting for a component we use in the workflow and this step fails during the build, Appcircle will show the build status as "Warning" if the build is completed successfully for other steps.
