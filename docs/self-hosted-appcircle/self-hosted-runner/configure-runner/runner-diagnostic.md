@@ -21,9 +21,7 @@ Appcircle runner `v1.4.6` or higher is required for the `diagnostic` tool.
 
 You can run this diagnostic tool either on an Appcircle runner or on an Appcircle runner host if you are using vm.
 
-To run the diagnostic tool and create a diagnostic file to check current system configuration, you can follow the steps below.
-
-### Creating a File to Share
+### Creating a Diagnostic Report For Sharing
 
 You can run the `diagnostic.sh` tool and create the diagnostic files which will help you to track configuration of your runner or host machine.
 
@@ -49,7 +47,9 @@ cd appcircle-runner
 If you want to use that script on an another machine like a host machine of the runner, you can just copy the `diagnostic.sh` file and see the example commands below.
 :::
 
-Example commands:
+#### Create a Diagnostic Report
+
+To create a diagnostic report, you can run the diagnostic tool like in the examples below.
 
 - Run with default settings which will create the files discussed above:
 
@@ -74,6 +74,24 @@ Example commands:
 ```bash
 ./scripts/diagnostic.sh --version
 ```
+
+#### Share the Diagnostic Report
+
+Once you run the the diagnostic tool, the diagnostic reports will be created in the current directory.
+
+- To list diagnostic files with the one, you can list the current directory.
+
+```bash
+ls -l | grep -i "diagnostic"
+```
+
+- As output, you will see some diagnostic reports.
+
+```bash
+-rw-r--r--   1 appcircle  staff   1755 Jan 23 12:01 diagnostic-20240123120153.tar.gz
+```
+
+- You can share that diagnostic report with us for analyzing.
 
 ### Printing Diagnostic Information to the Terminal
 
