@@ -173,7 +173,7 @@ If you already trusted the root CA cert, you should check the Appcircle server's
 
 The `screen` command has a bug with long usernames which has been fixed in the new versions.
 
-If you are facing this error while trying to run runners, you should update the `screen` tool in the host machine.
+If you are facing this error while trying to run Appcircle runner VMs on a macOS host, you should update the `screen` tool in the host machine with `brew`.
 
 You can follow the steps below to update the `screen` tool:
 
