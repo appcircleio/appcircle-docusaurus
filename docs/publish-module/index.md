@@ -125,22 +125,22 @@ When you click on an item in the list, you can see the detailed publishing logs.
 
 ### Version Download
 
-Appcircle allows you to download the previously installed application output again. For this, you can click on the **Download** button on the modal opened by clicking on the three dots on the right side of the version list.
+Appcircle allows you to download the published application artifact for all listed versions. For this, you can click on the **Download** button on the **Actions** menu opened by clicking the three dots on the version list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download.png' />
 
 ### Version Delete
 
-Appcircle allows you to delete the previously installed application version. For this, you can click on the **Delete** button on the modal opened by clicking on the three dots on the right side of the version list.
+Appcircle allows you to delete the published application versions. For this, you can click on the **Delete** button on the **Actions** menu opened by clicking the three dots on the version list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-delete.png' />
 
-Sonrasında ekrana gelen uyarı penceresindeki konfirmasyonu tamamlayarak silme işlemini gerçekleştirebilirsiniz.
+You should confirm the **Delete** action by entering the version name into the dialog box, which prevents unintentional version removals.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-delete-confirm.png' />
 
 :::caution
-Appcircle does not delete the app that has been submitted to the store. This deletion will only delete the version of the app in the Publish module.
+Appcircle does not delete the application that has been submitted to the stores. This deletion will only delete the version of the application in the Publish module.
 :::
 
 ## Publish Profile Rename
