@@ -79,7 +79,7 @@ You can change default subdomains as your needs at the first installation time o
 
 If you have already installed the Appcircle server and want to change the subdomains, you can reset the data and move on.
 
-For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com`, you can follow the step below:
+For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com`, you can follow the steps below:
 
 - Go to the `appcircle-server` directory.
 
