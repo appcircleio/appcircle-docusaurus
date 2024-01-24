@@ -23,7 +23,7 @@ For detailed information on store **Connections**, follow the links below.
 |Google Play| https://docs.appcircle.io/account/adding-google-play-service-account|
 |Huawei AppGallery| https://docs.appcircle.io/account/adding-huawei-api-key|
 
-## Starting Publish Process with Build
+## Publish after Build
 
 After building the application, we can start the publishing process by sending it to the Publish module.
 
@@ -55,7 +55,9 @@ When the build is successful, Appcircle will send the version of the relevant ap
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-build-success.png' />
 
-## Publish Flow
+## Publish Profile
+
+### Publish Flow
 
 Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery). This flow can be customized according to your specific publishing requirements.
 
@@ -69,7 +71,7 @@ We can access the list of steps that can be used in a publish workflow by clicki
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-workflows.png' />
 
-## Publish Settings
+### Publish Settings
 
 When a build is completed on the Build module and its artifacts are distributed to the Publish module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
 
@@ -81,7 +83,7 @@ Your configured publish flow will be executed automatically when you enable **Au
 If group or variable definitions have been made in **Publish Variables**, you will see the list of variable groups in **Settings**, and you can select one or more of them to use in your publish flow.
 :::
 
-## Publish Variables
+### Publish Variables
 
 Variables, similar to the [environment variables](../environment-variables/index.md) in build, can be defined in this section to be used specifically in the publish flow for store submissions.
 
@@ -143,7 +145,7 @@ You should confirm the **Delete** action by entering the version name into the d
 Appcircle does not delete the application that has been submitted to the stores. This deletion will only delete the version of the application in the Publish module.
 :::
 
-## Publish Profile Rename
+## Rename Publish Profile
 
 Appcircle allows previously created profiles to be renamed. To do this, the **Rename** button is used by clicking on the three dots at the top right of the relevant profile card from the cards in the Publish profile list.
 
@@ -153,7 +155,7 @@ Appcircle allows previously created profiles to be renamed. To do this, the **Re
 Publish profile names must be unique for all platforms. For example, if you have a profile named "Example" for iOS Publish, Appcircle will not allow you to create a profile named "Example" again for Android Publish or rename it with the existing name.
 :::
 
-## Publish Profile Remove
+## Delete Publish Profile
 
 To delete the Publish profile, click on the three dots on the upper right side of the relevant profile card from the cards in the profile list and use the **Delete** button.
 
