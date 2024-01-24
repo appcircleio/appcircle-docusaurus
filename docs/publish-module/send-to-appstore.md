@@ -1,7 +1,7 @@
 ---
 title: Send Apps to App Store and TestFlight
-metaTitle: Send to Appstore
-metaDescription: Send to Appstore
+metaTitle: Send Apps to App Store and TestFlight
+metaDescription: Send Apps to App Store and TestFlight
 sidebar_position: 1
 ---
 import Screenshot from '@site/src/components/Screenshot';
