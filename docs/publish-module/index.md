@@ -1,0 +1,156 @@
+---
+title: Publish Module
+metaTitle: Publish Module
+metaDescription: Publish Module
+sidebar_position: 1
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Publish Module
+
+The Publish module will enable your applications to be published in the App Store, Google Play, and Huawei AppGallery stores. It can also be submitted to the tool for TestFlight for Apple. 
+
+Publish Module is located on the left bar on Appcircle.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-main.png' />
+
+In order to use the Publish module, connections must first be provided for the relevant stores. You can make these connections from **My Organization -> Integrations -> Connections** table. For detailed information, you can follow the links below.
+
+|Store Name|Connection Links|
+|----------|-----------|
+|App Store|https://docs.appcircle.io/account/adding-an-app-store-connect-api-key|
+|Google Play| https://docs.appcircle.io/account/adding-google-play-service-account|
+|Huawei AppGallery| https://docs.appcircle.io/account/adding-huawei-api-key|
+
+## Starting Publish Process with Build Module
+
+After building the application, we can start the publishing process by sending it to the Publish module.
+
+For this, it is necessary to first create a publish profile within the publish module. Afterwards, the relevant publish profile must be selected from the Distribution section in the configuration of the relevant profile in the build module.
+
+- To create a publishing profile, click on the "Add New" button in the Publish module;
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-add-new.png' />
+
+- We give a name to the relevant profile;
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-new-profile.png' />
+
+- The profile is created ready for version submission.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-empty-profile.png' />
+
+By entering the build profile that we will send to the Publish module, we select the Publish profile from the Distribution tab in the configurations section and start the build.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-build.png' />
+
+:::info
+When selecting the Publish profile from Build -> Configuration -> Distribution -> Publish more than one profile can be selected.
+:::
+
+After the profile selection, the build process is started, and when the build is successful, Appcircle will send the version of the relevant application to the profile selected in the Publish module.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-build-success.png' />
+
+## Publish Flow
+
+Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery). This flow can be customized.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-button.png' />
+
+After clicking the **Publish Flow** button, the active steps for the related flow will appear.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-w.png' />
+
+We can access the workflow list by clicking on the **Manage Workflows** button to customize the relevant steps or add or remove new steps.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-workflows.png' />
+
+## Publish Settings
+
+When a build is taken from the Build module for the application and sent to the Publish module, we can start the submission process to the store by running the predetermined flow of the application directly with the **Auto Publish** button in the Publish settings.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-settings.png' />
+
+:::info
+If group and variable definitions have been made in Publish Variables, the variables appearing in this section will need to be selected for use.
+:::
+
+## Publish Variables
+
+Variables can be defined in this section to be used in the related flow for submissions to the store. To use these defined variables, it will be necessary to select them from the "Publish Settings" section.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-variables.png' />
+
+## Adding an Application Version Manually
+
+Appcircle supports sending the application to the store without using the build module. To add an app version manually, we need to add a publishing profile beforehand.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-manuel.png' />
+
+You can then upload the output of the application by entering this profile and clicking the **Add Version** button on the right.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-upload.png' />
+
+After the upload process, the relevant application version will appear in the list. 
+
+Afterwards, you can start submitting your application to the store with the publishing flow that you have determined or customized.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-version-list.png' />
+
+## App Version History
+
+You can browse the records of the previous transactions of the related application version with the History button on the modal opened by clicking the three dots on the right side of the version list.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-button.png' />
+
+The list of operations performed with the relevant application version will appear on the opened modal.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-list.png' />
+
+When a record is selected from the window that opens, the log screen of the transaction will appear. All logs of the related transaction will appear here.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log.png' />
+
+## App Version Download
+
+Appcircle allows you to download the previously installed application output again. For this, you can click on the **Download** button on the modal opened by clicking on the three dots on the right side of the version list.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download.png' />
+
+## App Version Delete
+
+Appcircle allows you to delete the previously installed application version. For this, you can click on the **Delete** button on the modal opened by clicking on the three dots on the right side of the version list.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-delete.png' />
+
+Sonrasında ekrana gelen uyarı penceresindeki konfirmasyonu tamamlayarak silme işlemini gerçekleştirebilirsiniz.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-delete-confirm.png' />
+
+:::caution
+Appcircle does not delete the app that has been submitted to the store. This deletion will only delete the version of the app in the Publish module.
+:::
+
+## Publish Profile Rename
+
+Appcircle allows previously created profiles to be renamed. To do this, the **Rename** button is used by clicking on the three dots at the top right of the relevant profile card from the cards in the Publish profile list.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-rename.png' />
+
+:::caution
+Publish profile names must be unique for all platforms. For example, if you have a profile named "Example" for iOS Publish, Appcircle will not allow you to create a profile named "Example" again for Android Publish or rename it with the existing name.
+:::
+
+## Publish Profile Remove
+
+To delete the Publish profile, click on the three dots on the upper right side of the relevant profile card from the cards in the profile list and use the **Delete** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove.png' />
+
+:::caution
+Deleting the Publish profile does not remove app versions submitted to the store. Only the profile on Appcircle will be deleted.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove-confirm.png' />
