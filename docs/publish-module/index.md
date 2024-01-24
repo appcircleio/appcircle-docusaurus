@@ -158,17 +158,19 @@ Publish profile names must be unique for both iOS and Android.
 
 For example, if you have a publish profile named "My Great App" for iOS Publish, Appcircle will not allow you to create a profile named "My Great App" again for Android Publish or iOS Publish.
 
-Also, you cannot rename a publish to an existing name on the same platform.
+Also, you cannot rename a publish profile to an existing name on the same platform.
 :::
 
 ## Delete Publish Profile
 
-To delete the Publish profile, click on the three dots on the upper right side of the relevant profile card from the cards in the profile list and use the **Delete** button.
+To delete the publish profile, click on the three dots at the top right of the relevant publish profile in the profiles list and the select **Delete**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove.png' />
 
 :::caution
-Deleting the Publish profile does not remove app versions submitted to the store. Only the profile on Appcircle will be deleted.
+Appcircle does not delete the application that has been submitted to the stores.
+
+By deleting the publish profile, all the application versions and publish action logs related to that publish profile will be removed on Appcircle side.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove-confirm.png' />
