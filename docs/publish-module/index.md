@@ -1,13 +1,11 @@
 ---
-title: Publish Module
-metaTitle: Publish Module
-metaDescription: Publish Module
+title: Publish
+metaTitle: Publish
+metaDescription: Publish
 sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-
-# Publish Module
 
 The Publish module will enable your applications to be published in the App Store, Google Play, and Huawei AppGallery stores. It can also be submitted to the tool for TestFlight for Apple. 
 
