@@ -71,12 +71,14 @@ We can access the list of steps that can be used in a publish workflow by clicki
 
 ## Publish Settings
 
-When a build is taken from the Build module for the application and sent to the Publish module, we can start the submission process to the store by running the predetermined flow of the application directly with the **Auto Publish** button in the Publish settings.
+When a build is completed on the Build module and its artifacts are distributed to the Publish module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
+
+Your configured publish flow will be executed automatically when you enable **Auto Publish**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-settings.png' />
 
 :::info
-If group and variable definitions have been made in Publish Variables, the variables appearing in this section will need to be selected for use.
+If group or variable definitions have been made in **Publish Variables**, you will see the list of variable groups in **Settings**, and you can select one or more of them to use in your publish flow.
 :::
 
 ## Publish Variables
