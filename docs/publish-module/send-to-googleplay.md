@@ -7,7 +7,6 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Send Apps to Google Play Store
 
 To publish Android applications to the Google Play store, click on the Android Publish button on the left in the Publish module.
 

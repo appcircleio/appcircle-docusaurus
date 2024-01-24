@@ -7,8 +7,6 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Send Apps to Huawei AppGallery
-
 Appcircle uses the Android Publish section on the left in the Publish module for Huawei AppGallery Store application publish, just like for the Google Play Store.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-leftbar-android.png' />

@@ -6,76 +6,99 @@ sidebar_position: 1
 ---
 import Screenshot from '@site/src/components/Screenshot';
 
-# Send Apps to App Store and TestFlight
+Appcircle supports sending IPA binaries to the App Store and TestFlight through the Publish module.
 
-## Send Apps to App Store
+### Send Apps to App Store
 
 To submit iOS applications to the App Store, click on the **iOS Publish** button on the left in the Publish module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-leftbar-ios.png' />
 
-Appcircle creates a default flow after [sending your application to the Publish module via the Build module](/publish-module) or adding a manual version. This flow can be customized. 
+Click on **Add New** to create a new publish profile , **Open** details and click on **Publish Flow**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-button.png' />
 
-After clicking the **Publish Flow** button, the active steps for the related flow will appear.
+In **Publish Flow**, the default flow steps will appear. If there is no `Send to App Store` step in the default flow click on **Manage Flow**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-appstore.png' />
 
-The **Send to App Store** workflow is used for sending to the store.
+Find the `Send to App Store` step in the steps list, and then drag and drop it into the flow.
+
+:::info
+For basic usage, only the `Send to App Store` step will be enough for sending applications to the App Store.
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-appstore-flow.png' />
 
-After adding the Send to App Store workflow to Publish Flow, we enter it by clicking on the relevant workflow. Appcircle allows this step to be customized.
+After adding the step to the flow, click on **Save** to return, and then click on `Send to App Store` to configure the step settings.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-appstore-workflow-in.png' />
-
-In the Send to App Store workflow, XCode Version, App Store Connect API Key, Submit Type. You can make selections for features such as.
+In the step settings, you can customize the **Xcode Version**, select an **App Store Connect API Key** from the drop-down list, and change the default **Stage Type** according to your needs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-appstore-selection-1.png' />
 
 :::tip
-You can send both to the store and to TestFlight within the Send to App Store workflow. However, Appcircle will only send to TestFlight in the Send to TestFlight workflow.
+
+You can use `Send to App Store` to send an application to TestFlight. For this purpose, you can select  `TestFlight` in **Stage Type**.
+
+However, Appcircle will only send to TestFlight in the `Send to TestFlight` step. See details [here](#send-apps-to-testflight).
 :::
 
-After completing the Publish Flow adjustments, we click on the "Details" button by clicking on the three dots on the right side of the version list.
+When you complete configuring the publish flow, add an application version by [configuring the build module ](index.md#publish-after-build) or [manually adding a version](index.md#add-version) by binary upload.
+
+Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-details-modal.png' />
 
-In the window that opens afterwards, you can click on the **Restart Flow** button to start the workflow that includes publish to the store.
+In the window that opens afterwards, you can click on the **Start Flow** button to start the flow that includes publish to the App Store.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-restart-flow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-start-flow.png' />
 
-If no errors occur, the sending process to the store will be completed successfully.
+:::info
+You can add or remove steps, change the order of the flow, and edit step settings anytime you need.
+
+When you **change the publish flow** for some reason **after adding an application version**, you will see the **Restart Flow** button in the version **Details**. You can use the same button for either starting flow for the first time or restarting flow for a previously executed one.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-to-app-store-restart-flow.png' />
+:::
+
+After publish flow execution, if no errors occurred, that means the sending to the store was completed successfully.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-succes-1.png' />
 
-:::caution
-After creating the publish profile, Appcircle will ask us to restart the workflow because we changed the default "Send to App Store" publishing flow step from "Send to TestFlight." Here, you can use the "Restart Flow" button on the top right to start the process of sending to the store.
-:::
+### Send Apps to TestFlight
 
-## Send Apps to TestFlight
+Within Appcircle, you can also submit your applications to TestFlight.
 
-With its publishing module, Appcircle allows you to submit your app to TestFlight without submitting it to the store. To do this, the application must be sent to the Publish module from the Build module or manually.
+You can use the [Send to App Store](#send-apps-to-app-store) step with the customizations given there (Stage Type), or you can use the dedicated `Send to TestFlight` step explained in the following section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-testflight-main.png' />
 
-After the application is sent to the publish module, it will now be necessary to select the **Send to TestFlight** workflow from the work steps in the publish flow.
+After adding the step to the flow, click on **Save** to return, and then click on `Send to TestFlight` to configure the step settings.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-testflight-2.png' />
 
-After clicking on the Send to TestFlight workflow, you can choose between the properties of this workflow in the window that opens. These will be the XCode Version and, App Store Connect API Key.
+In the step settings, you can customize the **Xcode Version**, select an **App Store Connect API Key** from the drop-down list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-testflight-in.png' />
 
-After completing the Publish Flow adjustments, we click on the **Details** button by clicking on the three dots on the right side of the version list.
+When you complete configuring the publish flow, add an application version by [configuring the build module ](index.md#publish-after-build) or [manually adding a version](index.md#add-version) by binary upload.
+
+Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-details-modal.png' />
 
-In the window that opens afterwards, you can start the workflow including the submission to TestFlight by clicking the **Restart Flow** button.
+In the window that opens afterwards, you can click on the **Start Flow** button to start the flow that includes publish to TestFlight.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-to-test-flight-start-flow.png' />
+
+:::info
+You can add or remove steps, change the order of the steps in flow, and edit step settings anytime you need.
+
+When you **change the publish flow** for some reason **after adding an application version**, you will see the **Restart Flow** button in the version **Details**. You can use the same button for either starting flow for the first time or restarting flow for a previously executed one.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-testflight-run.png' />
+:::
 
-If no error is received in this step, Appcircle will have sent the relevant application to the TestFlight tool.
+After publish flow execution, if no errors occurred, that means the sending to TestFlight was completed successfully.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-testflight-success.png' />
