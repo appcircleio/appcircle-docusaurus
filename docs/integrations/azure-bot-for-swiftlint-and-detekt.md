@@ -2,7 +2,7 @@
 title: Azure Bot for SwiftLint and Detekt
 metaTitle: Azure Bot for SwiftLint and Detekt
 metaDescription: Azure Bot for SwiftLint and Detekt
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
