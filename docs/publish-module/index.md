@@ -7,7 +7,7 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
-The Publish module will enable your applications to be published in the App Store, Google Play, and Huawei AppGallery stores. You can also submit your mobile app to TestFlight.
+The Publish module will enable your applications to be published in the App Store, Google Play, and Huawei AppGallery stores. You can also submit your mobile applications to TestFlight.
 
 Click on the **Publish** button on the left menu bar to go to the Publish module.
 
@@ -23,33 +23,35 @@ For detailed information on store **Connections**, follow the links below.
 |Google Play| https://docs.appcircle.io/account/adding-google-play-service-account|
 |Huawei AppGallery| https://docs.appcircle.io/account/adding-huawei-api-key|
 
-## Starting Publish Process with Build Module
+## Starting Publish Process with Build
 
 After building the application, we can start the publishing process by sending it to the Publish module.
 
-For this, it is necessary to first create a publish profile within the publish module. Afterwards, the relevant publish profile must be selected from the Distribution section in the configuration of the relevant profile in the build module.
+For this, it is necessary to first create a publish profile within the Publish module. Afterwards, the relevant publish profile must be selected from the **Distribution** tab in the configuration of the relevant profile in the Build module.
 
-- To create a publishing profile, click on the "Add New" button in the Publish module;
+In order to create a publish profile, click on the "Add New" button in the Publish module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-add-new.png' />
 
-- We give a name to the relevant profile;
+You should give a descriptive name to the relevant publish profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-new-profile.png' />
 
-- The profile is created ready for version submission.
+The publish profile is created, and it's ready for application submission.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-empty-profile.png' />
 
-By entering the build profile that we will send to the Publish module, we select the Publish profile from the Distribution tab in the configurations section and start the build.
+Go to the build profile that we will send to the Publish module, and select the publish profile from the **Distribution** tab in the configuration.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-build.png' />
 
-:::info
-When selecting the Publish profile from Build -> Configuration -> Distribution -> Publish more than one profile can be selected.
+:::tip
+When selecting the publish profile from **Build profile -> Configuration -> Distribution**, more than one target profile can be selected.
 :::
 
-After the profile selection, the build process is started, and when the build is successful, Appcircle will send the version of the relevant application to the profile selected in the Publish module.
+Now the build profile is ready for application publishing.
+
+When the build is successful, Appcircle will send the version of the relevant application to the selected publish profiles in the Publish module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-build-success.png' />
 
