@@ -91,19 +91,21 @@ To use these defined variables, it will be necessary to select them from the [Pu
 
 ## Adding an Application Version Manually
 
-Appcircle supports sending the application to the store without using the build module. To add an app version manually, we need to add a publishing profile beforehand.
+Appcircle supports publishing the application to the stores without using the Build module. To add an application version manually, you need to add a publish profile beforehand and then **Open** its details.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-manuel.png' />
 
-You can then upload the output of the application by entering this profile and clicking the **Add Version** button on the right.
+You can then upload the application by clicking on the **Add Version** button on the right.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-upload.png' />
 
-After the upload process, the relevant application version will appear in the list. 
+When the upload is completed successfully, the relevant application version will appear in the list.
 
-Afterwards, you can start submitting your application to the store with the publishing flow that you have determined or customized.
+Afterwards, you can start submitting your application to the stores with the publish flow that you have configured.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-version-list.png' />
+
+For this, click on the **Actions** button for the relevant version and go to **Details**. From there, you can manually **Start Flow** for the uploaded application version.
 
 ## App Version History
 
