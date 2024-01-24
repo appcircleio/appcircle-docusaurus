@@ -83,9 +83,11 @@ If group or variable definitions have been made in **Publish Variables**, you wi
 
 ## Publish Variables
 
-Variables can be defined in this section to be used in the related flow for submissions to the store. To use these defined variables, it will be necessary to select them from the "Publish Settings" section.
+Variables, similar to the [environment variables](../environment-variables/index.md) in build, can be defined in this section to be used specifically in the publish flow for store submissions.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-variables.png' />
+
+To use these defined variables, it will be necessary to select them from the [Publish Settings](#publish-settings).
 
 ## Adding an Application Version Manually
 
