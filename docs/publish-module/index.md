@@ -111,15 +111,15 @@ For this, click on the **Actions** button for the relevant version and go to **D
 
 ### Version History
 
-You can browse the records of the previous transactions of the related application version with the History button on the modal opened by clicking the three dots on the right side of the version list.
+You can browse the history of the previous publishing actions of the related application version with the **History** button on the **Actions** menu opened by clicking the three dots on the version list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-button.png' />
 
-The list of operations performed with the relevant application version will appear on the opened modal.
+The list of publishing actions performed with the relevant application version will appear in the **Publish History**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-list.png' />
 
-When a record is selected from the window that opens, the log screen of the transaction will appear. All logs of the related transaction will appear here.
+When you click on an item in the list, you can see the detailed publishing logs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log.png' />
 
