@@ -57,15 +57,15 @@ When the build is successful, Appcircle will send the version of the relevant ap
 
 ## Publish Flow
 
-Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery). This flow can be customized.
+Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery). This flow can be customized according to your specific publishing requirements.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-button.png' />
 
-After clicking the **Publish Flow** button, the active steps for the related flow will appear.
+When you click on the **Publish Flow** button, the list of steps included in the publish flow will appear.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-w.png' />
 
-We can access the workflow list by clicking on the **Manage Workflows** button to customize the relevant steps or add or remove new steps.
+We can access the list of steps that can be used in a publish workflow by clicking on the **Manage Flow** button. You can add or remove new steps and customize your publish workflow as you wish.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-workflows.png' />
 
