@@ -89,7 +89,9 @@ Variables, similar to the [environment variables](../environment-variables/index
 
 To use these defined variables, it will be necessary to select them from the [Publish Settings](#publish-settings).
 
-## Adding an Application Version Manually
+## Publish Versions
+
+### Add Version
 
 Appcircle supports publishing the application to the stores without using the Build module. To add an application version manually, you need to add a publish profile beforehand and then **Open** its details.
 
@@ -107,7 +109,7 @@ Afterwards, you can start submitting your application to the stores with the pub
 
 For this, click on the **Actions** button for the relevant version and go to **Details**. From there, you can manually **Start Flow** for the uploaded application version.
 
-## App Version History
+### Version History
 
 You can browse the records of the previous transactions of the related application version with the History button on the modal opened by clicking the three dots on the right side of the version list.
 
@@ -121,13 +123,13 @@ When a record is selected from the window that opens, the log screen of the tran
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log.png' />
 
-## App Version Download
+### Version Download
 
 Appcircle allows you to download the previously installed application output again. For this, you can click on the **Download** button on the modal opened by clicking on the three dots on the right side of the version list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download.png' />
 
-## App Version Delete
+### Version Delete
 
 Appcircle allows you to delete the previously installed application version. For this, you can click on the **Delete** button on the modal opened by clicking on the three dots on the right side of the version list.
 
