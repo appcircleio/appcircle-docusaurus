@@ -147,12 +147,18 @@ Appcircle does not delete the application that has been submitted to the stores.
 
 ## Rename Publish Profile
 
-Appcircle allows previously created profiles to be renamed. To do this, the **Rename** button is used by clicking on the three dots at the top right of the relevant profile card from the cards in the Publish profile list.
+Appcircle allows previously created publish profiles to be renamed.
+
+To do this, click on the three dots at the top right of the relevant publish profile in the profiles list and the select **Rename**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-rename.png' />
 
 :::caution
-Publish profile names must be unique for all platforms. For example, if you have a profile named "Example" for iOS Publish, Appcircle will not allow you to create a profile named "Example" again for Android Publish or rename it with the existing name.
+Publish profile names must be unique for both iOS and Android.
+
+For example, if you have a publish profile named "My Great App" for iOS Publish, Appcircle will not allow you to create a profile named "My Great App" again for Android Publish or iOS Publish.
+
+Also, you cannot rename a publish to an existing name on the same platform.
 :::
 
 ## Delete Publish Profile
