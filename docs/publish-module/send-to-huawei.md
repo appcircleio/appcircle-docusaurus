@@ -7,38 +7,54 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 
-Appcircle uses the Android Publish section on the left in the Publish module for Huawei AppGallery Store application publish, just like for the Google Play Store.
+Appcircle supports sending APK and AAB binaries to Huawei AppGallery through the Publish module.
+
+To publish Android applications to Huawei AppGallery, click on the **Android Publish** button on the left in the Publish module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-leftbar-android.png' />
 
-Appcircle creates a default flow after [sending your application to the Publish module via the Build module](/publish-module) or adding a manual version. This flow can be customized.
+Click on **Add New** to create a new publish profile, **Open** details, and click on **Publish Flow**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-flow.png' />
 
-After clicking the **Publish Flow** button, the active steps for the related flow will appear.
+In **Publish Flow**, the default flow steps will appear. For Android publish flow, `Send to Google Play Store` is the default step.
+
+So, for Huawei AppGallery, you need to replace it with the `Send to Huawei AppGallery` flow step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-android-1.png' />
 
-We need to replace this default workflow with the **Send to Huawei AppGallery** workflow.
+Click on **Manage Flow** button to edit flow steps. From there, delete `Send to Google Play Store` from the flow and add `Send to Huawei AppGallery` to the flow.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-android-huawei.png' />
 
-After this change, when we enter the **Send to Huawei AppGallery** workflow by clicking on it, we can select Huawei API Key and enter Huawei App ID.
+Click on the **Save** button to return and then click on `Send to Huawei AppGallery` to configure the step settings.
+
+In the step settings, select a **Huawei API Key** from the drop-down list and enter **Huawei App ID** into the text field.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-huawei-workflow-detail.png' />
 
 :::caution
-Appcircle will require **Huawei App ID** for Huawei AppGallery submissions. If this field is not filled in, Appcircle may not send it to the store successfully.
+Appcircle will require **Huawei App ID** for Huawei AppGallery submissions. This form field should be correct for successful store submission.
 :::
 
-After completing the Publish Flow adjustments, we click on the **Details** button by clicking on the three dots on the right side of the version list.
+When you complete configuring the publish flow, add an application version by [configuring the build module](index.md#publish-after-build) or [manually adding a version](index.md#add-version) by binary upload.
+
+Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-details-android-modal.png' />
 
-In the window that opens afterwards, you can click on the **Restart Flow** button to start the workflow that includes publish to the store.
+In the window that opens afterwards, you can click on the **Start Flow** button to start the flow that includes publish to Huawei AppGallery.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-huawei-run.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-to-huawei-app-gallery-start-flow.png' />
 
-If no errors occur, the sending process to the store will be completed successfully.
+:::info
+You can add or remove steps, change the order of steps in the flow, and edit step settings anytime you need.
+
+When you **change the publish flow** for some reason **after adding an application version**, you will see the **Restart Flow** button in the version **Details**. You can use the same button for either starting flow for the first time or restarting flow for a previously executed one.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-to-huawei-app-gallery-restart-flow.png' />
+:::
+
+After publish flow execution, if no errors occurred, that means the sending to the store was completed successfully.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-huawei-success.png' />
