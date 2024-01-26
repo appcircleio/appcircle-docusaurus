@@ -143,6 +143,10 @@ Here, you can assign the Owner role to a user for full access or you can select 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/permission-owner-v2.png' />
 
+:::info
+The "None" is a special type of permission that denotes that a user has no defined role or special permissions. If the user's permission is set to "None" in sub-organizations, the user's permission defaults from the organization.
+:::
+
 You can see the full list of the available roles below:
 
 ---
@@ -172,7 +176,7 @@ Manager, Operator and Viewer Build Profile permissions can view Self-Hosted Runn
 :::
 
 :::caution
-Only Manager can view the configurations, workflows, and triggers.
+Only Manager permission can view the configurations, workflows, and triggers.
 :::
 ### ENVIRONMENT VARIABLE PERMISSIONS
 
@@ -184,6 +188,11 @@ Permissions can be customized for environment variable.
 | Viewer | The user can only see variable groups and their details.|
 | None | The user cannot reach any details about environment variables.|
 
+
+:::info
+Manager, Operator and Viewer Environment Variable permissions can use variable groups in build profile configuration.
+:::
+
 ### SIGNING IDENTITY MANAGEMENT PERMISSIONS
 
 Permissions can be customized for signing identity management.
@@ -193,6 +202,10 @@ Permissions can be customized for signing identity management.
 | Manager | The user can see, delete, and add new certificates, provisioning profiles, keystores, and signing history. |
 | Viewer | The user can only see certificates, provisioning profiles, keystores, and signing history.                 |
 | None | The user cannot reach any details about signing identity.                                                  |
+
+:::info
+Manager, Operator and Viewer Signing Identity Management permissions can use signing identities in build profile configuration.
+:::
 
 ### DISTRIBUTION PROFILE PERMISSIONS
 
