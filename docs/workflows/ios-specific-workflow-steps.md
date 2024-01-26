@@ -15,11 +15,24 @@ You can find the full list of available workflow steps in our [workflow marketpl
 
 ## Xcode Select (Version)
 
-This step is used to specify the Xcode version to be used during the build process.
+This step is used to specify the Xcode version to be used during the build process. All available versions of Xcode can be seen from configuration tab. 
 
-https://github.com/appcircleio/appcircle-xcode-select-component
+- For this, open configurations in build profile.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_config.png' />
+
+- Create a new configuration set or use existing one
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_config_details.png' />
+
+- After open configuration set, you will see **Xcode Version** section. Now you can select a version for Xcode.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_list.png' />
 
 :::info
+Appcircle provides new versions of Xcode (including Beta versions) within 24 hours after they released. 
+:::
+:::caution
 ### Pool-Based Xcode Version Selection
 
 A version other than the Xcode versions on the configuration page should not be entered manually as the Xcode select workflow argument.
@@ -29,9 +42,25 @@ Entering an unavailable Xcode version may cause the build to fail.
 You can review the documentation for detailed information about the Xcode version selection [here](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools.md/#pool-based-xcode-version-selection).
 :::
 
+https://github.com/appcircleio/appcircle-xcode-select-component
+
 ## Cocoapods Install
 
-Runs the Cocoapods install command for dependency management.
+Runs the Cocoapods install command for dependency management. This step install your all pod dependencies. And it should be used after **Git Clone** step
+
+- For this, open workflow and check **Cocoapods Install** step
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_order.png' />
+
+- You can specify the Cocoapods version. Default is empty. If you leave empty this parameter, Appcircle will read **Podfile.lock** and install related version of Cocoapods.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_version.png' />
+
+:::warning
+Remember, if the project extension is not **.xcworkpace**, the pod install step will not work as expected. In the Configuration tab, make sure that the extension in the project path is **.xcworkspace**.
+:::
+
+
 
 https://github.com/appcircleio/appcircle-cocoapods-component
 
