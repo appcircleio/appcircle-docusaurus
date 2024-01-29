@@ -12,6 +12,44 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.12.0 - 2024-01-25 - New Permissions Roles, Using Third-Party Application for Notifications, Selection App Version for Testers
+
+### 🆕 New Feature 
+
+- [Permission role](../account/my-organization.md#advanced-role-management) nomenclature has changed. Now the roles will be **"Manager, Operator, Viewer, and None"**. <CloudBadge/> <SelfHostedBadge/>
+- A new field has been added to Testing Distribution -> Distribution Profiles -> [Share with Testers](../distribute/create-or-select-a-distribution-profile.md#share-your-application-with-the-test-groups-manually). Previously, all app versions were visible in a share. Now, as an option, users can choose to display only the shared app version if they want. <CloudBadge/> <SelfHostedBadge/>
+- Enabled enhancement that allows the release note and Unit Test Report to be shared via [Slack](../account/slack/slack-notifications.md), [Microsoft Teams](../account/teams-notifications.md), [Email](../account/email-connection.md) and [Webhook](../account/webhooks.md) tools. Users using one of these integrations can access the download link to the release note for 90 days. <CloudBadge/> <SelfHostedBadge/>
+- The Store Submit module has been deprecated. Now, submission to the store can be done through the [Publish module](../publish-module/index.md). <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvement
+
+- You can now [download app version](../publish-module/index.md#version-download) files in the **Publish module**. <CloudBadge/> <SelfHostedBadge/>
+- The blue status bar name has been changed from active build to active processes. Now, not only the build but also the active store submit and publish details will be seen here. <CloudBadge/> <SelfHostedBadge/>
+- Now only enterprise customers can add new component in [publish module flow.](../publish-module/index.md#publish-flow) <CloudBadge/> <SelfHostedBadge/>
+- For self-hosted using, administrators can now enable or disable users to change their email address. <SelfHostedBadge/>
+- Manager, Operator, Viewer creation profile permissions can now view **Self-Hosted Runners.** <SelfHostedBadge/>
+- Monthly tester emails and artifact storage license limits were removed. <CloudBadge/> <SelfHostedBadge/>
+- Now only the **"_"** character can be used in [environment variable](../environment-variables/managing-variables.md) group naming. Appcircle will not allow other special characters. <CloudBadge/> <SelfHostedBadge/>
+- In Build -> Configurations -> Distribution, the user will now be able to take action if they have [publish authorization](../account/my-organization.md#publish-module-ios-permissions). <CloudBadge/> <SelfHostedBadge/>
+- Appcircle no longer allows multiple selections in [Enterprise Store](../enterprise-appstore/index.md) Permissions. <CloudBadge/> <SelfHostedBadge/>
+- [User invitation](../account/my-organization.md#managing-team-members) and membership update notification emails have been improved and now include additional information, such as sub-organizations. <CloudBadge/> <SelfHostedBadge/>
+- User redirection when invited to the organization is improved. <CloudBadge/> <SelfHostedBadge/>
+- Now, **publish** and step statuses will be in waiting status unless the agent processes them. <CloudBadge/> <SelfHostedBadge/>
+- The contact information button has been removed from the home screen. <CloudBadge/> <SelfHostedBadge/>
+- Duration and results of internal tasks can now be tracked by schedule manager internally. <CloudBadge/> <SelfHostedBadge/>
+- To avoid confusion when displaying profiles with the same repo name on different platforms, the URLs of the respective repositories are now shown. <CloudBadge/> <SelfHostedBadge/>
+- Transactions with a processing time of 0 will no longer appear in the queue waiting list. <CloudBadge/> <SelfHostedBadge/>
+- The time to check the active status of self-hosted agents has been increased from 2 hours to 3 days. <SelfHostedBadge/>
+
+### 🐞 Fixed
+
+- Fixed errors in the display of the user's remaining limits. <CloudBadge/> <SelfHostedBadge/>
+- Fixed cache invalidation issues on the login screen. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug in the display of values in publishing components. <CloudBadge/> <SelfHostedBadge/>
+- Fixed page crash when viewing logs. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug with the renaming of the [publish profile](../publish-module/index.md#rename-publish-profile). <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that prevented the correct display of the **"Publish Date "** field in the Publish module. <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.11.0 - 2023-12-27 - Publish Module, Change Build Profile Owner, Custom Authentication Integration
 
 ### 🆕 New Feature
