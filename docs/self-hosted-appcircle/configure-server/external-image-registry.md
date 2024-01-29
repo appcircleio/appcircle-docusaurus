@@ -182,7 +182,7 @@ You can see some example configuration screenshots below for Nexus UI.
 
 If you face any issue about "manifest not found" when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from Nexus proxy registry.
 
-By looking at the [Pulling Images On By One](#pulling-images-on-by-one) script below, you can pull images from the proxy repository with it. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
+By looking at the [Pulling Images On By One](#pulling-images-one-by-one) script below, you can pull images from the proxy repository with it. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
 
 Nexus have some issues when pulling images in parallel.
 
