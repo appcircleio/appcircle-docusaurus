@@ -7,57 +7,57 @@ sidebar_position: 14
 
 ## Overview
 
-Appcircle CLI is a command-line interface designed to use Appcircle from the terminals. The Appcircle CLI tool is executed directly from the terminal, provides users with a streamlined command-driven experience for efficient management of Appcircle.
+Appcircle CLI is a command-line interface designed to use Appcircle from the terminals. The Appcircle CLI tool, which is executed directly from the terminal, provides users with a streamlined command-driven experience for efficient management of Appcircle.
 
-The Appcircle CLI is user-friendly and versatile, offering a range of commands to enhance backend control. You can start builds, download build artifacts, publish applications on the Enterprise App Store and do more. For detailed usage, you can head over to the Appcircle CLI documentation.
+The Appcircle CLI is user-friendly and versatile, offering a range of commands to enhance backend control. You can start builds, download build artifacts, publish applications on the Enterprise App Stor, and do more. For detailed usage, you can head over to the Appcircle CLI documentation.
 
 Additionally, its scriptable nature allows for easy automation through shell scripts, enabling users to automate tasks and integrate the CLI into existing workflows effortlessly.
 
 ## Pre-Requirements
 
-To configure Appcircle CLI to use your self-hosted Appcircle, you need a personal access token for authentication. Also you need the `api` and the `auth` URLs of the Appcircle server.
+To configure Appcircle CLI to use your self-hosted Appcircle, you need a personal access token for authentication. Also, you need the `api` and the `auth` URLs of the Appcircle server.
 
 ### Creating a Personal Access Token
 
-For the Appcircle CLI to authenticate to your self-hosted Appcircle, you need to create a Personal access token and configure Appcircle CLI to use it.
+For the Appcircle CLI to authenticate to your self-hosted Appcircle, you need to create a personal access token and configure the Appcircle CLI to use it.
 
-You can follow [Generating Personal Access Tokens](../../appcircle-api/api-authentication.md#generatingmanaging-the-personal-access-tokens) page to create.
+You can follow the [Generating Personal Access Tokens](../../appcircle-api/api-authentication.md#generatingmanaging-the-personal-access-tokens) page to create one.
 
 ### Getting the Self-Hosted URLs
 
-To find these URLs, you have 2 ways.
+To find these URLs, you have two ways.
 
-1- Change the subdomain of an Appcircle URL and test if it is working.
+1. Change the subdomain of an Appcircle URL and test if it is working.
 
-2- Get the URLs from the Appcircle server configuration.
+2. Get the URLs from the Appcircle server configuration.
 
 #### Change Subdomain to Find `api` and `auth` URL
 
-To find the `api` and the `auth` URL, you can check the URL that you are using to access to the Appcircle web UI and then change it's subdomain according to the format.
+To find the `api` and the `auth` URL, you can check the URL that you are using to access to the Appcircle web UI and then change its subdomain according to the format.
 
-For example if you are using `https://my.appcircle.spacetech.com` to access to the Appcircle web UI:
+For example, if you are using `https://my.appcircle.spacetech.com` to access to the Appcircle web UI,
 
-- Change `my` to `api` for the api URL. As the result the `api` URL should be `https://api.appcircle.spacetech.com`.
+- Change `my` to `api` for the api URL. As a result, the `api` URL should be `https://api.appcircle.spacetech.com`.
 
-- Change `my` to `auth` for the auth URL. As the result the `auth` URL should be `https://auth.appcircle.spacetech.com`.
+- Change `my` to `auth` for the auth URL. As a result, the `auth` URL should be `https://auth.appcircle.spacetech.com`.
 
-You can test the `api` URL access by running `curl -v https://api.appcircle.spacetech.com`. If you are facing an error, there is 2 possible problem:
+You can test the `api` URL access by running `curl -v https://api.appcircle.spacetech.com`. If you are facing an error, there are two possible problems:
 
-1- There is no network access between the computer which runs the `curl` command above.
+1. There is no network access between the computer that runs the `curl` command above and Appcircle server.
 
-2- The `api` URL is not correct. To get the correct URL, you can follow the title below.
+2. The `api` URL is not correct. To get the correct URL, you can follow the title below.
 
 #### Get the Subdomain From Appcircle Server Configuration
 
-To get the `api` and the `auth` URL, you can login to the Appcircle server and run follow the steps below:
+To get the `api` and the `auth` URL, you can login to the Appcircle server and follow the steps below:
 
-- Change directory to the Appcircle server.
+- Change the directory on the Appcircle server.
 
 ```bash
 cd appcircle-server
 ```
 
-- Export the required dependencies..
+- Export the required dependencies.
 
 ```bash
 export PATH=$PATH:$(pwd)/deps/bin
@@ -87,15 +87,15 @@ If you are still getting an error, you should check the network access between t
 
 ## Configuring Appcircle CLI to Use Your Self-Hosted Appcircle
 
-By default, Appcircle CLI is configured to interact with Appcircle cloud. But with a few commands, you can change this behavior and use your own self-hosted Appcircle with the CLI.
+By default, Appcircle CLI is configured to interact with the Appcircle cloud. But with a few commands, you can change this behavior and use your own self-hosted Appcircle with the CLI.
 
 :::info
-We are assuming that you have already installed the Appcircle CLI and it is ready to use.
+We are assuming that you have already installed the Appcircle CLI and that it is ready to use.
 
-To test, you can open a terminal and run `appcircle --version` command. If there is an output, you are ready to configure.
+To test, you can open a terminal and run `appcircle --version` command in your terminal. If there is an output, you are ready to configure.
 :::
 
-To configure the Appcircle CLI to use self-hosted Appcircle:
+To configure the Appcircle CLI to use the self-hosted Appcircle:
 
 - Add a new configuration with any desired name.
 
@@ -116,7 +116,7 @@ appcircle config set AUTH_HOSTNAME 'https://auth.appcircle.spacetech.com'
 appcircle login --pat "TTk0YzFwdUVmVHZrZ0FvMnUwcVdGTVZ3eE1lc2JtelEwbnN4dWtjbnFjMAscpCurFTTM4Q2VJNnZkd3Z6SnwxNzM3ODI5SIO3ODc0fGZiOTVkYTE4LWYzMDgtNDY5Yy1iNDUzLTY0MTQ3NzMzNzRhNw=="
 ```
 
-- Check the configuration
+- Check the configuration.
 
 ```bash
 appcircle config list
@@ -134,4 +134,4 @@ appcircle -i
 appcircle listBuildProfiles
 ```
 
-- For detailed usage about the Appcircle CLI, you can refer to the [Appcircle CLI documentation](https://github.com/appcircleio/appcircle-cli#appcircle-command-line-interface).
+- For detailed usage information about the Appcircle CLI, you can refer to the [Appcircle CLI documentation](https://github.com/appcircleio/appcircle-cli#appcircle-command-line-interface).
