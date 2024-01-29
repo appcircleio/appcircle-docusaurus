@@ -116,6 +116,8 @@ You can ignore power failure settings if they are not supported.
 
 ## Download MacOS VM
 
+### Download the macOS VM Image Manually
+
 Download macOS VM from Appcircle bucket.
 
 ```bash
@@ -160,7 +162,7 @@ You can track progress of extraction by monitoring VM folder size.
 du -sh $HOME/.tart/vms/macOS_231218
 ```
 
-### Download Xcode Images
+### Download Xcode Images Manually
 
 Download Xcode images from the Appcircle bucket. They are disk images for each Xcode version archived in a package.
 
@@ -202,7 +204,35 @@ It may take a little to complete. Be patient and wait return of command.
 
 ---
 
-**Note:** This macOS VM image contains the same tools as in the "Default M1 Pool" in Appcircle Cloud. The only difference is the bundled Xcode versions. It comes with the Xcode versions below:
+### Download the macOS VM and xCode Images With Script
+
+To download and extract the Appcircle runner VM and xCode images on the background automatically, you can run the command below.
+
+```bash
+curl -O -L https://raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts/main/install_vm.sh && \
+chmod +x install_vm.sh && \
+nohup ./install_vm.sh &
+```
+
+It may take a little to complete. You can see the logs with the command below.
+
+```bash
+tail -f nohup.out
+```
+
+:::info
+You can close the ssh session while the script is running. The download and extract process will go on in the background.
+
+But be aware that there might be some errors while downloading and extracting the VM image. Please keep an eye on the logs.
+:::
+
+:::info
+If you face any error while downloading the files, please delete the corrupted VM image file and run the `curl` command block above 👆.
+:::
+
+### MacOS VM Information
+
+This macOS VM image contains the same tools as in the "Default M1 Pool" in Appcircle Cloud. The only difference is the bundled Xcode versions. It comes with the Xcode versions below:
 
 - `15.2.x`
 - `15.1.x`
