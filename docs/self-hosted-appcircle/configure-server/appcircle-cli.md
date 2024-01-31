@@ -207,6 +207,18 @@ You must open a new terminal session for the changes to take effect.
 
 ### Disabling the Certificate Verification (not-recommended)
 
+Disabling TLS certificate verification removes a critical layer of security, leaving the communication vulnerable to a variety of threats, including those associated with man-in-the-middle attacks, data integrity issues, and trustworthiness concerns.
+
+Proper TLS certificate validation is essential for ensuring the authenticity and security of the communication between the `appcircle` CLI and the Appcircle server.
+
+It's crucial to prioritize security measures to protect sensitive data and maintain the integrity of your system.
+
+:::danger
+
+While we do not recommend it, you have the choice to assume the mentioned risk by selectively disabling certificate verification specifically for the `appcircle` CLI.
+
+:::
+
 - To disable the TLS verification just for the `appcircle` CLI tool, you can add a prefix to the `appcircle` cli command.
 
 ```bash
