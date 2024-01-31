@@ -116,6 +116,8 @@ appcircle config set AUTH_HOSTNAME 'https://auth.appcircle.spacetech.com'
 appcircle login --pat "TTk0YzFwdUVmVHZrZ0FvMnUwcVdGTVZ3eE1lc2JtelEwbnN4dWtjbnFjMAscpCurFTTM4Q2VJNnZkd3Z6SnwxNzM3ODI5SIO3ODc0fGZiOTVkYTE4LWYzMDgtNDY5Yy1iNDUzLTY0MTQ3NzMzNzRhNw=="
 ```
 
+If you face any self-signed certificate error, check the [Trusting Certificate](#trusting-the-ssl-certificate-recommended) section.
+
 - Check the configuration.
 
 ```bash
@@ -135,3 +137,87 @@ appcircle listBuildProfiles
 ```
 
 - For detailed usage information about the Appcircle CLI, you can refer to the [Appcircle CLI documentation](https://github.com/appcircleio/appcircle-cli#appcircle-command-line-interface).
+
+## Self-Signed Certificate of Appcircle Server
+
+If you are using a self-signed SSL certificate on the self-hosted Appcircle and the certificate is not trusted on your computer, you may face an error like `self-signed certificate in certificate chain undefined` while trying to run `appcircle` CLI tool like in the example below.
+
+```bash
+appcircle login --pat "example-pat"
+
+self-signed certificate in certificate chain undefined
+```
+
+That error occurs when the root CA certificate or the self signed certificate of the Appcircle server is not trusted on your computer.
+
+You can trust the SSL certificate of the Appcircle server for securing network between the CLI and Appcircle or you can disable certificate verification.
+
+:::danger
+Disabling the certificate verification is risky and not recommended. For a secure and reliable communication, you should trust the SSL certificate.
+:::
+
+### Trusting the SSL Certificate (recommended)
+
+You can trust the SSL certificate of the Appcircle server with `appcircle` CLI tool itself to make sure all the requests are secured and trusted.
+
+You should already have [configured](#configuring-appcircle-cli-to-use-your-self-hosted-appcircle) the `appcircle` CLI tool for the self-hosted Appcircle server.
+
+:::info
+This command is supported on `macOS` and `Linux` operating systems only.
+
+If you are a `Windows` user, you can download the SSL certificate and make it trusted under the `MMC` menu of `Windows`.
+:::
+
+To trust the SSL certificate of the configured Appcircle server, follow the steps below:
+
+- Run the `config trust` subcommand of the `appcircle` CLI tool.
+
+```bash
+appcircle config trust
+```
+
+- The command may ask for the `sudo` password.
+
+- If the script is successfully trusts the certificate, you will see an output like below.
+
+```bash
+[+] OS: Darwin
+Appcircle URL is valid: https://api.appcircle.spacetech.com
+[-] Allowing addition of root certificates
+[-] Getting root certificate of 'api.appcircle.spacetech.com'
+Found cert that has same subject and issuer
+ [+] Certificate written to 'api.appcircle.spacetech.com.crt'
+ [+] Subject: Crtforge ROOT CA, emailAddress=contact@spacetech.com
+ [+] Expires on: Jan 31 10:12:39 2044 GMT
+[-] Adding 'api.appcircle.spacetech.com.crt' to Keychain
+Password:
+YES (0)
+YES (0)
+[-] Adding Certs to Nodejs
+The line already exists in /Users/spacetech/.zshrc
+[-] Verifying connection to 'api.appcircle.spacetech.com'
+ [+] Verification successful!
+The root cert has been trusted successfully.
+You must open a new terminal session for the changes to take effect.
+```
+
+- After the command completes, you should open a new terminal for changes to take effect.
+
+- Now you can run the `appcircle` commands securely without any certificate problem.
+
+### Disabling the Certificate Verification (not-recommended)
+
+- To disable the TLS verification just for the `appcircle` CLI tool, you can add a prefix to the `appcircle` cli command.
+
+```bash
+alias appcircle="NODE_TLS_REJECT_UNAUTHORIZED=0 appcircle"
+```
+
+- After disabling the certificate verification, there will be a warning saying TLS verification is disabled, you can ignore it :
+
+```bash
+$ appcircle listBuildProfiles
+(node:74065) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `node --trace-warnings ...` to show where the warning was created)
+...
+```
