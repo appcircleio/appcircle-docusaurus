@@ -12,43 +12,59 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
-## 3.12.0 - 2024-01-25 - New Permissions Roles, Using Third-Party Application for Notifications, Selection App Version for Testers
+## 3.12.0 - 2024-01-25 - Comprehensive Revision on Permissions, Improvements for Notifications, Migrating to the Publish Module, and Appcircle CLI Updates
 
-### 🆕 New Feature 
+### 🆕 New Feature
 
-- [Permission role](../account/my-organization.md#advanced-role-management) nomenclature has changed. Now the roles will be **"Manager, Operator, Viewer, and None"**. <CloudBadge/> <SelfHostedBadge/>
-- A new field has been added to Testing Distribution -> Distribution Profiles -> [Share with Testers](../distribute/create-or-select-a-distribution-profile.md#share-your-application-with-the-test-groups-manually). Previously, all app versions were visible in a share. Now, as an option, users can choose to display only the shared app version if they want. <CloudBadge/> <SelfHostedBadge/>
-- Enabled enhancement that allows the release note and Unit Test Report to be shared via [Slack](../account/slack/slack-notifications.md), [Microsoft Teams](../account/teams-notifications.md), [Email](../account/email-connection.md) and [Webhook](../account/webhooks.md) tools. Users using one of these integrations can access the download link to the release note for 90 days. <CloudBadge/> <SelfHostedBadge/>
-- The Store Submit module has been deprecated. Now, submission to the store can be done through the [Publish module](../publish-module/index.md). <CloudBadge/> <SelfHostedBadge/>
+- Permission (role) naming has been changed in [advanced role management](https://docs.appcircle.io/account/my-organization#advanced-role-management). Also, there are some new roles added for better scope management in your organization. <CloudBadge/> <SelfHostedBadge/>
+- [Share with Testers](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile#share-your-application-with-the-test-groups-manually) in Testing Distribution now has a new toggle option that enables you to display only the shared app version instead of all app versions. <CloudBadge/> <SelfHostedBadge/>
+- Appcircle Notifications now has improvements on [Slack](https://docs.appcircle.io/account/slack/slack-notifications), [Microsoft Teams](https://docs.appcircle.io/account/teams-notifications), [Email](https://docs.appcircle.io/account/email-connection), and [Webhook](https://docs.appcircle.io/account/webhooks) channels that allows you to share release notes, build logs, and test reports via notifications. <CloudBadge/> <SelfHostedBadge/>
+- The Store Submit module has been deprecated and it will be replaced by the brand-new [Publish](https://docs.appcircle.io/publish-module/index) module. You should transfer your apps to the [Publish](https://docs.appcircle.io/publish-module/index)  module in order to submit your apps to the stores. <CloudBadge/> <SelfHostedBadge/>
+- Appcircle CLI has undergone a complete revision to make it compatible with the latest Appcircle API. It also supports self-hosted Appcircle servers now. You can follow all the changes from its [changelog](https://github.com/appcircleio/appcircle-cli/blob/main/CHANGELOG.md) in detail. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
-- You can now [download app version](../publish-module/index.md#version-download) files in the **Publish module**. <CloudBadge/> <SelfHostedBadge/>
-- The blue status bar name has been changed from active build to active processes. Now, not only the build but also the active store submit and publish details will be seen here. <CloudBadge/> <SelfHostedBadge/>
-- Now only enterprise customers can add new component in [publish module flow.](../publish-module/index.md#publish-flow) <CloudBadge/> <SelfHostedBadge/>
-- For self-hosted using, administrators can now enable or disable users to change their email address. <SelfHostedBadge/>
-- Manager, Operator, Viewer creation profile permissions can now view **Self-Hosted Runners.** <SelfHostedBadge/>
-- Monthly tester emails and artifact storage license limits were removed. <CloudBadge/> <SelfHostedBadge/>
-- Now only the **"_"** character can be used in [environment variable](../environment-variables/managing-variables.md) group naming. Appcircle will not allow other special characters. <CloudBadge/> <SelfHostedBadge/>
-- In Build -> Configurations -> Distribution, the user will now be able to take action if they have [publish authorization](../account/my-organization.md#publish-module-ios-permissions). <CloudBadge/> <SelfHostedBadge/>
-- Appcircle no longer allows multiple selections in [Enterprise Store](../enterprise-appstore/index.md) Permissions. <CloudBadge/> <SelfHostedBadge/>
+- You can now [download](../publish-module/index.md#version-download) app version artifacts (`ipa`, `aab`, or `apk`) in the Publish module. <CloudBadge/> <SelfHostedBadge/>
+- The blue status bar at the bottom has been changed to **Active Processes**. Now, not only the builds but also the active store submit and publish jobs will be seen there. <CloudBadge/> <SelfHostedBadge/>
+- Enterprise users can customize their [publish flows](../publish-module/index.md#publish-flow) using the **Manage Flow** button so that they can deploy their apps to multiple targets, get approvals from different stakeholders, execute custom scripts, and even more. <CloudBadge/> <SelfHostedBadge/>
+- Administrators can now enable or disable the "Edit Username" feature from **Login Settings** on the self-hosted Appcircle server. <SelfHostedBadge/>
+- `Manager`, `Operator`, and `Viewer` build profile roles have view permission for the [self-hosted runners](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-runners.md) list but cannot enable or disable any runner on the list. <CloudBadge/> <SelfHostedBadge/>
+- License limits for monthly tester emails and artifact storage size were removed from "Organization > Billing > Usages". Keep in mind that for fair usage, the limits exist but are higher when compared to previous plan limits. <CloudBadge/> <SelfHostedBadge/>
+- Now only the underscore character ("_") can be used in [environment variable](../environment-variables/managing-variables.md) group naming. Appcircle will not allow other special characters in group names. <CloudBadge/> <SelfHostedBadge/>
+- [Enterprise App Store](../account/my-organization.md#enterprise-store-permissions) permissions have undergone revision with new roles that enable users to configure authorization in detail. <CloudBadge/> <SelfHostedBadge/>
 - [User invitation](../account/my-organization.md#managing-team-members) and membership update notification emails have been improved and now include additional information, such as sub-organizations. <CloudBadge/> <SelfHostedBadge/>
-- User redirection when invited to the organization is improved. <CloudBadge/> <SelfHostedBadge/>
-- Now, **publish** and step statuses will be in waiting status unless the agent processes them. <CloudBadge/> <SelfHostedBadge/>
-- The contact information button has been removed from the home screen. <CloudBadge/> <SelfHostedBadge/>
-- Duration and results of internal tasks can now be tracked by schedule manager internally. <CloudBadge/> <SelfHostedBadge/>
-- To avoid confusion when displaying profiles with the same repo name on different platforms, the URLs of the respective repositories are now shown. <CloudBadge/> <SelfHostedBadge/>
-- Transactions with a processing time of 0 will no longer appear in the queue waiting list. <CloudBadge/> <SelfHostedBadge/>
-- The time to check the active status of self-hosted agents has been increased from 2 hours to 3 days. <SelfHostedBadge/>
+- User redirection when invited to the organization was improved according to several different cases, like registered, not registered, or SSO login. <CloudBadge/> <SelfHostedBadge/>
+- Publish flow step statuses, and the last step status in the [version list](../publish-module/index.md#publish-versions) will be in `waiting` status unless the runner executes them. <CloudBadge/> <SelfHostedBadge/>
+- The contact button at the bottom right of the page has been removed. You can reach us through the [Contact](https://appcircle.io/contact) or [Slack](https://slack.appcircle.io/) channels. <CloudBadge/>
+- The duration and results of internal scheduled tasks can now be tracked by the schedule manager in the infrastructure. <CloudBadge/> <SelfHostedBadge/>
+- You can see the Git URL under the repository name while selecting the repository on a new connection, which avoids confusion when the team has the same repository name in different locations. <CloudBadge/> <SelfHostedBadge/>
+- Queue waiting records with a waiting time of 0 min will no longer appear in the queue waiting reports for better experience. <SelfHostedBadge/>
+- Supported Xcode versions that you see in the "starting workflow" step in build logs are ordered descending (latest first) for better readability. <CloudBadge/> <SelfHostedBadge/>
+- Testing Distribution [distribution profile](../account/my-organization.md#enterprise-store-permissions) permissions have undergone revision with new `Operator` role and other role naming changes. <CloudBadge/> <SelfHostedBadge/>
+- The self-hosted runner macOS image is the same VM image as in the cloud Appcircle, which will keep you always up-to-date with the latest without waiting for special self-hosted updates. <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
-- Fixed errors in the display of the user's remaining limits. <CloudBadge/> <SelfHostedBadge/>
+- The time to check the active status of self-hosted runners has been increased from 2 hours to 3 days, which also fixes self-hosted pool availability in the build profile configuration. <SelfHostedBadge/>
+- Fixed a typo and a broken re-login redirection when an invalid OTP attempt was made in custom authentication. <SelfHostedBadge/>
+- Fixed a bug that prevents sub-organizations from seeing their own enterprise app store download reports. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that throws an "branch and commit are not active" toast error when a new branch is added to the repository and not refreshed on the Appcircle side. <CloudBadge/> <SelfHostedBadge/>
 - Fixed cache invalidation issues on the login screen. <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug in the display of values in publishing components. <CloudBadge/> <SelfHostedBadge/>
-- Fixed page crash when viewing logs. <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug with the renaming of the [publish profile](../publish-module/index.md#rename-publish-profile). <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug that prevented the correct display of the **"Publish Date "** field in the Publish module. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that prevents users from manually uploading `aab` files in the Publish module. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug for correct step listing in Build module workflow and Publish module flow steps. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that prevents user to click on "disconnect" but at Slack integration. <CloudBadge/> <SelfHostedBadge/>
+- Fixed bugs that occur while deleting the store API keys in integrations. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that enables users to distribute apps to the Enterprise App Store, although they do not have sufficient permission in the Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
+- Fixed unnecessary toast errors when the user has relevant permission in Distribution Profile and opens the build profile configuration. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that throws toast errors messages when the user opens the build configuration signing tab. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that prevents the correct display of the "Published At" in Enterprise App Store profiles. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug where the user can enter invalid values into license limits at license details. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that prevents manage profiles and app versions in the Enterprise App Store when they have the `Uploader` role. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that makes browser crash while viewing build logs. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that prints the incorrect remaining limit when the license is expired. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that threw an error while renaming the publish profile. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the missing default values for [Appdome Build-2Secure for Android](../integrations/appdome-integration.md) workflow step output. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the [JaCoCo](https://www.eclemma.org/jacoco/) code coverage "NilObject" error by improving the parser algorithm at the [test report](../continuous-testing/running-android-unit-tests.md#generating-test-report) workflow step. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.11.0 - 2023-12-27 - Publish Module, Change Build Profile Owner, Custom Authentication Integration
 
