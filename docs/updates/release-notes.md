@@ -41,7 +41,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - You can see the Git URL under the repository name while selecting the repository on a new connection, which avoids confusion when the team has the same repository name in different locations. <CloudBadge/> <SelfHostedBadge/>
 - Queue waiting records with a waiting time of 0 min will no longer appear in the queue waiting reports for better experience. <SelfHostedBadge/>
 - Supported Xcode versions that you see in the "starting workflow" step in build logs are ordered descending (latest first) for better readability. <CloudBadge/> <SelfHostedBadge/>
-- Testing Distribution [distribution profile](https://docs.appcircle.io/account/my-organization#enterprise-store-permissions) permissions have undergone revision with new `Operator` role and other role naming changes. <CloudBadge/> <SelfHostedBadge/>
+- Testing Distribution [distribution profile](https://docs.appcircle.io/account/my-organization#distribution-profile-permissions) permissions have undergone revision with new `Operator` role and other role naming changes. <CloudBadge/> <SelfHostedBadge/>
 - The self-hosted runner macOS image is the same VM image as in the cloud Appcircle, which will keep you always up-to-date with the latest without waiting for special self-hosted updates. <SelfHostedBadge/>
 
 ### 🐞 Fixed
