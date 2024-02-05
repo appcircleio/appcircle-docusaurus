@@ -13,23 +13,22 @@ Additionally, its scriptable nature allows for easy automation through shell scr
 
 ## Pre-Requirements
 
-To configure Appcircle CLI to use your self-hosted Appcircle, you need a personal access token for authentication. Also, you need the `api` and the `auth` URLs of the Appcircle server.
+To configure Appcircle CLI to use your self-hosted Appcircle, you need a **Personal API Token** for authentication. Also, you need the `api` and the `auth` URLs of the Appcircle server.
 
-### Creating a Personal Access Token
+### 1. Create a Personal API Token
 
-For the Appcircle CLI to authenticate to your self-hosted Appcircle, you need to create a personal access token and configure the Appcircle CLI to use it.
+For the Appcircle CLI to authenticate to your self-hosted Appcircle, you need to create a **Personal API Token** and configure the Appcircle CLI to use it.
 
-You can follow the [Generating Personal Access Tokens](../../appcircle-api/api-authentication.md#generatingmanaging-the-personal-access-tokens) page to create one.
+You can follow the [Generating/Managing the Personal API Tokens](../../appcircle-api/api-authentication.md#generatingmanaging-the-personal-api-tokens) page to create one.
 
-### Getting the Self-Hosted URLs
+### 2. Find out the Appcircle server URLs
 
 To find these URLs, you have two ways.
 
 1. Change the subdomain of an Appcircle URL and test if it is working.
-
 2. Get the URLs from the Appcircle server configuration.
 
-#### Change Subdomain to Find `api` and `auth` URL
+#### Change the subdomain with `api` and `auth` for the default configuration
 
 To find the `api` and the `auth` URL, you can check the URL that you are using to access to the Appcircle web UI and then change its subdomain according to the format.
 
@@ -45,7 +44,7 @@ You can test the `api` URL access by running `curl -v https://api.appcircle.spac
 
 2. The `api` URL is not correct. To get the correct URL, you can follow the title below.
 
-#### Get the Subdomain From Appcircle Server Configuration
+#### Get the subdomains from the Appcircle server for any type of configuration
 
 To get the `api` and the `auth` URL, you can login to the Appcircle server and follow the steps below:
 
@@ -108,7 +107,7 @@ appcircle config set API_HOSTNAME 'https://api.appcircle.spacetech.com' && \
 appcircle config set AUTH_HOSTNAME 'https://auth.appcircle.spacetech.com'
 ```
 
-- Set the [personal access token](#creating-a-personal-access-token) to authenticate with the self-hosted Appcircle:
+- Set the [Personal API Token](#1-create-a-personal-api-token) to authenticate with the self-hosted Appcircle:
 
 ```bash
 appcircle login --pat "TTk0YzFwdUVmVHZrZ0FvMnUwcVdGTVZ3eE1lc2JtelEwbnN4dWtjbnFjMAscpCurFTTM4Q2VJNnZkd3Z6SnwxNzM3ODI5SIO3ODc0fGZiOTVkYTE4LWYzMDgtNDY5Yy1iNDUzLTY0MTQ3NzMzNzRhNw=="

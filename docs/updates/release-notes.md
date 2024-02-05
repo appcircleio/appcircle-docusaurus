@@ -1037,7 +1037,7 @@ This release introduces the Appcircle API with the build module and all around e
 ### 🆕 New Feature
 
 - Appcircle API - You can now utilize the Appcircle API for programmatic access to the platform features. This release includes the build module APIs.
-- Personal Access Token - You can generate a token to access the Appcircle API
+- Personal API Token - You can generate a token to access the Appcircle API
 - Webhook support for AWS CodeCommit and Azure DevOps git repositories
 - In-browser emulator/simulator rotation and restart features
 - In-browser emulator/simulator issue reporting - You can now share screenshots and notes over email while running an app preview.
