@@ -94,56 +94,85 @@ If you are still getting a connectivity error, you should check the network acce
 
 ## Configure Appcircle CLI to Use Your Self-Hosted Appcircle Server
 
-By default, Appcircle CLI is configured to interact with the Appcircle cloud. But with a few commands, you can change this behavior and use your own self-hosted Appcircle with the CLI.
+By default, Appcircle CLI is configured to interact with the Appcircle cloud. But with a few commands, you can change this behavior and use your own self-hosted Appcircle server with the CLI.
 
 :::info
 We are assuming that you have already installed the Appcircle CLI and that it is ready to use.
 
-To test, you can open a terminal and run `appcircle --version` command in your terminal. If there is an output, you are ready to configure.
-:::
+Follow the installation instructions [here](https://github.com/appcircleio/appcircle-cli?tab=readme-ov-file#installation) to install Appcircle CLI if it's not ready to use.
 
-To configure the Appcircle CLI to use the self-hosted Appcircle:
-
-- Add a new configuration with any desired name.
+To test, you can open a terminal and run the command below in your terminal.
 
 ```bash
-appcircle config add spacetech-appcircle
+appcircle --version
 ```
 
-- Set the [required URLs](#getting-the-self-hosted-urls) to communicate with the self-hosted Appcircle:
+If you see the Appcircle CLI version without any errors, you are ready to configure the tool.
+:::
+
+To configure the Appcircle CLI to use with the self-hosted Appcircle server follow the steps below.
+
+**1.** Add a new configuration with any desired name.
 
 ```bash
-appcircle config set API_HOSTNAME 'https://api.appcircle.spacetech.com' && \
+appcircle config add "${CONFIGURATION_NAME}"
+```
+
+For example;
+
+```bash
+appcircle config add "spacetech"
+```
+
+**2.** Set the [required URLs](#2-find-out-the-appcircle-server-urls) to communicate with the self-hosted Appcircle server.
+
+```bash
+appcircle config set API_HOSTNAME 'https://api.appcircle.spacetech.com'
+```
+
+```bash
 appcircle config set AUTH_HOSTNAME 'https://auth.appcircle.spacetech.com'
 ```
 
-- Set the [Personal API Token](#1-create-a-personal-api-token) to authenticate with the self-hosted Appcircle:
+**3.** Set the [Personal API Token](#1-create-a-personal-api-token) for authentication on the server.
 
 ```bash
-appcircle login --pat "TTk0YzFwdUVmVHZrZ0FvMnUwcVdGTVZ3eE1lc2JtelEwbnN4dWtjbnFjMAscpCurFTTM4Q2VJNnZkd3Z6SnwxNzM3ODI5SIO3ODc0fGZiOTVkYTE4LWYzMDgtNDY5Yy1iNDUzLTY0MTQ3NzMzNzRhNw=="
+appcircle login --pat "${PERSONAL_API_TOKEN}"
 ```
 
-If you face any self-signed certificate error, check the [Trusting Certificate](#trusting-the-ssl-certificate-recommended) section.
+For example;
 
-- Check the configuration.
+```bash
+appcircle login --pat "TTk0...RhNw=="
+```
+
+:::caution
+If you face any self-signed certificate error, for example, "self-signed certificate in certificate chain", check the [Trusting Certificate](#trusting-the-ssl-certificate-recommended) section for troubleshooting.
+:::
+
+You can check the configuration with the command below.
 
 ```bash
 appcircle config list
 ```
 
-- To use the Appcircle CLI in interactive mode:
+You should see the current (active) configuration, the path of the `config.json` file, and server URLs per configuration.
+
+You can also configure the Appcircle CLI in interactive mode.
 
 ```bash
 appcircle -i
 ```
 
-- To list build profiles:
+You should use the relevant menu item and follow the instructions there that are similar to the steps above.
+
+When you successfully log in with the Appcircle CLI, you can list the build profiles with the command below.
 
 ```bash
 appcircle listBuildProfiles
 ```
 
-- For detailed usage information about the Appcircle CLI, you can refer to the [Appcircle CLI documentation](https://github.com/appcircleio/appcircle-cli#appcircle-command-line-interface).
+For detailed usage information about the Appcircle CLI, you can refer to the [Appcircle CLI](https://github.com/appcircleio/appcircle-cli#appcircle-command-line-interface) documentation.
 
 ## Self-Signed Certificate of Appcircle Server
 
