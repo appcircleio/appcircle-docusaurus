@@ -299,6 +299,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   font-size: 10px;
   font-family: var(--ifm-font-family-base);
   font-weight: 700;
+  white-space: pre;
 }
 
 .cloud-badge {
