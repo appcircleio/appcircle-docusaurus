@@ -2,14 +2,12 @@
 title: Appcircle CLI
 metaTitle: Appcircle CLI
 metaDescription: Appcircle CLI
-sidebar_position: 14
+sidebar_position: 12
 ---
-
-## Overview
 
 Appcircle CLI is a command-line interface designed to use Appcircle from the terminals. The Appcircle CLI tool, which is executed directly from the terminal, provides users with a streamlined command-driven experience for efficient management of Appcircle.
 
-The Appcircle CLI is user-friendly and versatile, offering a range of commands to enhance backend control. You can start builds, download build artifacts, publish applications on the Enterprise App Stor, and do more. For detailed usage, you can head over to the Appcircle CLI documentation.
+The Appcircle CLI is user-friendly and versatile, offering a range of commands to enhance backend control. You can start builds, download build artifacts, publish applications on the Enterprise App Store, and do more. For detailed usage, you can head over to the Appcircle CLI documentation.
 
 Additionally, its scriptable nature allows for easy automation through shell scripts, enabling users to automate tasks and integrate the CLI into existing workflows effortlessly.
 
