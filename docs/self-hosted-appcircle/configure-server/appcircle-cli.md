@@ -19,7 +19,7 @@ To configure Appcircle CLI to use your self-hosted Appcircle, you need a **Perso
 
 For the Appcircle CLI to authenticate to your self-hosted Appcircle, you need to create a **Personal API Token** and configure the Appcircle CLI to use it.
 
-You can follow the [Generating/Managing the Personal API Tokens](../../appcircle-api/api-authentication.md#generatingmanaging-the-personal-api-tokens) page to create one.
+You can follow the [Generating and Managing Personal API Tokens](../../appcircle-api/api-authentication.md#generatingmanaging-the-personal-api-tokens) page to create one.
 
 ### 2. Find out the Appcircle server URLs
 
@@ -30,19 +30,25 @@ To find these URLs, you have two ways.
 
 #### Change the subdomain with `api` and `auth` for the default configuration
 
-To find the `api` and the `auth` URL, you can check the URL that you are using to access to the Appcircle web UI and then change its subdomain according to the format.
+To find out the `api` and the `auth` URL, you can check the URL that you are using to access the Appcircle web UI (dashboard) and then change its subdomain according to the format.
 
-For example, if you are using `https://my.appcircle.spacetech.com` to access to the Appcircle web UI,
+For example, if you are using `https://my.appcircle.spacetech.com` to access the Appcircle web UI,
 
-- Change `my` to `api` for the api URL. As a result, the `api` URL should be `https://api.appcircle.spacetech.com`.
+- Change `my` to `api` for the **API_HOSTNAME**.
+  - It should be `https://api.appcircle.spacetech.com`.
+- Change `my` to `auth` for the **AUTH_HOSTNAME**.
+  - It should be `https://auth.appcircle.spacetech.com`.
 
-- Change `my` to `auth` for the auth URL. As a result, the `auth` URL should be `https://auth.appcircle.spacetech.com`.
+You can test the **API** URL access by running the command below.
 
-You can test the `api` URL access by running `curl -v https://api.appcircle.spacetech.com`. If you are facing an error, there are two possible problems:
+```bash
+curl -v https://api.appcircle.spacetech.com
+```
 
-1. There is no network access between the computer that runs the `curl` command above and Appcircle server.
+If you are facing a connectivity error, there are two possible problems:
 
-2. The `api` URL is not correct. To get the correct URL, you can follow the title below.
+1. There is no network access between the computer that runs the `curl` command above and the Appcircle server.
+2. Or the **API** URL is not correct. In order to get the correct URL, you can follow the title below.
 
 #### Get the subdomains from the Appcircle server for any type of configuration
 
