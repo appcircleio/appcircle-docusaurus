@@ -52,7 +52,7 @@ If you are facing a connectivity error, there are two possible problems:
 
 #### Get the subdomains from the Appcircle server for any type of configuration
 
-To get the `api` and the `auth` URL, you can login to the Appcircle server and follow the steps below:
+To get the `api` and the `auth` URL, you should login to the Appcircle server and follow the steps below:
 
 - Change the directory on the Appcircle server.
 
@@ -60,7 +60,7 @@ To get the `api` and the `auth` URL, you can login to the Appcircle server and f
 cd appcircle-server
 ```
 
-- Export the required dependencies.
+- Update the environment variable `PATH` with the required dependencies.
 
 ```bash
 export PATH=$PATH:$(pwd)/deps/bin
@@ -69,7 +69,9 @@ export PATH=$PATH:$(pwd)/deps/bin
 - Get the `api` and `auth` URL from the configuration file of your project.
 
 :::info
-`spacetech` in the example below is an example project name. To find your projects, list the `./projects` directory:
+`spacetech` in the example below is an example project name.
+
+To find out your projects, list the content of the `./projects` directory.
 
 ```bash
 ls -l ./projects
@@ -82,13 +84,15 @@ yq '.apiGateway.external.url' ./projects/spacetech/export/.global.yaml && \
 yq '.keycloak.external.url' ./projects/spacetech/export/.global.yaml
 ```
 
-As a result, you should see the required URLs.
+You can test the **API** URL access by running the command below.
 
-You can test the `api` url with the `curl -v https://api.appcircle.spacetech.com` command again.
+```bash
+curl -v https://api.appcircle.spacetech.com
+```
 
-If you are still getting an error, you should check the network access between the machine that runs `curl` and the Appcircle server.
+If you are still getting a connectivity error, you should check the network access between the host that runs `curl` and the Appcircle server.
 
-## Configuring Appcircle CLI to Use Your Self-Hosted Appcircle
+## Configure Appcircle CLI to Use Your Self-Hosted Appcircle Server
 
 By default, Appcircle CLI is configured to interact with the Appcircle cloud. But with a few commands, you can change this behavior and use your own self-hosted Appcircle with the CLI.
 
