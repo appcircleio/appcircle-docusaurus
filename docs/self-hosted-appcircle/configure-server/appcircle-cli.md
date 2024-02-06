@@ -206,6 +206,12 @@ This command is supported on **MacOS** and **Linux** operating systems only.
 If you are a **Windows** user, you can download the SSL certificate and make it trusted under the `MMC` menu in Windows.
 :::
 
+:::caution
+Trusting the SSL certificate is supported for Appcircle CLI version `1.1.1` or later.
+
+For older versions, you should upgrade the Appcircle CLI, or although it's not recommended, you can [disable the SSL verification](#disabling-the-ssl-certificate-verification-not-recommended).
+:::
+
 To trust the SSL certificate of the configured Appcircle server, run the `config trust` subcommand of the Appcircle CLI.
 
 ```bash
