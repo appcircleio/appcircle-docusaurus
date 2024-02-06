@@ -284,3 +284,7 @@ $ appcircle listBuildProfiles
 ```
 
 You can ignore it. All the subcommands will work as they should.
+
+import NeedHelp from '@site/docs/\_need-help.mdx';
+
+<NeedHelp />
