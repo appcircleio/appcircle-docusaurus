@@ -174,47 +174,49 @@ appcircle listBuildProfiles
 
 For detailed usage information about the Appcircle CLI, you can refer to the [Appcircle CLI](https://github.com/appcircleio/appcircle-cli#appcircle-command-line-interface) documentation.
 
-## Self-Signed Certificate of Appcircle Server
+## Self-Signed Certificates
 
-If you are using a self-signed SSL certificate on the self-hosted Appcircle and the certificate is not trusted on your computer, you may face an error like `self-signed certificate in certificate chain undefined` while trying to run `appcircle` CLI tool like in the example below.
+If you are using a self-signed SSL certificate on the self-hosted Appcircle server and the certificate is not trusted on your host, you may face an error like below while trying to run the Appcircle CLI tool.
 
 ```bash
-appcircle login --pat "example-pat"
+$ appcircle login --pat "TTk0...RhNw=="
 
 self-signed certificate in certificate chain undefined
 ```
 
-That error occurs when the root CA certificate or the self signed certificate of the Appcircle server is not trusted on your computer.
+That error occurs when the root CA certificate or the self-signed certificate of the Appcircle server is not trusted on your host.
 
-You can trust the SSL certificate of the Appcircle server for securing network between the CLI and Appcircle or you can disable certificate verification.
+You can trust the SSL certificate of the Appcircle server to secure the network between the CLI and the server, or you can disable certificate verification.
 
 :::danger
-Disabling the certificate verification is risky and not recommended. For a secure and reliable communication, you should trust the SSL certificate.
+Disabling certificate verification is risky and not recommended.
+
+For secure and reliable communication, you should trust the SSL certificate.
 :::
 
 ### Trusting the SSL Certificate (recommended)
 
-You can trust the SSL certificate of the Appcircle server with `appcircle` CLI tool itself to make sure all the requests are secured and trusted.
+You can trust the SSL certificate of the Appcircle server with the Appcircle CLI tool itself to make sure all the requests are secured and trusted.
 
-You should already have [configured](#configuring-appcircle-cli-to-use-your-self-hosted-appcircle) the `appcircle` CLI tool for the self-hosted Appcircle server.
+You should already have [configured](#configure-appcircle-cli-to-use-your-self-hosted-appcircle-server) the Appcircle CLI tool for the self-hosted Appcircle server.
 
 :::info
-This command is supported on `macOS` and `Linux` operating systems only.
+This command is supported on **MacOS** and **Linux** operating systems only.
 
-If you are a `Windows` user, you can download the SSL certificate and make it trusted under the `MMC` menu of `Windows`.
+If you are a **Windows** user, you can download the SSL certificate and make it trusted under the `MMC` menu in Windows.
 :::
 
-To trust the SSL certificate of the configured Appcircle server, follow the steps below:
-
-- Run the `config trust` subcommand of the `appcircle` CLI tool.
+To trust the SSL certificate of the configured Appcircle server, run the `config trust` subcommand of the Appcircle CLI.
 
 ```bash
 appcircle config trust
 ```
 
-- The command may ask for the `sudo` password.
+:::info
+The command may ask for the `sudo` password for some system-wide operations. You should be sudoer.
+:::
 
-- If the script is successfully trusts the certificate, you will see an output like below.
+When the script successfully trusts the certificate, you will see an output like below.
 
 ```bash
 [+] OS: Darwin
@@ -237,35 +239,42 @@ The root cert has been trusted successfully.
 You must open a new terminal session for the changes to take effect.
 ```
 
-- After the command completes, you should open a new terminal for changes to take effect.
+Now you should open a new terminal for the changes to take effect.
 
-- Now you can run the `appcircle` commands securely without any certificate problem.
+In a new terminal session, you can run the `appcircle` commands securely without any certificate problems.
 
-### Disabling the Certificate Verification (not-recommended)
+### Disabling the SSL Certificate Verification (not-recommended)
 
-Disabling TLS certificate verification removes a critical layer of security, leaving the communication vulnerable to a variety of threats, including those associated with man-in-the-middle attacks, data integrity issues, and trustworthiness concerns.
+Disabling SSL certificate verification removes a critical layer of security, leaving the communication vulnerable to a variety of threats, including those associated with man-in-the-middle attacks, data integrity issues, and trustworthiness concerns.
 
-Proper TLS certificate validation is essential for ensuring the authenticity and security of the communication between the `appcircle` CLI and the Appcircle server.
+Proper SSL certificate validation is essential for ensuring the authenticity and security of the communication between the Appcircle CLI and the Appcircle server.
 
 It's crucial to prioritize security measures to protect sensitive data and maintain the integrity of your system.
 
 :::danger
+While we do not recommend it, you have the choice to accept the mentioned risk by selectively disabling certificate verification specifically for the Appcircle CLI.
 
-While we do not recommend it, you have the choice to assume the mentioned risk by selectively disabling certificate verification specifically for the `appcircle` CLI.
-
+It can be used when you have problems [trusting the SSL certificates](#trusting-the-ssl-certificate-recommended).
 :::
 
-- To disable the TLS verification just for the `appcircle` CLI tool, you can add a prefix to the `appcircle` cli command.
+To disable the SSL certificate verification just for the Appcircle CLI tool, you should add a prefix to the `appcircle` command.
+
+:::info
+SSL and TLS are the same concepts for this document. So, TLS certificates are also known as SSL certificates.
+:::
 
 ```bash
 alias appcircle="NODE_TLS_REJECT_UNAUTHORIZED=0 appcircle"
 ```
 
-- After disabling the certificate verification, there will be a warning saying TLS verification is disabled, you can ignore it :
+After disabling SSL certificate verification, there will be a warning saying SSL verification is disabled.
 
 ```bash
 $ appcircle listBuildProfiles
+
 (node:74065) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ...
 ```
+
+You can ignore it. All the subcommands will work as they should.
