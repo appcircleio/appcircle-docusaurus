@@ -20,7 +20,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - [Share with Testers](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile#share-your-application-with-the-test-groups-manually) in Testing Distribution now has a new toggle option that enables you to display only the shared app version instead of all app versions. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle Notifications now has improvements on [Slack](https://docs.appcircle.io/account/slack/slack-notifications), [Microsoft Teams](https://docs.appcircle.io/account/teams-notifications), [Email](https://docs.appcircle.io/account/email-connection), and [Webhook](https://docs.appcircle.io/account/webhooks) channels that allows you to share release notes, build logs, and test reports via notifications. <CloudBadge/> <SelfHostedBadge/>
 - The Store Submit module has been deprecated and it will be replaced by the brand-new [Publish](https://docs.appcircle.io/publish-module/index) module. You should transfer your apps to the [Publish](https://docs.appcircle.io/publish-module/index)  module in order to submit your apps to the stores. <CloudBadge/> <SelfHostedBadge/>
-- Appcircle CLI has undergone a complete revision to make it compatible with the latest Appcircle API. It also supports self-hosted Appcircle servers now. You can follow all the changes from its [changelog](https://github.com/appcircleio/appcircle-cli/blob/main/CHANGELOG.md) in detail. <CloudBadge/> <SelfHostedBadge/>
+- The Appcircle CLI has undergone a complete revision to make it compatible with the latest Appcircle API. Now it also supports self-hosted Appcircle servers. You can see all the recent changes made in the [changelog](https://github.com/appcircleio/appcircle-cli/blob/main/CHANGELOG.md) and follow [configuration instructions](https://docs.appcircle.io/self-hosted-appcircle/configure-server/appcircle-cli) to use the CLI with a self-hosted Appcircle server. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -1037,7 +1037,7 @@ This release introduces the Appcircle API with the build module and all around e
 ### 🆕 New Feature
 
 - Appcircle API - You can now utilize the Appcircle API for programmatic access to the platform features. This release includes the build module APIs.
-- Personal Access Token - You can generate a token to access the Appcircle API
+- Personal API Token - You can generate a token to access the Appcircle API
 - Webhook support for AWS CodeCommit and Azure DevOps git repositories
 - In-browser emulator/simulator rotation and restart features
 - In-browser emulator/simulator issue reporting - You can now share screenshots and notes over email while running an app preview.
