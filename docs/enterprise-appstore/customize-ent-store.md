@@ -179,7 +179,7 @@ For example you can set a title for **TR** and a different title for **EN** lang
 
 Appcircle server version v3.12.1 or later is required for this feature.
 
-If you set headers from `global.yaml` by following the steps below, your header setting configured from the Enterprise Store's "Customize" page will be overridden.
+If you set titles from `global.yaml` by following the steps below, your title setting configured from the Enterprise Store's "Customize" page will be overridden.
 
 :::warning
 
