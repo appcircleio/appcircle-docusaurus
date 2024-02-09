@@ -10,7 +10,6 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Customize Your Enterprise Store
 
-
 ## Customizing Appearance
 
 You can customize the appearance of your store by going to Customize section.
@@ -34,14 +33,13 @@ It's possible to use a custom domain for the Enterprise Store. You need to have 
 
 Open your DNS provider's website and add a CNAME with the below details
 
-**Name:** Your subdomain name. Ex. *store*
+**Name:** Your subdomain name. Ex. _store_
 
 **Destination:** _**store-domain.appcircle.io**_
 
 The below screenshot shows an example configuration screen from Cloudflare.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-cname.png' />
-
 
 **Updating Settings**
 
@@ -55,13 +53,13 @@ Appcircle supports Static, SSO, and LDAP login.
 
 :::info
 
-SSO and LDAP login is only available for  Enterprise accounts. Only the Organization owner or users with **Manage Enterprise Settings & Apps** rights can change the login settings.
+SSO and LDAP login is only available for Enterprise accounts. Only the Organization owner or users with **Manage Enterprise Settings & Apps** rights can change the login settings.
 
 :::
 
 ### Static Login
 
-You can set a different username and password for live and beta apps. The usernames of the live and beta section must be different. 
+You can set a different username and password for live and beta apps. The usernames of the live and beta section must be different.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-settings.png" />
 
@@ -71,13 +69,11 @@ You may also use SSO for your Enterprise Store. Appcircle supports both OpenID a
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-ssotoggle.png' />
 
-
 :::info
 
 If you're configuring SAML Provider, you must set `https://auth.appcircle.io/auth/realms/store` as Audience URI (SP Entity ID).
 
 :::
-
 
 **Identity Providers​**
 
@@ -98,12 +94,11 @@ Please check the below document to learn more about SSO integration.
 
 ### LDAP Login
 
-In order to create an LDAP login, first click the **Activate** link next to the LDAP login. If you select **Enable LDAP Login**, your previous login options will be disabled and LDAP login will be enabled. Click the **Details** link and then click the **Create** link. Appcircle supports multiple LDAP providers. You can add multiple LDAP servers with different settings. 
+In order to create an LDAP login, first click the **Activate** link next to the LDAP login. If you select **Enable LDAP Login**, your previous login options will be disabled and LDAP login will be enabled. Click the **Details** link and then click the **Create** link. Appcircle supports multiple LDAP providers. You can add multiple LDAP servers with different settings.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-ldapenable.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-ldapcreate.png' />
-
 
 **Configuration**
 
@@ -137,7 +132,7 @@ Full DN of LDAP tree where your users are. This DN is the parent of LDAP users. 
 Additional LDAP Filter for filtering searched users. Leave this empty if you don't need additional filter. Make sure that it starts with '(' and ends with ')'
 
 **Phone Number LDAP Attribute**
-This attribute will be used to get email address  for Two Factor Authentication(2FA).
+This attribute will be used to get email address for Two Factor Authentication(2FA).
 
 **Search Scope**
 For one level, the search applies only for users in the DNs specified by User DNs. For subtree, the search applies to the whole subtree. See LDAP documentation for more details
@@ -161,8 +156,8 @@ LDAP Read Timeout in milliseconds. This timeout applies for LDAP read operations
 Does the LDAP server support pagination
 
 ### User Federation
-After you have configured the main LDAP settings, you need to configure the **User Federation Mapper** section to set group DN settings. These settings will be used to query groups.
 
+After you have configured the main LDAP settings, you need to configure the **User Federation Mapper** section to set group DN settings. These settings will be used to query groups.
 
 ### Testing LDAP Connection
 
@@ -170,9 +165,104 @@ After you have configured LDAP, you can use **Test Connection** and **Test Authe
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-testconnection.png' />
 
-
 ### Two-factor Authentication
 
-To further protect your logins, you may add Two-factor Authentication(2FA) to your LDAP integration. Appcircle supports both email and SMS 2FA authentication. 
+To further protect your logins, you may add Two-factor Authentication(2FA) to your LDAP integration. Appcircle supports both email and SMS 2FA authentication.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-2fa.png' />
+
+## Change Tab Title by Language
+
+You can change the Enterprise Store tab titles according to the language selected on **self-hosted Appcircle servers** only.
+
+For example you can set a title for **TR** and a different title for **EN** language selection.
+
+Appcircle server version v3.12.1 or later is required for this feature.
+
+If you set headers from `global.yaml` by following the steps below, your header setting configured from the Enterprise Store's "Customize" page will be overridden.
+
+:::warning
+
+Be aware that this will cause an outage on the Appcircle server.
+
+:::
+
+To customize this, you need to `SSH` into the Appcircle Server Linux machine and follow the steps below:
+
+- Go into the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+- List the projects and find yours.
+
+```bash
+ls  -l ./projects
+```
+
+- Down the Appcircle server.
+
+:::info
+
+**"spacetech"** in the below command is an example project name. Please replace with your own project name.
+
+:::
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vim ./projects/spacetech/global.yaml
+```
+
+- Add the `lang` parameter to the `storeWeb` entry.
+
+:::info
+The `storeWeb` key should already be in the `global.yaml` file.
+
+You just need to add `lang`, `TR_STORE_TITLE` and `EN_STORE_TITLE` keys.
+:::
+
+```yaml
+storeWeb:
+  external:
+    subdomain: store
+  customDomain:
+    enabled: true
+    domain: store.spacetech.com
+  lang:
+    TR_STORE_TITLE: Turkey Store
+    EN_STORE_TITLE: UK Store
+```
+
+- Export the new settings.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Up the Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+- Check if the Appcircle server is healthy.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+Now your Appcircle server and the Enterprise Store is ready.
+
+To test the new configuration:
+
+- Please head to the Enterprise Store page of your organization with a browser, for example `store.appcircle.spacetech.com`.
+
+- Check the tab title. If the language is **TR**, you should see "Turkey Store" for example.
+
+- Change the language from the upper right corner and check the tab title again. It should be "UK Store" according to the sample configuration.
