@@ -16,7 +16,7 @@ In this page, you can see some titles to configure and customize your Enterprise
 
 You can change the Enterprise Store tab titles according to the language selected on **self-hosted Appcircle servers** only.
 
-For example you can set a title for **TR** and a different title for **EN** language selection.
+For example you can set a title for **TR** and a different title for **EN** language selection on browsers.
 
 Appcircle server version v3.12.1 or later is required for this feature.
 
@@ -24,7 +24,7 @@ If you set titles from `global.yaml` by following the steps below, your title se
 
 :::warning
 
-Be aware that this will cause an outage on the Appcircle server.
+Be aware that this will cause an downtime on the Appcircle server.
 
 :::
 
