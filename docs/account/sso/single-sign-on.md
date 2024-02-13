@@ -89,8 +89,7 @@ For example, if you configured an SSO and your SSO `alias` in the Appcircle conf
 https://my.appcircle.io/sso/spacetechsso
 ```
 
-The `spacetechsso` in the above URL represents your SSO alias.
-
+Notice that the name `spacetechsso` in the SSO URL above is the SSO alias. You can replace it with your own SSO alias and use it.
 :::info
 
 If you are a self-hosted Appcircle user, you can use the same method too.
