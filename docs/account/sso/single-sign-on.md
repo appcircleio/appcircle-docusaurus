@@ -83,7 +83,7 @@ The invitation link in the email will send the user to the SSO login page immedi
 
 If you wish to log in to the Appcircle dashboard directly using the integrated SSO you set up for your company, you may use an auto-redirect URL.
 
-For example, if you configured an SSO and your `alias` is `spacetechsso`, you may use the URL below to log in straight to the SSO:
+For example, if you configured an SSO and your SSO `alias` in the Appcircle configuration is `spacetechsso`, you may use the URL below to log in straight to the SSO:
 
 ```URL
 https://my.appcircle.io/sso/spacetechsso
