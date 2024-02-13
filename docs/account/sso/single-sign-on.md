@@ -94,7 +94,7 @@ Notice that the name `spacetechsso` in the SSO URL above is the SSO alias. You c
 
 If you are a self-hosted Appcircle user, you can use the same method too.
 
-The only difference will be in the URL. If you use `https://my.appcircle.spacetech.com` to access the Appcircle dashboard, your SSO login URL is `https://my.appcircle.spacetech.com/sso/spacetechsso`
+The only difference will be in the URL. If you use `https://my.appcircle.spacetech.com` to access the Appcircle dashboard, your SSO direct login URL is `https://my.appcircle.spacetech.com/sso/spacetechsso`
 
 :::
 
