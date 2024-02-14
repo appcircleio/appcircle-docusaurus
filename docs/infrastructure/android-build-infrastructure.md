@@ -34,27 +34,31 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Java Version
 
-Build agents have Java 8, 11, and 17 installed. Java 11 is set as the default version. If you want to use a different Java version. please follow [this document](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version)
+Build agents have Java 8, 11, 17 and 21 installed. Java 11 is set as the default version.
+
+If you want to use a different Java version, please follow [this document](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version) for how to do that.
 
 When you select "Default Intel Pool" for Android builds, the following JDK locations are available within the environment variables:
 
 - **JAVA_HOME_8_X64**: `/usr/local/openjdk-8`
 - **JAVA_HOME_11_X64**: `/root/.sdkman/candidates/java/11.0.12-open`
 - **JAVA_HOME_17_X64**: -
+- **JAVA_HOME_21_X64**: -
 
 :::caution
 We're deprecating Intel-based runners and transitioning our customers to Apple silicon (M1)-based build machines.
 
-Currently, JDK 17 is not pre-installed on the "Default Intel Pool", and Intel-based runners are not actively maintained.
+Currently, JDK 17 and 21 are not pre-installed on the "Default Intel Pool", and Intel-based runners are not actively maintained.
 
 If your app does not specifically require an Intel-based build machine, we suggest you use "Default M1 Pool", since it has much more build capacity and the latest updates.
 :::
 
 When you select "Default M1 Pool" for Android builds, the following JDK locations are available within the environment variables:
 
-- **JAVA_HOME_8_X64**: `/Users/appcircle/.sdkman/candidates/java/8.0.332-zulu`
-- **JAVA_HOME_11_X64**: `/Users/appcircle/.sdkman/candidates/java/11.0.14-zulu`
-- **JAVA_HOME_17_X64**: `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`
+- **JAVA_HOME_8_X64**: `/Users/appcircle/.sdkman/candidates/java/8.0.392-zulu`
+- **JAVA_HOME_11_X64**: `/Users/appcircle/.sdkman/candidates/java/11.0.21-zulu`
+- **JAVA_HOME_17_X64**: `/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu`
+- **JAVA_HOME_21_X64**: `/Users/appcircle/.sdkman/candidates/java/21.0.2-zulu`
 
 ## Emulator
 
@@ -109,7 +113,7 @@ Here are some most important packages installed in our Linux and macOS images us
 | Git LFS             | 2.13.2          | 3.3.0           | 3.2.0             |
 | Gradle              | 4.4.1           | 7.6             | 7.5.1             |
 | Gzip                | 1.10.4          | 403.100.6       | 353.100.22        |
-| Java                | 11.0.12         | 11.0.14         | 11.0.14           |
+| Java                | 11.0.12         | 11.0.21         | 11.0.21           |
 | Maven               | 3.8.6           | 3.9.4           | 3.8.6             |
 | Node JS             | 16.18.1         | 16.20.2         | 16.18.1           |
 | OpenSSL             | 1.1.1           | 3.3.6           | 2.8.3             |
