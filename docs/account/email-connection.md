@@ -23,6 +23,15 @@ You can also define more than one email address for a module and send notificati
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/email-notify-signing-identity.png' />
 
+:::info
+After completing the specified action in Appcircle, you have the option to share release notes via email.
+To enable this feature, ensure you include the "Publish Release Notes" step into your workflow.
+
+Additionally, note that you can access download links for the release notes for a duration of 90 days.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail.png' />
+
 # Email Notifications: Unsubscribe
 
 To cancel email notifications, you can click the unsubscribe button in the notification email, or you can delete the email address for the relevant module by following the steps below:
