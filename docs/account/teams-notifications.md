@@ -47,6 +47,13 @@ Additionally, note that you can access download links for the release notes for 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail.png' />
 
+:::info
+After completing the specified action in Appcircle, you have the option to share test results via Microsoft Teams.
+To enable this feature, ensure you include the "Test Reports" step into your workflow.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail.png' />
+
 ### Disconnecting Microsoft Teams
 
 If you want to disconnect or reauthorize the Microsoft Teams connection, scroll down to the end of the management screen and press the "Disconnect" button.

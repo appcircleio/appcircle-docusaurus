@@ -32,6 +32,13 @@ Additionally, note that you can access download links for the release notes for 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail.png' />
 
+:::info
+After completing the specified action in Appcircle, you have the option to share test results via email.
+To enable this feature, ensure you include the "Test Reports" step into your workflow.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail.png' />
+
 # Email Notifications: Unsubscribe
 
 To cancel email notifications, you can click the unsubscribe button in the notification email, or you can delete the email address for the relevant module by following the steps below:
