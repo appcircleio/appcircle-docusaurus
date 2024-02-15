@@ -38,6 +38,14 @@ Write the webhook URL that you created in the previous step and select the event
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure4.png' />
 
+:::info
+After completing the specified action in Appcircle, you have the option to share release notes via Microsoft Teams.
+To enable this feature, ensure you include the "Publish Release Notes" step into your workflow.
+
+Additionally, note that you can access download links for the release notes for a duration of 90 days.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail.png' />
 
 ### Disconnecting Microsoft Teams
 
