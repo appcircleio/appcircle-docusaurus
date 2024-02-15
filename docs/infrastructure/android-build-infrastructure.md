@@ -91,6 +91,10 @@ Based on: Android 11.0 (R)
   Sdcard: 512 MB
 ```
 
+:::caution
+If you're using UI tests with emulators, you must select an Intel device (**Default Intel Pool**) since M1 virtual machines (**Default M1 Pool**) don't support nested virtualization.
+:::
+
 ## Android Build Agent Stacks
 
 There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.
