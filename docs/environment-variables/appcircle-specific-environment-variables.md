@@ -116,3 +116,28 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_AUTOSIGN\_CRED\_PATH     | App Store Connect API Key Path. **Only active if automatic signing is turned on.**    |
 | AC\_AUTOSIGN\_KEY            | App Store Connect API Key Id.  **Only active if automatic signing is turned on.**     |
 | AC\_AUTOSIGN\_ISSUER\_ID     | App Store Connect API Issuer Id.  **Only active if automatic signing is turned on.**  |
+
+### iOS Publish specific environment variables
+
+| Variable                  | Description                                                                                    |
+|---------------------------|------------------------------------------------------------------------------------------------|
+| AC\_XCODE\_LIST\_DIR      | Specifies the Xcode folder list directory                                                      |
+| AC\_XCODE\_VERSION        | Specifies the Xcode version                                                                    |
+| AC\_VALIDATION\_CONDITION | TestFlight's internalBuildState and externalBuildState will be checked according the selection |
+| AC\_SUCCESS\_STATUSES     | You can customize acceptable/succeeded app store statuses for your app                         |
+| AC\_RELEASE\_NOTES        | Filling that area may effect App Store submission process.                                     |
+| AC\_STACK\_TYPE           | App Store or TestFlight stages                                                                 |
+| AC\_APPROVAL\_EMAILS      | Enter an email address to send special Approve and Reject links                                |
+
+### Android Publish specific environment variables
+
+| Variable               | Description                                                                                                                       |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| AC\_RELEASE\_STATUS    | Allow you to specify draft or completed app statuses on Google Play console, first upload may require draft upload                |
+| AC\_TRACK\_TO\_CHECK   | Recommended to check Track that you've sent the app in previous steps                                                             |
+| AC\_ACCEPTED\_STATUSES | Statues of `completed`,`inProgress`,`draft`,`halted` can be used                                                                  |
+| AC\_HUAWEI\_APP\_ID    | Huawei requires Huawei App Id to send to AppGallery                                                                               |
+| AC\_RELEASE\_NOTES     | Filling that area may effect Huawei/Play Store submission process                                                                 |
+| AC\_STACK\_TYPE        | Select a release track to which to send the binary. After the binary is uploaded, you can release it from the Google Play Console |
+| AC\_APPROVAL\_EMAILS   | Enter an email address to send special Approve and Reject links                                                                   |
+
