@@ -1,7 +1,7 @@
 ---
-title: iOS Workflow Steps
-metaTitle: iOS Workflow Steps
-metaDescription: iOS Workflow Steps
+title: Xcodebuild for Devices (Archive & Export)
+metaTitle: Xcodebuild for Devices (Archive & Export)
+metaDescription: Xcodebuild for Devices (Archive & Export)
 sidebar_position: 3
 ---
 
