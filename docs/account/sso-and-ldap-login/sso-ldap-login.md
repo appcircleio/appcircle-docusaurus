@@ -2,14 +2,14 @@
 title: SSO and LDAP Login
 metaTitle: SSO and LDAP Login
 metaDescription: SSO and LDAP Login
-sidebar_position: 12
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # LDAP Login
 
-To start, go to [My Organization](../account/my-organization.md) > Integrations screen and press the **Connect** button next to LDAP Login under the **Connections** section.
+To start, go to [My Organization](../my-organization.md) > Integrations screen and press the **Connect** button next to LDAP Login under the **Connections** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login1.png' />
 
@@ -47,7 +47,7 @@ To start, go to [My Organization](../account/my-organization.md) > Integration
 
 ## Deleting LDAP Login
 
-- To delete, go to the [My Organization](../account/my-organization.md) > Integration screen and press the Manage button next to LDAP Login under the Connections section.
+- To delete, go to the [My Organization](../my-organization.md) > Integration screen and press the Manage button next to LDAP Login under the Connections section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login10.png' />
 
@@ -61,7 +61,7 @@ To start, go to [My Organization](../account/my-organization.md) > Integration
 
 ## SSO Login
 
-- To start, go to [My Organization](../account/my-organization.md) > Integrations screen and press the **Connect** button next to SSO Login under the **Connections** section.
+- To start, go to [My Organization](../my-organization.md) > Integrations screen and press the **Connect** button next to SSO Login under the **Connections** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login1.png' />
 
@@ -69,7 +69,7 @@ To start, go to [My Organization](../account/my-organization.md) > Integration
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login2.png' />
 
-Please check [SSO](./sso/single-sign-on.md) document to learn how you can configure different SSO providers. 
+Please check [SSO](../sso/single-sign-on.md) document to learn how you can configure different SSO providers. 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login3.png' />
 
@@ -87,7 +87,7 @@ Pleas be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for
 ## Deleting SSO Login
 
 
-- To delete, go to the [My Organization](../account/my-organization.md) > Integration screen and press the Manage button next to SSO Login under the Connections section.
+- To delete, go to the [My Organization](../my-organization.md) > Integration screen and press the Manage button next to SSO Login under the Connections section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login5.png' />
 
