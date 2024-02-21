@@ -41,7 +41,7 @@ Pleas be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for
 
 - This screen will auto-generate an URL for the Enterprise Store and Distribute
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 
 
 - Login to your [Okta](https://www.okta.com/) account and navigate to Applications and then click **Create App Integration**.
@@ -64,7 +64,7 @@ Pleas be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for
 - Click "Show Advance Settings" button
 - Add distribute redirect URL to **Other Requestable SSO URLs** and set index to `1`
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2777-oktasamlsettings2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2777-oktasamlsettings2-new.png' />
 
 - Instead of writing all the settings of SAML, you can download the settings file from Okta and upload it. Click the "Copy" button of **Metadata URL** and open it another tab then save the XML file.
 
@@ -72,7 +72,7 @@ Pleas be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for
 
 - Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 
 - Check all the settings on this page and confirm that Redirect and SSO URLs are imported correctly. You can check if the X509 Certificate is imported correctly as well. If you want to enter multiple certificates you can separate them by using a comma between them. Please be aware that you need to remove any new lines or file headers from this edit box. This edit box only accepts a long base64 encoded string.
 
