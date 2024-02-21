@@ -2,7 +2,7 @@
 title: Okta SAML
 metaTitle: Okta SAML
 metaDescription: Okta SAML
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
