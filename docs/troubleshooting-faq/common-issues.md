@@ -465,7 +465,7 @@ lib/src/core/dependency/myservice.dart:12:8: Error: Error when reading ‘lib/sr
 
 This error usually indicates that you didn't name your files according to Dart convention. Linux file system is case sensitive whereas Windows and macOS are not. So if your repository has `customerrepository.dart` but you're importing as `CustomerRepository.dart`, it will not work on Linux machines. To prevent this error, please rename your files and make them all lower case. Please read the following documentation related to styling and naming your files.
 
-https://dart.dev/guides/language/effective-dart/style#do-name-libraries-and-source-files-using-lowercase_with_underscores
+<ContentRef url="https://dart.dev/guides/language/effective-dart/style#do-name-libraries-and-source-files-using-lowercase_with_underscores">Effective Dart: Style | name packages, directories, and source files</ContentRef>
 
 ### Firebase Version
 Your build may fail with following error
