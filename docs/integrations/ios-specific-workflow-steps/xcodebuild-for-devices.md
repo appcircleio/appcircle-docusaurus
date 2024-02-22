@@ -1,19 +1,30 @@
 ---
-title: iOS Workflow Steps
-metaTitle: iOS Workflow Steps
-metaDescription: iOS Workflow Steps
-sidebar_position: 3
+title: Xcodebuild for Devices (Archive & Export)
+metaTitle: Xcodebuild for Devices (Archive & Export)
+metaDescription: Xcodebuild for Devices (Archive & Export)
+sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-## Xcodebuild for Devices (Archive & Export)
+# Xcodebuild for Devices (Archive & Export)
 This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](../distribute/create-or-select-a-distribution-profile.md) feature or any other means of iOS distribution.
 
 :::info
 This step is the archive and export step. When the step is completed, the .ipa file of the application is generated.
 :::
-:::caution
+
+### Requirements
+
+This stepper needs other steppers to work correctly. You can find these steppers in the table below.
+
+| Require Workflow Step                      | Description                                     |
+|--------------------------------------------|-------------------------------------------------|
+| **Git Clone**  | The repository that needs to be built must be fetched from the branch. **Xcodebuild for Devices** should use after this step. |
+| **Cocoapods Install**  | This step installs all pod dependencies of project. **Xcodebuild for Devices** should use after this step. If you use SPM(Swift Package Manager, it is not necessary to use.) |
+| **Xcode Select**  | This step select the Xcode version to build. **Xcodebuild for Devices** should use after this step. |
+
+:::warning
 This step should always follow steps that may affect Archive and Export, such as Xcode Select and Cocoapods.
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2580-xcodebuild_order.png' />
 :::
