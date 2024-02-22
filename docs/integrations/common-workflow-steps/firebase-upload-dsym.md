@@ -2,14 +2,18 @@
 title: Firebase Upload dSYM 
 metaTitle: Firebase Upload dSYM
 metaDescription: Firebase Upload dSYM
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-## Firebase Upload dSYM
+# Firebase Upload dSYM
 
-This step allows to to upload your debug symbols to Firebase Crashlytics. This step should follow **Xcodebuild for Devices** step.
+This step allows to to upload your debug symbols to Firebase Crashlytics. 
+
+### Prerequisites
+
+This step should follow **Xcodebuild for Devices** step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_step_order.png' />
 
