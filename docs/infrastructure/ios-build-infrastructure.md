@@ -69,8 +69,8 @@ Here are some of the most important packages installed in our iOS build agents u
 | ImageMagick        | 7.1.0            | 7.1.0           | 7.1.0      |
 | Maven              | 3.8.6            | 3.9.4           | 3.8.4      |
 | N                  | 9.0.1            | 9.0.1           | 8.0.2      |
-| Node               | 16.18.1          | 16.20.2         | 16.14.0    |
-| Npm                | 8.19.2           | 8.19.4          | 8.3.1      |
+| Node               | 18.19.1          | 18.19.1         | 16.14.0    |
+| Npm                | 10.2.4           | 10.2.4          | 8.3.1      |
 | Perl               | 5.30.3           | 5.30.3          | 5.30.3     |
 | Pod                | 1.11.3           | 1.12.1          | 1.11.2     |
 | Pip                | 22.2.2           | 22.3.1          | 21.3.1     |
