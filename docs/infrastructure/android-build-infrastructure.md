@@ -111,7 +111,7 @@ Here are some most important packages installed in our Linux and macOS images us
 | Gzip                | 1.10.4          | 403.100.6       | 353.100.22        |
 | Java                | 11.0.12         | 11.0.14         | 11.0.14           |
 | Maven               | 3.8.6           | 3.9.4           | 3.8.6             |
-| Node JS             | 16.18.1         | 18.19.0         | 18.19.0           |
+| Node JS             | 16.18.1         | 18.19.1         | 18.19.1           |
 | OpenSSL             | 1.1.1           | 3.3.6           | 2.8.3             |
 | Perl                | 5.32.1          | 5.30.3          | 5.30.3            |
 | Python              | 3.9.2           | 3.10.9          | 3.10.8            |
