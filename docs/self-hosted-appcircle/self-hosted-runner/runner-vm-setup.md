@@ -525,7 +525,12 @@ tart clone vm01 vm02
 Start runner2 image for configuration.
 
 ```bash
-screen -d -m tart run vm02 --no-graphics
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro
 ```
 
 SSH login into running macOS VM.
@@ -576,16 +581,24 @@ Download the script into runner folders you created and make script executable.
 For "runner1" use below commands.
 
 ```bash
-curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run.sh
+curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.3.sh && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
 For "runner2" use below commands.
 
 ```bash
-curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run.sh
+curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.3.sh && \
 chmod u+x $HOME/runner2/run.sh
 ```
+
+:::caution
+With new versions of the macOS VM image, we're also constantly updating the `run.sh` tool for fixes and improvements.
+
+So, there might be a new version of `run.sh` that's compatible with the latest macOS VM image.
+
+The above commands should be executed on every macOS VM image upgrade in order to get the latest `run.sh` version that's compatible with the latest macOS VM image.
+:::
 
 ### Start VM
 
@@ -698,16 +711,46 @@ Below are the ones that frequently occur, but not limited to them.
 
 Steps, that we need to take, are technically similar as in [Create Base Images](#create-base-images) section. So, a conceptual overview of the steps will be sufficient.
 
-1. Stop all online runners as explained in [Stop VM](#stop-vm) section.
-2. Run `vm01` base image. `screen -d -m tart run vm01 --no-graphics`
-3. SSH into `vm01`. `ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)`
-4. Make your modifications, configurations or updates in macOS.
-5. Shutdown `vm01`
-6. Run `vm02` base image. `screen -d -m tart run vm02 --no-graphics`
-7. SSH into `vm02`. `ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm02)`
-8. Make your modifications, configurations or updates in macOS.
-9. Shutdown `vm02`.
-10. Start offline runners as explained in [Start VM](#start-vm) section.
+- Stop all online runners as explained in [Stop VM](#stop-vm) section.
+- Run `vm01` base image.
+
+```bash
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro
+```
+
+- SSH into `vm01`.
+
+```bash  
+ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
+```
+
+- Make your modifications, configurations or updates in macOS.
+- Shutdown `vm01`.
+- Run `vm02` base image.
+
+```bash
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro
+```
+
+- SSH into `vm02`.
+
+```bash
+ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm02)
+```
+
+- Make your modifications, configurations or updates in macOS.
+- Shutdown `vm02`.
+- Start offline runners as explained in [Start VM](#start-vm) section.
 
 ## Troubleshooting
 
