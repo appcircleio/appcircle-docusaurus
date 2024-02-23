@@ -286,10 +286,10 @@ ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 ---
 
 :::info
-While trying to connect VM you can get an SSH connection as below.
+While trying to connect VM you can get an SSH connection error as below.
 
 ```text
-ssh: Could not resolve hostname no: nodename nor servname provided, or not known
+ssh: Could not resolve hostname err: nodename nor servname provided, or not known
 ```
 
 Wait a couple of seconds and let the VM start its internal services. You can try the same command until you connect successfully.
