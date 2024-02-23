@@ -265,7 +265,12 @@ In docker terminology, `vm01` and `vm02` will be our docker images. We will conf
 Start runner1 VM image for configuration.
 
 ```bash
-screen -d -m tart run vm01 --no-graphics
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro
 ```
 
 SSH login into running macOS VM.
@@ -279,6 +284,47 @@ ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 **Note:** You should use "cicd" as SSH login password.
 
 ---
+
+:::info
+While trying to connect VM you can get an SSH connection as below.
+
+```text
+ssh: Could not resolve hostname no: nodename nor servname provided, or not known
+```
+
+Wait a couple of seconds and let the VM start its internal services. You can try the same command until you connect successfully.
+:::
+
+:::info
+Since the VM IPs are rotating, it's possible to see the below error when you try to connect to the VM in the long term.
+
+```text
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:f6CfksJoc0/ZIqItwH5IJDN87SP6RiOo9q1irzDxawU.
+Please contact your system administrator.
+Add correct host key in /Users/appcircle/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /Users/appcircle/.ssh/known_hosts:5
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+UpdateHostkeys is disabled because the host key is not trusted.
+appcircle@192.168.64.2: Permission denied (publickey,password,keyboard-interactive).
+```
+
+The above example error message indicates that there is an entry for the server `192.168.64.2` located on line 5 of the `known_hosts` file that needs to be removed.
+
+You can delete the old host key entry with the following command and then try re-connecting.
+
+```bash
+ssh-keygen -R $(tart ip vm01)
+```
+
+:::
 
 In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
 
@@ -422,6 +468,18 @@ Edit `appsettings.json` with your favorite editor. (nano, vi etc.)
 
 Runner will register to server defined in `ASPNETCORE_BASE_API_URL` and take build jobs from there.
 
+:::tip
+
+The latest macOS VM image,`macOS_240221` or later, has the ASPNETCORE_NOSHUTDOWN setting as `false` by default and has no pre-defined ASPNETCORE_BASE_API_URL setting in the `appsettings.json` file.
+
+So, only modifying the ASPNETCORE_BASE_API_URL value with the following command should be enough for the self-hosted runner configuration.
+
+```bash
+echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.test-appcircle.tool.zb/build/v1"' appsettings.json)" > appsettings.json
+```
+
+:::
+
 Create runner access token from appcircle server and register runner to server. See details in [here](../self-hosted-runner/installation.md#2-register).
 
 For example,
@@ -435,7 +493,7 @@ It won't print anything to CLI on success. You can also check its exit value wit
 Finally run below command to edit self-hosted runner configuration for pre-installed platforms.
 
 ```bash
-echo $(jq '.OsValues = ["ios","android"]' selfHosted.json) > selfHosted.json
+echo "$(jq '.OsValues = ["ios","android"]' selfHosted.json)" > selfHosted.json
 ```
 
 Start runner service.
