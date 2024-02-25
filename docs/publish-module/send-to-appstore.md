@@ -6,7 +6,61 @@ sidebar_position: 1
 ---
 import Screenshot from '@site/src/components/Screenshot';
 
+# Send Apps to App Store and TestFlight
+
 Appcircle supports sending IPA binaries to the App Store and TestFlight through the Publish module.
+
+### Prerequisites
+
+Before uploading a binary to the store, please make sure that an application listing is created in App Store Connect. Otherwise, the store upload process will fail.
+
+You also need to provide either:
+
+- An App Store Connect API Key as a P8 file along with the key ID and the issuer ID. This is the recommended authentication method. Please refer to the following document for more information about the App Store Connect API key:\
+  [https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api)
+
+or
+
+- An Apple Developer ID with an app-specific password. Please refer to the following document for more information about the app-specific passwords: [https://support.apple.com/en-us/HT204397](https://support.apple.com/en-us/HT204397)
+
+### Adding an App Store Connect API Key (Recommended Method)
+
+To send apps from Appcircle, you need to provide an App Store Connect API key. To add a key, go to [My Organization](../account/my-organization.md) Integrations tab and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "App Store Connect API Keys" item under the Connections section. The add key screen will be displayed.
+
+[Create an API key in App Store Connect](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
+
+With the next option, enter the key ID and the issuer ID that can be obtained from the [keys section in App Store Connect](https://appstoreconnect.apple.com/access/api).
+
+Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (93).png' />
+
+### Deploying the Binary from the Testing Distribution
+
+You can deploy the binaries to the Publish module from the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for App Store (signed with an App Store Distribution certificate).
+
+Select a binary in the list and press "Send to Publish" from the three dot. The bundle ID of the binary will be matched automatically if there is an existing store submission profile. If not, you have to create a new publish profile.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2821-distribution-publish-ios.png' />
+
+### Publish Profile Details
+
+Once deployed, the binary will be available in the related publish profile. Note that the profile name and icon are automatically fetched from the latest binary.
+
+There are six actions available for each version in the version list.
+
+The `Details` button lets you start the workflow, while `App Information` gives you key details about the app.
+`History` shows logs of past actions. You can use `Mark as RC` to indicate the application as a release candidate.
+`Download` allows you to get the app version easily.
+Lastly, `Delete` helps you remove the app version easily.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2821-ios-publish-actions.png' />
+
+
+
+
+
+
 
 ### Send Apps to App Store
 
