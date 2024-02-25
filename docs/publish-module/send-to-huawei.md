@@ -6,8 +6,64 @@ sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import ContentRef from '@site/src/components/ContentRef';
+
+# Send Apps to Huawei AppGallery
 
 Appcircle supports sending APK and AAB binaries to Huawei AppGallery through the Publish module.
+
+### Prerequisites
+
+Before uploading a binary to the store, please make sure that an application listing is created in Huawei AppGallery Connect and the initial binary is manually uploaded with the same keystore and the application ID (package name). Otherwise, the store upload process will fail.
+
+You also need to have an AppGallery Connect API and its key as a JSON file. Please refer to the following document for more information on creating your API key.
+
+<ContentRef url="/account/adding-huawei-api-key">
+  Adding Huawei AppGallery API Key
+</ContentRef>
+
+### Adding a Huawei AppGallery API Key
+
+To send apps from Appcircle, you need to provide a Huawei AppGallery Developer API key. To add a key, go to [My Organization](../account/my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Huawei AppGallery Developer API Keys" item under the Connections section. The add key screen will be displayed.
+
+[Create a key in JSON format in the AppGallery Connect](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agcapi-getstarted-0000001111845114) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
+
+<ContentRef url="/account/adding-huawei-api-key">
+  Adding Huawei AppGallery API Key
+</ContentRef>
+
+Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-1addkey.png' />
+
+### Uploading your Keystore file
+
+Your upload keystore file should also be uploaded to Huawei AppGallery. Follow the [AppGallery documentation](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-appsigning-newapp-0000001052418290#EN-US_TOPIC_0000001052418290__section1959661616436) to convert your keystore file and upload it to `App Signing` section on AppGallery.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-8signing.png' />
+
+### Deploying the Binary from the Testing Distribution
+
+You can deploy the binaries to the Publish module from the [Testing Distribution](../distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Huawei AppGallery. (e.g. in [release mode](../build/building-android-applications/) and [signed](../signing-identities/android-keystores.md) properly if APK - You can manage this in the [build configuration](../build/build-profile-configuration.md) for all types of development frameworks.).;
+
+Select a binary in the list and press "Send to Publish" from the three dot. The package name of the binary will be matched automatically if there is an existing publish profile. If not, you have to create a new publish profile.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2821-distribution-publish-1.png' />
+
+### Publish Profile Details
+
+Once deployed, the binary will be available in the related publish profile. Note that the profile name and icon are automatically fetched from the latest binary.
+
+There are six actions available for each version in the version list.
+
+The `Details` button lets you start the workflow, while `App Information` gives you key details about the app.
+`History` shows logs of past actions. You can use `Mark as RC` to indicate the application as a release candidate.
+`Download` allows you to get the app version easily.
+Lastly, `Delete` helps you remove the app version easily.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2821-android-publish-actions.png' />
+
+### Sending Apps to Huawei AppGallery
 
 To publish Android applications to Huawei AppGallery, click on the **Android Publish** button on the left in the Publish module.
 
