@@ -25,7 +25,7 @@ To run the diagnostic tool and create a diagnostic file to check current system 
 
 You can run the `diagnostic.sh` tool and create the diagnostic files which will help you to track configuration of your server.
 
-When you run the tool, there will be a `diagnostic-${datetime}.tar.gz` file which you can share with us.
+When you run the tool, there will be a `diagnostic-${datetime}.tar.gz` file under the `diagnostic-reports` directory which you can share with us.
 
 The "${datetime}" is a dynamic variable which is the date and time you run the script. Date time format is: `yyyymmddHHMMSS` For example: `diagnostic-20240109064747.tar.gz`
 
@@ -43,6 +43,12 @@ To use the tool, you should go to the `appcircle-server` directory on your Appci
 cd appcircle-server
 ```
 
+:::info
+The tool will store the diagnostic reports under the `./diagnostic-reports` directory by default. We don't recommend you to change the output name or path unless you have a special reason.
+
+When you create a new diagnostic report, the previously created ones also included in the report file. For this reason we also don't recommend deleting the `./diagnostic-reports` directory.
+:::
+
 #### Create a Diagnostic Report
 
 To create a diagnostic report, you can run the diagnostic tool like in the examples below.
@@ -53,7 +59,7 @@ To create a diagnostic report, you can run the diagnostic tool like in the examp
 ./helper-tools/diagnostic.sh
 ```
 
-- Change the output file name to `diagnostic-report-${datetime}.tar.gz`:
+- Not recommended but you can change the output file name to `diagnostic-report-${datetime}.tar.gz`:
 
 ```bash
 ./helper-tools/diagnostic.sh --output "diagnostic-report"
@@ -73,21 +79,22 @@ To create a diagnostic report, you can run the diagnostic tool like in the examp
 
 #### Share the Diagnostic Report
 
-Once you run the the diagnostic tool, the diagnostic reports will be created in the current directory.
+Once you run the the diagnostic tool, the diagnostic report will be created in the `./diagnostic-reports` directory.
 
 - To list diagnostic files with the one, you can list the current directory.
 
 ```bash
-ls -l | grep -i "diagnostic"
+ls -l ./diagnostic-reports
 ```
 
 - As output, you will see some diagnostic reports.
 
 ```bash
 -rw-r--r--   1 appcircle  staff   1755 Jan 23 12:01 diagnostic-20240123120153.tar.gz
+-rw-r--r--   1 appcircle  staff   1755 Jan 25 14:12 diagnostic-20240125141220.tar.gz
 ```
 
-- You can share that diagnostic report with us for analyzing.
+- You can share the latest diagnostic report with us for analyzing.
 
 ### Printing Diagnostic Information to the Terminal
 
