@@ -25,7 +25,7 @@ You can run this diagnostic tool either on an Appcircle runner or on an Appcircl
 
 You can run the `diagnostic.sh` tool and create the diagnostic files which will help you to track configuration of your runner or host machine.
 
-When you run the tool, there will be a `diagnostic-reports` directory and `diagnostic-${datetime}.tar.gz` file which you can share with us.
+When you run the tool, there will be a `diagnostic-${datetime}.tar.gz` file under the `diagnostic-reports` directory which you can share with us.
 
 The `${datetime}` in the file name above is a dynamic variable which is the date and time you run the script. Date time format is: `yyyymmddHHMMSS` For example: `diagnostic-20240109064747.tar.gz`
 
