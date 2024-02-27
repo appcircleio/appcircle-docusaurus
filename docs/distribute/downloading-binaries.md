@@ -27,7 +27,7 @@ The accounts used in the testing portal are completely independent from Appcircl
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/10-14-EnrollLogin.jpg" />
 
-Once logged in, users can now distributions separated by distribution profile and release version. Files can be downloaded with one click.
+Once logged in, users can now see the list of distributions separated by distribution profile and release version. Files can be downloaded with one click.
 
 :::caution
 
