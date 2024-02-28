@@ -119,7 +119,7 @@ You can ignore power failure settings if they are not supported.
 Download macOS VM from Appcircle bucket.
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240221.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240228.tar.gz
 ```
 
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
@@ -129,13 +129,13 @@ If you encounter network interruption, just run the same command again. It shoul
 **Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
 
 ```bash
-md5 macOS_240221.tar.gz
+md5 macOS_240228.tar.gz
 ```
 
 After a couple of minutes later you should see the output below.
 
 ```bash
-MD5 (macOS_240221.tar.gz) = 7be8826831ab61ae7d9a82c30a5cb9c0
+MD5 (macOS_240228.tar.gz) = 4603f89c0623057a58d78ceb04d72185
 ```
 
 ---
@@ -143,13 +143,13 @@ MD5 (macOS_240221.tar.gz) = 7be8826831ab61ae7d9a82c30a5cb9c0
 Create folder for VM.
 
 ```bash
-mkdir -p $HOME/.tart/vms/macOS_240221
+mkdir -p $HOME/.tart/vms/macOS_240228
 ```
 
 Extract archive into VMs folder.
 
 ```bash
-tar -zxf macOS_240221.tar.gz --directory $HOME/.tart/vms/macOS_240221
+tar -zxf macOS_240228.tar.gz --directory $HOME/.tart/vms/macOS_240228
 ```
 
 It may take a little to complete. Be patient and wait return of command.
@@ -157,7 +157,7 @@ It may take a little to complete. Be patient and wait return of command.
 You can track progress of extraction by monitoring VM folder size.
 
 ```bash
-du -sh $HOME/.tart/vms/macOS_240221
+du -sh $HOME/.tart/vms/macOS_240228
 ```
 
 ### Download Xcode Images
@@ -165,7 +165,7 @@ du -sh $HOME/.tart/vms/macOS_240221
 Download Xcode images from the Appcircle bucket. They are disk images for each Xcode version archived in a package.
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240221.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240228.tar.gz
 ```
 
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
@@ -175,13 +175,13 @@ If you encounter network interruption, just run the same command again. It shoul
 **Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
 
 ```bash
-md5 xcodes_240221.tar.gz
+md5 xcodes_240228.tar.gz
 ```
 
 After a couple of minutes later you should see the output below.
 
 ```bash
-MD5 (xcodes_240221.tar.gz) = 09e0baf344c4a4f86fcaaf7e42cc0926
+MD5 (xcodes_240228.tar.gz) = 1a4d662af6dfc58166b090ff5b61cea5
 ```
 
 ---
@@ -195,7 +195,7 @@ mkdir -p $HOME/images
 Extract archive into the folder.
 
 ```bash
-tar -zxf xcodes_240221.tar.gz --directory $HOME/images
+tar -zxf xcodes_240228.tar.gz --directory $HOME/images
 ```
 
 It may take a little to complete. Be patient and wait return of command.
@@ -247,13 +247,13 @@ This approach eliminates the need to redo all the configurations applied to `vm0
 
 ```txt
 Source Name         Size
-local  macOS_240221 167
+local  macOS_240228 167
 ```
 
 Create VM image for runner1.
 
 ```bash
-tart clone macOS_240221 vm01
+tart clone macOS_240228 vm01
 ```
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
@@ -551,7 +551,7 @@ At this stage your VM list returned by `tart list` should be like below.
 
 ```txt
 Source Name         Size
-local  macOS_240221 167
+local  macOS_240228 167
 local  vm01         130
 local  vm02         130
 ```
@@ -624,7 +624,7 @@ We can see running instances on macOS host with `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_240221                              167
+local  macOS_240228                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -655,7 +655,7 @@ First you need to have to find out online runner's VM name from `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_240221                              167
+local  macOS_240228                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -688,7 +688,7 @@ After shutdown, you won't see anymore instance from `vm01` on `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_240221                              167
+local  macOS_240228                              167
 local  vm01                                      130
 local  vm02                                      130
 local  vm02-9f1fc62a-f43c-40f3-98d0-523ed9a67042 130
