@@ -119,7 +119,7 @@ You can ignore power failure settings if they are not supported.
 Download macOS VM from Appcircle bucket.
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_231218.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240228.tar.gz
 ```
 
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
@@ -129,13 +129,13 @@ If you encounter network interruption, just run the same command again. It shoul
 **Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
 
 ```bash
-md5 macOS_231218.tar.gz
+md5 macOS_240228.tar.gz
 ```
 
 After a couple of minutes later you should see the output below.
 
 ```bash
-MD5 (macOS_231218.tar.gz) = 25fb1066b4bcaa77bdeefc7b3ee97648
+MD5 (macOS_240228.tar.gz) = 4603f89c0623057a58d78ceb04d72185
 ```
 
 ---
@@ -143,13 +143,13 @@ MD5 (macOS_231218.tar.gz) = 25fb1066b4bcaa77bdeefc7b3ee97648
 Create folder for VM.
 
 ```bash
-mkdir -p $HOME/.tart/vms/macOS_231218
+mkdir -p $HOME/.tart/vms/macOS_240228
 ```
 
 Extract archive into VMs folder.
 
 ```bash
-tar -zxf macOS_231218.tar.gz --directory $HOME/.tart/vms/macOS_231218
+tar -zxf macOS_240228.tar.gz --directory $HOME/.tart/vms/macOS_240228
 ```
 
 It may take a little to complete. Be patient and wait return of command.
@@ -157,7 +157,7 @@ It may take a little to complete. Be patient and wait return of command.
 You can track progress of extraction by monitoring VM folder size.
 
 ```bash
-du -sh $HOME/.tart/vms/macOS_231218
+du -sh $HOME/.tart/vms/macOS_240228
 ```
 
 ### Download Xcode Images
@@ -165,7 +165,7 @@ du -sh $HOME/.tart/vms/macOS_231218
 Download Xcode images from the Appcircle bucket. They are disk images for each Xcode version archived in a package.
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_231218.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240228.tar.gz
 ```
 
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
@@ -175,13 +175,13 @@ If you encounter network interruption, just run the same command again. It shoul
 **Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
 
 ```bash
-md5 xcodes_231218.tar.gz
+md5 xcodes_240228.tar.gz
 ```
 
 After a couple of minutes later you should see the output below.
 
 ```bash
-MD5 (xcodes_231218.tar.gz) = 6dd27301b0124ac1e49981c077c69ee1
+MD5 (xcodes_240228.tar.gz) = 1a4d662af6dfc58166b090ff5b61cea5
 ```
 
 ---
@@ -195,15 +195,16 @@ mkdir -p $HOME/images
 Extract archive into the folder.
 
 ```bash
-tar -zxf xcodes_231218.tar.gz --directory $HOME/images
+tar -zxf xcodes_240228.tar.gz --directory $HOME/images
 ```
 
 It may take a little to complete. Be patient and wait return of command.
 
 ---
 
-**Note:** This macOS VM image contains the same tools as in the "Default M1 Pool" in Appcircle Cloud. The only difference is the bundled Xcode versions. It comes with the Xcode versions below:
+**Note:** This macOS VM image contains the same tools as in the "Default M1 Pool" in Appcircle Cloud. It's the same image that's used for the Sonoma (`14.1`) stack and comes with the Xcode versions below:
 
+- `15.3.x`
 - `15.2.x`
 - `15.1.x`
 - `15.0.x`
@@ -217,7 +218,11 @@ You can find more information about the build infrastructure in the documents be
 - [Android Build Infrastructure](../../infrastructure/android-build-infrastructure.md)
 
 :::caution
-We're bumping the VM macOS version according to Xcode requirements. So the latest VM image,`macOS_230921` or later, includes Ventura `13.5.2` pre-installed and needs Ventura host to run. It doesn't support running on older hosts like Monterey, Big Sur, etc.
+We're constantly bumping the VM macOS version according to Xcode requirements.
+
+So the latest VM image,`macOS_230921` or later, includes Ventura `13.5.2` or Sonoma `14.1` pre-installed and needs at least a Ventura host to run.
+
+It doesn't support running on older hosts like Monterey, Big Sur, etc.
 
 If you don't need the latest Xcode and you want to run an older version of the macOS VM image that supports running on a Monterey host, contact us through our support channels.
 :::
@@ -242,13 +247,13 @@ This approach eliminates the need to redo all the configurations applied to `vm0
 
 ```txt
 Source Name         Size
-local  macOS_231218 167
+local  macOS_240228 167
 ```
 
 Create VM image for runner1.
 
 ```bash
-tart clone macOS_231218 vm01
+tart clone macOS_240228 vm01
 ```
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
@@ -260,7 +265,12 @@ In docker terminology, `vm01` and `vm02` will be our docker images. We will conf
 Start runner1 VM image for configuration.
 
 ```bash
-screen -d -m tart run vm01 --no-graphics
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro
 ```
 
 SSH login into running macOS VM.
@@ -274,6 +284,47 @@ ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 **Note:** You should use "cicd" as SSH login password.
 
 ---
+
+:::info
+While trying to connect VM you can get an SSH connection error as below.
+
+```text
+ssh: Could not resolve hostname err: nodename nor servname provided, or not known
+```
+
+Wait a couple of seconds and let the VM start its internal services. You can try the same command until you connect successfully.
+:::
+
+:::info
+Since the VM IPs are rotating, it's possible to see the below error when you try to connect to the VM in the long term.
+
+```text
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:f6CfksJoc0/ZIqItwH5IJDN87SP6RiOo9q1irzDxawU.
+Please contact your system administrator.
+Add correct host key in /Users/appcircle/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /Users/appcircle/.ssh/known_hosts:5
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+UpdateHostkeys is disabled because the host key is not trusted.
+appcircle@192.168.64.2: Permission denied (publickey,password,keyboard-interactive).
+```
+
+The above example error message indicates that there is an entry for the server `192.168.64.2` located on line 5 of the `known_hosts` file that needs to be removed.
+
+You can delete the old host key entry with the following command and then try re-connecting.
+
+```bash
+ssh-keygen -R $(tart ip vm01)
+```
+
+:::
 
 In the macOS VM, `/Volumes/agent-disk/appcircle-runner` is the root folder of runner.
 
@@ -417,6 +468,18 @@ Edit `appsettings.json` with your favorite editor. (nano, vi etc.)
 
 Runner will register to server defined in `ASPNETCORE_BASE_API_URL` and take build jobs from there.
 
+:::tip
+
+The latest macOS VM image,`macOS_240221` or later, has the ASPNETCORE_NOSHUTDOWN setting as `false` by default and has no pre-defined ASPNETCORE_BASE_API_URL setting in the `appsettings.json` file.
+
+So, only modifying the ASPNETCORE_BASE_API_URL value with the following command should be enough for the self-hosted runner configuration.
+
+```bash
+echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.test-appcircle.tool.zb/build/v1"' appsettings.json)" > appsettings.json
+```
+
+:::
+
 Create runner access token from appcircle server and register runner to server. See details in [here](../self-hosted-runner/installation.md#2-register).
 
 For example,
@@ -430,7 +493,7 @@ It won't print anything to CLI on success. You can also check its exit value wit
 Finally run below command to edit self-hosted runner configuration for pre-installed platforms.
 
 ```bash
-echo $(jq '.OsValues = ["ios","android"]' selfHosted.json) > selfHosted.json
+echo "$(jq '.OsValues = ["ios","android"]' selfHosted.json)" > selfHosted.json
 ```
 
 Start runner service.
@@ -462,7 +525,12 @@ tart clone vm01 vm02
 Start runner2 image for configuration.
 
 ```bash
-screen -d -m tart run vm02 --no-graphics
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro
 ```
 
 SSH login into running macOS VM.
@@ -483,7 +551,7 @@ At this stage your VM list returned by `tart list` should be like below.
 
 ```txt
 Source Name         Size
-local  macOS_231218 167
+local  macOS_240228 167
 local  vm01         130
 local  vm02         130
 ```
@@ -513,16 +581,24 @@ Download the script into runner folders you created and make script executable.
 For "runner1" use below commands.
 
 ```bash
-curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run.sh
+curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.3.sh && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
 For "runner2" use below commands.
 
 ```bash
-curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run.sh
+curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.3.sh && \
 chmod u+x $HOME/runner2/run.sh
 ```
+
+:::caution
+With new versions of the macOS VM image, we're also constantly updating the `run.sh` tool for fixes and improvements.
+
+So, there might be a new version of `run.sh` that's compatible with the latest macOS VM image.
+
+The above commands should be executed on every macOS VM image upgrade in order to get the latest `run.sh` version that's compatible with the latest macOS VM image.
+:::
 
 ### Start VM
 
@@ -548,7 +624,7 @@ We can see running instances on macOS host with `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_231218                              167
+local  macOS_240228                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -579,7 +655,7 @@ First you need to have to find out online runner's VM name from `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_231218                              167
+local  macOS_240228                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -612,7 +688,7 @@ After shutdown, you won't see anymore instance from `vm01` on `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_231218                              167
+local  macOS_240228                              167
 local  vm01                                      130
 local  vm02                                      130
 local  vm02-9f1fc62a-f43c-40f3-98d0-523ed9a67042 130
@@ -635,16 +711,46 @@ Below are the ones that frequently occur, but not limited to them.
 
 Steps, that we need to take, are technically similar as in [Create Base Images](#create-base-images) section. So, a conceptual overview of the steps will be sufficient.
 
-1. Stop all online runners as explained in [Stop VM](#stop-vm) section.
-2. Run `vm01` base image. `screen -d -m tart run vm01 --no-graphics`
-3. SSH into `vm01`. `ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)`
-4. Make your modifications, configurations or updates in macOS.
-5. Shutdown `vm01`
-6. Run `vm02` base image. `screen -d -m tart run vm02 --no-graphics`
-7. SSH into `vm02`. `ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm02)`
-8. Make your modifications, configurations or updates in macOS.
-9. Shutdown `vm02`.
-10. Start offline runners as explained in [Start VM](#start-vm) section.
+- Stop all online runners as explained in [Stop VM](#stop-vm) section.
+- Run `vm01` base image.
+
+```bash
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro
+```
+
+- SSH into `vm01`.
+
+```bash  
+ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
+```
+
+- Make your modifications, configurations or updates in macOS.
+- Shutdown `vm01`.
+- Run `vm02` base image.
+
+```bash
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro
+```
+
+- SSH into `vm02`.
+
+```bash
+ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm02)
+```
+
+- Make your modifications, configurations or updates in macOS.
+- Shutdown `vm02`.
+- Start offline runners as explained in [Start VM](#start-vm) section.
 
 ## Troubleshooting
 
