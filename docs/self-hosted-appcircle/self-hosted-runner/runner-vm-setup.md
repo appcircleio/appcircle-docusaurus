@@ -470,7 +470,7 @@ Runner will register to server defined in `ASPNETCORE_BASE_API_URL` and take bui
 
 :::tip
 
-The latest macOS VM image,`macOS_240228` or later, has the ASPNETCORE_NOSHUTDOWN setting as `false` by default and has no pre-defined ASPNETCORE_BASE_API_URL setting in the `appsettings.json` file.
+The latest macOS VM image,`macOS_240221` or later, has the ASPNETCORE_NOSHUTDOWN setting as `false` by default and has no pre-defined ASPNETCORE_BASE_API_URL setting in the `appsettings.json` file.
 
 So, only modifying the ASPNETCORE_BASE_API_URL value with the following command should be enough for the self-hosted runner configuration.
 
