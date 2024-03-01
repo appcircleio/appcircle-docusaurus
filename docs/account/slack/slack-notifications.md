@@ -56,7 +56,7 @@ Keep scrolling down on Appcircle to see the full list of events.
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via Slack. 
-To enable this feature, ensure you include the "Publish Release Notes" step into your workflow.
+To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/integrations/managing-release-notes/) step in your workflow.
 
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::
@@ -64,8 +64,8 @@ Additionally, note that you can access download links for the release notes for 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail.png' />
 
 :::info
-After completing the specified action in Appcircle, you have the option to share test results via Slack.
-To enable this feature, ensure you include the "Test Reports" step into your workflow.
+After completing the specified action in Appcircle, you have the option to share the test results via Slack.
+To enable this feature, ensure you include the [**Test Reports**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report) step in your workflow.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail.png' />
