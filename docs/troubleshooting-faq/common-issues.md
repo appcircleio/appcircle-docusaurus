@@ -325,7 +325,7 @@ Every Android project has a `gradlew` file in the main repository directory. If 
 
 ### How can I change the JDK version for autofill?
 
-Appcircle currently has OpenJDK 11 (default), OpenJDK 8, and OpenJDK 17. If you want to use a different Java version for your build pipeline, you can follow the steps [here](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version) and add a custom script to your workflow.
+Appcircle currently has OpenJDK 11 (default), OpenJDK 8, OpenJDK 17 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can follow the steps [here](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version) and add a custom script to your workflow.
 
 But unfortunately, you cannot use custom scripts for autofill operations, which make it easy to fill in configuration details while adding a new build profile.
 
@@ -338,7 +338,7 @@ You can add the `org.gradle.java.home` entry to the `gradle.properties` file in 
 For example, the below entry can be used to change the default Java version to 17 for the "Default M1 Pool".
 
 ```properties
-org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu
+org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu
 ```
 
 You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure.md#java-version) Java section.
@@ -351,7 +351,7 @@ For example, you can take the following steps to change the default Java version
 
 1. Create a variable group that has a variable with the properties below.
     1. The key should be `JAVA_HOME`.
-    2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`.
+    2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu`.
 2. Go to the configuration section of the build profile that you want to autofill.
 3. Go to the 'Env. Variables' tab in configuration.
     1. You should see the variable group that you created in the list.
@@ -465,7 +465,7 @@ lib/src/core/dependency/myservice.dart:12:8: Error: Error when reading ‘lib/sr
 
 This error usually indicates that you didn't name your files according to Dart convention. Linux file system is case sensitive whereas Windows and macOS are not. So if your repository has `customerrepository.dart` but you're importing as `CustomerRepository.dart`, it will not work on Linux machines. To prevent this error, please rename your files and make them all lower case. Please read the following documentation related to styling and naming your files.
 
-https://dart.dev/guides/language/effective-dart/style#do-name-libraries-and-source-files-using-lowercase_with_underscores
+<ContentRef url="https://dart.dev/guides/language/effective-dart/style#do-name-libraries-and-source-files-using-lowercase_with_underscores">Effective Dart: Style | name packages, directories, and source files</ContentRef>
 
 ### Firebase Version
 Your build may fail with following error

@@ -79,7 +79,7 @@ From now on, you will follow same installation steps seen below as other environ
 
 #### macOS VM
 
-Appcircle provides ready-to-use macOS VM image especially for enterprise installations. It can be run on macOS Monterey or Ventura `arm64` host.
+Appcircle provides ready-to-use macOS VM image especially for enterprise installations. It can be run on macOS Ventura or Sonoma `arm64` host.
 
 See details in [here](./runner-vm-setup.md).
 
@@ -97,13 +97,13 @@ Download the latest self-hosted runner package.
   <TabItem value="osx-arm64" label="macOS arm64" default>
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.4.5.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.5.0.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.4.5.zip
+unzip -o -u appcircle-runner-osx-arm64-1.5.0.zip
 ```
 
   </TabItem>
@@ -111,13 +111,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.4.5.zip
   <TabItem value="osx-x64" label="macOS x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.4.5.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.5.0.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-x64-1.4.5.zip
+unzip -o -u appcircle-runner-osx-x64-1.5.0.zip
 ```
 
   </TabItem>
@@ -125,13 +125,13 @@ unzip -o -u appcircle-runner-osx-x64-1.4.5.zip
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.4.5.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.5.0.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-linux-x64-1.4.5.zip
+unzip -o -u appcircle-runner-linux-x64-1.5.0.zip
 ```
 
   </TabItem>
