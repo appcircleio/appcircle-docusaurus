@@ -35,7 +35,7 @@ Pleas be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for
 
 :::info
 
-If you want to manage user groups within your SSO provider, you should set ***CLAIM NAME (OPENID) / ATTRIBUTE NAME (SAML)*** field.
+If you want to manage user groups within your SSO provider, you should set **_CLAIM NAME (OPENID) / ATTRIBUTE NAME (SAML)_** field.
 
 :::
 
@@ -50,6 +50,7 @@ If you want to manage user groups within your SSO provider, you should set ***CL
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 
 ## Okta App Integration
+
 - Login to your [Okta](https://www.okta.com/) account and navigate to Applications and then click **Create App Integration**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/oktacreateapp.png' />
@@ -78,7 +79,7 @@ If you want to manage user groups within your SSO provider, you should set ***CL
 
 ## Okta Managing User Groups
 
-- Login to your [Okta](https://www.okta.com/) account and navigate to Directory and then click ***Groups***
+- Login to your [Okta](https://www.okta.com/) account and navigate to Directory and then click **_Groups_**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-1.png' />
 
@@ -90,7 +91,7 @@ If you want to manage user groups within your SSO provider, you should set ***CL
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-3-new.png' />
 
-- Navigate to Applications tab and assign your application with "Assign application" button
+- Navigate to Applications tab and assign the recently created user group(s) with "Assign application" button
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-4.png' />
 
@@ -98,12 +99,12 @@ If you want to manage user groups within your SSO provider, you should set ***CL
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-5.png' />
 
-- Navigate "General" tab and edit ***SAML Settings***
+- Navigate "General" tab and edit **_SAML Settings_**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-6.png' />
 
 - In Configure SAML step, you should set Group Attribute Statements
-- Name field should be matched with the ***CLAIM NAME (OPENID) / ATTRIBUTE NAME (SAML)*** field set in Appcircle. Name format should be `Basic`. 
+- Name field should be matched with the **_CLAIM NAME (OPENID) / ATTRIBUTE NAME (SAML)_** field set in Appcircle SSO integration page. Name format should be `Basic`.
 - If you want to get all the groups that you created you should set filter section as `Matches regex` and `.*`
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-7.png' />
