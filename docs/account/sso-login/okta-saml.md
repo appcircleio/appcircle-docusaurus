@@ -19,7 +19,7 @@ Only Enterprise accounts support SSO.
 
 :::caution
 
-Pleas be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise Store. They must be configured seprately.
+Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise Store. They must be configured separately.
 
 :::
 
@@ -42,7 +42,6 @@ Pleas be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for
 - This screen will auto-generate an URL for the Enterprise Store and Distribute
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
-
 
 - Login to your [Okta](https://www.okta.com/) account and navigate to Applications and then click **Create App Integration**.
 
