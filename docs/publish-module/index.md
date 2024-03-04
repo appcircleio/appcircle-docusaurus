@@ -8,8 +8,8 @@ sidebar_position: 1
 import Screenshot from '@site/src/components/Screenshot';
 
 The Publish module will enable your applications to be published in the App Store, Google Play, and Huawei AppGallery stores. You can also submit your mobile applications to TestFlight.
-While publishing your mobile application to the stores, you can use predefined flows and customize according to your specific publishing requirements.
-In addition to that you can add new versions and publish your application to the stores without using the Build module.  
+While publishing your mobile application to the stores, you can use predefined flows and customize them according to your specific publishing requirements.
+In addition to that, you can add new versions and publish your application to the stores without using the Build module.  
 
 
 Click on the **Publish** button on the left menu bar to go to the Publish module.
