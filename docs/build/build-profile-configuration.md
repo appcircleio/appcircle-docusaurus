@@ -102,7 +102,7 @@ You can set custom rules to manage the versioning of your app. You can increase 
 
 ### Workflows and Triggers
 
-For advanced configuration, you can utilize [workflows](../workflows/why-to-use-workflows.md) and for automatic builds, you can utilize [triggers](build-manually-or-with-triggers.md#automatic-build).
+For advanced configuration, you can utilize [workflows](../workflows/index.md) and for automatic builds, you can utilize [triggers](build-manually-or-with-triggers.md#automatic-build).
 
 These options are available at the profile level in the profile context menu.
 
