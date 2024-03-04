@@ -12,6 +12,51 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.13.0 - 2024-03-04 - Improvements for Publish Module and Self-hosted Runner, Xcode 15.3
+
+### 🆕 New Feature
+
+- The new "App Information" tab has been added into Publish Detail Page for the new "App Information from App Store" step. <CloudBadge/> <SelfHostedBadge/>
+- Within the new "App Information" section, users can now find the Publish icon displayed for both TestFlight and App Store, offering convenient access to essential information regarding the app's publication status across these platforms. <CloudBadge/> <SelfHostedBadge/>
+- Pool selection feature has been added in the Publish Module setting section. <CloudBadge/> <SelfHostedBadge/>
+- In the Publish Module, users now have the capability to upload YAML files for their flows, enabling easier management and customization. Additionally, they can download their existing flows for offline reference or modification. <CloudBadge/> <SelfHostedBadge/>
+- Within the Publish Module, customers now have the capability to designate their desired app version as a Release Candidate, streamlining the process of identifying and managing versions prior to official release. <CloudBadge/> <SelfHostedBadge/>
+- The "Default M1 Pool" and [Self-hosted runners](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/runner-vm-setup/) have been updated to include the latest Xcode 15.3 release. Please note that Xcode 15.3 is currently a release candidate. We strongly advise users to thoroughly test their workflows to ensure compatibility and stability. <CloudBadge/> <SelfHostedBadge/>
+- The "Default M1 Pool" has been transitioned to [macOS Sonoma](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/installation/#macos-vm), now featuring both the latest Xcode 15.2 and Xcode 15.3 (beta-3) updates. Given that Xcode 15.3 is currently in beta, we strongly recommend extensive testing of your workflows to ensure compatibility and reliability. <CloudBadge/> <SelfHostedBadge/>
+- The "Default M1 Pool" and the Self-hosted runner environment now feature the latest [JDK 21](https://docs.appcircle.io/troubleshooting-faq/common-issues#how-can-i-change-the-jdk-version-for-autofill), along with patch version upgrades for JDK 8, 11, and 17, ensuring compatibility and providing users with access to the most up-to-date Java development environment. <CloudBadge/> <SelfHostedBadge/>
+
+
+### :muscle: Improvement
+
+- Certain email templates have been upgraded to incorporate icons in build notifications, enhancing visual clarity and user experience. <CloudBadge/> <SelfHostedBadge/>
+- Self-hosted installations now have the ability to customize the "distribution not found" logo by specifying a custom SVG logo path within the tester web container. <SelfHostedBadge/>
+- A scheduled task has been implemented to enhance performance by optimizing the cleaning process of outdated information-level job and job logs records. <CloudBadge/> <SelfHostedBadge/>
+- The login, registration, forgot password, and single sign-on (SSO) login pages have all been updated with a fresh new user interface. <CloudBadge/> <SelfHostedBadge/>
+- Registration now restricts the use of common and disposable email domains for user sign-up. <CloudBadge/> <SelfHostedBadge/>
+- Social login functionality is deprecated. Users attempting to log in via social platforms will now be redirected to the registration page for initial setup. However, those who have previously utilized social login can still access this feature without interruption. <CloudBadge/> <SelfHostedBadge/>
+- After logging into the application, users now have the ability to provide onboarding information. <CloudBadge/> <SelfHostedBadge/>
+- Dynamic title changes based on the selected language have been implemented to elevate the user experience, ensuring that users receive content in their preferred language seamlessly. <CloudBadge/> <SelfHostedBadge/>
+- A new "Provision Profile Type" section has been incorporated into the "App Information" section within the App version, providing users with essential details regarding provisioning profile types associated with the application. <CloudBadge/> <SelfHostedBadge/>
+- A validation has been introduced to the Email field within the Approval via Email section, ensuring that accurate and properly formatted email addresses are provided for submission. <CloudBadge/> <SelfHostedBadge/>
+- In the [Select repository](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-public-repository) section, teams are now listed in alphabetical order, streamlining the process of selecting repositories and enhancing user navigation within the system. <CloudBadge/> <SelfHostedBadge/>
+- A new "Connection Pool" field has been introduced in the LDAP Configuration settings, providing users with the ability to configure connection pooling for LDAP connections. <CloudBadge/> <SelfHostedBadge/>
+- An "Order" field has been incorporated into the LDAP Configuration settings, enabling users to specify the order of LDAP configurations. <CloudBadge/> <SelfHostedBadge/>
+- Sub-organizations can now access and manage the connection settings, allowing for more comprehensive control and customization within the system. <CloudBadge/> <SelfHostedBadge/>
+- A new status has been introduced for builds. Moving forward, the "running" status will also be displayed, providing users with real-time updates on the progress of ongoing builds. <CloudBadge/> <SelfHostedBadge/>
+- During self-hosted runner installation, the system now conducts checks on the host configuration. If nested virtualization is supported, the installation process includes the setup of the [Android emulator](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/configure-runner/android-emulator/), enhancing compatibility and enabling seamless Android development workflows. <SelfHostedBadge/>
+- The "Default M1 Pool" and the self-hosted runner environment have been updated to include Node.js 18 LTS as the default version, providing users with the latest features and improvements in Node.js for [Android](https://docs.appcircle.io/infrastructure/android-build-infrastructure) and [iOS](https://docs.appcircle.io/infrastructure/ios-build-infrastructure). <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixed
+
+- Fixed a bug that prevented the display of the active publish status in the App version table field. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that caused errors when attempting to download app versions during the publish process. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that retained the behavior of the export build artifact step for problematic metadata exports. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug where, if the commit message was empty and there was no custom release note component, the release note wasn't being transmitted to the distribution server. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug in the Appcircle CLI config trust command that caused it to fail to locate the script. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug causing multiple requests to be sent erroneously. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug where validation problems in the form were occurring. <CloudBadge/> <SelfHostedBadge/>
+
+
 ## 3.12.0 - 2024-01-25 - Comprehensive Revision on Permissions, Improvements for Notifications, Migrating to the Publish Module, and Appcircle CLI Updates
 
 ### 🆕 New Feature
