@@ -222,7 +222,7 @@ Invite codes are removed from registration with the platform and everyone can re
 ### :new: New Feature
 
 * Reporting Feature - you can now view the reports for the Preview on Device feature in the dashboard. Other reports will also be released soon.
-* Open Source Workflow Components - All the workflow components in the [Workflow Marketplace](https://docs.appcircle.io/workflows/why-to-use-workflows#workflow-marketplace) are now available at GitHub: [https://github.com/appcircleio/appcircle-workflow-components](https://github.com/appcircleio/appcircle-workflow-components). Feel free to contribute with your own workflow steps. Default workflow definitions are also available on GitHub
+* Open Source Workflow Components - All the workflow components in the [Workflow Marketplace](https://docs.appcircle.io/workflows/index#workflow-marketplace) are now available at GitHub: [https://github.com/appcircleio/appcircle-workflow-components](https://github.com/appcircleio/appcircle-workflow-components). Feel free to contribute with your own workflow steps. Default workflow definitions are also available on GitHub
 * Direct Documentation Access - The fields in the workflow and the build configuration screens are now linked with the documentation. You can directly view the related help document by clicking on the info button next to the specific fields.
 
 ### :muscle: Improvement
@@ -243,7 +243,7 @@ Invite codes are removed from registration with the platform and everyone can re
 ### :new: New Feature
 
 * Authentication with an SSH Key - You can now use your private SSH keys to connect your private repositories to Appcircle. Appcircle will use your SSH key to create a secure connection to your Git repository. :link: [**Connecting Your Git Repository**](https://docs.appcircle.io/build/adding-a-build-profile#connect-your-repository)****
-* Workflow Marketplace - Appcircle's improved workflow window now includes Workflow Marketplace that allows you to add and remove additional workflow steps. We will be improving the marketplace steps constantly and adding new functionalities you can add to your build workflow. :link: [**Workflow Marketplace**](https://docs.appcircle.io/workflows/why-to-use-workflows#workflow-marketplace)****
+* Workflow Marketplace - Appcircle's improved workflow window now includes Workflow Marketplace that allows you to add and remove additional workflow steps. We will be improving the marketplace steps constantly and adding new functionalities you can add to your build workflow. :link: [**Workflow Marketplace**](https://docs.appcircle.io/workflows/index#workflow-marketplace)****
 
 ## v0.3.26 - 2020-04-26
 
@@ -253,7 +253,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :muscle: Improvement
 
-* New Workflow Marketplace Steps - We are improving our Workflow Marketplace with more workflow steps that will help you perform more tasks in less time. Workflow steps are organized better for each platform and new workflow steps like Android Unit Tests and Android Lint are now available. :link: [**Workflow Marketplace**](https://docs.appcircle.io/workflows/why-to-use-workflows#workflow-marketplace)****
+* New Workflow Marketplace Steps - We are improving our Workflow Marketplace with more workflow steps that will help you perform more tasks in less time. Workflow steps are organized better for each platform and new workflow steps like Android Unit Tests and Android Lint are now available. :link: [**Workflow Marketplace**](https://docs.appcircle.io/workflows/index#workflow-marketplace)****
 * Run Unit & UI Tests - You can now run Android unit tests and iOS unit & UI tests with corresponding workflow steps. Test results will be gathered and included in the downloadable artifacts archive.
 
 ## v0.3.25 - 2020-04-17
