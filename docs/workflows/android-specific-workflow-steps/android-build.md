@@ -8,9 +8,11 @@ sidebar_position: 1
 import Screenshot from '@site/src/components/Screenshot';
 
 # Android Build
-The Appcircle Android Build step is designed to build your Android application for the architectures specified in your project. 
+
+The Appcircle Android Build step is designed to build your Android application for the architectures specified in your project.
 
 ### Prerequisites
+
 The workflow steps that need to be executed before running the **Android Build** workflow step, along with their respective reasons, are listed in the table below.
 
 | Prerequisite Workflow Step                      | Description                                     |
@@ -29,7 +31,7 @@ For each component, specific input variables are required for its operation on y
 | `$AC_REPOSITORY_DIR`         | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) step, the variable will be automatically populated. | Required |
 | `$AC_MODULE`                 | This variable specifies the project module to be build. This variable can also be set via the build [Configuration](https://docs.appcircle.io/build/build-profile-configuration/). In Android Studio, you can locate the available modules for your project. For more information, please refer to [this Android document](https://developer.android.com/studio/projects#ApplicationModules). | Required |
 | `$AC_VARIANTS`               | This variable specifies the project variant to be build. This variable can also be set via the build [Configuration](https://docs.appcircle.io/build/build-profile-configuration/). In Android Studio, you can find the available variants for your project. For more information, please refer to this [Android document](https://developer.android.com/build/build-variants). | Required |
-| `$AC_OUTPUT_TYPE`            | This variable specifies the output type for your build file (APK or AAB). This variable can also be set via the build [Configuration] [Configuration](https://docs.appcircle.io/build/build-profile-configuration/). | Required |
+| `$AC_OUTPUT_TYPE`            | This variable specifies the output type for your build file (APK or AAB). This variable can also be set via the build [Configuration](https://docs.appcircle.io/build/build-profile-configuration/). | Required |
 | `$AC_PROJECT_PATH`           | Specifies the project path. If your project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path. | Optional |
 | `$AC_GRADLE_BUILD_EXTRA_ARGS` | Extra arguments were passed to build task. For more information, please refer to [this Gradle document](https://docs.gradle.org/current/userguide/writing_build_scripts.html#sec:extra_properties). | Optional |
 
@@ -57,7 +59,7 @@ The outputs that can result from the operation of this component are listed as f
 
 The resulting files will be either APK or AAB, depending on whether you choose the Android App in the project [Configuration](https://docs.appcircle.io/build/build-profile-configuration).
 
-If your project has [the signing configuration in Gradle](https://developer.android.com/studio/build/gradle-tips#sign-your-app), this step will generate a signed artifact. 
+If your project has [the signing configuration in Gradle](https://developer.android.com/studio/build/gradle-tips#sign-your-app), this step will generate a signed artifact.
 :::caution
 If you do not disable the **Sign Application** step, your artifact will remain unsigned and will be re-signed using the keystore selected in the build configuration.
 :::
