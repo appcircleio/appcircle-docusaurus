@@ -93,6 +93,10 @@ testerWeb:
   logoPng: /home/ubuntu/appcircle-server/spacetech-logo.png
 ```
 
+:::info
+If you declare both of the `logoPng` and `logoSvg` variables in the `global.yaml`, then the `PNG` image will be used as logo in Appcircle testing distribution page.
+:::
+
 After you have done configuring the `global.yaml`, you can `export` the new settings.
 
 ```bash
