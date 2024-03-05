@@ -6,6 +6,7 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import ContentRef from '@site/src/components/ContentRef';
 
 The Publish module will enable your applications to be published in the App Store, Google Play, and Huawei AppGallery stores. You can also submit your mobile applications to TestFlight.
 
@@ -76,6 +77,12 @@ We can access the list of steps that can be used in a publish workflow by clicki
 When a build is completed on the Build module and its artifacts are distributed to the Publish module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
 
 Your configured publish flow will be executed automatically when you enable **Auto Publish**.
+
+You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
+
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner">
+  Self-hosted Runners
+</ContentRef>
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-settings.png' />
 
