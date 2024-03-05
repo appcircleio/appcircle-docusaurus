@@ -20,7 +20,7 @@ You also need to provide either:
 
 or
 
-- An Apple Developer ID with an app-specific password. Please refer to the following document for more information about the [App-Specific Passwords](https://support.apple.com/en-us/HT204397)
+- An Apple Developer ID with an app-specific password. Please refer to the following document for more information about the [App-Specific Passwords](https://support.apple.com/en-us/HT204397).
 
 ### Adding an App Store Connect API Key (Recommended Method)
 
@@ -54,12 +54,6 @@ The `Details` button lets you start the workflow, while `App Information` gives 
 Lastly, `Delete` helps you remove the app version easily.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2821-ios-publish-actions.png' />
-
-
-
-
-
-
 
 ### Send Apps to App Store
 

@@ -39,12 +39,11 @@ Then enter a user-friendly name to identify the key in the lists and press save.
 
 ### Deploying the Binary from the Testing Distribution
 
-You can deploy the binaries to the Publish module from the [Testing Distribution](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](https://docs.appcircle.io/build/building-android-applications/) and [signed](https://docs.appcircle.io/signing-identities/android-keystores) properly if APK - you can manage this in the [build configuration](https://docs.appcircle.io/build/build-profile-configuration) for all types of development frameworks.).;
+You can deploy the binaries to the Publish module from the [Testing Distribution](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](https://docs.appcircle.io/build/building-android-applications/) and [signed](https://docs.appcircle.io/signing-identities/android-keystores) properly if APK - you can manage this in the [build configuration](https://docs.appcircle.io/build/build-profile-configuration) for all types of development frameworks.)
 
 Select a binary in the list and press "Send to Publish" from the three dots. The package name of the binary will be matched automatically if there is an existing publish profile. If not, you have to create a new Publish profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2821-distribution-publish-1.png' />
-
 
 ### Publish Profile Details
 
