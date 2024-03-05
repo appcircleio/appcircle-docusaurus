@@ -19,7 +19,7 @@ Only Enterprise accounts support SSO.
 
 :::caution
 
-Pleas be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise Store. They must be configured seprately.
+Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise Store. They must be configured separately.
 
 :::
 
@@ -49,29 +49,46 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 
+
 ## Okta App Integration
 
 - Login to your [Okta](https://www.okta.com/) account and navigate to Applications and then click **Create App Integration**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/oktacreateapp.png' />
 
-- Select **SAML 2.0** as Sign In Method
+- Select **SAML 2.0** as Sign In Method and hit `Next`.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/oktacreatesaml.png' />
 
-- Pick a name and optional logo for the app.
+- Pick a name and optional logo for the app and hit `Next`.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings1.png' />
 
-- Enter store redirect URL as **Single sign-on URL**
-- Write `https://auth.appcircle.io/auth/realms/store` for the **Audience URI(SP Entity ID)** and select `EmailAddress` for the Name ID format.
+- Copy the `Store Redirect URL` from the Appcircle and paste it to the **Single sign-on URL** section on the OKTA.
+- Write `https://auth.appcircle.io/auth/realms/store` for the **Audience URI(SP Entity ID)**
+
+:::info
+If you are a **self-hosted Appcircle user**, then you should change the domain of the **Audience URI** to your own domain.
+
+You must use the same `auth` domain address with the `store redirect URL`.
+
+For example your store redirect URL is `https://auth.self.spacetech.com/auth/realms/store/broker/identity-spacetech/endpoint`. Then your `Audience URI` must be `https://auth.self.spacetech.com/auth/realms/store`
+:::
+
+:::caution
+Please ensure that there is no **`/`** at thee end of the `Audience URI` which will cause errors.
+:::
+
+- Select `EmailAddress` for the Name ID format.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-oktasamlsettings.png' />
 
 - Click "Show Advance Settings" button
-- Add distribute redirect URL to **Other Requestable SSO URLs** and set index to `1`
+- Copy the `Distribute Redirect URL` from the Appcircle and paste it to the **Other Requestable SSO URLs** section and set index to `1` on the OKTA.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-oktasamlsettings2-new.png' />
+
+- You can hit `Next` and `Finish` the OKTA configuration as your needs.
 
 - Instead of writing all the settings of SAML, you can download the settings file from Okta and upload it. Click the "Copy" button of **Metadata URL** and open it another tab then save the XML file.
 
@@ -118,6 +135,8 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 
 - Check all the settings on this page and confirm that Redirect and SSO URLs are imported correctly. You can check if the X509 Certificate is imported correctly as well. If you want to enter multiple certificates you can separate them by using a comma between them. Please be aware that you need to remove any new lines or file headers from this edit box. This edit box only accepts a long base64 encoded string.
+
+- Hit `Save` button and save the SAML configuration on Appcircle.
 
 - You can enable the SSO Login in Enterprise App Store Settings
 
