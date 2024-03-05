@@ -9,6 +9,18 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # LDAP Login
 
+
+This document serves as a helpful guide for setting up and managing LDAP (Lightweight Directory Access Protocol) login integration within our organizational system.
+Whether you're new to LDAP or looking to streamline your authentication process, this document provides step-by-step instructions to ensure a smooth setup and management experience.
+
+To get started, simply navigate to the Integrations screen within our platform and click on the "Connect" button next to LDAP Login under the Connections section.
+From there, you'll be guided through the process of creating LDAP configurations, including filling in necessary details and enabling Two Factor Authentication (2FA) for added security.
+
+Once set up, LDAP Login allows you to control access to distributed links and adjust distribution authorization through the Distribution Profiles screen.
+This means you can tailor access permissions according to your organization's specific needs.
+
+If you ever need to remove LDAP Login integration, the document also provides clear instructions for doing so, ensuring that your system remains secure and up-to-date.
+
 To start, go to [My Organization](./my-organization.md) > Integrations screen and press the **Connect** button next to LDAP Login under the **Connections** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login1.png' />

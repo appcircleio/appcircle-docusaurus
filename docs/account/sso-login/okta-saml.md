@@ -9,6 +9,15 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Okta SAML
 
+The document provides a comprehensive guide for setting up Single Sign-On (SSO) login functionality within an organization's infrastructure.
+It outlines a series of steps to integrate SSO using Okta as the identity provider, facilitating seamless access to various applications and resources.
+
+Beginning with navigating to the organization's Integrations screen and initiating the connection process, users are guided through the configuration steps, which include creating and setting up a SAML SSO Provider.
+The document also covers the necessary configurations within Okta, such as creating an app integration and configuring SAML 2.0 settings.
+
+Additionally, it offers guidance on advanced settings, including the importation of SAML configurations from Okta.
+Through clear instructions and actionable steps, the document aims to empower users in implementing a robust SSO solution.
+
 Appcircle supports [Okta](https://www.okta.com/) as OpenID or SAML provider.
 
 :::info
