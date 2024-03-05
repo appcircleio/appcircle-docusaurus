@@ -25,17 +25,16 @@ This step depends on the **Xcodebuild for Devices** step to upload the .dSYM fil
 If this step is not used after **Xcodebuild for devices**, the pipeline will error. Because the dSYM file is generated after the project is archived. 
 :::
 
-### GoogleService-InfoPlist Path
+### Input Variables
 
-In this path parameter, the direction of the **GoogleService-InfoPlist** file must be defined. In the project, wherever your GoogleService-InfoPlist file is, type that path directly without any characters at the beginning. Appcircle will automatically fill the beginning of the path with the repository direction. For example, **`GoogleService-InfoPlist`** or **`services/GoogleService-InfoPlist`**. Appcircle will complete 
+You can find all the parameters required for this step in the table below with their descriptions in detail.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_google_path.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsymInput.png' />
 
-### Crashlitics Path
-
-This path parameter specifies the path of the generated dSYM file. 
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_path.png' />
+| Variable Name                            | Description                         | Status           |
+|-------------------------------|------------------------------------------------|------------------|
+| `$AC_FIREBASE_PLIST_PATH`*         | In this path parameter, the direction of the **GoogleService-InfoPlist** file must be defined. In the project, wherever your GoogleService-InfoPlist file is, type that path directly without any characters at the beginning. Appcircle will automatically fill the beginning of the path with the repository direction. For example, **`GoogleService-InfoPlist`** or **`services/GoogleService-InfoPlist`**. Appcircle will complete  | Required |
+| `$AC_FIREBASE_CRASHLYTICS_PATH`               | This path parameter specifies the path of the generated dSYM file.  | Required |
 
 :::caution
 For this, paths change depending on the platform. According to the mobile application platform you are working on, you need to provide one of the following paths here.
@@ -47,5 +46,7 @@ For this, paths change depending on the platform. According to the mobile applic
 |Native iOS SPM|$HOME/Library/Developer/Xcode/DerivedData/**/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/upload-symbols|
 |React Native iOS|$AC_REPOSITORY_DIR/ios/Pods/FirebaseCrashlytics/upload-symbols|
 |Flutter iOS|$AC_REPOSITORY_DIR/ios/Pods/FirebaseCrashlytics/upload-symbols|
+
+To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-firebase-dsym-upload-component
