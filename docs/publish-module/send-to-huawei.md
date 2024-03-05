@@ -34,7 +34,7 @@ To send apps from Appcircle, you need to provide a Huawei AppGallery Developer A
 
 Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/huawei-1addkey.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2821-HuaweiAppGallery-ApiKey.png' />
 
 ### Uploading your Keystore file
 

@@ -32,7 +32,7 @@ With the next option, enter the key ID and the issuer ID that can be obtained fr
 
 Then enter a user-friendly name to identify the key in the lists and press save. You can use this key in multiple apps without the need for key uploads at every upload process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (93).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2821-UploadAppstoreConnect-ApiKey.png' />
 
 ### Deploying the Binary from the Testing Distribution
 
