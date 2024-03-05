@@ -26,7 +26,9 @@ For detailed information on store **Connections**, follow the links below.
 |Google Play| https://docs.appcircle.io/account/adding-google-play-service-account|
 |Huawei AppGallery| https://docs.appcircle.io/account/adding-huawei-api-key|
 
-## Publish after Build
+## Publish Profile
+
+### Adding a Publish Profile
 
 After building the application, we can start the publishing process by sending it to the Publish module.
 
@@ -44,6 +46,8 @@ The publish profile is created, and it's ready for application submission.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-empty-profile.png' />
 
+### Build Profile Configuration
+
 Go to the build profile that we will send to the Publish module, and select the publish profile from the **Distribution** tab in the configuration.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-build.png' />
@@ -57,8 +61,6 @@ Now the build profile is ready for application publishing.
 When the build is successful, Appcircle will send the version of the relevant application to the selected publish profiles in the Publish module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-build-success.png' />
-
-## Publish Profile
 
 ### Publish Flow
 
@@ -93,6 +95,36 @@ Variables, similar to the [environment variables](../environment-variables/index
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-variables.png' />
 
 To use these defined variables, it will be necessary to select them from the [Publish Settings](#publish-settings).
+
+### Rename Publish Profile
+
+Appcircle allows previously created Publish profiles to be renamed.
+
+To do this, click on the three dots at the top right of the relevant publish profile in the profiles list and select **Rename**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-rename.png' />
+
+:::caution
+Publish profile names must be unique for both **`iOS`** and **`Android`**.
+
+For example, if you have a Publish profile named **`My Great App`** for iOS Publish, Appcircle will not allow you to create a profile named **`My Great App`** again for Android Publish or iOS Publish.
+
+Also, you cannot rename a Publish profile to an existing name on the same platform.
+:::
+
+### Delete Publish Profile
+
+To delete the Publish profile, click on the three dots at the top right of the relevant Publish profile in the profiles list and select **Delete**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove.png' />
+
+:::caution
+Appcircle **does not delete** the application that has been submitted to the stores.
+
+By deleting the Publish profile, all the application versions and Publish action logs related to that publish profile will be removed on the Appcircle side.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove-confirm.png' />
 
 ## Publish Versions
 
@@ -147,33 +179,3 @@ You should confirm the **Delete** action by entering the version name into the d
 :::caution
 Appcircle does not delete the application that has been submitted to the stores. This deletion will only delete the version of the application in the Publish module.
 :::
-
-## Rename Publish Profile
-
-Appcircle allows previously created publish profiles to be renamed.
-
-To do this, click on the three dots at the top right of the relevant publish profile in the profiles list and the select **Rename**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-rename.png' />
-
-:::caution
-Publish profile names must be unique for both iOS and Android.
-
-For example, if you have a publish profile named "My Great App" for iOS Publish, Appcircle will not allow you to create a profile named "My Great App" again for Android Publish or iOS Publish.
-
-Also, you cannot rename a publish profile to an existing name on the same platform.
-:::
-
-## Delete Publish Profile
-
-To delete the publish profile, click on the three dots at the top right of the relevant publish profile in the profiles list and the select **Delete**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove.png' />
-
-:::caution
-Appcircle does not delete the application that has been submitted to the stores.
-
-By deleting the publish profile, all the application versions and publish action logs related to that publish profile will be removed on Appcircle side.
-:::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove-confirm.png' />
