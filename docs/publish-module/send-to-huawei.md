@@ -93,7 +93,7 @@ In the step settings, select a **Huawei API Key** from the drop-down list and en
 Appcircle will require **Huawei App ID** for Huawei AppGallery submissions. This form field should be correct for successful store submission.
 :::
 
-When you complete configuring the publish flow, add an application version by [configuring the build module](index.md#publish-after-build) or [manually adding a version](index.md#add-version) by binary upload.
+When you complete configuring the publish flow, add an application version by [configuring the build module](index.md#publish-profile) or [manually adding a version](index.md#add-version) by binary upload.
 
 Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
