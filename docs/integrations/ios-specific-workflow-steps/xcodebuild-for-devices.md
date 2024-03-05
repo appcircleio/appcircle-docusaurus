@@ -20,35 +20,49 @@ This stepper needs other steppers to work correctly. You can find these steppers
 
 | Require Workflow Step                      | Description                                     |
 |--------------------------------------------|-------------------------------------------------|
-| **Git Clone**  | The repository that needs to be built must be fetched from the branch. **Xcodebuild for Devices** should use after this step. |
-| **Cocoapods Install**  | This step installs all pod dependencies of project. **Xcodebuild for Devices** should use after this step. If you use SPM(Swift Package Manager, it is not necessary to use.) |
-| **Xcode Select**  | This step select the Xcode version to build. **Xcodebuild for Devices** should use after this step. |
+| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The repository that needs to be built must be fetched from the branch. **Xcodebuild for Devices** should be used after this step. |
+| [**Cocoapods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#cocoapods-install)  | This step installs all pod dependencies for project. **Xcodebuild for Devices** should be used after this step. If you use SPM (Swift Package Manager), it is not necessary to use. |
+| [**Xcode Select**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcode-select-version)   | This step select the Xcode version to build. **Xcodebuild for Devices** should be used after this step. |
 
 :::warning
 This step should always follow steps that may affect Archive and Export, such as Xcode Select and Cocoapods.
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2580-xcodebuild_order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildOrder.png' />
 :::
 
-#### Adding Addtional parameter
-This step builds, archives and exports your application using the **xcodebuild** command. You can write the extra command parameters you use when archiving in your local environment in the **Archive Flag** variable. 
+### Input Variables
+You can find all the parameters required for this step in the table below, with their descriptions in detail.
 
-You can write the custom parameters by leaving a space between them. Parameters written to **Archive Flag** will be added directly to the **xcodebuild** command.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildInput.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2580-xcodebuild_details_flag.png' />
+| Variable Name                            | Description                         | Status           |
+|-------------------------------|------------------------------------------------|------------------|
+| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step. | Required |
+| `$AC_OUTPUT_DIR_PATH`               | This variable specifies the path of the artifacts that will be generated after the build is complete. | Required |
+| `$AC_SCHEME`              | Specifies the project scheme for build. This variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration). | Required |
+| `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example : -quiet |  |
+| `$AC_PROJECT_PATH`           | Specifies the project path. For example : ./appcircle.xcodeproj. This variable comes from Configuration. | Required |
+| `$AC_CERTIFICATES`             | This variable specifies the path of the certificates to be signed. | Required |
+| `$AC_BUNDLE_IDENTIFIERS`               | This variable holds the Bundle Identifier of the application to be built. | Required |
+| `$AC_PROVISIONING_PROFILES`            | This variable specifies the path of provisioning profiles to be signed. | Required |
+| `$AC_CONFIGURATION_NAME`               | You can build your project with any configuration you want. Specify the configuration as hard coded. Appcircle will add automatically this configuration to the xcodebuild command. For example; **`Debug`** | Optional |
+| `$AC_COMPILER_INDEX_STORE_ENABLE`      | You can disable indexing during the build for faster build. Default value is No | Optional |
+| `$AC_METHOD_FOR_EXPORT`               | Describes how Xcode should export the archive. Available options are auto-detect, app-store, ad-hoc, enterprise, development. The default is `auto-detect`. | Optional |
+| `$AC_TEAMID_FOR_EXPORT`               | The Developer Portal team to be use for this export. Defaults to the team used to build the archive. | Optional |
+| `$AC_COMPILE_BITCODE_FOR_EXPORT`      | For non-App Store exports, should Xcode re-compile the app from bitcode? Available options YES, NO. | Optional |
+| `$AC_UPLOAD_BITCODE_FOR_EXPORT`       | For App Store exports, should the package include a bitcode?. Available options YES, NO. | Optional |
+| `$AC_UPLOAD_SYMBOLS_FOR_EXPORT`       | For App Store exports, should the package include symbols?. Available options YES, NO. | Optional |
+| `$AC_ICLOUD_CONTAINER_ENVIRONMENT_FOR_EXPORT` | For non-App Store exports, if the app is using CloudKit, this configures the "com.apple.developer.icloud-container-environment" entitlement. Available options Development and Production. | Optional |
+| `$AC_DELETE_ARCHIVE`               | Delete `build.xcarchive` file after creating ipa file. | Optional |
 
-:::warning
-**Remember**. The extra parameters you add in this step must be **known by the xcodebuild command**. This means that if you give a parameter other than the xcodebuild command parameter, the step will **fail**. For example, if you give a **Linux command** parameter, **xcodebuild command will not recognize that parameter**.
-:::
+### Output Variables
 
-#### Adding Configuration Parameter
-You can specify the current build configuration of your project with the **Configuration** tab. For this, it will be enough to type your **configuration type correctly**. For example **Debug** or **Release**. This step will add the configuration parameter directly to the **xcodebuild command** as **`-configuration "Your Configuration"`**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2580-xcodebuild_details_config.png' />
-
-:::warning
-**Remember**, if you do not specify this parameter according to the configuration type in your project or if you make a **spelling mistake**, Xcode will fail the step because it cannot find this configuration.
-:::
+| Variable Name                 | Description                                    | 
+|-------------------------------|------------------------------------------------|
+| `$AC_ARCHIVE_PATH`       | This is the path created after retrieving the Archive. |  
+| `$AC_ARCHIVE_METADATA_PATH`       | This is the path created after the metadata is generated. |  
+| `$AC_EXPORT_DIR`       | This is the path created when exporting. |  
 
 
+To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-ios-build-sign-component
