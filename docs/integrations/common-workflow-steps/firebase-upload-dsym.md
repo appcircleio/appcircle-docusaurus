@@ -13,7 +13,11 @@ This step allows to to upload your debug symbols to Firebase Crashlytics.
 
 ### Prerequisites
 
-This step should follow **Xcodebuild for Devices** step.
+This step depends on the **Xcodebuild for Devices** step to upload the .dSYM file.
+
+| Prerequisite Workflow Step                      | Description                                     |
+|-------------------------------------------------|-------------------------------------------------|
+| [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-devices-archive--export) | This step will build your application, create an Archive file, and generate .ipa. The Archive file contains the .dSYM file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_step_order.png' />
 
@@ -21,20 +25,20 @@ This step should follow **Xcodebuild for Devices** step.
 If this step is not used after **Xcodebuild for devices**, the pipeline will error. Because the dSYM file is generated after the project is archived. 
 :::
 
-#### GoogleService-InfoPlist Path
+### GoogleService-InfoPlist Path
 
-In this path parameter the direction of the **GoogleService-InfoPlist** file must be defined. In the project, wherever your GoogleService-InfoPlist file is, type that path directly without any characters at the beginning. Appcircle will automatically fill the beginning of the path with the repository direction. For example, **`GoogleService-InfoPlist`** or **`services/GoogleService-InfoPlist`**. Appcircle will complete 
+In this path parameter, the direction of the **GoogleService-InfoPlist** file must be defined. In the project, wherever your GoogleService-InfoPlist file is, type that path directly without any characters at the beginning. Appcircle will automatically fill the beginning of the path with the repository direction. For example, **`GoogleService-InfoPlist`** or **`services/GoogleService-InfoPlist`**. Appcircle will complete 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_google_path.png' />
 
-#### Crashlitics Path
+### Crashlitics Path
 
 This path parameter specifies the path of the generated dSYM file. 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_path.png' />
 
 :::caution
-For this, paths change depending on the platform. According to the mobile application platform you are working on, you need to give one of the following paths here.
+For this, paths change depending on the platform. According to the mobile application platform you are working on, you need to provide one of the following paths here.
 :::
 
 |Project Type|Crashlytics Paths for Platforms|
