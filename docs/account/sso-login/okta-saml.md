@@ -102,10 +102,18 @@ Please ensure that there is no **`/`** at thee end of the `Audience URI` which w
 
 - Hit `Save` button and save the SAML configuration on Appcircle.
 
-- You can enable the SSO Login in Enterprise App Store Settings
+- To enable SSO Login for the Enterprise App Store, you should navigate to the **Enterprise App Store -> Settings**  and then click on the `Activate` button next to SSO Login
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-enterprisestore-sso-login.png' />
 
-- You can enable SSO Login in Distribution Profile Settings
+- To enable SSO login for the **Testing Distribution**, go to the **Testing Distribution module** and select related profile
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2803-distribution-profiles.png' />
+
+- Click on the `Settings` button on the detail screen
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2803-distribution-detail.png' />
+
+- Navigate to the `Authentication` tab and select **SSO Login** as the authentication type
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-distribution-sso-login.png' />
