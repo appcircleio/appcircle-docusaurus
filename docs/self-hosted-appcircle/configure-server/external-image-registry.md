@@ -5,6 +5,9 @@ metaDescription: External Image Registries Configurations
 sidebar_position: 13
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Overview
 
 In the Appcircle's containerized application ecosystem, users have the flexibility to access container images through various external image registries.
@@ -17,37 +20,54 @@ These services act as intermediaries, facilitating seamless image retrieval, cac
 
 You can mirror Appcircle container images from the Google Artifact Registry to your local registry.
 
-Since there are many images to mirror, you can use a bash script to mirror the images instead of pulling, re-tagging and pushing back to your local registry.
+Since there are many images to mirror, you can use a bash script to mirror the images instead of pulling, re-tagging, and pushing them back to your local registry.
 
-To mirror images automatically, you can use the steps below:
+To mirror images automatically, you can follow the steps below:
 
-- As a pre-requirement, you need to be authenticated to the Google Artifact Registry.
+As a **pre-requirement**, you need to be authenticated to the Google Artifact Registry.
 
-  - You should already have a `cred.json` file which you should have take from us.
+- You should already have a `cred.json` file, which you should have taken from us.
 
-  - To auth with Docker, run the command below:
+To authenticate with your container engine, run the command below:
+
+<Tabs>
+  <TabItem value="docker" label="Docker" default>
 
 ```bash
 cat cred.json | docker login -u _json_key --password-stdin  europe-west1-docker.pkg.dev/appcircle/docker-registry
 ```
 
-You should see Login Succeeded message.
+  </TabItem>
 
-- You can find the all images names in the `docker-images.txt` file which is in the Appcircle server package.
+  <TabItem value="podman" label="Podman">
 
-- If you are in the Appcircle server machine, go to the `appcircle-server` directory to find `docker-images.txt` file.
+```bash
+cat cred.json | podman login -u _json_key --password-stdin  europe-west1-docker.pkg.dev/appcircle/docker-registry
+```
+
+  </TabItem>
+</Tabs>
+
+You should see the "Login Succeeded" message after the command execution.
+
+You can find all container images in the `docker-images.txt` file, which is in the Appcircle server package.
+
+- If you are on the Appcircle server host, go to the `appcircle-server` directory.
 
 ```bash
 cd appcircle-server
 ```
 
-- Create a bash script to mirror the images.
+- Create a bash script to mirror the container images.
 
 ```bash
 vi mirror-images.sh
 ```
 
-- Copy and paste the following code into the script.
+- Copy and paste the following code into the bash script:
+
+<Tabs>
+  <TabItem value="docker" label="Docker" default>
 
 ```bash
 #!/bin/bash
@@ -84,23 +104,71 @@ while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
 done < docker-images.txt
 ```
 
+  </TabItem>
+
+  <TabItem value="podman" label="Podman">
+
+```bash
+#!/bin/bash
+
+# Set the source registry URL
+SRC_REGISTRY_URL="europe-west1-docker.pkg.dev/appcircle/docker-registry"
+
+# Set the destination registry URL
+DEST_REGISTRY_URL="reg.appcircle.spacetech.com/appcircle"
+
+# Loop through each line of the file and pull, tag, and push the Docker image
+while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
+    if [[ ${IMAGE_NAME:0:1} == "#" ]]; then
+        continue
+    fi
+    echo "Pulling image: $IMAGE_NAME"
+    podman pull $IMAGE_NAME
+    if [ $? -eq 0 ]; then
+        echo "Image pulled successfully: $IMAGE_NAME"
+        # Replace source registry URL  with the new registry URL
+        IMAGE_TAG="${IMAGE_NAME/$SRC_REGISTRY_URL/$DEST_REGISTRY_URL}"
+        # Tag the image with the destination registry URL and repository name
+        podman tag $IMAGE_NAME $IMAGE_TAG
+        # Push the tagged image to the destination registry
+        podman push $IMAGE_TAG
+        if [ $? -eq 0 ]; then
+            echo "Image pushed successfully: $IMAGE_NAME"
+        else
+            echo "Failed to push image: $IMAGE_NAME"
+        fi
+    else
+        echo "Failed to pull image: $IMAGE_NAME"
+    fi
+done < docker-images.txt
+```
+
+  </TabItem>
+</Tabs>
+
 :::caution
-`DEST_REGISTRY_URL` should be update in the script above.
+The sample value for **`DEST_REGISTRY_URL`** in the script above must be changed with your container image registry.
 
 To find your destination registry URL, please head to your external image registry and check for pull/push command.
 
-If the `reg.appcircle.spacetech.com/appcircle/imagename:latest`, the destination registry URL is `reg.appcircle.spacetech.com/appcircle`.
+For example, if you're using
 
-Destination image registry url **mustn't** end with `/`.
+- `reg.appcircle.spacetech.com/appcircle/imagename:latest`
+
+template for pull/push, the destination registry URL (**`DEST_REGISTRY_URL`**) should be
+
+- `reg.appcircle.spacetech.com/appcircle`
+
+Keep in mind that the destination image registry url **must not** end with `/`.
 :::
 
-- Make the `mirror-images.sh` file executable.
+- Make the `mirror-images.sh` script file executable.
 
 ```bash
 chmod +x mirror-images.sh
 ```
 
-- Run the script to mirror all images.
+- Run the script to mirror all the container images.
 
 ```bash
 ./mirror-images.sh
@@ -108,9 +176,9 @@ chmod +x mirror-images.sh
 
 :::info
 
-If your registry is not using `https`, you may get an error during docker push step. You need to add your registry as insecure registry.
+If your registry is not using `https`, you may get an error during docker/podman push step.
 
-Please check [Insecure Registries](#insecure-registries) section to configure a `http` registry.
+You need to add your registry as an insecure registry. Please check the [Insecure Registries](#insecure-registries) section to configure an `http` registry.
 
 :::
 
