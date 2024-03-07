@@ -45,15 +45,15 @@ The person who will add the repository to Appcircle must be the owner of the rep
 
 ### Cloud
 
-Repo access is achieved for GitHub and Gitlab by installing an app to the repository. The user who added the repo must have the required access to add the application
+Repo access is achieved for GitHub and GitLab by installing an app to the repository. The user who added the repo must have the required access to add the application
 
 ### Self Hosted
 
-If your repo is Self Hosted with Gitlab or Bitbucket, your repo will be added with an Access Token.
+If your repo is Self Hosted with GitLab or Bitbucket, your repo will be added with an Access Token.
 
-**Gitlab**
+**GitLab**
 
-You will need to generate Personal Access Token or Project Access Token for Gitlab. Personal Access Token allows to access all the repositories of that person. Project Access Token allows to access all the repositories under the specified project.
+You will need to generate Personal Access Token or Project Access Token for GitLab. Personal Access Token allows to access all the repositories of that person. Project Access Token allows to access all the repositories under the specified project.
 
 https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-gitlab/
 

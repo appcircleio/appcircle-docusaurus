@@ -141,6 +141,14 @@ You should check the status of the Appcircle server after boot for any possible 
 
 Now you can access the Enterprise App Store with the new store domain settings.
 
+### While connecting to a repository from GitLab, we can list the projects, but binding is failing.
+
+The first thing you should check is **PAT** permissions.
+
+If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
+
+For more details about configuring the outbound requests, you can refer to the [Outbound Requests](../build/adding-a-build-profile/connecting-to-gitlab.md#outbound-requests) section.
+
 ## Appcircle Runner FAQ
 
 ### We are facing a self-signed certificate error on builds.

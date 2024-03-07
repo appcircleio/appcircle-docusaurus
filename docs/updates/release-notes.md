@@ -446,8 +446,8 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - User's default branch is listed at the top. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
-- Gitlab double trigger bug fixed. <CloudBadge/> <SelfHostedBadge/>
-- Gitlab Self-Hosted access token now longer shows inside build logs. <CloudBadge/> <SelfHostedBadge/>
+- GitLab double trigger bug fixed. <CloudBadge/> <SelfHostedBadge/>
+- GitLab Self-Hosted access token now longer shows inside build logs. <CloudBadge/> <SelfHostedBadge/>
 - [Enterprise Store](../enterprise-appstore/customize-ent-store.md) 2FA Safari bug fixed. <SelfHostedBadge/>
 - [Enterprise Store](../enterprise-appstore/customize-ent-store.md) localization bug fixed. <CloudBadge/> <SelfHostedBadge/>
 - [Enterprise Store](../enterprise-appstore/customize-ent-store.md) Download bug is fixed for slow networks. <SelfHostedBadge/>
@@ -490,7 +490,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - New line is added to SSH private key if it doesn't exist. <CloudBadge/> <SelfHostedBadge/>
 - API key selection is now mandatory for all app submissions on Google Play. <CloudBadge/> <SelfHostedBadge/> 
 - Autofill button respects the selected pool. <CloudBadge/> <SelfHostedBadge/> 
-- Self-hosted Gitlab onboarding screen is improved. <CloudBadge/> <SelfHostedBadge/> 
+- Self-hosted GitLab onboarding screen is improved. <CloudBadge/> <SelfHostedBadge/> 
 - Default pools are removed from Self-hosted instances. <SelfHostedBadge/> 
 
 ### 🐞 Fixed
@@ -506,7 +506,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### 🆕 New Feature
 - [Multiple LDAP](../enterprise-appstore/customize-ent-store.md#ldap-login) support added for Enterprise Store. <CloudBadge/> <SelfHostedBadge/>
 - [Self-signed certificate](../self-hosted-appcircle/configure-server/ssl-configuration.md) support added for Appcircle server. <SelfHostedBadge/>
-- [Self-signed certificate](../self-hosted-appcircle/configure-server/ssl-configuration.md) support added for external services such as Git providers (Gitlab, Bitbucket etc.) <SelfHostedBadge/>
+- [Self-signed certificate](../self-hosted-appcircle/configure-server/ssl-configuration.md) support added for external services such as Git providers (GitLab, Bitbucket etc.) <SelfHostedBadge/>
 
 ### :muscle: Improvement
 - Onboarding of React Native Android project is improved.  <CloudBadge/> <SelfHostedBadge/>
@@ -653,7 +653,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 ### 🐞 Fixed
 - Bitbucket commit messages now show properly.
 - `AC_PULL_NUMBER` environment variable added for Pull/Merge Requests.
-- Changing assignee no longer triggers a build for Gitlab Merge Request.
+- Changing assignee no longer triggers a build for GitLab Merge Request.
 - Build statuses correctly shows on the main dashboard.
 
 ## 2.9.14 - 2022-08-18 - New Dashboard, Appium Server and SwiftLint components
@@ -779,7 +779,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 🐞 Fixed
 
-- Gitlab Merge Request Webhook fixed
+- GitLab Merge Request Webhook fixed
 - Browser UI issues fixed
 - Sometimes progress bar was showing on the wrong branch. Fixed.
 
@@ -870,7 +870,7 @@ After adding an API Key, you can add new signing identities from the Signing Ide
 
 - Flutter version `2.5.0` is released in their stable channel. You can now use this latest stable version on Appcircle.
 
-## 2.5.0 - 2021-08-27 - Two Factor Authentication, Self Hosted Gitlab and Bitbucket, Xcode 13 Beta 5
+## 2.5.0 - 2021-08-27 - Two Factor Authentication, Self Hosted GitLab and Bitbucket, Xcode 13 Beta 5
 
 Within this release, we bring fully built-in Appcircle support for your Self Hosted (Enterprise) for:
 

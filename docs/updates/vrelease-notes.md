@@ -260,7 +260,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :new: New Feature
 
-* Appcircle now supports any public Git repository without needing to authenticate using your Github, BitBucket, or Gitlab account. Simply enter the URL of your repository and Appcircle will connect your project from there. \
+* Appcircle now supports any public Git repository without needing to authenticate using your Github, BitBucket, or GitLab account. Simply enter the URL of your repository and Appcircle will connect your project from there. \
   \
   For further information please see: :link: [**Connecting a repository**](https://docs.appcircle.io/build/adding-a-build-profile#connect-your-repository)****
 
