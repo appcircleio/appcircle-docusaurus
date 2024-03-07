@@ -13,7 +13,7 @@ import Screenshot from '@site/src/components/Screenshot';
 Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download in the artifacts section of the completed build.
 
 :::warning
-Sending applications to **Publish**, **Enterprise Store**, or **Testing Distribution** will not work without this step.
+Sending applications to **Publish**, **Enterprise App Store**, or **Testing Distribution** will not work without this step.
 :::
 
 ### Prerequisites
