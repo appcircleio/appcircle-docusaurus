@@ -120,7 +120,7 @@ If you are unable to determine the exact cause, feel free to get in touch with A
 
 ### Troubleshooting Workflow Steps for Build Failures
 
-Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](../workflows/why-to-use-workflows.md) and get a build to help isolate the cause of the issue.
+Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](../workflows/index.md) and get a build to help isolate the cause of the issue.
 
 - **iOS Sign Errors: **If the selected provisioning profile does not match with the selected bundle ID or if the certificate is not valid, you may have an issue in the iOS signing step. In this case, you may try getting an unsigned build
 - **Xcode Build for Simulator step: **This step builds your target for either x86_64 or arm64 architecture. In some projects, there may be dependencies that are not compatible with given architecture. In this case, please remove this step from the workflow or remove the conflicting dependencies to get a successful build.
@@ -325,7 +325,7 @@ Every Android project has a `gradlew` file in the main repository directory. If 
 
 ### How can I change the JDK version for autofill?
 
-Appcircle currently has OpenJDK 11 (default), OpenJDK 8, and OpenJDK 17. If you want to use a different Java version for your build pipeline, you can follow the steps [here](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version) and add a custom script to your workflow.
+Appcircle currently has OpenJDK 11 (default), OpenJDK 8, OpenJDK 17 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can follow the steps [here](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version) and add a custom script to your workflow.
 
 But unfortunately, you cannot use custom scripts for autofill operations, which make it easy to fill in configuration details while adding a new build profile.
 
@@ -338,7 +338,7 @@ You can add the `org.gradle.java.home` entry to the `gradle.properties` file in 
 For example, the below entry can be used to change the default Java version to 17 for the "Default M1 Pool".
 
 ```properties
-org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu
+org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu
 ```
 
 You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure.md#java-version) Java section.
@@ -351,7 +351,7 @@ For example, you can take the following steps to change the default Java version
 
 1. Create a variable group that has a variable with the properties below.
     1. The key should be `JAVA_HOME`.
-    2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.7-zulu`.
+    2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu`.
 2. Go to the configuration section of the build profile that you want to autofill.
 3. Go to the 'Env. Variables' tab in configuration.
     1. You should see the variable group that you created in the list.
