@@ -45,7 +45,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC\_GIT\_TARGET\_BRANCH    | Target branch for a Pull or Merge Request                                                          |
 | AC\_GIT\_PR                | Set to `true` if the workflow started for a Pull or Merge Request                                  |
 | AC\_PULL\_NUMBER           | Pull or Merge Request Number                                                                       |
-| AC\_PROVIDER\_NAME         | **Git Provider** Github,GithubApp,GitLab,GitLabSelfHosted,Bitbucket,BitbucketServer                |
+| AC\_PROVIDER\_NAME         | **Git Provider** Github,GithubApp,Gitlab,GitlabSelfHosted,Bitbucket,BitbucketServer                |
 | AC\_IS\_SUCCESS            | Set to `true` if the previous step was successful                                                  |
 | AC\_LOGFILE                | Build log path                                                                                     |
 | AC\_TEST\_RESULT\_PATH     | Test Result Path                                                                                   |
