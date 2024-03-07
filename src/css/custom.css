@@ -299,6 +299,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   font-size: 10px;
   font-family: var(--ifm-font-family-base);
   font-weight: 700;
+  white-space: pre;
 }
 
 .cloud-badge {
@@ -854,6 +855,10 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
 
 .section-title.integrations > div >a::before {
   background-image: url(../../static/img/sidebar/integrations.svg);
+}
+
+.section-title.publish-module > div >a::before {
+  background-image: url(../../static/img/sidebar/publish.svg);
 }
 
 .section-title.continuous-testing > div >a::before {
