@@ -9,12 +9,15 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # NPM/Yarn Commands
 
-You may want to use the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your[ React Native](https://reactnative.dev/) applications. The package manager commands you enter are executed in this workflow step.
+You may want to use the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your [React Native](https://reactnative.dev/) applications. The package manager commands you enter are executed in this workflow step.
+
+### Prerequisites
+
+The workflow steps that need to be executed before running the **NPM/Yarn Commands** workflow step, along with their respective reasons, are listed in the table below.
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Node Install**](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps#install-node) | This step will install Node modules for your application. Please note that the **NPM/Yarn Commands** step should be used after this step. |
-
+| [**Install Node**](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps#install-node) | This step will install Node modules for your application. Please note that the **NPM/Yarn Commands** step should be used after this step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2797-npmOrder.png' />
 
@@ -23,7 +26,6 @@ You may want to use the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmj
 This step contains different variables. It needs these variables to work. The table below gives explanations of these variables.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2797-nmpDetails.png' />
-
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|
