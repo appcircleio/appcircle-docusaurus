@@ -29,6 +29,21 @@ You can add multiple users to beta and live channels by hitting the Tab key.
 If you work for a sub-organization, you can only see the apps belonging to that organization. However, if the app is published, it will also appear in the parent organization's showcase.
 :::
 
+:::info
+If Beta Channel Access is not set, the versions marked as beta will not be visible to anyone by default.
+:::
+
+:::info
+If Live Channel Access is not set, the versions marked as live channel will be visible to everyone by default.
+:::
+
+You can add defined user groups from your provider after configuration.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2812-entstore-okta-group-new.png" />
+
+:::info
+For more information how to manage user groups, please follow the steps that is available in [Okta Managing User Groups](../account/sso-login/okta-saml.md#okta-managing-user-groups)
+:::
 
 ### Add Version
 

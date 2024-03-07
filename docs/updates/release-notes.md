@@ -334,7 +334,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - [Xcode 15.0 Beta-4](../infrastructure/ios-build-infrastructure.md) added to build agents. Since this is a beta release, please test your workflows extensively. <CloudBadge/>
 
 ### :muscle: Improvement
-- Added the feature that [LDAP and SSO](../account/sso-ldap-login.md) settings  can be made once and all sub-organizations can use this setting. <CloudBadge/> <SelfHostedBadge/>
+- Added the feature that [LDAP](../account/ldap-login) and [SSO](../account/sso-login/single-sign-on-login) settings  can be made once and all sub-organizations can use this setting. <CloudBadge/> <SelfHostedBadge/>
 - Previous [Configuration and Workflow](../build/adding-a-build-profile) files can be downloaded in the Configuration and Workflow sections. The ability to create configuration and workflow by re-uploading downloaded `.yaml` files has been improved. <CloudBadge/> <SelfHostedBadge/>
 - On the [self-hosted](../self-hosted-appcircle/self-hosted-runner) side, the feature of adding priority has been developed for online and offline runners. <CloudBadge/> <SelfHostedBadge/>
 - Sequential numbering improvement was made in the naming while creating the new configuration and workflow. <CloudBadge/> <SelfHostedBadge/>
@@ -366,7 +366,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - [Xcode 15.0 Beta](../infrastructure/ios-build-infrastructure.md) added to build agents. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
 - [Java 17](../infrastructure/android-build-infrastructure.md) added to build agents. <CloudBadge/> <SelfHostedBadge/>
 - [Build Profile](../build/adding-a-build-profile) configurations are separated from branchs. It is now easier to see and manage configs from a single location. <CloudBadge/> <SelfHostedBadge/>
-- [SSO and LDAP Login](../account/sso-ldap-login.md) added to Testing Distribution. <CloudBadge/> <SelfHostedBadge/>
+- [SSO](../account/sso-login/single-sign-on-login) and [LDAP](../account/ldap-login) Login added to Testing Distribution. <CloudBadge/> <SelfHostedBadge/>
 - [Azure Boards](../integrations/azure-board.md) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [Repeato](../workflows/common-workflow-steps/index.md#repeato-mobile-test-automation) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [Snyk Secure Scan](../workflows/common-workflow-steps/index.md#snyk-scan-security) workflow step added. <CloudBadge/> <SelfHostedBadge/>

@@ -51,9 +51,9 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings2.png' />
 
-- Instead of writing all the settings of SAML, you can download the settings file from Okta and upload it. Click the "Identity Provider metadata" link to download the XML file.
+- Instead of writing all the settings of SAML, you can download the settings file from Okta and upload it. Click the "Copy" button of **Metadata URL** and open it another tab then save the XML file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings3-new.png' />
 
 - Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
 
