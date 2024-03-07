@@ -18,7 +18,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 - The new "App Information" tab has been added into the Publish Detail page for the new "App Information from App Store" step. <CloudBadge/> <SelfHostedBadge/>
 - Within the new "App Information" section, users can now find the Publish icon displayed for both TestFlight and App Store, offering convenient access to essential information regarding the app's publication status across these platforms. <CloudBadge/> <SelfHostedBadge/>
-- The pool selection feature has been added to the Publish Module Settings. <CloudBadge/> <SelfHostedBadge/>
+- The pool selection feature has been added to the [Publish Module Settings](https://docs.appcircle.io/publish-module/#publish-settings). <CloudBadge/> <SelfHostedBadge/>
 - In the Publish Module, users now have the capability to upload YAML files for their flows, enabling easier management and customization. Additionally, they can download their existing flows for offline reference or modification. <CloudBadge/> <SelfHostedBadge/>
 - Within the Publish Module, customers now have the capability to designate their desired app version as a Release Candidate, streamlining the process of identifying and managing versions prior to official release. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 Pool" and [self-hosted macOS VM image](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/runner-vm-setup/) have been updated to include the latest [Xcode 15.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_3-release-notes) release. <CloudBadge/> <SelfHostedBadge/>
