@@ -1,7 +1,7 @@
 ---
-title: Install Certificates and Provision Profiles
-metaTitle: Install Certificates and Provision Profiles
-metaDescription: Install Certificates and Provision Profiles
+title: Install Certificates and Provisioning Profiles
+metaTitle: Install Certificates and Provisioning Profiles
+metaDescription: Install Certificates and Provisioning Profiles
 sidebar_position: 4
 ---
 
@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Install Certificates and Provisioning Profiles
 
-This step installs the specified [certificate](https://developer.apple.com/support/certificates/) and [provision profile](https://developer.apple.com/help/account/manage-profiles/create-a-development-provisioning-profile/) files to sign the project.
+This step installs the specified [certificate](https://developer.apple.com/support/certificates/) and [provisioning profile](https://developer.apple.com/help/account/manage-profiles/create-a-development-provisioning-profile/) files to sign the project.
 For more detailed information on **iOS Certificates and Provisioning Profiles**, please refer to [this document](https://docs.appcircle.io/signing-identities/ios-certificates-and-provisioning-profiles/).
 
 ### Prerequisites
@@ -20,7 +20,7 @@ If you are using an automatic code sign, you can remove this step. Since automat
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| **Git Clone** | Clone your repository to the runner machine. Use the Install Certificates and Provisiong Profiles step after this step. This step will clone your repository to be able to use provisioning profiles and certificates. |
+| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | Clone your repository to the runner machine. Use the Install Certificates and Provisiong Profiles step after this step. This step will clone your repository to be able to use provisioning profiles and certificates. |
 
 :::warning
 Please remember. If you are using **manual sign**, you should definitely use this step and run it after the **Git Clone** step.
