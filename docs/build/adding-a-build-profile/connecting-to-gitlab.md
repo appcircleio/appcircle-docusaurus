@@ -40,7 +40,7 @@ First, select **GitLab** and then **Connect to a Self-Managed GitLab Instance** 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/gitlab-self-hosted2.png' />
 
-Fill the relevant information about your Gitlab self-hosted module. If you are not sure what those are, contact your system administrator.
+Fill the relevant information about your GitLab self-hosted module. If you are not sure what those are, contact your system administrator.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/gitlab-self-detail.png' />
 
@@ -52,7 +52,7 @@ When you connect to a GitLab repository by creating a profile on Appcircle, Appc
 
 If your Appcircle server has a local IP address like `10.10.140.20`, you may get an error while connecting to the repository.
 
-To solve this issue, the IP or the Appcircle API subdomain name should be allowed for outbound requests on the Gitlab admin panel.
+To solve this issue, the IP or the Appcircle API subdomain name should be allowed for outbound requests on the GitLab admin panel.
 
 You can follow the steps below to update outbound requests:
 
