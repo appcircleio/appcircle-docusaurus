@@ -43,7 +43,7 @@ You can find all the parameters required for this step in the table below, with 
 | `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example: -quiet | Optional |
 | `$AC_PROJECT_PATH`               | Specifies the project path. If you filled in `Config => Xcode Project or Workspace Path` in the Configuration, this variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration). For example: `./appcircle.xcodeproj`. | Required |
 | `$AC_CONFIGURATION_NAME`             | You can build your project with any configuration you want. Specify the configuration as hard coded. Appcircle will automatically add this configuration to the xcodebuild command. For example; **`Debug`**. | Optional |
-| `$AC_COMPILER_INDEX_STORE_ENABLE`* | You can disable indexing during the build for a faster build. The default value is **`No`**. | Required |
+| `$AC_COMPILER_INDEX_STORE_ENABLE` | You can disable indexing during the build for a faster build. The default value is **`No`**. | Required |
 
 :::caution
 Be aware of which OS version you used; the simulator type should match that OS version. For example, if you use the [**latest OS version**](https://developer.apple.com/documentation/ios-ipados-release-notes), you can not use the **iPhone 14** simulator.
