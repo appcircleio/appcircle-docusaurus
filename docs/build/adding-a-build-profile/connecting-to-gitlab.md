@@ -48,27 +48,29 @@ Fill the relevant information about your Gitlab self-hosted module. If you are n
 
 ### Outbound Requests
 
-When you connect a Gitlab repository via creating a profile on Appcircle, Appcircle tries to create webhooks on the Gitlab repository.
+When you connect to a GitLab repository by creating a profile on Appcircle, Appcircle tries to create webhooks on the GitLab repository.
 
-If your Appcircle server has a local IP address like `10.10.140.20`, you may get error while connecting the repository.
+If your Appcircle server has a local IP address like `10.10.140.20`, you may get an error while connecting to the repository.
 
-To solve this issue, the IP or the Appcircle api subdomain name should be allowed for outbound requests on the Gitlab admin panel.
+To solve this issue, the IP or the Appcircle API subdomain name should be allowed for outbound requests on the Gitlab admin panel.
 
 You can follow the steps below to update outbound requests:
 
-- You must get access to the `Admin Area / Dashboard` of the Gitlab server.
-
-- Expand the "Settings" button at the bottom left.
-
-- Click on the "Network" button to access network settings.
-
-- Expand the "Outbound" requests, add the IP address or the `api` subdomain of the Appcircle server.
-
-- If you are accessing to the Appcircle via `my.appcircle.spacetech.com`, then the `api` domain is `api.appcircle.spacetech.com`
-
-- See the example configuration screenshot below 👇:
+1. You must get access to the **Admin Area** of the GitLab server.
+2. Expand the "Settings" button at the bottom left.
+3. Click on the "Network" button to access network settings.
+4. Expand the "Outbound" requests.
+5. Add the IP address or the `api` subdomain of the Appcircle server.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2545-sample-configuration.png' />
+
+For example, if you are accessing to the Appcircle server dashboard via
+
+- `my.appcircle.spacetech.com`,
+
+then, for default server configuration, the `api` domain should be
+
+- `api.appcircle.spacetech.com`
 
 :::
 
