@@ -42,6 +42,12 @@ Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO fo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login2.png' />
 
+:::info
+
+If you want to manage user groups within your SSO provider, you should set **_CLAIM NAME (OPENID) / ATTRIBUTE NAME (SAML)_** field.
+
+:::
+
 - Select Setup SAML SSO Provider
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login3.png' />
@@ -51,6 +57,9 @@ Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO fo
 - This screen will auto-generate an URL for the Enterprise Store and Distribute
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
+
+
+## Okta App Integration
 
 - Login to your [Okta](https://www.okta.com/) account and navigate to Applications and then click **Create App Integration**.
 
@@ -76,7 +85,7 @@ For example your store redirect URL is `https://auth.self.spacetech.com/auth/rea
 :::
 
 :::caution
-Please ensure that there is no **`/`** at thee end of the `Audience URI` which will cause errors.
+Please ensure that there is no **`/`** at the end of the `Audience URI` which will cause errors.
 :::
 
 - Select `EmailAddress` for the Name ID format.
@@ -93,6 +102,58 @@ Please ensure that there is no **`/`** at thee end of the `Audience URI` which w
 - Instead of writing all the settings of SAML, you can download the settings file from Okta and upload it. Click the "Copy" button of **Metadata URL** and open it another tab then save the XML file.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/oktasamlsettings3-new.png' />
+
+## Okta Managing User Groups
+
+Managing user groups within Okta provides users and organizations with several benefits.
+By organizing users into groups, administrators can efficiently manage access permissions for various applications and resources, saving time and effort.
+Administrators can synchronize Okta user groups with Appcircle, allowing for granular access control and group-based permissions.
+This integration enhances security, simplifies access management, and promotes collaboration within organizations utilizing the Appcircle platform.
+
+- Login to your [Okta](https://www.okta.com/) account and navigate to Directory and then click **_Groups_**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-1.png' />
+
+- Click "Add group" button and after fill the fields click "Save" button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-2.png' />
+
+- Click recently created group name and assign people to your group.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-3-new.png' />
+
+- Navigate to Applications tab and assign the recently created user group(s) with "Assign applications" button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-4.png' />
+
+- Navigate to Applications and click on integrated app.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-5.png' />
+
+- Navigate "General" tab and edit **_SAML Settings_**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-6.png' />
+
+- In Configure SAML step, you should set Group Attribute Statements.
+- Name field should be matched with the **_CLAIM NAME (OPENID) / ATTRIBUTE NAME (SAML)_** field set in Appcircle SSO integration page. Name format should be `Basic`.
+- If you want to get all the groups that you created you should set filter section as `Matches regex` and `.*`.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-7.png' />
+
+- Click on the "Next" button and finish the edit process.
+
+:::tip
+
+#### Sample Scenario
+
+For example there are two groups, one is `developers` and other one is `users`.
+
+The beta channel on Enterprise App Store should be available for `developers` group and not for `users` group that has end-users.
+
+The live channel should be available for both groups in this case.
+:::
+
+## Appcircle Integration Configuration
 
 - Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
 
