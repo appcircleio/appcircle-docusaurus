@@ -76,6 +76,19 @@ We can access the list of steps that can be used in a publish workflow by clicki
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-workflows.png' />
 
+You can effortlessly obtain a YAML file of your current workflow configurations on our platform with the **Download YAML** button at the bottom.
+By simply selecting the download option, you'll receive a YAML file containing all the details of your existing workflow setup.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download-workflow.png' />
+
+Customize your workflows effortlessly by uploading your YAML file with the **Replace Flow** button at the top.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-replace-flow-button.png' />
+
+Simply select the file containing your desired configurations and integrate them seamlessly into the platform.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-upload-workflow.png' />
+
 ### Publish Settings
 
 When a build is completed on the Build module and its artifacts are distributed to the Publish module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
