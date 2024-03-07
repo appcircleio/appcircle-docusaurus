@@ -66,7 +66,7 @@ You can follow the steps below to update outbound requests:
 
 For example, if you are accessing to the Appcircle server dashboard via
 
-- `my.appcircle.spacetech.com`,
+- `my.appcircle.spacetech.com`
 
 then, for default server configuration, the `api` domain should be
 
