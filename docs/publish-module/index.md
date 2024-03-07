@@ -12,7 +12,6 @@ The Publish module will enable your applications to be published in the App Stor
 While publishing your mobile application to the stores, you can use predefined flows and customize them according to your specific publishing requirements.
 In addition to that, you can add new versions and publish your application to the stores without using the Build module.  
 
-
 Click on the **Publish** button on the left menu bar to go to the Publish module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-main.png' />
@@ -83,13 +82,17 @@ When a build is completed on the Build module and its artifacts are distributed 
 
 Your configured publish flow will be executed automatically when you enable **Auto Publish**.
 
-You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
-
-<ContentRef url="/self-hosted-appcircle/self-hosted-runner">
-  Self-hosted Runners
-</ContentRef>
+You can also select a runner pool from the **SELECT A POOL** dropdown list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-settings.png' />
+
+"Default Intel Pool" and "Default M1 Pool" are Appcircle cloud-hosted pools and only available for the cloud services.
+
+If there are any self-hosted pools in your organization, you can also select them from the list. Self-hosted Appcircle users will only see the self-hosted pools in this list.
+
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools">
+  Self-hosted Pools
+</ContentRef>
 
 :::info
 If group or variable definitions have been made in **Publish Variables**, you will see the list of variable groups in **Settings**, and you can select one or more of them to use in your publish flow.
