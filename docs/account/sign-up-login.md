@@ -15,17 +15,29 @@ Getting started with Appcircle is easy. To sign up for Appcircle, go to [https:/
 
 Click on a login provider and follow the permission prompts displayed by the provider. For login, Appcircle does not ask for any additional permissions other than the email address. You won't be required to verify your email address.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (24).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-user-login.png' />
 
 Or click on the **Sign up with e-mail** link and fill in the required information. Email verification is required if you sign up with email. Follow the instructions sent to your email address to complete the registration.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (25).png' />
+:::caution
+
+You cannot use common and disposable email domains for registration; instead, please register using your company email account.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sign-up.png' />
 
 ## Logging In
 
 To log in, go to [https://my.appcircle.io](https://my.appcircle.io) and either click on a linked login provider for one-click login or type in your email address and password and click **Log in**.
 
 If you forget your password, you can request a new one by clicking on the **Forgot Password** link and entering your email address.
+
+:::caution
+
+Social login feature has been deprecated. Only previously registered users can use it.
+
+:::
 
 ### Linking a New Login Provider from Login
 
