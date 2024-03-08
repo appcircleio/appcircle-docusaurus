@@ -91,10 +91,14 @@ You can send an email to your users by selecting the **Notify** menu from the ac
 
 Your users will receive an email with the subject and message you entered in this form. Users will be able to download the program by clicking the link in the incoming email.
 
-
 ### Other Actions
 If you want to share the link to a specific version without sending an email, you can select the **Share** menu from the actions. You can also download and delete versions from the list by selecting corresponding menus.
 
+:::caution
+
+The Enterprise App Store share feature doesn't allow public sharing. It only helps access the specific app version and follows all authentication rules.
+
+:::
 
 :::info
 
