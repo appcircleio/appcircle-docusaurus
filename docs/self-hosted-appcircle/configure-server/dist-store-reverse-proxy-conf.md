@@ -320,4 +320,138 @@ http {
 
   </TabItem>
 
+  <TabItem value="usecase3" label="Use-Case 3">
+
+#### Use-Case 3
+
+You may have installed the Appcircle server with an SSL certificate and not configured the Enterprise App Store with a custom domain.
+
+In this use-case;
+
+- The reverse proxy will connect the Enterprise App Store with the default domain and with `HTTPS`.
+- The reverse proxy will connect the Testing Distribution with the default domain and with `HTTPS`.
+- The Testing Distribution and the Enterprise App Store users will connect the reverse proxy with `HTTPS`.
+
+The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` keys.
+
+```yaml
+environment: Production
+enableErrorHandling: 'true'
+external:
+  scheme: https
+  mainDomain: '.appcircle.spacetech.com'
+  ca: |
+    -----BEGIN CERTIFICATE-----
+    6mfNX340o8+jyOTbQN/mTEOWS5eTqzQ/HjxlxNknnF8oxaXRMkdvMXAnrBAexi2S
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    wW1aDz1sjGyAp5Ttal3vY1aJ5RmLTuUuxJ+6+fkTHhLUQCQoEUNatrbKKtzxf0it
+    -----END CERTIFICATE-----
+smtpServer:
+  user: smtpuser@spacetech.com
+  password: smtpPassword
+  from: appcircle@spacetech.com
+  host: smtp.spacetech.com
+  fromDisplayName: Appcircle
+  port: 465
+  ssl: false
+  auth: true
+  starttls: true
+keycloak:
+  initialUsername: appcircle-admin@spacetech.com
+  initialPassword: superSecretPassword
+  enabledRegistration: true
+storeWeb:
+  external:
+    subdomain: store
+    domain: store.spacetech.com
+  customDomain:
+    enabled: false
+    domain: store.example.com
+testerWeb:
+  external:
+    url: https://dist.spacetech.com
+    domain: dist.spacetech.com
+nginx:
+  sslCertificate: |
+    -----BEGIN CERTIFICATE-----
+    4pXWp0Zmf79+sjCvtm5fYMHKVUpVdxQRfihQjCSYl/WzaXLeE+UlT6LvK9rxZjN9
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    FiMVxtvuaWheLrKDNpD80TGnizYXFQlmWBGRQSv1juCIx/c3JWElda3AWLf9KomB
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
+    -----END CERTIFICATE-----
+  sslCertificateKey: |
+    -----BEGIN PRIVATE KEY-----
+    FuYjetiq9zQppgQuplkZMRQaLisExifFjPY9+5zIegzFZKE3bvjZg+DDWkj++R3p
+    -----END PRIVATE KEY-----
+```
+
+In the example Nginx configuration below, you can see that there is 2 virtual servers, one for the Enterprise App Store and one for the Testing Distribution.
+
+Check out the `server_name`, `ssl_certificate`, `ssl_certificate_key`, `proxy_pass`, `proxy_set_header Host` values.
+
+- `server_name`: Domain name for the Enterprise App Store and Testing Distribution users coming from the internet.
+
+- `ssl_certificate` and `ssl_certificate_key`: SSL certificate files for `HTTPS` connection between the users and the reverse proxy.
+
+- `proxy_pass`: The IPV4 address or the domain name of the Appcircle server with `HTTPS` schema. We are configuring with `HTTPS` because both of Enterprise App Store and the Testing Distribution work with `HTTPS`.
+
+- `proxy_set_header Host`: The domain names that we have configured on the Appcircle server `global.yaml`.
+
+```nginx
+worker_processes auto;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+
+    server_names_hash_bucket_size 64;
+
+    server {
+        listen 443 ssl;
+        server_name store.spacetech.com;
+
+        ssl_certificate /etc/nginx/ssl/store.crt;
+        ssl_certificate_key /etc/nginx/ssl/store.key;
+
+        location / {
+            proxy_pass https://10.10.20.130;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header Host store.spacetech.com;
+            proxy_busy_buffers_size 512k;
+            proxy_buffers 4 512k;
+            proxy_buffer_size 256k;
+        }
+    }
+
+    server {
+        listen 443 ssl;
+        server_name dist.spacetech.com;
+
+        ssl_certificate /etc/nginx/ssl/store.crt;
+        ssl_certificate_key /etc/nginx/ssl/store.key;
+
+        location / {
+            proxy_pass https://10.10.20.130;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header Host dist.spacetech.com;
+            proxy_busy_buffers_size 512k;
+            proxy_buffers 4 512k;
+            proxy_buffer_size 256k;
+        }
+    }
+}
+```
+
+  </TabItem>
+
 </Tabs>
