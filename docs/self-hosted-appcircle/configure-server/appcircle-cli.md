@@ -1,7 +1,7 @@
 ---
-title: Appcircle CLI
-metaTitle: Appcircle CLI
-metaDescription: Appcircle CLI
+title: CLI Configuration
+metaTitle: CLI Configuration
+metaDescription: CLI Configuration
 sidebar_position: 12
 ---
 
@@ -94,7 +94,7 @@ curl -v https://api.appcircle.spacetech.com
 
 If you are still getting a connectivity error, you should check the network access between the host that runs `curl` and the Appcircle server.
 
-## Configure Appcircle CLI to Use Your Self-Hosted Appcircle Server
+## Configure CLI to Use Your Self-Hosted Server
 
 By default, Appcircle CLI is configured to interact with the Appcircle cloud. But with a few commands, you can change this behavior and use your own self-hosted Appcircle server with the CLI.
 
@@ -200,7 +200,7 @@ For secure and reliable communication, you should trust the SSL certificate.
 
 You can trust the SSL certificate of the Appcircle server with the Appcircle CLI tool itself to make sure all the requests are secured and trusted.
 
-You should already have [configured](#configure-appcircle-cli-to-use-your-self-hosted-appcircle-server) the Appcircle CLI tool for the self-hosted Appcircle server.
+You should already have [configured](#configure-cli-to-use-your-self-hosted-server) the Appcircle CLI tool for the self-hosted Appcircle server.
 
 :::info
 This command is supported on **MacOS** and **Linux** operating systems only.
