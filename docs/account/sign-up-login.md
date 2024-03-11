@@ -43,4 +43,4 @@ Social login feature has been deprecated. Only previously registered users can u
 
 If the selected account from a login provider has an email address that already exists in Appcircle, you will be prompted to link this account with the current one. When you press the **Add to existing account **button, an email will be sent to the email address to confirm the account linking.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (26).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-account-linking.png' />
