@@ -5,6 +5,9 @@ metaDescription: Testing Distribution & Store Reverse Proxy
 sidebar_position: 14
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 import Screenshot from '@site/src/components/Screenshot';
 
 ## Overview
@@ -27,7 +30,11 @@ There is one thing you should consider, the SSL certificates. Generally public S
 
 There are several use-cases when configuring the reverse proxy and the Appcircle server.
 
-## Use-Case 1
+<Tabs groupId="use-case">
+
+  <TabItem value="usecase1" label="Use-Case 1">
+
+#### Use-Case 1
 
 You may have installed the Appcircle server with an SSL certificate and configured the Enterprise App Store with a custom domain and an SSL certificate.
 
@@ -35,7 +42,6 @@ This is the recommended use-case because all the traffic between users, reverse-
 
 In this use-case;
 
-- The reverse proxy will connect the Appcircle server with the default domain and with `HTTPS`.
 - The reverse proxy will connect the Enterprise App Store with a custom domain and with `HTTPS`.
 - The reverse proxy will connect the Testing Distribution with the default domain and with `HTTPS`.
 - The Testing Distribution and the Enterprise App Store users will connect the reverse proxy with `HTTPS`.
@@ -118,13 +124,13 @@ In the example Nginx configuration below, you can see that there is 2 virtual se
 
 Check out the `server_name`, `ssl_certificate`, `ssl_certificate_key`, `proxy_pass`, `proxy_set_header Host` values.
 
-- `server_name`: Domain name for the Enterprise App Store and Testing Distribution users.
+- `server_name`: Domain name for the Enterprise App Store and Testing Distribution users coming from the internet.
 
-- `ssl_certificate` and `ssl_certificate_key`: SSL certificate files for `HTTPS` connection.
+- `ssl_certificate` and `ssl_certificate_key`: SSL certificate files for `HTTPS` connection between the users and the reverse proxy.
 
-- `proxy_pass`: The IPV4 address or the domain name of the Appcircle server with `HTTPS` schema.
+- `proxy_pass`: The IPV4 address or the domain name of the Appcircle server with `HTTPS` schema. We are configuring with `HTTPS` because both of Enterprise App Store and the Testing Distribution work with `HTTPS`.
 
-- `proxy_set_header Host`: The domain name that we have configured on the `global.yaml`.
+- `proxy_set_header Host`: The domain names that we have configured on the Appcircle server `global.yaml`.
 
 ```nginx
 worker_processes auto;
@@ -179,13 +185,21 @@ http {
 
 With this `global.yaml` and the `Nginx` configuration, the users can access the Appcircle Enterprise App Store and Testing Distribution from the internet safely.
 
-## Use-Case 2
+  </TabItem>
+
+  <TabItem value="usecase2" label="Use-Case 2">
+
+#### Use-Case 2
+
+You may have installed the Appcircle server with an SSL certificate and configured the Enterprise App Store with a custom domain but not with an SSL certificate.
 
 In this use-case;
 
-- The Appcircle server will use a self-signed certificate,
-- The Enterprise App Store will be accessed with a custom domain and with `HTTP`,
-- The Testing Distribution will be accessed with the default domain and with `HTTPS`.
+- The reverse proxy will connect the Enterprise App Store with a custom domain and with `HTTP`.
+- The reverse proxy will connect the Testing Distribution with the default domain and with `HTTPS`.
+- The Testing Distribution and the Enterprise App Store users will connect the reverse proxy with `HTTPS`.
+
+The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` keys.
 
 ```yaml
 environment: Production
@@ -241,6 +255,18 @@ nginx:
     -----END PRIVATE KEY-----
 ```
 
+In the example Nginx configuration below, you can see that there is 2 virtual servers, one for the Enterprise App Store and one for the Testing Distribution.
+
+Check out the `server_name`, `ssl_certificate`, `ssl_certificate_key`, `proxy_pass`, `proxy_set_header Host` values.
+
+- `server_name`: Domain name for the Enterprise App Store and Testing Distribution users coming from the internet.
+
+- `ssl_certificate` and `ssl_certificate_key`: SSL certificate files for `HTTPS` connection between the users and the reverse proxy.
+
+- `proxy_pass`: The IPV4 address or the domain name of the Appcircle server with `HTTPS` schema. We are configuring the Testing Distribution with `HTTPS`, but we should use `HTTP` for the Enterprise App Store.
+
+- `proxy_set_header Host`: The domain names that we have configured on the Appcircle server `global.yaml`.
+
 ```nginx
 worker_processes auto;
 
@@ -291,3 +317,7 @@ http {
     }
 }
 ```
+
+  </TabItem>
+
+</Tabs>
