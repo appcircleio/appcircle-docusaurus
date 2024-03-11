@@ -149,3 +149,25 @@ When you **change the publish flow** for some reason **after adding an applicati
 After publish flow execution, if no errors occurred, that means the sending to TestFlight was completed successfully.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-testflight-success.png' />
+
+### Deleting iOS Publish Profiles
+
+Either for freeing up space purposes or if you wish to not use the Publish module, you can delete your iOS Publish Profile. Click on the three dot menu on the profile card:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-ios-delete-profile.png' />
+
+#### Delete a Single Publish Version
+
+If you want to free up space but you don't want to lose your Publish profile, you can delete a submitted version from iOS Publish Profile module. Note that if the version is sent to the App Store, your version **will not be deleted **from App Store.
+
+Click on the three dot menu on the version, and click on the Delete
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-ios-version-delete.png' />
+
+After typing the name, your version will be deleted.
+
+:::info
+
+In order to free up storage in your organization, you should also remove the other references pointing to the artifact. For example, if you have the same artifact on the builds, you should also delete those artifacts as well.
+
+:::

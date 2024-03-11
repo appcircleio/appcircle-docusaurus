@@ -114,3 +114,25 @@ When you **change the publish flow** for some reason **after adding an applicati
 After publish flow execution, if no errors occurred, that means the sending to the store was completed successfully.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-huawei-success.png' />
+
+### Deleting Huawei Publish Profiles
+
+Either for freeing up space purposes or if you wish to not use the Publish module, you can delete your Publish Profile. Click on the three dot menu on the profile card:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-delete-profile.png' />
+
+#### Delete a Single Publish Version
+
+If you want to free up space but you don't want to lose your Publish profile, you can delete a submitted version from Android Publish module. Note that if the version is sent to the Huawei AppGallery, your version **will not be deleted **from Huawei AppGallery.
+
+Click on the three dot menu on the version, and click on the Delete
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-version-delete.png' />
+
+After typing the name, your version will be deleted.
+
+:::info
+
+In order to free up storage in your organization, you should also remove the other references pointing to the artifact. For example, if you have the same artifact on the builds, you should also delete those artifacts as well.
+
+:::
