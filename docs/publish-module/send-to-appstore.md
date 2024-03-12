@@ -152,13 +152,13 @@ After publish flow execution, if no errors occurred, that means the sending to T
 
 ### Deleting iOS Publish Profiles
 
-Either for freeing up space purposes or if you wish to not use the Publish module, you can delete your iOS Publish Profile. Click on the three dot menu on the profile card:
+Either for freeing up space purposes or if you wish to not use the Publish module, you can delete your iOS Publish Profile. Click on the three-dot menu on the profile card:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-ios-delete-profile.png' />
 
 #### Delete a Single Publish Version
 
-If you want to free up space but you don't want to lose your Publish profile, you can delete a submitted version from iOS Publish Profile module. Note that if the version is sent to the App Store, your version **will not be deleted **from App Store.
+If you want to free up space but don't want to lose your Publish profile, you can delete a submitted version from the iOS Publish Profile module. Note that if the version is sent to the App Store, your version **will not be deleted** from the App Store.
 
 Click on the three dot menu on the version, and click on the Delete
 
