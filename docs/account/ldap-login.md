@@ -36,7 +36,7 @@ To start, go to [My Organization](./my-organization.md) > Integrations screen 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login4.png' />
 
-- To access the LDAP integration settings, click the "Manage" button of the "LDAP Login" then click the "Edit" button of existing LDAP provider.
+- To access the LDAP integration settings, click the "Manage" button of the "LDAP Login", then click the "Edit" button of the existing LDAP provider.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login-configuration-edit.png' />
 
