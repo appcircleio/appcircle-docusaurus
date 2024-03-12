@@ -9,6 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import Screenshot from '@site/src/components/Screenshot';
+import RebootAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_reboot-appcircle-server.mdx';
 
 ## Overview
 
@@ -28,7 +29,7 @@ In the diagram above, you can see the overall structure that you will deploy. Th
 
 There is one thing you should consider, the SSL certificates. Generally public SSL certificates are located in the reverse proxy and self-signed SSL certificate is located in the Appcircle server. So the testing distribution and enterprise app store users can connect to the Appcircle from internet without having untrusted SSL certificate problems.
 
-There are several use-cases when configuring the reverse proxy and the Appcircle server.
+There are several use-cases for SSL certificates and HTTP(S) connections while configuring the reverse proxy and the Appcircle server.
 
 <Tabs groupId="use-case">
 
@@ -48,7 +49,7 @@ In this use-case;
 
 To configure the Enterprise App Store SSL certificates, you can read the [Enterprise App Store Custom Domain SSL Configuration document](./ssl-configuration.md#custom-domain).
 
-The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` keys.
+The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` and `external.scheme` keys.
 
 ```yaml
 environment: Production
@@ -199,7 +200,7 @@ In this use-case;
 - The reverse proxy will connect the Testing Distribution with the default domain and with `HTTPS`.
 - The Testing Distribution and the Enterprise App Store users will connect the reverse proxy with `HTTPS`.
 
-The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` keys.
+The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` and `external.scheme` keys.
 
 ```yaml
 environment: Production
@@ -332,7 +333,7 @@ In this use-case;
 - The reverse proxy will connect the Testing Distribution with the default domain and with `HTTPS`.
 - The Testing Distribution and the Enterprise App Store users will connect the reverse proxy with `HTTPS`.
 
-The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` keys.
+The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` and `external.scheme` keys.
 
 ```yaml
 environment: Production
@@ -588,3 +589,9 @@ http {
   </TabItem>
 
 </Tabs>
+
+## Restart Appcircle Server
+
+After you have configured the Appcircle server `global.yaml`, you can restart the server with the new configuration.
+
+<RebootAppcircleServer />
