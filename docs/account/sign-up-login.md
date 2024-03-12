@@ -35,7 +35,7 @@ If you forget your password, you can request a new one by clicking on the **Forg
 
 :::caution
 
-Social login feature has been deprecated. Only previously registered users can use it.
+The social login feature **has been deprecated**. Only **previously registered** users can use it.
 
 :::
 
