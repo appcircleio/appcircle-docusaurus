@@ -11,9 +11,9 @@ import Screenshot from '@site/src/components/Screenshot';
 
 ### Changing JAVA version
 
-If you want to change the JAVA version for your Android project, you can achieve this by changing the JAVA_HOME environment variable. Appcircle currently has OpenJDK 11(default), OpenJDK 8 and OpenJDK 17. You can use the below custom script before your build step for this task.
+If you want to change the JAVA version for your Android project, you can achieve this by changing the JAVA_HOME environment variable. Appcircle currently has `OpenJDK 11(default)`, `OpenJDK 8`, and `OpenJDK 17`. You can use the below custom script before your build step for this task.
 
-Appcircle Android build uses OpenJDK 11 as a default. Build machines also have OpenJDK 8 and OpenJDK 17 as well. You can use the below custom script to change your JAVA_HOME environment variable.
+[Appcircle Android Build](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build) uses `OpenJDK 11` as a default. Build machines also have `OpenJDK 8` and `OpenJDK 17` as well. You can use the below custom script to change your JAVA_HOME environment variable.
 
 ```bash
 echo "Default JAVA" $JAVA_HOME
@@ -26,7 +26,7 @@ echo "OpenJDK 17" $JAVA_HOME_17_X64
 echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $AC_ENV_FILE_PATH
 ```
 
-Create a custom script like above and put it **above** your Android build step.
+Create a custom script like above and put it **above** your [Android Build](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build) step.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow.png" />
 
@@ -34,7 +34,7 @@ Create a custom script like above and put it **above** your Android build step.
 
 :::info
 
-Please be aware that this custom script affects any step that comes after. Therefore you should use this step as a standalone step not as a part of any custom script.
+Please be aware that this custom script affects any step that comes after. Therefore, you should use this step as a standalone step and not as part of any custom script.
 
 :::
 
@@ -42,10 +42,8 @@ Please be aware that this custom script affects any step that comes after. There
 
 This document provides a sample custom script written in Ruby that can be integrated into your CI/CD pipeline to enforce a minimum test coverage threshold. The script is designed to break the pipeline if the covered test result falls below a specified percentage.
 
-:::caution
-
-Please note that this custom script must be placed after the [**Test Reports**](http://localhost:3000/workflows/android-specific-workflow-steps#test-reports-for-android) step in the workflow..
-
+:::warning
+Please note that this custom script must be placed after the [**Test Reports**](https://docs.appcircle.io/continuous-testing/running-android-unit-tests#generating-test-report) step in the workflow.
 :::
 
 ```ruby
@@ -57,8 +55,8 @@ end
 
 output_dir = env_has_key('AC_OUTPUT_DIR')
 
-def read_json_file(file_path)
-  JSON.parse(File.read(file_path))
+def read_json_file(test_result_file_path)
+  JSON.parse(File.read(test_result_file_path))
 end
 
 def extract_line_coverage(json_data)
@@ -66,8 +64,8 @@ def extract_line_coverage(json_data)
 end
 
 begin
-file_path = "#{output_dir}/test_results.json" 
-json_data = read_json_file(file_path)
+test_result_file_path = "#{output_dir}/test_results.json" 
+json_data = read_json_file(test_result_file_path)
 line_coverage = extract_line_coverage(json_data)
 
 puts "Current Line Coverage: % #{line_coverage * 100}"
@@ -100,7 +98,7 @@ Please feel free to edit the following variables according to your own data:
 Appcircle Testing Distribution provides an integrated and automated enterprise-grade solution for distributing apps to the testers, but if you want to use other solutions for app distribution, you can do so with custom scripts. You can use the following script below to deploy apps to Firebase App Distribution automatically from the Appcircle Build module.
 
 - The binary to be deployed can be obtained with the related environment variable. `AC_EXPORT_DIR` and the binary path.
-- `FIREBASE_TOKEN` must be obtained through a local console. Please follow the [instructions here](https://firebase.google.com/docs/cli#cli-ci-systems) to set up the Firebase CLI locally and then you can request a token with the `firebase login:ci `command.
+- `FIREBASE_TOKEN` must be obtained through a local console. Please follow the [instructions here](https://firebase.google.com/docs/cli#cli-ci-systems) to set up the [**Firebase CLI**](https://firebaseopensource.com/projects/firebase/firebase-tools/) locally, and then you can request a token with the `firebase login:ci` command.
 - `FIREBASE_APP_ID` can be obtained from the Firebase Dashboard under the settings screen:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (133).png' />
@@ -117,6 +115,6 @@ curl -sL firebase.tools | bash
 firebase appdistribution:distribute $AC_EXPORT_DIR/Runner.ipa --app $FIREBASE_APP_ID --release-notes "Release Notes..." --token $FIREBASE_TOKEN --groups "testers"
 ```
 
-You may also use our Firebase App Distribution Component for this process.
+You may also use our [Firebase App Distribution](https://docs.appcircle.io/workflows/common-workflow-steps/#firebase-app-distribution) component for this process.
 
 https://github.com/appcircleio/appcircle-firebase-distribution-component
