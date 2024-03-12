@@ -14,7 +14,7 @@ This step builds your application for iOS devices in ARM architecture, which is 
 This step is the archive and export step. When the step is completed, the .ipa file of the application is generated.
 :::
 
-### Requirements
+### Prerequisites
 
 This stepper needs other steppers to work correctly. You can find these steppers in the table below.
 
@@ -38,9 +38,9 @@ You can find all the parameters required for this step in the table below, with 
 |-------------------------------|------------------------------------------------|------------------|
 | `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step. | Required |
 | `$AC_OUTPUT_DIR_PATH`               | This variable specifies the path of the artifacts that will be generated after the build is complete. | Required |
-| `$AC_SCHEME`              | Specifies the project scheme for build. This variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration). | Required |
-| `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example : -quiet |  |
-| `$AC_PROJECT_PATH`           | Specifies the project path. For example : ./appcircle.xcodeproj. This variable comes from Configuration. | Required |
+| `$AC_SCHEME`              | Specifies the project scheme for build. If you filled in **`Configuraiton => Build Scheme`**, this variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration). | Required |
+| `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example: -quiet |  |
+| `$AC_PROJECT_PATH`           | Specifies the project path. For example: ./appcircle.xcodeproj. If you filled in **`Configuration => Project or Workspace`**, this variable comes from Configuration. | Required |
 | `$AC_CERTIFICATES`             | This variable specifies the path of the certificates to be signed. | Required |
 | `$AC_BUNDLE_IDENTIFIERS`               | This variable holds the Bundle Identifier of the application to be built. | Required |
 | `$AC_PROVISIONING_PROFILES`            | This variable specifies the path of provisioning profiles to be signed. | Required |
