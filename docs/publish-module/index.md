@@ -76,7 +76,7 @@ We can access the list of steps that can be used in a publish workflow by clicki
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-workflows.png' />
 
-You can effortlessly obtain a YAML file of your current workflow configurations on our platform with the **Download YAML** button at the bottom.
+You can effortlessly obtain a **YAML** file of your current Publish Flow configurations on our platform with the **Download YAML** button at the bottom.
 By simply selecting the download option, you'll receive a YAML file containing all the details of your existing workflow setup.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download-workflow.png' />
