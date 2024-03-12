@@ -9,7 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import Screenshot from '@site/src/components/Screenshot';
-import RebootAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_reboot-appcircle-server.mdx';
+import RebootAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
 
 ## Overview
 
