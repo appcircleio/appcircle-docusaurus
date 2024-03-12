@@ -100,6 +100,17 @@ The Enterprise App Store share feature doesn't allow public sharing. It only hel
 
 :::
 
+:::warning
+**Please Note**, if you have an **Apple Developer** account with an **Enterprise organization** and you are using an app signed with an [**Enterprise certificate**](https://docs.appcircle.io/signing-identities/ios-certificates-and-provisioning-profiles#ios-certificates) for **internal distribution**, please use [**Authentication**](https://deploy-preview-358--reverent-galileo-8ef035.netlify.app/enterprise-appstore/customize-ent-store/#authentication) for user access. 
+
+Apple does not allow public distribution of internally distributed apps, and if Apple detects that you are distributing an app signed with an Enterprise certificate without using Authentication, Apple will impose severe sanctions.
+
+You can access the relevant terms and conditions from the links below and get detailed information.
+
+- [Apple Developer Enterprise Program Agreement](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20230605-English.pdf) (See Section 2.1 on page 8 for usage and restrictions, and Section 11.2 on page 33 for terms and terminations.)
+- [Apple Developer Enterprise Program](https://developer.apple.com/programs/enterprise/)
+:::
+
 :::info
 
 The above tasks can also be initiated by our Appcircle CLI. Please check the Appcircle CLI documentation for the command line parameters.
