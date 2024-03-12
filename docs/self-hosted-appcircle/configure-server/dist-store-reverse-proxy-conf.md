@@ -9,7 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import Screenshot from '@site/src/components/Screenshot';
-import RebootAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
 
 ## Overview
 
@@ -594,4 +594,6 @@ http {
 
 After you have configured the Appcircle server `global.yaml`, you can restart the server with the new configuration.
 
-<RebootAppcircleServer />
+<RestartAppcircleServer />
+
+Now you can access to the Testing Distribution and Enterprise App Store contents from the internet safely!
