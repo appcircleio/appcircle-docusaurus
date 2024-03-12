@@ -109,15 +109,15 @@ After publish flow execution, if no errors occurred, that means the sending to t
 
 ### Deleting Android Publish Profiles
 
-Either for freeing up space purposes or if you wish to not use the Publish module, you can delete your Android Publish Profile. Click on the three dot menu on the profile card:
+Either for freeing up space purposes or if you wish to not use the Publish module, you can delete your Android Publish Profile. Click on the three-dot menu on the profile card:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-delete-profile.png' />
 
 #### Delete a Single Publish Version
 
-If you want to free up space but you don't want to lose your Publish profile, you can delete a submitted version from Android Publish module. Note that if the version is sent to the Google Play Store, your version **will not be deleted **from Google Play.
+If you want to free up space but don't want to lose your Publish profile, you can delete a submitted version from Android Publish module. Note that if the version is sent to the Google Play Store, your version **will not be deleted** from the Google Play.
 
-Click on the three dot menu on the version, and click on the Delete Version
+Click on the three-dot menu on the version, and click on the Delete Version
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-version-delete.png' />
 
