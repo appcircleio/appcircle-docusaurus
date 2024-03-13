@@ -28,7 +28,7 @@ The parameters required for this step to work as expected are listed below.
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_VALIDATION_CONDITION`    | This parameter determines which condition must be met for the step to be successful. There are four different options: as `Internal`, `External`, or `both`. | Required |
+| `$AC_VALIDATION_CONDITION`    | This parameter determines which condition must be met for the step to be successful. There are four different options: as `Internal`, `External`, or `Both`. | Required |
 
 :::info
 Please note that the selected condition determines the **success** of the step. For example, if the application is sent to the **`Internal`** test group and its status is **`In Testing`**, this step will be successful, and it will move on to the next step.
