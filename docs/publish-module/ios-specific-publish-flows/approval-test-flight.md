@@ -10,6 +10,17 @@ import Screenshot from '@site/src/components/Screenshot';
 
 This step allows you to check the status of your application after sending it to [**TestFlight**](https://developer.apple.com/testflight/). It is a **scheduled job** and periodically checks the status of the relevant version on TestFlight. Informs you of the version status in internal, external, or both test groups.
 
+:::info
+After this step application is uploaded to **TestFlight**, it successfully terminates or fails the step according to the selected status. There are four different options for this:
+
+- **`Internal or External`**
+- **`Internal Only`**
+- **`External Only`**
+- **`Both`**
+
+For example, your application was submitted to the **`Internal`** test group in TestFlight. And you have selected **`Internal or External`** status from the step. When your application is sent to the **`Internal`** test group, its status will be **`In Testing`** and the Appcircle step will be successful. The same situation is valid for others. If you tick **`Internal Only`** or **`External Only`**, it will be enough to be **`In Testing`** in one of the two test groups, but if you select **`Both`**, the step will be successful after the **`In Testing`** requirement is met in both test groups.
+:::
+
 ### Prerequisites
 
 This step is one of the dependent steps. The dependent steps are given in the table below with their explanations.
@@ -29,11 +40,6 @@ The parameters required for this step to work as expected are listed below.
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|
 | `$AC_VALIDATION_CONDITION`    | This parameter determines which condition must be met for the step to be successful. There are four different options: as `Internal`, `External`, or `Both`. | Required |
-
-:::info
-Please note that the selected condition determines the **success** of the step. For example, if the application is sent to the **`Internal`** test group and its status is **`In Testing`**, this step will be successful, and it will move on to the next step.
-:::
-
 
 To access the source code of this component, please use the following link:
 
