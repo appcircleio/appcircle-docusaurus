@@ -13,7 +13,7 @@ This step allows you to check the status of your application after sending it to
 :::info
 After this step application is uploaded to **TestFlight**, it successfully terminates or fails the step according to the selected status. There are four different options for this:
 
-- **`Internal or External`**
+- **`One of the External or Internal`**
 - **`Internal Only`**
 - **`External Only`**
 - **`Both`**
@@ -39,7 +39,7 @@ The parameters required for this step to work as expected are listed below.
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_VALIDATION_CONDITION`    | This parameter determines which condition must be met for the step to be successful. There are four different options: as `Internal`, `External`, or `Both`. | Required |
+| `$AC_VALIDATION_CONDITION`    | This parameter determines which condition must be met for the step to be successful. There are four different options: as `One of the External or Internal`, `Internal`, `External`, or `Both`. | Required |
 
 To access the source code of this component, please use the following link:
 
