@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Git Clone
 
-The **Git Clone** step is used to fetch the source code repository from a Git provider, such as [**GitHub**](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-github), [**GitLab**](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-gitlab), [**Bitbucket**](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-bitbucket), or [**Azure**](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-azure), and clone it into the Runner where the build and deployment processes take place. This step ensures that the latest version of the codebase is available for subsequent build and deployment steps.
+The **Git Clone** step is used to fetch the source code repository from a Git provider, such as [**GitHub**](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-github), [**GitLab**](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-gitlab), [**Bitbucket**](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-bitbucket), or [**Azure DevOps**](https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-azure), and clone it into the runner where the build and deployment processes take place. This step ensures that the latest version of the codebase is available for subsequent build and deployment steps.
 
 ### Prerequisites
 
@@ -47,7 +47,7 @@ After connecting the repository, the following [**Reserved Environment Variables
 | `$AC_GIT_TAG`                 | Tag of the repository. If you have tags in your repository, Appcircle can start a build according to the tags. | Optional |
 | `$AC_GIT_LFS`                 | Used to specify whether large files will be downloaded. The default value is `false`. | Optional |
 | `$AC_GIT_SUBMODULE`           | Used to specify whether the submodule should be cloned. | Optional |
-| `$AC_GIT_CACHE_CREDENTIALS`   | If this variable is set to true, the credentials will be cached. This can be useful if the same credentials are used for multiple repositories. The default value is `true`. | Optional |
+| `$AC_GIT_CACHE_CREDENTIALS`   | If this variable is set to `true`, the credentials will be cached. This can be useful if the same credentials are used for multiple repositories. The default value is `true`. | Optional |
 | `$AC_GIT_EXTRA_PARAMS`        | If this variable is set, it sends additional parameters for Git requests. | Optional |
 
 ### Output Variables
