@@ -353,6 +353,74 @@ For now, self-hosted Appcircle does not support usage of password protected priv
 
 :::
 
+## Testing Distribution
+
+`global.yaml` configuration has its own dedicated section for Testing Distribution domain settings. Below we will explain some use cases for Testing Distribution, when you enable HTTPS.
+
+### Default Domain
+
+By default, Testing Distribution has a `dist` subdomain under the main Appcircle domain. For example if your `.external.mainDomain` in the `global.yaml` file is `.appcircle.spacetech.com`, then the default Testing Distribution domain name is `dist.appcircle.spacetech.com`.
+
+If you have configured the Appcircle dashboard as `HTTPS`, the certificate of the Appcircle includes this default Testing Distribution domain and works with `HTTPS`.
+
+### Custom Domain
+
+It's possible to use a custom domain for the Testing Distribution. In this case we need to make extra configuration for our custom domain.
+
+Most likely, our custom domain won't be covered by main domain certificate. So we may need to create new public certificate and private key pair for the custom domain.
+
+Custom domain HTTPS settings are similar to main domain conceptually. After enabling HTTPS for main domain, it won't be hard to enable HTTPS for Testing Distribution custom domain.
+
+Let's assume we want to use `dist.spacetech.com` as custom domain for our sample scenario.
+
+`global.yaml` section should be like this for this case. If you don't have `testerWeb` key in the `global.yaml` file, you can add it.
+
+```yaml
+testerWeb:
+  customDomain:
+    enabled: true
+    domain: dist.spacetech.com
+    port: 443
+    enabledTls: true
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
+```
+
+- `publicKey` is the public certificate. (content of `.crt` file)
+- `privateKey` is the private key. (content of `.key` file)
+
+You should use the full certificate chain for `publicKey` similar to main domain `sslCertificate`, to prevent SSL errors when clients connect.
+
+:::caution
+
+For now, self-hosted Appcircle does not support usage of password protected private keys for Testing Distribution custom domains.
+
+:::
+
 ## External Services
 
 If you are using external services that have self-signed SSL certificates, you will need to add their public certificate to the `global.yaml` file. These external services can be self-hosted git providers like GitLab, Azure Devops Server, Bitbucket, or LDAP servers used for authentication.
