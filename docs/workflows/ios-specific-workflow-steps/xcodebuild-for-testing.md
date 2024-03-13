@@ -13,7 +13,7 @@ This step builds your application and generates an IPA for testing so that it ca
 
 ### Prerequisites
 
-In order for this stepper to work correctly, it must be used after the two steps listed below.
+In order for this step to work correctly, it must be used after the two steps listed below.
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -37,7 +37,7 @@ You can find the parameters required for this step to work and detailed explanat
 | `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step. | Required |
 | `$AC_SCHEME`                 | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration). | Required |
 | `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example: **`-quiet`** | Optional |
-| `$AC_PROJECT_PATH`               | Specifies the project path. For example: **`./appcircle.xcodeproj`**. This variable comes from Configuration. | Required |
+| `$AC_PROJECT_PATH`               | Specifies the project path. For example: **`./appcircle.xcodeproj`**. This variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration). | Required |
 | `$AC_CONFIGURATION_NAME`             | You can build your project with any configuration you want. Specify the configuration as hard-coded. Appcircle will automatically add this configuration to the xcodebuild command. For example; **`Debug`** | Optional |
 | `$AC_COMPILER_INDEX_STORE_ENABLE` | You can disable indexing during the build for a faster build. The default value is **`No`**. | Optional |
 | `$AC_DESTINATION` | This parameter determines for which destination the application will be built and IPA will be generated. The default value is **`generic/platform=iOS`**, which means that it will be built for all iOS devices. | Required |
