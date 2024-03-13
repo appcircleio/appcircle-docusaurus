@@ -76,6 +76,19 @@ We can access the list of steps that can be used in a publish workflow by clicki
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-workflows.png' />
 
+You can effortlessly obtain a **YAML** file of your current Publish Flow configurations on our platform with the **Download YAML** button at the bottom.
+By simply selecting the download option, you'll receive a YAML file containing all the details of your existing workflow setup.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download-workflow.png' />
+
+Customize your workflows effortlessly by uploading your YAML file with the **Replace Flow** button at the top.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-replace-flow-button.png' />
+
+Simply select the file containing your desired configurations and integrate them seamlessly into the platform.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-upload-workflow.png' />
+
 ### Publish Settings
 
 When a build is completed on the Build module and its artifacts are distributed to the Publish module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
@@ -169,6 +182,16 @@ The list of publishing actions performed with the relevant application version w
 When you click on an item in the list, you can see the detailed publishing logs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log.png' />
+
+### Mark Version as Release Candidate
+
+Appcircle allows you to mark your app version as RC and designate any version as a **Release Candidate** with ease by simply selecting the desired app version and clicking on the **Mark as RC** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-mark-rc-button.png' />
+
+The chosen version will be visibly distinguished, allowing users to easily identify it as a `Release Candidate`.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-release-candidate.png' />
 
 ### Version Download
 
