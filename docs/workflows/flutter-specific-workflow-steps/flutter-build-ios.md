@@ -1,13 +1,13 @@
 ---
-title: Flutter Build iOS
-metaTitle: Flutter Build iOS
-metaDescription: Flutter Build iOS
+title: Flutter Build for iOS
+metaTitle: Flutter Build for iOS
+metaDescription: Flutter Build for iOS
 sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Flutter Build iOS
+# Flutter Build for iOS
 
 This step makes your Flutter project suitable for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter).
 
@@ -19,13 +19,13 @@ Once you have compiled your app for Flutter iOS, the native environment will be 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step will clone your project through the connected git provider and create the `$AC_REPOSITORY_DIR` variable. |
-| [**Flutter Install**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-install) | This step will install the Flutter SDK. If a version is not specified, it will install the latest **stable** version. The **Flutter SDK** package must be installed on the system. For this reason, make sure that it is used after the **Flutter Install** |
+| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step will clone your project through the connected Git provider and create the `$AC_REPOSITORY_DIR` variable. |
+| [**Flutter Install**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-install) | This step will install the Flutter SDK. If a version is not specified, it will install the latest **stable** version. The **Flutter SDK** package must be installed on the system. For this reason, make sure that **Flutter Build for iOS** is used after the **Flutter Install**. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterOrder1.png' />
 
 :::warning
-**Please Pay Attention**. This step is dependent on the Flutter Install step. If Flutter is not installed on the system, it will give a Flutter SDK not found error.
+**Keep in mind** that this step is dependent on the Flutter Install step. If Flutter is not installed on the system, it will give a Flutter SDK not found error.
 :::
 
 ### Input Variables
@@ -43,4 +43,3 @@ The parameters required for this step to work are given in the table below with 
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-ios-flutter-build-component
-
