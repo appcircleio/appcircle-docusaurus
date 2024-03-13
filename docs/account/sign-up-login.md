@@ -9,15 +9,13 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Sign Up / Login
 
+Getting started with Appcircle is easy. To sign up for or log into Appcircle, go to [my.appcircle.io](https://my.appcircle.io).
+
+To log into Appcircle, you only need to provide your registered email address and password. No additional permissions are required beyond accessing the email. Simply enter your credentials on the login screen, and upon successful authentication, you'll gain access to your account and its features.
+
 ## Signing Up
 
-Getting started with Appcircle is easy. To sign up for Appcircle, go to [https://my.appcircle.io](https://my.appcircle.io) and either:
-
-To log into Appcircle, you only need to provide your registered email address and password.
-No additional permissions are required beyond accessing the email.
-Simply enter your credentials on the login screen, and upon successful authentication, you'll gain access to your account and its features.
-
-For registration, click on the **Sign up with Company E-mail** link.
+For registration, click on the **Sign up with Company E-mail** button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-user-login.png' />
 
@@ -33,7 +31,7 @@ You cannot use common and disposable email domains for registration; instead, pl
 
 ## Logging In
 
-To log in, go to [https://my.appcircle.io](https://my.appcircle.io) and either click on a linked login provider for one-click login or type in your email address and password and click **Log in**.
+To log in, go to [my.appcircle.io](https://my.appcircle.io) and either click on a linked login provider for one-click login or type in your email address and password and click **Log in**.
 
 If you forget your password, you can request a new one by clicking on the **Forgot Password** link and entering your email address.
 
@@ -45,6 +43,6 @@ The social login feature **has been deprecated**. Only **previously registered**
 
 ### Linking a New Login Provider from Login
 
-If the selected account from a login provider has an email address that already exists in Appcircle, you will be prompted to link this account with the current one. When you press the **Add to existing account **button, an email will be sent to the email address to confirm the account linking.
+If the selected account from a login provider has an email address that already exists in Appcircle, you will be prompted to link this account with the current one. When you press the **Add to existing account** button, an email will be sent to the email address to confirm the account linking.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-account-linking.png' />
