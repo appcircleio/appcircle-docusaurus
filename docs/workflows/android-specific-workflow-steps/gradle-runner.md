@@ -45,4 +45,4 @@ As the output may vary depending on the task you execute, there is no specific o
 
 To access the source code of this component, please use the following link:
 
-https://github.com/appcircleio/appcircle-android-unit-test-component.git
+https://github.com/appcircleio/appcircle-android-gradle-task-component.git
