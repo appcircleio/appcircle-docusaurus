@@ -13,20 +13,20 @@ This component increments the `versionCode` and `versionName` according to the p
 For more information about Android versioning, you can refer to this document: [Android Versioning](https://docs.appcircle.io/versioning/android-version/).
 
 :::caution
-If you are not incrementing the versioning process via **Appcircle** and have not enabled this feature through [**Configuration**](https://docs.appcircle.io/build/build-profile-configuration), this step completes the step without making any version changes.
+If you are not incrementing the version via **Appcircle** and have not enabled this feature through [**Configuration**](https://docs.appcircle.io/build/build-profile-configuration#versioning-configuration), this step completes the step without making any version changes.
 :::
 
 ### Prerequisites
-The workflow steps that need to be executed before running the **Increment Build and Version Number** workflow step, along with their respective reasons, are listed in the table below:
+The workflow steps that need to be executed before running the **Android Increment Build and Version Number** workflow step, along with their respective reasons, are listed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for this step. |
+| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | Upon completion of the **Git Clone** step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for this step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-increment-build-and-version-number_1.png' alt="image2" />
 
 ### Input Variables
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Android Build** are as follows:
+For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Android Increment Build and Version Number** are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-increment-build-and-version-number_2.png' alt="image2" />
 
@@ -42,7 +42,7 @@ For each component, specific input variables are required for its operation on y
 | `$AC_VERSION_OFFSET`         | The number to be added or subtracted from the `$AC_ANDROID_VERSION_NUMBER`. | Required |
 | `$AC_PROJECT_PATH`           | Specifies the project path. If the project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path. | Optional |
 | `$AC_VERSION_FLAVOR`         | Build flavor. If you select a flavor from the [**Advanced Settings**](https://docs.appcircle.io/versioning/android-version/#advanced-settings) section, the versioning of the chosen flavor will be applied (for example, the Gradle file of the selected flavor will be used). | Optional |
-| `$AC_OMIT_ZERO_PATCH_VERSION`| If true, it omits zero in the patch version. | Optional |
+| `$AC_OMIT_ZERO_PATCH_VERSION`| If `true`, it omits zero in the patch version. | Optional |
 
 :::info
 You can also configure many of those variables via build [**Configuration**](https://docs.appcircle.io/build/build-profile-configuration). For further details, visit [Android Versioning](https://docs.appcircle.io/versioning/android-version/).
