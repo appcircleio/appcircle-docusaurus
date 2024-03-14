@@ -14,8 +14,8 @@ This component runs the `flutter analyze` command in your Flutter project. Pleas
 ### Prerequisites
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step will clone your project through the connected git provider and create the `$AC_REPOSITORY_DIR` variable. |
-| [**Flutter Install**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-install) | This step will install the [Flutter SDK version](https://flutter-ko.dev/development/tools/sdk/releases). If a version is not specified, it will install the latest **stable** version. |
+| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step will clone your project through the connected Git provider and create the `$AC_REPOSITORY_DIR` variable. |
+| [**Flutter Install**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-install) | This step will install the [Flutter SDK](https://flutter-ko.dev/development/tools/sdk/releases) release. If the version is not specified, it will install the latest **stable** version. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2852-flutterAnalayzeOrder.png' />
 
