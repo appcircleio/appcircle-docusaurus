@@ -160,7 +160,7 @@ Either for freeing up space purposes or if you wish to not use the Publish modul
 
 If you want to free up space but don't want to lose your Publish profile, you can delete a submitted version from the iOS Publish Profile module. Note that if the version is sent to the App Store, your version **will not be deleted** from the App Store.
 
-Click on the three dot menu on the version, and click on the Delete
+Click on the three dot menu on the version, and click on the **Delete** button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-ios-version-delete.png' />
 
