@@ -20,7 +20,7 @@ The workflow steps that need to be executed before running the **Android Lint** 
 | [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | To start the **Android Lint** process, the repository that needs to be built must be fetched from the branch. This generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Lint** step. |
 
 :::caution
-Please ensure that you insert the **Android Lint** step before using the build step.
+Please ensure that you insert the **Android Lint** step before using the **Android Build** step.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_1.png' alt="image2" />
