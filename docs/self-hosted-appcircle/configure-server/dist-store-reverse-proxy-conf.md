@@ -1,7 +1,7 @@
 ---
-title: Testing Distribution & Store Reverse Proxy
-metaTitle: Testing Distribution & Store Reverse Proxy
-metaDescription: Testing Distribution & Store Reverse Proxy
+title: Testing Distribution & Enterprise App Store Reverse Proxy
+metaTitle: Testing Distribution & Enterprise App Store Reverse Proxy
+metaDescription: Testing Distribution & Enterprise App Store Reverse Proxy
 sidebar_position: 14
 ---
 
