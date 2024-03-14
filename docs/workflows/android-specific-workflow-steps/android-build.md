@@ -46,7 +46,7 @@ If you have filled in the necessary variables in the **Configuration** section, 
 :::
 
 :::tip
-If you are using Gradle 4.3 and above in your project, you can just use the --scan flag in the build step to enable build scans. For existing projects, you may need to add the Gradle Scan (Gradle Enterprise) plugin. For more information, please refer to https://scans.gradle.com/
+If you are using Gradle 4.3 and above in your project, you can just use the `--scan` flag in the build step to enable build scans. For existing projects, you may need to add the Gradle Scan (Gradle Enterprise) plugin. For more information, please refer to https://scans.gradle.com/
 :::
 
 ### Output Variables
@@ -55,13 +55,16 @@ The outputs that can result from the operation of this component are listed as f
 | Variable Name     | Description                                |
 |-------------------|--------------------------------------------|
 | `$AC_APK_PATH`    | Path for the generated **APK** file. This path will be created after the **Android Build** step runs.|
-| `$AC_AAB_PATH`    | Path for the generated **AAB** file. This path will be created after the Android Build step runs. If `AAB` is selected. |
+| `$AC_AAB_PATH`    | Path for the generated **AAB** file. This path will be created after the Android Build step runs and when `AAB` is selected. |
 
 The resulting files will be either APK or AAB, depending on whether you choose the Android App in the project [Configuration](https://docs.appcircle.io/build/build-profile-configuration).
 
-If your project has [the signing configuration in Gradle](https://developer.android.com/studio/build/gradle-tips#sign-your-app), this step will generate a signed artifact.
+If your project has the [signing configuration](https://developer.android.com/studio/build/gradle-tips#sign-your-app) in Gradle, this step will generate a signed artifact.
+
 :::caution
-If you do not disable the **Sign Application** step, your artifact will remain unsigned and will be re-signed using the keystore selected in the build configuration.
+If you do not disable the **Android Sign** step and your project has no signing configuration defined in Gradle, your artifact will remain unsigned.
+
+So, in order to sign your app using the keystore selected in the build configuration, you should enable the **Android Sign** step after **Android Build**.
 :::
 
 To access the source code of this component, please use the following link:
