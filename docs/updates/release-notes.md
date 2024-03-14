@@ -268,7 +268,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Fixed the issue where the branch list could not be refreshed when the user [permission](../account/my-organization.md) for the Build module was set to "Read Only Access". <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue where the build does not appear in the list when the build starts. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the bug that users without permission were sending requests to the service when browsing pages. <CloudBadge/> <SelfHostedBadge/>
-- In the Store Submit module, the "Huawei App ID" field in the [Huawei AppGallery](../store-submit/huawei-app-gallery.md) section was disabled. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
+- In the Store Submit module, the "Huawei App ID" field in the Huawei AppGallery section was disabled. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Flickering on the screen due to line overlap in the build module has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - When an invalid email was entered in the [email integration](../account/email-connection) module, other options were reset. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The wrong dialog modal was opening in the "never delete" option selected for the deletion of an artifact. It's been fixed, and an extra description has been added. <CloudBadge/> <SelfHostedBadge/>
@@ -348,7 +348,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Fixed an issue where the user could not create a [sub-organization](../account/my-organization.md) even though they had the required permission. <CloudBadge/> <SelfHostedBadge/>
 - Fixed issue with file permissions when exporting a project for self-hosted uses. <SelfHostedBadge/>
 - Fixed the problem of adding the same name while uploading the [configuration](../build/adding-a-build-profile). <CloudBadge/> <SelfHostedBadge/>
-- The permissions of the applications in the Huawei App Gallery that depend on the permission to view the applications in the [store submit](../store-submit/huawei-app-gallery.md) section has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The permissions of the applications in the Huawei App Gallery that depend on the permission to view the applications in the store submit section has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The problem that the save button is not active after the changes made in the organization pool has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a double slash (`//`) bug on the webhook link that caused the triggers to not work. <CloudBadge/> <SelfHostedBadge/>
 - The error that the change indicator appears even though there is no change in some tabs in the config modal has been fixed. <CloudBadge/> <SelfHostedBadge/>
@@ -423,7 +423,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Lots of UI and text improvements were made for better UX. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
-- [Huawei AppGallery](../store-submit/huawei-app-gallery.md) submission bug fixed.  <SelfHostedBadge/>
+- Huawei AppGallery submission bug fixed.  <SelfHostedBadge/>
 - [Enterprise Store](../enterprise-appstore/customize-ent-store.md) The background image bug was fixed on the login page. <SelfHostedBadge/>
 - Fixed a bug that makes users unable to login to the enterprise app store in some cases. <CloudBadge/>
 - Fixed a bug that gives an unexpected error on project `export` on self-hosted server installations. <SelfHostedBadge/>
@@ -456,7 +456,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ## 3.1.0 - 2023-03-17 - StoreSubmit, Self-hosted Improvements
 
 ### 🆕 New Feature
-- Submissions to [Google Play Console](../store-submit/google-play.md) and [Huawei AppGallery](../store-submit/huawei-app-gallery.md) will now begin from the build agents. <CloudBadge/> <SelfHostedBadge/>
+- Submissions to Google Play Console and Huawei AppGallery will now begin from the build agents. <CloudBadge/> <SelfHostedBadge/>
 - It is now possible to localize some login form texts on the [Enterprise Store](../enterprise-appstore/customize-ent-store.md) when LDAP login is activated. <SelfHostedBadge/>
 
 ### :muscle: Improvement
@@ -762,7 +762,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 🆕 New Feature
 
-- [Huawei App Gallery](https://docs.appcircle.io/store-submit/huawei-app-gallery) support added. You can submit your apk or aab files to Huawei AppGallery.
+- Huawei App Gallery support added. You can submit your apk or aab files to Huawei AppGallery.
 - Java 11 added to iOS agents
 - [Slather](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#slather),[Tuist](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#tuist) and Badge components added
 - You can now see all your running builds from the status bar and cancel them.
@@ -785,7 +785,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 📑 Documentation
 
-- Added [Huawei App Gallery](https://docs.appcircle.io/store-submit/huawei-app-gallery) section for sending your apps to Huawei App Gallery.
+- Added Huawei App Gallery section for sending your apps to Huawei App Gallery.
 - Added [Huawei App Gallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei App Gallery API Key.
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#provisioning-profile-error) for Provisioning Profiles.
