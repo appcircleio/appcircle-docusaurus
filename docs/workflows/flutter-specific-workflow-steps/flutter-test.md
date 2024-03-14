@@ -33,7 +33,7 @@ You can find all the parameters required for this step in the table below, with 
 | Variable Name                 	       | Description                         | Status 			|
 |-------------------------------|------------------------------------------------|------------------|
 | `$AC_FLUTTER_PROJECT_DIR`     | This parameter is used as the repository path. This path is created immediately after the Git Clone step. If the Git Clone step is not used, this path cannot be found. | Required|
-| `$AC_FLUTTER_JUNIT_REPORTS`       | If this is set to `YES`, [JUnit](https://junit.org/junit5/) Report will be created at the `AC_TEST_RESULT_PATH`. | Optional |
+| `$AC_FLUTTER_JUNIT_REPORTS`       | If this is set to `YES`, [JUnit](https://junit.org/junit5/) test report will be created at the `AC_TEST_RESULT_PATH`. | Optional |
 | `$AC_FLUTTER_TEST_EXTRA_ARGS`     | You can use this parameter if you want to add an extra parameter to the build command line. | Optional |
 
 ### Output Variables
