@@ -41,7 +41,7 @@ You can find all the parameters required for this step in the table below, with 
 
 | Variable Name                 | Description                                    | Status 			|
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_SELECTED_FLUTTER_VERSION`| Specifies the Flutter version to install. Defaults to: stable. The version you set in the config section will override this setting. | Optional |  
+| `$AC_SELECTED_FLUTTER_VERSION`| Specifies the Flutter version to install. Defaults to: `stable`. The version you set in the [Configuration](https://docs.appcircle.io/build/building-flutter-applications/#build-configuration-for-flutter-applications) section will override this setting. | Optional |  
 
 :::caution
 If no specific version is specified, this step will automatically install the latest [**stable**](https://docs.flutter.dev/release/archive?tab=macos) version released by Flutter.
@@ -51,10 +51,8 @@ If no specific version is specified, this step will automatically install the la
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
-| `PATH`| PATH variable that adds the Flutter tool to your workflow. | 
+| `PATH`| PATH variable that adds the Flutter tool to your workflow. |
 
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-flutter-install-component
-
-
