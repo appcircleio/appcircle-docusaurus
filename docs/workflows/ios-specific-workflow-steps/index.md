@@ -77,7 +77,7 @@ https://github.com/appcircleio/appcircle-slather-component
 
 ## Tuist
 
-This step installs [Tuist](https://wwww.tuist.io/) and runs `tuist generate` with given options.
+This step installs [Tuist](https://tuist.io/) and runs `tuist generate` with given options.
 
 https://github.com/appcircleio/appcircle-tuist-component
 
