@@ -29,7 +29,9 @@ For each component, specific input variables are required for its operation on y
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appsweep-mobile-security-testing_2.png'/>
 
 :::warning
-**Caution. Do not hard coded sensitive variables, such as tokens, API keys, directly to the parameters in the step. We recommend using [Environment Variables](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.**
+**Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
+
+We recommend using [Environment Variables](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.
 :::
 
 | Variable Name          | Description                                    | Status |
