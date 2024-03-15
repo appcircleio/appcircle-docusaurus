@@ -138,7 +138,7 @@ Once you complete your build configuration, you can edit your build workflow. Fl
 
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
-<ContentRef url="/workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows/index.html">What are Workflows and How to Use Them?</ContentRef>
 
 ### How to Set a Specific Flutter Version for the Build
 

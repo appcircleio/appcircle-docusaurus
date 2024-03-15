@@ -99,7 +99,7 @@ You should see the message: _"All services are running successfully."_
 
 #### 1. Configure multiple LDAPs on server
 
-Ensure that multiple LDAP settings are properly configured on your Appcircle server's [integration settings](../../account/sso-ldap-login.md).
+Ensure that multiple LDAP settings are properly configured on your Appcircle server's [integration settings](../../account/ldap-login.md).
 
 #### 2. Create users with the same username
 

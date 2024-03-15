@@ -47,6 +47,12 @@ Every single build at Appcircle runs in clean state. It means that all files and
 
 With cache you can persist any resource that are ignored from Git. So you can transfer files and folders between build pipelines. Sometimes it may speed up your build or it may help if you have reliability issues with the original download location for dependencies. But keep in mind that the cache is uploaded to or downloaded from remote location. It may help you in some cases, but it's not a guaranteed way of speeding up builds. You should try and see the actual results for your project.
 
+:::info
+
+Using **Cache Pull/Push** steps, particularly when employing repository management software like [Sonatype Nexus Repository](https://www.sonatype.com/products/sonatype-nexus-repository), may not always yield the desired efficiency in reducing build time.
+
+:::
+
 The cache is stored as a single archive file. Cache push and pull components work in coordination on the same cache file defined with a label. With custom labelling you can have different chunks of caches and you can share some caches between branches. Cache labelling helps you organize your caches.
 
 When you drag and drop cache push component to your workflow, it comes with pre-defined values according to your project type. For example, for android projects it comes with pre-defined gradle cache paths which should be useful for most Android apps.
