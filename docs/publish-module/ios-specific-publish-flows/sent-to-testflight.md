@@ -6,7 +6,7 @@ sidebar_position: 1
 ---
 import Screenshot from '@site/src/components/Screenshot';
 
-# Send Apps to TestFlight
+# Send to TestFlight
 
 This step allows you to send the selected application package to [**TestFlight**](https://developer.apple.com/testflight/).
 
