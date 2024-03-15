@@ -24,7 +24,7 @@ A version other than the Xcode versions on the configuration page should not be 
 Because the Xcode versions on the configuration page are the versions installed on runners.
 Entering an unavailable Xcode version may cause the build to fail.
 
-You can review the documentation for detailed information about the Xcode version selection [here](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools.md/#pool-based-xcode-version-selection).
+You can review the documentation for detailed information about the Xcode version selection [here](../../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools.md/#pool-based-xcode-version-selection).
 :::
 
 ## Cocoapods Install
@@ -47,7 +47,7 @@ https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-c
 
 ## Xcodebuild for Devices (Archive & Export)
 
-This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](../distribute/create-or-select-a-distribution-profile.md) feature or any other means of iOS distribution.
+This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](../../distribute/create-or-select-a-distribution-profile.md) feature or any other means of iOS distribution.
 
 https://github.com/appcircleio/appcircle-ios-build-sign-component
 
@@ -77,7 +77,7 @@ https://github.com/appcircleio/appcircle-slather-component
 
 ## Tuist
 
-This step installs [Tuist](https://wwww.tuist.io/) and runs `tuist generate` with given options.
+This step installs [Tuist](https://tuist.io/) and runs `tuist generate` with given options.
 
 https://github.com/appcircleio/appcircle-tuist-component
 
