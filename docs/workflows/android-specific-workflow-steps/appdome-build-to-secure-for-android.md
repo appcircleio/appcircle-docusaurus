@@ -59,7 +59,7 @@ The outputs that can result from the operation of this component are listed as f
 |---------------------------------------|----------------------------------|
 | `$AC_APPDOME_SECURED_APK_PATH`        | Specified path of the secured APK file produced by **Appdome Build-2Secure**. This is available when the `Signing Method` is set to `On-Appdome` or `Private-Signing`. |
 | `$AC_APPDOME_SECURED_AAB_PATH`        | Specified path of the secured AAB file produced by **Appdome Build-2Secure**. This is available when the `Signing Method` is set to `On-Appdome` or `Private-Signing`. |
-| `$AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH`| Specified path of the ash sign script file produced by **Appdome Build-2Secure**. This is available when the `Signing Method` is set to 'Auto-Dev-Signing'. |
+| `$AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH`| Specified path of the `.sh` sign script file produced by **Appdome Build-2Secure**. This is available when the `Signing Method` is set to `Auto-Dev-Signing`. |
 | `$AC_APPDOME_CERTIFICATE_PATH`        | Specified path of the [***Certified Secure***](https://www.appdome.com/certified-secure-mobile-devsecops-certification/) certificate produced by **Appdome Build-2Secure** for your app is provided as a PDF file. | 
 
 ---
