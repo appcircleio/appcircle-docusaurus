@@ -15,7 +15,7 @@ If you want to change the JAVA version for your Android project, you can achieve
 
 Appcircle currently has `OpenJDK 11` (default), `OpenJDK 8`, `OpenJDK 17` and `OpenJDK 21`.
 
-[Android Build](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 11` as default JDK version.
+[Android Build](../../workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 11` as default JDK version.
 
 You can use the below custom script before your build step to change your `JAVA_HOME` environment variable.
 
@@ -31,7 +31,7 @@ echo "OpenJDK 21" $JAVA_HOME_21_X64
 echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $AC_ENV_FILE_PATH
 ```
 
-Create a custom script like above and put it **above** your [Android Build](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build) step.
+Create a custom script like above and put it **above** your [Android Build](../../workflows/android-specific-workflow-steps/android-build) step.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow.png" />
 
@@ -134,15 +134,9 @@ Please feel free to edit the following variables according to your own requireme
 
 ### Deploying Apps to Firebase App Distribution
 
-Appcircle Testing Distribution provides an integrated and automated enterprise-grade solution for distributing apps to the testers, but if you want to use other solutions for app distribution, you can do so with custom scripts. You can use the following script below to deploy apps to Firebase App Distribution automatically from the Appcircle Build module.
+Appcircle Testing Distribution provides an integrated and automated enterprise-grade solution for distributing apps to the testers, but if you want to use other solutions for app distribution, you can do so with custom scripts.
 
-- The binary to be deployed can be obtained with the related environment variable. `AC_EXPORT_DIR` and the binary path.
-- `FIREBASE_TOKEN` must be obtained through a local console. Please follow the [instructions here](https://firebase.google.com/docs/cli#cli-ci-systems) to set up the [**Firebase CLI**](https://firebaseopensource.com/projects/firebase/firebase-tools/) locally, and then you can request a token with the `firebase login:ci` command.
-- `FIREBASE_APP_ID` can be obtained from the Firebase Dashboard under the settings screen:
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (133).png' />
-
-The sample script is as follows:
+You can use the following script to deploy apps to Firebase App Distribution automatically from the Appcircle Build module.
 
 ```bash
 #!/usr/bin/env bash
@@ -154,6 +148,11 @@ curl -sL firebase.tools | bash
 firebase appdistribution:distribute $AC_EXPORT_DIR/Runner.ipa --app $FIREBASE_APP_ID --release-notes "Release Notes..." --token $FIREBASE_TOKEN --groups "testers"
 ```
 
-You may also use our [Firebase App Distribution](https://docs.appcircle.io/workflows/common-workflow-steps/#firebase-app-distribution) component for this process.
+- `AC_EXPORT_DIR`: The binary path to be deployed can be obtained from the relevant environment variable.
+- `FIREBASE_TOKEN`: It must be obtained through a local console.
+  - Please follow the instructions [here](https://firebase.google.com/docs/cli#cli-ci-systems) to set up the [**Firebase CLI**](https://firebaseopensource.com/projects/firebase/firebase-tools/) locally, and then you can request a token with the `firebase login:ci` command.
+- `FIREBASE_APP_ID`: It can be obtained from the Firebase Dashboard under the **Settings** screen.
 
-https://github.com/appcircleio/appcircle-firebase-distribution-component
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (133).png' />
+
+You can also use our [Firebase App Distribution](../../workflows/common-workflow-steps/#firebase-app-distribution) workflow step for Firebase app deployment.
