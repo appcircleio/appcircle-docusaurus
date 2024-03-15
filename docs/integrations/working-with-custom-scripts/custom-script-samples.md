@@ -53,12 +53,6 @@ You can find more details about the included Java versions on the [Android Build
 
 :::info
 
-Please be aware that this custom script affects any step that comes after. Therefore, you should use this step as a standalone step and not as part of any custom script.
-
-:::
-
-:::info
-
 #### Changing System Java Version
 
 Changing the `JAVA_HOME` environment variable will be enough for your Android builds, but it won't change the `java` version in the system.
