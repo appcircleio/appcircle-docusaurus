@@ -49,7 +49,7 @@ With cache you can persist any resource that are ignored from Git. So you can tr
 
 :::info
 
-Using Cache Pull/Push components, particularly when employing repository management software like Sonatype Nexus Repository Manager, may not always yield the desired efficiency in reducing build time.
+Using **Cache Pull/Push** steps, particularly when employing repository management software like [Sonatype Nexus Repository](https://www.sonatype.com/products/sonatype-nexus-repository), may not always yield the desired efficiency in reducing build time.
 
 :::
 
