@@ -68,7 +68,7 @@ For detailed information on the usage of **Test Reports for Android**, please re
 
 [https://docs.appcircle.io/continuous-testing/running-android-unit-tests#generating-test-report](https://docs.appcircle.io/continuous-testing/running-android-unit-tests#generating-test-report)
 
-You can use the following source code link to comment and update the status of your issues according to the progress of your workflow:
+To access the source code of this component, please use the following link:
 
 [https://github.com/appcircleio/appcircle-test-report-component](https://github.com/appcircleio/appcircle-test-report-component)
 
