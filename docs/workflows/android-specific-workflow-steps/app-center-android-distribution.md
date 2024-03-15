@@ -14,7 +14,10 @@ import Screenshot from '@site/src/components/Screenshot';
 The Appcircle **App Center Android Distribute** step allows you to seamlessly distribute your Android applications and mapping files to [App Center](https://appcenter.ms).
 
 :::caution
-Please note that you can also distribute your app via Appcircle. Utilising Appcircle's Distribute module enhances manageability within the platform. For more details, please refer to the following links:
+Please note that you can also distribute your app via Appcircle. Utilizing Appcircle's distribution modules enhances manageability within the platform.
+
+For more details, please refer to the following links:
+
 - [Appcircle Testing Distribution](https://docs.appcircle.io/distribute/)
 - [Appcircle Enterprise App Store](https://docs.appcircle.io/enterprise-appstore/)
 - [Appcircle Publish](https://docs.appcircle.io/publish-module/)
@@ -41,7 +44,9 @@ For each component, specific input variables are required for its operation on y
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-app-center-android-distribution_2.png'/>
 
 :::warning
-**Caution. Do not hard coded sensitive variables, such as tokens, API keys, directly to the parameters in the step. We recommend using [Environment Variables](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.**
+**Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
+
+We recommend using [Environment Variables](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.
 :::
 
 | Variable Name          | Description                                    | Status |
