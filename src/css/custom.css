@@ -927,3 +927,24 @@ img {
   filter: drop-shadow(3px 3px 3px #888);
   margin-bottom: 24px;
 }
+
+.navbar__item_logo_container {
+  /* Navbar logo container always display as flex */
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0px;
+  margin-left: -1rem;
+  margin-right: 1.7;
+}
+
+.navbar__item_logo_container a {
+  height: 100%;
+}
+
+/* Hides the navbar logo in navbar items */
+.menu__list-item.navbar__item_logo_container {
+  display: none !important;
+}
