@@ -176,7 +176,7 @@ const config = {
         selector: '.screenshot, .image-narrow',
         options: { // medium-zoom options
           margin: 24,
-          scrollOffset: 0
+          scrollOffset: 50
         },
       },
     }),

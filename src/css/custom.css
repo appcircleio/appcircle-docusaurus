@@ -922,7 +922,17 @@ img {
   max-height: 650px;
 }
 
-.screenshot, .image-narrow {
+.screenshot {
+  -webkit-filter: drop-shadow(3px 3px 3px #888 );
+  filter: drop-shadow(3px 3px 3px #888);
+  margin-bottom: 24px;
+  object-fit: scale-down;
+  max-inline-size: 100%;
+  height: 445px;
+  aspect-ratio: 2;
+}
+
+.image-narrow {
   -webkit-filter: drop-shadow(3px 3px 3px #888 );
   filter: drop-shadow(3px 3px 3px #888);
   margin-bottom: 24px;
