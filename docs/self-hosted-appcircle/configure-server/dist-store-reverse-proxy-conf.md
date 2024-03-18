@@ -23,7 +23,7 @@ If you have any other common loadbalancer, reverse proxy or firewall tool, you d
 
 ## Overall Structure
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2624-common-view.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2624-common-view-diagram.png' />
 
 In the diagram above, you can see the overall structure that you will deploy. The reverse proxy device that accepts requests from the internet and proxies to the Appcircle server. This way, Appcircle server won't be reached from the internet directly but with a reverse proxy.
 
