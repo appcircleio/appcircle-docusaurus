@@ -32,7 +32,7 @@ The workflow steps that need to be executed before running the **Android Metadat
 
 | Prerequisite Workflow Step                       | Description                                      |
  |-------------------------------------------------|--------------------------------------------------|
- | [Git Clone](https://github.com/appcircleio/appcircle-git-clone-component.git) | This step requires the project to be cloned from a Git provider before metadata will be generated. |
+ | [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) | This step requires the project to be cloned from a Git provider before metadata will be generated. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-metadata_1.png'/>
 
@@ -43,7 +43,7 @@ For each step, specific input variables are required for its operation on your s
 
 | Variable Name              | Description                                    | Status |
 |----------------------------|------------------------------------------------|--------|
-| `$AC_REPOSITORY_DIR`       | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](https://github.com/appcircleio/appcircle-git-clone-component.git) step, the variable will be automatically populated. | Required |
+| `$AC_REPOSITORY_DIR`       | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated. | Required |
 
 # Output Variables
 The outputs that can result from the operation of this component are listed as follows:
@@ -53,7 +53,7 @@ The outputs that can result from the operation of this component are listed as f
 | `$AC_METADATA_OUTPUT_PATH` | This variable represents the path of the `metadata.json` file. The default value is `AC_TEMP_DIR`.
 
 :::caution
- If there is an output generated, ensure to use the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps#export-build-artifacts) step afterward to ensure it is included in the [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) page.
+ If there is an output generated, ensure to use the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step afterward to ensure it is included in the [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) page.
 :::
 
 ---
