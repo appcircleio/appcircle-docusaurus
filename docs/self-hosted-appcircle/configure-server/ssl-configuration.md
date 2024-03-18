@@ -370,7 +370,7 @@ If you have configured the Appcircle server as HTTPS using the `external.scheme`
 It's possible to use a custom domain for the Testing Distribution. In this case we need to make extra configuration for our custom domain.
 
 :::caution
-Be aware that after you change the Appcircle Testing Distribution domain, the links in the emails that was sent to the testers with the previous domain will be invalid.
+Be aware that after you change the Appcircle Testing Distribution **domain** or the **SSL settings**, the links in the emails that was sent to the testers with the **previous domain** and **previous SSL settings** will be invalid.
 :::
 
 Most likely, our custom domain won't be covered by the main domain certificate. In this case, we need to create a new public certificate and private key pair for the custom domain.
