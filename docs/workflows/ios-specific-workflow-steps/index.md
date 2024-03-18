@@ -69,6 +69,18 @@ This step performs unit and UI tests for your iOS applications. This does not "b
 
 https://github.com/appcircleio/appcircle-ios-test-component/
 
+## Test Reports for iOS
+
+This component provides detailed reports and insights on the results of iOS app tests conducted.
+
+For detailed information on the usage of **Test Reports for iOS**, please refer to the documentation:
+
+[https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report)
+
+To access the source code of this component, please use the following link:
+
+[https://github.com/appcircleio/appcircle-test-report-component](https://github.com/appcircleio/appcircle-test-report-component)
+
 ## Slather
 
 This step converts Xcode's test results to different formats by using [Slather](https://github.com/SlatherOrg/slather/). This workflow must be run **after** [Xcodebuild for Unit and UI Tests](#xcodebuild-for-unit-and-ui-tests) step.
@@ -77,7 +89,7 @@ https://github.com/appcircleio/appcircle-slather-component
 
 ## Tuist
 
-This step installs [Tuist](https://wwww.tuist.io/) and runs `tuist generate` with given options.
+This step installs [Tuist](https://tuist.io/) and runs `tuist generate` with given options.
 
 https://github.com/appcircleio/appcircle-tuist-component
 

@@ -32,7 +32,9 @@ Note that if you do not use this step after the [**Xcodebuild for Devices**](htt
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-centerInput.png' />
 
 :::warning
-**Caution. Do not hard coded sensitive variables, such as tokens, directly to the parameters in the step. We recommend using [Environment Variables](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.**
+**Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
+
+We recommend using [Environment Variables](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.
 :::
 
 
