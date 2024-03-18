@@ -1,7 +1,7 @@
 ---
-title: Send Apps to TestFlight
-metaTitle: Send Apps to TestFlight
-metaDescription: Send Apps to TestFlight
+title: Send to TestFlight
+metaTitle: Send to TestFlight
+metaDescription: Send to TestFlight
 sidebar_position: 1
 ---
 import Screenshot from '@site/src/components/Screenshot';
@@ -27,7 +27,7 @@ The steps required for this step are listed below.
 | [**App Information from App Store**](https://docs.appcircle.io/publish-module/ios-specific-publish-flows/app-information-app-store) | This step provides information about the version you want to send and your versions in both [**TestFlight**](https://developer.apple.com/testflight/) and the [**App Store**](https://developer.apple.com/documentation/appstoreconnectapi/app_store). |
 
 :::info
-The **App Information from App Store** step is not a mandatory step to be used before the **Send Apps to TestFlight** step. If you have this step in your workflow, please use it before the **TestFlight** step.
+The **App Information from App Store** step is not a mandatory step to be used before the **Send to TestFlight** step. If you have this step in your workflow, please use it before the **TestFlight** step.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2913-testFlight.png' />
