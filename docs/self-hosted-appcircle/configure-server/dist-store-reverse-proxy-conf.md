@@ -493,7 +493,7 @@ Check out the `server_name`, `ssl_certificate`, `ssl_certificate_key`, `proxy_pa
 
 - `ssl_certificate` and `ssl_certificate_key`: SSL certificate files for `HTTPS` connection between the users and the reverse proxy.
 
-- `proxy_pass`: The IPV4 address or the domain name of the Appcircle server with `HTTP` schema. We are configuring with `HTTP` because both of Enterprise App Store and the Testing Distribution work with `HTTPS`.
+- `proxy_pass`: The IPV4 address or the domain name of the Appcircle server with `HTTP` schema. We are configuring with `HTTP` because both of Enterprise App Store and the Testing Distribution work with `HTTP`.
 
 - `proxy_set_header Host`: The domain names that we have configured on the Appcircle server `global.yaml`.
 
