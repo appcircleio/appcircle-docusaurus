@@ -319,7 +319,20 @@ In this use-case;
 - The reverse proxy will connect the Testing Distribution with the default domain and with `HTTPS`.
 - The Testing Distribution and the Enterprise App Store users will connect the reverse proxy with `HTTPS`.
 
-The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` and `external.scheme` keys.
+The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `external.scheme`, `external.mainDomain`, `storeWeb.customDomain`, `nginx` and keys.
+
+- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in http or https mode.
+
+- `external.mainDomain`: Specifies the main domain for the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store.
+
+- `storeWeb.customDomain`: Specifies the custom domain settings for the Enterprise App Store.
+
+- `nginx`: Specifies the SSL certificate settings for the Appcircle dashboard and default domain.
+
+- According to the `global.yaml` configuration below:
+  - The default Enterprise App Store domain is `store.appcircle.spacetech.com`.
+  - The custom Enterprise App Store domain is `store.spacetech.com`.
+  - The default Testing Distribution domain is `dist.appcircle.spacetech.com`.
 
 ```yaml
 external:
