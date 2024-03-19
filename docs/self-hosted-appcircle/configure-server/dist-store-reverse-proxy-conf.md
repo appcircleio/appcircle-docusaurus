@@ -160,8 +160,8 @@ http {
         listen 443 ssl;
         server_name dist.appcircle.spacetech.com;
 
-        ssl_certificate /etc/nginx/ssl/store.crt;
-        ssl_certificate_key /etc/nginx/ssl/store.key;
+        ssl_certificate /etc/nginx/ssl/appcircle.crt;
+        ssl_certificate_key /etc/nginx/ssl/appcircle.key;
 
         location / {
             proxy_pass https://10.10.20.130;
@@ -269,8 +269,8 @@ http {
         listen 443 ssl;
         server_name store.spacetech.com;
 
-        ssl_certificate /etc/nginx/ssl/store.crt;
-        ssl_certificate_key /etc/nginx/ssl/store.key;
+        ssl_certificate /etc/nginx/ssl/appcircle.crt;
+        ssl_certificate_key /etc/nginx/ssl/appcircle.key;
 
         location / {
             proxy_pass http://10.10.20.130;
@@ -288,8 +288,8 @@ http {
         listen 443 ssl;
         server_name dist.appcircle.spacetech.com;
 
-        ssl_certificate /etc/nginx/ssl/store.crt;
-        ssl_certificate_key /etc/nginx/ssl/store.key;
+        ssl_certificate /etc/nginx/ssl/appcircle.crt;
+        ssl_certificate_key /etc/nginx/ssl/appcircle.key;
 
         location / {
             proxy_pass https://10.10.20.130;
@@ -396,8 +396,8 @@ http {
         listen 443 ssl;
         server_name store.spacetech.com;
 
-        ssl_certificate /etc/nginx/ssl/store.crt;
-        ssl_certificate_key /etc/nginx/ssl/store.key;
+        ssl_certificate /etc/nginx/ssl/appcircle.crt;
+        ssl_certificate_key /etc/nginx/ssl/appcircle.key;
 
         location / {
             proxy_pass https://10.10.20.130;
@@ -415,8 +415,8 @@ http {
         listen 443 ssl;
         server_name dist.appcircle.spacetech.com;
 
-        ssl_certificate /etc/nginx/ssl/store.crt;
-        ssl_certificate_key /etc/nginx/ssl/store.key;
+        ssl_certificate /etc/nginx/ssl/appcircle.crt;
+        ssl_certificate_key /etc/nginx/ssl/appcircle.key;
 
         location / {
             proxy_pass https://10.10.20.130;
@@ -512,8 +512,8 @@ http {
         listen 443 ssl;
         server_name store.spacetech.com;
 
-        ssl_certificate /etc/nginx/ssl/store.crt;
-        ssl_certificate_key /etc/nginx/ssl/store.key;
+        ssl_certificate /etc/nginx/ssl/appcircle.crt;
+        ssl_certificate_key /etc/nginx/ssl/appcircle.key;
 
         location / {
             proxy_pass http://10.10.20.130;
@@ -531,8 +531,8 @@ http {
         listen 443 ssl;
         server_name dist.appcircle.spacetech.com;
 
-        ssl_certificate /etc/nginx/ssl/store.crt;
-        ssl_certificate_key /etc/nginx/ssl/store.key;
+        ssl_certificate /etc/nginx/ssl/appcircle.crt;
+        ssl_certificate_key /etc/nginx/ssl/appcircle.key;
 
         location / {
             proxy_pass http://10.10.20.130;
@@ -808,8 +808,8 @@ http {
         listen 443 ssl;
         server_name store.spacetech.com;
 
-        ssl_certificate /etc/nginx/ssl/store.crt;
-        ssl_certificate_key /etc/nginx/ssl/store.key;
+        ssl_certificate /etc/nginx/ssl/appcircle.crt;
+        ssl_certificate_key /etc/nginx/ssl/appcircle.key;
 
         location / {
             proxy_pass http://10.10.20.130;
@@ -827,8 +827,8 @@ http {
         listen 443 ssl;
         server_name dist.spacetech.com;
 
-        ssl_certificate /etc/nginx/ssl/store.crt;
-        ssl_certificate_key /etc/nginx/ssl/store.key;
+        ssl_certificate /etc/nginx/ssl/appcircle.crt;
+        ssl_certificate_key /etc/nginx/ssl/appcircle.key;
 
         location / {
             proxy_pass http://10.10.20.130;
