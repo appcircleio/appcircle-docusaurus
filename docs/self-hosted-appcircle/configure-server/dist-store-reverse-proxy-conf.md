@@ -486,7 +486,7 @@ http {
 
 #### Use-Case 4
 
-You may have installed the Appcircle server with an SSL certificate and not configured the Enterprise App Store with a custom domain.
+You may have installed the Appcircle server with an SSL certificate and not configured the Enterprise App Store or Testing Distribution with a custom domain.
 
 In this use-case;
 
