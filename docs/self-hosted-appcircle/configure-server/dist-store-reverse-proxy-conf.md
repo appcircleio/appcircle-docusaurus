@@ -54,7 +54,7 @@ To configure the Testing Distribution SSL certificates, you can read the [Testin
 
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `external.scheme`, `external.mainDomain`, `storeWeb.customDomain`, `nginx` and keys.
 
-- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in http or https mode.
+- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in `HTTP` or `HTTPS` mode.
 
 - `external.mainDomain`: Specifies the main domain for the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store.
 
@@ -226,7 +226,7 @@ To configure the Enterprise App Store SSL certificates, you can read the [Enterp
 
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `external.scheme`, `external.mainDomain`, `storeWeb.customDomain`, `nginx` and keys.
 
-- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in http or https mode.
+- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in `HTTP` or `HTTPS` mode.
 
 - `external.mainDomain`: Specifies the main domain for the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store.
 
@@ -370,7 +370,7 @@ In this use-case;
 
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `external.scheme`, `external.mainDomain`, `storeWeb.customDomain`, `nginx` and keys.
 
-- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in http or https mode.
+- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in `HTTP` or `HTTPS` mode.
 
 - `external.mainDomain`: Specifies the main domain for the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store.
 
@@ -496,7 +496,7 @@ In this use-case;
 
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `external.scheme`, `external.mainDomain`, `storeWeb.customDomain`, `nginx` and keys.
 
-- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in http or https mode.
+- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in `HTTP` or `HTTPS` mode.
 
 - `external.mainDomain`: Specifies the main domain for the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store.
 
@@ -621,7 +621,7 @@ In this use-case;
 
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `external.scheme`, `external.mainDomain`, `storeWeb.customDomain`, `testerWeb.external.url`, `nginx` and keys.
 
-- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in http or https mode.
+- `external.scheme`: Indicates whether the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store will work in `HTTP` or `HTTPS` mode.
 
 - `external.mainDomain`: Specifies the main domain for the Appcircle dashboard and the default domains for Testing Distribution and Enterprise App Store.
 
