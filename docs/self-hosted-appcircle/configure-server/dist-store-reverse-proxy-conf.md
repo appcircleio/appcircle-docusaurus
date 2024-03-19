@@ -844,6 +844,8 @@ http {
 }
 ```
 
+With this `global.yaml` and the `Nginx` configuration, the users can access the Appcircle Enterprise App Store and Testing Distribution from the internet safely.
+
   </TabItem>
 
 </Tabs>
