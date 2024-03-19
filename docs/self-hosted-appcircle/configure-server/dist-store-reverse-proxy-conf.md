@@ -264,7 +264,7 @@ http {
 
     server {
         listen 443 ssl;
-        server_name dist.spacetech.com;
+        server_name dist.appcircle.spacetech.com;
 
         ssl_certificate /etc/nginx/ssl/store.crt;
         ssl_certificate_key /etc/nginx/ssl/store.key;
@@ -274,7 +274,7 @@ http {
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header Host dist.spacetech.com;
+            proxy_set_header Host dist.appcircle.spacetech.com;
             proxy_busy_buffers_size 512k;
             proxy_buffers 4 512k;
             proxy_buffer_size 256k;
