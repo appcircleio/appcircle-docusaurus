@@ -52,8 +52,6 @@ To configure the Enterprise App Store SSL certificates, you can read the [Enterp
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` and `external.scheme` keys.
 
 ```yaml
-environment: Production
-enableErrorHandling: 'true'
 external:
   scheme: https
   mainDomain: '.appcircle.spacetech.com'
@@ -64,20 +62,6 @@ external:
     -----BEGIN CERTIFICATE-----
     wW1aDz1sjGyAp5Ttal3vY1aJ5RmLTuUuxJ+6+fkTHhLUQCQoEUNatrbKKtzxf0it
     -----END CERTIFICATE-----
-smtpServer:
-  user: smtpuser@spacetech.com
-  password: smtpPassword
-  from: appcircle@spacetech.com
-  host: smtp.spacetech.com
-  fromDisplayName: Appcircle
-  port: 465
-  ssl: false
-  auth: true
-  starttls: true
-keycloak:
-  initialUsername: appcircle-admin@spacetech.com
-  initialPassword: superSecretPassword
-  enabledRegistration: true
 storeWeb:
   external:
     subdomain: store
@@ -203,8 +187,6 @@ In this use-case;
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` and `external.scheme` keys.
 
 ```yaml
-environment: Production
-enableErrorHandling: 'true'
 external:
   scheme: https
   mainDomain: '.appcircle.spacetech.com'
@@ -215,20 +197,6 @@ external:
     -----BEGIN CERTIFICATE-----
     wW1aDz1sjGyAp5Ttal3vY1aJ5RmLTuUuxJ+6+fkTHhLUQCQoEUNatrbKKtzxf0it
     -----END CERTIFICATE-----
-smtpServer:
-  user: smtpuser@spacetech.com
-  password: smtpPassword
-  from: appcircle@spacetech.com
-  host: smtp.spacetech.com
-  fromDisplayName: Appcircle
-  port: 465
-  ssl: false
-  auth: true
-  starttls: true
-keycloak:
-  initialUsername: appcircle-admin@spacetech.com
-  initialPassword: superSecretPassword
-  enabledRegistration: true
 storeWeb:
   external:
     subdomain: store
@@ -336,8 +304,6 @@ In this use-case;
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` and `external.scheme` keys.
 
 ```yaml
-environment: Production
-enableErrorHandling: 'true'
 external:
   scheme: https
   mainDomain: '.appcircle.spacetech.com'
@@ -348,20 +314,6 @@ external:
     -----BEGIN CERTIFICATE-----
     wW1aDz1sjGyAp5Ttal3vY1aJ5RmLTuUuxJ+6+fkTHhLUQCQoEUNatrbKKtzxf0it
     -----END CERTIFICATE-----
-smtpServer:
-  user: smtpuser@spacetech.com
-  password: smtpPassword
-  from: appcircle@spacetech.com
-  host: smtp.spacetech.com
-  fromDisplayName: Appcircle
-  port: 465
-  ssl: false
-  auth: true
-  starttls: true
-keycloak:
-  initialUsername: appcircle-admin@spacetech.com
-  initialPassword: superSecretPassword
-  enabledRegistration: true
 storeWeb:
   external:
     subdomain: store
@@ -470,8 +422,6 @@ In this use-case;
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `storeWeb.customDomain`, `testerWeb.external`, `nginx` and `external.scheme` keys.
 
 ```yaml
-environment: Production
-enableErrorHandling: 'true'
 external:
   scheme: http
   mainDomain: '.appcircle.spacetech.com'
@@ -482,20 +432,6 @@ external:
     -----BEGIN CERTIFICATE-----
     wW1aDz1sjGyAp5Ttal3vY1aJ5RmLTuUuxJ+6+fkTHhLUQCQoEUNatrbKKtzxf0it
     -----END CERTIFICATE-----
-smtpServer:
-  user: smtpuser@spacetech.com
-  password: smtpPassword
-  from: appcircle@spacetech.com
-  host: smtp.spacetech.com
-  fromDisplayName: Appcircle
-  port: 465
-  ssl: false
-  auth: true
-  starttls: true
-keycloak:
-  initialUsername: appcircle-admin@spacetech.com
-  initialPassword: superSecretPassword
-  enabledRegistration: true
 storeWeb:
   external:
     subdomain: store
@@ -506,21 +442,6 @@ testerWeb:
   external:
     url: https://dist.spacetech.com
     domain: dist.spacetech.com
-nginx:
-  sslCertificate: |
-    -----BEGIN CERTIFICATE-----
-    4pXWp0Zmf79+sjCvtm5fYMHKVUpVdxQRfihQjCSYl/WzaXLeE+UlT6LvK9rxZjN9
-    -----END CERTIFICATE-----
-    -----BEGIN CERTIFICATE-----
-    FiMVxtvuaWheLrKDNpD80TGnizYXFQlmWBGRQSv1juCIx/c3JWElda3AWLf9KomB
-    -----END CERTIFICATE-----
-    -----BEGIN CERTIFICATE-----
-    JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
-    -----END CERTIFICATE-----
-  sslCertificateKey: |
-    -----BEGIN PRIVATE KEY-----
-    FuYjetiq9zQppgQuplkZMRQaLisExifFjPY9+5zIegzFZKE3bvjZg+DDWkj++R3p
-    -----END PRIVATE KEY-----
 ```
 
 In the example Nginx configuration below, you can see that there is 2 virtual servers, one for the Enterprise App Store and one for the Testing Distribution.
