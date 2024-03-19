@@ -506,7 +506,6 @@ The `global.yaml` file of your Appcircle server should be as follows for this us
 
 - According to the `global.yaml` configuration below:
   - The default Enterprise App Store domain is `store.appcircle.spacetech.com`.
-  - The custom Enterprise App Store domain is `store.spacetech.com`.
   - The default Testing Distribution domain is `dist.appcircle.spacetech.com`.
 
 ```yaml
@@ -523,7 +522,6 @@ external:
 storeWeb:
   external:
     subdomain: store
-    domain: store.spacetech.com
   customDomain:
     enabled: false
     domain: store.example.com
@@ -569,7 +567,7 @@ http {
 
     server {
         listen 443 ssl;
-        server_name store.spacetech.com;
+        server_name store.appcircle.spacetech.com;
 
         ssl_certificate /etc/nginx/ssl/appcircle.crt;
         ssl_certificate_key /etc/nginx/ssl/appcircle.key;
@@ -579,7 +577,7 @@ http {
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header Host store.spacetech.com;
+            proxy_set_header Host store.appcircle.spacetech.com;
             proxy_busy_buffers_size 512k;
             proxy_buffers 4 512k;
             proxy_buffer_size 256k;
