@@ -107,7 +107,7 @@ testerWeb:
     url: https://dist.spacetech.com
   customDomain:
     enabled: true
-    domain: dist.burakberk.com
+    domain: dist.spacetech.com
     port: 443
     enabledTls: true
     publicKey: |
