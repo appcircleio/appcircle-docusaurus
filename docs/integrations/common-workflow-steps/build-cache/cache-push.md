@@ -9,42 +9,45 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Cache Push
 
-Every single build at Appcircle runs in clean state. It means that all files and folders, that are not versioned in git repository, are lost when build pipeline is completed. For example, installed dependencies or build artifacts. If you need to keep those files and folders, you can use Appcircle cache push and pull components.
+Every single build at Appcircle runs in a clean state. It means that all files and folders that are not versioned in the git repository are lost when the build pipeline is completed. For example, install dependencies or build artifacts. If you need to keep those files and folders, you can use the Appcircle cache push and pull components.
 
-With cache you can persist any resource that are ignored from Git. So you can transfer files and folders between build pipelines. Sometimes it may speed up your build or it may help if you have reliability issues with the original download location for dependencies. But keep in mind that the cache is uploaded to or downloaded from remote location. It may help you in some cases, but it's not a guaranteed way of speeding up builds. You should try and see the actual results for your project.
+With cache, you can persist any resource that is ignored by Git. So you can transfer files and folders between build pipelines. Sometimes it may speed up your build, or it may help if you have reliability issues with the original download location for dependencies. But keep in mind that the cache is uploaded to or downloaded from a remote location. It may help you in some cases, but it's not a guaranteed way to speed up builds. You should try and see the actual results of your project.
 
-The cache is stored as a single archive file. Cache push and pull components work in coordination on the same cache file defined with a label. With custom labelling you can have different chunks of caches and you can share some caches between branches. Cache labelling helps you organize your caches.
+The cache is stored as a single archive file. Cache push and pull components work in coordination on the same cache file defined with a label. With custom labeling, you can have different chunks of caches, and you can share some caches between branches. Cache labeling helps you organize your caches.
 
-When you drag and drop cache push component to your workflow, it comes with pre-defined values according to your project type. For example, for android projects it comes with pre-defined gradle cache paths which should be useful for most Android apps.
+When you drag and drop the cache push component into your workflow, it comes with pre-defined values according to your project type. For example, for Android projects, it comes with pre-defined gradle cache paths, which should be useful for most Android apps.
 
-If you need more paths to cache or need to change paths according to your project, you can customize included and excluded paths as you wish. All path updates will be reflected to archived cache file on your next build.
+If you need more paths to cache or need to change paths according to your project, you can customize included and excluded paths as you wish. All path updates will be reflected in the archived cache file on your next build.
 
-Cache push uses a pattern in order to select files and folders. Although the pattern is not a regexp, it's closer to a shell glob. For example, `~/Library/Caches/CocoaPods` and `./Pods` will select "Cocoapods" folder from home and repository direction as a whole. Or for an android project you can cache home ".gradle" folder with `~/.gradle` include path and exclude all ".lock" files from there with `~/.gradle/**/*.lock` exclude path. Patterns, that can be used in included and excluded paths, is explained in detail [here](https://github.com/appcircleio/appcircle-cache-push-component#included--excluded-paths).
+Cache push uses a pattern in order to select files and folders. Although the pattern is not a regexp, it's closer to a shell glob. For example, `~/Library/Caches/CocoaPods` and `./Pods` will select the "CocoaPods" folder from home and the repository direction as a whole. Or for an Android project, you can cache the ".gradle" folder with `~/.gradle` include path and exclude all ".lock" files from there with `~/.gradle/**/*.lock` exclude path. Patterns that can be used in both included and excluded paths are explained in detail [here](https://github.com/appcircleio/appcircle-cache-push-component#included--excluded-paths).
 
 :::warning
 
-Keep in mind that included paths and cache push step's workflow order are closely related with each other. For example, if you include a path from repository and you place cache push step before git clone step, cache push won't find that path since it's not git cloned yet. Although that's not a fatal error for cache push, it will inform you about unreachable paths on build logs. You can review and resolve those kinds of issues from build logs.
+Keep in mind that included paths and the cache push step's workflow order are closely related to each other. For example, if you include a path from a repository and you place the cache push step before the git clone step, cache push won't find that path since it's not git cloned yet. Although that's not a fatal error for cache push, it will inform you about unreachable paths on build logs. You can review and resolve those kinds of issues from build logs.
 
 :::
 
-You can not reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of build pipeline from "Download Artifacts > ac_cache.zip". Also build logs have some useful information about cache mechanism with how included and excluded paths are processed. You can see produced cache file size from build logs. (Size of cache file affects upload and download durations.)
+You cannot reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of the build pipeline from "Download Artifacts > ac_cache.zip." Also, build logs have some useful information about the cache mechanism and how included and excluded paths are processed. You can see the produced cache file size from the build logs. (The size of the cache file affects upload and download durations.)
 
 :::warning
 
-You can not delete specific cache file from UI but if you have a problem with cache file and need a fresh one, you can change your cache label to a new one to go on with clean cache.
-
+You cannot delete a specific cache file from the UI, but if you have a problem with a cache file and need a fresh one, you can change your cache label to a new one to go on with a clean cache.
 :::
 
 :::info
 
-System automatically cleans unreachable and obsolete cache files periodically. For this reason, it's not guaranteed to reach a previously used cache file by using previous cache label in build. Also it’s a good idea to build your workflow in a way that your build won’t fail if the cache can’t be accessed.
+The system automatically cleans unreachable and obsolete cache files periodically. For this reason, it's not guaranteed to reach a previously used cache file by using the previous cache label in build. Also, it’s a good idea to build your workflow in such a way that your build won’t fail if the cache can’t be accessed.
 
 :::
 
 ### Prerequisites
 
+| Prerequisite Workflow Step                      | Description                                     |
+|-------------------------------------------------|-------------------------------------------------|
+| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) | If the folders to be cached are in the repo directory, the Git Clone step must be used before. This step will generate the `AC_REPOSITORY_DIR` path. |
+
 :::caution
-The prerequisite for this component to work is that it must be used after the step in which the generated artifact of the step is to be cached. For example in the screen shot, to cache dependencies, the **Cache Push** step is used after the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-install) step.
+The other important prerequisite for this component to work is that it must be used after the step in which the generated artifact of the step is to be cached. For example in the screen shot, to cache dependencies, the **Cache Push** step is used after the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-install) step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushOrder.png' />
 

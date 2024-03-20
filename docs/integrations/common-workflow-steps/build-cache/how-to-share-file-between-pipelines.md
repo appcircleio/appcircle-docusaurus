@@ -1,22 +1,26 @@
 ---
-title: How to Share Files between Pipelines 
-metaTitle: How to Share Files between Pipelines
-metaDescription: How to Share Files between Pipelines
+title: How to Share Files Between Pipelines 
+metaTitle: How to Share Files Between Pipelines
+metaDescription: How to Share Files Between Pipelines
 sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# How to Share Files between Pipelines
+# How to Share Files Between Pipelines
 
-With the build cache structure offered by Appcircle, you can share your cache files between pipelines in different branches. This file sharing will allow you to generate your packages faster in different branches and reduce your build time. Below is a simple example of how you can do this step by step. 
+With the build cache structure provided by Appcircle, you can share cache files between pipelines in different branches. This sharing enables faster package generation across various branches, reducing overall build time. Below is a simple step-by-step example of how you can achieve this.
 
 :::info
-This simple example will use our CocoaPods files in a different branch. If you want to use a cache other than dependencies, please refer to the documentation for the [**Cache Push**](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-push) component.
+This simple example will use our [**CocoaPods**](https://cocoapods.org/) files in a different branch. If you want to use a cache other than dependencies, please refer to the documentation for the [**Cache Push**](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-push) component.
 :::
 
 :::caution
 In order to share cache between pipelines, the [**Cache Pull**](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-pull) component must be added to the related pipeline.
+:::
+
+:::caution
+As an example, **master** and **development** branches were used, but you can apply the same operations to different branches.
 :::
 
 - First of all, we start by caching our CocoaPods files in the **development** branch. We will use these files in our master branch later. For this, the Cache Push step must be added to the workflow after the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-install) step.
@@ -31,7 +35,11 @@ In order to share cache between pipelines, the [**Cache Pull**](https://docs.app
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheMaster.png' />
 
-- When you enter the **Cache Pull** step, you will see the **Cache Label** parameter. This parameter comes as `$AC_BUILD_PROFILE_ID/$AC_GIT_BRANCH/cache` by default. Here, the `$AC_BUILD_PROFILE_ID` value will remain constant since we are in the same build profile, but we will change the `$AC_GIT_BRANCH` value with the **development** branch name. The parameter value should be `$AC_BUILD_PROFILE_ID/development/cache`
+- When you enter the **Cache Pull** step, you will see the **Cache Label** parameter. This parameter comes as `$AC_BUILD_PROFILE_ID/$AC_GIT_BRANCH/cache` by default. Here, the `$AC_BUILD_PROFILE_ID` value will remain constant since we are in the same build profile, but we will change the `$AC_GIT_BRANCH` value with the **development** branch name. The parameter value should be `$AC_BUILD_PROFILE_ID/development/cache`.
+
+:::caution
+If you use more than one cache for the same branch, you can edit your cache label accordingly (both Cache Pull and Cache Push). For example, `$AC_BUILD_PROFILE_ID/development/cache-1` or `$AC_BUILD_PROFILE_ID/development/cache-cocoapods`.
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheLabel.png' />
 
