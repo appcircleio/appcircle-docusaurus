@@ -31,7 +31,7 @@ The parameters required for the operation of this stepper are given below with e
 
 | Variable Name                 | Description                         | Status           |
 |-------------------------------|-------------------------------------|------------------|
-| `$AC_OUTPUT_DIR`              |  | Required |
+| `$AC_OUTPUT_DIR`              | Specifies the path for outputs for generated artifacts. | Required |
 | `$AC_TEST_RESULT_PATH`        | This directory will be used for converting to `HTML/XML`. | Required |
 | `$AC_CONVERT_FILE_NAME`       | The name of the converted test result file. This name will be the new result file name. | Required |
 | `$AC_CONVERT_TYPE`            | This is the convert-type option. Which type will be converted to? The default variable is `xml`. | Required |
