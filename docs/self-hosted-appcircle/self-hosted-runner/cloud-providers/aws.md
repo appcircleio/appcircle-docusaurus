@@ -62,13 +62,69 @@ If you have experience with Linux, installing the Appcircle runner on macOS shou
 
 :::
 
-## Creating an Appcircle Server from the AMI
+##### 4. Dedicated Hosts and MacOS Instances
 
-After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle server from the AMI.
+While the process of creating a macOS EC2 instance on AWS differs slightly from creating a Linux instance, the key distinction lies in the requirement of a dedicated host.
+
+After selecting a macOS image during the instance creation process, users must specify the dedicated host they have previously provisioned, as outlined in the AWS documentation for comprehensive guidance.
+
+For more details about the AWS macOS EC2 instances, you can refer to the [AWS documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html).
+
+## Creating an Appcircle Runner from the AMI
+
+After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle runner from the AMI.
 
 - Log in to the AWS console with your account.
 
 - Select the region from the right upper corner.
+
+:::info
+
+If you have a self-hosted Appcircle server in AWS, its better to deploy the self-hosted Appcircle runner in the same region as the Appcircle server. This will reduce the latency between two machines.
+
+:::
+
+### Creating a Dedicated Host for MacOS EC2 Instance
+
+- Head to the EC2 menu to create an dedicated instance.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws1-dashboard.png' />
+
+- Head to the "Dedicated Hosts" menu and click on the "Allocate Dedicated Host" button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws2-dedicated-host-dashboard.png' />
+
+- Enter an dedicated instance name in the "Name tag" field. For example, "Appcircle Dedicated Host".
+
+- Then you should select the instance family, instance type and the availability zone. For example, "mac2" for the instance family and "mac2.metal" for the instance type.
+
+:::info
+
+You must select one of the "mac2", "mac2-m2" or "mac2-m2pro" instance family types since the Appcircle runner AMI is supported on these family types.
+
+In the [AWS documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html), you can find the underlying infrastructure.
+
+> EC2 M1 Mac instances (mac2.metal) are built on 2020 Mac mini hardware powered by Apple silicon M1 processors.
+
+> EC2 M2 Mac instances (mac2-m2.metal) are built on 2023 Mac mini hardware powered by Apple silicon M2 processors.
+
+> EC2 M2 Pro Mac instances (mac2-m2pro.metal) are built on 2023 Mac mini hardware powered by Apple silicon M2 Pro processors.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws3-dedicated-host-launch-1.png' />
+
+- Since the `mac` instances doesn't support "Host maintenance", you should uncheck it and click on the "Allocate" button to create your dedicated host.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws4-dedicated-host-launch-2.png' />
+
+- You can see the created dedicated host on the dedicated hosts dashboards.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws5-dedicated-host-created.png' />
+
+- When you see the state of the dedicated host as "Available", you can continue with creating EC2 instance.
+
+### Creating a EC2 Instance on the Dedicated Host
 
 - Head to the EC2 menu to create an EC2 instance.
 
@@ -159,11 +215,11 @@ Add an SSH rule for the IP addresses you want, and click on the "Save Rules" but
 If you want to also send `ping` requests to the instance for health check purposes, you should also add another rule with the type "All ICMP-IPv4" while editing the inbound rules.
 :::
 
-## Configuring the Appcircle Server Instance
+## Configuring the Appcircle Runner Instance
 
 ### Connect via SSH
 
-After you have successfully created an EC2 instance from the Appcircle server AMI, you can follow the steps below to configure it.
+After you have successfully created an EC2 instance from the Appcircle runner AMI, you can follow the steps below to configure it connect to an Appcircle server.
 
 - Get the IP address of the instance from EC2 dashboard.
 
@@ -181,7 +237,7 @@ The `ssh` command below is for macOS and Linux. The other commands are the same 
 Using **private key** and **IP address**, you can connect to the instance with SSH as seen below.
 
 ```bash
-ssh -i "/path/to/your/private/key" ubuntu@ip-address-of-the-instance
+ssh -i "/path/to/your/private/key" ec2-user@ip-address-of-the-instance
 ```
 
 :::info
