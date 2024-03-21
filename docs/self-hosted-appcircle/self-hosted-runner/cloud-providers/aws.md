@@ -7,6 +7,7 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import RegisterAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_register-runner.mdx';
 
 ## Overview
 
@@ -124,7 +125,11 @@ In the [AWS documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-m
 
 - When you see the state of the dedicated host as "Available", you can continue with creating EC2 instance.
 
-### Creating a EC2 Instance on the Dedicated Host
+:::info
+If you have more than one dedicated hosts, make a note of the dedicated host id to avoid confusion when creating the EC2 instance.
+:::
+
+### Creating an EC2 Instance on the Dedicated Host
 
 - Head to the EC2 menu to create an EC2 instance.
 
@@ -241,14 +246,14 @@ ssh -i "/path/to/your/private/key" ec2-user@ip-address-of-the-instance
 ```
 
 :::info
-The default user for the Appcircle AMI is `ubuntu`.
+The default user for the Appcircle Runner AMI is `ec2-user`.
 
 So, let's assume that your instance IP address is `34.205.139.17` and your private SSH key path is `/home/spacetech/.ssh/id_rsa`.
 
 You can connect to the instance using the below command on macOS or Linux.
 
 ```bash
-ssh -i "/home/spacetech/.ssh/id_rsa" ubuntu@34.205.139.17
+ssh -i "/home/spacetech/.ssh/id_rsa" ec2-user@34.205.139.17
 ```
 
 :::
@@ -273,20 +278,15 @@ It will be a one-time-operation that should be done once per private key.
 :::info
 The SSH command may ask you to add this server to the list of known hosts. You should write `yes` and hit enter.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws6-ssh.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-instance-config-ssh-warning.png' />
 
 :::
 
-### Configure Server
+### Configure Runner
 
-After you successfully connect to the Appcircle instance, the first thing you should do is start a system update. Although the Appcircle AMI is up-to-date, it is recommended that you perform security updates again.
+After you successfully connect to the Appcircle runner instance, you can configured the Appcircle runner instance to connect to an Appcircle server.
 
-```bash
-sudo apt update && \
-sudo apt upgrade
-```
-
-The Appcircle server directory is located in the `$HOME` directory as the `appcircle-server` folder.
+The Appcircle runner directory is located in the `$HOME` directory as the `appcircle-runner` folder.
 
 ```bash
 ls -l "$HOME"
@@ -295,26 +295,45 @@ ls -l "$HOME"
 Change the current working directory to that folder.
 
 ```bash
-cd "$HOME/appcircle-server"
+cd "$HOME/appcircle-runner"
 ```
 
 :::info
 
-**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](../../update.md) the pre-installed package in the instance.
+By default, the Appcircle runner AMI is configured to connect the Appcircle cloud. If you are not using Appcircle server as self-hosted, you can skip this info.
 
-Also, put the `cred.json` file you received from us into the `appcircle-server` folder.
+If you are using self-hosted Appcircle server, edit the `appsettings.json` file with your favorite editor.
 
-Please [contact us](https://appcircle.io/support/) to purchase an enterprise license if you don't have one.
+```bash
+vi appsettings.json
+```
+
+You will see the the `ASPNETCORE_BASE_API_URL` value is pre-defined for Appcircle cloud. Change it to your Appcircle server API domain and without changing the path. For example:
+
+```json
+{
+...
+"ASPNETCORE_BASE_API_URL": "https://api.appcircle.spacetech.com/build/v1"
+}
+```
 
 :::
 
-Now you're ready to configure the Appcircle server according to your needs. Follow the detailed [configuration](../docker.md#3-configure) steps.
+Stop the running service before registering the runner.
 
-You should also configure the [DNS](../docker.md#4-dns-settings) settings for your Appcircle server instance. Create `A` and `CNAME` records for your instance.
+```bash
+./ac-runner service -c stop
+```
 
-After the configuration is done, [run the server](../docker.md#5-run-server) and go to the Appcircle server dashboard using the main [domain](../docker.md#4-dns-settings) you defined.
+<RegisterAppcircleRunner />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws22-dashboard.png' />
+To make the runner online, you just need to start the service.
+
+```bash
+./ac-runner service -c start
+```
+
+After ~10 seconds, you will see that your Appcircle runner as online.
 
 ## Connecting Runners
 
