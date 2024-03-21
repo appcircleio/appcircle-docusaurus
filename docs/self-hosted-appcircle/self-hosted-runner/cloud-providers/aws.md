@@ -335,37 +335,11 @@ To make the runner online, you just need to start the service.
 
 After ~10 seconds, you will see that your Appcircle runner as online.
 
-## Connecting Runners
+## Building Applications
 
-When you complete installation successfully by following the above steps, you're ready for your first build. :tada:
+When you register the Appcircle runner successfully by following the above steps, you're ready for your first build. :tada:
 
-But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply related the guidelines [here](../../self-hosted-runner/installation.md).
-
-The self-hosted runner section in the documents has all the details about runners and their configuration.
-
-:::caution
-
-By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
-
-- `https://api.appcircle.io/build/v1`
-
-:point_up: You need to change its value with your self-hosted Appcircle server's API URL.
-
-Assuming our sample scenario explained in [configuration](../docker.md#3-configure), its value should be
-
-- `http://api.appcircle.spacetech.com/build/v1`
-
-for our sample scenario.
-
-:reminder_ribbon: After [download](../../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
-
-Please note that you should do this before [registering](../../self-hosted-runner/installation.md#2-register).
-
-:::
-
-Considering system performance, it will be good to install self-hosted runners on other machines. A self-hosted Appcircle server should run on a dedicated machine itself.
-
-You can install any number of runners according to your needs and connect them to a self-hosted Appcircle server.
+You can head to the [Tutorials](../../../tutorials/index.md) page for a brief of building applications on the Appcircle.
 
 <NeedHelp />
 
