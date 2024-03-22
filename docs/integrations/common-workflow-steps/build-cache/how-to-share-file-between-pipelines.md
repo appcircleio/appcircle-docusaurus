@@ -9,17 +9,13 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # How to Share Files Between Pipelines
 
-With the build cache structure provided by Appcircle, you can share cache files between pipelines in different branches. This sharing enables faster package generation across various branches, reducing overall build time. Below is a simple step-by-step example of how you can achieve this.
+With the build cache structure provided by Appcircle, you can share cache files between pipelines in different branches. This sharing enables faster package generation across various branches, reducing overall build time. Below is a simple, step-by-step example of how you can achieve this.
 
 :::info
-This simple example will use our [**CocoaPods**](https://cocoapods.org/) files in a different branch. If you want to use a cache other than dependencies, please refer to the documentation for the [**Cache Push**](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-push) component.
+This simple example will use our [**CocoaPods**](https://cocoapods.org/) files in a different branch. If you want to use a cache other than dependencies, please refer to the documentation for the [**Cache Push**](./cache-push) component.
 :::
 
-:::caution
-In order to share cache between pipelines, the [**Cache Pull**](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-pull) component must be added to the related pipeline.
-:::
-
-:::caution
+:::info
 As an example, **master** and **development** branches were used, but you can apply the same operations to different branches.
 :::
 
@@ -29,30 +25,36 @@ Please note that the organizational structure of Appcircle is designed in such a
 You can find detailed information about the Appcircle organizational structure in the documentation [**here**](https://docs.appcircle.io/account/my-organization).
 :::
 
-- First of all, we start by caching our CocoaPods files in the **development** branch. We will use these files in our master branch later. For this, the Cache Push step must be added to the workflow after the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-install) step.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheDevelop.png' />
-
-- After the build in the **development** branch is completed successfully, we are ready to use our cached CocoaPods files in the **master** branch.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheSuccess.png' />
-
-- For the master branch, we first need to make our workflow steps suitable. For this, we add the Cache Pull step to the workflow before the CocoaPods Install step.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheMaster.png' />
-
-- When you enter the **Cache Pull** step, you will see the **Cache Label** parameter. This parameter comes as `$AC_BUILD_PROFILE_ID/$AC_GIT_BRANCH/cache` by default. Here, the `$AC_BUILD_PROFILE_ID` value will remain constant since we are in the same build profile, but we will change the `$AC_GIT_BRANCH` value with the **development** branch name. The parameter value should be `$AC_BUILD_PROFILE_ID/development/cache`.
-
 :::caution
-If you use more than one cache for the same branch, you can edit your cache label accordingly (both Cache Pull and Cache Push). For example, `$AC_BUILD_PROFILE_ID/development/cache-1` or `$AC_BUILD_PROFILE_ID/development/cache-cocoapods`.
+In order to share cache between pipelines, the [**Cache Pull**](./cache-pull) component must be added to the related pipeline.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheLabel.png' />
+1. To start, cache the CocoaPods files in the **development** branch, which will later be utilized in the **master** branch. For this purpose, add the [**Cache Push**](./cache-push) step to the workflow after the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-install) step.
 
-- After this parameter change, CocoaPods dependencies that we cached in the development branch pipeline will be automatically pulled to the master branch and used directly in the master branch pipeline.
+	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheDevelop.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pullSuccess.png' />
+2. After the successful completion of the build in the **development** branch, cached CocoaPods files are ready to be used in the **master** branch.
+
+	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheSuccess.png' />
+
+3. For the **master** branch, the [workflow](../../../workflows/why-to-use-workflows) steps need to be made suitable first. To achieve this, the [**Cache Pull**](./cache-pull) step is added to the workflow before the **CocoaPods Install** step.
+
+	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheMaster.png' />
+
+4. When you enter the [**Cache Pull**](./cache-pull) step, the **Cache Label** will be visible. By default, this parameter is set as `$AC_BUILD_PROFILE_ID/$AC_GIT_BRANCH/cache`. In this case, the value of `$AC_BUILD_PROFILE_ID` will remain constant as it is within the same build profile, while the value of `$AC_GIT_BRANCH` will be changed to the **development** branch name. The parameter value should be set as `$AC_BUILD_PROFILE_ID/development/cache`.
+
+	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheLabel.png' />
+
+	:::caution
+	If you use more than one cache for the same branch, you can edit the [cache label](./cache-push/#input-variables) accordingly in both [**Cache Push**](./cache-push) and [**Cache Pull**](./cache-pull) steps. For example:
+	- `$AC_BUILD_PROFILE_ID/development/cache-1`
+	- `$AC_BUILD_PROFILE_ID/development/cache-cocoapods`
+	:::
+
+5. After this parameter change, the CocoaPods dependencies that were cached in the **development** branch pipeline will be automatically pulled to the **master** branch and used directly in the **master** branch pipeline.
+
+  <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pullSuccess.png' />
 
 :::warning
-When sharing cache files between pipelines, please make sure that you spell your branch names correctly and use the [**Cache Push**](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-push) and [**Cache Pull**](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-pull) steps correctly. 
+When sharing cache files between pipelines, please make sure that you spell your branch names correctly and use the [**Cache Push**](./cache-push) and [**Cache Pull**](./cache-pull) steps correctly. 
 :::
