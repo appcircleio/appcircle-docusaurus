@@ -25,6 +25,12 @@ In order to share cache between Build Profiles, the [**Cache Pull**](https://doc
 As an example, **master** and **development** branches were used, but you can apply the same operations to different branches.
 :::
 
+:::warning
+Please note that the organizational structure of Appcircle is designed in such a way as to prevent any **security vulnerabilities**. Consequently, exchanging files between organizations or sub-organizations **is not permitted**.
+
+You can find detailed information about the Appcircle organizational structure in the documentation [**here**](https://docs.appcircle.io/account/my-organization).
+:::
+
 - First of all, we start by caching our CocoaPods files in the **`Appcircle Team`** build profile. We will use these files in our **`Appcircle Team 2`** build profile later. For this, the Cache Push step must be added to the workflow after the CocoaPods Install step in the first build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-buildCache.png' />

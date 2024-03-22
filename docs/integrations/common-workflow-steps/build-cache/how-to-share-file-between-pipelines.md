@@ -23,6 +23,12 @@ In order to share cache between pipelines, the [**Cache Pull**](https://docs.app
 As an example, **master** and **development** branches were used, but you can apply the same operations to different branches.
 :::
 
+:::warning
+Please note that the organizational structure of Appcircle is designed in such a way as to prevent any **security vulnerabilities**. Consequently, exchanging files between organizations or sub-organizations **is not permitted**.
+
+You can find detailed information about the Appcircle organizational structure in the documentation [**here**](https://docs.appcircle.io/account/my-organization).
+:::
+
 - First of all, we start by caching our CocoaPods files in the **development** branch. We will use these files in our master branch later. For this, the Cache Push step must be added to the workflow after the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-install) step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheDevelop.png' />
