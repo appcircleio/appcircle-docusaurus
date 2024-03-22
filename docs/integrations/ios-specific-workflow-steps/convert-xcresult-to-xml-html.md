@@ -9,16 +9,16 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Convert Xcresult to HTML/XML
 
-After the [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests) step runs, it creates a test_result.xcresult file. In some specific cases, this test file needs to be converted to another format accordingly. The **Convert Xcresult to HTML/XML** step is used to convert this test file to `HTML` and `XML` formats.
+After the [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests) step runs, it generates a `test_result.xcresult` file. In specific cases, this test file must be converted to another format. The **Convert Xcresult to HTML/XML** step is used for converting this test file to `HTML` and `XML` formats.
 
 
 ### Prerequisites
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests) | This step allows you to run unit and UI tests in your project. |
+| [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests) | This step allows you to run unit and UI tests in your project. After this step runs, the related path `AC_TEST_RESULT_PATH` will be generated automatically.  |
 
 :::caution
-Please note that if you do not run Xcodebuild for Unit and UI Tests before this step, the step will give an error because there will be no test result file to convert.
+Please note that if you do not run **Xcodebuild for Unit and UI Tests** before this step, the step will produce an error because there will be no test result file to convert.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertOrder.png' />
@@ -31,15 +31,23 @@ The parameters required for the operation of this stepper are given below with e
 
 | Variable Name                 | Description                         | Status           |
 |-------------------------------|-------------------------------------|------------------|
-| `$AC_OUTPUT_DIR`              | Specifies the path for outputs for generated artifacts. | Required |
-| `$AC_TEST_RESULT_PATH`        | This directory will be used for converting to `HTML/XML`. | Required |
-| `$AC_CONVERT_FILE_NAME`       | The name of the converted test result file. This name will be the new result file name. | Required |
-| `$AC_CONVERT_TYPE`            | This is the convert-type option. Which type will be converted to? The default variable is `xml`. | Required |
-| `$AC_INCLUDE_COVERAGE`        | It will include the coverage result in the converted file. The default variable is `NO`. | Required |
+| `$AC_OUTPUT_DIR`              | Specifies the path for outputs for generated artifacts. This path will be automatically defined. Do not change if it is not necessary. | Required |
+| `$AC_TEST_RESULT_PATH`        | This directory will be used for converting from `Xcresult` to `HTML/XML`. | Required |
+| `$AC_CONVERT_FILE_NAME`       | The name of the converted test result file. This will be the new filename for the result file. | Required |
+| `$AC_CONVERT_TYPE`            | Specify the convert-type option. Which type should it be converted to? Options are `XML` and `HTML`. The default value is `XML`. | Required |
+| `$AC_INCLUDE_COVERAGE`        | If set to `Yes`, It will include the coverage result in the converted file. The default value is `No`. | Required |
 
 
 ### Output Variables
 
 | Variable Name                 | Description                         | 
 |-------------------------------|-------------------------------------|
-| `$AC_CONVERTED_TEST_RESULT_PATH`           | Converted result path. The user can find the converted result file at this path. Also, it will be able to download from [**Download Artifact**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts).  |
+| `$AC_CONVERTED_TEST_RESULT_PATH`           | Specifies the path where the converted result is stored. Users can access this path via this variable. Additionally, it will be able to download from [**Download Artifact**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts).  |
+
+:::caution
+To view the converted test reports on the [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+:::
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcircle-ios-xcresult-convert-html-xml-component
