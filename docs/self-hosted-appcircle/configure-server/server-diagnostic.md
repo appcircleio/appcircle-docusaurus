@@ -19,20 +19,20 @@ Appcircle server `v3.12.0` or higher is required for the `diagnostic` tool.
 
 ## Running the Tool
 
-To run the diagnostic tool and create a diagnostic file to check current system configuration, you can follow the steps below.
+To run the diagnostic tool and create a diagnostic file to check the current system configuration, you can follow the steps below.
 
 ### Creating a Diagnostic Report For Sharing
 
-You can run the `diagnostic.sh` tool and create the diagnostic files which will help you to track configuration of your server.
+You can run the `diagnostic.sh` tool and create the diagnostic files that will help you track the configuration of your server.
 
-When you run the tool, there will be a `diagnostic-${datetime}.tar.gz` file under the `diagnostic-reports` directory which you can share with us.
+When you run the tool, there will be a `diagnostic-${datetime}.tar.gz` file under the `diagnostic-reports` directory, which you can share with us.
 
-The "${datetime}" is a dynamic variable which is the date and time you run the script. Date time format is: `yyyymmddHHMMSS` For example: `diagnostic-20240109064747.tar.gz`
+The "${datetime}" is a dynamic variable that is the date and time you run the script. The date time format is: `yyyymmddHHMMSS` For example: `diagnostic-20240109064747.tar.gz`
 
 :::caution
-Diagnostic tool needs `sudo` permission to read some system files.
+The diagnostic tool needs `sudo` permission to read some system files.
 
-For better results, you should run the tool with the user which you use to run Appcircle server.
+For better results, you should run the tool with the user that you use to run the Appcircle server.
 
 The diagnostic tool can asks for sudo password, you can write the password and hit enter to continue.
 :::
