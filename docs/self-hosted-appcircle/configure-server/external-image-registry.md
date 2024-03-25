@@ -282,14 +282,14 @@ You need to add your registry as an insecure registry. Please check the [Insecur
 
 :::
 
-## Insecure Registries
+## Insecure Registry
 
 <Tabs>
   <TabItem value="docker" label="Docker" default>
 
-By default, Docker tries to connect to the server with `HTTPS` and from `443` port.
+By default, Docker tries to connect to the server with HTTPS and from the `443` port.
 
-If your registry is running over `HTTP`, then you should define your registry as `insecure registry` to the Docker daemon.
+If your registry is running over HTTP, then you should define your registry as an **insecure registry** in the Docker daemon.
 
 Edit the `daemon.json` file, whose default location is `/etc/docker/daemon.json`.
 
@@ -306,9 +306,9 @@ If the `daemon.json` file does not exist, you should create it. Assuming there a
 ```
 
 :::info
-If you don't specify the port number in the `daemon.json` above, Docker will try to use default `HTTP` port which is `80`.
+If you don't specify the port number in the `daemon.json` above, Docker will try to use the default HTTP port, which is `80`.
 
-If your registry runs on port other than `80`, you should specify it in the `daemon.json` file like in the example above.
+If your registry runs on a port other than `80`, you must specify it in the `daemon.json` file, like in the example above.
 :::
 
 Restart the Docker daemon for the changes to take effect.
@@ -321,9 +321,9 @@ sudo systemctl restart docker
 
   <TabItem value="podman" label="Podman">
 
-By default, Podman tries to connect to the server with `HTTPS` and from `443` port.
+By default, Podman tries to connect to the server with HTTPS and from the `443` port.
 
-If your registry is running over `HTTP`, then you should define your registry as `insecure registry` in Podman configuration.
+If your registry is running over HTTP, then you should define your registry as an **insecure registry** in the Podman configuration.
 
 Edit the `registries.conf` file, whose default location is `/etc/containers/registries.conf`.
 
@@ -331,7 +331,7 @@ Edit the `registries.conf` file, whose default location is `/etc/containers/regi
 sudo vi /etc/containers/registries.conf
 ```
 
-Copy the template content below, change the `location` with your registry URL and paste it bottom of the `registries.conf` file.
+Copy the template content below, change the `location` to your registry URL, and paste it at the bottom of the `registries.conf` file.
 
 ```conf
 [[registry]]
@@ -340,15 +340,15 @@ insecure = true
 ```
 
 :::info
-If you don't specify the port number in the `registries.conf` above, Podman will try to use default `HTTP` port which is `80`.
+If you don't specify the port number in the `registries.conf` above, Podman will try to use the default HTTP port, which is `80`.
 
-If your registry runs on port other than `80`, you should specify it in the `registries.conf` file like in the example above.
+If your registry runs on a port other than `80`, you must specify it in the `registries.conf` file, like in the example above.
 :::
 
   </TabItem>
 </Tabs>
 
-Now you can connect to your registry with `HTTP` without errors.
+Now you can connect to your registry with HTTP without any errors.
 
 ## Pulling Images One By One
 
