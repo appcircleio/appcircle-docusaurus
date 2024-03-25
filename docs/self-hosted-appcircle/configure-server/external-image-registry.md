@@ -18,9 +18,9 @@ These services act as intermediaries, facilitating seamless image retrieval, cac
 
 ## Appcircle Configuration
 
-For Appcircle server work with your own container image registry, you should add an additional setting to the `global.yaml` file of your project.
+For the Appcircle server to work with your own container image registry, you should add an additional setting to the `global.yaml` file of your project.
 
-- Log in to Appcircle server with SSH or remote connection.
+- Log in to the Appcircle server with SSH or a remote connection.
 
 - Go to the `appcircle-server` directory.
 
@@ -28,7 +28,7 @@ For Appcircle server work with your own container image registry, you should add
 
 :::info
 
-The `spacetech` in the example codes below are example project name.
+The `spacetech` in the example codes below is an example project name.
 
 Please find your own project name and replace `spacetech` with your project name.
 
@@ -44,14 +44,14 @@ ls -l ./projects
 vi ./projects/spacetech/global.yaml
 ```
 
-- Find the `image` key. If it doesn't exists on the `global.yaml`, add it.
+- Find the `image` key. If it doesn't exist in `global.yaml`, add it.
 
-- The `image` key should be configured with your registry details:
+- The `image` key should be configured with your **registry** details:
 
-  - url: Registry URL. (For our example, "registry.spacetech.com:8083/appcircle").
-  - username: Username of the registry.
-  - password: Password of the registry.
-  - requiredLogin: If this variable is set to true, the script will use the username and password variables to login to the registry. If the end-user is logged in to his artifact registry manually, or the registry doesn't need auth, then this variable should be false.
+  - **`url`**: Registry URL. (For our example, "registry.spacetech.com:8083/appcircle").
+  - **`username`**: Username of the registry.
+  - **`password`**: Password of the registry.
+  - **`requiredLogin`**: If this variable is set to `true`, the Appcircle server will use the `username` and `password` variables to login to the registry. If the end-user is logged in to his artifact registry manually, or the registry doesn't need authentication, then this variable should be `false`.
 
 ```yaml
 image:
