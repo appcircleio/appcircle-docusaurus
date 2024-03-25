@@ -9,13 +9,13 @@ import Screenshot from '@site/src/components/Screenshot';
 
 ## Overview
 
-In this section, you will see how to configure Appcircle testing distribution web page.
+In this section, you will see how to configure Appcircle Testing Distribution web page.
 
 ## Configuring the Testing Distribution Logo
 
-By default, if the Appcircle testing distribution link in the emails is expired or not available, users will be redirected to the testing distribution homepage.
+By default, if the Appcircle Testing Distribution link in the emails is expired or not available, users will be redirected to the Testing Distribution homepage.
 
-In this homepage, you will see the Appcircle logo by default as you can see in the example below.
+On this homepage, you will see the Appcircle logo by default, as you can see in the example below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2857-default-logo.png' />
 
@@ -25,7 +25,7 @@ You may change this logo with your company's logo using 'SVG' or 'PNG' files of 
 
 To configure this logo, you need to SSH into the Appcircle server and edit the `global.yaml` file of the project.
 
-Also you need to copy the logo image to the Appcircle server before configuring.
+Also, you need to copy the logo image to the Appcircle server before configuring.
 
 :::caution
 Please note that this process will cause downtime since it requires a restart of the Appcircle server.
@@ -77,7 +77,7 @@ ls -l ./projects
 vi ./projects/spacetech/global.yaml
 ```
 
-Check for the `testerWeb` key. If it doesn't exists, you can add it.
+Check for the `testerWeb` key. If it doesn't exist, you can add it.
 
 You should create a `logoSvg` key under the `testerWeb` entry and enter the path of the logo `SVG` file from the host server. See the example `global.yaml` part:
 
@@ -94,7 +94,7 @@ testerWeb:
 ```
 
 :::info
-If you declare both of the `logoPng` and `logoSvg` variables in the `global.yaml`, then the `PNG` image will be used as logo in Appcircle testing distribution page.
+If you declare both of the `logoPng` and `logoSvg` variables in the `global.yaml`, then the `PNG` image will be used as the logo on the Appcircle Testing Distribution page.
 :::
 
 After you have done configuring the `global.yaml`, you can `export` the new settings.
@@ -115,7 +115,7 @@ Check the healthy of the services.
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
-Now you can check the logo of the Appcircle testing distribution.
+Now you can check the logo of the Appcircle Testing Distribution.
 
 To check, simply navigate to the Appcircle server's 'dist' URL in your browser. If your 'dist' URL has not changed, it is most likely very similar to the one below.
 
