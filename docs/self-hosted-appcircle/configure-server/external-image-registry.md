@@ -189,7 +189,7 @@ You need to add your registry as an insecure registry. Please check the [Insecur
 
 By default, Docker tries to connect to the server with `HTTPS` and from `443` port.
 
-If your registry is not running with `HTTPS`, then you should define your registry as `insecure registry` to the Docker daemon.
+If your registry is running over `HTTP`, then you should define your registry as `insecure registry` to the Docker daemon.
 
 Edit the `daemon.json` file, whose default location is `/etc/docker/daemon.json`.
 
@@ -217,15 +217,21 @@ Restart the Docker daemon for the changes to take effect.
 sudo systemctl restart docker
 ```
 
-Now you can connect to your registry with `HTTP` without errors.
-
   </TabItem>
 
   <TabItem value="podman" label="Podman">
 
+By default, Podman tries to connect to the server with `HTTPS` and from `443` port.
+
+If your registry is running over `HTTP`, then you should define your registry as `insecure registry` in Podman configuration.
+
 Edit the `registries.conf` file, whose default location is `/etc/containers/registries.conf`.
 
-The `registries.conf` file should contain your `http` registry.
+```bash
+sudo vi /etc/containers/registries.conf
+```
+
+Copy the template content below, change the `location` with your registry URL and paste it bottom of the `registries.conf` file.
 
 ```conf
 [[registry]]
@@ -233,8 +239,16 @@ location = "registry.spacetech.com:8083"
 insecure = true
 ```
 
+:::info
+If you don't specify the port number in the `registries.conf` above, Podman will try to use default `HTTP` port which is `80`.
+
+If your registry runs on port other than `80`, you should specify it in the `registries.conf` file like in the example above.
+:::
+
   </TabItem>
 </Tabs>
+
+Now you can connect to your registry with `HTTP` without errors.
 
 ## Sonatype Nexus Registry Configuration
 
