@@ -276,9 +276,9 @@ chmod +x mirror-images.sh
 
 :::info
 
-If your registry is not using `https`, you may get an error during docker/podman push step.
+If your registry is not using HTTPS, you may get an error during the Docker/Podman push step.
 
-You need to add your registry as an insecure registry. Please check the [Insecure Registries](#insecure-registries) section to configure an `http` registry.
+You need to add your registry as an insecure registry. Please check the [Insecure Registry](#insecure-registry) section to configure an HTTP registry.
 
 :::
 
@@ -352,15 +352,15 @@ Now you can connect to your registry with HTTP without any errors.
 
 ## Pulling Images One By One
 
-If you are having problems while pulling all the images in parallel, like happens in `Nexus`, you can use the script below to pull image one by one.
+If you are having problems pulling all the images in parallel, like happens in `Nexus`, you can use the script below to pull images one by one.
 
-- You should create a bash script to pull images one by one.
+- Create a bash script to to pull images one by one.
 
 ```bash
 vi pull-images.sh
 ```
 
-- Then you should copy and paste the example script below into the `pull-images.sh` file.
+- Copy and paste the following code into the bash script:
 
 <Tabs>
   <TabItem value="docker" label="Docker" default>
@@ -431,21 +431,29 @@ sed -i "s|${DEST_REGISTRY_URL}|${SRC_REGISTRY_URL}|g" docker-images.txt
 
 :::info
 
-You should replace the `DEST_REGISTRY_URL` variable as your needs.
+You should replace the `DEST_REGISTRY_URL` variable per your needs.
 
-Lets assume that the URL of your `Nexus` proxy registry is `registry.spacetech.com:8083` and your pull command without image name is `registry.spacetech.com:8083/appcircle/docker-registry`.
+Let's assume that the URL of your Sonatype Nexus proxy registry is
 
-Then your `DEST_REGISTRY_URL` should be `registry.spacetech.com:8083/appcircle/docker-registry`.
+- `registry.spacetech.com:8083`
+
+and your container image pull command without an image name is
+
+- `registry.spacetech.com:8083/appcircle/docker-registry`
+
+Then the **`DEST_REGISTRY_URL`** should be like below:
+
+- `registry.spacetech.com:8083/appcircle/docker-registry`
 
 :::
 
-- Set the script permissions.
+- Make the `pull-images.sh` script file executable.
 
 ```bash
 chmod +x pull-images.sh
 ```
 
-- Pull the images one by one.
+- Run the script to pull all the container images one by one.
 
 ```bash
 ./pull-images.sh
