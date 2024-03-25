@@ -122,7 +122,7 @@ vi mirror-images.sh
 SRC_REGISTRY_URL="europe-west1-docker.pkg.dev/appcircle/docker-registry"
 
 # Set the destination registry URL
-DEST_REGISTRY_URL="registry.spacetech.com:8083"
+DEST_REGISTRY_URL="registry.spacetech.com:8083/appcircle"
 
 # Loop through each line of the file and pull, tag, and push the Docker image
 while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
@@ -161,7 +161,7 @@ done < docker-images.txt
 SRC_REGISTRY_URL="europe-west1-docker.pkg.dev/appcircle/docker-registry"
 
 # Set the destination registry URL
-DEST_REGISTRY_URL="registry.spacetech.com:8083/appcircle/docker-registry"
+DEST_REGISTRY_URL="registry.spacetech.com:8083/appcircle"
 
 # Loop through each line of the file and pull, tag, and push the Docker image
 while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
