@@ -16,7 +16,7 @@ These external repositories serve as integral components, offering users differe
 
 These services act as intermediaries, facilitating seamless image retrieval, caching frequently accessed images, and providing enhanced security measures for image distribution.
 
-## Appcircle Configuration
+## Appcircle Registry Configuration
 
 For the Appcircle server to work with your own container image registry, you should add an additional setting to the `global.yaml` file of your project.
 
@@ -61,6 +61,60 @@ image:
     password: superSecretPassword
     requiredLogin: true
 ```
+
+## Sonatype Nexus Configuration
+
+To use Sonatype Nexus as your proxy registry, you should follow the below steps.
+
+- Create a new repository in Nexus with the type of `docker (proxy)`.
+- Set the registry `name` and `port` as you wish.
+- Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
+- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file. See the sample screenshot [here.](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
+- For SSL, the recommended way is to use a reverse proxy in front of Nexus.
+
+:::tip
+
+You can see some sample screenshots below from Nexus UI for a sample configuration.
+
+- [Proxy repository settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-1.png)
+- [Remote storage settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-2.png)
+- [Authentication settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
+
+:::
+
+- After you created the repository, you should add the below section to the `global.yaml` file with your Nexus registry `url`, `username` and `password`.
+- If you can access your Nexus repository without authentication, you should leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
+
+```yaml
+image:
+  registry:
+    url: registry.spacetech.com:8083/appcircle/docker-registry
+    username:
+    password:
+    requiredLogin: false
+```
+
+- For more detailed usage about the variables, you can check the [Appcircle Registry Configuration](#appcircle-registry-configuration) section.
+
+:::caution
+
+In order to proxy Appcircle's registry from the Nexus registry, the **`registry.url`** in `global.yaml` must end with
+
+- `/appcircle/docker-registry`
+
+The example `global.yaml` section above is suitable with the example Nexus proxy registry settings shown in the screenshots above.
+
+:::
+
+:::info
+
+If you face any issue about "manifest not found" when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from the Nexus proxy registry.
+
+[Pulling Images On By One](#pulling-images-one-by-one) script below will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
+
+Nexus has some issues when pulling images in parallel.
+
+:::
 
 ## Mirroring Images
 
@@ -295,60 +349,6 @@ If your registry runs on port other than `80`, you should specify it in the `reg
 </Tabs>
 
 Now you can connect to your registry with `HTTP` without errors.
-
-## Sonatype Nexus Registry Configuration
-
-To use Sonatype Nexus as your proxy registry, you should follow the below steps.
-
-- Create a new repository in Nexus with the type of `docker (proxy)`.
-- Set the registry `name` and `port` as you wish.
-- Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
-- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file. See the sample screenshot [here.](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
-- For SSL, the recommended way is to use a reverse proxy in front of Nexus.
-
-:::tip
-
-You can see some sample screenshots below from Nexus UI for a sample configuration.
-
-- [Proxy repository settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-1.png)
-- [Remote storage settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-2.png)
-- [Authentication settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
-
-:::
-
-- After you created the repository, you should add the below section to the `global.yaml` file with your Nexus `repository url`, `username` and `password`.
-- If you can access your Nexus repository without authentication, you should leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
-
-```yaml
-image:
-  registry:
-    url: registry.spacetech.com:8083/appcircle/docker-registry
-    username:
-    password:
-    requiredLogin: true
-```
-
-- For more detailed usage about the variables, you can check the [Appcircle Registry Configuration](#appcircle-configuration) section.
-
-:::caution
-
-In order to proxy Appcircle's registry from the Nexus registry, the **`registry.url`** in `global.yaml` must end with
-
-- `/appcircle/docker-registry`
-
-The example `global.yaml` section above is suitable with the example Nexus proxy registry settings shown in the screenshots above.
-
-:::
-
-:::info
-
-If you face any issue about "manifest not found" when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from the Nexus proxy registry.
-
-[Pulling Images On By One](#pulling-images-one-by-one) script below will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
-
-Nexus has some issues when pulling images in parallel.
-
-:::
 
 ## Pulling Images One By One
 
