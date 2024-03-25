@@ -1,0 +1,37 @@
+import Screenshot from '@site/src/components/Screenshot';
+
+Go to your organization's **integration** settings and generate runner access token.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/self-hosted-runner-access-token-01.png" />
+
+Using generated token, register self-hosted runner to your organization with desired name and pool.
+
+```bash
+./ac-runner register -t ${Access Token} -n ${Runner Name} -p ${Runner Pool}
+```
+
+Runner name is the text that you identify your self-hosted runner in your organization. You can use any suitable text for runner naming according to your requirements. You will find registered self-hosted runner in "Self-hosted Runners" list with the given name.
+
+Runner pool is the text which identifies the runner pool in your organization. You can use any suitable text for pool naming according to your requirements. You will use given pool name at build profile settings and also see registered self-hosted runner in "Self-hosted Runners" list with the given pool name.
+
+For example, below command is registering runner named "runner1" with pool named "Arm64_pool" to specified organization with using generated runner access token.
+
+```bash
+./ac-runner register -t aat_XVY27uHw7W1GA_cw5Vut0p_WOzHeYeJ2ZkTbqAVE3GX -n runner1 -p Arm64_pool
+```
+
+For more details on runner and pool, see [Manage Self-hosted Pools](./configure-runner/manage-pools.md) and [Manage Self-hosted Runners](./configure-runner/manage-runners.md) in docs.
+
+:::info
+
+Access token is required only for registration process and it can be used for any self-hosted runner, many times until revoked.
+
+Revoking access token itself is not affecting already registered runners. You can't register new self-hosted runners to organization with revoked token anymore.
+
+Only one valid access token can be used actively for an organization. There is no hard-limit on token generation and revoke. Acccording to your security requirements, you can revoke and generate new access token anytime you want.
+
+:::
+
+Once you complete this step, you will see new added runner at "Build > Self-hosted Runners" list.
+
+It's `enabled` by default but its state should be `Offline` by now.
