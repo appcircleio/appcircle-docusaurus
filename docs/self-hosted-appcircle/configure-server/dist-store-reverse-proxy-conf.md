@@ -15,19 +15,19 @@ import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-s
 
 In this section, you will see how to configure Nginx as a reverse proxy. At the end, you will be able to access the Appcircle Testing Distribution and Enterprise App Store from the internet.
 
-In enterprise environments, all incoming requests from the internet to the Appcircle server are blocked by default. If you want to access the Appcircle Testing Distribution and Enterprise App Store from the internet, you should create a reverse proxy which accepts requests from the internet and forwards requests to the Appcircle server.
+In enterprise environments, all incoming requests from the internet to the Appcircle server are blocked by default. If you want to access the Appcircle Testing Distribution and Enterprise App Store from the internet, you should create a reverse proxy that accepts requests from the internet and forwards requests to the Appcircle server.
 
-As a result, your Testing Distribution users and Enterprise App Store users can access the resources like `apk` and `ipa` files in the Appcircle server.
+As a result, your Testing Distribution users and Enterprise App Store users can access resources like `apk` and `ipa` files on the Appcircle server.
 
-If you have any other common loadbalancer, reverse proxy or firewall tool, you don't need to deploy another Nginx as a reverse proxy. You can configure your own tool. Here you can see the main logic to access Appcircle server from the internet.
+If you have any other common load balancer, reverse proxy, or firewall tool, you don't need to deploy another Nginx as a reverse proxy. You can configure your own tool. Here you can see the main logic for accessing the Appcircle server from the internet.
 
 ## Overall Structure
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2624-common-view-diagram.png' />
 
-In the diagram above, you can see the overall structure that you will deploy. The reverse proxy device that accepts requests from the internet and proxies to the Appcircle server. This way, Appcircle server won't be reached from the internet directly but with a reverse proxy.
+In the diagram above, you can see the overall structure that you will deploy. The reverse proxy accepts requests from the internet and proxies to the Appcircle server. This way, the Appcircle server won't be reached from the internet directly but with a reverse proxy.
 
-There is one thing you should consider, the SSL certificates. Generally public SSL certificates are located in the reverse proxy and self-signed SSL certificate is located in the Appcircle server. So the testing distribution and enterprise app store users can connect to the Appcircle from internet without having untrusted SSL certificate problems.
+There is one thing you should consider, the SSL certificates. Generally, public SSL certificates are located in the reverse proxy, and self-signed SSL certificates are located on the Appcircle server. So the testing distribution and enterprise app store users can connect to the Appcircle from the internet without having untrusted SSL certificate problems.
 
 There are several use-cases for SSL certificates and HTTP(S) connections while configuring the reverse proxy and the Appcircle server.
 
@@ -37,9 +37,9 @@ There are several use-cases for SSL certificates and HTTP(S) connections while c
 
 #### Use-Case 1
 
-You may have installed the Appcircle server with an SSL certificate and configured the Enterprise App Store and Testing Distribution with custom domains and with SSL certificates.
+You may have installed the Appcircle server with an SSL certificate and configured the Enterprise App Store and Testing Distribution with custom domains and SSL certificates.
 
-This is the recommended use-case because all the traffic between users, reverse-proxy and the Appcircle server will be encrypted for security purposes.
+This is the recommended use-case because all the traffic between users, the reverse proxy and the Appcircle server will be encrypted for security purposes.
 
 In this use-case;
 
@@ -214,7 +214,7 @@ With this `global.yaml` and the `Nginx` configuration, the users can access the 
 
 You may have installed the Appcircle server with an SSL certificate and configured the Enterprise App Store with a custom domain and an SSL certificate.
 
-This is also the recommended use-case because all the traffic between users, reverse-proxy and the Appcircle server will be encrypted for security purposes.
+This is also the recommended use-case because all the traffic between users, the reverse proxy and the Appcircle server will be encrypted for security purposes.
 
 In this use-case;
 
