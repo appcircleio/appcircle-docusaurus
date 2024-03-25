@@ -16,6 +16,52 @@ These external repositories serve as integral components, offering users differe
 
 These services act as intermediaries, facilitating seamless image retrieval, caching frequently accessed images, and providing enhanced security measures for image distribution.
 
+## Appcircle Configuration
+
+For Appcircle server work with your own container image registry, you should add an additional setting to the `global.yaml` file of your project.
+
+- Log in to Appcircle server with SSH or remote connection.
+
+- Go to the `appcircle-server` directory.
+
+- Edit the `global.yaml` file of your project.
+
+:::info
+
+The `spacetech` in the example codes below are example project name.
+
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
+
+```bash
+ls -l ./projects
+```
+
+:::
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Find the `image` key. If it doesn't exists on the `global.yaml`, add it.
+
+- The `image` key should be configured with your registry details:
+
+  - url: Registry URL. (For our example, "registry.spacetech.com:8083/appcircle").
+  - username: Username of the registry.
+  - password: Password of the registry.
+  - requiredLogin: If this variable is set to true, the script will use the username and password variables to login to the registry. If the end-user is logged in to his artifact registry manually, or the registry doesn't need auth, then this variable should be false.
+
+```yaml
+image:
+  registry:
+    url: registry.spacetech.com:8083/appcircle/docker-registry
+    username: registryUsername
+    password: superSecretPassword
+    requiredLogin: true
+```
+
 ## Mirroring Images
 
 You can mirror Appcircle container images from the Google Artifact Registry to your local registry.
@@ -259,6 +305,17 @@ To use Sonatype Nexus as your proxy registry, you should follow the below steps.
 - Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
 - For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file. See the sample screenshot [here.](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
 - For SSL, the recommended way is to use a reverse proxy in front of Nexus.
+
+:::tip
+
+You can see some sample screenshots below from Nexus UI for a sample configuration.
+
+- [Proxy repository settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-1.png)
+- [Remote storage settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-2.png)
+- [Authentication settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
+
+:::
+
 - After you created the repository, you should add the below section to the `global.yaml` file with your Nexus `repository url`, `username` and `password`.
 - If you can access your Nexus repository without authentication, you should leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
 
@@ -271,21 +328,15 @@ image:
     requiredLogin: true
 ```
 
+- For more detailed usage about the variables, you can check the [Appcircle Registry Configuration](#appcircle-configuration) section.
+
 :::caution
 
-In order to proxy Appcircle's registry, the **`registry.url`** in `global.yaml` must end with
+In order to proxy Appcircle's registry from the Nexus registry, the **`registry.url`** in `global.yaml` must end with
 
 - `/appcircle/docker-registry`
 
-:::
-
-:::tip
-
-You can see some sample screenshots below from Nexus UI for a sample configuration.
-
-- [Proxy repository settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-1.png)
-- [Remote storage settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-2.png)
-- [Authentication settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
+The example `global.yaml` section above is suitable with the example Nexus proxy registry settings shown in the screenshots above.
 
 :::
 
@@ -398,50 +449,4 @@ chmod +x pull-images.sh
 
 ```bash
 ./pull-images.sh
-```
-
-## Appcircle Configuration
-
-For Appcircle server work with your own container image registry, you should also add an additional setting to the `global.yaml` file of your project.
-
-- Log in to Appcircle server with SSH or remote connection.
-
-- Go to the `appcircle-server` directory.
-
-- Edit the `global.yaml` file of your project.
-
-:::info
-
-The `spacetech` in the example codes below are example project name.
-
-Please find your own project name and replace `spacetech` with your project name.
-
-To see projects, you can check the `projects` directory.
-
-```bash
-ls -l ./projects
-```
-
-:::
-
-```bash
-vi ./projects/spacetech/global.yaml
-```
-
-- Find the `image` key. If it doesn't exists on the `global.yaml`, add it.
-
-- The `image` key should be configured with your registry details:
-
-  - url: Registry URL. (For our example, "registry.spacetech.com:8083/appcircle").
-  - username: Username of the registry.
-  - password: Password of the registry.
-  - requiredLogin: If this variable is set to true, the script will use the username and password variables to login to the registry. If the end-user is logged in to his artifact registry manually, or the registry doesn't need auth, then this variable should be false.
-
-```yaml
-image:
-  registry:
-    url: registry.spacetech.com:8083/appcircle/docker-registry
-    username: registryUsername
-    password: superSecretPassword
-    requiredLogin: true
 ```
