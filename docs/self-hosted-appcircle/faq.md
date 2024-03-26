@@ -144,18 +144,18 @@ Now you can access the Enterprise App Store with the new store domain settings.
 ### How can we change the default sub-domains?
 
 :::caution
-This operation needs `reset` which deletes all your data like "Build Profiles", "Certificates" etc on Appcircle Server.
+This operation needs **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#reset-configuration)** which deletes all your data like "Build Profiles", "Signing Identities", etc on the Appcircle server.
 :::
 
-:::info
-If you only want to change the URLs of the Testing Distribution and the Enterprise App Store, you can check [Custom Domains](./configure-server/ssl-configuration.md#custom-domain) document to assign a custom domain without resetting the Appcircle server.
+:::tip
+If you only want to change the URL of the **Testing Distribution** or **Enterprise App Store**, you should follow the [custom domain](./configure-server/ssl-configuration.md#custom-domain) configuration document to assign a custom domain without resetting the Appcircle server.
 :::
 
-You can change default subdomains as your needs at the first installation time of the Appcircle server.
+You can change the default subdomains as per your needs at the first installation time of the Appcircle server.
 
-If you have already installed the Appcircle server and want to change the subdomains, you can reset the data and move on.
+If you have already installed the Appcircle server and want to change the subdomains, you must **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#reset-configuration)** the server before applying a new configuration.
 
-For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com`, you can follow the steps below:
+For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com` along with other subdomains, you should follow the steps below:
 
 - Go to the `appcircle-server` directory.
 
@@ -164,16 +164,19 @@ cd appcircle-server
 ```
 
 :::info
-`spacetech` is example project name. Please check your own project name from under the `./projects` directory.
-:::
+The `spacetech` in the example codes below is an example project name.
 
-- If your server is up and running, down your project.
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech" down
+ls -l ./projects
 ```
 
-- Edit the `global.yaml` of your project for subdomains.
+:::
+
+- Edit the `global.yaml` of your project for subdomain changes.
 
 ```bash
 vi ./projects/spacetech/global.yaml
@@ -204,11 +207,9 @@ storeWeb:
 ```
 
 :::caution
-If the keys are already exist in the `global.yaml`, you should just update or add the missing keys.
+If the keys already exist in the `global.yaml`, you should just update or add the missing keys.
 
-For example you must have `keycloak` key in the global.yaml already. You must just add the `keycloak.external.subdomain` section.
-
-There should also be the `storeWeb` key in the global.yaml.
+For example, if you already have the `keycloak` key in global.yaml, you must just add the `keycloak.external.subdomain` section there.
 :::
 
 - Edit the `mainDomain` of your project in the `global.yaml` file.
@@ -218,26 +219,69 @@ external:
   mainDomain: '.spacetech.com'
 ```
 
-:::info
+:::caution
+The subdomains will be concatenated to the **`mainDomain`**.
 
-- After you change the main domain and the subdomains, you can merge them in your mind to find full domain.
-
-- For example, in the example below:
-  - Main domain: `.spacetech.com`
-  - Web app domain: `my-appcircle`
-  - So you will use `my-appcircle.spacetech.com` as full domain.
-
+For this reason, `external.mainDomain` in the configuration file must always begin with a `.` character as a prefix.
 :::
 
-- `reset`, `export` and `up` the Appcircle Server
+:::tip
 
-The `reset` is optional, if you are installing for the first time (You must never have run the `up` command.), you don't the reset. You can continue with the `export` and the `up` commands.
+After you change the main domain and the subdomains, you can merge them yourself to see the up-to-date URLs for Appcircle modules.
 
-For details, you can follow [Reset Configuration](./install-server/docker.md/#reset-configuration) section in the documentation.
+For example;
+
+- when `mainDomain` is `.spacetech.com`
+- and `webApp` `subdomain` is `my-appcircle`
+
+then the Appcircle dashboard URL will be `my-appcircle.spacetech.com`.
+:::
+
+:::warning
+If you have configured the Appcircle server as HTTPS, as an extra step, it may be required to change the SSL certificates in the `global.yaml` if they are not compatible with your new subdomains.
+
+See the **[SSL configuration](./configure-server/ssl-configuration.md)** document for details.
+:::
+
+When the `global.yaml` changes are ready to apply, follow the below steps:
+
+- Stop the server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Cleanup server data.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" reset
+```
 
 :::info
-If you have configured the Appcircle server as `https`, you may want to change the nginx SSL certificate and key if the certificate doesn't contain the new domains.
+The `reset` step is optional. If you are installing for the first time, which means that you have  never run the `up` command and used the system, then you don't need to cleanup anything.
+
+For details, you can see the [reset configuration](./install-server/docker.md/#reset-configuration) section in the documentation.
 :::
+
+- Apply the configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Start the server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+- Check the health of the services.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+You should see the message: _"All services are running successfully."_
 
 ### While connecting to a repository from GitLab, we can list the projects, but binding is failing.
 

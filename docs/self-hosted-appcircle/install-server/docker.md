@@ -745,7 +745,7 @@ So, we suggest you to be sure with your configuration before using it in product
 To begin reconfiguration with data cleanup, use below command while stopping Appcircle server.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" reset
+./ac-self-hosted.sh -n "spacetech" reset
 ```
 
 It will remove all unused local volumes which is useful for a clean start.
