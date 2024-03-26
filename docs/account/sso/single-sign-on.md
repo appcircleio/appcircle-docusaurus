@@ -81,23 +81,23 @@ The invitation link in the email will send the user to the SSO login page immedi
 
 ### SSO Login Direct Link
 
-If you wish to log in to the Appcircle dashboard directly using the integrated SSO you set up for your company, you may use an auto-redirect URL.
+If you wish to log in to the Appcircle dashboard directly using the integrated SSO you set up for your company, you can use an auto-redirect URL.
 
-For example, if you configured an SSO and your SSO `alias` in the Appcircle configuration is `spacetechsso`, you may use the URL below to log in straight to the SSO:
+For example, if you configured an SSO and your **SSO alias** in the Appcircle configuration is `spacetechsso`, you can use the URL below to log in straight to the SSO:
 
 ```URL
 https://my.appcircle.io/sso/spacetechsso
 ```
 
-Notice that the name `spacetechsso` in the SSO URL above is the SSO alias. You can replace it with your own SSO alias and use it.
+Notice that the name `spacetechsso` in the SSO URL above is the SSO alias. You should replace it with your own SSO alias and use it.
+
 :::info
+If you are a self-hosted Appcircle user, you can use the same method too. The only difference will be in the URL.
 
-If you are a self-hosted Appcircle user, you can use the same method too.
+If you're using `https://my.appcircle.spacetech.com` to access the Appcircle dashboard, for instance, your SSO direct login URL should be
 
-The only difference will be in the URL. If you use `https://my.appcircle.spacetech.com` to access the Appcircle dashboard, your SSO direct login URL is `https://my.appcircle.spacetech.com/sso/spacetechsso`
+- `https://my.appcircle.spacetech.com/sso/spacetechsso`
 
 :::
 
 After you enter the SSO login URL specified above, you should be redirected to the SSO login page directly or to the Appcircle dashboard if you have already authenticated with the SSO.
-
-When you input the SSO login URL mentioned above, you should be taken to the SSO login page or the Appcircle dashboard, if you are already authenticated using SSO.
