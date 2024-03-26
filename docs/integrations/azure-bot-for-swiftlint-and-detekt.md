@@ -2,7 +2,7 @@
 title: Azure Bot for SwiftLint and Detekt
 metaTitle: Azure Bot for SwiftLint and Detekt
 metaDescription: Azure Bot for SwiftLint and Detekt
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -16,7 +16,7 @@ With the Azure DevOps Bot integration, you can analyze your SwiftLint and Detekt
 
 #### Step 1
 
-First, to generate the report output, the [SwiftLint](../workflows/ios-specific-workflow-steps.md#swiftlint) component needs to be added to the workflow. We add the SwiftLint component after the CocoaPods install step.
+First, to generate the report output, the [SwiftLint](../workflows/ios-specific-workflow-steps/index.md#swiftlint) component needs to be added to the workflow. We add the SwiftLint component after the CocoaPods install step.
 
 To use the Azure Bot, we add the 'Azure DevOps Bot for SwiftLint Report' step right after running SwiftLint.
 
@@ -64,7 +64,7 @@ https://github.com/appcircleio/appcircle-ios-azure-bot-for-swiftlint-component
 
 #### Step 1
 
-The first step for Android is to add the [Detekt](../integrations/../workflows/android-specific-workflow-steps.md#detekt) component to your workflow. Following the Detekt component, you should add the 'Azure DevOps Bot For Detekt Component' component to create a workflow.
+The first step for Android is to add the [Detekt](../integrations/../workflows/android-specific-workflow-steps/index.md#detekt) component to your workflow. Following the Detekt component, you should add the 'Azure DevOps Bot For Detekt Component' component to create a workflow.
 
 :::caution
 Please make sure to run the Azure Bot component after Detekt. Otherwise, the **Azure DevOps Bot For Detekt Component** won't function.

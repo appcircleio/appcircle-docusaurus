@@ -24,7 +24,7 @@ A version other than the Xcode versions on the configuration page should not be 
 Because the Xcode versions on the configuration page are the versions installed on runners.
 Entering an unavailable Xcode version may cause the build to fail.
 
-You can review the documentation for detailed information about the Xcode version selection [here](../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools.md/#pool-based-xcode-version-selection).
+You can review the documentation for detailed information about the Xcode version selection [here](../../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools.md/#pool-based-xcode-version-selection).
 :::
 
 ## Cocoapods Install
@@ -47,7 +47,7 @@ https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-c
 
 ## Xcodebuild for Devices (Archive & Export)
 
-This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](../distribute/create-or-select-a-distribution-profile.md) feature or any other means of iOS distribution.
+This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](../../distribute/create-or-select-a-distribution-profile.md) feature or any other means of iOS distribution.
 
 https://github.com/appcircleio/appcircle-ios-build-sign-component
 
@@ -69,6 +69,18 @@ This step performs unit and UI tests for your iOS applications. This does not "b
 
 https://github.com/appcircleio/appcircle-ios-test-component/
 
+## Test Reports for iOS
+
+This component provides detailed reports and insights on the results of iOS app tests conducted.
+
+For detailed information on the usage of **Test Reports for iOS**, please refer to the documentation:
+
+[https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report)
+
+To access the source code of this component, please use the following link:
+
+[https://github.com/appcircleio/appcircle-test-report-component](https://github.com/appcircleio/appcircle-test-report-component)
+
 ## Slather
 
 This step converts Xcode's test results to different formats by using [Slather](https://github.com/SlatherOrg/slather/). This workflow must be run **after** [Xcodebuild for Unit and UI Tests](#xcodebuild-for-unit-and-ui-tests) step.
@@ -77,7 +89,7 @@ https://github.com/appcircleio/appcircle-slather-component
 
 ## Tuist
 
-This step installs [Tuist](https://wwww.tuist.io/) and runs `tuist generate` with given options.
+This step installs [Tuist](https://tuist.io/) and runs `tuist generate` with given options.
 
 https://github.com/appcircleio/appcircle-tuist-component
 
@@ -99,8 +111,12 @@ Distribute IPA and dSYM files to [App Center](https://appcenter.ms/). You need e
 
 [https://github.com/appcircleio/appcircle-ios-appcenter-distribute-component](https://github.com/appcircleio/appcircle-ios-appcenter-distribute-component)
 
-## Appdome-Build-2Secure for iOS
+## Appdome Build-2Secure for iOS
 
-This integration enables the activation of security and app protection features, facilitating the building and signing of mobile apps.
+Appdome Build-2Secure is a comprehensive automated solution that seamlessly integrates advanced security features, adaptive protections, code-signing, and certification processes into mobile applications, enhancing security without the need for manual coding or code analysis.
 
 [https://github.com/appcircleio/appcircle-ios-appdome-component](https://github.com/appcircleio/appcircle-ios-appdome-component)
+
+For detailed information on the benefits Appdome Build-2Secure adds to your mobile app, refer to the blog post:
+
+[https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integration](https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integration)

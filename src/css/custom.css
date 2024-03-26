@@ -299,6 +299,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   font-size: 10px;
   font-family: var(--ifm-font-family-base);
   font-weight: 700;
+  white-space: pre;
 }
 
 .cloud-badge {
@@ -856,6 +857,10 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
   background-image: url(../../static/img/sidebar/integrations.svg);
 }
 
+.section-title.publish-module > div >a::before {
+  background-image: url(../../static/img/sidebar/publish.svg);
+}
+
 .section-title.continuous-testing > div >a::before {
   background-image: url(../../static/img/sidebar/continuous-testing.svg);
 }
@@ -886,10 +891,6 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
 
 .section-title.enterprise-store > div >a::before {
   background-image: url(../../static/img/sidebar/enterprise-store.svg);
-}
-
-.section-title.store-submit > div >a::before {
-  background-image: url(../../static/img/sidebar/store-submit.svg);
 }
 
 .section-title.reports > div >a::before {
@@ -925,4 +926,25 @@ img {
   -webkit-filter: drop-shadow(3px 3px 3px #888 );
   filter: drop-shadow(3px 3px 3px #888);
   margin-bottom: 24px;
+}
+
+.navbar__item_logo_container {
+  /* Navbar logo container always display as flex */
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0px;
+  margin-left: -1rem;
+  margin-right: 1.7;
+}
+
+.navbar__item_logo_container a {
+  height: 100%;
+}
+
+/* Hides the navbar logo in navbar items */
+.menu__list-item.navbar__item_logo_container {
+  display: none !important;
 }

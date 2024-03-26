@@ -54,6 +54,20 @@ The naming here is created by adding "_copy_1" to the end of the main configurat
 Although the system gives a unique name for the copied configuration by default, you can give this configuration a new name using "Rename".
 :::
 
+### Download Configuration
+
+You can download your **Configuration** in YAML format to perform actions like sharing the settings you've configured or creating a duplicate on another **Build Profile** page. Follow these steps to download your **Configuration**:
+
+- Open the **Configuration** you've created.
+- Locate the download button positioned at the bottom left of the Configuration interface. Click on the download button.
+  <Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-download-component.png' />
+
+Your *configuration.yaml* file will be downloaded to your local system.
+
+:::tip
+If you intend to copy the configuration to use on the same **Build Profile** page, consider using the [**Clone Configuration**](#clone-configuration) step as a quicker alternative.
+:::
+
 ### Project details configuration
 
 Every build profile needs to know project details regardless of the project being iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle if you click on **Autofill** button.
@@ -102,7 +116,7 @@ You can set custom rules to manage the versioning of your app. You can increase 
 
 ### Workflows and Triggers
 
-For advanced configuration, you can utilize [workflows](../workflows/why-to-use-workflows.md) and for automatic builds, you can utilize [triggers](build-manually-or-with-triggers.md#automatic-build).
+For advanced configuration, you can utilize [workflows](../workflows/index.md) and for automatic builds, you can utilize [triggers](build-manually-or-with-triggers.md#automatic-build).
 
 These options are available at the profile level in the profile context menu.
 

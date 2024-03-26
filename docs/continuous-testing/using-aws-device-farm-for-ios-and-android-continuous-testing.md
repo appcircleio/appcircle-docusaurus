@@ -20,7 +20,7 @@ To start, you need to add the
 - "Android Build for UI Testing" step for Android
 - "Xcodebuild Build for Testing" step for iOS
 
-followed by the "AWS Device Farm Deploy and Run" step to the workflow from the [workflow marketplace](../workflows/why-to-use-workflows.md#workflow-marketplace).
+followed by the "AWS Device Farm Deploy and Run" step to the workflow from the [workflow marketplace](../workflows/index.md#workflow-marketplace).
 
 If you just want to run tests, you can also remove other build steps such as "Android Build" or "Xcodebuild for Devices".
 

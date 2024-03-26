@@ -23,7 +23,7 @@ For more information on your provider, see the links below:
 
 - [Github](./connecting-to-github.md)
 - [Bitbucket](./connecting-to-bitbucket.md)
-- [Gitlab](./connecting-to-gitlab.md)
+- [GitLab](./connecting-to-gitlab.md)
 
 #### Using a Private Git Server?
 

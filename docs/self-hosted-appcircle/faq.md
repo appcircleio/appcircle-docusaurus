@@ -41,7 +41,7 @@ If you need to use a proxy on the Appcircle server, you should configure proxy s
 
 If you are using the Nexus registry and are facing a "manifest not found" error, this is an expected case to occur. Nexus proxy has a known bug while pulling multiple container images. You should pull images one by one as a workaround.
 
-To pull images one by one, you can edit the script [here](./install-server/podman.md#mirroring-appcircle-images) and create a new shell script. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
+To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry.md#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
 ### Where should we download the zip package while we are updating?
 
@@ -68,6 +68,78 @@ id
 The user ID and group ID should be four-digit numbers. (For example, 1000, 1002, etc.)
 
 If your user ID and group ID are very large, you may get this error. In this case, you should create a new user and group with regular IDs.
+
+### We want to change the Enterprise App Store custom domain. What should we do?
+
+You can change the custom domain settings of Enterprise App Store from the `global.yaml` configuration file.
+
+:::caution
+We are assuming that you have installed the Appcircle server with version `3.11.0` or later for this operation.
+:::
+
+- Log in to the Appcircle server with SSH or a remote connection.
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+:::info
+
+The `spacetech` in the example codes below are example project name.
+
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
+
+```bash
+ls -l ./projects
+```
+
+:::
+
+- Shutdown Appcircle server. Keep in mind that, this will cause downtime.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+```yaml
+storeWeb:
+  customDomain:
+    enabled: true
+    domain: store.spacetech.com
+```
+
+- Apply configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Boot Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+:::
+
+Now you can access the Enterprise App Store with the new store domain settings.
 
 ### How can we change the default sub-domains?
 
@@ -166,6 +238,14 @@ For details, you can follow [Reset Configuration](./install-server/docker.md/#re
 :::info
 If you have configured the Appcircle server as `https`, you may want to change the nginx SSL certificate and key if the certificate doesn't contain the new domains.
 :::
+
+### While connecting to a repository from GitLab, we can list the projects, but binding is failing.
+
+The first thing you should check is **PAT** permissions.
+
+If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
+
+For more details about configuring the outbound requests, you can refer to the [Outbound Requests](../build/adding-a-build-profile/connecting-to-gitlab.md#outbound-requests) section.
 
 ## Appcircle Runner FAQ
 
