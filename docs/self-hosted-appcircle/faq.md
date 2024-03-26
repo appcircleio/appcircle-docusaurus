@@ -323,29 +323,29 @@ If you already trusted the root CA cert, you should check the Appcircle server's
 
 The `screen` command has a bug with long usernames which has been fixed in the new versions.
 
-If you are facing this error while trying to run Appcircle runner VMs on a macOS host, you should update the `screen` tool in the host machine with `brew`.
+If you are facing this error while trying to run Appcircle runner VMs on a macOS host, you should update the `screen` tool on the host machine with `brew`.
 
-You can follow the steps below to update the `screen` tool:
+You should follow the steps below to update the `screen` tool:
 
-- Check the current version
+- Check the current version before updating.
 
 ```bash
 screen --version
 ```
 
-- Install the new version
+- Install the up-to-date version using Homebrew.
 
 ```bash
 brew install screen
 ```
 
-- Open a new terminal session
+- Open a new terminal session to use the new `screen`.
 
 :::caution
-If you don't open a new terminal session, the screen tool won't be updated.
+If you don't open a new terminal session, you cannot use the up-to-date `screen` since the current shell session has access to the older version.
 :::
 
-- Re-check the version.
+- Re-check the version to see if the update was done successfully.
 
 ```bash
 screen --version
