@@ -75,6 +75,10 @@ If your user ID and group ID are very large, you may get this error. In this cas
 This operation needs `reset` which deletes all your data like "Build Profiles", "Certificates" etc on Appcircle Server.
 :::
 
+:::info
+If you only want to change the URLs of the Testing Distribution and the Enterprise App Store, you can check [Custom Domains](./configure-server/ssl-configuration.md#custom-domain) document to assign a custom domain without resetting the Appcircle server.
+:::
+
 You can change default subdomains as your needs at the first installation time of the Appcircle server.
 
 If you have already installed the Appcircle server and want to change the subdomains, you can reset the data and move on.
