@@ -123,7 +123,7 @@ echo "$HTTP_PROXY"
 ```
 
 :::caution
-There 2 rules you must consider.
+There are two rules you must consider.
 
 - The `HTTP_PROXY` variable shouldn't contain username or password. Currently LibreSSL doesn't support the proxy username or password.
 
