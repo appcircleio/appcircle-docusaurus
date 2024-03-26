@@ -125,7 +125,7 @@ echo "$HTTP_PROXY"
 :::caution
 There 2 rules you must consider.
 
-- The `HTTP_PROXY` variable shouldn't contain username or password.
+- The `HTTP_PROXY` variable shouldn't contain username or password. Currently LibreSSL doesn't support the proxy username or password.
 
 - The `HTTP_PROXY` variable shouldn't end with "/".
 
@@ -142,6 +142,12 @@ Invalid -> proxy.spacetech.com:8080/ or 10.20.0.1:8080/ or username:password@pro
 
 - When the URL is asked, you can input a URL address which you can access with proxy.
 
-- For the runner can access to the `github.com` with proxy only, you can input `github.com`.
+- If the runner can access to the `github.com` with proxy only, you can input `github.com` and hit enter.
 
-- The script will try
+- The script will initially attempt to connect to the provided URL without using a proxy. If the connection fails, it will then try the proxy variables.
+
+- The connection verification step at the end of the script may fail since it does not support proxies. You can safely ignore any "Verification Failed" messages if the certificate has been successfully installed on your macOS device.
+
+- After the script finishes, you can check the logs to see if it extracted the proxy certificate and installed it on your device successfully.
+
+- Now you can connect to the external services from proxy without getting "Self-signed" or "Untrusted" SSL errors.
