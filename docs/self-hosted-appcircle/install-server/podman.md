@@ -194,13 +194,13 @@ You need to have the following tools installed on your system:
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.11.1.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.13.2.zip
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.11.1.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.13.2.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -837,150 +837,7 @@ For detailed instructions on configuring the automatic startup of the server con
 
 #### Using 3rd Party or Self-hosted Artifact Registry
 
-If your organization uses another registry (harbor, nexus etc.), in order to clone Appcircle images you need to add your registry to the `global.yaml` file.
-
-##### Mirroring Appcircle Images
-
-To use your local registry, you must download Appcircle's container images to your local repository. Follow the below steps to push Appcircle's container images to your registry.
-
-- Transfer `cred.json` file to a server which has access to Appcircle's image registry.
-- Login to Appcircle's registry.
-
-```bash
-cat cred.json | podman login -u _json_key --password-stdin  europe-west1-docker.pkg.dev/appcircle/docker-registry
-```
-
-You should see `Login Succeeded` message.
-
-- Pull images from Appcircle's registry and push to your registry. If your registry is at `reg.appcircle.spacetech.com/appcircle` you can use below bash script to pull images.
-
-:::info
-
-Run this script in a folder which has **docker-images.txt** file. This file has the name of the images.
-
-You can find this file inside Appcircle's self-hosted package.
-
-:::
-
-```bash
-#!/bin/bash
-
-# Set the source registry URL
-SRC_REGISTRY_URL="europe-west1-docker.pkg.dev/appcircle/docker-registry"
-
-# Set the destination registry URL
-DEST_REGISTRY_URL="reg.appcircle.spacetech.com/appcircle"
-
-# Loop through each line of the file and pull, tag, and push the Docker image
-while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
-    echo "Pulling image: $IMAGE_NAME"
-    podman pull $IMAGE_NAME
-    if [ $? -eq 0 ]; then
-        echo "Image pulled successfully: $IMAGE_NAME"
-        # Replace source registry URL  with the new registry URL
-        IMAGE_TAG="${IMAGE_NAME/$SRC_REGISTRY_URL/$DEST_REGISTRY_URL}"
-        # Tag the image with the destination registry URL and repository name
-        podman tag $IMAGE_NAME $IMAGE_TAG
-        # Push the tagged image to the destination registry
-        podman push $IMAGE_TAG
-        if [ $? -eq 0 ]; then
-            echo "Image pushed successfully: $IMAGE_NAME"
-        else
-            echo "Failed to push image: $IMAGE_NAME"
-        fi
-    else
-        echo "Failed to pull image: $IMAGE_NAME"
-    fi
-done < docker-images.txt
-```
-
-:::info
-
-If your registry is not using `https`, you may get an error during podman push step. You need to add your registry as insecure registry. Create a file named `myregistry.conf` in `/etc/containers/registries.conf.d/` folder. It should have the following content.
-
-```bash
-[[registry]]
-location = "registry.mycluster.williamlieurance.com:5000"
-insecure = true
-```
-
-After this modification, restart podman or server to apply new settings.
-
-:::
-
-- After you mirrored Appcircle's images to your registry, you need to configure `image.registry` section in `global.yaml`. See its details below.
-  - `url`: Registry URL. (For our example, "reg.appcircle.spacetech.com/appcircle")
-  - `username`: Username of the registry.
-  - `password`: Password of the registry.
-  - `requiredLogin`: If this variable is set to true, the script will use the `username` and `password` variables to login to the registry. If the end-user is logged in to his artifact registry manually, then this variable should be false.
-
-```yaml
-image:
-  registry:
-    url: reg.appcircle.spacetech.com/appcircle
-    username:
-    password:
-    requiredLogin: true
-```
-
-- Create new export.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" export
-```
-
-- Run Appcircle server services.
-
-```bash
-/ac-self-hosted.sh -n "spacetech" up
-```
-
-##### Using Sonatype Nexus as Proxy Registry
-
-To use Sonatype Nexus as your proxy registry, you should follow the below steps.
-
-- Create a new repository in Nexus with the type of `docker (proxy)`.
-- Set the `Registry Name` name and `port` as you wish.
-- Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
-- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file. See the sample screenshot [here.](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
-- For SSL, the recommended way is to use a reverse proxy in front of Nexus.
-- After you created the repository, you should add the below section to the `global.yaml` file with your Nexus `repository url`, `username` and `password`.
-- If you can access your Nexus repository without authentication, you should leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
-
-```yaml
-image:
-  registry:
-    url: reg.appcircle.spacetech.com:8443/appcircle/docker-registry
-    username:
-    password:
-    requiredLogin: true
-```
-
-:::caution
-
-In order to proxy Appcircle's registry, the repository url in `global.yaml` must end with `/appcircle/docker-registry`.
-
-:::
-
-:::tip
-
-You can see some example configuration screenshots below for Nexus UI.
-
-- [Proxy repository settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-1.png)
-- [Remote storage settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-2.png)
-- [Authentication settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
-
-:::
-
-:::info
-
-If you face any issue about "manifest not found" when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from Nexus proxy registry.
-
-By looking at the [mirroring images](./podman.md#mirroring-appcircle-images) script above, you can pull images from the proxy repository with a similar script. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
-
-Nexus may have some issues when pulling images in parallel.
-
-:::
+If your organization uses another registry (harbor, nexus, etc.), in order to use the Appcircle registry, you can head to the [External Image Registries](../configure-server/external-image-registry.md) document for detailed usage and configuration examples.
 
 ### :tada: Ready
 
@@ -1045,7 +902,7 @@ So, we suggest you to be sure with your configuration before using it in product
 To begin reconfiguration with data cleanup, use below command while stopping Appcircle server.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" reset
+./ac-self-hosted.sh -n "spacetech" reset
 ```
 
 It will remove all unused local volumes which is useful for a clean start.

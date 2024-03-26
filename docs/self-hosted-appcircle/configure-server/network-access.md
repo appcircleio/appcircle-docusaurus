@@ -257,6 +257,7 @@ Firebase:
 App Center:
 
 - api.appcenter.ms
+- file.appcenter.ms
 
 ### Store Submit
 

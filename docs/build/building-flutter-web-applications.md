@@ -34,7 +34,7 @@ In this case, after removing Android-related steps, the workflow will look like 
 
 For more information about workflows, refer the workflow documentation below:
 
-<ContentRef url='/workflows/why-to-use-workflows'>What are Workflows</ContentRef>
+<ContentRef url='/workflows/index.html'>What are Workflows</ContentRef>
 
 If you want to deploy your web output automatically, you can use a [Custom Script](https://github.com/appcircleio/appcircle-custom-script-component/) or [upload it to Amazon S3](../integrations/uploading-files-to-amazon-sin-the-workflows.md).
 

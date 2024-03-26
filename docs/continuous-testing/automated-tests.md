@@ -12,10 +12,10 @@ import NarrowImage from '@site/src/components/NarrowImage';
 
 Appcircle currently supports the following mobile automation testing tools:
 
-- [Appium](../workflows/common-workflow-steps.md#appium-server)
-- [BrowserStack](../workflows/android-specific-workflow-steps.md#browserstack-app-automate---espresso)
-- [Maestro](../workflows/common-workflow-steps.md#maestro-cloud-upload)
-- [Testinium](../workflows/common-workflow-steps.md#testinium)
+- [Appium](../workflows/common-workflow-steps/index.md#appium-server)
+- [BrowserStack](../workflows/android-specific-workflow-steps/index.md#browserstack-app-automate---espresso)
+- [Maestro](../workflows/common-workflow-steps/index.md#maestro-cloud-upload)
+- [Testinium](../workflows/common-workflow-steps/index.md#testinium)
 
 Each service allows you to run your tests on real devices, and test scenarios can be started with the artifacts created on Appcircle. Rich reports can be managed by visiting the web site of each service.
 

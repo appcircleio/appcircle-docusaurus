@@ -55,7 +55,7 @@ Configure your build profile and select project parameters, signing options, dis
 
 You can customize your build flow using our workflow editor. Workflow editor allows you to be in control of the build process. You can add or remove build steps, add your custom scripts for advanced build processes.
 
-<ContentRef url="/workflows/why-to-use-workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows/index.html">What are Workflows and How to Use Them?</ContentRef>
 
 You can also automate your build process by telling Appcircle to automatically build your code with every push to your repository. There are also options including tagged pushes for more advanced cases.
 
@@ -85,12 +85,12 @@ You can manually or automatically send your binaries to respective app stores.
 
 Send a binary to Apple Testflight or App Store.
 
-<ContentRef url="/store-submit/apple-app-store">Send Apps to App Store Connect and TestFlight</ContentRef>
+<ContentRef url="/publish-module/send-to-appstore">Send Apps to App Store Connect and TestFlight</ContentRef>
 
 Send a binary to Google Play.
 
-<ContentRef url="/store-submit/google-play">Send Apps to Google Play Console</ContentRef>
+<ContentRef url="/publish-module/send-to-googleplay">Send Apps to Google Play Console</ContentRef>
 
 Send a binary to Huawei AppGallery.
 
-<ContentRef url="/store-submit/huawei-app-gallery">Send Apps to Huawei AppGallery</ContentRef>
+<ContentRef url="/publish-module/send-to-huawei">Send Apps to Huawei AppGallery</ContentRef>
