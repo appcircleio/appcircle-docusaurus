@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/workflows/why-to-use-workflows"
+  to = "/workflows"
+  status = 301

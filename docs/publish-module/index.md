@@ -6,8 +6,11 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import ContentRef from '@site/src/components/ContentRef';
 
 The Publish module will enable your applications to be published in the App Store, Google Play, and Huawei AppGallery stores. You can also submit your mobile applications to TestFlight.
+While publishing your mobile application to the stores, you can use predefined flows and customize them according to your specific publishing requirements.
+In addition to that, you can add new versions and publish your application to the stores without using the Build module.  
 
 Click on the **Publish** button on the left menu bar to go to the Publish module.
 
@@ -23,7 +26,9 @@ For detailed information on store **Connections**, follow the links below.
 |Google Play| https://docs.appcircle.io/account/adding-google-play-service-account|
 |Huawei AppGallery| https://docs.appcircle.io/account/adding-huawei-api-key|
 
-## Publish after Build
+## Publish Profile
+
+### Adding a Publish Profile
 
 After building the application, we can start the publishing process by sending it to the Publish module.
 
@@ -41,6 +46,8 @@ The publish profile is created, and it's ready for application submission.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-empty-profile.png' />
 
+### Build Profile Configuration
+
 Go to the build profile that we will send to the Publish module, and select the publish profile from the **Distribution** tab in the configuration.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-build.png' />
@@ -54,8 +61,6 @@ Now the build profile is ready for application publishing.
 When the build is successful, Appcircle will send the version of the relevant application to the selected publish profiles in the Publish module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-build-success.png' />
-
-## Publish Profile
 
 ### Publish Flow
 
@@ -71,13 +76,36 @@ We can access the list of steps that can be used in a publish workflow by clicki
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-workflows.png' />
 
+You can effortlessly obtain a **YAML** file of your current Publish Flow configurations on our platform with the **Download YAML** button at the bottom.
+By simply selecting the download option, you'll receive a YAML file containing all the details of your existing workflow setup.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download-workflow.png' />
+
+Customize your workflows effortlessly by uploading your YAML file with the **Replace Flow** button at the top.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-replace-flow-button.png' />
+
+Simply select the file containing your desired configurations and integrate them seamlessly into the platform.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-upload-workflow.png' />
+
 ### Publish Settings
 
 When a build is completed on the Build module and its artifacts are distributed to the Publish module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
 
 Your configured publish flow will be executed automatically when you enable **Auto Publish**.
 
+You can also select a runner pool from the **SELECT A POOL** dropdown list.
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-settings.png' />
+
+"Default Intel Pool" and "Default M1 Pool" are Appcircle cloud-hosted pools and only available for the cloud services.
+
+If there are any self-hosted pools in your organization, you can also select them from the list. Self-hosted Appcircle users will only see the self-hosted pools in this list.
+
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools">
+  Self-hosted Pools
+</ContentRef>
 
 :::info
 If group or variable definitions have been made in **Publish Variables**, you will see the list of variable groups in **Settings**, and you can select one or more of them to use in your publish flow.
@@ -90,6 +118,36 @@ Variables, similar to the [environment variables](../environment-variables/index
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-variables.png' />
 
 To use these defined variables, it will be necessary to select them from the [Publish Settings](#publish-settings).
+
+### Rename Publish Profile
+
+Appcircle allows previously created Publish profiles to be renamed.
+
+To do this, click on the three dots at the top right of the relevant publish profile in the profiles list and select **Rename**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-rename.png' />
+
+:::caution
+Publish profile names must be unique for both **`iOS`** and **`Android`**.
+
+For example, if you have a Publish profile named **`My Great App`** for iOS Publish, Appcircle will not allow you to create a profile named **`My Great App`** again for Android Publish or iOS Publish.
+
+Also, you cannot rename a Publish profile to an existing name on the same platform.
+:::
+
+### Delete Publish Profile
+
+To delete the Publish profile, click on the three dots at the top right of the relevant Publish profile in the profiles list and select **Delete**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove.png' />
+
+:::caution
+Appcircle **does not delete** the application that has been submitted to the stores.
+
+By deleting the Publish profile, all the application versions and Publish action logs related to that publish profile will be removed on the Appcircle side.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove-confirm.png' />
 
 ## Publish Versions
 
@@ -125,6 +183,16 @@ When you click on an item in the list, you can see the detailed publishing logs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log.png' />
 
+### Mark Version as Release Candidate
+
+Appcircle allows you to mark your app version as RC and designate any version as a **Release Candidate** with ease by simply selecting the desired app version and clicking on the **Mark as RC** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-mark-rc-button.png' />
+
+The chosen version will be visibly distinguished, allowing users to easily identify it as a `Release Candidate`.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-release-candidate.png' />
+
 ### Version Download
 
 Appcircle allows you to download the published application artifact for all listed versions. For this, you can click on the **Download** button on the **Actions** menu opened by clicking the three dots on the version list.
@@ -144,33 +212,3 @@ You should confirm the **Delete** action by entering the version name into the d
 :::caution
 Appcircle does not delete the application that has been submitted to the stores. This deletion will only delete the version of the application in the Publish module.
 :::
-
-## Rename Publish Profile
-
-Appcircle allows previously created publish profiles to be renamed.
-
-To do this, click on the three dots at the top right of the relevant publish profile in the profiles list and the select **Rename**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-rename.png' />
-
-:::caution
-Publish profile names must be unique for both iOS and Android.
-
-For example, if you have a publish profile named "My Great App" for iOS Publish, Appcircle will not allow you to create a profile named "My Great App" again for Android Publish or iOS Publish.
-
-Also, you cannot rename a publish profile to an existing name on the same platform.
-:::
-
-## Delete Publish Profile
-
-To delete the publish profile, click on the three dots at the top right of the relevant publish profile in the profiles list and the select **Delete**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove.png' />
-
-:::caution
-Appcircle does not delete the application that has been submitted to the stores.
-
-By deleting the publish profile, all the application versions and publish action logs related to that publish profile will be removed on Appcircle side.
-:::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove-confirm.png' />
