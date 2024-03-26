@@ -58,6 +58,12 @@ Based on: Android 11.0 (R)
   Sdcard: 512 MB
 ```
 
+:::caution
+Self-hosted installation checks machine architecture and decides whether to install the default Android emulator on the machine.
+
+If the machine does not support nested virtualization, it will not install the Android emulator with a warning message indicating the case.
+:::
+
 ## Emulators on Linux
 
 For linux hosts, there are some preconditions to run android emulator. These are not preventing installation of default android emulator on self-hosted runner but you won't be able to start or use emulator on pipeline. So, you should check and satisfy them.

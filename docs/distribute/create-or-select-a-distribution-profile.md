@@ -51,7 +51,8 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 To add your SSO and LDAP details, go to [My Organization](../account/my-organization.md) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
 
-<ContentRef url="/account/sso-ldap-login">SSO & LDAP Login</ContentRef>
+<ContentRef url="/account/sso-login/single-sign-on-login">SSO Login</ContentRef>
+<ContentRef url="/account/ldap-login">LDAP Login</ContentRef>
 
 ### Device Registration (iOS Only)
 
