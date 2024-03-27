@@ -120,7 +120,7 @@ If you are unable to determine the exact cause, feel free to get in touch with A
 
 ### Troubleshooting Workflow Steps for Build Failures
 
-Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](../workflows/why-to-use-workflows.md) and get a build to help isolate the cause of the issue.
+Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](../workflows/index.md) and get a build to help isolate the cause of the issue.
 
 - **iOS Sign Errors: **If the selected provisioning profile does not match with the selected bundle ID or if the certificate is not valid, you may have an issue in the iOS signing step. In this case, you may try getting an unsigned build
 - **Xcode Build for Simulator step: **This step builds your target for either x86_64 or arm64 architecture. In some projects, there may be dependencies that are not compatible with given architecture. In this case, please remove this step from the workflow or remove the conflicting dependencies to get a successful build.
@@ -632,9 +632,9 @@ Older builds and/or testing distributions will use almost all of your storage. I
 
 #### [Refer here to delete testing distribution profiles and specific distribution artifacts](../distribute/create-or-select-a-distribution-profile.md#delete-a-distribution-profile)
 
-#### [Refer here to delete a Google Play Store Submit Profile](../store-submit/google-play.md#deleting-google-play-store-submit-profiles)
+#### [Refer here to delete a Google Play Store Publish Profile](../publish-module/send-to-googleplay.md#deleting-android-publish-profiles)
 
-#### [Refer here to delete an App Store Connect Profile](../store-submit/apple-app-store.md#deleting-app-store-connect-profiles)
+#### [Refer here to delete an App Store Publish Profile](../publish-module/send-to-appstore.md#deleting-ios-publish-profiles)
 
 In order for storage to be freed up, you should also remove the other references pointing to the artifact. In example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds respectively.
 
