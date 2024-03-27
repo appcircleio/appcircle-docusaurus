@@ -45,19 +45,7 @@ Click on the "Save button to apply the settings.
 If this setting is `off`, the "Sign up with e-mail" button will not appear on the Appcircle login page.
 :::
 
-### Forgot Password
-
-If this setting is `on`, your users can renew their passwords themselves. If you want your users' password management operations to be done via LDAP or other authentication methods, you should keep this setting `off`.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-7.png' />
-
-Click on the "Save" button to apply the settings.
-
-:::info
-If this setting is `off`, the "Forgot Password?" button will not appear on the Appcircle login page.
-:::
-
-### Enable / Disable User Registration With Disposable Emails
+#### Configure Emails That Can Be Used for Registration
 
 With the Appcircle server version `v3.13.0`, Appcircle disables users from registering with disposable (temporary) emails and common emails like Gmail, Outlook, etc. by default.
 
@@ -142,3 +130,15 @@ You should see the message: _"All services are running successfully."_
 Now, the users can register with disposable or common emails.
 
 If you want to re-disable that behavior, as in the default configuration, you can change the **allowDisposableEmails** value to `false` by following the same steps above.
+
+### Forgot Password
+
+If this setting is `on`, your users can renew their passwords themselves. If you want your users' password management operations to be done via LDAP or other authentication methods, you should keep this setting `off`.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-7.png' />
+
+Click on the "Save" button to apply the settings.
+
+:::info
+If this setting is `off`, the "Forgot Password?" button will not appear on the Appcircle login page.
+:::
