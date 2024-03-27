@@ -59,49 +59,55 @@ If this setting is `off`, the "Forgot Password?" button will not appear on the A
 
 ### Enable / Disable User Registration With Disposable Emails
 
-With the Appcircle server version `v3.13.0`, Appcircle disables users to register with a disposable (temporary) emails and common emails like gmail, outlook, etc by default.
+With the Appcircle server version `v3.13.0`, Appcircle disables users from registering with disposable (temporary) emails and common emails like Gmail, Outlook, etc. by default.
 
-If you want to change this behavior, you can configure from the `global.yaml` of your project by following the steps below.
+If you want to change this behavior, you can configure it in the `global.yaml` file of your project by following the steps below.
 
 :::caution
 Keep in mind that this action will cause a downtime in the Appcircle dashboard.
 :::
 
-SSH into the Appcircle server and go to the `appcircle-server` directory.
+- Log in to Appcircle server with SSH or remote connection.
+
+- Go to the `appcircle-server` directory.
 
 ```bash
 cd appcircle-server
 ```
 
-Check your project name by listing the `./projects` directory.
+:::info
+
+The `spacetech` in the example codes below are example project name.
+
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
 
 ```bash
 ls -l ./projects
 ```
 
-Change the `spacetech` with your own project name in the example commands below.
+:::
 
-Stop the Appcircle server.
+- Shutdown Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
 ```
 
-Edit the `global.yaml` of the project.
+- Edit the `global.yaml` file of your project.
 
 ```bash
 vi ./projects/spacetech/global.yaml
 ```
 
-Search for the `keycloak` key. When you find, you can add the new key `allowDisposableEmails` under it.
+- Find the `keycloak` key and append the `allowDisposableEmails` key into that section.
 
-Keep in mind that `keycloak` has another keys like `initialUsername`.
+The **allowDisposableEmails** key can be `true` or `false`. `false` is the default value, so it disables users from registering with disposable or common emails.
 
-`allowDisposableEmails` key can be `true` or `false`. `false` is the default value.
+If you want to enable disposable or common emails, change this value to `true`.
 
-If you want to enable disposable or common emails, change this value to true.
-
-You can see an example part of a configured `global.yaml` below.
+You can see a sample part of a configured `global.yaml` below.
 
 ```yaml
 keycloak:
@@ -110,19 +116,20 @@ keycloak:
   allowDisposableEmails: true
 ```
 
-Export the new settings for changes to take effect.
+- Apply configuration changes.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-Up the Appcircle server with the new settings.
+- Boot Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-- Check the health of the services.
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
@@ -130,6 +137,8 @@ Up the Appcircle server with the new settings.
 
 You should see the message: _"All services are running successfully."_
 
-Now the users can register with disposable common emails.
+:::
 
-If you want to re-disable that behavior, you can change the `allowDisposableEmails` value to false by following the same steps above.
+Now, the users can register with disposable or common emails.
+
+If you want to re-disable that behavior, as in the default configuration, you can change the **allowDisposableEmails** value to `false` by following the same steps above.
