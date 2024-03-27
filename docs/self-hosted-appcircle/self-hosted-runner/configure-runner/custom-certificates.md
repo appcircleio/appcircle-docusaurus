@@ -109,3 +109,45 @@ For example, if you saved the root CA in the `rootca.crt` file and want to impor
 ```
 
 After the script completes successfully, the certificate will be trusted in your system.
+
+### Adding Proxy Certificates
+
+If you want to trust the root certificates of the proxy server which you use to connect internet, you can follow the steps below.
+
+- The proxy env variables `HTTP_PROXY` and `HTTPS_PROXY` should be configured.
+
+- You can check if the `HTTP_PROXY` is set with the command below:
+
+```bash
+echo "$HTTP_PROXY"
+```
+
+:::caution
+There are two rules you must consider.
+
+- The `HTTP_PROXY` variable shouldn't contain username or password. Currently LibreSSL doesn't support the proxy username or password.
+
+- The `HTTP_PROXY` variable shouldn't end with "/".
+
+For example:
+Valid -> proxy.spacetech.com:8080 or 10.20.0.1:8080
+Invalid -> proxy.spacetech.com:8080/ or 10.20.0.1:8080/ or username:password@proxy.spacetech.com
+:::
+
+- Run the `install_cert.sh` script with no arguments.
+
+```bash
+./install_cert.sh
+```
+
+- When the URL is asked, you can input a URL address which you can access with proxy.
+
+- If the runner can access to the `github.com` with proxy only, you can input `github.com` and hit enter.
+
+- The script will initially attempt to connect to the provided URL without using a proxy. If the connection fails, it will then try the proxy variables.
+
+- The connection verification step at the end of the script may fail since it does not support proxies. You can safely ignore any "Verification Failed" messages if the certificate has been successfully installed on your macOS device.
+
+- After the script finishes, you can check the logs to see if it extracted the proxy certificate and installed it on your device successfully.
+
+- Now you can connect to the external services from proxy without getting "Self-signed" or "Untrusted" SSL errors.
