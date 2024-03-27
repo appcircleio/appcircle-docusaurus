@@ -9,7 +9,7 @@
   status = 301
 
 [[redirects]]
-  from = "/building-multiple-apps-in-one-profile"
+  from = "/integrations/building-multiple-apps-in-one-profile"
   to = "/best-practices/building-multiple-apps-in-one-profile"
   status = 301
 
