@@ -37,9 +37,9 @@ You can reach "Login Settings" by navigating to "Admin > Self-Hosted Settings" p
 
 If this setting is `on`, your users can register to Appcircle and perform operations with this user except LDAP or other authentication methods. If you want only your LDAP users to log in to the system, you need to keep this setting `off`.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2623-user-registration.png' />
 
-Click on the "Save button to apply the settings.
+Click on the "Save" button to apply the settings.
 
 :::info
 If this setting is `off`, the "Sign up with e-mail" button will not appear on the Appcircle login page.
@@ -135,10 +135,26 @@ If you want to re-disable that behavior, as in the default configuration, you ca
 
 If this setting is `on`, your users can renew their passwords themselves. If you want your users' password management operations to be done via LDAP or other authentication methods, you should keep this setting `off`.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2623-forgot-password.png' />
 
 Click on the "Save" button to apply the settings.
 
 :::info
 If this setting is `off`, the "Forgot Password?" button will not appear on the Appcircle login page.
 :::
+
+### Edit Username
+
+If this setting is set to `on`, then your users will be able to change their own email addresses.
+
+:::tip
+The login username for Appcircle is an email address.
+
+Users can edit email from [My Account > My Details](../../account/my-account/my-details.md) screen.
+:::
+
+In order to prevent users from changing their email addresses by themselves, you should keep this setting `off`.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2623-change-username.png' />
+
+Click on the "Save" button to apply the settings.
