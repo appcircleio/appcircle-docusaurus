@@ -1,16 +1,20 @@
 ---
-title: Self-Hosted Enterprise Store
-metaTitle: Self-Hosted Enterprise Store
-metaDescription: Self-Hosted Enterprise Store
+title: Enterprise App Store
+metaTitle: Customize the Enterprise App Store on Self-hosted Installations
+metaDescription: Customize the Enterprise App Store on Self-hosted Installations
 sidebar_position: 14
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Customize Your Enterprise Store
+# Customize the Enterprise App Store on Self-hosted Installations
 
-In this page, you can see some titles to configure and customize your Enterprise Store of the self-hosted Appcircle server.
+Some additional Enterprise App Store settings can be customized for self-hosted installations in order to make them more tailored to your users.
+
+You can change how your store looks using the **[Customize](../../enterprise-appstore/customize-ent-store.md)** screen in the Enterprise App Store module, just like you can with Appcircle Cloud.
+
+For self-hosted specific settings, you should follow the documentation below.
 
 ## Change Tab Title by Language
 
