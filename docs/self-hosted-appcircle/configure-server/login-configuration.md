@@ -145,7 +145,9 @@ If this setting is `off`, the "Forgot Password?" button will not appear on the A
 
 ### Edit Username
 
-If this setting is `on`, your users can change their own email addresses. In order not to allow users to change their e-mail address, you should keep this setting `off`.
+If this setting is set to `on`, then your users will be able to change their own email addresses.
+
+In order to prevent users from changing their email addresses by themselves, you should keep this setting `off`.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2623-change-username.png' />
 
