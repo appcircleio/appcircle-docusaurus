@@ -88,12 +88,11 @@ storeWeb:
     EN_STORE_TITLE: App Store
 ```
 
-- Export the new settings.
+- Apply configuration changes.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
 ```
-
 
 - Start Appcircle server.
 
