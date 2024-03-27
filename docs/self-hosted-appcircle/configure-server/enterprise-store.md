@@ -16,43 +16,45 @@ You can change how your store looks using the **[Customize](../../enterprise-app
 
 For self-hosted specific settings, you should follow the documentation below.
 
-## Change Tab Title by Language
+## Tab Title Localization
 
-You can change the Enterprise Store tab titles according to the language selected on **self-hosted Appcircle servers** only.
+You can change the Enterprise App Store tab title according to the language selected on the self-hosted Appcircle server.
 
 For example, you can set a title for **TR** and a different title for **EN** language selection on browsers.
 
+:::info
 Appcircle server version v3.12.1 or later is required for this feature.
-
-If you set titles from `global.yaml` by following the steps below, your title setting configured from the Enterprise Store's "Customize" page will be overridden.
-
-:::warning
-
-Be aware that this will cause an downtime on the Appcircle server.
-
 :::
 
-To customize this, you need to `SSH` into the Appcircle Server Linux machine and follow the steps below:
+:::caution
+Be aware that this will cause a downtime on the Appcircle server.
+:::
 
-- Go into the `appcircle-server` directory.
+If you set titles from `global.yaml` by following the steps below, your title settings configured from the Enterprise App Store's "Customize" page will be overridden.
+
+- Log in to Appcircle server with SSH or remote connection.
+
+- Go to the `appcircle-server` directory.
 
 ```bash
 cd appcircle-server
 ```
 
-- List the projects and find yours.
-
-```bash
-ls  -l ./projects
-```
-
-- Down the Appcircle server.
-
 :::info
 
-**"spacetech"** in the below command is an example project name. Please replace with your own project name.
+The `spacetech` in the example codes below are example project name.
+
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
+
+```bash
+ls -l ./projects
+```
 
 :::
+
+- Shutdown Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
@@ -61,15 +63,17 @@ ls  -l ./projects
 - Edit the `global.yaml` file of your project.
 
 ```bash
-vim ./projects/spacetech/global.yaml
+vi ./projects/spacetech/global.yaml
 ```
 
 - Add the `lang` parameter to the `storeWeb` entry.
 
-:::info
-The `storeWeb` key should already be in the `global.yaml` file.
+:::caution
+The `storeWeb` key should already have been in the `global.yaml` file.
 
-You just need to add `lang`, `TR_STORE_TITLE` and `EN_STORE_TITLE` keys.
+You just need to add the `lang` key and other sub-keys to that section.
+
+The `global.yaml` should have only one `storeWeb` key for proper working.
 :::
 
 ```yaml
@@ -80,8 +84,8 @@ storeWeb:
     enabled: true
     domain: store.spacetech.com
   lang:
-    TR_STORE_TITLE: Turkey Store
-    EN_STORE_TITLE: UK Store
+    TR_STORE_TITLE: Uygulama Mağazası
+    EN_STORE_TITLE: App Store
 ```
 
 - Export the new settings.
@@ -90,24 +94,29 @@ storeWeb:
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-- Up the Appcircle server.
+
+- Start Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-- Check if the Appcircle server is healthy.
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
-Now your Appcircle server and the Enterprise Store is ready.
+You should see the message: _"All services are running successfully."_
 
-To test the new configuration:
+:::
 
-- Please head to the Enterprise Store page of your organization with a browser, for example `store.appcircle.spacetech.com`.
+To see the new configuration updates on the store, follow the steps below:
 
-- Check the tab title. If the language is **TR**, you should see "Turkey Store" for example.
+- Go to the Enterprise App Store page of your organization with a browser.
+  - For example, `store.spacetech.com`
 
-- Change the language from the upper right corner and check the tab title again. It should be "UK Store" according to the sample configuration.
+- Check the tab title. For our sample configuration,
+  - If the language is **TR** selected, then you should see "Uygulama Mağazası" in the tab title.
+  - If the language is **EN** selected, then you should see "App Store" in the tab title.
