@@ -1,21 +1,21 @@
 ---
-title: Publishing Release Notes
-metaTitle: Publishing Release Notes
-metaDescription: Publishing Release Notes
-sidebar_position: 7
+title: Publishing and Documentation
+metaTitle: Publishing and Documentation
+metaDescription: Publishing and Documentation
+sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Publishing Release Notes
+# Publishing and Documentation
 
-You can use [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/) to create release notes during your workflow. You can enrich the contents of your release notes with environment variables or with Ruby snippets. If you want to add your own release notes as a file, you can also give the path to the file. This component creates **release-notes.txt** with given options and copies to *$AC_OUTPUT_DIR* path. This release notes will be used for the following places:
+You can use [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/) to create release notes during your workflow. You can enrich the contents of your release notes with environment variables or with Ruby snippets. If you want to add your own release notes as a file, you can also give the path to the file. This component creates **release-notes.txt** with given options and copies to _$AC_OUTPUT_DIR_ path. This release notes will be used for the following places:
 
 - Distribution Portal
 - Enterprise Store
 - Google Play
 
-Appcircle currently doesn't publish release notes to TestFlight. Since TestFlight doesn't allow uploding change log with the binary. You can only upload *what to test part* **AFTER** the binary is processed which may take hours.
+Appcircle currently doesn't publish release notes to TestFlight. Since TestFlight doesn't allow uploding change log with the binary. You can only upload _what to test part_ **AFTER** the binary is processed which may take hours.
 
 Release Notes component should be in your workflow to create rich release notes. It is suggested that it should be just before the Export Build Artifacts step so that you can have access to the all build artifacts such as git commit message, test results or build logs.
 
@@ -40,7 +40,6 @@ Branch: main
 Commit Hash: 1234567
 Commit Message: My commit messsage
 ```
-
 
 ## Adding git log of last 5 commits
 

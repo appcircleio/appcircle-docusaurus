@@ -1,14 +1,14 @@
 ---
-title: Creating and Using Environment Variables
-metaTitle: Creating and Using Environment Variables
-metaDescription: Creating and Using Environment Variables
+title: Overview
+metaTitle: Overview of Environment Variables
+metaDescription: Overview of Environment Variables
 sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Creating and Using Environment Variables
+# Overview of Environment Variables
 
 ### Creating environment variable groups
 
@@ -115,7 +115,7 @@ Then in workflows, you can specify the environment variable for use.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
-### Creating environment variables on the fly 
+### Creating environment variables on the fly
 
 If you want to create environment variables on the fly, you should write those environment variables to a special file called `AC_ENV_FILE_PATH`. For example, if we want to create a build number based on a timestamp and use it in the next steps we can use the following custom script.
 
@@ -123,7 +123,7 @@ If you want to create environment variables on the fly, you should write those e
  echo "BUILD_NUMBER=$(date +%s)" >> $AC_ENV_FILE_PATH
 ```
 
-Any step after this custom script can access the `$BUILD_NUMBER` environment variable. 
+Any step after this custom script can access the `$BUILD_NUMBER` environment variable.
 
 ### Using Environment Variables For SSH And PAT (Personal Access Token) Connections of the Git Provider
 

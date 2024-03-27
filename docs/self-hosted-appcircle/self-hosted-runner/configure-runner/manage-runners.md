@@ -1,7 +1,7 @@
 ---
-title: Manage Runners
-metaTitle: Manage Runners
-metaDescription: Manage Runners
+title: Managing Runners
+metaTitle: Managing Runners
+metaDescription: Managing Runners
 sidebar_position: 2
 ---
 

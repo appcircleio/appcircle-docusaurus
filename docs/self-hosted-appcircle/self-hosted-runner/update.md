@@ -1,7 +1,7 @@
 ---
-title: Upgrade Runner
-metaTitle: Upgrade Runner
-metaDescription: Upgrade Runner
+title: Upgrading Runner
+metaTitle: Upgrading Runner
+metaDescription: Upgrading Runner
 sidebar_position: 3
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: Create a Testing Distribution Profile and Sharing with Testers
+title: Testing Distribution Profile
 metaTitle: Create a Testing Distribution Profile and Sharing with Testers
 metaDescription: Create a Testing Distribution Profile and Sharing with Testers
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -60,15 +60,11 @@ You may enable this option to automatically register devices in the Apple Develo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ios-device-registration.png' />
 
-
 ### Using public link for distribution
 
 You may also enable public link for your distribution. If you enable public distribution, anyone who has the link can access all artifacts of the distribution profile.
 
-
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (155).png' />
-
-
 
 ### Manually upload your version
 
@@ -137,7 +133,7 @@ You can also add a message to testers including testing instructions and release
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/06-07a-SendToTesterGroups.png' />
 
-You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message 
+You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message
 
 ```ruby
 Branch: $AC_GIT_BRANCH

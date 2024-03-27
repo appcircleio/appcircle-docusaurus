@@ -1,14 +1,14 @@
 ---
-title: Common Issues and Troubleshooting
-metaTitle: Common Issues and Troubleshooting
-metaDescription: Common Issues and Troubleshooting
+title: General Troubleshooting
+metaTitle: General Troubleshooting
+metaDescription: General Troubleshooting
 sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Common Issues and Troubleshooting
+# General Troubleshooting
 
 ## Repository Connection Issues
 
@@ -39,7 +39,7 @@ For the SSH connections, a key pair in PEM format is required. The public key is
 
 Please refer to [this guide for the commands to generate a compatible key pair](../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) for SSH connections.
 
-Using multiple SSH keys is not recommended. Instead, you should create a single SSH key that has access to all the private modules. 
+Using multiple SSH keys is not recommended. Instead, you should create a single SSH key that has access to all the private modules.
 
 If you want to use multiple SSH keys, you need to complete the below steps:
 
@@ -171,13 +171,11 @@ If you receive a provisioning profile error similar to the following, it usually
 
 In such an error, please check if the correct bundle ID is selected for the build. This is especially the case if you are using different bundle IDs for different release types such as debug or release.
 
-
 `Signing for "MyPod" requires a development team. Select a development team in the Signing & Capabilities editor`
 
 Your Cocoapods dependencies may also show this error when you try to build your project with Xcode 14. To prevent this, you may try one of the following workarounds.
 
 1. Signing with your own certificates. This requires uploading both development and distribution certificates. Therefore you either need to upload appropriate provisioning profiles or turn on [Automatic Code Signing](../signing-identities/ios-certificates-and-provisioning-profiles.md#automatic-signing).
-
 
 ```ruby
 post_install do |installer|
@@ -249,7 +247,7 @@ $compiler_index_store_enable = AC_COMPILER_INDEX_STORE_ENABLE
 ```
 
 :::caution
-You should find the line with `compiler_index_store_enable` and replace it with the above statement. 
+You should find the line with `compiler_index_store_enable` and replace it with the above statement.
 :::
 
 After these variables were set. There is an `archive()` function in the Ruby code. First, find the function in the code.
@@ -350,11 +348,11 @@ You can use the [environment variables](../environment-variables/managing-variab
 For example, you can take the following steps to change the default Java version to 17.
 
 1. Create a variable group that has a variable with the properties below.
-    1. The key should be `JAVA_HOME`.
-    2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu`.
+   1. The key should be `JAVA_HOME`.
+   2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu`.
 2. Go to the configuration section of the build profile that you want to autofill.
 3. Go to the 'Env. Variables' tab in configuration.
-    1. You should see the variable group that you created in the list.
+   1. You should see the variable group that you created in the list.
 4. Select the variable group that has `JAVA_HOME` and 'Save' settings.
 5. Go back to the config tab and start autofilling there.
 
@@ -468,6 +466,7 @@ This error usually indicates that you didn't name your files according to Dart c
 <ContentRef url="https://dart.dev/guides/language/effective-dart/style#do-name-libraries-and-source-files-using-lowercase_with_underscores">Effective Dart: Style | name packages, directories, and source files</ContentRef>
 
 ### Firebase Version
+
 Your build may fail with following error
 
 ```
@@ -477,6 +476,7 @@ Your build may fail with following error
 Please edit your workflow and add **Cocoapods Install** step and change the Cocoapods version. You may also set the Cocoapods version if you commit your `Podfile.lock` to your repository.
 
 ### CocoaPods could not find compatible versions for pod "Amplify"
+
 When does this occur?
 
 On the first iOS build after upgrading the version of the Amplify packages in your pubspec.yaml.
@@ -507,7 +507,7 @@ You have either:
 
 `Signing for "MyPod" requires a development team. Select a development team in the Signing & Capabilities editor`
 
-If you are using Xcode 14 and your Flutter version is less than 3.3, your build may fail with above message. You should modify your Podfile according to below snippet. Flutter 3.3 fixes this bug.  [Related Flutter Issue](https://github.com/flutter/flutter/issues/111757)
+If you are using Xcode 14 and your Flutter version is less than 3.3, your build may fail with above message. You should modify your Podfile according to below snippet. Flutter 3.3 fixes this bug. [Related Flutter Issue](https://github.com/flutter/flutter/issues/111757)
 
 ```ruby
 post_install do |installer|
@@ -538,7 +538,7 @@ If you receive an error similar to the following, it’s likely that your applic
   library: 'digital envelope routines',
   reason: 'unsupported',
   code: 'ERR_OSSL_EVP_UNSUPPORTED'
-```  
+```
 
 You can either add the command-line option, `--openssl-legacy-provider` to your build scripts or change your node version to v16.x
 

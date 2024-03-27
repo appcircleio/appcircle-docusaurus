@@ -1,13 +1,13 @@
 ---
-title: Workflow Marketplace
-metaTitle: Workflow Marketplace
-metaDescription: Workflow Marketplace
-sidebar_position: 1
+title: Workflow Marketplace Overview
+metaTitle: Workflow Marketplace Overview
+metaDescription: Workflow Marketplace Overview
+sidebar_position: 6
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
 
-# Workflow Marketplace
+# Workflow Marketplace Overview
 
 You can find the full list of available workflow steps in our workflow marketplace at:;
 

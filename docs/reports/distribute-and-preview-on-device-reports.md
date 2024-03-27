@@ -1,13 +1,13 @@
 ---
-title: Distribute Reports
-metaTitle: Distribute Reports
-metaDescription: Distribute Reports
+title: Distribution Activity Reports
+metaTitle: Distribution Activity Reports
+metaDescription: Distribution Activity Reports
 sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Distribute Reports
+# Distribution Activity Reports
 
 ## App Versions Report
 

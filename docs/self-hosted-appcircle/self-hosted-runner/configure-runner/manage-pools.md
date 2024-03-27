@@ -1,7 +1,7 @@
 ---
-title: Manage Pools
-metaTitle: Manage Pools
-metaDescription: Manage Pools
+title: Managing Pools
+metaTitle: Managing Pools
+metaDescription: Managing Pools
 sidebar_position: 1
 ---
 

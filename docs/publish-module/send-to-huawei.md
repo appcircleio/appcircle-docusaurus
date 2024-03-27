@@ -1,14 +1,14 @@
 ---
-title: Send Apps to Huawei AppGallery
-metaTitle: Send Apps to Huawei AppGallery
-metaDescription: Send Apps to Huawei AppGallery
+title: Publish to Huawei AppGallery
+metaTitle: Publish to Huawei AppGallery
+metaDescription: Publish to Huawei AppGallery
 sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Send Apps to Huawei AppGallery
+# Publish to Huawei AppGallery
 
 Appcircle supports sending APK and AAB binaries to Huawei AppGallery through the Publish module.
 

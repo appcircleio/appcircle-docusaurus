@@ -1,14 +1,14 @@
 ---
-title: Send Apps to Google Play 
-metaTitle: Send Apps to Google Play
-metaDescription: Send Apps to Google Play
+title: Publish to Google Play
+metaTitle: Publish to Google Play
+metaDescription: Publish to Google Play
 sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Send Apps to Google Play
+# Publish to Google Play
 
 Appcircle supports sending APK and AAB binaries to Google Play through the Publish module.
 
@@ -21,7 +21,6 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
 <ContentRef url="/account/adding-google-play-service-account">
   Adding Google Play Service Accounts
 </ContentRef>
-
 
 ### Adding a Google Play Developer API Key
 
@@ -57,7 +56,6 @@ The `Details` button lets you start the workflow, while `App Information` gives 
 Lastly, `Delete` helps you remove the app version easily.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2821-android-publish-actions.png' />
-
 
 ### Sending Apps to Google Play
 

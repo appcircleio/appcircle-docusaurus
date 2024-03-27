@@ -2,3 +2,317 @@
   from = "/workflows/why-to-use-workflows"
   to = "/workflows"
   status = 301
+
+[[redirects]]
+  from = "/account/adding-google-play-service-account"
+  to = "/account/my-organization/api-integrations/adding-google-play-service-account"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/account/adding-huawei-api-key"
+  to = "/account/my-organization/api-integrations/adding-huawei-api-key"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/account/artifacts"
+  to = "/account/my-organization/artifacts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/account/ldap-login"
+  to = "/account/my-organization/ldap-login"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/account/slack"
+  to = "/account/my-organization/notifications-and-communication/slack-notifications"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/account/single-sign-on"
+  to = "/account/my-organization/sso-providers-configuration"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/build/adding-a-build-profile"
+  to = "/build/manage-the-connections/adding-a-build-profile"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/build/build-profile-configuration"
+  to = "/build/build-process-management/build-profile-configuration"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/build/building-android-applications"
+  to = "/build/platform-build-guides/building-android-applications"
+  status = 301
+  force = true
+
+# Redirects for build-related changes
+[[redirects]]
+  from = "/build/connections"
+  to = "/build/manage-the-connections"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/build/adding-a-build-profile"
+  to = "/build/manage-the-connections/adding-a-build-profile"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/build/build-profile-operations"
+  to = "/build/build-process-management/build-profile-operations"
+  status = 301
+  force = true
+
+# Redirects for continuous testing
+[[redirects]]
+  from = "/continuous-testing/android-unit-tests"
+  to = "/continuous-testing/android-testing/android-unit-tests"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/continuous-testing/ios-unit-and-ui-tests"
+  to = "/continuous-testing/ios-testing/ios-unit-and-ui-tests"
+  status = 301
+  force = true
+
+# Redirects for distribution and testing
+[[redirects]]
+  from = "/distribute/apple-devices"
+  to = "/distribute/platform-specific-guidance/ios/apple-devices"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/distribute/create-or-select-a-distribution-profile"
+  to = "/distribute/testing-management/create-or-select-a-distribution-profile"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/distribute/resign"
+  to = "/distribute/platform-specific-guidance/android/resigning-android-binaries"
+  status = 301
+  force = true
+
+  # Redirects for enterprise app store changes
+[[redirects]]
+  from = "/enterprise-app-store/add-ent-profile"
+  to = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/enterprise-app-store/configure-ent-profile"
+  to = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/enterprise-app-store/customize-ent-store"
+  to = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store"
+  status = 301
+  force = true
+
+# Redirects for environment variable changes
+[[redirects]]
+  from = "/environment-variables/index"
+  to = "/environment-variables"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/environment-variables/managing-variables"
+  to = "/environment-variables/platform-specific-usage/managing-variables"
+  status = 301
+  force = true
+
+# Redirects for integration documents
+[[redirects]]
+  from = "/integrations/uploading-files-to-amazon-s3"
+  to = "/integrations/deploy-compute-guides/uploading-files-to-amazon-s3"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/integrations/using-fastlane"
+  to = "/integrations/workflow-optimization/using-fastlane"
+  status = 301
+  force = true
+
+# Redirects for publishing module changes
+[[redirects]]
+  from = "/publish-module/send-to-googleplay"
+  to = "/publish-module/send-to-google-play"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei"
+  to = "/publish-module/send-to-huawei-im"
+  status = 301
+  force = true
+
+# Redirects for reports module changes
+[[redirects]]
+  from = "/reports/build-and-signing-identities-reports"
+  to = "/reports/build-identities-reports"
+  status = 301
+  force = true
+
+  # Redirects for self-hosted Appcircle configuration changes
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/git-providers"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/git-providers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/ldap-settings"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/network-access"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/network-access"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/self-hosted-appcircle/install-server/cloud-providers"
+  to = "/self-hosted-appcircle/install-server/server-cloud-providers"
+  status = 301
+  force = true
+
+# Redirects for signing identities and troubleshooting changes
+[[redirects]]
+  from = "/signing-identities/ios-certificates-and-provisioning-profiles"
+  to = "/signing-identities/certificates-and-provisioning-profiles"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/troubleshooting-faq/enterprise-app-store-faq"
+  to = "/troubleshooting-faq/app-store-faq"
+  status = 301
+  force = true
+
+# Redirects for workflow-specific changes
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-build-for-ui-testing"
+  to = "/workflows/android-specific-steps/build-and-test/android-build-for-ui-testing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/git-clone"
+  to = "/workflows/common-steps/build-and-test/git-clone"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "/workflows/android-specific-workflow-steps/wait-for-android-emulator"
+  to = "/workflows/android-specific-steps/build-and-test/wait-for-android-emulator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-sign"
+  to = "/workflows/android-specific-steps/distribution/android-sign"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/appcenter-android-distribution"
+  to = "/workflows/android-specific-steps/distribution/appcenter-android-distribution"
+  status = 301
+  force = true
+
+# Redirects for common workflow steps
+[[redirects]]
+  from = "/workflows/common-workflow-steps/git-clone"
+  to = "/workflows/common-steps/build-and-test/git-clone"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/custom-script"
+  to = "/workflows/common-steps/build-and-test/custom-script"
+  status = 301
+  force = true
+
+# Redirects for Flutter workflow steps
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-test"
+  to = "/workflows/flutter-specific-steps/build-and-test/flutter-test"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/firebase-upload-dsym"
+  to = "/workflows/ios-specific-steps/distribution/firebase-upload-dsym"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/slather"
+  to = "/workflows/ios-specific-steps/build-and-test/slather"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/swiftlint"
+  to = "/workflows/ios-specific-steps/build-and-test/swiftlint"
+  status = 301
+  force = true
+
+# Redirects for workflow distribution steps
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/carthage"
+  to = "/workflows/ios-specific-steps/build-and-test/carthage"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/cocoapods-install"
+  to = "/workflows/ios-specific-steps/build-and-test/cocoapods-install"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/xcode-select"
+  to = "/workflows/ios-specific-steps/build-and-test/xcode-select"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-devices"
+  to = "/workflows/ios-specific-steps/build-and-test/xcodebuild-for-devices"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-simulator"
+  to = "/workflows/ios-specific-steps/build-and-test/xcodebuild-for-simulator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-testing"
+  to = "/workflows/ios-specific-steps/build-and-test/xcodebuild-for-testing"
+  status = 301
+  force = true

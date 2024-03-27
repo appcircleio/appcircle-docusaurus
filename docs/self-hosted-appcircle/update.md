@@ -1,7 +1,7 @@
 ---
-title: Upgrade Server
-metaTitle: Upgrade Server
-metaDescription: Upgrade Server
+title: Upgrading Server
+metaTitle: Upgrading Server
+metaDescription: Upgrading Server
 sidebar_position: 3
 ---
 
