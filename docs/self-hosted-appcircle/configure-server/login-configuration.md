@@ -45,6 +45,92 @@ Click on the "Save button to apply the settings.
 If this setting is `off`, the "Sign up with e-mail" button will not appear on the Appcircle login page.
 :::
 
+#### Configure Emails That Can Be Used for Registration
+
+With the Appcircle server version `v3.13.0`, Appcircle disables users from registering with disposable (temporary) emails and common emails like Gmail, Outlook, etc. by default.
+
+If you want to change this behavior, you can configure it in the `global.yaml` file of your project by following the steps below.
+
+:::caution
+Keep in mind that this action will cause a downtime in the Appcircle dashboard.
+:::
+
+- Log in to Appcircle server with SSH or remote connection.
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+:::info
+
+The `spacetech` in the example codes below are example project name.
+
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
+
+```bash
+ls -l ./projects
+```
+
+:::
+
+- Shutdown Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Find the `keycloak` key and append the `allowDisposableEmails` key into that section.
+
+The **allowDisposableEmails** key can be `true` or `false`. `false` is the default value, so it disables users from registering with disposable or common emails.
+
+If you want to enable disposable or common emails, change this value to `true`.
+
+You can see a sample part of a configured `global.yaml` below.
+
+```yaml
+keycloak:
+  initialUsername: admin@spacetech.com
+  enabledRegistration: true
+  allowDisposableEmails: true
+```
+
+- Apply configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Boot Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+You should see the message: _"All services are running successfully."_
+
+:::
+
+Now, the users can register with disposable or common emails.
+
+If you want to re-disable that behavior, as in the default configuration, you can change the **allowDisposableEmails** value to `false` by following the same steps above.
+
 ### Forgot Password
 
 If this setting is `on`, your users can renew their passwords themselves. If you want your users' password management operations to be done via LDAP or other authentication methods, you should keep this setting `off`.
