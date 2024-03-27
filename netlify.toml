@@ -1,0 +1,39 @@
+[[redirects]]
+  from = "/workflows/why-to-use-workflows"
+  to = "/workflows"
+  status = 301
+
+[[redirects]]
+  from = "/store-submit/apple-app-store"
+  to = "/publish-module/send-to-appstore"
+  status = 301
+
+[[redirects]]
+  from = "/building-multiple-apps-in-one-profile"
+  to = "/best-practices/building-multiple-apps-in-one-profile"
+  status = 301
+
+[[redirects]]
+  from = "/distribute/create-or-select-a-distribution-profile.md"
+  to = "/distribute/create-or-select-a-distribution-profile"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/custom-script-samples"
+  to = "/integrations/working-with-custom-scripts/custom-script-samples"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/custom-script-faq"
+  to = "/integrations/working-with-custom-scripts/custom-script-faq"
+  status=301
+
+[[redirects]]
+  from = "/build-manually-or-with-triggers"
+  to = "/build/build-manually-or-with-triggers"
+  status = 301
+
+[[redirects]]
+  from ="/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+  to = "/build/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+  status = 301

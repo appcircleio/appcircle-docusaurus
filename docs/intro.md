@@ -30,7 +30,7 @@ Build.<br/>Test.<br/>Distribute.
             <p>Learn about setting up your repository, creating workflows and how to automatically trigger a build.</p>
       </div>
       <div class="intro-card">
-            <h3><a href="/store-submit/apple-app-store">Send to Testers & Stores</a></h3>
+            <h3><a href="/publish-module">Send to Testers & Stores</a></h3>
             <p>Add testers, set up your builds to be auto distributed to them and Apple App Store, Testflight, Google Play, Huawei App Gallery and Firebase.</p>
       </div>
       <div class="intro-card">
