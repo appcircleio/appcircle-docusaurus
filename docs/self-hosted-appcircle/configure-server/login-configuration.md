@@ -147,6 +147,12 @@ If this setting is `off`, the "Forgot Password?" button will not appear on the A
 
 If this setting is set to `on`, then your users will be able to change their own email addresses.
 
+:::tip
+The login username for Appcircle is an email address.
+
+Users can edit email from [My Account > My Details](../../account/my-account/my-details.md) screen.
+:::
+
 In order to prevent users from changing their email addresses by themselves, you should keep this setting `off`.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2623-change-username.png' />
