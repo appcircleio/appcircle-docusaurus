@@ -84,7 +84,7 @@ To access the workflow editor for a build profile, click the Workflows button in
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (181).png' />
 
-The workflow list will be displayed. To view the [Workflow Steps](why-to-use-workflows.md#worfklow-steps) of a workflow, click on it from the workflow list.
+The workflow list will be displayed. To view the [Workflow Steps](#workflow-steps) of a workflow, click on it from the workflow list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (197).png' />
 
@@ -100,7 +100,7 @@ You can use the "Clone" option to create a new workflow based on the currently a
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (184).png' />
 
-### Worfklow Steps
+### Workflow Steps
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-ios-showcase.png" />
 

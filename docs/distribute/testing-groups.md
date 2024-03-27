@@ -30,3 +30,17 @@ You can now see a list of your testers, select and delete testers if you need to
 Also by clicking on the edit button on the top right corner, you can rename, duplicate or delete your testing group if you need to.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/06-12-EditTestingGroup.png' />
+
+### Managing Unsubscribed Users
+
+When re-sharing the app with users who have previously unsubscribed, you can seamlessly re-engage them.
+
+This action automatically removes them from the unsubscribed list, allowing them to receive emails once again.
+
+A prominent orange warning message confirms the successful re-subscription process, ensuring a seamless experience.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2630-ManagingUnsubscribedUsers.png' />
+
+:::info
+If a user who has previously unsubscribed is included in a test group, they will not be re-subscribed when sharing with the test group.
+:::

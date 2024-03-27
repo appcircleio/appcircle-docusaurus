@@ -95,7 +95,7 @@ Prior to running the server, it is necessary to pull the images from the Appcirc
 
 If you're planning to use a proxy repository to access the origin repository, it should be defined in the `global.yaml` configuration file.
 
-You can check the required steps on how to define a custom image registry [here.](./docker.md#using-sonatype-nexus-as-proxy-registry)
+You can check the required steps on how to define a custom image registry [here.](../configure-server/external-image-registry.md)
 
 :::caution
 
