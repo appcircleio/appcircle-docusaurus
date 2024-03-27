@@ -1,71 +1,67 @@
 ---
-title: Testing Distribution Configuration
-metaTitle: Configure Testing Distribution
-metaDescription: Configure Testing Distribution
+title: Testing Distribution
+metaTitle: Customize the Testing Distribution on Self-hosted Installations
+metaDescription: Customize the Testing Distribution on Self-hosted Installations
 sidebar_position: 13
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-## Overview
+# Customize the Testing Distribution on Self-hosted Installations
 
-In this section, you will see how to configure Appcircle Testing Distribution web page.
+Some additional Testing Distribution settings can be customized for self-hosted installations in order to make them more tailored to your users.
 
-## Configuring the Testing Distribution Logo
+For self-hosted specific settings, you should follow the documentation below.
 
-By default, if the Appcircle Testing Distribution link in the emails is expired or not available, users will be redirected to the Testing Distribution homepage.
+## Testing Portal Logo
 
-On this homepage, you will see the Appcircle logo by default, as you can see in the example below.
+By default, if the shared app link in the emails is expired or not available, users will be redirected to the Testing Portal homepage. And on this homepage, users will see the Appcircle logo, as you can see in the example below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2857-default-logo.png' />
 
-You may change this logo with your company's logo using 'SVG' or 'PNG' files of the logo as you want.
+You can change this logo with your company's assets using SVG or PNG files of the logo as you want.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2857-customized-logo.png' />
+To configure the testing portal logo, you need to SSH into the Appcircle server and edit the `global.yaml` file of the project.
 
-To configure this logo, you need to SSH into the Appcircle server and edit the `global.yaml` file of the project.
-
-Also, you need to copy the logo image to the Appcircle server before configuring.
+Also, you need to copy the logo file to the Appcircle server before starting configuration.
 
 :::caution
-Please note that this process will cause downtime since it requires a restart of the Appcircle server.
+Be aware that this will cause a downtime on the Appcircle server.
 :::
 
-Locate the image file on the Appcircle server. You need to get the full path of the image.
+- Log in to Appcircle server with SSH or remote connection.
 
-If your logo image file name is `spacetech-logo.svg`, and it is in the current directory, you can run `realpath` command.
+- Locate the image file on the Appcircle server and find out the full path of the logo file.
+
+For example, assume that your logo file is `spacetech-logo.svg`, and it is in the current working directory. 
+
+You should run the `realpath` command to get absolute path of the file as below.
 
 ```bash
 realpath spacetech-logo.svg
 ```
 
-```output
+Sample output can like below:
+
+```bash
 /home/ubuntu/appcircle-server/spacetech-logo.svg
 ```
 
-Copy the path of the logo, we will use it in the `global.yaml`.
+We will use that path in the `global.yaml` file.
 
-Go to the `appcircle-server` directory.
+- Go to the `appcircle-server` directory.
 
 ```bash
 cd appcircle-server
 ```
 
-Shutdown the Appcircle server.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" down
-```
-
-Edit the `global.yaml` file of your project.
-
 :::info
 
-The `spacetech` in the example codes below is an example project name.
+The `spacetech` in the example codes below are example project name.
 
 Please find your own project name and replace `spacetech` with your project name.
 
-To see the projects, you can list the `./projects` directory.
+To see projects, you can check the `projects` directory.
 
 ```bash
 ls -l ./projects
@@ -73,20 +69,30 @@ ls -l ./projects
 
 :::
 
+- Shutdown Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Edit the `global.yaml` file of your project.
+
 ```bash
 vi ./projects/spacetech/global.yaml
 ```
 
-Check for the `testerWeb` key. If it doesn't exist, you can add it.
+Check for the `testerWeb` key. If it does not exist in the `global.yaml`, you should add it.
 
-You should create a `logoSvg` key under the `testerWeb` entry and enter the path of the logo `SVG` file from the host server. See the example `global.yaml` part:
+You should create a `logoSvg` key under the `testerWeb` and enter the path of the logo (SVG) file that we got before.
+
+See the example `global.yaml` section below that's compatible with our sample logo file.
 
 ```yaml
 testerWeb:
   logoSvg: /home/ubuntu/appcircle-server/spacetech-logo.svg
 ```
 
-If your logo is a `PNG` file, then you should define `logoPng` key like in the example below.
+If your logo is a PNG file, then you should set the file path to the `logoPng` key, like in the example below.
 
 ```yaml
 testerWeb:
@@ -94,31 +100,35 @@ testerWeb:
 ```
 
 :::info
-If you declare both of the `logoPng` and `logoSvg` variables in the `global.yaml`, then the `PNG` image will be used as the logo on the Appcircle Testing Distribution page.
+If you declare both of the `logoPng` and `logoSvg` in the `global.yaml`, then the **PNG** image will be used as the logo on the Testing Portal.
 :::
 
-After you have done configuring the `global.yaml`, you can `export` the new settings.
+- Apply configuration changes.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-Run the Appcircle server with the new configuration.
+- Start Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-Check the healthy of the services.
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
-Now you can check the logo of the Appcircle Testing Distribution.
+You should see the message: _"All services are running successfully."_
 
-To check, simply navigate to the Appcircle server's 'dist' URL in your browser. If your 'dist' URL has not changed, it is most likely very similar to the one below.
+:::
 
-```URL
-https://dist.appcircle.spacetech.com
-```
+To see the new configuration updates on the Testing Portal, follow the steps below:
+
+- Navigate to the Appcircle server's `dist` URL in your browser.
+  - For example, `https://dist.appcircle.spacetech.com`
+
+You can get more information about `dist` subdomain from the [DNS Settings](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#4-dns-settings) document.
