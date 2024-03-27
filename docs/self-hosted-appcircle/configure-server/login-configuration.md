@@ -110,7 +110,7 @@ keycloak:
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-- Boot Appcircle server.
+- Start Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
