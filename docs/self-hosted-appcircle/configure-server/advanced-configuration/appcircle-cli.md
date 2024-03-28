@@ -21,7 +21,7 @@ To configure Appcircle CLI to use your self-hosted Appcircle, you need a **Perso
 
 For the Appcircle CLI to authenticate to your self-hosted Appcircle, you need to create a **Personal API Token** and configure the Appcircle CLI to use it.
 
-You can follow the [Generating and Managing Personal API Tokens](/appcircle-api/api-authentication.md#generatingmanaging-the-personal-api-tokens) page to create one.
+You can follow the [Generating and Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens) page to create one.
 
 ### 2. Find out the Appcircle server URLs
 

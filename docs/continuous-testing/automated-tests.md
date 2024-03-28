@@ -12,10 +12,10 @@ import NarrowImage from '@site/src/components/NarrowImage';
 
 Appcircle currently supports the following mobile automation testing tools:
 
-- [Appium](/workflows/common-workflow-steps/index.md#appium-server)
+- [Appium](/workflows/common-workflow-steps/#appium-server)
 - [BrowserStack](/workflows/android-specific-workflow-steps/#browserstack-app-automate---espresso)
-- [Maestro](/workflows/common-workflow-steps/index.md#maestro-cloud-upload)
-- [Testinium](/workflows/common-workflow-steps/index.md#testinium)
+- [Maestro](/workflows/common-workflow-steps/#maestro-cloud-upload)
+- [Testinium](/workflows/common-workflow-steps/#testinium)
 
 Each service allows you to run your tests on real devices, and test scenarios can be started with the artifacts created on Appcircle. Rich reports can be managed by visiting the web site of each service.
 
@@ -47,4 +47,4 @@ Appcircle's BrowserStack App Automate - Espresso step already parses JUnit Test 
 
 :::
 
-The [Test Report Step](../continuous-testing/android-testing/running-android-unit-tests.md) only requires a path for the test and code coverage results. For the above example, it is `$AC_OUTPUT_DIR/myreport.xml`. If you want to see your tests results on Appcircle, you need to create compatible test and code covarage results on Appcircle.
+The [Test Report Step](/continuous-testing/android-testing/running-android-unit-tests) only requires a path for the test and code coverage results. For the above example, it is `$AC_OUTPUT_DIR/myreport.xml`. If you want to see your tests results on Appcircle, you need to create compatible test and code covarage results on Appcircle.

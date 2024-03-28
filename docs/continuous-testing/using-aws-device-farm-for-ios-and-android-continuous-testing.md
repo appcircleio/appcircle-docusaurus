@@ -20,7 +20,7 @@ To start, you need to add the
 - "Android Build for UI Testing" step for Android
 - "Xcodebuild Build for Testing" step for iOS
 
-followed by the "AWS Device Farm Deploy and Run" step to the workflow from the [workflow marketplace](/workflows/index.md#workflow-marketplace).
+followed by the "AWS Device Farm Deploy and Run" step to the workflow from the [workflow marketplace](/workflows/#workflow-marketplace).
 
 If you just want to run tests, you can also remove other build steps such as "Android Build" or "Xcodebuild for Devices".
 
@@ -46,8 +46,8 @@ It is highly recommended to add the keys as [secret environment variables](/envi
 
 **Device Farm Project**
 
-- AWS Project ARN: The ARN of the project for deploy and run. ([see below](using-aws-device-farm-for-ios-and-android-continuous-testing.md#how-to-get-the-arn-values))
-- AWS Device Pool Arn: The ARN of the device pool for the run. ([see below](using-aws-device-farm-for-ios-and-android-continuous-testing.md#how-to-get-the-arn-values))
+- AWS Project ARN: The ARN of the project for deploy and run. ([see below](using-aws-device-farm-for-ios-and-android-continuous-testing#how-to-get-the-arn-values))
+- AWS Device Pool Arn: The ARN of the device pool for the run. ([see below](using-aws-device-farm-for-ios-and-android-continuous-testing#how-to-get-the-arn-values))
 
 **Device Farm Run**
 

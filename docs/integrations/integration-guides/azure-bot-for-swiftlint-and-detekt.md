@@ -16,7 +16,7 @@ With the Azure DevOps Bot integration, you can analyze your SwiftLint and Detekt
 
 #### Step 1
 
-First, to generate the report output, the [SwiftLint](/workflows/ios-specific-workflow-steps/index.md#swiftlint) component needs to be added to the workflow. We add the SwiftLint component after the CocoaPods install step.
+First, to generate the report output, the [SwiftLint](/workflows/ios-specific-workflow-steps/#swiftlint) component needs to be added to the workflow. We add the SwiftLint component after the CocoaPods install step.
 
 To use the Azure Bot, we add the 'Azure DevOps Bot for SwiftLint Report' step right after running SwiftLint.
 

@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Xcodebuild for Devices (Archive & Export)
 
-This step builds your application for iOS devices in ARM architecture, which is required for the [**Sharing With Testers**](/distribute/create-or-select-a-distribution-profile.md) feature or any other means of iOS distribution.
+This step builds your application for iOS devices in ARM architecture, which is required for the [**Sharing With Testers**](/distribute/create-or-select-a-distribution-profile) feature or any other means of iOS distribution.
 
 :::info
 This step is the archive and export step. When the step is completed, the `.ipa` file of the application is generated.

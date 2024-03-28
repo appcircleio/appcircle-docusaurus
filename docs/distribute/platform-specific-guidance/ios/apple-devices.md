@@ -26,7 +26,7 @@ Here, you can manually add a device by entering the UDID and device name, clicki
 
 ### Automatically Registering Devices
 
-Alternatively, you can add devices automatically by installing a mobile configuration profile. If you enable [Device Registration](/distribute/create-or-select-a-distribution-profile.md#device-registration-ios-only) for your distribution profile, each Ad Hoc distribution email will have a Register Device link at the bottom. You may click that link to register your devices.
+Alternatively, you can add devices automatically by installing a mobile configuration profile. If you enable [Device Registration](/distribute/create-or-select-a-distribution-profile#device-registration-ios-only) for your distribution profile, each Ad Hoc distribution email will have a Register Device link at the bottom. You may click that link to register your devices.
 
 <NarrowImage src="https://cdn.appcircle.io/docs/assets/adhoc-email1.png" width="300" />
 

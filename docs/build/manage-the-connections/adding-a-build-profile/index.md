@@ -53,11 +53,11 @@ When you have exceeded the build limit of your plan, Appcircle will not be able 
 
 Refer to the relative documents under this page about the connections and differences between connection types:
 
-- [Connect to GitHub](./connecting-to-github.md)
-- [Connect to Bitbucket](./connecting-to-bitbucket.md)
-- [Connect to GitLab](./connecting-to-gitlab.md)
-- [Connect to Private Repository via SSH Key](./connecting-to-private-repository-via-ssh.md)
-- [Connect to Public Repository](./connecting-to-public-repository.md)
+- [Connect to GitHub](./connecting-to-github)
+- [Connect to Bitbucket](./connecting-to-bitbucket)
+- [Connect to GitLab](./connecting-to-gitlab)
+- [Connect to Private Repository via SSH Key](./connecting-to-private-repository-via-ssh)
+- [Connect to Public Repository](./connecting-to-public-repository)
 
 ## View the newly created build profile
 

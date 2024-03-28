@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 # Building Flutter Web Applications
 
-If your app supports Flutter Web, you can also build the Flutter web app along with the [Flutter iOS or Android build](building-flutter-applications.md).
+If your app supports Flutter Web, you can also build the Flutter web app along with the [Flutter iOS or Android build](/build/platform-build-guides/building-flutter-applications).
 
 With Appcircle, you can manage your entire Flutter build workflows both for mobile and web without the need for any third party solutions.
 
@@ -20,7 +20,7 @@ Flutter Web Build is available as a workflow step in the workflow marketplace. J
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-web-build-workflow.png' />
 
-If you want to build your Flutter project only for the web, you can [add a Flutter Android project in the standard way](building-flutter-applications.md), save your project configuration once, and then remove all the Android-related steps from the build workflow.
+If you want to build your Flutter project only for the web, you can [add a Flutter Android project in the standard way](/build/platform-build-guides/building-flutter-applications), save your project configuration once, and then remove all the Android-related steps from the build workflow.
 
 :::caution
 
@@ -42,7 +42,7 @@ Once your build is configured, it can be built [manually or automatically in the
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-flutter-web-workflow-success.png' />
 
-After a build, you can download the web build output manually [from the build artifact list](building-flutter-applications.md#starting-a-flutter-build-and-after-a-build) as the `web.zip` file.
+After a build, you can download the web build output manually [from the build artifact list](/build/platform-build-guides/building-flutter-applications#starting-a-flutter-build-and-after-a-build) as the `web.zip` file.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-flutter-web-artifact-download.png' />
 

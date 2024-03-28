@@ -48,7 +48,7 @@ Then [select the related environment variable group](/environment-variables/mana
 
 ### Build Workflow Configuration for Firebase Test Lab
 
-To utilize Firebase Test Lab in your builds, open the [workflow editor](/workflows/index.md) and add the "Firebase Test Lab for Android" step after the build or sign steps. If you want to run instrumentation tests, also add the "Android Build for UI Testing" step before the Firebase Test Lab step.
+To utilize Firebase Test Lab in your builds, open the [workflow editor](/workflows) and add the "Firebase Test Lab for Android" step after the build or sign steps. If you want to run instrumentation tests, also add the "Android Build for UI Testing" step before the Firebase Test Lab step.
 
 :::caution
 

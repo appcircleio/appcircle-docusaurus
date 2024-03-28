@@ -41,7 +41,7 @@ If you need to use a proxy on the Appcircle server, you should configure proxy s
 
 If you are using the Nexus registry and are facing a "manifest not found" error, this is an expected case to occur. Nexus proxy has a known bug while pulling multiple container images. You should pull images one by one as a workaround.
 
-To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry.md#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
+To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
 ### Where should we download the zip package while we are updating?
 
@@ -49,9 +49,9 @@ Download the zip package of the appcircle server and extract it to the same fold
 
 ### How do I change Docker or Podman's data location?
 
-For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](/self-hosted-appcircle/install-server/docker.md#change-the-docker-data-location) page.
+For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](/self-hosted-appcircle/install-server/docker#change-the-docker-data-location) page.
 
-For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./install-server/podman.md#change-the-podman-data-location) page.
+For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./install-server/podman#change-the-podman-data-location) page.
 
 ### I'm offline on the Appcircle dashboard on my browser.
 
@@ -260,7 +260,7 @@ When the `global.yaml` changes are ready to apply, follow the below steps:
 :::info
 The `reset` step is optional. If you are installing for the first time, which means that you have never run the `up` command and used the system, then you don't need to cleanup anything.
 
-For details, you can see the [reset configuration](./install-server/docker.md/#reset-configuration) section in the documentation.
+For details, you can see the [reset configuration](./install-server/docker/#reset-configuration) section in the documentation.
 :::
 
 - Apply the configuration changes.
@@ -297,15 +297,15 @@ For more details about configuring the outbound requests, you can refer to the [
 
 The certificate of your organization should be trusted on the Appcircle runner virtual machines.
 
-You should refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates.md) page for more details.
+You should refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates) page for more details.
 
 ### We are facing an "SSL certificate is not valid yet" error on builds.
 
 The runner VMs cannot connect to the servers to update their date and time due to network restrictions.
 
-You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](./self-hosted-runner/runner-vm-setup.md#update-base-images) section.
+You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](./self-hosted-runner/runner-vm-setup#update-base-images) section.
 
-For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup.md#2-configure-base-runners-ntp-settings) section and follow the steps.
+For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) section and follow the steps.
 
 ### We can't register Appcircle runner to the server.
 
@@ -315,7 +315,7 @@ First, you should check if your Appcircle runner can access the Appcircle server
 curl -v https://api.appcircle.spacetech.com
 ```
 
-You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates.md) page to trust the root CA certificate of your organization.
+You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates) page to trust the root CA certificate of your organization.
 
 If you already trusted the root CA cert, you should check the Appcircle server's certificate. If it is too long, like 5 years, it should be trusted using the graphical user interface. You should open the Keychain Access application from the GUI and add the Appcircle server's certificate. After that, you should click on the certificate and select "Always trust".
 

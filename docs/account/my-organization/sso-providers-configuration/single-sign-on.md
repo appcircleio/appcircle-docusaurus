@@ -26,12 +26,12 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 Appcircle supports both OpenID and SAML Identity providers. You can follow the below documents to connect your identity providers. If your Identity Provider is not on the list, you can follow any OpenID or SAML integration guide from the below list to find out the parameters.
 
-- [Auth0 OpenID](./auth-openid.md)
-- [Auth0 SAML](./auth-saml.md)
-- [Azure AD SAML](./azure-saml.md)
-- [Okta OpenID](./okta-openid.md)
-- [Okta SAML](./okta-saml.md)
-- [OneLogin SAML](./onelogin-saml.md)
+- [Auth0 OpenID](./auth-openid)
+- [Auth0 SAML](./auth-saml)
+- [Azure AD SAML](./azure-saml)
+- [Okta OpenID](./okta-openid)
+- [Okta SAML](./okta-saml)
+- [OneLogin SAML](./onelogin-saml)
 
 :::info
 

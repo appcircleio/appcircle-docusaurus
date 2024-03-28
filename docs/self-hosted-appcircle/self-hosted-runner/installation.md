@@ -81,7 +81,7 @@ From now on, you will follow same installation steps seen below as other environ
 
 Appcircle provides ready-to-use macOS VM image especially for enterprise installations. It can be run on macOS Ventura or Sonoma `arm64` host.
 
-See details in [here](./runner-vm-setup.md).
+See details in [here](./runner-vm-setup).
 
 :::
 
@@ -175,7 +175,7 @@ For example, below command is registering runner named "monterey-12_4" with pool
 ./ac-runner register -t aat_XVY27uHw7W1GA_cw5Vut0p_WOzHeYeJ2ZkTbqAVE3GX -n monterey-12_4 -p Arm64_pool
 ```
 
-For more details on runner and pool, see [Manage Self-hosted Pools](./configure-runner/manage-pools.md) and [Manage Self-hosted Runners](./configure-runner/manage-runners.md) in docs.
+For more details on runner and pool, see [Manage Self-hosted Pools](./configure-runner/manage-pools) and [Manage Self-hosted Runners](./configure-runner/manage-runners) in docs.
 
 :::info
 
@@ -283,7 +283,7 @@ Install command used for runner configuration, both adds tools to your system an
 
 Restarting runner service will first stop service and start it again.
 
-See [here](./configure-runner/runner-service.md) for more details about runner service operations.
+See [here](./configure-runner/runner-service) for more details about runner service operations.
 
 :::
 

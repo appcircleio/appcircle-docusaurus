@@ -74,7 +74,7 @@ echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $AC_ENV_FILE_PATH
 
 The only available option for connecting to the internal/on-premise repositories is to use SSH and whitelist Appcircle resources if the repositories are not accessible from the public internet.
 
-Please refer to [this guide for connecting to the repositories in internal networks](../build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls.md).
+Please refer to [this guide for connecting to the repositories in internal networks](../build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls).
 
 ### How to connect to AWS CodeCommit repositories through SSH?
 
@@ -120,7 +120,7 @@ If you are unable to determine the exact cause, feel free to get in touch with A
 
 ### Troubleshooting Workflow Steps for Build Failures
 
-Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](/workflows/index.md) and get a build to help isolate the cause of the issue.
+Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](/workflows) and get a build to help isolate the cause of the issue.
 
 - **iOS Sign Errors: **If the selected provisioning profile does not match with the selected bundle ID or if the certificate is not valid, you may have an issue in the iOS signing step. In this case, you may try getting an unsigned build
 - **Xcode Build for Simulator step: **This step builds your target for either x86_64 or arm64 architecture. In some projects, there may be dependencies that are not compatible with given architecture. In this case, please remove this step from the workflow or remove the conflicting dependencies to get a successful build.
@@ -323,7 +323,7 @@ Every Android project has a `gradlew` file in the main repository directory. If 
 
 ### How can I change the JDK version for autofill?
 
-Appcircle currently has OpenJDK 11 (default), OpenJDK 8, OpenJDK 17 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can follow the steps [here](../integrations/working-with-custom-scripts/custom-script-samples.md#changing-java-version) and add a custom script to your workflow.
+Appcircle currently has OpenJDK 11 (default), OpenJDK 8, OpenJDK 17 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can follow the steps [here](../integrations/working-with-custom-scripts/custom-script-samples#changing-java-version) and add a custom script to your workflow.
 
 But unfortunately, you cannot use custom scripts for autofill operations, which make it easy to fill in configuration details while adding a new build profile.
 
@@ -339,7 +339,7 @@ For example, the below entry can be used to change the default Java version to 1
 org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu
 ```
 
-You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure.md#java-version) Java section.
+You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure#java-version) Java section.
 
 #### 2. Change `JAVA_HOME` using environment variables
 
@@ -356,7 +356,7 @@ For example, you can take the following steps to change the default Java version
 4. Select the variable group that has `JAVA_HOME` and 'Save' settings.
 5. Go back to the config tab and start autofilling there.
 
-You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure.md#java-version) Java section.
+You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure#java-version) Java section.
 
 ### Gradle build after Bintray shutdown
 
@@ -553,7 +553,7 @@ If you face problems during NPM/Yarn install steps on Appcircle but not on your 
 
 First, you should check the [NPM status page](https://yarnpkg.com/getting-started/qa#queries-to-registryyarnpkgcom-return-a-404500-is-it-down) for possible availability issues.
 
-Our runners have yarn classic (1.x) by default. See the [iOS build agent stacks](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) and the [Android build agent stacks](../infrastructure/android-build-infrastructure.md#android-build-agent-stacks) pages for the exact versions.
+Our runners have yarn classic (1.x) by default. See the [iOS build agent stacks](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) and the [Android build agent stacks](../infrastructure/android-build-infrastructure#android-build-agent-stacks) pages for the exact versions.
 
 On the other hand, yarn modern (2.x) has stability improvements that can fix these kinds of network errors. You can see [here](https://yarnpkg.com/getting-started/qa#why-should-you-upgrade-to-yarn-modern) for details.
 
@@ -628,13 +628,13 @@ Older builds and/or testing distributions will use almost all of your storage. I
 
 #### [Refer here to delete a build profile](/build/manage-the-connections/adding-a-build-profile#delete-a-build-profile)
 
-#### [Refer here to delete specific builds from your build profile](/build/post-build-operations/after-a-build.md#delete-specific-builds)
+#### [Refer here to delete specific builds from your build profile](/build/post-build-operations/after-a-build#delete-specific-builds)
 
-#### [Refer here to delete testing distribution profiles and specific distribution artifacts](/distribute/create-or-select-a-distribution-profile.md#delete-a-distribution-profile)
+#### [Refer here to delete testing distribution profiles and specific distribution artifacts](/distribute/create-or-select-a-distribution-profile#delete-a-distribution-profile)
 
-#### [Refer here to delete a Google Play Store Publish Profile](../publish-module/send-to-googleplay.md#deleting-android-publish-profiles)
+#### [Refer here to delete a Google Play Store Publish Profile](../publish-module/send-to-googleplay#deleting-android-publish-profiles)
 
-#### [Refer here to delete an App Store Publish Profile](../publish-module/send-to-appstore.md#deleting-ios-publish-profiles)
+#### [Refer here to delete an App Store Publish Profile](../publish-module/send-to-appstore#deleting-ios-publish-profiles)
 
 In order for storage to be freed up, you should also remove the other references pointing to the artifact. In example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds respectively.
 

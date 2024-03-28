@@ -83,7 +83,7 @@ In the step settings, select an **Google Play Store API Key** from the drop-down
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-flow-details.png' />
 
-When you complete configuring the publish flow, add an application version by [configuring the build module](index.md#publish-profile) or [manually adding a version](index.md#add-version) by binary upload.
+When you complete configuring the publish flow, add an application version by [configuring the build module](/publish-module/#publish-profile) or [manually adding a version](/publish-module/#add-version) by binary upload.
 
 Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 

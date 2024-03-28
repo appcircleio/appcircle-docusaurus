@@ -21,13 +21,13 @@ If your repository is located under these providers, Appcircle has built-in supp
 
 For more information on your provider, see the links below:
 
-- [Github](./connecting-to-github.md)
-- [Bitbucket](./connecting-to-bitbucket.md)
-- [GitLab](./connecting-to-gitlab.md)
+- [Github](./connecting-to-github)
+- [Bitbucket](./connecting-to-bitbucket)
+- [GitLab](./connecting-to-gitlab)
 
 #### Using a Private Git Server?
 
-If you plan to use Appcircle to connect your private repository, please refer to [connecting to private repositories documentation](./connecting-to-private-repository-via-ssh.md) for more information.
+If you plan to use Appcircle to connect your private repository, please refer to [connecting to private repositories documentation](./connecting-to-private-repository-via-ssh) for more information.
 
 ### Public Repository Connection
 

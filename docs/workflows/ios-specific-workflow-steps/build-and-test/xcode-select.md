@@ -43,7 +43,7 @@ Appcircle provides new versions of Xcode (including beta versions) within 24 hou
 A version other than the Xcode versions on the configuration page should not be entered manually as the Xcode select workflow argument.
 Because the Xcode versions on the configuration page are the versions installed on runners.
 Entering an unavailable Xcode version may cause the build to fail.
-You can review the documentation for detailed information about the Xcode version selection [here](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools.md/#pool-based-xcode-version-selection).
+You can review the documentation for detailed information about the Xcode version selection [here](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection).
 :::
 
 ### Input Variables

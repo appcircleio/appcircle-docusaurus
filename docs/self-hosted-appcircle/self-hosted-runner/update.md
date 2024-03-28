@@ -69,7 +69,7 @@ cd appcircle-runner
 
 Self-hosted runner updates may include tool upgrades or introduce new required tools for build pipeline. So we need to rerun configuration step same as before. It will check installed tools quickly, and will update only required tools.
 
-To remember what configuration step was, please refer to [this](./installation.md#3-configure) page.
+To remember what configuration step was, please refer to [this](./installation#3-configure) page.
 
 ## 3. Reinstall Service
 
@@ -91,7 +91,7 @@ In order to reinstall systemd or launchd service, first uninstall and then insta
 
 :::info
 
-When you complete update successfully, you will see updated **version** in "Self-hosted Runners" list in [here](./configure-runner/manage-runners.md#monitoring-self-hosted-runners).
+When you complete update successfully, you will see updated **version** in "Self-hosted Runners" list in [here](./configure-runner/manage-runners#monitoring-self-hosted-runners).
 
 ```bash
 ./ac-runner --version

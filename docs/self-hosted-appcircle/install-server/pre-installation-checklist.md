@@ -90,7 +90,7 @@ Keep in mind that **SSDs** are a better and **recommended** choice for faster di
 free -h
 ```
 
-If you don't have any swap space or it's insufficient, you can find the configuration details [here](docker.md#swap).
+If you don't have any swap space or it's insufficient, you can find the configuration details [here](docker#swap).
 
 ### Check the Swappiness
 
@@ -100,7 +100,7 @@ If you don't have any swap space or it's insufficient, you can find the configur
 sudo cat /proc/sys/vm/swappiness
 ```
 
-If the output is not 10, you can find the configuration details [here](docker.md#swappiness).
+If the output is not 10, you can find the configuration details [here](docker#swappiness).
 
 ### Configure the DNS Settings
 
@@ -126,7 +126,7 @@ These subdomains are **api**, **auth**, **dist**, **hook**, **my**, **resource**
 
 - [ ] All of these domain names should resolve to the same server IP address, which is the Appcircle server.
 
-You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
+You can see details in the [DNS Settings](./docker#4-dns-settings) section.
 
 ### Obtain an SSL Certificate
 

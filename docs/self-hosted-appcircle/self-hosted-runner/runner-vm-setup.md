@@ -7,7 +7,7 @@ sidebar_class_name: hidden
 
 # Self-hosted Runner as MacOS VM Image
 
-Self-hosted runner installation is explained at Appcircle [docs](installation.md) in detail. You can install runner in your self-hosted environment by yourself, following instructions on there.
+Self-hosted runner installation is explained at Appcircle [docs](installation) in detail. You can install runner in your self-hosted environment by yourself, following instructions on there.
 
 We're also providing ready-to-use runner VM image that you can download from Appcircle CDN. Especially for enterprise installation, it might be more practical than installing from scratch.
 
@@ -215,7 +215,7 @@ In order to keep free disk space sufficient for build pipelines, we're packaging
 You can find more information about the build infrastructure in the documents below:
 
 - [iOS Build Infrastructure](/infrastructure/ios-build-infrastructure)
-- [Android Build Infrastructure](../../infrastructure/android-build-infrastructure.md)
+- [Android Build Infrastructure](/infrastructure/android-build-infrastructure)
 
 :::caution
 We're constantly bumping the VM macOS version according to Xcode requirements.
@@ -435,7 +435,7 @@ You can use the helper script named `install_cert.sh` that comes with your runn
 - Your organization's root CA certificate is now trusted on the OS, Java, Ruby, and Node.js.
 
 :::info
-For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates.md#adding-certificates) page.
+For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates#adding-certificates) page.
 :::
 
 ##### 4. Configure Runner Service
@@ -647,7 +647,7 @@ touch $HOME/runner1/.stop
 
 Creating `.stop` file prevents creating new instance by `run.sh` on shutdown.
 
-If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](../self-hosted-runner/configure-runner/runner-service.md#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
+If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](../self-hosted-runner/configure-runner/runner-service#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
 
 On the other hand if you want to stop runner immediately for whatever reason or it's in idle state, you can SSH into runner and run shutdown command.
 
@@ -820,7 +820,7 @@ screen -d -m $HOME/runner2/run.sh vm02
 
 In this case, you need to focus on self-hosted runner issues inside macOS VM (guest).
 
-In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](./index.md) details.
+In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](/self-hosted-appcircle/self-hosted-runner) details.
 
 - You can check your macOS guest for possible system issues. (disk space, network connectivity etc.)
 - If you have custom proxy settings on macOS guest, check these settings.

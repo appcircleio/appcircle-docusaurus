@@ -17,7 +17,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login2.png' />
 
-Please check [SSO](/account/my-organization/sso-providers-configuration/single-sign-on.md) document to learn how you can configure different SSO providers.
+Please check [SSO](/account/my-organization/sso-providers-configuration/single-sign-on) document to learn how you can configure different SSO providers.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login3.png' />
 
