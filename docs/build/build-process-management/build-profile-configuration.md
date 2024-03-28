@@ -116,7 +116,7 @@ You can set custom rules to manage the versioning of your app. You can increase 
 
 ### Workflows and Triggers
 
-For advanced configuration, you can utilize [workflows](../workflows/index.md) and for automatic builds, you can utilize [triggers](build-manually-or-with-triggers.md#automatic-build).
+For advanced configuration, you can utilize [workflows](/workflows/index.md) and for automatic builds, you can utilize [triggers](build-manually-or-with-triggers.md#automatic-build).
 
 These options are available at the profile level in the profile context menu.
 
@@ -141,7 +141,7 @@ You can click on the "Connection Settings" button under the build profile name a
 :::caution
 If you added your repository via **multiple instances** using PAT (Personal Access Token), the "Connection Settings" will look different.
 
-You can review the [**Connecting Multiple Instances**](../build/adding-a-build-profile/connecting-multiple-instance.md#connection-settings-for-multiple-instances) page for using "Connection Settings" on multiple instances.
+You can review the [**Connecting Multiple Instances**](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance.md#connection-settings-for-multiple-instances) page for using "Connection Settings" on multiple instances.
 :::
 
 import NeedHelp from '@site/docs/\_need-help.mdx';

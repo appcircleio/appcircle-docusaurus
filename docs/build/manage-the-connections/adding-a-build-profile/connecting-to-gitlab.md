@@ -1,7 +1,7 @@
 ---
-title: 'Connecting to GitLab'
-metaTitle: 'Connecting to GitLab'
-metaDescription: 'Connecting to GitLab'
+title: "Connecting to GitLab"
+metaTitle: "Connecting to GitLab"
+metaDescription: "Connecting to GitLab"
 sidebar_position: 2
 ---
 
@@ -84,7 +84,7 @@ For Appcircle to connect to the Self Hosted GitLab Instance, your connection mus
 
 Is your self-hosted GitLab instance under enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
 
-<ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls">
+<ContentRef url="/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls">
   Accessing Repositories in Internal Networks (Firewalls)
 </ContentRef>
 

@@ -405,10 +405,10 @@ If you want a secret used from `global.yaml`, then it should not be in `user-sec
 ```yaml
 ---
 environment: Production
-enableErrorHandling: 'true'
+enableErrorHandling: "true"
 external:
   scheme: http
-  mainDomain: '.example.com'
+  mainDomain: ".example.com"
 
 smtpServer:
   user:
@@ -443,20 +443,20 @@ As an example, we can change some variables like below according to our fictive 
 ```yaml
 ---
 environment: Production
-enableErrorHandling: 'true'
+enableErrorHandling: "true"
 external:
   scheme: http
-  mainDomain: '.appcircle.spacetech.com'
+  mainDomain: ".appcircle.spacetech.com"
 
 smtpServer:
   user: o***y*****@v******.net
   from: o***y*****@v******.net
   host: smtp.v******.net
   fromDisplayName: Space Tech
-  port: '587'
-  ssl: 'false'
-  auth: 'true'
-  starttls: 'true'
+  port: "587"
+  ssl: "false"
+  auth: "true"
+  starttls: "true"
 keycloak:
   initialUsername: admin@spacetech.com
   enabledRegistration: true
@@ -1080,7 +1080,7 @@ When you complete installation successfully by following above steps, you're rea
 
 But in order to run build pipelines, you need to install and connect self-hosted runners. We have dedicated section for installation and configuration of self-hosted runners.
 
-Follow and apply related guidelines in [here](../self-hosted-runner/installation.md).
+Follow and apply related guidelines in [here](/self-hosted-appcircle/self-hosted-runner/installation).
 
 Self-hosted runner section in docs, has all details about runners and their configuration.
 
@@ -1098,9 +1098,9 @@ Assuming our sample scenario explained above, its value should be
 
 for our example configuration.
 
-:reminder_ribbon: After [download](../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
 
-Please note that, you should do this before [register](../self-hosted-runner/installation.md#2-register).
+Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
 :::
 

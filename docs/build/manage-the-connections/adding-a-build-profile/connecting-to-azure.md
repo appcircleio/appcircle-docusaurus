@@ -1,7 +1,7 @@
 ---
-title: 'Connecting to Azure DevOps'
-metaTitle: 'Connecting to Azure DevOps'
-metaDescription: 'Connecting to Azure DevOps'
+title: "Connecting to Azure DevOps"
+metaTitle: "Connecting to Azure DevOps"
+metaDescription: "Connecting to Azure DevOps"
 sidebar_position: 4
 ---
 
@@ -62,12 +62,15 @@ Fill in the relevant information about your Azure DevOps Server. If you are not 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azure-con-5.png' />
 
 - **Connection Name**: Appcircle allows multiple instance connections. Here, you can give the connection a name so you can group the connections together.
+
   - For example: `InternalAzure`
 
 - **Azure DevOps Server URL**: Use the server URL without a path. If the server has a custom port, it should be appended to the URL using `:` in front of the port.
+
   - For example: `https://azure.spacetech.com`
 
 - **Owner Username**: Use the collection name on the Azure Devops Server. You can see collections on the left-hand side when you open your Azure Devops Server home page.
+
   - For example: `DefaultCollection`
 
 - **Personal Access Token**: Use the personal access token that you created earlier and that has enough permissions.
@@ -100,7 +103,7 @@ For Appcircle to connect to the Azure DevOps Server instance, your connection mu
 
 Is your Azure DevOps Server instance under the enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
 
-<ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls">
+<ContentRef url="/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls">
 Accessing Repositories in Internal Networks (Firewalls)
 </ContentRef>
 

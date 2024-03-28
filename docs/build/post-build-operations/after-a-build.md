@@ -22,7 +22,7 @@ Please note that AAB files will not be distributed automatically since they cann
 
 If your Android application has multiple product flavors, Appcircle will create a build for each flavor of your application and let you distribute them at once. A common usage to multi-flavor applications can be free and paid versions of the same application.
 
-When you build and distribute an application with multiple flavors, and `.apk` file will be created for each flavor. On our [**testing portal**](../distribute/downloading-binaries.md), your testers will be able to download each `.apk` file separately and test it on their devices.
+When you build and distribute an application with multiple flavors, and `.apk` file will be created for each flavor. On our [**testing portal**](/distribute/testing-management/downloading-binaries), your testers will be able to download each `.apk` file separately and test it on their devices.
 
 ### iOS outputs
 

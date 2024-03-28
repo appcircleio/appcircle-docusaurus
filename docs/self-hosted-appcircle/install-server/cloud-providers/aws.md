@@ -152,6 +152,7 @@ If you want to also send `ping` requests to the instance for health check purpos
 After you have successfully created an EC2 instance from the Appcircle server AMI, you can follow the steps below to configure it.
 
 - Get the IP address of the instance from EC2 dashboard.
+
   - Networking > Networking Details > Public IPv4 address
   - Or, Instance > Details > Public IPv4 address
 
@@ -229,7 +230,7 @@ cd "$HOME/appcircle-server"
 
 :::info
 
-**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](../../update.md) the pre-installed package in the instance.
+**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](/self-hosted-appcircle/update) the pre-installed package in the instance.
 
 Also, put the `cred.json` file you received from us into the `appcircle-server` folder.
 
@@ -249,7 +250,7 @@ After the configuration is done, [run the server](../docker.md#5-run-server) and
 
 When you complete installation successfully by following the above steps, you're ready for your first build. :tada:
 
-But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply related the guidelines [here](../../self-hosted-runner/installation.md).
+But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply related the guidelines [here](/self-hosted-appcircle/self-hosted-runner/installation).
 
 The self-hosted runner section in the documents has all the details about runners and their configuration.
 
@@ -267,9 +268,9 @@ Assuming our sample scenario explained in [configuration](../docker.md#3-configu
 
 for our sample scenario.
 
-:reminder_ribbon: After [download](../../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
 
-Please note that you should do this before [registering](../../self-hosted-runner/installation.md#2-register).
+Please note that you should do this before [registering](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
 :::
 

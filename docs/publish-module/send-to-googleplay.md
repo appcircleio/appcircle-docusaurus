@@ -18,7 +18,7 @@ Before uploading a binary to the store, please make sure that an application lis
 
 You also need to have a Google Service Account and its key as a JSON file. Please refer to the following document for more information about service accounts.
 
-<ContentRef url="/account/adding-google-play-service-account">
+<ContentRef url="/account/my-organization/api-integrations/adding-google-play-service-account">
   Adding Google Play Service Accounts
 </ContentRef>
 
@@ -28,7 +28,7 @@ To send apps from Appcircle, you need to provide a Google Developer API key. To 
 
 [Create a key in JSON format in the Google Developer Console](https://developers.google.com/android-publisher/getting_started#using_a_service_account) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
 
-<ContentRef url="/account/adding-google-play-service-account">
+<ContentRef url="/account/my-organization/api-integrations/adding-google-play-service-account">
   Adding Google Play Service Accounts
 </ContentRef>
 
@@ -38,7 +38,7 @@ Then enter a user-friendly name to identify the key in the lists and press save.
 
 ### Deploying the Binary from the Testing Distribution
 
-You can deploy the binaries to the Publish module from the [Testing Distribution](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](https://docs.appcircle.io/build/building-android-applications/) and [signed](https://docs.appcircle.io/signing-identities/android-keystores) properly if APK - you can manage this in the [build configuration](https://docs.appcircle.io/build/build-profile-configuration) for all types of development frameworks.)
+You can deploy the binaries to the Publish module from the [Testing Distribution](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Google Play. (e.g. in [release mode](https://docs.appcircle.io/build/building-android-applications/) and [signed](https://docs.appcircle.io/signing-identities/android-keystores) properly if APK - you can manage this in the [build configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration) for all types of development frameworks.)
 
 Select a binary in the list and press "Send to Publish" from the three dots. The package name of the binary will be matched automatically if there is an existing publish profile. If not, you have to create a new Publish profile.
 

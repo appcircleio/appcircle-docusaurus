@@ -35,7 +35,7 @@ The podman network backend should be `netavark`. You can check the current setti
 podman info | grep -i networkBackend
 ```
 
-If you need to use a proxy on the Appcircle server, you should configure proxy settings according to the [Proxy Configuration](./configure-server/proxy-configuration.md) document.
+If you need to use a proxy on the Appcircle server, you should configure proxy settings according to the [Proxy Configuration](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration) document.
 
 ### We are facing "manifest not found" error when we run the `up` command.
 
@@ -49,7 +49,7 @@ Download the zip package of the appcircle server and extract it to the same fold
 
 ### How do I change Docker or Podman's data location?
 
-For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](./install-server/docker.md#change-the-docker-data-location) page.
+For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](/self-hosted-appcircle/install-server/docker.md#change-the-docker-data-location) page.
 
 For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./install-server/podman.md#change-the-podman-data-location) page.
 
@@ -147,7 +147,7 @@ The first thing you should check is **PAT** permissions.
 
 If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
 
-For more details about configuring the outbound requests, you can refer to the [Outbound Requests](../build/adding-a-build-profile/connecting-to-gitlab.md#outbound-requests) section.
+For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
 
 ## Appcircle Runner FAQ
 

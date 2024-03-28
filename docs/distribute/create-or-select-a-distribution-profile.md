@@ -28,7 +28,7 @@ Auto send feature lets your applications to be distributed to specific testing g
 
 To enable the auto send feature, you need to create testing groups and add testers into these groups.
 
-<ContentRef url="/distribute/testing-groups">Testing Groups</ContentRef>
+<ContentRef url="/distribute/testing-management/testing-groups">Testing Groups</ContentRef>
 
 Under the Auto Send tab in the settings, you can see the testing groups you have created earlier. Just enable each testing group you want to have your application sent automatically whenever a new version is deployed.
 
@@ -49,10 +49,10 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (154).png' />
 
-To add your SSO and LDAP details, go to [My Organization](../account/my-organization.md) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
+To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
 
-<ContentRef url="/account/sso-login/single-sign-on-login">SSO Login</ContentRef>
-<ContentRef url="/account/ldap-login">LDAP Login</ContentRef>
+<ContentRef url="/account/my-organization/sso-providers-configuration/single-sign-on">SSO Login</ContentRef>
+<ContentRef url="/account/my-organization/ldap-login">LDAP Login</ContentRef>
 
 ### Device Registration (iOS Only)
 

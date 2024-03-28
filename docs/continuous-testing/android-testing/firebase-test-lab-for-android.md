@@ -38,17 +38,17 @@ As the final step, go to the [Google Developers Console API Library page](https:
 
 ### Firebase Test Lab Authentication Configuration in Appcircle
 
-To start, go to the environment variables section and add the service account JSON key created in the previous step as a [new environment variable](../environment-variables/managing-variables.md#creating-environment-variable-groups). Take a note of the variable name, which will be necessary in the workflow configuration.
+To start, go to the environment variables section and add the service account JSON key created in the previous step as a [new environment variable](/environment-variables/managing-variables#creating-environment-variable-groups). Take a note of the variable name, which will be necessary in the workflow configuration.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-environment.png' />
 
-Then [select the related environment variable group](../environment-variables/managing-variables.md#using-environment-variable-groups-in-builds) in the build configuration of the project that will be using Firebase Test Lab.
+Then [select the related environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) in the build configuration of the project that will be using Firebase Test Lab.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-config-env-select.png' />
 
 ### Build Workflow Configuration for Firebase Test Lab
 
-To utilize Firebase Test Lab in your builds, open the [workflow editor](../workflows/index.md) and add the "Firebase Test Lab for Android" step after the build or sign steps. If you want to run instrumentation tests, also add the "Android Build for UI Testing" step before the Firebase Test Lab step.
+To utilize Firebase Test Lab in your builds, open the [workflow editor](/workflows/index.md) and add the "Firebase Test Lab for Android" step after the build or sign steps. If you want to run instrumentation tests, also add the "Android Build for UI Testing" step before the Firebase Test Lab step.
 
 :::caution
 

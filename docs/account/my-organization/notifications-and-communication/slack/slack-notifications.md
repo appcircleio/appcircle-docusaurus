@@ -20,7 +20,7 @@ There is currently no Slack integration available on the self-hosted Appcircle. 
 
 ### Connecting Appcircle to Slack
 
-An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](../my-organization.md) screen and press the "Connect" button next to Slack under the "Connections" section.
+An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](/account/my-organization) screen and press the "Connect" button next to Slack under the "Connections" section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (64).png' />
 
@@ -55,7 +55,7 @@ Keep scrolling down on Appcircle to see the full list of events.
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (136).png' />
 
 :::info
-After completing the specified action in Appcircle, you have the option to share release notes via Slack. 
+After completing the specified action in Appcircle, you have the option to share release notes via Slack.
 To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/integrations/managing-release-notes/) step in your workflow.
 
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
@@ -75,4 +75,3 @@ To enable this feature, ensure you include the [**Test Reports**](https://docs.a
 If you want to disconnect or reauthorize the Slack connection, scroll down to the end of the management screen and press the "Disconnect" button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (137).png' />
-

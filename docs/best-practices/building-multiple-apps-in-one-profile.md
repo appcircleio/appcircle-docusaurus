@@ -66,7 +66,7 @@ if [ $AC_GIT_BRANCH = 'release' ]; then
 fi
 ```
 
-For more information about environment variables, [click here](../environment-variables/appcircle-specific-environment-variables.md#android-specific-environment-variables).
+For more information about environment variables, [click here](/environment-variables/appcircle-specific-environment-variables#android-specific-environment-variables).
 
 ### Using iOS Schemes to Configure Multiple Apps
 
@@ -108,11 +108,10 @@ if [ $AC_GIT_BRANCH = 'release' ]; then
 fi
 ```
 
-For more information about environment variables, [click here](../environment-variables/appcircle-specific-environment-variables.md#ios-specific-environment-variables)
+For more information about environment variables, [click here](/environment-variables/appcircle-specific-environment-variables#ios-specific-environment-variables)
 
 ### Testing & Downloading Multiple Apps Through Appcircle
 
 As specified in the Appcircle docs, your multiple outputs will be located on the testing distribution and they will be available for download just like a single application.
 
-[Multiple Flavors](../distribute/create-or-select-a-distribution-profile.md#android-applications-with-multiple-flavors)
- 
+[Multiple Flavors](/distribute/create-or-select-a-distribution-profile.md#android-applications-with-multiple-flavors)

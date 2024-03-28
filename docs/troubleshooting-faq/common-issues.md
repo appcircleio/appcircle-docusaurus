@@ -37,7 +37,7 @@ To resolve, go to Organization Settings ->Third-party access and press edit next
 
 For the SSH connections, a key pair in PEM format is required. The public key is entered/stored in the Git provider while the private key is entered in Appcircle.
 
-Please refer to [this guide for the commands to generate a compatible key pair](../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) for SSH connections.
+Please refer to [this guide for the commands to generate a compatible key pair](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh) for SSH connections.
 
 Using multiple SSH keys is not recommended. Instead, you should create a single SSH key that has access to all the private modules.
 
@@ -74,7 +74,7 @@ echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $AC_ENV_FILE_PATH
 
 The only available option for connecting to the internal/on-premise repositories is to use SSH and whitelist Appcircle resources if the repositories are not accessible from the public internet.
 
-Please refer to [this guide for connecting to the repositories in internal networks](../infrastructure/accessing-repositories-in-internal-networks-firewalls.md).
+Please refer to [this guide for connecting to the repositories in internal networks](../build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls.md).
 
 ### How to connect to AWS CodeCommit repositories through SSH?
 
@@ -112,7 +112,7 @@ Then select the "Enable raw message delivery" option while adding the webhook UR
 
 There may be a bunch of reasons for a build to fail.
 
-The best way to learn the reason is to check the build logs. See [**Working With Build Logs**](../build/after-a-build.md#working-with-build-logs) section for details on this.
+The best way to learn the reason is to check the build logs. See [**Working With Build Logs**](/build/post-build-operations/after-a-build#working-with-build-logs) section for details on this.
 
 Build logs will display everything that happened in each workflow step in detail and let you examine what went wrong during the build.
 
@@ -120,7 +120,7 @@ If you are unable to determine the exact cause, feel free to get in touch with A
 
 ### Troubleshooting Workflow Steps for Build Failures
 
-Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](../workflows/index.md) and get a build to help isolate the cause of the issue.
+Most build failures are related with the following build steps. If you encounter any errors, [please remove or edit the following steps](/workflows/index.md) and get a build to help isolate the cause of the issue.
 
 - **iOS Sign Errors: **If the selected provisioning profile does not match with the selected bundle ID or if the certificate is not valid, you may have an issue in the iOS signing step. In this case, you may try getting an unsigned build
 - **Xcode Build for Simulator step: **This step builds your target for either x86_64 or arm64 architecture. In some projects, there may be dependencies that are not compatible with given architecture. In this case, please remove this step from the workflow or remove the conflicting dependencies to get a successful build.
@@ -147,7 +147,7 @@ Your iOS application project needs to have a shared scheme in order to be built 
 3. Scheme container needs to be set to the corresponding Xcode project or workspace
 4. Please do not forget to add your `.xcscheme` file to version control so it will be uploaded to your Git repository
 
-For details on iOS builds please refer to [**Building iOS Applications**](../build/building-ios-applications.md)
+For details on iOS builds please refer to [**Building iOS Applications**](../build/platform-build-guides/building-ios-applications)
 
 ### **Cocoapods Errors Due to Missing xcworkspace**
 
@@ -175,7 +175,7 @@ In such an error, please check if the correct bundle ID is selected for the buil
 
 Your Cocoapods dependencies may also show this error when you try to build your project with Xcode 14. To prevent this, you may try one of the following workarounds.
 
-1. Signing with your own certificates. This requires uploading both development and distribution certificates. Therefore you either need to upload appropriate provisioning profiles or turn on [Automatic Code Signing](../signing-identities/ios-certificates-and-provisioning-profiles.md#automatic-signing).
+1. Signing with your own certificates. This requires uploading both development and distribution certificates. Therefore you either need to upload appropriate provisioning profiles or turn on [Automatic Code Signing](/signing-identities/ios-certificates-and-provisioning-profiles#automatic-signing).
 
 ```ruby
 post_install do |installer|
@@ -343,7 +343,7 @@ You can get the JDK home paths for each build pool from [Android's build infrast
 
 #### 2. Change `JAVA_HOME` using environment variables
 
-You can use the [environment variables](../environment-variables/managing-variables.md) to enable the JDK version your project requires.
+You can use the [environment variables](/environment-variables/managing-variables) to enable the JDK version your project requires.
 
 For example, you can take the following steps to change the default Java version to 17.
 
@@ -393,7 +393,7 @@ If you're using DexGuard, you may need to above modifications to your DexGuard c
 
 ### I received a google-services.json Error but I don't want to push this file to the repository
 
-Secret files such as the google-services.json can be added as a [secret environment variable](../environment-variables/managing-variables.md#adding-files-as-environment-variables) and then [selected in the build configuration](../build/build-profile-configuration.md#environment-variables-configuration).
+Secret files such as the google-services.json can be added as a [secret environment variable](/environment-variables/managing-variables#adding-files-as-environment-variables) and then [selected in the build configuration]/build/build-process-management/build-profile-configuration#environment-variables-configuration).
 
 Then, you can add a custom script step before the Android build step and move the file to the expected path during the build with a code like the following (where the secret environment variable is named as `GOOGLE_SERVICES_JSON`) :
 
@@ -553,7 +553,7 @@ If you face problems during NPM/Yarn install steps on Appcircle but not on your 
 
 First, you should check the [NPM status page](https://yarnpkg.com/getting-started/qa#queries-to-registryyarnpkgcom-return-a-404500-is-it-down) for possible availability issues.
 
-Our runners have yarn classic (1.x) by default. See the [iOS build agent stacks](../infrastructure/ios-build-infrastructure.md#ios-build-agent-stacks) and the [Android build agent stacks](../infrastructure/android-build-infrastructure.md#android-build-agent-stacks) pages for the exact versions.
+Our runners have yarn classic (1.x) by default. See the [iOS build agent stacks](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) and the [Android build agent stacks](../infrastructure/android-build-infrastructure.md#android-build-agent-stacks) pages for the exact versions.
 
 On the other hand, yarn modern (2.x) has stability improvements that can fix these kinds of network errors. You can see [here](https://yarnpkg.com/getting-started/qa#why-should-you-upgrade-to-yarn-modern) for details.
 
@@ -604,9 +604,9 @@ You can access how to change your node version and other relative information ab
 
 ### No files or multiple files were received from autodistribute;
 
-A successful distribution depends on a correctly signed binary. Please check if the [signing configuration](../build/build-profile-configuration.md#signing-configuration) is correct.
+A successful distribution depends on a correctly signed binary. Please check if the [signing configuration](/build/build-process-management/build-profile-configuration#signing-configuration) is correct.
 
-You can also check the list of the [generated build artifacts](../build/after-a-build.md) to confirm the output. In Android, you can also check the `ac_post_process_output.json` file in the build artifacts to see if the APKs are signed or not.
+You can also check the list of the [generated build artifacts](/build/post-build-operations/after-a-build) to confirm the output. In Android, you can also check the `ac_post_process_output.json` file in the build artifacts to see if the APKs are signed or not.
 
 In Android, please also check if gradle sign is being used for the selected build variant. If gradle sign works alongside with Appcircle signing, you will receive multiple APKs.
 
@@ -626,11 +626,11 @@ On some distributed apps, the **Access Denied** error can be bypassed by one of 
 
 Older builds and/or testing distributions will use almost all of your storage. If your artifact storage is full, you can free up some of the old artifacts.
 
-#### [Refer here to delete a build profile](../build/adding-a-build-profile/#delete-a-build-profile)
+#### [Refer here to delete a build profile](/build/manage-the-connections/adding-a-build-profile#delete-a-build-profile)
 
-#### [Refer here to delete specific builds from your build profile](../build/after-a-build.md#delete-specific-builds)
+#### [Refer here to delete specific builds from your build profile](/build/post-build-operations/after-a-build.md#delete-specific-builds)
 
-#### [Refer here to delete testing distribution profiles and specific distribution artifacts](../distribute/create-or-select-a-distribution-profile.md#delete-a-distribution-profile)
+#### [Refer here to delete testing distribution profiles and specific distribution artifacts](/distribute/create-or-select-a-distribution-profile.md#delete-a-distribution-profile)
 
 #### [Refer here to delete a Google Play Store Publish Profile](../publish-module/send-to-googleplay.md#deleting-android-publish-profiles)
 

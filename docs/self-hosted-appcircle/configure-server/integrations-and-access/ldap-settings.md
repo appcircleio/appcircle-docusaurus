@@ -23,7 +23,7 @@ To configure LDAP lookup decision settings, you can follow the steps below.
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](../install-server/docker.md#3-configure) section in docs and applied example scenario.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/docker#3-configure) section in docs and applied example scenario.
 
 Following steps are using example project as project naming, which was told there.
 
@@ -99,7 +99,7 @@ You should see the message: _"All services are running successfully."_
 
 #### 1. Configure multiple LDAPs on server
 
-Ensure that multiple LDAP settings are properly configured on your Appcircle server's [integration settings](../../account/ldap-login.md).
+Ensure that multiple LDAP settings are properly configured on your Appcircle server's [integration settings](/account/my-organization/ldap-login).
 
 #### 2. Create users with the same username
 
@@ -153,9 +153,9 @@ Appcircle uses these LDAP attributes to create an account for the LDAP user.
 
 - The username LDAP attribute is a string. For example,'mail'.
 
-|Settings|Description|Required|Examples|
-|----------|-----------|----------|-----------|
-|Username LDAP Attribute|Name of LDAP attribute, which is mapped as username. For many LDAP server vendors it can be 'uid'. For an active directory, it can be 'sAMAccountName' or 'cn'.|Yes|mail,email|
+| Settings                | Description                                                                                                                                                     | Required | Examples   |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
+| Username LDAP Attribute | Name of LDAP attribute, which is mapped as username. For many LDAP server vendors it can be 'uid'. For an active directory, it can be 'sAMAccountName' or 'cn'. | Yes      | mail,email |
 
 ### Adding LDAP Configuration
 
@@ -228,7 +228,7 @@ This user is also removed from the organization in Appcircle.
 :::info
 If the LDAP configuration is incorrect or the LDAP server cannot be accessed for some reason, you can always login with the "initial username" and "initial password" that were configured while installing the server.
 
-See the [configure](../install-server/docker.md#3-configure) section in the installation page for the `global.yaml` details.
+See the [configure](/self-hosted-appcircle/install-server/docker#3-configure) section in the installation page for the `global.yaml` details.
 :::
 
 import NeedHelp from '@site/docs/\_need-help.mdx';

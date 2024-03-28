@@ -16,7 +16,7 @@ With the Azure DevOps Bot integration, you can analyze your SwiftLint and Detekt
 
 #### Step 1
 
-First, to generate the report output, the [SwiftLint](../workflows/ios-specific-workflow-steps/index.md#swiftlint) component needs to be added to the workflow. We add the SwiftLint component after the CocoaPods install step.
+First, to generate the report output, the [SwiftLint](/workflows/ios-specific-workflow-steps/index.md#swiftlint) component needs to be added to the workflow. We add the SwiftLint component after the CocoaPods install step.
 
 To use the Azure Bot, we add the 'Azure DevOps Bot for SwiftLint Report' step right after running SwiftLint.
 
@@ -29,7 +29,7 @@ You will find the variables that need to be specified inside the bot component. 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-ios-swiftlint-details.png' />
 
 :::caution
-Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables) and encrypting variables like tokens that could pose a security risk.
+Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](/environment-variables) and encrypting variables like tokens that could pose a security risk.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-swiftlint-env-var.png' />
@@ -64,7 +64,7 @@ https://github.com/appcircleio/appcircle-ios-azure-bot-for-swiftlint-component
 
 #### Step 1
 
-The first step for Android is to add the [Detekt](../integrations/../workflows/android-specific-workflow-steps/index.md#detekt) component to your workflow. Following the Detekt component, you should add the 'Azure DevOps Bot For Detekt Component' component to create a workflow.
+The first step for Android is to add the [Detekt](/workflows/android-specific-workflow-steps/#detekt) component to your workflow. Following the Detekt component, you should add the 'Azure DevOps Bot For Detekt Component' component to create a workflow.
 
 :::caution
 Please make sure to run the Azure Bot component after Detekt. Otherwise, the **Azure DevOps Bot For Detekt Component** won't function.
@@ -79,7 +79,7 @@ You will find the variables that need to be specified within the bot component. 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflowtips-android-detekt-workflow-details.png' />
 
 :::caution
-Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](../environment-variables) and encrypting variables like tokens that could pose a security risk.
+Since one of the required variables will be the Azure DevOps Personal Access Token, Appcircle recommends using [Environment Variables](/environment-variables) and encrypting variables like tokens that could pose a security risk.
 :::
 
 #### Step 3

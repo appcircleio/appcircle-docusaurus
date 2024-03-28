@@ -79,16 +79,16 @@ If you're configuring SAML Provider, you must set `https://auth.appcircle.io/aut
 
 You can follow the below documents to connect your identity providers. If your Identity Provider is not on the list, you can follow any OpenID or SAML integration guide from the below list to find out the parameters.
 
-- [Auth0 OpenID](../account/sso/auth-openid.md)
-- [Auth0 SAML](../account/sso/auth-saml.md)
-- [Azure AD SAML](../account/sso/azure-saml.md)
-- [Okta OpenID](../account/sso/okta-openid.md)
-- [Okta SAML](../account/sso/okta-saml.md)
-- [OneLogin SAML](../account/sso/onelogin-saml.md)
+- [Auth0 OpenID](/account/my-organization/sso-providers-configuration/auth-openid)
+- [Auth0 SAML](/account/my-organization/sso-providers-configuration/auth-saml)
+- [Azure AD SAML](/account/my-organization/sso-providers-configuration/azure-saml)
+- [Okta OpenID](/account/my-organization/sso-providers-configuration/okta-openid)
+- [Okta SAML](/account/my-organization/sso-providers-configuration/okta-saml)
+- [OneLogin SAML](/account/my-organization/sso-providers-configuration/onelogin-saml)
 
 Please check the below document to learn more about SSO integration.
 
-<ContentRef url="/account/sso/single-sign-on">
+<ContentRef url="/account/my-organization/sso-providers-configuration/single-sign-on">
   Single Sign-On
 </ContentRef>
 

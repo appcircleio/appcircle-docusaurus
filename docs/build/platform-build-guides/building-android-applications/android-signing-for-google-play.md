@@ -36,7 +36,7 @@ In order to keep your config in Appcircle, you need to Navigate through:
 Alternatively, you can accomplish the same within environment variables. The environment variable for this action is `AC_V2_SIGN`.
 
 :::tip
-You can find more information about why to use them and how to use them in the [Environment Variables](../../environment-variables) section.
+You can find more information about why to use them and how to use them in the [Environment Variables](/environment-variables) section.
 :::
 
 ### Enable V2 Sign Through the Android Project (build.gradle)
@@ -46,7 +46,6 @@ Alternatively, you can use `build.gradle` instead to specify the signing you wil
 The current Android Sign step in Appcircle utilizes [jarsigner to sign apps](https://developer.android.com/studio/build/building-cmdline#bundle_build_gradle) with the APK Signature Scheme v1 and the alternative _apksigner_ cannot be used to sign app bundles (AAB).
 
 The solution for this is to utilize signing in gradle within the app. A sample build.gradle file that utilizes APK Signature Scheme v2 can be found at [https://github.com/appcircleio/appcircle-sample-android/blob/v2-sign/app/build.gradle](https://github.com/appcircleio/appcircle-sample-android/blob/v2-sign/app/build.gradle) and the sample code can be seen below:
-
 
 <Tabs>
   <TabItem value="groovy" label="build.gradle" default>
@@ -72,7 +71,6 @@ signingConfigs {
 // Rest of your build.gradle
 
 ```
-
 
   </TabItem>
   <TabItem value="kotlin" label="build.gradle.kts">
@@ -108,11 +106,9 @@ You need to either sign with Appcircle Android Sign Step or via Gradle. If you'r
 
 :::
 
-
 :::info
 
 If you're using **Gradle** to sign your APK file, you may need to add `v1SigningEnabled` and `v2SigningEnabled` to your signing configurations to install your APK file to both old and new Android versions.
-
 
 <Tabs>
   <TabItem value="groovy" label="build.gradle" default>
@@ -141,7 +137,6 @@ signingConfigs {
 // Rest of your build.gradle
 
 ```
-
 
   </TabItem>
   <TabItem value="kotlin" label="build.gradle.kts">
@@ -172,7 +167,6 @@ signingConfigs {
 
   </TabItem>
 </Tabs>
-
 
 :::
 

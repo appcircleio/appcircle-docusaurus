@@ -249,7 +249,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :new: New Feature
 
-- React Native support - You can now build iOS and Android applications developed with React Native. React Native build workflows allow you to select your Node version and run additional NPM/Yarn commands. :link: [**Building React Native Applications**](../build/building-react-native-applications.md)\*\*\*\*
+- React Native support - You can now build iOS and Android applications developed with React Native. React Native build workflows allow you to select your Node version and run additional NPM/Yarn commands. :link: [**Building React Native Applications**](/build/platform-build-guides/building-react-native-applications)\*\*\*\*
 
 ### :muscle: Improvement
 
@@ -277,7 +277,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :muscle: Improvement
 
-- If a build has multiple APK file outputs, each APK file will be included in the distribution module and can be downloaded separately. :link: [**Testing Portal**](../distribute/downloading-binaries.md)\*\*\*\*
+- If a build has multiple APK file outputs, each APK file will be included in the distribution module and can be downloaded separately. :link: [**Testing Portal**](/distribute/testing-management/downloading-binaries.md)\*\*\*\*
 - Distribution emails and distribution portal is now showing application name with version.
 - Notifications window is improved and now shows better information including color codes and more details about events.
 - Environment variables in Git Clone workflow step are updated.
@@ -286,7 +286,7 @@ Invite codes are removed from registration with the platform and everyone can re
 
 ### :lady_beetle: Fixed
 
-- Information displayed on Distribution Module cards is fixed. The last updated field shows the latest file date in the profile and the Last shared field shows the last time the distribution was performed. :link: [**Distribution Profiles**](../distribute/create-or-select-a-distribution-profile.md)\*\*\*\*
+- Information displayed on Distribution Module cards is fixed. The last updated field shows the latest file date in the profile and the Last shared field shows the last time the distribution was performed. :link: [**Distribution Profiles**](/distribute/create-or-select-a-distribution-profile.md)\*\*\*\*
 
 ## v0.3.23 - 2020-04-03
 

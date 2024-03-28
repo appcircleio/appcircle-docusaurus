@@ -7,7 +7,7 @@ sidebar_position: 3
 
 # Overview
 
-Although auto-generated `global.yaml` template has "HTTPS enabled" by default, in our sample scenario and configuration it was "HTTPS disabled" to keep it simple to understand. Refer [here](../install-server/docker.md#3-configure) for sample configuration told at installation.
+Although auto-generated `global.yaml` template has "HTTPS enabled" by default, in our sample scenario and configuration it was "HTTPS disabled" to keep it simple to understand. Refer [here](/self-hosted-appcircle/install-server/docker#3-configure) for sample configuration told at installation.
 
 SSL configuration has some specific details for its own use cases and it should have a dedicated section.
 
@@ -67,7 +67,7 @@ openssl pkcs12 -in cert.p12 -nocerts -out key.pem
 
 ## Configure HTTPS
 
-First of all, you need to set `external.scheme` as `https` at `global.yaml` to enable HTTPS for all [subdomains](../install-server/docker.md#4-dns-settings).
+First of all, you need to set `external.scheme` as `https` at `global.yaml` to enable HTTPS for all [subdomains](/self-hosted-appcircle/install-server/docker#4-dns-settings).
 
 ```yaml
 external:
@@ -80,7 +80,7 @@ external:
 
 - `projects/${YOUR_PROJECT}`
 
-You can see an example project configuration from [here](../install-server/docker.md#3-configure).
+You can see an example project configuration from [here](/self-hosted-appcircle/install-server/docker#3-configure).
 
 :::
 
@@ -90,7 +90,7 @@ Changing `external.scheme` from `http` to `https` or from `https` to `http` afte
 
 So, we suggest you to be sure with your configuration before using it in production environment.
 
-Refer to [reset configuration](../install-server/docker.md#reset-configuration) section for more details.
+Refer to [reset configuration](/self-hosted-appcircle/install-server/docker#reset-configuration) section for more details.
 
 :::
 
@@ -129,7 +129,7 @@ Order should be like this: first the server certificate, then all intermediate c
 
 If you want to hide these secrets from human-readable `global.yaml`, you can use base64 encoded `user-secret` file for the same environment variables.
 
-Refer to [installation](../install-server/docker.md#3-configure) docs for details of `user-secret` usage.
+Refer to [installation](/self-hosted-appcircle/install-server/docker#3-configure) docs for details of `user-secret` usage.
 
 :::
 
@@ -143,11 +143,11 @@ For now, self-hosted Appcircle does not support usage of password protected priv
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](../install-server/docker.md#3-configure) section in docs and applied example scenario.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/docker#3-configure) section in docs and applied example scenario.
 
 Following steps are using example project as project naming, which was told there.
 
-Current working directory is assumed `appcircle-server` for following steps. See [here](../install-server/docker.md#1-download) for installation details.
+Current working directory is assumed `appcircle-server` for following steps. See [here](/self-hosted-appcircle/install-server/docker#1-download) for installation details.
 
 :::
 
@@ -247,7 +247,7 @@ In order to keep your configuration simple, we're suggesting to use wildcard cer
 
 For our sample scenario, we used certificate signed for `*.appcircle.spacetech.com` domain.
 
-Wildcard certificate created for main domain will cover all subdomains listed in [here](../install-server/docker.md#4-dns-settings).
+Wildcard certificate created for main domain will cover all subdomains listed in [here](/self-hosted-appcircle/install-server/docker#4-dns-settings).
 
 Although you can create and use dedicated certificates for all subdomains, in our opinion it won't be useful. It will be harder to configure and maintain lots of certificates.
 
@@ -376,7 +376,7 @@ If your external service has **Subordinate CA** (sub CA) in certificate chain, i
 ```yaml
 external:
   scheme: https
-  mainDomain: '.appcircle.spacetech.com'
+  mainDomain: ".appcircle.spacetech.com"
   ca: |
     -----BEGIN CERTIFICATE-----
     MIIEvTCCAyWgAwIBAgIQNVqUQw+7fmeXJBAtns5HyjANBgkqhkiG9w0BAQsFADB3

@@ -67,7 +67,7 @@ You can see the detailed configuration steps [here.](./docker.md#3-configure)
 
 You can utilize the Appcircle server in either HTTP or HTTPS mode, which can be configured in the `global.yaml` settings file.
 
-After following the general configuration steps above, see the SSL configuration details [here.](./../configure-server/ssl-configuration.md)
+After following the general configuration steps above, see the SSL configuration details [here.](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration)
 
 #### Domain Settings of the Modules
 
@@ -115,13 +115,13 @@ Start the server and verify its [health.](./docker.md#5-run-server)
 
 To build and distribute mobile applications, you need self-hosted Appcircle runners that are connected to the server.
 
-You can check out how to install a self-hosted runner [here.](../self-hosted-runner/installation.md)
+You can check out how to install a self-hosted runner [here.](/self-hosted-appcircle/self-hosted-runner/installation)
 
 ### Connect Runner to the Server
 
 You need to connect your self-hosted runner to the server. So the server can share builds and distribute jobs with the runner.
 
-You can check how to connect runner to server [here.](../self-hosted-runner/installation.md#2-register)
+You can check how to connect runner to server [here.](/self-hosted-appcircle/self-hosted-runner/installation#2-register)
 
 ## Build a Sample App
 

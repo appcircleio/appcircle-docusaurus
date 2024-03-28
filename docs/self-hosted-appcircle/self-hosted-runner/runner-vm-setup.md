@@ -214,7 +214,7 @@ In order to keep free disk space sufficient for build pipelines, we're packaging
 
 You can find more information about the build infrastructure in the documents below:
 
-- [iOS Build Infrastructure](../../infrastructure/ios-build-infrastructure.md)
+- [iOS Build Infrastructure](/infrastructure/ios-build-infrastructure)
 - [Android Build Infrastructure](../../infrastructure/android-build-infrastructure.md)
 
 :::caution
@@ -346,9 +346,9 @@ You can follow the steps below to check the Appcircle runner version and upgrade
 ./ac-runner --version
 ```
 
-- Check the latest version from the [Upgrade Runner](./update.md#1-update-runner) page.
+- Check the latest version from the [Upgrade Runner](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) page.
 
-- If your version is not up to date, please follow the [Update Runner](./update.md#1-update-runner) section in the page.
+- If your version is not up to date, please follow the [Update Runner](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) section in the page.
 
 :::caution
 
@@ -480,7 +480,7 @@ echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.test-appcircle.tool.zb/build/v
 
 :::
 
-Create runner access token from appcircle server and register runner to server. See details in [here](../self-hosted-runner/installation.md#2-register).
+Create runner access token from appcircle server and register runner to server. See details in [here](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
 For example,
 
@@ -705,7 +705,7 @@ On some cases, you may need to update to your macOS base images in order to make
 Below are the ones that frequently occur, but not limited to them.
 
 - Your team might use a tool frequently in build pipeline, that's not included in Appcircle macOS image. Installing that tool into the image once will save build time. Your build pipeline will be more efficient and optimized.
-- You may prefer to get iOS and android tool updates by using [self-hosted runner update](../self-hosted-runner/update.md) method instead of getting fresh macOS VM image. When you get fresh macOS image you may need to make your custom configurations again.
+- You may prefer to get iOS and android tool updates by using [self-hosted runner update](/self-hosted-appcircle/self-hosted-runner/update) method instead of getting fresh macOS VM image. When you get fresh macOS image you may need to make your custom configurations again.
 - You may need to make persistent proxy configuration for your internal network requirements.
 - You may need to add your corporate's self-signed root CAs to macOS VM image in order to succeed SSL connections.
 
@@ -725,7 +725,7 @@ screen -d -m tart run vm01 --no-graphics \
 
 - SSH into `vm01`.
 
-```bash  
+```bash
 ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 ```
 

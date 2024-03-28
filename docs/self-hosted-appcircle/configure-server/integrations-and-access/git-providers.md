@@ -23,13 +23,13 @@ Following sections will give you more details about removing or adding other git
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](../install-server/docker.md#3-configure) section in docs, understood configuration made there and scenarios told there.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/docker#3-configure) section in docs, understood configuration made there and scenarios told there.
 
 :::
 
 :::caution
 
-Current working directory is assumed `appcircle-server` for following steps. See [here](../install-server/docker.md#1-download) for installation details.
+Current working directory is assumed `appcircle-server` for following steps. See [here](/self-hosted-appcircle/install-server/docker#1-download) for installation details.
 
 :::
 
@@ -39,7 +39,7 @@ Current working directory is assumed `appcircle-server` for following steps. See
 
 - `projects/${YOUR_PROJECT}`
 
-You can see an example project configuration from [here](../install-server/docker.md#3-configure).
+You can see an example project configuration from [here](/self-hosted-appcircle/install-server/docker#3-configure).
 
 :::
 
@@ -56,7 +56,7 @@ build:
 
 If you want to re-enable "Bitbucket" again, you can set the `enabled` to `true`.
 
-For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](../../build/adding-a-build-profile/connecting-to-bitbucket.md) page.
+For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
@@ -73,7 +73,7 @@ build:
 
 If you want to re-enable "Azure" again, you can set the `enabled` to `true`.
 
-For more details about "Azure" usage, see related docs in the [Connecting to Azure DevOps](../../build/adding-a-build-profile/connecting-to-azure.md) page.
+For more details about "Azure" usage, see related docs in the [Connecting to Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
@@ -90,7 +90,7 @@ build:
 
 If you want to re-enable "GitLab" again, you can set the `enabled` to `true`.
 
-For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](../../build/adding-a-build-profile/connecting-to-gitlab.md) page.
+For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
@@ -107,7 +107,7 @@ build:
 
 If you want to re-enable "Connect via SSH" again, you can set the `enabled` to `true`.
 
-For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) page.
+For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
@@ -124,13 +124,13 @@ build:
 
 If you want to re-enable "Connect via URL" again, you can set the `enabled` to `true`.
 
-For more details about "Connect via URL" usage, see related docs in the [Connect via URL](../../build/adding-a-build-profile/connecting-to-public-repository.md) page.
+For more details about "Connect via URL" usage, see related docs in the [Connect via URL](/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository) page.
 
 To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
 
 ## Applying Git Provider Changes
 
-You can add or remove git providers at [installation](../install-server/docker.md) steps or later when you need. Following sections will explain how to apply changes especially after installation.
+You can add or remove git providers at [installation](/self-hosted-appcircle/install-server/docker) steps or later when you need. Following sections will explain how to apply changes especially after installation.
 
 Let's assume we want to disable both "Connect via SSH" and "Connect via URL" options. Then we need to add below section to our `global.yaml`.
 
@@ -159,7 +159,7 @@ If we **don't do** the configuration at installation, then after editing `global
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](../install-server/docker.md#3-configure) section in docs and applied example scenario.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/docker#3-configure) section in docs and applied example scenario.
 
 Following steps are using example project as project naming, which was told there.
 

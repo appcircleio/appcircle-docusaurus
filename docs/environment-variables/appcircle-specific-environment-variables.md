@@ -11,7 +11,7 @@ Here is a list of pre-defined environment variables in Appcircle.
 
 These reserved environment variables are either predetermined by Appcircle or are set in the build configuration.
 
-You can check how these environment variables are utilized within the related workflow step. For instance, you can set the Xcode version of a build profile through the [build configuration](../build/building-ios-applications.md#selecting-the-xcode-version-and-switching-to-the-xcode-beta), which will then set this value as the `AC_XCODE_VERSION` environment variable.
+You can check how these environment variables are utilized within the related workflow step. For instance, you can set the Xcode version of a build profile through the [build configuration](../build/platform-build-guides/building-ios-applications#selecting-the-xcode-version-and-switching-to-the-xcode-beta), which will then set this value as the `AC_XCODE_VERSION` environment variable.
 
 You can then use this variable in any workflow step and this variable will be assigned as the default input value of the [Xcode Select workflow step](https://github.com/appcircleio/appcircle-xcode-select-component). This assignment is editable, meaning that you can either choose to keep it in the same way it is configured or you can change it by specifying a value directly in the step settings or assigning a different environment variable.
 

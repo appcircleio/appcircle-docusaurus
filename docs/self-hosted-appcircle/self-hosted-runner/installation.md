@@ -147,9 +147,9 @@ cd appcircle-runner
 
 By default, self-hosted runner package is bundled with configuration for Appcircle-hosted cloud.
 
-:reminder_ribbon: If you're planning to use runner with [self-hosted appcircle](../install-server/docker.md) server, you must change `ASPNETCORE_BASE_API_URL` value in `appsettings.json` configuration file before going on.
+:reminder_ribbon: If you're planning to use runner with [self-hosted appcircle](/self-hosted-appcircle/install-server/docker) server, you must change `ASPNETCORE_BASE_API_URL` value in `appsettings.json` configuration file before going on.
 
-Please refer to details [here](../install-server/docker.md#connecting-runners) for sample configuration change.
+Please refer to details [here](/self-hosted-appcircle/install-server/docker#connecting-runners) for sample configuration change.
 
 :::
 

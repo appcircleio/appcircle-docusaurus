@@ -58,7 +58,7 @@ When you reconnect a build profile again, only the relevant build profile will b
 :::
 
 :::caution
-On the other hand, connection operations done from the **[Connections](./connections.md)** page affect all relevant build profiles using those connections.
+On the other hand, connection operations done from the **[Connections](/build/manage-the-connections)** page affect all relevant build profiles using those connections.
 :::
 
 ## Change Git Provider and Reconnect
@@ -104,7 +104,7 @@ While changing the Git provider, your previous builds, tests, configurations, wo
 The **token owner** of a build profile can now be changed without the need to create a new build profile on Appcircle. The **Change Owner** button in the build profile **Connection** detail will help you change the connection ownership so that you can resolve the broken connections or misconfigured repository authorization cases easily by yourself.
 
 :::info
-To use this feature, the user must have previously connected to the relevant Git provider on Appcircle via [OAuth](connections.md#managing-oauth-connections).
+To use this feature, the user must have previously connected to the relevant Git provider on Appcircle via [OAuth](/build/manage-the-connections/#managing-oauth-connections).
 :::
 
 :::info

@@ -33,11 +33,11 @@ Enter a name for your build profile and select the target operating system (iOS 
 
 ## Connect your repository
 
-You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, You can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible git providers such as Azure DevOps and AWS CodeCommit. ([Please refer here for more information on AWS CodeCommit connections.](../../troubleshooting-faq/common-issues.md#how-to-connect-to-aws-codecommit-repositories-through-ssh))
+You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, You can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible git providers such as Azure DevOps and AWS CodeCommit. ([Please refer here for more information on AWS CodeCommit connections.](/troubleshooting-faq/common-issues#how-to-connect-to-aws-codecommit-repositories-through-ssh))
 
 You can also connect to your Self Hosted Bitbucket and GitLab account directly within Appcircle.
 
-If you authorize Appcircle to connect to your Github, BitBucket, or GitLab account, you can auto-build your project with hooks, get build statuses and the full list of commits. If you connect to a repository through SSH or through a public URL, you need to [set up webhooks manually](../build-manually-or-with-triggers.md#setting-up-manual-webhooks-for-ssh-and-public-repositories).
+If you authorize Appcircle to connect to your Github, BitBucket, or GitLab account, you can auto-build your project with hooks, get build statuses and the full list of commits. If you connect to a repository through SSH or through a public URL, you need to [set up webhooks manually](/build/build-process-management/build-manually-or-with-triggers#setting-up-manual-webhooks-for-ssh-and-public-repositories).
 
 To test drive Appcircle, you can find various sample projects in the [Appcircle GitHub page](https://github.com/appcircleio?q=sample) or you can just press on the **Quick start using the sample repository** button to populate the repository URL field with a compatible project based on the selected framework.
 
@@ -79,7 +79,7 @@ After the prompt, the profile will be deleted.
 
 In order to free up storage in your organization, you should also remove the other references pointing to the artifact. In example, if you have the same artifact on the testing distribution, you should also delete those artifacts as well.
 
-Is your artifact storage full? Learn more about freeing up space [here](../../troubleshooting-faq/common-issues.md#artifact-storage-is-full).
+Is your artifact storage full? Learn more about freeing up space [here](/troubleshooting-faq/common-issues#artifact-storage-is-full).
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

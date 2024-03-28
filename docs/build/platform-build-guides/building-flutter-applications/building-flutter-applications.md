@@ -22,7 +22,7 @@ Simply create a new build profile as usual and select your target operating syst
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
-<ContentRef url="/build/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 To test drive the Appcircle platform for Flutter app builds, you can also use our sample Flutter App by forking it or adding it as a public repository: [https://github.com/appcircleio/appcircle-sample-flutter](https://github.com/appcircleio/appcircle-sample-flutter)
 
@@ -34,7 +34,7 @@ Build configuration options are very similar to native iOS or Android applicatio
 
 If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 You may also use `Authenticate with netrc` step to access your private modules.
 
@@ -60,7 +60,7 @@ First, we need to set up a build configuration. Select the configuration from th
 
 Flutter Web apps are built alongside with iOS or Android Flutter apps. For more information please refer to the following guide:
 
-<ContentRef url="/build/building-flutter-web-applications">Building Flutter Web Applications</ContentRef>
+<ContentRef url="/build/platform-build-guides/building-flutter-applications/building-flutter-web-applications">Building Flutter Web Applications</ContentRef>
 
 ### Sending the Build Status to the Repository Providers
 
@@ -84,13 +84,13 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 - On a tagged push: Whenever a tagged commit is pushed, the build is triggered for that commit. Commits without any tags are ignored.
 - On push with selective tags: Whenever a commit includes one of the typed in tags, the build is triggered. You can specify tags with Unix shell-style wildcards to trigger builds.
 
-<ContentRef url="/build/build-manually-or-with-triggers">
+<ContentRef url="/build/build-process-management/build-manually-or-with-triggers">
   Build Manually or Automatically with Webhooks and Triggers
 </ContentRef>
 
 ### Signing Flutter iOS Applications
 
-The next step in the build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](../signing-identities/ios-certificates-and-provisioning-profiles.md) section.
+The next step in the build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles) section.
 
 For signing iOS apps, press add, select the bundle ID from the first dropdown and then select a compatible provisioning profile (added from the signing identities module) from the second dropdown.
 
@@ -98,7 +98,7 @@ For signing iOS apps, press add, select the bundle ID from the first dropdown an
 
 ### Signing Flutter Android Applications
 
-Here, please select the Android Keystore you added in the [Android Keystores](../signing-identities/android-keystores.md) section. For signing Android apps, simply select a keystore (added from the signing identities module).
+Here, please select the Android Keystore you added in the [Android Keystores](/signing-identities/android-keystores) section. For signing Android apps, simply select a keystore (added from the signing identities module).
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-android-signing.png" />
 

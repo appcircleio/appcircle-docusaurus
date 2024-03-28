@@ -16,7 +16,7 @@ By adding `Appcircle Bot` to your Slack workspace, you gain the ability to perfo
 
 - :package: Start a build based on your chosen profile, branch, and workflow.
 - :outbox_tray: Send the selected version to your preferred test profiles or email addresses.
-- :mailbox: Send the designated version to the `Submit Store` for review and distribution.  
+- :mailbox: Send the designated version to the `Submit Store` for review and distribution.
 
 :::info
 
@@ -26,7 +26,7 @@ There is currently no integration of Slack available on the self-hosted Appcircl
 
 ### Adding Appcircle Bot to Slack
 
-Please note that only the person who added the `Appcircle Bot` to the Slack workspace can see and manage it, and that person must be a `Workspace Owner` or a `Workspace Admin`. 
+Please note that only the person who added the `Appcircle Bot` to the Slack workspace can see and manage it, and that person must be a `Workspace Owner` or a `Workspace Admin`.
 
 To add the `Appcircle Bot` to the workspace, you can choose one of the two options below:
 
@@ -35,7 +35,7 @@ To add the `Appcircle Bot` to the workspace, you can choose one of the two optio
    <a href="https://slackbot.appcircle.io/slack/install"><img alt="Add to Slack - slack-bot-01.png" height="44" width="140" src="https://cdn.appcircle.io/docs/assets/slack-bot-01.png"/></a>
 
    Then, you need to allow the `Appcircle Bot` application.
-   
+
    <Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-02.png' />
 
 2. You can use the `Slack App Directory` to add the `Appcircle Bot` to the workspace.
@@ -46,7 +46,7 @@ You will then see that Slack is connected.
 
 ### Connecting Appcircle Bot to the Account
 
-To connect `Appcircle Bot` to your account, you need to use the `Personal Access Token` generated from your account. If you don't know how to generate it, you can follow the steps in [this document](../../appcircle-api/api-authentication.md).
+To connect `Appcircle Bot` to your account, you need to use the `Personal Access Token` generated from your account. If you don't know how to generate it, you can follow the steps in [this document](/appcircle-api/api-authentication.md).
 
 You can reach the `Enter the PAT` screen with the `Add Personal Access Token` button on the `Home` tab when the application is opened.
 
@@ -101,6 +101,7 @@ Select a version to send, then press the `Share with Testers` button. Please not
 <Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-9.png' />
 
 On the screen that appears, fill in the following fields:
+
 - Select one or more `testing groups` from the options. You can create a new `testing group` via [appcircle.io](https://my.appcircle.io/).
 - If you want to specify the email addresses of the testers to be sent, you can add these email addresses to the `Email addresses` field by separating them with commas and spaces.
 - Type your message in the `Message to Testers` field to leave a message for the testers.
@@ -112,7 +113,6 @@ After filling in the required fields, press the `Share` button.
 Preview your choices on the screen that appears. You can remove email addresses or testing groups, and correct the messages to be sent to the testers. Then press the `Next` button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/slack-bot-10.0.png' />
-
 
 If the selections are correct, you will receive a confirmation message from `Appcircle Bot`.
 

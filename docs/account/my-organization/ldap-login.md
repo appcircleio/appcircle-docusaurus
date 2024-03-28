@@ -20,7 +20,7 @@ This means you can tailor access permissions according to your organization's sp
 
 If you ever need to remove LDAP Login integration, the document also provides clear instructions for doing so, ensuring that your system remains secure and up-to-date.
 
-To start, go to [My Organization](./my-organization.md) > Integrations screen and press the **Connect** button next to LDAP Login under the **Connections** section.
+To start, go to [My Organization](/account/my-organization) > Integrations screen and press the **Connect** button next to LDAP Login under the **Connections** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login1.png' />
 
@@ -82,7 +82,7 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
 
 # Deleting LDAP Login
 
-- To delete, go to the [My Organization](./my-organization.md) > Integration screen and press the Manage button next to LDAP Login under the Connections section.
+- To delete, go to the [My Organization](/account/my-organization) > Integration screen and press the Manage button next to LDAP Login under the Connections section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login10.png' />
 

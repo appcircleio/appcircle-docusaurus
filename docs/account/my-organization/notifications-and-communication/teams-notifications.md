@@ -14,7 +14,7 @@ Appcircle supports sending notifications to Microsoft Teams for the major events
 
 ## Adding Incoming Webhook to Microsoft Teams
 
-In order to get notifications, the administrator of the channel should add an incoming webhook to the given channel. 
+In order to get notifications, the administrator of the channel should add an incoming webhook to the given channel.
 
 - Open the channel and click ••• from the upper-right corner and then click Connectors.
 
@@ -30,7 +30,7 @@ In order to get notifications, the administrator of the channel should add an in
 
 ### Connecting Appcircle to Microsoft Teams
 
-An Appcircle organization can be associated with a single Teams channel. To start, go to [My Organization](./my-organization.md) screen and press the "Connect" button next to Microsoft Teams under the "Connections" section.
+An Appcircle organization can be associated with a single Teams channel. To start, go to [My Organization](/account/my-organization) screen and press the "Connect" button next to Microsoft Teams under the "Connections" section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integrations-teams.png' />
 

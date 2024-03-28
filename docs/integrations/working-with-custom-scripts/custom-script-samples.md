@@ -15,7 +15,7 @@ If you want to change the JAVA version for your Android project, you can achieve
 
 Appcircle currently has `OpenJDK 11` (default), `OpenJDK 8`, `OpenJDK 17` and `OpenJDK 21`.
 
-[Android Build](../../workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 11` as default JDK version.
+[Android Build](/workflows/android-specific-workflow-steps/build-and-test/android-build) step uses `OpenJDK 11` as default JDK version.
 
 You can use the below custom script before your build step to change your `JAVA_HOME` environment variable.
 
@@ -31,7 +31,7 @@ echo "OpenJDK 21" $JAVA_HOME_21_X64
 echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $AC_ENV_FILE_PATH
 ```
 
-Create a custom script like above and put it **above** your [Android Build](../../workflows/android-specific-workflow-steps/android-build) step.
+Create a custom script like above and put it **above** your [Android Build](/workflows/android-specific-workflow-steps/build-and-test/android-build) step.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow.png" />
 
@@ -81,7 +81,7 @@ You can also switch to other pre-installed Java versions using the relevant envi
 This document provides a sample custom script written in Ruby that can be integrated into your CI/CD pipeline to enforce a minimum test coverage threshold. The script is designed to break the pipeline if the covered test result falls below a specified percentage.
 
 :::warning
-Please note that this custom script must be placed after the [**Test Reports**](https://docs.appcircle.io/continuous-testing/running-android-unit-tests#generating-test-report) step in the workflow.
+Please note that this custom script must be placed after the [**Test Reports**](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report) step in the workflow.
 :::
 
 ```ruby
@@ -102,7 +102,7 @@ def extract_line_coverage(json_data)
 end
 
 begin
-test_result_file_path = "#{output_dir}/test_results.json" 
+test_result_file_path = "#{output_dir}/test_results.json"
 json_data = read_json_file(test_result_file_path)
 line_coverage = extract_line_coverage(json_data)
 
@@ -111,7 +111,7 @@ puts "Current Line Coverage: % #{line_coverage * 100}"
 min_coverage = 2.0
 puts "Minimum coverage percentage: #{min_coverage}"
 
-if (line_coverage * 100) < min_coverage 
+if (line_coverage * 100) < min_coverage
     puts "Coverage is #{line_coverage} and below minimum coverage percentage given #{min_coverage}. \nExiting."
     exit (1)
 else
@@ -155,4 +155,4 @@ firebase appdistribution:distribute $AC_EXPORT_DIR/Runner.ipa --app $FIREBASE_AP
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (133).png' />
 
-You can also use our [Firebase App Distribution](../../workflows/common-workflow-steps/#firebase-app-distribution) workflow step for Firebase app deployment.
+You can also use our [Firebase App Distribution](/workflows/common-workflow-steps#firebase-app-distribution) workflow step for Firebase app deployment.

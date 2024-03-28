@@ -164,7 +164,7 @@ www.googleapis.com/oauth2/v4/token
 
 ## Appcircle Runner Install as Ready-to-Use MacOS Virtual Machine
 
-This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](../self-hosted-runner/installation.md#macos-vm).
+This section covers the external resource domains during the installation process of the Appcircle runner using an Appcircle-provided [virtual machine](/self-hosted-appcircle/self-hosted-runner/installation#macos-vm).
 
 - `homebrew` tool (required):
 

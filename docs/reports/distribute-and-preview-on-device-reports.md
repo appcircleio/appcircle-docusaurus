@@ -15,7 +15,7 @@ This report is accessible from the Testing Distribution.
 
 App Versions Report contains the list of binaries deployed to a distribution profile in a given time period.
 
-<ContentRef url="../distribute/create-or-select-a-distribution-profile">
+<ContentRef url="/distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 

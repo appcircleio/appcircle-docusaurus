@@ -1,7 +1,7 @@
 ---
-title: 'Building Android Applications'
-metaTitle: 'Building Android Applications'
-metaDescription: 'Building Android Applications'
+title: "Building Android Applications"
+metaTitle: "Building Android Applications"
+metaDescription: "Building Android Applications"
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -12,11 +12,11 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 Before starting your first Android app build, please make sure you first create a build profile and connect your Git repository to your build profile. You can refer to the page below for this step:
 
-<ContentRef url="../../build/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 After connecting your repository, please add or create your Android Keystore. You can refer to the page below for this step:
 
-<ContentRef url="../../signing-identities/android-keystores">Android Keystores</ContentRef>
+<ContentRef url="/signing-identities/android-keystores">Android Keystores</ContentRef>
 
 When you are done with the steps above, you can now start building your Android application.
 
@@ -28,7 +28,7 @@ First, we need to set up a build configuration. Select the configuration from th
 
 If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="../adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 You may also use `Authenticate with netrc` step to access your private modules.
 
@@ -56,13 +56,13 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 
 You can visit the following page for details on build triggers:
 
-<ContentRef url="../build-manually-or-with-triggers">
+<ContentRef url="/build/build-process-management/build-manually-or-with-triggers">
   Build Manually or Automatically with Webhooks and Triggers
 </ContentRef>
 
 ### Signing
 
-The next step on build configuration is Signing. Here, please select the Android Keystore you added at [Android Keystores](../../signing-identities/android-keystores.md) page.
+The next step on build configuration is Signing. Here, please select the Android Keystore you added at [Android Keystores](/signing-identities/android-keystores) page.
 
 :::info
 
@@ -76,12 +76,11 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 The next step on build configuration is Distribution. You can create a new distribution profile at this screen or select a previous profile you created earlier. You can also enable auto deployment features if you need to.
 
-<ContentRef url="../../distribute/create-or-select-a-distribution-profile">
+<ContentRef url="/distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-distribution.png' />
-
 
 :::info
 
@@ -99,7 +98,7 @@ You can define variables and secrets to be incorporated during the build in the 
 
 Please see the following page for more information about environment variables:
 
-<ContentRef url="../../environment-variables">
+<ContentRef url="/environment-variables">
   Why to Use Environment Variables and Secrets?
 </ContentRef>
 
@@ -119,8 +118,7 @@ Any custom operation during the build can be executed through the Custom Script 
 
 For details on using Appcircle's workflow editor, please see the related page below:
 
-<ContentRef url="../../workflows/index.html">What are Workflows and How to Use Them?</ContentRef>
-
+<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
 
 ### Start Build
 
@@ -131,7 +129,6 @@ You are now ready to start your first build. Select the branch from the left sid
 Select a configuration, workflow, commit id and click on **Start Build button**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-build-modal.png' />
-
 
 Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
 
@@ -147,6 +144,6 @@ You can safely close the build log window, it won't affect the status of your bu
 
 Your build will be distributed automatically if you had set up Auto Distribute earlier. You can also manually distribute builds at any time you like.
 
-<ContentRef url="../../build/after-a-build">After a Build</ContentRef>
+<ContentRef url="/build/post-build-operations/after-a-build">After a Build</ContentRef>
 
 <NeedHelp />

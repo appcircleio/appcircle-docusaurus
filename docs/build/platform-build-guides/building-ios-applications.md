@@ -14,7 +14,7 @@ Building iOS applications may be complex and confusing. Appcircle will help you 
 
 Before starting your first iOS app build, please make sure you first create a build profile and connect your Git repository to your build profile. You can refer to the page below for this step:
 
-<ContentRef url="/build/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 After connecting your repository, please add or create your iOS certificate and provisioning profile. You can refer to the page below for this step:
 
@@ -48,7 +48,7 @@ Please don't forget to add additional scheme files to your version control.
 
 If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 You may also use `Authenticate with netrc` step to access your private modules.
 
@@ -58,7 +58,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in Build Configuration window.
 
-The list of currently available Xcode versions can be found in the following document: [iOS Build Infrastructure](../infrastructure/ios-build-infrastructure.md)
+The list of currently available Xcode versions can be found in the following document: [iOS Build Infrastructure](/infrastructure/ios-build-infrastructure)
 
 By default, the most recent stable version of Xcode is selected. If available, you can also switch to the most recent Xcode beta at the top of the list.
 
@@ -86,7 +86,7 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 
 You can visit the following page for details on build triggers:
 
-<ContentRef url="/build/build-manually-or-with-triggers">
+<ContentRef url="/build/build-process-management/build-manually-or-with-triggers">
   Build Manually or Automatically with Webhooks and Triggers
 </ContentRef>
 
@@ -94,7 +94,7 @@ You can visit the following page for details on build triggers:
 
 ### Signing
 
-The next step on build configuration is Signing. Here, please select the provisioning profile you added at [iOS Certificates & Provisioning Profiles](../signing-identities/ios-certificates-and-provisioning-profiles.md) page.
+The next step on build configuration is Signing. Here, please select the provisioning profile you added at [iOS Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles) page.
 
 :::info
 
@@ -184,7 +184,7 @@ You can safely close the build log window, it won't affect the status of your bu
 
 Your build will be distributed automatically if you had set up auto build earlier. You can also manually distribute builds at any time you like.
 
-<ContentRef url="/build/after-a-build">After a Build</ContentRef>
+<ContentRef url="/build/post-build-operations/after-a-build">After a Build</ContentRef>
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-distribute-artifacts.png' />
 

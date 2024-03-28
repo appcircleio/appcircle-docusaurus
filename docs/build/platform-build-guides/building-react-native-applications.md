@@ -26,7 +26,7 @@ Simply create a new build profile as usual and select your target operating syst
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
-<ContentRef url="/build/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 ### Build Configuration for React Native Applications
 
@@ -36,7 +36,7 @@ Build configuration options are very similar to native iOS or Android applicatio
 
 If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 You may also use `Authenticate with netrc` step to access your private modules.
 
@@ -94,7 +94,7 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 
 ### Signing React Native iOS applications
 
-The next step on build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](../signing-identities/ios-certificates-and-provisioning-profiles.md) section.
+The next step on build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles) section.
 
 :::info
 
@@ -106,7 +106,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 ### Signing React Native Android applications
 
-Here, please select the Android Keystore you added in the [Android Keystores](../signing-identities/android-keystores.md) section.
+Here, please select the Android Keystore you added in the [Android Keystores](/signing-identities/android-keystores) section.
 
 :::info
 
@@ -156,7 +156,7 @@ To start your first build, just press the start build button – the play button
 
 Once your build is complete, you can now download the binary file or deploy it to Testing Distribution manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at anytime.
 
-<ContentRef url="/build/after-a-build">After a Build</ContentRef>
+<ContentRef url="/build/post-build-operations/after-a-build">After a Build</ContentRef>
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

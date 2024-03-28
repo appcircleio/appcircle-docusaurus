@@ -1,7 +1,7 @@
 ---
-title: 'Connecting to Private Repository via SSH'
-metaTitle: 'Connecting to Private Repository via SSH'
-metaDescription: 'Connecting to Private Repository via SSH'
+title: "Connecting to Private Repository via SSH"
+metaTitle: "Connecting to Private Repository via SSH"
+metaDescription: "Connecting to Private Repository via SSH"
 sidebar_position: 6
 ---
 
@@ -79,7 +79,7 @@ After the connection is successful, you can [view your newly created profile](./
 
 :::info
 
-To enable triggered auto builds with webhooks for SSH repository connections, please refer to the following guide: [Build Manually or Automatically with Webhooks and Triggers](../build-manually-or-with-triggers.md)
+To enable triggered auto builds with webhooks for SSH repository connections, please refer to the following guide: [Build Manually or Automatically with Webhooks and Triggers](/build/build-process-management/build-manually-or-with-triggers)
 
 :::
 
@@ -97,7 +97,7 @@ For Appcircle to connect to the self hosted repositories, your connection must b
 
 Is your self-hosted GitLab instance under an enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
 
-<ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls">
+<ContentRef url="/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls">
   Accessing Repositories in Internal Networks (Firewalls)
 </ContentRef>
 

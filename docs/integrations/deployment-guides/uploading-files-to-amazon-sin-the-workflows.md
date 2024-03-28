@@ -13,7 +13,7 @@ Amazon Simple Storage Service (S3) is an object storage service provided by AWS.
 
 With the "File Upload to Amazon S3" step in Appcircle, you can directly upload any file or folder during the build to the specified Amazon S3 bucket.
 
-To start, add the "File Upload to Amazon S3" step to the workflow from the [workflow marketplace](../workflows/index.md#workflow-marketplace). You can add it anywhere within the workflow and multiple times as needed to upload specific files or folders. For instance, you can add it after the build step to deploy the build outputs.
+To start, add the "File Upload to Amazon S3" step to the workflow from the [workflow marketplace](/workflows/index.md#workflow-marketplace). You can add it anywhere within the workflow and multiple times as needed to upload specific files or folders. For instance, you can add it after the build step to deploy the build outputs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/s3-workflow-ios.png' />
 
@@ -29,7 +29,7 @@ The input values are as follows:
 
 :::info
 
-It is highly recommended to add the keys as [secret environment variables](../environment-variables/managing-variables.md) instead of typing them here for security purposes.
+It is highly recommended to add the keys as [secret environment variables](/environment-variables/managing-variables) instead of typing them here for security purposes.
 
 :::
 

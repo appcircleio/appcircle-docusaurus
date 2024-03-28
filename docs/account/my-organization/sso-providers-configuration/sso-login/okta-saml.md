@@ -34,7 +34,7 @@ Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO fo
 
 ## SSO Login
 
-- To start, go to [My Organization](../my-organization.md) > Integrations screen and press the **Connect** button next to SSO Login under the **Connections** section.
+- To start, go to [My Organization](/account/my-organization) > Integrations screen and press the **Connect** button next to SSO Login under the **Connections** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login1.png' />
 
@@ -57,7 +57,6 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 - This screen will auto-generate an URL for the Enterprise Store and Distribute
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
-
 
 ## Okta App Integration
 
@@ -163,7 +162,7 @@ The live channel should be available for both groups in this case.
 
 - Hit `Save` button and save the SAML configuration on Appcircle.
 
-- To enable SSO Login for the Enterprise App Store, you should navigate to the **Enterprise App Store -> Settings**  and then click on the `Activate` button next to SSO Login
+- To enable SSO Login for the Enterprise App Store, you should navigate to the **Enterprise App Store -> Settings** and then click on the `Activate` button next to SSO Login
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-enterprisestore-sso-login.png' />
 

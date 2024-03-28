@@ -20,7 +20,7 @@ Only Enterprise accounts support SSO.
 
 ### Enable SSO
 
-SSO can only be enabled by the organization's administrator. To start, go to [My Organization](../my-organization.md) Integration screen and press the "Enable Login" button under the "APPCIRCLE LOGIN" section.
+SSO can only be enabled by the organization's administrator. To start, go to [My Organization](/account/my-organization) Integration screen and press the "Enable Login" button under the "APPCIRCLE LOGIN" section.
 
 ### Identity Providers
 

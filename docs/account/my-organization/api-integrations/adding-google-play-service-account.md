@@ -71,4 +71,4 @@ Make sure this account has access to **Releases**, **Store presence**, and **App
 
 Then click **Invite User**. Your account key is ready. 🎉
 
-To add a key, go to [My Organization](./my-organization.md) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section.
+To add a key, go to [My Organization](/account/my-organization) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section.
