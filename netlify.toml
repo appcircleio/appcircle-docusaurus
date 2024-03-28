@@ -39,28 +39,10 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/build/adding-a-build-profile"
-  to = "/build/manage-the-connections/adding-a-build-profile"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/build/building-android-applications"
-  to = "/build/platform-build-guides/building-android-applications"
-  status = 301
-  force = true
-
 # Redirects for build-related changes
 [[redirects]]
   from = "/build/connections"
   to = "/build/manage-the-connections"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/build/adding-a-build-profile"
-  to = "/build/manage-the-connections/adding-a-build-profile"
   status = 301
   force = true
 
@@ -402,12 +384,6 @@
   force = true
 
 [[redirects]]
-  from = "/build/adding-a-build-profile/connecting-to-azure"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-azure"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/build/adding-a-build-profile/connecting-to-gitlab"
   to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab"
   status = 301
@@ -450,24 +426,10 @@
   force = true
 
 [[redirects]]
-  from = "/distribute/apple-devices"
-  to = "/distribute/platform-specific-guidance/ios/apple-devices"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/account/email-connection"
   to = "/account/my-organization/notifications-and-communication/email-connection"
   status = 301
   force = true
-
-
-[[redirects]]
-  from = "/self-hosted-appcircle/configure-server/ldap-settings"
-  to = "/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings"
-  status = 301
-  force = true
-
 
 [[redirects]]
   from = "/self-hosted-appcircle/configure-server/login-configuration"
@@ -529,14 +491,6 @@
   status = 301
   force = true
 
-
-[[redirects]]
-  from = "/build/adding-a-build-profile/connecting-multiple-instance"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance"
-  status = 301
-  force = true
-
-
 [[redirects]]
   from = "/self-hosted-appcircle/configure-server/ssl-configuration"
   to = "/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration"
@@ -549,14 +503,6 @@
   to = "/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#enterprise-app-store"
   status = 301
   force = true
-
-
-[[redirects]]
-  from = "/build/adding-a-build-profile/connecting-multiple-instance"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance"
-  status = 301
-  force = true
-
 
 [[redirects]]
   from = "/self-hosted-appcircle/configure-server/ldap-brutefore"
@@ -678,7 +624,7 @@
   status = 301
 
 [[redirects]]
-  from ="/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+  from = "/adding-a-build-profile/connecting-to-private-repository-via-ssh"
   to = "/build/adding-a-build-profile/connecting-to-private-repository-via-ssh"
   status = 301
 
