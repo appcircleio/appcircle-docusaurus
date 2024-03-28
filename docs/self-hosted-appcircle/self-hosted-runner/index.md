@@ -41,6 +41,12 @@ See [pricing](https://appcircle.io/pricing) and feature comparison table for det
 - Don't need to have a clean instance for every build job (reusable caches)
 - Not waiting in build queue for other users' build jobs (private queue)
 
+:::info
+On self-hosted runners, you can have a clean and isolated instance for each build, just like Appcircle Cloud.
+
+In this case, we recommend running a single runner per (virtual) machine for better isolation if you need concurrency. Using a well established virtualization infrastructure, such as a virtual machine or Docker container, for self-hosted runner helps you to run every build on a clean state.
+:::
+
 ## Runner Pools
 
 Runner pools are a way of grouping many runners with similar build capabilities and assigning them to build profiles with a single click. You can group and organize your runners according to installed platform tools, operating systems or architectures. You can use any number of pools for your needs.
