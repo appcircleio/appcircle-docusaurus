@@ -12,7 +12,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Some additional Enterprise App Store settings can be customized for self-hosted installations in order to make them more tailored to your users.
 
-You can change how your store looks using the **[Customize](../../enterprise-appstore/customize-ent-store.md)** screen in the Enterprise App Store module, just like you can with Appcircle Cloud.
+You can change how your store looks using the **[Customize](/enterprise-appstore/enterprise-app-store-setup/customize-ent-store)** screen in the Enterprise App Store module, just like you can with Appcircle Cloud.
 
 For self-hosted specific settings, you should follow the documentation below.
 
@@ -114,6 +114,7 @@ You should see the message: _"All services are running successfully."_
 To see the new configuration updates on the store, follow the steps below:
 
 - Go to the Enterprise App Store page of your organization with a browser.
+
   - For example, `store.spacetech.com`
 
 - Check the tab title. For our sample configuration,

@@ -148,7 +148,7 @@ This operation needs **[reset](https://docs.appcircle.io/self-hosted-appcircle/i
 :::
 
 :::tip
-If you only want to change the URL of the **Testing Distribution** or **Enterprise App Store**, you should follow the [custom domain](./configure-server/ssl-configuration.md#custom-domain) configuration document to assign a custom domain without resetting the Appcircle server.
+If you only want to change the URL of the **Testing Distribution** or **Enterprise App Store**, you should follow the [custom domain](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) configuration document to assign a custom domain without resetting the Appcircle server.
 :::
 
 You can change the default subdomains as per your needs at the first installation time of the Appcircle server.
@@ -216,7 +216,7 @@ For example, if you already have the `keycloak` key in global.yaml, you must jus
 
 ```yaml
 external:
-  mainDomain: '.spacetech.com'
+  mainDomain: ".spacetech.com"
 ```
 
 :::caution
@@ -240,7 +240,7 @@ then the Appcircle dashboard URL will be `my-appcircle.spacetech.com`.
 :::warning
 If you have configured the Appcircle server as HTTPS, as an extra step, it may be required to change the SSL certificates in the `global.yaml` if they are not compatible with your new subdomains.
 
-See the **[SSL configuration](./configure-server/ssl-configuration.md)** document for details.
+See the **[SSL configuration](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration)** document for details.
 :::
 
 When the `global.yaml` changes are ready to apply, follow the below steps:
@@ -258,7 +258,7 @@ When the `global.yaml` changes are ready to apply, follow the below steps:
 ```
 
 :::info
-The `reset` step is optional. If you are installing for the first time, which means that you have  never run the `up` command and used the system, then you don't need to cleanup anything.
+The `reset` step is optional. If you are installing for the first time, which means that you have never run the `up` command and used the system, then you don't need to cleanup anything.
 
 For details, you can see the [reset configuration](./install-server/docker.md/#reset-configuration) section in the documentation.
 :::

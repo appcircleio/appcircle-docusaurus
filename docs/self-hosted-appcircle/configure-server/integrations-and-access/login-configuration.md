@@ -150,7 +150,7 @@ If this setting is set to `on`, then your users will be able to change their own
 :::tip
 The login username for Appcircle is an email address.
 
-Users can edit email from [My Account > My Details](../../account/my-account/my-details.md) screen.
+Users can edit email from [My Account > My Details](/account/my-account/account-management/my-details) screen.
 :::
 
 In order to prevent users from changing their email addresses by themselves, you should keep this setting `off`.
