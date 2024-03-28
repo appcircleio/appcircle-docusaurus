@@ -311,8 +311,6 @@
   status = 301
   force = true
 
-  ////////////////////////////////////////////////////////////////////////////
-
 [[redirects]]
   from = "/build/building-ios-applications"
   to = "/build/platform-build-guides/building-ios-applications"
