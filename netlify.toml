@@ -628,13 +628,6 @@
 
 
 [[redirects]]
-  from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh"
-  status = 301
-  force = true
-
-
-[[redirects]]
   from = "/configure-server/ldap-settings.md#appcircle-login-with-ldap"
   to = "/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#appcircle-login-with-ldap"
   status = 301
