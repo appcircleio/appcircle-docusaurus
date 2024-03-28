@@ -72,3 +72,38 @@ Child organization can't enable SSO.
 When you connect your Identity Provider, please open a new incognito window and test the SSO integration. Please only log off when you can log in with SSO credentials. If the connection doesn't work, you need to review your settings.
 
 :::
+
+### Inviting a User to the Organization
+
+If you configure the SSO settings and ask a user to join the organization, an email will be delivered to the user's inbox.
+
+The invitation link in the email will send the user to the SSO login page immediately. As a result, the user will not need to click the SSO button and input their SSO alias.
+
+### SSO Login Direct Link
+
+If you wish to log in to the Appcircle dashboard directly using the integrated SSO you set up for your company, you can use an auto-redirect URL.
+
+Below is the URL template for direct login with SSO for Appcircle Cloud.
+
+```URL
+https://my.appcircle.io/sso/${SSO_ALIAS}
+```
+
+For example, if you configured an SSO and your **SSO alias** in the Appcircle configuration is `spacetechsso`, you should use the URL below to log in straight to the SSO:
+
+```URL
+https://my.appcircle.io/sso/spacetechsso
+```
+
+Notice that the name `spacetechsso` in the SSO URL above is the SSO alias. You should replace it with your own SSO alias and use it.
+
+:::info
+If you are a self-hosted Appcircle user, you can use the same method too. The only difference will be in the URL.
+
+If you're using `https://my.appcircle.spacetech.com` to access the Appcircle dashboard, for instance, your SSO direct login URL should be
+
+- `https://my.appcircle.spacetech.com/sso/spacetechsso`
+
+:::
+
+After you enter the SSO login URL specified above, you should be redirected to the SSO login page directly or to the Appcircle dashboard if you have already authenticated with the SSO.

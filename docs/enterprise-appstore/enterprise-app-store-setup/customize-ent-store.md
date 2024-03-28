@@ -33,7 +33,7 @@ It's possible to use a custom domain for the Enterprise Store. You need to have 
 
 Open your DNS provider's website and add a CNAME with the below details
 
-**Name:** Your subdomain name. Ex. _store_
+**Name:** Your subdomain name. Ex. **store**
 
 **Destination:** _**store-domain.appcircle.io**_
 
