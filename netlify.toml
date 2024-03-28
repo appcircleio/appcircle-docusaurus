@@ -208,7 +208,7 @@
 
 [[redirects]]
   from = "/workflows/common-workflow-steps/git-clone"
-  to = "/workflows/common-steps/build-and-test/git-clone"
+  to = "/workflows/common-workflow-steps/build-and-test/git-clone"
   status = 301
   force = true
 
@@ -220,7 +220,7 @@
 
 [[redirects]]
   from = "/workflows/android-specific-workflow-steps/android-sign"
-  to = "/workflows/android-specific-steps/distribution/android-sign"
+  to = "/workflows/android-specific-workflow-steps/distribution/android-sign"
   status = 301
   force = true
 
@@ -232,46 +232,40 @@
 
 # Redirects for common workflow steps
 [[redirects]]
-  from = "/workflows/common-workflow-steps/git-clone"
-  to = "/workflows/common-steps/build-and-test/git-clone"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/workflows/common-workflow-steps/custom-script"
-  to = "/workflows/common-steps/build-and-test/custom-script"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
   status = 301
   force = true
 
 # Redirects for Flutter workflow steps
 [[redirects]]
   from = "/workflows/flutter-specific-workflow-steps/flutter-test"
-  to = "/workflows/flutter-specific-steps/build-and-test/flutter-test"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-test"
   status = 301
   force = true
 
   [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/firebase-upload-dsym"
-  to = "/workflows/ios-specific-steps/distribution/firebase-upload-dsym"
+  to = "/workflows/ios-specific-workflow-steps/distribution/firebase-upload-dsym"
   status = 301
   force = true
 
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/slather"
-  to = "/workflows/ios-specific-steps/build-and-test/slather"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/slather"
   status = 301
   force = true
 
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/swiftlint"
-  to = "/workflows/ios-specific-steps/build-and-test/swiftlint"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/swiftlint"
   status = 301
   force = true
 
 # Redirects for workflow distribution steps
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/carthage"
-  to = "/workflows/ios-specific-steps/build-and-test/carthage"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/carthage"
   status = 301
   force = true
 
@@ -283,7 +277,7 @@
 
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/xcode-select"
-  to = "/workflows/ios-specific-steps/build-and-test/xcode-select"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcode-select"
   status = 301
   force = true
 
@@ -301,7 +295,7 @@
 
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-testing"
-  to = "/workflows/ios-specific-steps/build-and-test/xcodebuild-for-testing"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-testing"
   status = 301
   force = true
 
@@ -755,7 +749,7 @@
 
 [[redirects]]
   from = "/build/building-flutter-applications"
-  to = "/build/platform-build-guides/building-flutter-applications/building-flutter-applications"
+  to = "/build/platform-build-guides/building-flutter-applications"
   status = 301
 
 [[redirects]]
