@@ -44,7 +44,7 @@ If you have filled in the necessary variables in the **Configuration** section, 
 1. The input corresponding to the 1st field: `$AC_MODULE`
 2. The input corresponding to the 2nd field: `$AC_VARIANTS`
 3. The input corresponding to the 3rd field: `$AC_OUTPUT_TYPE`
-   :::
+:::
 
 :::tip
 If you are using Gradle 4.3 and above in your project, you can just use the `--scan` flag in the build step to enable build scans. For existing projects, you may need to add the Gradle Scan (Gradle Enterprise) plugin. For more information, please refer to https://scans.gradle.com/
