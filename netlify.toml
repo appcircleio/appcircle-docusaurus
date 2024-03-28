@@ -700,3 +700,218 @@
   from ="/adding-a-build-profile/connecting-to-private-repository-via-ssh"
   to = "/build/adding-a-build-profile/connecting-to-private-repository-via-ssh"
   status = 301
+
+[[redirects]]
+  from = "/account/my-account/active-sessions"
+  to = "/account/my-account/account-management/active-sessions"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/authenticator-two-factor-authentication"
+  to = "/account/my-account/account-management/authenticator-two-factor-authentication"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/change-password"
+  to = "/account/my-account/account-management/change-password"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/delete-account"
+  to = "/account/my-account/account-management/delete-account"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/federated-identity-linked-login-providers"
+  to = "/account/my-account/account-management/federated-identity-linked-login-providers"
+  status = 301
+
+[[redirects]]
+  from = "/account/sign-up-login"
+  to = "/account/my-account/sign-up-login"
+  status = 301
+
+[[redirects]]
+  from = "/account/slack/slack-notifications"
+  to = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso/single-sign-on"
+  to = "/account/my-organization/sso-providers-configuration/single-sign-on"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso-login/okta-saml"
+  to = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
+  status = 301
+
+[[redirects]]
+  from = "/build/build-profile-branch-operations"
+  to = "/build/build-process-management/build-profile-branch-operations"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile/index"
+  to = "/build/manage-the-connections/adding-a-build-profile/index"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-android-applications/android-signing-for-google-play"
+  to = "/build/platform-build-guides/building-android-applications/android-signing-for-google-play"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-android-applications/index"
+  to = "/build/platform-build-guides/building-android-applications/index"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-flutter-applications"
+  to = "/build/platform-build-guides/building-flutter-applications/building-flutter-applications"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-ionic-projects-with-custom-scripts"
+  to = "/build/platform-build-guides/building-ionic-projects-with-custom-scripts"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/firebase-test-lab-for-android"
+  to = "/continuous-testing/android-testing/firebase-test-lab-for-android"
+  status = 301
+
+[[redirects]]
+  from = "/distribute/testing-groups"
+  to = "/distribute/testing-management/testing-groups"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/configure-ent-profile"
+  to = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile"
+  status = 301
+
+[[redirects]]
+  from = "/environment-variables/using-environment-variables-in-android-projects"
+  to = "/environment-variables/platform-specific-usage/using-environment-variables-in-android-projects"
+  status = 301
+
+[[redirects]]
+  from = "/environment-variables/using-environment-variables-in-ios-projects"
+  to = "/environment-variables/platform-specific-usage/using-environment-variables-in-ios-projects"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/deploying-web-apps-to-aws-amplify-console"
+  to = "/integrations/deployment-guides/deploying-web-apps-to-aws-amplify-console"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/appdome-integration"
+  to = "/integrations/integration-guides/appdome-integration"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/increasing-the-version-number-automatically-for-ios-and-android"
+  to = "/integrations/workflow-optimization/increasing-the-version-number-automatically-for-ios-and-android"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/using-fastlane-in-the-workflows"
+  to = "/integrations/workflow-optimization/using-fastlane-in-the-workflows"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/appcircle-cli"
+  to = "/self-hosted-appcircle/configure-server/advanced-configuration/appcircle-cli"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/cache-size-configuration"
+  to = "/self-hosted-appcircle/configure-server/advanced-configuration/cache-size-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-dependency-report"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/android-dependency-report"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/appsweep-mobile-security-testing"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/appsweep-mobile-security-testing"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/post-processor"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/post-processor"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/app-center-android-distribution"
+  to = "/workflows/android-specific-workflow-steps/distribution/app-center-android-distribution"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso"
+  to = "/workflows/android-specific-workflow-steps/distribution/browserstack-app-automate-espresso"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/authanticate-with-netrc"
+  to = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/export-build-artifacts"
+  to = "/workflows/common-workflow-steps/build-and-test/export-build-artifacts"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/file-size-check"
+  to = "/workflows/common-workflow-steps/build-and-test/file-size-check"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/sonarqube"
+  to = "/workflows/common-workflow-steps/build-and-test/sonarqube"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-analyze"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-analyze"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-build-for-web"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-build-ios"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-ios"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-install"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-install"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-ios-simulator"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/appcenter-ios-distribution"
+  to = "/workflows/ios-specific-workflow-steps/distribution/appcenter-ios-distribution"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/browserstack-app-automation"
+  to = "/workflows/ios-specific-workflow-steps/distribution/browserstack-app-automation"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/install-certificates-provisions"
+  to = "/workflows/ios-specific-workflow-steps/distribution/install-certificates-provisions"
+  status = 301
