@@ -46,12 +46,6 @@
   force = true
 
 [[redirects]]
-  from = "/build/build-process-management/build-profile-configuration"
-  to = "/build/build-process-management/build-profile-configuration"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/build/building-android-applications"
   to = "/build/platform-build-guides/building-android-applications"
   status = 301
@@ -729,11 +723,6 @@
 [[redirects]]
   from = "/account/sign-up-login"
   to = "/account/my-account/sign-up-login"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization"
-  to = "/account/my-organization/my-organization"
   status = 301
 
 [[redirects]]
