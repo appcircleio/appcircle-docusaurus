@@ -31,7 +31,7 @@ See [pricing](https://appcircle.io/pricing) and feature comparison table for det
 - Has some operating system level optimizations
 - Preinstalled packages and tools regularly updated
 - Are managed and maintained by Appcircle
-- Provides a clean, isolated instance for every build job
+- Provides a clean instance for every build job
 - Can take longer to start your build (waiting in queue)
 
 **Self-hosted runners:**
