@@ -31,7 +31,7 @@ See [pricing](https://appcircle.io/pricing) and feature comparison table for det
 - Has some operating system level optimizations
 - Preinstalled packages and tools regularly updated
 - Are managed and maintained by Appcircle
-- Provides a clean, isolated instance for every build job
+- Provides a clean instance for every build job
 - Can take longer to start your build (waiting in queue)
 
 **Self-hosted runners:**
@@ -40,6 +40,12 @@ See [pricing](https://appcircle.io/pricing) and feature comparison table for det
 - Customizable to your hardware, operating system, and security requirements
 - Don't need to have a clean instance for every build job (reusable caches)
 - Not waiting in build queue for other users' build jobs (private queue)
+
+:::info
+On self-hosted runners, you can have a clean and isolated instance for each build, just like Appcircle Cloud.
+
+In this case, we recommend running a single runner per (virtual) machine for better isolation if you need concurrency. Using a well-established virtualization infrastructure, such as a virtual machine or Docker container, for a self-hosted runner also helps you to run every build on a clean state.
+:::
 
 ## Runner Pools
 
