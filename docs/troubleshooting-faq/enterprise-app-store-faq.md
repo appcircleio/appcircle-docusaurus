@@ -1,6 +1,6 @@
 ---
-title: Enterprise App Store Frequently Asked Questions (FAQ)
-metaTitle: Enterprise App Store Frequently Asked Questions (FAQ)
+title: Enterprise App Store FAQ
+metaTitle: Enterprise App Store FAQ
 metaDescription: Find answers to frequently asked questions about Appcircle's Enterprise App Store feature.
 sidebar_position: 2
 ---

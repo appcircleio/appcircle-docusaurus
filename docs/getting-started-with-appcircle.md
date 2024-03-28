@@ -1,7 +1,7 @@
 ---
-title: 'Getting Started With Appcircle'
+title: "Getting Started With Appcircle"
 metaTitle: Getting Started With Appcircle"
-metaDescription: 'Getting Started With Appcircle'
+metaDescription: "Getting Started With Appcircle"
 sidebar_position: 2
 ---
 
@@ -47,11 +47,11 @@ You can also connect to public repositories directly or use SSH for custom repos
 
 Appcircle will fetch all your branches and commits in your repository and lets you build any commit you want to test your application.
 
-<ContentRef url="/build/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
 
 Configure your build profile and select project parameters, signing options, distribution profiles and environment variables. Your project will be built using these settings and options.
 
-<ContentRef url="/build/build-profile-configuration">Build Profile Configuration Overview</ContentRef>
+<ContentRef url="/build/build-process-management/build-profile-configuration">Build Profile Configuration Overview</ContentRef>
 
 You can customize your build flow using our workflow editor. Workflow editor allows you to be in control of the build process. You can add or remove build steps, add your custom scripts for advanced build processes.
 
@@ -59,7 +59,7 @@ You can customize your build flow using our workflow editor. Workflow editor all
 
 You can also automate your build process by telling Appcircle to automatically build your code with every push to your repository. There are also options including tagged pushes for more advanced cases.
 
-<ContentRef url="/build/build-manually-or-with-triggers">
+<ContentRef url="/build/build-process-management/build-manually-or-with-triggers">
   Build Manually or Automatically with Webhooks and Triggers
 </ContentRef>
 
@@ -71,7 +71,7 @@ Distribution is a very major and important step for testing and deploying a mobi
 
 Create testing groups, add testers to testing groups and assign these groups to distribution profiles to distribute your build to testers so that they can download and install applications on their devices.
 
-<ContentRef url="/distribute/testing-groups">Testing Groups</ContentRef>
+<ContentRef url="/distribute/testing-management/testing-groups">Testing Groups</ContentRef>
 
 If you have a team of testers, you can create testing groups and distribute builds to your testers manually or automatically after each build and let them run the application on their mobile devices.
 

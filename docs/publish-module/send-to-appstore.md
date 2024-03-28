@@ -90,7 +90,7 @@ You can use `Send to App Store` to send an application to TestFlight. For this p
 However, Appcircle will only send to TestFlight in the `Send to TestFlight` step. See details [here](#send-apps-to-testflight).
 :::
 
-When you complete configuring the publish flow, add an application version by [configuring the build module](index.md#publish-profile) or [manually adding a version](index.md#add-version) by binary upload.
+When you complete configuring the publish flow, add an application version by [configuring the build module](/publish-module/#publish-profile) or [manually adding a version](/publish-module/#add-version) by binary upload.
 
 Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
@@ -128,7 +128,7 @@ In the step settings, you can customize the **Xcode Version**, select an **App S
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-testflight-in.png' />
 
-When you complete configuring the publish flow, add an application version by [configuring the build module ](index.md#publish-profile) or [manually adding a version](index.md#add-version) by binary upload.
+When you complete configuring the publish flow, add an application version by [configuring the build module ](/publish-module/#publish-profile) or [manually adding a version](/publish-module/#add-version) by binary upload.
 
 Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 

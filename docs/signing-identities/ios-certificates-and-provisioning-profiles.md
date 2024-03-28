@@ -1,5 +1,5 @@
 ---
-title: iOS Certificates & Provisioning Profiles
+title: iOS Signing
 metaTitle: iOS Certificates & Provisioning Profiles
 metaDescription: iOS Certificates & Provisioning Profiles
 sidebar_position: 1
@@ -90,7 +90,7 @@ There is no need for device registration, but Apple requires the binary to be pr
 
 **Prerequisite**: To list all the signing identities saved in your Apple Developer Account, you need to add an App Store Connect API Key. Visit the link below for instructions.
 
-<ContentRef url="/account/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
+<ContentRef url="/account/my-organization/api-integrations/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
 When you go to add a new Provisioning Profile, you'll see the option **Get Provisioning Profiles from App Store Connect**. Select it to see the list of identities fetched from Apple.
 
@@ -120,7 +120,6 @@ You can also see the matching application ID and expiration date of the profiles
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/02-07-Provision-Details.png' />
 
-
 ### 3. Generate Or Upload iOS Certificates
 
 To generate or upload your iOS certificate, select **iOS Certificates** from the signing module.
@@ -147,12 +146,11 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/02-07-Generate-iOS-Cert.png' />
 
-
 - Download your CSR file
 - Go to Apple Developer Portal and select Certificates, IDs & Profiles -> Certificates from the left menu
-<Screenshot url='https://cdn.appcircle.io/docs/assets/apple-addcertificate.png' />
+  <Screenshot url='https://cdn.appcircle.io/docs/assets/apple-addcertificate.png' />
 
--  Select the type of certificate you want to create. If you want to distribute to TestFlight,Adhoc or AppStore, you should select Apple Distribution. If you're creating a certificate for local development environment, you should select Apple Development.
+- Select the type of certificate you want to create. If you want to distribute to TestFlight,Adhoc or AppStore, you should select Apple Distribution. If you're creating a certificate for local development environment, you should select Apple Development.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/apple-select-certificate-type.png' />
 
@@ -192,11 +190,12 @@ For both iOS or Android build projects, you need to assign your signing identiti
 You can sign your application either with automatic signing or with manual signing.
 
 ### Automatic Signing
+
 Automatic signing allows you to sign your application without uploading any provisioning profiles. Profile creation is done automatically by Xcode. Following prequisites must be met for automatic signing to work:
 
 - Project must be built with Xcode 13 or higher.
 - Both Developer and Distribution certificates must be added to Appcircle.
-- App Store Connect Key must be added to Appcircle. 
+- App Store Connect Key must be added to Appcircle.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-configuration-auto-code-sign.png" />
 
@@ -207,7 +206,6 @@ You must also select distribution type from the dropdown menu. If you're uploadi
 If you don't upload developer and distribution certificates, Xcode will create new certificates each time you start a build. Since you don't have the private keys, you will not be able to use those certificates later on. If you don't want to clutter your account with unused certificates, you must upload both developer and distribution certificates.
 
 :::
-
 
 ### Manual Signing
 

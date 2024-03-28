@@ -1,38 +1,38 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const rlc = require('remark-link-card');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const rlc = require("remark-link-card");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Appcircle Docs',
-  tagline: 'Guides and Docs for Appcircle.io',
-  url: 'https://docs.appcircle.io',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'appcircleio', // Usually your GitHub org/user name.
-  projectName: 'appcircle-docusaurus', // Usually your repo name.
-
+  title: "Appcircle Docs",
+  tagline: "Guides and Docs for Appcircle.io",
+  url: "https://docs.appcircle.io",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "appcircleio", // Usually your GitHub org/user name.
+  projectName: "appcircle-docusaurus", // Usually your repo name.
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [rlc],
           // Please change this to your repo.
-          editUrl: 'https://github.com/appcircleio/appcircle-docusaurus/tree/master/',
-          routeBasePath: '/',
+          editUrl:
+            "https://github.com/appcircleio/appcircle-docusaurus/tree/master/",
+          routeBasePath: "/",
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -41,14 +41,19 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
       navbar: {
-        title: '',
+        title: "",
         logo: undefined,
         items: [
           {
-            type: 'html',
-            position: 'left',
-            className: ' navbar__logo navbar__item_logo_container',
+            type: "html",
+            position: "left",
+            className: " navbar__logo navbar__item_logo_container",
             value: `
             <a href="https://appcircle.io" target="_blank">
               <svg width="100%" height="100%" viewBox="0 0 281 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,94 +72,94 @@ const config = {
             `,
           },
           {
-            to: '/',
-            position: 'left',
-            label: 'Documentation',
+            to: "/",
+            position: "left",
+            label: "Documentation",
           },
           {
-            to: 'updates/release-notes',
-            position: 'left',
-            label: 'Release Notes',
+            to: "updates/release-notes",
+            position: "left",
+            label: "Release Notes",
           },
           {
-            href: 'https://blog.appcircle.io',
-            label: 'Blog',
-            position: 'right',
+            href: "https://blog.appcircle.io",
+            label: "Blog",
+            position: "right",
           },
           {
-            href: 'https://appcircle.io/start',
-            label: 'Dashboard',
-            position: 'right',
+            href: "https://appcircle.io/start",
+            label: "Dashboard",
+            position: "right",
           },
           {
-            type: 'dropdown',
+            type: "dropdown",
             items: [
               {
-                label: 'Slack',
-                href: 'https://join.slack.com/t/appcircleio/signup',
+                label: "Slack",
+                href: "https://join.slack.com/t/appcircleio/signup",
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/appcircleio',
+                label: "Twitter",
+                href: "https://twitter.com/appcircleio",
               },
               {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/appcircleio',
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/company/appcircleio",
               },
             ],
-            label: 'Community',
-            position: 'right',
+            label: "Community",
+            position: "right",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         logo: {
-          src: 'https://cdn.appcircle.io/docs/footer-logo-full.png',
-          alt: 'Appcircle Logo',
-          href: 'https://appcircle.io',
+          src: "https://cdn.appcircle.io/docs/footer-logo-full.png",
+          alt: "Appcircle Logo",
+          href: "https://appcircle.io",
           width: 160,
           height: 33,
         },
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Documentation',
-                type: 'doc',
-                to: '/',
+                label: "Documentation",
+                type: "doc",
+                to: "/",
               },
               {
-                label: 'Release Notes',
-                type: 'doc',
-                to: 'updates/release-notes',
+                label: "Release Notes",
+                type: "doc",
+                to: "updates/release-notes",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'Slack',
-                href: 'https://join.slack.com/t/appcircleio/signup',
+                label: "Slack",
+                href: "https://join.slack.com/t/appcircleio/signup",
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/appcircleio',
+                label: "Twitter",
+                href: "https://twitter.com/appcircleio",
               },
               {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/appcircleio',
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/company/appcircleio",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/appcircleio/appcircle-docusaurus',
+                label: "GitHub",
+                href: "https://github.com/appcircleio/appcircle-docusaurus",
               },
             ],
           },
@@ -164,34 +169,34 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['ruby', 'groovy', 'java','kotlin'],
+        additionalLanguages: ["ruby", "groovy", "java", "kotlin"],
       },
       algolia: {
-        apiKey: 'b56a5dc4e52ec9e97ad93981cc668c4a',
-        indexName: 'appcircle',
-        appId: '4U9FKQJ034',
+        apiKey: "b56a5dc4e52ec9e97ad93981cc668c4a",
+        indexName: "appcircle",
+        appId: "4U9FKQJ034",
         contextualSearch: false,
       },
       imageZoom: {
-        selector: '.screenshot, .image-narrow',
-        options: { // medium-zoom options
+        selector: ".screenshot, .image-narrow",
+        options: {
+          // medium-zoom options
           margin: 24,
-          scrollOffset: 0
+          scrollOffset: 0,
         },
       },
     }),
-    plugins: [
-      [
-        '@docusaurus/plugin-google-analytics',
-        {
-          trackingID: 'UA-40954643-12',
-          anonymizeIP: true,
-        },
-      ],
-      'docusaurus-plugin-sass',
-      'plugin-image-zoom'
+  plugins: [
+    [
+      "@docusaurus/plugin-google-analytics",
+      {
+        trackingID: "UA-40954643-12",
+        anonymizeIP: true,
+      },
     ],
-  
+    "docusaurus-plugin-sass",
+    "plugin-image-zoom",
+  ],
 };
 
 module.exports = config;

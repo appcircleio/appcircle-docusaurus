@@ -36,7 +36,7 @@ sudo ./ac-self-hosted.sh -i
 - docker | podman
 
 :::caution
-You must follow one of the Appcircle server installation methods (Docker or Podman) and [configure](../install-server/docker.md#3-configure) `global.yaml` as your project's needs until the [run server](../install-server/docker.md#5-run-server) section.
+You must follow one of the Appcircle server installation methods (Docker or Podman) and [configure](/self-hosted-appcircle/install-server/docker#3-configure) `global.yaml` as your project's needs until the [run server](/self-hosted-appcircle/install-server/docker#5-run-server) section.
 
 Before running the server, you can install container images offline and then run the server.
 :::
@@ -51,7 +51,7 @@ Without this file, you will not be able to access the offline container images r
 
 You must configure your project before using offline container images.
 
-Please refer to [configuration section](../install-server/docker.md#3-configure) from our installation pages.
+Please refer to [configuration section](/self-hosted-appcircle/install-server/docker#3-configure) from our installation pages.
 
 After you have configured your project, you can refer to this page to run your server with offline container images.
 
@@ -71,9 +71,9 @@ You should follow these steps on a Linux server that should have an active inter
 After copying the `container-images` directory to the actual Appcircle server, follow the remaining steps on the Appcircle server.
 :::
 
-- Go to the Appcircle server [installation](../install-server/docker.md#1-download) page.
+- Go to the Appcircle server [installation](/self-hosted-appcircle/install-server/docker#1-download) page.
 
-- Download the zip file and `unzip` it according to the [instructions](../install-server/docker.md#1-download) there.
+- Download the zip file and `unzip` it according to the [instructions](/self-hosted-appcircle/install-server/docker#1-download) there.
 
 - Your organization should have a `cred.json` file. Copy that `cred.json` file inside the `appcircle-server` directory that you just unzipped.
 
@@ -119,7 +119,7 @@ If you are using Podman as container engine;
 podman image ls
 ```
 
-Now you are ready to `up` (start) the Appcircle server. You can refer back to the [Run Server](../install-server/docker.md#5-run-server) section for details.
+Now you are ready to `up` (start) the Appcircle server. You can refer back to the [Run Server](/self-hosted-appcircle/install-server/docker#5-run-server) section for details.
 
 ### Install on a Server With Internet Access
 
@@ -143,7 +143,7 @@ So the offline installation step is compatible with your custom registries.
 This command will download container images and load them into the container engine that you use in your system. (Docker or Podman)
 :::
 
-Now you are ready to `up` (start) the Appcircle server. You can refer back to the [Run Server](../install-server/docker.md#5-run-server) section for details.
+Now you are ready to `up` (start) the Appcircle server. You can refer back to the [Run Server](/self-hosted-appcircle/install-server/docker#5-run-server) section for details.
 
 ## Upgrade
 
@@ -155,7 +155,7 @@ You don't need to change your `global.yaml` or reset your data.
 Upgrading your Appcircle server with offline container images is fully compatible with your already-installed Appcircle server.
 :::
 
-First, you need to update your self-hosted Appcircle server package. After you [download and unzip](../update.md#1-download-latest) the Appcircle server package, you can return to this page and follow the instructions below.
+First, you need to update your self-hosted Appcircle server package. After you [download and unzip](/self-hosted-appcircle/update#1-download-latest) the Appcircle server package, you can return to this page and follow the instructions below.
 
 - Go into the self-hosted Appcircle server directory.
 

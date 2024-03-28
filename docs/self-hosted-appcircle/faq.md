@@ -35,13 +35,13 @@ The podman network backend should be `netavark`. You can check the current setti
 podman info | grep -i networkBackend
 ```
 
-If you need to use a proxy on the Appcircle server, you should configure proxy settings according to the [Proxy Configuration](./configure-server/proxy-configuration.md) document.
+If you need to use a proxy on the Appcircle server, you should configure proxy settings according to the [Proxy Configuration](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration) document.
 
 ### We are facing "manifest not found" error when we run the `up` command.
 
 If you are using the Nexus registry and are facing a "manifest not found" error, this is an expected case to occur. Nexus proxy has a known bug while pulling multiple container images. You should pull images one by one as a workaround.
 
-To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry.md#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
+To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
 ### Where should we download the zip package while we are updating?
 
@@ -49,9 +49,9 @@ Download the zip package of the appcircle server and extract it to the same fold
 
 ### How do I change Docker or Podman's data location?
 
-For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](./install-server/docker.md#change-the-docker-data-location) page.
+For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](/self-hosted-appcircle/install-server/docker#change-the-docker-data-location) page.
 
-For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./install-server/podman.md#change-the-podman-data-location) page.
+For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./install-server/podman#change-the-podman-data-location) page.
 
 ### I'm offline on the Appcircle dashboard on my browser.
 
@@ -148,7 +148,7 @@ This operation needs **[reset](https://docs.appcircle.io/self-hosted-appcircle/i
 :::
 
 :::tip
-If you only want to change the URL of the **Testing Distribution** or **Enterprise App Store**, you should follow the [custom domain](./configure-server/ssl-configuration.md#custom-domain) configuration document to assign a custom domain without resetting the Appcircle server.
+If you only want to change the URL of the **Testing Distribution** or **Enterprise App Store**, you should follow the [custom domain](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) configuration document to assign a custom domain without resetting the Appcircle server.
 :::
 
 You can change the default subdomains as per your needs at the first installation time of the Appcircle server.
@@ -216,7 +216,7 @@ For example, if you already have the `keycloak` key in global.yaml, you must jus
 
 ```yaml
 external:
-  mainDomain: '.spacetech.com'
+  mainDomain: ".spacetech.com"
 ```
 
 :::caution
@@ -240,7 +240,7 @@ then the Appcircle dashboard URL will be `my-appcircle.spacetech.com`.
 :::warning
 If you have configured the Appcircle server as HTTPS, as an extra step, it may be required to change the SSL certificates in the `global.yaml` if they are not compatible with your new subdomains.
 
-See the **[SSL configuration](./configure-server/ssl-configuration.md)** document for details.
+See the **[SSL configuration](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration)** document for details.
 :::
 
 When the `global.yaml` changes are ready to apply, follow the below steps:
@@ -258,9 +258,9 @@ When the `global.yaml` changes are ready to apply, follow the below steps:
 ```
 
 :::info
-The `reset` step is optional. If you are installing for the first time, which means that you have  never run the `up` command and used the system, then you don't need to cleanup anything.
+The `reset` step is optional. If you are installing for the first time, which means that you have never run the `up` command and used the system, then you don't need to cleanup anything.
 
-For details, you can see the [reset configuration](./install-server/docker.md/#reset-configuration) section in the documentation.
+For details, you can see the [reset configuration](./install-server/docker/#reset-configuration) section in the documentation.
 :::
 
 - Apply the configuration changes.
@@ -289,7 +289,7 @@ The first thing you should check is **PAT** permissions.
 
 If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
 
-For more details about configuring the outbound requests, you can refer to the [Outbound Requests](../build/adding-a-build-profile/connecting-to-gitlab.md#outbound-requests) section.
+For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
 
 ## Appcircle Runner FAQ
 
@@ -297,15 +297,15 @@ For more details about configuring the outbound requests, you can refer to the [
 
 The certificate of your organization should be trusted on the Appcircle runner virtual machines.
 
-You should refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates.md) page for more details.
+You should refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates) page for more details.
 
 ### We are facing an "SSL certificate is not valid yet" error on builds.
 
 The runner VMs cannot connect to the servers to update their date and time due to network restrictions.
 
-You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](./self-hosted-runner/runner-vm-setup.md#update-base-images) section.
+You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](./self-hosted-runner/runner-vm-setup#update-base-images) section.
 
-For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup.md#2-configure-base-runners-ntp-settings) section and follow the steps.
+For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) section and follow the steps.
 
 ### We can't register Appcircle runner to the server.
 
@@ -315,7 +315,7 @@ First, you should check if your Appcircle runner can access the Appcircle server
 curl -v https://api.appcircle.spacetech.com
 ```
 
-You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates.md) page to trust the root CA certificate of your organization.
+You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates) page to trust the root CA certificate of your organization.
 
 If you already trusted the root CA cert, you should check the Appcircle server's certificate. If it is too long, like 5 years, it should be trusted using the graphical user interface. You should open the Keychain Access application from the GUI and add the Appcircle server's certificate. After that, you should click on the certificate and select "Always trust".
 
