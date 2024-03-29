@@ -82,7 +82,7 @@ From now on, you will follow same installation steps seen below as other environ
 
 Appcircle provides ready-to-use macOS VM image especially for enterprise installations. It can be run on macOS Ventura or Sonoma `arm64` host.
 
-See details in [here](./runner-vm-setup.md).
+See details in [here](./runner-vm-setup).
 
 :::
 
@@ -148,9 +148,9 @@ cd appcircle-runner
 
 By default, self-hosted runner package is bundled with configuration for Appcircle-hosted cloud.
 
-:reminder_ribbon: If you're planning to use runner with [self-hosted appcircle](../install-server/docker.md) server, you must change `ASPNETCORE_BASE_API_URL` value in `appsettings.json` configuration file before going on.
+:reminder_ribbon: If you're planning to use runner with [self-hosted appcircle](/self-hosted-appcircle/install-server/docker) server, you must change `ASPNETCORE_BASE_API_URL` value in `appsettings.json` configuration file before going on.
 
-Please refer to details [here](../install-server/docker.md#connecting-runners) for sample configuration change.
+Please refer to details [here](/self-hosted-appcircle/install-server/docker#connecting-runners) for sample configuration change.
 
 :::
 
@@ -250,7 +250,7 @@ Install command used for runner configuration, both adds tools to your system an
 
 Restarting runner service will first stop service and start it again.
 
-See [here](./configure-runner/runner-service.md) for more details about runner service operations.
+See [here](./configure-runner/runner-service) for more details about runner service operations.
 
 :::
 

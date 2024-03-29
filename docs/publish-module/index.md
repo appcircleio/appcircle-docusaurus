@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 The Publish module will enable your applications to be published in the App Store, Google Play, and Huawei AppGallery stores. You can also submit your mobile applications to TestFlight.
 While publishing your mobile application to the stores, you can use predefined flows and customize them according to your specific publishing requirements.
-In addition to that, you can add new versions and publish your application to the stores without using the Build module.  
+In addition to that, you can add new versions and publish your application to the stores without using the Build module.
 
 Click on the **Publish** button on the left menu bar to go to the Publish module.
 
@@ -20,11 +20,11 @@ In order to use the Publish module, first connections must be provided for the r
 
 For detailed information on store **Connections**, follow the links below.
 
-|Store|Connection|
-|----------|-----------|
-|App Store|https://docs.appcircle.io/account/adding-an-app-store-connect-api-key|
-|Google Play| https://docs.appcircle.io/account/adding-google-play-service-account|
-|Huawei AppGallery| https://docs.appcircle.io/account/adding-huawei-api-key|
+| Store             | Connection                                                            |
+| ----------------- | --------------------------------------------------------------------- |
+| App Store         | https://docs.appcircle.io/account/adding-an-app-store-connect-api-key |
+| Google Play       | https://docs.appcircle.io/account/adding-google-play-service-account  |
+| Huawei AppGallery | https://docs.appcircle.io/account/adding-huawei-api-key               |
 
 ## Publish Profile
 
@@ -113,7 +113,7 @@ If group or variable definitions have been made in **Publish Variables**, you wi
 
 ### Publish Variables
 
-Variables, similar to the [environment variables](../environment-variables/index.md) in build, can be defined in this section to be used specifically in the publish flow for store submissions.
+Variables, similar to the [environment variables](/environment-variables) in build, can be defined in this section to be used specifically in the publish flow for store submissions.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-variables.png' />
 
