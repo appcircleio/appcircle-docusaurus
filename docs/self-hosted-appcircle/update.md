@@ -7,8 +7,6 @@ sidebar_position: 3
 
 # Overview
 
-[Minio Migration Update Page](./configure-server/minio-migration-update.md)
-
 As in cloud, we're releasing regular updates for self-hosted Appcircle server. You should keep your instance up-to-date in order to get latest features, bug fixes and improvements.
 
 When a new version of self-hosted Appcircle is released, you can update with below steps.
