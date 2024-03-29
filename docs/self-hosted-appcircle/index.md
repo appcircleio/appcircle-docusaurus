@@ -18,7 +18,7 @@ When we look at self-hosted Appcircle deployment as a whole, we will see below a
 To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/self-hosted_appcircle_v8.drawio.png). It will open the diagram in new browser tab.
 
 :::tip
-You can see all external network access details on the [Network Access](./configure-server/network-access.md) page.
+You can see all external network access details on the [Network Access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access) page.
 :::
 
 With the help of self-hosted runners as connected agents, you can have whole Appcircle in your own infrastructure and use all Appcircle features in your private cloud without any limitations.

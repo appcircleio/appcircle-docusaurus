@@ -27,9 +27,9 @@ If your runner version `1.3.12` or later, you can find it in the `scripts` direc
 
 If your runner version is older than `1.3.12`, then you can follow one of the steps below:
 
-- [Upgrade](../update.md#1-update-runner) the Appcircle runner to `1.3.12` or later
+- [Upgrade](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) the Appcircle runner to `1.3.12` or later
 
-- If you can't upgrade the Appcircle runner, you can [download the latest](../update.md#1-update-runner) runner package and get the script from there after you extract the archive.
+- If you can't upgrade the Appcircle runner, you can [download the latest](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) runner package and get the script from there after you extract the archive.
 
 Execute the bash script like below.
 
