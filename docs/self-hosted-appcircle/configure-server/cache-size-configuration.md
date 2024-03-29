@@ -5,6 +5,8 @@ metaDescription: Cache Size Configuration
 sidebar_position: 11
 ---
 
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+
 Appcircle has a limit for cache sizes that can be pushed or pulled on the build workflows.
 
 The `maxBodySize` parameter in the `global.yaml` file allows you to configure the maximum cache file size that can be uploaded with the [Cache Push](../../workflows/common-workflow-steps.md#cache-push) component.
@@ -31,19 +33,7 @@ cd appcircle-server
 
 - Edit the `global.yaml` file of your project.
 
-:::info
-
-The `spacetech` in the example codes below are example project name.
-
-Please find your own project name and replace `spacetech` with your project name.
-
-To see projects, you can check the `projects` directory.
-
-```bash
-ls -l ./projects
-```
-
-:::
+<SpacetechExampleInfo />
 
 ```bash
 vi ./projects/spacetech/global.yaml
