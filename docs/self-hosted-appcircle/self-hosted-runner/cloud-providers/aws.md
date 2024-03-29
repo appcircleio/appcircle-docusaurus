@@ -78,7 +78,7 @@ However, please make sure that you have a dedicated hosts service quota before p
 
 For more details about the AWS macOS EC2 instances, you can refer to the [AWS documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html).
 
-## Creating an Appcircle Runner
+## Creating an Mac Instance for Appcircle Runner
 
 After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle runner from the AMI.
 
@@ -93,6 +93,30 @@ If you have a self-hosted Appcircle server in AWS, its better to deploy the self
 :::
 
 ### Creating a Dedicated Host for MacOS EC2 Instance
+
+#### Check and Request the Dedicated Mac Instance Quota
+
+Before creating the dedicated host instance, you should check the dedicated service quota.
+
+- Head to the "Service Quotas" menu.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws13-dashboard.png' />
+
+- Head to the "AWS services". Filter the services click on the "Amazon Elastic Compute Cloud (Amazon EC2)" service.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws14-quotas-dashboard.png' />
+
+- Filter the services by "dedicated mac2" and select the relevant instance type service quota.
+
+  - In this tutorial, we will use "mac2" instance.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws15-dedicated-hosts.png' />
+
+- If this is your first quota request, you can request 1 quota.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws16-request.png' />
+
+#### Create the Dedicated Host
 
 - Head to the EC2 menu to create an dedicated instance.
 
