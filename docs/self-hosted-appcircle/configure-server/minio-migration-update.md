@@ -44,7 +44,7 @@ tmpfs           5.8G     0  5.8G   0% /sys/fs/cgroup
 tmpfs           1.2G     0  1.2G   0% /run/user/1000
 ```
 
-In the example above, there is
+@TODO
 
 ## Updating the Appcircle Server
 
@@ -184,6 +184,8 @@ You may also print the image hashes and script's version by using the below comm
 ## Notes
 
 ### If the Disk is Full-Filled While Migration
+
+@TODO
 
 ### Testing the Migration
 
