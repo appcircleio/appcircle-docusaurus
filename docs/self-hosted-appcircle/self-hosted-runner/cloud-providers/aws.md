@@ -8,6 +8,9 @@ sidebar_position: 1
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import RegisterAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_register-runner.mdx';
+import ConfigureAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_configure-runner.mdx';
+import RunAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_run-service.mdx';
+import BuildAppOutro from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_build-app-outro.mdx';
 
 ## Overview
 
@@ -69,9 +72,13 @@ While the process of creating a macOS EC2 instance on AWS differs slightly from 
 
 After selecting a macOS image during the instance creation process, users must specify the dedicated host they have previously provisioned, as outlined in the AWS documentation for comprehensive guidance.
 
+Furthermore, detailed instructions are provided below on creating a dedicated Mac instance, ensuring you have the necessary resources for seamless operation.
+
+However, please make sure that you have a dedicated hosts service quota before proceeding to create a dedicated host.
+
 For more details about the AWS macOS EC2 instances, you can refer to the [AWS documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html).
 
-## Creating an Appcircle Runner from the AMI
+## Creating an Appcircle Runner
 
 After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle runner from the AMI.
 
@@ -133,98 +140,72 @@ If you have more than one dedicated hosts, make a note of the dedicated host id 
 
 - Head to the EC2 menu to create an EC2 instance.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws23-region-menu.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws1-dashboard.png' />
 
 - Click on the "Launch Instance" button from the EC2 dashboard.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws24-launch-ec2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws6-ec2-dashboard.png' />
 
 You should fill out the required fields as per your needs. Please follow the below steps for a sample instance configuration.
 
-- Enter an instance name in the "Name and Tags" field. For example, "My Appcircle Server".
+- Enter an instance name in the "Name and Tags" field. For example, "My Appcircle Runner".
 
-- In order to select the AMI, click on the "Browse more AMIs" button and search for the Appcircle server AMI.
+- In order to select the AMI, click on the "macOS" button. Select the "macOS Sonoma" from the AMI dropdown menu. And for the architecture, select the "64-bit (Mac-Arm)"
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws9-ami1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws7-ec2-ami.png' />
 
-- Search for "Appcircle" in the "AWS Marketplace AMIs" tab and click on the "Select" button for the AMI.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws10-ami2.png' />
-
-- Click "Continue" to select Appcircle server AMI.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws11-ami3.png' />
-
-- We will use the `t3.2xlarge` instance type for our sample configuration since it meets the minimum requirements for the vCPU count.
+- We will use the `mac2.metal` instance type for our sample configuration since we have crated a `mac2.metal` dedicated host [above](#creating-a-dedicated-host-for-macos-ec2-instance).
 
 :::info
-For the details about minimum hardware requirements, you should see the [Hardware Requirements](../installation.md) section.
+If you have created another type of dedicated host like `mac2-m2.metal` or `mac2-m2pro.metal`, you should choose from the menu.
 :::
 
 - Select an existing key pair or click on the "Create new key pair" button if you don't have any on the AWS console.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws14-instance-type.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws8-ec2-type.png' />
 
 - For the network settings:
   - We will use the default VPC created on the form.
-  - Allow HTTP and HTTPS traffic from the internet.
-    - This is required for accessing the Appcircle server dashboard.
+  - Don't Allow HTTP and HTTPS traffic from the internet.
+    - Appcircle runner doesn't accept any incoming HTTP(S) requests.
   - You can restrict the SSH connection by specifying the source IP addresses.
     - **SSH is also required** to access the server from the command line.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws15-network.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws9-ec2-network.png' />
 
-- For storage, you can select a minimum 100-GB disk for a PoC setup or testing purposes.
+- For storage, you can select a minimum 300GB disk for a runner that will build android and iOS applications with three xCode versions.
+  - For each xCode version you plan to install, add 50GB disk.
+  - In this tutorial, we will install the latest three xCode versions at the moment which is `15.3`, `15.2`, `15.1`.
 
-:::info
-You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](../installation.md) section.
-:::
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws10-ec2-storage.png' />
 
-:::caution
-Keep in mind that the pre-configured swap also consumes disk space, and its size is as large as the memory size.
+- To select the previously created dedicated host, expand the "Advanced details" settings.
 
-So, although a minimum 100-GB disk is enough to run the Appcircle server, we recommend a minimum 200-GB disk space for long-term usage.
-:::
+  - Set the "Tenancy" to "Dedicated Host".
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws16-storage.png' />
+  - Set the "Target host by" to "Host ID".
+
+  - Set the "Tenancy host ID" to the `dedicated_host_id` of the previously created dedicated host.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws11-ec2-dedicated-instance.png' />
 
 Now you're ready to click on the **Launch Instance** button to create the instance with the configuration you made.
 
-:::info
-The instance creation may take some time due to the AWS AMI subscriptions.
-
-Please wait patiently while AWS creates your Appcircle server instance. If the instance is not created within 2 hours, you can follow the steps above and launch it again.
-
-You can check the subscription in the "AWS Marketplace Subscriptions" service in the AWS console.
-:::
-
 You can head to the EC2 **Instances** page to see if your server is up and running.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws18-instance-running.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws12-ec2-ready.png' />
 
-**To enable SSH access,** head to the security group settings of your instance. It's required for later configuration steps.
+:::info
+You need to wait until the `Instance state` of the EC2 instance is "Running" to SSH into the instance.
 
-For our sample server instance above, select "My Appcircle Server" instance and click on the "Security" tab.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws19-ssh1.png' />
-
-Edit the inbound rules to enable SSH access to your Appcircle server instance.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws20-ssh2.png' />
-
-Add an SSH rule for the IP addresses you want, and click on the "Save Rules" button to activate the settings.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws21-ssh3.png' />
-
-:::tip
-If you want to also send `ping` requests to the instance for health check purposes, you should also add another rule with the type "All ICMP-IPv4" while editing the inbound rules.
+Generally it takes ~5-10 minutes till the `Instance state` becomes "Running" from "Pending".
 :::
 
 ## Configuring the Appcircle Runner Instance
 
 ### Connect via SSH
 
-After you have successfully created an EC2 instance from the Appcircle runner AMI, you can follow the steps below to configure it connect to an Appcircle server.
+After you have successfully created an EC2 instance, you can follow the steps below to connect to it.
 
 - Get the IP address of the instance from EC2 dashboard.
 
@@ -282,21 +263,37 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 
 :::
 
-### Configure Runner
+### Install the Appcircle Runner
 
-After you successfully connect to the Appcircle runner instance, you can configured the Appcircle runner instance to connect to an Appcircle server.
+#### Install Latest Package
 
-The Appcircle runner directory is located in the `$HOME` directory as the `appcircle-runner` folder.
+After you successfully connect to the Appcircle runner instance, you can install the Appcircle runner into it.
 
-```bash
-ls -l "$HOME"
-```
-
-Change the current working directory to that folder.
+Change the current working directory to the home directory.
 
 ```bash
-cd "$HOME/appcircle-runner"
+cd "$HOME"
 ```
+
+Download the latest self-hosted runner package.
+
+```bash
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.5.2.zip
+```
+
+Extract self-hosted runner package.
+
+```bash
+unzip -o -u appcircle-runner-osx-arm64-1.5.2.zip
+```
+
+Change directory into extracted `appcircle-runner` folder for following steps.
+
+```bash
+cd appcircle-runner
+```
+
+#### Register the Runner to the Appcircle server
 
 :::info
 
@@ -308,7 +305,7 @@ If you are using self-hosted Appcircle server, edit the `appsettings.json` file 
 vi appsettings.json
 ```
 
-You will see the the `ASPNETCORE_BASE_API_URL` value is pre-defined for Appcircle cloud. Change it to your Appcircle server API domain and without changing the path. For example:
+You will see the the `ASPNETCORE_BASE_API_URL` value is pre-defined for Appcircle cloud. Change it to your Appcircle server API domain without changing the path. For example:
 
 ```json
 {
@@ -319,27 +316,29 @@ You will see the the `ASPNETCORE_BASE_API_URL` value is pre-defined for Appcircl
 
 :::
 
-Stop the running service before registering the runner.
-
-```bash
-./ac-runner service -c stop
-```
+Now you should generate a "Runner Access Token" to register this instance to the Appcircle server.
 
 <RegisterAppcircleRunner />
 
-To make the runner online, you just need to start the service.
+#### Install the Required Build Tools
+
+<ConfigureAppcircleRunner />
+
+For this tutorial, we will install the android tools and iOS tools with latest three stable xCode versions.
 
 ```bash
-./ac-runner service -c start
+./ac-runner install -o ios,android -x 15.3,15.2,15.1
 ```
 
-After ~10 seconds, you will see that your Appcircle runner as online.
+#### Run the Service
+
+<RunAppcircleRunner />
 
 ## Building Applications
 
-When you register the Appcircle runner successfully by following the above steps, you're ready for your first build. :tada:
+<BuildAppOutro />
 
-You can head to the [Tutorials](../../../tutorials/index.md) page for a brief of building applications on the Appcircle.
+For a comprehensive overview of building applications on the Appcircle platform, you can navigate to the [Tutorials](../../../tutorials/index.md) page.
 
 <NeedHelp />
 

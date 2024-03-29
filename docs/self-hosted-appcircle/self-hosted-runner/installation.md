@@ -10,6 +10,9 @@ import TabItem from '@theme/TabItem';
 import ContentRef from '@site/src/components/ContentRef';
 import Screenshot from '@site/src/components/Screenshot';
 import RegisterAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_register-runner.mdx';
+import ConfigureAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_configure-runner.mdx';
+import RunAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_run-service.mdx';
+import BuildAppOutro from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_build-app-outro.mdx';
 
 # Prerequisites
 
@@ -160,53 +163,7 @@ Please refer to details [here](/self-hosted-appcircle/install-server/docker#conn
 
 ### 3. Configure
 
-You need to install some workflow required build tools once before executing any build pipeline.
-
-You can install iOS platform tools, android platform tools or both of them according to your requirements.
-
-Below are some example configurations which shows you some sample runner configuration scenarios:
-
-- Install only iOS platform tools with default Xcode (15.2.x)
-
-```bash
-./ac-runner install -o ios
-```
-
-:::warning
-
-If your operating system is macOS 11 (Big Sur), then the default selected Xcode version will not be compatible for your system.
-
-Set `-x` argument explicitly with one of the compatible versions. You can select 12.5, 13.0, 13.1 or 13.2 version for Xcode.
-
-:::
-
-- Install only iOS platform tools with Xcode versions 12.5.x and 13.3.x
-
-```bash
-./ac-runner install -o ios -x 12.5,13.3
-```
-
-- Install only android platform tools
-
-```bash
-./ac-runner install -o android
-```
-
-- Install both android and iOS platform tools with Xcode version 13.2.x
-
-```bash
-./ac-runner install -o ios,android -x 13.2
-```
-
-:::caution
-
-While configuring self-hosted runner, platform argument (`-o`) doesn't work as append strategy. Your latest platform argument will be self-hosted runner's **final** platform.
-
-Let's assume, you installed iOS platform tools at first with `-o ios` and then want to add also android platform in order to build both iOS and android apps.
-
-Using `-o android` in this case will be wrong argument. You must use `-o ios,android` for this purpose.
-
-:::
+<ConfigureAppcircleRunner />
 
 #### Self-Signed Certificates
 
@@ -218,17 +175,7 @@ If you're using self-signed certificates, you need to follow the below document 
 
 ### 4. Run Service
 
-Install and start self-hosted runner service.
-
-```bash
-./ac-runner service -c install
-```
-
-Once you complete this step, its state should be seen as `Online` in "Self-hosted Runners" list.
-
-:::info
-
-You can install and run only one instance of self-hosted runner on a physical machine.
+<RunAppcircleRunner />
 
 If you need concurrency or multiple instances of self-hosted runner but don't have multiple bare-metals, then you should use virtualization infrastructure.
 
@@ -256,11 +203,4 @@ See [here](./configure-runner/runner-service) for more details about runner serv
 
 ### 5. Build App
 
-Congratulations, now your runner is waiting for build jobs. In order to use your self-hosted runner pool;
-
-- Find your app's build profile in "Build Profiles"
-- Click on "Config" to open branch config details
-- Select your runner's pool from "Config" tab
-- Check also other settings for your runner capabilities
-- Save settings and pool configuration
-- Start Build :tada:
+<BuildAppOutro />
