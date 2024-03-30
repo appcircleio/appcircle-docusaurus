@@ -123,27 +123,7 @@
   status = 301
   force = true
 
-# Redirects for publishing module changes
-[[redirects]]
-  from = "/publish-module/send-to-googleplay"
-  to = "/publish-module/send-to-google-play"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/publish-module/send-to-huawei"
-  to = "/publish-module/send-to-huawei-im"
-  status = 301
-  force = true
-
-# Redirects for reports module changes
-[[redirects]]
-  from = "/reports/build-and-signing-identities-reports"
-  to = "/reports/build-identities-reports"
-  status = 301
-  force = true
-
-  # Redirects for self-hosted Appcircle configuration changes
+# Redirects for self-hosted Appcircle configuration changes
 [[redirects]]
   from = "/self-hosted-appcircle/configure-server/git-providers"
   to = "/self-hosted-appcircle/configure-server/integrations-and-access/git-providers"
@@ -165,19 +145,6 @@
 [[redirects]]
   from = "/self-hosted-appcircle/install-server/cloud-providers"
   to = "/self-hosted-appcircle/install-server/server-cloud-providers"
-  status = 301
-  force = true
-
-# Redirects for signing identities and troubleshooting changes
-[[redirects]]
-  from = "/signing-identities/ios-certificates-and-provisioning-profiles"
-  to = "/signing-identities/certificates-and-provisioning-profiles"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/troubleshooting-faq/enterprise-app-store-faq"
-  to = "/troubleshooting-faq/app-store-faq"
   status = 301
   force = true
 
@@ -846,4 +813,15 @@
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/install-certificates-provisions"
   to = "/workflows/ios-specific-workflow-steps/distribution/install-certificates-provisions"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/increment-build-and-version-number"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/increment-build-and-version-number"
+  status = 301
+
+# Swagger wrong (broken) URL on publish module API docs
+[[redirects]]
+  from = "/store"
+  to = "/publish-module"
   status = 301
