@@ -41,11 +41,6 @@
   status = 301
 
 [[redirects]]
-  from = "/distribute/create-or-select-a-distribution-profile"
-  to = "/distribute/testing-management/create-or-select-a-distribution-profile"
-  status = 301
-
-[[redirects]]
   from = "/distribute/resign"
   to = "/distribute/platform-specific-guidance/android/resigning-android-binaries"
   status = 301
@@ -69,7 +64,7 @@
 # Redirects for workflow-specific changes
 [[redirects]]
   from = "/workflows/android-specific-workflow-steps/android-build-for-ui-testing"
-  to = "/workflows/android-specific-steps/build-and-test/android-build-for-ui-testing"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/android-build-for-ui-testing"
   status = 301
 
 [[redirects]]
@@ -79,7 +74,7 @@
 
 [[redirects]]
   from = "/workflows/android-specific-workflow-steps/wait-for-android-emulator"
-  to = "/workflows/android-specific-steps/build-and-test/wait-for-android-emulator"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/wait-for-android-emulator"
   status = 301
 
 [[redirects]]
@@ -123,7 +118,7 @@
 
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/cocoapods-install"
-  to = "/workflows/ios-specific-steps/build-and-test/cocoapods-install"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/cocoapods-install"
   status = 301
 
 [[redirects]]
@@ -133,7 +128,7 @@
 
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-devices"
-  to = "/workflows/ios-specific-steps/build-and-test/xcodebuild-for-devices"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-devices"
   status = 301
 
 [[redirects]]
