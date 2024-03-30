@@ -348,7 +348,7 @@
 
 [[redirects]]
   from = "/account/sso-login/single-sign-on-login"
-  to = "/account/my-organization/sso-providers-configuration/single-sign-on"
+  to = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
   status = 301
 
 [[redirects]]
