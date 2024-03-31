@@ -642,3 +642,12 @@
   to = "/workflows/android-specific-workflow-steps/build-and-test/lint"
   status = 301
 
+[[redirects]]
+  from = "/store-submit/google-play"
+  to = "/publish-module/send-to-googleplay"
+  status = 301
+
+[[redirects]]
+  from = "/store-submit/huawei-app-gallery"
+  to = "/publish-module/send-to-huawei"
+  status = 301
