@@ -1,7 +1,7 @@
 ---
-title: "Building Android Applications"
-metaTitle: "Building Android Applications"
-metaDescription: "Building Android Applications"
+title: Building Android Applications
+metaTitle: Building Android Applications
+metaDescription: Building Android Applications
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

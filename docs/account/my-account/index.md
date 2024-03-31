@@ -1,7 +1,7 @@
 ---
-title: "My Account"
-metaTitle: "My Account"
-metaDescription: "My Account"
+title: My Account
+metaTitle: My Account
+metaDescription: My Account
 ---
 
 # My Account

@@ -1,7 +1,7 @@
 ---
-title: "Working with Custom Scripts"
-metaTitle: "Working with Custom Scripts"
-metaDescription: "Working with Custom Scripts"
+title: Working with Custom Scripts
+metaTitle: Working with Custom Scripts
+metaDescription: Working with Custom Scripts
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
