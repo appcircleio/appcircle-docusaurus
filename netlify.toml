@@ -616,3 +616,29 @@
   from = "/store"
   to = "/publish-module"
   status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-unit-tests"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/android-unit-tests"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android"
+  to = "/workflows/android-specific-workflow-steps/distribution/appdome-build-to-secure-for-android"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/bundle-universal-apk"
+  to = "/workflows/android-specific-workflow-steps/distribution/bundle-universal-apk"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/gradle-runner"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/gradle-runner"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/lint"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/lint"
+  status = 301
+
