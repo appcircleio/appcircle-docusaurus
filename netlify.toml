@@ -24,35 +24,14 @@
   status = 301
 
 [[redirects]]
-  from = "/account/slack"
-  to = "/account/my-organization/notifications-and-communication/slack-notifications"
-  status = 301
-
-[[redirects]]
-  from = "/account/single-sign-on"
-  to = "/account/my-organization/sso-providers-configuration"
+  from = "/account/sso/single-sign-on"
+  to = "/account/my-organization/sso-providers-configuration/single-sign-on"
   status = 301
 
 # Redirects for build-related changes
 [[redirects]]
   from = "/build/connections"
   to = "/build/manage-the-connections"
-  status = 301
-
-[[redirects]]
-  from = "/build/build-profile-operations"
-  to = "/build/build-process-management/build-profile-operations"
-  status = 301
-
-# Redirects for continuous testing
-[[redirects]]
-  from = "/continuous-testing/android-unit-tests"
-  to = "/continuous-testing/android-testing/android-unit-tests"
-  status = 301
-
-[[redirects]]
-  from = "/continuous-testing/ios-unit-and-ui-tests"
-  to = "/continuous-testing/ios-testing/ios-unit-and-ui-tests"
   status = 301
 
 # Redirects for distribution and testing
@@ -62,46 +41,8 @@
   status = 301
 
 [[redirects]]
-  from = "/distribute/create-or-select-a-distribution-profile"
-  to = "/distribute/testing-management/create-or-select-a-distribution-profile"
-  status = 301
-
-[[redirects]]
   from = "/distribute/resign"
   to = "/distribute/platform-specific-guidance/android/resigning-android-binaries"
-  status = 301
-
-  # Redirects for enterprise app store changes
-[[redirects]]
-  from = "/enterprise-app-store/add-ent-profile"
-  to = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile"
-  status = 301
-
-[[redirects]]
-  from = "/enterprise-app-store/configure-ent-profile"
-  to = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile"
-  status = 301
-
-[[redirects]]
-  from = "/enterprise-app-store/customize-ent-store"
-  to = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store"
-  status = 301
-
-# Redirects for environment variable changes
-[[redirects]]
-  from = "/environment-variables/index"
-  to = "/environment-variables"
-  status = 301
-
-# Redirects for integration documents
-[[redirects]]
-  from = "/integrations/uploading-files-to-amazon-s3"
-  to = "/integrations/deploy-compute-guides/uploading-files-to-amazon-s3"
-  status = 301
-
-[[redirects]]
-  from = "/integrations/using-fastlane"
-  to = "/integrations/workflow-optimization/using-fastlane"
   status = 301
 
 # Redirects for self-hosted Appcircle configuration changes
@@ -120,15 +61,10 @@
   to = "/self-hosted-appcircle/configure-server/integrations-and-access/network-access"
   status = 301
 
-[[redirects]]
-  from = "/self-hosted-appcircle/install-server/cloud-providers"
-  to = "/self-hosted-appcircle/install-server/server-cloud-providers"
-  status = 301
-
 # Redirects for workflow-specific changes
 [[redirects]]
   from = "/workflows/android-specific-workflow-steps/android-build-for-ui-testing"
-  to = "/workflows/android-specific-steps/build-and-test/android-build-for-ui-testing"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/android-build-for-ui-testing"
   status = 301
 
 [[redirects]]
@@ -138,17 +74,12 @@
 
 [[redirects]]
   from = "/workflows/android-specific-workflow-steps/wait-for-android-emulator"
-  to = "/workflows/android-specific-steps/build-and-test/wait-for-android-emulator"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/wait-for-android-emulator"
   status = 301
 
 [[redirects]]
   from = "/workflows/android-specific-workflow-steps/android-sign"
   to = "/workflows/android-specific-workflow-steps/distribution/android-sign"
-  status = 301
-
-[[redirects]]
-  from = "/workflows/android-specific-workflow-steps/appcenter-android-distribution"
-  to = "/workflows/android-specific-steps/distribution/appcenter-android-distribution"
   status = 301
 
 # Redirects for common workflow steps
@@ -187,7 +118,7 @@
 
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/cocoapods-install"
-  to = "/workflows/ios-specific-steps/build-and-test/cocoapods-install"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/cocoapods-install"
   status = 301
 
 [[redirects]]
@@ -197,12 +128,7 @@
 
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-devices"
-  to = "/workflows/ios-specific-steps/build-and-test/xcodebuild-for-devices"
-  status = 301
-
-[[redirects]]
-  from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-simulator"
-  to = "/workflows/ios-specific-steps/build-and-test/xcodebuild-for-simulator"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-devices"
   status = 301
 
 [[redirects]]
@@ -243,11 +169,6 @@
 [[redirects]]
   from = "/continuous-testing/running-android-unit-tests"
   to = "/continuous-testing/android-testing/running-android-unit-tests"
-  status = 301
-  
-[[redirects]]
-  from = "/install-server/docker"
-  to = "/self-hosted-appcircle/install-server/docker"
   status = 301
 
 [[redirects]]
@@ -366,18 +287,8 @@
   status = 301
 
 [[redirects]]
-  from = "/sso/single-sign-on"
-  to = "/account/my-organization/sso-providers-configuration/single-sign-on"
-  status = 301
-
-[[redirects]]
   from = "/build/building-react-native-applications"
   to = "/build/platform-build-guides/building-react-native-applications"
-  status = 301
-
-[[redirects]]
-  from = "/self-hosted-runner/installation"
-  to = "/self-hosted-appcircle/self-hosted-runner/installation"
   status = 301
 
 [[redirects]]
@@ -431,28 +342,13 @@
   status = 301
 
 [[redirects]]
-  from = "/self-hosted-runner/update"
-  to = "/self-hosted-appcircle/self-hosted-runner/update"
-  status = 301
-
-[[redirects]]
-  from = "/self-hosted-appcircle/update#1-update-runner"
-  to = "/self-hosted-appcircle/self-hosted-runner/update#1-update-runner"
-  status = 301
-
-[[redirects]]
-  from = "/configure-server/ldap-settings.md#appcircle-login-with-ldap"
-  to = "/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#appcircle-login-with-ldap"
-  status = 301
-
-[[redirects]]
   from = "/workflows/android-specific-workflow-steps/android-build"
   to = "/workflows/android-specific-workflow-steps/build-and-test/android-build"
   status = 301
 
 [[redirects]]
   from = "/account/sso-login/single-sign-on-login"
-  to = "/account/my-organization/sso-providers-configuration/single-sign-on"
+  to = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
   status = 301
 
 [[redirects]]
@@ -528,11 +424,6 @@
 [[redirects]]
   from = "/account/slack/slack-notifications"
   to = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
-  status = 301
-
-[[redirects]]
-  from = "/account/sso/single-sign-on"
-  to = "/account/my-organization/sso-providers-configuration/single-sign-on"
   status = 301
 
 [[redirects]]
@@ -724,4 +615,39 @@
 [[redirects]]
   from = "/store"
   to = "/publish-module"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-unit-tests"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/android-unit-tests"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android"
+  to = "/workflows/android-specific-workflow-steps/distribution/appdome-build-to-secure-for-android"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/bundle-universal-apk"
+  to = "/workflows/android-specific-workflow-steps/distribution/bundle-universal-apk"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/gradle-runner"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/gradle-runner"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/lint"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/lint"
+  status = 301
+
+[[redirects]]
+  from = "/store-submit/google-play"
+  to = "/publish-module/send-to-googleplay"
+  status = 301
+
+[[redirects]]
+  from = "/store-submit/huawei-app-gallery"
+  to = "/publish-module/send-to-huawei"
   status = 301

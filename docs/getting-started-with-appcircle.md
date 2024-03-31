@@ -1,7 +1,7 @@
 ---
-title: "Getting Started With Appcircle"
-metaTitle: Getting Started With Appcircle"
-metaDescription: "Getting Started With Appcircle"
+title: Getting Started With Appcircle
+metaTitle: Getting Started With Appcircle
+metaDescription: Getting Started With Appcircle
 sidebar_position: 2
 ---
 
