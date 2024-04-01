@@ -326,26 +326,26 @@ cd appcircle-runner
 
 :::info
 
-By default, the Appcircle runner is configured to connect the Appcircle cloud. If you are not using Appcircle server as self-hosted, you can skip this info.
+By default, the Appcircle runner is configured to connect to the Appcircle cloud. If you are not using the Appcircle server as self-hosted, you can skip this information.
 
-If you are using self-hosted Appcircle server, edit the `appsettings.json` file with your favorite editor.
+If you are using a self-hosted Appcircle server, edit the `appsettings.json` file with your favorite editor.
 
 ```bash
 vi appsettings.json
 ```
 
-You will see the the `ASPNETCORE_BASE_API_URL` value is pre-defined for Appcircle cloud. Change it to your Appcircle server API domain without changing the path. For example:
+You will see that the `ASPNETCORE_BASE_API_URL` value is pre-defined for the Appcircle cloud. Change it to your Appcircle server API domain without changing the path. For example:
 
 ```json
 {
 ...
-"ASPNETCORE_BASE_API_URL": "https://api.appcircle.spacetech.com/build/v1"
+  "ASPNETCORE_BASE_API_URL": "https://api.appcircle.spacetech.com/build/v1"
 }
 ```
 
 :::
 
-Now you should generate a "Runner Access Token" to register this instance to the Appcircle server.
+Now you need to create a **Runner Access Token** to register this instance with the Appcircle server.
 
 <RegisterAppcircleRunner />
 
@@ -353,7 +353,7 @@ Now you should generate a "Runner Access Token" to register this instance to the
 
 <ConfigureAppcircleRunner />
 
-For this tutorial, we will install the android tools and iOS tools with latest three stable xCode versions.
+For this tutorial, we will install the Android tools and iOS tools with the latest (_at the moment_) three stable Xcode versions.
 
 ```bash
 ./ac-runner install -o ios,android -x 15.3,15.2,15.1
