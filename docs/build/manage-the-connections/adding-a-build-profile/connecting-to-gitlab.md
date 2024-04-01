@@ -1,7 +1,7 @@
 ---
-title: "Connecting to GitLab"
-metaTitle: "Connecting to GitLab"
-metaDescription: "Connecting to GitLab"
+title: Connecting to GitLab
+metaTitle: Connecting to GitLab
+metaDescription: Connecting to GitLab
 sidebar_position: 2
 ---
 

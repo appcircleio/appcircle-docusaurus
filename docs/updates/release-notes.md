@@ -63,7 +63,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - [Share with Testers](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile#share-your-application-with-the-test-groups-manually) in Testing Distribution now has a new toggle option that enables you to display only the shared app version instead of all app versions. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle Notifications now has improvements on [Slack](https://docs.appcircle.io/account/slack/slack-notifications), [Microsoft Teams](https://docs.appcircle.io/account/teams-notifications), [Email](https://docs.appcircle.io/account/email-connection), and [Webhook](https://docs.appcircle.io/account/webhooks) channels that allows you to share release notes, build logs, and test reports via notifications. <CloudBadge/> <SelfHostedBadge/>
 - The Store Submit module has been deprecated and it will be replaced by the brand-new [Publish](https://docs.appcircle.io/publish-module) module. You should transfer your apps to the [Publish](https://docs.appcircle.io/publish-module) module in order to submit your apps to the stores. <CloudBadge/> <SelfHostedBadge/>
-- The Appcircle CLI has undergone a complete revision to make it compatible with the latest Appcircle API. Now it also supports self-hosted Appcircle servers. You can see all the recent changes made in the [changelog](https://github.com/appcircleio/appcircle-cli/blob/main/CHANGELOG) and follow [configuration instructions](https://docs.appcircle.io/self-hosted-appcircle/configure-server/appcircle-cli) to use the CLI with a self-hosted Appcircle server. <CloudBadge/> <SelfHostedBadge/>
+- The Appcircle CLI has undergone a complete revision to make it compatible with the latest Appcircle API. Now it also supports self-hosted Appcircle servers. You can see all the recent changes made in the [changelog](https://github.com/appcircleio/appcircle-cli/blob/main/CHANGELOG.md) and follow [configuration instructions](https://docs.appcircle.io/self-hosted-appcircle/configure-server/appcircle-cli) to use the CLI with a self-hosted Appcircle server. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -974,7 +974,7 @@ https://docs.appcircle.io/build/building-android-applications/android-signing-fo
 
 This release focuses on stability with optimizing the logging of the builds.
 
-Within this release as prior to the previous release, Appcircle also supports [Xcode 13 Beta 4](https://developer.apple.com/documentation/Xcode-Release-Notes/xcode-13-beta-release-notes). When 13.0.x from the Xcode Version is selected, the Xcode version will be Xcode 13 Beta 4.
+Within this release as prior to the previous release, Appcircle also supports [Xcode 13 Beta 4](https://developer.apple.com/documentation/xcode-release-notes/xcode-13-release-notes). When 13.0.x from the Xcode Version is selected, the Xcode version will be Xcode 13 Beta 4.
 
 ### 🆕 New Feature
 
@@ -1001,7 +1001,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 
 ## 2.3.0 - 2021-06-28 - Xcode Version Updates
 
-Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.apple.com/documentation/Xcode-Release-Notes/xcode-13-beta-release-notes). When 13.0.x from the Xcode Version is selected, it will be using Xcode 13 Beta 2.
+Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.apple.com/documentation/xcode-release-notes/xcode-13-release-notes). When 13.0.x from the Xcode Version is selected, it will be using Xcode 13 Beta 2.
 
 ### 🆕 New Feature
 

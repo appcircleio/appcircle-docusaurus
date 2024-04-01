@@ -1,7 +1,7 @@
 ---
-title: 'Connecting to Multiple Instances'
-metaTitle: 'Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure DevOps)'
-metaDescription: 'Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure DevOps)'
+title: Connecting to Multiple Instances
+metaTitle: Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure DevOps)
+metaDescription: Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure DevOps)
 sidebar_position: 7
 ---
 

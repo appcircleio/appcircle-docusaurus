@@ -1,7 +1,7 @@
 ---
-title: "Connecting to Bitbucket"
-metaTitle: "Connecting to Bitbucket"
-metaDescription: "Connecting to Bitbucket"
+title: Connecting to Bitbucket
+metaTitle: Connecting to Bitbucket
+metaDescription: Connecting to Bitbucket
 sidebar_position: 3
 ---
 
