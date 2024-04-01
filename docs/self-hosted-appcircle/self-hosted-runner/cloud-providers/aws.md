@@ -14,9 +14,9 @@ import BuildAppOutro from '@site/docs/self-hosted-appcircle/self-hosted-runner/\
 
 ## Overview
 
-An Appcircle runner Amazon Machine Image (AMI) is a pre-configured template used to create virtual servers, known as instances, in the Amazon Web Services (AWS) environment.
+In this document, you will see how to create an self-hosted Appcircle runner instance on Amazon Web Services (AWS).
 
-Think of it as a snapshot of a Appcircle runner that includes the operating system, necessary tools, applications, and any additional services needed to build mobile applications.
+We will create a dedicated host, Sonoma macOS EC2 from the base AMI, install the Appcircle runner and make it ready to build Android and iOS applications just like in Appcircle cloud.
 
 ## Pre-requirements
 
