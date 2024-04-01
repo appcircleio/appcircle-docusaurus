@@ -5,5 +5,5 @@ metaDescription: Signing Identities
 sidebar_position: 1
 ---
 
-- [Android Keystores](./android-keystores.md)
-- [Certificates & Provisioning Profiles](./ios-certificates-and-provisioning-profiles.md)
+- [Android Keystores](/signing-identities/android-keystores)
+- [Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles)

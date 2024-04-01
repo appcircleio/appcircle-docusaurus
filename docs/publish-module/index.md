@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 The Publish module will enable your applications to be published in the App Store, Google Play, and Huawei AppGallery stores. You can also submit your mobile applications to TestFlight.
 While publishing your mobile application to the stores, you can use predefined flows and customize them according to your specific publishing requirements.
-In addition to that, you can add new versions and publish your application to the stores without using the Build module.  
+In addition to that, you can add new versions and publish your application to the stores without using the Build module.
 
 Click on the **Publish** button on the left menu bar to go to the Publish module.
 
@@ -20,11 +20,11 @@ In order to use the Publish module, first connections must be provided for the r
 
 For detailed information on store **Connections**, follow the links below.
 
-|Store|Connection|
-|----------|-----------|
-|App Store|https://docs.appcircle.io/account/adding-an-app-store-connect-api-key|
-|Google Play| https://docs.appcircle.io/account/adding-google-play-service-account|
-|Huawei AppGallery| https://docs.appcircle.io/account/adding-huawei-api-key|
+| Store             | Connection                                                            |
+| ----------------- | --------------------------------------------------------------------- |
+| App Store         | https://docs.appcircle.io/account/adding-an-app-store-connect-api-key |
+| Google Play       | https://docs.appcircle.io/account/adding-google-play-service-account  |
+| Huawei AppGallery | https://docs.appcircle.io/account/adding-huawei-api-key               |
 
 ## Publish Profile
 
@@ -76,6 +76,19 @@ We can access the list of steps that can be used in a publish workflow by clicki
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-workflows.png' />
 
+You can effortlessly obtain a **YAML** file of your current Publish Flow configurations on our platform with the **Download YAML** button at the bottom.
+By simply selecting the download option, you'll receive a YAML file containing all the details of your existing workflow setup.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download-workflow.png' />
+
+Customize your workflows effortlessly by uploading your YAML file with the **Replace Flow** button at the top.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-replace-flow-button.png' />
+
+Simply select the file containing your desired configurations and integrate them seamlessly into the platform.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-upload-workflow.png' />
+
 ### Publish Settings
 
 When a build is completed on the Build module and its artifacts are distributed to the Publish module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
@@ -100,7 +113,7 @@ If group or variable definitions have been made in **Publish Variables**, you wi
 
 ### Publish Variables
 
-Variables, similar to the [environment variables](../environment-variables/index.md) in build, can be defined in this section to be used specifically in the publish flow for store submissions.
+Variables, similar to the [environment variables](/environment-variables) in build, can be defined in this section to be used specifically in the publish flow for store submissions.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-variables.png' />
 
@@ -169,6 +182,16 @@ The list of publishing actions performed with the relevant application version w
 When you click on an item in the list, you can see the detailed publishing logs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log.png' />
+
+### Mark Version as Release Candidate
+
+Appcircle allows you to mark your app version as RC and designate any version as a **Release Candidate** with ease by simply selecting the desired app version and clicking on the **Mark as RC** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-mark-rc-button.png' />
+
+The chosen version will be visibly distinguished, allowing users to easily identify it as a `Release Candidate`.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-release-candidate.png' />
 
 ### Version Download
 

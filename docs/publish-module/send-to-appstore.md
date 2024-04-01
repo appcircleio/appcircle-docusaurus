@@ -90,7 +90,7 @@ You can use `Send to App Store` to send an application to TestFlight. For this p
 However, Appcircle will only send to TestFlight in the `Send to TestFlight` step. See details [here](#send-apps-to-testflight).
 :::
 
-When you complete configuring the publish flow, add an application version by [configuring the build module](index.md#publish-profile) or [manually adding a version](index.md#add-version) by binary upload.
+When you complete configuring the publish flow, add an application version by [configuring the build module](/publish-module/#publish-profile) or [manually adding a version](/publish-module/#add-version) by binary upload.
 
 Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
@@ -128,7 +128,7 @@ In the step settings, you can customize the **Xcode Version**, select an **App S
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-testflight-in.png' />
 
-When you complete configuring the publish flow, add an application version by [configuring the build module ](index.md#publish-profile) or [manually adding a version](index.md#add-version) by binary upload.
+When you complete configuring the publish flow, add an application version by [configuring the build module ](/publish-module/#publish-profile) or [manually adding a version](/publish-module/#add-version) by binary upload.
 
 Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
@@ -149,3 +149,25 @@ When you **change the publish flow** for some reason **after adding an applicati
 After publish flow execution, if no errors occurred, that means the sending to TestFlight was completed successfully.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-testflight-success.png' />
+
+### Deleting iOS Publish Profiles
+
+Either for freeing up space purposes or if you wish to not use the Publish module, you can delete your iOS Publish Profile. Click on the three-dot menu on the profile card:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-ios-delete-profile.png' />
+
+#### Delete a Single Publish Version
+
+If you want to free up space but don't want to lose your Publish profile, you can delete a submitted version from the iOS Publish Profile module. Note that if the version is sent to the App Store, your version **will not be deleted** from the App Store.
+
+Click on the three dot menu on the version, and click on the **Delete** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-ios-version-delete.png' />
+
+After typing the name, your version will be deleted.
+
+:::info
+
+In order to free up storage in your organization, you should also remove the other references pointing to the artifact. For example, if you have the same artifact on the builds, you should also delete those artifacts as well.
+
+:::

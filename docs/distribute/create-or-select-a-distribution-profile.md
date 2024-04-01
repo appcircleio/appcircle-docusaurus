@@ -1,8 +1,8 @@
 ---
-title: Create a Testing Distribution Profile and Sharing with Testers
+title: Testing Distribution Profile
 metaTitle: Create a Testing Distribution Profile and Sharing with Testers
 metaDescription: Create a Testing Distribution Profile and Sharing with Testers
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -28,7 +28,7 @@ Auto send feature lets your applications to be distributed to specific testing g
 
 To enable the auto send feature, you need to create testing groups and add testers into these groups.
 
-<ContentRef url="/distribute/testing-groups">Testing Groups</ContentRef>
+<ContentRef url="/distribute/testing-management/testing-groups">Testing Groups</ContentRef>
 
 Under the Auto Send tab in the settings, you can see the testing groups you have created earlier. Just enable each testing group you want to have your application sent automatically whenever a new version is deployed.
 
@@ -49,10 +49,10 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (154).png' />
 
-To add your SSO and LDAP details, go to [My Organization](../account/my-organization.md) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
+To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
 
-<ContentRef url="/account/sso-login/single-sign-on-login">SSO Login</ContentRef>
-<ContentRef url="/account/ldap-login">LDAP Login</ContentRef>
+<ContentRef url="/account/my-organization/sso-providers-configuration/single-sign-on">SSO Login</ContentRef>
+<ContentRef url="/account/my-organization/ldap-login">LDAP Login</ContentRef>
 
 ### Device Registration (iOS Only)
 
@@ -60,15 +60,11 @@ You may enable this option to automatically register devices in the Apple Develo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ios-device-registration.png' />
 
-
 ### Using public link for distribution
 
 You may also enable public link for your distribution. If you enable public distribution, anyone who has the link can access all artifacts of the distribution profile.
 
-
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (155).png' />
-
-
 
 ### Manually upload your version
 
@@ -137,7 +133,7 @@ You can also add a message to testers including testing instructions and release
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/06-07a-SendToTesterGroups.png' />
 
-You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message 
+You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message
 
 ```ruby
 Branch: $AC_GIT_BRANCH

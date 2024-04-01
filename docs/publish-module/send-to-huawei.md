@@ -1,14 +1,14 @@
 ---
-title: Send Apps to Huawei AppGallery
-metaTitle: Send Apps to Huawei AppGallery
-metaDescription: Send Apps to Huawei AppGallery
+title: Publish to Huawei AppGallery
+metaTitle: Publish to Huawei AppGallery
+metaDescription: Publish to Huawei AppGallery
 sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Send Apps to Huawei AppGallery
+# Publish to Huawei AppGallery
 
 Appcircle supports sending APK and AAB binaries to Huawei AppGallery through the Publish module.
 
@@ -18,7 +18,7 @@ Before uploading a binary to the store, please make sure that an application lis
 
 You also need to have an AppGallery Connect API and its key as a JSON file. Please refer to the following document for more information on creating your API key.
 
-<ContentRef url="/account/adding-huawei-api-key">
+<ContentRef url="/account/my-organization/api-integrations/adding-huawei-api-key">
   Adding Huawei AppGallery API Key
 </ContentRef>
 
@@ -28,7 +28,7 @@ To send apps from Appcircle, you need to provide a Huawei AppGallery Developer A
 
 [Create a key in JSON format in the AppGallery Connect](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agcapi-getstarted-0000001111845114) and upload it here for API authentication. Please keep this file as it is the only copy and it will be required during every store submission for security purposes.
 
-<ContentRef url="/account/adding-huawei-api-key">
+<ContentRef url="/account/my-organization/api-integrations/adding-huawei-api-key">
   Adding Huawei AppGallery API Key
 </ContentRef>
 
@@ -44,7 +44,7 @@ Your uploaded keystore file should also be uploaded to Huawei AppGallery. Follow
 
 ### Deploying the Binary from the Testing Distribution
 
-You can deploy the binaries to the Publish module from the [Testing Distribution](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile.md). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Huawei AppGallery. (e.g. in [release mode](https://docs.appcircle.io/build/building-android-applications/) and [signed](https://docs.appcircle.io/signing-identities/android-keystores) properly if APK - you can manage this in the [build configuration](https://docs.appcircle.io/build/build-profile-configuration.) for all types of development frameworks.)
+You can deploy the binaries to the Publish module from the [Testing Distribution](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile). Both directly uploaded apps and built apps deployed from the build module are supported as long as they are valid for Huawei AppGallery. (e.g. in [release mode](https://docs.appcircle.io/build/building-android-applications/) and [signed](https://docs.appcircle.io/signing-identities/android-keystores) properly if APK - you can manage this in the [build configuration](/build/build-process-management/build-profile-configuration) for all types of development frameworks.)
 
 Select a binary in the list and press "Send to Publish" from the three dots. The package name of the binary will be matched automatically if there is an existing Publish profile. If not, you have to create a new Publish profile.
 
@@ -93,7 +93,7 @@ In the step settings, select a **Huawei API Key** from the drop-down list and en
 Appcircle will require **Huawei App ID** for Huawei AppGallery submissions. This form field should be correct for successful store submission.
 :::
 
-When you complete configuring the publish flow, add an application version by [configuring the build module](index.md#publish-profile) or [manually adding a version](index.md#add-version) by binary upload.
+When you complete configuring the publish flow, add an application version by [configuring the build module](/publish-module/#publish-profile) or [manually adding a version](/publish-module/#add-version) by binary upload.
 
 Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
@@ -114,3 +114,25 @@ When you **change the publish flow** for some reason **after adding an applicati
 After publish flow execution, if no errors occurred, that means the sending to the store was completed successfully.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-huawei-success.png' />
+
+### Deleting Huawei Publish Profiles
+
+Either for freeing up space purposes or if you wish to not use the Publish module, you can delete your Publish Profile. Click on the three-dot menu on the profile card:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-delete-profile.png' />
+
+#### Delete a Single Publish Version
+
+If you want to free up space but don't want to lose your Publish profile, you can delete a submitted version from the Android Publish module. Note that if the version is sent to the Huawei AppGallery, your version **will not be deleted** from the Huawei AppGallery.
+
+Click on the three dot menu on the version, and click on the **Delete** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-version-delete.png' />
+
+After typing the name, your version will be deleted.
+
+:::info
+
+In order to free up storage in your organization, you should also remove the other references pointing to the artifact. For example, if you have the same artifact on the builds, you should also delete those artifacts as well.
+
+:::
