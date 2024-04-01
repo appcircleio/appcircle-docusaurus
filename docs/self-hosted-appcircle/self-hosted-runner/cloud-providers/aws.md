@@ -34,7 +34,7 @@ See [pricing](https://appcircle.io/pricing) and feature comparison table for det
 
 ### Technical Requirements
 
-Before using the Appcircle runner AMI, there are a couple of things that you need to handle.
+Before creating an Appcircle runner on AWS, there are a couple of things that you need to handle.
 
 #### AWS Account
 
@@ -80,7 +80,7 @@ For more details about the AWS macOS EC2 instances, you can refer to the [AWS do
 
 ## Creating an Mac Instance for Appcircle Runner
 
-After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle runner from the AMI.
+After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle runner.
 
 - Log in to the AWS console with your account.
 
@@ -132,7 +132,7 @@ Before creating the dedicated host instance, you should check the dedicated serv
 
 :::info
 
-You must select one of the "mac2", "mac2-m2" or "mac2-m2pro" instance family types since the Appcircle runner AMI is supported on these family types.
+You must select one of the "mac2", "mac2-m2" or "mac2-m2pro" instance family types since the Appcircle runner is supported on these family types.
 
 In the [AWS documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html), you can find the underlying infrastructure.
 
@@ -251,7 +251,7 @@ ssh -i "/path/to/your/private/key" ec2-user@ip-address-of-the-instance
 ```
 
 :::info
-The default user for the Appcircle Runner AMI is `ec2-user`.
+The default user for the AWS Sonoma AMI is `ec2-user`. So you should use that `ec2-user` to connect newly created EC2 instance.
 
 So, let's assume that your instance IP address is `34.205.139.17` and your private SSH key path is `/home/spacetech/.ssh/id_rsa`.
 
@@ -264,7 +264,7 @@ ssh -i "/home/spacetech/.ssh/id_rsa" ec2-user@34.205.139.17
 :::
 
 :::tip
-When you "Create new key pair" while creating the instance from Appcircle AMI, the downloaded private key might cause a permission error when you try to connect to the instance. For instance;
+When you "Create new key pair" while creating the instance, the downloaded private key might cause a permission error when you try to connect to the instance. For instance;
 
 > ... Permissions 0644 for 'MyCICDSSHKey.pem' are too open.
 > It is required that zour private key files are NOT accessible by others.
@@ -321,7 +321,7 @@ cd appcircle-runner
 
 :::info
 
-By default, the Appcircle runner AMI is configured to connect the Appcircle cloud. If you are not using Appcircle server as self-hosted, you can skip this info.
+By default, the Appcircle runner is configured to connect the Appcircle cloud. If you are not using Appcircle server as self-hosted, you can skip this info.
 
 If you are using self-hosted Appcircle server, edit the `appsettings.json` file with your favorite editor.
 
