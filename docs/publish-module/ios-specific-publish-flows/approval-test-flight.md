@@ -11,23 +11,23 @@ import Screenshot from '@site/src/components/Screenshot';
 This step allows you to check the status of your application after sending it to [**TestFlight**](https://developer.apple.com/testflight/). It is a **scheduled job** and periodically checks the status of the relevant version on TestFlight. Informs you of the version status in internal, external, or both test groups.
 
 :::info
-After this step application is uploaded to **TestFlight**, it successfully terminates or fails the step according to the selected status. There are four different options for this:
+After this step, once the application is uploaded to **TestFlight**, it will successfully terminate or fail the step according to the selected status. There are four different options for this:
 
 - **`One of the External or Internal`**
 - **`Internal Only`**
 - **`External Only`**
 - **`Both`**
 
-For example, your application was submitted to the **`Internal`** test group in TestFlight. And you have selected **`Internal or External`** status from the step. When your application is sent to the **`Internal`** test group, its status will be **`In Testing`** and the Appcircle step will be successful. The same situation is valid for others. If you tick **`Internal Only`** or **`External Only`**, it will be enough to be **`In Testing`** in one of the two test groups, but if you select **`Both`**, the step will be successful after the **`In Testing`** requirement is met in both test groups.
+For example, if your application was submitted to the **`Internal`** test group in TestFlight and you have selected **`Internal or External`** status from the step, when your application is sent to the **`Internal`** test group, its status will be In Testing and the Appcircle step will be successful. The same situation applies to the other options. If you select **`Internal Only`** or **`External Only`** Only, it will be sufficient for the application to be **`In Testing`** in one of the two test groups. However, if you select **`Both`**, the step will be successful only after the **`In Testing`** requirement is met in both test groups.
 :::
 
 ### Prerequisites
 
-This step is one of the dependent steps. The dependent steps are given in the table below with their explanations.
+This step is one of the dependent steps. Below is a table of the dependent steps with their descriptions.
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Send to TestFlight**](https://docs.appcircle.io/publish-module/send-to-appstore#send-apps-to-testflight) | This step sends the relevant application version to TestFlight. Make sure the [**App Store Connect API Key**](https://docs.appcircle.io/account/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is added to Appcircle and selected. |
+| [**Send to TestFlight**](https://docs.appcircle.io/publish-module/send-to-appstore#send-apps-to-testflight) | This step sends the relevant application version to TestFlight. Ensure the [**App Store Connect API Key**](https://docs.appcircle.io/account/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is added to Appcircle and selected. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2919-approvelTestFlight.png' />
 
