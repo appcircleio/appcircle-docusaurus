@@ -116,22 +116,18 @@ If you want to trust the root certificates of the proxy server which you use to 
 
 - The proxy env variables `HTTP_PROXY` and `HTTPS_PROXY` should be configured.
 
-- You can check if the `HTTP_PROXY` is set with the command below:
+- You can check if the `HTTPS_PROXY` is set with the command below:
 
 ```bash
-echo "$HTTP_PROXY"
+echo "$HTTPS_PROXY"
 ```
 
 :::caution
-There are two rules you must consider.
-
-- The `HTTP_PROXY` variable shouldn't contain username or password. Currently LibreSSL doesn't support the proxy username or password.
-
-- The `HTTP_PROXY` variable shouldn't end with "/".
+The `HTTPS_PROXY` variable must not end with "/".
 
 For example:
-Valid -> proxy.spacetech.com:8080 or 10.20.0.1:8080
-Invalid -> proxy.spacetech.com:8080/ or 10.20.0.1:8080/ or username:password@proxy.spacetech.com
+Valid -> proxy.spacetech.com:8080 or 10.20.0.1:8080 or username:password@proxy.spacetech.com
+Invalid -> proxy.spacetech.com:8080/ or 10.20.0.1:8080/ or username:password@proxy.spacetech.com/
 :::
 
 - Run the `install_cert.sh` script with no arguments.
@@ -140,9 +136,7 @@ Invalid -> proxy.spacetech.com:8080/ or 10.20.0.1:8080/ or username:password@pro
 ./install_cert.sh
 ```
 
-- When the URL is asked, you can input a URL address which you can access with proxy.
-
-- If the runner can access to the `github.com` with proxy only, you can input `github.com` and hit enter.
+- When the URL is asked, you can input a URL address which you can access with proxy like `github.com`.
 
 - The script will initially attempt to connect to the provided URL without using a proxy. If the connection fails, it will then try the proxy variables.
 
