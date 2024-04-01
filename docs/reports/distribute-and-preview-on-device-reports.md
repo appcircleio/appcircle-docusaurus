@@ -1,13 +1,13 @@
 ---
-title: Distribute Reports
-metaTitle: Distribute Reports
-metaDescription: Distribute Reports
+title: Distribution Activity Reports
+metaTitle: Distribution Activity Reports
+metaDescription: Distribution Activity Reports
 sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Distribute Reports
+# Distribution Activity Reports
 
 ## App Versions Report
 
@@ -15,7 +15,7 @@ This report is accessible from the Testing Distribution.
 
 App Versions Report contains the list of binaries deployed to a distribution profile in a given time period.
 
-<ContentRef url="../distribute/create-or-select-a-distribution-profile">
+<ContentRef url="/distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 

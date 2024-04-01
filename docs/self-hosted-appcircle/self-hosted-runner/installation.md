@@ -79,9 +79,9 @@ From now on, you will follow same installation steps seen below as other environ
 
 #### macOS VM
 
-Appcircle provides ready-to-use macOS VM image especially for enterprise installations. It can be run on macOS Monterey or Ventura `arm64` host.
+Appcircle provides ready-to-use macOS VM image especially for enterprise installations. It can be run on macOS Ventura or Sonoma `arm64` host.
 
-See details in [here](./runner-vm-setup.md).
+See details in [here](./runner-vm-setup).
 
 :::
 
@@ -97,13 +97,13 @@ Download the latest self-hosted runner package.
   <TabItem value="osx-arm64" label="macOS arm64" default>
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.4.5.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.5.2.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.4.5.zip
+unzip -o -u appcircle-runner-osx-arm64-1.5.2.zip
 ```
 
   </TabItem>
@@ -111,13 +111,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.4.5.zip
   <TabItem value="osx-x64" label="macOS x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.4.5.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.5.2.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-x64-1.4.5.zip
+unzip -o -u appcircle-runner-osx-x64-1.5.2.zip
 ```
 
   </TabItem>
@@ -125,13 +125,13 @@ unzip -o -u appcircle-runner-osx-x64-1.4.5.zip
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.4.5.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.5.2.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-linux-x64-1.4.5.zip
+unzip -o -u appcircle-runner-linux-x64-1.5.2.zip
 ```
 
   </TabItem>
@@ -147,9 +147,9 @@ cd appcircle-runner
 
 By default, self-hosted runner package is bundled with configuration for Appcircle-hosted cloud.
 
-:reminder_ribbon: If you're planning to use runner with [self-hosted appcircle](../install-server/docker.md) server, you must change `ASPNETCORE_BASE_API_URL` value in `appsettings.json` configuration file before going on.
+:reminder_ribbon: If you're planning to use runner with [self-hosted appcircle](/self-hosted-appcircle/install-server/docker) server, you must change `ASPNETCORE_BASE_API_URL` value in `appsettings.json` configuration file before going on.
 
-Please refer to details [here](../install-server/docker.md#connecting-runners) for sample configuration change.
+Please refer to details [here](/self-hosted-appcircle/install-server/docker#connecting-runners) for sample configuration change.
 
 :::
 
@@ -175,7 +175,7 @@ For example, below command is registering runner named "monterey-12_4" with pool
 ./ac-runner register -t aat_XVY27uHw7W1GA_cw5Vut0p_WOzHeYeJ2ZkTbqAVE3GX -n monterey-12_4 -p Arm64_pool
 ```
 
-For more details on runner and pool, see [Manage Self-hosted Pools](./configure-runner/manage-pools.md) and [Manage Self-hosted Runners](./configure-runner/manage-runners.md) in docs.
+For more details on runner and pool, see [Manage Self-hosted Pools](./configure-runner/manage-pools) and [Manage Self-hosted Runners](./configure-runner/manage-runners) in docs.
 
 :::info
 
@@ -199,7 +199,7 @@ You can install iOS platform tools, android platform tools or both of them accor
 
 Below are some example configurations which shows you some sample runner configuration scenarios:
 
-- Install only iOS platform tools with default Xcode (14.2.x)
+- Install only iOS platform tools with default Xcode (15.2.x)
 
 ```bash
 ./ac-runner install -o ios
@@ -283,7 +283,7 @@ Install command used for runner configuration, both adds tools to your system an
 
 Restarting runner service will first stop service and start it again.
 
-See [here](./configure-runner/runner-service.md) for more details about runner service operations.
+See [here](./configure-runner/runner-service) for more details about runner service operations.
 
 :::
 
