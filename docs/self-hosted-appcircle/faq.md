@@ -298,7 +298,7 @@ This operation needs `reset` which deletes all your data like "Build Profiles", 
 :::
 
 :::info
-If you only want to change the URLs of the Testing Distribution and the Enterprise App Store, you can check [Custom Domains](./configure-server/integrations-and-access/ssl-configuration.md#custom-domain) document to assign a custom domain without resetting the Appcircle server.
+If you only want to change the URLs of the Testing Distribution and the Enterprise App Store, you can check [Custom Domains](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) document to assign a custom domain without resetting the Appcircle server.
 :::
 
 You can change default subdomains as your needs at the first installation time of the Appcircle server.
