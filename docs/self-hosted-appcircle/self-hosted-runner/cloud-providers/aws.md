@@ -80,20 +80,19 @@ For more details about the AWS EC2 Mac instances, you can refer to the [document
 
 ## Creating a Mac Instance for the Appcircle Runner
 
-After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle runner.
+After you meet all the requirements discussed above, you can follow the steps below to create a Mac instance for the Appcircle runner installation.
+
+### Creating a Dedicated Host for MacOS EC2 Instance
 
 - Log in to the AWS console with your account.
 
 - Select the region from the right upper corner.
 
-:::info
+:::tip
 
-If you have a self-hosted Appcircle server in AWS, its better to deploy the self-hosted Appcircle runner in the same region as the Appcircle server. This will reduce the latency between two machines.
+If you have a self-hosted Appcircle server in AWS, it's better to deploy the self-hosted Appcircle runner in the same region as the Appcircle server. This will reduce the latency between two machines.
 
 :::
-
-### Creating a Dedicated Host for MacOS EC2 Instance
-
 #### Check and Request the Dedicated Mac Instance Quota
 
 Before creating the dedicated host instance, you should check the dedicated service quota.
@@ -102,17 +101,19 @@ Before creating the dedicated host instance, you should check the dedicated serv
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws13-dashboard.png' />
 
-- Head to the "AWS services". Filter the services click on the "Amazon Elastic Compute Cloud (Amazon EC2)" service.
+- Click on the "AWS services". Filter the EC2 services as below, and then click on the "Amazon Elastic Compute Cloud (Amazon EC2)" service.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws14-quotas-dashboard.png' />
 
 - Filter the services by "dedicated mac2" and select the relevant instance type service quota.
 
-  - In this tutorial, we will use "mac2" instance.
+  - In this tutorial, we will use "mac2" hosts.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws15-dedicated-hosts.png' />
 
-- If this is your first quota request, you can request 1 quota.
+If the "applied account-level quota value" is `0`, then you should request an increase as below.
+
+- For your first quota request, you can request `1` quota.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws16-request.png' />
 
