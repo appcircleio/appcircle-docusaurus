@@ -82,7 +82,7 @@ For more details about the AWS EC2 Mac instances, you can refer to the [document
 
 After you meet all the requirements discussed above, you can follow the steps below to create a Mac instance for the Appcircle runner installation.
 
-### Creating a Dedicated Host for MacOS EC2 Instance
+### Creating a Dedicated Host for EC2 Mac Instance
 
 - Log in to the AWS console with your account.
 
@@ -90,7 +90,9 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 :::tip
 
-If you have a self-hosted Appcircle server in AWS, it's better to deploy the self-hosted Appcircle runner in the same region as the Appcircle server. This will reduce the latency between two machines.
+If you have a self-hosted Appcircle server in AWS, it's better to deploy the self-hosted Appcircle runner in the same region as the Appcircle server.
+
+This approach will reduce the latency between two machines.
 
 :::
 #### Check and Request the Dedicated Mac Instance Quota
@@ -127,43 +129,45 @@ If the "applied account-level quota value" is `0`, then you should request an in
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws2-dedicated-host-dashboard.png' />
 
-- Enter an dedicated instance name in the "Name tag" field. For example, "Appcircle Dedicated Host".
+- Enter a dedicated instance name in the "Name tag" field. For example, "Appcircle Dedicated Host".
 
-- Then you should select the instance family, instance type and the availability zone. For example, "mac2" for the instance family and "mac2.metal" for the instance type.
-
-:::info
-
-You must select one of the "mac2", "mac2-m2" or "mac2-m2pro" instance family types since the Appcircle runner is supported on these family types.
-
-In the [AWS documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html), you can find the underlying infrastructure.
-
-> EC2 M1 Mac instances (mac2.metal) are built on 2020 Mac mini hardware powered by Apple silicon M1 processors.
-
-> EC2 M2 Mac instances (mac2-m2.metal) are built on 2023 Mac mini hardware powered by Apple silicon M2 processors.
-
-> EC2 M2 Pro Mac instances (mac2-m2pro.metal) are built on 2023 Mac mini hardware powered by Apple silicon M2 Pro processors.
-
-:::
+- Then you should select the **instance family**, **instance type** and the **availability zone**. For example, `mac2` for the instance family and `mac2.metal` for the instance type.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws3-dedicated-host-launch-1.png' />
 
-- Since the `mac` instances doesn't support "Host maintenance", you should uncheck it and click on the "Allocate" button to create your dedicated host.
+:::info
+
+You must select one of the **`mac2`**, **`mac2-m2`** or **`mac2-m2pro`** instance families since the Appcircle runner is supported on these instance families.
+
+In the AWS [documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html), you can find the underlying infrastructure listed below.
+
+> - EC2 M1 Mac instances (mac2.metal) are built on 2020 Mac mini hardware powered by Apple silicon M1 processors.
+>
+> - EC2 M2 Mac instances (mac2-m2.metal) are built on 2023 Mac mini hardware powered by Apple silicon M2 processors.
+>
+> - EC2 M2 Pro Mac instances (mac2-m2pro.metal) are built on 2023 Mac mini hardware powered by Apple silicon M2 Pro processors.
+
+:::
+
+- Since the Mac instances doesn't support "Host maintenance", you must uncheck it.
+
+- Click on the "Allocate" button to create your dedicated host.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws4-dedicated-host-launch-2.png' />
 
-- You can see the created dedicated host on the dedicated hosts dashboards.
+- You can see the created dedicated host on the **Dedicated Hosts** dashboard.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws5-dedicated-host-created.png' />
 
-- When you see the state of the dedicated host as "Available", you can continue with creating EC2 instance.
+- When you see the state of the dedicated host as "Available", you can continue with creating EC2 Mac instance.
 
-:::info
-If you have more than one dedicated hosts, make a note of the dedicated host id to avoid confusion when creating the EC2 instance.
+:::tip
+If you have more than one dedicated hosts, make a note of the dedicated **Host ID** to avoid confusion when creating the EC2 Mac instance.
 :::
 
-### Creating an EC2 Instance on the Dedicated Host
+### Creating an EC2 Mac Instance on the Dedicated Host
 
-- Head to the EC2 menu to create an EC2 instance.
+- Head to the EC2 menu to create an EC2 Mac instance.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws1-dashboard.png' />
 
@@ -175,14 +179,14 @@ You should fill out the required fields as per your needs. Please follow the bel
 
 - Enter an instance name in the "Name and Tags" field. For example, "My Appcircle Runner".
 
-- In order to select the AMI, click on the "macOS" button. Select the "macOS Sonoma" from the AMI dropdown menu. And for the architecture, select the "64-bit (Mac-Arm)"
+- In order to select the AMI, click on the "macOS" button. Then select "macOS Sonoma" from the AMI drop-down menu. And for the architecture, select "64-bit (Mac-Arm)".
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws7-ec2-ami.png' />
 
-- We will use the `mac2.metal` instance type for our sample configuration since we have crated a `mac2.metal` dedicated host [above](#creating-a-dedicated-host-for-macos-ec2-instance).
+- We will use the `mac2.metal` instance type for our sample configuration since we have crated a `mac2.metal` dedicated host [above](#creating-a-dedicated-host-for-ec2-mac-instance).
 
-:::info
-If you have created another type of dedicated host like `mac2-m2.metal` or `mac2-m2pro.metal`, you should choose from the menu.
+:::caution
+If you have created another type of dedicated host, like `mac2-m2.metal` or `mac2-m2pro.metal`, you should choose them from the menu.
 :::
 
 - Select an existing key pair or click on the "Create new key pair" button if you don't have any on the AWS console.
@@ -191,39 +195,39 @@ If you have created another type of dedicated host like `mac2-m2.metal` or `mac2
 
 - For the network settings:
   - We will use the default VPC created on the form.
-  - Don't Allow HTTP and HTTPS traffic from the internet.
-    - Appcircle runner doesn't accept any incoming HTTP(S) requests.
+  - Don't allow HTTP and HTTPS traffic from the internet.
+    - The Appcircle runner doesn't require accepting any incoming HTTP(S) requests.
   - You can restrict the SSH connection by specifying the source IP addresses.
-    - **SSH is also required** to access the server from the command line.
+    - **SSH is required** to access the runner from the command line.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws9-ec2-network.png' />
 
-- For storage, you can select a minimum 300GB disk for a runner that will build android and iOS applications with three xCode versions.
-  - For each xCode version you plan to install, add 50GB disk.
-  - In this tutorial, we will install the latest three xCode versions at the moment which is `15.3`, `15.2`, `15.1`.
+- For the storage, you should select a minimum 300 GB disk for a runner that will build Android and iOS applications with three Xcode versions.
+  - For each Xcode version you plan to install side by side, you should add 50 GB of disk space, roughly.
+  - In this tutorial, we will install the latest (_at the moment_) three Xcode versions as a sample configuration, which are `15.3`, `15.2`, and `15.1`.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws10-ec2-storage.png' />
 
 - To select the previously created dedicated host, expand the "Advanced details" settings.
 
-  - Set the "Tenancy" to "Dedicated Host".
+  - Set the "Tenancy" to **`Dedicated Host`**.
 
-  - Set the "Target host by" to "Host ID".
+  - Set the "Target host by" to **`Host ID`**.
 
-  - Set the "Tenancy host ID" to the `dedicated_host_id` of the previously created dedicated host.
+  - Set the "Tenancy host ID" to the dedicated **Host ID** of the previously created dedicated host.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws11-ec2-dedicated-instance.png' />
 
-Now you're ready to click on the **Launch Instance** button to create the instance with the configuration you made.
+Now you're ready to click on the **Launch Instance** button to create the EC2 Mac instance with the configuration you made.
 
 You can head to the EC2 **Instances** page to see if your server is up and running.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws12-ec2-ready.png' />
 
 :::info
-You need to wait until the `Instance state` of the EC2 instance is "Running" to SSH into the instance.
+You need to wait until the **Instance state** of the instance is **`Running`** in order to connect to the instance with SSH.
 
-Generally it takes ~5-10 minutes till the `Instance state` becomes "Running" from "Pending".
+Generally it takes ~5-10 minutes till the **Instance state** becomes **`Running`** from **`Pending`**.
 :::
 
 ## Configuring the Appcircle Runner Instance
