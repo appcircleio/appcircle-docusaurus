@@ -14,15 +14,15 @@ import BuildAppOutro from '@site/docs/self-hosted-appcircle/self-hosted-runner/\
 
 ## Overview
 
-In this document, you will see how to create an self-hosted Appcircle runner instance on Amazon Web Services (AWS).
+In this document, you will see how to create a self-hosted Appcircle runner instance on Amazon Web Services (AWS).
 
-We will create a dedicated host, Sonoma macOS EC2 from the base AMI, install the Appcircle runner and make it ready to build Android and iOS applications just like in Appcircle cloud.
+By following the steps below, you will create a dedicated host, Sonoma macOS, from the base AMI, install the Appcircle runner, and make it ready to build Android and iOS applications, just like in the Appcircle cloud.
 
 ## Pre-requirements
 
 ### Appcircle Requirements
 
-You can use a self-hosted Appcircle runner for your self-hosted Appcircle server or cloud Appcircle account.
+You can use a self-hosted Appcircle runner with your self-hosted Appcircle server or Appcircle cloud account.
 
 :::warning
 
@@ -68,17 +68,17 @@ If you have experience with Linux, installing the Appcircle runner on macOS shou
 
 ##### 4. Dedicated Hosts and MacOS Instances
 
-While the process of creating a macOS EC2 instance on AWS differs slightly from creating a Linux instance, the key distinction lies in the requirement of a dedicated host.
+While the process of creating an EC2 Mac instance on AWS differs slightly from creating a Linux instance, the key distinction lies in the requirement of a dedicated host.
 
-After selecting a macOS image during the instance creation process, users must specify the dedicated host they have previously provisioned, as outlined in the AWS documentation for comprehensive guidance.
+After selecting a macOS image during the instance creation process, users must specify the dedicated host they have previously provisioned, as outlined in the AWS [documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html) for comprehensive guidance.
 
 Furthermore, detailed instructions are provided below on creating a dedicated Mac instance, ensuring you have the necessary resources for seamless operation.
 
-However, please make sure that you have a dedicated hosts service quota before proceeding to create a dedicated host.
+However, please make sure that you have a dedicated host service quota before proceeding to create a dedicated host.
 
-For more details about the AWS macOS EC2 instances, you can refer to the [AWS documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html).
+For more details about the AWS EC2 Mac instances, you can refer to the [documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html).
 
-## Creating an Mac Instance for Appcircle Runner
+## Creating a Mac Instance for the Appcircle Runner
 
 After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle runner.
 
