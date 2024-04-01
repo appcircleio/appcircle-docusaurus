@@ -11,7 +11,7 @@ import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-ser
 
 ## Overview
 
-By default, the Appcircle server utilizes MinIO in a single node single drive (`snsd`) configuration, employing version v3.14.0. Previous versions of the Appcircle server utilized MinIO in a multi-node single drive (`mnsd`) setup, which resulted in increased disk usage. However, with the transition to Appcircle server v3.14.0 and the adoption of `snsd` MinIO, disk consumption is anticipated to decrease by approximately 20%.
+Previous versions of the Appcircle server utilized MinIO in a multi-node single drive (`mnsd`) setup, which resulted in increased disk usage. By default, the Appcircle server utilizes MinIO in a single node single drive (`snsd`) configuration with the Appcircle server `v3.14.0`. With the transition to Appcircle server `v3.14.0` and the adoption of `snsd` MinIO, disk consumption is anticipated to decrease by approximately 20%.
 
 This documentation provides comprehensive instructions on migrating from the `mnsd` MinIO configuration to the `snsd` MinIO setup within the new Appcircle server version.
 
