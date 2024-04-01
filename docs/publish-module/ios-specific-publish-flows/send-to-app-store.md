@@ -8,17 +8,17 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Send to App Store
 
-This step allows you to submit your app to the [App Store](https://www.apple.com/app-store/).
+This step enables you to submit your application to the [App Store](https://www.apple.com/app-store/).
 
 :::caution
-Make sure the [**App Store Connect API Key**](https://docs.appcircle.io/account/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is added to Appcircle and selected in [**Publish Settings**](https://docs.appcircle.io/publish-module/#publish-settings).
+Ensure the [**App Store Connect API Key**](https://docs.appcircle.io/account/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is configured in Appcircle and chosen under [**Publish Settings**](https://docs.appcircle.io/publish-module/#publish-settings).
 :::
 
 ### Prerequisites
-The steps required for this step to work are given in the list below with their descriptions.
+Below are the prerequisite steps necessary for this operation, accompanied by their descriptions.
 
 :::caution
-Please note that this step is a stand-alone step. If the steps in the list below are available in your Publish Flow, they must be used before this step.
+Note: This is a standalone step. The steps listed below should precede this step if they are part of your Publish Flow.
 :::
 
 | Prerequisite Workflow Step                      | Description                                     |
@@ -30,7 +30,7 @@ Please note that this step is a stand-alone step. If the steps in the list below
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2914-appStore.png' />
 
 ### Input Variables
-The parameters required for the operation of this step are listed in the list below with their descriptions.
+Below are the parameters necessary for this step's operation, along with their descriptions.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2914-appStoreInput.png' />
 
@@ -42,7 +42,7 @@ The parameters required for the operation of this step are listed in the list be
 | `$AC_RELEASE_NOTES`           | It is the parameter used to send a release note with the selected version. You can find detailed information about **Release Notes** [**here**](https://docs.appcircle.io/integrations/managing-release-notes). | Optional |
 
 :::info
-This step can also be sent to **TestFlight** alone, according to the selected **Stack Type**. If you have the **Send to TestFlight** step in your **Publish Flow**, please set the **Stack Type** to **`Release`**.
+This step may also target **TestFlight** exclusively, depending on the chosen **Stack Type**. If your **Publish Flow** includes the **Send to TestFlight** step, ensure the **Stack Type** is set to **`Release`**.
 :::
 
 ---
