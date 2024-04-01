@@ -234,7 +234,7 @@ Generally it takes ~5-10 minutes till the **Instance state** becomes **`Running`
 
 ### Connect via SSH
 
-After you have successfully created an EC2 instance, you can follow the steps below to connect to it.
+After you have successfully created an EC2 Mac instance, you can follow the steps below to configure it.
 
 - Get the IP address of the instance from EC2 dashboard.
 
@@ -256,14 +256,14 @@ ssh -i "/path/to/your/private/key" ec2-user@ip-address-of-the-instance
 ```
 
 :::info
-The default user for the AWS Sonoma AMI is `ec2-user`. So you should use that `ec2-user` to connect newly created EC2 instance.
+The default user for the Sonoma macOS AMI is `ec2-user`. So you should use `ec2-user` while connecting to the newly created EC2 Mac instance.
 
-So, let's assume that your instance IP address is `34.205.139.17` and your private SSH key path is `/home/spacetech/.ssh/id_rsa`.
+So, let's assume that your instance IP address is `3.234.230.124` and your private SSH key path is `/home/spacetech/.ssh/id_rsa`.
 
 You can connect to the instance using the below command on macOS or Linux.
 
 ```bash
-ssh -i "/home/spacetech/.ssh/id_rsa" ec2-user@34.205.139.17
+ssh -i "/home/spacetech/.ssh/id_rsa" ec2-user@3.234.230.124
 ```
 
 :::
@@ -292,7 +292,7 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 
 :::
 
-### Install the Appcircle Runner
+### Configure Runner
 
 #### Install Latest Package
 
