@@ -28,6 +28,7 @@ To determine the required disk space, follow the steps below:
 - SSH into the Appcircle server.
 
 - Check the total disk space.
+  - Check the "Used" and "Available" disk spaces where your container engine data is located.
 
 ```bash
 df -h
@@ -37,14 +38,42 @@ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 devtmpfs        5.7G     0  5.7G   0% /dev
 tmpfs           5.8G     0  5.8G   0% /dev/shm
-tmpfs           5.8G   28M  5.8G   1% /run
+tmpfs           5.8G   20M  5.8G   1% /run
 tmpfs           5.8G     0  5.8G   0% /sys/fs/cgroup
-/dev/vda3        80G   22G   59G  27% /
+/dev/vda3        80G   21G   60G  26% /
 /dev/vda2       100M  5.8M   95M   6% /boot/efi
 tmpfs           1.2G     0  1.2G   0% /run/user/1000
 ```
 
-@TODO
+- Check the disk usage of the container engine.
+
+:::info
+Change `docker` to `podman` if your container engine is Podman.
+:::
+
+```bash
+docker system df
+```
+
+```bash
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          39        38        12.77GB   1.081GB (8%)
+Containers      45        41        12.08MB   4.055kB (0%)
+Local Volumes   576       29        7.431GB   4.649GB (62%)
+Build Cache     38        0         831.5MB   831.5MB
+```
+
+- Make sure you have half of the "Local Volumes" size of "Available" free disk space from the `df -h` command output.
+
+  - In our example, we have `60G` free disk space and `7.4GB` free disk space which is fine for the migration.
+
+:::caution
+
+If you don't have enough free disk space, the migration may fail, interrupted and stop.
+
+Your old data will be untouched and saved. So you can add free disk space and run the migration command again to migrate.
+
+:::
 
 ## Updating the Appcircle Server
 
@@ -121,7 +150,7 @@ Migration logs are being saved into the minio-migration-20240329082833 file.
 Migration command completed successfully.
 ```
 
-Detailed migration logs are being saved into a file named minio-migration-datetime.
+Detailed migration logs are being saved into a file named `minio-migration-datetime` where datetime is the current system date time in a format like `20240329082833`.
 You can access and review the comprehensive migration logs from this file for further insights into the migration process.
 
   </TabItem>
@@ -183,9 +212,18 @@ You may also print the image hashes and script's version by using the below comm
 
 ## Notes
 
-### If the Disk is Full-Filled While Migration
+### If the Disk is Full-Filled While Migration
 
-@TODO
+If you can connect to the server via SSH, you can delete the **new** `snsd` minio volume to free up disk space for initial stable system operation.
+
+```bash
+docker volume ls | grep -i "snsd"
+docker volume rm spacetech_minio_snsd_data
+```
+
+Then if you want to migrate to `snsd` minio, you should clear the system and check the free disk space. Check the [Prerequirements](#prerequisites-for-migrating) section for the needed disk space. If needed, you can increase the disk size of the server.
+
+If you want to update without the migration, you can follow the "Stay With MNSD MinIO" title.
 
 ### Testing the Migration
 
