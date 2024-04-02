@@ -8,6 +8,7 @@ sidebar_class_name: hidden
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
@@ -50,13 +51,23 @@ tmpfs           1.2G     0  1.2G   0% /run/user/1000
 
 - Get information about the disk usage of the container engine.
 
-:::note
-Change `docker` to `podman` in the below command if your preferred container engine is Podman.
-:::
+<Tabs>
+  <TabItem value="docker" label="Docker" default>
 
 ```bash
 docker system df
 ```
+
+  </TabItem>
+
+  <TabItem value="podman" label="Podman">
+
+```bash
+podman system df
+```
+
+  </TabItem>
+</Tabs>
 
 Below is a sample output for the command above.
 
@@ -79,7 +90,7 @@ Your data before the migration will be untouched and safe. So you can add some m
 
 :::
 
-## Updating the Appcircle Server
+## Migration
 
 ### Download Latest
 
@@ -111,11 +122,11 @@ Shutdown the Appcircle server.
 
 ### Update Packages
 
-Although it's rare, update may have new packages or package updates. Those are the tools that self-hosted Appcircle depends on. So they should be kept up-to-date same as Appcircle server.
+Although it's rare, updates may have new packages or package updates. Those are the tools that the self-hosted Appcircle depends on. So they should be kept up-to-date, just like the Appcircle server.
 
 :::caution
 
-You need to have root access on your system for this step. Being able to run `sudo` is sufficient for the following step. (sudoer)
+You need to have root access to your system for this step. Being able to run `sudo` is sufficient for the following step. (sudoer)
 
 :::
 
@@ -127,20 +138,26 @@ sudo ./ac-self-hosted.sh -i
 
 ### Update Server
 
+:::info
+
+You must apply one of the options below while updating the self-hosted Appcircle server.
+
+:::
+
 <Tabs>
-  <TabItem value="snsd" label="Migrate to SNSD MinIO (Recommended)" default>
+  <TabItem value="snsd" label="Migrating to SNSD MinIO (recommended)" default>
 
-Migrating to `snsd` MinIO does not necessitate any additional configuration adjustments in the global.yaml file of the project.
+Migrating to a single-node single drive MinIO does not necessitate any additional configuration adjustments in the `global.yaml` file of the project.
 
-Execute below command to apply new configurations.
+Execute the below command to apply configuration changes.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-### MinIO Migrate
+#### MinIO Migration
 
-Migration from `mnsd` to `snsd` can be accomplished seamlessly with a single command.
+Migration from multi-node single drive (**`mnsd`**) to single-node single drive (**`snsd`**) configuration can be accomplished seamlessly with a single command.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" minio-migrate "mnsd" "snsd"
@@ -154,29 +171,38 @@ Migration logs are being saved into the minio-migration-20240329082833 file.
 Migration command completed successfully.
 ```
 
-Detailed migration logs are being saved into a file named `minio-migration-datetime` where datetime is the current system date time in a format like `20240329082833`.
+Detailed migration logs are being saved into a file named `minio-migration-${datetime}` where the `datetime` part is the current system date time in a format like `20240329082833`.
+
 You can access and review the comprehensive migration logs from this file for further insights into the migration process.
 
   </TabItem>
 
-  <TabItem value="mnsd" label="Stay With MNSD MinIO">
+  <TabItem value="mnsd" label="Staying with MNSD MinIO">
 
-To remain with the `mnsd` MinIO configuration and not proceed with migration, it's necessary to specify the MinIO type in the `global.yaml` file of the project.
+:::note
 
-Edit the `global.yaml` file.
+Although that's not recommended, you can prefer to stay with a multi-node single drive MinIO.
+
+Keep in mind that this type of MinIO usage is **deprecated**, and later versions of the self-hosted Appcircle server might drop support for multi-node single drive MinIO.
+
+:::
+
+In order to stay with the multi-node single drive (**`mnsd`**) MinIO configuration and not proceed with migration, it's necessary to specify the MinIO type in the `global.yaml` file of the project.
+
+- Edit the `global.yaml` file of your project.
 
 ```bash
 vi ./projects/spacetech/global.yaml
 ```
 
-Add the `minio` and `type` keys. Specify the `mnsd` as the type.
+- Add the below section to `global.yaml` and specify the `mnsd` value as the `minio.type`.
 
 ```yaml
 minio:
   type: mnsd
 ```
 
-Then execute below command to apply new configurations.
+- Then execute the below command to apply configuration changes.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
@@ -188,98 +214,179 @@ Then execute below command to apply new configurations.
 
 ### Update Images
 
-In order to get container image updates for Appcircle server services, we need to pull them from remote artifact repository.
+In order to get container image updates for Appcircle server services, you need to pull them from the remote artifact repository.
 
-Upgrade the container images.
+- Upgrade the container images.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" upgrade
 ```
 
-Then start with below command.
+- Start the Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" up
 ```
 
-When complete, check service statuses.
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
-You may also print the image hashes and script's version by using the below command.
+You should see the message: _"All services are running successfully."_
 
-```bash
-./ac-self-hosted.sh -n "spacetech" version
-```
+:::
 
-## Notes
+## Troubleshooting & FAQ
 
-### If the Disk is Full-Filled While Migration
+### There is no space left on disk while migrating
 
-If you can connect to the server via SSH, you can delete the **new** `snsd` minio volume to free up disk space for initial stable system operation.
+If you can connect to the server via SSH, you can delete the **newly created** single-node single drive MinIO volume to free up disk space for stable system operations.
+
+- List and filter the **`snsd`** volume from container volumes.
+
+<Tabs>
+  <TabItem value="docker" label="Docker" default>
 
 ```bash
 docker volume ls | grep -i "snsd"
+```
+
+  </TabItem>
+
+  <TabItem value="podman" label="Podman">
+
+```bash
+podman volume ls | grep -i "snsd"
+```
+
+  </TabItem>
+</Tabs>
+
+- Remove the your project's **`snsd`** volume. For example;
+
+<Tabs>
+  <TabItem value="docker" label="Docker" default>
+
+```bash
 docker volume rm spacetech_minio_snsd_data
 ```
 
-Then if you want to migrate to `snsd` minio, you should clear the system and check the free disk space. Check the [Prerequirements](#prerequisites-for-migrating) section for the needed disk space. If needed, you can increase the disk size of the server.
+  </TabItem>
 
-If you want to update without the migration, you can follow the "Stay With MNSD MinIO" title.
+  <TabItem value="podman" label="Podman">
 
-### Testing the Migration
+```bash
+podman volume rm spacetech_minio_snsd_data
+```
 
-To test if the migration is successful and the data is consisted, you can check the steps below.
+  </TabItem>
+</Tabs>
 
-- Open an "Build Profile" and check the build logs.
+After that, you can cleanup the disk or add some more disk space for a successful migration.
 
-- Open an "Publish Profile" and check the publish logs.
+Check the **[prerequisites](#prerequisites)** section for the required disk space.
 
-- Open an "Testing Distribution Profile" and check the app icons.
+If you want to go on without any migration and stay with an older configuration, you should follow the **[Staying with MNSD MinIO](#update-server)** section for configuration details.
 
-- Open the "Enterprise App Store" and check the app icons.
+### Possible checks that can be done after migration
 
-### If you face an migration error.
+In order to check if the migration is successful and the data is consistent, you can check some modules on the Appcircle dashboard.
 
-This migration operation doesn't delete the old minio volumes. So if you face any error while migrating or after migrated to the `SNSD` minio type, you can head back to the old `MNSD` minio type.
+Below is a short list of common modules that can be checked.
 
-To go back to `MNSD` minio type, edit the `global.yaml` file of your project and change the minio type.
+- [ ] Open a "Build Profile" and check the build logs.
+- [ ] Open a "Publish Profile" and check the publish logs.
+- [ ] Open a "Testing Distribution Profile" and check the app icons.
+- [ ] Open "Enterprise App Store" module and check the app icons.
 
-Stop the Appcircle server.
+The migration command also prints output about the result of the migration operation on the command line.
+
+### When you get an error while or after migrating
+
+The migration operation does not delete the old MinIO volumes automatically. Your data before the migration is untouched and safe.
+
+So if you face any error while migrating or after migrating to the SNSD MinIO, you can revert to the old MNSD MinIO configuration.
+
+In this case follow the steps below to stay with MNSD MinIO configuration.
+
+- Log in to Appcircle server with SSH or remote connection.
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+<SpacetechExampleInfo />
+
+- Stop the Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" down
 ```
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add the below configuration section to `global.yaml`, or change the value as below if the `minio` section existed before.
 
 ```yaml
 minio:
   type: mnsd
 ```
 
-Then apply the new configurations.
+- Apply configuration changes.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-Start the Appcircle server.
+- Start the Appcircle server.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech" start
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
-### Deleting the Old Volumes
+### Deleting the unused MinIO volumes after migration
 
-If there is no errors while [Testing the Migration](#testing-the-migration), you can delete the old minio volumes to save disk space.
+If there are no errors while migrating and you are satisfied with the results after migration, you can delete the obsolete MinIO volumes to save free disk space.
 
-- To delete the old volumes, you can simple run the command below.
+In order to delete the unused MinIO volumes that were left from MNSD MinIO configuration, run the command below.
 
-:::info
-Please change the `spacetech` with your actual project name and change the `docker` to `podman` if you are using podman.
-:::
+<SpacetechExampleInfo/>
+
+<Tabs>
+  <TabItem value="docker" label="Docker" default>
 
 ```bash
-docker volume rm spacetech_minio_data1 spacetech_minio_data2 spacetech_minio_data3 spacetech_minio_data4
+docker volume rm \
+  spacetech_minio_data1 \
+  spacetech_minio_data2 \
+  spacetech_minio_data3 \
+  spacetech_minio_data4
 ```
+
+  </TabItem>
+
+  <TabItem value="podman" label="Podman">
+
+```bash
+podman volume rm \
+  spacetech_minio_data1 \
+  spacetech_minio_data2 \
+  spacetech_minio_data3 \
+  spacetech_minio_data4
+```
+
+  </TabItem>
+</Tabs>
+
+<NeedHelp />
+
+Have questions? [Contact us here.](https://appcircle.io/support/)
