@@ -23,14 +23,16 @@ The workflow steps that need to be executed before running the **Android Build f
 If you're updating the version via Appcircle, ensure that the following step comes before the **Android Build for UI Testing** step:
 
 - [**Android Increment Build and Version Number**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/increment-build-and-version-number)
-  :::
+
+:::
 
 :::caution
 If you're working with a **React Native Android** project, ensure that the following steps come before the **Android Build for UI Testing** step:
 
 - [**Install Node**](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/#install-node)
 - [**NPM/Yarn Commands**](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/npm-yarn-commands)
-  :::
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build-for-ui-testing_1.png'/>
 
