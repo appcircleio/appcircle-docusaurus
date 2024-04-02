@@ -66,7 +66,7 @@ If you have experience with Linux, installing the Appcircle runner on macOS shou
 
 :::
 
-##### 4. Dedicated Hosts and MacOS Instances
+##### 4. Dedicated Hosts and EC2 Mac Instances
 
 While the process of creating an EC2 Mac instance on AWS differs slightly from creating a Linux instance, the key distinction lies in the requirement of a dedicated host.
 
