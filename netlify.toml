@@ -725,3 +725,68 @@
   from = "/store"
   to = "/publish-module"
   status = 301
+
+  [[redirects]]
+  from = "/integrations/integration-guides/jira-integration"
+  to = "/workflows/common-workflow-steps/build-and-test/jira-commet"
+  status = 301
+
+  [[redirects]]
+  from = "/integrations/integration-guides/azure-board"
+  to = "/workflows/common-workflow-steps/build-and-test/azure-board"
+  status = 301
+
+  [[redirects]]
+  from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  status = 301
+
+  [[redirects]]
+  from = "/integrations/working-with-custom-scripts/"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+  [[redirects]]
+  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
+  to = "/workflows"
+  status = 301
+
+  [[redirects]]
+  from = "/integrations/working-with-custom-scripts/"
+  to = "/workflows"
+  status = 301
+
+  [[redirects]]
+  from = "/integrations/integration-guides/appdome-integration"
+  to = "/workflows"
+  status = 301
+
+  [[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-faq"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+  [[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+  [[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+  [[redirects]]
+  from = "/continuous-testing/automated-tests"
+  to = "/continuous-testing/"
+  status = 301
+
+  [[redirects]]
+  from = "/continuous-testing/using-aws-device-farm-for-ios-and-android-continuous-testing"
+  to = "/workflows/common-workflow-steps/build-and-test/aws-device-farm-and-deploy"
+  status = 301
+
+
+
+
+
