@@ -1,7 +1,7 @@
 ---
-title: "Using the Testing Portal"
-metaTitle: "Using the Testing Portal"
-metaDescription: "Using the Testing Portal"
+title: Using the Testing Portal
+metaTitle: Using the Testing Portal
+metaDescription: Using the Testing Portal
 sidebar_position: 4
 ---
 
