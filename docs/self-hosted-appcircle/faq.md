@@ -216,7 +216,7 @@ For example, if you already have the `keycloak` key in global.yaml, you must jus
 
 ```yaml
 external:
-  mainDomain: '.spacetech.com'
+  mainDomain: ".spacetech.com"
 ```
 
 :::caution
@@ -290,104 +290,6 @@ The first thing you should check is **PAT** permissions.
 If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
 
 For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
-
-### How can we change the default sub-domains?
-
-:::caution
-This operation needs `reset` which deletes all your data like "Build Profiles", "Certificates" etc on Appcircle Server.
-:::
-
-:::info
-If you only want to change the URLs of the Testing Distribution and the Enterprise App Store, you can check [Custom Domains](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) document to assign a custom domain without resetting the Appcircle server.
-:::
-
-You can change default subdomains as your needs at the first installation time of the Appcircle server.
-
-If you have already installed the Appcircle server and want to change the subdomains, you can reset the data and move on.
-
-For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com`, you can follow the steps below:
-
-- Go to the `appcircle-server` directory.
-
-```bash
-cd appcircle-server
-```
-
-:::info
-`spacetech` is example project name. Please check your own project name from under the `./projects` directory.
-:::
-
-- If your server is up and running, down your project.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" down
-```
-
-- Edit the `global.yaml` of your project for subdomains.
-
-```bash
-vi ./projects/spacetech/global.yaml
-```
-
-```yaml
-keycloak:
-  external:
-    subdomain: auth-appcircle
-webApp:
-  external:
-    subdomain: my-appcircle
-apiGateway:
-  external:
-    subdomain: api-appcircle
-testerWeb:
-  external:
-    subdomain: dist-appcircle
-webEvent:
-  external:
-    subdomain: hook-appcircle
-minio:
-  external:
-    subdomain: resource-appcircle
-storeWeb:
-  external:
-    subdomain: store-appcircle
-```
-
-:::caution
-If the keys are already exist in the `global.yaml`, you should just update or add the missing keys.
-
-For example you must have `keycloak` key in the global.yaml already. You must just add the `keycloak.external.subdomain` section.
-
-There should also be the `storeWeb` key in the global.yaml.
-:::
-
-- Edit the `mainDomain` of your project in the `global.yaml` file.
-
-```yaml
-external:
-  mainDomain: '.spacetech.com'
-```
-
-:::info
-
-- After you change the main domain and the subdomains, you can merge them in your mind to find full domain.
-
-- For example, in the example below:
-  - Main domain: `.spacetech.com`
-  - Web app domain: `my-appcircle`
-  - So you will use `my-appcircle.spacetech.com` as full domain.
-
-:::
-
-- `reset`, `export` and `up` the Appcircle Server
-
-The `reset` is optional, if you are installing for the first time (You must never have run the `up` command.), you don't the reset. You can continue with the `export` and the `up` commands.
-
-For details, you can follow [Reset Configuration](./install-server/docker.md/#reset-configuration) section in the documentation.
-
-:::info
-If you have configured the Appcircle server as `https`, you may want to change the nginx SSL certificate and key if the certificate doesn't contain the new domains.
-:::
 
 ## Appcircle Runner FAQ
 
