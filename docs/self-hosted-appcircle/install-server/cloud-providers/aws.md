@@ -252,6 +252,12 @@ When you complete installation successfully by following the above steps, you're
 
 But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply related the guidelines [here](/self-hosted-appcircle/self-hosted-runner/installation).
 
+:::tip
+Appcircle also supports the installation and execution of the runners on AWS.
+
+You can see the details about how to configure a runner on AWS **[here](/self-hosted-appcircle/self-hosted-runner/cloud-providers/aws)**.
+:::
+
 The self-hosted runner section in the documents has all the details about runners and their configuration.
 
 :::caution

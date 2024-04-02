@@ -47,7 +47,8 @@ If you have filled in the required variables in the **Configuration** section, y
 
 1. The input corresponds to the 1st field: `$AC_MODULE`
 2. The input corresponds to the 2nd field: `$AC_VARIANTS`
-   :::
+
+:::
 
 ### Output Variables
 
