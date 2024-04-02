@@ -74,7 +74,7 @@ Therefore, you should use this step as a standalone step instead of as part of a
 
 :::tip
 
-You can find more details about the included Java versions on the [Android Build Infrastructure](../../infrastructure/android-build-infrastructure#java-version) page.
+You can find more details about the included Java versions on the [Android Build Infrastructure](infrastructure/android-build-infrastructure#java-version) page.
 
 :::
 
@@ -99,7 +99,7 @@ OpenJDK Runtime Environment Zulu17.42+19-CA (build 17.0.7+7-LTS)
 OpenJDK 64-Bit Server VM Zulu17.42+19-CA (build 17.0.7+7-LTS, mixed mode, sharing)
 ```
 
-You can also switch to other pre-installed Java versions using the relevant environment variable as an argument in the `sdk` command. For more details about these environment variables, see the [Android Build Infrastructure](../../infrastructure/android-build-infrastructure#java-version) page.
+You can also switch to other pre-installed Java versions using the relevant environment variable as an argument in the `sdk` command. For more details about these environment variables, see the [Android Build Infrastructure](/infrastructure/android-build-infrastructure#java-version) page.
 
 :::
 
