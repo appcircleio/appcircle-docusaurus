@@ -1,7 +1,7 @@
 ---
-title: MinIO Migration Update
-metaTitle: MinIO Migration Update
-metaDescription: MinIO Migration Update
+title: MinIO Migration
+metaTitle: MinIO Migration
+metaDescription: MinIO Migration
 sidebar_class_name: hidden
 ---
 
@@ -11,28 +11,31 @@ import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-ser
 
 ## Overview
 
-Previous versions of the Appcircle server utilized MinIO in a multi-node single drive (`mnsd`) setup, which resulted in increased disk usage. By default, the Appcircle server utilizes MinIO in a single node single drive (`snsd`) configuration with the Appcircle server `v3.14.0`. With the transition to Appcircle server `v3.14.0` and the adoption of `snsd` MinIO, disk consumption is anticipated to decrease by approximately 20%.
+Older versions of the Appcircle server utilized MinIO in a multi-node single drive (**`mnsd`**) setup, which resulted in increased disk usage. By default, the Appcircle server utilizes MinIO in a single-node single drive (**`snsd`**) configuration with the Appcircle server version `v3.14.0` or later.
 
-This documentation provides comprehensive instructions on migrating from the `mnsd` MinIO configuration to the `snsd` MinIO setup within the new Appcircle server version.
+With the transition to Appcircle server `v3.14.0` and the adoption of single-node single drive (**`snsd`**) MinIO, disk consumption is anticipated to decrease by approximately 20%.
+
+This documentation provides comprehensive instructions on migrating from a multi-node single drive MinIO configuration to a single-node single drive MinIO configuration that can be applied to recent versions of the Appcircle server.
 
 :::caution
 Please note that this process will cause downtime since it requires a restart of the Appcircle server.
 :::
 
-## Prerequisites for Migrating
+## Prerequisites
 
-For a successful migration from mnsd MinIO to snsd MinIO, it's essential to ensure adequate free disk space on the Appcircle server.
+For a successful migration from multi-node single drive MinIO to single-node single drive MinIO, it's essential to ensure adequate free disk space on the Appcircle server.
 
 To determine the required disk space, follow the steps below:
 
-- SSH into the Appcircle server.
+- Log in to Appcircle server with SSH or remote connection.
 
-- Check the total disk space.
-  - Check the "Used" and "Available" disk spaces where your container engine data is located.
+- Get information about the "Used" and "Available" disk spaces where your container engine data is stored.
 
 ```bash
 df -h
 ```
+
+Below is a sample output for the command above.
 
 ```bash
 Filesystem      Size  Used Avail Use% Mounted on
@@ -45,15 +48,17 @@ tmpfs           5.8G     0  5.8G   0% /sys/fs/cgroup
 tmpfs           1.2G     0  1.2G   0% /run/user/1000
 ```
 
-- Check the disk usage of the container engine.
+- Get information about the disk usage of the container engine.
 
-:::info
-Change `docker` to `podman` if your container engine is Podman.
+:::note
+Change `docker` to `podman` in the below command if your preferred container engine is Podman.
 :::
 
 ```bash
 docker system df
 ```
+
+Below is a sample output for the command above.
 
 ```bash
 TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
@@ -63,15 +68,14 @@ Local Volumes   576       29        7.431GB   4.649GB (62%)
 Build Cache     38        0         831.5MB   831.5MB
 ```
 
-- Make sure you have half of the "Local Volumes" size of "Available" free disk space from the `df -h` command output.
-
-  - In our example, we have `60G` free disk space and `7.4GB` free disk space which is fine for the migration.
+- Make sure you have half of the "Local Volumes" size of "Available" (free) disk space.
+  - In our example above, we have 60 GB of "Available" (free) disk space, which should be sufficient for the migration since the "Local Volumes" have a size of 7.4 GB.
 
 :::caution
 
-If you don't have enough free disk space, the migration may fail, interrupted and stop.
+If you don't have enough free disk space, the migration may fail, be interrupted, and stop.
 
-Your old data will be untouched and saved. So you can add free disk space and run the migration command again to migrate.
+Your data before the migration will be untouched and safe. So you can add some more free disk space and run the migration command again to migrate.
 
 :::
 
@@ -82,13 +86,13 @@ Your old data will be untouched and saved. So you can add free disk space and ru
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.10.1.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.14.0.zip
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.10.1.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.14.0.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
