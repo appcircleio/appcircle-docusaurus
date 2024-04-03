@@ -297,7 +297,7 @@ After that, you can cleanup the disk or add some more disk space for a successfu
 
 Check the **[prerequisites](#prerequisites)** section for the required disk space.
 
-If you want to go on without any migration and stay with an older configuration, you should follow the **[Staying with MNSD MinIO](#update-server)** section for configuration details.
+If you want to go on without any migration and stay with an older configuration, you should follow the **[Staying with MNSD MinIO](#update-server-configuration)** section for configuration details.
 
 ### Possible checks that can be done after migration
 
