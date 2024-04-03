@@ -255,7 +255,7 @@ If you can connect to the server via SSH, you can delete the **newly created** s
 
 - List and filter the **`snsd`** volume from container volumes.
 
-<Tabs>
+<Tabs groupId="container-engine">
   <TabItem value="docker" label="Docker" default>
 
 ```bash
@@ -275,7 +275,7 @@ podman volume ls | grep -i "snsd"
 
 - Remove the your project's **`snsd`** volume. For example;
 
-<Tabs>
+<Tabs groupId="container-engine">
   <TabItem value="docker" label="Docker" default>
 
 ```bash
