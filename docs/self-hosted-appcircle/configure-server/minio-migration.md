@@ -167,11 +167,11 @@ Upon successful completion of the migration process, you should see an output li
 
 ```text
 ...
-Migration logs are being saved into the minio-migration-20240329082833 file.
+Migration logs are being saved into the minio-migration-20240329082833.log file.
 Migration command completed successfully.
 ```
 
-Detailed migration logs are being saved into a file named `minio-migration-${datetime}` where the `datetime` part is the current system date time in a format like `20240329082833`.
+Detailed migration logs are being saved into a file named `minio-migration-${datetime}.log` where the `datetime` part is the current system date time in a format like `20240329082833`.
 
 You can access and review the comprehensive migration logs from this file for further insights into the migration process.
 
