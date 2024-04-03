@@ -634,7 +634,7 @@ Older builds and/or testing distributions will use almost all of your storage. I
 
 #### [Refer here to delete a Google Play Store Publish Profile](../publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles)
 
-#### [Refer here to delete an App Store Publish Profile](../publish-integrations/ios-publish-integrations/send-to-app-store#deleting-ios-publish-profiles)
+#### [Refer here to delete an App Store Publish Profile](/publish-module/publish-information/delete)
 
 In order for storage to be freed up, you should also remove the other references pointing to the artifact. In example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds respectively.
 
