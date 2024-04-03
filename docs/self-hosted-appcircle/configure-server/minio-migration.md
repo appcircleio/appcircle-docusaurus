@@ -136,7 +136,23 @@ In order to update packages, execute the script using the `-i` argument as shown
 sudo ./ac-self-hosted.sh -i
 ```
 
-### Update Server
+### Update Images
+
+In order to get container image updates for Appcircle server services, you need to pull them from the remote artifact repository.
+
+:::caution
+If you are updating the Appcircle server with the [Offline Upgrade](/docs/self-hosted-appcircle/configure-server/offline-installation.md) method, you should `load` the new container images before the MinIO migration.
+
+For more details, please head to the [Offline Upgrade Documentation](/docs/self-hosted-appcircle/configure-server/offline-installation.md#upgrade) and follow the steps before the MinIO migration.
+:::
+
+- Upgrade the container images.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" upgrade
+```
+
+### Update Server Configuration
 
 :::info
 
@@ -212,15 +228,7 @@ minio:
 
 </Tabs>
 
-### Update Images
-
-In order to get container image updates for Appcircle server services, you need to pull them from the remote artifact repository.
-
-- Upgrade the container images.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" upgrade
-```
+### Start the Server
 
 - Start the Appcircle server.
 
