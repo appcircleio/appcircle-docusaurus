@@ -358,7 +358,7 @@
 
 [[redirects]]
   from = "/store-submit/apple-app-store"
-  to = "/publish-module/send-to-appstore"
+  to = "/publish-integrations/ios-publish-integrations/send-to-app-store"
   status = 301
 
 [[redirects]]
@@ -644,10 +644,25 @@
 
 [[redirects]]
   from = "/store-submit/google-play"
-  to = "/publish-module/send-to-googleplay"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay"
   status = 301
 
 [[redirects]]
   from = "/store-submit/huawei-app-gallery"
-  to = "/publish-module/send-to-huawei"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/#add-version"
+  to = "/publish-module/binary-management"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/#publish-profile"
+  to = "/publish-module/creating-publish-profiles"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-googleplay#deleting-android-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles"
   status = 301

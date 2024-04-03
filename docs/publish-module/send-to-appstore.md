@@ -3,7 +3,12 @@ title: Send Apps to App Store and TestFlight
 metaTitle: Send Apps to App Store and TestFlight
 metaDescription: Send Apps to App Store and TestFlight
 sidebar_position: 1
+tags: [publish, appstore, testflight]
+description: Send Apps to App Store and TestFlight
+keywords: [app store, testflight, appcircle, publish]
+sidebar_class_name: hidden
 ---
+
 import Screenshot from '@site/src/components/Screenshot';
 
 # Send Apps to App Store and TestFlight
@@ -85,12 +90,12 @@ In the step settings, you can customize the **Xcode Version**, select an **App S
 
 :::tip
 
-You can use `Send to App Store` to send an application to TestFlight. For this purpose, you can select  `TestFlight` in **Stage Type**.
+You can use `Send to App Store` to send an application to TestFlight. For this purpose, you can select `TestFlight` in **Stage Type**.
 
 However, Appcircle will only send to TestFlight in the `Send to TestFlight` step. See details [here](#send-apps-to-testflight).
 :::
 
-When you complete configuring the publish flow, add an application version by [configuring the build module](/publish-module/#publish-profile) or [manually adding a version](/publish-module/#add-version) by binary upload.
+When you complete configuring the publish flow, add an application version by [configuring the build module](/publish-module/creating-publish-profiles) or [manually adding a version](/publish-module/binary-management) by binary upload.
 
 Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
@@ -128,7 +133,7 @@ In the step settings, you can customize the **Xcode Version**, select an **App S
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-send-testflight-in.png' />
 
-When you complete configuring the publish flow, add an application version by [configuring the build module ](/publish-module/#publish-profile) or [manually adding a version](/publish-module/#add-version) by binary upload.
+When you complete configuring the publish flow, add an application version by [configuring the build module ](/publish-module/creating-publish-profiles) or [manually adding a version](/publish-module/binary-management) by binary upload.
 
 Click on the three dots to open the **Actions** menu for the version and select **Details** there.
 
