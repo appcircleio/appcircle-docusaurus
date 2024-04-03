@@ -74,7 +74,7 @@ Therefore, you should use this step as a standalone step instead of as part of a
 
 :::tip
 
-You can find more details about the included Java versions on the [Android Build Infrastructure](infrastructure/android-build-infrastructure#java-version) page.
+You can find more details about the included Java versions on the [Android Build Infrastructure](/infrastructure/android-build-infrastructure#java-version) page.
 
 :::
 
