@@ -1,31 +1,34 @@
 ---
-title: Add Badge to Your App Icon
-metaTitle: Add Badge to Your App Icon
-metaDescription: Add Badge to Your App Icon
+title: Add a Badge to Your App Icon
+metaTitle: Add a Badge to Your App Icon
+metaDescription: Learn how to add a badge to your app icon with Appcircle's badge component.
+tags: [badge, app icon, version, build, appcircle, mobile ci/cd]
+keywords: [badge, app icon, version, build, appcircle, mobile ci/cd]
 sidebar_position: 4
 ---
 
+
 import Screenshot from '@site/src/components/Screenshot';
 
-# Add Badge to Your App Icon
+# Add a Badge to Your App Icon
 
-With Appcircle's **Add Badge to Your App Icon** component, you can add your badge and version information to your app icon. Also, you can customize them. In this way, testers can easily understand which version they are testing on the application icon.
+With Appcircle's **Add Badge to Your App Icon** component, you can add badges and version information to your app icon, which you can also customize. This helps testers easily identify the version they are testing directly on the application icon.
 
 |Original|Modified|
 |--------|------|
-|![Original Image](https://github.com/appcircleio/appcircle-badge-component/blob/main/assets/original.png?raw=true)|![Modified Image](https://github.com/appcircleio/appcircle-badge-component/blob/main/assets/badged.png?raw=true)|
+|![Original Image](https://cdn.appcircle.io/docs/assets/be-3069-original-icon.png)|![Modified Image](https://cdn.appcircle.io/docs/assets/be-3069-badge-icon.png)|
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running this step, along with their respective reasons, are listed in the table below.
+Below is a list of workflow steps that need to be executed before this step, along with their respective reasons.
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The repo needs to be cloned in order to start the badge-adding process. After this step works, the variable `AC_REPOSITORY_DIR` will be created.|
+| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The repository needs to be cloned to begin the badge-adding process. After this step, the variable `AC_REPOSITORY_DIR` will be set. |
 
 :::caution
 
-If you are using the [**Increment Build and Version Number**](/versioning/ios-version) component in your workflow and you want to print the current version information on the icon, this step should be used before the Add Badge to Your App Icon component.
+If you are using the [**Increment Build and Version Number**](/versioning/ios-version) component in your workflow and you want to print the current version information on the icon, this step should be used before the **Add Badge to Your App Icon** component.
 
 :::
 
@@ -34,21 +37,21 @@ If you are using the [**Increment Build and Version Number**](/versioning/ios-ve
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+Below is a list of input variables that can be used with this component with a description of each.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3061-badgeInput.png' />
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_ICONS_PATH`         | Specifies the path of icon files. For example: `MyProject/Assets.xcassets/AppIcon.appiconset`. The glob pattern can be used to select multiple image paths. For example: `app/src/main/res/mipmap*` adds badges to all pngs under mipmap in this file path. | Required |
-| `$AC_BADGE_TEXT`               | Text that appears in the right corner. | Optional |
-| `$AC_BADGE_VERSION`              | Version or build number that will appear at the bottom. | Optional |
-| `$AC_BADGE_BGCOLOR`             | You can use a full color name `(orange)`, `hex codes(#FFA500)`, or rgb values `(rgb(255,165,0))`. | Optional |
-| `$AC_BADGE_TEXTCOLOR`           | You can use a full color name `(white)`, `hex codes(#FFFFFF)`, or rgb values `(rgb(255,255,255))`. | Optional |
+| `$AC_ICONS_PATH`         | Specifies the path of icon files. For example: `MyProject/Assets.xcassets/AppIcon.appiconset`. The glob pattern can be used to select multiple image paths, for example, `app/src/main/res/mipmap*` to add badges to all PNGs under mipmap in this file path. | Required |
+| `$AC_BADGE_TEXT`               | The text to appear in the badge on the top right corner. | Optional |
+| `$AC_BADGE_VERSION`              | The version or build number to display at the bottom of the badge. | Optional |
+| `$AC_BADGE_BGCOLOR`             | You can specify a full color name (e.g., `orange`), hex codes (e.g., `#FFA500`), or RGB values (e.g., `rgb(255,165,0)`). | Optional |
+| `$AC_BADGE_TEXTCOLOR`           | You can specify a full color name (e.g., `white`), hex codes (e.g., `#FFFFFF`), or RGB values (e.g., `rgb(255,255,255)`). | Optional |
 
 :::info
 
-In order to use this component, the icon path in the project file must be given. Sample path usages for this are listed below.
+To use this component, you must provide the icon path from your project file. Here are some sample path usages:
 
 - iOS Native: `MyProject/Assets.xcassets/AppIcon.appiconset`
 - Android Native `app/src/main/res/`
@@ -57,10 +60,10 @@ In order to use this component, the icon path in the project file must be given.
 - Flutter iOS: `ios/Runner/Assets.xcassets/AppIcon.appiconset`
 - Flutter Android: `android/app/src/main/res/`
 
-**Note:** The glob pattern can be used to select multiple image paths. For example: `app/src/main/res/mipmap*` adds badges to all pngs under mipmap in this file path.
+**Note:** The glob pattern can be used to select multiple image paths. For example: `app/src/main/res/mipmap*` adds badges to all pngs under the mipmap in this file path.
 
 :::
 
-To access the source code of this component, please use the following link:
+For the source code of this component, visit:
 
 https://github.com/appcircleio/appcircle-badge-component
