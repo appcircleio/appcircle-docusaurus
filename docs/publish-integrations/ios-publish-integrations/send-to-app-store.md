@@ -23,9 +23,9 @@ Note: This is a standalone step. The steps listed below should precede this step
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**App Information from App Store**](https://docs.appcircle.io/publish-module/ios-specific-publish-flows/app-information-app-store) | This step compares the Release Candidate version with the TestFlight and the App Store versions. |
-| [**Sent to Testflight**](https://docs.appcircle.io/publish-module/ios-specific-publish-flows/send-to-app-store) | This step allows you to submit your application to TestFlight. |
-| [**Get Approval from TestFlight**](https://docs.appcircle.io/publish-module/ios-specific-publish-flows/approval-test-flight) | This step checks the TestFlight status of your application and advances the Publish Flow according to the specified acceptance condition. |
+| [**App Information from App Store**](/publish-integrations/ios-publish-integrations/app-information-app-store) | This step compares the Release Candidate version with the TestFlight and the App Store versions. |
+| [**Sent to Testflight**](/publish-integrations/ios-publish-integrations/send-to-app-store) | This step allows you to submit your application to TestFlight. |
+| [**Get Approval from TestFlight**](/publish-integrations/ios-publish-integrations/approval-test-flight) | This step checks the TestFlight status of your application and advances the Publish Flow according to the specified acceptance condition. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2914-appStore.png' />
 

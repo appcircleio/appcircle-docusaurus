@@ -26,7 +26,7 @@ The prerequisite steps for this operation are listed below.
 
 | Prerequisite Workflow Step                                                                                                          | Description                                                                                                                                                                                                                                            |
 | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**App Information from App Store**](https://docs.appcircle.io/publish-module/ios-specific-publish-flows/app-information-app-store) | This step provides information about the version you want to send and your versions in both [**TestFlight**](https://developer.apple.com/testflight/) and the [**App Store**](https://developer.apple.com/documentation/appstoreconnectapi/app_store). |
+| [**App Information from App Store**](/publish-integrations/ios-publish-integrations/app-information-app-store) | This step provides information about the version you want to send and your versions in both [**TestFlight**](https://developer.apple.com/testflight/) and the [**App Store**](https://developer.apple.com/documentation/appstoreconnectapi/app_store). |
 
 :::info
 The **App Information from App Store** step is not mandatory before the **Send to TestFlight** step. However, if included in your workflow, it should precede the **TestFlight** step.
