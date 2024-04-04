@@ -107,7 +107,8 @@ You can access the relevant terms and conditions from the links below and get de
 - [Apple Developer Enterprise Program Agreement](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20230605-English.pdf)
   - See Section 2.1 on page 8 for usage and restrictions, and Section 11.2 on page 33 for terms and terminations.
 - [Apple Developer Enterprise Program](https://developer.apple.com/programs/enterprise/)
-  :::
+
+:::
 
 :::info
 
