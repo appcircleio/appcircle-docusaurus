@@ -711,3 +711,28 @@
   from = "/continuous-testing/using-aws-device-farm-for-ios-and-android-continuous-testing"
   to = "/workflows/common-workflow-steps/build-and-test/aws-device-farm-and-deploy"
   status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-appstore"
+  to = "/publish-integrations/ios-publish-integrations/send-to-app-store"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-googleplay"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-googleplay#deleting-android-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei#deleting-huawei-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
+  status = 301
