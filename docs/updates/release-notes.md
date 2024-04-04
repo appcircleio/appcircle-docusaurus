@@ -552,7 +552,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 ### 🆕 New Feature
 
 - [LDAP Login](/enterprise-appstore/enterprise-app-store-setup/customize-ent-store#ldap-login) added to Enterprise Store.
-- [Jira](/workflows/common-workflow-steps/build-and-test/jira-commet) component added.
+- [Jira](/workflows/common-workflow-steps/build-and-test/jira-component) component added.
 - [Microsoft Teams](/account/my-organization/notifications-and-communication/teams-notifications) integration added.
 - [Gradle Runner](/workflows/android-specific-workflow-steps/#gradle-runner) component added.
 - [Maestro Cloud Upload](/workflows/common-workflow-steps/#maestro-cloud-upload) component added.

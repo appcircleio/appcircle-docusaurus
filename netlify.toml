@@ -498,7 +498,13 @@
 
 [[redirects]]
   from = "/integrations/increasing-the-version-number-automatically-for-ios-and-android"
-  to = "/integrations/workflow-optimization/increasing-the-version-number-automatically-for-ios-and-android"
+  to = "/versioning/android-version"
+  status = 301
+
+
+[[redirects]]
+  from = "/integrations/increasing-the-version-number-automatically-for-ios-and-android"
+  to = "/versioning/ios-version"
   status = 301
 
 [[redirects]]
@@ -548,7 +554,7 @@
 
 [[redirects]]
   from = "/workflows/common-workflow-steps/authanticate-with-netrc"
-  to = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
+  to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
   status = 301
 
 [[redirects]]
@@ -654,7 +660,7 @@
 
 [[redirects]]
   from = "/integrations/integration-guides/jira-integration"
-  to = "/workflows/common-workflow-steps/build-and-test/jira-commet"
+  to = "/workflows/common-workflow-steps/build-and-test/jira-component"
   status = 301
 
 [[redirects]]
@@ -670,11 +676,6 @@
 [[redirects]]
   from = "/integrations/working-with-custom-scripts/"
   to = "/workflows/common-workflow-steps/build-and-test/custom-script"
-  status = 301
-
-[[redirects]]
-  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
-  to = "/workflows"
   status = 301
 
 [[redirects]]
@@ -756,3 +757,9 @@
   from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt#azure-devops-bot-for-detekt"
   to = "/workflows/android-specific-workflow-steps/"
   status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
+  to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
+  status = 301
+
