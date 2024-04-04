@@ -38,7 +38,7 @@ This action is used to change the status of a build that has been previously mar
 
 <ContentRef
 url="/publish-module/publish-information/marking-release-candidates">
-Read more about Unmark as RC
+Read more about Marking Release Candidates
 </ContentRef>
 
 ## 4. Downloading Binaries
