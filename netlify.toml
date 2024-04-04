@@ -653,6 +653,11 @@
   status = 301
 
 [[redirects]]
+  from = "/publish-module/send-to-appstore#deleting-ios-publish-profiles"
+  to = "/publish-module/publish-information/delete"
+  status = 301
+
+[[redirects]]
   from = "/publish-module/send-to-appstore"
   to = "/publish-integrations/ios-publish-integrations/send-to-app-store"
   status = 301
@@ -668,25 +673,8 @@
   status = 301
 
 [[redirects]]
-  from = "/publish-module/#add-version"
-  to = "/publish-module/binary-management"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/publish-module/#publish-profile"
-  to = "/publish-module/creating-publish-profiles"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/publish-module/send-to-googleplay#deleting-android-publish-profiles"
   to = "/publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles"
-  status = 301
-
-[[redirects]]
-  from = "/publish-module/send-to-appstore#deleting-ios-publish-profiles"
-  to = "/publish-module/publish-information/delete"
   status = 301
 
 [[redirects]]
