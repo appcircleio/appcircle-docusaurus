@@ -686,3 +686,8 @@
   from = "/publish-module/send-to-appstore#deleting-ios-publish-profiles"
   to = "/publish-module/publish-information/delete"
   status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei#deleting-huawei-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
+  status = 301
