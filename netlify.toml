@@ -671,11 +671,13 @@
   from = "/publish-module/#add-version"
   to = "/publish-module/binary-management"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/publish-module/#publish-profile"
   to = "/publish-module/creating-publish-profiles"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/publish-module/send-to-googleplay#deleting-android-publish-profiles"
