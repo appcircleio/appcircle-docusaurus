@@ -498,13 +498,7 @@
 
 [[redirects]]
   from = "/integrations/increasing-the-version-number-automatically-for-ios-and-android"
-  to = "/versioning/android-version"
-  status = 301
-
-
-[[redirects]]
-  from = "/integrations/increasing-the-version-number-automatically-for-ios-and-android"
-  to = "/versioning/ios-version"
+  to = "/versioning"
   status = 301
 
 [[redirects]]
