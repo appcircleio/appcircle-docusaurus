@@ -50,7 +50,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Fixed a problem where versioning was being reset erroneously. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug where form validation was broken after uploading YAML files. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where there was a problem with keystore selection on the Resign binary page <CloudBadge/> <SelfHostedBadge/>
-- 
+
 
 ## 3.13.0 - 2024-03-04 - Improved Publish Module, Xcode 15.3, Build Infrastructure Updates
 
