@@ -14,39 +14,39 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ## 3.14.0 - 2024-04-04 - Improved Workflow Editor, Publish Module Enhancement, Deprecated Store Submit Module
 
-### 🆕 New Feature
+### 🆕 New Features
 
 - Users will now have the capability to be redirected to their desired location upon clicking on [Okta applications](https://docs.appcircle.io/account/my-organization/sso-providers-configuration/okta-saml), enhancing navigation efficiency and user experience within the system. <CloudBadge/> <SelfHostedBadge/>
 - When a [build is manually initiated](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#manual-build), the system will retrieve information about the user from the initiating organization. If the [build is not initiated manually](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#automatic-build), the details of the user who made the commit will be displayed instead. This ensures accurate attribution of actions within the system. <CloudBadge/> <SelfHostedBadge/>
 - The feature to display the status of builds made in branches has been added, providing users with visibility into the progress and outcome of builds associated with specific branches, enhancing transparency and workflow management. <CloudBadge/> <SelfHostedBadge/>
-- Branches are now filtered based on their status, enabling users to easily identify and navigate branches based on their current state or condition. <CloudBadge/> <SelfHostedBadge/>
+- Branches are now filtered based on their status, enabling users to easily identify and navigate through branches based on their current state. <CloudBadge/> <SelfHostedBadge/>
 - The "Type" field has been incorporated into the data table within the [Environment Variable](https://docs.appcircle.io/environment-variables) sections, providing users with additional context and information regarding the type of each variable. <CloudBadge/> <SelfHostedBadge/>
 - Submit Store redirects have been eliminated from the site. <CloudBadge/> <SelfHostedBadge/> 
 - [PAT (Personal Access Token) connections](https://docs.appcircle.io/build/manage-the-connections/#managing-pat-connections) listed on the [build connection page are now deletable, providing users with the flexibility to manage their connections more efficiently. <CloudBadge/> <SelfHostedBadge/>
-- In the [Publish module](https://docs.appcircle.io/publish-module), within the app information section, users now have the ability to redirect to the relevant build and profile if the publish originated from a build. <CloudBadge/> <SelfHostedBadge/>
+- In the [Publish module](https://docs.appcircle.io/publish-module), within the app information section, users can now redirect to the relevant build and profile if the publish originated from a build. <CloudBadge/> <SelfHostedBadge/>
 - Release notes are now displayed in the [app information](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/app-information-app-store) section within the Publish module. <CloudBadge/> <SelfHostedBadge/>
 - The ["Get approval from Test Flight"](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/approval-test-flight) step has been enhanced to provide additional information and actions, such as managing beta testers and addressing compliance errors. <CloudBadge/> <SelfHostedBadge/>
 
-### :muscle: Improvement
+### :muscle: Improvements
 
 - Users now have the capability to update the default release notes for app versions directly on the [Binary Information](https://docs.appcircle.io/publish-module/publish-information/binary-information) page. <CloudBadge/> <SelfHostedBadge/>
-- We have updated nearly all icons and message contents for notification messages across [Email](https://docs.appcircle.io/account/my-organization/notifications-and-communication/email-connection), [Slack](https://docs.appcircle.io/account/my-organization/notifications-and-communication/slack/slack-notifications), and [Teams](https://docs.appcircle.io/account/my-organization/notifications-and-communication/teams-notifications). <CloudBadge/> <SelfHostedBadge/>
+- Users can now update the default release notes for app versions directly on the [Binary Information](https://docs.appcircle.io/publish-module/publish-information/binary-information) page. <CloudBadge/> <SelfHostedBadge/>
 - Post-upload control for [Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-googleplay#adding-a-google-play-developer-api-key) and [Huawei AppGallery](https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-huawei#adding-a-huawei-appgallery-api-key) Credential Validation against API files has been implemented. <CloudBadge/> <SelfHostedBadge/>
 - Improvements have been made to the text on the download and install buttons in the Enterprise store. <CloudBadge/> <SelfHostedBadge/>
 - The user interface has been updated for disabled states, with the opacity of the corresponding switch object being reduced to improve visual clarity and indicate its disabled status more effectively. <CloudBadge/> <SelfHostedBadge/>
 - The invitation link has been updated to be a clickable link instead of plain text, allowing users to easily access the invitation page with a single click for a smoother onboarding experience. <CloudBadge/> <SelfHostedBadge/>
 - In the [Publish module](https://docs.appcircle.io/publish-module), the names "App Info" and "Details" have been updated to prevent misunderstanding. "App Information" has been changed to "Binary Information," and "Details" has been changed to "Publish Details" for clarity. <CloudBadge/> <SelfHostedBadge/>
 
-### 🐞 Fixed
+### 🐞 Fixes
 
 - Fixed a bug that allowed app versions with different bundleIds to be uploaded. <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug where step execution time was not displayed in some cases. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that allowed app versions with different bundle IDs to be uploaded. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug where self-hosted runners, when the only available runner systems were present, were unable to detect changes or default values of Xcode versions for App Store steps. <SelfHostedBadge/>
 - Fixed a bug where the data was not updated when an app version Release Candidate (RC) was selected. <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug where, in the pool table, when agent information was missing, the pool was erroneously reset as if there were no records present. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug in the pool table where, if agent information was missing, the pool was erroneously reset as if no records were present. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that occurred when re-uploading a file with the same name. <CloudBadge/> <SelfHostedBadge/>
-- Fixed a problem where the add new user screen would crash upon encountering an invited user. <CloudBadge/> <SelfHostedBadge/>
-- Fixed a 404 problem that users were encountering when attempting to connect to PAT (Personal Access Token). <CloudBadge/> <SelfHostedBadge/>
+- Fixed a crash that occurred on the add new user screen when encountering an invited user. <CloudBadge/> <SelfHostedBadge/>
+- Resolved a 404 issue that users encountered when attempting to connect to PAT (Personal Access Token). <CloudBadge/> <SelfHostedBadge/>
 - Fixed a problem where versioning was being reset erroneously. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug where form validation was broken after uploading YAML files. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where there was a problem with keystore selection on the Resign binary page <CloudBadge/> <SelfHostedBadge/>
