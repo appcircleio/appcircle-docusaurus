@@ -653,11 +653,6 @@
   status = 301
 
 [[redirects]]
-  from = "/publish-module/send-to-appstore#deleting-ios-publish-profiles"
-  to = "/publish-module/publish-information/delete"
-  status = 301
-
-[[redirects]]
   from = "/publish-module/send-to-appstore"
   to = "/publish-integrations/ios-publish-integrations/send-to-app-store"
   status = 301
