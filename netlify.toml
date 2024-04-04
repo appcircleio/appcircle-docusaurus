@@ -651,3 +651,28 @@
   from = "/store-submit/huawei-app-gallery"
   to = "/publish-module/send-to-huawei"
   status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-appstore"
+  to = "/publish-integrations/ios-publish-integrations/send-to-app-store"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-googleplay"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-googleplay#deleting-android-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei#deleting-huawei-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
+  status = 301
