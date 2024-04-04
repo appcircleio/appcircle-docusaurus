@@ -16,25 +16,30 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Features
 
-- Users now have the capability to be redirected to their desired locations upon clicking on [Okta applications](https://docs.appcircle.io/account/my-organization/sso-providers-configuration/okta-saml), enhancing navigation efficiency and user experience within the system. <CloudBadge/> <SelfHostedBadge/>
-- When a build is [manually initiated](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#manual-build), the system retrieves information about the user from the initiating organization. Conversely, if the build is [not initiated manually](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#automatic-build), it displays the details of the user who made the commit, ensuring accurate attribution of actions within the system. <CloudBadge/> <SelfHostedBadge/>
-- Added the feature to display the status of builds made in branches, providing users with visibility into the progress and outcome of builds associated with specific branches, enhancing transparency and workflow management. <CloudBadge/> <SelfHostedBadge/>
-- Branches are now filtered based on their status, enabling users to easily identify and navigate through branches based on their current state. <CloudBadge/> <SelfHostedBadge/>
-- Incorporated a "Type" field into the data table within the [Environment Variable](https://docs.appcircle.io/environment-variables) sections, offering additional context regarding the type of each variable. <CloudBadge/> <SelfHostedBadge/>
-- Submit Store redirects have been eliminated from the site. <CloudBadge/> <SelfHostedBadge/>
-- [PAT (Personal Access Token) connections](https://docs.appcircle.io/build/manage-the-connections/#managing-pat-connections) listed on the build connection page are now deletable, providing users with the flexibility to manage their connections more efficiently. <CloudBadge/> <SelfHostedBadge/>
 - In the [Publish module](https://docs.appcircle.io/publish-module), within the app information section, users can now redirect to the relevant build and profile if the publish originated from a build. <CloudBadge/> <SelfHostedBadge/>
 - Release notes are now displayed in the [app information](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/app-information-app-store) section within the Publish module. <CloudBadge/> <SelfHostedBadge/>
 - The ["Get approval from Test Flight"](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/approval-test-flight) step has been enhanced to provide additional information and actions, such as managing beta testers and addressing compliance errors. <CloudBadge/> <SelfHostedBadge/>
+- Added the ability to distribute to both internal and external groups within the ["Get approval from Test Flight"](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/approval-test-flight) section. <CloudBadge/> <SelfHostedBadge/>
+- Compliance status is displayed in the ["Get approval from Test Flight"](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/approval-test-flight)  component on the new UI page. <CloudBadge/> <SelfHostedBadge/>
+- In the [Publish Flow](https://docs.appcircle.io/publish-module/publish-flow/), support added for obtaining multiple email approvals with required/optional options and minimum approval count. <CloudBadge/> <SelfHostedBadge/>
+- Added filtering support for Publish Profile list based on latest statuses. <CloudBadge/> <SelfHostedBadge/>
+- You can now update the default release note of the app version provided by the Build Module. This will be sent as the "What to Test" area in [TestFlight](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/sent-to-testflight). <CloudBadge/> <SelfHostedBadge/>
+- Submit Store redirects have been eliminated from the site. <CloudBadge/> <SelfHostedBadge/>
+- Incorporated a "Type" field into the data table within the [Environment Variable](https://docs.appcircle.io/environment-variables) sections, offering additional context regarding the type of each variable. <CloudBadge/> <SelfHostedBadge/>
+- [PAT (Personal Access Token) connections](https://docs.appcircle.io/build/manage-the-connections/#managing-pat-connections) listed on the build connection page are now deletable, providing users with the flexibility to manage their connections more efficiently. <CloudBadge/> <SelfHostedBadge/>
+- Branches are now filtered based on their status, enabling users to easily identify and navigate through branches based on their current state. <CloudBadge/> <SelfHostedBadge/>
+- Users now have the capability to be redirected to their desired locations upon clicking on [Okta applications](https://docs.appcircle.io/account/my-organization/sso-providers-configuration/okta-saml), enhancing navigation efficiency and user experience within the system. <CloudBadge/> <SelfHostedBadge/>
+- When a build is [manually initiated](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#manual-build), the system retrieves information about the user from the initiating organization. Conversely, if the build is [not initiated manually](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#automatic-build), it displays the details of the user who made the commit, ensuring accurate attribution of actions within the system. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
 - Users can now update the default release notes for app versions directly on the [Binary Information](https://docs.appcircle.io/publish-module/publish-information/binary-information) page. <CloudBadge/> <SelfHostedBadge/>
+- In the [Publish module](https://docs.appcircle.io/publish-module), the names "App Info" and "Details" have been updated to prevent misunderstanding. "App Information" has been changed to "Binary Information," and "Details" has been changed to "Publish Details" for clarity. <CloudBadge/> <SelfHostedBadge/>
+- In the Publish module, [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) version is now the only source for Profile App Version, Build Number, and Icon. <CloudBadge/> <SelfHostedBadge/>
 - Post-upload control for [Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-googleplay#adding-a-google-play-developer-api-key) and [Huawei AppGallery](https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-huawei#adding-a-huawei-appgallery-api-key) Credential Validation against API files has been implemented. <CloudBadge/> <SelfHostedBadge/>
 - Improvements have been made to the text on the download and install buttons in the Enterprise store. <CloudBadge/> <SelfHostedBadge/>
 - The user interface has been updated for disabled states, with the opacity of the corresponding switch object being reduced to improve visual clarity and indicate its disabled status more effectively. <CloudBadge/> <SelfHostedBadge/>
 - The invitation link has been updated to be a clickable link instead of plain text, allowing users to easily access the invitation page with a single click for a smoother onboarding experience. <CloudBadge/> <SelfHostedBadge/>
-- In the [Publish module](https://docs.appcircle.io/publish-module), the names "App Info" and "Details" have been updated to prevent misunderstanding. "App Information" has been changed to "Binary Information," and "Details" has been changed to "Publish Details" for clarity. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
