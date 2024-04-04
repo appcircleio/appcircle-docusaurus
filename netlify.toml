@@ -736,3 +736,23 @@
   from = "/publish-module/send-to-huawei#deleting-huawei-publish-profiles"
   to = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
   status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples#changing-java-version"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script#how-to-change-java-version"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows#adding-fastlane-to-the-appcircle-build-workflow-as-a-step"
+  to = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt#azure-devops-bot-for-swiftlint"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt#azure-devops-bot-for-detekt"
+  to = "/workflows/android-specific-workflow-steps/"
+  status = 301
