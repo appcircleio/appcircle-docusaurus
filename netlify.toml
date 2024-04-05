@@ -247,11 +247,6 @@
   status = 301
 
 [[redirects]]
-  from = "/integrations/azure-bot-for-swiftlint-and-detekt"
-  to = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
-  status = 301
-
-[[redirects]]
   from = "/account/email-connection"
   to = "/account/my-organization/notifications-and-communication/email-connection"
   status = 301
@@ -498,7 +493,7 @@
 
 [[redirects]]
   from = "/integrations/increasing-the-version-number-automatically-for-ios-and-android"
-  to = "/integrations/workflow-optimization/increasing-the-version-number-automatically-for-ios-and-android"
+  to = "/versioning"
   status = 301
 
 [[redirects]]
@@ -548,7 +543,7 @@
 
 [[redirects]]
   from = "/workflows/common-workflow-steps/authanticate-with-netrc"
-  to = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
+  to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
   status = 301
 
 [[redirects]]
@@ -653,6 +648,61 @@
   status = 301
 
 [[redirects]]
+  from = "/integrations/integration-guides/jira-integration"
+  to = "/workflows/common-workflow-steps/build-and-test/jira-component"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/azure-board"
+  to = "/workflows/common-workflow-steps/build-and-test/azure-board"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/"
+  to = "/workflows"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/appdome-integration"
+  to = "/workflows"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-faq"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/automated-tests"
+  to = "/continuous-testing/"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/using-aws-device-farm-for-ios-and-android-continuous-testing"
+  to = "/workflows/common-workflow-steps/build-and-test/aws-device-farm-and-deploy"
+  status = 301
+
+[[redirects]]
   from = "/publish-module/send-to-appstore"
   to = "/publish-integrations/ios-publish-integrations/send-to-app-store"
   status = 301
@@ -675,4 +725,29 @@
 [[redirects]]
   from = "/publish-module/send-to-huawei#deleting-huawei-publish-profiles"
   to = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples#changing-java-version"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script#how-to-change-java-version"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows#adding-fastlane-to-the-appcircle-build-workflow-as-a-step"
+  to = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/azure-bot-for-swiftlint-and-detekt"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
+  to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
   status = 301

@@ -323,7 +323,7 @@ Every Android project has a `gradlew` file in the main repository directory. If 
 
 ### How can I change the JDK version for autofill?
 
-Appcircle currently has OpenJDK 11 (default), OpenJDK 8, OpenJDK 17 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can follow the steps [here](../integrations/working-with-custom-scripts/custom-script-samples#changing-java-version) and add a custom script to your workflow.
+Appcircle currently has OpenJDK 11 (default), OpenJDK 8, OpenJDK 17 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can follow the steps [here](/workflows/common-workflow-steps/build-and-test/custom-script#how-to-change-java-version) and add a custom script to your workflow.
 
 But unfortunately, you cannot use custom scripts for autofill operations, which make it easy to fill in configuration details while adding a new build profile.
 
@@ -339,7 +339,7 @@ For example, the below entry can be used to change the default Java version to 1
 org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu
 ```
 
-You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure#java-version) Java section.
+You can get the JDK home paths for each build pool from [Android's build infrastructure](/infrastructure/android-build-infrastructure#java-version) Java section.
 
 #### 2. Change `JAVA_HOME` using environment variables
 
@@ -356,7 +356,7 @@ For example, you can take the following steps to change the default Java version
 4. Select the variable group that has `JAVA_HOME` and 'Save' settings.
 5. Go back to the config tab and start autofilling there.
 
-You can get the JDK home paths for each build pool from [Android's build infrastructure](../infrastructure/android-build-infrastructure#java-version) Java section.
+You can get the JDK home paths for each build pool from [Android's build infrastructure](/infrastructure/android-build-infrastructure#java-version) Java section.
 
 ### Gradle build after Bintray shutdown
 
