@@ -20,12 +20,12 @@ By adding Appcircle's [**Jira Component**](https://github.com/appcircleio/appcir
 There is no mandatory sequence for the use of this component. It depends on your business decision which step to use before or after in your workflow.
 
 :::caution
-Please note that once the Jira Component component has run successfully, the status of the relevant article in your Jira account will be changed. If the build fails in Appcircle, an incorrect status may appear in your Jira account. Make sure you use it in the correct order in Workflow.
+Please note that once the Jira Component has run successfully, the status of the relevant article in your Jira account will be changed. If the build fails in Appcircle, an incorrect status may appear in your Jira account. Make sure you use it in the correct order in Workflow.
 :::
 
 ### Configuration of Component
 
-To add a comment, the issue ID must be supplied to the component. We need to get this issue ID dynamically so that our workflow can work for multiple branches. Appcircle components use environment variables to pass the state. We can add a step just before the Jira Component component to prepare the necessary environment variables.
+To add a comment, the issue ID must be supplied to the component. We need to get this issue ID dynamically so that our workflow can work for multiple branches. Appcircle components use environment variables to pass the state. We can add a step just before the Jira Component to prepare the necessary environment variables.
 
 For example, you're working on a feature branch called `feature/jiraissue-1`. You may use the below Ruby script to get `jiraissue-1` from the branch name and use this information with the Jira component. Please see the [**Custom Script step documentation**](/workflows/common-workflow-steps/build-and-test/custom-script) for this implementation.
 
