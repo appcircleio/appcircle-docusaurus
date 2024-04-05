@@ -738,13 +738,8 @@
   status = 301
 
 [[redirects]]
-  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt#azure-devops-bot-for-swiftlint"
+  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
   to = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
-  status = 301
-
-[[redirects]]
-  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt#azure-devops-bot-for-detekt"
-  to = "/workflows/android-specific-workflow-steps/"
   status = 301
 
 [[redirects]]
