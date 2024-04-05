@@ -247,11 +247,6 @@
   status = 301
 
 [[redirects]]
-  from = "/integrations/azure-bot-for-swiftlint-and-detekt"
-  to = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
-  status = 301
-
-[[redirects]]
   from = "/account/email-connection"
   to = "/account/my-organization/notifications-and-communication/email-connection"
   status = 301
@@ -753,7 +748,11 @@
   status = 301
 
 [[redirects]]
+  from = "/integrations/azure-bot-for-swiftlint-and-detekt"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  status = 301
+
+[[redirects]]
   from = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
   to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
   status = 301
-
