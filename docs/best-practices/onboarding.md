@@ -124,11 +124,11 @@ https://docs.appcircle.io/build/building-android-applications/android-signing-fo
 
 App Store, Google Play, or Huawei App Gallery keys must be added to Appcircle to upload IPA or APK files. To create these files, the following documents can be followed.
 
-https://docs.appcircle.io/publish-module/send-to-googleplay
+https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-googleplay
 
-https://docs.appcircle.io/publish-module/send-to-appstore
+https://docs.appcircle.io/publish-integrations/ios-publish-integrations/send-to-app-store
 
-https://docs.appcircle.io/publish-module/send-to-huawei
+https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-huawei
 
 ## Extra suggestions
 

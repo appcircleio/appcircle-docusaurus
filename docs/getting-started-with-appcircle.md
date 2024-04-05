@@ -85,12 +85,12 @@ You can manually or automatically send your binaries to respective app stores.
 
 Send a binary to Apple Testflight or App Store.
 
-<ContentRef url="/publish-module/send-to-appstore">Send Apps to App Store Connect and TestFlight</ContentRef>
+<ContentRef url="/publish-integrations/ios-publish-integrations/send-to-app-store">Send Apps to App Store Connect and TestFlight</ContentRef>
 
 Send a binary to Google Play.
 
-<ContentRef url="/publish-module/send-to-googleplay">Send Apps to Google Play Console</ContentRef>
+<ContentRef url="/publish-integrations/android-publish-integrations/send-to-googleplay">Send Apps to Google Play Console</ContentRef>
 
 Send a binary to Huawei AppGallery.
 
-<ContentRef url="/publish-module/send-to-huawei">Send Apps to Huawei AppGallery</ContentRef>
+<ContentRef url="/publish-integrations/android-publish-integrations/send-to-huawei">Send Apps to Huawei AppGallery</ContentRef>
