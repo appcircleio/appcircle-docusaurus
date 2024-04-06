@@ -1,7 +1,7 @@
 ---
 title: Amazon Web Services (AWS)
-metaTitle: Amazon Web Services (AWS)
-metaDescription: Appcircle Server on AWS
+description: Learn how to create an Appcircle server instance on Amazon Web Services (AWS)
+tags: [self-hosted, appcircle server, aws, amazon web services, ec2, ami]
 sidebar_position: 1
 ---
 

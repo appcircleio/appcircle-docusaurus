@@ -1,7 +1,7 @@
 ---
 title: LDAP Settings
-metaTitle: LDAP Lookup Decision Settings
-metaDescription: LDAP Lookup Decision Settings
+description: Learn how to configure LDAP settings in Appcircle
+tags: [ldap, ldap settings, ldap configuration, ldap login, ldap user lookup decision strategy, ldap user lookup, ldap authentication, ldap auth, ldap user auth, ldap user authentication, ldap user lookup decision, ldap user lookup decision strategy]
 sidebar_position: 9
 ---
 

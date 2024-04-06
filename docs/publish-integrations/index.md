@@ -1,7 +1,7 @@
 ---
 title: Publish Integrations
-metaTitle: Publish Integrations
-metaDescription: Publish Integrations
+description: Publish Integrations in Appcircle provide a seamless connection between your application builds and the respective app stores for Android and iOS.
+tags: [publish integrations, android, ios, google play, huawei appgallery, app store, testflight]
 sidebar_position: 1
 ---
 

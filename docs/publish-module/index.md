@@ -1,13 +1,9 @@
 ---
 title: Publish
-metaTitle: Publish
-metaDescription: Publish
 sidebar_position: 1
 tags:
   [publish, distribution, app store, google play, huawei appgallery, testflight]
 description: The Publish module in Appcircle allows you to distribute your mobile applications to the App Store, Google Play, and Huawei AppGallery.
-keywords:
-  [publish, distribution, app store, google play, huawei appgallery, testflight]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -1,7 +1,7 @@
 ---
 title: Docker
-metaTitle: Docker
-metaDescription: Appcircle Server on Docker
+description: Learn how to install Appcircle server on your infrastructure using Docker
+tags: [docker, installation, self-hosted]
 sidebar_position: 3
 ---
 

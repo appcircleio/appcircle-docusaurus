@@ -1,7 +1,7 @@
 ---
 title: Introduction to Appcircle CLI
-metaTitle: Introduction to Appcircle CLI
-metaDescription: Introduction to Appcircle CLI
+description: Appcircle CLI is a unified tool for accessing the Appcircle platform features from the command line.
+tags: [appcircle cli, appcircle, cli, command line interface]
 sidebar_position: 1
 ---
 

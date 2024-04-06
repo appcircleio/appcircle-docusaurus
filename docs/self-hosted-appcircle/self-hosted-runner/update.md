@@ -1,7 +1,7 @@
 ---
 title: Upgrading Runner
-metaTitle: Upgrading Runner
-metaDescription: Upgrading Runner
+description: Learn how to upgrade self-hosted runner in Appcircle
+tags: [self-hosted runner, update, upgrade]
 sidebar_position: 3
 ---
 

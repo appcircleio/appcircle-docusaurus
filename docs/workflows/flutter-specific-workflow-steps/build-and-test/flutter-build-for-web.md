@@ -1,7 +1,7 @@
 ---
 title: ​Flutter Build for Web
-metaTitle: ​Flutter Build for Web
-metaDescription: ​Flutter Build for Web
+description: Learn to build web apps with the Flutter Build for Web component. Ensure Flutter Install and Git Clone steps are completed first.
+tags: [flutter, build, test, workflow, step]
 sidebar_position: 5
 ---
 

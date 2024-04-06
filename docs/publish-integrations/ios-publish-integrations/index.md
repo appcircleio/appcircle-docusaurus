@@ -1,7 +1,7 @@
 ---
-tags: [publish, appstore, testflight]
-description: iOS Integrations Overview
-keywords: [app store, testflight, appcircle, publish]
+title: iOS Integrations Overview
+description: Comprehensive guides on the various steps involved in preparing and distributing your iOS app through Apple's ecosystem, including both the App Store and TestFlight.
+tags: [ios, ios publish integrations, app store, testflight, app store connect]
 ---
 
 # iOS Integrations Overview

@@ -1,7 +1,7 @@
 ---
 title: Email Notifications
-metaTitle: Email Notifications and Subscription Management
-metaDescription: Email Notifications and Subscription Management
+description: Learn how to set up email notifications and subscription management in Appcircle
+tags: [email, email notifications, subscription management, email connection]
 sidebar_position: 3
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Azure Boards 
-metaTitle: Azure Boards 
-metaDescription: Azure Boards 
+description: Azure Boards is a standalone service within the Azure DevOps suite that helps teams plan, track, and discuss work across the entire software development process. It provides a flexible, customizable platform for managing work items, such as user stories, bugs, tasks, and issues, so you can track your work item's progress throughout the development lifecycle.
+tags: [workflow, build-and-test, azure, boards]
 sidebar_position: 9
 ---
 

@@ -1,4 +1,11 @@
-# Adding a Publish Profile
+---
+title: Creating Publish Profiles
+description: Learn how to create publish profiles in Appcircle
+tags: [publish, publish profiles, distribution]
+sidebar_position: 1
+---
+
+# Creating Publish Profiles
 
 import Screenshot from '@site/src/components/Screenshot';
 

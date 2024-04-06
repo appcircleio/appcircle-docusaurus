@@ -1,16 +1,7 @@
 ---
 title: Publish Variables
-tags: [publish, variables]
-description: Publish Variables
-keywords:
-  [
-    publish,
-    variables,
-    publish variables,
-    appcircle,
-    appcircle docs,
-    appcircle publish variables,
-  ]
+description: Learn how to set up and manage key-value pairs that are essential for the app publishing process in Appcircle
+tags: [publish variables, publish, variables]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

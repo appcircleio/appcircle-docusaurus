@@ -1,7 +1,7 @@
 ---
 title: Podman
-metaTitle: Podman
-metaDescription: Appcircle Server on Podman
+description: Learn how to install and configure self-hosted Appcircle server with Podman
+tags: [self-hosted, podman, installation, configuration]
 sidebar_position: 4
 ---
 

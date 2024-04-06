@@ -1,3 +1,10 @@
+---
+title: Publish Flow
+description: Learn how to customize the publish flow in Appcircle
+tags: [publish, publish flow, distribution]
+sidebar_position: 1
+---
+
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 

@@ -1,7 +1,7 @@
 ---
 title: App Store Connect API Key
-metaTitle: App Store Connect API Key
-metaDescription: App Store Connect API Key
+description: Learn how to generate an App Store Connect API Key for linking your Apple Developer account to Appcircle
+tags: [account, my organization, api integrations, app store connect, app store connect api key]
 sidebar_position: 5
 ---
 

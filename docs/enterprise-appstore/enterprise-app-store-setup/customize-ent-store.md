@@ -1,7 +1,7 @@
 ---
 title: Customizing the Store
-metaTitle: Customize Enterprise Store
-metaDescription: Customize Enterprise Store
+description: Customize the appearance and authentication settings of your Enterprise Store in Appcircle
+tags: [enterprise store, customize, appearance, authentication, custom domain, sso, ldap, static login, saml, openid, two-factor authentication]
 sidebar_position: 3
 ---
 

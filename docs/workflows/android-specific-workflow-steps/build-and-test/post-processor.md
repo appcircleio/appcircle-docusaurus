@@ -1,7 +1,7 @@
 ---
 title: Android App Post-Processor
-metaTitle: Android App Post-Processor
-metaDescription: Android App Post-Processor
+description: This step performs the necessary system operations to identify and process the Android output binary files.
+tags: [android, mobile, android, post-processor]
 sidebar_position: 4
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Jira Component
-metaTitle: Jira Component
-metaDescription: Jira Component
+description: Explore Jira Component, a tool for efficient project management and issue tracking. Enhance your workflow with Appcircle's integration.
 sidebar_position: 1
 ---
 

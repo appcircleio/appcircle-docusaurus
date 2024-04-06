@@ -1,7 +1,7 @@
 ---
 title: App Information from App Store
-metaTitle: App Information from App Store
-metaDescription: App Information from App Store
+description: Fetch and display your app's current listing information directly from the App Store to ensure all details are correct and up to date.
+tags: [app information, app store, app store connect, testflight, app store version]
 sidebar_position: 1
 ---
 

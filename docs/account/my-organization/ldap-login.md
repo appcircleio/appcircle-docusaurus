@@ -1,7 +1,7 @@
 ---
 title: Distribution LDAP Login
-metaTitle: Enterprise App Store and Testing Distribution LDAP Settings
-metaDescription: Enterprise App Store and Testing Distribution LDAP Settings
+description: Learn how to set up and manage LDAP login integration for your organization in Appcircle
+tags: [account, my organization, ldap login, distribution, distribution profiles, authentication, two factor authentication, 2fa]
 sidebar_position: 14
 ---
 

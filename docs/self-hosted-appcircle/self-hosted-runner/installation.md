@@ -1,7 +1,7 @@
 ---
-title: Installation
-metaTitle: Installation
-metaDescription: Installation
+title: Self-Hosted Runner Installation
+description: Learn how to install and configure the self-hosted Appcircle runner
+tags: [self-hosted, self-hosted runner, installation]
 sidebar_position: 2
 ---
 

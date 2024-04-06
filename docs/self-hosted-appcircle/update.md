@@ -1,7 +1,7 @@
 ---
 title: Upgrading Server
-metaTitle: Upgrading Server
-metaDescription: Upgrading Server
+description: Learn how to upgrade self-hosted Appcircle server
+tags: [self-hosted server, update, upgrade]
 sidebar_position: 3
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: iOS Specific Workflow Steps
-metaTitle: iOS Specific Workflow Steps
-metaDescription: iOS Specific Workflow Steps
+description: Dive into iOS-specific workflow steps for building profiles. Access our workflow marketplace for a comprehensive list.
+tags: [ios, mobile, workflow, step]
 sidebar_position: 3
 ---
 

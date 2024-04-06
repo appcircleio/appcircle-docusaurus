@@ -1,7 +1,7 @@
 ---
 title: Organization and Team Settings
-metaTitle: Organization and Team Settings
-metaDescription: Organization and Team Settings
+description: Organizations in Appcircle are separate units with separate "workspaces" that allow collaboration on the same apps with a team.
+tags: [organization, team, settings]
 sidebar_position: 4
 ---
 

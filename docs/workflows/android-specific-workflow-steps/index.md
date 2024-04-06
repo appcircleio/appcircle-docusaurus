@@ -1,7 +1,7 @@
 ---
 title: Android Specific Workflow Steps
-metaTitle: Android Specific Workflow Steps
-metaDescription: Android Specific Workflow Steps
+description: Android specific workflow steps in Appcircle
+tags: [android, mobile, android]
 sidebar_position: 4
 ---
 

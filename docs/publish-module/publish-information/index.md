@@ -1,7 +1,7 @@
 ---
 title: Publish
-metaTitle: Publish
-metaDescription: Publish
+description: Overview of the Publish module in Appcircle
+tags: [publish, publish module, publish information]
 sidebar_position: 1
 ---
 

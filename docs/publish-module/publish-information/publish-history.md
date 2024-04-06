@@ -1,7 +1,7 @@
 ---
 title: Publish History
-metaTitle: Publish History
-metaDescription: Publish History
+description: Learn how to access and review the Publish History in Appcircle
+tags: [publish history, publish module, publish information]
 sidebar_position: 4
 ---
 

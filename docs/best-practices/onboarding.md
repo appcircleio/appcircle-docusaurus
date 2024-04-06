@@ -1,7 +1,7 @@
 ---
 title: Appcircle Onboarding
-metaTitle: Appcircle Onboarding
-metaDescription: Appcircle Onboarding
+description: To add your iOS or Android project to Appcircle, you need to complete the following checklist. The list is divided into sub-sections.
+tags: [onboarding, best practices]
 sidebar_position: 2
 ---
 

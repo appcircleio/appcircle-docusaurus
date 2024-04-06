@@ -1,7 +1,7 @@
 ---
 title: Android Build Stacks
-metaTitle: Android Build Stacks
-metaDescription: Android Build Stacks
+description: Learn about the Android build stacks in Appcircle
+tags: [build, android, build stacks]
 sidebar_position: 2
 ---
 

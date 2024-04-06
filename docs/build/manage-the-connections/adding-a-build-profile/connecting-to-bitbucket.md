@@ -1,7 +1,7 @@
 ---
 title: Connecting to Bitbucket
-metaTitle: Connecting to Bitbucket
-metaDescription: Connecting to Bitbucket
+description: Learn how to connect to Bitbucket in Appcircle
+tags: [source code management, bitbucket, bitbucket self hosted]
 sidebar_position: 3
 ---
 

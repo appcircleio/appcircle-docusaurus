@@ -1,7 +1,7 @@
 ---
 title: Store Reports
-metaTitle: Enterprise App Store Reports
-metaDescription: Enterprise App Store Reports
+description: Learn how to view the reports of your Enterprise Store in Appcircle
+tags: [enterprise store, reports]
 sidebar_position: 4
 ---
 

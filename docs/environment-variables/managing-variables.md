@@ -1,7 +1,7 @@
 ---
 title: Overview
-metaTitle: Overview of Environment Variables
-metaDescription: Overview of Environment Variables
+description: Overview of environment variables in Appcircle
+tags: [environment variables, variable groups, text-based variables, file-based variables]
 sidebar_position: 2
 ---
 

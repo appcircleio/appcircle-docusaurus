@@ -1,7 +1,7 @@
 ---
 title: Marking Release Candidates
-metaTitle: Marking Release Candidates
-metaDescription: Marking Release Candidates
+description: Learn how to mark a version as a release candidate in Appcircle
+tags: [publish information, release candidate, mark as rc]
 sidebar_position: 3
 ---
 

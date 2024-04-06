@@ -1,7 +1,7 @@
 ---
 title: App Center Android Distribute
-metaTitle: App Center Android Distribute
-metaDescription: App Center Android Distribute
+description: App Center Android Distribute enables developers to distribute their Android applications to testers and stakeholders for testing purposes.
+tags: [android, mobile, android, distribution]
 sidebar_position: 11
 ---
 

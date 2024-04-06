@@ -1,7 +1,7 @@
 ---
 title: Flutter Test
-metaTitle: Flutter Test
-metaDescription: Flutter Test
+description: This component allows you to run Flutter unit tests.
+tags: [flutter, build, test, workflow, step]
 sidebar_position: 4
 ---
 

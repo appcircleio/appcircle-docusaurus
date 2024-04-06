@@ -1,7 +1,7 @@
 ---
 title: Carthage
-metaTitle: Carthage
-metaDescription: Carthage
+description: Appcircle supports Carthage for dependency management in iOS projects.
+tags: [carthage, ios, dependency, management, workflow, step]
 sidebar_position: 8
 ---
 

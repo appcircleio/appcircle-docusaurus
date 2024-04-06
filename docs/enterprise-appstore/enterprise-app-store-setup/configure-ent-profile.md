@@ -1,7 +1,7 @@
 ---
 title: Configuring the Profile
-metaTitle: Setting Up Your App Store Profile
-metaDescription: Setting Up Your App Store Profile
+description: Learn how to configure your enterprise app store profile in Appcircle
+tags: [enterprise app store, enterprise app store profile, configure profile]
 sidebar_position: 2
 ---
 

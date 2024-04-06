@@ -1,7 +1,7 @@
 ---
 title: Using Firebase Test Lab
-metaTitle: Using Firebase Test Lab for Android Continuous Testing
-metaDescription: Using Firebase Test Lab for Android Continuous Testing
+description: Learn how to use Firebase Test Lab for Android in Appcircle
+tags: [testing, android, firebase test lab]
 sidebar_position: 4
 ---
 

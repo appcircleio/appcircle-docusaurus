@@ -1,7 +1,7 @@
 ---
 title: File Size Check
-metaTitle: File Size Check
-metaDescription: File Size Check
+description: The File Size Check component checks the size of your generated IPA, APK or AAB file. It compares it against the size you have given and if the size is exceeded, it either breaks the pipeline or shows it as a warning.
+tags: [build, test, file, size, check, workflow, step]
 sidebar_position: 17
 ---
 

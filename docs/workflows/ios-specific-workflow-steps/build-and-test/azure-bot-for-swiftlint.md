@@ -1,7 +1,7 @@
 ---
 title: Azure Bot for Swiftlint
-metaTitle: Azure Bot for Swiftlint
-metaDescription: Azure Bot for Swiftlint
+description: Integrate Azure DevOps Bot with SwiftLint to analyze and report details under PRs. Automate builds with configured triggers.
+tags: [ios, build, test, workflow, step]
 sidebar_position: 1
 ---
 

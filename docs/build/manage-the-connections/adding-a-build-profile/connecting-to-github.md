@@ -1,7 +1,7 @@
 ---
 title: Connecting to GitHub
-metaTitle: Connecting to GitHub
-metaDescription: Connecting to GitHub
+description: Learn how to connect your GitHub repositories to Appcircle
+tags: [build profile, connection, github]
 sidebar_position: 1
 ---
 

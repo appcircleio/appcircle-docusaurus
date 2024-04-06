@@ -1,7 +1,7 @@
 ---
 title: Building Android Applications
-metaTitle: Building Android Applications
-metaDescription: Building Android Applications
+description: Learn how to build Android applications in Appcircle
+tags: [build, platform build guides, android]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

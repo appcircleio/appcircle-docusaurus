@@ -1,7 +1,7 @@
 ---
 title: Authenticate with Netrc
-metaTitle: Authenticate with Netrc
-metaDescription: Authenticate with Netrc
+description: Authenticate with Netrc in your Appcircle workflows
+tags: [netrc, authentication, git, curl]
 sidebar_position: 4
 ---
 

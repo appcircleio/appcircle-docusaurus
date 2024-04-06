@@ -1,7 +1,7 @@
 ---
 title: Building Ionic Projects with Custom Scripts
-metaTitle: Building Ionic Projects with Custom Scripts
-metaDescription: Building Ionic Projects with Custom Scripts
+description: Learn how to build Ionic projects with custom scripts in Appcircle
+tags: [build, platform build guides, ionic, custom scripts]
 sidebar_position: 9
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: SonarQube
-metaTitle: SonarQube
-metaDescription: SonarQube
+description: This step allows you to analyse your code quality with the SonarQube CLI.
+tags: [sonarqube, code, quality, analysis, workflow, step]
 sidebar_position: 8
 ---
 

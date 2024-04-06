@@ -1,7 +1,7 @@
 ---
 title: Delete
-metaTitle: Delete
-metaDescription: Delete
+description: Learn how to delete a build version in the Publish module of Appcircle
+tags: [publish, publish module, delete]
 sidebar_position: 6
 ---
 

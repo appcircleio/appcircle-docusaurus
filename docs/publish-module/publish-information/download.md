@@ -1,7 +1,7 @@
 ---
 title: Downloading Binaries
-metaTitle: Downloading Binaries
-metaDescription: Downloading Binaries
+description: Learn how to download the built application files from the Publish module in Appcircle
+tags: [publish, download, binaries, distribution]
 sidebar_position: 4
 ---
 

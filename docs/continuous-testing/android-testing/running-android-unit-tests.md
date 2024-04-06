@@ -1,7 +1,7 @@
 ---
 title: Running Unit Tests
-metaTitle: Running Android Unit Tests
-metaDescription: Running Android Unit Tests
+description: Learn how to run unit tests for Android applications in Appcircle
+tags: [unit tests, android, android unit tests, testing, continuous testing]
 sidebar_position: 2
 ---
 

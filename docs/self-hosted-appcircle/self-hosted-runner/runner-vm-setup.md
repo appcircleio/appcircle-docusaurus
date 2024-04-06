@@ -1,7 +1,7 @@
 ---
 title: Runner Virtual Machine Setup
-metaTitle: Runner Virtual Machine Setup
-metaDescription: Runner Virtual Machine Setup
+description: Learn how to set up a self-hosted runner as a macOS VM image
+tags: [self-hosted runner, runner, vm, virtual machine, setup]
 sidebar_class_name: hidden
 ---
 

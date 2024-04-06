@@ -1,7 +1,7 @@
 ---
 title: Latest Release Notes
-metaTitle: Latest Release Notes
-metaDescription: Latest Release Notes
+description: Appcircle release notes
+tags: [release notes]
 sidebar_position: 1
 ---
 

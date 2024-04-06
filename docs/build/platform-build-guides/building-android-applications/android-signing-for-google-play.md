@@ -1,7 +1,7 @@
 ---
 title: Android 11+ Signing for Google Play
-metaTitle: Android 11+ Signing for Google Play
-metaDescription: Android 11+ Signing for Google Play
+description: Learn how to enable V2 signing for Android 11+ in Appcircle
+tags: [android, android 11, google play, signing, v2 signing]
 sidebar_position: 11
 ---
 
