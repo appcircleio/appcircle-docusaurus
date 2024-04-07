@@ -1,7 +1,7 @@
 ---
 title: Publish to Huawei AppGallery
-metaTitle: Publish to Huawei AppGallery
-metaDescription: Publish to Huawei AppGallery
+description: Publish your Android applications to Huawei AppGallery with Appcircle
+tags: [android, android integrations, android publish integrations, huawei appgallery]
 sidebar_position: 3
 ---
 

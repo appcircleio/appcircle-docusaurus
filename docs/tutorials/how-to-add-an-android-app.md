@@ -1,7 +1,7 @@
 ---
 title: How to add an Android App
-metaTitle: How to add an Android App to Appcircle
-metaDescription: How to add an Android App to Appcircle
+description: Learn how to add an Android app to Appcircle
+tags: [android, mobile, ios, android]
 sidebar_position: 2
 sidebar_label: Android
 ---

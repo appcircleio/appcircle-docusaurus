@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting & FAQ
-metaTitle: Troubleshooting & FAQ
-metaDescription: Troubleshooting & FAQ
+description: Troubleshooting and FAQ for Appcircle server and runner
+tags: [troubleshooting, faq, self-hosted]
 sidebar_position: 4
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Wait for Android Emulator
-metaTitle: Wait for Android Emulator
-metaDescription: Wait for Android Emulator
+description: The Wait for Android Emulator step waits for the Android Emulator to boot. You must use this step before running any UI tests.
+tags: [android, mobile, emulator]
 sidebar_position: 12
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Offline Install/Upgrade
-metaTitle: Offline Install/Upgrade
-metaDescription: Offline Install/Upgrade
+description: Learn how to use offline container images for Appcircle server installation and upgrade
+tags: [offline, container images, installation, upgrade]
 sidebar_position: 8
 ---
 

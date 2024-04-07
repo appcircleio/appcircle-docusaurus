@@ -1,3 +1,9 @@
+---
+title: Publish Settings
+description: Configure the publish settings for your app in Appcircle
+tags: [publish settings, publish, settings]
+---
+
 # Publish Settings
 
 import Screenshot from '@site/src/components/Screenshot';

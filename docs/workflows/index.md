@@ -1,7 +1,7 @@
 ---
 title: What are Workflows and How to Use Workflows?
-metaTitle: What are Workflows and How to Use Workflows?
-metaDescription: What are Workflows and How to Use Workflows?
+description: Understand workflows in Appcircle. Learn how to use them for building, testing, and deploying your applications.
+tags: [workflow, step, build, test, deploy]
 sidebar_position: 1
 ---
 

@@ -1,3 +1,9 @@
+---
+title: Android Integrations Overview
+description: Appcircle's Android Integrations facilitate the distribution of your Android applications to major app stores with minimal effort.
+tags: [android, android integrations, android publish integrations]
+---
+
 # Android Integrations Overview
 
 import ContentRef from '@site/src/components/ContentRef';

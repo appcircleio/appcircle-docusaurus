@@ -1,7 +1,7 @@
 ---
 title: Managing Runners
-metaTitle: Managing Runners
-metaDescription: Managing Runners
+description: Learn how to manage self-hosted runners in Appcircle
+tags: [self-hosted runner, self-hosted pool, self-hosted runner management]
 sidebar_position: 2
 ---
 

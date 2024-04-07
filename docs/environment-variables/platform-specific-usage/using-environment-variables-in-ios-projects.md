@@ -1,7 +1,7 @@
 ---
 title: iOS Builds
-metaTitle: Using Environment Variables in iOS Projects
-metaDescription: Using Environment Variables in iOS Projects
+description: Learn how to use environment variables in iOS projects in Appcircle
+tags: [environment variables, env vars, variables, ios, Xcode, build configuration, custom build scripts]
 sidebar_position: 4
 ---
 

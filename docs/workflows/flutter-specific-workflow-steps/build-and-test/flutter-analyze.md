@@ -1,7 +1,7 @@
 ---
 title: Flutter Analyze
-metaTitle: Flutter Analyze
-metaDescription: Flutter Analyze
+description: This component runs the `flutter analyze` command in your Flutter project.
+tags: [flutter, build, test, workflow, step]
 sidebar_position: 3
 ---
 

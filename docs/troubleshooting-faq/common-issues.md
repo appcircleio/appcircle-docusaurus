@@ -1,7 +1,7 @@
 ---
 title: General Troubleshooting
-metaTitle: General Troubleshooting
-metaDescription: General Troubleshooting
+description: General troubleshooting guide for common issues in Appcircle
+tags: [troubleshooting, build, ios, android, flutter, react native]
 sidebar_position: 1
 ---
 

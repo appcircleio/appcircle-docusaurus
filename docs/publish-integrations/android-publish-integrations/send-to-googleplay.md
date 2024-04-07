@@ -1,7 +1,7 @@
 ---
 title: Publish to Google Play
-metaTitle: Publish to Google Play
-metaDescription: Publish to Google Play
+description: Publish your Android applications to the Google Play Store with Appcircle's Publish module.
+tags: [android, android integrations, android publish integrations]
 sidebar_position: 2
 ---
 

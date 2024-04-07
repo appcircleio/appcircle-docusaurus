@@ -1,7 +1,7 @@
 ---
 title: Send to TestFlight
-metaTitle: Send to TestFlight
-metaDescription: Send to TestFlight
+description: This step enables you to upload the selected application package to TestFlight.
+tags: [publish, ios, testflight]
 sidebar_position: 1
 ---
 

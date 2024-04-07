@@ -1,7 +1,7 @@
 ---
 title: Publish Release Notes
-metaTitle: Publish Release Notes
-metaDescription: Publish Release Notes
+description: Learn to publish release notes for your app versions. Communicate updates and changes effectively with Appcircle.
+tags: [build, test, release, notes, workflow, step]
 sidebar_position: 7
 ---
 

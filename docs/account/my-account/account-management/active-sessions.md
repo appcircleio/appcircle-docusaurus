@@ -1,7 +1,7 @@
 ---
 title: Active Sessions
-metaTitle: Active Sessions
-metaDescription: Active Sessions
+description: Learn how to manage your active sessions in Appcircle
+tags: [account, account management, active sessions]
 sidebar_position: 5
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Install Certificates and Provisioning Profiles
-metaTitle: Install Certificates and Provisioning Profiles
-metaDescription: Install Certificates and Provisioning Profiles
+description: Learn how to install certificates and provisioning profiles for iOS distribution in Appcircle.
+tags: [build, test, distribute, ios, workflow, step]
 sidebar_position: 4
 ---
 

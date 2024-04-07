@@ -1,7 +1,7 @@
 ---
 title: Binary Information
-metaTitle: Binary Information
-metaDescription: Binary Information
+description: Learn how to view and manage binary information in Appcircle
+tags: [publish module, binary information]
 sidebar_position: 2
 ---
 

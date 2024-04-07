@@ -1,7 +1,7 @@
 ---
 title: Install Node
-metaTitle: Install Node
-metaDescription: Install Node
+description: Ensure the correct Node version for your React Native app with Install Node. A crucial step for building React Native applications.
+tags: [react native, mobile, workflow, step]
 sidebar_position: 3
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Distribution Activity Reports
-metaTitle: Distribution Activity Reports
-metaDescription: Distribution Activity Reports
+description: Distribution Activity Reports in Appcircle
+tags: [reports, distribution activity reports]
 sidebar_position: 2
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Introduction to Environment Variables
-metaTitle: Introduction to Environment Variables
-metaDescription: Introduction to Environment Variables
+description: Environment variables let you extend your build configuration. There are several read-only Appcircle variables and you can add your own variables to export during the build process and use in custom build scripts.
+tags: [environment variables, env vars, variables, build configuration, custom build scripts]
 sidebar_position: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: My Account
-metaTitle: My Account
-metaDescription: My Account
+description: Learn how to manage your personal account details
+tags: [account, account management]
 ---
 
 # My Account

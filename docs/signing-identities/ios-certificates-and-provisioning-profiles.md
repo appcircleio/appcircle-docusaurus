@@ -1,7 +1,7 @@
 ---
 title: iOS Signing
-metaTitle: iOS Certificates & Provisioning Profiles
-metaDescription: iOS Certificates & Provisioning Profiles
+description: Learn how to manage iOS signing identities in Appcircle
+tags: [signing identities, ios certificates, provisioning profiles]
 sidebar_position: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Using the Testing Portal
-metaTitle: Using the Testing Portal
-metaDescription: Using the Testing Portal
+description: Learn how to use the Testing Portal for downloading binaries. Streamline your app testing process with Appcircle.
+tags: [appcircle, testing, portal, distribution]
 sidebar_position: 4
 ---
 

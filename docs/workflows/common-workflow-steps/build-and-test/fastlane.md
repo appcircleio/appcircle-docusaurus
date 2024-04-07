@@ -1,7 +1,7 @@
 ---
-title: Fastlane 
-metaTitle: Fastlane 
-metaDescription: Fastlane 
+title: Fastlane
+description: Appcircle supports Fastlane for build automation as a supplementary feature to Appcircle's own build automation.
+tags: [fastlane, build, automation, workflow, step]
 sidebar_position: 9
 ---
 

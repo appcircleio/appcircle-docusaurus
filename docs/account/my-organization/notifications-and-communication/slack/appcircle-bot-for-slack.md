@@ -1,7 +1,7 @@
 ---
 title: Appcircle Bot For Slack
-metaTitle: Appcircle Bot for Slack Integration and Usage
-metaDescription: Appcircle Bot for Slack Integration and Usage
+description: Learn how to use Appcircle Bot for Slack
+tags: [slack, appcircle bot, slack integration, slack app, slack bot]
 sidebar_position: 2
 ---
 

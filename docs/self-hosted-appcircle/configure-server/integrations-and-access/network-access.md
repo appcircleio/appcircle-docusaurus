@@ -1,7 +1,7 @@
 ---
 title: Network Access
-metaTitle: Network Access
-metaDescription: Network Access for Appcircle Server and Runner
+description: Learn how to configure and enable external network access for a self-hosted Appcircle server and runner
+tags: [self-hosted, network access, server, runner]
 sidebar_position: 4
 ---
 

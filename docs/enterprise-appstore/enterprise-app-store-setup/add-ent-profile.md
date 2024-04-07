@@ -1,7 +1,7 @@
 ---
 title: Creating a Profile
-metaTitle: Creating a New App Store Profile
-metaDescription: Creating a New App Store Profile
+description: Learn how to create an Enterprise build profile in Appcircle
+tags: [enterprise app store, enterprise build profile, enterprise app store setup]
 sidebar_position: 1
 ---
 

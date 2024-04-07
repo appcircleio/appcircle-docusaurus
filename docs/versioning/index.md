@@ -1,8 +1,7 @@
 ---
 title: Versioning
-description: Learn how to version your API
-tags: [versioning]
-keywords: [versioning]
+description: Understand and manage versioning for Android and iOS applications
+tags: [versioning, android, ios]
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

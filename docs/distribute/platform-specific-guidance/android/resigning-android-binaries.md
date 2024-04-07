@@ -1,7 +1,7 @@
 ---
 title: Resigning Android Binaries
-metaTitle: Resigning Android Binaries
-metaDescription: Resigning Android Binaries
+description: Resigning is the process of modifying an existing binary with a new signing certificate or keystore, which is required when an application needs to be published under a different developer account or when updating an existing application.
+tags: [resigning, android binaries, signing, keystore, certificate]
 sidebar_position: 6
 ---
 

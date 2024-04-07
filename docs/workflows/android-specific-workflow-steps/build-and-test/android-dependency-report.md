@@ -1,7 +1,7 @@
 ---
 title: Android Dependency Report
-metaTitle: Android Dependency Report
-metaDescription: Android Dependency Report
+description: Learn how to use the Android Dependency Report workflow step in Appcircle
+tags: [android, mobile, android, dependency, report]
 sidebar_position: 5
 ---
 

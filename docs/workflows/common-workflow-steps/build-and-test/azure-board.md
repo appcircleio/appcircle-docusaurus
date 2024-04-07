@@ -1,7 +1,7 @@
 ---
 title: Azure Boards 
-metaTitle: Azure Boards 
-metaDescription: Azure Boards 
+description: Manage your software development process with Azure Boards. Track work items' progress throughout the development lifecycle.
+tags: [workflow, build-and-test, azure, boards]
 sidebar_position: 9
 ---
 

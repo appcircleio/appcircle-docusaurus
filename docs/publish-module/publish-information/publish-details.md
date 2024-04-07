@@ -1,7 +1,7 @@
 ---
 title: Publish Details
-metaTitle: Publish Details
-metaDescription: Publish Details
+description: Learn how to view the details of the publish flow in Appcircle
+tags: [publish, publish details, publish flow]
 sidebar_position: 1
 ---
 

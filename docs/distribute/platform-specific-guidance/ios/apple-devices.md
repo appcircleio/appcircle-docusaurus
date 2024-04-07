@@ -1,7 +1,7 @@
 ---
 title: Distributing to Apple Devices
-metaTitle: Distributing to Apple Devices
-metaDescription: Distributing to Apple Devices
+description: Distribute your iOS apps to Apple devices with Appcircle
+tags: [distribution, apple devices, ios]
 sidebar_position: 5
 ---
 

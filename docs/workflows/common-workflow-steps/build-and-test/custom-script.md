@@ -1,7 +1,7 @@
 ---
 title: Custom Script
-metaTitle: Custom Script
-metaDescription: Custom Script
+description: Use Custom Script steps for additional functionalities in your builds.
+tags: [custom scripts, build, test, workflow, step]
 sidebar_position: 3
 ---
 

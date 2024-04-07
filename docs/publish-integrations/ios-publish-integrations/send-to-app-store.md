@@ -1,7 +1,7 @@
 ---
 title: Send to App Store
-metaTitle: Send to App Store
-metaDescription: Send to App Store
+description: Submit your iOS application to the App Store with Appcircle
+tags: [publish, ios, app store]
 sidebar_position: 1
 ---
 

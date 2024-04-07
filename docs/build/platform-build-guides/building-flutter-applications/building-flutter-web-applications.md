@@ -1,7 +1,7 @@
 ---
 title: Building Flutter Web Applications
-metaTitle: Building Flutter Web Applications
-metaDescription: Building Flutter Web Applications
+description: You can build your Flutter web applications in Appcircle.
+tags: [flutter, web, flutter web, flutter web build]
 sidebar_position: 8
 ---
 

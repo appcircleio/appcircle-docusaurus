@@ -1,3 +1,9 @@
+---
+title: Binary Management
+description: Learn how to manage binaries in Appcircle
+tags: [publish module, binary management]
+---
+
 # Binary Management
 
 import Screenshot from '@site/src/components/Screenshot';

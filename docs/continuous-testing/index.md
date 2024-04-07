@@ -1,7 +1,7 @@
 ---
 title: Continuous Testing
-metaTitle: Continuous Testing in Appcircle CI/CD
-metaDescription: Learn how to run your unit and UI tests for iOS and Android, or Send them to AWS Device Farm or Firebase Test Lab
+description: Appcircle provides a variety of testing options for your mobile applications.
+tags: [testing, continuous testing]
 sidebar_position: 1
 hide_table_of_contents: true
 ---

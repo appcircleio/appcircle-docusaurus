@@ -1,7 +1,7 @@
 ---
 title: Managing Publish Profiles
-metaTitle: Managing Publish Profiles
-metaDescription: Managing Publish Profiles
+description: Learn how to manage publish profiles in Appcircle
+tags: [publish, publish profiles, distribution]
 sidebar_position: 2
 ---
 
