@@ -348,7 +348,12 @@
 
 [[redirects]]
   from = "/integrations/uploading-files-to-amazon-sin-the-workflows"
-  to = "/integrations/deployment-guides/uploading-files-to-amazon-sin-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/deployment-guides/uploading-files-to-amazon-sin-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
   status = 301
 
 [[redirects]]
@@ -458,7 +463,12 @@
 
 [[redirects]]
   from = "/continuous-testing/firebase-test-lab-for-android"
-  to = "/continuous-testing/android-testing/firebase-test-lab-for-android"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/firebase-test-lab"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/android-testing/firebase-test-lab-for-android"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/firebase-test-lab"
   status = 301
 
 [[redirects]]
@@ -483,7 +493,12 @@
 
 [[redirects]]
   from = "/integrations/deploying-web-apps-to-aws-amplify-console"
-  to = "/integrations/deployment-guides/deploying-web-apps-to-aws-amplify-console"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/deployment-guides/deploying-web-apps-to-aws-amplify-console"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
   status = 301
 
 [[redirects]]
@@ -750,4 +765,14 @@
 [[redirects]]
   from = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
   to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/managing-release-notes"
+  to = "/workflows/common-workflow-steps/build-and-test/publish-release-notes"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/workflow-marketplace"
+  to = "/workflows/#workflow-marketplace"
   status = 301
