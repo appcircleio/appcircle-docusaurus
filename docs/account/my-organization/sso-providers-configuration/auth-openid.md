@@ -1,7 +1,7 @@
 ---
 title: Auth0 OpenID
-metaTitle: Auth0 OpenID
-metaDescription: Auth0 OpenID
+description: Implement OpenID authentication in your app with Appcircle. Enhance user security and streamline login processes.
+tags: [account, organization, sso, auth0, openid, configuration]
 sidebar_position: 2
 ---
 

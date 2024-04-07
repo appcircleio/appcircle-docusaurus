@@ -1,7 +1,7 @@
 ---
 title: Enable SSO
-metaTitle: Enable SSO
-metaDescription: Enable SSO
+description: Enable Single Sign-On (SSO) for your organization to enhance user security and streamline login processes.
+tags: [account, organization, sso, configuration]
 sidebar_position: 1
 ---
 

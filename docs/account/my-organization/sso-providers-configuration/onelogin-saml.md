@@ -1,7 +1,7 @@
 ---
 title: OneLogin SAML
-metaTitle: OneLogin SAML
-metaDescription: OneLogin SAML
+description: Implement SAML authentication in your app with Appcircle. Enhance user security and streamline login processes.
+tags: [account, organization, sso, onelogin, saml, configuration]
 sidebar_position: 7
 ---
 

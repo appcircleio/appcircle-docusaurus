@@ -1,7 +1,7 @@
 ---
 title: Okta SAML
-metaTitle: Okta SAML
-metaDescription: Okta SAML
+description: Implement SAML authentication in your app with Appcircle. Enhance user security and streamline login processes.
+tags: [account, organization, sso, okta, saml, configuration]
 sidebar_position: 3
 ---
 
