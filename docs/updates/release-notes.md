@@ -807,7 +807,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 🆕 New Feature
 
-- [Release Notes Component](../integrations/managing-release-notes) You can create release notes with Publish Release Notes component.
+- [Release Notes Component](/workflows/common-workflow-steps/build-and-test/publish-release-notes) You can create release notes with Publish Release Notes component.
 - [Enterprise Store](/enterprise-appstore/enterprise-app-store-setup/customize-ent-store) Certificate Details added to Enterprise Store.
 - [Enterprise Store](../enterprise-appstore/enterprise-reports) Detailed reports are added to Enterprise Store.
 - [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=signing-identity) New API endpoints added to Certificate and Provisioning profiles upload.

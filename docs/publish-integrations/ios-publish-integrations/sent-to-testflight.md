@@ -24,8 +24,8 @@ Ensure the [**App Store Connect API Key**](https://docs.appcircle.io/account/add
 
 The prerequisite steps for this operation are listed below.
 
-| Prerequisite Workflow Step                                                                                                          | Description                                                                                                                                                                                                                                            |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Prerequisite Workflow Step                                                                                     | Description                                                                                                                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [**App Information from App Store**](/publish-integrations/ios-publish-integrations/app-information-app-store) | This step provides information about the version you want to send and your versions in both [**TestFlight**](https://developer.apple.com/testflight/) and the [**App Store**](https://developer.apple.com/documentation/appstoreconnectapi/app_store). |
 
 :::info
@@ -44,7 +44,7 @@ Below are the parameters necessary for this step's operation.
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_XCODE_LIST_DIR` | Specifies the Xcode folder list directory. Current Xcode folder structure examples: `./Applications/Xcode/14.2/Xcode` or `./Applications/Xcode/15.2/Xcode`                                                                                        | Optional |
 | `$AC_XCODE_VERSION`  | This parameter takes the Xcode version value. It sends the selected Xcode version. You can find detailed information about Xcode versions [**here**](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions). | Required |
-| `$AC_RELEASE_NOTES`  | It is the parameter used to send a release note with the selected version. You can find detailed information about **Release Notes** [**here**](https://docs.appcircle.io/integrations/managing-release-notes).                                   | Optional |
+| `$AC_RELEASE_NOTES`  | It is the parameter used to send a release note with the selected version. You can find detailed information about **Release Notes** [**here**](https://docs.appcircle.io/workflows/common-workflow-steps/build-and-test/publish-release-notes).  | Optional |
 
 To access the source code of this component, please use the following link:
 
