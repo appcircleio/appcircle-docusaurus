@@ -1,7 +1,7 @@
 ---
 title: Appdome Build-2Secure for Android
 description: Appdome Build-2Secure automates the integration of advanced security features, adaptive protections, code-signing, and certification processes into mobile applications, enhancing security without the need for manual coding or code analysis.
-tags: [android, mobile, android, security]
+tags: [android, mobile, security, appdome]
 sidebar_position: 12
 ---
 

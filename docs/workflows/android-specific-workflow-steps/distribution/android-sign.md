@@ -1,7 +1,7 @@
 ---
 title: Android Sign
 description: This step signs your APK or AAB with the given Android keystore and exports a binary file compatible with Android devices.
-tags: [android, mobile, android, sign]
+tags: [android, mobile, sign]
 sidebar_position: 2
 ---
 

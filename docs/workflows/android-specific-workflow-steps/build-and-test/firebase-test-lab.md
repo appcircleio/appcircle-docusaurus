@@ -1,7 +1,7 @@
 ---
 title: Firebase Test Lab for Android
 description: Integrate Appcircle with Firebase Test Lab for continuous Android app testing. Prerequisites include Android Build for UI Testing.
-tags: [Android, Test, Firebase, Test Lab, Continuous Testing, UI Testing, Robo Testing, Instrumentation Testing]
+tags: [android, test, Firebase, test lab, continuous testing, UI testing, robo testing, instrumentation testing]
 sidebar_position: 8
 ---
 

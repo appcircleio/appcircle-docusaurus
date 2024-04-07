@@ -1,7 +1,7 @@
 ---
 title: Get Approval from TestFlight
 description: Learn how to get approval from TestFlight in Appcircle
-tags: [publish, ios-publish, testflight]
+tags: [publish, ios publish, testflight]
 sidebar_position: 3
 ---
 

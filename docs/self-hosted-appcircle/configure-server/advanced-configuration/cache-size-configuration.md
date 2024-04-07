@@ -1,7 +1,7 @@
 ---
 title: Cache Size Configuration
 description: Learn how to configure the cache size limit in the Appcircle server
-tags: [self-hosted, advanced-configuration, cache-size]
+tags: [self-hosted, advanced configuration, cache size]
 sidebar_position: 11
 ---
 
