@@ -21,7 +21,8 @@ For more details, please refer to the following links:
 - [Appcircle Testing Distribution](https://docs.appcircle.io/distribute/)
 - [Appcircle Enterprise App Store](https://docs.appcircle.io/enterprise-appstore/)
 - [Appcircle Publish](https://docs.appcircle.io/publish-module/)
-  :::
+
+:::
 
 ### Prerequisites
 
