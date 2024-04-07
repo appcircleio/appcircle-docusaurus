@@ -1,7 +1,7 @@
 ---
 title: Connecting to Multiple Instances
 description: Learn how to connect to multiple instances of the same Git provider in Appcircle
-tags: [build profile, multiple instances, git provider]
+tags: [build profile, multiple instances, git providers]
 sidebar_position: 7
 ---
 

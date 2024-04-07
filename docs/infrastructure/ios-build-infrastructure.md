@@ -1,7 +1,7 @@
 ---
 title: iOS Build Stacks
 description: Learn about the iOS build stacks in Appcircle
-tags: [iOS, build, build stacks, iOS build stacks]
+tags: [ios, build, build stacks, iOS build stacks]
 sidebar_position: 1
 ---
 
