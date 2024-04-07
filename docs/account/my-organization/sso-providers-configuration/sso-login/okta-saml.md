@@ -28,7 +28,7 @@ Only Enterprise accounts support SSO.
 
 :::caution
 
-Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise Store. They must be configured separately.
+Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise App Store. They must be configured separately.
 
 :::
 
@@ -54,7 +54,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 - Pick an alias and display name for your organization. Please pick a short and rememberable alias.
 
-- This screen will auto-generate an URL for the Enterprise Store and Distribute
+- This screen will auto-generate an URL for the Enterprise App Store and Distribute
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 

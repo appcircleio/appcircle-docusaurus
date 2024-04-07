@@ -1,14 +1,14 @@
 ---
 title: Customizing the Store
-description: Customize the appearance and authentication settings of your Enterprise Store in Appcircle
-tags: [enterprise store, customize, appearance, authentication, custom domain, sso, ldap, static login, saml, openid, two-factor authentication]
+description: Customize the appearance and authentication settings of your Enterprise App Store in Appcircle
+tags: [enterprise app store, customize, appearance, authentication, custom domain, sso, ldap, static login, saml, openid, two-factor authentication]
 sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Customize Your Enterprise Store
+# Customize Your Enterprise App Store
 
 ## Customizing Appearance
 
@@ -24,7 +24,7 @@ Customizing and setting up your store can only be done through the main organiza
 
 **Custom Domain**
 
-It's possible to use a custom domain for the Enterprise Store. You need to have the following to create a custom domain
+It's possible to use a custom domain for the Enterprise App Store. You need to have the following to create a custom domain
 
 - A custom domain that you can create a CNAME record.
 - SSL Certificate that is exported as a p12 or pfx file.
@@ -65,7 +65,7 @@ You can set a different username and password for live and beta apps. The userna
 
 ### SSO Login
 
-You may also use SSO for your Enterprise Store. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please turn on the toggle that says **Enable SSO**. After you have enabled the SSO, please click the **Create** link to configure the SSO, according to your provider.
+You may also use SSO for your Enterprise App Store. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please turn on the toggle that says **Enable SSO**. After you have enabled the SSO, please click the **Create** link to configure the SSO, according to your provider.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-ssotoggle.png' />
 

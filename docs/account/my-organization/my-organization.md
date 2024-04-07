@@ -215,7 +215,7 @@ Permissions can be customized for distribution profiles.
 | None       | The user cannot reach any details about distribution profiles, Apple Devices, App Versions Report, and App Sharing Report.              |
 
 :::info
-Manager or Operator Distribution Profile permission can send to enterprise appstore if user has Manager, Uploader or Operator Enterprise Store permission.
+Manager or Operator Distribution Profile permission can send to enterprise appstore if user has Manager, Uploader or Operator Enterprise App Store permission.
 :::
 
 :::info
@@ -293,7 +293,7 @@ Manage and Upload Apps to Enterprise App Store.
 | Permission | Explanation                                                                                                                                                                                                     |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Manager    | The user can do anything Uploader can do and modify Enterprise Settings including create/update/delete store authentication (LDAP, SSO and Static Login), customize the store and modify store domain settings. |
-| Uploader   | The user can only create/update/delete enterprise store profiles, create/update/delete appversions, publish/notify to beta/live stores, download artifacts and view the profiles.                               |
+| Uploader   | The user can only create/update/delete enterprise app store profiles, create/update/delete appversions, publish/notify to beta/live stores, download artifacts and view the profiles.                               |
 | Operator   | The user can only publish/notify to beta/live stores, download artifacts and view the profiles.                                                                                                                 |
 | Viewer     | The user can only view the profiles.                                                                                                                                                                            |
 | None       | The user cannot reach any details about the Enterprise App Store.                                                                                                                                               |

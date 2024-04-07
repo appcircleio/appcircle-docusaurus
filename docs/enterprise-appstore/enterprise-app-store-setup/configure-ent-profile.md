@@ -44,7 +44,7 @@ For more information how to manage user groups, please follow the steps that is 
 
 ### Add Version
 
-If you enabled **Publish Enterprise Store** settings in your config, all the new signed builds will automatically appear in the list. You can also manually upload a new version to your profile.
+If you enabled **Publish Enterprise App Store** settings in your config, all the new signed builds will automatically appear in the list. You can also manually upload a new version to your profile.
 
 Click the **Add Version** button and select IPA or APK file and hit the **Upload** button.
 

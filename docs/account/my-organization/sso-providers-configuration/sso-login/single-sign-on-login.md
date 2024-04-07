@@ -23,7 +23,7 @@ Please check [SSO](/account/my-organization/sso-providers-configuration/single-s
 
 :::caution
 
-Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise Store. They must be configured separately.
+Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise App Store. They must be configured separately.
 
 :::
 

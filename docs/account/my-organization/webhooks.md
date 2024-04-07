@@ -34,7 +34,7 @@ Type of events that you want to be notified. The following scopes are supported
 - Signing Identity
 - Distribution
 - Store Submit
-- Enterprise Store
+- Enterprise App Store
 
 Each scope has different events. You can select the events you want to get notified about. For example for the Build scope, you may get the following events
 
