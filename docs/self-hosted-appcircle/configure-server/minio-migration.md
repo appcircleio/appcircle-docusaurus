@@ -51,7 +51,7 @@ tmpfs           1.2G     0  1.2G   0% /run/user/1000
 
 - Get information about the disk usage of the container engine.
 
-<Tabs>
+<Tabs groupId="container-engine">
   <TabItem value="docker" label="Docker" default>
 
 ```bash
@@ -369,7 +369,7 @@ In order to delete the unused MinIO volumes that were left from MNSD MinIO confi
 
 <SpacetechExampleInfo/>
 
-<Tabs>
+<Tabs groupId="container-engine">
   <TabItem value="docker" label="Docker" default>
 
 ```bash
