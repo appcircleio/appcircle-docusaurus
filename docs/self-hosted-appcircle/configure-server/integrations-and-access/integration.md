@@ -1,7 +1,7 @@
 ---
 title: Integrations
-metaTitle: Integrate Appcircle With Other Tools
-metaDescription: Integrate Appcircle With Other Tools
+description: Learn how to configure email and SSO integrations in Appcircle
+tags: [integrations, email, sso]
 sidebar_position: 2
 ---
 

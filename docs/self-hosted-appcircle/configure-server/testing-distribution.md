@@ -1,7 +1,7 @@
 ---
 title: Testing Distribution
-metaTitle: Customize the Testing Distribution on Self-hosted Installations
-metaDescription: Customize the Testing Distribution on Self-hosted Installations
+description: Customize the Testing Distribution on Self-hosted Installations
+tags: [testing distribution, customize, self-hosted]
 sidebar_position: 13
 ---
 

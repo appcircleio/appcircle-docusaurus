@@ -1,7 +1,7 @@
 ---
 title: Service Configuration
-metaTitle: Service Configuration
-metaDescription: Service Configuration
+description: Learn how to configure self-hosted runner service
+tags: [self-hosted runner, service, configuration]
 sidebar_position: 3
 ---
 

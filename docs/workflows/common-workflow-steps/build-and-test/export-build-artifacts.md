@@ -1,7 +1,7 @@
 ---
 title: Export Build Artifacts
-metaTitle: Export Build Artifacts
-metaDescription: Export Build Artifacts
+description: Exports the specified build artifacts from the build agent to the Appcircle dashboard.
+tags: [export, artifact, build, workflow, step]
 sidebar_position: 5
 ---
 

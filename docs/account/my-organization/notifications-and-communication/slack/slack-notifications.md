@@ -1,7 +1,7 @@
 ---
 title: Slack Notifications
-metaTitle: Slack Notifications
-metaDescription: Slack Notifications
+description: Set up Slack notifications for major events in Appcircle. Enhance your team's communication with module-based alerts.
+tags: [notifications, communication, slack, slack notifications, slack integration]
 sidebar_position: 1
 ---
 
@@ -56,7 +56,7 @@ Keep scrolling down on Appcircle to see the full list of events.
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via Slack.
-To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/integrations/managing-release-notes/) step in your workflow.
+To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/workflows/common-workflow-steps/build-and-test/publish-release-notes/) step in your workflow.
 
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::

@@ -1,7 +1,7 @@
 ---
 title: BrowserStack App Automate
-metaTitle: BrowserStack App Automate
-metaDescription: BrowserStack App Automate
+description: Run your XCUI tests on BrowserStack App Automate. This step allows you to send test IPA's to the BrowserStack dashboard and run your test on it.
+tags: [build, test, browserstack, app automate, xcui, workflow, step]
 sidebar_position: 12
 ---
 

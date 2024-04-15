@@ -1,7 +1,7 @@
 ---
 title: Login Configuration
-metaTitle: Login Configuration
-metaDescription: Disable Signup or Reset Password
+description: Learn how to configure the login settings in Appcircle
+tags: [self-hosted, self-hosted settings, login settings, user registration, forgot password, edit username]
 sidebar_position: 5
 ---
 

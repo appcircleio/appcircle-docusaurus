@@ -1,7 +1,7 @@
 ---
 title: Cocoapods Install
-metaTitle: Cocoapods Install
-metaDescription: Cocoapods Install
+description: Master Cocoapods Install for managing dependencies in your project. Learn how to use the 'pod install' command effectively.
+tags: [cocoapods, install, workflow, step]
 sidebar_position: 6
 ---
 

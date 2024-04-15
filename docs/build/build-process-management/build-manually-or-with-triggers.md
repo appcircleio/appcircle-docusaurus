@@ -1,7 +1,7 @@
 ---
 title: Manual and Automatic Builds
-metaTitle: Build Manually or Automatically with Webhooks and Triggers
-metaDescription: Build Manually or Automatically with Webhooks and Triggers
+description: Learn how to build manually or automatically with webhooks and triggers in Appcircle
+tags: [build, build process management, manual build, automatic build, triggers, webhooks]
 sidebar_position: 10
 ---
 

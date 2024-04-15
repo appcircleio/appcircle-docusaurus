@@ -1,7 +1,7 @@
 ---
 title: Manage the Connections
-metaTitle: Using the Connections
-metaDescription: Using the Connections
+description: The Connections page is a feature where we can check and edit the connections of the Git providers we are connected to.
+tags: [build, connections, git providers, oauth, pat, personal access token]
 sidebar_position: 11
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: SwiftLint
-metaTitle: SwiftLint
-metaDescription: SwiftLint
+description: Improve your code with SwiftLint, a tool for identifying programmatic and stylistic errors. Prerequisites include Git Clone and Cocoapods Install.
+tags: [ios, build, test, workflow, step]
 sidebar_position: 11
 ---
 

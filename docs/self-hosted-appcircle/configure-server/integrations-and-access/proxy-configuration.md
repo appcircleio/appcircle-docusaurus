@@ -1,7 +1,7 @@
 ---
 title: Proxy Configuration
-metaTitle: Configure Proxy Settings for Containers
-metaDescription: Configure Proxy Settings for Containers
+description: Learn how to configure a proxy server for your Appcircle self-hosted server
+tags: [self-hosted, proxy, configuration]
 sidebar_position: 7
 ---
 

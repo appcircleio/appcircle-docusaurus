@@ -1,7 +1,7 @@
 ---
 title: Build & Signing Identity Reports
-metaTitle: Build & Signing Identity Reports
-metaDescription: Build & Signing Identity Reports
+description: Build & Signing Identity Reports in Appcircle
+tags: [reports, build history, signing history]
 sidebar_position: 1
 ---
 

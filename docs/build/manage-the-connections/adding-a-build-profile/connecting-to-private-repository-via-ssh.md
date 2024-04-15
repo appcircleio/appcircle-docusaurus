@@ -1,7 +1,7 @@
 ---
 title: Connecting to Private Repository via SSH
-metaTitle: Connecting to Private Repository via SSH
-metaDescription: Connecting to Private Repository via SSH
+description: Learn how to connect to a private repository via SSH in Appcircle
+tags: [build profile, connection, ssh]
 sidebar_position: 6
 ---
 

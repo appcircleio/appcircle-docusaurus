@@ -1,7 +1,7 @@
 ---
 title: Email Notifications
-metaTitle: Email Notifications and Subscription Management
-metaDescription: Email Notifications and Subscription Management
+description: Learn how to set up email notifications and subscription management in Appcircle
+tags: [email, email notifications, subscription management, email connection]
 sidebar_position: 3
 ---
 
@@ -25,7 +25,7 @@ You can also define more than one email address for a module and send notificati
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via email.
-To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/integrations/managing-release-notes/) step in your workflow.
+To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/workflows/common-workflow-steps/build-and-test/publish-release-notes/) step in your workflow.
 
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::

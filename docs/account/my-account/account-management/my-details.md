@@ -1,7 +1,7 @@
 ---
 title: Personal Details
-metaTitle: Personal Details
-metaDescription: Personal Details
+description: Learn how to manage your personal details in Appcircle
+tags: [account, account management, personal details]
 sidebar_position: 1
 ---
 

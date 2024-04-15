@@ -247,11 +247,6 @@
   status = 301
 
 [[redirects]]
-  from = "/integrations/azure-bot-for-swiftlint-and-detekt"
-  to = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
-  status = 301
-
-[[redirects]]
   from = "/account/email-connection"
   to = "/account/my-organization/notifications-and-communication/email-connection"
   status = 301
@@ -353,7 +348,12 @@
 
 [[redirects]]
   from = "/integrations/uploading-files-to-amazon-sin-the-workflows"
-  to = "/integrations/deployment-guides/uploading-files-to-amazon-sin-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/deployment-guides/uploading-files-to-amazon-sin-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
   status = 301
 
 [[redirects]]
@@ -463,7 +463,12 @@
 
 [[redirects]]
   from = "/continuous-testing/firebase-test-lab-for-android"
-  to = "/continuous-testing/android-testing/firebase-test-lab-for-android"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/firebase-test-lab"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/android-testing/firebase-test-lab-for-android"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/firebase-test-lab"
   status = 301
 
 [[redirects]]
@@ -488,7 +493,12 @@
 
 [[redirects]]
   from = "/integrations/deploying-web-apps-to-aws-amplify-console"
-  to = "/integrations/deployment-guides/deploying-web-apps-to-aws-amplify-console"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/deployment-guides/deploying-web-apps-to-aws-amplify-console"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
   status = 301
 
 [[redirects]]
@@ -498,7 +508,7 @@
 
 [[redirects]]
   from = "/integrations/increasing-the-version-number-automatically-for-ios-and-android"
-  to = "/integrations/workflow-optimization/increasing-the-version-number-automatically-for-ios-and-android"
+  to = "/versioning"
   status = 301
 
 [[redirects]]
@@ -548,7 +558,7 @@
 
 [[redirects]]
   from = "/workflows/common-workflow-steps/authanticate-with-netrc"
-  to = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
+  to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
   status = 301
 
 [[redirects]]
@@ -650,4 +660,119 @@
 [[redirects]]
   from = "/store-submit/huawei-app-gallery"
   to = "/publish-module/send-to-huawei"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/jira-integration"
+  to = "/workflows/common-workflow-steps/build-and-test/jira-component"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/azure-board"
+  to = "/workflows/common-workflow-steps/build-and-test/azure-board"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/"
+  to = "/workflows"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/appdome-integration"
+  to = "/workflows"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-faq"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/automated-tests"
+  to = "/continuous-testing/"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/using-aws-device-farm-for-ios-and-android-continuous-testing"
+  to = "/workflows/common-workflow-steps/build-and-test/aws-device-farm-and-deploy"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-appstore"
+  to = "/publish-integrations/ios-publish-integrations/send-to-app-store"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-googleplay"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-googleplay#deleting-android-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei#deleting-huawei-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples#changing-java-version"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script#how-to-change-java-version"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows#adding-fastlane-to-the-appcircle-build-workflow-as-a-step"
+  to = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/azure-bot-for-swiftlint-and-detekt"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
+  to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/managing-release-notes"
+  to = "/workflows/common-workflow-steps/build-and-test/publish-release-notes"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/workflow-marketplace"
+  to = "/workflows/#workflow-marketplace"
   status = 301

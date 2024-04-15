@@ -1,7 +1,7 @@
 ---
 title: Bundle Universal Apk
-metaTitle: Bundle Universal Apk
-metaDescription: Bundle Universal Apk
+description: This step creates a universal APK from an AAB file.
+tags: [android, mobile, distribution]
 sidebar_position: 12
 ---
 

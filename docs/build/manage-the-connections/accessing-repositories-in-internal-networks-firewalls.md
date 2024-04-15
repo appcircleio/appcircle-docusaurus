@@ -1,7 +1,7 @@
 ---
 title: Accessing Internal Networks
-metaTitle: Accessing Repositories Within Internal Networks
-metaDescription: Accessing Repositories Within Internal Networks
+description: Learn how to access repositories within internal networks and behind firewalls in Appcircle
+tags: [internal networks, firewalls, repository access]
 sidebar_position: 3
 ---
 

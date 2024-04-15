@@ -1,7 +1,7 @@
 ---
 title: Xcodebuild for Devices (Archive & Export)
-metaTitle: Xcodebuild for Devices (Archive & Export)
-metaDescription: Xcodebuild for Devices (Archive & Export)
+description: Learn to build iOS apps for ARM devices with Xcodebuild. Essential for Sharing With Testers feature and iOS distribution
+tags: [xcode, ios, build, archive, export, workflow, step]
 sidebar_position: 1
 ---
 

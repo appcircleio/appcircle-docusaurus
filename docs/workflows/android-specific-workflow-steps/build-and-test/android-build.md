@@ -1,7 +1,7 @@
 ---
 title: Android Build
-metaTitle: Android Build
-metaDescription: Android Build
+description: Learn how to use the Android Build workflow step in Appcircle
+tags: [android, mobile, android, build]
 sidebar_position: 1
 ---
 

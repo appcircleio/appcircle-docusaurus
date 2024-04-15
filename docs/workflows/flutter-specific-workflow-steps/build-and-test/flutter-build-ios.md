@@ -1,7 +1,7 @@
 ---
 title: Flutter Build for iOS
-metaTitle: Flutter Build for iOS
-metaDescription: Flutter Build for iOS
+description: Learn to build iOS apps with the Flutter Build for iOS component. Ensure Flutter Install and Git Clone steps are completed first.
+tags: [flutter, build, test, workflow, step]
 sidebar_position: 2
 ---
 
