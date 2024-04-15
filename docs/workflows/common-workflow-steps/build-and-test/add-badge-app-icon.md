@@ -1,9 +1,7 @@
 ---
 title: Add a Badge to Your App Icon
-metaTitle: Add a Badge to Your App Icon
-metaDescription: Learn how to add a badge to your app icon with Appcircle's badge component.
+description: Learn how to add a badge to your app icon with Appcircle's badge component.
 tags: [badge, app icon, version, build, appcircle, mobile ci/cd]
-keywords: [badge, app icon, version, build, appcircle, mobile ci/cd]
 sidebar_position: 4
 ---
 
