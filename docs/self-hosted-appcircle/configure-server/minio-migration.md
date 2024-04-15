@@ -141,9 +141,9 @@ sudo ./ac-self-hosted.sh -i
 In order to get container image updates for Appcircle server services, you need to pull them from the remote artifact repository.
 
 :::caution
-If you are updating the Appcircle server with the [Offline Upgrade](/docs/self-hosted-appcircle/configure-server/offline-installation.md) method, you should `load` the new container images before the MinIO migration.
+If you are updating the Appcircle server with the [Offline Upgrade](/self-hosted-appcircle/configure-server/offline-installation) method, you should `load` the new container images before the MinIO migration.
 
-For more details, please head to the [Offline Upgrade Documentation](/docs/self-hosted-appcircle/configure-server/offline-installation.md#upgrade) and follow the steps before the MinIO migration.
+For more details, please head to the [Offline Upgrade](/self-hosted-appcircle/configure-server/offline-installation#upgrade) documentation and follow the steps before the MinIO migration.
 :::
 
 - Upgrade the container images.
@@ -152,7 +152,7 @@ For more details, please head to the [Offline Upgrade Documentation](/docs/self-
 ./ac-self-hosted.sh -n "spacetech" upgrade
 ```
 
-### Update Server Configuration
+### Update Configuration
 
 :::info
 
@@ -184,7 +184,9 @@ Upon successful completion of the migration process, you should see an output li
 ```text
 ...
 Migration logs are being saved into the minio-migration-20240329082833.log file.
-Migration command completed successfully.
+...
+...
+The migration command was completed successfully.
 ```
 
 Detailed migration logs are being saved into a file named `minio-migration-${datetime}.log` where the `datetime` part is the current system date time in a format like `20240329082833`.
@@ -297,7 +299,7 @@ After that, you can cleanup the disk or add some more disk space for a successfu
 
 Check the **[prerequisites](#prerequisites)** section for the required disk space.
 
-If you want to go on without any migration and stay with an older configuration, you should follow the **[Staying with MNSD MinIO](#update-server-configuration)** section for configuration details.
+If you want to go on without any migration and stay with an older configuration, you should follow the **[Staying with MNSD MinIO](#update-configuration)** section for configuration details.
 
 ### Possible checks that can be done after migration
 
