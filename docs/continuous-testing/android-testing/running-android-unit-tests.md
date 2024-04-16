@@ -65,7 +65,7 @@ Simply go to your build workflow and add a custom script after the **Sign Applic
 
 See the following page on our documentation to learn more about creating custom workflow steps:
 
-<ContentRef url="/workflows/common-workflow-steps/build-and-test/custom-script">Working with Custom Scripts</ContentRef>
+<ContentRef url="/workflows/common-workflow-steps/upload-files-to-amazon-s3">Working with Custom Scripts</ContentRef>
 
 Add the following Bash script to your custom script step:
 
@@ -139,7 +139,7 @@ Appcircle can show passing and failing tests in compact UI. If your tests genera
 Appcircle currently supports the following mobile automation testing tools:
 
 - [Appium](/workflows/common-workflow-steps/#appium-server)
-- [BrowserStack App Automate - Espresso](/workflows/android-specific-workflow-steps/distribution/browserstack-app-automate-espresso)
+- [BrowserStack App Automate - Espresso](/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso)
 - [Maestro](/workflows/common-workflow-steps/#maestro-cloud-upload)
 - [Testinium](/workflows/common-workflow-steps/#testinium)
 
@@ -169,6 +169,6 @@ curl -u "$AC_BROWSERSTACK_USERNAME:$AC_BROWSERSTACK_ACCESS_KEY" \
 
 :::info
 
-Appcircle's [**BrowserStack App Automate - Espresso**](/workflows/android-specific-workflow-steps/distribution/browserstack-app-automate-espresso) step already parses JUnit Test reports. The above code sample is only given as an example.
+Appcircle's [**BrowserStack App Automate - Espresso**](/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso) step already parses JUnit Test reports. The above code sample is only given as an example.
 
 :::

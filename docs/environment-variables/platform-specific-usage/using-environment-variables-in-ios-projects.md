@@ -1,7 +1,16 @@
 ---
 title: iOS Builds
 description: Learn how to use environment variables in iOS projects in Appcircle
-tags: [environment variables, env vars, variables, ios, Xcode, build configuration, custom build scripts]
+tags:
+  [
+    environment variables,
+    env vars,
+    variables,
+    ios,
+    Xcode,
+    build configuration,
+    custom build scripts,
+  ]
 sidebar_position: 4
 ---
 
@@ -92,7 +101,7 @@ Once you update your project with `.xcconfig` files, you can create environment 
 
 To be able to use these variables in your project, we need to replace the values in our `.xcconfig` file using a custom script workflow step. To get more information about creating and using custom scripts, please check the following page:
 
-<ContentRef url="/workflows/common-workflow-steps/build-and-test/custom-script">Working with Custom Scripts</ContentRef>
+<ContentRef url="/workflows/common-workflow-steps/upload-files-to-amazon-s3">Working with Custom Scripts</ContentRef>
 
 In our example here, we will use a Bash script to replace the values in our .xcconfig file.;
 

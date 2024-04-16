@@ -1,7 +1,14 @@
 ---
 title: Microsoft Teams Notifications
 description: Appcircle supports sending notifications to Microsoft Teams for the major events in all modules. You can connect Appcircle to your Microsoft Team channel to set up module-based event notifications to be sent to the selected channel.
-tags: [notifications, communication, microsoft teams, teams notifications, teams integration]
+tags:
+  [
+    notifications,
+    communication,
+    microsoft teams,
+    teams notifications,
+    teams integration,
+  ]
 sidebar_position: 9
 ---
 
@@ -40,7 +47,7 @@ Write the webhook URL that you created in the previous step and select the event
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via Microsoft Teams.
-To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/workflows/common-workflow-steps/build-and-test/publish-release-notes/) step in your workflow.
+To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/workflows/common-workflow-steps/publish-release-notes/) step in your workflow.
 
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::

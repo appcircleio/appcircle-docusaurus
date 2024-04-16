@@ -29,7 +29,7 @@ There are no prerequisites required before using the **Publish Release Notes** s
 
 :::warning
 
-To create rich release notes, the Release Notes component should be included in your workflow. It is recommended to place it just before the [**Export Build Artifacts**](/workflows/common-workflow-steps/build-and-test/export-build-artifacts) step so that you can have access to all build artifacts, such as git commit messages, test results, or build logs.
+To create rich release notes, the Release Notes component should be included in your workflow. It is recommended to place it just before the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step so that you can have access to all build artifacts, such as git commit messages, test results, or build logs.
 
 :::
 
@@ -46,15 +46,15 @@ You can find all the parameters required for this step in the table below, along
 
 ### Output Variables
 
-| Variable Name | Description                                                                                                                                                                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ` `           | This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/workflows/common-workflow-steps/build-and-test/export-build-artifacts#download-exported-artifacts). |
+| Variable Name | Description                                                                                                                                                                                                                               |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ` `           | This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-output.png' />
 
 :::warning
 
-Don't forget to use the [**Export Build Artifacts**](/workflows/common-workflow-steps/build-and-test/export-build-artifacts) step to access the release notes output and distribute it after the build.
+Don't forget to use the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step to access the release notes output and distribute it after the build.
 
 :::
 

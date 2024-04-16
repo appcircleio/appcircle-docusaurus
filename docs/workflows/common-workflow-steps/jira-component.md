@@ -27,7 +27,7 @@ Please note that once the Jira Component has run successfully, the status of the
 
 To add a comment, the issue ID must be supplied to the component. We need to get this issue ID dynamically so that our workflow can work for multiple branches. Appcircle components use environment variables to pass the state. We can add a step just before the Jira Component to prepare the necessary environment variables.
 
-For example, you're working on a feature branch called `feature/jiraissue-1`. You may use the below Ruby script to get `jiraissue-1` from the branch name and use this information with the Jira component. Please see the [**Custom Script step documentation**](/workflows/common-workflow-steps/build-and-test/custom-script) for this implementation.
+For example, you're working on a feature branch called `feature/jiraissue-1`. You may use the below Ruby script to get `jiraissue-1` from the branch name and use this information with the Jira component. Please see the [**Custom Script step documentation**](/workflows/common-workflow-steps/upload-files-to-amazon-s3) for this implementation.
 
 ```ruby
 branch = ENV['AC_GIT_BRANCH']
