@@ -1,0 +1,47 @@
+You need to install some workflow required build tools once before executing any build pipeline.
+
+You can install iOS platform tools, android platform tools or both of them according to your requirements.
+
+Below are some example configurations which shows you some sample runner configuration scenarios:
+
+- Install only iOS platform tools with default Xcode (15.2.x)
+
+```bash
+./ac-runner install -o ios
+```
+
+:::warning
+
+If your operating system is macOS 11 (Big Sur), then the default selected Xcode version will not be compatible for your system.
+
+Set `-x` argument explicitly with one of the compatible versions. You can select 12.5, 13.0, 13.1 or 13.2 version for Xcode.
+
+:::
+
+- Install only iOS platform tools with Xcode versions 14.3.x and 15.3.x
+
+```bash
+./ac-runner install -o ios -x 14.3,15.3
+```
+
+- Install only android platform tools
+
+```bash
+./ac-runner install -o android
+```
+
+- Install both android and iOS platform tools with Xcode version 15.3.x
+
+```bash
+./ac-runner install -o ios,android -x 15.3.x
+```
+
+:::caution
+
+While configuring self-hosted runner, platform argument (`-o`) doesn't work as append strategy. Your latest platform argument will be self-hosted runner's **final** platform.
+
+Let's assume, you installed iOS platform tools at first with `-o ios` and then want to add also android platform in order to build both iOS and android apps.
+
+Using `-o android` in this case will be wrong argument. You must use `-o ios,android` for this purpose.
+
+:::

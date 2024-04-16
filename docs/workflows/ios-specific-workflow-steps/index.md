@@ -1,7 +1,7 @@
 ---
 title: iOS Specific Workflow Steps
-metaTitle: iOS Specific Workflow Steps
-metaDescription: iOS Specific Workflow Steps
+description: Dive into iOS-specific workflow steps for building profiles. Access our workflow marketplace for a comprehensive list.
+tags: [ios, mobile, workflow, step]
 sidebar_position: 3
 ---
 
@@ -18,13 +18,14 @@ This step is used to specify the Xcode version to be used during the build proce
 https://github.com/appcircleio/appcircle-xcode-select-component
 
 :::info
+
 ### Pool-Based Xcode Version Selection
 
 A version other than the Xcode versions on the configuration page should not be entered manually as the Xcode select workflow argument.
 Because the Xcode versions on the configuration page are the versions installed on runners.
 Entering an unavailable Xcode version may cause the build to fail.
 
-You can review the documentation for detailed information about the Xcode version selection [here](../../self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools.md/#pool-based-xcode-version-selection).
+You can review the documentation for detailed information about the Xcode version selection [here](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection).
 :::
 
 ## Cocoapods Install
@@ -47,7 +48,7 @@ https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-c
 
 ## Xcodebuild for Devices (Archive & Export)
 
-This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](../../distribute/create-or-select-a-distribution-profile.md) feature or any other means of iOS distribution.
+This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](/distribute/create-or-select-a-distribution-profile) feature or any other means of iOS distribution.
 
 https://github.com/appcircleio/appcircle-ios-build-sign-component
 

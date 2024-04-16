@@ -1,13 +1,13 @@
 ---
 title: Runner Virtual Machine Setup
-metaTitle: Runner Virtual Machine Setup
-metaDescription: Runner Virtual Machine Setup
+description: Learn how to set up a self-hosted runner as a macOS VM image
+tags: [self-hosted runner, runner, vm, virtual machine, setup]
 sidebar_class_name: hidden
 ---
 
 # Self-hosted Runner as MacOS VM Image
 
-Self-hosted runner installation is explained at Appcircle [docs](installation.md) in detail. You can install runner in your self-hosted environment by yourself, following instructions on there.
+Self-hosted runner installation is explained at Appcircle [docs](installation) in detail. You can install runner in your self-hosted environment by yourself, following instructions on there.
 
 We're also providing ready-to-use runner VM image that you can download from Appcircle CDN. Especially for enterprise installation, it might be more practical than installing from scratch.
 
@@ -214,8 +214,8 @@ In order to keep free disk space sufficient for build pipelines, we're packaging
 
 You can find more information about the build infrastructure in the documents below:
 
-- [iOS Build Infrastructure](../../infrastructure/ios-build-infrastructure.md)
-- [Android Build Infrastructure](../../infrastructure/android-build-infrastructure.md)
+- [iOS Build Infrastructure](/infrastructure/ios-build-infrastructure)
+- [Android Build Infrastructure](/infrastructure/android-build-infrastructure)
 
 :::caution
 We're constantly bumping the VM macOS version according to Xcode requirements.
@@ -346,9 +346,9 @@ You can follow the steps below to check the Appcircle runner version and upgrade
 ./ac-runner --version
 ```
 
-- Check the latest version from the [Upgrade Runner](./update.md#1-update-runner) page.
+- Check the latest version from the [Upgrade Runner](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) page.
 
-- If your version is not up to date, please follow the [Update Runner](./update.md#1-update-runner) section in the page.
+- If your version is not up to date, please follow the [Update Runner](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) section in the page.
 
 :::caution
 
@@ -435,7 +435,7 @@ You can use the helper script named `install_cert.sh` that comes with your runn
 - Your organization's root CA certificate is now trusted on the OS, Java, Ruby, and Node.js.
 
 :::info
-For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates.md#adding-certificates) page.
+For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates#adding-certificates) page.
 :::
 
 ##### 4. Configure Runner Service
@@ -480,7 +480,7 @@ echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.test-appcircle.tool.zb/build/v
 
 :::
 
-Create runner access token from appcircle server and register runner to server. See details in [here](../self-hosted-runner/installation.md#2-register).
+Create runner access token from appcircle server and register runner to server. See details in [here](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
 For example,
 
@@ -647,7 +647,7 @@ touch $HOME/runner1/.stop
 
 Creating `.stop` file prevents creating new instance by `run.sh` on shutdown.
 
-If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](../self-hosted-runner/configure-runner/runner-service.md#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
+If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](../self-hosted-runner/configure-runner/runner-service#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
 
 On the other hand if you want to stop runner immediately for whatever reason or it's in idle state, you can SSH into runner and run shutdown command.
 
@@ -705,7 +705,7 @@ On some cases, you may need to update to your macOS base images in order to make
 Below are the ones that frequently occur, but not limited to them.
 
 - Your team might use a tool frequently in build pipeline, that's not included in Appcircle macOS image. Installing that tool into the image once will save build time. Your build pipeline will be more efficient and optimized.
-- You may prefer to get iOS and android tool updates by using [self-hosted runner update](../self-hosted-runner/update.md) method instead of getting fresh macOS VM image. When you get fresh macOS image you may need to make your custom configurations again.
+- You may prefer to get iOS and android tool updates by using [self-hosted runner update](/self-hosted-appcircle/self-hosted-runner/update) method instead of getting fresh macOS VM image. When you get fresh macOS image you may need to make your custom configurations again.
 - You may need to make persistent proxy configuration for your internal network requirements.
 - You may need to add your corporate's self-signed root CAs to macOS VM image in order to succeed SSL connections.
 
@@ -725,7 +725,7 @@ screen -d -m tart run vm01 --no-graphics \
 
 - SSH into `vm01`.
 
-```bash  
+```bash
 ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 ```
 
@@ -820,7 +820,7 @@ screen -d -m $HOME/runner2/run.sh vm02
 
 In this case, you need to focus on self-hosted runner issues inside macOS VM (guest).
 
-In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](./index.md) details.
+In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](/self-hosted-appcircle/self-hosted-runner) details.
 
 - You can check your macOS guest for possible system issues. (disk space, network connectivity etc.)
 - If you have custom proxy settings on macOS guest, check these settings.

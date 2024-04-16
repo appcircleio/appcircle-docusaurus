@@ -1,7 +1,7 @@
 ---
 title: What are Workflows and How to Use Workflows?
-metaTitle: What are Workflows and How to Use Workflows?
-metaDescription: What are Workflows and How to Use Workflows?
+description: Understand workflows in Appcircle. Learn how to use them for building, testing, and deploying your applications.
+tags: [workflow, step, build, test, deploy]
 sidebar_position: 1
 ---
 
@@ -96,7 +96,7 @@ To rename/delete a current workflow, press the "Edit" button at the top of the w
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (183).png' />
 
-You can use the "Clone" option to create a new workflow based on the currently available ones. You can [select different workflows for different build scenarios](../build/build-manually-or-with-triggers.md) (e.g. separate workflows for production and development).
+You can use the "Clone" option to create a new workflow based on the currently available ones. You can [select different workflows for different build scenarios](/build/build-process-management/build-manually-or-with-triggers) (e.g. separate workflows for production and development).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (184).png' />
 

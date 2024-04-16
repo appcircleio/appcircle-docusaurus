@@ -1,7 +1,7 @@
 ---
-title: Manage Pools
-metaTitle: Manage Pools
-metaDescription: Manage Pools
+title: Managing Pools
+description: Learn how to manage self-hosted pools in Appcircle
+tags: [self-hosted runner, self-hosted pool, pool management]
 sidebar_position: 1
 ---
 

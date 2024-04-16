@@ -1,7 +1,7 @@
 ---
 title: Flutter Specific Workflow Steps
-metaTitle: Flutter Specific Workflow Steps
-metaDescription: Flutter Specific Workflow Steps
+description: The steps listed below are specific to the Flutter build profiles.
+tags: [flutter, build, test, workflow, step]
 sidebar_position: 6
 ---
 # Flutter Specific Workflow Steps
