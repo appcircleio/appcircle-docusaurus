@@ -1,0 +1,94 @@
+---
+title: Testinium
+description: Testinium step allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle.
+tags: [testinium, test]
+sidebar_position: 16
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Testinium
+
+The **Testinium** step on Appcircle integrates the [Testinium](https://testinium.com) testing platform into the CI/CD workflow. It allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle environment. This step enables developers to execute test scripts, analyze test results, and ensure the quality of their mobile applications before deployment.
+
+### Prerequisites
+
+The workflow steps that need to be executed before running the **Testinium** workflow step, along with their respective reasons, are listed in the table below. Prerequisites vary depending on the platform used:
+
+#### For Android (Java / Kotlin and React Native) 
+
+| Prerequisite Workflow Step        | Description                                                                                              |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [**Android Build**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Testinium** step.                                                                           |
+| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_1.png'/>
+
+#### For iOS (Objective-C / Swift and React Native) 
+
+| Prerequisite Workflow Step        | Description                                                                                              |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_2.png'/>
+
+#### For Android Flutter 
+
+| Prerequisite Workflow Step        | Description                                                                                              |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [**Flutter Build for Android**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Testinium** step.                                                                           |
+| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_3.png'/>
+
+#### For iOS Flutter
+
+| Prerequisite Workflow Step        | Description                                                                                              |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Flutter Build for iOS**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_4.png'/>
+
+### Input Variables
+
+For each component, specific input variables are required for its operation on your system. The input variables necessary for **Testinium** are as follows:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_5.png'/>
+
+:::warning
+
+Confidential information should be entered as a [secret environment variable](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/).
+
+:::
+
+| Variable Name               | Description                                                                                                 | Status   |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_TESTINIUM_APP_PATH`    | Specifies the full path of the build. For example, `$AC_EXPORT_DIR/Myapp.ipa` or `$AC_APK_PATH`.            | Required |
+| `$AC_TESTINIUM_USERNAME`    | Specifies the Testinium username used for logging in.                                                       | Required |
+| `$AC_TESTINIUM_PASSWORD`    | Specifies the Testinium password used for logging in.                                                       | Required |
+| `$AC_TESTINIUM_PROJECT_ID`  | Specifies the Testinium project ID. This ID must be obtained from the Testinium platform.                   | Required |
+| `$AC_TESTINIUM_PLAN_ID`     | Specifies the Testinium plan ID. This ID must be obtained from the Testinium platform.                      | Required |
+| `$AC_TESTINIUM_COMPANY_ID`  | Specifies the Testinium company ID. This ID must be obtained from the Testinium platform.                   | Required |
+| `$AC_TESTINIUM_MAX_FAIL_PERCENTAGE` | Specifies the maximum failure percentage limit to interrupt the workflow. It must be in the range 1-100.   | Optional |
+| `$AC_TESTINIUM_TIMEOUT`     | Specifies the Testinium plan timeout in minutes.                                                            | Required |
+| `$AC_TESTINIUM_MAX_API_RETRY_COUNT` | Specifies the maximum repetition in case of Testinium platform congestion or API errors.            | Required |
+
+### Output Variables
+
+The outputs that can result from the operation of this component are listed as follows:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_6.png'/>
+
+| Variable Name                          | Description                                             |
+| -------------------------------------- | ------------------------------------------------------- | 
+| `$AC_TESTINIUM_RESULT_FAILURE_SUMMARY` | Total number of failures in the test.                   |
+| `$AC_TESTINIUM_RESULT_ERROR_SUMMARY`   | Total number of errors in the test.                     |
+| `$AC_TESTINIUM_RESULT_SUCCESS_SUMMARY` | Total number of successes in the test results.          |
+
+
+---
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcircle-testinium-component

@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Xcodebuild for Testing
 
-This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks like [**BrowserStack**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#browserstack-app-automate---xcui) or [**Testinium**](https://docs.appcircle.io/workflows/common-workflow-steps#testinium).
+This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks like [**BrowserStack**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#browserstack-app-automate---xcui) or [**Testinium**](/workflows/common-workflow-steps/testinium).
 
 ### Prerequisites
 
