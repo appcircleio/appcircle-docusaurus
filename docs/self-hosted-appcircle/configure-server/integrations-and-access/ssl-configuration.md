@@ -355,22 +355,22 @@ For now, self-hosted Appcircle does not support usage of password protected priv
 
 ## Testing Distribution
 
-`global.yaml` configuration has its own dedicated section for [Testing Distribution](../../distribute/index.md) domain settings. Below, we will explain some use cases for Testing Distribution, when you enable HTTPS.
+`global.yaml` configuration has its own dedicated section for [Testing Distribution](/distribute) domain settings. Below, we will explain some use cases for Testing Distribution, when you enable HTTPS.
 
 ### Default Domain
 
-By default, Testing Distribution has a `dist` subdomain under the main domain on self-hosted Appcircle servers.
+By default, Testing Distribution has a **[dist](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#4-dns-settings)** subdomain under the main domain on self-hosted Appcircle servers.
 
-For example, if your `.external.mainDomain` in the `global.yaml` file is `.appcircle.spacetech.com`, then the default Testing Distribution domain name should be `dist.appcircle.spacetech.com`.
+For example, if your `external.mainDomain` in the `global.yaml` file is `.appcircle.spacetech.com`, then the default Testing Distribution domain name should be `dist.appcircle.spacetech.com`.
 
-If you have configured the Appcircle server as HTTPS using the `external.scheme` as explained [here](#configure-https), the certificate of the Appcircle server also includes the default Testing Distribution domain, and it works with HTTPS.
+If you have configured the Appcircle server as HTTPS using the `external.scheme` as explained [here](#configure-https), the certificate of the Appcircle server also includes the default Testing Distribution subdomain, and it works with HTTPS.
 
 ### Custom Domain
 
-It's possible to use a custom domain for the Testing Distribution. In this case, we need to make extra configurations for our custom domain.
+It's possible to use a custom domain for the Testing Distribution. In this case, you need to make extra configurations for our custom domain.
 
 :::caution
-Be aware that after you change the Appcircle Testing Distribution **domain** or the **SSL settings**, the links in the emails that were sent to the testers with the **previous domain** and **previous SSL settings** will be invalid.
+Please be aware that, after you change the Testing Distribution domain or the SSL settings, the links in the **emails that were sent to the testers with the previous domain and previous SSL settings will be invalid.**
 :::
 
 Most likely, our custom domain won't be covered by the main domain certificate. In this case, we need to create a new public certificate and private key pair for the custom domain.
@@ -381,6 +381,8 @@ Let's assume we want to use `dist.spacetech.com` as a custom domain for our samp
 
 :::note
 If you don't have the `testerWeb` section defined in the `global.yaml` file, you should add it as below.
+
+If you have a `testerWeb` section previously defined in the `global.yaml` file for some reason, you should update that section with the `customDomain` settings below instead of adding a new one.
 :::
 
 ```yaml
