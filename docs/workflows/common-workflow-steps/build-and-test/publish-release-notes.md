@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 You can use the **Publish Release Notes** step to generate release notes during your workflow. These release notes can be enriched with environment variables or Ruby snippets, and you also have the option to include your own release notes file by specifying its path. This component generates a `release-notes.txt` file with the provided options and copies it to the `$AC_OUTPUT_DIR` path. The generated release notes will be utilized in the following areas:
 
-- Distribution Portals (such as [Appcircle Testing Distribution](/distribute) or [Firebase App Distribution](https://github.com/appcircleio/appcircle-firebase-distribution-component) step)
+- Distribution Portals (such as [Appcircle Testing Distribution](/distribute) or [Firebase App Distribution](/workflows/common-workflow-steps/firebase-app-distribution) step)
 - [Enterprise App Store](/enterprise-appstore)
 - Publishing (to [Google Play](/publish-integrations/android-publish-integrations/send-to-googleplay) or Approval Email steps)
 
