@@ -22,6 +22,14 @@ This documentation provides comprehensive instructions on migrating from a multi
 Please note that this process will cause downtime since it requires a restart of the Appcircle server.
 :::
 
+:::tip
+
+Fresh self-hosted server installations do not require any manual intervention for the MinIO configuration.
+
+The single-node single drive MinIO configuration is applied by default on fresh installations.
+
+:::
+
 ## Prerequisites
 
 For a successful migration from multi-node single drive MinIO to single-node single drive MinIO, it's essential to ensure adequate free disk space on the Appcircle server.
