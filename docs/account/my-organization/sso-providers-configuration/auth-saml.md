@@ -1,6 +1,6 @@
 ---
 title: Auth0 SAML
-description: Implement SAML authentication in your app with Appcircle. Enhance user security and streamline login processes.
+description: Enable Auth0 SAML for secure user sign-in in your app. Simplify access and enhance security with Appcircle's integration.
 tags: [account, organization, sso, auth0, saml, configuration]
 sidebar_position: 3
 ---
