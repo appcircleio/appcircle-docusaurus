@@ -9,8 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Firebase App Distribution
 
-[**Firebase App Distribution**](https://firebase.google.com/docs/app-distribution) is a platform provided by [Google Firebase](https://firebase.google.com) that allows developers to distribute pre-release versions of their mobile apps to testers and stakeholders for testing purposes. It simplifies the process of distributing Android and iOS apps, providing features such as targeted distribution, release notes, feedback collection, and more.
-
+[**Firebase App Distribution**](https://firebase.google.com/docs/app-distribution) is a platform provided by [Google Firebase](https://firebase.google.com/) that enables developers to distribute pre-release versions of mobile apps to testers and stakeholders. This platform streamlines the distribution of Android and iOS apps and offers features such as targeted distribution, release notes, and feedback collection.
 The Appcircle **Firebase App Distribution** step enables you to efficiently distribute your mobile applications to testers and relevant parties directly from your Appcircle workflow. With this integration, you can optimize the distribution process and gather valuable feedback to iterate on your app before its public release.
 
 :::caution
@@ -27,14 +26,14 @@ For more details, please refer to the following links:
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Firebase App Distribution** workflow step, along with their respective reasons, are listed in the table below. Prerequisites vary depending on the platform used:
+Below are the workflow steps required before running the **Firebase App Distribution** step, listed with their reasons. Prerequisites vary by platform:
 
 #### For Android (Java / Kotlin and React Native) 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [**Android Build**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
-| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_1.png'/>
 
@@ -51,7 +50,7 @@ The workflow steps that need to be executed before running the **Firebase App Di
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [**Flutter Build for Android**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
-| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_3.png'/>
 
@@ -90,7 +89,7 @@ Confidential information should be entered as a [secret environment variable](ht
 
 ### Output Variables
 
-The **Firebase App Distribution** step does not produce any output variables. If the app is successfully distributed, the step will succeed. Otherwise, it will fail.
+The **Firebase App Distribution** step generates no output variables. The step succeeds if the app is distributed successfully; otherwise, it fails.
 
 ---
 
