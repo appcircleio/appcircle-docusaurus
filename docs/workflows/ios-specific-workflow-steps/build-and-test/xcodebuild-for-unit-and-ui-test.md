@@ -18,17 +18,16 @@ This step does not generate **IPA**, it only runs tests within the project.
 :::
 
 ### Prerequisites
-| Prerequisite Workflow Step                      | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/build-and-test/git-clone) | The repo needs to be cloned in order to start the running unit and UI test process. After the clone, unit and UI tests will be run. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
-| [**Xcode Select**](/workflows/ios-specific-workflow-steps/build-and-test/xcode-select)     | This step selects the Xcode version that is specified. |
+| Prerequisite Workflow Step                                                                | Description                                     |
+|-------------------------------------------------------------------------------------------|-------------------------------------------------|
+| [**Git Clone**](/workflows/common-workflow-steps/build-and-test/git-clone)                | The repository must be cloned to initiate the unit and UI testing process. Following the clone, this step will run the tests and create the `AC_REPOSITORY_DIR` variable. |
+| [**Xcode Select**](/workflows/ios-specific-workflow-steps/build-and-test/xcode-select)    | This step selects the specified Xcode version. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitOrder.png' />
 
 :::warning
 
-When this step runs, if there is a failed test or tests in the project, it will automatically give an error. This is actually not an error of the Appcircle workflow, but an error caused by the tests in the project finding a failure. In order not to disrupt the workflow flow 
-The option **`"Continue with the next step even if this step fails"`** should be enabled.
+If any tests fail during this step, an error will be automatically reported, which reflects issues within the project's tests, not the Appcircle workflow. To prevent disruption in the workflow, enable the **`"Continue with the next step even if this step fails"`** option.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-continueEnable.png' />
 
@@ -37,7 +36,7 @@ The option **`"Continue with the next step even if this step fails"`** should be
 
 ### Input Variables
 
-You can find the parameters required for this step to work and detailed explanations in the list below.
+Below are the parameters required for this step, along with detailed explanations.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitInput.png' />
 
@@ -56,7 +55,7 @@ You can find the parameters required for this step to work and detailed explanat
 
 :::caution
 
-Be aware of which OS version you used; the simulator type should match that OS version. For example, if you use the [**latest OS version**](https://developer.apple.com/documentation/ios-ipados-release-notes), you can not use the **iPhone 14** simulator.
+Ensure the simulator type matches the OS version used. For example, if you use the [**latest OS version**](https://developer.apple.com/documentation/ios-ipados-release-notes), the iPhone 14 simulator cannot be used.
 
 :::
 
@@ -67,6 +66,6 @@ To view the output artifacts on the [**Download Artifacts**](/workflows/common-w
 :::
 
 ### Output Variables
-| Variable Name                 | Description                         |
-|-------------------------------|-------------------------------------|
-| `$AC_TEST_RESULT_PATH`        | The output path of `.xcresult` file. User can use this enviroment variable for other steps. |
+| Variable Name                 | Description                                                                                              |
+|-------------------------------|----------------------------------------------------------------------------------------------------------|
+| `$AC_TEST_RESULT_PATH`        | The output path for the `.xcresult` file. This environment variable can be utilized in subsequent steps. |
