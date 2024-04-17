@@ -4,7 +4,7 @@ Welcome to the Docusaurus documentation repository. When contributing documentat
 
 ## Document Header
 
-Each document should start with a header section that defines metadata used for SEO and navigation. Please follow the below structure:
+Each document should start with a header section that defines metadata used for SEO and navigation. Please follow the structure below:
 
 ```yaml
 ---
@@ -15,7 +15,7 @@ tags: [tag1, tag2, tag3]
 ```
 
 - **title**: The title of the document.
-- **description**: his is critical for SEO. Keep it under 160 characters to ensure full visibility in search engine results.
+- **description**: This is critical for SEO. Keep it under 160 characters to ensure full visibility in search engine results.
 - **tags**: Include relevant tags that describe the document's content. This helps in categorizing the documentation.
 
 ## Linking Strategy
@@ -30,6 +30,12 @@ Use this format for linking within the documentation:
 '/category/subcategory/target-page'
 ```
 
+For example:
+
+```markdown
+'/build/build-process-management/build-profile-branch-operations'
+```
+
 ### Incorrect Link Format
 
 Do not use relative paths like the following:
@@ -38,13 +44,21 @@ Do not use relative paths like the following:
 '../../category/subcategory/target-page' // This is incorrect
 ```
 
+```markdown
+'./target-page' // This is incorrect
+```
+
+```markdown
+'./docs/build/build-process-management/build-profile-branch-operations.md' // This is incorrect
+```
+
 ## Contribution Guidelines
 
 1. Fork the repository and create a new branch for your document.
 2. Write your documentation following the standards outlined above.
 3. Submit a pull request with a clear description of the changes.
 
-Thank you for contributing to our documentation. Your efforts help improve the experience for all our users.
+Thank you for contributing to our documentation. Your efforts help improve the experience for all Appcircle users.
 
 # Website
 
