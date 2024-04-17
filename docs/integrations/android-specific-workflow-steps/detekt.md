@@ -1,7 +1,7 @@
 ---
 title: Detekt
-metaTitle: Detekt
-metaDescription: Detekt
+description: Detekt step, checks for code smells, performance problems, bugs, and adherence to best practices, offering configurable rules and plugins for customization.
+tags: [detekt, android, code-quality]
 sidebar_position: 16
 ---
 
@@ -29,9 +29,10 @@ For each component, specific input variables are required for its operation on y
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|
-| `$AC_DETEKT_TASK`             | Specify the **Detekt** task name. The default value is `detekt`. | Required |
-| `$AC_DETEKT_EXTRA_PARAMETERS` | Additional command-line parameters for **Detekt**. | Optional |
-| `$AC_DETEKT_SAVE_REPORT`      | Specify whether the **Detekt** report will be saved.  If set to `true`, report files will be saved into the artifacts folder. The default value is `false`. | Optional |
+| `$AC_DETEKT_TASK`             | Specifies the name of the Detekt task. The default value is `detekt`. | Required |
+| `$AC_DETEKT_EXTRA_PARAMETERS` | Additional command-line parameters for Detekt. | Optional |
+| `$AC_DETEKT_SAVE_REPORT`      | Specifies whether the Detekt report will be saved. If set to `true`, report files will be saved into the artifacts folder. The default value is `false`. | Optional |
+| `$AC_DETEKT_OUTPUT_PATH`      | Specifies the Detekt output path. If the `AC_DETEKT_SAVE_REPORT` input is set to `true` and this value is not defined, then `<ac_module>/build/reports` will be used as the default path. | Optional |
 
 :::warning
 If you set the `$AC_DETEKT_SAVE_REPORT` input to `true`, ensure that the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step is placed after the **Detekt** step to ensure that the output is correctly transferred to the [Download Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.
