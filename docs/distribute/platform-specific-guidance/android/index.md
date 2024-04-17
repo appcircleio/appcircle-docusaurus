@@ -10,7 +10,7 @@ tags:
   ]
 ---
 
-## Platform-Specific Guidance: Android
+# Platform-Specific Guidance: Android
 
 In the Android section, we focus on the critical process of resigning Android binaries:
 

@@ -22,7 +22,7 @@ Connect with Auth0 using the OpenID protocol for secure identity verification.
 
 ## Auth0 SAML
 
-Implement SSO via Auth0 with the SAML protocol for a unified access management.
+Implement SSO via Auth0 with the SAML protocol for unified access management.
 
 ## Azure AD SAML
 

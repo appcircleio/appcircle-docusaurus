@@ -1,6 +1,6 @@
 ---
 title: Platform-Specific Guidance
-description: Learn how to distribute your mobile applications for testing on iOS and Android platforms. Follow the platform-specific guides to ensure a smooth testing process.
+description: Learn how to distribute your mobile applications for testing on the iOS and Android platforms. Follow the platform-specific guides to ensure a smooth testing process.
 tags:
   [
     iOS testing,

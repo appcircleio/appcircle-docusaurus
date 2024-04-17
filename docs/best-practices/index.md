@@ -14,6 +14,6 @@ Learn how to configure a single Appcircle profile to build multiple apps efficie
 
 ## Appcircle Onboarding
 
-Get started with Appcircle the right way by following our onboarding best practices. This section provides tips and steps to ensure you make the most out of Appcircle from the beginning.
+Get started with Appcircle the right way by following our onboarding best practices. This section provides tips and steps to ensure you make the most of Appcircle from the beginning.
 
 Adopting these best practices will not only save you time but also improve the consistency and quality of your app development workflow.

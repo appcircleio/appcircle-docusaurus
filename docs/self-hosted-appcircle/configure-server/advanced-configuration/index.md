@@ -22,7 +22,7 @@ Protect your system against unauthorized access attempts with LDAP Brute Force P
 
 ### Cache Size Configuration
 
-Optimize your server performance by configuring the cache size. This setting allows you to determine the amount of data your server caches, which can speed up processing times and improve overall efficiency.
+Optimize your server's performance by configuring the cache size. This setting allows you to determine the amount of data your server caches, which can speed up processing times and improve overall efficiency.
 
 ### Command-Line Interface (CLI) Configuration
 

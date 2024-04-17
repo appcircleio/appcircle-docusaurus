@@ -1,6 +1,6 @@
 ---
 title: Account Management
-description: Manage your Appcircle account's security and personal information. Update details, change password, and set up two-factor authentication.
+description: Manage your Appcircle account's security and personal information. Update details, change passwords, and set up two-factor authentication.
 tags: [account, settings, security, personal details, password, two-factor authentication, federated identity management, active sessions, delete account]
 ---
 
@@ -10,7 +10,7 @@ In the Account Management section, you have comprehensive control over your acco
 
 ## Personal Details
 
-Update your contact information and other personal details to keep your account up to date.
+Update your contact information and other personal details to keep your account up-to- date.
 
 ## Change Password
 
@@ -32,4 +32,4 @@ View and manage all active sessions to understand where your account is currentl
 
 If you need to, you can initiate the process to permanently delete your account from here.
 
-Each section provides the necessary tools to ensure your account remains secure and tailored to your preferences.
+Each section provides the necessary tools to ensure your account remains secure, and is tailored to your preferences.
