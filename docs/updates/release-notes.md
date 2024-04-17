@@ -31,6 +31,23 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Users now have the capability to be redirected to their desired locations upon clicking on [Okta applications](https://docs.appcircle.io/account/my-organization/sso-providers-configuration/okta-saml), enhancing navigation efficiency and user experience within the system. <CloudBadge/> <SelfHostedBadge/>
 - When a build is [manually initiated](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#manual-build), the system retrieves information about the user from the initiating organization. Conversely, if the build is [not initiated manually](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#automatic-build), it displays the details of the user who made the commit, ensuring accurate attribution of actions within the system. <CloudBadge/> <SelfHostedBadge/>
 - The self-hosted Appcircle server now supports using a custom domain for the [Testing Distribution Portal](/distribute/testing-management/downloading-binaries). Follow the instructions in the [Testing Distribution](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#testing-distribution) section of the SSL configuration. <SelfHostedBadge/>
+- The self-hosted Appcircle server now adopts single-node single drive MinIO instead of multi-node single drive MinIO in the default configuration, which decreases disk consumption significantly. <SelfHostedBadge/>
+
+:::caution
+
+Upgrading from older versions to `v3.14.0` or later, requires MinIO migration that should be done interactively while upgrading.
+
+In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/configure-server/minio-migration) document.
+
+:::
+
+:::tip
+
+Fresh self-hosted server installations do not require any manual intervention for the MinIO configuration.
+
+The single-node single drive [MinIO configuration](/self-hosted-appcircle/configure-server/minio-migration) is applied by default on fresh installations.
+
+:::
 
 ### :muscle: Improvements
 

@@ -1,6 +1,6 @@
 ---
 title: Okta SAML
-description: Implement SAML authentication in your app with Appcircle. Enhance user security and streamline login processes.
+description: Configure Okta SAML for Single Sign-On (SSO) in your app. A detailed guide to boost security and simplify user logins with Appcircle.
 tags: [account, organization, sso, okta, saml, configuration]
 sidebar_position: 3
 ---
