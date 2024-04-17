@@ -144,6 +144,16 @@ In order to update packages, execute the script using the `-i` argument as shown
 sudo ./ac-self-hosted.sh -i
 ```
 
+### Update Configuration
+
+Migrating to a single-node single drive MinIO does not necessitate any additional configuration adjustments in the `global.yaml` file of the project.
+
+Execute the below command to apply configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
 ### Update Images
 
 In order to get container image updates for Appcircle server services, you need to pull them from the remote artifact repository.
@@ -160,7 +170,7 @@ For more details, please head to the [Offline Upgrade](/self-hosted-appcircle/co
 ./ac-self-hosted.sh -n "spacetech" upgrade
 ```
 
-### Update Configuration
+### MinIO Migration
 
 :::info
 
@@ -170,16 +180,6 @@ You must apply one of the options below while updating the self-hosted Appcircle
 
 <Tabs>
   <TabItem value="snsd" label="Migrating to SNSD MinIO (recommended)" default>
-
-Migrating to a single-node single drive MinIO does not necessitate any additional configuration adjustments in the `global.yaml` file of the project.
-
-Execute the below command to apply configuration changes.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" export
-```
-
-#### MinIO Migration
 
 Migration from multi-node single drive (**`mnsd`**) to single-node single drive (**`snsd`**) configuration can be accomplished seamlessly with a single command.
 
