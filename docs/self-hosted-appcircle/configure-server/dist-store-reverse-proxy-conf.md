@@ -21,6 +21,15 @@ As a result, your Testing Distribution users and Enterprise App Store users can 
 
 If you have any other common load balancer, reverse proxy, or firewall tool, you don't need to deploy another Nginx as a reverse proxy. You can configure your own tool. Here you can see the main logic for accessing the Appcircle server from the internet.
 
+:::caution
+
+## SSO Support
+
+If you are using Single Sign-On (SSO) integration for authentication purposes within the Appcircle Enterprise App Store or Testing Distribution, kindly note that the contents of this document may not meet your needs.
+
+At present, SSO integration remains unavailable when utilizing a reverse proxy solely for the domains associated with the Enterprise App Store or Testing Distribution.
+:::
+
 ## Overall Structure
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2624-common-view-diagram.png' />
@@ -847,6 +856,10 @@ With this `global.yaml` and the `Nginx` configuration, the users can access the 
   </TabItem>
 
 </Tabs>
+
+:::caution
+If you connect to the Testing Distribution with a proxy like documented here, the `unsubscribe` button in the Testing Distribution mails may not work as expected.
+:::
 
 ## Restart Appcircle Server
 
