@@ -1,13 +1,13 @@
 ---
 title: Runner Virtual Machine Setup
-metaTitle: Runner Virtual Machine Setup
-metaDescription: Runner Virtual Machine Setup
+description: Learn how to set up a self-hosted runner as a macOS VM image
+tags: [self-hosted runner, runner, vm, virtual machine, setup]
 sidebar_class_name: hidden
 ---
 
 # Self-hosted Runner as MacOS VM Image
 
-Self-hosted runner installation is explained at Appcircle [docs](installation.md) in detail. You can install runner in your self-hosted environment by yourself, following instructions on there.
+Self-hosted runner installation is explained at Appcircle [docs](installation) in detail. You can install runner in your self-hosted environment by yourself, following instructions on there.
 
 We're also providing ready-to-use runner VM image that you can download from Appcircle CDN. Especially for enterprise installation, it might be more practical than installing from scratch.
 
@@ -119,7 +119,7 @@ You can ignore power failure settings if they are not supported.
 Download macOS VM from Appcircle bucket.
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240228.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240306.tar.gz
 ```
 
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
@@ -129,13 +129,13 @@ If you encounter network interruption, just run the same command again. It shoul
 **Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
 
 ```bash
-md5 macOS_240228.tar.gz
+md5 macOS_240306.tar.gz
 ```
 
 After a couple of minutes later you should see the output below.
 
 ```bash
-MD5 (macOS_240228.tar.gz) = 4603f89c0623057a58d78ceb04d72185
+MD5 (macOS_240306.tar.gz) = 084a9221075ed5453aceba6a3438b134
 ```
 
 ---
@@ -143,13 +143,13 @@ MD5 (macOS_240228.tar.gz) = 4603f89c0623057a58d78ceb04d72185
 Create folder for VM.
 
 ```bash
-mkdir -p $HOME/.tart/vms/macOS_240228
+mkdir -p $HOME/.tart/vms/macOS_240306
 ```
 
 Extract archive into VMs folder.
 
 ```bash
-tar -zxf macOS_240228.tar.gz --directory $HOME/.tart/vms/macOS_240228
+tar -zxf macOS_240306.tar.gz --directory $HOME/.tart/vms/macOS_240306
 ```
 
 It may take a little to complete. Be patient and wait return of command.
@@ -157,7 +157,7 @@ It may take a little to complete. Be patient and wait return of command.
 You can track progress of extraction by monitoring VM folder size.
 
 ```bash
-du -sh $HOME/.tart/vms/macOS_240228
+du -sh $HOME/.tart/vms/macOS_240306
 ```
 
 ### Download Xcode Images
@@ -165,7 +165,7 @@ du -sh $HOME/.tart/vms/macOS_240228
 Download Xcode images from the Appcircle bucket. They are disk images for each Xcode version archived in a package.
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240228.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240306.tar.gz
 ```
 
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
@@ -175,13 +175,13 @@ If you encounter network interruption, just run the same command again. It shoul
 **Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
 
 ```bash
-md5 xcodes_240228.tar.gz
+md5 xcodes_240306.tar.gz
 ```
 
 After a couple of minutes later you should see the output below.
 
 ```bash
-MD5 (xcodes_240228.tar.gz) = 1a4d662af6dfc58166b090ff5b61cea5
+MD5 (xcodes_240306.tar.gz) = 4df051e11b6c0b8670cd9b82928dfab2
 ```
 
 ---
@@ -195,7 +195,7 @@ mkdir -p $HOME/images
 Extract archive into the folder.
 
 ```bash
-tar -zxf xcodes_240228.tar.gz --directory $HOME/images
+tar -zxf xcodes_240306.tar.gz --directory $HOME/images
 ```
 
 It may take a little to complete. Be patient and wait return of command.
@@ -214,8 +214,8 @@ In order to keep free disk space sufficient for build pipelines, we're packaging
 
 You can find more information about the build infrastructure in the documents below:
 
-- [iOS Build Infrastructure](../../infrastructure/ios-build-infrastructure.md)
-- [Android Build Infrastructure](../../infrastructure/android-build-infrastructure.md)
+- [iOS Build Infrastructure](/infrastructure/ios-build-infrastructure)
+- [Android Build Infrastructure](/infrastructure/android-build-infrastructure)
 
 :::caution
 We're constantly bumping the VM macOS version according to Xcode requirements.
@@ -247,13 +247,13 @@ This approach eliminates the need to redo all the configurations applied to `vm0
 
 ```txt
 Source Name         Size
-local  macOS_240228 167
+local  macOS_240306 167
 ```
 
 Create VM image for runner1.
 
 ```bash
-tart clone macOS_240228 vm01
+tart clone macOS_240306 vm01
 ```
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
@@ -346,9 +346,9 @@ You can follow the steps below to check the Appcircle runner version and upgrade
 ./ac-runner --version
 ```
 
-- Check the latest version from the [Upgrade Runner](./update.md#1-update-runner) page.
+- Check the latest version from the [Upgrade Runner](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) page.
 
-- If your version is not up to date, please follow the [Update Runner](./update.md#1-update-runner) section in the page.
+- If your version is not up to date, please follow the [Update Runner](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) section in the page.
 
 :::caution
 
@@ -435,7 +435,7 @@ You can use the helper script named `install_cert.sh` that comes with your runn
 - Your organization's root CA certificate is now trusted on the OS, Java, Ruby, and Node.js.
 
 :::info
-For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates.md#adding-certificates) page.
+For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates#adding-certificates) page.
 :::
 
 ##### 4. Configure Runner Service
@@ -480,7 +480,7 @@ echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.test-appcircle.tool.zb/build/v
 
 :::
 
-Create runner access token from appcircle server and register runner to server. See details in [here](../self-hosted-runner/installation.md#2-register).
+Create runner access token from appcircle server and register runner to server. See details in [here](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
 For example,
 
@@ -551,7 +551,7 @@ At this stage your VM list returned by `tart list` should be like below.
 
 ```txt
 Source Name         Size
-local  macOS_240228 167
+local  macOS_240306 167
 local  vm01         130
 local  vm02         130
 ```
@@ -624,7 +624,7 @@ We can see running instances on macOS host with `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_240228                              167
+local  macOS_240306                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -647,7 +647,7 @@ touch $HOME/runner1/.stop
 
 Creating `.stop` file prevents creating new instance by `run.sh` on shutdown.
 
-If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](../self-hosted-runner/configure-runner/runner-service.md#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
+If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](../self-hosted-runner/configure-runner/runner-service#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
 
 On the other hand if you want to stop runner immediately for whatever reason or it's in idle state, you can SSH into runner and run shutdown command.
 
@@ -655,7 +655,7 @@ First you need to have to find out online runner's VM name from `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_240228                              167
+local  macOS_240306                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -688,7 +688,7 @@ After shutdown, you won't see anymore instance from `vm01` on `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_240228                              167
+local  macOS_240306                              167
 local  vm01                                      130
 local  vm02                                      130
 local  vm02-9f1fc62a-f43c-40f3-98d0-523ed9a67042 130
@@ -705,7 +705,7 @@ On some cases, you may need to update to your macOS base images in order to make
 Below are the ones that frequently occur, but not limited to them.
 
 - Your team might use a tool frequently in build pipeline, that's not included in Appcircle macOS image. Installing that tool into the image once will save build time. Your build pipeline will be more efficient and optimized.
-- You may prefer to get iOS and android tool updates by using [self-hosted runner update](../self-hosted-runner/update.md) method instead of getting fresh macOS VM image. When you get fresh macOS image you may need to make your custom configurations again.
+- You may prefer to get iOS and android tool updates by using [self-hosted runner update](/self-hosted-appcircle/self-hosted-runner/update) method instead of getting fresh macOS VM image. When you get fresh macOS image you may need to make your custom configurations again.
 - You may need to make persistent proxy configuration for your internal network requirements.
 - You may need to add your corporate's self-signed root CAs to macOS VM image in order to succeed SSL connections.
 
@@ -725,7 +725,7 @@ screen -d -m tart run vm01 --no-graphics \
 
 - SSH into `vm01`.
 
-```bash  
+```bash
 ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 ```
 
@@ -820,7 +820,7 @@ screen -d -m $HOME/runner2/run.sh vm02
 
 In this case, you need to focus on self-hosted runner issues inside macOS VM (guest).
 
-In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](./index.md) details.
+In order to be able to investigate root cause, you should learn the basics of self-hosted runner. Check our [online docs](/self-hosted-appcircle/self-hosted-runner) details.
 
 - You can check your macOS guest for possible system issues. (disk space, network connectivity etc.)
 - If you have custom proxy settings on macOS guest, check these settings.
