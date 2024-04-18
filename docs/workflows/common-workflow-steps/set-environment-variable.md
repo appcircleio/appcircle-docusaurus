@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Set Environment Variable
 
-The **Set Environment Variable** step enables the setting of environment values for specified keys. Although creating environment variables via the [Environment Variables](https://docs.appcircle.io/environment-variables/) page is typically recommended, this step provides flexibility to modify environment variables directly within the build workflow when necessary.
+The **Set Environment Variable** step enables the setting of environment values for specified keys. Although creating environment variables via the [Environment Variables](/environment-variables/) page is typically recommended, this step provides flexibility to modify environment variables directly within the build workflow when necessary.
 ### Prerequisites
 
 There is no prerequisites step before the **Set Environment Variable** step. It can be implemented at any point within the workflow as necessary.
@@ -29,7 +29,7 @@ Each component requires specific input variables for operation. For the **Set En
 
 :::warning
 
-Confidential information should be entered as a [secret environment variable](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/).
+Confidential information should be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
 
 :::
 
