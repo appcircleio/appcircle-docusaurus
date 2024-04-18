@@ -37,7 +37,7 @@ In order to share cache between pipelines, the [**Cache Pull**](/workflows/commo
 
 	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheSuccess.png' />
 
-3. For the **master** branch, the [workflow](../../../workflows/why-to-use-workflows) steps need to be made suitable first. To achieve this, the [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) step is added to the workflow before the **CocoaPods Install** step.
+3. For the **master** branch, the [workflow](/workflows) steps need to be made suitable first. To achieve this, the [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) step is added to the workflow before the **CocoaPods Install** step.
 
 	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheMaster.png' />
 
