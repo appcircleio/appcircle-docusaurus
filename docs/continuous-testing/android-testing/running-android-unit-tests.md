@@ -65,7 +65,7 @@ Simply go to your build workflow and add a custom script after the **Sign Applic
 
 See the following page on our documentation to learn more about creating custom workflow steps:
 
-<ContentRef url="/workflows/common-workflow-steps/upload-files-to-amazon-s3">Working with Custom Scripts</ContentRef>
+<ContentRef url="/workflows/common-workflow-steps/custom-script">Working with Custom Scripts</ContentRef>
 
 Add the following Bash script to your custom script step:
 

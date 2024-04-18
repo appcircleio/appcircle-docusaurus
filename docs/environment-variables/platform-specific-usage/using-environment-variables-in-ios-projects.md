@@ -101,7 +101,7 @@ Once you update your project with `.xcconfig` files, you can create environment 
 
 To be able to use these variables in your project, we need to replace the values in our `.xcconfig` file using a custom script workflow step. To get more information about creating and using custom scripts, please check the following page:
 
-<ContentRef url="/workflows/common-workflow-steps/upload-files-to-amazon-s3">Working with Custom Scripts</ContentRef>
+<ContentRef url="/workflows/common-workflow-steps/custom-script">Working with Custom Scripts</ContentRef>
 
 In our example here, we will use a Bash script to replace the values in our .xcconfig file.;
 
