@@ -9,16 +9,16 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Cache Pull
 
-[**Cache Push**](./cache-push) uploads the cache archive file to a remote location, as we explained in detail in the **Cache Push** step. On the other hand, **Cache Pull** downloads and extracts that archive file in the build pipeline, restoring all files and folders to their original locations.
+[**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) uploads the cache archive file to a remote location, as we explained in detail in the **Cache Push** step. On the other hand, **Cache Pull** downloads and extracts that archive file in the build pipeline, restoring all files and folders to their original locations.
 
 :::warning
-[**Cache Push**](./cache-push) and **Cache Pull** components should work in coordination on the same cache file. Therefore, to download the pushed cache, the **Cache Pull** must have the same cache label as the **Cache Push**.
+[**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) and **Cache Pull** components should work in coordination on the same cache file. Therefore, to download the pushed cache, the **Cache Pull** must have the same cache label as the **Cache Push**.
 :::
 
 :::info
 If you need to use the cached folder in a different branch or a separate project, you have the capability to modify the values of `$AC_GIT_BRANCH` or `$AC_BUILD_PROFILE_ID`. For further information, please check out the following documentation:
-- [How to Share Files Between Pipelines](./how-to-share-file-between-pipelines)
-- [How to Share Files Between Build Profiles](./how-to-share-file-between-build-profiles)
+- [How to Share Files Between Pipelines](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-pipelines)
+- [How to Share Files Between Build Profiles](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles)
 
 These variables can be adjusted within the [cache label](#input-variables) field, as indicated by the red highlight in the accompanying image. Simply replace them with the branch or project ID that corresponds to your intended usage.
 
@@ -47,7 +47,7 @@ The parameters required for the operation of this step are given in the list bel
 
 | Variable Name              | Description                                    | Status |
 |----------------------------|------------------------------------------------|--------|
-| `$AC_CACHE_LABEL`          | User defined cache label to identify one cache from others. Both [**Cache Push**](./cache-push) and **Cache Pull** steps should have the same value to match. | Required |
+| `$AC_CACHE_LABEL`          | User defined cache label to identify one cache from others. Both [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) and **Cache Pull** steps should have the same value to match. | Required |
 | `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) step. | Optional |
 
 ---

@@ -9,15 +9,15 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Cache Push
 
-Every single build at Appcircle runs in a clean state. It means that all files and folders that are not versioned in the Git repository are lost when the build pipeline is completed. For example, install dependencies or build artifacts. If you need to keep those files and folders, you can use the Appcircle **Cache Push** and [**Cache Pull**](./cache-pull) components.
+Every single build at Appcircle runs in a clean state. It means that all files and folders that are not versioned in the Git repository are lost when the build pipeline is completed. For example, install dependencies or build artifacts. If you need to keep those files and folders, you can use the Appcircle **Cache Push** and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) components.
 
 With cache, you can persist any resource that is ignored by Git. So you can transfer files and folders between build pipelines. Sometimes it may speed up your build, or it may help if you have reliability issues with the original download location for dependencies. But keep in mind that the cache is uploaded to or downloaded from a remote location. It may help you in some cases, but **it's not a guaranteed way to speed up builds**. You should try and see the actual results of your project.
 
-The cache is stored as a single archive file. **Cache Push** and [**Cache Pull**](./cache-pull) components work in coordination on the same cache file defined with a label. Cache labeling helps you organize your caches. With custom labeling, you can have different chunks of caches, and you can share some caches between branches or build profiles. For further information, please check out the following documentation:
-- [How to Share Files Between Pipelines](./how-to-share-file-between-pipelines)
-- [How to Share Files Between Build Profiles](./how-to-share-file-between-build-profiles)  
+The cache is stored as a single archive file. **Cache Push** and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) components work in coordination on the same cache file defined with a label. Cache labeling helps you organize your caches. With custom labeling, you can have different chunks of caches, and you can share some caches between branches or build profiles. For further information, please check out the following documentation:
+- [How to Share Files Between Pipelines](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-pipelines)
+- [How to Share Files Between Build Profiles](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles)
 
-When you drag and drop the **Cache Push** component into your [workflow](../../../workflows/why-to-use-workflows), it comes with pre-defined values according to your project type. For example, in the case of Android projects, it comes with pre-defined [Gradle cache](https://docs.gradle.org/current/userguide/build_cache.html) paths, which should prove useful for most Android apps.
+When you drag and drop the **Cache Push** component into your [workflow](/workflows), it comes with pre-defined values according to your project type. For example, in the case of Android projects, it comes with pre-defined [Gradle cache](https://docs.gradle.org/current/userguide/build_cache.html) paths, which should prove useful for most Android apps.
 
 If you need more paths to cache or need to change paths according to your project, you can customize [included](#input-variables) and [excluded](#input-variables) paths as you wish. All path updates will be reflected in the archived cache file on your next build.
 
@@ -40,7 +40,7 @@ Keep in mind that included paths and the **Cache Push** step's workflow order ar
 :::
 
 :::caution
-The other important prerequisite for this component to work is that it must be used after the step in which the generated artifact of the step is to be cached. For example, in the screen shot, to cache dependencies, the **Cache Push** step is used after the [**CocoaPods Install**](../../ios-specific-workflow-steps/cocoapods-install) step.
+The other important prerequisite for this component to work is that it must be used after the step in which the generated artifact of the step is to be cached. For example, in the screen shot, to cache dependencies, the **Cache Push** step is used after the [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushOrder.png' />
 :::
@@ -68,7 +68,7 @@ The parameters required for the operation of this step are given in the list bel
 You cannot reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of the build pipeline from '[Download Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) > `ac_cache.zip`'. Also, build logs have some useful information about the cache mechanism and how included and excluded paths are processed. You can see the produced cache file size from the build logs. (The size of the cache file affects upload and download durations.)
 
 :::caution
-To view the generated artifacts on the [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step is included in the [workflow](../../../workflows/why-to-use-workflows) after this step.
+To view the generated artifacts on the [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step is included in the [workflow](/workflows) after this step.
 :::
 
 ---
