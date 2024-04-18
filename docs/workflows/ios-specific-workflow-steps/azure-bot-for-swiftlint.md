@@ -29,7 +29,7 @@ The workflow steps that need to be executed before running the **Swiftlint** wor
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Swiftlint**](/workflows/ios-specific-workflow-steps/build-and-test/swiftlint) | This component will check the source code for programmatic as well as stylistic errors. This is helpful in identifying some common and uncommon mistakes that are made during coding. |
+| [**Swiftlint**](/workflows/ios-specific-workflow-steps/swiftlint) | This component will check the source code for programmatic as well as stylistic errors. This is helpful in identifying some common and uncommon mistakes that are made during coding. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotOrder.png' />
 

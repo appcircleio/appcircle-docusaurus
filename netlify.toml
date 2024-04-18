@@ -68,8 +68,8 @@
   status = 301
 
 [[redirects]]
-  from = "/workflows/common-workflow-steps/git-clone"
-  to = "/workflows/common-workflow-steps/build-and-test/git-clone"
+  from = "/workflows/common-workflow-steps/build-and-test/git-clone"
+  to = "/workflows/common-workflow-steps/git-clone"
   status = 301
 
 [[redirects]]
@@ -80,12 +80,6 @@
 [[redirects]]
   from = "/workflows/android-specific-workflow-steps/android-sign"
   to = "/workflows/android-specific-workflow-steps/distribution/android-sign"
-  status = 301
-
-# Redirects for common workflow steps
-[[redirects]]
-  from = "/workflows/common-workflow-steps/custom-script"
-  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
   status = 301
 
 # Redirects for Flutter workflow steps
@@ -105,11 +99,6 @@
   to = "/workflows/ios-specific-workflow-steps/build-and-test/slather"
   status = 301
 
-[[redirects]]
-  from = "/workflows/ios-specific-workflow-steps/swiftlint"
-  to = "/workflows/ios-specific-workflow-steps/build-and-test/swiftlint"
-  status = 301
-
 # Redirects for workflow distribution steps
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/carthage"
@@ -124,11 +113,6 @@
 [[redirects]]
   from = "/workflows/ios-specific-workflow-steps/xcode-select"
   to = "/workflows/ios-specific-workflow-steps/build-and-test/xcode-select"
-  status = 301
-
-[[redirects]]
-  from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-devices"
-  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-devices"
   status = 301
 
 [[redirects]]
@@ -552,18 +536,13 @@
   status = 301
 
 [[redirects]]
-  from = "/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso"
-  to = "/workflows/android-specific-workflow-steps/distribution/browserstack-app-automate-espresso"
-  status = 301
-
-[[redirects]]
   from = "/workflows/common-workflow-steps/authanticate-with-netrc"
   to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
   status = 301
 
 [[redirects]]
-  from = "/workflows/common-workflow-steps/export-build-artifacts"
-  to = "/workflows/common-workflow-steps/build-and-test/export-build-artifacts"
+  from = "/workflows/common-workflow-steps/build-and-test/export-build-artifacts"
+  to = "/workflows/common-workflow-steps/export-build-artifacts"
   status = 301
 
 [[redirects]]
@@ -672,6 +651,12 @@
   to = "/workflows/common-workflow-steps/build-and-test/azure-board"
   status = 301
 
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/azure-board"
+  to = "/workflows/common-workflow-steps/azure-board"
+  status = 301
+
+
 [[redirects]]
   from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows"
   to = "/workflows/common-workflow-steps/build-and-test/fastlane"
@@ -776,3 +761,66 @@
   from = "/integrations/workflow-marketplace"
   to = "/workflows/#workflow-marketplace"
   status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
+  to = "/workflows/common-workflow-steps/upload-files-to-amazon-s3"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  to = "/workflows/common-workflow-steps/custom-script"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/custom-script#how-to-change-java-version"
+  to = "/workflows/common-workflow-steps/custom-script#how-to-change-java-version"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  to = "/workflows/common-workflow-steps/fastlane"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/jira-component"
+  to = "/workflows/common-workflow-steps/jira-component"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/publish-release-notes"
+  to = "/workflows/common-workflow-steps/publish-release-notes"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/android-specific-workflow-steps/build-and-test/android-build"
+  to = "/workflows/android-specific-workflow-steps/android-build"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
+  to = "/workflows/common-workflow-steps/upload-files-to-amazon-s3"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/distribution/browserstack-app-automation"
+  to = "/workflows/ios-specific-workflow-steps/browserstack-app-automation"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  to = "/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-devices"
+  to = "/workflows/ios-specific-workflow-steps/xcodebuild-for-devices"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/build-and-test/swiftlint"
+  to = "/workflows/ios-specific-workflow-steps/swiftlint"
+  status = 301
+
+  
+

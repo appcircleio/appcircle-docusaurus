@@ -25,10 +25,10 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customInput.png' />
 
-| Variable Name  | Description                                    | Status   |  
-|----------------|------------------------------------------------|----------|
-| `Execute`      | You can run your script as **`Bash`** or **`Ruby`** with two different language environments in the **Execute With** input value. | Required |
-| `Script`       | With the **Script** input variable, you can add the script you want to run and run it directly in the selected language. If you leave this input blank, it will proceed to the next step without taking any action. | Optional |
+| Variable Name | Description                                                                                                                                                                                                         | Status   |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `Execute`     | You can run your script as **`Bash`** or **`Ruby`** with two different language environments in the **Execute With** input value.                                                                                   | Required |
+| `Script`      | With the **Script** input variable, you can add the script you want to run and run it directly in the selected language. If you leave this input blank, it will proceed to the next step without taking any action. | Optional |
 
 :::caution
 Note that the **Script** area works according to the selected language variable. If you want to run a script in any language, make sure that you select the language correctly.
@@ -42,7 +42,7 @@ If you want to change the JAVA version for your Android project, you can achieve
 
 Appcircle currently has `OpenJDK 11` (default), `OpenJDK 8`, `OpenJDK 17` and `OpenJDK 21`.
 
-[Android Build](/workflows/android-specific-workflow-steps/build-and-test/android-build) step uses `OpenJDK 11` as default JDK version.
+[Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 11` as default JDK version.
 
 You can use the below custom script before your build step to change your `JAVA_HOME` environment variable.
 
@@ -58,7 +58,7 @@ echo "OpenJDK 21" $JAVA_HOME_21_X64
 echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $AC_ENV_FILE_PATH
 ```
 
-Create a custom script like above and put it **above** your [Android Build](/workflows/android-specific-workflow-steps/build-and-test/android-build) step.
+Create a custom script like above and put it **above** your [Android Build](/workflows/android-specific-workflow-steps/android-build) step.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow.png" />
 
@@ -103,16 +103,13 @@ You can also switch to other pre-installed Java versions using the relevant envi
 
 :::
 
-
 ### How to install a new package to the build machine?
 
 You can use the compatible package managers to install packages.
 
-For the macOS build machines for iOS builds, _brew _is a commonly used package manager with commands like `brew install maven`
+For the macOS build machines for iOS builds, \_brew \_is a commonly used package manager with commands like `brew install maven`
 
 For the Linux (Debian) build machines for Android builds, _apt-get_ can be used for 3rd party packages such as `apt-get -y install maven`
-
-
 
 ### How to change the package name/application ID dynamically?
 
@@ -121,7 +118,7 @@ With custom scripts, you can edit the Info.plist and the build.gradle files.
 <Tabs>
   <TabItem value="ios" label="iOS" default>
 
-   ```bash title="iOS sample for Info.plist"
+```bash title="iOS sample for Info.plist"
 cd $AC_REPOSITORY_DIR/Your-Target-Folder
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier io.myapp" "./Info.plist"
 ```
@@ -143,15 +140,14 @@ For each step in the workflow, you can view the input and output variables in th
 
 The repository directory is an output of the Git Clone step and its patch can be accessed with the `AC_REPOSITORY_PATH` environment variable by any step added after the Git Clone step. An example is as follows:
 
-
 ```bash
 cd $AC_REPOSITORY_DIR
 cat README
 ```
+
 ### How to a add a file as a downloadable build artifact?
 
 You can add any file to the output directory that contain the build artifacts using the `AC_OUTPUT_DIR` environment variable. An example is as follows:
-
 
 ```bash
 cd $AC_REPOSITORY_DIR/app/build/reports/
@@ -213,9 +209,6 @@ Please feel free to edit the following variables according to your own requireme
 - `min_coverage`: The minimum percentage required for the pipeline to continue without breaking.
 
 :::
-
-
-
 
 To access the source code of this component, please use the following link:
 
