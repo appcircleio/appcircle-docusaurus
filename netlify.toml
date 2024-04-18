@@ -697,6 +697,11 @@
   status = 301
 
 [[redirects]]
+  from = "/continuous-testing/using-aws-device-farm-for-ios-and-android-continuous-testing"
+  to = "/workflows/common-workflow-steps/aws-device-farm-and-deploy"
+  status = 301
+
+[[redirects]]
   from = "/publish-module/send-to-appstore"
   to = "/publish-integrations/ios-publish-integrations/send-to-app-store"
   status = 301
