@@ -23,12 +23,12 @@ Before executing the **Repeato Test Runner** workflow step, certain prerequisite
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The repository that needs to be built must be fetched from the branch. Upon completion of the **Git Clone** step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
+| [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | The repository that needs to be built must be fetched from the branch. Upon completion of the **Git Clone** step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-repeato_1.png'/>
 
 :::warning
-If you wish to view the test results on Appcircle's Test Reports page, it is essential to use the [Test Reports](https://github.com/appcircleio/appcircle-test-report-component) step after the **Repeato Test Runner**. Please check out this document for more information: [Generating Test Report](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
+If you wish to view the test results on Appcircle's Test Reports page, it is essential to use the [Test Reports](https://github.com/appcircleio/appcircle-test-report-component) step after the **Repeato Test Runner**. Please check out this document for more information: [Generating Test Report](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_2.png'/>
 :::
@@ -41,7 +41,7 @@ Specific input variables are required for the **Repeato Test Runner** to functio
 
 :::warning
 
-Confidential information must be entered as a [secret environment variable](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Additionally, ensure that the appropriate [environment variable group](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/).
+Confidential information must be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Additionally, ensure that the appropriate [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
 
 :::
 
