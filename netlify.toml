@@ -1,0 +1,826 @@
+[[redirects]]
+  from = "/workflows/why-to-use-workflows"
+  to = "/workflows"
+  status = 301
+
+[[redirects]]
+  from = "/account/adding-google-play-service-account"
+  to = "/account/my-organization/api-integrations/adding-google-play-service-account"
+  status = 301
+
+[[redirects]]
+  from = "/account/adding-huawei-api-key"
+  to = "/account/my-organization/api-integrations/adding-huawei-api-key"
+  status = 301
+
+[[redirects]]
+  from = "/account/artifacts"
+  to = "/account/my-organization/artifacts"
+  status = 301
+
+[[redirects]]
+  from = "/account/ldap-login"
+  to = "/account/my-organization/ldap-login"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso/single-sign-on"
+  to = "/account/my-organization/sso-providers-configuration/single-sign-on"
+  status = 301
+
+# Redirects for build-related changes
+[[redirects]]
+  from = "/build/connections"
+  to = "/build/manage-the-connections"
+  status = 301
+
+# Redirects for distribution and testing
+[[redirects]]
+  from = "/distribute/apple-devices"
+  to = "/distribute/platform-specific-guidance/ios/apple-devices"
+  status = 301
+
+[[redirects]]
+  from = "/distribute/resign"
+  to = "/distribute/platform-specific-guidance/android/resigning-android-binaries"
+  status = 301
+
+# Redirects for self-hosted Appcircle configuration changes
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/git-providers"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/git-providers"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/ldap-settings"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/network-access"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/network-access"
+  status = 301
+
+# Redirects for workflow-specific changes
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-build-for-ui-testing"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/android-build-for-ui-testing"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/git-clone"
+  to = "/workflows/common-workflow-steps/git-clone"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/wait-for-android-emulator"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/wait-for-android-emulator"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-sign"
+  to = "/workflows/android-specific-workflow-steps/distribution/android-sign"
+  status = 301
+
+# Redirects for Flutter workflow steps
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-test"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-test"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/firebase-upload-dsym"
+  to = "/workflows/ios-specific-workflow-steps/distribution/firebase-upload-dsym"
+  status = 301
+
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/slather"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/slather"
+  status = 301
+
+# Redirects for workflow distribution steps
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/carthage"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/carthage"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/cocoapods-install"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/cocoapods-install"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/xcode-select"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcode-select"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-testing"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-testing"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-ios-applications"
+  to = "/build/platform-build-guides/building-ios-applications"
+  status = 301
+
+[[redirects]]
+  from = "/build/build-manually-or-with-triggers"
+  to = "/build/build-process-management/build-manually-or-with-triggers"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+  status = 301
+
+[[redirects]]
+  from = "/infrastructure/accessing-repositories-in-internal-networks-firewalls"
+  to = "/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls"
+  status = 301
+
+[[redirects]]
+  from = "/build/after-a-build"
+  to = "/build/post-build-operations/after-a-build"
+  status = 301
+
+[[redirects]]
+  from = "/build/build-profile-configuration"
+  to = "/build/build-process-management/build-profile-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/running-android-unit-tests"
+  to = "/continuous-testing/android-testing/running-android-unit-tests"
+  status = 301
+
+[[redirects]]
+  from = "/distribute/downloading-binaries"
+  to = "/distribute/testing-management/downloading-binaries"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso/auth-openid"
+  to = "/account/my-organization/sso-providers-configuration/auth-openid"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso/auth-saml"
+  to = "/account/my-organization/sso-providers-configuration/auth-saml"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso/azure-saml"
+  to = "/account/my-organization/sso-providers-configuration/azure-saml"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso/okta-openid"
+  to = "/account/my-organization/sso-providers-configuration/okta-openid"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso/okta-saml"
+  to = "/account/my-organization/sso-providers-configuration/okta-saml"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso/onelogin-saml"
+  to = "/account/my-organization/sso-providers-configuration/onelogin-saml"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-flutter-web-applications"
+  to = "/build/platform-build-guides/building-flutter-applications/building-flutter-web-applications"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile/connecting-to-bitbucket"
+  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile/connecting-to-gitlab"
+  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile/connecting-to-public-repository"
+  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/running-ios-unit-and-ui-tests"
+  to = "/continuous-testing/ios-testing/running-ios-unit-and-ui-tests"
+  status = 301
+
+[[redirects]]
+  from = "/build/reconnect-change-provider"
+  to = "/build/manage-the-connections/reconnect-change-provider#change-git-provider-and-reconnect"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/customize-ent-store"
+  to = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/proxy-configuration"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/account/email-connection"
+  to = "/account/my-organization/notifications-and-communication/email-connection"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/login-configuration"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/login-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/azure-board"
+  to = "/integrations/integration-guides/azure-board"
+  status = 301
+
+[[redirects]]
+  from = "/account/slack/appcircle-bot-for-slack"
+  to = "/account/my-organization/notifications-and-communication/slack/appcircle-bot-for-slack"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/jira-integration"
+  to = "/integrations/integration-guides/jira-integration"
+  status = 301
+
+[[redirects]]
+  from = "/account/teams-notifications"
+  to = "/account/my-organization/notifications-and-communication/teams-notifications"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile/connecting-to-github"
+  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-github"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-react-native-applications"
+  to = "/build/platform-build-guides/building-react-native-applications"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile/connecting-multiple-instance"
+  to = "/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/ssl-configuration"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/ssl-configuration#enterprise-app-store"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#enterprise-app-store"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/ldap-brutefore"
+  to = "/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/add-ent-profile"
+  to = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository"
+  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile/connecting-to-azure"
+  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-azure"
+  status = 301
+
+[[redirects]]
+  from = "/account/webhooks"
+  to = "/account/my-organization/webhooks"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/my-details"
+  to = "/account/my-account/account-management/my-details"
+  status = 301
+
+[[redirects]]
+  from = "/account/adding-an-app-store-connect-api-key"
+  to = "/account/my-organization/api-integrations/adding-an-app-store-connect-api-key"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-build"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/android-build"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso-login/single-sign-on-login"
+  to = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/uploading-files-to-amazon-sin-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/deployment-guides/uploading-files-to-amazon-sin-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
+  status = 301
+
+[[redirects]]
+  from = "/store-submit/apple-app-store"
+  to = "/publish-module/send-to-appstore"
+  status = 301
+
+[[redirects]]
+  from = "/building-multiple-apps-in-one-profile"
+  to = "/best-practices/building-multiple-apps-in-one-profile"
+  status = 301
+
+[[redirects]]
+  from = "/distribute/create-or-select-a-distribution-profile.md"
+  to = "/distribute/create-or-select-a-distribution-profile"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/custom-script-samples"
+  to = "/integrations/working-with-custom-scripts/custom-script-samples"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/custom-script-faq"
+  to = "/integrations/working-with-custom-scripts/custom-script-faq"
+  status=301
+
+[[redirects]]
+  from = "/build-manually-or-with-triggers"
+  to = "/build/build-manually-or-with-triggers"
+  status = 301
+
+[[redirects]]
+  from = "/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+  to = "/build/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/active-sessions"
+  to = "/account/my-account/account-management/active-sessions"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/authenticator-two-factor-authentication"
+  to = "/account/my-account/account-management/authenticator-two-factor-authentication"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/change-password"
+  to = "/account/my-account/account-management/change-password"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/delete-account"
+  to = "/account/my-account/account-management/delete-account"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-account/federated-identity-linked-login-providers"
+  to = "/account/my-account/account-management/federated-identity-linked-login-providers"
+  status = 301
+
+[[redirects]]
+  from = "/account/sign-up-login"
+  to = "/account/my-account/sign-up-login"
+  status = 301
+
+[[redirects]]
+  from = "/account/slack/slack-notifications"
+  to = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
+  status = 301
+
+[[redirects]]
+  from = "/account/sso-login/okta-saml"
+  to = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
+  status = 301
+
+[[redirects]]
+  from = "/build/build-profile-branch-operations"
+  to = "/build/build-process-management/build-profile-branch-operations"
+  status = 301
+
+[[redirects]]
+  from = "/build/adding-a-build-profile"
+  to = "/build/manage-the-connections/adding-a-build-profile"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-android-applications/android-signing-for-google-play"
+  to = "/build/platform-build-guides/building-android-applications/android-signing-for-google-play"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-android-applications"
+  to = "/build/platform-build-guides/building-android-applications"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-flutter-applications"
+  to = "/build/platform-build-guides/building-flutter-applications"
+  status = 301
+
+[[redirects]]
+  from = "/build/building-ionic-projects-with-custom-scripts"
+  to = "/build/platform-build-guides/building-ionic-projects-with-custom-scripts"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/firebase-test-lab-for-android"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/firebase-test-lab"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/android-testing/firebase-test-lab-for-android"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/firebase-test-lab"
+  status = 301
+
+[[redirects]]
+  from = "/distribute/testing-groups"
+  to = "/distribute/testing-management/testing-groups"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/configure-ent-profile"
+  to = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile"
+  status = 301
+
+[[redirects]]
+  from = "/environment-variables/using-environment-variables-in-android-projects"
+  to = "/environment-variables/platform-specific-usage/using-environment-variables-in-android-projects"
+  status = 301
+
+[[redirects]]
+  from = "/environment-variables/using-environment-variables-in-ios-projects"
+  to = "/environment-variables/platform-specific-usage/using-environment-variables-in-ios-projects"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/deploying-web-apps-to-aws-amplify-console"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/deployment-guides/deploying-web-apps-to-aws-amplify-console"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/appdome-integration"
+  to = "/integrations/integration-guides/appdome-integration"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/increasing-the-version-number-automatically-for-ios-and-android"
+  to = "/versioning"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/using-fastlane-in-the-workflows"
+  to = "/integrations/workflow-optimization/using-fastlane-in-the-workflows"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/appcircle-cli"
+  to = "/self-hosted-appcircle/configure-server/advanced-configuration/appcircle-cli"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/cache-size-configuration"
+  to = "/self-hosted-appcircle/configure-server/advanced-configuration/cache-size-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/self-hosted-appcircle/configure-server/integration"
+  to = "/self-hosted-appcircle/configure-server/integrations-and-access/integration"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-dependency-report"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/android-dependency-report"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/appsweep-mobile-security-testing"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/appsweep-mobile-security-testing"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/post-processor"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/post-processor"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/app-center-android-distribution"
+  to = "/workflows/android-specific-workflow-steps/distribution/app-center-android-distribution"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/authanticate-with-netrc"
+  to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/export-build-artifacts"
+  to = "/workflows/common-workflow-steps/export-build-artifacts"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/file-size-check"
+  to = "/workflows/common-workflow-steps/build-and-test/file-size-check"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/sonarqube"
+  to = "/workflows/common-workflow-steps/build-and-test/sonarqube"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-analyze"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-analyze"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-build-for-web"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-build-ios"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-ios"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/flutter-specific-workflow-steps/flutter-install"
+  to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-install"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-ios-simulator"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/appcenter-ios-distribution"
+  to = "/workflows/ios-specific-workflow-steps/distribution/appcenter-ios-distribution"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/browserstack-app-automation"
+  to = "/workflows/ios-specific-workflow-steps/distribution/browserstack-app-automation"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/install-certificates-provisions"
+  to = "/workflows/ios-specific-workflow-steps/distribution/install-certificates-provisions"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/increment-build-and-version-number"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/increment-build-and-version-number"
+  status = 301
+
+# Swagger wrong (broken) URL on publish module API docs
+[[redirects]]
+  from = "/store"
+  to = "/publish-module"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/android-unit-tests"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/android-unit-tests"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android"
+  to = "/workflows/android-specific-workflow-steps/distribution/appdome-build-to-secure-for-android"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/bundle-universal-apk"
+  to = "/workflows/android-specific-workflow-steps/distribution/bundle-universal-apk"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/gradle-runner"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/gradle-runner"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/lint"
+  to = "/workflows/android-specific-workflow-steps/build-and-test/lint"
+  status = 301
+
+[[redirects]]
+  from = "/store-submit/google-play"
+  to = "/publish-module/send-to-googleplay"
+  status = 301
+
+[[redirects]]
+  from = "/store-submit/huawei-app-gallery"
+  to = "/publish-module/send-to-huawei"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/jira-integration"
+  to = "/workflows/common-workflow-steps/build-and-test/jira-component"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/azure-board"
+  to = "/workflows/common-workflow-steps/build-and-test/azure-board"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/azure-board"
+  to = "/workflows/common-workflow-steps/azure-board"
+  status = 301
+
+
+[[redirects]]
+  from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows"
+  to = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/"
+  to = "/workflows"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/appdome-integration"
+  to = "/workflows"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-faq"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/automated-tests"
+  to = "/continuous-testing/"
+  status = 301
+
+[[redirects]]
+  from = "/continuous-testing/using-aws-device-farm-for-ios-and-android-continuous-testing"
+  to = "/workflows/common-workflow-steps/build-and-test/aws-device-farm-and-deploy"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-appstore"
+  to = "/publish-integrations/ios-publish-integrations/send-to-app-store"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-googleplay"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-googleplay#deleting-android-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles"
+  status = 301
+
+[[redirects]]
+  from = "/publish-module/send-to-huawei#deleting-huawei-publish-profiles"
+  to = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/working-with-custom-scripts/custom-script-samples#changing-java-version"
+  to = "/workflows/common-workflow-steps/build-and-test/custom-script#how-to-change-java-version"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows#adding-fastlane-to-the-appcircle-build-workflow-as-a-step"
+  to = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/azure-bot-for-swiftlint-and-detekt"
+  to = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
+  to = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/managing-release-notes"
+  to = "/workflows/common-workflow-steps/build-and-test/publish-release-notes"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/workflow-marketplace"
+  to = "/workflows/#workflow-marketplace"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
+  to = "/workflows/common-workflow-steps/upload-files-to-amazon-s3"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/custom-script"
+  to = "/workflows/common-workflow-steps/custom-script"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/custom-script#how-to-change-java-version"
+  to = "/workflows/common-workflow-steps/custom-script#how-to-change-java-version"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/fastlane"
+  to = "/workflows/common-workflow-steps/fastlane"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/jira-component"
+  to = "/workflows/common-workflow-steps/jira-component"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/publish-release-notes"
+  to = "/workflows/common-workflow-steps/publish-release-notes"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/android-specific-workflow-steps/build-and-test/android-build"
+  to = "/workflows/android-specific-workflow-steps/android-build"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
+  to = "/workflows/common-workflow-steps/upload-files-to-amazon-s3"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/distribution/browserstack-app-automation"
+  to = "/workflows/ios-specific-workflow-steps/browserstack-app-automation"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
+  to = "/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-devices"
+  to = "/workflows/ios-specific-workflow-steps/xcodebuild-for-devices"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/ios-specific-workflow-steps/build-and-test/swiftlint"
+  to = "/workflows/ios-specific-workflow-steps/swiftlint"
+  status = 301
+
+  
+

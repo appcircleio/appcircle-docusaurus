@@ -1,7 +1,7 @@
 ---
 title: Android Emulators
-metaTitle: Android Emulators
-metaDescription: Android Emulators
+description: Learn how to use Android emulators on self-hosted runners in Appcircle
+tags: [self-hosted runner, android emulator, android, emulator, pipeline]
 sidebar_position: 4
 ---
 

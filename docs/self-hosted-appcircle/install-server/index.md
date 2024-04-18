@@ -1,7 +1,7 @@
 ---
-title: Overview
-metaTitle: Installing Server
-metaDescription: Installing Server
+title: Install the Self-Hosted Appcircle Server
+description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure.
+tags: [self-hosted, server, installation]
 sidebar_position: 1
 ---
 
@@ -15,35 +15,35 @@ For detailed instructions, please refer to the corresponding pages mentioned bel
 
 Before proceeding with the installation, it is essential to verify the compatibility of the targeted operating system version.
 
-If you're planning to use **Docker** as the container runtime engine, you should check for compatible OS versions [here.](./docker.md#supported-linux-distributions)
+If you're planning to use **Docker** as the container runtime engine, you should check for compatible OS versions [here.](./docker#supported-linux-distributions)
 
-If you're planning to use **Podman** as the container runtime engine, you should check for compatible OS versions [here.](./docker.md#supported-linux-distributions)
+If you're planning to use **Podman** as the container runtime engine, you should check for compatible OS versions [here.](./docker#supported-linux-distributions)
 
 ### Hardware Requirements
 
 Check CPU, memory, swap, and disk space requirements.
 
-You can check the hardware requirements [here.](./docker.md#hardware-requirements)
+You can check the hardware requirements [here.](./docker#hardware-requirements)
 
 ### Dependencies for Download
 
 To download and extract the application installation zip package, you need to install the necessary dependencies.
 
-You can see the dependencies [here](./docker.md#1-download).
+You can see the dependencies [here](./docker#1-download).
 
 ### Download and Extract the Package
 
 Obtain the application's zip file and extract its contents.
 
-You should follow the download and extract processes [here.](./docker.md#1-download)
+You should follow the download and extract processes [here.](./docker#1-download)
 
 ### Install Server Dependencies
 
 Install additional dependencies and packages required by the self-hosted Appcircle server.
 
-If you're planning to use **Docker** as the container runtime engine, you can check application dependencies and how to install them [here.](./docker.md#2-packages)
+If you're planning to use **Docker** as the container runtime engine, you can check application dependencies and how to install them [here.](./docker#2-packages)
 
-If you're planning to use **Podman** as the container runtime engine, you can check application dependencies and how to install them [here.](./podman.md#2-packages)
+If you're planning to use **Podman** as the container runtime engine, you can check application dependencies and how to install them [here.](./podman#2-packages)
 
 #### Configure Podman Specific Settings
 
@@ -53,21 +53,21 @@ You should skip this step if you are installing the application with Docker.
 
 If you are installing the server with Podman, you must configure Podman's network settings. And also need to install an additional application to use podman rootless.
 
-You can check the port forwarding settings [here.](./podman.md#podman-requirements)
+You can check the port forwarding settings [here.](./podman#podman-requirements)
 
-You can check the Podman network stack settings [here.](./podman.md#podman-network-stack)
+You can check the Podman network stack settings [here.](./podman#podman-network-stack)
 
 ### Configure Server Settings
 
 You need to edit the default `global.yaml` file for your requirements and infrastructure.
 
-You can see the detailed configuration steps [here.](./docker.md#3-configure)
+You can see the detailed configuration steps [here.](./docker#3-configure)
 
 #### HTTP and HTTPS Settings
 
 You can utilize the Appcircle server in either HTTP or HTTPS mode, which can be configured in the `global.yaml` settings file.
 
-After following the general configuration steps above, see the SSL configuration details [here.](./../configure-server/ssl-configuration.md)
+After following the general configuration steps above, see the SSL configuration details [here.](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration)
 
 #### Domain Settings of the Modules
 
@@ -85,7 +85,7 @@ The initial user will be the owner or administrator of the organization on the A
 
 The Appcircle server has some subdomains for different services. They should be configured according to the network infrastructure.
 
-You can see the DNS configuration details [here.](./docker.md#4-dns-settings)
+You can see the DNS configuration details [here.](./docker#4-dns-settings)
 
 ### Pull the Container Images
 
@@ -95,13 +95,13 @@ Prior to running the server, it is necessary to pull the images from the Appcirc
 
 If you're planning to use a proxy repository to access the origin repository, it should be defined in the `global.yaml` configuration file.
 
-You can check the required steps on how to define a custom image registry [here.](./docker.md#using-sonatype-nexus-as-proxy-registry)
+You can check the required steps on how to define a custom image registry [here.](../configure-server/external-image-registry)
 
 :::caution
 
 You need `cred.json` file to pull the container images. Only the enterprise customers who have self-hosted Appcircle license can have `cred.json`.
 
-For details about the `cred.json`, see [here.](./docker.md#artifact-registry-credentials-credjson)
+For details about the `cred.json`, see [here.](./docker#artifact-registry-credentials-credjson)
 
 :::
 
@@ -109,19 +109,19 @@ For details about the `cred.json`, see [here.](./docker.md#artifact-registry-cre
 
 At the end, you are ready to start the Appcircle server. 🎉
 
-Start the server and verify its [health.](./docker.md#5-run-server)
+Start the server and verify its [health.](./docker#5-run-server)
 
 ## Runner Installation
 
 To build and distribute mobile applications, you need self-hosted Appcircle runners that are connected to the server.
 
-You can check out how to install a self-hosted runner [here.](../self-hosted-runner/installation.md)
+You can check out how to install a self-hosted runner [here.](/self-hosted-appcircle/self-hosted-runner/installation)
 
 ### Connect Runner to the Server
 
 You need to connect your self-hosted runner to the server. So the server can share builds and distribute jobs with the runner.
 
-You can check how to connect runner to server [here.](../self-hosted-runner/installation.md#2-register)
+You can check how to connect runner to server [here.](/self-hosted-appcircle/self-hosted-runner/installation#2-register)
 
 ## Build a Sample App
 
@@ -146,8 +146,8 @@ Please note that this overview serves as a high-level roadmap, and detailed inst
 
 For more detailed instructions to install the server, please refer to installation page.
 
-Click [here](./docker.md) to see Appcircle server installation on **Docker**.
+Click [here](./docker) to see Appcircle server installation on **Docker**.
 
-Click [here](./podman.md) to see Appcircle server installation on **Podman**.
+Click [here](./podman) to see Appcircle server installation on **Podman**.
 
 :::
