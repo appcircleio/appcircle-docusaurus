@@ -240,6 +240,12 @@ minio:
 
 ### Start the Server
 
+:::caution
+If you are using proxy on the Appcircle server, then you should update the `no_proxy` variables.
+
+Please follow the [No Proxy for Internal Container Network](/docs/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new `snsd` service.
+:::
+
 - Start the Appcircle server.
 
 ```bash
