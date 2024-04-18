@@ -1,7 +1,7 @@
 ---
 title: How to Share Files Between Build Profiles 
-metaTitle: How to Share Files Between Build Profiles
-metaDescription: How to Share Files Between Build Profiles
+description: Learn to share files between build profiles efficiently. Enhance collaboration and streamline your development process with our guide.
+tags: [pipelines, data sharing, cache pull, cache push, efficiency]
 sidebar_position: 4
 ---
 
