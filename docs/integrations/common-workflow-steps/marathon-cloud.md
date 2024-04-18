@@ -1,7 +1,7 @@
 ---
 title: Marathon Cloud 
-metaTitle: Marathon Cloud
-metaDescription: Marathon Cloud
+description: Accelerate your mobile app development with Marathon Cloud integration on Appcircle. Seamless integration and efficient management capabilities.
+tags: [marathon, cloud, test, automation, test report, test automation]
 sidebar_position: 1
 ---
 
