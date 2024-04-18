@@ -1,6 +1,6 @@
 ---
 title: Resigning iOS Binaries
-description: Resigning is the process of modifying an existing binary with a new signing certificate or keystore, which is required when an application needs to be published under a different developer account or when updating an existing application.
+description: Understand the process of resigning iOS binaries with a new certificate or keystore. Crucial for publishing under a different developer account.
 tags: [resigning, ios, binaries, resigning ios binaries]
 sidebar_position: 6
 ---

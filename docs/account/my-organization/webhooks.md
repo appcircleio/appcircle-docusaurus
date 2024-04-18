@@ -1,7 +1,17 @@
 ---
 title: Webhooks Configuration
 description: Appcircle will notify external services via webhooks when a certain event occurs. When the events you specified happen, we'll send a POST request in JSON format to the URLs you provide.
-tags: [webhooks, webhook configuration, webhook scope, webhook payload, webhook secret, webhook request history, webhook editing, webhook deleting]
+tags:
+  [
+    webhooks,
+    webhook configuration,
+    webhook scope,
+    webhook payload,
+    webhook secret,
+    webhook request history,
+    webhook editing,
+    webhook deleting,
+  ]
 sidebar_position: 11
 ---
 
@@ -81,7 +91,7 @@ You can see all the requests and their results by clicking on them.
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via Webhooks.
-To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/workflows/common-workflow-steps/build-and-test/publish-release-notes/) step in your workflow.
+To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/workflows/common-workflow-steps/publish-release-notes/) step in your workflow.
 
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::

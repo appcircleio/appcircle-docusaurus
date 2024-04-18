@@ -1,6 +1,6 @@
 ---
 title: Okta OpenID
-description: Implement OpenID authentication in your app with Appcircle. Enhance user security and streamline login processes.
+description: Utilize Okta OpenID for user authentication in your app. Streamline sign-in processes and boost security with Appcircle.
 tags: [account, organization, sso, okta, openid, configuration]
 sidebar_position: 5
 ---

@@ -44,13 +44,21 @@ For example, to find the version for a project named "spacetech", run the follow
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.13.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.14.0.zip
 ```
+
+:::caution
+
+Upgrading from older versions to `v3.14.0` or later, requires MinIO migration that should be done interactively while upgrading.
+
+In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/configure-server/minio-migration) document.
+
+:::
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.13.2.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.14.0.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
