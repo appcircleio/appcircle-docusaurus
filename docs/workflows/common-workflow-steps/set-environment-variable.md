@@ -9,11 +9,10 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Set Environment Variable
 
-The **Set Environment Variable** step allows you to set environment values for given keys. While it's generally recommended to create environment variables from the [Environment Variables](https://docs.appcircle.io/environment-variables/) page, there may be instances where you need to set or change environment variables within the build workflow. In such cases, the **Set Environment Variable** step can be used.
-
+The **Set Environment Variable** step enables the setting of environment values for specified keys. Although creating environment variables via the [Environment Variables](https://docs.appcircle.io/environment-variables/) page is typically recommended, this step provides flexibility to modify environment variables directly within the build workflow when necessary.
 ### Prerequisites
 
-There is no mandatory step before the **Set Environment Variable** step. You can use this step anywhere in the workflow as needed.
+There is no prerequisites step before the **Set Environment Variable** step. It can be implemented at any point within the workflow as necessary.
 
 :::warning
 
@@ -25,8 +24,7 @@ Please note that you must use the **Set Environment Variable** step before the s
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for **Set Environment Variable** are as follows:
-
+Each component requires specific input variables for operation. For the **Set Environment Variable** step, the necessary input variables are:
 <Screenshot url='https://cdn.appcircle.io/docs/assets/set-environment-variable_2.png'/>
 
 :::warning
@@ -42,7 +40,7 @@ Confidential information should be entered as a [secret environment variable](ht
 
 ### Output Variables
 
-The **Set Environment Variable** step does not produce any output variables. If the environment variable is successfully set, the step will succeed, and you can use the environment variable after this step. Otherwise, it will fail.
+The **Set Environment Variable** step generates no output variables. Success or failure of this step depends on whether the environment variable is set correctly, allowing subsequent use within the workflow.
 
 ---
 
