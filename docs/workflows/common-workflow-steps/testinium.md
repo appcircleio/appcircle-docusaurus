@@ -9,18 +9,18 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Testinium
 
-The **Testinium** step on Appcircle integrates the [Testinium](https://testinium.com) testing platform into the CI/CD workflow. It allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle environment. This step enables developers to execute test scripts, analyze test results, and ensure the quality of their mobile applications before deployment.
+The **Testinium** step integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, allowing for automated testing of mobile applications directly within the Appcircle environment. This step enables developers to execute test scripts, analyze test outcomes, and verify the quality of their mobile apps before deployment
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Testinium** workflow step, along with their respective reasons, are listed in the table below. Prerequisites vary depending on the platform used:
+Before running the **Testinium** step, certain prerequisites must be completed. These prerequisites, detailed in the table below, vary depending on the platform:
 
 #### For Android (Java / Kotlin and React Native) 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [**Android Build**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Testinium** step.                                                                           |
-| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_1.png'/>
 
@@ -37,7 +37,7 @@ The workflow steps that need to be executed before running the **Testinium** wor
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [**Flutter Build for Android**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Testinium** step.                                                                           |
-| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_3.png'/>
 
@@ -64,7 +64,7 @@ Confidential information should be entered as a [secret environment variable](ht
 
 | Variable Name               | Description                                                                                                 | Status   |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_TESTINIUM_APP_PATH`    | Specifies the full path of the build. For example, `$AC_EXPORT_DIR/Myapp.ipa` or `$AC_APK_PATH`.            | Required |
+| `$AC_TESTINIUM_APP_PATH`    | Specifies the full file path of the build output, such as `$AC_EXPORT_DIR/Myapp.ipa` for iOS or `$AC_APK_PATH` for Android.           | Required |
 | `$AC_TESTINIUM_USERNAME`    | Specifies the Testinium username used for logging in.                                                       | Required |
 | `$AC_TESTINIUM_PASSWORD`    | Specifies the Testinium password used for logging in.                                                       | Required |
 | `$AC_TESTINIUM_PROJECT_ID`  | Specifies the Testinium project ID. This ID must be obtained from the Testinium platform.                   | Required |
@@ -76,7 +76,7 @@ Confidential information should be entered as a [secret environment variable](ht
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+Below are the output variables generated by this component:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_6.png'/>
 
