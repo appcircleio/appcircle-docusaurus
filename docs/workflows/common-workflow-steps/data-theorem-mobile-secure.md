@@ -19,8 +19,8 @@ The workflow steps that need to be executed before running the **Data Theorem Mo
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Data Theorem Mobile Secure** step.                                                                           |
-| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Data Theorem Mobile Secure** step.                                                                           |
+| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_1.png'/>
 
@@ -28,7 +28,7 @@ The workflow steps that need to be executed before running the **Data Theorem Mo
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_2.png'/>
 
@@ -36,8 +36,8 @@ The workflow steps that need to be executed before running the **Data Theorem Mo
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Data Theorem Mobile Secure** step.                                                                           |
-| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Data Theorem Mobile Secure** step.                                                                           |
+| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_3.png'/>
 
@@ -45,8 +45,8 @@ The workflow steps that need to be executed before running the **Data Theorem Mo
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-| [**Flutter Build for iOS**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_4.png'/>
 
@@ -58,7 +58,7 @@ Specific input variables are required for the operation of each component in you
 
 :::warning
 
-Confidential information should be entered as a [secret environment variable](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/).
+Confidential information should be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
 
 :::
 
