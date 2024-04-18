@@ -111,11 +111,6 @@
   status = 301
 
 [[redirects]]
-  from = "/workflows/ios-specific-workflow-steps/xcode-select"
-  to = "/workflows/ios-specific-workflow-steps/build-and-test/xcode-select"
-  status = 301
-
-[[redirects]]
   from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-testing"
   to = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-testing"
   status = 301
