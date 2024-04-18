@@ -98,7 +98,7 @@ Appcircle currently supports the following mobile automation testing tools:
 
 - [Appium](/workflows/common-workflow-steps/#appium-server)
 - [BrowserStack App Automate (XCUI)](/workflows/ios-specific-workflow-steps/browserstack-app-automation)
-- [Maestro](/workflows/common-workflow-steps/#maestro-cloud-upload)
+- [Maestro](/workflows/common-workflow-steps/maestro-cloud-upload)
 - [Testinium](/workflows/common-workflow-steps/#testinium)
 
 Each service allows you to run your tests on real devices, and test scenarios can be started with the artifacts created on Appcircle. Rich reports can be managed by visiting the web site of each service.
