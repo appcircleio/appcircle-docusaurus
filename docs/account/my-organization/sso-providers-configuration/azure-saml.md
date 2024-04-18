@@ -1,6 +1,6 @@
 ---
 title: Azure AD SAML
-description: Implement SAML authentication in your app with Appcircle. Enhance user security and streamline login processes.
+description: Configure Azure AD SAML for secure user authentication in your app. Streamline access and enhance security with Appcircle.
 tags: [account, organization, sso, azure, saml, configuration]
 sidebar_position: 4
 ---

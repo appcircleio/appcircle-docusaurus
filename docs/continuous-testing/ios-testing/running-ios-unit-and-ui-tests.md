@@ -97,7 +97,7 @@ Appcircle can show passing and failing tests in compact UI. If your tests genera
 Appcircle currently supports the following mobile automation testing tools:
 
 - [Appium](/workflows/common-workflow-steps/#appium-server)
-- [BrowserStack App Automate (XCUI)](/workflows/ios-specific-workflow-steps/distribution/browserstack-app-automation)
+- [BrowserStack App Automate (XCUI)](/workflows/ios-specific-workflow-steps/browserstack-app-automation)
 - [Maestro](/workflows/common-workflow-steps/#maestro-cloud-upload)
 - [Testinium](/workflows/common-workflow-steps/#testinium)
 
@@ -127,6 +127,6 @@ curl -u "$AC_BROWSERSTACK_USERNAME:$AC_BROWSERSTACK_ACCESS_KEY" \
 
 :::info
 
-Appcircle's [**BrowserStack App Automate(XCUI)**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/distribution/browserstack-app-automation) step already parses JUnit Test reports. The above code sample is only given as an example.
+Appcircle's [**BrowserStack App Automate(XCUI)**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/browserstack-app-automation) step already parses JUnit Test reports. The above code sample is only given as an example.
 
 :::
