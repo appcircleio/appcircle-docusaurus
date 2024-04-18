@@ -9,11 +9,11 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Data Theorem Mobile Secure
 
-The **Data Theorem Mobile Secure** step on Appcircle integrates the [Data Theorem Mobile Secure](https://www.datatheorem.com/products/mobile-secure/) service into the CI/CD workflow. It enables users to automatically scan their mobile applications for security vulnerabilities and compliance issues directly from the Appcircle environment. This step facilitates proactive security testing, allowing developers to identify and resolve potential security threats before deploying their mobile applications.
+The **Data Theorem Mobile Secure** step integrates the [Data Theorem Mobile Secure](https://www.datatheorem.com/products/mobile-secure/) service into the CI/CD workflow on Appcircle. This step allows users to automatically scan their mobile applications for security vulnerabilities and compliance issues, facilitating proactive security testing. Developers can identify and resolve potential security threats before deploying their mobile applications.
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Data Theorem Mobile Secure** workflow step, along with their respective reasons, are listed in the table below. Prerequisites vary depending on the platform used:
+The workflow steps that need to be executed before running the **Data Theorem Mobile Secure** step vary depending on the platform and are listed below:
 
 #### For Android (Java / Kotlin and React Native) 
 
@@ -52,7 +52,7 @@ The workflow steps that need to be executed before running the **Data Theorem Mo
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for **Data Theorem Mobile Secure** are as follows:
+Specific input variables are required for the operation of each component in your system. The following are the input variables necessary for the **Data Theorem Mobile Secure** step:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_5.png'/>
 
