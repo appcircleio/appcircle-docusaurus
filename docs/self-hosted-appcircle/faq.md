@@ -1,8 +1,9 @@
 ---
-title: Troubleshooting & FAQ
+title: Troubleshooting & FAQ for Appcircle Server and Runner
 description: Troubleshooting and FAQ for Appcircle server and runner
 tags: [troubleshooting, faq, self-hosted]
 sidebar_position: 4
+sidebar_label: Troubleshooting & FAQ
 ---
 
 # Overview

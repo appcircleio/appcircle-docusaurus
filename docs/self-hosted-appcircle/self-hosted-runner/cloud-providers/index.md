@@ -1,5 +1,5 @@
 ---
-title: Cloud Providers
+title: Cloud Providers Integration
 description: Integrate cloud providers with your Appcircle builds to scale your infrastructure and access cloud resources. Learn how to connect with Amazon Web Services (AWS) for enhanced performance.
 tags:
   [
@@ -10,9 +10,10 @@ tags:
     build infrastructure,
     cloud resources,
   ]
+sidebar_label: Cloud Providers
 ---
 
-# Cloud Providers
+# Cloud Providers Integration
 
 Leverage the power of cloud computing within your Appcircle builds by integrating with Cloud Providers. This section details how to connect with Amazon Web Services (AWS), allowing you to scale your build infrastructure on-demand and access a wide range of cloud resources.
 

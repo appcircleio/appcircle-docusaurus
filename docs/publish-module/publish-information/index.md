@@ -1,5 +1,5 @@
 ---
-title: Publish
+title: Publish Information Overview
 description: Overview of the Publish module in Appcircle
 tags: [publish, publish module, publish information]
 sidebar_position: 1
