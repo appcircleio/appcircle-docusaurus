@@ -15,7 +15,7 @@ The **Snyk Security Scan** step in Appcircle enables developers to seamlessly in
 
 ### Prerequisites
 
-Before running the **Snyk Scan Security** step, certain prerequisites must be completed. These prerequisites, detailed in the table below, vary depending on the platform:
+Before running the **Snyk Scan Security** step, certain prerequisites must be completed. These prerequisites, detailed in the table below:
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
