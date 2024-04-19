@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Maestro Cloud Upload
 
-[Maestro Cloud](https://cloud.mobile.dev) is a cloud-based mobile device farm designed for testing and debugging mobile applications. It provides developers and QA teams with access to a wide range of real devices, allowing them to perform thorough testing across different platforms, operating systems, and device configurations. 
+[Maestro Cloud](https://cloud.mobile.dev) is a cloud-based mobile device farm for testing and debugging mobile applications, offering developers and QA teams access to a wide range of real devices for comprehensive testing across various platforms, operating systems, and device configurations.
 
 The Appcircle **Maestro Cloud Upload** step enables users to upload their mobile applications directly to Maestro, a cloud-based mobile device farm for testing and debugging applications. This integration simplifies the process of distributing apps for testing purposes across various devices and platforms supported by Maestro. Users can configure this step within their CI/CD workflows to deploy their apps to Maestro's cloud infrastructure, facilitating efficient and comprehensive testing procedures.
 
