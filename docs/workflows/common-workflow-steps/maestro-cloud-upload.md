@@ -13,17 +13,17 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Appcircle **Maestro Cloud Upload** step enables users to upload their mobile applications directly to Maestro, a cloud-based mobile device farm for testing and debugging applications. This integration simplifies the process of distributing apps for testing purposes across various devices and platforms supported by Maestro. Users can configure this step within their CI/CD workflows to deploy their apps to Maestro's cloud infrastructure, facilitating efficient and comprehensive testing procedures.
 
-### Prerequisites
+## Prerequisites
 
 Before running the **Maestro Cloud Upload** step, certain prerequisites must be completed. These prerequisites, detailed in the table below, vary depending on the platform:
 
-#### For All Platforms
+### For All Platforms
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | Fetches the repository to be built from the specified branch, ensuring that the [Maestro CLI](https://maestro.mobile.dev/getting-started/installing-maestro) can run on the repository path. |
 
-#### For Android (Java / Kotlin and React Native) 
+### For Android (Java / Kotlin and React Native) 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -32,7 +32,7 @@ Before running the **Maestro Cloud Upload** step, certain prerequisites must be 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_1.png'/>
 
-#### For iOS (Objective-C / Swift and React Native) 
+### For iOS (Objective-C / Swift and React Native) 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ Before running the **Maestro Cloud Upload** step, certain prerequisites must be 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_2.png'/>
 
-#### For Android Flutter 
+### For Android Flutter 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -49,7 +49,7 @@ Before running the **Maestro Cloud Upload** step, certain prerequisites must be 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_3.png'/>
 
-#### For iOS Flutter
+### For iOS Flutter
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -58,7 +58,7 @@ Before running the **Maestro Cloud Upload** step, certain prerequisites must be 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_4.png'/>
 
-### Input Variables
+## Input Variables
 
 The **Maestro Cloud Upload** step requires specific input variables:
 
@@ -90,7 +90,7 @@ Enter confidential information as a [secret environment variable](/environment-v
 | `$AC_MAESTRO_PULL_ID`         | The ID of the pull request from which the upload originated.                                            | Optional  |
 | `$AC_MAESTRO_CLI_VERSION`     | The version of the Maestro CLI is to be downloaded in your CI environment. The default value is the `latest` version.  | Optional  |
 
-### Output Variables
+## Output Variables
 
 The **Maestro Cloud Upload** step does not produce any output variables. The results are shown in the build log.
 
