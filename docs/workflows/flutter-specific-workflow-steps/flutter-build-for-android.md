@@ -36,7 +36,7 @@ Each component requires specific input variables for its operation. The input va
 
 :::info
 
-If you have already completed the required variables in the **Configuration** section, there's no need to redefine them in the Workflow. For detailed information on configurations, please consult the [Build Profile Configuration Overview](/build/build-process-management/build-profile-configuration) document. The details you provide in the configuration will serve as input for the Android Build step. Kindly substitute the example information with your own details:
+If the required variables are already defined in the **Configuration** section, there is no need to redefine them in the Workflow. For more details, see the [Build Profile Configuration Overview](/build/build-process-management/build-profile-configuration). The details you provide in the configuration will serve as input for the Android Build step. Kindly substitute the example information with your details:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_3.png'/>
 
