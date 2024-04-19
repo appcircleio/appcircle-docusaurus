@@ -50,7 +50,7 @@ Enter confidential information as a [secret environment variable](/environment-v
 
 ### Output Variables
 
-The **Snyk Scan Security** step does not produce any output variables. The results are shown in the build log.
+The outputs resulting from the operation of this component are as follows:
 
 | Output Variable                | Description                                                                                                              |
 |--------------------------------|--------------------------------------------------------------------------------------------------------------------------|
