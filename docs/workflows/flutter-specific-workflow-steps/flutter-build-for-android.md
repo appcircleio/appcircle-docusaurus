@@ -53,7 +53,7 @@ The outputs resulting from the operation of this component are as follows:
 
 :::info
 
-The resulting files will be either APK or AAB, depending on whether you choose the `Output Type` in the project [Configuration](/build/build-process-management/build-profile-configuration).
+The resulting files will be either APK or AAB, based on the `Output Type` selected in the project [Configuration](/build/build-process-management/build-profile-configuration).
 
 :::
 
