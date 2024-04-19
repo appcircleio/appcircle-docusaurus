@@ -201,6 +201,12 @@ Detailed migration logs are being saved into a file named `minio-migration-${dat
 
 You can access and review the comprehensive migration logs from this file for further insights into the migration process.
 
+:::caution
+If you are using a proxy on the Appcircle server, then you should update the `no_proxy` variables.
+
+Please follow the [No Proxy for Internal Container Network](/docs/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new `snsd` service.
+:::
+
   </TabItem>
 
   <TabItem value="mnsd" label="Staying with MNSD MinIO">
@@ -239,12 +245,6 @@ minio:
 </Tabs>
 
 ### Start the Server
-
-:::caution
-If you are using a proxy on the Appcircle server, then you should update the `no_proxy` variables.
-
-Please follow the [No Proxy for Internal Container Network](/docs/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new `snsd` service.
-:::
 
 - Start the Appcircle server.
 
