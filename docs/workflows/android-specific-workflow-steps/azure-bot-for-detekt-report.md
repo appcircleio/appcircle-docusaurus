@@ -9,13 +9,15 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Azure DevOps Bot for Detekt Report
 
-The **Azure DevOps Bot for Detekt Report** step allows you to analyse your [Detekt report](https://detekt.dev/docs/introduction/reporting/) and post the report details under the opened pull request in [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/). Additionally, you can modify the [pull request status](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-request-statuses). Integration requires following some necessary steps.
+The **Azure DevOps Bot for Detekt Report** step analyzes your [Detekt report](https://detekt.dev/docs/introduction/reporting/) and posts the details to an open pull request in [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/). It also allows you to modify the [pull request status](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-request-statuses).
 
 :::caution
-[Danger](https://danger.systems) works on a similar logic to this step, allowing you to utilise the [Danger step](https://docs.appcircle.io/workflows/common-workflow-steps/#code-reviews-with-danger) for other providers like [GitHub](https://github.com), [GitLab](https://about.gitlab.com), or [Bitbucket](https://bitbucket.org/product/guides/getting-started/overview#a-brief-overview-of-bitbucket). Nonetheless, it's worth noting that Danger does not offer support for Azure DevOps at this time.
+
+[Danger](https://danger.systems/) operates on a similar principle, allowing use of the [Danger step](https://docs.appcircle.io/workflows/common-workflow-steps/#code-reviews-with-danger) with platforms such as [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), and [Bitbucket](https://bitbucket.org/product/guides/getting-started/overview#a-brief-overview-of-bitbucket). However, Danger currently does not support Azure DevOps.
 
 For more information, refer to the Appcircle blog post about Danger:
 - [**Danger in CI: Automate Your Mobile Code Reviews**](https://appcircle.io/blog/danger-in-ci-automate-your-mobile-code-reviews).
+
 :::
 
 ### Prerequisites
@@ -34,7 +36,9 @@ For each step, specific input variables are required for its operation on your s
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_2.png'/>
 
 :::caution
-Confidential information should be entered as a [**secret environment variable**](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [**environment variable group**](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](https://docs.appcircle.io/build/build-profile-configuration/).
+
+Enter confidential information as [**secret environment variable**](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) and ensure the appropriate [**environment variable group**](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](https://docs.appcircle.io/build/build-profile-configuration/).
+
 :::
 
 | Variable Name              | Description                                    | Status |
