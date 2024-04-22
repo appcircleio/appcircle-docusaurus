@@ -55,13 +55,13 @@ Before running the **Fortify on Demand Mobile Assessment** step, you must comple
 
 ### Input Variables
 
-Below is a list of input variables that can be used with this component with a description of each.
+Below is a list of input variables that can be used with this component, along with a description of each.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3152-fodInput.png' />
 
 :::warning
 
-Avoid hard-coding sensitive information like tokens and API keys directly into the step parameters.
+Avoid hard-coding sensitive information, like tokens and API keys, directly into the step parameters.
 
 We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
@@ -69,11 +69,11 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 
 | Variable Name                 | Description                                                                                               | Status   |
 |-------------------------------|-----------------------------------------------------------------------------------------------------------|----------|
-| `$AC_FOD_CLIENT_ID`           | Authenticating with Client Credentials. The client credentials are the API keys generated in the portal   | Required |
-| `$AC_FOD_CLIENT_SECRET`       | Authenticating with Client Credentials. The client credentials are the API keys generated in the portal.  | Required |
+| `$AC_FOD_CLIENT_ID`           | Authenticating with client credentials. The client credentials are the API keys generated in the portal.  | Required |
+| `$AC_FOD_CLIENT_SECRET`       | Authenticating with client credentials. The client credentials are the API keys generated in the portal.  | Required |
 | `$AC_FOD_CLIENT_DATACENTER`   | Select the datacenter assigned to you upon your onboarding with Fortify on Demand.                        | Required |
 | `$AC_FOD_ENTITLEMENT_ID`      | The ID assigned to your current entitlement. You can retrieve this value in the Fortify on Demand portal. | Required |
-| `$AC_FOD_RELEASE_ID`          | The ID assigned to the created release. This value can be reterived in Foritfy on Demand portal.          | Required |
+| `$AC_FOD_RELEASE_ID`          | The ID assigned to the created release. This value can be retrieved in the Foritfy on Demand portal.      | Required |
 | `$AC_FOD_ASSESSMENT_TYPE`     | Assessment type for this mobile assessment.                                                               | Required |
 | `$AC_FOD_FRAMEWORK_TYPE`      | Framework type for this mobile assessment.                                                                | Required |
 | `$AC_FOD_PLATFORM_TYPE`       | Platform type for this mobile assessment.                                                                 | Required |
