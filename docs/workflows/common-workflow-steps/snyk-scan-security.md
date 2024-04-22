@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 [Snyk Security Scan](https://snyk.io/learn/vulnerability-scanner/) is a powerful tool designed to identify and resolve vulnerabilities within your project's dependencies. Leveraging Snyk's extensive vulnerability database, this tool thoroughly analyzes libraries and frameworks used in your project, offering actionable insights to mitigate potential risks.
 
-The **Snyk Security Scan** step in Appcircle enables developers to seamlessly incorporate vulnerability scanning into their CI/CD workflows. By integrating Snyk directly into the build process, developers can automatically analyze project dependencies for known vulnerabilities during each build iteration.
+The **Snyk Security Scan** step integrates directly into Appcircle’s CI/CD workflows, allowing developers to automatically scan project dependencies for vulnerabilities with each build.
 
 ### Prerequisites
 
