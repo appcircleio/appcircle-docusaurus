@@ -1,13 +1,14 @@
 ---
-title: 'Appcircle Documentation'
-metaTitle: 'Appcircle Documentation'
-metaDescription: 'Appcircle Documentation'
+title: Appcircle Documentation
+description: Explore Appcircle Documentation, a comprehensive guide for building, testing, and deploying your mobile applications.
+tags: [appcircle, documentation, build, test, deploy]
 sidebar_position: 1
 slug: /
 hide_table_of_contents: true
 hide_title: true
 breadcrumbs: false
 ---
+
 import NewBadge from '@site/src/components/NewBadge';
 
 <div class="intro-visual">
@@ -22,15 +23,15 @@ Build.<br/>Test.<br/>Distribute.
 
 <section class="intro-cards">
       <div class="intro-card">
-            <h3><a href="/tutorials/quick-start">Foundations</a></h3>
+            <h3><a href="/tutorials">Foundations</a></h3>
             <p><strong>New to Appcircle?</strong> Get started by adding your Obj-C/Swift, Java/Kotlin, React Native, Flutter app first.</p>
       </div>
       <div class="intro-card">
-            <h3><a href="/build/adding-a-build-profile">Building Your Apps</a></h3>
+            <h3><a href="/build/manage-the-connections/adding-a-build-profile">Building Your Apps</a></h3>
             <p>Learn about setting up your repository, creating workflows and how to automatically trigger a build.</p>
       </div>
       <div class="intro-card">
-            <h3><a href="/store-submit/apple-app-store">Send to Testers & Stores</a></h3>
+            <h3><a href="/publish-module">Send to Testers & Stores</a></h3>
             <p>Add testers, set up your builds to be auto distributed to them and Apple App Store, Testflight, Google Play, Huawei App Gallery and Firebase.</p>
       </div>
       <div class="intro-card">
@@ -46,7 +47,7 @@ Build.<br/>Test.<br/>Distribute.
                   <NewBadge />
                   <h4>Create your own app store.</h4>
                   <p>Some apps are not meant to be on App Stores. That’s why we’re introducing Enterprise App Store. A way for you to distribute your internal apps.</p>
-                  <a href="/enterprise-appstore/add-ent-profile" className="feature-card-learn-more eas">
+                  <a href="/enterprise-appstore/enterprise-app-store-setup/add-ent-profile" className="feature-card-learn-more eas">
                         Learn how
                   </a>
             </div>
@@ -57,7 +58,7 @@ Build.<br/>Test.<br/>Distribute.
                   <NewBadge />
                   <h4>Self-Hosted Appcircle</h4>
                   <p>Want to use your own build machines? Just install our runner scripts to the machines you want to use for your iOS / Android builds.</p>
-                  <a href="/self-hosted-appcircle/overview" className="feature-card-learn-more runner">
+                  <a href="/self-hosted-appcircle" className="feature-card-learn-more runner">
                         Learn More
                   </a>
             </div>
@@ -68,11 +69,11 @@ Build.<br/>Test.<br/>Distribute.
 
 <section class="community">
 <a class="slack" href="https://slack.appcircle.io">
-<img src="https://storage.googleapis.com/appcircle-prod-common/docs/assets/slack-logo.png" />
+<img src="https://cdn.appcircle.io/docs/assets/slack-logo.png" />
 <span>Slack Community</span>
 </a>
 <a class="videos" href="https://www.youtube.com/c/Appcircle">
-<img src="https://storage.googleapis.com/appcircle-prod-common/docs/assets/youtube-logo.png" />
+<img src="https://cdn.appcircle.io/docs/assets/youtube-logo.png" />
 <span>How-To Videos</span>
 </a>
 

@@ -1,7 +1,7 @@
 ---
-title: Upgrade Server
-metaTitle: Upgrade Server
-metaDescription: Upgrade Server
+title: Upgrading Server
+description: Learn how to upgrade self-hosted Appcircle server
+tags: [self-hosted server, update, upgrade]
 sidebar_position: 3
 ---
 
@@ -15,7 +15,7 @@ When a new version of self-hosted Appcircle is released, you can update with bel
 
 Prerequisites and dependencies are all same as installation steps. So we will keep it short in this page, try to document only update related details, and give references to installation when required.
 
-When you're in trouble with update, it will be useful to review details and warnings written in [installation](./install-server/docker.md) docs.
+When you're in trouble with update, it will be useful to review details and warnings written in [installation](/self-hosted-appcircle/install-server/docker) docs.
 
 :::
 
@@ -44,13 +44,21 @@ For example, to find the version for a project named "spacetech", run the follow
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.9.1.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.14.0.zip
 ```
+
+:::caution
+
+Upgrading from older versions to `v3.14.0` or later, requires MinIO migration that should be done interactively while upgrading.
+
+In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/configure-server/minio-migration) document.
+
+:::
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.9.1.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.14.0.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -59,7 +67,7 @@ Change directory into extracted `appcircle-server` folder for following steps.
 cd appcircle-server
 ```
 
-For other details and troubleshooting, you can refer to [download](./install-server/docker.md#1-download) section in installation docs.
+For other details and troubleshooting, you can refer to [download](/self-hosted-appcircle/install-server/docker#1-download) section in installation docs.
 
 :::info
 
@@ -89,13 +97,13 @@ sudo ./ac-self-hosted.sh -i
 
 You can also use the long option `--install-package` for the same purpose.
 
-For other details and troubleshooting, you can refer to [packages](./install-server/docker.md#2-packages) section in installation docs.
+For other details and troubleshooting, you can refer to [packages](/self-hosted-appcircle/install-server/docker#2-packages) section in installation docs.
 
 ### 3. Update Server
 
 :::info
 
-We're going on with the same sample scenario as in [installation](./install-server/docker.md#3-configure) steps.
+We're going on with the same sample scenario as in [installation](/self-hosted-appcircle/install-server/docker#3-configure) steps.
 
 Let's assume we have company named as Space Tech and our project name is "spacetech". For the following steps, we will give examples based on this fictive company for better understanding.
 
@@ -120,7 +128,7 @@ Then execute below command to update server.
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-For other details and troubleshooting, you can refer to [configuration](./install-server/docker.md#3-configure) section in installation docs.
+For other details and troubleshooting, you can refer to [configuration](/self-hosted-appcircle/install-server/docker#3-configure) section in installation docs.
 
 :::info
 
@@ -128,7 +136,7 @@ Although it's rare, self-hosted Appcircle may have a new service with its dedica
 
 If it was announced in release notes, you need to add new subdomain to your DNS server.
 
-All process is same as in installation, so refer to [DNS settings](./install-server/docker.md#4-dns-settings) section in installation docs for details.
+All process is same as in installation, so refer to [DNS settings](/self-hosted-appcircle/install-server/docker#4-dns-settings) section in installation docs for details.
 
 :::
 
@@ -147,6 +155,12 @@ Upgrade images.
 ```bash
 ./ac-self-hosted.sh -n "spacetech" upgrade
 ```
+
+:::caution
+If you are using a proxy on the server, then you should maintain the proxy variables.
+
+Please head to the [Maintenance of Proxy Variables](/docs/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
+:::
 
 Then start with below command.
 
@@ -174,7 +188,7 @@ For this reason, you may prefer to execute this step on an idle time in order to
 
 :::
 
-For other details and troubleshooting, you can refer to [run server](./install-server/docker.md#5-run-server) section in installation docs.
+For other details and troubleshooting, you can refer to [run server](/self-hosted-appcircle/install-server/docker#5-run-server) section in installation docs.
 
 ## Notes
 
@@ -182,7 +196,7 @@ For other details and troubleshooting, you can refer to [run server](./install-s
 
 Above explained update steps keep all your data consistent and compatible. On most cases, data loss is an undesired case for an update scenario.
 
-But if you want or need to reset your data for some reason, you can follow [reset configuration](./install-server/docker.md#reset-configuration) steps in installation docs.
+But if you want or need to reset your data for some reason, you can follow [reset configuration](/self-hosted-appcircle/install-server/docker#reset-configuration) steps in installation docs.
 
 :::
 
@@ -192,8 +206,8 @@ Although it's rare, self-hosted Appcircle may require also self-hosted runner up
 
 If it's required, it will be announced in self-hosted Appcircle release notes with minimum supported runner version.
 
-In order to update your self-hosted runners, refer to [update self-hosted runner](./self-hosted-runner/update.md) section in docs.
+In order to update your self-hosted runners, refer to [update self-hosted runner](/self-hosted-appcircle/self-hosted-runner/update) section in docs.
 
-For other details and troubleshooting, you can refer to [connecting runners](./install-server/docker.md#connecting-runners) section in installation docs.
+For other details and troubleshooting, you can refer to [connecting runners](/self-hosted-appcircle/install-server/docker#connecting-runners) section in installation docs.
 
 :::

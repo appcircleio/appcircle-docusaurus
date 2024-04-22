@@ -1,7 +1,7 @@
 ---
-title: Enterprise App Store Frequently Asked Questions (FAQ)
-metaTitle: Enterprise App Store Frequently Asked Questions (FAQ)
-metaDescription: Find answers to frequently asked questions about Appcircle's Enterprise App Store feature.
+title: Enterprise App Store FAQ
+description: Frequently asked questions about Enterprise App Store in Appcircle
+tags: [enterprise app store, app store, faq]
 sidebar_position: 2
 ---
 
@@ -29,7 +29,7 @@ Yes. You can customize your logo, primary and secondary color and the main text 
 
 ### How will users enter my App Store?
 
-Once you go to your store's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligable on Starter, Developer and Professional and AppSumo plans. Please contact sales@appcircle.io to request custom domains).
+Once you go to your store's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter, Developer, and Professional plans. Please contact sales@appcircle.io to request custom domains).
 
 ## Technical Questions
 
@@ -54,13 +54,3 @@ A download is calculated every time an app is downloaded from our servers. So a 
 ### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
 
 Not yet.
-
-## Appsumo Deal
-
-### **Why I can't redeem multiple coupons for the same account?**
-
-We've disabled coupon stacking due to prevent licensing issues.
-
-### **I'm already an Appcircle CI/CD customer. Can I apply AppSumo code?**
-
-Unfortunately, no.

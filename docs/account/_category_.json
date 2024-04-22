@@ -1,6 +1,6 @@
 {
-  "label": "MY ACCOUNT / MY ORGANIZATION",
-  "position": 16,
+  "label": "Account & Organization",
+  "position": 18,
   "collapsed": true,
   "collapsible": true,
   "className": "section-title account"

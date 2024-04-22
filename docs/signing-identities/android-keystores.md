@@ -1,7 +1,7 @@
 ---
 title: Android Keystores
-metaTitle: Android Keystores
-metaDescription: Android Keystores
+description: Learn how to manage Android keystores in Appcircle
+tags: [android, android keystores, keystore, signing, signing identities]
 sidebar_position: 2
 ---
 
