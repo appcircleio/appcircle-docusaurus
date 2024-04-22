@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 [Repeato](https://www.repeato.app) is a test automation platform designed for mobile applications. It enables developers to create, manage, and execute automated tests for mobile apps across different platforms and devices. Repeato supports various testing frameworks and provides features for test script creation, test execution, result analysis, and reporting. It helps streamline the testing process, improve test coverage, and enhance the overall quality of mobile applications.
 
-The **Repeato Test Runner** is a service integrated into the CI/CD workflow of Appcircle. It facilitates the execution of automated tests for mobile applications directly within Appcircle. This service allows developers to validate the functionality and performance of their mobile applications before deploying them, ensuring high-quality releases.
+The **Repeato Test Runner** integrates as a service within the Appcircle CI/CD workflow, streamlining the execution of automated tests directly within Appcircle. This service enables developers to validate the functionality and performance of their mobile applications before deployment, ensuring releases of high quality.
 
 For more information, please check out this blog post:
 
