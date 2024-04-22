@@ -15,7 +15,7 @@ This step sets up your SSH key in the build machine if you used one to connect y
 
 :::caution
 
-If you connected to your repository via SSH, you need to use this step before the [Git Clone](/workflows/common-workflow-steps/git-clone) step. In order to securely clone repositories connected via SSH, the SSH key must be defined for the relevant Build agent.
+If you connect to your repository via SSH, use this step before the [Git Clone](/workflows/common-workflow-steps/git-clone) step. To securely clone repositories connected via SSH, you must define the SSH key for the relevant build agent.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3151-sshOrder.png' />
 
@@ -36,4 +36,4 @@ Below are the parameters required for this step, along with detailed explanation
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
-| `$SSH_AUTH_SOCK`              | The path of the SSH Auth Socket.               | 
+| `$SSH_AUTH_SOCK`              | This is the path to the SSH Auth Socket.       | 
