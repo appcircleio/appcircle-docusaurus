@@ -77,7 +77,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$AC_FOD_ASSESSMENT_TYPE`     | Assessment type for this mobile assessment.                                                               | Required |
 | `$AC_FOD_FRAMEWORK_TYPE`      | Framework type for this mobile assessment.                                                                | Required |
 | `$AC_FOD_PLATFORM_TYPE`       | Platform type for this mobile assessment.                                                                 | Required |
-| `$AC_FOD_FILE_PATH`           | Full path of the artifact.                                                                                | Required |
+| `$AC_FOD_FILE_PATH`           | Full path of the `IPA` or `APK` file.                                                                     | Required |
 
 
 To access the source code of this component, please use the following link:
