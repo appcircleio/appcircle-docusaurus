@@ -12,13 +12,13 @@ import Screenshot from '@site/src/components/Screenshot';
 
 [**Appium Server**](https://appium.io/docs/en/latest/) is an open-source project and ecosystem of related software designed to facilitate the UI automation of many app platforms.
 
-With Appcircle's Appium Server component, you can easily integrate the **Appium CLI** into your pipeline by installing it.
+You can easily integrate the **Appium CLI** into your pipeline using Appcircle's Appium Server component by installing it.
 
 ### Prerequisites
 
 :::info
 
-There are no specific components required for this step to function. You can place it within the pipeline according to your own workflow.
+This step does not require any specific components to function. You can place it anywhere within your pipeline according to your workflow needs.
 
 :::
 
@@ -30,4 +30,4 @@ Below is a list of input variables that can be used with this component, with a 
 
 | Variable Name                 | Description                                    | Status           |
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_APPIUM_VERSION`          | Specifies the version of Appium Server to use. For example: `v1.22.3`. If no version is specified, the latest version will be installed. | Optional |
+| `$AC_APPIUM_VERSION`          | Specifies the version of Appium Server to install, such as `v1.22.3`. If you do not specify a version, the system installs the latest version. | Optional |
