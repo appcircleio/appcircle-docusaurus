@@ -172,7 +172,7 @@ When encountering this error, you will see the following log durint the Xcodebui
 ```
 DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_DIR instead (in target 'One of Project Target Name' from project 'Pods')
 ```
-We observed that this error occurs with Cocoapods version 1.12.1 and older. Therefore, to resolve this issue, you can either update your local Cocoapods version and make a new commit, or update the Cocoapods version during the workflow steps at the Cocoapods Install step.
+This error typically occurs with Cocoapods version 1.12.1 and older. To resolve it, update your local Cocoapods to a newer version and commit the changes, or update Cocoapods during the workflow at the Cocoapods Install step.
 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/faq-cocoapods-version.png'/>
@@ -182,7 +182,7 @@ The resolution for this error is available in Cocoapods version 1.13.0 or higher
 :::
 
 :::warning
-If you still encounter this issue after updating the Cocoapods version, please update your iOS minimum deployment target version to iOS 13.0 and higher. If this does not resolve the issue, you can use the script mentioned below.
+If the issue persists after updating Cocoapods, consider updating your iOS minimum deployment target to iOS 13.0 or higher. If the problem still remains, use the script provided below.
 :::
 
 :::caution
@@ -248,9 +248,9 @@ end
 
 ### iOS Minimum Deployment Target Error
 
-After the release of new Xcode and iOS versions, if your project contains pods or targets that are below a certain iOS version, you will encounter an error related to the simulator, as simulators no longer support versions below a specific iOS version. 
+Following the release of new Xcode and iOS versions, projects containing pods or targets below certain iOS versions may experience simulator-related errors due to unsupported older iOS versions.
 
-You will encounter an error like the following during the 'Xcodebuild for Devices' step:
+During the 'Xcodebuild for Devices' step, you may encounter an error similar to this:
 
 ```
 ld: file not found: /Volumes/xcode.14.x/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphoneos.a 
@@ -261,7 +261,7 @@ To prevent this error, please update the minimum deployment iOS versions for the
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/faq-xcode-target-version.png'/>
 
-For your pods, you can use the following script at the end of `Podfile`:
+For your pods, append the following script to the end of your `Podfile`:
 
 ```
 config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
