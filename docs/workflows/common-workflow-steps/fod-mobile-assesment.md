@@ -73,7 +73,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$AC_FOD_CLIENT_SECRET`       | Authenticating with client credentials. The client credentials are the API keys generated in the portal.  | Required |
 | `$AC_FOD_CLIENT_DATACENTER`   | Select the datacenter assigned to you upon your onboarding with Fortify on Demand.                        | Required |
 | `$AC_FOD_ENTITLEMENT_ID`      | The ID assigned to your current entitlement. You can retrieve this value in the Fortify on Demand portal. | Required |
-| `$AC_FOD_RELEASE_ID`          | The ID assigned to the created release. This value can be retrieved in the Foritfy on Demand portal.      | Required |
+| `$AC_FOD_RELEASE_ID`          | The ID assigned to the created release. This value can be retrieved in the Fortify on Demand portal.      | Required |
 | `$AC_FOD_ASSESSMENT_TYPE`     | Assessment type for this mobile assessment.                                                               | Required |
 | `$AC_FOD_FRAMEWORK_TYPE`      | Framework type for this mobile assessment.                                                                | Required |
 | `$AC_FOD_PLATFORM_TYPE`       | Platform type for this mobile assessment.                                                                 | Required |
