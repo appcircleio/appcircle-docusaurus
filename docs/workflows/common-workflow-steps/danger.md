@@ -10,9 +10,9 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Danger
 
-[Danger](https://danger.systems/ruby/) is a CI tool that allows you to automate code review. It not only helps code reviewers but also the developers who send pull requests. The reviewer spends less time doing chores and more time efficiently reviewing the code.
+[Danger](https://danger.systems/ruby/) automates code reviews through CI tools, aiding both code reviewers and developers who submit pull requests. It reduces the time reviewers spend on routine tasks, allowing more efficient code evaluation.
 
-PRs opened can be easily automated with Appcircle's Danger integration.
+You can easily automate opened PRs with Appcircle's Danger integration.
 
 For detailed information on the benefits that Danger, please refer to the following blog post:
 
@@ -34,7 +34,7 @@ The workflow steps that need to be executed before running the **Danger** step v
 
 :::caution
 
-Please note that this component works in synchronization with the [**Appcircle Triggers**](/build/build-process-management/build-manually-or-with-triggers/#managing-triggers-for-builds). If a trigger is not set up, the pipeline will not be triggered when a PR is opened, and therefore, Danger will not function.
+Note that this component synchronizes with the [**Appcircle Triggers**](/build/build-process-management/build-manually-or-with-triggers/#managing-triggers-for-builds). Without a setup trigger, opening a PR will not trigger the pipeline, and Danger will not function.
 
 :::
 
