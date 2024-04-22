@@ -10,13 +10,13 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # FTP Upload
 
-With Appcircle's FTP Upload (File Transfer Protocol) integration, you can easily upload any file generated within the pipeline to your desired FTP server.
+Appcircle's FTP Upload (File Transfer Protocol) integration lets you easily upload any file generated within the pipeline to your chosen FTP server.
 
 ### Prerequisites
 
 :::info
 
-There are no prerequisites for this step. It should be used following the step where the artifact is produced. For instance, as shown in the screenshot below, it is used immediately after the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) step. This sequence is arranged to send the `IPA` file produced in the pipeline to any **FTP server**.
+This step has no prerequisites but must follow the artifact production step. For example, as the screenshot below demonstrates, use it right after the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) step. This setup ensures the IPA file produced in the pipeline is sent to any **FTP server**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3153-ftpOrder.png' />
 
@@ -25,7 +25,7 @@ There are no prerequisites for this step. It should be used following the step w
 
 :::caution
 
-Please note that in order to send a file to an **FTP server**, the file must have been generated within the pipeline. This means that you need to use this step after the step where the desired file is produced. Otherwise, the **FTP Upload** step will **fail** to find the file and will result in an error.
+Note that to send a file to an **FTP server**, the file must be generated within the pipeline. Therefore, deploy this step only after the file production step. Failing to do so means the **FTP Upload** step cannot find the file, resulting in an error.
 
 :::
 
