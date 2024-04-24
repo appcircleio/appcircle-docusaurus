@@ -124,6 +124,27 @@ If you're using UI tests with emulators, you must select an Intel device (**Defa
 
 :::
 
+### Jacoco Test Coverage
+
+If you use the Jacoco tool for test coverage in your project, you can obtain coverage percentages from the test reports Jacoco generates. Jacoco calculates coverage percentages using six different methods, and the coverage percentage will be calculated based on the selected method.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be2556-jacocoCoverage2.png" />
+
+:::info
+These methods range from the most detailed coverage percentage to the most general:
+
+- **INSTRUCTION**: JaCoCo counts the smallest unit of single Java bytecode instructions.
+- **BRANCH**: JaCoCo also calculates branch coverage for all if and switch statements.
+- **COMPLEXITY**: JaCoCo also calculates cyclomatic complexity for each non-abstract method and summarizes complexity for classes, packages and groups.
+- **LINE**: For all class files that have been compiled with debug information, coverage information for individual lines can be calculated.
+- **METHOD**: JaCoCo considers a method as executed when at least one instruction has been executed. Since JaCoCo works at the bytecode level, it counts constructors and static initializers as methods.
+- **CLASS**: JaCoCo considers a class as executed when at least one of its methods has been executed. JaCoCo counts constructors and static initializers as methods.
+:::
+
+:::warning
+Each calculation type has different coverage percentages. This is because each type has its own level of detail. Therefore, the coverage percentages are different for each one. 
+:::
+
 ### Showing Test Reports
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
