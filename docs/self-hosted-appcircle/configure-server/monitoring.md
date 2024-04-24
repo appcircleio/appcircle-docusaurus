@@ -59,9 +59,13 @@ keycloak:
 
 ## Retention Period of Logs
 
-Retention in logging refers to the duration for which log data is stored before being deleted or archived. It's used to manage storage space, optimize system performance, and ensure compliance with regulatory requirements.
+Retention period refers to the duration for which log data is stored before being deleted or archived. It's used to manage storage space, optimize system performance, and ensure compliance with regulatory requirements.
 
-By default, the retention period for the Appcircle server logs are 720 hours (30 days).
+### Retention Period on Loki
+
+The Appcircle server logs will be stored in the Loki. So the queries and filters that you run from the Grafana UI will run on the Loki side.
+
+The logs in the loki should be cleaned automatically. By default, the retention period for the Appcircle server logs on the Loki side are 720 hours (30 days).
 
 If you want to change this, you can edit the `global.yaml` of your project.
 
@@ -75,6 +79,36 @@ Add or change the retention period variable.
 loki:
   retentionPeriod: 168h # 7 days
 ```
+
+### Retention on Systemd
+
+The Appcircle server and other system services also transmit their logs to the Journald log driver. However, once Appcircle server logs are successfully forwarded to Loki, the local server logs become redundant and can be safely deleted.
+
+If you wish to configure a maximum size limit for automatic log deletion on the Journald, you can modify the relevant configuration settings.
+
+:::info
+Modifying the Journald configuration requires elevated privileges with `sudo` permissions, as it involves altering system-level settings.
+:::
+
+Edit the Journald config file.
+
+```bash
+sudo vim /etc/systemd/journald.conf
+```
+
+Uncomment or add the `SystemMaxUse` variable in the configuration file and assign it the desired value, such as `200M` for a 200 megabyte limit.
+
+```bash
+SystemMaxUse=200M
+```
+
+Restart the Systemd journal service to apply the changes.
+
+```bash
+sudo systemctl restart systemd-journald
+```
+
+With this configuration change, the Journald log driver will now utilize a maximum of 200 megabytes of disk space for storing logs.
 
 ## Filtering Logs
 
