@@ -2,6 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const { themes } = require("prism-react-renderer");
+const remarkExternalUrlRef = require("./src/plugins/remark-externalUrlRef");
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -25,7 +26,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          remarkPlugins: [],
+          remarkPlugins: [remarkExternalUrlRef],
           // Please change this to your repo.
           editUrl:
             "https://github.com/appcircleio/appcircle-docusaurus/tree/master/",

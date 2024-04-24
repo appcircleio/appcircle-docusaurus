@@ -1,0 +1,104 @@
+.erc-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  background-color: var(--ifm-background-color); /* Light mode background */
+  color: var(--ifm-color-primary); /* Light mode text color */
+}
+
+.erc-container:hover {
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.erc-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.erc-title {
+  font-weight: 600;
+  color: #0366d6;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.erc-description {
+  color: #586069;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.erc-url {
+  color: #586069;
+  font-size: 12px;
+}
+
+.erc-image-container {
+  flex: 0 1 auto;
+  max-width: 30%; /* Set a max-width for larger screens */
+  margin-right: 16px;
+}
+
+.erc-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px; /* Optional: if you want rounded corners */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .erc-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .erc-image-container {
+    max-width: 100%; /* Full width on small screens */
+    width: 100%; /* Full width on small screens */
+  }
+
+  .erc-content {
+    order: 2; /* Text content comes after the image */
+  }
+
+  .erc-image {
+    display: none;
+  }
+}
+
+html[data-theme="dark"] {
+  --erc-container-bg: #333; /* Dark mode container background */
+  --erc-text-color: #ddd; /* Dark mode text color */
+  --erc-border-color: #555; /* Dark mode border color */
+  --erc-shadow-color: rgba(255, 255, 255, 0.1); /* Dark mode shadow color */
+}
+
+html[data-theme="dark"] .erc-container {
+  background-color: var(--erc-container-bg);
+  color: var(--erc-text-color);
+  border-color: var(--erc-border-color);
+}
+
+html[data-theme="dark"] .erc-container:hover {
+  background-color: var(--erc-container-bg);
+  box-shadow: 0 4px 30px 0 var(--erc-shadow-color);
+}
+
+html[data-theme="dark"] .erc-title {
+  color: var(--erc-text-color);
+}
+
+html[data-theme="dark"] .erc-description,
+html[data-theme="dark"] .erc-url {
+  color: var(--erc-text-color);
+}
