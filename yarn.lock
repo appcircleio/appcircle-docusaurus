@@ -2816,11 +2816,6 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@untitaker/hyperlink@^0.1.31":
-  version "0.1.31"
-  resolved "https://registry.yarnpkg.com/@untitaker/hyperlink/-/hyperlink-0.1.31.tgz#3bd1312378e2b59b089db1bb0e0c0457c9d0370f"
-  integrity sha512-qalkLdZkZ5Ymu3RH5jWblY6+Rmg+0zmtYy8xHoKghq458BQKKcfezD8Uj7oynm/7jwkyNBxfqI/EaVGzVQr2/g==
-
 "@webassemblyjs/ast@1.12.1", "@webassemblyjs/ast@^1.12.1":
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.12.1.tgz#bb16a0e8b1914f979f45864c23819cc3e3f0d4bb"

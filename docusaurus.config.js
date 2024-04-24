@@ -15,9 +15,12 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  onBrokenAnchors: "throw",
+  onDuplicateRoutes: "warn",
   favicon: "img/favicon.ico",
   organizationName: "appcircleio", // Usually your GitHub org/user name.
   projectName: "appcircle-docusaurus", // Usually your repo name.
+  trailingSlash: false,
 
   presets: [
     [

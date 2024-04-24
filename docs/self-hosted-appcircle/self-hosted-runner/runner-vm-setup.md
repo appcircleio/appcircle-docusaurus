@@ -647,7 +647,7 @@ touch $HOME/runner1/.stop
 
 Creating `.stop` file prevents creating new instance by `run.sh` on shutdown.
 
-If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](../self-hosted-runner/configure-runner/runner-service#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
+If runner is executing build pipeline, you may prefer waiting completion of the build job. See [stop](/self-hosted-appcircle/self-hosted-runner/configure-runner/runner-service#stop) section at self-hosted runner docs. When executing build pipeline completes, runner will be shutdown automatically.
 
 On the other hand if you want to stop runner immediately for whatever reason or it's in idle state, you can SSH into runner and run shutdown command.
 

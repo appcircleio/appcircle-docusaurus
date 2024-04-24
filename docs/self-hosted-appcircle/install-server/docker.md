@@ -295,7 +295,7 @@ storeWeb:
 
 In later steps, other system subdomains will be concatted to main domain. For this reason, `external.mainDomain` in configuration file must always begin with `.` character as prefix.
 
-You can see a list of these subdomains in [here](./docker#4-dns-settings).
+You can see a list of these subdomains in [here](/self-hosted-appcircle/install-server/docker#4-dns-settings).
 
 :::
 
@@ -332,7 +332,7 @@ storeWeb:
 For our example, we configured below values:
 
 - `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
-- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](./docker#4-dns-settings) for more details.
+- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](/self-hosted-appcircle/install-server/docker#4-dns-settings) for more details.
 - `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
@@ -352,13 +352,13 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](./docker#5-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/docker#5-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
 ```
 
-In this case, before updating initial password in `global.yaml`, you need to **stop** partially started docker services with below command. See [reset configuration](./docker#reset-configuration) section for more details.
+In this case, before updating initial password in `global.yaml`, you need to **stop** partially started docker services with below command. See [reset configuration](/self-hosted-appcircle/install-server/docker#reset-configuration) section for more details.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" reset
@@ -657,7 +657,7 @@ In this case, stop all services with data cleanup.
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-Then make a new export and start services. Refer to [reset configuration](./docker#reset-configuration) section for more details.
+Then make a new export and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/docker#reset-configuration) section for more details.
 
 :::
 
@@ -680,7 +680,7 @@ sudo netstat -tulpn | grep LISTEN | grep docker
 
 #### Using 3rd Party or Self-hosted Artifact Registry
 
-If your organization uses another registry (harbor, nexus, etc.), in order to use the Appcircle registry, you can head to the [External Image Registries](../configure-server/external-image-registry) document for detailed usage and configuration examples.
+If your organization uses another registry (harbor, nexus, etc.), in order to use the Appcircle registry, you can head to the [External Image Registries](/self-hosted-appcircle/configure-server/external-image-registry) document for detailed usage and configuration examples.
 
 ### :tada: Ready
 
@@ -752,13 +752,13 @@ It will remove all unused local volumes which is useful for a clean start.
 
 :::
 
-Then go back to your configuration and change settings as done previously at [configure](./docker#3-configure) step.
+Then go back to your configuration and change settings as done previously at [configure](/self-hosted-appcircle/install-server/docker#3-configure) step.
 
 When you're ready for a new export, in root directory execute below command again as done previously.
 
 :::info
 
-For our example scenario, root directory is `appcircle-server` as seen [here](./docker#1-download). And project name is "spacetech".
+For our example scenario, root directory is `appcircle-server` as seen [here](/self-hosted-appcircle/install-server/docker#1-download). And project name is "spacetech".
 
 :::
 
