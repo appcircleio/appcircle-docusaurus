@@ -1,7 +1,7 @@
 ---
 title: Create a Distribution Profile and Sharing with Testers
-metaTitle: Create a Distribution Profile and Sharing with Testers
-metaDescription: Create a Distribution Profile and Sharing with Testers
+description: Learn how to create a distribution profile and share your builds with testers in Appcircle
+tags: [distribution, distribution profile, testing distribution, testers]
 sidebar_position: 1
 ---
 

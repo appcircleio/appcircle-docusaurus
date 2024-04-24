@@ -1,8 +1,9 @@
 ---
-title: Amazon Web Services (AWS)
-metaTitle: Amazon Web Services (AWS)
-metaDescription: Appcircle Server on AWS
+title: Amazon Web Services (AWS) Integration
+description: Learn how to create an Appcircle server instance on Amazon Web Services (AWS)
+tags: [self-hosted, appcircle server, aws, amazon web services, EC2, AMI]
 sidebar_position: 1
+sidebar_label: Amazon Web Services (AWS)
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -83,7 +84,7 @@ You should fill out the required fields as per your needs. Please follow the bel
 - We will use the `t3.2xlarge` instance type for our sample configuration since it meets the minimum requirements for the vCPU count.
 
 :::info
-For the details about minimum hardware requirements, you should see the [Hardware Requirements](../docker.md#hardware-requirements) section.
+For the details about minimum hardware requirements, you should see the [Hardware Requirements](../docker#hardware-requirements) section.
 :::
 
 - Select an existing key pair or click on the "Create new key pair" button if you don't have any on the AWS console.
@@ -102,7 +103,7 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 - For storage, you can select a minimum 100-GB disk for a PoC setup or testing purposes.
 
 :::info
-You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](../docker.md#hardware-requirements) section.
+You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](../docker#hardware-requirements) section.
 :::
 
 :::caution
@@ -152,6 +153,7 @@ If you want to also send `ping` requests to the instance for health check purpos
 After you have successfully created an EC2 instance from the Appcircle server AMI, you can follow the steps below to configure it.
 
 - Get the IP address of the instance from EC2 dashboard.
+
   - Networking > Networking Details > Public IPv4 address
   - Or, Instance > Details > Public IPv4 address
 
@@ -229,7 +231,7 @@ cd "$HOME/appcircle-server"
 
 :::info
 
-**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](../../update.md) the pre-installed package in the instance.
+**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](/self-hosted-appcircle/update) the pre-installed package in the instance.
 
 Also, put the `cred.json` file you received from us into the `appcircle-server` folder.
 
@@ -237,11 +239,11 @@ Please [contact us](https://appcircle.io/support/) to purchase an enterprise lic
 
 :::
 
-Now you're ready to configure the Appcircle server according to your needs. Follow the detailed [configuration](../docker.md#3-configure) steps.
+Now you're ready to configure the Appcircle server according to your needs. Follow the detailed [configuration](../docker#3-configure) steps.
 
-You should also configure the [DNS](../docker.md#4-dns-settings) settings for your Appcircle server instance. Create `A` and `CNAME` records for your instance.
+You should also configure the [DNS](../docker#4-dns-settings) settings for your Appcircle server instance. Create `A` and `CNAME` records for your instance.
 
-After the configuration is done, [run the server](../docker.md#5-run-server) and go to the Appcircle server dashboard using the main [domain](../docker.md#4-dns-settings) you defined.
+After the configuration is done, [run the server](../docker#5-run-server) and go to the Appcircle server dashboard using the main [domain](../docker#4-dns-settings) you defined.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws22-dashboard.png' />
 
@@ -249,7 +251,13 @@ After the configuration is done, [run the server](../docker.md#5-run-server) and
 
 When you complete installation successfully by following the above steps, you're ready for your first build. :tada:
 
-But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply related the guidelines [here](../../self-hosted-runner/installation.md).
+But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply related the guidelines [here](/self-hosted-appcircle/self-hosted-runner/installation).
+
+:::tip
+Appcircle also supports the installation and execution of the runners on AWS.
+
+You can see the details about how to configure a runner on AWS **[here](/self-hosted-appcircle/self-hosted-runner/cloud-providers/aws)**.
+:::
 
 The self-hosted runner section in the documents has all the details about runners and their configuration.
 
@@ -261,15 +269,15 @@ By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_U
 
 :point_up: You need to change its value with your self-hosted Appcircle server's API URL.
 
-Assuming our sample scenario explained in [configuration](../docker.md#3-configure), its value should be
+Assuming our sample scenario explained in [configuration](../docker#3-configure), its value should be
 
 - `http://api.appcircle.spacetech.com/build/v1`
 
 for our sample scenario.
 
-:reminder_ribbon: After [download](../../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
 
-Please note that you should do this before [registering](../../self-hosted-runner/installation.md#2-register).
+Please note that you should do this before [registering](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
 :::
 

@@ -1,7 +1,7 @@
 ---
 title: Android Emulators
-metaTitle: Android Emulators
-metaDescription: Android Emulators
+description: Learn how to use Android emulators on self-hosted runners in Appcircle
+tags: [self-hosted runner, android emulator, android, emulator, pipeline]
 sidebar_position: 4
 ---
 
@@ -57,6 +57,12 @@ Based on: Android 11.0 (R)
  Tag/ABI: google_apis/arm64-v8a
   Sdcard: 512 MB
 ```
+
+:::caution
+Self-hosted installation checks machine architecture and decides whether to install the default Android emulator on the machine.
+
+If the machine does not support nested virtualization, it will not install the Android emulator with a warning message indicating the case.
+:::
 
 ## Emulators on Linux
 

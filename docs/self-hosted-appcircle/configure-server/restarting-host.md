@@ -1,7 +1,7 @@
 ---
 title: Restarting Host
-metaTitle: Restarting Host and Appcircle Server
-metaDescription: Restarting Host and Appcircle Server
+description: Learn how to enable automatic startup of your Appcircle server.
+tags: [self-hosted, server, restart, automatic startup]
 sidebar_position: 6
 ---
 
