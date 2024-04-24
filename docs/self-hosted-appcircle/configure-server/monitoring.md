@@ -57,6 +57,25 @@ keycloak:
   initialPassword: SuperSecretPassword
 ```
 
+## Retention Period of Logs
+
+Retention in logging refers to the duration for which log data is stored before being deleted or archived. It's used to manage storage space, optimize system performance, and ensure compliance with regulatory requirements.
+
+By default, the retention period for the Appcircle server logs are 720 hours (30 days).
+
+If you want to change this, you can edit the `global.yaml` of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+Add or change the retention period variable.
+
+```yaml
+loki:
+  retentionPeriod: 168h # 7 days
+```
+
 ## Filtering Logs
 
 After successfully authenticating with the Grafana user interface, you can commence filtering and exploring log data by navigating to the "Explore" menu.
