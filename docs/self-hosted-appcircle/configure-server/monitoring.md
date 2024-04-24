@@ -130,6 +130,15 @@ Upon executing the query by clicking the "Run query" button, the log entries gen
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-3-view-logs.png' />
 
+You can also filter words. For example you can filter any log line that contain "error" word.
+
+1. Select the `container` and relevant container.
+2. Change filter to `Line contains case insensitive` for a case insensitive search.
+3. Write "error" to the input.
+4. Select the date time and hit "Run query" button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-6-filter-errors.png' />
+
 ## Downloading and Sharing the Logs
 
 If you want to download and share the logs after you [filter](#filtering-logs), you can the same UI.
