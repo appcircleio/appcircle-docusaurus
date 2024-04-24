@@ -24,7 +24,7 @@ To access and use the monitoring capabilities, you must be running Appcircle ser
 <SpacetechExampleInfo />
 
 :::info
-We will use `.appcircle.spacetech.io` example URLs below. You should change this domain with your own Appcircle domain.
+We will use `.appcircle.spacetech.com` example URLs below. You should change this domain with your own Appcircle domain.
 :::
 
 The Grafana monitoring UI is accessible by default through the `monitor` subdomain. In our example, the full domain URL is `monitor.appcircle.spacetech.com`.
