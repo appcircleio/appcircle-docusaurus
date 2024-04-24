@@ -51,3 +51,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$AC_APPCENTER_VERSION`       | The latest version will be used if no version is set. | Optional |
 | `$AC_APPCENTER_EXTRA`         | Extra command line arguments for appcenter. For example, add `--debug` for verbose logs. | Optional |
 
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcenter-codepush-component
