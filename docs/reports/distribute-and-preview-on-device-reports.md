@@ -1,21 +1,21 @@
 ---
-title: Distribute Reports
-metaTitle: Distribute Reports
-metaDescription: Distribute Reports
+title: Distribution Activity Reports
+description: Distribution Activity Reports in Appcircle
+tags: [reports, distribution activity reports]
 sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Distribute Reports
+# Distribution Activity Reports
 
 ## App Versions Report
 
-This report is accessible from the Distribute module.
+This report is accessible from the Testing Distribution.
 
 App Versions Report contains the list of binaries deployed to a distribution profile in a given time period.
 
-<ContentRef url="../distribute/create-or-select-a-distribution-profile">
+<ContentRef url="/distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 
@@ -23,11 +23,17 @@ Each version is defined as an app binary for iOS and Android deployed manually o
 
 The date and time are displayed in the current timezone.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (13).png' />
+You can filter the report pages according to the organization.
+
+:::info
+In the filtering options, you can only view and select the organization and sub-organization you belong to.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/app-version-new.png' />
 
 ## App Sharing Report
 
-This report is accessible from the Distribute module.
+This report is accessible from the Testing Distribution.
 
 App Sharing Report list of app versions sent to the testers in a given time period.
 
@@ -35,4 +41,10 @@ Each line indicates an individual share operation conducted using the "Share wit
 
 The date and time are displayed in the current timezone.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (14).png' />
+You can filter the report pages according to the organization.
+
+:::info
+In the filtering options, you can only view and select the organization and sub-organization you belong to.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/app-sharing-new.png' />

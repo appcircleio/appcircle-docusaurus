@@ -1,29 +1,31 @@
 ---
-title: iOS Versioning
-metaTitle: iOS Versioning
-metaDescription: iOS Versioning
+title: Understanding iOS Versioning
+description: Learn how to manage versioning for iOS applications in Appcircle
+tags: [versioning, ios]
 sidebar_position: 2
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
 import VersionPlayground from '@site/src/components/VersionPlayground';
-import NarrowImage from '@site/src/components/NarrowImage';
+import Screenshot from '@site/src/components/Screenshot';
 
 ## Enabling Version Management
 
 In order to manage build and version numbers with Appcircle, two requirements must be met:
 
-- The build's Version Management toggle must be turned on and required input values must be entered
-- **Increment Build and Version Number** component 2.0.* or higher must be in your workflow
+- The build's Version Management toggle must be turned on and required input values must be entered.
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/ios-versioning1.png" />
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/ios-versioning2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/versioning-ios-configuration.png" />
+
+- **Increment Build and Version Number** component `2.0.*` or higher must be in your workflow.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/versioning-ios-workflow.png" />
 
 The Versioning tab manages the input values of the component. It is not recommended to change the values of the component with the workflow editor. Instead, it would be best if you always used the Versioning UI to manage the settings.
 
 ### Managing Build Number
-The versioning system needs a build number source and an offset to calculate the new build number. There are two source types for the build number. 
 
+The versioning system needs a build number source and an offset to calculate the new build number. There are two source types for the build number.
 
 **Build Number Source**
 
@@ -36,11 +38,11 @@ If you select Xcode, the build number will be read from the given Xcode project.
 
 **Offset**
 
-If you select `$AC_BUILD_NUMBER` as your build number source, the build number in your project can be different. To synchronize build numbers, you can use the offset. The offset value is a number to be added or subtracted from the *Build Number Source*. Negative values can be written such as -10.
+If you select `$AC_BUILD_NUMBER` as your build number source, the build number in your project can be different. To synchronize build numbers, you can use the offset. The offset value is a number to be added or subtracted from the _Build Number Source_. Negative values can be written such as -10.
 
 ### Managing Version Number
-The versioning system needs a version number source and an offset to calculate the new version number. There are three source types for the build number. 
 
+The versioning system needs a version number source and an offset to calculate the new version number. There are three source types for the build number.
 
 **Version Number Source**
 
@@ -58,61 +60,61 @@ Please be aware that selecting this option is not a foolproof method. App Store 
 
 **Offset**
 
-To synchronize version numbers, you can use the offset. The offset value is a number to be added or subtracted from the *Version Number Source*. Negative values can be written such as -10.
+To synchronize version numbers, you can use the offset. The offset value is a number to be added or subtracted from the _Version Number Source_. Negative values can be written such as -10.
 
 **Increment**
 
 You can increase the major, minor, or patch value of the build number. For version number 2.5.1, values can be summarized below.
 
-|Part |Value|
-|-----|-----|
-|Major|  2  |
-|Minor|  5  |
-|Patch|  1  |
+| Part  | Value |
+| ----- | ----- |
+| Major | 2     |
+| Minor | 5     |
+| Patch | 1     |
 
 **Omit Zero Patch Version**
 
-If true, omits zero in the patch version. So *42.10.0* will become *42.10* and *42.10.1* will remain *42.10.1*. The default is false.
+If true, omits zero in the patch version. So _42.10.0_ will become _42.10_ and _42.10.1_ will remain _42.10.1_. The default is false.
 
 ### Advanced Settings
 
-<NarrowImage src="https://cdn.appcircle.io/docs/assets/ios-versioning3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/versioning-ios-configuration-advanced.png" />
 
-This component updates all runnable targets. If you only want to update selected targets, enable the `MANUALLY SELECTED TARGETS` option and write the targets' names. 
+This component updates all runnable targets. If you only want to update selected targets, enable the `MANUALLY SELECTED TARGETS` option and write the targets' names.
 
 The versioning system will update the project's build or version number according to the target's release configuration. If you want to use another `xcconfig` please enable the `MANUALLY SELECTED XCCONFIG` toggle and write the name of the `xcconfig`.
 
 ### Output Values
-After the build or version number update, new values will be written to two environment variables. 
 
-|Value |Explanation|
-|-----|-----|
-|`$AC_IOS_NEW_BUILD_NUMBER`| Changed build number|
-|`$AC_IOS_NEW_VERSION_NUMBER`| Changed version number|
+After the build or version number update, new values will be written to two environment variables.
 
-You can use the above values in the remaining steps of your workflow. 
+| Value                        | Explanation            |
+| ---------------------------- | ---------------------- |
+| `$AC_IOS_NEW_BUILD_NUMBER`   | Changed build number   |
+| `$AC_IOS_NEW_VERSION_NUMBER` | Changed version number |
+
+You can use the above values in the remaining steps of your workflow.
 
 ### Best Practices
 
 The versioning system works by consuming environment variables. Even though it's easier to configure it by using UI, sometimes you may want to change them on the fly. Your commit messages or tags can be used to override those settings. The name of the variables and expected values can be found below.
 
-|Value |Explanation|
-|-----|-----|
-|`$AC_BUILD_NUMBER_SOURCE`| Build number source type(env,xcode)|
-|`$AC_IOS_BUILD_NUMBER`| Build number to set. If `$AC_BUILD_NUMBER_SOURCE` is set to xcode, this variable will be read from the project|
-|`$AC_BUILD_OFFSET` | The number to be added or subtracted from the `$AC_IOS_BUILD_NUMBER`|
-|`$AC_VERSION_NUMBER_SOURCE` | Version number source type(env,xcode,appstore)|
-|`$AC_IOS_VERSION_NUMBER` | Version number to set. If `$AC_VERSION_NUMBER_SOURCE` is set to xcode, this variable will be read from the project|
-|`$AC_VERSION_STRATEGY` | Version Increment Strategy|
-|`$AC_VERSION_OFFSET` | The number to be added or subtracted from the `$AC_IOS_VERSION_NUMBER`|
-|`$AC_IOS_CONFIGURATION_NAME` | Xcode Configuration to extract build number and version number|
-|`$AC_TARGETS` | Name of the targets to update|
-|`$AC_OMIT_ZERO_PATCH_VERSION` | If true omits zero in patch version|
-|`$AC_BUNDLE_ID` | If the build number source is appstore, this variable should have the bundle id of your application.|
-|`$AC_APPSTORE_COUNTRY` | If the build Number source is appstore and the app is only available in some countries, set the country code. Ex. us|
+| Value                         | Explanation                                                                                                          |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `$AC_BUILD_NUMBER_SOURCE`     | Build number source type(env,xcode)                                                                                  |
+| `$AC_IOS_BUILD_NUMBER`        | Build number to set. If `$AC_BUILD_NUMBER_SOURCE` is set to xcode, this variable will be read from the project       |
+| `$AC_BUILD_OFFSET`            | The number to be added or subtracted from the `$AC_IOS_BUILD_NUMBER`                                                 |
+| `$AC_VERSION_NUMBER_SOURCE`   | Version number source type(env,xcode,appstore)                                                                       |
+| `$AC_IOS_VERSION_NUMBER`      | Version number to set. If `$AC_VERSION_NUMBER_SOURCE` is set to xcode, this variable will be read from the project   |
+| `$AC_VERSION_STRATEGY`        | Version Increment Strategy                                                                                           |
+| `$AC_VERSION_OFFSET`          | The number to be added or subtracted from the `$AC_IOS_VERSION_NUMBER`                                               |
+| `$AC_IOS_CONFIGURATION_NAME`  | Xcode Configuration to extract build number and version number                                                       |
+| `$AC_TARGETS`                 | Name of the targets to update                                                                                        |
+| `$AC_OMIT_ZERO_PATCH_VERSION` | If true omits zero in patch version                                                                                  |
+| `$AC_BUNDLE_ID`               | If the build number source is appstore, this variable should have the bundle id of your application.                 |
+| `$AC_APPSTORE_COUNTRY`        | If the build Number source is appstore and the app is only available in some countries, set the country code. Ex. us |
 
-
-Since you can use any environment variables for the build and version numbers, you can consume Appcircle's various environment variables during the build. Appcircle gives plenty of information related to your repo and project. 
+Since you can use any environment variables for the build and version numbers, you can consume Appcircle's various environment variables during the build. Appcircle gives plenty of information related to your repo and project.
 
 Let's see a couple of ways to utilize those values.
 
@@ -138,7 +140,7 @@ Just add this script as a custom script above the Increment iOS Version Componen
 
 **Using Tags**
 
-It is also possible to extract the version number from the Git tags. The following example assumes that the commit has a single tag. If you tag your version with `release-1.2.3`, the following script will extract the version number from the tag. 
+It is also possible to extract the version number from the Git tags. The following example assumes that the commit has a single tag. If you tag your version with `release-1.2.3`, the following script will extract the version number from the tag.
 
 ```ruby
 commit_message = ENV['AC_COMMIT_TAGS']

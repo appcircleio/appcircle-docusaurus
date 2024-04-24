@@ -1,16 +1,15 @@
 ---
-title: Enterprise Store Reports
-metaTitle: Enterprise Store Reports
-metaDescription: Enterprise Store Reports
+title: Store Reports
+description: Learn how to view the reports of your Enterprise App Store in Appcircle
+tags: [enterprise app store, reports]
 sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Enterprise Store Reports
+# Enterprise App Store Reports
 
-
-You can get the reports of your Enterprise Store from this screen. The reports screen allows you to see the following data with a clear and concise user interface
+You can get the reports of your Enterprise App Store from this screen. The reports screen allows you to see the following data with a clear and concise user interface
 
 - App name
 - Users
@@ -20,10 +19,14 @@ You can get the reports of your Enterprise Store from this screen. The reports s
 - User's OS
 - Download Date
 
-You can filter your results by users, date, or app name. It is also possible to hide some entries from the pie chart by clicking on the legends.
+You can filter your results by organization, users, date, or app name. It is also possible to hide some entries from the pie chart by clicking on the legends.
 
 :::info
+In the filter options, you can only view and select the organization and sub-organization you belong to.
+:::
+
+:::caution
 If you are working for a sub-organization, you can only see the reports of the applications belonging to that organization in the reports section.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-reports.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-reports-new.png' />

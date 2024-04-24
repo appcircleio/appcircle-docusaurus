@@ -1,8 +1,8 @@
 ---
 title: Podman
-metaTitle: Podman
-metaDescription: Appcircle Server on Podman
-sidebar_position: 3
+description: Learn how to install and configure self-hosted Appcircle server with Podman
+tags: [self-hosted, podman, installation, configuration]
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -88,6 +88,34 @@ The `swappiness` parameter configures how often your system swaps data out of RA
 
 The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.3.0 or higher.
 
+#### Enabling the Linger Option
+
+To ensure uninterrupted operation of the Appcircle server's background processes, you must enable the **linger** option on the host system.
+
+Enabling this option allows the podman containers to persist even after user logouts, ensuring continuous functionality.
+
+Check if the **linger** option is enabled for the current user with the below command.
+
+```bash
+loginctl show-user "$USER" --property=Linger
+```
+
+If you see `Linger=yes`, it means that the option is enabled and you do not need extra configuration.
+
+If the output is `Linger=no`, this means that the option is disabled and you cannot run the Appcircle server in the background.
+
+:::caution
+If the **linger** option is set to `no`, you must enable it to run the Appcircle server in the background.
+:::
+
+To enable the linger option, you can use the command below:
+
+```bash
+loginctl enable-linger
+```
+
+You can run the Appcircle server in the background now.
+
 #### Overcoming Privileged Port Limitations
 
 When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443.
@@ -166,13 +194,13 @@ You need to have the following tools installed on your system:
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.9.1.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.14.0.zip
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.9.1.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.14.0.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -238,7 +266,7 @@ sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
 - Edit the /etc/containers/containers.conf file.
 
 ```bash
-sudo vim /etc/containers/container.conf
+sudo vi /etc/containers/containers.conf
 ```
 
 - Add the following content to the [network] section:
@@ -248,8 +276,18 @@ network_backend="netavark"
 ```
 
 - Save the file.
-- Reset Podman by running the command: `podman system reset`
-- Reboot the system using the command: `sudo reboot`
+
+- Reset Podman:
+
+```bash
+podman system reset
+```
+
+- Reboot the system:
+
+```bash
+sudo reboot
+```
 
 :::caution
 If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
@@ -367,10 +405,10 @@ If you want a secret used from `global.yaml`, then it should not be in `user-sec
 ```yaml
 ---
 environment: Production
-enableErrorHandling: 'true'
+enableErrorHandling: "true"
 external:
   scheme: http
-  mainDomain: '.example.com'
+  mainDomain: ".example.com"
 
 smtpServer:
   user:
@@ -396,7 +434,7 @@ storeWeb:
 
 In later steps, other system subdomains will be concatted to main domain. For this reason, `external.mainDomain` in configuration file must always begin with `.` character as prefix.
 
-You can see a list of these subdomains in [here](./podman.md#4-dns-settings).
+You can see a list of these subdomains in [here](./podman#4-dns-settings).
 
 :::
 
@@ -405,20 +443,20 @@ As an example, we can change some variables like below according to our fictive 
 ```yaml
 ---
 environment: Production
-enableErrorHandling: 'true'
+enableErrorHandling: "true"
 external:
   scheme: http
-  mainDomain: '.appcircle.spacetech.com'
+  mainDomain: ".appcircle.spacetech.com"
 
 smtpServer:
   user: o***y*****@v******.net
   from: o***y*****@v******.net
   host: smtp.v******.net
   fromDisplayName: Space Tech
-  port: '587'
-  ssl: 'false'
-  auth: 'true'
-  starttls: 'true'
+  port: "587"
+  ssl: "false"
+  auth: "true"
+  starttls: "true"
 keycloak:
   initialUsername: admin@spacetech.com
   enabledRegistration: true
@@ -433,7 +471,7 @@ storeWeb:
 For our example, we configured below values:
 
 - `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
-- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](./podman.md#4-dns-settings) for more details.
+- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](./podman#4-dns-settings) for more details.
 - `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
@@ -453,13 +491,13 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](./podman.md#5-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](./podman#5-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
 ```
 
-In this case, before updating initial password in `global.yaml`, you need to **stop** partially started podman services with below command. See [reset configuration](./podman.md#reset-configuration) section for more details.
+In this case, before updating initial password in `global.yaml`, you need to **stop** partially started podman services with below command. See [reset configuration](./podman#reset-configuration) section for more details.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" reset
@@ -758,7 +796,7 @@ In this case, stop all services with data cleanup.
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-Then make a new export and start services. Refer to [reset configuration](./podman.md#reset-configuration) section for more details.
+Then make a new export and start services. Refer to [reset configuration](./podman#reset-configuration) section for more details.
 
 :::
 
@@ -793,156 +831,13 @@ By default, the Appcircle server containers do not start automatically upon rebo
 
 To enable automatic startup of the Appcircle server containers, additional steps are required.
 
-For detailed instructions on configuring the automatic startup of the server containers upon server reboot, please refer to the [Restarting Host](../configure-server/restarting-host.md) page.
+For detailed instructions on configuring the automatic startup of the server containers upon server reboot, please refer to the [Restarting Host](../configure-server/restarting-host) page.
 
 :::
 
 #### Using 3rd Party or Self-hosted Artifact Registry
 
-If your organization uses another registry (harbor, nexus etc.), in order to clone Appcircle images you need to add your registry to the `global.yaml` file.
-
-##### Mirroring Appcircle Images
-
-To use your local registry, you must download Appcircle's container images to your local repository. Follow the below steps to push Appcircle's container images to your registry.
-
-- Transfer `cred.json` file to a server which has access to Appcircle's image registry.
-- Login to Appcircle's registry.
-
-```bash
-cat cred.json | podman login -u _json_key --password-stdin  europe-west1-docker.pkg.dev/appcircle/docker-registry
-```
-
-You should see `Login Succeeded` message.
-
-- Pull images from Appcircle's registry and push to your registry. If your registry is at `reg.appcircle.spacetech.com/appcircle` you can use below bash script to pull images.
-
-:::info
-
-Run this script in a folder which has **docker-images.txt** file. This file has the name of the images.
-
-You can find this file inside Appcircle's self-hosted package.
-
-:::
-
-```bash
-#!/bin/bash
-
-# Set the source registry URL
-SRC_REGISTRY_URL="europe-west1-docker.pkg.dev/appcircle/docker-registry"
-
-# Set the destination registry URL
-DEST_REGISTRY_URL="reg.appcircle.spacetech.com/appcircle"
-
-# Loop through each line of the file and pull, tag, and push the Docker image
-while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
-    echo "Pulling image: $IMAGE_NAME"
-    podman pull $IMAGE_NAME
-    if [ $? -eq 0 ]; then
-        echo "Image pulled successfully: $IMAGE_NAME"
-        # Replace source registry URL  with the new registry URL
-        IMAGE_TAG="${IMAGE_NAME/$SRC_REGISTRY_URL/$DEST_REGISTRY_URL}"
-        # Tag the image with the destination registry URL and repository name
-        podman tag $IMAGE_NAME $IMAGE_TAG
-        # Push the tagged image to the destination registry
-        podman push $IMAGE_TAG
-        if [ $? -eq 0 ]; then
-            echo "Image pushed successfully: $IMAGE_NAME"
-        else
-            echo "Failed to push image: $IMAGE_NAME"
-        fi
-    else
-        echo "Failed to pull image: $IMAGE_NAME"
-    fi
-done < docker-images.txt
-```
-
-:::info
-
-If your registry is not using `https`, you may get an error during podman push step. You need to add your registry as insecure registry. Create a file named `myregistry.conf` in `/etc/containers/registries.conf.d/` folder. It should have the following content.
-
-```bash
-[[registry]]
-location = "registry.mycluster.williamlieurance.com:5000"
-insecure = true
-```
-
-After this modification, restart podman or server to apply new settings.
-
-:::
-
-- After you mirrored Appcircle's images to your registry, you need to configure `image.registry` section in `global.yaml`. See its details below.
-  - `url`: Registry URL. (For our example, "reg.appcircle.spacetech.com/appcircle")
-  - `username`: Username of the registry.
-  - `password`: Password of the registry.
-  - `requiredLogin`: If this variable is set to true, the script will use the `username` and `password` variables to login to the registry. If the end-user is logged in to his artifact registry manually, then this variable should be false.
-
-```yaml
-image:
-  registry:
-    url: reg.appcircle.spacetech.com/appcircle
-    username:
-    password:
-    requiredLogin: true
-```
-
-- Create new export.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" export
-```
-
-- Run Appcircle server services.
-
-```bash
-/ac-self-hosted.sh -n "spacetech" up
-```
-
-##### Using Sonatype Nexus as Proxy Registry
-
-To use Sonatype Nexus as your proxy registry, you should follow the below steps.
-
-- Create a new repository in Nexus with the type of `docker (proxy)`.
-- Set the `Registry Name` name and `port` as you wish.
-- Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
-- For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file.
-- For SSL, the recommended way is to use a reverse proxy in front of Nexus.
-- After you created the repository, you should add the below section to the `global.yaml` file with your Nexus `repository url`, `username` and `password`.
-- If you can access your Nexus repository without authentication, you should leave the `username` and `password` fields empty and set `requiredLogin` to `false`.
-
-```yaml
-image:
-  registry:
-    url: reg.appcircle.spacetech.com:8443/appcircle/docker-registry
-    username:
-    password:
-    requiredLogin: true
-```
-
-:::caution
-
-In order to proxy Appcircle's registry, the repository url in `global.yaml` must end with `/appcircle/docker-registry`.
-
-:::
-
-:::tip
-
-You can see some example configuration screenshots below for Nexus UI.
-
-- [Proxy repository settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-1.png)
-- [Remote storage settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-2.png)
-- [Authentication settings](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
-
-:::
-
-:::info
-
-If you face any issue about "manifest not found" when you try to run `./ac-self-hosted.sh -n "spacetech" up`, try pulling the images one by one from Nexus proxy registry.
-
-By looking at the [mirroring images](./podman.md#mirroring-appcircle-images) script above, you can pull images from the proxy repository with a similar script. This will force Nexus to pull the images from Appcircle's registry one by one, not in parallel.
-
-Nexus may have some issues when pulling images in parallel.
-
-:::
+If your organization uses another registry (harbor, nexus, etc.), in order to use the Appcircle registry, you can head to the [External Image Registries](../configure-server/external-image-registry) document for detailed usage and configuration examples.
 
 ### :tada: Ready
 
@@ -1007,20 +902,20 @@ So, we suggest you to be sure with your configuration before using it in product
 To begin reconfiguration with data cleanup, use below command while stopping Appcircle server.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" reset
+./ac-self-hosted.sh -n "spacetech" reset
 ```
 
 It will remove all unused local volumes which is useful for a clean start.
 
 :::
 
-Then go back to your configuration and change settings as done previously at [configure](./podman.md#3-configure) step.
+Then go back to your configuration and change settings as done previously at [configure](./podman#3-configure) step.
 
 When you're ready for a new export, in root directory execute below command again as done previously.
 
 :::info
 
-For our example scenario, root directory is `appcircle-server` as seen [here](./podman.md#1-download). And project name is "spacetech".
+For our example scenario, root directory is `appcircle-server` as seen [here](./podman#1-download). And project name is "spacetech".
 
 :::
 
@@ -1042,7 +937,7 @@ When you complete installation successfully by following above steps, you're rea
 
 But in order to run build pipelines, you need to install and connect self-hosted runners. We have dedicated section for installation and configuration of self-hosted runners.
 
-Follow and apply related guidelines in [here](../self-hosted-runner/installation.md).
+Follow and apply related guidelines in [here](/self-hosted-appcircle/self-hosted-runner/installation).
 
 Self-hosted runner section in docs, has all details about runners and their configuration.
 
@@ -1060,9 +955,9 @@ Assuming our sample scenario explained above, its value should be
 
 for our example configuration.
 
-:reminder_ribbon: After [download](../self-hosted-runner/installation.md#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
 
-Please note that, you should do this before [register](../self-hosted-runner/installation.md#2-register).
+Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
 :::
 
