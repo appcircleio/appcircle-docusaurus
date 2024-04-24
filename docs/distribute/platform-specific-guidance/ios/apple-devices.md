@@ -85,7 +85,7 @@ Your new device will be added to the newly created provisioning profile. New pro
 
 Appcircle will also update all build profiles with updated provisioning profiles.
 
-### Openning the application on a new Device
+### Opening the application on a new Device
 
 If you need to open the application on a device with a newly added UDID, the application must be re-signed using the re-sign binary process. Additionally, the version that includes the new device should be resubmitted.
 
