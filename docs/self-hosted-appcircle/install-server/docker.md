@@ -266,10 +266,10 @@ If you want a secret used from `global.yaml`, then it should not be in `user-sec
 ```yaml
 ---
 environment: Production
-enableErrorHandling: "true"
+enableErrorHandling: 'true'
 external:
   scheme: http
-  mainDomain: ".example.com"
+  mainDomain: '.example.com'
 
 smtpServer:
   user:
@@ -304,20 +304,20 @@ As an example, we can change some variables like below according to our fictive 
 ```yaml
 ---
 environment: Production
-enableErrorHandling: "true"
+enableErrorHandling: 'true'
 external:
   scheme: http
-  mainDomain: ".appcircle.spacetech.com"
+  mainDomain: '.appcircle.spacetech.com'
 
 smtpServer:
   user: o***y*****@v******.net
   from: o***y*****@v******.net
   host: smtp.v******.net
   fromDisplayName: Space Tech
-  port: "587"
-  ssl: "false"
-  auth: "true"
-  starttls: "true"
+  port: '587'
+  ssl: 'false'
+  auth: 'true'
+  starttls: 'true'
 keycloak:
   initialUsername: admin@spacetech.com
   enabledRegistration: true
@@ -498,6 +498,7 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  my.appcircle.spacetech.com
 0.0.0.0  resource.appcircle.spacetech.com
 0.0.0.0  store.appcircle.spacetech.com
+0.0.0.0  monitor.appcircle.spacetech.com
 0.0.0.0  store.spacetech.com
 ```
 
@@ -521,6 +522,7 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  my.appcircle.spacetech.com
 35.241.181.2  resource.appcircle.spacetech.com
 35.241.181.2  store.appcircle.spacetech.com
+35.241.181.2  monitor.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
 ```
 
