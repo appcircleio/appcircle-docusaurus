@@ -134,8 +134,12 @@ Upon executing the query by clicking the "Run query" button, the log entries gen
 
 If you want to download and share the logs after you [filter](#filtering-logs), you can the same UI.
 
-1. Open the "Query inspector" menu from `1`. box.
-2. Head to the "Data" tab from `2`. box.
-3. Press the "Download logs" button to download the filtered logs.
+1. Filter the logs according to your needs.
+2. Hit the "Download" button from upper right corner of the logs.
+3. Select `txt` as the format.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-4-download-logs.png' />
+
+A file that contains the filtered logs will be downloaded to your local computer.
+
+You can share that log file to troubleshoot the problems.
