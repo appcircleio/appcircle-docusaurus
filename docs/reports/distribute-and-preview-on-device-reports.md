@@ -6,6 +6,7 @@ sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import ContentRef from '@site/src/components/ContentRef';
 
 # Distribution Activity Reports
 
