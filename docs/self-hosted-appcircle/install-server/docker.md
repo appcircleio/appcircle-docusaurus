@@ -447,6 +447,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - my
 - resource
 - store
+- monitor
 - (optional) Enterprise App Store's Custom Domain
 
 :::info
