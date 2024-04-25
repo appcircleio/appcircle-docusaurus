@@ -52,6 +52,7 @@ If you are on the Starter Plan, you cannot add a new organization. To create mor
 #### Adding a Sub Organization
 
 Appcircle's Sub-Organization feature allows you to create multiple sub-organizations from your organization, providing a way to manage different teams and projects separately. With this feature, each sub-organization is linked to the organization.
+
 It's worth noting that sub organizations are very similar to the organization. When you are inside a sub organization, you will have access to all the features and functionality that are available in your organization. Any licenses associated with the organization will also be applicable to the sub organization.
 
 :::caution
@@ -69,7 +70,9 @@ If you add a user to the sub-organization who already exists in the main organiz
 It's worth noting that sub-organizations are very similar to the organization. When you are inside a sub-organization, you will have access to all the features and functionality that are available in your  organization. Additionally, any licenses  associated with the organization will also be applicable to the sub-organization.
 
 :::caution
+
 Please note that an **Enterprise License** is required to use this feature.
+
 :::
 
 If you have an enterprise license, you can create sub-organizations from the organization by navigating to the "My Organization" page, clicking on the **`Create Sub Organization`** button, and entering the necessary details for the sub-organization.
