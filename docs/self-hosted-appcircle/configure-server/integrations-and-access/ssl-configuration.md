@@ -1,7 +1,7 @@
 ---
 title: SSL Configuration
-metaTitle: Configure SSL for HTTPS
-metaDescription: Configure SSL for HTTPS
+description: Learn how to configure SSL for your self-hosted Appcircle server
+tags: [self-hosted, ssl, https, certificate, custom domain, enterprise app store, external services]
 sidebar_position: 3
 ---
 
@@ -350,6 +350,84 @@ You should use the full certificate chain for `publicKey` similar to main domain
 :::caution
 
 For now, self-hosted Appcircle does not support usage of password protected private keys for Enterprise App Store custom domains.
+
+:::
+
+## Testing Distribution
+
+`global.yaml` configuration has its own dedicated section for [Testing Distribution](/distribute) domain settings. Below, we will explain some use cases for Testing Distribution, when you enable HTTPS.
+
+### Default Domain
+
+By default, Testing Distribution has a **[dist](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#4-dns-settings)** subdomain under the main domain on self-hosted Appcircle servers.
+
+For example, if your `external.mainDomain` in the `global.yaml` file is `.appcircle.spacetech.com`, then the default Testing Distribution domain name should be `dist.appcircle.spacetech.com`.
+
+If you have configured the Appcircle server as HTTPS using the `external.scheme` as explained [here](#configure-https), the certificate of the Appcircle server also includes the default Testing Distribution subdomain, and it works with HTTPS.
+
+### Custom Domain
+
+It's possible to use a custom domain for the Testing Distribution. In this case, you need to make extra configurations for our custom domain.
+
+:::caution
+Please be aware that, after you change the Testing Distribution domain or the SSL settings, the links in the **emails that were sent to the testers with the previous domain and previous SSL settings will be invalid.**
+:::
+
+Most likely, our custom domain won't be covered by the main domain certificate. In this case, we need to create a new public certificate and private key pair for the custom domain.
+
+Custom domain HTTPS settings are similar to the main domain configuration conceptually. After enabling HTTPS for the main domain, it won't be hard to enable HTTPS for the Testing Distribution custom domain.
+
+Let's assume we want to use `dist.spacetech.com` as a custom domain for our sample scenario. Then the `global.yaml` section should be like below for this case.
+
+:::note
+If you don't have the `testerWeb` section defined in the `global.yaml` file, you should add it as below.
+
+If you have a `testerWeb` section previously defined in the `global.yaml` file for some reason, you should update that section with the `customDomain` settings below instead of adding a new one.
+:::
+
+```yaml
+testerWeb:
+  customDomain:
+    enabled: true
+    domain: dist.spacetech.com
+    port: 443
+    enabledTls: true
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
+```
+
+- `publicKey` is the public certificate. (content of `.crt` file)
+- `privateKey` is the private key. (content of `.key` file)
+
+You should use the full certificate chain for `publicKey`, similar to the main domain `sslCertificate`, to prevent SSL errors when clients connect.
+
+:::caution
+
+For now, self-hosted Appcircle does not support the usage of password-protected private keys for the Testing Distribution custom domains.
 
 :::
 

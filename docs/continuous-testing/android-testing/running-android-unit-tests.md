@@ -1,7 +1,7 @@
 ---
 title: Running Unit Tests
-metaTitle: Running Android Unit Tests
-metaDescription: Running Android Unit Tests
+description: Learn how to run unit tests for Android applications in Appcircle
+tags: [unit tests, android, android unit tests, testing, continuous testing]
 sidebar_position: 2
 ---
 
@@ -65,7 +65,7 @@ Simply go to your build workflow and add a custom script after the **Sign Applic
 
 See the following page on our documentation to learn more about creating custom workflow steps:
 
-<ContentRef url="/integrations/working-with-custom-scripts">Working with Custom Scripts</ContentRef>
+<ContentRef url="/workflows/common-workflow-steps/custom-script">Working with Custom Scripts</ContentRef>
 
 Add the following Bash script to your custom script step:
 
@@ -124,6 +124,27 @@ If you're using UI tests with emulators, you must select an Intel device (**Defa
 
 :::
 
+### Jacoco Test Coverage
+
+If you use the Jacoco tool for test coverage in your project, you can obtain coverage percentages from the test reports Jacoco generates. Jacoco calculates coverage percentages using six different methods, and the coverage percentage will be calculated based on the selected method.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be2556-jacocoCoverage2.png" />
+
+:::info
+These methods range from the most detailed coverage percentage to the most general:
+
+- **INSTRUCTION**: JaCoCo counts the smallest unit of single Java bytecode instructions.
+- **BRANCH**: JaCoCo also calculates branch coverage for all if and switch statements.
+- **COMPLEXITY**: JaCoCo also calculates cyclomatic complexity for each non-abstract method and summarizes complexity for classes, packages and groups.
+- **LINE**: For all class files that have been compiled with debug information, coverage information for individual lines can be calculated.
+- **METHOD**: JaCoCo considers a method as executed when at least one instruction has been executed. Since JaCoCo works at the bytecode level, it counts constructors and static initializers as methods.
+- **CLASS**: JaCoCo considers a class as executed when at least one of its methods has been executed. JaCoCo counts constructors and static initializers as methods.
+:::
+
+:::warning
+Each calculation type has different coverage percentages. This is because each type has its own level of detail. Therefore, the coverage percentages are different for each one. 
+:::
+
 ### Showing Test Reports
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
@@ -133,3 +154,42 @@ Appcircle can show passing and failing tests in compact UI. If your tests genera
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-ui-detail.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-coverage.png' />
+
+## Automated Tests
+
+Appcircle currently supports the following mobile automation testing tools:
+
+- [Appium](/workflows/common-workflow-steps/#appium-server)
+- [BrowserStack App Automate - Espresso](/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso)
+- [Maestro](/workflows/common-workflow-steps/maestro-cloud-upload)
+- [Testinium](/workflows/common-workflow-steps/testinium)
+
+Each service allows you to run your tests on real devices, and test scenarios can be started with the artifacts created on Appcircle. Rich reports can be managed by visiting the web site of each service.
+
+However, if your tool supports producing the following test report formats, you can also see the test results on Appcircle. Appcircle's Test Report currently supports the following test and coverage formats:
+
+**Test Format**
+
+- Xcode 13+ `.xctest`
+- JUnit `.xml`
+
+**Coverage Format**
+
+- JaCoCo `.xml`
+- Cobertura `.xml`
+- Lcov `lcov.info`
+
+For example, BrowserStack allows you to [export test results](https://www.browserstack.com/docs/app-automate/espresso/view-test-reports) as JUnit. You can get the results of your tests and code coverage results from BrowserStack by using a simple bash script.
+
+```bash
+curl -u "$AC_BROWSERSTACK_USERNAME:$AC_BROWSERSTACK_ACCESS_KEY" \
+--output $AC_OUTPUT_DIR/myreport.xml \
+-X GET "https://api-cloud.browserstack.com/app-automate/espresso/v2/builds/$BUILD_ID/sessions/$SESSION_ID/report"
+
+```
+
+:::info
+
+Appcircle's [**BrowserStack App Automate - Espresso**](/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso) step already parses JUnit Test reports. The above code sample is only given as an example.
+
+:::

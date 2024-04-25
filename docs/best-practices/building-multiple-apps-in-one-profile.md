@@ -1,7 +1,7 @@
 ---
 title: Building Multiple Apps in One Profile
-metaTitle: Building Multiple Apps in One Profile
-metaDescription: Building Multiple Apps in One Profile
+description: Learn how to build multiple apps in one profile in Appcircle
+tags: [best practices, multiple apps, build multiple apps, android, ios, build variants, product flavors, schemes]
 sidebar_position: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Two-Factor Authentication Setup
-metaTitle: Two-Factor Authentication Setup
-metaDescription: Two-Factor Authentication Setup
+description: Learn how to set up two-factor authentication in Appcircle
+tags: [account, account management, two-factor authentication, 2FA, authenticator]
 sidebar_position: 3
 ---
 

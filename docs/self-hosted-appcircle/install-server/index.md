@@ -1,7 +1,7 @@
 ---
-title: Overview
-metaTitle: Installing Server
-metaDescription: Installing Server
+title: Install the Self-Hosted Appcircle Server
+description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure.
+tags: [self-hosted, server, installation]
 sidebar_position: 1
 ---
 

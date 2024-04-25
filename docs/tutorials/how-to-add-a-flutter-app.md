@@ -1,7 +1,7 @@
 ---
 title: How to add a Flutter App
-metaTitle: How to add a Flutter App to Appcircle
-metaDescription: How to add a Flutter App to Appcircle
+description: Learn how to add a Flutter app to Appcircle
+tags: [flutter, mobile, ios, android]
 sidebar_position: 4
 sidebar_label: Flutter
 ---

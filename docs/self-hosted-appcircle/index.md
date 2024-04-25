@@ -1,7 +1,7 @@
 ---
 title: Overview & Concepts
-metaTitle: Overview & Concepts
-metaDescription: Overview & Concepts
+description: Overview of self-hosted Appcircle and related concepts
+tags: [self-hosted, overview, concepts]
 sidebar_position: 1
 ---
 

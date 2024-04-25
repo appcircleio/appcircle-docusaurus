@@ -1,7 +1,7 @@
 ---
 title: Git Providers
-metaTitle: Configure Git Providers
-metaDescription: Configure Git Providers
+description: Configure git providers in self-hosted Appcircle
+tags: [self-hosted, git providers, configuration]
 sidebar_position: 1
 ---
 

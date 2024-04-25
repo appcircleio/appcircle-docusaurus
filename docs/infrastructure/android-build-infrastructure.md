@@ -1,7 +1,7 @@
 ---
 title: Android Build Stacks
-metaTitle: Android Build Stacks
-metaDescription: Android Build Stacks
+description: Learn about the Android build stacks in Appcircle
+tags: [build, android, build stacks]
 sidebar_position: 2
 ---
 
@@ -36,7 +36,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 Build agents have Java 8, 11, 17 and 21 installed. Java 11 is set as the default version.
 
-If you want to use a different Java version, please follow [this document](../integrations/working-with-custom-scripts/custom-script-samples#changing-java-version) for how to do that.
+If you want to use a different Java version, please follow [this document](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) for how to do that.
 
 When you select "Default Intel Pool" for Android builds, the following JDK locations are available within the environment variables:
 

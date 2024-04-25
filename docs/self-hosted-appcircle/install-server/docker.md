@@ -1,7 +1,7 @@
 ---
 title: Docker
-metaTitle: Docker
-metaDescription: Appcircle Server on Docker
+description: Learn how to install Appcircle server on your infrastructure using Docker
+tags: [docker, installation, self-hosted]
 sidebar_position: 3
 ---
 
@@ -92,13 +92,13 @@ You need to have the following tools installed on your system:
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.13.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.14.0.zip
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.13.2.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.14.0.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.

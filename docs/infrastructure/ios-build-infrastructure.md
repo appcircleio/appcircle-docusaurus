@@ -1,7 +1,7 @@
 ---
 title: iOS Build Stacks
-metaTitle: iOS Build Stacks
-metaDescription: iOS Build Stacks
+description: Learn about the iOS build stacks in Appcircle
+tags: [ios, build, build stacks, iOS build stacks]
 sidebar_position: 1
 ---
 
@@ -35,7 +35,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Available Xcode Versions
 
-Our macOS build agents have Xcode versions 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
+Our macOS build agents have Xcode versions 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
 
 :::caution
 Xcode `14.3.x` or higher Xcode versions require a Mac running macOS Ventura 13.0 or later.

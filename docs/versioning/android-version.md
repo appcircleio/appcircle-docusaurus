@@ -1,7 +1,7 @@
 ---
 title: Understanding Android Versioning
-metaTitle: Understanding Android Versioning
-metaDescription: Understanding Android Versioning
+description: Learn how to manage version code and version name in Android projects with Appcircle
+tags: [android, versioning, version code, version name]
 sidebar_position: 1
 ---
 

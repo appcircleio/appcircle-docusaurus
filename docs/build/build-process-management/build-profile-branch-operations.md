@@ -1,7 +1,7 @@
 ---
 title: Branch Management
-metaTitle: Build Profile Branch Management
-metaDescription: Build Profile Branch Management
+description: Learn how to manage branches in Appcircle
+tags: [build, build profile, branch management]
 sidebar_position: 3
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Pre-Installation Checklist
-metaTitle: Pre-Installation Checklist
-metaDescription: Pre-Installation Checklist
+description: Checklist to be followed before installing the self-hosted Appcircle
+tags: [self-hosted, installation, checklist]
 sidebar_position: 2
 ---
 

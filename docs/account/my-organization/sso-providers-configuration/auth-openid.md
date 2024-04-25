@@ -1,7 +1,7 @@
 ---
 title: Auth0 OpenID
-metaTitle: Auth0 OpenID
-metaDescription: Auth0 OpenID
+description: Set up OpenID Connect for user authentication in your app. Secure and simplify user access with Appcircle's integration.
+tags: [account, organization, sso, auth0, openid, configuration]
 sidebar_position: 2
 ---
 

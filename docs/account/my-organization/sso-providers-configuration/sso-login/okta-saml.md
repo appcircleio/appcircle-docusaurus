@@ -1,13 +1,14 @@
 ---
-title: Okta SAML
-metaTitle: Okta SAML
-metaDescription: Okta SAML
+title: Okta SAML Configuration
+description: Configure Okta SAML for Single Sign-On (SSO) in your app. A detailed guide to boost security and simplify user logins with Appcircle.
+tags: [account, organization, sso, okta, saml, configuration]
 sidebar_position: 3
+sidebar_label: Okta SAML
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Okta SAML
+# Okta SAML Configuration
 
 The document provides a comprehensive guide for setting up Single Sign-On (SSO) login functionality within an organization's infrastructure.
 It outlines a series of steps to integrate SSO using Okta as the identity provider, facilitating seamless access to various applications and resources.
@@ -28,7 +29,7 @@ Only Enterprise accounts support SSO.
 
 :::caution
 
-Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise Store. They must be configured separately.
+Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise App Store. They must be configured separately.
 
 :::
 
@@ -54,7 +55,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 - Pick an alias and display name for your organization. Please pick a short and rememberable alias.
 
-- This screen will auto-generate an URL for the Enterprise Store and Distribute
+- This screen will auto-generate an URL for the Enterprise App Store and Distribute
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 

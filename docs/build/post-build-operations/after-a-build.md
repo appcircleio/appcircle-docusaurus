@@ -1,7 +1,7 @@
 ---
 title: Build Artifacts
-metaTitle: Managing Build Artifacts
-metaDescription: Build Artifacts
+description: Learn how to manage build artifacts in Appcircle
+tags: [build, build artifacts, build outputs, build logs]
 sidebar_position: 13
 ---
 

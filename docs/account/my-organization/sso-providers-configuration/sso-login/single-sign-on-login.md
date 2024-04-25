@@ -1,7 +1,7 @@
 ---
 title: SSO Login
-metaTitle: Enterprise App Store and Testing Distribution SSO Login
-metaDescription: Enterprise App Store and Testing Distribution SSO Login
+description: Enable Single Sign-On (SSO) for your organization to enhance user security and streamline login processes.
+tags: [account, organization, sso, configuration]
 sidebar_position: 2
 ---
 
@@ -23,7 +23,7 @@ Please check [SSO](/account/my-organization/sso-providers-configuration/single-s
 
 :::caution
 
-Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise Store. They must be configured separately.
+Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise App Store. They must be configured separately.
 
 :::
 

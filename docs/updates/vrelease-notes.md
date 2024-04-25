@@ -1,7 +1,7 @@
 ---
 title: Release Notes Archive
-metaTitle: Release Notes Archive
-metaDescription: Release Notes Archive
+description: Appcircle release notes archive
+tags: [release notes, archive]
 sidebar_position: 2
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Okta OpenID
-metaTitle: Okta OpenID
-metaDescription: Okta OpenID
+description: Utilize Okta OpenID for user authentication in your app. Streamline sign-in processes and boost security with Appcircle.
+tags: [account, organization, sso, okta, openid, configuration]
 sidebar_position: 5
 ---
 

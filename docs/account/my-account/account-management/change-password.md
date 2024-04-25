@@ -1,7 +1,7 @@
 ---
 title: Change Password
-metaTitle: Change Password
-metaDescription: Change Password
+description: Learn how to change your password in Appcircle
+tags: [account, account management, change password]
 sidebar_position: 2
 ---
 

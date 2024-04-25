@@ -1,7 +1,7 @@
 ---
 title: Connecting to Public Repository
-metaTitle: Connecting to Public Repository
-metaDescription: Connecting to Public Repository
+description: Learn how to connect to a public repository in Appcircle
+tags: [build profile, connection, public repository]
 sidebar_position: 5
 ---
 

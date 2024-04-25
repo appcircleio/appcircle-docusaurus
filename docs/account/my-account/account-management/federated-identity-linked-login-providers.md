@@ -1,7 +1,7 @@
 ---
 title: Federated Identity Management
-metaTitle: Federated Identity Management
-metaDescription: Federated Identity Management
+description: Learn how to manage the linked accounts for login in Appcircle
+tags: [account, account management, federated identity, linked login providers]
 sidebar_position: 4
 ---
 
