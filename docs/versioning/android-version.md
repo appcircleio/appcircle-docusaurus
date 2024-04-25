@@ -1,7 +1,7 @@
 ---
-title: Android Versioning
-metaTitle: Android Versioning
-metaDescription: Android Versioning
+title: Understanding Android Versioning
+description: Learn how to manage version code and version name in Android projects with Appcircle
+tags: [android, versioning, version code, version name]
 sidebar_position: 1
 ---
 
@@ -25,15 +25,13 @@ The Versioning tab manages the input values of the component. It is not recommen
 
 :::caution
 
-Gradle files are written in Groovy language. Therefore it can use functions or environment variables during the build. This component doesn't cover all the edge cases. Please test your workflow thoroughly and make sure that it works as intended. 
+Gradle files are written in Groovy language. Therefore it can use functions or environment variables during the build. This component doesn't cover all the edge cases. Please test your workflow thoroughly and make sure that it works as intended.
 
 :::
 
-
-
 ### Managing Version Code
-The versioning system needs a version code source and an offset to calculate the new version code. There are two source types for the version code. 
 
+The versioning system needs a version code source and an offset to calculate the new version code. There are two source types for the version code.
 
 **Version Code Source**
 
@@ -46,10 +44,11 @@ If you select Gradle, the version code will be read from build.gradle file. If y
 
 **Offset**
 
-If you select `$AC_BUILD_NUMBER` as your version code source, the version code in your project can be different. To synchronize version code, you can use the offset. The offset value is a number to be added or subtracted from the *Version Code Source*. Negative values can be written such as -10.
+If you select `$AC_BUILD_NUMBER` as your version code source, the version code in your project can be different. To synchronize version code, you can use the offset. The offset value is a number to be added or subtracted from the _Version Code Source_. Negative values can be written such as -10.
 
 ### Managing Version Name
-The versioning system needs a version name source and an offset to calculate the new version name. There are two source types for the version name. 
+
+The versioning system needs a version name source and an offset to calculate the new version name. There are two source types for the version name.
 
 **Version Name Source**
 
@@ -58,58 +57,58 @@ The versioning system needs a version name source and an offset to calculate the
 
 If you select Environment Variable, you need to write the source environment variable into `Version Name` You can use any environment variable that you create or select from the config screen. Environment variables must start with the `$` sign.
 
-If you select Gradle, the version name will be read from the given Android project. 
+If you select Gradle, the version name will be read from the given Android project.
 
 **Offset**
 
-To synchronize version names, you can use the offset. The offset value is a number to be added or subtracted from the *Version Name Source*. Negative values can be written such as -10.
+To synchronize version names, you can use the offset. The offset value is a number to be added or subtracted from the _Version Name Source_. Negative values can be written such as -10.
 
 **Increment**
 
 You can increase the major, minor, or patch value of the version name. For version name 2.5.1, values can be summarized below.
 
-|Part |Value|
-|-----|-----|
-|Major|  2  |
-|Minor|  5  |
-|Patch|  1  |
+| Part  | Value |
+| ----- | ----- |
+| Major | 2     |
+| Minor | 5     |
+| Patch | 1     |
 
 **Omit Zero Patch Version**
 
-If true, omits zero in the patch version. So *42.10.0* will become *42.10* and *42.10.1* will remain *42.10.1*. The default is false.
+If true, omits zero in the patch version. So _42.10.0_ will become _42.10_ and _42.10.1_ will remain _42.10.1_. The default is false.
 
 ### Advanced Settings
 
-This component works on standard build.gradle files. If you use flavors in your build.gradle, you can set the flavor name. However, please be aware that flavor support is not foolproof. Due to dynamic nature of build.gradle file, it may not cover all the cases. 
+This component works on standard build.gradle files. If you use flavors in your build.gradle, you can set the flavor name. However, please be aware that flavor support is not foolproof. Due to dynamic nature of build.gradle file, it may not cover all the cases.
 
 ### Output Values
-After the version code or version name update, new values will be written to two environment variables. 
 
-|Value |Explanation|
-|-----|-----|
-|`$AC_ANDROID_NEW_BUILD_NUMBER`| Changed version code|
-|`$AC_ANDROID_NEW_VERSION_NUMBER`| Changed version name|
+After the version code or version name update, new values will be written to two environment variables.
 
-You can use the above values in the remaining steps of your workflow. 
+| Value                            | Explanation          |
+| -------------------------------- | -------------------- |
+| `$AC_ANDROID_NEW_BUILD_NUMBER`   | Changed version code |
+| `$AC_ANDROID_NEW_VERSION_NUMBER` | Changed version name |
+
+You can use the above values in the remaining steps of your workflow.
 
 ### Best Practices
 
 The versioning system works by consuming environment variables. Even though it's easier to configure it by using UI, sometimes you may want to change them on the fly. Your commit messages or tags can be used to override those settings. The name of the variables and expected values can be found below.
 
-|Value |Explanation|
-|-----|-----|
-|`$AC_BUILD_NUMBER_SOURCE`| Version code source type(env,gradle)|
-|`$AC_ANDROID_BUILD_NUMBER`| Version code to set. If `$AC_BUILD_NUMBER_SOURCE` is set to gradle, this variable will be read from the project|
-|`$AC_BUILD_OFFSET` | The number to be added or subtracted from the `$AC_ANDROID_BUILD_NUMBER`|
-|`$AC_VERSION_NUMBER_SOURCE` | Version name source type(env,gradle)|
-|`$AC_ANDROID_VERSION_NUMBER` | Version name to set. If `$AC_VERSION_NUMBER_SOURCE` is set to gradle, this variable will be read from the project|
-|`$AC_VERSION_STRATEGY` | Version Increment Strategy|
-|`$AC_VERSION_OFFSET` | The number to be added or subtracted from the `$AC_ANDROID_VERSION_NUMBER`|
-|`$AC_FLAVOR` | Build flavor|
-|`$AC_OMIT_ZERO_PATCH_VERSION` | If true omits zero in patch version|
+| Value                         | Explanation                                                                                                       |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `$AC_BUILD_NUMBER_SOURCE`     | Version code source type(env,gradle)                                                                              |
+| `$AC_ANDROID_BUILD_NUMBER`    | Version code to set. If `$AC_BUILD_NUMBER_SOURCE` is set to gradle, this variable will be read from the project   |
+| `$AC_BUILD_OFFSET`            | The number to be added or subtracted from the `$AC_ANDROID_BUILD_NUMBER`                                          |
+| `$AC_VERSION_NUMBER_SOURCE`   | Version name source type(env,gradle)                                                                              |
+| `$AC_ANDROID_VERSION_NUMBER`  | Version name to set. If `$AC_VERSION_NUMBER_SOURCE` is set to gradle, this variable will be read from the project |
+| `$AC_VERSION_STRATEGY`        | Version Increment Strategy                                                                                        |
+| `$AC_VERSION_OFFSET`          | The number to be added or subtracted from the `$AC_ANDROID_VERSION_NUMBER`                                        |
+| `$AC_FLAVOR`                  | Build flavor                                                                                                      |
+| `$AC_OMIT_ZERO_PATCH_VERSION` | If true omits zero in patch version                                                                               |
 
-
-Since you can use any environment variables for the version code and version name, you can consume Appcircle's various environment variables during the build. Appcircle gives plenty of information related to your repo and project. 
+Since you can use any environment variables for the version code and version name, you can consume Appcircle's various environment variables during the build. Appcircle gives plenty of information related to your repo and project.
 
 Let's see a couple of ways to utilize those values.
 
@@ -135,7 +134,7 @@ Just add this script as a custom script above the Increment Android Version Comp
 
 **Using Tags**
 
-It is also possible to extract the version name from the Git tags. The following example assumes that the commit has a single tag. If you tag your version with `release-1.2.3`, the following script will extract the version name from the tag. 
+It is also possible to extract the version name from the Git tags. The following example assumes that the commit has a single tag. If you tag your version with `release-1.2.3`, the following script will extract the version name from the tag.
 
 ```ruby
 commit_message = ENV['AC_COMMIT_TAGS']

@@ -1,14 +1,14 @@
 ---
-title: Creating and Using Environment Variables
-metaTitle: Creating and Using Environment Variables
-metaDescription: Creating and Using Environment Variables
+title: Overview
+description: Overview of environment variables in Appcircle
+tags: [environment variables, variable groups, text-based variables, file-based variables]
 sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Creating and Using Environment Variables
+# Overview of Environment Variables
 
 ### Creating environment variable groups
 
@@ -115,7 +115,7 @@ Then in workflows, you can specify the environment variable for use.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
-### Creating environment variables on the fly 
+### Creating environment variables on the fly
 
 If you want to create environment variables on the fly, you should write those environment variables to a special file called `AC_ENV_FILE_PATH`. For example, if we want to create a build number based on a timestamp and use it in the next steps we can use the following custom script.
 
@@ -123,7 +123,7 @@ If you want to create environment variables on the fly, you should write those e
  echo "BUILD_NUMBER=$(date +%s)" >> $AC_ENV_FILE_PATH
 ```
 
-Any step after this custom script can access the `$BUILD_NUMBER` environment variable. 
+Any step after this custom script can access the `$BUILD_NUMBER` environment variable.
 
 ### Using Environment Variables For SSH And PAT (Personal Access Token) Connections of the Git Provider
 
@@ -168,4 +168,4 @@ $VariableGroup:Key
 If your SSH public key is not defined on the Git provider, Appcircle will not be able to connect to your repository. First, you will need to add your public key to the Git provider.
 :::
 
-<ContentRef url="/build/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Repository via SSH</ContentRef>

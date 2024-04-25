@@ -1,7 +1,7 @@
 ---
 title: Foundations
-metaTitle: Add Your First App to Appcircle CI/CD
-metaDescription: Platform Specific Guides for iOS (Objective-C / Swift), Android (Java / Kotlin), React Native and Flutter
+description: Platform Specific Guides for iOS (Objective-C / Swift), Android (Java / Kotlin), React Native and Flutter
+tags: [foundations, mobile, ios, android, react native, flutter]
 sidebar_position: 1
 hide_table_of_contents: true
 ---
