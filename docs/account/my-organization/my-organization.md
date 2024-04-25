@@ -51,16 +51,19 @@ If you are on the Starter Plan, you cannot add a new organization. To create mor
 
 #### Adding a Sub Organization
 
-Appcircle's Sub Organization feature allows you to create multiple sub organizations from your organization, providing a way to manage different teams and projects separately. With this feature, each sub organization is linked to the organization.
-
+Appcircle's Sub-Organization feature allows you to create multiple sub-organizations from your organization, providing a way to manage different teams and projects separately. With this feature, each sub-organization is linked to the organization.
 It's worth noting that sub organizations are very similar to the organization. When you are inside a sub organization, you will have access to all the features and functionality that are available in your organization. Any licenses associated with the organization will also be applicable to the sub organization.
 
 :::caution
 
 To use this feature, an enterprise license is required.
 
+:::
+
 :::info
+
 If you add a user to the sub-organization who already exists in the main organization, all the permissions assigned to that user in the main organization will automatically extend to the sub-organization as well.
+
 :::
 
 It's worth noting that sub-organizations are very similar to the organization. When you are inside a sub-organization, you will have access to all the features and functionality that are available in your  organization. Additionally, any licenses  associated with the organization will also be applicable to the sub-organization.
@@ -138,7 +141,9 @@ Here, you can assign the Owner role to a user for full access or you can select 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/permission-owner-v2.png' />
 
 :::info
+
 The "None" is a special type of permission that denotes that a user has no defined role or special permissions. If the user's permission is set to "None" in sub-organizations, the user's permission defaults from the organization.
+
 :::
 
 You can see the full list of the available roles below:
@@ -157,19 +162,27 @@ Permissions can be customized for build profiles.
 | None       | The user cannot reach any details about build profiles.                                                |
 
 :::info
+
 Manager or Operator Build Profile permission can distribute binary if user has Manager or Operator Distribution permission.
+
 :::
 
 :::info
+
 Manager or Operator Build Profile permission can publish if user has Manager or Operator Publish Android/iOS permission.
+
 :::
 
 :::info
+
 Manager, Operator and Viewer Build Profile permissions can view self-hosted runners but cannot modify the configuration.
+
 :::
 
 :::caution
+
 Only Manager permission can view the configurations, workflows, and triggers.
+
 :::
 
 ### ENVIRONMENT VARIABLE PERMISSIONS
@@ -183,7 +196,9 @@ Permissions can be customized for environment variable.
 | None       | The user cannot reach any details about environment variables.                                                                  |
 
 :::info
+
 Manager, Operator and Viewer Environment Variable permissions can use variable groups in build profile configuration.
+
 :::
 
 ### SIGNING IDENTITY MANAGEMENT PERMISSIONS
@@ -197,7 +212,9 @@ Permissions can be customized for signing identity management.
 | None       | The user cannot reach any details about signing identity.                                                  |
 
 :::info
+
 Manager, Operator and Viewer Signing Identity Management permissions can use signing identities in build profile configuration.
+
 :::
 
 ### DISTRIBUTION PROFILE PERMISSIONS
@@ -212,15 +229,21 @@ Permissions can be customized for distribution profiles.
 | None       | The user cannot reach any details about distribution profiles, Apple Devices, App Versions Report, and App Sharing Report.              |
 
 :::info
+
 Manager or Operator Distribution Profile permission can send to enterprise appstore if user has Manager, Uploader or Operator Enterprise App Store permission.
+
 :::
 
 :::info
+
 Manager or Operator Distribution Profile permission can send to publish if user has Manager or Operator Publish Android and Manager or Operator iOS permission.
+
 :::
 
 :::info
+
 Manager or Operator Distribution Profile permission can resign binary if user has Manager or Viewer Signing Identity Management permission.
+
 :::
 
 ### TESTING GROUP PERMISSIONS
@@ -244,11 +267,15 @@ Upload apps to Google Play, Huawei, and App Store.
 | Viewer          | The user can only view applications and their details belonging to their own organization. |
 
 :::info
+
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
+
 :::
 
 :::info
+
 If the user does not have any of these permissions, they will not have access to any details related to the store submit module.
+
 :::
 
 ### PUBLISH MODULE IOS PERMISSIONS
@@ -274,13 +301,17 @@ Publish apps to Google Play, Huawei.
 | None       | The user cannot reach any details about the Android Publish.                                                                                                                          |
 
 :::info
+
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
+
 :::
 
 :::tip
+
 **Publish Variables** permissions in the Publish module are dependent on the iOS or Android permissions that you configure for the Publish module.
 
 For instance, when you give "viewer" permission to a user for iOS or Android, this permission will also make the user "viewer" for the **Publish Variables**. When you give "manager" permission to a user for iOS or Android, this permission also makes the user "manager" for the **Publish Variables**.
+
 :::
 
 ### ENTERPRISE APP STORE PERMISSIONS
@@ -322,5 +353,7 @@ Connect to or disconnect from third-party service providers such as Slack, Micro
 | Manager    | The user can manage third-party service provider connections and disconnections. |
 
 :::caution
+
 The permissions of the Store Submit module affect the visibility of online stores connections.
+
 :::
