@@ -44,7 +44,7 @@ You can add defined user groups from your provider after configuration.
 
 ### Add Version
 
-If you enable **Publish Enterprise Store** settings in your config, all the new signed builds will automatically appear in the list. You can also manually upload a new version to your profile.
+If you enable **Publish Enterprise App Store** settings in your config, all the new signed builds will automatically appear in the list. You can also manually upload a new version to your profile.
 
 Click the **Add Version** button, select an IPA or APK file, and hit the **Upload** button.
 
@@ -98,6 +98,7 @@ The Enterprise App Store share feature doesn't allow public sharing. It only hel
 :::
 
 :::warning
+
 **Please note that** if you have an **Apple Developer** account with an **enterprise organization** and you are using an app signed with an [**enterprise certificate**](https://docs.appcircle.io/signing-identities/ios-certificates-and-provisioning-profiles#ios-certificates) for **internal distribution**, you must use [**authentication**](https://docs.appcircle.io/enterprise-appstore/customize-ent-store#authentication) for user access.
 
 Apple does not allow public distribution of internally distributed apps, and if Apple detects that you are distributing an app signed with an Enterprise certificate without using authentication, it will impose severe sanctions.
@@ -107,6 +108,7 @@ You can access the relevant terms and conditions from the links below and get de
 - [Apple Developer Enterprise Program Agreement](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20230605-English.pdf)
   - See Section 2.1 on page 8 for usage and restrictions, and Section 11.2 on page 33 for terms and terminations.
 - [Apple Developer Enterprise Program](https://developer.apple.com/programs/enterprise/)
+
 :::
 
 :::info
