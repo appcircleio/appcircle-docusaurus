@@ -1,8 +1,8 @@
 ---
 title: Flutter Install
-metaTitle: Flutter Install
-metaDescription: Flutter Install
-sidebar_position: 1
+description: This workflow step installs the specified Flutter SDK to run the Flutter CLI for subsequent analysis, build, and test operations.
+tags: [flutter, build, test, workflow, step]
+sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

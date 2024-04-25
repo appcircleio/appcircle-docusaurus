@@ -1,7 +1,7 @@
 ---
 title: Appcircle Onboarding
-metaTitle: Appcircle Onboarding
-metaDescription: Appcircle Onboarding
+description: To add your iOS or Android project to Appcircle, you need to complete the following checklist. The list is divided into sub-sections.
+tags: [onboarding, best practices]
 sidebar_position: 2
 ---
 
@@ -13,7 +13,7 @@ To add your iOS or Android project to Appcircle, you need to complete the follow
 
 # Prerequisite
 
-Before building the project on Appcircle, it should be checked whether it builds properly on your local computer. Frequently, the developers do not send the changes on their local computer, or their changes may not end up on the repo because of .gitignore file. The following steps should be followed to check that the project can be built without errors. If possible, these steps should be tried in a virtual machine, if not, with a different user or folder. 
+Before building the project on Appcircle, it should be checked whether it builds properly on your local computer. Frequently, the developers do not send the changes on their local computer, or their changes may not end up on the repo because of .gitignore file. The following steps should be followed to check that the project can be built without errors. If possible, these steps should be tried in a virtual machine, if not, with a different user or folder.
 
 - Clone the repo to another folder
 - If it's an iOS project and using Cocoapods or Carthage, run pod install or carthage bootsrap.
@@ -33,7 +33,7 @@ If your projects builds without an error, you need to complete the following sec
 
 ## Firewall
 
-<ContentRef url="/infrastructure/accessing-repositories-in-internal-networks-firewalls/">
+<ContentRef url="/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls/">
 Accessing Repositories in Internal Networks (Firewalls)
 </ContentRef>
 
@@ -81,7 +81,7 @@ If the extra libraries you use are in a private repo, these repositories must be
 
 You will need to create a new SSH key and upload the public key to your Repo and the private key to Appcircle. These files can be created easily by following the document below.
 
-https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-private-repository-via-ssh
+https://docs.appcircle.io/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh
 
 ### Netrc File
 
@@ -124,11 +124,11 @@ https://docs.appcircle.io/build/building-android-applications/android-signing-fo
 
 App Store, Google Play, or Huawei App Gallery keys must be added to Appcircle to upload IPA or APK files. To create these files, the following documents can be followed.
 
-https://docs.appcircle.io/publish-module/send-to-googleplay
+https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-googleplay
 
-https://docs.appcircle.io/publish-module/send-to-appstore
+https://docs.appcircle.io/publish-integrations/ios-publish-integrations/send-to-app-store
 
-https://docs.appcircle.io/publish-module/send-to-huawei
+https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-huawei
 
 ## Extra suggestions
 
@@ -157,7 +157,7 @@ if !ENV['AC_APPCIRCLE']
 **iOS**
 
 - If you are using CocoaPods, SwiftPM or Carthage, you need to commit Podfile.lock Package.resolved and Cartfile.resolved files. When these files are not available, the wrong versions may be installed.
-- You should not make any local changes to your pods. If you are going to make a change, you must fork the original pod and make the changes in that fork. Appcircle must have the access to the same code as you have on your local machine. 
+- You should not make any local changes to your pods. If you are going to make a change, you must fork the original pod and make the changes in that fork. Appcircle must have the access to the same code as you have on your local machine.
 
 **Android**
 

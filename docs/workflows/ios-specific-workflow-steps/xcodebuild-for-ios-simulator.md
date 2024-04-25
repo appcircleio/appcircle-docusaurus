@@ -1,7 +1,7 @@
 ---
 title: Xcodebuild for iOS Simulator
-metaTitle: Xcodebuild for iOS Simulator
-metaDescription: Xcodebuild for iOS Simulator
+description: Build your iOS app for the Simulator with Xcodebuild. Creates an unsigned xarchive file. 
+tags: [ios, simulator, xcodebuild, workflow, step]
 sidebar_position: 5
 ---
 

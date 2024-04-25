@@ -1,7 +1,7 @@
 ---
 title: Cocoapods Install
-metaTitle: Cocoapods Install
-metaDescription: Cocoapods Install
+description: Master Cocoapods Install for managing dependencies in your project. Learn how to use the 'pod install' command effectively.
+tags: [cocoapods, install, workflow, step]
 sidebar_position: 6
 ---
 
@@ -15,9 +15,8 @@ Runs the [CocoaPods](https://cocoapods.org) install command for dependency manag
 
 The workflow steps that need to be executed before running the **Cocoapods Install** workflow step, along with their respective reasons, are listed in the table below.
 
-
-| Prerequisite Workflow Step                      | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
+| Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                              |
+| --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_order.png' />
@@ -28,11 +27,11 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_version.png' />
 
-| Variable Name                 | Description                                    |Status    |
-|-------------------------------|------------------------------------------------|----------|
-| `$AC_PROJECT_PATH`            | Specifies the project path. For example: `./appcircle.xcodeproj`. If you filled in **`Configuration => Project or Workspace`**, this variable comes from [Configuration](https://docs.appcircle.io/build/build-profile-configuration). |  Required  |
-| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step. |  Required  |
-| `$AC_COCOAPODS_VERSION`       | Specifies the CocoaPods version. If there is a specific version you want to use, give it here as hardcoded, and the system will automatically install the given version.  |  Optional  |
+| Variable Name           | Description                                                                                                                                                                                                                                                     | Status   |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_PROJECT_PATH`      | Specifies the project path. For example: `./appcircle.xcodeproj`. If you filled in **`Configuration => Project or Workspace`**, this variable comes from [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration). | Required |
+| `$AC_REPOSITORY_DIR`    | Specifies the cloned repository directory. This path will be generated after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step.                                                                                         | Required |
+| `$AC_COCOAPODS_VERSION` | Specifies the CocoaPods version. If there is a specific version you want to use, give it here as hardcoded, and the system will automatically install the given version.                                                                                        | Optional |
 
 :::info
 Please note that the CocoaPods Install step uses the default system [**CocoaPods version**](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#ios-build-agent-stacks). If you want to use a specific version, please enter it hardcoded in the CocoaPods Version parameter in the step.

@@ -1,14 +1,14 @@
 ---
-title: Build and Signing Identities Reports
-metaTitle: Build and Signing Identities Reports
-metaDescription: Build and Signing Identities Reports
+title: Build & Signing Identity Reports
+description: Build & Signing Identity Reports in Appcircle
+tags: [reports, build history, signing history]
 sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Build and Signing Identities Reports
+# Build & Signing Identity Reports
 
 ## Build History
 
