@@ -1,7 +1,7 @@
 ---
 title: API and CLI Authentication
-metaTitle: API and CLI Authentication
-metaDescription: API and CLI Authentication
+description: Learn how to authenticate with the Appcircle API and CLI
+tags: [api, cli, authentication, personal api token, api token, cli token, session token]
 sidebar_position: 2
 ---
 
@@ -13,7 +13,7 @@ The Appcircle API supports authentication with a _Personal API Token_. The token
 
 ### Generating/Managing the Personal API Tokens
 
-To generate a Personal API Token, go to the [My Organization](../account/my-organization.md#accessing-the-my-organization-screen) screen in the Appcircle dashboard. The Personal API Token section is located on the top right.
+To generate a Personal API Token, go to the [My Organization](/account/my-organization#accessing-the-my-organization-screen) screen in the Appcircle dashboard. The Personal API Token section is located on the top right.
 
 Press the "Generate Token" button to generate your first token.
 

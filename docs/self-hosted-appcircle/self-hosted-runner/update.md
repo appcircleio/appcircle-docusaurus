@@ -1,7 +1,7 @@
 ---
-title: Upgrade Runner
-metaTitle: Upgrade Runner
-metaDescription: Upgrade Runner
+title: Upgrading Runner
+description: Learn how to upgrade self-hosted runner in Appcircle
+tags: [self-hosted runner, update, upgrade]
 sidebar_position: 3
 ---
 
@@ -20,26 +20,26 @@ Download and extract the latest self-hosted runner package.
   <TabItem value="osx-arm64" label="macOS arm64" default>
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.5.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.5.2.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.5.0.zip
+unzip -o -u appcircle-runner-osx-arm64-1.5.2.zip
 ```
 
   </TabItem>
   <TabItem value="osx-x64" label="macOS x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.5.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.5.2.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-x64-1.5.0.zip
+unzip -o -u appcircle-runner-osx-x64-1.5.2.zip
 ```
 
   </TabItem>
@@ -47,13 +47,13 @@ unzip -o -u appcircle-runner-osx-x64-1.5.0.zip
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.5.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.5.2.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-linux-x64-1.5.0.zip
+unzip -o -u appcircle-runner-linux-x64-1.5.2.zip
 ```
 
   </TabItem>
@@ -69,7 +69,7 @@ cd appcircle-runner
 
 Self-hosted runner updates may include tool upgrades or introduce new required tools for build pipeline. So we need to rerun configuration step same as before. It will check installed tools quickly, and will update only required tools.
 
-To remember what configuration step was, please refer to [this](./installation.md#3-configure) page.
+To remember what configuration step was, please refer to [this](./installation#3-configure) page.
 
 ## 3. Reinstall Service
 
@@ -91,7 +91,7 @@ In order to reinstall systemd or launchd service, first uninstall and then insta
 
 :::info
 
-When you complete update successfully, you will see updated **version** in "Self-hosted Runners" list in [here](./configure-runner/manage-runners.md#monitoring-self-hosted-runners).
+When you complete update successfully, you will see updated **version** in "Self-hosted Runners" list in [here](./configure-runner/manage-runners#monitoring-self-hosted-runners).
 
 ```bash
 ./ac-runner --version
