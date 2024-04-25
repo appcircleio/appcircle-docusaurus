@@ -152,3 +152,23 @@ If you want to download and share the logs after you [filter](#filtering-logs), 
 A file that contains the filtered logs will be downloaded to your local computer.
 
 You can share that log file to troubleshoot the problems.
+
+## Grafana User Management
+
+It is important to note that the user accounts for the Appcircle Server and the Grafana monitoring interface are entirely separate and unrelated entities. There is no direct association or shared credentials between these two user management systems.
+
+If you require additional users beyond the initial user account to have access to view log data, you can create new user accounts within the Grafana user management system.
+
+To create a new user account, navigate to the "Administration" section of the Grafana interface, then access the "Users" menu. From there, click on the "New user" button to initiate the process of adding a new user.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-7-adding-users.png' />
+
+Provide the necessary user information in the respective fields, and then click the "Create user" button to save and create the new user account.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-8-creating-user-menu.png' />
+
+To grant administrative privileges to the user, click the "Change" button and toggle the "Grafana Admin" switch to the "Yes" position. Click "Change" again to confirm and save the updated permissions.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-9-make-it-admin.png' />
+
+For more detailed information, you can check the official [Grafana User Management](https://grafana.com/docs/grafana/latest/administration/user-management/) documentation.
