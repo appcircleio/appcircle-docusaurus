@@ -6,6 +6,8 @@ tags: [monitoring, logging, Grafana]
 
 import Screenshot from '@site/src/components/Screenshot';
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
 
 ## Overview
 
@@ -69,6 +71,8 @@ The logs in the loki should be cleaned automatically. By default, the retention 
 
 If you want to change this, you can edit the `global.yaml` of your project.
 
+<DowntimeCaution />
+
 ```bash
 vi ./projects/spacetech/global.yaml
 ```
@@ -79,6 +83,8 @@ Add or change the retention period variable.
 loki:
   retentionPeriod: 168h # 7 days
 ```
+
+<RestartAppcircleServer />
 
 ### Retention on Systemd
 
