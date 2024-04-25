@@ -1,13 +1,13 @@
 ---
-title: Why to Use Environment Variables and Secrets?
-metaTitle: Why to Use Environment Variables and Secrets?
-metaDescription: Why to Use Environment Variables and Secrets?
+title: Introduction to Environment Variables
+description: Environment variables let you extend your build configuration. There are several read-only Appcircle variables and you can add your own variables to export during the build process and use in custom build scripts.
+tags: [environment variables, env vars, variables, build configuration, custom build scripts]
 sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Why to Use Environment Variables and Secrets?
+# Introduction to Environment Variables
 
 Environment variables let you extend your build configuration. There are several read-only Appcircle variables and you can add your own variables to export during the build process and use in custom build scripts.
 
