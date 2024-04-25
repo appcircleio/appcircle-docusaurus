@@ -1,9 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const rlc = require("remark-link-card");
+const { themes } = require("prism-react-renderer");
+const remarkExternalUrlRef = require("./src/plugins/remark-externalUrlRef");
+
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,9 +15,12 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  onBrokenAnchors: "throw",
+  onDuplicateRoutes: "warn",
   favicon: "img/favicon.ico",
   organizationName: "appcircleio", // Usually your GitHub org/user name.
   projectName: "appcircle-docusaurus", // Usually your repo name.
+  trailingSlash: false,
 
   presets: [
     [
@@ -24,7 +29,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          remarkPlugins: [rlc],
+          remarkPlugins: [remarkExternalUrlRef],
           // Please change this to your repo.
           editUrl:
             "https://github.com/appcircleio/appcircle-docusaurus/tree/master/",
@@ -169,7 +174,18 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["ruby", "groovy", "java", "kotlin"],
+        additionalLanguages: [
+          "ruby",
+          "groovy",
+          "java",
+          "kotlin",
+          "bash",
+          "diff",
+          "json",
+          "markdown",
+          "shell-session",
+          "yaml",
+        ],
       },
       algolia: {
         apiKey: "b56a5dc4e52ec9e97ad93981cc668c4a",

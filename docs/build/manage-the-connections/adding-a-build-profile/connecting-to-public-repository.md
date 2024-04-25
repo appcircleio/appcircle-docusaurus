@@ -21,13 +21,13 @@ If your repository is located under these providers, Appcircle has built-in supp
 
 For more information on your provider, see the links below:
 
-- [Github](./connecting-to-github)
-- [Bitbucket](./connecting-to-bitbucket)
-- [GitLab](./connecting-to-gitlab)
+- [Github](/build/manage-the-connections/adding-a-build-profile/connecting-to-github)
+- [Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket)
+- [GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab)
 
 #### Using a Private Git Server?
 
-If you plan to use Appcircle to connect your private repository, please refer to [connecting to private repositories documentation](./connecting-to-private-repository-via-ssh) for more information.
+If you plan to use Appcircle to connect your private repository, please refer to [connecting to private repositories documentation](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh) for more information.
 
 ### Public Repository Connection
 
@@ -53,13 +53,13 @@ Public connection refers to the HTTP(s) connection by Git Providers. SSH links i
 
 :::
 
-After the connection is successful, you can [view your newly created profile](./#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](/build/manage-the-connections/adding-a-build-profile/#view-the-newly-created-build-profile) and start building!
 
 :::info
 
 ### Webhook Events
 
-Keep in mind that certain hook events **will not work **with a public connection.
+Keep in mind that certain hook events **will not work** with a public connection.
 
 :::
 
