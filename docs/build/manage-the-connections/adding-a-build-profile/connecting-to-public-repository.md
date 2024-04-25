@@ -59,7 +59,7 @@ After the connection is successful, you can [view your newly created profile](/b
 
 ### Webhook Events
 
-Keep in mind that certain hook events **will not work **with a public connection.
+Keep in mind that certain hook events **will not work** with a public connection.
 
 :::
 
