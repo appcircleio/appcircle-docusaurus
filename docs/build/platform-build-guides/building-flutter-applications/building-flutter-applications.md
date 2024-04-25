@@ -1,7 +1,7 @@
 ---
 title: Building Flutter Mobile Applications
-metaTitle: Building Flutter Mobile Applications
-metaDescription: Building Flutter Mobile Applications
+description: You can build your Flutter applications in Appcircle for iOS or Android platforms.
+tags: [build, platform build guides, flutter]
 sidebar_position: 7
 ---
 

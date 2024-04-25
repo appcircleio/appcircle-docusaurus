@@ -1,7 +1,7 @@
 ---
 title: Self-signed Certificates
-metaTitle: Self-signed Certificates
-metaDescription: Self-signed Certificates
+description: Learn how to add self-signed certificates to the Appcircle runner
+tags: [self-hosted runner, certificates, self-signed certificates]
 sidebar_position: 5
 ---
 

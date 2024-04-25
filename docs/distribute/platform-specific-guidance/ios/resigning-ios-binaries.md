@@ -1,7 +1,7 @@
 ---
 title: Resigning iOS Binaries
-metaTitle: Resigning iOS Binaries
-metaDescription: Resigning iOS Binaries
+description: Understand the process of resigning iOS binaries with a new certificate or keystore. Crucial for publishing under a different developer account.
+tags: [resigning, ios, binaries, resigning ios binaries]
 sidebar_position: 6
 ---
 

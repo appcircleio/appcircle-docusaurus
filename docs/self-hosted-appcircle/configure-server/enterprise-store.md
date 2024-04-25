@@ -1,8 +1,9 @@
 ---
-title: Enterprise App Store
-metaTitle: Customize the Enterprise App Store on Self-hosted Installations
-metaDescription: Customize the Enterprise App Store on Self-hosted Installations
+title: Enterprise App Store Customization
+description: Customize the Enterprise App Store on self-hosted installations
+tags: [enterprise app store, customize, self-hosted]
 sidebar_position: 14
+sidebar_label: Customize Enterprise App Store
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

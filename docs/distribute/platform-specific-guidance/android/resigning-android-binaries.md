@@ -1,7 +1,7 @@
 ---
 title: Resigning Android Binaries
-metaTitle: Resigning Android Binaries
-metaDescription: Resigning Android Binaries
+description: Learn to resign Android binaries with a new signing certificate or keystore. Essential for publishing under a different developer account.
+tags: [resigning, android binaries, signing, keystore, certificate]
 sidebar_position: 6
 ---
 

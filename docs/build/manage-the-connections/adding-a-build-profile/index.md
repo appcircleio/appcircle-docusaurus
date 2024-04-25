@@ -1,7 +1,7 @@
 ---
 title: Adding a Build Profile & Connecting a Repository
-metaTitle: Adding a Build Profile & Connecting a Repository
-metaDescription: Adding a Build Profile & Connecting a Repository
+description: Learn how to add a build profile and connect a repository in Appcircle
+tags: [build profile, connection, repository]
 sidebar_position: 1
 ---
 

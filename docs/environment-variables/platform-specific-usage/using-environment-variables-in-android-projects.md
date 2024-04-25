@@ -1,7 +1,7 @@
 ---
 title: Android Builds
-metaTitle: Using Environment Variables in Android Projects
-metaDescription: Using Environment Variables in Android Projects
+description: Using Environment Variables in Android Projects
+tags: [environment variables, env vars, variables, build configuration, custom build scripts, android]
 sidebar_position: 5
 ---
 

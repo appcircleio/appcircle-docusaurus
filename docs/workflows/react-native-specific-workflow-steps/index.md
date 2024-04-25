@@ -1,7 +1,7 @@
 ---
 title: React Native Specific Workflow Steps
-metaTitle: React Native Specific Workflow Steps
-metaDescription: React Native Specific Workflow Steps
+description: Explore React Native specific workflow steps for building profiles. Visit our workflow marketplace for a complete list.
+tags: [react-native, mobile, workflow, step]
 sidebar_position: 5
 ---
 # React Native Specific Workflow Steps

@@ -1,7 +1,7 @@
 ---
 title: Configuring the Profile
-metaTitle: Setting Up Your App Store Profile
-metaDescription: Setting Up Your App Store Profile
+description: Learn how to configure your enterprise app store profile in Appcircle
+tags: [enterprise app store, enterprise app store profile, configure profile]
 sidebar_position: 2
 ---
 
@@ -44,7 +44,7 @@ For more information how to manage user groups, please follow the steps that is 
 
 ### Add Version
 
-If you enabled **Publish Enterprise Store** settings in your config, all the new signed builds will automatically appear in the list. You can also manually upload a new version to your profile.
+If you enabled **Publish Enterprise App Store** settings in your config, all the new signed builds will automatically appear in the list. You can also manually upload a new version to your profile.
 
 Click the **Add Version** button and select IPA or APK file and hit the **Upload** button.
 
@@ -107,7 +107,8 @@ You can access the relevant terms and conditions from the links below and get de
 - [Apple Developer Enterprise Program Agreement](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20230605-English.pdf)
   - See Section 2.1 on page 8 for usage and restrictions, and Section 11.2 on page 33 for terms and terminations.
 - [Apple Developer Enterprise Program](https://developer.apple.com/programs/enterprise/)
-  :::
+
+:::
 
 :::info
 

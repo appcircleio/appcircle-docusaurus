@@ -1,7 +1,7 @@
 ---
 title: Building Flutter Web Applications
-metaTitle: Building Flutter Web Applications
-metaDescription: Building Flutter Web Applications
+description: You can build your Flutter web applications in Appcircle.
+tags: [flutter, web, flutter web, flutter web build]
 sidebar_position: 8
 ---
 
@@ -36,7 +36,7 @@ For more information about workflows, refer the workflow documentation below:
 
 <ContentRef url='/workflows/index.html'>What are Workflows</ContentRef>
 
-If you want to deploy your web output automatically, you can use a [Custom Script](https://github.com/appcircleio/appcircle-custom-script-component/) or [upload it to Amazon S3](/integrations/deployment-guides/uploading-files-to-amazon-sin-the-workflows).
+If you want to deploy your web output automatically, you can use a [Custom Script](https://github.com/appcircleio/appcircle-custom-script-component/) or [upload it to Amazon S3](/workflows/common-workflow-steps/upload-files-to-amazon-s3).
 
 Once your build is configured, it can be built [manually or automatically in the same way with other apps](/build/build-process-management/build-manually-or-with-triggers). With Flutter 2.0, you can build your Flutter web apps in the stable channel. (In Flutter 1.x, it was necessary to use the beta channel.)
 

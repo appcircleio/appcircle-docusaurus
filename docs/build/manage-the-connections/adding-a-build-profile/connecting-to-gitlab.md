@@ -1,7 +1,7 @@
 ---
 title: Connecting to GitLab
-metaTitle: Connecting to GitLab
-metaDescription: Connecting to GitLab
+description: Learn how to connect to GitLab repositories in Appcircle
+tags: [gitlab, connection, repository, self-hosted, token, access, firewall, ip, port]
 sidebar_position: 2
 ---
 

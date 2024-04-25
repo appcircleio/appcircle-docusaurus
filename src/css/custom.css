@@ -861,6 +861,10 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
   background-image: url(../../static/img/sidebar/publish.svg);
 }
 
+.section-title.publish-integrations > div >a::before {
+  background-image: url(../../static/img/sidebar/publish.svg);
+}
+
 .section-title.continuous-testing > div >a::before {
   background-image: url(../../static/img/sidebar/continuous-testing.svg);
 }
@@ -948,3 +952,13 @@ img {
 .menu__list-item.navbar__item_logo_container {
   display: none !important;
 }
+
+.theme-doc-sidebar-item-category .menu__link {
+  padding-left: 0.3rem;
+}
+
+.menu__list-item-collapsible .menu__caret {
+  padding: 2px; /* Adjust padding to reduce size if necessary */
+  margin: 0 8px 0 0; /* Adjust margin to align properly, values here are just an example */
+}
+

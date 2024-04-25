@@ -1,8 +1,9 @@
 ---
-title: Amazon Web Services (AWS)
-metaTitle: Amazon Web Services (AWS)
-metaDescription: Appcircle Server on AWS
+title: Amazon Web Services (AWS) Integration
+description: Learn how to create an Appcircle server instance on Amazon Web Services (AWS)
+tags: [self-hosted, appcircle server, aws, amazon web services, EC2, AMI]
 sidebar_position: 1
+sidebar_label: Amazon Web Services (AWS)
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -251,6 +252,12 @@ After the configuration is done, [run the server](../docker#5-run-server) and go
 When you complete installation successfully by following the above steps, you're ready for your first build. :tada:
 
 But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply related the guidelines [here](/self-hosted-appcircle/self-hosted-runner/installation).
+
+:::tip
+Appcircle also supports the installation and execution of the runners on AWS.
+
+You can see the details about how to configure a runner on AWS **[here](/self-hosted-appcircle/self-hosted-runner/cloud-providers/aws)**.
+:::
 
 The self-hosted runner section in the documents has all the details about runners and their configuration.
 

@@ -1,7 +1,7 @@
 ---
 title: Reserved Variables
-metaTitle: Reserved Variables in Appcircle
-metaDescription: Reserved Variables in Appcircle
+description: Here is a list of pre-defined environment variables in Appcircle.
+tags: [environment variables, env vars, variables, build configuration, custom build scripts]
 sidebar_position: 3
 ---
 

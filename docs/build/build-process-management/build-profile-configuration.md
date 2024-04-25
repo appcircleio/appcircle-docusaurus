@@ -1,7 +1,7 @@
 ---
 title: Profile Configuration
-metaTitle: Build Profile Configuration Overview
-metaDescription: Build Profile Configuration Overview
+description: Configuring a build profile has some basic steps that need to be completed before starting a build.
+tags: [build profile, configuration, build configuration, build profile configuration]
 sidebar_position: 2
 ---
 

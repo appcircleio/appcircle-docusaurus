@@ -1,7 +1,7 @@
 ---
 title: LDAP Brute Force Protection
-metaTitle: LDAP Brute Force Protection Settings
-metaDescription: LDAP Brute Force Protection Settings
+description: Learn how to configure LDAP brute-force protection on the Appcircle server
+tags: [ldap, brute-force, security, appcircle server]
 sidebar_position: 10
 ---
 

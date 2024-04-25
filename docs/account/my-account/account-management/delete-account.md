@@ -1,7 +1,7 @@
 ---
 title: Delete Account
-metaTitle: Delete Account
-metaDescription: Delete Account
+description: Learn how to delete your account in Appcircle
+tags: [account, account management, delete account]
 sidebar_position: 6
 ---
 

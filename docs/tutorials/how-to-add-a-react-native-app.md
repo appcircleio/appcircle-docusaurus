@@ -1,7 +1,7 @@
 ---
 title: How to add a React Native App
-metaTitle: How to add a React Native App to Appcircle
-metaDescription: How to add a React Native App to Appcircle
+description: Learn how to add a React Native app to Appcircle
+tags: [react native, mobile, ios, android]
 sidebar_position: 3
 sidebar_label: React Native
 ---

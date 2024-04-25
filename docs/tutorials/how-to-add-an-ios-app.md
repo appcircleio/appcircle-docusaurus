@@ -1,7 +1,7 @@
 ---
 title: How to add an iOS App
-metaTitle: How to add an iOS App to Appcircle
-metaDescription: How to add an iOS App to Appcircle
+description: Learn how to add an iOS app to Appcircle
+tags: [ios, mobile, android]
 sidebar_position: 1
 sidebar_label: iOS
 ---

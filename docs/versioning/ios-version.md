@@ -1,7 +1,7 @@
 ---
 title: Understanding iOS Versioning
-metaTitle: Understanding iOS Versioning
-metaDescription: Understanding iOS Versioning
+description: Learn how to manage versioning for iOS applications in Appcircle
+tags: [versioning, ios]
 sidebar_position: 2
 ---
 

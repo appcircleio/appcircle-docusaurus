@@ -1,7 +1,7 @@
 ---
 title: Huawei AppGallery API Key
-metaTitle: Huawei AppGallery API Key
-metaDescription: Huawei AppGallery API Key
+description: Learn how to add a Huawei AppGallery API Key to your account in Appcircle
+tags: [account, my organization, api integrations, huawei appgallery, api key]
 sidebar_position: 7
 ---
 

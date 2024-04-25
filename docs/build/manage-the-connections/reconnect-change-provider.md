@@ -1,7 +1,7 @@
 ---
 title: Connection Management
-metaTitle: Connection Management
-metaDescription: Connection Management
+description: Learn how to manage connections in Appcircle
+tags: [build, manage, connections]
 sidebar_position: 12
 ---
 

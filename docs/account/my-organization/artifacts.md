@@ -1,7 +1,7 @@
 ---
 title: Artifacts
-metaTitle: Artifacts
-metaDescription: Artifacts
+description: Learn how to manage the logs and artifacts of your build profiles in Appcircle
+tags: [account, my organization, artifacts]
 sidebar_position: 3
 ---
 

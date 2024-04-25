@@ -1,7 +1,7 @@
 ---
 title: Sign Up / Login
-metaTitle: Sign Up / Login
-metaDescription: Sign Up / Login
+description: Getting started with Appcircle is easy. To sign up for or log into Appcircle, go to my.appcircle.io.
+tags: [account, sign up, login]
 sidebar_position: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Enable SSO
-metaTitle: Enable SSO
-metaDescription: Enable SSO
+description: Activate Single Sign-On (SSO) for your organization with Appcircle. Simplify login processes and increase user security.
+tags: [account, organization, sso, configuration]
 sidebar_position: 1
 ---
 
