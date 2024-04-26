@@ -90,14 +90,12 @@ You must add this component **after** running your tests so that it can parse te
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-workflow.png" />
 
-[Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. This component supports the following Test and Coverage Formats
+[Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. This component supports the following test and coverage formats:
 
 - [**JUnit**](https://junit.org)
 - [**JaCoCo**](https://www.jacoco.org)
 - [**Cobertura**](https://cobertura.github.io/cobertura)
 - [**lcov.info**](https://lcov-viewer.netlify.app)
-
-### Input Variables
 
 You must configure the **Test Report Component** and enter the path of code coverage and test results paths. For example, if you run your tests with an emulator, your files will be generated in the following folders.
 
@@ -107,24 +105,6 @@ You must configure the **Test Report Component** and enter the path of code cove
 You must configure the component to parse those folders.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-workflow.png" />
-
-| Variable Name           | Description                                                                                                                                                                    | Status    |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
-| `AC_TEST_RESULT_PATH`   | This directory and subdirectories will be searched for compatible test files.                                                                                                  | Required  |
-| `AC_COVERAGE_RESULT_PATH`| This environment variable is automatically set for native iOS projects when you run tests. For other projects, you need to set the coverage path.                        | Optional  |
-| `AC_JACOCO_COVERAGE_TYPE`| According to which parameter in your Jacoco report, coverage will be calculated. It will be used when you have Jacoco parseable coverage results and specify the coverage result path. | Required  |
-
-
-### Output Variables
-
-The outputs resulting from the operation of this component are as follows:
-
-| Variable Name              | Description                                          |
-| -------------------------- | ---------------------------------------------------- |
-| `AC_TEST_REPORT_JSON_PATH` | Specifies the path of the JSON report.               |
-
-
-### Test Reports Step Setup
 
 :::warning
 
