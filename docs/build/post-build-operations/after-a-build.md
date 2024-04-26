@@ -44,7 +44,7 @@ Build logs help you to observe and understand exactly what happened during a bui
 
 You can use build logs to debug your builds in case you get any errors. Additional parameters and flags can also be used in workflow steps to see more details in build logs.
 
-<ContentRef url="/workflows/index.html">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
 
 You can also download build logs in plain text format in case you would like to investigate them on your own or share with your team.
 

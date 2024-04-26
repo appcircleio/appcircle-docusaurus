@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # App Center CodePush
 
-**[App Center CodePush]**(https://learn.microsoft.com/en-us/appcenter/distribution/codepush/) is an App Center cloud service that enables React Native developers to deploy mobile app updates directly to their users’ devices. It works by acting as a central repository where developers can publish certain updates (for example, JS, HTML, CSS, and image changes), and apps can query for updates (using the provided client SDKs).
+[**App Center CodePush**](https://learn.microsoft.com/en-us/appcenter/distribution/codepush/) is an App Center cloud service that enables React Native developers to deploy mobile app updates directly to their users’ devices. It works by acting as a central repository where developers can publish certain updates (for example, JS, HTML, CSS, and image changes), and apps can query for updates (using the provided client SDKs).
 
 You can seamlessly integrate **App Center CodePush** into your workflow with Appcircle, facilitating easy setup and utilization within your existing development processes.
 

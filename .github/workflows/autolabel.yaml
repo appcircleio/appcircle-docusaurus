@@ -1,0 +1,28 @@
+name: autolabel
+
+on:
+  pull_request_review:
+    types: [submitted, edited]
+  workflow_dispatch:
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Label PR
+        if: github.event.review.state == 'approved'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const labels = ['autoupdate']; // Add other labels here if needed
+            github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              labels: labels
+            });
