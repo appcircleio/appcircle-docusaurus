@@ -1,8 +1,9 @@
-name: Label Approved PR
+name: autolabel
 
 on:
   pull_request_review:
     types: [submitted, edited]
+  workflow_dispatch:
 
 jobs:
   label:
