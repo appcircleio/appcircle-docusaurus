@@ -1,6 +1,5 @@
 name: autoupdate
 on:
-  # This will trigger on all pushes to all branches.
   push:
     branches:
       - "develop"
@@ -18,3 +17,4 @@ jobs:
           PR_FILTER: "labelled"
           PR_LABELS: "autoupdate"
           MERGE_CONFLICT_ACTION: "fail"
+          MERGE_MSG: "Auto merge by autoupdate action 🤖"
