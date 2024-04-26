@@ -148,7 +148,7 @@ Once you complete your build configuration, you can edit your build workflow. Re
 
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
-<ContentRef url="/workflows/index.html">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
 
 ### Starting a React Native Build and After a Build
 
