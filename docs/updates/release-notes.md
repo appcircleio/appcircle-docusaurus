@@ -16,9 +16,9 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Features
 
-- [The public link](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile#using-public-link-for-distribution) in the distribution settings has been transformed into a QR code to simplify access and sharing. <CloudBadge/>
-- Users can now filter the app version list on [the testing portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries) by app name, version, release notes, or build number for enhanced navigation and search capabilities. <CloudBadge/>
-- The system now automatically converts uploaded or built AAB files to a universal format. It also discreetly saves the newly created APK file with the second app's resource id. <CloudBadge/>
+- [The public link](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile#using-public-link-for-distribution) in the distribution settings has been transformed into a QR code to simplify access and sharing. <CloudBadge/> <SelfHostedBadge/>
+- Users can now filter the app version list on [the testing portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries) by app name, version, release notes, or build number for enhanced navigation and search capabilities. <CloudBadge/> <SelfHostedBadge/>
+- The system now automatically converts uploaded or built AAB files to a universal format. It also discreetly saves the newly created APK file with the second app's resource id. <CloudBadge/> <SelfHostedBadge/>
 - A new command, ["build active-list"](https://docs.appcircle.io/appcircle-api/) has been added, allowing users to view active builds in the queue directly from their command line interface. <CloudBadge/> <SelfHostedBadge/>
 - A new command, ["build view"](https://docs.appcircle.io/appcircle-api/) has been added, enabling users to access and view detailed information about builds directly from the command line interface. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 pool" now includes [Xcode 15.4 beta-1](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. As this is a beta release, we strongly recommend testing your workflows extensively to ensure compatibility and stability. <CloudBadge/> <SelfHostedBadge/>
@@ -26,15 +26,15 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### :muscle: Improvements
 
-- We have introduced new [Publish Events](https://docs.appcircle.io/publish-module/) like Publish Profile Created, Publish Profile Deleted, App Version Uploaded, App Version Created, and App Version Deleted to enrich the activity report. <CloudBadge/>
-- We have fine-tuned branch search and filter operations for faster performance and smoother functionality. <CloudBadge/>
-- We have introduced the capability for active users to store profile pins (Enterprise store profile, Distribution profile, Build Profile, and Publish Profile) individually. Previously, profile pins were stored solely on an organization-wide level. Now, each active user can set and manage their own pin independently, providing greater flexibility and customization options. <CloudBadge/>
-- Added [Okta](https://docs.appcircle.io/account/my-organization/sso-providers-configuration/okta-saml) tile based login so users can log in to the Appcircle dashboard by clicking the Appcircle app icon on Okta side. <CloudBadge/>
+- We have introduced new [Publish Events](https://docs.appcircle.io/publish-module/) like Publish Profile Created, Publish Profile Deleted, App Version Uploaded, App Version Created, and App Version Deleted to enrich the activity report. <CloudBadge/> <SelfHostedBadge/>
+- We have fine-tuned branch search and filter operations for faster performance and smoother functionality. <CloudBadge/> <SelfHostedBadge/>
+- We have introduced the capability for active users to store profile pins (Enterprise store profile, Distribution profile, Build Profile, and Publish Profile) individually. Previously, profile pins were stored solely on an organization-wide level. Now, each active user can set and manage their own pin independently, providing greater flexibility and customization options. <CloudBadge/> <SelfHostedBadge/>
+- Added [Okta](https://docs.appcircle.io/account/my-organization/sso-providers-configuration/okta-saml) tile based login so users can log in to the Appcircle dashboard by clicking the Appcircle app icon on Okta side. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
-- We have fixed a bug that caused the report to update only once due to discrepancies between canceling after the build starts and canceling before it starts. <CloudBadge/>
-- Fixed an issue where manual distribution resulted in errors when attempting to install an already existing version. Now, a pop-up warning is displayed in such cases. <CloudBadge/>
+- We have fixed a bug that caused the report to update only once due to discrepancies between canceling after the build starts and canceling before it starts. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where manual distribution resulted in errors when attempting to install an already existing version. Now, a pop-up warning is displayed in such cases. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue of undefined workflow name in the 'listBuildProfileWorkflows' command. <CloudBadge/> <SelfHostedBadge/>
 - Fixed "workflowName" parameter in the "build start" command. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that caused fullchain certificates installed by users to not work properly. <CloudBadge/> <SelfHostedBadge/>
