@@ -156,7 +156,7 @@ Any custom operation during the build can be executed through the Custom Script 
 
 For details on using Appcircle's workflow editor, please see the related page below:
 
-<ContentRef url="/workflows/index.html">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
 
 ### Start Build
 

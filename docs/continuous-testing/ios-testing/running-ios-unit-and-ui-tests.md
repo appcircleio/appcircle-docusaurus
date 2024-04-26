@@ -33,7 +33,7 @@ Make sure the step is after the **Xcode Select** step and before **Export Build 
 
 See the following page on our documentation to learn more about adding new workflow steps:
 
-<ContentRef url="/workflows/index.html">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
 
 To learn more about **Xcodebuild for Unit and UI Tests** step, visit its source on Github:
 
