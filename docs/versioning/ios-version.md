@@ -84,6 +84,17 @@ This component updates all runnable targets. If you only want to update selected
 
 The versioning system will update the project's build or version number according to the target's release configuration. If you want to use another `xcconfig` please enable the `MANUALLY SELECTED XCCONFIG` toggle and write the name of the `xcconfig`.
 
+### Output Values
+
+After the build or version number update, new values will be written to two environment variables.
+
+| Value                        | Explanation            |
+| ---------------------------- | ---------------------- |
+| `$AC_IOS_NEW_BUILD_NUMBER`   | Changed build number   |
+| `$AC_IOS_NEW_VERSION_NUMBER` | Changed version number |
+
+You can use the above values in the remaining steps of your workflow.
+
 ### Input Variables
 
 The versioning system works by consuming environment variables. Even though it's easier to configure it by using UI, sometimes you may want to change them on the fly. Your commit messages or tags can be used to override those settings. The name of the variables and expected values can be found below.
