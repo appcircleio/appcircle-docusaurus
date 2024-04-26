@@ -33,7 +33,7 @@ Before executing the **Test Report** workflow step, certain prerequisite workflo
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for **Test Distribution** are as follows:
+For each component, specific input variables are required for its operation on your system. The input variables necessary for **Test Reports** are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_2.png'/>
 
@@ -41,7 +41,7 @@ For each component, specific input variables are required for its operation on y
 | ------------------------ | ---------------------------------------------------------------- | --------- |
 | `AC_TEST_RESULT_PATH`    | Specifies the directory and its subdirectories where compatible test files will be searched. | Required  |
 | `AC_COVERAGE_RESULT_PATH`| Specifies the coverage path. | Optional  |
-| `AC_JACOCO_COVERAGE_TYPE`| Determines the parameter in your JaCoCo report based on which the coverage will be calculated. This setting is necessary when using JaCoCo parseable coverage results and specifying the coverage result path. | Required  |
+| `AC_JACOCO_COVERAGE_TYPE`| Determines the parameter in your JaCoCo report based on which the coverage will be calculated. This setting is necessary when using JaCoCo parseable coverage results and specifying the coverage result path. Types description can be found in this [documentation](/continuous-testing/android-testing/running-android-unit-tests#jacoco-test-coverage) | Required  |
 
 
 ### Output Variables
