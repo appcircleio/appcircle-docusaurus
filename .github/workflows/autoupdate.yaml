@@ -13,7 +13,7 @@ jobs:
       - uses: chinthakagodawita/autoupdate@v1.7.0
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          DRY_RUN: "true"
+          DRY_RUN: "false"
           PR_READY_STATE: "ready_for_review"
           PR_FILTER: "labelled"
           PR_LABELS: "autoupdate"
