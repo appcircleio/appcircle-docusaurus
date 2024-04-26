@@ -13,10 +13,10 @@ The Appcircle **Test Report** step displays your test results and code coverage 
 
 This component supports the following test and coverage formats:
 
-- [**Xcode 13+ XCTest**](https://developer.apple.com/documentation/xctest)
-- [**JUnit**](https://junit.org)
-- [**Cobertura**](https://cobertura.github.io/cobertura)
-- [**lcov.info**](https://lcov-viewer.netlify.app)
+- [Xcode 13+ XCTest](https://developer.apple.com/documentation/xctest) - For Apple's native test framework.
+- [JUnit](https://junit.org) - For Java-based test reporting.
+- [Cobertura](https://cobertura.github.io/cobertura) - For coverage reporting.
+- [lcov.info](https://lcov-viewer.netlify.app) - For GCC coverage data.
 
 For additional details, please refer to the document: [**Generating Test Report**](/continuous-testing/ios-testing/running-ios-unit-and-ui-tests#generating-test-report)
 
@@ -27,7 +27,7 @@ Before executing the **Test Report** workflow step, certain prerequisite workflo
 
 | Prerequisite Workflow Step                                   | Description                                                                   |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
-| [**Xcodebuild for Unit and UI Test**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) | This step allows you to run unit and UI tests in your project. When this step runs, all your tests are run, and an .xcresult file is created as a result. |
+| [**Xcodebuild for Unit and UI Test**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) | Run unit and UI tests in your project to generate an `.xcresult` file containing the test outcomes. |
 
 
 ### Input Variables
@@ -36,8 +36,8 @@ For each component, specific input variables are required for its operation on y
 
 | Variable Name            | Description                                                      | Status    |
 | ------------------------ | ---------------------------------------------------------------- | --------- |
-| `AC_TEST_RESULT_PATH`    | Specifies the directory and its subdirectories where compatible test files will be searched. | Required  |
-| `AC_COVERAGE_RESULT_PATH`| This environment variable is automatically set for native iOS projects when you run tests. For other projects, you need to set the coverage path. | Optional  |
+| `AC_TEST_RESULT_PATH`    | Define the directory and its subdirectories for searching compatible test files. | Required  |
+| `AC_COVERAGE_RESULT_PATH`| For native iOS projects, tests automatically set this variable. For other projects, you must specify the coverage path manually. | Optional  |
 
 
 ### Output Variables

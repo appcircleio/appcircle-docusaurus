@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # iOS Increment Build and Version Number
 
-The **iOS Increment Build and Version Number** step is managed with **iOS Versioning**. Detailed information about this step, such as [**Prerequisites**](/versioning/android-version#enabling-version-management), [**Input Variables**](/versioning/ios-version#input-variables), and [**Output Variables**](/versioning/ios-version#output-values) variables, can be found in the document below:
+The **iOS Increment Build and Version Number** step is controlled by **iOS Versioning**. For detailed information about this step, including [**Prerequisites**](/versioning/ios-version#enabling-version-management), [**Input Variables**](/versioning/ios-version#input-variables), and[**Output Variables**](/versioning/ios-version#output-values), please refer to the documentation below:
 
 - [**Understanding iOS Versioning**](/versioning/ios-version)
 
