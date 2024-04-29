@@ -2,7 +2,6 @@
 title: Firebase App Distribution
 description: Firebase App Distribution, enables developers to distribute their applications to testers and stakeholders for testing purposes.
 tags: [firebase, mobile, distribution]
-sidebar_position: 8
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

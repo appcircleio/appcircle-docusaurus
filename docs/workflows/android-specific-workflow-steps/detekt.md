@@ -2,7 +2,6 @@
 title: Detekt
 description: Detekt step, checks for code smells, performance problems, bugs, and adherence to best practices, offering configurable rules and plugins for customization.
 tags: [detekt, android, code-quality]
-sidebar_position: 16
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

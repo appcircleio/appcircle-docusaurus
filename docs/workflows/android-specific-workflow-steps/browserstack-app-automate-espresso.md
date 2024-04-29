@@ -2,7 +2,6 @@
 title: BrowserStack App Automate - Espresso
 description: BrowserStack App Automate - Espresso is a testing solution provided by BrowserStack specifically designed for Android applications using the Espresso testing framework.
 tags: [android, mobile, testing, browserstack]
-sidebar_position: 14
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

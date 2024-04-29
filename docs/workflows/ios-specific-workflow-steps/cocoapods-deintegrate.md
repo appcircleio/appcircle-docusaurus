@@ -2,7 +2,6 @@
 title: CocoaPods Deintegrate
 description: Clean your Xcode projects with Cocoapods Deintegrate. Remove pods swiftly to maintain a streamlined, efficient development environment.
 tags: [cocoapods, deintegrate, workflow, step]
-sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

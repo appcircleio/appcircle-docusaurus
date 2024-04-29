@@ -2,7 +2,6 @@
 title: App Center Android Distribute
 description: App Center Android Distribute enables developers to distribute their Android applications to testers and stakeholders for testing purposes.
 tags: [android, mobile, distribution]
-sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

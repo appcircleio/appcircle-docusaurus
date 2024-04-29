@@ -2,7 +2,6 @@
 title: App Center CodePush
 description: Effortlessly update apps with App Center Code Push. Learn quick, reliable code deployment without app store delays.
 tags: [react native, mobile, workflow, step, code push, app center]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

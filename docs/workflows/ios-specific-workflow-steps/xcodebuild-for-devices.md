@@ -2,7 +2,6 @@
 title: Xcodebuild for Devices (Archive & Export)
 description: Learn to build iOS apps for ARM devices with Xcodebuild. Essential for Sharing With Testers feature and iOS distribution
 tags: [xcode, ios, build, archive, export, workflow, step]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

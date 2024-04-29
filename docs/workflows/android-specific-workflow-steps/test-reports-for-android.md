@@ -2,7 +2,6 @@
 title: Test Reports for Android
 description: Test Report step displays your test results and code coverage in an aesthetically pleasing user interface.
 tags: [test, test report, test result, automation]
-sidebar_position: 18
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

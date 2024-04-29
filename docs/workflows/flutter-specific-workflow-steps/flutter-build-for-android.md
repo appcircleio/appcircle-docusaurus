@@ -2,7 +2,6 @@
 title: Flutter Build for Android
 description: The Flutter Build for Android step builds your Flutter project with Flutter SDK.
 tags: [flutter, build, android]
-sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

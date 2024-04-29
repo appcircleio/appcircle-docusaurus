@@ -2,7 +2,6 @@
 title: Bundle Universal Apk
 description: This step creates a universal APK from an AAB file.
 tags: [android, mobile, distribution]
-sidebar_position: 12
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
