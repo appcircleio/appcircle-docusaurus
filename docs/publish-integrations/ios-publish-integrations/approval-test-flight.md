@@ -42,6 +42,23 @@ The parameters required for this step to work as expected are listed below.
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_VALIDATION_CONDITION` | This parameter determines which condition must be met for the step to be successful. There are four different options: as `One of the External or Internal`, `Internal`, `External`, or `Both`. | Required |
 
+### TestFlight Informations
+
+With the **App Information** feature of the **Get Approval from TestFlight** step, you can easily access the relevant version information of your application on **TestFlight**. The **App Information** feature provides you with the ability to see **Apple's notifications** about your application and distribute versions to test groups.
+
+#### Missing Compliance
+
+The Missing Compliance Warning is a condition that Apple checks for apps. Each application is subjected to this check when it is uploaded to TestFlight. If there is a missing compliance, you can see this notification on Appcircle. Please see [**this document**](https://developer.apple.com/documentation/security/complying_with_encryption_export_regulations) for more information.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3104-appInfo.png' />
+
+#### Test Information and Distribution to Tester
+
+With this feature of Appcircle, you can see the test information of the version you send on **TestFligt** according to **different localizations**. At the same time, you can easily see your **internal and external** test groups and the number of testers they contain. With the toggle next to the test groups, you can send the related version to that test group and enable testers to receive notifications via TestFlight as runtime.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3104-testers.png' />
+
+
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-publish-testflight-status-check
