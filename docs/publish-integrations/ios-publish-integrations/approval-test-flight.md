@@ -44,11 +44,12 @@ The parameters required for this step to work as expected are listed below.
 
 ### TestFlight Informations
 
-With the **App Information** feature of the **Get Approval from TestFlight** step, you can easily access the relevant version information of your application on **TestFlight**. The **App Information** feature provides you with the ability to see **Apple's notifications** about your application and distribute versions to test groups.
+The **App Information** feature within the **Get Approval from TestFlight** step allows easy access to your application’s version details on **TestFlight**. This feature enables you to view **App Information** about your application and to distribute versions to testing groups efficiently.
 
 #### Missing Compliance
 
-The Missing Compliance Warning is a condition that Apple checks for apps. Each application is subjected to this check when it is uploaded to TestFlight. If there is a missing compliance, you can see this notification on Appcircle. Please see [**this document**](https://developer.apple.com/documentation/security/complying_with_encryption_export_regulations) for more information.
+Apple conducts the Missing Compliance check for all apps uploaded to TestFlight. Appcircle promptly displays a notification if your application lacks compliance. For detailed guidance on this compliance check, please refer to [this Apple Developer document](https://developer.apple.com/documentation/security/complying_with_encryption_export_regulations).
+
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3104-appInfo.png' />
 
