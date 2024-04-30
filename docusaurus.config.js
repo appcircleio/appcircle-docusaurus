@@ -82,7 +82,7 @@ const config = {
             label: "Documentation",
           },
           {
-            to: "updates/release-notes",
+            to: "/release-notes",
             position: "left",
             label: "Release Notes",
           },
@@ -138,7 +138,7 @@ const config = {
               {
                 label: "Release Notes",
                 type: "doc",
-                to: "updates/release-notes",
+                to: "/release-notes",
               },
             ],
           },

@@ -66,7 +66,7 @@ if [ $AC_GIT_BRANCH = 'release' ]; then
 fi
 ```
 
-For more information about environment variables, [click here](/environment-variables/appcircle-specific-environment-variables#android-specific-environment-variables).
+For more information about environment variables, [click here](/environment-variables/appcircle-specific-environment-variables#reserved-android-variables).
 
 ### Using iOS Schemes to Configure Multiple Apps
 
@@ -108,7 +108,7 @@ if [ $AC_GIT_BRANCH = 'release' ]; then
 fi
 ```
 
-For more information about environment variables, [click here](/environment-variables/appcircle-specific-environment-variables#ios-specific-environment-variables)
+For more information about environment variables, [click here](/environment-variables/appcircle-specific-environment-variables#reserved-ios-variables)
 
 ### Testing & Downloading Multiple Apps Through Appcircle
 

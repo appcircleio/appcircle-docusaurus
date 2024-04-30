@@ -822,5 +822,9 @@
   to = "/workflows/ios-specific-workflow-steps/swiftlint"
   status = 301
 
+  [[redirects]]
+  from = "/updates/release-notes"
+  to = "/release-notes"
+  status = 301
   
 
