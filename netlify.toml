@@ -826,5 +826,26 @@
   from = "/updates/release-notes"
   to = "/release-notes"
   status = 301
+
+  [[redirects]]
+  from = "/tutorials/how-to-add-a-react-native-app"
+  to = "/build/platform-build-guides/building-react-native-applications"
+  status = 301
+  
+  [[redirects]]
+  from = "/tutorials/how-to-add-an-ios-app"
+  to = "/build/platform-build-guides/building-ios-applications"
+  status = 301
+
+  [[redirects]]
+  from = "/tutorials/how-to-add-a-flutter-app"
+  to = "/build/platform-build-guides/building-flutter-applications"
+  status = 301
+
+  [[redirects]]
+  from = "/tutorials/how-to-add-an-android-app"
+  to = "/build/platform-build-guides/building-android-applications"
+  status = 301
+  
   
 
