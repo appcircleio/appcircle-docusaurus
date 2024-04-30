@@ -2,7 +2,6 @@
 title: Firebase Upload dSYM 
 description: Upload your debug symbols to Firebase Crashlytics with Appcircle. Streamline your iOS app development and debugging processes.
 tags: [build, test, distribute, firebase, crashlytics, ios, workflow, step]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

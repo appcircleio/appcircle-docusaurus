@@ -2,7 +2,6 @@
 title: Audit Permission Changes
 description: Track and audit permission changes effectively. Ensure security and compliance with our guide on monitoring access rights alterations.
 tags: [cocoapods, install, workflow, step]
-sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

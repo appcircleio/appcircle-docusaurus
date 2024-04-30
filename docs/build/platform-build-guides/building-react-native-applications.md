@@ -12,6 +12,8 @@ import ContentRef from '@site/src/components/ContentRef';
 
 You can build your React Native applications in Appcircle for iOS or Android platforms.
 
+<iframe width="640" height="315" src="https://www.youtube.com/embed/JcP1EOtuBqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 :::info
 
 Appcircle will use your `package.json` file to determine and use the dependencies of your application.

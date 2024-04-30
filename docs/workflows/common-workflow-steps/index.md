@@ -2,7 +2,6 @@
 title: Common Workflow Steps
 description: Common workflow steps in Appcircle
 tags: [workflow, steps, common]
-sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

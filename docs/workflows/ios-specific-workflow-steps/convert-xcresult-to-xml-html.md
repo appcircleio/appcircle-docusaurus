@@ -2,7 +2,6 @@
 title: Convert Xcresult to HTML/XML 
 description: Easily convert Xcresult files to HTML/XML for enhanced readability and archiving. Simplify your development workflow with our effective tools
 tags: [xcresult, convert, html, xml, unit tests, UI tests, test reports]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -17,7 +17,7 @@ You can then use this variable in any workflow step and this variable will be as
 
 For more information on the inputs of the steps and how the variables in the following steps are used, please refer to the documentation of the specific step that is available at [https://github.com/appcircleio](https://github.com/appcircleio)
 
-### iOS & Android common environment variables
+### iOS & Android Common Environment Variables
 
 | Variable                 | Description                                                                                                                     |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,7 +54,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC_PURPOSE               | **Purpose of the Workflow** <br />_Metadata_ = 0<br /> _Build_ = 1<br /> _StoreSubmit_ = 2<br />_Merge_ = 3<br />_TagBuild_ = 4 |
 | AC_TRIGGER_REASON        | The trigger reason that causes the building to start. Values it can take: `User`, `Commit`, `Tag`, `PullRequest`                |
 
-### Android specific environment variables
+### Reserved Android Variables
 
 | Variable                     | Description                              |
 | ---------------------------- | ---------------------------------------- |
@@ -84,7 +84,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC_VERSION_OFFSET            | Version Number Offset for Versioning     |
 | AC_FLAVOR                    | Flavor for Versioning                    |
 
-### iOS specific environment variables
+### Reserved iOS Variables
 
 | Variable                  | Description                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -115,26 +115,4 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC_AUTOSIGN_KEY           | App Store Connect API Key Id. **Only active if automatic signing is turned on.**                                                                                                                                                                                                                                                                                                                                       |
 | AC_AUTOSIGN_ISSUER_ID     | App Store Connect API Issuer Id. **Only active if automatic signing is turned on.**                                                                                                                                                                                                                                                                                                                                    |
 
-### iOS Publish specific environment variables
-
-| Variable                | Description                                                                                           |
-| ----------------------- | ----------------------------------------------------------------------------------------------------- |
-| AC_XCODE_LIST_DIR       | Specifies the Xcode folder list directory                                                             |
-| AC_XCODE_VERSION        | Specifies the Xcode version                                                                           |
-| AC_VALIDATION_CONDITION | TestFlight's `internalBuildState` and `externalBuildState` will be checked according to the selection |
-| AC_SUCCESS_STATUSES     | You can customize `Acceptable/Succeeded` App Store statuses for your app                              |
-| AC_RELEASE_NOTES        | Filling out that area may effect the App Store submission process.                                    |
-| AC_STACK_TYPE           | `App Store` or `TestFlight` stages                                                                    |
-| AC_APPROVAL_EMAILS      | Enter an email address to send special `Approve` and `Reject` links                                   |
-
-### Android Publish specific environment variables
-
-| Variable             | Description                                                                                                                       |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| AC_RELEASE_STATUS    | Allow you to specify `draft` or `completed` app statuses on the Google Play Console. The first upload may require a draft upload  |
-| AC_TRACK_TO_CHECK    | It's recommended to check Track that you've sent the app in previous steps                                                        |
-| AC_ACCEPTED_STATUSES | Statues of `completed`,`inProgress`,`draft`,`halted` can be used                                                                  |
-| AC_HUAWEI_APP_ID     | Huawei requires `Huawei App ID` to be send to AppGallery                                                                          |
-| AC_RELEASE_NOTES     | Filling out that area may effect `Huawei` or `Google Play` submission process                                                     |
-| AC_STACK_TYPE        | Select a release track to which to send the binary. After the binary is uploaded, you can release it from the Google Play Console |
-| AC_APPROVAL_EMAILS   | Enter an email address to send special `Approve` and `Reject` links                                                               |
+                                                       

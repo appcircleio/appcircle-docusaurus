@@ -2,7 +2,6 @@
 title: Cache Push 
 description: Optimize your workflow by utilizing Cache Push to save and streamline data access, improving speed and reliability in your projects.
 tags: [cache push, optimization, storage, dependencies, cache structure]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

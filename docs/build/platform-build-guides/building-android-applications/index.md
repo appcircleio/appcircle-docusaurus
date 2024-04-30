@@ -10,6 +10,8 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 # Building Android Applications
 
+<iframe width="640" height="315" src="https://www.youtube.com/embed/-6CpaE1FW7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Before starting your first Android app build, please make sure you first create a build profile and connect your Git repository to your build profile. You can refer to the page below for this step:
 
 <ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>

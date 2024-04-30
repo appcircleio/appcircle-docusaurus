@@ -2,7 +2,6 @@
 title: Set Environment Variable
 description: Set Environment Variable step sets environment value for given keys
 tags: [set, environment, variable]
-sidebar_position: 12
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

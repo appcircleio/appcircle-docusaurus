@@ -2,7 +2,6 @@
 title: Android Increment Build and Version Number
 description: Learn how to increment the version code and version name of an Android application in Appcircle
 tags: [versioning, android, build version, version code, version name]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

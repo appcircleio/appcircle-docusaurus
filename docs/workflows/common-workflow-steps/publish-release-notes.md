@@ -2,7 +2,6 @@
 title: Publish Release Notes
 description: Learn to publish release notes for your app versions. Communicate updates and changes effectively with Appcircle.
 tags: [build, test, release, notes, workflow, step]
-sidebar_position: 7
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

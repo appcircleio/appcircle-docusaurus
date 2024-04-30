@@ -2,7 +2,6 @@
 title: Azure DevOps Bot for Detekt Report
 description: The Azure DevOps Bot for Detekt Report step analyze your Detekt report and post the report details within the opened pull request in Azure DevOps.
 tags: [azure devops, Detekt-Report, analysis]
-sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

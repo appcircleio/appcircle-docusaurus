@@ -2,7 +2,6 @@
 title: Cocoapods Install
 description: Master Cocoapods Install for managing dependencies in your project. Learn how to use the 'pod install' command effectively.
 tags: [cocoapods, install, workflow, step]
-sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
