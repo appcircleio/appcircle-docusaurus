@@ -54,7 +54,7 @@ Run the auto-update tool for your project.
 <SpacetechExampleInfo/>
 
 ```bash
-./helper-tools/auto-update.sh -n "spacetech"
+./helper-tools/auto-update.sh -n "spacetech" update
 ```
 
 ## Updating the Appcircle Server Automated with Cronjob
@@ -80,6 +80,15 @@ sudo visudo
 ```
 
 Find the line below.
+
+:::info
+The `wheel` in the example output below is the privileged group name that depends on the Linux distro you use.
+
+For RHEL, it is generally `wheel`.
+For Ubuntu, it might me `admin` or `sudo`.
+
+You can also make sudo passwordless only for a user.
+:::
 
 ```bash
 ...
@@ -117,7 +126,7 @@ You should see an example output like below:
 
 ```bash
 ...
-0 3 * * 6 /home/user/appcircle-server/helper-tools/auto-update.sh -n "spacetech" &>> /home/user/appcircle-server/appcircle-server-auto-update.log
+0 3 * * 6 /home/user/appcircle-server/helper-tools/auto-update.sh -n "spacetech" update &>> /home/user/appcircle-server/appcircle-server-auto-update.log
 ...
 ```
 
@@ -138,7 +147,7 @@ By default, the crontab job is defined to check and update the Appcircle Server 
 You can change the cron time if you want to check and update the Appcircle Server at 3:00 AM every day.
 
 ```bash
-./helper-tools/auto-update.sh -n "spacetech" --cron-time "0 3 * * *" install
+./helper-tools/auto-update.sh -n "spacetech" install --cron-time "0 3 * * *"
 ```
 
 Some sample cron times:
