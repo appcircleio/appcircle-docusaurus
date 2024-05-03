@@ -56,10 +56,9 @@ In this use-case;
 - The reverse proxy will connect the Testing Distribution with a custom domain and with `HTTPS`.
 - The Testing Distribution and the Enterprise App Store users will connect the reverse proxy with `HTTPS`.
 
-To configure the Enterprise App Store SSL certificates, you can read the [Enterprise App Store Custom Domain SSL Configuration document](./ssl-configuration.md#custom-domain).
+To configure the Enterprise App Store SSL certificates, you can read the [Enterprise App Store Custom Domain SSL Configuration document](/docs/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#custom-domain).
 
-@TODO
-To configure the Testing Distribution SSL certificates, you can read the [Testing Distribution Custom Domain SSL Configuration document](./ssl-configuration.md).
+To configure the Testing Distribution SSL certificates, you can read the [Testing Distribution Custom Domain SSL Configuration document](/docs/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#custom-domain-1).
 
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `external.scheme`, `external.mainDomain`, `storeWeb.customDomain`, `nginx` and keys.
 
@@ -231,7 +230,7 @@ In this use-case;
 - The reverse proxy will connect the Testing Distribution with the default domain and with `HTTPS`.
 - The Testing Distribution and the Enterprise App Store users will connect the reverse proxy with `HTTPS`.
 
-To configure the Enterprise App Store SSL certificates, you can read the [Enterprise App Store Custom Domain SSL Configuration document](./ssl-configuration.md#custom-domain).
+To configure the Enterprise App Store SSL certificates, you can read the [Enterprise App Store Custom Domain SSL Configuration document](/docs/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#custom-domain).
 
 The `global.yaml` file of your Appcircle server should be as follows for this use-case. See the `external.scheme`, `external.mainDomain`, `storeWeb.customDomain`, `nginx` and keys.
 
