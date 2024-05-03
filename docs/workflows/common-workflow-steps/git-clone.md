@@ -2,7 +2,6 @@
 title: Git Clone
 description: The Git Clone step is used to fetch the source code repository from a Git provider and clone it into the runner where the build and deployment processes take place.
 tags: [git, clone, workflow, step]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

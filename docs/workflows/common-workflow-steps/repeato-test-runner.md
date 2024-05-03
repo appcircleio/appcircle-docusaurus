@@ -2,7 +2,6 @@
 title: Repeato Test Runner
 description: Repeato Test Runner facilitates the execution of automated tests for mobile applications directly within Appcircle.
 tags: [repeato, test-runner, mobile, automation]
-sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -21,8 +20,8 @@ https://appcircle.io/blog/streamline-project-integration-and-test-automation-wit
 
 Before executing the **Repeato Test Runner** workflow step, certain prerequisite workflow steps must be completed:
 
-| Prerequisite Workflow Step | Description                                                                                   |
-| -------------------------- | --------------------------------------------------------------------------------------------- |
+| Prerequisite Workflow Step                                   | Description                                                                                                                                                                                                                  |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | The repository that needs to be built must be fetched from the branch. Upon completion of the **Git Clone** step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-repeato_1.png'/>
@@ -45,23 +44,23 @@ Confidential information must be entered as a [secret environment variable](/env
 
 :::
 
-| Variable Name          | Description                                                                                         | Status   |
-| ---------------------- | --------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_REPEATO_CLI_VER` | Specifies the Repeato CLI version compatible with your workspace tests.                             | Optional |
-| `$AC_REPEATO_WORKSPACE_DIR` | The workspace path is required by the Repeato test runner to set up the workspace before executing the batch. Example: `./mypath`. | Required |
-| `$AC_REPEATO_BATCH_ID` | Provides the batch ID for test execution. For more details, please refer to [this document](https://www.repeato.app/documentation/continuous-integration/#appcircle).                                                          | Required |
-| `$AC_REPEATO_LIC_KEY` | Provides a license key for test execution.                                                       | Required |
-| `$AC_REPEATO_LOG_LEVEL` | Switch to `DEBUG` if you encounter issues while running your batches. This prints additional information to the log. Options: `INFO`, `DEBUG`, `WARN`. | Required |
+| Variable Name               | Description                                                                                                                                                           | Status   |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_REPEATO_CLI_VER`       | Specifies the Repeato CLI version compatible with your workspace tests.                                                                                               | Optional |
+| `$AC_REPEATO_WORKSPACE_DIR` | The workspace path is required by the Repeato test runner to set up the workspace before executing the batch. Example: `./mypath`.                                    | Required |
+| `$AC_REPEATO_BATCH_ID`      | Provides the batch ID for test execution. For more details, please refer to [this document](https://www.repeato.app/documentation/continuous-integration/#appcircle). | Required |
+| `$AC_REPEATO_LIC_KEY`       | Provides a license key for test execution.                                                                                                                            | Required |
+| `$AC_REPEATO_LOG_LEVEL`     | Switch to `DEBUG` if you encounter issues while running your batches. This prints additional information to the log. Options: `INFO`, `DEBUG`, `WARN`.                | Required |
 
 ### Output Variables
 
 The outputs resulting from the operation of this component are as follows:
 
-| Variable Name              | Description                                                     |
-| -------------------------- | --------------------------------------------------------------- |
-| `$AC_REPEATO_REPORT`       | Report of Repeato batches that have been executed.                         |
-| `$AC_REPEATO_JUNIT_REPORT` | Report of Repeato executed tests in JUnit XML format.              |
-| `$AC_TEST_RESULT_PATH`     | The directory where your JUnit XML report will be saved.   |
+| Variable Name              | Description                                              |
+| -------------------------- | -------------------------------------------------------- |
+| `$AC_REPEATO_REPORT`       | Report of Repeato batches that have been executed.       |
+| `$AC_REPEATO_JUNIT_REPORT` | Report of Repeato executed tests in JUnit XML format.    |
+| `$AC_TEST_RESULT_PATH`     | The directory where your JUnit XML report will be saved. |
 
 ---
 

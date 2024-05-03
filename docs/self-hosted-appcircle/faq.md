@@ -298,15 +298,15 @@ For more details about configuring the outbound requests, you can refer to the [
 
 The certificate of your organization should be trusted on the Appcircle runner virtual machines.
 
-You should refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates) page for more details.
+You should refer to the [Custom Certificates](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates) page for more details.
 
 ### We are facing an "SSL certificate is not valid yet" error on builds.
 
 The runner VMs cannot connect to the servers to update their date and time due to network restrictions.
 
-You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](./self-hosted-runner/runner-vm-setup#update-base-images) section.
+You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#update-base-images) section.
 
-For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) section and follow the steps.
+For details on configuring NTP settings, you can refer to the [NTP Configuration](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) section and follow the steps.
 
 ### We can't register Appcircle runner to the server.
 
@@ -316,7 +316,7 @@ First, you should check if your Appcircle runner can access the Appcircle server
 curl -v https://api.appcircle.spacetech.com
 ```
 
-You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates) page to trust the root CA certificate of your organization.
+You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates) page to trust the root CA certificate of your organization.
 
 If you already trusted the root CA cert, you should check the Appcircle server's certificate. If it is too long, like 5 years, it should be trusted using the graphical user interface. You should open the Keychain Access application from the GUI and add the Appcircle server's certificate. After that, you should click on the certificate and select "Always trust".
 

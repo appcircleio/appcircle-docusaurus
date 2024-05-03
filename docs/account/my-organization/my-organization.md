@@ -18,9 +18,7 @@ All apps (build profiles, distribution profiles, etc.) created under an organiza
 Billing management is also per-organization basis so that you can work with different plans with a single account. (e.g. You can be a member of two different organizations at the same time: an individual organization for personal projects under the free plan and another organization for your company under the enterprise plan.)
 
 :::info
-
 Team management with fine-grained roles and integration with enterprise identity systems are available in the enterprise plan. Please [contact us](https://appcircle.io/contact) for more information.
-
 :::
 
 ### Accessing the My Organization Screen
@@ -39,8 +37,6 @@ To update these details, simply enter the new values and press _Update_.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (36).png' />
 
-###
-
 ### Working with Multiple Organizations
 
 #### Adding an Organization
@@ -48,16 +44,14 @@ To update these details, simply enter the new values and press _Update_.
 To add a new organization, press the "Create New Organization" button on the top-right (denoted by a plus sign) and type in the Organization Name. The organization will be created with the specified name and your role will be set as the owner.
 
 :::caution
-
 If you are on the Starter Plan, you cannot add a new organization. To create more organizations, you need to upgrade to a higher plan.
-
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (39).png' />
 
 #### Adding a Sub Organization
 
-Appcircle's Sub Organization feature allows you to create multiple sub organizations from your organization, providing a way to manage different teams and projects separately. With this feature, each sub organization is linked to the organization.
+Appcircle's Sub-Organization feature allows you to create multiple sub-organizations from your organization, providing a way to manage different teams and projects separately. With this feature, each sub-organization is linked to the organization.
 
 It's worth noting that sub organizations are very similar to the organization. When you are inside a sub organization, you will have access to all the features and functionality that are available in your organization. Any licenses associated with the organization will also be applicable to the sub organization.
 
@@ -67,11 +61,26 @@ To use this feature, an enterprise license is required.
 
 :::
 
-If you have an enterprise license, you can create sub organizations from the organization by navigating to the "My Organization" page, clicking on the "Create Sub Organization" button, and entering the necessary details for the sub organization.
+:::info
+
+If you add a user to the sub-organization who already exists in the main organization, all the permissions assigned to that user in the main organization will automatically extend to the sub-organization as well.
+
+:::
+
+It's worth noting that sub-organizations are very similar to the organization. When you are inside a sub-organization, you will have access to all the features and functionality that are available in your  organization. Additionally, any licenses  associated with the organization will also be applicable to the sub-organization.
+
+:::caution
+
+Please note that an **Enterprise License** is required to use this feature.
+
+:::
+
+If you have an enterprise license, you can create sub-organizations from the organization by navigating to the "My Organization" page, clicking on the **`Create Sub Organization`** button, and entering the necessary details for the sub-organization.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/My-Organization-Sub-Create.png' />
 
-Multiple sub organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub Organization feature, businesses can create and manage multiple sub organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
+Multiple sub-organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub-Organization feature, businesses can create and manage multiple sub-organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
+
 
 #### Switching Organizations
 
@@ -80,11 +89,9 @@ Once you create an organization or accept an organization invite, you will be sw
 Each organization is isolated from each other, and switching means that you will switch to the "workspace" of that organization.
 
 :::info
-
 Once you select your organization, you will only see the profiles, artifacts, and reports belonging to that organization in all modules.
 
 You can switch between organizations at any time without any data loss.
-
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/My-Organization-Switch.png' />
@@ -96,12 +103,10 @@ To leave or delete an organization, press the organization operations button on 
 You will be prompted before the leave/delete operation.
 
 :::caution
-
 Both leaving and deleting are irreversible operations and it is advised to use them with caution:
 
 - If you leave an organization, only an Owner can add you back, even if you were an Owner.
 - If you delete an organization, you will lose ALL platform data including apps, profiles, and artifacts.
-
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (41).png' />
@@ -115,9 +120,7 @@ Both leaving and deleting are irreversible operations and it is advised to use t
 The creator of a team starts with the Owner role. The Owner role has full administrative privileges for the team and organization management such as adding/removing members or editing the organization details, while any new members can be assigned specific module-based read/write roles.
 
 :::caution
-
 Each organization must have at least one Owner and each user must be an Owner of at least one organization.
-
 :::
 
 #### Managing Team Members
@@ -141,7 +144,9 @@ Here, you can assign the Owner role to a user for full access or you can select 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/permission-owner-v2.png' />
 
 :::info
+
 The "None" is a special type of permission that denotes that a user has no defined role or special permissions. If the user's permission is set to "None" in sub-organizations, the user's permission defaults from the organization.
+
 :::
 
 You can see the full list of the available roles below:
@@ -160,19 +165,27 @@ Permissions can be customized for build profiles.
 | None       | The user cannot reach any details about build profiles.                                                |
 
 :::info
+
 Manager or Operator Build Profile permission can distribute binary if user has Manager or Operator Distribution permission.
+
 :::
 
 :::info
+
 Manager or Operator Build Profile permission can publish if user has Manager or Operator Publish Android/iOS permission.
+
 :::
 
 :::info
+
 Manager, Operator and Viewer Build Profile permissions can view self-hosted runners but cannot modify the configuration.
+
 :::
 
 :::caution
+
 Only Manager permission can view the configurations, workflows, and triggers.
+
 :::
 
 ### ENVIRONMENT VARIABLE PERMISSIONS
@@ -186,7 +199,9 @@ Permissions can be customized for environment variable.
 | None       | The user cannot reach any details about environment variables.                                                                  |
 
 :::info
+
 Manager, Operator and Viewer Environment Variable permissions can use variable groups in build profile configuration.
+
 :::
 
 ### SIGNING IDENTITY MANAGEMENT PERMISSIONS
@@ -200,7 +215,9 @@ Permissions can be customized for signing identity management.
 | None       | The user cannot reach any details about signing identity.                                                  |
 
 :::info
+
 Manager, Operator and Viewer Signing Identity Management permissions can use signing identities in build profile configuration.
+
 :::
 
 ### DISTRIBUTION PROFILE PERMISSIONS
@@ -215,15 +232,21 @@ Permissions can be customized for distribution profiles.
 | None       | The user cannot reach any details about distribution profiles, Apple Devices, App Versions Report, and App Sharing Report.              |
 
 :::info
+
 Manager or Operator Distribution Profile permission can send to enterprise appstore if user has Manager, Uploader or Operator Enterprise App Store permission.
+
 :::
 
 :::info
+
 Manager or Operator Distribution Profile permission can send to publish if user has Manager or Operator Publish Android and Manager or Operator iOS permission.
+
 :::
 
 :::info
+
 Manager or Operator Distribution Profile permission can resign binary if user has Manager or Viewer Signing Identity Management permission.
+
 :::
 
 ### TESTING GROUP PERMISSIONS
@@ -247,11 +270,15 @@ Upload apps to Google Play, Huawei, and App Store.
 | Viewer          | The user can only view applications and their details belonging to their own organization. |
 
 :::info
+
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
+
 :::
 
 :::info
+
 If the user does not have any of these permissions, they will not have access to any details related to the store submit module.
+
 :::
 
 ### PUBLISH MODULE IOS PERMISSIONS
@@ -277,13 +304,17 @@ Publish apps to Google Play, Huawei.
 | None       | The user cannot reach any details about the Android Publish.                                                                                                                          |
 
 :::info
+
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
+
 :::
 
 :::tip
+
 **Publish Variables** permissions in the Publish module are dependent on the iOS or Android permissions that you configure for the Publish module.
 
 For instance, when you give "viewer" permission to a user for iOS or Android, this permission will also make the user "viewer" for the **Publish Variables**. When you give "manager" permission to a user for iOS or Android, this permission also makes the user "manager" for the **Publish Variables**.
+
 :::
 
 ### ENTERPRISE APP STORE PERMISSIONS
@@ -300,7 +331,7 @@ Manage and Upload Apps to Enterprise App Store.
 
 ### ORGANIZATION MANAGEMENT PERMISSIONS
 
-The user can create organization or sub organization within license limits, add and remove members, and manage their permissions.
+The user can create organization or sub-organization within license limits, add and remove members, and manage their permissions.
 
 Also user can view self-hosted runners and change configuration.
 
@@ -325,5 +356,7 @@ Connect to or disconnect from third-party service providers such as Slack, Micro
 | Manager    | The user can manage third-party service provider connections and disconnections. |
 
 :::caution
+
 The permissions of the Store Submit module affect the visibility of online stores connections.
+
 :::

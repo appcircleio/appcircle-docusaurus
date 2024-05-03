@@ -23,7 +23,7 @@ Build.<br/>Test.<br/>Distribute.
 
 <section class="intro-cards">
       <div class="intro-card">
-            <h3><a href="/tutorials">Foundations</a></h3>
+            <h3><a href="/build/platform-build-guides">Platform Build Guides</a></h3>
             <p><strong>New to Appcircle?</strong> Get started by adding your Obj-C/Swift, Java/Kotlin, React Native, Flutter app first.</p>
       </div>
       <div class="intro-card">

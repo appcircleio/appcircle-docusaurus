@@ -2,7 +2,6 @@
 title: Authenticate with Netrc
 description: Authenticate with Netrc in your Appcircle workflows
 tags: [netrc, authentication, git, curl]
-sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

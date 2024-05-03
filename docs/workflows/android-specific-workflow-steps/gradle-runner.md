@@ -2,7 +2,6 @@
 title: Gradle Runner
 description: The Gradle Runner workflow step executes the specified Gradle task provided by the user.
 tags: [android, mobile, android, gradle]
-sidebar_position: 13
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

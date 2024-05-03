@@ -2,7 +2,6 @@
 title: Appdome Build-2Secure for iOS
 description: Automate mobile app security with Appdome Build-2Secure for iOS. Enhance security without manual coding or code analysis.
 tags: [build, test, security, appdome, ios, workflow, step]
-sidebar_position: 12
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

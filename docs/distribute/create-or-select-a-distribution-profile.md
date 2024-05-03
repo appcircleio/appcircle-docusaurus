@@ -24,9 +24,9 @@ Once you create the distribution profile, you can now customize its settings. Cl
 
 ### Auto send your build to the testers
 
-Auto send feature lets your applications to be distributed to specific testing groups whenever a new version is deployed.
+Auto send feature lets your applications be distributed to specific testing groups whenever a new version is deployed, whether the deployment is triggered via a build process, CLI, or manual upload.
 
-To enable the auto send feature, you need to create testing groups and add testers into these groups.
+To enable the auto send feature, you need to create testing groups and add testers to these groups.
 
 <ContentRef url="/distribute/testing-management/testing-groups">Testing Groups</ContentRef>
 
@@ -36,7 +36,8 @@ The first section allows you to share the deployed binaries automatically with t
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (192).png' />
 
-Your application will be sent to the related testing groups as soon as your build is complete.
+Your application will be sent to the related testing groups as soon as your build is complete, or when a package is manually uploaded or deployed via CLI.
+
 
 ### Using authentication for distribution
 

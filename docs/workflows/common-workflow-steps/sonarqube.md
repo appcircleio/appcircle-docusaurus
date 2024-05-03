@@ -2,7 +2,6 @@
 title: SonarQube
 description: This step allows you to analyse your code quality with the SonarQube CLI.
 tags: [sonarqube, code, quality, analysis, workflow, step]
-sidebar_position: 8
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
