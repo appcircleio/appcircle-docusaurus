@@ -71,7 +71,7 @@ Appcircle needs admin permission to function properly. The admin permission is n
 
 :::
 
-:::warning
+:::danger
 
 Bitbucket doesn't allow scoped repository permissions like GitHub. Therefore the token you add can access all the repositories of the token's owner. When you're adding a token, it's better to create a new bot user or a project and give access to only the required repositories for build to succeed.
 

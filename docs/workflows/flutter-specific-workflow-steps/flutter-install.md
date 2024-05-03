@@ -28,7 +28,7 @@ These steps depend on Flutter installation and can only be used after the **Flut
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2851-installOrder.png' />
 
-:::warning
+:::danger
 The steps specified in the table are steps dependent on the **Flutter Install** step. **If Flutter Install is not used before these steps**, these steps will give a **Flutter SDK not found error**.
 :::
 

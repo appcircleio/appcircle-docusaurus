@@ -72,7 +72,7 @@ When a self-hosted runner service is stopped from CLI, you will see it as `Offli
 
 :::
 
-:::warning
+:::danger
 
 You should be careful for running pipelines while stopping self-hosted runner service. When you stop service, it will immediately terminate self-hosted runner process and build job will be cut. It will be still shown as in-progress build but actually it's not working. It will stuck in that state until build timeout.
 

@@ -21,7 +21,7 @@ If you are using an automatic code sign, you can remove this step. Since automat
 |-------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | Clone your repository to the runner machine. Use the Install Certificates and Provisiong Profiles step after this step. This step will clone your repository to be able to use provisioning profiles and certificates. |
 
-:::warning
+:::danger
 Please remember. If you are using **manual sign**, you should definitely use this step and run it after the **Git Clone** step.
 :::
 

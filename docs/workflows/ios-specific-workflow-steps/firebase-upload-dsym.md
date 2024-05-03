@@ -20,7 +20,7 @@ The workflow steps that need to be executed before running the `Firebase Upload 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_step_order.png' />
 
-:::warning
+:::danger
 If this step is not used after **Xcodebuild for Devices**, the pipeline will give error. Because the dSYM file is generated after the project is archived. 
 :::
 

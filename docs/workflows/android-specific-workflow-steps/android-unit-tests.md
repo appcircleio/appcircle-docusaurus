@@ -22,7 +22,7 @@ The workflow steps that need to be executed before running the **Android Unit Te
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_1.png'/>
 
-:::warning
+:::danger
 If you wish to view the test results on Appcircle's Test Reports page, it is essential to use the [Test Reports](https://github.com/appcircleio/appcircle-test-report-component) step after the **Android Unit Tests**. Please check out this document for more information: [Generating Test Report](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_2.png'/>

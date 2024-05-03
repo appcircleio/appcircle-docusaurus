@@ -28,7 +28,7 @@ Each component requires specific input variables for its operation. The input va
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-snyk-scan-cloud-upload_2.png'/>
 
-:::warning
+:::danger
 
 Enter confidential information as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, select the appropriate [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) in the [Configuration](/build/build-process-management/build-profile-configuration/).
 

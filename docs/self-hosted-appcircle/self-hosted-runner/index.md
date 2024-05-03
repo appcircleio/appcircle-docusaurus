@@ -15,7 +15,7 @@ To get started:
 - Provide your own platform to install Appcircle self-hosted runner
 - Install and register self-hosted runner to Appcircle infrastructure
 
-:::warning
+:::danger
 
 The only requirement for using self-hosted runners is to be in `enterprise` plan.
 
