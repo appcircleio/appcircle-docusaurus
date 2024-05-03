@@ -367,7 +367,7 @@ For this tutorial, we will install the Android tools and iOS tools with the late
 
 <BuildAppOutro />
 
-For a comprehensive overview of building applications on the Appcircle platform, you can navigate to the [Tutorials](../../../tutorials/index.md) page.
+For a comprehensive overview of building applications on the Appcircle platform, you can navigate to the [Platform Build Guides](/build/platform-build-guides) page.
 
 <NeedHelp />
 

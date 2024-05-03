@@ -2,7 +2,6 @@
 title: Xcode Select
 description: Specify Xcode version for your build process with Xcode Select. Always use before CocoaPods Install and Xcodebuild steps.
 tags: [xcode, version, workflow, step]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -32,6 +32,6 @@ When you successfully authorize your repository or repositories, the following s
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-github.png' />
 
-After the connection is successful, you can [view your newly created profile](./#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](/build/manage-the-connections/adding-a-build-profile/#view-the-newly-created-build-profile) and start building!
 
 <NeedHelp />

@@ -2,7 +2,6 @@
 title: Xcodebuild for Unit and UI Testing
 description: This step performs unit and UI tests for your iOS applications. This does not "build" your app, but uses the "xcodebuild" command to run tests.
 tags: [build, test, ios, workflow, step]
-sidebar_position: 8
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

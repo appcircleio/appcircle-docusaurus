@@ -12,6 +12,8 @@ import ContentRef from '@site/src/components/ContentRef';
 
 You can build your React Native applications in Appcircle for iOS or Android platforms.
 
+<iframe width="640" height="315" src="https://www.youtube.com/embed/JcP1EOtuBqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 :::info
 
 Appcircle will use your `package.json` file to determine and use the dependencies of your application.
@@ -148,7 +150,7 @@ Once you complete your build configuration, you can edit your build workflow. Re
 
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
-<ContentRef url="/workflows/index.html">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
 
 ### Starting a React Native Build and After a Build
 

@@ -2,7 +2,6 @@
 title: App Center iOS Distribution
 description: Distribute your iOS app to App Center for testing and distribution. `Prerequisite:` Xcodebuild for Devices step.
 tags: [build, test, distribute, app center, ios, workflow, step]
-sidebar_position: 13
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -2,7 +2,6 @@
 title: File Size Check
 description: Use File Size Check to monitor your app's size. Break the pipeline or show warnings when the size limit is exceeded.
 tags: [build, test, file, size, check, workflow, step]
-sidebar_position: 17
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

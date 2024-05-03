@@ -2,7 +2,6 @@
 title: Carthage
 description: Appcircle supports Carthage for dependency management in iOS projects.
 tags: [carthage, ios, dependency, management, workflow, step]
-sidebar_position: 8
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

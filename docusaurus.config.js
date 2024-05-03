@@ -1,9 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const rlc = require("remark-link-card");
+const { themes } = require("prism-react-renderer");
+const remarkExternalUrlRef = require("./src/plugins/remark-externalUrlRef");
+
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,9 +15,12 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  onBrokenAnchors: "throw",
+  onDuplicateRoutes: "warn",
   favicon: "img/favicon.ico",
   organizationName: "appcircleio", // Usually your GitHub org/user name.
   projectName: "appcircle-docusaurus", // Usually your repo name.
+  trailingSlash: false,
 
   presets: [
     [
@@ -24,7 +29,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          remarkPlugins: [rlc],
+          remarkPlugins: [remarkExternalUrlRef],
           // Please change this to your repo.
           editUrl:
             "https://github.com/appcircleio/appcircle-docusaurus/tree/master/",
@@ -77,7 +82,7 @@ const config = {
             label: "Documentation",
           },
           {
-            to: "updates/release-notes",
+            to: "/release-notes",
             position: "left",
             label: "Release Notes",
           },
@@ -126,19 +131,48 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Documentation",
+                label: "Getting Started",
                 type: "doc",
-                to: "/",
+                to: "/build/manage-the-connections/adding-a-build-profile",
+              },
+              {
+                label: "Best Practices",
+                to: "/best-practices",
+              },
+              {
+                label: "Integrations",
+                to: "/workflows",
+              },
+              {
+                label: "Appcircle CLI",
+                to: "/appcircle-api",
               },
               {
                 label: "Release Notes",
                 type: "doc",
-                to: "updates/release-notes",
+                to: "/release-notes",
               },
             ],
           },
           {
             title: "Community",
+            items: [
+              {
+                label: "How-To Videos",
+                href: "https://www.youtube.com/appcircle",
+              },
+              {
+                label: "Slack",
+                href: "https://slack.appcircle.io/",
+              },
+              {
+                label: "Customer Stories",
+                href: "https://appcircle.io/customer-stories",
+              },
+            ],
+          },
+          {
+            title: "Find Us",
             items: [
               {
                 label: "Slack",
@@ -155,11 +189,31 @@ const config = {
             ],
           },
           {
-            title: "More",
+            title: "Explore More",
             items: [
               {
                 label: "GitHub",
                 href: "https://github.com/appcircleio/appcircle-docusaurus",
+              },
+              {
+                label: "Blog",
+                href: "https://appcircle.io/blog",
+              },
+              {
+                label: "Features",
+                href: "https://appcircle.io/features",
+              },
+              {
+                label: "Contact Us",
+                href: "https://appcircle.io/contact",
+              },
+              {
+                label: "Privacy Policy",
+                href: "https://appcircle.io/privacy-policy",
+              },
+              {
+                label: "Terms of Service",
+                href: "https://appcircle.io/terms-of-service",
               },
             ],
           },
@@ -169,7 +223,18 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["ruby", "groovy", "java", "kotlin"],
+        additionalLanguages: [
+          "ruby",
+          "groovy",
+          "java",
+          "kotlin",
+          "bash",
+          "diff",
+          "json",
+          "markdown",
+          "shell-session",
+          "yaml",
+        ],
       },
       algolia: {
         apiKey: "b56a5dc4e52ec9e97ad93981cc668c4a",

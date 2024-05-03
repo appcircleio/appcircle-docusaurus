@@ -2,7 +2,6 @@
 title: Testinium
 description: Testinium step allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle.
 tags: [testinium, test]
-sidebar_position: 16
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

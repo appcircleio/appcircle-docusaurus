@@ -2,7 +2,6 @@
 title: Snyk Scan Security
 description: The Snyk Security Scan step enables developers to seamlessly incorporate vulnerability scanning into their CI/CD workflows.
 tags: [snyk-scan, security, mobile]
-sidebar_position: 13
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

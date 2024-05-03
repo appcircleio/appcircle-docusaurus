@@ -16,7 +16,7 @@ Unit tests are usually considered first as they run really fast and are relative
 
 We will create a local unit test here as an example and show you how to run the test during your build process.
 
-### Creating unit tests
+## Creating unit tests
 
 First, please add test dependencies to your `build.gradle` file:
 
@@ -57,7 +57,7 @@ public class URLValidatorUnitTest {
 
 This example checks to see if the provided URL is valid.
 
-### Running your unit tests in Appcircle
+## Running your unit tests in Appcircle
 
 To run your unit test during the build process, you can simply use a custom script in your build profile.
 
@@ -80,7 +80,7 @@ This simple Bash script will trigger your unit test and output the test results 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/Screenshot 2020-04-28 20.47.05.png' />
 
-### Generating Test Report
+## Generating Test Report
 
 Appcircle has [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) which can show the result of your tests and code coverage in a beautiful UI.
 
@@ -90,13 +90,12 @@ You must add this component **after** running your tests so that it can parse te
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-workflow.png" />
 
-[Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. This component supports the following Test and Coverage Formats
+[Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. This component supports the following test and coverage formats:
 
-- Xcode
-- JUnit
-- JaCoCo
-- Cobertura
-- lcov.info
+- [**JUnit**](https://junit.org)
+- [**JaCoCo**](https://www.jacoco.org)
+- [**Cobertura**](https://cobertura.github.io/cobertura)
+- [**lcov.info**](https://lcov-viewer.netlify.app)
 
 You must configure the **Test Report Component** and enter the path of code coverage and test results paths. For example, if you run your tests with an emulator, your files will be generated in the following folders.
 
@@ -124,7 +123,28 @@ If you're using UI tests with emulators, you must select an Intel device (**Defa
 
 :::
 
-### Showing Test Reports
+## Jacoco Test Coverage
+
+If you use the Jacoco tool for test coverage in your project, you can obtain coverage percentages from the test reports Jacoco generates. Jacoco calculates coverage percentages using six different methods, and the coverage percentage will be calculated based on the selected method.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be2556-jacocoCoverage2.png" />
+
+:::info
+These methods range from the most detailed coverage percentage to the most general:
+
+- **INSTRUCTION**: JaCoCo counts the smallest unit of single Java bytecode instructions.
+- **BRANCH**: JaCoCo also calculates branch coverage for all if and switch statements.
+- **COMPLEXITY**: JaCoCo also calculates cyclomatic complexity for each non-abstract method and summarizes complexity for classes, packages and groups.
+- **LINE**: For all class files that have been compiled with debug information, coverage information for individual lines can be calculated.
+- **METHOD**: JaCoCo considers a method as executed when at least one instruction has been executed. Since JaCoCo works at the bytecode level, it counts constructors and static initializers as methods.
+- **CLASS**: JaCoCo considers a class as executed when at least one of its methods has been executed. JaCoCo counts constructors and static initializers as methods.
+:::
+
+:::warning
+Each calculation type has different coverage percentages. This is because each type has its own level of detail. Therefore, the coverage percentages are different for each one. 
+:::
+
+## Showing Test Reports
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
 
@@ -149,7 +169,6 @@ However, if your tool supports producing the following test report formats, you 
 
 **Test Format**
 
-- Xcode 13+ `.xctest`
 - JUnit `.xml`
 
 **Coverage Format**

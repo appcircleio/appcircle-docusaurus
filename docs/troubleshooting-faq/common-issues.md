@@ -163,6 +163,46 @@ If you don't want to push the xcworkspace to the repository, you can alternative
 
 If you don't set the version of Cocoapods in your Cocoapods Install step, Appcircle installs Cocoapods according to your _Podfile.lock_ file. Don't forget to commit your Podfile.lock file to have the correct version.
 
+### Xcode 15 Known Issue
+
+After the release of Xcode 15, some notable known issues have surfaced. One of them is the `DT_TOOLCHAIN_DIR cannot be used to evaluate` error.
+
+When encountering this error, you will see the following log durint the Xcodebuild for Devices step;
+
+```
+DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_DIR instead (in target 'One of Project Target Name' from project 'Pods')
+```
+This error typically occurs with Cocoapods version 1.12.1 and older. To resolve it, update your local Cocoapods to a newer version and commit the changes, or update Cocoapods during the workflow at the Cocoapods Install step.
+
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/faq-cocoapods-version.png'/>
+
+:::info
+The resolution for this error is available in Cocoapods version 1.13.0 or higher.
+:::
+
+:::warning
+If the issue persists after updating Cocoapods, consider updating your iOS minimum deployment target to iOS 13.0 or higher. If the problem still remains, use the script provided below.
+:::
+
+:::caution
+If you still encounter the same error, you can address it by making the following changes at the end of your `Podfile`:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      
+      xcconfig_path = config.base_configuration_reference.real_path
+      xcconfig = File.read(xcconfig_path)
+      xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
+      File.open(xcconfig_path, "w") { |file| file << xcconfig_mod }
+    end
+  end
+end
+```
+:::
+
 ### Provisioning Profile Error
 
 If you receive a provisioning profile error similar to the following, it usually indicates a mismatch between the bundle ID selected in the build configuration and the provisioning profile.
@@ -198,6 +238,43 @@ post_install do |installer|
           config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
           config.build_settings['CODE_SIGNING_IDENTITY'] = '-'
           config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = '-'
+      end
+    end
+  end
+end
+```
+
+### iOS Minimum Deployment Target Error
+
+Following the release of new Xcode and iOS versions, projects containing pods or targets below certain iOS versions may experience simulator-related errors due to unsupported older iOS versions.
+
+During the 'Xcodebuild for Devices' step, you may encounter an error similar to this:
+
+```
+ld: file not found: /Volumes/xcode.14.x/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphoneos.a 
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+```
+
+To prevent this error, please update the minimum deployment iOS versions for the targets in your project. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/faq-xcode-target-version.png'/>
+
+For your pods, append the following script to the end of your `Podfile`:
+
+```
+config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+```
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+      target.build_configurations.each do |config|
+        ...
+        ## Other config settings
+        ...
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+
       end
     end
   end

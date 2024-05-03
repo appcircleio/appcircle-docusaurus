@@ -2,7 +2,6 @@
 title: Slather
 description: Use Slather to convert Xcode's test results into various formats. Prerequisites include Xcodebuild for Tests and Git Clone.
 tags: [ios, build, test, workflow, step]
-sidebar_position: 7
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

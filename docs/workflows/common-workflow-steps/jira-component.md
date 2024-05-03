@@ -2,7 +2,6 @@
 title: Jira Component
 description: Explore Jira Component, a tool for efficient project management and issue tracking. Enhance your workflow with Appcircle's integration.
 tags: [jira, workflow, issue tracking, step]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

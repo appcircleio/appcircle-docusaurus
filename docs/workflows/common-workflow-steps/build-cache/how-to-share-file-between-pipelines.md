@@ -2,7 +2,6 @@
 title: How to Share Files Between Pipelines 
 description: Master the art of sharing files between pipelines to optimize workflow continuity and efficiency in your development projects.
 tags: [pipelines, data sharing, cache push, cache pull, efficiency]
-sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
