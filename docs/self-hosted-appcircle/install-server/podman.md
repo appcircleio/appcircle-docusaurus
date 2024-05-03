@@ -405,10 +405,10 @@ If you want a secret used from `global.yaml`, then it should not be in `user-sec
 ```yaml
 ---
 environment: Production
-enableErrorHandling: 'true'
+enableErrorHandling: "true"
 external:
   scheme: http
-  mainDomain: '.example.com'
+  mainDomain: ".example.com"
 
 smtpServer:
   user:
@@ -443,20 +443,20 @@ As an example, we can change some variables like below according to our fictive 
 ```yaml
 ---
 environment: Production
-enableErrorHandling: 'true'
+enableErrorHandling: "true"
 external:
   scheme: http
-  mainDomain: '.appcircle.spacetech.com'
+  mainDomain: ".appcircle.spacetech.com"
 
 smtpServer:
   user: o***y*****@v******.net
   from: o***y*****@v******.net
   host: smtp.v******.net
   fromDisplayName: Space Tech
-  port: '587'
-  ssl: 'false'
-  auth: 'true'
-  starttls: 'true'
+  port: "587"
+  ssl: "false"
+  auth: "true"
+  starttls: "true"
 keycloak:
   initialUsername: admin@spacetech.com
   enabledRegistration: true
