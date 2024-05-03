@@ -1,5 +1,5 @@
 ---
-title: Marathon Cloud 
+title: Marathon Cloud
 description: Accelerate your mobile app development with Marathon Cloud integration on Appcircle. Seamless integration and efficient management capabilities.
 tags: [marathon, cloud, test, automation, test report, test automation]
 ---
@@ -12,7 +12,6 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The **Marathon Cloud** component is an integrated test automation workflow step for the Appcircle pipeline. You can easily include it in your workflow on Appcircle with the necessary parameters and run your UI tests.
 
-
 ### Prerequisites
 
 This component needs some prerequisites for proper operation; the necessary steps are given in the table below with details.
@@ -21,12 +20,12 @@ This component needs some prerequisites for proper operation; the necessary step
 Please note that this component works separately on both the native **Android** and **iOS** platforms. The requirements for both platforms are different.
 :::
 
-| Prerequisite Workflow Step                      | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Testing**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcodebuild-for-testing) | After the Xcodebuild for Testing step runs, the test IPA paths `$AC_TEST_IPA_PATH` and `$AC_UITESTS_RUNNER_PATH` will be created automatically. So that the **Marathon Cloud** component depends on these paths. |
-| [**Android Build for UI Testing**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | Once the Android Build for UI Testing step is completed, the test APK paths `$AC_APK_PATH` and `$AC_TEST_APK_PATH` are automatically generated. The **Marathon Cloud** component relies on these paths. |
+| Prerequisite Workflow Step                                                                                                           | Description                                                                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**Xcodebuild for Testing**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcodebuild-for-testing)                 | After the Xcodebuild for Testing step runs, the test IPA paths `$AC_TEST_IPA_PATH` and `$AC_UITESTS_RUNNER_PATH` will be created automatically. So that the **Marathon Cloud** component depends on these paths. |
+| [**Android Build for UI Testing**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | Once the Android Build for UI Testing step is completed, the test APK paths `$AC_APK_PATH` and `$AC_TEST_APK_PATH` are automatically generated. The **Marathon Cloud** component relies on these paths.          |
 
-:::warning
+:::danger
 When using this component for the **iOS platform**, do not forget to change the **`Destination`** value in the **Xcodebuild for Testing** step. This value will be `generic/platform=iOS` by default. This means that it creates a generic test `IPA` for all iOS devices. Since the Marathon Cloud component runs on a specific test device, you need to change this value. For example, `platform=iOS Simulator,name=iPhone 15 Pro,OS=17.2`.
 
 Please note that if you do not change this parameter, the Marathon Cloud component will fail and the pipeline will break. For further information, please follow the [**Xcodebuild for Testing documentation**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcodebuild-for-testing).
@@ -40,26 +39,25 @@ Please note that if you do not change this parameter, the Marathon Cloud compone
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonOrder.png' />
 
-
 ### Input Variables
 
-The parameters required for the operation of this component are given below with explanations. 
+The parameters required for the operation of this component are given below with explanations.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonInput.png' />
 
-:::warning
+:::danger
 **Avoid hard-coding sensitive variables, such as tokens or API keys, directly into the parameters of the step.**
 
 We recommend using [**Environment Variables**](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.
 :::
 
-| Variable Name                            | Description                         | Status           |
-|-------------------------------|------------------------------------------------|------------------|
-| `$AC_MARATHON_API_KEY`        | Marathon Cloud API key. To get an API key, please follow the Marathon Cloud [**documentation**](https://docs.marathonlabs.io/?_gl=1*fsz3tj*_ga*MTYyMzE3NDMwOC4xNzA2Njk3MzA5*_ga_7RE7PPY2QW*MTcxMTAwMzEyNC4yNS4xLjE3MTEwMDU5ODYuMjQuMC4w*_gcl_au*MjA1NTI4NzUyNC4xNzA2Njk3MzUw#api-key). | Required |
-| `$AC_MARATHON_TEST_NAME`      | This name will be shown on the Marathon Cloud dashboard test run list. | Required |
-| `$AC_MARATHON_APP_PATH`       | Specify the path to the application binary. This application is generated by the corresponding testing step (**Android Build for UI Testing** or **Xcodebuild for Testing**). The default value is `AC_APK_PATH ` for Android or `AC_TEST_IPA_PATH` for iOS. | Required |
-| `$AC_MARATHON_UITEST_RUNNER_APP_PATH` | Specifies the path to the test application binary. This application is generated by the corresponding testing step (**Android Build for UI Testing** or **Xcodebuild for Testing**). The default value is `AC_TEST_APK_PATH ` for Android or `AC_UITESTS_RUNNER_PATH` for iOS. | Required |
-| `$AC_OUTPUT_DIR`              | Specifies the path for Marathon Cloud outputs. This path will be automatically defined. Do not change if it is not necessary. | Required |
+| Variable Name                         | Description                                                                                                                                                                                                                                                                            | Status   |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_MARATHON_API_KEY`                | Marathon Cloud API key. To get an API key, please follow the Marathon Cloud [**documentation**](https://docs.marathonlabs.io/?_gl=1*fsz3tj*_ga*MTYyMzE3NDMwOC4xNzA2Njk3MzA5*_ga_7RE7PPY2QW*MTcxMTAwMzEyNC4yNS4xLjE3MTEwMDU5ODYuMjQuMC4w*_gcl_au*MjA1NTI4NzUyNC4xNzA2Njk3MzUw#api-key). | Required |
+| `$AC_MARATHON_TEST_NAME`              | This name will be shown on the Marathon Cloud dashboard test run list.                                                                                                                                                                                                                 | Required |
+| `$AC_MARATHON_APP_PATH`               | Specify the path to the application binary. This application is generated by the corresponding testing step (**Android Build for UI Testing** or **Xcodebuild for Testing**). The default value is `AC_APK_PATH ` for Android or `AC_TEST_IPA_PATH` for iOS.                           | Required |
+| `$AC_MARATHON_UITEST_RUNNER_APP_PATH` | Specifies the path to the test application binary. This application is generated by the corresponding testing step (**Android Build for UI Testing** or **Xcodebuild for Testing**). The default value is `AC_TEST_APK_PATH ` for Android or `AC_UITESTS_RUNNER_PATH` for iOS.         | Required |
+| `$AC_OUTPUT_DIR`                      | Specifies the path for Marathon Cloud outputs. This path will be automatically defined. Do not change if it is not necessary.                                                                                                                                                          | Required |
 
 To access the source code of this component, please use the following link:
 

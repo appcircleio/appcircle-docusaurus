@@ -1,7 +1,15 @@
 ---
 title: Amazon Web Services (AWS)
 description: Learn how to create a self-hosted Appcircle runner instance on Amazon Web Services (AWS).
-tags: [self-hosted, self-hosted runner, cloud providers, aws, amazon web services, EC2]
+tags:
+  [
+    self-hosted,
+    self-hosted runner,
+    cloud providers,
+    aws,
+    amazon web services,
+    EC2,
+  ]
 sidebar_position: 1
 ---
 
@@ -24,7 +32,7 @@ By following the steps below, you will create a dedicated host, Sonoma macOS, fr
 
 You can use a self-hosted Appcircle runner with your self-hosted Appcircle server or Appcircle cloud account.
 
-:::warning
+:::danger
 
 The only requirement for using self-hosted runners is to be in `enterprise` plan.
 
@@ -95,6 +103,7 @@ If you have a self-hosted Appcircle server in AWS, it's better to deploy the sel
 This approach will reduce the latency between two machines.
 
 :::
+
 #### Check and Request the Dedicated Mac Instance Quota
 
 Before creating the dedicated host instance, you should check the dedicated service quota.

@@ -16,8 +16,8 @@ The Appcircle Detekt step executes the Detekt Gradle task. For further details, 
 
 Below are the prerequisite workflow steps required before running the **Detekt** step, along with their reasons:
 
-| Prerequisite Workflow Step                      | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
+| Prerequisite Workflow Step                                                       | Description                                                                                                                     |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) | The **Git Clone** step is necessary to fetch the repository before conducting code checks and must precede the **Detekt** step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-detekt_1.png'/>
@@ -28,14 +28,14 @@ Each component requires specific input variables for its operation. The input va
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-detekt_2.png'/>
 
-| Variable Name                 | Description                                    | Status |
-|-------------------------------|------------------------------------------------|--------|
-| `$AC_DETEKT_TASK`             | Specifies the name of the Detekt task. The default value is `detekt`. | Required |
-| `$AC_DETEKT_EXTRA_PARAMETERS` | Additional command-line parameters for Detekt. | Optional |
-| `$AC_DETEKT_SAVE_REPORT`      | Specifies whether the Detekt report will be saved. If set to `true`, report files will be saved into the artifacts folder. The default value is `false`. | Optional |
+| Variable Name                 | Description                                                                                                                                                                               | Status   |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_DETEKT_TASK`             | Specifies the name of the Detekt task. The default value is `detekt`.                                                                                                                     | Required |
+| `$AC_DETEKT_EXTRA_PARAMETERS` | Additional command-line parameters for Detekt.                                                                                                                                            | Optional |
+| `$AC_DETEKT_SAVE_REPORT`      | Specifies whether the Detekt report will be saved. If set to `true`, report files will be saved into the artifacts folder. The default value is `false`.                                  | Optional |
 | `$AC_DETEKT_OUTPUT_PATH`      | Specifies the Detekt output path. If the `AC_DETEKT_SAVE_REPORT` input is set to `true` and this value is not defined, then `<ac_module>/build/reports` will be used as the default path. | Optional |
 
-:::warning
+:::danger
 
 If `$AC_DETEKT_SAVE_REPORT` is set to `true`, place the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step after the **Detekt** step to ensure proper transfer of outputs to the [Download Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.
 

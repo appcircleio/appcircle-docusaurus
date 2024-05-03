@@ -1,11 +1,10 @@
 ---
-title: How to Share Files Between Build Profiles 
+title: How to Share Files Between Build Profiles
 description: Learn to share files between build profiles efficiently. Enhance collaboration and streamline your development process with our guide.
 tags: [pipelines, data sharing, cache pull, cache push, efficiency]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-
 
 # How to Share Files Between Build Profiles
 
@@ -23,7 +22,7 @@ To share cache between Build Profiles, the [**Cache Pull**](/workflows/common-wo
 As an example, **master** and **development** branches were used, but you can apply the same operations to different branches.
 :::
 
-:::warning
+:::danger
 Please note that the organizational structure of Appcircle is designed in such a way as to prevent any **security vulnerabilities**. Consequently, exchanging files between organizations or sub-organizations **is not permitted**.
 
 You can find detailed information about the Appcircle organizational structure in the documentation [**here**](https://docs.appcircle.io/account/my-organization).
@@ -43,12 +42,12 @@ You can find detailed information about the Appcircle organizational structure i
 
 4. When the [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) step is entered, the **cache label** parameter is encountered, which is set as `$AC_BUILD_PROFILE_ID/$AC_GIT_BRANCH/cache` by default. Here, the value of `$AC_BUILD_PROFILE_ID` needs to be updated because a different profile is being used. To accomplish this, the build profile ID of the **`Appcircle Team`** where the files were cached will be used. This ID can be found directly at the **Appcircle URL**. For example, in the URL `my.appcircle.io/build/detail/edc136b9-85fc-4e0a-aa7c-602375a84f64`, `edc136b9-85fc-4e0a-aa7c-602375a84f64` represents the build profile ID. After setting the profile ID, the `$AC_GIT_BRANCH` value that was cached in the previous profile, **`Appcircle Team`**, is specified, which is set to the **development** branch. Consequently, the **cache label** parameter will appear as `edc136b9-85fc-4e0a-aa7c-602375a84f64/development/cache`.
 
-	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-buildPullLabel.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-buildPullLabel.png' />
 
 5. After this parameter change, the CocoaPods dependencies that were cached in the **development** branch of the **`Appcircle Team`** build profile will be automatically pulled to the **master** branch of **`Appcircle Team 2`** and used directly in the pipeline.
 
-	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-buildCacheSuccess.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-buildCacheSuccess.png' />
 
-:::warning
+:::danger
 When sharing cache files between **Build Profiles**, please make sure that you spell your build profile ID and branch names correctly and use the [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) steps correctly in each profile. 
 :::

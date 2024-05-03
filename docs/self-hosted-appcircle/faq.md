@@ -238,7 +238,7 @@ For example;
 then the Appcircle dashboard URL will be `my-appcircle.spacetech.com`.
 :::
 
-:::warning
+:::danger
 If you have configured the Appcircle server as HTTPS, as an extra step, it may be required to change the SSL certificates in the `global.yaml` if they are not compatible with your new subdomains.
 
 See the **[SSL configuration](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration)** document for details.

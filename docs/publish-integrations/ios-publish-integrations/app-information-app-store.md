@@ -1,7 +1,8 @@
 ---
 title: App Information from App Store
 description: Fetch and display your app's current listing information directly from the App Store to ensure all details are correct and up to date.
-tags: [app information, app store, app store connect, testflight, app store version]
+tags:
+  [app information, app store, app store connect, testflight, app store version]
 sidebar_position: 1
 ---
 
@@ -41,7 +42,7 @@ This step does not depend on any other steps to function. However, it is advisab
 
 This step does not need any input variable.
 
-:::warning
+:::danger
 This step requires only the [**App Store Connect API Key**](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/send-to-app-store#adding-an-app-store-connect-api-key-recommended-method) credentials. Ensure this API key is configured in Appcircle and selected for the appropriate flow.
 :::
 

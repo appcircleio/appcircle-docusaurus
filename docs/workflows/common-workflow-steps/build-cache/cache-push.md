@@ -1,5 +1,5 @@
 ---
-title: Cache Push 
+title: Cache Push
 description: Optimize your workflow by utilizing Cache Push to save and streamline data access, improving speed and reliability in your projects.
 tags: [cache push, optimization, storage, dependencies, cache structure]
 ---
@@ -13,6 +13,7 @@ Every single build at Appcircle runs in a clean state. It means that all files a
 With cache, you can persist any resource that is ignored by Git. So you can transfer files and folders between build pipelines. Sometimes it may speed up your build, or it may help if you have reliability issues with the original download location for dependencies. But keep in mind that the cache is uploaded to or downloaded from a remote location. It may help you in some cases, but **it's not a guaranteed way to speed up builds**. You should try and see the actual results of your project.
 
 The cache is stored as a single archive file. **Cache Push** and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) components work in coordination on the same cache file defined with a label. Cache labeling helps you organize your caches. With custom labeling, you can have different chunks of caches, and you can share some caches between branches or build profiles. For further information, please check out the following documentation:
+
 - [How to Share Files Between Pipelines](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-pipelines)
 - [How to Share Files Between Build Profiles](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles)
 
@@ -20,7 +21,7 @@ When you drag and drop the **Cache Push** component into your [workflow](/workfl
 
 If you need more paths to cache or need to change paths according to your project, you can customize [included](#input-variables) and [excluded](#input-variables) paths as you wish. All path updates will be reflected in the archived cache file on your next build.
 
-:::warning
+:::danger
 You cannot delete a specific cache file from the UI, but if you have a problem with a cache file and need a fresh one, you can change your [cache label](#input-variables) to a new one to go on with a clean cache.
 :::
 
@@ -30,11 +31,11 @@ The system automatically cleans unreachable and obsolete cache files periodicall
 
 ### Prerequisites
 
-| Prerequisite Workflow Step                      | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
+| Prerequisite Workflow Step                                                           | Description                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) | If the folders to be cached are in the repo directory, the **Git Clone** step must be used before. This step will generate the [`AC_REPOSITORY_DIR`](#input-variables) path. |
 
-:::warning
+:::danger
 Keep in mind that included paths and the **Cache Push** step's workflow order are closely related to each other. For example, if you include a path from a repository and you place the **Cache Push** step before the **Git Clone** step, **Cache Push** won't find that path since it's not Git cloned yet. Although that's not a fatal error for **Cache Push**, it will inform you about unreachable paths on build logs. You can review and resolve those kinds of issues from build logs.
 :::
 
@@ -44,19 +45,18 @@ The other important prerequisite for this component to work is that it must be u
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushOrder.png' />
 :::
 
-
 ### Input Variables
 
 The parameters required for the operation of this step are given in the list below with their descriptions.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushInput.png' />
 
-| Variable Name              | Description                                    | Status |
-|----------------------------|------------------------------------------------|--------|
-| `$AC_CACHE_LABEL`          | User defined cache label to identify one cache from others. Both **Cache Push** and **Cache Pull** steps should have the same value to match. | Required |
+| Variable Name              | Description                                                                                                                                                                             | Status   |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_CACHE_LABEL`          | User defined cache label to identify one cache from others. Both **Cache Push** and **Cache Pull** steps should have the same value to match.                                           | Required |
 | `$AC_CACHE_INCLUDED_PATHS` | Specifies the files and folders that should be in the cache. Multiple glob patterns can be provided as a colon-separated list. For example; `.gradle:app/build` or `Pods:Podfile.lock`. | Required |
-| `$AC_CACHE_EXCLUDED_PATHS` | Specifies the files and folders that should be ignored from the cache. Multiple glob patterns can be provided as a colon-separated list. For example, `.gradle/*.lock:*.apk`. | Optional |
-| `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) step. | Optional |
+| `$AC_CACHE_EXCLUDED_PATHS` | Specifies the files and folders that should be ignored from the cache. Multiple glob patterns can be provided as a colon-separated list. For example, `.gradle/*.lock:*.apk`.           | Optional |
+| `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) step.          | Optional |
 
 :::tip
 **Cache Push** uses a pattern in order to select files and folders. Although the pattern is not a RegExp, it's closer to a shell glob. For example, `~/Library/Caches/CocoaPods` and `Pods` will select the `CocoaPods` folder from home and the repository direction as a whole. Or for an Android project, you can cache the `.gradle ` folder with `~/.gradle` include path and exclude all `.lock` files from there with `~/.gradle/**/*.lock` exclude path. Patterns that can be used in both included and excluded paths are explained in detail [here](https://github.com/appcircleio/appcircle-cache-push-component#included--excluded-paths).

@@ -17,14 +17,15 @@ This step does not generate **IPA**, it only runs tests within the project.
 :::
 
 ### Prerequisites
-| Prerequisite Workflow Step                                                                | Description                                     |
-|-------------------------------------------------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone)                | The repository must be cloned to initiate the unit and UI testing process. Following the clone, this step will run the tests and create the `AC_REPOSITORY_DIR` variable. |
-| [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select)    | This step selects the specified Xcode version. |
+
+| Prerequisite Workflow Step                                              | Description                                                                                                                                                               |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone)             | The repository must be cloned to initiate the unit and UI testing process. Following the clone, this step will run the tests and create the `AC_REPOSITORY_DIR` variable. |
+| [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select) | This step selects the specified Xcode version.                                                                                                                            |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitOrder.png' />
 
-:::warning
+:::danger
 
 If any tests fail during this step, an error will be automatically reported, which reflects issues within the project's tests, not the Appcircle workflow. To prevent disruption in the workflow, enable the **`"Continue with the next step even if this step fails"`** option.
 
@@ -32,25 +33,24 @@ If any tests fail during this step, an error will be automatically reported, whi
 
 :::
 
-
 ### Input Variables
 
 Below are the parameters required for this step, along with detailed explanations.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitInput.png' />
 
-| Variable Name                            | Description                         | Status           |
-|-------------------------------|------------------------------------------------|------------------|
-| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
-| `$AC_OUTPUT_DIR_PATH`         | Specifies the path for outputs for generated artifacts. | Required |
-| `$AC_SCHEME`                  | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
-| `$AC_ARCHIVE_FLAGS`           | Specifies the extra xcodebuild flag. For example: **`-quiet`** | Optional |
-| `$AC_PROJECT_PATH`            | Specifies the project path. For example: **`./appcircle.xcodeproj`**. This variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Optional |
-| `$AC_CONFIGURATION_NAME`      | You can build your project with any configuration you want. Specify the configuration as hard-coded. Appcircle will automatically add this configuration to the xcodebuild command. For example; **`Debug`** | Optional |
-| `$AC_COMPILER_INDEX_STORE_ENABLE`| You can disable indexing during the build for a faster build. The default value is **`No`**. | Required |
-| `$AC_TEST_OS_VERSION`         | Specify the test OS version. The default value is `latest`. User can use different OS version. For example: `16.3` | Required |
-| `$AC_TEST_DEVICE`             | Destination name of the test simulator device. Ex. `iPhone 14`. If you set a simulator name, the build will be installed into the given simulator. The default value is `iPhone 8 Plus`.  | Required |
-| `$AC_TEST_PLATFORM`           | Specify the test platform. The default value is `iOS Simulator`. | Required |
+| Variable Name                     | Description                                                                                                                                                                                                                   | Status   |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_REPOSITORY_DIR`              | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step.                                                                                | Required |
+| `$AC_OUTPUT_DIR_PATH`             | Specifies the path for outputs for generated artifacts.                                                                                                                                                                       | Required |
+| `$AC_SCHEME`                      | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
+| `$AC_ARCHIVE_FLAGS`               | Specifies the extra xcodebuild flag. For example: **`-quiet`**                                                                                                                                                                | Optional |
+| `$AC_PROJECT_PATH`                | Specifies the project path. For example: **`./appcircle.xcodeproj`**. This variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration).                                   | Optional |
+| `$AC_CONFIGURATION_NAME`          | You can build your project with any configuration you want. Specify the configuration as hard-coded. Appcircle will automatically add this configuration to the xcodebuild command. For example; **`Debug`**                  | Optional |
+| `$AC_COMPILER_INDEX_STORE_ENABLE` | You can disable indexing during the build for a faster build. The default value is **`No`**.                                                                                                                                  | Required |
+| `$AC_TEST_OS_VERSION`             | Specify the test OS version. The default value is `latest`. User can use different OS version. For example: `16.3`                                                                                                            | Required |
+| `$AC_TEST_DEVICE`                 | Destination name of the test simulator device. Ex. `iPhone 14`. If you set a simulator name, the build will be installed into the given simulator. The default value is `iPhone 8 Plus`.                                      | Required |
+| `$AC_TEST_PLATFORM`               | Specify the test platform. The default value is `iOS Simulator`.                                                                                                                                                              | Required |
 
 :::caution
 
@@ -65,6 +65,7 @@ To view the output artifacts on the [**Download Artifacts**](/workflows/common-w
 :::
 
 ### Output Variables
-| Variable Name                 | Description                                                                                              |
-|-------------------------------|----------------------------------------------------------------------------------------------------------|
-| `$AC_TEST_RESULT_PATH`        | The output path for the `.xcresult` file. This environment variable can be utilized in subsequent steps. |
+
+| Variable Name          | Description                                                                                              |
+| ---------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$AC_TEST_RESULT_PATH` | The output path for the `.xcresult` file. This environment variable can be utilized in subsequent steps. |

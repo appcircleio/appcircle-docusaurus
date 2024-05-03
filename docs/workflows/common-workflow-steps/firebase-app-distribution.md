@@ -27,38 +27,38 @@ For more details, please refer to the following links:
 
 Below are the workflow steps required before running the **Firebase App Distribution** step, listed with their reasons. Prerequisites vary by platform:
 
-#### For Android (Java / Kotlin and React Native) 
+#### For Android (Java / Kotlin and React Native)
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
+| Prerequisite Workflow Step                                                    | Description                                                                                                         |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Firebase App Distribution** step.                                              |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_1.png'/>
 
-#### For iOS (Objective-C / Swift and React Native) 
+#### For iOS (Objective-C / Swift and React Native)
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Prerequisite Workflow Step                                                                                  | Description                                                             |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_2.png'/>
 
-#### For Android Flutter 
+#### For Android Flutter
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
+| Prerequisite Workflow Step                                                                            | Description                                                                                                         |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Firebase App Distribution** step.                                              |
+| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)                           | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_3.png'/>
 
 #### For iOS Flutter
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| Prerequisite Workflow Step                                                                                  | Description                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file.                                                         |
+| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios)               | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_4.png'/>
 
@@ -68,23 +68,23 @@ For each component, specific input variables are required for its operation on y
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_5.png'/>
 
-:::warning
+:::danger
 
 Confidential information should be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
 
 :::
 
-| Variable Name                   | Description                                                                                                                                                           | Status   |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_FIREBASE_VERSION`         | Specifies the Firebase version to be used. Enter your Firebase version, such as `v11.11.0`, for a specific version. The default value is `latest`.                                                  | Required |
-| `$AC_FIREBASE_APP_PATH`        | Specifies the full path of the build. For example, `$AC_EXPORT_DIR/Myapp.ipa` or `$AC_APK_PATH`.                                                             | Required |
-| `$AC_FIREBASE_APP_ID`          | Specifies your app's Firebase App ID. You can find the app ID in the [Firebase console](https://console.firebase.google.com/u/0/).                                                                      | Required |
-| `$AC_FIREBASE_TOKEN`           | Specifies a refresh token that's printed when you authenticate with the `firebase login:ci` command. **Select either a Firebase token or a Google Service account**.  | Optional |
+| Variable Name                     | Description                                                                                                                                                                                                                         | Status   |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_FIREBASE_VERSION`            | Specifies the Firebase version to be used. Enter your Firebase version, such as `v11.11.0`, for a specific version. The default value is `latest`.                                                                                  | Required |
+| `$AC_FIREBASE_APP_PATH`           | Specifies the full path of the build. For example, `$AC_EXPORT_DIR/Myapp.ipa` or `$AC_APK_PATH`.                                                                                                                                    | Required |
+| `$AC_FIREBASE_APP_ID`             | Specifies your app's Firebase App ID. You can find the app ID in the [Firebase console](https://console.firebase.google.com/u/0/).                                                                                                  | Required |
+| `$AC_FIREBASE_TOKEN`              | Specifies a refresh token that's printed when you authenticate with the `firebase login:ci` command. **Select either a Firebase token or a Google Service account**.                                                                | Optional |
 | `$GOOGLE_APPLICATION_CREDENTIALS` | Specifies the path of the Google Service Account JSON. Upload the service account as a file to your environment group and name it `GOOGLE_APPLICATION_CREDENTIALS`. **Select either a Firebase token or a Google Service account**. | Optional |
-| `$AC_FIREBASE_RELEASE_NOTES`   | Specifies the release notes for this build. If you want to use a file for release notes, leave this field empty and configure the next section.                     | Optional |
-| `$AC_FIREBASE_RELEASE_NOTES_PATH` | If you use the Publish Release Notes component before this step, `release-notes.txt` will be used as release notes.                                                  | Optional |
-| `$AC_FIREBASE_GROUPS`          | Specifies the Firebase tester groups you want to invite.                                                                                               | Optional |
-| `$AC_FIREBASE_EXTRA_PARAMETERS` | Specifies extra command line parameters. Enter `--debug` for debug mode.                                                                                              | Optional |
+| `$AC_FIREBASE_RELEASE_NOTES`      | Specifies the release notes for this build. If you want to use a file for release notes, leave this field empty and configure the next section.                                                                                     | Optional |
+| `$AC_FIREBASE_RELEASE_NOTES_PATH` | If you use the Publish Release Notes component before this step, `release-notes.txt` will be used as release notes.                                                                                                                 | Optional |
+| `$AC_FIREBASE_GROUPS`             | Specifies the Firebase tester groups you want to invite.                                                                                                                                                                            | Optional |
+| `$AC_FIREBASE_EXTRA_PARAMETERS`   | Specifies extra command line parameters. Enter `--debug` for debug mode.                                                                                                                                                            | Optional |
 
 ### Output Variables
 

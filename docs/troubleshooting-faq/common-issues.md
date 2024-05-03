@@ -172,8 +172,8 @@ When encountering this error, you will see the following log durint the Xcodebui
 ```
 DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_DIR instead (in target 'One of Project Target Name' from project 'Pods')
 ```
-This error typically occurs with Cocoapods version 1.12.1 and older. To resolve it, update your local Cocoapods to a newer version and commit the changes, or update Cocoapods during the workflow at the Cocoapods Install step.
 
+This error typically occurs with Cocoapods version 1.12.1 and older. To resolve it, update your local Cocoapods to a newer version and commit the changes, or update Cocoapods during the workflow at the Cocoapods Install step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/faq-cocoapods-version.png'/>
 
@@ -181,7 +181,7 @@ This error typically occurs with Cocoapods version 1.12.1 and older. To resolve 
 The resolution for this error is available in Cocoapods version 1.13.0 or higher.
 :::
 
-:::warning
+:::danger
 If the issue persists after updating Cocoapods, consider updating your iOS minimum deployment target to iOS 13.0 or higher. If the problem still remains, use the script provided below.
 :::
 
@@ -192,7 +192,7 @@ If you still encounter the same error, you can address it by making the followin
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      
+
       xcconfig_path = config.base_configuration_reference.real_path
       xcconfig = File.read(xcconfig_path)
       xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
@@ -201,6 +201,7 @@ post_install do |installer|
   end
 end
 ```
+
 :::
 
 ### Provisioning Profile Error
@@ -251,11 +252,11 @@ Following the release of new Xcode and iOS versions, projects containing pods or
 During the 'Xcodebuild for Devices' step, you may encounter an error similar to this:
 
 ```
-ld: file not found: /Volumes/xcode.14.x/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphoneos.a 
+ld: file not found: /Volumes/xcode.14.x/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphoneos.a
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 ```
 
-To prevent this error, please update the minimum deployment iOS versions for the targets in your project. 
+To prevent this error, please update the minimum deployment iOS versions for the targets in your project.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/faq-xcode-target-version.png'/>
 

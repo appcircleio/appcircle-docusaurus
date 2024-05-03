@@ -14,14 +14,14 @@ The **Flutter Build for Web** step builds your web application using the [Flutte
 
 There are no prerequisites required before using the **​Flutter Build for Web** step.
 
-| Prerequisite Workflow Step                      | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step clones your project from the connected Git provider and creates the `$AC_REPOSITORY_DIR` variable, which defaults to `$AC_FLUTTER_PROJECT_DIR`. |
-| [**Flutter Install**](./flutter-install) | This step installs the [Flutter SDK](https://flutter-ko.dev/development/tools/sdk/releases). If no version is specified, it installs the latest **stable** version. |
+| Prerequisite Workflow Step                                  | Description                                                                                                                                                         |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step clones your project from the connected Git provider and creates the `$AC_REPOSITORY_DIR` variable, which defaults to `$AC_FLUTTER_PROJECT_DIR`.           |
+| [**Flutter Install**](./flutter-install)                    | This step installs the [Flutter SDK](https://flutter-ko.dev/development/tools/sdk/releases). If no version is specified, it installs the latest **stable** version. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2855-flutterWebOrder.png' />
 
-:::warning
+:::danger
 
 This step relies heavily on the **Flutter Install** step. If the Flutter SDK is not installed, the step will report an error stating that the required command was not found.
 
@@ -33,17 +33,15 @@ You can find all the parameters required for this step in the table below, along
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2855-flutterWebInput.png' />
 
-| Variable Name                 | Description                         | Status 			|
-|-------------------------------|-------------------------------------|-----------------|
-| `$AC_FLUTTER_PROJECT_DIR`     | This parameter represents the repository path. The default value is `$AC_REPOSITORY_DIR`, which is created after the **Git Clone** step. | Required|
-
+| Variable Name             | Description                                                                                                                              | Status   |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_FLUTTER_PROJECT_DIR` | This parameter represents the repository path. The default value is `$AC_REPOSITORY_DIR`, which is created after the **Git Clone** step. | Required |
 
 ### Output Variables
 
-| Variable Name          | Description                         |
-|------------------------|-------------------------------------|
-| `$AC_FLUTTER_WEB_PATH` | This path is generated after the completion of the **Flutter Build for Web** step and stores the generated web application. | 
-
+| Variable Name          | Description                                                                                                                 |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `$AC_FLUTTER_WEB_PATH` | This path is generated after the completion of the **Flutter Build for Web** step and stores the generated web application. |
 
 ### Deploying Applications to AWS Services
 
