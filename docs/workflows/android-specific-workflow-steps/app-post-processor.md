@@ -1,5 +1,5 @@
 ---
-title: Android App Post-Processor
+title: App Post-Processor
 description: This step performs the necessary system operations to identify and process the Android output binary files.
 tags: [android, mobile, post-processor]
 ---
@@ -18,9 +18,9 @@ The workflow steps that need to be executed before running the **Android App Pos
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step relies on the **Android Build** step and the **Git Clone** step is necessary for the **Android Build** step to run successfully. |
-| [Android Build](https://docs.appcircle.io/workflows/android-specific-workflow-steps#android-build) | To process Android output, these outputs must be obtained from the build step. |
-| [Android Sign](https://docs.appcircle.io/workflows/android-specific-workflow-steps#android-sign) | If a signed app is created, this step needs to be run beforehand to process this output. |
+| [Git Clone](/workflows/common-workflow-steps/git-clone) | This step relies on the **Android Build** step and the **Git Clone** step is necessary for the **Android Build** step to run successfully. |
+| [Android Build](/workflows/android-specific-workflow-steps/android-build) | To process Android output, these outputs must be obtained from the build step. |
+| [Android Sign](/workflows/android-specific-workflow-steps/android-sign) | If a signed app is created, this step needs to be run beforehand to process this output. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_1.png' alt="image2" />
 
@@ -54,10 +54,10 @@ The output post-processing JSON file should adhere to the following structure:
 :::
 
 :::caution
-To share the signed apps created as a result of this step or to view them on the **Download Artifacts** page, please ensure that the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps#export-build-artifacts) step is included in your Workflow after this step.
+To share the signed apps created as a result of this step or to view them on the **Download Artifacts** page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
 :::
 
 ---
 To access the source code of this component, please use the following link:
 
-https://github.com/appcircleio/appcircle-android-build-component.git
+https://github.com/appcircleio/appcircle-android-post-process-component.git
