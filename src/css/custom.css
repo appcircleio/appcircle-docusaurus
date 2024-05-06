@@ -185,6 +185,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   margin-right: 16px;
 }
 
+.content-ref-card p {
+  margin: 0;
+}
+
 .image-narrow {
   max-width: 70%;
 }
