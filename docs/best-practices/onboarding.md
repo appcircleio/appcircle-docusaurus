@@ -208,9 +208,9 @@ if !ENV['AC_APPCIRCLE']
 - Update your build.gradle file to replace `jcenter()` with `mavenCentral()` if your project uses Bintray resources, as JFrog shut down Bintray on May 1, 2021. Some dependencies may not be available on Maven.
 - Consider uploading dependencies used from jitpack to `mavenCentral()`. Jitpack has reliability issues, and while your local builds may use cached versions, Appcircle downloads your dependencies for each build, which can lead to problems.\
 
-If you have any questions or need further assistance, please contact us at
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
-https://appcircle.io/contact
+<NeedHelp />
 
 Need more help? Check out our FAQ section:
 
