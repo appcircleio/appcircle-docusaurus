@@ -45,18 +45,24 @@ Change directory to Appcircle server.
 cd appcircle-server
 ```
 
+- Update the environment variable `PATH` with the required dependencies.
+
+```bash
+export PATH=$PATH:$(pwd)/deps/bin
+```
+
 Print the Keycloak authentication credentials.
 
 ```bash
-cat projects/spacetech/global.yaml | grep -A 5 "keycloak"
+yq '.keycloak.initialUsername' ./projects/spacetech/export/.global.yaml && \
+yq '.keycloak.initialPassword' ./projects/spacetech/export/.global.yaml
 ```
 
-The example output below displays the initialUsername and initialPassword values. These credentials serve as your login information for the Grafana monitoring interface.
+The example output below displays the `initialUsername` on the first line and `initialPassword` on the second line. These credentials serve as your login information for the Grafana monitoring interface.
 
-```yaml
-keycloak:
-  initialUsername: admin@spacetech.com
-  initialPassword: SuperSecretPassword
+```text
+admin@spacetech.com
+SuperSecretPassword
 ```
 
 ## Retention Period of Logs
