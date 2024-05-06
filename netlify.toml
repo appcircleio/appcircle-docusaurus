@@ -519,9 +519,15 @@
   from = "/workflows/android-specific-workflow-steps/build-and-test/appsweep-mobile-security-testing"
   to = "/workflows/android-specific-workflow-steps/appsweep-mobile-security-testing"
   status = 301
+
 [[redirects]]
   from = "/workflows/android-specific-workflow-steps/build-and-test/post-processor"
-  to = "/workflows/android-specific-workflow-steps/post-processor"
+  to = "/workflows/android-specific-workflow-steps/app-post-processor"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/post-processor"
+  to = "/workflows/android-specific-workflow-steps/app-post-processor"
   status = 301
 
 [[redirects]]
