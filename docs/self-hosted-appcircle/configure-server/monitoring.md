@@ -1,6 +1,6 @@
 ---
 title: Monitoring
-description: Instructions on migrating from a multi-node single drive MinIO configuration to a single-node single drive MinIO configuration
+description: Monitoring the Appcircle Server service logs and metrics with Grafana.
 tags: [monitoring, logging, Grafana]
 ---
 
