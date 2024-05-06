@@ -55,7 +55,7 @@ Specific input variables are required for the operation of each component in you
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_5.png'/>
 
-:::warning
+:::danger
 
 Confidential information should be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
 

@@ -43,7 +43,7 @@ The outputs that can result from the operation of this component are listed as f
 | ------------------------------------ | ---------------------------------------------------------------------- |
 | `$AC_ANDROID_DEPENDENCY_REPORT_PATH` | Specifies the path where the Android dependency report file is stored. |
 
-:::warning
+:::danger
 If you wish to review or download the Android Dependencies Report, you can find them directly from [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts). To do this, please ensure that the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps#export-build-artifacts) step follows the **Android Dependency Report** workflow step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_3.png'/>

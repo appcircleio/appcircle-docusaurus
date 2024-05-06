@@ -18,7 +18,7 @@ This component will work in builds that are automatically triggered by a configu
 If there are warnings or errors in the SwiftLint report, this workflow step will fail and stop the build.
 :::
 
-:::warning
+:::danger
 For this component to work, a PR must be opened, and a trigger must be set up based on this PR. If the build is triggered manually, the component will not function.
 :::
 
@@ -38,7 +38,7 @@ This component needs some parameters to operate. You can find the required param
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotInput.png' />
 
-:::warning
+:::danger
 **Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
 
 We recommend using [Environment Variables](/environment-variables/) groups for such sensitive variables.

@@ -27,7 +27,7 @@ If you don't have any self-hosted pool yet, list will have only "Default" pool w
 
 You can choose your self-hosted pools or Appcircle cloud anytime you want and switch between them according to your needs.
 
-:::warning
+:::danger
 
 Keep in mind that, pool selection is important for build pipeline success. Your self-hosted runners in that pool should have required capabilities for the selected build profile.
 

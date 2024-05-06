@@ -28,7 +28,7 @@ If a step other than the **Android Build** step is used to build an app, then th
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_0.png' alt="image1" />
 
-:::warning
+:::danger
 To share the signed apps created as an output of this step or to view them on the **Download Artifacts** page, please ensure that the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/#export-build-artifacts) step is included in your workflow after this step.
 :::
 

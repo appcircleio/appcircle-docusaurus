@@ -45,7 +45,7 @@ If you want to include your test results in the **SonarQube** analysis, always r
 #### iOS Tests
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarTestOrder.png' />
 
-:::warning
+:::danger
 SonarQube accepts `XML` format files to analyse test results. In order to analyse your test results, do not forget to convert the test results to `XML` format by running the [**Convert Xcresult to HTML/XML**](https://github.com/appcircleio/appcircle-ios-xcresult-convert-html-xml-component) step after the [**Xcodebuild for Unit and UI testing**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-unit-and-ui-tests) step.
 :::
 

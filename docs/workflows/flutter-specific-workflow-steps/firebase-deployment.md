@@ -29,7 +29,7 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3150-deployInput.png' />
 
-:::warning
+:::danger
 
 Avoid hard-coding sensitive information like tokens and API keys directly into the step parameters.
 

@@ -100,7 +100,7 @@ signingConfigs {
   </TabItem>
 </Tabs>
 
-:::warning
+:::danger
 
 You need to either sign with Appcircle Android Sign Step or via Gradle. If you're using Appcircle's Android sign step, remove `signingConfig signingConfigs.release` block from your `build.gradle`.
 

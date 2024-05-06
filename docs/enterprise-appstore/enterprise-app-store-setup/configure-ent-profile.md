@@ -22,7 +22,7 @@ You can add multiple users to the Beta and Live channels by hitting the Tab key.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-detail-setting-access-users.png" />
 
-:::warning
+:::danger
 If you work for a sub-organization, you will only have visibility of the apps within that organization. However, if an app is published, it will also be displayed in the parent organization's showcase on the Enterprise App Store.
 
 To manage user permissions within the Enterprise App Store, **Okta SAML** can be utilized. By configuring authorization groups through **Okta** and subsequently using these group names on **Alpha** or **Beta** channels via Appcircle, only relevant users will have access to them.
@@ -97,7 +97,7 @@ The Enterprise App Store share feature doesn't allow public sharing. It only hel
 
 :::
 
-:::warning
+:::danger
 
 **Please note that** if you have an **Apple Developer** account with an **enterprise organization** and you are using an app signed with an [**enterprise certificate**](https://docs.appcircle.io/signing-identities/ios-certificates-and-provisioning-profiles#ios-certificates) for **internal distribution**, you must use [**authentication**](https://docs.appcircle.io/enterprise-appstore/customize-ent-store#authentication) for user access.
 

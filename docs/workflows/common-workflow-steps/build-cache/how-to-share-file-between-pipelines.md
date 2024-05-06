@@ -18,7 +18,7 @@ This simple example will use our [**CocoaPods**](https://cocoapods.org/) files i
 As an example, **master** and **development** branches were used, but you can apply the same operations to different branches.
 :::
 
-:::warning
+:::danger
 Please note that the organizational structure of Appcircle is designed in such a way as to prevent any **security vulnerabilities**. Consequently, exchanging files between organizations or sub-organizations **is not permitted**.
 
 You can find detailed information about the Appcircle organizational structure in the documentation [**here**](https://docs.appcircle.io/account/my-organization).
@@ -54,6 +54,6 @@ In order to share cache between pipelines, the [**Cache Pull**](/workflows/commo
 
   <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pullSuccess.png' />
 
-:::warning
+:::danger
 When sharing cache files between pipelines, please make sure that you spell your branch names correctly and use the [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) steps correctly. 
 :::

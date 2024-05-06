@@ -31,7 +31,7 @@ You can **disable** self-hosted runner from list, using toggle button on right-h
 
 With quick enable/disable feature, you can remove self-hosted runner from pool temporarily and make some maintenance or debugging. When ready, you can add the self-hosted runner to pool again without any CLI operation.
 
-:::warning
+:::danger
 
 Your pool should have at least one active (ready-to-build) runner for build pipeline continuity.
 
@@ -83,7 +83,7 @@ If there is no runner left in self-hosted pool, it will be deleted automatically
 
 :::
 
-:::warning
+:::danger
 
 When a self-hosted pool is deleted from organization for any reason, its related build profiles will return to `default` pool automatically which is Appcircle cloud. So, build jobs will go on with Appcircle-hosted runners automatically.
 

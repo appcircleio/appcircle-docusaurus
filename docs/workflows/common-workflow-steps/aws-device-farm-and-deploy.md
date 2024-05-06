@@ -45,7 +45,7 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-awsInput.png' />
 
-:::warning
+:::danger
 
 **Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
 
