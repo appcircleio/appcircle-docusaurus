@@ -65,6 +65,10 @@ Crontab is a scheduling utility that enables users to schedule tasks and command
 
 By utilizing crontab, you can seamlessly automate minor or patch updates for the Appcircle Server, ensuring your application remains up-to-date without manual intervention.
 
+:::caution
+If you are updating the Appcircle Server with the [Offline Upgrade](/docs/self-hosted-appcircle/configure-server/offline-installation.md#upgrade) method, then you can't use auto-update tool since it requires some network access to download the Appcircle Server package and updated container images. 
+:::
+
 ### Enabling Passwordless Sudo
 
 :::caution
