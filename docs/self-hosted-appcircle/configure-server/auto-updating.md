@@ -1,6 +1,6 @@
 ---
 title: Auto Upgrading Server
-description: Learn how to upgrade self-hosted Appcircle server with an automated way.
+description: Learn how to upgrade a self-hosted Appcircle server automatically.
 tags: [self-hosted server, update, upgrade, auto-update, auto-upgrade]
 sidebar_position: 15
 ---
@@ -9,7 +9,7 @@ import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-ser
 
 ## Overview
 
-In this document, you will see how to update the Appcircle server in a automated way.
+In this document, you will learn how to update the Appcircle server automatically.
 
 The automated update tool streamlines the process of keeping your Appcircle Server up-to-date. It takes care of seamlessly downloading the latest release, extracting the necessary files, and applying any new configurations.
 
@@ -18,16 +18,16 @@ In the event of a minor or patch upgrade, the tool will gracefully stop the exis
 This automated approach ensures a smooth transition to the latest version, minimizing downtime and maximizing efficiency.
 
 :::caution
-The auto-update does not update the Appcircle server if there is a major AppCircle server update.
+The auto-update tool does not update the Appcircle server in the event of a major AppCircle server update.
 :::
 
 :::info
-The auto-update is included in App server package versions v3.16.0 and later.
+The auto-update tool is included in Appcircle Server package versions v3.16.0 and later.
 :::
 
-## Updating the Appcircle Server Semi-Automated
+## Updating the Appcircle Server Semi-Automatically
 
-For a manual yet simplified update process of the App Server, you can leverage the auto-update via a single command.
+For a manual yet simplified update process of the Appcircle Server, you can leverage the auto-update via a single command.
 
 The auto-update will do the following jobs automatically:
 
@@ -59,21 +59,21 @@ Run the auto-update tool for your project.
 
 ## Updating the Appcircle Server Automated with Cronjob
 
-To fully automate the update process of the App, you can leverage the auto-update tool to create a cronjob on the App Server.
+To fully automate the update process of the App, you can leverage the auto-update tool to create a cronjob on the Appcircle Server.
 
 Crontab is a scheduling utility that enables users to schedule tasks and commands to run at predetermined intervals.
 
-By utilizing crontab, you can seamlessly automate minor or patch updates for the App Server, ensuring your application remains up-to-date without manual intervention.
+By utilizing crontab, you can seamlessly automate minor or patch updates for the Appcircle Server, ensuring your application remains up-to-date without manual intervention.
 
 ### Enabling Passwordless Sudo
 
 :::caution
-To use the crontab, you **must** enable the passwordless sudo commands.
+To use the crontab, you **must** enable the passwordless `sudo` commands.
 :::
 
-Passwordless sudo allows authorized users or scripts to execute commands with superuser privileges without being prompted for a password, enhancing the automation capabilities of administrative tasks.
+Passwordless `sudo` allows authorized users or scripts to execute commands with superuser privileges without being prompted for a password, enhancing the automation capabilities of administrative tasks.
 
-To activate passwordless sudo, you should edit the `sudoers` file.
+To activate passwordless `sudo`, you should edit the `sudoers` file.
 
 ```bash
 sudo visudo
@@ -85,9 +85,9 @@ Find the line below.
 The `wheel` in the example output below is the privileged group name that depends on the Linux distro you use.
 
 For RHEL, it is generally `wheel`.
-For Ubuntu, it might me `admin` or `sudo`.
+For Ubuntu, it might be `admin` or `sudo`.
 
-You can also make sudo passwordless only for a user.
+You can also make `sudo` passwordless only for a user.
 :::
 
 ```bash
