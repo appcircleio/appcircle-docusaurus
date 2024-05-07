@@ -643,7 +643,7 @@
 
 [[redirects]]
   from = "/integrations/integration-guides/jira-integration"
-  to = "/workflows/common-workflow-steps/jira-component"
+  to = "/workflows/common-workflow-steps/jira-comment"
   status = 301
 
 [[redirects]]
@@ -790,7 +790,12 @@
 
   [[redirects]]
   from = "/workflows/common-workflow-steps/build-and-test/jira-component"
-  to = "/workflows/common-workflow-steps/jira-component"
+  to = "/workflows/common-workflow-steps/jira-comment"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/jira-component"
+  to = "/workflows/common-workflow-steps/jira-comment"
   status = 301
 
   [[redirects]]
