@@ -105,7 +105,7 @@ Modifying the Journald configuration requires elevated privileges with `sudo` pe
 Edit the Journald config file.
 
 ```bash
-sudo vim /etc/systemd/journald.conf
+sudo vi /etc/systemd/journald.conf
 ```
 
 Uncomment or add the `SystemMaxUse` variable in the configuration file and assign it the desired value, such as `200M` for a 200 megabyte limit.
