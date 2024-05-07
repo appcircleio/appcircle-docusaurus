@@ -21,6 +21,12 @@ The subsequent sections of this document will guide you through the process of a
 To access and use the monitoring capabilities, you must be running Appcircle server version `3.15.0` or later.
 :::
 
+:::caution
+The log monitoring system is for viewing the logs of the running Appcircle Server services. If you are having issues about starting the Appcircle Server services, you should use other CLI tools for troubleshooting and resolving the issues.
+
+You may not access to the monitoring UI if services are not running healthy.
+:::
+
 ## Accessing to Grafana Web UI
 
 <SpacetechExampleInfo />
