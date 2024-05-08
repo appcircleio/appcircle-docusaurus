@@ -63,7 +63,11 @@ To create a diagnostic report, you can run the diagnostic tool like in the examp
 ./scripts/diagnostic.sh
 ```
 
-- Not recommended but you can change the output file name to `diagnostic-report-${datetime}.tar.gz`:
+- Not recommended but you can change the output file name to `diagnostic-report-${datetime}.txt`:
+
+:::info
+This will create a `txt` file instead of a tar ball file. 
+:::
 
 ```bash
 ./scripts/diagnostic.sh --output "diagnostic-report"
