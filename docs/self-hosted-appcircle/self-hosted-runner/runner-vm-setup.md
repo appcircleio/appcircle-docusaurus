@@ -407,11 +407,27 @@ If you don't need the latest Xcode and you want to run an older version of the m
 
 To download and extract the Appcircle runner VM and xCode images on the background automatically, you can run the command below.
 
+<Tabs groupId="macos-image">
+
+  <TabItem value="240306" label="240306" default>
+
 ```bash
-curl -O -L https://raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts/main/install_vm.sh && \
+curl -fsSL -O https://raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts/main/download-runner.sh && \
 chmod +x install_vm.sh && \
-nohup ./install_vm.sh &
+nohup ./install_vm.sh "240306" &
 ```
+
+  </TabItem>
+  <TabItem value="240417" label="240417">
+
+```bash
+curl -fsSL -O https://raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts/main/download-runner.sh && \
+chmod +x install_vm.sh && \
+nohup ./install_vm.sh "240417" &
+```
+
+  </TabItem>
+</Tabs>
 
 It may take a little to complete. You can see the logs with the command below.
 
@@ -420,13 +436,17 @@ tail -f nohup.out
 ```
 
 :::info
-You can close the ssh session while the script is running. The download and extract process will go on in the background.
-
-But be aware that there might be some errors while downloading and extracting the VM image. Please keep an eye on the logs.
+If you face any error while downloading the files, please delete the corrupted VM image file and run the `curl` command block above 👆.
 :::
 
 :::info
-If you face any error while downloading the files, please delete the corrupted VM image file and run the `curl` command block above 👆.
+You can close the ssh session while the tool is running. The download and extract process will go on in the background.
+
+But be aware that there might be some errors while downloading and extracting the VM image such as network or disk errors. Please keep an eye on the logs.
+:::
+
+:::tip
+If no specific image identifier is provided when executing the `download-runner.sh` tool, it will automatically attempt to download the most recent runner images.
 :::
 
 ## Create Base Images
