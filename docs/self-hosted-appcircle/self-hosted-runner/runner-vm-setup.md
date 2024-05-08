@@ -409,9 +409,9 @@ It doesn't support running on older hosts like Monterey, Big Sur, etc.
 If you don't need the latest Xcode and you want to run an older version of the macOS VM image that supports running on a Monterey host, contact us through our support channels.
 :::
 
-### Download the macOS VM and xCode Images Automatically
+### Download the macOS VM and Xcode Images Automatically
 
-To download and extract the Appcircle runner VM and xCode images on the background automatically, you can run the command below.
+To download and extract the Appcircle runner VM and Xcode images on the background automatically, you can run the command below.
 
 <Tabs groupId="macos-image">
 
