@@ -206,7 +206,7 @@ storage.googleapis.com/appcircle-dev-common/self-hosted
 - macOS vm install script (required if you want automatic install):
 
 ```access_list
-raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts
+cdn.appcircle.io
 storage.googleapis.com/storage/v1/b/appcircle-dev-common
 ```
 
