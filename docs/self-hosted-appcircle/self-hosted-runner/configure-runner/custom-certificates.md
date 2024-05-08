@@ -112,6 +112,10 @@ After the script completes successfully, the certificate will be trusted in your
 
 ### Adding Proxy Certificates
 
+:::caution
+Adding proxy certificates is only supported for macOS runners for now.
+:::
+
 If you want to trust the root certificates of the proxy server which you use to connect internet, you can follow the steps below.
 
 - The proxy env variables `HTTP_PROXY` and `HTTPS_PROXY` should be configured.
