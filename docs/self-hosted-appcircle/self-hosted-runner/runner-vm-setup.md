@@ -418,18 +418,18 @@ To download and extract the Appcircle runner VM and Xcode images on the backgrou
   <TabItem value="240306" label="240306" default>
 
 ```bash
-curl -fsSL -O https://raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts/main/download-runner.sh && \
-chmod +x install_vm.sh && \
-nohup ./install_vm.sh "240306" &
+curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
+chmod +x download-runner.sh && \
+nohup ./download-runner.sh "240306" &
 ```
 
   </TabItem>
   <TabItem value="240417" label="240417">
 
 ```bash
-curl -fsSL -O https://raw.githubusercontent.com/appcircleio/appcircle-self-hosted-scripts/main/download-runner.sh && \
-chmod +x install_vm.sh && \
-nohup ./install_vm.sh "240417" &
+curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
+chmod +x download-runner.sh && \
+nohup ./download-runner.sh "240417" &
 ```
 
   </TabItem>
