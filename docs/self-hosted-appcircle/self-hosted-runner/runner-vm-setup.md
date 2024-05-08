@@ -119,6 +119,12 @@ You can ignore power failure settings if they are not supported.
 
 ## Download MacOS VM
 
+You have two options to obtain the Appcircle Runner images: manual or automated.
+
+To perform these tasks manually, you can follow our step-by-step guide on [Download the macOS VM Image Manually](#download-the-macos-vm-image-manually).
+
+Alternatively, you can automate this process on background by following our instructions on [Download the macOS VM and Xcode Images Automatically](#download-the-macos-vm-and-xcode-images-automatically).
+
 ### Download the macOS VM Image Manually
 
 :::tip
@@ -403,7 +409,7 @@ It doesn't support running on older hosts like Monterey, Big Sur, etc.
 If you don't need the latest Xcode and you want to run an older version of the macOS VM image that supports running on a Monterey host, contact us through our support channels.
 :::
 
-### Download the macOS VM and xCode Images With Script
+### Download the macOS VM and xCode Images Automatically
 
 To download and extract the Appcircle runner VM and xCode images on the background automatically, you can run the command below.
 
