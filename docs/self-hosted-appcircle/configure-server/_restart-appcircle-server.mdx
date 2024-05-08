@@ -1,0 +1,26 @@
+- Shutdown Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Apply configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Boot Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+:::

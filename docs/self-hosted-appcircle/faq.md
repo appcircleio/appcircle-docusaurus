@@ -1,8 +1,9 @@
 ---
-title: Troubleshooting & FAQ
-metaTitle: Troubleshooting & FAQ
-metaDescription: Troubleshooting & FAQ
+title: Troubleshooting & FAQ for Appcircle Server and Runner
+description: Troubleshooting and FAQ for Appcircle server and runner
+tags: [troubleshooting, faq, self-hosted]
 sidebar_position: 4
+sidebar_label: Troubleshooting & FAQ
 ---
 
 # Overview
@@ -35,13 +36,13 @@ The podman network backend should be `netavark`. You can check the current setti
 podman info | grep -i networkBackend
 ```
 
-If you need to use a proxy on the Appcircle server, you should configure proxy settings according to the [Proxy Configuration](./configure-server/proxy-configuration.md) document.
+If you need to use a proxy on the Appcircle server, you should configure proxy settings according to the [Proxy Configuration](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration) document.
 
 ### We are facing "manifest not found" error when we run the `up` command.
 
 If you are using the Nexus registry and are facing a "manifest not found" error, this is an expected case to occur. Nexus proxy has a known bug while pulling multiple container images. You should pull images one by one as a workaround.
 
-To pull images one by one, you can edit the script [here](./install-server/podman.md#mirroring-appcircle-images) and create a new shell script. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
+To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
 ### Where should we download the zip package while we are updating?
 
@@ -49,9 +50,9 @@ Download the zip package of the appcircle server and extract it to the same fold
 
 ### How do I change Docker or Podman's data location?
 
-For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](./install-server/docker.md#change-the-docker-data-location) page.
+For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](/self-hosted-appcircle/install-server/docker#change-the-docker-data-location) page.
 
-For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./install-server/podman.md#change-the-podman-data-location) page.
+For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./install-server/podman#change-the-podman-data-location) page.
 
 ### I'm offline on the Appcircle dashboard on my browser.
 
@@ -141,21 +142,171 @@ You should check the status of the Appcircle server after boot for any possible 
 
 Now you can access the Enterprise App Store with the new store domain settings.
 
+### How can we change the default sub-domains?
+
+:::caution
+This operation needs **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#reset-configuration)** which deletes all your data like "Build Profiles", "Signing Identities", etc on the Appcircle server.
+:::
+
+:::tip
+If you only want to change the URL of the **Testing Distribution** or **Enterprise App Store**, you should follow the [custom domain](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) configuration document to assign a custom domain without resetting the Appcircle server.
+:::
+
+You can change the default subdomains as per your needs at the first installation time of the Appcircle server.
+
+If you have already installed the Appcircle server and want to change the subdomains, you must **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#reset-configuration)** the server before applying a new configuration.
+
+For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com` along with other subdomains, you should follow the steps below:
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+:::info
+The `spacetech` in the example codes below is an example project name.
+
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
+
+```bash
+ls -l ./projects
+```
+
+:::
+
+- Edit the `global.yaml` of your project for subdomain changes.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+```yaml
+keycloak:
+  external:
+    subdomain: auth-appcircle
+webApp:
+  external:
+    subdomain: my-appcircle
+apiGateway:
+  external:
+    subdomain: api-appcircle
+testerWeb:
+  external:
+    subdomain: dist-appcircle
+webEvent:
+  external:
+    subdomain: hook-appcircle
+minio:
+  external:
+    subdomain: resource-appcircle
+storeWeb:
+  external:
+    subdomain: store-appcircle
+```
+
+:::caution
+If the keys already exist in the `global.yaml`, you should just update or add the missing keys.
+
+For example, if you already have the `keycloak` key in global.yaml, you must just add the `keycloak.external.subdomain` section there.
+:::
+
+- Edit the `mainDomain` of your project in the `global.yaml` file.
+
+```yaml
+external:
+  mainDomain: ".spacetech.com"
+```
+
+:::caution
+The subdomains will be concatenated to the **`mainDomain`**.
+
+For this reason, `external.mainDomain` in the configuration file must always begin with a `.` character as a prefix.
+:::
+
+:::tip
+
+After you change the main domain and the subdomains, you can merge them yourself to see the up-to-date URLs for Appcircle modules.
+
+For example;
+
+- when `mainDomain` is `.spacetech.com`
+- and `webApp` `subdomain` is `my-appcircle`
+
+then the Appcircle dashboard URL will be `my-appcircle.spacetech.com`.
+:::
+
+:::danger
+If you have configured the Appcircle server as HTTPS, as an extra step, it may be required to change the SSL certificates in the `global.yaml` if they are not compatible with your new subdomains.
+
+See the **[SSL configuration](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration)** document for details.
+:::
+
+When the `global.yaml` changes are ready to apply, follow the below steps:
+
+- Stop the server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Cleanup server data.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" reset
+```
+
+:::info
+The `reset` step is optional. If you are installing for the first time, which means that you have never run the `up` command and used the system, then you don't need to cleanup anything.
+
+For details, you can see the [reset configuration](./install-server/docker/#reset-configuration) section in the documentation.
+:::
+
+- Apply the configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Start the server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+- Check the health of the services.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+You should see the message: _"All services are running successfully."_
+
+### While connecting to a repository from GitLab, we can list the projects, but binding is failing.
+
+The first thing you should check is **PAT** permissions.
+
+If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
+
+For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
+
 ## Appcircle Runner FAQ
 
 ### We are facing a self-signed certificate error on builds.
 
 The certificate of your organization should be trusted on the Appcircle runner virtual machines.
 
-You should refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates.md) page for more details.
+You should refer to the [Custom Certificates](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates) page for more details.
 
 ### We are facing an "SSL certificate is not valid yet" error on builds.
 
 The runner VMs cannot connect to the servers to update their date and time due to network restrictions.
 
-You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](./self-hosted-runner/runner-vm-setup.md#update-base-images) section.
+You should configure NTP server settings in the runner VMs. For updating base runners, please refer to the [Update Base Images](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#update-base-images) section.
 
-For details on configuring NTP settings, you can refer to the [NTP Configuration](./self-hosted-runner/runner-vm-setup.md#2-configure-base-runners-ntp-settings) section and follow the steps.
+For details on configuring NTP settings, you can refer to the [NTP Configuration](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) section and follow the steps.
 
 ### We can't register Appcircle runner to the server.
 
@@ -165,6 +316,38 @@ First, you should check if your Appcircle runner can access the Appcircle server
 curl -v https://api.appcircle.spacetech.com
 ```
 
-You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](./self-hosted-runner/configure-runner/custom-certificates.md) page to trust the root CA certificate of your organization.
+You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates) page to trust the root CA certificate of your organization.
 
 If you already trusted the root CA cert, you should check the Appcircle server's certificate. If it is too long, like 5 years, it should be trusted using the graphical user interface. You should open the Keychain Access application from the GUI and add the Appcircle server's certificate. After that, you should click on the certificate and select "Always trust".
+
+### We are facing "LoginName too long" error while running the `screen` command.
+
+The `screen` command has a bug with long usernames which has been fixed in the new versions.
+
+If you are facing this error while trying to run Appcircle runner VMs on a macOS host, you should update the `screen` tool on the host machine with `brew`.
+
+You should follow the steps below to update the `screen` tool:
+
+- Check the current version before updating.
+
+```bash
+screen --version
+```
+
+- Install the up-to-date version using Homebrew.
+
+```bash
+brew install screen
+```
+
+- Open a new terminal session to use the new `screen`.
+
+:::caution
+If you don't open a new terminal session, you cannot use the up-to-date `screen` since the current shell session has access to the older version.
+:::
+
+- Re-check the version to see if the update was done successfully.
+
+```bash
+screen --version
+```

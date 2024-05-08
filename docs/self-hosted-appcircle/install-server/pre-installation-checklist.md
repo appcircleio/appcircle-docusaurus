@@ -1,7 +1,7 @@
 ---
 title: Pre-Installation Checklist
-metaTitle: Pre-Installation Checklist
-metaDescription: Pre-Installation Checklist
+description: Checklist to be followed before installing the self-hosted Appcircle
+tags: [self-hosted, installation, checklist]
 sidebar_position: 2
 ---
 
@@ -90,7 +90,7 @@ Keep in mind that **SSDs** are a better and **recommended** choice for faster di
 free -h
 ```
 
-If you don't have any swap space or it's insufficient, you can find the configuration details [here](docker.md#swap).
+If you don't have any swap space or it's insufficient, you can find the configuration details [here](docker#swap).
 
 ### Check the Swappiness
 
@@ -100,7 +100,7 @@ If you don't have any swap space or it's insufficient, you can find the configur
 sudo cat /proc/sys/vm/swappiness
 ```
 
-If the output is not 10, you can find the configuration details [here](docker.md#swappiness).
+If the output is not 10, you can find the configuration details [here](docker#swappiness).
 
 ### Configure the DNS Settings
 
@@ -123,10 +123,11 @@ These subdomains are **api**, **auth**, **dist**, **hook**, **my**, **resource**
   - [ ] `my.appcircle.spacetech.com`
   - [ ] `resource.appcircle.spacetech.com`
   - [ ] `store.appcircle.spacetech.com`
+  - [ ] `monitor.appcircle.spacetech.com`
 
 - [ ] All of these domain names should resolve to the same server IP address, which is the Appcircle server.
 
-You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
+You can see details in the [DNS Settings](/self-hosted-appcircle/install-server/docker#4-dns-settings) section.
 
 ### Obtain an SSL Certificate
 
@@ -159,18 +160,18 @@ You can see details in the [DNS Settings](./docker.md#4-dns-settings) section.
 - If you are using GitLab, Azure DevOps, Bitbucket:
   - [ ] Create an Appcircle user. Give it permissions for the repositories.
   - [ ] Create a personal access token that has sufficient permissions.
-    - For details like token permissions, check the [connect your repository](../../build/adding-a-build-profile#connect-your-repository) section.
+    - For details like token permissions, check the [connect your repository](/build/manage-the-connections/adding-a-build-profile#connect-your-repository) section.
 - If you are using any other git server:
   - [ ] Create a public-private SSH key pair.
   - [ ] Configure your Appcircle git user's public SSH keys and upload the public SSH key you created.
-    - For details, you can check the [connect via SSH](../../build/adding-a-build-profile/connecting-to-private-repository-via-ssh.md) section.
+    - For details, you can check the [connect via SSH](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh) section.
 - [ ] Create a firewall rule (or permission) between the Appcircle server and the git server in both directions.
 
 ### Network Access for Installation
 
-According to the selected Linux distribution and installation method, you need to configure firewall rules (or permissions) for the Appcircle server. All required domains that are used for installation are detailed in the [network access](../configure-server/network-access.md) section.
+According to the selected Linux distribution and installation method, you need to configure firewall rules (or permissions) for the Appcircle server. All required domains that are used for installation are detailed in the [network access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access) section.
 
-- [ ] Review the [network access](../configure-server/network-access.md#appcircle-server-install-and-update) section and be sure that the listed domains are reachable from the Appcircle server.
+- [ ] Review the [network access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access#appcircle-server-install-and-update) section and be sure that the listed domains are reachable from the Appcircle server.
 
 ## Runner Checklist
 
@@ -199,4 +200,4 @@ Port depends on the selected connection method. Default values can be:
 If your git server has a custom port for git servcies, then you should use that port.
 :::
 
-- [ ] Review the [network access](../configure-server/network-access.md#appcircle-runner-install-as-ready-to-use-macos-virtual-machine) section and be sure that the listed domains are reachable from the Appcircle runner.
+- [ ] Review the [network access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access#appcircle-runner-install-as-ready-to-use-macos-virtual-machine) section and be sure that the listed domains are reachable from the Appcircle runner.

@@ -1,7 +1,7 @@
 ---
-title: Manage Runners
-metaTitle: Manage Runners
-metaDescription: Manage Runners
+title: Managing Runners
+description: Learn how to manage self-hosted runners in Appcircle
+tags: [self-hosted runner, self-hosted pool, self-hosted runner management]
 sidebar_position: 2
 ---
 
@@ -31,7 +31,7 @@ You can **disable** self-hosted runner from list, using toggle button on right-h
 
 With quick enable/disable feature, you can remove self-hosted runner from pool temporarily and make some maintenance or debugging. When ready, you can add the self-hosted runner to pool again without any CLI operation.
 
-:::warning
+:::danger
 
 Your pool should have at least one active (ready-to-build) runner for build pipeline continuity.
 
@@ -69,7 +69,7 @@ If you want to remove your self-hosted runner for any reason, click on runner na
 
 Click on delete button at the bottom of the page. A confirmation dialog will be visible for your approval. Type runner name into textbox and click on delete.
 
-Deleting runner removes it from pool and it's unreachable from Appcircle cloud. If you want to add same runner again to the same pool or another pool, you need to register and configure it again. See, [add self-hosted runner](../installation.md) page for details.
+Deleting runner removes it from pool and it's unreachable from Appcircle cloud. If you want to add same runner again to the same pool or another pool, you need to register and configure it again. See, [add self-hosted runner](../installation) page for details.
 
 :::info
 
@@ -83,7 +83,7 @@ If there is no runner left in self-hosted pool, it will be deleted automatically
 
 :::
 
-:::warning
+:::danger
 
 When a self-hosted pool is deleted from organization for any reason, its related build profiles will return to `default` pool automatically which is Appcircle cloud. So, build jobs will go on with Appcircle-hosted runners automatically.
 
@@ -97,7 +97,7 @@ You can add more Xcode versions side-by-side or more up-to-date Xcode any time a
 ./ac-runner xcode -v ${Xcode Version}
 ```
 
-Xcode version argument is similar to xcode argument on [installation](../installation.md#3-configure). You can give one or more versions comma-separated.
+Xcode version argument is similar to xcode argument on [installation](../installation#3-configure). You can give one or more versions comma-separated.
 
 For example, below command will install Xcode 13.1.x:
 

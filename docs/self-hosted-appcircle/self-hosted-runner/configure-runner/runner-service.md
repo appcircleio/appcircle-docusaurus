@@ -1,7 +1,7 @@
 ---
 title: Service Configuration
-metaTitle: Service Configuration
-metaDescription: Service Configuration
+description: Learn how to configure self-hosted runner service
+tags: [self-hosted runner, service, configuration]
 sidebar_position: 3
 ---
 
@@ -58,7 +58,7 @@ Starts runner service if it's stopped. If runner service is down for some reason
 ./ac-runner service -c stop
 ```
 
-You can disable self-hosted runner from web UI. (See, [here](./manage-runners.md) for details)
+You can disable self-hosted runner from web UI. (See, [here](./manage-runners) for details)
 
 If you need to disable self-hosted runner from CLI, you can use service stop option.
 
@@ -72,7 +72,7 @@ When a self-hosted runner service is stopped from CLI, you will see it as `Offli
 
 :::
 
-:::warning
+:::danger
 
 You should be careful for running pipelines while stopping self-hosted runner service. When you stop service, it will immediately terminate self-hosted runner process and build job will be cut. It will be still shown as in-progress build but actually it's not working. It will stuck in that state until build timeout.
 
