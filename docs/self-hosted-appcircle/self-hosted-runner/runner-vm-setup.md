@@ -46,7 +46,7 @@ brew --version
 
 ### 2. Install Tart
 
-Tap Appcircle repository and install tart.
+Tap Appcircle repository and install `tart` (Tart is a registered trademark of Cirrus Labs, Inc.).
 
 ```bash
 brew tap appcircleio/cli
