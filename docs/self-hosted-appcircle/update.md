@@ -41,7 +41,7 @@ For example, to find the version for a project named "spacetech", run the follow
 
 ### 1. Download Latest
 
-To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package.
+To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package. This typically means copying the `cred.json` file to the same directory containing the `appcircle-server` directory.
 
 :::info
 Without the `cred.json` file, you will not be able to access the licensed Appcircle Server package.
