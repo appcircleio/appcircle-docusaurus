@@ -191,6 +191,14 @@ You need to have the following tools installed on your system:
 - curl
 - unzip
 
+To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package.
+
+:::info
+Without the `cred.json` file, you will not be able to access the licensed Appcircle Server package.
+
+If you have not yet obtained the `cred.json` file, please contact us for assistance.
+:::
+
 Download the latest self-hosted Appcircle package.
 
 ```bash
