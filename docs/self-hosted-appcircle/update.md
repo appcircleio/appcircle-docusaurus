@@ -41,11 +41,37 @@ For example, to find the version for a project named "spacetech", run the follow
 
 ### 1. Download Latest
 
+To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package. This typically means copying the `cred.json` file to the same directory containing the `appcircle-server` directory.
+
+:::info
+Without the `cred.json` file, you will not be able to access the licensed Appcircle Server package.
+
+If you have not yet obtained the `cred.json` file, please contact us for assistance.
+:::
+
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.14.0.zip
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | bash
 ```
+
+:::tip
+By default, the command above downloads the latest available Appcircle server version.
+
+You can specify a specific version using the `--package-version` option or `AC_SERVER_VERSION` environment variable..
+
+For instance, suppose there are multiple versions available (e.g. `3.14.0`, `3.14.1`, `3.14.2`, and `3.15.0`) and you want to download version `3.14.1`. To achieve this, simply run the command below:
+
+```bash
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | AC_SERVER_VERSION=3.14.1 bash 
+```
+
+Alternatively, if you wish to download the latest package in the 3.14.x series (which would be version 3.14.2), use the following command:
+
+```bash
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | AC_SERVER_VERSION=3.14 bash 
+```
+:::
 
 :::caution
 
