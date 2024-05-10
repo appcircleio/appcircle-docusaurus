@@ -24,17 +24,17 @@ When you need to distribute an iOS application to different environments (like Q
 
 #### Display Name
 
-- **Field**: `CFBundleDisplayName`
+- **Field**: [`CFBundleDisplayName`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundledisplayname)
 - **Description**: The user-visible name for the bundle, used by Siri and visible on the iOS Home screen.
 
 #### Version
 
-- **Field**: `CFBundleShortVersionString`
+- **Field**: [`CFBundleShortVersionString`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring)
 - **Description**: The release or version number of the bundle.
 
 #### Build Number
 
-- **Field**: `CFBundleVersion`
+- **Field**: [`CFBundleVersion`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion)
 - **Description**: The version of the build that identifies an iteration of the bundle.
 
 #### Entitlements
@@ -50,8 +50,12 @@ When you need to distribute an iOS application to different environments (like Q
 
 #### Bundle ID
 
-- **Field**: `CFBundleIdentifier`
+- **Field**: [`CFBundleIdentifier`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleidentifier)
 - **Description**: Original Bundle ID.
+
+:::caution BundleID
+Please note that changing the **BundleID** is not allowed while the related version is being resigned in the **Publish module**. If you need to change the **BundleID value** of your package, please use the **Resign Binary** feature in [Testing Distribution](/distribute/platform-specific-guidance/ios/resigning-ios-binaries).
+:::
 
 #### Provisioning Profiles
 
@@ -84,6 +88,10 @@ Resigning an Android binary allows you to apply a new keystore to your applicati
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-resign-android-option.png' />
 
 - **Package ID**: This is the unique identifier for your Android application, also known as the application ID. It usually follows the format `com.example.myapp` and should not be changed during the resigning process.
+
+:::caution Package ID
+Please note that changing the **Package ID** is not allowed while the related version is being resigned in the **Publish module**. If you need to change the **Package ID value** of your package, please use the **Resign Binary** feature in [Testing Distribution](/distribute/platform-specific-guidance/android/resigning-android-binaries).
+:::
 
 - **Version Name**: This field represents the human-readable version of your app, such as `1.2.3`. It is used for display purposes and can be adjusted if necessary during the resigning process.
 
