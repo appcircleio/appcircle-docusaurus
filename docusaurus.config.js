@@ -82,7 +82,7 @@ const config = {
             label: "Documentation",
           },
           {
-            to: "updates/release-notes",
+            to: "/release-notes",
             position: "left",
             label: "Release Notes",
           },
@@ -131,19 +131,48 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Documentation",
+                label: "Getting Started",
                 type: "doc",
-                to: "/",
+                to: "/build/manage-the-connections/adding-a-build-profile",
+              },
+              {
+                label: "Best Practices",
+                to: "/best-practices",
+              },
+              {
+                label: "Integrations",
+                to: "/workflows",
+              },
+              {
+                label: "Appcircle CLI",
+                to: "/appcircle-api",
               },
               {
                 label: "Release Notes",
                 type: "doc",
-                to: "updates/release-notes",
+                to: "/release-notes",
               },
             ],
           },
           {
             title: "Community",
+            items: [
+              {
+                label: "How-To Videos",
+                href: "https://www.youtube.com/appcircle",
+              },
+              {
+                label: "Slack",
+                href: "https://slack.appcircle.io/",
+              },
+              {
+                label: "Customer Stories",
+                href: "https://appcircle.io/customer-stories",
+              },
+            ],
+          },
+          {
+            title: "Find Us",
             items: [
               {
                 label: "Slack",
@@ -160,11 +189,31 @@ const config = {
             ],
           },
           {
-            title: "More",
+            title: "Explore More",
             items: [
               {
                 label: "GitHub",
                 href: "https://github.com/appcircleio/appcircle-docusaurus",
+              },
+              {
+                label: "Blog",
+                href: "https://appcircle.io/blog",
+              },
+              {
+                label: "Features",
+                href: "https://appcircle.io/features",
+              },
+              {
+                label: "Contact Us",
+                href: "https://appcircle.io/contact",
+              },
+              {
+                label: "Privacy Policy",
+                href: "https://appcircle.io/privacy-policy",
+              },
+              {
+                label: "Terms of Service",
+                href: "https://appcircle.io/terms-of-service",
               },
             ],
           },

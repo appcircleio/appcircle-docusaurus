@@ -2,7 +2,6 @@
 title: Xcodebuild for Devices (Archive & Export)
 description: Learn to build iOS apps for ARM devices with Xcodebuild. Essential for Sharing With Testers feature and iOS distribution
 tags: [xcode, ios, build, archive, export, workflow, step]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -25,7 +24,7 @@ The workflow steps that need to be executed before running this step, along with
 | [**Cocoapods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#cocoapods-install) | This step installs all pod dependencies for project. **Xcodebuild for Devices** should be used after this step. If you use SPM (Swift Package Manager), it is not necessary to use. |
 | [**Xcode Select**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcode-select-version)   | In this step, select the Xcode version to build. **Xcodebuild for Devices** should be used after this step.                                                                         |
 
-:::warning
+:::danger
 This step should always follow steps that may affect Archive and Export, such as Xcode Select and Cocoapods Install.
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildOrder.png' />
 :::

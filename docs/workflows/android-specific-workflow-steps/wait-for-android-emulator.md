@@ -2,7 +2,6 @@
 title: Wait for Android Emulator
 description: The Wait for Android Emulator step waits for the Android Emulator to boot. You must use this step before running any UI tests.
 tags: [android, mobile, emulator]
-sidebar_position: 12
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -13,7 +12,7 @@ The **Wait for Android Emulator** step waits for the Android Emulator to boot. Y
 
 For additional details, please refer to the [**Emulator**](https://docs.appcircle.io/infrastructure/android-build-infrastructure/#emulator) documentation.
 
-:::warning
+:::danger
 Ensure that you select the **Intel Pool** in the Configuration tab, as the **Wait for Android Emulator** step will not function in the **M1 Pool**. Please refer to [this documentation](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/#project-details-configuration) for selecting a pool in Configuration.
 :::
 

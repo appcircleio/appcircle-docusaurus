@@ -2,7 +2,6 @@
 title: Custom Script
 description: Use Custom Script steps for additional functionalities in your builds.
 tags: [custom scripts, build, test, workflow, step]
-sidebar_position: 3
 ---
 
 import Tabs from '@theme/Tabs';
@@ -158,7 +157,7 @@ mv lint-results* $AC_OUTPUT_DIR/
 
 This document provides a sample custom script written in Ruby that can be integrated into your CI/CD pipeline to enforce a minimum test coverage threshold. The script is designed to break the pipeline if the covered test result falls below a specified percentage.
 
-:::warning
+:::danger
 Please note that this custom script must be placed after the [**Test Reports**](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report) step in the workflow.
 :::
 

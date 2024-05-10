@@ -2,7 +2,6 @@
 title: AWS Device Farm and Deploy
 description: AWS Device Farm is an application testing service that enables you to run your tests concurrently on multiple mobile devices to speed up the execution of your tests and generates videos and logs to help you quickly identify issues with your app.
 tags: [android, ios, mobile, testing, aws]
-sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -46,7 +45,7 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-awsInput.png' />
 
-:::warning
+:::danger
 
 **Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
 

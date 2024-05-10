@@ -2,7 +2,6 @@
 title: Publish Release Notes
 description: Learn to publish release notes for your app versions. Communicate updates and changes effectively with Appcircle.
 tags: [build, test, release, notes, workflow, step]
-sidebar_position: 7
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -27,7 +26,7 @@ There are no prerequisites required before using the **Publish Release Notes** s
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-edit.png' />
 
-:::warning
+:::danger
 
 To create rich release notes, the Release Notes component should be included in your workflow. It is recommended to place it just before the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step so that you can have access to all build artifacts, such as git commit messages, test results, or build logs.
 
@@ -52,7 +51,7 @@ You can find all the parameters required for this step in the table below, along
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-output.png' />
 
-:::warning
+:::danger
 
 Don't forget to use the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step to access the release notes output and distribute it after the build.
 

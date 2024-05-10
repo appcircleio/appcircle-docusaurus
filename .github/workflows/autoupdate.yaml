@@ -1,0 +1,21 @@
+name: autoupdate
+on:
+  push:
+    branches:
+      - "develop"
+  workflow_dispatch:
+
+jobs:
+  autoupdate:
+    name: Auto Update
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: chinthakagodawita/autoupdate@v1.7.0
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          DRY_RUN: "false"
+          PR_READY_STATE: "ready_for_review"
+          PR_FILTER: "labelled"
+          PR_LABELS: "autoupdate"
+          MERGE_CONFLICT_ACTION: "fail"
+          MERGE_MSG: "Auto merge by autoupdate action 🤖"

@@ -2,7 +2,7 @@
 title: Latest Release Notes
 description: Appcircle release notes
 tags: [release notes]
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

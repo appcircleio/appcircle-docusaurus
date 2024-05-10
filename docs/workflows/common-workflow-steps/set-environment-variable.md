@@ -2,7 +2,6 @@
 title: Set Environment Variable
 description: Set Environment Variable step sets environment value for given keys
 tags: [set, environment, variable]
-sidebar_position: 12
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -14,7 +13,7 @@ The **Set Environment Variable** step enables the setting of environment values 
 
 There is no prerequisites step before the **Set Environment Variable** step. It can be implemented at any point within the workflow as necessary.
 
-:::warning
+:::danger
 
 Please note that you must use the **Set Environment Variable** step before the step in which you intend to use the environment variable.
 
@@ -27,7 +26,7 @@ Please note that you must use the **Set Environment Variable** step before the s
 Each component requires specific input variables for operation. For the **Set Environment Variable** step, the necessary input variables are:
 <Screenshot url='https://cdn.appcircle.io/docs/assets/set-environment-variable_2.png'/>
 
-:::warning
+:::danger
 
 Confidential information should be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
 

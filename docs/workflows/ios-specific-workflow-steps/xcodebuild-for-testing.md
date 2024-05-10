@@ -2,7 +2,6 @@
 title: Xcodebuild for Testing
 description: Build your app with Xcodebuild for Testing. Generate an IPA for use in test automation frameworks like BrowserStack or Testinium."
 tags: [build, test, ios, workflow, step]
-sidebar_position: 7
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

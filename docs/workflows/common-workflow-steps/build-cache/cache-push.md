@@ -2,7 +2,6 @@
 title: Cache Push 
 description: Optimize your workflow by utilizing Cache Push to save and streamline data access, improving speed and reliability in your projects.
 tags: [cache push, optimization, storage, dependencies, cache structure]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -21,7 +20,7 @@ When you drag and drop the **Cache Push** component into your [workflow](/workfl
 
 If you need more paths to cache or need to change paths according to your project, you can customize [included](#input-variables) and [excluded](#input-variables) paths as you wish. All path updates will be reflected in the archived cache file on your next build.
 
-:::warning
+:::danger
 You cannot delete a specific cache file from the UI, but if you have a problem with a cache file and need a fresh one, you can change your [cache label](#input-variables) to a new one to go on with a clean cache.
 :::
 
@@ -35,7 +34,7 @@ The system automatically cleans unreachable and obsolete cache files periodicall
 |-------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) | If the folders to be cached are in the repo directory, the **Git Clone** step must be used before. This step will generate the [`AC_REPOSITORY_DIR`](#input-variables) path. |
 
-:::warning
+:::danger
 Keep in mind that included paths and the **Cache Push** step's workflow order are closely related to each other. For example, if you include a path from a repository and you place the **Cache Push** step before the **Git Clone** step, **Cache Push** won't find that path since it's not Git cloned yet. Although that's not a fatal error for **Cache Push**, it will inform you about unreachable paths on build logs. You can review and resolve those kinds of issues from build logs.
 :::
 

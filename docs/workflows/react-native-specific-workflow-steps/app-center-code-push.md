@@ -2,7 +2,6 @@
 title: App Center CodePush
 description: Effortlessly update apps with App Center Code Push. Learn quick, reliable code deployment without app store delays.
 tags: [react native, mobile, workflow, step, code push, app center]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -29,7 +28,7 @@ Below is a list of input variables that can be used with this component with a d
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3174-codepushInput.png' />
 
-:::warning
+:::danger
 
 Avoid hard-coding sensitive information, like tokens and API keys, directly into the step parameters.
 

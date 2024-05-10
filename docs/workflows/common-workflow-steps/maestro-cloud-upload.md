@@ -2,7 +2,6 @@
 title: Maestro Cloud Upload
 description: Facilitate the execution of automated tests for mobile applications directly within Appcircle using Maestro Cloud Upload.
 tags: [maestro, maestro-cloud, mobile, testing]
-sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -64,7 +63,7 @@ The **Maestro Cloud Upload** step requires specific input variables:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_5.png'/>
 
-:::warning
+:::danger
 
 Enter confidential information as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, select the appropriate [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) in the [Configuration](/build/build-process-management/build-profile-configuration/).
 

@@ -2,7 +2,6 @@
 title: Export Build Artifacts
 description: Exports the specified build artifacts from the build agent to the Appcircle dashboard.
 tags: [export, artifact, build, workflow, step]
-sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -12,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download in the artifacts section of the completed build.
 
-:::warning
+:::danger
 Sending applications to **Publish**, **Enterprise App Store**, or **Testing Distribution** will not work without this step.
 :::
 
@@ -24,7 +23,7 @@ We recommend using it as the last step in your workflow.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportOrder.png' />
 
-:::warning
+:::danger
 Remember, if you set a step to run after this step, artifacts generated after this step **will not be exported**. This step only exports the artifacts produced before it.
 :::
 

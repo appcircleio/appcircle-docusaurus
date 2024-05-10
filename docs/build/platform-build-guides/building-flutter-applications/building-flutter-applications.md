@@ -14,6 +14,8 @@ import TabItem from '@theme/TabItem';
 
 You can build your Flutter applications in Appcircle for iOS or Android platforms.
 
+<iframe width="650" height="315" src="https://www.youtube.com/embed/XiRQOCw0wxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Creating a Flutter Build Profile
 
 Simply create a new build profile as usual and select your target operating system as iOS or Android. Select **Flutter **for **Target Platform**.

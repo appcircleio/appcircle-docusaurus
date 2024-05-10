@@ -2,7 +2,6 @@
 title: SwiftLint
 description: Improve your code with SwiftLint, a tool for identifying programmatic and stylistic errors. Prerequisites include Git Clone and Cocoapods Install.
 tags: [ios, build, test, workflow, step]
-sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -21,7 +20,7 @@ Remember, SwiftLint must be used after the following steps in order to work as e
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2613-lint_order.png' />
 
-:::warning
+:::danger
 If you are using **CocoaPods**, note that this step is dependent on the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#cocoapods-install) step. Otherwise, the SwiftLint component will **fail**, and the **pipeline will break.**
 :::
 :::caution

@@ -2,7 +2,6 @@
 title: Active SSH Private Key
 description: Secure your connections with an Active SSH Private Key. Enhance security and manage your remote operations smoothly and safely.
 tags: [secure, ssh, connections, private key]
-sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

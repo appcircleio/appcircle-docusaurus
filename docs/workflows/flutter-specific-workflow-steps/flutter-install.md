@@ -2,7 +2,6 @@
 title: Flutter Install
 description: This workflow step installs the specified Flutter SDK to run the Flutter CLI for subsequent analysis, build, and test operations.
 tags: [flutter, build, test, workflow, step]
-sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -29,7 +28,7 @@ These steps depend on Flutter installation and can only be used after the **Flut
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2851-installOrder.png' />
 
-:::warning
+:::danger
 The steps specified in the table are steps dependent on the **Flutter Install** step. **If Flutter Install is not used before these steps**, these steps will give a **Flutter SDK not found error**.
 :::
 

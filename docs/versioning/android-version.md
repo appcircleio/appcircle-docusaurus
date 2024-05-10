@@ -81,32 +81,36 @@ If true, omits zero in the patch version. So _42.10.0_ will become _42.10_ and _
 
 This component works on standard build.gradle files. If you use flavors in your build.gradle, you can set the flavor name. However, please be aware that flavor support is not foolproof. Due to dynamic nature of build.gradle file, it may not cover all the cases.
 
-### Output Values
+### Output Variables
 
 After the version code or version name update, new values will be written to two environment variables.
 
-| Value                            | Explanation          |
-| -------------------------------- | -------------------- |
-| `$AC_ANDROID_NEW_BUILD_NUMBER`   | Changed version code |
-| `$AC_ANDROID_NEW_VERSION_NUMBER` | Changed version name |
+| Variable Name                  | Description                                                     |
+| ------------------------------ | --------------------------------------------------------------- |
+| `$AC_ANDROID_NEW_VERSION_CODE` | Represents the incremented version code applied to the project. |
+| `$AC_ANDROID_NEW_VERSION_NAME` | Represents the incremented version name applied to the project. |
 
 You can use the above values in the remaining steps of your workflow.
 
-### Best Practices
+### Input Variables
 
 The versioning system works by consuming environment variables. Even though it's easier to configure it by using UI, sometimes you may want to change them on the fly. Your commit messages or tags can be used to override those settings. The name of the variables and expected values can be found below.
 
-| Value                         | Explanation                                                                                                       |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `$AC_BUILD_NUMBER_SOURCE`     | Version code source type(env,gradle)                                                                              |
-| `$AC_ANDROID_BUILD_NUMBER`    | Version code to set. If `$AC_BUILD_NUMBER_SOURCE` is set to gradle, this variable will be read from the project   |
-| `$AC_BUILD_OFFSET`            | The number to be added or subtracted from the `$AC_ANDROID_BUILD_NUMBER`                                          |
-| `$AC_VERSION_NUMBER_SOURCE`   | Version name source type(env,gradle)                                                                              |
-| `$AC_ANDROID_VERSION_NUMBER`  | Version name to set. If `$AC_VERSION_NUMBER_SOURCE` is set to gradle, this variable will be read from the project |
-| `$AC_VERSION_STRATEGY`        | Version Increment Strategy                                                                                        |
-| `$AC_VERSION_OFFSET`          | The number to be added or subtracted from the `$AC_ANDROID_VERSION_NUMBER`                                        |
-| `$AC_FLAVOR`                  | Build flavor                                                                                                      |
-| `$AC_OMIT_ZERO_PATCH_VERSION` | If true omits zero in patch version                                                                               |
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-increment-build-and-version-number_2.png' />
+
+| Variable Name                 | Description                                                                                                                                                                                                                                                                     | Status   |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_REPOSITORY_DIR`          | This variable represents the path of the cloned Git repository. If it runs after the [Git Clone](/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated.                                               | Required |
+| `$AC_BUILD_NUMBER_SOURCE`     | Version code source type (environment variable or gradle file).                                                                                                                                                                                                                 | Required |
+| `$AC_ANDROID_BUILD_NUMBER`    | Version code to set. If `$AC_BUILD_NUMBER_SOURCE` is set to gradle, this variable will be read from the project.                                                                                                                                                                | Optional |
+| `$AC_BUILD_OFFSET`            | The number to be added or subtracted from the `$AC_ANDROID_BUILD_NUMBER`.                                                                                                                                                                                                       | Optional |
+| `$AC_VERSION_NUMBER_SOURCE`   | Version name source type (environment variable or gradle file).                                                                                                                                                                                                                 | Optional |
+| `$AC_ANDROID_VERSION_NUMBER`  | Version name to set. If `$AC_VERSION_NUMBER_SOURCE` is set to gradle, this variable will be read from the project.                                                                                                                                                              | Optional |
+| `$AC_VERSION_STRATEGY`        | Version increment strategy (`major`, `minor`, `patch`, or `keep`).                                                                                                                                                                                                              | Optional |
+| `$AC_VERSION_OFFSET`          | The number to be added or subtracted from the `$AC_ANDROID_VERSION_NUMBER`.                                                                                                                                                                                                     | Optional |
+| `$AC_PROJECT_PATH`            | Specifies the project path. If the project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path.                                                                                     | Optional |
+| `$AC_VERSION_FLAVOR`          | Build flavor. If you select a flavor from the [**Advanced Settings**](#advanced-settings) section, the versioning of the chosen flavor will be applied (for example, the Gradle file of the selected flavor will be used). | Optional |
+| `$AC_OMIT_ZERO_PATCH_VERSION` | If `true`, it omits zero in the patch version.                                                                                                                                                                                                                                  | Optional |
 
 Since you can use any environment variables for the version code and version name, you can consume Appcircle's various environment variables during the build. Appcircle gives plenty of information related to your repo and project.
 
@@ -154,3 +158,9 @@ end
 You can use the below playground to test the effect of different options
 
 <VersionPlayground title="Version Code" subtitle="Version Name"/>
+
+---
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcircle-android-build-version-increment-component.git

@@ -24,7 +24,7 @@ By following the steps below, you will create a dedicated host, Sonoma macOS, fr
 
 You can use a self-hosted Appcircle runner with your self-hosted Appcircle server or Appcircle cloud account.
 
-:::warning
+:::danger
 
 The only requirement for using self-hosted runners is to be in `enterprise` plan.
 
@@ -367,7 +367,7 @@ For this tutorial, we will install the Android tools and iOS tools with the late
 
 <BuildAppOutro />
 
-For a comprehensive overview of building applications on the Appcircle platform, you can navigate to the [Tutorials](../../../tutorials/index.md) page.
+For a comprehensive overview of building applications on the Appcircle platform, you can navigate to the [Platform Build Guides](/build/platform-build-guides) page.
 
 <NeedHelp />
 

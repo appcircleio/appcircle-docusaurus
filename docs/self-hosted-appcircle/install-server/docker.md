@@ -89,17 +89,31 @@ You need to have the following tools installed on your system:
 - curl
 - unzip
 
+To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package.
+
+:::info
+Without the `cred.json` file, you will not be able to access the licensed Appcircle Server package.
+
+If you have not yet obtained the `cred.json` file, please contact us for assistance.
+:::
+
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.14.0.zip
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | bash
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.14.0.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-${version}-${build}.zip -d appcircle-server
 ```
+
+:::info
+
+You should use the downloaded `zip` archive while extracting so that the actual `${version}` and `${build}` will come from there. You can find the relevant data in the previously executed download command output.
+
+:::
 
 Change directory into extracted `appcircle-server` folder for following steps.
 
@@ -447,6 +461,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - my
 - resource
 - store
+- monitor
 - (optional) Enterprise App Store's Custom Domain
 
 :::info
@@ -457,7 +472,7 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-10-cloudflare-ss.png' />
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
@@ -498,6 +513,7 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  my.appcircle.spacetech.com
 0.0.0.0  resource.appcircle.spacetech.com
 0.0.0.0  store.appcircle.spacetech.com
+0.0.0.0  monitor.appcircle.spacetech.com
 0.0.0.0  store.spacetech.com
 ```
 
@@ -521,6 +537,7 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  my.appcircle.spacetech.com
 35.241.181.2  resource.appcircle.spacetech.com
 35.241.181.2  store.appcircle.spacetech.com
+35.241.181.2  monitor.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
 ```
 

@@ -2,7 +2,6 @@
 title: Xcode Select
 description: Specify Xcode version for your build process with Xcode Select. Always use before CocoaPods Install and Xcodebuild steps.
 tags: [xcode, version, workflow, step]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -13,7 +12,7 @@ This step is used to specify the Xcode version to be used during the build proce
 
 ### Prerequisites
 
-:::warning
+:::danger
 Always use this step **before** [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#cocoapods-install) and [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-devices-archive--export). If you have other **Xcode related** steps, such as [**Xcodebuild for iOS Simulators**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-ios-simulator) and [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-unit-and-ui-tests), **don't forget** to use before them.
 :::
 

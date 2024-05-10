@@ -2,7 +2,6 @@
 title: Flutter Analyze
 description: This component runs the `flutter analyze` command in your Flutter project.
 tags: [flutter, build, test, workflow, step]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -19,7 +18,7 @@ This component runs the `flutter analyze` command in your Flutter project. Pleas
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2852-flutterAnalayzeOrder.png' />
 
-:::warning
+:::danger
 This step is particularly dependent on the Flutter Install step. If the Flutter SDK is not installed, the step will give an error that the required command was not found.
 :::
 

@@ -2,7 +2,6 @@
 title: Danger
 description: Streamline your code review process with Danger. Automate checks and enforce code standards pre-merge to maintain high-quality software.
 tags: [code review, quality assurance, automaiton, development tools, appcircle, mobile ci/cd]
-sidebar_position: 4
 ---
 
 
@@ -18,7 +17,7 @@ For detailed information on the benefits that Danger, please refer to the follow
 
 https://appcircle.io/blog/danger-in-ci-automate-your-mobile-code-reviews
 
-:::warning
+:::danger
 
 This tool does not support AzureDevOps. Therefore, if your repository is hosted on AzureDevOps, this tool will not function. Please use the [**Azure Bot for Swiftlint**](/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint)(for iOS) and [**Azure Bot for Detekt Report**](/workflows/android-specific-workflow-steps/azure-bot-for-detekt-report)(for Android)  components instead.
 
@@ -46,7 +45,7 @@ Below is a list of input variables that can be used with this component with a d
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3062-dangerInput.png' />
 
-:::warning
+:::danger
 
 Avoid hard-coding sensitive information like tokens and API keys directly into the step parameters.
 

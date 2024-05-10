@@ -2,7 +2,6 @@
 title: Android Lint
 description: Learn how to use the Android Lint workflow step in Appcircle
 tags: [android, mobile, lint]
-sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

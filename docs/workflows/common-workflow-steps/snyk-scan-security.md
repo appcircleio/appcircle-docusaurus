@@ -2,7 +2,6 @@
 title: Snyk Scan Security
 description: The Snyk Security Scan step enables developers to seamlessly incorporate vulnerability scanning into their CI/CD workflows.
 tags: [snyk-scan, security, mobile]
-sidebar_position: 13
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -29,7 +28,7 @@ Each component requires specific input variables for its operation. The input va
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-snyk-scan-cloud-upload_2.png'/>
 
-:::warning
+:::danger
 
 Enter confidential information as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, select the appropriate [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) in the [Configuration](/build/build-process-management/build-profile-configuration/).
 

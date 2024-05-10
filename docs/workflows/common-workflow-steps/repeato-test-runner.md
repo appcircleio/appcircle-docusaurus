@@ -2,7 +2,6 @@
 title: Repeato Test Runner
 description: Repeato Test Runner facilitates the execution of automated tests for mobile applications directly within Appcircle.
 tags: [repeato, test-runner, mobile, automation]
-sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -27,7 +26,7 @@ Before executing the **Repeato Test Runner** workflow step, certain prerequisite
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-repeato_1.png'/>
 
-:::warning
+:::danger
 If you wish to view the test results on Appcircle's Test Reports page, it is essential to use the [Test Reports](https://github.com/appcircleio/appcircle-test-report-component) step after the **Repeato Test Runner**. Please check out this document for more information: [Generating Test Report](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_2.png'/>
@@ -39,7 +38,7 @@ Specific input variables are required for the **Repeato Test Runner** to functio
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-repeato_2.png'/>
 
-:::warning
+:::danger
 
 Confidential information must be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Additionally, ensure that the appropriate [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
 

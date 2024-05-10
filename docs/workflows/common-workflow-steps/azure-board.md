@@ -2,7 +2,6 @@
 title: Azure Boards
 description: Manage your software development process with Azure Boards. Track work items' progress throughout the development lifecycle.
 tags: [workflow, build-and-test, azure, boards]
-sidebar_position: 9
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -46,7 +45,7 @@ There are some necessary parameters for this stepper to work properly. These par
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureInput.png' />
 
-:::warning
+:::danger
 **Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
 
 We recommend using [Environment Variables](/environment-variables/) groups for such sensitive variables.

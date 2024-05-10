@@ -2,7 +2,6 @@
 title: Flutter Test
 description: This component allows you to run Flutter unit tests.
 tags: [flutter, build, test, workflow, step]
-sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -20,7 +19,7 @@ This component allows you to run [**Flutter Unit Tests**](https://docs.flutter.d
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2853-testOrder1.png' />
 
-:::warning
+:::danger
 This step is particularly dependent on the Flutter Install step. If the Flutter SDK is not installed, the step will give an error that the required command was not found.
 :::
 

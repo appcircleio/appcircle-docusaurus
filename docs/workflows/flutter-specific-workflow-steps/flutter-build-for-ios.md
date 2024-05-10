@@ -2,7 +2,6 @@
 title: Flutter Build for iOS
 description: Learn to build iOS apps with the Flutter Build for iOS component. Ensure Flutter Install and Git Clone steps are completed first.
 tags: [flutter, build, test, workflow, step]
-sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -24,7 +23,7 @@ Once you have compiled your app for Flutter iOS, the native environment will be 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterOrder1.png' />
 
-:::warning
+:::danger
 **Keep in mind** that this step is dependent on the Flutter Install step. If Flutter is not installed on the system, it will give a Flutter SDK not found error.
 :::
 

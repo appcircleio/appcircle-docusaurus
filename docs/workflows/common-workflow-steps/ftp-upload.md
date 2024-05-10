@@ -2,7 +2,6 @@
 title: FTP Upload
 description: Streamline your file transfers with FTP Upload. Secure, fast, and reliable FTP solutions to enhance your data management and operational efficiency.
 tags: [file, transfer, secure, fast, upload file]
-sidebar_position: 4
 ---
 
 
@@ -36,7 +35,7 @@ Below is a list of input variables that can be used with this component, with a 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3153-ftpInput.png' />
 
-:::warning
+:::danger
 
 Avoid hard-coding sensitive information, like tokens and API keys directly into the step parameters.
 

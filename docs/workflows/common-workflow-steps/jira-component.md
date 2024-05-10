@@ -2,7 +2,6 @@
 title: Jira Component
 description: Explore Jira Component, a tool for efficient project management and issue tracking. Enhance your workflow with Appcircle's integration.
 tags: [jira, workflow, issue tracking, step]
-sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -46,7 +45,7 @@ There are some necessary parameters for this stepper to work properly. These par
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-jiraInput.png' />
 
-:::warning
+:::danger
 **Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
 
 We recommend using [Environment Variables](/environment-variables/) groups for such sensitive variables.
