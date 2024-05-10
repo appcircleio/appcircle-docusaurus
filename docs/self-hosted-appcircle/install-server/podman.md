@@ -202,7 +202,7 @@ If you have not yet obtained the `cred.json` file, please contact us for assista
 Download the latest self-hosted Appcircle package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.14.0.zip
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | bash
 ```
 
 Extract self-hosted Appcircle package into folder.
