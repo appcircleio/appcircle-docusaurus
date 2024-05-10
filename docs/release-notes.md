@@ -12,6 +12,53 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
+## 3.16.0 - 2024-05-10 - Update Metadata , Resign Binary in Publish Module, App Store Status
+
+### 🆕 New Features
+
+- The [Resign Binary](/publish-module/publish-information/resign-binary) feature is now available for both iOS and Android apps in the Publish module. <CloudBadge/> <SelfHostedBadge/>
+- Users can now upload app screenshots, update metadata information such as promotional text and description via Appcircle without using the App Store Connect interface. <CloudBadge/> <SelfHostedBadge/>
+- LDAP Mapping is now supported in Appcircle, allowing seamless synchronization of user groups and roles from your LDAP directory to your Appcircle environment. This integration streamlines user management and enhances security by aligning your Appcircle roles with your organizational structures. For a detailed setup guide, visit our [LDAP Mapping documentation](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#ldap-mapping)
+- In the profile card, Enterprise-level users will see Store Status; others will see Flow Status. Similarly, in the app version view, Enterprise users can see both Flow and Store Status, while others will only see Flow Status. <CloudBadge/> <SelfHostedBadge/>
+- A new component called Update Metadata on App Store has been added to the Publish Steps, where metadata information will be displayed. <CloudBadge/> <SelfHostedBadge/>
+- On the Metadata Information page, metadata for profiles designated as Release Candidates is retrieved directly from the store. For more information, see the [Meta Data Information](/publish-module/publish-information/meta-data-information) documentation. <CloudBadge/> <SelfHostedBadge/>
+- Users uploading .AAB files can now share the app version with testers. <CloudBadge/> <SelfHostedBadge/>
+- The install certificate tool bundled in the runner package now supports proxies while connecting to remote URLs on macOS. <SelfHostedBadge/>
+- The "Default M1 pool" and "macOS VM image" now include [Xcode 15.4 RC1](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release candidate. <CloudBadge/> <SelfHostedBadge/>
+- This release introduces [a log viewing and delivery system](https://docs.appcircle.io/self-hosted-appcircle/configure-server/monitoring) for the self-hosted Appcircle server. <SelfHostedBadge/>
+- Self-hosted customers can now [download](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server package seamlessly and [update](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server fully automated. <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- Users can now download all data related to the app version, including publish logs, metadata, screenshots and build logs. <CloudBadge/> <SelfHostedBadge/>
+- Users can now prepare and send screenshots and metadata to the App Store via new metadata component. <CloudBadge/> <SelfHostedBadge/>
+- Users can now import metadata and screenshots from App Store Connect for the initial state on the Update Metadata screen. <CloudBadge/> <SelfHostedBadge/>
+- The Appcircle runner package now includes a diagnostic tool that helps identify, analyze, and troubleshoot system issues. <SelfHostedBadge/>
+- Self-hosted Appcircle customers can now download and extract the runner macOS VM in the background more robustly, particularly in cases of network connection faults. <SelfHostedBadge/>
+- The install certificate tool included in the runner package, which trusts CA certificates, now also supports Java 8, 17, and 21. <SelfHostedBadge/>
+- We have added an App Store Status field for Publish Profiles and App Versions lists, which updates regularly (every 30 minutes). For more information, see the [Store Status](#) documentation. <CloudBadge/> <SelfHostedBadge/>
+
+:::caution
+
+To ensure the App Store status remains up-to-date, the following conditions must be met:
+
+- The current profile must have valid store credentials defined in the signing identity module and must be selected.
+- The identifier, version, and build number of the published app must match the Appcircle app version records.
+- One of the app version records must be designated as the release candidate.
+- The service will continue updating the app status until it reaches the 'READY_TO_SALE' or 'READY_TO_DISTRIBUTE' states.
+- The service initially checks the App Store status; if no matching records are found, it then searches in TestFlight.
+
+:::
+
+### 🐞 Fixes
+
+- The self-hosted runner macOS installation now detects Homebrew anomalies that can occur after macOS upgrades and reinstalls Homebrew with package upgrades. <SelfHostedBadge/>
+- Fixed various bugs that occurred during the installation of the self-hosted runner on GNU/Linux. <SelfHostedBadge/>
+- Made improvements and fixed various bugs in the install certificate tool bundled in the runner package. <SelfHostedBadge/>
+- Fixed a bug in the self-hosted version that prevented listing the Xcode version for the selected pool. <SelfHostedBadge/>
+- Fixed a bug that caused errors when parsing large AAB files. <CloudBadge/> <SelfHostedBadge/>
+- FFixed a bug that caused the last build time in the build profile to appear as null when a user deleted old builds. <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.15.0 - 2024-04-24 - AAB to APK, Improved Testing Distribution, Publish Event Enhancement
 
 ### 🆕 New Features
@@ -22,7 +69,6 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - A new command, ["build active-list"](https://docs.appcircle.io/appcircle-api/) has been added, allowing users to view active builds in the queue directly from their command line interface. <CloudBadge/> <SelfHostedBadge/>
 - A new command, ["build view"](https://docs.appcircle.io/appcircle-api/) has been added, enabling users to access and view detailed information about builds directly from the command line interface. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 pool" now includes [Xcode 15.4 beta-1](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. As this is a beta release, we strongly recommend testing your workflows extensively to ensure compatibility and stability. <CloudBadge/> <SelfHostedBadge/>
-
 
 ### :muscle: Improvements
 
