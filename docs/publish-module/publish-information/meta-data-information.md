@@ -49,7 +49,7 @@ If there is existing metadata associated with your app on the App Store, the **M
 - **What’s New**: Describe what’s new in this version of your app, such as new features, improvements, and bug fixes.
 
 :::info What’s New Field
-Please note, this field is constantly visible on Appcircle. However, on App Store Connect, it will only appear when a new version is released. For this reason, if you are not going to release a new version, you may not see the information you enter here on App Store Connect.
+Please note, this field is constantly visible on Appcircle. However, on App Store Connect, it will **only** appear when a new version is **released**. For this reason, if you are not going to release a **new version**, you may not see the information you enter here on **App Store Connect**.
 :::
 
 - **Name**: The name of your app as it will appear on the App Store.
@@ -79,7 +79,7 @@ Please note, this field is constantly visible on Appcircle. However, on App Stor
 - **Reset iOS App Store Summary Rating**: Decide if you want to reset the app's rating when the new version is released.
 
 :::danger Reset iOS App Store Summary Rating
-Please note, this comes with Keep Existing Rating selected by default. If you choose to reset your ratings, it will reset all past reviews and ratings of your app.
+Please note, this comes with **Keep Existing Rating** selected by default. If you choose to **Reset rating when this version released** option, it will reset all past **reviews and ratings** of your app in **App Store**.
 :::
 
 ## Conclusion
