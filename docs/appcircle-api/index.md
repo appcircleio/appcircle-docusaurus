@@ -25,6 +25,8 @@ or yarn:
 yarn global add @appcircle/cli
 ```
 
+https://www.npmjs.com/package/@appcircle/cli
+
 You can find more information and the source code of the CLI on GitHub as follows:
 
 https://github.com/appcircleio/appcircle-cli

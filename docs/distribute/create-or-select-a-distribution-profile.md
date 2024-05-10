@@ -38,7 +38,6 @@ The first section allows you to share the deployed binaries automatically with t
 
 Your application will be sent to the related testing groups as soon as your build is complete, or when a package is manually uploaded or deployed via CLI.
 
-
 ### Using authentication for distribution
 
 Under the Authentication tab in the settings, you can select a preferred authentication method for sharing your application.
@@ -61,11 +60,11 @@ You may enable this option to automatically register devices in the Apple Develo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ios-device-registration.png' />
 
-### Using public link for distribution
+### Using Public Link for Distribution
 
-You may also enable public link for your distribution. If you enable public distribution, anyone who has the link can access all artifacts of the distribution profile.
+You may enable a public link for your distribution. This allows anyone who has the link to access all artifacts of the distribution profile. Additionally, users can now conveniently scan a QR code to retrieve the public link directly. This simplifies the process of accessing and sharing the distribution link, making it more accessible for users on mobile devices or others who prefer quick scanning.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (155).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3160-testing-distribution-public-link.png' />
 
 ### Manually upload your version
 
