@@ -16,12 +16,12 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 ### 🆕 New Features
 
-- The [Resign Binary](https://docs.appcircle.io/distribute/platform-specific-guidance/ios/resigning-ios-binaries#resigning-ios-binaries) feature is now available for both iOS and Android apps in the Publish module. <CloudBadge/> <SelfHostedBadge/>
+- The [Resign Binary](/publish-module/publish-information/resign-binary) feature is now available for both iOS and Android apps in the Publish module. <CloudBadge/> <SelfHostedBadge/>
 - Users can now upload app screenshots, update metadata information such as promotional text and description via Appcircle without using the App Store Connect interface. <CloudBadge/> <SelfHostedBadge/>
-- LDAP Mapping is now supported in Appcircle, allowing seamless synchronization of user groups and roles from your LDAP directory to your Appcircle environment. This integration streamlines user management and enhances security by aligning your Appcircle roles with your organizational structures. For a detailed setup guide, visit our [LDAP Mapping documentation](#)
+- LDAP Mapping is now supported in Appcircle, allowing seamless synchronization of user groups and roles from your LDAP directory to your Appcircle environment. This integration streamlines user management and enhances security by aligning your Appcircle roles with your organizational structures. For a detailed setup guide, visit our [LDAP Mapping documentation](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#ldap-mapping)
 - In the profile card, Enterprise-level users will see Store Status; others will see Flow Status. Similarly, in the app version view, Enterprise users can see both Flow and Store Status, while others will only see Flow Status. <CloudBadge/> <SelfHostedBadge/>
 - A new component called Update Metadata on App Store has been added to the Publish Steps, where metadata information will be displayed. <CloudBadge/> <SelfHostedBadge/>
-- On the Metadata Information page, metadata for profiles designated as Release Candidates is retrieved directly from the store. For more information, see the [Meta Data Information](#) documentation. <CloudBadge/> <SelfHostedBadge/>
+- On the Metadata Information page, metadata for profiles designated as Release Candidates is retrieved directly from the store. For more information, see the [Meta Data Information](/publish-module/publish-information/meta-data-information) documentation. <CloudBadge/> <SelfHostedBadge/>
 - Users uploading .AAB files can now share the app version with testers. <CloudBadge/> <SelfHostedBadge/>
 - The install certificate tool bundled in the runner package now supports proxies while connecting to remote URLs on macOS. <SelfHostedBadge/>
 - The "Default M1 pool" and "macOS VM image" now include [Xcode 15.4 RC1](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release candidate. <CloudBadge/> <SelfHostedBadge/>
