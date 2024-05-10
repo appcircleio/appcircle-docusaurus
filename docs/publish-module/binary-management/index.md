@@ -27,20 +27,20 @@ For this, click on the **Actions** button for the relevant version and go to **D
 
 ## Store Status
 
-Appcircle now allows you to track the App Store status of your applications directly within the Publish module. This powerful feature is tailored for enterprise license holders, ensuring continuous monitoring of your application's deployment status.
+Appcircle now allows you to track the App Store status of your applications directly within the Publish module. This powerful feature is tailored for **Enterprise License** holders, ensuring continuous monitoring of your application's deployment status.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3681-publish-store-status.png' />
 
 ### How It Works
 
 - **Enterprise License**: This feature is accessible to users with an enterprise license.
-- **Continuous Monitoring**: Once a version is set as a release candidate, it is automatically monitored **every 30 minutes** to check its status on TestFlight and the App Store distribution.
-- **Priority on Distribution**: If the version is available in both TestFlight and distribution, the system prioritizes the status from distribution.
-- **Version Status**: If a version has never been submitted to the App Store, it will show as `Not Available`.
-- **Completion of Distribution**: When a version reaches `Ready for Distribution`, Appcircle stops monitoring it, allowing you to focus resources on versions that still require attention.
+- **Continuous Monitoring**: Once a version is set as a **Release Candidate**, it is automatically monitored **every 30 minutes** to check its status on **TestFlight** and the **App Store Distribution**.
+- **Priority on Distribution**: If the version is available in both **TestFlight** and **App Store Distribution**, the system prioritizes the status from **App Store Distribution**.
+- **Version Status**: If a version has **never** been submitted to the **App Store**, it will show as **`Not Available`**.
+- **Completion of Distribution**: When a version reaches **`Ready for Distribution`**, Appcircle stops monitoring it, allowing you to focus resources on versions that still require attention.
 
 :::caution Store Credentials Required
-Ensure you select store credentials in the publish settings to start monitoring. If the credentials are not selected, the status will display as `Not Available`.
+Ensure you select store credentials in the [Publish settings](/publish-module/publish-settings#store-credentials) to start monitoring. If the credentials are **not** selected, the status will display as **`Not Available`**.
 :::
 
 This streamlined approach ensures that you are always informed of your application's status, simplifying management and enhancing your deployment strategy directly from the Appcircle dashboard.
