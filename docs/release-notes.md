@@ -36,7 +36,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - The Appcircle runner package now includes a diagnostic tool that helps identify, analyze, and troubleshoot system issues. <SelfHostedBadge/>
 - Self-hosted Appcircle customers can now download and extract the runner macOS VM in the background more robustly, particularly in cases of network connection faults. <SelfHostedBadge/>
 - The install certificate tool included in the runner package, which trusts CA certificates, now also supports Java 8, 17, and 21. <SelfHostedBadge/>
-- We have added an App Store Status field for Publish Profiles and App Versions lists, which updates regularly (every 30 minutes). For more information, see the [Store Status](#) documentation. <CloudBadge/> <SelfHostedBadge/>
+- We have added an App Store Status field for Publish Profiles and App Versions lists, which updates regularly (every 30 minutes). For more information, see the [Store Status](/publish-module/binary-management#store-status) documentation. <CloudBadge/> <SelfHostedBadge/>
 
 :::caution
 
