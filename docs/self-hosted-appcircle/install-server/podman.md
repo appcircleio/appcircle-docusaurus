@@ -208,8 +208,14 @@ curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | bash
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.15.0.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-${version}-${build}.zip -d appcircle-server
 ```
+
+:::info
+
+You should use the downloaded `zip` archive while extracting so that the actual `${version}` and `${build}` will come from there. You can find the relevant data in the previously executed download command output.
+
+:::
 
 Change directory into extracted `appcircle-server` folder for following steps.
 
