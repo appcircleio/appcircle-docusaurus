@@ -75,7 +75,7 @@ Once the binary is resigned, a new package is automatically created to reflect t
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-resigned.png' />
 
-The newly created package can then be distributed or tested according to your workflow requirements. This update ensures that your application conforms to the necessary provisioning and entitlement specifications for different environments, such as development, staging, or production, without additional build steps.
+The newly created package can then be distributed or tested according to your publish flow requirements. This update ensures that your application conforms to the necessary provisioning and entitlement specifications for different environments, such as development, staging, or production, without additional build steps.
 
 This feature streamlines the application update process by allowing for quick adjustments to the app's configurations, significantly reducing the time and resources needed for separate build cycles.
 
