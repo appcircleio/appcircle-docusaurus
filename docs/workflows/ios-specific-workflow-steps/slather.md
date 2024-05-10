@@ -20,7 +20,7 @@ This step converts Xcode's test results to different formats by using [**Slather
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2830-slatherOrder.png' />
 
-:::warning
+:::danger
 **Slather** component needs test results in `.xcresult` format to work. Therefore, make sure that the tests of the project are run. Otherwise, **Slather** will throw an error for not finding the file and the pipeline will break. 
 :::
 

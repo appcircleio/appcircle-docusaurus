@@ -14,7 +14,7 @@ The `.netrc` file contains login and initialization information used by the auto
 
 There is no mandatory step before the **Authenticate with Netrc** step.
 
-:::warning
+:::danger
 Please note that you should use this step before your **Git Clone** step. If you want to connect to a repository that requires access permission or pull a private dependency, please pay attention to the step order.
 :::
 
@@ -26,7 +26,7 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2792-net_inputs.png' />
 
-:::warning
+:::danger
 When using the **Authenticate with Netrc** component, you need to specify a token or password in the `$AC_NETRC_PASS` parameter within the component. For security reasons, we recommend using [**Enviroment Variables**](https://docs.appcircle.io/environment-variables/) in steps where you need to specify the token and password.
 :::
 

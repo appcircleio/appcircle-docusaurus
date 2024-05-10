@@ -35,7 +35,7 @@ Each component requires specific input variables for its operation. The input va
 | `$AC_DETEKT_SAVE_REPORT`      | Specifies whether the Detekt report will be saved. If set to `true`, report files will be saved into the artifacts folder. The default value is `false`. | Optional |
 | `$AC_DETEKT_OUTPUT_PATH`      | Specifies the Detekt output path. If the `AC_DETEKT_SAVE_REPORT` input is set to `true` and this value is not defined, then `<ac_module>/build/reports` will be used as the default path. | Optional |
 
-:::warning
+:::danger
 
 If `$AC_DETEKT_SAVE_REPORT` is set to `true`, place the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step after the **Detekt** step to ensure proper transfer of outputs to the [Download Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.
 

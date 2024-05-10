@@ -1,6 +1,6 @@
 ---
 title: Test Reports for Android
-description: Test Report step displays your test results and code coverage in an aesthetically pleasing user interface.
+description: Explore the Test Report feature for Android in Appcircle. Understand how it presents test results and code coverage in a user-friendly interface.
 tags: [test, test report, test result, automation]
 ---
 

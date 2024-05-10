@@ -24,7 +24,7 @@ By following the steps below, you will create a dedicated host, Sonoma macOS, fr
 
 You can use a self-hosted Appcircle runner with your self-hosted Appcircle server or Appcircle cloud account.
 
-:::warning
+:::danger
 
 The only requirement for using self-hosted runners is to be in `enterprise` plan.
 

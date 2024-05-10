@@ -201,7 +201,7 @@ Automatic signing allows you to sign your application without uploading any prov
 
 You must also select distribution type from the dropdown menu. If you're uploading your app to App Store or TestFlight, you should select **App Store**. If you're uploading your app to Adhoc or Appcircle's distribution module, you should select **Adhoc**. Please check [Apple's documentation](https://developer.apple.com/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles) for more details.
 
-:::warning
+:::danger
 
 If you don't upload developer and distribution certificates, Xcode will create new certificates each time you start a build. Since you don't have the private keys, you will not be able to use those certificates later on. If you don't want to clutter your account with unused certificates, you must upload both developer and distribution certificates.
 
@@ -213,7 +213,7 @@ You can also select bundle identifier and provisioning profile to sign your appl
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/03-02-iOS-Build-Signing.jpg' />
 
-:::warning
+:::danger
 
 If your app has multiple targets such as watchOS, Widgets etc, you need to add all the provisioning profiles for every bundle id. Click **+** button and add related bundle id and provisioning profile.
 

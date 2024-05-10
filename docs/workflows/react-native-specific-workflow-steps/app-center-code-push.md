@@ -28,7 +28,7 @@ Below is a list of input variables that can be used with this component with a d
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3174-codepushInput.png' />
 
-:::warning
+:::danger
 
 Avoid hard-coding sensitive information, like tokens and API keys, directly into the step parameters.
 

@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 # Android App Post-Processor
 This step performs the necessary system operations to identify and process the Android output binary files.
 
-:::warning
+:::danger
 This step also verifies whether the app is signed or not. If this step is not included in your Workflow or if it is determined that there is no signed app as a result of this step, __the app cannot be distributed__.
 :::
 

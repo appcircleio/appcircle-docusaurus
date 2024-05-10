@@ -208,7 +208,7 @@ curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | bash
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.14.0.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-3.15.0.zip -d appcircle-server
 ```
 
 Change directory into extracted `appcircle-server` folder for following steps.
@@ -594,6 +594,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - my
 - resource
 - store
+- monitor
 - (optional) Enterprise App Store's Custom Domain
 
 :::info
@@ -604,7 +605,7 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-845-dns-settings.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-10-cloudflare-ss.png' />
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
@@ -645,6 +646,7 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  my.appcircle.spacetech.com
 0.0.0.0  resource.appcircle.spacetech.com
 0.0.0.0  store.appcircle.spacetech.com
+0.0.0.0  monitor.appcircle.spacetech.com
 0.0.0.0  store.spacetech.com
 ```
 
@@ -668,6 +670,7 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  my.appcircle.spacetech.com
 35.241.181.2  resource.appcircle.spacetech.com
 35.241.181.2  store.appcircle.spacetech.com
+35.241.181.2  monitor.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
 ```
 

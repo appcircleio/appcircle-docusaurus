@@ -34,7 +34,7 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2794-gitDetails.png' />
 
-:::warning
+:::danger
 After connecting the repository, the following [**Reserved Environment Variables**](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables), which **Git Clone** uses as input, will be automatically populated. Ensure that the variable you provide has a value if you intend to make any changes. **The required variables must not be left empty**.
 :::
 
