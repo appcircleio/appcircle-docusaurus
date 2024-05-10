@@ -271,7 +271,7 @@ To configure LDAP Mapping, follow these steps:
 
 ### LDAP Role Mapping
 
-LDAP Role Mapping allows you to assign specific roles to users based on their LDAP group memberships. This feature streamlines user management by automatically assigning roles to users based on their LDAP group associations.
+LDAP Role Mapping allows you to assign specific roles to users based on their LDAP group memberships. This feature streamlines user management by automatically assigning roles to users based on their LDAP role associations.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3671-ldap-mapping-config.png' />
 
