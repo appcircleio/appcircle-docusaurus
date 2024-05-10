@@ -32,7 +32,7 @@ When you select a language, you will provide localized versions of your app's me
 
 If there is existing metadata associated with your app on the App Store, the **Meta Data Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions and localizations.
 
-## <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-localization-get.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-localization-get.png' />
 
 ### Fields Explained
 
