@@ -190,3 +190,43 @@ To grant administrative privileges to the user, click the "Change" button and to
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-9-make-it-admin.png' />
 
 For more detailed information, you can check the official [Grafana User Management](https://grafana.com/docs/grafana/latest/administration/user-management/) documentation.
+
+## Disabling the Monitoring Features
+
+If you wish to disable monitoring features of the Appcircle server, edit the global.yaml file of your project and set `monitoring.enabled` parameter to `false`.
+
+<DowntimeCaution/>
+
+<SpacetechExampleInfo/>
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add or update the `monitoring.enabled` parameter to `false`.
+
+:::info
+If you can't find the `monitoring` parameter in the `global.yaml` file, you can add it manually at the end of the `global.yaml`.
+:::
+
+```yaml
+monitoring:
+  enabled: false
+```
+
+<RestartAppcircleServer/>
+
+When you run the `check` command, you will see that the logging service is not running:
+
+```text
+Appcircle logging service is not running. 
+All services are running successfully. Project name is spacetech
+```
