@@ -424,12 +424,12 @@ nohup ./download-runner.sh "240306" &
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
 curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
 chmod +x download-runner.sh && \
-nohup ./download-runner.sh "240417" &
+nohup ./download-runner.sh "240509" &
 ```
 
   </TabItem>
