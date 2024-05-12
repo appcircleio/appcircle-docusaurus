@@ -14,7 +14,7 @@ The Publish module provides users with several key actions to manage their appli
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2821-ios-publish-actions.png' />
 
-## 1. Publish Details
+## Publish Details
 
 This option provides an in-depth view of the selected version's publish process. Users can review the steps taken, configurations used, and outcomes of the publish sequence. It's an essential resource for understanding the specific details of a version's journey through the publish workflow.
 
@@ -23,7 +23,7 @@ url="/publish-module/publish-information/publish-details">
 Read more about Publish Details
 </ContentRef>
 
-## 2. Binary Information
+## Binary Information
 
 Selecting this menu item displays detailed information about the application binary. This includes metadata such as the build version, creation date, binary size, and any relevant identifiers. It's particularly useful for developers and release managers who need to verify binary specifics before distribution.
 
@@ -32,7 +32,20 @@ url="/publish-module/publish-information/binary-information">
 Read more about Binary Information
 </ContentRef>
 
-## 3. Marking Release Candidates
+## Meta Data Information
+
+The Meta Data Information option provides a comprehensive overview of the version's metadata. This includes details such as the application name, version, build number, and other relevant information. Users can review and edit metadata to ensure accurate and consistent versioning across the application.
+
+## Resign Binary
+
+The Resign Binary feature allows users to resign both iOS and Android application binaries. For iOS applications, users can change provisioning profiles or app entitlements, while for Android applications, users can resign binaries with a new keystore. This feature is essential for updating app distribution settings and security credentials without requiring a new build.
+
+<ContentRef
+url="/publish-module/publish-information/resign-binary">
+Read more about Resign Binary
+</ContentRef>
+
+## Marking Release Candidates
 
 This action is used to change the status of a build that has been previously marked as a Release Candidate (RC). This might be necessary if the build is found to have issues that require it to be retracted from the release candidate status, indicating it's not yet ready for production release.
 
@@ -41,7 +54,7 @@ url="/publish-module/publish-information/marking-release-candidates">
 Read more about Marking Release Candidates
 </ContentRef>
 
-## 4. Downloading Binaries
+## Downloading Binaries
 
 This functionality enables users to download the binary directly from the Publish module. This is useful for offline review, storage, or distribution purposes. The download feature ensures that users can access and disseminate the application's build even outside the publish platform.
 
@@ -50,7 +63,7 @@ url="/publish-module/publish-information/download">
 Read more about Downloading Binaries
 </ContentRef>
 
-## 5. Publish History
+## Publish History
 
 The Publish History gives users a chronological log of all publish actions taken for a specific version. It allows users to track and audit the deployment process over time, which can be crucial for compliance, troubleshooting, and historical analysis.
 
@@ -59,7 +72,7 @@ url="/publish-module/publish-information/publish-history">
 Read more about Publish History
 </ContentRef>
 
-## 6. Delete
+## Delete
 
 The Delete option provides a way to remove a version from the system. It should be used with caution as it will permanently eliminate the selected version and all associated data from the Publish module. This feature helps in maintaining a clean and organized workspace by removing obsolete or unnecessary versions.
 
