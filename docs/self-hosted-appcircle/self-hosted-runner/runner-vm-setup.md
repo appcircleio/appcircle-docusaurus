@@ -119,11 +119,11 @@ You can ignore power failure settings if they are not supported.
 
 ## Download MacOS VM
 
-You have two options to obtain the Appcircle Runner images: manual or automated.
+You have two options to obtain the Appcircle runner images: manual or automated.
 
-To perform these tasks manually, you can follow our step-by-step guide on [Download the macOS VM Image Manually](#download-the-macos-vm-image-manually).
+To perform these tasks manually, you can follow our step-by-step guide on [downloading the macOS VM image manually](#download-the-macos-vm-image-manually).
 
-Alternatively, you can automate this process on background by following our instructions on [Download the macOS VM and Xcode Images Automatically](#download-the-macos-vm-and-xcode-images-automatically).
+Alternatively, you can automate this process in the background by following our instructions on [downloading the macOS VM and Xcode images automatically](#download-the-macos-vm-and-xcode-images-automatically).
 
 ### Download the macOS VM Image Manually
 
@@ -411,7 +411,7 @@ If you don't need the latest Xcode and you want to run an older version of the m
 
 ### Download the macOS VM and Xcode Images Automatically
 
-To download and extract the Appcircle runner VM and Xcode images on the background automatically, you can run the command below.
+To download and extract the Appcircle runner VM and Xcode images in the background automatically, you can run the command below.
 
 <Tabs groupId="macos-image">
 
@@ -435,20 +435,20 @@ nohup ./download-runner.sh "240417" &
   </TabItem>
 </Tabs>
 
-It may take a little to complete. You can see the logs with the command below.
+:::tip
+If you face any errors while downloading the files, please delete the corrupted file and re-run the command block above.
+:::
+
+It may take some time to complete with respect to your network speed. You can see and follow the logs with the command below.
 
 ```bash
 tail -f nohup.out
 ```
 
 :::info
-If you face any error while downloading the files, please delete the corrupted VM image file and run the `curl` command block above 👆.
-:::
+You can close the SSH or terminal session while the tool is running. The download and extract process will go on in the background.
 
-:::info
-You can close the ssh session while the tool is running. The download and extract process will go on in the background.
-
-But be aware that there might be some errors while downloading and extracting the VM image such as network or disk errors. Please keep an eye on the logs.
+But be aware that there might be some errors while downloading and extracting the VM image, such as network or disk errors. Please keep an eye on the logs.
 :::
 
 :::tip
