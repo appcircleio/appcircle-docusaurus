@@ -46,7 +46,7 @@ brew --version
 
 ### 2. Install Tart
 
-Tap Appcircle repository and install tart.
+Tap Appcircle repository and install `tart` (Tart is a registered trademark of Cirrus Labs, Inc.).
 
 ```bash
 brew tap appcircleio/cli
@@ -119,6 +119,14 @@ You can ignore power failure settings if they are not supported.
 
 ## Download MacOS VM
 
+You have two options to obtain the Appcircle runner images: manual or automated.
+
+To perform these tasks manually, you can follow our step-by-step guide on [downloading the macOS VM image manually](#download-the-macos-vm-image-manually).
+
+Alternatively, you can automate this process in the background by following our instructions on [downloading the macOS VM and Xcode images automatically](#download-the-macos-vm-and-xcode-images-automatically).
+
+### Download the macOS VM Image Manually
+
 :::tip
 
 MacOS VM image has a versioning convention based on release date instead of arbitrary numbers. This date-based approach is called calendar versioning, or CalVer for short.
@@ -140,10 +148,10 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240417.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240509.tar.gz
 ```
 
   </TabItem>
@@ -164,10 +172,10 @@ md5 macOS_240306.tar.gz
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-md5 macOS_240417.tar.gz
+md5 macOS_240509.tar.gz
 ```
 
   </TabItem>
@@ -184,10 +192,10 @@ MD5 (macOS_240306.tar.gz) = 084a9221075ed5453aceba6a3438b134
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-MD5 (macOS_240417.tar.gz) = 781b29c712927a664d09e605524f3ed6
+MD5 (macOS_240509.tar.gz) = 4de4666f8e68afbff8a55a144aabe256
 ```
 
   </TabItem>
@@ -206,10 +214,10 @@ mkdir -p $HOME/.tart/vms/macOS_240306
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-mkdir -p $HOME/.tart/vms/macOS_240417
+mkdir -p $HOME/.tart/vms/macOS_240509
 ```
 
   </TabItem>
@@ -226,10 +234,10 @@ tar -zxf macOS_240306.tar.gz --directory $HOME/.tart/vms/macOS_240306
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-tar -zxf macOS_240417.tar.gz --directory $HOME/.tart/vms/macOS_240417
+tar -zxf macOS_240509.tar.gz --directory $HOME/.tart/vms/macOS_240509
 ```
 
   </TabItem>
@@ -248,16 +256,16 @@ du -sh $HOME/.tart/vms/macOS_240306
 ```
 
  </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-du -sh $HOME/.tart/vms/macOS_240417
+du -sh $HOME/.tart/vms/macOS_240509
 ```
 
   </TabItem>
 </Tabs>
 
-### Download Xcode Images
+### Download Xcode Images Manually
 
 Download Xcode images from the Appcircle bucket. They are disk images for each Xcode version archived in a package.
 
@@ -270,10 +278,10 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
  </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240417.tar.gz
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240509.tar.gz
 ```
 
   </TabItem>
@@ -294,10 +302,10 @@ md5 xcodes_240306.tar.gz
 ```
 
  </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-md5 xcodes_240417.tar.gz
+md5 xcodes_240509.tar.gz
 ```
 
   </TabItem>
@@ -314,10 +322,10 @@ MD5 (xcodes_240306.tar.gz) = 4df051e11b6c0b8670cd9b82928dfab2
 ```
 
  </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-MD5 (xcodes_240417.tar.gz) = 853146ed81cae1686b27d44c603885c7
+MD5 (xcodes_240509.tar.gz) = 230b697351739410ab4ec537b09999ab
 ```
 
   </TabItem>
@@ -342,10 +350,10 @@ tar -zxf xcodes_240306.tar.gz --directory $HOME/images
 ```
 
  </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-tar -zxf xcodes_240417.tar.gz --directory $HOME/images
+tar -zxf xcodes_240509.tar.gz --directory $HOME/images
 ```
 
   </TabItem>
@@ -368,7 +376,7 @@ It may take a little to complete. Be patient and wait return of command.
 > - `14.3.x`
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 **Note:** This macOS VM image contains the same tools as in the `latest` "Default M1 Pool" in Appcircle Cloud.
 
@@ -399,6 +407,52 @@ So the latest VM image,`macOS_230921` or later, includes Ventura `13.5.2` or Son
 It doesn't support running on older hosts like Monterey, Big Sur, etc.
 
 If you don't need the latest Xcode and you want to run an older version of the macOS VM image that supports running on a Monterey host, contact us through our support channels.
+:::
+
+### Download the macOS VM and Xcode Images Automatically
+
+To download and extract the Appcircle runner VM and Xcode images in the background automatically, you can run the command below.
+
+<Tabs groupId="macos-image">
+
+  <TabItem value="240306" label="240306" default>
+
+```bash
+curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
+chmod +x download-runner.sh && \
+nohup ./download-runner.sh "240306" &
+```
+
+  </TabItem>
+  <TabItem value="240509" label="240509">
+
+```bash
+curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
+chmod +x download-runner.sh && \
+nohup ./download-runner.sh "240509" &
+```
+
+  </TabItem>
+</Tabs>
+
+:::tip
+If you face any errors while downloading the files, please delete the corrupted file and re-run the command block above.
+:::
+
+It may take some time to complete with respect to your network speed. You can see and follow the logs with the command below.
+
+```bash
+tail -f nohup.out
+```
+
+:::info
+You can close the SSH or terminal session while the tool is running. The download and extract process will go on in the background.
+
+But be aware that there might be some errors while downloading and extracting the VM image, such as network or disk errors. Please keep an eye on the logs.
+:::
+
+:::tip
+If no specific image identifier is provided when executing the `download-runner.sh` tool, it will automatically attempt to download the most recent runner images.
 :::
 
 ## Create Base Images
@@ -446,10 +500,10 @@ tart clone macOS_240306 vm01
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
-tart clone macOS_240417 vm01
+tart clone macOS_240509 vm01
 ```
 
   </TabItem>
@@ -477,7 +531,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -763,7 +817,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
@@ -835,7 +889,7 @@ chmod u+x $HOME/runner1/run.sh
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
 curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.4.sh && \
@@ -857,7 +911,7 @@ chmod u+x $HOME/runner2/run.sh
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
 curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.4.sh && \
@@ -1003,7 +1057,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -1042,7 +1096,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240417" label="240417">
+  <TabItem value="240509" label="240509">
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \

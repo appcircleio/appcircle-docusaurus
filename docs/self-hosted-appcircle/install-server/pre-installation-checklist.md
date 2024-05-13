@@ -123,6 +123,7 @@ These subdomains are **api**, **auth**, **dist**, **hook**, **my**, **resource**
   - [ ] `my.appcircle.spacetech.com`
   - [ ] `resource.appcircle.spacetech.com`
   - [ ] `store.appcircle.spacetech.com`
+  - [ ] `monitor.appcircle.spacetech.com`
 
 - [ ] All of these domain names should resolve to the same server IP address, which is the Appcircle server.
 

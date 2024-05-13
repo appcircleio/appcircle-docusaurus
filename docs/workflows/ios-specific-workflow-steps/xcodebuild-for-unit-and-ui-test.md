@@ -24,7 +24,7 @@ This step does not generate **IPA**, it only runs tests within the project.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitOrder.png' />
 
-:::warning
+:::danger
 
 If any tests fail during this step, an error will be automatically reported, which reflects issues within the project's tests, not the Appcircle workflow. To prevent disruption in the workflow, enable the **`"Continue with the next step even if this step fails"`** option.
 

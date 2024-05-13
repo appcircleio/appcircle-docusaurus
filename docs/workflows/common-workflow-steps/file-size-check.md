@@ -19,7 +19,7 @@ The workflow steps that need to be executed before running the **File Size Check
 | [**Android Build**](https://docs.appcircle.io/workflows/android-specific-workflow-steps#android-build) | If your project is an **Android** project using **Java/Kotlin** or **React Native**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
 | [**Flutter Build for Android**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/#flutter-build-for-android) | If your project is an **Android** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
 
-:::warning
+:::danger
 If you use a different build step than the ones mentioned above to generate the app, then the **File Size Check** step depends on this particular step.
 :::
 

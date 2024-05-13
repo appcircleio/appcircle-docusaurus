@@ -181,7 +181,7 @@ This error typically occurs with Cocoapods version 1.12.1 and older. To resolve 
 The resolution for this error is available in Cocoapods version 1.13.0 or higher.
 :::
 
-:::warning
+:::danger
 If the issue persists after updating Cocoapods, consider updating your iOS minimum deployment target to iOS 13.0 or higher. If the problem still remains, use the script provided below.
 :::
 

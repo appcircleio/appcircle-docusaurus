@@ -23,7 +23,7 @@ Once you have compiled your app for Flutter iOS, the native environment will be 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterOrder1.png' />
 
-:::warning
+:::danger
 **Keep in mind** that this step is dependent on the Flutter Install step. If Flutter is not installed on the system, it will give a Flutter SDK not found error.
 :::
 

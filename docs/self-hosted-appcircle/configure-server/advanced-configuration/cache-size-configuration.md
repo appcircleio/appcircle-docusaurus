@@ -6,6 +6,8 @@ sidebar_position: 11
 ---
 
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
 
 Appcircle has a limit for cache sizes that can be pushed or pulled on the build workflows.
 
@@ -13,9 +15,7 @@ The `maxBodySize` parameter in the `global.yaml` file allows you to configure th
 
 By default, the cache size is set to **4096m**. However, you can increase or decrease this limit according to your needs by modifying the `global.yaml` file.
 
-:::caution
-Please note that this process will cause downtime since it requires a restart of the Appcircle server.
-:::
+<DowntimeCaution />
 
 ## Configuring the Appcircle Server
 
@@ -54,32 +54,7 @@ Replace `5120m` with the desired maximum cache size according to your needs. The
 Larger cache sizes require more disk space on the Appcircle server. So be cautious about allowing large cache sizes in your installation.
 :::
 
-- Shutdown Appcircle server.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" down
-```
-
-- Apply configuration changes.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" export
-```
-
-- Boot Appcircle server.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" up
-```
-
-:::tip
-You should check the status of the Appcircle server after boot for any possible errors.
-
-```bash
-./ac-self-hosted.sh -n "spacetech" check
-```
-
-:::
+<RestartAppcircleServer />
 
 Once your server is up and healthy, you can run the build that requires pushing a cache file larger than 4096m but less than 5120m.
 

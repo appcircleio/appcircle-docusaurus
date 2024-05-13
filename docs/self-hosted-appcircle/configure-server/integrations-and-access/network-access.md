@@ -124,7 +124,9 @@ archive.ubuntu.com
 - If you want to download the `zip` package and copy it manually (with `scp` or `ftp`), then the Appcircle server host doesn't need this access.
 
 ```access_list
-storage.googleapis.com/appcircle-dev-common/self-hosted
+cdn.appcircle.io
+storage.googleapis.com/storage/v1/b/appcircle-self-hosted
+www.googleapis.com/oauth2/v4/token
 ```
 
 ##### If you don't have a proxy registry like `Harbor` or `Nexus`, and want to use container images directly from Appcircle:
@@ -177,6 +179,8 @@ Homebrew installs the latest version of Xcode Command Line Tools as a dependency
 
 - `tart` tool (required):
 
+_Tart is a registered trademark of Cirrus Labs, Inc._
+
 ```access_list
 github.com
 api.github.com
@@ -201,6 +205,13 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 
 ```access_list
 storage.googleapis.com/appcircle-dev-common/self-hosted
+```
+
+- macOS VM install script (_required if you prefer automatic installation_):
+
+```access_list
+cdn.appcircle.io
+storage.googleapis.com/storage/v1/b/appcircle-dev-common
 ```
 
 ## Appcircle Server Runtime

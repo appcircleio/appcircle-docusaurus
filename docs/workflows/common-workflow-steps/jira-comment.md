@@ -64,8 +64,7 @@ There are some necessary parameters for this stepper to work properly. These par
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3199-jiraInput.png' />
 
-:::warning
-
+:::danger
 **Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
 
 We recommend using [Environment Variables](/environment-variables/) groups for such sensitive variables.

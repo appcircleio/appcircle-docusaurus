@@ -21,7 +21,7 @@ There are no prerequisites required before using the **​Flutter Build for Web*
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2855-flutterWebOrder.png' />
 
-:::warning
+:::danger
 
 This step relies heavily on the **Flutter Install** step. If the Flutter SDK is not installed, the step will report an error stating that the required command was not found.
 

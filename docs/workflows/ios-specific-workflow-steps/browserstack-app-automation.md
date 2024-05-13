@@ -19,7 +19,7 @@ Run your [**XCUI**](https://developer.apple.com/documentation/xctest/user_interf
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2587-bs_order.png' />
 
-:::warning
+:::danger
 In the build step, if there is no **Xcodebuild Build for Testing** step before **BrowserStack**, **BrowserStack** will throw an **error** and **break the pipeline** because it cannot find the paths that your step depends on. 
 :::
 
@@ -29,7 +29,7 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2587-bsInput.png' />
 
-:::warning
+:::danger
 Do not specify the **Access Key** directly in a hard coded format in steps. Please use [**Environment Variables**](https://docs.appcircle.io/environment-variables/) when using potentially *sensitive variables* like this.
 :::
 
