@@ -7,8 +7,11 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import SelfHostedBadge from '@site/src/components/SelfHostedBadge';
-import CloudBadge from '@site/src/components/CloudBadge';
+
+<!-- Note to contributors: You can use the following badges to indicate the availability of the feature for modules.-->
+
+<!-- <BuildBadge/> <APIBadge/> <BuildIntegrationsBadge/> <ContinuousTestingBadge/> <EnvironmentVariablesBadge/> <VersioningBadge/> <AccountBadge/> <BestPracticesBadge/> <DistributionBadge/>
+<IntegrationsBadge/> <EnterpriseStoreBadge/> <FaqBadge/> <InfrastructureBadge/> <PublishBadge/> <ReportsBadge/> <SigningIdentitiesBadge/> <SelfHostedBadge/> <PublishIntegrationsBadge/> -->
 
 # Latest Release Notes
 

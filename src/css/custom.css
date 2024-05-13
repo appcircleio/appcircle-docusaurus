@@ -965,3 +965,33 @@ img {
   margin: 0 8px 0 0; /* Adjust margin to align properly, values here are just an example */
 }
 
+.module-badge {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-family: var(--ifm-font-family-base);
+  font-weight: 700;
+  border: 0.5px solid #e0e0e0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); 
+
+}
+
+.module-badge svg {
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+}
+
+html[data-theme="dark"] .module-badge {
+  border: 1px solid #2b2b2b;  
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);  
+  background: linear-gradient(145deg, #333333, #1f1f1f); 
+  color: #e0e0e0; 
+}
+
+.module-badge svg > path {
+  fill: var(--ifm-color-primary);
+}
