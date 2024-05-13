@@ -975,8 +975,8 @@ img {
   font-family: var(--ifm-font-family-base);
   font-weight: 700;
   border: 0.5px solid #e0e0e0;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); 
-
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.1em; 
 }
 
 .module-badge svg {
