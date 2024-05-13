@@ -1,24 +1,24 @@
 ---
-title: Meta Data Information
-description: Detailed guide on filling out meta data for app distribution platforms within the Appcircle dashboard.
-tags: [meta data, app distribution, appcircle dashboard]
+title: Metadata Information
+description: Detailed guide on filling out metadata for app distribution platforms within the Appcircle dashboard.
+tags: [metadata, app distribution, appcircle dashboard]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Meta Data Information
+# Metadata Information
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-menu.png' />
 
 ## Overview
 
-The Meta Data Information section in the Appcircle dashboard is essential for defining the presence of your application on digital distribution platforms. This document will guide you through each field and its significance to ensure your app's metadata is complete and effective.
+The Metadata Information section in the Appcircle dashboard is essential for defining the presence of your application on digital distribution platforms. This document will guide you through each field and its significance to ensure your app's metadata is complete and effective.
 
 :::note
-The Meta Data Information section is available for iOS apps only currently. We will be adding support for Android apps in the future.
+The Metadata Information section is available for iOS apps only currently. We will be adding support for Android apps in the future.
 :::
 
-## iOS Meta Data Information
+## iOS Metadata Information
 
 ### Localization Settings
 
@@ -30,7 +30,7 @@ When you select a language, you will provide localized versions of your app's me
 
 ### Metadata Auto-Population
 
-If there is existing metadata associated with your app on the App Store, the **Meta Data Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions and localizations.
+If there is existing metadata associated with your app on the App Store, the **Metadata Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions and localizations.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-localization-get.png' />
 
@@ -84,4 +84,4 @@ Please note, this comes with **Keep Existing Rating** selected by default. If yo
 
 ## Conclusion
 
-Filling out the Meta Data Information section accurately is crucial for the successful listing and update of your app on the App Store. It ensures that potential users receive the most current information and that your app meets all necessary guidelines for
+Filling out the Metadata Information section accurately is crucial for the successful listing and update of your app on the App Store. It ensures that potential users receive the most current information and that your app meets all necessary guidelines for
