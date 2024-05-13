@@ -51,7 +51,7 @@ open(ENV['AC_ENV_FILE_PATH'], 'a') { |f|
 
 ### Jira REST API Version Reference
 
-Jira comment input types depending on the Jira REST API version. Therefore, you can select the appropriate Jira REST API version from the component version selection list. Here's how:
+**Jira Comment** input types depending on the [Jira REST API version](https://developer.atlassian.com/server/jira/platform/rest-apis/#uri-structure). Therefore, you can select the appropriate Jira REST API version from the component version selection list. Here's how:
 
 - For [Jira REST API version 2](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#version): Choose `2.*.*` from the selection list.
 - For [Jira REST API version 3](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#version): Choose `3.*.*` from the selection list.
