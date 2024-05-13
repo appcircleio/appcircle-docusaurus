@@ -179,6 +179,8 @@ Homebrew installs the latest version of Xcode Command Line Tools as a dependency
 
 - `tart` tool (required):
 
+_Tart is a registered trademark of Cirrus Labs, Inc._
+
 ```access_list
 github.com
 api.github.com
@@ -203,6 +205,13 @@ If you don't want to enable these URLs or you aren’t comfortable with this, yo
 
 ```access_list
 storage.googleapis.com/appcircle-dev-common/self-hosted
+```
+
+- macOS VM install script (_required if you prefer automatic installation_):
+
+```access_list
+cdn.appcircle.io
+storage.googleapis.com/storage/v1/b/appcircle-dev-common
 ```
 
 ## Appcircle Server Runtime

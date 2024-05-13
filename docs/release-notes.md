@@ -12,7 +12,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 
 # Latest Release Notes
 
-## 3.16.0 - 2024-05-10 - New features in Publish Module, Resigning Binary, Xcode 14.1, and more
+## 3.16.0 - 2024-05-10 - New features in Publish Module, Resigning Binary, Xcode 15.4, and more
 
 ### 🆕 New Features
 
@@ -34,7 +34,7 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - Users can now prepare and transmit screenshots and metadata to the App Store through the newly integrated metadata component. <CloudBadge/> <SelfHostedBadge/>
 - Users can now seamlessly import metadata and screenshots from App Store Connect to establish the initial state on the Update Metadata screen. <CloudBadge/> <SelfHostedBadge/>
 - The Appcircle runner package now includes a diagnostic tool that helps to identify, analyze, and troubleshoot system issues. <SelfHostedBadge/>
-- Self-hosted Appcircle clients can now download and extract the runner macOS VM in the background more robustly, particularly in cases of network connection faults. <SelfHostedBadge/>
+- Self-hosted Appcircle clients can now [download and extract](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-the-macos-vm-and-xcode-images-automatically) the runner macOS VM in the background more robustly, particularly in cases of network connection faults. <SelfHostedBadge/>
 - The install certificate tool included in the runner package, which trusts CA certificates, now extends support to Java 8, 17, and 21. <SelfHostedBadge/>
 - We have added an App Store Status field within Publish Profiles and App Versions lists, providing regular updates at 30-minute intervals. For further details, please refer to the [Store Status](/publish-module/binary-management#store-status) documentation. <CloudBadge/> <SelfHostedBadge/>
 

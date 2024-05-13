@@ -119,6 +119,14 @@ You can ignore power failure settings if they are not supported.
 
 ## Download MacOS VM
 
+You have two options to obtain the Appcircle runner images: manual or automated.
+
+To perform these tasks manually, you can follow our step-by-step guide on [downloading the macOS VM image manually](#download-the-macos-vm-image-manually).
+
+Alternatively, you can automate this process in the background by following our instructions on [downloading the macOS VM and Xcode images automatically](#download-the-macos-vm-and-xcode-images-automatically).
+
+### Download the macOS VM Image Manually
+
 :::tip
 
 MacOS VM image has a versioning convention based on release date instead of arbitrary numbers. This date-based approach is called calendar versioning, or CalVer for short.
@@ -257,7 +265,7 @@ du -sh $HOME/.tart/vms/macOS_240509
   </TabItem>
 </Tabs>
 
-### Download Xcode Images
+### Download Xcode Images Manually
 
 Download Xcode images from the Appcircle bucket. They are disk images for each Xcode version archived in a package.
 
@@ -399,6 +407,52 @@ So the latest VM image,`macOS_230921` or later, includes Ventura `13.5.2` or Son
 It doesn't support running on older hosts like Monterey, Big Sur, etc.
 
 If you don't need the latest Xcode and you want to run an older version of the macOS VM image that supports running on a Monterey host, contact us through our support channels.
+:::
+
+### Download the macOS VM and Xcode Images Automatically
+
+To download and extract the Appcircle runner VM and Xcode images in the background automatically, you can run the command below.
+
+<Tabs groupId="macos-image">
+
+  <TabItem value="240306" label="240306" default>
+
+```bash
+curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
+chmod +x download-runner.sh && \
+nohup ./download-runner.sh "240306" &
+```
+
+  </TabItem>
+  <TabItem value="240509" label="240509">
+
+```bash
+curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
+chmod +x download-runner.sh && \
+nohup ./download-runner.sh "240509" &
+```
+
+  </TabItem>
+</Tabs>
+
+:::tip
+If you face any errors while downloading the files, please delete the corrupted file and re-run the command block above.
+:::
+
+It may take some time to complete with respect to your network speed. You can see and follow the logs with the command below.
+
+```bash
+tail -f nohup.out
+```
+
+:::info
+You can close the SSH or terminal session while the tool is running. The download and extract process will go on in the background.
+
+But be aware that there might be some errors while downloading and extracting the VM image, such as network or disk errors. Please keep an eye on the logs.
+:::
+
+:::tip
+If no specific image identifier is provided when executing the `download-runner.sh` tool, it will automatically attempt to download the most recent runner images.
 :::
 
 ## Create Base Images
