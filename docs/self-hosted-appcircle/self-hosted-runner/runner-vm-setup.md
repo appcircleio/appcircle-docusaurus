@@ -195,7 +195,7 @@ MD5 (macOS_240306.tar.gz) = 084a9221075ed5453aceba6a3438b134
   <TabItem value="240514" llabel="240514" default>
 
 ```bash
-MD5 (macOS_240514.tar.gz) = 4de4666f8e68afbff8a55a144aabe256
+MD5 (macOS_240514.tar.gz) = 8524abc65668a084589e79f214a9b281
 ```
 
   </TabItem>
@@ -325,7 +325,7 @@ MD5 (xcodes_240306.tar.gz) = 4df051e11b6c0b8670cd9b82928dfab2
   <TabItem value="240514" llabel="240514" default>
 
 ```bash
-MD5 (xcodes_240514.tar.gz) = 230b697351739410ab4ec537b09999ab
+MD5 (xcodes_240514.tar.gz) = e3edc40c9b6dda91530d8a1f8cf456bc
 ```
 
   </TabItem>
