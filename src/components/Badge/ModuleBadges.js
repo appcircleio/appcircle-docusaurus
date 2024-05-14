@@ -18,12 +18,13 @@ import PublishIcon from "../ModuleIcons/PublishIcon";
 import ReportsIcon from "../ModuleIcons/ReportsIcon";
 import SelfHostedIcon from "../ModuleIcons/SelfHostedIcon";
 import SigningIdentitiesIcon from "../ModuleIcons/SigningIdentitiesIcon";
+import CloudIcon from "../ModuleIcons/CloudIcon";
 
 const AccountBadge = () => (
   <Badge icon={AccountIcon}>Account & Organization</Badge>
 );
 
-const APIBadge = () => <Badge icon={ApiIcon}>API & CLI</Badge>;
+const APICLIBadge = () => <Badge icon={ApiIcon}>API & CLI</Badge>;
 
 const BestPracticesBadge = () => (
   <Badge icon={BestPracticesIcon}>Best Practices</Badge>
@@ -52,7 +53,11 @@ const PublishIntegrationsBadge = () => (
 
 const ReportsBadge = () => <Badge icon={ReportsIcon}>Reports</Badge>;
 
-const SelfHostedBadge = () => <Badge icon={SelfHostedIcon}>Self-Hosted</Badge>;
+const SelfHostedBadge = () => (
+  <Badge className="module-badge-self-hosted" icon={SelfHostedIcon}>
+    Self-Hosted
+  </Badge>
+);
 
 const SigningIdentitiesBadge = () => (
   <Badge icon={SigningIdentitiesIcon}>Signing Identities</Badge>
@@ -71,7 +76,11 @@ const EnvironmentVariablesBadge = () => (
 );
 const VersioningBadge = () => <Badge icon={VersioningIcon}>Versioning</Badge>;
 
-const CloudBadge = () => <Badge icon={SelfHostedIcon}>Cloud</Badge>;
+const CloudBadge = () => (
+  <Badge className="module-badge-cloud" icon={CloudIcon}>
+    Cloud
+  </Badge>
+);
 
 export {
   BuildBadge,
@@ -80,7 +89,7 @@ export {
   EnvironmentVariablesBadge,
   VersioningBadge,
   AccountBadge,
-  APIBadge,
+  APICLIBadge,
   BestPracticesBadge,
   DistributionBadge,
   EnterpriseStoreBadge,

@@ -995,3 +995,31 @@ html[data-theme="dark"] .module-badge {
 .module-badge svg > path {
   fill: var(--ifm-color-primary);
 }
+
+/* Cloud Badge Styles */
+.module-badge-cloud {
+  background: linear-gradient(145deg, #f0f8ff, #d1e7ff);
+  border: 0.5px solid #d1e7ff;
+  color: #007bb5;
+}
+
+/* Dark theme for Cloud Badge */
+html[data-theme="dark"] .module-badge-cloud {
+  border: 1px solid #005a85;
+  background: linear-gradient(145deg, #00263e, #001f31);
+  color: #99d3ff;
+}
+
+/* Self-Hosted Badge Styles */
+.module-badge-self-hosted {
+  background: linear-gradient(145deg, #fff7e6, #ffe6b3);
+  border: 0.5px solid #ffe6b3;
+  color: #bf7200;
+}
+
+/* Dark theme for Self-Hosted Badge */
+html[data-theme="dark"] .module-badge-self-hosted {
+  border: 1px solid #805000;
+  background: linear-gradient(145deg, #402800, #2b1a00);
+  color: #ffd27f;
+}

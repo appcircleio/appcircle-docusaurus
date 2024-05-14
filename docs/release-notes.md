@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 <!-- Note to contributors: You can use the following badges to indicate the availability of the feature for modules.-->
 
-<!-- <BuildBadge/> <APIBadge/> <BuildIntegrationsBadge/> <ContinuousTestingBadge/> <EnvironmentVariablesBadge/> <VersioningBadge/> <AccountBadge/> <BestPracticesBadge/> <DistributionBadge/>
+<!-- <BuildBadge/> <APICLIBadge/> <BuildIntegrationsBadge/> <ContinuousTestingBadge/> <EnvironmentVariablesBadge/> <VersioningBadge/> <AccountBadge/> <BestPracticesBadge/> <DistributionBadge/>
 <IntegrationsBadge/> <EnterpriseStoreBadge/> <FaqBadge/> <InfrastructureBadge/> <PublishBadge/> <ReportsBadge/> <SigningIdentitiesBadge/> <SelfHostedBadge/> <PublishIntegrationsBadge/> -->
 
 # Latest Release Notes
@@ -19,14 +19,17 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🆕 New Features
 
-- The [Resign Binary](/publish-module/publish-information/resign-binary) feature is now available for both iOS and Android applications within the Publish module. <CloudBadge/> <SelfHostedBadge/>
-- Users can now upload application screenshots and update [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) within the Publish module, including promotional text and descriptions, via Appcircle, without the need for the App Store Connect interface. <CloudBadge/> <SelfHostedBadge/>
+- The [Resign Binary](/publish-module/publish-information/resign-binary) feature is now available for both iOS and Android applications within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users can now upload application screenshots and update [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) within the Publish module, including promotional text and descriptions, via Appcircle, without the need for the App Store Connect interface. <CloudBadge/> <SelfHostedBadge/> <PublishBadge/>
 <!-- - LDAP Mapping is now supported in Appcircle, allowing seamless synchronization of user groups and roles from your LDAP directory to your Appcircle environment. This integration streamlines user management and enhances security by aligning your Appcircle roles with your organizational structures. For a detailed setup guide, visit our [LDAP Mapping documentation](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#ldap-mapping) -->
-- Within the Publish profile card, App Store Status will be displayed for Enterprise users, while Flow Status will be observed for non-enterprise users. Similarly, in the app version view, Enterprise users will have access to both Flow and App Store Status, whereas non-Enterprise users will only see Flow Status displayed. <CloudBadge/> <SelfHostedBadge/>
-- A new component named "Update Metadata on App Store" has been integrated to the Publish Steps section, facilitating the display of metadata information. <CloudBadge/> <SelfHostedBadge/>
-- On the Metadata Information page, metadata for profiles designated as Release Candidates is retrieved directly from the store. For more information, refer to the [Metadata Information](/publish-module/publish-information/meta-data-information) documentation. <CloudBadge/> <SelfHostedBadge/>
-- Users uploading .AAB files can now share the app version with testers within the [Distribution](https://docs.appcircle.io/distribute) module. <CloudBadge/> <SelfHostedBadge/>
+- Within the Publish profile card, App Store Status will be displayed for Enterprise users, while Flow Status will be observed for non-enterprise users. Similarly, in the app version view, Enterprise users will have access to both Flow and App Store Status, whereas non-Enterprise users will only see Flow Status displayed. <CloudBadge/> <SelfHostedBadge/> <PublishBadge/>
+- A new component named "Update Metadata on App Store" has been integrated to the Publish Steps section, facilitating the display of metadata information. <CloudBadge/> <SelfHostedBadge/> <PublishIntegrationsBadge/>
+- On the Metadata Information page, metadata for profiles designated as Release Candidates is retrieved directly from the store. For more information, refer to the [Metadata Information](/publish-module/publish-information/meta-data-information) documentation. <CloudBadge/> <SelfHostedBadge/> <PublishBadge/>
+- Users uploading .AAB files can now share the app version with testers within the [Distribution](https://docs.appcircle.io/distribute) module. <CloudBadge/> <SelfHostedBadge/> <DistributionBadge/>
 - The install certificate tool bundled in the runner package now supports proxies when connecting to remote URLs on macOS. <SelfHostedBadge/>
+- The [Signing Identities](/signing-identities) module features are now accessible via the command-line interface. Learn more. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <SigningIdentitiesBadge/>
+- You can now manage [Testing Groups](/distribute/testing-management/testing-groups) within the [Distribution](/distribute) module via the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
+- Users can configure [Distribution](/distribute) settings to [automatically send builds to testers](/distribute/create-or-select-a-distribution-profile#auto-send-your-build-to-the-testers) using the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
 - The "Default M1 pool" and "macOS VM image" now include [Xcode 15.4 RC1](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release candidate. <CloudBadge/> <SelfHostedBadge/>
 - This release introduces [a log viewing and delivery system](https://docs.appcircle.io/self-hosted-appcircle/configure-server/monitoring) for the self-hosted Appcircle server. <SelfHostedBadge/>
 - Self-hosted customers can now [download](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server package seamlessly and [update](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server fully automated. <SelfHostedBadge/>
