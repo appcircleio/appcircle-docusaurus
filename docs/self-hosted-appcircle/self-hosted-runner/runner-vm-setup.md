@@ -148,7 +148,7 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240514.tar.gz
@@ -172,7 +172,7 @@ md5 macOS_240306.tar.gz
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 md5 macOS_240514.tar.gz
@@ -192,7 +192,7 @@ MD5 (macOS_240306.tar.gz) = 084a9221075ed5453aceba6a3438b134
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 MD5 (macOS_240514.tar.gz) = 8524abc65668a084589e79f214a9b281
@@ -214,7 +214,7 @@ mkdir -p $HOME/.tart/vms/macOS_240306
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 mkdir -p $HOME/.tart/vms/macOS_240514
@@ -234,7 +234,7 @@ tar -zxf macOS_240306.tar.gz --directory $HOME/.tart/vms/macOS_240306
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 tar -zxf macOS_240514.tar.gz --directory $HOME/.tart/vms/macOS_240514
@@ -256,7 +256,7 @@ du -sh $HOME/.tart/vms/macOS_240306
 ```
 
  </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 du -sh $HOME/.tart/vms/macOS_240514
@@ -278,7 +278,7 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
  </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240514.tar.gz
@@ -302,7 +302,7 @@ md5 xcodes_240306.tar.gz
 ```
 
  </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 md5 xcodes_240514.tar.gz
@@ -322,7 +322,7 @@ MD5 (xcodes_240306.tar.gz) = 4df051e11b6c0b8670cd9b82928dfab2
 ```
 
  </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 MD5 (xcodes_240514.tar.gz) = e3edc40c9b6dda91530d8a1f8cf456bc
@@ -350,7 +350,7 @@ tar -zxf xcodes_240306.tar.gz --directory $HOME/images
 ```
 
  </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 tar -zxf xcodes_240514.tar.gz --directory $HOME/images
@@ -376,7 +376,7 @@ It may take a little to complete. Be patient and wait return of command.
 > - `14.3.x`
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 **Note:** This macOS VM image contains the same tools as in the `latest` "Default M1 Pool" in Appcircle Cloud.
 
@@ -424,7 +424,7 @@ nohup ./download-runner.sh "240306" &
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
@@ -500,7 +500,7 @@ tart clone macOS_240306 vm01
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 tart clone macOS_240514 vm01
@@ -531,7 +531,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -817,7 +817,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
@@ -889,7 +889,7 @@ chmod u+x $HOME/runner1/run.sh
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.4.sh && \
@@ -911,7 +911,7 @@ chmod u+x $HOME/runner2/run.sh
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.4.sh && \
@@ -1057,7 +1057,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -1096,7 +1096,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240514" llabel="240514" default>
+  <TabItem value="240514" label="240514" default>
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
