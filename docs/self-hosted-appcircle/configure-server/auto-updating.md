@@ -21,6 +21,10 @@ This automated approach ensures a smooth transition to the latest version, minim
 The auto-update tool does not update the Appcircle server in the event of a major Appcircle server update.
 :::
 
+:::caution
+The auto-update tool does not currently support the handling of proxy environment variables. Therefore, it is not recommended to use this tool on an Appcircle server that use proxy environment variables.
+:::
+
 :::info
 The auto-update tool is included in the Appcircle server package version `v3.16.0` or later.
 :::
