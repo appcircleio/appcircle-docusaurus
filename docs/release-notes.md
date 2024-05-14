@@ -710,7 +710,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🆕 New Feature
 
 - [Apple Devices](/distribute/platform-specific-guidance/ios/apple-devices) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
-- [Firebase Deployment ](/workflows/common-workflow-steps/#firebase-deployment) component added.
+- [Firebase Deployment ]/workflows/flutter-specific-workflow-steps/firebase-deployment) component added.
 
 ### :muscle: Improvement
 
@@ -762,7 +762,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🆕 New Feature
 
 - [Testinium](/workflows/common-workflow-steps/#testinium) component added. This component allows you to run your test plans on [Testinium](https://testinium.com)
-- [Firebase dSYM Upload](/workflows/common-workflow-steps/#firebase-upload-dsym) component added. You may use this component to upload Debug Symbols to Firebase.
+- [Firebase dSYM Upload](/workflows/ios-specific-workflow-steps/firebase-upload-dsym) component added. You may use this component to upload Debug Symbols to Firebase.
 
 ### :muscle: Improvement
 
