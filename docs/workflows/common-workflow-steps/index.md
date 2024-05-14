@@ -16,19 +16,25 @@ You can find the full list of available workflow steps in our [workflow marketpl
 
 This step sets up your SSH key in the build machine if you used one to connect your repository. This allows the build machine to connect to your private repository using your SSH key.
 
-[https://github.com/appcircleio/appcircle-activate-ssh-key-component](https://github.com/appcircleio/appcircle-activate-ssh-key-component)
+<ContentRef url="/workflows/common-workflow-steps/active-ssh-private-key">
+    Active SSH Private Key
+</ContentRef>
 
 ## Appium Server
 
 This step installs [Appium Server](https://appium.io/) and starts it.
 
-https://github.com/appcircleio/appcircle-appium-component
+<ContentRef url="/workflows/common-workflow-steps/appium-server">
+    Appium Server
+</ContentRef>
 
 ## Authenticate with Netrc
 
 The `.netrc` file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file. However, if you want to use the .netrc file with curl, you need to append the `-n` command line parameter. You may also use the `--netrc-optional` parameter if you don't always use the `.netrc` file with curl.
 
-https://github.com/appcircleio/appcircle-netrc-component
+<ContentRef url="/workflows/common-workflow-steps/authenticate-with-netrc">
+    Authenticate with Netrc
+</ContentRef>
 
 ## Cache Pull
 
@@ -52,7 +58,9 @@ These variables can be adjusted within the **Cache Label** field, as indicated b
 
 Also you can have more than one push and pull pairs in the same build pipeline according to your needs.
 
-[https://github.com/appcircleio/appcircle-cache-pull-component](https://github.com/appcircleio/appcircle-cache-pull-component)
+<ContentRef url="/workflows/common-workflow-steps/build-cache/cache-pull">
+    Cache Pull
+</ContentRef>
 
 ## Cache Push
 
@@ -94,55 +102,59 @@ System automatically cleans unreachable and obsolete cache files periodically. F
 
 :::
 
-[https://github.com/appcircleio/appcircle-cache-push-component](https://github.com/appcircleio/appcircle-cache-push-component)
+<ContentRef url="/workflows/common-workflow-steps/build-cache/cache-push">
+    Cache Push
+</ContentRef>
 
 ## Code Reviews with Danger
 
 Danger runs during your CI process and gives teams the chance to automate common code review chores. This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your team’s norms. Leaving humans to think about harder problems.
 
-https://github.com/appcircleio/appcircle-danger-component
-
 https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews
+
+<ContentRef url="/workflows/common-workflow-steps/danger">
+    Code Reviews with Danger
+</ContentRef>
 
 ## Custom Scripts
 
 You can use custom scripts for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the build agent and you can use any functionality of the virtual machine as you need.
 
-[https://github.com/appcircleio/appcircle-custom-script-component/](https://github.com/appcircleio/appcircle-custom-script-component/)
+<ContentRef url="/workflows/common-workflow-steps/custom-script">
+    Custom Scripts
+</ContentRef>
 
 ## Data Theorem Mobile Secure
 
 This component scans your app using Mobile Secure
 
-https://github.com/appcircleio/appcircle-datatheorem-component
+<ContentRef url="/workflows/common-workflow-steps/data-theorem-mobile-secure">
+    Data Theorem Mobile Secure
+</ContentRef>
 
 ## Export Build Artifacts
 
 Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download from the artifacts section of the completed build.
 
-[https://github.com/appcircleio/appcircle-export-build-artifacts](https://github.com/appcircleio/appcircle-export-build-artifacts)
+<ContentRef url="/workflows/common-workflow-steps/export-build-artifacts">
+    Export Build Artifacts
+</ContentRef>
 
 ## File Size Check
 
 This component checks the file size and either warn or fail the workflow.
 
-https://github.com/appcircleio/appcircle-filesize-component
+<ContentRef url="/workflows/common-workflow-steps/file-size-check">
+    File Size Check
+</ContentRef>
 
 ## Firebase App Distribution
 
 Send your apps to be distributed via Firebase App Distribution
 
-[https://github.com/appcircleio/appcircle-firebase-distribution-component](https://github.com/appcircleio/appcircle-firebase-distribution-component)
-
-## Firebase Deployment
-
-Deploy your web applications to Firebase Hosting
-
-https://github.com/appcircleio/appcircle-firebase-deploy-component
-
-## Firebase Upload dSYM
-
-Upload your debug symbols to Firebase Crashlytics
+<ContentRef url="/workflows/common-workflow-steps/firebase-app-distribution">
+    Firebase App Distribution
+</ContentRef>
 
 https://github.com/appcircleio/appcircle-firebase-dsym-upload-component
 
@@ -150,52 +162,70 @@ https://github.com/appcircleio/appcircle-firebase-dsym-upload-component
 
 This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment
 
-https://github.com/appcircleio/appcircle-fod-mobile-assessment
+<ContentRef url="/workflows/common-workflow-steps/fod-mobile-assesment">
+    Fortify On Demand
+</ContentRef>
 
 ## FTP Upload
 
 This component uploads file or folders to given FTP server.
 
-https://github.com/appcircleio/appcircle-ftp-upload-component
+<ContentRef url="/workflows/common-workflow-steps/ftp-upload">
+    FTP Upload
+</ContentRef>
 
 ## Git Clone
 
 Clones the Git repository to the build agent with the given arguments.
 
-[https://github.com/appcircleio/appcircle-git-clone-component](https://github.com/appcircleio/appcircle-git-clone-component)
+<ContentRef url="/workflows/common-workflow-steps/git-clone">
+    Git Clone
+</ContentRef>
 
 ## Maestro Cloud Upload
 
 This component uploasd both your app binary and flows to Maestro Cloud.
 
-https://github.com/appcircleio/appcircle-maestro-cloud-upload-component
+<ContentRef url="/workflows/common-workflow-steps/maestro-cloud-upload">
+    Maestro Cloud Upload
+</ContentRef>
 
 ## Repeato Mobile Test Automation
 
 This component creates and automates UI tests for iOS and Android.
 
-https://github.com/appcircleio/appcircle-repeato-component
+<ContentRef url="/workflows/common-workflow-steps/repeato-test-runner">
+    Repeato Mobile Test Automation
+</ContentRef>
 
 ## Release Notes
 
 You can use Release Notes component to create release notes during your workflow.
 
-[https://github.com/appcircleio/appcircle-release-notes-component](https://github.com/appcircleio/appcircle-release-notes-component)
+<ContentRef url="/workflows/common-workflow-steps/publish-release-notes">
+    Release Notes
+</ContentRef>
 
 ## SonarQube
 
 You can use SonarQube component to check your code quality.
 
-[https://github.com/appcircleio/appcircle-sonarqube-component](https://github.com/appcircleio/appcircle-sonarqube-component)
+<ContentRef url="/workflows/common-workflow-steps/sonarqube">
+    SonarQube
+</ContentRef>
 
 ## Snyk Scan Security
 
 By utilizing this step, you will be able to test your project dependencies for vulnerabilities during builds and use Snyk to monitor your projects.
 
-https://github.com/appcircleio/appcircle-snyk-scan-secure-component
+<ContentRef url="/workflows/common-workflow-steps/snyk-scan-security">
+    Snyk Scan Security
+</ContentRef>
 
 ## Testinium
 
 This component runs your test plans with Testinium.
 
-https://github.com/appcircleio/appcircle-testinium-component
+<ContentRef url="/workflows/common-workflow-steps/testinium">
+    Testinium
+</ContentRef>
