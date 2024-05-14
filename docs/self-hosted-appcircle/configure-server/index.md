@@ -44,10 +44,10 @@ Configure your server to distribute test versions of your apps, enabling early f
 
 Set up your private App Store for enterprise app distribution, providing a secure and convenient way to deploy internal applications.
 
+## Auto-upgrading Server
+
+Discover the process for enabling automatic updates on your Appcircle server, ensuring your system remains up-to-date with the latest features and security enhancements.
+
 ## Monitoring
 
 Learn how to monitor your Appcircle server through the Grafana web interface, enabling you to oversee server performance remotely without the need to access the Appcircle server console directly.
-
-## Auto Updating
-
-Discover the process for enabling automatic updates on your Appcircle server, ensuring your system remains up-to-date with the latest features and security enhancements.
