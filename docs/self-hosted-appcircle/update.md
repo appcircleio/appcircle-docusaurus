@@ -37,6 +37,12 @@ For example, to find the version for a project named "spacetech", run the follow
 ./ac-self-hosted.sh -n "spacetech" version
 ```
 
+::
+
+:::info
+If you want to update the Appcircle server in a automated way, you may want to checkout [Auto-updating Server](/docs/self-hosted-appcircle/configure-server/auto-updating.md)
+
+You can effortlessly manage all the commands listed below. Additionally, you can set up recurring cron jobs (daily or weekly) to automatically check if Appcircle's server needs updating.
 :::
 
 ### 1. Download Latest
