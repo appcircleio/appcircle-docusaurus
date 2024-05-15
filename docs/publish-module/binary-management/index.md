@@ -19,6 +19,14 @@ You can then upload the application by clicking on the **Add Version** button on
 
 When the upload is completed successfully, the relevant application version will appear in the list.
 
+:::caution BUNDLE ID AND PACKAGE NAME MUST BE UNIQUE
+To maintain consistency, do not upload iOS app versions with different Bundle IDs under the same Publish Profile. All app versions must share the same Bundle ID within the Publish Profile.
+
+Similarly, for Android Publish Profiles, all app versions must have identical Package Names within the Android Publish Profile.
+
+You can view the Bundle ID (iOS) and Package Name (Android) beneath the Publish Profile name. Users can also verify this information by selecting the [Binary Information](/publish-module/publish-information/binary-information) for an app version under the actions menu.
+:::
+
 Afterwards, you can start submitting your application to the stores with the publish flow that you have configured.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-version-list.png' />
