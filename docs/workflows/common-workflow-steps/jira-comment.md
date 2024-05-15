@@ -76,18 +76,6 @@ Confidential information should be entered as a [secret environment variable](/e
 
 :::
 
-| Variable Name                 | Description                                                                                                                                                                           | Status   |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_JIRA_HOST`               | Your Jira subdomain. For example: `mysubdomain.atlassian.net`                                                                                                                         | Required |
-| `$AC_JIRA_EMAIL`              | The email associated with your Jira account. This field is required for using API tokens instead of PAT.         | Optional |
-| `$AC_JIRA_TOKEN`              | User's API Token. If this value is fill, the Jira e-mail field must be filled. Only Jira Cloud users can use API Token. You can create token from [here](https://id.atlassian.com/manage-profile/security/api-tokens) | Optional |
-| `$AC_JIRA_PAT`              | Specify the Personal Access Token for Jira authentication. Only Jira On-Prem users can use PAT.  | Optional |
-| `$AC_JIRA_ISSUE`              | The ID or key of the issue. Refer to the [documentation](https://docs.appcircle.io/integrations/jira-integration) for instructions on extracting this information from branch names or commit messages. | Required |
-| `$AC_JIRA_FAIL_TRANSITION`    | Transition ID or name for the failed step. Optionally change the status of your issue if the previous state fails. Ensure that the `Always run this step even if the previous steps fail` switch is enabled for this feature to work.  | Optional |
-| `$AC_JIRA_SUCCESS_TRANSITION` | Transition ID or name for the successful step. Optionally change the status of your issue if the previous state succeeds.                                                    | Optional |
-| `$AC_JIRA_TEMPLATE_V2`           | The comment template used to post a comment if [Jira REST API Version 2](#jira-rest-api-version-reference) is selected. Variables prefixed with `$` will be replaced during the build process. Refer to [this header](#changing-template) to modify the template. | Required |
-| `$AC_JIRA_TEMPLATE_V3`           | The comment template used to post a comment if [Jira REST API Version 3](#jira-rest-api-version-reference) is selected. Variables prefixed with `$` will be replaced during the build process. Refer to [this header](#changing-template) to modify the template. | Required |
-
 :::info
 
 The required inputs for authorization vary based on the type of Jira instance (On-Prem or Cloud). Below is a summary of the required inputs:
@@ -103,6 +91,18 @@ The required inputs for authorization vary based on the type of Jira instance (O
 - `AC_JIRA_PAT`: Not required
 
 :::
+
+| Variable Name                 | Description                                                                                                                                                                           | Status   |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_JIRA_HOST`               | Your Jira subdomain. For example: `mysubdomain.atlassian.net`                                                                                                                         | Required |
+| `$AC_JIRA_EMAIL`              | The email associated with your Jira account. This field is required for using API tokens instead of PAT.         | Optional |
+| `$AC_JIRA_TOKEN`              | User's API Token. If this value is fill, the Jira e-mail field must be filled. Only Jira Cloud users can use API Token. You can create token from [here](https://id.atlassian.com/manage-profile/security/api-tokens) | Optional |
+| `$AC_JIRA_PAT`              | Specify the Personal Access Token for Jira authentication. Only Jira On-Prem users can use PAT.  | Optional |
+| `$AC_JIRA_ISSUE`              | The ID or key of the issue. Refer to the [documentation](https://docs.appcircle.io/integrations/jira-integration) for instructions on extracting this information from branch names or commit messages. | Required |
+| `$AC_JIRA_FAIL_TRANSITION`    | Transition ID or name for the failed step. Optionally change the status of your issue if the previous state fails. Ensure that the `Always run this step even if the previous steps fail` switch is enabled for this feature to work.  | Optional |
+| `$AC_JIRA_SUCCESS_TRANSITION` | Transition ID or name for the successful step. Optionally change the status of your issue if the previous state succeeds.                                                    | Optional |
+| `$AC_JIRA_TEMPLATE_V2`           | The comment template used to post a comment if [Jira REST API Version 2](#jira-rest-api-version-reference) is selected. Variables prefixed with `$` will be replaced during the build process. Refer to [this header](#changing-template) to modify the template. | Required |
+| `$AC_JIRA_TEMPLATE_V3`           | The comment template used to post a comment if [Jira REST API Version 3](#jira-rest-api-version-reference) is selected. Variables prefixed with `$` will be replaced during the build process. Refer to [this header](#changing-template) to modify the template. | Required |
 
 ---
 
