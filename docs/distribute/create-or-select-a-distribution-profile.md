@@ -88,7 +88,20 @@ With a successful build, a new version of your application will be added to your
 
 Simply go to _Build Module_ _>_ _Build Configuration_ _>_ _Distribution_ and select a distribution profile you want your build to be sent.
 
-:::info
+:::tip
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3167-buildoutput.png' />
+
+Users have the capability to select their Android build output as .AAB (Android App Bundle) from configuration settings within their Build profile.
+
+When the `.AAB` build is sent to the designated Testing Distribution profile, either automatically or manually by uploading the file directly within the Testing Distribution profile, it will be automatically converted to `.APK` format when shared with a Testing Group. This ensures that the receiving tester downloads the shared artifact in `.APK` format.
+
+This conversion capability also applies when sending app versions from a Testing Distribution profile to an [Enterprise App Store](/enterprise-appstore) profile. The shared `.AAB` artifact will be downloaded in `.APK` format from the Enterprise App Store profile.
+
+
+:::
+
+:::caution
 
 Only signed builds will be distributed. Unsigned builds cannot be distributed.
 
