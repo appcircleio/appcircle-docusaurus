@@ -136,6 +136,25 @@ If your Git commit has any messages, they will be included in the distribution i
 
 :::
 
+### Send your application to Publish
+
+You can send your application from your Testing Distribution profile to a designated Publish profile. 
+
+- Click the three dot next to your application
+- Click **Send to Publish**
+- Select your Publish profile
+- Click **Send**
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3110-sendpublish.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3110-sendpublish2.png" />
+
+:::caution
+
+The designated Publish profile must already be created within the Publish Module and should correspond to the operating system of your application (Android or iOS) within your Testing Distribution Profile. 
+
+:::
+
 ### Share your application with the test groups manually
 
 When you have your build ready or uploaded your binary file to Appcircle, you can manually send the file to testers to let them download, install on their devices and run the application for testing purposes.
