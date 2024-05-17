@@ -15,24 +15,41 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
-## 3.16.1 - 2024-05-17 - LDAP Mapping Improvements, Bug Fixes on Publish Module and more
+## 3.17.0 - 2024-05-17 - LDAP Mapping Improvements, Bug Fixes on Publish Module and more
 
 ### 🆕 New Features
 
+- Users can now automate Group and Role Management with LDAP authentication for Appcircle Login in self-hosted environments. <SelfHostedBadge/>
+- The Team Activity Log feature has been added within the Organization settings. This feature allows users to observe team management actions within their organization, provided they have access either as the owner of the organization or by having the Organization Management role. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
 - Improvements to the "Get Approval via Email" component log viewing now allow you to see the statuses of all users. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An activity log has been added for updates to Release Notes on the [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) page within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Self-hosted users can now hide Change Password option in account settings page by disabling Forgot Password option in Self-Hosted Settings. <SelfHostedBadge/>
+- We have added the ability for Jira Enterprise users to choose the API version.The [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) workflow step now supports both Jira Cloud and On-Prem use cases for both Jira API v2 and v3, which makes the integration more flexible. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The documentation links on the workflow steps have been updated to enable users to access the most recent and refined documents for integration purposes. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 
 ### 🐞 Fixes
 
-- A bug fix has been applied to the auto distribution and publish features to address issues with non-existing Testing Distribution and Publish Profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Performance improvements have been made on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries). <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - If the **Auto-Register** feature is disabled on the [Testing Distribution Profile](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile), the **Register Device** button will now be hidden on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries). Additionally, various typos and UI issues on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries) have been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Deleting a [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) app version is now prevented; users must unmark it from being a [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) before deletion. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Release Notes can now only be changed for [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) app versions. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue requiring a refresh for event-based logs in the Get Approval via Email component. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug was fixed where deleting an app version that leaves no app versions in the Publish Profile, resulted in incorrect information being displayed in the header. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where a refresh was causing a problem in the Publish Flow log panel. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug was fixed where test submissions with missing compliance did not display a warning message about resolving the compliance issue before test submission to internal or external groups. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug on UI where an app version name was cut short due to Release Candidate badge , also affected the other app version names within Publish Profile. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where, during the resigning of an .IPA binary, the sign button was enabled despite no Provision Profile being selected. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue regarding the positioning of the Provisioning Profile and Read-Only Bundle ID options within Resign Binary feature has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The broken Jira transitions that the [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) step is making are now fixed so that you can update the status of Jira issues in the build pipeline. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Android apps with special characters in their names now proceed without errors during signing and other steps. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug fix has been applied to the auto distribution and publish features to address issues with non-existing Testing Distribution and Publish Profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed the incorrect versioning of the [Gradle Runner](https://docs.appcircle.io/workflows/android-specific-workflow-steps/gradle-runner) step, which was breaking current workflows because of incompatible changes. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Testinium](https://docs.appcircle.io/workflows/common-workflow-steps/testinium) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Maestro Cloud Upload](https://docs.appcircle.io/workflows/common-workflow-steps/maestro-cloud-upload) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.16.0 - 2024-05-10 - New features in Publish Module, Resigning Binary, Xcode 15.4, and more
 
