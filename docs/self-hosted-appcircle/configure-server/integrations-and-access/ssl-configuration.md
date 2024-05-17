@@ -5,6 +5,9 @@ tags: [self-hosted, ssl, https, certificate, custom domain, enterprise app store
 sidebar_position: 3
 ---
 
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
+
 # Overview
 
 Although auto-generated `global.yaml` template has "HTTPS enabled" by default, in our sample scenario and configuration it was "HTTPS disabled" to keep it simple to understand. Refer [here](/self-hosted-appcircle/install-server/docker#3-configure) for sample configuration told at installation.
@@ -138,6 +141,47 @@ Refer to [installation](/self-hosted-appcircle/install-server/docker#3-configure
 For now, self-hosted Appcircle does not support usage of password protected private keys.
 
 :::
+
+## Configure TLS Versions
+
+Transport Layer Security (TLS) is a cryptographic protocol designed to provide secure communication between your client devices and the Appcircle server.
+
+You can choose which TLS versions to support based on your security requirements.
+
+If you want to ensure that all connections to your server are encrypted using the latest and most secure protocol available, you can configure only TLS 1.3.
+
+:::info
+When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Auth, and others.  
+:::
+
+To make Appcircle server to work with TLSv1.3 only: 
+
+- Change the directory to the Appcircle server.
+
+```bash
+cd appcircle-server
+```
+
+<SpacetechExampleInfo/>
+
+- Edit your `global.yaml` of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add or change the SSL protocols variable.
+
+:::caution
+If you're using the Appcircle server over `HTTPS`, you might already have the `nginx` key in your `global.yaml` file. In that case, you only need to add the `sslProtocols` key.
+:::
+
+```yaml
+nginx:
+  sslProtocols: TLSv1.3
+```
+
+<RestartAppcircleServer />
 
 ### Sample Configuration
 
