@@ -15,6 +15,41 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 3.17.0 - 2024-05-17 - LDAP Mapping Improvements, Publish Module Bug Fixes, and more
+
+### 🆕 New Features
+
+- Users can now automate Group and Role Management using LDAP Authentication for Appcircle Login in Self-Hosted environments. <SelfHostedBadge/>
+- We have introduced the Team Activity Log feature within the Organization settings. This feature enables users to monitor team management actions within their organization if they are the organization owner or have the Organization Management role. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The "Get Approval via Email" component now allows you to view the statuses of all users in its logs. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have added an activity log for updates to Release Notes on the [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) page within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Self-hosted users can now choose to hide the Change Password option in the account settings page by disabling the Forgot Password option in Self-Hosted Settings. <SelfHostedBadge/>
+- We have added the ability for Jira Enterprise users to choose the API version.The [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) workflow step now supports both Jira Cloud and On-Prem use cases for both Jira API v2 and v3, which makes the integration more flexible. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have updated the documentation links on the workflow steps to enable users to access the most current and detailed documents for integration purposes. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- Performance improvements have been made on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries). <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- If the **Auto-Register** feature is disabled on the [Testing Distribution Profile](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile), the **Register Device** button will now be hidden on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries). Additionally, various typos and UI issues on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries) have been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Deleting a [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) app version is now prevented; users must unmark it from being a [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) before deletion. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Release Notes can now only be changed for [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) app versions. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue requiring a refresh for event-based logs in the Get Approval via Email component. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug was fixed where deleting an app version that leaves no app versions in the Publish Profile, resulted in incorrect information being displayed in the header. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where a refresh was causing a problem in the Publish Flow log panel. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug was fixed where test submissions with missing compliance did not display a warning message about resolving the compliance issue before test submission to internal or external groups. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug on UI where an app version name was cut short due to Release Candidate badge , also affected the other app version names within Publish Profile. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where, during the resigning of an .IPA binary, the sign button was enabled despite no Provision Profile being selected. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue regarding the positioning of the Provisioning Profile and Read-Only Bundle ID options within Resign Binary feature has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The broken Jira transitions that the [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) step is making are now fixed so that you can update the status of Jira issues in the build pipeline. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Android apps with special characters in their names now proceed without errors during signing and other steps. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug fix has been applied to the auto distribution and publish features to address issues with non-existing Testing Distribution and Publish Profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed the incorrect versioning of the [Gradle Runner](https://docs.appcircle.io/workflows/android-specific-workflow-steps/gradle-runner) step, which was breaking current workflows because of incompatible changes. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Testinium](https://docs.appcircle.io/workflows/common-workflow-steps/testinium) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Maestro Cloud Upload](https://docs.appcircle.io/workflows/common-workflow-steps/maestro-cloud-upload) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.16.0 - 2024-05-10 - New features in Publish Module, Resigning Binary, Xcode 15.4, and more
 
 ### 🆕 New Features
