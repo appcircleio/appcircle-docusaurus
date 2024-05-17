@@ -134,7 +134,7 @@ If you have an existing Build profile that would be affected by the deletion of 
 
 You will need to disconnect them before you can delete the PAT Connection.
 
-For more information about disconnecting a Build profile please refer to the related [documentation](/manage-the-connections/reconnect-change-provider#disconnect-build-profile).
+For more information about disconnecting a Build profile please refer to the related [documentation](/build/manage-the-connections/reconnect-change-provider#disconnect-build-profile).
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3112-deletepat3.png' />
