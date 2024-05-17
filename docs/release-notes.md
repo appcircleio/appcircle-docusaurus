@@ -15,6 +15,25 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 3.16.1 - 2024-05-17 - LDAP Mapping Improvements, Bug Fixes on Publish Module and more
+
+### 🆕 New Features
+
+
+### :muscle: Improvements
+
+- Improvements to the "Get Approval via Email" component log viewing now allow you to see the statuses of all users. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An activity log has been added for updates to Release Notes on the [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) page within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- A bug fix has been applied to the auto distribution and publish features to address issues with non-existing Testing Distribution and Publish Profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Performance improvements have been made on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries). <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- If the **Auto-Register** feature is disabled on the [Testing Distribution Profile](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile), the **Register Device** button will now be hidden on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries). Additionally, various typos and UI issues on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries) have been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Deleting a [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) app version is now prevented; users must unmark it from being a [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) before deletion. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Release Notes can now only be changed for [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) app versions. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue requiring a refresh for event-based logs in the Get Approval via Email component. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.16.0 - 2024-05-10 - New features in Publish Module, Resigning Binary, Xcode 15.4, and more
 
 ### 🆕 New Features
