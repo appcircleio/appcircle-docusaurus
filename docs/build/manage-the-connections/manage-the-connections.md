@@ -130,11 +130,11 @@ Upon clicking the **Delete** button, Appcircle will prompt you to enter the name
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3112-deletepat2.png' />
 
 :::warning
-If you have an existing Build profile that would be affected by the deletion of the PAT Connection, Appcircle will display a warning message listing the affected builds. 
+If you have an existing Build profile that would be affected by the deletion of the PAT Connection, Appcircle will display a warning message listing the affected builds.
 
-You will need to disconnect them before being able to delete the PAT Connection.
+You will need to disconnect them before you can delete the PAT Connection.
 
-For more information about disconnecting a Build profile please refer to the related [documentation](https://docs.appcircle.io/build/manage-the-connections/reconnect-change-provider#disconnect-build-profile).
+For more information about disconnecting a Build profile please refer to the related [documentation](/manage-the-connections/reconnect-change-provider#disconnect-build-profile).
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3112-deletepat3.png' />
