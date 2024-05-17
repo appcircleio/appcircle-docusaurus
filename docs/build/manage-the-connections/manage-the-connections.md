@@ -118,3 +118,23 @@ While editing PAT connections, you can also write the PAT value using environmen
 
 You can review [Using Environment Variables For SSH And PAT (Personal Access Token) Connections](/environment-variables/managing-variables#using-environment-variables-for-ssh-and-pat-personal-access-token-connections-of-the-git-provider) page for details.
 :::
+
+### Deleting PAT Connections
+
+You can delete a Personal Access Token (PAT) connection by clicking on the **Delete** next to the respective entry in your list of PAT connections.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3112-deletepat.png' />
+
+Upon clicking the **Delete** button, Appcircle will prompt you to enter the name of the PAT Connection to confirm the deletion operation. After entering the connection name, simply click **Delete** on the pop-up screen.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3112-deletepat2.png' />
+
+:::warning
+If you have an existing Build profile that would be affected by the deletion of the PAT Connection, Appcircle will display a warning message listing the affected builds.
+
+You will need to disconnect them before you can delete the PAT Connection.
+
+For more information about disconnecting a Build profile please refer to the related [documentation](/build/manage-the-connections/reconnect-change-provider#disconnect-build-profile).
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3112-deletepat3.png' />
