@@ -43,7 +43,7 @@ For example, to find the version for a project named "spacetech", run the follow
 
 #### ✨ Auto-upgrading Server
 
-If you want to update the Appcircle server in an automated way, you can check out the [Auto-upgrading Server](/docs/self-hosted-appcircle/configure-server/auto-updating.md) documents.
+If you want to update the Appcircle server in an automated way, you can check out the [Auto-upgrading Server](/self-hosted-appcircle/configure-server/auto-updating) documents.
 
 You can effortlessly manage all the commands listed below.
 
@@ -203,7 +203,7 @@ Upgrade images.
 :::caution
 If you are using a proxy on the server, then you should maintain the proxy variables.
 
-Please head to the [Maintenance of Proxy Variables](/docs/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
+Please head to the [Maintenance of Proxy Variables](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
 :::
 
 Then start with below command.
