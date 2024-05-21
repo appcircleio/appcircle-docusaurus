@@ -67,7 +67,7 @@ Then click **Invite User**. Your account key is ready. 🎉
 
 14. To add the key on Appcircle, follow these steps:
 
-    a. Navigate to [My Organization](/account/my-organization)n.
+    a. Navigate to [My Organization](/account/my-organization).
 
     b. Locate the `Google Play Developer API Keys` under the `Connections` section.
   
