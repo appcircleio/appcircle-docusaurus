@@ -27,7 +27,7 @@ Your account key is ready. To add a key, go to [My Organization](/account/my-org
 
 ### FAQ
 
-#### Why am I getting the error `[AppGalleryConnectFileService]distContryList is empty and usage route site is not China`?
+#### Why am I getting the error `"[AppGalleryConnectFileService]distContryList is empty and usage route site is not China"`?
 
 This error may occur if the [Huawei Supported Countries ](https://developer.huawei.com/consumer/en/doc/app/agc-help-supported-countries-overview-0000001146718725) list has been updated.To resolve this issue, please follow these steps:
 
