@@ -9,7 +9,10 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Update Metadata on App Store Connect
 
-When this step runs, it uploads all metadata information edited on [**Metadata Information**](/publish-module/publish-information/meta-data-information) to the relevant places on App Store Connect. 
+When this step runs, it uploads all metadata information edited on [**Metadata Information**](/publish-module/publish-information/meta-data-information) to the relevant places on App Store Connect. When this step works, you can see the metadata information updated in detail with the localization.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3741-previewMetadata.png' />
+
 
 ### Prerequisites
 
