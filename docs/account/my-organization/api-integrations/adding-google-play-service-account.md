@@ -13,55 +13,49 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
 1. Please go to [Google Cloud Platform](https://console.cloud.google.com/apis) and create a Google Cloud Project.
 
-2. Enable the Google Play Developer API for your Google Cloud Project. Login with your account, then head over to **Credentials -> Create Credentials**, and then click **Service account**.
+2. **Enable** the Google Play Developer API for your Google Cloud Project. 
+
+3. Login with your account, then head over to **Credentials -> Create Credentials**, and then click **Service account**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service01.png' />
 
-3. This screen will forward you to the **Create service account** page. Fill in the details of your service account. According to the service name you set, an automatic **Service account ID** will be created.
+4. This screen will forward you to the **Create service account** page. Fill in the details of your service account. According to the service name you set, an automatic **Service account ID** will be created.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service03.png' />
 
-4. Please select `Editor` in the Role dropdown.
+5. Please select `Editor` in the Role dropdown.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service04.png' />
 
-5. Click Done to save this account.
+6. Click Done to save this account.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service05.png' />
 
-6. Click **Manage service accounts** to open manage page.
+7. Click **Manage service accounts** to open manage page.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service05-1.png' />
 
-7. Find the account you have just created. Click three dots on the Actions column, and then click **Manage keys**.
+8. Find the account you have just created. Click three dots on the Actions column, and then click **Manage keys**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service06.png' />
 
-8. Click **ADD KEY** and then click **Create new key**.
+9. Click **ADD KEY** and then click **Create new key**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service07.png' />
 
-9. Download your key as JSON and save it.
+10. Download your key as JSON and save it.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service08.png' />
 
-10. Switch to the **PERMISSIONS** tab and click on **GRANT ACCESS**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service09.png' />
-
-11. Select the email, generated in step 6 in the **Add principals** field then click **SAVE** button.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service09-1.png' />
-
-12. Go to [Google Play Console](https://play.google.com/console) and login with your account and then head over to **User and permissions** and then click **Invite new users**.
+11. Go to [Google Play Console](https://play.google.com/console) and login with your account and then head over to **User and permissions** and then click **Invite new users**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service09-2.png' />
 
-13. Add the email, generated in step 6 in the **E-mail address** field.
+12. Add the email, generated in step 6 in the **E-mail address** field.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service12.png' />
 
-14. Check the permissions of your user.
+13. Check the permissions of your user.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11-1.png' />
 
@@ -71,4 +65,23 @@ Make sure this account has access to **Releases**, **Store presence**, and **App
 
 Then click **Invite User**. Your account key is ready. 🎉
 
-To add a key, go to [My Organization](/account/my-organization) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Google Play Developer API Keys" item under the Connections section.
+14. To add the key on Appcircle, follow these steps:
+
+    a. Navigate to [My Organization](/account/my-organization)n.
+
+    b. Locate the `Google Play Developer API Keys` under the `Connections` section.
+  
+    c. Click the `Manage` button if you have saved keys, or directly click the `Add New` button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14.png' />
+
+
+## FAQ
+
+**Can I retrieve the JSON private key that I uploaded to Appcircle?**
+
+No, for security reasons, the JSON file you uploaded cannot be downloaded again from Appcircle.
+
+**After uploading the JSON, why can't I save it?**
+
+You may have skipped the first step. Please ensure you have enabled the Service account.
