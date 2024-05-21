@@ -25,7 +25,7 @@ When the step restarts or begins, all answers will be reset to `Waiting`, and us
 
 ### Prerequisites
 
-There are no required steps that must precede the **Get Approval via Email** step. However, please note that any steps executed before the **Get Approval via Email** step in the Publish flow will not be impacted by the approval process. The approval logic will only affect the steps that follow the **Get Approval via Email** step.
+There are no required steps that must precede the **Get Approval via Email** step. However, please note that any steps executed before the **Get Approval via Email** step in the [Publish flow](/publish-module/publish-flow) will not be impacted by the approval process. The approval logic will only affect the steps that follow the **Get Approval via Email** step.
 
 ### Input Variables
 
@@ -45,6 +45,10 @@ The parameters required for this step to work as expected are listed below:
 If the **Minimum Required Approval Count** cannot be achieved, the step will fail. For example, if the **Minimum Required Approval Count** is set to 3 and there are a total of 3 users, if one of them rejects, the minimum count cannot be met because only 2 users with approval rights remain.
 
 :::
+
+### Output Variables
+
+**Get Approval via Email** step does not produce any output, but the success or failure of the step depends on the approvals or rejections received from the sent emails. This outcome affects the subsequent steps in the [Publish flow](/publish-module/publish-flow).
 
 ---
 
