@@ -13,7 +13,7 @@ tags:
 
 ---
 
-Team management actions, such as Organization or Sub Organization creations, deletions and member additions, can be viewed at Team Activity Log section within the My Organization area.
+You can view team management actions such as creating, deleting, and adding members to Organizations or Sub Organizations in the Team Activity Log section within the My Organization area.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3744-teamactivity.png' />
 
@@ -54,6 +54,6 @@ Team activity logs also include filters to help users perform more precise searc
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3744-teamactivity2.png' />
 
-Another search method is to search by 'Actions'. Simply click the Organization drop-down box and select 'Actions'. From there, you can choose a specific action to refine your search.
+Another method to search is by **Actions**. Simply click the Organization drop-down box, select **Actions**, and then choose a specific action to refine your search.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3744-teamactivity3.png' />
