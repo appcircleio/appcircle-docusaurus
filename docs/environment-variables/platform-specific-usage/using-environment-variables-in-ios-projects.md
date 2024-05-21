@@ -97,7 +97,7 @@ You can create environment variable groups and key/value pairs in these groups. 
 
 Once you update your project with `.xcconfig` files, you can create environment variable groups and include different values of the same environment variable to be used in different stages of your application like development or production.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/env-var-multi-dev.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var9.png' />
 
 To be able to use these variables in your project, we need to replace the values in our `.xcconfig` file using a custom script workflow step. To get more information about creating and using custom scripts, please check the following page:
 

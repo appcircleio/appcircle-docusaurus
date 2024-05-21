@@ -49,11 +49,11 @@ Going forward on our sample above, you may want to use different API endpoints f
 
 To create different values of the same variable, simply create an environment variable group for each branch:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (76).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var2.png' />
 
 Create an environment variable with the same name in each group and set the proper values for each branch.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (80).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var5.png' />
 
 Don’t forget to tell your build configuration to use the proper environment variable group during the build process:
 
