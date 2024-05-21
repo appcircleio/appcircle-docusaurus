@@ -191,9 +191,11 @@ To grant administrative privileges to the user, click the "Change" button and to
 
 For more detailed information, you can check the official [Grafana User Management](https://grafana.com/docs/grafana/latest/administration/user-management/) documentation.
 
-## Disabling the Monitoring Features
+## Disable the Monitoring Services
 
-If you wish to disable monitoring features of the Appcircle server, edit the global.yaml file of your project and set `monitoring.enabled` parameter to `false`.
+The monitoring services have been activated in the default configuration. However, you can disable them when you need to and then re-enable them again.
+
+If you need to disable the monitoring services of the Appcircle server, edit the `global.yaml` file of your project and set the `monitoring.enabled` parameter to `false`.
 
 <DowntimeCaution/>
 
@@ -211,22 +213,34 @@ cd appcircle-server
 vi ./projects/spacetech/global.yaml
 ```
 
-- Add or update the `monitoring.enabled` parameter to `false`.
-
-:::info
-If you can't find the `monitoring` parameter in the `global.yaml` file, you can add it manually at the end of the `global.yaml`.
-:::
+- Add or update the `monitoring.enabled` parameter as below.
 
 ```yaml
 monitoring:
   enabled: false
 ```
 
+:::tip
+If you can't find the `monitoring` parameter in the `global.yaml` file, you can add it manually at the end of the `global.yaml`.
+:::
+
 <RestartAppcircleServer/>
 
-When you run the `check` command, you will see that the logging service is not running:
+When you run the `check` command, you should see that the logging service is not running, as below:
 
 ```text
-Appcircle logging service is not running. 
+Appcircle logging service is not running.
 All services are running successfully. Project name is spacetech
 ```
+
+When you need to re-enable the monitoring services again, you can remove `monitoring` from `global.yaml` or set its value to `true`. After that, you should follow the Appcircle server restart steps above to apply the configuration changes.
+
+:::info
+
+Disabling the Appcircle monitoring services does not disable the Appcircle logging.
+
+You can always access the container logs from container engine (`docker` or `podman`).
+
+The container logs are also sent to the `systemd` journal. So the log entries can be retrieved using the `journalctl` command through the journal API. For more information, see the [`journald` logging driver](https://docs.docker.com/config/containers/logging/journald/) page.
+
+:::
