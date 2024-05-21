@@ -59,3 +59,7 @@ Set up webhooks to notify external systems about events in Appcircle.
 Integrate LDAP for authentication, providing a streamlined login process for distributed applications.
 
 These sections are essential for customizing your Appcircle experience, ensuring that both your personal and organizational workflows are optimized.
+
+### Team Activity Log
+
+Organization owners and users with the Organization Management role can view team management actions, such as creating a new organization or assigning a new role to a member.
