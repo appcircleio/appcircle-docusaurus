@@ -13,7 +13,7 @@ The **Get Approval via Email** step allows you to get approval from the email ad
 
 Based on your business requirements, you can designate certain email addresses to require approval, specify others as optional approvers, or set a minimum number of approvals needed from the provided email addresses.
 
-If some optional users reject, but there is still a chance to achieve the minimum approval count, the step will remain in `Waiting` status, awaiting responses from other users. For instance, if the minimum approval count is set to 3, and there are a total of 10 users with only one required user, even if 7 non-required users reject, there is still a possibility of obtaining approval from the remaining 3 users. However, if 8 non-required users reject, the step will fail, as the minimum requirement of 3 approvals cannot be fulfilled anymore.
+If some optional users reject the request but there is still a chance to achieve the minimum approval count, the step will remain in `Waiting` status, awaiting responses from other users. For instance, if you set the minimum approval count to 3, and out of 10 users, only one is required, the step can still succeed. Even if 7 optional users reject, approval can still be obtained from the remaining 3 users. However, if 8 optional users reject, the step will fail, as it will no longer be possible to meet the minimum requirement of 3 approvals.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email-1.png'/>
 
@@ -21,7 +21,7 @@ If some optional users reject, but there is still a chance to achieve the minimu
 
 Once a user makes a decision, it cannot be changed unless the step is restarted, even if the user sees the "Thank you" page. The step must be restarted to allow the user to make a new decision.
 
-When the step restarts or begins, all answers will be reset to `Waiting`, and users must provide their answers again. Consequently, they will receive approval emails again.
+Upon restarting or initiating the step, it resets all answers to `Waiting`. Users must then provide their answers again and will receive new approval emails.
 
 :::
 
