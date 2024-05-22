@@ -307,13 +307,13 @@ cd "$HOME"
 Download the latest self-hosted runner package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.5.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.6.0.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.5.2.zip
+unzip -o -u appcircle-runner-osx-arm64-1.6.0.zip
 ```
 
 Change directory into extracted `appcircle-runner` folder for following steps.

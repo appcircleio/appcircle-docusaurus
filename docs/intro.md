@@ -32,7 +32,7 @@ Build.<br/>Test.<br/>Distribute.
       </div>
       <div class="intro-card">
             <h3><a href="/publish-module">Send to Testers & Stores</a></h3>
-            <p>Add testers, set up your builds to be auto distributed to them and Apple App Store, Testflight, Google Play, Huawei App Gallery and Firebase.</p>
+            <p>Add testers, set up your builds to be auto distributed to them and Apple App Store, Testflight, Google Play, Huawei AppGallery and Firebase.</p>
       </div>
       <div class="intro-card">
             <h3><a href="/continuous-testing">Running Unit & UI Tests</a></h3>

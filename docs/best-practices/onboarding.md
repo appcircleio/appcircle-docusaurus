@@ -9,19 +9,25 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Appcircle Onboarding
 
-To add your iOS or Android project to Appcircle, you need to complete the following checklist The list is divided into sub-sections.
+To add your iOS or Android project to Appcircle, you must complete the following checklist, divided into sub-sections.
 
 # Prerequisite
 
-Before building the project on Appcircle, it should be checked whether it builds properly on your local computer. Frequently, the developers do not send the changes on their local computer, or their changes may not end up on the repo because of .gitignore file. The following steps should be followed to check that the project can be built without errors. If possible, these steps should be tried in a virtual machine, if not, with a different user or folder.
+Before building the project on Appcircle, ensure it builds properly on your local computer. Developers often do not commit changes, or their changes may not end up in the repo due to the `.gitignore` file. Follow these steps to ensure that the project builds without errors:
 
-- Clone the repo to another folder
-- If it's an iOS project and using Cocoapods or Carthage, run pod install or carthage bootsrap.
+- Clone the repo to another folder.
+- If it's an iOS project using Cocoapods or Carthage, run pod install or carthage bootstrap.
 - Build the project.
 
-If you get any errors, correct them and push them to your repo. Since Appcircle always starts a machine from scratch. Appcircle should have access to all files required to build your project.
+If you encounter any errors, correct them and push the changes to your repo. Appcircle always starts a machine from scratch, so it must have access to all files required to build your project.
 
-If your projects builds without an error, you need to complete the following sections.
+For detailed information on how Appcircle configures its build machines and manages dependencies, refer to our Infrastructure Documentation. This guide will help you understand the environments in which your applications are built, ensuring you have all necessary files and settings in place
+
+<ContentRef url="/infrastructure">
+Infrastructure
+</ContentRef>
+
+Once your project builds without error, complete the following sections:
 
 1. Repository
 2. Dependencies
@@ -33,117 +39,154 @@ If your projects builds without an error, you need to complete the following sec
 
 ## Firewall
 
+- **Internal Networks:** If your repositories are hosted internally, you must configure firewall settings to allow the runners to clone them. This setup is essential to prevent access issues during the build process.
+
 <ContentRef url="/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls/">
 Accessing Repositories in Internal Networks (Firewalls)
 </ContentRef>
 
+- **External Hosts (e.g., GitHub.com):** If your repositories are hosted on external platforms like GitHub, no additional firewall configuration is necessary.
+
 ## Repository Owner
 
-The person who will add the repository to Appcircle must be the owner of the repository. If the owner of the repository has too many repositories, a bot user can be created just for Appcircle so that only the required repositories can be accessed.
+The person adding the repository to Appcircle must own the repository. If the owner has too many repositories, consider creating a bot user specifically for Appcircle to access only the required repositories.
 
 ## Repository Type
 
 ### Cloud
 
-Repo access is achieved for GitHub and GitLab by installing an app to the repository. The user who added the repo must have the required access to add the application
+Access to repositories on GitHub and GitLab is managed by installing an app to the repository. The user who adds the repo must have the necessary access to install the application.
 
 ### Self Hosted
 
-If your repo is Self Hosted with GitLab or Bitbucket, your repo will be added with an Access Token.
+If your repository is Self Hosted with GitLab or Bitbucket, add your repo using an Access Token.
+
+**Azure DevOps**
+
+Azure DevOps requires a Personal Access Token to access the repository. The token must have access to the necessary repositories.
+
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-azure">
+Connecting to Azure DevOps
+</ContentRef>
 
 **GitLab**
 
-You will need to generate Personal Access Token or Project Access Token for GitLab. Personal Access Token allows to access all the repositories of that person. Project Access Token allows to access all the repositories under the specified project.
+Generate a Personal Access Token or Project Access Token for GitLab. A Personal Access Token allows access to all the repositories of that person. A Project Access Token allows access to all the repositories under the specified project.
 
-https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-gitlab/
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab">
+Connecting to GitLab
+</ContentRef>
 
 **Bitbucket**
 
-Bitbucket also allows using repository tokens to access a single repository.
+Bitbucket also supports using repository tokens to access a single repository.
+
 Personal Access Token allows to access all the repositories of that person. Project Access Token allows to access all the repositories under the specified project.
 
-https://docs.appcircle.io/build/adding-a-build-profile/connecting-to-bitbucket
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket">
+Connecting to Bitbucket
+</ContentRef>
 
-Appcircle needs admin permission to function properly. The admin permission is needed to create relevant WebHooks automatically.
+Appcircle requires admin permission to function properly, which is necessary to create relevant WebHooks automatically.
 
-**NOTE:**
+:::note
 
-If the dependencies used by the repo are in a different project or that person does not have access to that repo, the project will throw an error while building. So the added token must have access to all the dependencies needed to build the project.
+If dependencies used by the repo are in a different project or inaccessible to the person, the build will throw an error. Therefore, the added token must have access to all necessary dependencies.
+
+:::
 
 ## Dependencies
 
-If the extra libraries you use are in a private repo, these repositories must be accessible with the tokens we mentioned above. If this is not possible, these libraries should be accessed in one of the following ways.
+If you use libraries in a private repo, these must be accessible with the tokens mentioned above. If this is not possible, access these libraries using one of the following methods:
 
 - SSH Private Key
 - .netrc file
 
 ### SSH Private Key
 
-You will need to create a new SSH key and upload the public key to your Repo and the private key to Appcircle. These files can be created easily by following the document below.
+Create a new SSH key, upload the public key to your Repo, and the private key to Appcircle. Follow the steps in this guide.
 
-https://docs.appcircle.io/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh
+<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">
+Connecting to Private Repository via SSH
+</ContentRef>
 
 ### Netrc File
 
-The .netrc file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file
+The .netrc file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file.\
 
-https://docs.appcircle.io/workflows/common-workflow-steps/#authenticate-with-netrc
+<ContentRef url="/workflows/common-workflow-steps/authenticate-with-netrc">
+Authenticate with .netrc
+</ContentRef>
 
 ## Signing
 
-To upload artifacts to the App Store or GooglePlay, the files must be signed. The files listed below must be uploaded to Appcircle's Signing Module
+To upload artifacts to the App Store or GooglePlay, the files must be signed. Upload the following files to Appcircle's Signing Module:
 
 ### iOS
 
-There are 2 types of signing for iOS, Manual and Automatic.
+There are two types of signing for iOS, Manual and Automatic.
 
 Manual Signing requires you to upload the provisioning profile for each bundle id. For Automatic code signing, only 2 certificates and App Store Connect Key must be added.
 
-**Manual Sign**
+**Manual Signing:**
 
-- Distribution Certificate. The certificate must be uploaded as .p12 file. It would be better to create a distribution certificate from scratch for Appcircle.
-- Provisioning profiles created with the above certificates. After uploading the Provisioning profile files, a green checkmark image will appear next to the entry. If it does not appear, you may need to refresh the page. If the error persists, it means that the certificate file is missing on Appcircle.
+- Upload the Distribution Certificate as a `.p12` file. It is better to create a new distribution certificate specifically for Appcircle.
+- Upload Provisioning profiles created with the above certificates. A green checkmark will appear next to the entry if successful. If not, refresh the page or check for missing certificate files.
 
 **Automatic Sign**
 
-Automatic signing can be used for projects that can be built with Xcode 13 and later. This requires the following
+Automatic signing works with Xcode 13 and later. It requires:
 
-- 1 Distribution Certificate
-- 1 Development Certificate
+- One Distribution Certificate
+- One Development Certificate
 - App Store Connect API Key
 
-When the above credentials are provided, Xcode automatically creates provisioning profiles and signs the application. It is important to add both development and distribution certificates. If you do not provide the required certificates, Xcode will constantly create new certificates in your account.
+Provide both development and distribution certificates to prevent Xcode from continuously creating new certificates in your account.
 
 ### Android
 
-The only thing that needs to be installed for Android is the keystore file you used to sign the project. Simply uploading this file will often not be sufficient for signing. You will also need to make changes to the build.gradle file and sign it with the keystore installed on the Appcircle environment. Please check the following document for this process.
+For Android, upload the keystore file used to sign the project. Simply uploading this file may not suffice for signing; adjustments to the `build.gradle` file might also be necessary. Consult this document for further guidance.
 
-https://docs.appcircle.io/build/building-android-applications/android-signing-for-google-play/#enable-v2-sign-through-the-android-project-buildgradle
+<ContentRef url="/build/platform-build-guides/building-android-applications/android-signing-for-google-play#enable-v2-sign-through-the-android-project-buildgradle">
+Android Signing for Google Play
+</ContentRef>
 
 ## Integrations
 
-App Store, Google Play, or Huawei App Gallery keys must be added to Appcircle to upload IPA or APK files. To create these files, the following documents can be followed.
+Add App Store, Google Play, or Huawei AppGallery keys to Appcircle to upload IPA or APK-AAB files. Follow these guides for detailed instructions:
 
-https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-googleplay
+<ContentRef url="/publish-integrations/ios-publish-integrations/send-to-app-store">
+Send to App Store
+</ContentRef>
 
-https://docs.appcircle.io/publish-integrations/ios-publish-integrations/send-to-app-store
+<ContentRef url="/publish-integrations/android-publish-integrations/send-to-googleplay">
+Send to Google Play
+</ContentRef>
 
-https://docs.appcircle.io/publish-integrations/android-publish-integrations/send-to-huawei
+<ContentRef url="/publish-integrations/android-publish-integrations/send-to-huawei">
+Send to Huawei
+</ContentRef>
 
 ## Extra suggestions
 
 **General**
 
-- It will be better to manage confidential or constantly changing information with Environment Variables. This will allow you to get different outputs by selecting different variable groups without changing your code.
+- Manage confidential or frequently changing information with Environment Variables to achieve different outputs by selecting different variable groups without altering your code.
 
-https://docs.appcircle.io/environment-variables/managing-variables/#creating-environment-variable-groups
+<ContentRef url="/environment-variables/managing-variables#creating-environment-variable-groups">
+Creating Environment Variable Groups
+</ContentRef>
 
-https://docs.appcircle.io/environment-variables/using-environment-variables-in-ios-projects/#using-different-values-for-different-stages
+<ContentRef url="/environment-variables/platform-specific-usage/using-environment-variables-in-ios-projects#using-different-values-for-different-stages">
+Using Different Values for Different Stages
+</ContentRef>
 
-https://docs.appcircle.io/environment-variables/using-environment-variables-in-android-projects
+<ContentRef url="/environment-variables/platform-specific-usage/using-environment-variables-in-android-projects">
+Using Environment Variables in Android Projects
+</ContentRef>
 
-- It is important that the versions you use for React Native and Flutter are written on the config screen. If you don't set a version, it will be built with the latest version.
-- If you are using React Native, you can turn off Flipper with the following change in the Podfile. This will shorten your build times.
+- Specify versions for React Native and Flutter on the config screen to avoid building with the latest version by default.
+- Disable Flipper in React Native to shorten build times by modifying the Podfile as follows:
 
 ```
 if !ENV['AC_APPCIRCLE']
@@ -156,11 +199,21 @@ if !ENV['AC_APPCIRCLE']
 
 **iOS**
 
-- If you are using CocoaPods, SwiftPM or Carthage, you need to commit Podfile.lock Package.resolved and Cartfile.resolved files. When these files are not available, the wrong versions may be installed.
-- You should not make any local changes to your pods. If you are going to make a change, you must fork the original pod and make the changes in that fork. Appcircle must have the access to the same code as you have on your local machine.
+- If you are using CocoaPods, SwiftPM or Carthage, you need to commit `Podfile.lock` `Package.resolved` and `Cartfile.resolved` files. When these files are not available, the wrong versions may be installed.
+- Avoid making local changes to your pods. If necessary, fork the original pod and make changes in that fork. Appcircle must have access to the same code as your local machine.
 
 **Android**
 
-- Don't forget to add your gradle folder to your repo. Appcircle uses ./gradlew command to build your poject. Therefore, if that file does not exist, the build will fail
-- You may experience Gradle build errors if your project uses Bintray resources. Since JFrog has shutdowned Bintray on May 1, 2021. You should update your `build.gradle` file and move it to Maven Central. Replace `jcenter()` with `mavenCentral()` in all your `build.gradle` files. Please be aware that some of your dependencies may not exist on Maven.
-- If you are using jitpack in your project, it will be useful to upload these dependencies to `mavenCentral()`. It is recommended to create your Maven repo to host your dependencies. Jitpack has reliability issues and you may not experience those issues on your local computer since your builds use cache. However, Appcircle will download your dependencies each time you start a build and Jitpack may create a problem in the long run.
+- Include your Gradle folder in your repo. Appcircle uses the `./gradlew` command to build your project. If this file is missing, the build will fail.
+- Update your build.gradle file to replace `jcenter()` with `mavenCentral()` if your project uses Bintray resources, as JFrog shut down Bintray on May 1, 2021. Some dependencies may not be available on Maven.
+- Consider uploading dependencies used from jitpack to `mavenCentral()`. Jitpack has reliability issues, and while your local builds may use cached versions, Appcircle downloads your dependencies for each build, which can lead to problems.\
+
+import NeedHelp from '@site/docs/\_need-help.mdx';
+
+<NeedHelp />
+
+Need more help? Check out our FAQ section:
+
+<ContentRef url="/troubleshooting-faq">
+FAQ
+</ContentRef>

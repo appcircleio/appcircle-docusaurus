@@ -14,16 +14,22 @@ You can find the full list of available workflow steps in our [workflow marketpl
 
 Release a React Native update to [App Center](https://appcenter.ms/) CodePush. You need enter your token, owner, app name to distribute your updates.
 
-[https://github.com/appcircleio/appcenter-codepush-component](https://github.com/appcircleio/appcenter-codepush-component)
+<ContentRef url="/workflows/react-native-specific-workflow-steps/app-center-code-push">
+    App Center CodePush
+</ContentRef>
 
 ## Install Node
 
 React Native applications commonly depend on certain Node modules. This workflow step makes sure that you have the required Node version installed in the build agent to build your React Native application.
 
-[https://github.com/appcircleio/appcircle-node-install-component](https://github.com/appcircleio/appcircle-node-install-component)
+<ContentRef url="/workflows/react-native-specific-workflow-steps/node-install">
+    Install Node
+</ContentRef>
 
 ## npm/Yarn Commands
 
 You may want to use npm or Yarn package manager to install specific dependencies for your React Native applications. The package manager commands you enter are executed in this workflow step.
 
-[https://github.com/appcircleio/appcircle-npm-yarn-component](https://github.com/appcircleio/appcircle-npm-yarn-component)
+<ContentRef url="/workflows/react-native-specific-workflow-steps/npm-yarn-commands">
+    npm/Yarn Commands
+</ContentRef>

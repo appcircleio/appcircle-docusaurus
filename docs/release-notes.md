@@ -7,10 +7,102 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import SelfHostedBadge from '@site/src/components/SelfHostedBadge';
-import CloudBadge from '@site/src/components/CloudBadge';
+
+<!-- Note to contributors: You can use the following badges to indicate the availability of the feature for modules.-->
+
+<!-- <BuildBadge/> <APICLIBadge/> <BuildIntegrationsBadge/> <ContinuousTestingBadge/> <EnvironmentVariablesBadge/> <VersioningBadge/> <AccountBadge/> <BestPracticesBadge/> <DistributionBadge/>
+<IntegrationsBadge/> <EnterpriseStoreBadge/> <FaqBadge/> <InfrastructureBadge/> <PublishBadge/> <ReportsBadge/> <SigningIdentitiesBadge/> <SelfHostedBadge/> <PublishIntegrationsBadge/> -->
 
 # Latest Release Notes
+
+## 3.17.0 - 2024-05-17 - LDAP Mapping Improvements, Publish Module Bug Fixes, and more
+
+### 🆕 New Features
+
+- Users can now automate [Group](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#managing-ldap-groups-and-mappings) and [Role](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#ldap-role-mapping) Management using LDAP Authentication for Appcircle Login in Self-Hosted environments. <SelfHostedBadge/>
+- We have introduced the [Team Activity Log](https://docs.appcircle.io/account/my-organization/team-activity-log) feature within the Organization settings. This feature enables users to monitor team management actions within their organization if they are the organization owner or have the Organization Management role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server now has a new configuration at `global.yaml` that helps you [enable or disable](https://docs.appcircle.io/self-hosted-appcircle/configure-server/monitoring#disable-the-monitoring-services) the log monitoring feature on demand. <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The "Get Approval via Email" component now allows you to view the statuses of all users in its logs. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have added an activity log for updates to Release Notes on the [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) page within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Self-hosted users can now choose to hide the Change Password option in the account settings page by disabling the Forgot Password option in Self-Hosted Settings. <AccountBadge/> <SelfHostedBadge/>
+- We have added the ability for Jira Enterprise users to choose the API version.The [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) workflow step now supports both Jira Cloud and On-Prem use cases for both Jira API v2 and v3, which makes the integration more flexible. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have updated the documentation links on the workflow steps to enable users to access the most current and detailed documents for integration purposes. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- Performance improvements have been made on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries). <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- If the **Auto-Register** feature is disabled on the [Testing Distribution Profile](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile), the **Register Device** button will now be hidden on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries). Additionally, various typos and UI issues on the [Testing Distribution Portal](https://docs.appcircle.io/distribute/testing-management/downloading-binaries) have been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Deleting a [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) app version is now prevented; users must unmark it from being a [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) before deletion. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Release Notes can now only be changed for [Release Candidate](https://docs.appcircle.io/publish-module/publish-information/marking-release-candidates) app versions. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue requiring a refresh for event-based logs in the Get Approval via Email component. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug was fixed where deleting an app version that leaves no app versions in the Publish Profile, resulted in incorrect information being displayed in the header. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where a refresh was causing a problem in the Publish Flow log panel. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug was fixed where test submissions with missing compliance did not display a warning message about resolving the compliance issue before test submission to internal or external groups. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug on UI where an app version name was cut short due to Release Candidate badge , also affected the other app version names within Publish Profile. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where, during the resigning of an .IPA binary, the sign button was enabled despite no Provision Profile being selected. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue regarding the positioning of the Provisioning Profile and Read-Only Bundle ID options within Resign Binary feature has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The broken Jira transitions that the [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) step is making are now fixed so that you can update the status of Jira issues in the build pipeline. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Android apps with special characters in their names now proceed without errors during signing and other steps. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug fix has been applied to the auto distribution and publish features to address issues with non-existing Testing Distribution and Publish Profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed the incorrect versioning of the [Gradle Runner](https://docs.appcircle.io/workflows/android-specific-workflow-steps/gradle-runner) step, which was breaking current workflows because of incompatible changes. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Testinium](https://docs.appcircle.io/workflows/common-workflow-steps/testinium) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Maestro Cloud Upload](https://docs.appcircle.io/workflows/common-workflow-steps/maestro-cloud-upload) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that caused the [no-proxy](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration#edit-no_proxy-for-internal-container-network) helper tool to throw an error when the CIDR notation was used in the `no_proxy` environment variable. <SelfHostedBadge/>
+- Fixed a bug that prevented the self-hosted Appcircle server logging service from being healthy when a proxy is used for network access. <SelfHostedBadge/>
+- Fixed a bug that causes the wrong self-hosted server package to [download](https://docs.appcircle.io/self-hosted-appcircle/update#1-download-latest) when a specific version is preferred instead of the latest. <SelfHostedBadge/>
+
+## 3.16.0 - 2024-05-10 - New features in Publish Module, Resigning Binary, Xcode 15.4, and more
+
+### 🆕 New Features
+
+- The [Resign Binary](/publish-module/publish-information/resign-binary) feature is now available for both iOS and Android applications within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users can now upload application screenshots and update [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) within the Publish module, including promotional text and descriptions, via Appcircle, without the need for the App Store Connect interface. <CloudBadge/> <SelfHostedBadge/> <PublishBadge/>
+<!-- - LDAP Mapping is now supported in Appcircle, allowing seamless synchronization of user groups and roles from your LDAP directory to your Appcircle environment. This integration streamlines user management and enhances security by aligning your Appcircle roles with your organizational structures. For a detailed setup guide, visit our [LDAP Mapping documentation](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#ldap-mapping) -->
+- Within the Publish profile card, App Store Status will be displayed for Enterprise users, while Flow Status will be observed for non-enterprise users. Similarly, in the app version view, Enterprise users will have access to both Flow and App Store Status, whereas non-Enterprise users will only see Flow Status displayed. <CloudBadge/> <SelfHostedBadge/> <PublishBadge/>
+- A new component named "Update Metadata on App Store" has been integrated to the Publish Steps section, facilitating the display of metadata information. <CloudBadge/> <SelfHostedBadge/> <PublishIntegrationsBadge/>
+- On the Metadata Information page, metadata for profiles designated as Release Candidates is retrieved directly from the store. For more information, refer to the [Metadata Information](/publish-module/publish-information/meta-data-information) documentation. <CloudBadge/> <SelfHostedBadge/> <PublishBadge/>
+- Users uploading .AAB files can now share the app version with testers within the [Distribution](https://docs.appcircle.io/distribute) module. <CloudBadge/> <SelfHostedBadge/> <DistributionBadge/>
+- The install certificate tool bundled in the runner package now supports proxies when connecting to remote URLs on macOS. <SelfHostedBadge/>
+- The [Signing Identities](/signing-identities) module features are now accessible via the command-line interface. Learn more. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <SigningIdentitiesBadge/>
+- You can now manage [Testing Groups](/distribute/testing-management/testing-groups) within the [Distribution](/distribute) module via the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
+- Users can configure [Distribution](/distribute) settings to [automatically send builds to testers](/distribute/create-or-select-a-distribution-profile#auto-send-your-build-to-the-testers) using the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
+- The "Default M1 pool" and "macOS VM image" now include [Xcode 15.4](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release candidate. <CloudBadge/> <SelfHostedBadge/>
+- This release introduces [a log viewing and delivery system](https://docs.appcircle.io/self-hosted-appcircle/configure-server/monitoring) for the self-hosted Appcircle server. <SelfHostedBadge/>
+- Self-hosted customers can now [download](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server package seamlessly and [update](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server fully automated. <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- Users now have the capability to download comprehensive data associated with the app version, encompassing publish logs, metadata, screenshots, and build logs. <CloudBadge/> <SelfHostedBadge/>
+- Users can now prepare and transmit screenshots and metadata to the App Store through the newly integrated metadata component. <CloudBadge/> <SelfHostedBadge/>
+- Users can now seamlessly import metadata and screenshots from App Store Connect to establish the initial state on the Update Metadata screen. <CloudBadge/> <SelfHostedBadge/>
+- The Appcircle runner package now includes a diagnostic tool that helps to identify, analyze, and troubleshoot system issues. <SelfHostedBadge/>
+- Self-hosted Appcircle clients can now [download and extract](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-the-macos-vm-and-xcode-images-automatically) the runner macOS VM in the background more robustly, particularly in cases of network connection faults. <SelfHostedBadge/>
+- The install certificate tool included in the runner package, which trusts CA certificates, now extends support to Java 8, 17, and 21. <SelfHostedBadge/>
+- We have added an App Store Status field within Publish Profiles and App Versions lists, providing regular updates at 30-minute intervals. For further details, please refer to the [App Store Status](/publish-module/binary-management#store-status) documentation. <CloudBadge/> <SelfHostedBadge/>
+
+:::caution
+
+To ensure the App Store status remains current, the following conditions must be met:
+
+- The current profile necessitates valid store credentials defined within the Signing Identity module and must be selected.
+- Alignment of the published app's identifier, version, and build number with the Appcircle app version records is essential.
+- Identification of one of the app version records as the designated release candidate is required.
+- The service will continue updating the app status until it reaches the 'READY_TO_SALE' or 'READY_TO_DISTRIBUTE' states.
+- Initially, the service checks the App Store status; in the event of no matching records, it subsequently conducts a search within TestFlight.
+
+:::
+
+### 🐞 Fixes
+
+- The self-hosted runner macOS installation now detects Homebrew anomalies that can occur after macOS upgrades and reinstalls Homebrew with package upgrades. <SelfHostedBadge/>
+- Fixed various bugs that occurred during the installation of the self-hosted runner on GNU/Linux. <SelfHostedBadge/>
+- Made improvements and fixed various bugs in the install certificate tool bundled in the runner package. <SelfHostedBadge/>
+- Fixed a bug in the self-hosted version that prevented listing the Xcode version for the selected pool. <SelfHostedBadge/>
+- Fixed a bug that caused errors during the parsing of large AAB files. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that caused the last build time within the build profile appearing as null when a user deleted old builds. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.15.0 - 2024-04-24 - AAB to APK, Improved Testing Distribution, Publish Event Enhancement
 
@@ -22,7 +114,6 @@ import CloudBadge from '@site/src/components/CloudBadge';
 - A new command, ["build active-list"](https://docs.appcircle.io/appcircle-api/) has been added, allowing users to view active builds in the queue directly from their command line interface. <CloudBadge/> <SelfHostedBadge/>
 - A new command, ["build view"](https://docs.appcircle.io/appcircle-api/) has been added, enabling users to access and view detailed information about builds directly from the command line interface. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 pool" now includes [Xcode 15.4 beta-1](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. As this is a beta release, we strongly recommend testing your workflows extensively to ensure compatibility and stability. <CloudBadge/> <SelfHostedBadge/>
-
 
 ### :muscle: Improvements
 
@@ -440,7 +531,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed an issue where the user could not create a [sub-organization](/account/my-organization) even though they had the required permission. <CloudBadge/> <SelfHostedBadge/>
 - Fixed issue with file permissions when exporting a project for self-hosted uses. <SelfHostedBadge/>
 - Fixed the problem of adding the same name while uploading the [configuration](/build/manage-the-connections/adding-a-build-profile). <CloudBadge/> <SelfHostedBadge/>
-- The permissions of the applications in the Huawei App Gallery that depend on the permission to view the applications in the store submit section has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The permissions of the applications in the Huawei AppGallery that depend on the permission to view the applications in the store submit section has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The problem that the save button is not active after the changes made in the organization pool has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a double slash (`//`) bug on the webhook link that caused the triggers to not work. <CloudBadge/> <SelfHostedBadge/>
 - The error that the change indicator appears even though there is no change in some tabs in the config modal has been fixed. <CloudBadge/> <SelfHostedBadge/>
@@ -639,7 +730,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🆕 New Feature
 
 - [LDAP Login](/enterprise-appstore/enterprise-app-store-setup/customize-ent-store#ldap-login) added to Enterprise App Store.
-- [Jira](/workflows/common-workflow-steps/jira-component) component added.
+- [Jira](/workflows/common-workflow-steps/jira-comment) component added.
 - [Microsoft Teams](/account/my-organization/notifications-and-communication/teams-notifications) integration added.
 - [Gradle Runner](/workflows/android-specific-workflow-steps/#gradle-runner) component added.
 - [Maestro Cloud Upload](/workflows/common-workflow-steps/#maestro-cloud-upload) component added.
@@ -658,7 +749,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🆕 New Feature
 
 - [Apple Devices](/distribute/platform-specific-guidance/ios/apple-devices) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
-- [Firebase Deployment ](/workflows/common-workflow-steps/#firebase-deployment) component added.
+- [Firebase Deployment ]/workflows/flutter-specific-workflow-steps/firebase-deployment) component added.
 
 ### :muscle: Improvement
 
@@ -710,7 +801,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🆕 New Feature
 
 - [Testinium](/workflows/common-workflow-steps/#testinium) component added. This component allows you to run your test plans on [Testinium](https://testinium.com)
-- [Firebase dSYM Upload](/workflows/common-workflow-steps/#firebase-upload-dsym) component added. You may use this component to upload Debug Symbols to Firebase.
+- [Firebase dSYM Upload](/workflows/ios-specific-workflow-steps/firebase-upload-dsym) component added. You may use this component to upload Debug Symbols to Firebase.
 
 ### :muscle: Improvement
 
@@ -904,7 +995,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 🆕 New Feature
 
-- Huawei App Gallery support added. You can submit your apk or aab files to Huawei AppGallery.
+- Huawei AppGallery support added. You can submit your apk or aab files to Huawei AppGallery.
 - Java 11 added to iOS agents
 - [Slather](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#slather),[Tuist](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#tuist) and Badge components added
 - You can now see all your running builds from the status bar and cancel them.
@@ -927,8 +1018,8 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 📑 Documentation
 
-- Added Huawei App Gallery section for sending your apps to Huawei App Gallery.
-- Added [Huawei App Gallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei App Gallery API Key.
+- Added Huawei AppGallery section for sending your apps to Huawei AppGallery.
+- Added [Huawei AppGallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei AppGallery API Key.
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#provisioning-profile-error) for Provisioning Profiles.
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#missing-entitlements) for Missing Entitlements​

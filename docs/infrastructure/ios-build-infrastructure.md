@@ -41,6 +41,31 @@ Our macOS build agents have Xcode versions 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.
 Xcode `14.3.x` or higher Xcode versions require a Mac running macOS Ventura 13.0 or later.
 :::
 
+The "Default M1 Pool" macOS **Sonoma** (`14.1`) stack has the Xcode versions below:
+
+| Version | Build |
+| ------- | ----- |
+| 15.4 | `15F31d` |
+| 15.3 | `15E204a` |
+| 15.2 | `15C500b` |
+| 15.1 | `15C65` |
+| 15.0.1 | `15A507` |
+| 14.3.1 | `14E300c` |
+
+The "Default M1 Pool" macOS **Monterey** (`12.5.1`) stack has the Xcode versions below:
+
+| Version | Build |
+| ------- | ----- |
+| 14.2 | `14C18` |
+| 14.1 | `14B47b` |
+| 14.0.1 | `14A400` |
+| 13.4 | `13F17a` |
+| 13.3 | `13E113` |
+| 13.2.1 | `13C100` |
+| 13.1 | `13A1030d` |
+| 13.0 | `13A233` |
+| 12.5.1 | `12E507` |
+
 ## iOS Build Agent Stacks
 
 There are many pre-installed packages on virtual machines. You can get a full list of pre-installed packages by running Bash commands in "custom script" steps.

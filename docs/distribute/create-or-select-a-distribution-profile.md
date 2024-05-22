@@ -38,7 +38,6 @@ The first section allows you to share the deployed binaries automatically with t
 
 Your application will be sent to the related testing groups as soon as your build is complete, or when a package is manually uploaded or deployed via CLI.
 
-
 ### Using authentication for distribution
 
 Under the Authentication tab in the settings, you can select a preferred authentication method for sharing your application.
@@ -61,11 +60,11 @@ You may enable this option to automatically register devices in the Apple Develo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ios-device-registration.png' />
 
-### Using public link for distribution
+### Using Public Link for Distribution
 
-You may also enable public link for your distribution. If you enable public distribution, anyone who has the link can access all artifacts of the distribution profile.
+You may enable a public link for your distribution. This allows anyone who has the link to access all artifacts of the distribution profile. Additionally, users can now conveniently scan a QR code to retrieve the public link directly. This simplifies the process of accessing and sharing the distribution link, making it more accessible for users on mobile devices or others who prefer quick scanning.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (155).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3160-testing-distribution-public-link.png' />
 
 ### Manually upload your version
 
@@ -89,7 +88,19 @@ With a successful build, a new version of your application will be added to your
 
 Simply go to _Build Module_ _>_ _Build Configuration_ _>_ _Distribution_ and select a distribution profile you want your build to be sent.
 
-:::info
+:::tip
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3167-buildoutput.png' />
+
+Users have the capability to select their Android build output as .AAB (Android App Bundle) from configuration settings within their Build profile.
+
+When the `.AAB` build is sent to the designated Testing Distribution profile, either automatically or manually by uploading the file directly within the Testing Distribution profile, it will be automatically converted to `.APK` format when shared with a Testing Group. This ensures that the receiving tester downloads the shared artifact in `.APK` format.
+
+This conversion capability also applies when sending app versions from a Testing Distribution profile to an [Enterprise App Store](/enterprise-appstore) profile. The shared `.AAB` artifact will be downloaded in `.APK` format from the Enterprise App Store profile.
+
+:::
+
+:::caution
 
 Only signed builds will be distributed. Unsigned builds cannot be distributed.
 
@@ -121,6 +132,25 @@ If you also want to download or see the output, you can check through the follow
 :::info
 
 If your Git commit has any messages, they will be included in the distribution in Message To Testers area.
+
+:::
+
+### Send your application to Publish
+
+You can send your application from your Testing Distribution profile to a designated Publish profile by following these steps:
+
+- Click the three dots next to your application
+- Click **Send to Publish**
+- Choose your Publish profile from the list.
+- Click **Send**
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3110-sendpublish.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3110-sendpublish2.png" />
+
+:::caution
+
+You must have already created the designated Publish profile within the Publish Module, and it should correspond to the operating system of your application (Android or iOS) listed in your Testing Distribution Profile.
 
 :::
 

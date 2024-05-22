@@ -104,15 +104,31 @@ Your data before the migration will be untouched and safe. So you can add some m
 
 Download the latest self-hosted Appcircle package.
 
+To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package.
+
+:::info
+Without the `cred.json` file, you will not be able to access the licensed Appcircle Server package.
+
+If you have not yet obtained the `cred.json` file, please contact us for assistance.
+:::
+
+Download the latest self-hosted Appcircle package.
+
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/appcircle/appcircle-server-linux-x64-3.15.0.zip
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | bash
 ```
 
 Extract self-hosted Appcircle package into folder.
 
 ```bash
-unzip -o -u appcircle-server-linux-x64-3.15.0.zip -d appcircle-server
+unzip -o -u appcircle-server-linux-x64-${version}-${build}.zip -d appcircle-server
 ```
+
+:::info
+
+You should use the downloaded `zip` archive while extracting so that the actual `${version}` and `${build}` will come from there. You can find the relevant data in the previously executed download command output.
+
+:::
 
 Change directory into extracted `appcircle-server` folder for following steps.
 
@@ -204,7 +220,7 @@ You can access and review the comprehensive migration logs from this file for fu
 :::caution
 If you are using a proxy on the Appcircle server, then you should update the `no_proxy` variables.
 
-Please follow the [No Proxy for Internal Container Network](/docs/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new SNSD MinIO service.
+Please follow the [No Proxy for Internal Container Network](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new SNSD MinIO service.
 :::
 
   </TabItem>

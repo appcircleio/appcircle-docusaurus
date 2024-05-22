@@ -1,7 +1,21 @@
 ---
 title: LDAP Settings
 description: Learn how to configure LDAP settings in Appcircle
-tags: [ldap, ldap settings, ldap configuration, ldap login, ldap user lookup decision strategy, ldap user lookup, ldap authentication, ldap auth, ldap user auth, ldap user authentication, ldap user lookup decision, ldap user lookup decision strategy]
+tags:
+  [
+    ldap,
+    ldap settings,
+    ldap configuration,
+    ldap login,
+    ldap user lookup decision strategy,
+    ldap user lookup,
+    ldap authentication,
+    ldap auth,
+    ldap user auth,
+    ldap user authentication,
+    ldap user lookup decision,
+    ldap user lookup decision strategy,
+  ]
 sidebar_position: 9
 ---
 
@@ -222,6 +236,64 @@ If a user is logged in to Appcircle with an LDAP configuration and that LDAP con
 
 This user is also removed from the organization in Appcircle.
 :::
+
+## LDAP Mapping
+
+LDAP Mapping in Appcircle allows you to synchronize user groups and roles from your LDAP directory to your Appcircle environment seamlessly. This guide provides a step-by-step approach to setting up and managing LDAP mappings, ensuring your user and role integrations are as efficient as possible.
+
+### Accessing LDAP Settings
+
+To configure LDAP Mapping, follow these steps:
+
+1. Navigate to the **Admin** section on your dashboard.
+2. Select **Self-Hosted Settings** and click on **LDAP Login** to access the LDAP configuration options.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3671-ldap-mapping-guide.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3671-ldap-mapping-menu.png' />
+
+### Configuring LDAP Mapping
+
+#### Setting Up LDAP Configuration
+
+- **Select LDAP Configuration**: Begin by selecting your LDAP configuration from the dropdown menu. This is where you define and select the LDAP source to be used for mapping.
+- **LDAP Groups and Appcircle Organizations**: Choose an LDAP group and the corresponding Appcircle organization you want to synchronize.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3671-ldap-mapping-info.png' />
+
+#### Associating LDAP Groups with Appcircle Organizations
+
+- **Mapping LDAP Groups**: After selecting the LDAP group, map it to an Appcircle organization by clicking **Add**. This establishes a link where users from the LDAP group are automatically mapped to the corresponding organization in Appcircle.
+
+### Managing LDAP Groups and Mappings
+
+- **View Configurations**: All active LDAP mappings can be viewed under the LDAP Mapping section. You can modify or delete each mapping as needed by using the **Config** option.
+
+### LDAP Role Mapping
+
+LDAP Role Mapping allows you to assign specific roles to users based on their LDAP group memberships. This feature streamlines user management by automatically assigning roles to users based on their LDAP role associations.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3671-ldap-mapping-config.png' />
+
+#### Configuring Role Mappings
+
+- Navigate to the **LDAP Role Mapping** section where you can assign specific Appcircle roles based on the LDAP roles assigned to users.
+- **Add a New Role**: Select a role from the available LDAP roles and assign it to users within the specified Appcircle organization. Roles such as administrator, developer, or custom group roles can be mapped accordingly.
+
+#### Role and Permissions Management
+
+- Each role can have varied permissions across different modules such as Build, Deploy, and Admin settings. Configure these permissions to ensure users have appropriate access levels based on their role.
+
+### LDAP Synchronization
+
+#### Enabling and Managing Synchronization
+
+- **Activate Synchronization**: Toggle the LDAP Synchronization option to enable automatic syncing between LDAP and Appcircle.
+- **Manual Sync and Interval Settings**: Use the **Sync Now** button to manually trigger a sync or set a synchronization interval to automate the process at regular intervals.
+
+### Conclusion
+
+Setting up LDAP Mapping streamlines user management by automating the synchronization of user roles and groups from LDAP into Appcircle. This guide should assist you in effectively managing user access and roles within your organization, ensuring security and efficiency in your app development processes.
 
 ## Troubleshooting
 

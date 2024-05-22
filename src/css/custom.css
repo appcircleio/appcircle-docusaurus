@@ -144,22 +144,23 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 .content-ref-card {
-  padding: 16px 24px;
   position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: left;
   align-items: center;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  margin-bottom: 36px;
-  vertical-align: middle;
-  font-weight: 700;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
+  padding: 16px 24px;
+  margin: 10px 0;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--ifm-color-primary-dark);
 }
 
 .content-ref-card:hover {
   text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .content-ref-card::after {
@@ -171,7 +172,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   width: 100%;
   height: 100%;
   opacity: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: opacity 0.3s ease-in-out;
 }
@@ -184,6 +185,32 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   max-width: 48px;
   margin-right: 16px;
 }
+
+.content-ref-card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ifm-color-primary-dark);
+}
+
+.content-ref-card .file-icon svg path {
+  fill: var(--ifm-color-primary);
+}
+
+html[data-theme="dark"] .content-ref-card {
+  background-color: #2b2b2b;
+  border: 1px solid #555555;
+  color: var(--ifm-color-primary-lightest);
+}
+
+html[data-theme="dark"] .content-ref-card:hover::after {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .content-ref-card p {
+  color: var(--ifm-color-primary-lightest);
+}
+
 
 .image-narrow {
   max-width: 70%;
@@ -961,3 +988,61 @@ img {
   margin: 0 8px 0 0; /* Adjust margin to align properly, values here are just an example */
 }
 
+.module-badge {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-family: var(--ifm-font-family-base);
+  font-weight: 700;
+  border: 0.5px solid #e0e0e0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.1em; 
+}
+
+.module-badge svg {
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+}
+
+html[data-theme="dark"] .module-badge {
+  border: 1px solid #2b2b2b;  
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);  
+  background: linear-gradient(145deg, #333333, #1f1f1f); 
+  color: #e0e0e0; 
+}
+
+.module-badge svg > path {
+  fill: var(--ifm-color-primary);
+}
+
+/* Cloud Badge Styles */
+.module-badge-cloud {
+  background: linear-gradient(145deg, #f0f8ff, #d1e7ff);
+  border: 0.5px solid #d1e7ff;
+  color: #007bb5;
+}
+
+/* Dark theme for Cloud Badge */
+html[data-theme="dark"] .module-badge-cloud {
+  border: 1px solid #005a85;
+  background: linear-gradient(145deg, #00263e, #001f31);
+  color: #99d3ff;
+}
+
+/* Self-Hosted Badge Styles */
+.module-badge-self-hosted {
+  background: linear-gradient(145deg, #fff7e6, #ffe6b3);
+  border: 0.5px solid #ffe6b3;
+  color: #bf7200;
+}
+
+/* Dark theme for Self-Hosted Badge */
+html[data-theme="dark"] .module-badge-self-hosted {
+  border: 1px solid #805000;
+  background: linear-gradient(145deg, #402800, #2b1a00);
+  color: #ffd27f;
+}
