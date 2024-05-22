@@ -153,7 +153,7 @@ Android Signing for Google Play
 
 ## Integrations
 
-Add App Store, Google Play, or Huawei App Gallery keys to Appcircle to upload IPA or APK-AAB files. Follow these guides for detailed instructions:
+Add App Store, Google Play, or Huawei AppGallery keys to Appcircle to upload IPA or APK-AAB files. Follow these guides for detailed instructions:
 
 <ContentRef url="/publish-integrations/ios-publish-integrations/send-to-app-store">
 Send to App Store
