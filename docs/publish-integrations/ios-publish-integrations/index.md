@@ -43,4 +43,12 @@ After beta testing, you'll need to navigate the approval process. This section w
 Understand how to Get Approval from TestFlight
 </ContentRef>
 
+## Send to Microsoft Intune
+
+Everything you need to know about submitting your app to the Microsoft Intune can be found here. We cover the necessary preparations, API key configuration, and submission details.
+
+<ContentRef url="/publish-integrations/ios-publish-integrations/send-to-microsoft-intune">
+Learn how to Send to Microsoft Intune
+</ContentRef>
+
 Each section is crafted to guide you through the respective processes, ensuring a smooth workflow from app development to launch. Click on the links provided to delve into the specifics of each flow.
