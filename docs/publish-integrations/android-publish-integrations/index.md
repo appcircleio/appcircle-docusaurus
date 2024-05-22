@@ -30,12 +30,4 @@ Read more about Publish to Google Play
 Discover how to Publish to Huawei AppGallery
 </ContentRef>
 
-## Publish to Microsoft Intune
-
-Everything you need to know about submitting your app to the Microsoft Intune can be found here. We cover the necessary preparations, API key configuration, and submission details.
-
-<ContentRef url="/publish-integrations/android-publish-integrations/send-to-microsoft-intune">
-Learn how to Publish to Microsoft Intune
-</ContentRef>
-
 Appcircle's integration tools are designed to simplify and automate the publishing process, allowing you to focus on developing great apps while we handle the distribution.

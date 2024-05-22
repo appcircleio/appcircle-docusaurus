@@ -29,7 +29,7 @@ To access the Publish module:
 - **App Store Submission**: Submit iOS apps to the App Store for review and release.
 - **Google Play Submission**: Submit Android apps to Google Play for review and release.
 - **Huawei AppGallery Submission**: Submit Android apps to Huawei AppGallery for review and release.
-- **Microsoft Intune Submission**: Submit [iOS](/publish-integrations/ios-publish-integrations/send-to-microsoft-intune) and [Android](/publish-integrations/android-publish-integrations/send-to-microsoft-intune) apps to Microsoft Intune.
+- **Microsoft Intune Submission**: Submit [iOS and Android](/publish-integrations/common-publish-integrations/send-to-microsoft-intune) apps to Microsoft Intune.
 
 ## Initial Setup
 

@@ -1,7 +1,7 @@
 ---
 title: Publish to Microsoft Intune
 description: Submit your Android application to the Microsoft Intune with Appcircle
-tags: [android, android integrations, android publish integrations, microsoft intune]
+tags: [android,ios, android integrations, android publish integrations, microsoft intune]
 sidebar_position: 1
 ---
 
@@ -47,4 +47,6 @@ Below are the parameters necessary for this step's operation, along with their d
 
 To access the source code of this component, please use the following link:
 
+https://github.com/appcircleio/appcircle-publish-send-to-intune-ios
 https://github.com/appcircleio/appcircle-publish-send-to-intune-android
+
