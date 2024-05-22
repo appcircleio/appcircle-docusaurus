@@ -15,6 +15,8 @@ Based on your business requirements, you can designate certain email addresses t
 
 If some optional users reject, but there is still a chance to achieve the minimum approval count, the step will remain in `Waiting` status, awaiting responses from other users. For instance, if the minimum approval count is set to 3, and there are a total of 10 users with only one required user, even if 7 non-required users reject, there is still a possibility of obtaining approval from the remaining 3 users. However, if 8 non-required users reject, the step will fail, as the minimum requirement of 3 approvals cannot be fulfilled anymore.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email-1.png'/>
+
 :::info
 
 Once a user makes a decision, it cannot be changed unless the step is restarted, even if the user sees the "Thank you" page. The step must be restarted to allow the user to make a new decision.
