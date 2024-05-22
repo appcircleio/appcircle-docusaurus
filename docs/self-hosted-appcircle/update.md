@@ -39,6 +39,17 @@ For example, to find the version for a project named "spacetech", run the follow
 
 :::
 
+:::tip
+
+#### ✨ Auto-upgrading Server
+
+If you want to update the Appcircle server in an automated way, you can check out the [Auto-upgrading Server](/self-hosted-appcircle/configure-server/auto-updating) documents.
+
+You can effortlessly manage all the commands listed below.
+
+Additionally, you can set up recurring cron jobs (daily or weekly) to automatically check if Appcircle's server needs updating.
+:::
+
 ### 1. Download Latest
 
 To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package. This typically means copying the `cred.json` file to the same directory containing the `appcircle-server` directory.
@@ -192,7 +203,7 @@ Upgrade images.
 :::caution
 If you are using a proxy on the server, then you should maintain the proxy variables.
 
-Please head to the [Maintenance of Proxy Variables](/docs/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
+Please head to the [Maintenance of Proxy Variables](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
 :::
 
 Then start with below command.

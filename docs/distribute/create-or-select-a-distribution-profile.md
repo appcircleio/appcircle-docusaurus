@@ -98,7 +98,6 @@ When the `.AAB` build is sent to the designated Testing Distribution profile, ei
 
 This conversion capability also applies when sending app versions from a Testing Distribution profile to an [Enterprise App Store](/enterprise-appstore) profile. The shared `.AAB` artifact will be downloaded in `.APK` format from the Enterprise App Store profile.
 
-
 :::
 
 :::caution
@@ -133,6 +132,25 @@ If you also want to download or see the output, you can check through the follow
 :::info
 
 If your Git commit has any messages, they will be included in the distribution in Message To Testers area.
+
+:::
+
+### Send your application to Publish
+
+You can send your application from your Testing Distribution profile to a designated Publish profile by following these steps:
+
+- Click the three dots next to your application
+- Click **Send to Publish**
+- Choose your Publish profile from the list.
+- Click **Send**
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3110-sendpublish.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3110-sendpublish2.png" />
+
+:::caution
+
+You must have already created the designated Publish profile within the Publish Module, and it should correspond to the operating system of your application (Android or iOS) listed in your Testing Distribution Profile.
 
 :::
 
