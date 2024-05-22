@@ -19,7 +19,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🆕 New Features
 
-- Users can now automate Group and Role Management using LDAP Authentication for Appcircle Login in Self-Hosted environments. <SelfHostedBadge/>
+- Users can now automate [Group](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#managing-ldap-groups-and-mappings) and [Role](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#ldap-role-mapping) Management using LDAP Authentication for Appcircle Login in Self-Hosted environments. <SelfHostedBadge/>
 - We have introduced the Team Activity Log feature within the Organization settings. This feature enables users to monitor team management actions within their organization if they are the organization owner or have the Organization Management role. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
@@ -527,7 +527,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed an issue where the user could not create a [sub-organization](/account/my-organization) even though they had the required permission. <CloudBadge/> <SelfHostedBadge/>
 - Fixed issue with file permissions when exporting a project for self-hosted uses. <SelfHostedBadge/>
 - Fixed the problem of adding the same name while uploading the [configuration](/build/manage-the-connections/adding-a-build-profile). <CloudBadge/> <SelfHostedBadge/>
-- The permissions of the applications in the Huawei App Gallery that depend on the permission to view the applications in the store submit section has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The permissions of the applications in the Huawei AppGallery that depend on the permission to view the applications in the store submit section has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The problem that the save button is not active after the changes made in the organization pool has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a double slash (`//`) bug on the webhook link that caused the triggers to not work. <CloudBadge/> <SelfHostedBadge/>
 - The error that the change indicator appears even though there is no change in some tabs in the config modal has been fixed. <CloudBadge/> <SelfHostedBadge/>
@@ -991,7 +991,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 🆕 New Feature
 
-- Huawei App Gallery support added. You can submit your apk or aab files to Huawei AppGallery.
+- Huawei AppGallery support added. You can submit your apk or aab files to Huawei AppGallery.
 - Java 11 added to iOS agents
 - [Slather](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#slather),[Tuist](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#tuist) and Badge components added
 - You can now see all your running builds from the status bar and cancel them.
@@ -1014,8 +1014,8 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### 📑 Documentation
 
-- Added Huawei App Gallery section for sending your apps to Huawei App Gallery.
-- Added [Huawei App Gallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei App Gallery API Key.
+- Added Huawei AppGallery section for sending your apps to Huawei AppGallery.
+- Added [Huawei AppGallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei AppGallery API Key.
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#provisioning-profile-error) for Provisioning Profiles.
 - Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#missing-entitlements) for Missing Entitlements​
