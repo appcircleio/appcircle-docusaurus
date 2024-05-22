@@ -80,8 +80,8 @@ Then click **Invite User**. Your account key is ready. 🎉
 
 **Can I retrieve the JSON private key that I uploaded to Appcircle?**
 
-No, for security reasons, the JSON file you uploaded cannot be downloaded again from Appcircle.
+No, for security reasons, you cannot download the JSON file you uploaded to Appcircle.
 
-**After uploading the JSON, why can't I save it?**
+**Why cannot I save the JSON after uploading it?**
 
-You may have skipped the first step. Please ensure you have enabled the Service account.
+You might have missed the first step. Please ensure that you have enabled the Service Account.
