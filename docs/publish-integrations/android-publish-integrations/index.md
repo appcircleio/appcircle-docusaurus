@@ -10,6 +10,22 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Appcircle's Android Integrations facilitate the distribution of your Android applications to major app stores with minimal effort.
 
+To use the Android Integration, click on the **Android Publish** button on the left in the Publish module.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-leftbar-android.png' />
+
+Click on **Add New** to create a new publish profile, **Open** details, and click on **Publish Flow**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-flow.png' />
+
+In **Publish Flow**, the default steps will appear. You can add or delete steps from your flow using the **Manage Flow** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-android-in.png' />
+
+Click on the **Save** button if you make any changes to your flow steps, or use the **Back** button without any change.
+
+You can find Android specific steps in the Publish Flow under the headings below. For common steps, please refer to [this document](/publish-integrations/common-publish-integrations/).
+
 ## Publish to Google Play
 
 - Quickly send APK and AAB binaries to Google Play.
@@ -22,7 +38,7 @@ Read more about Publish to Google Play
 
 ## Publish to Huawei AppGallery
 
-- Access Huawei's growing user base by publishing directly to the AppGallery.
+- Quickly send APK and AAB binaries to the AppGallery.
 - Ensure your app is listed in Huawei AppGallery Connect with the correct keystore.
 - Handle your app's keystore files and profile details in one place.
 
