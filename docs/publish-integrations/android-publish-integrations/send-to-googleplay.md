@@ -27,7 +27,7 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
 
 After completing the integration with Google Play Services, go to [Publishing Settings](/publish-module/publish-settings). In the [`Store Credential`](/publish-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
 
-If you are using [Publish Variables](http://localhost:3000/publish-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-module/publish-settings) window.
+If you are using [Publish Variables](/publish-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-module/publish-settings) window.
 
 ## Input Variables
 
