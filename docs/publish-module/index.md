@@ -1,8 +1,8 @@
 ---
 title: Publish
 sidebar_position: 1
-tags: [publish, distribution, app store, google play, huawei appgallery, testflight]
-description: The Publish module in Appcircle allows you to distribute your mobile applications to the App Store, Google Play, and Huawei AppGallery.
+tags: [publish, distribution, app store, google play, huawei appgallery, testflight, microsoft intune]
+description: The Publish module in Appcircle allows you to distribute your mobile applications to the App Store, Google Play, Huawei AppGallery and Microsoft Intune.
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Publish
 
-The Publish module is a powerful feature in Appcircle that allows you to distribute your mobile applications to the App Store, Google Play, and Huawei AppGallery. It provides a streamlined process for sending your apps directly to the stores or to TestFlight for beta testing.
+The Publish module is a powerful feature in Appcircle that allows you to distribute your mobile applications to the App Store, Google Play, Huawei AppGallery and Microsoft Intune. It provides a streamlined process for sending your apps directly to the stores or to TestFlight for beta testing.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-main.png' />
 
@@ -29,6 +29,7 @@ To access the Publish module:
 - **App Store Submission**: Submit iOS apps to the App Store for review and release.
 - **Google Play Submission**: Submit Android apps to Google Play for review and release.
 - **Huawei AppGallery Submission**: Submit Android apps to Huawei AppGallery for review and release.
+- **Microsoft Intune Submission**: Submit [iOS and Android](/publish-integrations/common-publish-integrations/send-to-microsoft-intune) apps to Microsoft Intune.
 
 ## Initial Setup
 
