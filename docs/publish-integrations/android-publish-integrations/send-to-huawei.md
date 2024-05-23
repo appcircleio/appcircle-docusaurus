@@ -1,8 +1,8 @@
 ---
 title: Publish to Huawei AppGallery
 description: Publish your Android applications to Huawei AppGallery with Appcircle
-tags: [android, android integrations, android publish integrations, huawei appgallery]
-sidebar_position: 3
+tags: [android, android integrations, android publish integrations, huawei appgallery, publish appgallery]
+sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
