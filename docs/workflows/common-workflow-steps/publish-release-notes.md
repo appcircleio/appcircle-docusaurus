@@ -12,7 +12,7 @@ You can use the **Publish Release Notes** step to generate release notes during 
 
 - Distribution Portals (such as [Appcircle Testing Distribution](/distribute) or [Firebase App Distribution](/workflows/common-workflow-steps/firebase-app-distribution) step)
 - [Enterprise App Store](/enterprise-appstore)
-- Publishing (to [Google Play](/publish-integrations/android-publish-integrations/send-to-googleplay) or Approval Email steps)
+- Publishing (to [Google Play](/publish-integrations/android-publish-integrations/publish-to-google-play) or Approval Email steps)
 
 :::caution
 
