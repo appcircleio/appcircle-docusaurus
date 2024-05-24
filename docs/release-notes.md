@@ -31,6 +31,7 @@ import ContentRef from '@site/src/components/ContentRef';
 - Fixed an issue where the restart flow rule failed in certain cases, causing invalid flow validations within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed issues where the API allowed requests with duplicate and blank [Publish variable](https://docs.appcircle.io/publish-module/publish-variables) and group names. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where [Store Status](https://docs.appcircle.io/publish-module/binary-management#store-status) received from the Get Approval from Test Flight or Get Approval from App Store steps was not being displayed on the AppVersion's and Profile's Store Status. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug at the [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) step that was throwing an unexpected JSON parse error when using [Jira REST API v3](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment#jira-rest-api-version-reference) and ensured the integrity of the payload for commit messages containing line breaks. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.17.0 - 2024-05-17 - LDAP Mapping Improvements, Publish Module Bug Fixes, and more
 
