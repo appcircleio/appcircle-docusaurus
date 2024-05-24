@@ -32,7 +32,7 @@ You can find Android specific steps in the Publish Flow under the headings below
 - Initial setup requires an app listing and uploaded binary with a keystore.
 - Effortlessly manage and deploy app profiles.
 
-<ContentRef url="/publish-integrations/android-publish-integrations/send-to-googleplay">
+<ContentRef url="/publish-integrations/android-publish-integrations/publish-to-google-play">
 Read more about Publish to Google Play
 </ContentRef>
 
@@ -42,8 +42,28 @@ Read more about Publish to Google Play
 - Ensure your app is listed in Huawei AppGallery Connect with the correct keystore.
 - Handle your app's keystore files and profile details in one place.
 
-<ContentRef url="/publish-integrations/android-publish-integrations/send-to-huawei">
+<ContentRef url="/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery">
 Discover how to Publish to Huawei AppGallery
+</ContentRef>
+
+## App Information from Google Play
+
+- Enables you to monitor the current status of your app releases directly from the Google Play Console.
+- Keeps you informed about any updates or issues with your app.
+- Automates publish flow integration.
+
+<ContentRef url="/publish-integrations/android-publish-integrations/app-information-from-google-play">
+Discover how to get app Information from Google Play
+</ContentRef>
+
+## Get Approval From Google Play
+
+- Identifies potential issues early in the release process, allowing for timely resolution.
+- Ensures your app release meets all necessary requirements and obtains approval from Google Play.
+- Automatically verifies the status of your app, reducing the need for manual monitoring.
+
+<ContentRef url="/publish-integrations/android-publish-integrations/get-approval-from-google-play">
+Discover how to get approval from Google Play
 </ContentRef>
 
 Appcircle's integration tools are designed to simplify and automate the publishing process, allowing you to focus on developing great apps while we handle the distribution.

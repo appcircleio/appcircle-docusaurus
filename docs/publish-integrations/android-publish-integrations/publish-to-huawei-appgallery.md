@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Publish to Huawei AppGallery
 
-Appcircle supports sending [APK](https://developer.huawei.com/consumer/en/doc/app/agc-help-releaseapkrpk-0000001106463276) and [AAB](https://developer.huawei.com/consumer/en/doc/app/agc-help-releasebundle-0000001100316672) binaries to Huawei AppGallery through the Publish module.
+Appcircle supports sending [APK](https://developer.huawei.com/consumer/en/doc/app/agc-help-releaseapkrpk-0000001106463276) and [AAB](https://developer.huawei.com/consumer/en/doc/app/agc-help-releasebundle-0000001100316672) binaries to [Huawei AppGallery](https://appgallery.huawei.com/) through the Publish module.
 
 ### Prerequisites
 
@@ -34,8 +34,8 @@ The parameters required for this step to work as expected are listed below:
 
 | Variable Name       | Description                                                                                                                                                                                                                                  | Status    |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| $AC_HUAWEI_APP_ID   | Required by Huawei to send the app to AppGallery. You can find the App ID on the [Huawei Developer Console](https://developer.huawei.com/consumer/en/console) by navigating to `App Services` > `AppGallery Connect` > `My Apps` > `your app` > `App Information`. | Required  |
-| $AC_RELEASE_NOTES   | Provides release notes for the submission to Huawei AppGallery. | Optional  |
+| `$AC_HUAWEI_APP_ID` | It is required to publish the app to Huawei AppGallery. You can find the App ID on the [Huawei Developer Console](https://developer.huawei.com/consumer/en/console) by navigating to `App Services` > `AppGallery Connect` > `My Apps` > `your app` > `App Information`. | Required  |
+| `$AC_RELEASE_NOTES` | Provides release notes for the submission to Huawei AppGallery. | Optional  |
 
 ## Output Variables
 

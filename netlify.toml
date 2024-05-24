@@ -714,12 +714,22 @@
 
 [[redirects]]
   from = "/publish-module/send-to-googleplay"
-  to = "/publish-integrations/android-publish-integrations/send-to-googleplay"
+  to = "/publish-integrations/android-publish-integrations/publish-to-google-play"
+  status = 301
+
+[[redirects]]
+  from = "/publish-integrations/android-publish-integrations/send-to-googleplay"
+  to = "/publish-integrations/android-publish-integrations/publish-to-google-play"
   status = 301
 
 [[redirects]]
   from = "/publish-module/send-to-huawei"
-  to = "/publish-integrations/android-publish-integrations/send-to-huawei"
+  to = "/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery"
+  status = 301
+
+[[redirects]]
+  from = "/publish-integrations/android-publish-integrations/send-to-huawei"
+  to = "/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery"
   status = 301
 
 [[redirects]]
