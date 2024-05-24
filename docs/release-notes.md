@@ -19,7 +19,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🆕 New Features
 
-- We have added the **Send to Microsoft Intune** Component to our available [Publish Flow](https://docs.appcircle.io/publish-module/publish-flow) steps for Intune Store publishing. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have added the [Send to Microsoft Intune](https://docs.appcircle.io/publish-integrations/common-publish-integrations/send-to-microsoft-intune) Component to our available [Publish Flow](https://docs.appcircle.io/publish-module/publish-flow) steps for Intune Store publishing. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
