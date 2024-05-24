@@ -15,6 +15,23 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 3.17.1 - 2024-05-23 - Publish Activity Log Enhancement, Send to Microsoft Intune, Publish Module Bug Fixes
+
+### 🆕 New Features
+
+- We have added the [Send to Microsoft Intune](https://docs.appcircle.io/publish-integrations/common-publish-integrations/send-to-microsoft-intune) Component to our available [Publish Flow](https://docs.appcircle.io/publish-module/publish-flow) steps for Intune Store publishing. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- You can now monitor [Resign Binary](https://docs.appcircle.io/publish-module/publish-information/resign-binary) activities in Publish Activity Logs. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have added minimum and maximum e-mail format validations for the [Get Approval via E-mail](https://docs.appcircle.io/publish-integrations/common-publish-integrations/get-approval-via-email) Publish Flow step. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- Fixed an issue where the restart flow rule failed in certain cases, causing invalid flow validations within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed issues where the API allowed requests with duplicate and blank [Publish variable](https://docs.appcircle.io/publish-module/publish-variables) and group names. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where [Store Status](https://docs.appcircle.io/publish-module/binary-management#store-status) received from the Get Approval from Test Flight or Get Approval from App Store steps was not being displayed on the AppVersion's and Profile's Store Status. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.17.0 - 2024-05-17 - LDAP Mapping Improvements, Publish Module Bug Fixes, and more
 
 ### 🆕 New Features
@@ -25,7 +42,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### :muscle: Improvements
 
-- The "Get Approval via Email" component now allows you to view the statuses of all users in its logs. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The ["Get Approval via Email"](https://docs.appcircle.io/publish-integrations/common-publish-integrations/get-approval-via-email) component now allows you to view the statuses of all users in its logs. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - We have added an activity log for updates to Release Notes on the [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) page within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Self-hosted users can now choose to hide the Change Password option in the account settings page by disabling the Forgot Password option in Self-Hosted Settings. <AccountBadge/> <SelfHostedBadge/>
 - We have added the ability for Jira Enterprise users to choose the API version.The [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) workflow step now supports both Jira Cloud and On-Prem use cases for both Jira API v2 and v3, which makes the integration more flexible. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
