@@ -159,11 +159,11 @@ Add App Store, Google Play, or Huawei AppGallery keys to Appcircle to upload IPA
 Send to App Store
 </ContentRef>
 
-<ContentRef url="/publish-integrations/android-publish-integrations/send-to-googleplay">
+<ContentRef url="/publish-integrations/android-publish-integrations/publish-to-google-play">
 Send to Google Play
 </ContentRef>
 
-<ContentRef url="/publish-integrations/android-publish-integrations/send-to-huawei">
+<ContentRef url="/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery">
 Send to Huawei
 </ContentRef>
 
