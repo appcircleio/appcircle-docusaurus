@@ -25,6 +25,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 - You can now monitor [Resign Binary](https://docs.appcircle.io/publish-module/publish-information/resign-binary) activities in Publish Activity Logs. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - We have added minimum and maximum e-mail format validations for the [Get Approval via E-mail](https://docs.appcircle.io/publish-integrations/common-publish-integrations/get-approval-via-email) Publish Flow step. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [auto-update](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) helper tool has been improved to detect the upgrade in a more efficient way, which reduces the network payload and speeds up the process. <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -32,6 +33,8 @@ import ContentRef from '@site/src/components/ContentRef';
 - Fixed issues where the API allowed requests with duplicate and blank [Publish variable](https://docs.appcircle.io/publish-module/publish-variables) and group names. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where [Store Status](https://docs.appcircle.io/publish-module/binary-management#store-status) received from the Get Approval from Test Flight or Get Approval from App Store steps was not being displayed on the AppVersion's and Profile's Store Status. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug at the [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) step that was throwing an unexpected JSON parse error when using [Jira REST API v3](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment#jira-rest-api-version-reference) and ensured the integrity of the payload for commit messages containing line breaks. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that was affecting Appcircle UI notifications such as build success, failure, etc. <SelfHostedBadge/>
+- Fixed a problem that caused the self-hosted Appcircle server logging service to not start and work correctly when using the root user. <SelfHostedBadge/>
 
 ## 3.17.0 - 2024-05-17 - LDAP Mapping Improvements, Publish Module Bug Fixes, and more
 
