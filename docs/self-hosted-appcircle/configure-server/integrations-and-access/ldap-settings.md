@@ -265,6 +265,12 @@ To configure LDAP Mapping, follow these steps:
 
 - **Mapping LDAP Groups**: After selecting the LDAP group, map it to an Appcircle organization by clicking **Add**. This establishes a link where users from the LDAP group are automatically mapped to the corresponding organization in Appcircle.
 
+:::caution
+
+- Appcircle Organizations must be created manually before using them with LDAP Mapping.
+
+:::
+
 ### Managing LDAP Groups and Mappings
 
 - **View Configurations**: All active LDAP mappings can be viewed under the LDAP Mapping section. You can modify or delete each mapping as needed by using the **Config** option.
@@ -285,6 +291,26 @@ LDAP Role Mapping allows you to assign specific roles to users based on their LD
 - Each role can have varied permissions across different modules such as Build, Deploy, and Admin settings. Configure these permissions to ensure users have appropriate access levels based on their role.
 
 ### LDAP Synchronization
+
+You can use LDAP Synchronization to sync users from LDAP groups to Appcircle organizations.  The synchronization process includes adding new users and removing the unnecessary ones.
+
+:::info
+
+If the Appcircle organization is configured for synchronization, manual configurations will be overridden by the synchronization task. 
+
+Please note that the synchronization is one-way from LDAP to Appcircle, meaning changes made in Appcircle do not affect LDAP.
+
+:::
+
+:::caution
+
+- The sync operation does not fetch all users. If a user has not logged in before, they will join the organization with the assigned roles as soon as they log in, provided LDAP Mapping is enabled.
+- If a user does not exist in Appcircle (has not been imported yet), they will be ignored by the synchronization task.
+- The synchronization operation also ignores the admin user. Even if the admin user is not in the LDAP group, they can still be a member of the Appcircle organization.
+- Appcircle Root Organizations must at least have one owner. The synchronization operation does not remove the user if they are the last owner of the root organization.
+- The synchronization task needs to be run once for users who are already in Appcircle and linked to LDAP.
+
+:::
 
 #### Enabling and Managing Synchronization
 
