@@ -29,7 +29,7 @@ To install the Appcircle Distribute Task Extension, follow these steps:
 
    3.1. You can learn more about getting your access token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
-   3.2. Find out how to create a distribution profile [here](/distribute/create-or-select-a-distribution-profile?&utm_medium=product&utm_campaign=azure-marketplace)
+   3.2. Find out how to create a distribution profile [here](/distribute/create-or-select-a-distribution-profile)
 
 :::caution Build Steps Order
 You should add this task extension after completing your build steps.
