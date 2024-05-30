@@ -16,11 +16,11 @@ tags:
 sidebar_position: 2
 ---
 
-Appcircle Enterprise Mobile App Store is your own mobile app store for providing access to in-house apps with a customizable mobile storefront. The Appcircle Enterprise Mobile App Store extension offers a method for uploading your app to your personalized app store within Appcircle.
+Appcircle Enterprise Mobile App Store serves as your private mobile app store, allowing access to in-house apps through a customizable mobile storefront. The Appcircle Enterprise Mobile App Store extension enables you to upload your app to your personalized app store within Appcircle.
 
 import Screenshot from '@site/src/components/Screenshot';
 
-### How to Install Appcircle Enterprise Store task in your pipeline
+### How to Install the Appcircle Enterprise Store Task in Your Pipeline
 
 In order to install Appcircle Enterprise Store task extension, follow these steps;
 
@@ -33,10 +33,10 @@ In order to install Appcircle Enterprise Store task extension, follow these step
    3.1. You can learn more about getting your access token [here](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
 :::info
-You should add these task extension after your build steps.
+You should add this task extension after completing your build steps.
 :::
 
-After completing the required input fields, the AppcircleEnterpriseStore@0 task will be added to your pipeline steps as shown below.
+After filling out the required fields, the `AppcircleEnterpriseStore@0` task will appear in your pipeline steps as shown below:
 
 ```yaml
 - task: AppcircleDistribute@0

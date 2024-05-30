@@ -16,7 +16,7 @@ sidebar_position: 2
 
 ### Testing Distribution
 
-Itis a process distributing test builds to designated test groups or individuals.
+It is a process distributing test builds to designated test groups or individuals.
 
 <ContentRef url="/marketplace/visual-studio-marketplace/testing-distribution">
 Read more about Testing Distrbiution

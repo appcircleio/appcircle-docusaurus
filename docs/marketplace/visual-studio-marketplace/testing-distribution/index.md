@@ -12,30 +12,30 @@ tags:
 sidebar_position: 1
 ---
 
-The Appcircle distribute extension offers users a method to upload their app and commence distribution to test groups or individuals.
+The Appcircle distribute extension allows users to upload their apps and start distribution to test groups or individuals.
 
 import Screenshot from '@site/src/components/Screenshot';
 
-### How to Add Appcircle Distribute Task Extension to Your Pipeline
+### How to Add the Appcircle Distribute Task Extension to Your Pipeline
 
 To install the Appcircle Distribute Task Extension, follow these steps:
 
 1. Go to your pipeline, click "Edit" button on the top right corner
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-pipeline-edit.png' />
-2. Inside your YAML file, search for "Appcircle distribute" task extension
+2. Search for the “Appcircle distribute” task extension within your `YAML` file.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-extension-task.png' />
-3. Complete the necessary input fields and then click the "Add" button.
+3. Fill out the necessary input fields and click the **Add** button.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-extension-task-detail.png' />
 
    3.1. You can learn more about getting your access token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
-   3.2. Learn more about creating distribution profile here [here](/distribute/create-or-select-a-distribution-profile?&utm_medium=product&utm_campaign=azure-marketplace)
+   3.2. Find out how to create a distribution profile [here](/distribute/create-or-select-a-distribution-profile?&utm_medium=product&utm_campaign=azure-marketplace)
 
 :::caution Build Steps Order
-You should add these task extension after your build steps.
+You should add this task extension after completing your build steps.
 :::
 
-After completing the required input fields, the AppcircleEnterpriseStore@0 task will be added to your pipeline steps as shown below.
+After filling out the required fields, the `AppcircleEnterpriseStore@0` task will appear in your pipeline steps as shown below:
 
 ```yaml
 - task: AppcircleDistribute@0
