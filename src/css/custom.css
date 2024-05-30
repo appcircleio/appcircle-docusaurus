@@ -927,6 +927,10 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
   background-image: url(../../static/img/sidebar/reports.svg);
 }
 
+.section-title.marketplace > div >a::before {
+  background-image: url(../../static/img/sidebar/marketplace.svg);
+}
+
 .section-title.faq > div >a::before {
   background-image: url(../../static/img/sidebar/faq.svg);
 }
