@@ -34,6 +34,7 @@ import ContentRef from '@site/src/components/ContentRef';
 - We have resolved issues that could potentially cause crashes when running multiple builds simultaneously, enhancing the overall stability and reliability of the build process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - We have made a security improvement related to Build module's remote repository connections. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where users couldn't send release notes for binaries via 'Send to Google Play'. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where the Publish Flow did not display the final step after successfully completing the process. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.17.1 - 2024-05-23 - Publish Activity Log Enhancement, Send to Microsoft Intune, Publish Module Bug Fixes
 
