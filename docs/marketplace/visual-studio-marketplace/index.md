@@ -3,13 +3,11 @@ title: Visual Studio Marketplace
 description: Learn how to authenticate with the Appcircle API and CLI
 tags:
   [
-    api,
-    cli,
-    authentication,
-    personal api token,
-    api token,
-    cli token,
-    session token,
+    azure-dev-ops,
+    testing-distribution,
+    ipa distribution,
+    apk distribution,
+    binary distribution,
   ]
 sidebar_position: 2
 ---
