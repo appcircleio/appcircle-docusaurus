@@ -1,6 +1,6 @@
 ---
 title: Visual Studio Marketplace
-description: Learn how to authenticate with the Appcircle API and CLI
+description: Learn how to distribute and publish your builds to appcircle
 tags:
   [
     azure-dev-ops,
