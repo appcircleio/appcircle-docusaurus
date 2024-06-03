@@ -19,20 +19,20 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🆕 New Features
 
-- We have significantly improved the performance of the build log stream feature, ensuring faster and more efficient logging processes. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have significantly enhanced the performance of the build log stream feature, ensuring faster and more efficient logging processes. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - We are releasing [Appcircle CLI v2.2.0.](https://github.com/appcircleio/appcircle-cli/releases/tag/v2.2.0) <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Users can now change the order of screenshots and previews by drag and drop in [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The Testing Distribution profiles now display the signed or unsigned status information of app versions. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Testing Distribution profiles now include the signed or unsigned status information for app versions. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
-- Resign History and Publish History components are now combined under the new History component within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Resign History and Publish History components have been unified under a new History component within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Users will now be able to see which version was used to resign the app after resigning an app version within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
-- We have resolved issues that could potentially cause crashes when running multiple builds simultaneously, enhancing the overall stability and reliability of the build process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- We have made a security improvement related to Build module's remote repository connections. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have resolved issues that could cause crashes when running multiple builds simultaneously, enhancing the overall stability and reliability of the build process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have enhanced security for remote repository connections in the Build module.  <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where build logs were being saved prematurely due to a time synchronization problem, causing logs to be saved before the end of the process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where API returned incorrect response code for requests with invalid commitId or buildId. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the Admin Build Details section showed incorrect build status for cancelled builds. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
