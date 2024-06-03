@@ -1,9 +1,12 @@
 ---
 title: Visual Studio Marketplace
-description: Learn how to distribute and publish your builds to appcircle
+description: Appcircle Visual Studio Marketplace extension allows you to distribute your builds to testers directly from your Azure DevOps pipelines.
 tags:
   [
-    azure-dev-ops,
+    azure,
+    azure devops,
+    visual studio,
+    visual studio marketplace,
     testing-distribution,
     ipa distribution,
     apk distribution,
