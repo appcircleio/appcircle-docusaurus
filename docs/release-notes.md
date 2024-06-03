@@ -33,6 +33,9 @@ import ContentRef from '@site/src/components/ContentRef';
 
 - We have resolved issues that could potentially cause crashes when running multiple builds simultaneously, enhancing the overall stability and reliability of the build process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - We have made a security improvement related to Build module's remote repository connections. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where build logs were being saved prematurely due to a time synchronization problem, causing logs to be saved before the end of the process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where API returned incorrect response code for requests with invalid commitId or buildId. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where the Admin Build Details section showed incorrect build status for cancelled builds. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where users couldn't send release notes for binaries via 'Send to Google Play'. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the Publish Flow did not display the final step after successfully completing the process. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
