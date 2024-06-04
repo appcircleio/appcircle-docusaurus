@@ -9,6 +9,8 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Get Approval via Email
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publish-worflow-email-approval-overview.png'/>
+
 The **Get Approval via Email** step allows you to get approval from the email addresses entered as input in the step before moving on to the next steps in Publish.
 
 Based on your business requirements, you can designate certain email addresses to require approval, specify others as optional approvers, or set a minimum number of approvals needed from the provided email addresses.
@@ -35,12 +37,11 @@ The parameters required for this step to work as expected are listed below:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email.png'/>
 
-| Variable Name                  | Description                                                                                                                                                                                                                                        | Status   |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
-| `$AC_APPROVAL_EMAILS`          | The **All Required Approval Emails** specify the required email addresses, separated by commas, to which special approve and reject links will be sent. All email addresses in this field must be approved for this step to be successful. If one of the required users rejects it, the step will fail. The count of emails cannot be less than the **Minimum Required Approval Count**.                    | Optional |
-| `$AC_OPTIONAL_APPROVAL_EMAILS` | The **Optional Required Approval Emails** specify optional email addresses, separated by commas, to which special approve and reject links will be sent. Optional approval emails may need to be approved if the **Minimum Required Approval Count** is lower than the count of **All Required Approval Emails**.                            | Optional |
-| `$AC_MINIMUM_APPROVAL_COUNT`   | The **Minimum Required Approval Count** specify the minimum number of required email approvals. The total of required and optional email approvals must be equal to or greater than this number. The step will not succeed unless the minimum number of approvals is fulfilled.                                                     | Required |
-
+| Variable Name                  | Description                                                                                                                                                                                                                                                                                                                                                                              | Status   |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_APPROVAL_EMAILS`          | The **All Required Approval Emails** specify the required email addresses, separated by commas, to which special approve and reject links will be sent. All email addresses in this field must be approved for this step to be successful. If one of the required users rejects it, the step will fail. The count of emails cannot be less than the **Minimum Required Approval Count**. | Optional |
+| `$AC_OPTIONAL_APPROVAL_EMAILS` | The **Optional Required Approval Emails** specify optional email addresses, separated by commas, to which special approve and reject links will be sent. Optional approval emails may need to be approved if the **Minimum Required Approval Count** is lower than the count of **All Required Approval Emails**.                                                                        | Optional |
+| `$AC_MINIMUM_APPROVAL_COUNT`   | The **Minimum Required Approval Count** specify the minimum number of required email approvals. The total of required and optional email approvals must be equal to or greater than this number. The step will not succeed unless the minimum number of approvals is fulfilled.                                                                                                          | Required |
 
 :::warning
 
