@@ -14,7 +14,7 @@ Appcircle's Common Integrations facilitate the distribution of your iOS and Andr
 
 - Allows you to tailor the publish process to address your specific needs by executing custom commands.
 - Automates repetitive tasks, reducing the amount of manual work required.
-- Allows you to create custom Publish flows and actions that are not available in the default steps.
+- Enables the creation of custom Publish flows and actions not available in the default steps.
 
 <ContentRef url="/publish-integrations/common-publish-integrations/get-approval-via-email">
 Read more about **Custom Script**
