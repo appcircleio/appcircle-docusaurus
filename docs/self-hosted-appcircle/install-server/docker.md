@@ -462,6 +462,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - resource
 - store
 - monitor
+- redis
 - (optional) Enterprise App Store's Custom Domain
 
 :::info
@@ -514,6 +515,7 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  resource.appcircle.spacetech.com
 0.0.0.0  store.appcircle.spacetech.com
 0.0.0.0  monitor.appcircle.spacetech.com
+0.0.0.0  redis.appcircle.spacetech.com
 0.0.0.0  store.spacetech.com
 ```
 
@@ -538,6 +540,7 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  resource.appcircle.spacetech.com
 35.241.181.2  store.appcircle.spacetech.com
 35.241.181.2  monitor.appcircle.spacetech.com
+35.241.181.2  redis.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
 ```
 
@@ -686,6 +689,7 @@ Below ports must be unused on system and dedicated to only Appcircle server usag
 
 - `80`
 - `443`
+- `6379` (Required if your Appcircle server is running without `HTTPS`.)
 
 You can get a list of up-to-date ports used by docker with below command.
 
