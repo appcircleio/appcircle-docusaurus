@@ -5,6 +5,8 @@ tags: [self-hosted server, update, upgrade]
 sidebar_position: 3
 ---
 
+import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-server/\_redis-domain-caution.mdx';
+
 # Overview
 
 As in cloud, we're releasing regular updates for self-hosted Appcircle server. You should keep your instance up-to-date in order to get latest features, bug fixes and improvements.
@@ -92,6 +94,8 @@ Upgrading from older versions to `v3.14.0` or later, requires MinIO migration th
 In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/configure-server/minio-migration) document.
 
 :::
+
+<RedisDomainCaution/>
 
 Extract self-hosted Appcircle package into folder.
 
