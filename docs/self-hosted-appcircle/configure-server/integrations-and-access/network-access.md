@@ -228,6 +228,24 @@ So, you should enable the below API access on the server for those features:
 
 This section addresses the utilization of external resources during the build, publish, store submit, and other processes on the Appcircle runner.
 
+### Appcircle Server
+
+Appcircle runners should access the self-hosted Appcircle server to get jobs and send artifacts.
+
+:::caution
+Be aware that the URLs below should be the URLs of the self-hosted Appcircle server in your organization.
+:::
+
+- api.appcircle.spacetech.com
+- resource.appcircle.spacetech.com
+- redis.appcircle.spacetech.com
+
+Appcircle runners connect to the self-hosted Appcircle server over the ports below:
+
+- `80`
+- `443`
+- `6379` (Required if your Appcircle server is running without `HTTPS`.)
+
 ### Build
 
 Appcircle’s workflow components are hosted on GitHub and they're `git` cloned while running the pipeline.
