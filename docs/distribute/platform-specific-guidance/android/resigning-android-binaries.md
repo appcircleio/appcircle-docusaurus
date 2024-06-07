@@ -32,6 +32,14 @@ This form will show the following details of the original binary.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/resign4.png' />
 
+When you sign an app version using the Testing Distribution Profile or upload a signed app version manually or automatically through the Build module, the Testing Distribution Profile will display a **signed** badge when the corresponding app version is selected.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3856-android1.png' />
+
+If you hover over the **signed** badge, the certification name used to sign the app version will be displayed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3856-android2.png' />
+
 ## Binary Details
 
 1. Select the binary.
