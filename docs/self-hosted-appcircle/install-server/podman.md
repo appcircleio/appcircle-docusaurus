@@ -964,19 +964,21 @@ Self-hosted runner section in docs, has all details about runners and their conf
 
 :::caution
 
-By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
+By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STREAM_ENDPOINT` and `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
 
+- `webeventredis.appcircle.io:6379,ssl=true`
 - `https://api.appcircle.io/build/v1`
 
-:point_up: You need to change its value with your self-hosted Appcircle server's API URL.
+:point_up: You need to change these values with your self-hosted Appcircle server's Redis and API URL.
 
-Assuming our sample scenario explained above, its value should be
+Assuming our sample scenario explained above, these values should be
 
+- `redis.appcircle.spacetech.com:6379,ssl=false`
 - `http://api.appcircle.spacetech.com/build/v1`
 
 for our example configuration.
 
-:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.
 
 Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
