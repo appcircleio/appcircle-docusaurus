@@ -7,6 +7,7 @@ sidebar_position: 3
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
 
 # Update Self-hosted Runner
 
@@ -68,6 +69,8 @@ cd appcircle-runner
 ## 2. Reconfigure Runner
 
 Self-hosted runner updates may include tool upgrades or introduce new required tools for build pipeline. So we need to rerun configuration step same as before. It will check installed tools quickly, and will update only required tools.
+
+<NewRunnerOldServerRedisCaution/>
 
 To remember what configuration step was, please refer to [this](./installation#3-configure) page.
 
