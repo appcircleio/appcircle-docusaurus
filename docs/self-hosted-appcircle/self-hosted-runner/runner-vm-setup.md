@@ -7,6 +7,7 @@ sidebar_class_name: hidden
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
 
 # Self-hosted Runner as MacOS VM Image
 
@@ -758,6 +759,8 @@ echo "$(jq '.ASPNETCORE_NOSHUTDOWN="false"' appsettings.json)" > appsettings.jso
 ```
 
 :::
+
+<NewRunnerOldServerRedisCaution/>
 
 Create runner access token from appcircle server and register runner to server. See details in [here](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 

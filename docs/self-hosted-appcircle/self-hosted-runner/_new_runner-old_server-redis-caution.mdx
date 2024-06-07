@@ -1,0 +1,10 @@
+:::caution
+If you are upgrading the Appcircle runner from older versions to `1.6.2` or later and using an Appcircle server older than `v3.18.0`, then you must add the two variables below to the `appsettings.json`.
+
+```bash
+echo "$(jq '.ASPNETCORE_SEND_BUILD_LOG_TO_REDIS="false"' appsettings.json)" > appsettings.json &&
+echo "$(jq '.ASPNETCORE_WORKFLOW_UPDATES_DISABLED.="false"' appsettings.json)" > appsettings.json
+```
+:::
+
+
