@@ -27,7 +27,7 @@ Your account key is ready. To add a key, go to [My Organization](/account/my-org
 
 ## FAQ
 
-### **Why am I getting the error `"[AppGalleryConnectFileService]distContryList is empty and usage route site is not China"`?**
+### Why am I getting the error **[AppGalleryConnectFileService]distContryList is empty and usage route site is not China?**
 
 This error may occur if the [Huawei Supported Countries ](https://developer.huawei.com/consumer/en/doc/app/agc-help-supported-countries-overview-0000001146718725) list has been updated.To resolve this issue, please follow these steps:
 
@@ -38,7 +38,7 @@ This error may occur if the [Huawei Supported Countries ](https://developer.huaw
 
 3. Try again to send the release to Huawei AppGallery via Appcircle.
 
-### **Why am I getting the error `"[AppGalleryConnectPublishService]input aab size is too large"`?**
+### Why am I getting the error **[AppGalleryConnectPublishService]input aab size is too large?**
 
 [AppGallery Connect server](https://www.huaweicloud.com/intl/en-us/product/AppGallery_Connect.html) imposes size limits on app submissions. For AAB files, the size limit is 150MB. This error occurs because your AAB file exceeds this limit. For more details, please refer to the following documentation:
 
