@@ -978,6 +978,13 @@ Assuming our sample scenario explained above, these values should be
 
 for our example configuration.
 
+:::info
+If your Appcircle server is running with `HTTPS`, then the API and Redis stream endpoint should be like this:
+
+- `redis.appcircle.spacetech.com:443,ssl=true`
+- `https://api.appcircle.spacetech.com/build/v1`
+:::
+
 :reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.
 
 Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).

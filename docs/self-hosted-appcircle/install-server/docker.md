@@ -822,7 +822,7 @@ Assuming our sample scenario explained above, these values should be
 for our example configuration.
 
 :::info
-If your Appcircle server is running with `HTTPS`, then the API and Redis stream endpoint should be:
+If your Appcircle server is running with `HTTPS`, then the API and Redis stream endpoint should be like this:
 
 - `redis.appcircle.spacetech.com:443,ssl=true`
 - `https://api.appcircle.spacetech.com/build/v1`
