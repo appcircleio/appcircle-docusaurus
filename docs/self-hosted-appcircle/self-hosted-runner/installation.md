@@ -13,6 +13,7 @@ import RegisterAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hoste
 import ConfigureAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_configure-runner.mdx';
 import RunAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_run-service.mdx';
 import BuildAppOutro from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_build-app-outro.mdx';
+import ConfigureForSelfHosted from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_configure-for-self-hosted.mdx';
 
 # Prerequisites
 
@@ -147,21 +148,15 @@ Change directory into extracted `appcircle-runner` folder for following steps.
 cd appcircle-runner
 ```
 
-:::caution
-
-By default, self-hosted runner package is bundled with configuration for Appcircle-hosted cloud.
-
-:reminder_ribbon: If you're planning to use runner with [self-hosted appcircle](/self-hosted-appcircle/install-server/docker) server, you must change `ASPNETCORE_BASE_API_URL` value in `appsettings.json` configuration file before going on.
-
-Please refer to details [here](/self-hosted-appcircle/install-server/docker#connecting-runners) for sample configuration change.
-
-:::
+<ConfigureForSelfHosted />
 
 ### 2. Register
 
 <RegisterAppcircleRunner />
 
 ### 3. Configure
+
+<ConfigureForSelfHosted />
 
 <ConfigureAppcircleRunner />
 
