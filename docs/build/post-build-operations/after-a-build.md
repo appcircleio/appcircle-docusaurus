@@ -42,6 +42,14 @@ If you click on Distribute Binary option, your build file will be sent to the re
 
 Build logs help you to observe and understand exactly what happened during a build. You can see build logs as they happen while a build is in process or you can view logs of a build after the build is completed.
 
+:::info
+
+In the build logs, the **Builds/Statuses** column is sorted by the latest completion build date. As a result, the start dates displayed in the list might not be in chronological order:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-working-with-build-logs.png' />
+
+:::
+
 You can use build logs to debug your builds in case you get any errors. Additional parameters and flags can also be used in workflow steps to see more details in build logs.
 
 <ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
