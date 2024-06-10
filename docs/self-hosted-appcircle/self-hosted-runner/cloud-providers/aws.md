@@ -11,6 +11,7 @@ import RegisterAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hoste
 import ConfigureAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_configure-runner.mdx';
 import RunAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_run-service.mdx';
 import BuildAppOutro from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_build-app-outro.mdx';
+import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
 
 ## Overview
 
@@ -334,16 +335,22 @@ If you are using a self-hosted Appcircle server, edit the `appsettings.json` fil
 vi appsettings.json
 ```
 
-You will see that the `ASPNETCORE_BASE_API_URL` value is pre-defined for the Appcircle cloud. Change it to your Appcircle server API domain without changing the path. For example:
+You will see that the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` values are pre-defined for the Appcircle cloud. Change it to your Appcircle server API domain without changing the path and Redis stream endpoint. For example:
 
 ```json
 {
-...
+  ...
+  "ASPNETCORE_REDIS_STREAM_ENDPOINT": "redis.appcircle.spacetech.com:443,ssl=true",
+  ...
   "ASPNETCORE_BASE_API_URL": "https://api.appcircle.spacetech.com/build/v1"
 }
 ```
 
+:::caution
+If your Appcircle server is working with `HTTP`, the Redis stream endpoint port should be `6379` instead of `443` by default and the `ssl` should be `false`. 
 :::
+
+<NewRunnerOldServerRedisCaution/>
 
 Now you need to create a **Runner Access Token** to register this instance with the Appcircle server.
 

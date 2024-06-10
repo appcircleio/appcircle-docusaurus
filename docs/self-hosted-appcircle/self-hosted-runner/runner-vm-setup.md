@@ -751,7 +751,7 @@ Edit `appsettings.json` with your favorite editor. (nano, vi etc.)
 
 The latest macOS VM image,`macOS_240221` or later, has the `ASPNETCORE_NOSHUTDOWN` setting as `false` by default and has no pre-defined `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` setting in the `appsettings.json` file.
 
-So, if you did not upgrade the packaged self-hosted runner at [previous steps](#1-check-the-runner-version) above, only modifying the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` value with the following commands should be enough for the self-hosted runner configuration.
+So, if you did not upgrade the packaged self-hosted runner at [previous steps](#1-check-the-runner-version) above, only modifying the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` values with the following commands should be enough for the self-hosted runner configuration.
 
 ```bash
 echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.appcircle.spacetech.com/build/v1"' appsettings.json)" > appsettings.json
