@@ -347,7 +347,9 @@ You will see that the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_END
 ```
 
 :::caution
-If your Appcircle server is working with `HTTP`, the Redis stream endpoint port should be `6379` instead of `443` by default and the `ssl` should be `false`. 
+If your Appcircle server is working with `HTTP`, the Redis stream endpoint port should be `6379` instead of `443` by default and the `ssl` should be `false`.
+
+Also don't forget to configure the API endpoint schema as `HTTP`.
 :::
 
 <NewRunnerOldServerRedisCaution/>
