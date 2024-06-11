@@ -814,7 +814,7 @@ By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STRE
 
 :point_up: You need to change these values with your self-hosted Appcircle server's Redis and API URL.
 
-Assuming our sample scenario explained above, these values should be
+Assuming our sample scenario explained above, these values should be:
 
 - `redis.appcircle.spacetech.com:6379,ssl=false`
 - `http://api.appcircle.spacetech.com/build/v1`

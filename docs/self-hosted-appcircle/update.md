@@ -89,7 +89,7 @@ curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | AC_SERVER_V
 
 :::caution
 
-Upgrading from older versions to `v3.14.0` or later, requires MinIO migration that should be done interactively while upgrading.
+Upgrading from older versions to `v3.14.0` or later requires MinIO migration that should be done interactively while upgrading.
 
 In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/configure-server/minio-migration) document.
 
