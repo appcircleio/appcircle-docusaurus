@@ -121,6 +121,36 @@ Please also make sure that the output doesn't show any reference to `localhost`.
 
 :::
 
+### Gitlab Webhook SSL Verification
+
+When integrating GitLab with your self-hosted Appcircle server using HTTPS, webhooks are sent securely over an encrypted connection (HTTPS). To establish this connection, GitLab must trust the SSL certificate of your Appcircle server. This requires the GitLab to trust the SSL certificate of the Appcircle server. 
+
+If you encounter a "self signed certificate in certificate chain" error during integration, you have two options to resolve the issue:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2983-self-signed-error.png' />
+
+#### Trust the SSL Certificate (Recommended)
+
+To establish a secure connection between your self-hosted Appcircle server and the GitLab server, you need to trust either the SSL certificate of the Appcircle server or the issuer certificate of the Appcircle server's certificate in your GitLab configuration.
+
+For detailed instructions on how to install custom public certificates and configure trust in GitLab, refer to our documentation: [Install Certificates](https://docs.gitlab.com/omnibus/settings/ssl/#install-custom-public-certificates).
+
+#### Disable SSL verification (Not Recommended)
+
+Alternatively, you can choose to disable SSL verification for your AppCircle server's webhook connection in GitLab. While this means that GitLab will not attempt to validate the certificate, it is important to note that webhooks will still be sent over an encrypted HTTPS connection but in a in-secure way.
+
+:::caution
+This approach can create security vulnerabilities such as man in the middle attack.
+:::
+
+- Head to the git repository that you have connected to the Appcircle.
+- Head to the webhook settings of the repository.
+- Click to the `Edit` button next to the related webhook.
+- Scroll down to see the "SSL verification" setting.
+- De-select the "Enable SSL verification" to disable SSL certificate verification. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2983-disable-ssl-verification.png' />
+
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
 <NeedHelp />
