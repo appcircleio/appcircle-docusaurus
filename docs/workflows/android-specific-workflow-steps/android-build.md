@@ -76,9 +76,25 @@ https://github.com/appcircleio/appcircle-android-build-component.git
 
 ### How can I solve the `Out of memory error: Java heap memory` or set the heap memory during the build?
 
-To address this issue, you can use one of the following methods:
+To resolve this issue, you need to adjust the Java heap size using the following parameters in the [system properties](https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_system_properties):
+> - [`-Xms:<size>`](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp999527), which sets the initial and minimum heap size
+> - [`-Xmx:<size>`](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp999528), which sets the maximum heap size
+>
+> For example:
+>
+> ```bash
+> java -Xms:1g -Xmx:1g MyApplication
+> ```
+>
+> This starts up the JVM with a heap size fixed to 1 GB.
 
-#### Method 1: Using a Custom Script
+Please refer following documentation for more information:
+
+https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/memman.html#wp1086978
+
+You can implement this solution using one of the following methods:
+
+#### Method 1: Using a Custom Script During the Build
 
 If your project has varying heap size requirements, you can adjust the heap size during the build phase with a [**Custom Script**](/workflows/common-workflow-steps/custom-script) before the **Android Build** step. Your script should include the following command:
 
