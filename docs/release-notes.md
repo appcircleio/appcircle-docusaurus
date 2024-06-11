@@ -7,6 +7,7 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-server/\_redis-domain-caution.mdx';
 
 <!-- Note to contributors: You can use the following badges to indicate the availability of the feature for modules.-->
 
@@ -23,6 +24,8 @@ import ContentRef from '@site/src/components/ContentRef';
 - We are releasing [Appcircle CLI v2.2.0.](https://github.com/appcircleio/appcircle-cli/releases/tag/v2.2.0) <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Users can now change the order of screenshots and previews by drag and drop in [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Testing Distribution profiles now include the signed or unsigned status information for app versions. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+<RedisDomainCaution/>
 
 ### :muscle: Improvements
 
