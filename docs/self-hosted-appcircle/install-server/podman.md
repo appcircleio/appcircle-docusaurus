@@ -168,11 +168,20 @@ sudo systemctl start port-redirect-443.service
 
 ### Firewalld Requirements
 
-If you are using firewalld, you need to open the 80 and 443 ports for the Appcircle server.
+If you are using firewalld, you need to open the the ports below for the Appcircle server:
+
+- If you plan to run the Appcircle server with `HTTPS`: 
+
+```bash
+sudo firewall-cmd --add-port=443/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+- If you plan to run the Appcircle server with `HTTP`:
 
 ```bash
 sudo firewall-cmd --add-port=80/tcp --permanent
-sudo firewall-cmd --add-port=443/tcp --permanent
+sudo firewall-cmd --add-port=6379/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
