@@ -118,11 +118,13 @@ You can run the Appcircle server in the background now.
 
 #### Overcoming Privileged Port Limitations
 
-When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443.
+When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443 for Podman installations.
 
-If you want to use ports 80 and 443 without running Podman as root, you need to take some extra steps.
+You should use a port forwarding tool like `socat`. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories and create two systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
 
-Best option is to use a port forwarding tool like socat. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories and create two systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
+:::caution
+You should create the `socat` services below even if you are using the Podman with the `root`  user. 
+:::
 
 ```bash
 sudo dnf install -y socat
