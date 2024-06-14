@@ -4,7 +4,6 @@ sidebar_label: Enterprise App Store
 description: Enhance powerful action to publish your builds to appcircle app store
 tags:
   [
-    testing-distribution,
     overview,
     concepts,
     app store,
