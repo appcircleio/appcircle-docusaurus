@@ -242,7 +242,7 @@ Be aware that the URLs below should be the URLs of the self-hosted Appcircle ser
 
 Appcircle runners connect to the self-hosted Appcircle server over the ports below:
 
-If your self-hosted server is configured as `HTTP`:
+If your self-hosted server is configured as `HTTPS`:
 - `443`
 
 If your self-hosted server is configured as `HTTP`:
