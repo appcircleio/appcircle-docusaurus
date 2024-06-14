@@ -31,6 +31,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 - Resign History and Publish History components have been unified under a new History component within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Users will now be able to see which version was used to resign the app after resigning an app version within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The default build workflows have been updated to enhance functionality and improve the user experience. Therefore, it can be assured that the steps in the default workflows are also up-to-date. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -39,6 +40,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Fixed an issue where build logs were being saved prematurely due to a time synchronization problem, causing logs to be saved before the end of the process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where API returned incorrect response code for requests with invalid commitId or buildId. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the Admin Build Details section showed incorrect build status for cancelled builds. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue in Jira comments where new lines were not rendered when using [Jira REST API v2](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment#jira-rest-api-version-reference), as the payload was previously received as plain text. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where users couldn't send release notes for binaries via 'Send to Google Play'. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the Publish Flow did not display the final step after successfully completing the process. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 

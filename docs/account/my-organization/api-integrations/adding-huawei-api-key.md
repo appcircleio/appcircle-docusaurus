@@ -25,9 +25,9 @@ Huawei AppGallery API Key is required to upload your binary to Huawei AppGallery
 
 Your account key is ready. To add a key, go to [My Organization](/account/my-organization) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Huawei AppGallery API Keys" item under the Connections section.
 
-### FAQ
+## FAQ
 
-#### Why am I getting the error `"[AppGalleryConnectFileService]distContryList is empty and usage route site is not China"`?
+### Why am I getting the error **[AppGalleryConnectFileService]distContryList is empty and usage route site is not China?**
 
 This error may occur if the [Huawei Supported Countries ](https://developer.huawei.com/consumer/en/doc/app/agc-help-supported-countries-overview-0000001146718725) list has been updated.To resolve this issue, please follow these steps:
 
@@ -37,3 +37,15 @@ This error may occur if the [Huawei Supported Countries ](https://developer.huaw
 <Screenshot url='https://cdn.appcircle.io/docs/assets/huaweiaccount-faq-1.png' />
 
 3. Try again to send the release to Huawei AppGallery via Appcircle.
+
+### Why am I getting the error **[AppGalleryConnectPublishService]input aab size is too large?**
+
+[AppGallery Connect server](https://www.huaweicloud.com/intl/en-us/product/AppGallery_Connect.html) imposes size limits on app submissions. For AAB files, the size limit is 150MB. This error occurs because your AAB file exceeds this limit. For more details, please refer to the following documentation:
+
+- [Submitting an App Package in Download Mode](https://developer.huawei.com/consumer/en/doc/AppGallery-connect-References/agcapi-add-packageurl-0000001158245065#section15344132481910)
+
+:::info
+
+If your app package is an APK, the size limit is 4GB. This error indicates that your APK exceeds this limit. Make sure your app package complies with the [size limits based on the type of package](https://developer.huawei.com/consumer/en/doc/AppGallery-connect-References/agcapi-add-packageurl-0000001158245065#section15344132481910) you are using.
+
+:::
