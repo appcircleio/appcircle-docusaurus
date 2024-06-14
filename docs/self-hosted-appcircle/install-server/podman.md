@@ -973,7 +973,7 @@ Follow and apply related guidelines in [here](/self-hosted-appcircle/self-hosted
 
 Self-hosted runner section in docs, has all details about runners and their configuration.
 
-:::caution
+:::::caution
 
 By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STREAM_ENDPOINT` and `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
 
@@ -994,13 +994,14 @@ If your Appcircle server is running with `HTTPS`, then the API and Redis stream 
 
 - `redis.appcircle.spacetech.com:443,ssl=true`
 - `https://api.appcircle.spacetech.com/build/v1`
+
 :::
 
 :reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.
 
 Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
-:::
+:::::
 
 Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted Appcircle server should run on a dedicated machine itself.
 
