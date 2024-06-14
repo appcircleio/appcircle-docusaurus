@@ -61,3 +61,11 @@ The resulting files will be either APK or AAB, based on the `Output Type` select
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-android-flutter-build-component
+
+## FAQ
+
+### How can I solve the `Out of memory error: Java heap memory` or set the heap memory during the build?
+
+To resolve this issue, please refer to the following document for detailed instructions:
+
+- [Android Build FAQ](/workflows/android-specific-workflow-steps/android-build#how-can-i-solve-the-out-of-memory-error-java-heap-memory-or-set-the-heap-memory-during-the-build)
