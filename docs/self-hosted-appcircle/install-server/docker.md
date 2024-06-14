@@ -473,7 +473,7 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-10-cloudflare-ss.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3839-cloudflare-ss.png' />
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
