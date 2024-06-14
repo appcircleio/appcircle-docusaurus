@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Publish module provides users with several key actions to manage their application versions effectively. Below is an overview of each menu item and its function within the system:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2821-ios-publish-actions.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub1.png' />
 
 ## Publish Details
 
@@ -63,13 +63,17 @@ url="/publish-module/publish-information/download">
 Read more about Downloading Binaries
 </ContentRef>
 
-## Publish History
+## History
+
+The History has two sections: The Publish History and The Resign History.
 
 The Publish History gives users a chronological log of all publish actions taken for a specific version. It allows users to track and audit the deployment process over time, which can be crucial for compliance, troubleshooting, and historical analysis.
 
+The Resign History gives users a chronological log of all resign actions that was done within the Publish Module for a specific app version. 
+
 <ContentRef
-url="/publish-module/publish-information/publish-history">
-Read more about Publish History
+url="/publish-module/publish-information/history">
+Read more about History
 </ContentRef>
 
 ## Delete
