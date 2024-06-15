@@ -12,7 +12,7 @@ import ContentRef from '@site/src/components/ContentRef';
 For each Android build, Appcircle creates a brand new virtual machine;
 
 - If you select "Default Intel Pool", virtual machine will be Debian 11 Bullseye.
-- If you select "Default M1 Pool", virtual machine will be macOS Sonoma `14.1` or macOS Monterey `12.6`.
+- If you select "Default M1 Pool", virtual machine will be macOS Sonoma `14.5` or macOS Monterey `12.6`.
 
 :::info
 
@@ -109,26 +109,26 @@ Here are some most important packages installed in our Linux and macOS images us
 | ------------------- | --------------- | -------------- | ----------------- |
 | Apt Package Manager | 2.2.4           | n/A            | n/A               |
 | Bash                | 5.1.4           | 3.2.57         | 3.2.57            |
-| GNU Binutils        | 2.35.2          | 2.41           | 2.39              |
+| GNU Binutils        | 2.35.2          | 2.42           | 2.39              |
 | Bzip2               | 1.0.8           | n/A            | n/A               |
-| Curl                | 7.74.0          | 8.1.2          | 7.79.1            |
-| GCC                 | 10.2.1          | 15.0.0         | 14.0.0            |
-| Git                 | 2.35.1          | 2.43.2         | 2.38.1            |
-| Git LFS             | 2.13.2          | 3.4.1          | 3.2.0             |
-| Gradle              | 4.4.1           | 8.6            | 7.5.1             |
-| Gzip                | 1.10.4          | 428            | 353.100.22        |
+| Curl                | 7.74.0          | 8.6.0          | 7.79.1            |
+| GCC                 | 10.2.1          | 16.0.0         | 14.0.0            |
+| Git                 | 2.35.1          | 2.45.2         | 2.38.1            |
+| Git LFS             | 2.13.2          | 3.5.1          | 3.2.0             |
+| Gradle              | 4.4.1           | 8.8            | 7.5.1             |
+| Gzip                | 1.10.4          | 430.100.5      | 353.100.22        |
 | Java                | 11.0.12         | 11.0.21        | 11.0.21           |
-| Maven               | 3.8.6           | 3.9.6          | 3.8.6             |
-| Node JS             | 16.18.1         | 18.19.1        | 18.19.1           |
+| Maven               | 3.8.6           | 3.9.7          | 3.8.6             |
+| Node JS             | 16.18.1         | 18.20.3        | 18.19.1           |
 | OpenSSL             | 1.1.1           | 3.3.6          | 2.8.3             |
-| Perl                | 5.32.1          | 5.30.3         | 5.30.3            |
-| Python              | 3.9.2           | 3.11.7         | 3.10.8            |
+| Perl                | 5.32.1          | 5.34.1         | 5.30.3            |
+| Python              | 3.9.2           | 3.12.3         | 3.10.8            |
 | Rake                | 13.0.6          | 13.0.6         | 13.0.1            |
 | Rbenv               | 1.2.0           | 1.2.0          | 1.2.0             |
 | Ruby                | 2.7.5           | 3.2.3          | 2.7.5             |
 | Unzip               | 6.00            | 6.00           | 6.00              |
-| Wget                | 1.21            | 1.21.4         | 1.21              |
-| Yarn                | 1.22.19         | 1.22.19        | 1.22.19           |
+| Wget                | 1.21            | 1.24.5         | 1.21              |
+| Yarn                | 1.22.19         | 1.22.22        | 1.22.19           |
 | Zip                 | 3.0             | 3.0            | 3.0               |
 
 ### Using your own computer for build
