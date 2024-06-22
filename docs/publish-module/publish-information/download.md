@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The "Download" function in the Publish module allows you to easily download the built application files, such as IPA for iOS or APK/AAB for Android, directly to your local system.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub3.png' />
 
 ## Steps to Download Your Binary
 

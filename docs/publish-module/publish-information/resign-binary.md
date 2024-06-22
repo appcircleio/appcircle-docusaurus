@@ -12,7 +12,7 @@ The **Resign Binary** feature in Appcircle allows you to resign both iOS and And
 
 This feature streamlines the process of updating app distribution and security settings, ensuring that your applications can be quickly adapted to meet changing requirements or distribution strategies.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-resign-option.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub8.png' />
 
 ## Resign iOS Binary
 
