@@ -114,3 +114,16 @@ After configuring the necessary options, click the **Sign** button to start the 
 Once the binary has been resigned, it will create a new package with the updated signing configurations. The newly resigned binary will appear in your version list marked with the new version code if updated during the process.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-android-after-resign.png' />
+
+## FAQ
+
+### Missing Entitlements
+
+If you receive an error similar to the following, it generally means your provisioning profile doesn't have the entitlements of your project.
+
+```
+error: Provisioning profile "AppCircle" doesn't support the Push Notifications capability. (in target 'Runner' from project 'Runner)
+error: Provisioning profile "AppCircle" doesn't include the aps-environment entitlement. (in target 'Runner' from project Runner')
+```
+
+Whenever you add a new capability (Push Notifications, Keychain Sharing, CloudKit...) to your project, you need to update your provisioning profile and upload it to Appcircle.

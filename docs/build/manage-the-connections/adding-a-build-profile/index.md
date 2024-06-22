@@ -81,6 +81,25 @@ In order to free up storage in your organization, you should also remove the oth
 
 Is your artifact storage full? Learn more about freeing up space [here](/troubleshooting-faq/common-issues#artifact-storage-is-full).
 
+## FAQ
+
+## Repository Connection Issues
+
+Please note that currently only Git repositories are supported. Any third party version control repositories need to be transferred to a proper Git repository on either Github or Bitbucket.
+
+### **How to change your connected GitHub, Bitbucket, or GitLab account?**
+
+You will need to go to your Github, Bitbucket, or GitLab account and revoke access to Appcircle and then reconnect your account from Appcircle.
+
+### Unable to see the repositories in the connected repository provider
+
+Please check if you have owner/admin access in the specific organization from which the repositories will be connected. Appcircle does not allow connections to the repositories with a member-level access.
+
+### Error accessing the repository. Please check if the repository exists or if you have the required privileges.
+
+- Only members who have admin role on repository or are owner of the organization can install the Github App in an organization that owns that repository.
+- Only members who have admin role on a repository or are owner of the organization can connect a repository to a profile.
+
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
 <NeedHelp />

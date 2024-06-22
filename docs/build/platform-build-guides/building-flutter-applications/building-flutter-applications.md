@@ -184,9 +184,94 @@ brew install dart
  sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
  sudo apt-get install dart
 ```
-
   </TabItem>
 </Tabs>
+
+## FAQ
+
+### Flutter release mode binaries do not work on the Android emulator
+
+To run a Flutter release mode APK in an emulator, please make sure that the emulator runs with the `x86_64` ABI type and the app are configured accordingly. Emulators with `x86` ABI type are not supported by Flutter . (Please refer to the following GitHub issue on the Flutter repository for more information: [https://github.com/flutter/flutter/issues/28432](https://github.com/flutter/flutter/issues/28432))
+
+### No pubspec.yaml file found error
+
+If the pubspec.yaml file is not present in the default project path, it cannot be detected automatically by the fetch process. In such cases, the file path must be manually defined in the Flutter Build workflow step as the value of the `$AC_FLUTTER_PROJECT_DIR` environment variable.
+
+For reference, please refer to the [Android Flutter Build](https://github.com/appcircleio/appcircle-android-flutter-build-component) and [iOS Flutter Build](https://github.com/appcircleio/appcircle-ios-flutter-build-component) components.
+
+### File not found error
+
+You may get an error like below when you're building an Android project.
+
+```
+lib/src/core/dependency/myservice.dart:12:8: Error: Error when reading ‘lib/src/data/repositories/CustomerRepository.dart’: No such file or directory
+```
+
+This error usually indicates that you didn't name your files according to Dart convention. Linux file system is case sensitive whereas Windows and macOS are not. So if your repository has `customerrepository.dart` but you're importing as `CustomerRepository.dart`, it will not work on Linux machines. To prevent this error, please rename your files and make them all lower case. Please read the following documentation related to styling and naming your files.
+
+<ContentRef url="https://dart.dev/guides/language/effective-dart/style#do-name-libraries-and-source-files-using-lowercase_with_underscores">Effective Dart: Style | name packages, directories, and source files</ContentRef>
+
+### Firebase Version
+
+Your build may fail with following error
+
+```
+[!] `GoogleAppMeasurement` requires CocoaPods version `>= 1.10.2`, which is not satisfied by your current version, `1.10.1`.
+```
+
+Please edit your workflow and add **Cocoapods Install** step and change the Cocoapods version. You may also set the Cocoapods version if you commit your `Podfile.lock` to your repository.
+
+### CocoaPods could not find compatible versions for pod "Amplify"
+
+When does this occur?
+
+On the first iOS build after upgrading the version of the Amplify packages in your pubspec.yaml.
+Example
+
+Below is an example of what the error will look like:
+
+```
+[!] CocoaPods could not find compatible versions for pod "Amplify":
+  In snapshot (Podfile.lock):
+    Amplify (= 1.6.0)
+  In Podfile:
+    amplify_auth_cognito (from `.symlinks/plugins/amplify_auth_cognito/ios`) was resolved to 0.0.1, which depends on
+      Amplify (> 1.9.2)
+You have either:
+ * out-of-date source repos which you can update with `pod repo update` or with `pod install --repo-update`.
+ * changed the constraints of dependency `Amplify` inside your development pod `amplify_auth_cognito`.
+   You should run `pod update Amplify` to apply changes you've made.
+```
+
+**Suggested resolution**
+
+- Option 1 (recommended): Run `pod update Amplify AWSPluginsCore AmplifyPlugins` from the ios dir. This will update the pods that are used by the amplify flutter packages.
+- Option 2: Delete the `Podfile.lock` (in the ios dir) and rebuild. A new Podfile.lock will be generated. Please note, this may cause other non amplify related dependencies to be updated as well.
+- Option 3: Run pod update from the ios dir. This should update your `Podfile.lock` file. Please note, this may cause other non amplify related dependencies to be updated as well.
+
+### Cocoapods Error
+
+`Signing for "MyPod" requires a development team. Select a development team in the Signing & Capabilities editor`
+
+If you are using Xcode 14 and your Flutter version is less than 3.3, your build may fail with above message. You should modify your Podfile according to below snippet. Flutter 3.3 fixes this bug. [Related Flutter Issue](https://github.com/flutter/flutter/issues/111757)
+
+```ruby
+post_install do |installer|
+ installer.pods_project.targets.each do |target|
+   flutter_additional_macos_build_settings(target)
+
+   target_is_resource_bundle = target.respond_to?(:product_type) && target.product_type == 'com.apple.product-type.bundle'
+   target.build_configurations.each do |build_configuration|
+     if target_is_resource_bundle
+       build_configuration.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+       build_configuration.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
+       build_configuration.build_settings['CODE_SIGNING_IDENTITY'] = '-'
+       build_configuration.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = '-'
+     end
+   end
+  end
+end
+```
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
