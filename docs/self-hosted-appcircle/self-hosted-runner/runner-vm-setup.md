@@ -7,6 +7,7 @@ sidebar_class_name: hidden
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
 
 # Self-hosted Runner as MacOS VM Image
 
@@ -732,32 +733,43 @@ Edit `appsettings.json` with your favorite editor. (nano, vi etc.)
   ...
   "ASPNETCORE_NOSHUTDOWN": "false",
   ...
-  "ASPNETCORE_BASE_API_URL": "https://api.test-appcircle.tool.zb/build/v1"
+  "ASPNETCORE_REDIS_STREAM_ENDPOINT": "redis.appcircle.spacetech.com:443,ssl=true",
+  ...
+  "ASPNETCORE_BASE_API_URL": "https://api.appcircle.spacetech.com/build/v1"
 }
 ```
 
 - ASPNETCORE_NOSHUTDOWN: It should be `false`. So, it will shutdown VM when build complete.
-- ASPNETCORE_BASE_API_URL: It should be your self-hosted appcircle server URL.
-
-Runner will register to server defined in `ASPNETCORE_BASE_API_URL` and take build jobs from there.
+- ASPNETCORE_BASE_API_URL: It should be your self-hosted Appcircle server `api` URL.
+  - Runner will register to server defined in `ASPNETCORE_BASE_API_URL` and take build jobs from there.
+- ASPNETCORE_REDIS_STREAM_ENDPOINT: It should be your self-hosted Appcircle server `redis` URL, port and SSL settings.  
+  - If you are using Appcircle server with `HTTPS`, then the port should be `443` and the `ssl` variable should be `true`.
+  - If you are using Appcircle server with `HTTP`, then the port should be external port of the Redis which is `6379` by default. And the `ssl` variable should be `false`.
+    - In example: `redis.appcircle.spacetech.com:6379,ssl=false`
 
 :::tip
 
-The latest macOS VM image,`macOS_240221` or later, has the ASPNETCORE_NOSHUTDOWN setting as `false` by default and has no pre-defined ASPNETCORE_BASE_API_URL setting in the `appsettings.json` file.
+The latest macOS VM image,`macOS_240221` or later, has the `ASPNETCORE_NOSHUTDOWN` setting as `false` by default and has no pre-defined `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` setting in the `appsettings.json` file.
 
-So, if you did not upgrade the packaged self-hosted runner at [previous steps](#1-check-the-runner-version) above, only modifying the ASPNETCORE_BASE_API_URL value with the following command should be enough for the self-hosted runner configuration.
+So, if you did not upgrade the packaged self-hosted runner at [previous steps](#1-check-the-runner-version) above, only modifying the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` values with the following commands should be enough for the self-hosted runner configuration.
 
 ```bash
-echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.test-appcircle.tool.zb/build/v1"' appsettings.json)" > appsettings.json
+echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.appcircle.spacetech.com/build/v1"' appsettings.json)" > appsettings.json
 ```
 
-If you upgraded the self-hosted runner, you must also modify the ASPNETCORE_NOSHUTDOWN setting as well.
+```bash
+echo "$(jq '.ASPNETCORE_REDIS_STREAM_ENDPOINT="redis.appcircle.spacetech.com:443,ssl=true"' appsettings.json)" > appsettings.json
+```
+
+If you upgraded the self-hosted runner, you must also modify the `ASPNETCORE_NOSHUTDOWN` setting as well.
 
 ```bash
 echo "$(jq '.ASPNETCORE_NOSHUTDOWN="false"' appsettings.json)" > appsettings.json
 ```
 
 :::
+
+<NewRunnerOldServerRedisCaution/>
 
 Create runner access token from appcircle server and register runner to server. See details in [here](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 

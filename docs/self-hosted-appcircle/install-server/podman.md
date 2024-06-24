@@ -118,11 +118,13 @@ You can run the Appcircle server in the background now.
 
 #### Overcoming Privileged Port Limitations
 
-When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443.
+When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443 for Podman installations.
 
-If you want to use ports 80 and 443 without running Podman as root, you need to take some extra steps.
+You should use a port forwarding tool like `socat`. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories and create two systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
 
-Best option is to use a port forwarding tool like socat. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories and create two systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
+:::caution
+You should create the `socat` services below even if you are using the Podman with the `root`  user. 
+:::
 
 ```bash
 sudo dnf install -y socat
@@ -168,11 +170,20 @@ sudo systemctl start port-redirect-443.service
 
 ### Firewalld Requirements
 
-If you are using firewalld, you need to open the 80 and 443 ports for the Appcircle server.
+If you are using firewalld, you need to open the the ports below for the Appcircle server:
+
+- If you plan to run the Appcircle server with `HTTPS`: 
+
+```bash
+sudo firewall-cmd --add-port=443/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+- If you plan to run the Appcircle server with `HTTP`:
 
 ```bash
 sudo firewall-cmd --add-port=80/tcp --permanent
-sudo firewall-cmd --add-port=443/tcp --permanent
+sudo firewall-cmd --add-port=6379/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
@@ -601,6 +612,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - resource
 - store
 - monitor
+- redis
 - (optional) Enterprise App Store's Custom Domain
 
 :::info
@@ -611,7 +623,7 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-10-cloudflare-ss.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3839-cloudflare-ss.png' />
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
@@ -653,6 +665,7 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  resource.appcircle.spacetech.com
 0.0.0.0  store.appcircle.spacetech.com
 0.0.0.0  monitor.appcircle.spacetech.com
+0.0.0.0  redis.appcircle.spacetech.com
 0.0.0.0  store.spacetech.com
 ```
 
@@ -677,6 +690,7 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  resource.appcircle.spacetech.com
 35.241.181.2  store.appcircle.spacetech.com
 35.241.181.2  monitor.appcircle.spacetech.com
+35.241.181.2  redis.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
 ```
 
@@ -827,6 +841,7 @@ Below ports must be unused on system and dedicated to only Appcircle server usag
 - `443`
 - `8080`
 - `8443`
+- `6379` (Required if your Appcircle server is running without `HTTPS`.)
 
 Appcircle server will listen on `8080` and `8443` ports by default for HTTP and HTTPS connections.
 You can get a list of up-to-date ports used by podman with below command.
@@ -958,25 +973,35 @@ Follow and apply related guidelines in [here](/self-hosted-appcircle/self-hosted
 
 Self-hosted runner section in docs, has all details about runners and their configuration.
 
-:::caution
+:::::caution
 
-By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
+By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STREAM_ENDPOINT` and `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
 
+- `webeventredis.appcircle.io:6379,ssl=true`
 - `https://api.appcircle.io/build/v1`
 
-:point_up: You need to change its value with your self-hosted Appcircle server's API URL.
+:point_up: You need to change these values with your self-hosted Appcircle server's Redis and API URL.
 
-Assuming our sample scenario explained above, its value should be
+Assuming our sample scenario explained above, these values should be:
 
+- `redis.appcircle.spacetech.com:6379,ssl=false`
 - `http://api.appcircle.spacetech.com/build/v1`
 
 for our example configuration.
 
-:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:::info
+If your Appcircle server is running with `HTTPS`, then the API and Redis stream endpoint should be like this:
+
+- `redis.appcircle.spacetech.com:443,ssl=true`
+- `https://api.appcircle.spacetech.com/build/v1`
+
+:::
+
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.
 
 Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
-:::
+:::::
 
 Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted Appcircle server should run on a dedicated machine itself.
 

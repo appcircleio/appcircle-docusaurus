@@ -348,6 +348,10 @@ storeWeb:
 You should use the full certificate chain for `publicKey` similar to main domain `sslCertificate`, to prevent SSL errors when clients connect.
 
 :::caution
+The `.storeWeb.external.port` must be `443` if the `enabledTls` option is true.
+:::
+
+:::caution
 
 For now, self-hosted Appcircle does not support usage of password protected private keys for Enterprise App Store custom domains.
 
@@ -424,6 +428,10 @@ testerWeb:
 - `privateKey` is the private key. (content of `.key` file)
 
 You should use the full certificate chain for `publicKey`, similar to the main domain `sslCertificate`, to prevent SSL errors when clients connect.
+
+:::caution
+The `.testerWeb.external.port` must be `443` if the `enabledTls` option is true.
+:::
 
 :::caution
 
