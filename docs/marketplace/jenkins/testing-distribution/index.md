@@ -18,7 +18,7 @@ The Appcircle Testing Distribution plugin allows users to upload their apps and 
 
 ### Install Appcircle Testing Distribution Plugin
 
-Go to your Jenkins dashboard and follow, Manage Jenkins > Plugins and search for "Appcircle Testing Distribution"
+Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Then, search for "Appcircle Enterprise Store" in the available plugins section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-installation_steps.png' />
 
@@ -30,8 +30,8 @@ Go to your configuration page of the project add a build step.
 
 ### Configure Plugin
 
-After adding the plugin into your build steps make sure you fulfill required inputs.
-Also, do not forget to add the plugin after your build steps. Because you will be asked to provide the build path.
+After adding the plugin to your build steps, ensure that you provide all required inputs.
+Additionally, remember to place the plugin after your build steps as you will need to specify the build path later on.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-configure_pannel.png' />
 
@@ -41,6 +41,6 @@ Utilize environment variables seamlessly by substituting the parameters with `$(
 
 ## References
 
-- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
+- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
 For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](https://appcircle.io/enterprise-app-store).
