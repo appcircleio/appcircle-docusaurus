@@ -88,7 +88,7 @@ The metadata information field can be changed according to the store credentials
 
 :::danger Microsoft InTune Metadata and Credential
 
-If the Microsoft InTune credential is not selected, the metadata fields will not change. For this reason, make sure that you have integrated [**Microsoft InTune credential**](account/my-organization/api-integrations/adding-microsoft-intune-api-key) and selected the correct credentials in [**Publish Settings**](publish-module/publish-settings#store-credentials).
+If the Microsoft InTune credential is not selected, the metadata fields will not change. For this reason, make sure that you have integrated [**Microsoft InTune credential**](/account/my-organization/api-integrations/adding-microsoft-intune-api-key) and selected the correct credentials in [**Publish Settings**](/publish-module/publish-settings#store-credentials).
 
 :::
 
