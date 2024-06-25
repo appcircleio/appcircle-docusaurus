@@ -82,6 +82,38 @@ Please note, this field is constantly visible on Appcircle. However, on App Stor
 Please note, this comes with **Keep Existing Rating** selected by default. If you choose to **Reset rating when this version released** option, it will reset all past **reviews and ratings** of your app in **App Store**.
 :::
 
+## Microsoft InTune Metadata Information
+
+The metadata information field can be changed according to the store credentials selection in Publish Settings. If InTune credential is selected as store credentials, the metadata screen will automatically include Microsoft InTune metadata information.
+
+:::danger Microsoft InTune Metadata and Credential
+
+If the Microsoft InTune credential is not selected, the metadata fields will not change. For this reason, make sure that you have integrated [**Microsoft InTune credential**](account/my-organization/api-integrations/adding-microsoft-intune-api-key) and selected the correct credentials in [**Publish Settings**](publish-module/publish-settings#store-credentials).
+
+:::
+
+### Metadata Auto-Population
+
+If there is existing metadata associated with your app on the Microsoft InTune, the **Metadata Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneMetadataRetrieve.png' />
+
+### Fields Explained
+
+- **Name**: Name for the app. This name will be visible in the Intune apps list and to users in the Company Portal.​
+- **Description**: Help your device users understand what the app is and/or what they can do in the app. This description will be visible to them in Company Portal.
+- **Publisher**: The name of the developer or company that distributes the app. This information will be visible to users in Company Portal.
+- **Applicable Device Type**: Select the device types that can install this app
+- **Minimum Operating System**: Select the earliest operating system version on which the app can be installed. If you assign the app to a device with an earlier operating system, it will not be installed.​
+- **Category**: Categorize the app to make it easier for users to sort and find in Company Portal. You can choose multiple categories
+- **Featured App**: Featured apps are prominently placed in Company Portal so that users can quickly get to them.
+- **Information URL**: Link people to a website or documentation that has more information about the app. The information URL will be visible to users in Company Portal.
+- **Privacy URL**: Provide a link for people who want to learn more about the app's privacy settings and terms. The privacy URL will be visible to users in Company Portal.
+- **Developer**: The name of the company or Individual that developed the app. This information will be visible to people signed into the admin center.
+- **Owner**: The name of the person in your organization who manages licensing or is the point-of-contact for this app. This name will be visible to people signed in to the admin center.​
+- **Notes**: Add additional notes about the app. Notes will be visible to people signed in to the admin center.
+
+
 ## Conclusion
 
-Filling out the Metadata Information section accurately is crucial for the successful listing and update of your app on the App Store. It ensures that potential users receive the most current information and that your app meets all necessary guidelines for
+Filling out the Metadata Information section accurately is crucial for the successful listing and update of your app on the App Store and Microsoft InTune. It ensures that potential users receive the most current information and that your app meets all necessary guidelines for
