@@ -1,7 +1,7 @@
 ---
 title: Building iOS Applications
 description: Building iOS applications may be complex and confusing. Appcircle will help you smooth the process and doesn't require any additional configuration files from you.
-tags: [build, platform build guides, ios]
+tags: [build, platform build guides, ios, faq]
 sidebar_position: 1
 ---
 
@@ -200,8 +200,6 @@ Your iOS application project needs to have a shared scheme in order to be built 
 2. Select **Shared** for your `xcproject` or `xcworkspace`
 3. Scheme container needs to be set to the corresponding Xcode project or workspace
 4. Please do not forget to add your `.xcscheme` file to version control so it will be uploaded to your Git repository
-
-For details on iOS builds please refer to [**Building iOS Applications**](../build/platform-build-guides/building-ios-applications)
 
 ### Cocoapods Errors Due to Missing xcworkspace
 

@@ -1,7 +1,7 @@
 ---
 title: Resign Binary
 description: Learn how to resign your iOS application binaries within Appcircle to change provisioning profiles or app entitlements.
-tags: [iOS, resigning, provisioning profiles, entitlements]
+tags: [iOS, resigning, provisioning profiles, entitlements, faq]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

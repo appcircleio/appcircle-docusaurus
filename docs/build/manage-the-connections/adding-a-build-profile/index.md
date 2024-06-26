@@ -1,7 +1,7 @@
 ---
 title: Adding a Build Profile & Connecting a Repository
 description: Learn how to add a build profile and connect a repository in Appcircle
-tags: [build profile, connection, repository]
+tags: [build profile, connection, repository, faq]
 sidebar_position: 1
 ---
 
@@ -33,7 +33,7 @@ Enter a name for your build profile and select the target operating system (iOS 
 
 ## Connect your repository
 
-You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, You can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible git providers such as Azure DevOps and AWS CodeCommit. ([Please refer here for more information on AWS CodeCommit connections.](/troubleshooting-faq/common-issues#how-to-connect-to-aws-codecommit-repositories-through-ssh))
+You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, You can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible git providers such as Azure DevOps and AWS CodeCommit. ([Please refer here for more information on AWS CodeCommit connections.](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh#how-to-connect-to-aws-codecommit-repositories-through-ssh-1))
 
 You can also connect to your Self Hosted Bitbucket and GitLab account directly within Appcircle.
 
@@ -79,8 +79,6 @@ After the prompt, the profile will be deleted.
 
 In order to free up storage in your organization, you should also remove the other references pointing to the artifact. In example, if you have the same artifact on the testing distribution, you should also delete those artifacts as well.
 
-Is your artifact storage full? Learn more about freeing up space [here](/troubleshooting-faq/common-issues#artifact-storage-is-full).
-
 ## FAQ
 
 ## Repository Connection Issues
@@ -99,6 +97,8 @@ Please check if you have owner/admin access in the specific organization from wh
 
 - Only members who have admin role on repository or are owner of the organization can install the Github App in an organization that owns that repository.
 - Only members who have admin role on a repository or are owner of the organization can connect a repository to a profile.
+
+If you still can't solve your issues, ask on our Slack page. Our community and our support engineers will help you whenever they're available:
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

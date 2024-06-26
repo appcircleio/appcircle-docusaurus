@@ -1,7 +1,7 @@
 ---
 title: Building React Native Applications
 description: You can build your React Native applications in Appcircle for iOS or Android platforms.
-tags: [build, platform build guides, react native]
+tags: [build, platform build guides, react native, faq]
 sidebar_position: 3
 ---
 
@@ -186,7 +186,7 @@ If you face problems during NPM/Yarn install steps on Appcircle but not on your 
 
 First, you should check the [NPM status page](https://yarnpkg.com/getting-started/qa#queries-to-registryyarnpkgcom-return-a-404500-is-it-down) for possible availability issues.
 
-Our runners have yarn classic (1.x) by default. See the [iOS build agent stacks](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) and the [Android build agent stacks](../infrastructure/android-build-infrastructure#android-build-agent-stacks) pages for the exact versions.
+Our runners have yarn classic (1.x) by default. See the [iOS build agent stacks](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) and the [Android build agent stacks](/infrastructure/android-build-infrastructure#android-build-agent-stacks) pages for the exact versions.
 
 On the other hand, yarn modern (2.x) has stability improvements that can fix these kinds of network errors. You can see [here](https://yarnpkg.com/getting-started/qa#why-should-you-upgrade-to-yarn-modern) for details.
 

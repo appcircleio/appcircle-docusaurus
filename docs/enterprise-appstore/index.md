@@ -1,7 +1,7 @@
 ---
 title: Enterprise App Store
 description: Distribute your in-house applications to your users with the Enterprise App Store in Appcircle
-tags: [enterprise app store, in-house distribution, enterprise distribution]
+tags: [enterprise app store, in-house distribution, enterprise distribution, faq]
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

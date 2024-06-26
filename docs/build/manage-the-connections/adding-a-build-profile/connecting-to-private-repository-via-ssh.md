@@ -1,7 +1,7 @@
 ---
 title: Connecting to Private Repository via SSH
 description: Learn how to connect to a private repository via SSH in Appcircle
-tags: [build profile, connection, ssh]
+tags: [build profile, connection, ssh, faq]
 sidebar_position: 6
 ---
 
@@ -159,7 +159,7 @@ echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $AC_ENV_FILE_PATH
 
 The only available option for connecting to the internal/on-premise repositories is to use SSH and whitelist Appcircle resources if the repositories are not accessible from the public internet.
 
-Please refer to [this guide for connecting to the repositories in internal networks](../build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls).
+Please refer to [this guide for connecting to the repositories in internal networks](https://docs.appcircle.io/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls).
 
 ### How to connect to AWS CodeCommit repositories through SSH?
 

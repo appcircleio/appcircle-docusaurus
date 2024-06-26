@@ -1,7 +1,7 @@
 ---
 title: Create a Distribution Profile and Sharing with Testers
 description: Learn how to create a distribution profile and share your builds with testers in Appcircle
-tags: [distribution, distribution profile, testing distribution, testers]
+tags: [distribution, distribution profile, testing distribution, testers, faq]
 sidebar_position: 1
 ---
 
@@ -43,29 +43,3 @@ On some distributed apps, the **Access Denied** error can be bypassed by one of 
 - Launching the distribution link on a different browser and Incognito Mode
 - Clearing the browser cache if the link is pasted to a browser instead of in-line browser on mail applications
 - If there is an authorization configuration on Distribution, clearing the authorization temporarily
-
-### Artifact Storage is Full
-
-Older builds and/or testing distributions will use almost all of your storage. If your artifact storage is full, you can free up some of the old artifacts.
-
-#### [Refer here to delete a build profile](/build/manage-the-connections/adding-a-build-profile#delete-a-build-profile)
-
-#### [Refer here to delete specific builds from your build profile](/build/post-build-operations/after-a-build#delete-specific-builds)
-
-#### [Refer here to delete testing distribution profiles and specific distribution artifacts](/distribute/create-or-select-a-distribution-profile#delete-a-distribution-profile)
-
-#### [Refer here to delete a Publish Profile](/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile)
-
-In order for storage to be freed up, you should also remove the other references pointing to the artifact. In example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds respectively.
-
-:::caution
-
-It may take a couple of minutes to see the change in your account after you have deleted some artifacts.
-
-:::
-
-If you still can't solve your issues, ask on our Slack page. Our community and our support engineers will help you whenever they're available:
-
-import NeedHelp from '@site/docs/\_need-help.mdx';
-
-<NeedHelp />

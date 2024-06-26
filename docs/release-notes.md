@@ -905,7 +905,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### :muscle: Improvement
 
-- [Added FAQs](/troubleshooting-faq/common-issues) related to Xcode 14 and code signing errors.
+- [Added FAQs](/build/platform-build-guides/building-ios-applications#faq) related to Xcode 14 and code signing errors.
 
 ## 2.9.15 - 2022-09-30 - Fortify On Demand and Firebase App Distribution components
 
@@ -1000,7 +1000,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 - [iOS Stack](/infrastructure/ios-build-infrastructure) Monterey is upgraded to 12.4 for macOS agents.
 - Log window is improved. It is more performant and stable.
-- Added [FAQ section](/troubleshooting-faq/common-issues#issues-in-connecting-to-the-repositories-with-ssh) for multiple SSH keys.
+- Added [FAQ section](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh#issues-in-connecting-to-the-repositories-with-ssh) for multiple SSH keys.
 
 ### 🐞 Fixed
 
@@ -1067,14 +1067,14 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 - Added Huawei AppGallery section for sending your apps to Huawei AppGallery.
 - Added [Huawei AppGallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei AppGallery API Key.
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#provisioning-profile-error) for Provisioning Profiles.
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#missing-entitlements) for Missing Entitlements​
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#gradle-build-after-bintray-shutdown) for Bintray deprecation
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#no-pubspecyaml-file-found-error) for Flutter build errors
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#file-not-found-error) for Flutter file naming errors
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#firebase-version) for Flutter Firebase version
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#err_ossl_evp_unsupported) for React native apps
+- Added [FAQ section](/build/platform-build-guides/building-ios-applications#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
+- Added [FAQ section](/build/platform-build-guides/building-ios-applications#provisioning-profile-error) for Provisioning Profiles.
+- Added [FAQ section](/publish-module/publish-information/resign-binary#missing-entitlements) for Missing Entitlements​
+- Added [FAQ section](/build/platform-build-guides/building-android-applications#gradle-build-after-bintray-shutdown) for Bintray deprecation
+- Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter build errors
+- Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter file naming errors
+- Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter Firebase version
+- Added [FAQ section](/build/platform-build-guides/building-react-native-applications#faq) for React native apps
 
 ## 2.9.0 - New Build Profile Detail UI, Better Artifact Upload Times
 
@@ -1221,7 +1221,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 
 ### ; 📑 Documentation
 
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#artifact-storage-is-full) of how to delete old artifacts.
+- Added [FAQ section](/build/post-build-operations/after-a-build#artifact-storage-is-full) of how to delete old artifacts.
 - Improved [Sending the build status to repository providers](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) section for better CI/CD pipeline tracking.
 
 ## 2.3.0 - 2021-06-28 - Xcode Version Updates
@@ -1254,7 +1254,7 @@ Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.
 
 ### 📑 Documentation
 
-- Added [React Native Specific FAQ](https://docs.appcircle.io/troubleshooting-faq/common-issues#react-native-specific-issues) section
+- Added [React Native Specific FAQ](/build/platform-build-guides/building-react-native-applications#faq) section
 
 ## 2.2.0 - 2021-06-16 - Xcode Version and CLI Improvements
 
