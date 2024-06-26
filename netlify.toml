@@ -877,6 +877,16 @@
   from = "/tutorials/how-to-add-an-android-app"
   to = "/build/platform-build-guides/building-android-applications"
   status = 301
+
+[[redirects]]
+  from = "/signing-identities/ios-certificates-and-provisioning-profiles"
+  to = "/signing-identities/ios-signing"
+  status = 301
+
+[[redirects]]
+  from = "/signing-identities/ios-certificates-and-provisioning-profiles#automatic-signing"
+  to = "/signing-identities/ios-signing/apple-profiles#automatic-signing"
+  status = 301
   
   
 
