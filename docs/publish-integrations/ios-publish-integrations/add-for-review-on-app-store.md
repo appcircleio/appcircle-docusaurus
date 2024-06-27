@@ -9,11 +9,11 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Add for Review on App Store
 
-Appcircle Publish Module isolates the user to a great extent in the App Store Connect interface with its steps. In this way, you can manage your publish process from a single place. With the Add for Review on App Store step, you can send your application version in TestFlight directly to the review.
+Appcircle Publish Module isolates the user to a great extent in the App Store Connect interface with its steps. This allows you to manage the publishing process from a single location.. With the Add for Review on App Store step, you can send your application version in TestFlight directly for review.
 
 :::caution Add for Review on App Store
 
-When this step works, Appcircle will directly submit the relevant version for review. 
+When this step is executed, Appcircle will directly submit the relevant version for review.
 
 For this reason, if there is an error in your [**Metadata Information**](/publish-module/publish-information/meta-data-information) or [**App Information**](/publish-module/publish-information/app-information) details, the step will fail.
 
@@ -31,7 +31,7 @@ In order for this step to work, the following steps must be present before this 
 
 :::danger Prerequisites
 
-When this step runs, Appcircle will first search for the relevant version match on **TestFlight**. When the relevant version match is provided, the binary will be sent directly to review.
+When this step runs, Appcircle will first search for the relevant version match on **TestFlight**. Once the relevant version is found, the binary will be sent directly for review.
 
 For this reason, the binary file must be present on **TestFlight**.
 

@@ -7,9 +7,9 @@ sidebar_position: 9
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# App Information
+# App Store Connect Information
 
-In order for a binary to be successfully sent to the review, some information must be completed. With Appcircle's App Information feature, you can update the information required for binary submission.
+For a binary to be successfully sent for review, certain information must be completed. By using Appcircle's App Information feature, you can update the required information for binary submission.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-appInfodot.png' />
 
@@ -25,19 +25,19 @@ When you select a language, you will provide localized versions of your app's in
 
 General information area allows you to see and update some of your information that will appear on the market for your application. 
 
-In these fields, you can determine the category of your application and fill in the content right information it contains.
+In these fields, you can specify the category of your application and provide information about the content it contains.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-generalInfo.png' />
 
 ### Update and Save
 
-You can instantly see your current App Information details and if you wish, you can simultaneously update these values on your App Store Connect account. Each time this screen is opened, the current information will be retrieved.
+You can instantly view your current App Information details and, if desired, simultaneously update these values on your App Store Connect account. Each time this screen is opened, the current information will be retrieved.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-appInfoDetails.png' />
 
 :::danger App Information Save
 
-When you make a change to this informations, when you click the **save button**, the changes you have made will be updated on your App Store Connect account **at that moment**. Make sure your selections are **correct** and the information entered is **accurate**.
+When you make a change to these informations and click the **save button**, the updates will be **immediately** applied to your App Store Connect account. Make sure your selections are **correct** and the information entered is **accurate**.
 
 :::
 
