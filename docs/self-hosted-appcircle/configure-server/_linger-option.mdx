@@ -1,0 +1,23 @@
+To ensure uninterrupted operation of the Appcircle server's background processes, you must enable the **linger** option on the host system.
+
+Enabling this option allows the podman containers to persist even after user logouts, ensuring continuous functionality.
+
+Check if the **linger** option is enabled for the current user with the below command.
+
+```bash
+loginctl show-user "$USER" --property=Linger
+```
+
+If you see `Linger=yes`, it means that the option is enabled and you do not need extra configuration.
+
+If the output is `Linger=no`, this means that the option is disabled and you cannot run the Appcircle server in the background.
+
+:::caution
+If the **linger** option is set to `no`, you must enable it to run the Appcircle server in the background.
+:::
+
+To enable the linger option, you can use the command below:
+
+```bash
+loginctl enable-linger
+```

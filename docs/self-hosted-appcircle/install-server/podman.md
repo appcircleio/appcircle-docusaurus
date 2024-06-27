@@ -6,6 +6,10 @@ sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import LingerOption from '@site/docs/self-hosted-appcircle/configure-server/\_linger-option.mdx';
+import SocatConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_socat-configuration.mdx';
+import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_podman-netavark-configuration.mdx';
+import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_firewalld-configuration.mdx';
 
 # Overview
 
@@ -90,97 +94,17 @@ The Appcircle server supports Podman as the container runtime. The minimum requi
 
 #### Enabling the Linger Option
 
-To ensure uninterrupted operation of the Appcircle server's background processes, you must enable the **linger** option on the host system.
-
-Enabling this option allows the podman containers to persist even after user logouts, ensuring continuous functionality.
-
-Check if the **linger** option is enabled for the current user with the below command.
-
-```bash
-loginctl show-user "$USER" --property=Linger
-```
-
-If you see `Linger=yes`, it means that the option is enabled and you do not need extra configuration.
-
-If the output is `Linger=no`, this means that the option is disabled and you cannot run the Appcircle server in the background.
-
-:::caution
-If the **linger** option is set to `no`, you must enable it to run the Appcircle server in the background.
-:::
-
-To enable the linger option, you can use the command below:
-
-```bash
-loginctl enable-linger
-```
+<LingerOption/>
 
 You can run the Appcircle server in the background now.
 
 #### Overcoming Privileged Port Limitations
 
-When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443.
-
-If you want to use ports 80 and 443 without running Podman as root, you need to take some extra steps.
-
-Best option is to use a port forwarding tool like socat. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories and create two systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
-
-```bash
-sudo dnf install -y socat
-```
-
-Save the file below as `port-redirect-80.service` in `/etc/systemd/system/` directory.
-
-```bash
-[Unit]
-Description=Port Redirect Service - Port 80
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/socat TCP-LISTEN:80,fork,reuseaddr TCP:127.0.0.1:8080
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Save the file below as `port-redirect-443.service` in `/etc/systemd/system/` directory.
-
-```bash
-[Unit]
-Description=Port Redirect Service - Port 443
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/socat TCP-LISTEN:443,fork,reuseaddr TCP:127.0.0.1:8443
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Then, one by one, execute the below commands to activate port redirections.
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable port-redirect-80.service
-sudo systemctl start port-redirect-80.service
-sudo systemctl enable port-redirect-443.service
-sudo systemctl start port-redirect-443.service
-```
+<SocatConfiguration/>
 
 ### Firewalld Requirements
 
-If you are using firewalld, you need to open the 80 and 443 ports for the Appcircle server.
-
-```bash
-sudo firewall-cmd --add-port=80/tcp --permanent
-sudo firewall-cmd --add-port=443/tcp --permanent
-sudo firewall-cmd --reload
-```
-
-To check if the ports are open, you can run the following command:
-
-```bash
-sudo firewall-cmd --list-ports
-```
+<FirewalldConfiguration/>
 
 ## Installation
 
@@ -257,55 +181,7 @@ Older podman versions may be incompatible for our operations. Podman versions ab
 
 #### Podman Network Stack
 
-To ensure successful operation of the Appcircle server, it is required to switch from the CNI network stack to Netavark if Podman is bundled with CNI. You can see your network stack by running:
-
-```bash
-podman info | grep -i networkBackend
-```
-
-You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark.
-
-```bash
-sudo dnf install -y netavark
-```
-
-Once the installation is complete, please follow these steps to configure Podman:
-
-- Copy the /usr/share/containers/containers.conf file to /etc/containers/containers.conf.
-
-```bash
-sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
-```
-
-- Edit the /etc/containers/containers.conf file.
-
-```bash
-sudo vi /etc/containers/containers.conf
-```
-
-- Add the following content to the [network] section:
-
-```bash
-network_backend="netavark"
-```
-
-- Save the file.
-
-- Reset Podman:
-
-```bash
-podman system reset
-```
-
-- Reboot the system:
-
-```bash
-sudo reboot
-```
-
-:::caution
-If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
-:::
+<NetavarkConfiguration/>
 
 #### Change the Podman Data Location
 
