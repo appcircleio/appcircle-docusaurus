@@ -11,6 +11,8 @@ import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-ser
 import LingerOption from '@site/docs/self-hosted-appcircle/configure-server/\_linger-option.mdx';
 import SocatConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_socat-configuration.mdx';
 import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_podman-netavark-configuration.mdx';
+import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_firewalld-configuration.mdx';
+import SwapConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_swap-configuration.mdx';
 
 ## Overview
 
@@ -48,7 +50,47 @@ If you have installed the Appcircle private server with Docker:
 
 ### Hardware Requirements
 
-@TODO: Fill.
+Minimum hardware requirements for self-hosted Appcircle can be:
+
+- 20GB or more free disk space
+- 4 or more cores CPU
+- 8 or more gigabytes (GB) RAM
+
+:point_up: These hardware specs are minimum requirements for basic execution and it can be used only for quick evaluation or development purposes.
+
+:::caution
+
+CPU architecture must be AMD or Intel 64-bit arch (`x86_64`).
+
+:::
+
+:::info
+
+If you have enough RAM and a recent CPU, performance of Appcircle server can be limited by hard drive seek times. So, having a fast drive like a solid state drive (SSD) improves runtime.
+
+:::
+
+Higher numbers will be better especially for increased number of users.
+
+For an enterprise installation, **minimum** hardware requirements are
+
+- 50GB SSD
+- 8 CPU
+- 16GB RAM
+
+For production environments, **recommended** hardware requirements are
+
+- 50GB SSD
+- 32 CPU
+- 64GB RAM
+
+:::caution
+
+#### Swap
+
+<SwapConfiguration/>
+
+:::
 
 ### Software Requirements
 

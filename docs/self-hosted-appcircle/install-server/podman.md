@@ -10,6 +10,7 @@ import LingerOption from '@site/docs/self-hosted-appcircle/configure-server/\_li
 import SocatConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_socat-configuration.mdx';
 import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_podman-netavark-configuration.mdx';
 import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_firewalld-configuration.mdx';
+import SwapConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_swap-configuration.mdx';
 
 # Overview
 
@@ -72,19 +73,7 @@ For production environments, **recommended** hardware requirements are
 
 #### Swap
 
-Using **swap** file lets self-hosted Appcircle server exceed the size of available physical memory. On memory pressure system will go on its operations with minimal degradation, when SSD used as hardware.
-
-So, we are recommending **swap** file usage on Linux.
-
-Its size should be minimum half of the RAM size. For example if you have 64 GB RAM, then you should choose minimum 32 GB swap file size. 64 GB will be better.
-
-#### Swappiness
-
-The `swappiness` parameter configures how often your system swaps data out of RAM to the swap space. So, it's an important setting for swap usage and affects performance.
-
-`10` is recommended value for `swappiness`.
-
-:books: For details on how to configure **swap** and `swappiness` parameter, follow guide in [here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-22-04).
+<SwapConfiguration/>
 
 :::
 
