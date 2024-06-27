@@ -18,7 +18,7 @@ You need to have your iOS Certificates and Provisioning Profiles ready to be abl
 
 :::info
 
-For app builds, the signing identities are not mandatory. (e.g. you can use unsigned apps to run on the simulator or for use on third party platforms that resign your app such as AWS Device Farm)
+For app builds, signing identities are not mandatory. For example, you can use unsigned apps to run on the simulator or on third-party platforms that resign your app, such as AWS Device Farm.
 
 However, unsigned binaries cannot be installed on actual devices; therefore they cannot be used in the Appcircle Testing Distribution.
 

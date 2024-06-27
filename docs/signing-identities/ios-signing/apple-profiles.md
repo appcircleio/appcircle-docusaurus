@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Apple Profiles Overview
 
-Provisioning profiles can be in .mobileprovision file format. There are 4 main types of iOS certificates:
+Provisioning profiles can be in `.mobileprovision` file format. There are 4 main types of iOS certificates:
 
 **1. Apple App Development:** Used to install development applications on test devices. This provisioning profile type is matched with a development certificate to enable app deployment during development. This is used mainly for debugging or functional testing.
 

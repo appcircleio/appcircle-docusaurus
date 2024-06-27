@@ -10,15 +10,15 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Apple Certificates Overview
 
-Certificate files can be in .p12 file format as a private-public key pair. There are 2 main types of iOS certificates:
+Certificate files can be in `.p12` file format as a private-public key pair. There are 2 main types of iOS certificates:
 
 **1. Apple Development:** Used for development and testing.
 
 The development certificates allow deploying apps to the developer devices (connected physically for testing and debugging) during the actual development process on Xcode.
 
-The common practice is to generate this certificate automatically on Xcode through manual generation is also available. Binaries built with a development certificate cannot be distributed.
+The common practice is to generate this certificate automatically on Xcode, although manual generation is also available. Binaries built with a development certificate cannot be distributed.
 
-**2. Apple Distribution:** Used for submitting applications to the App Store, or for Ad Hoc and Enterprise distribution. (Refer to the provisioning profiles section for the differences between these distribution types.)
+**2. Apple Distribution:** Used for submitting applications to the App Store, or for Ad Hoc and Enterprise distribution. (Refer to the [provisioning profiles](/signing-identities/ios-certificates-and-provisioning-profiles#ios-provisioning-profiles) section for the differences between these distribution types.)
 
 In most cases, you will be using a distribution certificate with the combination of a provisioning profile to build and distribute apps in Appcircle.
 
@@ -54,14 +54,14 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 <Screenshot url='https://cdn.appcircle.io/docs/assets/02-07-Generate-iOS-Cert.png' />
 
 - Download your CSR file
-- Go to Apple Developer Portal and select Certificates, IDs & Profiles -> Certificates from the left menu
+- Go to the Apple Developer Portal and select "Certificates, IDs & Profiles" from the left menu, then click on "Certificates."
   <Screenshot url='https://cdn.appcircle.io/docs/assets/apple-addcertificate.png' />
 
-- Select the type of certificate you want to create. If you want to distribute to TestFlight,Adhoc or AppStore, you should select Apple Distribution. If you're creating a certificate for local development environment, you should select Apple Development.
+- Select the type of certificate you want to create. If you want to distribute to TestFlight, Ad-hoc or AppStore, you should select Apple Distribution. If you're creating a certificate for local development environment, you should select Apple Development.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/apple-select-certificate-type.png' />
 
-- Upload the csr file you have created on Appcircle
+- Upload the CSR file you have created on Appcircle
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/apple-selectscr.png' />
 
