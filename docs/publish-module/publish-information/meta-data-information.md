@@ -82,19 +82,19 @@ Please note, this field is constantly visible on Appcircle. However, on App Stor
 Please note, this comes with **Keep Existing Rating** selected by default. If you choose to **Reset rating when this version released** option, it will reset all past **reviews and ratings** of your app in **App Store**.
 :::
 
-## Microsoft InTune Metadata Information
+## Microsoft Intune Metadata Information
 
-The metadata information field can be changed according to the store credentials selection in Publish Settings. If InTune credential is selected as store credentials, the metadata screen will automatically include Microsoft InTune metadata information.
+The metadata information field can be changed according to the store credentials selection in Publish Settings. If Intune credential is selected as store credentials, the metadata screen will automatically include Microsoft Intune metadata information.
 
-:::danger Microsoft InTune Metadata and Credential
+:::danger Microsoft Intune Metadata and Credential
 
-If the Microsoft InTune credential is not selected, the metadata fields will not change. For this reason, make sure that you have integrated [**Microsoft InTune credential**](/account/my-organization/api-integrations/adding-microsoft-intune-api-key) and selected the correct credentials in [**Publish Settings**](/publish-module/publish-settings#store-credentials).
+If the Microsoft Intune credential is not selected, the metadata fields will not change. For this reason, make sure that you have integrated [**Microsoft Intune credential**](/account/my-organization/api-integrations/adding-microsoft-intune-api-key) and selected the correct credentials in [**Publish Settings**](/publish-module/publish-settings#store-credentials).
 
 :::
 
 ### Metadata Auto-Population
 
-If there is existing metadata associated with your app on the Microsoft InTune, the **Metadata Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions.
+If there is existing metadata associated with your app on the Microsoft Intune, the **Metadata Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneMetadataRetrieve.png' />
 
@@ -116,4 +116,4 @@ If there is existing metadata associated with your app on the Microsoft InTune, 
 
 ## Conclusion
 
-Filling out the Metadata Information section accurately is crucial for the successful listing and update of your app on the App Store and Microsoft InTune. It ensures that potential users receive the most current information and that your app meets all necessary guidelines for
+Filling out the Metadata Information section accurately is crucial for the successful listing and update of your app on the App Store and Microsoft Intune. It ensures that potential users receive the most current information and that your app meets all necessary guidelines for

@@ -30,3 +30,7 @@ Integrate your Android app projects with the Google Play Console via a service a
 Link your projects with the Huawei AppGallery using an API key to facilitate app submissions and updates directly through Appcircle.
 
 Each of these integrations is designed to streamline your workflow and make app management across different platforms more efficient.
+
+## Microsoft Intune API Key
+
+Connect your projects with the Microsoft Intune by providing the API key, allowing for automated actions and data retrieval.

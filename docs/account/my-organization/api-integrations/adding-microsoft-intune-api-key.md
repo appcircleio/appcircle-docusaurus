@@ -1,15 +1,15 @@
 ---
-title: Microsoft InTune API Key
-description: Learn how to add a Microsoft InTune account to your Appcircle account
+title: Microsoft Intune API Key
+description: Learn how to add a Microsoft Intune account to your Appcircle account
 tags: [account, my organization, api integrations, intune, microsoft]
 sidebar_position: 7
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Microsoft InTune API Key
+# Microsoft Intune API Key
 
-The InTune API key allows you to upload the binary file and metadata information to your Microsoft InTune account.
+The Intune API key allows you to upload the binary file and metadata information to your Microsoft Intune account.
 
 Integration information for InTune can be added from the integrations section under [**Appcircle Organization**](/account/my-organization).
 
