@@ -18,7 +18,7 @@ The development certificates allow deploying apps to the developer devices (conn
 
 The common practice is to generate this certificate automatically on Xcode, although manual generation is also available. Binaries built with a development certificate cannot be distributed.
 
-**2. Apple Distribution:** Used for submitting applications to the App Store, or for Ad Hoc and Enterprise distribution. (Refer to the [provisioning profiles](/signing-identities/ios-certificates-and-provisioning-profiles#ios-provisioning-profiles) section for the differences between these distribution types.)
+**2. Apple Distribution:** Used for submitting applications to the App Store, or for Ad Hoc and Enterprise distribution. (Refer to the provisioning profiles section for the differences between these distribution types.)
 
 In most cases, you will be using a distribution certificate with the combination of a provisioning profile to build and distribute apps in Appcircle.
 
