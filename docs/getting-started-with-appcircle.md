@@ -29,7 +29,7 @@ Your mobile applications must be digitally signed to be able to distributed, tes
 
 For iOS applications, you must have a signing certificate and provisioning profiles to be able to run your application on real devices and submit them to Apple Appstore.
 
-<ContentRef url="/signing-identities/ios-certificates-and-provisioning-profiles">
+<ContentRef url="/signing-identities/ios-signing">
   iOS Certificates &amp; Provisioning Profiles
 </ContentRef>
 

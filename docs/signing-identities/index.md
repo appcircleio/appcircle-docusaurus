@@ -12,7 +12,7 @@ The Signing Identities section is essential for configuring the credentials requ
 
 For more information, refer to the following link:
 
-[Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles)
+[Certificates & Provisioning Profiles](/signing-identities/ios-signing)
 
 ## iOS Signing
 

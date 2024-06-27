@@ -92,7 +92,7 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 
 ### Signing Flutter iOS Applications
 
-The next step in the build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles) section.
+The next step in the build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](/signing-identities/ios-signing) section.
 
 For signing iOS apps, press add, select the bundle ID from the first dropdown and then select a compatible provisioning profile (added from the signing identities module) from the second dropdown.
 
