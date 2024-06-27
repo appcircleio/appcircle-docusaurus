@@ -15,6 +15,35 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
+## 3.19.0 - 2024-06-27 - Publish Apps to Microsoft Intune, App Store Connect Integration, Publish and Signing Identity Enhancements, XCode 16.0 Beta 2, Bug Fixes and more
+
+### 🆕 New Features
+
+- You can now send your apps to Microsoft Intune and update their metadata within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- You can now use your saved Microsoft Intune credentials with the Publish Profiles by integration. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- You can now resign your iOS binaries via the UI by providing the entitlements directly, without needing to upload an XML file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- You can now directly list and import profiles from App Store Connect within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Bundle identifiers](/signing-identities/ios-signing/apple-identifiers#edit-bundleid) in Apple Appstore can now be directly managed by Appcircle interface. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- You can now create a Publish Profile for existing apps from [App Store Connect integration](/publish-module/creating-publish-profiles#create-from-app-store-connect). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- You can now create a new Provisioning Profile by selecting [Apple Profiles](/signing-identities/ios-signing/apple-profiles) within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- You can now [renew](/signing-identities/ios-signing/apple-profiles#profile-actions) Provisioning Profiles within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have added [Apple Identifiers](/signing-identities/ios-signing/apple-identifiers) section within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have added a new value display and filter to the LDAP Mapping table. <IntegrationsBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The [Default M1 pool](https://docs.appcircle.io/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 2](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/> 
+- You can now upload any [bundle ID](/publish-module/binary-management) inside a publish profile with resign purposes. However, you will not be able to mark it as RC (Release Candidate) if the app version's bundle ID does not match the profile's main bundle ID. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Latest Metadata will now be cloned to newly uploaded app versions by default. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have added Add for Review on Appstore Publish Flow step within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have added Send to Enterprise Appstore Publish Flow step within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users can now view Publish profile updates on the main dashboard. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- Fixed an issue where users were unable to save the XCode version on React Native build profiles without providing the optional Node.js version. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where localization settings caused duplicated screenshots on Metadata Information section. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.18.0 - 2024-05-31 - Build Enhancements, Appcircle CLI v2.2.0, Publish Improvements and more
 
 ### 🆕 New Features
