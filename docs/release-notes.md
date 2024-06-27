@@ -953,7 +953,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 ### 🆕 New Feature
 
 - [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner) Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines.
-- [Automatic iOS Code Signing](/signing-identities/ios-certificates-and-provisioning-profiles) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
+- [Automatic iOS Code Signing](/signing-identities/ios-signing) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
 - [Artifacts Management](/account/my-organization/artifacts) You can set the retention period for your build artifacts.
 - [SonarQube Component](/workflows/common-workflow-steps) You can use SonarQube for iOS and Android projects.
 
@@ -1144,7 +1144,7 @@ To set up an API Key, check this guide:
 
 <ContentRef url="/account/my-organization/api-integrations/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
-After adding an API Key, you can add new signing identities from the Signing Identities section. For more information on how to add identities and use them, check out [Signing Identities guide](https://docs.appcircle.io/signing-identities/ios-certificates-and-provisioning-profiles#1-get-ios-certificates-and-provisioning-profiles-from-apple).
+After adding an API Key, you can add new signing identities from the Signing Identities section. For more information on how to add identities and use them, check out [Signing Identities guide](/signing-identities/ios-signing).
 
 ### 🆕 New Feature
 
