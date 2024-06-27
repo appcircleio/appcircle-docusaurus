@@ -14,7 +14,7 @@ Depending on which Xcode version you select, Appcircle creates a brand new virtu
 - If your selected pool from config is "Default Intel Pool", virtual machine will be macOS Monterey `12.5.1`.
 
 - If your selected pool from config is "Default M1 Pool", there are two options for virtual machine.
-  - If you select Xcode 14.3 or later, virtual machine will be macOS Sonoma `14.1`.
+  - If you select Xcode 14.3 or later, virtual machine will be macOS Sonoma `14.5`.
   - If you select Xcode 14.2 or earlier, virtual machine will be macOS Monterey `12.6`.
 
 :::caution
@@ -35,16 +35,17 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Available Xcode Versions
 
-Our macOS build agents have Xcode versions 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
+Our macOS build agents have Xcode versions 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
 
 :::caution
 Xcode `14.3.x` or higher Xcode versions require a Mac running macOS Ventura 13.0 or later.
 :::
 
-The "Default M1 Pool" macOS **Sonoma** (`14.1`) stack has the Xcode versions below:
+The "Default M1 Pool" macOS **Sonoma** (`14.5`) stack has the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |
+| 16.0 | `16A5171r` |
 | 15.4 | `15F31d` |
 | 15.3 | `15E204a` |
 | 15.2 | `15C500b` |
@@ -72,7 +73,7 @@ There are many pre-installed packages on virtual machines. You can get a full li
 
 Here are some of the most important packages installed in our iOS build agents used for iOS builds:
 
-- For "Default M1 Pool" Xcode `14.3.x` or later macOS Sonoma `14.1`
+- For "Default M1 Pool" Xcode `14.3.x` or later macOS Sonoma `14.5`
 - For "Default M1 Pool" Xcode `14.2.x` or earlier macOS Monterey `12.6`
 - For "Default Intel Pool" macOS Monterey `12.5.1`
   - :memo: Supports Xcode versions up to `14.2.x`
@@ -82,24 +83,24 @@ Here are some of the most important packages installed in our iOS build agents u
 | Bash               | 3.2.57           | 3.2.57         | 3.2.57     |
 | Bundle             | 2.1.4            | 2.4.19         | 2.3.9      |
 | Carthage           | 0.38.0           | 0.39.1         | 0.38.0     |
-| Curl               | 7.79.1           | 8.1.2          | 7.79.1     |
-| Homebrew           | 3.6.11           | 4.2.8          | 3.4.2      |
+| Curl               | 7.79.1           | 8.6.0          | 7.79.1     |
+| Homebrew           | 3.6.11           | 4.3.5          | 3.4.2      |
 | Java (OpenJDK)     | 11.0.21          | 11.0.21        | 11.0.2     |
 | Gem                | 3.1.6            | 3.4.19         | 3.1.6      |
-| Fastlane           | 2.211.0          | 2.219.0        | 2.204.3    |
-| Git                | 2.38.1           | 2.43.2         | 2.35.1     |
-| Git LFS            | 3.2.0            | 3.4.1          | 3.1.2      |
-| Gzip (Apple)       | 353.100.22       | 428            | 353.100.22 |
+| Fastlane           | 2.211.0          | 2.220.0        | 2.204.3    |
+| Git                | 2.38.1           | 2.45.2         | 2.35.1     |
+| Git LFS            | 3.2.0            | 3.5.1          | 3.1.2      |
+| Gzip (Apple)       | 353.100.22       | 430.100.5      | 353.100.22 |
 | LibreSSL (OpenSSL) | 2.8.3            | 3.3.6          | 2.8.3      |
-| ImageMagick        | 7.1.0            | 7.1.1-28       | 7.1.0      |
-| Maven              | 3.8.6            | 3.9.6          | 3.8.4      |
-| N                  | 9.0.1            | 9.2.0          | 8.0.2      |
-| Node               | 18.19.1          | 18.19.1        | 16.14.0    |
-| Npm                | 10.2.4           | 10.2.4         | 8.3.1      |
-| Perl               | 5.30.3           | 5.30.3         | 5.30.3     |
+| ImageMagick        | 7.1.0            | 7.1.1-33       | 7.1.0      |
+| Maven              | 3.8.6            | 3.9.7          | 3.8.4      |
+| N                  | 9.0.1            | 9.2.3          | 8.0.2      |
+| Node               | 18.19.1          | 18.20.3        | 16.14.0    |
+| Npm                | 10.2.4           | 10.7.0         | 8.3.1      |
+| Perl               | 5.30.3           | 5.34.1         | 5.30.3     |
 | Pod                | 1.11.3           | 1.15.2         | 1.11.2     |
-| Pip                | 22.2.2           | 23.3.1         | 21.3.1     |
-| Python             | 3.10.8           | 3.11.7         | 3.9.10     |
+| Pip                | 22.2.2           | 24.0           | 21.3.1     |
+| Python             | 3.10.8           | 3.12.3         | 3.9.10     |
 | Rake               | 13.0.1           | 13.0.6         | 13.0.1     |
 | Ruby               | 2.7.5            | 3.2.3          | 2.7.5      |
 | Rbenv              | 1.2.0            | 1.2.0          | 1.2.0      |
@@ -107,7 +108,7 @@ Here are some of the most important packages installed in our iOS build agents u
 | Slather            | 2.7.2            | 2.8.0          | 2.7.2      |
 | Unzip              | 6.00             | 6.00           | 6.00       |
 | Xcodeproj          | 1.22.0           | 1.24.0         | 1.21.0     |
-| Yarn               | 1.22.19          | 1.22.19        | 1.22.17    |
+| Yarn               | 1.22.19          | 1.22.22        | 1.22.17    |
 | Zip                | 3.0              | 3.0            | 3.0        |
 
 ### Using your own computer for build

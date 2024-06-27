@@ -37,4 +37,13 @@ For installing Android apps, you may need to grant the web browser "install apps
 
 :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/10-15-DownloadDevices.jpg" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3170-desktop2.png" />
+
+:::tip
+Users can use the search bar to filter the available app version list for **app names**, **app versions**, **release notes** and **build numbers**. 
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3170-desktop1.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3170-mobile1.png" />
+

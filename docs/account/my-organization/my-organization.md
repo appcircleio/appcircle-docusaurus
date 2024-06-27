@@ -5,6 +5,7 @@ tags: [organization, team, settings]
 sidebar_position: 4
 ---
 
+import ContentRef from '@site/src/components/ContentRef';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Organization and Team Settings
@@ -67,7 +68,7 @@ If you add a user to the sub-organization who already exists in the main organiz
 
 :::
 
-It's worth noting that sub-organizations are very similar to the organization. When you are inside a sub-organization, you will have access to all the features and functionality that are available in your  organization. Additionally, any licenses  associated with the organization will also be applicable to the sub-organization.
+It's worth noting that sub-organizations are very similar to the organization. When you are inside a sub-organization, you will have access to all the features and functionality that are available in your organization. Additionally, any licenses associated with the organization will also be applicable to the sub-organization.
 
 :::caution
 
@@ -80,7 +81,6 @@ If you have an enterprise license, you can create sub-organizations from the org
 <Screenshot url='https://cdn.appcircle.io/docs/assets/My-Organization-Sub-Create.png' />
 
 Multiple sub-organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub-Organization feature, businesses can create and manage multiple sub-organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
-
 
 #### Switching Organizations
 
@@ -107,7 +107,7 @@ Both leaving and deleting are irreversible operations and it is advised to use t
 
 - If you leave an organization, only an Owner can add you back, even if you were an Owner.
 - If you delete an organization, you will lose ALL platform data including apps, profiles, and artifacts.
-:::
+  :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (41).png' />
 
@@ -149,214 +149,8 @@ The "None" is a special type of permission that denotes that a user has no defin
 
 :::
 
-You can see the full list of the available roles below:
-
----
-
-### BUILD PROFILE PERMISSIONS
-
-Permissions can be customized for build profiles.
-
-| Permission | Explanation                                                                                            |
-| ---------- | ------------------------------------------------------------------------------------------------------ |
-| Manager    | The user can view and download logs, change configuration, workflows, and triggers and start building. |
-| Operator   | The user can only start the build, view logs, and download logs.                                       |
-| Viewer     | The user can only view and download logs.                                                              |
-| None       | The user cannot reach any details about build profiles.                                                |
-
-:::info
-
-Manager or Operator Build Profile permission can distribute binary if user has Manager or Operator Distribution permission.
-
-:::
-
-:::info
-
-Manager or Operator Build Profile permission can publish if user has Manager or Operator Publish Android/iOS permission.
-
-:::
-
-:::info
-
-Manager, Operator and Viewer Build Profile permissions can view self-hosted runners but cannot modify the configuration.
-
-:::
-
-:::caution
-
-Only Manager permission can view the configurations, workflows, and triggers.
-
-:::
-
-### ENVIRONMENT VARIABLE PERMISSIONS
-
-Permissions can be customized for environment variable.
-
-| Permission | Explanation                                                                                                                     |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can see variable groups, including their details, add new variables, and delete existing variable groups or variables. |
-| Viewer     | The user can only see variable groups and their details.                                                                        |
-| None       | The user cannot reach any details about environment variables.                                                                  |
-
-:::info
-
-Manager, Operator and Viewer Environment Variable permissions can use variable groups in build profile configuration.
-
-:::
-
-### SIGNING IDENTITY MANAGEMENT PERMISSIONS
-
-Permissions can be customized for signing identity management.
-
-| Permission | Explanation                                                                                                |
-| ---------- | ---------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can see, delete, and add new certificates, provisioning profiles, keystores, and signing history. |
-| Viewer     | The user can only see certificates, provisioning profiles, keystores, and signing history.                 |
-| None       | The user cannot reach any details about signing identity.                                                  |
-
-:::info
-
-Manager, Operator and Viewer Signing Identity Management permissions can use signing identities in build profile configuration.
-
-:::
-
-### DISTRIBUTION PROFILE PERMISSIONS
-
-Permissions can be customized for distribution profiles.
-
-| Permission | Explanation                                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can see, create, and delete new distribution profiles and Apple Devices and customize their settings.                          |
-| Operator   | The user can only send to testing groups and view distribution profiles and Apple Devices, App Versions Report, and App Sharing Report. |
-| Viewer     | The user can only view distribution profiles and Apple Devices, App Versions Report, and App Sharing Report.                            |
-| None       | The user cannot reach any details about distribution profiles, Apple Devices, App Versions Report, and App Sharing Report.              |
-
-:::info
-
-Manager or Operator Distribution Profile permission can send to enterprise appstore if user has Manager, Uploader or Operator Enterprise App Store permission.
-
-:::
-
-:::info
-
-Manager or Operator Distribution Profile permission can send to publish if user has Manager or Operator Publish Android and Manager or Operator iOS permission.
-
-:::
-
-:::info
-
-Manager or Operator Distribution Profile permission can resign binary if user has Manager or Viewer Signing Identity Management permission.
-
-:::
-
-### TESTING GROUP PERMISSIONS
-
-Permissions can be customized for testing groups.
-
-| Permission | Explanation                                                                                                   |
-| ---------- | ------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can see, create, and delete testing groups, and also add or delete new test users from these groups. |
-| Viewer     | The user can only view testing groups and test users.                                                         |
-| None       | The user cannot reach any details about the testing group.                                                    |
-
-### STORE SUBMIT MODULE PERMISSIONS
-
-Upload apps to Google Play, Huawei, and App Store.
-
-| Permission      | Explanation                                                                                |
-| --------------- | ------------------------------------------------------------------------------------------ |
-| Manager Android | The user can upload apps to Google Play and Huawei AppGallery.                             |
-| Manager iOS     | The user can upload apps only to the App Store.                                            |
-| Viewer          | The user can only view applications and their details belonging to their own organization. |
-
-:::info
-
-Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
-
-:::
-
-:::info
-
-If the user does not have any of these permissions, they will not have access to any details related to the store submit module.
-
-:::
-
-### PUBLISH MODULE IOS PERMISSIONS
-
-Publish apps to App Store.
-
-| Permission | Explanation                                                                                                                                                   |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can make changes to the publish flow, publish settings, start publish to the App Store, add or delete a new app version, and view and download logs. |
-| Operator   | The user can start publishing to the App Store and download artifacts and view publish settings, publish flow, and logs.                                      |
-| Viewer     | The user can only download artifacts and view the iOS application list and logs for the application.                                                          |
-| None       | The user cannot reach any details about the iOS Publish.                                                                                                      |
-
-### PUBLISH MODULE ANDROID PERMISSIONS
-
-Publish apps to Google Play, Huawei.
-
-| Permission | Explanation                                                                                                                                                                           |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can make changes to the publish flow, publish settings, start publish to the Google Play And Huawei AppGallery, add or delete a new app version, and view and download logs. |
-| Operator   | The user can start publishing to the Google Play and Huawei AppGallery and download artifacts and view publish settings, publish flow, and logs.                                      |
-| Viewer     | The user can only download artifacts and view the Android application list and logs for the application.                                                                              |
-| None       | The user cannot reach any details about the Android Publish.                                                                                                                          |
-
-:::info
-
-Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
-
-:::
-
-:::tip
-
-**Publish Variables** permissions in the Publish module are dependent on the iOS or Android permissions that you configure for the Publish module.
-
-For instance, when you give "viewer" permission to a user for iOS or Android, this permission will also make the user "viewer" for the **Publish Variables**. When you give "manager" permission to a user for iOS or Android, this permission also makes the user "manager" for the **Publish Variables**.
-
-:::
-
-### ENTERPRISE APP STORE PERMISSIONS
-
-Manage and Upload Apps to Enterprise App Store.
-
-| Permission | Explanation                                                                                                                                                                                                     |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can do anything Uploader can do and modify Enterprise Settings including create/update/delete store authentication (LDAP, SSO and Static Login), customize the store and modify store domain settings. |
-| Uploader   | The user can only create/update/delete enterprise app store profiles, create/update/delete appversions, publish/notify to beta/live stores, download artifacts and view the profiles.                               |
-| Operator   | The user can only publish/notify to beta/live stores, download artifacts and view the profiles.                                                                                                                 |
-| Viewer     | The user can only view the profiles.                                                                                                                                                                            |
-| None       | The user cannot reach any details about the Enterprise App Store.                                                                                                                                               |
-
-### ORGANIZATION MANAGEMENT PERMISSIONS
-
-The user can create organization or sub-organization within license limits, add and remove members, and manage their permissions.
-
-Also user can view self-hosted runners and change configuration.
-
-| Permission | Explanation                                                                                                         |
-| ---------- | ------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can manage all member permissions and other organization properties mentioned above within license limits. |
-
-### BILLING MANAGEMENT PERMISSIONS
-
-Manage the subscription, payment details, and invoices.
-
-| Permission | Explanation                                                       |
-| ---------- | ----------------------------------------------------------------- |
-| Manager    | The user can manage subscriptions, payment details, and invoices. |
-
-### THIRD-PARTY CONNECTION MANAGEMENT PERMISSIONS
-
-Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams, Google Play Developer API Keys, App Store Connect API Keys, Huawei AppGallery Developer API Keys etc.
-
-| Permission | Explanation                                                                      |
-| ---------- | -------------------------------------------------------------------------------- |
-| Manager    | The user can manage third-party service provider connections and disconnections. |
-
-:::caution
-
-The permissions of the Store Submit module affect the visibility of online stores connections.
-
-:::
+For more information on the roles and permissions, please refer to the:
+
+<ContentRef url="/account/my-organization/role-management"> 
+    Role Management
+</ContentRef>

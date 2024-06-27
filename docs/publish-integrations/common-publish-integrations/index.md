@@ -10,6 +10,16 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Appcircle's Common Integrations facilitate the distribution of your iOS and Android applications to major app stores with minimal effort.
 
+## Custom Script
+
+- Allows you to tailor the publish process to address your specific needs by executing custom commands.
+- Automates repetitive tasks, reducing the amount of manual work required.
+- Enables the creation of custom Publish flows and actions not available in the default steps.
+
+<ContentRef url="/publish-integrations/common-publish-integrations/get-approval-via-email">
+Read more about **Custom Script**
+</ContentRef>
+
 ## Get Approval via Email
 
 - Request and track approvals easily via email.

@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Metadata Information
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-menu.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub7.png' />
 
 ## Overview
 

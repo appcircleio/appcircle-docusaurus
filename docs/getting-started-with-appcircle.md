@@ -89,8 +89,8 @@ Send a binary to Apple Testflight or App Store.
 
 Send a binary to Google Play.
 
-<ContentRef url="/publish-integrations/android-publish-integrations/send-to-googleplay">Send Apps to Google Play Console</ContentRef>
+<ContentRef url="/publish-integrations/android-publish-integrations/publish-to-google-play">Send Apps to Google Play Console</ContentRef>
 
 Send a binary to Huawei AppGallery.
 
-<ContentRef url="/publish-integrations/android-publish-integrations/send-to-huawei">Send Apps to Huawei AppGallery</ContentRef>
+<ContentRef url="/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery">Send Apps to Huawei AppGallery</ContentRef>

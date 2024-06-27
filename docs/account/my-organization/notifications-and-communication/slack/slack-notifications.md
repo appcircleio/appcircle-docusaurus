@@ -53,7 +53,7 @@ Keep scrolling down on Appcircle to see the full list of events.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (136).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be3113-slack1.png' />
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via Slack.
@@ -75,4 +75,4 @@ To enable this feature, ensure you include the [**Test Reports**](https://docs.a
 
 If you want to disconnect or reauthorize the Slack connection, scroll down to the end of the management screen and press the "Disconnect" button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (137).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be3113-slack2.png' />
