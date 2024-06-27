@@ -22,7 +22,7 @@ When the upload is completed successfully, the relevant application versions wil
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3923-publishBinaryList.png' />
 
 :::caution BUNDLE ID AND PACKAGE NAME MUST BE UNIQUE
-You can install iOS app versions with different BundleIDs under the same Publishing Profile. However, you can start the Publish process with the binary with the BundleID value specified when creating the profile or the profile has.
+You can install iOS app versions with different BundleIDs under the same Publishing Profile. However, you can only initiate the Publish process with the binary that matches the BundleID specified when creating the profile or within the profile itself.
 
 Similarly, for Android Publish Profiles, all app versions must have identical Package Names within the Android Publish Profile.
 
