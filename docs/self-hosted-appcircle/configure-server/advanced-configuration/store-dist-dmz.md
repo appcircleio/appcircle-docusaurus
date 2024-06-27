@@ -203,35 +203,7 @@ cd appcircle-server-dmz && ls -l
 
 #### Docker Configuration
 
-You should configure the Docker daemon for Docker to work with Appcircle services integrated by following the steps below.
-
-:::caution
-You need `root` permission to edit the Docker daemon configuration
-:::
-
-- Stop the Docker services.
-
-```bash
-sudo systemctl stop docker && sudo systemctl stop docker.socket
-```
-
-- Edit the configuration file.
-
-```bash
-sudo vi /etc/docker/daemon.json
-```
-
-- The log driver should be Journald.
-
-```json
-{
-  "log-driver": "journald"
-}
-```
-
-:::tip
-If the configuration file has settings other than `log-driver`, you can add the `log-driver` line to the Docker configuration file.
-:::
+For Docker, you don't need to do anything manually. You can move to the next section. 
 
   </TabItem>
 
