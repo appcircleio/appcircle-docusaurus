@@ -138,7 +138,7 @@ For both iOS or Android build projects, you need to assign your signing identiti
 
 You can sign your application either with automatic signing or with manual signing.
 
-### Automatic Signing
+## Automatic Signing
 
 Automatic signing allows you to sign your application without uploading any provisioning profiles. Profile creation is done automatically by Xcode. Following prequisites must be met for automatic signing to work:
 
@@ -156,7 +156,7 @@ If you don't upload developer and distribution certificates, Xcode will create n
 
 :::
 
-### Manual Signing
+## Manual Signing
 
 You can also select bundle identifier and provisioning profile to sign your application.
 
