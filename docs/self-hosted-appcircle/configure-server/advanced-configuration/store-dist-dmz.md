@@ -146,6 +146,29 @@ You can check the SeLinux mode with the command below.
 getenforce
 ```
 
+### DNS Entries
+
+For Appcircle DMZ server to work successfully, you should configure the DNS records.
+
+For the clients that will connect to the Appcircle DMZ server should resolve 3 domains; Enterprise App Store, Testing Distribution and authentication domains.
+
+These domains should be resolved to the Appcircle DMZ server IP. The domains may vary according to the Private Appcircle server configuration. For example:
+
+- `store.spacetech.com`: Custom Enterprise App Store domain. 
+- `dist.spacetech.com`: Custom Testing Distribution domain.
+- `auth.appcircle.spacetech.com`: Appcircle authentication domain.
+
+Also the Appcircle DMZ server should be resolving some of the Appcircle private server domains such as authentication and API domains. 
+
+These domains should be resolved to the Appcircle private server IP. The domains may vary according to the Private Appcircle server configuration. For example:
+
+- `api.appcircle.spacetech.com`: Appcircle API domain.
+- `auth.appcircle.spacetech.com`: Appcircle authentication domain.
+
+:::caution
+There is a common domain here. Be aware that the auth domain that the clients that will access from the internet and the Appcircle DMZ server will connect to should mean two different things.
+:::
+
 ## Creating the Appcircle DMZ Server Configuration
 
 To create the Appcircle DMZ server configuration, you should login to the Appcircle private server. 
