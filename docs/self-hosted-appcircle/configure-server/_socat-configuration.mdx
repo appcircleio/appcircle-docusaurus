@@ -44,7 +44,7 @@ ExecStart=/usr/bin/socat TCP-LISTEN:443,fork,reuseaddr TCP:127.0.0.1:8443
 WantedBy=multi-user.target
 ```
 
-Then, one by one, execute the below commands to activate port redirections.
+Then, execute the below commands to activate port redirections.
 
 ```bash
 sudo systemctl daemon-reload && \
