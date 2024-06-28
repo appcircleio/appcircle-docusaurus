@@ -16,17 +16,21 @@ import SwapConfiguration from '@site/docs/self-hosted-appcircle/configure-server
 
 ## Overview
 
-@TODO: An explanation why the DMZ server is for.
+A Demilitarized Zone (DMZ) in networking is a segment of an internal network that is exposed to external networks, typically over the internet. By isolating Appcircle DMZ server from the internal network, you ensure that it remains secure. 
+
+This is particularly useful when users need to access Testing Distribution and Enterprise App Store but not all features for business operations within the private network.
+
+The Testing Distribution module and Enterprise App Store module hosted on the Appcircle DMZ server can be accessed by users from the internet, ensuring they have secure access to these critical features while keeping sensitive business data within your private network. This setup provides a balance between security and productivity in an organization's IT environment.
 
 @TODO: Diagram will be here.
 
-We assume that you have already setup an Appcircle private server successfully. This document will guide for creating Appcircle DMZ server and Appcircle private server configurations.
+We assume that you have already set up an Appcircle private server successfully. This document will guide you through creating Appcircle DMZ server and Appcircle private server configurations.
 
 In this document:
 
-- We will call "Appcircle DMZ server" to the server which is located in the DMZ and host the Appcircle Enterprise App Store and Testing Distribution services. 
+- We will call the "Appcircle DMZ server" to the server, which is located in the DMZ and host the Appcircle Enterprise App Store and Testing Distribution services. 
 
-- We will call "Appcircle private server" to the server which is located in the private network and host the Appcircle core services.
+- We will call the "Appcircle private server" to the server, which is located in the private network and host the Appcircle core services.
 
 ## Appcircle DMZ Server Pre-requirements
 
@@ -59,15 +63,11 @@ Minimum hardware requirements for self-hosted Appcircle can be:
 :point_up: These hardware specs are minimum requirements for basic execution and it can be used only for quick evaluation or development purposes.
 
 :::caution
-
 CPU architecture must be AMD or Intel 64-bit arch (`x86_64`).
-
 :::
 
 :::info
-
 If you have enough RAM and a recent CPU, performance of Appcircle server can be limited by hard drive seek times. So, having a fast drive like a solid state drive (SSD) improves runtime.
-
 :::
 
 Higher numbers will be better especially for increased number of users.
@@ -96,17 +96,25 @@ For production environments, **recommended** hardware requirements are
 
 #### Container Engine
 
-You must use the same container engine with the Appcircle private server. 
+You must use the same container engine with on the Appcircle private server and the Appcircle DMZ server. 
 
-If you have installed the Appcircle private server with Podman, you **must** use Podman in the Appcircle DMZ server. 
+If you have installed the Appcircle private server with Podman, you **must** use Podman on the Appcircle DMZ server. 
 
-If you have installed the Appcircle private server with Docker, you **must** use Docker in the Appcircle DMZ server.
+If you have installed the Appcircle private server with Docker, you **must** use Docker on the Appcircle DMZ server.
+
+#### SeLinux
+
+You must use the same SeLinux mode on the Appcircle private server and the Appcircle DMZ server.
+
+If 
 
 ## Creating Appcircle DMZ server Configuration
 
-To create the Appcircle DMZ server configuration, you should login to the Appcircle private server. You will create all the configuration file from the Appcircle private server and then move the created configuration files to the Appcircle DMZ server.
+To create the Appcircle DMZ server configuration, you should login to the Appcircle private server. 
 
-To create Appcircle DMZ server configuration, you can follow the steps bellow.
+You will create all the configuration files on the Appcircle private server and then move the created configuration files to the Appcircle DMZ server.
+
+To create the Appcircle DMZ server configuration, you can follow the steps below.
 
 - Login to the Appcircle private server with SSH.
 
@@ -124,7 +132,7 @@ cd appcircle-server
 ./ac-self-hosted.sh -n spacetech down
 ```
 
-- Create the new configuration files for Appcircle DMZ and private server.
+- Create the new configuration files for the Appcircle DMZ and the Appcircle private server.
 
 ```bash
 ./ac-self-hosted.sh -n spacetech export --dmz
@@ -140,9 +148,9 @@ The `--dmz` flag in the `export` subcommand above creates the configuration file
 ls -lah projects/spacetech/export/dmz/
 ```
 
-- Transfer the contents of the `projects/spacetech/export/dmz/` directory the Appcircle DMZ server.
+- Transfer the contents of the `projects/spacetech/export/dmz/` directory to the Appcircle DMZ server.
 
-- Compress the directory into a tar ball in the Appcircle private server, transfer and extract it in the Appcircle DMZ server.
+- Compress the directory into a tarball in the Appcircle private server, transfer and extract it in the Appcircle DMZ server.
 
 ```bash
 tar -czf dmz.tar.gz -C projects/spacetech/export/dmz/ .
@@ -153,13 +161,9 @@ tar -czf dmz.tar.gz -C projects/spacetech/export/dmz/ .
 
 ## Creating the Appcircle DMZ Server
 
-@TODO: How will the users download the container images?
-
-@TODO: How will the users configure the system?
-
 ### Create Appcircle DMZ Directory
 
-You need to create a directory for Appcircle DMZ server and extract the transferred configuration files.
+You need to create a directory for the Appcircle DMZ server and extract the transferred configuration files.
 
 - Create a Appcircle DMZ server.
 
@@ -167,7 +171,7 @@ You need to create a directory for Appcircle DMZ server and extract the transfer
 mkdir appcircle-server-dmz
 ```
 
-- Extract the tar ball.
+- Extract the tarball.
 
 ```bash
 tar -xzf dmz.tar.gz -C appcircle-server-dmz
@@ -209,7 +213,7 @@ cd appcircle-server-dmz && ls -l
 
 #### Docker Configuration
 
-For Docker, you don't need to do anything manually. You can move to the next section. 
+For Docker, you don't need to do anything manually. You can move on to the next section. 
 
   </TabItem>
 
