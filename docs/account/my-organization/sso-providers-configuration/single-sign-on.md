@@ -107,3 +107,47 @@ If you're using `https://my.appcircle.spacetech.com` to access the Appcircle das
 :::
 
 After you enter the SSO login URL specified above, you should be redirected to the SSO login page directly or to the Appcircle dashboard if you have already authenticated with the SSO.
+
+## SSO Mapping
+
+SSO mapping in Appcircle allows you to map user groups and roles from your Identity Provider to your Appcircle organization. 
+
+This feature eliminates the need for manual configurations such as inviting users to the organization and assigning roles. Users will be assigned to organizations with the appropriate roles based on the mapping configuration when they log in using SSO.
+
+This guide provides a step-by-step approach to setting up and managing SSO mappings.
+
+### SSO and Identity Provider Configuration
+
+First, ensure you have a proper SSO configuration, either OpenID or SAML, and define the configuration for SSO Mapping to specify how to retrieve user groups and roles.
+
+You can refer [this](/account/my-organization/sso-providers-configuration/single-sign-on#identity-providers) documentation.
+
+### Accessing SSO Mapping Settings
+
+1. Navigate to the **Organization** section on your dashboard.
+2. Select the **Integrations** and click on the **Appcircle Login**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/navigate-sso-mapping1.png' /> 
+
+3. Click on the **SSO Mapping**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/navigate-sso-mapping2.png' /> 
+
+### Group and Role Mapping Configuration
+
+1. Enter the name of the SSO group and select the corresponding Appcircle organization you want to map. Ensure the group name is correct.
+
+2. To map the SSO group to an Appcircle organization, click Add. This will automatically link users from the SSO group to the selected organization in Appcircle.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-group-mapping.png' /> 
+
+3. You can define role mappings for each group mapping. Click the **Configure** button to set up role mappings.
+4. Enter the role name and select the corresponding Appcircle roles you want to map. Ensure the role name is correct.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-role-mapping.png' /> 
+
+5. Finally, enable SSO mapping.
+
+### Limitations
+
+- Due to technical limitations, SSO mapping does not support automatic synchronization. Changes such as the removal of a user from the Identity Provider or updates to their groups or roles will only take effect when the user logs in to Appcircle.

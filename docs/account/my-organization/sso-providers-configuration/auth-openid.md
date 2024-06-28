@@ -63,6 +63,8 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid2_v2.png' />
 
+- The Group Claim Name and Role Claim Name fields are optional. Please refer to the [SSO Mapping Documentation](/account/my-organization/sso-providers-configuration/auth-openid#sso-mapping).
+
 ### Testing SSO
 
 - When you connect your Identity Provider, please open a new incognito window and test the SSO integration.
@@ -88,5 +90,79 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 :::caution
 
 When you connect your Identity Provider, please open a new incognito window and test the SSO integration. Please only log off when you can log in with SSO credentials. If the connection doesn't work, you need to review your settings.
+
+:::
+
+### SSO Mapping
+
+This step is optional. You can skip it if you do not plan to use SSO Mapping.
+
+- Navigate to the **User Management** section in the Auth0 Dashboard, click on **Roles**, and create the roles as needed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-create-roles.png' />
+
+- Navigate to the organization section and create organizations.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-create-groups.png' />
+
+- Add users who will become members of your organization
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-add-members.png' />
+
+- Click on the three dots and select **Assign Roles**. Assign the desired roles to users.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-assign-roles.png' />
+
+- Navigate to the **Connections** tab. Enable Connections for your organization. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-enable-connections.png' />
+
+- Navigate to the Applications section. Go to the related application and then navigate to the Organizations tab. Click on **Disable Grants Now** 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-application-organizations1.png' />
+
+- Choose **Business** Users for the type of users and select **Prompt for Organization** for the Login Flow. Click on **Save Changes**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-application-organizations2.png' />
+
+- We need to retrieve the groups and roles of a user via tokens. The groups claim is already present on the token, but we need to add an additional step for the roles claim. Navigate to **Actions** and click on the **Library** tab. Click on the **Create Action** and select the **Build from scratch**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-actions-library1.png' />
+
+- Give an appropriate name to the custom action. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-actions-library2.png' />
+
+- Paste following Javascript code and click on the deploy.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-actions-library3.png' />
+
+```js
+exports.onExecutePostLogin = async (event, api) => {
+  const namespace = 'your_namespace';
+  if (event.authorization) {
+    api.idToken.setCustomClaim(`${namespace}roles`, event.authorization.roles);
+    api.accessToken.setCustomClaim(`${namespace}roles`, event.authorization.roles);
+  }
+}
+```
+- Navigate to **Actions** and click on the **Flows** tab. 
+- Click on the **Login**. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-actions-flows1.png' /> 
+
+- Drag and drop the custom action created previously. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-actions-flows2.png' />
+
+- Go back to Appcircle, enter **Group Claim Name** as ``org_id`` and **Role Claim Name** as ``your_namespace_roles``. Note that the role claim is created as a custom claim in Auth0. You must enter the name you determined before.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-oidc-ac-group-role-claim-name.png' />
+
+- Now you can define group and role mappings. Please refer [this documentation](/account/my-organization/sso-providers-configuration/single-sign-on#sso-mapping)
+
+:::caution
+
+The ``org_id`` claim value is equal to the organization ID, not the organization name.
 
 :::
