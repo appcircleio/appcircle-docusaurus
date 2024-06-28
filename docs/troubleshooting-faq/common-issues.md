@@ -215,7 +215,7 @@ In such an error, please check if the correct bundle ID is selected for the buil
 
 Your Cocoapods dependencies may also show this error when you try to build your project with Xcode 14. To prevent this, you may try one of the following workarounds.
 
-1. Signing with your own certificates. This requires uploading both development and distribution certificates. Therefore you either need to upload appropriate provisioning profiles or turn on [Automatic Code Signing](/signing-identities/ios-certificates-and-provisioning-profiles#automatic-signing).
+1. Signing with your own certificates. This requires uploading both development and distribution certificates. Therefore you either need to upload appropriate provisioning profiles or turn on [Automatic Code Signing](/signing-identities/ios-signing/apple-profiles#automatic-signing).
 
 ```ruby
 post_install do |installer|
