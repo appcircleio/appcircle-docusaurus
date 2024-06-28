@@ -33,10 +33,10 @@ import ContentRef from '@site/src/components/ContentRef';
 ### :muscle: Improvements
 
 - [Xcode 16.0 Beta 2](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) has been installed on the [Default M1 pool](https://docs.appcircle.io/infrastructure/ios-build-infrastructure) runners. As this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
-- Any [bundle ID](/publish-module/binary-management) can now be uploaded inside a publish profile for resign purposes. However, marking it as RC (Release Candidate) will not be possible if the app version's bundle ID does not match the profile's main bundle ID. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Latest metadata will now be cloned to newly uploaded app versions by default. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Any [Bundle ID](/publish-module/binary-management) can now be uploaded inside a publish profile for resign purposes. However, marking it as RC (Release Candidate) will not be possible if the app version's Bundle ID does not match the profile's main Bundle ID. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Latest Metadata will now be cloned to newly uploaded app versions by default. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The "Add for Review" step has been added to the Appstore Publish Flow within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The "Send to Enterprise" step has been added to the Appstore Publish Flow within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The "Send to Enterprise App Store" step has been added to the Appstore Publish Flow within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Publish profile updates can now be viewed on the main dashboard. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
