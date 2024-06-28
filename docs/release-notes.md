@@ -23,11 +23,11 @@ import ContentRef from '@site/src/components/ContentRef';
 - Saved Microsoft Intune credentials can now be used with the Publish Profiles by integration.  <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - iOS binaries can now be resigned via the UI by directly providing the entitlements, without needing to upload an XML file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Profiles can now be directly listed and imported from App Store Connect within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [Bundle identifiers](/signing-identities/ios-signing/apple-identifiers#edit-bundleid) in Apple Appstore can now be directly managed through the Appcircle interface. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Bundle identifiers](/signing-identities/apple-identifiers#edit-bundleid) in Apple Appstore can now be directly managed through the Appcircle interface. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A Publish Profile can now be created for existing apps from [App Store Connect integration](/publish-module/creating-publish-profiles#create-from-app-store-connect). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A new Provisioning Profile can now be created by selecting [Apple Profiles](/signing-identities/ios-signing/apple-profiles) within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Provisioning Profiles can now be [renewed](/signing-identities/ios-signing/apple-profiles#profile-actions) within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An [Apple Identifiers](/signing-identities/ios-signing/apple-identifiers) section has been added within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new Provisioning Profile can now be created by selecting [Apple Profiles](/signing-identities/apple-profiles) within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Provisioning Profiles can now be [renewed](/signing-identities/apple-profiles#profile-actions) within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An [Apple Identifiers](/signing-identities/apple-identifiers) section has been added within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new value display and filter have been added to the LDAP Mapping table. <IntegrationsBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
@@ -982,7 +982,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 ### 🆕 New Feature
 
 - [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner) Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines.
-- [Automatic iOS Code Signing](/signing-identities/ios-signing) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
+- [Automatic iOS Code Signing](/signing-identities/apple-profiles#automatic-signing) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
 - [Artifacts Management](/account/my-organization/artifacts) You can set the retention period for your build artifacts.
 - [SonarQube Component](/workflows/common-workflow-steps) You can use SonarQube for iOS and Android projects.
 
@@ -1173,7 +1173,7 @@ To set up an API Key, check this guide:
 
 <ContentRef url="/account/my-organization/api-integrations/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
-After adding an API Key, you can add new signing identities from the Signing Identities section. For more information on how to add identities and use them, check out [Signing Identities guide](/signing-identities/ios-signing).
+After adding an API Key, you can add new signing identities from the Signing Identities section. For more information on how to add identities and use them, check out [Signing Identities guide](/signing-identities).
 
 ### 🆕 New Feature
 

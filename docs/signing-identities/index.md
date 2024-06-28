@@ -12,11 +12,23 @@ The Signing Identities section is essential for configuring the credentials requ
 
 For more information, refer to the following link:
 
-[Certificates & Provisioning Profiles](/signing-identities/ios-signing)
+## Apple Certificates
 
-## iOS Signing
+Manage your Apple Certificates by adding and storing your Apple Certificates and other related details required for signing iOS applications.
 
-Manage your iOS signing identities by adding and storing your Apple certificates, provisioning profiles, and other related details required for signing iOS applications.
+[Apple Certificates](/signing-identities/apple-certificates)
+
+## Apple Identifiers
+
+Register and Manage your Apple Identifiers by adding and storing your Apple Identifiers and other related details required for signing iOS applications.
+
+[Apple Identifiers](/signing-identities/apple-identifiers)
+
+## Apple Profiles
+
+Register and Manage your Apple Profiles by adding and storing your Apple Profiles and other related details required for signing iOS applications.
+
+[Apple Profiles](/signing-identities/apple-profiles)
 
 ## Android Keystores
 

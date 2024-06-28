@@ -2,7 +2,7 @@
 title: Binary Information
 description: Learn how to view and manage binary information in Appcircle
 tags: [publish module, binary information]
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Binary Information

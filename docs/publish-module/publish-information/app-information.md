@@ -1,8 +1,8 @@
 ---
-title: App Information
+title: App Store Connect Information
 description: Learn how to update App Information in the Publish module of Appcircle
 tags: [publish, publish module, app information, app store connect, review]
-sidebar_position: 9
+sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 For a binary to be successfully sent for review, certain information must be completed. By using Appcircle's App Information feature, you can update the required information for binary submission.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-appInfodot.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-appInfoNew.png' />
 
 ### Localizable Informations
 

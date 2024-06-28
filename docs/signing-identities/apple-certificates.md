@@ -24,6 +24,18 @@ In most cases, you will be using a distribution certificate with the combination
 
 There is a one-to-many relationship between certificates and provisioning profiles, so you may have multiple provisioning profiles associated with a single certificate.
 
+:::info
+
+For app builds, signing identities are not mandatory. For example, you can use unsigned apps to run on the simulator or on third-party platforms that resign your app, such as AWS Device Farm.
+
+However, unsigned binaries cannot be installed on actual devices; therefore they cannot be used in the Appcircle Testing Distribution.
+
+:::
+
+You can obtain your developer certificates and provisioning profiles from the Apple Developer Portal:
+
+[https://developer.apple.com/support/code-signing/](https://developer.apple.com/support/code-signing/)
+
 
 ## Using Appcircle Signing Identity module for Apple Certificates
 

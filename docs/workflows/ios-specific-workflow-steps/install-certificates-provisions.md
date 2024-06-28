@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 # Install Certificates and Provisioning Profiles
 
 This step installs the specified [certificate](https://developer.apple.com/support/certificates/) and [provisioning profile](https://developer.apple.com/help/account/manage-profiles/create-a-development-provisioning-profile/) files to sign the project.
-For more detailed information on **iOS Certificates and Provisioning Profiles**, please refer to [this document](/signing-identities/ios-signing).
+For more detailed information on **iOS Certificates and Provisioning Profiles**, please refer to [this document](/signing-identities).
 
 ### Prerequisites
 
