@@ -121,7 +121,7 @@ This step is optional and can be skipped if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-application-organizations1.png' />
 
-- Choose **"Business Users"** for the type of users and select **"Prompt for Organization"** for the login flow. Click on **"Save Changes."**
+- Choose **"Business Users"** for the type of users and select **"Prompt for Organization"** for the login flow. Click on **"Save Changes"**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-application-organizations2.png' />
 
