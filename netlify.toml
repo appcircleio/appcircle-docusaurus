@@ -880,10 +880,10 @@
 
 [[redirects]]
   from = "/signing-identities/ios-certificates-and-provisioning-profiles"
-  to = "/signing-identities/ios-signing"
+  to = "/signing-identities"
   status = 301
 
 [[redirects]]
   from = "/signing-identities/ios-certificates-and-provisioning-profiles#automatic-signing"
-  to = "/signing-identities/ios-signing/apple-profiles#automatic-signing"
+  to = "/signing-identities/apple-profiles#automatic-signing"
   status = 301
