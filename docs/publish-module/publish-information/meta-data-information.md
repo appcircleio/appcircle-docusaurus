@@ -1,14 +1,14 @@
 ---
-title: Metadata Information
+title: Metadata Details
 description: Detailed guide on filling out metadata for app distribution platforms within the Appcircle dashboard.
 tags: [metadata, app distribution, appcircle dashboard]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Metadata Information
+# Metadata Details
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-metadataDetails.png' />
 
 ## Overview
 
