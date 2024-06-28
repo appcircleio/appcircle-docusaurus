@@ -16,7 +16,7 @@ Enterprise App Store offers a store structure that you can use and customise for
 
 ### Prerequisites
 
-There is no prerequisite required for this step to work. You can use this step anywhere you want in Flow.
+There is no prerequisite required for this step to work. You can use this step anywhere you want in the Flow.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-sendEnterprise.png' />
 

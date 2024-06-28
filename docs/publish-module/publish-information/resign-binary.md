@@ -42,7 +42,7 @@ When you need to distribute an iOS application to different environments (like Q
 
 - **Options**:
   - **Entitlements from provisioning profiles**: Existing entitlements in the signed provision profile.
-  - **Edit**: Edit exist entitlements, or add or remove.
+  - **Edit**: Edit existing entitlements, or add or remove.
 
 
 #### Targets
