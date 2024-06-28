@@ -982,7 +982,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 ### 🆕 New Feature
 
 - [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner) Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines.
-- [Automatic iOS Code Signing](/signing-identities//apple-profiles#automatic-signing) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
+- [Automatic iOS Code Signing](/signing-identities/apple-profiles#automatic-signing) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
 - [Artifacts Management](/account/my-organization/artifacts) You can set the retention period for your build artifacts.
 - [SonarQube Component](/workflows/common-workflow-steps) You can use SonarQube for iOS and Android projects.
 
