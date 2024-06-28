@@ -13,6 +13,7 @@ import SocatConfiguration from '@site/docs/self-hosted-appcircle/configure-serve
 import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_podman-netavark-configuration.mdx';
 import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_firewalld-configuration.mdx';
 import SwapConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_swap-configuration.mdx';
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
 
 ## Overview
 
@@ -94,6 +95,7 @@ For production environments, **recommended** hardware requirements are
 
 ### Software Requirements
 
+
 #### Container Engine
 
 You must use the same container engine with on the Appcircle private server and the Appcircle DMZ server. 
@@ -102,13 +104,49 @@ If you have installed the Appcircle private server with Podman, you **must** use
 
 If you have installed the Appcircle private server with Docker, you **must** use Docker on the Appcircle DMZ server.
 
+<Tabs>
+  
+  <TabItem value="podman" label="Podman" default>
+
+#### Enabling the Linger Option
+
+<LingerOption/>
+
+#### Overcoming Privileged Port Limitations
+
+<SocatConfiguration/>
+
+#### Podman Network Stack
+
+<NetavarkConfiguration/>
+
+#### Firewalld Requirements
+
+<FirewalldConfiguration/>
+
+  </TabItem>
+
+  <TabItem value="docker" label="Docker" default>
+
+#### Docker Configuration
+
+For Docker, you don't need to do anything manually. You can move on to the next section. 
+
+  </TabItem>
+
+</Tabs>
+
 #### SeLinux
 
 You must use the same SeLinux mode on the Appcircle private server and the Appcircle DMZ server.
 
-If 
+You can check the SeLinux mode with the command below.
 
-## Creating Appcircle DMZ server Configuration
+```bash
+getenforce
+```
+
+## Creating the Appcircle DMZ Server Configuration
 
 To create the Appcircle DMZ server configuration, you should login to the Appcircle private server. 
 
@@ -118,7 +156,7 @@ To create the Appcircle DMZ server configuration, you can follow the steps below
 
 - Login to the Appcircle private server with SSH.
 
-- Go to the Appcircle server directory
+- Go to the Appcircle server directory.
 
 ```bash
 cd appcircle-server
@@ -148,16 +186,19 @@ The `--dmz` flag in the `export` subcommand above creates the configuration file
 ls -lah projects/spacetech/export/dmz/
 ```
 
-- Transfer the contents of the `projects/spacetech/export/dmz/` directory to the Appcircle DMZ server.
+- Start the Appcircle private server.
 
-- Compress the directory into a tarball in the Appcircle private server, transfer and extract it in the Appcircle DMZ server.
+```bash
+./ac-self-hosted.sh -n spacetech up
+```
+
+- Compress the directory into a tarball in the Appcircle private server.
 
 ```bash
 tar -czf dmz.tar.gz -C projects/spacetech/export/dmz/ .
 ```
 
-- Transfer the `dmz.tar.gz` file to the Appcircle DMZ server.
-
+- Transfer the `dmz.tar.gz` file to the Appcircle DMZ server with a file transfer protocol like `scp` or `ftp`.
 
 ## Creating the Appcircle DMZ Server
 
@@ -168,56 +209,82 @@ You need to create a directory for the Appcircle DMZ server and extract the tran
 - Create a Appcircle DMZ server.
 
 ```bash
-mkdir appcircle-server-dmz
+mkdir -p appcircle-server-dmz
 ```
 
-- Extract the tarball.
+- Extract the tarball you transferred from the Appcircle private server.
 
 ```bash
 tar -xzf dmz.tar.gz -C appcircle-server-dmz
 ```
 
-- Change directory into the new directory and list the contents.
+- Change directory into the new directory.
 
 ```bash
-cd appcircle-server-dmz && ls -l
+cd appcircle-server-dmz
 ```
 
 ### Configure the System
 
+Install the required packages and configurations on the system.
 
-<Tabs>
-  
-  <TabItem value="podman" label="Podman" default>
+:::caution
 
-#### Enabling the Linger Option
+You need to have root access on your system for this step. Being able to run `sudo` is sufficient for the following step. (sudoer)
 
-<LingerOption/>
+Run the command without `sudo`. The script will ask you the user password if it's required.
 
-#### Overcoming Privileged Port Limitations
+:::
 
-<SocatConfiguration/>
+```bash
+./ac-self-hosted-dmz.sh -i
+```
 
-#### Podman Network Stack
+### Starting the Appcircle DMZ Server
 
-<NetavarkConfiguration/>
+After you have configured the system with the steps above, you are ready to run the Appcircle DMZ server.
 
-#### Firewalld Requirements
+- Go to the Appcircle DMZ server directory.
 
-<FirewalldConfiguration/>
+```bash
+cd appcircle-server-dmz
+```
 
-  </TabItem>
+- Start the Appcircle DMZ server.
 
-  
-  <TabItem value="docker" label="Docker" default>
+```bash
+./ac-self-hosted-dmz.sh up
+```
 
-#### Docker Configuration
+## Stopping the Appcircle DMZ Server
 
-For Docker, you don't need to do anything manually. You can move on to the next section. 
+If you need to stop the Appcircle DMZ server in a case, you can run the the command below:
 
-  </TabItem>
+```bash
+./ac-self-hosted-dmz.sh down
+```
 
-</Tabs>
+## Upgrading Appcircle DMZ and Appcircle Private Server
+
+If there is a new Appcircle server version available and you want to update.
+
+You can follow the steps below to update the Appcircle private server and the Appcircle DMZ server.
+
+<DowntimeCaution />
+
+- Login to the Appcircle DMZ server.
+
+- Stop the Appcircle DMZ Server.
+
+```bash
+./ac-self-hosted-dmz.sh down
+```
+
+- Update the Appcircle private server by following the [Update document](/docs/self-hosted-appcircle/update.md).
+
+- Create the updated Appcircle DMZ configuration files by following the [Creating the Appcircle DMZ Server Configuration](#creating-the-appcircle-dmz-server-configuration) section.
+
+- Create the new Appcircle DMZ server by following the [Creating the Appcircle DMZ Server](#creating-the-appcircle-dmz-server) section.
 
 ## Appcircle DMZ Server Monitoring
 
