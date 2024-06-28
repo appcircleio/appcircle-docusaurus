@@ -2,7 +2,7 @@
 title: App Store Connect Information
 description: Learn how to update App Information in the Publish module of Appcircle
 tags: [publish, publish module, app information, app store connect, review]
-sidebar_position: 9
+sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

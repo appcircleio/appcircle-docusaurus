@@ -2,6 +2,7 @@
 title: Signing History
 description: Understand the Signing History Report in Appcircle, providing visibility on the usage of signing identities over a given time period.
 tags: [reports, signing history, signing identities, testing]
+sidebar_position: 6
 ---
 
 # Signing History

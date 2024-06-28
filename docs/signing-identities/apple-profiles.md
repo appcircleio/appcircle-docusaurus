@@ -46,6 +46,19 @@ You can use the Appcircle Testing Distribution or the Enterprise App Store modul
 
 There is no need for device registration, but Apple requires the binary to be protected and not open for public download, so you can use the enrollment feature of the Appcircle Testing Distribution to protect the app distribution.
 
+:::info
+
+For app builds, signing identities are not mandatory. For example, you can use unsigned apps to run on the simulator or on third-party platforms that resign your app, such as AWS Device Farm.
+
+However, unsigned binaries cannot be installed on actual devices; therefore they cannot be used in the Appcircle Testing Distribution.
+
+:::
+
+You can obtain your developer certificates and provisioning profiles from the Apple Developer Portal:
+
+[https://developer.apple.com/support/code-signing/](https://developer.apple.com/support/code-signing/)
+
+
 ## Using Appcircle Signing Identity module for Apple Profiles
 
 To register, upload or fetch your Apple Profiles, select **Apple Profiles** from the signing module.

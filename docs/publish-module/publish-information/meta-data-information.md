@@ -2,6 +2,7 @@
 title: Metadata Details
 description: Detailed guide on filling out metadata for app distribution platforms within the Appcircle dashboard.
 tags: [metadata, app distribution, appcircle dashboard]
+sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

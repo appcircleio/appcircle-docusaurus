@@ -15,7 +15,7 @@ For this, it is necessary to first create a publish profile within the Publish m
 
 In order to create a publish profile, click on the "Add New" button in the Publish module.
 
-### Create Profile Manually
+### Adding a New Publish Profile
 
 
 There are 2 different options for creating a Publish Profile. One of them is manual creation and the other is to import your existing Store profile.
