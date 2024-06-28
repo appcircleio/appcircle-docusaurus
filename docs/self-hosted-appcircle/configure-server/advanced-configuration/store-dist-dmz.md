@@ -95,7 +95,6 @@ For production environments, **recommended** hardware requirements are
 
 ### Software Requirements
 
-
 #### Container Engine
 
 You must use the same container engine with on the Appcircle private server and the Appcircle DMZ server. 
@@ -107,6 +106,17 @@ If you have installed the Appcircle private server with Docker, you **must** use
 <Tabs>
   
   <TabItem value="podman" label="Podman" default>
+
+#### Tools
+
+You need to have the following tools installed on your system:
+
+- curl
+- tar
+- podman
+- podman-compose
+
+You can install these dependencies from your package repository depending on your distro.
 
 #### Enabling the Linger Option
 
@@ -128,9 +138,16 @@ If you have installed the Appcircle private server with Docker, you **must** use
 
   <TabItem value="docker" label="Docker" default>
 
-#### Docker Configuration
+#### Tools
 
-For Docker, you don't need to do anything manually. You can move on to the next section. 
+You need to have the following tools installed on your system:
+
+- curl
+- tar
+- docker
+- docker compose
+
+You can install these dependencies from your package repository depending on your distro.
 
   </TabItem>
 

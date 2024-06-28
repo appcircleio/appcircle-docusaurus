@@ -50,7 +50,7 @@ files.pythonhosted.org/packages/
 
 - The Appcircle server requires some tools to be installed.
 
-- These tools are `tar`, `curl`, `unzip` and `Podman`.
+- These tools are `tar`, `curl`, `unzip`, `socat`, `netavark` and `Podman`.
 
 - If you are hosting a `yum` repository locally on your network, you don't need these URLs.
 
@@ -325,3 +325,91 @@ Those endpoints are documented at [here](https://help.apple.com/itc/transporteru
 | [vgr0906.apple.com](http://vgr0906.apple.com/) | 17.57.20.146   | 33001        | 33001-33500  |
 | [vgr0907.apple.com](http://vgr0907.apple.com/) | 17.57.20.147   | 33001        | 33001-33500  |
 | [vgr0908.apple.com](http://vgr0908.apple.com/) | 17.57.20.148   | 33001        | 33001-33500  |
+
+## Appcircle DMZ Server Install & Update
+
+Below you can find the network access details required when installing or upgrading a self-hosted Appcircle DMZ server.
+
+
+<Tabs>
+  
+  <TabItem value="rhel-podman" label="RHEL with Podman" default>
+
+This section covers the external resource domains during the installation process of the Appcircle DMZ Server on the RHEL distribution using Podman.
+
+##### `podman-compose` tool:
+
+- You must download the podman-compose tool from python pip repositories.
+
+```access_list
+pypi.python.org/simple/podman-compose
+pypi.org/simple/podman-compose/
+pypi.python.org/simple/python-dotenv/
+pypi.org/simple/python-dotenv/
+pypi.python.org/pypi/pip/json
+pypi.org/pypi/pip/json
+files.pythonhosted.org/packages/
+```
+
+##### System tools:
+
+- The Appcircle DMZ server requires some tools to be installed.
+
+- These tools are `tar`, `curl`, `unzip`, `socat`, `netavark` and `Podman`.
+
+- If you are hosting a `yum` repository locally on your network, you don't need these URLs.
+
+```access_list
+subscription.rhsm.redhat.com
+cdn.redhat.com
+```
+
+  </TabItem>
+
+  <TabItem value="rhel-docker" label="RHEL with Docker">
+
+This section covers the external resource domains during the installation process of the Appcircle DMZ Server on the RHEL distribution using Docker.
+
+##### System tools:
+
+- The Appcircle DMZ server requires some tools to be installed.
+
+- These tools are `tar`, `curl` and `unzip`.
+
+- If you are hosting a `yum` repository locally on your network, you don't need these URLs.
+
+```access_list
+subscription.rhsm.redhat.com
+cdn.redhat.com
+```
+
+  </TabItem>
+  
+  <TabItem value="ubuntu-docker" label="Ubuntu with Docker">
+
+This section covers the external resource domains during the installation process of the Appcircle DMZ Server on the Ubuntu distribution using Docker.
+
+##### `docker` installation:
+
+- If you want to install `Docker` on your Ubuntu, then the Appcircle server host needs to access these URLs.
+
+```access_list
+download.docker.com
+archive.ubuntu.com
+```
+
+##### System tools:
+
+- The Appcircle DMZ server requires some tools to be installed.
+
+- These tools are `tar`, `curl` and `unzip`.
+
+- If you are hosting an `apt` repository locally on your network, you don't need these URLs.
+
+```access_list
+archive.ubuntu.com
+```
+
+  </TabItem>
+  
+</Tabs>
