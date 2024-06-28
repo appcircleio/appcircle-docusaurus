@@ -221,6 +221,6 @@ For Docker, you don't need to do anything manually. You can move on to the next 
 
 ## Appcircle DMZ Server Monitoring
 
-By default, Appcircle DMZ server will try to send the container logs to the Appcircle private server.
+By default, the Appcircle DMZ server will try to send the container logs to the Appcircle private server.
 
-You can check the container logs from the Appcircle monitoring page. For more details about checking the logs, you can check the [Monitoring](/docs/self-hosted-appcircle/configure-server/monitoring.md) page.
+You can check the container logs on the Appcircle monitoring page. For more details about checking the logs, you can check the [Monitoring](/docs/self-hosted-appcircle/configure-server/monitoring.md) page.
