@@ -120,7 +120,7 @@ This guide provides a step-by-step approach to setting up and managing SSO mappi
 
 First, ensure you have a proper SSO configuration, either OpenID or SAML, and define the configuration for SSO Mapping to specify how to retrieve user groups and roles.
 
-You can refer [this](/account/my-organization/sso-providers-configuration/single-sign-on#identity-providers) documentation.
+You can refer to [this documentation.](/account/my-organization/sso-providers-configuration/single-sign-on#identity-providers).
 
 ### Accessing SSO Mapping Settings
 
@@ -129,7 +129,7 @@ You can refer [this](/account/my-organization/sso-providers-configuration/single
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/navigate-sso-mapping1.png' /> 
 
-3. Click on the **SSO Mapping**
+3. Click on the **SSO Mapping**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/navigate-sso-mapping2.png' /> 
 
@@ -137,7 +137,7 @@ You can refer [this](/account/my-organization/sso-providers-configuration/single
 
 1. Enter the name of the SSO group and select the corresponding Appcircle organization you want to map. Ensure the group name is correct.
 
-2. To map the SSO group to an Appcircle organization, click Add. This will automatically link users from the SSO group to the selected organization in Appcircle.
+2. Click Add to map the SSO group to an Appcircle organization. This will automatically link users from the SSO group to the selected organization in Appcircle.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-group-mapping.png' /> 
 

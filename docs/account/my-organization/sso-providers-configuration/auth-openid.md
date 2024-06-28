@@ -95,9 +95,9 @@ When you connect your Identity Provider, please open a new incognito window and 
 
 ### SSO Mapping
 
-This step is optional. You can skip it if you do not plan to use SSO Mapping.
+This step is optional and can be skipped if you do not plan to use SSO Mapping.
 
-- Navigate to the **User Management** section in the Auth0 Dashboard, click on **Roles**, and create the roles as needed.
+- To create roles, navigate to the **User Management** section in the Auth0 Dashboard, click on **"Roles"**, and create the necessary roles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-create-roles.png' />
 
@@ -105,7 +105,7 @@ This step is optional. You can skip it if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-create-groups.png' />
 
-- Add users who will become members of your organization
+- Add users who will become members of your organization.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-add-members.png' />
 
@@ -113,19 +113,26 @@ This step is optional. You can skip it if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-assign-roles.png' />
 
-- Navigate to the **Connections** tab. Enable Connections for your organization. 
+- Navigate to the **"Connections"** tab and enable connections for your organization.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-enable-connections.png' />
 
-- Navigate to the Applications section. Go to the related application and then navigate to the Organizations tab. Click on **Disable Grants Now** 
+- Navigate to the "Applications" section. Select the relevant application, then go to the "Organizations" tab. Click on **"Disable Grants Now"**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-application-organizations1.png' />
 
-- Choose **Business** Users for the type of users and select **Prompt for Organization** for the Login Flow. Click on **Save Changes**
+- Choose **"Business Users"** for the type of users and select **"Prompt for Organization"** for the login flow. Click on **"Save Changes."**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-application-organizations2.png' />
 
-- We need to retrieve the groups and roles of a user via tokens. The groups claim is already present on the token, but we need to add an additional step for the roles claim. Navigate to **Actions** and click on the **Library** tab. Click on the **Create Action** and select the **Build from scratch**
+- To retrieve the groups and roles of a user via tokens, follow these steps:
+
+1. Navigate to **Actions**.
+2. Click on the **Library** tab.
+3. Select **Create Action**.
+4. Choose **Build from Scratch**.
+
+The groups claim is already present on the token, but these steps will help you add the roles claim as well.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-actions-library1.png' />
 
@@ -155,11 +162,11 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-actions-flows2.png' />
 
-- Go back to Appcircle, enter **Group Claim Name** as ``org_id`` and **Role Claim Name** as ``your_namespace_roles``. Note that the role claim is created as a custom claim in Auth0. You must enter the name you determined before.
+- Return to Appcircle and enter the **Group Claim Name** as ``org_id`` and the **Role Claim Name** as ``your_namespace_roles``. Note that the role claim is created as a custom claim in Auth0, so you must enter the name you determined previously.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-oidc-ac-group-role-claim-name.png' />
 
-- Now you can define group and role mappings. Please refer [this documentation](/account/my-organization/sso-providers-configuration/single-sign-on#sso-mapping)
+- Now you can define group and role mappings. Please refer to [this documentation](/account/my-organization/sso-providers-configuration/single-sign-on#sso-mapping) for guidance.
 
 :::caution
 

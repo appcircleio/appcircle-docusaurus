@@ -101,13 +101,13 @@ When you connect your Identity Provider, please open a new incognito window and 
 
 ### SSO Mapping
 
-This step is optional. You can skip it if you do not plan to use SSO Mapping.
+This step is optional and can be skipped if you do not plan to use SSO Mapping.
 
 - Navigate to the **Directory** section in the Okta Dashboard, click on **Groups**, and create the groups as needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-groups.png' />
 
-- Assign users to groups
+- Assign users to groups.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-assign-users-to-groups.png' />
 
@@ -120,12 +120,12 @@ This step is optional. You can skip it if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-groups-claim.png' />
 
-- We will store user roles in a user attribute.
+- User roles will be stored in a user attribute. 
 - Navigate to the **Directory** section, click on **Profile Editor**. Select the **User (default)** from profile list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-profile-editor.png' />
 
-- Click on **Add Attribute**
+- Click on **Add Attribute**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute1.png' />
 
@@ -133,7 +133,7 @@ This step is optional. You can skip it if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute2.png' />
 
-- Navigate to the **Directory** section, click on **Profile Editor**. Select the **Your Application Name User** from profile list.
+- Navigate to the **Directory** section, click on **Profile Editor**. Select the **Your Application Name User** from the profile list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-profile-editor.png' />
 
@@ -145,11 +145,11 @@ This step is optional. You can skip it if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-add-roles-attribute.png' />
 
-- Click on **Mappings"" and map user roles attribute to application user roles attribute as shown in the image below.
+- Click on **Mappings** and map user roles attribute to application user roles attribute as shown in the image below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-map-roles-attribute.png' />
 
-- Now, we can edit roles attribute of users. 
+- Now, you can edit roles attribute of the users. 
 - Navigate to the **Directory** section, click on **People**, select a user from the list, and then click on the **Profile** tab. 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-edit-user-attribute1.png' />
@@ -158,7 +158,7 @@ This step is optional. You can skip it if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-edit-user-attribute2.png' />
 
-- Navigate to the **Security** section, click on **API**, select **Authorization Servers** tab.
+- Navigate to the **Security** section, click on **API** and select **Authorization Servers** tab.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-security-api.png' />
 
@@ -166,12 +166,12 @@ This step is optional. You can skip it if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-add-roles-claim.png' />
 
-- Navigate to the **Applications** section, click on **Applications** tab. Click on **Refresh Application Data**
+- Navigate to the **Applications** section, click on **Applications** tab. Click on **Refresh Application Data**.
  
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-refresh-application-data.png' />
 
-- Go back to Appcircle, enter **Group Attribute Name** as ``groups`` and **Role Attribute Name** as ``roles``.
+- Return to Appcircle and then enter **Group Attribute Name** as ``groups`` and **Role Attribute Name** as ``roles``.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-group-role-claim-name.png' />
 
-- Now you can define group and role mappings. Please refer [this documentation](/account/my-organization/sso-providers-configuration/single-sign-on#sso-mapping)
+- Now you can define group and role mappings. Please refer to [this documentation](/account/my-organization/sso-providers-configuration/single-sign-on#sso-mapping) for guidance.
