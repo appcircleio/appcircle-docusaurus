@@ -94,7 +94,13 @@ For production environments, **recommended** hardware requirements are
 
 ### Software Requirements
 
-Docker or podman. Same with the Appcircle private server.
+#### Container Engine
+
+You must use the same container engine with the Appcircle private server. 
+
+If you have installed the Appcircle private server with Podman, you **must** use Podman in the Appcircle DMZ server. 
+
+If you have installed the Appcircle private server with Docker, you **must** use Docker in the Appcircle DMZ server.
 
 ## Creating Appcircle DMZ server Configuration
 
@@ -209,12 +215,8 @@ For Docker, you don't need to do anything manually. You can move to the next sec
 
 </Tabs>
 
-### Container Image Registry Authentication
+## Appcircle DMZ Server Monitoring
 
-@TODO: If you use Appcircle image registry, you need to authenticate with the `cred.json`.
+By default, Appcircle DMZ server will try to send the container logs to the Appcircle private server.
 
-@TODO: If you use an external image registry, you may need to authenticate with the username and password if authentication is required.
-
-### Configure the Appcircle Monitoring
-
-@TODO: Describe how to create Promtail systemd service.
+You can check the container logs from the Appcircle monitoring page. For more details about checking the logs, you can check the [Monitoring](/docs/self-hosted-appcircle/configure-server/monitoring.md) page.
