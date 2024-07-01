@@ -51,4 +51,11 @@ If a user who has previously unsubscribed is included in a test group, they will
 
 Appcircle provides a scalable solution, allowing you to add as many testers as you need without stringent limitations. This ensures you can conduct thorough testing across a wide range of devices and user scenarios. Appcircle also offers flexible group management, so you can easily organize testers into different groups based on testing needs.
 
+### Why have I not received the e-mail after sharing the app version via Appcircle ? 
 
+There could be several reasons why you haven't received the email after sharing the app version with your testers:
+
+- The recipient might be unsubscribed.
+- The email may have arrived in the junk folder.
+- Company firewall rules might cause delays of up to 30 minutes.
+- The Appcircle domain may need to be whitelisted.
