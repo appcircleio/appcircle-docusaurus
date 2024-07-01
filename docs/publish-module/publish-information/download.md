@@ -2,7 +2,7 @@
 title: Downloading Binaries
 description: Learn how to download the built application files from the Publish module in Appcircle
 tags: [publish, download, binaries, distribution]
-sidebar_position: 4
+sidebar_position: 8
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

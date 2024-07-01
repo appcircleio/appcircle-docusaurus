@@ -72,6 +72,14 @@ You must select a provisioning profile for each target. Otherwise resigning will
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/resign3.png' />
 
+When you sign an app version through Testing Distribution Profile or upload a signed app version manually or automatically through the Build module, Testing Distribution Profile will display a **signed** badge when the corresponding app version is selected.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3856-ios1.png' />
+
+If you hover over the **signed** badge, the certification name used to sign the app version will be displayed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3856-ios2.png' />
+
 ## Binary Details
 
 1. Select the binary.

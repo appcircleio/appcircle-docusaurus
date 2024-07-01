@@ -96,7 +96,7 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 
 ### Signing React Native iOS applications
 
-The next step on build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles) section.
+The next step on build configuration is Signing. Here, please select the provisioning profile you added in the [Apple Certificates & Provisioning Profiles](/signing-identities) section.
 
 :::info
 

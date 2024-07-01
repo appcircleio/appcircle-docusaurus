@@ -2,7 +2,7 @@
 title: Publish Details
 description: Learn how to view the details of the publish flow in Appcircle
 tags: [publish, publish details, publish flow]
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Publish Details
@@ -11,6 +11,8 @@ This option provides an in-depth view of the selected version's publish process.
 
 <!--
 The "Publish Details" feature in the Publish module provides a comprehensive view of the publish flow for both Android and iOS builds. It is where you can see the progress and logs of your publishing process to different platforms like Google Play Store and TestFlight. -->
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-publishDetails.png' />
 
 ## Accessing Publish Details
 
