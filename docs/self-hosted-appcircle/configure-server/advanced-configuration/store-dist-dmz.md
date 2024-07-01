@@ -272,7 +272,7 @@ Install the required packages and configurations on the system.
 
 You need to have root access on your system for this step. Being able to run `sudo` is sufficient for the following step. (sudoer)
 
-Run the command without `sudo`. The script will ask you the user password if it's required.
+Run the command without `sudo`. The script will ask for the user password if it's required.
 
 :::
 
