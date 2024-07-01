@@ -38,5 +38,6 @@ Before publishing:
 - **App Store**: [Configure your App Store Connect API Key](/account/my-organization/api-integrations/adding-an-app-store-connect-api-key.md)
 - **Google Play**: [Set up your Google Play Service Account](/account/my-organization/api-integrations/adding-google-play-service-account.md)
 - **Huawei AppGallery**: [Add your Huawei API Key](/account/my-organization/api-integrations/adding-huawei-api-key)
+- **Microsoft Intune**: [Adding Microsoft Intune API Credentials](/account/my-organization/api-integrations/adding-microsoft-intune-api-key)
 
 By following these steps, you can ensure a smooth publishing experience for your mobile applications.
