@@ -20,8 +20,8 @@ Before starting your first iOS app build, please make sure you first create a bu
 
 After connecting your repository, please add or create your iOS certificate and provisioning profile. You can refer to the page below for this step:
 
-<ContentRef url="/signing-identities/ios-certificates-and-provisioning-profiles">
-  iOS Certificates and Provisioning Profiles
+<ContentRef url="/signing-identities">
+  Apple Certificates and Provisioning Profiles
 </ContentRef>
 
 When you are done with the steps above, you can now start building your iOS application.
@@ -96,7 +96,7 @@ You can visit the following page for details on build triggers:
 
 ### Signing
 
-The next step on build configuration is Signing. Here, please select the provisioning profile you added at [iOS Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles) page.
+The next step on build configuration is Signing. Here, please select the provisioning profile you added at [Apple Certificates & Provisioning Profiles](/signing-identities) page.
 
 :::info
 

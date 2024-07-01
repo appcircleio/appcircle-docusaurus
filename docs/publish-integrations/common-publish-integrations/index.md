@@ -39,4 +39,12 @@ Everything you need to know about submitting your app to the Microsoft Intune ca
 Learn how to Publish to Microsoft Intune
 </ContentRef>
 
+## Send to Enterprise App Store
+
+Everything you need to know about sending your app to the Appcircle's Enterprise App Store can be found here. We cover the necessary preparations, and submission details.
+
+<ContentRef url="/publish-integrations/common-publish-integrations/send-to-enterprise-app-store">
+Learn how to Send Enterprise App Store
+</ContentRef>
+
 Appcircle's integration tools are designed to simplify and automate the publishing process, allowing you to focus on developing great apps while we handle the distribution.

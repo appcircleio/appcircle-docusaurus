@@ -2,6 +2,7 @@
 title: Resign Binary
 description: Learn how to resign your iOS application binaries within Appcircle to change provisioning profiles or app entitlements.
 tags: [iOS, resigning, provisioning profiles, entitlements]
+sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -20,7 +21,7 @@ When you need to distribute an iOS application to different environments (like Q
 
 ### Fields and Options
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-resign.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-resignUI.png' />
 
 #### Display Name
 
@@ -40,9 +41,9 @@ When you need to distribute an iOS application to different environments (like Q
 #### Entitlements
 
 - **Options**:
-  - **Entitlements from provisioning profiles**: Use entitlements from the new provisioning profile.
-  - **Combine app entitlements**: Extract app bundle code signing entitlements and combine with entitlements from new provisioning profiles.
-  - **New app entitlements**: Edit this XML file to edit capabilities. Resigning process uses a single entitlement XML file.
+  - **Entitlements from provisioning profiles**: Existing entitlements in the signed provision profile.
+  - **Edit**: Edit existing entitlements, or add or remove.
+
 
 #### Targets
 
@@ -54,12 +55,30 @@ When you need to distribute an iOS application to different environments (like Q
 - **Description**: Original Bundle ID.
 
 :::caution BundleID
-Please note that changing the **BundleID** is not allowed while the related version is being resigned in the **Publish module**. If you need to change the **BundleID value** of your package, please use the **Resign Binary** feature in [Testing Distribution](/distribute/platform-specific-guidance/ios/resigning-ios-binaries).
+Please note that changing the **BundleID** is allowed while the related version is being resigned in the **Publish module**. However, you **cannot start** a publish operation unless it matches the Bundle ID defined for the [Publish Profile](/publish-module/creating-publish-profiles#create-profile-manually).
 :::
 
 #### Provisioning Profiles
 
 - **Description**: Select a new provisioning profile for the Bundle ID.
+
+### Edit Entitlements
+
+With the entitlement editing feature of the Resign Binary feature in the Publish module of Appcircle. If you want, you can change your existing entitlements or add or remove them.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-entitlementEdit.png' />
+
+#### Changing Existing Entitlement or Add/Remove Option
+
+When you click the Edit button on the Resign Binary screen, a new page will open for Entitlement editing. In this page, you can update, delete or add a new entitlement to your existing entitlements.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-editDetails.png' />
+
+:::danger Entitlement Change
+
+If you want to change, add or remove Entitlement. The **Provision Profile** and **Bundle Identifier** you will resign **must contain** the **entitlements** you want to change. If the **Bundle ID** or **Provision Profile** does not contain or support these changes, the resign operation may **fail**.
+
+:::
 
 ### Resigning Process
 
