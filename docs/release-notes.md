@@ -45,8 +45,8 @@ import ContentRef from '@site/src/components/ContentRef';
 ### 🐞 Fixes
 
 - An issue where users were unable to save the XCode version on React Native build profiles without providing the optional Node.js version has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue has been fixed where a remotely triggered build via GitLab connection showed an incorrect branch name in the Appcircle UI. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue has been fixed where multiple remotely triggered builds via GitLab, effecting a single pipeline was showing incorrect build status in the Appcircle UI. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where a remotely triggered build via GitLab connection showed an incorrect branch name in the Appcircle UI during the build process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where multiple remotely triggered builds via GitLab, affecting a single pipeline, was showing incorrect build status in the Appcircle UI. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue where localization settings caused duplicated screenshots in the Metadata Information section has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.18.0 - 2024-05-31 - Build Enhancements, Appcircle CLI v2.2.0, Publish Improvements and more
