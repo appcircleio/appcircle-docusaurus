@@ -66,3 +66,4 @@ For detailed information on store connections, follow the links below.
 | Google Play       | [Adding Google Play Service Account](/account/my-organization/api-integrations/adding-google-play-service-account.md)   |
 | Huawei AppGallery | [Adding Huawei API Key](/account/my-organization/api-integrations/adding-huawei-api-key)                                |
 | Microsoft Intune  | [Adding Microsoft Intune API Key](/account/my-organization/api-integrations/adding-microsoft-intune-api-key)            |
+
