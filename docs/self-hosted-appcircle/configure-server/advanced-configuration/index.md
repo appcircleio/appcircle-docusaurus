@@ -27,3 +27,7 @@ Optimize your server's performance by configuring the cache size. This setting a
 ### Command-Line Interface (CLI) Configuration
 
 Customize the CLI to suit your workflow needs. This includes setting up environment variables, enabling specific commands, and configuring access permissions for a streamlined command-line experience.
+
+### Enterprise App Store and Testing Distribution in DMZ
+
+@TODO: Fill

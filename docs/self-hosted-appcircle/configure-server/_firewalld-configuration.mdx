@@ -1,0 +1,13 @@
+If you are using firewalld, you need to open the 80 and 443 ports for the Appcircle server.
+
+```bash
+sudo firewall-cmd --add-port=80/tcp --permanent
+sudo firewall-cmd --add-port=443/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+To check if the ports are open, you can run the following command:
+
+```bash
+sudo firewall-cmd --list-ports
+```
