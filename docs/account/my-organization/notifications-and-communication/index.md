@@ -10,6 +10,8 @@ tags:
     slack,
     email,
     microsoft teams,
+    webhooks,
+    hooks
   ]
 ---
 

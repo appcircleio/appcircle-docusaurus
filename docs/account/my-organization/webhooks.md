@@ -4,6 +4,7 @@ description: Appcircle will notify external services via webhooks when a certain
 tags:
   [
     webhooks,
+    hooks,
     webhook configuration,
     webhook scope,
     webhook payload,
