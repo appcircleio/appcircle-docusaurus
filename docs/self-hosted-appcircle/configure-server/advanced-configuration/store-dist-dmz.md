@@ -284,17 +284,21 @@ Run the command without `sudo`. The script will ask for the user password if it'
 
 After you have configured the system with the steps above, you are ready to run the Appcircle DMZ server.
 
-- Go to the Appcircle DMZ server directory.
-
-```bash
-cd appcircle-server-dmz
-```
-
 - Start the Appcircle DMZ server.
 
 ```bash
 ./ac-self-hosted-dmz.sh up
 ```
+
+- Check the health of the Appcircle DMZ services. 
+
+```bash
+./ac-self-hosted-dmz.sh check
+```
+
+:::caution
+Be sure that all the services are running and healthy. If there are connection problem between the Appcircle DMZ server and the Appcircle private server, the services won't be healthy. 
+:::
 
 ## Stopping the Appcircle DMZ Server
 
@@ -314,10 +318,22 @@ You can follow the steps below to update the Appcircle private server and the Ap
 
 - Login to the Appcircle DMZ server.
 
+- Go to the Appcircle DMZ server directory.
+
+```bash
+cd appcircle-server-dmz
+```
+
 - Stop the Appcircle DMZ Server.
 
 ```bash
 ./ac-self-hosted-dmz.sh down
+```
+
+- Delete the Appcircle DMZ server directory.
+
+```bash
+cd .. && rm -rf appcircle-server-dmz
 ```
 
 - Update the Appcircle private server by following the [Update document](/docs/self-hosted-appcircle/update.md).
@@ -325,6 +341,10 @@ You can follow the steps below to update the Appcircle private server and the Ap
 - Create the updated Appcircle DMZ configuration files by following the [Creating the Appcircle DMZ Server Configuration](#creating-the-appcircle-dmz-server-configuration) section.
 
 - Create the new Appcircle DMZ server by following the [Creating the Appcircle DMZ Server](#creating-the-appcircle-dmz-server) section.
+
+- Re-configure the Appcircle DMZ server by following the [Configure the System](#configure-the-system) section.
+
+- Start the Appcircle DMZ server with the updated configurations by following the [Starting the Appcircle DMZ Server](#starting-the-appcircle-dmz-server) section.
 
 ## Appcircle DMZ Server Monitoring
 
