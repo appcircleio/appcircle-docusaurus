@@ -34,4 +34,12 @@ When you successfully authorize your repository or repositories, the following s
 
 After the connection is successful, you can [view your newly created profile](/build/manage-the-connections/adding-a-build-profile/#view-the-newly-created-build-profile) and start building!
 
+## FAQ
+
+### Unable to grant access to a GitHub organization
+
+If you are unable to grant access to a specific organization while connecting to GitHub, it is likely that the permission for Appcircle needs an update from the organization application access settings.
+
+To resolve, go to Organization Settings ->Third-party access and press edit next to Appcircle to authorize it for the organization.
+
 <NeedHelp />
