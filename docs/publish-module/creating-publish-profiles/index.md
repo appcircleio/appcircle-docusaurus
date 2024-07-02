@@ -38,7 +38,7 @@ The Bundle ID set during manual creation cannot be changed later and is assigned
 
 :::
 
-When manual creation is selected, the name and bundleID fields required for the Publish profile must be filled in.
+When manual creation is selected, the name and BundleID fields required for the Publish profile must be filled in.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-createManually.png' />
 
@@ -51,7 +51,7 @@ Please note that once the BundleID value of your profile has been set, it cannot
 
 :::
 
-After manually creating your profile, you will see your profile card on the Publish screen.
+After manually creating your profile, you will see your profile card displayed on the Publish screen.
 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-manuelCreateCard.png' />
