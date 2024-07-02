@@ -144,4 +144,4 @@ This step is optional and can be skipped if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-saml-ac-group-role-attribute-name.png' />
 
-- Now you can define group and role mappings. Please refer to [this documentation](/account/my-organization/sso-providers-configuration/single-sign-on#sso-mapping).
+- Now you can define group and role mappings. Please refer to [Group and Role Mapping Configuration](/account/my-organization/sso-providers-configuration/single-sign-on#group-and-role-mapping-configuration).

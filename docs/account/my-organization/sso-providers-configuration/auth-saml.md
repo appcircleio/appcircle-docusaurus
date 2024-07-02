@@ -173,7 +173,7 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-saml-ac-group-role-attribute-name.png' />
 
-- Now you can define group and role mappings. Please refer to [this documentation](/account/my-organization/sso-providers-configuration/single-sign-on#sso-mapping) for guidance.
+- Now you can define group and role mappings. Please refer to [Group and Role Mapping Configuration](/account/my-organization/sso-providers-configuration/single-sign-on#group-and-role-mapping-configuration).
 
 :::caution
 
