@@ -14,6 +14,15 @@ The Publish module provides users with several key actions to manage their appli
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub1.png' />
 
+## App Store Connect Information
+
+For a binary to be successfully sent for review, certain information must be completed. By using Appcircle's App Information feature, you can update the required information for binary submission.
+
+<ContentRef
+url="/publish-module/publish-information/app-information">
+Read more about App Store Connect Information
+</ContentRef>
+
 ## Publish Details
 
 This option provides an in-depth view of the selected version's publish process. Users can review the steps taken, configurations used, and outcomes of the publish sequence. It's an essential resource for understanding the specific details of a version's journey through the publish workflow.
@@ -21,28 +30,6 @@ This option provides an in-depth view of the selected version's publish process.
 <ContentRef
 url="/publish-module/publish-information/publish-details">
 Read more about Publish Details
-</ContentRef>
-
-## Binary Information
-
-Selecting this menu item displays detailed information about the application binary. This includes metadata such as the build version, creation date, binary size, and any relevant identifiers. It's particularly useful for developers and release managers who need to verify binary specifics before distribution.
-
-<ContentRef
-url="/publish-module/publish-information/binary-information">
-Read more about Binary Information
-</ContentRef>
-
-## Meta Data Information
-
-The Meta Data Information option provides a comprehensive overview of the version's metadata. This includes details such as the application name, version, build number, and other relevant information. Users can review and edit metadata to ensure accurate and consistent versioning across the application.
-
-## Resign Binary
-
-The Resign Binary feature allows users to resign both iOS and Android application binaries. For iOS applications, users can change provisioning profiles or app entitlements, while for Android applications, users can resign binaries with a new keystore. This feature is essential for updating app distribution settings and security credentials without requiring a new build.
-
-<ContentRef
-url="/publish-module/publish-information/resign-binary">
-Read more about Resign Binary
 </ContentRef>
 
 ## Marking Release Candidates
@@ -54,13 +41,26 @@ url="/publish-module/publish-information/marking-release-candidates">
 Read more about Marking Release Candidates
 </ContentRef>
 
-## Downloading Binaries
+## Binary Information
 
-This functionality enables users to download the binary directly from the Publish module. This is useful for offline review, storage, or distribution purposes. The download feature ensures that users can access and disseminate the application's build even outside the publish platform.
+Selecting this menu item displays detailed information about the application binary. This includes metadata such as the build version, creation date, binary size, and any relevant identifiers. It's particularly useful for developers and release managers who need to verify binary specifics before distribution.
 
 <ContentRef
-url="/publish-module/publish-information/download">
-Read more about Downloading Binaries
+url="/publish-module/publish-information/binary-information">
+Read more about Binary Information
+</ContentRef>
+
+## Metadata Details
+
+The Meta Data Information option provides a comprehensive overview of the version's metadata. This includes details such as the application name, version, build number, and other relevant information. Users can review and edit metadata to ensure accurate and consistent versioning across the application.
+
+## Resign Binary
+
+The Resign Binary feature allows users to resign both iOS and Android application binaries. For iOS applications, users can change provisioning profiles or app entitlements, while for Android applications, users can resign binaries with a new keystore. This feature is essential for updating app distribution settings and security credentials without requiring a new build.
+
+<ContentRef
+url="/publish-module/publish-information/resign-binary">
+Read more about Resign Binary
 </ContentRef>
 
 ## History
@@ -74,6 +74,15 @@ The Resign History gives users a chronological log of all resign actions that wa
 <ContentRef
 url="/publish-module/publish-information/history">
 Read more about History
+</ContentRef>
+
+## Downloading Binaries
+
+This functionality enables users to download the binary directly from the Publish module. This is useful for offline review, storage, or distribution purposes. The download feature ensures that users can access and disseminate the application's build even outside the publish platform.
+
+<ContentRef
+url="/publish-module/publish-information/download">
+Read more about Downloading Binaries
 </ContentRef>
 
 ## Delete

@@ -48,7 +48,7 @@ Understand how to Get Approval from TestFlight
 Learn how to update and optimize your app's metadata on App Store Connect to improve visibility, attract more users, and boost downloads. Follow our step-by-step guide for better app store performance and engagement.
 
 <ContentRef url="/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect">
-Understand how to Get Approval from TestFlight
+Understand how to update metadata on App Store Connect
 </ContentRef>
 
 Each section is crafted to guide you through the respective processes, ensuring a smooth workflow from app development to launch. Click on the links provided to delve into the specifics of each flow.
