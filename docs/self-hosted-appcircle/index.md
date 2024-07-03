@@ -32,3 +32,9 @@ The only requirement for using self-hosted Appcircle is to be in `enterprise` pl
 See [pricing](https://appcircle.io/pricing) and feature comparison table for details.
 
 :::
+
+## Appcircle DMZ Architecture
+
+If you plan to use Appcircle DMZ Architecture, the Appcircle DMZ Architecture follows this deployment structure:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-dmz-overview-diagram.png' />
