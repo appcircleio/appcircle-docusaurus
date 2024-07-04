@@ -35,6 +35,20 @@ If there is existing metadata associated with your app on the App Store, the **M
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-localization-get.png' />
 
+### Metadata from Last Updated
+
+With Appcircle's **Retrive from Last Updated** feature, you can automatically update your metadata. When a new version is added, you can directly retrieve the metadata information updated in the previous version with the **Retrive From Last Updated** function on the metadata screen. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4007-metadataUpdate1.png' />
+
+:::caution Metadata from Last Update
+
+With this feature, the last metadata information you saved in Appcircle is copied to the relevant version. 
+
+Note that if this function is used, **no data will be pulled from App Store Connect**. The data that will come will be the metadata information you saved in the **previous version**.
+
+:::
+
 ### Fields Explained
 
 #### iOS Previews and Screenshots
