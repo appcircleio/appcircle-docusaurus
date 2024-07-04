@@ -23,6 +23,15 @@ url="/publish-module/publish-information/app-information">
 Read more about App Store Connect Information
 </ContentRef>
 
+## Check Release Status
+
+With the Check Release Status function, you can instantly update the status information of the version marked as Release Candidate. Make sure that one of the versions is marked as Release Candidate so that you can do a status check.
+
+<ContentRef
+url="/publish-module/publish-information/check-release-status">
+Read more about Check Release Status
+</ContentRef>
+
 ## Publish Details
 
 This option provides an in-depth view of the selected version's publish process. Users can review the steps taken, configurations used, and outcomes of the publish sequence. It's an essential resource for understanding the specific details of a version's journey through the publish workflow.
