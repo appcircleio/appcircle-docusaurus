@@ -37,7 +37,7 @@ Below are the parameters necessary for this step's operation for iOS, along with
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_INTUNE_PUBLISHER_NAME`  | This parameter is used to specify the publisher name for the selected version. By default, it takes the name of your organization or the email address of the user initiating the step. | Optional |
 | `$AC_INTUNE_TARGETED_PLATFORM`     | The `Applicable Device Type` specifies the the device types that can install this app. Options: `Both`, `iPad`, `iPhone and iPod`. Default: `Both`. | Optional |
-| `$AC_INTUNE_TARGETED_PLATFORM`     | The `Minimum Operating System` specifies the earliest operating system version on which the app can be installed. If you assign the app to a device with an earlier operating system, it will not be installed. Default: `iOS 8.0`. | Optional |
+| `$AC_INTUNE_MIN_OS_VERSION`     | The `Minimum Operating System` specifies the earliest operating system version on which the app can be installed. If you assign the app to a device with an earlier operating system, it will not be installed. Default: `iOS 8.0`. | Optional |
 
 :::warning
 If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
@@ -56,7 +56,7 @@ Below are the parameters necessary for this step's operation for Android, along 
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_INTUNE_PUBLISHER_NAME`  | This parameter is used to specify the publisher name for the selected version. By default, it takes the name of your organization or the email address of the user initiating the step. | Optional |
 | `$AC_INTUNE_TARGETED_PLATFORM`     | The `Targeted Platform` specifies the the device types that can install this app. Options: `Android device administrator`, `Android (AOSP)`. Default: `Android (AOSP)`. | Optional |
-| `$AC_INTUNE_TARGETED_PLATFORM`     | The `Minimum Operating System` specifies the earliest operating system version on which the app can be installed. If you assign the app to a device with an earlier operating system, it will not be installed. Default: `Android 4.0 (Ice Cream Sandwich)`. | Optional |
+| `$AC_INTUNE_MIN_OS_VERSION`     | The `Minimum Operating System` specifies the earliest operating system version on which the app can be installed. If you assign the app to a device with an earlier operating system, it will not be installed. Default: `Android 4.0 (Ice Cream Sandwich)`. | Optional |
 
 :::danger
 If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
