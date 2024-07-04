@@ -45,7 +45,7 @@ With Appcircle's **Retrive from Last Updated** feature, you can automatically up
 
 With this feature, the last metadata information you saved in Appcircle is copied to the relevant version. 
 
-Note that if this function is used, **no data will be pulled from App Store Connect**. The data that will come will be the metadata information you saved in the **previous version**.
+Please note that if this function is used, **no data will be pulled from App Store Connect**. The data retrieved will be the metadata information saved in the **previous version**.
 
 :::
 

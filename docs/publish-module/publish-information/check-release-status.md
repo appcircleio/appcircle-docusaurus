@@ -7,7 +7,7 @@ sidebar_position: 2
 
 # Check Release Status
 
-Appcircle performs status checks for your published applications. This status gives you information about the status of the relevant version on the market. You can find detailed information about Appcircle's status feature in the documentation [**here**](/publish-module/binary-management#store-status).
+Appcircle performs status checks for your published applications. This status gives you information about the status of the relevant version on the market. You can find detailed information about Appcircle's status feature in the [**Store Status Documentation**](/publish-module/binary-management#store-status).
 
 Appcircle updates a published app for status updates **every 30 minutes** if the app is [**Marked as RC**](/publish-module/publish-information/marking-release-candidates). However, the user can also do this manually.
 
@@ -21,7 +21,7 @@ With the Check Release Status function, you can instantly update the status info
 
 :::info
 
-Make sure that one of the versions is [**Marked as Release Candidate**](/publish-module/publish-information/marking-release-candidates) so that you can do a Status Check.
+Make sure that one of the versions is [**Marked as Release Candidate**](/publish-module/publish-information/marking-release-candidates) so that you can do a status check.
 
 :::
 
@@ -30,7 +30,7 @@ Make sure that one of the versions is [**Marked as Release Candidate**](/publish
 
 :::danger Check Release Status
 
-In order not to exceed **API request limits**, and not to cause any other problems, manual status checking is limited to one request **every 10 minutes**.
+To avoid exceeding **API request limits** and causing other issues, manual status checks are limited to one request **every 10 minutes**.
 
 :::
 
