@@ -1,6 +1,6 @@
 ---
 title: Webhooks Configuration
-description: Appcircle will notify external services via webhooks when a certain event occurs. When the events you specified happen, we'll send a POST request in JSON format to the URLs you provide.
+description: Appcircle will notify external services via webhooks when a certain event occurs. When the events you specified happen, we'll send a POST request in JSON format to the URLs you provide. (Webhooks)
 tags:
   [
     webhooks,

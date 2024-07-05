@@ -1,5 +1,5 @@
 ---
-title: Setting Up Appcircle Enterprise Store Plugin
+title: Setting Up Appcircle Enterprise Store Plugin For Jenkins
 sidebar_label: Enterprise App Store
 description: Enhance powerful plugin to publish your builds to appcircle app store
 tags:
@@ -17,6 +17,8 @@ sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+
+# Setting Up Appcircle Enterprise Store Plugin
 
 The Appcircle Enterprise Store plugin enables users to publish their apps to the Appcircle App Store.
 

@@ -1,7 +1,7 @@
 ---
 title: Setting Up Appcircle Enterprise Store Plugin
 sidebar_label: Enterprise App Store
-description: Enhance powerful action to publish your builds to appcircle app store
+description: Enhance powerful action to publish your builds to appcircle app store with fastlane
 tags:
   [
     testing-distribution,
