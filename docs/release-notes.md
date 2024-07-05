@@ -15,26 +15,52 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
-## 3.19.0 - 2024-06-27 - Publish Apps to Microsoft Intune, App Store Connect Integration, Publish and Signing Identity Enhancements, XCode 16.0 Beta 2, Bug Fixes and more
+## 3.19.1 - 2024-07-04 - Publish Module Improvements, Check Release Status Feature, Bug Fixes and more
+
+### 🆕 New Features
+
+- The store status of Release Candidates in the Publish profiles can now be manually checked using [Check Release Status](/publish-module/publish-information/check-release-status) feature. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- To ensure the validity of the Microsoft Intune remote app connection, the binary will be unmarked as a Release Candidate after switching from other credentials to Microsoft Intune. Additionally, .aab format binaries will display a warning message when using Microsoft Intune credentials, as they are not supported. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Help documentation for [Update Metadata on Microsoft Intune](/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune) feature has been updated. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Microsoft Intune metadata and App Info updates are now included in the Activity Report. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- App Store Connect App Info & Metadata and Microsoft Intune Metadata are now available through [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=publish). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Multiple Bundle IDs can now be selected when importing from App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Apple Provisioning Profile file upload now supports multiple file upload. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- All publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When [inviting a new user to an organization](/account/my-organization#managing-the-team-under-an-organization), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- A behaviour difference between Appcircle UI and App Store Connect while registering Bundle IDs has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue causing indicator truncation while retrieving provisioning profiles in the Publish Module has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where, if no images are present in the metadata screenshot section for different localization settings, images from the primary language were not being displayed for guidance and explanatory purposes. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+## 3.19.0 - 2024-06-27 - Publish Apps to Microsoft Intune, App Store Connect Integration, Publish and Signing Identity Enhancements, Xcode 16.0 Beta 2, Bug Fixes and more
 
 ### 🆕 New Features
 
 - Apps can now be sent to [Microsoft Intune](/publish-integrations/common-publish-integrations/send-to-microsoft-intune) and their metadata can be updated within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Saved [Microsoft Intune](/publish-integrations/common-publish-integrations/send-to-microsoft-intune) credentials can now be used with the Publish Profiles by integration.  <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- iOS binaries can now be resigned via the UI by directly providing the entitlements, without needing to upload an XML file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Profiles can now be directly listed and imported from App Store Connect within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Bundle Identifiers](/signing-identities/apple-identifiers#edit-bundleid) in Apple Appstore can now be directly managed through the Appcircle interface. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A Publish Profile can now be created for existing apps from [App Store Connect integration](/publish-module/creating-publish-profiles#create-from-app-store-connect). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A new Provisioning Profile can now be created by selecting [Apple Profiles](/signing-identities/apple-profiles) within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [App Store Connect Information](/publish-module/publish-information/app-information) has been added within the Publish module where users can update the required information for binary submission. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new Provisioning Profile can now be created by selecting [Apple Profiles](/signing-identities/apple-profiles) (Formerly known as Provisioning Profiles) within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Provisioning Profiles can now be [renewed](/signing-identities/apple-profiles#profile-actions) within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An [Apple Identifiers](/signing-identities/apple-identifiers) section has been added within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new value display and filter have been added to the LDAP Mapping table. <IntegrationsBadge/> <SelfHostedBadge/>
 - Group and role management can now be automated with [SSO](/account/my-organization/sso-providers-configuration/single-sign-on) for Appcircle Login. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Efficiently distribute your apps using Appcircle’s Testing Distribution and Enterprise Store plugins, available on [GitHub](/marketplace/github-marketplace), [Fastlane](/marketplace/fastlane), and the [Visual Studio Marketplace](/marketplace/visual-studio-marketplace). <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
 - [Xcode 16.0 Beta 2](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) has been installed on the [Default M1 pool](https://docs.appcircle.io/infrastructure/ios-build-infrastructure) runners. As this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
+- iOS binaries can now be resigned via the UI by directly providing the entitlements, without needing to upload an XML file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Any [Bundle ID](/publish-module/binary-management) can now be uploaded inside a publish profile for resign purposes. However, marking it as RC (Release Candidate) will not be possible if the app version's Bundle ID does not match the profile's main Bundle ID. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Store connections will be displayed on the Publish profile cards to indicate if the profile is connected to a store such as Microsoft Intune or App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Latest Metadata will now be cloned to newly uploaded app versions by default. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The ["Add for Review"](/publish-integrations/ios-publish-integrations/add-for-review-on-app-store) step has been added to the Appstore Publish Flow within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The ["Send to Enterprise App Store"](/publish-integrations/common-publish-integrations/send-to-enterprise-app-store) step has been added to the Appstore Publish Flow within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -42,7 +68,9 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🐞 Fixes
 
-- An issue where users were unable to save the XCode version on React Native build profiles without providing the optional Node.js version has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where users were unable to save the Xcode version on React Native build profiles without providing the optional Node.js version has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where a remotely triggered build via GitLab connection showed an incorrect branch name in the Appcircle UI during the build process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where multiple remotely triggered builds via GitLab, affecting a single pipeline, was showing incorrect build status in the Appcircle UI. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue where localization settings caused duplicated screenshots in the Metadata Information section has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.18.0 - 2024-05-31 - Build Enhancements, Appcircle CLI v2.2.0, Publish Improvements and more
@@ -935,7 +963,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 ### :muscle: Improvement
 
-- [Added FAQs](/troubleshooting-faq/common-issues) related to Xcode 14 and code signing errors.
+- [Added FAQs](/build/platform-build-guides/building-ios-applications#faq) related to Xcode 14 and code signing errors.
 
 ## 2.9.15 - 2022-09-30 - Fortify On Demand and Firebase App Distribution components
 
@@ -1030,7 +1058,7 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 - [iOS Stack](/infrastructure/ios-build-infrastructure) Monterey is upgraded to 12.4 for macOS agents.
 - Log window is improved. It is more performant and stable.
-- Added [FAQ section](/troubleshooting-faq/common-issues#issues-in-connecting-to-the-repositories-with-ssh) for multiple SSH keys.
+- Added [FAQ section](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh#issues-in-connecting-to-the-repositories-with-ssh) for multiple SSH keys.
 
 ### 🐞 Fixed
 
@@ -1097,14 +1125,14 @@ If your builds fail on M1 pool or if you’re not ready for the M1 migration, pl
 
 - Added Huawei AppGallery section for sending your apps to Huawei AppGallery.
 - Added [Huawei AppGallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei AppGallery API Key.
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#provisioning-profile-error) for Provisioning Profiles.
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#missing-entitlements) for Missing Entitlements​
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#gradle-build-after-bintray-shutdown) for Bintray deprecation
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#no-pubspecyaml-file-found-error) for Flutter build errors
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#file-not-found-error) for Flutter file naming errors
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#firebase-version) for Flutter Firebase version
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#err_ossl_evp_unsupported) for React native apps
+- Added [FAQ section](/build/platform-build-guides/building-ios-applications#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
+- Added [FAQ section](/build/platform-build-guides/building-ios-applications#provisioning-profile-error) for Provisioning Profiles.
+- Added [FAQ section](/publish-module/publish-information/resign-binary#missing-entitlements) for Missing Entitlements​
+- Added [FAQ section](/build/platform-build-guides/building-android-applications#gradle-build-after-bintray-shutdown) for Bintray deprecation
+- Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter build errors
+- Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter file naming errors
+- Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter Firebase version
+- Added [FAQ section](/build/platform-build-guides/building-react-native-applications#faq) for React native apps
 
 ## 2.9.0 - New Build Profile Detail UI, Better Artifact Upload Times
 
@@ -1251,7 +1279,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 
 ### ; 📑 Documentation
 
-- Added [FAQ section](https://docs.appcircle.io/troubleshooting-faq/common-issues#artifact-storage-is-full) of how to delete old artifacts.
+- Added [FAQ section](/build/post-build-operations/after-a-build#artifact-storage-is-full) of how to delete old artifacts.
 - Improved [Sending the build status to repository providers](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) section for better CI/CD pipeline tracking.
 
 ## 2.3.0 - 2021-06-28 - Xcode Version Updates
@@ -1284,7 +1312,7 @@ Within this release, Appcircle now supports [Xcode 13 Beta 2](https://developer.
 
 ### 📑 Documentation
 
-- Added [React Native Specific FAQ](https://docs.appcircle.io/troubleshooting-faq/common-issues#react-native-specific-issues) section
+- Added [React Native Specific FAQ](/build/platform-build-guides/building-react-native-applications#faq) section
 
 ## 2.2.0 - 2021-06-16 - Xcode Version and CLI Improvements
 
