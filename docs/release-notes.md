@@ -15,7 +15,29 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Latest Release Notes
 
-## 3.19.0 - 2024-06-27 - Publish Apps to Microsoft Intune, App Store Connect Integration, Publish and Signing Identity Enhancements, XCode 16.0 Beta 2, Bug Fixes and more
+## 3.19.1 - 2024-07-04 - Publish Module Improvements, Check Release Status Feature, Bug Fixes and more
+
+### 🆕 New Features
+
+- The store status of Release Candidates in the Publish profiles can now be manually checked using [Check Release Status](/publish-module/publish-information/check-release-status) feature. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- To ensure the validity of the Microsoft Intune remote app connection, the binary will be unmarked as a Release Candidate after switching from other credentials to Microsoft Intune. Additionally, .aab format binaries will display a warning message when using Microsoft Intune credentials, as they are not supported. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Help documentation for Update Metadata on Microsoft Intune feature has been updated. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Microsoft Intune metadata and App Info updates are now included in the Activity Report. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- App Store Connect App Info & Metadata and Microsoft Intune Metadata are now available through [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=publish). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Multiple Bundle IDs can now be selected when importing from App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Apple Provisioning Profile file upload now supports multiple file upload. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When inviting a new user to an organization, a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- A behaviour difference between Appcircle UI and App Store Connect while registering Bundle IDs has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue causing indicator truncation while retrieving provisioning profiles in the Publish Module has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where, if no images are present in the metadata screenshot section for different localization settings, images from the primary language were not being displayed for guidance and explanatory purposes. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+## 3.19.0 - 2024-06-27 - Publish Apps to Microsoft Intune, App Store Connect Integration, Publish and Signing Identity Enhancements, Xcode 16.0 Beta 2, Bug Fixes and more
 
 ### 🆕 New Features
 
@@ -30,6 +52,7 @@ import ContentRef from '@site/src/components/ContentRef';
 - An [Apple Identifiers](/signing-identities/apple-identifiers) section has been added within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new value display and filter have been added to the LDAP Mapping table. <IntegrationsBadge/> <SelfHostedBadge/>
 - Group and role management can now be automated with [SSO](/account/my-organization/sso-providers-configuration/single-sign-on) for Appcircle Login. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Efficiently distribute your apps using Appcircle’s Testing Distribution and Enterprise Store plugins, available on [GitHub](/marketplace/github-marketplace), [Fastlane](/marketplace/fastlane), and the [Visual Studio Marketplace](/marketplace/visual-studio-marketplace). <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -44,7 +67,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### 🐞 Fixes
 
-- An issue where users were unable to save the XCode version on React Native build profiles without providing the optional Node.js version has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where users were unable to save the Xcode version on React Native build profiles without providing the optional Node.js version has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where a remotely triggered build via GitLab connection showed an incorrect branch name in the Appcircle UI during the build process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where multiple remotely triggered builds via GitLab, affecting a single pipeline, was showing incorrect build status in the Appcircle UI. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue where localization settings caused duplicated screenshots in the Metadata Information section has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
