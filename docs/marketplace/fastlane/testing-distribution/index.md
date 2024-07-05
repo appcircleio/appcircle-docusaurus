@@ -1,5 +1,5 @@
 ---
-title: Setting Up Appcircle Testing Distribution Plugin For Jenkins
+title: Setting Up Appcircle Testing Distribution Plugin For Fastlane
 sidebar_label: Testing Distribution
 description: Enhance powerful action to distribute your builds to appcircle with fastlane
 tags:
