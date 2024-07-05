@@ -24,12 +24,13 @@ import ContentRef from '@site/src/components/ContentRef';
 ### :muscle: Improvements
 
 - To ensure the validity of the Microsoft Intune remote app connection, the binary will be unmarked as a Release Candidate after switching from other credentials to Microsoft Intune. Additionally, .aab format binaries will display a warning message when using Microsoft Intune credentials, as they are not supported. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Help documentation for Update Metadata on Microsoft Intune feature has been updated. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Help documentation for [Update Metadata on Microsoft Intune](/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune) feature has been updated. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Microsoft Intune metadata and App Info updates are now included in the Activity Report. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - App Store Connect App Info & Metadata and Microsoft Intune Metadata are now available through [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=publish). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Multiple Bundle IDs can now be selected when importing from App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Apple Provisioning Profile file upload now supports multiple file upload. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- When inviting a new user to an organization, a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- All publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When [inviting a new user to an organization](/account/my-organization#managing-the-team-under-an-organization), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
