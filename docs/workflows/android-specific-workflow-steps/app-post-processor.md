@@ -1,6 +1,6 @@
 ---
 title: App Post-Processor
-description: This step performs the necessary system operations to identify and process the Android output binary files.
+description: App Post-Processor step performs the necessary system operations to identify and process the Android output binary files.
 tags: [android, mobile, post-processor]
 ---
 
