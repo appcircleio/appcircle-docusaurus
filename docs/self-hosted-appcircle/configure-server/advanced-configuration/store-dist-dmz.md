@@ -191,7 +191,133 @@ For Appcircle DMZ server to work successfully, you should configure the DNS reco
 
 For the clients that will connect to the Appcircle DMZ server should resolve 3 domains; Enterprise App Store, Testing Distribution and authentication domains.
 
-These domains should be resolved to the Appcircle DMZ server IP. The domains may vary according to the Appcircle server configuration. For example:
+These domains should be resolved to the Appcircle DMZ server IP. The domains may vary according to the Appcircle server configuration. To check the current configured domains, you can follow the steps below:
+
+- Login to the Appcircle server with SSH.
+
+- Go to the Appcircle server directory.
+
+```bash
+cd appcircle-server
+```
+
+<SpacetechExampleInfo />
+
+- Update the environment variable `PATH` with the required dependencies.
+
+```bash
+export PATH=$PATH:$(pwd)/deps/bin
+```
+
+- Check if your Enterprise App Store custom domain is enabled.
+
+```bash
+yq '.storeWeb.customDomain.enabled' ./projects/spacetech/export/.global.yaml
+```
+
+<Tabs>
+  
+  <TabItem value="custom-store-domain-enabled" label="Enterprise App Store Custom Domain Enabled" default>
+
+- Check the Enterprise App Store custom domain.
+
+```bash
+yq '.storeWeb.customDomain.domain' ./projects/spacetech/export/.global.yaml
+```
+
+Output:
+
+```
+store.spacetech.com
+```
+
+  </TabItem>
+
+  <TabItem value="custom-store-domain-disabled" label="Enterprise App Store Custom Domain Disabled" default>
+
+- Check the Enterprise App Store default domain.
+
+```bash
+yq '.storeWeb.external.domain' ./projects/spacetech/export/.global.yaml
+```
+
+Output:
+
+```
+store.appcircle.spacetech.com
+```
+
+  </TabItem>
+
+</Tabs>
+
+- Check if your Testing Distribution custom domain is enabled.
+
+```bash
+yq '.testerWeb.customDomain.enabled' ./projects/spacetech/export/.global.yaml
+```
+
+<Tabs>
+  
+  <TabItem value="custom-tester-domain-enabled" label="Testing Distribution Custom Domain Enabled" default>
+
+- Check the Testing Distribution custom domain.
+
+```bash
+yq '.testerWeb.customDomain.domain' ./projects/spacetech/export/.global.yaml
+```
+
+Output:
+
+```
+dist.spacetech.com
+```
+
+  </TabItem>
+
+  <TabItem value="custom-store-domain-disabled" label="Enterprise App Store Custom Domain Disabled" default>
+
+- Check the Testing Distribution default domain.
+
+```bash
+yq '.testerWeb.external.domain' ./projects/spacetech/export/.global.yaml
+```
+
+Output:
+
+```
+dist.appcircle.spacetech.com
+```
+
+  </TabItem>
+
+</Tabs>
+
+- Check the authentication domain of the Appcircle server.
+
+```bash
+yq '.keycloak.external.domain' ./projects/spacetech/export/.global.yaml
+```
+
+Output:
+
+```
+auth.appcircle.spacetech.com
+```
+
+- Check the API domain of the Appcircle server.
+
+```bash
+yq '.apiGateway.external.domain' ./projects/spacetech/export/.global.yaml
+```
+
+Output:
+
+```
+api.appcircle.spacetech.com
+```
+
+According to the sample outputs above, the needed domains that clients accessing via the internet should know are as follows:
 
 - `store.spacetech.com`: Custom Enterprise App Store domain.
 - `dist.spacetech.com`: Custom Testing Distribution domain.
@@ -199,7 +325,9 @@ These domains should be resolved to the Appcircle DMZ server IP. The domains may
 
 Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication and API domains.
 
-These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration. For example:
+These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration. 
+
+According to the sample outputs above, the needed domains that Appcircle DMZ server should know are as follows:
 
 - `api.appcircle.spacetech.com`: Appcircle API domain.
 - `auth.appcircle.spacetech.com`: Appcircle authentication domain.
