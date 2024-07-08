@@ -33,13 +33,13 @@ The Testing Distribution module and Enterprise App Store module hosted on the Ap
 
 @TODO: Diagram will be here.
 
-We assume that you have already set up an Appcircle private server successfully. This document will guide you through creating Appcircle DMZ server and Appcircle private server configurations.
+We assume that you have already set up an Appcircle server successfully. This document will guide you through creating Appcircle DMZ server and Appcircle server configurations.
 
 In this document:
 
 - We will call the "Appcircle DMZ server" to the server, which is located in the DMZ and host the Appcircle Enterprise App Store and Testing Distribution services.
 
-- We will call the "Appcircle private server" to the server, which is located in the private network and host the Appcircle core services.
+- We will call the "Appcircle server" to the server, which is located in the private network and host the Appcircle core services.
 
 ## Appcircle DMZ Server Pre-requirements
 
@@ -49,12 +49,12 @@ Below are the hardware and OS requirements for self-hosted Appcircle DMZ server 
 
 Self-hosted Appcircle DMZ server, can only be installed on Linux operating system.
 
-If you have installed the Appcircle private server with Podman:
+If you have installed the Appcircle server with Podman:
 
 - CentOS Stream 8 or later
 - RHEL 8 or later
 
-If you have installed the Appcircle private server with Docker:
+If you have installed the Appcircle server with Docker:
 
 - Ubuntu 20.04 or later
 - Debian 11 or later
@@ -105,11 +105,11 @@ For production environments, **recommended** hardware requirements are
 
 #### Container Engine
 
-You must use the same container engine with on the Appcircle private server and the Appcircle DMZ server.
+You must use the same container engine with on the Appcircle server and the Appcircle DMZ server.
 
-If you have installed the Appcircle private server with Podman, you **must** use Podman on the Appcircle DMZ server.
+If you have installed the Appcircle server with Podman, you **must** use Podman on the Appcircle DMZ server.
 
-If you have installed the Appcircle private server with Docker, you **must** use Docker on the Appcircle DMZ server.
+If you have installed the Appcircle server with Docker, you **must** use Docker on the Appcircle DMZ server.
 
 <Tabs>
   
@@ -177,7 +177,7 @@ You can install these dependencies from your package repository depending on you
 
 #### SELinux
 
-You must use the same SELinux mode on the Appcircle private server and the Appcircle DMZ server.
+You must use the same SELinux mode on the Appcircle server and the Appcircle DMZ server.
 
 You can check the SELinux mode with the command below.
 
@@ -191,15 +191,15 @@ For Appcircle DMZ server to work successfully, you should configure the DNS reco
 
 For the clients that will connect to the Appcircle DMZ server should resolve 3 domains; Enterprise App Store, Testing Distribution and authentication domains.
 
-These domains should be resolved to the Appcircle DMZ server IP. The domains may vary according to the Private Appcircle server configuration. For example:
+These domains should be resolved to the Appcircle DMZ server IP. The domains may vary according to the Appcircle server configuration. For example:
 
 - `store.spacetech.com`: Custom Enterprise App Store domain.
 - `dist.spacetech.com`: Custom Testing Distribution domain.
 - `auth.appcircle.spacetech.com`: Appcircle authentication domain.
 
-Also the Appcircle DMZ server should be resolving some of the Appcircle private server domains such as authentication and API domains.
+Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication and API domains.
 
-These domains should be resolved to the Appcircle private server IP. The domains may vary according to the Private Appcircle server configuration. For example:
+These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration. For example:
 
 - `api.appcircle.spacetech.com`: Appcircle API domain.
 - `auth.appcircle.spacetech.com`: Appcircle authentication domain.
@@ -210,13 +210,13 @@ There is a common domain here. Be aware that the auth domain that the clients th
 
 ## Creating the Appcircle DMZ Server Configuration
 
-To create the Appcircle DMZ server configuration, you should login to the Appcircle private server.
+To create the Appcircle DMZ server configuration, you should login to the Appcircle server.
 
-You will create all the configuration files on the Appcircle private server and then move the created configuration files to the Appcircle DMZ server.
+You will create all the configuration files on the Appcircle server and then move the created configuration files to the Appcircle DMZ server.
 
 To create the Appcircle DMZ server configuration, you can follow the steps below.
 
-- Login to the Appcircle private server with SSH.
+- Login to the Appcircle server with SSH.
 
 - Go to the Appcircle server directory.
 
@@ -232,14 +232,14 @@ cd appcircle-server
 ./ac-self-hosted.sh -n spacetech down
 ```
 
-- Create the new configuration files for the Appcircle DMZ and the Appcircle private server.
+- Create the new configuration files for the Appcircle DMZ and the Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n spacetech export --dmz
 ```
 
 :::info
-The `--dmz` flag in the `export` subcommand above creates the configuration files according to your `global.yaml` file of your project for the both the Appcircle DMZ server and the private server.
+The `--dmz` flag in the `export` subcommand above creates the configuration files according to your `global.yaml` file of your project for the both the Appcircle DMZ server and the Appcircle server.
 :::
 
 - Check the exported DMZ directory that contains the required files to create Appcircle DMZ server.
@@ -248,13 +248,13 @@ The `--dmz` flag in the `export` subcommand above creates the configuration file
 ls -lah projects/spacetech/export/dmz/
 ```
 
-- Start the Appcircle private server.
+- Start the Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n spacetech up
 ```
 
-- Compress the directory into a tarball in the Appcircle private server.
+- Compress the directory into a tarball in the Appcircle server.
 
 ```bash
 tar -czf dmz.tar.gz -C projects/spacetech/export/dmz/ .
@@ -274,7 +274,7 @@ You need to create a directory for the Appcircle DMZ server and extract the tran
 mkdir -p appcircle-server-dmz
 ```
 
-- Extract the tarball you transferred from the Appcircle private server.
+- Extract the tarball you transferred from the Appcircle server.
 
 ```bash
 tar -xzf dmz.tar.gz -C appcircle-server-dmz
@@ -319,7 +319,7 @@ After you have configured the system with the steps above, you are ready to run 
 ```
 
 :::caution
-Be sure that all the services are running and healthy. If there are connection problem between the Appcircle DMZ server and the Appcircle private server, the services won't be healthy.
+Be sure that all the services are running and healthy. If there are connection problem between the Appcircle DMZ server and the Appcircle server, the services won't be healthy.
 :::
 
 ## Stopping the Appcircle DMZ Server
@@ -330,11 +330,11 @@ If you need to stop the Appcircle DMZ server in a case, you can run the the comm
 ./ac-self-hosted-dmz.sh down
 ```
 
-## Upgrading Appcircle DMZ and Appcircle Private Server
+## Upgrading Appcircle DMZ and Appcircle server
 
 If there is a new Appcircle server version available and you want to update.
 
-You can follow the steps below to update the Appcircle private server and the Appcircle DMZ server.
+You can follow the steps below to update the Appcircle server and the Appcircle DMZ server.
 
 <DowntimeCaution />
 
@@ -358,7 +358,7 @@ cd appcircle-server-dmz
 cd .. && rm -rf appcircle-server-dmz
 ```
 
-- Update the Appcircle private server by following the [Update document](/docs/self-hosted-appcircle/update.md).
+- Update the Appcircle server by following the [Update document](/docs/self-hosted-appcircle/update.md).
 
 - Create the updated Appcircle DMZ configuration files by following the [Creating the Appcircle DMZ Server Configuration](#creating-the-appcircle-dmz-server-configuration) section.
 
@@ -370,6 +370,6 @@ cd .. && rm -rf appcircle-server-dmz
 
 ## Appcircle DMZ Server Monitoring
 
-By default, the Appcircle DMZ server will try to send the container logs to the Appcircle private server.
+By default, the Appcircle DMZ server will try to send the container logs to the Appcircle server.
 
 You can check the container logs on the Appcircle monitoring page. For more details about checking the logs, you can check the [Monitoring](/docs/self-hosted-appcircle/configure-server/monitoring.md) page.
