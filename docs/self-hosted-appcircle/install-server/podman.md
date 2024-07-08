@@ -120,10 +120,12 @@ You can run the Appcircle server in the background now.
 
 When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443 for Podman installations.
 
-You should use a port forwarding tool like `socat`. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories and create two systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
+You must use a port-forwarding tool like `socat`. This way, you can forward traffic from port 80 to 8080 and from port 443 to 8443.
+
+You should install `socat` from official repositories and create two systemd services so port forwarding stays even after the server reboot. This can be done by running the following steps:
 
 :::caution
-You should create the `socat` services below even if you are using the Podman with the `root`  user. 
+You must create the `socat` services below, even if you are using Podman with the `root` user.
 :::
 
 ```bash
@@ -170,16 +172,16 @@ sudo systemctl start port-redirect-443.service
 
 ### Firewalld Requirements
 
-If you are using firewalld, you need to open the the ports below for the Appcircle server:
+If you are using firewalld, you need to open the ports below according to your server configuration.
 
-- If you plan to run the Appcircle server with `HTTPS`: 
+- If you plan to run the Appcircle server with HTTPS:
 
 ```bash
 sudo firewall-cmd --add-port=443/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
-- If you plan to run the Appcircle server with `HTTP`:
+- If you plan to run the Appcircle server with HTTP:
 
 ```bash
 sudo firewall-cmd --add-port=80/tcp --permanent
@@ -841,9 +843,13 @@ Below ports must be unused on system and dedicated to only Appcircle server usag
 - `443`
 - `8080`
 - `8443`
-- `6379` (Required if your Appcircle server is running without `HTTPS`.)
+
+If the self-hosted server is configured as HTTP, the below port must also be unused. (_For HTTPS configuration, that's not required._)
+
+- `6379`
 
 Appcircle server will listen on `8080` and `8443` ports by default for HTTP and HTTPS connections.
+
 You can get a list of up-to-date ports used by podman with below command.
 
 ```bash
@@ -990,7 +996,7 @@ Assuming our sample scenario explained above, these values should be:
 for our example configuration.
 
 :::info
-If your Appcircle server is running with `HTTPS`, then the API and Redis stream endpoint should be like this:
+If your Appcircle server is configured as `HTTPS`, then the Redis and API URL should be like this:
 
 - `redis.appcircle.spacetech.com:443,ssl=true`
 - `https://api.appcircle.spacetech.com/build/v1`

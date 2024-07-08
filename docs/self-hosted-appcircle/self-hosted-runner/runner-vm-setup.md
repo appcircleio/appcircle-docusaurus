@@ -739,35 +739,32 @@ Edit `appsettings.json` with your favorite editor. (nano, vi etc.)
 }
 ```
 
-- ASPNETCORE_NOSHUTDOWN: It should be `false`. So, it will shutdown VM when build complete.
-- ASPNETCORE_BASE_API_URL: It should be your self-hosted Appcircle server `api` URL.
-  - Runner will register to server defined in `ASPNETCORE_BASE_API_URL` and take build jobs from there.
-- ASPNETCORE_REDIS_STREAM_ENDPOINT: It should be your self-hosted Appcircle server `redis` URL, port and SSL settings.  
-  - If you are using Appcircle server with `HTTPS`, then the port should be `443` and the `ssl` variable should be `true`.
-  - If you are using Appcircle server with `HTTP`, then the port should be external port of the Redis which is `6379` by default. And the `ssl` variable should be `false`.
-    - In example: `redis.appcircle.spacetech.com:6379,ssl=false`
+- **`ASPNETCORE_NOSHUTDOWN`**: It should be `false`. So, it will shutdown VM when build complete.
+- **`ASPNETCORE_BASE_API_URL`**: It should be your self-hosted Appcircle server API URL.
+  - The runner will register to server defined here and take the build jobs from there.
 
 :::tip
 
-The latest macOS VM image,`macOS_240221` or later, has the `ASPNETCORE_NOSHUTDOWN` setting as `false` by default and has no pre-defined `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` setting in the `appsettings.json` file.
+The latest macOS VM image,`macOS_240221` or later, has the ASPNETCORE_NOSHUTDOWN setting as `false` by default and has no pre-defined ASPNETCORE_BASE_API_URL setting in the `appsettings.json` file.
 
-So, if you did not upgrade the packaged self-hosted runner at [previous steps](#1-check-the-runner-version) above, only modifying the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` values with the following commands should be enough for the self-hosted runner configuration.
-
-```bash
-echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.appcircle.spacetech.com/build/v1"' appsettings.json)" > appsettings.json
-```
+So, if you did not upgrade the packaged self-hosted runner at [previous steps](#1-check-the-runner-version) above, only modifying the ASPNETCORE_BASE_API_URL value with the following command should be enough for the configuration up-to-here.
 
 ```bash
-echo "$(jq '.ASPNETCORE_REDIS_STREAM_ENDPOINT="redis.appcircle.spacetech.com:443,ssl=true"' appsettings.json)" > appsettings.json
+echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.test-appcircle.tool.zb/build/v1"' appsettings.json)" > appsettings.json
 ```
 
-If you upgraded the self-hosted runner, you must also modify the `ASPNETCORE_NOSHUTDOWN` setting as well.
+If you upgraded the self-hosted runner, you must also modify the ASPNETCORE_NOSHUTDOWN setting as well.
 
 ```bash
 echo "$(jq '.ASPNETCORE_NOSHUTDOWN="false"' appsettings.json)" > appsettings.json
 ```
 
 :::
+
+- **`ASPNETCORE_REDIS_STREAM_ENDPOINT`**: It should be your self-hosted Appcircle server's Redis URL, port, and SSL settings.  
+  - If you are using the Appcircle server with HTTPS, then the port should be `443` and the `ssl` argument should be set to `true`.
+  - If you are using the Appcircle server with HTTP, then the port should be the external port of Redis which is `6379` by default. And the `ssl` argument should be set to `false`.
+    - For instance, `redis.appcircle.spacetech.com:6379,ssl=false`.
 
 <NewRunnerOldServerRedisCaution/>
 

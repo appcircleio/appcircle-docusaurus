@@ -689,7 +689,10 @@ Below ports must be unused on system and dedicated to only Appcircle server usag
 
 - `80`
 - `443`
-- `6379` (Required if your Appcircle server is running without `HTTPS`.)
+
+If the self-hosted server is configured as HTTP, the below port must also be unused. (_For HTTPS configuration, that's not required._)
+
+- `6379`
 
 You can get a list of up-to-date ports used by docker with below command.
 
@@ -822,10 +825,11 @@ Assuming our sample scenario explained above, these values should be:
 for our example configuration.
 
 :::info
-If your Appcircle server is running with `HTTPS`, then the API and Redis stream endpoint should be like this:
+If your Appcircle server is running with `HTTPS`, then Redis and API URL should be like this:
 
 - `redis.appcircle.spacetech.com:443,ssl=true`
 - `https://api.appcircle.spacetech.com/build/v1`
+
 :::
 
 :reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.

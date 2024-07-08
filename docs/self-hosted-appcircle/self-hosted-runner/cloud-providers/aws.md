@@ -308,13 +308,13 @@ cd "$HOME"
 Download the latest self-hosted runner package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.6.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.7.0.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.6.2.zip
+unzip -o -u appcircle-runner-osx-arm64-1.7.0.zip
 ```
 
 Change directory into extracted `appcircle-runner` folder for following steps.
@@ -327,7 +327,7 @@ cd appcircle-runner
 
 :::info
 
-By default, the Appcircle runner is configured to connect to the Appcircle cloud. If you are not using the Appcircle server as self-hosted, you can skip this information.
+By default, the Appcircle runner is pre-configured to connect to the Appcircle cloud. If you are not using the Appcircle server as self-hosted, you can skip this information.
 
 If you are using a self-hosted Appcircle server, edit the `appsettings.json` file with your favorite editor.
 
@@ -335,7 +335,12 @@ If you are using a self-hosted Appcircle server, edit the `appsettings.json` fil
 vi appsettings.json
 ```
 
-You will see that the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` values are pre-defined for the Appcircle cloud. Change it to your Appcircle server API domain without changing the path and Redis stream endpoint. For example:
+You will see that the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` values are pre-defined for the Appcircle cloud.
+
+- Change the API URL to your self-hosted server API URL without changing the path.
+- Change the Redis stream endpoint to the URL that's compatible with your installation.
+
+For example:
 
 ```json
 {
@@ -347,9 +352,9 @@ You will see that the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_END
 ```
 
 :::caution
-If your Appcircle server is working with `HTTP`, the Redis stream endpoint port should be `6379` instead of `443` by default and the `ssl` should be `false`.
+If your Appcircle server is working with HTTP, the Redis stream endpoint port must be `6379` instead of `443` and the `ssl` argument must be set to `false`.
 
-Also don't forget to configure the API endpoint schema as `HTTP`.
+Also, don't forget to configure the API URL scheme as HTTP in the `global.yaml`.
 :::
 
 <NewRunnerOldServerRedisCaution/>

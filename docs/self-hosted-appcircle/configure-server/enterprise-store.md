@@ -24,7 +24,7 @@ You can change the Enterprise App Store tab title according to the language sele
 For example, you can set a title for **TR** and a different title for **EN** language selection on browsers.
 
 :::info
-Appcircle server version v3.12.1 or later is required for this feature.
+Appcircle server version `3.12.1` or later is required for this feature.
 :::
 
 :::caution

@@ -234,6 +234,8 @@ Appcircle runners should access the self-hosted Appcircle server to get jobs and
 
 :::caution
 Be aware that the URLs below should be the URLs of the self-hosted Appcircle server in your organization.
+
+Below are the sample URLs that show the required subdomains compatible with the sample configuration in the installation documents.
 :::
 
 - api.appcircle.spacetech.com
@@ -242,10 +244,12 @@ Be aware that the URLs below should be the URLs of the self-hosted Appcircle ser
 
 Appcircle runners connect to the self-hosted Appcircle server over the ports below:
 
-If your self-hosted server is configured as `HTTPS`:
+If your self-hosted server is configured as HTTPS:
+
 - `443`
 
-If your self-hosted server is configured as `HTTP`:
+If your self-hosted server is configured as HTTP:
+
 - `80`
 - `6379`
 

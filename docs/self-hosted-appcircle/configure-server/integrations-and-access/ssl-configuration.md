@@ -348,7 +348,7 @@ storeWeb:
 You should use the full certificate chain for `publicKey` similar to main domain `sslCertificate`, to prevent SSL errors when clients connect.
 
 :::caution
-The `.storeWeb.external.port` must be `443` if the `enabledTls` option is true.
+The `storeWeb.external.port` must be `443` if the `enabledTls` option is set to `true`.
 :::
 
 :::caution
@@ -430,7 +430,7 @@ testerWeb:
 You should use the full certificate chain for `publicKey`, similar to the main domain `sslCertificate`, to prevent SSL errors when clients connect.
 
 :::caution
-The `.testerWeb.external.port` must be `443` if the `enabledTls` option is true.
+The `testerWeb.external.port` must be `443` if the `enabledTls` option is set to `true`.
 :::
 
 :::caution
