@@ -18,6 +18,9 @@ tags: [tag1, tag2, tag3]
 - **description**: This is critical for SEO. Keep it under 160 characters to ensure full visibility in search engine results.
 - **tags**: Include relevant tags that describe the document's content. This helps in categorizing the documentation.
 
+**Warning:** When setting up **titles** and **descriptions**, it is important to avoid duplicating values from other areas within the documentation. **Titles** and **descriptions** must be unique. 
+Otherwise, it will cause SEO-related issues.
+
 ## Linking Strategy
 
 When adding links to other documentation pages, use absolute path links starting from the root of the documentation directory.
@@ -51,6 +54,35 @@ Do not use relative paths like the following:
 ```markdown
 './docs/build/build-process-management/build-profile-branch-operations.md' // This is incorrect
 ```
+
+## Screenshot Strategy
+
+There are certain points to follow when adding screenshots to our documentation. Like the image size , Appcircle theme and pointer colors.
+
+### Correct Screenshot Format
+
+- Image size must be 1440x900.
+- The image file name must be unique. It is good practice to use the Linear task ID within the file name to make it distinct. Example: 'BE-4000-example.png'.
+- Screenshots must be full-size. Meaning, it is not recommended to cut out a certain area. We can use pointers and shapes to point out the necessary areas.
+- Appcircle theme must be **Light Theme** on the screenshot.
+- Active Organization must be **Appcircle Team** organization, please avoid using personal names.
+- Displayed profiles such as a Build Profile or a Publish Profile should have the following name format: '**Example Publish Profile**'.
+- The pointers and shapes used on the images should have the following color and format:
+
+![Example](https://cdn.appcircle.io/docs/assets/be-4019-example.png)
+
+- Color code: #f69c21
+
+**Warning** : When uploading images through the GCloud CLI, it is important to ensure that the image name is not already present in the documentation within an uploaded image link. If an image with the same name already exists, it will be replaced by GCloud with the new one without a warning.
+
+### Incorrect Screenshot Format
+
+Do not use the following for a screenshot:
+
+- Dark theme Appcircle UI.
+- Organization or profile names that uses personal names.
+- A snipped screenshot from a full size browser window.
+- Shapes and pointers with different colors and format than the shared example image above.
 
 ## Contribution Guidelines
 
