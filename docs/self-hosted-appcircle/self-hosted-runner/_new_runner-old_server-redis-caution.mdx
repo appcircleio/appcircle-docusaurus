@@ -1,0 +1,12 @@
+:::caution
+##### Using an Up-to-Date Runner with an Out-of-Date Server
+
+By default, the latest runner (`1.7.0` or later) is compatible with the Appcircle server `3.18.0` or later. For this reason, if you are installing the latest runner or upgrading the runner from older versions and using an older server, you need to make extra configurations.
+
+To make the Appcircle runner compatible with an older server, you must change the two settings below in the Appcircle runner `appsettings.json`, which will make it compatible with older servers.
+
+```bash
+echo "$(jq '.ASPNETCORE_SEND_BUILD_LOG_TO_REDIS="false"' appsettings.json)" > appsettings.json && \
+echo "$(jq '.ASPNETCORE_WORKFLOW_UPDATES_DISABLED="false"' appsettings.json)" > appsettings.json
+```
+:::

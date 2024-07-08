@@ -124,6 +124,7 @@ These subdomains are **api**, **auth**, **dist**, **hook**, **my**, **resource**
   - [ ] `resource.appcircle.spacetech.com`
   - [ ] `store.appcircle.spacetech.com`
   - [ ] `monitor.appcircle.spacetech.com`
+  - [ ] `redis.appcircle.spacetech.com`
 
 - [ ] All of these domain names should resolve to the same server IP address, which is the Appcircle server.
 
@@ -182,9 +183,11 @@ The Appcircle runner should be able to access the Appcircle server.
 - [ ] Create a firewall rule (or permission) from the Appcircle runner to the Appcircle server.
 
 :::info
-Port depends on the configured `external.scheme` ("http" or "https") in the `global.yaml`.
+Port depends on the configured `external.scheme` in the `global.yaml`.
 
-It's `443` by default.
+- Port `443` must be allowed if the Appcircle server is configured as HTTPS.
+- Ports `80` and `6379` must be allowed if the Appcircle server is configured as HTTP.
+
 :::
 
 The Appcircle runner should be able to access to the git provider
