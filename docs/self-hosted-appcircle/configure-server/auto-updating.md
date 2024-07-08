@@ -30,7 +30,7 @@ The auto-update tool does not currently support Appcircle DMZ server configurati
 :::
 
 :::info
-The auto-update tool is included in the Appcircle server package version `v3.16.0` or later.
+The auto-update tool is included in the Appcircle server package version `3.16.0` or later.
 :::
 
 ## Updating the Server on Demand

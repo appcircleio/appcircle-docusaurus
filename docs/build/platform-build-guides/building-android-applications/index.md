@@ -146,6 +146,106 @@ You can safely close the build log window, it won't affect the status of your bu
 
 Your build will be distributed automatically if you had set up Auto Distribute earlier. You can also manually distribute builds at any time you like.
 
+## FAQ
+
+### chmod: cannot access './gradlew': No such file or directory
+
+Every Android project has a `gradlew` file in the main repository directory. If the Android Build step can't find this file, you need to edit your workflow, find the Android Build Step and edit the `PROJECT PATH`. If your `gradlew` file is in the `android` folder, you need to write, `./android` in the edit box.
+
+### How can I change the JDK version for autofill?
+
+Appcircle currently has OpenJDK 11 (default), OpenJDK 8, OpenJDK 17 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can follow the steps [here](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) and add a custom script to your workflow.
+
+But unfortunately, you cannot use custom scripts for autofill operations, which make it easy to fill in configuration details while adding a new build profile.
+
+For the autofill, we have two options to choose from.
+
+#### 1. Change `JAVA_HOME` using `gradle.properties`
+
+You can add the `org.gradle.java.home` entry to the `gradle.properties` file in your Android project.
+
+For example, the below entry can be used to change the default Java version to 17 for the "Default M1 Pool".
+
+```properties
+org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu
+```
+
+You can get the JDK home paths for each build pool from [Android's build infrastructure](/infrastructure/android-build-infrastructure#java-version) Java section.
+
+#### 2. Change `JAVA_HOME` using environment variables
+
+You can use the [environment variables](/environment-variables/managing-variables) to enable the JDK version your project requires.
+
+For example, you can take the following steps to change the default Java version to 17.
+
+1. Create a variable group that has a variable with the properties below.
+    1. The key should be `JAVA_HOME`.
+    2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu`.
+2. Go to the configuration section of the build profile that you want to autofill.
+3. Go to the 'Env. Variables' tab in configuration.
+    1. You should see the variable group that you created in the list.
+4. Select the variable group that has `JAVA_HOME` and 'Save' settings.
+5. Go back to the config tab and start autofilling there.
+
+You can get the JDK home paths for each build pool from [Android's build infrastructure](/infrastructure/android-build-infrastructure#java-version) Java section.
+
+### Gradle build after Bintray shutdown
+
+```
+  > Could not resolve com.google.protobuf:protobuf-java-util:3.09.0.
+      > Could not get resource 'https://jcenter.bintray.com/com/google/protobuf/protobuf-java-util/3.09.0/protobuf-java-util-3.09.0.pom'.
+        > Could not GET 'https://jcenter.bintray.com/com/google/protobuf/protobuf-java-util/3.09.0/protobuf-java-util-3.09.0.pom'. Received status code 502 from server: Bad Gateway
+```
+
+You may experience gradle build errors if your project uses Bintray resources. Since JFrog has shutdown Bintray on May 1, 2021. You should update your gradle file and move to Maven Central. Replace `jcenter()` with `mavenCentral()` in all your `build.gradle` files. Please be aware that some of your dependencies may not exist on Maven.
+
+### Gradle build daemon disappeared unexpectedly
+
+If you receive a Gradle error similar to the following, it can happen due to 2 reasons
+
+```
+org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+    at org.gradle.launcher.daemon.client.DaemonClient.handleDaemonDisappearance(DaemonClient.java:222)
+    at org.gradle.launcher.daemon.client.DaemonClient.monitorBuild(DaemonClient.java:198)
+    at org.gradle.launcher.daemon.client.DaemonClient.executeBuild(DaemonClient.java:162)
+    at org.gradle.launcher.daemon.client.DaemonClient.execute(DaemonClient.java:125)
+```
+
+```
+Unexpected error while writing dex file using d8: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+java.lang.RuntimeException: java.lang.OutOfMemoryError: Java heap space
+```
+
+- Problem with UTF-8 characters in your project or environment variable. Please edit your **gradle.properties** file and add `-Dfile.encoding=UTF-8` argument to `org.gradle.jvmargs` section.
+- You have edited **gradle.properties** and put some arguments to the `org.gradle.jvmargs` section. When you modify default JVM arguments, it resets the default `MaxMetaspaceSize` property. You should always add `-XX:MaxMetaspaceSize=256m` to this section to prevent unlimited memory allocation.
+
+If you're using DexGuard, you may need to above modifications to your DexGuard configuration as well.
+
+### I received a google-services.json Error but I don't want to push this file to the repository
+
+Secret files such as the google-services.json can be added as a [secret environment variable](/environment-variables/managing-variables#adding-files-as-environment-variables) and then [selected in the build configuration](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+
+Then, you can add a custom script step before the Android build step and move the file to the expected path during the build with a code like the following (where the secret environment variable is named as `GOOGLE_SERVICES_JSON`) :
+
+```bash
+cd $AC_REPOSITORY_DIR/
+mv $GOOGLE_SERVICES_JSON $AC_REPOSITORY_DIR/app
+```
+### Android Keystore Errors
+
+#### Missing keystore path error on Android builds
+
+You may want to build unsigned Android applications. The most common mistake done with this is Appcircle users usually forget to disable the Sign Application step in the workflow.;
+
+If you do not select a keystore in the build configuration, you need to disable the Sign Application step or your build will fail.
+
+#### Keystore was tampered with or password was incorrect
+
+You may get this error message when the provided password doesn't match the keystore file.
+
+If you are using a debug keystore, simply re-generate it. Otherwise, please make sure you have the correct keystore/password combination.
+
 <ContentRef url="/build/post-build-operations/after-a-build">After a Build</ContentRef>
 
 <NeedHelp />

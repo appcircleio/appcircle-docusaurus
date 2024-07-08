@@ -1,5 +1,6 @@
 ---
-title: Custom Script
+title: Custom Script (Publish Flow)
+sidebar_label: Custom Script
 description: Allows you to create custom Publish flows that are not available in the default steps.
 tags: [custom script, publish, customized publish flow]
 ---

@@ -1,7 +1,7 @@
 ---
-title: Setting Up Appcircle Testing Distribution Plugin
+title: Setting Up Appcircle Testing Distribution Plugin For Fastlane
 sidebar_label: Testing Distribution
-description: Enhance powerful action to distribute your builds to appcircle
+description: Enhance powerful action to distribute your builds to appcircle with fastlane
 tags:
   [
     testing-distribution,
@@ -11,6 +11,8 @@ tags:
   ]
 sidebar_position: 1
 ---
+
+# Setting Up Appcircle Testing Distribution Plugin
 
 The Appcircle Testing Distribution plugin allows users to upload their apps and start distribution to test groups or individuals.
 
