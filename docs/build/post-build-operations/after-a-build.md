@@ -1,7 +1,7 @@
 ---
 title: Build Artifacts
 description: Learn how to manage build artifacts in Appcircle
-tags: [build, build artifacts, build outputs, build logs]
+tags: [build, build artifacts, build outputs, build logs, faq]
 sidebar_position: 13
 ---
 
@@ -69,6 +69,28 @@ To do that, simply navigate to the Builds tab and select the builds, then click 
 Build Deletion feature is only available at Pro or above plans.
 
 To get more info, see our Pricing: [https://appcircle.io/pricing/](https://appcircle.io/pricing/)
+
+:::
+
+## FAQ
+
+### Artifact Storage is Full
+
+Older builds and/or testing distributions will use almost all of your storage. If your artifact storage is full, you can free up some of the old artifacts.
+
+#### [Refer here to delete a build profile](/build/manage-the-connections/adding-a-build-profile#delete-a-build-profile)
+
+#### [Refer here to delete specific builds from your build profile](/build/post-build-operations/after-a-build#delete-specific-builds)
+
+#### [Refer here to delete testing distribution profiles and specific distribution artifacts](/distribute/create-or-select-a-distribution-profile#delete-a-distribution-profile)
+
+#### [Refer here to delete a Publish Profile](/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile)
+
+In order for storage to be freed up, you should also remove the other references pointing to the artifact. In example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds respectively.
+
+:::caution
+
+It may take a couple of minutes to see the change in your account after you have deleted some artifacts.
 
 :::
 

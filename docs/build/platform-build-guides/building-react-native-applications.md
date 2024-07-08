@@ -1,7 +1,7 @@
 ---
 title: Building React Native Applications
 description: You can build your React Native applications in Appcircle for iOS or Android platforms.
-tags: [build, platform build guides, react native]
+tags: [build, platform build guides, react native, faq]
 sidebar_position: 3
 ---
 
@@ -96,7 +96,7 @@ Appcircle allows you to trigger builds manually or automatically using build tri
 
 ### Signing React Native iOS applications
 
-The next step on build configuration is Signing. Here, please select the provisioning profile you added in the [iOS Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles) section.
+The next step on build configuration is Signing. Here, please select the provisioning profile you added in the [Apple Certificates & Provisioning Profiles](/signing-identities) section.
 
 :::info
 
@@ -159,6 +159,79 @@ To start your first build, just press the start build button – the play button
 Once your build is complete, you can now download the binary file or deploy it to Testing Distribution manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at anytime.
 
 <ContentRef url="/build/post-build-operations/after-a-build">After a Build</ContentRef>
+
+## FAQ
+
+### ERR_OSSL_EVP_UNSUPPORTED
+
+If you receive an error similar to the following, it’s likely that your application or a module you’re using is attempting to use an algorithm or key size which is no longer allowed by default with OpenSSL 3.0.
+
+```
+ opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+```
+
+You can either add the command-line option, `--openssl-legacy-provider` to your build scripts or change your node version to v16.x
+
+### NPM/Yarn specific errors
+
+If you face problems during NPM/Yarn install steps on Appcircle but not on your local machine, you should confirm the following steps:
+
+- [x] Make sure that your packages support the node version you use.
+- [x] Make sure that the file interactions that is done on `preinstall` and/or `postinstall` scrips are suitable to be executed on a different machine
+
+#### Queries to registry.yarnpkg.com return a `404/500/...`
+
+First, you should check the [NPM status page](https://yarnpkg.com/getting-started/qa#queries-to-registryyarnpkgcom-return-a-404500-is-it-down) for possible availability issues.
+
+Our runners have yarn classic (1.x) by default. See the [iOS build agent stacks](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) and the [Android build agent stacks](/infrastructure/android-build-infrastructure#android-build-agent-stacks) pages for the exact versions.
+
+On the other hand, yarn modern (2.x) has stability improvements that can fix these kinds of network errors. You can see [here](https://yarnpkg.com/getting-started/qa#why-should-you-upgrade-to-yarn-modern) for details.
+
+Upgrading to the latest versions is critical to a fast and stable yarn experience. So, if you're getting these kinds of errors in your build pipeline, we recommend upgrading your yarn version.
+
+You can see the steps to do upgrade in the following section. 👇
+
+#### Upgrading From Yarn 1 to Yarn 2 in Pipeline
+
+1. Add a "Custom Script" step to your workflow before the "npm/Yarn Commands" step.
+2. It should be a bash script and should have the below content.
+
+```bash
+cd $AC_REPOSITORY_DIR
+yarn set version berry
+yarn --version
+yarn config set -H enableImmutableInstalls false
+```
+
+When you run the pipeline again with an up-to-date workflow, you should see the upgraded yarn version in your build logs.
+
+### Disable Flipper SDK on iOS
+
+Flipper can be a good tool for debugging your applications. It still gets built even if it's not being used for release builds. To speed up your builds, Flipper can be disabled on Appcircle by making the Flipper SDK inclusion conditional.
+
+Example Podfile modification:
+
+```ruby
+  if !ENV['AC_APPCIRCLE']
+    use_flipper!
+    post_install do |installer|
+      flipper_post_install(installer)
+    end
+  end
+```
+
+:::tip
+
+Appcircle uses the lts(Long Term Support) node version by default.
+
+:::
+
+You can access how to change your node version and other relative information about workflow steps and configurations on the page below:
+
+<ContentRef url="/workflows/react-native-specific-workflow-steps">React Native Specific Workflow Steps</ContentRef>
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

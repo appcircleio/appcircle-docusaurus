@@ -15,12 +15,69 @@ For this, it is necessary to first create a publish profile within the Publish m
 
 In order to create a publish profile, click on the "Add New" button in the Publish module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-add-new.png' />
+### Adding a New Publish Profile
 
-You should give a descriptive name to the relevant publish profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-new-profile.png' />
+There are 2 different options for creating a Publish Profile. One of them is manual creation and the other is to import your existing Store profile.
 
-The publish profile is created, and it's ready for application submission.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-createPublisModal.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-empty-profile.png' />
+:::caution Creating a Publish Profile
+
+The names of the profiles can be changed later and a different name must be set for each profile. This does not apply to Bundle ID values. The Bundle ID set for a profile cannot be changed again.
+
+:::
+
+## Create Profile Manually
+
+Manual creation requires a Publish Profile name and a Bundle ID that must be specified for this profile. 
+
+:::info Create Profile Manually
+
+The Bundle ID set during manual creation cannot be changed later and is assigned as the main Bundle ID for that profile.
+
+:::
+
+When manual creation is selected, the name and BundleID fields required for the Publish profile must be filled in.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-createManually.png' />
+
+- **Publish Profile Name**: The name Publish profile is the name given to distinguish your profile from other profiles and appears on the profile card.
+- **BundleID**: BundleID is the unique identifier of your application. It is hard-coded when the profile is created and cannot be changed afterwards.
+
+:::danger
+
+Please note that once the BundleID value of your profile has been set, it cannot be changed. Therefore, make sure that it is entered correctly. 
+
+:::
+
+After manually creating your profile, you will see your profile card displayed on the Publish screen.
+
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-manuelCreateCard.png' />
+
+:::caution Main Bundle ID
+
+Once a main Bundle ID is set, this Bundle ID is assigned to the created profile. This means that you can send binaries with different Bundle IDs into this profile, but you can only publish the binary that matches the profile Bundle ID.
+
+An exclamation mark appears next to the binary that does not match the main Bundle ID of the profile. This means that the current Bundle ID of the binary does not match the specified Bundle ID.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-bundleMatch1.png' />
+
+:::
+
+## Create from App Store Connect
+
+Another option to create a profile is to import it. With this feature, a Publish profile is created with your existing app profile information on App Store Connect.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-importAppList1.png' />
+
+Profiles on App Store Connect are listed with API key connection. In this list, the profile is imported by selecting either multiple or single profiles.
+
+:::caution Create from App Store Connect
+
+The Bundle ID value of the profile imported via App Store Connect is assigned the same value as the profile you imported. It cannot be changed afterwards.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-importProfile.png' />

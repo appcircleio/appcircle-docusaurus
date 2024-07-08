@@ -99,7 +99,7 @@ The Enterprise App Store share feature doesn't allow public sharing. It only hel
 
 :::danger
 
-**Please note that** if you have an **Apple Developer** account with an **enterprise organization** and you are using an app signed with an [**enterprise certificate**](https://docs.appcircle.io/signing-identities/ios-certificates-and-provisioning-profiles#ios-certificates) for **internal distribution**, you must use [**authentication**](https://docs.appcircle.io/enterprise-appstore/customize-ent-store#authentication) for user access.
+**Please note that** if you have an **Apple Developer** account with an **enterprise organization** and you are using an app signed with an [**enterprise certificate**](/signing-identities/apple-certificates) for **internal distribution**, you must use [**authentication**](https://docs.appcircle.io/enterprise-appstore/customize-ent-store#authentication) for user access.
 
 Apple does not allow public distribution of internally distributed apps, and if Apple detects that you are distributing an app signed with an Enterprise certificate without using authentication, it will impose severe sanctions.
 

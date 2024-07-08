@@ -8,6 +8,8 @@ tags:
     microsoft teams,
     teams notifications,
     teams integration,
+    webhooks,
+    hooks
   ]
 sidebar_position: 9
 ---

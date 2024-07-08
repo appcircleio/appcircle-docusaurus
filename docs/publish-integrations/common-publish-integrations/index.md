@@ -39,4 +39,20 @@ Everything you need to know about submitting your app to the Microsoft Intune ca
 Learn how to Publish to Microsoft Intune
 </ContentRef>
 
+## Update Metadata on Microsoft Intune
+
+Learn how to update your app's metadata on Microsoft Intune to improve visibility.
+
+<ContentRef url="/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune">
+Understand how to update metadata on Microsoft Intune
+</ContentRef>
+
+## Send to Enterprise App Store
+
+Everything you need to know about sending your app to the Appcircle's Enterprise App Store can be found here. We cover the necessary preparations, and submission details.
+
+<ContentRef url="/publish-integrations/common-publish-integrations/send-to-enterprise-app-store">
+Learn how to Send Enterprise App Store
+</ContentRef>
+
 Appcircle's integration tools are designed to simplify and automate the publishing process, allowing you to focus on developing great apps while we handle the distribution.
