@@ -175,11 +175,11 @@ You can install these dependencies from your package repository depending on you
 
 </Tabs>
 
-#### SeLinux
+#### SELinux
 
-You must use the same SeLinux mode on the Appcircle private server and the Appcircle DMZ server.
+You must use the same SELinux mode on the Appcircle private server and the Appcircle DMZ server.
 
-You can check the SeLinux mode with the command below.
+You can check the SELinux mode with the command below.
 
 ```bash
 getenforce
