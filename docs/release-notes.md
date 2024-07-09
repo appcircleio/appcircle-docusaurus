@@ -38,6 +38,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - A behaviour difference between Appcircle UI and App Store Connect while registering Bundle IDs has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue causing indicator truncation while retrieving provisioning profiles in the Publish Module has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where, if no images are present in the metadata screenshot section for different localization settings, images from the primary language were not being displayed for guidance and explanatory purposes. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The errors that occurred on some types of projects during [Android versioning](https://docs.appcircle.io/versioning#understanding-android-versioning) were fixed, and several improvements were made to check for invalid versioning. <VersioningBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.19.0 - 2024-06-27 - Publish Apps to Microsoft Intune, App Store Connect Integration, Publish and Signing Identity Enhancements, Xcode 16.0 Beta 2, Bug Fixes and more
 
