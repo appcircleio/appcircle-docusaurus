@@ -57,27 +57,25 @@ Do not use relative paths like the following:
 
 ## Screenshot Strategy
 
-There are certain points to follow when adding screenshots to our documentation. Like the image size , Appcircle theme and pointer colors.
+There are specific guidelines for adding screenshots to our documentation, such as image size, Appcircle theme, and pointer colors.
 
 ### Correct Screenshot Format
 
-- Image size must be 1440x900.
-- The image file name must be unique. It is good practice to use the Linear task ID within the file name to make it distinct. Example: 'BE-4000-example.png'.
-- Screenshots must be full-size. Meaning, it is not recommended to cut out a certain area. We can use pointers and shapes to point out the necessary areas.
+- The dimensions of the image must be 1440x900 pixels.
+- The image file name must be unique. Use a descriptive name to ensure uniqueness. Example: 'BE-4000-example.png'.
+- Please ensure that screenshots are full-size. Avoid cropping specific areas, and instead, use pointers and shapes to highlight the necessary areas.
 - Appcircle theme must be **Light Theme** on the screenshot.
 - Active Organization must be **Appcircle Team** organization, please avoid using personal names.
-- Displayed profiles such as a Build Profile or a Publish Profile should have the following name format: '**Example Publish Profile**'.
-- The pointers and shapes used on the images should have the following color and format:
+- Profiles that are displayed, such as a Build Profile or a Publish Profile, should adhere to the following naming format: '**Example Publish Profile**'.
+- The images should use pointers and shapes that have specific colors and formats as follows:
 
-![Example](https://cdn.appcircle.io/docs/assets/be-4019-example.png)
+![Example](https://cdn.appcircle.io/docs/assets/BE-4019-example.png)
 
 - Color code: #f69c21
 
-**Warning** : When uploading images through the GCloud CLI, it is important to ensure that the image name is not already present in the documentation within an uploaded image link. If an image with the same name already exists, it will be replaced by GCloud with the new one without a warning.
-
 ### Incorrect Screenshot Format
 
-Do not use the following for a screenshot:
+Do not use the following items when taking screenshots:
 
 - Dark theme Appcircle UI.
 - Organization or profile names that uses personal names.
