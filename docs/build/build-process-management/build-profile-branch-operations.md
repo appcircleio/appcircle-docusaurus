@@ -17,6 +17,23 @@ To find a specific branch, just start typing in the name in the branch search ba
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/branch-operation-specific-branch.png' />
 
+### Filtering Branches
+
+You can filter the available branch list by build statuses. Once you select a build status from the filter list, the relevant branches will be displayed accordingly.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3109-filter.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3109-filter2.png' />
+
+The available filter options are:
+
+- **All**  
+- **Success**
+- **Failed** 
+- **Canceled** 
+- **Running** 
+- **Timeout**
+
 ### Pinning Branches to the Top for Faster Access
 
 If you are using a branch frequently such as develop or master, you can pin it to the top. To pin a branch, click on pin icon next to the branch name.
