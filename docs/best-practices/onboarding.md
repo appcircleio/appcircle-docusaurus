@@ -206,14 +206,4 @@ if !ENV['AC_APPCIRCLE']
 
 - Include your Gradle folder in your repo. Appcircle uses the `./gradlew` command to build your project. If this file is missing, the build will fail.
 - Update your build.gradle file to replace `jcenter()` with `mavenCentral()` if your project uses Bintray resources, as JFrog shut down Bintray on May 1, 2021. Some dependencies may not be available on Maven.
-- Consider uploading dependencies used from jitpack to `mavenCentral()`. Jitpack has reliability issues, and while your local builds may use cached versions, Appcircle downloads your dependencies for each build, which can lead to problems.\
-
-import NeedHelp from '@site/docs/\_need-help.mdx';
-
-<NeedHelp />
-
-Need more help? Check out our FAQ section:
-
-<ContentRef url="/troubleshooting-faq">
-FAQ
-</ContentRef>
+- Consider uploading dependencies used from jitpack to `mavenCentral()`. Jitpack has reliability issues, and while your local builds may use cached versions, Appcircle downloads your dependencies for each build, which can lead to problems.
