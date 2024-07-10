@@ -13,9 +13,9 @@ By this way, you can build and test your apps on your choice of architectures. Y
 
 When we look at self-hosted Appcircle deployment as a whole, we will see below architecture in execution.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted_appcircle_v8.drawio.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-appcircle-topology.png' />
 
-To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/self-hosted_appcircle_v8.drawio.png). It will open the diagram in new browser tab.
+To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/be-3008-appcircle-topology.png). It will open the diagram in new browser tab.
 
 :::tip
 You can see all external network access details on the [Network Access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access) page.
@@ -37,6 +37,6 @@ See [pricing](https://appcircle.io/pricing) and feature comparison table for det
 
 If you plan to use Appcircle DMZ Architecture, the Appcircle DMZ Architecture follows this deployment structure:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-dmz-overview-diagram.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-appcircle-dmz-topology.png' />
 
 For more information about the Appcircle DMZ architecture, you can the [Enterprise App Store and Testing Distribution in DMZ](/docs/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md) document. 
