@@ -55,40 +55,31 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Build Actions       | Distribution Binary                   | ✅     | ✅       | ✅        | ⛔      |
 | Connection          | Add/Delete/Update Connections         | ✅     | ✅       | ⛔        | ⛔      |
 | Connection          | List Connection                       | ✅     | ✅       | ✅        | ✅      |
-| Runner              | Add/Delete/Update Runner              | ✅     | ⛔       | ⛔        | ⛔      |
-| Runner              | List Runner                           | ✅     | ✅       | ✅        | ✅      |
+| Runner              | Add/Delete/Update Runner(Root Only)   | ✅     | ⛔       | ⛔        | ⛔      |
+| Runner              | List Runner(Root Only)                | ✅     | ✅       | ✅        | ✅      |
 | Runner Access Token | Create/Delete Runner Access Token     | ✅     | ⛔       | ⛔        | ⛔      |
 | Runner Access Token | List Runner Access Token              | ✅     | ⛔       | ⛔        | ⛔      |
 | Report              | List Build Reports                    | ✅     | ✅       | ✅        | ✅      |
 
 
-:::info
+:::caution Distrubition Binary and Runner Details
 
-Manager or Operator Build Profile permission can distribute binary if user has Manager or Operator Distribution permission.
-
-:::
-
-:::info
-
-Manager or Operator Build Profile permission can publish if user has Manager or Operator Publish Android/iOS permission.
+- **Manager** or **Operator** Build Profile permission can distribute binary if user has Manager or Operator Distribution permission.
+- **Manager** or **Operator** Build Profile permission can publish if user has Manager or Operator Publish Android/iOS permission.
+- **Manager**, **Operator** and **Viewer** Build Profile permissions can view self-hosted runners but cannot modify the configuration.
 
 :::
-
-:::info
-
-Manager, Operator and Viewer Build Profile permissions can view self-hosted runners but cannot modify the configuration.
-
-:::
-
 
 ### Environment Variables Permissions
 
 The following table details the roles and restrictions for the [**Environment Variables**](/environment-variables). Please refer to the modules related information and coution notes. 
 
-| Environment Variable | Scopes                                | Owner | Manager | Viewer |
-|----------------------|---------------------------------------|-------|---------|--------|
-| Environment Variable | Add/Delete/Update Env Variable Groups | ✅     | ✅       | ⛔      |
-| Environment Variable | List Environment Group                | ✅     | ✅       | ✅      |
+| Environment Variable | Scopes                                        | Owner | Manager | Viewer |
+|----------------------|-----------------------------------------------|-------|---------|--------|
+| Environment Variable | Add/Delete/Update Environment Variable Groups | ✅     | ✅       | ⛔      |
+| Environment Variable | Add/Delete/Update Environment Variable        | ✅     | ✅       | ⛔      |
+| Environment Variable | List Environment Variable                     | ✅     | ✅       | ✅      |
+| Environment Variable | List Environment Variable Groups              | ✅     | ✅       | ✅      |
 
 :::info
 
@@ -134,6 +125,8 @@ The following table details the roles and restrictions for the [**Testing Distri
 | App Version Actions  | Send to Testers                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | App Version Actions  | Send to Enterprise App Store           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | App Version Actions  | Send to Publish                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Settings             | Select Authantication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
+| Settings             | View Authantication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Apple Device         | Add/Delete Apple Device                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Apple Device         | Register Apple Device                  | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Apple Device         | Adding New Device to Provision         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
@@ -142,35 +135,32 @@ The following table details the roles and restrictions for the [**Testing Distri
 | Report               | List Reports App Version               | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
+:::caution Authantication Settings
 
-
-:::info
-
-Manager or Operator Distribution Profile permission can send to enterprise app store if user has Manager, Operator or Ext. Operator Enterprise App Store permission.
+If the selected authantication type is Static login, Manager role can change **Username** and **Password**. However, it cannot change the content for other authantication types.
 
 :::
 
-:::info
+:::caution Sending Binary
 
-Manager or Operator Distribution Profile permission can send to publish if user has Manager or Operator Publish Android and Manager or Operator iOS permission.
-
-:::
-
-:::info
-
-Manager or Operator Distribution Profile permission can resign binary if user has Manager or Viewer Signing Identity Management permission.
+- **Manager** or **Operator** Distribution Profile permission can send to enterprise app store if user has Manager, Operator or Ext. Operator Enterprise App Store permission.
+- **Manager** or **Operator** Distribution Profile permission can send to publish if user has Manager or Operator Publish Android and Manager or Operator iOS permission.
+- **Manager** or **Operator** Distribution Profile permission can resign binary if user has Manager or Viewer Signing Identity Management permission.
 
 :::
+
 
 ### Testing Group Permissions
 
 The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-management/testing-groups). Please refer to the modules related information and coution notes. 
 
 
-| Testing Groups | Scopes                          | Owner | Manager | Operator  | Viewer |
-|----------------|---------------------------------|-------|---------|----------|--------|
-| Testing Groups | Add/Delete/Update Testing Group | ✅     | ✅       | ⛔        | ⛔      |
-| Testing Groups | List Testing Groups             | ✅     | ✅       | ✅        | ✅      |
+| Testing Groups | Scopes                                  | Owner | Manager | Operator | Viewer |
+|----------------|-----------------------------------------|-------|---------|----------|--------|
+| Testing Groups | Add/Delete/Update Testing Group         | ✅     | ✅       | ⛔        | ⛔      |
+| Testing Groups | Add/Delete/Update Testing Group Testers | ✅     | ✅       | ⛔        | ⛔      |
+| Testing Groups | List Testing Groups                     | ✅     | ✅       | ✅        | ✅      |
+| Testing Groups | List Testing Group Testers              | ✅     | ✅       | ✅        | ✅      |
 
 
 ### Publish Module iOS Permissions
@@ -276,11 +266,13 @@ Manage and Upload Apps to Enterprise App Store.
 | Settings             | View Store Domain                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports                           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 
-:::info
+:::caution Authantication Settings
 
-//select auth type eğer staticse manager username ve password belirleyebilir bu gelecek.
+If the selected authantication type is Static login, Manager role can change **Username** and **Password**. However, it cannot change the content for other authantication types.
 
 :::
+
+
 ### Organization Management Permissions
 
 The user can create an organization or sub-organization within license limits, add and remove members, and manage their permissions.
@@ -304,10 +296,17 @@ Also, the user can view self-hosted runners and change configuration.
 | Runner Access Token                 | Create/Delete Runner Access Token     | ✅     | ⛔       |
 | Report                              | View Organziation Report              | ✅     | ✅       |
 
-:::caution
+:::info Organization Management
 
-//Manager role kendini owner yapamaz uyarısı buraya gelcek
-//role atayacağı user'ıda  owner yapamaz  veremiyor.
+Whatever role a user is assigned in the root organisation, user has the same role in the sub-organisations. For example, someone who is a Manager in the root organisation is automatically assigned as Manager in the sub-organisations. 
+
+If you want to assign a role in a sub-organisation, please do so within the respective sub-organisation.
+
+:::
+
+:::caution Organization Management Role Assignment
+
+The Manager role **cannot** assign itself and another user as **Owner** when assigning the role.
 
 :::
 
