@@ -22,6 +22,7 @@ import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/configure-s
 import UFWConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_ufw-configuration.mdx';
 import SwapConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_swap-configuration.mdx';
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
+import Screenshot from '@site/src/components/Screenshot';
 
 ## Overview
 
@@ -31,7 +32,7 @@ This is particularly useful when users need to access Testing Distribution and E
 
 The Testing Distribution module and Enterprise App Store module hosted on the Appcircle DMZ server can be accessed by users from the internet, ensuring they have secure access to these critical features while keeping sensitive business data within your private network. This setup provides a balance between security and productivity in an organization's IT environment.
 
-@TODO: Diagram will be here.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-dmz-detailed-diagram.png' />
 
 We assume that you have already set up an Appcircle server successfully. This document will guide you through creating Appcircle DMZ server and Appcircle server configurations.
 
