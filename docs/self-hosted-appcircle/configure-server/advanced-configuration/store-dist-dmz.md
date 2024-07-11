@@ -544,3 +544,58 @@ cd .. && rm -rf appcircle-server-dmz
 By default, the Appcircle DMZ server will try to send the container logs to the Appcircle server.
 
 You can check the container logs on the Appcircle monitoring page. For more details about checking the logs, you can check the [Monitoring](/docs/self-hosted-appcircle/configure-server/monitoring.md) page.
+
+## Restarting the Appcircle DMZ Server Host
+
+For Docker users, there are built-in mechanisms that handle container restarts, eliminating the need for manual intervention.
+
+However, Podman users will need to create a systemd unit service to ensure the application starts automatically upon server reboot.
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
+## Docker
+
+With Docker, you can rely on the built-in restart policies to handle the automatic startup of your Appcircle server.
+
+Docker will automatically restart the server services if the host reboots.
+
+This eliminates the need for any additional steps or configurations to ensure your application restarts upon host restart.
+
+</TabItem>
+
+<TabItem value="podman">
+
+When using Podman, you will need to create a systemd unit service to enable the automatic startup of your application containers.
+
+We have a dedicated section where we explain how to create the systemd file for Appcircle DMZ server services to start automatically when the host reboots.  
+
+You can follow the [Restarting Host](../restarting-host.md) document but there are two things to watch out on the "Restarting Host" document.
+
+You will see the `ExecStart` line in the systemd service file like in the example below:
+
+```bash
+ExecStart=/bin/bash ${APPCIRCLE_SERVER_DIR}/ac-self-hosted.sh -n spacetech up
+```
+
+For the Appcircle DMZ server:
+
+- The `ExecStart` line should contain Appcircle DMZ server directory and `ac-self-hosted-dmz.sh` as the command.
+- There shouldn't be any project name. In the example above, you should remove the `-n spacetech` section.
+
+A full example of `ExecStart` line should be: 
+
+```bash
+ExecStart=/bin/bash /app/appcircle-server-dmz/ac-self-hosted-dmz.sh up
+```
+
+</TabItem>
+
+</Tabs>
