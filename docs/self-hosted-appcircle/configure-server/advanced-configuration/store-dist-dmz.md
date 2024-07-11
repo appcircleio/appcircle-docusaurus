@@ -163,7 +163,28 @@ You can install these dependencies from your package repository depending on you
   
   <TabItem value="rhel" label="RHEL/CentOS" default>
 
-<FirewalldConfiguration/>
+If you are using `Firewalld`, you need to open the ports below according to your server configuration.
+
+- If you plan to run the Appcircle DMZ server with HTTPS:
+
+```bash
+sudo firewall-cmd --add-port=80/tcp --permanent
+sudo firewall-cmd --add-port=443/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+- If you plan to run the Appcircle DMZ server with HTTP:
+
+```bash
+sudo firewall-cmd --add-port=80/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+To check if the ports are open, you can run the following command:
+
+```bash
+sudo firewall-cmd --list-ports
+```
 
   </TabItem>
 
@@ -447,7 +468,7 @@ After you have configured the system with the steps above, you are ready to run 
 ```
 
 :::caution
-Be sure that all the services are running and healthy. If there are connection problem between the Appcircle DMZ server and the Appcircle server, the services won't be healthy.
+Be sure that all the services are running and healthy. If there are connection problems between the Appcircle DMZ server and the Appcircle server, the services won't be healthy.
 :::
 
 ## Stopping the Appcircle DMZ Server
