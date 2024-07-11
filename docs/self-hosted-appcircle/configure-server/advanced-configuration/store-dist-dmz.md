@@ -42,6 +42,10 @@ In this document:
 
 - We will call the "Appcircle server" to the server, which is located in the private network and host the Appcircle core services.
 
+:::info
+When you convert to the DMZ architecture, both the Enterprise App Store and the Testing Distribution will be transferred to the Appcircle DMZ server. We currently do not support using only one of them in the Appcircle DMZ server.
+:::
+
 ## Appcircle DMZ Server Pre-requirements
 
 Below are the hardware and OS requirements for self-hosted Appcircle DMZ server installation.
