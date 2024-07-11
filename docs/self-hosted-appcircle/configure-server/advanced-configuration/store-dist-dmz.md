@@ -190,7 +190,26 @@ sudo firewall-cmd --list-ports
 
   <TabItem value="debian" label="Ubuntu/Debian" default>
 
-<UFWConfiguration/>
+If you are using `UFW (Uncomplicated Firewall)`, you need to open the 80 and 443 ports for the Appcircle DMZ server.
+
+Check if the `ufw` is active.
+
+```bash
+sudo ufw status
+```
+
+If you see `Status: active` as the output, you should allow TCP 80 and TCP 443 ports for Appcircle DMZ server to accept connections.
+
+```bash
+sudo ufw allow 80 && \
+sudo ufw allow 443
+```
+
+To check if the ports are open, you can run the following command:
+
+```bash
+sudo ufw status verbose
+```
 
   </TabItem>
 
