@@ -438,3 +438,27 @@ archive.ubuntu.com
   </TabItem>
   
 </Tabs>
+
+### Appcircle Server
+
+Appcircle DMZ server should access the self-hosted Appcircle server to get required information for Enterprise App Store and Testing Distribution services.
+
+:::caution
+Be aware that the URLs below should be the URLs of the self-hosted Appcircle server in your organization.
+
+Below are the sample URLs that show the required subdomains compatible with the sample configuration in the installation documents.
+:::
+
+- api.appcircle.spacetech.com
+- auth.appcircle.spacetech.com
+- monitor.appcircle.spacetech.com
+
+Appcircle DMZ server connect to the self-hosted Appcircle server over the ports below:
+
+If your self-hosted Appcircle server is configured as HTTPS:
+
+- `443`
+
+If your self-hosted Appcircle server is configured as HTTP:
+
+- `80`
