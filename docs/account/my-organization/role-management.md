@@ -39,27 +39,27 @@ Some role types are not used in some modules because they are not required in th
 
 The following table details the roles and restrictions for the [**Build**](/build) module. Please refer to the modules related information and coution notes. 
 
-| Build Sub-modules   | Scopes                                | Manager | Operator | Viewer |
-|---------------------|---------------------------------------|---------|----------|--------|
-| Build Profile       | List Build Profiles                   | ✅       | ✅        | ✅      |
-| Build Profile       | Add/Delete/Update Build Profiles      | ✅       | ⛔        | ⛔      |
-| Repository          | Repository Connection/Disconnection   | ✅       | ⛔        | ⛔      |
-| Commit              | List Commit                           | ✅       | ✅        | ✅      |
-| Configuration       | View Build Configuration              | ✅       | ✅        | ✅      |
-| Configuration       | Add/Delete/Update Build Configuration | ✅       | ⛔        | ⛔      |
-| Workflow            | View Workflows                        | ✅       | ✅        | ✅      |
-| Workflow            | Add/Delete/Update Workflows           | ✅       | ⛔        | ⛔      |
-| Build Actions       | Start Build                           | ✅       | ✅        | ⛔      |
-| Build Actions       | Delete Single Build in Build List     | ✅       | ⛔        | ⛔      |
-| Build Actions       | Download Artifacts                    | ✅       | ✅        | ✅      |
-| Build Actions       | Distribution Binary                   | ✅       | ✅        | ⛔      |
-| Connection          | List Connection                       | ✅       | ✅        | ✅      |
-| Connection          | Add/Delete/Update Connections         | ✅       | ⛔        | ⛔      |
-| Runner              | List Runner                           | ✅       | ✅        | ✅      |
-| Runner              | Add/Delete/Update Runner              | ⛔       | ⛔        | ⛔      |
-| Runner Access Token | List Runner Access Token              | ⛔       | ⛔        | ⛔      |
-| Runner Access Token | Create/Delete Runner Access Token     | ⛔       | ⛔        | ⛔      |
-| Report              | List Build Reports                    | ✅       | ✅        | ✅      |
+| Build Sub-modules   | Scopes                                | Owner | Manager | Operator | Viewer |
+|---------------------|---------------------------------------|-------|---------|----------|--------|
+| Build Profile       | List Build Profiles                   | ✅     | ✅       | ✅        | ✅      |
+| Build Profile       | Add/Delete/Update Build Profiles      | ✅     | ✅       | ⛔        | ⛔      |
+| Repository          | Repository Connection/Disconnection   | ✅     | ✅       | ⛔        | ⛔      |
+| Commit              | List Commit                           | ✅     | ✅       | ✅        | ✅      |
+| Configuration       | View Build Configuration              | ✅     | ✅       | ✅        | ✅      |
+| Configuration       | Add/Delete/Update Build Configuration | ✅     | ✅       | ⛔        | ⛔      |
+| Workflow            | View Workflows                        | ✅     | ✅       | ✅        | ✅      |
+| Workflow            | Add/Delete/Update Workflows           | ✅     | ✅       | ⛔        | ⛔      |
+| Build Actions       | Start Build                           | ✅     | ✅       | ✅        | ⛔      |
+| Build Actions       | Delete Single Build in Build List     | ✅     | ✅       | ⛔        | ⛔      |
+| Build Actions       | Download Artifacts                    | ✅     | ✅       | ✅        | ✅      |
+| Build Actions       | Distribution Binary                   | ✅     | ✅       | ✅        | ⛔      |
+| Connection          | List Connection                       | ✅     | ✅       | ✅        | ✅      |
+| Connection          | Add/Delete/Update Connections         | ✅     | ✅       | ⛔        | ⛔      |
+| Runner              | List Runner                           | ✅     | ✅       | ✅        | ✅      |
+| Runner              | Add/Delete/Update Runner              | ✅     | ⛔       | ⛔        | ⛔      |
+| Runner Access Token | List Runner Access Token              | ✅     | ⛔       | ⛔        | ⛔      |
+| Runner Access Token | Create/Delete Runner Access Token     | ✅     | ⛔       | ⛔        | ⛔      |
+| Report              | List Build Reports                    | ✅     | ✅       | ✅        | ✅      |
 
 
 :::info
@@ -85,10 +85,10 @@ Manager, Operator and Viewer Build Profile permissions can view self-hosted runn
 
 The following table details the roles and restrictions for the [**Environment Variables**](/environment-variables). Please refer to the modules related information and coution notes. 
 
-| Environment Variable | Scope                                 | Manager | Viewer |
-|----------------------|---------------------------------------|---------|--------|
-| Environment Variable | List Env Group                        | ✅       | ✅      |
-| Environment Variable | Add/Delete/Update Env Variable Groups | ✅       | ⛔      |
+| Environment Variable | Scope                                 | Owner | Manager | Viewer |
+|----------------------|---------------------------------------|-------|---------|--------|
+| Environment Variable | List Env Group                        | ✅     | ✅       | ✅      |
+| Environment Variable | Add/Delete/Update Env Variable Groups | ✅     | ✅       | ⛔      |
 
 :::info
 
@@ -125,22 +125,22 @@ Manager, Operator and Viewer Signing Identity Management permissions can use sig
 
 The following table details the roles and restrictions for the [**Testing Distribution**](/distribute) module. Please refer to the modules related information and coution notes. 
 
-| Testing Distribution | Scopes                                 | Manager | Operator | Ext. Operator | Viewer |
-|----------------------|----------------------------------------|---------|----------|---------------|--------|
-| Distribution Profile | List Distribution Profiles             | ✅       | ✅        | ✅             | ✅      |
-| Distribution Profile | Add/Delete/Update Distribution Profile | ✅       | ⛔        | ⛔             | ⛔      |
-| Distribution Profile | Setting Update Distribution Profile    | ✅       | ⛔        | ⛔             | ⛔      |
-| App Version          | Add/Delete/Update App Version          | ✅       | ✅        | ✅             | ⛔      |
-| App Version Actions  | Send to Testers                        | ✅       | ✅        | ⛔             | ⛔      |
-| App Version Actions  | Send to Enterprise App Store           | ✅       | ✅        | ⛔             | ⛔      |
-| App Version Actions  | Send to Publish                        | ✅       | ✅        | ⛔             | ⛔      |
-| Apple Device         | List Apple Device                      | ✅       | ✅        | ⛔             | ✅      |
-| Apple Device         | Add/Delete Apple Device                | ✅       | ⛔        | ⛔             | ⛔      |
-| Apple Device         | Register Apple Device                  | ✅       | ⛔        | ⛔             | ⛔      |
-| Apple Device         | Adding New Device to Provision         | ✅       | ⛔        | ⛔             | ⛔      |
-| Apple Device         | Sync from Apple Developer              | ✅       | ✅        | ⛔             | ⛔      |
-| Report               | List Reports App Version               | ✅       | ✅        | ⛔             | ✅      |
-| Report               | List Reports App Sharing               | ✅       | ✅        | ⛔             | ✅      |
+| Testing Distribution | Scopes                                 | Owner | Manager | Operator | Ext. Operator | Viewer |
+|----------------------|----------------------------------------|-------|---------|----------|---------------|--------|
+| Distribution Profile | List Distribution Profiles             | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Distribution Profile | Add/Delete/Update Distribution Profile | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Distribution Profile | Setting Update Distribution Profile    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| App Version          | Add/Delete/Update App Version          | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| App Version Actions  | Send to Testers                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Send to Enterprise App Store           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Send to Publish                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Apple Device         | List Apple Device                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Apple Device         | Add/Delete Apple Device                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Apple Device         | Register Apple Device                  | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Apple Device         | Adding New Device to Provision         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Apple Device         | Sync from Apple Developer              | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Report               | List Reports App Version               | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Report               | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 
 
@@ -167,80 +167,80 @@ Manager or Operator Distribution Profile permission can resign binary if user ha
 The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-management/testing-groups). Please refer to the modules related information and coution notes. 
 
 
-| Testing Groups | Scopes                          | Manager | Operator | Operator | Viewer |
-|----------------|---------------------------------|---------|----------|----------|--------|
-| Testing Groups | List Testing Groups             | ✅       | ✅        | ⛔        | ✅      |
-| Testing Groups | Add/Delete/Update Testing Group | ✅       | ⛔        | ⛔        | ⛔      |
+| Testing Groups | Scopes                          | Owner | Manager | Operator | Operator | Viewer |
+|----------------|---------------------------------|-------|---------|----------|----------|--------|
+| Testing Groups | List Testing Groups             | ✅     | ✅       | ✅        | ⛔        | ✅      |
+| Testing Groups | Add/Delete/Update Testing Group | ✅     | ✅       | ⛔        | ⛔        | ⛔      |
 
 
 ### Publish Module iOS Permissions
 
 The following table details the roles and restrictions for the [**Publish**](/publish-module) module for iOS. Please refer to the modules related information and coution notes.
 
-| Publish                       | Scopes                                    | Manager | Operator | Ext. Operator | Viewer |
-|-------------------------------|-------------------------------------------|---------|----------|---------------|--------|
-| Publish Profiles              | List Publish Profiles                     | ✅       | ✅        | ✅             | ✅      |
-| Publish Profiles              | Add/Delete/Update Publish Profile         | ✅       | ⛔        | ⛔             | ⛔      |
-| App Version                   | List App Versions                         | ✅       | ✅        | ✅             | ✅      |
-| App Version                   | Add/Delete App Version                    | ✅       | ✅        | ✅             | ⛔      |
-| Publish Profile Settings      | View/Update Profile Settings              | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Flow Steps     | List Publish Flow                         | ✅       | ✅        | ⛔             | ⛔      |
-| Manage Publish Flow Steps     | Download/Upload Publish Flow              | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Flow Steps     | Add/Delete Publish Flow Step              | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Steps - Update | Update Publish Flow Step Details          | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Process               | List Publish Flow Details                 | ✅       | ✅        | ⛔             | ✅      |
-| Publish Process               | Start/Restart/Stop Flow                   | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Process               | Start Single Step                         | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Process               | View Custom UI Details                    | ✅       | ✅        | ⛔             | ✅      |
-| Publish Process               | Update Custom UI details                  | ✅       | ✅        | ⛔             | ⛔      |
-| App Store Connect Info        | List/Update App Store Connect Information | ✅       | ⛔        | ⛔             | ⛔      |
-| Check Release Status          | Get Relese Status                         | ✅       | ✅        | ✅             | ✅      |
-| Metadata                      | View Metadata Details                     | ✅       | ✅        | ✅             | ✅      |
-| Metadata                      | Update Metadata Details                   | ✅       | ✅        | ✅             | ⛔      |
-| Mark as RC                    | Marking RC a version                      | ✅       | ✅        | ⛔             | ⛔      |
-| Resing Binary                 | Resigning Binary                          | ✅       | ✅        | ⛔             | ⛔      |
-| Release Note                  | Update Release Note                       | ✅       | ✅        | ✅             | ⛔      |
-| History                       | List History                              | ✅       | ✅        | ✅             | ✅      |
-| History - Get/Download Logs   | Download History Logs                     | ✅       | ✅        | ⛔             | ✅      |
-| Download Binary               | Download Binary                           | ✅       | ✅        | ⛔             | ✅      |
-| Environment Variables         | List Environment Variables                | ✅       | ✅        | ⛔             | ✅      |
-| Environment Variables         | Add/Delete/Update Env Variables           | ✅       | ⛔        | ⛔             | ⛔      |
-| Activity Logs                 | List Activty Log Details                  | ✅       | ✅        | ⛔             | ✅      |
+| Publish                       | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
+|-------------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
+| Publish Profiles              | List Publish Profiles                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Publish Profiles              | Add/Delete/Update Publish Profile         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| App Version                   | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Version                   | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Publish Profile Settings      | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | List Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | Download/Upload Publish Flow              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | Add/Delete Publish Flow Step              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Steps - Update | Update Publish Flow Step Details          | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Process               | List Publish Flow Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish Process               | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Process               | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Process               | View Custom UI Details                    | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish Process               | Update Custom UI details                  | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Store Connect Info        | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Check Release Status          | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Metadata                      | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Metadata                      | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Mark as RC                    | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Resing Binary                 | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Release Note                  | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| History                       | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
+| History - Get/Download Logs   | Download History Logs                     | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Download Binary               | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Environment Variables         | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Environment Variables         | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Activity Logs                 | List Activty Log Details                  | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 
 ### Publish Module Android Permissions
 
 The following table details the roles and restrictions for the [**Publish**](/publish-module) module for Android. Please refer to the modules related information and coution notes.
 
-| Publish                       | Scopes                                    | Manager | Operator | Ext. Operator | Viewer |
-|-------------------------------|-------------------------------------------|---------|----------|---------------|--------|
-| Publish Profiles              | List Publish Profiles                     | ✅       | ✅        | ✅             | ✅      |
-| Publish Profiles              | Add/Delete/Update Publish Profile         | ✅       | ⛔        | ⛔             | ⛔      |
-| App Version                   | List App Versions                         | ✅       | ✅        | ✅             | ✅      |
-| App Version                   | Add/Delete App Version                    | ✅       | ✅        | ✅             | ⛔      |
-| Publish Profile Settings      | View/Update Profile Settings              | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Flow Steps     | List Publish Flow                         | ✅       | ✅        | ⛔             | ⛔      |
-| Manage Publish Flow Steps     | Download/Upload Publish Flow              | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Flow Steps     | Add/Delete Publish Flow Step              | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Steps - Update | Update Publish Flow Step Details          | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Process               | List Publish Flow Details                 | ✅       | ✅        | ⛔             | ✅      |
-| Publish Process               | Start/Restart/Stop Flow                   | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Process               | Start Single Step                         | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Process               | View Custom UI Details                    | ✅       | ✅        | ⛔             | ✅      |
-| Publish Process               | Update Custom UI details                  | ✅       | ✅        | ⛔             | ⛔      |
-| App Store Connect Info        | List/Update App Store Connect Information | ✅       | ⛔        | ⛔             | ⛔      |
-| Check Release Status          | Get Relese Status                         | ✅       | ✅        | ✅             | ✅      |
-| Metadata                      | View Metadata Details                     | ✅       | ✅        | ✅             | ✅      |
-| Metadata                      | Update Metadata Details                   | ✅       | ✅        | ✅             | ⛔      |
-| Mark as RC                    | Marking RC a version                      | ✅       | ✅        | ⛔             | ⛔      |
-| Resing Binary                 | Resigning Binary                          | ✅       | ✅        | ⛔             | ⛔      |
-| Release Note                  | Update Release Note                       | ✅       | ✅        | ✅             | ⛔      |
-| History                       | List History                              | ✅       | ✅        | ✅             | ✅      |
-| History - Get/Download Logs   | Download History Logs                     | ✅       | ✅        | ⛔             | ✅      |
-| Download Binary               | Download Binary                           | ✅       | ✅        | ⛔             | ✅      |
-| Environment Variables         | List Environment Variables                | ✅       | ✅        | ⛔             | ✅      |
-| Environment Variables         | Add/Delete/Update Env Variables           | ✅       | ⛔        | ⛔             | ⛔      |
-| Activity Logs                 | List Activty Log Details                  | ✅       | ✅        | ⛔             | ✅      |
+| Publish                       | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
+|-------------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
+| Publish Profiles              | List Publish Profiles                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Publish Profiles              | Add/Delete/Update Publish Profile         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| App Version                   | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Version                   | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Publish Profile Settings      | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | List Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | Download/Upload Publish Flow              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | Add/Delete Publish Flow Step              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Steps - Update | Update Publish Flow Step Details          | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Process               | List Publish Flow Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish Process               | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Process               | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Process               | View Custom UI Details                    | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish Process               | Update Custom UI details                  | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Store Connect Info        | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Check Release Status          | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Metadata                      | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Metadata                      | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Mark as RC                    | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Resing Binary                 | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Release Note                  | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| History                       | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
+| History - Get/Download Logs   | Download History Logs                     | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Download Binary               | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Environment Variables         | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Environment Variables         | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Activity Logs                 | List Activty Log Details                  | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::info
 
@@ -260,21 +260,22 @@ For instance, when you give "**Viewer**" permission to a user for iOS or Android
 
 Manage and Upload Apps to Enterprise App Store.
 
-| Ent. App Sub Modules | Ent. App Store Scope                   | Manager | Operator | Ext. Operator | Viewer |
-|----------------------|----------------------------------------|---------|----------|---------------|--------|
-| Store Profile        | List Profiles                          | ✅       | ✅        | ✅             | ✅      |
-| Store Profile        | Add/Delete/Update Profiles             | ✅       | ✅        | ⛔             | ⛔      |
-| App Version          | List App Versions                      | ✅       | ✅        | ✅             | ✅      |
-| App Version          | Add/Delete/Update App Versions         | ✅       | ✅        | ✅             | ⛔      |
-| App Version          | Download App Versions                  | ✅       | ✅        | ✅             | ⛔      |
-| App Version Actions  | Publish App Version Live/Beta Channels | ✅       | ✅        | ⛔             | ⛔      |
-| Settings             | View Store Domain                      | ✅       | ✅        | ⛔             | ✅      |
-| Settings             | Update Store Domain                    | ✅       | ⛔        | ⛔             | ⛔      |
-| Settings             | View Store Authantication Settings     | ✅       | ✅        | ⛔             | ✅      |
-| Settings             | Update Store Authantication Settings   | ✅       | ⛔        | ⛔             | ⛔      |
-| Settings             | View Customization Settings            | ✅       | ✅        | ⛔             | ✅      |
-| Settings             | Update Store Customization             | ✅       | ⛔        | ⛔             | ⛔      |
-| Report               | List Reports                           | ✅       | ⛔        | ⛔             | ⛔      |
+| Ent. App Sub Modules | Ent. App Store Scope                   | Owner | Manager | Operator | Ext. Operator | Viewer |
+|----------------------|----------------------------------------|-------|---------|----------|---------------|--------|
+| Store Profile        | List Profiles                          | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Store Profile        | Add/Delete/Update Profiles             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Version          | List App Versions                      | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Version          | Add/Delete/Update App Versions         | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| App Version          | Download App Versions                  | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| App Version Actions  | Publish App Version Live/Beta Channels | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Settings             | View Store Domain                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Settings             | Update Store Domain                    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Settings             | View Store Authantication Settings     | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Settings             | Update Store Authantication Settings   | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Settings             | View Customization Settings            | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Settings             | Update Store Customization             | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Report               | List Reports                           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+
 
 ### Organization Management Permissions
 
@@ -282,22 +283,22 @@ The user can create an organization or sub-organization within license limits, a
 
 Also, the user can view self-hosted runners and change configuration.
 
-| Organization Management Sub-modules | Scopes                   | Manager |
-|-------------------------------------|--------------------------|---------|
-| Organization and Team Management    | Create Sub-Organization  | ✅       |
-| Organization and Team Management    | Update Organization      | ✅       |
-| Organization and Team Management    | List User                | ✅       |
-| Organization and Team Management    | Add/Delete/Update Member | ✅       |
-| Organization and Team Management    | Assign Role for User     | ✅       |
-| SSO Mapping                         | List SSO                 | ✅       |
-| SSO Mapping                         | Create/Delete/Update SSO | ✅       |
-| LDAP Mapping                        | List LDAP                | ✅       |
-| LDAP Mapping                        | Add/Delete/Update LDAP   | ✅       |
-| PAT                                 | View PAT                 | ✅       |
-| PAT                                 | Generate PAT             | ✅       |
-| Runner Access Token                 | View RAT                 | ✅       |
-| Runner Access Token                 | Generate RAT             | ✅       |
-| Report                              | View Organziation Report | ✅       |
+| Organization Management Sub-modules | Scopes                            | Owner | Manager |
+|-------------------------------------|-----------------------------------|-------|---------|
+| Organization and Team Management    | Create/Update Sub-Organization    | ✅     | ⛔       |
+| Organization and Team Management    | Create/Update Organization        | ✅     | ⛔       |
+| Organization and Team Management    | List User                         | ✅     | ✅       |
+| Organization and Team Management    | Add/Delete/Update Member          | ✅     | ✅       |
+| Organization and Team Management    | Assign Role for User              | ✅     | ✅       |
+| SSO Mapping                         | List SSO                          | ✅     | ✅       |
+| SSO Mapping                         | Create/Delete/Update SSO          | ✅     | ✅       |
+| LDAP Mapping                        | List LDAP                         | ✅     | ✅       |
+| LDAP Mapping                        | Add/Delete/Update LDAP            | ✅     | ✅       |
+| PAT                                 | View PAT                          | ✅     | ✅       |
+| PAT                                 | Generate PAT                      | ✅     | ✅       |
+| Runner Access Token                 | List Runner Access Token          | ✅     | ⛔       |
+| Runner Access Token                 | Create/Delete Runner Access Token | ✅     | ⛔       |
+| Report                              | View Organziation Report          | ✅     | ✅       |
 
 ### Billing Management Permissions
 
