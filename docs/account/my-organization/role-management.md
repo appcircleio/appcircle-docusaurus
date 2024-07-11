@@ -19,16 +19,48 @@ tags:
   ]
 ---
 
-### Build Profile Permissions
+# Role Management
 
-Permissions can be customized for build profiles.
+With Appcircle's [**Advanced Role Management**](/account/my-organization#advanced-role-management) structure, you can detail the roles of the members you add to your organisation separately for each module and restrict the authority of the members. Appcircle offers different role types for each module. A short description of each role is given in the table below. In addition, you can find detailed role management information for each module under module titles.
 
-| Permission | Explanation                                                                                            |
-| ---------- | ------------------------------------------------------------------------------------------------------ |
-| Manager    | The user can view and download logs, change configuration, workflows, and triggers and start building. |
-| Operator   | The user can only start the build, view logs, and download logs.                                       |
-| Viewer     | The user can only view and download logs.                                                              |
-| None       | The user cannot reach any details about build profiles.                                                |
+- **Owner**: The user is authorised unlimited access to all modules.
+- **Manager**: The user becomes the administrator of the relevant module and no restrictions are made.
+- **Operator**: The user is the person who manages the operations of the relevant module and certain restrictions apply.
+- **Ext. Operator**: The user has very limited authorisation in the relevant module. It is usually for third party employees from outside the company.
+- **Viewer**: User only has view authorisation in the relevant module, cannot take any action.
+
+:::caution Role Types
+
+Some role types are not used in some modules because they are not required in that module. For this reason, roles may vary for each module.
+
+:::
+
+### Build Permissions
+
+The following table details the roles and restrictions for the [**Build**](/build) module. Please refer to the modules related information and coution notes. 
+
+| Build Sub-modules   | Scopes                                | Manager | Operator | Viewer |
+|---------------------|---------------------------------------|---------|----------|--------|
+| Build Profile       | List Build Profiles                   | ✅       | ✅        | ✅      |
+| Build Profile       | Add/Delete/Update Build Profiles      | ✅       | ⛔        | ⛔      |
+| Repository          | Repository Connection/Disconnection   | ✅       | ⛔        | ⛔      |
+| Commit              | List Commit                           | ✅       | ✅        | ✅      |
+| Configuration       | View Build Configuration              | ✅       | ✅        | ✅      |
+| Configuration       | Add/Delete/Update Build Configuration | ✅       | ⛔        | ⛔      |
+| Workflow            | View Workflows                        | ✅       | ✅        | ✅      |
+| Workflow            | Add/Delete/Update Workflows           | ✅       | ⛔        | ⛔      |
+| Build Actions       | Start Build                           | ✅       | ✅        | ⛔      |
+| Build Actions       | Delete Single Build in Build List     | ✅       | ⛔        | ⛔      |
+| Build Actions       | Download Artifacts                    | ✅       | ✅        | ✅      |
+| Build Actions       | Distribution Binary                   | ✅       | ✅        | ⛔      |
+| Connection          | List Connection                       | ✅       | ✅        | ✅      |
+| Connection          | Add/Delete/Update Connections         | ✅       | ⛔        | ⛔      |
+| Runner              | List Runner                           | ✅       | ✅        | ✅      |
+| Runner              | Add/Delete/Update Runner              | ⛔       | ⛔        | ⛔      |
+| Runner Access Token | List Runner Access Token              | ⛔       | ⛔        | ⛔      |
+| Runner Access Token | Create/Delete Runner Access Token     | ⛔       | ⛔        | ⛔      |
+| Report              | List Build Reports                    | ✅       | ✅        | ✅      |
+
 
 :::info
 
@@ -48,21 +80,15 @@ Manager, Operator and Viewer Build Profile permissions can view self-hosted runn
 
 :::
 
-:::caution
 
-Only Manager permission can view the configurations, workflows, and triggers.
+### Environment Variables Permissions
 
-:::
+The following table details the roles and restrictions for the [**Environment Variables**](/environment-variables). Please refer to the modules related information and coution notes. 
 
-### Environment Variable Permissions
-
-Permissions can be customized for environment variables.
-
-| Permission | Explanation                                                                                                                     |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can see variable groups, including their details, add new variables, and delete existing variable groups or variables. |
-| Viewer     | The user can only see variable groups and their details.                                                                        |
-| None       | The user cannot reach any details about environment variables.                                                                  |
+| Environment Variable | Scope                                 | Manager | Viewer |
+|----------------------|---------------------------------------|---------|--------|
+| Environment Variable | List Env Group                        | ✅       | ✅      |
+| Environment Variable | Add/Delete/Update Env Variable Groups | ✅       | ⛔      |
 
 :::info
 
@@ -70,15 +96,24 @@ Manager, Operator and Viewer Environment Variable permissions can use variable g
 
 :::
 
-### Signing Identity Management Permissions
+### Signing and Identity Permissions
 
-Permissions can be customized for signing identity management.
+The following table details the roles and restrictions for the [**Signing and Identity**](/signing-identities) module. Please refer to the modules related information and coution notes. 
 
-| Permission | Explanation                                                                                                |
-| ---------- | ---------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can see, delete, and add new certificates, provisioning profiles, keystores, and signing history. |
-| Viewer     | The user can only see certificates, provisioning profiles, keystores, and signing history.                 |
-| None       | The user cannot reach any details about signing identity.                                                  |
+| Signing Identity Sub-modules    | Scopes                               | Owner | Manager | Viewer |
+|---------------------------------|--------------------------------------|-------|---------|--------|
+| Apple Cerficate                 | List Apple Certificates              | ✅     | ✅       | ✅      |
+| Apple Cerficate                 | Add/Delete/Update Apple Certificates | ✅     | ✅       | ⛔      |
+| Apple Cerficate Signing Request | List CSR                             | ✅     | ✅       | ✅      |
+| Apple Cerficate Signing Request | Add/Delete CSR                       | ✅     | ✅       | ⛔      |
+| Apple Cerficate Signing Request | Convert CSR to .p12                  | ✅     | ✅       | ⛔      |
+| Apple Identifiers               | List Apple Identifiers               | ✅     | ✅       | ✅      |
+| Apple Identifiers               | Add/Delete/Update Apple Identifiers  | ✅     | ✅       | ⛔      |
+| Apple Profile                   | List Apple Profiles                  | ✅     | ✅       | ✅      |
+| Apple Profile                   | Add/Delete/Update Apple Profiles     | ✅     | ✅       | ⛔      |
+| Keystore                        | List Keystores                       | ✅     | ✅       | ✅      |
+| Keystore                        | Add/Delete/Update Keystores          | ✅     | ✅       | ⛔      |
+| Report                          | List Signing Reports                 | ✅     | ✅       | ✅      |
 
 :::info
 
@@ -86,20 +121,32 @@ Manager, Operator and Viewer Signing Identity Management permissions can use sig
 
 :::
 
-### Distribution Profile Permissions
+### Testing Distribution Permissions
 
-Permissions can be customized for distribution profiles.
+The following table details the roles and restrictions for the [**Testing Distribution**](/distribute) module. Please refer to the modules related information and coution notes. 
 
-| Permission | Explanation                                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can see, create, and delete new distribution profiles and Apple Devices and customize their settings.                          |
-| Operator   | The user can only send to testing groups and view distribution profiles and Apple Devices, App Versions Report, and App Sharing Report. |
-| Viewer     | The user can only view distribution profiles and Apple Devices, App Versions Report, and App Sharing Report.                            |
-| None       | The user cannot reach any details about distribution profiles, Apple Devices, App Versions Report, and App Sharing Report.              |
+| Testing Distribution | Scopes                                 | Manager | Operator | Ext. Operator | Viewer |
+|----------------------|----------------------------------------|---------|----------|---------------|--------|
+| Distribution Profile | List Distribution Profiles             | ✅       | ✅        | ✅             | ✅      |
+| Distribution Profile | Add/Delete/Update Distribution Profile | ✅       | ⛔        | ⛔             | ⛔      |
+| Distribution Profile | Setting Update Distribution Profile    | ✅       | ⛔        | ⛔             | ⛔      |
+| App Version          | Add/Delete/Update App Version          | ✅       | ✅        | ✅             | ⛔      |
+| App Version Actions  | Send to Testers                        | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Send to Enterprise App Store           | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Send to Publish                        | ✅       | ✅        | ⛔             | ⛔      |
+| Apple Device         | List Apple Device                      | ✅       | ✅        | ⛔             | ✅      |
+| Apple Device         | Add/Delete Apple Device                | ✅       | ⛔        | ⛔             | ⛔      |
+| Apple Device         | Register Apple Device                  | ✅       | ⛔        | ⛔             | ⛔      |
+| Apple Device         | Adding New Device to Provision         | ✅       | ⛔        | ⛔             | ⛔      |
+| Apple Device         | Sync from Apple Developer              | ✅       | ✅        | ⛔             | ⛔      |
+| Report               | List Reports App Version               | ✅       | ✅        | ⛔             | ✅      |
+| Report               | List Reports App Sharing               | ✅       | ✅        | ⛔             | ✅      |
+
+
 
 :::info
 
-Manager or Operator Distribution Profile permission can send to enterprise app store if user has Manager, Uploader or Operator Enterprise App Store permission.
+Manager or Operator Distribution Profile permission can send to enterprise app store if user has Manager, Operator or Ext. Operator Enterprise App Store permission.
 
 :::
 
@@ -117,57 +164,83 @@ Manager or Operator Distribution Profile permission can resign binary if user ha
 
 ### Testing Group Permissions
 
-Permissions can be customized for testing groups.
+The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-management/testing-groups). Please refer to the modules related information and coution notes. 
 
-| Permission | Explanation                                                                                                   |
-| ---------- | ------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can see, create, and delete testing groups, and also add or delete new test users from these groups. |
-| Viewer     | The user can only view testing groups and test users.                                                         |
-| None       | The user cannot reach any details about the testing group.                                                    |
 
-### Store Submit Module Permissions
+| Testing Groups | Scopes                          | Manager | Operator | Operator | Viewer |
+|----------------|---------------------------------|---------|----------|----------|--------|
+| Testing Groups | List Testing Groups             | ✅       | ✅        | ⛔        | ✅      |
+| Testing Groups | Add/Delete/Update Testing Group | ✅       | ⛔        | ⛔        | ⛔      |
 
-Upload apps to Google Play, Huawei, and App Store.
-
-| Permission      | Explanation                                                                                |
-| --------------- | ------------------------------------------------------------------------------------------ |
-| Manager Android | The user can upload apps to Google Play and Huawei AppGallery.                             |
-| Manager iOS     | The user can upload apps only to the App Store.                                            |
-| Viewer          | The user can only view applications and their details belonging to their own organization. |
-
-:::info
-
-Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
-
-:::
-
-:::info
-
-If the user does not have any of these permissions, they will not have access to any details related to the store submit module.
-
-:::
 
 ### Publish Module iOS Permissions
 
-Publish apps to App Store.
+The following table details the roles and restrictions for the [**Publish**](/publish-module) module for iOS. Please refer to the modules related information and coution notes.
 
-| Permission | Explanation                                                                                                                                                   |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can make changes to the publish flow, publish settings, start publish to the App Store, add or delete a new app version, and view and download logs. |
-| Operator   | The user can start publishing to the App Store and download artifacts and view publish settings, publish flow, and logs.                                      |
-| Viewer     | The user can only download artifacts and view the iOS application list and logs for the application.                                                          |
-| None       | The user cannot reach any details about the iOS Publish.                                                                                                      |
+| Publish                       | Scopes                                    | Manager | Operator | Ext. Operator | Viewer |
+|-------------------------------|-------------------------------------------|---------|----------|---------------|--------|
+| Publish Profiles              | List Publish Profiles                     | ✅       | ✅        | ✅             | ✅      |
+| Publish Profiles              | Add/Delete/Update Publish Profile         | ✅       | ⛔        | ⛔             | ⛔      |
+| App Version                   | List App Versions                         | ✅       | ✅        | ✅             | ✅      |
+| App Version                   | Add/Delete App Version                    | ✅       | ✅        | ✅             | ⛔      |
+| Publish Profile Settings      | View/Update Profile Settings              | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | List Publish Flow                         | ✅       | ✅        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | Download/Upload Publish Flow              | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | Add/Delete Publish Flow Step              | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Steps - Update | Update Publish Flow Step Details          | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Process               | List Publish Flow Details                 | ✅       | ✅        | ⛔             | ✅      |
+| Publish Process               | Start/Restart/Stop Flow                   | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Process               | Start Single Step                         | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Process               | View Custom UI Details                    | ✅       | ✅        | ⛔             | ✅      |
+| Publish Process               | Update Custom UI details                  | ✅       | ✅        | ⛔             | ⛔      |
+| App Store Connect Info        | List/Update App Store Connect Information | ✅       | ⛔        | ⛔             | ⛔      |
+| Check Release Status          | Get Relese Status                         | ✅       | ✅        | ✅             | ✅      |
+| Metadata                      | View Metadata Details                     | ✅       | ✅        | ✅             | ✅      |
+| Metadata                      | Update Metadata Details                   | ✅       | ✅        | ✅             | ⛔      |
+| Mark as RC                    | Marking RC a version                      | ✅       | ✅        | ⛔             | ⛔      |
+| Resing Binary                 | Resigning Binary                          | ✅       | ✅        | ⛔             | ⛔      |
+| Release Note                  | Update Release Note                       | ✅       | ✅        | ✅             | ⛔      |
+| History                       | List History                              | ✅       | ✅        | ✅             | ✅      |
+| History - Get/Download Logs   | Download History Logs                     | ✅       | ✅        | ⛔             | ✅      |
+| Download Binary               | Download Binary                           | ✅       | ✅        | ⛔             | ✅      |
+| Environment Variables         | List Environment Variables                | ✅       | ✅        | ⛔             | ✅      |
+| Environment Variables         | Add/Delete/Update Env Variables           | ✅       | ⛔        | ⛔             | ⛔      |
+| Activity Logs                 | List Activty Log Details                  | ✅       | ✅        | ⛔             | ✅      |
+
 
 ### Publish Module Android Permissions
 
-Publish apps to Google Play, Huawei.
+The following table details the roles and restrictions for the [**Publish**](/publish-module) module for Android. Please refer to the modules related information and coution notes.
 
-| Permission | Explanation                                                                                                                                                                           |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can make changes to the publish flow, publish settings, start publish to the Google Play And Huawei AppGallery, add or delete a new app version, and view and download logs. |
-| Operator   | The user can start publishing to the Google Play and Huawei AppGallery and download artifacts and view publish settings, publish flow, and logs.                                      |
-| Viewer     | The user can only download artifacts and view the Android application list and logs for the application.                                                                              |
-| None       | The user cannot reach any details about the Android Publish.                                                                                                                          |
+| Publish                       | Scopes                                    | Manager | Operator | Ext. Operator | Viewer |
+|-------------------------------|-------------------------------------------|---------|----------|---------------|--------|
+| Publish Profiles              | List Publish Profiles                     | ✅       | ✅        | ✅             | ✅      |
+| Publish Profiles              | Add/Delete/Update Publish Profile         | ✅       | ⛔        | ⛔             | ⛔      |
+| App Version                   | List App Versions                         | ✅       | ✅        | ✅             | ✅      |
+| App Version                   | Add/Delete App Version                    | ✅       | ✅        | ✅             | ⛔      |
+| Publish Profile Settings      | View/Update Profile Settings              | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | List Publish Flow                         | ✅       | ✅        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | Download/Upload Publish Flow              | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Flow Steps     | Add/Delete Publish Flow Step              | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Steps - Update | Update Publish Flow Step Details          | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Process               | List Publish Flow Details                 | ✅       | ✅        | ⛔             | ✅      |
+| Publish Process               | Start/Restart/Stop Flow                   | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Process               | Start Single Step                         | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Process               | View Custom UI Details                    | ✅       | ✅        | ⛔             | ✅      |
+| Publish Process               | Update Custom UI details                  | ✅       | ✅        | ⛔             | ⛔      |
+| App Store Connect Info        | List/Update App Store Connect Information | ✅       | ⛔        | ⛔             | ⛔      |
+| Check Release Status          | Get Relese Status                         | ✅       | ✅        | ✅             | ✅      |
+| Metadata                      | View Metadata Details                     | ✅       | ✅        | ✅             | ✅      |
+| Metadata                      | Update Metadata Details                   | ✅       | ✅        | ✅             | ⛔      |
+| Mark as RC                    | Marking RC a version                      | ✅       | ✅        | ⛔             | ⛔      |
+| Resing Binary                 | Resigning Binary                          | ✅       | ✅        | ⛔             | ⛔      |
+| Release Note                  | Update Release Note                       | ✅       | ✅        | ✅             | ⛔      |
+| History                       | List History                              | ✅       | ✅        | ✅             | ✅      |
+| History - Get/Download Logs   | Download History Logs                     | ✅       | ✅        | ⛔             | ✅      |
+| Download Binary               | Download Binary                           | ✅       | ✅        | ⛔             | ✅      |
+| Environment Variables         | List Environment Variables                | ✅       | ✅        | ⛔             | ✅      |
+| Environment Variables         | Add/Delete/Update Env Variables           | ✅       | ⛔        | ⛔             | ⛔      |
+| Activity Logs                 | List Activty Log Details                  | ✅       | ✅        | ⛔             | ✅      |
 
 :::info
 
@@ -179,7 +252,7 @@ Google Play and Huawei AppGallery permissions are managed through a single rule.
 
 **Publish Variables** permissions in the Publish module are dependent on the iOS or Android permissions that you configure for the Publish module.
 
-For instance, when you give "viewer" permission to a user for iOS or Android, this permission will also make the user "viewer" for the **Publish Variables**. When you give "manager" permission to a user for iOS or Android, this permission also makes the user "manager" for the **Publish Variables**.
+For instance, when you give "**Viewer**" permission to a user for iOS or Android, this permission will also make the user "**Viewer**" for the **Publish Variables**. When you give "**Manager**" permission to a user for iOS or Android, this permission also makes the user "**Manager**" for the **Publish Variables**.
 
 :::
 
@@ -187,13 +260,21 @@ For instance, when you give "viewer" permission to a user for iOS or Android, th
 
 Manage and Upload Apps to Enterprise App Store.
 
-| Permission | Explanation                                                                                                                                                                                                     |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can do anything Uploader can do and modify Enterprise Settings including create/update/delete store authentication (LDAP, SSO and Static Login), customize the store and modify store domain settings. |
-| Uploader   | The user can only create/update/delete enterprise app store profiles, create/update/delete app versions, publish/notify to beta/live stores, download artifacts and view the profiles.                          |
-| Operator   | The user can only publish/notify to beta/live stores, download artifacts and view the profiles.                                                                                                                 |
-| Viewer     | The user can only view the profiles.                                                                                                                                                                            |
-| None       | The user cannot reach any details about the Enterprise App Store.                                                                                                                                               |
+| Ent. App Sub Modules | Ent. App Store Scope                   | Manager | Operator | Ext. Operator | Viewer |
+|----------------------|----------------------------------------|---------|----------|---------------|--------|
+| Store Profile        | List Profiles                          | ✅       | ✅        | ✅             | ✅      |
+| Store Profile        | Add/Delete/Update Profiles             | ✅       | ✅        | ⛔             | ⛔      |
+| App Version          | List App Versions                      | ✅       | ✅        | ✅             | ✅      |
+| App Version          | Add/Delete/Update App Versions         | ✅       | ✅        | ✅             | ⛔      |
+| App Version          | Download App Versions                  | ✅       | ✅        | ✅             | ⛔      |
+| App Version Actions  | Publish App Version Live/Beta Channels | ✅       | ✅        | ⛔             | ⛔      |
+| Settings             | View Store Domain                      | ✅       | ✅        | ⛔             | ✅      |
+| Settings             | Update Store Domain                    | ✅       | ⛔        | ⛔             | ⛔      |
+| Settings             | View Store Authantication Settings     | ✅       | ✅        | ⛔             | ✅      |
+| Settings             | Update Store Authantication Settings   | ✅       | ⛔        | ⛔             | ⛔      |
+| Settings             | View Customization Settings            | ✅       | ✅        | ⛔             | ✅      |
+| Settings             | Update Store Customization             | ✅       | ⛔        | ⛔             | ⛔      |
+| Report               | List Reports                           | ✅       | ⛔        | ⛔             | ⛔      |
 
 ### Organization Management Permissions
 
@@ -201,28 +282,40 @@ The user can create an organization or sub-organization within license limits, a
 
 Also, the user can view self-hosted runners and change configuration.
 
-| Permission | Explanation                                                                                                         |
-| ---------- | ------------------------------------------------------------------------------------------------------------------- |
-| Manager    | The user can manage all member permissions and other organization properties mentioned above within license limits. |
+| Organization Management Sub-modules | Scopes                   | Manager |
+|-------------------------------------|--------------------------|---------|
+| Organization and Team Management    | Create Sub-Organization  | ✅       |
+| Organization and Team Management    | Update Organization      | ✅       |
+| Organization and Team Management    | List User                | ✅       |
+| Organization and Team Management    | Add/Delete/Update Member | ✅       |
+| Organization and Team Management    | Assign Role for User     | ✅       |
+| SSO Mapping                         | List SSO                 | ✅       |
+| SSO Mapping                         | Create/Delete/Update SSO | ✅       |
+| LDAP Mapping                        | List LDAP                | ✅       |
+| LDAP Mapping                        | Add/Delete/Update LDAP   | ✅       |
+| PAT                                 | View PAT                 | ✅       |
+| PAT                                 | Generate PAT             | ✅       |
+| Runner Access Token                 | View RAT                 | ✅       |
+| Runner Access Token                 | Generate RAT             | ✅       |
+| Report                              | View Organziation Report | ✅       |
 
 ### Billing Management Permissions
 
 Manage the subscription, payment details, and invoices.
 
-| Permission | Explanation                                                       |
-| ---------- | ----------------------------------------------------------------- |
-| Manager    | The user can manage subscriptions, payment details, and invoices. |
+The following table details the roles and restrictions for the [**Billing**] details. Please refer to the modules related information and coution notes.
 
-### Third-Party Connection Management Permissions
+| Billing Sub-modules | Scopes                         | Owner | Manager |
+|---------------------|--------------------------------|-------|---------|
+| Subscription        | List Subscription              | ✅     | ✅       |
+| Subscription        | Add/Delete/Update Subscription | ✅     | ✅       |
+| Card                | List/Update Card               | ✅     | ✅       |
 
-Connect to or disconnect from third-party service providers such as Slack, Microsoft Teams, Google Play Developer API Keys, App Store Connect API Keys, Huawei AppGallery Developer API Keys, etc.
+### Connection Managements
 
-| Permission | Explanation                                                                      |
-| ---------- | -------------------------------------------------------------------------------- |
-| Manager    | The user can manage third-party service provider connections and disconnections. |
+Connect or disconnect from third-party service providers such as notification tools [**Slack**](/account/my-organization/notifications-and-communication/slack/slack-notifications), [**Microsoft Teams**](/account/my-organization/notifications-and-communication/teams-notifications), or store connections [**Google Play Developer API Keys**](/account/my-organization/api-integrations/adding-google-play-service-account), [**Microsoft Intune API Keys**](/account/my-organization/api-integrations/adding-microsoft-intune-api-key), [**App Store Connect API Keys**](/account/my-organization/api-integrations/adding-an-app-store-connect-api-key), [**Huawei AppGallery Developer API Keys**](/account/my-organization/api-integrations/adding-huawei-api-key), etc.
 
-:::caution
-
-The permissions of the Store Submit module affect the visibility of online stores connections.
-
-:::
+| Connections Management | Scopes                        | Owner | Manager |
+|------------------------|-------------------------------|-------|---------|
+| Connections            | View Connections              | ✅     | ✅       |
+| Connections            | Add/Delete/Update Connections | ✅     | ✅       |
