@@ -390,7 +390,7 @@ You will create all the configuration files on the Appcircle server and then mov
 To create the Appcircle DMZ server configuration, you can follow the steps below.
 
 :::caution
-If you modify the global.yaml configuration file for the Appcircle server, you must also update the configuration on the Appcircle DMZ server. Otherwise, Appcircle services may exhibit unusual behavior or malfunction.
+If you modify the `global.yaml` configuration file for the Appcircle server, you **must** also update the configuration on the Appcircle DMZ server. Otherwise, Appcircle services may exhibit unusual behavior or malfunction.
 :::
 
 - Login to the Appcircle server with SSH.
