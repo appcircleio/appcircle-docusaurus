@@ -366,7 +366,7 @@ According to the sample outputs above, the needed domains that clients accessing
 
 Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication and API domains.
 
-These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration. 
+These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration.
 
 According to the sample outputs above, the needed domains that Appcircle DMZ server should know are as follows:
 
