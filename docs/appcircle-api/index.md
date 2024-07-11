@@ -5,9 +5,17 @@ tags: [appcircle cli, appcircle, cli, command line interface]
 sidebar_position: 1
 ---
 
-# Introduction to Appcircle CLI and API
+# Introduction to Appcircle API and CLI
 
-The Appcircle CLI and API are essential tools for accessing and managing the Appcircle platform's features, facilitating automation and integration in your mobile app development workflows.
+The Appcircle API and CLI are essential tools for accessing and managing the Appcircle platform's features, facilitating automation and integration in your mobile app development workflows.
+
+## Appcircle API
+
+The Appcircle API offers programmatic access to all features available in the Appcircle platform, allowing developers to automate workflows, integrate with other tools, and customize their development processes extensively.
+
+Access the full API documentation and explore the endpoints available for your integration needs at:
+
+https://api.appcircle.io/openapi/index.html
 
 ## Appcircle CLI
 
@@ -30,11 +38,3 @@ https://www.npmjs.com/package/@appcircle/cli
 You can find more information and the source code of the CLI on GitHub as follows:
 
 https://github.com/appcircleio/appcircle-cli
-
-## Appcircle API
-
-The Appcircle API offers programmatic access to all features available in the Appcircle platform, allowing developers to automate workflows, integrate with other tools, and customize their development processes extensively.
-
-Access the full API documentation and explore the endpoints available for your integration needs at:
-
-https://api.appcircle.io/openapi/index.html
