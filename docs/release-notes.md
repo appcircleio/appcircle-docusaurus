@@ -24,7 +24,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### :muscle: Improvements
 
-- The [Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 3](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively.
+- The [Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 3](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
 - To ensure the validity of the Microsoft Intune remote app connection, the binary will be unmarked as a Release Candidate after switching from other credentials to Microsoft Intune. Additionally, .aab format binaries will display a warning message when using Microsoft Intune credentials, as they are not supported. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Help documentation for [Update Metadata on Microsoft Intune](/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune) feature has been updated. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Microsoft Intune metadata and App Info updates are now included in the Activity Report. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
