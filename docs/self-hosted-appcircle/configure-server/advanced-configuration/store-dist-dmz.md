@@ -500,9 +500,11 @@ If you need to stop the Appcircle DMZ server in a case, you can run the the comm
 
 ## Upgrading Appcircle DMZ and Appcircle server
 
-If there is a new Appcircle server version available and you want to update.
+If there is a new Appcircle server version available and you want to update, you can follow the steps below to update the Appcircle server and the Appcircle DMZ server.
 
-You can follow the steps below to update the Appcircle server and the Appcircle DMZ server.
+:::caution
+When upgrading an Appcircle server, it is critical to also update the Appcircle DMZ server. If you don't, Enterprise App Store and Testing Distribution may not function as expected.
+:::
 
 <DowntimeCaution />
 
