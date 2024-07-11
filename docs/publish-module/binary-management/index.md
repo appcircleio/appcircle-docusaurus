@@ -68,3 +68,21 @@ Ensure you select store credentials in the [Publish settings](/publish-module/pu
 :::
 
 This streamlined approach ensures that you are always informed of your application's status, simplifying management and enhancing your deployment strategy directly from the Appcircle dashboard.
+
+### Filter By Status
+
+Within the Publish module where your Publish profiles are listed, you can use the filter option to display specific Publish profiles according to their latest store status.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter1.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter2.png' />
+
+:::tip
+
+The iOS Publish filter options will only display the available statuses from the existing Publish profiles in your profile list.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter3.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter4.png' />
