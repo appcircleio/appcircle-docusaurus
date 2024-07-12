@@ -3,16 +3,16 @@ import React, { useEffect } from "react";
 const HighlightFragment = () => {
   useEffect(() => {
     const applyHighlight = () => {
+      console.log("Applying highlight");
       const url = window.location.href;
       const fragmentIndex = url.indexOf(":~:");
-
-      console.log("url", url);
 
       if (fragmentIndex > -1) {
         const fragment = url.substring(fragmentIndex + 3);
         const decodedFragment = decodeURIComponent(fragment);
 
         const textToHighlight = decodedFragment.split("=")[1];
+        console.log("Text to highlight:", textToHighlight);
         if (textToHighlight) {
           const range = document.createRange();
           const textNodes = document.createTreeWalker(
@@ -38,17 +38,17 @@ const HighlightFragment = () => {
       }
     };
 
-    const observer = new MutationObserver(() => {
-      setTimeout(applyHighlight, 100); // Ensure all mutations are handled
-    });
+    const handleLoad = () => {
+      console.log("Page loaded");
+      setTimeout(applyHighlight, 1000); // Ensure delay to account for all scripts
+    };
 
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    window.addEventListener("load", applyHighlight);
+    window.addEventListener("load", handleLoad);
+    window.addEventListener("DOMContentLoaded", handleLoad);
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener("load", applyHighlight);
+      window.removeEventListener("load", handleLoad);
+      window.removeEventListener("DOMContentLoaded", handleLoad);
     };
   }, []);
 
