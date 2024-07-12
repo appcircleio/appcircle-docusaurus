@@ -262,12 +262,6 @@ const config = {
     "docusaurus-plugin-sass",
     "plugin-image-zoom",
   ],
-  scripts: [
-    {
-      src: "/js/applyHighlight.js",
-      async: true,
-    },
-  ],
 };
 
 module.exports = config;
