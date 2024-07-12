@@ -20,6 +20,57 @@ const remarkExternalUrlRef = () => {
       parent.children.splice(index, 1, ...newNodes);
     }
 
+    // Inject a script to reapply highlight after the content has been processed
+    const highlightScriptNode = {
+      type: "mdxJsxFlowElement",
+      name: "script",
+      attributes: [
+        { type: "mdxJsxAttribute", name: "type", value: "text/javascript" },
+        {
+          type: "mdxJsxAttribute",
+          name: "dangerouslySetInnerHTML",
+          value: {
+            __html: `
+              setTimeout(() => {
+                const url = window.location.href;
+                const fragmentIndex = url.indexOf(':~:');
+
+                if (fragmentIndex > -1) {
+                  const fragment = url.substring(fragmentIndex + 3);
+                  const decodedFragment = decodeURIComponent(fragment);
+
+                  const textToHighlight = decodedFragment.split('=')[1];
+                  if (textToHighlight) {
+                    const range = document.createRange();
+                    const textNodes = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+                    let node;
+                    while (node = textNodes.nextNode()) {
+                      const nodeText = node.nodeValue;
+                      const nodeIndex = nodeText.indexOf(textToHighlight);
+                      if (nodeIndex !== -1) {
+                        range.setStart(node, nodeIndex);
+                        range.setEnd(node, nodeIndex + textToHighlight.length);
+                        const highlight = document.createElement("span");
+                        highlight.style.backgroundColor = "yellow";
+                        range.surroundContents(highlight);
+                        break;
+                      }
+                    }
+                  }
+                }
+              }, 2000); // Adjust the delay as needed
+            `,
+          },
+        },
+      ],
+      children: [],
+      data: {
+        _mdxExplicitJsx: true,
+      },
+    };
+
+    tree.children.push(highlightScriptNode);
+
     return tree;
   };
 };
