@@ -7,7 +7,7 @@ const remarkExternalUrlRef = () => {
     const nodesToTransform = [];
 
     visit(tree, "text", (node, index, parent) => {
-      if (!parent || parent.type !== "paragraph") return; // Ensure parent is a paragraph
+      if (!parent || parent.type !== "paragraph") return;
 
       const words = node.value.split(/(\s+)/).filter(Boolean); // Preserve spaces as separate nodes
       words.forEach((word, wordIndex) => {
@@ -18,20 +18,25 @@ const remarkExternalUrlRef = () => {
     });
 
     for (let { parent, node, index, word, wordIndex } of nodesToTransform) {
-      const newNodes = await transformNode(word);
       const surroundingText = node.value.split(word);
+      const newNodes = await transformNode(word);
+
+      const beforeTextNode = {
+        type: "text",
+        value: surroundingText[0],
+      };
+
+      const afterTextNode = {
+        type: "text",
+        value: surroundingText[1],
+      };
+
       parent.children.splice(
         index,
         1,
-        {
-          type: "text",
-          value: surroundingText[0],
-        },
+        beforeTextNode,
         ...newNodes,
-        {
-          type: "text",
-          value: surroundingText[1],
-        }
+        afterTextNode
       );
     }
 
@@ -62,9 +67,7 @@ const transformNode = async (url) => {
         },
       ],
       children: [{ type: "text", value: url }],
-      data: {
-        _mdxExplicitJsx: true,
-      },
+      data: { _mdxExplicitJsx: true },
     },
   ];
 };
