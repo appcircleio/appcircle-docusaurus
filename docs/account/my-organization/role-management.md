@@ -323,12 +323,15 @@ The following table details the roles and restrictions for the **Billing** detai
 
 ### Connection Managements
 
-Connect or disconnect from third-party service providers such as notification tools 
+Connect or disconnect from third-party service providers such as notification tools or store connections
+
+#### Notification Tools
 
 - [**Slack**](/account/my-organization/notifications-and-communication/slack/slack-notifications) 
-- [**Microsoft Teams**](/account/my-organization/notifications-and-communication/teams-notifications), 
-
-or store connections 
+- [**Microsoft Teams**](/account/my-organization/notifications-and-communication/teams-notifications)
+- [**Email Notifications**](/account/my-organization/notifications-and-communication/email-connection) 
+ 
+#### Store Connections
 
 - [**App Store Connect API Keys**](/account/my-organization/api-integrations/adding-an-app-store-connect-api-key) 
 - [**Google Play Developer API Keys**](/account/my-organization/api-integrations/adding-google-play-service-account) 
