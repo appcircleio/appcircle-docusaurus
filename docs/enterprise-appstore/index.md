@@ -3,8 +3,10 @@ title: Enterprise App Store
 description: Distribute your in-house applications to your users with the Enterprise App Store in Appcircle
 tags: [enterprise app store, in-house distribution, enterprise distribution, faq]
 ---
+import ReapplyHighlight from '/src/plugins/ReapplyHighlight';
 import ContentRef from '@site/src/components/ContentRef';
 
+<ReapplyHighlight />
 
 # Enterprise App Store
 

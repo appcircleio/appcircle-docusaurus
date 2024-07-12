@@ -26,20 +26,25 @@ const remarkExternalUrlRef = () => {
     });
 
     for (let { parent, child, index, word } of nodesToTransform) {
-      const newNodes = await transformNode(word, child.value);
       const surroundingText = child.value.split(word);
+      const newNodes = await transformNode(word);
+
+      const beforeTextNode = {
+        type: "text",
+        value: surroundingText[0],
+      };
+
+      const afterTextNode = {
+        type: "text",
+        value: surroundingText[1],
+      };
+
       parent.children.splice(
         index,
         1,
-        {
-          type: "text",
-          value: surroundingText[0],
-        },
+        beforeTextNode,
         ...newNodes,
-        {
-          type: "text",
-          value: surroundingText[1],
-        }
+        afterTextNode
       );
     }
 
@@ -47,7 +52,7 @@ const remarkExternalUrlRef = () => {
   };
 };
 
-const transformNode = async (url, originalText) => {
+const transformNode = async (url) => {
   const data = await fetchData(url);
   return [
     {
@@ -70,9 +75,7 @@ const transformNode = async (url, originalText) => {
         },
       ],
       children: [{ type: "text", value: url }],
-      data: {
-        _mdxExplicitJsx: true,
-      },
+      data: { _mdxExplicitJsx: true },
     },
   ];
 };
