@@ -6,6 +6,8 @@ tags: [enterprise app store, in-house distribution, enterprise distribution, faq
 import ReapplyHighlight from '/src/plugins/ReapplyHighlight';
 import ContentRef from '@site/src/components/ContentRef';
 
+<ReapplyHighlight />
+
 # Enterprise App Store
 
 If you want to distribute your in-house applications to your users, you can use the **Enterprise App Store**.
