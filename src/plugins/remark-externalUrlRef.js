@@ -7,10 +7,17 @@ const remarkExternalUrlRef = () => {
     const textNodesToTransform = [];
 
     visit(tree, "text", (node, index, parent) => {
-      if (!parent) return; // Skip if no parent is found
+      if (!parent || !parent.type === "paragraph") return; // Ensure parent is a paragraph
 
-      const urls = node.value.split(/\s+/).filter((word) => isUrl(word));
-      if (urls.length > 0) {
+      // Split node value into words
+      const words = node.value.split(/\s+/);
+
+      // Filter URLs and non-URLs
+      const urls = words.filter((word) => isUrl(word));
+      const nonUrls = words.filter((word) => !isUrl(word));
+
+      // Skip transformation if the node contains non-URL words (to avoid disrupting text fragments)
+      if (urls.length > 0 && nonUrls.length === 0) {
         textNodesToTransform.push({ parent, index, urls });
       }
     });
