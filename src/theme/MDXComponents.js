@@ -9,11 +9,11 @@ import * as ModuleBadges from "@site/src/components/Badge/ModuleBadges";
 import HighlightFragment from "@site/src/components/HighlightFragment";
 
 export default {
-  ExternalUrlRef,
+  ...MDXComponents,
   Screenshot,
   NarrowImage,
   ContentRef,
+  ExternalUrlRef,
   HighlightFragment,
-  ...MDXComponents,
   ...ModuleBadges,
 };
