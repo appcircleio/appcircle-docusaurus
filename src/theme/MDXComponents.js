@@ -6,14 +6,12 @@ import NarrowImage from "@site/src/components/NarrowImage";
 import ContentRef from "@site/src/components/ContentRef";
 import ExternalUrlRef from "@site/src/components/ExternalUrlRef";
 import * as ModuleBadges from "@site/src/components/Badge/ModuleBadges";
-import HighlightFragment from "@site/src/components/HighlightFragment";
 
 export default {
-  ...MDXComponents,
+  ExternalUrlRef,
   Screenshot,
   NarrowImage,
   ContentRef,
-  ExternalUrlRef,
-  HighlightFragment,
+  ...MDXComponents,
   ...ModuleBadges,
 };
