@@ -21,6 +21,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### 🆕 New Features
 
 - The store status of Release Candidates in the Publish profiles can now be manually checked using [Check Release Status](/publish-module/publish-information/check-release-status) feature. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Publisher and contact information can now be viewed and updated under the Info tab within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Enterprise Store Profiles can now be prioritized in the profile listing by enabling the **"Show on Top"** feature within the Enterprise Store profile settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -31,8 +33,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - App Store Connect App Info & Metadata and Microsoft Intune Metadata are now available through [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=publish). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Multiple Bundle IDs can now be selected when importing from App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Apple Provisioning Profile file upload now supports multiple file upload. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- All publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- All Publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Publish profile header will no longer display the latest store status if the binary is unmarked as a release candidate. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When [inviting a new user to an organization](/account/my-organization#managing-the-team-under-an-organization), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Existing and newly invited organization members can now be searched by e-mail filter within the Team Management area. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A warning message will now be displayed when attempting to delete a provisioning profile that is already in use for a build profile. This allows the user to see the affected profiles and navigate to their configuration directly. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When a Provisioning Profile within the Apple Profiles has an mismatched Apple Certificate, a tool tip type warning message will be displayed for the user. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -40,6 +46,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - An issue causing indicator truncation while retrieving provisioning profiles in the Publish Module has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where, if no images are present in the metadata screenshot section for different localization settings, images from the primary language were not being displayed for guidance and explanatory purposes. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The errors that occurred on some types of projects during [Android versioning](https://docs.appcircle.io/versioning#understanding-android-versioning) were fixed, and several improvements were made to check for invalid versioning. <VersioningBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where build profile cards displayed some build results as text instead of an icon. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been where users with specific profiles encountered access problems when navigating between organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.19.0 - 2024-06-27 - Publish Apps to Microsoft Intune, App Store Connect Integration, Publish and Signing Identity Enhancements, Xcode 16.0 Beta 2, Bug Fixes and more
 
