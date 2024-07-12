@@ -23,7 +23,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The store status of Release Candidates in the Publish profiles can now be manually checked using [Check Release Status](/publish-module/publish-information/check-release-status) feature. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Publisher and contact information can now be viewed and updated under the Info tab within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Enterprise Store Profiles can now be prioritized in the listing order by enabling the **"Show on Top"** feature within the Enterprise Store profile settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The self-hosted Appcircle server now supports a new architecture in which [Enterprise App Store](/enterprise-appstore) and [Testing Distribution](/distribute) modules can be separated from the core and installed in a DMZ [(Demilitarized Zone)](https://en.wikipedia.org/wiki/DMZ_(computing)) in order to expose these external-facing modules to internet users in a secure way. <SelfHostedBadge/>
+- The self-hosted Appcircle server now supports a new architecture, allowing you to separate [Enterprise App Store](/enterprise-appstore) and [Testing Distribution](/distribute) modules from the core and install them in a DMZ [(Demilitarized Zone)](https://en.wikipedia.org/wiki/DMZ_(computing)). This securely exposes these external-facing modules to internet users. <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -36,9 +36,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - All Publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When [inviting a new user to an organization](/account/my-organization#managing-the-team-under-an-organization), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Existing and newly invited organization members can now be searched by e-mail filter within the Team Management area. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A warning message will now be displayed when attempting to delete a provisioning profile that is already in use for a build profile. This allows the user to see the affected profiles and navigate to their configuration directly. Alternatively, the provisioning profile can be force deleted by the user. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- When a Provisioning Profile within the Apple Profiles has a mismatched Apple Certificate, a tool tip type warning message will be displayed for the user. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Apple Provisioning Profile file upload now supports uploading multiple files at once. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When attempting to delete a provisioning profile that is already in use for a build profile, a warning message will now display. This allows you to see the affected profiles and navigate directly to their configuration. Alternatively, you can force delete the provisioning profile. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When a Provisioning Profile within the Apple Profiles section has a mismatched Apple Certificate, a tool tip warning message will display. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Upload multiple files at once with the new Apple Provisioning Profile file upload improvement. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Multiple Provisioning Profiles can now be force deleted by the users. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
@@ -49,8 +49,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The Publish profile header will no longer display the latest store status if the binary is unmarked as a release candidate. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The errors that occurred on some types of projects during [Android versioning](https://docs.appcircle.io/versioning#understanding-android-versioning) were fixed, and several improvements were made to check for invalid versioning. <VersioningBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where build profile cards displayed some build results as text instead of an icon. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue has been where users with specific profiles encountered access problems when navigating between organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Help documentation links have been fixed and improved within the Signing Identities module for [Apple Profiles](signing-identities/apple-profiles), [Apple Certificates](signing-identities/apple-certificates) and [Apple Identifiers](signing-identities/apple-identifiers). <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where users with specific profiles encountered access problems when navigating between organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improved and fixed help documentation links within the Signing Identities module for [Apple Profiles](signing-identities/apple-profiles), [Apple Certificates](signing-identities/apple-certificates) and [Apple Identifiers](signing-identities/apple-identifiers). <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.19.0 - 2024-06-27 - Publish Apps to Microsoft Intune, App Store Connect Integration, Publish and Signing Identity Enhancements, Xcode 16.0 Beta 2, Bug Fixes and more
 
