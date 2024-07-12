@@ -6,6 +6,8 @@ const HighlightFragment = () => {
       const url = window.location.href;
       const fragmentIndex = url.indexOf(":~:");
 
+      console.log("url", url);
+
       if (fragmentIndex > -1) {
         const fragment = url.substring(fragmentIndex + 3);
         const decodedFragment = decodeURIComponent(fragment);
@@ -37,13 +39,16 @@ const HighlightFragment = () => {
     };
 
     const observer = new MutationObserver(() => {
-      setTimeout(applyHighlight, 0);
+      setTimeout(applyHighlight, 100); // Ensure all mutations are handled
     });
 
     observer.observe(document.body, { childList: true, subtree: true });
 
+    window.addEventListener("load", applyHighlight);
+
     return () => {
       observer.disconnect();
+      window.removeEventListener("load", applyHighlight);
     };
   }, []);
 
