@@ -6,11 +6,9 @@ const remarkExternalUrlRef = () => {
   return async (tree) => {
     const nodesToTransform = [];
 
-    // Visit all text nodes in the tree
     visit(tree, "text", (node, index, parent) => {
       if (!parent || parent.type !== "paragraph") return; // Ensure parent is a paragraph
 
-      // Check if the node value contains a URL
       const words = node.value.split(/(\s+)/).filter(Boolean); // Preserve spaces as separate nodes
       words.forEach((word, wordIndex) => {
         if (isUrl(word)) {
@@ -21,7 +19,20 @@ const remarkExternalUrlRef = () => {
 
     for (let { parent, node, index, word, wordIndex } of nodesToTransform) {
       const newNodes = await transformNode(word);
-      parent.children.splice(index + wordIndex, 1, ...newNodes);
+      const surroundingText = node.value.split(word);
+      parent.children.splice(
+        index,
+        1,
+        {
+          type: "text",
+          value: surroundingText[0],
+        },
+        ...newNodes,
+        {
+          type: "text",
+          value: surroundingText[1],
+        }
+      );
     }
 
     return tree;
