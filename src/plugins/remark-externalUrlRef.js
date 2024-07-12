@@ -4,65 +4,58 @@ import isUrl from "is-url";
 
 const remarkExternalUrlRef = () => {
   return async (tree) => {
-    const textNodesToTransform = [];
+    const nodesToTransform = [];
 
     // Visit all text nodes in the tree
     visit(tree, "text", (node, index, parent) => {
       if (!parent || parent.type !== "paragraph") return; // Ensure parent is a paragraph
 
       // Check if the node value contains a URL
-      const urls = node.value.split(/\s+/).filter((word) => isUrl(word));
-      if (urls.length > 0) {
-        textNodesToTransform.push({ parent, index, node, urls });
-      }
+      const words = node.value.split(/(\s+)/).filter(Boolean); // Preserve spaces as separate nodes
+      words.forEach((word, wordIndex) => {
+        if (isUrl(word)) {
+          nodesToTransform.push({ parent, node, index, word, wordIndex });
+        }
+      });
     });
 
-    for (let { parent, index, node, urls } of textNodesToTransform) {
-      const newNodes = await transformNode(node.value, urls);
-      parent.children.splice(index, 1, ...newNodes);
+    for (let { parent, node, index, word, wordIndex } of nodesToTransform) {
+      const newNodes = await transformNode(word);
+      parent.children.splice(index + wordIndex, 1, ...newNodes);
     }
 
     return tree;
   };
 };
 
-const transformNode = async (text, urls) => {
-  const words = text.split(/\s+/);
-  const nodes = [];
-
-  for (const word of words) {
-    if (isUrl(word) && urls.includes(word)) {
-      const data = await fetchData(word);
-      nodes.push({
-        type: "mdxJsxFlowElement",
-        name: "ExternalUrlRef",
-        attributes: [
-          { type: "mdxJsxAttribute", name: "url", value: word },
-          { type: "mdxJsxAttribute", name: "title", value: data.title },
-          {
-            type: "mdxJsxAttribute",
-            name: "description",
-            value: data.description || "No description available.",
-          },
-          {
-            type: "mdxJsxAttribute",
-            name: "image",
-            value:
-              data.image ||
-              "https://cdn.appcircle.io/docs/assets/appcircle-logo.png",
-          },
-        ],
-        children: [{ type: "text", value: word }],
-        data: {
-          _mdxExplicitJsx: true,
+const transformNode = async (url) => {
+  const data = await fetchData(url);
+  return [
+    {
+      type: "mdxJsxFlowElement",
+      name: "ExternalUrlRef",
+      attributes: [
+        { type: "mdxJsxAttribute", name: "url", value: url },
+        { type: "mdxJsxAttribute", name: "title", value: data.title },
+        {
+          type: "mdxJsxAttribute",
+          name: "description",
+          value: data.description || "No description available.",
         },
-      });
-    } else {
-      nodes.push({ type: "text", value: word + " " });
-    }
-  }
-
-  return nodes;
+        {
+          type: "mdxJsxAttribute",
+          name: "image",
+          value:
+            data.image ||
+            "https://cdn.appcircle.io/docs/assets/appcircle-logo.png",
+        },
+      ],
+      children: [{ type: "text", value: url }],
+      data: {
+        _mdxExplicitJsx: true,
+      },
+    },
+  ];
 };
 
 const fetchData = async (url) => {
