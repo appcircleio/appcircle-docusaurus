@@ -1050,3 +1050,15 @@ html[data-theme="dark"] .module-badge-self-hosted {
   background: linear-gradient(145deg, #402800, #2b1a00);
   color: #ffd27f;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+
