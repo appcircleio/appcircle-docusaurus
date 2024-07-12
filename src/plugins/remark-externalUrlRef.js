@@ -18,9 +18,7 @@ const remarkExternalUrlRef = () => {
     });
 
     for (let { parent, index, node, urls } of textNodesToTransform) {
-      const newNodes = await Promise.all(
-        urls.map((url) => transformNode(url, node.value))
-      );
+      const newNodes = await transformNode(node.value, urls);
       parent.children.splice(index, 1, ...newNodes);
     }
 
@@ -28,33 +26,43 @@ const remarkExternalUrlRef = () => {
   };
 };
 
-const transformNode = async (url, originalText) => {
-  const data = await fetchData(url);
-  const transformedNode = {
-    type: "mdxJsxFlowElement",
-    name: "ExternalUrlRef",
-    attributes: [
-      { type: "mdxJsxAttribute", name: "url", value: url },
-      { type: "mdxJsxAttribute", name: "title", value: data.title },
-      {
-        type: "mdxJsxAttribute",
-        name: "description",
-        value: data.description || "No description available.",
-      },
-      {
-        type: "mdxJsxAttribute",
-        name: "image",
-        value:
-          data.image ||
-          "https://cdn.appcircle.io/docs/assets/appcircle-logo.png",
-      },
-    ],
-    children: [{ type: "text", value: originalText }],
-    data: {
-      _mdxExplicitJsx: true,
-    },
-  };
-  return transformedNode;
+const transformNode = async (text, urls) => {
+  const words = text.split(/\s+/);
+  const nodes = [];
+
+  for (const word of words) {
+    if (isUrl(word) && urls.includes(word)) {
+      const data = await fetchData(word);
+      nodes.push({
+        type: "mdxJsxFlowElement",
+        name: "ExternalUrlRef",
+        attributes: [
+          { type: "mdxJsxAttribute", name: "url", value: word },
+          { type: "mdxJsxAttribute", name: "title", value: data.title },
+          {
+            type: "mdxJsxAttribute",
+            name: "description",
+            value: data.description || "No description available.",
+          },
+          {
+            type: "mdxJsxAttribute",
+            name: "image",
+            value:
+              data.image ||
+              "https://cdn.appcircle.io/docs/assets/appcircle-logo.png",
+          },
+        ],
+        children: [{ type: "text", value: word }],
+        data: {
+          _mdxExplicitJsx: true,
+        },
+      });
+    } else {
+      nodes.push({ type: "text", value: word + " " });
+    }
+  }
+
+  return nodes;
 };
 
 const fetchData = async (url) => {
@@ -71,9 +79,8 @@ const fetchData = async (url) => {
       const title = result.ogTitle || new URL(url).hostname;
       const description = result.ogDescription || "No description available";
       const image =
-        result.ogImage && result.ogImage.url
-          ? result.ogImage.url
-          : "https://cdn.appcircle.io/docs/assets/appcircle-logo.png";
+        result.ogImage?.url ||
+        "https://cdn.appcircle.io/docs/assets/appcircle-logo.png";
       return { title, description, image };
     } else {
       throw new Error("OGS failed to fetch the title");
