@@ -47,4 +47,6 @@ curl -X GET "https://api.appcircle.io/distribution/v2/profiles" -H  "accept: app
 
 ### API Documentation
 
-Please check the [Appcircle Open API](https://api.appcircle.io/openapi/index.html) to learn more about Appcircle API.
+Access the full API documentation and explore the endpoints available for your integration needs at:
+
+https://api.appcircle.io/openapi/index.html
