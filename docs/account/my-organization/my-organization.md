@@ -36,7 +36,7 @@ In the left column under the organization management screen, you can change your
 
 To update these details, simply enter the new values and press _Update_.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (36).png' />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org1.png" />
 
 ### Working with Multiple Organizations
 
@@ -48,7 +48,7 @@ To add a new organization, press the "Create New Organization" button on the top
 If you are on the Starter Plan, you cannot add a new organization. To create more organizations, you need to upgrade to a higher plan.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (39).png' />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org2.png" />
 
 #### Adding a Sub Organization
 
@@ -78,7 +78,7 @@ Please note that an **Enterprise License** is required to use this feature.
 
 If you have an enterprise license, you can create sub-organizations from the organization by navigating to the "My Organization" page, clicking on the **`Create Sub Organization`** button, and entering the necessary details for the sub-organization.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/My-Organization-Sub-Create.png' />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org3.png" />
 
 Multiple sub-organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub-Organization feature, businesses can create and manage multiple sub-organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
 
@@ -109,7 +109,7 @@ Both leaving and deleting are irreversible operations and it is advised to use t
 - If you delete an organization, you will lose ALL platform data including apps, profiles, and artifacts.
   :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (41).png' />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org5.png" />
 
 ###
 
@@ -131,7 +131,14 @@ The user will be then shown in a "Pending" state until the invitation is accepte
 
 Once a user accepts an invite, it will be added to the team as a Member with read only access. You can change the role of any user, including yourself, with the "Manage Roles" button next to the user ID. You can also delete a user by pressing the delete button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (151).png' />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org4.png" />
+
+:::tip
+The search bar within the Team Management area allows you to efficiently manage and locate organization members by searching their email addresses to enhance visibility and streamline the management of both current and newly invited members.
+
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-search.png" />
 
 ### Advanced Role Management
 
