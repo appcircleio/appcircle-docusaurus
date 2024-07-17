@@ -39,28 +39,28 @@ Some role types are not used in some modules because they are not required in th
 
 The following table details the roles and restrictions for the [**Build**](/build) module. Please refer to the modules related information and coution notes. 
 
-| Build Sub-modules   | Scopes                                | Owner | Manager | Operator | Viewer |
-|---------------------|---------------------------------------|-------|---------|----------|--------|
-| Build Profile       | Add/Delete/Update Build Profiles      | ✅     | ✅       | ⛔        | ⛔      |
-| Build Profile       | List Build Profiles                   | ✅     | ✅       | ✅        | ✅      |
-| Repository          | Connect/Disconnect Repository         | ✅     | ✅       | ⛔        | ⛔      |
-| Commit              | List Commit                           | ✅     | ✅       | ✅        | ✅      |
-| Configuration       | Add/Delete/Update Build Configuration | ✅     | ✅       | ⛔        | ⛔      |
-| Configuration       | View Build Configuration              | ✅     | ✅       | ✅        | ✅      |
-| Workflow            | Add/Delete/Update Workflows           | ✅     | ✅       | ⛔        | ⛔      |
-| Workflow            | View Workflows                        | ✅     | ✅       | ✅        | ✅      |
-| Build Actions       | Start Build                           | ✅     | ✅       | ✅        | ⛔      |
-| Build Actions       | Delete Commit Artifacts               | ✅     | ✅       | ⛔        | ⛔      |
-| Build Actions       | Download Artifacts                    | ✅     | ✅       | ✅        | ✅      |
-| Build Actions       | Distribution Binary                   | ✅     | ✅       | ✅        | ⛔      |
-| Test Results        | List Test Results                     | ✅     | ✅       | ✅        | ✅      |
-| Connection          | Add/Delete/Update Connections         | ✅     | ✅       | ⛔        | ⛔      |
-| Connection          | List Connection                       | ✅     | ✅       | ✅        | ✅      |
-| Runner              | Add/Delete/Update Runner(Root Only)   | ✅     | ⛔       | ⛔        | ⛔      |
-| Runner              | List Runner(Root Only)                | ✅     | ✅       | ✅        | ✅      |
-| Runner Access Token | Create/Delete Runner Access Token     | ✅     | ⛔       | ⛔        | ⛔      |
-| Runner Access Token | List Runner Access Token              | ✅     | ⛔       | ⛔        | ⛔      |
-| Report              | List Build Reports                    | ✅     | ✅       | ✅        | ✅      |
+| Build Sub-modules   | Scopes                                     | Owner | Manager | Operator | Viewer |
+|---------------------|--------------------------------------------|-------|---------|----------|--------|
+| Build Profile       | Add/Delete/Update Build Profiles           | ✅     | ✅       | ⛔        | ⛔      |
+| Build Profile       | List Build Profiles                        | ✅     | ✅       | ✅        | ✅      |
+| Repository          | Connect/Disconnect Repository              | ✅     | ✅       | ⛔        | ⛔      |
+| Commit              | List Commit                                | ✅     | ✅       | ✅        | ✅      |
+| Configuration       | Add/Delete/Update Build Configuration      | ✅     | ✅       | ⛔        | ⛔      |
+| Configuration       | View Build Configuration                   | ✅     | ✅       | ✅        | ✅      |
+| Workflow            | Add/Delete/Update Workflows                | ✅     | ✅       | ⛔        | ⛔      |
+| Workflow            | View Workflows                             | ✅     | ✅       | ✅        | ✅      |
+| Build Actions       | Start Build                                | ✅     | ✅       | ✅        | ⛔      |
+| Build Actions       | Delete Commit Artifacts                    | ✅     | ✅       | ⛔        | ⛔      |
+| Build Actions       | Download Artifacts                         | ✅     | ✅       | ✅        | ✅      |
+| Build Actions       | Distribution Binary                        | ✅     | ✅       | ✅        | ⛔      |
+| Test Results        | List Test Results                          | ✅     | ✅       | ✅        | ✅      |
+| Connection          | Add/Delete/Update Connections (User Based) | ✅     | ✅       | ✅        | ✅      |
+| Connection          | List Connection (User Based)               | ✅     | ✅       | ✅        | ✅      |
+| Runner              | Add/Delete/Update Runner(Root Only)        | ✅     | ⛔       | ⛔        | ⛔      |
+| Runner              | List Runner(Root Only)                     | ✅     | ✅       | ✅        | ✅      |
+| Runner Access Token | Create/Delete Runner Access Token          | ✅     | ⛔       | ⛔        | ⛔      |
+| Runner Access Token | List Runner Access Token                   | ✅     | ⛔       | ⛔        | ⛔      |
+| Report              | List Build Reports                         | ✅     | ✅       | ✅        | ✅      |
 
 
 :::caution Distrubition Binary and Runner Details
@@ -92,20 +92,20 @@ Manager, Operator and Viewer Environment Variable permissions can use variable g
 
 The following table details the roles and restrictions for the [**Signing and Identity**](/signing-identities) module. Please refer to the modules related information and coution notes. 
 
-| Signing Identity Sub-modules    | Scopes                               | Owner | Manager | Viewer |
-|---------------------------------|--------------------------------------|-------|---------|--------|
-| Apple Cerficate                 | Add/Delete/Update Apple Certificates | ✅     | ✅       | ⛔      |
-| Apple Cerficate                 | List Apple Certificates              | ✅     | ✅       | ✅      |
-| Apple Cerficate Signing Request | Add/Delete CSR                       | ✅     | ✅       | ⛔      |
-| Apple Cerficate Signing Request | Convert CSR to .p12                  | ✅     | ✅       | ⛔      |
-| Apple Cerficate Signing Request | List CSR                             | ✅     | ✅       | ✅      |
-| Apple Identifiers               | Add/Delete/Update Apple Identifiers  | ✅     | ✅       | ⛔      |
-| Apple Identifiers               | List Apple Identifiers               | ✅     | ✅       | ✅      |
-| Apple Profile                   | Add/Delete/Update Apple Profiles     | ✅     | ✅       | ⛔      |
-| Apple Profile                   | List Apple Profiles                  | ✅     | ✅       | ✅      |
-| Keystore                        | Add/Delete/Update Keystores          | ✅     | ✅       | ⛔      |
-| Keystore                        | List Keystores                       | ✅     | ✅       | ✅      |
-| Report                          | List Signing Reports                 | ✅     | ✅       | ✅      |
+| Signing Identity Sub-modules    | Scopes                                 | Owner | Manager | Viewer |
+|---------------------------------|----------------------------------------|-------|---------|--------|
+| Apple Cerficate                 | Add/Delete/Download Apple Certificates | ✅     | ✅       | ⛔      |
+| Apple Cerficate                 | List Apple Certificates                | ✅     | ✅       | ✅      |
+| Apple Cerficate Signing Request | Add/Delete/Download CSR                | ✅     | ✅       | ⛔      |
+| Apple Cerficate Signing Request | Convert CSR to .p12                    | ✅     | ✅       | ⛔      |
+| Apple Cerficate Signing Request | List CSR                               | ✅     | ✅       | ✅      |
+| Apple Identifiers               | Add/Delete/Update Apple Identifiers    | ✅     | ✅       | ⛔      |
+| Apple Identifiers               | List Apple Identifiers                 | ✅     | ✅       | ✅      |
+| Apple Profile                   | Add/Delete/Update Apple Profiles       | ✅     | ✅       | ⛔      |
+| Apple Profile                   | List Apple Profiles                    | ✅     | ✅       | ✅      |
+| Keystore                        | Add/Delete/Update Keystores            | ✅     | ✅       | ⛔      |
+| Keystore                        | List Keystores                         | ✅     | ✅       | ✅      |
+| Report                          | List Signing Reports                   | ✅     | ✅       | ✅      |
 
 :::info
 
