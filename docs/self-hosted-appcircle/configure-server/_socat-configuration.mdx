@@ -1,0 +1,57 @@
+When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443 for Podman installations.
+
+You must use a port-forwarding tool like `socat`. This way, you can forward traffic from port 80 to 8080 and from port 443 to 8443.
+
+You should install `socat` from official repositories and create two systemd services so port forwarding stays even after the server reboot. This can be done by running the following steps:
+
+:::caution
+You must create the `socat` services below, even if you are using Podman with the `root` user.
+:::
+
+```bash
+sudo dnf install -y socat
+```
+
+Save the file below as `port-redirect-80.service` in `/etc/systemd/system/` directory.
+
+```bash
+sudo vi /etc/systemd/system/port-redirect-80.service
+```
+
+```bash
+[Unit]
+Description=Port Redirect Service - Port 80
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/socat TCP-LISTEN:80,fork,reuseaddr TCP:127.0.0.1:8080
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Save the file below as `port-redirect-443.service` in `/etc/systemd/system/` directory.
+
+```bash
+sudo vi /etc/systemd/system/port-redirect-443.service
+```
+
+```bash
+[Unit]
+Description=Port Redirect Service - Port 443
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/socat TCP-LISTEN:443,fork,reuseaddr TCP:127.0.0.1:8443
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Then, execute the below commands to activate port redirections.
+
+```bash
+sudo systemctl daemon-reload && \
+sudo systemctl enable --now port-redirect-80.service && \
+sudo systemctl enable --now port-redirect-443.service
+```

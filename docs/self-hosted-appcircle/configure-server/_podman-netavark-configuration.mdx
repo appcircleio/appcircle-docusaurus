@@ -1,0 +1,49 @@
+To ensure successful operation of the Appcircle server, it is required to switch from the CNI network stack to Netavark if Podman is bundled with CNI. You can see your network stack by running:
+
+```bash
+podman info | grep -i networkBackend
+```
+
+You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark.
+
+```bash
+sudo dnf install -y netavark
+```
+
+Once the installation is complete, please follow these steps to configure Podman:
+
+- Copy the /usr/share/containers/containers.conf file to /etc/containers/containers.conf.
+
+```bash
+sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
+```
+
+- Edit the /etc/containers/containers.conf file.
+
+```bash
+sudo vi /etc/containers/containers.conf
+```
+
+- Add the following content to the [network] section:
+
+```bash
+network_backend="netavark"
+```
+
+- Save the file.
+
+- Reset Podman:
+
+```bash
+podman system reset
+```
+
+- Reboot the system:
+
+```bash
+sudo reboot
+```
+
+:::caution
+If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
+:::
