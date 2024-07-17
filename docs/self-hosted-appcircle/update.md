@@ -52,6 +52,12 @@ You can effortlessly manage all the commands listed below.
 Additionally, you can set up recurring cron jobs (daily or weekly) to automatically check if Appcircle's server needs updating.
 :::
 
+:::caution
+If you are using the Appcircle DMZ structure and upgrading an Appcircle server, it is critical to also update the Appcircle DMZ server. If you don't, Enterprise App Store and Testing Distribution may not function as expected.
+
+For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/docs/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md). 
+:::
+
 ### 1. Download Latest
 
 To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package. This typically means copying the `cred.json` file to the same directory containing the `appcircle-server` directory.

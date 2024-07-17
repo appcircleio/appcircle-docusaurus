@@ -9,6 +9,9 @@ tags:
     LDAP Brute Force Protection,
     cache size configuration,
     Command-Line Interface (CLI),
+    dmz,
+    enterprise app store,
+    testing distribution,
   ]
 ---
 
@@ -27,3 +30,7 @@ Optimize your server's performance by configuring the cache size. This setting a
 ### Command-Line Interface (CLI) Configuration
 
 Customize the CLI to suit your workflow needs. This includes setting up environment variables, enabling specific commands, and configuring access permissions for a streamlined command-line experience.
+
+### Enterprise App Store and Testing Distribution in DMZ
+
+Securely distribute and test enterprise applications by placing your app store and testing environment in a DMZ (Demilitarized Zone). This configuration isolates testing from production, enhances security by acting as a buffer against external threats, and streamlines deployment processes.
