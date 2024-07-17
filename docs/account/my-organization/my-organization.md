@@ -94,7 +94,26 @@ Once you select your organization, you will only see the profiles, artifacts, an
 You can switch between organizations at any time without any data loss.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/My-Organization-Switch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4073-switch.png' />
+
+To switch between organizations or sub organizations, follow these steps:
+
+1. **Locate the Organization Switch Button:**
+  - Find the button displaying the name of your current organization at the bottom of your screen.
+
+2. **Press the Organization Switch Button:**
+  - Click this button to display a list of available organizations and sub-organizations you are part of.
+
+3. **Select the Desired Organization:**
+  - From the list, choose the organization or sub-organization you want to switch to.
+
+:::important
+
+  - **Membership Requirement:** You will only be able to view and switch to organizations that you are a member of. Organizations that you are not a member of will not be visible in the list.
+
+:::
+
+By following these steps, you can seamlessly navigate between different organizations within your account.
 
 #### Leaving or Deleting an Organization
 
