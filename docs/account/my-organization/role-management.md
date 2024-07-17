@@ -53,6 +53,7 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Build Actions       | Delete Commit Artifacts               | ✅     | ✅       | ⛔        | ⛔      |
 | Build Actions       | Download Artifacts                    | ✅     | ✅       | ✅        | ✅      |
 | Build Actions       | Distribution Binary                   | ✅     | ✅       | ✅        | ⛔      |
+| Test Results        | List Test Results                     | ✅     | ✅       | ✅        | ✅      |
 | Connection          | Add/Delete/Update Connections         | ✅     | ✅       | ⛔        | ⛔      |
 | Connection          | List Connection                       | ✅     | ✅       | ✅        | ✅      |
 | Runner              | Add/Delete/Update Runner(Root Only)   | ✅     | ⛔       | ⛔        | ⛔      |
