@@ -23,7 +23,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The store status of Release Candidates in the Publish profiles can now be manually checked using [Check Release Status](/publish-module/publish-information/check-release-status) feature. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Publisher and contact information can now be viewed and updated under the Info tab within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Enterprise Store Profiles can now be prioritized in the listing order by enabling the **"Show on Top"** feature within the Enterprise Store profile settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The self-hosted Appcircle server now supports a new [DMZ architecture](/docs/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz), allowing you to separate [Enterprise App Store](/enterprise-appstore) and [Testing Distribution](/distribute) modules from the core and install them in a DMZ [(Demilitarized Zone)](https://en.wikipedia.org/wiki/DMZ_(computing)). This securely exposes these external-facing modules to internet users. <SelfHostedBadge/>
+- The self-hosted Appcircle server now supports a new [DMZ architecture](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz), allowing you to separate [Enterprise App Store](/enterprise-appstore) and [Testing Distribution](/distribute) modules from the core and install them in a DMZ [(Demilitarized Zone)](https://en.wikipedia.org/wiki/DMZ_(computing)). This securely exposes these external-facing modules to internet users. <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
