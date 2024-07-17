@@ -99,13 +99,13 @@ You can switch between organizations at any time without any data loss.
 To switch between organizations or sub organizations, follow these steps:
 
 1. **Locate the Organization Switch Button:**
-  - At the bottom of your screen, find the button that displays the name of your current organization.
+  - Find the button displaying the name of your current organization at the bottom of your screen.
 
 2. **Press the Organization Switch Button:**
-  - Click on this button to display a list of available organizations and sub-organizations that you are a part of.
+  - Click this button to display a list of available organizations and sub-organizations you are part of.
 
 3. **Select the Desired Organization:**
-  - From the list, choose the organization or sub-organization you wish to switch to.
+  - From the list, choose the organization or sub-organization you want to switch to.
 
 :::important
 
