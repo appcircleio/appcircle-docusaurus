@@ -71,7 +71,7 @@ This streamlined approach ensures that you are always informed of your applicati
 
 ### Filter By Status
 
-Within the Publish module where your Publish profiles are listed, you can use the filter option to display specific Publish profiles according to their latest store status.
+In the Publish module, where your Publish profiles are listed, you can use the filter option to display specific Publish profiles based on their latest store status.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter1.png' />
 
