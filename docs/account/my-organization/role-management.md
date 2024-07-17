@@ -125,8 +125,8 @@ The following table details the roles and restrictions for the [**Testing Distri
 | App Version Actions  | Send to Testers                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | App Version Actions  | Send to Enterprise App Store           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | App Version Actions  | Send to Publish                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Settings             | Select Authantication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
-| Settings             | View Authantication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
+| Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Apple Device         | Add/Delete Apple Device                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Apple Device         | Register Apple Device                  | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Apple Device         | Adding New Device to Provision         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
@@ -135,9 +135,9 @@ The following table details the roles and restrictions for the [**Testing Distri
 | Report               | List Reports App Version               | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
-:::caution Authantication Settings
+:::caution Authentication Settings
 
-If the selected authantication type is Static login, Manager role can change **Username** and **Password**. However, it cannot change the content for other authantication types.
+If the selected Authentication type is Static login, Manager role can change **Username** and **Password**. However, it cannot change the content for other Authentication types.
 
 :::
 
@@ -155,12 +155,12 @@ If the selected authantication type is Static login, Manager role can change **U
 The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-management/testing-groups). Please refer to the modules related information and coution notes. 
 
 
-| Testing Groups | Scopes                                  | Owner | Manager | Operator | Viewer |
-|----------------|-----------------------------------------|-------|---------|----------|--------|
-| Testing Groups | Add/Delete/Update Testing Group         | ✅     | ✅       | ⛔        | ⛔      |
-| Testing Groups | Add/Delete/Update Testing Group Testers | ✅     | ✅       | ⛔        | ⛔      |
-| Testing Groups | List Testing Groups                     | ✅     | ✅       | ✅        | ✅      |
-| Testing Groups | List Testing Group Testers              | ✅     | ✅       | ✅        | ✅      |
+| Testing Groups | Scopes                                  | Owner | Manager | Viewer |
+|----------------|-----------------------------------------|-------|---------|--------|
+| Testing Groups | Add/Delete/Update Testing Group         | ✅     | ✅       | ⛔      |
+| Testing Groups | Add/Delete/Update Testing Group Testers | ✅     | ✅       | ⛔      |
+| Testing Groups | List Testing Groups                     | ✅     | ✅       | ✅      |
+| Testing Groups | List Testing Group Testers              | ✅     | ✅       | ✅      |
 
 
 ### Publish Module iOS Permissions
@@ -195,7 +195,7 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Download Binary           | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Environment Variables     | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Environment Variables     | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Activity Logs             | List Activty Log Details                  | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Activity Logs             | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 
 ### Publish Module Android Permissions
@@ -225,7 +225,7 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Mark as RC                | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Resing Binary             | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Release Note              | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| History                   | Download History Logs                     | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| History                   | View/Download History Logs                | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | History                   | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Download Binary           | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Environment Variables     | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
@@ -258,17 +258,18 @@ Manage and Upload Apps to Enterprise App Store.
 | App Version          | Download App Versions                  | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | App Version          | List App Versions                      | ✅     | ✅       | ✅        | ✅             | ✅      |
 | App Version Actions  | Publish App Version Live/Beta Channels | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Notify Users                           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Settings             | Update Store Domain                    | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | Update Store Customization             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
-| Settings             | Select Authantication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
-| Settings             | View Authantication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
+| Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Settings             | View Customization Settings            | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Settings             | View Store Domain                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports                           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 
-:::caution Authantication Settings
+:::caution Authentication Settings
 
-If the selected authantication type is Static login, Manager role can change **Username** and **Password**. However, it cannot change the content for other authantication types.
+If the selected Authentication type is Static login, Manager role can change **Username** and **Password**. However, it cannot change the content for other Authentication types.
 
 :::
 
