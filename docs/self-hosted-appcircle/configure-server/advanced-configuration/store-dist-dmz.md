@@ -569,8 +569,6 @@ values={[
 
 <TabItem value="docker">
 
-## Docker
-
 With Docker, you can rely on the built-in restart policies to handle the automatic startup of your Appcircle server.
 
 Docker will automatically restart the server services if the host reboots.
