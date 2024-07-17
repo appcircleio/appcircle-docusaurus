@@ -129,7 +129,7 @@ You can upload multiple Provisioning Profile files at once.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-upload.png' />
 
-You can list and manage your provisioning profiles here. Newly uploaded files will be displayed with blue-colored background. If there is a matching certificate, the profile will show a green check mark to indicate that. If not, you will see a red cross mark indicating there's no certificate matching the provisioning profile.
+You can list and manage your provisioning profiles here. Newly uploaded files will display with a blue-colored background. If there is a matching certificate, the profile will show a green check mark. If not, you will see a red cross mark indicating there is no certificate matching the provisioning profile.
 
 You can also see the matching application ID and expiration date of the profiles here.
 
@@ -137,11 +137,11 @@ You can also see the matching application ID and expiration date of the profiles
 
 ### Deleting Provisioning Profiles
 
-You can delete a single Provisioning Profile or multiple ones by selecting the check boxes next to the provisioning profiles. You can also select the check box at the top of the list to select all available ones. Once you select the checkbox for the files you need, a delete button will be available at the top right corner.
+You can delete a single Provisioning Profile or multiple ones by selecting the checkboxes next to the provisioning profiles. You can also select the checkbox at the top of the list to select all available ones. Once you select the checkboxes for the files you need, a delete button will appear at the top right corner.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete1.png' />
 
-If you attempt to delete a Provisioning Profile that is saved in a build configuration of an active Build Profile, a warning message will be displayed. This message will allow you to view the affected build profiles and navigate to their configuration screens to make necessary changes.
+If you attempt to delete a Provisioning Profile that is saved in a build configuration of an active Build Profile, a warning message will appear. This message will allow you to view the affected build profiles and navigate to their configuration screens to make necessary changes.
 
 You also have the option to force delete it without changing the configurations.
 
