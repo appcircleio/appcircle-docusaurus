@@ -16,28 +16,41 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
-## 3.19.1 - 2024-07-04 - Publish Module Improvements, Check Release Status Feature, Bug Fixes and more
+## 3.19.1 - 2024-07-04 - Publish and Signing Identity Module Improvements, Xcode 16.0 Beta 3, Bug Fixes and more
 
 ### 🆕 New Features
 
 - The store status of Release Candidates in the Publish profiles can now be manually checked using [Check Release Status](/publish-module/publish-information/check-release-status) feature. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Publisher and contact information can now be viewed and updated under the Info tab within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Enterprise Store Profiles can now be prioritized in the listing order by enabling the **"Show on Top"** feature within the Enterprise Store profile settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server now supports a new architecture, allowing you to separate [Enterprise App Store](/enterprise-appstore) and [Testing Distribution](/distribute) modules from the core and install them in a DMZ [(Demilitarized Zone)](https://en.wikipedia.org/wiki/DMZ_(computing)). This securely exposes these external-facing modules to internet users. <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
+- The [Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 3](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
 - To ensure the validity of the Microsoft Intune remote app connection, the binary will be unmarked as a Release Candidate after switching from other credentials to Microsoft Intune. Additionally, .aab format binaries will display a warning message when using Microsoft Intune credentials, as they are not supported. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Help documentation for [Update Metadata on Microsoft Intune](/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune) feature has been updated. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Microsoft Intune metadata and App Info updates are now included in the Activity Report. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - App Store Connect App Info & Metadata and Microsoft Intune Metadata are now available through [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=publish). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Multiple Bundle IDs can now be selected when importing from App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Apple Provisioning Profile file upload now supports multiple file upload. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- All publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- All Publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When [inviting a new user to an organization](/account/my-organization#managing-the-team-under-an-organization), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Existing and newly invited organization members can now be searched by e-mail filter within the Team Management area. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When attempting to delete a provisioning profile that is already in use for a build profile, a warning message will now display. This allows you to see the affected profiles and navigate directly to their configuration. Alternatively, you can force delete the provisioning profile. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When a Provisioning Profile within the Apple Profiles section has a mismatched Apple Certificate, a tool tip warning message will display. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Upload multiple files at once with the new Apple Provisioning Profile file upload improvement. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Multiple Provisioning Profiles can now be force deleted by the users. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
 - A behaviour difference between Appcircle UI and App Store Connect while registering Bundle IDs has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue causing indicator truncation while retrieving provisioning profiles in the Publish Module has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where, if no images are present in the metadata screenshot section for different localization settings, images from the primary language were not being displayed for guidance and explanatory purposes. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Publish profile header will no longer display the latest store status if the binary is unmarked as a release candidate. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The errors that occurred on some types of projects during [Android versioning](https://docs.appcircle.io/versioning#understanding-android-versioning) were fixed, and several improvements were made to check for invalid versioning. <VersioningBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where build profile cards displayed some build results as text instead of an icon. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where users with specific profiles encountered access problems when navigating between organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improved and fixed help documentation links within the Signing Identities module for [Apple Profiles](signing-identities/apple-profiles), [Apple Certificates](signing-identities/apple-certificates) and [Apple Identifiers](signing-identities/apple-identifiers). <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.19.0 - 2024-06-27 - Publish Apps to Microsoft Intune, App Store Connect Integration, Publish and Signing Identity Enhancements, Xcode 16.0 Beta 2, Bug Fixes and more
 
