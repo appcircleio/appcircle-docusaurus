@@ -39,7 +39,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - When attempting to delete a provisioning profile that is already in use for a build profile, a warning message will now display. This allows you to see the affected profiles and navigate directly to their configuration. Alternatively, you can force delete the provisioning profile. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When a Provisioning Profile within the Apple Profiles section has a mismatched Apple Certificate, a tool tip warning message will display. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Upload multiple files at once with the new [Apple Provisioning Profile](/signing-identities/apple-profiles#upload-a-provisioning-profiles) file upload improvement. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Multiple Provisioning Profiles can now be [force deleted](https://docs.appcircle.io/signing-identities/apple-profiles#deleting-provisioning-profiles) by the users. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Multiple Provisioning Profiles can now be [force deleted](/signing-identities/apple-profiles#deleting-provisioning-profiles) by the users. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
