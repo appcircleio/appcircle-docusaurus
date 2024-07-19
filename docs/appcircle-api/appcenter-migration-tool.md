@@ -49,7 +49,7 @@ npm install @appcircle/appcenter-migration-tool
 
 The CLI tool offers the following main commands **Login**, **Organizations**, **App Center Apps** and **App Center Distribution Groups**. You can interact with these commands to achieve your desired migration seamlessly.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_commands.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_commands_all.png' />
 
 ### Login Command
 
@@ -161,7 +161,11 @@ We demonstrate how migration might look like step-by-step:
 
 The appcenter-migration-tool migrates organizations to Appcircle as sub-organizations under a main organization. This means each migrated organization will be nested under a primary organization. During this migration, the tool will only create organizations that match those existing in App Center. If an organization with the same name already exists in Appcircle, the tool will throw an error.
 
-[-Screen Shot of selecting organizations for migration-]
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_organization_migrate.png' />
+
+```bash
+appcenter-migration-tool organizations migrate-collaborators --organizationUsers=guven@appcircle.io --appcircleOrganization=Appcircle_Organization
+```
 
 ### Migrate Organization Collaborators
 
@@ -173,23 +177,47 @@ The tool invites specified collaborators from App Center to the corresponding or
 | Collaborator    | Operator       | Distribution Profile Roles & Testing Group Roles |
 | Member          | Viewer         | Distribution Profile Roles & Testing Group Roles |
 
-[-Screen Shot of selecting collaborators for migration-]
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_collaborators.png' />
 
-### Migrate Organization Apps Testing Distribution Profile at Appcircle
+```bash
+appcenter-migration-tool organizations migrate --organizationNames=Appcircle_Organization
+```
 
-[-Screen Shot of selecting apps for migration-]
+### Migrate App Center Apps to Testing Distribution Profile at Appcircle
+
+The tool creates a [Testing Distribution Profile](/distribute/create-or-select-a-distribution-profile) in Appcircle using only the specified App Center app name.
+
+```bash
+appcenter-migration-tool apps migrate-profile --profileNames=Appcircle
+```
+
+[-Screen Shot of selecting testing distribution profile for migration-]
+
+:::caution
+The tool creates only a new [Testing Distribution Profile](/distribute/create-or-select-a-distribution-profile) and does not migrate any existing releases at this time.
+:::
 
 ### Migrate Organization Distribution Groups
+
+The tool migrates **distribution groups** from App Center organizations to **testing groups** in Appcircle.
+
+```bash
+appcenter-migration-tool migrate-organization --organizationName=Appcircle_Organization --distributionGroupName=Internal --distGroupUsers=guven@appcircle.io
+```
 
 [-Screen Shot of selecting distribution organization groups for migration-]
 
 ### Migrate App Distribution groups
 
-[-Screen Shot of selecting distribution app groups for migration-]
+The tool migrates **distribution groups** from App Center app to **testing groups** in Appcircle.
+
+:::info
+In App Center, distribution groups can be managed at both the organization level and the app level. In contrast, Appcircle consolidates all testing groups into a single management location.
+:::
 
 ## How to Upgrade the Tool
 
-If you installed appcenter-migration-tool tool globally, simply run the following npm command:
+If you installed appcenter-migration-tool globally, simply run the following npm command:
 
 ```bash
 npm update -g @appcircle/appcenter-migration-tool
@@ -203,7 +231,7 @@ npm update @appcircle/appcenter-migration-tool
 
 ## How to Uninstall the Tool
 
-If you installed appcenter-migration-tool tool globally, simply run the following npm command:
+If you installed appcenter-migration-tool globally, simply run the following npm command:
 
 ```bash
 npm uninstall -g @appcircle/appcenter-migration-tool
