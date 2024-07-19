@@ -127,31 +127,13 @@ In this section, we will provide a comprehensive overview of the migration proce
 
 App Center organization hierarchy slated for migration is structured as follows:
 
-- **Appcircle Organization**
-
-  - **Apps**
-    - Appcircle_iOS
-      - **Distribution groups**
-        - Beta Testers
-  - **Distribution group**
-
-    - Internal Testers
-
-  - **Collaborators**
-    - user1
-    - user2
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_appcenter_hierarchy.png' />
 
 Migrated Appcircle organization is structured as follows:
 
-- **Main Organization**
-  - Appcircle Organization
-    - **Testing Distribution**
-      - Appcircle_iOS
-    - **Testing Groups**
-      - Internal Testers
-      - Beta Testers
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_appcircle_hierarchy.png' />
 
-We demonstrate how migration might look like step-by-step:
+Demonstrates how migration might look like step-by-step:
 
 1. Migrating the organizations from App Center to Appcircle. Appcircle manages organizations using a main-sub organization structure. This means that every organization you migrate will be part of a main organization.
 2. Migrating apps from App Center to Appcircle involves creating a Testing Distribution Profile in Appcircle. This process currently includes only the creation of the profile; **migration of build configuration details is not supported yet**.
@@ -161,7 +143,7 @@ We demonstrate how migration might look like step-by-step:
 
 The appcenter-migration-tool migrates organizations to Appcircle as sub-organizations under a main organization. This means each migrated organization will be nested under a primary organization. During this migration, the tool will only create organizations that match those existing in App Center. If an organization with the same name already exists in Appcircle, the tool will throw an error.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_organization_migrate.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_migrate_organization.png' />
 
 ```bash
 appcenter-migration-tool organizations migrate-collaborators --organizationUsers=guven@appcircle.io --appcircleOrganization=Appcircle_Organization
@@ -177,7 +159,7 @@ The tool invites specified collaborators from App Center to the corresponding or
 | Collaborator    | Operator       | Distribution Profile Roles & Testing Group Roles |
 | Member          | Viewer         | Distribution Profile Roles & Testing Group Roles |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_collaborators.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_migrate_collaborators.png' />
 
 ```bash
 appcenter-migration-tool organizations migrate --organizationNames=Appcircle_Organization
@@ -191,7 +173,7 @@ The tool creates a [Testing Distribution Profile](/distribute/create-or-select-a
 appcenter-migration-tool apps migrate-profile --profileNames=Appcircle
 ```
 
-[-Screen Shot of selecting testing distribution profile for migration-]
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_migrate_test_profile.png' />
 
 :::caution
 The tool creates only a new [Testing Distribution Profile](/distribute/create-or-select-a-distribution-profile) and does not migrate any existing releases at this time.
@@ -205,11 +187,16 @@ The tool migrates **distribution groups** from App Center organizations to **tes
 appcenter-migration-tool migrate-organization --organizationName=Appcircle_Organization --distributionGroupName=Internal --distGroupUsers=guven@appcircle.io
 ```
 
-[-Screen Shot of selecting distribution organization groups for migration-]
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_migrate_app_profile.png' />
 
 ### Migrate App Distribution groups
 
 The tool migrates **distribution groups** from App Center app to **testing groups** in Appcircle.
+
+```bash
+appcenter-migration-tool migrate-organization --organizationName=Appcircle_Organization --appName=Appcircle-iOS --distributionGroupNameForApp="Beta Testers" --distGroupUsersForApp=guven@appcircle.io
+
+```
 
 :::info
 In App Center, distribution groups can be managed at both the organization level and the app level. In contrast, Appcircle consolidates all testing groups into a single management location.
@@ -242,5 +229,3 @@ or if you installed locally, run the following npm command:
 ```bash
 npm uninstall @appcircle/appcenter-migration-tool
 ```
-
-does tokens clean after uninstalling..
