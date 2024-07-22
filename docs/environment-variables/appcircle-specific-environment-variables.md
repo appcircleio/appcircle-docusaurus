@@ -90,7 +90,7 @@ For more information on the inputs of the steps and how the variables in the fol
 | JAVA_HOME_11_X64             | OpenJDK 11 location.                           |
 | JAVA_HOME_17_X64             | OpenJDK 17 location.                           |
 | JAVA_HOME_21_X64             | OpenJDK 21 location.                           |
-| GRADLE_OPTS                  |Configuration options for [Gradle build](https://docs.gradle.org/current/userguide/command_line_interface.html). |
+| GRADLE_OPTS                  |Configuration options for [Gradle build](/https://docs.gradle.org/current/userguide/command_line_interface.html). |
 | AC_BUILD_NUMBER_SOURCE       | Build number source for versioning.            |
 | AC_ANDROID_BUILD_NUMBER      | Build number for versioning.                   |
 | AC_BUILD_OFFSET              | Build number offset for versioning.            |
