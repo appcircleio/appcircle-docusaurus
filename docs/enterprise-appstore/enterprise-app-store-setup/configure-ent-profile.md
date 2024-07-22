@@ -77,6 +77,12 @@ You can only send **one** version to the Live and Beta channels. When you send a
 
 :::
 
+:::tip
+
+If you are part of a sub-organization, the app versions that you publish to the **Live** or **Beta** channel will be available on the Enterprise Store for users to view and download, just as they are for a root organization.
+
+:::
+
 ### Unpublish
 
 You can remove any build from the Live or Beta channels by selecting the **Unpublish** menu from the actions.
