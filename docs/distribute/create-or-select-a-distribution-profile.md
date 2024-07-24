@@ -38,7 +38,7 @@ If the tester selects the user icon, they will be able to see the Publisher Info
 
 It will also display the Login Method for the Testing Distribution Profile. 
 
-In the example image, the profile has no authentication method, so it is displayed as Anonymous Login. 
+In the example image, the profile has static authentication method, so it is displayed as Static Login. 
 
 You can find out more about the login methods on [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
 

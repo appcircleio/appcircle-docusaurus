@@ -78,18 +78,31 @@ The Shared App Profiles section will allow the tester to view the other testing 
 
 The list will display the other testing distribution profiles along with their authentication methods.
 
+:::caution
 
-# Navigating Between Shared Profiles
+While navigating between shared profiles, if there is an authentication method for the required profile, users will need to login again to gain access.
 
-Users can directly navigate between other shared profiles under certain conditions:
-
-1. **No Authentication Method:**
-    - If the profiles have no authentication method, users can seamlessly switch between them.
-
-2. **Same Authentication Method:**
-    - If the profiles use the same authentication method other than static (such as LDAP or SSO), users can navigate between them without re-authenticating.
-
-3. **Different Authentication Methods or Static Login Passwords:**
-    - If the shared profiles have different authentication methods or different static login passwords, users will need to log in again to access the required profile.
+:::
 
 For more information about authentication methods, please refer to the [Using Authentication for Distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
+
+## Logging Out of the Testing Portal
+
+Users can log out of the testing portal by following these steps:
+
+1. **Click the Profile Icon:**
+    - On the testing portal, locate and click on the profile icon. This icon is typically found at the top right corner of the screen.
+
+2. **Display the Profile Card:**
+    - Clicking the profile icon will display the profile card, which contains publisher information.
+
+3. **Click the Logout Button:**
+    - Within the profile card, find and click the **Logout** button.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-logout.png" />
+
+:::info
+
+Log out option is only available if your testing distribution profile has an active authentication method.
+
+:::
