@@ -16,13 +16,25 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.20.0 - 2024-07-24 - New Testing Distribution Features, Shared App Profiles for Testing Portal and Xcode 16.0 Beta 4
+
+### 🆕 New Features
+
+- Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the Info tab within the Testing Distribution profile settings. This information will be displayed on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Shared App Profiles will now be displayed within the Testing Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- File size and the certificate version will now be shown for each app version within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new user menu has been added to the Testing Portal, displaying the testing distribution profile's publisher information, login method, along with a logout button. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A guide message will now be displayed when downloading app versions with an Enterprise-Type certificate within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The [Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 4](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
+
 ## 3.19.1 - 2024-07-04 - Publish and Signing Identity Module Improvements, Xcode 16.0 Beta 3, Bug Fixes and more
 
 ### 🆕 New Features
 
 - The store status of Release Candidates in the Publish profiles can now be manually checked using [Check Release Status](/publish-module/publish-information/check-release-status) feature. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Publisher and contact information can now be viewed and updated under the Info tab within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Enterprise Store Profiles can now be prioritized in the listing order by enabling the **"Show on Top"** feature within the Enterprise Store profile settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The self-hosted Appcircle server now supports a new [DMZ architecture](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz), allowing you to separate [Enterprise App Store](/enterprise-appstore) and [Testing Distribution](/distribute) modules from the core and install them in a DMZ [(Demilitarized Zone)](https://en.wikipedia.org/wiki/DMZ_(computing)). This securely exposes these external-facing modules to internet users. <SelfHostedBadge/>
 
 ### :muscle: Improvements
