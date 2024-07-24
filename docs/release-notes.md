@@ -35,11 +35,11 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Multiple Bundle IDs can now be selected when importing from App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - All Publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When [inviting a new user to an organization](/account/my-organization#managing-the-team-under-an-organization), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Existing and newly invited organization members can now be searched by e-mail filter within the Team Management area. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Existing and newly invited organization members can now be [searched by e-mail filter](/account/my-organization#managing-team-members) within the Team Management area. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When attempting to delete a provisioning profile that is already in use for a build profile, a warning message will now display. This allows you to see the affected profiles and navigate directly to their configuration. Alternatively, you can force delete the provisioning profile. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When a Provisioning Profile within the Apple Profiles section has a mismatched Apple Certificate, a tool tip warning message will display. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Upload multiple files at once with the new Apple Provisioning Profile file upload improvement. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Multiple Provisioning Profiles can now be force deleted by the users. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Upload multiple files at once with the new [Apple Provisioning Profile](/signing-identities/apple-profiles#upload-a-provisioning-profiles) file upload improvement. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Multiple Provisioning Profiles can now be [force deleted](/signing-identities/apple-profiles#deleting-provisioning-profiles) by the users. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -48,6 +48,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - An issue has been fixed where, if no images are present in the metadata screenshot section for different localization settings, images from the primary language were not being displayed for guidance and explanatory purposes. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Publish profile header will no longer display the latest store status if the binary is unmarked as a release candidate. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The errors that occurred on some types of projects during [Android versioning](https://docs.appcircle.io/versioning#understanding-android-versioning) were fixed, and several improvements were made to check for invalid versioning. <VersioningBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been resolved where the [Increment Version and Build Number for Android](/versioning/android-version) step caused formatting errors in Gradle files that use dynamic logic for versioning. <VersioningBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where build profile cards displayed some build results as text instead of an icon. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where users with specific profiles encountered access problems when navigating between organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Improved and fixed help documentation links within the Signing Identities module for [Apple Profiles](signing-identities/apple-profiles), [Apple Certificates](signing-identities/apple-certificates) and [Apple Identifiers](signing-identities/apple-identifiers). <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
