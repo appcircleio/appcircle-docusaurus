@@ -37,13 +37,59 @@ For installing Android apps, you may need to grant the web browser "install apps
 
 :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3170-desktop2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal2.png" />
+
+The testing portal will also display the size and the certificate type of each app version. For more information on certificate types, please visit the [Signing Identities](/signing-identities) section.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-size.png" />
 
 :::tip
 Users can use the search bar to filter the available app version list for **app names**, **app versions**, **release notes** and **build numbers**. 
 :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3170-desktop1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal5.png" />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3170-mobile1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal.png" />
 
+:::tip
+
+The Testing Portal includes a toggle feature that allows users to switch between two display modes for the app version's upload time. 
+
+By default, the testing portal displays the time for the selected app version as a relative time (e.g., "2 hours ago").
+
+To view the exact date and time of the upload, simply click on the relative time display. The display will switch to show the exact date and time (e.g., "July 4, 2024 AT 10:30 AM").
+
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates1.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates2.png" />
+
+
+## Shared App Profiles
+
+Users can view other distributed app versions from different testing distribution profiles by selecting the menu icon from top left corner.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal4.png" />
+
+The Shared App Profiles section will allow the tester to view the other testing distribution profiles that has a shared app version for their e-mail address. 
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal3.png" />
+
+The list will display the other testing distribution profiles along with their authentication methods.
+
+
+# Navigating Between Shared Profiles
+
+Users can directly navigate between other shared profiles under certain conditions:
+
+1. **No Authentication Method:**
+    - If the profiles have no authentication method, users can seamlessly switch between them.
+
+2. **Same Authentication Method:**
+    - If the profiles use the same authentication method other than static (such as LDAP or SSO), users can navigate between them without re-authenticating.
+
+3. **Different Authentication Methods or Static Login Passwords:**
+    - If the shared profiles have different authentication methods or different static login passwords, users will need to log in again to access the required profile.
+
+For more information about authentication methods, please refer to the [Using Authentication for Distribution](distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.

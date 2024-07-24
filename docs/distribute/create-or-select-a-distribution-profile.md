@@ -22,6 +22,26 @@ Once you create the distribution profile, you can now customize its settings. Cl
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (153).png' />
 
+### Publisher Information
+
+The Info tab allows you to enter the publisher information for your distributed applications. 
+
+You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info.png' />
+
+Once you click the save button, the information you have provided will be displayed on the Testing Portal. 
+
+If the tester selects the user icon, they will be able to see the Publisher Information.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info2.png' />
+
+It will also display the Login Method for the Testing Distribution Profile. 
+
+In the example image, the profile has no authentication method, so it is displayed as Anonymous Login. 
+
+You can find out more about the login methods on [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
+
 ### Auto send your build to the testers
 
 Auto send feature lets your applications be distributed to specific testing groups whenever a new version is deployed, whether the deployment is triggered via a build process, CLI, or manual upload.
