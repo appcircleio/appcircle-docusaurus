@@ -92,4 +92,4 @@ Users can directly navigate between other shared profiles under certain conditio
 3. **Different Authentication Methods or Static Login Passwords:**
     - If the shared profiles have different authentication methods or different static login passwords, users will need to log in again to access the required profile.
 
-For more information about authentication methods, please refer to the [Using Authentication for Distribution](distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
+For more information about authentication methods, please refer to the [Using Authentication for Distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
