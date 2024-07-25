@@ -31,7 +31,7 @@ With Appcircle's [**Advanced Role Management**](/account/my-organization#advance
 
 :::caution Role Types
 
-Some role types are not used in some modules because they are not required in that module. For this reason, roles may vary for each module.
+Some role types are not used in some modules because they are not required in that module because they are the same as another role. Therefore, roles may differ for each module.
 
 :::
 
@@ -65,9 +65,9 @@ The following table details the roles and restrictions for the [**Build**](/buil
 
 :::caution Distrubition Binary and Runner Details
 
-- **Manager** or **Operator** Build Profile permission can distribute binary if user has Manager or Operator Distribution permission.
-- **Manager** or **Operator** Build Profile permission can publish if user has Manager or Operator Publish Android/iOS permission.
-- **Manager**, **Operator** and **Viewer** Build Profile permissions can view self-hosted runners but cannot modify the configuration.
+- **Manager** or **Operator** Build Profile permission can distribute binary if user has **Manager** or **Operator** distribution permission.
+- **Manager** or **Operator** Build Profile permission can publish if user has **Manager** or **Operator** Publish Android/iOS permission.
+- **Manager**, **Operator** and **Viewer** Build Profile permissions can view self-hosted runners but **cannot** modify the configuration.
 
 :::
 
@@ -84,7 +84,7 @@ The following table details the roles and restrictions for the [**Environment Va
 
 :::info
 
-Manager, Operator and Viewer Environment Variable permissions can use variable groups in build profile configuration.
+**Manager**, **Operator** and **Viewer** Environment Variable permissions can use variable groups in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
 
 :::
 
@@ -107,9 +107,9 @@ The following table details the roles and restrictions for the [**Signing and Id
 | Keystore                        | List Keystores                         | ✅     | ✅       | ✅      |
 | Report                          | List Signing Reports                   | ✅     | ✅       | ✅      |
 
-:::info
+:::info Signing and Identities
 
-Manager, Operator and Viewer Signing Identity Management permissions can use signing identities in build profile configuration.
+**Manager**, **Operator** and **Viewer** Signing Identity Management permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
 
 :::
 
@@ -138,7 +138,7 @@ The following table details the roles and restrictions for the [**Testing Distri
 
 :::caution Authentication Settings
 
-If the selected Authentication type is Static login, Manager role can change **Username** and **Password**. However, it cannot change the content for other Authentication types.
+If the selected Authentication type is Static login, Manager role can change **Username** and **Password**. However, it cannot change the content for other Authentication types such as **LDAP** or **SSO**.
 
 :::
 
@@ -194,6 +194,8 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | History                   | Download History Logs                     | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | History                   | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Download Binary           | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Cancel Submission         | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Reject Binary             | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Environment Variables     | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Environment Variables     | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Activity Logs             | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
@@ -229,6 +231,7 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | History                   | View/Download History Logs                | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | History                   | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Download Binary           | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Reject Binary             | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Environment Variables     | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Environment Variables     | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Activity Logs             | List Activty Log Details                  | ✅     | ✅       | ✅        | ⛔             | ✅      |
@@ -239,7 +242,7 @@ Google Play and Huawei AppGallery permissions are managed through a single rule.
 
 :::
 
-:::tip
+:::tip Publish Environment Variables
 
 **Publish Variables** permissions in the Publish module are dependent on the iOS or Android permissions that you configure for the Publish module.
 
@@ -300,9 +303,9 @@ Also, the user can view self-hosted runners and change configuration.
 
 :::info Organization Management
 
-Whatever role a user is assigned in the root organisation, user has the same role in the sub-organisations. For example, someone who is a Manager in the root organisation is automatically assigned as Manager in the sub-organisations. 
+Whatever role a user is assigned in the root organisation, user has the same role in the **sub-organisations**. For example, someone who is a Manager in the root organisation is automatically assigned as Manager in the sub-organisations. 
 
-If you want to assign a role in a sub-organisation, please do so within the respective sub-organisation.
+If you want to assign a role in a sub-organisation, please do so within the respective **sub-organisation**.
 
 :::
 
