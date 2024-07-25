@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
-## 3.20.0 - 2024-07-24 - New Testing Distribution Features, Shared App Profiles for Testing Portal and Xcode 16.0 Beta 4
+## 3.20.0 - 2024-07-25 - New Testing Distribution Features, Shared App Profiles for Testing Portal and Xcode 16.0 Beta 4
 
 ### 🆕 New Features
 
@@ -29,6 +29,19 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### :muscle: Improvements
 
 - The [Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 4](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
+- App versions that are published to the Beta and Live channels will now be displayed on Enterprise Store profile headers with related tags, both within the profile and the Enterprise Store profile list, for easier visibility. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- UI improvements have been made to the actions menu of Enterprise profiles. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Default environment variable names have been updated. Ensure you are not using the old naming convention, as all Appcircle-provided default values will now start with `AC_`. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- A UI problem affecting Safari browsers has been fixed for the App Detail preview screen in the Enterprise Store customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where user color selections were not immediately displaying on the preview screen within the Enterprise Store customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where users were unable to update the colors without updating the store title within the Enterprise Store customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue related to long texts affecting the Enterprise Store display has been fixed by applying a character limit to the Summary and Release Notes sections of the Publish to Store feature within the Enterprise Store module. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A UI problem has been fixed where the save button for the static login configuration of the Enterprise Store module remained enabled even without any changes. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A UI issue has been fixed related to SSO Mapping toggle. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue with the search by action filter in the Team Activity Log has been fixed, where the first available option was not displaying any results. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.19.1 - 2024-07-04 - Publish and Signing Identity Module Improvements, Xcode 16.0 Beta 3, Bug Fixes and more
 
