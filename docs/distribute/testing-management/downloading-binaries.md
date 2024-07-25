@@ -65,6 +65,11 @@ To view the exact date and time of the upload, simply click on the relative time
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates2.png" />
 
+:::info
+If your app version has an enterprise-type certificate, the testing portal will display a guidance message about how to proceed with the installation on your device. 
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-enterprise.png" />
 
 ## Shared App Profiles
 
