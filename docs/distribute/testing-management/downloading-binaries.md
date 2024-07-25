@@ -91,6 +91,14 @@ While navigating between shared profiles, if there is an authentication method f
 
 For more information about authentication methods, please refer to the [Using Authentication for Distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
 
+:::info
+
+If you are using a public link to access the Testing Portal, you can only navigate between testing distribution profiles that have public links enabled.
+
+For more information about using public links, please visit the [using public link for distribution](/distribute/create-or-select-a-distribution-profile#using-public-link-for-distribution) documentation.
+
+:::
+
 ## Logging Out of the Testing Portal
 
 Users can log out of the testing portal by following these steps:
