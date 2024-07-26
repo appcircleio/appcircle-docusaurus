@@ -113,11 +113,6 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 :::
 
-:::caution Signing Identity Permission
-
-- - **Manager** Signing Identity permission can delete Apple Certificates and Apple Profiles if user has **Manager** Build permission.
-
-:::
 
 ### Testing Distribution Permissions
 
