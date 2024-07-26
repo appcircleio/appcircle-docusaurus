@@ -21,23 +21,23 @@ tags:
 
 # Role Management
 
-With Appcircle's [**Advanced Role Management**](/account/my-organization#advanced-role-management) structure, you can detail the roles of the members you add to your organisation separately for each module and restrict the authority of the members. Appcircle offers different role types for each module. A short description of each role is given in the table below. In addition, you can find detailed role management information for each module under module titles.
+With Appcircle's [Advanced Role Management](/account/my-organization#advanced-role-management) structure, you can assign specific roles to organization members for each module, allowing you to manage and restrict their permissions effectively. Appcircle provides various role types for each module, with a brief description of each role provided in the table below. For more detailed information on role management for each module, please refer to the respective module titles.
 
-- **Owner**: The user is authorised unlimited access to all modules.
-- **Manager**: The user becomes the administrator of the relevant module and no restrictions are made.
-- **Operator**: The user is the person who manages the operations of the relevant module and certain restrictions apply.
-- **Ext. Operator**: The user has very limited authorisation in the relevant module. It is usually for third party employees from outside the company.
-- **Viewer**: User only has view authorisation in the relevant module, cannot take any action.
+- **Owner**: The user is authorized for unlimited access to all modules.
+- **Manager**: The user becomes the administrator of the relevant module with no restrictions.
+- **Operator**: The user manages the operations of the relevant module, with certain restrictions in place.
+- **Ext. Operator**: The user has very limited authorization in the relevant module, typically intended for third-party employees from outside the company.
+- **Viewer**: The user only has view authorization in the relevant module and cannot take any action.
 
 :::caution Role Types
 
-Some role types are not used in some modules because they are not required in that module because they are the same as another role. Therefore, roles may differ for each module.
+Some role types are not used in certain modules because they are redundant or unnecessary, as they serve the same function as another role. Therefore, roles may vary for each module.
 
 :::
 
 ### Build Permissions
 
-The following table details the roles and restrictions for the [**Build**](/build) module. Please refer to the modules related information and coution notes. 
+The following table details the roles and restrictions for the [**Build**](/build) module. Please refer to the related module information and caution notes. 
 
 | Build Sub-modules   | Scopes                                     | Owner | Manager | Operator | Viewer |
 |---------------------|--------------------------------------------|-------|---------|----------|--------|
@@ -63,7 +63,7 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Report              | List Build Reports                         | ✅     | ✅       | ✅        | ✅      |
 
 
-:::caution Distrubition Binary and Runner Details
+:::caution Distribution Binary and Runner Details
 
 - **Manager** or **Operator** Build Profile permission can distribute binary if user has **Manager** or **Operator** distribution permission.
 - **Manager** or **Operator** Build Profile permission can publish if user has **Manager** or **Operator** Publish Android/iOS permission.
@@ -73,7 +73,7 @@ The following table details the roles and restrictions for the [**Build**](/buil
 
 ### Environment Variables Permissions
 
-The following table details the roles and restrictions for the [**Environment Variables**](/environment-variables). Please refer to the modules related information and coution notes. 
+The following table details the roles and restrictions for the [**Environment Variables**](/environment-variables). Please refer to the related module information and caution notes. 
 
 | Environment Variable | Scopes                                        | Owner | Manager | Viewer |
 |----------------------|-----------------------------------------------|-------|---------|--------|
@@ -90,7 +90,7 @@ The following table details the roles and restrictions for the [**Environment Va
 
 ### Signing and Identity Permissions
 
-The following table details the roles and restrictions for the [**Signing and Identity**](/signing-identities) module. Please refer to the modules related information and coution notes. 
+The following table details the roles and restrictions for the [**Signing and Identity**](/signing-identities) module. Please refer to the related module information and caution notes. 
 
 | Signing Identity Sub-modules    | Scopes                                 | Owner | Manager | Viewer |
 |---------------------------------|----------------------------------------|-------|---------|--------|
@@ -109,13 +109,13 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 :::info Signing and Identities
 
-**Manager**, **Operator** and **Viewer** Signing Identity Management permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+**Manager** and **Viewer** Signing Identity Management permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
 
 :::
 
 ### Testing Distribution Permissions
 
-The following table details the roles and restrictions for the [**Testing Distribution**](/distribute) module. Please refer to the modules related information and coution notes. 
+The following table details the roles and restrictions for the [**Testing Distribution**](/distribute) module. Please refer to the related module information and caution notes. 
 
 | Testing Distribution | Scopes                                 | Owner | Manager | Operator | Ext. Operator | Viewer |
 |----------------------|----------------------------------------|-------|---------|----------|---------------|--------|
@@ -136,6 +136,12 @@ The following table details the roles and restrictions for the [**Testing Distri
 | Report               | List Reports App Version               | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
+:::info Apple Devices
+
+- **Manager** or **Operator** Testing Distribution permission can get Apple Devices if user has **Manager** Signing Identity permission.
+
+:::
+
 :::caution Authentication Settings
 
 If the selected Authentication type is Static login, Manager role can change **Username** and **Password**. However, it cannot change the content for other Authentication types such as **LDAP** or **SSO**.
@@ -144,8 +150,8 @@ If the selected Authentication type is Static login, Manager role can change **U
 
 :::caution Sending Binary
 
-- **Manager** or **Operator** Distribution Profile permission can send to enterprise app store if user has Manager, Operator or Ext. Operator Enterprise App Store permission.
-- **Manager** or **Operator** Distribution Profile permission can send to publish if user has Manager or Operator Publish Android and Manager or Operator iOS permission.
+- **Manager** or **Operator** Distribution Profile permission can send to Enterprise App Store if user has Manager or Operator Enterprise App Store permission.
+- **Manager** or **Operator** Distribution Profile permission can send to Publish if user has Manager or Operator Publish Android and Manager or Operator iOS permission.
 - **Manager** or **Operator** Distribution Profile permission can resign binary if user has Manager or Viewer Signing Identity Management permission.
 
 :::
@@ -153,7 +159,7 @@ If the selected Authentication type is Static login, Manager role can change **U
 
 ### Testing Group Permissions
 
-The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-management/testing-groups). Please refer to the modules related information and coution notes. 
+The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-management/testing-groups). Please refer to the related module information and caution notes.  
 
 
 | Testing Groups | Scopes                                  | Owner | Manager | Viewer |
@@ -166,7 +172,7 @@ The following table details the roles and restrictions for the [**Testing Groups
 
 ### Publish Module iOS Permissions
 
-The following table details the roles and restrictions for the [**Publish**](/publish-module) module for iOS. Please refer to the modules related information and coution notes.
+The following table details the roles and restrictions for the [**Publish**](/publish-module) module for iOS. Please refer to the related module information and caution notes.
 
 | Publish                   | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
 |---------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
@@ -203,7 +209,7 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 
 ### Publish Module Android Permissions
 
-The following table details the roles and restrictions for the [**Publish**](/publish-module) module for Android. Please refer to the modules related information and coution notes.
+The following table details the roles and restrictions for the [**Publish**](/publish-module) module for Android. Please refer to the related modules information and caution notes.
 
 | Publish                   | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
 |---------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
@@ -303,15 +309,15 @@ Also, the user can view self-hosted runners and change configuration.
 
 :::info Organization Management
 
-Whatever role a user is assigned in the root organisation, user has the same role in the **sub-organisations**. For example, someone who is a Manager in the root organisation is automatically assigned as Manager in the sub-organisations. 
+Whatever role a user is assigned in the root organization, they will have the same role in the **sub-organizations**. For example, someone who is a Manager in the root organization is automatically assigned as a Manager in the sub-organizations.  
 
-If you want to assign a role in a sub-organisation, please do so within the respective **sub-organisation**.
+If you want to assign a role in a sub-organization, please do so within the respective **sub-organization**.
 
 :::
 
 :::caution Organization Management Role Assignment
 
-The Manager role **cannot** assign itself and another user as **Owner** when assigning the role.
+The Manager role **cannot** assign itself and another user as **Owner** when assigning roles.
 
 :::
 
@@ -319,7 +325,7 @@ The Manager role **cannot** assign itself and another user as **Owner** when ass
 
 Manage the subscription, payment details, and invoices.
 
-The following table details the roles and restrictions for the **Billing** details. Please refer to the modules related information and coution notes.
+The following table details the roles and restrictions for the **Billing** details. Please refer to the related module information and caution notes.
 
 | Billing Sub-modules | Scopes                    | Owner | Manager |
 |---------------------|---------------------------|-------|---------|
@@ -328,7 +334,7 @@ The following table details the roles and restrictions for the **Billing** detai
 
 ### Connection Managements
 
-Connect or disconnect from third-party service providers such as notification tools or store connections
+Connect or disconnect from third-party service providers such as notification tools or store connections.
 
 #### Notification Tools
 
