@@ -73,7 +73,13 @@ If your app version has an enterprise-type certificate, the Testing Portal will 
 
 :::tip 
 
-The Testing Portal supports English, German, French, and Turkish. It will detect your browser's language and apply it if it is supported. If your browser's language is not supported, the default language will be English.
+The Testing Portal supports English, German, French, and Turkish. 
+
+For desktop usage, it will detect and apply your browser's language if it is supported. 
+
+For mobile devices, it will detect the device language. 
+
+If the detected language is not supported, the default language will be English.
 
 :::
 
