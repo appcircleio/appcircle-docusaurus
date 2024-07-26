@@ -165,11 +165,17 @@ You can access different Actions for existing provisions within 3 points in the 
 - **Apple Devices**: Lists the device UDIDs registered in the provision
 - **Download**: Downloads the selected provisioning
 
-:::caution Renew
+:::danger Renew
 
-The Renew function only applies to provisions that have been registered with Appcircle or fetched via the Apple Developer portal.
+The Renew function only applies to provisions that have been **registered** with Appcircle or **fetched** via the Apple Developer portal.
 
-You cannot renew manually uploaded provisioning.
+You **cannot** renew **manually uploaded provisioning**.
+
+:::
+
+:::info Renewed Profiles
+
+If a provision profile is used in a Build Profile, it will continue to be used with the renewed version after the profile is renewed.
 
 :::
 
