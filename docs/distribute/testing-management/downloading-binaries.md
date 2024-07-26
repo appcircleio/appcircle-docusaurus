@@ -39,7 +39,7 @@ For installing Android apps, you may need to grant the web browser "install apps
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal2.png" />
 
-The testing portal will also display the size and the certificate type of each app version. For more information on certificate types, please visit the [Signing Identities](/signing-identities) section.
+The Testing Portal will also display the size and the certificate type of each app version. For more information on certificate types, please visit the [Signing Identities](/signing-identities) section.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-size.png" />
 
@@ -55,7 +55,7 @@ Users can use the search bar to filter the available app version list for **app 
 
 The Testing Portal includes a toggle feature that allows users to switch between two display modes for the app version's upload time. 
 
-By default, the testing portal displays the time for the selected app version as a relative time (e.g., "2 hours ago").
+By default, the Testing Portal displays the time for the selected app version as a relative time (e.g., "2 hours ago").
 
 To view the exact date and time of the upload, simply click on the relative time display. The display will switch to show the exact date and time (e.g., "July 4, 2024 AT 10:30 AM").
 
@@ -66,18 +66,18 @@ To view the exact date and time of the upload, simply click on the relative time
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates2.png" />
 
 :::info
-If your app version has an enterprise-type certificate, the testing portal will display a guidance message about how to proceed with the installation on your device. 
+If your app version has an enterprise-type certificate, the Testing Portal will display a guidance message on how to proceed with the installation on your device.
 :::
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-enterprise.png" />
 
 ## Shared App Profiles
 
-Users can view other distributed app versions from different testing distribution profiles by selecting the menu icon from top left corner.
+Users can view other distributed app versions from different testing distribution profiles by selecting the menu icon in the top left corner.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal4.png" />
 
-The Shared App Profiles section will allow the tester to view the other testing distribution profiles that has a shared app version for their e-mail address. 
+The Shared App Profiles section allows testers to view other testing distribution profiles that have a shared app version associated with their email address.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal3.png" />
 
@@ -85,7 +85,7 @@ The list will display the other testing distribution profiles along with their a
 
 :::caution
 
-While navigating between shared profiles, if there is an authentication method for the required profile, users will need to login again to gain access.
+While navigating between shared profiles, if a profile requires authentication, users will need to log in again to gain access.
 
 :::
 
@@ -101,21 +101,21 @@ For more information about using public links, please visit the [using public li
 
 ## Logging Out of the Testing Portal
 
-Users can log out of the testing portal by following these steps:
+Users can log out of the Testing Portal by following these steps:
 
 1. **Click the Profile Icon:**
-    - On the testing portal, locate and click on the profile icon. This icon is typically found at the top right corner of the screen.
+    - Locate and click on the profile icon in the top right corner of the screen.
 
 2. **Display the Profile Card:**
-    - Clicking the profile icon will display the profile card, which contains publisher information.
+    - Clicking the profile icon will open the profile card, which displays the publisher information.
 
 3. **Click the Logout Button:**
-    - Within the profile card, find and click the **Logout** button.
+    - In the profile card, find and click the **Logout** button.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-logout.png" />
 
 :::info
 
-Log out option is only available if your testing distribution profile has an active authentication method.
+The log out option is available only if your testing distribution profile has an active authentication method.
 
 :::

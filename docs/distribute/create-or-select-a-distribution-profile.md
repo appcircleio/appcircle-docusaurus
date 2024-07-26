@@ -32,7 +32,7 @@ You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL*
 
 Once you click the save button, the information you have provided will be displayed on the Testing Portal. 
 
-If the tester selects the user icon, they will be able to see the Publisher Information.
+When the tester selects the user icon, the Publisher Information will be displayed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info2.png' />
 
@@ -40,7 +40,7 @@ It will also display the Login Method for the Testing Distribution Profile.
 
 In the example image, the profile has static authentication method, so it is displayed as Static Login. 
 
-You can find out more about the login methods on [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
+You can find out more about the login methods in the [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
 
 ### Auto send your build to the testers
 
