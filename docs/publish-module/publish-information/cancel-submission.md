@@ -11,7 +11,7 @@ With Appcircle's **Cancel Submission** feature, you can cancel your submitted ve
 
 :::caution Cancel Submission
 
-This feature is only active for versions whose status is **Waiting for Review** or **In Review** on App Store Connect. If the relevant version does not have this status, this feature will appear disable.
+This feature is only active for versions with a status of **Waiting for Review** or **In Review** on App Store Connect. If the version does not have one of these statuses, the feature will appear disabled.
 
 :::
 
