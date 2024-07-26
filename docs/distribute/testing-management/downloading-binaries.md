@@ -71,6 +71,14 @@ If your app version has an enterprise-type certificate, the Testing Portal will 
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-enterprise.png" />
 
+:::tip 
+
+The Testing Portal supports English, German, French, and Turkish. It will detect your browser's language and apply it if it is supported. If your browser's language is not supported, the default language will be English.
+
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-language.png" />
+
 ## Shared App Profiles
 
 Users can view other distributed app versions from different testing distribution profiles by selecting the menu icon in the top left corner.
