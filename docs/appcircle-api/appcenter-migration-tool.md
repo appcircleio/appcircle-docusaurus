@@ -21,8 +21,6 @@ By using the **appcenter-migration-tool**, you can ensure a smooth and efficient
 
 - **Test Group Migration:** Transition your test groups with all their associated configurations and data.
 
-By using the appcenter-migration-tool, you can ensure a smooth and efficient migration process, minimizing downtime and preserving the integrity of your data.
-
 ## Migrating App Center Automatically with tool
 
 Migrating your data in App Center manually can be a time-consuming and error-prone process. The **appcenter-migration-tool** automates this task, allowing you to efficiently and accurately transfer the data you need with minimal effort.
@@ -105,7 +103,7 @@ appcenter-migration-tool apps list
 ```
 
 :::caution
-migrate-profile command only creates a **Testing Distribution Profile** with the app name at Appcircle. Currently Build details does not included in migration
+migrate-profile command only creates a **Testing Distribution Profile** with the app name at Appcircle. Currently, Build details are not included in migration.
 :::
 
 ### App Center Distribution Groups Command
@@ -139,11 +137,22 @@ Migrated Appcircle organization is structured as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_appcircle_hierarchy.png' />
 
-Demonstrates how migration might look like step-by-step:
+**Step-by-Step Migration Process:**
 
-1. Migrating the organizations from App Center to Appcircle. Appcircle manages organizations using a main-sub organization structure. This means that every organization you migrate will be part of a main organization.
-2. Migrating apps from App Center to Appcircle involves creating a Testing Distribution Profile in Appcircle. This process currently includes only the creation of the profile; **migration of build configuration details is not supported yet**.
-3. Migrating Distribution Groups from App Center to Appcircle. App Center allows users to manage distribution groups in two ways: at the organization level and at the app level. In Appcircle, distribution groups are managed exclusively at the organization level.
+1. **Migrating Organizations:**
+
+   - Migrate the organizations from App Center to Appcircle.
+   - Appcircle uses a main-sub organization structure, meaning every organization you migrate will become part of a main organization.
+
+2. **Migrating Apps:**
+
+   - Create a Testing Distribution Profile in Appcircle for each app from App Center.
+   - This process currently includes only the creation of the profile; migration of build configuration details is not supported yet.
+
+3. **Migrating Distribution Groups:**
+   - Migrate Distribution Groups from App Center to Appcircle.
+   - App Center allows users to manage distribution groups at both the organization level and the app level.
+   - In Appcircle, distribution groups are managed exclusively at the organization level.
 
 ### Migrate Organization
 
