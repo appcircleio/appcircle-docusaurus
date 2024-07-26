@@ -29,6 +29,12 @@ Migrating your data in App Center manually can be a time-consuming and error-pro
 
 This version emphasizes the benefits of using the tool and highlights the efficiency and accuracy it offers compared to manual migration.
 
+## App Center API Token
+
+When creating a new API token for App Center, we recommend granting **Full Access** permissions.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_appcenter-login-access.png' />
+
 ## How to Install the Tool
 
 **Node.js must be installed on your machine. We recommend using version v18.19.0.**
