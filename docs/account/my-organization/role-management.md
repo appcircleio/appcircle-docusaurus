@@ -109,7 +109,13 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 :::info Signing and Identities
 
-**Manager** and **Viewer** Signing Identity Management permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+**Manager** and **Viewer** Signing Identity permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+
+:::
+
+:::caution Signing Identity Permission
+
+- - **Manager** Signing Identity permission can delete Apple Certificates and Apple Profiles if user has **Manager** Build permission.
 
 :::
 
