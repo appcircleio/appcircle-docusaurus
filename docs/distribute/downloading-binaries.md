@@ -2,7 +2,7 @@
 title: Using the Tester Portal
 description: Learn how to use the Tester Portal for downloading binaries. Streamline your app testing process with Appcircle.
 tags: [appcircle, tester, portal, distribution]
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -2,7 +2,7 @@
 title: Testing Distribution Profile
 description: Learn how to create or select a distribution profile for testing in Appcircle
 tags: [distribution, testing, distribution profile]
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
