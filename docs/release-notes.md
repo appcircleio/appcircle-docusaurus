@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
-## 3.20.0 - 2024-07-25 - New Testing Distribution Features, Shared App Profiles for Testing Portal and Xcode 16.0 Beta 4
+## 3.20.0 - 2024-07-26 - Shared App Profiles for Testing Portal, Reject Binary, Xcode 16.0 Beta 4, Bug Fixes and more
 
 ### 🆕 New Features
 
@@ -25,6 +25,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - File size and the certificate version will now be shown for each app version within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new user menu has been added to the Testing Portal, displaying the testing distribution profile's publisher information, login method, along with a logout button. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A guide message will now be displayed when downloading app versions with an Enterprise-Type certificate within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- App versions that are in the WAITING_FOR_REVIEW or IN-REVIEW states in App Store Connect can now have their review submissions canceled. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users with Manager and Operator roles can now reject app versions. Rejected app versions cannot be marked as RC (Release Candidate) ; they can only be deleted or viewed. You can also re-upload the same version for rejected items. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -32,6 +34,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - App versions that are published to the Beta and Live channels will now be displayed on Enterprise Store profile headers with related tags, both within the profile and the Enterprise Store profile list, for easier visibility. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - UI improvements have been made to the actions menu of Enterprise profiles. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Default environment variable names have been updated. Ensure you are not using the old naming convention, as all Appcircle-provided default values will now start with `AC_`. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Environment variables can now be used in metadata, app info, and Intune metadata forms within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -42,6 +45,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - A UI problem has been fixed where the save button for the static login configuration of the Enterprise Store module remained enabled even without any changes. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A UI issue has been fixed related to SSO Mapping toggle. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue with the search by action filter in the Team Activity Log has been fixed, where the first available option was not displaying any results. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed regarding binary upload process by adding status checks and failing the task if the binary could not be processed. <CloudBadge/> <SelfHostedBadge/>
+- Users will now receive a related message upon saving, if they have deprecated components in their Publish Flow. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed regarding the what's the new component of metadata details within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed regarding renewing provisioning profile by adding hour and minute to the naming convention for Renewed Provisioning Profiles, allowing renewals on the same day. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.19.1 - 2024-07-04 - Publish and Signing Identity Module Improvements, Xcode 16.0 Beta 3, Bug Fixes and more
 
