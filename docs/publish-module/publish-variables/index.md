@@ -53,50 +53,56 @@ There are some reserved variables that are automatically defined by Appcircle an
 
 ### Common Publish Reserved Variables
 
-| Variable                | Description                                                                                          |
-| ----------------------- | ---------------------------------------------------------------------------------------------------- |
-| AC_RELEASE_NOTES        | Specifies the release notes from the [build profile](https://docs.appcircle.io/build) (if published from there) or from one of the Publish steps, to be published to the store (`Google Play`, `App Store`, or `TestFlight`). |
-| AC_ORGANIZATION_ID      | Specifies the organization ID where the publish process starts.                                       |
-| AC_USER_ID              | Specifies the user ID who started the publish process.                                                |
-| AC_USER_EMAIL           | Specifies the email address of the user who started the publish process.                              |
-| AC_STORE_NAME           | Name of the store where the app is being published.                                                   |
-| AC_PLATFORM_TYPE        | Platform type (e.g., `iOS:1`, `Android:2`).                                                           |
-| AC_UNIQUE_NAME          | Unique name of the app (starts with `com.` for Android).                                              |
-| AC_PUBLISH_APP_VERSION  | Version of the app being published (e.g., `1.0.1`).                                                   |
-| AC_PUBLISH_APP_VERSION_ID | App version ID being published on Appcircle.                                                        |
-| AC_PUBLISH_APP_VERSION_CODE | Version code of the app being published.                                                          |
-| AC_APP_VERSION_NAME     | Name of the app version being published.                                                              |
-| AC_STORE_CREDENTIAL_ID  | ID of the store credential where the app is being published.                                          |
-| AC_PUBLISH_PROFILE_ID   | Specifies the profile ID who started the publish process on Appcircle.                                |
-| AC_TASK_ID              | Task ID associated with the publish process on Appcircle.                                             |
-| AC_PUBLISH_ID           | Publish ID on Appcircle.                                                                              |
-| AC_PUBLISH_STEP_ID      | Publish step ID on Appcircle.                                                                         |
-| AC_RESOURCE_ID          | Resource ID used in the publishing process on Appcircle.                                              |
-| AC_ORGANIZATION_POOL_ID | Pool ID of the organization where the publish process starts.                                         |
-| AC_SOURCE_ID            | Source ID of the process (e.g., `Publish`).                                                           |
-| AC_MODULE_NAME          | Name of the module in the process (e.g., `Publish`).                                                  |
-| AC_PUBLISH_PROFILE_NAME | Specifies the Appcircle profile name who started the publish process.                                 |
-| AC_PUBLISH_STEP_NAME    | Name of the publish flow step being run.                                                              |
-| AC_PUBLISH_WORKFLOW_NAME | Name of the publish workflow being run.                                                              |
-| AC_APP_FILE_URL         | URL of the app file being published.                                                                  |
-| AC_APP_FILE_NAME        | Name of the app file being published (with file extension).                                           |
+| Variable                    | Description                                                                                                                                                                                                  |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AC_RELEASE_NOTES            | Specifies the release notes from the [Build profile](/build) (if published from there) or from one of the Publish steps, to be published to the stores (`Google Play`, `Huawei AppGallary`, or `App Store`). |
+| AC_ORGANIZATION_ID          | Specifies the organization ID where the publish process starts.                                                                                                                                              |
+| AC_USER_ID                  | Specifies the user ID who started the publish process.                                                                                                                                                       |
+| AC_USER_EMAIL               | Specifies the email address of the user who started the publish process.                                                                                                                                     |
+| AC_STORE_NAME               | Name of the store where the app is being published.                                                                                                                                                          |
+| AC_PLATFORM_TYPE            | Platform type (e.g., `iOS:1`, `Android:2`).                                                                                                                                                                  |
+| AC_UNIQUE_NAME              | Unique name of the app (starts with `com.` for Android and iOS).                                                                                                                                             |
+| AC_PUBLISH_APP_VERSION      | Version of the app being published (e.g., `1.0.1`).                                                                                                                                                          |
+| AC_PUBLISH_APP_VERSION_ID   | App version ID being published on Appcircle.                                                                                                                                                                 |
+| AC_PUBLISH_APP_VERSION_CODE | Version code of the app being published.                                                                                                                                                                     |
+| AC_APP_VERSION_NAME         | Name of the app version being published.                                                                                                                                                                     |
+| AC_STORE_CREDENTIAL_ID      | ID of the store credential where the app is being published.                                                                                                                                                 |
+| AC_PUBLISH_PROFILE_ID       | Specifies the profile ID who started the publish process on Appcircle.                                                                                                                                       |
+| AC_TASK_ID                  | Task ID associated with the publish process on Appcircle.                                                                                                                                                    |
+| AC_PUBLISH_ID               | Publish ID on Appcircle.                                                                                                                                                                                     |
+| AC_PUBLISH_STEP_ID          | Publish step ID on Appcircle.                                                                                                                                                                                |
+| AC_RESOURCE_ID              | Resource ID used in the publishing process on Appcircle.                                                                                                                                                     |
+| AC_ORGANIZATION_POOL_ID     | Pool ID of the organization where the publish process starts.                                                                                                                                                |
+| AC_SOURCE_ID                | Source ID of the process (e.g., `Publish`).                                                                                                                                                                  |
+| AC_MODULE_NAME              | Name of the module in the process (e.g., `Publish`).                                                                                                                                                         |
+| AC_PUBLISH_PROFILE_NAME     | Specifies the Appcircle profile name who started the publish process.                                                                                                                                        |
+| AC_PUBLISH_STEP_NAME        | Name of the publish flow step being run.                                                                                                                                                                     |
+| AC_PUBLISH_WORKFLOW_NAME    | Name of the publish workflow being run.                                                                                                                                                                      |
+| AC_APP_FILE_URL             | URL of the app file being published.                                                                                                                                                                         |
+| AC_APP_FILE_NAME            | Name of the app file being published (with file extension).                                                                                                                                                  |
+
+:::caution Release Notes
+
+User can use `AC_RELEASE_NOTES` environment variable, if the `apk`, `aab` or `ipa` files comes from Build module.
+
+:::
 
 ### iOS Publish Reserved Variables
 
-| Variable                | Description                                                                                           |
-| ----------------------- | ----------------------------------------------------------------------------------------------------- |
-| AC_XCODE_LIST_DIR       | Specifies the Xcode folder list directory.                                                            |
-| AC_XCODE_VERSION        | Specifies the Xcode version.                                                                          |
-| AC_VALIDATION_CONDITION | Used for the [Get Approval from TestFlight](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/approval-test-flight). TestFlight's `internalBuildState` and `externalBuildState` will be checked according to the selection. |
-| AC_SUCCESS_STATUSES     | You can customize `Acceptable/Succeeded` App Store statuses for your app.                             |
-| AC_STACK_TYPE           | `App Store` or `TestFlight` stages.                                                                   |
+| Variable                | Description                                                                                                                                                                                                              |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AC_XCODE_LIST_DIR       | Specifies the Xcode folder list directory.                                                                                                                                                                               |
+| AC_XCODE_VERSION        | Specifies the Xcode version.                                                                                                                                                                                             |
+| AC_VALIDATION_CONDITION | Used for the [Get Approval from TestFlight](/publish-integrations/ios-publish-integrations/approval-test-flight). TestFlight's `internalBuildState` and `externalBuildState` will be checked according to the selection. |
+| AC_SUCCESS_STATUSES     | You can customize `Acceptable/Succeeded` App Store statuses for your app.                                                                                                                                                |
+| AC_STACK_TYPE           | `App Store` or `TestFlight` stages.                                                                                                                                                                                      |
 
 ### Android Publish Reserved Variables
 
-| Variable                | Description                                                                                                                        |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| AC_RELEASE_STATUS       | Used for the [Send to Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/publish-to-google-play) step. Allows you to specify `draft` or `completed` app statuses on the Google Play Console. |
-| AC_STACK_TYPE           | Used for the [Send to Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/publish-to-google-play) step. Specifies the release track to send the binary. After the binary is uploaded, you can release it from the Google Play. |
-| AC_TRACK_TO_CHECK       | Used for the [Get Approval from Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/get-approval-from-google-play) step. It's recommended to check the track that you've sent the app in previous steps.                                                    |
-| AC_ACCEPTED_STATUSES    | Used for the [Get Approval from Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/get-approval-from-google-play) step. Statuses of `completed`,`inProgress`,`draft`,`halted` can be used.                                                                 |
-| AC_HUAWEI_APP_ID        | Used for the [Send to Huawei AppGallery](https://docs.appcircle.io/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step. Huawei requires `Huawei App ID` to be sent app to Huawei App Gallery.                                                              |
+| Variable             | Description                                                                                                                                                                                                                                |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AC_RELEASE_STATUS    | Used for the [Send to Google Play](/publish-integrations/android-publish-integrations/publish-to-google-play) step. Allows you to specify `draft` or `completed` app statuses on the Google Play Console.                                  |
+| AC_STACK_TYPE        | Used for the [Send to Google Play](/publish-integrations/android-publish-integrations/publish-to-google-play) step. Specifies the release track to send the binary. After the binary is uploaded, you can release it from the Google Play. |
+| AC_TRACK_TO_CHECK    | Used for the [Get Approval from Google Play](/publish-integrations/android-publish-integrations/get-approval-from-google-play) step. It's recommended to check the track that you've sent the app in previous steps.                       |
+| AC_ACCEPTED_STATUSES | Used for the [Get Approval from Google Play](/publish-integrations/android-publish-integrations/get-approval-from-google-play) step. Statuses of `completed`,`inProgress`,`draft`,`halted` can be used.                                    |
+| AC_HUAWEI_APP_ID     | Used for the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step. Huawei requires `Huawei App ID` to be sent app to Huawei App Gallery.                                      |
