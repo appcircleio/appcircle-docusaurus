@@ -137,7 +137,7 @@ The following table details the roles and restrictions for the [**Testing Distri
 | Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Apple Device         | Add/Delete Apple Device                | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Apple Device         | Register Apple Device                  | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Apple Device         | Register Devices to Apple Developer    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Apple Device         | Adding New Device to Provision         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Apple Device         | Sync from Apple Developer              | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Apple Device         | List Apple Device                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
