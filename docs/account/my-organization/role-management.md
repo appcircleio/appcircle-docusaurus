@@ -43,12 +43,14 @@ The following table details the roles and restrictions for the [**Build**](/buil
 |---------------------|--------------------------------------------|-------|---------|----------|--------|
 | Build Profile       | Add/Delete/Update Build Profiles           | ✅     | ✅       | ⛔        | ⛔      |
 | Build Profile       | List Build Profiles                        | ✅     | ✅       | ✅        | ✅      |
+| Build Profile       | Build List                                 | ✅     | ✅       | ✅        | ✅      |
 | Repository          | Connect/Disconnect Repository              | ✅     | ✅       | ⛔        | ⛔      |
-| Commit              | List Commit                                | ✅     | ✅       | ✅        | ✅      |
 | Configuration       | Add/Delete/Update Build Configuration      | ✅     | ✅       | ⛔        | ⛔      |
 | Configuration       | View Build Configuration                   | ✅     | ✅       | ✅        | ✅      |
 | Workflow            | Add/Delete/Update Workflows                | ✅     | ✅       | ⛔        | ⛔      |
 | Workflow            | View Workflows                             | ✅     | ✅       | ✅        | ✅      |
+| Triggers            | Add/Delete/Update Triggers                 | ✅     | ✅       | ⛔        | ⛔      |
+| Triggers            | View Triggers                              | ✅     | ✅       | ✅        | ✅      |
 | Build Actions       | Start Build                                | ✅     | ✅       | ✅        | ⛔      |
 | Build Actions       | Delete Commit Artifacts                    | ✅     | ✅       | ⛔        | ⛔      |
 | Build Actions       | Download Artifacts                         | ✅     | ✅       | ✅        | ✅      |
@@ -134,9 +136,9 @@ The following table details the roles and restrictions for the [**Testing Distri
 | App Version Actions  | Send to Publish                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Apple Device         | Add/Delete Apple Device                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Apple Device         | Add/Delete Apple Device                | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Apple Device         | Register Apple Device                  | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Apple Device         | Adding New Device to Provision         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Apple Device         | Adding New Device to Provision         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Apple Device         | Sync from Apple Developer              | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Apple Device         | List Apple Device                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports App Version               | ✅     | ✅       | ✅        | ⛔             | ✅      |
@@ -159,6 +161,12 @@ If the selected Authentication type is Static login, Manager role can change **U
 - **Manager** or **Operator** Distribution Profile permission can send to Enterprise App Store if user has Manager or Operator Enterprise App Store permission.
 - **Manager** or **Operator** Distribution Profile permission can send to Publish if user has Manager or Operator Publish Android and Manager or Operator iOS permission.
 - **Manager** or **Operator** Distribution Profile permission can resign binary if user has Manager or Viewer Signing Identity Management permission.
+
+:::
+
+:::caution Resign Binary
+
+User can resign the binary if this user has **Manager** or **Viewer** Signing Identity permission
 
 :::
 
@@ -187,7 +195,8 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | App Version               | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | App Version               | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Publish Profile Settings  | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Flow Steps | Download/Upload Publish Flow              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Manage Publish Flow Steps | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Manage Publish Flow Steps | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Manage Publish Flow Steps | Add/Delete Publish Flow Step              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Manage Publish Flow Steps | List Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Manage Publish Flow Steps | Update Publish Flow Step Details          | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
@@ -212,6 +221,12 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Environment Variables     | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Activity Logs             | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
+:::caution Resign Binary
+
+User can resign the binary if this user has **Manager** or **Viewer** Signing Identity permission
+
+:::
+
 
 ### Publish Module Android Permissions
 
@@ -232,7 +247,7 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Publish Process           | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish Process           | Update Custom UI details                  | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish Process           | View Custom UI Details                    | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Publish Process           | List Publish Flow Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish Process           | List Publish Flow Details                 | ✅     | ✅       | ✅        | ✅             | ✅      |
 | App Store Connect Info    | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Check Release Status      | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Metadata                  | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
@@ -240,7 +255,7 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Mark as RC                | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Resing Binary             | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Release Note              | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| History                   | View/Download History Logs                | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| History                   | View/Download History Logs                | ✅     | ✅       | ✅        | ✅             | ✅      |
 | History                   | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Download Binary           | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Reject Binary             | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
@@ -281,7 +296,7 @@ Manage and Upload Apps to Enterprise App Store.
 | Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Settings             | View Customization Settings            | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Settings             | View Store Domain                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Report               | List Reports                           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Report               | List Reports                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::caution Authentication Settings
 
