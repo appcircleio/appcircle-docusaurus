@@ -188,38 +188,36 @@ The following table details the roles and restrictions for the [**Testing Groups
 
 The following table details the roles and restrictions for the [**Publish**](/publish-module) module for iOS. Please refer to the related module information and caution notes.
 
-| Publish                   | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
-|---------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
-| Publish Profiles          | Add/Delete/Update Publish Profile         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Profiles          | List Publish Profiles                     | ✅     | ✅       | ✅        | ✅             | ✅      |
-| App Version               | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| App Version               | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Publish Profile Settings  | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Flow Steps | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Manage Publish Flow Steps | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Flow Steps | Add/Delete Publish Flow Step              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Manage Publish Flow Steps | List Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Manage Publish Flow Steps | Update Publish Flow Step Details          | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Process           | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Process           | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Process           | Update Custom UI details                  | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Process           | View Custom UI Details                    | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Publish Process           | List Publish Flow Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| App Store Connect Info    | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Check Release Status      | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Metadata                  | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| Metadata                  | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Mark as RC                | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Resing Binary             | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Release Note              | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| History                   | Download History Logs                     | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| History                   | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Download Binary           | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Cancel Submission         | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Reject Binary             | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Environment Variables     | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Environment Variables     | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Activity Logs             | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish                  | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
+|--------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
+| Publish Profiles         | Add/Delete/Update Publish Profile         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Profiles         | List Publish Profiles                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Version              | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| App Version              | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Publish Profile Settings | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows            | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows            | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                  | Update Publish Step Details               | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| App Store Connect Info   | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Check Release Status     | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Metadata                 | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Metadata                 | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Mark as RC               | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Resing Binary            | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Release Note             | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| History                  | Download History Logs                     | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| History                  | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Download Binary          | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Cancel Submission        | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Reject Binary            | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Environment Variables    | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Environment Variables    | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Activity Logs            | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::caution Resign Binary
 
