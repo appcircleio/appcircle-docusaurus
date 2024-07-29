@@ -27,7 +27,7 @@ You can now see a list of your testers, select and delete testers if you need to
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/06-11-EditTestingEmails.png' />
 
-Also by clicking on the edit button on the top right corner, you can rename, duplicate or delete your testing group if you need to.
+Also by clicking on the edit button next to your testing group name from the list, you can rename, duplicate or delete your testing group if you need to.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/06-12-EditTestingGroup.png' />
 

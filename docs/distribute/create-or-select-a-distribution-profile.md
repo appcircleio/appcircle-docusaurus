@@ -2,7 +2,7 @@
 title: Testing Distribution Profile
 description: Learn how to create or select a distribution profile for testing in Appcircle
 tags: [distribution, testing, distribution profile]
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -21,6 +21,26 @@ As a best practice, we recommend using one single distribution profile for both 
 Once you create the distribution profile, you can now customize its settings. Click on the newly created build profile and then the settings button within the profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (153).png' />
+
+### Publisher Information
+
+The Info tab allows you to enter the publisher information for your distributed applications. 
+
+You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info.png' />
+
+Once you click the save button, the information you have provided will be displayed on the Testing Portal. 
+
+When the tester selects the user icon, the Publisher Information will be displayed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info2.png' />
+
+It will also display the Login Method for the Testing Distribution Profile. 
+
+In the example image, the profile has static authentication method, so it is displayed as Static Login. 
+
+You can find out more about the login methods in the [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
 
 ### Auto send your build to the testers
 
