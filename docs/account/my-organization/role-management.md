@@ -173,7 +173,7 @@ User can resign the binary if this user has **Manager** or **Viewer** Signing Id
 
 ### Testing Group Permissions
 
-The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-management/testing-groups). Please refer to the related module information and caution notes.  
+The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-groups). Please refer to the related module information and caution notes.  
 
 
 | Testing Groups | Scopes                                  | Owner | Manager | Viewer |
