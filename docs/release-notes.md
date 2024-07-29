@@ -16,31 +16,27 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
-## 3.20.0 - 2024-07-29 - Role Management Updates, Tester Portal Features, Reject Binary, Xcode 16.0 Beta 4, Bug Fixes and more
-
-### :warning: Breaking Changes
-
-- User Role Permissions have been updated. For more details please visit Role Management. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- New Ext. Operator Role has been added to Enterprise App Store, Testing Distribution and Publish modules. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Uploader role has been removed from Enterprise App Store module. It has been migrated to the Operator role. Also, the previous Operator role has been migrated to Ext. Operator role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+## 3.20.0 - 2024-07-29 - Role Management Updates, Testing Distribution and Publish Improvements, Xcode 16.0 Beta 4, Bug Fixes and more
 
 ### 🆕 New Features
 
-- Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the Info tab within the Testing Distribution profile settings. This information will be displayed on the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Shared App Profiles will now be displayed within the Tester Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- File size and the certificate version will now be shown for each app version within the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A new user menu has been added to the Tester Portal, displaying the testing distribution profile's publisher information, login method, along with a logout button. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A guide message will now be displayed when downloading app versions with an Enterprise-Type certificate within the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- App versions that are in the WAITING_FOR_REVIEW or IN-REVIEW states in App Store Connect can now have their review submissions canceled. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Users with Manager and Operator roles can now reject app versions. Rejected app versions cannot be marked as RC (Release Candidate) ; they can only be deleted or viewed. You can also re-upload the same version for rejected items. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the [Info tab](/distribute/create-or-select-a-distribution-profile#publisher-information) within the Testing Distribution profile settings. This information will be displayed on the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Shared App Profiles](/distribute/downloading-binaries#shared-app-profiles) will now be displayed within the Tester Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- File size and the certificate version will now be shown for each app version within the [Tester Portal](/distribute/downloading-binaries). <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new [user menu](/distribute/create-or-select-a-distribution-profile#publisher-information) has been added to the Tester Portal, displaying the testing distribution profile's publisher information, login method, along with a logout button. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A [guide message](/distribute/downloading-binaries) will now be displayed when downloading app versions with an Enterprise-Type certificate within the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users can now [cancel submissions](/publish-module/publish-information/cancel-submission) with "Waiting for Review" or "In Review" status on App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users with Manager and Operator roles can now [reject app versions](/publish-module/publish-information/reject-binary). Rejected app versions cannot be marked as RC (Release Candidate) ; they can only be deleted or viewed. You can also re-upload the same version for rejected items. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users can now use the [appcenter-migration-tool](/appcircle-api/appcenter-migration-tool), designed to assist organizations and individuals to migrate their Visual Studio App Center projects with organizations, collaborators, app profiles and test groups to Appcircle effortlessly. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/>
 
 ### :muscle: Improvements
 
 - The [Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 4](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
 - App versions that are published to the Beta and Live channels will now be displayed on Enterprise App Store profile headers with related tags, both within the profile and the Enterprise App Store profile list, for easier visibility. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - UI improvements have been made to the actions menu of Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Default environment variable names have been updated. Ensure you are not using the old naming convention, as all Appcircle-provided default values will now start with `AC_`. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Default environment variable](/publish-module/publish-variables#reserved-variables) names have been updated. Ensure you are not using the old naming convention, as all Appcircle-provided default values will now start with `AC_`. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Environment variables can now be used in metadata, app info, and Intune metadata forms within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [The Tester Portal](/distribute/downloading-binaries) now supports French language. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -55,6 +51,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Users will now receive a related message upon saving, if they have deprecated components in their Publish Flow. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed regarding the what's the new component of metadata details within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed regarding renewing provisioning profile by adding hour and minute to the naming convention for Renewed Provisioning Profiles, allowing renewals on the same day. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :warning: Breaking Changes
+
+- User Role Permissions have been updated. For more details please visit [Role Management](/account/my-organization/role-management). <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- New Ext. Operator Role has been added to Enterprise App Store, Testing Distribution and Publish modules. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Uploader role has been removed from Enterprise App Store module. It has been migrated to the Operator role. Also, the previous Operator role has been migrated to Ext. Operator role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.19.1 - 2024-07-04 - Publish and Signing Identity Module Improvements, Xcode 16.0 Beta 3, Bug Fixes and more
 
