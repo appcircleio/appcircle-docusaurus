@@ -21,8 +21,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### :warning: Breaking Changes
 
 - User Role Permissions have been updated. For more details please visit Role Management. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- New Ext. Operator Role has been added to Enterprise Store, Testing Distribution and Publish modules. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Uploader role has been removed from Enterprise Store module. It has been migrated to the Operator role. Also, the previous Operator role has been migrated to Ext. Operator role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- New Ext. Operator Role has been added to Enterprise App Store, Testing Distribution and Publish modules. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Uploader role has been removed from Enterprise App Store module. It has been migrated to the Operator role. Also, the previous Operator role has been migrated to Ext. Operator role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🆕 New Features
 
@@ -37,18 +37,18 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### :muscle: Improvements
 
 - The [Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 4](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
-- App versions that are published to the Beta and Live channels will now be displayed on Enterprise Store profile headers with related tags, both within the profile and the Enterprise Store profile list, for easier visibility. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- UI improvements have been made to the actions menu of Enterprise profiles. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- App versions that are published to the Beta and Live channels will now be displayed on Enterprise App Store profile headers with related tags, both within the profile and the Enterprise App Store profile list, for easier visibility. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- UI improvements have been made to the actions menu of Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Default environment variable names have been updated. Ensure you are not using the old naming convention, as all Appcircle-provided default values will now start with `AC_`. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Environment variables can now be used in metadata, app info, and Intune metadata forms within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
-- A UI problem affecting Safari browsers has been fixed for the App Detail preview screen in the Enterprise Store customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue has been fixed where user color selections were not immediately displaying on the preview screen within the Enterprise Store customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue has been fixed where users were unable to update the colors without updating the store title within the Enterprise Store customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue related to long texts affecting the Enterprise Store display has been fixed by applying a character limit to the Summary and Release Notes sections of the Publish to Store feature within the Enterprise Store module. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A UI problem has been fixed where the save button for the static login configuration of the Enterprise Store module remained enabled even without any changes. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A UI problem affecting Safari browsers has been fixed for the App Detail preview screen in the Enterprise App Store customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where user color selections were not immediately displaying on the preview screen within the Enterprise App Store customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where users were unable to update the colors without updating the store title within the Enterprise App Store customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue related to long texts affecting the Enterprise App Store display has been fixed by applying a character limit to the Summary and Release Notes sections of the Publish to Store feature within the Enterprise App Store module. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A UI problem has been fixed where the save button for the static login configuration of the Enterprise App Store module remained enabled even without any changes. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A UI issue has been fixed related to SSO Mapping toggle. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue with the search by action filter in the Team Activity Log has been fixed, where the first available option was not displaying any results. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed regarding binary upload process by adding status checks and failing the task if the binary could not be processed. <CloudBadge/> <SelfHostedBadge/>
