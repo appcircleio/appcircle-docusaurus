@@ -158,7 +158,7 @@ If the selected Authentication type is Static login, Manager role can change **U
 
 :::caution Share with Tester
 
-User can share the binary with testers if user has **Viewer** or above Testing Group permission.
+Users can share the binary with registered Tester Groups only if they have **Viewer** or higher Testing Group permission. However, users can still share the binary with individual testers by adding them manually.
 
 :::
 
