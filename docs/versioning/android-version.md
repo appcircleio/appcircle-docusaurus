@@ -42,6 +42,16 @@ If you select **Environment Variable**, you need to write the source environment
 
 If you select Gradle, the version code will be read from build.gradle file. If you want to use different flavor, please set them in the **Advanced Settings** section.
 
+:::danger
+
+Using a dynamic `versionCode` in the Gradle file is not supported for version incrementing. If you define `versionCode` dynamically, you may encounter a format error after selecting Gradle as the `Version Code Source`.
+
+For a sample of a stable format, you can refer to the document below:
+
+- [Android - Set app version information](https://developer.android.com/studio/publish/versioning#appversioning)
+
+:::
+
 **Offset**
 
 If you select `$AC_BUILD_NUMBER` as your version code source, the version code in your project can be different. To synchronize version code, you can use the offset. The offset value is a number to be added or subtracted from the _Version Code Source_. Negative values can be written such as -10.
@@ -58,6 +68,16 @@ The versioning system needs a version name source and an offset to calculate the
 If you select Environment Variable, you need to write the source environment variable into `Version Name` You can use any environment variable that you create or select from the config screen. Environment variables must start with the `$` sign.
 
 If you select Gradle, the version name will be read from the given Android project.
+
+:::danger
+
+Using a dynamic `versionName` in the Gradle file is not supported for version incrementing. If you define `versionName` dynamically, you may encounter a format error after selecting Gradle as the `Version Name Source`.
+
+For a sample of a stable format, you can refer to the document below:
+
+- [Android - Set app version information](https://developer.android.com/studio/publish/versioning#appversioning)
+
+:::
 
 **Offset**
 

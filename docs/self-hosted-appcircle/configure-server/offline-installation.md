@@ -149,6 +149,12 @@ Now you are ready to `up` (start) the Appcircle server. You can refer back to th
 
 If you installed a self-hosted Appcircle server before and you want to upgrade your self-hosted Appcircle server but you can't somehow download container images, you can update your container images with this method too.
 
+:::caution
+If you are using the Appcircle DMZ structure and upgrading an Appcircle server, it is critical to also update the Appcircle DMZ server. If you don't, Enterprise App Store and Testing Distribution may not function as expected.
+
+For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/docs/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md). 
+:::
+
 :::info
 You don't need to change your `global.yaml` or reset your data.
 

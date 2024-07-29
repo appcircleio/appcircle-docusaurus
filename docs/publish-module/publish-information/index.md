@@ -94,6 +94,24 @@ url="/publish-module/publish-information/download">
 Read more about Downloading Binaries
 </ContentRef>
 
+## Cancel Submission
+
+Canceling a submission on the App Store can be crucial for developers who need to make last-minute changes or corrections. Learn how to efficiently cancel your app submission, understand common pitfalls, and ensure a smoother app review process.
+
+<ContentRef
+url="/publish-module/publish-information/cancel-submission">
+Read more about Downloading Binaries
+</ContentRef>
+
+## Reject Binary
+
+Binary rejection on Appcircle can delay your app's launch. Discover the top reasons for binary rejection, how to address them effectively, and ensure your app meets guidelines for a successful approval process. Optimize your app's chances today!
+
+<ContentRef
+url="/publish-module/publish-information/reject-binary">
+Read more about Downloading Binaries
+</ContentRef>
+
 ## Delete
 
 The Delete option provides a way to remove a version from the system. It should be used with caution as it will permanently eliminate the selected version and all associated data from the Publish module. This feature helps in maintaining a clean and organized workspace by removing obsolete or unnecessary versions.
