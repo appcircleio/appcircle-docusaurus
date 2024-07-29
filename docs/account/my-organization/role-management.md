@@ -156,6 +156,12 @@ If the selected Authentication type is Static login, Manager role can change **U
 
 :::
 
+:::caution Share with Tester
+
+User can share the binary with testers if user has **Viewer** or above Testing Group permission.
+
+:::
+
 :::caution Sending Binary
 
 - **Manager** or **Operator** Distribution Profile permission can send to Enterprise App Store if user has Manager or Operator Enterprise App Store permission.
