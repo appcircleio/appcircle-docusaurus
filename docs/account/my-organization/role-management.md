@@ -201,7 +201,7 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Update Publish Step Details               | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                  | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | App Store Connect Info   | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Check Release Status     | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
@@ -243,7 +243,7 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Update Publish Step Details               | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                  | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | App Store Connect Info   | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Check Release Status     | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
