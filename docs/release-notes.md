@@ -16,15 +16,21 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
-## 3.20.0 - 2024-07-26 - Shared App Profiles for Testing Portal, Reject Binary, Xcode 16.0 Beta 4, Bug Fixes and more
+## 3.20.0 - 2024-07-29 - Role Management Updates, Tester Portal Features, Reject Binary, Xcode 16.0 Beta 4, Bug Fixes and more
+
+### :warning: Breaking Changes
+
+- User Role Permissions have been updated. For more details please visit Role Management. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- New Ext. Operator Role has been added to Enterprise Store, Testing Distribution and Publish modules. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Uploader role has been removed from Enterprise Store module. It has been migrated to the Operator role. Also, the previous Operator role has been migrated to Ext. Operator role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🆕 New Features
 
-- Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the Info tab within the Testing Distribution profile settings. This information will be displayed on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Shared App Profiles will now be displayed within the Testing Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- File size and the certificate version will now be shown for each app version within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A new user menu has been added to the Testing Portal, displaying the testing distribution profile's publisher information, login method, along with a logout button. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A guide message will now be displayed when downloading app versions with an Enterprise-Type certificate within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the Info tab within the Testing Distribution profile settings. This information will be displayed on the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Shared App Profiles will now be displayed within the Tester Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- File size and the certificate version will now be shown for each app version within the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new user menu has been added to the Tester Portal, displaying the testing distribution profile's publisher information, login method, along with a logout button. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A guide message will now be displayed when downloading app versions with an Enterprise-Type certificate within the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - App versions that are in the WAITING_FOR_REVIEW or IN-REVIEW states in App Store Connect can now have their review submissions canceled. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Users with Manager and Operator roles can now reject app versions. Rejected app versions cannot be marked as RC (Release Candidate) ; they can only be deleted or viewed. You can also re-upload the same version for rejected items. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
