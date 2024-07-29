@@ -195,10 +195,10 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | App Version              | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | App Version              | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Publish Profile Settings | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows            | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish Flows            | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Update Publish Step Details               | ✅     | ✅       | ✅        | ⛔             | ⛔      |
@@ -237,10 +237,10 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | App Version              | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | App Version              | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Publish Profile Settings | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows            | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish Flows            | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Update Publish Step Details               | ✅     | ✅       | ✅        | ⛔             | ⛔      |
@@ -255,10 +255,11 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | History                  | View/Download History Logs                | ✅     | ✅       | ✅        | ✅             | ✅      |
 | History                  | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Download Binary          | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Cancel Submission        | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Reject Binary            | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Environment Variables    | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Environment Variables    | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Activity Logs            | List Activty Log Details                  | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Activity Logs            | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::info
 
