@@ -27,7 +27,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - A [guide message](/distribute/downloading-binaries) will now be displayed when downloading app versions with an Enterprise-Type certificate within the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Users can now [cancel submissions](/publish-module/publish-information/cancel-submission) with "Waiting for Review" or "In Review" status on App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Users with Manager and Operator roles can now [reject app versions](/publish-module/publish-information/reject-binary). Rejected app versions cannot be marked as RC (Release Candidate) ; they can only be deleted or viewed. You can also re-upload the same version for rejected items. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Users can now use the [appcenter-migration-tool](/appcircle-api/appcenter-migration-tool), designed to assist organizations and individuals to migrate their Visual Studio App Center projects with organizations, collaborators, app profiles and test groups to Appcircle effortlessly. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/>
+- Users can now use the [App Center Migration Tool](/appcircle-api/appcenter-migration-tool), designed to assist organizations and individuals to migrate their Visual Studio App Center projects with organizations, collaborators, app profiles and test groups to Appcircle effortlessly. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/>
 
 ### :muscle: Improvements
 
