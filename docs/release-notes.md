@@ -31,6 +31,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### :muscle: Improvements
 
+- The role structure has been expanded, with new roles added and existing roles updated. For more details, please visit the [Role Management](/account/my-organization/role-management) page. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - French language support has now been added to [The Tester Portal](/distribute/downloading-binaries). <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Default environment variable](/publish-module/publish-variables#reserved-variables) names have been updated. The old naming convention should no longer be used, as all Appcircle-provided default values now starts with `AC_`. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Environment variables can now be used in metadata, app info, and Intune metadata forms within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -54,7 +55,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### :warning: Breaking Changes
 
-- User Role Permissions have been updated. For more details please visit [Role Management](/account/my-organization/role-management). <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - New Ext. Operator Role has been added to Enterprise App Store, Testing Distribution and Publish modules. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Uploader role has been removed from the Enterprise App Store module and migrated to the Operator role. Additionally, the previous Operator role has been migrated to the Ext. Operator role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
