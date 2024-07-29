@@ -198,11 +198,11 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows            | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish Flows            | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ✅             | ✅      |
 | App Store Connect Info   | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Check Release Status     | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Metadata                 | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
@@ -240,11 +240,11 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows            | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish Flows            | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                  | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ✅             | ✅      |
 | App Store Connect Info   | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Check Release Status     | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Metadata                 | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
