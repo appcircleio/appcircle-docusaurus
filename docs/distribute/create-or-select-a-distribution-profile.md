@@ -38,7 +38,7 @@ When the tester selects the user icon, the Publisher Information will be display
 
 It will also display the Login Method for the Testing Distribution Profile. 
 
-In the example image, the profile has static authentication method, so it is displayed as Static Login. 
+In the example image, the profile uses a static authentication method, so it is displayed as Static Login.
 
 You can find out more about the login methods in the [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
 
