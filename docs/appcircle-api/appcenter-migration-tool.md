@@ -47,6 +47,8 @@ Alternatively, you can install it locally:
 npm install @appcircle/appcenter-migration-tool
 ```
 
+https://www.npmjs.com/package/@appcircle/appcenter-migration-tool
+
 ## Using the Tool for Migration
 
 The CLI tool offers the following main commands to login to App Center and migrate the respective entities: **Login**, **Organizations**, **App Center Apps** and **App Center Distribution Groups**.
