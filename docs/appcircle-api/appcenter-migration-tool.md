@@ -21,16 +21,6 @@ By using the **appcenter-migration-tool**, you can ensure a smooth and efficient
 
 - **Test Group Migration:** Transition your test groups from App Center to Appcircle with all their associated configurations and data.
 
-## Migrating from App Center to Appcircle Automatically
-
-Migrating your data in App Center manually can be a time-consuming and error-prone process. The **appcenter-migration-tool** automates this task, allowing you to efficiently and accurately transfer the data you need with minimal effort.
-
-## App Center API Token
-
-When creating a new API token for the migration tool from App Center, granting **Full Access** permission is recommended.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_appcenter-login-access.png' />
-
 ## How to Install the Tool
 
 **Node.js must be installed on your machine. Version v18.19.0 is recommended.**
@@ -48,6 +38,16 @@ npm install @appcircle/appcenter-migration-tool
 ```
 
 https://www.npmjs.com/package/@appcircle/appcenter-migration-tool
+
+## Migrating from App Center to Appcircle Automatically
+
+Migrating your data in App Center manually can be a time-consuming and error-prone process. The **appcenter-migration-tool** automates this task, allowing you to efficiently and accurately transfer the data you need with minimal effort.
+
+## App Center API Token
+
+When creating a new API token for the migration tool from App Center, granting **Full Access** permission is recommended.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_appcenter-login-access.png' />
 
 ## Using the Tool for Migration
 
