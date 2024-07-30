@@ -9,11 +9,11 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Check App Store Release Status
 
-With Appcircle's **Check App Store Release Status** component, you can get the status information of your published application, bind this step to a condition according to the status, and check and run your flow.
+With Appcircle's **Check App Store Release Status** component, you can obtain status information for your published application, bind this step to a condition based on the status, and check and run your flow accordingly.
 
 ### Prerequisites
 
-Below are the prerequisite steps necessary for this operation, accompanied by their descriptions.
+Below are the prerequisite steps necessary for this operation, along with their descriptions.
 
 :::caution
 
@@ -38,7 +38,7 @@ Below are the parameters necessary for this step's operation, along with their d
 
 :::caution Success Statuses
 
-For this step to work depending on a condition, a valid status must be given. You can give more than one status by putting commas between them. Some statuses that can be given are listed below. For more information, please see the Apple documentation [**here**](https://developer.apple.com/help/app-store-connect/reference/app-and-submission-statuses/).
+For this step to work based on a condition, a valid status must be provided. You can specify multiple statuses by separating them with commas. Some example statuses are listed below. For more information, please refer to the [**Apple documentation**](https://developer.apple.com/help/app-store-connect/reference/app-and-submission-statuses/).
 
 Note: A few status are shown below as examples. For this step to be successful, if the status of the version on App Store Connect matches one or more of the given statuses, the step will be considered successful. 
 

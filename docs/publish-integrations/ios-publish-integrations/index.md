@@ -43,7 +43,7 @@ After beta testing, you'll need to navigate the approval process. This section w
 Understand how to Get Approval from TestFlight
 </ContentRef>
 
-# Check App Store Release Status
+## Check App Store Release Status
 
 After submission, you'll need to navigate the approval process. This section will walk you through checking the status of your app on App Store Connect and understanding the necessary steps towards final approval.
 
