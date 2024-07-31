@@ -32,7 +32,7 @@ fastlane add_plugin appcircle_testing_distribution
 
 ```yml
   appcircle_testing_distribution(
-    accessToken: "$(AC_ACCESS_TOKEN)", # Your Appcircle Access Token
+    accessToken: "$(AC_ACCESS_TOKEN)", # Your Appcircle Personal API Token
     profileID: "$(AC_PROFILE_ID)", # ID of your Appcircle Distribution Profile
     appPath: "$(AC_APP_PATH)", # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
     message: "$(AC_MESSAGE)", # Your Message
@@ -66,6 +66,6 @@ Utilize environment variables seamlessly by substituting the parameters with `$(
 
 ## References
 
-- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/distribute/create-or-select-a-distribution-profile).

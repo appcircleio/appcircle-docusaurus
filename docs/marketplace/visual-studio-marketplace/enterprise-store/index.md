@@ -31,7 +31,7 @@ In order to install Appcircle Enterprise Store task extension, follow these step
    <Screenshot url='https://cdn.appcircle.io/docs/assets/ac-app-store-azure-extension-task.png' />
 3. Complete the necessary input fields and then click the "Add" button.
 
-   3.1. You can learn more about getting your access token [here](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+   3.1. You can learn more about getting your personal api token [here](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
 :::info
 You should add this task extension after completing your build steps.
@@ -42,7 +42,7 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 ```yaml
 - task: AppcircleEnterpriseStore@0
   inputs:
-    accessToken: "ACCESS_TOKEN" # Appcircle Access Token
+    accessToken: "ACCESS_TOKEN" # Appcircle Personal API Token
     entProfileId: "ENT_PROFILE_ID" # Enterprise Profile Id
     appPath: "APP_PATH" # Your App Path
     summary: "SUMMARY" # Your Summary

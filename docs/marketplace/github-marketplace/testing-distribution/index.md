@@ -29,7 +29,7 @@ To install the Appcircle Testing Distribution action, add the following step to 
   id: testing-distribution
     uses: appcircleio/appcircle-testing-distribution-githubaction@v0.0.1 # provide the version you want to use
   with:
-    accessToken: ${{ secrets.AC_ACCESS_TOKEN }} # Your Appcircle Access Token
+    accessToken: ${{ secrets.AC_ACCESS_TOKEN }} # Your Appcircle Personal API Token
     profileID: ${{ secrets.AC_PROFILE_ID }} # ID of your Appcircle Distribution Profile
     appPath: ${{ secrets.APP_PATH }} # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
     message: ${{ secrets.MESSAGE }} # Your Message
@@ -62,6 +62,6 @@ Utilize environment variables seamlessly by substituting the parameters with **s
 
 ## References
 
-- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
+- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/distribute/create-or-select-a-distribution-profile)

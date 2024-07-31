@@ -33,7 +33,7 @@ To install the Appcircle Enterprise Store action, add the following step to your
   id: appcircle-store-publishment
   uses: ./
   with:
-    accessToken: ${{ secrets.AC_ACCESS_TOKEN }} # Appcircle Access Token
+    accessToken: ${{ secrets.AC_ACCESS_TOKEN }} # Appcircle Personal API Token
     entProfileId: ${{ secrets.AC_PROFILE_ID }} # Enterprise Profile Id
     appPath: "APP_PATH" # Your App Path
     summary: "SUMMARY" # Your Summary
@@ -68,6 +68,6 @@ Utilize environment variables seamlessly by substituting the parameters with **s
 
 ## References
 
-- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
 - For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](https://appcircle.io/enterprise-app-store).

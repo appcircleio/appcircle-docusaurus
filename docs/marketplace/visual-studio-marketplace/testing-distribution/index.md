@@ -32,7 +32,7 @@ To install the Appcircle Distribute Task Extension, follow these steps:
 3. Fill out the necessary input fields and click the **Add** button.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-extension-task-detail.png' />
 
-   3.1. You can learn more about getting your access token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+   3.1. You can learn more about getting your personal api token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
    3.2. Find out how to create a distribution profile [here](/distribute/create-or-select-a-distribution-profile)
 
@@ -45,7 +45,7 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 ```yaml
 - task: AppcircleTestingDistribution@0
   inputs:
-    accessToken: "APPCIRCLE_ACCESS_TOKEN" # Your Appcircle Access Token
+    accessToken: "APPCIRCLE_ACCESS_TOKEN" # Your Appcircle Personal API Token
     profileId: "APPCIRCLE_PROFILE_ID" # ID of your Appcircle Distribution Profile
     appPath: "BUILD_PATH" # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
     message: "Sample Message" # Custom message for your testers
