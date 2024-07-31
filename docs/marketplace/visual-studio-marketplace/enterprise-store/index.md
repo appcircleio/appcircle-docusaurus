@@ -42,10 +42,12 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 ```yaml
 - task: AppcircleEnterpriseStore@0
   inputs:
-    accessToken: "APPCIRCLE_ACCESS_TOKEN" # Your Appcircle Access Token
-    profileId: "APPCIRCLE_PROFILE_ID" # ID of your Appcircle Distribution Profile
-    appPath: "BUILD_PATH" # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
-    message: "Sample Message" # Custom message for your testers
+    accessToken: "ACCESS_TOKEN" # Appcircle Access Token
+    entProfileId: "ENT_PROFILE_ID" # Enterprise Profile Id
+    appPath: "APP_PATH" # Your App Path
+    summary: "SUMMARY" # Your Summary
+    releaseNotes: "RELEASE_NOTE" # Your Release Note
+    publishType: "PUBLISH_TYPE" # None, Beta, Live
 ```
 
 ## Leveraging Environment Variables
