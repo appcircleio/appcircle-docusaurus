@@ -41,6 +41,23 @@ Additionally, remember to place the plugin after your build steps as you will ne
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-store-configure_pannel.png' />
 
+#### How to Retrieve Your Enterprise Store Profile ID
+
+You can obtain your Enterprise Store Profile ID from the URL or by using the @appcircle/cli.
+
+**How to Extract Your Enterprise Store Profile ID from the URL**
+
+1. Navigate to your Enterprise Store Profile.
+2. Check the URL, which should be in this format: /enterprise-store/profiles/PROFILE_ID. The PROFILE_ID refers to your specific profile ID.
+
+**Retrieving Profile ID Using @appcircle/cli**
+
+The upcoming command retrieves the complete list of Enterprise Store Profiles.
+
+```bash
+appcircle enterprise-app-store profile list
+```
+
 ### Leveraging Environment Variables
 
 Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.

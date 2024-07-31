@@ -8,6 +8,7 @@ tags:
     ipa distribution,
     apk distribution,
     binary distribution,
+    jenkins-plugin,
   ]
 sidebar_position: 1
 ---
@@ -18,7 +19,7 @@ The Appcircle Testing Distribution plugin allows users to upload their apps and 
 
 ### Install Appcircle Testing Distribution Plugin
 
-Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Then, search for "Appcircle Enterprise Store" in the available plugins section.
+Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Then, search for "Appcircle Testing Distribution" in the available plugins section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-installation_steps.png' />
 
@@ -26,21 +27,56 @@ Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Th
 
 Go to your configuration page of the project add a build step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-add_pannel.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-175_jenkins_build_step.png' />
 
 ### Configure Plugin
 
 After adding the plugin to your build steps, ensure that you provide all required inputs.
 Additionally, remember to place the plugin after your build steps as you will need to specify the build path later on.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-configure_pannel.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-175_jenkins_plugin_usage.png' />
+
+#### How to Retrieve Your Testing Distribution Profile ID
+
+You can obtain your testing distribution profile from the URL or by using the @appcircle/cli.
+
+##### How to Extract Your Profile ID from the URL
+
+1. Navigate to your Testing Distribution profile.
+2. Check the URL, which should be in this format: **distribute/detail/PROFILE_ID**. The **PROFILE_ID** refers to your specific profile ID.
+
+##### Retrieving Profile ID Using @appcircle/cli
+
+The upcoming command retrieves the complete list of Testing Distribution Profiles.
+
+```bash
+appcircle testing-distribution profile list
+```
 
 ### Leveraging Environment Variables
 
 Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
 
+### Using Plugin into Your Pipeline
+
+```Groovy
+   stage('Publish') {
+      environment {
+         AC_PAT = credentials('AC_PAT')
+      }
+       steps {
+          withCredentials([string(credentialsId: 'CREDENTIAL_ID', variable: 'VARIABLE_NAME')]) {
+             appcircleTestingDistribution accessToken: hudson.util.Secret.fromString('VARIABLE_NAME'),
+                     profileID: 'PROFILE_ID',
+                     appPath: 'APP_PATH',
+                     message: 'MESSAGE'
+          }
+       }
+   }
+```
+
 ## References
 
-- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
-For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](https://appcircle.io/enterprise-app-store).
+For more detailed instructions and support, visit the [Testing Distribution documentation](/distribute).

@@ -16,6 +16,11 @@ The Appcircle distribute extension allows users to upload their apps and start d
 
 import Screenshot from '@site/src/components/Screenshot';
 
+### Discover Extension
+
+You can discover more about this extension and install it by:
+https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
+
 ### How to Add the Appcircle Distribute Task Extension to Your Pipeline
 
 To install the Appcircle Distribute Task Extension, follow these steps:
@@ -46,17 +51,12 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
     message: "Sample Message" # Custom message for your testers
 ```
 
-### Discover Extension
-
-You can discover more about this extension and install it by:
-https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
-
 ## Leveraging Environment Variables
 
 Utilize environment variables seamlessly by substituting the parameters with $(VARIABLE_NAME) in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
 
 ## References
 
-- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
+- For details on generating an Appcircle Personel API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/distribute/create-or-select-a-distribution-profile)

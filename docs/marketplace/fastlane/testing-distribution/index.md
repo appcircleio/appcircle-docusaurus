@@ -8,6 +8,7 @@ tags:
     ipa distribution,
     apk distribution,
     binary distribution,
+    fastlane-marketplace,
   ]
 sidebar_position: 1
 ---
@@ -38,9 +39,30 @@ fastlane add_plugin appcircle_testing_distribution
   )
 ```
 
+#### How to Retrieve Your Testing Distribution Profile ID
+
+You can obtain your testing distribution profile from the URL or by using the @appcircle/cli.
+
+##### How to Extract Your Profile ID from the URL
+
+1. Navigate to your Testing Distribution profile.
+2. Check the URL, which should be in this format: **distribute/detail/PROFILE_ID**. The **PROFILE_ID** refers to your specific profile ID.
+
+##### Retrieving Profile ID Using @appcircle/cli
+
+The upcoming command retrieves the complete list of Testing Distribution Profiles.
+
+```bash
+appcircle testing-distribution profile list
+```
+
 :::caution Build Steps Order
 You should add this task extension after completing your build steps.
 :::
+
+### Leveraging Environment Variables
+
+Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
 
 ## References
 

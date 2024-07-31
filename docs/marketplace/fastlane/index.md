@@ -3,7 +3,7 @@ title: Fastlane Marketplace
 description: Appcircle fastlane plugin allows you to distribute your builds to testers directly pipeline.
 tags:
   [
-    github-marketplace,
+    fastlane-marketplace,
     testing-distribution,
     ipa distribution,
     apk distribution,
