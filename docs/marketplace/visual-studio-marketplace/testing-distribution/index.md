@@ -40,7 +40,7 @@ To install the Appcircle Distribute Task Extension, follow these steps:
 You should add this task extension after completing your build steps.
 :::
 
-After filling out the required fields, the `AppcircleEnterpriseStore@0` task will appear in your pipeline steps as shown below:
+After filling out the required fields, the `AppcircleTestingDistribution@0` task will appear in your pipeline steps as shown below:
 
 ```yaml
 - task: AppcircleTestingDistribution@0
