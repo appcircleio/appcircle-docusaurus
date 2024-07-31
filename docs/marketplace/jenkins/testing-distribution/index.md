@@ -57,7 +57,7 @@ appcircle testing-distribution profile list
 
 Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
 
-### Using Plugin into Your Pipeline
+### Adding the Plugin to Your Pipeline
 
 ```Groovy
    stage('Publish') {

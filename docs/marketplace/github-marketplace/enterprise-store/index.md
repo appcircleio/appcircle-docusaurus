@@ -1,6 +1,6 @@
 ---
 title: Setting Up Appcircle Enterprise Store Action
-sidebar_label: Enterprise App Store
+sidebar_label: Enterprise Store
 description: Enhance powerful action to publish your builds to appcircle app store
 tags:
   [
@@ -45,12 +45,12 @@ To install the Appcircle Enterprise Store action, add the following step to your
 
 You can obtain your Enterprise Store Profile ID from the URL or by using the @appcircle/cli.
 
-**How to Extract Your Enterprise Store Profile ID from the URL**
+##### How to Extract Your Enterprise Store Profile ID from the URL
 
 1. Navigate to your Enterprise Store Profile.
-2. Check the URL, which should be in this format: /enterprise-store/profiles/PROFILE_ID. The PROFILE_ID refers to your specific profile ID.
+2. Check the URL, which should be in this format: **/enterprise-store/profiles/PROFILE_ID**. The PROFILE_ID refers to your specific profile ID.
 
-**Retrieving Profile ID Using @appcircle/cli**
+##### Retrieving Profile ID Using @appcircle/cli
 
 The upcoming command retrieves the complete list of Enterprise Store Profiles.
 

@@ -1,6 +1,6 @@
 ---
 title: Setting Up Appcircle Enterprise Store Plugin For Jenkins
-sidebar_label: Enterprise App Store
+sidebar_label: Enterprise Store
 description: Enhance powerful plugin to publish your builds to appcircle app store
 tags:
   [
@@ -45,12 +45,12 @@ Additionally, remember to place the plugin after your build steps as you will ne
 
 You can obtain your Enterprise Store Profile ID from the URL or by using the @appcircle/cli.
 
-**How to Extract Your Enterprise Store Profile ID from the URL**
+##### How to Extract Your Enterprise Store Profile ID from the URL
 
 1. Navigate to your Enterprise Store Profile.
-2. Check the URL, which should be in this format: /enterprise-store/profiles/PROFILE_ID. The PROFILE_ID refers to your specific profile ID.
+2. Check the URL, which should be in this format: **/enterprise-store/profiles/PROFILE_ID**. The PROFILE_ID refers to your specific profile ID.
 
-**Retrieving Profile ID Using @appcircle/cli**
+##### Retrieving Profile ID Using @appcircle/cli
 
 The upcoming command retrieves the complete list of Enterprise Store Profiles.
 
@@ -66,4 +66,4 @@ Utilize environment variables seamlessly by substituting the parameters with `$(
 
 - For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
-For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](https://appcircle.io/enterprise-app-store).
+- For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](https://appcircle.io/enterprise-app-store).

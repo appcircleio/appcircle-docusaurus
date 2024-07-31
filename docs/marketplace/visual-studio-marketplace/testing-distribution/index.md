@@ -43,7 +43,7 @@ You should add this task extension after completing your build steps.
 After filling out the required fields, the `AppcircleEnterpriseStore@0` task will appear in your pipeline steps as shown below:
 
 ```yaml
-- task: AppcircleDistribute@0
+- task: AppcircleTestingDistribution@0
   inputs:
     accessToken: "APPCIRCLE_ACCESS_TOKEN" # Your Appcircle Access Token
     profileId: "APPCIRCLE_PROFILE_ID" # ID of your Appcircle Distribution Profile
