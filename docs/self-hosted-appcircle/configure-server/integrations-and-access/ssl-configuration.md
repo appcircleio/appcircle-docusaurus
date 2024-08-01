@@ -5,6 +5,9 @@ tags: [self-hosted, ssl, https, certificate, custom domain, enterprise app store
 sidebar_position: 3
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Overview
 
 Although auto-generated `global.yaml` template has "HTTPS enabled" by default, in our sample scenario and configuration it was "HTTPS disabled" to keep it simple to understand. Refer [here](/self-hosted-appcircle/install-server/docker#3-configure) for sample configuration told at installation.
@@ -305,6 +308,16 @@ Let's assume we want to use `apps.spacetech.com` as custom domain for our sample
 
 `global.yaml` section should be like this for this case.
 
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
 ```yaml
 storeWeb:
   external:
@@ -341,6 +354,51 @@ storeWeb:
       LUBOU4QRP9V6qpS0TrLmIoM=
       -----END PRIVATE KEY-----
 ```
+
+</TabItem>
+
+<TabItem value="podman">
+
+```yaml
+storeWeb:
+  external:
+    subdomain: store
+  customDomain:
+    enabled: true
+    domain: apps.spacetech.com
+    port: 8443
+    enabledTls: true
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
+```
+
+</TabItem>
+
+</Tabs>
 
 - `publicKey` is the public certificate. (content of `.crt` file)
 - `privateKey` is the private key. (content of `.key` file)
@@ -389,6 +447,16 @@ If you don't have the `testerWeb` section defined in the `global.yaml` file, yo
 If you have a `testerWeb` section previously defined in the `global.yaml` file for some reason, you should update that section with the `customDomain` settings below instead of adding a new one.
 :::
 
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
 ```yaml
 testerWeb:
   customDomain:
@@ -423,6 +491,49 @@ testerWeb:
       LUBOU4QRP9V6qpS0TrLmIoM=
       -----END PRIVATE KEY-----
 ```
+
+</TabItem>
+
+<TabItem value="podman">
+
+```yaml
+testerWeb:
+  customDomain:
+    enabled: true
+    domain: dist.spacetech.com
+    port: 8443
+    enabledTls: true
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
+```
+
+</TabItem>
+
+</Tabs>
 
 - `publicKey` is the public certificate. (content of `.crt` file)
 - `privateKey` is the private key. (content of `.key` file)
