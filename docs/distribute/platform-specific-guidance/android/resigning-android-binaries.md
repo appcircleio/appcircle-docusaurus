@@ -20,41 +20,25 @@ To sign an Android binary, you need a valid keystore file. Appcircle supports bo
 
 You can either select the files from the list or upload APK, and AAB files by clicking the **Upload New Version** button at the bottom.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android1.png' />
 
 2. Click the... button and select **Resign Binary**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android2.png' />
 
 This form will show the following details of the original binary.
 
 3. Select the correct keystore and click the **Sign** button to sign your binary. You may also change the Package ID, Version Name and Version Code.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android3.png' />
 
 When you sign an app version using the Testing Distribution Profile or upload a signed app version manually or automatically through the Build module, the Testing Distribution Profile will display a **signed** badge when the corresponding app version is selected.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3856-android1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android4.png' />
 
 If you hover over the **signed** badge, the certification name used to sign the app version will be displayed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3856-android2.png' />
-
-## Binary Details
-
-1. Select the binary.
-
-You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
-
-2. Click the... button and select **Binary Details**
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
-
-3. This window will show basic information about your binary.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android5.png' />
 
 ## Resign History
 
@@ -62,18 +46,34 @@ You can either select the files from the list or upload binaries by clicking the
 
 You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android1.png' />
 
 2. Click the... button and select **Resign History**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android7.png' />
 
 3. Each signing process will be listed for that binary. If you click the **View Log** button, you can get more details about the process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android9.png' />
 
 :::info
 
 You need the check the history of the original application that has been signed.
 
 :::
+
+## Binary Details
+
+1. Select the binary.
+
+You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android1.png' />
+
+2. Click the... button and select **Binary Details**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android6.png' />
+
+3. This window will show basic information about your binary.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android8.png' />

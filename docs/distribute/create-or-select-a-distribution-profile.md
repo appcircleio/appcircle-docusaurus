@@ -16,11 +16,11 @@ As a best practice, we recommend using one single distribution profile for both 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (152).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main1.png' />
 
-Once you create the distribution profile, you can now customize its settings. Click on the newly created build profile and then the settings button within the profile.
+Once you create the distribution profile, you can now customize its settings. Click on the newly created distribution profile and then the settings button within the profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (153).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main2.png' />
 
 ### Publisher Information
 
@@ -30,7 +30,9 @@ You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL*
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info.png' />
 
-Once you click the save button, the information you have provided will be displayed on the Testing Portal. 
+Once you click the save button, the information you have provided will be displayed on the Tester Portal.
+
+<ContentRef url="/distribute/downloading-binaries">Tester Portal</ContentRef>
 
 When the tester selects the user icon, the Publisher Information will be displayed.
 
@@ -48,26 +50,26 @@ Auto send feature lets your applications be distributed to specific testing grou
 
 To enable the auto send feature, you need to create testing groups and add testers to these groups.
 
-<ContentRef url="/distribute/testing-management/testing-groups">Testing Groups</ContentRef>
+<ContentRef url="/distribute/testing-groups">Testing Groups</ContentRef>
 
 Under the Auto Send tab in the settings, you can see the testing groups you have created earlier. Just enable each testing group you want to have your application sent automatically whenever a new version is deployed.
 
 The first section allows you to share the deployed binaries automatically with the selected groups. They will receive a link to download the specific version on their mobile devices.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (192).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main3.png' />
 
 Your application will be sent to the related testing groups as soon as your build is complete, or when a package is manually uploaded or deployed via CLI.
 
 ### Using authentication for distribution
 
-Under the Authentication tab in the settings, you can select a preferred authentication method for sharing your application.
+Under the Authentication tab in the settings, you can select a preferred authentication method for sharing your application. This will be the login method for the [Tester Portal](/distribute/downloading-binaries).
 
 - **None**: No authentication, anyone with the link can download binary files
 - **Static Username and Password**: One single username and password for all testers
 - **SSO Login**: SSO login for all testers (Enterprise accounts only)
 - **LDAP Login**: LDAP login for all testers (Enterprise accounts only)
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (154).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main4.png' />
 
 To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
 
@@ -78,19 +80,19 @@ To add your SSO and LDAP details, go to [My Organization](/account/my-organizati
 
 You may enable this option to automatically register devices in the Apple Developer Portal and update your Ad Hoc provisioning profiles. You must select App Store Connect API Key, a build profile, and a configuration.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-device-registration.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main5.png' />
 
 ### Using Public Link for Distribution
 
 You may enable a public link for your distribution. This allows anyone who has the link to access all artifacts of the distribution profile. Additionally, users can now conveniently scan a QR code to retrieve the public link directly. This simplifies the process of accessing and sharing the distribution link, making it more accessible for users on mobile devices or others who prefer quick scanning.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3160-testing-distribution-public-link.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main6.png' />
 
 ### Manually upload your version
 
 If you have pre-built iOS or Android applications and want to distribute or preview them for testing, you can upload them using the upload field on the right panel (if no version is available) or using the "Upload New Version" button at the bottom right (if there are versions already present) to upload your files to the distribution profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (157).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main7.png' />
 
 After the file is uploaded, it is checked for errors and parsed for metadata. If there is an error, it is displayed on the upload area.
 
@@ -98,7 +100,7 @@ After the file is uploaded, it is checked for errors and parsed for metadata. If
 
 Once the upload is complete, you will see the new version added to the top of the list with parsed metadata. You can now share this version with the testers or preview it on a virtual device in your browser.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (158).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main8.png' />
 
 ###
 
@@ -136,18 +138,18 @@ If your Android application has multiple product flavors, Appcircle will create 
 
 When you build and distribute an application with multiple flavors, and `.apk` file will be created for each flavor. When the build is distributed, all of the binaries will be seen on the distribution profile:
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/testing-android-multi-flavor.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main9.png" />
 
 #### How to see the multiple flavor results
 
-If you also want to download or see the output, you can check through the following steps:
+If you also want to download or see the output, you can check through the following steps within the Build Profile:
 
 - Click the three dot under the actions tab
-- Click **Artifacts** to see all the build outputs.
+- Click **Download Artifacts** to see all the build outputs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/testing-android-multi-flavor-download-artifacts.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main10.png' />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/testing-android-multi-flavor-artifacts.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main11.png" />
 
 :::info
 
@@ -155,18 +157,34 @@ If your Git commit has any messages, they will be included in the distribution i
 
 :::
 
+### Send your application to Enterprise App Store
+
+You can send your application from your Testing Distribution profile to an Enterprise App Store profile by following these steps:
+
+- Click the three dots next to your application.
+- Click **Send to Enterprise App Store**.
+- Click **Send**.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-enterprise1.png" />
+
+:::info
+
+Appcircle will not ask you to pick a profile after choosing the **Send to Enterprise App Store** option. If the binary is unique, it will create the Enterprise App Store profile automatically. If the same app version already exists within the profiles, it will be delivered within that profile.
+
+:::
+
 ### Send your application to Publish
 
 You can send your application from your Testing Distribution profile to a designated Publish profile by following these steps:
 
-- Click the three dots next to your application
-- Click **Send to Publish**
+- Click the three dots next to your application.
+- Click **Send to Publish**.
 - Choose your Publish profile from the list.
-- Click **Send**
+- Click **Send**.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3110-sendpublish.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main12.png" />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/be-3110-sendpublish2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main13.png" />
 
 :::caution
 
@@ -178,13 +196,13 @@ You must have already created the designated Publish profile within the Publish 
 
 When you have your build ready or uploaded your binary file to Appcircle, you can manually send the file to testers to let them download, install on their devices and run the application for testing purposes.
 
-Click on the Share with Testers button and select the testing groups you created previously that need to receive this version of your application. Alternatively, you can enter email addresses of the testers here to send them the application regardless of the testing groups.
+Click on the Share with Testers button and select the [testing groups](/distribute/testing-groups) you created previously that need to receive this version of your application. Alternatively, you can enter email addresses of the testers here to send them the application regardless of the testing groups.
 
 You can also add a message to testers including testing instructions and release notes.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/06-07a-SendToTesterGroups.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main14.png' />
 
-You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message
+You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message.
 
 ```ruby
 Branch: $AC_GIT_BRANCH
@@ -192,28 +210,57 @@ Commit Hash:  <%= ENV['AC_GIT_COMMIT'][0..6] %>
 Commit Message: $AC_COMMIT_MESSAGE
 ```
 
-###
+:::tip
+
+Once you share your app versions with your testers, you can see the most recent sharing time on your testing distribution profile card.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-share.png' />
 
 ### Tracking your distribution
 
 After sending your application to testing groups, you can track the actions of testers:
 
-- **Pending** - Means your tester didn't click on the link they received yet
-- **Clicked, No Login** - Means your tester clicked on the link they received but has not logged in to the system yet (only for authenticated distributions)
-- **Login, No Download** - Means your tester has logged in (for authenticated distributions) and at the download screen but has not downloaded the binary file yet
-- **Downloaded** - Means your tester clicked and downloaded the binary file
+- **Pending** - Means your tester didn't click on the link they received yet.
+- **Clicked** - Means your tester clicked on the link they received but has not logged in to the system yet (only for authenticated distributions).
+- **Login, No Download** - Means your tester has logged in (for authenticated distributions) and at the download screen but has not downloaded the binary file yet.
+- **Downloaded** - Means your tester clicked and downloaded the binary file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (158).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main15.png' />
+
+### Rename a Distribution Profile
+
+You can rename your Distribution Profile by following these steps:
+
+- Click on the three dot on the top right of the profile menu.
+- Click `Rename`.
+- Enter the new name for your profile.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main20.png' />
+
+### Pin a Distribution Profile
+
+You can pin your Distribution Profile by following these steps:
+
+- Click on the three dot on the top right of the profile menu.
+- Click `Pin Item`.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main21.png' />
+
+Pinned profiles will stand out by appearing first in the list, making them easily accessible and distinguishable from the rest of the profiles. They will also have a pin icon on their profile card.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main22.png' />
 
 ### Delete a Distribution Profile
 
-In order to remove clutter and/or free up storage, you can delete an entire profile in a single click.;
+In order to remove clutter and/or free up storage, you can delete an entire profile in a single click;
 
-- Click on the three dot on the top right of the profile menu
-- Click `Delete`
-- Go through the confirmation dialog
+- Click on the three dot on the top right of the profile menu.
+- Click `Delete`.
+- Go through the confirmation dialog.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/testing-delete-distribution-profile.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main16.png' />
 
 :::info
 
@@ -227,16 +274,16 @@ If you don't want to delete an entire distribution profile but free up the past 
 
 Click on the `Edit` Text to toggle edit mode:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/testing-delete-multiple-edit-button.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main17.png' />
 
 On edit mode, you will be able to select multiple entries. Select the versions you wish to delete, and click on the `Delete` Text on the top right of the versions:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/testing-delete-multiple-delete-button.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main18.png' />
 
 #### Delete a Single Distribution Profile Version
 
-As an alternative method to bulk delete versions, you can delete a single version at the three dot menu on the top right of the screen.;
+As an alternative method to bulk deleting versions, you can delete a single version by selecting the three-dot menu next to the app version and then clicking **delete** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (205).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main19.png' />
 
 After clicking `Delete` , type in the version name in the prompt.

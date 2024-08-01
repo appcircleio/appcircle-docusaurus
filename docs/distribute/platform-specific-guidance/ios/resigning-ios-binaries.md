@@ -22,11 +22,11 @@ To sign an iOS binary, you need a valid certificate and provisioning profile. Ap
 
 You can either select the files from the list or upload IPA, xcarchive files by clicking the **Upload New Version** button at the bottom.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
 
-2. Click the... button and select **Resign Binary**
+2. Click the ... button and select **Resign Binary**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios10.png' />
 
 This form will show the following details of the original binary.
 
@@ -70,31 +70,15 @@ You must select a provisioning profile for each target. Otherwise resigning will
 
 3. Fill in the details for resign process and hit the **Sign** button
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios11.png' />
 
 When you sign an app version through Testing Distribution Profile or upload a signed app version manually or automatically through the Build module, Testing Distribution Profile will display a **signed** badge when the corresponding app version is selected.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3856-ios1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios12.png' />
 
 If you hover over the **signed** badge, the certification name used to sign the app version will be displayed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3856-ios2.png' />
-
-## Binary Details
-
-1. Select the binary.
-
-You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
-
-2. Click the... button and select **Binary Details**
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
-
-3. This window will show basic information about your binary.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios13.png' />
 
 ## Resign History
 
@@ -102,18 +86,34 @@ You can either select the files from the list or upload binaries by clicking the
 
 You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
 
 2. Click the... button and select **Resign History**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios16.png' />
 
 3. Each signing process will be listed for that binary. If you click the **View Log** button, you can get more details about the process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/resign5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios17.png' />
 
 :::info
 
 You need the check the history of the original application that has been signed.
 
 :::
+
+## Binary Details
+
+1. Select the binary.
+
+You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
+
+2. Click the... button and select **Binary Details**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios14.png' />
+
+3. This window will show basic information about your binary.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios15.png' />
