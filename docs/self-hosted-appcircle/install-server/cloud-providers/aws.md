@@ -243,7 +243,7 @@ Now you're ready to configure the Appcircle server according to your needs. Foll
 
 You should also configure the [DNS](/self-hosted-appcircle/install-server/docker#4-dns-settings) settings for your Appcircle server instance. Create `A` and `CNAME` records for your instance.
 
-After the configuration is done, [run the server](/self-hosted-appcircle/install-server/docker#5-run-server) and go to the Appcircle server dashboard using the main [domain](/self-hosted-appcircle/install-server/docker#4-dns-settings) you defined.
+After the configuration is done, [initialize the project](/docs/self-hosted-appcircle/install-server/docker.md#5-initialize-the-project) [run the server](/self-hosted-appcircle/install-server/docker#6-run-server) and go to the Appcircle server dashboard using the main [domain](/self-hosted-appcircle/install-server/docker#4-dns-settings) you defined.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws22-dashboard.png' />
 

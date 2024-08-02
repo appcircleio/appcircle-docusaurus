@@ -105,11 +105,17 @@ For details about the `cred.json`, see [here.](/self-hosted-appcircle/install-se
 
 :::
 
+### Initialize the Project
+
+Before starting the Appcircle server, you should initialize the project.
+
+You check see out how to initialize a project [here.](/docs/self-hosted-appcircle/install-server/docker.md#5-initialize-the-project)
+
 ### Run the Appcircle Server
 
 At the end, you are ready to start the Appcircle server. 🎉
 
-Start the server and verify its [health.](/self-hosted-appcircle/install-server/docker#5-run-server)
+Start the server and verify its [health.](/self-hosted-appcircle/install-server/docker#6-run-server)
 
 ## Runner Installation
 

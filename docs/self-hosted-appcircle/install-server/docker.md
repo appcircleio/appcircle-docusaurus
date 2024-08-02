@@ -366,7 +366,7 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/docker#5-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/docker#6-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
@@ -546,7 +546,19 @@ Other clients that connect to the server should add below entries to their `/etc
 
 With this network setup, you can run and test both self-hosted Appcircle server and connected self-hosted runners with all functionality.
 
-### 5. Run Server
+### 5. Initialize the Project
+
+Initialize the project before starting the Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
+```
+
+:::caution
+You should initialize a project only once.
+:::
+
+### 6. Run Server
 
 Appcircle server's modules are run on Docker Engine as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
 
