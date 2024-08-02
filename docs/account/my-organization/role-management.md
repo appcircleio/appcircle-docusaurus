@@ -268,10 +268,12 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 
 The following table details the roles and restrictions for the [**Publish Variables**](/publish-module/publish-variables) module for Android. Please refer to the related modules information and caution notes.
 
-| Publish               | Scopes                          | Owner | Manager | Viewer |
-|-----------------------|---------------------------------|-------|---------|--------|
-| Environment Variables | Add/Delete/Update Env Variables | ✅     | ✅       | ⛔      |
-| Environment Variables | List Environment Variables      | ✅     | ✅       | ✅      |
+| Publish              | Scopes                                        | Owner | Manager | Viewer |
+|----------------------|-----------------------------------------------|-------|---------|--------|
+| Environment Variable | Add/Delete/Update Environment Variable Groups | ✅     | ✅       | ⛔      |
+| Environment Variable | Add/Delete/Update Environment Variable        | ✅     | ✅       | ⛔      |
+| Environment Variable | List Environment Variable                     | ✅     | ✅       | ✅      |
+| Environment Variable | List Environment Variable Groups              | ✅     | ✅       | ✅      |
 
 :::info
 
