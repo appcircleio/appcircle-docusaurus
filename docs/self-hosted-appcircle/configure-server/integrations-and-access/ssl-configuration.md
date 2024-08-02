@@ -401,7 +401,9 @@ storeWeb:
 ```
 
 :::caution
-The `storeWeb.customDomain.port` must be `8443` if the `enabledTls` option is set to `true`. Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/podman#overcoming-privileged-port-limitations) on the host, you will connect to the Enterprise App Store with port `TCP/443` port.
+The `storeWeb.customDomain.port` must be `8443` if the `enabledTls` option is set to `true`.
+
+Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/podman#overcoming-privileged-port-limitations) on the host, you will connect to the Enterprise App Store with the `TCP/443` port.
 :::
 
 </TabItem>
@@ -540,7 +542,9 @@ testerWeb:
 ```
 
 :::caution
-The `testerWeb.customDomain.port` must be `8443` if the `enabledTls` option is set to `true`. Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/podman#overcoming-privileged-port-limitations) on the host, you will connect to the Testing Distribution with port `TCP/443` port.
+The `testerWeb.customDomain.port` must be `8443` if the `enabledTls` option is set to `true`.
+
+Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/podman#overcoming-privileged-port-limitations) on the host, you will connect to the Testing Distribution with the `TCP/443` port.
 :::
 
 </TabItem>
