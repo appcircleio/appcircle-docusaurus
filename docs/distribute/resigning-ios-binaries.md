@@ -1,8 +1,8 @@
 ---
-title: Resigning iOS Binaries
+title: Re-sign Binaries
 description: Understand the process of resigning iOS binaries with a new certificate or keystore. Crucial for publishing under a different developer account.
 tags: [resigning, ios, binaries, resigning ios binaries]
-sidebar_position: 6
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -80,40 +80,30 @@ If you hover over the **signed** badge, the certification name used to sign the 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios13.png' />
 
-## Resign History
+## Resigning Android Binaries
+
+To sign an Android binary, you need a valid keystore file. Appcircle supports both APK and AAB files. The process of signing an Android binary involves selecting the correct keystore file. Once these details are entered, Appcircle will generate a new signed binary with the updated information.
 
 1. Select the binary.
 
-You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
+You can either select the files from the list or upload APK, and AAB files by clicking the **Upload New Version** button at the bottom.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android1.png' />
 
-2. Click the... button and select **Resign History**
+2. Click the... button and select **Resign Binary**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios16.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android2.png' />
 
-3. Each signing process will be listed for that binary. If you click the **View Log** button, you can get more details about the process.
+This form will show the following details of the original binary.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios17.png' />
+3. Select the correct keystore and click the **Sign** button to sign your binary. You may also change the Package ID, Version Name and Version Code.
 
-:::info
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android3.png' />
 
-You need the check the history of the original application that has been signed.
+When you sign an app version using the Testing Distribution Profile or upload a signed app version manually or automatically through the Build module, the Testing Distribution Profile will display a **signed** badge when the corresponding app version is selected.
 
-:::
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android4.png' />
 
-## Binary Details
+If you hover over the **signed** badge, the certification name used to sign the app version will be displayed.
 
-1. Select the binary.
-
-You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
-
-2. Click the... button and select **Binary Details**
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios14.png' />
-
-3. This window will show basic information about your binary.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios15.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android5.png' />

@@ -1,8 +1,8 @@
 ---
-title: Distributing to Apple Devices
+title: Apple Devices
 description: Distribute your iOS apps to Apple devices with Appcircle
 tags: [distribution, apple devices, ios]
-sidebar_position: 5
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

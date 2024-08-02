@@ -2,12 +2,14 @@
 title: Using the Tester Portal
 description: Learn how to use the Tester Portal for downloading binaries. Streamline your app testing process with Appcircle.
 tags: [appcircle, tester, portal, distribution]
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # Using the Tester Portal
+
+## Login
 
 Appcircle has a separate distribution screen designed to make it easy for test group developers and testers download the distributed applications easily.
 
@@ -17,8 +19,6 @@ When a build is shared with testers, each tester will receive an email with a li
 
 When the link is clicked, users will then be redirected to the tester portal.;
 
-If your distribution requires enrollment, users will be asked to create an enrollment account. If your distribution requires a login, users will be asked to log into the tester portal.
-
 :::info
 
 The accounts used in the tester portal are completely independent from Appcircle accounts and only used for downloading shared apps.
@@ -26,6 +26,10 @@ The accounts used in the tester portal are completely independent from Appcircle
 :::
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portalentry.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-mobilex.png" />
+
+## Listing and Downloading Binary
 
 Once logged in, users can now see the list of distributions separated by distribution profile and release version. Files can be downloaded with one click.
 
@@ -44,16 +48,8 @@ The Tester Portal will also display the size and the certificate type of each ap
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-size.png" />
 
 :::tip
-Users can use the search bar to filter the available app version list for **app names**, **app versions**, **release notes** and **build numbers**. 
-:::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal5.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal.png" />
-
-:::tip
-
-The Tester Portal includes a toggle feature that allows users to switch between two display modes for the app version's upload time. 
+The Tester Portal includes a toggle feature that allows users to switch between two display modes for the app version's upload time.
 
 By default, the Tester Portal displays the time for the selected app version as a relative time (e.g., "2 hours ago").
 
@@ -71,19 +67,27 @@ If your app version has an enterprise-type certificate, the Tester Portal will d
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-enterprise.png" />
 
-:::tip 
+:::tip
 
-The Tester Portal supports English, German, French, and Turkish. 
+The Tester Portal supports English, German, French, and Turkish.
 
-For desktop usage, it will detect and apply your browser's language if it is supported. 
+For desktop usage, it will detect and apply your browser's language if it is supported.
 
-For mobile devices, it will detect the device language. 
+For mobile devices, it will detect the device language.
 
 If the detected language is not supported, the default language will be English.
 
 :::
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-language.png" />
+
+## Search Binary
+
+Users can use the search bar to filter the available app version list for **app names**, **app versions**, **release notes** and **build numbers**. 
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal5.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal.png" />
 
 ## Shared App Profiles
 
@@ -93,7 +97,7 @@ Users can view other distributed app versions from different tester distribution
 
 The Shared App Profiles section allows testers to view other tester distribution profiles that have a shared app version associated with their email address.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-portal.png" />
 
 The list will display the other tester distribution profiles along with their authentication methods.
 
@@ -103,17 +107,35 @@ While navigating between shared profiles, if a profile requires authentication, 
 
 :::
 
-For more information about authentication methods, please refer to the [Using Authentication for Distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
+For more information about authentication methods, please refer to the [Using Authentication for Distribution](/distribute/create-or-select-a-distribution-profile#authentication) section.
 
 :::info
 
 If you are using a public link to access the Tester Portal, you can only navigate between testing distribution profiles that have public links enabled.
 
-For more information about using public links, please visit the [using public link for distribution](/distribute/create-or-select-a-distribution-profile#using-public-link-for-distribution) documentation.
+For more information about using public links, please visit the [using public link for distribution](/distribute/create-or-select-a-distribution-profile#public-link) documentation.
 
 :::
 
-## Logging Out of the Tester Portal
+## Profile Information
+
+#### Profile Card
+
+When you select the user icon, the distribution profile information will be displayed. You can update this information from the [Info](/distribute/create-or-select-a-distribution-profile#information) tab within the profile settings.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info2.png' />
+
+It will also display the Login Method for the Testing Distribution Profile.
+
+In the example image, the profile has static authentication method, so it is displayed as Static Login.
+
+You can find out more about the login methods in the [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#authentication) section.
+
+:::info
+Please note that, the Privacy and Terms URLs are optional so if you haven't already configured them within the Info tab of your profile settings, they will not be visible in the Tester Portal.
+:::
+
+#### Logging Out of the Tester Portal
 
 Users can log out of the Tester Portal by following these steps:
 
