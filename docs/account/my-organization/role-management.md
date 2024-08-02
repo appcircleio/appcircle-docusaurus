@@ -323,28 +323,38 @@ The user can create an organization or sub-organization within license limits, a
 
 Also, the user can view self-hosted runners and change configuration.
 
-| Organization Management Sub-modules | Scopes                                | Owner | Manager | Viewer |
-|-------------------------------------|---------------------------------------|-------|---------|--------|
-| Organization and Team Management    | Create/Delete/Update Organization     | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Create/Delete/Update Sub-Organization | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Add/Delete/Update User                | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Assign Role for User                  | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | List User                             | ✅     | ✅       | ✅      |
-| SSO                                 | Create/Delete/Update SSO              | ✅     | ✅       | ⛔      |
-| SSO                                 | List SSO                              | ✅     | ✅       | ✅      |
-| LDAP                                | Add/Delete/Update LDAP                | ✅     | ✅       | ⛔      |
-| LDAP                                | List LDAP                             | ✅     | ✅       | ✅      |
-| PAT                                 | Generate PAT                          | ✅     | ✅       | ⛔      |
-| PAT                                 | View PAT                              | ✅     | ✅       | ✅      |
-| Runner Access Token                 | List Runner Access Token              | ✅     | ⛔       | ⛔      |
-| Runner Access Token                 | Create/Delete Runner Access Token     | ✅     | ⛔       | ⛔      |
-| Report                              | View Organziation Report              | ✅     | ✅       | ✅      |
+| Organization Management Sub-modules | Scopes                                  | Owner | Manager | Viewer |
+|-------------------------------------|-----------------------------------------|-------|---------|--------|
+| Organization and Team Management    | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | Assign Role for User                    | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | List User                               | ✅     | ✅       | ✅      |
+| Integrations                        | Add/Delete/Update LDAP/SSO Integrations | ✅     | ✅       | ⛔      |
+| Integrations                        | View LDAP/SSO Integrations              | ✅     | ✅       | ✅      |
+| Appcircle Login                     | Create/Delete/Update SSO                | ✅     | ✅       | ⛔      |
+| Appcircle Login                     | List SSO                                | ✅     | ✅       | ✅      |
+| Appcircle Login                     | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
+| Appcircle Login                     | List LDAP                               | ✅     | ✅       | ✅      |
+| PAT                                 | Generate PAT                            | ✅     | ✅       | ⛔      |
+| PAT                                 | View PAT                                | ✅     | ✅       | ✅      |
+| Runner Access Token                 | List Runner Access Token                | ✅     | ⛔       | ⛔      |
+| Runner Access Token                 | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
+| Report                              | View Organziation Report                | ✅     | ✅       | ✅      |
 
 :::info Organization Management
 
 Whatever role a user is assigned in the root organization, they will have the same role in the **sub-organizations**. For example, someone who is a Manager in the root organization is automatically assigned as a Manager in the sub-organizations.  
 
 If you want to assign a role in a sub-organization, please do so within the respective **sub-organization**.
+
+:::
+
+:::caution Appcircle Login and LDAP/SSO Integrations
+
+LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**testing portal**](/distribute/downloading-binaries) and [**Enterprise App Store**](/enterprise-appstore).
+
+Please use [**Appcircle Login**](/account/my-organization/sso-providers-configuration/onelogin-saml#enable-sso) for **LDAP** and **SSO** integration when logging into Appcircle.
 
 :::
 
@@ -382,9 +392,9 @@ Connect or disconnect from third-party service providers such as notification to
 - [**Huawei AppGallery Developer API Keys**](/account/my-organization/api-integrations/adding-huawei-api-key)
 - [**Microsoft Intune API Keys**](/account/my-organization/api-integrations/adding-microsoft-intune-api-key) 
 
-| Connections Management | Scopes                        | Owner | Manager | Viewer |
-|------------------------|-------------------------------|-------|---------|--------|
-| Connections            | Add/Delete/Update Connections | ✅     | ✅       | ⛔      |
-| Connections            | View Connections              | ✅     | ✅       | ✅      |
-| Notifications          | Update Notifications          | ✅     | ✅       | ⛔      |
-| Notifications          | View Notifications            | ✅     | ✅       | ✅      |
+| Connections Management | Scopes                                  | Owner | Manager | Viewer |
+|------------------------|-----------------------------------------|-------|---------|--------|
+| Credentials            | Add/Delete/Update Credentials           | ✅     | ✅       | ⛔      |
+| Credentials            | View Credentials                        | ✅     | ✅       | ✅      |
+| Notifications          | Update Notifications                    | ✅     | ✅       | ⛔      |
+| Notifications          | View Notifications                      | ✅     | ✅       | ✅      |
