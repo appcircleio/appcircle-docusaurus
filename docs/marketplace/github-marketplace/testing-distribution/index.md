@@ -8,6 +8,7 @@ tags:
     ipa distribution,
     apk distribution,
     binary distribution,
+    github-marketplace,
   ]
 sidebar_position: 1
 ---
@@ -19,7 +20,7 @@ The Appcircle Testing Distribution action allows users to upload their apps and 
 You can discover more about this action and install it by:
 https://github.com/marketplace/actions/appcircle-testing-distribution
 
-### How to Add the Appcircle Distribute Task Extension to Your Pipeline
+### How to Add the Appcircle Testing Distribution Task Extension to Your Pipeline
 
 To install the Appcircle Testing Distribution action, add the following step to your pipeline at the end:
 
@@ -28,10 +29,27 @@ To install the Appcircle Testing Distribution action, add the following step to 
   id: testing-distribution
     uses: appcircleio/appcircle-testing-distribution-githubaction@v0.0.1 # provide the version you want to use
   with:
-    accessToken: ${{ secrets.AC_ACCESS_TOKEN }} # Your Appcircle Access Token
+    accessToken: ${{ secrets.AC_ACCESS_TOKEN }} # Your Appcircle Personal API Token
     profileID: ${{ secrets.AC_PROFILE_ID }} # ID of your Appcircle Distribution Profile
     appPath: ${{ secrets.APP_PATH }} # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
     message: ${{ secrets.MESSAGE }} # Your Message
+```
+
+#### How to Retrieve Your Testing Distribution Profile ID
+
+You can obtain your testing distribution profile from the URL or by using the @appcircle/cli.
+
+##### How to Extract Your Profile ID from the URL
+
+1. Navigate to your Testing Distribution profile.
+2. Check the URL, which should be in this format: **distribute/detail/PROFILE_ID**. The **PROFILE_ID** refers to your specific profile ID.
+
+##### Retrieving Profile ID Using @appcircle/cli
+
+The upcoming command retrieves the complete list of Testing Distribution Profiles.
+
+```bash
+appcircle testing-distribution profile list
 ```
 
 :::caution Build Steps Order
@@ -44,6 +62,6 @@ Utilize environment variables seamlessly by substituting the parameters with **s
 
 ## References
 
-- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
+- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/distribute/create-or-select-a-distribution-profile)
