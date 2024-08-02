@@ -355,6 +355,10 @@ storeWeb:
       -----END PRIVATE KEY-----
 ```
 
+:::caution
+The `storeWeb.customDomain.port` must be `443` if the `enabledTls` option is set to `true`.
+:::
+
 </TabItem>
 
 <TabItem value="podman">
@@ -396,6 +400,10 @@ storeWeb:
       -----END PRIVATE KEY-----
 ```
 
+:::caution
+The `storeWeb.customDomain.port` must be `8443` if the `enabledTls` option is set to `true`. Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/docs/self-hosted-appcircle/install-server/podman.md#overcoming-privileged-port-limitations) on the host, you will connect to the Enterprise App Store with port `TCP/443` port.
+:::
+
 </TabItem>
 
 </Tabs>
@@ -404,10 +412,6 @@ storeWeb:
 - `privateKey` is the private key. (content of `.key` file)
 
 You should use the full certificate chain for `publicKey` similar to main domain `sslCertificate`, to prevent SSL errors when clients connect.
-
-:::caution
-The `storeWeb.external.port` must be `443` if the `enabledTls` option is set to `true`.
-:::
 
 :::caution
 
@@ -492,6 +496,10 @@ testerWeb:
       -----END PRIVATE KEY-----
 ```
 
+:::caution
+The `testerWeb.customDomain.port` must be `443` if the `enabledTls` option is set to `true`.
+:::
+
 </TabItem>
 
 <TabItem value="podman">
@@ -531,6 +539,10 @@ testerWeb:
       -----END PRIVATE KEY-----
 ```
 
+:::caution
+The `testerWeb.customDomain.port` must be `8443` if the `enabledTls` option is set to `true`. Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/docs/self-hosted-appcircle/install-server/podman.md#overcoming-privileged-port-limitations) on the host, you will connect to the Testing Distribution with port `TCP/443` port.
+:::
+
 </TabItem>
 
 </Tabs>
@@ -539,10 +551,6 @@ testerWeb:
 - `privateKey` is the private key. (content of `.key` file)
 
 You should use the full certificate chain for `publicKey`, similar to the main domain `sslCertificate`, to prevent SSL errors when clients connect.
-
-:::caution
-The `testerWeb.external.port` must be `443` if the `enabledTls` option is set to `true`.
-:::
 
 :::caution
 
