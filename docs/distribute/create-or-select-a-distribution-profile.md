@@ -24,21 +24,21 @@ Once you create the distribution profile, you can now customize its settings. Cl
 
 ### Publisher Information
 
-The Info tab allows you to enter the publisher information for your distributed applications. 
+The Info tab allows you to enter the publisher information for your distributed applications.
 
 You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info.png' />
 
-Once you click the save button, the information you have provided will be displayed on the Testing Portal. 
+Once you click the save button, the information you have provided will be displayed on the Testing Portal.
 
 When the tester selects the user icon, the Publisher Information will be displayed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info2.png' />
 
-It will also display the Login Method for the Testing Distribution Profile. 
+It will also display the Login Method for the Testing Distribution Profile.
 
-In the example image, the profile has static authentication method, so it is displayed as Static Login. 
+In the example image, the profile has static authentication method, so it is displayed as Static Login.
 
 You can find out more about the login methods in the [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) section.
 
@@ -48,7 +48,7 @@ Auto send feature lets your applications be distributed to specific testing grou
 
 To enable the auto send feature, you need to create testing groups and add testers to these groups.
 
-<ContentRef url="/distribute/testing-management/testing-groups">Testing Groups</ContentRef>
+<ContentRef url="/distribute/testing-groups">Testing Groups</ContentRef>
 
 Under the Auto Send tab in the settings, you can see the testing groups you have created earlier. Just enable each testing group you want to have your application sent automatically whenever a new version is deployed.
 
