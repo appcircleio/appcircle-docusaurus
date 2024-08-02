@@ -1,6 +1,6 @@
 ---
 title: Check App Store Release Status
-description: Learn how to get approval from TestFlight in Appcircle
+description: Learn how to check the release status of your application on the App Store with Appcircle
 tags: [application, app store, app store connect, app store version, app store status]
 sidebar_position: 5
 ---
