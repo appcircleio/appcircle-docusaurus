@@ -221,8 +221,6 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Download Binary          | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Cancel Submission        | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Reject Binary            | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Environment Variables    | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Environment Variables    | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Activity Logs            | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::caution Resign Binary
@@ -263,9 +261,17 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Download Binary          | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Cancel Submission        | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Reject Binary            | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Environment Variables    | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Environment Variables    | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Activity Logs            | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
+
+
+### Publish Environment Variables
+
+The following table details the roles and restrictions for the [**Publish Variables**](/publish-module/publish-variables) module for Android. Please refer to the related modules information and caution notes.
+
+| Publish               | Scopes                          | Owner | Manager | Viewer |
+|-----------------------|---------------------------------|-------|---------|--------|
+| Environment Variables | Add/Delete/Update Env Variables | ✅     | ✅       | ⛔      |
+| Environment Variables | List Environment Variables      | ✅     | ✅       | ✅      |
 
 :::info
 
@@ -315,22 +321,22 @@ The user can create an organization or sub-organization within license limits, a
 
 Also, the user can view self-hosted runners and change configuration.
 
-| Organization Management Sub-modules | Scopes                                | Owner | Manager |
-|-------------------------------------|---------------------------------------|-------|---------|
-| Organization and Team Management    | Create/Delete/Update Organization     | ✅     | ⛔       |
-| Organization and Team Management    | Create/Delete/Update Sub-Organization | ✅     | ⛔       |
-| Organization and Team Management    | Add/Delete/Update User                | ✅     | ✅       |
-| Organization and Team Management    | Assign Role for User                  | ✅     | ✅       |
-| Organization and Team Management    | List User                             | ✅     | ✅       |
-| SSO                                 | Create/Delete/Update SSO              | ✅     | ⛔       |
-| SSO                                 | List SSO                              | ✅     | ✅       |
-| LDAP                                | Add/Delete/Update LDAP                | ✅     | ⛔       |
-| LDAP                                | List LDAP                             | ✅     | ✅       |
-| PAT                                 | Generate PAT                          | ✅     | ✅       |
-| PAT                                 | View PAT                              | ✅     | ✅       |
-| Runner Access Token                 | List Runner Access Token              | ✅     | ⛔       |
-| Runner Access Token                 | Create/Delete Runner Access Token     | ✅     | ⛔       |
-| Report                              | View Organziation Report              | ✅     | ✅       |
+| Organization Management Sub-modules | Scopes                                | Owner | Manager | Viewer |
+|-------------------------------------|---------------------------------------|-------|---------|--------|
+| Organization and Team Management    | Create/Delete/Update Organization     | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | Create/Delete/Update Sub-Organization | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | Add/Delete/Update User                | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | Assign Role for User                  | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | List User                             | ✅     | ✅       | ✅      |
+| SSO                                 | Create/Delete/Update SSO              | ✅     | ✅       | ⛔      |
+| SSO                                 | List SSO                              | ✅     | ✅       | ✅      |
+| LDAP                                | Add/Delete/Update LDAP                | ✅     | ✅       | ⛔      |
+| LDAP                                | List LDAP                             | ✅     | ✅       | ✅      |
+| PAT                                 | Generate PAT                          | ✅     | ✅       | ⛔      |
+| PAT                                 | View PAT                              | ✅     | ✅       | ✅      |
+| Runner Access Token                 | List Runner Access Token              | ✅     | ⛔       | ⛔      |
+| Runner Access Token                 | Create/Delete Runner Access Token     | ✅     | ⛔       | ⛔      |
+| Report                              | View Organziation Report              | ✅     | ✅       | ✅      |
 
 :::info Organization Management
 
@@ -357,7 +363,7 @@ The following table details the roles and restrictions for the **Billing** detai
 | Subscription        | List Subscription Details | ✅     | ✅       |
 
 
-### Connection Managements
+### Integrations and Connection Managements
 
 Connect or disconnect from third-party service providers such as notification tools or store connections.
 
@@ -374,9 +380,9 @@ Connect or disconnect from third-party service providers such as notification to
 - [**Huawei AppGallery Developer API Keys**](/account/my-organization/api-integrations/adding-huawei-api-key)
 - [**Microsoft Intune API Keys**](/account/my-organization/api-integrations/adding-microsoft-intune-api-key) 
 
-| Connections Management | Scopes                        | Owner | Manager |
-|------------------------|-------------------------------|-------|---------|
-| Connections            | Add/Delete/Update Connections | ✅     | ⛔       |
-| Connections            | View Connections              | ✅     | ✅       |
-| Notifications          | Update Notifications          | ✅     | ✅       |
-| Notifications          | View Notifications            | ✅     | ✅       |
+| Connections Management | Scopes                        | Owner | Manager | Viewer |
+|------------------------|-------------------------------|-------|---------|--------|
+| Connections            | Add/Delete/Update Connections | ✅     | ✅       | ⛔      |
+| Connections            | View Connections              | ✅     | ✅       | ✅      |
+| Notifications          | Update Notifications          | ✅     | ✅       | ⛔      |
+| Notifications          | View Notifications            | ✅     | ✅       | ✅      |
