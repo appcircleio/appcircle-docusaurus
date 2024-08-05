@@ -281,14 +281,6 @@ Google Play and Huawei AppGallery permissions are managed through a single rule.
 
 :::
 
-:::tip Publish Environment Variables
-
-**Publish Variables** permissions in the Publish module are dependent on the iOS or Android permissions that you configure for the Publish module.
-
-For instance, when you give "**Viewer**" permission to a user for iOS or Android, this permission will also make the user "**Viewer**" for the **Publish Variables**. When you give "**Manager**" permission to a user for iOS or Android, this permission also makes the user "**Manager**" for the **Publish Variables**.
-
-:::
-
 ### Enterprise App Store Permissions
 
 Manage and Upload Apps to Enterprise App Store.
@@ -341,6 +333,9 @@ Also, the user can view self-hosted runners and change configuration.
 | Runner Access Token                 | List Runner Access Token                | ✅     | ⛔       | ⛔      |
 | Runner Access Token                 | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
 | Report                              | View Organziation Report                | ✅     | ✅       | ✅      |
+| Artifacts                           | View Retention Period                   | ✅     | ✅       | ✅      |
+| Artifacts                           | Update Retention Period                 | ✅     | ✅       | ⛔      |
+
 
 :::info Organization Management
 
@@ -392,9 +387,9 @@ Connect or disconnect from third-party service providers such as notification to
 - [**Huawei AppGallery Developer API Keys**](/account/my-organization/api-integrations/adding-huawei-api-key)
 - [**Microsoft Intune API Keys**](/account/my-organization/api-integrations/adding-microsoft-intune-api-key) 
 
-| Connections Management | Scopes                                  | Owner | Manager | Viewer |
-|------------------------|-----------------------------------------|-------|---------|--------|
-| Credentials            | Add/Delete/Update Credentials           | ✅     | ✅       | ⛔      |
-| Credentials            | View Credentials                        | ✅     | ✅       | ✅      |
-| Notifications          | Update Notifications                    | ✅     | ✅       | ⛔      |
-| Notifications          | View Notifications                      | ✅     | ✅       | ✅      |
+| Integrations and Connections | Scopes                        | Owner | Manager | Viewer |
+|------------------------------|-------------------------------|-------|---------|--------|
+| Credentials                  | Add/Delete/Update Credentials | ✅     | ✅       | ⛔      |
+| Credentials                  | View Credentials              | ✅     | ✅       | ✅      |
+| Notifications                | Update Notifications          | ✅     | ✅       | ⛔      |
+| Notifications                | View Notifications            | ✅     | ✅       | ✅      |
