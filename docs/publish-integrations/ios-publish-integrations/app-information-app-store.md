@@ -33,11 +33,11 @@ Make sure the [**App Store Connect API Key**](https://docs.appcircle.io/account/
 
 :::tip App Information from App Store
 
-Since this step compares 3 different versions, it can be used in different scenarios. 
+Since this step compares three different versions, it can be used in various scenarios. 
 
-For example, your company's release management works with a certain approval mechanism. When a step is completed, you need to get approval and continue the process according to the next approval. At this point, you can present version information to the people responsible for Publish with this step, and then you can continue the process by getting approval from the relevant people with the [**Get Approval via Email step**](/publish-integrations/common-publish-integrations/get-approval-via-email). In this way, your entire Publish team will be able to see which version is the latest version in your production and beta test environments and compare it with your [**Release Candidate**](/publish-module/publish-information/marking-release-candidates) version. 
+For example, your company's release management may involve a specific approval mechanism. When a step is completed, you need to get approval and continue the process according to the next approval. At this point, you can present version information to the people responsible for Publish with this step, and then you can continue the process by getting approval from the relevant people with the [**Get Approval via Email step**](/publish-integrations/common-publish-integrations/get-approval-via-email). In this way, your entire Publish team will be able to see which version is the latest version in your production and beta test environments and compare it with your [**Release Candidate**](/publish-module/publish-information/marking-release-candidates) version. 
 
-Likewise, the authorised person in your approval mechanism will also give approval to start your release process based on this comparison.
+Similarly, the authorized person in your approval mechanism will provide approval to start your release process based on this comparison.
 
 :::
 
