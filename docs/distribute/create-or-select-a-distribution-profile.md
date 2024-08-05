@@ -26,6 +26,8 @@ As a best practice, we recommend using one single distribution profile for both 
 
 ### Profile Actions
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-profilenew.png' />
+
 #### Rename a Distribution Profile
 
 The Distribution Profile can be renamed by following these steps:
@@ -34,16 +36,12 @@ The Distribution Profile can be renamed by following these steps:
 - Click `Rename`.
 - Enter the new name for your profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main20.png' />
-
 #### Pin a Distribution Profile
 
 The Distribution Profile can be pinned by following these steps:
 
 - Click on the three dot on the top right of the profile menu.
 - Click `Pin Item`.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main21.png' />
 
 Pinned profiles will stand out by appearing first in the list, making them easily accessible and distinguishable from the rest of the profiles. A pin icon will also be displayed on their profile card.
 
@@ -56,8 +54,6 @@ To remove clutter and/or free up storage, an entire profile can be deleted with 
 - Click on the three dot on the top right of the profile menu.
 - Click `Delete`.
 - Go through the confirmation dialog.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main16.png' />
 
 :::info
 
@@ -252,17 +248,19 @@ Commit Hash:  <%= ENV['AC_GIT_COMMIT'][0..6] %>
 Commit Message: $AC_COMMIT_MESSAGE
 ```
 
+:::info
+
+If you are using the Self-Hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io.
+
+:::
+
+The Distribution Profile name will be displayed as the sender name in the email address that testers will receive.
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-mail.png' />
 
 :::tip
 
 After sharing your app versions with testers, the most recent sharing time will be displayed on your testing distribution profile card.
-
-:::
-
-:::info
-
-If you are using the Self-Hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io.
 
 :::
 
