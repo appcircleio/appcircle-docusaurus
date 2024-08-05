@@ -109,7 +109,7 @@ Resigning an Android binary allows you to apply a new keystore to your applicati
 - **Package ID**: This is the unique identifier for your Android application, also known as the application ID. It usually follows the format `com.example.myapp` and should not be changed during the resigning process.
 
 :::caution Package ID
-Please note that changing the **Package ID** is not allowed while the related version is being resigned in the **Publish module**. If you need to change the **Package ID value** of your package, please use the **Resign Binary** feature in [Testing Distribution](/distribute/platform-specific-guidance/android/resigning-android-binaries).
+Please note that changing the **Package ID** is not allowed while the related version is being re-signed in the **Publish module**. If you need to change the **Package ID value** of your package, please use the **Re-sign Binary** feature in [Testing Distribution](/distribute/resigning-binaries).
 :::
 
 - **Version Name**: This field represents the human-readable version of your app, such as `1.2.3`. It is used for display purposes and can be adjusted if necessary during the resigning process.

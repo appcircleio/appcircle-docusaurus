@@ -34,17 +34,6 @@
   to = "/build/manage-the-connections"
   status = 301
 
-# Redirects for distribution and testing
-[[redirects]]
-  from = "/distribute/apple-devices"
-  to = "/distribute/platform-specific-guidance/ios/apple-devices"
-  status = 301
-
-[[redirects]]
-  from = "/distribute/resign"
-  to = "/distribute/platform-specific-guidance/android/resigning-android-binaries"
-  status = 301
-
 # Redirects for self-hosted Appcircle configuration changes
 [[redirects]]
   from = "/self-hosted-appcircle/configure-server/git-providers"

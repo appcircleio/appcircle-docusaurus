@@ -9,21 +9,21 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Testing Groups
 
-Testing group helps you manage and group your testers and distribute different versions of different applications based on your testing needs like OS versions, features and devices etc.
+The testing group feature is used to manage and organize testers. Different versions of applications can be distributed to specific groups based on testing needs, such as OS versions, features, devices, and more.
 
-With the testing groups feature, you can define various groups for different audiences. For instance, in an enterprise, you may want to create groups such as testing team, marketing, management, and any other functional group. For an app developer, testing groups can be created for customers and apps. This allows streamlined management of binary sharing flows. You can send apps manually to these groups or associate different distribution profiles with different groups for auto send.;
+The testing groups feature allows for the definition of various groups for different audiences. For instance, in an enterprise, groups such as testing team, marketing, management, and other functional groups can be created. For an app developer, testing groups can be created for customers and apps. This enables streamlined management of binary sharing flows. Apps can be sent manually to these groups, or different distribution profiles can be associated with different groups for automatic distribution.
 
 You can list, add, edit and manage your groups and testers from this module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/06-10-TestingGroups.png' />
 
-Click on the orange + button to create a new testing group. You can name groups according to your needs like "Alpha, Beta" and so on. Press enter after you type the name of the new testing group you are creating.
+Click on the orange + button to create a new testing group. You can name groups according to your needs, such as "Alpha," "Beta," and so on. After typing the name of the new testing group, press enter to create it.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/06-11a-NewTestingGroup.png' />
 
-After you create a new testing group, you can now enter tester email addresses to this group. Simply use the input box at the top of the page to enter the email address and press enter.
+After a new testing group is created, tester email addresses can be added to the group. The input box at the top of the page should be used to enter the email address, and pressing enter will add it.
 
-You can now see a list of your testers, select and delete testers if you need to.
+A list of your testers will now be displayed. Testers can be selected and deleted as needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/06-11-EditTestingEmails.png' />
 

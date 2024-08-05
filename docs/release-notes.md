@@ -20,10 +20,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### 🆕 New Features
 
-- Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the [Info tab](/distribute/create-or-select-a-distribution-profile#publisher-information) within the Testing Distribution profile settings. This information will be displayed on the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [Shared App Profiles](/distribute/downloading-binaries#shared-app-profiles) will now be displayed within the Tester Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the [Info tab](/distribute/create-or-select-a-distribution-profile#information) within the Testing Distribution profile settings. This information will be displayed on the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Shared App Profiles](/distribute/downloading-binaries#navigating-between-shared-app-profiles) will now be displayed within the Tester Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - For each app version, the file size and certificate version will now be shown within the [Tester Portal](/distribute/downloading-binaries). <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A new [user menu](/distribute/create-or-select-a-distribution-profile#publisher-information) has been added to the Tester Portal, where the testing distribution profile's publisher information, login method, and a logout button are displayed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new [user menu](/distribute/create-or-select-a-distribution-profile#information) has been added to the Tester Portal, where the testing distribution profile's publisher information, login method, and a logout button are displayed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When downloading app versions with an enterprise-type certificate within the Tester Portal, a [guidance message](/distribute/downloading-binaries) will now be displayed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Submissions with "Waiting for Review" or "In Review" status can now be [cancelled](/publish-module/publish-information/cancel-submission) on App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - App versions can now be [rejected](/publish-module/publish-information/reject-binary) by users with Manager and Operator roles. Rejected app versions cannot be marked as RC (Release Candidate); they can only be deleted or viewed. The same version can also be re-uploaded for rejected items. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -230,7 +230,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The install certificate tool bundled in the runner package now supports proxies when connecting to remote URLs on macOS. <SelfHostedBadge/>
 - The [Signing Identities](/signing-identities) module features are now accessible via the command-line interface. Learn more. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <SigningIdentitiesBadge/>
 - You can now manage [Testing Groups](distribute/testing-groups) within the [Distribution](/distribute) module via the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
-- Users can configure [Distribution](/distribute) settings to [automatically send builds to testers](/distribute/create-or-select-a-distribution-profile#auto-send-your-build-to-the-testers) using the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
+- Users can configure [Distribution](/distribute) settings to [automatically send builds to testers](/distribute/create-or-select-a-distribution-profile#upload-with-build-module) using the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
 - The "Default M1 pool" and "macOS VM image" now include [Xcode 15.4](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release candidate. <CloudBadge/> <SelfHostedBadge/>
 - This release introduces [a log viewing and delivery system](https://docs.appcircle.io/self-hosted-appcircle/configure-server/monitoring) for the self-hosted Appcircle server. <SelfHostedBadge/>
 - Self-hosted customers can now [download](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server package seamlessly and [update](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server fully automated. <SelfHostedBadge/>
@@ -518,7 +518,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - The [Testinium](/workflows/common-workflow-steps/#testinium) workflow component parses result summary and outputs in seperate environment variables. <CloudBadge/> <SelfHostedBadge/>
 - A user-friendly format has been introduced in the [testing distribution](/distribute/create-or-select-a-distribution-profile) emails. <CloudBadge/> <SelfHostedBadge/>
 - [Brute-force protection](/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore) and the ability to configure it have been added when logging into the Enterprise App Store and Testing Distribution via the LDAP method in self-hosted use. <SelfHostedBadge/>
-- The caching mechanism used when choosing between Testing Distribution [authentication](/distribute/create-or-select-a-distribution-profile#using-authentication-for-distribution) options has been disabled for the sake of quick response. <CloudBadge/> <SelfHostedBadge/>
+- The caching mechanism used when choosing between Testing Distribution [authentication](/distribute/create-or-select-a-distribution-profile#authentication) options has been disabled for the sake of quick response. <CloudBadge/> <SelfHostedBadge/>
 - You can no longer add or build Smartface projects to Appcircle. Smartface support has been removed. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle no longer supports purchases via Appsumo, and there is no Appsumo featured license supported on Appcircle. <CloudBadge/>
 - Appcircle online documentation got several updates and improvements, including search, screenshots, and content that provides a better user experience. <CloudBadge/>
@@ -555,7 +555,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Improvements have been made to the [email notification](/account/my-organization/notifications-and-communication/email-connection) format for build events. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 Pool" has the latest stable [Xcode 15.0.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_0_1-release-notes) update available on runners. <CloudBadge/> <SelfHostedBadge/>
 - We now support Azure DevOps Server 2020 connection while adding a [build profile](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure). <CloudBadge/> <SelfHostedBadge/>
-- The [public link](/distribute/create-or-select-a-distribution-profile#using-public-link-for-distribution) in the test deployment area will now be available regardless of authentication type. <CloudBadge/> <SelfHostedBadge/>
+- The [public link](/distribute/create-or-select-a-distribution-profile#public-link) in the test deployment area will now be available regardless of authentication type. <CloudBadge/> <SelfHostedBadge/>
 - A bug that prevented failed builds from sending notifications to the MS Teams application has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Previously, you could only select one profile for test deployment. Now you can select [multiple profiles in the distribution](/build/build-process-management/build-profile-configuration#distribution-configuration) profile settings. <CloudBadge/> <SelfHostedBadge/>
 - Removed the obsolete icon from the Commit ID redirect link in the build profile details. <CloudBadge/> <SelfHostedBadge/>
@@ -602,7 +602,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🐞 Fixed
 
 - Fixed the "Waiting Duration" title in the Queue Waiting Reports header. <SelfHostedBadge/>
-- The role management error in the [Apple Devices](/distribute/platform-specific-guidance/ios/apple-devices) section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The role management error in the [Apple Devices](/docs/distribute/apple-devices.md) section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue of not being able to distribute to the selected configuration in the [Testing Distribution](/distribute/create-or-select-a-distribution-profile) module. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue where the branch list could not be refreshed when the user [permission](/account/my-organization) for the Build module was set to "Read Only Access". <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue where the build does not appear in the list when the build starts. <CloudBadge/> <SelfHostedBadge/>
@@ -613,10 +613,10 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - The wrong dialog modal was opening in the "never delete" option selected for the deletion of an artifact. It's been fixed, and an extra description has been added. <CloudBadge/> <SelfHostedBadge/>
 - When there was a workflow step of the same name, there was a confusion of names. It's has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - An error message is now displayed to the user when an invalid workflow name is entered. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the data refresh error when the version is deleted in the [Apple Devices](/distribute/platform-specific-guidance/ios/apple-devices) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the data refresh error when the version is deleted in the [Apple Devices](/distribute/apple-devices) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the page crash problem when the user clicks on the [Triggers](/build/build-process-management/build-manually-or-with-triggers). <CloudBadge/> <SelfHostedBadge/>
 - Added a toast message that is shown when the user tries to download the deleted configuration in the admin panel. <CloudBadge/> <SelfHostedBadge/>
-- The case that selection of the adhoc [auto device register](/distribute/platform-specific-guidance/ios/apple-devices#automatically-adding-registered-devices-to-the-provisioning-profile) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The case that selection of the adhoc [auto device register](/distribute/apple-devices#automatically-adding-registered-devices-to-the-provisioning-profile) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Reports
 
@@ -685,7 +685,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - The ability to send files from the Testing Distribution module to the Enterprise App Store added. <CloudBadge/> <SelfHostedBadge/>
 - Made an improvement to prevent the subordinate from accessing the details on the 'corporate settings' page. <CloudBadge/> <SelfHostedBadge/>
 - Default M1 Pool is automatically selected in case of [Xcode](/infrastructure/ios-build-infrastructure) version 14.3.x and above. <CloudBadge/>
-- Improved the display of device name if there is an available device on the [IOS provisioning](/distribute/platform-specific-guidance/ios/apple-devices) profile side. <CloudBadge/> <SelfHostedBadge/>
+- Improved the display of device name if there is an available device on the [IOS provisioning](/distribute/apple-devices) profile side. <CloudBadge/> <SelfHostedBadge/>
 - Subtitle would also have to be searched for components. This development has been done. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
@@ -750,7 +750,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### :muscle: Improvement
 
 - [Data Theorem Mobile Secure](/workflows/common-workflow-steps/#data-theorem-mobile-secure) workflow step updated. <CloudBadge/> <SelfHostedBadge/>
-- New options added to [Android Resign](/distribute/platform-specific-guidance/android/resigning-android-binaries). <CloudBadge/> <SelfHostedBadge/>
+- New options added to [Android Resign](/distribute/resigning-binaries). <CloudBadge/> <SelfHostedBadge/>
 - Sub-organizations can see their download reports. <CloudBadge/> <SelfHostedBadge/>
 - Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
 - Build trigger screen is improved. <CloudBadge/> <SelfHostedBadge/>
@@ -790,7 +790,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### 🆕 New Feature
 
-- [Resigning](/distribute/platform-specific-guidance/ios/resigning-ios-binaries) iOS and Android binaries added to Test Distribution module. <CloudBadge/> <SelfHostedBadge/>
+- [Resigning](/distribute/resigning-binaries) iOS and Android binaries added to Test Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can create [sub organizations](/account/my-organization) to manage their users. <CloudBadge/> <SelfHostedBadge/>
 - [App Center iOS Distribution](/workflows/ios-specific-workflow-steps/#app-center-ios-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [App Center Android Distribution](/workflows/android-specific-workflow-steps/#app-center-android-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
@@ -910,7 +910,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### 🆕 New Feature
 
-- [Apple Devices](/distribute/platform-specific-guidance/ios/apple-devices) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
+- [Apple Devices](/distribute/apple-devices) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
 - [Firebase Deployment ]/workflows/flutter-specific-workflow-steps/firebase-deployment) component added.
 
 ### :muscle: Improvement
@@ -1413,7 +1413,7 @@ This release includes the release of Appcircle GitHub app and the share app prev
 ### 🆕 New Feature
 
 - [Appcircle GitHub App](/build/manage-the-connections/adding-a-build-profile/connecting-to-github) - You can now connect to GitHub with the Appcircle GitHub app as an alternative to the oAuth connection.
-- [Share App Preview Links](/distribute/create-or-select-a-distribution-profile#auto-send-your-build-to-the-testers) - You can now share in-browser app preview links automatically with the testers as an alternative to app binaries. No physical device needed for testing.
+- [Share App Preview Links](/distribute/create-or-select-a-distribution-profile#upload-with-build-module) - You can now share in-browser app preview links automatically with the testers as an alternative to app binaries. No physical device needed for testing.
 
 ### :muscle:Improvement
 
