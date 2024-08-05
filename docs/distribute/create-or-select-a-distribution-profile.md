@@ -8,7 +8,7 @@ sidebar_position: 1
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
+To share builds with testers, distribution profiles should be created and testing groups assigned to these profiles.
 
 ## Creating a Profile
 
@@ -28,7 +28,7 @@ As a best practice, we recommend using one single distribution profile for both 
 
 #### Rename a Distribution Profile
 
-You can rename your Distribution Profile by following these steps:
+The Distribution Profile can be renamed by following these steps:
 
 - Click on the three dot on the top right of the profile menu.
 - Click `Rename`.
@@ -38,20 +38,20 @@ You can rename your Distribution Profile by following these steps:
 
 #### Pin a Distribution Profile
 
-You can pin your Distribution Profile by following these steps:
+The Distribution Profile can be pinned by following these steps:
 
 - Click on the three dot on the top right of the profile menu.
 - Click `Pin Item`.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main21.png' />
 
-Pinned profiles will stand out by appearing first in the list, making them easily accessible and distinguishable from the rest of the profiles. They will also have a pin icon on their profile card.
+Pinned profiles will stand out by appearing first in the list, making them easily accessible and distinguishable from the rest of the profiles. A pin icon will also be displayed on their profile card.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main22.png' />
 
 #### Delete a Distribution Profile
 
-In order to remove clutter and/or free up storage, you can delete an entire profile in a single click;
+To remove clutter and/or free up storage, an entire profile can be deleted with a single click:
 
 - Click on the three dot on the top right of the profile menu.
 - Click `Delete`.
@@ -61,7 +61,7 @@ In order to remove clutter and/or free up storage, you can delete an entire prof
 
 :::info
 
-In order to free up space, you should also remove the other references pointing to the artifact. In example, if you have the same artifact on the builds, you should also delete those artifacts as well.
+To free up space, other references pointing to the artifact should also be removed. For example, if the same artifact is present in the builds, those artifacts should also be deleted.
 
 :::
 
@@ -69,21 +69,21 @@ In order to free up space, you should also remove the other references pointing 
 
 ### Upload App Version Manually
 
-If you have pre-built iOS or Android applications and want to distribute or preview them for testing, you can upload them using the upload field on the right panel (if no version is available) or using the "Upload New Version" button at the bottom right (if there are versions already present) to upload your files to the distribution profile.
+Pre-built iOS or Android applications can be uploaded for distribution or preview by using the upload field on the right panel (if no version is available) or the "Upload New Version" button at the bottom right (if versions are already present) to upload files to the distribution profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main7.png' />
 
-After the file is uploaded, it is checked for errors and parsed for metadata. If there is an error, it is displayed on the upload area.
+After the file is uploaded, it is checked for errors and parsed for metadata. Any errors that occur will be displayed in the upload area.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (156).png' />
 
-Once the upload is complete, you will see the new version added to the top of the list with parsed metadata. You can now share this version with the testers or preview it on a virtual device in your browser.
+Once the upload is complete, the new version will be added to the top of the list with parsed metadata. This version can then be shared with testers or previewed on a virtual device in the browser.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main8.png' />
 
 :::info
 
-Please note that iOS and Android binaries have different tabs. You can click on the required OS tab to navigate between them.
+Please note that iOS and Android binaries are displayed in separate tabs. The required OS tab should be clicked to navigate between them.
 
 :::
 
@@ -91,17 +91,17 @@ Please note that iOS and Android binaries have different tabs. You can click on 
 
 ### Upload with Build module
 
-With a successful build, a new version of your application will be added to your distribution profile.
+With a successful build, a new version of the application will be added to the distribution profile.
 
 Simply go to _Build Module_ _>_ _Build Configuration_ _>_ _Distribution_ and select a distribution profile you want your build to be sent.
 
 :::tip
 
-Users have the capability to select their Android build output as .AAB (Android App Bundle) from configuration settings within their Build profile.
+The Android build output can be selected as .AAB (Android App Bundle) from the configuration settings within the Build profile.
 
-When the `.AAB` build is sent to the designated Testing Distribution profile, either automatically or manually by uploading the file directly within the Testing Distribution profile, it will be automatically converted to `.APK` format when shared with a Testing Group. This ensures that the receiving tester downloads the shared artifact in `.APK` format.
+When the `.AAB` build is sent to the designated Testing Distribution profile, either automatically or manually by uploading the file directly within the Testing Distribution profile, it will be automatically converted to `.APK` format when shared with a Testing Group. This ensures that the `.APK` format is used for the artifact downloaded by the receiving tester.
 
-This conversion capability also applies when sending app versions from a Testing Distribution profile to an [Enterprise App Store](/enterprise-appstore) profile. The shared `.AAB` artifact will be downloaded in `.APK` format from the Enterprise App Store profile.
+This conversion capability also applies when app versions are sent from a Testing Distribution profile to an [Enterprise App Store](/enterprise-appstore) profile. The shared `.AAB` artifact will be converted and downloaded in `.APK` format from the Enterprise App Store profile.
 
 :::
 
@@ -109,7 +109,7 @@ This conversion capability also applies when sending app versions from a Testing
 
 :::caution
 
-Only signed builds will be distributed. Unsigned builds cannot be distributed.
+Only signed builds will be distributed. Unsigned builds will not be distributed.
 
 :::
 
@@ -119,9 +119,9 @@ For detailed information about multiple flavors, refer to this documentation:
 
 <ContentRef url="/best-practices/building-multiple-apps-in-one-profile">Building Multiple Apps in One Profile</ContentRef>
 
-If your Android application has multiple product flavors, Appcircle will create a build for each flavor of your application and let you distribute them at once. A common usage to multi-flavor applications can be free and paid versions of the same application.
+If multiple product flavors are present in your Android application, a build will be created for each flavor, allowing for simultaneous distribution. A common use case for multi-flavor applications includes offering free and paid versions of the same application.
 
-When you build and distribute an application with multiple flavors, and `.apk` file will be created for each flavor. When the build is distributed, all of the binaries will be seen on the distribution profile:
+When an application with multiple flavors is built and distributed, an `.apk` file will be created for each flavor. Once distributed, all of the binaries will be visible on the distribution profile
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main9.png" />
 
@@ -150,7 +150,7 @@ To get more information, please refer to our [API & CLI](/appcircle-api) documen
 
 ## Settings
 
-You can customize the settings of your distribution profile. Click on the distribution profile and then the settings button within the profile.
+The settings of your distribution profile can be customized. Click on the distribution profile, then click the settings button within the profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main2.png' />
 
@@ -210,7 +210,7 @@ To add your SSO and LDAP details, go to [My Organization](/account/my-organizati
 
 :::info
 
-If your organization does not have SSO and LDAP details configured, these authentication methods will not be visible in your Distribution Profile settings.
+If SSO and LDAP details are not configured for your organization, these authentication methods will not be visible in the Distribution Profile settings.
 
 :::
 
@@ -236,9 +236,9 @@ The Tester Portal that you will have access via the Public Link, will have the s
 
 ### Share your application with the test groups manually
 
-When you have your build ready or uploaded your binary file to Appcircle, you can manually send the file to testers to let them download, install on their devices and run the application for testing purposes.
+Once your build is ready or the binary file is uploaded to Appcircle, the file can be manually sent to testers for downloading, installing on their devices, and running the application for testing purposes.
 
-Click on the Share with Testers button and select the [testing groups](/distribute/testing-groups) you created previously that need to receive this version of your application. Alternatively, you can enter email addresses of the testers here to send them the application regardless of the testing groups.
+Click on the 'Share with Testers' button, and the [testing groups](/distribute/testing-groups) previously created can be selected to receive this version of your application. Alternatively, email addresses of testers can be entered here to send the application directly, bypassing the testing groups.
 
 You can also add a message to testers including testing instructions and release notes.
 
@@ -256,13 +256,13 @@ Commit Message: $AC_COMMIT_MESSAGE
 
 :::tip
 
-Once you share your app versions with your testers, you can see the most recent sharing time on your testing distribution profile card.
+After sharing your app versions with testers, the most recent sharing time will be displayed on your testing distribution profile card.
 
 :::
 
 :::info
 
-If you are using Self Hosted version of Appcircle, instead of the default noreply@appcircle.io, you can use your own business domain for the distribution emails.
+If you are using the Self-Hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io.
 
 :::
 
