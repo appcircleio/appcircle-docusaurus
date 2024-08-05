@@ -8,6 +8,8 @@ sidebar_position: 1
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
+In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
+
 ## Creating a Profile
 
 Select the Testing Distribution from the left and click on the Add New button. Give a name to your distribution profile.
@@ -65,7 +67,7 @@ In order to free up space, you should also remove the other references pointing 
 
 ## Uploading Binary
 
-### Manually upload your version
+### Upload App Version Manually
 
 If you have pre-built iOS or Android applications and want to distribute or preview them for testing, you can upload them using the upload field on the right panel (if no version is available) or using the "Upload New Version" button at the bottom right (if there are versions already present) to upload your files to the distribution profile.
 
@@ -144,7 +146,7 @@ If your Git commit has any messages, they will be included in the distribution i
 
 If you use your own CI structre, you can use our Appcircle API & CLI to upload binaries to your Distribution Profile.
 
-To get more information, please refer to our [API & CLI](/appcircle-api/appcenter-migration-tool#migrate-app-center-apps-to-a-testing-distribution-profile-at-appcircle) documentation.
+To get more information, please refer to our [API & CLI](/appcircle-api) documentation.
 
 ## Settings
 
@@ -250,9 +252,17 @@ Commit Hash:  <%= ENV['AC_GIT_COMMIT'][0..6] %>
 Commit Message: $AC_COMMIT_MESSAGE
 ```
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-mail.png' />
+
 :::tip
 
 Once you share your app versions with your testers, you can see the most recent sharing time on your testing distribution profile card.
+
+:::
+
+:::info
+
+If you are using Self Hosted version of Appcircle, instead of the default noreply@appcircle.io, you can use your own business domain for the distribution emails.
 
 :::
 
@@ -314,25 +324,7 @@ For more information please visit the Re-sign Binary documentation.
 
 ### Re-sign History
 
-1. Select the binary.
-
-You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
-
-2. Click the... button and select **Resign History**
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios16.png' />
-
-3. Each signing process will be listed for that binary. If you click the **View Log** button, you can get more details about the process.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios17.png' />
-
-:::info
-
-You need the check the history of the original application that has been signed.
-
-:::
+Re-sign History allows you to view the re-sign process logs for your app versions. For more information, please visit [Re-sign History](/distribute/resigning-binaries#re-sign-history) documentation.
 
 ### Binary Details
 

@@ -8,15 +8,15 @@ sidebar_position: 3
 import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
 
-# Resigning
+# Re-signing
 
-Resigning is the process of modifying an existing binary with a new signing certificate or keystore, which is required when an application needs to be published under a different developer account or when updating an existing application. It involves removing the original signature and replacing it with a new one.
+Re-signing is the process of modifying an existing binary with a new signing certificate or keystore, which is required when an application needs to be published under a different developer account or when updating an existing application. It involves removing the original signature and replacing it with a new one.
 
-## Resigning iOS Binaries
+## Re-signing iOS Binaries
 
 To sign an iOS binary, you need a valid certificate and provisioning profile. Appcircle supports both IPA and xcarchive files. The process of signing an iOS binary involves selecting the correct certificate and provisioning profile and specifying the bundle identifier and version number. Once these details are entered, Appcircle will generate a new signed binary with the updated information.
 
-### iOS Resign Process
+### iOS Re-sign Process
 
 1. Select the binary.
 
@@ -24,7 +24,7 @@ You can either select the files from the list or upload IPA, xcarchive files by 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
 
-2. Click the ... button and select **Resign Binary**
+2. Click the ... button and select **Re-sign Binary**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios10.png' />
 
@@ -54,7 +54,7 @@ Extract app bundle codesigning entitlements and combine them with entitlements f
 
 - New Entitlements.
 
-You can edit this XML file to edit capabilities. Resigning process uses a **single** entitlement XML file.
+You can edit this XML file to edit capabilities. Re-signing process uses a **single** entitlement XML file.
 
 If your provisioning profiles have the correct entitlements set, using the first option is the safest option.
 
@@ -64,11 +64,11 @@ You need to select new provisioning profiles for each target. Bundle ids will be
 
 :::caution
 
-You must select a provisioning profile for each target. Otherwise resigning will fail.
+You must select a provisioning profile for each target. Otherwise re-signing will fail.
 
 :::
 
-3. Fill in the details for resign process and hit the **Sign** button
+3. Fill in the details for re-sign process and hit the **Sign** button
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios11.png' />
 
@@ -80,7 +80,7 @@ If you hover over the **signed** badge, the certification name used to sign the 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios13.png' />
 
-## Resigning Android Binaries
+## Re-signing Android Binaries
 
 To sign an Android binary, you need a valid keystore file. Appcircle supports both APK and AAB files. The process of signing an Android binary involves selecting the correct keystore file. Once these details are entered, Appcircle will generate a new signed binary with the updated information.
 
@@ -90,7 +90,7 @@ You can either select the files from the list or upload APK, and AAB files by cl
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android1.png' />
 
-2. Click the... button and select **Resign Binary**
+2. Click the... button and select **Re-sign Binary**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android2.png' />
 
@@ -107,3 +107,25 @@ When you sign an app version using the Testing Distribution Profile or upload a 
 If you hover over the **signed** badge, the certification name used to sign the app version will be displayed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-android5.png' />
+
+## Re-sign History
+
+1. Select the binary.
+
+You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
+
+2. Click the... button and select **Resign History**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios16.png' />
+
+3. Each signing process will be listed for that binary. If you click the **View Log** button, you can get more details about the process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios17.png' />
+
+:::info
+
+You need the check the history of the original application that has been signed.
+
+:::

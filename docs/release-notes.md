@@ -21,7 +21,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### 🆕 New Features
 
 - Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the [Info tab](/distribute/create-or-select-a-distribution-profile#information) within the Testing Distribution profile settings. This information will be displayed on the Tester Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [Shared App Profiles](/distribute/downloading-binaries#shared-app-profiles) will now be displayed within the Tester Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Shared App Profiles](/distribute/downloading-binaries#navigating-between-shared-app-profiles) will now be displayed within the Tester Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - For each app version, the file size and certificate version will now be shown within the [Tester Portal](/distribute/downloading-binaries). <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new [user menu](/distribute/create-or-select-a-distribution-profile#information) has been added to the Tester Portal, where the testing distribution profile's publisher information, login method, and a logout button are displayed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When downloading app versions with an enterprise-type certificate within the Tester Portal, a [guidance message](/distribute/downloading-binaries) will now be displayed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -750,7 +750,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### :muscle: Improvement
 
 - [Data Theorem Mobile Secure](/workflows/common-workflow-steps/#data-theorem-mobile-secure) workflow step updated. <CloudBadge/> <SelfHostedBadge/>
-- New options added to [Android Resign](/distribute/resigning-ios-binaries). <CloudBadge/> <SelfHostedBadge/>
+- New options added to [Android Resign](/distribute/resigning-binaries). <CloudBadge/> <SelfHostedBadge/>
 - Sub-organizations can see their download reports. <CloudBadge/> <SelfHostedBadge/>
 - Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
 - Build trigger screen is improved. <CloudBadge/> <SelfHostedBadge/>
@@ -790,7 +790,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### 🆕 New Feature
 
-- [Resigning](/docs/distribute/resigning-ios-binaries.md) iOS and Android binaries added to Test Distribution module. <CloudBadge/> <SelfHostedBadge/>
+- [Resigning](/distribute/resigning-binaries) iOS and Android binaries added to Test Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can create [sub organizations](/account/my-organization) to manage their users. <CloudBadge/> <SelfHostedBadge/>
 - [App Center iOS Distribution](/workflows/ios-specific-workflow-steps/#app-center-ios-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [App Center Android Distribution](/workflows/android-specific-workflow-steps/#app-center-android-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>

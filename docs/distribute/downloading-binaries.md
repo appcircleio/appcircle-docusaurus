@@ -9,11 +9,11 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Using the Tester Portal
 
-## Login
-
 Appcircle has a separate distribution screen designed to make it easy for test group developers and testers download the distributed applications easily.
 
 For iOS and Android, the testers can login from the link shared and then view all the versions shared with them. Downloading iOS and Android binaries are done through the specific flows of each OS.
+
+## Login
 
 When a build is shared with testers, each tester will receive an email with a link to download the binary file and other details like version number and release notes.
 
@@ -28,6 +28,12 @@ The accounts used in the tester portal are completely independent from Appcircle
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portalentry.png" />
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-mobilex.png" />
+
+:::info
+
+Please note that the log out option is available only if your testing distribution profile has an active authentication method.
+
+:::
 
 ## Listing and Downloading Binary
 
@@ -89,7 +95,7 @@ Users can use the search bar to filter the available app version list for **app 
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal.png" />
 
-## Shared App Profiles
+## Navigating Between Shared App Profiles
 
 Users can view other distributed app versions from different tester distribution profiles by selecting the menu icon in the top left corner.
 
@@ -133,25 +139,4 @@ You can find out more about the login methods in the [using authentication for d
 
 :::info
 Please note that, the Privacy and Terms URLs are optional so if you haven't already configured them within the Info tab of your profile settings, they will not be visible in the Tester Portal.
-:::
-
-#### Logging Out of the Tester Portal
-
-Users can log out of the Tester Portal by following these steps:
-
-1. **Click the Profile Icon:**
-    - Locate and click on the profile icon in the top right corner of the screen.
-
-2. **Display the Profile Card:**
-    - Clicking the profile icon will open the profile card, which displays the publisher information.
-
-3. **Click the Logout Button:**
-    - In the profile card, find and click the **Logout** button.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-logout.png" />
-
-:::info
-
-The log out option is available only if your testing distribution profile has an active authentication method.
-
 :::
