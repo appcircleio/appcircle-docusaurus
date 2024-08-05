@@ -31,7 +31,7 @@ The accounts used in the tester portal are completely independent from Appcircle
 
 :::info
 
-Please note that the log out option is available only if your testing distribution profile has an active authentication method.
+Please note that the log out option is available only if an active authentication method is present in your testing distribution profile.
 
 :::
 
@@ -89,7 +89,7 @@ If the detected language is not supported, the default language will be English.
 
 ## Search Binary
 
-Users can use the search bar to filter the available app version list for **app names**, **app versions**, **release notes** and **build numbers**. 
+The search bar can be used to filter the available app version list by *app names**, **app versions**, **release notes**, and **build numbers**. 
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal5.png" />
 
@@ -127,16 +127,16 @@ For more information about using public links, please visit the [using public li
 
 #### Profile Card
 
-When you select the user icon, the distribution profile information will be displayed. You can update this information from the [Info](/distribute/create-or-select-a-distribution-profile#information) tab within the profile settings.
+When the user icon is selected, the distribution profile information will be displayed. This information can be updated from the [Info](/distribute/create-or-select-a-distribution-profile#information) tab within the profile settings.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info2.png' />
 
-It will also display the Login Method for the Testing Distribution Profile.
+The Login Method for the Testing Distribution Profile will also be displayed.
 
-In the example image, the profile has static authentication method, so it is displayed as Static Login.
+In the example image, the profile has a static authentication method, so it is displayed as Static Login.
 
 You can find out more about the login methods in the [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#authentication) section.
 
 :::info
-Please note that, the Privacy and Terms URLs are optional so if you haven't already configured them within the Info tab of your profile settings, they will not be visible in the Tester Portal.
+Please note that the Privacy and Terms URLs are optional. If they have not been configured within the Info tab of your profile settings, they will not be visible in the Tester Portal.
 :::
