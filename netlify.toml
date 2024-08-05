@@ -140,11 +140,6 @@
   status = 301
 
 [[redirects]]
-  from = "/distribute/downloading-binaries"
-  to = "/distribute/testing-management/downloading-binaries"
-  status = 301
-
-[[redirects]]
   from = "/account/sso/auth-openid"
   to = "/account/my-organization/sso-providers-configuration/auth-openid"
   status = 301
@@ -438,12 +433,7 @@
   from = "/continuous-testing/android-testing/firebase-test-lab-for-android"
   to = "/workflows/android-specific-workflow-steps/firebase-test-lab"
   status = 301
-
-[[redirects]]
-  from = "/distribute/testing-groups"
-  to = "/distribute/testing-management/testing-groups"
-  status = 301
-
+  
 [[redirects]]
   from = "/enterprise-appstore/configure-ent-profile"
   to = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile"

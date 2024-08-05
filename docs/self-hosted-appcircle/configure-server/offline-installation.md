@@ -152,7 +152,7 @@ If you installed a self-hosted Appcircle server before and you want to upgrade y
 :::caution
 If you are using the Appcircle DMZ structure and upgrading an Appcircle server, it is critical to also update the Appcircle DMZ server. If you don't, Enterprise App Store and Testing Distribution may not function as expected.
 
-For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/docs/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md). 
+For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz).
 :::
 
 :::info

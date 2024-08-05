@@ -71,7 +71,7 @@ Distribution is a very major and important step for testing and deploying a mobi
 
 Create testing groups, add testers to testing groups and assign these groups to distribution profiles to distribute your build to testers so that they can download and install applications on their devices.
 
-<ContentRef url="/distribute/testing-management/testing-groups">Testing Groups</ContentRef>
+<ContentRef url="/distribute/testing-groups">Testing Groups</ContentRef>
 
 If you have a team of testers, you can create testing groups and distribute builds to your testers manually or automatically after each build and let them run the application on their mobile devices.
 

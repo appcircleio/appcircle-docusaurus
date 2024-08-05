@@ -537,7 +537,7 @@ cd appcircle-server-dmz
 cd .. && rm -rf appcircle-server-dmz
 ```
 
-- Update the Appcircle server by following the [Update document](/docs/self-hosted-appcircle/update.md).
+- Update the Appcircle server by following the [Update document](/self-hosted-appcircle/update).
 
 - Create the updated Appcircle DMZ configuration files by following the [Creating the Appcircle DMZ Server Configuration](#creating-the-appcircle-dmz-server-configuration) section.
 
@@ -551,7 +551,7 @@ cd .. && rm -rf appcircle-server-dmz
 
 By default, the Appcircle DMZ server will try to send the container logs to the Appcircle server.
 
-You can check the container logs on the Appcircle monitoring page. For more details about checking the logs, you can check the [Monitoring](/docs/self-hosted-appcircle/configure-server/monitoring.md) page.
+You can check the container logs on the Appcircle monitoring page. For more details about checking the logs, you can check the [Monitoring](/self-hosted-appcircle/configure-server/monitoring) page.
 
 ## Restarting the Appcircle DMZ Server Host
 

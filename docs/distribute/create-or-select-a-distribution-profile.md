@@ -156,7 +156,7 @@ You can customize the settings of your distribution profile. Click on the distri
 
 ### Information
 
-The Info tab allows you to enter the publisher information for your distributed applications. 
+The Info tab allows you to enter the publisher information for your distributed applications.
 
 You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**.
 
@@ -170,9 +170,9 @@ When the tester selects the user icon, the Publisher Information will be display
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info2.png' />
 
-It will also display the Login Method for the Testing Distribution Profile. 
+It will also display the Login Method for the Testing Distribution Profile.
 
-In the example image, the profile has static authentication method, so it is displayed as Static Login. 
+In the example image, the profile has static authentication method, so it is displayed as Static Login.
 
 You can find out more about the login methods in the [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#authentication) section.
 
