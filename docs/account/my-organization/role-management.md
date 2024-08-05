@@ -347,7 +347,7 @@ If you want to assign a role in a sub-organization, please do so within the resp
 
 :::caution Appcircle Login and LDAP/SSO Integrations
 
-LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**testing portal**](/distribute/downloading-binaries) and [**Enterprise App Store**](/enterprise-appstore).
+LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Tester Portal**](/distribute/downloading-binaries) and [**Enterprise App Store**](/enterprise-appstore).
 
 Please use [**Appcircle Login**](/account/my-organization/sso-providers-configuration/onelogin-saml#enable-sso) for **LDAP** and **SSO** integration when logging into Appcircle.
 
