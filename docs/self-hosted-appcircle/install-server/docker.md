@@ -804,6 +804,12 @@ For our example scenario, root directory is `appcircle-server` as seen [here](/s
 
 Now you are ready to restart self-hosted appcircle.
 
+Initialize the project again.
+
+```bash
+/ac-self-hosted.sh -n "spacetech" init
+```
+
 Run Appcircle server services.
 
 ```bash
