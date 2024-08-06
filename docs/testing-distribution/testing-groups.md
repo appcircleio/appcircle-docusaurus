@@ -1,6 +1,6 @@
 ---
 title: Testing Groups
-description: Manage your testers with Testing Groups. Distribute different app versions based on OS, features, and devices.
+description: Manage your testers with Testing Groups.  different app versions based on OS, features, and devices.
 tags: [testing, group, distribution, testers]
 sidebar_position: 2
 ---
@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Testing Groups
 
-The testing group feature is used to manage and organize testers. Different versions of applications can be distributed to specific groups based on testing needs, such as OS versions, features, devices, and more.
+The testing group feature is used to manage and organize testers. Different versions of applications can be d to specific groups based on testing needs, such as OS versions, features, devices, and more.
 
 The testing groups feature allows for the definition of various groups for different audiences. For instance, in an enterprise, groups such as testing team, marketing, management, and other functional groups can be created. For an app developer, testing groups can be created for customers and apps. This enables streamlined management of binary sharing flows. Apps can be sent manually to these groups, or different distribution profiles can be associated with different groups for automatic distribution.
 

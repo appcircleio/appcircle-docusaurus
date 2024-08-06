@@ -1,6 +1,6 @@
 ---
 title: Apple Devices
-description: Distribute your iOS apps to Apple devices with Appcircle
+description:  your iOS apps to Apple devices with Appcircle
 tags: [distribution, apple devices, ios]
 sidebar_position: 3
 ---
@@ -16,7 +16,7 @@ Ad-hoc distribution is a method of distributing iOS apps outside of the App Stor
 
 ### Manually Registering Devices
 
-Navigate to the Distribute / Apple Devices section. Click the... button and then choose "Add Device".
+Navigate to the  / Apple Devices section. Click the... button and then choose "Add Device".
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios1.png' />
 
@@ -26,7 +26,7 @@ Here, you can manually add a device by entering the UDID and device name, clicki
 
 ### Automatically Registering Devices
 
-Alternatively, you can add devices automatically by installing a mobile configuration profile. If you enable [Device Registration](/distribute/create-or-select-a-distribution-profile#device-registration-ios-only) for your distribution profile, each Ad Hoc distribution email will have a Register Device link at the bottom. You may click that link to register your devices.
+Alternatively, you can add devices automatically by installing a mobile configuration profile. If you enable [Device Registration](/testing-distribution/create-or-select-a-distribution-profile#device-registration-ios-only) for your distribution profile, each Ad Hoc distribution email will have a Register Device link at the bottom. You may click that link to register your devices.
 
 <NarrowImage src="https://cdn.appcircle.io/docs/assets/adhoc-email1.png" width="300" />
 

@@ -123,7 +123,7 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 ### Testing Distribution Permissions
 
-The following table details the roles and restrictions for the [**Testing Distribution**](/distribute) module. Please refer to the related module information and caution notes. 
+The following table details the roles and restrictions for the [**Testing Distribution**](/testing-distribution) module. Please refer to the related module information and caution notes. 
 
 | Testing Distribution | Scopes                                 | Owner | Manager | Operator | Ext. Operator | Viewer |
 |----------------------|----------------------------------------|-------|---------|----------|---------------|--------|
@@ -179,7 +179,7 @@ User can resign the binary if this user has **Manager** or **Viewer** Signing Id
 
 ### Testing Group Permissions
 
-The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-groups). Please refer to the related module information and caution notes.  
+The following table details the roles and restrictions for the [**Testing Groups**](/testing-distribution/testing-groups). Please refer to the related module information and caution notes.  
 
 
 | Testing Groups | Scopes                                  | Owner | Manager | Viewer |
@@ -347,7 +347,7 @@ If you want to assign a role in a sub-organization, please do so within the resp
 
 :::caution Appcircle Login and LDAP/SSO Integrations
 
-LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Tester Portal**](/distribute/downloading-binaries) and [**Enterprise App Store**](/enterprise-appstore).
+LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Testing Portal**](/testing-distribution/testing-portal) and [**Enterprise App Store**](/enterprise-appstore).
 
 Please use [**Appcircle Login**](/account/my-organization/sso-providers-configuration/onelogin-saml#enable-sso) for **LDAP** and **SSO** integration when logging into Appcircle.
 
