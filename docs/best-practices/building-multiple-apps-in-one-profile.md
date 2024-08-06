@@ -114,4 +114,4 @@ For more information about environment variables, [click here](/environment-vari
 
 As specified in the Appcircle docs, your multiple outputs will be located on the testing distribution and they will be available for download just like a single application.
 
-[Multiple Flavors](/distribute/create-or-select-a-distribution-profile#android-applications-with-multiple-flavors)
+[Multiple Flavors](/testing-distribution/create-or-select-a-distribution-profile#android-applications-with-multiple-flavors)

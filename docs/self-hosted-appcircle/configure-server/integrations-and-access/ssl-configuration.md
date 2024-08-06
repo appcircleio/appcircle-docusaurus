@@ -423,7 +423,7 @@ For now, self-hosted Appcircle does not support usage of password protected priv
 
 ## Testing Distribution
 
-`global.yaml` configuration has its own dedicated section for [Testing Distribution](/distribute) domain settings. Below, we will explain some use cases for Testing Distribution, when you enable HTTPS.
+`global.yaml` configuration has its own dedicated section for [Testing Distribution](/testing-distribution) domain settings. Below, we will explain some use cases for Testing Distribution, when you enable HTTPS.
 
 ### Default Domain
 

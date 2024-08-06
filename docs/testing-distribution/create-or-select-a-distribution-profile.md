@@ -170,7 +170,7 @@ It will also display the Login Method for the Testing Distribution Profile.
 
 In the example image, the profile has static authentication method, so it is displayed as Static Login.
 
-You can find out more about the login methods in the [using authentication for distribution](/distribute/create-or-select-a-distribution-profile#authentication) section.
+You can find out more about the login methods in the [using authentication for distribution](/testing-distribution/create-or-select-a-distribution-profile#authentication) section.
 
 ### Auto Send
 
@@ -190,7 +190,7 @@ Your application will be sent to the related testing groups as soon as your buil
 
 ### Authentication
 
-Under the Authentication tab in the settings, you can select a preferred authentication method for sharing your application. This will be the login method for the [Tester Portal](/distribute/downloading-binaries).
+Under the Authentication tab in the settings, you can select a preferred authentication method for sharing your application. This will be the login method for the [Testing Portal](/testing-distribution/testing-portal).
 
 - **None**: No authentication, anyone with the link can download binary files
 - **Static Username and Password**: One single username and password for all testers
@@ -234,7 +234,7 @@ The Tester Portal that you will have access via the Public Link, will have the s
 
 Once your build is ready or the binary file is uploaded to Appcircle, the file can be manually sent to testers for downloading, installing on their devices, and running the application for testing purposes.
 
-Click on the 'Share with Testers' button, and the [testing groups](/distribute/testing-groups) previously created can be selected to receive this version of your application. Alternatively, email addresses of testers can be entered here to send the application directly, bypassing the testing groups.
+Click on the 'Share with Testers' button, and the [testing groups](/testing-distribution/testing-groups) previously created can be selected to receive this version of your application. Alternatively, email addresses of testers can be entered here to send the application directly, bypassing the testing groups.
 
 You can also add a message to testers including testing instructions and release notes.
 
@@ -322,7 +322,7 @@ For more information please visit the Re-sign Binary documentation.
 
 ### Re-sign History
 
-Re-sign History allows you to view the re-sign process logs for your app versions. For more information, please visit [Re-sign History](/distribute/resigning-binaries#re-sign-history) documentation.
+Re-sign History allows you to view the re-sign process logs for your app versions. For more information, please visit [Re-sign History](/testing-distribution/resigning-binaries#re-sign-history) documentation.
 
 ### Binary Details
 
