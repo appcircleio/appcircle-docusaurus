@@ -16,6 +16,38 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.20.1 - 2024-08-05 - Role Management Updates, Enterprise App Store and Publish Improvements, Bug Fixes and more
+
+### 🆕 New Features
+
+- [The Publish Environment Variables](/account/my-organization/role-management#publish-environment-variables) Module has been added within the role management with Manager and Viewer roles. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Integrations and Connection Management](/account/my-organization/role-management#integrations-and-connection-managements) roles have been added within the role management with Manager and Viewer roles. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Viewer role has been added for [Organization Management](/account/my-organization/role-management#organization-management-permissions). <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Hyperlink support has been added to the affected build profiles on the pop-up screen when a user attempts to delete a provisioning profile that is active in a build configuration. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server script now includes a new command (init) that should be used after the export step once while installing the server, ensuring seamless vault initialization. <InfrastructureBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The Credentials and Authentications sections have been separated within the Integrations area of the organization module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The rule feature has been added to the cards in the Publish flow editor. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Multiple app version delete support has been added for Enterprise App Store and Publish modules. <PublishBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- UI Improvements have been made for Enterprise App Store and Publish modules regarding overall texting and profile cards. <PublishBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The profile IDs of Enterprise App Store and Testing Distribution profiles can now be copied from their settings section. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [notify](/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile#notify-users) button will no longer be disabled if the user has static authentication; instead, a warning message will be shown. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server configuration file validator now checks the integrity of  [Enterprise App Store](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) and [Testing Distribution](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain-1) ports defined in `global.yaml`. <InfrastructureBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- The issue where the Runner Access Token did not display the warning text properly after generation has been fixed. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where the metadata localization list was not alphabetical has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where metadata screenshots were displayed in the wrong order on some occasions has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An overall improvement has been made to the request states of the UI, resolving issues such as un-centered status texts. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where removing a localization setting affected uploads on metadata within the publish module has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where archived logs were not being shown in the Publish History has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where the UI was not displaying an error message when the user uploaded a certificate that already existed or entered the wrong password has been fixed. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A texting issue on the UI that occurred while manually uploading app versions within the Testing Distribution Profile has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A problem with routing when users do not have distribution settings in the configuration has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.20.0 - 2024-07-29 - Role Management Updates, Testing Distribution and Publish Improvements, Xcode 16.0 Beta 4, Bug Fixes and more
 
 ### 🆕 New Features
