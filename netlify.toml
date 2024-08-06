@@ -57,7 +57,7 @@ to = "/testing-distribution"
 status = 301
 
 [[redirects]]
-from = "/testing-distribution/downloading-binaries"
+from = "/distribute/downloading-binaries"
 to = "/testing-distribution/testing-portal"
 status = 301
 
@@ -342,7 +342,7 @@ status = 301
 
 [[redirects]]
   from = "/distribute/create-or-select-a-distribution-profile.md"
-  to = "/distribute/create-or-select-a-distribution-profile"
+  to = "/testing-distribution/create-or-select-a-distribution-profile"
   status = 301
 
 [[redirects]]
