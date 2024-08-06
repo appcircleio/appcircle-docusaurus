@@ -90,11 +90,11 @@ appcenter-migration-tool organizations list-appcenter-organizations
 
 Use the App Center Apps command to list and migrate your App Center apps to Appcircle.
 
-| Apps Subcommands                                                 | Command Name      | Command Options  | Explanation                                                                                                             |
-| ---------------------------------------------------------------- | ----------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| List All App Center Apps                                         | list              | -                | List All App Center Apps.                                                                                               |
-| Migrate App Center App to Appcircle Testing Distribution Profile | list-organization | organizationName | List App Center Apps Based on App Center Organization                                                                   |
-| Migrate App Center App to Appcircle Testing Distribution Profile | migrate-profile   | profileName      | Migrate App Center App to Appcircle [Testing Distribution Profile](/distribute/create-or-select-a-distribution-profile) |
+| Apps Subcommands                                                 | Command Name      | Command Options  | Explanation                                                                                                                       |
+| ---------------------------------------------------------------- | ----------------- | ---------------- |-----------------------------------------------------------------------------------------------------------------------------------|
+| List All App Center Apps                                         | list              | -                | List All App Center Apps.                                                                                                         |
+| Migrate App Center App to Appcircle Testing Distribution Profile | list-organization | organizationName | List App Center Apps Based on App Center Organization                                                                             |
+| Migrate App Center App to Appcircle Testing Distribution Profile | migrate-profile   | profileName      | Migrate App Center App to Appcircle [Testing Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile) |
 
 To run the command directly instead of starting an interactive session, simply execute the command as shown below:
 
@@ -182,7 +182,7 @@ appcenter-migration-tool organizations migrate --organizationNames=Appcircle_Org
 
 ### Migrate App Center Apps to a Testing Distribution Profile at Appcircle
 
-The tool creates a [Testing Distribution Profile](/distribute/create-or-select-a-distribution-profile) in Appcircle using the specified App Center app name.
+The tool creates a [Testing Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile) in Appcircle using the specified App Center app name.
 
 ```bash
 appcenter-migration-tool apps migrate-profile --profileNames=Appcircle
@@ -191,7 +191,7 @@ appcenter-migration-tool apps migrate-profile --profileNames=Appcircle
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_migrate_test_profile.png' />
 
 :::caution
-The tool creates only a new [Testing Distribution Profile](/distribute/create-or-select-a-distribution-profile) and does not migrate any existing releases at this time.
+The tool creates only a new [Testing Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile) and does not migrate any existing releases at this time.
 :::
 
 ### Migrate Organization Distribution Groups

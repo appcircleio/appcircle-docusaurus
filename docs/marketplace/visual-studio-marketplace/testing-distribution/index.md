@@ -29,7 +29,7 @@ To install the Appcircle Distribute Task Extension, follow these steps:
 
    3.1. You can learn more about getting your access token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
-   3.2. Find out how to create a distribution profile [here](/distribute/create-or-select-a-distribution-profile)
+   3.2. Find out how to create a distribution profile [here](/testing-distribution/create-or-select-a-distribution-profile)
 
 :::caution Build Steps Order
 You should add this task extension after completing your build steps.
@@ -59,4 +59,4 @@ Utilize environment variables seamlessly by substituting the parameters with $(V
 
 - For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
 
-- To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/distribute/create-or-select-a-distribution-profile)
+- To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile)

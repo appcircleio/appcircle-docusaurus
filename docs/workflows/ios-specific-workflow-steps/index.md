@@ -167,7 +167,7 @@ Upload your debug symbols to Firebase Crashlytics
 
 ## Xcodebuild for Devices (Archive & Export)
 
-This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](/distribute/create-or-select-a-distribution-profile) feature or any other means of iOS distribution.
+This step builds your application for iOS devices in ARM architecture, which is required for the [**Share With Testers**](/testing-distribution/create-or-select-a-distribution-profile) feature or any other means of iOS distribution.
 
 <ContentRef url="/workflows/ios-specific-workflow-steps/xcodebuild-for-devices">
     Xcodebuild for Devices (Archive & Export)
