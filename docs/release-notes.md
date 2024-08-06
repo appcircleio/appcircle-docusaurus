@@ -11,7 +11,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 <!-- Note to contributors: You can use the following badges to indicate the availability of the feature for modules.-->
 
-<!-- <BuildBadge/> <APICLIBadge/> <BuildIntegrationsBadge/> <ContinuousTestingBadge/> <EnvironmentVariablesBadge/> <VersioningBadge/> <AccountBadge/> <BestPracticesBadge/> 
+<!-- <BuildBadge/> <APICLIBadge/> <BuildIntegrationsBadge/> <ContinuousTestingBadge/> <EnvironmentVariablesBadge/> <VersioningBadge/> <AccountBadge/> <BestPracticesBadge/> <DistributionBadge/>
 <IntegrationsBadge/> <EnterpriseStoreBadge/> <FaqBadge/> <InfrastructureBadge/> <PublishBadge/> <ReportsBadge/> <SigningIdentitiesBadge/> <SelfHostedBadge/> <PublishIntegrationsBadge/> -->
 
 # Latest Release Notes
