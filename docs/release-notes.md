@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
-## 3.20.1 - 2024-08-05 - Role Management Updates, Enterprise App Store and Publish Improvements, Bug Fixes and more
+## 3.20.1 - 2024-08-05 - Role Management Updates, Enterprise App Store and Publish Improvements, Xcode 16.0 Beta 5, Bug Fixes and more
 
 ### 🆕 New Features
 
@@ -35,10 +35,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The profile IDs of Enterprise App Store and Testing Distribution profiles can now be copied from their settings section. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The [notify](/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile#notify-users) button will no longer be disabled if the user has static authentication; instead, a warning message will be shown. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The self-hosted Appcircle server configuration file validator now checks the integrity of  [Enterprise App Store](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) and [Testing Distribution](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain-1) ports defined in `global.yaml`. <InfrastructureBadge/> <SelfHostedBadge/>
+- The [Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 5](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
 - The issue where the Runner Access Token did not display the warning text properly after generation has been fixed. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where SSO login redirect flows were causing access denied errors has been fixed. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue where the metadata localization list was not alphabetical has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue where metadata screenshots were displayed in the wrong order on some occasions has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An overall improvement has been made to the request states of the UI, resolving issues such as un-centered status texts. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
