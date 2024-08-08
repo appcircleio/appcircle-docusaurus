@@ -366,7 +366,7 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/docker#5-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/docker#6-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
@@ -382,6 +382,12 @@ After updating initial password, to activate changes, you need to do fresh expor
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
+```
+
+Then, make sure you initialize the [vault](/self-hosted-appcircle/install-server/docker#5-initialize-vault) again.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
 ```
 
 Now you can run services again. It should complete without any error.
@@ -546,7 +552,21 @@ Other clients that connect to the server should add below entries to their `/etc
 
 With this network setup, you can run and test both self-hosted Appcircle server and connected self-hosted runners with all functionality.
 
-### 5. Run Server
+### 5. Initialize Vault
+
+Initialize [vault](/self-hosted-appcircle/install-server/docker#vault) before starting the Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
+```
+
+:::caution
+You should initialize the server only once while installing it or after data cleanup is done with the `reset` command.
+
+It must not be used on upgrades in any way.
+:::
+
+### 6. Run Server
 
 Appcircle server's modules are run on Docker Engine as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
 
@@ -677,7 +697,7 @@ In this case, stop all services with data cleanup.
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-Then make a new export and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/docker#reset-configuration) section for more details.
+Then make a new export, initialize the vault and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/docker#reset-configuration) section for more details.
 
 :::
 
@@ -792,10 +812,16 @@ For our example scenario, root directory is `appcircle-server` as seen [here](/s
 
 Now you are ready to restart self-hosted appcircle.
 
+Before that, make sure you initialize the [vault](/self-hosted-appcircle/install-server/docker#5-initialize-vault) again.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
+```
+
 Run Appcircle server services.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" up
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 ## Connecting Runners

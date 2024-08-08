@@ -242,7 +242,7 @@ For this reason, you may prefer to execute this step on an idle time in order to
 
 :::
 
-For other details and troubleshooting, you can refer to [run server](/self-hosted-appcircle/install-server/docker#5-run-server) section in installation docs.
+For other details and troubleshooting, you can refer to [run server](/self-hosted-appcircle/install-server/docker#6-run-server) section in installation docs.
 
 ## Notes
 
