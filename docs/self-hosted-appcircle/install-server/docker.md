@@ -809,13 +809,13 @@ Now you are ready to restart self-hosted appcircle.
 Before that, make sure you initialize the [vault](/self-hosted-appcircle/install-server/docker#5-initialize-vault) again.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" init
+./ac-self-hosted.sh -n "spacetech" init
 ```
 
 Run Appcircle server services.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" up
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 ## Connecting Runners

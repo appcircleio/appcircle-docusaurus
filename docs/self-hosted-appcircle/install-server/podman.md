@@ -550,16 +550,18 @@ Other clients that connect to the server should add below entries to their `/etc
 
 With this network setup, you can run and test both self-hosted Appcircle server and connected self-hosted runners with all functionality.
 
-### 5. Initialize the Project
+### 5. Initialize Vault
 
-Initialize the project before starting the Appcircle server.
+Initialize [vault](/self-hosted-appcircle/install-server/podman#vault) before starting the Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" init
 ```
 
 :::caution
-You should initialize a project only once.
+You should initialize the server only once while installing it or after data cleanup done with `reset` command.
+
+It must not be used on upgrades in any way.
 :::
 
 ### 6. Run Server
@@ -693,7 +695,7 @@ In this case, stop all services with data cleanup.
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-Then make a new export and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/podman#reset-configuration) section for more details.
+Then make a new export, initialize the vault and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/podman#reset-configuration) section for more details.
 
 :::
 
@@ -827,16 +829,16 @@ For our example scenario, root directory is `appcircle-server` as seen [here](/s
 
 Now you are ready to restart self-hosted appcircle.
 
-Initialize the project again.
+Before that, make sure you initialize the [vault](/self-hosted-appcircle/install-server/podman#5-initialize-vault) again.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" init
+./ac-self-hosted.sh -n "spacetech" init
 ```
 
 Run Appcircle server services.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" up
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 ## Connecting Runners
