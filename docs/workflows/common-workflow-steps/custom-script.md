@@ -212,3 +212,15 @@ Please feel free to edit the following variables according to your own requireme
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-custom-script-component/
+
+### How to use environment variables along with the `sudo` command?
+
+Both user-created and Appcircle-reserved [environment variables](/environment-variables/managing-variables) can be used within a custom script with any required command. But, by default, commands that are triggered with `sudo` will not reach them since the user scope is changed.
+
+In order to use all user environment variables with `sudo`, you should add the `-E` argument to the `sudo` command. The `-E` (preserve environment) option indicates to the security policy that the user wishes to preserve their existing environment variables.
+
+For instance, you can check the list of environment variables in the build pipeline using the command below.
+
+```bash
+sudo -E printenv
+```
