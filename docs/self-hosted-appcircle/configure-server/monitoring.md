@@ -136,7 +136,7 @@ The output should indicate which file handles the rotation, typically `/etc/logr
 /etc/logrotate.d/rsyslog:/var/log/messages
 ```
 
-##### Edit the `logrotate` configuration:
+##### Edit the `logrotate` configuration
 
 Open the configuration file for editing:
 
@@ -176,7 +176,7 @@ Before making additional configurations, remove the existing lines for `/var/log
 
 Next, copy the lines between `postrotate` and `endscript` — these commands instruct the `rsyslog` service to handle log file rotation properly.
 
-##### Modify the configuration for daily log rotation:
+##### Modify the configuration for daily log rotation
 
 Add the following configuration at the top of the rsyslog configuration file to rotate the log files daily:
 
@@ -202,7 +202,7 @@ The `postrotate ... endscript` block might differ from system to system, dependi
 When editing the `logrotate` configuration, ensure you paste the exact `postrotate` line from your original configuration file. This guarantees the correct service is reloaded after the rotation.
 :::
 
-##### Save and apply the configuration:
+##### Save and apply the configuration
 
 Once the configuration is complete, save the file. `logrotate` will now handle the rotation of `/var/log/syslog` and `/var/log/messages` on a daily basis.
 
@@ -216,7 +216,7 @@ The added configuration in the `/etc/logrotate.d/rsyslog` file ensures that log 
 - `delaycompress`: Delays the compression of the most recent rotated log file until the next rotation. This ensures that the most recent log is available in an uncompressed format for easier access.
 - `postrotate ... endscript`: The commands between these directives are executed after log rotation. In this case, the rsyslog service is reloaded to start writing to the new log file.
 
-##### Validating the `logrotate` configuration:
+##### Validating the `logrotate` configuration
 
 To ensure that the `logrotate` configuration is valid and will work as expected, you can use the following command:
 
@@ -250,6 +250,33 @@ You should see the following:
 - You should see files like `/var/log/syslog.1.gz` and `/var/log/messages.1.gz`, showing that the previous day's logs have been rotated and compressed.
 
 If everything is as expected, the log rotation has been successful.
+
+##### Handling the "Insecure Permissions" error
+
+When configuring `logrotate`, you might encounter the following error:
+
+```bash
+error: skipping "/var/log/rsyslog" because parent directory has insecure permissions (It's world writable or writable by group which is not "root") Set "su" directive in config file to tell logrotate which user/group should be used for rotation.
+```
+
+To resolve this error, you need to add the `su` directive in your `logrotate` configuration. This directive tells `logrotate` which user and group to use when rotating the logs, ensuring the operation is performed securely.
+
+Open the logrotate configuration file:
+
+```bash
+sudo vi /etc/logrotate.d/rsyslog
+```
+
+Add the following line just before the section that handles /var/log/messages and /var/log/syslog:
+
+```bash
+su root adm
+var/log/messages
+/var/log/syslog
+...
+```
+
+This line specifies that `logrotate` should run as the `root` user and the `adm` group, ensuring that the log rotation process has the necessary permissions.
 
 #### Configuring Log Rotation with Systemd
 
