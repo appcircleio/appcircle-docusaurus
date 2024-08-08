@@ -105,11 +105,11 @@ For details about the `cred.json`, see [here.](/self-hosted-appcircle/install-se
 
 :::
 
-### Initialize the Project
+### Initialize Vault
 
-Before starting the Appcircle server, you should initialize the project.
+Before starting the Appcircle server, you should initialize the [vault](/self-hosted-appcircle/install-server/docker#vault).
 
-You check see out how to initialize a project [here.](/docs/self-hosted-appcircle/install-server/docker.md#5-initialize-the-project)
+You check out to see how to initialize the vault [here.](/docs/self-hosted-appcircle/install-server/docker.md#5-initialize-vault)
 
 ### Run the Appcircle Server
 
