@@ -1,8 +1,8 @@
 ---
-title: Distributing to Apple Devices
+title: Apple Devices
 description: Distribute your iOS apps to Apple devices with Appcircle
 tags: [distribution, apple devices, ios]
-sidebar_position: 5
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -18,15 +18,15 @@ Ad-hoc distribution is a method of distributing iOS apps outside of the App Stor
 
 Navigate to the Distribute / Apple Devices section. Click the... button and then choose "Add Device".
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adhoc-adddevice1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios1.png' />
 
 Here, you can manually add a device by entering the UDID and device name, clicking the... button, and then choosing "Add Device".
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adhoc-adddevice2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios2.png' />
 
 ### Automatically Registering Devices
 
-Alternatively, you can add devices automatically by installing a mobile configuration profile. If you enable [Device Registration](/distribute/create-or-select-a-distribution-profile#device-registration-ios-only) for your distribution profile, each Ad Hoc distribution email will have a Register Device link at the bottom. You may click that link to register your devices.
+Alternatively, you can add devices automatically by installing a mobile configuration profile. If you enable [Device Registration](/testing-distribution/create-or-select-a-distribution-profile#device-registration-ios-only) for your distribution profile, each Ad Hoc distribution email will have a Register Device link at the bottom. You may click that link to register your devices.
 
 <NarrowImage src="https://cdn.appcircle.io/docs/assets/adhoc-email1.png" width="300" />
 
@@ -71,15 +71,15 @@ After you registered your devices, you need to add those devices to provisioning
 
 After you added your devices, you can add your devices to Adhoc provisioning profiles by selecting the device(s) and clicking the **Add to Provisioning Profile** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adhoc-addprovision1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios3.png' />
 
 Choose your AppStore Connect API Key
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adhoc-selectkey.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios4.png' />
 
 Choose your Ad Hoc provisioning profile
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adhoc-selectprofile.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios5.png' />
 
 Your new device will be added to the newly created provisioning profile. New provisioning profiles will have AC and date suffixes. Ex: _Dashboard Adhoc AC-d3b6-January-16-2023-1048_
 
@@ -89,19 +89,19 @@ Appcircle will also update all build profiles with updated provisioning profiles
 
 If you need to open the application on a device with a newly added UDID, the application must be re-signed using the re-sign binary process. Additionally, the version that includes the new device should be resubmitted.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/apple-device-resign.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios6.png' />
 
 After selecting the 'Resign binary' option, choose the appropriate provisioning profile from the options displayed. Appcircle will then re-sign the application using the selected provisioning profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/apple-device-certificate.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios7.png' />
 
 ### Automatically adding registered devices to the provisioning profile 
 
 You can add registered devices to selected provisioning profiles by editing your distribution profile's settings.
 
-Go to your distribution profile and then click the **Settings/Apple Devices Registration** tab.
+Go to your distribution profile and then click the **Settings/Devices Registration** tab.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adhoc-profile-auto.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios8.png' />
 
 By enabling this setting, every registered device will be automatically added to the selected build profile's configured branch.
 

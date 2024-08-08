@@ -34,17 +34,6 @@
   to = "/build/manage-the-connections"
   status = 301
 
-# Redirects for distribution and testing
-[[redirects]]
-  from = "/distribute/apple-devices"
-  to = "/distribute/platform-specific-guidance/ios/apple-devices"
-  status = 301
-
-[[redirects]]
-  from = "/distribute/resign"
-  to = "/distribute/platform-specific-guidance/android/resigning-android-binaries"
-  status = 301
-
 # Redirects for self-hosted Appcircle configuration changes
 [[redirects]]
   from = "/self-hosted-appcircle/configure-server/git-providers"
@@ -60,6 +49,17 @@
   from = "/self-hosted-appcircle/configure-server/network-access"
   to = "/self-hosted-appcircle/configure-server/integrations-and-access/network-access"
   status = 301
+
+# Redirects for testing-distribution changes
+[[redirects]]
+from = "/distribute"
+to = "/testing-distribution"
+status = 301
+
+[[redirects]]
+from = "/distribute/downloading-binaries"
+to = "/testing-distribution/testing-portal"
+status = 301
 
 # Redirects for workflow-specific changes
 [[redirects]]
@@ -342,7 +342,7 @@
 
 [[redirects]]
   from = "/distribute/create-or-select-a-distribution-profile.md"
-  to = "/distribute/create-or-select-a-distribution-profile"
+  to = "/testing-distribution/create-or-select-a-distribution-profile"
   status = 301
 
 [[redirects]]
