@@ -388,6 +388,12 @@ After updating initial password, to activate changes, you need to do fresh expor
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
+Then, make sure you initialize the [vault](/self-hosted-appcircle/install-server/podman#5-initialize-vault) again.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
+```
+
 Now you can run services again. It should complete without any error.
 
 ```bash
