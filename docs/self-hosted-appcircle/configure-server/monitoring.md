@@ -98,7 +98,160 @@ loki:
 
 <RestartAppcircleServer />
 
-### Retention on Systemd
+### Configuring Log Retention with Systemd and Syslog
+
+Proper log management is crucial for maintaining system performance and ensuring compliance with policies. 
+
+This section outlines how to determine whether your system uses systemd or syslog as the log driver and how to configure log retention accordingly.
+
+First, identify whether systemd or syslog is being used as the primary log driver on your system.
+
+To check if systemd is forwarding logs to syslog, use the following command:
+```bash
+grep "ForwardToSyslog" /etc/systemd/journald.conf
+```
+
+- If the output shows `#ForwardToSyslog=yes` or `ForwardToSyslog=yes`, this indicates that [logs are being forwarded to `syslog`](#configuring-log-rotation-with-syslog) for further processing.
+
+- If the output shows `ForwardToSyslog=no`, this indicates that [`systemd` is handling the logs](#configuring-log-rotation-with-systemd) without forwarding them to `syslog`.
+
+Depending on the output, proceed to the relevant configuration section below.
+
+#### Configuring Log Rotation with Syslog
+
+If your logs are forwarded to syslog, you'll need to configure `logrotate` to manage the rotation and compression of log files such as `/var/log/messages` and `/var/log/syslog`.
+
+##### Identify the responsible `logrotate` configuration:
+
+First, find out which `logrotate` configuration file is responsible for managing the rotation of these log files:
+
+```bash
+grep -RE "/var/log/(syslog|messages)" /etc/logrotate.d/
+```
+
+The output should indicate which file handles the rotation, typically `/etc/logrotate.d/rsyslog` or `/etc/logrotate.d/syslog`:
+
+```output
+/etc/logrotate.d/rsyslog:/var/log/syslog
+/etc/logrotate.d/rsyslog:/var/log/messages
+```
+
+##### Edit the `logrotate` configuration:
+
+Open the configuration file for editing:
+
+```bash
+sudo vi /etc/logrotate.d/rsyslog
+```
+
+You should see a configuration similar to the following:
+
+```text {12-13,20-22} showLineNumbers
+/var/log/mail.info
+/var/log/mail.warn
+/var/log/mail.err
+/var/log/mail.log
+/var/log/daemon.log
+/var/log/kern.log
+/var/log/auth.log
+/var/log/user.log
+/var/log/lpr.log
+/var/log/cron.log
+/var/log/debug
+/var/log/messages
+/var/log/syslog
+{
+        rotate 4
+        weekly
+        missingok
+        notifempty
+        sharedscripts
+        postrotate
+                /usr/lib/rsyslog/rsyslog-rotate
+        endscript
+}
+```
+
+Before making additional configurations, remove the existing lines for `/var/log/syslog` and `/var/log/messages` to avoid conflicts.
+
+Next, copy the lines between `postrotate` and `endscript` — these commands instruct the `rsyslog` service to handle log file rotation properly.
+
+##### Modify the configuration for daily log rotation:
+
+Add the following configuration at the top of the rsyslog configuration file to rotate the log files daily:
+
+```text
+/var/log/messages
+/var/log/syslog
+{
+    rotate 7
+    daily
+    missingok
+    notifempty
+    compress
+    delaycompress
+    postrotate
+        /usr/lib/rsyslog/rsyslog-rotate
+    endscript
+}
+```
+
+:::caution
+The `postrotate ... endscript` block might differ from system to system, depending on how `rsyslog` or other logging services are configured. 
+
+When editing the `logrotate` configuration, ensure you paste the exact `postrotate` line from your original configuration file. This guarantees the correct service is reloaded after the rotation.
+:::
+
+##### Save and apply the configuration:
+
+Once the configuration is complete, save the file. `logrotate` will now handle the rotation of `/var/log/syslog` and `/var/log/messages` on a daily basis.
+
+The added configuration in the `/etc/logrotate.d/rsyslog` file ensures that log files such as `/var/log/syslog` and `/var/log/messages` are rotated daily. Here's what each directive means:
+
+- `rotate 7`: Keeps the last 7 rotated log files. Older files are deleted.
+- `daily`: Rotates the log files every day.
+- `missingok`: Ignores errors if the log file is missing.
+- `notifempty`: Does not rotate the log file if it is empty.
+- `compress`: Compresses the rotated log files to save space.
+- `delaycompress`: Delays the compression of the most recent rotated log file until the next rotation. This ensures that the most recent log is available in an uncompressed format for easier access.
+- `postrotate ... endscript`: The commands between these directives are executed after log rotation. In this case, the rsyslog service is reloaded to start writing to the new log file.
+
+##### Validating the `logrotate` configuration:
+
+To ensure that the `logrotate` configuration is valid and will work as expected, you can use the following command:
+
+:::caution
+If the `logrotate` configuration file is different on your system, please update the path in the example command below.
+:::
+
+```bash
+sudo logrotate -d /etc/logrotate.d/rsyslog
+```
+
+This runs logrotate in debug mode, where it simulates the rotation process and outputs what actions it would take, but without making any actual changes. This allows you to verify that the configuration is correct.
+
+To force log rotation and apply the new configuration immediately, use the following command:
+
+```bash
+sudo logrotate --force /etc/logrotate.d/rsyslog
+```
+
+This command forces the rotation of logs according to the configuration specified in `/etc/logrotate.d/rsyslog`.
+
+After forcing the log rotation, you can check if the rotation was successful by listing the log files:
+
+```bash
+ls -lh /var/log/syslog* /var/log/messages*
+```
+
+You should see the following:
+
+- The original log files (`/var/log/syslog` and `/var/log/messages`) should be much smaller, indicating that the old logs have been rotated.
+- You should see files like `/var/log/syslog.1.gz` and `/var/log/messages.1.gz`, showing that the previous day's logs have been rotated and compressed.
+
+If everything is as expected, the log rotation has been successful.
+
+#### Configuring Log Rotation with Systemd
 
 The Appcircle server and other system services also transmit their logs to the Journald log driver. However, once Appcircle server logs are successfully forwarded to Loki, the local server logs become redundant and can be safely deleted.
 
