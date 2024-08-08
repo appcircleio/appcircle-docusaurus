@@ -559,7 +559,7 @@ Initialize [vault](/self-hosted-appcircle/install-server/podman#vault) before st
 ```
 
 :::caution
-You should initialize the server only once while installing it or after data cleanup done with `reset` command.
+You should initialize the server only once while installing it or after data cleanup is done with the `reset` command.
 
 It must not be used on upgrades in any way.
 :::
