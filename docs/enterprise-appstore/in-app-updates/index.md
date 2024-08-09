@@ -13,15 +13,15 @@ tags:
   ]
 ---
 
-# Seamless Update Experience with In-app updates
+## Seamless Update Experience with In-app updates
 
 brief description
 
-# The Essential Role of In-App Updates for Seamless User Experience and Efficient App Maintenance
+## The Essential Role of In-App Updates for Seamless User Experience and Efficient App Maintenance
 
 Brief description why and when it is useful
 
-# Implementing In-App Updates: A Guide to Streamlining User Experience and Keeping Your App Current
+## Implementing In-App Updates: A Guide to Streamlining User Experience and Keeping Your App Current
 
 Brief description about the requirements such as storeId, profileId and PAT
 Brief description how to get these values
