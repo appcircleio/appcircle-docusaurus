@@ -9,6 +9,7 @@ tags:
     React Native build,
     Flutter build,
     Ionic build,
+    MAUI build,
     app development,
     app deployment,
     appcircle platform build,
@@ -48,6 +49,12 @@ Everything you need to know to build Flutter applications for multiple platforms
 Learn how to use custom scripts to build and customize Ionic projects for any requirements.
 
 <ContentRef url="/build/platform-build-guides/building-ionic-projects-with-custom-scripts"> Building Ionic Projects with Custom Scripts </ContentRef>
+
+### Building .NET MAUI Apps with Custom Scripts
+
+Learn how to use custom scripts to build and customize .NET MAUI apps on Appcircle.
+
+<ContentRef url="/build/platform-build-guides/building-dotnet-maui-apps-with-custom-scripts">Building .NET MAUI Apps with Custom Scripts</ContentRef>
 
 ## FAQ
 
