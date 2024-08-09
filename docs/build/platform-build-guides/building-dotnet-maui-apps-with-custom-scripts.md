@@ -41,6 +41,16 @@ As of now, Appcircle does not have a sample repository for .NET MAUI apps. So th
 
 **3.** In your [workflow](/workflows), use the below custom script as a replacement of the default **Android Build** step.
 
+:::info
+
+When you remove the **Android Build** step from the workflow, the workflow editor might give some errors or warnings for other components that depend on the **Android Build** step.
+
+Just ignore them and go on with the **Save** button when you remove the **Android Build** step in the workflow editor.
+
+As an alternative, you can disable the **Step Execution Active** toggle in **Android Build** step details, which will also make it inactive in the build pipeline.
+
+:::
+
 ```bash
 set -e
 set -x
