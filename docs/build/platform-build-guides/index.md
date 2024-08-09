@@ -9,6 +9,7 @@ tags:
     React Native build,
     Flutter build,
     Ionic build,
+    .NET MAUI build,
     MAUI build,
     app development,
     app deployment,
