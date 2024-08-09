@@ -7,7 +7,7 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 
-The appcenter-migration-tool is designed to assist organizations and individuals to migrate their Visual Studio App Center projects with organizations, collaborators, app profiles and test groups to Appcircle effortlessly.
+The appcenter-migration-tool is designed to assist organizations and individuals to migrate their Visual Studio App Center projects with organizations, collaborators, app profiles as testing distribution profile and test groups to Appcircle effortlessly.
 
 By using the **appcenter-migration-tool**, you can ensure a smooth and efficient migration process, minimizing downtime and preserving the integrity of your data.
 
@@ -16,8 +16,6 @@ By using the **appcenter-migration-tool**, you can ensure a smooth and efficient
 - **Organization Migration:** Effortlessly transfer your entire App Center organization structure to Appcircle.
 
 - **Collaborator Migration:** Move all your App Center collaborators to Appcircle with their roles and permissions intact.
-
-- **App Profile Migration:** Migrate app profiles from App Center to Appcircle while ensuring all settings and configurations are preserved.
 
 - **Test Group Migration:** Transition your test groups from App Center to Appcircle with all their associated configurations and data.
 
@@ -91,7 +89,7 @@ appcenter-migration-tool organizations list-appcenter-organizations
 Use the App Center Apps command to list and migrate your App Center apps to Appcircle.
 
 | Apps Subcommands                                                 | Command Name      | Command Options  | Explanation                                                                                                                       |
-| ---------------------------------------------------------------- | ----------------- | ---------------- |-----------------------------------------------------------------------------------------------------------------------------------|
+| ---------------------------------------------------------------- | ----------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | List All App Center Apps                                         | list              | -                | List All App Center Apps.                                                                                                         |
 | Migrate App Center App to Appcircle Testing Distribution Profile | list-organization | organizationName | List App Center Apps Based on App Center Organization                                                                             |
 | Migrate App Center App to Appcircle Testing Distribution Profile | migrate-profile   | profileName      | Migrate App Center App to Appcircle [Testing Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile) |
