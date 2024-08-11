@@ -892,3 +892,8 @@ status = 301
   from = "/distribute/testing-groups"
   to = "/testing-distribution/testing-groups"
   status = 301
+
+[[redirects]]
+from = "/testing-distribution/create-or-select-a-distribution-profile#upload-app-version-manually"
+to = "/testing-distribution/create-or-select-a-distribution-profile#manual-binary-upload"
+status = 301
