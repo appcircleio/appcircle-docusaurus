@@ -63,7 +63,7 @@ To free up space, other references pointing to the artifact should also be remov
 
 ## Uploading Binary
 
-### Upload App Version Manually
+### Manual Binary Upload
 
 Pre-built iOS or Android applications can be uploaded for distribution or preview by using the upload field on the right panel (if no version is available) or the "Upload New Version" button at the bottom right (if versions are already present) to upload files to the distribution profile.
 
@@ -85,7 +85,7 @@ Please note that iOS and Android binaries are displayed in separate tabs. The re
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update2.png' />
 
-### Upload with Build module
+### Upload via Build Module
 
 With a successful build, a new version of the application will be added to the distribution profile.
 
