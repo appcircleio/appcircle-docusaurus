@@ -17,6 +17,52 @@ In this case, do not hesitate to [contact us](https://appcircle.io/support/) for
 
 :::
 
+### iOS Custom Script for .NET MAUI Builds
+
+In order to build a .NET MAUI iOS app on Appcircle follow the steps below.
+
+**1.** [Create](/build/manage-the-connections/adding-a-build-profile) a new build profile for your app.
+
+- `iOS` should be selected as the **Target Operating System**, and `Objective-C / Swift` should be selected as the **Target Platform**.
+
+**2.** Connect your repository using a compatible connection method.
+
+:::tip
+
+You can disable the **Autofill** toggle or ignore the output of **Autofill** run since it does not support .NET MAUI app metadata processing.
+
+:::
+
+:::info
+
+As of now, Appcircle does not have a sample repository for .NET MAUI apps. So the **quick start using the sample repository** option will not work for .NET MAUI build profiles. You should use your own repository.
+
+:::
+
+**3.** In your [workflow](/workflows), use the below custom script as a replacement of the default **Xcodebuild for Devices** step.
+
+:::info
+
+When you remove the **Xcodebuild for Devices** step from the workflow, the workflow editor might give some errors or warnings for other components that depend on the **Xcodebuild for Devices** step.
+
+Just ignore them and go on with the **Save** button when you remove the **Xcodebuild for Devices** step in the workflow editor.
+
+As an alternative, you can disable the **Step Execution Active** toggle in **Xcodebuild for Devices** step details, which will also make it inactive in the build pipeline.
+
+:::
+
+```bash
+set -e
+set -x
+
+cd $AC_REPOSITORY_DIR
+
+echo "Hello world!"
+
+```
+
+// TODO: in progress...
+
 ### Android Custom Script for .NET MAUI Builds
 
 In order to build a .NET MAUI Android app on Appcircle follow the steps below.
@@ -107,52 +153,6 @@ open(ENV['AC_ENV_FILE_PATH'], 'a') { |f|
 exit 0
 
 EOF
-
-```
-
-// TODO: in progress...
-
-### iOS Custom Script for .NET MAUI Builds
-
-In order to build a .NET MAUI iOS app on Appcircle follow the steps below.
-
-**1.** [Create](/build/manage-the-connections/adding-a-build-profile) a new build profile for your app.
-
-- `iOS` should be selected as the **Target Operating System**, and `Objective-C / Swift` should be selected as the **Target Platform**.
-
-**2.** Connect your repository using a compatible connection method.
-
-:::tip
-
-You can disable the **Autofill** toggle or ignore the output of **Autofill** run since it does not support .NET MAUI app metadata processing.
-
-:::
-
-:::info
-
-As of now, Appcircle does not have a sample repository for .NET MAUI apps. So the **quick start using the sample repository** option will not work for .NET MAUI build profiles. You should use your own repository.
-
-:::
-
-**3.** In your [workflow](/workflows), use the below custom script as a replacement of the default **Xcodebuild for Devices** step.
-
-:::info
-
-When you remove the **Xcodebuild for Devices** step from the workflow, the workflow editor might give some errors or warnings for other components that depend on the **Xcodebuild for Devices** step.
-
-Just ignore them and go on with the **Save** button when you remove the **Xcodebuild for Devices** step in the workflow editor.
-
-As an alternative, you can disable the **Step Execution Active** toggle in **Xcodebuild for Devices** step details, which will also make it inactive in the build pipeline.
-
-:::
-
-```bash
-set -e
-set -x
-
-cd $AC_REPOSITORY_DIR
-
-echo "Hello world!"
 
 ```
 
