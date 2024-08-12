@@ -138,11 +138,11 @@ As of now, Appcircle does not have a sample repository for .NET MAUI apps. So th
 
 :::info
 
-When you remove the **Xcodebuild for Devices** step from the workflow, the workflow editor might give some errors or warnings for other components that depend on the **Android Build** step.
+When you remove the **Xcodebuild for Devices** step from the workflow, the workflow editor might give some errors or warnings for other components that depend on the **Xcodebuild for Devices** step.
 
-Just ignore them and go on with the **Save** button when you remove the **Android Build** step in the workflow editor.
+Just ignore them and go on with the **Save** button when you remove the **Xcodebuild for Devices** step in the workflow editor.
 
-As an alternative, you can disable the **Step Execution Active** toggle in **Android Build** step details, which will also make it inactive in the build pipeline.
+As an alternative, you can disable the **Step Execution Active** toggle in **Xcodebuild for Devices** step details, which will also make it inactive in the build pipeline.
 
 :::
 
