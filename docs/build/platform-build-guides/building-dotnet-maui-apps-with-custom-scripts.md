@@ -55,9 +55,16 @@ As an alternative, you can disable the **Step Execution Active** toggle in **Xco
 set -e
 set -x
 
-cd $AC_REPOSITORY_DIR
+curl -sS -O https://cdn.appcircle.io/dotnet-install.sh
+chmod u+x dotnet-install.sh
+./dotnet-install.sh --version 8.0.303
+dotnet="$HOME/.dotnet/dotnet"
 
-echo "Hello world!"
+framework="net8.0-android"
+project="$AC_REPOSITORY_DIR/src/Calculator/Calculator.csproj"
+
+$dotnet workload install maui-android
+$dotnet build $project -p:TargetFrameworks=$framework
 
 ```
 
@@ -101,17 +108,15 @@ As an alternative, you can disable the **Step Execution Active** toggle in **And
 set -e
 set -x
 
-echo $PWD
-
 curl -sS -O https://cdn.appcircle.io/dotnet-install.sh
 chmod u+x dotnet-install.sh
 ./dotnet-install.sh --version 8.0.303
 dotnet="$HOME/.dotnet/dotnet"
 
-framework="net8.0-android"
+framework="net8.0-ios"
 project="$AC_REPOSITORY_DIR/src/Calculator/Calculator.csproj"
 
-$dotnet workload install maui-android
+$dotnet workload install maui-ios
 $dotnet build $project -p:TargetFrameworks=$framework
 $dotnet publish $project -p:TargetFrameworks=$framework \
   -f $framework -c Release \
