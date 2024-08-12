@@ -60,11 +60,20 @@ chmod u+x dotnet-install.sh
 ./dotnet-install.sh --version 8.0.303
 dotnet="$HOME/.dotnet/dotnet"
 
-framework="net8.0-android"
+framework="net8.0-ios"
 project="$AC_REPOSITORY_DIR/src/Calculator/Calculator.csproj"
+appleCertificate="Apple Distribution: APPCIRCLE, INC. (8U2Z24R99J)"
+appleProfile="AppStore Appcircle Sample"
 
-$dotnet workload install maui-android
+$dotnet workload install maui-ios
 $dotnet build $project -p:TargetFrameworks=$framework
+$dotnet publish $project -p:TargetFrameworks=$framework \
+  -f $framework -c Release \
+  -p:ArchiveOnBuild=true \
+  -p:RuntimeIdentifier=ios-arm64 \
+  -p:CodesignKey="\"$appleCertificate\"" \
+  -p:CodesignProvision="\"$appleProfile\"" \
+  -o "$AC_OUTPUT_DIR"
 
 ```
 
