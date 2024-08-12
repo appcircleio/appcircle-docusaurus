@@ -117,7 +117,20 @@ $dotnet publish $project -p:TargetFrameworks=$framework \
 
 ```
 
+The custom script above does the following operations in order to build a .NET MAUI iOS app:
 
+- Install .NET SDK
+- Install `maui-ios` workload
+- Build the project with dependencies
+- Publish the app for deployment
+
+The custom script has some **variables that should be changed or customized** for your pipeline.
+
+- `dotnetVersion`: You can select a .NET SDK version that's compatible with your project or solution. See [here](https://github.com/dotnet/maui/wiki/Release-Versions) for details.
+- `framework`: You should select a target framework that the app will be built for, considering your project requirements and .NET SDK version. See [here](https://learn.microsoft.com/en-us/dotnet/standard/frameworks) for details.
+- `project`: It should be the path to the solution or project file for your app. `$AC_REPOSITORY_DIR` is a [reserved environment variable](/environment-variables/appcircle-specific-environment-variables) that should not be changed since it has the repository path value. You can change the rest of the path.
+- `appleCertificate`: -
+- `appleProfile`: -
 
 ### Android Custom Script for .NET MAUI Builds
 
