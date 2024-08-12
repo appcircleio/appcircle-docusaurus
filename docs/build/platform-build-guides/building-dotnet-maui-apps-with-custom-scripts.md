@@ -39,11 +39,49 @@ As of now, Appcircle does not have a sample repository for .NET MAUI apps. So th
 
 :::
 
-**3.** In your [workflow](/workflows), use the below custom script as a replacement of the default **Xcodebuild for Devices** step.
+**3.** Configure [Apple Certificates](/signing-identities/apple-certificates) and [Apple Profiles](/signing-identities/apple-profiles) using the **Signing Identities** module on Appcircle.
+
+These certificates and provisioning profiles will be used while building the signed app in the build pipeline.
 
 :::info
 
-When you remove the **Xcodebuild for Devices** step from the workflow, the workflow editor might give some errors or warnings for other components that depend on the **Xcodebuild for Devices** step.
+Keep in mind that, in order to use iOS Signing Identities in the build pipeline, the [workflow](/workflows) should also have an [**Install Certificates & Profiles**](/workflows/ios-specific-workflow-steps/install-certificates-provisions) step.
+
+:::
+
+**4.** In the [build profile configuration](/build/build-process-management/build-profile-configuration), open the **Config** tab and edit the settings below.
+
+- **XCODE VERSION**: Select the Xcode version that's compatible with your app. For instance, `15.4.x`.
+- **XCODE PROJECT OR WORKSPACE PATH**: Enter the project or workspace file name. For instance, `Calculator.xcodeproj`.
+- **BUILD SCHEME**: Enter a build scheme from your project for the release configuration. For instance, `Calculator`.
+
+:::info
+
+Keep in mind that, in order to switch to the selected Xcode version in the build pipeline, the [workflow](/workflows) should also have an [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select) step.
+
+:::
+
+:::caution
+
+The selected pool in the **SELECT A POOL** list should be the `Default M1 Pool` for the Appcircle Cloud or a pool that has **`arm64`** macOS runners for the self-hosted Appcircle.
+
+Intel-based runners are not supported or documented as of now, and you might need extra customizations done in the custom scripts.
+
+:::
+
+**5.** In the [build profile configuration](/build/build-process-management/build-profile-configuration), open the **Signing** tab and **add provisioning profile** by selecting from the list of Signing Identities.
+
+:::caution
+
+Currently, **Automatic Code Signing** is not supported for iOS .NET MAUI builds. For this reason, do not enable that toggle and go on with manual code signing as mentioned above.
+
+:::
+
+**6.** In your [workflow](/workflows), use the below custom script as a replacement of the default **Xcodebuild for Devices** step.
+
+:::info
+
+When you remove the **Xcodebuild for Devices** step from the default workflow, the workflow editor might give some errors or warnings for other components that depend on the **Xcodebuild for Devices** step.
 
 Just ignore them and go on with the **Save** button when you remove the **Xcodebuild for Devices** step in the workflow editor.
 
@@ -55,15 +93,17 @@ As an alternative, you can disable the **Step Execution Active** toggle in **Xco
 set -e
 set -x
 
-curl -sS -O https://cdn.appcircle.io/dotnet-install.sh
-chmod u+x dotnet-install.sh
-./dotnet-install.sh --version 8.0.303
-dotnet="$HOME/.dotnet/dotnet"
+dotnetVersion="8.0.303"
 
 framework="net8.0-ios"
 project="$AC_REPOSITORY_DIR/src/Calculator/Calculator.csproj"
 appleCertificate="Apple Distribution: APPCIRCLE, INC. (8U2Z24R99J)"
 appleProfile="AppStore Appcircle Sample"
+
+curl -sS -O https://cdn.appcircle.io/dotnet-install.sh
+chmod u+x dotnet-install.sh
+./dotnet-install.sh --version $dotnetVersion
+dotnet="$HOME/.dotnet/dotnet"
 
 $dotnet workload install maui-ios
 $dotnet build $project -p:TargetFrameworks=$framework
@@ -77,7 +117,7 @@ $dotnet publish $project -p:TargetFrameworks=$framework \
 
 ```
 
-// TODO: in progress...
+
 
 ### Android Custom Script for .NET MAUI Builds
 
