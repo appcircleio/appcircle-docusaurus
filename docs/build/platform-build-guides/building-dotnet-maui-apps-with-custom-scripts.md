@@ -15,6 +15,8 @@ Some Appcircle features might not be supported for .NET MAUI build profiles on t
 
 In this case, do not hesitate to [contact us](https://appcircle.io/support/) for support. We will do our best to support your build pipeline for .NET MAUI apps.
 
+Also, **official .NET MAUI support is on our roadmap**, and we're actively working on it to provide you with the best solution for your .NET MAUI apps.
+
 :::
 
 ### iOS Custom Script for .NET MAUI Builds
