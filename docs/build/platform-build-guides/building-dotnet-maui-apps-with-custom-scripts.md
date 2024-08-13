@@ -158,7 +158,19 @@ As of now, Appcircle does not have a sample repository for .NET MAUI apps. So th
 
 :::
 
-**3.** In your [workflow](/workflows), use the below **Custom Script** as a replacement of the default **Android Build** step.
+**4.** Add your keystore to [Android Keystores](https://docs.appcircle.io/signing-identities/android-keystores) using the **Signing Identities** module on Appcircle.
+
+These keystores will be used while building the signed app in the build pipeline.
+
+:::info
+
+Keep in mind that, in order to use Android Signing Identities in the build pipeline, the [workflow](/workflows) should also have an [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign) step.
+
+:::
+
+**5.** In the [build profile configuration](/build/build-process-management/build-profile-configuration), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
+
+**6.** In your [workflow](/workflows), use the below **Custom Script** as a replacement of the default **Android Build** step.
 
 :::info
 
@@ -178,6 +190,7 @@ dotnetVersion="8.0.303"
 
 framework="net8.0-android"
 project="$AC_REPOSITORY_DIR/src/Calculator/Calculator.csproj"
+packageFormat="apk"
 
 curl -sS -O https://cdn.appcircle.io/dotnet-install.sh
 chmod u+x dotnet-install.sh
@@ -188,7 +201,7 @@ $dotnet workload install maui-android
 $dotnet build $project -p:TargetFrameworks=$framework
 $dotnet publish $project -p:TargetFrameworks=$framework \
   -f $framework -c Release \
-  -p:AndroidPackageFormats=apk \
+  -p:AndroidPackageFormats="\"$packageFormat\"" \
   -p:AndroidKeyStore=false \
   -o "$AC_REPOSITORY_DIR/build/outputs"
 
@@ -233,7 +246,22 @@ EOF
 
 ```
 
-// TODO: in progress...
+The custom script above does the following operations in order to build a .NET MAUI iOS app:
+
+- Install .NET SDK
+- Install `maui-android` workload
+- Build the project with dependencies
+- Publish the app for deployment
+- Pass build outputs to **Android Sign** step
+
+The custom script has some **variables that should be changed or customized** for your pipeline.
+
+- **`dotnetVersion`**: You can select a .NET SDK version that's compatible with your project or solution. See [here](https://github.com/dotnet/maui/wiki/Release-Versions) for details.
+- **`framework`**: You should select a target framework that the app will be built for, considering your project requirements and .NET SDK version. See [here](https://learn.microsoft.com/en-us/dotnet/standard/frameworks) for details.
+- **`project`**: It should be the path to the project file for your app. `$AC_REPOSITORY_DIR` is a [reserved environment variable](/environment-variables/appcircle-specific-environment-variables) that should not be changed since it has the repository path value. You can change the rest of the path to customize it for your project structure.
+- **`packageFormat`**: A semi-colon delimited property that indicates if you want to package the app as an APK file or AAB. Set to either `aab` or `apk` to generate only one format.
+
+When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/post-build-operations/after-a-build#android-outputs).
 
 ___
 
