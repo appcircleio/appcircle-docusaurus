@@ -53,7 +53,7 @@ Keep in mind that, in order to use iOS Signing Identities in the build pipeline,
 
 **4.** In the [build profile configuration](/build/build-process-management/build-profile-configuration), open the **Config** tab and edit the settings below.
 
-- **XCODE VERSION**: Select the Xcode version that's compatible with your app. For instance, `15.4.x`.
+- **XCODE VERSION**: Select the Xcode version that's compatible with your app. For instance, `15.4.x`. You can take a look at the table [here](https://github.com/dotnet/maui/wiki/Release-Versions) for the compatible Xcode versions.
 - **XCODE PROJECT OR WORKSPACE PATH**: Enter the project or workspace file name. For instance, `Calculator.xcodeproj`.
 - **BUILD SCHEME**: Enter a build scheme from your project for the release configuration. For instance, `Calculator`.
 
