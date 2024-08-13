@@ -7,7 +7,11 @@ sidebar_position: 10
 
 # Building .NET MAUI Apps with Custom Scripts
 
-// todo
+This guide gives necessary information about the steps that should be followed to successfully build and publish a [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui) app with Appcircle.
+
+It's an introduction to the basic steps such as build, code signing, and app publishing. Although these steps are minimum requirements for a mobile app build pipeline, you should go on with other sections of the Appcircle documentation for numerous advanced CI/CD features.
+
+If you don't have a .NET MAUI app already or want to follow the steps quickly for a fast evaluation, you can use the [sample app](https://github.com/dotnet/maui-samples/tree/main/8.0/Apps/Calculator) Calculator from the `dotnet/maui-samples` repository. To simulate a .NET MAUI repository, it will be good to clone the app folder and add it as a repository to your own Git provider.
 
 :::tip
 
@@ -15,7 +19,7 @@ Some Appcircle features might not be supported for .NET MAUI build profiles on t
 
 In this case, do not hesitate to [contact us](https://appcircle.io/support/) for support. We will do our best to support your build pipeline for .NET MAUI apps.
 
-Also, **official .NET MAUI support is on our roadmap**, and we're actively working on it to provide you with the best solution for your .NET MAUI apps.
+Additionally, **official .NET MAUI support is on our roadmap**, and we are actively working on it to give you the best solution for your .NET MAUI apps.
 
 :::
 
@@ -205,7 +209,7 @@ $dotnet publish $project -p:TargetFrameworks=$framework \
   -p:AndroidKeyStore=false \
   -o "$AC_REPOSITORY_DIR/build/outputs"
 
-# The code section below is for passing through unsigned artifacts
+# The code section below is for passing unsigned artifacts
 # to the Android Sign step. So it should not be customized.
 #
 # Changing it might cause incompatibility issues for the next step.
