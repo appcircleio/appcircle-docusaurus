@@ -140,6 +140,17 @@ The custom script has some **variables that should be changed or customized** fo
 
 When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/post-build-operations/after-a-build#ios-outputs).
 
+#### References
+
+You can find more information in the following resources for customizing and troubleshooting the .NET MAUI build pipeline.
+
+- .NET Multi-platform App UI [documentation](https://learn.microsoft.com/en-us/dotnet/maui)
+- `dotnet-install.sh` script [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script)
+- `dotnet workload install` [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install)
+- `dotnet build` [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
+- `dotnet publish` [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
+- [Publish an iOS app](https://learn.microsoft.com/en-us/dotnet/maui/ios/deployment/publish-cli?view=net-maui-8.0) using the command line
+
 ### Android Custom Script for .NET MAUI Builds
 
 In order to build a .NET MAUI Android app on Appcircle follow the steps below.
@@ -278,6 +289,17 @@ Keep in mind that, if you sign your app with the `dotnet publish`, you will not 
 Also, change the output directory (`-o|--output`) to `$AC_OUTPUT_DIR` to send the signed artifacts directly to the [build artifacts](/build/post-build-operations/after-a-build#android-outputs).
 
 :::
+
+#### References
+
+You can find more information in the following resources for customizing and troubleshooting the .NET MAUI build pipeline.
+
+- .NET Multi-platform App UI [documentation](https://learn.microsoft.com/en-us/dotnet/maui)
+- `dotnet-install.sh` script [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script)
+- `dotnet workload install` [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-workload-install)
+- `dotnet build` [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
+- `dotnet publish` [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
+- [Publish an Android app](https://learn.microsoft.com/en-us/dotnet/maui/android/deployment/publish-cli?view=net-maui-8.0) using the command line
 
 ___
 
