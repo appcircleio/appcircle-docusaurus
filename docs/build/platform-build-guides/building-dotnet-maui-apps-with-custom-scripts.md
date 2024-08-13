@@ -261,7 +261,7 @@ EOF
 
 ```
 
-The custom script above does the following operations in order to build a .NET MAUI iOS app:
+The custom script above does the following operations in order to build a .NET MAUI Android app:
 
 - Install .NET SDK
 - Install `maui-android` workload
