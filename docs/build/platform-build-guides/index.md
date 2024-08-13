@@ -51,11 +51,11 @@ Learn how to use custom scripts to build and customize Ionic projects for any re
 
 <ContentRef url="/build/platform-build-guides/building-ionic-projects-with-custom-scripts"> Building Ionic Projects with Custom Scripts </ContentRef>
 
-### Building .NET MAUI Apps with Custom Scripts
+### Building .NET MAUI Apps
 
 Learn how to use custom scripts to build and customize .NET MAUI apps on Appcircle.
 
-<ContentRef url="/build/platform-build-guides/building-dotnet-maui-apps-with-custom-scripts">Building .NET MAUI Apps with Custom Scripts</ContentRef>
+<ContentRef url="/build/platform-build-guides/building-dotnet-maui-apps">Building .NET MAUI Apps</ContentRef>
 
 ## FAQ
 

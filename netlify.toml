@@ -892,3 +892,8 @@ status = 301
   from = "/distribute/testing-groups"
   to = "/testing-distribution/testing-groups"
   status = 301
+
+[[redirects]]
+  from = "/build/platform-build-guides/building-dotnet-maui-apps-with-custom-scripts"
+  to = "/build/platform-build-guides/building-dotnet-maui-apps"
+  status = 301
