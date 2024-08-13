@@ -263,6 +263,18 @@ The custom script has some **variables that should be changed or customized** fo
 
 When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/post-build-operations/after-a-build#android-outputs).
 
+:::info
+
+If your project includes a keystore, you can generate a signed artifact in the custom script using relevant `dotnet publish` arguments. See [here](https://learn.microsoft.com/en-us/dotnet/maui/android/deployment/publish-cli?view=net-maui-8.0#build-and-sign-your-app) for comprehensive documentation about the `dotnet publish` command and its parameters.
+
+You can also use the **Signing Identities** from Appcircle when you are signing your app with `dotnet publish`. In this case, you should bind the relevant command parameters to the [**reserved Android variables**](/environment-variables/appcircle-specific-environment-variables#reserved-android-variables) as arguments.
+
+Keep in mind that, if you sign your app with the `dotnet publish`, you will not need the **Android Sign** step in your workflow. So, you should disable it or remove it from your workflow.
+
+Also, change the output directory (`-o|--output`) to `$AC_OUTPUT_DIR` to send the signed artifacts directly to the [build artifacts](/build/post-build-operations/after-a-build#android-outputs).
+
+:::
+
 ___
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
