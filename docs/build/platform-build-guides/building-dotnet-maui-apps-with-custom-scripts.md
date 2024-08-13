@@ -174,15 +174,17 @@ As an alternative, you can disable the **Step Execution Active** toggle in **And
 set -e
 set -x
 
-curl -sS -O https://cdn.appcircle.io/dotnet-install.sh
-chmod u+x dotnet-install.sh
-./dotnet-install.sh --version 8.0.303
-dotnet="$HOME/.dotnet/dotnet"
+dotnetVersion="8.0.303"
 
-framework="net8.0-ios"
+framework="net8.0-android"
 project="$AC_REPOSITORY_DIR/src/Calculator/Calculator.csproj"
 
-$dotnet workload install maui-ios
+curl -sS -O https://cdn.appcircle.io/dotnet-install.sh
+chmod u+x dotnet-install.sh
+./dotnet-install.sh --version $dotnetVersion
+dotnet="$HOME/.dotnet/dotnet"
+
+$dotnet workload install maui-android
 $dotnet build $project -p:TargetFrameworks=$framework
 $dotnet publish $project -p:TargetFrameworks=$framework \
   -f $framework -c Release \
@@ -190,6 +192,10 @@ $dotnet publish $project -p:TargetFrameworks=$framework \
   -p:AndroidKeyStore=false \
   -o "$AC_REPOSITORY_DIR/build/outputs"
 
+# The code section below is for passing through unsigned artifacts
+# to the Android Sign step. So it should not be customized.
+#
+# Changing it might cause incompatibility issues for the next step.
 $(which ruby) <<EOF
 
 require 'fileutils'
