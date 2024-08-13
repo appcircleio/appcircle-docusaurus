@@ -1,11 +1,11 @@
 ---
-title: Building .NET MAUI Apps with Custom Scripts
-description: Learn how to build .NET MAUI apps with custom scripts in Appcircle
+title: Building .NET MAUI Apps
+description: Learn how to build a .NET MAUI app in Appcircle
 tags: [build, platform build guides, MAUI, .NET MAUI, custom scripts]
 sidebar_position: 10
 ---
 
-# Building .NET MAUI Apps with Custom Scripts
+# Building .NET MAUI Apps
 
 This guide gives necessary information about the steps that should be followed to successfully build and publish a [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui) app with Appcircle.
 
@@ -23,7 +23,7 @@ Additionally, **official .NET MAUI support is on our roadmap**, and we are activ
 
 :::
 
-### iOS Custom Script for .NET MAUI Builds
+### .NET MAUI Build for iOS
 
 In order to build a .NET MAUI iOS app on Appcircle follow the steps below.
 
@@ -151,7 +151,7 @@ You can find more information in the following resources for customizing and tro
 - `dotnet publish` [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
 - [Publish an iOS app](https://learn.microsoft.com/en-us/dotnet/maui/ios/deployment/publish-cli?view=net-maui-8.0) using the command line
 
-### Android Custom Script for .NET MAUI Builds
+### .NET MAUI Build for Android
 
 In order to build a .NET MAUI Android app on Appcircle follow the steps below.
 
