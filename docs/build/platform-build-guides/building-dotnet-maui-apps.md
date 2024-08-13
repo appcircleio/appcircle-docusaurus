@@ -1,6 +1,6 @@
 ---
 title: Building .NET MAUI Apps
-description: Learn how to build a .NET MAUI app in Appcircle
+description: Learn how to build a .NET MAUI app on Appcircle
 tags: [build, platform build guides, MAUI, .NET MAUI, custom scripts]
 sidebar_position: 10
 ---
@@ -300,6 +300,18 @@ You can find more information in the following resources for customizing and tro
 - `dotnet build` [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build)
 - `dotnet publish` [documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)
 - [Publish an Android app](https://learn.microsoft.com/en-us/dotnet/maui/android/deployment/publish-cli?view=net-maui-8.0) using the command line
+
+### Next Steps
+
+The document above has introduced the basic steps such as build, code signing, and app publishing for [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui) apps on Appcircle.
+
+Although these steps are the minimum requirements for a mobile app build pipeline, they are certainly not the end. Appcircle has some other advanced features that can help your mobile operations.
+
+We suggest you check out the following modules for specific use cases mentioned below:
+
+- Use [Testing Distribution](/testing-distribution) to deploy the .NET MAUI app to your tester groups to get feedback.
+- Ready to release? Then [Publish](/publish-module) the .NET MAUI app to public stores such as Google Play, App Store, or Huawei AppGallery.
+- Use the [Enterprise App Store](/enterprise-appstore) if you want to distribute the .NET MAUI app to your in-house or private users.
 
 ___
 
