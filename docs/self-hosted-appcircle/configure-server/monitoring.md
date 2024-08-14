@@ -259,6 +259,12 @@ You should see the following:
 
 If everything is as expected, the log rotation has been successful.
 
+:::tip
+After you configure the `logrotate`, the existing and already rotated log files (`messages.1` or `messages-20240721`) won't be affected, deleted or compressed by the `logrotate`.
+
+You can simple compress the files if you want to save to use later or delete them if you need to save disk space.
+:::
+
 ##### Handling the "Insecure Permissions" error
 
 When configuring `logrotate`, you might encounter the following error:
