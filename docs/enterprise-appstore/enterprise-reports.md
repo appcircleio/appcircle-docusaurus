@@ -2,7 +2,7 @@
 title: Store Reports
 description: Learn how to view the reports of your Enterprise App Store in Appcircle
 tags: [enterprise app store, reports]
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
