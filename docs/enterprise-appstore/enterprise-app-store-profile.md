@@ -104,6 +104,13 @@ You can add multiple users to the Beta and Live channels by hitting the Tab key.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notify1.png" />
 
+:::important
+
+To configure the Manage Access tab, the authentication method for your Enterprise Store must be either SSO or LDAP. For more information about authentication types, please refer to the [Store Settings](/enterprise-appstore/store-settings#store-authentication) documentation.
+
+:::
+
+
 :::caution
 If you work for a sub-organization, you will only have visibility of the apps within that organization. However, if an app is published, it will also be displayed in the parent organization's showcase on the Enterprise App Store.
 
@@ -135,6 +142,11 @@ You can also update the logo of your Enterprise App Store profile by clicking on
 
 ### Publish
 
+The Enterprise App Store module includes two channels: Beta and Live.
+
+- **Beta Channel**: This channel could be used for testing new updates, features, or changes before they are rolled out to all users. The beta channel is ideal for trialing updates without affecting the broader user base, ensuring that everything works as expected before moving to production.
+- **Live Channel**: The live channel is the production environment where all end users interact with the Enterprise App Store. This channel could contain the stable, fully tested binary versions.
+
 Apps can be sent to the Beta or Live channels by hitting the `...` button and then selecting the **Publish** menu.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-beta1.png" />
@@ -154,7 +166,7 @@ You can send a version to the Live Channel in two ways:
 
 :::info
 
-You can only send **one** version to the Live and Beta channels. When you send another beta or live version, the previous app version will be removed from that channel.
+You can only send **one binary version** to the Live and Beta channels. When you send another Beta or Live binary version, the previous app version will be replaced from that channel.
 
 :::
 

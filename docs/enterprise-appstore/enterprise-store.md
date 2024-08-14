@@ -30,7 +30,7 @@ Authentication method can be configured from the [store settings](/enterprise-ap
 
 Once logged in, users can now see the app version shared from the Enterprise App Store profile. Files can be downloaded with one click.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-download.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-newmobile.png" />
 
 You can also navigate back to the app version list, where you can view the shared binaries for the Live or Beta channels. Each channel will display different app versions based on what was uploaded to the Enterprise App Store profile in Appcircle.
 
@@ -57,5 +57,4 @@ Similarly, .APK files must be downloaded and installed from an Android device.
 
 Users can logout by selecting the profile icon in the top right corner of the screen.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-logout.png" />
-
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-newlogout.png" />
