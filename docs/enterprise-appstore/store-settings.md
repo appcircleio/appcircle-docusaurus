@@ -1,7 +1,7 @@
 ---
 title: Store Settings
 description: Learn how to configure your enterprise app store profile in Appcircle
-tags: [enterprise app store, enterprise app store profile, configure profile]
+tags: [store settings, enterprise app store, authentication, custom domain, sso, ldap, static login, saml, openid, two-factor authentication]
 sidebar_position: 3
 ---
 
