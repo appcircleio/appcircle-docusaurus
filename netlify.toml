@@ -952,3 +952,13 @@ status = 301
   from = "/build/platform-build-guides/building-dotnet-maui-apps-with-custom-scripts"
   to = "/build/platform-build-guides/building-dotnet-maui-apps"
   status = 301
+
+[[redirects]]
+  from = "/build/post-build-operations/after-a-build#android-outputs"
+  to = "/build/post-build-operations/after-a-build#download-artifacts"
+  status = 301
+
+[[redirects]]
+  from = "/build/post-build-operations/after-a-build#ios-outputs"
+  to = "/build/post-build-operations/after-a-build#download-artifacts"
+  status = 301
