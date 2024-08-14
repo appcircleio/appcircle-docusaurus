@@ -111,7 +111,7 @@ To check if systemd is forwarding logs to syslog, use the following command:
 grep "ForwardToSyslog" /etc/systemd/journald.conf
 ```
 
-- If the output shows `#ForwardToSyslog=yes` or `ForwardToSyslog=yes`, this indicates that [logs are being forwarded to `syslog`](#configuring-log-rotation-with-syslog) for further processing.
+- If the output shows `#ForwardToSyslog=yes`, `ForwardToSyslog=yes` or `#ForwardToSyslog=No`, this indicates that [logs are being forwarded to `syslog`](#configuring-log-rotation-with-syslog) for further processing.
 
 - If the output shows `ForwardToSyslog=no`, this indicates that [`systemd` is handling the logs](#configuring-log-rotation-with-systemd) without forwarding them to `syslog`.
 
