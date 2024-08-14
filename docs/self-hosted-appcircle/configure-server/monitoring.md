@@ -174,11 +174,17 @@ You should see a configuration similar to the following:
 
 Before making additional configurations, remove the existing lines for `/var/log/syslog` and `/var/log/messages` to avoid conflicts.
 
-Next, copy the lines between `postrotate` and `endscript` — these commands instruct the `rsyslog` service to handle log file rotation properly.
+Next, copy the lines between `postrotate` and `endscript` — these commands instruct the `rsyslog` service to handle log file rotation properly. We will use the copied line in the configuration below.
 
 ##### Modify the configuration for daily log rotation
 
 Add the following configuration at the top of the rsyslog configuration file to rotate the log files daily:
+
+:::info
+We are editing the same configuration file which is `/etc/logrotate.d/rsyslog` in the example above.
+
+Please add the lines below to the top of your existing configuration file.
+:::
 
 ```text
 /var/log/messages
@@ -195,6 +201,8 @@ Add the following configuration at the top of the rsyslog configuration file to 
     endscript
 }
 ```
+
+After you add the configuration above to your `logrotate` configuration file, you should update the `postrotate ... endscript` block and paste the copied block from the [previous step](#edit-the-logrotate-configuration).
 
 :::caution
 The `postrotate ... endscript` block might differ from system to system, depending on how `rsyslog` or other logging services are configured. 
