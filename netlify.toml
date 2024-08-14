@@ -212,7 +212,7 @@ status = 301
 
 [[redirects]]
   from = "/enterprise-appstore/customize-ent-store"
-  to = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store"
+  to = "/enterprise-appstore/store-customization"
   status = 301
 
 [[redirects]]
@@ -282,7 +282,7 @@ status = 301
 
 [[redirects]]
   from = "/enterprise-appstore/add-ent-profile"
-  to = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile"
+  to = "/enterprise-appstore/enterprise-app-store-profile"
   status = 301
 
 [[redirects]]
@@ -447,7 +447,7 @@ status = 301
   
 [[redirects]]
   from = "/enterprise-appstore/configure-ent-profile"
-  to = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile"
+  to = "/enterprise-appstore/store-settings"
   status = 301
 
 [[redirects]]
@@ -877,3 +877,58 @@ status = 301
   from = "/signing-identities/ios-certificates-and-provisioning-profiles#automatic-signing"
   to = "/signing-identities/apple-profiles#automatic-signing"
   status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup"
+to = "/enterprise-appstore/enterprise-app-store-profile"
+status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile"
+to = "/enterprise-appstore/enterprise-app-store-profile"
+status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile"
+to = "/enterprise-appstore/enterprise-app-store-profile"
+status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store"
+to = "/enterprise-appstore/store-customization"
+status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store#advanced-settings"
+to = "/enterprise-appstore/store-settings#custom-domain"
+status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store#authentication"
+to = "/enterprise-appstore/store-settings#store-authentication"
+status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store#ldap-login"
+to = "/enterprise-appstore/store-settings#ldap-login"
+status = 301
+
+[[redirects]]
+from = "enterprise-appstore/enterprise-app-store-setup/customize-ent-store#sso-login"
+to = "/enterprise-appstore/store-settings#sso-login"
+status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile#manual-upload"
+to = "/enterprise-appstore/enterprise-app-store-profile#manual-binary-upload"
+status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile#sending-from-distribution"
+to = "/enterprise-appstore/enterprise-app-store-profile#upload-via-testing-distribution-module"
+status = 301
+
+[[redirects]]
+from = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile#other-actions"
+to = "/enterprise-appstore/enterprise-app-store-profile#binary-actions"
+status = 301

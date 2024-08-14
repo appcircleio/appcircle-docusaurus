@@ -1,61 +1,16 @@
 ---
-title: Customizing the Store
-description: Customize the appearance and authentication settings of your Enterprise App Store in Appcircle
-tags: [enterprise app store, customize, appearance, authentication, custom domain, sso, ldap, static login, saml, openid, two-factor authentication]
+title: Store Settings
+description: Learn how to configure your enterprise app store profile in Appcircle
+tags: [enterprise app store, enterprise app store profile, configure profile]
 sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Customize Your Enterprise App Store
+Store settings allow you to configure your authentication and domain settings.
 
-## Customizing Appearance
-
-You can customize the appearance of your store by going to Customize section.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-customize-overview.png' />
-
-:::caution
-Customizing and setting up your store can only be done through the main organization.
-:::
-
-## Advanced Settings
-
-**Custom Domain**
-
-It's possible to use a custom domain for the Enterprise App Store. You need to have the following to create a custom domain
-
-- A custom domain that you can create a CNAME record.
-- SSL Certificate that is exported as a p12 or pfx file.
-
-**Creating CNAME Record**
-
-Open your DNS provider's website and add a CNAME with the below details
-
-**Name:** Your subdomain name. Ex. **store**
-
-**Destination:** _**store-domain.appcircle.io**_
-
-The below screenshot shows an example configuration screen from Cloudflare.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-cname.png' />
-
-**Updating Settings**
-
-After creating the DNS settings, type your custom domain name, select your certificate, and update the configuration. DNS changes can take time to propagate. You may have to wait a few minutes or hours to see the redirect.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/entstore-settings-custom-domain.png" />
-
-:::info
-
-If you are working on a sub organization, you will not have access to Settings and Customize sections on Enterprise Store module.
-
-:::
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4082-enterprisesub.png" />
-
-## Authentication
+## Store Authentication
 
 Appcircle supports Static, SSO, and LDAP login.
 
@@ -178,3 +133,46 @@ After you have configured LDAP, you can use **Test Connection** and **Test Authe
 To further protect your logins, you may add Two-factor Authentication(2FA) to your LDAP integration. Appcircle supports both email and SMS 2FA authentication.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-2fa.png' />
+
+## Store Domain
+
+You can customize your store prefix which will be reflected in your Enterprise Store access URL.
+
+The URL can be copied by clicking the copy icon next to it.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-settings3.png' />
+
+### Custom Domain
+
+**Custom Domain**
+
+It's possible to use a custom domain for the Enterprise App Store. You need to have the following to create a custom domain
+
+- A custom domain that you can create a CNAME record.
+- SSL Certificate that is exported as a p12 or pfx file.
+
+**Creating CNAME Record**
+
+Open your DNS provider's website and add a CNAME with the below details
+
+**Name:** Your subdomain name. Ex. **store**
+
+**Destination:** _**store-domain.appcircle.io**_
+
+The below screenshot shows an example configuration screen from Cloudflare.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-cname.png' />
+
+**Updating Settings**
+
+After creating the DNS settings, type your custom domain name, select your certificate, and update the configuration. DNS changes can take time to propagate. You may have to wait a few minutes or hours to see the redirect.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-settings6.png" />
+
+:::info
+
+If you are working on a sub organization, you will not have access to Settings and Customize sections on Enterprise Store module.
+
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4082-enterprisesub.png" />
