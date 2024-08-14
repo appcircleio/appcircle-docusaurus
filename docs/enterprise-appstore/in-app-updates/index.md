@@ -19,19 +19,19 @@ import Screenshot from '@site/src/components/Screenshot';
 
 In-app updates enable applications to deliver and install updates directly within the app, enhancing user experience by minimizing disruption.
 
-##   What are In-app Updates for Streamlined Update Experience
+## What are In-app Updates for Streamlined Update Experience
 
-In-app updates provide a seamless way to deliver and install new versions of an application directly from within the app, eliminating the need for users to manually check for updates. This streamlined approach ensures users receive the latest features and fixes efficiently, enhancing their overall experience and keeping the app up-to-date.
+In-app updates offer a seamless method for delivering and installing new versions of an application directly within the app. This eliminates the need for users to manually check for updates, ensuring they receive the latest features and fixes efficiently. This streamlined approach enhances the overall user experience and keeps the app up-to-date.
 
-##  Benefits and Examples of In-app Updates
+## Benefits and Examples of In-app Updates
 
-In-app updates offer several benefits, including a smoother user experience by allowing seamless updates without requiring users to manually download or install new versions. Examples include automatically applying critical bug fixes and feature enhancements while the app is running, thereby ensuring users always have access to the latest improvements and functionalities.
+In-app updates offer several benefits, including a smoother user experience by enabling seamless updates without requiring users to manually download or install new versions. For example, critical bug fixes and feature enhancements can be automatically applied while the app is running, ensuring users always have access to the latest improvements and functionalities.
 
 ## Implementing In-App Updates
 
-##  Prerequisites for Integration
+## Prerequisites for Integration
 
-###  Authentication Requirements
+### Authentication Requirements
 
 To integrate an in-app update experience, you will need the **Personal Access Token (PAT)**, the **enterprise store prefix**, and the **enterprise store profile ID**.
 
@@ -39,7 +39,7 @@ To integrate an in-app update experience, you will need the **Personal Access To
 
 #### Personal Access Token (PAT)
 
-- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+- For details on generating an Appcircle Personal Access Token, please visit the [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
 #### Enterprise Store Prefix
 
@@ -68,7 +68,7 @@ appcircle enterprise-app-store profile list
 
 #### Retrieving Access Token Using Personal API Token
 
-To fetch app versions and download the binary, we first need to obtain an access token using a Personal API Token (PAT).
+To fetch app versions and download the binary, you first need to obtain an access token using a Personal API Token (PAT).
 
 <Tabs defaultValue="swift" values={[
 { label: 'Swift', value: 'swift' },
