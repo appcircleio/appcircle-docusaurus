@@ -40,14 +40,7 @@ Make sure that the bundle ID matches your current profile and version or build n
 
 ### Upload via Build Module
 
-- Navigate to your build profile, select the configuration button and enable **Automatically Distribute to Enterprise App Store**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-build.png' />
-
-- Whenever you create a new **signed** build, that build will be sent to Enterprise App Store.
-- You can also manually send your APK or IPA files by clicking the **...** button and selecting Distribute Binary.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-binary.png' />
+Binaries can also be uploaded via the Build module. For more information, please visit the [Build Configuration](/build-process-management/build-profile-configuration#distribution-configuration) and [Build Actions](/build/post-build-operations/after-a-build) documentations.
 
 ### Upload via Testing Distribution Module
 
@@ -229,20 +222,6 @@ The Enterprise App Store share feature doesn't allow public sharing. It only hel
 
 :::
 
-:::danger
-
-**Please note that** if you have an **Apple Developer** account with an **enterprise organization** and you are using an app signed with an [**enterprise certificate**](/signing-identities/apple-certificates) for **internal distribution**, you must use [**authentication**](https://docs.appcircle.io/enterprise-appstore/customize-ent-store#authentication) for user access.
-
-Apple does not allow public distribution of internally distributed apps, and if Apple detects that you are distributing an app signed with an Enterprise certificate without using authentication, it will impose severe sanctions.
-
-You can access the relevant terms and conditions from the links below and get detailed information.
-
-- [Apple Developer Enterprise Program Agreement](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20230605-English.pdf)
-    - See Section 2.1 on page 8 for usage and restrictions, and Section 11.2 on page 33 for terms and terminations.
-- [Apple Developer Enterprise Program](https://developer.apple.com/programs/enterprise/)
-
-:::
-
 :::info
 
 The above tasks can also be initiated by our Appcircle CLI. Please check the Appcircle CLI documentation for the command line parameters.
@@ -267,5 +246,27 @@ Binaries in the Enterprise App Store profiles can be deleted by clicking the Del
 :::info
 
 Please note that you **cannot** delete a binary that is published to the Beta or Live channels. You must unpublish it before you can delete it.
+
+:::
+
+## Apple Enterprise Program
+
+The Apple Developer Enterprise Program allows large organizations to develop and deploy proprietary, internal-use apps to their employees. This program is for specific use cases that require private distribution directly to employees using secure internal systems or through a Mobile Device Management solution.
+
+The Apple Developer Enterprise Program is only for the internal use and distribution of proprietary apps in specific use cases that are not adequately addressed with public apps on the App Store, custom apps through Apple Business Manager or Ad Hoc distribution, or beta testing through TestFlight.
+
+https://developer.apple.com/programs/enterprise/
+
+
+:::danger Apple Enterprise Program
+
+**Please note that** if you have an **Apple Developer** account with an **Enterprise Organization** and you are using an app signed with an [**Enterprise Certificate**](/signing-identities/apple-certificates) for **internal distribution**, you must use [**authentication**](https://docs.appcircle.io/enterprise-appstore/customize-ent-store#authentication) for user access.
+
+Apple does not allow public distribution of internally distributed apps, and if Apple detects that you are distributing an app signed with an Enterprise certificate without using authentication, it will impose severe sanctions.
+
+You can access the relevant terms and conditions from the links below and get detailed information.
+
+- [**Apple Developer Enterprise Program License Agreement**](https://developer.apple.com/support/terms/)
+    - Please navigate the `Apple Developer Enterprise Program License Agreement` section and see Section 2.1 on page 8 for **usage and restrictions**, and Section 11.2 on page 34 for **terms and terminations**.
 
 :::
