@@ -894,6 +894,12 @@ status = 301
   status = 301
 
 [[redirects]]
+  from = "/testing-distribution/create-or-select-a-distribution-profile#upload-app-version-manually"
+  to = "/testing-distribution/create-or-select-a-distribution-profile#manual-binary-upload"
+  status = 301
+
+[[redirects]]
   from = "/build/platform-build-guides/building-dotnet-maui-apps-with-custom-scripts"
   to = "/build/platform-build-guides/building-dotnet-maui-apps"
   status = 301
+

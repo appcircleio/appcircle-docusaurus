@@ -12,8 +12,6 @@ sidebar_position: 5
 
 # App Reports
 
-## Overview
-
 Optimize your application management with detailed reports. Utilize the App Sharing Report and App Versions Report to gain insights and make informed decisions about your app's distribution and evolution.
 
 ## App Sharing Report
