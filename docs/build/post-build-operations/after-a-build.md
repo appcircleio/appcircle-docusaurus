@@ -16,7 +16,7 @@ With Appcircle's post-build actions, you can easily distribute your binary file 
 
 ### Distribute Binary
 
-Distribute binary feature sends your binary file to the relevant module according to the Distribution settings in the selected configuration. 
+The Distribute Binary feature sends the binary file to the relevant module based on the Distribution settings in the selected configuration.
 
 :::caution
 
@@ -26,11 +26,11 @@ Please note that AAB files will not be distributed automatically since they cann
 
 ### View Build Logs
 
-This feature allows you to review the relevant build logs in the Appcircle log window. You can examine the logs step by step separately.
+This feature allows the relevant build logs to be reviewed in the Appcircle log window. The logs can be examined step by step separately.
 
 ### Download Artifacts
 
-Every time Appcircle completes a build, it stores all the artifacts produced after the build for easy access by the user, you can access these files by saying download artifacts. These files include artifacts such as IPA, APK and AAB binary files, log files and archive files.
+Each time a build is completed by Appcircle, all artifacts produced after the build are stored for easy access. These files, which include artifacts such as IPA, APK, and AAB binary files, log files, and archive files, can be accessed by selecting Download Artifacts.
 
 :::caution Output Artifacts
 
@@ -50,7 +50,7 @@ If you disable signing or don't use any signing identities, iOS output will be a
 
 ### Download Build Logs
 
-In addition to allowing you to review logs, Appcircle also allows you to download these logs in .txt file format, so you can download and use your logs in a single file.
+In addition to allowing the review of logs, Appcircle also permits the downloading of these logs in .txt file format, enabling the logs to be downloaded and used in a single file.
 
 ### Working with build logs
 

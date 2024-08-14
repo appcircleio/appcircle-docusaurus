@@ -104,12 +104,12 @@ You can also use other toggles on there to automatically distribute your app to 
 
 #### Send to Enterprise App Store
 
-- Navigate to your configration and go to Distribution tab, and enable **Automatically Distribute to Enterprise App Store**.
+- Navigate to the configuration, then go to the Distribution tab, and ensure that **Automatically Distribute to Enterprise App Store** is enabled.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-build.png' />
 
-- Whenever you create a new **signed** build, that build will be sent to Enterprise App Store.
-- You can also manually send your APK or IPA files by clicking the **...** button and selecting Distribute Binary.
+- Whenever a new **signed** build is created, it will be sent to the Enterprise App Store.
+- APK or IPA files can also be manually sent by clicking the **...** button and selecting Distribute Binary.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-binary.png' />
 

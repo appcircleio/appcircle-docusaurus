@@ -8,9 +8,9 @@ sidebar_position: 2
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-You can customize the appearance of your store by going to Customize section.
+You can customize the appearance of your store by navigating to the Customize section.
 
-The Customization Feature allows you to tailor the login page of your Enterprise Store to match your organization's branding. With this feature, you can easily modify key elements to create a consistent and professional appearance that aligns with your corporate identity.
+The Customization feature allows you to tailor the login page of your Enterprise Store to align with your organization's branding. This feature enables you to modify key elements to create a consistent and professional appearance that reflects your corporate identity.
 
 - **Edit Colors**: Customize the color scheme of your login page, including the background, buttons, and text, to reflect your brand’s unique palette.
 - **Update Logo**: Replace the default logo with your company’s logo to reinforce brand recognition.

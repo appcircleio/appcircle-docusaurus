@@ -26,11 +26,11 @@ https://developer.apple.com/programs/enterprise/
 
 ## Enterprise App Store Profile
 
-There are several ways to create an Enterprise App Store Profile. You can either manually upload your IPA or APK files or you can send them from Appcircle's Distribution, Build or Publish modules.
+There are several ways to create an Enterprise App Store Profile. You can either manually upload your IPA or APK files or send them through Appcircle's Distribution, Build, or Publish modules.
 
 ## Store Customization
 
-The Enterprise App Store module allows you to tailor the login page to reflect your organization's branding. You can customize the colors, update the title, and replace the logo to create a seamless and professional experience for your users.
+The Enterprise App Store module allows for tailoring the login page to reflect your organization's branding. You can customize the colors, update the title, and replace the logo to create a seamless and professional experience for your users.
 
 ## Store Settings
 
@@ -42,7 +42,7 @@ Enterprise Store allows you to share your applications via Beta and Live channel
 
 ## Store Reports
 
-You can get the reports of your Enterprise App Store from this screen. The reports screen allows you to see the following data with a clear and concise user interface
+You can access reports for your Enterprise App Store from this screen. The reports screen provides the following data through a clear and concise user interface.
 
 ## Enterprise App Store FAQ
 

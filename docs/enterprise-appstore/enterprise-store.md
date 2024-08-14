@@ -5,15 +5,15 @@ tags: [enterprise app store, enterprise store setup, enterprise store]
 sidebar_position: 4
 ---
 
-Appcircle has a separate distribution screen designed to make it easy for users to download the shared applications easily.
+Appcircle features a separate distribution screen designed to facilitate easy downloading of shared applications.
 
-For iOS and Android, the users can login from the link shared and then view all the versions shared with them. Downloading iOS and Android binaries are done through the specific flows of each OS.
+For iOS and Android, users can log in via the shared link and view all the versions shared with them. Downloading iOS and Android binaries is managed through the specific flows for each operating system.
 
 ## Login
 
-When a binary is shared with users by share or notify actions for Live and Beta channels, the users will receive a link for access.
+When a binary is shared with users through the share or notify actions for Live and Beta channels, they will receive a link for access.
 
-When the link is clicked, users will then be redirected to the Enterprise Store.;
+Upon clicking the link, users will be redirected to the Enterprise Store.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-store1.png" />
 
@@ -28,11 +28,11 @@ Authentication method can be configured from the [store settings](/enterprise-ap
 
 ## Listing and Downloading App version
 
-Once logged in, users can now see the app version shared from the Enterprise App Store profile. Files can be downloaded with one click.
+Once logged in, users will be able to see the app version shared from the Enterprise App Store profile. Files can be downloaded with a single click.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-newmobile.png" />
 
-You can also navigate back to the app version list, where you can view the shared binaries for the Live or Beta channels. Each channel will display different app versions based on what was uploaded to the Enterprise App Store profile in Appcircle.
+You can also navigate back to the app version list, where the shared binaries for the Live or Beta channels can be viewed. Each channel will display different app versions based on what was uploaded to the Enterprise App Store profile in Appcircle.
 
 :::info
 
