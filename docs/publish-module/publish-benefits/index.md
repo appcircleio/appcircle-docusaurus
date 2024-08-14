@@ -125,6 +125,68 @@ Thanks to the capabilities of the Appcircle Publish module, you can manage your 
 - [**Update Metadata on App Store Connect**](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect): This step will assist you in updating metadata. It comes with a custom UI that displays previews of the metadata to be uploaded, allowing you to upload your most recently updated metadata to the app stores. With support for localization and screenshots, you can manage this process without needing to access the developer interfaces.
 
 
+## Managing Releases
+
+Effective release management is crucial for ensuring the success of your app updates. The Publish module provides you with the tools to monitor, control, and optimize the release process. You can track the status of your releases in real-time, manage approvals, and address any issues that arise during the process. 
+
+Additionally, the module allows you to roll back to previous versions if needed, ensuring that you have full control over your app's distribution. By leveraging these features, you can maintain a smooth and efficient release cycle, minimizing disruptions and maximizing the impact of your updates.
+
+### Releasing a New Version
+
+Releasing a new version of your app through the Publish module involves a few key steps:
+
+- **Prepare the App**: Start by ensuring your app is fully prepared for release. This includes compiling the binary, verifying that all necessary metadata (such as app descriptions, keywords, and screenshots) is up-to-date, and ensuring that your app meets all store requirements.
+
+- **Select a Flow**: Next, choose the appropriate flow that aligns with your release strategy. This could be a standard release flow for a regular update or a custom flow tailored to specific needs, such as beta testing.
+
+- **Execute the Flow**: Once the flow is selected, execute it to automate the entire submission process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release across the chosen app stores. Each step in the flow ensures that your app is released smoothly and efficiently.
+
+### Monitoring and Managing Releases
+
+After initiating a release, the Publish module provides tools to monitor and manage the process:
+
+- **Release Dashboard**: View the status of your releases in real-time, including pending approvals, successful submissions, and any errors that occur.
+
+- **Notifications**: Receive notifications for key events, such as when a release is approved or when an issue is detected.
+
+- **Rollback Options**: If needed, rollback to a previous version of your app or pause a release to address any issues.
+
+### Third Party Integrations
+
+The Publish module offers robust support for integrations with third-party tools, enhancing and streamlining your app release process. By connecting with these tools, you can automate, monitor, and improve every aspect of your app's lifecycle.
+
+- **CI/CD Tools**: Integrate the Publish module with continuous integration/continuous deployment (CI/CD) tools like Jenkins, GitHub Actions to automate your build and release pipeline. Through the Appcircle API, you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient deployment process, reducing manual intervention and the risk of errors.
+
+- **Analytics Platforms**: Post-release, it’s crucial to monitor your app’s performance and gather user feedback. The Publish module can be integrated with analytics platforms such as Google Analytics, Firebase, or Mixpanel via the Appcircle API. These integrations enable you to track key metrics, user behavior, and overall app health in real-time, helping you make informed decisions for future updates.
+
+- **Notification Tools**: Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like Slack or Microsoft Teams. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed.
+
+### Auditing and Reporting Releases
+
+The Publish module provides comprehensive auditing and reporting features that give you full visibility into your release process.
+
+- **Activity Log**: The Activity Log keeps a detailed record of every action taken during the release process, including who performed each action and when it occurred. This log is invaluable for tracking changes, identifying issues, and ensuring accountability within your team.
+
+
+## Publish Module Troubleshooting
+
+When using the Publish module, it's essential to know how to troubleshoot potential issues that may arise during the release process. Whether you're dealing with failed submissions, integration errors, or flow execution problems, having a clear understanding of common issues and their solutions can save you time and ensure a smooth release. The troubleshooting section will guide you through diagnosing and resolving problems efficiently, providing tips on how to maintain successful integrations, correct configuration errors, and ensure that your app releases proceed without interruptions.
+
+### Common Issues and Solutions
+
+While the Publish module is designed for reliability, you may occasionally encounter issues. Here are some common problems and their solutions:
+
+- **Failed Submissions**: Submissions can fail for various reasons. One common issue is a conflicting version number—if the version you're trying to submit already exists on the store, you'll need to increment the version number. Another issue could be an invalid binary, which might occur if the app doesn’t meet store requirements or if there are missing assets. Always check the error logs for specific details, correct any issues, and attempt the submission again.
+
+- **Integration Errors**: Integration errors often stem from misconfigured store connections. If the API connection fails, it could be due to incorrect credentials or an expired API token. Additionally, ensure that the account you're using has the necessary permissions to perform actions like submitting apps or updating metadata. Double-check all API keys, tokens, and permissions to resolve these issues.
+
+- **Flow Execution Problems**: If a flow doesn't execute as expected, it might be due to incorrect configuration settings. Review each step of the flow to ensure everything is set up correctly, such as conditions, triggers, and action sequences. If the problem persists, try testing the flow in a staging environment to isolate the issue before rerunning it in production.
+
+### Frequently Asked Questions
+
+### Further Support and Resources
+
+
 
 
 
