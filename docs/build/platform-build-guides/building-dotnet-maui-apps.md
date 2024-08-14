@@ -138,7 +138,7 @@ The custom script has some **variables that should be changed or customized** fo
 - **`appleCertificate`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [build profile configuration](/build/build-process-management/build-profile-configuration) **Signing** tab.
 - **`appleProfile`**: It should be the name of the selected provisioning profile at the [build profile configuration](/build/build-process-management/build-profile-configuration) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
 
-When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/post-build-operations/after-a-build#ios-outputs).
+When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/post-build-operations/after-a-build#download-artifacts).
 
 #### References
 
@@ -276,7 +276,7 @@ The custom script has some **variables that should be changed or customized** fo
 - **`project`**: It should be the path to the project file for your app. `$AC_REPOSITORY_DIR` is a [reserved environment variable](/environment-variables/appcircle-specific-environment-variables) that should not be changed since it has the repository path value. You can change the rest of the path to customize it for your project structure.
 - **`packageFormat`**: A semi-colon delimited property that indicates if you want to package the app as an APK file or AAB. Set to either `aab` or `apk` to generate only one format.
 
-When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/post-build-operations/after-a-build#android-outputs).
+When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/post-build-operations/after-a-build#download-artifacts).
 
 :::info
 
@@ -286,7 +286,7 @@ You can also use the **Signing Identities** from Appcircle when you are signing 
 
 Keep in mind that, if you sign your app with the `dotnet publish`, you will not need the **Android Sign** step in your workflow. So, you should disable it or remove it from your workflow.
 
-Also, change the output directory (`-o|--output`) to `$AC_OUTPUT_DIR` to send the signed artifacts directly to the [build artifacts](/build/post-build-operations/after-a-build#android-outputs).
+Also, change the output directory (`-o|--output`) to `$AC_OUTPUT_DIR` to send the signed artifacts directly to the [build artifacts](/build/post-build-operations/after-a-build#download-artifacts).
 
 :::
 
