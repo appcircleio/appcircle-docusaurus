@@ -932,3 +932,23 @@ status = 301
 from = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile#other-actions"
 to = "/enterprise-appstore/enterprise-app-store-profile#binary-actions"
 status = 301
+
+[[redirects]]
+from = "/distribute/create-or-select-a-distribution-profile"
+to = "/testing-distribution/create-or-select-a-distribution-profile"
+status = 301
+
+[[redirects]]
+from = "/distribute/reports/app-sharing-report"
+to = "/testing-distribution/reports"
+status = 301
+
+[[redirects]]
+from = "/distribute/testing-groups"
+to = "/testing-distribution/testing-groups"
+status = 301
+
+[[redirects]]
+from = "/build/platform-build-guides/building-dotnet-maui-apps-with-custom-scripts"
+to = "/build/platform-build-guides/building-dotnet-maui-apps"
+status = 301
