@@ -264,7 +264,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The install certificate tool bundled in the runner package now supports proxies when connecting to remote URLs on macOS. <SelfHostedBadge/>
 - The [Signing Identities](/signing-identities) module features are now accessible via the command-line interface. Learn more. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <SigningIdentitiesBadge/>
 - You can now manage [Testing Groups](testing-distribution/testing-groups) within the [Distribution](/testing-distribution) module via the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
-- Users can configure [Distribution](/testing-distribution) settings to [automatically send builds to testers](/testing-distribution/create-or-select-a-distribution-profile#upload-with-build-module) using the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
+- Users can configure [Distribution](/testing-distribution) settings to [automatically send builds to testers](/testing-distribution/create-or-select-a-distribution-profile#manual-binary-upload) using the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
 - The "Default M1 pool" and "macOS VM image" now include [Xcode 15.4](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release candidate. <CloudBadge/> <SelfHostedBadge/>
 - This release introduces [a log viewing and delivery system](https://docs.appcircle.io/self-hosted-appcircle/configure-server/monitoring) for the self-hosted Appcircle server. <SelfHostedBadge/>
 - Self-hosted customers can now [download](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server package seamlessly and [update](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server fully automated. <SelfHostedBadge/>
@@ -1447,7 +1447,7 @@ This release includes the release of Appcircle GitHub app and the share app prev
 ### 🆕 New Feature
 
 - [Appcircle GitHub App](/build/manage-the-connections/adding-a-build-profile/connecting-to-github) - You can now connect to GitHub with the Appcircle GitHub app as an alternative to the oAuth connection.
-- [Share App Preview Links](/testing-distribution/create-or-select-a-distribution-profile#upload-with-build-module) - You can now share in-browser app preview links automatically with the testers as an alternative to app binaries. No physical device needed for testing.
+- [Share App Preview Links](/testing-distribution/create-or-select-a-distribution-profile#manual-binary-upload) - You can now share in-browser app preview links automatically with the testers as an alternative to app binaries. No physical device needed for testing.
 
 ### :muscle:Improvement
 
