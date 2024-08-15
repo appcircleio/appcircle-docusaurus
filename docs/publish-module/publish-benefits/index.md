@@ -184,8 +184,19 @@ While the Publish module is designed for reliability, you may occasionally encou
 
 ### Frequently Asked Questions
 
+This section provides answers to frequently asked questions about the Publish module, including:
+
+#### How do I update my app's metadata?
+
+#### What happens if a release is rejected by the app store?
+
 ### Further Support and Resources
 
+If you need additional help with the Publish module, the following resources are available:
+
+- **Appcircle Support**: Contact [**Appcircle Slack support**](https://slack.appcircle.io/) for personalized assistance with your specific issues. 
+
+- **User Documentation**: Refer to the Appcircle user documentation for detailed guides and troubleshooting tips for Publish Module.
 
 
 
