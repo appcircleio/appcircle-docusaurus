@@ -165,7 +165,7 @@ Only **one binary version** can be sent to the Live and Beta channels. When anot
 
 :::tip
 
-If you are part of a sub-organization, the app versions that you publish to the **Live** or **Beta** channel will be available on the Enterprise Store for users to view and download, just as they are for a root organization.
+Any app versions published by sub-organizations to the **Live** or **Beta** channel will be available in the Enterprise Store created by the root organization for users to view and download.
 
 :::
 
