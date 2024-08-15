@@ -169,9 +169,10 @@ After creating the DNS settings, type your custom domain name, select your certi
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-settings6.png" />
 
-:::info
+:::caution
 
-If you are working on a sub organization, you will not have access to Settings and Customize sections on Enterprise Store module.
+If you are working on a sub organization, you will not have access to Customize and Settings sections on Enterprise App Store module.
+Only the main organization has the privilege to Set up, Configure and Customize the Enterprise store.
 
 :::
 

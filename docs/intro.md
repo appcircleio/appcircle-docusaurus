@@ -47,7 +47,7 @@ Build.<br/>Test.<br/>Distribute.
                   <NewBadge />
                   <h4>Create your own app store.</h4>
                   <p>Some apps are not meant to be on App Stores. That’s why we’re introducing Enterprise App Store. A way for you to distribute your internal apps.</p>
-                  <a href="/enterprise-appstore/enterprise-app-store-setup/add-ent-profile" className="feature-card-learn-more eas">
+                  <a href="/enterprise-app-store/enterprise-app-store-setup/add-ent-profile" className="feature-card-learn-more eas">
                         Learn how
                   </a>
             </div>

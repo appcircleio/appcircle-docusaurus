@@ -25,6 +25,9 @@ You can filter your results by organization, users, date, or app name. It is als
 In the filter options, you can only view and select the organization and sub-organization you belong to.
 :::
 
+You can download the report as a .csv file by clicking the **Export** button.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/EAS-Export-Report.png' />
+
 :::caution
 If you are working for a sub-organization, you can only see the reports of the applications belonging to that organization in the reports section.
 :::
