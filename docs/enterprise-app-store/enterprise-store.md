@@ -21,7 +21,7 @@ Upon clicking the link, users will be redirected to the Enterprise Store.
 
 :::info
 
-Authentication method can be configured from the [store settings](/enterprise-appstore/store-settings#store-authentication).
+Authentication method can be configured from the [store settings](/enterprise-app-store/store-settings#store-authentication).
 
 :::
 
