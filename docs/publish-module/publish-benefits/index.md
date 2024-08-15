@@ -182,6 +182,11 @@ Static flows enable you to tailor the release process to your exact needs. To cr
 - **Add Steps**: Add the steps required for your release process, such as "Send to TestFlight," "Get Approval via Email," or "Update Metadata on Microsoft Intune."
 - **Configure Each Step**: Customize each step by defining the specific actions, conditions, and notifications needed for your workflow.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-flows.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-flowDetails.png' />
+
+
 ### Publish Flow Examples
 
 The Publish module is designed to cater to a wide range of needs, making it suitable for both enterprise-level companies and individual developers. It possesses the capabilities to address diverse requirements effectively. Here are a few examples of custom flows you might create:
@@ -194,6 +199,8 @@ Automatically send your app to TestFlight via Send to TestFlight step. This step
 - [**Get Approval via Email**](/publish-integrations/common-publish-integrations/get-approval-via-email): After the version comparison is completed, an approval email is sent to the Release Manager to decide whether or not to proceed with the release process. This email informs the Release Manager about the release that is set to go to Beta Test. If the Release Manager sees no issues, they can click the Approve link within the email to move the process forward.
 - [**Send to TestFlight**](/publish-integrations/ios-publish-integrations/sent-to-testflight): With this step, the binary is sent to TestFlight.
 - [**Get Approval from TestFlight**](/publish-integrations/ios-publish-integrations/approval-test-flight): This step is presented with a UI that includes test information for the app you sent to TestFlight for beta testing. Here, you can either send the binary to a selected test group immediately or obtain approval from testers to confirm that the binary is issue-free. If the step succeeds under the selected conditions, it will proceed with a success status.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-betaTestFlow.png' />
 
 :::caution Beta Testing
 
@@ -211,6 +218,8 @@ Thanks to the capabilities of the Appcircle Publish module, you can manage your 
 - [**Get Approval from TestFlight**](/publish-integrations/ios-publish-integrations/approval-test-flight): This step is presented with a UI that includes test information for the app you sent to TestFlight for beta testing. Here, you can either send the binary to a selected test group immediately or obtain approval from testers to confirm that the binary is issue-free. If the step succeeds under the selected conditions, it will proceed with a success status.
 - [**Update Metadata on App Store Connect**](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect): This step will assist you in updating metadata. It comes with a custom UI that displays previews of the metadata to be uploaded, allowing you to upload your most recently updated metadata to the app stores. With support for localization and screenshots, you can manage this process without needing to access the developer interfaces.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-releaseFlow.png' />
+
 
 ## Managing Releases
 
@@ -224,7 +233,7 @@ Releasing a new version of your app through the Publish module involves a few ke
 
 - **Prepare the App**: Start by ensuring your app is fully prepared for release. This includes compiling the binary, verifying that all necessary metadata (such as app descriptions, keywords, and screenshots) is up-to-date, and ensuring that your app meets all store requirements.
 
-- **Select a Flow**: Next, choose the appropriate flow that aligns with your release strategy. This could be a standard release flow for a regular update or a custom flow tailored to specific needs, such as beta testing.
+- **Configure a Flow**: Next, choose the appropriate flow that aligns with your release strategy. This could be a standard release flow for a regular update or a custom flow tailored to specific needs, such as beta testing.
 
 - **Execute the Flow**: Once the flow is selected, execute it to automate the entire submission process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release across the chosen app stores. Each step in the flow ensures that your app is released smoothly and efficiently.
 
@@ -234,9 +243,15 @@ After initiating a release, the Publish module provides tools to monitor and man
 
 - **Release Dashboard**: View the status of your releases in real-time, including pending approvals, successful submissions, and any errors that occur.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-releaseStatus.png' />
+
 - **Notifications**: Receive notifications for key events, such as when a release is approved or when an issue is detected.
 
-- **Rollback Options**: If needed, rollback to a previous version of your app or pause a release to address any issues.
+- **Rollback Options**: If needed, rollback to a previous version of your app or pause a release to address any issues. Appcircle provides [**Cancel Submission**](/publish-module/publish-information/cancel-submission) and [**Reject Binary**](/publish-module/publish-information/reject-binary) feature, if version faced an issue or the wrong binary was send to release process, user can reject binary or cancel the current submission with Appcircle.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-cancelReject.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejected.png' />
 
 ### Third Party Integrations
 
@@ -254,6 +269,7 @@ The Publish module provides comprehensive auditing and reporting features that g
 
 - **Activity Log**: The Activity Log keeps a detailed record of every action taken during the release process, including who performed each action and when it occurred. This log is invaluable for tracking changes, identifying issues, and ensuring accountability within your team.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-auditLogs.png' />
 
 ## Publish Module Troubleshooting
 
