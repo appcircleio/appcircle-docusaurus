@@ -522,6 +522,15 @@ By default, our runner images are configured with an 8GB memory limit and 4 CPU 
 
 :::caution 
 Total allocated resources should not exceed host machine's physical capacity for optimal performance.
+
+For example:
+
+| Host Memory Size | Runner Memory Config. |
+|------------------|-----------------------|
+| 8GB              | 1 x VM with 8GB       |
+| 16GB             | 1 x VM with 16GB      |
+| 16GB             | 2 x VM with 8GB       |
+| 32GB             | 2 x VM with 16GB      |
 :::
 
 #### Set Memory Limit
