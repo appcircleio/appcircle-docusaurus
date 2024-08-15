@@ -512,6 +512,68 @@ tart clone macOS_240514 vm01
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
 
+### Configure Runner VM Resources
+
+You can adjust the resources limits for Runner VMs based on your needs.
+
+:::info 
+By default, our runner images are configured with an 8GB memory limit and 4 CPU cores.
+:::
+
+:::caution 
+Total allocated resources should not exceed host machine's physical capacity for optimal performance. <!-- If there are other services running on the host machine besides the Appcircle Runner, consider the memory usage of those services as well. -->
+
+<!-- For example:
+- If you have two virtual machines, you might allocate 8 GB to each, or 4 GB to one and 12 GB to another.
+- Similarly, ensure that CPU and storage allocations are within the physical limits of the host machine to avoid performance degradation. -->
+
+<!-- Valid configurations:
+- Host machine with 16GB Memory, 2 x Runner VM with 8GB memory.
+- Host Machine with 8 CPU cores, 2 x Runner VM with 4 CPU cores.
+- Host machine with 16GB Memory, 1 x Runner VM with 12GB memory.-->
+:::
+
+#### Set Memory Limit
+
+To configure the memory limit for a VM, run the following commands:
+
+   ```bash
+   cd $HOME/.tart/vms/
+   ```
+   ```bash
+   tart set <vm_name> --memory <size_in_mb>
+   ```
+
+   Replace `vm_name` with your VM's name and `size_in_mb` with the desired memory size in MB. E.g., 
+   > `tart set vm01 --memory 8192`.
+
+#### Set CPU Limit
+
+To configure the number of CPU cores for a VM, run the following commands:
+
+   ```bash
+   cd $HOME/.tart/vms/
+   ```
+   ```bash
+   tart set <vm_name> --cpu <count>
+   ```
+
+   Replace `vm_name` with your VM's name and `count` with the desired number of CPU cores. E.g., 
+   > `tart set vm01 --cpu 4`.
+
+#### Backing Up and Restoring VM Configuration
+
+When recreating VMs or upgrading to a new image, it's important to preserve your custom settings.
+
+1. Before making changes, backup your base VM's configuration file at `~/.tart/vms/<vm_name>/config.json`.
+
+2. After recreating or upgrading the VM, you can either:
+   - Restore the entire configuration:
+     ```bash
+     cp /path/to/your/backup/config.json ~/.tart/vms/<vm_name>/config.json
+     ```
+   - Or, manually set the values again using the `tart set` commands.
+
 ### Configure Base Runner VMs
 
 #### Configure Runner 1
