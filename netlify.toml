@@ -967,3 +967,13 @@ status = 301
   from = "/build/post-build-operations/after-a-build#ios-outputs"
   to = "/build/post-build-operations/after-a-build#download-artifacts"
   status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore"
+  to = "/enterprise-app-store"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-app-store/enterprise-app-store-setup/add-ent-profile"
+  to = "/enterprise-app-store/enterprise-app-store-profile"
+  status = 301
