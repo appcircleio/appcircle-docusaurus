@@ -76,7 +76,7 @@ Yes. Desktop users can access your app store and view the available apps through
 
 #### How can I create an Enterprise Distribution Certificate on iOS?
 
-You have to be enrolled on Apple's Enterprise Developer Program ($299/year). You can alternatively use Ad Hoc certificates if you aren'a a member of the Enterprise Developer program (see question below).
+You have to be enrolled on [Apple Enterprise Developer Program](https://developer.apple.com/programs/enterprise/) ($299/year). You can alternatively use Ad Hoc certificates if you aren'a a member of the Enterprise Developer program (see question below).
 
 #### Can I distribute apps signed with Ad Hoc / App Store Provisioning Profile from my Store?
 
@@ -90,4 +90,4 @@ A download is calculated every time an app is downloaded from our servers. So a 
 
 #### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
 
-Not yet.
+Thanks to the modular structure of Appcircle, all modules can be used independently. Accordingly, you can also request a special plan only for Enterprise App Store. Please [contact us](https://appcircle.io/contact) for detailed information.
