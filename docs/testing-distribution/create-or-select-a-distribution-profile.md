@@ -97,7 +97,7 @@ The Android build output can be selected as .AAB (Android App Bundle) from the c
 
 When the `.AAB` build is sent to the designated Testing Distribution profile, either automatically or manually by uploading the file directly within the Testing Distribution profile, it will be automatically converted to `.APK` format when shared with a Testing Group. This ensures that the `.APK` format is used for the artifact downloaded by the receiving tester.
 
-This conversion capability also applies when app versions are sent from a Testing Distribution profile to an [Enterprise App Store](/enterprise-appstore) profile. The shared `.AAB` artifact will be converted and downloaded in `.APK` format from the Enterprise App Store profile.
+This conversion capability also applies when app versions are sent from a Testing Distribution profile to an [Enterprise App Store](/enterprise-app-store) profile. The shared `.AAB` artifact will be converted and downloaded in `.APK` format from the Enterprise App Store profile.
 
 :::
 

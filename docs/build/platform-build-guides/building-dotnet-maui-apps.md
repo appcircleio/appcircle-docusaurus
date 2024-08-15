@@ -311,7 +311,7 @@ We suggest you check out the following modules for specific use cases mentioned 
 
 - Use [Testing Distribution](/testing-distribution) to deploy the .NET MAUI app to your tester groups to get feedback.
 - Ready to release? Then [Publish](/publish-module) the .NET MAUI app to public stores such as Google Play, App Store, or Huawei AppGallery.
-- Use the [Enterprise App Store](/enterprise-appstore) if you want to distribute the .NET MAUI app to your in-house or private users.
+- Use the [Enterprise App Store](/enterprise-app-store) if you want to distribute the .NET MAUI app to your in-house or private users.
 
 ___
 

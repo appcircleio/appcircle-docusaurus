@@ -23,6 +23,9 @@ The preview screen allows you to view changes in real time before saving them.
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-custom2.png' />
 
 :::caution
-Customizing and setting up your store can only be done through the main organization.
+
+If you are working on a sub organization, you will not have access to Customize and Settings sections on Enterprise App Store module.
+Only the main organization has the privilege to Set up, Configure and Customize the Enterprise store.
+
 :::
 

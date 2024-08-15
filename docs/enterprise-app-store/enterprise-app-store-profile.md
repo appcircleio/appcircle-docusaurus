@@ -99,7 +99,7 @@ Multiple users can be added to the Beta and Live channels by pressing the Tab ke
 
 :::important
 
-To configure the Manage Access tab, the authentication method for the Enterprise Store must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Store Settings](/enterprise-appstore/store-settings#store-authentication) documentation.
+To configure the Manage Access tab, the authentication method for the Enterprise Store must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Store Settings](/enterprise-app-store/store-settings#store-authentication) documentation.
 
 :::
 
@@ -165,7 +165,7 @@ Only **one binary version** can be sent to the Live and Beta channels. When anot
 
 :::tip
 
-If you are part of a sub-organization, the app versions that you publish to the **Live** or **Beta** channel will be available on the Enterprise Store for users to view and download, just as they are for a root organization.
+Any app versions published by sub-organizations to the **Live** or **Beta** channel will be available in the Enterprise Store created by the root organization for users to view and download.
 
 :::
 
@@ -204,9 +204,9 @@ An email with the subject and message entered in this form will be sent to your 
 
 :::important
 
-To use the Notify feature, the authentication method for the Enterprise Store must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Store Settings](/enterprise-appstore/store-settings#store-authentication) documentation.
+To use the Notify feature, the authentication method for the Enterprise Store must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Store Settings](/enterprise-app-store/store-settings#store-authentication) documentation.
 
-Additionally, registered emails must be included in the [Manage Access](/enterprise-appstore/enterprise-app-store-profile#manage-access) settings for your Enterprise App Store profile.
+Additionally, registered emails must be included in the [Manage Access](/enterprise-app-store/enterprise-app-store-profile#manage-access) settings for your Enterprise App Store profile.
 
 :::
 
@@ -260,7 +260,7 @@ https://developer.apple.com/programs/enterprise/
 
 :::danger Apple Enterprise Program
 
-**Please note that** if you have an **Apple Developer** account with an **Enterprise Organization** and you are using an app signed with an [**Enterprise Certificate**](/signing-identities/apple-certificates) for **internal distribution**, you must use [**authentication**](https://docs.appcircle.io/enterprise-appstore/customize-ent-store#authentication) for user access.
+**Please note that** if you have an **Apple Developer** account with an **Enterprise Organization** and you are using an app signed with an [**Enterprise Certificate**](/signing-identities/apple-certificates) for **internal distribution**, you must use [**authentication**](https://docs.appcircle.io/enterprise-app-store/store-customizatione#authentication) for user access.
 
 Apple does not allow public distribution of internally distributed apps, and if Apple detects that you are distributing an app signed with an Enterprise certificate without using authentication, it will impose severe sanctions.
 
