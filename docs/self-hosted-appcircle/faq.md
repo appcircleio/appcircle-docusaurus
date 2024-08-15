@@ -352,7 +352,7 @@ If you don't open a new terminal session, you cannot use the up-to-date `screen`
 screen --version
 ```
 
-### How to resolve proxy authentication errors for Java/Gradle applications on macOS?
+### How to resolve proxy authentication errors for Java/Gradle applications on macOS runners?
 
 Java proxy authentication on macOS has a bug that results in a `"407 Proxy Authentication Required"` error when using Basic authentication.
 
@@ -415,13 +415,13 @@ EOL
 
 2. Replace `$YOUR_PROXY_IP`, `$YOUR_PROXY_PORT`, `$YOUR_PROXY_USER`, and `$YOUR_PROXY_PASSWORD` variables with your own proxy settings.
 
-Now you have configured Gradle properly and set up a secondary proxy that only used by Gradle to handle authentication to your primary proxy.
-
 :::caution
-- Ensure that your proxy certificate is trusted. Refer [here](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#3-trust-the-root-certificates-of-your-organization) for detailed instructions.
+Ensure that your proxy certificate is trusted. For detailed instructions, refer to the [Self-signed Certificates page](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates).
 
-- The following network access is required for `brew install squid`:
+The following network access is required for `brew install squid`:
   - `https://ghcr.io/v2/homebrew/core/squid/manifests/6.10`
   - `https://ghcr.io/v2/homebrew/core/squid`
   - `https://pkg-containers.githubusercontent.com`
 :::
+
+Now you have configured Gradle properly and set up a secondary proxy that only used by Gradle to handle authentication to your primary proxy.
