@@ -521,16 +521,7 @@ By default, our runner images are configured with an 8GB memory limit and 4 CPU 
 :::
 
 :::caution 
-Total allocated resources should not exceed host machine's physical capacity for optimal performance. <!-- If there are other services running on the host machine besides the Appcircle Runner, consider the memory usage of those services as well. -->
-
-<!-- For example:
-- If you have two virtual machines, you might allocate 8 GB to each, or 4 GB to one and 12 GB to another.
-- Similarly, ensure that CPU and storage allocations are within the physical limits of the host machine to avoid performance degradation. -->
-
-<!-- Valid configurations:
-- Host machine with 16GB Memory, 2 x Runner VM with 8GB memory.
-- Host Machine with 8 CPU cores, 2 x Runner VM with 4 CPU cores.
-- Host machine with 16GB Memory, 1 x Runner VM with 12GB memory.-->
+Total allocated resources should not exceed host machine's physical capacity for optimal performance.
 :::
 
 #### Set Memory Limit
