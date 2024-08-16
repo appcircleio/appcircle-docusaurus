@@ -24,7 +24,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - [Integrations and Connection Management](/account/my-organization/role-management#integrations-and-connection-managements) roles have been added within the role management with Manager and Viewer roles. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Viewer role has been added for [Organization Management](/account/my-organization/role-management#organization-management-permissions). <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Hyperlink support has been added to the affected build profiles on the pop-up screen when a user attempts to delete a provisioning profile that is active in a build configuration. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The self-hosted Appcircle server script now includes a new command (init) that should be used after the export step once while installing the server, ensuring seamless vault initialization. <InfrastructureBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server script now includes a new command ([**init**](/self-hosted-appcircle/install-server#initialize-vault)) that should be used after the `export` step once while installing the server, ensuring seamless vault initialization. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
