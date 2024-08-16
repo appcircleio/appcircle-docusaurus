@@ -32,28 +32,23 @@ The Publish module in Appcircle is a versatile tool that simplifies the app rele
 
 Before you can start using the Publish module, there are several key prerequisites to address:
 
-### App Stores Integrations
+### App Store Integration
 
-- You need to have developer accounts for App Store Connect to publish your app.
-
-- Generate the Apple Developer API Key.
+The most important requirement before getting started is an Apple Developer account and an API key generated for that account. To initiate the publish process, you first need to have an Apple Developer account. After that, generate an API key for this account. For detailed instructions on generating an App Store Connect API key, please refer to Apple's documentation.
 
 https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api
 
-- Ensure that these account is active, and you have the necessary credentials (API keys, client secrets, etc.) to connect them to Appcircle.
+:::caution App Store Connect Integration Permissions
 
-### Store Integration Permissions
+Ensure that your developer accounts have the necessary permissions to publish apps, manage metadata, and access analytics. If you're part of a team, verify that you have the appropriate role within your developer account (Release Manager and above role).
 
-- Ensure that your developer accounts have the necessary permissions to publish apps, manage metadata, and access analytics. If you're part of a team, verify that you have the appropriate role within your developer account (Release Manager and above role).
+Please visit the [**Apple App Store Connect Permission**](https://developer.apple.com/help/account/manage-your-team/roles/) documentation.
 
-https://developer.apple.com/help/account/manage-your-team/roles/
+:::
 
+### Adding App Store Connect API Key
 
-### Adding and Configuring Store Integrations
-
-#### App Store Connect Integration
-
-For App Store Connect integration, go to integrations in your organisation. Select the App Store Connect API key from the Connections section. Fill in the information in the modal that opens and save.
+For App Store Connect integration, go to integrations in your organisation. Select the App Store Connect API Key from the Connections section. Fill in the information in the modal that opens and save.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-orgIntegration.png' />
 
@@ -94,7 +89,7 @@ The binary file can be uploaded to the Publish module either manually or through
 - Having this information prepared in advance will streamline the publishing process.
 
 
-## Appcircle Project Setup
+## Publish Setup Process
 
 - Your mobile application should be correctly set up within the Appcircle platform. This includes having a configured project with the necessary app builds (binary files) available for release. To set up a profile, click the **Add New** button on the top of right.
 
@@ -118,7 +113,7 @@ To use this profile creation method, you must have an API key integration in pla
 
 :::
 
-### Accessing the Store Integrations in Publish Profile
+### Select App Store API Key
 
 Once the relevant integrations are completed, you can access these connections from your profile within the Publish module. To initiate a release process, you need to select the appropriate store's credentials from the Settings screen within the Publish Profile.
 
@@ -127,6 +122,14 @@ Once the relevant integrations are completed, you can access these connections f
 - After that, all available integrated API Keys will be visiable in the opened Settings modal.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishSettingDetail.png' />
+
+### Update App Store Connect Information
+
+- Within the Publish module, you can update and review your app's informations directly. This includes updating app name, subtitle, categories, and other store-related information such as privacy URLs, primary languages. Please visit the [**App Store Connect Information**](/publish-module/publish-information/app-information) documentation for detailed information.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-appInfoButton.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-appInfoDetails.png' />
 
 
 ### Publish Flow Customization
@@ -170,13 +173,6 @@ Thanks to the capabilities of the Appcircle Publish module, you can manage your 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-betaReleaseFlow.png' />
 
-### Update App Store Connect Information
-
-- Within the Publish module, you can update and review your app's informations directly. This includes updating app name, subtitle, categories, and other store-related information such as privacy URLs, primary languages. Please visit the [**App Store Connect Information**](/publish-module/publish-information/app-information) documentation for detailed information.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-appInfoButton.png' />
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-appInfoDetails.png' />
 
 ### Setup Notifications
 
