@@ -240,7 +240,7 @@ const config = {
         apiKey: "b56a5dc4e52ec9e97ad93981cc668c4a",
         indexName: "appcircle",
         appId: "4U9FKQJ034",
-        contextualSearch: false,
+        contextualSearch: true,
       },
       imageZoom: {
         selector: ".screenshot, .image-narrow",
