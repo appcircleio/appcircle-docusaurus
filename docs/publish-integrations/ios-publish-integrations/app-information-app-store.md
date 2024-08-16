@@ -31,6 +31,16 @@ Below are brief descriptions of the information provided on the App Information 
 Make sure the [**App Store Connect API Key**](https://docs.appcircle.io/account/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is added to Appcircle and selected in [**Publish Settings**](https://docs.appcircle.io/publish-module/#publish-settings).
 :::
 
+:::tip App Information from App Store
+
+Since this step compares three different versions, it can be used in various scenarios. 
+
+For example, your company's release management may involve a specific approval mechanism. When a step is completed, you need to get approval and continue the process according to the next approval. At this point, you can present version information to the people responsible for Publish with this step, and then you can continue the process by getting approval from the relevant people with the [**Get Approval via Email step**](/publish-integrations/common-publish-integrations/get-approval-via-email). In this way, your entire Publish team will be able to see which version is the latest version in your production and beta test environments and compare it with your [**Release Candidate**](/publish-module/publish-information/marking-release-candidates) version. 
+
+Similarly, the authorized person in your approval mechanism will provide approval to start your release process based on this comparison.
+
+:::
+
 ### Prerequisites
 
 This step does not depend on any other steps to function. However, it is advisable to use it as the initial step in your **Publish Flow**.

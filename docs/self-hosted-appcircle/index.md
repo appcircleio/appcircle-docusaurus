@@ -39,4 +39,4 @@ If you plan to use Appcircle DMZ Architecture, the Appcircle DMZ Architecture fo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-appcircle-dmz-topology.png' />
 
-For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/docs/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md) document. 
+For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz) document.
