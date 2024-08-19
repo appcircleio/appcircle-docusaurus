@@ -1,6 +1,6 @@
 ---
-title: Setting Up Appcircle Enterprise Store Plugin For Jenkins
-sidebar_label: Enterprise Store
+title: Setting Up Appcircle Enterprise App Store Plugin For Jenkins
+sidebar_label: Enterprise App Store
 description: Enhance powerful plugin to publish your builds to appcircle app store
 tags:
   [
@@ -18,13 +18,13 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Setting Up Appcircle Enterprise Store Plugin
+# Setting Up Appcircle Enterprise App Store Plugin
 
-The Appcircle Enterprise Store plugin enables users to publish their apps to the Appcircle App Store.
+The Appcircle Enterprise App Store plugin enables users to publish their apps to the Appcircle App Store.
 
-### Install Appcircle Enterprise Store Plugin
+### Install Appcircle Enterprise App Store Plugin
 
-Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Then, search for "Appcircle Enterprise Store" in the available plugins section.
+Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Then, search for "Appcircle Enterprise App Store" in the available plugins section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-installation_steps.png' />
 
@@ -41,18 +41,20 @@ Additionally, remember to place the plugin after your build steps as you will ne
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-store-configure_pannel.png' />
 
-#### How to Retrieve Your Enterprise Store Profile ID
+#### How to Retrieve Your Enterprise App Store Profile ID
 
-You can obtain your Enterprise Store Profile ID from the URL or by using the @appcircle/cli.
+You can obtain your Enterprise App Store Profile ID from the profile settings or by using the @appcircle/cli.
 
-##### How to Extract Your Enterprise Store Profile ID from the URL
+##### Retrieving Profile ID from Enterprise App Store Profile Settings
 
-1. Navigate to your Enterprise Store Profile.
-2. Check the URL, which should be in this format: **/enterprise-store/profiles/PROFILE_ID**. The PROFILE_ID refers to your specific profile ID.
+1. Navigate to your Enterprise App Store Profile.
+2. Click to Settings button
+3. Copy the Profile ID
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/EAS-ProfileID-Copy.png' />
 
 ##### Retrieving Profile ID Using @appcircle/cli
 
-The upcoming command retrieves the complete list of Enterprise Store Profiles.
+The upcoming command retrieves the complete list of Enterprise App Store Profiles.
 
 ```bash
 appcircle enterprise-app-store profile list
@@ -66,4 +68,4 @@ Utilize environment variables seamlessly by substituting the parameters with `$(
 
 - For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
-- For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](https://appcircle.io/enterprise-app-store).
+- For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).

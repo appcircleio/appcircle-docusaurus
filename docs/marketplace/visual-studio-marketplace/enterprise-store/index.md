@@ -1,6 +1,6 @@
 ---
-title: Setting Up Appcircle Enterprise Store in Your Pipeline
-sidebar_label: Enterprise Store
+title: Setting Up Appcircle Enterprise App Store in Your Pipeline
+sidebar_label: Enterprise App Store
 description: Overview of Azure DevOps Enterprise Store Extension
 tags:
   [
@@ -17,17 +17,17 @@ tags:
 sidebar_position: 2
 ---
 
-Appcircle Enterprise Mobile App Store serves as your private mobile app store, allowing access to in-house apps through a customizable mobile storefront. The Appcircle Enterprise Mobile App Store extension enables you to upload your app to your personalized app store within Appcircle.
+Appcircle Enterprise App Store serves as your private mobile app store, allowing access to in-house apps through a customizable mobile storefront. The Appcircle Enterprise App Store extension enables you to upload your app to your personalized app store within Appcircle.
 
 import Screenshot from '@site/src/components/Screenshot';
 
-### How to Install the Appcircle Enterprise Store Task in Your Pipeline
+### How to Install the Appcircle Enterprise App Store Task in Your Pipeline
 
-In order to install Appcircle Enterprise Store task extension, follow these steps;
+In order to install Appcircle Enterprise App Store task extension, follow these steps;
 
 1. Go to your pipeline, click "Edit" button on the top right corner
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-pipeline-edit.png' />
-2. Inside your YAML file, search for "Appcircle Enterprise Store" task extension
+2. Inside your YAML file, search for "Appcircle Enterprise App Store" task extension
    <Screenshot url='https://cdn.appcircle.io/docs/assets/ac-app-store-azure-extension-task.png' />
 3. Complete the necessary input fields and then click the "Add" button.
 
@@ -58,4 +58,4 @@ Utilize environment variables seamlessly by substituting the parameters with $(V
 
 - For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
 
-For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](https://appcircle.io/enterprise-app-store).
+- For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).

@@ -37,12 +37,14 @@ To install the Appcircle Testing Distribution action, add the following step to 
 
 #### How to Retrieve Your Testing Distribution Profile ID
 
-You can obtain your testing distribution profile from the URL or by using the @appcircle/cli.
+You can obtain your Testing Distribution Profile ID from the profile settings or by using the @appcircle/cli.
 
-##### How to Extract Your Profile ID from the URL
+##### Retrieving Profile ID from Testing Distribution Profile Settings
 
 1. Navigate to your Testing Distribution profile.
-2. Check the URL, which should be in this format: **distribute/detail/PROFILE_ID**. The **PROFILE_ID** refers to your specific profile ID.
+2. Click to Settings button
+3. Copy the Profile ID
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/TD-ProfileID-Copy.png' />
 
 ##### Retrieving Profile ID Using @appcircle/cli
 

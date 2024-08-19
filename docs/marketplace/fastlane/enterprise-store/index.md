@@ -1,6 +1,6 @@
 ---
-title: Setting Up Appcircle Enterprise Store Plugin
-sidebar_label: Enterprise Store
+title: Setting Up Appcircle Enterprise App Store Plugin
+sidebar_label: Enterprise App Store
 description: Enhance powerful action to publish your builds to appcircle app store with fastlane
 tags:
   [
@@ -17,7 +17,7 @@ tags:
 sidebar_position: 2
 ---
 
-The Appcircle Enterprise Store plugin allows users to publish their apps and start distribution to test groups or individuals.
+The Appcircle Enterprise App Store plugin allows users to publish their apps and start distribution to test groups or individuals.
 
 ### Discover Action
 
@@ -47,22 +47,21 @@ After adding the plugin to your project, configure your Fastfile as follows:
   end
 ```
 
-#### How to Retrieve Your Enterprise Store Profile ID
+#### How to Retrieve Your Enterprise App Store Profile ID
 
 You can obtain your Enterprise App Store Profile ID from the profile settings or by using the @appcircle/cli.
 
 ##### Retrieving Profile ID from Enterprise App Store Profile Settings
 
-1. Navigate to your Enterprise Store Profile.
+1. Navigate to your Enterprise App Store Profile.
 2. Click to Settings button
 3. Copy the Profile ID
    <Screenshot url='https://cdn.appcircle.io/docs/assets/EAS-ProfileID-Copy.png' />
 
-
-
+   
 ##### Retrieving Profile ID Using @appcircle/cli
 
-The upcoming command retrieves the complete list of Enterprise Store Profiles.
+The upcoming command retrieves the complete list of Enterprise App Store Profiles.
 
 ```bash
 appcircle enterprise-app-store profile list
