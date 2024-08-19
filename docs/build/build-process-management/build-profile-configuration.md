@@ -102,6 +102,17 @@ Finally, check "Automatically Distribute to Testers" if you want your build to b
 
 You can also use other toggles on there to automatically distribute your app to the Enterprise App Store or Store Submit modules.
 
+#### Send to Enterprise App Store
+
+- Navigate to the configuration, then go to the Distribution tab, and ensure that **Automatically Distribute to Enterprise App Store** is enabled.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-build.png' />
+
+- Whenever a new **signed** build is created, it will be sent to the Enterprise App Store.
+- APK or IPA files can also be manually sent by clicking the **...** button and selecting Distribute Binary.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-binary.png' />
+
 ### Environment variables configuration
 
 You can define variables and secrets to be incorporated during the build in the Environment Variables submodule so that you don't need to store certain keys and configurations within the repository.

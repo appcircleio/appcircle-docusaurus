@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 With Appcircle's Publish module, you can submit your application to external stores such as App Store, Google Play, Huawei AppGallery or Microsoft Intune, as well as to Appcircle's Enterprise App Store module.
 
-Enterprise App Store offers a store structure that you can use and customise for internal application distribution. For detailed information, please see the [**Enterprise App Store document**](/enterprise-appstore).
+Enterprise App Store offers a store structure that you can use and customise for internal application distribution. For detailed information, please see the [**Enterprise App Store document**](/enterprise-app-store).
 
 
 ### Prerequisites

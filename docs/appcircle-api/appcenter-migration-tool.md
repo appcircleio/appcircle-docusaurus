@@ -7,7 +7,7 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 
-The appcenter-migration-tool is designed to assist organizations and individuals to migrate their Visual Studio App Center projects with organizations, collaborators, app profiles and test groups to Appcircle effortlessly.
+The appcenter-migration-tool is designed to assist organizations and individuals to migrate their Visual Studio App Center projects with organizations, collaborators, app profiles as testing distribution profile and test groups to Appcircle effortlessly.
 
 By using the **appcenter-migration-tool**, you can ensure a smooth and efficient migration process, minimizing downtime and preserving the integrity of your data.
 
@@ -17,19 +17,7 @@ By using the **appcenter-migration-tool**, you can ensure a smooth and efficient
 
 - **Collaborator Migration:** Move all your App Center collaborators to Appcircle with their roles and permissions intact.
 
-- **App Profile Migration:** Migrate app profiles from App Center to Appcircle while ensuring all settings and configurations are preserved.
-
 - **Test Group Migration:** Transition your test groups from App Center to Appcircle with all their associated configurations and data.
-
-## Migrating from App Center to Appcircle Automatically
-
-Migrating your data in App Center manually can be a time-consuming and error-prone process. The **appcenter-migration-tool** automates this task, allowing you to efficiently and accurately transfer the data you need with minimal effort.
-
-## App Center API Token
-
-When creating a new API token for the migration tool from App Center, granting **Full Access** permission is recommended.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_appcenter-login-access.png' />
 
 ## How to Install the Tool
 
@@ -48,6 +36,16 @@ npm install @appcircle/appcenter-migration-tool
 ```
 
 https://www.npmjs.com/package/@appcircle/appcenter-migration-tool
+
+## Migrating from App Center to Appcircle Automatically
+
+Migrating your data in App Center manually can be a time-consuming and error-prone process. The **appcenter-migration-tool** automates this task, allowing you to efficiently and accurately transfer the data you need with minimal effort.
+
+## App Center API Token
+
+When creating a new API token for the migration tool from App Center, granting **Full Access** permission is recommended.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_appcenter-login-access.png' />
 
 ## Using the Tool for Migration
 
@@ -90,11 +88,11 @@ appcenter-migration-tool organizations list-appcenter-organizations
 
 Use the App Center Apps command to list and migrate your App Center apps to Appcircle.
 
-| Apps Subcommands                                                 | Command Name      | Command Options  | Explanation                                                                                                             |
-| ---------------------------------------------------------------- | ----------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| List All App Center Apps                                         | list              | -                | List All App Center Apps.                                                                                               |
-| Migrate App Center App to Appcircle Testing Distribution Profile | list-organization | organizationName | List App Center Apps Based on App Center Organization                                                                   |
-| Migrate App Center App to Appcircle Testing Distribution Profile | migrate-profile   | profileName      | Migrate App Center App to Appcircle [Testing Distribution Profile](/distribute/create-or-select-a-distribution-profile) |
+| Apps Subcommands                                                 | Command Name      | Command Options  | Explanation                                                                                                                       |
+| ---------------------------------------------------------------- | ----------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| List All App Center Apps                                         | list              | -                | List All App Center Apps.                                                                                                         |
+| Migrate App Center App to Appcircle Testing Distribution Profile | list-organization | organizationName | List App Center Apps Based on App Center Organization                                                                             |
+| Migrate App Center App to Appcircle Testing Distribution Profile | migrate-profile   | profileName      | Migrate App Center App to Appcircle [Testing Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile) |
 
 To run the command directly instead of starting an interactive session, simply execute the command as shown below:
 
@@ -182,7 +180,7 @@ appcenter-migration-tool organizations migrate --organizationNames=Appcircle_Org
 
 ### Migrate App Center Apps to a Testing Distribution Profile at Appcircle
 
-The tool creates a [Testing Distribution Profile](/distribute/create-or-select-a-distribution-profile) in Appcircle using the specified App Center app name.
+The tool creates a [Testing Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile) in Appcircle using the specified App Center app name.
 
 ```bash
 appcenter-migration-tool apps migrate-profile --profileNames=Appcircle
@@ -191,7 +189,7 @@ appcenter-migration-tool apps migrate-profile --profileNames=Appcircle
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-194_migrate_test_profile.png' />
 
 :::caution
-The tool creates only a new [Testing Distribution Profile](/distribute/create-or-select-a-distribution-profile) and does not migrate any existing releases at this time.
+The tool creates only a new [Testing Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile) and does not migrate any existing releases at this time.
 :::
 
 ### Migrate Organization Distribution Groups

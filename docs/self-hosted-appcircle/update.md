@@ -55,7 +55,7 @@ Additionally, you can set up recurring cron jobs (daily or weekly) to automatica
 :::caution
 If you are using the Appcircle DMZ structure and upgrading an Appcircle server, it is critical to also update the Appcircle DMZ server. If you don't, Enterprise App Store and Testing Distribution may not function as expected.
 
-For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/docs/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md). 
+For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz).
 :::
 
 ### 1. Download Latest
@@ -242,7 +242,7 @@ For this reason, you may prefer to execute this step on an idle time in order to
 
 :::
 
-For other details and troubleshooting, you can refer to [run server](/self-hosted-appcircle/install-server/docker#5-run-server) section in installation docs.
+For other details and troubleshooting, you can refer to [run server](/self-hosted-appcircle/install-server/docker#6-run-server) section in installation docs.
 
 ## Notes
 

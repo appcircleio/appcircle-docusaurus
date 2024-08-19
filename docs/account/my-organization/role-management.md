@@ -123,7 +123,7 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 ### Testing Distribution Permissions
 
-The following table details the roles and restrictions for the [**Testing Distribution**](/distribute) module. Please refer to the related module information and caution notes. 
+The following table details the roles and restrictions for the [**Testing Distribution**](/testing-distribution) module. Please refer to the related module information and caution notes. 
 
 | Testing Distribution | Scopes                                 | Owner | Manager | Operator | Ext. Operator | Viewer |
 |----------------------|----------------------------------------|-------|---------|----------|---------------|--------|
@@ -179,7 +179,7 @@ User can resign the binary if this user has **Manager** or **Viewer** Signing Id
 
 ### Testing Group Permissions
 
-The following table details the roles and restrictions for the [**Testing Groups**](/distribute/testing-groups). Please refer to the related module information and caution notes.  
+The following table details the roles and restrictions for the [**Testing Groups**](/testing-distribution/testing-groups). Please refer to the related module information and caution notes.  
 
 
 | Testing Groups | Scopes                                  | Owner | Manager | Viewer |
@@ -221,8 +221,6 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Download Binary          | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Cancel Submission        | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Reject Binary            | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Environment Variables    | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Environment Variables    | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Activity Logs            | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::caution Resign Binary
@@ -263,21 +261,23 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Download Binary          | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Cancel Submission        | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Reject Binary            | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Environment Variables    | Add/Delete/Update Env Variables           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Environment Variables    | List Environment Variables                | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Activity Logs            | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
+
+
+### Publish Environment Variables
+
+The following table details the roles and restrictions for the [**Publish Variables**](/publish-module/publish-variables) module for Android. Please refer to the related modules information and caution notes.
+
+| Publish              | Scopes                                        | Owner | Manager | Viewer |
+|----------------------|-----------------------------------------------|-------|---------|--------|
+| Environment Variable | Add/Delete/Update Environment Variable Groups | ✅     | ✅       | ⛔      |
+| Environment Variable | Add/Delete/Update Environment Variable        | ✅     | ✅       | ⛔      |
+| Environment Variable | List Environment Variable                     | ✅     | ✅       | ✅      |
+| Environment Variable | List Environment Variable Groups              | ✅     | ✅       | ✅      |
 
 :::info
 
 Google Play and Huawei AppGallery permissions are managed through a single rule. When this rule is used, it will apply to both platforms.
-
-:::
-
-:::tip Publish Environment Variables
-
-**Publish Variables** permissions in the Publish module are dependent on the iOS or Android permissions that you configure for the Publish module.
-
-For instance, when you give "**Viewer**" permission to a user for iOS or Android, this permission will also make the user "**Viewer**" for the **Publish Variables**. When you give "**Manager**" permission to a user for iOS or Android, this permission also makes the user "**Manager**" for the **Publish Variables**.
 
 :::
 
@@ -315,28 +315,41 @@ The user can create an organization or sub-organization within license limits, a
 
 Also, the user can view self-hosted runners and change configuration.
 
-| Organization Management Sub-modules | Scopes                                | Owner | Manager |
-|-------------------------------------|---------------------------------------|-------|---------|
-| Organization and Team Management    | Create/Delete/Update Organization     | ✅     | ⛔       |
-| Organization and Team Management    | Create/Delete/Update Sub-Organization | ✅     | ⛔       |
-| Organization and Team Management    | Add/Delete/Update User                | ✅     | ✅       |
-| Organization and Team Management    | Assign Role for User                  | ✅     | ✅       |
-| Organization and Team Management    | List User                             | ✅     | ✅       |
-| SSO                                 | Create/Delete/Update SSO              | ✅     | ⛔       |
-| SSO                                 | List SSO                              | ✅     | ✅       |
-| LDAP                                | Add/Delete/Update LDAP                | ✅     | ⛔       |
-| LDAP                                | List LDAP                             | ✅     | ✅       |
-| PAT                                 | Generate PAT                          | ✅     | ✅       |
-| PAT                                 | View PAT                              | ✅     | ✅       |
-| Runner Access Token                 | List Runner Access Token              | ✅     | ⛔       |
-| Runner Access Token                 | Create/Delete Runner Access Token     | ✅     | ⛔       |
-| Report                              | View Organziation Report              | ✅     | ✅       |
+| Organization Management Sub-modules | Scopes                                  | Owner | Manager | Viewer |
+|-------------------------------------|-----------------------------------------|-------|---------|--------|
+| Organization and Team Management    | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | Assign Role for User                    | ✅     | ✅       | ⛔      |
+| Organization and Team Management    | List User                               | ✅     | ✅       | ✅      |
+| Integrations                        | Add/Delete/Update LDAP/SSO Integrations | ✅     | ✅       | ⛔      |
+| Integrations                        | View LDAP/SSO Integrations              | ✅     | ✅       | ✅      |
+| Appcircle Login                     | Create/Delete/Update SSO                | ✅     | ✅       | ⛔      |
+| Appcircle Login                     | List SSO                                | ✅     | ✅       | ✅      |
+| Appcircle Login                     | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
+| Appcircle Login                     | List LDAP                               | ✅     | ✅       | ✅      |
+| PAT                                 | Generate PAT                            | ✅     | ✅       | ⛔      |
+| PAT                                 | View PAT                                | ✅     | ✅       | ✅      |
+| Runner Access Token                 | List Runner Access Token                | ✅     | ⛔       | ⛔      |
+| Runner Access Token                 | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
+| Report                              | View Organziation Report                | ✅     | ✅       | ✅      |
+| Artifacts                           | View Retention Period                   | ✅     | ✅       | ✅      |
+| Artifacts                           | Update Retention Period                 | ✅     | ✅       | ⛔      |
+
 
 :::info Organization Management
 
 Whatever role a user is assigned in the root organization, they will have the same role in the **sub-organizations**. For example, someone who is a Manager in the root organization is automatically assigned as a Manager in the sub-organizations.  
 
 If you want to assign a role in a sub-organization, please do so within the respective **sub-organization**.
+
+:::
+
+:::caution Appcircle Login and LDAP/SSO Integrations
+
+LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Testing Portal**](/testing-distribution/testing-portal) and [**Enterprise App Store**](/enterprise-app-store).
+
+Please use [**Appcircle Login**](/account/my-organization/sso-providers-configuration/onelogin-saml#enable-sso) for **LDAP** and **SSO** integration when logging into Appcircle.
 
 :::
 
@@ -357,7 +370,7 @@ The following table details the roles and restrictions for the **Billing** detai
 | Subscription        | List Subscription Details | ✅     | ✅       |
 
 
-### Connection Managements
+### Integrations and Connection Managements
 
 Connect or disconnect from third-party service providers such as notification tools or store connections.
 
@@ -374,9 +387,9 @@ Connect or disconnect from third-party service providers such as notification to
 - [**Huawei AppGallery Developer API Keys**](/account/my-organization/api-integrations/adding-huawei-api-key)
 - [**Microsoft Intune API Keys**](/account/my-organization/api-integrations/adding-microsoft-intune-api-key) 
 
-| Connections Management | Scopes                        | Owner | Manager |
-|------------------------|-------------------------------|-------|---------|
-| Connections            | Add/Delete/Update Connections | ✅     | ⛔       |
-| Connections            | View Connections              | ✅     | ✅       |
-| Notifications          | Update Notifications          | ✅     | ✅       |
-| Notifications          | View Notifications            | ✅     | ✅       |
+| Integrations and Connections | Scopes                        | Owner | Manager | Viewer |
+|------------------------------|-------------------------------|-------|---------|--------|
+| Credentials                  | Add/Delete/Update Credentials | ✅     | ✅       | ⛔      |
+| Credentials                  | View Credentials              | ✅     | ✅       | ✅      |
+| Notifications                | Update Notifications          | ✅     | ✅       | ⛔      |
+| Notifications                | View Notifications            | ✅     | ✅       | ✅      |

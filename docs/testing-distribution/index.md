@@ -1,5 +1,5 @@
 ---
-title: Create a Distribution Profile and Sharing with Testers
+title: Testing Distribution
 description: Learn how to create a distribution profile and share your builds with testers in Appcircle
 tags: [distribution, distribution profile, testing distribution, testers, faq]
 sidebar_position: 1
@@ -7,9 +7,6 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
-## Testing Distribution
-
-<iframe width="600" height="315" src="https://www.youtube.com/embed/vZ3p5uZZcmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
 
@@ -21,6 +18,32 @@ In order to share your builds with testers, you can create distribution profiles
 
 A distribution profile corresponds to the multiple versions of the same application for iOS and Android. You do not need to create multiple Testing Distribution profiles for iOS and Android applications of the same application.
 :::
+
+<iframe width="600" height="315" src="https://www.youtube.com/embed/vZ3p5uZZcmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Distribution Profile
+
+To share builds with testers, distribution profiles should be created and testing groups assigned to these profiles.
+
+## Testing Groups
+
+The testing group feature is used to manage and organize testers. Different versions of applications can be distributed to specific groups based on testing needs, such as OS versions, features, devices, and more.
+
+## Apple Devices
+
+When it comes to developing and testing iOS apps, one of the most important tasks is registering your devices with the Apple Developer portal. This is necessary so that you can install your app on those devices for testing purposes. However, this process can be a bit tedious, especially if you need to register a large number of devices. That's where Appcircle comes in.
+
+## Re-sign Binaries
+
+Re-signing is the process of modifying an existing binary with a new signing certificate or keystore, required when an application needs to be published under a different developer account or when updating an existing application. This process involves removing the original signature and replacing it with a new one.
+
+## Testing Portal
+
+Appcircle has a separate distribution screen designed to make it easy for test group developers and testers download the distributed applications easily.
+
+## Reporting
+
+Optimize your application management with detailed reports. Utilize the App Sharing Report and App Versions Report to gain insights and make informed decisions about your app's distribution and evolution.
 
 ## FAQ
 
