@@ -79,4 +79,4 @@ Utilize environment variables seamlessly by substituting the parameters with `$(
 
 - For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
-For more detailed instructions and support, visit the [Testing Distribution documentation](/distribute).
+For more detailed instructions and support, visit the [Testing Distribution documentation](/testing-distribution).
