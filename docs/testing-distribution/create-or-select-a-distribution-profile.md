@@ -326,7 +326,7 @@ Re-sign History allows you to view the re-sign process logs for your app version
 
 ### Download Binary
 
-The binary artifact in the Testing Distribution profile can be downloaded by selecting the Download button from the actions menu.
+The binary file in the Testing Distribution profile can be downloaded by selecting the Download button from the actions menu.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/TD-Binary-Download.png' />
 
