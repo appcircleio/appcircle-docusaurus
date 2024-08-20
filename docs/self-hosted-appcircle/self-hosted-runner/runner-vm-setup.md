@@ -562,10 +562,12 @@ To configure the number of CPU cores for a VM, run the following command:
    > `tart set vm01 --cpu 8`
 
 :::tip
-To check the number of CPU cores on your system, use the following command:
+To check the total number of CPU cores on your system, use the following command:
 ```bash
 sysctl -n hw.ncpu
 ```
+
+If you have an 8 core CPU according to the command output, you can run 2 VMs and allocate half of the cores to each one, which means 4 cores per VM. Or you can run a single VM using all 8 cores.
 
 Example configurations:
 
