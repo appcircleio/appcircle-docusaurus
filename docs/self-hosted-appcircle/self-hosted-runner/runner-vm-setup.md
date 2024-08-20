@@ -514,52 +514,67 @@ In docker terminology, `vm01` and `vm02` will be our docker images. We will conf
 
 ### Configure Runner VM Resources
 
-You can adjust the resources limits for Runner VMs based on your needs.
+You can adjust the resource limits for Runner VMs based on your needs.
 
-:::info 
+:::info
 By default, our runner images are configured with an 8GB memory limit and 4 CPU cores.
 :::
 
-:::caution 
-Total allocated resources should not exceed host machine's physical capacity for optimal performance.
-
-For example:
-
-| Host Memory Size | Runner Memory Config. |
-|------------------|-----------------------|
-| 8GB              | 1 x VM with 8GB       |
-| 16GB             | 1 x VM with 16GB      |
-| 16GB             | 2 x VM with 8GB       |
-| 32GB             | 2 x VM with 16GB      |
+:::caution
+Total allocated resources (memory, cpu) for all VMs combined, should not exceed host machine's physical capacity for optimal performance.
 :::
 
-#### Set Memory Limit
+#### Set Memory Limits
 
-To configure the memory limit for a VM, run the following commands:
+To configure the memory limit for a VM, run the following command:
 
-   ```bash
-   cd $HOME/.tart/vms/
-   ```
    ```bash
    tart set <vm_name> --memory <size_in_mb>
    ```
 
-   Replace `vm_name` with your VM's name and `size_in_mb` with the desired memory size in MB. E.g., 
-   > `tart set vm01 --memory 8192`.
+   Replace `vm_name` with your VM's name and `size_in_mb` with the desired memory size in MB. E.g.,
+   > `tart set vm01 --memory 8192` (8GB)
 
-#### Set CPU Limit
+   > `tart set vm01 --memory 16384` (16GB)
 
-To configure the number of CPU cores for a VM, run the following commands:
+:::tip
+Example configurations:
 
-   ```bash
-   cd $HOME/.tart/vms/
-   ```
+| Host Memory Size | Runner Memory Config. |
+|------------------|-----------------------|
+| 8GB              | 1 x VM with 8GB       |
+| 16GB             | 2 x VM with 8GB       |
+| 16GB             | 1 x VM with 16GB      |
+| 32GB             | 2 x VM with 16GB      |
+:::
+
+#### Set CPU Limits
+
+To configure the number of CPU cores for a VM, run the following command:
+
    ```bash
    tart set <vm_name> --cpu <count>
    ```
 
-   Replace `vm_name` with your VM's name and `count` with the desired number of CPU cores. E.g., 
-   > `tart set vm01 --cpu 4`.
+   Replace `vm_name` with your VM's name and `count` with the desired number of CPU cores. E.g.,
+   > `tart set vm01 --cpu 4`
+
+   > `tart set vm01 --cpu 8`
+
+:::tip
+To check the number of CPU cores on your system, use the following command:
+```bash
+sysctl -n hw.ncpu
+```
+
+Example configurations:
+
+| Host CPU Cores | Runner CPU Config.   |
+|----------------|----------------------|
+| 8              | 2 x VM with 4 Cores  |
+| 8              | 1 x VM with 8 Cores  |
+
+:::
 
 #### Backing Up and Restoring VM Configuration
 
