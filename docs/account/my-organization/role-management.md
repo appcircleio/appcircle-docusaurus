@@ -35,6 +35,14 @@ Some role types are not used in certain modules because they are redundant or un
 
 :::
 
+:::caution Multiple Role Assignment for Users
+
+When assigning roles on Appcircle, you can assign more than one role for a user at the same time. For example, a user can be both **Manager** and **Operator** in the Build module.
+
+For this reason, Appcircle behavior will change when multiple roles are assigned. For example, you have assigned **Ext Operator** and **Viewer** role in **Publish Module** for a user. This means that the Ext Operator role now has the privileges of the Viewer role. So while Ext Operator cannot see Activity logs, it now has access to those logs because it also has the viewer role.
+
+:::
+
 ### Build Permissions
 
 The following table details the roles and restrictions for the [**Build**](/build) module. Please refer to the related module information and caution notes. 
@@ -134,6 +142,7 @@ The following table details the roles and restrictions for the [**Testing Distri
 | App Version Actions  | Send to Testers                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | App Version Actions  | Send to Enterprise App Store           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | App Version Actions  | Send to Publish                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Download Binary                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Apple Device         | Add/Delete Apple Device                | ✅     | ✅       | ✅        | ⛔             | ⛔      |
