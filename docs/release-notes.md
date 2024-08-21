@@ -26,7 +26,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - A new sub-organization filter has been added to the user list, allowing for more precise filtering and [user management](account/my-organization#managing-the-team-under-an-organization) within sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Support for [downloading](/testing-distribution/create-or-select-a-distribution-profile#download-binary) binary in the Testing Distribution module has been added. New or updated endpoints have been documented in Swagger, enabling easy integration and automation for customers. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new feature has been added that allows profiles marked as `Show on Top` in the Enterprise App Store to have all their shared app versions appear at the top of the store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The email provider used for email notifications can now be configured via `global.yaml, which aids in troubleshooting some SMTP issues. <InfrastructureBadge/> <SelfHostedBadge/>
+- The email provider used for email notifications can now be configured via `global.yaml`, which aids in troubleshooting some SMTP issues. <InfrastructureBadge/> <SelfHostedBadge/>
 - [Xcode 16.1 Beta 1](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_1-release-notes) has been installed on runners in the [Default M1 pool](infrastructure/ios-build-infrastructure). Since this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
