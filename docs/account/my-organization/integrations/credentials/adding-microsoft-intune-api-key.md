@@ -2,7 +2,7 @@
 title: Microsoft Intune API Key
 description: Learn how to add a Microsoft Intune account to your Appcircle account
 tags: [account, my organization, api integrations, intune, microsoft]
-sidebar_position: 7
+sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

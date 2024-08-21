@@ -2,7 +2,7 @@
 title: Google Play Service Account
 description: Learn how to add a Google Play Service Account to your Appcircle account
 tags: [account, my organization, api integrations, google play service account]
-sidebar_position: 6
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

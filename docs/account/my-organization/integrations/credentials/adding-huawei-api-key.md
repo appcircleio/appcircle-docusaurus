@@ -2,7 +2,7 @@
 title: Huawei AppGallery API Key
 description: Learn how to add a Huawei AppGallery API Key to your account in Appcircle
 tags: [account, my organization, api integrations, huawei appgallery, api key]
-sidebar_position: 7
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

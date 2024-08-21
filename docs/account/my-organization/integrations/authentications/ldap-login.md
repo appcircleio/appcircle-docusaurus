@@ -2,7 +2,7 @@
 title: Distribution LDAP Login
 description: Learn how to set up and manage LDAP login integration for your organization in Appcircle
 tags: [account, my organization, ldap login, distribution, distribution profile, authentication, two factor authentication, 2fa]
-sidebar_position: 14
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

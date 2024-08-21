@@ -2,7 +2,7 @@
 title: Email Notifications
 description: Learn how to set up email notifications and subscription management in Appcircle
 tags: [email, email notifications, subscription management, email connection]
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
