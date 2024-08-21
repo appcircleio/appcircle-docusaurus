@@ -345,6 +345,10 @@ To create a custom flow, navigate to the Publish module and select the "Publish 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-flows.png' />
 
+#### Why can't I edit the Publish Flow?
+
+The Publish Module is an **enterprise-level** solution, so only users with an **Appcircle Enterprise Licence** have access to all of its features. Users with other licences have limited access to the module. To get more information for Enterprise Licence please [**contact us**](https://appcircle.io/contact) directly.
+
 #### How can I roll back to a previous version if needed?
 
 If you need to roll back to a previous version, you can do so by selecting the desired version from your release history within the Publish module. This process involves re-uploading the previous binary and metadata, then executing a flow to re-release that version. Rolling back ensures that you can quickly address any issues with the current release without significant downtime.
