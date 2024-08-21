@@ -324,6 +324,12 @@ For more information please visit the Re-sign Binary documentation.
 
 Re-sign History allows you to view the re-sign process logs for your app versions. For more information, please visit [Re-sign History](/testing-distribution/resigning-binaries#re-sign-history) documentation.
 
+### Download Binary
+
+The binary file in the Testing Distribution profile can be downloaded by selecting the Download button from the actions menu.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/TD-Binary-Download.png' />
+
 ### Binary Details
 
 1. Select the binary.
@@ -359,3 +365,23 @@ As an alternative method to bulk deleting versions, you can delete a single vers
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main19.png' />
 
 After clicking `Delete` , type in the version name in the prompt.
+
+
+## FAQ
+
+#### Can I set an authentication method for accessing the Testing Portal?
+
+Yes, you can choose one of the authentication methods provided by Appcircle to authenticate your users and control their access to the store. For more information, please visit the Testing Distribution [**Authentication**](/testing-distribution/create-or-select-a-distribution-profile#authentication) documentations.
+
+#### Can I send a binary from another CI tool?
+
+Yes, you can use Appcircle **API & CLI** tools within your current CI tool to directly send the binary and utilize it within the Testing Distribution. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api) documentations.
+
+
+#### What does email/month mean? How is the number calculated?
+
+An email is calculated every time an app is shared via email from our servers. So every send email adds to email count.
+
+#### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
+
+Thanks to the modular structure of Appcircle, all modules can be used independently. Accordingly, you can also request a special plan only for Testing Distribution. Please [contact us](https://appcircle.io/contact) for detailed information.

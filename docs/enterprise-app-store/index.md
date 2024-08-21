@@ -46,11 +46,15 @@ You can access reports for your Enterprise App Store from this screen. The repor
 
 ## Enterprise App Store FAQ
 
-### General Questions
-
 #### What is Enterprise App Store?
 
 Enterprise App Store is Appcircle's new feature that lets you create your own mobile app store for your in-house apps (apps that are not meant to be distributed through Apple's App Store and Google Play Store).
+
+#### What is the difference between Enterprise App Store and Testing Distribution
+
+The Testing Distribution module is a testing tool that enables the direct distribution of developments to internal test teams, such as QA, iOS, and Android teams. Through this module, you can easily share your internal tests with your test teams. For more information, please visit the [**Testing Distribution**](/testing-distribution) documentations.
+
+The Enterprise App Store, on the other hand, is an internal app distribution platform. With this module, you can create a custom store for your organization and distribute applications used by your employees. The versions hosted here are not test versions; they are the actual application versions that your employees will use. For more information, please visit the [**Enterprise App Store**](/enterprise-app-store) documentations.
 
 #### Can non-Enterprise companies use this feature?
 
@@ -68,7 +72,14 @@ Yes. You can customize your logo, primary and secondary color and the main text 
 
 Once you go to your store's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter, Developer, and Professional plans. Please [contact us](https://appcircle.io/contact) to request custom domains).
 
-### Technical Questions
+
+#### Can I set an authentication method for accessing the Enterprise App Store?
+
+Yes, you can choose one of the authentication methods provided by Appcircle to authenticate your users and control their access to the store. For more information, please visit the Enterprise App Store [**Store Authentication**](/enterprise-app-store/store-settings#store-authentication) documentations.
+
+#### Can I send a binary from another CI tool?
+
+Yes, you can use Appcircle API & CLI tools within your current CI tool to directly send the binary and utilize it within the Enterprise App Store. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api) documentations.
 
 #### Is my app store accessible from desktop web?
 
@@ -81,8 +92,6 @@ You have to be enrolled on [Apple Enterprise Developer Program](https://develope
 #### Can I distribute apps signed with Ad Hoc / App Store Provisioning Profile from my Store?
 
 You can distribute apps that are signed with an Ad Hoc certificate (iOS). Please note that your users' device identifiers must be added to Apple Developer Portal and should be included in the provisioning profile used in signing the build. Apps signed with App Store certificates can't be distributed.
-
-### Billing Questions
 
 #### What does downloads/month mean? How is the number calculated?
 
