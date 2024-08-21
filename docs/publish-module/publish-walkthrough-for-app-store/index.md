@@ -357,5 +357,5 @@ If you need additional help with the Publish module, the following resources are
 
 - **Technical Documentation**: Refer to the Appcircle user documentation for detailed guides and troubleshooting tips for Publish Module.
 
-
+- **Commercial Details**: The Publish module is an **enterprise-level** solution; therefore, for commercial details, please [**contact us**](https://appcircle.io/contact) directly.
 
