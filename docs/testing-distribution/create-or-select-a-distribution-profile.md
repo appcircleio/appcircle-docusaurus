@@ -324,6 +324,12 @@ For more information please visit the Re-sign Binary documentation.
 
 Re-sign History allows you to view the re-sign process logs for your app versions. For more information, please visit [Re-sign History](/testing-distribution/resigning-binaries#re-sign-history) documentation.
 
+### Download Binary
+
+The binary file in the Testing Distribution profile can be downloaded by selecting the Download button from the actions menu.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/TD-Binary-Download.png' />
+
 ### Binary Details
 
 1. Select the binary.
