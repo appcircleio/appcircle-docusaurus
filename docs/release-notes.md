@@ -16,6 +16,49 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.20.4 - 2024-08-20 Role Management Updates, Testing Distribution & Enterprise App Store Improvements, Xcode 16.1 Beta 1, Bug Fixes, and more
+
+### 🆕 New Features
+
+- Default roles are now shown when inviting users to an organization, both in the UI and through the [CLI](appcircle-api/cli-authentication). This enhancement ensures clarity and ease of role assignment during the user invitation process. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The ability to assign multiple module roles to users has been introduced, allowing for greater flexibility and more refined [role management](account/my-organization#advanced-role-management) within the system. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new [Membership](account/my-organization#advanced-role-management) column has been added, displaying values as `Member` or `Inherit`, and the `Assigned` label has been removed as it is no longer necessary. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new sub-organization filter has been added to the user list, allowing for more precise filtering and [user management](account/my-organization#managing-the-team-under-an-organization) within sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Support for [downloading](/testing-distribution/create-or-select-a-distribution-profile#download-binary) binary in the Testing Distribution module has been added. New or updated endpoints have been documented in Swagger, enabling easy integration and automation for customers. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new feature has been added that allows profiles marked as `Show on Top` in the Enterprise App Store to have all their shared app versions appear at the top of the store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Self-hosted Appcircle server admins can now configure the mail provider library for mails. <InfrastructureBadge/> <SelfHostedBadge/>
+- [Xcode 16.1 Beta 1](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_1-release-notes) has been installed on runners in the [Default M1 pool](infrastructure/ios-build-infrastructure). Since this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- To prevent confusion during LDAP integration for Appcircle Login in Self-Hosted environments, the `Username` field and associated information text on the LDAP configuration page have been updated. <AccountBadge/> <SelfHostedBadge/>
+- The visibility of user roles has been updated to ensure that roles are viewable even when organization permissions are not granted. This change allows users to see their roles regardless of their organizational access levels. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users with `Login` status will now appear at the top of the user list for easier identification. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The user list has been updated to sort users alphabetically in [Team Management](account/my-organization), following the order: Own, Pending, Accepted, and Members. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Password values in the UI for [Testing Distribution Settings](testing-distribution/create-or-select-a-distribution-profile#authentication) authentication are now hidden. This enhancement improves security by preventing sensitive information from being displayed, thereby protecting user credentials from unauthorized access. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The performance of the [Testing Portal](testing-distribution/testing-portal) has been enhanced to achieve faster load times. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An additional rule has been implemented to prevent the deletion of deployed versions marked as `Live` or `Beta` in the Enterprise App Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An updated warning message will now be shown if the [notify](enterprise-app-store/enterprise-app-store-profile#notify) button is used without LDAP or SSO authentication. The message will also be tailored to cases where no emails are entered in the [***Manage Access***](enterprise-app-store/enterprise-app-store-profile#manage-access) settings, ensuring clearer notifications. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new rule set has been implemented in the Enterprise App Store to prevent the [deletion of versions](enterprise-app-store/enterprise-app-store-profile#delete) marked as `Live` or `Beta`. RC-marked versions cannot be deleted, the delete buttons for Live and Beta versions have been disabled. To delete these versions, they must first be unpublished <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Build Module has been updated to enforce uniqueness for all [workflow](workflows) step names. This enhancement was implemented to prevent potential conflicts caused by duplicate names, thereby improving the clarity and reliability of build workflows. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The ability to cancel the publishing process, as well as triggered and tagged builds, has been introduced. <PublishBadge/> <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Store Submit display has been removed from the Self-Hosted dashboard. <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- The issue where the Integration & Connection Viewer permission did not properly restrict access to connection-related actions has been fixed. Users with this permission can now view the Manage button but are correctly restricted from performing any connection actions, ensuring stricter control over connection management. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The issue where the SSO mapping enable/disable button was not working properly has been fixed. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The issue where users could not search with partial words in the email filter of the Team Activity Log has been fixed. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The issue where users could not reassign the owner role in some cases has been fixed. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The issue where the side window did not close properly after a Resign operation has been fixed. This update ensures that the side window now closes correctly, preventing any confusion about the successful completion of the operation. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The issue where the distribution date in the Testing Portal displayed the previous version's distribution date when a version was resent to a tester has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The issue where metadata updates could not be made for app versions marked as Release Candidate (RC) has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The issue where the system did not automatically select an active and suitable pool from the company's self-hosted options when no pool was selected during the publish process has been fixed. <BuildBadge/> <PublishBadge/> <SelfHostedBadge/>
+- The issue with the internal Redis connection has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- The issue where `localhost` was used when creating short URLs in the self-hosted Appcircle monitoring system has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- The issue that caused Appcircle runner IP addresses to appear as 127.0.0.1 on self-hosted Appcircle servers has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- The issue encountered during the first-time installation of a self-hosted Appcircle server when using Podman has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+
 ## 3.20.1 - 2024-08-05 - Role Management Updates, Enterprise App Store and Publish Improvements, Xcode 16.0 Beta 5, Bug Fixes and more
 
 ### 🆕 New Features
