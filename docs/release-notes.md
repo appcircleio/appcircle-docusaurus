@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
-## 3.21.0 - 2024-08-20 Role Management Updates, Testing Distribution Improvements, Enterprise App Store Enhancements, Bug Fixes, and more
+## 3.20.4 - 2024-08-20 Role Management Updates, Testing Distribution Improvements, Enterprise App Store Enhancements, Bug Fixes, and more
 
 ### 🆕 New Features
 
@@ -37,7 +37,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The performance of the [Testing Portal](testing-distribution/testing-portal) has been enhanced to achieve faster load times. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An additional rule has been implemented to prevent the deletion of deployed versions marked as `Live` or `Beta` in the Enterprise App Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An updated warning message will now be shown if the [notify](enterprise-app-store/enterprise-app-store-profile#notify) button is used without LDAP or SSO authentication. The message will also be tailored to cases where no emails are entered in the [***Manage Access***](enterprise-app-store/enterprise-app-store-profile#manage-access) settings, ensuring clearer notifications. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A new rule set has been implemented in the Enterprise App Store to prevent the [deletion of versions](enterprise-app-store/enterprise-app-store-profile#delete) marked as `Live` or `Beta`. RC-marked versions cannot be deleted, the delete buttons for Live and Beta versions have been disabled. To delete these versions, they must first be unpublished. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new rule set has been implemented in the Enterprise App Store to prevent the [deletion of versions](enterprise-app-store/enterprise-app-store-profile#delete) marked as `Live` or `Beta`. RC-marked versions cannot be deleted, the delete buttons for Live and Beta versions have been disabled. To delete these versions, they must first be unpublished <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Build Module has been updated to enforce uniqueness for all [workflow](workflows) step names. This enhancement was implemented to prevent potential conflicts caused by duplicate names, thereby improving the clarity and reliability of build workflows. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The ability to cancel the publishing process, as well as triggered and tagged builds, has been introduced. <PublishBadge/> <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Store Submit display has been removed from the Self-Hosted dashboard. <SelfHostedBadge/>
