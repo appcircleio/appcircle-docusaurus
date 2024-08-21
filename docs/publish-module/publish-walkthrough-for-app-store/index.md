@@ -1,7 +1,7 @@
 ---
 title: Publish Walkthrough for App Store
 description: Learn how to use Publish module in Appcircle
-tags: [publish module, benefits, key features]
+tags: [publish module, benefits, key features, walkthrough, app store connect, app store, release, metadata]
 ---
 
 
@@ -74,7 +74,7 @@ Before starting the release process, it's essential to prepare all necessary app
 
 :::info Binary
 
-The binary file can be uploaded to the Publish module either manually or through the Build module. For more detailed instructions, please refer to the [**Upload Binary**](/publish-module/publish-walkthrough-for-app-store#uploading-binary) section.
+The binary file can be uploaded to the Publish module either manually or through the Build module. For more detailed instructions, please refer to the [**Upload Binary**](/publish-module/publish-walkthrough-for-app-store#uploading-a-binary) section.
 
 :::
 
@@ -355,7 +355,7 @@ If you need additional help with the Publish module, the following resources are
 
 - **Appcircle Support**: Contact [**Appcircle Slack support**](https://slack.appcircle.io/) for personalized assistance with your specific issues. 
 
-- **User Documentation**: Refer to the Appcircle user documentation for detailed guides and troubleshooting tips for Publish Module.
+- **Technical Documentation**: Refer to the Appcircle user documentation for detailed guides and troubleshooting tips for Publish Module.
 
 
 
