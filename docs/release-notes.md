@@ -26,7 +26,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - A new sub-organization filter has been added to the user list, allowing for more precise filtering and [user management](account/my-organization#managing-the-team-under-an-organization) within sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Support for [downloading](/testing-distribution/create-or-select-a-distribution-profile#download-binary) binary in the Testing Distribution module has been added. New or updated endpoints have been documented in Swagger, enabling easy integration and automation for customers. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new feature has been added that allows profiles marked as `Show on Top` in the Enterprise App Store to have all their shared app versions appear at the top of the store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Self-hosted Appcircle server admins can now configure the mail provider library for mails. <InfrastructureBadge/> <SelfHostedBadge/>
+- The email provider used for email notifications can now be configured via `global.yaml`, which aids in troubleshooting some SMTP issues. <InfrastructureBadge/> <SelfHostedBadge/>
 - [Xcode 16.1 Beta 1](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_1-release-notes) has been installed on runners in the [Default M1 pool](infrastructure/ios-build-infrastructure). Since this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
@@ -54,10 +54,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The issue where the distribution date in the Testing Portal displayed the previous version's distribution date when a version was resent to a tester has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The issue where metadata updates could not be made for app versions marked as Release Candidate (RC) has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The issue where the system did not automatically select an active and suitable pool from the company's self-hosted options when no pool was selected during the publish process has been fixed. <BuildBadge/> <PublishBadge/> <SelfHostedBadge/>
-- The issue with the internal Redis connection has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
-- The issue where `localhost` was used when creating short URLs in the self-hosted Appcircle monitoring system has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
-- The issue that caused Appcircle runner IP addresses to appear as 127.0.0.1 on self-hosted Appcircle servers has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
-- The issue encountered during the first-time installation of a self-hosted Appcircle server when using Podman has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- The issue where the Redis connection was throwing a readonly error for replica write on self-hosted Appcircle servers has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- The issue with incorrect URLs in short links has been fixed, allowing seamless sharing of short URLs using the Copy Shortlink feature in the self-hosted server [Monitoring](self-hosted-appcircle/configure-server/monitoring#accessing-to-grafana-web-ui) UI. <InfrastructureBadge/> <SelfHostedBadge/>
+- The issue that caused runner IP addresses to appear as 127.0.0.1 in the build logs and runner details on the self-hosted Appcircle server has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- The issue that created a broken system configuration file during the installation of the self-hosted Appcircle server using the Podman container engine has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ## 3.20.1 - 2024-08-05 - Role Management Updates, Enterprise App Store and Publish Improvements, Xcode 16.0 Beta 5, Bug Fixes and more
 
