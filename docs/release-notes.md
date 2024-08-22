@@ -21,9 +21,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### 🆕 New Features
 
 - Default roles are now shown when inviting users to an organization, both in the UI and through the [CLI](appcircle-api/cli-authentication). This enhancement ensures clarity and ease of role assignment during the user invitation process. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The ability to assign multiple module roles to users has been introduced, allowing for greater flexibility and more refined [role management](account/my-organization#advanced-role-management) within the system. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A new [Membership](account/my-organization#advanced-role-management) column has been added, displaying values as `Member` or `Inherit`, and the `Assigned` label has been removed as it is no longer necessary. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A new sub-organization filter has been added to the user list, allowing for more precise filtering and [user management](account/my-organization#managing-the-team-under-an-organization) within sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The ability to assign multiple module roles to users has been introduced, allowing for greater flexibility and more refined [role management](/account/my-organization/profile-and-team/team-management#advanced-role-management) within the system. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new [Membership](/account/my-organization/profile-and-team/team-management#advanced-role-management) column has been added, displaying values as `Member` or `Inherit`, and the `Assigned` label has been removed as it is no longer necessary. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new sub-organization filter has been added to the user list, allowing for more precise filtering and [user management](/account/my-organization/profile-and-team/team-management#managing-the-team-under-an-organization) within sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Support for [downloading](/testing-distribution/create-or-select-a-distribution-profile#download-binary) binary in the Testing Distribution module has been added. New or updated endpoints have been documented in Swagger, enabling easy integration and automation for customers. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new feature has been added that allows profiles marked as `Show on Top` in the Enterprise App Store to have all their shared app versions appear at the top of the store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Self-hosted Appcircle server admins can now configure the mail provider library for mails. <InfrastructureBadge/> <SelfHostedBadge/>
@@ -151,8 +151,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - App Store Connect App Info & Metadata and Microsoft Intune Metadata are now available through [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=publish). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Multiple Bundle IDs can now be selected when importing from App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - All Publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- When [inviting a new user to an organization](/account/my-organization#managing-the-team-under-an-organization), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Existing and newly invited organization members can now be [searched by e-mail filter](/account/my-organization#managing-team-members) within the Team Management area. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When [inviting a new user to an organization](//account/my-organization/profile-and-team/team-management#managing-the-team-under-an-organization), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Existing and newly invited organization members can now be [searched by e-mail filter](/account/my-organization/profile-and-team/team-management#managing-the-team-under-an-organization) within the Team Management area. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When attempting to delete a provisioning profile that is already in use for a build profile, a warning message will now display. This allows you to see the affected profiles and navigate directly to their configuration. Alternatively, you can force delete the provisioning profile. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When a Provisioning Profile within the Apple Profiles section has a mismatched Apple Certificate, a tool tip warning message will display. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Upload multiple files at once with the new [Apple Provisioning Profile](/signing-identities/apple-profiles#upload-a-provisioning-profiles) file upload improvement. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -476,7 +476,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### 🆕 New Feature
 
-- Permission (role) naming has been changed in [advanced role management](https://docs.appcircle.io/account/my-organization#advanced-role-management). Also, there are some new roles added for better scope management in your organization. <CloudBadge/> <SelfHostedBadge/>
+- Permission (role) naming has been changed in [advanced role management](https://docs.appcircle.io/account/my-organization/profile-and-team/team-management#advanced-role-management). Also, there are some new roles added for better scope management in your organization. <CloudBadge/> <SelfHostedBadge/>
 - [Share with Testers](testing-distribution/create-or-select-a-distribution-profile#share-your-application-with-the-test-groups-manually) in Testing Distribution now has a new toggle option that enables you to display only the shared app version instead of all app versions. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle Notifications now has improvements on [Slack](https://docs.appcircle.io/account/slack/slack-notifications), [Microsoft Teams](https://docs.appcircle.io/account/teams-notifications), [Email](https://docs.appcircle.io/account/email-connection), and [Webhook](https://docs.appcircle.io/account/webhooks) channels that allows you to share release notes, build logs, and test reports via notifications. <CloudBadge/> <SelfHostedBadge/>
 - The Store Submit module has been deprecated and it will be replaced by the brand-new [Publish](https://docs.appcircle.io/publish-module) module. You should transfer your apps to the [Publish](https://docs.appcircle.io/publish-module) module in order to submit your apps to the stores. <CloudBadge/> <SelfHostedBadge/>
@@ -492,7 +492,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - License limits for monthly tester emails and artifact storage size were removed from "Organization > Billing > Usages". Keep in mind that for fair usage, the limits exist but are higher when compared to previous plan limits. <CloudBadge/> <SelfHostedBadge/>
 - Now only the underscore character ("\_") can be used in [environment variable](https://docs.appcircle.io/environment-variables/managing-variables) group naming. Appcircle will not allow other special characters in group names. <CloudBadge/> <SelfHostedBadge/>
 - [Enterprise App Store](https://docs.appcircle.io/account/my-organization#enterprise-app-store-permissions) permissions have undergone revision with new roles that enable users to configure authorization in detail. <CloudBadge/> <SelfHostedBadge/>
-- [User invitation](https://docs.appcircle.io/account/my-organization#managing-team-members) and membership update notification emails have been improved and now include additional information, such as sub-organizations. <CloudBadge/> <SelfHostedBadge/>
+- [User invitation](https://docs.appcircle.io/account/my-organization/profile-and-team/team-management#managing-the-team-under-an-organization) and membership update notification emails have been improved and now include additional information, such as sub-organizations. <CloudBadge/> <SelfHostedBadge/>
 - User redirection when invited to the organization was improved according to several different cases, like registered, not registered, or SSO login. <CloudBadge/> <SelfHostedBadge/>
 - Now you can enhance the SSO login experience by eliminating the "SSO Alias" requirement on the login screen. For this, you should create an Appcircle-compatible login URL so that users can pass through the "SSO Alias" step when they access Appcircle using your custom login URL. <CloudBadge/> <SelfHostedBadge/>
 - Publish flow step statuses, and the last step status in the [version list](https://docs.appcircle.io/publish-module/#publish-versions) will be in `waiting` status unless the runner executes them. <CloudBadge/> <SelfHostedBadge/>
@@ -554,7 +554,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🐞 Fixed
 
 - Fixed an issue where a connected build profile would appear as if it had not been connected before. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue that caused the user to completely restrict their own [privileges](/account/my-organization#managing-the-team-under-an-organization) when alone in an organization. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused the user to completely restrict their own [privileges](//account/my-organization/profile-and-team/team-management#managing-the-team-under-an-organization) when alone in an organization. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the case where the build pipeline was executed on a non-selected wrong pool, which was affecting the default Intel and M1 pools. <CloudBadge/>
 - Fixed an issue that was affecting the first-time [connections to the GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab) provider. <CloudBadge/> <SelfHostedBadge/>
 - The bug was fixed in the re-creation of a connection that had been disconnected and had its [token revoked](/build/manage-the-connections#revoke-oauth-connections). <CloudBadge/> <SelfHostedBadge/>
@@ -563,7 +563,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed an issue that occurred in the branch list and commits after [changing the git provider](/build/manage-the-connections/reconnect-change-provider#change-git-provider-and-reconnect) connection at the build profile. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue that caused environment variables to be created with the same name in the same [environment variable](/environment-variables/managing-variables) group on the API. <CloudBadge/> <SelfHostedBadge/>
 - An error that occurred after closing the repository list while trying to change the Git provider of a build profile connected to a repository has been fixed. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue that caused the [invited user](/account/my-organization#managing-team-members) not to be redirected to the sign up page if they were not registered. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused the [invited user](/account/my-organization/profile-and-team/team-management#managing-the-team-under-an-organization) not to be redirected to the sign up page if they were not registered. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the authentication logs section was not visible. <CloudBadge/>
 - The error with the email hint text falling into the email field on the login and sign up pages has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the [Xcodebuild for Unit and UI Tests](/workflows/ios-specific-workflow-steps/#xcodebuild-for-unit-and-ui-tests) workflow step, which was stuck in the build pipeline until timeout in some cases. <CloudBadge/> <SelfHostedBadge/>
@@ -646,13 +646,13 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - While reviewing the build logs in the admin panel, if there is no build log, we were not showing the user an error. Now it is shown as a toast message. <CloudBadge/> <SelfHostedBadge/>
 - The bug that occurred if there were no screenshots in the test project has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - A problem related to component caching in the runner has been resolved. <CloudBadge/> <SelfHostedBadge/>
-- Without user [permission](/account/my-organization#advanced-role-management), requests on the relevant screens are no longer sent to the service, so no warnings are displayed. <CloudBadge/> <SelfHostedBadge/>
+- Without user [permission](/account/my-organization/profile-and-team/team-management#advanced-role-management), requests on the relevant screens are no longer sent to the service, so no warnings are displayed. <CloudBadge/> <SelfHostedBadge/>
 - We were not showing the status of the request with the loader when a request was sent for workflows; this problem has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Some spelling errors at the beginning of the workflow have been fixed, and a user-friendly appearance has been provided. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that prevented logging in to the Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the error that occurred when test users emails were written in capital letters. <CloudBadge/> <SelfHostedBadge/>
 - In the general profile tab in the [distribution profile](/testing-distribution/create-or-select-a-distribution-profile), the incorrect screen movement that occurred when the switch was disabled and reactivated was fixed. <CloudBadge/> <SelfHostedBadge/>
-- Fixed unnecessary requests that go on report screens in the case of being a [sub organization](/account/my-organization#working-with-multiple-organizations). <CloudBadge/> <SelfHostedBadge/>
+- Fixed unnecessary requests that go on report screens in the case of being a [sub organization](/account/my-organization/profile-and-team/organization-management#working-with-multiple-organizations). <CloudBadge/> <SelfHostedBadge/>
 - Fixed missing versioning for the [HashiCorp Vault](https://blog.appcircle.io/article/security-in-appcircle) container image on the self-hosted server. <SelfHostedBadge/>
 
 ## 3.8.0 - 2023-10-02 - Multiple Git Providers Support, Config Clone, Pool-Based Xcode Version Selection

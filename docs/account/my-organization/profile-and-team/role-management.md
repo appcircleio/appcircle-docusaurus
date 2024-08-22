@@ -22,7 +22,7 @@ sidebar_position: 3
 
 # Role Management
 
-With Appcircle's [Advanced Role Management](/account/my-organization#advanced-role-management) structure, you can assign specific roles to organization members for each module, allowing you to manage and restrict their permissions effectively. Appcircle provides various role types for each module, with a brief description of each role provided in the table below. For more detailed information on role management for each module, please refer to the respective module titles.
+With Appcircle's [Advanced Role Management](/account/my-organization/profile-and-team/team-management#advanced-role-management) structure, you can assign specific roles to organization members for each module, allowing you to manage and restrict their permissions effectively. Appcircle provides various role types for each module, with a brief description of each role provided in the table below. For more detailed information on role management for each module, please refer to the respective module titles.
 
 - **Owner**: The user is authorized for unlimited access to all modules.
 - **Manager**: The user becomes the administrator of the relevant module with no restrictions.
