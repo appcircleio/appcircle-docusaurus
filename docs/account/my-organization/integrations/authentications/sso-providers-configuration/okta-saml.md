@@ -61,7 +61,7 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 - Check all the settings on this page and confirm that Redirect and SSO URLs are imported correctly. You can check if the X509 Certificate is imported correctly as well. If you want to enter multiple certificates you can separate them by using a comma between them. Please be aware that you need to remove any new lines or file headers from this edit box. This edit box only accepts a long base64 encoded string.
 
-- The Group Attribute Name and Role Attribute Name fields are optional. Please refer to the [SSO Mapping Documentation](/account/my-organization/sso-providers-configuration/okta-saml#sso-mapping).
+- The Group Attribute Name and Role Attribute Name fields are optional. Please refer to the [SSO Mapping Documentation](/account/my-organization/integrations/authentications/sso-providers-configuration/okta-saml#sso-mapping).
 
 ### Testing SSO
 
@@ -144,4 +144,4 @@ This step is optional and can be skipped if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-saml-ac-group-role-attribute-name.png' />
 
-- Now you can define group and role mappings. Please refer to [Group and Role Mapping Configuration](/account/my-organization/sso-providers-configuration/single-sign-on#group-and-role-mapping-configuration).
+- Now you can define group and role mappings. Please refer to [Group and Role Mapping Configuration](/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on#group-and-role-mapping-configuration).

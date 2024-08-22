@@ -65,7 +65,7 @@ For App Store Connect integration, go to Integrations under My Organization. Sel
 
 :::
 
-For more information about the generating App Store Connect API key and App Store Connect integration in Appcircle, please refer to the [documentation](/account/my-organization/api-integrations/adding-an-app-store-connect-api-key#login-to-app-store-connect).
+For more information about the generating App Store Connect API key and App Store Connect integration in Appcircle, please refer to the [documentation](/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key#login-to-app-store-connect).
 
 
 ### App Metadata and Binary Preperation
@@ -110,7 +110,7 @@ If you haven't set up a project in Appcircle before, follow the detailed [**setu
 
 :::info Create from App Store Connect
 
-To use this profile creation method, you must have an API key integration in place. Please refer to the detailed documentation for [**Create from App Store Connect**](/publish-module/creating-publish-profiles#create-from-app-store-connect) and [**API integration**](/account/my-organization/api-integrations/adding-an-app-store-connect-api-key).
+To use this profile creation method, you must have an API key integration in place. Please refer to the detailed documentation for [**Create from App Store Connect**](/publish-module/creating-publish-profiles#create-from-app-store-connect) and [**API integration**](/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key).
 
 :::
 
@@ -178,7 +178,7 @@ With the Appcircle Publish module, you can manage your entire release process fr
 
 ### Setting Up Notifications
 
-- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications-and-communication/slack/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications-and-communication/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications-and-communication) documentation for more detailed information.
+- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/integrations/notification-integrations/slack/slack-notifications) or [**Microsoft Teams**](/account/my-organization/integrations/notification-integrations/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/integrations/notification-integrations) documentation for more detailed information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-notificationInteg.png' />
 
@@ -309,7 +309,7 @@ To update your app's metadata, navigate to the Publish module, select the releva
 
 Yes, it is possible. The Publish module allows you to set up automated notifications for your team members at various stages of the release process. You can configure notifications to be sent via email or integrate with collaboration tools like Slack or Microsoft Teams, ensuring that everyone involved is kept up to date on the release status.
 
-For more information, please refer to the [**Notification Integrations**](/account/my-organization/notifications-and-communication) document.
+For more information, please refer to the [**Notification Integrations**](/account/my-organization/integrations/notification-integrations) document.
 
 #### Can I track the progress of the app release in real-time?
 
@@ -333,7 +333,7 @@ Additionally, you can check our existing integrations in the [**Appcircle Market
 
 Appcircle provides users with a comprehensive role management system. This system allows you to assign specific permissions to all organization members on an organization-wide basis. 
 
-For more information, please refer to the [**Role Management**](/account/my-organization/role-management) document.
+For more information, please refer to the [**Role Management**](/account/my-organization/profile-and-team/role-management) document.
 
 #### Can I manage multiple app store accounts within the Publish module?
 

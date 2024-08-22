@@ -359,7 +359,7 @@ If you want to assign a role in a sub-organization, please do so within the resp
 
 LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Testing Portal**](/testing-distribution/testing-portal) and [**Enterprise App Store**](/enterprise-app-store).
 
-Please use [**Appcircle Login**](/account/my-organization/sso-providers-configuration/onelogin-saml#enable-sso) for **LDAP** and **SSO** integration when logging into Appcircle.
+Please use [**Appcircle Login**](/account/my-organization/integrations/authentications/sso-providers-configuration/onelogin-saml#enable-sso) for **LDAP** and **SSO** integration when logging into Appcircle.
 
 :::
 
@@ -386,16 +386,16 @@ Connect or disconnect from third-party service providers such as notification to
 
 #### Notification Tools
 
-- [**Slack**](/account/my-organization/notifications-and-communication/slack/slack-notifications) 
-- [**Microsoft Teams**](/account/my-organization/notifications-and-communication/teams-notifications)
-- [**Email Notifications**](/account/my-organization/notifications-and-communication/email-connection) 
+- [**Slack**](/account/my-organization/integrations/notification-integrations/slack/slack-notifications) 
+- [**Microsoft Teams**](/account/my-organization/integrations/notification-integrations/teams-notifications)
+- [**Email Notifications**](/account/my-organization/integrations/notification-integrations/email-connection) 
  
 #### Store Connections
 
-- [**App Store Connect API Keys**](/account/my-organization/api-integrations/adding-an-app-store-connect-api-key) 
-- [**Google Play Developer API Keys**](/account/my-organization/api-integrations/adding-google-play-service-account) 
-- [**Huawei AppGallery Developer API Keys**](/account/my-organization/api-integrations/adding-huawei-api-key)
-- [**Microsoft Intune API Keys**](/account/my-organization/api-integrations/adding-microsoft-intune-api-key) 
+- [**App Store Connect API Keys**](/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key) 
+- [**Google Play Developer API Keys**](/account/my-organization/integrations/credentials/adding-google-play-service-account) 
+- [**Huawei AppGallery Developer API Keys**](/account/my-organization/integrations/credentials/adding-huawei-api-key)
+- [**Microsoft Intune API Keys**](/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key) 
 
 | Integrations and Connections | Scopes                        | Owner | Manager | Viewer |
 |------------------------------|-------------------------------|-------|---------|--------|

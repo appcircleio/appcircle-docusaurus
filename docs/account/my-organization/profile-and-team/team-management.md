@@ -57,6 +57,6 @@ The "None" is a special type of permission that denotes that a user has no defin
 
 For more information on the roles and permissions, please refer to the:
 
-<ContentRef url="/account/my-organization/role-management"> 
+<ContentRef url="/account/my-organization/profile-and-team/role-management"> 
     Role Management
 </ContentRef>

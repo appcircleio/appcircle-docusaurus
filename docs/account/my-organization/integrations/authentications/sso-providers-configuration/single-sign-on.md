@@ -120,7 +120,7 @@ This guide provides a step-by-step approach to setting up and managing SSO mappi
 
 First, ensure you have a proper SSO configuration, either OpenID or SAML, and define the configuration for SSO Mapping to specify how to retrieve user groups and roles.
 
-You can refer to the [Identity Providers Documentations](/account/my-organization/sso-providers-configuration/single-sign-on#identity-providers) for specific configuration details for each identity provider.
+You can refer to the [Identity Providers Documentations](/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on#identity-providers) for specific configuration details for each identity provider.
 
 ### Accessing SSO Mapping Settings
 

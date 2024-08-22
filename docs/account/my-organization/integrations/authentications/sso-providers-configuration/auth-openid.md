@@ -63,7 +63,7 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid2_v2.png' />
 
-- The Group Claim Name and Role Claim Name fields are optional. Please refer to the [SSO Mapping Documentation](/account/my-organization/sso-providers-configuration/auth-openid#sso-mapping).
+- The Group Claim Name and Role Claim Name fields are optional. Please refer to the [SSO Mapping Documentation](/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on#sso-mapping).
 
 ### Testing SSO
 
@@ -166,7 +166,7 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-oidc-ac-group-role-claim-name.png' />
 
-- Now you can define group and role mappings. Please refer to [Group and Role Mapping Configuration](/account/my-organization/sso-providers-configuration/single-sign-on#group-and-role-mapping-configuration).
+- Now you can define group and role mappings. Please refer to [Group and Role Mapping Configuration](/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on#group-and-role-mapping-configuration).
 
 :::caution
 

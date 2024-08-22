@@ -69,7 +69,7 @@ https://customer_name_here.okta.com/oauth2/default/.well-known/openid-configurat
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid2_v2.png' />
 
-- The Group Claim Name and Role Claim Name fields are optional. Please refer to the [SSO Mapping Documentation](/account/my-organization/sso-providers-configuration/okta-openid#sso-mapping).
+- The Group Claim Name and Role Claim Name fields are optional. Please refer to the [SSO Mapping Documentation](/account/my-organization/integrations/authentications/sso-providers-configuration/okta-openid#sso-mapping).
 
 ### Testing SSO
 
@@ -174,4 +174,4 @@ This step is optional and can be skipped if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-group-role-claim-name.png' />
 
-- Now you can define group and role mappings. Please refer to [Group and Role Mapping Configuration](/account/my-organization/sso-providers-configuration/single-sign-on#group-and-role-mapping-configuration).
+- Now you can define group and role mappings. Please refer to [Group and Role Mapping Configuration](/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on#group-and-role-mapping-configuration).
