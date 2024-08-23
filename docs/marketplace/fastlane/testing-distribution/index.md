@@ -22,6 +22,23 @@ The Appcircle Testing Distribution plugin allows users to upload their apps and 
 You can discover more about this action and install it by:
 https://rubygems.org/gems/fastlane-plugin-appcircle_testing_distribution
 
+## System Requirements
+
+**Compatible Agents:**
+
+- macOS
+- Ubuntu
+- Ventura
+
+**Supported Version:**
+
+- Fastlane 2.222.0
+- Ruby 3.2.2
+
+:::caution
+We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+:::
+
 ### How to Add the Appcircle Distribute Task Extension to Your Pipeline
 
 To install the Appcircle Testing Distribution action, install the plugin and add the following step to your pipeline at the end:
@@ -32,31 +49,19 @@ fastlane add_plugin appcircle_testing_distribution
 
 ```yml
   appcircle_testing_distribution(
-    accessToken: "$(AC_ACCESS_TOKEN)", # Your Appcircle Personal API Token
-    profileID: "$(AC_PROFILE_ID)", # ID of your Appcircle Distribution Profile
-    appPath: "$(AC_APP_PATH)", # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
-    message: "$(AC_MESSAGE)", # Your Message
+    personalAPIToken: "$(AC_PERSONAL_API_TOKEN)",
+    profileName: "$(AC_PROFILE_NAME)",
+    createProfileIfNotExists: Boolean,
+    appPath: "$(AC_APP_PATH)",
+    message: "$(AC_MESSAGE)",
   )
 ```
 
-#### How to Retrieve Your Testing Distribution Profile ID
-
-You can obtain your Testing Distribution Profile ID from the profile settings or by using the @appcircle/cli.
-
-##### Retrieving Profile ID from Testing Distribution Profile Settings
-
-1. Navigate to your Testing Distribution profile.
-2. Click to Settings button
-3. Copy the Profile ID
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/TD-ProfileID-Copy.png' />
-
-##### Retrieving Profile ID Using @appcircle/cli
-
-The upcoming command retrieves the complete list of Testing Distribution Profiles.
-
-```bash
-appcircle testing-distribution profile list
-```
+- `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `profileName`: Specifies the profile that will be used for uploading the app.
+- `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
+- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Testing Distribution Profile.
+- `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
 :::caution Build Steps Order
 You should add this task extension after completing your build steps.

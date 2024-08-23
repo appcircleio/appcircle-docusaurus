@@ -50,26 +50,7 @@ Go to your configuration page of the project add a build step.
 After adding the plugin to your build steps, ensure that you provide all required inputs.
 Additionally, remember to place the plugin after your build steps as you will need to specify the build path later on.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-175_jenkins_plugin_usage.png' />
-
-#### How to Retrieve Your Testing Distribution Profile ID
-
-You can obtain your Testing Distribution Profile ID from the profile settings or by using the @appcircle/cli.
-
-##### Retrieving Profile ID from Testing Distribution Profile Settings
-
-1. Navigate to your Testing Distribution profile.
-2. Click to Settings button
-3. Copy the Profile ID
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/TD-ProfileID-Copy.png' />
-
-##### Retrieving Profile ID Using @appcircle/cli
-
-The upcoming command retrieves the complete list of Testing Distribution Profiles.
-
-```bash
-appcircle testing-distribution profile list
-```
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-205_td_usage.png' />
 
 ### Adding the Plugin to Your Pipeline
 

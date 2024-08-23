@@ -20,39 +20,39 @@ The Appcircle Testing Distribution action allows users to upload their apps and 
 You can discover more about this action and install it by:
 https://github.com/marketplace/actions/appcircle-testing-distribution
 
+## System Requirements
+
+**Compatible Agents:**
+
+- macOS
+- Ubuntu
+- Ventura
+
+:::caution
+We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+:::
+
 ### How to Add the Appcircle Testing Distribution Task Extension to Your Pipeline
 
 To install the Appcircle Testing Distribution action, add the following step to your pipeline at the end:
 
-```yml
-- name: Distribute App to Appcircle
-  id: testing-distribution
-    uses: appcircleio/appcircle-testing-distribution-githubaction@v0.0.1 # provide the version you want to use
+```yaml
+- name: Publish App to Appcircle
+  id: testing-distribution-appcircle
+  uses: appcircleio/appcircle-testing-distribution-githubaction
   with:
-    accessToken: ${{ secrets.AC_ACCESS_TOKEN }} # Your Appcircle Personal API Token
-    profileID: ${{ secrets.AC_PROFILE_ID }} # ID of your Appcircle Distribution Profile
-    appPath: ${{ secrets.APP_PATH }} # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
-    message: ${{ secrets.MESSAGE }} # Your Message
+    personalAPIToken: ${{ secrets.AC_PROFLE_API_TOKEN }}
+    profileName: ${{ secrets.AC_PROFILE_NAME }}
+    createProfileIfNotExists: ${{ secrets.CREATE_PROFILE_IF_NOT_EXISTS }}
+    appPath: ${{ secrets.APP_PATH }}
+    message: ${{ secrets.MESSAGE }}
 ```
 
-#### How to Retrieve Your Testing Distribution Profile ID
-
-You can obtain your Testing Distribution Profile ID from the profile settings or by using the @appcircle/cli.
-
-##### Retrieving Profile ID from Testing Distribution Profile Settings
-
-1. Navigate to your Testing Distribution profile.
-2. Click to Settings button
-3. Copy the Profile ID
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/TD-ProfileID-Copy.png' />
-
-##### Retrieving Profile ID Using @appcircle/cli
-
-The upcoming command retrieves the complete list of Testing Distribution Profiles.
-
-```bash
-appcircle testing-distribution profile list
-```
+- `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `profileName`: Specifies the profile that will be used for uploading the app.
+- `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
+- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Testing Distribution Profile.
+- `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
 :::caution Build Steps Order
 You should add this task extension after completing your build steps.

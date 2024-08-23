@@ -34,7 +34,9 @@ The Appcircle Enterprise App Store plugin enables users to publish their apps to
 
 - Jenkins 2.440.3
 
-Note: We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+:::caution
+We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+:::
 
 ### Install Appcircle Enterprise App Store Plugin
 
@@ -46,33 +48,14 @@ Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Th
 
 Go to your configuration page of the project and add a build step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-store-add_pannel.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-205_ent_add.png' />
 
 ### Configure Plugin
 
 After adding the plugin to your build steps, ensure that you provide all required inputs.
 Additionally, remember to place the plugin after your build steps as you will need to specify the build path later on.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-store-configure_pannel.png' />
-
-#### How to Retrieve Your Enterprise App Store Profile ID
-
-You can obtain your Enterprise App Store Profile ID from the profile settings or by using the @appcircle/cli.
-
-##### Retrieving Profile ID from Enterprise App Store Profile Settings
-
-1. Navigate to your Enterprise App Store Profile.
-2. Click to Settings button
-3. Copy the Profile ID
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/EAS-ProfileID-Copy.png' />
-
-##### Retrieving Profile ID Using @appcircle/cli
-
-The upcoming command retrieves the complete list of Enterprise App Store Profiles.
-
-```bash
-appcircle enterprise-app-store profile list
-```
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-205_ent_usage.png' />
 
 ### Using Plugin into Your Script
 

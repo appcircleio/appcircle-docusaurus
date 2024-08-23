@@ -19,6 +19,18 @@ sidebar_position: 2
 
 The Appcircle Enterprise App Store action allows users to publish their apps to appcircle app store.
 
+## System Requirements
+
+**Compatible Agents:**
+
+- macOS
+- Ubuntu
+- Ventura
+
+:::caution
+We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+:::
+
 ### Discover Action
 
 You can discover more about this action and install it by:
@@ -29,36 +41,26 @@ https://github.com/marketplace/actions/appcircle-enterprise-store
 To install the Appcircle Enterprise App Store action, add the following step to your pipeline at the end:
 
 ```yml
-- name: Publish App to Appcircle
-  id: appcircle-store-publishment
-  uses: ./
+- name: Publish App to Appcircle Enterprise App Store
+  id: store-publish-to-appcircle
+  uses: appcircleio/appcircle-enterprise-app-store-githubaction
   with:
-    accessToken: ${{ secrets.AC_ACCESS_TOKEN }} # Appcircle Personal API Token
-    entProfileId: ${{ secrets.AC_PROFILE_ID }} # Enterprise Profile Id
-    appPath: "APP_PATH" # Your App Path
-    summary: "SUMMARY" # Your Summary
-    releaseNotes: "RELEASE_NOTE" # Your Release Note
-    publishType: "1" # 0: None, 1: Beta, 2: Live
+    personalAPIToken: ${{ secrets.AC_PERSONAL_API_TOKEN }}
+    appPath: APP_PATH
+    summary: SUMMARY
+    releaseNotes: RELEASE_NOTES
+    publishType: PUBLISH_TYPE # "0": None, "1": Beta, "2": Live
 ```
 
-#### How to Retrieve Your Enterprise App Store Profile ID
+- `personalAPIToken`: The Appcircle Personal API token is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
+- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Testing Distribution Profile.
+- `releaseNote`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
+- `Summary`: Used to provide a brief overview of the version of the app that is about to be published.
+- `publishType`: Specifies the publishing status as either none, beta, or live, and must be assigned the values "0", "1", or "2" accordingly.
 
-You can obtain your Enterprise App Store Profile ID from the profile settings or by using the @appcircle/cli.
-
-##### Retrieving Profile ID from Enterprise App Store Profile Settings
-
-1. Navigate to your Enterprise App Store Profile.
-2. Click to Settings button
-3. Copy the Profile ID
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/EAS-ProfileID-Copy.png' />
-
-##### Retrieving Profile ID Using @appcircle/cli
-
-The upcoming command retrieves the complete list of Enterprise App Store Profiles.
-
-```bash
-appcircle enterprise-app-store profile list
-```
+:::caution
+If two builds start simultaneously, such as **v1.0.5(5)** and **v1.0.5(5)**, for the same **publishType**, the build that finishes last will result in failure because the same version cannot be added, while the first build to complete will be successfully uploaded and published
+:::
 
 :::caution Build Steps Order
 You should add this task extension after completing your build steps.
