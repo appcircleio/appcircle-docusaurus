@@ -6,6 +6,10 @@ sidebar_position: 4
 sidebar_label: Troubleshooting & FAQ
 ---
 
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Overview
 
 This section is designed to help you quickly find answers to common questions and provide you with a better understanding of Appcircle server and runner.
@@ -291,6 +295,219 @@ The first thing you should check is **PAT** permissions.
 If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
 
 For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
+
+### Checking and Cleaning the MinIO Temporary Buckets
+
+Check the MinIO bucket sizes.
+
+- Navigate to the Appcircle server directory.
+
+```bash
+cd appcircle-server
+```
+
+- Get the MinIO container name.
+
+<SpacetechExampleInfo/>
+
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
+```bash
+docker ps --filter "name=snsd" --format "{{.Names}}"
+```
+
+</TabItem>
+
+<TabItem value="podman">
+
+```bash
+podman ps --filter "name=snsd" --format "{{.Names}}"
+```
+
+
+</TabItem>
+
+</Tabs>
+
+- Add the `jq` dependencie:
+
+```bash
+export PATH=$PATH:$(pwd)/deps/bin
+```
+
+
+- Retrieve the MinIO secret key:
+
+```bash
+yq '.minio.secretKey' projects/spacetech/export/.global.yaml
+```
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
+- Configure the `mc` client.
+
+:::tip
+Please change the `yourMinioSecretKey` with your own MinIO secret key. 
+:::
+
+```bash
+docker exec -it spacetech-snsd-1 mc config host add local http://localhost:9000 admin yourMinioSecretKey
+```
+
+- Get the bucket sizes:
+
+```bash
+docker exec -it spacetech_snsd_1 mc du -d 2 local
+```
+
+</TabItem>
+
+<TabItem value="podman">
+
+- Configure the `mc` client.
+
+:::tip
+Please change the `yourMinioSecretKey` with your own MinIO secret key. 
+:::
+
+```bash
+podman exec -it spacetech_snsd_1 mc config host add local http://localhost:9000 admin yourMinioSecretKey
+```
+
+- Get the bucket sizes:
+
+```bash
+podman exec -it spacetech_snsd_1 mc du -d 2 local
+```
+
+</TabItem>
+
+</Tabs>
+
+Sample output should be as follows:
+
+```text
+0B	0 objects	appcircle-local-resource-agent-cache
+0B	0 objects	appcircle-local-resource-backup
+3.4GiB	1542 objects	appcircle-local-resource-build
+132MiB	89 objects	appcircle-local-resource-distribution
+1.3GiB	125 objects	appcircle-local-resource-publish
+241MiB	22 objects	appcircle-local-resource-store
+128KiB	29 objects	appcircle-local-resource-storesubmit
+224KiB	17 objects	appcircle-local-resource-temp
+5.1GiB	1824 objects
+```
+
+:::caution
+You shouldn't edit the buckets manually except the `appcircle-local-resource-temp` one.
+:::
+
+If you see that temporary bucket is too large like more than 10GB, files 7 days or older can be cleaned with the following method:
+
+- Create the MinIO cleanup file.
+
+```bash
+vi clean-minio.sh
+```
+
+- Paste the content below to the file and save it. Don't forget to edit the `MINIO_SECRET_KEY` variable according to yours.
+
+```bash
+#!/bin/bash
+MINIO_ENDPOINT="http://localhost:9000"
+MINIO_ACCESS_KEY="admin"
+MINIO_SECRET_KEY="yourMinioSecretKey" # Change this for your needs.
+BUCKET_NAME="appcircle-local-resource-temp"
+THRESHOLD=$(date -d "7 days ago" +%s)
+mc config host add myminio $MINIO_ENDPOINT $MINIO_ACCESS_KEY $MINIO_SECRET_KEY
+OBJECTS=$(mc ls myminio/$BUCKET_NAME --json | jq -r '.key')
+for OBJECT in $OBJECTS; do
+    LAST_MODIFIED=$(mc stat myminio/$BUCKET_NAME/$OBJECT --json | jq -r '.lastModified')
+    LAST_MODIFIED_SECONDS=$(date -d "$LAST_MODIFIED" +%s)
+    if [ $LAST_MODIFIED_SECONDS -lt $THRESHOLD ]; then
+        echo "Deleting $OBJECT"
+        mc rm "myminio/$BUCKET_NAME/$OBJECT"
+    fi
+done
+```
+
+- Make the script executable.
+
+```bash
+chmod +x clean-minio.sh
+```
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
+- Copy the script to the MinIO container.
+
+```bash
+docker cp clean-minio.sh spacetech-snsd-1:/
+```
+
+- Copt the `jq` tool to the MinIO container.
+
+```bash
+docker cp deps/bin/jq spacetech-snsd-1:/usr/local/bin/jq
+```
+
+- Run the cleanup script to delete old files:
+
+```bash
+docker exec -it spacetech-snsd-1 /clean-minio.sh
+```
+
+
+</TabItem>
+
+<TabItem value="podman">
+
+- Copy the script to the MinIO container.
+
+```bash
+podman cp clean-minio.sh spacetech_snsd_1:/
+```
+
+- Copy the `jq` tool to the MinIO container.
+
+```bash
+podman cp deps/bin/jq spacetech_snsd_1:/usr/local/bin/jq
+```
+
+- Run the cleanup script to delete old files:
+
+```bash
+podman exec -it spacetech_snsd_1 /clean-minio.sh
+```
+
+</TabItem>
+
+</Tabs>
 
 ## Appcircle Runner FAQ
 
