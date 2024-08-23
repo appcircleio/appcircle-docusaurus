@@ -259,7 +259,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### 🆕 New Features
 
 - Users can now automate [Group](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#managing-ldap-groups-and-mappings) and [Role](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#ldap-role-mapping) Management using LDAP Authentication for Appcircle Login in Self-Hosted environments. <SelfHostedBadge/>
-- We have introduced the [Team Activity Log](https://docs.appcircle.io/account/my-organization/team-activity-log) feature within the Organization settings. This feature enables users to monitor team management actions within their organization if they are the organization owner or have the Organization Management role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have introduced the [Team Activity Log](https://docs.appcircle.io/account/my-organization/profile-and-team/team-activity-log) feature within the Organization settings. This feature enables users to monitor team management actions within their organization if they are the organization owner or have the Organization Management role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The self-hosted Appcircle server now has a new configuration at `global.yaml` that helps you [enable or disable](https://docs.appcircle.io/self-hosted-appcircle/configure-server/monitoring#disable-the-monitoring-services) the log monitoring feature on demand. <SelfHostedBadge/>
 
 ### :muscle: Improvements

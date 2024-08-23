@@ -31,6 +31,6 @@ Current headlines and the actions you can complete are listed below:
 - [**Profile and Team**](/account/my-organization/profile-and-team)
 - [**Integrations**](/account/my-organization/integrations)
 - [**Artifacts**](/account/my-organization/artifacts)
-- [**Team Activity Log**](/account/my-organization/team-activity-log)
+- [**Team Activity Log**](/account/my-organization/profile-and-team/team-activity-log)
 
 In order to see the details, check the submenu of this documentation page.
