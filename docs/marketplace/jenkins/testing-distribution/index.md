@@ -71,10 +71,6 @@ The upcoming command retrieves the complete list of Testing Distribution Profile
 appcircle testing-distribution profile list
 ```
 
-### Leveraging Environment Variables
-
-Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
-
 ### Adding the Plugin to Your Pipeline
 
 ```Groovy

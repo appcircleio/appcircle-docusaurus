@@ -22,6 +22,20 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Appcircle Enterprise App Store plugin enables users to publish their apps to the Appcircle App Store.
 
+## System Requirements
+
+**Compatible Agents:**
+
+- macOS
+- Ubuntu
+- Ventura
+
+**Supported Version:**
+
+- Jenkins 2.440.3
+
+Note: We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+
 ### Install Appcircle Enterprise App Store Plugin
 
 Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Then, search for "Appcircle Enterprise App Store" in the available plugins section.
@@ -60,9 +74,32 @@ The upcoming command retrieves the complete list of Enterprise App Store Profile
 appcircle enterprise-app-store profile list
 ```
 
-### Leveraging Environment Variables
+### Using Plugin into Your Script
 
-Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
+```Groovy
+   stage('Publish') {
+      environment {
+         AC_PAT = credentials('AC_PAT')
+      }
+       steps {
+          appcircleEnterpriseAppStore personalAPIToken: AC_PAT,
+                  appPath: '$APP_PATH',
+                  releaseNote: '$RELEASE_NOTE',
+                  summary: '$SUMMARY',
+                  publishType: '$PUBLISH_TYPE' // "0": None, "1": Beta, "2": Live
+       }
+   }
+```
+
+- `personalAPIToken`: The Appcircle Personal API token is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
+- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Testing Distribution Profile.
+- `releaseNote`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
+- `Summary`: Used to provide a brief overview of the version of the app that is about to be published.
+- `publishType`: Specifies the publishing status as either none, beta, or live, and must be assigned the values "0", "1", or "2" accordingly.
+
+:::caution
+If two builds start simultaneously, such as **v1.0.5(5)** and **v1.0.5(5)**, for the same **publishType**, the build that finishes last will result in failure because the same version cannot be added, while the first build to complete will be successfully uploaded and published
+:::
 
 ## References
 
