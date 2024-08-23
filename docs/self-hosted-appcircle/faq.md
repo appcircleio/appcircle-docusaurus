@@ -470,7 +470,7 @@ values={[
 docker cp clean-minio.sh spacetech-snsd-1:/
 ```
 
-- Copt the `jq` tool to the MinIO container.
+- Copy the `jq` tool to the MinIO container.
 
 ```bash
 docker cp deps/bin/jq spacetech-snsd-1:/usr/local/bin/jq
