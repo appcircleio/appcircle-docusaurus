@@ -2,15 +2,15 @@
 title: Team Management
 description: Organizations in Appcircle are separate units with separate "workspaces" that allow collaboration on the same apps with a team.
 tags: [organization, team, settings]
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
 import Screenshot from '@site/src/components/Screenshot';
 
-### Managing the Team Under an Organization
+# Team Management
 
-#### Team Ownership
+### Team Ownership
 
 The creator of a team starts with the Owner role. The Owner role has full administrative privileges for the team and organization management such as adding/removing members or editing the organization details, while any new members can be assigned specific module-based read/write roles.
 
@@ -18,15 +18,37 @@ The creator of a team starts with the Owner role. The Owner role has full admini
 Each organization must have at least one Owner and each user must be an Owner of at least one organization.
 :::
 
-#### Managing Team Members
+### Managing Team Members
 
-As an Owner, you can invite new members simply by entering their email address under the related field in Team Management and pressing the Add button.
+As an Owner, you can invite new members simply by entering their email address under the related field in Team Management and pressing the **Add a New User** button.
 
-The user will be then shown in a "Pending" state until the invitation is accepted. You can also revoke a pending invite by pressing the delete button at the end of the row.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-inviteMember.png' />
 
-Once a user accepts an invite, it will be added to the team as a Member with read only access. You can change the role of any user, including yourself, with the "Manage Roles" button next to the user ID. You can also delete a user by pressing the delete button.
+The user will be then shown in a **Pending** state until the invitation is accepted. At the same time, you can resend the invitation with the **Resend** option. You can also revoke a pending invite by pressing the delete button at the end of the row.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-pending.png' />
+
+Once a user accepts an invite, it will be added to the team as a Member with read only access. You can change the role of any user, including yourself, with the **Manage Roles** button next to the user ID. You can also delete a user by pressing the delete button.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org4.png" />
+
+Within the opened modal, you can specifically adjust the user's roles across all modules on the right side. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-manageRole.png' />
+
+Additionally, the user's assigned organization and sub-organizations will be visible on the left side. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-orgList.png' />
+
+If a sub-organization is created within an organization, everyone in the root organization will be able to see this sub-organization. The roles for these users in the sub-organization will be inherited from the root organization, which is why their permissions will be listed as inherited.
+
+If a user is directly added to the sub-organization, their role will be listed as **Member** instead of **Inherited**.
+
+:::info Sub-organizations
+
+If you want a user to be part of only a specific sub-organization, invite them directly from within that sub-organization.
+
+:::
 
 :::tip
 The search bar within the Team Management area allows you to efficiently manage and locate organization members by searching their email addresses to enhance visibility and streamline the management of both current and newly invited members.
@@ -35,7 +57,7 @@ The search bar within the Team Management area allows you to efficiently manage 
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-search.png" />
 
-### Advanced Role Management
+## Advanced Role Management
 
 :::info
 Team management with fine-grained roles and integration with enterprise identity systems are available in the enterprise plan. Please [contact us](https://appcircle.io/contact) for more information.

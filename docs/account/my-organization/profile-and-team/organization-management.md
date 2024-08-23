@@ -8,7 +8,7 @@ sidebar_position: 1
 import ContentRef from '@site/src/components/ContentRef';
 import Screenshot from '@site/src/components/Screenshot';
 
-### Accessing the My Organization Screen
+## Managing Organization
 
 The "My Organization" screen is accessible from the button with the organization name initials at the bottom left and it contains all operations to manage an organization.
 
@@ -18,15 +18,27 @@ The "My Organization" screen is accessible from the button with the organization
 
 When you create an account, an individual organization for you is created by default with your email address.
 
-In the left column under the organization management screen, you can change your organization name, which is a descriptive name, and you can change your unique organization ID, which is used for identification purposes for that specific organization.
+In the left column under the organization management screen, you can change your organization name, which is a descriptive name, for that specific organization.
+
+:::caution Organization Identifier
+
+You cannot change the Appcircle organization unique ID. This value is a unique identifier assigned by Appcircle.
+
+:::
+
+:::info Organization Name
+
+When your Appcircle organization is first created, your email address is used as the organization name. To avoid confusion when working with multiple organizations, we recommend changing your organization name.
+
+:::
 
 To update these details, simply enter the new values and press _Update_.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org1.png" />
 
-### Working with Multiple Organizations
+## Working with Multiple Organizations
 
-#### Adding an Organization
+### Adding an Organization
 
 To add a new organization, press the "Create New Organization" button on the top-right (denoted by a plus sign) and type in the Organization Name. The organization will be created with the specified name and your role will be set as the owner.
 
@@ -34,9 +46,11 @@ To add a new organization, press the "Create New Organization" button on the top
 If you are on the Starter Plan, you cannot add a new organization. To create more organizations, you need to upgrade to a higher plan.
 :::
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-addOrg.png' />
+
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org2.png" />
 
-#### Adding a Sub Organization
+### Adding a Sub Organization
 
 Appcircle's Sub-Organization feature allows you to create multiple sub-organizations from your organization, providing a way to manage different teams and projects separately. With this feature, each sub-organization is linked to the organization.
 
@@ -68,7 +82,11 @@ If you have an enterprise license, you can create sub-organizations from the org
 
 Multiple sub-organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub-Organization feature, businesses can create and manage multiple sub-organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
 
-#### Switching Organizations
+#### Why do you need sub-organizations?
+
+Sub-organizations are subsidiary organizations linked to the main organization, all of which can be easily managed from within the main organization. The primary purpose of creating sub-organizations is to provide isolation. For example, if you have three different projects within Appcircle, each with its own dedicated teams, the sub-organization structure allows you to isolate these projects and teams from one another, making management more straightforward and efficient.
+
+### Switching Organizations
 
 Once you create an organization or accept an organization invite, you will be switched to that organization automatically. To switch between organizations, press the quick team switching button on the bottom-left on status bar and select an organization from the menu. The currently selected one is indicated with a check mark.
 
@@ -101,7 +119,7 @@ To switch between organizations or sub organizations, follow these steps:
 
 By following these steps, you can seamlessly navigate between different organizations within your account.
 
-#### Leaving or Deleting an Organization
+### Leaving or Deleting an Organization
 
 To leave or delete an organization, press the organization operations button on the top-right (three-dots menu) and select the related operation.
 
