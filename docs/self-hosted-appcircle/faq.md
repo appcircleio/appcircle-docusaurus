@@ -431,6 +431,11 @@ vi clean-minio.sh
 
 - Paste the content below into the file and save it. Don't forget to edit the `MINIO_SECRET_KEY` variable according to yours.
 
+<details>
+  <summary>Click to see the code block.</summary>
+
+<p>
+
 ```bash
 #!/bin/bash
 MINIO_ENDPOINT="http://localhost:9000"
@@ -449,6 +454,9 @@ for OBJECT in $OBJECTS; do
     fi
 done
 ```
+
+</p>
+</details>
 
 - Make the script executable.
 
