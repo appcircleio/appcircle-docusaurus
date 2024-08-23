@@ -298,7 +298,9 @@ For more details about configuring the outbound requests, you can refer to the [
 
 ### Checking and Cleaning the MinIO Temporary Buckets
 
-Check the MinIO bucket sizes.
+Appcircle stores the build outputs, like logs, APKs, and IPA files, in the MinIO buckets. 
+
+If you want to check the MinIO bucket sizes, you can follow the commands below. 
 
 - Navigate to the Appcircle server directory.
 
@@ -338,14 +340,14 @@ podman ps --filter "name=snsd" --format "{{.Names}}"
 
 </Tabs>
 
-- Add the `jq` dependencie:
+- Add the `jq` dependency:
 
 ```bash
 export PATH=$PATH:$(pwd)/deps/bin
 ```
 
 
-- Retrieve the MinIO secret key:
+- Retrieve the MinIO secret key.
 
 ```bash
 yq '.minio.secretKey' projects/spacetech/export/.global.yaml
@@ -364,14 +366,14 @@ values={[
 - Configure the `mc` client.
 
 :::tip
-Please change the `yourMinioSecretKey` with your own MinIO secret key. 
+Please replace `yourMinioSecretKey` with your own MinIO secret key. 
 :::
 
 ```bash
 docker exec -it spacetech-snsd-1 mc config host add local http://localhost:9000 admin yourMinioSecretKey
 ```
 
-- Get the bucket sizes:
+- Get the bucket sizes.
 
 ```bash
 docker exec -it spacetech_snsd_1 mc du -d 2 local
@@ -419,7 +421,7 @@ Sample output should be as follows:
 You shouldn't edit the buckets manually except the `appcircle-local-resource-temp` one.
 :::
 
-If you see that temporary bucket is too large like more than 10GB, files 7 days or older can be cleaned with the following method:
+If you see that the temporary bucket is too large, like more than 10 GB, files 7 days old or older can be cleaned with the following method:
 
 - Create the MinIO cleanup file.
 
@@ -427,7 +429,7 @@ If you see that temporary bucket is too large like more than 10GB, files 7 days 
 vi clean-minio.sh
 ```
 
-- Paste the content below to the file and save it. Don't forget to edit the `MINIO_SECRET_KEY` variable according to yours.
+- Paste the content below into the file and save it. Don't forget to edit the `MINIO_SECRET_KEY` variable according to yours.
 
 ```bash
 #!/bin/bash
