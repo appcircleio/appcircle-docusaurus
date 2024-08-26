@@ -42,9 +42,10 @@ values={[
 set -uo pipefail
 
 PERSONAL_ACCESS_TOKEN="SuperSecretPatTakenFromRootOrganization=="
+# Please be cautious, URLs shouldn't end with '/'.
 API_URL="https://api.appcircle.io" # API URL for Appcircle cloud
 AUTH_URL="https://auth.appcircle.io" # AUTH URL for Appcircle cloud
-STORE_URL="https://mystore.self.appcircle.io" # Your default or custom store URL on Appcircle cloud.
+STORE_URL="https://mycustomstoredomain.appcircle.io" # Your default or custom store URL on Appcircle cloud.
 
 echo -e "Authenticating to the $AUTH_URL \n"
 TOKEN_JSON_RESPONSE=$(curl -fs -X POST "${AUTH_URL}/auth/v1/token" -H "accept: application/json" -H "Content-Type: application/x-www-form-urlencoded" -d "pat=$PERSONAL_ACCESS_TOKEN")
@@ -119,9 +120,10 @@ import sys
 import json
 
 PERSONAL_ACCESS_TOKEN = "SuperSecretPatTakenFromRootOrganization=="
+# Please be cautious, URLs shouldn't end with '/'.
 API_URL = "https://api.self.appcircle.io" # API URL for Appcircle cloud
 AUTH_URL = "https://auth.self.appcircle.io" # AUTH URL for Appcircle cloud
-STORE_URL = "https://mystore.self.appcircle.io" # Your default or custom store URL on Appcircle cloud.
+STORE_URL = "https://mycustomstoredomain.appcircle.io" # Your default or custom store URL on Appcircle cloud.
 
 def main():
     print(f"Authenticating to {AUTH_URL}\n")
