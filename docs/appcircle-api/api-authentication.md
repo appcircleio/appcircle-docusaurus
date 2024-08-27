@@ -13,7 +13,7 @@ The Appcircle API supports authentication with a _Personal API Token_. The token
 
 ### Generating/Managing the Personal API Tokens
 
-To generate a Personal API Token, go to the [My Organization](/account/my-organization#accessing-the-my-organization-screen) screen in the Appcircle dashboard. The Personal API Token section is located on the top right.
+To generate a Personal API Token, go to the [My Organization](/account/my-organization/profile-and-team/organization-management) screen in the Appcircle dashboard. The Personal API Token section is located on the top right.
 
 Press the "Generate Token" button to generate your first token.
 
