@@ -201,8 +201,8 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
 
-<ContentRef url="/account/my-organization/sso-providers-configuration/single-sign-on">SSO Login</ContentRef>
-<ContentRef url="/account/my-organization/ldap-login">LDAP Login</ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on">SSO Login</ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/ldap-login">LDAP Login</ContentRef>
 
 :::info
 
