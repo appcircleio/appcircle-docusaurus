@@ -133,5 +133,3 @@ Both leaving and deleting are irreversible operations and it is advised to use t
   :::
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org5.png" />
-
-###
