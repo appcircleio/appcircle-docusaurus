@@ -317,7 +317,7 @@ status = 301
 
 [[redirects]]
   from = "/account/sso-login/single-sign-on-login"
-  to = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/single-sign-on-login"
   status = 301
 
 [[redirects]]
@@ -402,7 +402,7 @@ status = 301
 
 [[redirects]]
   from = "/account/sso-login/okta-saml"
-  to = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-saml"
   status = 301
 
 [[redirects]]
