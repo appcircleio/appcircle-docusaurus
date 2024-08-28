@@ -1,6 +1,6 @@
 ---
-title: Integrations
-description: Connect your Appcircle account with various app store accounts for seamless application publishing and management.
+title: Appcircle Integrations
+description: Securely manage integrations for credentials, authentications, and notifications to streamline your app publishing workflow in Appcircle.
 tags:
   [
     account,
