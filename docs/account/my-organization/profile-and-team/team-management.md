@@ -1,7 +1,7 @@
 ---
 title: Team Management
-description: Organizations in Appcircle are separate units with separate "workspaces" that allow collaboration on the same apps with a team.
-tags: [organization, team, settings]
+description: Manage team members and roles within Appcircle organizations, including ownership, adding/removing members, and assigning module-based roles to ensure effective collaboration.
+tags: [team, management, roles, permissions, organization]
 sidebar_position: 4
 ---
 

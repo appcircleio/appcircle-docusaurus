@@ -21,5 +21,5 @@ Integrate Okta SAML with your distribution process to enable SSO using Okta as y
 
 For step-by-step guidance on configuring SSO for your distribution, follow the links below:
 
-<ContentRef url="/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"> SSO Login </ContentRef>
-<ContentRef url="/account/my-organization/sso-providers-configuration/sso-login/okta-saml"> Okta SAML </ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/single-sign-on-login"> SSO Login </ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-saml"> Okta SAML </ContentRef>
