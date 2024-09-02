@@ -24,3 +24,28 @@ This documentation provides step-by-step instructions for configuring and settin
 
 <AppcircleLicenseRequirement />
 
+### Technical Requirements
+
+Before using the Appcircle server AMI, there are a couple of things that you need to handle.
+
+#### Microsoft Azure Account
+
+You must have an active Azure account with appropriate permissions to launch virtual machines and work with other related services.
+
+#### Understanding of Azure Services
+
+A basic understanding of Azure services, particularly Virtual Machines, is beneficial.
+
+You should be familiar with virtual machine creation, networking, security groups, and storage configurations.
+
+##### 1. Networking and Security Configuration
+
+You might need to configure networking aspects such as Virtual networks, subnets, route tables, and security groups to properly integrate the instance within the network environment and manage access controls.
+
+##### 2. SSH Key Pairs for Secure Access
+
+You need an SSH key pair to access to the server that you will create securely.
+
+##### 3. Linux System Configuration
+
+Basic familiarity with Linux system configurations and commands is essential since this document will use Linux commands.
