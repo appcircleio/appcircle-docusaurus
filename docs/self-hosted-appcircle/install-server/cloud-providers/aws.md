@@ -8,7 +8,10 @@ sidebar_label: Amazon Web Services (AWS)
 
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import AppcircleLicenseRequirement from '@site/docs/self-hosted-appcircle/install-server/cloud-providers/\_license-requirement.mdx';
 
+
+docs/self-hosted-appcircle/
 ## Overview
 
 An Appcircle server Amazon Machine Image (AMI) is a pre-configured template used to create virtual servers, known as instances, in the Amazon Web Services (AWS) environment.
@@ -19,9 +22,7 @@ Think of it as a snapshot of a server that includes the operating system, necess
 
 ### Appcircle Requirements
 
-If you don't apply a license, you can go on with the package located in the AMI and use the Appcircle server as a "Starter Plan" user. But it's recommended to purchase a license from Appcircle that will increment the license limits and enable you to access the Appcircle resources for future upgrades.
-
-If you are a licensed user, you should [contact us](https://appcircle.io/support/) about the licensed Appcircle server package that includes your actual license.
+<AppcircleLicenseRequirement />
 
 ### Technical Requirements
 
