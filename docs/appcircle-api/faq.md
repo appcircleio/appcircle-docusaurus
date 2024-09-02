@@ -121,8 +121,8 @@ import json
 
 PERSONAL_ACCESS_TOKEN = "SuperSecretPatTakenFromRootOrganization=="
 # Please be cautious, URLs shouldn't end with '/'.
-API_URL = "https://api.self.appcircle.io" # API URL for Appcircle cloud
-AUTH_URL = "https://auth.self.appcircle.io" # AUTH URL for Appcircle cloud
+API_URL = "https://api.appcircle.io" # API URL for Appcircle cloud
+AUTH_URL = "https://auth.appcircle.io" # AUTH URL for Appcircle cloud
 STORE_URL = "https://mycustomstoredomain.appcircle.io" # Your default or custom store URL on Appcircle cloud.
 
 def main():
