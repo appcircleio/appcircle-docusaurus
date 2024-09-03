@@ -33,19 +33,33 @@ In-app updates offer several benefits, including a smoother user experience by e
 
 ### Authentication Requirements
 
-To integrate an in-app update experience, you will need the **Personal Access Token (PAT)**, the **enterprise store prefix**, and the **enterprise store profile ID**.
+To integrate an in-app update experience, you will need the **organization id**, the **profile secret**, the **enterprise store prefix**, the **enterprise store url**, and the **enterprise store profile id**.
 
 ### How to Obtain Integrations Parameters
 
-#### Personal Access Token (PAT)
+#### In-app Update Secret
 
-- For details on generating an Appcircle Personal Access Token, please visit the [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+Steps to Generate a Profile-Specific Secret:
+
+1- Navigate to your enterprise app store profile.
+
+2- In the top-right corner, click on the Settings icon.
+
+3- Select Generate Secret to create a profile-specific secret.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-in-app-secret.png' />
 
 #### Enterprise Store Prefix
 
 Navigate to the Enterprise Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE_4207-Enterprise-Store-Prefix-1.png' />
+
+#### Enterprise Store URL
+
+Navigate to the Enterprise Store module and settings page to find the **STORE URL** information.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-store-url.png' />
 
 #### Enterprise Store Profile Id
 
