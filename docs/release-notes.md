@@ -16,6 +16,21 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.20.5 - 2024-09-02 Android Publish Improvements, In-app Updates and more
+
+### 🆕 New Features
+
+- [In-app updates](/enterprise-app-store/in-app-updates) can now be checked and downloaded via a profile-specific In-App Update Secret using your store URL. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- In-App Update Secrets can now be created specifically for each Enterprise App Store profile within the profile settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- General Play Store app information, such as primary language and contact info, can now be retrieved and updated for Android via Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Play Store metadata can now be managed and imported on AppCircle, including the editing of localizations and screenshots. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- Testing Distribution profiles with public access enabled are now accessible to all users with active authentication within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Testing Group members can now be imported through registered LDAP groups. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Android profile creation has been separated into two options: you can either create a profile manually by typing the package ID, or select it from the Play Store using API credentials. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.20.4 - 2024-08-20 Role Management Updates, Testing Distribution & Enterprise App Store Improvements, Xcode 16.1 Beta 1, Bug Fixes, and more
 
 ### 🆕 New Features
