@@ -37,6 +37,10 @@ https://rubygems.org/gems/fastlane-plugin-appcircle_testing_distribution
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
+:::caution
+If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
+:::
+
 ### How to Add the Appcircle Distribute Action to Your Pipeline
 
 To use the Appcircle Testing Distribution action, install the plugin and add the following step to your pipeline at the end:

@@ -31,6 +31,10 @@ The Appcircle Testing Distribution plugin allows users to upload their apps and 
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
+:::caution
+If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
+:::
+
 ### Install Appcircle Testing Distribution Plugin
 
 Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Then, search for "Appcircle Testing Distribution" in the available plugins section.

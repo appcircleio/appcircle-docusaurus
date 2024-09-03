@@ -36,7 +36,7 @@ https://rubygems.org/gems/fastlane-plugin-appcircle_enterprise_store
 - Ruby 3.2.2
 
 :::caution
-Currently, plugins are only compatible to use with Appcircle Cloud. Self-hosted support will be available in future releases.roadmap.
+Currently, plugins are only compatible to use with Appcircle Cloud. Self-hosted support will be available in future releases.
 :::
 
 ### Getting Started
