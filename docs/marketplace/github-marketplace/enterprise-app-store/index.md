@@ -61,12 +61,12 @@ To use the Appcircle Enterprise App Store action, add the following step to your
 
 Utilize environment variables seamlessly by substituting the parameters with **secrets.NAME** in your task inputs. The action automatically retrieves values from the specified environment variables within your pipeline.
 
-:::caution
-If two workflows start simultaneously, the last workflow to reach the publish step will be the up-to-date version on the Enterprise App Store. If these workflows building the same package version, the first publish will be successful, while later deployments with the same version will fail.
-:::
-
 :::caution Build Steps Order
 You should add this task extension after completing your build steps.
+:::
+
+:::caution
+If two workflows start simultaneously, the last workflow to reach the publish step will be the up-to-date version on the Enterprise App Store. If these workflows building the same package version, the first publish will be successful, while later deployments with the same version will fail.
 :::
 
 ## References
