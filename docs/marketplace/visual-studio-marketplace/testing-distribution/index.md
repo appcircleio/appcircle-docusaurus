@@ -48,7 +48,8 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 ```
 
 :::caution Build Steps Order
-You should add this task extension after completing your build steps.
+Ensure that this action is added after build steps have been completed.
+
 :::
 
 ## Leveraging Environment Variables

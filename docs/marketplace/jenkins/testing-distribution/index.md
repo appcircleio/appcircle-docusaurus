@@ -74,7 +74,8 @@ Additionally, remember to place the plugin after your build steps as you will ne
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
 :::caution Build Steps Order
-You should add this task extension after completing your build steps.
+Ensure that this action is added after build steps have been completed.
+
 :::
 
 :::caution

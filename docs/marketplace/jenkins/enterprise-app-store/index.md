@@ -79,7 +79,8 @@ Additionally, remember to place the plugin after your build steps as you will ne
 - `publishType`: Specifies the publishing status as either none, beta, or live, and must be assigned the values "0", "1", or "2" accordingly.
 
 :::caution Build Steps Order
-You should add this task extension after completing your build steps.
+Ensure that this action is added after build steps have been completed.
+
 :::
 
 :::caution

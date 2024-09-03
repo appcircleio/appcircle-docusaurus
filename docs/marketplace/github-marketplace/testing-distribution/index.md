@@ -58,7 +58,8 @@ To install the Appcircle Testing Distribution action, add the following step to 
 Utilize environment variables seamlessly by substituting the parameters with **secrets.NAME** in your task inputs. The action automatically retrieves values from the specified environment variables within your pipeline.
 
 :::caution Build Steps Order
-You should add this task extension after completing your build steps.
+Ensure that this action is added after build steps have been completed.
+
 :::
 
 :::caution

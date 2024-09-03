@@ -34,7 +34,8 @@ In order to install Appcircle Enterprise App Store task extension, follow these 
    3.1. You can learn more about getting your personal api token [here](https://docs.appcircle.io/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
 :::info
-You should add this task extension after completing your build steps.
+Ensure that this action is added after build steps have been completed.
+
 :::
 
 After filling out the required fields, the `AppcircleEnterpriseStore@0` task will appear in your pipeline steps as shown below:
