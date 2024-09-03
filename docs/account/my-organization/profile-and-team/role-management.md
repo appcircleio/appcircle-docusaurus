@@ -304,6 +304,8 @@ Manage and Upload Apps to Enterprise App Store.
 | App Version          | List App Versions                      | ✅     | ✅       | ✅        | ✅             | ✅      |
 | App Version Actions  | Publish App Version Live/Beta Channels | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | App Version Actions  | Notify Users                           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Create/Delete In-app Update            | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Get In-app Update                      | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Settings             | Update Store Domain                    | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | Update Store Customization             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
