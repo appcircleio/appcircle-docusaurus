@@ -78,11 +78,16 @@ To fetch app versions and download the binary, you first need to obtain an acces
 
   <TabItem value="android">
     ```java
+    package com.example.appcircle_sample_android;
+
     import okhttp3.*;
     import com.google.gson.Gson;
     import java.io.IOException;
     import java.util.concurrent.TimeUnit;
     import com.google.gson.annotations.SerializedName;
+
+    import org.json.JSONException;
+    import org.json.JSONObject;
 
     class AuthModel {
         @SerializedName("access_token")
@@ -102,31 +107,41 @@ To fetch app versions and download the binary, you first need to obtain an acces
                 .readTimeout(30, TimeUnit.SECONDS)
                 .build();
 
-        public static AuthModel getAccessToken(String pat) throws IOException {
+        public static AuthModel getAccessToken() throws IOException {
             HttpUrl url = new HttpUrl.Builder()
                     .scheme("https")
-                    .host("auth.appcircle.io")
+                    .host(Environment.STORE_URL)
+                    .addPathSegment("api")
                     .addPathSegment("auth")
-                    .addPathSegment("v2")
                     .addPathSegment("token")
                     .build();
 
-            RequestBody formBody = new FormBody.Builder()
-                    .add("pat", pat)
-                    .add("scope", "openid email profile")
-                    .build();
+            JSONObject jsonBody = new JSONObject();
+            try {
+                jsonBody.put("OrganizationId", Environment.ORGANIZATION_ID);
+                jsonBody.put("ProfileId", Environment.PROFILE_ID);
+                jsonBody.put("Secret", Environment.SECRET);
+            } catch (JSONException e) {
+                throw new IOException("Error creating JSON body", e);
+            }
+
+            RequestBody body = RequestBody.create(
+                    MediaType.parse("application/json; charset=utf-8"),
+                    jsonBody.toString()
+            );
 
             Request request = new Request.Builder()
                     .url(url)
-                    .post(formBody)
-                    .addHeader("accept", "application/json")
-                    .addHeader("Content-Type", "application/x-www-form-urlencoded")
+                    .post(body)
+                    .addHeader("Content-Type", "application/json")
+                    .addHeader("Accept", "application/json")
                     .build();
 
             try (Response response = client.newCall(request).execute()) {
                 if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
 
                 String responseBody = response.body().string();
+                System.out.println("Response: " + responseBody);
 
                 Gson gson = new Gson();
                 return gson.fromJson(responseBody, AuthModel.class);
@@ -141,23 +156,29 @@ To fetch app versions and download the binary, you first need to obtain an acces
   <TabItem value="swift">
     ```swift
     extension API {
-        func getAccessToken(pat: String) async throws -> AuthModel {
+        func getAccessToken(organizationId: String, secret: String, profileId: String) async throws -> AuthModel {
             var components = URLComponents()
             components.scheme = apiConfig.scheme
             components.host = apiConfig.host
-            components.path = "/auth/v2/token"
+            components.path = "/api/auth/token"
+            
             guard let url = components.url else {
                 throw HTTPError.invalidUrl
             }
+            
             var request = URLRequest(url: url)
-
             request.httpMethod = HTTPMethod.POST.rawValue
-            request.setValue("application/json", forHTTPHeaderField: "accept")
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
-            let parameters = "pat=\(pat)&scope=openid email profile"
-            request.httpBody = parameters.data(using: .utf8)
-
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            
+            let parameters: [String: Any] = [
+                "OrganizationId": organizationId,
+                "ProfileId": profileId,
+                "Secret": secret
+            ]
+            
+            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+            
             return try await apiFetcher.request(request: request)
         }
     }
@@ -168,19 +189,22 @@ To fetch app versions and download the binary, you first need to obtain an acces
   <TabItem value="react-native">
     ```js
     import axios from 'axios';
+    import Environment from '../Environment';
 
-    const AC_AUTH_HOSTNAME = 'https://auth.appcircle.io';
+    export const getACToken = async (profileId: string) => {
+      const endpointURL = `${Environment.STORE_URL}/api/auth/token`;
 
-    export const getACToken = async (options: {pat: string}) => {
-      const endpointURL = `${AC_AUTH_HOSTNAME}/auth/v2/token`;
-      console.log(options.pat);
       const response = await axios.post(
         endpointURL,
-        `pat=${encodeURIComponent(options.pat)}&scope=openid email profile`,
+        {
+          OrganizationId: Environment.ORGANIZATION_ID,
+          ProfileId: profileId,
+          Secret: Environment.STORE_SECRET,
+        },
         {
           headers: {
+            'Content-Type': 'application/json',
             accept: 'application/json',
-            'content-type': 'application/x-www-form-urlencoded',
           },
         },
       );
@@ -206,11 +230,16 @@ Fetch all available versions and compare them with the current version to determ
 
   <TabItem value="android">
     ```java
+    package com.example.appcircle_sample_android;
+
     import okhttp3.Request;
     import okhttp3.OkHttpClient;
     import okhttp3.Response;
     import okhttp3.HttpUrl;
     import com.google.gson.Gson;
+    import com.google.gson.JsonArray;
+    import com.google.gson.JsonObject;
+    import com.google.gson.JsonParser;
     import com.google.gson.reflect.TypeToken;
     import java.io.IOException;
     import java.lang.reflect.Type;
@@ -252,11 +281,12 @@ Fetch all available versions and compare them with the current version to determ
         private final Gson gson = new Gson();
 
         public List<AppVersion> getAppVersions(String accessToken, String profileId) throws IOException {
-            HttpUrl url = HttpUrl.parse(BASE_URL + "/store/v2/profiles/" + profileId + "/app-versions");
+            HttpUrl url = HttpUrl.parse("https://" + Environment.STORE_URL + "/api/app-versions");
 
             if (url == null) {
                 throw new IOException("Invalid URL");
             }
+
             Request request = new Request.Builder()
                     .url(url)
                     .get()
@@ -268,9 +298,15 @@ Fetch all available versions and compare them with the current version to determ
                 if (!response.isSuccessful()) {
                     throw new IOException("Unexpected code " + response);
                 }
+
                 String responseBody = response.body().string();
+                System.out.println("Response: " + responseBody); // For debugging
+
+                JsonObject jsonObject = JsonParser.parseString(responseBody).getAsJsonObject();
+                JsonArray dataArray = jsonObject.getAsJsonArray("data");
+
                 Type listType = new TypeToken<List<AppVersion>>() {}.getType();
-                return gson.fromJson(responseBody, listType);
+                return gson.fromJson(dataArray, listType);
             }
         }
     }
@@ -281,11 +317,11 @@ Fetch all available versions and compare them with the current version to determ
   <TabItem value="swift">
     ```swift
     extension API {
-        func getAppVersions(accessToken: String, profileId: String) async throws -> [AppVersion] {
+        func getAppVersions(accessToken: String) async throws -> [AppVersion] {
             var components = URLComponents()
             components.scheme = apiConfig.scheme
             components.host = apiConfig.host
-            components.path = "/store/v2/profiles/\(profileId)/app-versions"
+            components.path = "/api/app-versions"
             guard let url = components.url else {
                 throw HTTPError.invalidUrl
             }
@@ -303,11 +339,8 @@ Fetch all available versions and compare them with the current version to determ
 
   <TabItem value="react-native">
     ```js
-    export const getAppVersions = async (
-      accessToken: string,
-      profileId: string,
-    ) => {
-      const url = `https://api.appcircle.io/store/v2/profiles/${profileId}/app-versions`;
+    export const getAppVersions = async (accessToken: string) => {
+      const url = `${Environment.STORE_URL}/api/app-versions`;
 
       try {
         const response = await axios.get(url, {
@@ -317,7 +350,7 @@ Fetch all available versions and compare them with the current version to determ
           },
         });
 
-        return response.data;
+        return response.data.data;
       } catch (error) {
         console.error('Failed to get app versions:', error);
       }
@@ -517,7 +550,7 @@ If a newer version is available, generate the platform-specific download URL and
         @Override
         protected AuthModel doInBackground(String... params) {
             try {
-                AuthModel response = AuthService.getAccessToken(params[0]);
+                AuthModel response = AuthService.getAccessToken();
                 fetchAppVersions(response.getAccessToken(), Environment.PROFILE_ID);
 
                 return response;
@@ -563,16 +596,17 @@ If a newer version is available, generate the platform-specific download URL and
             }
         }).start();
     }
+
     ```
 
   </TabItem>
 
   <TabItem value="swift">
     ```swift
-    func checkForUpdate(pat: String, profileId: String, storeId: String, userEmail: String) async throws -> URL? {
+    func checkForUpdate(organizationId: String, secret: String, profileId: String, storeURL: String, userEmail: String) async throws -> URL? {
         do {
-            let authResponse = try await self.authApi.getAccessToken(pat: pat)
-            let appVersions = try await self.api.getAppVersions(accessToken: authResponse.accessToken, profileId: profileId)
+            let authResponse = try await self.authApi.getAccessToken(organizationId: organizationId, secret: secret, profileId: profileId)
+            let appVersions = try await self.api.getAppVersions(accessToken: authResponse.accessToken)
             let bundle = Bundle.main
             let currentVersion = bundle.infoDictionary?["CFBundleShortVersionString"] as? String
             guard let currentVersion = currentVersion else {
@@ -585,7 +619,7 @@ If a newer version is available, generate the platform-specific download URL and
                 return nil
             }
             
-            guard let downloadURL  = URL(string: "itms-services://?action=download-manifest&url=https://\(storeId).store.appcircle.io/api/profile/\(profileId)/appVersions/\(availableVersion.id)/download-update/\(authResponse.accessToken)/user/\(userEmail)") else {
+            guard let downloadURL  = URL(string: "itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)/user/\(userEmail)") else {
                 print("Latest Version URL could not created")
                 return nil
             }
@@ -595,7 +629,7 @@ If a newer version is available, generate the platform-specific download URL and
             print(error)
             return nil
         }
-    }    
+    }
     ```
 
   </TabItem>
@@ -603,21 +637,20 @@ If a newer version is available, generate the platform-specific download URL and
   <TabItem value="react-native">
     ```js
     export const checkForUpdate = async (params: {
-      pat: string;
       storePrefix: string;
+      storeHost: string;
       iOSProfileId: string;
       androidProfileId: string;
       currentVersion: string;
       userEmail: string;
     }): Promise<{updateURL: string; version: string} | undefined> => {
       try {
-        const {access_token} = await getACToken({pat: params.pat});
-    
-        const appVersions = await getAppVersions(
-          access_token,
+        const {access_token} = await getACToken(
           Platform.OS === 'ios' ? params.iOSProfileId : params.androidProfileId,
         );
-    
+
+        const appVersions = await getAppVersions(access_token);
+
         const latestVersion = getLatestVersion(params.currentVersion, appVersions);
         if (latestVersion) {
           const downloadUrl = createDownloadUrl(
@@ -627,12 +660,12 @@ If a newer version is available, generate the platform-specific download URL and
             access_token,
             params.userEmail,
           );
-    
+
           if (!downloadUrl) {
             console.error('Failed to create download URL');
             return undefined;
           }
-    
+
           return {
             updateURL: downloadUrl,
             version: latestVersion.version,
@@ -687,28 +720,28 @@ After obtaining the download URL for a newer version, display an alert with opti
         new GetAccessTokenTask().execute(Environment.PAT);
     }
 
-    private void showUpdateDialog(final String storePrefix, final String profileId, final AppVersion appVersion, final String accessToken, final String userEmail) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Update Available")
-                    .setMessage(appVersion.getVersion() + " version is available. Do you want to update?")
-                    .setPositiveButton("Update", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            String baseDownloadURL = "https://%s.store.appcircle.io/api/profile/%s/appVersions/%s/download-update/%s/user/%s";
-                            Uri downloadURL =  Uri.parse(String.format(baseDownloadURL, storePrefix, profileId, appVersion.getId(), accessToken, userEmail));
-                            Intent intent = new Intent(Intent.ACTION_VIEW, downloadURL);
-                            startActivity(intent);
-                        }
-                    })
-                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            // Code to run when "Cancel" is pressed
-                            dialog.dismiss();
-                        }
-                    })
-                    .show();
-        }
+    private void showUpdateDialog(final String storeURL, final String profileId, final AppVersion appVersion, final String accessToken, final String userEmail) {
+        new AlertDialog.Builder(this)
+                .setTitle("Update Available")
+                .setMessage(appVersion.getVersion() + " version is available. Do you want to update?")
+                .setPositiveButton("Update", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String baseDownloadURL = "https://%s/api/app-versions/%s/download-version/%s/user/%s";
+                        Uri downloadURL =  Uri.parse(String.format(baseDownloadURL, storeURL, appVersion.getId(), accessToken, userEmail));
+                        Intent intent = new Intent(Intent.ACTION_VIEW, downloadURL);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Code to run when "Cancel" is pressed
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
     ```
 
   </TabItem>
@@ -729,7 +762,7 @@ After obtaining the download URL for a newer version, display an alert with opti
                     .onAppear {
                         let updateChecker = UpdateChecker()
                         Task {
-                            if let updateURL = try await updateChecker.checkForUpdate(pat: Configs.pat, profileId: Configs.profileId, storePrefix: Configs.storeId, userEmail: "USER_EMAIL") {
+                            if let updateURL = try await updateChecker.checkForUpdate(organizationId: Environments.organizationId, secret: Environments.secret, profileId: Environments.profileId, storeURL: Environments.storeURL, userEmail: "USER_EMAIL") {
                                 self.updateURL = updateURL
                                 self.showAlert.toggle()
                             }
@@ -764,10 +797,10 @@ After obtaining the download URL for a newer version, display an alert with opti
     useEffect(() => {
       const updateControl = async (currentVersion: string) => {
         const updateInfo = await checkForUpdate({
-          pat: Configs.PAT,
-          storePrefix: Configs.storePrefix,
-          iOSProfileId: Configs.PROFILE_ID,
-          androidProfileId: Configs.ANDROID_PROFILE_ID,
+          storePrefix: Environment.STORE_PREFIX,
+          storeHost: Environment.STORE_HOST,
+          iOSProfileId: Environment.IOS_PROFILE_ID,
+          androidProfileId: Environment.ANDROID_PROFILE_ID,
           currentVersion,
           userEmail: 'USER_EMAIL',
         });
@@ -779,6 +812,7 @@ After obtaining the download URL for a newer version, display an alert with opti
               {
                 text: 'Update',
                 onPress: () => {
+                  console.log('updateInfo.updateURL', updateInfo.updateURL);
                   Linking.openURL(updateInfo.updateURL);
                 },
               },
