@@ -9,6 +9,8 @@ sidebar_label: Amazon Web Services (AWS)
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import AppcircleLicenseRequirement from '@site/docs/self-hosted-appcircle/install-server/cloud-providers/\_license-requirement.mdx';
+import ConnectingRunners from '@site/docs/self-hosted-appcircle/install-server/cloud-providers/\_connecting-runners.mdx';
+import ConfigureServer from '@site/docs/self-hosted-appcircle/install-server/cloud-providers/\_configure-server.mdx';
 
 
 docs/self-hosted-appcircle/
@@ -211,80 +213,11 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 
 ### Configure Server
 
-After you successfully connect to the Appcircle instance, the first thing you should do is start a system update. Although the Appcircle AMI is up-to-date, it is recommended that you perform security updates again.
-
-```bash
-sudo apt update && \
-sudo apt upgrade
-```
-
-The Appcircle server directory is located in the `$HOME` directory as the `appcircle-server` folder.
-
-```bash
-ls -l "$HOME"
-```
-
-Change the current working directory to that folder.
-
-```bash
-cd "$HOME/appcircle-server"
-```
-
-:::info
-
-**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](/self-hosted-appcircle/update) the pre-installed package in the instance.
-
-Also, put the `cred.json` file you received from us into the `appcircle-server` folder.
-
-Please [contact us](https://appcircle.io/support/) to purchase an enterprise license if you don't have one.
-
-:::
-
-Now you're ready to configure the Appcircle server according to your needs. Follow the detailed [configuration](/self-hosted-appcircle/install-server/docker#3-configure) steps.
-
-You should also configure the [DNS](/self-hosted-appcircle/install-server/docker#4-dns-settings) settings for your Appcircle server instance. Create `A` and `CNAME` records for your instance.
-
-After the configuration is done, [initialize the project](/docs/self-hosted-appcircle/install-server/docker.md#5-initialize-vault), [run the server](/self-hosted-appcircle/install-server/docker#6-run-server), and go to the Appcircle server dashboard using the main [domain](/self-hosted-appcircle/install-server/docker#4-dns-settings) you defined.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws22-dashboard.png' />
+<ConfigureServer />
 
 ## Connecting Runners
 
-When you complete installation successfully by following the above steps, you're ready for your first build. :tada:
-
-But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply related the guidelines [here](/self-hosted-appcircle/self-hosted-runner/installation).
-
-:::tip
-Appcircle also supports the installation and execution of the runners on AWS.
-
-You can see the details about how to configure a runner on AWS **[here](/self-hosted-appcircle/self-hosted-runner/cloud-providers/aws)**.
-:::
-
-The self-hosted runner section in the documents has all the details about runners and their configuration.
-
-:::caution
-
-By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
-
-- `https://api.appcircle.io/build/v1`
-
-:point_up: You need to change its value with your self-hosted Appcircle server's API URL.
-
-Assuming our sample scenario explained in [configuration](/self-hosted-appcircle/install-server/docker#3-configure), its value should be
-
-- `http://api.appcircle.spacetech.com/build/v1`
-
-for our sample scenario.
-
-:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
-
-Please note that you should do this before [registering](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
-
-:::
-
-Considering system performance, it will be good to install self-hosted runners on other machines. A self-hosted Appcircle server should run on a dedicated machine itself.
-
-You can install any number of runners according to your needs and connect them to a self-hosted Appcircle server.
+<ConnectingRunners />
 
 <NeedHelp />
 
