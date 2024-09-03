@@ -510,9 +510,17 @@ tart clone macOS_240514 vm01
   </TabItem>
 </Tabs>
 
+:::tip
+It's not recommended to delete the base image (`macOS_240514`) as it won't save disk space due to copy-on-write file system on macOS. You can safely re-create `vm01` from the same base image `macOS_240514` without downloading and extracting again from network if needed. 
+:::
+
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
 
 ### Configure Base Runner VMs
+
+Be cautious when updating the base VMs (`vm01` and `vm02`). Any changes made on these base VMs are persisted and may affect disk usage, keychain, and cache files on the runner VMs created from them.
+
+If you're freshly creating the base VMs, you can ignore this warning. However, if you've already registered runners to your Appcircle server and want to make updates to the base VMs, it's highly recommended to [disable the runner](/docs/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-runners.md#monitoring-self-hosted-runners) from the Appcircle dashboard to prevent builds from running on the base VMs.
 
 #### Configure Runner 1
 
