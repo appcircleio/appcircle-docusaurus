@@ -27,8 +27,6 @@ The Appcircle Enterprise App Store plugin enables users to publish their apps to
 **Compatible Agents:**
 
 - macOS 14.2, 14.5
-- Ubuntu
-- Ventura
 
 **Supported Version:**
 
@@ -67,7 +65,7 @@ Additionally, remember to place the plugin after your build steps as you will ne
        steps {
           appcircleEnterpriseAppStore personalAPIToken: AC_PAT,
                   appPath: '$APP_PATH',
-                  releaseNote: '$RELEASE_NOTE',
+                  releaseNotes: '$RELEASE_NOTE',
                   summary: '$SUMMARY',
                   publishType: '$PUBLISH_TYPE' // "0": None, "1": Beta, "2": Live
        }
@@ -79,6 +77,10 @@ Additionally, remember to place the plugin after your build steps as you will ne
 - `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
 - `summary`: Used to provide a brief overview of the version of the app that is about to be published.
 - `publishType`: Specifies the publishing status as either none, beta, or live, and must be assigned the values "0", "1", or "2" accordingly.
+
+:::caution Build Steps Order
+You should add this task extension after completing your build steps.
+:::
 
 :::caution
 If two workflows start simultaneously, the last workflow to reach the publish step will be the up-to-date version on the Enterprise App Store. If these workflows building the same package version, the first publish will be successful, while later deployments with the same version will fail.

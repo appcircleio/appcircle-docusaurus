@@ -25,6 +25,6 @@ Read more about Testing Distribution
 ### Enterprise App Store
 
 Your own mobile app store to provide access to in-house apps with a customizable mobile storefront.
-<ContentRef url="/marketplace/jenkins/enterprise-store">
+<ContentRef url="/marketplace/jenkins/enterprise-app-store">
 Read more about Enterprise App Store
 </ContentRef>

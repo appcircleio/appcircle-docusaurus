@@ -57,6 +57,10 @@ To use the Appcircle Enterprise App Store action, add the following step to your
 - `summary`: Used to provide a brief overview of the version of the app that is about to be published.
 - `publishType`: Specifies the publishing status as either none, beta, or live, and must be assigned the values "0", "1", or "2" accordingly.
 
+## Leveraging Environment Variables
+
+Utilize environment variables seamlessly by substituting the parameters with **secrets.NAME** in your task inputs. The action automatically retrieves values from the specified environment variables within your pipeline.
+
 :::caution
 If two workflows start simultaneously, the last workflow to reach the publish step will be the up-to-date version on the Enterprise App Store. If these workflows building the same package version, the first publish will be successful, while later deployments with the same version will fail.
 :::
@@ -64,10 +68,6 @@ If two workflows start simultaneously, the last workflow to reach the publish st
 :::caution Build Steps Order
 You should add this task extension after completing your build steps.
 :::
-
-## Leveraging Environment Variables
-
-Utilize environment variables seamlessly by substituting the parameters with **secrets.NAME** in your task inputs. The action automatically retrieves values from the specified environment variables within your pipeline.
 
 ## References
 

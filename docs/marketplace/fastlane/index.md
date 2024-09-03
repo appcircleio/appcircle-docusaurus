@@ -25,6 +25,6 @@ Read more about Testing Distrbiution
 ### Enterprise App Store
 
 Your own mobile app store to provide access to in-house apps with a customizable mobile storefront.
-<ContentRef url="/marketplace/fastlane/enterprise-store">
+<ContentRef url="/marketplace/fastlane/enterprise-app-store">
 Read more about Enterprise App Store
 </ContentRef>

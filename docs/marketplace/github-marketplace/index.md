@@ -25,6 +25,6 @@ Read more about Testing Distribution
 ### Enterprise App Store
 
 Your own mobile app store to provide access to in-house apps with a customizable mobile storefront.
-<ContentRef url="/marketplace/github-marketplace/enterprise-store">
+<ContentRef url="/marketplace/github-marketplace/enterprise-app-store">
 Read more about Enterprise App Store
 </ContentRef>

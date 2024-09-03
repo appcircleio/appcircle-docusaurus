@@ -31,10 +31,6 @@ https://github.com/marketplace/actions/appcircle-testing-distribution
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
-:::caution
-If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
-:::
-
 ### How to Add the Appcircle Testing Distribution Action to Your Pipeline
 
 To install the Appcircle Testing Distribution action, add the following step to your pipeline at the end:
@@ -57,13 +53,17 @@ To install the Appcircle Testing Distribution action, add the following step to 
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
+## Leveraging Environment Variables
+
+Utilize environment variables seamlessly by substituting the parameters with **secrets.NAME** in your task inputs. The action automatically retrieves values from the specified environment variables within your pipeline.
+
 :::caution Build Steps Order
 You should add this task extension after completing your build steps.
 :::
 
-## Leveraging Environment Variables
-
-Utilize environment variables seamlessly by substituting the parameters with **secrets.NAME** in your task inputs. The action automatically retrieves values from the specified environment variables within your pipeline.
+:::caution
+If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
+:::
 
 ## References
 
