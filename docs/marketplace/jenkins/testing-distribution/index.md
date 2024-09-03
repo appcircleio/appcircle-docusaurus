@@ -21,16 +21,14 @@ The Appcircle Testing Distribution plugin allows users to upload their apps and 
 
 **Compatible Agents:**
 
-- macOS
-- Ubuntu
-- Ventura
+- macOS 14.2, 14.5
 
 **Supported Version:**
 
 - Jenkins 2.440.3
 
 :::caution
-We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
 ### Install Appcircle Testing Distribution Plugin
@@ -72,7 +70,7 @@ Additionally, remember to place the plugin after your build steps as you will ne
 - `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
-- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Testing Distribution Profile.
+- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
 ## References

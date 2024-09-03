@@ -19,16 +19,14 @@ The Appcircle Testing Distribution plugin allows users to upload their apps and 
 
 ### Discover Action
 
-You can discover more about this action and install it by:
+You can discover more about this action and install it from:
 https://rubygems.org/gems/fastlane-plugin-appcircle_testing_distribution
 
 ## System Requirements
 
 **Compatible Agents:**
 
-- macOS
-- Ubuntu
-- Ventura
+- macOS 14.2, 14.5
 
 **Supported Version:**
 
@@ -36,12 +34,12 @@ https://rubygems.org/gems/fastlane-plugin-appcircle_testing_distribution
 - Ruby 3.2.2
 
 :::caution
-We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
-### How to Add the Appcircle Distribute Task Extension to Your Pipeline
+### How to Add the Appcircle Distribute Action to Your Pipeline
 
-To install the Appcircle Testing Distribution action, install the plugin and add the following step to your pipeline at the end:
+To use the Appcircle Testing Distribution action, install the plugin and add the following step to your pipeline at the end:
 
 ```bash
 fastlane add_plugin appcircle_testing_distribution
@@ -60,7 +58,7 @@ fastlane add_plugin appcircle_testing_distribution
 - `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
-- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Testing Distribution Profile.
+- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
 :::caution Build Steps Order

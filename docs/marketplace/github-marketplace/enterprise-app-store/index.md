@@ -23,22 +23,21 @@ The Appcircle Enterprise App Store action allows users to publish their apps to 
 
 **Compatible Agents:**
 
-- macOS
-- Ubuntu
-- Ventura
+- macos-14 (arm64)
+- Ubuntu-22.04
 
 :::caution
-We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
 ### Discover Action
 
-You can discover more about this action and install it by:
+You can discover more about this action and install it from:
 https://github.com/marketplace/actions/appcircle-enterprise-store
 
-### How to Add the Appcircle Enterprise App Store Task Extension to Your Pipeline
+### How to Add the Appcircle Enterprise App Store Action to Your Pipeline
 
-To install the Appcircle Enterprise App Store action, add the following step to your pipeline at the end:
+To use the Appcircle Enterprise App Store action, add the following step to your pipeline at the end:
 
 ```yml
 - name: Publish App to Appcircle Enterprise App Store
@@ -53,13 +52,13 @@ To install the Appcircle Enterprise App Store action, add the following step to 
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
-- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Testing Distribution Profile.
-- `releaseNote`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
-- `Summary`: Used to provide a brief overview of the version of the app that is about to be published.
+- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
+- `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
+- `summary`: Used to provide a brief overview of the version of the app that is about to be published.
 - `publishType`: Specifies the publishing status as either none, beta, or live, and must be assigned the values "0", "1", or "2" accordingly.
 
 :::caution
-If two builds start simultaneously, such as **v1.0.5(5)** and **v1.0.5(5)**, for the same **publishType**, the build that finishes last will result in failure because the same version cannot be added, while the first build to complete will be successfully uploaded and published
+If two workflows start simultaneously, the last workflow to reach the publish step will be the up-to-date version on the Enterprise App Store. If these workflows building the same package version, the first publish will be successful, while later deployments with the same version will fail.
 :::
 
 :::caution Build Steps Order

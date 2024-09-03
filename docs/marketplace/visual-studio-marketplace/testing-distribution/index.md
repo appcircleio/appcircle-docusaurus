@@ -21,7 +21,7 @@ import Screenshot from '@site/src/components/Screenshot';
 You can discover more about this extension and install it by:
 https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
-### How to Add the Appcircle Distribute Task Extension to Your Pipeline
+### How to Add the Appcircle Distribute Action to Your Pipeline
 
 To install the Appcircle Distribute Task Extension, follow these steps:
 
@@ -36,10 +36,6 @@ To install the Appcircle Distribute Task Extension, follow these steps:
 
    3.2. Find out how to create a distribution profile [here](/testing-distribution/create-or-select-a-distribution-profile)
 
-:::caution Build Steps Order
-You should add this task extension after completing your build steps.
-:::
-
 After filling out the required fields, the `AppcircleTestingDistribution@0` task will appear in your pipeline steps as shown below:
 
 ```yaml
@@ -50,6 +46,10 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
     appPath: "BUILD_PATH" # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
     message: "Sample Message" # Custom message for your testers
 ```
+
+:::caution Build Steps Order
+You should add this task extension after completing your build steps.
+:::
 
 ## Leveraging Environment Variables
 

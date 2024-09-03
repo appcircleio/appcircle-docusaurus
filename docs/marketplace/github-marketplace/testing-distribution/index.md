@@ -17,22 +17,21 @@ The Appcircle Testing Distribution action allows users to upload their apps and 
 
 ### Discover Action
 
-You can discover more about this action and install it by:
+You can discover more about this action and install it from:
 https://github.com/marketplace/actions/appcircle-testing-distribution
 
 ## System Requirements
 
 **Compatible Agents:**
 
-- macOS
-- Ubuntu
-- Ventura
+- macos-14 (arm64)
+- Ubuntu-22.04
 
 :::caution
-We currently support **Appcircle Cloud**, with **self-hosted** support planned in our roadmap.
+Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
-### How to Add the Appcircle Testing Distribution Task Extension to Your Pipeline
+### How to Add the Appcircle Testing Distribution Action to Your Pipeline
 
 To install the Appcircle Testing Distribution action, add the following step to your pipeline at the end:
 
@@ -51,7 +50,7 @@ To install the Appcircle Testing Distribution action, add the following step to 
 - `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
-- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Testing Distribution Profile.
+- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
 :::caution Build Steps Order
