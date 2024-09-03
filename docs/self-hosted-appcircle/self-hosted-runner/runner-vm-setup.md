@@ -1275,3 +1275,26 @@ Below step in [update base images](#update-base-images) section,
 should be like this in this case.
 
 > 2- Run `vm01` base image. `screen -d -m tart run vm01`
+
+
+### Deleting Xcode simulator runtimes to create free disk space
+
+Occasionally, you may need to manage disk space on your macOS base VM due to storage constraints or other reasons. One way to free up disk space is by deleting unused Xcode simulator runtimes.
+
+To list the installed Xcode simulator runtimes, run the following command on your base VM:
+
+```bash
+xcrun simctl runtime list 2>/dev/null
+```
+
+If you determine that certain watchOS or tvOS runtimes are not needed, you can delete them to free up disk space:
+
+```bash
+xcrun simctl delete <runtime_id>
+```
+
+:::caution
+Xcode simulator runtimes are essential for testing and debugging iOS, watchOS, and tvOS applications on virtual devices. Deleting a runtime will prevent you from running or debugging an app on that specific device. Other simulators and runtimes will remain unaffected.
+
+Be cautious when deleting Xcode simulator runtimes, as this action is irreversible. Removing a simulator runtime can impact the Xcode build process. For example, if you delete a watchOS runtime, you will no longer be able to build an iOS app that targets the deleted watchOS runtime. Ensure that the runtime you plan to delete is not required for your build pipeline.
+:::
