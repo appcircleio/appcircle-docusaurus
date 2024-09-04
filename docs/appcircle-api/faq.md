@@ -26,12 +26,12 @@ You should change the required variables for your own needs before using the sam
 
 If you are a cloud Appcircle server user, you should change the variables below:
 
-- `PERSONAL_API_TOKEN`: The PAT that created from the root organization.
-- `STORE_URL`: The default or custom store URL you use to access to your Appcircle Enterprise App Store.
+- `PERSONAL_API_TOKEN`: The PAT created from the root organization.
+- `STORE_URL`: The default or custom store URL you use to access your Appcircle Enterprise App Store.
 
 If you are using the self-hosted Appcircle server, you should change the following variables in addition to the ones above:
 
-- `API_URL`: The API URL for your self-hosted Appcircle server. If you are accessing Appcircle dashboard with a URL like `https://my.appcircle.spacetech.com`, your `API` URL will usually be`https://api.appcircle.spacetech.com`.
+- `API_URL`: The API URL for your self-hosted Appcircle server. If you are accessing Appcircle dashboard with a URL like `https://my.appcircle.spacetech.com`, your `API` URL will usually be `https://api.appcircle.spacetech.com`.
 - `AUTH_URL`: The Authentication URL for your self-hosted Appcircle server. If you are accessing Appcircle dashboard with a URL like `https://my.appcircle.spacetech.com`, your `AUTH` URL will usually be `https://auth.appcircle.spacetech.com`.
 
 <Tabs
