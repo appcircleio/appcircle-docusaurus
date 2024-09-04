@@ -16,6 +16,7 @@ sidebar_position: 4
 
 import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 # Microsoft Teams Notifications
 
@@ -70,3 +71,23 @@ To enable this feature, ensure you include the [**Test Reports**](https://docs.a
 If you want to disconnect or reauthorize the Microsoft Teams connection, scroll down to the end of the management screen and press the "Disconnect" button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure5.png' />
+
+## Troubleshooting & FAQ
+
+### Notifications are not delivered when using self-hosted Appcircle.
+
+If your Microsoft Teams notifications are not delivered while using the self-hosted Appcircle, there can be 3 reasons for this to check.
+
+**1.** Proxy Requirement
+
+If you are using a proxy to connect to the internet on the host, the proxy must also be enabled for the Appcircle services too, that is, in the containers. You can refer to the [**Proxy Configuration**](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md) documentation to see how to configure proxy for the self-hosted Appcircle server.
+
+**2.** Network Access
+
+The Appcircle server may not have network access to the Microsoft Teams webhook URL you provided. For example, if you are using a firewall or proxy, you must have permission to access this URL. Please contact your network administrator for the required network access permission.
+
+**3.** Untrusted SSL Certificate
+
+When the Appcircle server sends a request to the webhook URL through the proxy, it might encounter an error due to the untrusted SSL certificate of the proxy. In this case, you should refer to the [**Connecting External Services**](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#external-services) section in the self-hosted Appcircle documents to see how to trust your self-signed certificates.
+
+<NeedHelp />
