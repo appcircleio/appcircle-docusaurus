@@ -16,7 +16,12 @@ The Appcircle distribute extension allows users to upload their apps and start d
 
 import Screenshot from '@site/src/components/Screenshot';
 
-### How to Add the Appcircle Distribute Task Extension to Your Pipeline
+### Discover Extension
+
+You can discover more about this extension and install it by:
+https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
+
+### How to Add the Appcircle Distribute Action to Your Pipeline
 
 To install the Appcircle Distribute Task Extension, follow these steps:
 
@@ -27,29 +32,25 @@ To install the Appcircle Distribute Task Extension, follow these steps:
 3. Fill out the necessary input fields and click the **Add** button.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-extension-task-detail.png' />
 
-   3.1. You can learn more about getting your access token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+   3.1. You can learn more about getting your personal api token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
    3.2. Find out how to create a distribution profile [here](/testing-distribution/create-or-select-a-distribution-profile)
 
-:::caution Build Steps Order
-You should add this task extension after completing your build steps.
-:::
-
-After filling out the required fields, the `AppcircleEnterpriseStore@0` task will appear in your pipeline steps as shown below:
+After filling out the required fields, the `AppcircleTestingDistribution@0` task will appear in your pipeline steps as shown below:
 
 ```yaml
-- task: AppcircleDistribute@0
+- task: AppcircleTestingDistribution@0
   inputs:
-    accessToken: "APPCIRCLE_ACCESS_TOKEN" # Your Appcircle Access Token
+    accessToken: "APPCIRCLE_ACCESS_TOKEN" # Your Appcircle Personal API Token
     profileId: "APPCIRCLE_PROFILE_ID" # ID of your Appcircle Distribution Profile
     appPath: "BUILD_PATH" # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
     message: "Sample Message" # Custom message for your testers
 ```
 
-### Discover Extension
+:::caution Build Steps Order
+Ensure that this action is added after build steps have been completed.
 
-You can discover more about this extension and install it by:
-https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
+:::
 
 ## Leveraging Environment Variables
 
@@ -57,6 +58,6 @@ Utilize environment variables seamlessly by substituting the parameters with $(V
 
 ## References
 
-- For details on generating an Appcircle Personal Access Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
+- For details on generating an Appcircle Personel API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile)
