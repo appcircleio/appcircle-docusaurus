@@ -19,7 +19,7 @@ This section is designed to help you quickly find answers to common questions an
 After you have successfully [created the Personal API Token](/appcircle-api/api-authentication.md#generatingmanaging-the-personal-api-tokens) from the **root organization**, you can check the versions of an application and download them, like in the following example code blocks.
 
 :::caution
-You must create the PAT on the root organization. Requests will fail if you create the PAT from a sub-organization.
+You must create the PAT (Personal API Token) on the root organization. Requests will fail if you create the PAT from a sub-organization.
 :::
 
 <Tabs
