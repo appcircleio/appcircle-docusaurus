@@ -10,6 +10,7 @@ tags:
     notifications,
     artifacts,
     webhooks,
+    hooks,
     distribution,
     ldap,
     sso,

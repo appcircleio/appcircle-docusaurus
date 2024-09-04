@@ -16,7 +16,7 @@ The workflow steps that need to be executed before running the **Android Build**
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                                                                                                                  |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | To initiate the Android build process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the Git Clone step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
+| [Git Clone](/workflows/common-workflow-steps/#git-clone) | To initiate the Android build process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the Git Clone step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_3.png' alt="image2" />
 
@@ -28,15 +28,15 @@ For each component, specific input variables are required for its operation on y
 
 | Variable Name                 | Description                                                                                                                                                                                                                                                                                                                                                                                                            | Status   |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_REPOSITORY_DIR`          | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) step, the variable will be automatically populated.                                                                                                                                                                                      | Required |
-| `$AC_MODULE`                  | This variable specifies the project module to be build. This variable can also be set via the build [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/). In Android Studio, you can locate the available modules for your project. For more information, please refer to [this Android document](https://developer.android.com/studio/projects#ApplicationModules). | Required |
-| `$AC_VARIANTS`                | This variable specifies the project variant to be build. This variable can also be set via the build [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/). In Android Studio, you can find the available variants for your project. For more information, please refer to this [Android document](https://developer.android.com/build/build-variants).               | Required |
-| `$AC_OUTPUT_TYPE`             | This variable specifies the output type for your build file (APK or AAB). This variable can also be set via the build [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/).                                                                                                                                                                                          | Required |
+| `$AC_REPOSITORY_DIR`          | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/workflows/common-workflow-steps/#git-clone) step, the variable will be automatically populated.                                                                                                                                                                                      | Required |
+| `$AC_MODULE`                  | This variable specifies the project module to be build. This variable can also be set via the build [Configuration](/build/build-process-management/build-profile-configuration/). In Android Studio, you can locate the available modules for your project. For more information, please refer to [this Android document](https://developer.android.com/studio/projects#ApplicationModules). | Required |
+| `$AC_VARIANTS`                | This variable specifies the project variant to be build. This variable can also be set via the build [Configuration](/build/build-process-management/build-profile-configuration/). In Android Studio, you can find the available variants for your project. For more information, please refer to this [Android document](https://developer.android.com/build/build-variants).               | Required |
+| `$AC_OUTPUT_TYPE`             | This variable specifies the output type for your build file (APK or AAB). This variable can also be set via the build [Configuration](/build/build-process-management/build-profile-configuration/).                                                                                                                                                                                          | Required |
 | `$AC_PROJECT_PATH`            | Specifies the project path. If your project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path.                                                                                                                                                                                                                           | Optional |
 | `$AC_GRADLE_BUILD_EXTRA_ARGS` | Extra arguments were passed to build task. For more information, please refer to [this Gradle document](https://docs.gradle.org/current/userguide/writing_build_scripts.html#sec:extra_properties).                                                                                                                                                                                                                    | Optional |
 
 :::info
-If you have filled in the necessary variables in the **Configuration** section, you will not need to redefine these variables again in the Workflow. For more information about configurations, refer to the [Build Profile Configuration Overview](https://docs.appcircle.io/build/build-process-management/build-profile-configuration) document. The information you fill in the configuration will be used as input in the Android Build step. Please replace the example information with your own details:
+If you have filled in the necessary variables in the **Configuration** section, you will not need to redefine these variables again in the Workflow. For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/build-profile-configuration) document. The information you fill in the configuration will be used as input in the Android Build step. Please replace the example information with your own details:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_1.png' alt="Configuration Image" />
 
@@ -58,7 +58,7 @@ The outputs that can result from the operation of this component are listed as f
 | `$AC_APK_PATH` | Path for the generated **APK** file. This path will be created after the **Android Build** step runs.                        |
 | `$AC_AAB_PATH` | Path for the generated **AAB** file. This path will be created after the Android Build step runs and when `AAB` is selected. |
 
-The resulting files will be either APK or AAB, depending on whether you choose the Android App in the project [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration).
+The resulting files will be either APK or AAB, depending on whether you choose the Android App in the project [Configuration](/build/build-process-management/build-profile-configuration).
 
 If your project has the [signing configuration](https://developer.android.com/studio/build/gradle-tips#sign-your-app) in Gradle, this step will generate a signed artifact.
 
@@ -71,3 +71,74 @@ So, in order to sign your app using the keystore selected in the build configura
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-android-build-component.git
+
+## FAQ
+
+### How can I solve the `Out of memory error: Java heap memory` or set the heap memory during the build?
+
+To resolve this issue, you need to adjust the Java heap size using the following parameters in the [system properties](https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_system_properties):
+> - [`-Xms:<size>`](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp999527), which sets the initial and minimum heap size
+> - [`-Xmx:<size>`](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp999528), which sets the maximum heap size
+>
+> For example:
+>
+> ```bash
+> java -Xms:1g -Xmx:1g MyApplication
+> ```
+>
+> This starts up the JVM with a heap size fixed to 1 GB.
+
+Please refer following documentation for more information:
+
+https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/memman.html#wp1086978
+
+You can implement this solution using one of the following methods:
+
+#### Method 1: Using a Custom Script During the Build
+
+If your project has varying heap size requirements, you can adjust the heap size during the build phase with a [**Custom Script**](/workflows/common-workflow-steps/custom-script) before the **Android Build** step. Your script should include the following command:
+
+```bash
+echo "org.gradle.jvmargs=-Xms1g -Xmx7168M"  >> $AC_REPOSITORY_DIR/gradle.properties
+```
+
+- Adjust the `-Xms1g -Xmx7168M` values according to your project needs.
+- Ensure the path `$AC_REPOSITORY_DIR/gradle.properties` matches your file's location. `$AC_REPOSITORY_DIR` represents the root project directory.
+- You can extend the command with additional parameters as needed. For example, for Kotlin, you might add: `"org.gradle.jvmargs=-Xms1g -Xmx7168M kotlin.daemon.jvm.options=-Xms700m -Xmx7168M"`
+
+#### Method 2: Modifying the `gradle.properties` File
+
+If the heap size requirement is constant, you can directly add the following code to the end of your project's `gradle.properties` file. Feel free to modify this code to fit your specific project requirements:
+
+```bash
+org.gradle.jvmargs=-Xms1g -Xmx7168M
+```
+
+:::tip
+
+Also, if you want to solve this issue via Android Studio you can follow this documentation:
+
+[Android Developer documentation on adjusting heap size](https://developer.android.com/studio/intro/studio-config#adjusting_heap_size).
+
+:::
+
+### How can I generate an APK alongside an AAB?
+
+To generate an APK alongside an AAB, you can use one of these two methods:
+
+1. **Adding Another Android Build Step:**
+    1. **Configure for AAB:** Set up the build [configuration](/build/build-process-management/build-profile-configuration/) to generate an AAB.
+    2. **Add another Android Build Step:** Add an additional **Android Build** step, after the first **Android Build** step. To avoid confusion, you can add the generates file type to the step name.
+        <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_4.png'/>
+    3. **Modify Output Type:** Change the `$AC_OUTPUT_TYPE` [input variables](#input-variables) of the second **Android Build** step to APK. Now your build will generate an AAB and APK file.
+        <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_5.png'/>
+
+If adding two **Android Build** steps makes the build process too lengthy, you can use the following alternative method:
+
+2. **Generating APK from AAB file:**
+    1. **Configure for AAB:** Set up the build [configuration](/build/build-process-management/build-profile-configuration/) to generate an AAB.
+    2. **Add a Bundle Universal Apk Step:** Insert the [`Bundle Universal Apk`](/workflows/android-specific-workflow-steps/bundle-universal-apk) step in your workflow after the **Android Build** step.
+    3. **Configure the Bundle Universal Apk Step:** Complete the inputs for the **Bundle Universal Apk** step. To sign the APK via this step, you might need to upload your keystore file to the system if there is no uploaded.
+    4. **Convert AAB to APK:** This step will convert the generated AAB into an APK.
+
+These steps will ensure that both an AAB and an APK are generated during your build process.

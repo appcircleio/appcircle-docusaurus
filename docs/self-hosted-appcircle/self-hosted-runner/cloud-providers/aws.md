@@ -11,6 +11,7 @@ import RegisterAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hoste
 import ConfigureAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_configure-runner.mdx';
 import RunAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_run-service.mdx';
 import BuildAppOutro from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_build-app-outro.mdx';
+import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
 
 ## Overview
 
@@ -307,13 +308,13 @@ cd "$HOME"
 Download the latest self-hosted runner package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.6.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.7.0.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.6.0.zip
+unzip -o -u appcircle-runner-osx-arm64-1.7.0.zip
 ```
 
 Change directory into extracted `appcircle-runner` folder for following steps.
@@ -326,7 +327,7 @@ cd appcircle-runner
 
 :::info
 
-By default, the Appcircle runner is configured to connect to the Appcircle cloud. If you are not using the Appcircle server as self-hosted, you can skip this information.
+By default, the Appcircle runner is pre-configured to connect to the Appcircle cloud. If you are not using the Appcircle server as self-hosted, you can skip this information.
 
 If you are using a self-hosted Appcircle server, edit the `appsettings.json` file with your favorite editor.
 
@@ -334,16 +335,29 @@ If you are using a self-hosted Appcircle server, edit the `appsettings.json` fil
 vi appsettings.json
 ```
 
-You will see that the `ASPNETCORE_BASE_API_URL` value is pre-defined for the Appcircle cloud. Change it to your Appcircle server API domain without changing the path. For example:
+You will see that the `ASPNETCORE_BASE_API_URL` and `ASPNETCORE_REDIS_STREAM_ENDPOINT` values are pre-defined for the Appcircle cloud.
+
+- Change the API URL to your self-hosted server API URL without changing the path.
+- Change the Redis stream endpoint to the URL that's compatible with your installation.
+
+For example:
 
 ```json
 {
-...
+  ...
+  "ASPNETCORE_REDIS_STREAM_ENDPOINT": "redis.appcircle.spacetech.com:443,ssl=true",
+  ...
   "ASPNETCORE_BASE_API_URL": "https://api.appcircle.spacetech.com/build/v1"
 }
 ```
 
+:::caution
+If your Appcircle server is working with HTTP, the Redis stream endpoint port must be `6379` instead of `443` and the `ssl` argument must be set to `false`.
+
+Also, don't forget to configure the API URL scheme as HTTP in the `global.yaml`.
 :::
+
+<NewRunnerOldServerRedisCaution/>
 
 Now you need to create a **Runner Access Token** to register this instance with the Appcircle server.
 

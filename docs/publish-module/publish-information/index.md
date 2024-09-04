@@ -12,7 +12,25 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Publish module provides users with several key actions to manage their application versions effectively. Below is an overview of each menu item and its function within the system:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2821-ios-publish-actions.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub1.png' />
+
+## App Store Connect Information
+
+For a binary to be successfully sent for review, certain information must be completed. By using Appcircle's App Information feature, you can update the required information for binary submission.
+
+<ContentRef
+url="/publish-module/publish-information/app-information">
+Read more about App Store Connect Information
+</ContentRef>
+
+## Check Release Status
+
+With the Check Release Status function, you can instantly update the status information of the version marked as Release Candidate. Make sure that one of the versions is marked as Release Candidate so that you can do a status check.
+
+<ContentRef
+url="/publish-module/publish-information/check-release-status">
+Read more about Check Release Status
+</ContentRef>
 
 ## Publish Details
 
@@ -21,6 +39,15 @@ This option provides an in-depth view of the selected version's publish process.
 <ContentRef
 url="/publish-module/publish-information/publish-details">
 Read more about Publish Details
+</ContentRef>
+
+## Marking Release Candidates
+
+This action is used to change the status of a build that has been previously marked as a Release Candidate (RC). This might be necessary if the build is found to have issues that require it to be retracted from the release candidate status, indicating it's not yet ready for production release.
+
+<ContentRef
+url="/publish-module/publish-information/marking-release-candidates">
+Read more about Marking Release Candidates
 </ContentRef>
 
 ## Binary Information
@@ -32,7 +59,7 @@ url="/publish-module/publish-information/binary-information">
 Read more about Binary Information
 </ContentRef>
 
-## Meta Data Information
+## Metadata Details
 
 The Meta Data Information option provides a comprehensive overview of the version's metadata. This includes details such as the application name, version, build number, and other relevant information. Users can review and edit metadata to ensure accurate and consistent versioning across the application.
 
@@ -45,13 +72,17 @@ url="/publish-module/publish-information/resign-binary">
 Read more about Resign Binary
 </ContentRef>
 
-## Marking Release Candidates
+## History
 
-This action is used to change the status of a build that has been previously marked as a Release Candidate (RC). This might be necessary if the build is found to have issues that require it to be retracted from the release candidate status, indicating it's not yet ready for production release.
+The History has two sections: The Publish History and The Resign History.
+
+The Publish History gives users a chronological log of all publish actions taken for a specific version. It allows users to track and audit the deployment process over time, which can be crucial for compliance, troubleshooting, and historical analysis.
+
+The Resign History gives users a chronological log of all resign actions that was done within the Publish Module for a specific app version. 
 
 <ContentRef
-url="/publish-module/publish-information/marking-release-candidates">
-Read more about Marking Release Candidates
+url="/publish-module/publish-information/history">
+Read more about History
 </ContentRef>
 
 ## Downloading Binaries
@@ -63,13 +94,22 @@ url="/publish-module/publish-information/download">
 Read more about Downloading Binaries
 </ContentRef>
 
-## Publish History
+## Cancel Submission
 
-The Publish History gives users a chronological log of all publish actions taken for a specific version. It allows users to track and audit the deployment process over time, which can be crucial for compliance, troubleshooting, and historical analysis.
+Canceling a submission on the App Store can be crucial for developers who need to make last-minute changes or corrections. Learn how to efficiently cancel your app submission, understand common pitfalls, and ensure a smoother app review process.
 
 <ContentRef
-url="/publish-module/publish-information/publish-history">
-Read more about Publish History
+url="/publish-module/publish-information/cancel-submission">
+Read more about Downloading Binaries
+</ContentRef>
+
+## Reject Binary
+
+Binary rejection on Appcircle can delay your app's launch. Discover the top reasons for binary rejection, how to address them effectively, and ensure your app meets guidelines for a successful approval process. Optimize your app's chances today!
+
+<ContentRef
+url="/publish-module/publish-information/reject-binary">
+Read more about Downloading Binaries
 </ContentRef>
 
 ## Delete

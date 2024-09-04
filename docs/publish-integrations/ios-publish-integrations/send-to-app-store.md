@@ -3,6 +3,7 @@ title: Send to App Store
 description: Submit your iOS application to the App Store with Appcircle
 tags: [publish, ios, app store]
 sidebar_position: 1
+unlisted: true
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

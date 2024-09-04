@@ -42,6 +42,16 @@ If you select **Environment Variable**, you need to write the source environment
 
 If you select Gradle, the version code will be read from build.gradle file. If you want to use different flavor, please set them in the **Advanced Settings** section.
 
+:::danger
+
+Using a dynamic `versionCode` in the Gradle file is not supported for version incrementing. If you define `versionCode` dynamically, you may encounter a format error after selecting Gradle as the `Version Code Source`.
+
+For a sample of a stable format, you can refer to the document below:
+
+- [Android - Set app version information](https://developer.android.com/studio/publish/versioning#appversioning)
+
+:::
+
 **Offset**
 
 If you select `$AC_BUILD_NUMBER` as your version code source, the version code in your project can be different. To synchronize version code, you can use the offset. The offset value is a number to be added or subtracted from the _Version Code Source_. Negative values can be written such as -10.
@@ -59,6 +69,16 @@ If you select Environment Variable, you need to write the source environment var
 
 If you select Gradle, the version name will be read from the given Android project.
 
+:::danger
+
+Using a dynamic `versionName` in the Gradle file is not supported for version incrementing. If you define `versionName` dynamically, you may encounter a format error after selecting Gradle as the `Version Name Source`.
+
+For a sample of a stable format, you can refer to the document below:
+
+- [Android - Set app version information](https://developer.android.com/studio/publish/versioning#appversioning)
+
+:::
+
 **Offset**
 
 To synchronize version names, you can use the offset. The offset value is a number to be added or subtracted from the _Version Name Source_. Negative values can be written such as -10.
@@ -72,6 +92,12 @@ You can increase the major, minor, or patch value of the version name. For versi
 | Major | 2     |
 | Minor | 5     |
 | Patch | 1     |
+
+:::warning
+
+To increment the version name, please make sure it is in an integer format (`INT.INT.INT`). Incrementing non-integer version names is not supported.
+
+:::
 
 **Omit Zero Patch Version**
 
@@ -105,7 +131,7 @@ The versioning system works by consuming environment variables. Even though it's
 | `$AC_ANDROID_BUILD_NUMBER`    | Version code to set. If `$AC_BUILD_NUMBER_SOURCE` is set to gradle, this variable will be read from the project.                                                                                                                                                                | Optional |
 | `$AC_BUILD_OFFSET`            | The number to be added or subtracted from the `$AC_ANDROID_BUILD_NUMBER`.                                                                                                                                                                                                       | Optional |
 | `$AC_VERSION_NUMBER_SOURCE`   | Version name source type (environment variable or gradle file).                                                                                                                                                                                                                 | Optional |
-| `$AC_ANDROID_VERSION_NUMBER`  | Version name to set. If `$AC_VERSION_NUMBER_SOURCE` is set to gradle, this variable will be read from the project.                                                                                                                                                              | Optional |
+| `$AC_ANDROID_VERSION_NUMBER`  | Version name to set. If `$AC_VERSION_NUMBER_SOURCE` is set to gradle, this variable will be read from the project. Version name must be in integer format (`INT.INT.INT`) to increase.                                                                                                                | Optional |
 | `$AC_VERSION_STRATEGY`        | Version increment strategy (`major`, `minor`, `patch`, or `keep`).                                                                                                                                                                                                              | Optional |
 | `$AC_VERSION_OFFSET`          | The number to be added or subtracted from the `$AC_ANDROID_VERSION_NUMBER`.                                                                                                                                                                                                     | Optional |
 | `$AC_PROJECT_PATH`            | Specifies the project path. If the project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path.                                                                                     | Optional |

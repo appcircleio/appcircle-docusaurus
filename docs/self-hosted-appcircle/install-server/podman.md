@@ -6,6 +6,11 @@ sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import LingerOption from '@site/docs/self-hosted-appcircle/configure-server/\_linger-option.mdx';
+import SocatConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_socat-configuration.mdx';
+import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_podman-netavark-configuration.mdx';
+import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_firewalld-configuration.mdx';
+import SwapConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_swap-configuration.mdx';
 
 # Overview
 
@@ -68,19 +73,7 @@ For production environments, **recommended** hardware requirements are
 
 #### Swap
 
-Using **swap** file lets self-hosted Appcircle server exceed the size of available physical memory. On memory pressure system will go on its operations with minimal degradation, when SSD used as hardware.
-
-So, we are recommending **swap** file usage on Linux.
-
-Its size should be minimum half of the RAM size. For example if you have 64 GB RAM, then you should choose minimum 32 GB swap file size. 64 GB will be better.
-
-#### Swappiness
-
-The `swappiness` parameter configures how often your system swaps data out of RAM to the swap space. So, it's an important setting for swap usage and affects performance.
-
-`10` is recommended value for `swappiness`.
-
-:books: For details on how to configure **swap** and `swappiness` parameter, follow guide in [here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-22-04).
+<SwapConfiguration/>
 
 :::
 
@@ -90,97 +83,17 @@ The Appcircle server supports Podman as the container runtime. The minimum requi
 
 #### Enabling the Linger Option
 
-To ensure uninterrupted operation of the Appcircle server's background processes, you must enable the **linger** option on the host system.
-
-Enabling this option allows the podman containers to persist even after user logouts, ensuring continuous functionality.
-
-Check if the **linger** option is enabled for the current user with the below command.
-
-```bash
-loginctl show-user "$USER" --property=Linger
-```
-
-If you see `Linger=yes`, it means that the option is enabled and you do not need extra configuration.
-
-If the output is `Linger=no`, this means that the option is disabled and you cannot run the Appcircle server in the background.
-
-:::caution
-If the **linger** option is set to `no`, you must enable it to run the Appcircle server in the background.
-:::
-
-To enable the linger option, you can use the command below:
-
-```bash
-loginctl enable-linger
-```
+<LingerOption/>
 
 You can run the Appcircle server in the background now.
 
 #### Overcoming Privileged Port Limitations
 
-When using Podman rootless to install the Appcircle server, please note that privileged ports (ports below 1024) cannot be utilized in rootless mode. By default, the Appcircle server listens on ports 8080 and 8443.
-
-If you want to use ports 80 and 443 without running Podman as root, you need to take some extra steps.
-
-Best option is to use a port forwarding tool like socat. This way you can forward traffic from port 80 to 8080 and port 443 to 8443. You should install the socat from official repositories and create two systemd service so port forwarding keeps even after server reboot. This can be done by running the following steps:
-
-```bash
-sudo dnf install -y socat
-```
-
-Save the file below as `port-redirect-80.service` in `/etc/systemd/system/` directory.
-
-```bash
-[Unit]
-Description=Port Redirect Service - Port 80
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/socat TCP-LISTEN:80,fork,reuseaddr TCP:127.0.0.1:8080
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Save the file below as `port-redirect-443.service` in `/etc/systemd/system/` directory.
-
-```bash
-[Unit]
-Description=Port Redirect Service - Port 443
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/socat TCP-LISTEN:443,fork,reuseaddr TCP:127.0.0.1:8443
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Then, one by one, execute the below commands to activate port redirections.
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable port-redirect-80.service
-sudo systemctl start port-redirect-80.service
-sudo systemctl enable port-redirect-443.service
-sudo systemctl start port-redirect-443.service
-```
+<SocatConfiguration/>
 
 ### Firewalld Requirements
 
-If you are using firewalld, you need to open the 80 and 443 ports for the Appcircle server.
-
-```bash
-sudo firewall-cmd --add-port=80/tcp --permanent
-sudo firewall-cmd --add-port=443/tcp --permanent
-sudo firewall-cmd --reload
-```
-
-To check if the ports are open, you can run the following command:
-
-```bash
-sudo firewall-cmd --list-ports
-```
+<FirewalldConfiguration/>
 
 ## Installation
 
@@ -257,55 +170,7 @@ Older podman versions may be incompatible for our operations. Podman versions ab
 
 #### Podman Network Stack
 
-To ensure successful operation of the Appcircle server, it is required to switch from the CNI network stack to Netavark if Podman is bundled with CNI. You can see your network stack by running:
-
-```bash
-podman info | grep -i networkBackend
-```
-
-You can switch to Netavark network stack by simply installing Netavark and configure podman to use Netavark.
-
-```bash
-sudo dnf install -y netavark
-```
-
-Once the installation is complete, please follow these steps to configure Podman:
-
-- Copy the /usr/share/containers/containers.conf file to /etc/containers/containers.conf.
-
-```bash
-sudo cp /usr/share/containers/containers.conf /etc/containers/containers.conf
-```
-
-- Edit the /etc/containers/containers.conf file.
-
-```bash
-sudo vi /etc/containers/containers.conf
-```
-
-- Add the following content to the [network] section:
-
-```bash
-network_backend="netavark"
-```
-
-- Save the file.
-
-- Reset Podman:
-
-```bash
-podman system reset
-```
-
-- Reboot the system:
-
-```bash
-sudo reboot
-```
-
-:::caution
-If you skip the step about podman network stack above, you will encounter network related issues. Please make sure you have completed this step.
-:::
+<NetavarkConfiguration/>
 
 #### Change the Podman Data Location
 
@@ -505,7 +370,7 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/podman#5-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/podman#6-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
@@ -521,6 +386,12 @@ After updating initial password, to activate changes, you need to do fresh expor
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
+```
+
+Then, make sure you initialize the [vault](/self-hosted-appcircle/install-server/podman#5-initialize-vault) again.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
 ```
 
 Now you can run services again. It should complete without any error.
@@ -601,6 +472,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - resource
 - store
 - monitor
+- redis
 - (optional) Enterprise App Store's Custom Domain
 
 :::info
@@ -611,7 +483,7 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-10-cloudflare-ss.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3839-cloudflare-ss.png' />
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
@@ -653,6 +525,7 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  resource.appcircle.spacetech.com
 0.0.0.0  store.appcircle.spacetech.com
 0.0.0.0  monitor.appcircle.spacetech.com
+0.0.0.0  redis.appcircle.spacetech.com
 0.0.0.0  store.spacetech.com
 ```
 
@@ -677,12 +550,27 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  resource.appcircle.spacetech.com
 35.241.181.2  store.appcircle.spacetech.com
 35.241.181.2  monitor.appcircle.spacetech.com
+35.241.181.2  redis.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
 ```
 
 With this network setup, you can run and test both self-hosted Appcircle server and connected self-hosted runners with all functionality.
 
-### 5. Run Server
+### 5. Initialize Vault
+
+Initialize [vault](/self-hosted-appcircle/install-server/podman#vault) before starting the Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
+```
+
+:::caution
+You should initialize the server only once while installing it or after data cleanup is done with the `reset` command.
+
+It must not be used on upgrades in any way.
+:::
+
+### 6. Run Server
 
 Appcircle server's modules are run on Podman as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
 
@@ -813,7 +701,7 @@ In this case, stop all services with data cleanup.
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-Then make a new export and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/podman#reset-configuration) section for more details.
+Then make a new export, initialize the vault and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/podman#reset-configuration) section for more details.
 
 :::
 
@@ -828,7 +716,12 @@ Below ports must be unused on system and dedicated to only Appcircle server usag
 - `8080`
 - `8443`
 
+If the self-hosted server is configured as HTTP, the below port must also be unused. (_For HTTPS configuration, that's not required._)
+
+- `6379`
+
 Appcircle server will listen on `8080` and `8443` ports by default for HTTP and HTTPS connections.
+
 You can get a list of up-to-date ports used by podman with below command.
 
 ```bash
@@ -942,10 +835,16 @@ For our example scenario, root directory is `appcircle-server` as seen [here](/s
 
 Now you are ready to restart self-hosted appcircle.
 
+Before that, make sure you initialize the [vault](/self-hosted-appcircle/install-server/podman#5-initialize-vault) again.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
+```
+
 Run Appcircle server services.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" up
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 ## Connecting Runners
@@ -958,25 +857,35 @@ Follow and apply related guidelines in [here](/self-hosted-appcircle/self-hosted
 
 Self-hosted runner section in docs, has all details about runners and their configuration.
 
-:::caution
+:::::caution
 
-By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
+By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STREAM_ENDPOINT` and `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
 
+- `webeventredis.appcircle.io:6379,ssl=true`
 - `https://api.appcircle.io/build/v1`
 
-:point_up: You need to change its value with your self-hosted Appcircle server's API URL.
+:point_up: You need to change these values with your self-hosted Appcircle server's Redis and API URL.
 
-Assuming our sample scenario explained above, its value should be
+Assuming our sample scenario explained above, these values should be:
 
+- `redis.appcircle.spacetech.com:6379,ssl=false`
 - `http://api.appcircle.spacetech.com/build/v1`
 
 for our example configuration.
 
-:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:::info
+If your Appcircle server is configured as `HTTPS`, then the Redis and API URL should be like this:
+
+- `redis.appcircle.spacetech.com:443,ssl=true`
+- `https://api.appcircle.spacetech.com/build/v1`
+
+:::
+
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.
 
 Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
-:::
+:::::
 
 Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted Appcircle server should run on a dedicated machine itself.
 

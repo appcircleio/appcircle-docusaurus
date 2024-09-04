@@ -1,5 +1,5 @@
 ---
-title: Testing Distribution
+title: Testing Distribution Customization
 description: Customize the Testing Distribution on Self-hosted Installations
 tags: [testing distribution, customize, self-hosted]
 sidebar_position: 13

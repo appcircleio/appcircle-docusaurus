@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Xcodebuild for Devices (Archive & Export)
 
-This step builds your application for iOS devices in ARM architecture, which is required for the [**Sharing With Testers**](/distribute/create-or-select-a-distribution-profile) feature or any other means of iOS distribution.
+This step builds your application for iOS devices in ARM architecture, which is required for the [**Sharing With Testers**](/testing-distribution/create-or-select-a-distribution-profile) feature or any other means of iOS distribution.
 
 :::info
 This step is the archive and export step. When the step is completed, the `.ipa` file of the application is generated.
@@ -66,3 +66,93 @@ You can find all the parameters required for this step in the table below, with 
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-ios-build-sign-component
+
+## FAQ
+
+### Adding Additional Command to Xcodebuild for Devices Step
+
+To address the need to add a new command after completing the `xcodebuild` command in the "Xcodebuild for Devices" step, you can follow the following approach:
+
+- Disable "Xcodebuild for Devices" step in your workflow.
+- Add a new "Custom Script" component instead of "Xcodebuild for Devices" step.
+- Go to Appcircle github profile and navigate to the [repository](https://github.com/appcircleio/appcircle-ios-build-sign-component).
+- Copy all code lines from the `main.rb` file and paste them into the new "Custom Script" that you just added in your workflow.
+- Change the name as "Custom Xcodebuild for Devices" for this custom script.
+- Change "Execute With" picker as **Ruby**.
+- In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
+
+:::caution
+Before running the script, some variables must be changed, and new variables must be added to the custom script.
+:::
+
+First, the `output_path` global variable should be changed like below in global variables.
+
+```ruby
+...
+## Other global variables
+...
+$output_path = env_has_key("AC_OUTPUT_DIR")
+```
+
+After this, you need to add some parameters to your custom script. The parameters below should be added right after global variables.
+
+```ruby
+AC_COMPILER_INDEX_STORE_ENABLE = "NO"
+AC_METHOD_FOR_EXPORT = "auto-detect"
+AC_DELETE_ARCHIVE = "false"
+AC_ARCHIVE_PATH = "AC_ARCHIVE_PATH"
+AC_ARCHIVE_METADATA_PATH = "AC_ARCHIVE_METADATA_PATH"
+AC_EXPORT_DIR = "AC_EXPORT_DIR"
+```
+In the next step for completing custom script settings, the `AC_COMPILER_INDEX_STORE_ENABLE` parameter should be equaled with the following parameter:
+
+```ruby
+$compiler_index_store_enable = AC_COMPILER_INDEX_STORE_ENABLE
+```
+
+:::caution
+You should find the line with `compiler_index_store_enable` and replace it with the above statement.
+:::
+
+After these variables were set. There is an `archive()` function in the Ruby code. First, find the function in the code.
+
+```ruby
+## Archive Functions
+def archive()
+  extname = File.extname($project_path)
+  command = "xcodebuild -scheme \"#{$scheme}\" clean archive -archivePath \"#{$archive_path}\" -derivedDataPath \"#{$temporary_path}/DerivedData\" -destination \"generic/platform=iOS\""
+  ...
+  ## Other code lines of archive() function
+  ...
+```
+At the end of this function, before running the `run_command_simple()` function, you can add these lines to be able to add additional commands.
+
+```ruby
+  ...
+  ## Other code lines of archive() function
+  ...
+  command.concat(" ")
+  command.concat("Write your command that you want to add here")
+  command.concat(" ")
+
+  run_command_simple(command)
+end
+```
+
+#### For Example
+
+When you need to reduce the verbosity of the `xcodebuild` logs, you can achieve this by appending the `| grep -A 5 error:` command to the `xcodebuild` command to decrease the clutter in the log file.
+
+```ruby
+  ...
+  ## Other code lines of archive() function
+  ...
+  command.concat(" ")
+  command.concat(" | grep -A 5 error:")
+  command.concat(" ")
+
+  run_command_simple(command)
+end
+```
+
+Now, the `run_command_simple()` function will execute your customized `xcodebuild` command.

@@ -1,19 +1,19 @@
 ---
-title: API and CLI Authentication
-description: Learn how to authenticate with the Appcircle API and CLI
-tags: [api, cli, authentication, personal api token, api token, cli token, session token]
+title: API Authentication
+description: Learn how to authenticate with the Appcircle API
+tags: [api, authentication, personal api token, api token, session token]
 sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# API and CLI Authentication
+# API Authentication
 
 The Appcircle API supports authentication with a _Personal API Token_. The token for each user will have the same permissions with the user within the organization and each organization require a separate Personal API Token.
 
 ### Generating/Managing the Personal API Tokens
 
-To generate a Personal API Token, go to the [My Organization](/account/my-organization#accessing-the-my-organization-screen) screen in the Appcircle dashboard. The Personal API Token section is located on the top right.
+To generate a Personal API Token, go to the [My Organization](/account/my-organization/profile-and-team/organization-management) screen in the Appcircle dashboard. The Personal API Token section is located on the top right.
 
 Press the "Generate Token" button to generate your first token.
 
@@ -45,18 +45,8 @@ Then use the generated auth token specified as "Auth-Token-Goes-Here":
 curl -X GET "https://api.appcircle.io/distribution/v2/profiles" -H  "accept: application/json" -H  "Authorization: Auth-Token-Goes-Here"
 ```
 
-### Using the Token for CLI Authentication
-
-For authentication, you need to generate a session token from the [Appcircle CLI](https://github.com/appcircleio/appcircle-cli#appcircle-command-line-interface) using the Personal API Token and add the generated session token value as an environment variable
-
-Using the Appcircle CLI, create a full access API token using the following command with the Personal API Token specified as "pat":
-
-```bash
-appcircle login ${pat}
-```
-
-Then copy the result and set it as the `AC_ACCESS_TOKEN` environment variable.
-
 ### API Documentation
 
-Please check the [documentation](https://api.appcircle.io/openapi/index.html) to learn more about Appcircle API.
+Access the full API documentation and explore the endpoints available for your integration needs at:
+
+https://api.appcircle.io/openapi/index.html

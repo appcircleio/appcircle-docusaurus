@@ -1,40 +1,34 @@
 ---
-title: Introduction to Appcircle CLI and API
+title: Introduction to Appcircle API and CLI
 description: Appcircle CLI is a unified tool for accessing the Appcircle platform features from the command line.
-tags: [appcircle cli, appcircle, cli, command line interface]
+tags: [appcircle cli, appcircle, cli, command line interface, migration tool]
 sidebar_position: 1
 ---
 
-# Introduction to Appcircle CLI and API
+# Introduction to Appcircle API and CLI
 
-The Appcircle CLI and API are essential tools for accessing and managing the Appcircle platform's features, facilitating automation and integration in your mobile app development workflows.
-
-## Appcircle CLI
-
-Appcircle CLI is a unified command-line tool that provides access to Appcircle platform features, enabling you to manage your projects, builds, and more directly from your terminal.
-
-You can install the Appcircle CLI from npm:
-
-```bash
-npm install -g @appcircle/cli
-```
-
-or yarn:
-
-```bash
-yarn global add @appcircle/cli
-```
-
-https://www.npmjs.com/package/@appcircle/cli
-
-You can find more information and the source code of the CLI on GitHub as follows:
-
-https://github.com/appcircleio/appcircle-cli
+The Appcircle API and CLI are essential tools for accessing and managing the Appcircle platform's features, facilitating automation and integration in your mobile app development workflows.
 
 ## Appcircle API
 
 The Appcircle API offers programmatic access to all features available in the Appcircle platform, allowing developers to automate workflows, integrate with other tools, and customize their development processes extensively.
 
-Access the full API documentation and explore the endpoints available for your integration needs at:
+<ContentRef url="/appcircle-api/api-authentication">
+Read more about Appcircle API
+</ContentRef>
 
-https://api.appcircle.io/openapi/index.html
+## Appcircle CLI
+
+Appcircle CLI is a unified command-line tool that provides access to Appcircle platform features, enabling you to manage your projects, builds, and more directly from your terminal.
+
+<ContentRef url="/appcircle-api/cli-authentication">
+Read more about Appcircle CLI
+</ContentRef>
+
+## App Center Migration Tool
+
+The App Center Migration Tool is designed to assist organizations and individuals to migrate their Visual Studio App Center projects with organizations, collaborators, app profiles and test groups to Appcircle effortlessly.
+
+<ContentRef url="/appcircle-api/appcenter-migration-tool">
+Read more about The App Center Migration Tool
+</ContentRef>

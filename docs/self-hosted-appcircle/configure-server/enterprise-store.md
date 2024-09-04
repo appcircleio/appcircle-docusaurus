@@ -13,7 +13,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Some additional Enterprise App Store settings can be customized for self-hosted installations in order to make them more tailored to your users.
 
-You can change how your store looks using the **[Customize](/enterprise-appstore/enterprise-app-store-setup/customize-ent-store)** screen in the Enterprise App Store module, just like you can with Appcircle Cloud.
+You can change how your store looks using the **[Customize](/enterprise-app-store/store-customization)** screen in the Enterprise App Store module, just like you can with Appcircle Cloud.
 
 For self-hosted specific settings, you should follow the documentation below.
 
@@ -24,7 +24,7 @@ You can change the Enterprise App Store tab title according to the language sele
 For example, you can set a title for **TR** and a different title for **EN** language selection on browsers.
 
 :::info
-Appcircle server version v3.12.1 or later is required for this feature.
+Appcircle server version `3.12.1` or later is required for this feature.
 :::
 
 :::caution

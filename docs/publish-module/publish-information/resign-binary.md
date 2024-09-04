@@ -1,7 +1,8 @@
 ---
 title: Resign Binary
 description: Learn how to resign your iOS application binaries within Appcircle to change provisioning profiles or app entitlements.
-tags: [iOS, resigning, provisioning profiles, entitlements]
+tags: [iOS, resigning, provisioning profiles, entitlements, faq]
+sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -12,7 +13,7 @@ The **Resign Binary** feature in Appcircle allows you to resign both iOS and And
 
 This feature streamlines the process of updating app distribution and security settings, ensuring that your applications can be quickly adapted to meet changing requirements or distribution strategies.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-resign-option.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub8.png' />
 
 ## Resign iOS Binary
 
@@ -20,7 +21,7 @@ When you need to distribute an iOS application to different environments (like Q
 
 ### Fields and Options
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-resign.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-resignUI.png' />
 
 #### Display Name
 
@@ -40,9 +41,9 @@ When you need to distribute an iOS application to different environments (like Q
 #### Entitlements
 
 - **Options**:
-  - **Entitlements from provisioning profiles**: Use entitlements from the new provisioning profile.
-  - **Combine app entitlements**: Extract app bundle code signing entitlements and combine with entitlements from new provisioning profiles.
-  - **New app entitlements**: Edit this XML file to edit capabilities. Resigning process uses a single entitlement XML file.
+  - **Entitlements from provisioning profiles**: Existing entitlements in the signed provision profile.
+  - **Edit**: Edit existing entitlements, or add or remove.
+
 
 #### Targets
 
@@ -54,12 +55,30 @@ When you need to distribute an iOS application to different environments (like Q
 - **Description**: Original Bundle ID.
 
 :::caution BundleID
-Please note that changing the **BundleID** is not allowed while the related version is being resigned in the **Publish module**. If you need to change the **BundleID value** of your package, please use the **Resign Binary** feature in [Testing Distribution](/distribute/platform-specific-guidance/ios/resigning-ios-binaries).
+Please note that changing the **BundleID** is allowed while the related version is being resigned in the **Publish module**. However, you **cannot start** a publish operation unless it matches the Bundle ID defined for the [Publish Profile](/publish-module/creating-publish-profiles#create-profile-manually).
 :::
 
 #### Provisioning Profiles
 
 - **Description**: Select a new provisioning profile for the Bundle ID.
+
+### Edit Entitlements
+
+With the entitlement editing feature of the Resign Binary feature in the Publish module of Appcircle. If you want, you can change your existing entitlements or add or remove them.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-entitlementEdit.png' />
+
+#### Changing Existing Entitlement or Add/Remove Option
+
+When you click the Edit button on the Resign Binary screen, a new page will open for Entitlement editing. In this page, you can update, delete or add a new entitlement to your existing entitlements.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-editDetails.png' />
+
+:::danger Entitlement Change
+
+If you want to change, add or remove Entitlement. The **Provision Profile** and **Bundle Identifier** you will resign **must contain** the **entitlements** you want to change. If the **Bundle ID** or **Provision Profile** does not contain or support these changes, the resign operation may **fail**.
+
+:::
 
 ### Resigning Process
 
@@ -90,7 +109,7 @@ Resigning an Android binary allows you to apply a new keystore to your applicati
 - **Package ID**: This is the unique identifier for your Android application, also known as the application ID. It usually follows the format `com.example.myapp` and should not be changed during the resigning process.
 
 :::caution Package ID
-Please note that changing the **Package ID** is not allowed while the related version is being resigned in the **Publish module**. If you need to change the **Package ID value** of your package, please use the **Resign Binary** feature in [Testing Distribution](/distribute/platform-specific-guidance/android/resigning-android-binaries).
+Please note that changing the **Package ID** is not allowed while the related version is being re-signed in the **Publish module**. If you need to change the **Package ID value** of your package, please use the **Re-sign Binary** feature in [Testing Distribution](/testing-distribution/resigning-binaries).
 :::
 
 - **Version Name**: This field represents the human-readable version of your app, such as `1.2.3`. It is used for display purposes and can be adjusted if necessary during the resigning process.
@@ -114,3 +133,16 @@ After configuring the necessary options, click the **Sign** button to start the 
 Once the binary has been resigned, it will create a new package with the updated signing configurations. The newly resigned binary will appear in your version list marked with the new version code if updated during the process.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-android-after-resign.png' />
+
+## FAQ
+
+### Missing Entitlements
+
+If you receive an error similar to the following, it generally means your provisioning profile doesn't have the entitlements of your project.
+
+```
+error: Provisioning profile "AppCircle" doesn't support the Push Notifications capability. (in target 'Runner' from project 'Runner)
+error: Provisioning profile "AppCircle" doesn't include the aps-environment entitlement. (in target 'Runner' from project Runner')
+```
+
+Whenever you add a new capability (Push Notifications, Keychain Sharing, CloudKit...) to your project, you need to update your provisioning profile and upload it to Appcircle.

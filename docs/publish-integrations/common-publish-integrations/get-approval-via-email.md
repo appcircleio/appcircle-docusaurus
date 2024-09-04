@@ -27,6 +27,14 @@ Upon restarting or initiating the step, it resets all answers to `Waiting`. User
 
 :::
 
+:::tip Get Approval via Email
+
+The Get Approval via Email step can be used for different purposes. Since this step takes two different parameters, one Required and one Optional, the usage varies. 
+
+For example, imagine you need approval from at least two people to keep the flow going in your company or team. Additionally, let's assume that two more people can act as backups for the necessary approvers. We have four people in total: two necessary and two optional. If you set the minimum approval count to three, one of the optional approvers must approve alongside the two necessary approvers. Once the necessary approvers have given their approval, it will be sufficient for one of the optional approvers to approve. The publish flow will continue as the majority is provided.
+
+:::
+
 ### Prerequisites
 
 There are no required steps that must precede the **Get Approval via Email** step. However, please note that any steps executed before the **Get Approval via Email** step in the [Publish flow](/publish-module/publish-flow) will not be impacted by the approval process. The approval logic will only affect the steps that follow the **Get Approval via Email** step.
