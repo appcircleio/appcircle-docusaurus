@@ -72,22 +72,22 @@ If you want to disconnect or reauthorize the Microsoft Teams connection, scroll 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure5.png' />
 
-## FAQ
+## Troubleshooting & FAQ
 
-### Our Teams notifications are not delivered when using self-hosted Appcircle.
+### Notifications are not delivered when using self-hosted Appcircle.
 
-If our Teams notifications are not delivered while using Self-hosted Appcircle, there can be 3 reasons for this. 
+If your Microsoft Teams notifications are not delivered while using the self-hosted Appcircle, there can be 3 reasons for this to check.
 
-1. Enable proxy
+**1.** Proxy Requirement
 
-The first reason is that if you are using a proxy to connect to the internet on the host server, the proxy must be enabled in Appcircle services too, that is, in containers. You can head to the [Proxy Configuration](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md) page and see how to configure proxy for Appcircle server services.
+If you are using a proxy to connect to the internet on the host, the proxy must also be enabled for the Appcircle services too, that is, in the containers. You can refer to the [**Proxy Configuration**](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md) documentation to see how to configure proxy for the self-hosted Appcircle server.
 
-2. Network Access
+**2.** Network Access
 
-The second reason is that the Appcircle server may not have network access to the Microsoft Teams webhook URL you provided. For example, if you are using a firewall or proxy, you must have permission to access this URL. Please contact with your network administrator for the required network access. 
+The Appcircle server may not have network access to the Microsoft Teams webhook URL you provided. For example, if you are using a firewall or proxy, you must have permission to access this URL. Please contact your network administrator for the required network access permission.
 
-3. Untrusted SSL Certificate
+**3.** Untrusted SSL Certificate
 
-The third reason is that when containers send a request to the webhook URL through the proxy, they may encounter an error due to the untrusted SSL certificate of the proxy. You can head to the [Connecting External Services](/docs/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#external-services) section to see how to trust your self-signed CA certificates.
+When the Appcircle server sends a request to the webhook URL through the proxy, it might encounter an error due to the untrusted SSL certificate of the proxy. In this case, you should refer to the [**Connecting External Services**](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#external-services) section in the self-hosted Appcircle documents to see how to trust your self-signed certificates.
 
 <NeedHelp />
