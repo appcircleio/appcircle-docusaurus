@@ -25,15 +25,17 @@ Appcircle supports sending notifications to Microsoft Teams for the major events
 
 In order to get notifications, the administrator of the channel should add an incoming webhook to the given channel.
 
-- Open the channel and click ••• from the upper-right corner and then click Connectors.
+- Click the ••• button to the right of `General` under the channel and then click `Manage Channel` [2].
 
-<NarrowImage width="200" src="https://cdn.appcircle.io/docs/assets/msteams-configure1.png" />
+- On the openned screen, click on the `Edit` button under the `Connector` header [3].
 
-- Search for **Incoming Webhook** and click Configure
+<Screenshot url="https://cdn.appcircle.io/docs/assets/msteams-configure1.png" />
+
+- Search for **Incoming Webhook** and click Configure.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure2.png' />
 
-- Give your webhook a name and save it. It will give you a webhook URL
+- Give your webhook a name and save it. It will give you a webhook URL.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure3.png' />
 
