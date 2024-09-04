@@ -22,6 +22,18 @@ After you have successfully [created the Personal API Token](/appcircle-api/api-
 You must create the PAT (Personal API Token) on the root organization. Requests will fail if you create the PAT from a sub-organization.
 :::
 
+You should change the required variables for your own needs before using the same code samples.
+
+If you are a cloud Appcircle server user, you should change the variables below:
+
+- `PERSONAL_API_TOKEN`: The PAT that created from the root organization.
+- `STORE_URL`: The default or custom store URL you use to access to your Appcircle Enterprise App Store.
+
+If you are using the self-hosted Appcircle server, you should change the following variables in addition to the ones above:
+
+- `API_URL`: The API URL for your self-hosted Appcircle server. If you are accessing Appcircle dashboard with a URL like “https://my.appcircle.spacetech.com”, your `API` URL will usually be “https://api.appcircle.spacetech.com”.
+- `AUTH_URL`: The Authentication URL for your self-hosted Appcircle server. If you are accessing Appcircle dashboard with a URL like “https://my.appcircle.spacetech.com”, your `AUTH` URL will usually be “https://auth.appcircle.spacetech.com”.
+
 <Tabs
 defaultValue="bash"
 groupId="language"
