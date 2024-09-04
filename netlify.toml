@@ -5,12 +5,12 @@
 
 [[redirects]]
   from = "/account/adding-google-play-service-account"
-  to = "/account/my-organization/api-integrations/adding-google-play-service-account"
+  to = "/account/my-organization/integrations/credentials/adding-google-play-service-account"
   status = 301
 
 [[redirects]]
   from = "/account/adding-huawei-api-key"
-  to = "/account/my-organization/api-integrations/adding-huawei-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-huawei-api-key"
   status = 301
 
 [[redirects]]
@@ -20,12 +20,12 @@
 
 [[redirects]]
   from = "/account/ldap-login"
-  to = "/account/my-organization/ldap-login"
+  to = "/account/my-organization/integrations/authentications/ldap-login"
   status = 301
 
 [[redirects]]
   from = "/account/sso/single-sign-on"
-  to = "/account/my-organization/sso-providers-configuration/single-sign-on"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on"
   status = 301
 
 # Redirects for build-related changes
@@ -152,32 +152,32 @@ status = 301
 
 [[redirects]]
   from = "/account/sso/auth-openid"
-  to = "/account/my-organization/sso-providers-configuration/auth-openid"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/auth-openid"
   status = 301
 
 [[redirects]]
   from = "/account/sso/auth-saml"
-  to = "/account/my-organization/sso-providers-configuration/auth-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/auth-saml"
   status = 301
 
 [[redirects]]
   from = "/account/sso/azure-saml"
-  to = "/account/my-organization/sso-providers-configuration/azure-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/azure-saml"
   status = 301
 
 [[redirects]]
   from = "/account/sso/okta-openid"
-  to = "/account/my-organization/sso-providers-configuration/okta-openid"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-openid"
   status = 301
 
 [[redirects]]
   from = "/account/sso/okta-saml"
-  to = "/account/my-organization/sso-providers-configuration/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-saml"
   status = 301
 
 [[redirects]]
   from = "/account/sso/onelogin-saml"
-  to = "/account/my-organization/sso-providers-configuration/onelogin-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/onelogin-saml"
   status = 301
 
 [[redirects]]
@@ -222,7 +222,7 @@ status = 301
 
 [[redirects]]
   from = "/account/email-connection"
-  to = "/account/my-organization/notifications-and-communication/email-connection"
+  to = "/account/my-organization/integrations/notification-integrations/email-connection"
   status = 301
 
 [[redirects]]
@@ -237,7 +237,7 @@ status = 301
 
 [[redirects]]
   from = "/account/slack/appcircle-bot-for-slack"
-  to = "/account/my-organization/notifications-and-communication/slack/appcircle-bot-for-slack"
+  to = "/account/my-organization/integrations/notification-integrations/slack/appcircle-bot-for-slack"
   status = 301
 
 [[redirects]]
@@ -247,7 +247,7 @@ status = 301
 
 [[redirects]]
   from = "/account/teams-notifications"
-  to = "/account/my-organization/notifications-and-communication/teams-notifications"
+  to = "/account/my-organization/integrations/notification-integrations/teams-notifications"
   status = 301
 
 [[redirects]]
@@ -297,7 +297,7 @@ status = 301
 
 [[redirects]]
   from = "/account/webhooks"
-  to = "/account/my-organization/webhooks"
+  to = "/account/my-organization/integrations/notification-integrations/webhooks"
   status = 301
 
 [[redirects]]
@@ -307,7 +307,7 @@ status = 301
 
 [[redirects]]
   from = "/account/adding-an-app-store-connect-api-key"
-  to = "/account/my-organization/api-integrations/adding-an-app-store-connect-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key"
   status = 301
 
 [[redirects]]
@@ -317,7 +317,7 @@ status = 301
 
 [[redirects]]
   from = "/account/sso-login/single-sign-on-login"
-  to = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/single-sign-on-login"
   status = 301
 
 [[redirects]]
@@ -397,12 +397,12 @@ status = 301
 
 [[redirects]]
   from = "/account/slack/slack-notifications"
-  to = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
+  to = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
   status = 301
 
 [[redirects]]
   from = "/account/sso-login/okta-saml"
-  to = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-saml"
   status = 301
 
 [[redirects]]
@@ -976,4 +976,119 @@ status = 301
 [[redirects]]
   from = "/enterprise-app-store/enterprise-app-store-setup/add-ent-profile"
   to = "/enterprise-app-store/enterprise-app-store-profile"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/auth-openid#sso-mapping"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on#sso-mapping"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/single-sign-on"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
+  to = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/notifications-and-communication/teams-notifications"
+  to = "/account/my-organization/integrations/notification-integrations/teams-notifications"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/notifications-and-communication/email-connection"
+  to = "/account/my-organization/integrations/notification-integrations/email-connection"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations"
+  to = "/account/my-organization/integrations"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations/adding-an-app-store-connect-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations/adding-google-play-service-account"
+  to = "/account/my-organization/integrations/credentials/adding-google-play-service-account"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations/adding-huawei-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-huawei-api-key"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations/adding-microsoft-intune-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/role-management"
+  to = "/account/my-organization/profile-and-team/role-management"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/auth-openid"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/auth-openid"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/auth-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/auth-saml"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/azure-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/azure-saml"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/okta-openid"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-openid"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-saml"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/onelogin-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/onelogin-saml"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/notifications-and-communication"
+  to = "/account/my-organization/integrations/notification-integrations"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/webhooks"
+  to = "/account/my-organization/integrations/notification-integrations/webhooks"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/ldap-login"
+  to = "/account/my-organization/integrations/authentications/ldap-login"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/team-activity-log"
+  to = "/account/my-organization/profile-and-team/team-activity-log"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/single-sign-on-login"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-saml"
   status = 301
