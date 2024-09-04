@@ -31,8 +31,8 @@ If you are a cloud Appcircle server user, you should change the variables below:
 
 If you are using the self-hosted Appcircle server, you should change the following variables in addition to the ones above:
 
-- `API_URL`: The API URL for your self-hosted Appcircle server. If you are accessing Appcircle dashboard with a URL like “https://my.appcircle.spacetech.com”, your `API` URL will usually be “https://api.appcircle.spacetech.com”.
-- `AUTH_URL`: The Authentication URL for your self-hosted Appcircle server. If you are accessing Appcircle dashboard with a URL like “https://my.appcircle.spacetech.com”, your `AUTH` URL will usually be “https://auth.appcircle.spacetech.com”.
+- `API_URL`: The API URL for your self-hosted Appcircle server. If you are accessing Appcircle dashboard with a URL like `https://my.appcircle.spacetech.com`, your `API` URL will usually be`https://api.appcircle.spacetech.com`.
+- `AUTH_URL`: The Authentication URL for your self-hosted Appcircle server. If you are accessing Appcircle dashboard with a URL like `https://my.appcircle.spacetech.com`, your `AUTH` URL will usually be `https://auth.appcircle.spacetech.com`.
 
 <Tabs
 defaultValue="bash"
