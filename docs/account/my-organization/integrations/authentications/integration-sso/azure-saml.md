@@ -39,7 +39,7 @@ Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO fo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login1.png' />
 
-- Click Create button to create your SSO Login
+- Click Create button to create your SSO Login.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login2.png' />
 
@@ -49,7 +49,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 :::
 
-- Select Setup SAML SSO Provider
+- Select Setup SAML SSO Provider.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login3.png' />
 
@@ -77,7 +77,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp4.png' />
 
-- Give a name for your application and select **Integrate another application you don't find in the gallery (Non-gallery)** and click **Create**
+- Give a name for your application and select **Integrate another application you don't find in the gallery (Non-gallery)** and click **Create**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azurecreateapp5.png' />
 
@@ -85,11 +85,11 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 You need to select users/groups in Azure AD to enable SSO. All members of your Appcircle organization must be added to Azure AD.
 
-- Select **Users and groups** and click **Add user/group**
+- Select **Users and groups** and click **Add user/group**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azureaddusers.png' />
 
-- Click **Add Assignment**, find the users from the list, and click **Select**
+- Click **Add Assignment**, find the users from the list, and click **Select**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azureaddassignment1.png' />
 
@@ -99,7 +99,7 @@ You need to select users/groups in Azure AD to enable SSO. All members of your A
 
 ### Configuring SSO
 
-- Click **Single sign-on** and select **SAML**
+- Click **Single sign-on** and select **SAML**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings1.png' />
 
@@ -107,8 +107,8 @@ You need to select users/groups in Azure AD to enable SSO. All members of your A
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings2.png' />
 
-- Add `the Store Redirect URL` and `Distribute Redirect URL` to **Reply URL (Assertion Consumer Service URL)**
-- Write `https://auth.appcircle.io/auth/realms/store` for the **Identifier (Entity ID)**
+- Add `the Store Redirect URL` and `Distribute Redirect URL` to **Reply URL (Assertion Consumer Service URL)**.
+- Write `https://auth.appcircle.io/auth/realms/store` for the **Identifier (Entity ID)**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-azure-entity-id.png' />
 
@@ -120,7 +120,7 @@ You need to select users/groups in Azure AD to enable SSO. All members of your A
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/azuressosettings5.png' />
 
-- Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
+- Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 
@@ -178,7 +178,7 @@ This integration enhances security, simplifies access management, and promotes c
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-attributes1.png' />
 
-- Click on **Add a Group Claim**. Select **Groups assigned to the application** and select **Groups assigned to the application** as source attribute. Then click on **Save**
+- Click on **Add a Group Claim**. Select **Groups assigned to the application** and select **Groups assigned to the application** as source attribute. Then click on **Save**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-attributes2.png' />
 
@@ -203,7 +203,7 @@ The live channel should be available for both groups in this case.
 
 ## Appcircle Integration Configuration
 
-- Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
+- Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 
@@ -211,18 +211,18 @@ The live channel should be available for both groups in this case.
 
 - Hit `Save` button and save the SAML configuration on Appcircle.
 
-- To enable SSO Login for the Enterprise App Store, you should navigate to the **Enterprise App Store -> Settings** and then click on the `Activate` button next to SSO Login
+- To enable SSO Login for the Enterprise App Store, you should navigate to the **Enterprise App Store -> Settings** and then click on the `Activate` button next to SSO Login.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-enterprisestore-sso-login.png' />
 
-- To enable SSO login for the **Testing Distribution**, go to the **Testing Distribution module** and select related profile
+- To enable SSO login for the **Testing Distribution**, go to the **Testing Distribution module** and select related profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2803-distribution-profiles.png' />
 
-- Click on the `Settings` button on the detail screen
+- Click on the `Settings` button on the detail screen.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2803-distribution-detail.png' />
 
-- Navigate to the `Authentication` tab and select **SSO Login** as the authentication type
+- Navigate to the `Authentication` tab and select **SSO Login** as the authentication type.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-distribution-sso-login.png' />

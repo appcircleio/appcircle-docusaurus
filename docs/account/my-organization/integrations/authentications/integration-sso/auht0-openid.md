@@ -1,25 +1,25 @@
 ---
-title: Auht0 OpenID Configuration
+title: Auth0 OpenID Configuration
 description: Configure Auht0 OpenID for Single Sign-On (SSO) in your app. A detailed guide to boost security and simplify user logins with Appcircle.
 tags: [account, organization, sso, auht0, openid, configuration]
 sidebar_position: 3
-sidebar_label: Auht0 OpenID
+sidebar_label: Auth0 OpenID
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Auht0 OpenID Configuration
+# Auth0 OpenID Configuration
 
 The document provides a comprehensive guide for setting up Single Sign-On (SSO) login functionality within an organization's infrastructure.
 It outlines a series of steps to integrate SSO using Auht0 as the identity provider, facilitating seamless access to various applications and resources.
 
-Beginning with navigating to the organization's Integrations screen and initiating the connection process, users are guided through the configuration steps, which include creating and setting up a OpenID SSO Provider.
-The document also covers the necessary configurations within Auht0, such as creating an app integration and configuring OpenID settings.
+Starting with navigating to the organization's Integrations screen and initiating the connection process, users are guided through the configuration steps, which include creating and setting up a OpenID SSO Provider.
+The document also covers the necessary configurations within Auth0, such as creating an app integration and configuring OpenID settings.
 
-Additionally, it offers guidance on advanced settings, including the importation of OpenID configurations from Auht0.
+Additionally, it offers guidance on advanced settings, including the import of OpenID configurations from Auth0.
 Through clear instructions and actionable steps, the document aims to empower users in implementing a robust SSO solution.
 
-Appcircle supports [Auht0](https://auth0.com/) as OpenID or SAML provider.
+Appcircle supports [Auth0](https://auth0.com/) as OpenID or SAML provider.
 
 :::info
 
@@ -29,7 +29,7 @@ Only Enterprise accounts support SSO.
 
 :::caution
 
-Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO for Testing Distribution and Enterprise App Store. They must be configured separately.
+Please note that, enabling SSO for **APPCIRCLE LOGIN** does not automatically enable SSO for Testing Distribution and the Enterprise App Store. They must be configured separately.
 
 :::
 
@@ -39,7 +39,7 @@ Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO fo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-connect-sso.png' />
 
-- Click Create button to create your SSO Login
+- Click Create button to create your SSO Login.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login2.png' />
 
@@ -59,17 +59,17 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-openid-alias.png' />
 
-## Auht0 App Integration
+## Auth0 App Integration
 
 - Login to your [Auth0](https://auth0.com/) account and navigate to Applications and then click **Create Application**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/authcreateapp.png' />
 
-- Select **Regular Web Applications** and give a name
+- Select **Regular Web Applications** and give a name.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/authwebapp.png' />
 
-- Navigate to settings of the app and note, **Client ID** and **Client Secret**
+- Navigate to settings of the app and note, **Client ID** and **Client Secret**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/authopenidsettings1.png' />
 
@@ -91,14 +91,14 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 - Click on the **Save** button and finish the edit process.
 
-## Auht0 Managing User Groups
+## Auth0 Managing User Groups
 
-Managing user groups within Auht0 provides users and organizations with several benefits.
+Managing user groups within Auth0 provides users and organizations with several benefits.
 By organizing users into groups, administrators can efficiently manage access permissions for various applications and resources, saving time and effort.
-Administrators can synchronize Auht0 user groups with Appcircle, allowing for granular access control and group-based permissions.
+Administrators can synchronize Auth0 user groups with Appcircle, allowing for granular access control and group-based permissions.
 This integration enhances security, simplifies access management, and promotes collaboration within organizations utilizing the Appcircle platform.
 
-- Login to your [Auht0](https://auth0.com/) account and navigate to the organization section. Then create organizations.
+- Login to your [Auth0](https://auth0.com/) account and navigate to the organization section. Then create organizations.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-create-groups.png' />
 
@@ -145,18 +145,18 @@ The live channel should be available for both groups in this case.
 
 ## Appcircle Integration Configuration
 
-- To enable SSO Login for the Enterprise App Store, you should navigate to the **Enterprise App Store -> Settings** and then click on the `Activate` button next to SSO Login
+- To enable SSO Login for the Enterprise App Store, you should navigate to the **Enterprise App Store -> Settings** and then click on the `Activate` button next to SSO Login.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-enterprisestore-sso-login.png' />
 
-- To enable SSO login for the **Testing Distribution**, go to the **Testing Distribution module** and select related profile
+- To enable SSO login for the **Testing Distribution**, go to the **Testing Distribution module** and select related profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2803-distribution-profiles.png' />
 
-- Click on the `Settings` button on the detail screen
+- Click on the `Settings` button on the detail screen.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2803-distribution-detail.png' />
 
-- Navigate to the `Authentication` tab and select **SSO Login** as the authentication type
+- Navigate to the `Authentication` tab and select **SSO Login** as the authentication type.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-distribution-sso-login.png' />

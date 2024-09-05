@@ -1,25 +1,25 @@
 ---
-title: Auht0 SAML Configuration
+title: Auth0 SAML Configuration
 description: Configure Auht0 SAML for Single Sign-On (SSO) in your app. A detailed guide to boost security and simplify user logins with Appcircle.
 tags: [account, organization, sso, auth0, saml, configuration]
 sidebar_position: 3
-sidebar_label: Auht0 SAML
+sidebar_label: Auth0 SAML
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Auht0 SAML Configuration
+# Auth0 SAML Configuration
 
 The document provides a comprehensive guide for setting up Single Sign-On (SSO) login functionality within an organization's infrastructure.
-It outlines a series of steps to integrate SSO using Auht0 as the identity provider, facilitating seamless access to various applications and resources.
+It outlines a series of steps to integrate SSO using Auth0 as the identity provider, facilitating seamless access to various applications and resources.
 
 Beginning with navigating to the organization's Integrations screen and initiating the connection process, users are guided through the configuration steps, which include creating and setting up a SAML SSO Provider.
 The document also covers the necessary configurations within Auht0, such as creating an app integration and configuring SAML 2.0 settings.
 
-Additionally, it offers guidance on advanced settings, including the importation of SAML configurations from Auht0.
+Additionally, it offers guidance on advanced settings, including the importation of SAML configurations from Auth0.
 Through clear instructions and actionable steps, the document aims to empower users in implementing a robust SSO solution.
 
-Appcircle supports [Auht0](https://auth0.com/) as OpenID or SAML provider.
+Appcircle supports [Auth0](https://auth0.com/) as OpenID or SAML provider.
 
 :::info
 
@@ -39,7 +39,7 @@ Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO fo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login1.png' />
 
-- Click Create button to create your SSO Login
+- Click Create button to create your SSO Login.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login2.png' />
 
@@ -49,7 +49,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 :::
 
-- Select Setup SAML SSO Provider
+- Select Setup SAML SSO Provider.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login3.png' />
 
@@ -65,7 +65,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/authcreateapp.png' />
 
-- Select **Regular Web Applications** and give a name
+- Select **Regular Web Applications** and give a name.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/authwebapp.png' />
 
@@ -73,7 +73,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/authsamlsettings1.png' />
 
-- Click the SAML button and change the settings. For the Callback URL write down the `Store Redirect URL` you have created earlier. For the settings, paste the below JSON
+- Click the SAML button and change the settings. For the Callback URL write down the `Store Redirect URL` you have created earlier. For the settings, paste the below JSON.
 
 ```json
 {
@@ -85,15 +85,15 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 ```
 <Screenshot url='https://cdn.appcircle.io/docs/assets/authsamlsettings2.png' />
 
-- Instead of writing all the settings of SAML, you can download the settings file from Auth0 and upload it. Navigate to the **Usage** and then click the **Download** button to download the XML file
+- Instead of writing all the settings of SAML, you can download the settings file from Auth0 and upload it. Navigate to the **Usage** and then click the **Download** button to download the XML file.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/authsamlsettings3.png' />
 
-- Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
+- Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 
-- Check all the settings on this page and confirm that Redirect and SSO URLs are imported correctly. You can check if the X509 Certificate is imported correctly as well. If you want to enter multiple certificates you can separate them by using a comma between them. Please be aware that you need to remove any new lines or file headers from this edit box. This edit box only accepts a long base64 encoded string.
+- Check all the settings on this page and confirm that Redirect and SSO URLs are imported correctly. You can check if the X509 Certificate is imported correctly as well. If you want to enter multiple certificates you can separate them by using a comma between them. Please note that you need to remove any new lines or file headers from this edit box. This edit box only accepts a long base64 encoded string.
 
 :::info
 If you are a **self-hosted Appcircle user**, then you should change the domain of the **Store and Distribute Redirect URL** to your own domain.
@@ -108,14 +108,14 @@ Distribute Redirect URL is `https://auth.self.spacetech.com/auth/realms/distribu
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-auth0-distribute-redirect-url.png' />
 
-## Auht0 Managing User Groups
+## Auth0 Managing User Groups
 
-Managing user groups within Auht0 provides users and organizations with several benefits.
+Managing user groups within Auth0 provides users and organizations with several benefits.
 By organizing users into groups, administrators can efficiently manage access permissions for various applications and resources, saving time and effort.
-Administrators can synchronize Auht0 user groups with Appcircle, allowing for granular access control and group-based permissions.
+Administrators can synchronize Auth0 user groups with Appcircle, allowing for granular access control and group-based permissions.
 This integration enhances security, simplifies access management, and promotes collaboration within organizations utilizing the Appcircle platform.
 
-- Login to your [Auht0](https://auth0.com/) account and navigate to the organization section. Then create organizations.
+- Login to your [Auth0](https://auth0.com/) account and navigate to the organization section. Then create organizations.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-create-groups.png' />
 

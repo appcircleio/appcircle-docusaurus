@@ -39,7 +39,7 @@ Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO fo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-connect-sso.png' />
 
-- Click Create button to create your SSO Login
+- Click Create button to create your SSO Login.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login2.png' />
 
@@ -49,7 +49,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 :::
 
-- Select Setup OpenID SSO Provider
+- Select Setup OpenID SSO Provider.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login3.png' />
 
@@ -89,7 +89,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 - Instead of writing all the settings of OpenID, you can download the settings file from Okta and upload it to Appcircle.
 
-Download your OpenID configuration file from one of the below locations
+Download your OpenID configuration file from one of the below locations:
 
 ```
 https://customer_name_here.okta.com/.well-known/openid-configuration
@@ -97,7 +97,7 @@ https://customer_name_here.okta.com/oauth2/default/.well-known/openid-configurat
 
 ```
 
-- Go back to Appcircle, upload this JSON file by clicking the button under **Import OpenID configuration**
+- Go back to Appcircle, upload this JSON file by clicking the button under **Import OpenID configuration**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-openid-alias.png' />
 
@@ -162,7 +162,7 @@ This integration enhances security, simplifies access management, and promotes c
 
 - Click on the **Save** button and finish the edit process.
 
-- Update the **Claim Name** as `groups`
+- Update the **Claim Name** as `groups`.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-groups-claim.png' />
 
@@ -180,7 +180,7 @@ The live channel should be available for both groups in this case.
 
 ## Appcircle Integration Configuration
 
-- Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**
+- Go back to Appcircle, upload this XML file by clicking the button under **Import SAML Configuration**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 
@@ -188,18 +188,18 @@ The live channel should be available for both groups in this case.
 
 - Hit `Save` button and save the SAML configuration on Appcircle.
 
-- To enable SSO Login for the Enterprise App Store, you should navigate to the **Enterprise App Store -> Settings** and then click on the `Activate` button next to SSO Login
+- To enable SSO Login for the Enterprise App Store, you should navigate to the **Enterprise App Store -> Settings** and then click on the `Activate` button next to SSO Login.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-enterprisestore-sso-login.png' />
 
-- To enable SSO login for the **Testing Distribution**, go to the **Testing Distribution module** and select related profile
+- To enable SSO login for the **Testing Distribution**, go to the **Testing Distribution module** and select related profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2803-distribution-profiles.png' />
 
-- Click on the `Settings` button on the detail screen
+- Click on the `Settings` button on the detail screen.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2803-distribution-detail.png' />
 
-- Navigate to the `Authentication` tab and select **SSO Login** as the authentication type
+- Navigate to the `Authentication` tab and select **SSO Login** as the authentication type.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-distribution-sso-login.png' />
