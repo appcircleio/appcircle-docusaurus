@@ -317,7 +317,7 @@ status = 301
 
 [[redirects]]
   from = "/account/sso-login/single-sign-on-login"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/single-sign-on-login"
+  to = "/account/my-organization/integrations/authentications/integration-sso"
   status = 301
 
 [[redirects]]
