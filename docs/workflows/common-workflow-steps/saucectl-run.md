@@ -20,7 +20,7 @@ Below are the workflow steps required before running the **Saucectl** step, list
 
 | Prerequisite Workflow Step  | Description                                                                   |
 | --------------------------- | ----------------------------------------------------------------------------- |
-| [Android Build for UI Testing](./android-build-for-ui-testing) | This step generates the required Android test application outputs needed for testing on Sauce Labs. |
+| [Android Build for UI Testing](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | This step generates the required Android test application outputs needed for testing on Sauce Labs. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-saucectl-1.0.png'/>
 
