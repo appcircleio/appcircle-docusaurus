@@ -108,20 +108,22 @@ The Shared App Profiles section allows testers to view other testing distributio
 The list will display the other testing distribution profiles along with their authentication methods.
 
 :::caution
-
-While navigating between shared profiles, if a profile requires authentication, users will need to log in again to gain access.
-
+**Re-authentication Rules:**
+- When switching between profiles that use different authentication methods (e.g., STATIC to SSO), users must log in again to access the new profile.
+- If both the current and target profiles use SSO or LDAP, no re-authentication is needed when switching.
+- If both profiles use STATIC authentication, re-authentication is required.
 :::
 
 For more information about authentication methods, please refer to the [Using Authentication for Distribution](/testing-distribution/create-or-select-a-distribution-profile#authentication) section.
 
 :::info
-
-If you are using a public link to access the Testing Portal, you can only navigate between testing distribution profiles that have public links enabled.
+**Profile Visibility:**
+- If public link access is enabled for a profile, it will be visible and accessible from other profiles within the same organization in the testing portal, regardless of whether it has been shared via email.
+- The visibility is based on the profile the user is currently logged into, and is not influenced by the type of authentication used.
+- If a user gains access to the Testing Portal through a shared public link, they will not be able to navigate to profiles with public link access disabled unless those profiles have been shared with their email.
+:::
 
 For more information about using public links, please visit the [using public link for distribution](/testing-distribution/create-or-select-a-distribution-profile#public-link) documentation.
-
-:::
 
 ## Profile Information
 
