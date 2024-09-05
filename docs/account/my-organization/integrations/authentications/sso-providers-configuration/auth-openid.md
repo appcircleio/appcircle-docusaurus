@@ -113,7 +113,7 @@ This step is optional and can be skipped if you do not plan to use SSO Mapping.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-assign-roles.png' />
 
-- Navigate to the **"Connections"** tab and enable connections for your organization.
+- Navigate to the **"Connections"** tab and enable Username-Password-Authentication connection for your organization.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-enable-connections.png' />
 
