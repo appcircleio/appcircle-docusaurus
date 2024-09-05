@@ -1290,7 +1290,7 @@ xcrun simctl runtime list 2>/dev/null
 If you determine that certain watchOS or tvOS runtimes are not needed, you can delete them to free up disk space:
 
 ```bash
-xcrun simctl delete <runtime_id>
+xcrun simctl runtime delete <runtime_id>
 ```
 
 :::caution
