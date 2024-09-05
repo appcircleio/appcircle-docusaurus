@@ -8,9 +8,9 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Saucectl Run
 
-> The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs. `saucectl` performs the underlying business logic to access the tests in your existing framework, runs them in the Sauce Labs Cloud, then securely transmits the test assets to the Sauce Labs platform, where you can review, share, and evaluate your test outcomes at scale.
+The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs. `saucectl` performs the underlying business logic to access the tests in your existing framework, runs them in the Sauce Labs Cloud, then securely transmits the test assets to the Sauce Labs platform, where you can review, share, and evaluate your test outcomes at scale.
 
-The description above is taken from the [Saucectl documentation](https://docs.saucelabs.com/dev/cli/saucectl/). This document will guide you on how to use the `saucectl` command and [Sauce Labs](https://docs.saucelabs.com/sauce-basics/) through Appcircle.
+For more information, please visit the [Saucectl documentation](https://docs.saucelabs.com/dev/cli/saucectl/). This document will guide you on how to use the `saucectl` command and [Sauce Labs](https://docs.saucelabs.com/sauce-basics/) through Appcircle.
 
 ### Prerequisites
 
