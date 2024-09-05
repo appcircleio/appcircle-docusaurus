@@ -106,3 +106,54 @@ User can use `AC_RELEASE_NOTES` environment variable, if the `apk`, `aab` or `ip
 | AC_TRACK_TO_CHECK    | Used for the [Get Approval from Google Play](/publish-integrations/android-publish-integrations/get-approval-from-google-play) step. It's recommended to check the track that you've sent the app in previous steps.                       |
 | AC_ACCEPTED_STATUSES | Used for the [Get Approval from Google Play](/publish-integrations/android-publish-integrations/get-approval-from-google-play) step. Statuses of `completed`,`inProgress`,`draft`,`halted` can be used.                                    |
 | AC_HUAWEI_APP_ID     | Used for the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step. Huawei requires `Huawei App ID` to be sent app to Huawei App Gallery.                                      |
+
+## FAQ
+
+### How is environment variable exchange done between steps?
+
+In the Appcircle Publish module, the steps within a Publish flow operate independently. This means that each step is executed in a separate, clean runner environment. This feature allows steps to run independently and individually. Therefore, to exchange environment variables between steps, the modified ENV value needs to be saved as an output variable.
+
+Below is an example of how this can be done. Once an ENV variable is modified in a step and saved to the output direction, it will become accessible in another step.
+
+- For first step
+
+```ruby
+
+def set_env_variable(key, value)
+    open(ENV['AC_ENV_FILE_PATH'], 'a') do |f|
+      f.puts "#{key}=#{value}"
+    end
+    ENV[key] = value # New value added to new ENV
+end
+
+# First, get the $AC_BUILD_RELEASE_NOTES value 
+ac_build_release_notes = ENV['AC_RELEASE_NOTES']
+
+# Check the value nil or not
+if ac_build_release_notes.nil?
+  puts "Hata: $AC_RELEASE_NOTES değişkeni tanımlanmamış veya boş."
+else
+  # Before
+  puts "Before: #{ac_build_release_notes}"
+
+  ac_build_release_notes = "Release note değiştirildi"
+
+  # After
+  puts "Changed: #{ac_build_release_notes}"
+
+  # Save the updated valur to new ENV value
+  set_env_variable('$AC_OUTPUT_DIR/STORE_NOTES.env', ac_build_release_notes)
+
+  # Print the new value.
+  puts "Sonrası store notes: #{ENV['STORE_NOTES']}"
+end
+
+```
+
+- For second step
+
+```ruby
+
+puts "After value changed in other step: #{ENV['$AC_OUTPUT_DIR/STORE_NOTES.env']}"
+
+```
