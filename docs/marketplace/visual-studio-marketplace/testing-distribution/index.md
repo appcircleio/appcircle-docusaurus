@@ -1,5 +1,5 @@
 ---
-title: Setting Up Appcircle Distribute Task in Azure DevOps Pipeline
+title: Setting Up Appcircle Testing Distribution Task in Azure DevOps Pipeline
 sidebar_label: Testing Distribution
 description: Overview of self-hosted Appcircle and related concepts regarding testing distribution
 tags:
@@ -21,16 +21,26 @@ import Screenshot from '@site/src/components/Screenshot';
 You can discover more about this extension and install it by:
 https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
-### How to Add the Appcircle Distribute Action to Your Pipeline
+## System Requirements
 
-To install the Appcircle Distribute Task Extension, follow these steps:
+**Compatible Agents:**
+
+- macOS 14.5
+
+:::caution
+Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
+:::
+
+### How to Add the Appcircle Testing Distribution Action to Your Pipeline
+
+To install the Appcircle Testing Distribution Task Extension, follow these steps:
 
 1. Go to your pipeline, click "Edit" button on the top right corner
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-pipeline-edit.png' />
-2. Search for the “Appcircle distribute” task extension within your `YAML` file.
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-extension-task.png' />
+2. Search for the “Appcircle Testing Distribution task extension within your `YAML` file.
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution.png' />
 3. Fill out the necessary input fields and click the **Add** button.
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-extension-task-detail.png' />
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution_task_detail.png' />
 
    3.1. You can learn more about getting your personal api token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
 
@@ -41,20 +51,30 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 ```yaml
 - task: AppcircleTestingDistribution@0
   inputs:
-    accessToken: "APPCIRCLE_ACCESS_TOKEN" # Your Appcircle Personal API Token
-    profileId: "APPCIRCLE_PROFILE_ID" # ID of your Appcircle Distribution Profile
-    appPath: "BUILD_PATH" # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
-    message: "Sample Message" # Custom message for your testers
+    personalAPIToken: $(AC_PROFLE_API_TOKEN)
+    profileName: $(AC_PROFILE_NAME)
+    createProfileIfNotExists: $(CREATE_PROFILE_IF_NOT_EXISTS)
+    appPath: $(APP_PATH)
+    message: $(MESSAGE)
 ```
 
-:::caution Build Steps Order
-Ensure that this action is added after build steps have been completed.
-
-:::
+- `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `profileName`: Specifies the profile that will be used for uploading the app.
+- `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
+- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
+- `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
 ## Leveraging Environment Variables
 
 Utilize environment variables seamlessly by substituting the parameters with $(VARIABLE_NAME) in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
+
+:::caution Build Steps Order
+Ensure that this action is added after build steps have been completed.
+:::
+
+:::caution
+If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
+:::
 
 ## References
 
