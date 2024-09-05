@@ -58,6 +58,31 @@ If you are using the Appcircle DMZ structure and upgrading an Appcircle server, 
 For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz).
 :::
 
+#### Version History
+
+Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version.
+
+| Version | Release Date |
+|---------|--------------|
+| 3.20.4  | 26/08/2024   |
+| 3.20.3  | 20/08/2024   |
+| 3.20.2  | 16/08/2024   |
+| 3.20.1  | 07/08/2024   |
+| 3.19.1  | 19/07/2024   |
+| 3.18.0  | 14/06/2024   |
+| 3.17.2  | 30/05/2024   |
+| 3.17.1  | 25/05/2024   |
+| 3.17.0  | 21/05/2024   |
+| 3.16.0  | 14/05/2024   |
+| 3.15.1  | 11/05/2024   |
+| 3.15.0  | 26/04/2024   |
+| 3.14.0  | 17/04/2024   |
+| 3.13.2  | 15/03/2024   |
+| 3.13.1  | 07/03/2024   |
+| 3.12.3  | 21/02/2024   |
+| 3.12.2  | 19/02/2024   |
+| 3.12.1  | 12/02/2024   |
+
 ### 1. Download Latest
 
 To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package. This typically means copying the `cred.json` file to the same directory containing the `appcircle-server` directory.
