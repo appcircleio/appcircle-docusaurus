@@ -1287,7 +1287,7 @@ To list the installed Xcode simulator runtimes, run the following command on you
 xcrun simctl runtime list 2>/dev/null
 ```
 
-If you determine that certain watchOS or tvOS runtimes are not needed, you can delete them to free up disk space:
+If you determine that certain iOS, watchOS, tvOS or visionOS(xrOS) runtimes are not needed, you can delete them to free up disk space:
 
 ```bash
 xcrun simctl runtime delete <runtime_id>
