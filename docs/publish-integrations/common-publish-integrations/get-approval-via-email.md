@@ -35,6 +35,12 @@ For example, imagine you need approval from at least two people to keep the flow
 
 :::
 
+### Email Template
+
+With the Email Approval step provided by the Appcircle Publish module, release processes become more manageable and controlled. The email content delivered through this step provides users with all necessary information without needing to access the Appcircle interface. Through this email, users can easily access binary details, release notes, and any other essential information.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-emailTemplate.png' />
+
 ### Prerequisites
 
 There are no required steps that must precede the **Get Approval via Email** step. However, please note that any steps executed before the **Get Approval via Email** step in the [Publish flow](/publish-module/publish-flow) will not be impacted by the approval process. The approval logic will only affect the steps that follow the **Get Approval via Email** step.
