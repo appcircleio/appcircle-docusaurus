@@ -15,6 +15,8 @@ tags:
 sidebar_position: 2
 ---
 
+Enhance the power of distributing builds to test groups or releasing beta versions of your apps by using **Appcircle Testing Distribution** and **Appcircle Enterprise App Store** actions.
+
 ### Testing Distribution
 
 It is a process distributing test builds to designated test groups or individuals.
