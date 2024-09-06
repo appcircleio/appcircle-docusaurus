@@ -33,7 +33,7 @@ Integrate Auth OpenID with your Enterprise App Store and Testing Distribution to
 
 For step-by-step guidance on configuring SSO for Enterprise App Store and Testing Distribution, follow the links below:
 
-<ContentRef url="/account/my-organization/integrations/authentications/integration-sso/auth0-openid"> Auht0 OpenID </ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/integration-sso/auth0-openid"> Auth0 OpenID </ContentRef>
 
 ## Auth0 SAML
 
@@ -41,7 +41,7 @@ Integrate Auth SAML with your Enterprise App Store and Testing Distribution to e
 
 For step-by-step guidance on configuring SSO for Enterprise App Store and Testing Distribution, follow the links below:
 
-<ContentRef url="/account/my-organization/integrations/authentications/integration-sso/auth0-saml"> Auht0 SAML </ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/integration-sso/auth0-saml"> Auth0 SAML </ContentRef>
 
 ## Microsoft Entra ID SAML
 
