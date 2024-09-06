@@ -25,7 +25,8 @@ https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
 **Compatible Agents:**
 
-- macOS 14.5
+- macos-14
+- ubuntu-22.04
 
 :::caution
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
@@ -37,7 +38,7 @@ To install the Appcircle Testing Distribution Task Extension, follow these steps
 
 1. Go to your pipeline, click "Edit" button on the top right corner
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-pipeline-edit.png' />
-2. Search for the “Appcircle Testing Distribution task extension within your `YAML` file.
+2. Search for the “Appcircle Testing Distribution" task extension within your `YAML` file.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution.png' />
 3. Fill out the necessary input fields and click the **Add** button.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution_task_detail.png' />
@@ -64,7 +65,7 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
-## Leveraging Environment Variables
+### Leveraging Environment Variables
 
 Utilize environment variables seamlessly by substituting the parameters with $(VARIABLE_NAME) in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
 

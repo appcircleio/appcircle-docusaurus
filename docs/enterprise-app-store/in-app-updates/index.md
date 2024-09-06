@@ -33,7 +33,7 @@ In-app updates offer several benefits, including a smoother user experience by e
 
 ### Authentication Requirements
 
-To integrate an in-app update experience, you will need the **organization id**, the **profile secret**, the **enterprise store prefix**, the **enterprise store url**, and the **enterprise store profile id**.
+To integrate an in-app update experience, you will need the **profile secret**, the **enterprise store prefix**, the **enterprise store url**, and the **enterprise store profile id**.
 
 ### How to Obtain Integrations Parameters
 
@@ -132,7 +132,6 @@ To fetch app versions and download the binary, you first need to obtain an acces
 
             JSONObject jsonBody = new JSONObject();
             try {
-                jsonBody.put("OrganizationId", Environment.ORGANIZATION_ID);
                 jsonBody.put("ProfileId", Environment.PROFILE_ID);
                 jsonBody.put("Secret", Environment.SECRET);
             } catch (JSONException e) {
@@ -170,7 +169,7 @@ To fetch app versions and download the binary, you first need to obtain an acces
   <TabItem value="swift">
     ```swift
     extension API {
-        func getAccessToken(organizationId: String, secret: String, profileId: String) async throws -> AuthModel {
+        func getAccessToken(secret: String, profileId: String) async throws -> AuthModel {
             var components = URLComponents()
             components.scheme = apiConfig.scheme
             components.host = apiConfig.host
@@ -186,7 +185,6 @@ To fetch app versions and download the binary, you first need to obtain an acces
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             
             let parameters: [String: Any] = [
-                "OrganizationId": organizationId,
                 "ProfileId": profileId,
                 "Secret": secret
             ]
@@ -211,9 +209,11 @@ To fetch app versions and download the binary, you first need to obtain an acces
       const response = await axios.post(
         endpointURL,
         {
-          OrganizationId: Environment.ORGANIZATION_ID,
           ProfileId: profileId,
-          Secret: Environment.STORE_SECRET,
+          Secret:
+            Platform.OS === 'ios'
+              ? Environment.IOS_STORE_SECRET
+              : Environment.ANDROID_STORE_SECRET,
         },
         {
           headers: {
@@ -617,9 +617,9 @@ If a newer version is available, generate the platform-specific download URL and
 
   <TabItem value="swift">
     ```swift
-    func checkForUpdate(organizationId: String, secret: String, profileId: String, storeURL: String, userEmail: String) async throws -> URL? {
+    func checkForUpdate(secret: String, profileId: String, storeURL: String, userEmail: String) async throws -> URL? {
         do {
-            let authResponse = try await self.authApi.getAccessToken(organizationId: organizationId, secret: secret, profileId: profileId)
+            let authResponse = try await self.authApi.getAccessToken(secret: secret, profileId: profileId)
             let appVersions = try await self.api.getAppVersions(accessToken: authResponse.accessToken)
             let bundle = Bundle.main
             let currentVersion = bundle.infoDictionary?["CFBundleShortVersionString"] as? String
@@ -651,8 +651,6 @@ If a newer version is available, generate the platform-specific download URL and
   <TabItem value="react-native">
     ```js
     export const checkForUpdate = async (params: {
-      storePrefix: string;
-      storeHost: string;
       iOSProfileId: string;
       androidProfileId: string;
       currentVersion: string;
@@ -668,8 +666,6 @@ If a newer version is available, generate the platform-specific download URL and
         const latestVersion = getLatestVersion(params.currentVersion, appVersions);
         if (latestVersion) {
           const downloadUrl = createDownloadUrl(
-            params.storePrefix,
-            Platform.OS === 'ios' ? params.iOSProfileId : params.androidProfileId,
             latestVersion.id,
             access_token,
             params.userEmail,
@@ -686,18 +682,17 @@ If a newer version is available, generate the platform-specific download URL and
           };
         }
       } catch (error) {
+        console.log(error.response);
         console.error('Failed to determine if an update is available', error);
       }
     };
 
     const createDownloadUrl = (
-      storeId: string,
-      profileId: string,
       availableVersionId: string,
       accessToken: string,
       email: string,
     ): string | null => {
-      const baseUrl = `https://${storeId}.store.appcircle.io/api/profile/${profileId}/appVersions/${availableVersionId}/download-update/${accessToken}/user/${email}`;
+      const baseUrl = `${Environments.STORE_URL}/api/app-versions/${availableVersionId}/download-version/${accessToken}/user/${email}`;
       const downloadUrl = `itms-services://?action=download-manifest&url=${baseUrl}`;
 
       try {
@@ -776,7 +771,7 @@ After obtaining the download URL for a newer version, display an alert with opti
                     .onAppear {
                         let updateChecker = UpdateChecker()
                         Task {
-                            if let updateURL = try await updateChecker.checkForUpdate(organizationId: Environments.organizationId, secret: Environments.secret, profileId: Environments.profileId, storeURL: Environments.storeURL, userEmail: "USER_EMAIL") {
+                            if let updateURL = try await updateChecker.checkForUpdate(secret: Environments.secret, profileId: Environments.profileId, storeURL: Environments.storeURL, userEmail: "USER_EMAIL") {
                                 self.updateURL = updateURL
                                 self.showAlert.toggle()
                             }
@@ -811,8 +806,6 @@ After obtaining the download URL for a newer version, display an alert with opti
     useEffect(() => {
       const updateControl = async (currentVersion: string) => {
         const updateInfo = await checkForUpdate({
-          storePrefix: Environment.STORE_PREFIX,
-          storeHost: Environment.STORE_HOST,
           iOSProfileId: Environment.IOS_PROFILE_ID,
           androidProfileId: Environment.ANDROID_PROFILE_ID,
           currentVersion,
