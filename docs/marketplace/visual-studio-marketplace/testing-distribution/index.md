@@ -25,7 +25,7 @@ https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
 **Compatible Agents:**
 
-- macos-14 (arm64)
+- macos-14
 - ubuntu-22.04
 
 :::caution
