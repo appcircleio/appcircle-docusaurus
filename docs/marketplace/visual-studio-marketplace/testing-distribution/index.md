@@ -25,7 +25,7 @@ https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
 **Compatible Agents:**
 
-- macOS 14.5
+- macos-14 (arm64)
 
 :::caution
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
@@ -64,7 +64,7 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
-## Leveraging Environment Variables
+### Leveraging Environment Variables
 
 Utilize environment variables seamlessly by substituting the parameters with $(VARIABLE_NAME) in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
 
