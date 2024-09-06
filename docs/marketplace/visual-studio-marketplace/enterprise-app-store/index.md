@@ -48,20 +48,25 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 ```yaml
 - task: AppcircleEnterpriseStore@0
   inputs:
-    personalAPIToken: $(AC_PROFLE_API_TOKEN)
-    profileName: $(AC_PROFILE_NAME)
-    createProfileIfNotExists: $(CREATE_PROFILE_IF_NOT_EXISTS)
     appPath: $(APP_PATH)
-    message: $(MESSAGE)
+    summary: $(SUMMARY)
+    releaseNotes: $(RELEASE_NOTES)
+    publishType: $(PUBLISH_TYPE)
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
-- `profileName`: Specifies the profile that will be used for uploading the app.
-- `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
-- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
-- `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
+- `personalAPIToken`: The Appcircle Personal API token is utilized to
+  authenticate and secure access to Appcircle services, ensuring that only
+  authorized users can perform actions within the platform.
+- `appPath`: Indicates the file path to the application that will be uploaded to
+  Appcircle Testing Distribution Profile.
+- `releaseNote`: Contains the details of changes, updates, and improvements made
+  in the current version of the app being published.
+- `Summary`: Used to provide a brief overview of the version of the app that is
+  about to be published.
+- `publishType`: Specifies the publishing status as either none, beta, or live,
+  and must be assigned the values "0", "1", or "2" accordingly.
 
-## Leveraging Environment Variables
+### Leveraging Environment Variables
 
 Utilize environment variables seamlessly by substituting the parameters with $(VARIABLE_NAME) in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
 
@@ -70,7 +75,10 @@ Ensure that this action is added after build steps have been completed.
 :::
 
 :::caution
-If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
+**If two workflows start simultaneously, the last workflow to reach the publish
+step will be the up-to-date version on the Enterprise App Store. If these
+workflows building the same package version, the first publish will be
+successful, while later deployments with the same version will fail.**
 :::
 
 ## References
