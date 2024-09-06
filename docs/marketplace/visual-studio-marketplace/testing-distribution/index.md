@@ -38,7 +38,7 @@ To install the Appcircle Testing Distribution Task Extension, follow these steps
 
 1. Go to your pipeline, click "Edit" button on the top right corner
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-pipeline-edit.png' />
-2. Search for the “Appcircle Testing Distribution task extension within your `YAML` file.
+2. Search for the “Appcircle Testing Distribution" task extension within your `YAML` file.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution.png' />
 3. Fill out the necessary input fields and click the **Add** button.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution_task_detail.png' />
