@@ -35,7 +35,7 @@ Please be aware that, enabling SSO for **APPCIRCLE LOGIN** doesn't enable SSO fo
 
 ## SSO Login
 
-- To start, go to [My Organization](/account/my-organization) > Integrations screen and press the **Connect** button next to SSO Login under the **Connections** section.
+- To start, go to [My Organization](/account/my-organization) > Integrations screen and press the **Connect** button next to SSO Login under the **Authentications** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-login1.png' />
 
@@ -55,7 +55,7 @@ If you want to manage user groups within your SSO provider, you should set **_CL
 
 - Pick an alias and display name for your organization. Please pick a short and rememberable alias.
 
-- This screen will auto-generate an URL for the Enterprise App Store and Distribute
+- This screen will auto-generate an URL for the Enterprise App Store and Testing Distribution.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png' />
 

@@ -177,6 +177,6 @@ exports.onExecutePostLogin = async (event, api) => {
 
 :::caution
 
-The ``org_id`` attribute value is equal to the organization ID, not the organization name.
+The ``http://schemas.auth0.com/org_id`` attribute value is equal to the organization ID, not the organization name.
 
 :::
