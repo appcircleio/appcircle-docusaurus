@@ -26,6 +26,7 @@ https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 **Compatible Agents:**
 
 - macos-14 (arm64)
+- ubuntu-22.04
 
 :::caution
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
