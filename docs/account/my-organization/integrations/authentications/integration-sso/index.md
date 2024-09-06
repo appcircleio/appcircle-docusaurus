@@ -17,7 +17,7 @@ Integrate Okta SAML with your Enterprise App Store and Testing Distribution to e
 
 For step-by-step guidance on configuring SSO for Enterprise App Store and Testing Distribution, follow the links below:
 
-<ContentRef url="/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-saml"> Okta SAML </ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/integration-sso/okta-saml"> Okta SAML </ContentRef>
 
 ## Okta OpenID
 
@@ -25,7 +25,7 @@ Integrate Okta OpenID with your Enterprise App Store and Testing Distribution to
 
 For step-by-step guidance on configuring SSO for Enterprise App Store and Testing Distribution, follow the links below:
 
-<ContentRef url="/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-openid"> Okta OpenID </ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/integration-sso/okta-openid"> Okta OpenID </ContentRef>
 
 ## Auth0 OpenID
 
@@ -33,7 +33,7 @@ Integrate Auth OpenID with your Enterprise App Store and Testing Distribution to
 
 For step-by-step guidance on configuring SSO for Enterprise App Store and Testing Distribution, follow the links below:
 
-<ContentRef url="/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/auth0-openid"> Auht0 OpenID </ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/integration-sso/auth0-openid"> Auth0 OpenID </ContentRef>
 
 ## Auth0 SAML
 
@@ -41,7 +41,7 @@ Integrate Auth SAML with your Enterprise App Store and Testing Distribution to e
 
 For step-by-step guidance on configuring SSO for Enterprise App Store and Testing Distribution, follow the links below:
 
-<ContentRef url="/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/auth0-saml"> Auht0 SAML </ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/integration-sso/auth0-saml"> Auth0 SAML </ContentRef>
 
 ## Microsoft Entra ID SAML
 
@@ -49,4 +49,4 @@ Integrate Microsoft Entra ID SAML with your Enterprise App Store and Testing Dis
 
 For step-by-step guidance on configuring SSO for Enterprise App Store and Testing Distribution, follow the links below:
 
-<ContentRef url="/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/azure-saml"> Microsoft Entra ID SAML </ContentRef>
+<ContentRef url="/account/my-organization/integrations/authentications/integration-sso/azure-saml"> Microsoft Entra ID SAML </ContentRef>
