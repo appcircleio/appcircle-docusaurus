@@ -29,7 +29,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 - Testing Distribution profiles with public access enabled are now accessible to all users with active authentication within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Testing Group members can now be imported through registered LDAP groups. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Help documentation and guides are now accessible based on the app and certificate type after downloading apps from the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Android profile creation has been separated into two options: you can either create a profile manually by typing the package ID, or select it from the Google Play Console using API credentials. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- A UI issue where one of the provisioning files on the build configuration list disappeared when adding a new one has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The issue where the order of self-hosted runners changed after each refresh has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- The issue where the admin module's build details failed to display logs properly for resign activities within the publish module has been resolved. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.20.4 - 2024-08-20 Role Management Updates, Testing Distribution & Enterprise App Store Improvements, Xcode 16.1 Beta 1, Bug Fixes, and more
 
