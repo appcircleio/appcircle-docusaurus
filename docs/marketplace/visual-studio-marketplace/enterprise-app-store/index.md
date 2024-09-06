@@ -1,5 +1,5 @@
 ---
-title: Setting Up Appcircle Enterprise App Store in Your Pipeline
+title: Setting Up Appcircle Enterprise App Store in Azure DevOps Pipeline
 sidebar_label: Enterprise App Store
 description: Overview of Azure DevOps Enterprise Store Extension
 tags:
@@ -18,6 +18,11 @@ sidebar_position: 2
 Appcircle Enterprise App Store serves as your private mobile app store, allowing access to in-house apps through a customizable mobile storefront. The Appcircle Enterprise App Store extension enables you to upload your app to your personalized app store within Appcircle.
 
 import Screenshot from '@site/src/components/Screenshot';
+
+### Discover Extension
+
+You can discover more about this extension and install it by:
+https://marketplace.visualstudio.com/items?itemName=Appcircle.enterprise-app-store
 
 ## System Requirements
 
