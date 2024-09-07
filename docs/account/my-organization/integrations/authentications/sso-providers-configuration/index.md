@@ -20,15 +20,15 @@ Currently, this configuration supports enabling SSO with only one identity provi
 
 The SSO setup described in this document integrates the selected identity provider with the Appcircle IAM module, essentially adding the provider as an identity source for Appcircle.
 
-This document provides a comprehensive guide to configuring SSO with various supported identity providers, including Auth0, Azure AD, Okta, OneLogin and Keycloak. Whether you choose to implement OpenID Connect or SAML, this guide will walk you through the necessary steps to ensure a successful integration with Appcircle.
+This document provides a comprehensive guide to configuring SSO with various supported identity providers, including Auth0, Microsoft Entra ID (formerly Azure Active Directory), Okta, OneLogin and Keycloak. Whether you choose to implement OpenID Connect or SAML, this guide will walk you through the necessary steps to ensure a successful integration with Appcircle.
 
 ### Supported Identity Providers
 
 - Auth0:
     - Auth0 (OpenID Connect)
     - Auth0 (SAML)
-- Azure AD:
-    - Azure AD (SAML)
+- Microsoft Entra ID (formerly Azure Active Directory):
+    - Microsoft Entra ID (SAML)
 - Okta:
     - Okta (OpenID Connect)
     - Okta (SAML)
@@ -54,7 +54,7 @@ Before you begin configuring SSO for Appcircle, ensure that you have the followi
 
 Understanding the following key terms will help you navigate the SSO configuration process more effectively:
 
-- **Identity Provider (IdP):** The service responsible for authenticating the user and issuing identity information. Common examples include Auth0, Azure AD, Okta, OneLogin, and Keycloak.
+- **Identity Provider (IdP):** The service responsible for authenticating the user and issuing identity information. Common examples include Auth0, Microsoft Entra ID, Okta, OneLogin, and Keycloak.
 - **Service Provider (SP):** The service (in this case, Appcircle) that relies on the IdP to authenticate users and grant them access. The SP uses the identity information provided by the IdP to manage user sessions and permissions.
 - **SAML Assertion:** A secure XML document sent by the IdP to the SP, containing the user's authentication and authorization information. This document is a core component of the SAML protocol, used to establish a user’s identity across different services.
 - **OpenID Connect Token:** A token used in the OpenID Connect protocol to convey identity information from the IdP to the SP. This token typically includes user information and is crucial for establishing secure communication between the IdP and SP.
@@ -79,6 +79,8 @@ Begin by enabling SSO within your Appcircle organization settings. Follow these 
 4. The **Enable SSO for Organizations** window will open, presenting two options:
     - **Set up OpenID Provider**
     - **Set up SAML SSO Provider**
+  
+
     Select the option that corresponds to the identity provider you will configure.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-form_v2.png' />
@@ -128,8 +130,6 @@ After completing the SSO configuration, it's essential to test and ensure everyt
 <details>
   <summary>Step 4.1: Initiate SSO Login</summary>
 
-After completing the SSO configuration, it's essential to test and ensure everything is functioning correctly. The following steps outline the testing 
-
 1. Open an incognito window in your browser to avoid any cached sessions interfering with the test.
 2. Navigate to the Appcircle login page and click the **Continue with SSO** button.
 3. Enter the SSO Alias you configured earlier and proceed. The alias is used to identify your organization's specific SSO setup.
@@ -140,8 +140,6 @@ After completing the SSO configuration, it's essential to test and ensure everyt
 
 <details>
   <summary>Step 4.2: Account Linking</summary>
-
-After completing the SSO configuration, it's essential to test and ensure everything is functioning correctly. The following steps outline the testing 
 
 1. After entering the alias, if a user with the same email already exists, you should see a confirmation screen prompting you to link your account with the SSO provider.
 2. Confirm the account linking by clicking the appropriate button on the confirmation screen.
@@ -166,9 +164,13 @@ Once you confirm the account linking, an email will be sent to your registered e
 <details>
   <summary>Step 4.4: Final Login</summary>
 
-After verifying your account via email, your SSO setup is complete. From now on, you can log in using the direct SSO login link.
+After verifying your account via email, your SSO setup is complete. From now on, you can log in with your SSO alias or using the direct SSO login link.
 
-**Note:** After enabling SSO, the traditional login method using your previous credentials will no longer be available for your organization. Ensure that you can log in successfully using SSO before logging out of any sessions.
+:::info
+
+After enabling SSO, the traditional login method using your previous credentials will no longer be available for your organization. Ensure that you can log in successfully using SSO before logging out of any sessions.
+
+:::
 
 </details>
 </details>
@@ -314,10 +316,10 @@ This metadata file will be used in the next step to configure Appcircle.
 
 #### Step 3: Upload SAML Metadata to Appcircle
 
-Now, upload the SAML metadata file and X509 Certificate to Appcircle and finalize the configuration:
+Now, upload the SAML metadata file to Appcircle and finalize the configuration:
 
 1. Navigate to the **Set up SAML SSO Provider** screen in Appcircle, which you accessed during the SSO setup in the "General Configuration Steps."
-2. Upload the downloaded SAML metadata file and X509 Certificate to Appcircle.
+2. Upload the downloaded SAML metadata file to Appcircle.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml1.png" />
 
@@ -367,7 +369,7 @@ If the test is successful, your integration is complete, and you can start using
 </details>
 
 <details>
-  <summary>4.3 Microsoft Entra (SAML) (formerly Azure Active Directory) </summary>
+  <summary>4.3 Microsoft Entra ID (SAML) (formerly Azure Active Directory) </summary>
 
 Microsoft Entra ID supports the SAML protocol, allowing integration with Appcircle for secure authentication. This section will guide you through setting up Microsoft Entra ID as your SAML identity provider for Appcircle.
 
@@ -409,9 +411,9 @@ Once the enterprise application is created, you need to assign users to it:
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/azureaddassignment1.png" />
 
-#### Step 3: Configure SAML-based Sign-on in Azure AD
+#### Step 3: Configure SAML-based Sign-on in Microsoft Entra ID
 
-Next, configure the SAML-based sign-on for the Azure AD application:
+Next, configure the SAML-based sign-on for the Microsoft Entra ID application:
 
 1. In the application settings, navigate to **Single sign-on** and select **SAML** as the sign-on method.
 
@@ -430,9 +432,9 @@ Next, configure the SAML-based sign-on for the Azure AD application:
 
 #### Step 4: Download and Upload SAML Metadata
 
-Now, download the SAML metadata from Azure AD and upload it to Appcircle:
+Now, download the SAML metadata from Microsoft Entra ID and upload it to Appcircle:
 
-1. In the Azure AD portal, go to the **SAML Signing Certificate** section and download the **Federation Metadata XML** file.
+1. In the Azure portal, go to the **SAML Signing Certificate** section and download the **Federation Metadata XML** file.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/azuressosettings5.png" />
 
@@ -477,7 +479,7 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/empty-appcircle-dashboard.png" />
 
-If the test is successful, your integration is complete, and you can start using Azure AD (SAML) as your identity provider for Appcircle.
+If the test is successful, your integration is complete, and you can start using Microsoft Entra ID (SAML) as your identity provider for Appcircle.
 
 </details>
 
@@ -547,13 +549,15 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-loginbutton.png" />
 
-3.Enter your SSO alias when prompted and click **Continue**.
+3. Enter your SSO alias when prompted and click **Continue**.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
-4.You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
-5.After successful authentication, you will be redirected back to Appcircle.
-6.If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
+4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
+
+5. After successful authentication, you will be redirected back to Appcircle.
+
+6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-linkaccount.png" />
 
@@ -788,14 +792,14 @@ This section provides a list of common issues that users might encounter during 
 - **IdP Login Page Doesn't Display:** If the IdP login page fails to display, ensure the correct SSO URL is being used in Appcircle and that the binding method (HTTP-POST or HTTP-Redirect) is properly configured.
 - **Certificate Issues:** Ensure the SAML certificate in Auth0 is valid and correctly configured. Invalid certificates can prevent proper authentication in Appcircle.
 
-### 6.4 Troubleshooting for Azure AD (SAML)
+### 6.4 Troubleshooting for Microsoft Entra ID (SAML)
 
-- **Incorrect SAML Response:** Check that all required claims and attributes are configured correctly in Azure AD.
-- **Certificate Expiration:** Ensure that the SAML signing certificate used by Azure AD is valid and not expired.
-- **Misconfigured Claims or Attributes:** Ensure that the claims and attributes being sent from Azure AD are correctly mapped and expected by Appcircle. Mismatches can lead to failed logins or incomplete user profiles.
-- **Redirect Loop:** This often occurs due to incorrect reply URLs or session issues. Verify the reply URL in Azure AD matches the one in Appcircle and that session cookies are correctly managed.
-- **Invalid Certificate or Encryption Issues:** Ensure that the certificates used for signing and encryption are valid and correctly configured in both Azure AD and Appcircle’s SSO settings. Expired certificates are a common cause of failures in SAML setups.
-- **Unassigned Users:** Ensure that users are assigned to the enterprise application in Azure AD. Unassigned users cannot authenticate through Appcircle.
+- **Incorrect SAML Response:** Check that all required claims and attributes are configured correctly in Microsoft Entra ID.
+- **Certificate Expiration:** Ensure that the SAML signing certificate used by Microsoft Entra ID is valid and not expired.
+- **Misconfigured Claims or Attributes:** Ensure that the claims and attributes being sent from Microsoft Entra ID are correctly mapped and expected by Appcircle. Mismatches can lead to failed logins or incomplete user profiles.
+- **Redirect Loop:** This often occurs due to incorrect reply URLs or session issues. Verify the reply URL in Microsoft Entra ID matches the one in Appcircle and that session cookies are correctly managed.
+- **Invalid Certificate or Encryption Issues:** Ensure that the certificates used for signing and encryption are valid and correctly configured in both Microsoft Entra ID and Appcircle’s SSO settings. Expired certificates are a common cause of failures in SAML setups.
+- **Unassigned Users:** Ensure that users are assigned to the enterprise application in Microsoft Entra ID. Unassigned users cannot authenticate through Appcircle.
 
 ### 6.5 Troubleshooting for Okta (OpenID Connect)
 
