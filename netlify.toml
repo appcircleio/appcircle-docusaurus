@@ -20,12 +20,12 @@
 
 [[redirects]]
   from = "/account/ldap-login"
-  to = "/account/my-organization/integrations/authentications/ldap-login"
+  to = "/account/my-organization/integrations/authentication/store-and-distribution-ldap-authentication"
   status = 301
 
 [[redirects]]
   from = "/account/sso/single-sign-on"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on"
+  to = "/account/my-organization/integrations/authentication/sso-authentication"
   status = 301
 
 # Redirects for build-related changes
@@ -152,32 +152,32 @@ status = 301
 
 [[redirects]]
   from = "/account/sso/auth-openid"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/auth-openid"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/auth-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/auth-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/azure-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/azure-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/okta-openid"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-openid"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/okta-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/onelogin-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/onelogin-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
@@ -317,7 +317,7 @@ status = 301
 
 [[redirects]]
   from = "/account/sso-login/single-sign-on-login"
-  to = "/account/my-organization/integrations/authentications/integration-sso"
+  to = "/account/my-organization/integrations/authentication/authentication-store-and-distribution"
   status = 301
 
 [[redirects]]
@@ -402,7 +402,7 @@ status = 301
 
 [[redirects]]
   from = "/account/sso-login/okta-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
@@ -980,12 +980,12 @@ status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/auth-openid#sso-mapping"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on#sso-mapping"
+  to = "/account/my-organization/integrations/authorization#sso-based-authorization-with-group-and-role-mapping"
   status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/single-sign-on"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on"
+  to = "/account/my-organization/integrations/authentication/sso-authentication"
   status = 301
 
 [[redirects]]
@@ -1035,32 +1035,32 @@ status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/auth-openid"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/auth-openid"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/auth-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/auth-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/azure-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/azure-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/okta-openid"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-openid"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/okta-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/onelogin-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/onelogin-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
@@ -1075,7 +1075,7 @@ status = 301
 
 [[redirects]]
   from = "/account/my-organization/ldap-login"
-  to = "/account/my-organization/integrations/authentications/ldap-login"
+  to = "/account/my-organization/integrations/authentication/store-and-distribution-ldap-authentication"
   status = 301
 
 [[redirects]]
@@ -1085,12 +1085,12 @@ status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/single-sign-on-login"
+  to = "/account/my-organization/integrations/authentication/sso-authentication"
   status = 301
 
 [[redirects]]
   from = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-saml"
+  to = "/account/my-organization/integrations/authentication/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
