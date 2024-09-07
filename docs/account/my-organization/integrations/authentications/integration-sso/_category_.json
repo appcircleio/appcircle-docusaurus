@@ -1,6 +1,6 @@
 {
-  "label": "Enterprise App Store and Testing Distribution SSO Login",
-  "position": 1,
+  "label": "Distribution Login Single Sign-On (SSO) Providers Configuration",
+  "position": 2,
   "collapsed": true,
   "collapsible": true
 }

@@ -11,7 +11,8 @@ The "Authentication" section enables you to manage access control and secure you
 
 Current headlines and the actions you can complete are listed below:
 
-- [**SSO Providers Configuration**](/account/my-organization/integrations/authentications/sso-providers-configuration)
+- [**Appcircle Login Single Sign-On (SSO) Providers Configuration**](/account/my-organization/integrations/authentications/sso-providers-configuration)
+- [**Appcircle Login Single Sign-On (SSO) Providers Configuration**](/account/my-organization/integrations/authentications/integration-sso)
 - [**LDAP Configuration**](/account/my-organization/integrations/authentications/ldap-login)
 
 

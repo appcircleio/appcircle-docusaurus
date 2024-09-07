@@ -1,11 +1,11 @@
 ---
-title: Enterprise App Store and Testing Distribution SSO Login
+title: Enterprise App Store and Testing Distribution Single Sign-On (SSO) Providers Configuration
 description: Set up single sign-on (SSO) for distributing your applications, enhancing security and simplifying the login process.
 tags: [sso, distribution, okta, auht0, entraid, azure, saml, openid]
 sidebar_position: 1
 ---
 
-# Enterprise App Store and Testing Distribution SSO Login
+# Enterprise App Store and Testing Distribution Single Sign-On (SSO) Providers Configuration
 
 ## Overview
 
