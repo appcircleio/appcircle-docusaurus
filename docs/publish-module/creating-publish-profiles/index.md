@@ -30,7 +30,7 @@ The names of the profiles can be changed later and a different name must be set 
 
 ## iOS Publish Profiles
 
-iOS publishing profiles can be created manually or by importing an existing App Store Connect profile.
+iOS Publish profiles can be created manually or by importing an existing App Store Connect profile.
 
 ### Create Profile Manually
 
@@ -88,15 +88,15 @@ The Bundle ID value of the profile imported via App Store Connect is assigned th
 
 ## Android Publish Profiles
 
-Android publishing profiles can be created manually or by importing an existing Google Play Console profile.
+Android Publish profiles can be created manually or by importing an existing Google Play Console profile.
 
 ### Create Profile Manually
 
-Manual creation requires a Publish Profile name and a Package Name that must be specified for this profile.
+Manual creation requires a **Publish Profile Name** and a **Package Name** that must be specified for this profile.
 
 :::info Create Profile Manually
 
-The Package Name set during manual creation cannot be changed later and is assigned as the main Package Name for that profile.
+The Package Name set during manual creation **cannot** be changed later and is assigned as the **main** Package Name for that profile.
 
 :::
 
@@ -121,7 +121,7 @@ Another option to create a profile is to import it. With this feature, a Publish
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-5.png' />
 
-Profiles on Google Play Connect are listed with API key connection. In this list, the profile is imported by selecting either multiple or single profiles.
+Profiles on Google Play Connect are listed with API key connections. In this list, the profile is imported by selecting either multiple or single profiles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-6.png' />
 
