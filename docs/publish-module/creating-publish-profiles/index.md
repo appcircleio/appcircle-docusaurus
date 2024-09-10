@@ -121,9 +121,18 @@ Another option to create a profile is to import it. With this feature, a Publish
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-5.png' />
 
-Profiles on Google Play Connect are listed with API key connections. In this list, the profile is imported by selecting either multiple or single profiles.
+First, a Google Play Console API key must be selected. This will be used to retrieve certain information from Google Play Console during the profile creation process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP238-androidApıKeySelect.png' />
+
+
+Next, a Package Name must be provided. Appcircle will use the selected API key and the given Package Name to search for a match in Google Play Console. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP238-checkingPackageName.png' />
+
+If a correct match is found, the profile details will be displayed on the screen.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP238-infoTab.png' />
 
 :::caution Create from Google Play Connect
 
