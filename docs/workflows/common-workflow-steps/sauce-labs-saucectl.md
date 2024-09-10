@@ -63,7 +63,7 @@ artifacts:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) | After the [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) step runs, the test IPA and APP paths (`$AC_TEST_IPA_PATH` and `$AC_TEST_APP_PATH`) will be created automatically. So that the **Saucectl Run** component depends on these paths. |
+| [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) | After the [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) step runs, the test IPA and APP paths (`$AC_TEST_IPA_PATH` and `$AC_UITESTS_RUNNER_PATH`) will be created automatically. So that the **Saucectl Run** component depends on these paths. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-saucectlRunFlow.png' />
 
