@@ -2,7 +2,7 @@
 title: Google Play Console Information
 description: Learn how to update App Information in the Publish module of Appcircle for Google Play Console
 tags: [publish, publish module, app information, google play console, review]
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -15,13 +15,13 @@ For Android binaries, by using Appcircle's Google Play Console Information featu
 
 ### Contact Information
 
-You can fill your contact information to be displayed on Google Play, including email address, phone number and website.
+You can fill in your contact information to be displayed on Google Play, including your email address, phone number, and website.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-236-2.png' />
 
 ### General Information
 
-General information area allows you to see and update the default language for your app on Google Play Console.
+The general information area allows you to see and update the default language for your app on Google Play Console.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-236-4.png' />
 
@@ -33,7 +33,7 @@ You can instantly view your current App Information details and, if desired, sim
 
 :::danger App Information Save
 
-When you make a change to these information and click the **save button**, the updates will be **immediately** applied to your Google Play Console account. Make sure your selections are **correct** and the information entered is **accurate**.
+When you make a change to this information and click the **save button**, the updates will be **immediately** applied to your Google Play Console account. Make sure your selections are **correct** and the information entered is **accurate**.
 
 :::
 
