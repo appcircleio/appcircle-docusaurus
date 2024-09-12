@@ -11,7 +11,7 @@ For iOS and Android, users can log in via the shared link and view all the versi
 
 ## Login
 
-When a binary is shared with users through the share or notify actions for Live and Beta channels, they will receive a link for access.
+When a binary is shared with users through the share action for Live and Beta channels, they will receive a link for access.
 
 Upon clicking the link, users will be redirected to the Enterprise Store.
 
