@@ -77,18 +77,13 @@ const config = {
             `,
           },
           {
-            to: "/",
-            position: "left",
-            label: "Documentation",
-          },
-          {
             to: "/release-notes",
             position: "left",
             label: "Release Notes",
           },
           {
-            href: "https://blog.appcircle.io",
-            label: "Blog",
+            href: "https://appcircle.io/features",
+            label: "Features",
             position: "right",
           },
           {
