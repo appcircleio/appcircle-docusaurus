@@ -22,6 +22,7 @@ Below are the workflow steps required before running the **Saucectl** step, list
 | --------------------------- | ----------------------------------------------------------------------------- |
 | [Android Build for UI Testing](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | This step generates the required Android test application outputs needed for testing on Sauce Labs. |
 
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3930-androidSauce1.png' />
 
 :::info Config.yaml
@@ -150,7 +151,7 @@ For each component, specific input variables are required for its operation on y
 
 ### Output Variables
 
-The artifacts generated from the **Saucectl Run** step are saved in the directory specified.  (`AC_SL_DOWNLOAD_MATCH`) parameter and determine when they are downloaded using the **Sauce Labs When to Download Artifacts** (`AC_SL_WHEN_ARTIFACT_DOWNLOAD`) parameter.
+The artifacts generated from the **Sauce Labs Saucectl** step are saved in the directory specified (`AC_SL_DOWNLOAD_MATCH`) parameter and determine when they are downloaded using the **Sauce Labs When to Download Artifacts** (`AC_SL_WHEN_ARTIFACT_DOWNLOAD`) parameter.
 
 | Variable Name                   | Description                                                                                       |
 |---------------------------------|---------------------------------------------------------------------------------------------------|
