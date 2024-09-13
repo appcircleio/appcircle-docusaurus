@@ -16,13 +16,44 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.21.0 - 2024-09-12 Publish Log Monitoring, SSO Mapping and Enterprise App Store Improvements, Xcode 16.0 RC 1, Bug Fixes, and more
+
+### 🆕 New Features
+
+- Detailed logs can now be accessed and monitored in real-time as tasks are being published within the Publish module. This enhancement allows for improved tracking of progress, quick identification of issues, and ensures that tasks are processed as expected. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A counter has been added to track the duration of each step when there is log activity in the Publish Details. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A "None" authentication type has been added to the Enterprise App Store settings for logging into the Enterprise Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Notify action has been removed from the Enterprise App Store module. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- `.AAB` files can now be uploaded to profiles in the Enterprise App Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The `.zip` file icon and description have been removed from the app version file type on the Testing Distribution page. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 RC 1](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a release candidate, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The Authentications section is now hidden for sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Deleted SSO mapping settings will no longer appear in new configurations, ensuring data integrity. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The **Order** tab has been added to the LDAP creation settings. <AccountBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- An issue was resolved that prevented users from navigating between build steps while logs were being processed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed that could cause builds to be canceled due to a timeout on runners, particularly on self-hosted installations using a custom timezone in the runner. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was resolved where the custom domain toggle remained enabled in the UI after being disabled. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue with the search filter on Enterprise App Store reports has been fixed. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was resolved where the organization filter did not have a default value on Enterprise App Store reports section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was resolved where users were able to upload Android keystores with the same name. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where new users could be invited despite the Single Sign-On (SSO) mapping feature being enabled. <AccountBadge/> <SelfHostedBadge/>
+- An issue was fixed where owner users could be deleted while handling SSO mapping. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where SSO mapping skipped users with the manager role, leaving their memberships and roles unchanged. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed that affected access to other sub-organizations when SSO mapping was enabled. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.20.5 - 2024-09-02 Android Publish Improvements, In-app Updates and more
 
 ### 🆕 New Features
 
 - [In-app updates](/enterprise-app-store/in-app-updates) can now be checked and downloaded via a profile-specific In-App Update Secret using your store URL. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - In-App Update Secrets can now be created specifically for each Enterprise App Store profile within the profile settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Google Play Console App Information, such as primary language and contact info, can now be retrieved and updated for Android via Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Google Play Console App Information](/publish-module/publish-information/google-play-information), such as primary language and contact info, can now be retrieved and updated for Android via Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Google Play Console Metadata can now be managed and imported on AppCircle, including the editing of localizations and screenshots. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
@@ -30,7 +61,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Testing Distribution profiles with public access enabled are now accessible to all users with active authentication within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Testing Group members can now be imported through registered LDAP groups. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Help documentation and guides are now accessible based on the app and certificate type after downloading apps from the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Android profile creation has been separated into two options: you can either create a profile manually by typing the package ID, or select it from the Google Play Console using API credentials. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Android profile creation](/publish-module/creating-publish-profiles#android-publish-profiles) has been separated into two options: you can either create a profile manually by typing the package ID, or select it from the Google Play Console using API credentials. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
