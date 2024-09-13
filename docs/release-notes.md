@@ -25,8 +25,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - A "None" authentication type has been added to the Enterprise App Store settings for logging into the Enterprise Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Notify action has been removed from the Enterprise App Store module. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - `.AAB` files can now be uploaded to profiles in the Enterprise App Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The .zip file icon and description have been removed from the app version file type on the Testing Distribution page. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 RC 1](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a release candidate  release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The `.zip` file icon and description have been removed from the app version file type on the Testing Distribution page. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 RC 1](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a release candidate, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
