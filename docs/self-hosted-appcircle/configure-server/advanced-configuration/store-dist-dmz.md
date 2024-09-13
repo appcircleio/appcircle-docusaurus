@@ -220,6 +220,10 @@ sudo ufw status verbose
 
 </Tabs>
 
+:::info
+When users enter `store.spacetech.com` in their browser, the browser, by default, sends the initial request to HTTP port `80`. Without a proper redirection from port `80` to port `443` (HTTPS), users will encounter a connection error. Implementing this redirection ensures that users are seamlessly directed to the secure HTTPS version of the site.
+:::
+
 #### SELinux
 
 You must use the same SELinux mode on the Appcircle server and the Appcircle DMZ server.
