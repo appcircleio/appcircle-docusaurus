@@ -256,7 +256,7 @@ To query case-insensitive "error" logs for all containers using the Grafana Expl
 
 - Use the Matches Regex Operator (`=~`): Instead of using the equals operator (`=`), choose the matches regex operator (`=~`). This allows for more flexible pattern matching.
 
-- Set the Target to `.+`: In the regex field, enter .+ to match any service name, effectively including all containers in the query.
+- Set the Target to `.+`: In the regex field, enter `.+` to match any service name, effectively including all containers in the query.
 
 - Add "Line contains case insensitive" filter and enter the value “error” in the field.
 
