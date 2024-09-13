@@ -29,6 +29,48 @@ In-app updates offer several benefits, including a smoother user experience by e
 
 ## Implementing In-App Updates
 
+### Authentication Methods for Obtaining Appcircle Personal API Token
+
+There are two primary methods to implement authentication and retrieve the Appcircle Personal API token for in-app updates:
+
+1. Using a Custom Backend Endpoint
+2. Using Appcircle Services
+
+#### 1. Using a Custom Backend Endpoint
+
+This method involves creating a secure backend service that handles the authentication process and retrieves the Appcircle Personal API token on behalf of your app. Here's how it works:
+
+1. Your app sends a request to your custom backend endpoint Enterprise App Store profile id with authentication credentials such as email and password.
+2. The backend authenticates with Appcircle using profile-specific app secret and obtains the Personal API token.
+3. The backend returns the token to your app.
+
+Benefits of this approach:
+
+- Enhanced security as sensitive credentials are not stored in the app
+- Centralized management of authentication
+- Ability to implement additional security measures on the backend
+
+**Sample Backend Project:**
+
+https://github.com/appcircleio/in-app-update-backend-sample
+
+#### 2. Using Appcircle Services
+
+This method involves directly using Appcircle's authentication services from within your app. Here's how it works:
+
+1. Your app securely stores the profile-specific secret and profile id.
+2. The app sends the secret along with the profile ID to Appcircle authentication services.
+3. Appcircle validates the credentials and returns the necessary authentication token.
+4. Upon successful authentication, the app receives the Personal API token.
+
+Benefits of this approach:
+
+- Simpler implementation with fewer components
+- Reduced backend maintenance
+- Direct integration with Appcircle services
+
+Both methods have their merits, and the choice depends on your specific security requirements, infrastructure, and development preferences. The custom backend approach offers more control and security, while the direct Appcircle services method provides a more straightforward implementation.
+
 ## Prerequisites for Integration
 
 ### Authentication Requirements
