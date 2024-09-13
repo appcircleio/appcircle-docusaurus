@@ -402,7 +402,7 @@ status = 301
 
 [[redirects]]
   from = "/account/sso-login/okta-saml"
-  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-saml"
   status = 301
 
 [[redirects]]

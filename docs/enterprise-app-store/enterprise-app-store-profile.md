@@ -108,7 +108,7 @@ If a sub-organization is being worked for, visibility will be limited to the app
 
 User permissions within the Enterprise App Store can be managed using **Okta SAML**. By configuring authorization groups through **Okta** and subsequently applying these group names to **Alpha** or **Beta** channels via Appcircle, access will be restricted to only the relevant users.
 
-For further details, please refer to the document: [Okta Managing User Groups](https://docs.appcircle.io/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-saml#okta-managing-user-groups).
+For further details, please refer to the document: [Okta Managing User Groups](https://docs.appcircle.io/account/my-organization/integrations/authentications/integration-sso/okta-saml#okta-managing-user-groups).
 :::
 
 :::info
