@@ -258,9 +258,9 @@ To query case-insensitive "error" logs for all containers using the Grafana Expl
 
 - Set the Target to `.+`: In the regex field, enter `.+` to match any service name, effectively including all containers in the query.
 
-- Add "Line contains case insensitive" filter and enter the value “error” in the field.
+- Add a "Line Contains Case Insensitive" Filter: Add a filter for log lines that contain the term "error" in a case-insensitive manner by entering `error` in the search field.
 
-- You can also enable the “Unique tags” toggle to see which service the log comes from.
+- Enable the "Unique Labels" Toggle: Enable the "Unique labels" toggle to display which service each log entry originates from, providing clearer insight into your log data.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-4085-all-containers-error-logs.png' />
 
