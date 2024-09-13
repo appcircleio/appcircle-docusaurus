@@ -103,7 +103,6 @@ To configure the Manage Access tab, the authentication method for the Enterprise
 
 :::
 
-
 :::caution
 If a sub-organization is being worked for, visibility will be limited to the apps within that organization. However, if an app is published, it will also be displayed in the showcase of the parent organization on the Enterprise App Store.
 
@@ -186,29 +185,6 @@ If two binaries are published to the Beta and Live channels, the profile header 
 Any binary can be removed from the Live or Beta channels by selecting the **Unpublish** action from the actions menu.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-unpublish.png" />
-
-### Notify
-
-An email can be sent to your users by selecting the **Notify** action from the actions menu.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notify2.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notify3.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notify4.png" />
-
-
-An email with the subject and message entered in this form will be sent to your users. The users will be able to download the binary by clicking the link provided in the email.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notifymail.png" />
-
-:::important
-
-To use the Notify feature, the authentication method for the Enterprise Store must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Store Settings](/enterprise-app-store/store-settings#store-authentication) documentation.
-
-Additionally, registered emails must be included in the [Manage Access](/enterprise-app-store/enterprise-app-store-profile#manage-access) settings for your Enterprise App Store profile.
-
-:::
 
 ### Share
 
