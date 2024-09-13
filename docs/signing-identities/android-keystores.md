@@ -53,7 +53,7 @@ Go to build workflow editor and disable Sign Application step to use your keysto
 
 First, the keystore is essential for verifying app ownership and enabling updates on platforms like [Google Play](https://play.google.com/store/) or [Huawei AppGallery](https://consumer.huawei.com/tr/mobileservices/appgallery/). 
 
-If you've lost your keystore, here's what you can do:
+If you have lost your keystore, here are the steps you can take:
 
 #### Google Play:
 
@@ -92,7 +92,7 @@ To cancel the reset request, click `Cancel Request` under the `Request upload ke
 
 > Resetting your upload key doesn’t affect the app signing key that Google Play uses to re-sign APKs before delivering them to users.
 
-For more detail please check Google Play's documantion:
+For more details, please check Google Play's documentation:
 - [Lost or compromised upload key?](https://support.google.com/googleplay/android-developer/answer/9842756?hl=en-GB#lost)
 
 :::
@@ -101,6 +101,6 @@ For more detail please check Google Play's documantion:
 
 Whether you can release the same app after losing the keystore on Huawei AppGallery depends on if you have previously used [Huawei App Signing Service](https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-appsigning-newapp-0000001052418290).
 
-- **Without App Signing Service:** You cannot update the app; you'll need a new package name or a key change, requiring all users to reinstall the app.
+- **Without App Signing Service:** You cannot update the app. You'll need either a new package name or a key change, which will require all users to reinstall the app.
   
 - **With App Signing Service:** Your key is protected on the server. You only need to manage your upload key, and even if it's lost, you can still update the app without user impact.
