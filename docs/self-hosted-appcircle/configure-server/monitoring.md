@@ -244,3 +244,25 @@ You can always access the container logs from container engine (`docker` or `pod
 The container logs are also sent to the `systemd` journal. So the log entries can be retrieved using the `journalctl` command through the journal API. For more information, see the [`journald` logging driver](https://docs.docker.com/config/containers/logging/journald/) page.
 
 :::
+
+
+## FAQ
+
+### Filtering "Error" Logs for All Containers
+
+To query case-insensitive "error" logs for all containers using the Grafana Explore menu, follow these steps:
+
+- Select the `service_name` Label: In the query builder, ensure the `service_name` label is selected to filter logs by service name.
+
+- Use the Matches Regex Operator (`=~`): Instead of using the equals operator (`=`), choose the matches regex operator (`=~`). This allows for more flexible pattern matching.
+
+- Set the Target to `.+`: In the regex field, enter .+ to match any service name, effectively including all containers in the query.
+
+- Add "Line contains case insensitive" filter and enter the value “error” in the field.
+
+- You can also enable the “Unique tags” toggle to see which service the log comes from.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-4085-all-containers-error-logs.png' />
+
+
+If you face any error on the Appcircle, you can effectively search for logs containing the term "error" across all services by performing these steps.
