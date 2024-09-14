@@ -136,10 +136,12 @@ Your app version within the Publish profile needs to be marked as Release Candid
 #### Android Previews and Screenshots
 
 - **Drag and Drop**: Upload up to 8 screenshots.
-  - **Phone**: Supported resolutions are 320 to 3840 px.
-  - **Tablet**: Supported resolutions are 320 to 3840px or 1080 to 7680px.
-  - **Android TV**: Supported resolutions are 320 to 3840px.
-  - **Wear OS**: Supported resolutions are 384 to 3840px.
+  - **App Icon**: Supported resolutions are 512 to 512 px.
+  - **Feature Grapich**: Supported resolutions 1024 to 500 px.
+  - **Phone**: Supported resolutions are 320 to 3840 px. And it has 16:9 or 9:16 aspect ratio.
+  - **Tablet**: Supported resolutions are 320 to 3840 px for 7" display and 1080 to 7680 px for 10" display. And it has 16:9 or 9:16 aspect ratio.
+  - **Android TV**: Supported resolutions are 320 to 3840 px for Android TV and 1280 to 720 px for TV Banner.
+  - **Wear OS**: Supported resolutions are 384 to 3840px. And it has 1:1 aspect ratio.
 
 #### App Information
 
