@@ -35,44 +35,67 @@ The Appcircle Enterprise App Store plugin enables users to publish their apps to
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
-### Install Appcircle Enterprise App Store Plugin
+## Install Appcircle Enterprise App Store Plugin
 
 Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Then, search for "Appcircle Enterprise App Store" in the available plugins section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-installation_steps.png' />
 
-### Add Plugin in Build Steps
+## Plugin Usage
+
+There are two primary ways to use this Jenkins plugin: from the user interface in freestyle projects and from a script in pipeline projects.
+
+### Using the Plugin in Freestyle Projects
+
+#### Adding the Plugin to Build Steps
 
 Go to your configuration page of the project and add a build step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-205_ent_add.png' />
 
-### Configure Plugin
+#### Configuring the Plugin
 
 After adding the plugin to your build steps, ensure that you provide all required inputs.
 Additionally, remember to place the plugin after your build steps as you will need to specify the build path later on.
 
+:::info
+For the "App Path" field, full path to the package should be provided. For example: `<your-jenkins-home>/workspace/<project-name>/build/MyProject.ipa`.
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-205_ent_usage.png' />
 
-### Using Plugin into Your Script
+### Using the Plugin in Pipeline Projects
+
+#### Adding the Plugin to a Pipeline Script
 
 ```Groovy
-   stage('Publish') {
-      environment {
-         AC_PAT = credentials('AC_PAT')
-      }
-       steps {
-          appcircleEnterpriseAppStore personalAPIToken: AC_PAT,
-                  appPath: '$APP_PATH',
-                  releaseNotes: '$RELEASE_NOTE',
-                  summary: '$SUMMARY',
-                  publishType: '$PUBLISH_TYPE' // "0": None, "1": Beta, "2": Live
-       }
-   }
+stage('Publish') {
+    environment {
+        AC_PAT = credentials('AC_PAT')
+    }
+    script {
+        def pathToApp = "${env.WORKSPACE}/build/outputs/apk/release/app-release.apk"
+
+        appcircleEnterpriseAppStore (
+            personalAPIToken: AC_PAT,
+            appPath: pathToApp,
+            releaseNotes: 'New version 1.2.3',
+            summary: 'This is a summary.',
+            publishType: '0' // "0": None, "1": Beta, "2": Live
+        )
+    }
+}
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
-- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Enterprise App Store Profile.
+- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Enterprise App Store Profile. You can define the path using `def` as shown in the example script above, or pass it using `withEnv`. For instance:
+    ```
+    steps {
+        withEnv(["APP_PATH=${env.WORKSPACE}/build/MyProject.ipa"]) {    
+            appcircleEnterpriseAppStore (
+                ...
+                appPath: env.APP_PATH,
+    ```
 - `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
 - `summary`: Used to provide a brief overview of the version of the app that is about to be published.
 - `publishType`: Specifies the publishing status as either none, beta, or live, and must be assigned the values "0", "1", or "2" accordingly.
