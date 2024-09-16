@@ -15,10 +15,6 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Metadata Information section in the Appcircle dashboard is essential for defining the presence of your application on digital distribution platforms. This document will guide you through each field and its significance to ensure your app's metadata is complete and effective.
 
-:::note
-The Metadata Information section is available for iOS apps only currently. We will be adding support for Android apps in the future.
-:::
-
 ## iOS Metadata Information
 
 ### Localization Settings
@@ -96,6 +92,63 @@ Please note, this field is constantly visible on Appcircle. However, on App Stor
 :::danger Reset iOS App Store Summary Rating
 Please note, this comes with **Keep Existing Rating** selected by default. If you choose to **Reset rating when this version released** option, it will reset all past **reviews and ratings** of your app in **App Store**.
 :::
+
+## Android Metadata Information
+
+### Localization Settings
+
+The localization dropdown allows you to select the language in which you want to present your app’s metadata on the Google Play Console. This feature supports multiple languages, ensuring that you can target specific demographics and cater to a global audience.
+
+When you select a language, you will provide localized versions of your app's metadata, including video, descriptions, and app name. Localization helps in reaching a wider audience by providing information in the users' native language.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235.png' />
+
+### Metadata Auto-Population
+
+If there is existing metadata associated with your app on the Google Play Console, the **Metadata Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions and localizations.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235-2.png' />
+
+:::info
+
+**Updating Android Metadata:** You can easily update your Google Play Console metadata for your app via Appcircle by following these steps:
+
+- Update your app's metadata on Appcircle within the Publish module.
+- Add the **Update Metadata on Google Play Console** Publish flow step to your workflow.
+- Run your Publish Flow of your app by selecting the Publish Details under actions menu.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235-3.png' />
+
+This step can be configured further by selecting the step options.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235-4.png' />
+
+:::caution
+
+Your app version within the Publish profile needs to be marked as Release Candidate before you can retrieve or update Google Play Console metadata.
+
+:::
+
+### Fields Explained
+
+#### Android Previews and Screenshots
+
+- **Drag and Drop**: Upload up to 8 screenshots.
+  - **App Icon**: Supported resolutions are 512 to 512 px.
+  - **Feature Grapich**: Supported resolutions 1024 to 500 px.
+  - **Phone**: Supported resolutions are 320 to 3840 px. And it has 16:9 or 9:16 aspect ratio.
+  - **Tablet**: Supported resolutions are 320 to 3840 px for 7" display and 1080 to 7680 px for 10" display. And it has 16:9 or 9:16 aspect ratio.
+  - **Android TV**: Supported resolutions are 320 to 3840 px for Android TV and 1280 to 720 px for TV Banner.
+  - **Wear OS**: Supported resolutions are 384 to 3840px. And it has 1:1 aspect ratio.
+
+#### App Information
+
+- **Video**: Add a video by entering a YouTube URL. This video must be public or unlisted, ads must be turned off, and it must not be age restricted, and it should be landscape.
+- **App Name**: This is how your app will appear on Google Play.
+- **Short Description**: A short description for your app. Users can expand to view your full description.
+- **Full Description**: A full description for your app.
 
 ## Microsoft Intune Metadata Information
 
