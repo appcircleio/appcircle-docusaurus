@@ -14,7 +14,7 @@ For more information, please visit the [Saucectl documentation](https://docs.sau
 
 ### Prerequisites
 
-Below are the workflow steps required before running the **Saucectl** step, listed with their reasons. Prerequisites vary by platform:
+Below are the workflow steps required before running the **Sauce Labs Saucectl** step, listed with their reasons. Prerequisites vary by platform:
 
 #### For Android
 

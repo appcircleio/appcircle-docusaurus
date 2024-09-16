@@ -1092,3 +1092,8 @@ status = 301
   from = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
   to = "/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-saml"
   status = 301
+
+[[redirects]]
+  from = "/workflows/common-workflow-steps/saucectl-run"
+  to = "/workflows/common-workflow-steps/sauce-labs-saucectl"
+  status = 301
