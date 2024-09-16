@@ -1,7 +1,7 @@
 ---
 title: Sauce Labs Saucectl
 description: The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs.
-tags: [saucectl, saucectl, sauce labs, test, android test, emulator, device test, automation, ios test, ui test, simulator]
+tags: [saucectl, sauce labs, test, android test, emulator, device test, automation, ios test, ui test, simulator]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
