@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
-## 3.21.0 - 2024-09-12 Publish Log Monitoring, SSO Mapping and Enterprise App Store Improvements, Xcode 16.0 RC 1, Bug Fixes, and more
+## 3.21.0 - 2024-09-12 Publish Log Monitoring, SSO Mapping and Enterprise App Store Improvements, Xcode 16.0, Bug Fixes, and more
 
 ### 🆕 New Features
 
@@ -26,13 +26,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The Notify action has been removed from the Enterprise App Store module. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - `.AAB` files can now be uploaded to profiles in the Enterprise App Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The `.zip` file icon and description have been removed from the app version file type on the Testing Distribution page. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 RC 1](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a release candidate, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
+- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) final release installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - The Authentications section is now hidden for sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Deleted SSO mapping settings will no longer appear in new configurations, ensuring data integrity. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The **Order** tab has been added to the LDAP creation settings. <AccountBadge/> <SelfHostedBadge/>
+- [The Android Increment Build and Version Number](/workflows/android-specific-workflow-steps/increment-build-and-version-number) workflow step is now compatible with Kotlin DSL projects, so that you can manage your app versioning within the Appcircle pipeline seamlessly. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -54,7 +55,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - [In-app updates](/enterprise-app-store/in-app-updates) can now be checked and downloaded via a profile-specific In-App Update Secret using your store URL. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - In-App Update Secrets can now be created specifically for each Enterprise App Store profile within the profile settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Google Play Console App Information](/publish-module/publish-information/google-play-information), such as primary language and contact info, can now be retrieved and updated for Android via Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Google Play Console Metadata can now be managed and imported on AppCircle, including the editing of localizations and screenshots. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Google Play Console Metadata](/publish-module/publish-information/meta-data-information#android-metadata-information) can now be managed and imported on AppCircle, including the editing of localizations and screenshots. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
