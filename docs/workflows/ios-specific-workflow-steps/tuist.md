@@ -27,12 +27,16 @@ Before you run the **Tuist** step, you must complete certain prerequisites, as d
 You can find all the parameters required for this step in the table below, with their descriptions in detail.
 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2829-tuistInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4430-tuistInputs.png' />
 
-| Variable Name                            | Description                         | Status           |
-|-------------------------------|------------------------------------------------|------------------|
-| `$AC_TUIST_PATH`              | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step.  | Optional |
-| `$AC_TUIST_PROJECT_ONLY`      | Generates only the local project, without generating its dependencies. | Optional |
+| Variable Name            | Description                                                                                                                                                                         | Status   |
+|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Optional |
+| `$AC_TUIST_VERSION`      | Specifies the Tuist version. If not specified, the latest version of Tuist will be installed.                                                                                       | Optional |
+| `$AC_TUIST_BUILD`        | Build your Tuist project. If it is true, it will run the `tuist build` command.                                                                                                     | Optional |
+| `$AC_TUIST_TEST`         | Run tests in your project. If it is true, it will run the `tuist test` command.                                                                                                     | Optional |
+| `$AC_TUIST_CLEAN`        | Clean all previous build files. It will provide clean build. If it is true, it will run the `tuist clean` command.                                                                  | Optional |
+| `$AC_TUIST_PROJECT_ONLY` | Generates only the local project, without generating its dependencies.                                                                                                              | Optional |
 
 
 To access the source code of this component, please use the following link:
