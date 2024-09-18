@@ -316,7 +316,7 @@ public static class InAppUpdateHelper {
   </TabItem>
 </Tabs>
 
-###  Initiating Updates
+### Initiating Updates
 
 #### Retrieving Available App Versions from Your Enterprise Store
 
