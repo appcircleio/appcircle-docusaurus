@@ -16,21 +16,53 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.21.0 - 2024-09-12 Publish Log Monitoring, SSO Mapping and Enterprise App Store Improvements, Xcode 16.0, Bug Fixes, and more
+
+### 🆕 New Features
+
+- Detailed logs can now be accessed and monitored in real-time as tasks are being published within the Publish module. This enhancement allows for improved tracking of progress, quick identification of issues, and ensures that tasks are processed as expected. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A counter has been added to track the duration of each step when there is log activity in the Publish Details. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A "None" authentication type has been added to the Enterprise App Store settings for logging into the Enterprise Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Notify action has been removed from the Enterprise App Store module. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- `.AAB` files can now be uploaded to profiles in the Enterprise App Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The `.zip` file icon and description have been removed from the app version file type on the Testing Distribution page. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) final release installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- The Authentications section is now hidden for sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Deleted SSO mapping settings will no longer appear in new configurations, ensuring data integrity. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The **Order** tab has been added to the LDAP creation settings. <AccountBadge/> <SelfHostedBadge/>
+- [The Android Increment Build and Version Number](/workflows/android-specific-workflow-steps/increment-build-and-version-number) workflow step is now compatible with Kotlin DSL projects, so that you can manage your app versioning within the Appcircle pipeline seamlessly. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- An issue was resolved that prevented users from navigating between build steps while logs were being processed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed that could cause builds to be canceled due to a timeout on runners, particularly on self-hosted installations using a custom timezone in the runner. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was resolved where the custom domain toggle remained enabled in the UI after being disabled. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue with the search filter on Enterprise App Store reports has been fixed. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was resolved where the organization filter did not have a default value on Enterprise App Store reports section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was resolved where users were able to upload Android keystores with the same name. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where new users could be invited despite the Single Sign-On (SSO) mapping feature being enabled. <AccountBadge/> <SelfHostedBadge/>
+- An issue was fixed where owner users could be deleted while handling SSO mapping. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where SSO mapping skipped users with the manager role, leaving their memberships and roles unchanged. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed that affected access to other sub-organizations when SSO mapping was enabled. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.20.5 - 2024-09-02 Android Publish Improvements, In-app Updates and more
 
 ### 🆕 New Features
 
 - [In-app updates](/enterprise-app-store/in-app-updates) can now be checked and downloaded via a profile-specific In-App Update Secret using your store URL. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - In-App Update Secrets can now be created specifically for each Enterprise App Store profile within the profile settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Google Play Console App Information, such as primary language and contact info, can now be retrieved and updated for Android via Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Google Play Console Metadata can now be managed and imported on AppCircle, including the editing of localizations and screenshots. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Google Play Console App Information](/publish-module/publish-information/google-play-information), such as primary language and contact info, can now be retrieved and updated for Android via Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Google Play Console Metadata](/publish-module/publish-information/meta-data-information#android-metadata-information) can now be managed and imported on AppCircle, including the editing of localizations and screenshots. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
 - Testing Distribution profiles with public access enabled are now accessible to all users with active authentication within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Testing Group members can now be imported through registered LDAP groups. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Help documentation and guides are now accessible based on the app and certificate type after downloading apps from the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Android profile creation has been separated into two options: you can either create a profile manually by typing the package ID, or select it from the Google Play Console using API credentials. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Android profile creation](/publish-module/creating-publish-profiles#android-publish-profiles) has been separated into two options: you can either create a profile manually by typing the package ID, or select it from the Google Play Console using API credentials. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -60,7 +92,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Password values in the UI for [Testing Distribution Settings](testing-distribution/create-or-select-a-distribution-profile#authentication) authentication are now hidden. This enhancement improves security by preventing sensitive information from being displayed, thereby protecting user credentials from unauthorized access. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The performance of the [Testing Portal](testing-distribution/testing-portal) has been enhanced to achieve faster load times. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An additional rule has been implemented to prevent the deletion of deployed versions marked as `Live` or `Beta` in the Enterprise App Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An updated warning message will now be shown if the [notify](enterprise-app-store/enterprise-app-store-profile#notify) button is used without LDAP or SSO authentication. The message will also be tailored to cases where no emails are entered in the [***Manage Access***](enterprise-app-store/enterprise-app-store-profile#manage-access) settings, ensuring clearer notifications. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An updated warning message will now be shown if the notify button is used without LDAP or SSO authentication. The message will also be tailored to cases where no emails are entered in the [***Manage Access***](enterprise-app-store/enterprise-app-store-profile#manage-access) settings, ensuring clearer notifications. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new rule set has been implemented in the Enterprise App Store to prevent the [deletion of versions](enterprise-app-store/enterprise-app-store-profile#delete) marked as `Live` or `Beta`. RC-marked versions cannot be deleted, the delete buttons for Live and Beta versions have been disabled. To delete these versions, they must first be unpublished <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Build Module has been updated to enforce uniqueness for all [workflow](workflows) step names. This enhancement was implemented to prevent potential conflicts caused by duplicate names, thereby improving the clarity and reliability of build workflows. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The ability to cancel the publishing process, as well as triggered and tagged builds, has been introduced. <PublishBadge/> <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -98,7 +130,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Multiple app version delete support has been added for Enterprise App Store and Publish modules. <PublishBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - UI Improvements have been made for Enterprise App Store and Publish modules regarding overall texting and profile cards. <PublishBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The profile IDs of Enterprise App Store and Testing Distribution profiles can now be copied from their settings section. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The [notify](/enterprise-app-store/enterprise-app-store-profile#notify) button will no longer be disabled if the user has static authentication; instead, a warning message will be shown. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The notify button will no longer be disabled if the user has static authentication; instead, a warning message will be shown. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The self-hosted Appcircle server configuration file validator now checks the integrity of  [Enterprise App Store](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) and [Testing Distribution](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain-1) ports defined in `global.yaml`. <InfrastructureBadge/> <SelfHostedBadge/>
 - The [Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 5](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
 

@@ -227,7 +227,7 @@ sudo -E printenv
 
 ### How can I send a custom Email?
 
-Appcircle provides a ready-to-use email structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), [**Enterprise App Store**](/enterprise-app-store/enterprise-app-store-profile#notify), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the custom script below to send their own custom email.
+Appcircle provides a ready-to-use email structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the custom script below to send their own custom email.
 
 ```bash
 

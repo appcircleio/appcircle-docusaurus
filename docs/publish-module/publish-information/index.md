@@ -41,6 +41,15 @@ url="/publish-module/publish-information/publish-details">
 Read more about Publish Details
 </ContentRef>
 
+## Google Play Console Information
+
+For Android binaries, by using Appcircle's Google Play Console Information feature, you can update the required information for binary submission.
+
+<ContentRef
+url="/publish-module/publish-information/google-play-information">
+Read more about Google Play Console Information
+</ContentRef>
+
 ## Marking Release Candidates
 
 This action is used to change the status of a build that has been previously marked as a Release Candidate (RC). This might be necessary if the build is found to have issues that require it to be retracted from the release candidate status, indicating it's not yet ready for production release.

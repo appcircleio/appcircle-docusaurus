@@ -15,6 +15,7 @@ tags:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 import Screenshot from '@site/src/components/Screenshot';
 
 In-app updates enable applications to deliver and install updates directly within the app, enhancing user experience by minimizing disruption.
@@ -28,6 +29,48 @@ In-app updates offer a seamless method for delivering and installing new version
 In-app updates offer several benefits, including a smoother user experience by enabling seamless updates without requiring users to manually download or install new versions. For example, critical bug fixes and feature enhancements can be automatically applied while the app is running, ensuring users always have access to the latest improvements and functionalities.
 
 ## Implementing In-App Updates
+
+### Authentication Methods for Obtaining Appcircle Personal API Token
+
+There are two primary methods to implement authentication and retrieve the Appcircle Personal API token for in-app updates:
+
+1. Using a Custom Backend Endpoint
+2. Using Appcircle Services
+
+#### 1. Using a Custom Backend Endpoint
+
+This method involves creating a secure backend service that handles the authentication process and retrieves the Appcircle Personal API token on behalf of your app. Here's how it works:
+
+1. Your app sends a request to your custom backend endpoint Enterprise App Store profile id with authentication credentials such as email and password.
+2. The backend authenticates with Appcircle using profile-specific app secret and obtains the Personal API token.
+3. The backend returns the token to your app.
+
+Benefits of this approach:
+
+- Enhanced security as sensitive credentials are not stored in the app
+- Centralized management of authentication
+- Ability to implement additional security measures on the backend
+
+**Sample Backend Project:**
+
+https://github.com/appcircleio/in-app-update-backend-sample
+
+#### 2. Using Appcircle Services
+
+This method involves directly using Appcircle's authentication services from within your app. Here's how it works:
+
+1. Your app securely stores the profile-specific secret and profile id.
+2. The app sends the secret along with the profile ID to Appcircle authentication services.
+3. Appcircle validates the credentials and returns the necessary authentication token.
+4. Upon successful authentication, the app receives the Personal API token.
+
+Benefits of this approach:
+
+- Simpler implementation with fewer components
+- Reduced backend maintenance
+- Direct integration with Appcircle services
+
+Both methods have their merits, and the choice depends on your specific security requirements, infrastructure, and development preferences. The custom backend approach offers more control and security, while the direct Appcircle services method provides a more straightforward implementation.
 
 ## Prerequisites for Integration
 
@@ -88,6 +131,7 @@ To fetch app versions and download the binary, you first need to obtain an acces
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' }
 ]}>
 
   <TabItem value="android">
@@ -228,9 +272,51 @@ To fetch app versions and download the binary, you first need to obtain an acces
     ```
 
   </TabItem>
+
+  <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using static MAUI_IN_APP.Models.InAppUpdateModel;
+
+namespace MAUI_IN_APP.Helpers;
+
+public static class InAppUpdateHelper {
+
+    private static async Task<string> GetACToken(string profileId)
+	  {
+	  	var httpClient = new HttpClient();
+	  	var endpointUrl = $"{Environment.GetEnvironmentVariable("STORE_URL")}/api/auth/token";
+	  	var secret = DeviceInfo.Platform == DevicePlatform.iOS
+	  		? Environment.GetEnvironmentVariable("IOS_STORE_SECRET") 
+	  		: Environment.GetEnvironmentVariable("ANDROID_STORE_SECRET");
+  
+	  	var requestBody = new
+	  	{
+	  		ProfileId = profileId,
+	  		Secret = secret
+	  	};
+  
+	  	var json = JsonSerializer.Serialize(requestBody);
+	  	var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+	  	var response = await httpClient.PostAsync(endpointUrl, content);
+	  	var responseData = await response.Content.ReadAsStringAsync();
+	  	var responseObject = JsonSerializer.Deserialize<TokenResponse>(responseData);
+		
+	  	  return responseObject.access_token;
+	  }
+
+}
+`}
+  </CodeBlock>
+  </TabItem>
 </Tabs>
 
-###  Initiating Updates
+### Initiating Updates
 
 #### Retrieving Available App Versions from Your Enterprise Store
 
@@ -240,6 +326,7 @@ Fetch all available versions and compare them with the current version to determ
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' }
 ]}>
 
   <TabItem value="android">
@@ -372,6 +459,42 @@ Fetch all available versions and compare them with the current version to determ
     ```
 
   </TabItem>
+    <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using static MAUI_IN_APP.Models.InAppUpdateModel;
+
+namespace MAUI_IN_APP.Helpers;
+
+public static class InAppUpdateHelper {
+
+	  private static async Task<List<AppVersion>> GetAppVersions(string accessToken)
+	  {
+	      var url = $"{Environment.GetEnvironmentVariable("STORE_URL") }/api/app-versions";
+	      var options = new JsonSerializerOptions
+	      {
+	      	PropertyNameCaseInsensitive = true,
+	      	DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+	      };
+	      using (var httpClient = new HttpClient())
+	      {
+	      	httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("*/*"));
+	      	httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+
+	      	var response = await httpClient.GetAsync(url);
+	      	var jsonResponse = await response.Content.ReadAsStringAsync();
+	      	var responseData = JsonSerializer.Deserialize<AppVersionsResponse>(jsonResponse,options);
+	      	return responseData.data;
+	      }
+	  }
+}
+`}
+  </CodeBlock>
+  </TabItem>
 </Tabs>
 
 #### Compare Current Version with Fetched App Versions to Identify Updates
@@ -382,6 +505,7 @@ Compare the current version with the fetched versions to identify the latest rel
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' },
 ]}>
 
   <TabItem value="android">
@@ -536,6 +660,68 @@ Compare the current version with the fetched versions to identify the latest rel
     ```
 
   </TabItem>
+
+  <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using static MAUI_IN_APP.Models.InAppUpdateModel;
+
+namespace MAUI_IN_APP.Helpers;
+
+public static class InAppUpdateHelper {
+
+	  /*
+      You can implement your custom update check mechanism within this function.
+      Currently, we convert the version to an integer and compare it with the 'CFBundleShortVersionString'.
+      You may want to check other datas about the app version to write the update control mechanism please check
+      /v2/profiles/{profileId}/app-versions at https://api.appcircle.io/openapi/index.html?urls.primaryName=store
+	  */
+	  public static AppVersion GetLatestVersion(string currentVersion, List<AppVersion> appVersions)
+	  {
+	  	AppVersion latestAppVersion = null;
+  
+	  	// Helper function to convert version string into an array of integers
+	  	int[] VersionComponents(string version)
+	  	{
+	  		return version
+	  			.Split('.')
+	  			.Select(part => int.TryParse(part, out int num) ? num : (int?)null)
+	  			.Where(num => num.HasValue)
+	  			.Select(num => num.Value)
+	  			.ToArray();
+	  	}
+	  	var currentComponents = VersionComponents(currentVersion);
+  
+	  	foreach (var app in appVersions)
+	  	{
+	  		// Convert versions to arrays of integers
+	  		var latestComponents = VersionComponents(app.Version);
+
+	  		// Compare versions component by component
+	  		for (int i = 0; i < Math.Min(currentComponents.Length, latestComponents.Length); i++)
+	  		{
+	  			var current = currentComponents[i];
+	  			var latest = latestComponents[i];
+
+	  			// You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Store
+	  			if (latest > current && app.PublishType == (int)PublishType.Live)
+	  			{
+	  				latestAppVersion = app;
+	  				break; // Assuming once we find a valid version, we don't need to check further.
+	  			}
+	  		}
+	  	}
+  
+	  	return latestAppVersion;
+	  }
+}
+`}
+  </CodeBlock>
+  </TabItem>
 </Tabs>
 
 #### Updating the App
@@ -546,6 +732,7 @@ If a newer version is available, generate the platform-specific download URL and
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' },
 ]}>
 
   <TabItem value="android">
@@ -705,6 +892,69 @@ If a newer version is available, generate the platform-specific download URL and
     ```
 
   </TabItem>
+  <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using static MAUI_IN_APP.Models.InAppUpdateModel;
+
+namespace MAUI_IN_APP.Helpers;
+
+public static class InAppUpdateHelper {
+
+	  public static async Task<UpdateResult> CheckForUpdate(string currentVersion, string userEmail)
+	  {
+	  	var profileId = DeviceInfo.Platform == DevicePlatform.iOS ?
+	  		Environment.GetEnvironmentVariable("IOS_PROFILE_ID") : 
+	  		Environment.GetEnvironmentVariable("ANDROID_PROFILE_ID");
+	  	if (profileId != null)
+	  	{
+	  		var accessToken = await GetACToken(profileId);
+	  		var appVersions = await GetAppVersions(accessToken);
+	  		var latestVersion = GetLatestVersion(currentVersion, appVersions);
+	  		if (latestVersion != null)
+	  		{
+	  			var downloadUrl = CreateDownloadUrl(latestVersion.Id,accessToken,userEmail);
+	  			if (downloadUrl == null)
+	  			{
+	  				return null;
+	  			}
+
+	  			return new UpdateResult
+	  			{
+	  				DownloadUrl = downloadUrl,
+	  				Version = latestVersion.Version
+	  			};
+	  		}
+	  	}
+
+	  	return null;
+	  }
+
+    public static string CreateDownloadUrl(string availableVersionId, string accessToken, string email)
+	  {
+	  	var baseUrl = $"{Environment.GetEnvironmentVariable("STORE_URL")}/api/app-versions/{availableVersionId}/download-version/{accessToken}/user/{email}";
+	  	var downloadUrl = $"itms-services://?action=download-manifest&url={Uri.EscapeDataString(baseUrl)}";
+	  	try
+	  	{
+	  		// Assuming you have a way to determine the platform
+	  		var isIos = DeviceInfo.Platform == DevicePlatform.iOS;
+	  		return isIos ? downloadUrl : baseUrl;
+	  	}
+	  	catch (Exception)
+	  	{
+	  		Console.WriteLine("Latest Version URL could not be created");
+	  		return null;
+	  	}
+	  }
+
+}
+`}
+  </CodeBlock>
+  </TabItem>
 </Tabs>
 
 ### How to Prompt an Alert and Install the Latest Release
@@ -715,6 +965,7 @@ After obtaining the download URL for a newer version, display an alert with opti
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' },
 ]}>
 
   <TabItem value="android">
@@ -845,6 +1096,44 @@ After obtaining the download URL for a newer version, display an alert with opti
     }, []);
     ```
 
+  </TabItem>
+    <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using MAUI_IN_APP.Helpers;
+
+namespace MAUI_IN_APP;
+
+public partial class MainPage : ContentPage
+{
+      public MainPage()
+      {
+      	InitializeComponent();
+      } 
+      protected override async void OnAppearing()
+      {
+      	base.OnAppearing(); 
+      	await UpdateControl();
+      } 
+      public async Task UpdateControl()
+      {
+      	var currentVersion = AppInfo.VersionString;
+      	var updateInfo = await InAppUpdateHelper.CheckForUpdate(currentVersion, "USER_EMAIL");
+
+      	if (updateInfo?.DownloadUrl != null && await Launcher.CanOpenAsync(updateInfo.DownloadUrl))
+      	{
+      		bool result = await DisplayAlert("Update Available",$"{updateInfo.Version} version is available.", "Update","Cancel");
+      		if (result)
+      		{
+      			await Launcher.OpenAsync(updateInfo.DownloadUrl);
+      		}
+      	}
+      }
+}
+
+
+`}
+  </CodeBlock>
   </TabItem>
 </Tabs>
 
