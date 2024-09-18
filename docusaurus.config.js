@@ -222,6 +222,7 @@ const config = {
           "ruby",
           "groovy",
           "java",
+          "csharp",
           "kotlin",
           "bash",
           "diff",
