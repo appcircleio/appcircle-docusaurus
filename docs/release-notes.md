@@ -60,7 +60,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### :muscle: Improvements
 
 - Testing Distribution profiles with public access enabled are now accessible to all users with active authentication within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Testing Group members can now be imported through registered LDAP groups. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Testing Group members can now be [imported](/testing-distribution/testing-groups#importing-testing-group-members-via-ldap) through registered LDAP groups. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Help documentation and guides are now accessible based on the app and certificate type after downloading apps from the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Android profile creation](/publish-module/creating-publish-profiles#android-publish-profiles) has been separated into two options: you can either create a profile manually by typing the package ID, or select it from the Google Play Console using API credentials. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
