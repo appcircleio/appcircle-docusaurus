@@ -214,9 +214,9 @@ To upload a binary from the Build module, please refer to the [**Distribution Co
 
 If you have your own CI environment, you can use the Appcircle API & CLI to upload binaries to the related publish Profile.
 
-- **Other CI/CD Tools**: You can integrate the Publish module with continuous integration/continuous deployment (CI/CD) tools like Jenkins and GitHub Actions to automate your build and release pipeline. With the Appcircle [**API & CLI**](/appcircle-api), you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient deployment process, reducing manual intervention and the risk of errors. You can check out [**Appcircle Marketplace**](/marketplace) for more integrations.
+- **Other CI/CD Tools**: You can integrate the Publish module with continuous integration/continuous deployment (CI/CD) tools like Jenkins and GitHub Actions to automate your build and release pipeline. With the Appcircle [**API & CLI**](/appcircle-api-and-cli), you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient deployment process, reducing manual intervention and the risk of errors. You can check out [**Appcircle Marketplace**](/marketplace) for more integrations.
 
-To get more information, please refer to our [**API & CLI**](/appcircle-api) documentation.
+To get more information, please refer to our [**API & CLI**](/appcircle-api-and-cli) documentation.
 
 
 ### Update Metadata
@@ -325,7 +325,7 @@ If your binary is rejected by Apple in App Store Connect, the status on Appcircl
 
 #### Can I use the Publish Module with other CI tools?
 
-Yes, you can use other CI tools to upload a binary to the Publish module. By utilizing Appcircle [**API & CLI**](/appcircle-api) within your chosen CI tool, you can directly send the binary to the relevant profile and manage the Publish process. 
+Yes, you can use other CI tools to upload a binary to the Publish module. By utilizing Appcircle [**API & CLI**](/appcircle-api-and-cli) within your chosen CI tool, you can directly send the binary to the relevant profile and manage the Publish process. 
 
 Additionally, you can check our existing integrations in the [**Appcircle Marketplace**](/marketplace) documentation for integration alternatives for the **Appcircle API and CLI**.
 
