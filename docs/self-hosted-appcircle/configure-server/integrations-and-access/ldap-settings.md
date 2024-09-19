@@ -243,7 +243,7 @@ LDAP Mapping in Appcircle allows you to synchronize user groups and roles from y
 
 ### Group And Role Mapper Configuration
 
-Group and role mapper configuration has to be completed before starting LDAP Mapping configuration. LDAP gropu and role mapper defines how group and roles retrived from LDAP. 
+Group and role mapper configuration must be completed before starting the LDAP mapping configuration. The LDAP group and role mapper define how groups and roles are retrieved from LDAP.
 
 You can configure it using the following steps:
 
@@ -255,11 +255,11 @@ You can configure it using the following steps:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-2.png' />
 
-3. And press the **Manage** button next to **LDAP Login**
+3. And press the **Manage** button next to **LDAP Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-manage-button.png' />
 
-4. Click the **Set Up LDAP Configuration** then click **Edit** button in your LDAP provider.
+4. Click the **Set Up LDAP Configuration**, then click **Edit** button in your LDAP provider.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-edit-button.png' />
 
