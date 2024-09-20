@@ -35,7 +35,7 @@ For authentication, you need to generate a session token from the [Appcircle CLI
 
 :::tip
 
-For generating Personal API Token, please refer to [API Authentication.](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
+For generating Personal API Token, please refer to [API Authentication.](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens)
 
 :::
 
