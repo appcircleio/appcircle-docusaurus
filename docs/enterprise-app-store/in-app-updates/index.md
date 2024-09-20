@@ -731,7 +731,7 @@ public static class InAppUpdateHelper {
 </Tabs>
 
 :::caution
-The code above compares major versions. For instance, if the current app version is 1.0 and the available latest version is 1.1, it **won't** be considered an update. But, if the available latest version is 2.0 in your enterprise store will be treated as an update. You can configure the logic based on your business requirements.
+The code above compares major versions. For instance, if the current app version is 1.0 and the latest available version is 1.1, it **won't** be considered an update. However, if the latest available version is 2.0, it will be treated as an update in your enterprise store. You can configure this logic based on your business requirements.
 :::
 
 #### Updating the App
