@@ -142,7 +142,7 @@ If your Git commit has any messages, they will be included in the distribution i
 
 If you use your own CI structre, you can use our Appcircle API & CLI to upload binaries to your Distribution Profile.
 
-To get more information, please refer to our [API & CLI](/appcircle-api) documentation.
+To get more information, please refer to our [API & CLI](/appcircle-api-and-cli) documentation.
 
 ## Settings
 
@@ -375,7 +375,7 @@ Yes, you can choose one of the authentication methods provided by Appcircle to a
 
 #### Can I send a binary from another CI tool?
 
-Yes, you can use Appcircle **API & CLI** tools within your current CI tool to directly send the binary and utilize it within the Testing Distribution. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api) documentations.
+Yes, you can use Appcircle **API & CLI** tools within your current CI tool to directly send the binary and utilize it within the Testing Distribution. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api-and-cli) documentations.
 
 
 #### What does email/month mean? How is the number calculated?

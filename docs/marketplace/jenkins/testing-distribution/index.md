@@ -84,6 +84,6 @@ If multiple workflows start simultaneously, the order in which versions are shar
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens).
 
 - For more detailed instructions and support, visit the [Testing Distribution documentation](/testing-distribution).

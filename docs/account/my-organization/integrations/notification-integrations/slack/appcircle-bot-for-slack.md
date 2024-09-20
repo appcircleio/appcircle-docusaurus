@@ -46,7 +46,7 @@ You will then see that Slack is connected.
 
 ### Connecting Appcircle Bot to the Account
 
-To connect `Appcircle Bot` to your account, you need to use the `Personal Access Token` generated from your account. If you don't know how to generate it, you can follow the steps in [this document](/appcircle-api/api-authentication).
+To connect `Appcircle Bot` to your account, you need to use the `Personal Access Token` generated from your account. If you don't know how to generate it, you can follow the steps in [this document](/appcircle-api-and-cli/api-authentication).
 
 You can reach the `Enter the PAT` screen with the `Add Personal Access Token` button on the `Home` tab when the application is opened.
 
