@@ -17,6 +17,11 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Appcircle Testing Distribution plugin allows users to upload their apps and start distribution to test groups or individuals.
 
+### Discover Plugin
+
+You can discover more about this action and install it from:
+https://plugins.jenkins.io/appcircle-testing-distribution/
+
 ## System Requirements
 
 **Compatible Agents:**
