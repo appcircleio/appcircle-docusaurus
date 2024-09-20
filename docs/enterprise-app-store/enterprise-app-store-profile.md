@@ -54,7 +54,7 @@ The Publish Flow steps can be customized to send the binary to the Enterprise Ap
 
 The above tasks can also be initiated using the Appcircle CLI. The Appcircle CLI documentation should be checked for the command line parameters.
 
-<ContentRef url="/appcircle-api">Appcircle CLI</ContentRef>
+<ContentRef url="/appcircle-api-and-cli">Appcircle CLI</ContentRef>
 
 ## Profile Actions
 
@@ -222,7 +222,7 @@ The above tasks can also be initiated using the Appcircle CLI. Please refer to t
 
 :::
 
-<ContentRef url="/appcircle-api">Appcircle CLI</ContentRef>
+<ContentRef url="/appcircle-api-and-cli">Appcircle CLI</ContentRef>
 
 ### Download
 

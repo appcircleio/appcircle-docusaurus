@@ -74,7 +74,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### 🆕 New Features
 
-- Default roles are now shown when inviting users to an organization, both in the UI and through the [CLI](appcircle-api/cli-authentication). This enhancement ensures clarity and ease of role assignment during the user invitation process. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Default roles are now shown when inviting users to an organization, both in the UI and through the [CLI](appcircle-api-and-cli/cli-authentication). This enhancement ensures clarity and ease of role assignment during the user invitation process. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The ability to assign multiple module roles to users has been introduced, allowing for greater flexibility and more refined [role management](/account/my-organization/profile-and-team/team-management#advanced-role-management) within the system. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new [Membership](/account/my-organization/profile-and-team/team-management#advanced-role-management) column has been added, displaying values as `Member` or `Inherit`, and the `Assigned` label has been removed as it is no longer necessary. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new sub-organization filter has been added to the user list, allowing for more precise filtering and [user management](/account/my-organization/profile-and-team/team-management) within sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -158,7 +158,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - When downloading app versions with an enterprise-type certificate within the Testing Portal, a [guidance message](/testing-distribution/testing-portal) will now be displayed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Submissions with "Waiting for Review" or "In Review" status can now be [cancelled](/publish-module/publish-information/cancel-submission) on App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - App versions can now be [rejected](/publish-module/publish-information/reject-binary) by users with Manager and Operator roles. Rejected app versions cannot be marked as RC (Release Candidate); they can only be deleted or viewed. The same version can also be re-uploaded for rejected items. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [App Center Migration Tool](/appcircle-api/appcenter-migration-tool), can now be used to assist organizations and individuals in migrating their Visual Studio App Center projects, including organizations, collaborators, app profiles, and test groups, to Appcircle effortlessly. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/> 
+- [App Center Migration Tool](/appcircle-api-and-cli/appcenter-migration-tool), can now be used to assist organizations and individuals in migrating their Visual Studio App Center projects, including organizations, collaborators, app profiles, and test groups, to Appcircle effortlessly. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/> 
 
 ### :muscle: Improvements
 
@@ -404,8 +404,8 @@ To ensure the App Store status remains current, the following conditions must be
 - [The public link](testing-distribution/create-or-select-a-distribution-profile#public-link) in the distribution settings has been transformed into a QR code to simplify access and sharing. <CloudBadge/> <SelfHostedBadge/>
 - Users can now filter the app version list on [the testing portal](testing-distribution/testing-portal) by app name, version, release notes, or build number for enhanced navigation and search capabilities. <CloudBadge/> <SelfHostedBadge/>
 - The system now automatically converts uploaded or built AAB files to a universal format. It also discreetly saves the newly created APK file with the second app's resource id. <CloudBadge/> <SelfHostedBadge/>
-- A new command, ["build active-list"](https://docs.appcircle.io/appcircle-api/) has been added, allowing users to view active builds in the queue directly from their command line interface. <CloudBadge/> <SelfHostedBadge/>
-- A new command, ["build view"](https://docs.appcircle.io/appcircle-api/) has been added, enabling users to access and view detailed information about builds directly from the command line interface. <CloudBadge/> <SelfHostedBadge/>
+- A new command, ["build active-list"](https://docs.appcircle.io/appcircle-api-and-cli/) has been added, allowing users to view active builds in the queue directly from their command line interface. <CloudBadge/> <SelfHostedBadge/>
+- A new command, ["build view"](https://docs.appcircle.io/appcircle-api-and-cli/) has been added, enabling users to access and view detailed information about builds directly from the command line interface. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 pool" now includes [Xcode 15.4 beta-1](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. As this is a beta release, we strongly recommend testing your workflows extensively to ensure compatibility and stability. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
@@ -794,7 +794,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🐞 Fixed
 
 - Fixed a bug that users were experiencing when adding to the provisioning profile. <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug that caused [endpoints](/appcircle-api/api-authentication) to not appear in the webhook module on Swagger. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug that caused [endpoints](/appcircle-api-and-cli/api-authentication) to not appear in the webhook module on Swagger. <CloudBadge/> <SelfHostedBadge/>
 - When an event matches the trigger rules, all satisfied triggers will be executed. <CloudBadge/> <SelfHostedBadge/>
 - The user is redirected to the "invitation expired" page when the [invitation](/account/my-organization) link is timed out. <CloudBadge/> <SelfHostedBadge/>
 - The health check command was fixed, and it now reports the correct state both for Podman and Docker. <SelfHostedBadge/>
