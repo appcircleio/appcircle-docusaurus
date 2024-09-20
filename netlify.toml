@@ -1093,4 +1093,52 @@ status = 301
   to = "/account/my-organization/integrations/authentications/sso-providers-configuration/okta-saml"
   status = 301
 
-  
+[[redirects]]
+from = "/appcircle-api"
+to = "/appcircle-api-and-cli"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api#appcircle-api"
+to = "/appcircle-api-and-cli#appcircle-api"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api#appcircle-api"
+to = "/appcircle-api-and-cli#appcircle-cli"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api#appcircle-api"
+to = "/appcircle-api-and-cli#app-center-migration-tool"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/api-authentication"
+to = "/appcircle-api-and-cli/api-authentication"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/appcenter-migration-tool"
+to = "/appcircle-api-and-cli/appcenter-migration-tool"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/cli-authentication"
+to = "/appcircle-api-and-cli/cli-authentication"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/cli-authentication#appcircle-cli"
+to = "/appcircle-api-and-cli/cli-authentication#appcircle-cli"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/cli-authentication#using-the-personal-api-token-for-cli-authentication"
+to = "/appcircle-api-and-cli/cli-authentication#using-the-personal-api-token-for-cli-authentication"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens"
+to = "/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens"
+status = 301
