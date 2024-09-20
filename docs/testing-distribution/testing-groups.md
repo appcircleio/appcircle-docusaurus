@@ -1,7 +1,7 @@
 ---
 title: Testing Groups
 description: Manage your testers with Testing Groups. Distribute different app versions based on OS, features, and devices.
-tags: [testing, group, distribution, testers]
+tags: [testing, group, distribution, testers, ldap]
 sidebar_position: 2
 ---
 
@@ -43,6 +43,61 @@ A prominent orange warning message confirms the successful re-subscription proce
 
 :::info
 If a user who has previously unsubscribed is included in a test group, they will not be re-subscribed when sharing with the test group.
+:::
+
+## Importing Testing Group Members via LDAP
+
+If you have a LDAP Mapping in place for your users, you can import them into your Testing Group profile.
+
+For LDAP configuration and mapping, please refer to the [LDAP](/account/my-organization/integrations/authentications/ldap-login) documentation.
+
+1. **Create or Select a Testing Group**:  
+   Either create a new Testing Group in Appcircle or select an existing one.
+
+2. **Import Group Members from LDAP**:
+    - Click on the three dots in the top-right corner.
+    - Select the **Import From LDAP** option.
+
+   **Note**: The Testing Group must not contain any members. If it does, attempting to import from LDAP will result in an error.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-import.png' />
+
+3. **Select LDAP Configuration**:
+    - Choose the LDAP configuration from the dropdown menu.
+    - Select the LDAP Group from which you want to import members.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-menu.png' />
+
+4. **Preview LDAP Group Members**:  
+   The members of the LDAP Group will be displayed in the UI as a preview. This allows you to review the members before importing. At this stage, the members are not yet imported into the Testing Group.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-config.png' />
+
+5. **Determine Sync Frequency**:
+   Select a time frame for automatic sync process. Once Testing Group linked to the LDAP Group, it will sync the group members periodically.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-sync.png' />
+
+6. **Sync Group Members**:  
+   Click the **Sync Now** button to import and store the LDAP group members in the Testing Group.
+
+**Note:** Clicking **Save** to complete the process will also be sufficient to import the members.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-imported.png' />
+
+7. **Update LDAP Group Configuration**:  
+   After linking the Testing Group to the LDAP Group, you can update the LDAP configuration in the same way it was imported.
+
+Testing Groups that use the LDAP sync feature will be marked with a tag displaying the selected LDAP group.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-final.png' />
+
+:::caution
+
+It is not possible to add or remove members of Testing Group after establishing a link to LDAP Group.
+
+However, the testing group can still be renamed, duplicated and deleted.
+
 :::
 
 ## FAQ
