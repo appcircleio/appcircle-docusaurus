@@ -83,7 +83,7 @@ Yes, you can choose one of the authentication methods provided by Appcircle to a
 
 #### Can I send a binary from another CI tool?
 
-Yes, you can use Appcircle API & CLI tools within your current CI tool to directly send the binary and utilize it within the Enterprise App Store. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api) documentations.
+Yes, you can use Appcircle API & CLI tools within your current CI tool to directly send the binary and utilize it within the Enterprise App Store. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api-and-cli) documentations.
 
 #### Is my app store accessible from desktop web?
 
