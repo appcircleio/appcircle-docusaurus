@@ -43,7 +43,7 @@ To install the Appcircle Testing Distribution Task Extension, follow these steps
 3. Fill out the necessary input fields and click the **Add** button.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution_task_detail.png' />
 
-   3.1. You can learn more about getting your personal api token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+   3.1. You can learn more about getting your personal api token [here](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens).
 
    3.2. Find out how to create a distribution profile [here](/testing-distribution/create-or-select-a-distribution-profile)
 
@@ -79,6 +79,6 @@ If multiple workflows start simultaneously, the order in which versions are shar
 
 ## References
 
-- For details on generating an Appcircle Personel API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
+- For details on generating an Appcircle Personel API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens)
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile)
