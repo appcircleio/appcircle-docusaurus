@@ -45,7 +45,7 @@ In order to install Appcircle Enterprise App Store task extension, follow these 
    <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_ent_store_task.png' />
 3. Complete the necessary input fields and then click the "Add" button.
 
-   3.1. You can learn more about getting your personal api token [here](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+   3.1. You can learn more about getting your personal api token [here](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens).
 
 After filling out the required fields, the `AppcircleEnterpriseStore@0` task will appear in your pipeline steps as shown below:
 
@@ -85,6 +85,6 @@ If two workflows start simultaneously, the last workflow to reach the publish st
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens)
+- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens)
 
 - For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).
