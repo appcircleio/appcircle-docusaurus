@@ -43,7 +43,7 @@ Connect and manage API integrations for seamless automation and extended functio
 
 Set up notifications to keep your team updated on the build and release processes.
 
-### SSO Providers Configuration
+### Appcircle Login Single Sign-On (SSO) Providers Configuration
 
 Configure Single Sign-On (SSO) providers to enable easy and secure access for your team.
 
