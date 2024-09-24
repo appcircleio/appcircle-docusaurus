@@ -809,7 +809,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### :muscle: Improvement
 
-- Added the feature that [LDAP](/account/my-organization/integrations/authentications/ldap-login) and [SSO](/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on) settings can be made once and all sub-organizations can use this setting. <CloudBadge/> <SelfHostedBadge/>
+- Added the feature that [LDAP](/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication) and [SSO](/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on) settings can be made once and all sub-organizations can use this setting. <CloudBadge/> <SelfHostedBadge/>
 - Previous [Configuration and Workflow](/build/manage-the-connections/adding-a-build-profile) files can be downloaded in the Configuration and Workflow sections. The ability to create configuration and workflow by re-uploading downloaded `.yaml` files has been improved. <CloudBadge/> <SelfHostedBadge/>
 - On the [self-hosted](../self-hosted-appcircle/self-hosted-runner) side, the feature of adding priority has been developed for online and offline runners. <CloudBadge/> <SelfHostedBadge/>
 - Sequential numbering improvement was made in the naming while creating the new configuration and workflow. <CloudBadge/> <SelfHostedBadge/>
@@ -843,7 +843,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - [Xcode 15.0 Beta](/infrastructure/ios-build-infrastructure) added to build agents. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
 - [Java 17](../infrastructure/android-build-infrastructure) added to build agents. <CloudBadge/> <SelfHostedBadge/>
 - [Build Profile](/build/manage-the-connections/adding-a-build-profile) configurations are separated from branchs. It is now easier to see and manage configs from a single location. <CloudBadge/> <SelfHostedBadge/>
-- [SSO](/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on) and [LDAP](/account/my-organization/integrations/authentications/ldap-login) Login added to Testing Distribution. <CloudBadge/> <SelfHostedBadge/>
+- [SSO](/account/my-organization/integrations/authentications/sso-providers-configuration/single-sign-on) and [LDAP](/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication) Login added to Testing Distribution. <CloudBadge/> <SelfHostedBadge/>
 - [Azure Boards](/workflows/common-workflow-steps/azure-board) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [Repeato](/workflows/common-workflow-steps/#repeato-mobile-test-automation) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [Snyk Secure Scan](/workflows/common-workflow-steps/#snyk-scan-security) workflow step added. <CloudBadge/> <SelfHostedBadge/>
