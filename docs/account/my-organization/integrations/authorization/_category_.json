@@ -1,6 +1,6 @@
 {
-  "label": "Credentials",
-  "position": 3,
+  "label": "Authorization",
+  "position": 2,
   "collapsed": true,
   "collapsible": true
 }
