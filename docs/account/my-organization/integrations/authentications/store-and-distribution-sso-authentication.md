@@ -1,25 +1,24 @@
 ---
-title: SSO Authentication
-description: Establish Single Sign-On (SSO) providers for your organization. Enhance security and simplify access across Appcircle's platform.
-tags: [account, organization, sso, configuration]
-sidebar_position: 2
+title: Store and Distribution SSO Authentication
+description: Set up single sign-on (SSO) for distributing your applications, enhancing security and simplifying the login process.
+tags: [sso, distribution, okta, auht0, entraid, azure, saml, openid]
+sidebar_position: 3
 ---
 
-import Screenshot from '@site/src/components/Screenshot';
-
-# Appcircle Login Single Sign-On (SSO) Providers Configuration
+# Enterprise App Store and Testing Distribution Single Sign-On (SSO) Providers Configuration
 
 ## 1. Introduction
 
 Single Sign-On (SSO) allows users to log in to Appcircle using their existing credentials from an Identity Provider (IdP). By integrating SSO, organizations can streamline user access management, enhance security, and provide a seamless login experience across multiple platforms.
 
-This document specifically covers the SSO configuration for the Appcircle Portal. Please note that a separate SSO configuration exists for the Testing Portal (Testing Distribution module) and Enterprise Store (Enterprise App Store module). This document does not cover those configurations. For more information on SSO setup for the Testing Portal and Enterprise Store, please refer to the [Store and Distribution SSO Authentication Configuration Guide](/account/my-organization/integrations/authentication/store-and-distribution-sso-authentication).
+This document specifically covers the SSO configuration for the Testing Portal (Testing Distribution module) and Enterprise Store (Enterprise App Store module). Please note that a separate SSO configuration exists. This document does not cover those configurations for the Appcircle Portal. For more information on SSO setup for the Testing Portal and Enterprise Store, please refer to the [Appcircle Login Single Sign-On (SSO) Providers Configuration](/account/my-organization/integrations/authentications/sso-authentication).
 
 Currently, this configuration supports enabling SSO with only one identity provider at a time. Adding multiple SSO providers is not supported at this moment but may be available in the future.
 
 The SSO setup described in this document integrates the selected identity provider with the Appcircle IAM module, essentially adding the provider as an identity source for Appcircle.
 
 This document provides a comprehensive guide to configuring SSO with various supported identity providers, including Auth0, Microsoft Entra ID (formerly Azure Active Directory), Okta, OneLogin and Keycloak. Whether you choose to implement OpenID Connect or SAML, this guide will walk you through the necessary steps to ensure a successful integration with Appcircle.
+
 
 ### Supported Identity Providers
 
@@ -50,6 +49,7 @@ Before you begin configuring SSO for Appcircle, ensure that you have the followi
 
 These prerequisites will ensure that the SSO configuration process is smooth and any issues that arise can be quickly resolved.
 
+
 ### SSO Terminology
 
 Understanding the following key terms will help you navigate the SSO configuration process more effectively:
@@ -72,26 +72,25 @@ Begin by enabling SSO within your Appcircle organization settings. Follow these 
 
 1. In the Appcircle dashboard, navigate to the **Organization** section located on the far left sidebar.
 2. On the **My Organization** screen, select **Integrations** from the left-hand menu.
-3. In the **Integrations** screen, find the **Appcircle Login** area on the far right, and click the **Enable Login** button.
+3. In the **Integrations** screen, find the **Authentications** area on the far right, and click the **Connect** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/enable-sso_v3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-connect-sso.png' />
 
 4. The **Enable SSO for Organizations** window will open, presenting two options:
     - **Set up OpenID Provider**
     - **Set up SAML SSO Provider**
   
-
     Select the option that corresponds to the identity provider you will configure.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-form_v2.png' />
 
-5. In the setup window, manually enter a unique **Alias** for your organization. This alias is used to create a custom Redirect URI that will be  required for configuring your SSO provider.
+5. In the setup window, manually enter a unique **Alias** for your organization.
 6. Additionally, enter a **Display Name** for your organization.
-7. After setting the alias and Display Name, Appcircle will automatically generate a **Redirect URL** specific to your configuration. This RedirectURL must be used in your identity provider's settings to ensure proper redirection after authentication.
+7. After setting the alias and Display Name, Appcircle will automatically generate the **Store Redirect URL** and **Distribute Redirect URL** specific to your configuration. **Store Redirect URL** and **Distribute Redirect URL**  must be used in your identity provider's settings to ensure proper redirection after authentication.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-openid1_v2.png' />
 
-Ensure that the alias and Display Name you choose are unique and easily identifiable, as they are essential for the SSO authentication process.The generated Redirect URL is crucial for your SSO setup, so be sure to copy and save it for use in the following steps.
+Ensure that the alias and Display Name you choose are unique and easily identifiable, as they are essential for the SSO authentication process. The **Store Redirect URL** and **Distribute Redirect URL** are crucial for your SSO setup, so be sure to copy and save them for use in the following steps.
 
 </details>
 
@@ -102,82 +101,63 @@ After enabling SSO and setting your alias, proceed to select and configure your 
 
 1. Depending on the option you selected in the previous step, you will either be configuring an OpenID Connect or SAML provider.
 2. Follow the specific steps for your chosen provider to enter the necessary configuration details, including Client ID, Client Secret, and other required parameters.
-3. Use the previously generated Redirect URI provided by Appcircle when configuring your identity provider settings to ensure proper redirection after authentication.
+3. Use the previously generated **Store Redirect URL** and **Distribute Redirect URL** provided by Appcircle when configuring your identity provider settings to ensure proper redirection after authentication.
 
 Only one SSO provider can be configured at a time.
 
 </details>
 
 <details>
-  <summary>Step 3: SSO Login Direct Link</summary>
-
- Appcircle also supports direct SSO login links. Use the following URL format to log in directly using your SSO alias:
-
-- For Cloud-Hosted Appcircle:
-`https://my.appcircle.io/sso/{SSO_ALIAS}`
-- For Self-Hosted Appcircle:
-`https://my.appcircle.{your-domain}/sso/{SSO_ALIAS}`
-
-Replace `{SSO_ALIAS}` with the alias you configured, and if you are using a self-hosted solution, replace `{your-domain}` with your actual domain.
-
-</details>
-
-<details>
-  <summary>Step 4: Test and Verify SSO Configuration</summary>
+  <summary>Step 4: Test and Verify </summary>
 
 After completing the SSO configuration, it's essential to test and ensure everything is functioning correctly. The following steps outline the testing process.
 
 <details>
-  <summary>Step 4.1: Initiate SSO Login</summary>
+  <summary>Step 4.1: Test and Verify SSO Configuration for Enterprise Store (Enterprise App Store module)</summary>
 
-1. Open an incognito window in your browser to avoid any cached sessions interfering with the test.
-2. Navigate to the Appcircle login page and click the **Continue with SSO** button.
-3. Enter the SSO Alias you configured earlier and proceed. The alias is used to identify your organization's specific SSO setup.
+Begin by enabling SSO for the Enterprise App Store. Follow these steps:
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
+1. In the Appcircle dashboard, navigate to the **Enterprise App Store** section located on the far left sidebar.
+2. On the **Enterprise App Store** screen, select **Settings** from the left-hand menu.
+3. Click on the **Activate** button next to SSO Login.
 
-</details>
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2777-enterprisestore-sso-login.png" />
 
-<details>
-  <summary>Step 4.2: Account Linking</summary>
-
-1. After entering the alias, if a user with the same email already exists, you should see a confirmation screen prompting you to link your account with the SSO provider.
-2. Confirm the account linking by clicking the appropriate button on the confirmation screen.
-3. You will receive an email to verify the account linking. Open the email and click the verification link.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-linkaccount.png" />
+4. Follow [Enterprise App Store Documentation](/enterprise-app-store/enterprise-app-store-profile) to test the integration.
 
 </details>
 
 <details>
-  <summary>Step 4.3: Verification via Email</summary>
+  <summary>Step 4.2: Test and Verify SSO Configuration for Testing Portal (Testing Distribution module) </summary>
 
-Once you confirm the account linking, an email will be sent to your registered email address. You must verify your account using the link in this email to complete the process.
+Begin by enabling SSO for the Testing Portal. Follow these steps:
 
-1. Open the verification email and click the provided link to confirm your account.
-2. After verification, you will be redirected back to the Appcircle dashboard, fully authenticated via SSO.
+1. In the Appcircle dashboard, navigate to the **Testing Distribution** section located on the far left sidebar.
+2. On the **Testing Distribution** screen, select **Distribution Profiles** from the left-hand menu.
+3. Select the relevant **Distribution Profile** to be distributed via SSO authentication.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-confirmlink.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2803-distribution-profiles.png" />
+
+4. On the **Distribution Profile** screen, click on the **Settings** button.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2803-distribution-detail.png" />
+
+5. Navigate to the **Authentication** tab and select **SSO Login** as the authentication type.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2777-distribution-sso-login.png" />
+
+6. Follow the [Share Binary](/testing-distribution/create-or-select-a-distribution-profile#share-your-application-with-the-test-groups-manually) documentation to distribute application. You can share application to your email address that exist on Identity Provider for testing purposes. 
+
+7. Check your email inbox and goto link in email. 
+8. 
+ 
+<Screenshot url="https://cdn.appcircle.io/docs/assets/testing-dist-sso-login.png" />
 
 </details>
 
-<details>
-  <summary>Step 4.4: Final Login</summary>
-
-After verifying your account via email, your SSO setup is complete. From now on, you can log in with your SSO alias or using the direct SSO login link.
-
-:::info
-
-After enabling SSO, the traditional login method using your previous credentials will no longer be available for your organization. Ensure that you can log in successfully using SSO before logging out of any sessions.
-
-:::
-
-</details>
 </details>
 
 ## 4. Specific Provider Configuration
-
-This section provides detailed instructions for configuring Single Sign-On (SSO) with specific identity providers supported by Appcircle. Each provider may have unique requirements, so it's important to follow the steps closely.
 
 <details>
   <summary>4.1 Auth0 (OpenID Connect)</summary>
@@ -208,11 +188,12 @@ To start, log in to your Auth0 dashboard and create a new application for Appcir
 Next, configure the callback URLs in Auth0 to ensure proper redirection to Appcircle after authentication:
 
 1. In the Auth0 dashboard, go to the **Settings** tab of your application.
-2. In the **Allowed Callback URLs** field, enter the Redirect URL that was created using the alias in "Step 1: Enable SSO in Appcircle" from the "3. General Configuration Steps" section.
+2. In the **Allowed Callback URLs** field, enter the **Store Redirect URL** and **Distribute Redirect URL** (created using the alias in "Step 1: Enable SSO in Appcircle" from the "General Configuration Steps" section), combined by a comma.
 
-**Example Callback URL:** `https://auth.appcircle.io/auth/realms/appcircle/broker/identity-{your-alias}/endpoint`
+**Example Callback URL:** `https://auth.appcircle.io/auth/realms/store/broker/identity-{your-alias}/endpoint,https://auth.appcircle.io/auth/realms/distribute/broker/identity-{your-alias}/endpoint`
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/authopenidsettings2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/integration-sso-auth0-redirect-urls.png" />
+
 
 3. Click on the **Save Changes** button.
 
@@ -235,45 +216,11 @@ Now, upload the OpenID configuration JSON file to Appcircle and complete the con
 1. Navigate to the **Set up OpenID Provider** screen in Appcircle, which you accessed during the SSO setup in the "General Configuration Steps."
 2. Upload the downloaded OpenID configuration JSON file to Appcircle.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-openid1_v2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/integration-sso-openid-alias.png" />
 
 3. Choose the **Client secret sent as basic auth** as Client Authentication
 4. Enter the **Client ID** and **Client Secret** that you noted earlier from Auth0.
 5. Click **Save** to finalize the SSO setup.
-
-#### Step 5: Test the Integration
-
-After configuring the settings, it’s crucial to test the OpenID Connect SSO integration:
-
-:::caution
-
-**Important:** When connecting your Identity Provider, use an incognito window to test the SSO integration. Only log off once you are sure you can log in with your SSO credentials. If the connection fails, review your settings before logging out.
-
-:::
-
-1. Open a incognito window in your browser and initiate a new login session.
-2. On the login screen, click the **Login with SSO** button to start the SSO login process
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-loginbutton.png" />
-
-3. Enter your SSO alias when prompted and click **Continue**.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
-
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
-5. After successful authentication, you will be redirected back to Appcircle.
-6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-linkaccount.png" />
-
-7. Once you confirm the account linking, an email will be sent to your registered email address. 
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-confirmlink.png" />
-
-8. Open the verification email and click the provided link to confirm your account.
-9. After verification, you will be redirected back to the Appcircle dashboard, fully authenticated via SSO.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/empty-appcircle-dashboard.png" />
 
 </details>
 
@@ -315,9 +262,9 @@ Next, configure the SAML settings in Auth0 to ensure it can authenticate and red
     }
 ```
 
-3. In the **Application Callback URL** field, enter the Redirect URL that was created using the alias in "Step 1: Enable SSO in Appcircle" from the "General Configuration Steps" section.
+3. In the **Application Callback URL** field, enter the **Store Redirect URL** and **Distribute Redirect URL** (created using the alias in "Step 1: Enable SSO in Appcircle" from the "General Configuration Steps" section), combined by a comma.
 
-**Example Callback URL:** `https://auth.appcircle.io/auth/realms/appcircle/broker/identity-{your-alias}/endpoint`
+**Example Callback URL:** `https://auth.appcircle.io/auth/realms/store/broker/identity-{your-alias}/endpoint,https://auth.appcircle.io/auth/realms/distribute/broker/identity-{your-alias}/endpoint`
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/authsamlsettings2.png" />
 
@@ -334,7 +281,7 @@ Now, upload the SAML metadata file to Appcircle and finalize the configuration:
 1. Navigate to the **Set up SAML SSO Provider** screen in Appcircle, which you accessed during the SSO setup in the "General Configuration Steps."
 2. Upload the downloaded SAML metadata file to Appcircle.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png" />
 
 Check that the Redirect and SSO URLs are imported correctly. Ensure the X509 Certificate is imported correctly as well. If you need to enter multiple certificates, separate them with a comma. Be sure to remove any new lines or file headers, as this edit box only accepts a long base64 encoded string.
 
@@ -343,43 +290,8 @@ Check that the Redirect and SSO URLs are imported correctly. Ensure the X509 Cer
 
 **Important:** Ensure all settings match those provided in the SAML metadata file to avoid issues with authentication.
 
-#### Step 4: Test the Integration
-
-After configuring the settings, it’s crucial to test the OpenID Connect SSO integration:
-
-:::caution
-
-**Important:** When connecting your Identity Provider, use an incognito window to test the SSO integration. Only log off once you are sure you can log in with your SSO credentials. If the connection fails, review your settings before logging out.
-
-:::
-
-1. Open a incognito window in your browser and initiate a new login session.
-2. On the login screen, click the **Login with SSO** button to start the SSO login process
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-loginbutton.png" />
-
-3. Enter your SSO alias when prompted and click **Continue**.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
-
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
-5. After successful authentication, you will be redirected back to Appcircle.
-6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-linkaccount.png" />
-
-7. Once you confirm the account linking, an email will be sent to your registered email address. 
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-confirmlink.png" />
-
-8. Open the verification email and click the provided link to confirm your account.
-9. After verification, you will be redirected back to the Appcircle dashboard, fully authenticated via SSO.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/empty-appcircle-dashboard.png" />
-
-If the test is successful, your integration is complete, and you can start using Auth0 (SAML) as your identity provider for Appcircle.
-
 </details>
+
 
 <details>
   <summary>4.3 Microsoft Entra ID (SAML) (formerly Azure Active Directory) </summary>
@@ -436,10 +348,14 @@ Next, configure the SAML-based sign-on for the Microsoft Entra ID application:
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/azuressosettings2.png" />
 
-    - **Identifier (Entity ID)**: Enter `https://auth.appcircle.io/auth/realms/appcircle`.
-    - **Reply URL (Assertion Consumer Service URL)**: Enter the Redirect URL created using the alias in "Step 1: Enable SSO in Appcircle" from the "General Configuration Steps" section (e.g., `https://auth.appcircle.io/auth/realms/appcircle/broker/identity-{your-alias}/endpoint`).
+    - **Identifier (Entity ID)**: Enter `https://auth.appcircle.io/auth/realms/store`.
+    - **Reply URL (Assertion Consumer Service URL)**: Enter the **Store Redirect URL** and **Distribute Redirect URL** that created using the alias in "Step 1: Enable SSO in Appcircle" from the "General Configuration Steps" section.
+    
+    **Example Store Redirect URL:** `https://auth.appcircle.io/auth/realms/store/broker/identity-{your-alias}/endpoint`
+    
+    **Example Distribution Redirect URL:** `https://auth.appcircle.io/auth/realms/distribute/broker/identity-{your-alias}/endpoint`
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/azuressosettings3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/integration-sso-azure-entity-id.png" />
 
 5. Click **Save** to apply the settings.
 
@@ -454,47 +370,12 @@ Now, download the SAML metadata from Microsoft Entra ID and upload it to Appcirc
 2. Navigate to the **Set up SAML SSO Provider** screen in Appcircle, which you accessed during the SSO setup in the "General Configuration Steps."
 3. Upload the downloaded Federation Metadata XML file to Appcircle.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2777-sso-saml1-new.png" />
 
 4. Review the settings and click **Save** to finalize the configuration.
 
-#### Step 4: Test the Integration
-
-After configuring the settings, it’s crucial to test the OpenID Connect SSO integration:
-
-:::caution
-
-**Important:** When connecting your Identity Provider, use an incognito window to test the SSO integration. Only log off once you are sure you can log in with your SSO credentials. If the connection fails, review your settings before logging out.
-
-:::
-
-1. Open a incognito window in your browser and initiate a new login session.
-2. On the login screen, click the **Login with SSO** button to start the SSO login process
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-loginbutton.png" />
-
-3. Enter your SSO alias when prompted and click **Continue**.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
-
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
-5. After successful authentication, you will be redirected back to Appcircle.
-6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-linkaccount.png" />
-
-7. Once you confirm the account linking, an email will be sent to your registered email address. 
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-confirmlink.png" />
-
-8. Open the verification email and click the provided link to confirm your account.
-9. After verification, you will be redirected back to the Appcircle dashboard, fully authenticated via SSO.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/empty-appcircle-dashboard.png" />
-
-If the test is successful, your integration is complete, and you can start using Microsoft Entra ID (SAML) as your identity provider for Appcircle.
-
 </details>
+
 
 <details>
   <summary>4.4 Okta (OpenID Connect)</summary>
@@ -522,11 +403,13 @@ To start, log in to your Okta dashboard and create a new application for Appcirc
 Next, configure the callback URLs in Okta to ensure proper redirection to Appcircle after authentication:
 
 1. Navigate to the settings of the created application in Okta.
-2. Add the Appcircle Redirect URL to the **Sign-in redirect URLs** field.
+2. Add the **Store Redirect URL** and **Distribute Redirect URL** (created using the alias in "Step 1: Enable SSO in Appcircle" from the "General Configuration Steps" section) to the **Sign-in redirect URLs** field.
 
-**Example Redirect URL:** `https://auth.appcircle.io/auth/realms/appcircle/broker/identity-{your-alias}/endpoint`
+  **Example Store Redirect URL:** `https://auth.appcircle.io/auth/realms/store/broker/identity-{your-alias}/endpoint`
+    
+  **Example Distribution Redirect URL:** `https://auth.appcircle.io/auth/realms/distribute/broker/identity-{your-alias}/endpoint`
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/oktaopenidsettings2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/integration-sso-okta-openid-create-app-redirect-uri.png" />
 
 5. Download the OpenID configuration JSON file from Okta using one of the following URLs:
     - `https://{your_okta_domain}/.well-known/openid-configuration`
@@ -546,45 +429,6 @@ Now, upload the OpenID configuration JSON file to Appcircle and complete the con
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-openid2_v2.png" />
 
 6. Click **Save** to finalize the SSO setup.
-
-#### Step 4: Test the Integration
-
-After configuring the settings, it’s crucial to test the OpenID Connect SSO integration:
-
-:::caution
-
-**Important:** When connecting your Identity Provider, use an incognito window to test the SSO integration. Only log off once you are sure you can log in with your SSO credentials. If the connection fails, review your settings before logging out.
-
-:::
-
-1. Open a incognito window in your browser and initiate a new login session.
-2. On the login screen, click the **Login with SSO** button to start the SSO login process
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-loginbutton.png" />
-
-3. Enter your SSO alias when prompted and click **Continue**.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
-
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
-
-5. After successful authentication, you will be redirected back to Appcircle.
-
-6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-linkaccount.png" />
-
-7. Once you confirm the account linking, an email will be sent to your registered email address. 
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-confirmlink.png" />
-
-8. Open the verification email and click the provided link to confirm your account.
-9. After verification, you will be redirected back to the Appcircle dashboard, fully authenticated via SSO.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/empty-appcircle-dashboard.png" />
-
-If the test is successful, your integration is complete, and you can start using Okta (SAML) as your identity provider for Appcircle.
-
 </details>
 
 <details>
@@ -596,7 +440,7 @@ Okta supports the SAML protocol, allowing integration with Appcircle for secure 
 
 To start, log in to your Okta dashboard and create a new application for Appcircle:
 
-1. In the Okta dashboard, navigate to **Applications** and click **Create App Integration**.
+. In the Okta dashboard, navigate to **Applications** and click **Create App Integration**.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/oktacreateapp.png" />
 
@@ -612,14 +456,20 @@ To start, log in to your Okta dashboard and create a new application for Appcirc
 
 Next, configure the SAML settings in Okta to ensure proper authentication and redirection to Appcircle:
 
-1. In the **Single sign-on URL** field, add the Appcircle Redirect URL.
+1. In the **Single sign-on URL** field, enter the **Store Redirect URL** (created using the alias in "Step 1: Enable SSO in Appcircle" from the "General Configuration Steps" section).
 
-**Example URL:** `https://auth.appcircle.io/auth/realms/appcircle`
+**Example Store Redirect URL:** `https://auth.appcircle.io/auth/realms/store/broker/identity-{your-alias}/endpoint`
 
-3. For the **Audience URI (SP Entity ID)** field, use the same URL.
-4. Select **EmailAddress** for the Name ID format.
+2. For the **Audience URI (SP Entity ID)** field, use the `https://auth.appcircle.io/auth/realms/store`.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/oktasamlsettings2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2777-oktasamlsettings.png" />
+
+3. Click "Show Advance Settings" button
+4. Add the **Distribute Redirect URL** (created using the alias in "Step 1: Enable SSO in Appcircle" from the "General Configuration Steps" section) to the **Other Requestable SSO URLs** section.
+    
+  **Example Distribution Redirect URL:** `https://auth.appcircle.io/auth/realms/distribute/broker/identity-{your-alias}/endpoint`
+
+  <Screenshot url="https://cdn.appcircle.io/docs/assets/2777-oktasamlsettings2-new.png" />
 
 6. Instead of manually configuring all SAML settings in Appcircle, you can download the SAML metadata XML file from Okta:
 
@@ -640,129 +490,51 @@ Now, upload the SAML metadata XML file to Appcircle to complete the configuratio
 
 7. Click **Save** to finalize the SSO setup.
 
-#### Step 4: Test the Integration
+</details>
 
-After configuring the settings, it’s crucial to test the OpenID Connect SSO integration:
+## 5. Testing and Verification
 
-:::caution
+After completing the SSO configuration, it's essential to test and ensure everything is functioning correctly. The following steps show the testing process.
 
-**Important:** When connecting your Identity Provider, use an incognito window to test the SSO integration. Only log off once you are sure you can log in with your SSO credentials. If the connection fails, review your settings before logging out.
+<details>
+  <summary>Step 4.1: Test and Verify SSO Configuration for Enterprise Store (Enterprise App Store module)</summary>
 
-:::
+Begin by enabling SSO for the Enterprise App Store. Follow these steps:
 
-1. Open a incognito window in your browser and initiate a new login session.
-2. On the login screen, click the **Login with SSO** button to start the SSO login process
+1. In the Appcircle dashboard, navigate to the **Enterprise App Store** section located on the far left sidebar.
+2. On the **Enterprise App Store** screen, select **Settings** from the left-hand menu.
+3. Click on the **Activate** button next to SSO Login.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-loginbutton.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2777-enterprisestore-sso-login.png" />
 
-3. Enter your SSO alias when prompted and click **Continue**.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
-
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
-5. After successful authentication, you will be redirected back to Appcircle.
-6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-linkaccount.png" />
-
-7. Once you confirm the account linking, an email will be sent to your registered email address. 
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-confirmlink.png" />
-
-8. Open the verification email and click the provided link to confirm your account.
-9. After verification, you will be redirected back to the Appcircle dashboard, fully authenticated via SSO.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/empty-appcircle-dashboard.png" />
-
-If the test is successful, your integration is complete, and you can start using Okta (SAML) as your identity provider for Appcircle.
+4. Follow [Enterprise App Store Documentation](/enterprise-app-store/enterprise-app-store-profile) to test the integration.
 
 </details>
 
 <details>
-  <summary>4.6 OneLogin (SAML)</summary>
-  
-OneLogin supports the SAML protocol, allowing integration with Appcircle for secure authentication. The Appcircle application is pre-configured in OneLogin, which simplifies the setup process by providing predefined settings.
+  <summary>Step 4.2: Test and Verify SSO Configuration for Testing Portal (Testing Distribution module) </summary>
 
-#### Step 1: Create a SAML Application in OneLogin
+Begin by enabling SSO for the Testing Portal. Follow these steps:
 
-To start, log in to your OneLogin dashboard and create a new SAML application for Appcircle:
+1. In the Appcircle dashboard, navigate to the **Testing Distribution** section located on the far left sidebar.
+2. On the **Testing Distribution** screen, select **Distribution Profiles** from the left-hand menu.
+3. Select the relevant **Distribution Profile** to be distributed via SSO authentication.
 
-1. In the OneLogin dashboard, navigate to **Applications** and click **Add App**.
- 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/oneloginaddapp.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2803-distribution-profiles.png" />
 
-2. In the search box, type **Appcircle** and select it from the search results. The application is pre-configured with the necessary settings, including URLs and certificates.
+4. On the **Distribution Profile** screen, click on the **Settings** button.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/oneloginfindapp.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2803-distribution-detail.png" />
 
-3. Pick a name and optional logo for the app, then click **Save**.
+5. Navigate to the **Authentication** tab and select **SSO Login** as the authentication type.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/oneloginsettings1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/2777-distribution-sso-login.png" />
 
-#### Step 2: Configure SAML Settings in OneLogin
-
-Now configure the SAML settings in OneLogin:
-
-1. Write the alias that you have created earlier and click **Save**.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/oneloginsettings2.png" />
-
-2. Instead of writing all the settings of SAML, you can download the settings file from OneLogin and upload it. Click the **More Actions** button and click **SAML Metadata**.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/oneloginsettings3.png"/>
-
-#### Step 3: Upload SAML Metadata to Appcircle
-
-Now, upload the SAML metadata XML file to Appcircle to complete the configuration:
-
-1. Navigate to the **Set up SAML SSO Provider** screen in Appcircle, which you accessed during the SSO setup in the "General Configuration Steps."
-2. Upload the downloaded SAML metadata XML file to Appcircle.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml1.png" />
-
-3. Ensure that the Redirect and SSO URLs are imported correctly. You can check if the X509 Certificate is imported correctly as well. If you want to enter multiple certificates you can separate them by using a comma between them. Please be aware that you need to remove any new lines or file headers from this edit box. This edit box only accepts a long base64 encoded string.
-
-4. Click **Save** to finalize the SSO setup.
-
-#### Step 4: Test the Integration
-
-After configuring the settings, it’s crucial to test the OpenID Connect SSO integration:
-
-:::caution
-
-**Important:** When connecting your Identity Provider, use an incognito window to test the SSO integration. Only log off once you are sure you can log in with your SSO credentials. If the connection fails, review your settings before logging out.
-
-:::
-
-1. Open a incognito window in your browser and initiate a new login session.
-2. On the login screen, click the **Login with SSO** button to start the SSO login process
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-loginbutton.png" />
-
-3. Enter your SSO alias when prompted and click **Continue**.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
-
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
-5. After successful authentication, you will be redirected back to Appcircle.
-6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-linkaccount.png" />
-
-7. Once you confirm the account linking, an email will be sent to your registered email address. 
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-confirmlink.png" />
-
-8. Open the verification email and click the provided link to confirm your account.
-9. After verification, you will be redirected back to the Appcircle dashboard, fully authenticated via SSO.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/empty-appcircle-dashboard.png" />
-
-If the test is successful, your integration is complete, and you can start using OneLogin (SAML) as your identity provider for Appcircle.
+6. Follow [Enterprise App Store Documentation](/enterprise-app-store/enterprise-app-store-profile) to test the integration.
 
 </details>
 
-## 5. Troubleshooting
+## 6. Troubleshooting
 
 This section provides a list of common issues that users might encounter during the SSO setup and how to resolve them.
 

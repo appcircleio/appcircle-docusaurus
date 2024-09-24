@@ -22,7 +22,7 @@ The "Integrations" section in Appcircle connects essential tools and services li
 
 Current headlines and the actions you can complete are listed below:
 
-- [**Authentication**](/account/my-organization/integrations/authentication)
+- [**Authentication**](/account/my-organization/integrations/authentications)
 - [**Authorization**](/account/my-organization/integrations/authorization)
 - [**Credentials**](/account/my-organization/integrations/credentials)
 - [**Notification Integrations**](/account/my-organization/integrations/notification-integrations)
