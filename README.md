@@ -73,6 +73,15 @@ There are specific guidelines for adding screenshots to our documentation, such 
 
 - Color code: #f69c21
 
+### Screenshot Alt Text
+
+When adding screenshots, please include alt text that describes the image content. This is important for accessibility and SEO purposes.
+
+```jsx
+<Screenshot url='https://cdn.appcircle.io/docs/assets/enable-sso_v3.png' alt='Enable SSO for Organizations' />
+```
+
+
 ### Incorrect Screenshot Format
 
 Do not use the following items when taking screenshots:

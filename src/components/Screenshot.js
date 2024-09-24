@@ -6,8 +6,8 @@ import React from 'react';
  * @param param0 
  * @returns 
  */
-export default function Screenshot({ url }) {
+export default function Screenshot({ url, alt }) {
   return (
-    <img className="screenshot" src={url}></img>
+    <img className="screenshot" src={url} alt={alt || 'Screenshot'} />
   );
 }
