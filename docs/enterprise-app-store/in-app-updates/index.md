@@ -106,7 +106,19 @@ Navigate to the Enterprise Store module and settings page to find the **STORE UR
 
 #### Enterprise Store Profile Id
 
-You can obtain your Enterprise Store Profile ID from the URL or by using the @appcircle/cli.
+You can obtain your Enterprise Store Profile ID from the Profile Settings, the URL or by using the @appcircle/cli.
+
+##### Retrieving Profile ID from the Enterprise Store Profile Settings
+
+1. Navigate to your Enterprise Store Profile.
+
+2. Select the Settings from the top right corner.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile4.png' />
+
+3. Find and copy your Profile ID under the Info tab by clicking the copy button, next to your Profile ID.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4487.png' alt='Copy the Profile ID' />
 
 ##### How to Extract Your Enterprise Store Profile ID from the URL
 
