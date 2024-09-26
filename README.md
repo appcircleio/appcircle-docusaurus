@@ -18,7 +18,7 @@ tags: [tag1, tag2, tag3]
 - **description**: This is critical for SEO. Keep it under 160 characters to ensure full visibility in search engine results.
 - **tags**: Include relevant tags that describe the document's content. This helps in categorizing the documentation.
 
-**Warning:** When setting up **titles** and **descriptions**, it is important to avoid duplicating values from other areas within the documentation. **Titles** and **descriptions** must be unique. 
+**Warning:** When setting up **titles** and **descriptions**, it is important to avoid duplicating values from other areas within the documentation. **Titles** and **descriptions** must be unique.
 Otherwise, it will cause SEO-related issues.
 
 ## Linking Strategy
@@ -78,9 +78,11 @@ There are specific guidelines for adding screenshots to our documentation, such 
 When adding screenshots, please include alt text that describes the image content. This is important for accessibility and SEO purposes.
 
 ```jsx
-<Screenshot url='https://cdn.appcircle.io/docs/assets/enable-sso_v3.png' alt='Enable SSO for Organizations' />
+<Screenshot
+  url="https://cdn.appcircle.io/docs/assets/enable-sso_v3.png"
+  alt="Enable SSO for Organizations"
+/>
 ```
-
 
 ### Incorrect Screenshot Format
 
@@ -90,6 +92,34 @@ Do not use the following items when taking screenshots:
 - Organization or profile names that uses personal names.
 - A snipped screenshot from a full size browser window.
 - Shapes and pointers with different colors and format than the shared example image above.
+
+## Tag Strategy
+
+Tags are used to categorize and group documentation pages. When adding tags to a document, please follow these guidelines:
+
+- Tags should be lowercase.
+- Tags should be relevant to the content of the document.
+- Before adding a new tag, check `tags.yml` to see if a similar tag already exists.
+- If a similar tag exists, use the existing tag instead of creating a new one.
+- If a similar tag does not exist, create a new tag in `tags.yml` and use it in the document.
+
+### Creating a New Tag
+
+When creating a new tag, add it to the `tags.yml` file in the following format:
+
+```yaml
+tag:
+  label: Tag Name
+  description: Description of the tag.
+  permalink: /tag
+
+"access-management":
+  label: Access Management
+  description: Manage access to your projects and organizations.
+  permalink: /access-management
+```
+
+Please note that tags are case-sensitive. For example, 'Build' and 'build' are considered different tags.
 
 ## Contribution Guidelines
 
