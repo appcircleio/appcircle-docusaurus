@@ -1538,7 +1538,7 @@ MAUI:
 "MAUI build":
   label: "MAUI build"
   description: "Description for MAUI build"
-  permalink: /MAUI-build
+  permalink: /maui-build
 
 metadata:
   label: "metadata"
@@ -1900,7 +1900,7 @@ quality:
 "React Native build":
   label: "React Native build"
   description: "Description for React Native build"
-  permalink: /React-Native-build
+  permalink: /react-native-build
 
 registry:
   label: "registry"
@@ -2285,10 +2285,10 @@ submission:
   description: "Description for subscription management"
   permalink: /subscription-management
 
-Swift:
+swift:
   label: "Swift"
   description: "Description for Swift"
-  permalink: /Swift
+  permalink: /swift
 
 "system optimization":
   label: "system optimization"
@@ -2423,7 +2423,7 @@ troubleshooting:
 "UI tests":
   label: "UI tests"
   description: "Description for UI tests"
-  permalink: /UI-tests
+  permalink: /ui-tests
 
 "ui test":
   label: "ui test"
@@ -2654,33 +2654,3 @@ xml:
   label: "file-based variables"
   description: "Description for file-based variables"
   permalink: /file-based-variables
-
-"iOS":
-  label: "iOS"
-  description: "Description for iOS"
-  permalink: /iOS
-
-"Android":
-  label: "Android"
-  description: "Description for Android"
-  permalink: /Android
-
-"Xcode":
-  label: "Xcode"
-  description: "Description for Xcode"
-  permalink: /Xcode
-
-"iOS SDK":
-  label: "iOS SDK"
-  description: "Description for iOS SDK"
-  permalink: /iOS-SDK
-
-"Android SDK":
-  label: "Android SDK"
-  description: "Description for Android SDK"
-  permalink: /Android-SDK
-
-"Gradle":
-  label: "Gradle"
-  description: "Description for Gradle"
-  permalink: /Gradle
