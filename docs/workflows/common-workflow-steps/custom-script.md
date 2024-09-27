@@ -299,6 +299,17 @@ export MAIL_USE_SSL = False
 export MAIL_USERNAME = $EMAIL_
 export MAIL_PASSWORD = $PASSWORD_" >> ~/.$(basename $SHELL)rc
 
+EMAIL_SUBJECT="Test Email Subject"
+EMAIL_TO="recipient@example.com"
+EMAIL_FROM="$EMAIL_"
+EMAIL_BODY="This is the body of the test email."
+
+echo "From: $EMAIL_FROM
+To: $EMAIL_TO
+Subject: $EMAIL_SUBJECT
+
+$EMAIL_BODY" | msmtp --debug --from=$EMAIL_ -t $EMAIL_TO
+
 ```
 
 :::caution Credentials
@@ -308,5 +319,12 @@ When using your own SMTP server credentials for the three variables below, pleas
 - $EMAIL_
 - $USERNAME_
 - $PASSWORD_
+
+Otherwise, to send an e-mail you need to have some information such as e-mail subject, sender e-mail, reciever e-mail. You can use these parameters to use 
+
+- **EMAIL_SUBJECT**: Subject of sending e-mail
+- **EMAIL_TO**: Reviecer e-mail address.
+- **EMAIL_FROM**: Sender e-mail address.
+- **EMAIL_BODY**: Content of sending e-mail
 
 :::
