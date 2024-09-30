@@ -37,6 +37,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### 🐞 Fixes
 
+- An issue was fixed where foreign characters in `.IPA` files were preventing user artifact downloads within the Build module. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was resolved that prevented users from navigating between build steps while logs were being processed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed that could cause builds to be canceled due to a timeout on runners, particularly on self-hosted installations using a custom timezone in the runner. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was resolved where the custom domain toggle remained enabled in the UI after being disabled. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -47,6 +48,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - An issue was fixed where owner users could be deleted while handling SSO mapping. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where SSO mapping skipped users with the manager role, leaving their memberships and roles unchanged. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed that affected access to other sub-organizations when SSO mapping was enabled. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Resolved an issue where shared apps are now displayed at the top of the list with the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.20.5 - 2024-09-02 Android Publish Improvements, In-app Updates and more
 
