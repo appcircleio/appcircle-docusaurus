@@ -1,7 +1,7 @@
 ---
-title: Enterprise Store 
-description: Learn how to use Enterprise Store in Appcircle
-tags: [enterprise app store, enterprise store setup, enterprise store]
+title: Enterprise Portal 
+description: Learn how to use Enterprise Portal in Appcircle
+tags: [enterprise app store, enterprise portal setup, enterprise portal]
 sidebar_position: 4
 ---
 
@@ -13,7 +13,7 @@ For iOS and Android, users can log in via the shared link and view all the versi
 
 When a binary is shared with users through the share action for Live and Beta channels, they will receive a link for access.
 
-Upon clicking the link, users will be redirected to the Enterprise Store.
+Upon clicking the link, users will be redirected to the Enterprise Portal.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-store1.png" />
 
@@ -21,7 +21,7 @@ Upon clicking the link, users will be redirected to the Enterprise Store.
 
 :::info
 
-Authentication method can be configured from the [store settings](/enterprise-app-store/store-settings#store-authentication).
+Authentication method can be configured from the [store settings](/enterprise-app-store/portal-settings#store-authentication).
 
 :::
 

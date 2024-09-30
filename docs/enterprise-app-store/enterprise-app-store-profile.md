@@ -16,7 +16,7 @@ An Enterprise build profile can be created in several ways. IPA or APK files can
 
 ## Uploading Binary
 
-Uploading binaries to the Enterprise App Store is an important step in managing an organization’s mobile applications. Several methods are offered by the platform to perform this action, each catering to different stages of the application lifecycle. The available options for uploading a binary are listed below:
+Uploading binaries to the Enterprise Portal is an important step in managing an organization’s mobile applications. Several methods are offered by the platform to perform this action, each catering to different stages of the application lifecycle. The available options for uploading a binary are listed below:
 
 ### Manual Binary Upload
 
@@ -48,7 +48,7 @@ Binaries can also be uploaded via the Testing Distribution module. For more info
 
 ### Upload via Publish Module
 
-The Publish Flow steps can be customized to send the binary to the Enterprise App Store. For more information, please visit the [Publish Integrations](/publish-integrations/common-publish-integrations/send-to-enterprise-app-store) documentation.
+The Publish Flow steps can be customized to send the binary to the Enterprise Portal. For more information, please visit the [Publish Integrations](/publish-integrations/common-publish-integrations/send-to-enterprise-app-store) documentation.
 
 ### Upload via API & CLI
 
@@ -93,7 +93,7 @@ The Profile ID can be copied from the Info tab by clicking the copy icon located
 
 #### Show on Top
 
-The **Show on Top** feature allows you to prioritize app versions by displaying them at the top of the list in their respective channels within the Enterprise Store.
+The **Show on Top** feature allows you to prioritize app versions by displaying them at the top of the list in their respective channels within the Enterprise Portal.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-7.png" />
 
@@ -117,12 +117,12 @@ Multiple users can be added to the Beta and Live channels by pressing the Tab ke
 
 :::important
 
-To configure the Manage Access tab, the authentication method for the Enterprise Store must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Store Settings](/enterprise-app-store/store-settings#store-authentication) documentation.
+To configure the Manage Access tab, the authentication method for the Enterprise Portal must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Portal Settings](/enterprise-app-store/portal-settings#store-authentication) documentation.
 
 :::
 
 :::caution
-If a sub-organization is being worked for, visibility will be limited to the apps within that organization. However, if an app is published, it will also be displayed in the showcase of the parent organization on the Enterprise App Store.
+If a sub-organization is being worked for, visibility will be limited to the apps within that organization. However, if an app is published, it will also be displayed in the showcase of the parent organization on the Enterprise Portal.
 
 User permissions within the Enterprise App Store can be managed using **Okta SAML**. By configuring authorization groups through **Okta** and subsequently applying these group names to **Alpha** or **Beta** channels via Appcircle, access will be restricted to only the relevant users.
 
@@ -142,7 +142,7 @@ Defined user groups from your provider can be added after configuration.
 
 :::tip 
 
-The logo of the Enterprise App Store profile can also be updated by clicking on the logo icon. Please note that this will not affect the customization of your Enterprise Store login.
+The logo of the Enterprise App Store profile can also be updated by clicking on the logo icon. Please note that this will not affect the customization of your Enterprise Portal login.
 
 :::
 
@@ -182,7 +182,7 @@ Only **one binary version** can be sent to the Live and Beta channels. When anot
 
 :::tip
 
-Any app versions published by sub-organizations to the **Live** or **Beta** channel will be available in the Enterprise Store created by the root organization for users to view and download.
+Any app versions published by sub-organizations to the **Live** or **Beta** channel will be available in the Enterprise Portal created by the root organization for users to view and download.
 
 :::
 
