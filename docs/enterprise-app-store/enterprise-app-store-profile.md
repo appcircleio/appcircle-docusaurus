@@ -16,7 +16,7 @@ An Enterprise build profile can be created in several ways. IPA or APK files can
 
 ## Uploading Binary
 
-Uploading binaries to the Enterprise Portal is an important step in managing an organization’s mobile applications. Several methods are offered by the platform to perform this action, each catering to different stages of the application lifecycle. The available options for uploading a binary are listed below:
+Uploading binaries to the Enterprise App Store is an important step in managing an organization’s mobile applications. Several methods are offered by the platform to perform this action, each catering to different stages of the application lifecycle. The available options for uploading a binary are listed below:
 
 ### Manual Binary Upload
 
@@ -48,7 +48,7 @@ Binaries can also be uploaded via the Testing Distribution module. For more info
 
 ### Upload via Publish Module
 
-The Publish Flow steps can be customized to send the binary to the Enterprise Portal. For more information, please visit the [Publish Integrations](/publish-integrations/common-publish-integrations/send-to-enterprise-app-store) documentation.
+The Publish Flow steps can be customized to send the binary to the Enterprise App Store. For more information, please visit the [Publish Integrations](/publish-integrations/common-publish-integrations/send-to-enterprise-app-store) documentation.
 
 ### Upload via API & CLI
 
