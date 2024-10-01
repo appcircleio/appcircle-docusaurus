@@ -1,15 +1,15 @@
 ---
-title: Store Reports
+title: Portal Reports
 description: Learn how to view the reports of your Enterprise App Store in Appcircle
-tags: [enterprise app store, reports]
+tags: [enterprise app store, enterprise portal, reports]
 sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Enterprise App Store Reports
+# Enterprise Portal Reports
 
-You can get the reports of your Enterprise App Store from this screen. The reports screen allows you to see the following data with a clear and concise user interface
+You can get the reports of your Enterprise Portal from this screen. The reports screen allows you to see the following data with a clear and concise user interface
 
 - App name
 - Users
