@@ -1,5 +1,5 @@
 ---
-title: Store Settings
+title: Portal Settings
 description: Learn how to configure your enterprise app store profile in Appcircle
 tags: [store settings, enterprise app store, authentication, custom domain, sso, ldap, static login, saml, openid, two-factor authentication]
 sidebar_position: 3
@@ -8,7 +8,7 @@ sidebar_position: 3
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-Store settings allow you to configure your authentication and domain settings.
+Portal settings allow you to configure your authentication and domain settings.
 
 ## Store Authentication
 
@@ -22,7 +22,7 @@ SSO and LDAP login is only available for Enterprise accounts. Only the Organizat
 
 ### No Authentication Login
 
-Enterprise Store authentication can be set to 'none,' allowing users to log in automatically without entering credentials.
+Enterprise Portal authentication can be set to 'none,' allowing users to log in automatically without entering credentials.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4456.png" />
 
@@ -36,7 +36,7 @@ You can set a different username and password for live and beta apps. The userna
 
 ### SSO Login
 
-You may also use SSO for your Enterprise App Store. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please follow [Store Authentications](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication) documentation.
+You may also use SSO for your Enterprise Portal. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please follow [Store Authentications](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication) documentation.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-3.png' />
 
@@ -144,7 +144,7 @@ To further protect your logins, you may add Two-factor Authentication(2FA) to yo
 
 ## Store Domain
 
-You can customize your store prefix which will be reflected in your Enterprise Store access URL.
+You can customize your store prefix which will be reflected in your Enterprise Portal access URL.
 
 The URL can be copied by clicking the copy icon next to it.
 
@@ -154,7 +154,7 @@ The URL can be copied by clicking the copy icon next to it.
 
 **Custom Domain**
 
-It's possible to use a custom domain for the Enterprise App Store. You need to have the following to create a custom domain
+It's possible to use a custom domain for the Enterprise Portal. You need to have the following to create a custom domain:
 
 - A custom domain that you can create a CNAME record.
 - SSL Certificate that is exported as a p12 or pfx file.
@@ -180,7 +180,7 @@ After creating the DNS settings, type your custom domain name, select your certi
 :::caution
 
 If you are working on a sub organization, you will not have access to Customize and Settings sections on Enterprise App Store module.
-Only the main organization has the privilege to Set up, Configure and Customize the Enterprise store.
+Only the main organization has the privilege to Set up, Configure and Customize the Enterprise Portal.
 
 :::
 
