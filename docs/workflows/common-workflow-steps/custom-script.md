@@ -310,3 +310,38 @@ When using your own SMTP server credentials for the three variables below, pleas
 - $PASSWORD_
 
 :::
+
+### How can I send the Appcircle build log to another platform?
+
+To send your build log to another platform using an API, you can access the log in your workflow through `$AC_LOGFILE`.
+
+Here is an example using Dropbox's [file-upload](https://www.dropbox.com/developers/documentation/http/documentation#files-upload) API. Replace it with the appropriate API for your platform. If you are going to use DropBox, you can follow the document below to obtain the access token:
+- [Generate an access token for your own account](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account)
+
+:::danger
+
+Ensure sensitive data, like access tokens, are defined as private environment variables. Learn more:
+- [Adding key and text-based value pairs](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs)
+
+:::
+
+```bash
+current_datetime=$(date +"%Y-%m-%d-%H-%M")
+dropbox_log_filename="/home/appcircle-logs/ac-log-$current_datetime.txt"
+
+curl -X POST https://content.dropboxapi.com/2/files/upload \
+    --header "Authorization: Bearer $DROPBOX_ACCESS_TOKEN" \
+    --header "Dropbox-API-Arg: {\"autorename\":false,\"mode\":\"add\",\"mute\":false,\"path\":\"$dropbox_log_filename\",\"strict_conflict\":false}" \
+    --header "Content-Type: application/octet-stream" \
+    --data-binary @"$AC_LOGFILE"
+
+```
+This script generates a timestamped log file (e.g., `ac-log-2024-10-01-14-55.txt`) in the `/home/appcircle-logs` in Dropbox.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-custom-script-faq-1.png" />
+
+:::caution
+
+Ensure that the **Custom Script** step runs after the [**Export Build Artifacts**](workflows/common-workflow-steps/#export-build-artifacs) step to capture the full log.
+
+:::
