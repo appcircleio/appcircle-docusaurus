@@ -321,7 +321,7 @@ Here is an example using Dropbox's [file-upload](https://www.dropbox.com/develop
 :::danger
 
 Ensure sensitive data, like access tokens, are defined as private environment variables. Learn more:
-- [Adding key and text-based value pairs](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs)
+- [Adding key and text-based value pairs](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs)
 
 :::
 
@@ -342,6 +342,6 @@ This script generates a timestamped log file (e.g., `ac-log-2024-10-01-14-55.txt
 
 :::caution
 
-Ensure that the **Custom Script** step runs after the [**Export Build Artifacts**](workflows/common-workflow-steps/#export-build-artifacs) step to capture the full log.
+Ensure that the **Custom Script** step runs after the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step to capture the full log.
 
 :::
