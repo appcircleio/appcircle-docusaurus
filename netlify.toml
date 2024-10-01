@@ -1142,3 +1142,23 @@ status = 301
 from = "/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens"
 to = "/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens"
 status = 301
+
+[[redirects]]
+from = "/enterprise-app-store/store-customization"
+to = "/enterprise-app-store/portal-customization"
+status = 301
+
+[[redirects]]
+from = "/enterprise-app-store/store-settings"
+to = "/enterprise-app-store/portal-settings"
+status = 301
+
+[[redirects]]
+from = "/enterprise-app-store/enterprise-store"
+to = "/enterprise-app-store/enterprise-portal"
+status = 301
+
+[[redirects]]
+from = "/enterprise-app-store/enterprise-reports"
+to = "/enterprise-app-store/portal-reports"
+status = 301

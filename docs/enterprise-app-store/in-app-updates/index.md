@@ -92,13 +92,13 @@ Steps to Generate a Profile-Specific Secret:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-in-app-secret.png' />
 
-#### Enterprise Store Prefix
+#### Enterprise Portal Prefix
 
-Navigate to the Enterprise Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
+Navigate to the Enterprise App Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE_4207-Enterprise-Store-Prefix-1.png' />
 
-#### Enterprise Store URL
+#### Enterprise Portal URL
 
 Navigate to the Enterprise Store module and settings page to find the **STORE URL** information.
 
@@ -110,7 +110,7 @@ You can obtain your Enterprise Store Profile ID from the Profile Settings, the U
 
 ##### Retrieving Profile ID from the Enterprise Store Profile Settings
 
-1. Navigate to your Enterprise Store Profile.
+1. Navigate to your Enterprise App Store Profile.
 
 2. Select the Settings from the top right corner.
 
@@ -122,12 +122,12 @@ You can obtain your Enterprise Store Profile ID from the Profile Settings, the U
 
 ##### How to Extract Your Enterprise Store Profile ID from the URL
 
-1. Navigate to your Enterprise Store Profile.
+1. Navigate to your Enterprise App Store Profile.
 2. Check the URL, which should be in this format: **/enterprise-store/profiles/PROFILE_ID**. The PROFILE_ID refers to your specific profile ID.
 
 ##### Retrieving Profile ID Using @appcircle/cli
 
-The upcoming command retrieves the complete list of Enterprise Store Profiles.
+The upcoming command retrieves the complete list of Enterprise App Store Profiles.
 
 ```bash
 appcircle enterprise-app-store profile list
@@ -334,7 +334,7 @@ For Android, omit https and provide only your enterprise store domain, such as a
 
 ### Initiating Updates
 
-#### Retrieving Available App Versions from Your Enterprise Store
+#### Retrieving Available App Versions from Your Enterprise Portal
 
 Fetch all available versions and compare them with the current version to determine if an update is required.
 
@@ -607,7 +607,7 @@ Compare the current version with the fetched versions to identify the latest rel
             
             // Compare versions component by component
             for (current, latest) in zip(currentComponents, latestComponents) {
-                // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Store
+                // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Portal
                 if (latest > current && app.publishType != 0) {
                     latestAppVersion = app
                 }
@@ -665,7 +665,7 @@ Compare the current version with the fetched versions to identify the latest rel
           const current = currentComponents[i];
           const latest = latestComponents[i];
 
-          // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Store
+          // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Portal
           if (latest > current && app.publishType !== 0) {
             latestAppVersion = app;
           }
@@ -724,7 +724,7 @@ public static class InAppUpdateHelper {
       			var current = currentComponents[i];
       			var latest = latestComponents[i];
 
-      			// You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Store
+      			// You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Portal
       			if (latest > current && app.PublishType == (int)PublishType.Live)
       			{
       				latestAppVersion = app;
@@ -743,7 +743,7 @@ public static class InAppUpdateHelper {
 </Tabs>
 
 :::caution
-The code above compares major versions. For instance, if the current app version is 1.0 and the latest available version is 1.1, it **won't** be considered an update. However, if the latest available version is 2.0, it will be treated as an update in your enterprise store. You can configure this logic based on your business requirements.
+The code above compares major versions. For instance, if the current app version is 1.0 and the latest available version is 1.1, it **won't** be considered an update. However, if the latest available version is 2.0, it will be treated as an update in your enterprise portal. You can configure this logic based on your business requirements.
 :::
 
 #### Updating the App
