@@ -351,3 +351,77 @@ If you don't open a new terminal session, you cannot use the up-to-date `screen`
 ```bash
 screen --version
 ```
+
+### How to resolve proxy authentication errors for Java/Gradle applications on macOS runners?
+
+Java proxy authentication on macOS has a bug that results in a `"407 Proxy Authentication Required"` error when using Basic authentication.
+
+This error can occur when building an Android application on a macOS runner.
+
+To solve the issue for Gradle, follow these steps:
+
+1. Add the following script to your Build Workflow as a Custom Script (Bash). Place this script before your build step (or the first step requires Gradle to access the network).
+
+```bash
+echo "Install Squid"
+brew install squid
+
+echo "Configure Squid" ### START
+cat <<EOL >> /opt/homebrew/etc/squid.conf
+# Basic Squid configuration
+http_port 3128
+
+# Define the upstream proxy with authentication
+cache_peer $YOUR_PROXY_IP parent $YOUR_PROXY_PORT 0 no-query default login=$YOUR_PROXY_USER:$YOUR_PROXY_PASSWORD
+
+# Define ACLs
+acl localnet src all # Allow all traffic for testing purposes
+
+# Allow HTTP access from localnet
+http_access allow localnet
+http_access deny all
+
+# Prevent direct access to the internet
+never_direct allow all
+
+# Logging
+access_log /dev/null
+EOL
+### END
+
+echo "Start squid service"
+brew services start squid
+
+echo "Set gradle properties" ### START
+cat <<EOL >> ~/.gradle/gradle.properties
+## Enable all authentication schemes for HTTP tunneling
+systemProp.jdk.http.auth.proxying.disabledSchemes=
+systemProp.jdk.http.auth.tunneling.disabledSchemes=
+## Proxy setup
+systemProp.proxySet=true
+systemProp.http.keepAlive=true
+systemProp.http.proxyHost=127.0.0.1
+systemProp.http.proxyPort=3128
+systemProp.http.nonProxyHosts=localhost|127.0.0.1
+
+systemProp.https.keepAlive=true
+systemProp.https.proxyHost=127.0.0.1
+systemProp.https.proxyPort=3128
+systemProp.https.nonProxyHosts=localhost|127.0.0.1
+## end of proxy setup
+EOL
+### END
+```
+
+2. Replace `$YOUR_PROXY_IP`, `$YOUR_PROXY_PORT`, `$YOUR_PROXY_USER`, and `$YOUR_PROXY_PASSWORD` variables with your own proxy settings.
+
+:::caution
+Ensure that your proxy certificate is trusted. For detailed instructions, refer to the [Self-signed Certificates page](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates).
+
+The following network access is required for `brew install squid`:
+  - `https://ghcr.io/v2/homebrew/core/squid/manifests/6.10`
+  - `https://ghcr.io/v2/homebrew/core/squid`
+  - `https://pkg-containers.githubusercontent.com`
+:::
+
+Now you have configured Gradle properly and set up a secondary proxy that only used by Gradle to handle authentication to your primary proxy.
