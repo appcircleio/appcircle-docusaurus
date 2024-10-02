@@ -114,5 +114,3 @@ Appcircle can show passing and failing tests in compact UI.
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-detail.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-suite-detail.png' />
-
----- TODO: Update above Screenshots ----

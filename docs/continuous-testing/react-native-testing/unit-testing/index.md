@@ -71,8 +71,6 @@ If you add [Test Report Component](https://github.com/appcircleio/appcircle-test
 
 You must add this step **after** the `React Native Unit Test` so that it can parse test results. Your workflow should look like the below.
 
---- TODO: Add a workflow sample screenshot ----
-
 :::caution
 The name for Test Suites appears as undefined because the tests are not wrapped inside a describe block, which is required for the suite name to be properly displayed in the report.
 :::
