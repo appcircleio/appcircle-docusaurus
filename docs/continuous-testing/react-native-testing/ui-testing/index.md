@@ -82,13 +82,13 @@ See the following page on our documentation to learn more about adding new workf
 
 To learn more about **React Native UI Test** step, visit its source on Github:
 
-https://github.com/appcircleio/appcircle-react-native-UI-test-component
+https://github.com/appcircleio/appcircle-react-native-ui-test-component
 
 ## Generating Test Report
 
 If you add [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-report-overview.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports.png' />
 
 You must add this step **after** the `React Native UI Test` so that it can parse test results. Your workflow should look like the below.
 
@@ -111,10 +111,8 @@ There's one important setting that you should change. If any workflow steps fail
 
 Appcircle can show passing and failing tests in compact UI.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-result-overview.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-detail.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-ui-detail.png' />
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-coverage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-suite-detail.png' />
 
 ---- TODO: Update above Screenshots ----
