@@ -14,7 +14,7 @@ This component supports the following test and coverage formats:
 
 - [JUnit](https://junit.org) - For Java-based test reporting.
 
-For additional details, please refer to the document: [**Generating Test Report**](/continuous-testing/react-native-testing/unit-testing#generating-test-report)
+For additional details, please refer to the document: [**Generating Test Report**](/continuous-testing/react-native-testing/react-native-unit-testing#generating-test-report)
 
 ### Prerequisites
 
