@@ -412,7 +412,7 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor.png' />
 
-7. Click **Add Atribute** and add new attribute with the following cofiguration. Then click **Save**.
+7. Click **Add Atribute** and add new attribute with the following configuration. Then click **Save**.
 - Data type: Choose "String Array"
 - Display name: Enter "Roles"
 - Variable name: Enter "roles"
@@ -441,7 +441,7 @@ The roles will be stored in user attributes.
 
 2. Click **default**
 3. Navigate to the **Claims** tab. 
-4. Add new claim as the following cofiguration.
+4. Add new claim as the following configuration.
 - Name: Enter "Roles"
 - Include in token type: Select "ID Token" and "Always"
 - Value type: Select "Expression"
@@ -498,7 +498,7 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute1.png' />
 
-4. Add a new user attribute with the following cofiguration.
+4. Add a new user attribute with the following configuration.
 - Data type: Choose "String Array"
 - Display name: Enter "Roles"
 - Variable name: Enter "roles"
@@ -514,7 +514,7 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor.png' />
 
-7. Click **Add Atribute** and add new attribute with the following cofiguration. Then click **Save**.
+7. Click **Add Atribute** and add new attribute with the following configuration. Then click **Save**.
 - Data type: Choose "String Array"
 - Display name: Enter "Roles"
 - Variable name: Enter "roles"
