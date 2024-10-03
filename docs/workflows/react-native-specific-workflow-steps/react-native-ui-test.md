@@ -39,6 +39,12 @@ This step contains different variables. It needs these variables to work. The ta
 | `$AC_OUTPUT_DIR`             | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                       | Required |
 | `$AC_RN_DETOX_CONFIGURATION` | Specify the detox configuration name to used when building and running the tests.                                                                                           | Required |
 
+:::danger Detox Configuration
+
+To able to run your test successfully, you must specify the **Detox Configuration** in the `$AC_RN_DETOX_CONFIGURATION`. If you do not specify a specific configuration, UI tests will throw an error because of the configuration not found.
+
+:::
+
 :::caution
 
 To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
