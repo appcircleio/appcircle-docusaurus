@@ -749,7 +749,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed the data refresh error when the version is deleted in the [Apple Devices](/signing-identities/apple-devices) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the page crash problem when the user clicks on the [Triggers](/build/build-process-management/build-manually-or-with-triggers). <CloudBadge/> <SelfHostedBadge/>
 - Added a toast message that is shown when the user tries to download the deleted configuration in the admin panel. <CloudBadge/> <SelfHostedBadge/>
-- The case that selection of the adhoc [auto device register](/signing-identities/apple-devices#automatically-adding-registered-devices-to-the-provisioning-profile) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The case that selection of the adhoc [auto device register](/signing-identities/apple-devices) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Reports
 
