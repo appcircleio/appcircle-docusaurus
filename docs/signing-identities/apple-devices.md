@@ -112,7 +112,7 @@ When you click on any device UDID in the Registered Device list, you can find de
 
 You can see it in detail.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-deviceInfo.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-deviceInfoNew.png' />
 
 
 ## Not Registered Devices
