@@ -57,8 +57,8 @@ The outputs resulting from the operation of this component are as follows:
 
 | Variable Name         | Description                                                                                                  |
 | --------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `AC_TEST_RESULT_PATH` | The output path for the `e2e-repot.xml` file. This environment variable can be utilized in subsequent steps. |
+| `AC_TEST_RESULT_PATH` | The output path for the `e2e-report.xml` file. This environment variable can be utilized in subsequent steps. |
 
 To access the source code of this component, please use the following link:
 
-https://github.com/appcircleio/appcircle-ios-build-simulator
+https://github.com/appcircleio/appcircle-react-native-ui-test-component
