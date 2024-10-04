@@ -32,6 +32,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - `Tolerant` user lookup decision strategy has been added to the LDAP settings for self-hosted configurations. <AccountBadge/> <SelfHostedBadge/>
 - Store submit events were removed from the notification settings for Slack, MS Teams, and Email. Additionally, the module names within the configurations were updated. <IntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Build Profile Search feature has been enhanced through integration with our backend systems. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Builds that have completed with a successful output but contain a failed step will now be displayed with a warning status in the build lists and build profile cards. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The logout option has been removed from the Enterprise Portal for non-authentication type logins. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Enterprise Portal will no longer display empty channels as selectable tabs if they do not have any active app versions. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -46,6 +49,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - An issue was fixed where the UI displayed a false error when users navigated to a sub-organization from a root organization with SSO configuration. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the selected organization name was changing format when selected again within the SSO mapping configuration page. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The warning message for invalid Google API Key uploads has been improved. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the add button remained active even without selecting any LDAP group within LDAP Mapping settings. <AccountBadge/> <SelfHostedBadge/>
 
 ### :warning: Breaking Changes
 
