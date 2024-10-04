@@ -50,6 +50,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### :warning: Breaking Changes
 
 - Certain role permissions from the Testing Distribution module related to the Apple Devices section have been migrated to the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Apple Devices section in the Testing Distribution module has been relocated to the Signing Identities module on the UI, along with its new capabilities. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.21.0 - 2024-09-12 Publish Log Monitoring, SSO Mapping and Enterprise App Store Improvements, Xcode 16.0, Bug Fixes, and more
 
