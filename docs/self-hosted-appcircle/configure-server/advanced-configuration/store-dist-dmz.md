@@ -581,7 +581,7 @@ This eliminates the need for any additional steps or configurations to ensure yo
 
 When using Podman, you will need to create a systemd unit service to enable the automatic startup of your application containers.
 
-We have a dedicated section where we explain how to create the systemd file for Appcircle DMZ server services to start automatically when the host reboots.  
+We have a dedicated section where we explain how to create the systemd file for Appcircle DMZ server services to start automatically when the host reboots.
 
 You can follow the [Restarting Host](../restarting-host.md) document but there are two things to watch out on the "Restarting Host" document.
 
@@ -596,7 +596,7 @@ For the Appcircle DMZ server:
 - The `ExecStart` line should contain Appcircle DMZ server directory and `ac-self-hosted-dmz.sh` as the command.
 - There shouldn't be any project name. In the example above, you should remove the `-n spacetech` section.
 
-A full example of `ExecStart` line should be: 
+A full example of `ExecStart` line should be:
 
 ```bash
 ExecStart=/bin/bash /app/appcircle-server-dmz/ac-self-hosted-dmz.sh up
@@ -605,3 +605,40 @@ ExecStart=/bin/bash /app/appcircle-server-dmz/ac-self-hosted-dmz.sh up
 </TabItem>
 
 </Tabs>
+
+## FAQ
+
+### How can we change the `auth` domain on the DMZ so that users can access it from the internet?
+
+You can add a second custom domain to the `auth` module for users to access from the internet by following the steps below.
+
+:::caution
+The custom domain applies to the Appcircle DMZ server only. When connecting to the Appcircle server located within the private network, you should continue to utilize the default `auth` domain.
+:::
+
+<DowntimeCaution/>
+
+- Change directory to Appcircle server.
+
+```bash
+cd appcircle-server
+```
+
+<SpacetechExampleInfo />
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add or update the `keycloak.customDomain` parameter as below.
+
+```yaml
+keycloak:
+  customDomain:
+    enabled: true
+    domain: auth-ac.spacetech.com
+```
+
+- [Upgrade the Appcircle server and Appcircle DMZ server](#upgrading-appcircle-dmz-and-appcircle-server) for changes to be applied.
