@@ -65,7 +65,7 @@ keycloak:
 ```
 
 :::info
-The `userLookupDecisionStrategy` variable can have two options: `affirmative` or `decisive`.
+The `userLookupDecisionStrategy` variable can have three options: `affirmative` , `decisive` or `tolerant`.
 
 If you don't define it or it has an unknown value, it is assumed to be `decisive` by default.
 
@@ -76,6 +76,10 @@ When `userLookupDecisionStrategy` is set to "affirmative", the LDAP authenticati
 #### Decisive
 
 On the other hand, when `userLookupDecisionStrategy` is set to "decisive", the LDAP authentication process will check a specific LDAP configuration for the user's username or email. If the authentication system finds the username on a particular LDAP, it will verify the user's password only on that specific LDAP configuration. If the provided password is incorrect, the authentication system will not check other LDAP configurations and will immediately return invalid credentials, denying access to the user.
+
+#### Tolerant
+
+When `userLookupDecisionStrategy` is set to "tolerant", similar to the "affirmative" strategy, it retrieves the list of LDAP providers where the user is found and checks the password sequentially. If the password is correct, the process ends. If it is incorrect, the search continues until the last LDAP provider. Unlike "affirmative", if an LDAP provider is unreachable or an error occurs, the process continues, and the faulty provider is ignored.
 
 :::
 
