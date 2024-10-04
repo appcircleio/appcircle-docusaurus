@@ -2,7 +2,7 @@
 title: Android Keystores
 description: Learn how to manage Android keystores in Appcircle
 tags: [android, android keystores, keystore, signing, signing identities]
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
