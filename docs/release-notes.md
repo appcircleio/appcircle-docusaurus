@@ -735,7 +735,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🐞 Fixed
 
 - Fixed the "Waiting Duration" title in the Queue Waiting Reports header. <SelfHostedBadge/>
-- The role management error in the [Apple Devices](/docs/testing-distribution/apple-devices.md) section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The role management error in the [Apple Devices](/signing-identities/apple-devices) section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue of not being able to distribute to the selected configuration in the [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile) module. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue where the branch list could not be refreshed when the user [permission](/account/my-organization) for the Build module was set to "Read Only Access". <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue where the build does not appear in the list when the build starts. <CloudBadge/> <SelfHostedBadge/>
@@ -746,10 +746,10 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - The wrong dialog modal was opening in the "never delete" option selected for the deletion of an artifact. It's been fixed, and an extra description has been added. <CloudBadge/> <SelfHostedBadge/>
 - When there was a workflow step of the same name, there was a confusion of names. It's has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - An error message is now displayed to the user when an invalid workflow name is entered. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the data refresh error when the version is deleted in the [Apple Devices](/testing-distribution/apple-devices) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the data refresh error when the version is deleted in the [Apple Devices](/signing-identities/apple-devices) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the page crash problem when the user clicks on the [Triggers](/build/build-process-management/build-manually-or-with-triggers). <CloudBadge/> <SelfHostedBadge/>
 - Added a toast message that is shown when the user tries to download the deleted configuration in the admin panel. <CloudBadge/> <SelfHostedBadge/>
-- The case that selection of the adhoc [auto device register](/testing-distribution/apple-devices#automatically-adding-registered-devices-to-the-provisioning-profile) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The case that selection of the adhoc [auto device register](/signing-identities/apple-devices) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Reports
 
@@ -818,7 +818,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - The ability to send files from the Testing Distribution module to the Enterprise App Store added. <CloudBadge/> <SelfHostedBadge/>
 - Made an improvement to prevent the subordinate from accessing the details on the 'corporate settings' page. <CloudBadge/> <SelfHostedBadge/>
 - Default M1 Pool is automatically selected in case of [Xcode](/infrastructure/ios-build-infrastructure) version 14.3.x and above. <CloudBadge/>
-- Improved the display of device name if there is an available device on the [IOS provisioning](/testing-distribution/apple-devices) profile side. <CloudBadge/> <SelfHostedBadge/>
+- Improved the display of device name if there is an available device on the [IOS provisioning](/signing-identities/apple-devices) profile side. <CloudBadge/> <SelfHostedBadge/>
 - Subtitle would also have to be searched for components. This development has been done. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
@@ -1043,7 +1043,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### 🆕 New Feature
 
-- [Apple Devices](/testing-distribution/apple-devices) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
+- [Apple Devices](/signing-identities/apple-devices) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
 - [Firebase Deployment ]/workflows/flutter-specific-workflow-steps/firebase-deployment) component added.
 
 ### :muscle: Improvement
