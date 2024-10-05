@@ -266,3 +266,57 @@ To query case-insensitive "error" logs for all containers using the Grafana Expl
 
 
 If you face any error on the Appcircle, you can effectively search for logs containing the term "error" across all services by performing these steps.
+
+### There is neither label nor log in Monitoring UI.
+
+If you see neither labels nor logs in the Monitoring UI, it usually indicates a problem with the `appcircle-logging` service. Here are some potential issues and their solutions:
+
+#### **User Lingering is Not Enabled**
+
+User lingering allows user services to continue running even after the user logs out. If lingering is not enabled, the `appcircle-logging` service may not run correctly in the background. This is particularly relevant if you are not using the `root` user directly to run the Appcircle server.
+
+:::caution
+Please update the `username` with the actual user who runs the Appcircle server.
+:::
+
+**Solution:**
+1. Check the users with enabled lingering by running:
+   ```bash
+   ls /var/lib/systemd/linger
+   ```
+2. If the user running the Appcircle server is not listed, enable user lingering for that user:
+   ```bash
+   sudo loginctl enable-linger username
+   ```
+
+#### **Permission Issues**
+
+There might be permission issues preventing the `appcircle-logging` service from accessing necessary `journalctl` logs. This is also relevant if you are not using the `root` user directly to run the Appcircle server.
+
+:::caution
+Please update the `username` with the actual user who runs the Appcircle server.
+:::
+
+**Solution:**
+1. Add the user running the Appcircle server to the `systemd-journal` group to allow reading `journalctl` logs without sudo privileges:
+   ```bash
+   sudo usermod -aG systemd-journal username
+   ```
+
+#### **`appcircle-logging` Service is Not Running**
+
+If the `appcircle-logging` service is not running, it will prevent logs from appearing in the Monitoring UI.
+
+**Solution:**
+1. Check the status of the `appcircle-logging` service:
+   ```bash
+   systemctl --user status appcircle-logging
+   ```
+2. If the service is not running, check the `appcircle-logging` service logs:
+   ```bash
+   journalctl --user-unit appcircle-logging
+   ```
+3. Report to us:
+   Please report the case to the Appcircle support team with the relevant log files.
+
+By following these steps, you should be able to resolve common issues preventing logs from appearing in the Monitoring UI.
