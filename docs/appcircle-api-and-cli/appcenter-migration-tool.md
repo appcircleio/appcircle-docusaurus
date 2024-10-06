@@ -60,7 +60,7 @@ Use the Login command to authenticate with App Center and Appcircle using your t
 | Login Subcommands  | Command Name | Command Options | Explanation                                                                                                                                                 |
 | ------------------ | ------------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | App Center Account | appcenter    | appcenterToken  | Use your App Center token to authenticate and authorize access.                                                                                             |
-| Appcircle Account  | appcircle    | appcircleToken  | Use your Appcircle [Personal API token](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens) to authenticate and authorize access. |
+| Appcircle Account  | appcircle    | appcircleToken  | Use your Appcircle [Personal API token](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens) to authenticate and authorize access. |
 
 To run the command directly instead of starting an interactive session, simply execute the command as shown below:
 

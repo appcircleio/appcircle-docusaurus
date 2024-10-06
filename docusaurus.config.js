@@ -140,7 +140,7 @@ const config = {
               },
               {
                 label: "Appcircle CLI",
-                to: "/appcircle-api",
+                to: "/appcircle-api-and-cli",
               },
               {
                 label: "Release Notes",
@@ -222,6 +222,7 @@ const config = {
           "ruby",
           "groovy",
           "java",
+          "csharp",
           "kotlin",
           "bash",
           "diff",
