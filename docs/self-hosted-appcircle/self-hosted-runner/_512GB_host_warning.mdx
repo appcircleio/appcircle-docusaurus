@@ -1,7 +1,11 @@
 :::caution
 Disk requirement:
 
-If your host machine has a 512GB storage capacity **in total**, please be aware that it won't be sufficient to download and extract the Appcircle runner VM `240918` version and the Xcode images compressed file directly on the host machine. While the extracted VM files will fit within the 512GB capacity, the download and extraction process requires additional temporary space. The recommended solutions are using an external hard drive, external SSD, SMB or NFS.
+If your host machine has a total storage capacity of 512GB, please be aware that this will not be sufficient to download and extract the Appcircle runner VM version `240918` and the Xcode images compressed file directly on the host machine. Although the extracted VM files will fit within the 512GB capacity, the download and extraction process requires additional temporary space. 
+
+We recommend the following solutions:
+- Use an external disk formatted in `exfat` or `apfs`. Please note that `fat32` is not suitable because it has a maximum file size limit of 4GB.
+- Use a network-based file system such as `SMB` or `NFS`. `SMB` is recommended as it is more compatible with macOS than `NFS`.
 
 Open Terminal and use the following command to verify your **total** disk space:
 
