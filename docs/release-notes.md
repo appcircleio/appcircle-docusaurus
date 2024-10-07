@@ -16,6 +16,46 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.22.0 - 2024-10-04 Apple Devices, Build Report Improvement, Auto Cancel Redundant Pipelines, Bug Fixes and more
+
+### 🆕 New Features
+
+- Users will now be able to view [Apple devices](/signing-identities/apple-devices) registered in various stores, enable or disable selected devices, and save device information through email invitations within the Apple Devices section of Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Failed build steps are now visible within the build CSV reports, which can be downloaded from the Build History section. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The "Auto Cancel Redundant Pipelines" option has been added to Build configurations, allowing users to automatically cancel redundant pipelines which was started or queued by triggers. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The LDAP role mapping configuration page now supports role search functionality. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A warning message display was added for Inherited Sub-organization users during Personal Access Token generation. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The SSO creation screen has been updated to ensure that the switch buttons reflect the actual backend status (on) after an SSO is created, preventing confusion for users. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- `Tolerant` user [lookup decision strategy](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#editing-user-lookup-decision-strategy) has been added to the LDAP settings for self-hosted configurations. <AccountBadge/> <SelfHostedBadge/>
+- Store submit events were removed from the notification settings for Slack, MS Teams, and Email. Additionally, the module names within the configurations were updated. <IntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Build Profile Search feature has been enhanced through integration with our backend systems. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Builds that have completed with a successful output but contain a failed step will now be displayed with a warning status in the build lists and build profile cards. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The logout option has been removed from the Enterprise Portal for non-authentication type logins. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Enterprise Portal will no longer display empty channels as selectable tabs if they do not have any active app versions. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where, when pushing a tag for an old commit to GitLab, Appcircle incorrectly triggered a build for the latest/head commit on the same branch. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed in the Appcircle UI where users received two separate notifications for the same tag creation when a tag webhook was received from the Git provider. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where, if the `AC_COMMIT_MESSAGE` variable contained more than two lines, the commit message was not displaying to the components. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where workflow and configuration files could not be downloaded by users through the admin module. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the selected pool was not properly displayed in a cloned iOS build profile configuration. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the help links for build workflow steps were not directing users to the relevant documentation. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the link for build logs received via notification email was changing to an incorrect format upon being used. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where platform names, such as Android or iOS, were being displayed in lowercase within the Publish Activity Log area. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the UI displayed a false error when users navigated to a sub-organization from a root organization with SSO configuration. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the selected organization name was changing format when selected again within the SSO mapping configuration page. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The warning message for invalid Google API Key uploads has been improved. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the add button remained active even without selecting any LDAP group within LDAP Mapping settings. <AccountBadge/> <SelfHostedBadge/>
+
+### :warning: Breaking Changes
+
+- Certain [role permissions](/account/my-organization/profile-and-team/role-management#signing-and-identity-permissions) from the Testing Distribution module related to the Apple Devices section have been migrated to the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Apple Devices section in the Testing Distribution module has been relocated to the Signing Identities module on the UI, along with its new capabilities. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.21.0 - 2024-09-12 Publish Log Monitoring, SSO Mapping and Enterprise App Store Improvements, Xcode 16.0, Bug Fixes, and more
 
 ### 🆕 New Features
