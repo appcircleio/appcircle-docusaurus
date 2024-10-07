@@ -1,7 +1,7 @@
 ---
 title: Test Reports for React Native
 description: Test Report step displays your test results and code coverage in an aesthetically pleasing user interface.
-tags: [test, test report, test result, automation]
+tags: [test, test report, test result, automation, react native testing]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -39,6 +39,25 @@ For each component, specific input variables are required for its operation on y
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_TEST_RESULT_PATH`     | Define the directory and its subdirectories for searching compatible test files.                                                 | Required |
 | `$AC_COVERAGE_RESULT_PATH` | For native iOS projects, tests automatically set this variable. For other projects, you must specify the coverage path manually. | Optional |
+
+
+:::danger Step Rule
+
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggles so that Test Report Component always runs whether your tests fail or pass.
+
+- Always run this step even if the previous steps fail to **ON**
+- Continue with the next step even if this step fails to **ON**
+  
+<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-report-steps-on.png" />
+
+:::
+
+
+:::caution
+
+To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+
+:::
 
 ### Output Variables
 

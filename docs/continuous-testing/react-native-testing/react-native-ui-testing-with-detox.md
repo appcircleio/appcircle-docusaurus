@@ -1,6 +1,6 @@
 ---
 title: UI Testing with Detox
-description: Learn effectively run detox tests to ensure quality of react native projects
+description: Learn effectively run detox tests to ensure quality of React Native projects
 tags: [unit tests, ui tests, testing strategy, quality assurance]
 ---
 
@@ -37,7 +37,7 @@ Default Jest generates test results as JSON, but the **React Native UI Test** re
 
 3. Ensure that your `.detoxrc.js`, file contains a valid configuration, as the workflow step requires which configuration to build and run. An example configuration might look like this:
 
-```
+```js
   configurations: {
     'ios.sim.debug': {
       device: 'simulator',
@@ -80,11 +80,20 @@ The **outputName** must be set to **\*-report.xml** at the end of the file name,
 
 To run your tests during the build process, you can simply add the **React Native UI Test** step in your workflows.
 
-Make sure the step is after the **Node Install**, **Npm&Yarn**, **Cocoapods Install** and before **Export Build Artifacts**.
+Make sure the step is after the 
 
-For detailed information, please visit the [**Workflows documentation**](/workflows).
+- [**Node Install**](/workflows/react-native-specific-workflow-steps/node-install)
+- [**Npm/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)
+- [**Cocoapods Install** ](/workflows/ios-specific-workflow-steps/cocoapods-install) (For only iOS)
+- [**Wait for Android Emulator**](/workflows/android-specific-workflow-steps/wait-for-android-emulator) (For only Android)
 
-For more information, please visit the **React Native UI Test** workflow step [documentation](/workflows/react-native-specific-workflow-steps/react-native-ui-test).
+and before 
+
+- [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts)
+
+For detailed information on Workflow structure, please visit the [**Workflows documentation**](/workflows).
+
+For more information, please visit the **React Native UI Test** workflow step [documentation](/workflows/react-native-specific-workflow-steps/react-native-ui-test#prerequisites).
 
 
 ## Generating Test Report
@@ -94,6 +103,8 @@ If you add [Test Report Component](https://github.com/appcircleio/appcircle-test
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports.png' />
 
 You must add this step **after** the `React Native UI Test` so that it can parse test results. Your workflow should look like the below.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-testReport.png' />
 
 :::caution Test Suites
 

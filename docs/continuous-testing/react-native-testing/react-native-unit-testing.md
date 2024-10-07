@@ -1,7 +1,7 @@
 ---
 title: Unit Testing
-description: Learn effectively run unit tests to ensure quality of react native projects
-tags: [unit tests, testing strategy, quality assurance]
+description: Learn effectively run unit tests to ensure quality of React Native projects
+tags: [unit tests, testing strategy, quality assurance, react native testing]
 ---
 
 # React Native Unit Testing on Appcircle
@@ -57,11 +57,18 @@ The **outputName** must be set to **\*-report.xml** at the end of the file name,
 
 To run your tests during the build process, you can simply add the **React Native Unit Test** step in your workflows.
 
-Make sure the step is after the **Node Install**, **Npm&Yarn** and before **Export Build Artifacts**.
+Make sure the step is after the 
 
-For detailed information, please visit the [**Workflows documentation**](/workflows).
+- [**Node Install**](/workflows/react-native-specific-workflow-steps/node-install)
+- [**Npm/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)
 
-For more information, please visit the **React Native Unit Test** workflow step [documentation](/workflows/react-native-specific-workflow-steps/react-native-unit-test).
+and before 
+
+- [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts)
+
+For detailed information on Workflow structure, please visit the [**Workflows documentation**](/workflows).
+
+For more information, please visit the **React Native Unit Test** workflow step [documentation](/workflows/react-native-specific-workflow-steps/react-native-unit-test#prerequisites).
 
 
 ## Generating Test Report

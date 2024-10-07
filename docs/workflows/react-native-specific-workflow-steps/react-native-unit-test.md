@@ -8,9 +8,9 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # React Native Unit Test
 
-This component runs all the unit tests in your project written with [Jest](https://jestjs.io/docs/tutorial-react-native) integration. When this step is completed, it generates a test report file in `JUnit.xml` format. You can view these test results in detail using Appcircle's Test Report component.
+This component runs all the unit tests in your project written with [Jest](https://jestjs.io/docs/tutorial-react-native) integration. When this step is completed, it generates a test report file in `JUnit.xml` format. You can view these test results in detail using Appcircle's [**Test Report**](/workflows/react-native-specific-workflow-steps/test-reports-react-native) component.
 
-For detailed information for Continuous Testing. Please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-unit-testing).
+For detailed information for continuous testing. Please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-unit-testing).
 
 To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/workflows/react-native-specific-workflow-steps/test-reports-react-native).
 
@@ -18,11 +18,11 @@ To generate detailed Test Reports. Please visit our [Test Reports Component docu
 
 The workflow steps that need to be executed before running the **React Native Unit Test** workflow step, along with their respective reasons, are listed in the table below.
 
-| Prerequisite Workflow Step                                                                                | Description                                                                                                                                                                                        |
-| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone)                      | Clone the selected repository to the build machine. Please use the [**Install Node**](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps#install-node) step after this step. |
-| [**Install Node**](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps#install-node) | This step will install Node modules for your application. Please note that the **NPM/Yarn Commands** step should be used after this step.                                                          |
-| [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)                | This step install the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications.             |
+| Prerequisite Workflow Step                                                                 | Description                                                                                                                                                                            |
+|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [**Git Clone**](/workflows/common-workflow-steps#git-clone)                                | Clone the selected repository to the build machine.                                                                                                                                    |
+| [**Install Node**](/workflows/react-native-specific-workflow-steps#install-node)           | This step will install Node modules for your application.                                                                                                                              |
+| [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands) | This step install the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4443-rnUnitFlowOrder.png'/>
 
