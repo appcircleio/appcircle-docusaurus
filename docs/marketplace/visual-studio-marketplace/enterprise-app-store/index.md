@@ -64,7 +64,7 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
   authorized users can perform actions within the platform.
 - `appPath`: Indicates the file path to the application that will be uploaded to
   Appcircle Enterprise App Store Profile.
-- `releaseNote`: Contains the details of changes, updates, and improvements made
+- `releaseNotes`: Contains the details of changes, updates, and improvements made
   in the current version of the app being published.
 - `Summary`: Used to provide a brief overview of the version of the app that is
   about to be published.
