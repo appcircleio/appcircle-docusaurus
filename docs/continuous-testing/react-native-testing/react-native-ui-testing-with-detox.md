@@ -80,14 +80,14 @@ The **outputName** must be set to **\*-report.xml** at the end of the file name,
 
 To run your tests during the build process, you can simply add the **React Native UI Test** step in your workflows.
 
-Make sure the step is after the 
+Make sure the step is placed after the following:
 
 - [**Node Install**](/workflows/react-native-specific-workflow-steps/node-install)
 - [**Npm/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)
 - [**Cocoapods Install** ](/workflows/ios-specific-workflow-steps/cocoapods-install) (For only iOS)
 - [**Wait for Android Emulator**](/workflows/android-specific-workflow-steps/wait-for-android-emulator) (For only Android)
 
-and before 
+and make sure the step is placed before the following:
 
 - [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts)
 
