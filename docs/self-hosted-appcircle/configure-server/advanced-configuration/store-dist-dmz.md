@@ -632,11 +632,11 @@ cd appcircle-server
 vi ./projects/spacetech/global.yaml
 ```
 
-- Add or update the `keycloak.customDomain` parameter as below.
+- Add or update the `keycloak.dmzCustomDomain` parameter as below.
 
 ```yaml
 keycloak:
-  customDomain:
+  dmzCustomDomain:
     enabled: true
     domain: auth-ac.spacetech.com
 ```
