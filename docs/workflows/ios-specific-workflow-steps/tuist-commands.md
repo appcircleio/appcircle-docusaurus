@@ -47,4 +47,4 @@ You can find all the parameters required for this step in the table below, with 
 
 To access the source code of this component, please use the following link:
 
-https://github.com/appcircleio/appcircle-tuist-component
+https://github.com/appcircleio/appcircle-tuist-commands-component
