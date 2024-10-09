@@ -200,6 +200,12 @@ When you send an invitation to a user, the invitation will be listed in the **In
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-afterEmailInvite.png' />
 
+:::warning
+Please note that if the iOS device has **"Lost/Stolen Device Protection"** feature enabled, profile installation might only be possible after a 1-hour security delay.
+
+For more information regarding the feature, please visit the [Apple documentation](https://support.apple.com/en-al/guide/iphone/iph17105538b/ios#:~:text=Security%20Delay%20helps%20prevent%20someone,find%20devices%20on%20iCloud.com.).
+:::
+
 ### Cancel Invitation
 
 When an invitation is selected, you can delete this invitation by clicking the Delete button from the menu below. When the invitation is deleted, the link in the e-mail will become inactive and cannot be used again.
