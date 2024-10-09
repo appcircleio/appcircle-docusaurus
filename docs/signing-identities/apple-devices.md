@@ -194,11 +194,21 @@ When you send an invitation to a user, the invitation will be listed in the **In
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-iphone5.png' />
 
+:::warning Lost/Stolen Device Protection Feature
+
+Please note that if the relevant device has the **"Lost/Stolen Device Protection”** feature enabled, which is available on Apple's **iOS 17 and later** devices, profile install may only be possible after a 1-hour security delay.
+
+For more information regarding the feature, please visit the [**Apple documentation**](https://support.apple.com/en-al/guide/iphone/iph17105538b/ios#:~:text=Security%20Delay%20helps%20prevent%20someone,find%20devices%20on%20iCloud.com).
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-iphone6.png' />
+
 
 - After this step, the device UDID has been successfully registered in Appcircle. You can go to the Appcircle interface and see the relevant device in the Non-Registered Devices tab.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-afterEmailInvite.png' />
+
 
 ### Cancel Invitation
 
