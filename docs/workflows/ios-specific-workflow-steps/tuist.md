@@ -20,23 +20,32 @@ Before you run the **Tuist** step, you must complete certain prerequisites, as d
 |-------------------------------------------------|-------------------------------------------------|
 | [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist process. After cloning, the system installs Tuist and creates the `AC_REPOSITORY_DIR` variable.  |
 
+:::caution Tuist Usage
+
+Appcircle's Tuist component generates your project using only the `tuist generate` command. This means that it will automatically generate the `.xcworkspace` and `.xcodeproj` files in the project after the tuist generate command runs. Note that if you use Tuist in the Appcircle pipeline and want to generate an **IPA** file, you need the other build steps, such as
+
+- [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices)
+- [**Xcodebuild for iOS Simulator**](/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator)
+- [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps/xcodebuild-for-testing)
+- [**Xcodebuild for Unit and UI Testing**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test)
+- [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)
+
+For more iOS specific workflow steps, please visit the [**iOS Integration**](/workflows/ios-specific-workflow-steps) documentation.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2829-tuistOrder.png' />
 
 ### Input Variables
 
 You can find all the parameters required for this step in the table below, with their descriptions in detail.
 
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4430-tuistInputs.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4430New-tuistInput.png' />
 
 | Variable Name            | Description                                                                                                                                                                         | Status   |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Optional |
 | `$AC_TUIST_VERSION`      | Specifies the Tuist version. If not specified, the latest version of Tuist will be installed.                                                                                       | Optional |
-| `$AC_TUIST_BUILD`        | Build your Tuist project. If it is true, it will run the `tuist build` command.                                                                                                     | Optional |
-| `$AC_TUIST_TEST`         | Run tests in your project. If it is true, it will run the `tuist test` command.                                                                                                     | Optional |
-| `$AC_TUIST_CLEAN`        | Clean all previous build files. It will provide clean build. If it is true, it will run the `tuist clean` command.                                                                  | Optional |
-| `$AC_TUIST_PROJECT_ONLY` | Generates only the local project, without generating its dependencies.                                                                                                              | Optional |
 
 
 To access the source code of this component, please use the following link:
