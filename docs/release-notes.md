@@ -23,6 +23,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Users will now be able to view [Apple devices](/signing-identities/apple-devices) registered in various stores, enable or disable selected devices, and save device information through email invitations within the Apple Devices section of Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Failed build steps are now visible within the build CSV reports, which can be downloaded from the Build History section. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The "Auto Cancel Redundant Pipelines" option has been added to Build configurations, allowing users to automatically cancel redundant pipelines which was started or queued by triggers. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.1 Beta 3](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_1-release-notes) final release installed on runners. Since this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
