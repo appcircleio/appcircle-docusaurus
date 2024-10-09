@@ -12,6 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 You can seamlessly integrate Tuist into your workflow with Appcircle, making setup and utilization within your existing development processes easy.
 
+
 ### Prerequisites
 
 Before you run the **Tuist** step, you must complete certain prerequisites, as detailed in the table below:
@@ -31,6 +32,12 @@ Appcircle's Tuist component generates your project using only the `tuist generat
 - [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)
 
 For more iOS specific workflow steps, please visit the [**iOS Integration**](/workflows/ios-specific-workflow-steps) documentation.
+
+:::
+
+:::danger
+
+In Tuist integrated projects, there will be cases where `.xcworkspace` and `.xcodeproj` files will be created after the `tuist generate` command. For this reason, the **auto fill** feature in the **build configuration** may not work as expected. For more information abour build configurations, please visit the [**Build Configurations**](/build/build-process-management/build-profile-configuration) documentation.
 
 :::
 
