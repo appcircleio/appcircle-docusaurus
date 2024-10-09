@@ -1,7 +1,7 @@
 ---
 title: Tuist Commands
 description: Scale your Xcode projects with Tuist. Streamline project management and automate configurations for efficient iOS app development.
-tags: [xcode automation, project management, ios development, code generation]
+tags: [tuist, xcode automation, project management, ios development, code generation, tuist command]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -18,7 +18,7 @@ Before you run the **Tuist Commands** step, you must complete certain prerequisi
 
 | Prerequisite Workflow Step                              | Description                                                                                                                                                                    |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist Commands process. After cloning, creates the `AC_REPOSITORY_DIR` variable and the system is able to run the Tuist Commands |
+| [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist Commands process. After cloning, it creates the `AC_REPOSITORY_DIR` variable, and the system is able to run the Tuist Commands. |
 | [Tuist](/workflows/ios-specific-workflow-steps/tuist)   | You need to install the Tuist to start the Tuist Commands process.                                                                                                             |
 
 :::caution Tuist Commands
@@ -42,7 +42,7 @@ You can find all the parameters required for this step in the table below, with 
 | Variable Name        | Description                                                                                                                                                                         | Status   |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | `$AC_TUIST_PATH`     | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Optional |
-| `$AC_TUIST_COMMANDS` | Specifies the Tuist Commands to able to run specific Tuist Commands.                                                                                                                | Required |
+| `$AC_TUIST_COMMANDS` | Specifies the Tuist Commands to be able to run specific Tuist Commands. For example; `tuist test` or `tuist build`                                                                     | Required |
 
 
 To access the source code of this component, please use the following link:
