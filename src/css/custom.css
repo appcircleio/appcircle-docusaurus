@@ -1150,3 +1150,20 @@ html[data-theme="dark"] .module-badge-self-hosted {
   background: linear-gradient(145deg, #402800, #2b1a00);
   color: #ffd27f;
 }
+
+.custom-details {
+  margin: 0 0 var(--ifm-spacing-vertical);
+  border: 1px solid var(--ifm-alert-border-color);
+  transform: transform var(--ifm-transition-fast) ease;
+}
+
+.custom-details summary {
+  cursor: pointer;
+}
+
+.custom-details-inner-container {
+  margin-top: 1rem;
+  border-top: 1px solid var(--ifm-alert-border-color);
+  padding-top: 1rem;
+  cursor: auto;
+}
