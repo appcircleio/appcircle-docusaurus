@@ -45,7 +45,7 @@ The "Default M1 Pool" macOS **Sonoma** (`14.5`) stack has the Xcode versions bel
 
 | Version | Build |
 | ------- | ----- |
-| 16.1 | `16B5014f` |
+| 16.1 | `16B5029d` |
 | 16.0 | `16A242d` |
 | 15.4 | `15F31d` |
 | 15.3 | `15E204a` |
