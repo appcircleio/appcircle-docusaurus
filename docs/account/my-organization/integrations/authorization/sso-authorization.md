@@ -396,16 +396,30 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute1.png' />
 
-4. Add a new user attribute as shown in the image below.
+4. Add a new user attribute with the following attributes.
+- Data type: Choose "String Array"
+- Display name: Enter "Roles"
+- Variable name: Enter "roles"
+- User permission: Choose "Read-Write"
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute2.png' />
 
 5. Navigate to the **Directory > Profile Editor** section from left navigation menu.
-6. Select the **Your Application Name User** from the profile list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-profile-editor.png' />
 
-8. Click **Mappings** and map user roles attribute to application user roles attribute as shown in the image below.
+6. Select the application-specific user profile named **"Your Okta Application Name" User** from the profile list.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor.png' />
+
+7. Click **Add Atribute** and add new attribute with the following configuration. Then click **Save**.
+- Data type: Choose "String Array"
+- Display name: Enter "Roles"
+- Variable name: Enter "roles"
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor-add-attribute.png' />
+
+8. Click **Mappings** and switch to **Okta User to "Your Application Name"** tab. Define a mapping between the user roles attribute and the application user roles attribute as shown in the image below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-map-roles-attribute.png' />
 
@@ -427,7 +441,13 @@ The roles will be stored in user attributes.
 
 2. Click **default**
 3. Navigate to the **Claims** tab. 
-4. Add new claim as shown in the image below.
+4. Add new claim as the following configuration.
+- Name: Enter "Roles"
+- Include in token type: Select "ID Token" and "Always"
+- Value type: Select "Expression"
+- Value: Enter "user.roles"
+- Disable claim: Select "false"
+- Include in: Select "Any scope"
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-add-roles-claim.png' />
 
@@ -478,16 +498,30 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute1.png' />
 
-4. Add a new user attribute as shown in the image below.
+4. Add a new user attribute with the following configuration.
+- Data type: Choose "String Array"
+- Display name: Enter "Roles"
+- Variable name: Enter "roles"
+- User permission: Choose "Read-Write"
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute2.png' />
 
 5. Navigate to the **Directory > Profile Editor** section from left navigation menu.
-6. Select the **Your Application Name User** from the profile list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-profile-editor.png' />
 
-8. Click **Mappings** and map user roles attribute to application user roles attribute as shown in the image below.
+6. Select the application-specific user profile named **"Your Okta Application Name" User** from the profile list.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor.png' />
+
+7. Click **Add Atribute** and add new attribute with the following configuration. Then click **Save**.
+- Data type: Choose "String Array"
+- Display name: Enter "Roles"
+- Variable name: Enter "roles"
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor-add-attribute.png' />
+
+8. Click **Mappings** and switch to **Okta User to "Your Application Name"** tab. Define a mapping between the user roles attribute and the application user roles attribute as shown in the image below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-map-roles-attribute.png' />
 
@@ -509,7 +543,18 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-application-edit-saml.png' />
 
-4. Enter the Group and Role Attribute statement as as shown in the image below.
+4. Enter the Group and Role Attribute statement as following configuration.
+
+Add attribute statement as below
+- Name: Enter "roles"
+- Name format: Select "Basic"
+- Value: Enter "user.roles"
+
+Add group attribute statement as below
+- Name: Enter "groups"
+- Name format: Select "Basic"
+- Filter: Select "Matches regex"
+- Filter Value: Enter ".*"
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-add-saml-statement.png' />
 

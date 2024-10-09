@@ -18,6 +18,12 @@ Manage your Apple Certificates by adding and storing your Apple Certificates and
 
 [Apple Certificates](/signing-identities/apple-certificates)
 
+## Apple Devices
+
+When it comes to developing and testing iOS apps, one of the most important tasks is registering your devices with the Apple Developer portal. This is necessary so that you can install your app on those devices for testing purposes. However, this process can be a bit tedious, especially if you need to register a large number of devices. That's where Appcircle comes in.
+
+[Apple Devices](/signing-identities/apple-devices)
+
 ## Apple Identifiers
 
 Register and Manage your Apple Identifiers by adding and storing your Apple Identifiers and other related details required for signing iOS applications.
