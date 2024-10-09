@@ -112,6 +112,11 @@ The following table details the roles and restrictions for the [**Signing and Id
 | Apple Cerficate Signing Request | List CSR                               | ✅     | ✅       | ✅      |
 | Apple Identifiers               | Add/Delete/Update Apple Identifiers    | ✅     | ✅       | ⛔      |
 | Apple Identifiers               | List Apple Identifiers                 | ✅     | ✅       | ✅      |
+| Apple Device                    | Add/Delete Apple Device                | ✅     | ✅       | ⛔      |        
+| Apple Device                    | Register Devices to Apple Developer    | ✅     | ✅       | ⛔      |
+| Apple Device                    | Adding New Device to Provision         | ✅     | ✅       | ⛔      |
+| Apple Device                    | Sync from Apple Developer              | ✅     | ✅       | ⛔      | 
+| Apple Device                    | List Apple Device                      | ✅     | ✅       | ✅      |
 | Apple Profile                   | Add/Delete/Update Apple Profiles       | ✅     | ✅       | ⛔      |
 | Apple Profile                   | List Apple Profiles                    | ✅     | ✅       | ✅      |
 | Keystore                        | Add/Delete/Update Keystores            | ✅     | ✅       | ⛔      |
@@ -146,19 +151,8 @@ The following table details the roles and restrictions for the [**Testing Distri
 | App Version Actions  | Download Binary                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Apple Device         | Add/Delete Apple Device                | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Apple Device         | Register Devices to Apple Developer    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Apple Device         | Adding New Device to Provision         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Apple Device         | Sync from Apple Developer              | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Apple Device         | List Apple Device                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports App Version               | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔             | ✅      |
-
-:::info Apple Devices
-
-- **Manager** or **Operator** Testing Distribution permission can get Apple Devices if user has **Manager** Signing Identity permission.
-
-:::
 
 :::caution Authentication Settings
 
@@ -362,7 +356,7 @@ If you want to assign a role in a sub-organization, please do so within the resp
 
 LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Testing Portal**](/testing-distribution/testing-portal) and [**Enterprise App Store**](/enterprise-app-store).
 
-Please use [**Appcircle Login**](/account/my-organization/integrations/authentications/sso-providers-configuration/onelogin-saml#enable-sso) for **LDAP** and **SSO** integration when logging into Appcircle.
+Please use [**Appcircle Login**](/account/my-organization/integrations/authentications) for **LDAP** and **SSO** integration when logging into Appcircle.
 
 :::
 

@@ -49,7 +49,7 @@ If a user who has previously unsubscribed is included in a test group, they will
 
 If you have a LDAP Mapping in place for your users, you can import them into your Testing Group profile.
 
-For LDAP configuration and mapping, please refer to the [LDAP](/account/my-organization/integrations/authentications/ldap-login) documentation.
+For LDAP configuration and mapping, please refer to the [LDAP](/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication) documentation.
 
 1. **Create or Select a Testing Group**:  
    Either create a new Testing Group in Appcircle or select an existing one.

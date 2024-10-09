@@ -92,13 +92,13 @@ Steps to Generate a Profile-Specific Secret:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-in-app-secret.png' />
 
-#### Enterprise Store Prefix
+#### Enterprise Portal Prefix
 
-Navigate to the Enterprise Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
+Navigate to the Enterprise App Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE_4207-Enterprise-Store-Prefix-1.png' />
 
-#### Enterprise Store URL
+#### Enterprise Portal URL
 
 Navigate to the Enterprise Store module and settings page to find the **STORE URL** information.
 
@@ -106,16 +106,28 @@ Navigate to the Enterprise Store module and settings page to find the **STORE UR
 
 #### Enterprise Store Profile Id
 
-You can obtain your Enterprise Store Profile ID from the URL or by using the @appcircle/cli.
+You can obtain your Enterprise Store Profile ID from the Profile Settings, the URL or by using the @appcircle/cli.
+
+##### Retrieving Profile ID from the Enterprise Store Profile Settings
+
+1. Navigate to your Enterprise App Store Profile.
+
+2. Select the Settings from the top right corner.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile4.png' />
+
+3. Find and copy your Profile ID under the Info tab by clicking the copy button, next to your Profile ID.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4487.png' alt='Copy the Profile ID' />
 
 ##### How to Extract Your Enterprise Store Profile ID from the URL
 
-1. Navigate to your Enterprise Store Profile.
+1. Navigate to your Enterprise App Store Profile.
 2. Check the URL, which should be in this format: **/enterprise-store/profiles/PROFILE_ID**. The PROFILE_ID refers to your specific profile ID.
 
 ##### Retrieving Profile ID Using @appcircle/cli
 
-The upcoming command retrieves the complete list of Enterprise Store Profiles.
+The upcoming command retrieves the complete list of Enterprise App Store Profiles.
 
 ```bash
 appcircle enterprise-app-store profile list
@@ -287,38 +299,42 @@ namespace MAUI_IN_APP.Helpers;
 public static class InAppUpdateHelper {
 
     private static async Task<string> GetACToken(string profileId)
-	  {
-	  	var httpClient = new HttpClient();
-	  	var endpointUrl = $"{Environment.GetEnvironmentVariable("STORE_URL")}/api/auth/token";
-	  	var secret = DeviceInfo.Platform == DevicePlatform.iOS
-	  		? Environment.GetEnvironmentVariable("IOS_STORE_SECRET") 
-	  		: Environment.GetEnvironmentVariable("ANDROID_STORE_SECRET");
-  
-	  	var requestBody = new
-	  	{
-	  		ProfileId = profileId,
-	  		Secret = secret
-	  	};
-  
-	  	var json = JsonSerializer.Serialize(requestBody);
-	  	var content = new StringContent(json, Encoding.UTF8, "application/json");
+      {
+      	var httpClient = new HttpClient();
+      	var endpointUrl = $"{Environment.GetEnvironmentVariable("STORE_URL")}/api/auth/token";
+      	var secret = DeviceInfo.Platform == DevicePlatform.iOS
+      		? Environment.GetEnvironmentVariable("IOS_STORE_SECRET")
+      		: Environment.GetEnvironmentVariable("ANDROID_STORE_SECRET");
 
-	  	var response = await httpClient.PostAsync(endpointUrl, content);
-	  	var responseData = await response.Content.ReadAsStringAsync();
-	  	var responseObject = JsonSerializer.Deserialize<TokenResponse>(responseData);
-		
-	  	  return responseObject.access_token;
-	  }
+      	var requestBody = new
+      	{
+      		ProfileId = profileId,
+      		Secret = secret
+      	};
+
+      	var json = JsonSerializer.Serialize(requestBody);
+      	var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+      	var response = await httpClient.PostAsync(endpointUrl, content);
+      	var responseData = await response.Content.ReadAsStringAsync();
+      	var responseObject = JsonSerializer.Deserialize<TokenResponse>(responseData);
+
+      	  return responseObject.access_token;
+      }
 
 }
 `}
-  </CodeBlock>
-  </TabItem>
+</CodeBlock>
+</TabItem>
 </Tabs>
+
+:::caution
+For Android, omit https and provide only your enterprise store domain, such as appcircle.store.appcircle.io.
+:::
 
 ### Initiating Updates
 
-#### Retrieving Available App Versions from Your Enterprise Store
+#### Retrieving Available App Versions from Your Enterprise Portal
 
 Fetch all available versions and compare them with the current version to determine if an update is required.
 
@@ -472,29 +488,30 @@ namespace MAUI_IN_APP.Helpers;
 
 public static class InAppUpdateHelper {
 
-	  private static async Task<List<AppVersion>> GetAppVersions(string accessToken)
-	  {
-	      var url = $"{Environment.GetEnvironmentVariable("STORE_URL") }/api/app-versions";
-	      var options = new JsonSerializerOptions
-	      {
-	      	PropertyNameCaseInsensitive = true,
-	      	DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
-	      };
-	      using (var httpClient = new HttpClient())
-	      {
-	      	httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("*/*"));
-	      	httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+      private static async Task<List<AppVersion>> GetAppVersions(string accessToken)
+      {
+          var url = $"{Environment.GetEnvironmentVariable("STORE_URL") }/api/app-versions";
+          var options = new JsonSerializerOptions
+          {
+          	PropertyNameCaseInsensitive = true,
+          	DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+          };
+          using (var httpClient = new HttpClient())
+          {
+          	httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("*/*"));
+          	httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
 
-	      	var response = await httpClient.GetAsync(url);
-	      	var jsonResponse = await response.Content.ReadAsStringAsync();
-	      	var responseData = JsonSerializer.Deserialize<AppVersionsResponse>(jsonResponse,options);
-	      	return responseData.data;
-	      }
-	  }
+          	var response = await httpClient.GetAsync(url);
+          	var jsonResponse = await response.Content.ReadAsStringAsync();
+          	var responseData = JsonSerializer.Deserialize<AppVersionsResponse>(jsonResponse,options);
+          	return responseData.data;
+          }
+      }
+
 }
 `}
-  </CodeBlock>
-  </TabItem>
+</CodeBlock>
+</TabItem>
 </Tabs>
 
 #### Compare Current Version with Fetched App Versions to Identify Updates
@@ -590,7 +607,7 @@ Compare the current version with the fetched versions to identify the latest rel
             
             // Compare versions component by component
             for (current, latest) in zip(currentComponents, latestComponents) {
-                // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Store
+                // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Portal
                 if (latest > current && app.publishType != 0) {
                     latestAppVersion = app
                 }
@@ -648,7 +665,7 @@ Compare the current version with the fetched versions to identify the latest rel
           const current = currentComponents[i];
           const latest = latestComponents[i];
 
-          // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Store
+          // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Portal
           if (latest > current && app.publishType !== 0) {
             latestAppVersion = app;
           }
@@ -674,55 +691,60 @@ namespace MAUI_IN_APP.Helpers;
 
 public static class InAppUpdateHelper {
 
-	  /*
+      /*
       You can implement your custom update check mechanism within this function.
       Currently, we convert the version to an integer and compare it with the 'CFBundleShortVersionString'.
       You may want to check other datas about the app version to write the update control mechanism please check
       /v2/profiles/{profileId}/app-versions at https://api.appcircle.io/openapi/index.html?urls.primaryName=store
-	  */
-	  public static AppVersion GetLatestVersion(string currentVersion, List<AppVersion> appVersions)
-	  {
-	  	AppVersion latestAppVersion = null;
-  
-	  	// Helper function to convert version string into an array of integers
-	  	int[] VersionComponents(string version)
-	  	{
-	  		return version
-	  			.Split('.')
-	  			.Select(part => int.TryParse(part, out int num) ? num : (int?)null)
-	  			.Where(num => num.HasValue)
-	  			.Select(num => num.Value)
-	  			.ToArray();
-	  	}
-	  	var currentComponents = VersionComponents(currentVersion);
-  
-	  	foreach (var app in appVersions)
-	  	{
-	  		// Convert versions to arrays of integers
-	  		var latestComponents = VersionComponents(app.Version);
+      */
+      public static AppVersion GetLatestVersion(string currentVersion, List<AppVersion> appVersions)
+      {
+      	AppVersion latestAppVersion = null;
 
-	  		// Compare versions component by component
-	  		for (int i = 0; i < Math.Min(currentComponents.Length, latestComponents.Length); i++)
-	  		{
-	  			var current = currentComponents[i];
-	  			var latest = latestComponents[i];
+      	// Helper function to convert version string into an array of integers
+      	int[] VersionComponents(string version)
+      	{
+      		return version
+      			.Split('.')
+      			.Select(part => int.TryParse(part, out int num) ? num : (int?)null)
+      			.Where(num => num.HasValue)
+      			.Select(num => num.Value)
+      			.ToArray();
+      	}
+      	var currentComponents = VersionComponents(currentVersion);
 
-	  			// You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Store
-	  			if (latest > current && app.PublishType == (int)PublishType.Live)
-	  			{
-	  				latestAppVersion = app;
-	  				break; // Assuming once we find a valid version, we don't need to check further.
-	  			}
-	  		}
-	  	}
-  
-	  	return latestAppVersion;
-	  }
+      	foreach (var app in appVersions)
+      	{
+      		// Convert versions to arrays of integers
+      		var latestComponents = VersionComponents(app.Version);
+
+      		// Compare versions component by component
+      		for (int i = 0; i < Math.Min(currentComponents.Length, latestComponents.Length); i++)
+      		{
+      			var current = currentComponents[i];
+      			var latest = latestComponents[i];
+
+      			// You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Portal
+      			if (latest > current && app.PublishType == (int)PublishType.Live)
+      			{
+      				latestAppVersion = app;
+      				break; // Assuming once we find a valid version, we don't need to check further.
+      			}
+      		}
+      	}
+
+      	return latestAppVersion;
+      }
+
 }
 `}
-  </CodeBlock>
-  </TabItem>
+</CodeBlock>
+</TabItem>
 </Tabs>
+
+:::caution
+The code above compares major versions. For instance, if the current app version is 1.0 and the latest available version is 1.1, it **won't** be considered an update. However, if the latest available version is 2.0, it will be treated as an update in your enterprise portal. You can configure this logic based on your business requirements.
+:::
 
 #### Updating the App
 
@@ -905,56 +927,56 @@ namespace MAUI_IN_APP.Helpers;
 
 public static class InAppUpdateHelper {
 
-	  public static async Task<UpdateResult> CheckForUpdate(string currentVersion, string userEmail)
-	  {
-	  	var profileId = DeviceInfo.Platform == DevicePlatform.iOS ?
-	  		Environment.GetEnvironmentVariable("IOS_PROFILE_ID") : 
-	  		Environment.GetEnvironmentVariable("ANDROID_PROFILE_ID");
-	  	if (profileId != null)
-	  	{
-	  		var accessToken = await GetACToken(profileId);
-	  		var appVersions = await GetAppVersions(accessToken);
-	  		var latestVersion = GetLatestVersion(currentVersion, appVersions);
-	  		if (latestVersion != null)
-	  		{
-	  			var downloadUrl = CreateDownloadUrl(latestVersion.Id,accessToken,userEmail);
-	  			if (downloadUrl == null)
-	  			{
-	  				return null;
-	  			}
+      public static async Task<UpdateResult> CheckForUpdate(string currentVersion, string userEmail)
+      {
+      	var profileId = DeviceInfo.Platform == DevicePlatform.iOS ?
+      		Environment.GetEnvironmentVariable("IOS_PROFILE_ID") :
+      		Environment.GetEnvironmentVariable("ANDROID_PROFILE_ID");
+      	if (profileId != null)
+      	{
+      		var accessToken = await GetACToken(profileId);
+      		var appVersions = await GetAppVersions(accessToken);
+      		var latestVersion = GetLatestVersion(currentVersion, appVersions);
+      		if (latestVersion != null)
+      		{
+      			var downloadUrl = CreateDownloadUrl(latestVersion.Id,accessToken,userEmail);
+      			if (downloadUrl == null)
+      			{
+      				return null;
+      			}
 
-	  			return new UpdateResult
-	  			{
-	  				DownloadUrl = downloadUrl,
-	  				Version = latestVersion.Version
-	  			};
-	  		}
-	  	}
+      			return new UpdateResult
+      			{
+      				DownloadUrl = downloadUrl,
+      				Version = latestVersion.Version
+      			};
+      		}
+      	}
 
-	  	return null;
-	  }
+      	return null;
+      }
 
     public static string CreateDownloadUrl(string availableVersionId, string accessToken, string email)
-	  {
-	  	var baseUrl = $"{Environment.GetEnvironmentVariable("STORE_URL")}/api/app-versions/{availableVersionId}/download-version/{accessToken}/user/{email}";
-	  	var downloadUrl = $"itms-services://?action=download-manifest&url={Uri.EscapeDataString(baseUrl)}";
-	  	try
-	  	{
-	  		// Assuming you have a way to determine the platform
-	  		var isIos = DeviceInfo.Platform == DevicePlatform.iOS;
-	  		return isIos ? downloadUrl : baseUrl;
-	  	}
-	  	catch (Exception)
-	  	{
-	  		Console.WriteLine("Latest Version URL could not be created");
-	  		return null;
-	  	}
-	  }
+      {
+      	var baseUrl = $"{Environment.GetEnvironmentVariable("STORE_URL")}/api/app-versions/{availableVersionId}/download-version/{accessToken}/user/{email}";
+      	var downloadUrl = $"itms-services://?action=download-manifest&url={Uri.EscapeDataString(baseUrl)}";
+      	try
+      	{
+      		// Assuming you have a way to determine the platform
+      		var isIos = DeviceInfo.Platform == DevicePlatform.iOS;
+      		return isIos ? downloadUrl : baseUrl;
+      	}
+      	catch (Exception)
+      	{
+      		Console.WriteLine("Latest Version URL could not be created");
+      		return null;
+      	}
+      }
 
 }
 `}
-  </CodeBlock>
-  </TabItem>
+</CodeBlock>
+</TabItem>
 </Tabs>
 
 ### How to Prompt an Alert and Install the Latest Release
@@ -1106,19 +1128,19 @@ namespace MAUI_IN_APP;
 
 public partial class MainPage : ContentPage
 {
-      public MainPage()
-      {
-      	InitializeComponent();
-      } 
-      protected override async void OnAppearing()
-      {
-      	base.OnAppearing(); 
-      	await UpdateControl();
-      } 
-      public async Task UpdateControl()
-      {
-      	var currentVersion = AppInfo.VersionString;
-      	var updateInfo = await InAppUpdateHelper.CheckForUpdate(currentVersion, "USER_EMAIL");
+public MainPage()
+{
+InitializeComponent();
+}
+protected override async void OnAppearing()
+{
+base.OnAppearing();
+await UpdateControl();
+}
+public async Task UpdateControl()
+{
+var currentVersion = AppInfo.VersionString;
+var updateInfo = await InAppUpdateHelper.CheckForUpdate(currentVersion, "USER_EMAIL");
 
       	if (updateInfo?.DownloadUrl != null && await Launcher.CanOpenAsync(updateInfo.DownloadUrl))
       	{
@@ -1129,12 +1151,12 @@ public partial class MainPage : ContentPage
       		}
       	}
       }
+
 }
 
-
 `}
-  </CodeBlock>
-  </TabItem>
+</CodeBlock>
+</TabItem>
 </Tabs>
 
 :::caution

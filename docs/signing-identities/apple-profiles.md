@@ -2,7 +2,7 @@
 title: Apple Profiles
 description: Learn how to manage iOS profiles in Appcircle
 tags: [signing identities, ios certificates, provisioning profiles]
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
