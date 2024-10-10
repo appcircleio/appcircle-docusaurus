@@ -57,6 +57,12 @@ Learn how to use custom scripts to build and customize .NET MAUI apps on Appcirc
 
 <ContentRef url="/build/platform-build-guides/building-dotnet-maui-apps">Building .NET MAUI Apps</ContentRef>
 
+### Building Xamarin Apps
+
+Learn how to use custom scripts to build and customize Xamarin apps on Appcircle.
+
+<ContentRef url="/build/platform-build-guides/building-xamarin-apps">Building Xamarin Apps</ContentRef>
+
 ## FAQ
 
 ### General Build Troubleshooting
