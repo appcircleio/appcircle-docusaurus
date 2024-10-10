@@ -8,6 +8,7 @@ sidebar_class_name: hidden
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
+import HostCaution512GB from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_512GB_host_warning.mdx';
 
 # Self-hosted Runner as MacOS VM Image
 
@@ -157,6 +158,8 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 
   </TabItem>
   <TabItem value="240918" label="240918" default>
+
+<HostCaution512GB/>
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240918.tar.gz
@@ -519,6 +522,8 @@ nohup ./download-runner.sh "240514" &
   </TabItem>
   <TabItem value="240918" label="240918" default>
 
+<HostCaution512GB/>
+
 ```bash
 curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
 chmod +x download-runner.sh && \
@@ -610,7 +615,7 @@ tart clone macOS_240918 vm01
 </Tabs>
 
 :::tip
-It's not recommended to delete the base image (`macOS_YY0M0D`) as it won't save disk space due to copy-on-write file system on macOS. You can safely re-create `vm01` from the same base image `macOS_YY0M0D` without downloading and extracting again from network if needed. 
+It's not recommended to delete the base image (`macOS_YY0M0D`) as it won't save disk space due to copy-on-write file system on macOS. You can safely re-create `vm01` from the same base image `macOS_YY0M0D` without downloading and extracting again from network if needed.
 :::
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
@@ -746,7 +751,7 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.15.3.dmg:ro \
   --disk=$HOME/images/xcode.15.4.dmg:ro \
   --disk=$HOME/images/xcode.16.0.dmg:ro \
-  --disk=$HOME/images/xcode.16.1.dmg:ro 
+  --disk=$HOME/images/xcode.16.1.dmg:ro
 ```
 
   </TabItem>
