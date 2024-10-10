@@ -673,7 +673,7 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.15.3.dmg:ro \
   --disk=$HOME/images/xcode.15.4.dmg:ro \
   --disk=$HOME/images/xcode.16.0.dmg:ro \
-  --disk=$HOME/images/xcode.16.1.dmg:ro 
+  --disk=$HOME/images/xcode.16.1.dmg:ro
 ```
 
   </TabItem>
