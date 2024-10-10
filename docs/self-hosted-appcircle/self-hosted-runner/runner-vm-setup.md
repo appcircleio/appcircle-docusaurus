@@ -140,6 +140,8 @@ The versions are listed in chronological order, from the earliest to the most re
 
 :::
 
+<HostCaution512GB/>
+
 Download macOS VM from Appcircle bucket.
 
 <Tabs groupId="macos-image">
@@ -159,8 +161,6 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 
   </TabItem>
   <TabItem value="240918" label="240918" default>
-
-<HostCaution512GB/>
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240918.tar.gz
@@ -499,6 +499,8 @@ If you don't need the latest Xcode and you want to run an older version of the m
 
 ### Download the macOS VM and Xcode Images Automatically
 
+<HostCaution512GB/>
+
 To download and extract the Appcircle runner VM and Xcode images in the background automatically, you can run the command below.
 
 <Tabs groupId="macos-image">
@@ -522,8 +524,6 @@ nohup ./download-runner.sh "240514" &
 
   </TabItem>
   <TabItem value="240918" label="240918" default>
-
-<HostCaution512GB/>
 
 ```bash
 curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
