@@ -10,7 +10,6 @@ import TabItem from '@theme/TabItem';
 import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
 import HostCaution512GB from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_512GB_host_warning.mdx';
 
-
 # Self-hosted Runner as MacOS VM Image
 
 Self-hosted runner installation is explained at Appcircle [docs](installation) in detail. You can install runner in your self-hosted environment by yourself, following instructions on there.
@@ -616,7 +615,7 @@ tart clone macOS_240918 vm01
 </Tabs>
 
 :::tip
-It's not recommended to delete the base image (`macOS_YY0M0D`) as it won't save disk space due to copy-on-write file system on macOS. You can safely re-create `vm01` from the same base image `macOS_YY0M0D` without downloading and extracting again from network if needed. 
+It's not recommended to delete the base image (`macOS_YY0M0D`) as it won't save disk space due to copy-on-write file system on macOS. You can safely re-create `vm01` from the same base image `macOS_YY0M0D` without downloading and extracting again from network if needed.
 :::
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
