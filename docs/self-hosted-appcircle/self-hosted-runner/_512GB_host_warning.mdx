@@ -1,0 +1,30 @@
+:::caution
+
+#### Disk Space Requirements
+
+The recommended disk space for the macOS VM installation is **1TB**.
+
+If your host machine has a total storage capacity of 512GB, be aware that this will not be sufficient to download and extract the Appcircle runner macOS VM and the Xcode images compressed file directly on the host machine, especially with version `240918` or later. Although the extracted macOS VM and Xcode image files will fit within the 512GB capacity, the download and extraction process requires additional temporary space to process.
+
+We recommend the following solutions for a possible workaround:
+
+- Use an external disk formatted in `ExFAT` or `APFS`. Please note that `FAT32` is not a suitable option because it has a maximum file size limit of 4GB.
+- Use a network-based file system such as `SMB` or `NFS`. `SMB` is recommended as it is a more compatible option with macOS than `NFS`.
+
+You can use the following commands in macOS Terminal to verify your **total** disk space.
+
+```bash
+df -h
+```
+
+```bash
+system_profiler SPNVMeDataType
+```
+
+Please don't forget to change the working directory to the externally attached or network-based disk and run the macOS VM installation commands in that directory.
+
+```bash
+cd /path/where/the/external/disk/mounted
+```
+
+:::
