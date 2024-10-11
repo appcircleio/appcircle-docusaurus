@@ -12,6 +12,12 @@ sudo dnf install -y netavark
 
 Once the installation is complete, please follow these steps to configure Podman:
 
+- Edit the /etc/containers/containers.conf file.
+
+```bash
+sudo vi /etc/containers/containers.conf
+```
+
 - Add the following content to the [network] section:
 
 ```bash
