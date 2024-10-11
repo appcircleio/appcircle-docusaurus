@@ -58,6 +58,7 @@ If you have installed the Appcircle server with Podman:
 
 - CentOS Stream 8 or later
 - RHEL 8 or later
+- Oracle Linux 9 or later
 
 If you have installed the Appcircle server with Docker:
 
@@ -65,6 +66,7 @@ If you have installed the Appcircle server with Docker:
 - Debian 11 or later
 - CentOS 8 or later
 - RHEL 8 or later
+- Oracle Linux 9 or later
 
 ### Hardware Requirements
 

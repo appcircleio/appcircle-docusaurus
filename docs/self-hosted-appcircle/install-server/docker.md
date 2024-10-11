@@ -23,6 +23,7 @@ Self-hosted Appcircle server utilizing Docker, can only be installed on Linux op
 - Debian 11 or later
 - CentOS 8 or later
 - RHEL 8 or later
+- Oracle Linux 9 or later
 
 ### Hardware Requirements
 
