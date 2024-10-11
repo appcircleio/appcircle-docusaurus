@@ -26,6 +26,7 @@ Self-hosted Appcircle server utilizing Podman, can only be installed on Linux op
 
 - CentOS Stream 8 or later
 - RHEL 8 or later
+- Oracle Linux 9 or later
 
 :::info
 
