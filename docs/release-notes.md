@@ -24,6 +24,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Failed build steps are now visible within the build CSV reports, which can be downloaded from the Build History section. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The "Auto Cancel Redundant Pipelines" option has been added to Build configurations, allowing users to automatically cancel redundant pipelines which was started or queued by triggers. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.1 Beta 3](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_1-release-notes) final release installed on runners. Since this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
+- Self-hosted Appcircle users utilizing the DMZ structure can now configure the `auth` subdomain used for internet requests with a custom domain. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -36,6 +37,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Builds that have completed with a successful output but contain a failed step will now be displayed with a warning status in the build lists and build profile cards. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The logout option has been removed from the Enterprise Portal for non-authentication type logins. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Enterprise Portal will no longer display empty channels as selectable tabs if they do not have any active app versions. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server logs have been optimized. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -51,6 +53,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - An issue was fixed where the selected organization name was changing format when selected again within the SSO mapping configuration page. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The warning message for invalid Google API Key uploads has been improved. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where the add button remained active even without selecting any LDAP group within LDAP Mapping settings. <AccountBadge/> <SelfHostedBadge/>
+- The bug causing excessive CPU resource usage by the self-hosted Appcircle server after a deep health endpoint response has been resolved. <InfrastructureBadge/> <SelfHostedBadge/>
+- A bug in `compose.yaml` file causing an error due to localization and decimal separator has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- A bug that prevented labels from appearing in the self-hosted Appcircle server log monitoring UI has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- An issue preventing the `auth` module page from being displayed in Swagger UI for self-hosted installations using self-signed certificates has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :warning: Breaking Changes
 
