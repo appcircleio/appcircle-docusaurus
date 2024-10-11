@@ -662,6 +662,22 @@ So it may need up to ~20 min to system be up according to your internet connecti
 
 :::
 
+:::info
+#### Cgroup controller error
+
+If you encounter an error after executing the up command similar to the one shown below, it indicates that the user running the Appcircle server does not have the necessary permissions to set resource limits on processes.
+
+```bash
+Error: OCI runtime error: unable to start container "05d4dd86c3fbbcbe8e7e8dbb43fa88d0053de0e9cd1e25e96e473470de973dfa": crun: the requested cgroup controller `cpu` is not available
+```
+
+To resolve this issue, please refer to the [Podman FAQ document](https://github.com/containers/podman/blob/main/troubleshooting.md#26-running-containers-with-resource-limits-fails-with-a-permissions-error) for detailed instructions.
+
+Important: After creating the configuration file, ensure you reboot the server for the changes to take effect. 
+
+You can restart the Appcircle server by using the `up` command after the reboot.
+:::
+
 Now you can check system health and gain an overview of the status.
 
 ```bash
