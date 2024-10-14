@@ -194,13 +194,6 @@ sudo firewall-cmd --add-port=443/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
-- If you plan to run the Appcircle DMZ server with HTTP:
-
-```bash
-sudo firewall-cmd --add-port=80/tcp --permanent
-sudo firewall-cmd --reload
-```
-
 To check if the ports are open, you can run the following command:
 
 ```bash
