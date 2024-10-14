@@ -178,7 +178,7 @@ As of now, Appcircle does not have a sample repository for Xamarin apps. So the 
 
 :::
 
-**4.** Add your keystore to [Android Keystores](https://docs.appcircle.io/signing-identities/android-keystores) using the **Signing Identities** module on Appcircle.
+**4.** Add your keystore to [Android Keystores](/signing-identities/android-keystores) using the **Signing Identities** module on Appcircle.
 
 These keystores will be used while building the signed app in the build pipeline.
 
