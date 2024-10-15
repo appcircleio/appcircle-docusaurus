@@ -112,10 +112,12 @@ The following table details the roles and restrictions for the [**Signing and Id
 | Apple Cerficate Signing Request | List CSR                               | ✅     | ✅       | ✅      |
 | Apple Identifiers               | Add/Delete/Update Apple Identifiers    | ✅     | ✅       | ⛔      |
 | Apple Identifiers               | List Apple Identifiers                 | ✅     | ✅       | ✅      |
-| Apple Device                    | Add/Delete Apple Device                | ✅     | ✅       | ⛔      |        
+| Apple Device                    | Add Device Manuel                      | ✅     | ✅       | ⛔      |
+| Apple Device                    | Invite User via Email                  | ✅     | ✅       | ⛔      |
+| Apple Device                    | Delete Apple Device                    | ✅     | ✅       | ⛔      |
+| Apple Device                    | Sync from Apple Developer              | ✅     | ✅       | ⛔      |
 | Apple Device                    | Register Devices to Apple Developer    | ✅     | ✅       | ⛔      |
 | Apple Device                    | Adding New Device to Provision         | ✅     | ✅       | ⛔      |
-| Apple Device                    | Sync from Apple Developer              | ✅     | ✅       | ⛔      | 
 | Apple Device                    | List Apple Device                      | ✅     | ✅       | ✅      |
 | Apple Profile                   | Add/Delete/Update Apple Profiles       | ✅     | ✅       | ⛔      |
 | Apple Profile                   | List Apple Profiles                    | ✅     | ✅       | ✅      |
