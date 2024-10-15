@@ -25,6 +25,16 @@ Authentication method can be configured from the [store settings](/enterprise-ap
 
 :::
 
+::: warning
+
+Please note that to login to the Enterprise Portal, you must enable cookies in your browser. Cookies help maintain your session and ensure secure access.
+
+Refer to your browser's settings to enable cookies:
+
+**Chrome**: Settings > Privacy and security > Cookies.
+**Safari**: Preferences > Privacy.
+
+:::
 
 ## Listing and Downloading App version
 
