@@ -101,15 +101,15 @@ User can use `AC_RELEASE_NOTES` environment variable, if the `apk`, `aab` or `ip
 
 #### Huawei AppGallery
 
-| Variable             | Description                                                                                                                     |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| AC_HUAWEI_APP_ID     | The unique identifier assigned to the application registered in the Huawei AppGallery for integration purposes.                 |
-| AC_API_KEY           | A secret key used to authenticate API requests, providing secure access to Appcircle services.                                  |
-| AC_API_KEY_FILE_NAME | The name of the file that stores the API key, used for secure access during integration.                                        |
-| AC_GEM_FILE          | The configuration or dependency file for Ruby's gem package manager, used in the Appcircle build process.                       |
-| AC_PLUGIN_FILE       | The file containing plugins or extensions for Appcircle, used to extend functionality during the build or distribution process. |
-| AC_MARKETPLACE_TYPE  | Specifies the type of app marketplace, such as Google Play, App Store, or Huawei AppGallery, where the app will be distributed. |
-| AC_FASTFILE_CONFIG   | Configuration file for Fastlane’s Fastfile, used to automate app release and build processes in Appcircle.                      |
+| Variable             | Description                                                                                                                        |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| AC_HUAWEI_APP_ID     | The unique identifier assigned to the application registered in the Huawei AppGallery for integration purposes.                    |
+| AC_API_KEY           | A secret key used by Appcircle to authenticate API requests and provide secure access to third-party services, such as app stores. |
+| AC_API_KEY_FILE_NAME | The name of the file that stores the API key, used for secure access during integration.                                           |
+| AC_GEM_FILE          | The configuration or dependency file for Ruby's gem package manager, used in the Appcircle build process.                          |
+| AC_PLUGIN_FILE       | The file containing plugins or extensions for Appcircle, used to extend functionality during the build or distribution process.    |
+| AC_MARKETPLACE_TYPE  | Specifies the type of app marketplace, such as Google Play, App Store, or Huawei AppGallery, where the app will be distributed.    |
+| AC_FASTFILE_CONFIG   | Configuration file for Fastlane’s Fastfile, used to automate app release and build processes in Appcircle.                         |
  
 #### Google Play Store
 
@@ -126,7 +126,7 @@ User can use `AC_RELEASE_NOTES` environment variable, if the `apk`, `aab` or `ip
 | Variable                       | Description                                                                                                                                    |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | AC_API_KEY_FILE_NAME           | The name of the file that contains the App Store Connect API key, used for authenticating App Store Connect integrations.                      |
-| AC_API_KEY                     | A secure API key for accessing App Store Connect services to automate app management and distribution tasks.                                   |
+| AC_API_KEY                     | A secure API key for accessing App Store Connect services.                                                                                     |
 | AC_APPLE_APP_SPECIFIC_USERNAME | The Apple username specifically used for app-related tasks and authentication in App Store Connect.                                            |
 | AC_APPLE_APP_SPECIFIC_PASSWORD | The application-specific password for secure access to Apple services such as App Store Connect.                                               |
 | AC_APPLE_ID                    | The unique Apple ID associated with the developer account used to manage app releases and distribution.                                        |
