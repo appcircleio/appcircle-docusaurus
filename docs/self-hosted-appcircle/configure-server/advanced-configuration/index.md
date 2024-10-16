@@ -8,7 +8,6 @@ tags:
     system optimization,
     LDAP Brute Force Protection,
     cache size configuration,
-    Command-Line Interface (CLI),
     dmz,
     enterprise app store,
     testing distribution,
