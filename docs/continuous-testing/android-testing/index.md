@@ -1,7 +1,7 @@
 ---
 title: Android Testing
 description: Optimize your Android app's performance with comprehensive testing. Leverage unit tests and Firebase Test Lab for early issue detection and resolution.
-tags: [android testing, unit tests, Firebase Test Lab, Android apps, testing strategy, quality assurance]
+tags: [unit tests, Firebase Test Lab, Android apps, testing strategy, quality assurance]
 ---
 
 # Android Testing
