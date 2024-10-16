@@ -62,35 +62,55 @@ For more information about the DMZ structure, you can check the [Appcircle DMZ d
 
 Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version.
 
+<!-- Version Anchor Links -->
+[3.22.0]: /release-notes#3220---2024-10-04-apple-devices-build-report-improvement-auto-cancel-redundant-pipelines-bug-fixes-and-more
+[3.21.0]: /release-notes#3210---2024-09-12-publish-log-monitoring-sso-mapping-and-enterprise-app-store-improvements-xcode-160-bug-fixes-and-more
+[3.20.5]: /release-notes#3205---2024-09-02-android-publish-improvements-in-app-updates-and-more
+[3.20.4]: /release-notes#3204---2024-08-20-role-management-updates-testing-distribution--enterprise-app-store-improvements-xcode-161-beta-1-bug-fixes-and-more
+[3.20.1]: /release-notes#3201---2024-08-05---role-management-updates-enterprise-app-store-and-publish-improvements-xcode-160-beta-5-bug-fixes-and-more
+[3.20.0]: /release-notes#3200---2024-07-29---role-management-updates-testing-distribution-and-publish-improvements-xcode-160-beta-4-bug-fixes-and-more
+[3.19.1]: /release-notes#3191---2024-07-04---publish-and-signing-identity-module-improvements-xcode-160-beta-3-bug-fixes-and-more
+[3.19.0]: /release-notes#3190---2024-06-27---publish-apps-to-microsoft-intune-app-store-connect-integration-publish-and-signing-identity-enhancements-xcode-160-beta-2-bug-fixes-and-more
+[3.18.0]: /release-notes#3180---2024-05-31---build-enhancements-appcircle-cli-v220-publish-improvements-and-more
+[3.17.1]: /release-notes#3171---2024-05-23---publish-activity-log-enhancement-send-to-microsoft-intune-publish-module-bug-fixes
+[3.17.0]: /release-notes#3170---2024-05-17---ldap-mapping-improvements-publish-module-bug-fixes-and-more
+[3.16.0]: /release-notes#3160---2024-05-10---new-features-in-publish-module-resigning-binary-xcode-154-and-more
+[3.15.0]: /release-notes#3150---2024-04-24---aab-to-apk-improved-testing-distribution-publish-event-enhancement
+[3.14.0]: /release-notes#3140---2024-04-04---improved-workflow-editor-publish-module-enhancement-deprecated-store-submit-module
+[3.13.0]: /release-notes#3130---2024-03-04---improved-publish-module-xcode-153-build-infrastructure-updates
+
 <details>
     <summary>Click to view version history.</summary>
         
-        | Version | Release Date |
-        |---------|--------------|
-        | 3.22.0  | 11/10/2024   |
-        | 3.21.2  | 01/10/2024   |
-        | 3.21.1  | 30/09/2024   |
-        | 3.21.0  | 17/09/2024   |
-        | 3.20.6  | 10/09/2024   |
-        | 3.20.5  | 09/09/2024   |
-        | 3.20.4  | 26/08/2024   |
-        | 3.20.3  | 20/08/2024   |
-        | 3.20.2  | 16/08/2024   |
-        | 3.20.1  | 07/08/2024   |
-        | 3.19.1  | 19/07/2024   |
-        | 3.18.0  | 14/06/2024   |
-        | 3.17.2  | 30/05/2024   |
-        | 3.17.1  | 25/05/2024   |
-        | 3.17.0  | 21/05/2024   |
-        | 3.16.0  | 14/05/2024   |
-        | 3.15.1  | 11/05/2024   |
-        | 3.15.0  | 26/04/2024   |
-        | 3.14.0  | 17/04/2024   |
-        | 3.13.2  | 15/03/2024   |
-        | 3.13.1  | 07/03/2024   |
-        | 3.12.3  | 21/02/2024   |
-        | 3.12.2  | 19/02/2024   |
-        | 3.12.1  | 12/02/2024   |
+        | Version   | Release Date |
+        |-----------|--------------|
+        | [3.22.0]  | 11/10/2024   |
+        |  3.21.2   | 01/10/2024   |
+        |  3.21.1   | 30/09/2024   |
+        | [3.21.0]  | 17/09/2024   |
+        |  3.20.6   | 10/09/2024   |
+        | [3.20.5]  | 09/09/2024   |
+        | [3.20.4]  | 26/08/2024   |
+        |  3.20.3   | 20/08/2024   |
+        |  3.20.2   | 16/08/2024   |
+        | [3.20.1]  | 07/08/2024   |
+        | [3.20.0]  |     -        |
+        | [3.19.1]  | 19/07/2024   |
+        | [3.19.0]  |     -        |
+        | [3.18.0]  | 14/06/2024   |
+        |  3.17.2   | 30/05/2024   |
+        | [3.17.1]  | 25/05/2024   |
+        | [3.17.0]  | 21/05/2024   |
+        | [3.16.0]  | 14/05/2024   |
+        |  3.15.1   | 11/05/2024   |
+        | [3.15.0]  | 26/04/2024   |
+        | [3.14.0]  | 17/04/2024   |
+        |  3.13.2   | 15/03/2024   |
+        |  3.13.1   | 07/03/2024   |
+        | [3.13.0]  |     -        |
+        |  3.12.3   | 21/02/2024   |
+        |  3.12.2   | 19/02/2024   |
+        |  3.12.1   | 12/02/2024   |
         
 </details>
 
