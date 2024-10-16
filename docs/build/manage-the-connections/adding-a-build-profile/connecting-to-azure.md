@@ -1,7 +1,7 @@
 ---
 title: Connecting to Azure DevOps
 description: Learn how to connect to Azure DevOps in Appcircle
-tags: [build profile, connection, azure devops]
+tags: [build profile, connection]
 sidebar_position: 4
 ---
 

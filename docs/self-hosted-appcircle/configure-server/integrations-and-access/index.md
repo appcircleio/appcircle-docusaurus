@@ -8,7 +8,6 @@ tags:
     Git providers,
     SSL configuration,
     network access,
-    login configuration,
     proxy configuration,
     LDAP settings,
   ]
