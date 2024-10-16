@@ -227,77 +227,99 @@ sudo -E printenv
 
 ### How can I send a custom Email?
 
-Appcircle provides a ready-to-use email structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the custom script below to send their own custom email.
+Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the custom script below to send their own custom email.
+
+The following script is set to use a [**Gmail SMTP Server**]. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
 
 ```bash
 
+# Set SMTP server 
+HOST_="smtp.gmail.com"
+PORT_="587"
+ACCOUNT_="gmail"
+
+# Add account details (make sure to replace EMAIL_, USERNAME_, and PASSWORD_ with your actual details)
+EMAIL_="your-email-address@gmail.com"
+USERNAME_="your-email-address@gmail.com"
+PASSWORD_="your-email-password"
+
+# Send a test email
+EMAIL_SUBJECT="Test Email Subject"
+EMAIL_TO="recieve-email-address"
+EMAIL_FROM="sender-email-address"
+EMAIL_BODY="This is the body of the test email."
+
+# Detect operating system
 os=""
-if uname -a | grep -iq "darwin"
-then
-	os="darwin"
-elif uname -a | grep -iq "linux"
-then
-	os="linux"
+if uname -a | grep -iq "darwin"; then
+    os="darwin"
+elif uname -a | grep -iq "linux"; then
+    os="linux"
 fi
 
-if [ "$os" == "" ]
-then
-	echo "This script expects darwin or linux."
-	exit 1
-elif [ "$os" == "darwin" ] && which brew | grep -c "not found"
-then
-	echo "Can't find brew installation; make brew command visible or install homebrew and try again"
-	exit 1
-elif [ "$os" == "linux" ] && ! dpkg -s apt | grep -c "install ok installed"
-then
-	echo "apt is not installed; install apt and try again"
-	exit 1
+# Check if OS is supported
+if [ "$os" == "" ]; then
+    echo "This script expects darwin or linux."
+    exit 1
+elif [ "$os" == "darwin" ] && ! which brew > /dev/null 2>&1; then
+    echo "Can't find brew installation; make brew command visible or install homebrew and try again"
+    exit 1
+elif [ "$os" == "linux" ] && ! dpkg -s apt > /dev/null 2>&1; then
+    echo "apt is not installed; install apt and try again"
+    exit 1
 fi
 
-if [ "$os" == "linux" ]
-then
-	sudo apt-get install mailutils
-	sudo apt-get install msmtp
-	sudo apt-get install msmtp-mta
+# Install necessary packages
+if [ "$os" == "linux" ]; then
+    sudo apt-get update
+    sudo apt-get install -y mailutils msmtp msmtp-mta
+elif [ "$os" == "darwin" ]; then
+    brew install mailutils
+    brew install msmtp
+    echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
 fi
 
-if [ "$os" == "darwin" ]
-then
-	brew install mailutils
-	brew install msmtp
-	echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
-fi
-
-echo "defaults
+# Create the .msmtprc file with appropriate permissions
+cat <<EOF > ~/.msmtprc
+defaults
 auth on
-tls on" >> ~/.msmtprc
+tls on
+EOF
 
-if [ "$os" == "linux" ]
-then
-	echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
-elif [ "$os" == "darwin" ]
-then
-	{ echo -n "tls_fingerprint " &
-	  msmtp --serverinfo --tls --tls-certcheck=off --host=smtp.gmail.com --port=587 \
-	  | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}" ;
-	} >> ~/.msmtprc
+if [ "$os" == "linux" ]; then
+    echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
+elif [ "$os" == "darwin" ]; then
+    { echo -n "tls_fingerprint " && msmtp --serverinfo --tls --tls-certcheck=off --host=$HOST_ --port=$PORT_ | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}"; } >> ~/.msmtprc
 fi
 
-echo "logfile ~/.msmtp.log
-account gmail
-host smtp.gmail.com
-port 587
+cat <<EOF >> ~/.msmtprc
+logfile ~/.msmtp.log
+account $ACCOUNT_
+host $HOST_
+port $PORT_
 from $EMAIL_
 user $USERNAME_
 password $PASSWORD_
-account default: gmail" >> ~/.msmtprc
+account default: $ACCOUNT_
+EOF
 
-echo "export MAIL_SERVER = smtp.gmail.com
-export MAIL_PORT = 587
-export MAIL_USE_TLS = True
-export MAIL_USE_SSL = False
-export MAIL_USERNAME = $EMAIL_
-export MAIL_PASSWORD = $PASSWORD_" >> ~/.$(basename $SHELL)rc
+# Restrict permissions for the .msmtprc file to avoid security issues
+chmod 600 ~/.msmtprc
+
+# Export mail variables to the shell environment
+echo "export MAIL_SERVER=$HOST" >> ~/.$(basename $SHELL)rc
+echo "export MAIL_PORT=$PORT" >> ~/.$(basename $SHELL)rc
+echo "export MAIL_USE_TLS=True" >> ~/.$(basename $SHELL)rc
+echo "export MAIL_USE_SSL=False" >> ~/.$(basename $SHELL)rc
+echo "export MAIL_USERNAME=$EMAIL_" >> ~/.$(basename $SHELL)rc
+echo "export MAIL_PASSWORD=$PASSWORD_" >> ~/.$(basename $SHELL)rc
+
+echo "From: $EMAIL_FROM
+To: $EMAIL_TO
+Subject: $EMAIL_SUBJECT
+
+$EMAIL_BODY" | msmtp --debug --from=$EMAIL_ -t $EMAIL_TO
+
 
 ```
 
@@ -305,9 +327,33 @@ export MAIL_PASSWORD = $PASSWORD_" >> ~/.$(basename $SHELL)rc
 
 When using your own SMTP server credentials for the three variables below, please use Environment Variables. This prevents sensitive information, such as passwords, from being exposed to unauthorized individuals. For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
 
-- $EMAIL_
-- $USERNAME_
-- $PASSWORD_
+- **$EMAIL_**: SMTP Server email address
+- **$USERNAME_**: Your email address
+- **$PASSWORD_**: Your email address password
+
+Otherwise, to send an e-mail you need to have some information such as e-mail subject, sender e-mail, reciever e-mail. You can use these parameters to use 
+
+- **EMAIL_SUBJECT**: Subject of sending e-mail
+- **EMAIL_TO**: Reciever e-mail address.
+- **EMAIL_FROM**: Sender e-mail address.
+- **EMAIL_BODY**: Content of sending e-mail
+
+:::
+
+
+:::caution Protocols and SMTP Host
+
+This script uses the TLS protocol for SMTP server usage. Since **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$HOST_` parameter. 
+If you are using your own SMTP server. Don't forget to change the `$HOST_` value here. 
+
+On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `MAIL_USE_TLS` or `MAIL_USE_SSL` parameters in the script to `true/false`. Note that you need to change the `$PORT_` parameter when using **SSL and TLS**. For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
+
+:::
+
+
+:::danger Custom Email
+
+To use an SMTP server, this script first installs the necessary certificates, then authenticates to the server with the required credentials and sends the prepared email content to the recipient's email address. In order to change the sender's email address, the SMTP server must allow it by providing the necessary permissions. Otherwise, SMTP servers will send the email using the authenticated email address to prevent spoofing (impersonating someone else).
 
 :::
 
