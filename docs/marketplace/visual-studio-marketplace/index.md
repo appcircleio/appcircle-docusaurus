@@ -4,7 +4,6 @@ description: Appcircle Visual Studio Marketplace extension allows you to distrib
 tags:
   [
     azure,
-    azure devops,
     visual studio,
     visual studio marketplace,
     testing-distribution,

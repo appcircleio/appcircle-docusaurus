@@ -5,7 +5,6 @@ tags:
   [
     cloud providers,
     Amazon Web Services,
-    AWS,
     cloud computing,
     build infrastructure,
     cloud resources,

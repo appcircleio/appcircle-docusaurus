@@ -328,6 +328,11 @@ approve:
   description: "Description for approve"
   permalink: /approve
 
+apk distribution:
+  label: apk distribution
+  description: "Description for apk distribution"
+  permalink: /apk-distribution
+
 "app sweep":
   label: "app sweep"
   description: "Description for app sweep"
@@ -402,6 +407,21 @@ automaiton:
   label: "automatic updates"
   description: "Description for automatic updates"
   permalink: /automatic-updates
+
+auth0:
+  label: "auth0"
+  description: "Description for auth0"
+  permalink: /auth0
+
+aws:
+  label: "aws"
+  description: "Description for aws"
+  permalink: /aws
+
+azure:
+  label: "azure"
+  description: "Description for azure"
+  permalink: /azure
 
 badge:
   label: "badge"
@@ -1088,8 +1108,8 @@ fastlane:
   description: "Description for fastlane"
   permalink: /fastlane
 
-"fastlane marketplace":
-  label: "fastlane marketplace"
+"fastlane-marketplace":
+  label: "fastlane-marketplace"
   description: "Description for fastlane marketplace"
   permalink: /fastlane-marketplace
 
@@ -1243,8 +1263,8 @@ identifiers:
   description: "Description for identifiers"
   permalink: /identifiers
 
-"in app updates":
-  label: "in app updates"
+"in-app updates":
+  label: "in-app updates"
   description: "Description for in app updates"
   permalink: /in-app-updates
 
@@ -1743,8 +1763,8 @@ platform:
   description: "Description for platform build guides"
   permalink: /platform-build-guides
 
-"platform specific":
-  label: "platform specific"
+"platform-specific":
+  label: "platform-specific"
   description: "Description for platform specific"
   permalink: /platform-specific
 
@@ -2344,6 +2364,11 @@ test:
   label: "test report"
   description: "Description for test report"
   permalink: /test-report
+
+"test reports":
+  label: "test reports"
+  description: "Description for test reports"
+  permalink: /test-reports
 
 "test result":
   label: "test result"
