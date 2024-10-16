@@ -1,7 +1,7 @@
 ---
 title: Amazon Web Services (AWS)
 description: Learn how to create a self-hosted Appcircle runner instance on Amazon Web Services (AWS).
-tags: [self-hosted, self-hosted runner, cloud providers, aws, amazon web services, EC2]
+tags: [self-hosted, self-hosted runner, cloud providers, amazon web services]
 sidebar_position: 1
 ---
 
