@@ -1,7 +1,7 @@
 ---
 title: Store and Distribution LDAP Authentication
 description: Learn how to set up and manage LDAP login integration for your organization in Appcircle
-tags: [account, my organization, ldap login, distribution, distribution profile, authentication, two factor authentication, 2fa]
+tags: [account, my organization, ldap login, distribution, distribution profile, authentication, 2fa]
 sidebar_position: 4
 ---
 
