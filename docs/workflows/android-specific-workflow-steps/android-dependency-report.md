@@ -1,7 +1,7 @@
 ---
 title: Android Dependency Report
 description: Learn how to use the Android Dependency Report workflow step in Appcircle
-tags: [android, mobile, android, dependency, report]
+tags: [android, mobile, android, report]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
