@@ -306,6 +306,14 @@ To ensure the new resource limits are applied, follow these steps:
 
 <DowntimeCaution />
 
+- Log in to the Appcircle server with SSH or a remote connection.
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
 <SpacetechExampleInfo/>
 
 <RestartAppcircleServer />
