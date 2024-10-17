@@ -6,6 +6,10 @@ sidebar_position: 4
 sidebar_label: Troubleshooting & FAQ
 ---
 
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
+
 # Overview
 
 This section is designed to help you quickly find answers to common questions and provide you with a better understanding of Appcircle server and runner.
@@ -291,6 +295,20 @@ The first thing you should check is **PAT** permissions.
 If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
 
 For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
+
+### What should be done after upgrading the hardware resources (CPU & memory) of the Appcircle server?
+
+When you upgrade the hardware resources (CPU & memory) of the Appcircle server, it's important to update the resource limits accordingly. 
+
+Appcircle sets these limitations with the `export` command and configures CPU and memory limits for the services. If you don't run the `export` command again after updating the CPU and memory of the Appcircle host machine, the Appcircle services will continue to use the old resource limits.
+
+To ensure the new resource limits are applied, follow these steps:
+
+<DowntimeCaution />
+
+<SpacetechExampleInfo/>
+
+<RestartAppcircleServer />
 
 ## Appcircle Runner FAQ
 
