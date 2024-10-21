@@ -186,7 +186,7 @@ In the Appcircle Publish module, the steps within a Publish flow operate indepen
 
 Below is an example of how this can be done. Once an ENV variable is modified in a step and saved to the output direction, it will become accessible in another step.
 
-- For first step. Suppose we create a release note using the [**Publish Release Note Component**](/workflows/common-workflow-steps/publish-release-notes) during the build process. We then want to modify and use this release note during the Publish process.
+- For the first step. Suppose we create a release note using the [**Publish Release Note Component**](/workflows/common-workflow-steps/publish-release-notes) during the build process. We then want to modify and use this release note during the Publish process.
 
 ```bash
 
@@ -213,7 +213,7 @@ fi
 
 ```
 
-- For second step. Now we can access this environment variable directly in another step.
+- For the second step: We can now access this environment variable directly in another step.
 
 ```bash
 
