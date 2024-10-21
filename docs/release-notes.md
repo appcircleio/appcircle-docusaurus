@@ -28,7 +28,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - An issue was fixed where using the `"` character in review notes or descriptions within metadata details caused errors when attempting to update the connected metadata details through the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where multiline environment variables were causing errors during the “Send to TestFlight” publish step. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where empty metadata fields on Appcircle were being displayed as `null` on the App Store Connect side after updates. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where users with ‘+’ in their email addresses could not be invited, re-invited, or deleted from an organization. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where users with a ‘+’ in their email addresses could not be invited to or deleted from an organization. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - API request checks for Enterprise and Testing Portal logins were improved to display more accurate responses for security reasons. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where branches deleted from Azure repositories were not being removed from the Appcircle build profile. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 
