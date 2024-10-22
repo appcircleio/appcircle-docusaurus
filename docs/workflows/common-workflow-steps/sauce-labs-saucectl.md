@@ -1,6 +1,6 @@
 ---
 title: Sauce Labs Saucectl
-description: The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs.
+description: Automate the execution of UI tests for iOS and Android applications using Saucectl by Sauce Labs.
 tags: [saucectl, sauce labs, test, android test, emulator, device test, automation, ios test, ui test, simulator]
 ---
 
@@ -8,9 +8,9 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Sauce Labs Saucectl
 
-The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs. `saucectl` performs the underlying business logic to access the tests in your existing framework, runs them in the Sauce Labs Cloud, then securely transmits the test assets to the Sauce Labs platform, where you can review, share, and evaluate your test outcomes at scale.
+The **Sauce Labs Saucectl** component allows you to send your apps to [Sauce Labs](https://docs.saucelabs.com/sauce-basics/) within the Appcircle Workflow using `saucectl` command. This allows you to send app builds to Sauce Labs and adjust your workflow based on the test results. Saucectl is described in the [Sauce Labs documentation](https://docs.saucelabs.com/dev/cli/saucectl/) as follows:
 
-For more information, please visit the [Saucectl documentation](https://docs.saucelabs.com/dev/cli/saucectl/). This document will guide you on how to use the `saucectl` command and [Sauce Labs](https://docs.saucelabs.com/sauce-basics/) through Appcircle.
+> The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs. `saucectl` performs the underlying business logic to access the tests in your existing framework, runs them in the Sauce Labs Cloud, then securely transmits the test assets to the Sauce Labs platform, where you can review, share, and evaluate your test outcomes at scale.
 
 ### Prerequisites
 
@@ -20,14 +20,17 @@ Below are the workflow steps required before running the **Sauce Labs Saucectl**
 
 | Prerequisite Workflow Step  | Description                                                                   |
 | --------------------------- | ----------------------------------------------------------------------------- |
-| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | This step generates the required Android test application outputs needed for testing on Sauce Labs. |
+| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | This step generates the required Android test application outputs (`$AC_APK_PATH` and `$AC_TEST_APK_PATH`) needed for testing on Sauce Labs. |
 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3930-androidSauce1.png' />
 
-:::info Config.yaml
+:::info Saucectl config.yaml
 
-For this step to work, ensure that a `config.yml` file is available. You can set this file as an environment variable in Appcircle or include it directly in your repository.
+For the **Sauce Labs Saucectl** step to work, you must have a `config.yml` file that defines the test configurations. You can either:
+
+1. Include the `config.yml` file directly in your project repository.
+2. Set it as an [environment variable in Appcircle](/environment-variables/managing-variables#adding-files-as-environment-variables), then you should [select this environment group from Configuration](/environment-variables/managing-variables#using-environment-variable-groups-in-builds).
 
 Here’s a sample `config.yml` file for [Espresso](https://docs.saucelabs.com/mobile-apps/automated-testing/espresso-xcuitest/espresso/):
 
@@ -64,13 +67,16 @@ artifacts:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) | After the [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) step runs, the test IPA and APP paths (`$AC_TEST_IPA_PATH` and `$AC_UITESTS_RUNNER_PATH`) will be created automatically. So that the **Sauce Labs Saucectl** component depends on these paths. |
+| [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) | This step generates the test IPA and APP paths (`$AC_TEST_IPA_PATH` and `$AC_UITESTS_RUNNER_PATH`) will be created automatically. So that the **Sauce Labs Saucectl** component depends on these paths. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3930-iosSauceFlowNew.png' />
 
-:::info Config.yaml
+:::info Saucectl config.yaml
 
-For this step to work, ensure that a `config.yml` file is available. You can set this file as an environment variable in Appcircle or include it directly in your repository.
+For the **Sauce Labs Saucectl** step to work, you must have a `config.yml` file that defines the test configurations. You can either:
+
+1. Include the `config.yml` file directly in your project repository.
+2. Set it as an [environment variable in Appcircle](/environment-variables/managing-variables#adding-files-as-environment-variables), then you should [select this environment group from Configuration](/environment-variables/managing-variables#using-environment-variable-groups-in-builds).
 
 And sample `config.yml` file for [XCUITest](https://docs.saucelabs.com/mobile-apps/automated-testing/espresso-xcuitest/xcuitest/):
 
@@ -149,18 +155,20 @@ For each component, specific input variables are required for its operation on y
 | `$AC_SL_TUNNEL_OWNER`           | The tunnel owner, if it is not the testing account. Check [saucectl](https://docs.saucelabs.com/dev/cli/saucectl/run/#--tunnel-owner) documentation for details. Default value is `$AC_SL_TUNNEL_OWNER`.                                                                                                                                                                                                                                                                                                                                                                                                       | Optional |
 | `$AC_SL_TUNNEL_TIMEOUT`         | How long to wait for the specified tunnel to be ready. Check [saucectl](https://docs.saucelabs.com/dev/cli/saucectl/run/#--tunnel-timeout) documentation for details. Default value is `$AC_SL_TUNNEL_TIMEOUT`.                                                                                                                                                                                                                                                                                                                                                                                                | Optional |
 
+:::warning
+
+Tunnel support is not available in the free trial of Sauce Labs. This feature, essential for securely testing local applications or services behind a firewall, is available only in paid plans. 
+
+:::
+
 ### Output Variables
 
-The artifacts generated by the **Sauce Labs Saucectl** step are saved in the directory specified by the `AC_SL_DOWNLOAD_MATCH` parameter, and the timing of their download is determined by the **Sauce Labs When to Download Artifacts** parameter `AC_SL_WHEN_ARTIFACT_DOWNLOAD`.
+The artifacts generated by the **Saucectl Run** step are saved in the directory defined by the **Sauce Labs Download Directory** (`AC_SL_DOWNLOAD_DIR`). You can control what files are downloaded using the **Sauce Labs Download Match** (`AC_SL_DOWNLOAD_MATCH`) parameter and decide when to download them using the **Sauce Labs When to Download Artifacts** (`AC_SL_WHEN_ARTIFACT_DOWNLOAD`) parameter.
 
-| Variable Name                   | Description                                                                                       |
-|---------------------------------|---------------------------------------------------------------------------------------------------|
-| `$AC_SL_DOWNLOAD_MATCH`         | You can control the format of these outputs using the **Sauce Labs Download Match** parameter.    |
-| `$AC_SL_WHEN_ARTIFACT_DOWNLOAD` | Determine when they are downloaded using the **Sauce Labs When to Download Artifacts** parameter. |
+To access all saved artifacts, visit the [Download Artifacts](/build/post-build-operations/after-a-build#download-artifacts) section in Appcircle at the end of the build log.
 
-
-To access all saved artifacts, go to the [Download Artifacts](/build/post-build-operations/after-a-build#download-artifacts) section in Appcircle at the end of the build log.
+---
 
 To access the source code of this component, please use the following link:
 
-https://github.com/appcircleio/appcircle-saucectl-run-component
+https://github.com/appcircleio/appcircle-sauce-labs-saucectl-component
