@@ -243,9 +243,10 @@ EMAIL_="your-email-address@gmail.com"
 USERNAME_="your-email-address@gmail.com"
 PASSWORD_="your-email-password"
 
-# Send a test email
+# Set e-mail details
 EMAIL_SUBJECT="Test Email Subject"
 EMAIL_TO="recieve-email-address"
+# This part will be used for visualization, Example usage: "Appcircle <test@gmail.com>"
 EMAIL_FROM="sender-email-address"
 EMAIL_BODY="This is the body of the test email."
 
@@ -258,14 +259,24 @@ elif uname -a | grep -iq "linux"; then
 fi
 
 # Check if OS is supported
-if [ "$os" == "" ]; then
-    echo "This script expects darwin or linux."
-    exit 1
-elif [ "$os" == "darwin" ] && ! which brew > /dev/null 2>&1; then
-    echo "Can't find brew installation; make brew command visible or install homebrew and try again"
-    exit 1
-elif [ "$os" == "linux" ] && ! dpkg -s apt > /dev/null 2>&1; then
-    echo "apt is not installed; install apt and try again"
+if [ "$os" == "darwin" ]; then
+    if ! command -v brew > /dev/null 2>&1; then
+        echo "Error msg: brew not found."
+        exit 1
+    fi
+    brew install mailutils msmtp
+    echo "tls_fingerprint" >> ~/.msmtprc
+
+elif [ "$os" == "linux" ]; then
+    if ! dpkg -s apt > /dev/null 2>&1; then
+        echo "Error msg: apt not found."
+        exit 1
+    fi
+    apt-get install -y mailutils msmtp msmtp-mta
+    echo "ca-cert" >> ~/.msmtprc
+
+else
+    echo "Unsupported OS: $os. This script expects Darwin or Linux."
     exit 1
 fi
 
@@ -338,8 +349,14 @@ Otherwise, to send an e-mail you need to have some information such as e-mail su
 - **EMAIL_FROM**: Sender e-mail address.
 - **EMAIL_BODY**: Content of sending e-mail
 
-:::
+:::info Username and Password for Google SMTP Users
 
+When you want to send an email with your gmail account using **Google's SMTP** server, you must first **authenticate** to the Google SMTP server. For this process, you need to enter your **App Password** in the password field. 
+
+In order to generate this password, **2FA authentication** must be turned on in your **Google account**. You can generate and retrieve this password from the **App Passwords** section under **Google Account management**. For detailed information about **App Passwords**, please visit the [**Google App Password**](https://support.google.com/accounts/answer/185833?hl=en) documentations.
+
+
+:::
 
 :::caution Protocols and SMTP Host
 
@@ -351,7 +368,7 @@ On the other hand, to change **TLS or SSL** usage, you can change the protocol b
 :::
 
 
-:::danger Custom Email
+:::danger Sender Email and Spoofing
 
 To use an SMTP server, this script first installs the necessary certificates, then authenticates to the server with the required credentials and sends the prepared email content to the recipient's email address. In order to change the sender's email address, the SMTP server must allow it by providing the necessary permissions. Otherwise, SMTP servers will send the email using the authenticated email address to prevent spoofing (impersonating someone else).
 
