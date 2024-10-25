@@ -14,8 +14,9 @@ tags:
 sidebar_position: 3
 ---
 
-import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
 import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -155,19 +156,17 @@ For now, self-hosted Appcircle does not support usage of password protected priv
 
 ## Configure TLS Versions
 
-Transport Layer Security (TLS) is a cryptographic protocol designed to provide secure communication between your client devices and the Appcircle server.
-
-You can choose which TLS versions to support based on your security requirements.
-
-If you want to ensure that all connections to your server are encrypted using the latest and most secure protocol available, you can configure only TLS 1.3.
+Appcircle server by default accept connections over `TLSv1` and above. You can choose which TLS versions to support based on your security requirements. To restrict the TLS version used by the Appcircle server, you can set the `.nginx.sslProtocols` variable in the `global.yaml` of the project.
 
 :::info
-When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Auth, and others.  
+When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Auth and others including the [Appcircle DMZ Server](/docs/self-hosted-appcircle/configure-server/) if you are using Appcircle in DMZ mode.  
 :::
 
-To make Appcircle server to work with TLSv1.3 only:
+To make Appcircle server to work with `TLSv1.2` and above:
 
-- Change the directory to the Appcircle server.
+<DowntimeCaution/>
+
+- Go to the `appcircle-server` directory.
 
 ```bash
 cd appcircle-server
@@ -175,16 +174,25 @@ cd appcircle-server
 
 <SpacetechExampleInfo/>
 
-- Edit your `global.yaml` of your project.
+- Edit the `global.yaml` file of your project.
 
 ```bash
 vi ./projects/spacetech/global.yaml
 ```
 
-- Add or change the SSL protocols variable.
+- Add or update the `nginx.sslProtocols` parameter as below.
+
+:::info
+
+Please keep in mind that the `nginx` key might already exist in your `global.yaml` file. In that case, just add the `sslProtocols` key. If `nginx` does not exist you can add it to the `global.yaml` file of your project.
+
+:::
 
 :::caution
-If you're using the Appcircle server over `HTTPS`, you might already have the `nginx` key in your `global.yaml` file. In that case, you only need to add the `sslProtocols` key.
+
+#### TLSv1.2 is Required for MacOS Runners 🚫
+
+It is important to note, however, that if macOS runners are included in a self-hosted runner pool, `TLSv1.2` support should remain enabled. Currently, .NET on macOS does not support the latest TLS protocol versions, and disabling `TLSv1.2` will disrupt communication with macOS-based runners.
 :::
 
 ```yaml
