@@ -1,16 +1,7 @@
 ---
 title: SSL Configuration
 description: Learn how to configure SSL for your self-hosted Appcircle server
-tags:
-  [
-    self-hosted,
-    ssl,
-    https,
-    certificate,
-    custom domain,
-    enterprise app store,
-    external services,
-  ]
+tags: [self-hosted, ssl, https, certificate, custom domain, enterprise app store, external services]
 sidebar_position: 3
 ---
 
