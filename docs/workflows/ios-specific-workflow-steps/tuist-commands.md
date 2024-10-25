@@ -41,7 +41,7 @@ You can find all the parameters required for this step in the table below, with 
 
 | Variable Name        | Description                                                                                                                                                                         | Status   |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_TUIST_PATH`     | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Optional |
+| `$AC_TUIST_PATH`     | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
 | `$AC_TUIST_COMMANDS` | Specifies the Tuist Commands to be able to run specific Tuist Commands. For example; `tuist test` or `tuist build`.                                                                     | Required |
 
 

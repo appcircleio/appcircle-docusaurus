@@ -1,12 +1,12 @@
 ---
-title: Tuist
+title: Tuist Install
 description: Scale your Xcode projects with Tuist. Streamline project management and automate configurations for efficient iOS app development.
 tags: [xcode automation, project management, ios development, code generation]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Tuist
+# Tuist Install
 
 [**Tuist**](https://docs.tuist.io/) is a command-line tool that abstracts the intricacies of Xcode projects through project generation. It serves as a foundation to help teams maintain and optimize their large modular projects.
 
@@ -15,7 +15,7 @@ You can seamlessly integrate Tuist into your workflow with Appcircle, making set
 
 ### Prerequisites
 
-Before you run the **Tuist** step, you must complete certain prerequisites, as detailed in the table below:
+Before you run the **Tuist Install** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -51,7 +51,7 @@ You can find all the parameters required for this step in the table below, with 
 
 | Variable Name            | Description                                                                                                                                                                         | Status   |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Optional |
+| `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
 | `$AC_TUIST_VERSION`      | Specifies the Tuist version. If not specified, the latest version of Tuist will be installed.                                                                                       | Optional |
 
 
