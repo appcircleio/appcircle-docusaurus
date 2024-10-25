@@ -744,7 +744,7 @@ status = 301
 
 [[redirects]]
   from = "/integrations/working-with-custom-scripts/custom-script-samples#changing-java-version"
-  to = "/workflows/common-workflow-steps/custom-script#how-to-change-java-version"
+  to = "/workflows/common-workflow-steps/change-java-version"
   status = 301
 
 [[redirects]]
@@ -790,7 +790,7 @@ status = 301
 
   [[redirects]]
   from = "/workflows/common-workflow-steps/build-and-test/custom-script#how-to-change-java-version"
-  to = "/workflows/common-workflow-steps/custom-script#how-to-change-java-version"
+  to = "/workflows/common-workflow-steps/change-java-version"
   status = 301
 
   [[redirects]]
@@ -1166,4 +1166,9 @@ status = 301
 [[redirects]]
 from = "/testing-distribution/apple-devices"
 to = "/signing-identities/apple-devices"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/custom-script#how-to-change-java-version"
+to = "/workflows/common-workflow-steps/change-java-version"
 status = 301
