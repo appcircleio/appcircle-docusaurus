@@ -145,54 +145,6 @@ For now, self-hosted Appcircle does not support usage of password protected priv
 
 :::
 
-## Configure TLS Versions
-
-Appcircle server by default accept connections over `TLSv1` and above. You can choose which TLS versions to support based on your security requirements. To restrict the TLS version used by the Appcircle server, you can set the `.nginx.sslProtocols` variable in the `global.yaml` of the project.
-
-:::info
-When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Auth and others including the [Appcircle DMZ Server](/docs/self-hosted-appcircle/configure-server/) if you are using Appcircle in DMZ mode.  
-:::
-
-To make Appcircle server to work with `TLSv1.2` and above:
-
-<DowntimeCaution/>
-
-- Go to the `appcircle-server` directory.
-
-```bash
-cd appcircle-server
-```
-
-<SpacetechExampleInfo/>
-
-- Edit the `global.yaml` file of your project.
-
-```bash
-vi ./projects/spacetech/global.yaml
-```
-
-- Add or update the `nginx.sslProtocols` parameter as below.
-
-:::info
-
-Please keep in mind that the `nginx` key might already exist in your `global.yaml` file. In that case, just add the `sslProtocols` key. If `nginx` does not exist you can add it to the `global.yaml` file of your project.
-
-:::
-
-:::caution
-
-#### TLSv1.2 is Required for MacOS Runners 🚫
-
-It is important to note, however, that if macOS runners are included in a self-hosted runner pool, `TLSv1.2` support should remain enabled. Currently, .NET on macOS does not support the latest TLS protocol versions, and disabling `TLSv1.2` will disrupt communication with macOS-based runners.
-:::
-
-```yaml
-nginx:
-  sslProtocols: TLSv1.3
-```
-
-<RestartAppcircleServer />
-
 ### Sample Configuration
 
 :::info
@@ -306,6 +258,54 @@ Wildcard certificate created for main domain will cover all subdomains listed in
 Although you can create and use dedicated certificates for all subdomains, in our opinion it won't be useful. It will be harder to configure and maintain lots of certificates.
 
 :::
+
+## Configure TLS Versions
+
+Appcircle server by default accept connections over `TLSv1` and above. You can choose which TLS versions to support based on your security requirements. To restrict the TLS version used by the Appcircle server, you can set the `.nginx.sslProtocols` variable in the `global.yaml` of the project.
+
+:::info
+When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Auth and others including the [Appcircle DMZ Server](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md) if you are using Appcircle in DMZ mode.  
+:::
+
+To make Appcircle server to work with `TLSv1.2` and above:
+
+<DowntimeCaution/>
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+<SpacetechExampleInfo/>
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add or update the `nginx.sslProtocols` parameter as below.
+
+:::info
+
+Please keep in mind that the `nginx` key might already exist in your `global.yaml` file. In that case, just add the `sslProtocols` key. If `nginx` does not exist you can add it to the `global.yaml` file of your project.
+
+:::
+
+:::caution
+
+#### TLSv1.2 is Required for MacOS Runners 🚫
+
+It is important to note, however, that if macOS runners are included in a self-hosted runner pool, `TLSv1.2` support should remain enabled. Currently, .NET on macOS does not support the latest TLS protocol versions, and disabling `TLSv1.2` will disrupt communication with macOS-based runners.
+:::
+
+```yaml
+nginx:
+  sslProtocols: TLSv1.3
+```
+
+<RestartAppcircleServer />
 
 ## Enterprise App Store
 
