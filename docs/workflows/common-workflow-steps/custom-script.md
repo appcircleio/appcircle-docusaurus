@@ -258,36 +258,28 @@ elif uname -a | grep -iq "linux"; then
     os="linux"
 fi
 
-# Check if OS is supported
+# Check if OS is supported and install necessary packages
 if [ "$os" == "darwin" ]; then
     if ! command -v brew > /dev/null 2>&1; then
         echo "Error msg: brew not found."
         exit 1
     fi
     brew install mailutils msmtp
+    echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
     echo "tls_fingerprint" >> ~/.msmtprc
 
 elif [ "$os" == "linux" ]; then
-    if ! dpkg -s apt > /dev/null 2>&1; then
+    if ! command -v apt > /dev/null 2>&1; then
         echo "Error msg: apt not found."
         exit 1
     fi
-    apt-get install -y mailutils msmtp msmtp-mta
-    echo "ca-cert" >> ~/.msmtprc
+    sudo apt-get update
+    sudo apt-get install -y mailutils msmtp msmtp-mta
+    echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
 
 else
     echo "Unsupported OS: $os. This script expects Darwin or Linux."
     exit 1
-fi
-
-# Install necessary packages
-if [ "$os" == "linux" ]; then
-    sudo apt-get update
-    sudo apt-get install -y mailutils msmtp msmtp-mta
-elif [ "$os" == "darwin" ]; then
-    brew install mailutils
-    brew install msmtp
-    echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
 fi
 
 # Create the .msmtprc file with appropriate permissions
@@ -297,9 +289,8 @@ auth on
 tls on
 EOF
 
-if [ "$os" == "linux" ]; then
-    echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
-elif [ "$os" == "darwin" ]; then
+# Append specific settings for each OS
+if [ "$os" == "darwin" ]; then
     { echo -n "tls_fingerprint " && msmtp --serverinfo --tls --tls-certcheck=off --host=$HOST_ --port=$PORT_ | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}"; } >> ~/.msmtprc
 fi
 
@@ -318,13 +309,17 @@ EOF
 chmod 600 ~/.msmtprc
 
 # Export mail variables to the shell environment
-echo "export MAIL_SERVER=$HOST" >> ~/.$(basename $SHELL)rc
-echo "export MAIL_PORT=$PORT" >> ~/.$(basename $SHELL)rc
-echo "export MAIL_USE_TLS=True" >> ~/.$(basename $SHELL)rc
-echo "export MAIL_USE_SSL=False" >> ~/.$(basename $SHELL)rc
-echo "export MAIL_USERNAME=$EMAIL_" >> ~/.$(basename $SHELL)rc
-echo "export MAIL_PASSWORD=$PASSWORD_" >> ~/.$(basename $SHELL)rc
+shell_rc=~/.$(basename $SHELL)rc
+{
+    echo "export MAIL_SERVER=$HOST"
+    echo "export MAIL_PORT=$PORT"
+    echo "export MAIL_USE_TLS=True"
+    echo "export MAIL_USE_SSL=False"
+    echo "export MAIL_USERNAME=$EMAIL_"
+    echo "export MAIL_PASSWORD=$PASSWORD_"
+} >> "$shell_rc"
 
+# Send email
 echo "From: $EMAIL_FROM
 To: $EMAIL_TO
 Subject: $EMAIL_SUBJECT
