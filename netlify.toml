@@ -5,12 +5,12 @@
 
 [[redirects]]
   from = "/account/adding-google-play-service-account"
-  to = "/account/my-organization/api-integrations/adding-google-play-service-account"
+  to = "/account/my-organization/integrations/credentials/adding-google-play-service-account"
   status = 301
 
 [[redirects]]
   from = "/account/adding-huawei-api-key"
-  to = "/account/my-organization/api-integrations/adding-huawei-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-huawei-api-key"
   status = 301
 
 [[redirects]]
@@ -20,29 +20,18 @@
 
 [[redirects]]
   from = "/account/ldap-login"
-  to = "/account/my-organization/ldap-login"
+  to = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
   status = 301
 
 [[redirects]]
   from = "/account/sso/single-sign-on"
-  to = "/account/my-organization/sso-providers-configuration/single-sign-on"
+  to = "/account/my-organization/integrations/authentications/sso-authentication"
   status = 301
 
 # Redirects for build-related changes
 [[redirects]]
   from = "/build/connections"
   to = "/build/manage-the-connections"
-  status = 301
-
-# Redirects for distribution and testing
-[[redirects]]
-  from = "/distribute/apple-devices"
-  to = "/distribute/platform-specific-guidance/ios/apple-devices"
-  status = 301
-
-[[redirects]]
-  from = "/distribute/resign"
-  to = "/distribute/platform-specific-guidance/android/resigning-android-binaries"
   status = 301
 
 # Redirects for self-hosted Appcircle configuration changes
@@ -60,6 +49,17 @@
   from = "/self-hosted-appcircle/configure-server/network-access"
   to = "/self-hosted-appcircle/configure-server/integrations-and-access/network-access"
   status = 301
+
+# Redirects for testing-distribution changes
+[[redirects]]
+from = "/distribute"
+to = "/testing-distribution"
+status = 301
+
+[[redirects]]
+from = "/distribute/downloading-binaries"
+to = "/testing-distribution/testing-portal"
+status = 301
 
 # Redirects for workflow-specific changes
 [[redirects]]
@@ -151,38 +151,33 @@
   status = 301
 
 [[redirects]]
-  from = "/distribute/downloading-binaries"
-  to = "/distribute/testing-management/downloading-binaries"
-  status = 301
-
-[[redirects]]
   from = "/account/sso/auth-openid"
-  to = "/account/my-organization/sso-providers-configuration/auth-openid"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/auth-saml"
-  to = "/account/my-organization/sso-providers-configuration/auth-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/azure-saml"
-  to = "/account/my-organization/sso-providers-configuration/azure-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/okta-openid"
-  to = "/account/my-organization/sso-providers-configuration/okta-openid"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/okta-saml"
-  to = "/account/my-organization/sso-providers-configuration/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
   from = "/account/sso/onelogin-saml"
-  to = "/account/my-organization/sso-providers-configuration/onelogin-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
@@ -217,7 +212,7 @@
 
 [[redirects]]
   from = "/enterprise-appstore/customize-ent-store"
-  to = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store"
+  to = "/enterprise-app-store/store-customization"
   status = 301
 
 [[redirects]]
@@ -227,7 +222,7 @@
 
 [[redirects]]
   from = "/account/email-connection"
-  to = "/account/my-organization/notifications-and-communication/email-connection"
+  to = "/account/my-organization/integrations/notification-integrations/email-connection"
   status = 301
 
 [[redirects]]
@@ -242,7 +237,7 @@
 
 [[redirects]]
   from = "/account/slack/appcircle-bot-for-slack"
-  to = "/account/my-organization/notifications-and-communication/slack/appcircle-bot-for-slack"
+  to = "/account/my-organization/integrations/notification-integrations/slack/appcircle-bot-for-slack"
   status = 301
 
 [[redirects]]
@@ -252,7 +247,7 @@
 
 [[redirects]]
   from = "/account/teams-notifications"
-  to = "/account/my-organization/notifications-and-communication/teams-notifications"
+  to = "/account/my-organization/integrations/notification-integrations/teams-notifications"
   status = 301
 
 [[redirects]]
@@ -287,7 +282,7 @@
 
 [[redirects]]
   from = "/enterprise-appstore/add-ent-profile"
-  to = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile"
+  to = "/enterprise-app-store/enterprise-app-store-profile"
   status = 301
 
 [[redirects]]
@@ -302,7 +297,7 @@
 
 [[redirects]]
   from = "/account/webhooks"
-  to = "/account/my-organization/webhooks"
+  to = "/account/my-organization/integrations/notification-integrations/webhooks"
   status = 301
 
 [[redirects]]
@@ -312,7 +307,7 @@
 
 [[redirects]]
   from = "/account/adding-an-app-store-connect-api-key"
-  to = "/account/my-organization/api-integrations/adding-an-app-store-connect-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key"
   status = 301
 
 [[redirects]]
@@ -322,7 +317,7 @@
 
 [[redirects]]
   from = "/account/sso-login/single-sign-on-login"
-  to = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
+  to = "/account/my-organization/integrations/authentications/authentication-store-and-distribution"
   status = 301
 
 [[redirects]]
@@ -347,7 +342,7 @@
 
 [[redirects]]
   from = "/distribute/create-or-select-a-distribution-profile.md"
-  to = "/distribute/create-or-select-a-distribution-profile"
+  to = "/testing-distribution/create-or-select-a-distribution-profile"
   status = 301
 
 [[redirects]]
@@ -402,12 +397,12 @@
 
 [[redirects]]
   from = "/account/slack/slack-notifications"
-  to = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
+  to = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
   status = 301
 
 [[redirects]]
   from = "/account/sso-login/okta-saml"
-  to = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
@@ -449,15 +444,10 @@
   from = "/continuous-testing/android-testing/firebase-test-lab-for-android"
   to = "/workflows/android-specific-workflow-steps/firebase-test-lab"
   status = 301
-
-[[redirects]]
-  from = "/distribute/testing-groups"
-  to = "/distribute/testing-management/testing-groups"
-  status = 301
-
+  
 [[redirects]]
   from = "/enterprise-appstore/configure-ent-profile"
-  to = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile"
+  to = "/enterprise-app-store/store-settings"
   status = 301
 
 [[redirects]]
@@ -519,9 +509,15 @@
   from = "/workflows/android-specific-workflow-steps/build-and-test/appsweep-mobile-security-testing"
   to = "/workflows/android-specific-workflow-steps/appsweep-mobile-security-testing"
   status = 301
+
 [[redirects]]
   from = "/workflows/android-specific-workflow-steps/build-and-test/post-processor"
-  to = "/workflows/android-specific-workflow-steps/post-processor"
+  to = "/workflows/android-specific-workflow-steps/app-post-processor"
+  status = 301
+
+[[redirects]]
+  from = "/workflows/android-specific-workflow-steps/post-processor"
+  to = "/workflows/android-specific-workflow-steps/app-post-processor"
   status = 301
 
 [[redirects]]
@@ -637,7 +633,7 @@
 
 [[redirects]]
   from = "/integrations/integration-guides/jira-integration"
-  to = "/workflows/common-workflow-steps/jira-component"
+  to = "/workflows/common-workflow-steps/jira-comment"
   status = 301
 
 [[redirects]]
@@ -708,22 +704,42 @@
 
 [[redirects]]
   from = "/publish-module/send-to-googleplay"
-  to = "/publish-integrations/android-publish-integrations/send-to-googleplay"
+  to = "/publish-integrations/android-publish-integrations/publish-to-google-play"
+  status = 301
+
+[[redirects]]
+  from = "/publish-integrations/android-publish-integrations/send-to-googleplay"
+  to = "/publish-integrations/android-publish-integrations/publish-to-google-play"
   status = 301
 
 [[redirects]]
   from = "/publish-module/send-to-huawei"
-  to = "/publish-integrations/android-publish-integrations/send-to-huawei"
+  to = "/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery"
+  status = 301
+
+[[redirects]]
+  from = "/publish-integrations/android-publish-integrations/send-to-huawei"
+  to = "/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery"
   status = 301
 
 [[redirects]]
   from = "/publish-module/send-to-googleplay#deleting-android-publish-profiles"
-  to = "/publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles"
+  to = "/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile"
+  status = 301
+
+[[redirects]]
+  from = "/publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles"
+  to = "/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile"
   status = 301
 
 [[redirects]]
   from = "/publish-module/send-to-huawei#deleting-huawei-publish-profiles"
-  to = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
+  to = "/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile"
+  status = 301
+
+[[redirects]]
+  from = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
+  to = "/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile"
   status = 301
 
 [[redirects]]
@@ -784,7 +800,12 @@
 
   [[redirects]]
   from = "/workflows/common-workflow-steps/build-and-test/jira-component"
-  to = "/workflows/common-workflow-steps/jira-component"
+  to = "/workflows/common-workflow-steps/jira-comment"
+  status = 301
+
+  [[redirects]]
+  from = "/workflows/common-workflow-steps/jira-component"
+  to = "/workflows/common-workflow-steps/jira-comment"
   status = 301
 
   [[redirects]]
@@ -846,6 +867,303 @@
   from = "/tutorials/how-to-add-an-android-app"
   to = "/build/platform-build-guides/building-android-applications"
   status = 301
-  
-  
 
+[[redirects]]
+  from = "/signing-identities/ios-certificates-and-provisioning-profiles"
+  to = "/signing-identities"
+  status = 301
+
+[[redirects]]
+  from = "/signing-identities/ios-certificates-and-provisioning-profiles#automatic-signing"
+  to = "/signing-identities/apple-profiles#automatic-signing"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup"
+  to = "/enterprise-app-store/enterprise-app-store-profile"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile"
+  to = "/enterprise-app-store/enterprise-app-store-profile"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile"
+  to = "/enterprise-app-store/enterprise-app-store-profile"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store"
+  to = "/enterprise-app-store/store-customization"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store#advanced-settings"
+  to = "/enterprise-app-store/store-settings#custom-domain"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store#authentication"
+  to = "/enterprise-app-store/store-settings#store-authentication"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup/customize-ent-store#ldap-login"
+  to = "/enterprise-app-store/store-settings#ldap-login"
+  status = 301
+
+[[redirects]]
+  from = "enterprise-appstore/enterprise-app-store-setup/customize-ent-store#sso-login"
+  to = "/enterprise-app-store/store-settings#sso-login"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile#manual-upload"
+  to = "/enterprise-app-store/enterprise-app-store-profile#manual-binary-upload"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup/add-ent-profile#sending-from-distribution"
+  to = "/enterprise-app-store/enterprise-app-store-profile#upload-via-testing-distribution-module"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore/enterprise-app-store-setup/configure-ent-profile#other-actions"
+  to = "/enterprise-app-store/enterprise-app-store-profile#binary-actions"
+  status = 301
+
+[[redirects]]
+  from = "/distribute/create-or-select-a-distribution-profile"
+  to = "/testing-distribution/create-or-select-a-distribution-profile"
+  status = 301
+
+[[redirects]]
+  from = "/distribute/reports/app-sharing-report"
+  to = "/testing-distribution/reports"
+  status = 301
+
+[[redirects]]
+  from = "/distribute/testing-groups"
+  to = "/testing-distribution/testing-groups"
+  status = 301
+
+[[redirects]]
+  from = "/testing-distribution/create-or-select-a-distribution-profile#upload-app-version-manually"
+  to = "/testing-distribution/create-or-select-a-distribution-profile#manual-binary-upload"
+  status = 301
+
+[[redirects]]
+  from = "/build/platform-build-guides/building-dotnet-maui-apps-with-custom-scripts"
+  to = "/build/platform-build-guides/building-dotnet-maui-apps"
+  status = 301
+
+[[redirects]]
+  from = "/build/post-build-operations/after-a-build#android-outputs"
+  to = "/build/post-build-operations/after-a-build#download-artifacts"
+  status = 301
+
+[[redirects]]
+  from = "/build/post-build-operations/after-a-build#ios-outputs"
+  to = "/build/post-build-operations/after-a-build#download-artifacts"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-appstore"
+  to = "/enterprise-app-store"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-app-store/enterprise-app-store-setup/add-ent-profile"
+  to = "/enterprise-app-store/enterprise-app-store-profile"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/auth-openid#sso-mapping"
+  to = "/account/my-organization/integrations/authorization#sso-based-authorization-with-group-and-role-mapping"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/single-sign-on"
+  to = "/account/my-organization/integrations/authentications/sso-authentication"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
+  to = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/notifications-and-communication/teams-notifications"
+  to = "/account/my-organization/integrations/notification-integrations/teams-notifications"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/notifications-and-communication/email-connection"
+  to = "/account/my-organization/integrations/notification-integrations/email-connection"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations"
+  to = "/account/my-organization/integrations"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations/adding-an-app-store-connect-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations/adding-google-play-service-account"
+  to = "/account/my-organization/integrations/credentials/adding-google-play-service-account"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations/adding-huawei-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-huawei-api-key"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/api-integrations/adding-microsoft-intune-api-key"
+  to = "/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/role-management"
+  to = "/account/my-organization/profile-and-team/role-management"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/auth-openid"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/auth-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/azure-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/okta-openid"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/onelogin-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/notifications-and-communication"
+  to = "/account/my-organization/integrations/notification-integrations"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/webhooks"
+  to = "/account/my-organization/integrations/notification-integrations/webhooks"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/ldap-login"
+  to = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/team-activity-log"
+  to = "/account/my-organization/profile-and-team/team-activity-log"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
+  to = "/account/my-organization/integrations/authentications/sso-authentication"
+  status = 301
+
+[[redirects]]
+  from = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
+  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+  status = 301
+
+[[redirects]]
+from = "/appcircle-api"
+to = "/appcircle-api-and-cli"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api#appcircle-api"
+to = "/appcircle-api-and-cli#appcircle-api"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api#appcircle-api"
+to = "/appcircle-api-and-cli#appcircle-cli"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api#appcircle-api"
+to = "/appcircle-api-and-cli#app-center-migration-tool"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/api-authentication"
+to = "/appcircle-api-and-cli/api-authentication"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/appcenter-migration-tool"
+to = "/appcircle-api-and-cli/appcenter-migration-tool"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/cli-authentication"
+to = "/appcircle-api-and-cli/cli-authentication"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/cli-authentication#appcircle-cli"
+to = "/appcircle-api-and-cli/cli-authentication#appcircle-cli"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/cli-authentication#using-the-personal-api-token-for-cli-authentication"
+to = "/appcircle-api-and-cli/cli-authentication#using-the-personal-api-token-for-cli-authentication"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens"
+to = "/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens"
+status = 301
+
+[[redirects]]
+from = "/enterprise-app-store/store-customization"
+to = "/enterprise-app-store/portal-customization"
+status = 301
+
+[[redirects]]
+from = "/enterprise-app-store/store-settings"
+to = "/enterprise-app-store/portal-settings"
+status = 301
+
+[[redirects]]
+from = "/enterprise-app-store/enterprise-store"
+to = "/enterprise-app-store/enterprise-portal"
+status = 301
+
+[[redirects]]
+from = "/enterprise-app-store/enterprise-reports"
+to = "/enterprise-app-store/portal-reports"
+status = 301
+
+[[redirects]]
+from = "/testing-distribution/apple-devices"
+to = "/signing-identities/apple-devices"
+status = 301

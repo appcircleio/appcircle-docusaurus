@@ -77,18 +77,13 @@ const config = {
             `,
           },
           {
-            to: "/",
-            position: "left",
-            label: "Documentation",
-          },
-          {
             to: "/release-notes",
             position: "left",
             label: "Release Notes",
           },
           {
-            href: "https://blog.appcircle.io",
-            label: "Blog",
+            href: "https://appcircle.io/features",
+            label: "Features",
             position: "right",
           },
           {
@@ -145,7 +140,7 @@ const config = {
               },
               {
                 label: "Appcircle CLI",
-                to: "/appcircle-api",
+                to: "/appcircle-api-and-cli",
               },
               {
                 label: "Release Notes",
@@ -227,6 +222,7 @@ const config = {
           "ruby",
           "groovy",
           "java",
+          "csharp",
           "kotlin",
           "bash",
           "diff",
@@ -240,7 +236,7 @@ const config = {
         apiKey: "b56a5dc4e52ec9e97ad93981cc668c4a",
         indexName: "appcircle",
         appId: "4U9FKQJ034",
-        contextualSearch: false,
+        contextualSearch: true,
       },
       imageZoom: {
         selector: ".screenshot, .image-narrow",

@@ -43,4 +43,20 @@ After beta testing, you'll need to navigate the approval process. This section w
 Understand how to Get Approval from TestFlight
 </ContentRef>
 
+## Check App Store Release Status
+
+After submission, you'll need to navigate the approval process. This section will walk you through checking the status of your app on App Store Connect and understanding the necessary steps towards final approval.
+
+<ContentRef url="/publish-integrations/ios-publish-integrations/check-app-store-release-status">
+Understand how to check release status on App Store Connect
+</ContentRef>
+
+## Update Metadata on App Store Connect
+
+Learn how to update and optimize your app's metadata on App Store Connect to improve visibility, attract more users, and boost downloads. Follow our step-by-step guide for better app store performance and engagement.
+
+<ContentRef url="/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect">
+Understand how to update metadata on App Store Connect
+</ContentRef>
+
 Each section is crafted to guide you through the respective processes, ensuring a smooth workflow from app development to launch. Click on the links provided to delve into the specifics of each flow.

@@ -7,6 +7,7 @@ sidebar_position: 3
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
 
 # Update Self-hosted Runner
 
@@ -20,26 +21,26 @@ Download and extract the latest self-hosted runner package.
   <TabItem value="osx-arm64" label="macOS arm64" default>
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.6.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.7.1.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.6.0.zip
+unzip -o -u appcircle-runner-osx-arm64-1.7.1.zip
 ```
 
   </TabItem>
   <TabItem value="osx-x64" label="macOS x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.6.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.7.1.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-x64-1.6.0.zip
+unzip -o -u appcircle-runner-osx-x64-1.7.1.zip
 ```
 
   </TabItem>
@@ -47,13 +48,13 @@ unzip -o -u appcircle-runner-osx-x64-1.6.0.zip
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.6.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.7.1.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-linux-x64-1.6.0.zip
+unzip -o -u appcircle-runner-linux-x64-1.7.1.zip
 ```
 
   </TabItem>
@@ -68,6 +69,8 @@ cd appcircle-runner
 ## 2. Reconfigure Runner
 
 Self-hosted runner updates may include tool upgrades or introduce new required tools for build pipeline. So we need to rerun configuration step same as before. It will check installed tools quickly, and will update only required tools.
+
+<NewRunnerOldServerRedisCaution/>
 
 To remember what configuration step was, please refer to [this](./installation#3-configure) page.
 

@@ -47,7 +47,7 @@ If this setting is `off`, the "Sign up with e-mail" button will not appear on th
 
 #### Configure Emails That Can Be Used for Registration
 
-With the Appcircle server version `v3.13.0`, Appcircle disables users from registering with disposable (temporary) emails and common emails like Gmail, Outlook, etc. by default.
+With the Appcircle server version `3.13.0`, Appcircle disables users from registering with disposable (temporary) emails and common emails like Gmail, Outlook, etc. by default.
 
 If you want to change this behavior, you can configure it in the `global.yaml` file of your project by following the steps below.
 

@@ -366,7 +366,7 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/docker#5-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/docker#6-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
@@ -382,6 +382,12 @@ After updating initial password, to activate changes, you need to do fresh expor
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" export
+```
+
+Then, make sure you initialize the [vault](/self-hosted-appcircle/install-server/docker#5-initialize-vault) again.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
 ```
 
 Now you can run services again. It should complete without any error.
@@ -462,6 +468,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - resource
 - store
 - monitor
+- redis
 - (optional) Enterprise App Store's Custom Domain
 
 :::info
@@ -472,7 +479,7 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2111-10-cloudflare-ss.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3839-cloudflare-ss.png' />
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
@@ -514,6 +521,7 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  resource.appcircle.spacetech.com
 0.0.0.0  store.appcircle.spacetech.com
 0.0.0.0  monitor.appcircle.spacetech.com
+0.0.0.0  redis.appcircle.spacetech.com
 0.0.0.0  store.spacetech.com
 ```
 
@@ -538,12 +546,27 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  resource.appcircle.spacetech.com
 35.241.181.2  store.appcircle.spacetech.com
 35.241.181.2  monitor.appcircle.spacetech.com
+35.241.181.2  redis.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
 ```
 
 With this network setup, you can run and test both self-hosted Appcircle server and connected self-hosted runners with all functionality.
 
-### 5. Run Server
+### 5. Initialize Vault
+
+Initialize [vault](/self-hosted-appcircle/install-server/docker#vault) before starting the Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
+```
+
+:::caution
+You should initialize the server only once while installing it or after data cleanup is done with the `reset` command.
+
+It must not be used on upgrades in any way.
+:::
+
+### 6. Run Server
 
 Appcircle server's modules are run on Docker Engine as a container application on your system. All containers are run using a `compose.yaml` file which is generated after `ac-self-hosted.sh` is executed successfully explained in above steps.
 
@@ -674,7 +697,7 @@ In this case, stop all services with data cleanup.
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-Then make a new export and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/docker#reset-configuration) section for more details.
+Then make a new export, initialize the vault and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/docker#reset-configuration) section for more details.
 
 :::
 
@@ -686,6 +709,10 @@ Below ports must be unused on system and dedicated to only Appcircle server usag
 
 - `80`
 - `443`
+
+If the self-hosted server is configured as HTTP, the below port must also be unused. (_For HTTPS configuration, that's not required._)
+
+- `6379`
 
 You can get a list of up-to-date ports used by docker with below command.
 
@@ -785,10 +812,16 @@ For our example scenario, root directory is `appcircle-server` as seen [here](/s
 
 Now you are ready to restart self-hosted appcircle.
 
+Before that, make sure you initialize the [vault](/self-hosted-appcircle/install-server/docker#5-initialize-vault) again.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" init
+```
+
 Run Appcircle server services.
 
 ```bash
-/ac-self-hosted.sh -n "spacetech" up
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
 ## Connecting Runners
@@ -801,25 +834,35 @@ Follow and apply related guidelines in [here](/self-hosted-appcircle/self-hosted
 
 Self-hosted runner section in docs, has all details about runners and their configuration.
 
-:::caution
+:::::caution
 
-By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
+By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STREAM_ENDPOINT` and `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
 
+- `webeventredis.appcircle.io:6379,ssl=true`
 - `https://api.appcircle.io/build/v1`
 
-:point_up: You need to change its value with your self-hosted Appcircle server's API URL.
+:point_up: You need to change these values with your self-hosted Appcircle server's Redis and API URL.
 
-Assuming our sample scenario explained above, its value should be
+Assuming our sample scenario explained above, these values should be:
 
+- `redis.appcircle.spacetech.com:6379,ssl=false`
 - `http://api.appcircle.spacetech.com/build/v1`
 
 for our example configuration.
 
-:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change `ASPNETCORE_BASE_API_URL` value according to your configuration.
+:::info
+If your Appcircle server is running with `HTTPS`, then Redis and API URL should be like this:
+
+- `redis.appcircle.spacetech.com:443,ssl=true`
+- `https://api.appcircle.spacetech.com/build/v1`
+
+:::
+
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.
 
 Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
 
-:::
+:::::
 
 Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted Appcircle server should run on a dedicated machine itself.
 

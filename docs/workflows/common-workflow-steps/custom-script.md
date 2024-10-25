@@ -212,3 +212,136 @@ Please feel free to edit the following variables according to your own requireme
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-custom-script-component/
+
+### How to use environment variables along with the `sudo` command?
+
+Both user-created and Appcircle-reserved [environment variables](/environment-variables/managing-variables) can be used within a custom script with any required command. But, by default, commands that are triggered with `sudo` will not reach them since the user scope is changed.
+
+In order to use all user environment variables with `sudo`, you should add the `-E` argument to the `sudo` command. The `-E` (preserve environment) option indicates to the security policy that the user wishes to preserve their existing environment variables.
+
+For instance, you can check the list of environment variables in the build pipeline using the command below.
+
+```bash
+sudo -E printenv
+```
+
+### How can I send a custom Email?
+
+Appcircle provides a ready-to-use email structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the custom script below to send their own custom email.
+
+```bash
+
+os=""
+if uname -a | grep -iq "darwin"
+then
+	os="darwin"
+elif uname -a | grep -iq "linux"
+then
+	os="linux"
+fi
+
+if [ "$os" == "" ]
+then
+	echo "This script expects darwin or linux."
+	exit 1
+elif [ "$os" == "darwin" ] && which brew | grep -c "not found"
+then
+	echo "Can't find brew installation; make brew command visible or install homebrew and try again"
+	exit 1
+elif [ "$os" == "linux" ] && ! dpkg -s apt | grep -c "install ok installed"
+then
+	echo "apt is not installed; install apt and try again"
+	exit 1
+fi
+
+if [ "$os" == "linux" ]
+then
+	sudo apt-get install mailutils
+	sudo apt-get install msmtp
+	sudo apt-get install msmtp-mta
+fi
+
+if [ "$os" == "darwin" ]
+then
+	brew install mailutils
+	brew install msmtp
+	echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
+fi
+
+echo "defaults
+auth on
+tls on" >> ~/.msmtprc
+
+if [ "$os" == "linux" ]
+then
+	echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
+elif [ "$os" == "darwin" ]
+then
+	{ echo -n "tls_fingerprint " &
+	  msmtp --serverinfo --tls --tls-certcheck=off --host=smtp.gmail.com --port=587 \
+	  | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}" ;
+	} >> ~/.msmtprc
+fi
+
+echo "logfile ~/.msmtp.log
+account gmail
+host smtp.gmail.com
+port 587
+from $EMAIL_
+user $USERNAME_
+password $PASSWORD_
+account default: gmail" >> ~/.msmtprc
+
+echo "export MAIL_SERVER = smtp.gmail.com
+export MAIL_PORT = 587
+export MAIL_USE_TLS = True
+export MAIL_USE_SSL = False
+export MAIL_USERNAME = $EMAIL_
+export MAIL_PASSWORD = $PASSWORD_" >> ~/.$(basename $SHELL)rc
+
+```
+
+:::caution Credentials
+
+When using your own SMTP server credentials for the three variables below, please use Environment Variables. This prevents sensitive information, such as passwords, from being exposed to unauthorized individuals. For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
+
+- $EMAIL_
+- $USERNAME_
+- $PASSWORD_
+
+:::
+
+### How can I send the Appcircle build log to another platform?
+
+To send your build log to another platform using an API, you can access the log in your workflow through `$AC_LOGFILE`.
+
+Here is an example using Dropbox's [file-upload](https://www.dropbox.com/developers/documentation/http/documentation#files-upload) API. Replace it with the appropriate API for your platform. If you are going to use DropBox, you can follow the document below to obtain the access token:
+- [Generate an access token for your own account](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account)
+
+:::danger
+
+Ensure sensitive data, like access tokens, are defined as private environment variables. Learn more:
+- [Adding key and text-based value pairs](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs)
+
+:::
+
+```bash
+current_datetime=$(date +"%Y-%m-%d-%H-%M")
+dropbox_log_filename="/home/appcircle-logs/ac-log-$current_datetime.txt"
+
+curl -X POST https://content.dropboxapi.com/2/files/upload \
+    --header "Authorization: Bearer $DROPBOX_ACCESS_TOKEN" \
+    --header "Dropbox-API-Arg: {\"autorename\":false,\"mode\":\"add\",\"mute\":false,\"path\":\"$dropbox_log_filename\",\"strict_conflict\":false}" \
+    --header "Content-Type: application/octet-stream" \
+    --data-binary @"$AC_LOGFILE"
+
+```
+This script generates a timestamped log file (e.g., `ac-log-2024-10-01-14-55.txt`) in the `/home/appcircle-logs` in Dropbox.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-custom-script-faq-1.png" />
+
+:::caution
+
+Ensure that the **Custom Script** step runs after the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step to capture the full log.
+
+:::

@@ -29,8 +29,8 @@ Your mobile applications must be digitally signed to be able to distributed, tes
 
 For iOS applications, you must have a signing certificate and provisioning profiles to be able to run your application on real devices and submit them to Apple Appstore.
 
-<ContentRef url="/signing-identities/ios-certificates-and-provisioning-profiles">
-  iOS Certificates &amp; Provisioning Profiles
+<ContentRef url="/signing-identities">
+  Apple Certificates &amp; Provisioning Profiles
 </ContentRef>
 
 For Android applications, you need to create a keystore file to sign your applications digitally.
@@ -71,7 +71,7 @@ Distribution is a very major and important step for testing and deploying a mobi
 
 Create testing groups, add testers to testing groups and assign these groups to distribution profiles to distribute your build to testers so that they can download and install applications on their devices.
 
-<ContentRef url="/distribute/testing-management/testing-groups">Testing Groups</ContentRef>
+<ContentRef url="/distribute/testing-groups">Testing Groups</ContentRef>
 
 If you have a team of testers, you can create testing groups and distribute builds to your testers manually or automatically after each build and let them run the application on their mobile devices.
 
@@ -89,8 +89,8 @@ Send a binary to Apple Testflight or App Store.
 
 Send a binary to Google Play.
 
-<ContentRef url="/publish-integrations/android-publish-integrations/send-to-googleplay">Send Apps to Google Play Console</ContentRef>
+<ContentRef url="/publish-integrations/android-publish-integrations/publish-to-google-play">Send Apps to Google Play Console</ContentRef>
 
 Send a binary to Huawei AppGallery.
 
-<ContentRef url="/publish-integrations/android-publish-integrations/send-to-huawei">Send Apps to Huawei AppGallery</ContentRef>
+<ContentRef url="/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery">Send Apps to Huawei AppGallery</ContentRef>

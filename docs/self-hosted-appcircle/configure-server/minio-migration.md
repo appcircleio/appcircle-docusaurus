@@ -12,9 +12,9 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
-Older versions of the Appcircle server utilized MinIO in a multi-node single drive (**`mnsd`**) setup, which resulted in increased disk usage. By default, the Appcircle server utilizes MinIO in a single-node single drive (**`snsd`**) configuration with the Appcircle server version `v3.14.0` or later.
+Older versions of the Appcircle server utilized MinIO in a multi-node single drive (**`mnsd`**) setup, which resulted in increased disk usage. By default, the Appcircle server utilizes MinIO in a single-node single drive (**`snsd`**) configuration with the Appcircle server version `3.14.0` or later.
 
-With the transition to Appcircle server `v3.14.0` and the adoption of single-node single drive (**`snsd`**) MinIO, disk consumption is anticipated to decrease by approximately 20%.
+With the transition to Appcircle server `3.14.0` and the adoption of single-node single drive (**`snsd`**) MinIO, disk consumption is anticipated to decrease by approximately 20%.
 
 This documentation provides comprehensive instructions on migrating from a multi-node single drive MinIO configuration to a single-node single drive MinIO configuration that can be applied to recent versions of the Appcircle server.
 
@@ -220,7 +220,7 @@ You can access and review the comprehensive migration logs from this file for fu
 :::caution
 If you are using a proxy on the Appcircle server, then you should update the `no_proxy` variables.
 
-Please follow the [No Proxy for Internal Container Network](/docs/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new SNSD MinIO service.
+Please follow the [No Proxy for Internal Container Network](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new SNSD MinIO service.
 :::
 
   </TabItem>

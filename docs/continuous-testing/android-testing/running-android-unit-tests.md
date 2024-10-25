@@ -1,7 +1,7 @@
 ---
 title: Running Unit Tests
 description: Learn how to run unit tests for Android applications in Appcircle
-tags: [unit tests, android, android unit tests, testing, continuous testing]
+tags: [unit tests, android, testing, continuous testing]
 sidebar_position: 2
 ---
 
@@ -190,4 +190,31 @@ curl -u "$AC_BROWSERSTACK_USERNAME:$AC_BROWSERSTACK_ACCESS_KEY" \
 
 Appcircle's [**BrowserStack App Automate - Espresso**](/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso) step already parses JUnit Test reports. The above code sample is only given as an example.
 
+:::
+
+## FAQ
+
+### Firebase Errors
+
+#### Authentication Error: Your credentials are no longer valid.
+
+Error detail:
+
+```txt
+Error: failed to upload release. Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+For CI servers and headless environments, generate a new token with firebase login:ci
+⚠  Unable to fetch the CLI MOTD and remote config.
+```
+
+If you encounter this error message, please review the following two points:
+
+1. **Verify Your Firebase Credentials**: Ensure that your login information is valid, as per the token or service account you are using. You can test it locally using the same token or service account to confirm its authenticity.
+2. **Check CA Certificates**: If you are a **self-hosted Appcircle user** and you are certain that your credentials are correct, then you should also confirm that your CA certificates are properly defined for NodeJS. You can check CA certificates using the following command:
+
+```bash
+cat $NODE_EXTRA_CA_CERTS
+```
+
+:::caution
+Point 2 exclusively applies to users who have opted for self-hosted solutions. For those utilizing Appcircle from the cloud platform (appcircle.io), there is no need to consider this particular point.
 :::

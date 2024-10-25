@@ -5,6 +5,8 @@ tags: [self-hosted server, update, upgrade]
 sidebar_position: 3
 ---
 
+import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-server/\_redis-domain-caution.mdx';
+
 # Overview
 
 As in cloud, we're releasing regular updates for self-hosted Appcircle server. You should keep your instance up-to-date in order to get latest features, bug fixes and improvements.
@@ -37,6 +39,23 @@ For example, to find the version for a project named "spacetech", run the follow
 ./ac-self-hosted.sh -n "spacetech" version
 ```
 
+:::
+
+:::tip
+
+#### ✨ Auto-upgrading Server
+
+If you want to update the Appcircle server in an automated way, you can check out the [Auto-upgrading Server](/self-hosted-appcircle/configure-server/auto-updating) documents.
+
+You can effortlessly manage all the commands listed below.
+
+Additionally, you can set up recurring cron jobs (daily or weekly) to automatically check if Appcircle's server needs updating.
+:::
+
+:::caution
+If you are using the Appcircle DMZ structure and upgrading an Appcircle server, it is critical to also update the Appcircle DMZ server. If you don't, Enterprise App Store and Testing Distribution may not function as expected.
+
+For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz).
 :::
 
 ### 1. Download Latest
@@ -76,11 +95,13 @@ curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | AC_SERVER_V
 
 :::caution
 
-Upgrading from older versions to `v3.14.0` or later, requires MinIO migration that should be done interactively while upgrading.
+Upgrading from older versions to `3.14.0` or later requires MinIO migration, which should be done interactively while upgrading.
 
 In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/configure-server/minio-migration) document.
 
 :::
+
+<RedisDomainCaution/>
 
 Extract self-hosted Appcircle package into folder.
 
@@ -192,7 +213,7 @@ Upgrade images.
 :::caution
 If you are using a proxy on the server, then you should maintain the proxy variables.
 
-Please head to the [Maintenance of Proxy Variables](/docs/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
+Please head to the [Maintenance of Proxy Variables](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
 :::
 
 Then start with below command.
@@ -221,7 +242,7 @@ For this reason, you may prefer to execute this step on an idle time in order to
 
 :::
 
-For other details and troubleshooting, you can refer to [run server](/self-hosted-appcircle/install-server/docker#5-run-server) section in installation docs.
+For other details and troubleshooting, you can refer to [run server](/self-hosted-appcircle/install-server/docker#6-run-server) section in installation docs.
 
 ## Notes
 

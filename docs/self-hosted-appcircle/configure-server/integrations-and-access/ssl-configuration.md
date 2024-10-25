@@ -1,12 +1,23 @@
 ---
 title: SSL Configuration
 description: Learn how to configure SSL for your self-hosted Appcircle server
-tags: [self-hosted, ssl, https, certificate, custom domain, enterprise app store, external services]
+tags:
+  [
+    self-hosted,
+    ssl,
+    https,
+    certificate,
+    custom domain,
+    enterprise app store,
+    external services,
+  ]
 sidebar_position: 3
 ---
 
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
 import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Overview
 
@@ -154,7 +165,7 @@ If you want to ensure that all connections to your server are encrypted using th
 When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Auth, and others.  
 :::
 
-To make Appcircle server to work with TLSv1.3 only: 
+To make Appcircle server to work with TLSv1.3 only:
 
 - Change the directory to the Appcircle server.
 
@@ -349,6 +360,16 @@ Let's assume we want to use `apps.spacetech.com` as custom domain for our sample
 
 `global.yaml` section should be like this for this case.
 
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
 ```yaml
 storeWeb:
   external:
@@ -386,6 +407,61 @@ storeWeb:
       -----END PRIVATE KEY-----
 ```
 
+:::caution
+The `storeWeb.customDomain.port` must be `443` if the `enabledTls` option is set to `true`.
+:::
+
+</TabItem>
+
+<TabItem value="podman">
+
+```yaml
+storeWeb:
+  external:
+    subdomain: store
+  customDomain:
+    enabled: true
+    domain: apps.spacetech.com
+    port: 8443
+    enabledTls: true
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
+```
+
+:::caution
+The `storeWeb.customDomain.port` must be `8443` if the `enabledTls` option is set to `true`.
+
+Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/podman#overcoming-privileged-port-limitations) on the host, you will connect to the Enterprise App Store with the `TCP/443` port.
+:::
+
+</TabItem>
+
+</Tabs>
+
 - `publicKey` is the public certificate. (content of `.crt` file)
 - `privateKey` is the private key. (content of `.key` file)
 
@@ -399,7 +475,7 @@ For now, self-hosted Appcircle does not support usage of password protected priv
 
 ## Testing Distribution
 
-`global.yaml` configuration has its own dedicated section for [Testing Distribution](/distribute) domain settings. Below, we will explain some use cases for Testing Distribution, when you enable HTTPS.
+`global.yaml` configuration has its own dedicated section for [Testing Distribution](/testing-distribution) domain settings. Below, we will explain some use cases for Testing Distribution, when you enable HTTPS.
 
 ### Default Domain
 
@@ -428,6 +504,16 @@ If you don't have the `testerWeb` section defined in the `global.yaml` file, yo
 
 If you have a `testerWeb` section previously defined in the `global.yaml` file for some reason, you should update that section with the `customDomain` settings below instead of adding a new one.
 :::
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
 
 ```yaml
 testerWeb:
@@ -463,6 +549,59 @@ testerWeb:
       LUBOU4QRP9V6qpS0TrLmIoM=
       -----END PRIVATE KEY-----
 ```
+
+:::caution
+The `testerWeb.customDomain.port` must be `443` if the `enabledTls` option is set to `true`.
+:::
+
+</TabItem>
+
+<TabItem value="podman">
+
+```yaml
+testerWeb:
+  customDomain:
+    enabled: true
+    domain: dist.spacetech.com
+    port: 8443
+    enabledTls: true
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
+```
+
+:::caution
+The `testerWeb.customDomain.port` must be `8443` if the `enabledTls` option is set to `true`.
+
+Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/podman#overcoming-privileged-port-limitations) on the host, you will connect to the Testing Distribution with the `TCP/443` port.
+:::
+
+</TabItem>
+
+</Tabs>
 
 - `publicKey` is the public certificate. (content of `.crt` file)
 - `privateKey` is the private key. (content of `.key` file)

@@ -13,6 +13,7 @@ import RegisterAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hoste
 import ConfigureAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_configure-runner.mdx';
 import RunAppcircleRunner from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_run-service.mdx';
 import BuildAppOutro from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_build-app-outro.mdx';
+import ConfigureForSelfHosted from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_configure-for-self-hosted.mdx';
 
 # Prerequisites
 
@@ -101,13 +102,13 @@ Download the latest self-hosted runner package.
   <TabItem value="osx-arm64" label="macOS arm64" default>
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.6.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.7.1.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.6.0.zip
+unzip -o -u appcircle-runner-osx-arm64-1.7.1.zip
 ```
 
   </TabItem>
@@ -115,13 +116,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.6.0.zip
   <TabItem value="osx-x64" label="macOS x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.6.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.7.1.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-x64-1.6.0.zip
+unzip -o -u appcircle-runner-osx-x64-1.7.1.zip
 ```
 
   </TabItem>
@@ -129,13 +130,13 @@ unzip -o -u appcircle-runner-osx-x64-1.6.0.zip
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.6.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.7.1.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-linux-x64-1.6.0.zip
+unzip -o -u appcircle-runner-linux-x64-1.7.1.zip
 ```
 
   </TabItem>
@@ -147,21 +148,15 @@ Change directory into extracted `appcircle-runner` folder for following steps.
 cd appcircle-runner
 ```
 
-:::caution
-
-By default, self-hosted runner package is bundled with configuration for Appcircle-hosted cloud.
-
-:reminder_ribbon: If you're planning to use runner with [self-hosted appcircle](/self-hosted-appcircle/install-server/docker) server, you must change `ASPNETCORE_BASE_API_URL` value in `appsettings.json` configuration file before going on.
-
-Please refer to details [here](/self-hosted-appcircle/install-server/docker#connecting-runners) for sample configuration change.
-
-:::
+<ConfigureForSelfHosted />
 
 ### 2. Register
 
 <RegisterAppcircleRunner />
 
 ### 3. Configure
+
+<ConfigureForSelfHosted />
 
 <ConfigureAppcircleRunner />
 

@@ -36,7 +36,7 @@ sudo ./ac-self-hosted.sh -i
 - docker | podman
 
 :::caution
-You must follow one of the Appcircle server installation methods (Docker or Podman) and [configure](/self-hosted-appcircle/install-server/docker#3-configure) `global.yaml` as your project's needs until the [run server](/self-hosted-appcircle/install-server/docker#5-run-server) section.
+You must follow one of the Appcircle server installation methods (Docker or Podman) and [configure](/self-hosted-appcircle/install-server/docker#3-configure) `global.yaml` as your project's needs until the [run server](/self-hosted-appcircle/install-server/docker#6-run-server) section.
 
 Before running the server, you can install container images offline and then run the server.
 :::
@@ -119,7 +119,7 @@ If you are using Podman as container engine;
 podman image ls
 ```
 
-Now you are ready to `up` (start) the Appcircle server. You can refer back to the [Run Server](/self-hosted-appcircle/install-server/docker#5-run-server) section for details.
+Now you are ready to `up` (start) the Appcircle server. You can refer back to the [Run Server](/self-hosted-appcircle/install-server/docker#6-run-server) section for details.
 
 ### Install on a Server With Internet Access
 
@@ -143,11 +143,17 @@ So the offline installation step is compatible with your custom registries.
 This command will download container images and load them into the container engine that you use in your system. (Docker or Podman)
 :::
 
-Now you are ready to `up` (start) the Appcircle server. You can refer back to the [Run Server](/self-hosted-appcircle/install-server/docker#5-run-server) section for details.
+Now you are ready to `up` (start) the Appcircle server. You can refer back to the [Run Server](/self-hosted-appcircle/install-server/docker#6-run-server) section for details.
 
 ## Upgrade
 
 If you installed a self-hosted Appcircle server before and you want to upgrade your self-hosted Appcircle server but you can't somehow download container images, you can update your container images with this method too.
+
+:::caution
+If you are using the Appcircle DMZ structure and upgrading an Appcircle server, it is critical to also update the Appcircle DMZ server. If you don't, Enterprise App Store and Testing Distribution may not function as expected.
+
+For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz).
+:::
 
 :::info
 You don't need to change your `global.yaml` or reset your data.

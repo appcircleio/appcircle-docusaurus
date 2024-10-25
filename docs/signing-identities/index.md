@@ -12,11 +12,29 @@ The Signing Identities section is essential for configuring the credentials requ
 
 For more information, refer to the following link:
 
-[Certificates & Provisioning Profiles](/signing-identities/ios-certificates-and-provisioning-profiles)
+## Apple Certificates
 
-## iOS Signing
+Manage your Apple Certificates by adding and storing your Apple Certificates and other related details required for signing iOS applications.
 
-Manage your iOS signing identities by adding and storing your Apple certificates, provisioning profiles, and other related details required for signing iOS applications.
+[Apple Certificates](/signing-identities/apple-certificates)
+
+## Apple Devices
+
+When it comes to developing and testing iOS apps, one of the most important tasks is registering your devices with the Apple Developer portal. This is necessary so that you can install your app on those devices for testing purposes. However, this process can be a bit tedious, especially if you need to register a large number of devices. That's where Appcircle comes in.
+
+[Apple Devices](/signing-identities/apple-devices)
+
+## Apple Identifiers
+
+Register and Manage your Apple Identifiers by adding and storing your Apple Identifiers and other related details required for signing iOS applications.
+
+[Apple Identifiers](/signing-identities/apple-identifiers)
+
+## Apple Profiles
+
+Register and Manage your Apple Profiles by adding and storing your Apple Profiles and other related details required for signing iOS applications.
+
+[Apple Profiles](/signing-identities/apple-profiles)
 
 ## Android Keystores
 

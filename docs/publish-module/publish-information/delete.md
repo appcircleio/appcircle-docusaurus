@@ -2,7 +2,7 @@
 title: Delete
 description: Learn how to delete a build version in the Publish module of Appcircle
 tags: [publish, publish module, delete]
-sidebar_position: 6
+sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The "Delete" function in the Publish module allows users to remove specific versions of an app from the module. This action does not affect any versions of the app that have been submitted to app stores; it only removes the version from Appcircle's Publish module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-delete.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub6.png' />
 
 ## Steps to Delete a Build Version
 

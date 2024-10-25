@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Publish Flow
 
-Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery). This flow can be customized according to your specific publishing requirements.
+Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery, Microsoft Intune). This flow can be customized according to your specific publishing requirements.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-button.png' />
 
