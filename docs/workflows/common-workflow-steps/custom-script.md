@@ -227,7 +227,7 @@ sudo -E printenv
 
 ### How can I send a custom Email?
 
-Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the custom script below to send their own custom email.
+Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the [custom script](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
 
 The following script is set to use a [**Gmail SMTP Server**]. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
 
@@ -261,22 +261,22 @@ fi
 # Check if OS is supported and install necessary packages
 if [ "$os" == "darwin" ]; then
     if ! command -v brew > /dev/null 2>&1; then
-        echo "Error msg: brew not found."
+        echo "Can't find brew installation; make brew command visible or install homebrew and try again"
         exit 1
     fi
-    brew install mailutils msmtp
+    brew install mailutils
+    brew install msmtp
     echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
-    echo "tls_fingerprint" >> ~/.msmtprc
+    { echo -n "tls_fingerprint " && msmtp --serverinfo --tls --tls-certcheck=off --host=$HOST_ --port=$PORT_ | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}"; } >> ~/.msmtprc
 
 elif [ "$os" == "linux" ]; then
     if ! command -v apt > /dev/null 2>&1; then
-        echo "Error msg: apt not found."
+        echo "apt is not installed; install apt and try again"
         exit 1
     fi
     sudo apt-get update
     sudo apt-get install -y mailutils msmtp msmtp-mta
     echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
-
 else
     echo "Unsupported OS: $os. This script expects Darwin or Linux."
     exit 1
@@ -288,11 +288,6 @@ defaults
 auth on
 tls on
 EOF
-
-# Append specific settings for each OS
-if [ "$os" == "darwin" ]; then
-    { echo -n "tls_fingerprint " && msmtp --serverinfo --tls --tls-certcheck=off --host=$HOST_ --port=$PORT_ | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}"; } >> ~/.msmtprc
-fi
 
 cat <<EOF >> ~/.msmtprc
 logfile ~/.msmtp.log
@@ -323,7 +318,6 @@ shell_rc=~/.$(basename $SHELL)rc
 echo "From: $EMAIL_FROM
 To: $EMAIL_TO
 Subject: $EMAIL_SUBJECT
-
 $EMAIL_BODY" | msmtp --debug --from=$EMAIL_ -t $EMAIL_TO
 
 
