@@ -31,7 +31,7 @@ If you are unsure which Java version is required for your Android project, you c
 
 ## Prerequisites
 
-There is no mandatory step for using this component.  However, if you have a step that necessitates changing the Java version (particularly build steps), the **Change Java Version** step should run before that step in [workflow](/workflows).
+There is no mandatory step for using this component.  However, if you have a step that necessitates changing the Java version (particularly build steps), the **Change Java Version** step should run before that step in the [workflow](/workflows).
 
 For reference, you can see the workflow sequence in the image below:
 
@@ -71,9 +71,9 @@ To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-change-java-version-component
 
-# FAQ
+## FAQ
 
-## How do I check available Java versions in the Appcircle runner?
+### How do I check available Java versions in the Appcircle runner?
 
 To view the Java versions available in the Appcircle runner, you can run the following [Custom Script](/workflows/common-workflow-steps/custom-script) in your workflow:
 
@@ -88,7 +88,7 @@ echo "OpenJDK 21:" $JAVA_HOME_21_X64
 
 Any variables that output non-empty values indicate the available Java versions in your runner.
 
-## How can I check the Java version of my project?
+### How can I check the Java version of my project?
 
 You can determine the required SDK version by looking at the `compileSdk` field in your `build.gradle` file under the **module** used in your Android project. The table below lists the Java versions corresponding to these SDK versions:
 
@@ -100,6 +100,6 @@ You can determine the required SDK version by looking at the `compileSdk` field 
 | 11 and lower  | ..       |
 
 
-The Java version for API level 11 and lower is not specified in Android document. For more details, please refer to the Android documentation linked below:
+The Java version for API level 11 and lower is not specified in the Android document. For more details, please refer to the Android documentation linked below:
 
 - [Which Java APIs can I use in my Java or Kotlin source code?](https://developer.android.com/build/jdks#compileSdk)
