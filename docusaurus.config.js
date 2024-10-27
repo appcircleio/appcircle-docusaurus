@@ -238,12 +238,19 @@ const config = {
         appId: "4U9FKQJ034",
         contextualSearch: true,
       },
-      imageZoom: {
-        selector: ".screenshot, .image-narrow",
-        options: {
-          // medium-zoom options
-          margin: 24,
-          scrollOffset: 0,
+      zoom: {
+        selector: ".markdown img",
+        background: {
+          light: "rgb(255, 255, 255)",
+          dark: "#1b1b1d",
+        },
+        config: {
+          container: {
+            top: 64,
+            bottom: 5,
+            right: 0,
+            left: 0,
+          },
         },
       },
     }),
@@ -256,7 +263,7 @@ const config = {
       },
     ],
     "docusaurus-plugin-sass",
-    "plugin-image-zoom",
+    "docusaurus-plugin-image-zoom",
   ],
 };
 
