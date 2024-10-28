@@ -258,6 +258,13 @@ elif uname -a | grep -iq "linux"; then
     os="linux"
 fi
 
+# Create the .msmtprc file with appropriate permissions
+cat <<EOF > ~/.msmtprc
+defaults
+auth on
+tls on
+EOF
+
 # Check if OS is supported and install necessary packages
 if [ "$os" == "darwin" ]; then
     if ! command -v brew > /dev/null 2>&1; then
@@ -281,13 +288,6 @@ else
     echo "Unsupported OS: $os. This script expects Darwin or Linux."
     exit 1
 fi
-
-# Create the .msmtprc file with appropriate permissions
-cat <<EOF > ~/.msmtprc
-defaults
-auth on
-tls on
-EOF
 
 cat <<EOF >> ~/.msmtprc
 logfile ~/.msmtp.log
