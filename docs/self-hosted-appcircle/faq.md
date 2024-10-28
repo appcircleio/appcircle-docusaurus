@@ -40,9 +40,11 @@ If you need to use a proxy on the Appcircle server, you should configure proxy s
 
 ### We are facing "manifest not found" error when we run the `up` command.
 
-If you are using the Nexus registry and are facing a "manifest not found" error, this is an expected case to occur. Nexus proxy has a known bug while pulling multiple container images. You should pull images one by one as a workaround.
+This error often occurs if the images weren’t updated using the `upgrade` command before running the `up` command. [Container image registries](/self-hosted-appcircle/configure-server/external-image-registry.md) can sometimes struggle with simultaneous requests to pull multiple images, leading to issues like "manifest not found."
 
-To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
+To address this, the `upgrade` command on the Appcircle server limits the number of pulled images to `5` by default, which helps avoid overloading the container image registry. Make sure to follow the [Upgrade Images](/self-hosted-appcircle/update.md#4-update-images) section carefully to prevent this issue.
+
+If that didn't work for you, you can try to pull images one by one as a workaround. To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
 ### Where should we download the zip package while we are updating?
 
