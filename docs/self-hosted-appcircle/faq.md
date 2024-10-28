@@ -48,7 +48,14 @@ If that didn't work for you, you can try to pull images one by one as a workarou
 
 ### Where should we download the zip package while we are updating?
 
-Download the zip package of the appcircle server and extract it to the same folder as the already existing Appcircle server folder. Your data and configuration will be saved while updating.
+Download the zip package of the appcircle server and extract it to the same folder as the already existing Appcircle server folder. Your data and configuration will be saved while updating. The directory structure should be similar to:
+
+```bash
+.
+|-- appcircle-server
+|-- appcircle-server-linux-x64-3.22.1-abcd.zip
+`-- cred.json
+```
 
 ### How do I change Docker or Podman's data location?
 
