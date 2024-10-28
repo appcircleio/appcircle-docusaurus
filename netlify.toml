@@ -1167,8 +1167,3 @@ status = 301
 from = "/testing-distribution/apple-devices"
 to = "/signing-identities/apple-devices"
 status = 301
-
-[[redirects]]
-from = "/workflows/common-workflow-steps/custom-script#how-to-change-java-version"
-to = "/workflows/common-workflow-steps/change-java-version"
-status = 301

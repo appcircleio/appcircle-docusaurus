@@ -35,6 +35,16 @@ Note that the **Script** area works according to the selected language variable.
 
 ## Custom Script FAQ
 
+### How to change Java version
+
+This feature has been introduced as a component, so there is no need to use **Custom Script** for this task. For more details, see:
+
+- [Change Java Version](/workflows/common-workflow-steps/change-java-version)
+
+However, if you prefer to update or improve it manually on **Custom Script**, the source code is available here:
+
+- [Change Java Version - Source Code](https://github.com/appcircleio/appcircle-change-java-version-component)
+
 ### How to install a new package to the build machine?
 
 You can use the compatible package managers to install packages.
