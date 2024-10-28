@@ -229,7 +229,7 @@ sudo -E printenv
 
 Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the [custom script](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
 
-The following script is set to use a [**Gmail SMTP Server**]. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
+The following script is set to use a **Gmail SMTP Server**. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
 
 ```bash
 
@@ -274,8 +274,8 @@ elif [ "$os" == "linux" ]; then
         echo "apt is not installed; install apt and try again"
         exit 1
     fi
-    sudo apt-get update
-    sudo apt-get install -y mailutils msmtp msmtp-mta
+    apt-get update
+    apt-get install -y mailutils msmtp msmtp-mta
     echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
 else
     echo "Unsupported OS: $os. This script expects Darwin or Linux."
