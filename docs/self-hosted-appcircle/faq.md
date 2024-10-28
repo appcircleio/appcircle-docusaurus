@@ -42,7 +42,50 @@ If you need to use a proxy on the Appcircle server, you should configure proxy s
 
 This error often occurs if the images weren’t updated using the `upgrade` command before running the `up` command. [Container image registries](/self-hosted-appcircle/configure-server/external-image-registry.md) can sometimes struggle with simultaneous requests to pull multiple images, leading to issues like "manifest not found."
 
-To address this, the `upgrade` command on the Appcircle server limits the number of pulled images to `5` by default, which helps avoid overloading the container image registry. Make sure to follow the [Upgrade Images](/self-hosted-appcircle/update.md#4-update-images) section carefully to prevent this issue.
+To address this, the `upgrade` command on the Appcircle server limits the number of pulled images to `5` by default, which helps avoid overloading the container image registry. Make sure to follow the [Upgrade Images](/self-hosted-appcircle/update.md#4-update-images) section carefully to prevent this issue. You can configure the default parallelism limit from `5` to anything you need with the `global.yaml` of your project:
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+:::info
+
+The `spacetech` in the example codes below are example project name.
+
+Please find your own project name and replace `spacetech` with your project name.
+
+To see projects, you can check the `projects` directory.
+
+```bash
+ls -l ./projects
+```
+
+:::
+
+- Edit the `global.yaml` file of your project and configure the parallelism limit as your needs.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+:::caution
+If the `container` key already exist in the `global.yaml`, you should just update or add the missing `parallelLimit` key.
+:::
+
+```yaml
+container:
+  parallelLimit: 10 
+```
+
+- Apply configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+Now the `upgrade` command of the Appcircle server will try to pull `10` images at once.
 
 If that didn't work for you, you can try to pull images one by one as a workaround. To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
