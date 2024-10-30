@@ -19,10 +19,10 @@ This section provides a brief summary of the configuration steps.
 
 ### Specific Provider Configuration
 
-<CustomDetails>
+<details>
     <summary>Auth0</summary>
 
-<CustomDetails>
+<details>
     <summary>Auth0 (OpenID Connect)</summary>
 
 #### Step 1. Create Organizations
@@ -69,9 +69,9 @@ This section provides a brief summary of the configuration steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-org-id-claim.png' />
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
     <summary>Auth0 (SAML)</summary>
 
 #### Step 1. Create Organizations
@@ -118,14 +118,14 @@ This section provides a brief summary of the configuration steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-auth0-saml-org-id-claim.png' />
 
-</CustomDetails>
+</details>
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
     <summary>Microsoft Entra ID (formerly Azure Active Directory) </summary>
 
-<CustomDetails>
+<details>
     <summary>Microsoft Entra ID (SAML)</summary>
 
 #### Step 1. Create Groups in Microsoft Entra ID
@@ -187,14 +187,14 @@ This section provides a brief summary of the configuration steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-azure-saml-org-id-claim.png' />
 
-</CustomDetails>
+</details>
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
     <summary>Okta</summary>
 
-<CustomDetails>
+<details>
     <summary>Okta (OpenID Connect)</summary>
 
 #### Step 1. Create Groups and Define Group Claim
@@ -231,9 +231,9 @@ This section provides a brief summary of the configuration steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-groups-claim.png' />
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
     <summary>Okta (SAML)</summary>
 
 #### Step 1. Create Groups and Assign to the Application
@@ -272,9 +272,9 @@ This section provides a brief summary of the configuration steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-groups-claim.png' />
 
-</CustomDetails> 
+</details> 
 
-</CustomDetails>
+</details>
 
 ### Testing and Troubleshooting
 
