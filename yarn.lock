@@ -3935,20 +3935,20 @@ dns-packet@^5.2.2:
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
-docusaurus-plugin-image-zoom@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/docusaurus-plugin-image-zoom/-/docusaurus-plugin-image-zoom-2.0.0.tgz#961603e5865677500bcd4bc9a8a95ea8188ee540"
-  integrity sha512-TWHQZeoiged+95CESlZk++lihzl3pqw34n0/fbexx2AocmFhbo9K2scYDgYB8amki4/X6mUCLTPZE1pQvT+00Q==
-  dependencies:
-    medium-zoom "^1.0.8"
-    validate-peer-dependencies "^2.2.0"
-
 docusaurus-plugin-sass@^0.2.2:
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/docusaurus-plugin-sass/-/docusaurus-plugin-sass-0.2.5.tgz#6bfb8a227ac6265be685dcbc24ba1989e27b8005"
   integrity sha512-Z+D0fLFUKcFpM+bqSUmqKIU+vO+YF1xoEQh5hoFreg2eMf722+siwXDD+sqtwU8E4MvVpuvsQfaHwODNlxJAEg==
   dependencies:
     sass-loader "^10.1.1"
+
+docusaurus-plugin-zooming@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-zooming/-/docusaurus-plugin-zooming-1.0.0.tgz#647286664fff65b42d7f64121b6e791a0a97a4bf"
+  integrity sha512-Q14ZPQjC3pMrEjRKeJ5k5EO/PUrHilCSSRa7XF+wTT3CzCnqoL0NuLxqooESBT77ZZRqcm9C7j8qBsK1Vw3RZw==
+  dependencies:
+    validate-peer-dependencies "^2.2.0"
+    zooming "^2.1.1"
 
 dom-converter@^0.2.0:
   version "0.2.0"
@@ -6442,11 +6442,6 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==
-
-medium-zoom@^1.0.8:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/medium-zoom/-/medium-zoom-1.1.0.tgz#6efb6bbda861a02064ee71a2617a8dc4381ecc71"
-  integrity sha512-ewyDsp7k4InCUp3jRmwHBRFGyjBimKps/AJLjRSox+2q/2H4p/PNpQf+pwONWlJiOudkBXtbdmVbFjqyybfTmQ==
 
 memfs@^3.1.2, memfs@^3.4.3:
   version "3.6.0"
@@ -10206,6 +10201,11 @@ yocto-queue@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-1.1.1.tgz#fef65ce3ac9f8a32ceac5a634f74e17e5b232110"
   integrity sha512-b4JR1PFR10y1mKjhHY9LaGo6tmrgjit7hxVIeAmyMw3jegXR4dhYqLaQF5zMXZxY7tLpMyJeLjr1C4rLmkVe8g==
+
+zooming@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/zooming/-/zooming-2.1.1.tgz#3e05006b4e10335235ca626244d053d90a9c7e72"
+  integrity sha512-Z38dkZRQsFNBE67+xDBQLNKMs5J1Gc+s3/zO6iezTrC24VYLJV7YPBdBDJmiLhff5qa6Awxv4wsjqx3oYz2MYA==
 
 zwitch@^1.0.0:
   version "1.0.5"
