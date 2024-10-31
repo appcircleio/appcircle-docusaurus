@@ -64,11 +64,12 @@ This step contains different variables. It needs these variables to work. The ta
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4443-rnuiTestInput1.png' />
 
-| Variable Name                | Description                                                                                                                                                                 | Status   |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step. | Required |
-| `$AC_OUTPUT_DIR`             | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                       | Required |
-| `$AC_RN_DETOX_CONFIGURATION` | Specify the detox configuration name to used when building and running the tests.                                                                                           | Required |
+| Variable Name                | Description                                                                                                                                                                                                                                                                                                                                 | Status   |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step.                                                                                                                                                                 | Required |
+| `$AC_OUTPUT_DIR`             | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                                                                                                       | Required |
+| `$AC_RN_DETOX_CONFIGURATION` | Specify the detox configuration name to used when building and running the tests.                                                                                                                                                                                                                                                           | Required |
+| `$AC_RN_DETOX_TEST_ARGS`     | Specify the Detox extra arguments to add the test command. The arguments will be executed by appending `detox test --configuration<configname>` to the end of the command. The default value is `--take-screenshots all` For more information, see the Detox test [CLI options](https://wix.github.io/Detox/docs/19.x/api/detox-cli/#test). | Optional |
 
 :::danger Detox Configuration
 
