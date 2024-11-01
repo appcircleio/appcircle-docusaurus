@@ -50,7 +50,7 @@ https://github.com/appcircleio/appcircle-fastlane-component
 
 With Appcircle's Fastlane integration, you can easily run the lane you want with the Fastfile in your project. 
 
-You can easily add the [Fastlane plugins](https://docs.fastlane.tools/plugins/available-plugins/) you want to run, which are not included in your Fastfile and are available on the Fastlane plugins, to the pipeline via a [**Custom Script**](/workflows/common-workflow-steps/custom-script) and run them easily.
+You can easily add the [Fastlane plugins](https://rubygems.org/search?query=fastlane-plugin-) you want to run, which are not included in your Fastfile and are available on the Fastlane plugins, to the pipeline via a [**Custom Script**](/workflows/common-workflow-steps/custom-script) and run them easily. For all available plugins, please visit the [**Fastlane plugins**](https://docs.fastlane.tools/plugins/available-plugins/) documentations.
 
 The example script below shows how to run the Fastlane plugin with a gem file. Add a Custom Script to your workflow and run the following script. For detailed information, please visit the [**Workflows**](/workflows) documentation. 
 
@@ -59,8 +59,23 @@ The example script below shows how to run the Fastlane plugin with a gem file. A
 
 gem install fastlane-plugin-json
 echo "gem 'fastlane-plugin-json'" >> Gemfile
-fastlane run read_json
+fastlane run read_json json_path:'./example.json'
 
 ```
+
+Once a plugin is installed, it is run with the `fastlane run` command. The necessary actions must be completed for the plugin to work correctly. The command used for this is as follows.
+
+```bash
+
+fastlane run [action] parameter:value
+
+```
+
+- `Action`: Plugin will be run.
+- `Parameter`: Input parameter expected by the plugin.
+- `Value`: Input value to be entered.
+
+For plugin details and the actions they contain, visit the repository of the [**Fastlane plugins**](https://docs.fastlane.tools/plugins/available-plugins/).
+
 
 In this example, `fastlane-plugin-json` is used as Fastlane plugin.
