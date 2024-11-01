@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 This component runs all the UI tests in your project written with [Detox](https://wix.github.io/Detox/docs/introduction/getting-started) integration. When this step is completed, it generates a test report file in `e2e-report.xml` format. You can view these test results in detail using Appcircle's [**Test Report**](/workflows/react-native-specific-workflow-steps/test-reports-react-native) component.
 
-For detailed information for continuous testing. Please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-ui-testing-with-detox).
+For detailed information for continuous testing. Please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-ui-test-with-detox).
 
 To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/workflows/react-native-specific-workflow-steps/test-reports-react-native).
 

@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 This component runs all the unit tests in your project written with [Jest](https://jestjs.io/docs/tutorial-react-native) integration. When this step is completed, it generates a test report file in `JUnit.xml` format. You can view these test results in detail using Appcircle's **Test Report** component. To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/workflows/react-native-specific-workflow-steps/test-reports-react-native).
 
-For detailed information for continuous testing. Please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-unit-testing).
+For detailed information for continuous testing. Please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-unit-test-with-jest).
 
 ### Prerequisites
 
