@@ -1,7 +1,7 @@
 ---
 title: React Native UI Test
-description: Learn how to run UI tests for your React Native projects easily with Appcircle, ensuring high-quality code and improved app performance.
-tags: [react native, mobile, workflow, step, ui, tests, ui test]
+description: Learn how to run UI tests with Detox for your React Native projects easily with Appcircle, ensuring high-quality code and improved app performance.
+tags: [react native, mobile, workflow, step, ui, test, ui test, detox]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -16,7 +16,8 @@ To generate detailed Test Reports. Please visit our [Test Reports Component docu
 
 :::info Java Version
 
-The default Java version in Appcircle's build stacks is **Java 11**. If your project requires a **higher** or ***lower** Java version, please see the [**How to Change Java Version**](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) document. On the other hand, you can see all details for build stacks both iOS and Android with this [documentation](/infrastructure).
+The default Java version in Appcircle's build stacks is **Java 11**. If your project requires a **higher** or **lower** Java version, please see the [**How to Change Java Version**](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) document. On the other hand, you can see all details for build stacks both iOS and Android with this [documentation](/infrastructure).
+
 :::
 
 ### Prerequisites
@@ -45,7 +46,7 @@ The workflow steps that need to be executed before running the **React Native UI
 
 :::danger React Native UI Test for Android
 
-You need to use **Intel pool** to run your UI tests on the Android platform. For more information, please follow the [**Build Configuration**](/build/build-process-management/build-profile-configuration) and [**Android Build Infrastructure**](/infrastructure/android-build-infrastructure) documentations.
+You need to use **Intel pool** to run your UI tests on the Android platform. Because Apple's virtualization technology does not support Android Emulators, They only run on Intel Pools. For more information, please follow the [**Build Configuration**](/build/build-process-management/build-profile-configuration) and [**Android Build Infrastructure**](/infrastructure/android-build-infrastructure) documentations.
 
 :::
 
@@ -54,6 +55,17 @@ You need to use **Intel pool** to run your UI tests on the Android platform. For
 :::caution Android Emulator
 
 React Native UI Test component works according to the device given in the project configurations. To change the emulator device or install a new device, please follow the [**Emulator**](/infrastructure/android-build-infrastructure#emulator) documentation.
+
+:::
+
+:::danger Step Rule
+
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggles so that Test Report Component always runs whether your tests fail or pass.
+
+- Always run this step even if the previous steps fail to **ON**
+- Continue with the next step even if this step fails to **ON**
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-report-steps-on.png" />
 
 :::
 

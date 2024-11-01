@@ -56,7 +56,7 @@ This component provides detailed reports and insights on the results of React Na
 
 For detailed information on the usage of **Test Reports for React Native**, please refer to the documentation:
 
-[https://docs.appcircle.io/continuous-testing/react-native-testing](https://docs.appcircle.io/continuous-testing/react-native-testing)
+[/continuous-testing/react-native-testing](/continuous-testing/react-native-testing)
 
 <ContentRef url="/workflows/react-native-specific-workflow-steps/test-reports-react-native">
     Test Reports for React Native

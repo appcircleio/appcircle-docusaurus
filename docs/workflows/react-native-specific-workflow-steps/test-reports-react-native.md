@@ -18,7 +18,7 @@ For additional details, please refer to the document: [**Generating Test Report*
 
 ### Prerequisites
 
-Before executing the **Test Report** workflow step, certain prerequisite workflow steps must be completed:
+Before executing the **Test Report** workflow step, **one of the** following steps must be run to generate the report:
 
 | Prerequisite Workflow Step                                                                           | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -27,7 +27,7 @@ Before executing the **Test Report** workflow step, certain prerequisite workflo
 
 :::caution Prerequisites
 
-To able to use Test Report component, not necessary to use both test step **React Native UI Test** and **React Native Unit Test** at the same time. But, if these test steps are included in the flow, they must be used before the Test Report component.
+To able to use **Test Report** component, not necessary to use both test step **React Native UI Test** and **React Native Unit Test** at the same time. But, if these test steps are included in the flow, they must be used before the **Test Report** component.
 
 :::
 
@@ -43,7 +43,7 @@ For each component, specific input variables are required for its operation on y
 
 :::danger Step Rule
 
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggles so that Test Report Component always runs whether your tests fail or pass.
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If Test Report component doesn't run, reports will not be generated.** You should turn on the following toggles so that **Test Report** component always runs whether your tests fail or pass.
 
 - Always run this step even if the previous steps fail to **ON**
 - Continue with the next step even if this step fails to **ON**

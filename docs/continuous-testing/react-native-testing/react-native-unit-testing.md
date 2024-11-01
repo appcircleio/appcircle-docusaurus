@@ -1,26 +1,26 @@
 ---
-title: Unit Testing
-description: Learn effectively run unit tests to ensure quality of React Native projects
-tags: [unit tests, testing strategy, quality assurance, react native testing]
+title: Unit Test with Jest
+description: Learn effectively run unit tests with Jest  to ensure quality of React Native projects.
+tags: [unit test, jest, testing strategy, quality assurance, react native testing]
 ---
 
-# React Native Unit Testing on Appcircle
+# React Native Unit Test on Appcircle
 
-Introduction to React Native Unit Testing on Appcircle focuses on enhancing code quality and reliability by automating the testing of individual components and functionalities, ensuring seamless performance across different devices and environments.
+Introduction to **React Native Unit Test** on Appcircle focuses on enhancing code quality and reliability by automating the testing of individual components and functionalities, ensuring seamless performance across different devices and environments.
 
 ## Configure Jest for Test Reports
 
-Default jest generates test result as json but the **React Native Unit Test** requires junit style for parsing the test results.
+Default Jest generates test result as JSON but the **React Native Unit Test** requires Junit style for parsing the test results.
 
-Follow below steps to get junit style test results:
+Follow below steps to get Junit style test results:
 
-1. First add **jest-junit** to your project as a dev dependency simply running below command
+1. First add **jest-junit** to your project as a dev dependency simply running below command:
 
 ```bash
   yarn add -D jest-junit
 ```
 
-2. add custom reporter configuration to your jest configuration file like below
+2. Add custom reporter configuration to your jest configuration file like below:
 
 ```bash
   reporters: [
@@ -35,7 +35,7 @@ Follow below steps to get junit style test results:
   ],
 ```
 
-When **React Native Unit Test** step will run the tests with parameter below to get test results
+When **React Native Unit Test** step will run the tests with parameter below to get test results.
 
 ```bash
 yarn run jest --reporters=jest-junit
@@ -49,7 +49,7 @@ The **outputDirectory** must be set to **test-reports** at the root of the proje
 
 :::caution Output Name
 
-The **outputName** must be set to **\*-report.xml** at the end of the file name, as the step will search for test results for these files.
+The **outputName** must be set to `\*-report.xml` at the end of the file name, as the step will search for test results for these files.
 
 :::
 
@@ -64,6 +64,7 @@ Make sure the step is placed after the following:
 
 and  make sure the step is placed before the following: 
 
+- [**Test Reports for React Native**](/workflows/react-native-specific-workflow-steps/test-reports-react-native)
 - [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts)
 
 For detailed information on Workflow structure, please visit the [**Workflows documentation**](/workflows).
@@ -78,12 +79,6 @@ If you add [Test Report Component](/workflows/react-native-specific-workflow-ste
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports.png' />
 
 You must add this step **after** the `React Native Unit Test` so that it can parse test results. Your workflow should look like the below.
-
-:::caution Test Suites
-
-The name for Test Suites appears as **undefined** because the tests are not wrapped inside a describe block, which is required for the suite name to be properly displayed in the report.
-
-:::
 
 :::danger Step Rule
 
@@ -102,5 +97,11 @@ There's one important setting that you should change. If any workflow steps fail
 Appcircle can show passing and failing tests in compact UI.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-detail.png' />
+
+:::caution Test Suites
+
+The name for Test Suites appears as **undefined** because the tests are not wrapped inside a describe block, which is required for the suite name to be properly displayed in the report.
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-suite-detail.png' />

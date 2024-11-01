@@ -1,7 +1,7 @@
 ---
-title: UI Testing with Detox
-description: Learn effectively run detox tests to ensure quality of React Native projects
-tags: [unit tests, ui tests, testing strategy, quality assurance]
+title: UI Test with Detox
+description: Learn effectively run UI test with Detox to ensure quality of React Native projects.
+tags: [test, ui tests, react native test, testing strategy, quality assurance]
 ---
 
 # React Native UI Test on Appcircle
@@ -60,7 +60,7 @@ Default Jest generates test results as JSON, but the **React Native UI Test** re
 
 :::caution Build in Release Mode
 
-The React Native project must be build with Detox in release mode, as debug builds trigger Metro to start, which can interfere with testing. For more details, [**refer to the official Detox documentation**](https://wix.github.io/Detox/docs/introduction/preparing-for-ci)
+The React Native project must be build with Detox in release mode, as debug builds trigger [Metro](https://docs.expo.dev/guides/customizing-metro/) to start, which can interfere with testing. For more details, [**refer to the official Detox documentation**](https://wix.github.io/Detox/docs/introduction/preparing-for-ci)
 
 :::
 
@@ -72,7 +72,7 @@ The **outputDirectory** must be set to **test-reports** at the root of the proje
 
 :::caution Output Name
 
-The **outputName** must be set to **\*-report.xml** at the end of the file name, as the step will search for test results for these files.
+The **outputName** must be set to `\*-report.xml` at the end of the file name, as the step will search for test results for these files.
 
 :::
 
@@ -89,6 +89,7 @@ Make sure the step is placed after the following:
 
 and make sure the step is placed before the following:
 
+- [**Test Reports for React Native**](/workflows/react-native-specific-workflow-steps/test-reports-react-native)
 - [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts)
 
 For detailed information on Workflow structure, please visit the [**Workflows documentation**](/workflows).

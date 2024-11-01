@@ -1,18 +1,16 @@
 ---
 title: React Native Unit Test
-description: Learn how to run unit tests for your React Native projects easily with Appcircle, ensuring high-quality code and improved app performance.
-tags: [react native, mobile, workflow, step, unit, tests, unit test]
+description: Learn how to run unit tests with Jest for your React Native projects easily with Appcircle, ensuring high-quality code and improved app performance.
+tags: [react native, mobile, workflow, step, unit, test, jest, unit test]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # React Native Unit Test
 
-This component runs all the unit tests in your project written with [Jest](https://jestjs.io/docs/tutorial-react-native) integration. When this step is completed, it generates a test report file in `JUnit.xml` format. You can view these test results in detail using Appcircle's [**Test Report**](/workflows/react-native-specific-workflow-steps/test-reports-react-native) component.
+This component runs all the unit tests in your project written with [Jest](https://jestjs.io/docs/tutorial-react-native) integration. When this step is completed, it generates a test report file in `JUnit.xml` format. You can view these test results in detail using Appcircle's **Test Report** component. To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/workflows/react-native-specific-workflow-steps/test-reports-react-native).
 
 For detailed information for continuous testing. Please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-unit-testing).
-
-To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/workflows/react-native-specific-workflow-steps/test-reports-react-native).
 
 ### Prerequisites
 
@@ -25,6 +23,17 @@ The workflow steps that need to be executed before running the **React Native Un
 | [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands) | This step install the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4443-rnUnitFlowOrder.png'/>
+
+:::danger Step Rule
+
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggles so that Test Report Component always runs whether your tests fail or pass.
+
+- Always run this step even if the previous steps fail to **ON**
+- Continue with the next step even if this step fails to **ON**
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-report-steps-on.png" />
+
+:::
 
 ### Input Variables
 
