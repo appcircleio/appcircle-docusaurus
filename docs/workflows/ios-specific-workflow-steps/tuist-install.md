@@ -54,7 +54,7 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/tuistIntallStepInput.png' />
 
-:::info Tuist Version
+:::tip Tuist Version
 
 In some projects, the version of Tuist that needs to be installed and used can be integrated **into the project** with the `.tuist-version` file. If you have a project with **Tuist** version integrated in this way, Appcircle will **not detect** the Tuist version in the project, so if there is a **specific** Tuist version you want to install, you **must** enter this version in the **Tuist Version** input field in the step.
 
