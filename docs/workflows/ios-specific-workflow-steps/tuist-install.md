@@ -10,8 +10,13 @@ import Screenshot from '@site/src/components/Screenshot';
 
 [**Tuist**](https://docs.tuist.io/) is a command-line tool that abstracts the intricacies of Xcode projects through project generation. It serves as a foundation to help teams maintain and optimize their large modular projects.
 
-You can seamlessly integrate Tuist into your workflow with Appcircle, making setup and utilization within your existing development processes easy.
+You can seamlessly integrate Tuist Install into your workflow with Appcircle, making setup and utilization within your existing development processes easy.
 
+:::info
+
+Tuist CLI tool is a tool that enables different actions to be performed in the project with different commands. The **Tuist Install** step only installs Tuist and runs the `tuist generate` command to generate the project. On the other hand, if you want to run other commands that Tuist has, please visit the [**Tuist Commands**](/workflows/ios-specific-workflow-steps/tuist-commands) step document.
+
+:::
 
 ### Prerequisites
 
@@ -23,7 +28,7 @@ Before you run the **Tuist Install** step, you must complete certain prerequisit
 
 :::caution Tuist Usage
 
-Appcircle's Tuist component generates your project using only the `tuist generate` command. This means that it will automatically generate the `.xcworkspace` and `.xcodeproj` files in the project after the tuist generate command runs. Note that if you use Tuist in the Appcircle pipeline and want to generate an **IPA** file, you need the other build steps, such as
+Appcircle's Tuist Install component generates your project using only the `tuist generate` command. This means that it will automatically generate the `.xcworkspace` and `.xcodeproj` files in the project after the tuist generate command runs. Note that if you use Tuist Install in the Appcircle pipeline and want to generate an **IPA** file, you need the other build steps, such as
 
 - [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices)
 - [**Xcodebuild for iOS Simulator**](/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator)
@@ -41,13 +46,13 @@ In Tuist integrated projects, there will be cases where `.xcworkspace` and `.xco
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2829-tuistOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/tuistInstallStepOrder.png' />
 
 ### Input Variables
 
 You can find all the parameters required for this step in the table below, with their descriptions in detail.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4430New-tuistInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/tuistIntallStepInput.png' />
 
 | Variable Name            | Description                                                                                                                                                                         | Status   |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
