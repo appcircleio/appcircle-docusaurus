@@ -110,7 +110,7 @@ To able to run your test successfully, you must specify the **Detox Configuratio
   },
 ```
 
-For more information, please visit [**Continuous Testing**](/continuous-testing/react-native-testing/react-native-ui-testing-with-detox) documentation.
+For more information, please visit [**Continuous Testing**](/continuous-testing/react-native-testing/react-native-ui-test-with-detox) documentation.
 
 :::
 
