@@ -106,12 +106,6 @@ You must add this step **after** the `React Native UI Test` so that it can parse
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-testReport.png' />
 
-:::caution Test Suites
-
-The name for Test Suites appears as undefined because the tests are not wrapped inside a describe block, which is required for the suite name to be properly displayed in the report.
-
-:::
-
 :::danger Step Rule
 
 There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggles so that Test Report Component always runs whether your tests fail or pass.
@@ -129,5 +123,11 @@ There's one important setting that you should change. If any workflow steps fail
 Appcircle can show passing and failing tests in compact UI.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-detail.png' />
+
+:::caution Test Suites
+
+The name for Test Suites appears as undefined because the tests are not wrapped inside a describe block, which is required for the suite name to be properly displayed in the report.
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-suite-detail.png' />
