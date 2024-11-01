@@ -140,7 +140,7 @@ This step installs [Tuist](https://tuist.io/) and runs `tuist generate` with giv
 
 ## Tuist Commands
 
-This step runs specific [Tuist Commands](https://docs.tuist.io/en/cli/auth).
+This step runs specific [Tuist Commands](https://docs.tuist.io/en/cli/auth) such as `tuist build` or `tuist test`.
 
 <ContentRef url="/workflows/ios-specific-workflow-steps/tuist-commands">
     Tuist Commands
