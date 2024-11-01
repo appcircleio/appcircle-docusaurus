@@ -75,6 +75,14 @@ fastlane run [action] parameter:value
 - `Parameter`: Input parameter expected by the plugin.
 - `Value`: Input value to be entered.
 
+If the plugin you are using contains more than one parameter, you can use the parameters side by side as below.
+
+```bash
+
+fastlane run [action] parameter1:value1 parameter2:value2
+
+```
+
 For plugin details and the actions they contain, visit the repository of the [**Fastlane plugins**](https://docs.fastlane.tools/plugins/available-plugins/).
 
 
