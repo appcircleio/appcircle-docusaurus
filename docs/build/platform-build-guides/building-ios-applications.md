@@ -281,7 +281,7 @@ You need to do to resolve this error;
 - In Xcode, find the relevant file using the project navigator on the left panel.
 - Right click and select **`Convert to Group`**.
 
-
+<Screenshot url='https://cdn.appcircle.io/docs/assets/xcodeFaq.png' />
 
 After this operation, the references of the relevant files will be rewritten. 
 
@@ -290,12 +290,13 @@ After this operation, the references of the relevant files will be rewritten.
 
 If the necessary dependencies are installed with **SPM** (Swift Package Manager) in the project and there are some Run Scripts in the **Build Phase** section in Xcode, you may encounter this error when these scripts do not run in a certain order.
 
+
 ```
 
-Error: Cycle inside Gib; building could produce unreliable results.
+Error: Cycle inside <TargetName>; building could produce unreliable results.
 That command depends on command in Target 'Target Name': script phase “Google Plist Run Scrip”
 That command depends on command in Target 'Target Name': script phase “Crashlytics”
-Target 'Gib' has Swift tasks blocking downstream compilation
+Target '<TargetName>' has Swift tasks blocking downstream compilation
 
 ```
 

@@ -43,3 +43,24 @@ To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-fastlane-component
 
+
+## Fastlane FAQ
+
+### How to run a Fastlane plug-in directly? 
+
+With Appcircle's Fastlane integration, you can easily run the lane you want with the Fastfile in your project. 
+
+You can easily add the [Fastlane plugins](https://docs.fastlane.tools/plugins/available-plugins/) you want to run, which are not included in your Fastfile and are available on the Fastlane plugins, to the pipeline via a [**Custom Script**](/workflows/common-workflow-steps/custom-script) and run them easily.
+
+The example script below shows how to run the Fastlane plugin with a gem file. Add a Custom Script to your workflow and run the following script. For detailed information, please visit the [**Workflows**](/workflows) documentation. 
+
+
+```bash
+
+gem install fastlane-plugin-json
+echo "gem 'fastlane-plugin-json'" >> Gemfile
+fastlane run read_json
+
+```
+
+In this example, `fastlane-plugin-json` is used as Fastlane plugin.
