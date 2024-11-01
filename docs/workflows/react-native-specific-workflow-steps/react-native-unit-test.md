@@ -26,12 +26,12 @@ The workflow steps that need to be executed before running the **React Native Un
 
 :::danger Step Rule
 
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggles so that Test Report Component always runs whether your tests fail or pass.
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If React Native Unit Test doesn't run, test results will not be generated.** You should turn on the following toggles so that React Native Unit Test Component always runs whether your tests fail or pass.
 
 - Always run this step even if the previous steps fail to **ON**
 - Continue with the next step even if this step fails to **ON**
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-report-steps-on.png" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/unitRule.png' />
 
 :::
 

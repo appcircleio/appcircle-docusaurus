@@ -1,6 +1,6 @@
 ---
 title: Unit Test with Jest
-description: Learn effectively run unit tests with Jest  to ensure quality of React Native projects.
+description: Learn effectively run unit tests with Jest to ensure quality of React Native projects.
 tags: [unit test, jest, testing strategy, quality assurance, react native testing]
 ---
 

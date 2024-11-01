@@ -1,7 +1,7 @@
 ---
 title: UI Test with Detox
 description: Learn effectively run UI test with Detox to ensure quality of React Native projects.
-tags: [test, ui tests, react native test, testing strategy, quality assurance]
+tags: [detox, test, ui tests, react native test, testing strategy, quality assurance]
 ---
 
 # React Native UI Test on Appcircle
