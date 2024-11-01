@@ -54,6 +54,20 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/tuistIntallStepInput.png' />
 
+:::info Tuist Version
+
+In some projects, the version of Tuist that needs to be installed and used can be integrated **into the project** with the `.tuist-version` file. If you have a project with **Tuist** version integrated in this way, Appcircle will **not detect** the Tuist version in the project, so if there is a **specific** Tuist version you want to install, you **must** enter this version in the **Tuist Version** input field in the step.
+
+:::
+
+:::caution Tuist Install
+
+Appcircle uses homebrew as [installation method](https://docs.tuist.io/en/guides/quick-start/install-tuist) in Tuist Install step, therefore only compatible versions are supported. For more information, please check this [list](https://github.com/tuist/homebrew-tuist/tree/main/Formula) for compatible versions of Tuist.
+
+For this reason, iOS apps using Tuist versions `1.x` or `2.x` are not supported with Appcircle's Tuist Components.
+
+:::
+
 | Variable Name            | Description                                                                                                                                                                         | Status   |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
