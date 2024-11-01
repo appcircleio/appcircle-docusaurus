@@ -60,7 +60,7 @@ React Native UI Test component works according to the device given in the projec
 
 :::danger Step Rule
 
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If React Native UI Test doesn't run, test results will not be generated.** You should turn on the following toggles so that React Native UI Test Component always runs whether your tests fail or pass.
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If React Native UI Test doesn't run, not all tests will be completed and test results will not be generated.** You should turn on the following toggles so that **React Native UI Test** component always runs whether your tests fail or pass.
 
 - Always run this step even if the previous steps fail to **ON**
 - Continue with the next step even if this step fails to **ON**
