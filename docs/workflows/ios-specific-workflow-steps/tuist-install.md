@@ -1,7 +1,7 @@
 ---
 title: Tuist Install
 description: Scale your Xcode projects with Tuist. Streamline project management and automate configurations for efficient iOS app development.
-tags: [xcode automation, project management, ios development, code generation]
+tags: [tuist, xcode automation, project management, ios development, code generation, tuist install]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
