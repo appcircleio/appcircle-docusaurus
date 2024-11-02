@@ -27,7 +27,7 @@ Before executing the **Test Report** workflow step, **one of the** following ste
 
 :::caution Prerequisites
 
-To able to use **Test Report** component, not necessary to use both test step **React Native UI Test** and **React Native Unit Test** at the same time. But, if these test steps are included in the flow, they must be used before the **Test Report** component.
+To able to use the **Test Report** component, not necessary to use both test step **React Native UI Test** and **React Native Unit Test** at the same time. But if these test steps are included in the flow, they must be used before the **Test Report** component.
 
 :::
 

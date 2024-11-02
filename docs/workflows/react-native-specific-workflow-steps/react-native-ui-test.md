@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 This component runs all the UI tests in your project written with [Detox](https://wix.github.io/Detox/docs/introduction/getting-started) integration. When this step is completed, it generates a test report file in `e2e-report.xml` format. You can view these test results in detail using Appcircle's [**Test Report**](/workflows/react-native-specific-workflow-steps/test-reports-react-native) component.
 
-For detailed information for continuous testing. Please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-ui-test-with-detox).
+For detailed information for continuous testing, please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-ui-test-with-detox).
 
 To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/workflows/react-native-specific-workflow-steps/test-reports-react-native).
 
@@ -30,10 +30,10 @@ The workflow steps that need to be executed before running the **React Native UI
 |--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**Git Clone**](/workflows/common-workflow-steps#git-clone)                                | Clone the selected repository to the build machine.                                                                                                                                    |
 | [**Install Node**](/workflows/react-native-specific-workflow-steps#install-node)           | This step will install Node modules for your application.                                                                                                                              |
-| [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands) | This step install the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
+| [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands) | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
 | [**Cocoapods Install**](/workflows/ios-specific-workflow-steps#cocoapods-install)          | This step installs all the dependencies of the pod file.                                                                                                                               |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4443-rnUiFlow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/uiOrderNew.png' />
 
 #### For Android
 
@@ -41,7 +41,7 @@ The workflow steps that need to be executed before running the **React Native UI
 |-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**Git Clone**](/workflows/common-workflow-steps#git-clone)                                           | Clone the selected repository to the build machine.                                                                                                                                    |
 | [**Install Node**](/workflows/react-native-specific-workflow-steps#install-node)                      | This step will install Node modules for your application.                                                                                                                              |
-| [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)            | This step install the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
+| [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)            | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
 | [**Wait for Android Emulator**](/workflows/android-specific-workflow-steps/wait-for-android-emulator) | This step waits for the Android Emulator to boot. You must use this step before running any UI tests.                                                                                  |
 
 :::danger React Native UI Test for Android
@@ -60,12 +60,11 @@ React Native UI Test component works according to the device given in the projec
 
 :::danger Step Rule
 
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If React Native UI Test doesn't run, not all tests will be completed and test results will not be generated.** You should turn on the following toggles so that **React Native UI Test** component always runs whether your tests fail or pass.
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If React Native UI Test doesn't run, not all tests will be completed and test results will not be generated.** You should turn on the following toggle so that **React Native UI Test** component always runs, whether your tests fail or pass.
 
-- Always run this step even if the previous steps fail to **ON**
 - Continue with the next step even if this step fails to **ON**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/uiRule.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/uiStepRule.png' />
 
 :::
 
@@ -74,7 +73,7 @@ There's one important setting that you should change. If any workflow steps fail
 
 This step contains different variables. It needs these variables to work. The table below gives explanations of these variables.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4443-rnuiTestInput1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/uiInputNew.png' />
 
 | Variable Name                | Description                                                                                                                                                                                                                                                                                                                                 | Status   |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
