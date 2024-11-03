@@ -16,6 +16,32 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.23.0 - 2024-11-04 SSO & LDAP UI Improvements, Build Priority Configuration, Enterprise Portal Header Setting, Bug Fixes and more
+
+### 🆕 New Features
+
+- Build priorities can now be configured as **Low**, **Medium**, or **High** to manage the start order of queued builds accordingly. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- A version option has been added in the Tuist component to allow installation of a specific Tuist version. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- ZIP upload support has been removed from the UI in the Testing Distribution module. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Tuist Commands step has been added to the Appcircle iOS workflow to enable execution of specific Tuist commands. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The frequently used “Change Java Version” script has been converted into a workflow component. This component is now included in the Default Workflow to simplify Java version management. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- React Native UI Test and React Native Unit Test components have been added to Appcircle workflows to enable the execution of unit and UI tests for projects on the React Native platform. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- App Store Header setting has been added to the Enterprise Portal Customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The login system settings for SSO and LDAP have been separated into distinct sections for authentication and authorization, providing greater clarity and control over the management of these configurations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- The app extractor command has been updated to support ZIP versions above 4.5 for APK and AAB files. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A typo in the organization member invitation email titles has been corrected. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue with the date range filter in build reports has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the client ID in Enterprise App Store reports was displayed in a complex format; it is now shown in a clearer format. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The user search filter will now be based on the selected filter items above, whereas it was previously independent. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where binaries marked as rejected within the publish module still had access to various binary actions. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been resolved where the defined connections did not appear when attempting to reconnect after disconnection. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.22.1 - 2024-10-18 Editing Environment Variables, Self Hosted Updates, Enterprise Portal Login Improvement, Bug Fixes and more
 
 ### 🆕 New Features
