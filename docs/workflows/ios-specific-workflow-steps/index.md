@@ -130,12 +130,20 @@ For detailed information on the usage of **Test Reports for iOS**, please refer 
     Test Reports for iOS
 </ContentRef>
 
-## Tuist
+## Tuist Install
 
 This step installs [Tuist](https://tuist.io/) and runs `tuist generate` with given options.
 
-<ContentRef url="/workflows/ios-specific-workflow-steps/tuist">
-    Tuist
+<ContentRef url="/workflows/ios-specific-workflow-steps/tuist-install">
+    Tuist Install
+</ContentRef>
+
+## Tuist Commands
+
+This step runs specific [Tuist Commands](https://docs.tuist.io/en/cli/auth) such as `tuist build` or `tuist test`.
+
+<ContentRef url="/workflows/ios-specific-workflow-steps/tuist-commands">
+    Tuist Commands
 </ContentRef>
 
 ## Xcode Select (Version)
