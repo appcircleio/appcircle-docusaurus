@@ -92,6 +92,9 @@ This functionality allows for better management of build processes, enabling tea
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4738-config2.png' />
 
+:::info
+This feature is only available for organizations with Enterprise license.
+:::
 
 ### Signing configuration
 
