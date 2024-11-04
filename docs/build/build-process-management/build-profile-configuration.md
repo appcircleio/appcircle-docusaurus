@@ -60,7 +60,7 @@ You can download your **Configuration** in YAML format to perform actions like s
 
 - Open the **Configuration** you've created.
 - Locate the download button positioned at the bottom left of the Configuration interface. Click on the download button.
-  <Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-download-component.png' />
+  <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4738-config3.png' />
 
 Your _configuration.yaml_ file will be downloaded to your local system.
 
@@ -78,7 +78,20 @@ You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
   Self-hosted Runners
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-fetch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4738-config1.png' />
+
+#### Build Priority
+
+The build priority configuration feature includes three levels: Low, Medium, and High. 
+
+These priority levels influence the starting order of queued builds, ensuring that higher-priority builds are initiated first. 
+
+For instance, if a high-priority build is added to the queue after a low-priority build, the high-priority build will commence before the low-priority one. 
+
+This functionality allows for better management of build processes, enabling teams to prioritize critical updates and enhancements efficiently.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4738-config2.png' />
+
 
 ### Signing configuration
 
