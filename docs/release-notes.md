@@ -16,12 +16,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
-## 3.23.0 - 2024-11-04 SSO & LDAP Improvements, Build Priority Configuration, Enterprise Portal Header Setting, Bug Fixes and more
+## 3.23.0 - 2024-11-04 SSO & LDAP Improvements, Build Priority Configuration, Bug Fixes and more
 
 ### 🆕 New Features
 
 - Existing SSO & LDAP settings can now be duplicated when creating a new SSO or LDAP configuration. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Build priorities can now be configured as **Low**, **Medium**, or **High** to manage the start order of queued builds accordingly. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Build priorities](build/build-process-management/build-profile-configuration#project-details-configuration) can now be configured as **High**, **Medium**, or **Low** to manage the start order of queued builds accordingly. Available for organizations with Enterprise License. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -32,7 +32,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - React Native UI Test and React Native Unit Test components have been added to Appcircle workflows to enable the execution of unit and UI tests for projects on the React Native platform. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Actions in the Signing Identity module can now be monitored within the Activity Log section. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - ZIP upload support has been removed from the UI in the Testing Distribution module. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- App Store Header setting has been added to the Enterprise Portal Customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [App Store Header](enterprise-app-store/portal-customization) setting has been added to the Enterprise Portal Customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
