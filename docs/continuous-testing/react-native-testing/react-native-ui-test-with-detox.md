@@ -60,7 +60,7 @@ Default Jest generates test results as JSON, but the **React Native UI Test** re
 
 :::caution Build in Release Mode
 
-The React Native project must be build with Detox in release mode, as debug builds trigger [Metro](https://docs.expo.dev/guides/customizing-metro/) to start, which can interfere with testing. For more details, [**refer to the official Detox documentation**](https://wix.github.io/Detox/docs/introduction/preparing-for-ci).
+The React Native project must be build with Detox in release mode, as debug builds trigger [Metro](https://reactnative.dev/docs/metro) to start, which can interfere with testing. For more details, [**refer to the official Detox documentation**](https://wix.github.io/Detox/docs/introduction/preparing-for-ci).
 
 :::
 
