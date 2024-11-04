@@ -35,7 +35,7 @@ The workflow steps that need to be executed before running the **React Native UI
 
 :::info
 
-If your **CocoaPods** dependencies are **embedded** in the project, you do not need to use the **CocoaPods** step to run UI tests.
+If your **CocoaPods** dependencies are **embedded** in the project, you do not need to use the **CocoaPods Install** step to run UI tests.
 
 :::
 
@@ -66,7 +66,7 @@ React Native UI Test component works according to the device given in the projec
 
 :::danger Step Rule
 
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If React Native UI Test doesn't run, not all tests will be completed and test results will not be generated.** If you want to generate **Test Report**, you should turn on the following toggle so that **React Native UI Test** component always runs whether your tests fail or pass. On the other hand, the same applies when you want to run another step after **React Native UI Test**.
+If any workflow steps fail, Appcircle automatically skips the next steps. However, it is possible that some of your tests may fail. If you have a failing test, Appcircle will break the pipeline. If you want your pipeline not to break even if an error occurs in this step (especially for exporting test reports), you should activate the following option:
 
 - Continue with the next step even if this step fails to **ON**
 
@@ -119,7 +119,7 @@ For more information, please visit [**Continuous Testing**](/continuous-testing/
 
 :::
 
-:::info How to download Screen Shots
+:::info How to Download Screen Shots
 
 The Appcircle interface does **not** support displaying screenshots generated from UI tests in React Native projects. All screenshots created as a result of these tests are exported to [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) as `test_attachments.zip`. You can access the relevant screenshots in **Download Artifact** and download them directly.
 

@@ -35,7 +35,7 @@ You can access and download the exported artifacts by clicking on the three dots
 
 :::caution
 
-When a step in the Appcircle pipeline encounters an error, the pipeline automatically **stops** and moves to the **Export Build Artifact** step. This step exports all artifacts and build logs, making them available for download, so it is essential that it functions correctly. By default, this step is set to **Always run this step even if the previous steps fail**. However, if you add this step to the pipeline **manually**, this setting will **not** be enabled. If you've **removed** and **re-added** this step in the pipeline, ensure that this setting is **enabled**. Otherwise, artifacts and build logs from failed pipelines will **not** be available for **download**.
+If you use the **Default Workflow** templates, the option "**Always run this step even if the previous steps fail**" is already enabled for the **Export Build Artifacts** step by default. However, **if you want to ensure that the build log and any extracted artifacts are available even if the pipeline fails, you need to turn on this option.**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/exportToggle.png' />
 

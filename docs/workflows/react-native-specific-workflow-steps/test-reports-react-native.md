@@ -22,7 +22,7 @@ Before executing the **Test Report** workflow step, **one of the** following ste
 
 | Prerequisite Workflow Step                                                                           | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| [**React Native Unit Test**](/workflows/react-native-specific-workflow-steps/react-native-unit-test) | Run unit tests in your project to generate an `JUnit-report.xml` file containing the test outcomes.   |
+| [**React Native Unit Test**](/workflows/react-native-specific-workflow-steps/react-native-unit-test) | Run unit tests in your project to generate an `junit-report.xml` file containing the test outcomes.   |
 | [**React Native UI Test**](/workflows/react-native-specific-workflow-steps/react-native-ui-test)     | Run UI tests in your project to generate an `e2e-report.xml` file containing the test outcomes. |
 
 :::caution Prerequisites
