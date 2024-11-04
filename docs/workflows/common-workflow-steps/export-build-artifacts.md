@@ -33,6 +33,14 @@ You can access and download the exported artifacts by clicking on the three dots
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportDownload.png' />
 
+:::caution
+
+If you use the **Default Workflow** templates, the option "**Always run this step even if the previous steps fail**" is already enabled for the **Export Build Artifacts** step by default. However, **if you want to ensure that the build log and any extracted artifacts are available even if the pipeline fails, you need to turn on this option.**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/exportToggle.png' />
+
+:::
+
 ### Input Variables
 
 You can find all the parameters required for this step in the table below, with their descriptions in detail.
