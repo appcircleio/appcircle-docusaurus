@@ -22,8 +22,8 @@ Before executing the **Test Report** workflow step, **one of the** following ste
 
 | Prerequisite Workflow Step                                                                           | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| [**React Native Unit Test**](/workflows/react-native-specific-workflow-steps/react-native-unit-test) | Run unit tests in your project to generate an `JUnit.xml` file containing the test outcomes.   |
-| [**React Native UI Test**](/workflows/react-native-specific-workflow-steps/react-native-ui-test)     | Run UI tests in your project to generate an `e2e-repot.xml` file containing the test outcomes. |
+| [**React Native Unit Test**](/workflows/react-native-specific-workflow-steps/react-native-unit-test) | Run unit tests in your project to generate an `JUnit-report.xml` file containing the test outcomes.   |
+| [**React Native UI Test**](/workflows/react-native-specific-workflow-steps/react-native-ui-test)     | Run UI tests in your project to generate an `e2e-report.xml` file containing the test outcomes. |
 
 :::caution Prerequisites
 
@@ -39,19 +39,6 @@ For each component, specific input variables are required for its operation on y
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_TEST_RESULT_PATH`     | Define the directory and its subdirectories for searching compatible test files.                                                 | Required |
 | `$AC_COVERAGE_RESULT_PATH` | For native iOS projects, tests automatically set this variable. For other projects, you must specify the coverage path manually. | Optional |
-
-
-:::danger Step Rule
-
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If Test Report component doesn't run, reports will not be generated.** You should turn on the following toggles so that **Test Report** component always runs whether your tests fail or pass.
-
-- Always run this step even if the previous steps fail to **ON**
-- Continue with the next step even if this step fails to **ON**
-  
-<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-report-steps-on.png" />
-
-:::
-
 
 :::caution
 

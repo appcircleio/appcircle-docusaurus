@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # React Native Unit Test
 
-This component runs all the unit tests in your project written with [Jest](https://jestjs.io/docs/tutorial-react-native) integration. When this step is completed, it generates a test report file in `JUnit.xml` format. You can view these test results in detail using Appcircle's **Test Report** component. To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/workflows/react-native-specific-workflow-steps/test-reports-react-native).
+This component runs all the unit tests in your project written with [Jest](https://jestjs.io/docs/tutorial-react-native) integration. When this step is completed, it generates a test report file in `JUnit-report.xml` format. You can view these test results in detail using Appcircle's **Test Report** component. To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/workflows/react-native-specific-workflow-steps/test-reports-react-native).
 
 For detailed information for continuous testing, please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-unit-test-with-jest).
 
@@ -26,7 +26,7 @@ The workflow steps that need to be executed before running the **React Native Un
 
 :::danger Step Rule
 
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If React Native Unit Test doesn't run, not all tests will be completed and test results will not be generated.** You should turn on the following toggle so that **React Native Unit Test** component always runs whether your tests fail or pass.
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If React Native Unit Test doesn't run, not all tests will be completed and test results will not be generated.** If you want to generate **Test Report**, you should turn on the following toggle so that **React Native Unit Test** component always runs whether your tests fail or pass. On the other hand, the same applies when you want to run another step after **React Native Unit Test**.
 
 - Continue with the next step even if this step fails to **ON**
 
@@ -44,7 +44,7 @@ This step contains different variables. It needs these variables to work. The ta
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | `$AC_REPOSITORY_DIR`       | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step.                                                                                                                                                                                                                                       | Required |
 | `$AC_OUTPUT_DIR`           | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                                                                                                                                                                             | Required |
-| `$AC_RN_TEST_COMMAND_ARGS` | Specify additional command arguments for running Jest tests. An extra parameter will be added to the end of the command `jest --coverage --coverageDirectory=coverage --coverageReporters=lcov` which will be used by default. You can add extra arguments, such as `--debug --colors`, without affecting the default ones. For more information, see the Jest [CLI options](https://jestjs.io/docs/cli#options). | Optional |
+| `$AC_RN_TEST_COMMAND_ARGS` | Specify additional command arguments for running Jest tests. An extra parameter will be added to the end of the command `jest` which will be used by default. You can add extra arguments, such as `--debug --colors`, without affecting the default ones. For more information, see the Jest [CLI options](https://jestjs.io/docs/cli#options). | Optional |
 
 :::caution
 
@@ -56,10 +56,15 @@ To view the output artifacts on the [**Download Artifacts**](/workflows/common-w
 
 The outputs resulting from the operation of this component are as follows:
 
-| Variable Name             | Description                                                                                              |
-| ------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `AC_TEST_RESULT_PATH`     | The output path for the `JUnit.xml` file. This environment variable can be utilized in subsequent steps. |
-| `AC_COVERAGE_RESULT_PATH` | The output path for the coverage files. This environment variable can be utilized in subsequent steps.   |
+| Variable Name         | Description                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| `AC_TEST_RESULT_PATH` | The output path for the `JUnit-report.xml` file. This environment variable can be utilized in subsequent steps. |
+
+:::info Coverage Support
+
+Appcircle does **not** currently support **coverage** calculation in React Native projects. Coverage calculation for test reports in React Native projects is available in our development **roadmap** for this component. It will be available **as soon as** it is available.
+
+:::
 
 To access the source code of this component, please use the following link:
 

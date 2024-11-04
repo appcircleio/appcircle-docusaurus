@@ -33,6 +33,12 @@ The workflow steps that need to be executed before running the **React Native UI
 | [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands) | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
 | [**Cocoapods Install**](/workflows/ios-specific-workflow-steps#cocoapods-install)          | This step installs all the dependencies of the pod file.                                                                                                                               |
 
+:::info
+
+If your **CocoaPods** dependencies are **embedded** in the project, you do not need to use the **CocoaPods** step to run UI tests.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/uiOrderNew.png' />
 
 #### For Android
@@ -60,7 +66,7 @@ React Native UI Test component works according to the device given in the projec
 
 :::danger Step Rule
 
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If React Native UI Test doesn't run, not all tests will be completed and test results will not be generated.** You should turn on the following toggle so that **React Native UI Test** component always runs, whether your tests fail or pass.
+There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the **Export Build Artifacts** step. However, it is possible that some of your tests may fail. **If React Native UI Test doesn't run, not all tests will be completed and test results will not be generated.** If you want to generate **Test Report**, you should turn on the following toggle so that **React Native UI Test** component always runs whether your tests fail or pass. On the other hand, the same applies when you want to run another step after **React Native UI Test**.
 
 - Continue with the next step even if this step fails to **ON**
 
@@ -110,6 +116,12 @@ To able to run your test successfully, you must specify the **Detox Configuratio
 ```
 
 For more information, please visit [**Continuous Testing**](/continuous-testing/react-native-testing/react-native-ui-test-with-detox) documentation.
+
+:::
+
+:::info How to download Screen Shots
+
+The Appcircle interface does **not** support displaying screenshots generated from UI tests in React Native projects. All screenshots created as a result of these tests are exported to [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) as `test_attachments.zip`. You can access the relevant screenshots in **Download Artifact** and download them directly.
 
 :::
 
