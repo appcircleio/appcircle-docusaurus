@@ -123,6 +123,8 @@ For more information, please visit [**Continuous Testing**](/continuous-testing/
 
 The Appcircle interface does **not** support displaying screenshots generated from UI tests in React Native projects. All screenshots created as a result of these tests are exported to [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) as `test_attachments.zip`. You can access the relevant screenshots in **Download Artifact** and download them directly.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/downloadAttachments.png' />
+
 :::
 
 :::caution
