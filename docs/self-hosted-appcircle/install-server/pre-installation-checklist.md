@@ -37,6 +37,12 @@ cat /etc/os-release
 cat /etc/centos-release
 ```
 
+- [ ] If you are using Oracle Linux, it should be **Oracle Linux 9 or later**.
+
+```bash
+cat /etc/os-release
+```
+
 ### Check the CPU Cores
 
 - [ ] Minimum CPU core count should be **8 cores**.
