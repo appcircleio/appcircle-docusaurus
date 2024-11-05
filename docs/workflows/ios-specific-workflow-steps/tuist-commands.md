@@ -1,6 +1,6 @@
 ---
 title: Tuist Commands
-description: Scale your Xcode projects with Tuist. Streamline project management and automate configurations for efficient iOS app development.
+description: Scale your Xcode projects with Tuist commands. Streamline project management and automate configurations for efficient iOS app development with Tuist.
 tags: [tuist, xcode automation, project management, ios development, code generation, tuist command]
 ---
 
