@@ -59,7 +59,7 @@ The example script below shows how to run the Fastlane plugin with a gem file. A
 
 gem install fastlane-plugin-json
 echo "gem 'fastlane-plugin-json'" >> Gemfile
-fastlane run read_json json_path:'./example.json'
+fastlane run read_json json_path:./example.json
 
 ```
 
