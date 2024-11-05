@@ -257,11 +257,11 @@ end
 
 ### Xcode 16 Known Issues
 
-Apple introduces big changes with Xcode, which it develops every year. You can find the errors and solutions encountered for the first time after the Xcode 16 transition under this title.
+Apple introduces significant changes with each annual Xcode update. Errors and solutions encountered for the first time following the transition to Xcode 16 can be found under this section.
 
 #### Error: `PBXGroup` attempted to initialize an object with unknown ISA `PBXFileSystemSynchronizedRootGroup`
 
-After Xcode 16 migration, when you add a new target to your project, you will get a reference error if this target is not added correctly. This error is caused by Xcode writing the reference differently in the `.pbxproj` file, which must be read to compile the project and where the project references are written.
+Following the Xcode 16 migration, adding a new target to your project may result in a reference error if the target is not configured correctly. This error occurs because Xcode now writes the reference differently in the `.pbxproj` file, which is essential for compiling the project and contains all project references.
 
 ```
 
@@ -273,9 +273,9 @@ Error: PBXGroup attempted to initialize an object with unknown ISA PBXFileSystem
 
 ```
 
-This error is caused by the target files added to the project being added as a `folder` and not as a `group`. Xcode uses a `group` structure to `group` files together in the project directory and creates its references accordingly. If you have created a `folder` in the project directory in a way other than Xcode, you will encounter the above error during build because this reference will be misspelt.
+This error is caused when target files are added to the project as a `folder` rather than as a `group`. Xcode uses a `group` structure to organize files within the project directory and creates references accordingly. If a `folder` is manually created in the project directory outside of Xcode, a misspelled reference may result, leading to the error during the build process.
 
-You need to do to resolve this error:
+To resolve this error, follow these steps:
 
 - Open your project on **Xcode**.
 - In Xcode, find the relevant file using the project navigator on the left panel.
@@ -300,7 +300,7 @@ Target '<TargetName>' has Swift tasks blocking downstream compilation
 
 ```
 
-This error may be due to **`Embed Foundation Extensions`** being under **`Copy Bundle Resources`**. For this reason, you can overcome this problem by moving **`Embed Foundation Extensions`** up.
+This error may occur if **`Embed Foundation Extensions`** is located under **`Copy Bundle Resources`**. To resolve this issue, try moving **`Embed Foundation Extensions`** to a higher position in the list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/spmError.png' />
 
