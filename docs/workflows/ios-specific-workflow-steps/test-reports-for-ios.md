@@ -1,6 +1,6 @@
 ---
 title: Test Reports for iOS
-description: Test Report step displays your test results and code coverage in an aesthetically pleasing user interface.
+description: Test Report step displays your test results and code coverage in an aesthetically pleasing user interface for iOS applications.
 tags: [test, test report, test result, automation]
 ---
 
