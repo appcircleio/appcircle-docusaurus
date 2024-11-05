@@ -35,7 +35,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Available Xcode Versions
 
-Our macOS build agents have Xcode versions 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
+Our macOS build agents have Xcode versions 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
 
 :::caution
 Xcode `14.3.x` or higher Xcode versions require a Mac running macOS Ventura 13.0 or later.
@@ -45,7 +45,8 @@ The "Default M1 Pool" macOS **Sonoma** (`14.5`) stack has the Xcode versions bel
 
 | Version | Build |
 | ------- | ----- |
-| 16.1 | `16B5014f` |
+| 16.2 | `16B5100e` |
+| 16.1 | `16B40` |
 | 16.0 | `16A242d` |
 | 15.4 | `15F31d` |
 | 15.3 | `15E204a` |

@@ -1,7 +1,7 @@
 ---
 title: Store and Distribution SSO Authentication
 description: Set up single sign-on (SSO) for distributing your applications, enhancing security and simplifying the login process.
-tags: [sso, distribution, okta, auht0, entraid, azure, saml, openid]
+tags: [sso, distribution, okta, auth0, entraid, azure, saml, openid]
 sidebar_position: 3
 ---
 

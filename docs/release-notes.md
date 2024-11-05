@@ -16,6 +16,80 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.22.1 - 2024-10-18 Editing Environment Variables, Self Hosted Updates, Enterprise Portal Login Improvement, Bug Fixes and more
+
+### 🆕 New Features
+
+- Unhidden text and file-formatted environment variables within the build and publish modules can now be edited by users after registration. <BuildBadge/> <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Appcircle server version is now displayed in the blue bar at the bottom right corner of any page for self-hosted Appcircle server users. <InfrastructureBadge/> <SelfHostedBadge/>
+- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.2 Beta 1](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_2-release-notes) installed on runners. Since this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- A password hide/show toggle was added to the Enterprise Portal login page for both static and LDAP authentication methods. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The credentials for the Enterprise App Store static authentication channel will now be displayed accordingly if a password has been previously entered by the user. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where publish environment variables did not function when created through a new variable group. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where using the `"` character in review notes or descriptions within metadata details caused errors when attempting to update the connected metadata details through the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where multiline environment variables were causing errors during the “Send to TestFlight” publish step. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where empty metadata fields on Appcircle were being displayed as `null` on the App Store Connect side after updates. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where users with a ‘+’ in their email addresses could not be invited, re-invited to or deleted from an organization. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where users were granted access to incorrect organizations when using SSO authentication for Appcircle login. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- API request checks for Enterprise and Testing Portal logins were improved to display more accurate responses for security reasons. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where branches deleted from Azure repositories were not being removed from the Appcircle build profile. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Security improvements have been made regarding cookies, including enhanced attributes, stronger encryption, and support for updated TLS versions. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug that prevented configuring the Keycloak user decision strategy for self-hosted Appcircle server users has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- An issue with LDAP authentication in the testing portal, effecting some users, has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+## 3.22.0 - 2024-10-04 Apple Devices, Build Report Improvement, Auto Cancel Redundant Pipelines, Bug Fixes and more
+
+### 🆕 New Features
+
+- Users will now be able to view [Apple devices](/signing-identities/apple-devices) registered in various stores, enable or disable selected devices, and save device information through email invitations within the Apple Devices section of Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Failed build steps are now visible within the build CSV reports, which can be downloaded from the Build History section. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The "Auto Cancel Redundant Pipelines" option has been added to Build configurations, allowing users to automatically cancel redundant pipelines which was started or queued by triggers. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.1 Beta 3](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_1-release-notes) final release installed on runners. Since this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
+- Self-hosted Appcircle users utilizing the DMZ structure can now configure the `auth` subdomain used for internet requests with a custom domain. <InfrastructureBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The LDAP role mapping configuration page now supports role search functionality. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A warning message display was added for Inherited Sub-organization users during Personal Access Token generation. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The SSO creation screen has been updated to ensure that the switch buttons reflect the actual backend status (on) after an SSO is created, preventing confusion for users. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- `Tolerant` user [lookup decision strategy](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#editing-user-lookup-decision-strategy) has been added to the LDAP settings for self-hosted configurations. <AccountBadge/> <SelfHostedBadge/>
+- Store submit events were removed from the notification settings for Slack, MS Teams, and Email. Additionally, the module names within the configurations were updated. <IntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Build Profile Search feature has been enhanced through integration with our backend systems. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Builds that have completed with a successful output but contain a failed step will now be displayed with a warning status in the build lists and build profile cards. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The logout option has been removed from the Enterprise Portal for non-authentication type logins. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Enterprise Portal will no longer display empty channels as selectable tabs if they do not have any active app versions. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server logs have been optimized. <InfrastructureBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where, when pushing a tag for an old commit to GitLab, Appcircle incorrectly triggered a build for the latest/head commit on the same branch. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed in the Appcircle UI where users received two separate notifications for the same tag creation when a tag webhook was received from the Git provider. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where, if the `AC_COMMIT_MESSAGE` variable contained more than two lines, the commit message was not displaying to the components. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where workflow and configuration files could not be downloaded by users through the admin module. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the selected pool was not properly displayed in a cloned iOS build profile configuration. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the help links for build workflow steps were not directing users to the relevant documentation. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the link for build logs received via notification email was changing to an incorrect format upon being used. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where platform names, such as Android or iOS, were being displayed in lowercase within the Publish Activity Log area. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the UI displayed a false error when users navigated to a sub-organization from a root organization with SSO configuration. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the selected organization name was changing format when selected again within the SSO mapping configuration page. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The warning message for invalid Google API Key uploads has been improved. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the add button remained active even without selecting any LDAP group within LDAP Mapping settings. <AccountBadge/> <SelfHostedBadge/>
+- The bug causing excessive CPU resource usage by the self-hosted Appcircle server after a deep health endpoint response has been resolved. <InfrastructureBadge/> <SelfHostedBadge/>
+- A bug in `compose.yaml` file causing an error due to localization and decimal separator has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- A bug that prevented labels from appearing in the self-hosted Appcircle server log monitoring UI has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- An issue preventing the `auth` module page from being displayed in Swagger UI for self-hosted installations using self-signed certificates has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+
+### :warning: Breaking Changes
+
+- Certain [role permissions](/account/my-organization/profile-and-team/role-management#signing-and-identity-permissions) from the Testing Distribution module related to the Apple Devices section have been migrated to the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Apple Devices section in the Testing Distribution module has been relocated to the Signing Identities module on the UI, along with its new capabilities. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.21.0 - 2024-09-12 Publish Log Monitoring, SSO Mapping and Enterprise App Store Improvements, Xcode 16.0, Bug Fixes, and more
 
 ### 🆕 New Features
@@ -735,7 +809,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🐞 Fixed
 
 - Fixed the "Waiting Duration" title in the Queue Waiting Reports header. <SelfHostedBadge/>
-- The role management error in the [Apple Devices](/docs/testing-distribution/apple-devices.md) section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The role management error in the [Apple Devices](/signing-identities/apple-devices) section in the Testing Distribution module has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue of not being able to distribute to the selected configuration in the [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile) module. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue where the branch list could not be refreshed when the user [permission](/account/my-organization) for the Build module was set to "Read Only Access". <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue where the build does not appear in the list when the build starts. <CloudBadge/> <SelfHostedBadge/>
@@ -746,10 +820,10 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - The wrong dialog modal was opening in the "never delete" option selected for the deletion of an artifact. It's been fixed, and an extra description has been added. <CloudBadge/> <SelfHostedBadge/>
 - When there was a workflow step of the same name, there was a confusion of names. It's has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - An error message is now displayed to the user when an invalid workflow name is entered. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the data refresh error when the version is deleted in the [Apple Devices](/testing-distribution/apple-devices) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the data refresh error when the version is deleted in the [Apple Devices](/signing-identities/apple-devices) section of the Testing Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the page crash problem when the user clicks on the [Triggers](/build/build-process-management/build-manually-or-with-triggers). <CloudBadge/> <SelfHostedBadge/>
 - Added a toast message that is shown when the user tries to download the deleted configuration in the admin panel. <CloudBadge/> <SelfHostedBadge/>
-- The case that selection of the adhoc [auto device register](/testing-distribution/apple-devices#automatically-adding-registered-devices-to-the-provisioning-profile) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- The case that selection of the adhoc [auto device register](/signing-identities/apple-devices) on the distribution profile settings has been fixed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.7.0 - 2023-09-05 - Email Notification, Queue Waiting Reports
 
@@ -818,7 +892,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - The ability to send files from the Testing Distribution module to the Enterprise App Store added. <CloudBadge/> <SelfHostedBadge/>
 - Made an improvement to prevent the subordinate from accessing the details on the 'corporate settings' page. <CloudBadge/> <SelfHostedBadge/>
 - Default M1 Pool is automatically selected in case of [Xcode](/infrastructure/ios-build-infrastructure) version 14.3.x and above. <CloudBadge/>
-- Improved the display of device name if there is an available device on the [IOS provisioning](/testing-distribution/apple-devices) profile side. <CloudBadge/> <SelfHostedBadge/>
+- Improved the display of device name if there is an available device on the [IOS provisioning](/signing-identities/apple-devices) profile side. <CloudBadge/> <SelfHostedBadge/>
 - Subtitle would also have to be searched for components. This development has been done. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
@@ -1043,7 +1117,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### 🆕 New Feature
 
-- [Apple Devices](/testing-distribution/apple-devices) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
+- [Apple Devices](/signing-identities/apple-devices) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
 - [Firebase Deployment ]/workflows/flutter-specific-workflow-steps/firebase-deployment) component added.
 
 ### :muscle: Improvement

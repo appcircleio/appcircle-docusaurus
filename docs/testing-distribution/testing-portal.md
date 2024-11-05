@@ -35,6 +35,17 @@ Please note that the log out option is available only if an active authenticatio
 
 :::
 
+::: warning
+
+Please note that to login to the Testing Portal, you must enable cookies in your browser. Cookies help maintain your session and ensure secure access.
+
+Refer to your browser's settings to enable cookies:
+
+**Chrome**: Settings > Privacy and security > Cookies.
+**Safari**: Preferences > Privacy.
+
+:::
+
 ## Listing and Downloading Binary
 
 Once logged in, users can now see the list of distributions separated by distribution profile and release version. Files can be downloaded with one click.
