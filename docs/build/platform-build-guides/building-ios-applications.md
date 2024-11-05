@@ -255,6 +255,62 @@ end
 ```
 :::
 
+### Xcode 16 Known Issues
+
+Apple introduces significant changes with each annual Xcode update. Errors and solutions encountered for the first time following the transition to Xcode 16 can be found under this section.
+
+#### Error: `PBXGroup` attempted to initialize an object with unknown ISA `PBXFileSystemSynchronizedRootGroup`
+
+Following the Xcode 16 migration, adding a new target to your project may result in a reference error if the target is not configured correctly. This error occurs because Xcode now writes the reference differently in the `.pbxproj` file, which is essential for compiling the project and contains all project references.
+
+```
+
+Error: PBXGroup attempted to initialize an object with unknown ISA PBXFileSystemSynchronizedRootGroup from attributes: 
+{
+  "isa"=>"PBXFileSystemSynchronizedRootGroup", "exceptions"=>["5E7769042CAEDA6A0010DF2F"], 
+"explicitFileTypes"=>{}, "explicitFolders"=>[], "path"=>"ImageNotification", "sourceTree"=>"<group>"
+}
+
+```
+
+This error is caused when target files are added to the project as a `folder` rather than as a `group`. Xcode uses a `group` structure to organize files within the project directory and creates references accordingly. If a `folder` is manually created in the project directory outside of Xcode, a misspelled reference may result, leading to the error during the build process.
+
+To resolve this error, follow these steps:
+
+- Open your project on **Xcode**.
+- In Xcode, find the relevant file using the project navigator on the left panel.
+- Right click and select **`Convert to Group`**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/xcodeFaq.png' />
+
+After this operation, the references of the relevant files will be rewritten. 
+
+
+#### Error: Cycle inside `Application Target Name`; building could produce unreliable results
+
+If the necessary dependencies are installed with **SPM** (Swift Package Manager) in the project and there are some `Run Scripts` in the **Build Phase** section in Xcode, you may encounter this error when these scripts do not run in a certain order.
+
+
+```
+
+Error: Cycle inside <TargetName>; building could produce unreliable results.
+That command depends on command in Target 'Target Name': script phase “Google Plist Run Scrip”
+That command depends on command in Target 'Target Name': script phase “Crashlytics”
+Target '<TargetName>' has Swift tasks blocking downstream compilation
+
+```
+
+This error may occur if **`Embed Foundation Extensions`** is located under **`Copy Bundle Resources`**. To resolve this issue, try moving **`Embed Foundation Extensions`** to a higher position in the list.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/spmError.png' />
+
+:::info
+
+This issue can also occur in **Xcode 16 and earlier**. However, it is more likely to occur during Xcode 16 migration.
+
+:::
+
+
 ### Provisioning Profile Error
 
 If you receive a provisioning profile error similar to the following, it usually indicates a mismatch between the bundle ID selected in the build configuration and the provisioning profile.

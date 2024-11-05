@@ -43,3 +43,45 @@ To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-fastlane-component
 
+
+## Fastlane FAQ
+
+### How to run a Fastlane plug-in directly? 
+
+With Appcircle's Fastlane integration, you can easily run the [lane](https://docs.fastlane.tools/advanced/lanes/) you want with the Fastfile in your project. But you can also run a [Fastlane plugins](https://rubygems.org/search?query=fastlane-plugin-) directly in the pipeline without any Fastlane integration.
+
+You can easily add the [Fastlane plugins](https://rubygems.org/search?query=fastlane-plugin-) you want to run, which are not included in your Fastfile and are available on the Fastlane plugins, to the pipeline via a [**Custom Script**](/workflows/common-workflow-steps/custom-script) and run them easily. For all available plugins, please visit the [**Fastlane plugins**](https://docs.fastlane.tools/plugins/available-plugins/) documentation.
+
+The example `Bash` script below shows how to run the Fastlane plugin with a gem file.  In this example, `fastlane-plugin-json` is used as a Fastlane plugin. Add a **Custom Script** step to your [**Workflows**](/workflows) to run the following script.
+
+
+```bash
+
+cd $AC_REPOSITORY_DIR
+gem install fastlane-plugin-json
+echo "gem 'fastlane-plugin-json'" >> Gemfile
+fastlane run read_json json_path:./example.json
+
+```
+
+The same command sequence should be used to run different Fastlane plugins. Once the plugin is installed, it is run with the `fastlane run` command. The necessary actions must be completed for the plugin to work correctly. The command used to run Fastlane plugin is as follows:
+
+```bash
+
+fastlane run [action] parameter:value
+
+```
+
+- `Action`: The plugin will be run.
+- `Parameter`: Input parameter expected by the plugin.
+- `Value`: Input value to be entered.
+
+If the plugin you are using contains more than one parameter, you can use the parameters side by side as below.
+
+```bash
+
+fastlane run [action] parameter1:value1 parameter2:value2
+
+```
+
+For plugin details and the actions they contain, visit the repository of the [**Fastlane plugins**](https://docs.fastlane.tools/plugins/available-plugins/).
