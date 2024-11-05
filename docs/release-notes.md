@@ -28,8 +28,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - SSO and LDAP configurations for Enterprise Portal and Testing Portal access have been separated and can now be found under Authentication Settings within the Integrations section of the Organization module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The login and user management settings for SSO and LDAP have been separated into dedicated sections for authentication and authorization, offering improved clarity and control over the management of these configurations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A version option has been added in the Tuist component to allow installation of a specific Tuist version. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The Tuist Commands step has been added to the Appcircle iOS workflow to enable execution of specific Tuist commands. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- React Native UI Test and React Native Unit Test components have been added to Appcircle workflows to enable the execution of unit and UI tests for projects on the React Native platform. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Tuist Commands](workflows/ios-specific-workflow-steps/tuist-commands) step has been added to the Appcircle iOS workflow to enable execution of specific Tuist commands. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [React Native UI Test](continuous-testing/react-native-testing/react-native-ui-test-with-detox) and [React Native Unit Test](continuous-testing/react-native-testing/react-native-unit-test-with-jest) components have been added to Appcircle workflows to enable the execution of unit and UI tests for projects on the React Native platform. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Actions in the Signing Identity module can now be monitored within the Activity Log section. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - ZIP upload support has been removed from the UI in the Testing Distribution module. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [App Store Header](enterprise-app-store/portal-customization) setting has been added to the Enterprise Portal Customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -1081,7 +1081,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - [AppSweep Mobile Security Testing](/workflows/android-specific-workflow-steps/#appsweep-mobile-security-testing) component added. <CloudBadge/> <SelfHostedBadge/>
 - [Self-signed certificate](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration) support added for Testing Distribution. <SelfHostedBadge/>
 - [Enterprise App Store](/enterprise-app-store/portal-customization) is now available in German and Turkish languages in addition to English. To switch to your preferred language, simply navigate to the language settings on your store homepage and select either German or Turkish. <CloudBadge/> <SelfHostedBadge/>
-- [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=enterprisestore) are added to directly download IPA or APK files from Enterprise App Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
+- [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=store) are added to directly download IPA or APK files from Enterprise App Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
