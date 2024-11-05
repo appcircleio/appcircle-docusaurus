@@ -261,7 +261,7 @@ Apple introduces big changes with Xcode, which it develops every year. You can f
 
 #### Error: `PBXGroup` attempted to initialize an object with unknown ISA `PBXFileSystemSynchronizedRootGroup`
 
-After Xcode 16 migration, when you add a new target to your project, you will get a reference error if this target is not added correctly. This error is caused by Xcode writing the reference differently in the .pbxproj file, which must be read to compile the project and where the project references are written.
+After Xcode 16 migration, when you add a new target to your project, you will get a reference error if this target is not added correctly. This error is caused by Xcode writing the reference differently in the `.pbxproj` file, which must be read to compile the project and where the project references are written.
 
 ```
 
@@ -273,9 +273,9 @@ Error: PBXGroup attempted to initialize an object with unknown ISA PBXFileSystem
 
 ```
 
-This error is caused by the target files added to the project being added as a Folder and not as a Group. Xcode uses a Group structure to group files together in the project directory and creates its references accordingly. If you have created a Folder in the project directory in a way other than Xcode, you will encounter the above error during build because this reference will be misspelled.
+This error is caused by the target files added to the project being added as a `folder` and not as a `group`. Xcode uses a `group` structure to `group` files together in the project directory and creates its references accordingly. If you have created a `folder` in the project directory in a way other than Xcode, you will encounter the above error during build because this reference will be misspelt.
 
-You need to do to resolve this error;
+You need to do to resolve this error:
 
 - Open your project on **Xcode**.
 - In Xcode, find the relevant file using the project navigator on the left panel.
@@ -288,7 +288,7 @@ After this operation, the references of the relevant files will be rewritten.
 
 #### Error: Cycle inside `Application Target Name`; building could produce unreliable results
 
-If the necessary dependencies are installed with **SPM** (Swift Package Manager) in the project and there are some Run Scripts in the **Build Phase** section in Xcode, you may encounter this error when these scripts do not run in a certain order.
+If the necessary dependencies are installed with **SPM** (Swift Package Manager) in the project and there are some `Run Scripts` in the **Build Phase** section in Xcode, you may encounter this error when these scripts do not run in a certain order.
 
 
 ```
