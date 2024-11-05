@@ -378,7 +378,13 @@ According to the sample outputs above, the needed domains that Appcircle DMZ ser
 - `auth.appcircle.spacetech.com`: Appcircle authentication domain.
 
 :::caution
-There is a common domain here. Be aware that the auth domain that the clients that will access from the internet and the Appcircle DMZ server will connect to should mean two different things.
+There is a common domain here. Be aware that the `auth` subdomain that the clients that will access from the internet and the Appcircle DMZ server will connect to should mean two different things.
+:::
+
+:::tip
+
+You can change the Appcircle authentication domain for the users access from the internet and make it different from the internal domain using a custom domain. See the [FAQ](#how-can-we-change-the-appcircle-authentication-domain-on-the-dmz-server-for-internet-users) below for details.
+
 :::
 
 ## Creating the Appcircle DMZ Server Configuration
@@ -606,17 +612,27 @@ ExecStart=/bin/bash /app/appcircle-server-dmz/ac-self-hosted-dmz.sh up
 
 </Tabs>
 
-## FAQ
+## Troubleshooting & FAQ
 
-### How can we change the `auth` domain on the DMZ so that users can access it from the internet?
+### How can we change the Appcircle authentication domain on the DMZ server for internet users?
 
-You can add a second custom domain to the `auth` module for users to access from the internet by following the steps below.
+You can use an additional custom domain for Appcircle authentication so that internet users can  access authentication services from the internet without using the internal `auth` [subdomain](/self-hosted-appcircle/install-server/docker#4-dns-settings).
 
 :::caution
-The custom domain applies to the Appcircle DMZ server only. When connecting to the Appcircle server located within the private network, you should continue to utilize the default `auth` domain.
+The custom domain applies to the Appcircle DMZ server only. When connecting to the Appcircle server located within the private network, you should continue to utilize the default `auth` sudomain for Appcircle authentication services.
+:::
+
+Follow the steps below to make relevant configurations on the Appcircle server.
+
+:::info
+
+This feature is supported for Appcircle server version `3.22.0` or later.
+
 :::
 
 <DowntimeCaution/>
+
+- Login to the Appcircle server with SSH.
 
 - Change directory to Appcircle server.
 
@@ -634,6 +650,14 @@ vi ./projects/spacetech/global.yaml
 
 - Add or update the `keycloak.dmzCustomDomain` parameter as below.
 
+:::info
+
+Please keep in mind that the `keycloak` key might already exist in your `global.yaml` file. In that case, find the key to add or update the `dmzCustomDomain` part.
+
+If `keycloak` does not exist, then you can add it to the `global.yaml` file of your project.
+
+:::
+
 ```yaml
 keycloak:
   dmzCustomDomain:
@@ -641,4 +665,8 @@ keycloak:
     domain: auth-ac.spacetech.com
 ```
 
-- [Upgrade the Appcircle server and Appcircle DMZ server](#upgrading-appcircle-dmz-and-appcircle-server) for changes to be applied.
+- **[Upgrade](#upgrading-appcircle-dmz-and-appcircle-server)** the Appcircle server and DMZ server for changes to be applied.
+
+import NeedHelp from '@site/docs/\_need-help.mdx';
+
+<NeedHelp />
