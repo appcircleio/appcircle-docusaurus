@@ -20,7 +20,7 @@
 
 [[redirects]]
   from = "/account/ldap-login"
-  to = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
+  to = "/account/my-organization/integrations/authentications"
   status = 301
 
 [[redirects]]
@@ -1075,7 +1075,7 @@ status = 301
 
 [[redirects]]
   from = "/account/my-organization/ldap-login"
-  to = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
+  to = "/account/my-organization/integrations/authentications"
   status = 301
 
 [[redirects]]

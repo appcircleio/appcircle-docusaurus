@@ -13,7 +13,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 Single Sign-On (SSO) allows users to log in to Appcircle using their existing credentials from an Identity Provider (IdP). By integrating SSO, organizations can streamline user access management, enhance security, and provide a seamless login experience across multiple platforms.
 
-This document specifically covers the SSO configuration for the Appcircle Login. Please note that a separate SSO configuration exists for the [Testing Portal (Testing Distribution module)](/account/my-organization/integrations/authentications/distribution-sso-authentication) and [Enterprise Portal (Enterprise App Store module)]((/account/my-organization/integrations/authentications/store-sso-authentication)). This document does not cover those configurations.
+This document specifically covers the SSO configuration for the Appcircle Login. Please note that a separate SSO configuration exists for the [Testing Portal (Testing Distribution module)](/account/my-organization/integrations/authentications/distribution-sso-authentication) and [Enterprise Portal (Enterprise App Store module)](/account/my-organization/integrations/authentications/store-sso-authentication). This document does not cover those configurations.
 
 Currently, this configuration supports enabling SSO with only one identity provider at a time. Adding multiple SSO providers is not supported at this moment but may be available in the future.
 
