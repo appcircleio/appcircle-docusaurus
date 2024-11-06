@@ -19,6 +19,16 @@ You can also select a runner pool from the **SELECT A POOL** dropdown list.
 
 "Default Intel Pool" and "Default M1 Pool" are Appcircle cloud-hosted pools and only available for the cloud services.
 
+:::info
+
+You can use both cloud-hosted pools for the Android publish profiles.
+
+On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Default M1 Pool".
+
+"Default Intel Pool" support is not available for the iOS publish profiles.
+
+:::
+
 If there are any self-hosted pools in your organization, you can also select them from the list. Self-hosted Appcircle users will only see the self-hosted pools in this list.
 
 <ContentRef url="/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools">
@@ -41,6 +51,16 @@ There are two default pools available for cloud services:
 
 - Default Intel Pool
 - Default M1 Pool
+
+:::info
+
+You can use both cloud-hosted pools for the Android publish profiles.
+
+On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Default M1 Pool".
+
+"Default Intel Pool" support is not available for the iOS publish profiles.
+
+:::
 
 Self-hosted Appcircle users will see their self-hosted pools in this list.
 
