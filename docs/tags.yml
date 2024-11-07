@@ -1,4 +1,9 @@
-.NET MAUI:
+".net":
+  label: ".net"
+  description: "Description for .net"
+  permalink: /net
+
+".NET MAUI":
   label: ".NET MAUI"
   description: "Description for .NET MAUI"
   permalink: /net-maui
@@ -142,6 +147,11 @@ android:
   label: "android publish integrations"
   description: "Description for android publish integrations"
   permalink: /android-publish-integrations
+
+"android test":
+  label: "android test"
+  description: "Description for android test"
+  permalink: /android-test
 
 api:
   label: "api"
@@ -913,6 +923,11 @@ detekt:
   description: "Description for detekt"
   permalink: /detekt
 
+detox:
+  label: "detox"
+  description: "Description for detox"
+  permalink: /detox
+
 "detekt report":
   label: "detekt report"
   description: "Description for detekt report"
@@ -1037,6 +1052,16 @@ enterprise:
   label: "enterprise profile"
   description: "Description for enterprise profile"
   permalink: /enterprise-profile
+
+"enterprise portal":
+  label: "enterprise portal"
+  description: "Description for enterprise portal"
+  permalink: /enterprise-portal
+
+"enterprise portal setup":
+  label: "enterprise portal setup"
+  description: "Description for enterprise portal setup"
+  permalink: /enterprise-portal-setup
 
 "enterprise store":
   label: "enterprise store"
@@ -1403,6 +1428,11 @@ ip:
   description: "Description for jenkins plugin"
   permalink: /jenkins-plugin
 
+"jest":
+  label: "jest"
+  description: "Description for jest"
+  permalink: /jest
+
 "jira":
   label: "jira"
   description: "Description for jira"
@@ -1538,8 +1568,10 @@ management:
   description: "Description for manual builds"
   permalink: /manual-builds
 
-marathon:
+"marathon":
   label: "marathon"
+  description: "Description for marathon"
+  permalink: /marathon
 
 "mark as rc":
   label: "mark as rc"
@@ -2425,6 +2457,21 @@ token:
   description: "Description for token"
   permalink: /token
 
+tuist:
+  label: "tuist"
+  description: "Description for tuist"
+  permalink: /tuist
+
+tuist command:
+  label: "tuist command"
+  description: "Description for tuist command"
+  permalink: /tuist-command
+
+tuist install:
+  label: "tuist install"
+  description: "Description for tuist install"
+  permalink: /tuist-install
+
 tracking:
   label: "tracking"
   description: "Description for tracking"
@@ -2445,7 +2492,7 @@ troubleshooting:
   description: "Description for troubleshooting"
   permalink: /troubleshooting
 
-"UI tests":
+"ui tests":
   label: "UI tests"
   description: "Description for UI tests"
   permalink: /ui-tests
@@ -2619,6 +2666,11 @@ workflow:
   label: "workflow"
   description: "Description for workflow"
   permalink: /workflow
+
+"xamarin":
+  label: "xamarin"
+  description: "Description for xamarin"
+  permalink: /xamarin
 
 xcode:
   label: "xcode"

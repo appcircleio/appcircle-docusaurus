@@ -1,7 +1,7 @@
 ---
 title: Repeato Test Runner
 description: Repeato Test Runner facilitates the execution of automated tests for mobile applications directly within Appcircle.
-tags: [repeato, test-runner, mobile, automation]
+tags: [repeato, test runner, mobile, automation]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

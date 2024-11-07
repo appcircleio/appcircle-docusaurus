@@ -4,18 +4,18 @@ description: Overview of role management and permissions in Appcircle
 tags:
   [
     permissions,
-    role-management,
-    build-profiles,
-    environment-variables,
-    signing-identity,
-    distribution-profiles,
-    testing-groups,
-    store-submit,
+    role management,
+    build profiles,
+    environment variables,
+    signing identity,
+    distribution profiles,
+    testing groups,
+    store submit,
     publish,
-    enterprise-app-store,
-    organization-management,
-    billing-management,
-    third-party-connections,
+    enterprise app store,
+    organization management,
+    billing management,
+    third-party connections,
   ]
 sidebar_position: 5
 ---

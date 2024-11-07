@@ -12,7 +12,7 @@ tags:
     huawei appgallery,
     notifications,
     security,
-    API keys,
+    api keys,
   ]
 ---
 

@@ -4,7 +4,7 @@ sidebar_label: Testing Distribution
 description: Enhance powerful action to distribute your builds to appcircle with fastlane
 tags:
   [
-    testing-distribution,
+    testing distribution,
     ipa distribution,
     apk distribution,
     binary distribution,

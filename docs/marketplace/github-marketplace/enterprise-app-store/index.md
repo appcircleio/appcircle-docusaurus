@@ -10,7 +10,7 @@ tags:
     binary distribution,
     ipa distribution,
     apk distribution,
-    github-marketplace,
+    github marketplace,
   ]
 sidebar_position: 2
 ---
@@ -31,7 +31,7 @@ Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-h
 ### Discover Action
 
 You can discover more about this action and install it from:
-https://github.com/marketplace/actions/appcircle-enterprise-store
+https://github.com/marketplace/actions/appcircle-enterprise-app-store
 
 ### How to Add the Appcircle Enterprise App Store Action to Your Pipeline
 
