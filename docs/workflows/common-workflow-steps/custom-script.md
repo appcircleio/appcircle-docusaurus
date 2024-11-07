@@ -227,7 +227,7 @@ sudo -E printenv
 
 ### How can I send a custom Email?
 
-Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the [custom script](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
+Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the [**Custom Script](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
 
 The following script is set to use a **Gmail SMTP Server**. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
 
@@ -238,16 +238,16 @@ HOST_="smtp.gmail.com"
 PORT_="587"
 ACCOUNT_="gmail"
 
-# Add account details (make sure to replace EMAIL_, USERNAME_, and PASSWORD_ with your actual details)
+# Make sure to replace EMAIL_, USERNAME_, and PASSWORD_ with your account details
 EMAIL_="your-email-address@gmail.com"
 USERNAME_="your-email-address@gmail.com"
 PASSWORD_="your-email-password"
 
-# Set e-mail details
+# Set email details
 EMAIL_SUBJECT="Test Email Subject"
 EMAIL_TO="recieve-email-address"
-# This part will be used for visualization, Example usage: "Appcircle <test@gmail.com>"
-EMAIL_FROM="sender-email-address"
+# This part will be used for visualization.
+EMAIL_FROM="Sender Name <test@gmail.com>"
 EMAIL_BODY="This is the body of the test email."
 
 # Detect operating system
@@ -275,7 +275,6 @@ if [ "$os" == "darwin" ]; then
     brew install msmtp
     echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
     { echo -n "tls_fingerprint " && msmtp --serverinfo --tls --tls-certcheck=off --host=$HOST_ --port=$PORT_ | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}"; } >> ~/.msmtprc
-
 elif [ "$os" == "linux" ]; then
     if ! command -v apt > /dev/null 2>&1; then
         echo "apt is not installed; install apt and try again"
@@ -320,36 +319,36 @@ To: $EMAIL_TO
 Subject: $EMAIL_SUBJECT
 $EMAIL_BODY" | msmtp --debug --from=$EMAIL_ -t $EMAIL_TO
 
-
 ```
 
 :::caution Credentials
 
 When using your own SMTP server credentials for the three variables below, please use Environment Variables. This prevents sensitive information, such as passwords, from being exposed to unauthorized individuals. For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
 
-- **$EMAIL_**: SMTP Server email address
-- **$USERNAME_**: Your email address
-- **$PASSWORD_**: Your email address password
+- **$EMAIL_**: SMTP Server email address.
+- **$USERNAME_**: Sender email address.
+- **$PASSWORD_**: Sender email address password.
 
-Otherwise, to send an e-mail you need to have some information such as e-mail subject, sender e-mail, reciever e-mail. You can use these parameters to use 
+Otherwise, to send an email you need to have some information such as email subject, sender email, reciever email. You can use these parameters to use:
 
-- **EMAIL_SUBJECT**: Subject of sending e-mail
-- **EMAIL_TO**: Reciever e-mail address.
-- **EMAIL_FROM**: Sender e-mail address.
-- **EMAIL_BODY**: Content of sending e-mail
-
-:::info Username and Password for Google SMTP Users
-
-When you want to send an email with your gmail account using **Google's SMTP** server, you must first **authenticate** to the Google SMTP server. For this process, you need to enter your **App Password** in the password field. 
-
-In order to generate this password, **2FA authentication** must be turned on in your **Google account**. You can generate and retrieve this password from the **App Passwords** section under **Google Account management**. For detailed information about **App Passwords**, please visit the [**Google App Password**](https://support.google.com/accounts/answer/185833?hl=en) documentations.
-
+- **EMAIL_SUBJECT**: Subject of sending email
+- **EMAIL_TO**: Reciever email address.
+- **EMAIL_FROM**: Sender email address for visualization.
+- **EMAIL_BODY**: Content of sending email.
 
 :::
 
-:::caution Protocols and SMTP Host
+:::info Username and Password for Google SMTP Users
 
-This script uses the TLS protocol for SMTP server usage. Since **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$HOST_` parameter. 
+When you want to send an email with your Gmail account using **Google's SMTP** server, you must first **authenticate** to the Google SMTP server. For this process, you need to enter your **App Password** in the password field. 
+
+In order to generate this password, **2FA authentication** must be turned on in your **Google account**. You can generate and retrieve this password from the **App Passwords** section under **Google Account management**. For detailed information about **App Passwords**, please visit the [**Google App Password**](https://support.google.com/accounts/answer/185833?hl=en) documentation.
+
+:::
+
+:::tip Protocols and SMTP Host
+
+This script uses the TLS protocol for SMTP server usage. Since the **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$HOST_` parameter. 
 If you are using your own SMTP server. Don't forget to change the `$HOST_` value here. 
 
 On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `MAIL_USE_TLS` or `MAIL_USE_SSL` parameters in the script to `true/false`. Note that you need to change the `$PORT_` parameter when using **SSL and TLS**. For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
