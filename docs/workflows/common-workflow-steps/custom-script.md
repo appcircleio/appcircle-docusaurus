@@ -246,7 +246,7 @@ PASSWORD_="your-email-password"
 # Set email details
 EMAIL_SUBJECT="Test Email Subject"
 EMAIL_TO="recieve-email-address"
-# This part will be used for visualization.
+# This part will be used for visualization
 EMAIL_FROM="Sender Name <test@gmail.com>"
 EMAIL_BODY="This is the body of the test email."
 
