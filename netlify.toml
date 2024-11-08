@@ -678,11 +678,6 @@ status = 301
   status = 301
 
 [[redirects]]
-  from = "/integrations/working-with-custom-scripts/custom-script-samples"
-  to = "/workflows/common-workflow-steps/custom-script"
-  status = 301
-
-[[redirects]]
   from = "/continuous-testing/automated-tests"
   to = "/continuous-testing/"
   status = 301
@@ -743,11 +738,6 @@ status = 301
   status = 301
 
 [[redirects]]
-  from = "/integrations/working-with-custom-scripts/custom-script-samples#changing-java-version"
-  to = "/workflows/common-workflow-steps/change-java-version"
-  status = 301
-
-[[redirects]]
   from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows#adding-fastlane-to-the-appcircle-build-workflow-as-a-step"
   to = "/workflows/common-workflow-steps/fastlane"
   status = 301
@@ -786,11 +776,6 @@ status = 301
   [[redirects]]
   from = "/workflows/common-workflow-steps/build-and-test/custom-script"
   to = "/workflows/common-workflow-steps/custom-script"
-  status = 301
-
-  [[redirects]]
-  from = "/workflows/common-workflow-steps/build-and-test/custom-script#how-to-change-java-version"
-  to = "/workflows/common-workflow-steps/change-java-version"
   status = 301
 
   [[redirects]]
