@@ -234,14 +234,14 @@ The following Bash script is set to use a **Gmail SMTP Server**. For more inform
 ```bash
 
 # Set SMTP server 
-HOST_="smtp.gmail.com"
-PORT_="587"
-ACCOUNT_="gmail"
+CS_HOST="smtp.gmail.com"
+CS_PORT="587"
+CS_ACCOUNT="gmail"
 
 # Make sure to replace EMAIL_, USERNAME_, and PASSWORD_ with your account details
-EMAIL_="your-email-address@gmail.com"
-USERNAME_="your-email-address@gmail.com"
-PASSWORD_="your-email-password"
+CS_EMAIL="your-email-address@gmail.com"
+CS_USERNAME="your-email-address@gmail.com"
+CS_PASSWORD="your-email-password"
 
 # Set email details
 EMAIL_SUBJECT="Test Email Subject"
