@@ -245,7 +245,7 @@ PASSWORD_="your-email-password"
 
 # Set email details
 EMAIL_SUBJECT="Test Email Subject"
-EMAIL_TO="recieve-email-address"
+EMAIL_TO="reciever-email-address,other-reciever-email-address"
 # This part will be used for visualization
 EMAIL_FROM="Sender Name <test@gmail.com>"
 EMAIL_BODY="This is the body of the test email."
@@ -327,6 +327,12 @@ $EMAIL_BODY" | msmtp --debug --from=$EMAIL_ -t $EMAIL_TO
 :::info Script Execution
 
 This script is written in `Bash`. When running with **Custom Script**, you need to set the `Execute With` parameter as `Bash`. For more information, please visit the [**Custom Script Input Variables**](/workflows/common-workflow-steps/custom-script#input-variables) documentation section.
+
+:::
+
+:::tip Reciever Email Address
+
+If you want to send an e-mail to multiple e-mail addresses instead of a single e-mail address. In the `EMAIL_TO` parameter, it will be enough to write all the addresses to send an e-mail separated by commas. For example; `EMAIL_TO=example@email.com,example2@email.com`
 
 :::
 
