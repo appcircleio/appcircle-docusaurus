@@ -249,6 +249,9 @@ EMAIL_TO="recieve-email-address"
 # This part will be used for visualization
 EMAIL_FROM="Sender Name <test@gmail.com>"
 EMAIL_BODY="This is the body of the test email."
+# Set TLS or SSL usage
+USE_TLS="True"
+USE_SSL="False"
 
 # Detect operating system
 os=""
@@ -305,10 +308,10 @@ chmod 600 ~/.msmtprc
 # Export mail variables to the shell environment
 shell_rc=~/.$(basename $SHELL)rc
 {
-    echo "export MAIL_SERVER=$HOST"
-    echo "export MAIL_PORT=$PORT"
-    echo "export MAIL_USE_TLS=True"
-    echo "export MAIL_USE_SSL=False"
+    echo "export MAIL_SERVER=$HOST_"
+    echo "export MAIL_PORT=$PORT_"
+    echo "export MAIL_USE_TLS=$USE_TLS"
+    echo "export MAIL_USE_SSL=$USE_SSL"
     echo "export MAIL_USERNAME=$EMAIL_"
     echo "export MAIL_PASSWORD=$PASSWORD_"
 } >> "$shell_rc"
