@@ -293,13 +293,13 @@ fi
 
 cat <<EOF >> ~/.msmtprc
 logfile ~/.msmtp.log
-account $ACCOUNT_
-host $HOST_
-port $PORT_
-from $EMAIL_
-user $USERNAME_
-password $PASSWORD_
-account default: $ACCOUNT_
+account $CS_ACCOUNT
+host $CS_HOST
+port $CS_PORT
+from $CS_EMAIL
+user $CS_USERNAME
+password $CS_PASSWORD
+account default: $CS_ACCOUNT
 EOF
 
 # Restrict permissions for the .msmtprc file to avoid security issues
@@ -308,12 +308,12 @@ chmod 600 ~/.msmtprc
 # Export mail variables to the shell environment
 shell_rc=~/.$(basename $SHELL)rc
 {
-    echo "export MAIL_SERVER=$HOST_"
-    echo "export MAIL_PORT=$PORT_"
+    echo "export MAIL_SERVER=$CS_HOST"
+    echo "export MAIL_PORT=$CS_PORT"
     echo "export MAIL_USE_TLS=$USE_TLS"
     echo "export MAIL_USE_SSL=$USE_SSL"
-    echo "export MAIL_USERNAME=$EMAIL_"
-    echo "export MAIL_PASSWORD=$PASSWORD_"
+    echo "export MAIL_USERNAME=$CS_EMAIL"
+    echo "export MAIL_PASSWORD=$CS_PASSWORD"
 } >> "$shell_rc"
 
 # Send email
