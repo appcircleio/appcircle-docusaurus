@@ -84,7 +84,7 @@ Below is the version history of the self-hosted Appcircle server. This table hel
 <details>
     <summary>Click to view version history.</summary>
 
-        Since the cloud and self-hosted versions are released asynchronously, the release dates listed in the table may differ from those on the [Release Notes](/release-notes) page.
+        Since the cloud and self-hosted versions are released asynchronously, the release dates listed in the table may differ from those on the **[Release Notes](https://docs.appcircle.io/release-notes)** page.
         
         | Version   | Release Date |
         |-----------|--------------|
