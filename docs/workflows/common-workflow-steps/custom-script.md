@@ -277,7 +277,7 @@ if [ "$os" == "darwin" ]; then
     brew install mailutils
     brew install msmtp
     echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
-    { echo -n "tls_fingerprint " && msmtp --serverinfo --tls --tls-certcheck=off --host=$HOST_ --port=$PORT_ | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}"; } >> ~/.msmtprc
+    { echo -n "tls_fingerprint " && msmtp --serverinfo --tls --tls-certcheck=off --host=$CS_HOST --port=$CS_PORT | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}"; } >> ~/.msmtprc
 elif [ "$os" == "linux" ]; then
     if ! command -v apt > /dev/null 2>&1; then
         echo "apt is not installed; install apt and try again"
