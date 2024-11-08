@@ -16,6 +16,67 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.23.0 - 2024-11-04 SSO & LDAP Improvements, Build Priority Configuration, Bug Fixes and more
+
+### 🆕 New Features
+
+- Existing SSO & LDAP settings can now be duplicated when creating a new SSO or LDAP configuration. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Build priorities](build/build-process-management/build-profile-configuration#project-details-configuration) can now be configured as **High**, **Medium**, or **Low** to manage the start order of queued builds accordingly. Available for organizations with Enterprise License. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- SSO and LDAP configurations for Enterprise Portal and Testing Portal access have been separated and can now be found under Authentication Settings within the Integrations section of the Organization module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The login and user management settings for SSO and LDAP have been separated into dedicated sections for authentication and authorization, offering improved clarity and control over the management of these configurations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The **Integrations** section of the Organization module was divided into two separate sections: **Security** and **Notifications**. Related settings can now be accessed under these sections. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A version option has been added in the Tuist component to allow installation of a specific Tuist version. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Tuist Commands](workflows/ios-specific-workflow-steps/tuist-commands) step has been added to the Appcircle iOS workflow to enable execution of specific Tuist commands. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [React Native UI Test](continuous-testing/react-native-testing/react-native-ui-test-with-detox) and [React Native Unit Test](continuous-testing/react-native-testing/react-native-unit-test-with-jest) components have been added to Appcircle workflows to enable the execution of unit and UI tests for projects on the React Native platform. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Actions in the Signing Identity module can now be monitored within the Activity Log section. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Informative screens were added to provide users with guidance when switching authentication methods from Testing Distribution or Enterprise App Store settings. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- ZIP upload support has been removed from the UI in the Testing Distribution module. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [App Store Header](enterprise-app-store/portal-customization) setting has been added to the Enterprise Portal Customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- A typo in the organization member invitation email titles has been corrected. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where access to SSO Group/Role Mapping data was falsely restricted for users with the Organization Management - Viewer role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where errors were encountered when using PR triggers for GitHub repositories. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The app extractor command has been updated to support ZIP versions above 4.5 for APK and AAB files. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue with the date range filter in build reports has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been resolved where the defined connections did not appear when attempting to reconnect after disconnection. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where an unclear error message was displayed on Appcircle when the user of the connected GitLab repository had been deleted. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where binaries marked as rejected within the publish module still had access to various binary actions. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the client ID in Enterprise App Store reports was displayed in a complex format; it is now shown in a clearer format. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The user search filter will now be based on the selected filter items above, whereas it was previously independent. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where icons for certain Android binaries were not displayed in the Enterprise App Store module for self-hosted users. <EnterpriseStoreBadge/> <SelfHostedBadge/>
+
+## 3.22.1 - 2024-10-18 Editing Environment Variables, Self Hosted Updates, Enterprise Portal Login Improvement, Bug Fixes and more
+
+### 🆕 New Features
+
+- Unhidden text and file-formatted environment variables within the build and publish modules can now be edited by users after registration. <BuildBadge/> <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Appcircle server version is now displayed in the blue bar at the bottom right corner of any page for self-hosted Appcircle server users. <InfrastructureBadge/> <SelfHostedBadge/>
+- [The Default M1 pool](/infrastructure/ios-build-infrastructure) has [Xcode 16.2 Beta 1](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_2-release-notes) installed on runners. Since this is a beta release, workflows should be tested extensively. <InfrastructureBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- A password hide/show toggle was added to the Enterprise Portal login page for both static and LDAP authentication methods. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The credentials for the Enterprise App Store static authentication channel will now be displayed accordingly if a password has been previously entered by the user. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where publish environment variables did not function when created through a new variable group. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where using the `"` character in review notes or descriptions within metadata details caused errors when attempting to update the connected metadata details through the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where multiline environment variables were causing errors during the “Send to TestFlight” publish step. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where empty metadata fields on Appcircle were being displayed as `null` on the App Store Connect side after updates. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where users with a ‘+’ in their email addresses could not be invited, re-invited to or deleted from an organization. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where users were granted access to incorrect organizations when using SSO authentication for Appcircle login. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- API request checks for Enterprise and Testing Portal logins were improved to display more accurate responses for security reasons. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where branches deleted from Azure repositories were not being removed from the Appcircle build profile. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Security improvements have been made regarding cookies, including enhanced attributes, stronger encryption, and support for updated TLS versions. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A bug that prevented configuring the Keycloak user decision strategy for self-hosted Appcircle server users has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- An issue with LDAP authentication in the testing portal, effecting some users, has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.22.0 - 2024-10-04 Apple Devices, Build Report Improvement, Auto Cancel Redundant Pipelines, Bug Fixes and more
 
 ### 🆕 New Features
@@ -1024,7 +1085,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - [AppSweep Mobile Security Testing](/workflows/android-specific-workflow-steps/#appsweep-mobile-security-testing) component added. <CloudBadge/> <SelfHostedBadge/>
 - [Self-signed certificate](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration) support added for Testing Distribution. <SelfHostedBadge/>
 - [Enterprise App Store](/enterprise-app-store/portal-customization) is now available in German and Turkish languages in addition to English. To switch to your preferred language, simply navigate to the language settings on your store homepage and select either German or Turkish. <CloudBadge/> <SelfHostedBadge/>
-- [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=enterprisestore) are added to directly download IPA or APK files from Enterprise App Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
+- [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=store) are added to directly download IPA or APK files from Enterprise App Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 

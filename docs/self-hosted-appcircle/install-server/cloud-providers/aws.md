@@ -1,7 +1,7 @@
 ---
 title: Amazon Web Services (AWS) Integration
 description: Learn how to create an Appcircle server instance on Amazon Web Services (AWS)
-tags: [self-hosted, appcircle server, aws, amazon web services, EC2, AMI]
+tags: [self-hosted, appcircle server, aws, amazon web services]
 sidebar_position: 1
 sidebar_label: Amazon Web Services (AWS)
 ---

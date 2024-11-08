@@ -1,7 +1,7 @@
 ---
 title: Store and Distribution SSO Authentication
 description: Set up single sign-on (SSO) for distributing your applications, enhancing security and simplifying the login process.
-tags: [sso, distribution, okta, auht0, entraid, azure, saml, openid]
+tags: [sso, distribution, okta, auth0, entraid, azure, saml, openid]
 sidebar_position: 3
 ---
 
@@ -65,7 +65,7 @@ These terms form the foundation of the SSO process, where the IdP authenticates 
 
 The following steps outline the general process for configuring Single Sign-On (SSO) with Appcircle, applicable to all supported identity providers. These steps will guide you through the initial setup within the Appcircle dashboard and the configuration within your chosen identity provider.
 
-<CustomDetails>
+<details>
     <summary>Step 1: Enable SSO in Appcircle</summary>
   
 Begin by enabling SSO within your Appcircle organization settings. Follow these steps:
@@ -92,9 +92,9 @@ Begin by enabling SSO within your Appcircle organization settings. Follow these 
 
 Ensure that the alias and Display Name you choose are unique and easily identifiable, as they are essential for the SSO authentication process. The **Store Redirect URL** and **Distribute Redirect URL** are crucial for your SSO setup, so be sure to copy and save them for use in the following steps.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>Step 2: Select and Configure Your Identity Provider</summary>
 
 After enabling SSO and setting your alias, proceed to select and configure your identity provider:
@@ -105,14 +105,14 @@ After enabling SSO and setting your alias, proceed to select and configure your 
 
 Only one SSO provider can be configured at a time.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>Step 4: Test and Verify </summary>
 
 After completing the SSO configuration, it's essential to test and ensure everything is functioning correctly. The following steps outline the testing process.
 
-<CustomDetails>
+<details>
   <summary>Step 4.1: Test and Verify SSO Configuration for Enterprise Store (Enterprise App Store module)</summary>
 
 Begin by enabling SSO for the Enterprise App Store. Follow these steps:
@@ -125,9 +125,9 @@ Begin by enabling SSO for the Enterprise App Store. Follow these steps:
 
 4. Follow [Enterprise App Store Documentation](/enterprise-app-store/enterprise-app-store-profile) to test the integration.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>Step 4.2: Test and Verify SSO Configuration for Testing Portal (Testing Distribution module) </summary>
 
 Begin by enabling SSO for the Testing Portal. Follow these steps:
@@ -153,13 +153,13 @@ Begin by enabling SSO for the Testing Portal. Follow these steps:
  
 <Screenshot url="https://cdn.appcircle.io/docs/assets/testing-dist-sso-login.png" />
 
-</CustomDetails>
+</details>
 
-</CustomDetails>
+</details>
 
 ## 4. Specific Provider Configuration
 
-<CustomDetails>
+<details>
   <summary>4.1 Auth0 (OpenID Connect)</summary>
 
 Auth0 is a popular identity provider that supports the OpenID Connect protocol, which can be integrated with Appcircle for secure authentication.
@@ -222,9 +222,9 @@ Now, upload the OpenID configuration JSON file to Appcircle and complete the con
 4. Enter the **Client ID** and **Client Secret** that you noted earlier from Auth0.
 5. Click **Save** to finalize the SSO setup.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>4.2 Auth0 (SAML)</summary>
 
 Auth0 supports the SAML protocol, allowing integration with Appcircle for secure authentication.
@@ -290,10 +290,10 @@ Check that the Redirect and SSO URLs are imported correctly. Ensure the X509 Cer
 
 **Important:** Ensure all settings match those provided in the SAML metadata file to avoid issues with authentication.
 
-</CustomDetails>
+</details>
 
 
-<CustomDetails>
+<details>
   <summary>4.3 Microsoft Entra ID (SAML) (formerly Azure Active Directory) </summary>
 
 Microsoft Entra ID supports the SAML protocol, allowing integration with Appcircle for secure authentication. This section will guide you through setting up Microsoft Entra ID as your SAML identity provider for Appcircle.
@@ -374,10 +374,10 @@ Now, download the SAML metadata from Microsoft Entra ID and upload it to Appcirc
 
 4. Review the settings and click **Save** to finalize the configuration.
 
-</CustomDetails>
+</details>
 
 
-<CustomDetails>
+<details>
   <summary>4.4 Okta (OpenID Connect)</summary>
 
 Okta supports the OpenID Connect protocol, allowing integration with Appcircle for secure authentication.
@@ -429,9 +429,9 @@ Now, upload the OpenID configuration JSON file to Appcircle and complete the con
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-openid2_v2.png" />
 
 6. Click **Save** to finalize the SSO setup.
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>4.5 Okta (SAML)</summary>
 
 Okta supports the SAML protocol, allowing integration with Appcircle for secure authentication.
@@ -490,13 +490,13 @@ Now, upload the SAML metadata XML file to Appcircle to complete the configuratio
 
 7. Click **Save** to finalize the SSO setup.
 
-</CustomDetails>
+</details>
 
 ## 5. Testing and Verification
 
 After completing the SSO configuration, it's essential to test and ensure everything is functioning correctly. The following steps show the testing process.
 
-<CustomDetails>
+<details>
   <summary>Step 4.1: Test and Verify SSO Configuration for Enterprise Store (Enterprise App Store module)</summary>
 
 Begin by enabling SSO for the Enterprise App Store. Follow these steps:
@@ -509,9 +509,9 @@ Begin by enabling SSO for the Enterprise App Store. Follow these steps:
 
 4. Follow [Enterprise App Store Documentation](/enterprise-app-store/enterprise-app-store-profile) to test the integration.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>Step 4.2: Test and Verify SSO Configuration for Testing Portal (Testing Distribution module) </summary>
 
 Begin by enabling SSO for the Testing Portal. Follow these steps:
@@ -532,14 +532,14 @@ Begin by enabling SSO for the Testing Portal. Follow these steps:
 
 6. Follow [Enterprise App Store Documentation](/enterprise-app-store/enterprise-app-store-profile) to test the integration.
 
-</CustomDetails>
+</details>
 
 ## 6. Troubleshooting
 
 This section provides a list of common issues that users might encounter during the SSO setup and how to resolve them.
 
 
-<CustomDetails>
+<details>
   <summary>6.1 Common Issues and Resolutions</summary>
 
 - **Misconfigured SAML Assertions:** Ensure that the SAML assertions are correctly configured with the appropriate attributes and claims. Incorrect settings here can lead to failed logins.
@@ -549,9 +549,9 @@ This section provides a list of common issues that users might encounter during 
 - **SSO Alias Not Recognized:** Make sure the SSO alias entered matches the one configured in Appcircle. Any discrepancies could prevent successful authentication.
 - **Account Linking Problems:** If account linking fails, verify that the user’s email address in the identity provider matches the one in Appcircle.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>6.2 Troubleshooting for Auth0 (OpenID Connect)</summary>
 
 - **Callback URL Mismatch:** Ensure that the callback URL in Auth0 matches the one configured in Appcircle. This mismatch often causes authentication failures.
@@ -560,9 +560,9 @@ This section provides a list of common issues that users might encounter during 
 - **Logs Don't Show Successful Login Event:** If the user successfully logs in with the identity provider, but the Appcircle logs do not show a successful login event, check the SAML Authentication Assertion returned by the IdP or analyze the HTTP trace for any discrepancies in Appcircle.
 - **Misconfigured Scopes:** Ensure that the scopes requested in Appcircle match those defined in Auth0. Mismatches can lead to login failures.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>6.3 Troubleshooting for Auth0 (SAML)</summary>
 
 - **Attribute Mapping Problems:** Verify that the attributes sent by Auth0 match those expected by Appcircle.
@@ -572,9 +572,9 @@ This section provides a list of common issues that users might encounter during 
 - **IdP Login Page Doesn't Display:** If the IdP login page fails to display, ensure the correct SSO URL is being used in Appcircle and that the binding method (HTTP-POST or HTTP-Redirect) is properly configured.
 - **Certificate Issues:** Ensure the SAML certificate in Auth0 is valid and correctly configured. Invalid certificates can prevent proper authentication in Appcircle.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>6.4 Troubleshooting for Microsoft Entra ID (SAML)</summary>
 
 - **Incorrect SAML Response:** Check that all required claims and attributes are configured correctly in Microsoft Entra ID.
@@ -584,9 +584,9 @@ This section provides a list of common issues that users might encounter during 
 - **Invalid Certificate or Encryption Issues:** Ensure that the certificates used for signing and encryption are valid and correctly configured in both Microsoft Entra ID and Appcircle’s SSO settings. Expired certificates are a common cause of failures in SAML setups.
 - **Unassigned Users:** Ensure that users are assigned to the enterprise application in Microsoft Entra ID. Unassigned users cannot authenticate through Appcircle.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>6.5 Troubleshooting for Okta (OpenID Connect)</summary>
 
 - **Invalid Client ID/Secret:** Verify the Client ID and Secret in Appcircle match those configured in Okta.
@@ -596,9 +596,9 @@ This section provides a list of common issues that users might encounter during 
 - **Invalid Redirect URI:** Ensure that the redirect URI in Okta matches the one specified in Appcircle. Mismatches can cause authentication failures.
 - **403 Forbidden Errors:** Ensure the user has the necessary permissions and that the application is set up correctly in Okta to prevent access issues in Appcircle.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>6.6 Troubleshooting for Okta (SAML)</summary>
 
 - **Certificate Errors:** Verify that the SAML certificate used in Okta is valid and has not expired.
@@ -608,9 +608,9 @@ This section provides a list of common issues that users might encounter during 
 - **Invalid SSO URL or Mismatched Entity IDs:** Confirm that the SSO URL and Entity ID configured in Okta are correctly set up in Appcircle’s SSO settings to prevent login issues or errors in the authentication process.
 - **Clock Skew:** Ensure the system clocks of both Okta and Appcircle are synchronized to avoid timing issues in the authentication process.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>6.7 Troubleshooting for OneLogin (SAML)</summary>
 
 - **SSO Errors Due to Incorrect URLs:** Ensure that the SAML Assertion Consumer Service (ACS) URL and other SSO URLs in OneLogin match those in Appcircle.
@@ -619,9 +619,9 @@ This section provides a list of common issues that users might encounter during 
 - **Account Linking Failures:** Ensure that user email addresses match between OneLogin and Appcircle. Discrepancies in user data can prevent successful account linking.
 - **Certificate Expiration:** Verify that the SAML signing certificate in OneLogin is valid and not expired to ensure seamless authentication with Appcircle.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>6.8 Troubleshooting for Keycloak (OpenID Connect)</summary>
 
 - **Invalid Client ID/Secret:** Verify that the Client ID and Secret from Keycloak are correctly entered in Appcircle.
@@ -631,9 +631,9 @@ This section provides a list of common issues that users might encounter during 
 - **OIDC Token Mismatches:** Validate that the tokens issued by Keycloak match the expected format in Appcircle, including the correct scopes and audience claims.
 - **Token Signature Verification Failures:** Ensure the public key in Appcircle matches the one used by Keycloak for token signing.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>6.9 Troubleshooting for Keycloak (SAML)</summary>
 
 - **Certificate Mismatches:** Ensure the SAML certificate in Keycloak matches what Appcircle expects.
@@ -645,4 +645,4 @@ This section provides a list of common issues that users might encounter during 
 - **Invalid Certificate Configuration:** Ensure that the SAML signing certificate used in Keycloak is valid and correctly configured in Appcircle. Expired or incorrectly configured certificates can cause authentication failures.
 - **Clock Synchronization Issues:** Ensure that the system clocks of both Keycloak and Appcircle are synchronized to prevent timing-related authentication errors, such as expired assertions.
 
-</CustomDetails>
+</details>

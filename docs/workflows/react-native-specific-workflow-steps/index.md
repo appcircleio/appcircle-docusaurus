@@ -33,3 +33,31 @@ You may want to use npm or Yarn package manager to install specific dependencies
 <ContentRef url="/workflows/react-native-specific-workflow-steps/npm-yarn-commands">
     npm/Yarn Commands
 </ContentRef>
+
+## React Native UI Test
+
+Run all the UI tests in your project written with [Detox](https://wix.github.io/Detox/docs/introduction/getting-started/) integration.
+
+<ContentRef url="/workflows/react-native-specific-workflow-steps/react-native-ui-test">
+    React Native UI Test
+</ContentRef>
+
+## React Native Unit Test
+
+Run all the unit tests in your project written with [Jest](https://jestjs.io/docs/tutorial-react-native) integration.
+
+<ContentRef url="/workflows/react-native-specific-workflow-steps/react-native-unit-test">
+    React Native Unit Test
+</ContentRef>
+
+## Test Reports for React Native
+
+This component provides detailed reports and insights on the results of React Native app tests conducted.
+
+For detailed information on the usage of **Test Reports for React Native**, please refer to the documentation:
+
+[Appcircle React Native Testing](/continuous-testing/react-native-testing)
+
+<ContentRef url="/workflows/react-native-specific-workflow-steps/test-reports-react-native">
+    Test Reports for React Native
+</ContentRef>

@@ -6,7 +6,6 @@ tags:
     jenkins-plugin,
     testing-distribution,
     ipa distribution,
-    apk distribution,
     binary distribution,
   ]
 sidebar_position: 2
