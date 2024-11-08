@@ -292,9 +292,9 @@ If you are sure that **PAT** has the required permissions, you should check the 
 
 For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
 
-### How can we restrict the TLS version used by the Appcircle server?
+### How can we restrict the TLS versions used by the Appcircle server?
 
-To restrict the TLS versions used by the Appcircle server, you can follow the [Configure TLS Versions](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#configure-tls-versions) section in the SSL Configuration documentation.
+To restrict the TLS versions used by the Appcircle server, you can follow the [Configure TLS Versions](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#configure-tls-versions) section in the **SSL Configuration** documentation.
 
 ## Appcircle Runner FAQ
 

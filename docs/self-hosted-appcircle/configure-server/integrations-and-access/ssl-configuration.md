@@ -261,20 +261,21 @@ Although you can create and use dedicated certificates for all subdomains, in ou
 
 ## Configure TLS Versions
 
-Appcircle server by default accept connections over `TLSv1` and above. You can choose which TLS versions to support based on your security requirements. To restrict the TLS version used by the Appcircle server, you can set the `.nginx.sslProtocols` variable in the `global.yaml` of the project.
+The Appcircle server by default accepts connections over `TLSv1` and above. You can choose which TLS versions to support based on your security requirements. To restrict the TLS versions used by the Appcircle server, you can set the `.nginx.sslProtocols` variable in the `global.yaml` of the project.
 
 :::info
-When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Auth and others including the [Appcircle DMZ Server](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md) if you are using Appcircle in DMZ mode.  
+When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Authentication, and others, including the [Appcircle DMZ Server](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md) if you are using Appcircle in DMZ mode.  
 :::
 
-
 :::info
-Configurable TLS version support requires Appcircle server v3.23.0 or later.
+Configurable TLS version support requires Appcircle server `3.23.0` or later.
 :::
 
 To make Appcircle server to work with `TLSv1.2` and above:
 
 <DowntimeCaution/>
+
+- Login to the Appcircle server with SSH.
 
 - Go to the `appcircle-server` directory.
 
