@@ -267,6 +267,11 @@ Appcircle server by default accept connections over `TLSv1` and above. You can c
 When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Auth and others including the [Appcircle DMZ Server](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md) if you are using Appcircle in DMZ mode.  
 :::
 
+
+:::info
+Configurable TLS version support requires Appcircle server v3.23.0 or later.
+:::
+
 To make Appcircle server to work with `TLSv1.2` and above:
 
 <DowntimeCaution/>
@@ -302,7 +307,7 @@ It is important to note, however, that if macOS runners are included in a self-h
 
 ```yaml
 nginx:
-  sslProtocols: TLSv1.3
+  sslProtocols: TLSv1.2 TLSv1.3
 ```
 
 <RestartAppcircleServer />
