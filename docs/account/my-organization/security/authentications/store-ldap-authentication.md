@@ -93,7 +93,7 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
 - Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
 - Select the **Add New** on the **Enterprise Portal LDAP Login**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/distribute-sso-manage-button.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/distribute-ldap-manage-button.png' /> 
 
 - Select the **Create New Authentication** and then select the **Create From Existing Configuration**.
 
