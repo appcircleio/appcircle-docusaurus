@@ -227,9 +227,9 @@ sudo -E printenv
 
 ### How can I send a custom Email?
 
-Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the [**Custom Script](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
+Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the two modules. If desired, the user can customize this structure by using the [**Custom Script**](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
 
-The following script is set to use a **Gmail SMTP Server**. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
+The following Bash script is set to use a **Gmail SMTP Server**. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
 
 ```bash
 
@@ -320,6 +320,12 @@ Subject: $EMAIL_SUBJECT
 $EMAIL_BODY" | msmtp --debug --from=$EMAIL_ -t $EMAIL_TO
 
 ```
+
+:::info Script Execution
+
+This script is written in `Bash`. When running with **Custom Script**, you need to set the `Execute With` parameter as `Bash`. For more information, please visit the [**Custom Script Input Variables**](/workflows/common-workflow-steps/custom-script#input-variables) documentation section.
+
+:::
 
 :::caution Credentials
 
