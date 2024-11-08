@@ -27,16 +27,20 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 - SSO and LDAP configurations for Enterprise Portal and Testing Portal access have been separated and can now be found under Authentication Settings within the Integrations section of the Organization module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The login and user management settings for SSO and LDAP have been separated into dedicated sections for authentication and authorization, offering improved clarity and control over the management of these configurations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The **Integrations** section of the Organization module was divided into two separate sections: **Security** and **Notifications**. Related settings can now be accessed under these sections. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A version option has been added in the Tuist component to allow installation of a specific Tuist version. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The [Tuist Commands](workflows/ios-specific-workflow-steps/tuist-commands) step has been added to the Appcircle iOS workflow to enable execution of specific Tuist commands. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [React Native UI Test](continuous-testing/react-native-testing/react-native-ui-test-with-detox) and [React Native Unit Test](continuous-testing/react-native-testing/react-native-unit-test-with-jest) components have been added to Appcircle workflows to enable the execution of unit and UI tests for projects on the React Native platform. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Actions in the Signing Identity module can now be monitored within the Activity Log section. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Informative screens were added to provide users with guidance when switching authentication methods from Testing Distribution or Enterprise App Store settings. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - ZIP upload support has been removed from the UI in the Testing Distribution module. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [App Store Header](enterprise-app-store/portal-customization) setting has been added to the Enterprise Portal Customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
 - A typo in the organization member invitation email titles has been corrected. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where access to SSO Group/Role Mapping data was falsely restricted for users with the Organization Management - Viewer role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where errors were encountered when using PR triggers for GitHub repositories. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The app extractor command has been updated to support ZIP versions above 4.5 for APK and AAB files. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue with the date range filter in build reports has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been resolved where the defined connections did not appear when attempting to reconnect after disconnection. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
