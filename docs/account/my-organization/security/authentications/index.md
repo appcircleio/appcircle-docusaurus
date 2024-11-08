@@ -10,11 +10,11 @@ The **Authentication** section enables you to manage access control and secure y
 
 Current headlines and the actions you can complete are listed below:
 
-- [**SSO Authentication**](/account/my-organization/integrations/authentications/sso-authentication)
-- [**Store SSO Authentication**](/account/my-organization/integrations/authentications/store-sso-authentication)
-- [**Distribution SSO Authentication**](/account/my-organization/integrations/authentications/distribution-sso-authentication)
-- [**Store LDAP Authentication**](/account/my-organization/integrations/authentications/store-ldap-authentication)
-- [**Distribution LDAP Authentication**](/account/my-organization/integrations/authentications/distribution-ldap-authentication)
+- [**SSO Authentication**](/account/my-organization/security/authentications/sso-authentication)
+- [**Store SSO Authentication**](/account/my-organization/security/authentications/store-sso-authentication)
+- [**Distribution SSO Authentication**](/account/my-organization/security/authentications/distribution-sso-authentication)
+- [**Store LDAP Authentication**](/account/my-organization/security/authentications/store-ldap-authentication)
+- [**Distribution LDAP Authentication**](/account/my-organization/security/authentications/distribution-ldap-authentication)
 
 
 In order to see the details, check the submenu of this documentation page.

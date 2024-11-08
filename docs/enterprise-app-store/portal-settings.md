@@ -36,7 +36,7 @@ You can set a different username and password for live and beta apps. The userna
 
 ### SSO Login
 
-You may also use SSO for your Enterprise Portal. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please follow [Store Authentications](/account/my-organization/integrations/authentications/store-sso-authentication) documentation.
+You may also use SSO for your Enterprise Portal. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please follow [Store Authentications](/account/my-organization/security/authentications/store-sso-authentication) documentation.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-3.png' />
 
@@ -50,12 +50,12 @@ If you're configuring SAML Provider, you must set `https://auth.appcircle.io/aut
 
 You can follow the below documents to connect your identity providers. If your Identity Provider is not on the list, you can follow any OpenID or SAML integration guide from the below list to find out the parameters.
 
-- [Auth0 OpenID](/account/my-organization/integrations/authentications/store-sso-authentication#4-specific-provider-configuration)
-- [Auth0 SAML](/account/my-organization/integrations/authentications/store-sso-authentication#4-specific-provider-configuration)
-- [Azure AD SAML](/account/my-organization/integrations/authentications/store-sso-authentication#4-specific-provider-configuration)
-- [Okta OpenID](/account/my-organization/integrations/authentications/store-sso-authentication#4-specific-provider-configuration)
-- [Okta SAML](/account/my-organization/integrations/authentications/store-sso-authentication#4-specific-provider-configuration)
-- [OneLogin SAML](/account/my-organization/integrations/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [Auth0 OpenID](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [Auth0 SAML](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [Azure AD SAML](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [Okta OpenID](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [Okta SAML](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [OneLogin SAML](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
 
 Please check the below document to learn more about SSO integration.
 
