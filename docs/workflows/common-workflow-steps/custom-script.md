@@ -340,9 +340,9 @@ If you want to send an e-mail to multiple e-mail addresses instead of a single e
 
 When using your own SMTP server credentials for the three variables below, please use Environment Variables. This prevents sensitive information, such as passwords, from being exposed to unauthorized individuals. For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
 
-- **$EMAIL_**: SMTP Server email address.
-- **$USERNAME_**: Sender email address.
-- **$PASSWORD_**: Sender email address password.
+- **$CS_EMAIL**: SMTP Server email address.
+- **$CS_USERNAME**: Sender email address.
+- **$CS_PASSWORD**: Sender email address password.
 
 Otherwise, to send an email you need to have some information such as email subject, sender email, reciever email. You can use these parameters to use:
 
@@ -363,10 +363,10 @@ In order to generate this password, **2FA authentication** must be turned on in 
 
 :::tip Protocols and SMTP Host
 
-This script uses the TLS protocol for SMTP server usage. Since the **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$HOST_` parameter. 
-If you are using your own SMTP server. Don't forget to change the `$HOST_` value here. 
+This script uses the TLS protocol for SMTP server usage. Since the **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$CS_HOST` parameter. 
+If you are using your own SMTP server. Don't forget to change the `$CS_HOST` value here. 
 
-On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `MAIL_USE_TLS` or `MAIL_USE_SSL` parameters in the script to `true/false`. Note that you need to change the `$PORT_` parameter when using **SSL and TLS**. For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
+On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `USE_TLS` or `USE_SSL` parameters in the script to `true/false`. Note that you need to change the `$CS_PORT` parameter when using **SSL and TLS**. For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
 
 :::
 
