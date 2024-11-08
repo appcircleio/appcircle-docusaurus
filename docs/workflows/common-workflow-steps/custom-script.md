@@ -244,11 +244,11 @@ CS_USERNAME="your-email-address@gmail.com"
 CS_PASSWORD="your-email-password"
 
 # Set email details
-EMAIL_SUBJECT="Test Email Subject"
-EMAIL_TO="reciever-address@mail.com,reciever-2-address@mail.com"
+CS_EMAIL_SUBJECT="Test Email Subject"
+CS_EMAIL_TO="reciever-address@mail.com,reciever-2-address@mail.com"
 # This part will be used for visualization
-EMAIL_FROM="Sender Name <test@gmail.com>"
-EMAIL_BODY="This is the body of the test email."
+CS_EMAIL_FROM="Sender Name <test@gmail.com>"
+CS_EMAIL_BODY="This is the body of the test email."
 # Set TLS and SSL usage
 CS_USE_TLS="True"
 CS_USE_SSL="False"
@@ -317,10 +317,10 @@ shell_rc=~/.$(basename $SHELL)rc
 } >> "$shell_rc"
 
 # Send email
-echo "From: $EMAIL_FROM
-To: $EMAIL_TO
-Subject: $EMAIL_SUBJECT
-$EMAIL_BODY" | msmtp --debug --from=$EMAIL_ -t $EMAIL_TO
+echo "From: $CS_EMAIL_FROM
+To: $CS_EMAIL_TO
+Subject: $CS_EMAIL_SUBJECT
+$CS_EMAIL_BODY" | msmtp --debug --from=$EMAIL_ -t $CS_EMAIL_TO
 
 ```
 
@@ -332,7 +332,7 @@ This script is written in `Bash`. When running with **Custom Script**, you need 
 
 :::tip Reciever Email Address
 
-If you want to send an e-mail to multiple e-mail addresses instead of a single e-mail address. In the `EMAIL_TO` parameter, it will be enough to write all the addresses to send an e-mail separated by commas. For example; `EMAIL_TO=example@email.com,example2@email.com`
+If you want to send an e-mail to multiple e-mail addresses instead of a single e-mail address. In the `CS_EMAIL_TO` parameter, it will be enough to write all the addresses to send an e-mail separated by commas. For example; `CS_EMAIL_TO=example@email.com,example2@email.com`
 
 :::
 
@@ -346,10 +346,10 @@ When using your own SMTP server credentials for the three variables below, pleas
 
 Otherwise, to send an email you need to have some information such as email subject, sender email, reciever email. You can use these parameters to use:
 
-- **EMAIL_SUBJECT**: Subject of sending email
-- **EMAIL_TO**: Reciever email address.
-- **EMAIL_FROM**: Sender email address for visualization.
-- **EMAIL_BODY**: Content of sending email.
+- **CS_EMAIL_SUBJECT**: Subject of sending email
+- **CS_EMAIL_TO**: Reciever email address.
+- **CS_EMAIL_FROM**: Sender email address for visualization.
+- **CS_EMAIL_BODY**: Content of sending email.
 
 :::
 
