@@ -59,7 +59,7 @@ You can follow the below documents to connect your identity providers. If your I
 
 Please check the below document to learn more about SSO integration.
 
-<ContentRef url="/account/my-organization/integrations/authentications/store-sso-authentication">
+<ContentRef url="/account/my-organization/security/authentications/store-sso-authentication">
   Single Sign-On
 </ContentRef>
 

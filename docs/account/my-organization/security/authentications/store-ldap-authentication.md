@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 This document serves as a helpful guide for setting up and managing LDAP (Lightweight Directory Access Protocol) login integration within our organizational system.
 Whether you're new to LDAP or looking to streamline your authentication process, this document provides step-by-step instructions to ensure a smooth setup and management experience.
 
-To get started, simply navigate to the **Integrations** page within our platform and click on the "Add New" button next to LDAP Login under the **Authentications** section.
+To get started, simply navigate to the **Security** page within our platform and click on the "Add New" button next to LDAP Login under the **Authentications** section.
 From there, you'll be guided through the process of creating LDAP configurations, including filling in the necessary details and enabling Two Factor Authentication (2FA) for added security.
 
 Once set up, LDAP Login allows you to control access to distributed links and adjust distribution authorization through the Distribution Profiles.
@@ -20,7 +20,7 @@ This means you can tailor access permissions according to your organization's sp
 
 If you ever need to remove LDAP Login integration, the document also provides clear instructions for doing so, ensuring that your system remains secure and up-to-date.
 
-To start, go to [My Organization](/account/my-organization) > Integrations screen and press the **Add New** button next to LDAP Login under the **Authentications** section.
+To start, go to [My Organization](/account/my-organization) > Security screen and press the **Add New** button next to LDAP Login under the **Authentications** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-ldap-add-new.png' />
 
@@ -90,7 +90,7 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
 
   Appcircle allows you to create a new SSO configuration based on an existing one, ensuring a smooth and efficient setup experience. 
  
-- Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
+- Navigate to the **Organization > Security > Authentications** section on your dashboard.
 - Select the **Add New** on the **Enterprise Portal LDAP Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribute-ldap-manage-button.png' /> 
@@ -107,7 +107,7 @@ Existing LDAP configurations will be listed on the screen. Select one, and click
 
 # Deleting LDAP Login
 
-- To delete, go to the [My Organization](/account/my-organization) > Integration screen and press the Manage button next to LDAP Login under the Connections section.
+- To delete, go to the [My Organization](/account/my-organization) > Security screen and press the Manage button next to LDAP Login under the Authentications section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login10.png' />
 

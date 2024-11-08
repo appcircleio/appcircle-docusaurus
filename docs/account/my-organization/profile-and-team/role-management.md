@@ -324,27 +324,26 @@ The user can create an organization or sub-organization within license limits, a
 
 Also, the user can view self-hosted runners and change configuration.
 
-| Organization Management Sub-modules | Scopes                                  | Owner | Manager | Viewer |
-|-------------------------------------|-----------------------------------------|-------|---------|--------|
-| Organization and Team Management    | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Assign Role for User                    | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | List User                               | ✅     | ✅       | ✅      |
-| Integrations                        | Add/Delete/Update LDAP/SSO Integrations | ✅     | ✅       | ⛔      |
-| Integrations                        | View LDAP/SSO Integrations              | ✅     | ✅       | ✅      |
-| Appcircle Login                     | Create/Delete/Update SSO                | ✅     | ✅       | ⛔      |
-| Appcircle Login                     | List SSO                                | ✅     | ✅       | ✅      |
-| Appcircle Login                     | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
-| Appcircle Login                     | List LDAP                               | ✅     | ✅       | ✅      |
-| PAT                                 | Generate PAT                            | ✅     | ✅       | ⛔      |
-| PAT                                 | View PAT                                | ✅     | ✅       | ✅      |
-| Runner Access Token                 | List Runner Access Token                | ✅     | ⛔       | ⛔      |
-| Runner Access Token                 | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
-| Report                              | View Organziation Report                | ✅     | ✅       | ✅      |
-| Artifacts                           | View Retention Period                   | ✅     | ✅       | ✅      |
-| Artifacts                           | Update Retention Period                 | ✅     | ✅       | ⛔      |
-
+| Organization Management Sub-modules                  | Scopes                                  | Owner | Manager | Viewer |
+| ---------------------------------------------------- | --------------------------------------- | ----- | ------- | ------ |
+| Organization and Team Management                     | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | Assign Role for User                    | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | List User                               | ✅     | ✅       | ✅      |
+| Testing Portal and Enterprise Portal Authentications | Add/Delete/Update LDAP/SSO Integrations | ✅     | ✅       | ⛔      |
+| Testing Portal and Enterprise Portal Authentications | View LDAP/SSO Integrations              | ✅     | ✅       | ✅      |
+| Appcircle Login                                      | Create/Delete/Update SSO                | ✅     | ✅       | ⛔      |
+| Appcircle Login                                      | List SSO                                | ✅     | ✅       | ✅      |
+| Appcircle Login                                      | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
+| Appcircle Login                                      | List LDAP                               | ✅     | ✅       | ✅      |
+| PAT                                                  | Generate PAT                            | ✅     | ✅       | ⛔      |
+| PAT                                                  | View PAT                                | ✅     | ✅       | ✅      |
+| Runner Access Token                                  | List Runner Access Token                | ✅     | ⛔       | ⛔      |
+| Runner Access Token                                  | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
+| Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
+| Artifacts                                            | View Retention Period                   | ✅     | ✅       | ✅      |
+| Artifacts                                            | Update Retention Period                 | ✅     | ✅       | ⛔      |
 
 :::info Organization Management
 

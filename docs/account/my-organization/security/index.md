@@ -1,12 +1,12 @@
 ---
-title: Appcircle Integrations
-description: Securely manage integrations for credentials, authentications, and notifications to streamline your app publishing workflow in Appcircle.
+title: Appcircle Security
+description: Securely manage Security for credentials, authentications, and notifications to streamline your app publishing workflow in Appcircle.
 tags:
   [
     account,
     organization,
     api,
-    integrations,
+    Security,
     app store connect,
     google play,
     huawei appgallery,
@@ -18,7 +18,7 @@ tags:
 
 # Security
 
-The "Security" section in Appcircle connects essential tools and services like Authentication, Authorization, Credentials Integrations. Securely manage API keys, control access, and receive timely alerts through integrations with tools like Slack and email, ensuring a streamlined and secure workflow.
+The "Security" section in Appcircle connects essential tools and services like Authentication, Authorization, Credentials Security. Securely manage API keys, control access, and receive timely alerts through Security with tools like Slack and email, ensuring a streamlined and secure workflow.
 
 Current headlines and the actions you can complete are listed below:
 

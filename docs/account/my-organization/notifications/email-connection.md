@@ -43,7 +43,7 @@ To enable this feature, ensure you include the [**Test Reports**](https://docs.a
 
 To cancel email notifications, you can click the unsubscribe button in the notification email, or you can delete the email address for the relevant module by following the steps below:
 
-**My Organization -> Integrations -> Email -> Manage**
+**My Organization -> Notifications -> Email -> Manage**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/email-manage_v2.png' />
 

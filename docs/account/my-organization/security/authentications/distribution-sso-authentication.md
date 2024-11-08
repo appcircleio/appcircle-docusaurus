@@ -71,8 +71,8 @@ The following steps outline the general process for configuring Single Sign-On (
 Begin by enabling SSO within your Appcircle organization settings. Follow these steps:
 
 1. In the Appcircle dashboard, navigate to the **Organization** section located on the far left sidebar.
-2. On the **My Organization** screen, select **Integrations** from the left-hand menu.
-3. On the **Integrations** screen, locate the **Authentications** section on the far right, find **Testing Portal SSO Login**, and click **Add New**.
+2. On the **My Organization** screen, select **Security** from the left-hand menu.
+3. On the **Security** screen, locate the **Authentications** section on the far right, find **Testing Portal SSO Login**, and click **Add New**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-sso-add-new.png' />
 
@@ -125,7 +125,7 @@ Only one SSO provider can be configured at a time.
 **Important:** If you're using SAML for SSO, some identity providers, like Okta, restrict you to a single SAML Entity ID. In this case, the Create From Existing SSO feature cannot be used.
 :::
  
-1. Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
+1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
 2. Select the **Add New** on the **Testing Portal SSO Login**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/security-authentications.png' /> 
