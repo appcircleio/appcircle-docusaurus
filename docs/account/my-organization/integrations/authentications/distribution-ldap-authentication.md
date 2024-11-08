@@ -38,7 +38,7 @@ Please refer the **Step 3: Create From Existing LDAP Configuration** section in 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login3.png' />
 
-- You can see that the Connect button has changed to the Manage button.
+- The Connect button will switch to the Manage button once a configuration is created.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribute-ldap-login4.png' />
 
@@ -70,7 +70,7 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login5.png' />
 
-- To change the distribution authorization go to Distribution Profiles screen and press the your distribution profile click **Settings** button and under the Authentication tab you should see LDAP Login. Convert **LDAP Login** to on.
+- To change the distribution authorization, navigate to the Distribution Profiles screen and select your distribution profile. Click **Settings** button and under the Authentication tab you should see LDAP Login. Toggle the **LDAP Login** to 'On'.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login6.png' />
 
@@ -78,11 +78,11 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login7.png' />
 
-- You must verify according to the method you have chosen.
+- If the Two Factor Authentication is enabled, you will need to verify your account.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login8.png' />
 
-- If the login is successful, a screen similar to the one below will appear.
+- If the login is successful, the Testing Portal screen will appear.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login9.png' />
 
@@ -92,17 +92,17 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
   Appcircle allows you to create a new SSO configuration based on an existing one, ensuring a smooth and efficient setup experience. 
  
 - Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-- Select the **Add New** on the **Testing Portal LDAP Login**
+- Select the **Add New** on the **Testing Portal LDAP Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
 
-- Select the **Create New Authentication** and then select the **Create From Existing Configuration**
+- Select the **Create New Authentication** and then select the **Create From Existing Configuration**.
 
-Existing LDAP configurations will be listed in screen. Select one of them and click on **Next**.
+Existing LDAP configurations will be listed on the screen. Select one and click **Next** to proceed. 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-create-from-existing.png' /> 
 
-- On the Create LDAP Configuration screen, fill in the **Name** and **Credential** fields (all other values are prefilled). Customize as needed, then click **Save**.
+- On the Create LDAP Configuration screen, fill in the **Name** and **Credential** fields (all other values are prefilled). Adjust any fields as needed, then click **Save**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login3.png' />
 

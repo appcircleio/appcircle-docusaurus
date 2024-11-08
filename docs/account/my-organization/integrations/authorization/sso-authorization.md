@@ -156,11 +156,11 @@ exports.onExecutePostLogin = async (event, api) => {
 #### Step 5. Define Group and Role Claim Names in Appcircle
 
 1. Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**
+2. Select the **Manage** on the **Appcircle SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
 
-3. Select the **Manage Authorization**
+3. Select the **Manage Authorization**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
 
@@ -259,11 +259,11 @@ exports.onExecutePostLogin = async (event, api) => {
 #### Step 5. Define Group and Role Attributes names in Appcircle
 
 1. Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**
+2. Select the **Manage** on the **Appcircle SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
 
-3. Select the **Manage Authorization**
+3. Select the **Manage Authorization**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
 
@@ -365,11 +365,11 @@ exports.onExecutePostLogin = async (event, api) => {
 #### Step 5. Define Group and Role Attribute names in Appcircle
 
 1. Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**
+2. Select the **Manage** on the **Appcircle SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
 
-3. Select the **Manage Authorization**
+3. Select the **Manage Authorization**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
 
@@ -485,11 +485,11 @@ The roles will be stored in user attributes.
 #### Step 4. Define Group and Role Claim in Appcircle
 
 1. Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**
+2. Select the **Manage** on the **Appcircle SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
 
-3. Select the **Manage Authorization**
+3. Select the **Manage Authorization**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
 
@@ -599,7 +599,7 @@ Add group attribute statement as below
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
 
-3. Select the **Manage Authorization**
+3. Select the **Manage Authorization**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
 

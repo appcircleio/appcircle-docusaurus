@@ -24,12 +24,12 @@ To start, go to [My Organization](/account/my-organization) > Integrations scr
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-ldap-add-new.png' />
 
-- The **Manage Testing Portal LDAP Login** window will open, click **Create New Authentication** button
+- The **Manage Testing Portal LDAP Login** window will open, click **Create New Authentication** button.
 
 - The **Create New Authentication** window will open, presenting two options:
     - **Create New Authentication**
     - **Create From Existing Authentication**
-You can create new configuration or create from existing configuration. Click on the **Create New Authentication** section to create new configuration.
+You can create a new configuration or create one from an existing configuration. Click on the **Create New Authentication** section to create new configuration.
 Please refer the **Step 3: Create From Existing LDAP Configuration** section in the 3. General Configuration Steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-ldap-create-options.png' />
@@ -42,7 +42,7 @@ Please refer the **Step 3: Create From Existing LDAP Configuration** section in 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-ldap-login4.png' />
 
-- To access the LDAP integration settings, click the "Manage" button of the "LDAP Login" after click **Manage Authentication** button. Then click the "Edit" button of the existing LDAP provider.
+- To access the LDAP integration settings, click the "Manage" button of the "LDAP Login". Then,  click **Manage Authentication** button and select the "Edit" button of the existing LDAP provider.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login-configuration-edit.png' />
 
@@ -91,13 +91,13 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
   Appcircle allows you to create a new SSO configuration based on an existing one, ensuring a smooth and efficient setup experience. 
  
 - Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-- Select the **Add New** on the **Enterprise Portal LDAP Login**
+- Select the **Add New** on the **Enterprise Portal LDAP Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribute-sso-manage-button.png' /> 
 
-- Select the **Create New Authentication** and then select the **Create From Existing Configuration**
+- Select the **Create New Authentication** and then select the **Create From Existing Configuration**.
 
-Existing LDAP configurations will be listed in screen. Select one of them and click on **Next**.
+Existing LDAP configurations will be listed on the screen. Select one, and click on **Next** to proceed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-create-from-existing.png' /> 
 

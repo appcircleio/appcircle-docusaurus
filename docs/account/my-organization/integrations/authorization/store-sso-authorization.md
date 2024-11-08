@@ -65,11 +65,11 @@ This section provides a brief summary of the configuration steps.
 #### Step 3. Define Group Claim Name in Appcircle
 
 1. Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Enterprise Portal SSO Login**
+2. Select the **Manage** on the **Enterprise Portal SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
 
-3. Select the **Manage Authorization**
+3. Select the **Manage Authorization**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-authz-button.png' /> 
 
@@ -192,11 +192,11 @@ This section provides a brief summary of the configuration steps.
 
 
 1. Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Enterprise Portal SSO Login**
+2. Select the **Manage** on the **Enterprise Portal SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
 
-3. Select the **Manage Authorization**
+3. Select the **Manage Authorization**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-authz-button.png' /> 
 
@@ -245,11 +245,11 @@ This section provides a brief summary of the configuration steps.
 
 
 1. Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Enterprise Portal SSO Login**
+2. Select the **Manage** on the **Enterprise Portal SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
 
-3. Select the **Manage Authorization**
+3. Select the **Manage Authorization**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-authz-button.png' /> 
 
@@ -294,11 +294,11 @@ This section provides a brief summary of the configuration steps.
 #### Step 4. Define Group Claim in Appcircle
 
 1. Navigate to the **Organization > Integrations > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Enterprise Portal SSO Login**
+2. Select the **Manage** on the **Enterprise Portal SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
 
-3. Select the **Manage Authorization**
+3. Select the **Manage Authorization**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-authz-button.png' /> 
 
