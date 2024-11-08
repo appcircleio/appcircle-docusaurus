@@ -1167,3 +1167,8 @@ status = 301
 from = "/testing-distribution/apple-devices"
 to = "/signing-identities/apple-devices"
 status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/tuist"
+to = "/workflows/ios-specific-workflow-steps/tuist-install"
+status = 301

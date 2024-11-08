@@ -21,7 +21,7 @@ Once SSO integration is complete, you can configure authorization by mapping IdP
 
 These steps will guide you through the configuration within your chosen identity provider and Appcircle.
 
-<CustomDetails>
+<details>
   <summary>Step 1: Configure Your Identity Provider</summary>
 
 1. Perform identity provider-specific configurations, including creating groups and roles, and defining group and role claims/attributes. 
@@ -29,9 +29,9 @@ These steps will guide you through the configuration within your chosen identity
 
 Follow **3. Specific Provider Configuration** section to complete this steps.
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
   <summary>Step 2: Enable SSO Mapping and Configure Group and Role Mappings</summary>
 
 ### Accessing SSO Mapping Settings
@@ -58,14 +58,14 @@ Follow **3. Specific Provider Configuration** section to complete this steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-role-mapping.png' /> 
 
-</CustomDetails>
+</details>
 
 ## 3. Specific Provider Configuration
 
-<CustomDetails>
+<details>
     <summary>Auth0</summary>
 
-<CustomDetails>
+<details>
     <summary>Auth0 (OpenID Connect)</summary>
 
 #### Step 1. Create Roles
@@ -158,9 +158,9 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-oidc-ac-group-role-claim-name.png' />
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
     <summary>Auth0 (SAML)</summary>
 
 #### Step 1. Create Roles
@@ -253,14 +253,14 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-saml-ac-group-role-attribute-name.png' />
 
-</CustomDetails>
+</details>
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
     <summary>Microsoft Entra ID (formerly Azure Active Directory) </summary>
 
-<CustomDetails>
+<details>
     <summary>Microsoft Entra ID (SAML)</summary>
 
 #### Step 1. Create Groups in Microsoft Entra ID
@@ -351,14 +351,14 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-ac-group-role-attribute-name.png' />
 
-</CustomDetails>
+</details>
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
     <summary>Okta</summary>
 
-<CustomDetails>
+<details>
     <summary>Okta (OpenID Connect)</summary>
 
 #### Step 1. Create Groups and Define Group Claim
@@ -463,9 +463,9 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-group-role-claim-name.png' />
 
-</CustomDetails>
+</details>
 
-<CustomDetails>
+<details>
     <summary>Okta (SAML)</summary>
 
 #### Step 1. Create Groups and Assign to the Application
@@ -565,9 +565,9 @@ Add group attribute statement as below
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-saml-ac-group-role-attribute-name.png' />
 
-</CustomDetails> 
+</details> 
 
-</CustomDetails>
+</details>
 
 ## 4. Testing and Verification
 
