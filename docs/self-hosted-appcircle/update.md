@@ -60,9 +60,10 @@ For more information about the DMZ structure, you can check the [Appcircle DMZ d
 
 #### Version History
 
-Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version.
+Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version. 
 
 <!-- Version Anchor Links -->
+[3.22.1]: /release-notes#3221---2024-10-18-editing-environment-variables-self-hosted-updates-enterprise-portal-login-improvement-bug-fixes-and-more
 [3.22.0]: /release-notes#3220---2024-10-04-apple-devices-build-report-improvement-auto-cancel-redundant-pipelines-bug-fixes-and-more
 [3.21.0]: /release-notes#3210---2024-09-12-publish-log-monitoring-sso-mapping-and-enterprise-app-store-improvements-xcode-160-bug-fixes-and-more
 [3.20.5]: /release-notes#3205---2024-09-02-android-publish-improvements-in-app-updates-and-more
@@ -81,9 +82,12 @@ Below is the version history of the self-hosted Appcircle server. This table hel
 
 <details>
     <summary>Click to view version history.</summary>
+
+        Release dates listed in the table may differ from those on the Release Notes page. Cloud and Self-hosted versions are released separately.
         
         | Version   | Release Date |
         |-----------|--------------|
+        | [3.22.1]  | 23/10/2024   |
         | [3.22.0]  | 11/10/2024   |
         |  3.21.2   | 01/10/2024   |
         |  3.21.1   | 30/09/2024   |
