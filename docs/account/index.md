@@ -33,7 +33,7 @@ Update your personal details, change your password, and manage your account sett
 
 ## My Organization
 
-Configure and manage organization-level settings and integrations in Appcircle.
+Configure and manage organization-level settings and security in Appcircle.
 
 ### API Integration
 

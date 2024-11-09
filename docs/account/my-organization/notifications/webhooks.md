@@ -25,7 +25,7 @@ provide.
 
 ### Creating Webhook
 
-Multiple webhooks can be created for different events and build profiles. To start, go to [My Organization](/account/my-organization) Integration screen and press the **Manage** button next to Webhook under the ** Connections** section.
+Multiple webhooks can be created for different events and build profiles. To start, go to [My Organization](/account/my-organization) Notifications screen and press the **Manage** button next to Webhook under the **Notification Providers** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-integration-webhook.png' />
 
