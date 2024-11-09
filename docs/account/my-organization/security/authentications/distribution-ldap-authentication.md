@@ -24,13 +24,13 @@ To start, go to [My Organization](/account/my-organization) > Security screen 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-ldap-add-new.png' />
 
-4. The **Manage Testing Portal LDAP Login** window will open, click **Create New Authentication** button
+- The **Manage Testing Portal LDAP Login** window will open, click **Create New Authentication** button.
 
-4. The **Create New Authentication** window will open, presenting two options:
+- The **Create New Authentication** window will open, presenting two options:
     - **Create New Authentication**
     - **Create From Existing Authentication**
 You can create new configuration or create from existing configuration. Click on the **Create New Authentication** section to create new configuration.
-Please refer the **Step 3: Create From Existing LDAP Configuration** section in the 3. General Configuration Steps.
+Please refer the [**Create From Existing LDAP Configuration**](/account/my-organization/security/authentications/distribution-ldap-authentication#create-from-existing-ldap-configuration).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-ldap-create-options.png' />
 
@@ -87,7 +87,7 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login9.png' />
 
 
-# Create From Existing LDAP Configuration
+## Create From Existing LDAP Configuration
 
   Appcircle allows you to create a new SSO configuration based on an existing one, ensuring a smooth and efficient setup experience. 
  
@@ -106,7 +106,7 @@ Existing LDAP configurations will be listed on the screen. Select one and click 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login3.png' />
 
-# Deleting LDAP Login
+## Deleting LDAP Login
 
 - To delete, go to the [My Organization](/account/my-organization) > Security screen and press the Manage button next to LDAP Login under the Authentications section.
 
