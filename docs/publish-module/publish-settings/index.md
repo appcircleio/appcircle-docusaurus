@@ -80,9 +80,9 @@ Store credentials are the connection details for the stores that you will publis
 
 For detailed information on store connections, follow the links below.
 
-| Store             | Connection                                                                                                              |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| App Store         | [Adding an App Store Connect API Key](/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key.md) |
-| Google Play       | [Adding Google Play Service Account](/account/my-organization/integrations/credentials/adding-google-play-service-account.md)   |
-| Huawei AppGallery | [Adding Huawei API Key](/account/my-organization/integrations/credentials/adding-huawei-api-key)                                |
-| Microsoft Intune  | [Adding Microsoft Intune API Credentials](/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key)     |
+| Store             | Connection                                                                                                                  |
+| ----------------- |-----------------------------------------------------------------------------------------------------------------------------|
+| App Store         | [Adding an App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key.md) |
+| Google Play       | [Adding Google Play Service Account](/account/my-organization/security/credentials/adding-google-play-service-account.md)   |
+| Huawei AppGallery | [Adding Huawei API Key](/account/my-organization/security/credentials/adding-huawei-api-key)                                |
+| Microsoft Intune  | [Adding Microsoft Intune API Credentials](/account/my-organization/security/credentials/adding-microsoft-intune-api-key)    |

@@ -42,7 +42,7 @@ In order to get notifications, the administrator of the channel should add an in
 
 ### Connecting Appcircle to Microsoft Teams
 
-An Appcircle organization can be associated with a single Teams channel. To start, go to [My Organization](/account/my-organization) screen and press the "Connect" button next to Microsoft Teams under the "Connections" section.
+An Appcircle organization can be associated with a single Teams channel. To start, go to [My Organization](/account/my-organization) > Notifications screen and press the "Connect" button next to Microsoft Teams under the "Notification Providers" section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integrations-teams.png' />
 
