@@ -10,9 +10,9 @@ The "Notification Integrations" section lets you connect Appcircle with your pre
 
 Current headlines and the actions you can complete are listed below:
 
-- [**Email Notifications**](/account/my-organization/integrations/notification-integrations/email-connection)
-- [**Microsoft Teams Notifications**](/account/my-organization/integrations/notification-integrations/teams-notifications)
-- [**Slack**](/account/my-organization/integrations/notification-integrations/slack)
-- [**Webhook Configurations**](/account/my-organization/integrations/notification-integrations/webhooks)
+- [**Email Notifications**](/account/my-organization/notifications/email-connection)
+- [**Microsoft Teams Notifications**](/account/my-organization/notifications/teams-notifications)
+- [**Slack**](/account/my-organization/notifications/slack)
+- [**Webhook Configurations**](/account/my-organization/notifications/webhooks)
 
 Current headlines and the actions you can complete are listed below:

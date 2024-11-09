@@ -21,9 +21,9 @@ There is currently no Slack integration available on the self-hosted Appcircle. 
 
 ### Connecting Appcircle to Slack
 
-An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](/account/my-organization) screen and press the "Connect" button next to Slack under the "Connections" section.
+An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](/account/my-organization) > Notifications screen and press the **Connect** button next to Slack under the **Notification Providers** section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (64).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/notifications-slack1.png' />
 
 Provide permission to the Appcircle app on Slack so that the channel list can be fetched for selection and the status can be sent as a message.
 
@@ -31,7 +31,7 @@ Provide permission to the Appcircle app on Slack so that the channel list can be
 
 You will then see that Slack is connected. To manage the notification settings or to disconnect, press the "Manage" button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (135).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/notifications-slack-manage.png' />
 
 ### Setting Up Module-Based Notifications in the Slack Settings
 

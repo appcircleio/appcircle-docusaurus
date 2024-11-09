@@ -62,12 +62,20 @@ This section provides a brief summary of the configuration steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-application-organizations2.png' />
 
-#### Step 3. Define Group Claim Name
+#### Step 3. Define Group Claim Name in Appcircle
 
-1. Navigate to the **SSO Login** screen in Appcircle.
-2. Enter the **Claim Name (OpenID)/Attribute Name (SAML)** as `org_id`.
+1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
+2. Select the **Manage** on the **Enterprise Portal SSO Login**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-org-id-claim.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
+
+3. Select the **Manage Authorization**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-authz-button.png' /> 
+
+4. Enter the **Claim Name (OpenID)/Attribute Name (SAML)** as `org_id`.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-org-id-claim.png' />
 
 </details>
 
@@ -180,12 +188,21 @@ This section provides a brief summary of the configuration steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-attributes2.png' />
 
-#### Step 5. Define Group Role Attributes names in Appcircle
+#### Step 5. Define Group Attributes names in Appcircle
 
-1. Navigate to the **SSO Login** screen in Appcircle.
-2. Enter the **Claim Name (OpenID)/Attribute Name (SAML)** as ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups``.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-azure-saml-org-id-claim.png' />
+1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
+2. Select the **Manage** on the **Enterprise Portal SSO Login**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
+
+3. Select the **Manage Authorization**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-authz-button.png' /> 
+
+4. Enter the **Claim Name (OpenID)/Attribute Name (SAML)** as ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups``.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-org-id-claim.png' />
 
 </details>
 
@@ -226,10 +243,19 @@ This section provides a brief summary of the configuration steps.
 
 #### Define Group Claim in Appcircle
 
-1. Navigate to the **SSO Login** screen in Appcircle.
-2. Enter the **Claim Name (OpenID)/Attribute Name (SAML)** as ``groups``.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-groups-claim.png' />
+1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
+2. Select the **Manage** on the **Enterprise Portal SSO Login**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
+
+3. Select the **Manage Authorization**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-authz-button.png' /> 
+
+4. Enter the **Claim Name (OpenID)/Attribute Name (SAML)** as ``groups``.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-org-id-claim.png' />
 
 </details>
 
@@ -265,12 +291,20 @@ This section provides a brief summary of the configuration steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2812-okta-groups-7.png' />
 
-#### Step 4. Define Group and Role Claim in Appcircle
+#### Step 4. Define Group Claim in Appcircle
 
-1. Navigate to the **SSO Login** screen in Appcircle.
-2. Enter the **Claim Name (OpenID)/Attribute Name (SAML)** as ``groups``.
+1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
+2. Select the **Manage** on the **Enterprise Portal SSO Login**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/integration-sso-groups-claim.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
+
+3. Select the **Manage Authorization**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-authz-button.png' /> 
+
+4. Enter the **Claim Name (OpenID)/Attribute Name (SAML)** as ``groups``.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-org-id-claim.png' />
 
 </details> 
 

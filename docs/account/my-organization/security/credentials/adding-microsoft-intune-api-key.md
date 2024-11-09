@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Intune API key allows you to upload the binary file and metadata information to your Microsoft Intune account.
 
-Integration information for InTune can be added from the integrations section under [**Appcircle Organization**](/account/my-organization).
+Integration information for InTune can be added from the **Security** section under [**Appcircle Organization**](/account/my-organization).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneIntegration.png' />
 
