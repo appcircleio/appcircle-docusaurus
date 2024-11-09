@@ -128,11 +128,11 @@ Only one SSO provider can be configured at a time.
 :::
  
 1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Add New** on the **Appcircle SSO Login**
+2. Select the **Add New** on the **Appcircle SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/security-authentications.png' /> 
 
-3. Select the **Create New Authentication** and then select the **Create From Existing SSO Configuration**
+3. Select the **Create New Authentication** and then select the **Create From Existing SSO Configuration**.
 
 Existing SSO configurations will be listed in screen. Select one of them and click on **Next**.
 
@@ -270,8 +270,8 @@ Instead of writing all the settings of OpenID, you can download the settings fil
 
 Now, upload the OpenID configuration JSON file to Appcircle and complete the configuration:
 
-1. Navigate to the **Set up OpenID Connect Provider** screen in Appcircle, which you accessed during the SSO setup in the "General Configuration Steps."
-2. Choose the **Client secret sent as basic auth** as Client Authentication
+1. Navigate to the **Set up OpenID Connect Provider** screen in Appcircle, which you accessed during the SSO setup in the "General Configuration Steps".
+2. Choose the **Client secret sent as basic auth** as Client Authentication.
 3. Enter the **Client ID** and **Client Secret** that you noted earlier from Auth0.
 4. Upload the downloaded OpenID configuration JSON file to Appcircle.
 
@@ -575,7 +575,7 @@ Next, configure the callback URLs in Okta to ensure proper redirection to Appcir
 Now, upload the OpenID configuration JSON file to Appcircle and complete the configuration:
 
 1. Navigate to the **Set up OpenID Connect Provider** screen in Appcircle, which you accessed during the SSO setup in the "General Configuration Steps."
-2. Choose the **Client secret sent as basic auth** as Client Authentication
+2. Choose the **Client secret sent as basic auth** as Client Authentication.
 3. Enter the **Client ID** and **Client Secret** that you noted earlier from Okta.
 4. Upload the downloaded OpenID configuration JSON file to Appcircle.
 

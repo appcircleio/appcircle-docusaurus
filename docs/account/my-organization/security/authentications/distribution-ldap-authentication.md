@@ -34,7 +34,7 @@ Please refer the [**Create From Existing LDAP Configuration**](/account/my-organ
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-ldap-create-options.png' />
 
-- Fill in the details of your LDAP Configurations
+- Fill in the details of your LDAP Configurations.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login3.png' />
 

@@ -37,7 +37,7 @@ Follow **3. Specific Provider Configuration** section to complete this steps.
 ### Accessing SSO Mapping Settings
 
 1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**
+2. Select the **Manage** on the **Appcircle SSO Login**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
 
@@ -58,7 +58,7 @@ Follow **3. Specific Provider Configuration** section to complete this steps.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-role-mapping.png' /> 
 
-5. Finally enable SSO Authorization with the **Enable SSO Authorization** toggle.
+5. Finally, enable SSO Authorization with the **Enable SSO Authorization** toggle.
 
 </details>
 
