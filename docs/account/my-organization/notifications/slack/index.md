@@ -28,5 +28,5 @@ Integrate the Appcircle Bot into your Slack to get personalized notifications an
 
 For detailed instructions on setting up Slack integration, follow the guides below:
 
-<ContentRef url="/account/my-organization/integrations/notification-integrations/slack/slack-notifications"> Slack Notifications </ContentRef>
-<ContentRef url="/account/my-organization/integrations/notification-integrations/slack/appcircle-bot-for-slack"> Appcircle Bot for Slack </ContentRef>
+<ContentRef url="/account/my-organization/notifications/slack/slack-notifications"> Slack Notifications </ContentRef>
+<ContentRef url="/account/my-organization/notifications/slack/appcircle-bot-for-slack"> Appcircle Bot for Slack </ContentRef>

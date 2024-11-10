@@ -199,10 +199,10 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main4.png' />
 
-To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
+To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Security screen and press the "Connect" button next to SSO Login or LDAP Login under the "Authentications" section.
 
-<ContentRef url="/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication">SSO Login</ContentRef>
-<ContentRef url="/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication">LDAP Login</ContentRef>
+<ContentRef url="/account/my-organization/security/authentications/distribution-sso-authentication">SSO Login</ContentRef>
+<ContentRef url="/account/my-organization/security/authentications/distribution-ldap-authentication">LDAP Login</ContentRef>
 
 :::info
 

@@ -20,13 +20,125 @@
 
 [[redirects]]
   from = "/account/ldap-login"
-  to = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
+  to = "/account/my-organization/integrations/authentications"
   status = 301
 
 [[redirects]]
   from = "/account/sso/single-sign-on"
   to = "/account/my-organization/integrations/authentications/sso-authentication"
   status = 301
+
+# Redirects for new integrations look
+
+[[redirects]]
+from = "/account/my-organization/integrations"
+to = "/account/my-organization/security"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authentications"
+to = "/account/my-organization/security/authentications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authorization"
+to = "/account/my-organization/security/authorization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/credentials"
+to = "/account/my-organization/security/credentials"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authentications/sso-authentication"
+to = "/account/my-organization/security/authentications/sso-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication"
+to = "/account/my-organization/security/authentications/store-and-distribution-sso-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
+to = "/account/my-organization/security/authentications/store-and-distribution-ldap-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
+to = "/account/my-organization/security/authentications/store-and-distribution-ldap-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authorization/rbac-authorization"
+to = "/account/my-organization/security/authorization/rbac-authorization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authorization/sso-authorization"
+to = "/account/my-organization/security/authorization/sso-authorization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authorization/store-sso-authorization"
+to = "/account/my-organization/security/authorization/store-sso-authorization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key"
+to = "/account/my-organization/security/credentials/adding-an-app-store-connect-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/credentials/adding-google-play-service-account"
+to = "/account/my-organization/security/credentials/adding-google-play-service-account"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/credentials/adding-huawei-api-key"
+to = "/account/my-organization/security/credentials/adding-huawei-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key"
+to = "/account/my-organization/security/credentials/adding-microsoft-intune-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/notification-integrations"
+to = "/account/my-organization/notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/notification-integrations/email-connection"
+to = "/account/my-organization/notifications/email-connection"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/notification-integrations/teams-notifications"
+to = "/account/my-organization/notifications/teams-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/notification-integrations/slack"
+to = "/account/my-organization/notifications/slack"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/notification-integrations/slack/appcircle-bot-for-slack"
+to = "/account/my-organization/notifications/slack/appcircle-bot-for-slack"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/notification-integrations/webhooks"
+to = "/account/my-organization/notifications/webhooks"
+status = 301
 
 # Redirects for build-related changes
 [[redirects]]
@@ -1075,7 +1187,7 @@ status = 301
 
 [[redirects]]
   from = "/account/my-organization/ldap-login"
-  to = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
+  to = "/account/my-organization/integrations/authentications"
   status = 301
 
 [[redirects]]
