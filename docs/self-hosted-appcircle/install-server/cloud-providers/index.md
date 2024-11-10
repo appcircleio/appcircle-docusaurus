@@ -4,7 +4,7 @@ description: Integrate Amazon Web Services (AWS) with Appcircle for scalable inf
 tags:
   [
     cloud providers,
-    Amazon Web Services,
+    amazon web services,
     cloud computing,
     build infrastructure,
     cloud resources,

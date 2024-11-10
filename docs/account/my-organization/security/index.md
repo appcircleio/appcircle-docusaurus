@@ -6,13 +6,12 @@ tags:
     account,
     organization,
     api,
-    Security,
     app store connect,
     google play,
     huawei appgallery,
     notifications,
     security,
-    API keys,
+    api keys,
   ]
 ---
 

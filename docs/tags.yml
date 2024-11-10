@@ -1578,9 +1578,10 @@ management:
   description: "Description for mark as rc"
   permalink: /mark-as-rc
 
-marketplace:
+"marketplace":
   label: "marketplace"
   description: "Description for marketplace"
+  permalink: /marketplace
 
 MAUI:
   label: "MAUI"

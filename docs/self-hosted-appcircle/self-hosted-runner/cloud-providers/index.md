@@ -4,7 +4,7 @@ description: Integrate cloud providers with your Appcircle builds to scale your 
 tags:
   [
     cloud providers,
-    Amazon Web Services,
+    amazon web services,
     cloud computing,
     build infrastructure,
     cloud resources,
