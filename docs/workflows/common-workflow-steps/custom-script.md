@@ -351,11 +351,21 @@ If you want to send an email to multiple email addresses instead of a single ema
 
 :::danger Sensitive Informations
 
-Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) for these types of values. 
+Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) for these types of values.
 
 To do this, comment out or remove the sensitive variables such as `$CS_EMAIL`, `$CS_USERNAME`, and `$CS_PASSWORD` defined at the top of the script, and add them as environment variables instead.
 
 For other variables that need to be defined, you can also make use of environment variables.
+
+:::
+
+:::caution Self-hosted Runners
+
+If you're using self-hosted runners and they're not starting to build pipelines with clean states as in Appcircle Cloud, this custom script can be insecure to use since the consecutive pipelines are using the same build environment, and it might have last sent email sensitive configuration in some cases.
+
+In order to send email, the script persists SMTP configuration to the `~/.msmtprc` file. Although the script has a cleanup mechanism that works for success or failure cases, it cannot work on all conditions. For example, the "cancel build" case should be considered. In this case, the `~/.msmtprc` might not be cleaned, and it can be read in the next pipeline.
+
+If you have configured runners similar to the Appcircle Cloud pools and they are wiped off after a build is executed to provide a fresh environment for every build, then there is nothing to consider; it's safe.
 
 :::
 
@@ -369,14 +379,13 @@ In order to generate this password, **2FA authentication** must be turned on in 
 
 :::tip Protocols and SMTP Host
 
-This script uses the TLS protocol for SMTP server usage. Since the **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$CS_HOST` parameter. If you are using your own SMTP server, don't forget to change the `$CS_HOST` value here. 
+This script uses the TLS protocol for SMTP server usage. Since the **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$CS_HOST` parameter. If you are using your own SMTP server, don't forget to change the `$CS_HOST` value here.
 
 On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `$CS_USE_TLS` or `$CS_USE_SSL` parameters in the script to `true` or `false`. Note that you need to change the `$CS_PORT` parameter when using **SSL** and **TLS**.
 
 For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
 
 :::
-
 
 :::danger Sender Email and Spoofing
 
