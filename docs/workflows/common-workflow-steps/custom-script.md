@@ -353,6 +353,14 @@ Otherwise, to send an email you need to have some information such as email subj
 
 :::
 
+:::danger Sensitive Informations
+
+Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) for these types of values. 
+
+To do this, comment out sensitive variables such as `CS_EMAIL`, `CS_USERNAME`, and `CS_PASSWORD` defined at the top of the script, and add them as environment variables instead. For other variables that need to be defined, you can also make use of environment variables.
+
+:::
+
 :::info Username and Password for Google SMTP Users
 
 When you want to send an email with your Gmail account using **Google's SMTP** server, you must first **authenticate** to the Google SMTP server. For this process, you need to enter your **App Password** in the password field. 
