@@ -1,7 +1,7 @@
 ---
 title: Credentials
 description: Manage and securely store your credentials in Appcircle. Easily configure and access API keys, and other sensitive information.
-tags: [security, API keys, authentication, sensitive data, storage]
+tags: [security, api keys, authentication, sensitive data, storage]
 ---
 
 # Credentials

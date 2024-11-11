@@ -1,7 +1,7 @@
 ---
 title: Command-Line Interface (CLI) Configuration
 description: Configure the Appcircle CLI to use your self-hosted Appcircle server
-tags: [self-hosted, advanced configuration, appcircle cli, cli, command-line interface]
+tags: [self-hosted, advanced configuration, appcircle cli, cli, command line interface]
 sidebar_position: 12
 ---
 

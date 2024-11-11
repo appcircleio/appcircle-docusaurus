@@ -1,6 +1,6 @@
 ---
 title: Enterprise Portal SSO Authentication
-description: Set up single sign-on (SSO) for distributing your applications, enhancing security and simplifying the login process.
+description: Set up single sign-on (SSO) for your applications in Enterprise store, enhancing security and simplifying the login process.
 tags: [sso, distribution, okta, auth0, entraid, azure, saml, openid]
 sidebar_position: 4
 ---

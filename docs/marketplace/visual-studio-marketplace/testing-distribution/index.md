@@ -4,7 +4,7 @@ sidebar_label: Testing Distribution
 description: Overview of self-hosted Appcircle and related concepts regarding testing distribution
 tags:
   [
-    testing-distribution,
+    testing distribution,
     ipa distribution,
     apk distribution,
     binary distribution,

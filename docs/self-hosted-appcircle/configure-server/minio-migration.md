@@ -1,7 +1,7 @@
 ---
 title: MinIO Migration
 description: Instructions on migrating from a multi-node single drive MinIO configuration to a single-node single drive MinIO configuration
-tags: [MinIO, MinIO migration, single-node MinIO, multi-node MinIO]
+tags: [minio, minio migration, single-node minio, multi-node minio]
 sidebar_class_name: hidden
 ---
 

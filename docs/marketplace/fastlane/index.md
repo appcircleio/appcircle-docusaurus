@@ -4,7 +4,7 @@ description: Appcircle fastlane plugin allows you to distribute your builds to t
 tags:
   [
     fastlane-marketplace,
-    testing-distribution,
+    testing distribution,
     ipa distribution,
     apk distribution,
     binary distribution,

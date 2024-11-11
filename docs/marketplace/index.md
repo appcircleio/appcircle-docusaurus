@@ -1,7 +1,7 @@
 ---
 title: Marketplace Overview
 description: Overview of Marketplace Integrations
-tags: [testing-distribution, overview, concepts, marketplace]
+tags: [testing distribution, overview, concepts, marketplace]
 sidebar_position: 1
 ---
 

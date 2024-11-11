@@ -1,7 +1,7 @@
 ---
 title: Maestro Cloud Upload
 description: Facilitate the execution of automated tests for mobile applications directly within Appcircle using Maestro Cloud Upload.
-tags: [maestro, maestro-cloud, mobile, testing]
+tags: [maestro, maestro cloud, mobile, testing]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

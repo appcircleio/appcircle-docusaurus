@@ -4,11 +4,11 @@ description: Find detailed instructions on building applications for various pla
 tags:
   [
     platform build guides,
-    iOS build,
-    Android build,
+    ios build,
+    android build,
     React Native build,
-    Flutter build,
-    Ionic build,
+    flutter build,
+    ionic build,
     .NET MAUI build,
     MAUI build,
     app development,

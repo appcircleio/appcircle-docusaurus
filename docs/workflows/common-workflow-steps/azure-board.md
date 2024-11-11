@@ -1,7 +1,7 @@
 ---
 title: Azure Boards
 description: Manage your software development process with Azure Boards. Track work items' progress throughout the development lifecycle.
-tags: [workflow, build-and-test, azure, boards]
+tags: [workflow, build and test, azure, boards]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

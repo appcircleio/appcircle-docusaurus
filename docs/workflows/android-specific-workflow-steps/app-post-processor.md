@@ -1,7 +1,7 @@
 ---
 title: App Post-Processor
 description: App Post-Processor step performs the necessary system operations to identify and process the Android output binary files.
-tags: [android, mobile, post-processor]
+tags: [android, mobile, post processor]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
