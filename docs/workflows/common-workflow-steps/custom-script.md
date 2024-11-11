@@ -305,16 +305,11 @@ EOF
 # Restrict permissions for the .msmtprc file to avoid security issues
 chmod 600 ~/.msmtprc
 
-# Export mail variables to the shell environment
-shell_rc=~/.$(basename $SHELL)rc
-{
-    echo "export MAIL_SERVER=$CS_HOST"
-    echo "export MAIL_PORT=$CS_PORT"
-    echo "export MAIL_USE_TLS=$CS_USE_TLS"
-    echo "export MAIL_USE_SSL=$CS_USE_SSL"
-    echo "export MAIL_USERNAME=$CS_EMAIL"
-    echo "export MAIL_PASSWORD=$CS_PASSWORD"
-} >> "$shell_rc"
+# Cleanup .msmtprc whether script ends with success or failure
+function cleanup {
+  cat /dev/null > ~/.msmtprc
+}
+trap cleanup EXIT
 
 # Send email
 echo "From: $CS_EMAIL_FROM
