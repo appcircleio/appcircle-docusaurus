@@ -1,7 +1,7 @@
 ---
 title: Monitoring
 description: Monitoring the Appcircle Server service logs and metrics with Grafana.
-tags: [monitoring, logging, Grafana]
+tags: [monitoring, logging, grafana]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

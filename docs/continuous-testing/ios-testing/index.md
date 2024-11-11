@@ -1,7 +1,7 @@
 ---
 title: iOS Testing
 description: Improve your iOS app's reliability and user experience with effective testing. Learn to run unit and UI tests for optimal app functionality.
-tags: [iOS testing, unit tests, UI tests, iOS apps, quality assurance]
+tags: [ios testing, unit tests, ui tests, ios apps, quality assurance]
 ---
 
 # iOS Testing

@@ -1,7 +1,7 @@
 ---
 title: React Native Testing
 description: Improve your React Native apps reliability and user experience with effective testing. Learn to run unit and UI tests for optimal app functionality.
-tags: [detox, testing strategy, quality assurance, react native testing, unit test, ui test, jest, test, react test]
+tags: [detox, quality assurance, unit test, ui test, jest, test]
 ---
 
 # React Native Testing

@@ -3,8 +3,8 @@ title: GitHub Marketplace
 description: Appcircle GitHub action allows you to distribute your builds to testers directly pipeline.
 tags:
   [
-    github-marketplace,
-    testing-distribution,
+    github marketplace,
+    testing distribution,
     ipa distribution,
     apk distribution,
     binary distribution,

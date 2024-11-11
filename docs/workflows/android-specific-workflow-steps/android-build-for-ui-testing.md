@@ -1,7 +1,7 @@
 ---
 title: Android Build for UI Testing
 description: Learn how to use the Android Build for UI Testing workflow step in Appcircle
-tags: [android, mobile, android, ui-testing, testing]
+tags: [android, mobile, android, ui testing, testing]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
