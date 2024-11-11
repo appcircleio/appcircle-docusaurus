@@ -245,7 +245,7 @@ CS_PASSWORD="your-email-password"
 
 # Set email details
 CS_EMAIL_SUBJECT="Test Email Subject"
-CS_EMAIL_TO="reciever-address@mail.com,reciever-2-address@mail.com"
+CS_EMAIL_TO="recipient-address@mail.com,recipient-2-address@mail.com"
 # This part will be used for visualization
 CS_EMAIL_FROM="Sender Name <test@gmail.com>"
 CS_EMAIL_BODY="This is the body of the test email."
@@ -320,7 +320,7 @@ shell_rc=~/.$(basename $SHELL)rc
 echo "From: $CS_EMAIL_FROM
 To: $CS_EMAIL_TO
 Subject: $CS_EMAIL_SUBJECT
-$CS_EMAIL_BODY" | msmtp --debug --from=$EMAIL_ -t $CS_EMAIL_TO
+$CS_EMAIL_BODY" | msmtp --debug --from=$CS_EMAIL -t $CS_EMAIL_TO
 
 ```
 
@@ -330,9 +330,9 @@ This script is written in `Bash`. When running with **Custom Script**, you need 
 
 :::
 
-:::tip Reciever Email Address
+:::tip Recipient Email Address
 
-If you want to send an e-mail to multiple e-mail addresses instead of a single e-mail address. In the `CS_EMAIL_TO` parameter, it will be enough to write all the addresses to send an e-mail separated by commas. For example; `CS_EMAIL_TO=example@email.com,example2@email.com`
+If you want to send an email to multiple email addresses instead of a single email address. In the `$CS_EMAIL_TO` parameter, it will be enough to write all the addresses to send an email separated by commas. For example; `$CS_EMAIL_TO=example@email.com,example2@email.com`
 
 :::
 
@@ -344,12 +344,12 @@ When using your own SMTP server credentials for the three variables below, pleas
 - **$CS_USERNAME**: Sender email address.
 - **$CS_PASSWORD**: Sender email address password.
 
-Otherwise, to send an email you need to have some information such as email subject, sender email, reciever email. You can use these parameters to use:
+Otherwise, to send an email you need to have some information such as email subject, sender email, recipient email. You can use these parameters to use:
 
-- **CS_EMAIL_SUBJECT**: Subject of sending email
-- **CS_EMAIL_TO**: Reciever email address.
-- **CS_EMAIL_FROM**: Sender email address for visualization.
-- **CS_EMAIL_BODY**: Content of sending email.
+- **$CS_EMAIL_SUBJECT**: Subject of sending email
+- **$CS_EMAIL_TO**: Recipient email address.
+- **$CS_EMAIL_FROM**: Sender email address for visualization.
+- **$CS_EMAIL_BODY**: Content of sending email.
 
 :::
 
@@ -366,7 +366,7 @@ In order to generate this password, **2FA authentication** must be turned on in 
 This script uses the TLS protocol for SMTP server usage. Since the **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$CS_HOST` parameter. 
 If you are using your own SMTP server. Don't forget to change the `$CS_HOST` value here. 
 
-On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `CS_USE_TLS` or `CS_USE_SSL` parameters in the script to `true/false`. Note that you need to change the `$CS_PORT` parameter when using **SSL and TLS**. For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
+On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `$CS_USE_TLS` or `$CS_USE_SSL` parameters in the script to `true/false`. Note that you need to change the `$CS_PORT` parameter when using **SSL and TLS**. For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
 
 :::
 
