@@ -225,9 +225,9 @@ For instance, you can check the list of environment variables in the build pipel
 sudo -E printenv
 ```
 
-### How can I send a custom Email?
+### How can I send a custom email?
 
-Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the two modules. If desired, the user can customize this structure by using the [**Custom Script**](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
+Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary) and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the two modules. If desired, the user can customize this structure by using the [**Custom Script**](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
 
 The following Bash script is set to use a **Gmail SMTP Server**. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
 
@@ -247,8 +247,8 @@ CS_PASSWORD="your-email-password"
 CS_EMAIL_SUBJECT="Test Email Subject"
 CS_EMAIL_TO="recipient-address@mail.com,recipient-2-address@mail.com"
 # This part will be used for visualization
-CS_EMAIL_FROM="Sender Name <test@gmail.com>"
-CS_EMAIL_BODY="This is the body of the test email."
+CS_EMAIL_FROM="Sender Name <sender-address@gmail.com>"
+CS_EMAIL_BODY="This is the body of the sent email."
 # Set TLS and SSL usage
 CS_USE_TLS="True"
 CS_USE_SSL="False"
@@ -271,7 +271,7 @@ EOF
 # Check if OS is supported and install necessary packages
 if [ "$os" == "darwin" ]; then
     if ! command -v brew > /dev/null 2>&1; then
-        echo "Can't find brew installation; make brew command visible or install homebrew and try again"
+        echo "Can't find brew installation; make brew command visible or install homebrew and try again."
         exit 1
     fi
     brew install mailutils
@@ -280,14 +280,14 @@ if [ "$os" == "darwin" ]; then
     { echo -n "tls_fingerprint " && msmtp --serverinfo --tls --tls-certcheck=off --host=$CS_HOST --port=$CS_PORT | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}"; } >> ~/.msmtprc
 elif [ "$os" == "linux" ]; then
     if ! command -v apt > /dev/null 2>&1; then
-        echo "apt is not installed; install apt and try again"
+        echo "Apt is not installed; install apt and try again."
         exit 1
     fi
     apt-get update
     apt-get install -y mailutils msmtp msmtp-mta
     echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
 else
-    echo "Unsupported OS: $os. This script expects Darwin or Linux."
+    echo "Unsupported OS: $os. Darwin or Linux was expected."
     exit 1
 fi
 
@@ -330,26 +330,27 @@ This script is written in `Bash`. When running with **Custom Script**, you need 
 
 :::
 
-:::tip Recipient Email Address
+:::note Input Variables
+When using your own SMTP server credentials for the three variables below, using **Environment Variables** is strongly suggested since this prevents sensitive information, such as passwords, from being exposed to unauthorized individuals.
 
-If you want to send an email to multiple email addresses instead of a single email address. In the `$CS_EMAIL_TO` parameter, it will be enough to write all the addresses to send an email separated by commas. For example; `$CS_EMAIL_TO=example@email.com,example2@email.com`
-
-:::
-
-:::caution Credentials
-
-When using your own SMTP server credentials for the three variables below, please use Environment Variables. This prevents sensitive information, such as passwords, from being exposed to unauthorized individuals. For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
+For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
 
 - **$CS_EMAIL**: SMTP Server email address.
 - **$CS_USERNAME**: Sender email address.
 - **$CS_PASSWORD**: Sender email address password.
 
-Otherwise, to send an email you need to have some information such as email subject, sender email, recipient email. You can use these parameters to use:
+Otherwise, to send an email, you need to have some information, such as the email subject, sender email, and recipient email. You can use these parameters to:
 
 - **$CS_EMAIL_SUBJECT**: Subject of sending email
 - **$CS_EMAIL_TO**: Recipient email address.
-- **$CS_EMAIL_FROM**: Sender email address for visualization.
+- **$CS_EMAIL_FROM**: Sender email address.
 - **$CS_EMAIL_BODY**: Content of sending email.
+
+:::
+
+:::tip Recipient Email Address
+
+If you want to send an email to multiple email addresses instead of a single email address, in the `$CS_EMAIL_TO` parameter, it will be enough to write all the addresses to send an email separated by commas. For example, `$CS_EMAIL_TO=example@email.com,example2@email.com`
 
 :::
 
@@ -357,13 +358,15 @@ Otherwise, to send an email you need to have some information such as email subj
 
 Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) for these types of values. 
 
-To do this, comment out sensitive variables such as `CS_EMAIL`, `CS_USERNAME`, and `CS_PASSWORD` defined at the top of the script, and add them as environment variables instead. For other variables that need to be defined, you can also make use of environment variables.
+To do this, comment out or remove the sensitive variables such as `$CS_EMAIL`, `$CS_USERNAME`, and `$CS_PASSWORD` defined at the top of the script, and add them as environment variables instead.
+
+For other variables that need to be defined, you can also make use of environment variables.
 
 :::
 
 :::info Username and Password for Google SMTP Users
 
-When you want to send an email with your Gmail account using **Google's SMTP** server, you must first **authenticate** to the Google SMTP server. For this process, you need to enter your **App Password** in the password field. 
+When you want to send an email with your Gmail account using **Google's SMTP** server, you must first **authenticate** to the Google SMTP server. For this process, you need to enter your **App Password** in the password field.
 
 In order to generate this password, **2FA authentication** must be turned on in your **Google account**. You can generate and retrieve this password from the **App Passwords** section under **Google Account management**. For detailed information about **App Passwords**, please visit the [**Google App Password**](https://support.google.com/accounts/answer/185833?hl=en) documentation.
 
@@ -371,10 +374,11 @@ In order to generate this password, **2FA authentication** must be turned on in 
 
 :::tip Protocols and SMTP Host
 
-This script uses the TLS protocol for SMTP server usage. Since the **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$CS_HOST` parameter. 
-If you are using your own SMTP server. Don't forget to change the `$CS_HOST` value here. 
+This script uses the TLS protocol for SMTP server usage. Since the **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$CS_HOST` parameter. If you are using your own SMTP server, don't forget to change the `$CS_HOST` value here. 
 
-On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `$CS_USE_TLS` or `$CS_USE_SSL` parameters in the script to `true/false`. Note that you need to change the `$CS_PORT` parameter when using **SSL and TLS**. For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
+On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `$CS_USE_TLS` or `$CS_USE_SSL` parameters in the script to `true` or `false`. Note that you need to change the `$CS_PORT` parameter when using **SSL** and **TLS**.
+
+For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
 
 :::
 
