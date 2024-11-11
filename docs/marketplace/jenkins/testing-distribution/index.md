@@ -4,11 +4,11 @@ sidebar_label: Testing Distribution
 description: Enhance powerful plugin to distribute your builds to appcircle
 tags:
   [
-    testing-distribution,
+    testing distribution,
     ipa distribution,
     apk distribution,
     binary distribution,
-    jenkins-plugin,
+    jenkins plugin,
   ]
 sidebar_position: 1
 ---

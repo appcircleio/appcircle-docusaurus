@@ -8,7 +8,7 @@ tags:
     runner pools,
     runner management,
     service configuration,
-    Android emulators,
+    android emulators,
     self-signed certificates,
     runner upgrade,
     cloud providers,

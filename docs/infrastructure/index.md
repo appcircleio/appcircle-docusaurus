@@ -5,13 +5,13 @@ tags:
   [
     build infrastructure,
     build stack,
-    iOS,
-    Android,
-    Xcode,
-    Swift,
-    iOS SDK,
-    Android SDK,
-    Gradle,
+    ios,
+    android,
+    xcode,
+    swift,
+    ios sdk,
+    android sdk,
+    gradle,
   ]
 ---
 

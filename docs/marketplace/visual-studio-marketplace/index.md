@@ -6,7 +6,7 @@ tags:
     azure,
     visual studio,
     visual studio marketplace,
-    testing-distribution,
+    testing distribution,
     ipa distribution,
     apk distribution,
     binary distribution,

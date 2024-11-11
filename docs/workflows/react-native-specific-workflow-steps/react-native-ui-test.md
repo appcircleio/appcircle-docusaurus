@@ -1,7 +1,7 @@
 ---
 title: React Native UI Test
 description: Learn how to run UI tests with Detox for your React Native projects easily with Appcircle, ensuring high-quality code and improved app performance.
-tags: [react native, mobile, workflow, step, ui, test, ui test, detox]
+tags: [react native, mobile, workflow, step, test, ui test, detox]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

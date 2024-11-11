@@ -1,7 +1,7 @@
 ---
 title: Notification Integrations
 description: Enhance communication with Appcircle's Notification Integrations. Set up and manage notifications across tools like Slack, email, and more to stay informed.
-tags: [notifications, integrations, Slack, email, teams]
+tags: [notifications, integrations, slack, email, teams]
 ---
 
 # Notification Integrations

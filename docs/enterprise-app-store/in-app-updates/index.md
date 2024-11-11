@@ -9,7 +9,7 @@ tags:
     enterprise apps,
     app store setup,
     appcircle app store,
-    In-app updates,
+    in-app updates,
   ]
 ---
 

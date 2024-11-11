@@ -4,11 +4,11 @@ sidebar_label: Testing Distribution
 description: Enhance powerful action to distribute your builds to appcircle
 tags:
   [
-    testing-distribution,
+    testing distribution,
     ipa distribution,
     apk distribution,
     binary distribution,
-    github-marketplace,
+    github marketplace,
   ]
 sidebar_position: 1
 ---
