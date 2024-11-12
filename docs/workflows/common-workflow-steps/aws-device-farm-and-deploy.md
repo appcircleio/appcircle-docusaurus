@@ -28,8 +28,8 @@ Pay attention to the dependent step on whichever platform you are working on.
 
 | Prerequisite Workflow Step                                                                                                            | Description                                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Android Build for UI Testing](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build-for-ui-testing)      | The Android Build for UI Testing workflow step is tailored to build your Android test application using Gradle Wrapper (gradlew) for the designated architectures outlined in your project. |
-| [Xcodebuild Build for Testing](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-testing) | This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks.                                                                    |
+| [**Android Build for UI Testing**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build-for-ui-testing)      | The Android Build for UI Testing workflow step is tailored to build your Android test application using Gradle Wrapper (gradlew) for the designated architectures outlined in your project. |
+| [**Xcodebuild Build for Testing**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-testing) | This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks.                                                                    |
 
 #### For iOS
 
@@ -111,10 +111,10 @@ The full details of the tests are accessible in the [AWS Device Farm console](ht
 
 | Variable Name                | Description                  |
 | ---------------------------- | ---------------------------- |
-| `$AWS_RUN_ARN`               | AWS Device Farm Run ARN.     |
-| `$AWS_TEST_RESULT`           | AWS Device Farm Test result. |
-| `$AWS_OUTPUT_DEVICEPOOL_ARN` | The ARN of the Device pool.  |
-| `$AWS_OUTPUT_APPUPLOAD_ARN`  | The ARN of the App Upload.   |
+| `AWS_RUN_ARN`               | AWS Device Farm Run ARN.     |
+| `AWS_TEST_RESULT`           | AWS Device Farm Test result. |
+| `AWS_OUTPUT_DEVICEPOOL_ARN` | The ARN of the Device pool.  |
+| `AWS_OUTPUT_APPUPLOAD_ARN`  | The ARN of the App Upload.   |
 
 To access the source code of this component, please use the following link:
 

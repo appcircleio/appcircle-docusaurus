@@ -16,7 +16,7 @@ The workflow steps that need to be executed before running the **Android Build**
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                                                                                                                  |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Git Clone](/workflows/common-workflow-steps/#git-clone) | To initiate the Android build process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the Git Clone step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
+| [Git Clone](/workflows/common-workflow-steps/#git-clone) | To initiate the Android build process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the Git Clone step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_3.png' alt="image2" />
 
@@ -55,8 +55,8 @@ The outputs that can result from the operation of this component are listed as f
 
 | Variable Name  | Description                                                                                                                  |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `$AC_APK_PATH` | Path for the generated **APK** file. This path will be created after the **Android Build** step runs.                        |
-| `$AC_AAB_PATH` | Path for the generated **AAB** file. This path will be created after the Android Build step runs and when `AAB` is selected. |
+| `AC_APK_PATH` | Path for the generated **APK** file. This path will be created after the **Android Build** step runs.                        |
+| `AC_AAB_PATH` | Path for the generated **AAB** file. This path will be created after the Android Build step runs and when `AAB` is selected. |
 
 The resulting files will be either APK or AAB, depending on whether you choose the Android App in the project [Configuration](/build/build-process-management/build-profile-configuration).
 

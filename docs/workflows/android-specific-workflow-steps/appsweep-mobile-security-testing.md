@@ -18,7 +18,7 @@ The workflow steps that need to be executed before running the **AppSweep Mobile
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                               |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The **AppSweep Mobile Security Testing** step requires the repository to be cloned from the Git provider before it can function properly. |
+| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The **AppSweep Mobile Security Testing** step requires the repository to be cloned from the Git provider before it can function properly. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appsweep-mobile-security-testing_1.png'/>
 
@@ -46,7 +46,7 @@ The outputs that can result from the operation of this component are listed as f
 
 | Variable Name      | Description                                                   |
 | ------------------ | ------------------------------------------------------------- |
-| `$AC_APPSWEEP_URL` | A direct link to the scan results is on the AppSweep website. |
+| `AC_APPSWEEP_URL` | A direct link to the scan results is on the AppSweep website. |
 
 ---
 

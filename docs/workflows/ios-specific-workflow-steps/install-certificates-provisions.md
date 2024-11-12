@@ -49,8 +49,8 @@ The output parameters after this step is executed are as follows:
 
 | Variable Name                 | Description                                    | 
 |-------------------------------|------------------------------------------------|
-| `$AC_KEYCHAIN_PATH`          | A path is created after the certificate is added to the current runner's keychain. | 
-| `$AC_KEYCHAIN_PASSWORD`      | After this certificate is added to the keychain, the password assigned to the keychain | 
+| `AC_KEYCHAIN_PATH`          | A path is created after the certificate is added to the current runner's keychain. | 
+| `AC_KEYCHAIN_PASSWORD`      | After this certificate is added to the keychain, the password assigned to the keychain | 
 
 To access the source code of this component, please use the following link:
 

@@ -42,7 +42,7 @@ You can find all the parameters required for this step in the table below, along
 
 | Variable Name          | Description                         |
 |------------------------|-------------------------------------|
-| `$AC_FLUTTER_WEB_PATH` | This path is generated after the completion of the **Flutter Build for Web** step and stores the generated web application. | 
+| `AC_FLUTTER_WEB_PATH` | This path is generated after the completion of the **Flutter Build for Web** step and stores the generated web application. | 
 
 
 ### Deploying Applications to AWS Services

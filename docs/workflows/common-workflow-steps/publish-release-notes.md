@@ -40,14 +40,12 @@ You can find all the parameters required for this step in the table below, along
 
 | Variable Name                | Description                                                                                                                                                                                                                   | Status   |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_RELEASE_NOTES_PATH`     | Specifies the path of the release notes. You can override the `AC_RELEASE_NOTES_PATH` environment variable or provide its full path, e.g., `./release-notes.txt`. If the path is empty, release notes will be auto-generated. | Optional |
+| `$AC_RELEASE_NOTES_PATH`     | Specifies the path of the release notes. You can override the `$AC_RELEASE_NOTES_PATH` environment variable or provide its full path, e.g., `./release-notes.txt`. If the path is empty, release notes will be auto-generated. | Optional |
 | `$AC_RELEASE_NOTES_TEMPLATE` | This variable is an ERB template. You can enrich the contents of your release notes with environment variables or Ruby snippets.                                                                                              | Optional |
 
 ### Output Variables
 
-| Variable Name | Description                                                                                                                                                                                                                               |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ` `           | This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). |
+This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-output.png' />
 

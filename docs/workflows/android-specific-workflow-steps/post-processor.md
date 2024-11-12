@@ -18,9 +18,9 @@ The workflow steps that need to be executed before running the **Android App Pos
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step relies on the **Android Build** step and the **Git Clone** step is necessary for the **Android Build** step to run successfully. |
-| [Android Build](https://docs.appcircle.io/workflows/android-specific-workflow-steps#android-build) | To process Android output, these outputs must be obtained from the build step. |
-| [Android Sign](https://docs.appcircle.io/workflows/android-specific-workflow-steps#android-sign) | If a signed app is created, this step needs to be run beforehand to process this output. |
+| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step relies on the **Android Build** step and the **Git Clone** step is necessary for the **Android Build** step to run successfully. |
+| [**Android Build**](https://docs.appcircle.io/workflows/android-specific-workflow-steps#android-build) | To process Android output, these outputs must be obtained from the build step. |
+| [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps#android-sign) | If a signed app is created, this step needs to be run beforehand to process this output. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_1.png' alt="image2" />
 
@@ -38,7 +38,7 @@ The outputs that can result from the operation of this component are listed as f
 
 | Variable Name                          | Description                                       |
 |----------------------------------------|---------------------------------------------------|
-| `$AC_ANDROID_POST_PROCESS_OUTPUT_PATH` | Specifies the application post process file path. This file specifies the base name for each app and whether it is signed or not. |
+| `AC_ANDROID_POST_PROCESS_OUTPUT_PATH` | Specifies the application post process file path. This file specifies the base name for each app and whether it is signed or not. |
 
 :::info
 The output post-processing JSON file should adhere to the following structure:

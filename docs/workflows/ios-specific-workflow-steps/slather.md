@@ -12,10 +12,10 @@ This step converts Xcode's test results to different formats by using [**Slather
 
 ### Prerequisites
 
-| Prerequisite Workflow Step                      | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-unit-and-ui-tests) | This step executes your unit and UI tests, generating a `.xcresult` file. This file serves as the mandatory test result input for **Slather**. |
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step will clone your repository. After this step works, the variable `AC_REPOSITORY_DIR` will be created. This variable is the required input variable for **Slather**. |
+| Prerequisite Workflow Step                                                                                                               | Description                                                                                                                                                                  |
+|------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone)                                                    | This step will clone your repository. After this step works, the variable `AC_REPOSITORY_DIR` will be created. This variable is the required input variable for **Slather**. |
+| [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-unit-and-ui-tests) | This step executes your unit and UI tests, generating a `.xcresult` file. This file serves as the mandatory test result input for **Slather**.                               |
 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2830-slatherOrder.png' />

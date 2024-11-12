@@ -16,7 +16,7 @@ The workflow steps that need to be executed before running the **Cocoapods Insta
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                              |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
+| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_order.png' />
 

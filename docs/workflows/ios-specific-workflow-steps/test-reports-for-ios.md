@@ -35,8 +35,8 @@ For each component, specific input variables are required for its operation on y
 
 | Variable Name            | Description                                                      | Status    |
 | ------------------------ | ---------------------------------------------------------------- | --------- |
-| `AC_TEST_RESULT_PATH`    | Define the directory and its subdirectories for searching compatible test files. | Required  |
-| `AC_COVERAGE_RESULT_PATH`| For native iOS projects, tests automatically set this variable. For other projects, you must specify the coverage path manually. | Optional  |
+| `$AC_TEST_RESULT_PATH`    | Define the directory and its subdirectories for searching compatible test files. | Required  |
+| `$AC_COVERAGE_RESULT_PATH`| For native iOS projects, tests automatically set this variable. For other projects, you must specify the coverage path manually. | Optional  |
 
 
 ### Output Variables

@@ -39,7 +39,7 @@ You can find all the parameters required for this step in the table below, with 
 
 | Variable Name                 	       | Description                         |
 |-------------------------------|------------------------------------------------|
-| `$AC_TEST_RESULT_PATH`        | This path is created after the test results are reported. If you are using the [**Export Build Artifact**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step, it can be accessed directly from [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). | 
+| `AC_TEST_RESULT_PATH`        | This path is created after the test results are reported. If you are using the [**Export Build Artifact**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step, it can be accessed directly from [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). | 
 
 
 To access the source code of this component, please use the following link:

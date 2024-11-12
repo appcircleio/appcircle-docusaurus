@@ -49,7 +49,7 @@ As the output may vary depending on the task you execute, there is no specific o
 
 | Output Variable         | Description                                                    |
 |-------------------------|----------------------------------------------------------------|
-| `$AC_AWS_UPLOAD_URL`    | Specifies that the files and folders are deployed to a newly created directory as `s3://bucket-name/timestamp` to avoid any conflicts and potential overwrites. |
+| `AC_AWS_UPLOAD_URL`    | Specifies that the files and folders are deployed to a newly created directory as `s3://bucket-name/timestamp` to avoid any conflicts and potential overwrites. |
 
 After saving your settings, the build can be run, and the step will be executed accordingly. Details of the upload operation can be viewed in the build logs:
 

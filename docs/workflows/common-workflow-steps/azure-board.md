@@ -65,7 +65,7 @@ We recommend using [Environment Variables](/environment-variables/) groups for s
 | `$AC_AZUREBOARD_TEMPLATE`      | This comment template will be used to post a comment. Variables donated with `$` will be replaced during the build. Please check [this document](https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/update?view=azure-devops-rest-7.0) to learn more about possible updates. | Required |
 
 :::tip
-If you add state names for successful and failed steps (`AC_AZUREBOARD_FAIL_STATE` and `AC_AZUREBOARD_SUCCESS_STATE`), the Azure Boards component will automatically change the status of your issue according to the state of your workflow.
+If you add state names for successful and failed steps (`$AC_AZUREBOARD_FAIL_STATE` and `$AC_AZUREBOARD_SUCCESS_STATE`), the Azure Boards component will automatically change the status of your issue according to the state of your workflow.
 :::
 
 ### Changing Template

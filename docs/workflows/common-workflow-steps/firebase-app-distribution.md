@@ -17,9 +17,9 @@ Please note that you can also distribute your app via Appcircle. Utilizing Appci
 
 For more details, please refer to the following links:
 
-- [Appcircle Testing Distribution](/testing-distribution/)
-- [Appcircle Enterprise App Store](/enterprise-app-store/)
-- [Appcircle Publish](/publish-module/)
+- [**Appcircle Testing Distribution**](/testing-distribution/)
+- [**Appcircle Enterprise App Store**](/enterprise-app-store/)
+- [**Appcircle Publish**](/publish-module/)
 
 :::
 

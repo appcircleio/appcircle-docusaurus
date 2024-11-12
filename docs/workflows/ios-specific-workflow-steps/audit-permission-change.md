@@ -18,7 +18,7 @@ Before running the **Audit Permission Changes** step, you must complete certain 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Audit Permission Changes process. After cloning, the system installs CocoaPods. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Audit Permission Changes process. After cloning, the system installs CocoaPods. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionOrder.png' />
 

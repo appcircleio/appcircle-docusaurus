@@ -18,7 +18,7 @@ Before running the **CocoaPods Deintegrate** step, you must complete certain pre
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the CocoaPods Deintegrate process. After the clone, Fastlane will be installed. After this step works, the variable `AC_REPOSITORY_DIR` will be created.|
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the CocoaPods Deintegrate process. After the clone, Fastlane will be installed. After this step works, the variable `AC_REPOSITORY_DIR` will be created.|
 
 :::caution
 

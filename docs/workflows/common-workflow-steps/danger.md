@@ -29,7 +29,7 @@ The workflow steps that need to be executed before running the **Danger** step v
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | The repository needs to be cloned to begin the badge-adding process. After this step, the variable `AC_REPOSITORY_DIR` will be set. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repository needs to be cloned to begin the badge-adding process. After this step, the variable `AC_REPOSITORY_DIR` will be set. |
 
 :::caution
 
@@ -56,7 +56,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | Variable Name                             | Description                                                                                                                                    | Status   |
 |-------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | `$AC_REPOSITORY_DIR`                      | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
-| `$AC_DANGER_PATH`                         | Specifies path of Dangerfile. This path comes from `AC_REPOSITORY_DIR`. If DangerFile is in main directory of your repository. Do not change.  | Required |
+| `$AC_DANGER_PATH`                         | Specifies path of Dangerfile. This path comes from `$AC_REPOSITORY_DIR`. If DangerFile is in main directory of your repository. Do not change.  | Required |
 | `$AC_DANGER_EXTRA_PARAMETERS`             | Extra command line parameters. For Example: enter `--verbose` for verbose mode.                                                                | Optional |
 | `$DANGER_GITHUB_API_TOKEN`                | Github Access Token for the bot user.                                                                                                          | Optional |
 | `$DANGER_GITHUB_HOST`                     | The host that GitHub is running on. For example: `git.corp.com`                                                                                | Optional |

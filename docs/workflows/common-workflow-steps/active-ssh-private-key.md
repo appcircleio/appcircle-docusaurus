@@ -14,7 +14,7 @@ This step sets up your SSH key in the build machine if you used one to connect y
 
 :::caution
 
-If you connect to your repository via SSH, use this step before the [Git Clone](/workflows/common-workflow-steps/git-clone) step. To securely clone repositories connected via SSH, you must define the SSH key for the relevant build agent.
+If you connect to your repository via SSH, use this step before the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. To securely clone repositories connected via SSH, you must define the SSH key for the relevant build agent.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3151-sshOrder.png' />
 
@@ -28,11 +28,11 @@ Below are the parameters required for this step, along with detailed explanation
 
 | Variable Name                 | Description                                    | Status           |
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_REPOSITORY_SSH_KEY`      | SSH private key in RSA format. This value defaults to `AC_REPOSITORY_SSH_KEY`. It is automatically defined as the [**Reserved Environment Variables**](/environment-variables/appcircle-specific-environment-variables) when an SSH connection is made. | Optional |
+| `$AC_REPOSITORY_SSH_KEY`      | SSH private key in RSA format. This value defaults to `$AC_REPOSITORY_SSH_KEY`. It is automatically defined as the [**Reserved Environment Variables**](/environment-variables/appcircle-specific-environment-variables) when an SSH connection is made. | Optional |
 
 
 ### Output Variables
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
-| `$SSH_AUTH_SOCK`              | This is the path to the SSH Auth Socket.       | 
+| `SSH_AUTH_SOCK`              | This is the path to the SSH Auth Socket.       | 

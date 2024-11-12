@@ -67,10 +67,6 @@ Confidential information should be entered as a [secret environment variable](/e
 | `$AC_DT_UPLOAD_API_KEY` | Specifies the Data Theorem Mobile Secure Upload API Key.  You need to obtain your organization's Upload API key from the portal. For more details, refer to [this document](https://docs.securetheorem.com/mobile_security_devops/uploading_mobile_apps.html). | Required |
 
 
-### Output Variables
-
-The **Data Theorem Mobile Secure** step does not produce any output variables. The results are shown in the build log.
-
 ---
 
 To access the source code of this component, please use the following link:

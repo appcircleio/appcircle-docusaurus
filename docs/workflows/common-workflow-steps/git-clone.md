@@ -53,7 +53,7 @@ After connecting the repository, the following [**Reserved Environment Variables
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
-| `$AC_REPOSITORY_DIR`          | Specifies the root directory of the cloned repository. This path is automatically generated after the repository is cloned. |
+| `AC_REPOSITORY_DIR`          | Specifies the root directory of the cloned repository. This path is automatically generated after the repository is cloned. |
 
 To access the source code of this component, please use the following link:
 

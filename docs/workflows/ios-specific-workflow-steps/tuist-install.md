@@ -24,7 +24,7 @@ Before you run the **Tuist Install** step, you must complete certain prerequisit
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist process. After cloning, the system installs Tuist and creates the `AC_REPOSITORY_DIR` variable.  |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist process. After cloning, the system installs Tuist and creates the `AC_REPOSITORY_DIR` variable.  |
 
 :::caution Tuist Usage
 

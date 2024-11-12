@@ -39,7 +39,7 @@ Do not specify the **Access Key** directly in a hard coded format in steps. Plea
 | `$AC_BROWSERSTACK_ACCESS_KEY`       | Access key for the **BrowserStack** account. It should come from the **BrowserStack** account. For more information, please follow [this document](https://www.browserstack.com/docs/iaam/security/manage-access-keys). | Required |
 | `$AC_TEST_IPA_PATH`              | Full path of the IPA file. This path will automatically generate in [**Xcodebuild for Testing**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) step.| Required |
 | `$AC_UITESTS_RUNNER_PATH`             | Full path of the *-Runner.app. This path will automatically generate in [**Xcodebuild for Testing**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) step. | Required |
-| `$AC_BROWSERSTACK_PAYLOAD`    | `AC_BROWSERSTACK_APP_URL` and `AC_BROWSERSTACK_TEST_URL` will be auto generated. Please check the [documentation](https://www.browserstack.com/docs/app-automate/api-reference/xcuitest/builds#execute-a-build) for more details about the payload. | Optional |
+| `$AC_BROWSERSTACK_PAYLOAD`    | `$AC_BROWSERSTACK_APP_URL` and `$AC_BROWSERSTACK_TEST_URL` will be auto generated. Please check the [documentation](https://www.browserstack.com/docs/app-automate/api-reference/xcuitest/builds#execute-a-build) for more details about the payload. | Optional |
 | `$AC_BROWSERSTACK_TIMEOUT` | **BrowserStack** plans a timeout in seconds. If there is any problem in BrowserStack, these variables will break the pipeline after a certain time. The default variable is **600 seconds**. | Required |
 
 To access the source code of this component, please use the following link:

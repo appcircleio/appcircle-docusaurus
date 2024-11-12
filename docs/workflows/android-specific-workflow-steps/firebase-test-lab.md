@@ -16,7 +16,7 @@ The necessary workflow steps to execute before running the **Firebase Test Lab f
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Android Build for UI Testing](./android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android application outputs for processing. |
+| [**Android Build for UI Testing**](./android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android application outputs for processing. |
 
 In addition to the steps you need to run on Appcircle, there are also adjustments you need to make on the Firebase Test Lab side. These adjustments can be made as follows:
 

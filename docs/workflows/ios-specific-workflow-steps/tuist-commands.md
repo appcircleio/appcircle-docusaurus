@@ -18,8 +18,8 @@ Before you run the **Tuist Commands** step, you must complete certain prerequisi
 
 | Prerequisite Workflow Step                              | Description                                                                                                                                                                    |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist Commands process. After cloning, it creates the `AC_REPOSITORY_DIR` variable, and the system is able to run the Tuist Commands. |
-| [Tuist Install](/workflows/ios-specific-workflow-steps/tuist-install)   | You need to install the Tuist to start the Tuist Commands process.                                                                                                             |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist Commands process. After cloning, it creates the `AC_REPOSITORY_DIR` variable, and the system is able to run the Tuist Commands. |
+| [**Tuist Install**](/workflows/ios-specific-workflow-steps/tuist-install)   | You need to install the Tuist to start the Tuist Commands process.                                                                                                             |
 
 :::caution Tuist Commands
 

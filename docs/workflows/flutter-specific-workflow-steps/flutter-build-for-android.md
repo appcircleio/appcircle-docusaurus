@@ -47,8 +47,8 @@ The outputs resulting from the operation of this component are as follows:
 
 | Output Variable           | Description                     |
 |---------------------------|---------------------------------|
-| `$AC_APK_PATH`            | Path of the generated APK file. |        
-| `$AC_AAB_PATH`            | Path of the generated AAB file. |
+| `AC_APK_PATH`            | Path of the generated APK file. |        
+| `AC_AAB_PATH`            | Path of the generated AAB file. |
 
 :::info
 

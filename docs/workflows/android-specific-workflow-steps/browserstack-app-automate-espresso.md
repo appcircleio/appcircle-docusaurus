@@ -18,7 +18,7 @@ The workflow steps that need to be executed before running the **BrowserStack Ap
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Android Build for UI Testing](https://docs.appcircle.io/workflows/android-specific-workflow-steps/#android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android app outputs for processing. |
+| [**Android Build for UI Testing**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/#android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android app outputs for processing. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-browserstack-app-automate-espresso_1.png'/>
 
@@ -33,7 +33,7 @@ For each component, specific input variables are required for its operation on y
 | `$AC_BROWSERSTACK_ACCESS_KEY` | Specifies the access key for the BrowserStack account. Refer to [BrowserStack - Authenticate Test Runs](https://www.browserstack.com/docs/automate/cypress/authentication) for more details. | Required |
 | `$AC_APK_PATH`                | Specifies the path of the **APK** file produced in the Appcircle workflow to be sent to BrowserStack. This field is automatically populated if the **Android Build for UI Testing** step was executed in previous steps. | Required |
 | `$AC_TEST_APK_PATH`           | Specifies the path of the **test APK** file produced in the Appcircle workflow to be sent to BrowserStack. This field is automatically populated if the **Android Build for UI Testing** step was executed in previous steps. | Required |
-| `$AC_BROWSERSTACK_PAYLOAD`    | Specifies the payload to be sent to BrowserStack from your Appcircle workflow.`AC_BROWSERSTACK_APP_URL` and `AC_BROWSERSTACK_TEST_URL` will be auto generated. Please refer to the [documentation](https://www.browserstack.com/docs/app-automate/api-reference/espresso/builds#execute-a-build) for more details about the payload. | Optional |
+| `$AC_BROWSERSTACK_PAYLOAD`    | Specifies the payload to be sent to BrowserStack from your Appcircle workflow.`$AC_BROWSERSTACK_APP_URL` and `$AC_BROWSERSTACK_TEST_URL` will be auto generated. Please refer to the [documentation](https://www.browserstack.com/docs/app-automate/api-reference/espresso/builds#execute-a-build) for more details about the payload. | Optional |
 | `$AC_BROWSERSTACK_TIMEOUT`    | Specifies the timeout in seconds for checking the BrowserStack plan. The default value is `600`. | Required |
 
 ---

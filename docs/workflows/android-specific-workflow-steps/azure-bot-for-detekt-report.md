@@ -25,7 +25,7 @@ The workflow steps that need to be executed before running the **Azure DevOps Bo
 
 | Prerequisite Workflow Step                       | Description                                      |
  |-------------------------------------------------|--------------------------------------------------|
- | [Detekt](https://docs.appcircle.io/workflows/android-specific-workflow-steps/#detekt) | In order to generate the [Detekt report](https://detekt.dev/docs/introduction/reporting/), the **Detekt** step must be executed beforehand.  |
+ | [**Detekt**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/#detekt) | In order to generate the [Detekt report](https://detekt.dev/docs/introduction/reporting/), the **Detekt** step must be executed beforehand.  |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_1.png'/>
 

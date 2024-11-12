@@ -53,8 +53,8 @@ The outputs resulting from the operation of this component are as follows:
 
 | Output Variable                | Description                                                                                                              |
 |--------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| `$AC_SNYK_REPORT`              | The [Snyk report](https://docs.snyk.io/manage-risk/reporting/) file containing the results of executed tests.            |
-| `$AC_SNYK_MONITOR_EXPLORE_LINK`| The [link to explore and monitor](https://docs.snyk.io/snyk-cli/commands/monitor) the project's security status on Snyk. |
+| `AC_SNYK_REPORT`              | The [Snyk report](https://docs.snyk.io/manage-risk/reporting/) file containing the results of executed tests.            |
+| `AC_SNYK_MONITOR_EXPLORE_LINK`| The [link to explore and monitor](https://docs.snyk.io/snyk-cli/commands/monitor) the project's security status on Snyk. |
 
 ---
 

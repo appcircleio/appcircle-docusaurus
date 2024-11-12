@@ -47,12 +47,12 @@ This component outputs some important parameters after running.
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
-| `$AC_TEST_APP_PATH`           | This parameter is the path of the application after the build is complete. If you are using a test automation tool, you can use this path as the app path. |
-| `$AC_UITESTS_RUNNER_PATH`     | This path is the UI Runner Path for running UI tests after the build is complete. This variable is sent to test automation tools to run the tests. |
-| `$AC_XCTEST_PATH`             | This variable is the path containing the tests. |
-| `$AC_UITESTS_RUNNER_IPA_PATH` | This variable is the path that the IPA generated for the test creates for the UI tests to run. This can be sent directly to test automation tools. |
-| `$AC_XCTEST_ZIP_PATH`         | Path to the IPA version of the Xctests. You can access it directly via this path. |
-| `$AC_TEST_IPA_PATH`           | This path holds the IPA file created for running tests and sending the IPA file to test automation tools. |
+| `AC_TEST_APP_PATH`           | This parameter is the path of the application after the build is complete. If you are using a test automation tool, you can use this path as the app path. |
+| `AC_UITESTS_RUNNER_PATH`     | This path is the UI Runner Path for running UI tests after the build is complete. This variable is sent to test automation tools to run the tests. |
+| `AC_XCTEST_PATH`             | This variable is the path containing the tests. |
+| `AC_UITESTS_RUNNER_IPA_PATH` | This variable is the path that the IPA generated for the test creates for the UI tests to run. This can be sent directly to test automation tools. |
+| `AC_XCTEST_ZIP_PATH`         | Path to the IPA version of the Xctests. You can access it directly via this path. |
+| `AC_TEST_IPA_PATH`           | This path holds the IPA file created for running tests and sending the IPA file to test automation tools. |
 
 To access the source code of this component, please use the following link:
 

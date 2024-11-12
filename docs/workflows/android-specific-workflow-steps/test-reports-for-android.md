@@ -38,9 +38,9 @@ For each component, specific input variables are required for its operation on y
 
 | Variable Name            | Description                                                      | Status    |
 | ------------------------ | ---------------------------------------------------------------- | --------- |
-| `AC_TEST_RESULT_PATH`    | Specifies the directory and its subdirectories where compatible test files will be searched. | Required  |
-| `AC_COVERAGE_RESULT_PATH`| Specifies the coverage path. | Optional  |
-| `AC_JACOCO_COVERAGE_TYPE`| Determines the parameter in your JaCoCo report based on which the coverage will be calculated. This setting is necessary when using JaCoCo parseable coverage results and specifying the coverage result path. Types description can be found in this [documentation](/continuous-testing/android-testing/running-android-unit-tests#jacoco-test-coverage) | Required  |
+| `$AC_TEST_RESULT_PATH`    | Specifies the directory and its subdirectories where compatible test files will be searched. | Required  |
+| `$AC_COVERAGE_RESULT_PATH`| Specifies the coverage path. | Optional  |
+| `$AC_JACOCO_COVERAGE_TYPE`| Determines the parameter in your JaCoCo report based on which the coverage will be calculated. This setting is necessary when using JaCoCo parseable coverage results and specifying the coverage result path. Types description can be found in this [documentation](/continuous-testing/android-testing/running-android-unit-tests#jacoco-test-coverage) | Required  |
 
 
 ### Output Variables

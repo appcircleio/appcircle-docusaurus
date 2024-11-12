@@ -52,7 +52,7 @@ Be aware of which OS version you used; the simulator type should match that OS v
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
-| `$AC_SIMULATOR_APP_PATH`      | Simulator app path. You can reach the Simulator app from this path, and it will be exported, it can be downloaded from the download artifacts. |
+| `AC_SIMULATOR_APP_PATH`      | Simulator app path. You can reach the Simulator app from this path, and it will be exported, it can be downloaded from the download artifacts. |
 
 To access the source code of this component, please use the following link:
 

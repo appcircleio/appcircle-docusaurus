@@ -58,9 +58,9 @@ The outputs resulting from the operation of this component are as follows:
 
 | Variable Name              | Description                                              |
 | -------------------------- | -------------------------------------------------------- |
-| `$AC_REPEATO_REPORT`       | Report of Repeato batches that have been executed.       |
-| `$AC_REPEATO_JUNIT_REPORT` | Report of Repeato executed tests in JUnit XML format.    |
-| `$AC_TEST_RESULT_PATH`     | The directory where your JUnit XML report will be saved. |
+| `AC_REPEATO_REPORT`       | Report of Repeato batches that have been executed.       |
+| `AC_REPEATO_JUNIT_REPORT` | Report of Repeato executed tests in JUnit XML format.    |
+| `AC_TEST_RESULT_PATH`     | The directory where your JUnit XML report will be saved. |
 
 ---
 

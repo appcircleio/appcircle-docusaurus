@@ -67,4 +67,4 @@ To view the output artifacts on the [**Download Artifacts**](/workflows/common-w
 ### Output Variables
 | Variable Name                 | Description                                                                                              |
 |-------------------------------|----------------------------------------------------------------------------------------------------------|
-| `$AC_TEST_RESULT_PATH`        | The output path for the `.xcresult` file. This environment variable can be utilized in subsequent steps. |
+| `AC_TEST_RESULT_PATH`        | The output path for the `.xcresult` file. This environment variable can be utilized in subsequent steps. |

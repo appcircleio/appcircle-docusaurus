@@ -18,7 +18,7 @@ The workflow steps that need to be executed before running the Fastlane workflow
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the Fastlane process. After the clone, Fastlane will be installed. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the Fastlane process. After the clone, Fastlane will be installed. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-fastlaneOrder.png' />

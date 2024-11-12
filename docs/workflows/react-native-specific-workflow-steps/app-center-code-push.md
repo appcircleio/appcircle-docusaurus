@@ -18,7 +18,7 @@ Before running the **App Center CodePush** step, you must complete certain prere
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | The repository needs to be cloned to begin the CodePush process. After this step, the variable `AC_REPOSITORY_DIR` will be set. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repository needs to be cloned to begin the CodePush process. After this step, the variable `AC_REPOSITORY_DIR` will be set. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3174-codepushOrder.png' />
 
