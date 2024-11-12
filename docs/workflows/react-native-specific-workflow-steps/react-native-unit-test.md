@@ -1,7 +1,7 @@
 ---
 title: React Native Unit Test
 description: Learn how to run unit tests with Jest for your React Native projects easily with Appcircle, ensuring high-quality code and improved app performance.
-tags: [react native, mobile, workflow, step, unit, test, jest, unit test]
+tags: [react native, mobile, workflow, step, test, jest, unit test]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

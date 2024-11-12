@@ -16,6 +16,40 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.23.0 - 2024-11-04 SSO & LDAP Improvements, Build Priority Configuration, Bug Fixes and more
+
+### 🆕 New Features
+
+- Existing SSO & LDAP settings can now be duplicated when creating a new SSO or LDAP configuration. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Build priorities](build/build-process-management/build-profile-configuration#project-details-configuration) can now be configured as **High**, **Medium**, or **Low** to manage the start order of queued builds accordingly. Available for organizations with Enterprise License. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The **Integrations** section of the Organization module was divided into two separate sections: **Security** and **Notifications**. Related settings can now be accessed under these sections. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- SSO and LDAP configurations for Enterprise Portal and Testing Portal access have been separated and can now be found under Authentication Settings within the Security section of the Organization module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The login and user management settings for SSO and LDAP have been separated into dedicated sections for authentication and authorization, offering improved clarity and control over the management of these configurations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A version option has been added in the Tuist component to allow installation of a specific Tuist version. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Tuist Commands](workflows/ios-specific-workflow-steps/tuist-commands) step has been added to the Appcircle iOS workflow to enable execution of specific Tuist commands. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [React Native UI Test](continuous-testing/react-native-testing/react-native-ui-test-with-detox) and [React Native Unit Test](continuous-testing/react-native-testing/react-native-unit-test-with-jest) components have been added to Appcircle workflows to enable the execution of unit and UI tests for projects on the React Native platform. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Actions in the Signing Identity module can now be monitored within the Activity Log section. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Informative screens were added to provide users with guidance when switching authentication methods from Testing Distribution or Enterprise App Store settings. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- ZIP upload support has been removed from the UI in the Testing Distribution module. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [App Store Header](enterprise-app-store/portal-customization) setting has been added to the Enterprise Portal Customization section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- A typo in the organization member invitation email titles has been corrected. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where access to SSO Group/Role Mapping data was falsely restricted for users with the Organization Management - Viewer role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where errors were encountered when using PR triggers for GitHub repositories. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The app extractor command has been updated to support ZIP versions above 4.5 for APK and AAB files. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue with the date range filter in build reports has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been resolved where the defined connections did not appear when attempting to reconnect after disconnection. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where an unclear error message was displayed on Appcircle when the user of the connected GitLab repository had been deleted. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where binaries marked as rejected within the publish module still had access to various binary actions. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the client ID in Enterprise App Store reports was displayed in a complex format; it is now shown in a clearer format. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The user search filter will now be based on the selected filter items above, whereas it was previously independent. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where icons for certain Android binaries were not displayed in the Enterprise App Store module for self-hosted users. <EnterpriseStoreBadge/> <SelfHostedBadge/>
+
 ## 3.22.1 - 2024-10-18 Editing Environment Variables, Self Hosted Updates, Enterprise Portal Login Improvement, Bug Fixes and more
 
 ### 🆕 New Features
@@ -281,7 +315,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - App Store Connect App Info & Metadata and Microsoft Intune Metadata are now available through [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=publish). <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Multiple Bundle IDs can now be selected when importing from App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - All Publish artifacts including the binary, metadata details, screenshots, App Store Connect information, and more can now be downloaded a zip file. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- When [inviting a new user to an organization](//account/my-organization/profile-and-team/team-management), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When [inviting a new user to an organization](/account/my-organization/profile-and-team/team-management), a warning message will now be displayed if an invalid or already in-use email address is entered. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Existing and newly invited organization members can now be [searched by e-mail filter](/account/my-organization/profile-and-team/team-management) within the Team Management area. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When attempting to delete a provisioning profile that is already in use for a build profile, a warning message will now display. This allows you to see the affected profiles and navigate directly to their configuration. Alternatively, you can force delete the provisioning profile. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When a Provisioning Profile within the Apple Profiles section has a mismatched Apple Certificate, a tool tip warning message will display. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -314,7 +348,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Provisioning Profiles can now be [renewed](/signing-identities/apple-profiles#profile-actions) within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An [Apple Identifiers](/signing-identities/apple-identifiers) section has been added within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new value display and filter have been added to the LDAP Mapping table. <IntegrationsBadge/> <SelfHostedBadge/>
-- Group and role management can now be automated with [SSO](/account/my-organization/integrations/authentications/sso-authentication) for Appcircle Login. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Group and role management can now be automated with [SSO](/account/my-organization/security/authentications/sso-authentication) for Appcircle Login. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Efficiently distribute your apps using Appcircle’s Testing Distribution and Enterprise Store plugins, available on [GitHub](/marketplace/github-marketplace), [Fastlane](/marketplace/fastlane), and the [Visual Studio Marketplace](/marketplace/visual-studio-marketplace). <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
@@ -489,7 +523,7 @@ To ensure the App Store status remains current, the following conditions must be
 - We have introduced new [Publish Events](https://docs.appcircle.io/publish-module/) like Publish Profile Created, Publish Profile Deleted, App Version Uploaded, App Version Created, and App Version Deleted to enrich the activity report. <CloudBadge/> <SelfHostedBadge/>
 - We have fine-tuned branch search and filter operations for faster performance and smoother functionality. <CloudBadge/> <SelfHostedBadge/>
 - We have introduced the capability for active users to store profile pins (Enterprise store profile, Distribution profile, Build Profile, and Publish Profile) individually. Previously, profile pins were stored solely on an organization-wide level. Now, each active user can set and manage their own pin independently, providing greater flexibility and customization options. <CloudBadge/> <SelfHostedBadge/>
-- Added [Okta](/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration) tile based login so users can log in to the Appcircle dashboard by clicking the Appcircle app icon on Okta side. <CloudBadge/> <SelfHostedBadge/>
+- Added [Okta](/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration) tile based login so users can log in to the Appcircle dashboard by clicking the Appcircle app icon on Okta side. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -515,13 +549,13 @@ To ensure the App Store status remains current, the following conditions must be
 - Incorporated a "Type" field into the data table within the [Environment Variable](https://docs.appcircle.io/environment-variables) sections, offering additional context regarding the type of each variable. <CloudBadge/> <SelfHostedBadge/>
 - [PAT (Personal Access Token) connections](https://docs.appcircle.io/build/manage-the-connections/#managing-pat-connections) listed on the build connection page are now deletable, providing users with the flexibility to manage their connections more efficiently. <CloudBadge/> <SelfHostedBadge/>
 - Branches are now filtered based on their status, enabling users to easily identify and navigate through branches based on their current state. <CloudBadge/> <SelfHostedBadge/>
-- Users now have the capability to be redirected to their desired locations upon clicking on [Okta applications](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication#4-specific-provider-configuration), enhancing navigation efficiency and user experience within the system. <CloudBadge/> <SelfHostedBadge/>
+- Users now have the capability to be redirected to their desired locations upon clicking on [Okta applications](/account/my-organization/security/authentications), enhancing navigation efficiency and user experience within the system. <CloudBadge/> <SelfHostedBadge/>
 - When a build is [manually initiated](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#manual-build), the system retrieves information about the user from the initiating organization. Conversely, if the build is [not initiated manually](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#automatic-build), it displays the details of the user who made the commit, ensuring accurate attribution of actions within the system. <CloudBadge/> <SelfHostedBadge/>
 - The self-hosted Appcircle server now supports using a custom domain for the [Testing Distribution Portal](/testing-distribution/testing-portal). Follow the instructions in the [Testing Distribution](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#testing-distribution) section of the SSL configuration. <SelfHostedBadge/>
 - The self-hosted Appcircle server now adopts single-node single drive MinIO instead of multi-node single drive MinIO in the default configuration, which decreases disk consumption significantly. <SelfHostedBadge/>
 
 :::caution
-
+/account/my-organization/notifications/email-connection
 Upgrading from older versions to `v3.14.0` or later, requires MinIO migration that should be done interactively while upgrading.
 
 In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/configure-server/minio-migration) document.
@@ -606,7 +640,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### 🆕 New Feature
 
-- Permission (role) naming has been changed in [advanced role management](https://docs.appcircle.io/account/my-organization/profile-and-team/team-management#advanced-role-management). Also, there are some new roles added for better scope management in your organization. <CloudBadge/> <SelfHostedBadge/>
+- Permission (role) naming has been changed in [advanced role management](/account/my-organization/profile-and-team/team-management#advanced-role-management). Also, there are some new roles added for better scope management in your organization. <CloudBadge/> <SelfHostedBadge/>
 - [Share with Testers](testing-distribution/create-or-select-a-distribution-profile#share-your-application-with-the-test-groups-manually) in Testing Distribution now has a new toggle option that enables you to display only the shared app version instead of all app versions. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle Notifications now has improvements on [Slack](https://docs.appcircle.io/account/slack/slack-notifications), [Microsoft Teams](https://docs.appcircle.io/account/teams-notifications), [Email](https://docs.appcircle.io/account/email-connection), and [Webhook](https://docs.appcircle.io/account/webhooks) channels that allows you to share release notes, build logs, and test reports via notifications. <CloudBadge/> <SelfHostedBadge/>
 - The Store Submit module has been deprecated and it will be replaced by the brand-new [Publish](https://docs.appcircle.io/publish-module) module. You should transfer your apps to the [Publish](https://docs.appcircle.io/publish-module) module in order to submit your apps to the stores. <CloudBadge/> <SelfHostedBadge/>
@@ -622,7 +656,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - License limits for monthly tester emails and artifact storage size were removed from "Organization > Billing > Usages". Keep in mind that for fair usage, the limits exist but are higher when compared to previous plan limits. <CloudBadge/> <SelfHostedBadge/>
 - Now only the underscore character ("\_") can be used in [environment variable](https://docs.appcircle.io/environment-variables/managing-variables) group naming. Appcircle will not allow other special characters in group names. <CloudBadge/> <SelfHostedBadge/>
 - [Enterprise App Store](https://docs.appcircle.io/account/my-organization#enterprise-app-store-permissions) permissions have undergone revision with new roles that enable users to configure authorization in detail. <CloudBadge/> <SelfHostedBadge/>
-- [User invitation](https://docs.appcircle.io/account/my-organization/profile-and-team/team-management) and membership update notification emails have been improved and now include additional information, such as sub-organizations. <CloudBadge/> <SelfHostedBadge/>
+- [User invitation](/account/my-organization/profile-and-team/team-management) and membership update notification emails have been improved and now include additional information, such as sub-organizations. <CloudBadge/> <SelfHostedBadge/>
 - User redirection when invited to the organization was improved according to several different cases, like registered, not registered, or SSO login. <CloudBadge/> <SelfHostedBadge/>
 - Now you can enhance the SSO login experience by eliminating the "SSO Alias" requirement on the login screen. For this, you should create an Appcircle-compatible login URL so that users can pass through the "SSO Alias" step when they access Appcircle using your custom login URL. <CloudBadge/> <SelfHostedBadge/>
 - Publish flow step statuses, and the last step status in the [version list](https://docs.appcircle.io/publish-module/#publish-versions) will be in `waiting` status unless the runner executes them. <CloudBadge/> <SelfHostedBadge/>
@@ -684,7 +718,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🐞 Fixed
 
 - Fixed an issue where a connected build profile would appear as if it had not been connected before. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue that caused the user to completely restrict their own [privileges](//account/my-organization/profile-and-team/team-management) when alone in an organization. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused the user to completely restrict their own [privileges](/account/my-organization/profile-and-team/team-management) when alone in an organization. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the case where the build pipeline was executed on a non-selected wrong pool, which was affecting the default Intel and M1 pools. <CloudBadge/>
 - Fixed an issue that was affecting the first-time [connections to the GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab) provider. <CloudBadge/> <SelfHostedBadge/>
 - The bug was fixed in the re-creation of a connection that had been disconnected and had its [token revoked](/build/manage-the-connections#revoke-oauth-connections). <CloudBadge/> <SelfHostedBadge/>
@@ -740,7 +774,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed an issue that caused a build to be started in Appcircle when one of the _Approve_, _Approve with Recommendations_, _Wait for Author_, or _Reject_ activities was selected on pull requests when using the [Azure DevOps](/build/build-process-management/build-manually-or-with-triggers#managing-triggers-for-builds) Git provider. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that prevented screenshots from being displayed as a result of the [Unit and UI Tests](/continuous-testing/ios-testing/running-ios-unit-and-ui-tests) in the test results section. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue that caused multiple builds to be launched when only one trigger was set on Appcircle and a trigger was triggered. <CloudBadge/> <SelfHostedBadge/>
-- The incorrect "Configuration" information in the [e-mail notification](/account/my-organization/integrations/notification-integrations/email-connection) sent as a result of the build in simultaneous build triggers has been corrected. <CloudBadge/> <SelfHostedBadge/>
+- The incorrect "Configuration" information in the [e-mail notification](/account/my-organization/notifications/email-connection) sent as a result of the build in simultaneous build triggers has been corrected. <CloudBadge/> <SelfHostedBadge/>
 - When the [Environment Variables](/environment-variables/managing-variables) file was created from scratch and values were entered and downloaded, the downloaded file appeared empty. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.9.0 - 2023-11-01 - LDAP Support for User Authentication, Change the PAT by Build Profile, Download Environment Variables
@@ -759,7 +793,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### :muscle: Improvement
 
 - A parent organization can access its children's "Build History", "Signing History", "App Sharing Report", "Enterprise App Store Reports", and "Queue Waiting Reports". <CloudBadge/> <SelfHostedBadge/>
-- Improvements have been made to the [email notification](/account/my-organization/integrations/notification-integrations/email-connection) format for build events. <CloudBadge/> <SelfHostedBadge/>
+- Improvements have been made to the [email notification](/account/my-organization/notifications/email-connection) format for build events. <CloudBadge/> <SelfHostedBadge/>
 - The "Default M1 Pool" has the latest stable [Xcode 15.0.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_0_1-release-notes) update available on runners. <CloudBadge/> <SelfHostedBadge/>
 - We now support Azure DevOps Server 2020 connection while adding a [build profile](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure). <CloudBadge/> <SelfHostedBadge/>
 - The [public link](/testing-distribution/create-or-select-a-distribution-profile#public-link) in the test deployment area will now be available regardless of authentication type. <CloudBadge/> <SelfHostedBadge/>
@@ -816,7 +850,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed the bug that users without permission were sending requests to the service when browsing pages. <CloudBadge/> <SelfHostedBadge/>
 - In the Store Submit module, the "Huawei App ID" field in the Huawei AppGallery section was disabled. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Flickering on the screen due to line overlap in the build module has been fixed. <CloudBadge/> <SelfHostedBadge/>
-- When an invalid email was entered in the [email integration](/account/my-organization/integrations/notification-integrations/email-connection) module, other options were reset. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
+- When an invalid email was entered in the [email integration](/account/my-organization/notifications/email-connection) module, other options were reset. It's been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The wrong dialog modal was opening in the "never delete" option selected for the deletion of an artifact. It's been fixed, and an extra description has been added. <CloudBadge/> <SelfHostedBadge/>
 - When there was a workflow step of the same name, there was a confusion of names. It's has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - An error message is now displayed to the user when an invalid workflow name is entered. <CloudBadge/> <SelfHostedBadge/>
@@ -830,7 +864,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🆕 New Feature
 
 - We added a new admin report for the queue waiting report. Now self-hosted enterprise customers can see the queue status and waiting durations of each build, fetch, store submit, and resign process. <SelfHostedBadge/>
-- You can now send [email notifications](/account/my-organization/integrations/notification-integrations/email-connection) for most actions taken within Appcircle (build start, store submit, etc.). <CloudBadge/> <SelfHostedBadge/>
+- You can now send [email notifications](/account/my-organization/notifications/email-connection) for most actions taken within Appcircle (build start, store submit, etc.). <CloudBadge/> <SelfHostedBadge/>
 - Self-hosted [runner](/self-hosted-appcircle/self-hosted-runner/installation) now supports installation of the latest [Xcode 15.0](/infrastructure/ios-build-infrastructure) release with all its simulator runtimes. Since this is a beta release, please test your workflows extensively. <SelfHostedBadge/>
 
 ### :muscle: Improvement
@@ -857,7 +891,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🆕 New Feature
 
 - Now you can connect repositories from [Azure DevOps Services](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) and Azure DevOps Server for your builds. <CloudBadge/> <SelfHostedBadge/>
-- Added support for using [webhook](/account/my-organization/integrations/notification-integrations/webhooks) with OAuth 2.0 and the Personal Access Token on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
+- Added support for using [webhook](/account/my-organization/notifications/webhooks) with OAuth 2.0 and the Personal Access Token on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
 - The quick add feature has been added to the new project screen for both Azure DevOps Services and Azure DevOps Server. <CloudBadge/> <SelfHostedBadge/>
 - LDAP, user lookup decision strategy can be configured in global.yaml. See [LDAP settings](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings) for details. <SelfHostedBadge/>
 
@@ -885,7 +919,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### :muscle: Improvement
 
-- Added the feature that [LDAP](/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication) and [SSO](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication) settings can be made once and all sub-organizations can use this setting. <CloudBadge/> <SelfHostedBadge/>
+- Added the feature that [LDAP](/account/my-organization/security/authentications) and [SSO](/account/my-organization/security/authentications) settings can be made once and all sub-organizations can use this setting. <CloudBadge/> <SelfHostedBadge/>
 - Previous [Configuration and Workflow](/build/manage-the-connections/adding-a-build-profile) files can be downloaded in the Configuration and Workflow sections. The ability to create configuration and workflow by re-uploading downloaded `.yaml` files has been improved. <CloudBadge/> <SelfHostedBadge/>
 - On the [self-hosted](../self-hosted-appcircle/self-hosted-runner) side, the feature of adding priority has been developed for online and offline runners. <CloudBadge/> <SelfHostedBadge/>
 - Sequential numbering improvement was made in the naming while creating the new configuration and workflow. <CloudBadge/> <SelfHostedBadge/>
@@ -919,7 +953,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - [Xcode 15.0 Beta](/infrastructure/ios-build-infrastructure) added to build agents. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
 - [Java 17](../infrastructure/android-build-infrastructure) added to build agents. <CloudBadge/> <SelfHostedBadge/>
 - [Build Profile](/build/manage-the-connections/adding-a-build-profile) configurations are separated from branchs. It is now easier to see and manage configs from a single location. <CloudBadge/> <SelfHostedBadge/>
-- [SSO](/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication) and [LDAP](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication) Login added to Testing Distribution. <CloudBadge/> <SelfHostedBadge/>
+- [SSO](/account/my-organization/security/authentications) and [LDAP](/account/my-organization/security/authentications) Login added to Testing Distribution. <CloudBadge/> <SelfHostedBadge/>
 - [Azure Boards](/workflows/common-workflow-steps/azure-board) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [Repeato](/workflows/common-workflow-steps/#repeato-mobile-test-automation) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [Snyk Secure Scan](/workflows/common-workflow-steps/#snyk-scan-security) workflow step added. <CloudBadge/> <SelfHostedBadge/>
@@ -973,7 +1007,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - [Data Theorem Mobile Secure](/workflows/common-workflow-steps/#data-theorem-mobile-secure) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [App Center CodePush](/workflows/react-native-specific-workflow-steps/#app-center-codepush) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - Latest five build status added to build profile. <CloudBadge/> <SelfHostedBadge/>
-- [Slack Bot](/account/my-organization/integrations/notification-integrations/slack/appcircle-bot-for-slack) added. <CloudBadge/>
+- [Slack Bot](/account/my-organization/notifications/slack/appcircle-bot-for-slack) added. <CloudBadge/>
 
 ### :muscle: Improvement
 
@@ -1051,7 +1085,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - [AppSweep Mobile Security Testing](/workflows/android-specific-workflow-steps/#appsweep-mobile-security-testing) component added. <CloudBadge/> <SelfHostedBadge/>
 - [Self-signed certificate](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration) support added for Testing Distribution. <SelfHostedBadge/>
 - [Enterprise App Store](/enterprise-app-store/portal-customization) is now available in German and Turkish languages in addition to English. To switch to your preferred language, simply navigate to the language settings on your store homepage and select either German or Turkish. <CloudBadge/> <SelfHostedBadge/>
-- [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=enterprisestore) are added to directly download IPA or APK files from Enterprise App Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
+- [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=store) are added to directly download IPA or APK files from Enterprise App Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -1100,7 +1134,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 - [LDAP Login](/enterprise-app-store/portal-settings#ldap-login) added to Enterprise App Store.
 - [Jira](/workflows/common-workflow-steps/jira-comment) component added.
-- [Microsoft Teams](/account/my-organization/integrations/notification-integrations/teams-notifications) integration added.
+- [Microsoft Teams](/account/my-organization/notifications/teams-notifications) integration added.
 - [Gradle Runner](/workflows/android-specific-workflow-steps/#gradle-runner) component added.
 - [Maestro Cloud Upload](/workflows/common-workflow-steps/#maestro-cloud-upload) component added.
 
@@ -1464,7 +1498,7 @@ With this release, we're adding the ability to connect to Apple for easier iOS C
 
 To set up an API Key, check this guide:
 
-<ContentRef url="/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
+<ContentRef url="/account/my-organization/security/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
 After adding an API Key, you can add new signing identities from the Signing Identities section. For more information on how to add identities and use them, check out [Signing Identities guide](/signing-identities).
 

@@ -44,7 +44,7 @@ In the **Registered Devices** section of Apple Devices, you can view the devices
 
 :::caution Registered Devices
 
-In order to list your registered devices, the App Store Connect API key must be added to Appcircle. Please follow the related [document](/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key) to add App Store Connect API key.
+In order to list your registered devices, the App Store Connect API key must be added to Appcircle. Please follow the related [document](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) to add App Store Connect API key.
 
 :::
 

@@ -81,7 +81,7 @@ Then click **Invite User**. Your account key is ready. 🎉
 
     a. Navigate to [My Organization](/account/my-organization).
 
-    b. Locate the `Google Play Developer API Keys` under the `Connections` section.
+    b. Locate the `Google Play Developer API Keys` under the `Credentials` section.
   
     c. Click the `Manage` button if you have saved keys, or directly click the `Add New` button.
 

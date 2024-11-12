@@ -1,7 +1,7 @@
 ---
 title: Test Reports for React Native
-description: Test Report step displays your test results and code coverage in an aesthetically pleasing user interface.
-tags: [test, test report, test result, automation, react native testing]
+description: Test Report step displays your test results and code coverage in an aesthetically pleasing user interface for React Native applications.
+tags: [test, test report, test result, automation]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

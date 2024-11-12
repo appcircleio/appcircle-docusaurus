@@ -7,7 +7,7 @@ tags:
     env vars,
     variables,
     ios,
-    Xcode,
+    xcode,
     build configuration,
     custom build scripts,
   ]

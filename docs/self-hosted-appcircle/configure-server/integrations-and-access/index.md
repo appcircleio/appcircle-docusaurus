@@ -5,11 +5,11 @@ tags:
   [
     integrations,
     access controls,
-    Git providers,
-    SSL configuration,
+    git providers,
+    ssl configuration,
     network access,
     proxy configuration,
-    LDAP settings,
+    ldap settings,
   ]
 ---
 

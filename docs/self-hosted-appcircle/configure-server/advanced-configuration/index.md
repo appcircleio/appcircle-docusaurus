@@ -6,7 +6,7 @@ tags:
     advanced configuration,
     security,
     system optimization,
-    LDAP Brute Force Protection,
+    ldap brute force protection,
     cache size configuration,
     dmz,
     enterprise app store,

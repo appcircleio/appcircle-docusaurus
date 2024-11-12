@@ -6,7 +6,7 @@ tags:
   [
     concepts,
     app store,
-    internal-testing,
+    internal testing,
     beta testing,
     binary distribution,
     ipa distribution,

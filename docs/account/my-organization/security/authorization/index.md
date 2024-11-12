@@ -12,8 +12,8 @@ The **Authorization** section allows you to manage user permissions and control 
 
 We support RBAC authorization and SSO-based authorization methods. Current headlines and the actions you can complete are listed below:
 
-- [**RBAC (Role-Based Access Control) Authorization**](/account/my-organization/integrations/authorization/rbac-authorization)
-- [**SSO Authorization**](/account/my-organization/integrations/authorization/sso-authorization)
-- [**Enterprise App Store SSO Authorization**](/account/my-organization/integrations/authorization/store-sso-authorization)
+- [**RBAC (Role-Based Access Control) Authorization**](/account/my-organization/security/authorization/rbac-authorization)
+- [**SSO Authorization**](/account/my-organization/security/authorization/sso-authorization)
+- [**Enterprise App Store SSO Authorization**](/account/my-organization/security/authorization/store-sso-authorization)
 
 In order to see the details, check the submenu of this documentation page.
