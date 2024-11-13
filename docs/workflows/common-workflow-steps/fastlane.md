@@ -24,7 +24,9 @@ The workflow steps that need to be executed before running the Fastlane workflow
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-fastlaneOrder.png' />
 
 :::caution
+
 Fastlane needs project files to work. If there is no **Git Clone** step in your workflow, it will give an error because it cannot find the relevant files of the project.
+
 :::
 
 ### Input Variables
@@ -38,13 +40,16 @@ You can find all the parameters required for this step in the table below, with 
 | `$AC_FASTLANE_DIR`            | This path is Fastlane's path in the project. By default, it is AC_REPOSITORY_DIR. If your Fastlane file is in a different location in the repo, please change it. | Required |
 | `$AC_FASTLANE_LANE`           | Fastlane lane. For example: `android deploy` or `ios release` | Required |
 
+---
 
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-fastlane-component
 
+---
 
-## Fastlane FAQ
+
+## FAQ
 
 ### How to run a Fastlane plug-in directly? 
 

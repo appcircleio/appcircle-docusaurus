@@ -13,8 +13,12 @@ For more detailed information on **iOS Certificates and Provisioning Profiles**,
 
 ### Prerequisites
 
+Before running the **Install Certificates and Provisioning Profiles** step, you must complete certain prerequisites, as detailed in the table below:
+
 :::info
+
 If you are using an automatic code sign, you can remove this step. Since automatic code signing is managed by Xcode, this step will not be needed.
+
 :::
 
 | Prerequisite Workflow Step                      | Description                                     |
@@ -22,7 +26,9 @@ If you are using an automatic code sign, you can remove this step. Since automat
 | [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | Clone your repository to the runner machine. Use the Install Certificates and Provisiong Profiles step after this step. This step will clone your repository to be able to use provisioning profiles and certificates. |
 
 :::danger
+
 Please remember. If you are using **manual sign**, you should definitely use this step and run it after the **Git Clone** step.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2786-cert_order.png' />
@@ -51,6 +57,8 @@ The output parameters after this step is executed are as follows:
 |-------------------------------|------------------------------------------------|
 | `AC_KEYCHAIN_PATH`          | A path is created after the certificate is added to the current runner's keychain. | 
 | `AC_KEYCHAIN_PASSWORD`      | After this certificate is added to the keychain, the password assigned to the keychain | 
+
+---
 
 To access the source code of this component, please use the following link:
 

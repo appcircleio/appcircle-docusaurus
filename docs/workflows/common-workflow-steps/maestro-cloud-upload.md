@@ -89,10 +89,6 @@ Enter confidential information as a [secret environment variable](/environment-v
 | `$AC_MAESTRO_PULL_ID`         | The ID of the pull request from which the upload originated.                                            | Optional  |
 | `$AC_MAESTRO_CLI_VERSION`     | The version of the Maestro CLI is to be downloaded in your CI environment. The default value is the `latest` version.  | Optional  |
 
-## Output Variables
-
-The **Maestro Cloud Upload** step does not produce any output variables. The results are shown in the build log.
-
 ---
 
 To access the source code of this component, please use the following link:

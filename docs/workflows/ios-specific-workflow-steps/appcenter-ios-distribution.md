@@ -21,7 +21,9 @@ With this step, you can send your `IPA` and `dSYM` files to the [App Center](htt
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-center_order.png' />
 
 :::caution
+
 Note that if you do not use this step after the [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export), Appcircle will not find **IPA** and **dSYM** files to distribute to the **App Center**.
+
 :::
 
 ### Input Variables
@@ -31,9 +33,11 @@ Note that if you do not use this step after the [**Xcodebuild for Devices**](htt
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-centerInput.png' />
 
 :::danger
+
 **Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
 
 We recommend using [Environment Variables](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.
+
 :::
 
 
@@ -51,6 +55,8 @@ We recommend using [Environment Variables](https://docs.appcircle.io/environment
 | `$AC_APPCENTER_NOTIFY`             | This parameter sends notifications to testers. The default value is **true**. | Optional |
 | `$AC_APPCENTER_VERSION`             | The latest version will be used if no version is set. | Optional |
 | `$AC_APPCENTER_EXTRA`               | Extra command line arguments for App Center. For example, add `--debug` for verbose logs. | Optional |
+
+---
 
 To access the source code of this component, please use the following link:
 

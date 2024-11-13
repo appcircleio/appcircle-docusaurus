@@ -19,6 +19,7 @@ The workflow steps that need to be executed before running the **Android Build f
 | [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | To initiate the **Android Build for UI Testing** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Build for UI Testing** step. |
 
 :::caution
+
 If you're updating the version via Appcircle, ensure that the following step comes before the **Android Build for UI Testing** step:
 
 - [**Android Increment Build and Version Number**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/increment-build-and-version-number)
@@ -26,6 +27,7 @@ If you're updating the version via Appcircle, ensure that the following step com
 :::
 
 :::caution
+
 If you're working with a **React Native Android** project, ensure that the following steps come before the **Android Build for UI Testing** step:
 
 - [**Install Node**](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/#install-node)
@@ -36,7 +38,9 @@ If you're working with a **React Native Android** project, ensure that the follo
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build-for-ui-testing_1.png'/>
 
 :::note
+
 The **[Firebase Test Lab for Android](https://docs.appcircle.io/continuous-testing/firebase-test-lab-for-android/)** step has been added as an example. You can use the APK you produce for UI testing in any component you choose.
+
 :::
 
 ### Input Variables
@@ -53,12 +57,14 @@ For each component, specific input variables are required for its operation on y
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The outputs resulting from the operation of this component are as follows:
 
 | Variable Name       | Description                                                                                                          |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `AC_APK_PATH`      | Path for the generated **APK** file. This path will be created after the **Android Build for UI Testing** step runs. |
 | `AC_TEST_APK_PATH` | Path for the generated `*androidTest.apk` file. This output can be utilized wherever necessary for UI testing.       |
+
+---
 
 To access the source code of this component, please use the following link:
 

@@ -61,6 +61,8 @@ To use this component, you must provide the icon path from your project file. He
 
 :::
 
-For the source code of this component, visit:
+---
+
+To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-badge-component

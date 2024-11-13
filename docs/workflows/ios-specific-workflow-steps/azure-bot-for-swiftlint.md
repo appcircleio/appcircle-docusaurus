@@ -11,15 +11,21 @@ import Screenshot from '@site/src/components/Screenshot';
 With the Azure DevOps Bot for Swiftlint integration, you can analyze your [**SwiftLint**](https://github.com/realm/SwiftLint/) and post the report details under the opened PR. You can also modify the PR status.
 
 :::info
+
 This component will work in builds that are automatically triggered by a configured trigger. To achieve this, you need to open a PR and set up the trigger. Further information for **Trigger Build**, please follow the [documantation](/build/build-process-management/build-manually-or-with-triggers/).
+
 :::
 
 :::caution
+
 If there are warnings or errors in the SwiftLint report, this workflow step will fail and stop the build.
+
 :::
 
 :::danger
+
 For this component to work, a PR must be opened, and a trigger must be set up based on this PR. If the build is triggered manually, the component will not function.
+
 :::
 
 ### Prerequisites
@@ -39,9 +45,11 @@ This component needs some parameters to operate. You can find the required param
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotInput.png' />
 
 :::danger
+
 **Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
 
 We recommend using [Environment Variables](/environment-variables/) groups for such sensitive variables.
+
 :::
 
 | Variable Name                            | Description                         | Status           |
@@ -54,6 +62,8 @@ We recommend using [Environment Variables](/environment-variables/) groups for s
 | `$AC_AZURE_API_KEY`             | Specifies the API key for Azure DevOps. Refer to [this document](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) for details on how to obtain it. | Required |
 | `$AC_DOMAIN_NAME`               | Specifies the domain name of Appcircle. The default value is `my.appcircle.io`, which is the domain for Appcircle Cloud. | Required |
 | `$AC_AZURE_API_VERSION`               | Specifies the version of the Azure API, for example: `7.1`. Refer to the [REST API versioning](https://learn.microsoft.com/en-us/azure/devops/integrate/concepts/rest-api-versioning) document for more information. | Required |
+
+---
 
 To access the source code of this component, please use the following link:
 

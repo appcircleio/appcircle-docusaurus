@@ -33,6 +33,15 @@ Below are the parameters required for this step, along with detailed explanation
 
 ### Output Variables
 
+The outputs resulting from the operation of this component are as follows:
+
+
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
 | `SSH_AUTH_SOCK`              | This is the path to the SSH Auth Socket.       | 
+
+---
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcircle-activate-ssh-key-component

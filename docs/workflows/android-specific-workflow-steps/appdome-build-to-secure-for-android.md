@@ -24,7 +24,9 @@ The workflow steps that need to be executed before running the **Appdome Build-2
 | [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | If you intend to use a signed app, this step must be executed beforehand to process the output. If your app is already signed in the build step, you can skip this step. |
 
 :::danger
+
 If a step other than the **Android Build** or **Android Sign** step is used to build or sign the app, then the **Appdome Build-2Secure for Android** step depends on this step.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_1.png'/>
@@ -36,7 +38,9 @@ For each component, specific input variables are required for its operation on y
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_2.png'/>
 
 :::caution
+
 Confidential information should be entered as a [secret environment variable](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/).
+
 :::
 
 | Variable Name               | Description                                                                                                                                                                                                                                                                                                                                                  | Status   |

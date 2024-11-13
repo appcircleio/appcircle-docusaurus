@@ -19,13 +19,17 @@ Below is a list of workflow steps that must be completed before executing the **
 | [**Activate SSH Private Key**](https://docs.appcircle.io/workflows/common-workflow-steps/#activate-ssh-key) | This step sets up your SSH key on the build machine **if you used one to connect your repository with SSH**. |
 
 :::caution
+
 If you have not connected your repo via SSH, the **Git Clone** does not have any dependency on the **Activate SSH Private Key** step.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2794-gitOrder.png' />
 
 :::info
+
 We recommend using this step at the beginning of the workflow to avoid any problems in the workflow.
+
 :::
 
 ### Input Variables
@@ -35,7 +39,9 @@ You can find all the parameters required for this step in the table below, with 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2794-gitDetails.png' />
 
 :::danger
+
 After connecting the repository, the following [**Reserved Environment Variables**](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables), which **Git Clone** uses as input, will be automatically populated. Ensure that the variable you provide has a value if you intend to make any changes. **The required variables must not be left empty**.
+
 :::
 
 | Variable Name                 | Description                                    | Status           | 
@@ -54,6 +60,8 @@ After connecting the repository, the following [**Reserved Environment Variables
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
 | `AC_REPOSITORY_DIR`          | Specifies the root directory of the cloned repository. This path is automatically generated after the repository is cloned. |
+
+---
 
 To access the source code of this component, please use the following link:
 

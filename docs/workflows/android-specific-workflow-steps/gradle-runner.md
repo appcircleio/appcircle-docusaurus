@@ -41,8 +41,12 @@ For each component, specific input variables are required for its operation on y
 As the output may vary depending on the task you execute, there is no specific output defined by default.
 
 :::caution
+
 If there is an output generated, ensure to use the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps#export-build-artifacts) step afterward to ensure it is included in the [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) page.
+
 :::
+
+---
 
 To access the source code of this component, please use the following link:
 

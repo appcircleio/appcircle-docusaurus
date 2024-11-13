@@ -11,6 +11,9 @@ import Screenshot from '@site/src/components/Screenshot';
 This component runs the `flutter analyze` command in your Flutter project. Please note that it requires the [**Flutter SDK**](https://docs.flutter.dev/get-started/install).
 
 ### Prerequisites
+
+Before running the **Flutter Analyze** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step will clone your project through the connected Git provider and create the `$AC_REPOSITORY_DIR` variable. |

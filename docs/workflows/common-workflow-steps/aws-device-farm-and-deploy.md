@@ -109,12 +109,16 @@ The full details of the tests are accessible in the [AWS Device Farm console](ht
 
 ### Output Variables
 
+The outputs resulting from the operation of this component are as follows:
+
 | Variable Name                | Description                  |
 | ---------------------------- | ---------------------------- |
 | `AWS_RUN_ARN`               | AWS Device Farm Run ARN.     |
 | `AWS_TEST_RESULT`           | AWS Device Farm Test result. |
 | `AWS_OUTPUT_DEVICEPOOL_ARN` | The ARN of the Device pool.  |
 | `AWS_OUTPUT_APPUPLOAD_ARN`  | The ARN of the App Upload.   |
+
+---
 
 To access the source code of this component, please use the following link:
 

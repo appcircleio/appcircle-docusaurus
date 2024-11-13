@@ -12,6 +12,8 @@ This step converts Xcode's test results to different formats by using [**Slather
 
 ### Prerequisites
 
+Before running the **Slather** step, you must complete certain prerequisites, as detailed in the table below:
+
 | Prerequisite Workflow Step                                                                                                               | Description                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone)                                                    | This step will clone your repository. After this step works, the variable `AC_REPOSITORY_DIR` will be created. This variable is the required input variable for **Slather**. |
@@ -21,7 +23,9 @@ This step converts Xcode's test results to different formats by using [**Slather
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2830-slatherOrder.png' />
 
 :::danger
+
 **Slather** component needs test results in `.xcresult` format to work. Therefore, make sure that the tests of the project are run. Otherwise, **Slather** will throw an error for not finding the file and the pipeline will break. 
+
 :::
 
 ## Input Variables
@@ -41,6 +45,7 @@ You can find all the parameters required for this step in the table below, with 
 | `$AC_CONFIGURATION_NAME`| If you have a configuration that you want to specify while **Slather** is running, you can add it to the command line with the **Configuration** parameter. | Optional |
 | `$AC_SLATHER_OPTIONS`   | If you want to add an extra command to the command line, you can do it with the **Extra Option** variable. | Optional |
 
+---
 
 To access the source code of this component, please use the following link:
 

@@ -22,7 +22,9 @@ In order for this step to work correctly, it must be used after the two steps li
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2827-testingOrder.png' />
 
 :::caution
+
 If you use SPM (Swift Package Manager), Xcode will manage itself when a project build. The **CocoaPods Install** step is not necessary.
+
 :::
 
 ### Input Variables
@@ -53,6 +55,8 @@ This component outputs some important parameters after running.
 | `AC_UITESTS_RUNNER_IPA_PATH` | This variable is the path that the IPA generated for the test creates for the UI tests to run. This can be sent directly to test automation tools. |
 | `AC_XCTEST_ZIP_PATH`         | Path to the IPA version of the Xctests. You can access it directly via this path. |
 | `AC_TEST_IPA_PATH`           | This path holds the IPA file created for running tests and sending the IPA file to test automation tools. |
+
+---
 
 To access the source code of this component, please use the following link:
 

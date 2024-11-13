@@ -15,6 +15,7 @@ import Screenshot from '@site/src/components/Screenshot';
 :::
 
 :::info
+
 If you need to use the cached folder in a different branch or a separate project, you have the capability to modify the values of `$AC_GIT_BRANCH` or `$AC_BUILD_PROFILE_ID`. For further information, please check out the following documentation:
 - [How to Share Files Between Pipelines](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-pipelines)
 - [How to Share Files Between Build Profiles](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles)
@@ -22,20 +23,25 @@ If you need to use the cached folder in a different branch or a separate project
 These variables can be adjusted within the [cache label](#input-variables) field, as indicated by the red highlight in the accompanying image. Simply replace them with the branch or project ID that corresponds to your intended usage.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/cache-01.png' />
+
 :::
 
 ### Prerequisites
 
 :::caution
+
 This component does not require any prerequisite steps for operation. The only thing necessary for the component to work as expected is to utilize the cached files before the step in which they will be used. Additionally, an important prerequisite for this step to function properly is that the files to be used must have been cached in previous builds. 
 
 For example, in the screenshot, to use cached files for Cocoapods, the **Cache Pull** step should be used before the [**Cocoapods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-install) step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pullOrder.png' />
+
 :::
 
 :::danger
+
 If there are no previously cached files and you attempt to use this step, the **Cache Pull** step will result in a **`not found error`** because it cannot locate the specified files at the remote location.
+
 :::
 
 ### Input Variables

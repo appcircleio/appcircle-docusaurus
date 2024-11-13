@@ -86,10 +86,6 @@ Confidential information should be entered as a [secret environment variable](/e
 | `$AC_FIREBASE_GROUPS`          | Specifies the Firebase tester groups you want to invite.                                                                                               | Optional |
 | `$AC_FIREBASE_EXTRA_PARAMETERS` | Specifies extra command line parameters. Enter `--debug` for debug mode.                                                                                              | Optional |
 
-### Output Variables
-
-The **Firebase App Distribution** step generates no output variables. The step succeeds if the app is distributed successfully; otherwise, it fails.
-
 ---
 
 To access the source code of this component, please use the following link:

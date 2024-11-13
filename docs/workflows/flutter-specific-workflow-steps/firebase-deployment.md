@@ -45,6 +45,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$GOOGLE_APPLICATION_CREDENTIALS`        | Specify the path to your Google Service Account JSON file. Upload this file to your environment group under the name `GOOGLE_APPLICATION_CREDENTIALS`. Choose either a **Firebase token**  or a **Google Service account**. | Optional |
 | `$AC_FIREBASE_EXTRA_PARAMETERS`          | Extra command line parameters. Enter --debug for debug mode. | Optional |
 
+---
 
 To access the source code of this component, please use the following link:
 

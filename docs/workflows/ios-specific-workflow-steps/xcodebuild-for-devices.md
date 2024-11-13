@@ -11,7 +11,9 @@ import Screenshot from '@site/src/components/Screenshot';
 This step builds your application for iOS devices in ARM architecture, which is required for the [**Sharing With Testers**](/testing-distribution/create-or-select-a-distribution-profile) feature or any other means of iOS distribution.
 
 :::info
+
 This step is the archive and export step. When the step is completed, the `.ipa` file of the application is generated.
+
 :::
 
 ### Prerequisites
@@ -25,8 +27,10 @@ The workflow steps that need to be executed before running this step, along with
 | [**Cocoapods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#cocoapods-install) | This step installs all pod dependencies for project. **Xcodebuild for Devices** should be used after this step. If you use SPM (Swift Package Manager), it is not necessary to use. |
 
 :::danger
+
 This step should always follow steps that may affect Archive and Export, such as Xcode Select and Cocoapods Install.
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildOrder.png' />
+
 :::
 
 ### Input Variables
@@ -57,15 +61,21 @@ You can find all the parameters required for this step in the table below, with 
 
 ### Output Variables
 
+The outputs resulting from the operation of this component are as follows:
+
 | Variable Name               | Description                                               |
 | --------------------------- | --------------------------------------------------------- |
 | `$AC_ARCHIVE_PATH`          | This is the path created after retrieving the archive.    |
 | `$AC_ARCHIVE_METADATA_PATH` | This is the path created after the metadata is generated. |
 | `$AC_EXPORT_DIR`            | This is the path created when exporting.                  |
 
+---
+
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-ios-build-sign-component
+
+---
 
 ## FAQ
 
@@ -82,7 +92,9 @@ To address the need to add a new command after completing the `xcodebuild` comma
 - In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
 
 :::caution
+
 Before running the script, some variables must be changed, and new variables must be added to the custom script.
+
 :::
 
 First, the `output_path` global variable should be changed like below in global variables.
@@ -111,7 +123,9 @@ $compiler_index_store_enable = AC_COMPILER_INDEX_STORE_ENABLE
 ```
 
 :::caution
+
 You should find the line with `compiler_index_store_enable` and replace it with the above statement.
+
 :::
 
 After these variables were set. There is an `archive()` function in the Ruby code. First, find the function in the code.

@@ -12,6 +12,8 @@ This component allows you to run [**Flutter Unit Tests**](https://docs.flutter.d
 
 ### Prerequisites
 
+Before running the **Flutter Test** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step will clone your project through the connected Git provider and create the `$AC_REPOSITORY_DIR` variable. |
@@ -20,7 +22,9 @@ This component allows you to run [**Flutter Unit Tests**](https://docs.flutter.d
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2853-testOrder1.png' />
 
 :::danger
+
 This step is particularly dependent on the Flutter Install step. If the Flutter SDK is not installed, the step will give an error that the required command was not found.
+
 :::
 
 ### Input Variables
@@ -37,10 +41,13 @@ You can find all the parameters required for this step in the table below, with 
 
 ### Output Variables
 
+The outputs resulting from the operation of this component are as follows:
+
 | Variable Name                 	       | Description                         |
 |-------------------------------|------------------------------------------------|
 | `AC_TEST_RESULT_PATH`        | This path is created after the test results are reported. If you are using the [**Export Build Artifact**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step, it can be accessed directly from [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). | 
 
+---
 
 To access the source code of this component, please use the following link:
 

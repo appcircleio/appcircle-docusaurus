@@ -21,12 +21,17 @@ Remember, SwiftLint must be used after the following steps in order to work as e
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2613-lint_order.png' />
 
 :::danger
+
 If you are using **CocoaPods**, note that this step is dependent on the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#cocoapods-install) step. Otherwise, the SwiftLint component will **fail**, and the **pipeline will break.**
+
 :::
+
 :::caution
+
 If you are using **Swift Package Manager (SPM)**, do not use this step. SPM packages will be compiled in other steps that work with **Xcode**, such as [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export).
 
 If you have SPM in your project and you are using the SwiftLint component in your workflow, the Linter component will give an error because it cannot find the required dependencies.
+
 :::
 
 ### Input Variables
@@ -47,9 +52,13 @@ You can also customize your SwiftLint step with the options in the component. Yo
 
 ### Output Variables
 
+The output parameters after this step is executed are as follows:
+
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
 | `AC_LINT_OUTPUT_PATH`        | The path of the SwfitLint results output file. After SwiftLint runs, all results will be written in a .txt file. It can be found in the download artifacts. |
+
+---
 
 To access the source code of this component, please use the following link:
 

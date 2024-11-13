@@ -73,6 +73,7 @@ For this reason, iOS apps using Tuist versions `1.x` or `2.x` are not supported 
 | `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
 | `$AC_TUIST_VERSION`      | Specifies the Tuist version. If not specified, the latest version of Tuist will be installed.                                                                                       | Optional |
 
+---
 
 To access the source code of this component, please use the following link:
 

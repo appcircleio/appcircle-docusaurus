@@ -42,6 +42,7 @@ You can find all the parameters required for this step in the table below, with 
 | `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
 | `$AC_PROJECT_PATH`            | Specifies the project path. For example: `./appcircle.xcodeproj` | Required |
 
+---
 
 To access the source code of this component, please use the following link:
 

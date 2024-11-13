@@ -22,7 +22,9 @@ The workflow steps that need to be executed before running the **Bundle Universa
 | [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | If you intend to use a signed app, this step must be executed beforehand to process the output. If your app is already signed in the build step, you can skip this step. |
 
 :::caution
+
 If a step other than the **Android Build** or **Android Sign** step is used to build or sign the app, then the **Bundle Universal Apk** step depends on this step.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-bundle-universal-apk_1.png'/>
@@ -49,6 +51,8 @@ The outputs that can result from the operation of this component are listed as f
 | Variable Name         | Description                      |
 | --------------------- | -------------------------------- |
 | `AC_SIGNED_APK_PATH` | Path of the signed **APK** file. |
+
+---
 
 To access the source code of this component, please use the following link:
 

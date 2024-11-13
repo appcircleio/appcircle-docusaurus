@@ -66,6 +66,8 @@ Appcircle does **not** currently support **test coverage** calculation for React
 
 :::
 
+---
+
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-react-native-unit-test-component

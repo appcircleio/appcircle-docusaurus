@@ -30,3 +30,9 @@ Below is a list of input variables that can be used with this component, with a 
 | Variable Name                 | Description                                    | Status           |
 |-------------------------------|------------------------------------------------|------------------|
 | `$AC_APPIUM_VERSION`          | Specifies the version of Appium Server to install, such as `v1.22.3`. If you do not specify a version, the system installs the latest version. | Optional |
+
+---
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcircle-appium-component

@@ -40,6 +40,7 @@ You can find all the parameters required for this step in the table below, with 
 | `$AC_REPOSITORY_DIR`    | Specifies the directory where the repository is cloned. This path is generated after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step.                                                                                         | Optional |
 | `$AC_COCOAPODS_VERSION` | Specifies the CocoaPods version. If you need a specific version, provide it here as hardcoded, and the system will automatically install that version.                                                                                        | Optional |
 
+---
 
 To access the source code of this component, please use the following link:
 

@@ -49,6 +49,8 @@ The outputs that can result from the operation of this component are listed as f
 | ---------------------- | -------------------------------------------------------------- |
 | `AC_TEST_RESULT_PATH` | Specifies the directory where your JUnit XML report is stored. |
 
+---
+
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-android-unit-test-component.git

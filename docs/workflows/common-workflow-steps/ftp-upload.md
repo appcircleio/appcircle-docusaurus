@@ -51,7 +51,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$AC_FTP_SOURCE`              | Source file or path to upload. For example: the file path can be set to `$AC_OUTPUT_DIR/Myapp.ipa`. Ensure that the file name is correct.| Required  |
 | `$AC_FTP_TARGET`              | The target path is on the FTP server.                                                                                                           | Required  |
 
-
+---
 
 To access the source code of this component, please use the following link:
 

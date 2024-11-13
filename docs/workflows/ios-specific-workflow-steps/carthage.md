@@ -35,6 +35,8 @@ You can find all the parameters required for this step in the table below, with 
 | `$AC_CARTFILE_PATH`           | Specifies the path where the Cartfile resides. Defaults to the repository directory. **DO NOT** include Cartfile, this is only the path. **This value will be appended** to `$AC_REPOSITORY_DIR`. **Example:** `./` or `./subpath-to-cartfile/` | Optional |
 | `$AC_CARTHAGE_FLAGS`          | Specifies additional flags after the Carthage command. The default value is empty. **For Xcode 12 and above, make sure to include** `--use-xcframeworks` **here**. To shorten the build time, make sure to specify the platform: `--platform iOS`. Example usage: `--platform iOS --use-xcframeworks` | Optional |
 
+---
+
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-carthage-component

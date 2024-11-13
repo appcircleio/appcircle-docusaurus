@@ -47,6 +47,7 @@ The outputs resulting from the operation of this component are as follows:
 | -------------------------- | ---------------------------------------------------- |
 | `AC_TEST_REPORT_JSON_PATH` | Specifies the path of the JSON report.               |
 
+---
 
 To access the source code of this component, please use the following link:
 

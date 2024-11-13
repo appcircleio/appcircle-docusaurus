@@ -33,7 +33,9 @@ The workflow steps that need to be executed before running the **App Center Andr
 | [**Android Sign**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign)   | If you intend to use a signed app, this step must be executed beforehand to process the output. If your app is already signed in the build step, you can skip this step. |
 
 :::danger
+
 If a step other than the **Android Build** or **Android Sign** step is used to build or sign the app, then the **App Center Android Distribute** step depends on this step.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-app-center-android-distribution_1.png'/>
@@ -45,9 +47,11 @@ For each component, specific input variables are required for its operation on y
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-app-center-android-distribution_2.png'/>
 
 :::danger
+
 **Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
 
 We recommend using [Environment Variables](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.
+
 :::
 
 | Variable Name                      | Description                                                                                                                                                                                                                                                                                                           | Status   |

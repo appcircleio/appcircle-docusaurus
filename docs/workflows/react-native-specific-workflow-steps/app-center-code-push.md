@@ -51,10 +51,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$AC_APPCENTER_EXTRA`         | Extra command line arguments for appcenter. For example, add `--debug` for verbose logs. | Optional |
 
 
-### Output Variables
-
-The **App Center CodePush** step does not produce any output variables. The results are shown in the build log.
-
+---
 
 To access the source code of this component, please use the following link:
 

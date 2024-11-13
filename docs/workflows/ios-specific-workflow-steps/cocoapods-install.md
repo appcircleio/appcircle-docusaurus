@@ -33,12 +33,18 @@ You can find all the parameters required for this step in the table below, with 
 | `$AC_COCOAPODS_VERSION` | Specifies the CocoaPods version. If there is a specific version you want to use, give it here as hardcoded, and the system will automatically install the given version.                                                                                        | Optional |
 
 :::info
+
 Please note that the CocoaPods Install step uses the default system [**CocoaPods version**](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#ios-build-agent-stacks). If you want to use a specific version, please enter it hardcoded in the CocoaPods Version parameter in the step.
+
 :::
 
 :::danger
+
 Remember, if the project extension is not **.xcworkpace**, the pod install step will not work as expected. In the Configuration tab, make sure that the extension in the project path is **.xcworkspace**.
+
 :::
+
+---
 
 To access the source code of this component, please use the following link:
 

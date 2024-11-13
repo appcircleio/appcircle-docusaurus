@@ -13,7 +13,9 @@ import Screenshot from '@site/src/components/Screenshot';
 You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
 
 :::tip
+
 Note that you can put the **Custom Script** component anywhere you want in the workflow. This step is used to add different capabilities to the existing workflow.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customScript.png' />
@@ -30,10 +32,20 @@ You can find all the parameters required for this step in the table below, with 
 | `Script`      | With the **Script** input variable, you can add the script you want to run and run it directly in the selected language. If you leave this input blank, it will proceed to the next step without taking any action. | Optional |
 
 :::caution
+
 Note that the **Script** area works according to the selected language variable. If you want to run a script in any language, make sure that you select the language correctly.
+
 :::
 
-## Custom Script FAQ
+---
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcircle-custom-script-component
+
+---
+
+## FAQ
 
 ### How to change JAVA version
 
@@ -208,10 +220,6 @@ Please feel free to edit the following variables according to your own requireme
 - `min_coverage`: The minimum percentage required for the pipeline to continue without breaking.
 
 :::
-
-To access the source code of this component, please use the following link:
-
-https://github.com/appcircleio/appcircle-custom-script-component/
 
 ### How to use environment variables along with the `sudo` command?
 

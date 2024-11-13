@@ -20,7 +20,9 @@ The workflow steps that need to be executed before running the **File Size Check
 | [**Flutter Build for Android**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/#flutter-build-for-android) | If your project is an **Android** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
 
 :::danger
+
 If you use a different build step than the ones mentioned above to generate the app, then the **File Size Check** step depends on this particular step.
+
 :::
 
 #### For iOS
@@ -47,8 +49,12 @@ You can find all the parameters required for this step in the table below, with 
 | `$AC_ANALYZER_FILESIZE_ACTION`   |  Specifies whether to issue a warning or fail the workflow if the threshold limit is exceeded. The options are **warn** and **fail**, with the default being **fail**. | Optional |
 
 :::caution
+
 Note that this step only controls the size of the application generated according to the size variable you specify. 
+
 :::
+
+---
 
 To access the source code of this component, please use the following link:
 

@@ -71,6 +71,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$DANGER_BITBUCKETSERVER_PASSWORD`        | Bitbucket password for the bot user.                                                                                                           | Optional |
 | `$DANGER_BITBUCKETSERVER_HOST`            | The host that Bitbucket is running on. For example: `git.corp.com`                                                                             | Optional |
 
+---
 
 To access the source code of this component, please use the following link:
 

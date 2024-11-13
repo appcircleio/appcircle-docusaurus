@@ -22,7 +22,9 @@ Use this step after the **Xcode Select**  and **CocoaPods Install** (if you use 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2586-sim_order.png' />
 
 :::caution
+
 If you use SPM (Swift Package Manager), Xcode will manage itself when a project is built. The **CocoaPods Install** step is not necessary.
+
 :::
 
 ### Input Variables
@@ -50,9 +52,13 @@ Be aware of which OS version you used; the simulator type should match that OS v
  
 ### Output Variables
 
+The outputs resulting from the operation of this component are as follows:
+
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
 | `AC_SIMULATOR_APP_PATH`      | Simulator app path. You can reach the Simulator app from this path, and it will be exported, it can be downloaded from the download artifacts. |
+
+---
 
 To access the source code of this component, please use the following link:
 

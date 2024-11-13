@@ -36,6 +36,7 @@ For each component, specific input variables are required for its operation on y
 | `$AC_GRADLE_BUILD_EXTRA_ARGS` | Extra arguments were passed to build task. For more information, please refer to [this Gradle document](https://docs.gradle.org/current/userguide/writing_build_scripts.html#sec:extra_properties).                                                                                                                                                                                                                    | Optional |
 
 :::info
+
 If you have filled in the necessary variables in the **Configuration** section, you will not need to redefine these variables again in the Workflow. For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/build-profile-configuration) document. The information you fill in the configuration will be used as input in the Android Build step. Please replace the example information with your own details:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_1.png' alt="Configuration Image" />
@@ -43,10 +44,13 @@ If you have filled in the necessary variables in the **Configuration** section, 
 1. The input corresponding to the 1st field: `$AC_MODULE`
 2. The input corresponding to the 2nd field: `$AC_VARIANTS`
 3. The input corresponding to the 3rd field: `$AC_OUTPUT_TYPE`
+
 :::
 
 :::tip
+
 If you are using Gradle 4.3 and above in your project, you can just use the `--scan` flag in the build step to enable build scans. For existing projects, you may need to add the Gradle Scan (Gradle Enterprise) plugin. For more information, please refer to https://scans.gradle.com/
+
 :::
 
 ### Output Variables
@@ -63,14 +67,20 @@ The resulting files will be either APK or AAB, depending on whether you choose t
 If your project has the [signing configuration](https://developer.android.com/studio/build/gradle-tips#sign-your-app) in Gradle, this step will generate a signed artifact.
 
 :::caution
+
 If you do not disable the **Android Sign** step and your project has no signing configuration defined in Gradle, your artifact will remain unsigned.
 
 So, in order to sign your app using the keystore selected in the build configuration, you should enable the **Android Sign** step after **Android Build**.
+
 :::
+
+---
 
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-android-build-component.git
+
+---
 
 ## FAQ
 

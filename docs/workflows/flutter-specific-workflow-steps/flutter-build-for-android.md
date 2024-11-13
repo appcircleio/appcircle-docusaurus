@@ -62,6 +62,8 @@ To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-android-flutter-build-component
 
+---
+
 ## FAQ
 
 ### How can I solve the `Out of memory error: Java heap memory` or set the heap memory during the build?

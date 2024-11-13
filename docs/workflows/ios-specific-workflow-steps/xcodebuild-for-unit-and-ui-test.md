@@ -17,6 +17,9 @@ This step does not generate **IPA**, it only runs tests within the project.
 :::
 
 ### Prerequisites
+
+Before you run the **Xcodebuild for Unit and UI Testing** step, you must complete certain prerequisites, as detailed in the table below:
+
 | Prerequisite Workflow Step                                                                | Description                                     |
 |-------------------------------------------------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone)                | The repository must be cloned to initiate the unit and UI testing process. Following the clone, this step will run the tests and create the `AC_REPOSITORY_DIR` variable. |

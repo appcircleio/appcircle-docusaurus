@@ -21,7 +21,9 @@ The workflow steps that need to be executed before running the **Android Lint** 
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To start the **Android Lint** process, the repository that needs to be built must be fetched from the branch. This generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Lint** step. |
 
 :::caution
+
 Please ensure that you insert the **Android Lint** step before using the **Android Build** step.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_1.png' alt="image2" />
@@ -60,7 +62,9 @@ The outputs that can result from the operation of this component are listed as f
 | `-`           | Lint does not assign the XML/HTML file output to a variable. However, the resulting file from **Lint** appears in the output (`$AC_OUTPUT_DIR`) and report directory (`<gradlew folder path>/$AC_MODULE/build/reports`). |
 
 :::caution
+
 To view the Lint report on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps#export-build-artifacts) step is included in your **Workflow** after this step.
+
 :::
 
 ---

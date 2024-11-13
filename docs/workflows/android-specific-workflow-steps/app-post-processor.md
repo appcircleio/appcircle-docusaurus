@@ -25,7 +25,9 @@ The workflow steps that need to be executed before running the **Android App Pos
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_1.png' alt="image2" />
 
 :::caution
+
 If a step other than the **Android Build** or **Android Sign** step is used to build or sign the app, then the **Android App Post-Processor** step depends on this step.
+
 :::
 
 ### Input Variables
@@ -41,6 +43,7 @@ The outputs that can result from the operation of this component are listed as f
 | `$AC_ANDROID_POST_PROCESS_OUTPUT_PATH` | Specifies the application post process file path. This file specifies the base name for each app and whether it is signed or not. |
 
 :::info
+
 The output post-processing JSON file should adhere to the following structure:
 ```jsx title="ac_post_process_output.json"
 [
@@ -51,10 +54,13 @@ The output post-processing JSON file should adhere to the following structure:
   {...}
 ]
 ```
+
 :::
 
 :::caution
+
 To share the signed apps created as a result of this step or to view them on the **Download Artifacts** page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+
 :::
 
 ---

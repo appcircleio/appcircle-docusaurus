@@ -12,6 +12,7 @@ The **iOS Increment Build and Version Number** step is controlled by **iOS Versi
 
 - [**Understanding iOS Versioning**](/versioning/ios-version)
 
+---
 
 To access the source code of this component, please use the following link:
 

@@ -31,6 +31,8 @@ This step contains different variables. It needs these variables to work. The ta
 | `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step. | Required |
 | `$AC_NPM_COMMAND_ARGS`        | The NPM command to run. You can add different command parameters directly. The default is: `npm/yarn install` | Optional |
 
+---
+
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-npm-yarn-component
