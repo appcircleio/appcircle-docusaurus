@@ -76,6 +76,9 @@ const YamlGenerator = () => {
     "appcircle/docker-registry"
   );
   const [imageTag, setImageTag] = useState("v3.22.1");
+  const [appcircleMainDomain, setAppcircleMainDomain] = useState(
+    "appcircle.spacetech.com"
+  );
   const [yamlContent, setYamlContent] = useState("");
 
   const handleGenerate = () => {
@@ -83,34 +86,63 @@ const YamlGenerator = () => {
     const imageRepositoryPathWithRegistry = `${imageRegistry}/${imageRepositoryPath}/`;
 
     const webeventredisPassword = generateRandomPassword(32);
-
     const keycloakAdminPassword = generateRandomPassword(12);
-
-
-    const { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
+    const postgresPassword = generateRandomPassword(32);
 
     const indent = "      "; // Set the appropriate indentation
-    const formattedRsaPrivateKey = formatKeyWithIndentation(
+    var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
+    const formattedDistRsaPrivateKey = formatKeyWithIndentation(
       removeLastNewLine(rsaPrivateKey),
       indent
     );
-    const formattedRsaPublicKey = formatKeyWithIndentation(
+    const formattedDistRsaPublicKey = formatKeyWithIndentation(
       removeLastNewLine(rsaPublicKey),
       indent
     );
 
-    const yaml = `
-global:
+    var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
+    const formattedStoreRsaPrivateKey = formatKeyWithIndentation(
+      removeLastNewLine(rsaPrivateKey),
+      indent
+    );
+    const formattedStoreRsaPublicKey = formatKeyWithIndentation(
+      removeLastNewLine(rsaPublicKey),
+      indent
+    );
+
+    const yaml = `global:
+  appEnvironment: 'Production'
+  urls:
+    domainName: .${appcircleMainDomain}
+    scheme: http
+  mail:
+    smtp:
+      domain: 'smtp.example.com'
+      host: 'smtp.example.com'
+      port: '587'
+      from: 'appcircle@example.com'
+      ssl: 'false'
+      tls: 'true'
+      auth: 'true'
+      username: 'smtpUsername'
+      password: 'superSecretSMTPPassword'
   imageRegistry: ${imageRegistry}
   imageRepositoryPath: ${imageRepositoryPath}
   imageTag: ${imageTag}
+  ingressClassName: "nginx"
 auth:
   auth-keycloak:
+    organizationName: spacetech
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak:${imageTag}
     admin:
       username: admin
       password: ${keycloakAdminPassword}
+    initialUsername: "admin@spacetech.com"
+    initialPassword: "superSecretAppcirclePassword"
+  auth-postgresql:
+    auth:
+      password: ${postgresPassword}
 minio:
   image:
     repository: ${imageRepositoryPathWithRegistry}minio/minio:${imageTag}
@@ -121,14 +153,27 @@ vault:
 webeventredis:
   auth:
     password: '${webeventredisPassword}'
+  master:
+    preExecCmds: ''
+  tls:
+    enabled: false
+  ingress:
+    tls: false
+    enabled: true
 keycloak:
   clients:${generateKeycloakClientsYaml()}
 distribution:
   distribution-testerapi:
     rsaPrivateKey: |
-${formattedRsaPrivateKey}
+${formattedDistRsaPrivateKey}
     rsaPublicKey: |
-${formattedRsaPublicKey}`;
+${formattedDistRsaPublicKey}
+store:
+  store-api:
+    rsaPrivateKey: |
+${formattedStoreRsaPrivateKey}
+    rsaPublicKey: |
+${formattedStoreRsaPublicKey}`;
 
     setYamlContent(yaml);
   };
@@ -165,6 +210,17 @@ ${formattedRsaPublicKey}`;
             className="input-field"
             value={imageTag}
             onChange={e => setImageTag(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          Appcircle Main Domain:
+          <input
+            type="text"
+            className="input-field"
+            value={appcircleMainDomain}
+            onChange={e => setAppcircleMainDomain(e.target.value)}
           />
         </label>
       </div>
