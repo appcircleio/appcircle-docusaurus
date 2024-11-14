@@ -24,7 +24,7 @@ Before running the **App Center CodePush** step, you must complete certain prere
 
 ### Input Variables
 
-This step contains some variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3174-codepushInput.png' />
 
