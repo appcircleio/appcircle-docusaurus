@@ -134,7 +134,7 @@ auth:
   auth-keycloak:
     organizationName: spacetech
     image:
-      repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak:${imageTag}
+      repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak
     admin:
       username: admin
       password: ${keycloakAdminPassword}
@@ -145,11 +145,11 @@ auth:
       password: ${postgresPassword}
 minio:
   image:
-    repository: ${imageRepositoryPathWithRegistry}minio/minio:${imageTag}
+    repository: ${imageRepositoryPathWithRegistry}minio/minio
 vault:
   server:
     image:
-      repository: ${imageRepositoryPathWithRegistry}appcircle-vault:${imageTag}
+      repository: ${imageRepositoryPathWithRegistry}appcircle-vault
 webeventredis:
   auth:
     password: '${webeventredisPassword}'
@@ -185,7 +185,7 @@ ${formattedStoreRsaPublicKey}`;
           Image Registry Host:
           <input
             type="text"
-            className="input-field"
+            className="input-field input-field-long"
             value={imageRegistryHost}
             onChange={e => setImageRegistryHost(e.target.value)}
           />
@@ -196,7 +196,7 @@ ${formattedStoreRsaPublicKey}`;
           Image Repository Path:
           <input
             type="text"
-            className="input-field"
+            className="input-field input-field-long"
             value={imageRepositoryPath}
             onChange={e => setImageRepositoryPath(e.target.value)}
           />
@@ -207,7 +207,7 @@ ${formattedStoreRsaPublicKey}`;
           Image Tag:
           <input
             type="text"
-            className="input-field"
+            className="input-field input-field-long"
             value={imageTag}
             onChange={e => setImageTag(e.target.value)}
           />
@@ -218,7 +218,7 @@ ${formattedStoreRsaPublicKey}`;
           Appcircle Main Domain:
           <input
             type="text"
-            className="input-field"
+            className="input-field input-field-long"
             value={appcircleMainDomain}
             onChange={e => setAppcircleMainDomain(e.target.value)}
           />
