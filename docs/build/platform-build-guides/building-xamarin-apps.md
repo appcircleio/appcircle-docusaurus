@@ -67,7 +67,7 @@ Keep in mind that, in order to switch to the selected Xcode version in the build
 
 :::caution
 
-The selected pool in the **SELECT A POOL** list should be the `Default M1 Pool` for the Appcircle Cloud or a pool that has **`arm64`** macOS runners for the self-hosted Appcircle.
+The selected pool in the **SELECT A POOL** list should be the `Appcircle Standard macOS Pool (arm64)` for the Appcircle Cloud or a pool that has **`arm64`** macOS runners for the self-hosted Appcircle.
 
 Intel-based runners are not supported or documented as of now, and you might need extra customizations done in the custom scripts.
 

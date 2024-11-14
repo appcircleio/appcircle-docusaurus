@@ -11,12 +11,12 @@ import ContentRef from '@site/src/components/ContentRef';
 
 For each Android build, Appcircle creates a brand new virtual machine;
 
-- If you select "Default Intel Pool", virtual machine will be Debian 11 Bullseye.
-- If you select "Default M1 Pool", virtual machine will be macOS Sonoma `14.5` or macOS Monterey `12.6`.
+- If you select "Appcircle Linux Pool (x86_64)", virtual machine will be Debian 11 Bullseye.
+- If you select "Appcircle Standard macOS Pool (arm64)", virtual machine will be macOS Sonoma `14.5` or macOS Monterey `12.6`.
 
 :::info
 
-If you select M1 Pool, you can not choose macOS version. It will be automatically selected by Appcircle.
+If you select Appcircle Standard macOS Pool (arm64), you can not choose macOS version. It will be automatically selected by Appcircle.
 
 The chance is equal for both macOS Sonoma and macOS Monterey for your android build because it does not effect your build.
 
@@ -38,7 +38,7 @@ Build agents have Java 8, 11, 17 and 21 installed. Java 11 is set as the default
 
 If you want to use a different Java version, please follow [this document](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) for how to do that.
 
-When you select "Default Intel Pool" for Android builds, the following JDK locations are available within the environment variables:
+When you select "Appcircle Linux Pool (x86_64)" for Android builds, the following JDK locations are available within the environment variables:
 
 - **JAVA_HOME_8_X64**: `/usr/local/openjdk-8`
 - **JAVA_HOME_11_X64**: `/root/.sdkman/candidates/java/11.0.12-open`
@@ -48,12 +48,12 @@ When you select "Default Intel Pool" for Android builds, the following JDK locat
 :::caution
 We're deprecating Intel-based runners and transitioning our customers to Apple silicon (M1)-based build machines.
 
-Currently, JDK 17 and 21 are not pre-installed on the "Default Intel Pool", and Intel-based runners are not actively maintained.
+Currently, JDK 17 and 21 are not pre-installed on the "Appcircle Linux Pool (x86_64)", and Intel-based runners are not actively maintained.
 
-If your app does not specifically require an Intel-based build machine, we suggest you use "Default M1 Pool", since it has much more build capacity and the latest updates.
+If your app does not specifically require an Intel-based build machine, we suggest you use "Appcircle Standard macOS Pool (arm64)", since it has much more build capacity and the latest updates.
 :::
 
-When you select "Default M1 Pool" for Android builds, the following JDK locations are available within the environment variables:
+When you select "Appcircle Standard macOS Pool (arm64)" for Android builds, the following JDK locations are available within the environment variables:
 
 - **JAVA_HOME_8_X64**: `/Users/appcircle/.sdkman/candidates/java/8.0.392-zulu`
 - **JAVA_HOME_11_X64**: `/Users/appcircle/.sdkman/candidates/java/11.0.21-zulu`
@@ -96,7 +96,7 @@ Based on: Android 11.0 (R)
 ```
 
 :::caution
-If you're using UI tests with emulators, you must select an Intel device (**Default Intel Pool**) since M1 virtual machines (**Default M1 Pool**) don't support nested virtualization.
+If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M1 virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization.
 :::
 
 ## Android Build Agent Stacks
