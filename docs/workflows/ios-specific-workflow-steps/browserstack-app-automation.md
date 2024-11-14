@@ -33,9 +33,11 @@ The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2587-bsInput.png' />
 
-:::danger
+:::danger Sensitive Variables
 
-Do not specify the **Access Key** directly in a hard coded format in steps. Please use [**Environment Variables**](https://docs.appcircle.io/environment-variables/) when using potentially *sensitive variables* like this.
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
 :::
 

@@ -35,9 +35,11 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_2.png'/>
 
-:::caution
+:::danger Sensitive Variables
 
-Enter confidential information as [**secret environment variable**](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) and ensure the appropriate [**environment variable group**](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](https://docs.appcircle.io/build/build-profile-configuration/).
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
 :::
 

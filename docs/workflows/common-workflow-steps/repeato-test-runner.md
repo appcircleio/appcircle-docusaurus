@@ -38,9 +38,11 @@ Specific input variables are required for the **Repeato Test Runner** to functio
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-repeato_2.png'/>
 
-:::danger
+:::danger Sensitive Variables
 
-Confidential information must be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Additionally, ensure that the appropriate [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
 :::
 

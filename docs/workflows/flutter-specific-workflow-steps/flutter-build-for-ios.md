@@ -20,7 +20,9 @@ Before running the **Flutter Build for iOS** step, you must complete certain pre
 | [**Flutter Install**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-install) | This step will install the Flutter SDK. If a version is not specified, it will install the latest **stable** version. The **Flutter SDK** package must be installed on the system. For this reason, make sure that **Flutter Build for iOS** is used after the **Flutter Install**. |
 
 :::caution
+
 Once you have compiled your app for Flutter iOS, the native environment will be built. For this reason, this step should be used before the [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) step.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterOrder1.png' />

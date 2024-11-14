@@ -28,6 +28,14 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-browserstack-app-automate-espresso_2.png'/>
 
+:::danger Sensitive Variables
+
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+
+:::
+
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|
 | `$AC_BROWSERSTACK_USERNAME`   | Specifies the username of the BrowserStack account. Refer to [BrowserStack - Authenticate Test Runs](https://www.browserstack.com/docs/automate/cypress/authentication) for more details. | Required |

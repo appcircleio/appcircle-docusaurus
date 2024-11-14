@@ -49,11 +49,11 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonInput.png' />
 
-:::danger
+:::danger Sensitive Variables
 
-**Avoid hard-coding sensitive variables, such as tokens or API keys, directly into the parameters of the step.**
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
-We recommend using [**Environment Variables**](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
 :::
 

@@ -36,11 +36,11 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeInput.png' />
 
-:::danger
+:::danger Sensitive Variables
 
-**Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
-We recommend using [Environment Variables](/environment-variables/) groups for such sensitive variables.
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
 :::
 
