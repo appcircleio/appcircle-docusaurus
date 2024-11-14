@@ -79,6 +79,10 @@ const YamlGenerator = () => {
   const [appcircleMainDomain, setAppcircleMainDomain] = useState(
     "appcircle.spacetech.com"
   );
+  const [initialUserEmail, setInitialUserEmail] = useState("admin@example.com");
+  const [initialUserPassword, setInitialUserPassword] = useState(
+    "superSecretAppcirclePassword1234"
+  );
   const [yamlContent, setYamlContent] = useState("");
 
   const handleGenerate = () => {
@@ -137,12 +141,12 @@ auth:
       repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak
     admin:
       username: admin
-      password: ${keycloakAdminPassword}
-    initialUsername: "admin@spacetech.com"
-    initialPassword: "superSecretAppcirclePassword"
+      password: '${keycloakAdminPassword}'
+    initialUsername: '${initialUserEmail}'
+    initialPassword: '${initialUserPassword}'
   auth-postgresql:
     auth:
-      password: ${postgresPassword}
+      password: '${postgresPassword}'
 minio:
   image:
     repository: ${imageRepositoryPathWithRegistry}minio/minio
@@ -221,6 +225,28 @@ ${formattedStoreRsaPublicKey}`;
             className="input-field input-field-long"
             value={appcircleMainDomain}
             onChange={e => setAppcircleMainDomain(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          Appcircle Initial User Email:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={initialUserEmail}
+            onChange={e => setInitialUserEmail(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          Appcircle Initial User Password:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={initialUserPassword}
+            onChange={e => setInitialUserPassword(e.target.value)}
           />
         </label>
       </div>
