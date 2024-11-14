@@ -189,7 +189,7 @@ store:
 ${formattedStoreRsaPrivateKey}
     rsaPublicKey: |
 ${formattedStoreRsaPublicKey}
-${requiresAuth ? `dockerRegistrySecret: '${dockerRegistrySecret}'` : ""}`;
+${requiresAuth ? `containerRegistrySecret: '${dockerRegistrySecret}'` : ""}`;
 
     setYamlContent(yaml);
   };
