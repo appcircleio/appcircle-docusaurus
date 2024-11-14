@@ -83,6 +83,9 @@ const YamlGenerator = () => {
   const [initialUserPassword, setInitialUserPassword] = useState(
     "superSecretAppcirclePassword1234"
   );
+  const [requiresAuth, setRequiresAuth] = useState(true);
+  const [registryUsername, setRegistryUsername] = useState("_json_key");
+  const [registryPassword, setRegistryPassword] = useState("Content of the cred.json file");
   const [yamlContent, setYamlContent] = useState("");
 
   const handleGenerate = () => {
@@ -113,6 +116,14 @@ const YamlGenerator = () => {
       removeLastNewLine(rsaPublicKey),
       indent
     );
+
+    let dockerRegistrySecret = "";
+
+    if (requiresAuth) {
+      const authString = `${registryUsername}:${registryPassword}`;
+      const base64EncodedAuthString = btoa(authString);
+      dockerRegistrySecret = `{\"auths\":{\"${imageRegistry}\":{\"auth\": \"${base64EncodedAuthString}\"}}}`;
+    }
 
     const yaml = `global:
   appEnvironment: 'Production'
@@ -177,13 +188,47 @@ store:
     rsaPrivateKey: |
 ${formattedStoreRsaPrivateKey}
     rsaPublicKey: |
-${formattedStoreRsaPublicKey}`;
+${formattedStoreRsaPublicKey}
+${requiresAuth ? `dockerRegistrySecret: '${dockerRegistrySecret}'` : ""}`;
 
     setYamlContent(yaml);
   };
 
   return (
     <div className="container">
+      <div className="form-group">
+        <label>
+          Appcircle Main Domain:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={appcircleMainDomain}
+            onChange={e => setAppcircleMainDomain(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          Appcircle Initial User Email:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={initialUserEmail}
+            onChange={e => setInitialUserEmail(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          Appcircle Initial User Password:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={initialUserPassword}
+            onChange={e => setInitialUserPassword(e.target.value)}
+          />
+        </label>
+      </div>
       <div className="form-group">
         <label>
           Image Registry Host:
@@ -219,37 +264,41 @@ ${formattedStoreRsaPublicKey}`;
       </div>
       <div className="form-group">
         <label>
-          Appcircle Main Domain:
+          Image Registry Requires Auth:
           <input
-            type="text"
-            className="input-field input-field-long"
-            value={appcircleMainDomain}
-            onChange={e => setAppcircleMainDomain(e.target.value)}
+            type="checkbox"
+            className="input-checkbox"
+            checked={requiresAuth}
+            onChange={e => setRequiresAuth(e.target.checked)}
           />
         </label>
       </div>
-      <div className="form-group">
-        <label>
-          Appcircle Initial User Email:
-          <input
-            type="text"
-            className="input-field input-field-long"
-            value={initialUserEmail}
-            onChange={e => setInitialUserEmail(e.target.value)}
-          />
-        </label>
-      </div>
-      <div className="form-group">
-        <label>
-          Appcircle Initial User Password:
-          <input
-            type="text"
-            className="input-field input-field-long"
-            value={initialUserPassword}
-            onChange={e => setInitialUserPassword(e.target.value)}
-          />
-        </label>
-      </div>
+      {requiresAuth && (
+        <>
+          <div className="form-group">
+            <label>
+              Registry Username:
+              <input
+                type="text"
+                className="input-field input-field-long"
+                value={registryUsername}
+                onChange={e => setRegistryUsername(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className="form-group">
+            <label>
+              Registry Password:
+              <input
+                type="text"
+                className="input-field input-field-long"
+                value={registryPassword}
+                onChange={e => setRegistryPassword(e.target.value)}
+              />
+            </label>
+          </div>
+        </>
+      )}
       <div className="form-group">
         <button className="generate-btn" onClick={handleGenerate}>
           Generate YAML
