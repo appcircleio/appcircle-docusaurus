@@ -9,6 +9,10 @@ const toKebabCase = str => {
     .replace(/^-/, ""); // Remove leading hyphen if any
 };
 
+const removeLastNewLine = key => {
+  return key.replace(/\n$/, "");
+};
+
 // Helper function to generate RSA key pair
 const generateRsaKeyPair = () => {
   const { privateKey, publicKey } = forge.rsa.generateKeyPair(2048); // Generate 2048-bit RSA key pair
@@ -20,6 +24,14 @@ const generateRsaKeyPair = () => {
     rsaPrivateKey: privateKeyPem,
     rsaPublicKey: publicKeyPem,
   };
+};
+
+// Helper function to format RSA keys with indentation
+const formatKeyWithIndentation = (key, indent) => {
+  return key
+    .split("\n")
+    .map(line => `${indent}${line}`)
+    .join("\n");
 };
 
 const generateKeycloakClientsYaml = () => {
@@ -46,11 +58,14 @@ const generateKeycloakClientsYaml = () => {
   return clientYaml;
 };
 
-function generateRandomPassword() {
-  return (
-    Math.random().toString(36).slice(2) +
-    Math.random().toString(36).toUpperCase().slice(2)
-  );
+function generateRandomPassword(length) {
+  const chars =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return password;
 }
 
 const YamlGenerator = () => {
@@ -67,43 +82,53 @@ const YamlGenerator = () => {
     const imageRegistry = `${imageRegistryHost}`;
     const imageRepositoryPathWithRegistry = `${imageRegistry}/${imageRepositoryPath}/`;
 
-    const webeventredisPassword = generateRandomPassword();
+    const webeventredisPassword = generateRandomPassword(32);
+
+    const keycloakAdminPassword = generateRandomPassword(12);
+
 
     const { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
+
+    const indent = "      "; // Set the appropriate indentation
+    const formattedRsaPrivateKey = formatKeyWithIndentation(
+      removeLastNewLine(rsaPrivateKey),
+      indent
+    );
+    const formattedRsaPublicKey = formatKeyWithIndentation(
+      removeLastNewLine(rsaPublicKey),
+      indent
+    );
 
     const yaml = `
 global:
   imageRegistry: ${imageRegistry}
   imageRepositoryPath: ${imageRepositoryPath}
   imageTag: ${imageTag}
-
 auth:
   auth-keycloak:
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak:${imageTag}
-
+    admin:
+      username: admin
+      password: ${keycloakAdminPassword}
 minio:
   image:
     repository: ${imageRepositoryPathWithRegistry}minio/minio:${imageTag}
-
 vault:
   server:
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-vault:${imageTag}
-
 webeventredis:
   auth:
     password: '${webeventredisPassword}'
-
 keycloak:
   clients:${generateKeycloakClientsYaml()}
-
 distribution:
   distribution-testerapi:
     rsaPrivateKey: |
-      ${rsaPrivateKey}
+${formattedRsaPrivateKey}
     rsaPublicKey: |
-      ${rsaPublicKey}`;
+${formattedRsaPublicKey}`;
 
     setYamlContent(yaml);
   };
