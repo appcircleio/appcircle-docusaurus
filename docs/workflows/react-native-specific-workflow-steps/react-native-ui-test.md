@@ -22,7 +22,7 @@ The default Java version in Appcircle's build stacks is **Java 11**. If your pro
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **React Native UI Test** workflow step in both iOS and Android platforms, along with their respective reasons, are listed in the table below.
+Before running the **React Native UI Test** step, you must complete certain prerequisites, as detailed in the table below:
 
 #### For iOS
 
@@ -77,7 +77,7 @@ If any workflow steps fail, Appcircle automatically skips the next steps. Howeve
 
 ### Input Variables
 
-This step contains different variables. It needs these variables to work. The table below gives explanations of these variables.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/uiInputNew.png' />
 

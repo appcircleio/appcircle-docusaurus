@@ -14,7 +14,7 @@ With Appcircle, you can automate your build and signing processes with the flexi
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the Fastlane workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Fastlane** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -31,7 +31,7 @@ Fastlane needs project files to work. If there is no **Git Clone** step in your 
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-fastlaneInput.png' />
 

@@ -12,7 +12,7 @@ This component allows you to run [**Flutter Unit Tests**](https://docs.flutter.d
 
 ### Prerequisites
 
-Before running the **Flutter Test** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+Before running the **Flutter Test** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -41,7 +41,7 @@ You can find all the parameters required for this step in the table below, with 
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 	       | Description                         |
 |-------------------------------|------------------------------------------------|

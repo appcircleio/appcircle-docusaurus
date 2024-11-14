@@ -22,7 +22,7 @@ If you connect to your repository via SSH, use this step before the [**Git Clone
 
 ### Input Variables
 
-Below are the parameters required for this step, along with detailed explanations.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3151-sshInput.png' />
 
@@ -33,7 +33,7 @@ Below are the parameters required for this step, along with detailed explanation
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 
 | Variable Name                 | Description                                    |

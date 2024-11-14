@@ -36,7 +36,7 @@ Please remember. If you are using **manual sign**, you should definitely use thi
 
 ### Input Variables
 
-The parameters required for this step to work are listed in the table below. These parameters are defaults.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2786-cert_input.png' />
 
@@ -49,7 +49,7 @@ The parameters required for this step to work are listed in the table below. The
 
 ### Output Variables
 
-The output parameters after this step is executed are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2786-cert_output.png' />
 

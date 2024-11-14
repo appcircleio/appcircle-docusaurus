@@ -12,6 +12,10 @@ import Screenshot from '@site/src/components/Screenshot';
 
 You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
 
+### Prerequisites
+
+There are no prerequisites required before using the **Custom Script** step.
+
 :::tip
 
 Note that you can put the **Custom Script** component anywhere you want in the workflow. This step is used to add different capabilities to the existing workflow.
@@ -22,7 +26,7 @@ Note that you can put the **Custom Script** component anywhere you want in the w
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customInput.png' />
 

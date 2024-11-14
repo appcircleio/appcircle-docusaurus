@@ -14,7 +14,7 @@ The Appcircle **BrowserStack App Automate - Espresso** step allows you to run au
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **BrowserStack App Automate - Espresso** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **BrowserStack App Automate - Espresso** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -23,7 +23,8 @@ The workflow steps that need to be executed before running the **BrowserStack Ap
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-browserstack-app-automate-espresso_1.png'/>
 
 ### Input Variables
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **BrowserStack App Automate - Espresso** are as follows:
+
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-browserstack-app-automate-espresso_2.png'/>
 

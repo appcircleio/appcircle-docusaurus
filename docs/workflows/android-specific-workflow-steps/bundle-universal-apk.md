@@ -14,7 +14,7 @@ For additional details, please refer to the [**Bundletool**](https://developer.a
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Bundle Universal Apk** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Bundle Universal Apk** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                                         | Description                                                                                                                                                              |
 | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -31,7 +31,7 @@ If a step other than the **Android Build** or **Android Sign** step is used to b
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Bundle Universal Apk** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-bundle-universal-apk_2.png'/>
 
@@ -46,7 +46,7 @@ For each component, specific input variables are required for its operation on y
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name         | Description                      |
 | --------------------- | -------------------------------- |

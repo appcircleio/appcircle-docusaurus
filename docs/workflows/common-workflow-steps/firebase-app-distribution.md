@@ -25,7 +25,7 @@ For more details, please refer to the following links:
 
 ### Prerequisites
 
-Below are the workflow steps required before running the **Firebase App Distribution** step, listed with their reasons. Prerequisites vary by platform:
+Before running the **Firebase App Distribution** step, you must complete certain prerequisites, as detailed in the table below:
 
 #### For Android (Java / Kotlin and React Native) 
 
@@ -64,7 +64,7 @@ Below are the workflow steps required before running the **Firebase App Distribu
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for **Firebase App Distribution** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_5.png'/>
 

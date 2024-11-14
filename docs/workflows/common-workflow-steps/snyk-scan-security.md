@@ -14,7 +14,7 @@ The **Snyk Security Scan** step integrates directly into Appcircle’s CI/CD wor
 
 ### Prerequisites
 
-Before running the **Snyk Scan Security** step, certain prerequisites must be completed. These prerequisites, detailed in the table below:
+Before running the **Snyk Scan Security** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
@@ -24,7 +24,7 @@ Before running the **Snyk Scan Security** step, certain prerequisites must be co
 
 ### Input Variables
 
-Each component requires specific input variables for its operation. The input variables necessary for the **Snyk Scan Security** step are:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-snyk-scan-cloud-upload_2.png'/>
 
@@ -49,7 +49,7 @@ Enter confidential information as a [secret environment variable](/environment-v
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Output Variable                | Description                                                                                                              |
 |--------------------------------|--------------------------------------------------------------------------------------------------------------------------|

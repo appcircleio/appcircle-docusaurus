@@ -29,7 +29,7 @@ Please note that if you do not run **Xcodebuild for Unit and UI Tests** before t
 
 ### Input Variables
 
-The parameters required for the operation of this stepper are given below with explanations.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertInput.png' />
 
@@ -44,7 +44,7 @@ The parameters required for the operation of this stepper are given below with e
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                         | 
 |-------------------------------|-------------------------------------|

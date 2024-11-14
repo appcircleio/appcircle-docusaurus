@@ -29,7 +29,7 @@ In the build step, if there is no **Xcodebuild Build for Testing** step before *
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2587-bsInput.png' />
 

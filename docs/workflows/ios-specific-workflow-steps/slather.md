@@ -30,7 +30,7 @@ Before running the **Slather** step, you must complete certain prerequisites, as
 
 ## Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2830-slatherInput.png' />
 

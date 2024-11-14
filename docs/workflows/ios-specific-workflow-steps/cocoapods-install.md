@@ -12,7 +12,7 @@ Runs the [CocoaPods](https://cocoapods.org) install command for dependency manag
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Cocoapods Install** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Cocoapods Install** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                              |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -22,7 +22,7 @@ The workflow steps that need to be executed before running the **Cocoapods Insta
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_version.png' />
 

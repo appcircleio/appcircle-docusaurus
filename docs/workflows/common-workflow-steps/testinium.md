@@ -12,7 +12,7 @@ The **Testinium** step integrates the [Testinium](https://testinium.com/) testin
 
 ### Prerequisites
 
-Before running the **Testinium** step, certain prerequisites must be completed. These prerequisites, detailed in the table below, vary depending on the platform:
+Before running the **Testinium** step, you must complete certain prerequisites, as detailed in the table below:
 
 #### For Android (Java / Kotlin and React Native) 
 
@@ -51,7 +51,7 @@ Before running the **Testinium** step, certain prerequisites must be completed. 
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for **Testinium** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_5.png'/>
 
@@ -75,7 +75,7 @@ Confidential information should be entered as a [secret environment variable](/e
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_6.png'/>
 

@@ -34,7 +34,7 @@ The system automatically cleans unreachable and obsolete cache files periodicall
 
 ### Prerequisites
 
-Before running the **Cache Push** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+Before running the **Cache Push** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -57,7 +57,7 @@ The other important prerequisite for this component to work is that it must be u
 
 ### Input Variables
 
-The parameters required for the operation of this step are given in the list below with their descriptions.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushInput.png' />
 

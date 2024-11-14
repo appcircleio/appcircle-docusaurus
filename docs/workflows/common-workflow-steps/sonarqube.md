@@ -14,14 +14,15 @@ This step allows you to analyse your code quality with the [SonarQube CLI](https
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **SonarQube** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **SonarQube** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | If you intend to retrieve the **SonarQube Scanner** parameters from the `sonar-project.properties` file in your repository, it's essential to employ the **Git Clone** step before the **SonarQube** step. After the **Git Clone** step is completed, it generates the `AC_REPOSITORY_DIR` variable, which is used as input for the **SonarQube** step. |
 
 ### Input Variables
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarInput.png' />
 

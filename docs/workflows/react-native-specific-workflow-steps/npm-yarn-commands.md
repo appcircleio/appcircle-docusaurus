@@ -12,7 +12,7 @@ You may want to use the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmj
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **NPM/Yarn Commands** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **NPM/Yarn Commands** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -22,7 +22,7 @@ The workflow steps that need to be executed before running the **NPM/Yarn Comman
 
 ### Input Variables
 
-This step contains different variables. It needs these variables to work. The table below gives explanations of these variables.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2797-nmpDetails.png' />
 

@@ -12,7 +12,7 @@ With this step, you can send your `IPA` and `dSYM` files to the [App Center](htt
 
 ### Prerequisites
 
-- First, you need to use this step after the **Xcodebuild for Devices.** This is because the project is compiled and archived in the Xcodebuild for Devices step.
+Before running the **App Center iOS Distrubiton** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -28,7 +28,7 @@ Note that if you do not use this step after the [**Xcodebuild for Devices**](htt
 
 ### Input Variables
 
-- Inside the step, there will be some parameters that you need to configure according to your **App Center account**. You can find the list and detailed descriptions of all parameters of the step in the table below.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-centerInput.png' />
 

@@ -34,7 +34,7 @@ To create rich release notes, the Release Notes component should be included in 
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, along with detailed descriptions.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-input.png' />
 

@@ -20,7 +20,7 @@ Ensure that you select the **Intel Pool** in the Configuration tab, as the **Wai
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Wait for Android Emulator** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Wait for Android Emulator** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                                         | Description                                                                                                                                                                                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ If a step other than the **Android Build** or **Android Sign** step is used to b
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Wait for Android Emulator** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-wait-for-android-emulator_2.png'/>
 

@@ -14,7 +14,7 @@ The Appcircle Detekt step executes the Detekt Gradle task. For further details, 
 
 ### Prerequisites
 
-Below are the prerequisite workflow steps required before running the **Detekt** step, along with their reasons:
+Before running the **Detekt** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -24,7 +24,7 @@ Below are the prerequisite workflow steps required before running the **Detekt**
 
 ### Input Variables
 
-Each component requires specific input variables for its operation. The input variables necessary for the **Detekt** step are:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-detekt_2.png'/>
 

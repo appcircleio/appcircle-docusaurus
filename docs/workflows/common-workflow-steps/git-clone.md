@@ -12,7 +12,7 @@ The **Git Clone** step is used to fetch the source code repository from a Git pr
 
 ### Prerequisites
 
-Below is a list of workflow steps that must be completed before executing the **Git Clone** workflow step, along with their respective descriptions:
+Before running the **Git Clone** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -34,7 +34,7 @@ We recommend using this step at the beginning of the workflow to avoid any probl
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2794-gitDetails.png' />
 
@@ -56,6 +56,8 @@ After connecting the repository, the following [**Reserved Environment Variables
 | `$AC_GIT_EXTRA_PARAMS`        | If this variable is set, it sends additional parameters for Git requests. | Optional |
 
 ### Output Variables
+
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|

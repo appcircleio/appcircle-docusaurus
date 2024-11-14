@@ -12,7 +12,7 @@ The **Flutter Build for Web** step builds your web application using the [Flutte
 
 ### Prerequisites
 
-Before running the **​Flutter Build for Web** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+Before running the **​Flutter Build for Web** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -29,7 +29,7 @@ This step relies heavily on the **Flutter Install** step. If the Flutter SDK is 
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, along with detailed descriptions.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2855-flutterWebInput.png' />
 
@@ -40,7 +40,7 @@ You can find all the parameters required for this step in the table below, along
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name          | Description                         |
 |------------------------|-------------------------------------|

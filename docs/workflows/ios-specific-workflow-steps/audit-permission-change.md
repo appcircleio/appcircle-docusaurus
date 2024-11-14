@@ -32,7 +32,7 @@ The **Audit Permission Changes** component will automatically break the pipeline
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionInput.png' />
 

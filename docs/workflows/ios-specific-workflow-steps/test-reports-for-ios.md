@@ -22,7 +22,7 @@ For additional details, please refer to the document: [**Generating Test Report*
 
 ### Prerequisites
 
-Before executing the **Test Report** workflow step, certain prerequisite workflow steps must be completed:
+Before running the **Test Reports for iOS** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                   | Description                                                                   |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
@@ -31,7 +31,7 @@ Before executing the **Test Report** workflow step, certain prerequisite workflo
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. 
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 | Variable Name            | Description                                                      | Status    |
 | ------------------------ | ---------------------------------------------------------------- | --------- |
@@ -41,7 +41,7 @@ For each component, specific input variables are required for its operation on y
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name              | Description                                          |
 | -------------------------- | ---------------------------------------------------- |

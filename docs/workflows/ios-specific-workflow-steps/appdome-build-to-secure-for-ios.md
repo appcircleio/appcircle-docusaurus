@@ -16,7 +16,7 @@ https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integrat
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Appdome Build-2Secure for iOS** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Appdome Build-2Secure for iOS** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                                             | Description                                                                                                 |
 | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
@@ -32,7 +32,7 @@ If a step other than the **Xcodebuild for Devices** step is used to build or sig
 
 ### Input Variables
 
-This stepper needs the necessary parameters to operate. You can find all parameters and their detailed descriptions in the table below.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeInput.png' />
 
@@ -58,7 +58,7 @@ We recommend using [Environment Variables](/environment-variables/) groups for s
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 :::caution
 

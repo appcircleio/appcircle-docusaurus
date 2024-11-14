@@ -17,7 +17,8 @@ This step follows the [**Android Build**](https://docs.appcircle.io/workflows/an
 :::
 
 ### Prerequisites
-The workflow steps that need to be executed before running the **Android Build** workflow step, along with their respective reasons, are listed in the table below.
+
+Before running the **Android Sign** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -39,7 +40,8 @@ To share the signed apps created as an output of this step or to view them on th
 :::
 
 ### Input Variables
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Android Sign** are as follows:
+
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_1.png' alt="image1" />
 
@@ -54,7 +56,8 @@ For each component, specific input variables are required for its operation on y
 | `$AC_V2_SIGN` | Defaults to false. Set true if the signature should be done using apksigner instead of jarsigner. For more information, [Apps targeting Android 11 require APK Signature Scheme v2](https://developer.android.com/about/versions/11/behavior-changes-11#minimum-signature-scheme). | Optional |
 
 ### Output Variables
-The outputs that can result from the operation of this component are listed as follows.
+
+The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_2.png' alt="image2" />
 

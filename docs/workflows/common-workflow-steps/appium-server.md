@@ -15,11 +15,7 @@ You can easily integrate the **Appium CLI** into your pipeline using Appcircle's
 
 ### Prerequisites
 
-:::info
-
-This step does not require any specific components to function. You can place it anywhere within your pipeline according to your workflow needs.
-
-:::
+There are no prerequisites required before using the **Appium Server** step. You can place it anywhere within your pipeline according to your workflow needs.
 
 ### Input Variables
 

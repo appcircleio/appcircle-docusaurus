@@ -28,6 +28,8 @@ These variables can be adjusted within the [cache label](#input-variables) field
 
 ### Prerequisites
 
+There are no prerequisites required before using the **Cache Pull** step.
+
 :::caution
 
 This component does not require any prerequisite steps for operation. The only thing necessary for the component to work as expected is to utilize the cached files before the step in which they will be used. Additionally, an important prerequisite for this step to function properly is that the files to be used must have been cached in previous builds. 
@@ -46,7 +48,7 @@ If there are no previously cached files and you attempt to use this step, the **
 
 ### Input Variables
 
-The parameters required for the operation of this step are given in the list below with their descriptions.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pullInput.png' />
 

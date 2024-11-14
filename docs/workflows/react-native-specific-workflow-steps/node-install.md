@@ -28,7 +28,7 @@ Please note that this step should be used before steps that need the **npm/yarn 
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2796-nodeDetails.png' />
 

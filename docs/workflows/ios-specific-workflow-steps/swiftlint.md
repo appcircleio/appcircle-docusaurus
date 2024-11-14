@@ -11,7 +11,7 @@ SwiftLint checks the source code for programmatic as well as stylistic errors. T
 
 ### Prerequisites
 
-Remember, SwiftLint must be used after the following steps in order to work as expected.
+Before running the **SwiftLint** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -36,7 +36,7 @@ If you have SPM in your project and you are using the SwiftLint component in you
 
 ### Input Variables
 
-You can also customize your SwiftLint step with the options in the component. You can find all the detailed descriptions for all variables in the table below.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2613-lintInput.png' />
 
@@ -52,7 +52,7 @@ You can also customize your SwiftLint step with the options in the component. Yo
 
 ### Output Variables
 
-The output parameters after this step is executed are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|

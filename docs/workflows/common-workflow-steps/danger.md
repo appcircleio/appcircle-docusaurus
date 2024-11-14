@@ -25,7 +25,7 @@ This tool does not support AzureDevOps. Therefore, if your repository is hosted 
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Danger** step vary depending on the platform and are listed below:
+Before running the **Danger** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -41,7 +41,7 @@ Note that this component synchronizes with the [**Appcircle Triggers**](/build/b
 
 ### Input Variables
 
-Below is a list of input variables that can be used with this component with a description of each.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3062-dangerInput.png' />
 

@@ -12,7 +12,7 @@ This step allows to upload your debug symbols to [**Firebase Crashlytics**](http
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Firebase Upload dSYM** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Firebase Upload dSYM** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -28,7 +28,7 @@ If this step is not used after **Xcodebuild for Devices**, the pipeline will giv
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsymInput.png' />
 

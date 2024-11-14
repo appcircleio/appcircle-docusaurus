@@ -14,7 +14,7 @@ You can seamlessly integrate Tuist Commands into your workflow with Appcircle, m
 
 ### Prerequisites
 
-Before you run the **Tuist Commands** step, you must complete certain prerequisites, as detailed in the table below:
+Before running the **Tuist Commands** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                              | Description                                                                                                                                                                    |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -35,7 +35,7 @@ For more information about Tuist CLI Commands, please visit the [**Tuist CLI**](
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4430New-tuistCommandInput.png' />
 

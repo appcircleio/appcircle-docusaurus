@@ -13,7 +13,9 @@ Appcircle's FTP Upload (File Transfer Protocol) integration lets you easily uplo
 
 ### Prerequisites
 
-:::info
+There are no prerequisites required before using the **FTP Upload** step.
+
+:::caution
 
 This step has no prerequisites but must follow the artifact production step. For example, as the screenshot below demonstrates, use it right after the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) step. This setup ensures the IPA file produced in the pipeline is sent to any **FTP server**.
 
@@ -31,7 +33,7 @@ Note that to send a file to an **FTP server**, the file must be generated within
 
 ### Input Variables
 
-Below is a list of input variables that can be used with this component, with a description of each.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3153-ftpInput.png' />
 

@@ -15,10 +15,12 @@ The **Marathon Cloud** component is an integrated test automation workflow step 
 
 ### Prerequisites
 
-This component needs some prerequisites for proper operation; the necessary steps are given in the table below with details.
+Before running the **Marathon Cloud** step, you must complete certain prerequisites, as detailed in the table below:
 
 :::caution
+
 Please note that this component works separately on both the native **Android** and **iOS** platforms. The requirements for both platforms are different.
+
 :::
 
 | Prerequisite Workflow Step                      | Description                                     |
@@ -43,7 +45,7 @@ Please note that if you do not change this parameter, the Marathon Cloud compone
 
 ### Input Variables
 
-The parameters required for the operation of this component are given below with explanations. 
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonInput.png' />
 

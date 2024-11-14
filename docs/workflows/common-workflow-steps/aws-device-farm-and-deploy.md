@@ -18,7 +18,7 @@ The full details of the tests are accessible in the [AWS Device Farm console](ht
 
 ### Prerequisites
 
-This component works separately for iOS and Android. It depends on different steps for both platforms.
+Before running the **AWS Device Farm and Deploy** step, you must complete certain prerequisites, as detailed in the table below:
 
 :::caution
 
@@ -41,7 +41,7 @@ Pay attention to the dependent step on whichever platform you are working on.
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-awsInput.png' />
 

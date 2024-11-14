@@ -14,7 +14,7 @@ Please check out this document for more information: [Running Android Unit Tests
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Android Unit Tests** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Android Unit Tests** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -23,14 +23,16 @@ The workflow steps that need to be executed before running the **Android Unit Te
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_1.png'/>
 
 :::danger
+
 If you wish to view the test results on Appcircle's Test Reports page, it is essential to use the [Test Reports](https://github.com/appcircleio/appcircle-test-report-component) step after the **Android Unit Tests**. Please check out this document for more information: [Generating Test Report](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_2.png'/>
+
 :::
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Android Unit Tests** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_3.png' alt="image2" />
 
@@ -43,7 +45,7 @@ For each component, specific input variables are required for its operation on y
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name          | Description                                                    |
 | ---------------------- | -------------------------------------------------------------- |

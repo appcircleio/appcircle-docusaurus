@@ -21,7 +21,7 @@ For more information, refer to the Appcircle blog post about Danger:
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Azure DevOps Bot for Detekt Report** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Azure DevOps Bot for Detekt Report** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                       | Description                                      |
  |-------------------------------------------------|--------------------------------------------------|
@@ -30,7 +30,8 @@ The workflow steps that need to be executed before running the **Azure DevOps Bo
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_1.png'/>
 
 ### Input Variables
-For each step, specific input variables are required for its operation on your system. The input variables necessary for the **Azure DevOps Bot for Detekt Report** are as follows:
+
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_2.png'/>
 

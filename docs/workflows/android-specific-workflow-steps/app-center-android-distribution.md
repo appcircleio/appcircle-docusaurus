@@ -25,7 +25,7 @@ For more details, please refer to the following links:
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **App Center Android Distribute** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **App Center Android Distribute** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                                         | Description                                                                                                                                                              |
 | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -42,7 +42,7 @@ If a step other than the **Android Build** or **Android Sign** step is used to b
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for **App Center Android Distribute** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-app-center-android-distribution_2.png'/>
 

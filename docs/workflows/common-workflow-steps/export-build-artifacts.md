@@ -19,9 +19,11 @@ Sending applications to **Publish**, **Enterprise App Store**, or **Testing Dist
 
 ### Prerequisites
 
-:::info
+There are no prerequisites required before using the **Export Build Artifact** step.
 
-We recommend using it as the last step in your workflow.
+:::note
+
+We **recommend** using it as the **last** step in your workflow.
 
 :::
 
@@ -49,7 +51,7 @@ If you use the **Default Workflow** templates, the option "**Always run this ste
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportInput.png' />
 

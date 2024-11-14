@@ -14,7 +14,7 @@ For detailed information for continuous testing, please visit our [React Native 
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **React Native Unit Test** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **React Native Unit Test** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                                 | Description                                                                                                                                                                            |
 |--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -36,7 +36,7 @@ If any workflow steps fail, Appcircle automatically skips the next steps. Howeve
 
 ### Input Variables
 
-This step contains different variables. It needs these variables to work. The table below gives explanations of these variables.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/newUnitInput.png' />
 
@@ -54,7 +54,7 @@ To view the output artifacts on the [**Download Artifacts**](/workflows/common-w
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name         | Description                                                                                                     |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|

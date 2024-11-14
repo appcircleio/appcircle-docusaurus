@@ -12,7 +12,7 @@ The **Gradle Runner** workflow step executes the specified [Gradle task](https:/
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Gradle Runner** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Gradle Runner** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -22,7 +22,7 @@ The workflow steps that need to be executed before running the **Gradle Runner**
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Gradle Runner** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_2.png' />
 

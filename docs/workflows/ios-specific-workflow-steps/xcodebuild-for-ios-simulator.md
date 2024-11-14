@@ -12,7 +12,7 @@ This step builds your application for the iOS Simulator in x86_64 or arm64 archi
 
 ### Prerequisites
 
-Use this step after the **Xcode Select**  and **CocoaPods Install** (if you use **CocoaPods** in your project) steps.  
+Before running the **Xcodebuild for iOS Simulator** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -29,7 +29,7 @@ If you use SPM (Swift Package Manager), Xcode will manage itself when a project 
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2586-simInput.png' />
 
@@ -52,7 +52,7 @@ Be aware of which OS version you used; the simulator type should match that OS v
  
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|

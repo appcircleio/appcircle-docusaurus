@@ -16,7 +16,7 @@ By adding Appcircle's [**Jira Comment**](https://github.com/appcircleio/appcircl
 
 ## Prerequisites
 
-There is no mandatory sequence for the use of this component. It depends on your business decision which step to use before or after in your workflow.
+There are no prerequisites required before using the **Jira Comment** step.
 
 :::caution
 
@@ -66,7 +66,7 @@ If you're utilizing [API version 2](https://developer.atlassian.com/cloud/jira/p
 
 ## Input Variables
 
-There are some necessary parameters for this stepper to work properly. These parameters are given in the table below with their descriptions.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3199-jiraInput.png' />
 

@@ -14,7 +14,7 @@ The Appcircle **Maestro Cloud Upload** step enables users to upload their mobile
 
 ## Prerequisites
 
-Before running the **Maestro Cloud Upload** step, certain prerequisites must be completed. These prerequisites, detailed in the table below, vary depending on the platform:
+Before running the **Maestro Cloud Upload** step, you must complete certain prerequisites, as detailed in the table below:
 
 ### For All Platforms
 
@@ -59,7 +59,7 @@ Before running the **Maestro Cloud Upload** step, certain prerequisites must be 
 
 ## Input Variables
 
-The **Maestro Cloud Upload** step requires specific input variables:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_5.png'/>
 

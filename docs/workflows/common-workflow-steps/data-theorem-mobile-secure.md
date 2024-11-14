@@ -12,7 +12,7 @@ The **Data Theorem Mobile Secure** step integrates the [Data Theorem Mobile Secu
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Data Theorem Mobile Secure** step vary depending on the platform and are listed below:
+Before running the **Data Theorem Mobile Secure** step, you must complete certain prerequisites, as detailed in the table below:
 
 #### For Android (Java / Kotlin and React Native) 
 
@@ -51,7 +51,7 @@ The workflow steps that need to be executed before running the **Data Theorem Mo
 
 ### Input Variables
 
-Specific input variables are required for the operation of each component in your system. The following are the input variables necessary for the **Data Theorem Mobile Secure** step:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_5.png'/>
 

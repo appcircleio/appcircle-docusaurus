@@ -14,7 +14,7 @@ Rendering the dependency tree is particularly useful if you’d like to identify
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Android Dependency Report** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Android Dependency Report** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                                                      |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -24,7 +24,7 @@ The workflow steps that need to be executed before running the **Android Depende
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Android Dependency Report** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_2.png' alt="image2" />
 
@@ -37,7 +37,7 @@ For each component, specific input variables are required for its operation on y
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                        | Description                                                            |
 | ------------------------------------ | ---------------------------------------------------------------------- |
@@ -50,6 +50,8 @@ If you wish to review or download the Android Dependencies Report, you can find 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_3.png'/>
 
 :::
+
+---
 
 To access the source code of this component, please use the following link:
 

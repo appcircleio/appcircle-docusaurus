@@ -18,7 +18,7 @@ This step is the archive and export step. When the step is completed, the `.ipa`
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running this step, along with their respective reasons, are listed in the table below.
+Before running the **Xcodebuild for Devices** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Require Workflow Step                                                                                      | Description                                                                                                                                                                         |
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,7 +35,7 @@ This step should always follow steps that may affect Archive and Export, such as
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildInput.png' />
 
@@ -61,7 +61,7 @@ You can find all the parameters required for this step in the table below, with 
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name               | Description                                               |
 | --------------------------- | --------------------------------------------------------- |

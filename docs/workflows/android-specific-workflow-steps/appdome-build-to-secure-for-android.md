@@ -16,7 +16,7 @@ https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integrat
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Appdome Build-2Secure for Android** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Appdome Build-2Secure for Android** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                                         | Description                                                                                                                                                              |
 | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -33,7 +33,7 @@ If a step other than the **Android Build** or **Android Sign** step is used to b
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for **Appdome Build-2Secure for Android** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_2.png'/>
 
@@ -57,7 +57,7 @@ Confidential information should be entered as a [secret environment variable](ht
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_3.png'/>
 

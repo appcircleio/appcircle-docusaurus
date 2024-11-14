@@ -12,7 +12,7 @@ The `.netrc` file contains login and initialization information used by the auto
 
 ### Prerequisites
 
-There is no mandatory step before the **Authenticate with Netrc** step.
+There are no prerequisites required before using the **Authenticate with Netrc** step.
 
 :::danger
 
@@ -24,7 +24,7 @@ Please note that you should use this step before your **Git Clone** step. If you
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2792-net_inputs.png' />
 

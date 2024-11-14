@@ -14,7 +14,8 @@ import Screenshot from '@site/src/components/Screenshot';
 
 ### Prerequisites
 
-Appcircle will look for a [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md) file in your repository and use it to install the dependencies. For this reason, **it should be used after the Git Clone step**.
+Before running the **Carthage** step, you must complete certain prerequisites, as detailed in the table below:
+
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -22,9 +23,15 @@ Appcircle will look for a [`Cartfile`](https://github.com/Carthage/Carthage/blob
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2828-cartOrder.png' />
 
+:::caution
+
+Appcircle will look for a [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md) file in your repository and use it to install the dependencies. For this reason, **it should be used after the Git Clone step**.
+
+:::
+
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2828-cartInput.png' />
 

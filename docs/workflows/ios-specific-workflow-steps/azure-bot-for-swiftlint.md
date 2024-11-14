@@ -30,7 +30,7 @@ For this component to work, a PR must be opened, and a trigger must be set up ba
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Swiftlint** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Azure Bot for Swiftlint** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -40,7 +40,7 @@ The workflow steps that need to be executed before running the **Swiftlint** wor
 
 ### Input Variables
 
-This component needs some parameters to operate. You can find the required parameters and their detailed descriptions in the list below.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotInput.png' />
 

@@ -12,7 +12,7 @@ This step builds your application and generates an IPA for testing so that it ca
 
 ### Prerequisites
 
-In order for this step to work correctly, it must be used after the two steps listed below.
+Before running the **Xcodebuild for Testing** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -29,7 +29,7 @@ If you use SPM (Swift Package Manager), Xcode will manage itself when a project 
 
 ### Input Variables
 
-You can find the parameters required for this step to work and detailed explanations in the list below.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2827-testingInputs.png' />
 
@@ -45,7 +45,7 @@ You can find the parameters required for this step to work and detailed explanat
 
 ### Output Variables
 
-This component outputs some important parameters after running.
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|

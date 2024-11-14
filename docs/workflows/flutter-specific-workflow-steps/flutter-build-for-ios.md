@@ -12,7 +12,7 @@ This step makes your Flutter project suitable for the iOS environment and builds
 
 ### Prerequisites
 
-Before running the **Flutter Build for iOS** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+Before running the **Flutter Build for iOS** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -26,12 +26,14 @@ Once you have compiled your app for Flutter iOS, the native environment will be 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterOrder1.png' />
 
 :::danger
+
 **Keep in mind** that this step is dependent on the Flutter Install step. If Flutter is not installed on the system, it will give a Flutter SDK not found error.
+
 :::
 
 ### Input Variables
 
-The parameters required for this step to work are given in the table below with explanations.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterInput.png' />
 

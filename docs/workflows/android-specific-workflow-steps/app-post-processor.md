@@ -10,10 +10,13 @@ import Screenshot from '@site/src/components/Screenshot';
 This step performs the necessary system operations to identify and process the Android output binary files.
 
 :::warning
+
 This step also verifies whether the app is signed or not. If this step is not included in your Workflow or if it is determined that there is no signed app as a result of this step, __the app cannot be distributed__.
+
 :::
 
 ### Prerequisites
+
 The workflow steps that need to be executed before running the **Android App Post-Processor** workflow step, along with their respective reasons, are listed in the table below.
 
 | Prerequisite Workflow Step                      | Description                                     |
@@ -31,10 +34,12 @@ If a step other than the **Android Build** or **Android Sign** step is used to b
 :::
 
 ### Input Variables
+
 There is no need to enter an input for this component. It will process Android files under the output directory (`$AC_OUTPUT_DIR`).
 
 ### Output Variables
-The outputs that can result from the operation of this component are listed as follows:
+
+The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_2.png' alt="image2" />
 

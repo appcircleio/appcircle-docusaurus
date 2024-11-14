@@ -11,7 +11,9 @@ import Screenshot from '@site/src/components/Screenshot';
 This workflow step installs the specified [**Flutter SDK**](https://docs.flutter.dev/get-started/install) to run the [**Flutter CLI**](https://docs.flutter.dev/reference/flutter-cli) for subsequent analysis, build, and test operations. The Flutter version can be specified in [Configuration](https://docs.appcircle.io/build/building-flutter-applications/#build-configuration-for-flutter-applications).
 
 :::info
+
 All Flutter versions and detailed information can be found in the [Flutter repository](https://github.com/flutter/flutter).
+
 :::
 
 ### Prerequisites
@@ -40,7 +42,7 @@ The steps specified in the table are steps dependent on the **Flutter Install** 
 
 
 ### Input Variables
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2851-installInput.png' />
 
@@ -56,7 +58,7 @@ If no specific version is specified, this step will automatically install the la
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|

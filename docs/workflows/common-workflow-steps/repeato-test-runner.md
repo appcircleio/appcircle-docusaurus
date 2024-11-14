@@ -18,7 +18,7 @@ https://appcircle.io/blog/streamline-project-integration-and-test-automation-wit
 
 ### Prerequisites
 
-Before executing the **Repeato Test Runner** workflow step, certain prerequisite workflow steps must be completed:
+Before running the **Repeato Test Runner** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                   | Description                                                                                                                                                                                                                  |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,7 +54,7 @@ Confidential information must be entered as a [secret environment variable](/env
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name              | Description                                              |
 | -------------------------- | -------------------------------------------------------- |

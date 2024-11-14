@@ -18,7 +18,7 @@ This step does not generate **IPA**, it only runs tests within the project.
 
 ### Prerequisites
 
-Before you run the **Xcodebuild for Unit and UI Testing** step, you must complete certain prerequisites, as detailed in the table below:
+Before running the **Xcodebuild for Unit and UI Testing** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                                | Description                                     |
 |-------------------------------------------------------------------------------------------|-------------------------------------------------|
@@ -38,7 +38,7 @@ If any tests fail during this step, an error will be automatically reported, whi
 
 ### Input Variables
 
-Below are the parameters required for this step, along with detailed explanations.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitInput.png' />
 
@@ -68,6 +68,15 @@ To view the output artifacts on the [**Download Artifacts**](/workflows/common-w
 :::
 
 ### Output Variables
+
+The output(s) resulting from the operation of this component are as follows:
+
 | Variable Name                 | Description                                                                                              |
 |-------------------------------|----------------------------------------------------------------------------------------------------------|
 | `AC_TEST_RESULT_PATH`        | The output path for the `.xcresult` file. This environment variable can be utilized in subsequent steps. |
+
+---
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcircle-ios-test-component

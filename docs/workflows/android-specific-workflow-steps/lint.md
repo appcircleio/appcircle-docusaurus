@@ -14,7 +14,7 @@ This step is used to run Lint Gradle tasks in your project via Appcircle.
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Android Lint** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Android Lint** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                                                   |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -30,7 +30,7 @@ Please ensure that you insert the **Android Lint** step before using the **Andro
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Android Lint** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_2.png' alt="image2" />
 
@@ -53,7 +53,7 @@ If you have filled in the required variables in the **Configuration** section, y
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_4.png' alt="image2" />
 

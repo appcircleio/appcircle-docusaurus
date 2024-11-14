@@ -54,7 +54,7 @@ Before running the **Fortify on Demand Mobile Assessment** step, you must comple
 
 ### Input Variables
 
-Below is a list of input variables that can be used with this component, along with a description of each.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3152-fodInput.png' />
 
@@ -79,7 +79,6 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$AC_FOD_FILE_PATH`           | Full path of the `IPA` or `APK` file.                                                                     | Required |
 
 ---
-
 
 To access the source code of this component, please use the following link:
 

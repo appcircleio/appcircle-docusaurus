@@ -12,7 +12,7 @@ The **Flutter Build for Android** step automates the generation of Android APK (
 
 ### Prerequisites
 
-Before running the **Flutter Build for Android** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+Before running the **Flutter Build for Android** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
@@ -22,7 +22,7 @@ Before running the **Flutter Build for Android** step, certain prerequisites mus
 
 ### Input Variables
 
-Each component requires specific input variables for its operation. The input variables necessary for the **Flutter Build for Android** step are:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_2.png'/>
 
@@ -43,7 +43,7 @@ If the required variables are already defined in the **Configuration** section, 
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Output Variable           | Description                     |
 |---------------------------|---------------------------------|

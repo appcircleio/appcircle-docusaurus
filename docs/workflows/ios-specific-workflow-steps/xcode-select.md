@@ -12,12 +12,18 @@ This step is used to specify the Xcode version to be used during the build proce
 
 ### Prerequisites
 
+There are no prerequisites required before using the **Xcode Select** step.
+
 :::danger
+
 Always use this step **before** [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#cocoapods-install) and [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-devices-archive--export). If you have other **Xcode related** steps, such as [**Xcodebuild for iOS Simulators**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-ios-simulator) and [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-unit-and-ui-tests), **don't forget** to use before them.
+
 :::
 
 :::caution
+
 Please **don't forget** to select the **Xcode version** from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration) first.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcodeOrder.png' />
@@ -49,7 +55,7 @@ You can review the documentation for detailed information about the Xcode versio
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 | Variable Name        | Description                                                                                                                                           | Status   |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

@@ -12,7 +12,7 @@ The Appcircle Android Build step is designed to build your Android application f
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Android Build** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Android Build** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                                                                                                                  |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -22,7 +22,7 @@ The workflow steps that need to be executed before running the **Android Build**
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Android Build** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_2.png' alt="image2" />
 
@@ -55,7 +55,7 @@ If you are using Gradle 4.3 and above in your project, you can just use the `--s
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name  | Description                                                                                                                  |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------- |

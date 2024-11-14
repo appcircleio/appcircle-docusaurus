@@ -12,7 +12,7 @@ This component runs the `flutter analyze` command in your Flutter project. Pleas
 
 ### Prerequisites
 
-Before running the **Flutter Analyze** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+Before running the **Flutter Analyze** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -27,7 +27,7 @@ This step is particularly dependent on the Flutter Install step. If the Flutter 
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2852-flutterAnalyzeInput.png' />
 
