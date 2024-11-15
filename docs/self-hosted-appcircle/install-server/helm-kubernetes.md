@@ -12,40 +12,64 @@ import YamlGenerator from '@site/src/components/YamlGenerator';
 To install a cloud-native version of Appcircle, use the Appcircle Helm chart. This chart contains all the required components to get started and can scale to large deployments.
 
 :::caution
-The default Helm chart configuration is not intended for production. The default values create an implementation where all Appcircle services are deployed in the cluster, which is not suitable for production workloads. 
+The default Helm chart configuration is not intended for production. The default values create an implementation where all Appcircle services are deployed in the cluster, which is not suitable for production workloads.
 :::
 
 For a production deployment, you should have strong working knowledge of Kubernetes. This method of deployment has different management, observability, and concepts than traditional deployments.
 
 ## Prerequisites
 
+### Kubernetes Cluster
+
+To install the Appcircle server using Helm, a Kubernetes cluster with nodes based on the `x86_64` architecture is required. The cluster must meet the following hardware specifications:
+
+**Minimum hardware requirements for an enterprise installation:**
+
+- 500 GB SSD
+- 8 CPUs
+- 16 GB RAM
+
+**Recommended hardware requirements for production environments:**
+
+- 1 TB SSD
+- 32 CPUs
+- 64 GB RAM
+
 ### kubectl
-Install `kubectl` by following [the Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/#kubectl). The version you install must be within one minor release of the version running in your cluster.
+
+Install `kubectl` by following the instructions provided in [the Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/#kubectl). Ensure that the installed version is within one minor release of the version running on your cluster.
 
 ### Helm
-Install Helm v3.10.3 or later by following the Helm documentation.
+
+Install Helm version 3.11.0 or later by following the instructions in [the Helm documentation](https://helm.sh/docs/intro/install/).
 
 ### PostgreSQL
-By default, the Appcircle chart includes an in-cluster PostgreSQL deployment that is provided by `bitnami/PostgreSQL`. This deployment is for trial purposes only and not recommended for use in production.
 
-You should set up an external, production-ready PostgreSQL instance. Recommended default version is PostgreSQL 16.
+The Appcircle chart, by default, includes an in-cluster PostgreSQL deployment provided by `bitnami/PostgreSQL`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
+
+For a production-ready setup, it is essential to configure an external PostgreSQL instance. The recommended version is PostgreSQL 16.
+
+If you are deploying the Appcircle server for testing purposes, you may use the built-in PostgreSQL deployment.
 
 ### MongoDB
-By default, the Appcircle chart includes an in-cluster MongoDB deployment that is provided by `bitnami/mongodb`. This deployment is for trial purposes only and not recommended for use in production.
 
-You should set up an external, production-ready MongoDB instance. Recommended default version is MongoDB `7.0`.
+Similarly, the Appcircle chart includes an in-cluster MongoDB deployment provided by `bitnami/mongodb` by default. This is designed for trial use and is not suitable for production workloads.
 
-### Create Values Yaml
+To ensure optimal performance and reliability in a production environment, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB 7.0.
 
-You can create a `values.yaml` file for helm by entering your settings, which are usually configured by everyone
+If you are deploying the Appcircle server for testing purposes, the built-in MongoDB deployment can be used.
+
+### Create Values YAML
+
+To configure Helm, you can create a `global.yaml` file by specifying your desired settings, which are commonly used across all deployments.
 
 <YamlGenerator />
 
-Click the `Generate YAML` button to generate some ready to use configuration file. Copy content of the yaml output and save it as a file named  `global.yaml` or anything you wish.
+Click the `Generate YAML` button to create a ready-to-use configuration file. Once the YAML is generated, copy the content and save it as a file named `global.yaml`.
 
-## Deploy using Helm
+## Deploy Using Helm
 
-Once you have all of your configuration options collected, we can get any dependencies and run Helm. In this example, we’ve named our Helm release `appcircle` and we will install the Appcircle server into the `appcircle-ns` namespace.
+Once you have gathered all the necessary configuration options, you can proceed with installing Helm dependencies and deploying the application. In this example, we will use the Helm release name `appcircle` and install the Appcircle server into the `appcircle-ns` namespace.
 
 ```bash
 helm repo add appcircle https://charts.appcircle.io/ && \
@@ -56,6 +80,6 @@ helm upgrade --install appcircle appcircle/appcircle \
   -f global.yaml
 ```
 
-Please keep in mind that the release name should be maximum 16 or less character.
+Please note that the release name must be 16 characters or fewer.
 
-Installation time heavily depends on the network speed and process power of the Kubernetes nodes and usually takes 10-15 minutes. 
+The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take between 10 to 15 minutes.
