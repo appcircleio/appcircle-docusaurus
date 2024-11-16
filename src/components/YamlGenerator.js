@@ -124,11 +124,12 @@ const YamlGenerator = () => {
       dockerRegistrySecret = `{\"auths\":{\"${imageRegistry}\":{\"auth\": \"${base64EncodedAuthString}\"}}}`;
     }
 
+    // @TODO: all passwords are not included. Make a checklist.
     const yaml = `global:
   appEnvironment: 'Production'
   urls:
     domainName: .${appcircleMainDomain}
-    scheme: http
+    scheme: https
   mail:
     smtp:
       domain: 'smtp.example.com'
@@ -144,6 +145,7 @@ const YamlGenerator = () => {
   imageRepositoryPath: ${imageRepositoryPath}
   imageTag: ${imageTag}
   ingressClassName: "nginx"
+  ${requiresAuth ? `containerRegistrySecret: '${dockerRegistrySecret}'` : ""}
 auth:
   auth-keycloak:
     organizationName: spacetech
@@ -157,10 +159,6 @@ auth:
   auth-postgresql:
     auth:
       password: '${postgresPassword}'
-minio:
-  image:
-    repository: ${imageRepositoryPathWithRegistry}minio/minio
-vault:
   server:
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-vault
@@ -187,8 +185,7 @@ store:
     rsaPrivateKey: |
 ${formattedStoreRsaPrivateKey}
     rsaPublicKey: |
-${formattedStoreRsaPublicKey}
-${requiresAuth ? `containerRegistrySecret: '${dockerRegistrySecret}'` : ""}`;
+${formattedStoreRsaPublicKey}`;
 
     setYamlContent(yaml);
   };
