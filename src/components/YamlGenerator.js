@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid"; // Importing uuidv4 from the uuid library
 import forge from "node-forge"; // Importing node-forge for RSA key generation
 
 // Helper function to convert camelCase or PascalCase to kebab-case
@@ -53,7 +52,7 @@ const generateKeycloakClientsYaml = () => {
     clientYaml += `
       ${toKebabCase(client)}:
         id: ${toKebabCase(client)}
-        secret: ${uuidv4()}`;
+        secret: ${crypto.randomUUID()}`;
   });
   return clientYaml;
 };
