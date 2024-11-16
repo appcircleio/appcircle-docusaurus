@@ -237,12 +237,14 @@ global:
     key: |
       -----BEGIN RSA PRIVATE KEY-----
       MIIEpAIBAAKCAQEA4MtI/9wqs44tCtf6XgACSzNCxHfoajBRnic+OvCPXpacfFWw
+      ...
       wMu/IaqM2mIIvQLI90D/ea1JOUrR3m8HK/faGFVz1+I/3GgkoZnYIA==
       -----END RSA PRIVATE KEY-----
     caCert: |
       -----BEGIN CERTIFICATE-----
       MIIGOTCCBCGgAwIBAgIUU5MNim6S8RDvILFbqSEEFJvqkUkwDQYJKoZIhvcNAQEL
       JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
+      ...
       ZmukIMGOIYPWDhsuJA==
       -----END CERTIFICATE-----
 ```
