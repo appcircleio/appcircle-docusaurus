@@ -19,19 +19,40 @@ For a production deployment, you should have strong working knowledge of Kuberne
 
 ## Prerequisites
 
-### Kubernetes Cluster
+### Domain Name
+
+A domain name that you can create SSL/TLS certificate for a couple of subdomain under it. In this document, we will use `spacetech.com` as an example domain and `spacetech` as an organization name. 
+
+Appcircle uses 6 domain names by default. These domain names are:
+
+1. api.spacetech.com
+2. auth.spacetech.com
+3. dist.spacetech.com
+4. hook.spacetech.com
+5. resource.spacetech.com
+6. store.spacetech.com
+7. my.spacetech.com
+8. redis.spacetech.com
+TODO: Maybe add the monitor domain.
+At the end of the deploying the Appcircle server, you will create DNS record according to the ingress objects of the Kubernetes on your DNS service provider. 
+
+### SSL/TLS Certificate
+
+You should deploy the Appcircle server with a SSL/TLS certificate for security reasons.
+
+### Kubernetes cluster
 
 To install the Appcircle server using Helm, a Kubernetes cluster with nodes based on the `x86_64` architecture is required. The cluster must meet the following hardware specifications:
 
 **Minimum hardware requirements for an enterprise installation:**
 
-- 500 GB SSD
+- TODO: Update 500 GB SSD
 - 8 CPUs
 - 16 GB RAM
 
 **Recommended hardware requirements for production environments:**
 
-- 1 TB SSD
+- TODO: Update 1 TB SSD
 - 32 CPUs
 - 64 GB RAM
 
@@ -83,7 +104,7 @@ For production, you should configure an external, production-grade Vault instanc
 
 If you are deploying the appcircle for testing purposes, the built-in Vault deployment can be used.
 
-### Create Values YAML
+### Create Configuration File
 
 To configure Helm, you can create a `global.yaml` file by specifying your desired settings, which are commonly used across all deployments.
 
@@ -91,9 +112,39 @@ To configure Helm, you can create a `global.yaml` file by specifying your desire
 
 Click the `Generate YAML` button to create a ready-to-use configuration file. Once the YAML is generated, copy the content and save it as a file named `global.yaml`.
 
+### Update the Configuration File
+
+Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some points in this file that you need to configure manually.
+
+#### Edit the SMTP Settings
+
+Appcircle needs an SMTP server to send emails for operations such as user authorization, Testing Distribution, notification emails.
+
+Fill the `.global.smtp` key according to your needs.
+
+@TODO: Fill here.
+
+#### Configure External Stateful Apps
+
+If you are deploying the Appcircle server for production, you should have stateful apps outside of the Kubernetes cluster. You can skip this section if you are deploying the Appcircle server for test environments. 
+
+@TODO: Fill here.
+
+### Enable SSL Passthrough Option on the Ingress Controller
+
+SSL passthrough allows SSL traffic to pass through a load balancer without decrypting it. The SSL/TLS termination is done at the backend server, not at the load balancer.
+
+Redis ingress of the Appcircle server needs SSL passthrough so Appcircle runners can connect to the Redis service that is working on Kubernetes cluster securely.
+
+Enabling the SSL passthrough depends on the ingress controller that is used in the Kubernetes cluster. For example:
+
+- For Nginx Ingress Controller, check [the Nginx documentation](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough).
+- @TODO: should be reviewed and tested to see if we support HAProxy-> For HAProxy Ingress Controller, check [the HAProxy documentation](https://www.haproxy.com/documentation/kubernetes-ingress/community/configuration-reference/ingress/#ssl-passthrough).
+- @TODO: should be reviewed and tested to see if we support Traefik-> For Traefik Ingress Controller, check [the Traefik documentation](https://traefik.io/blog/https-on-kubernetes-using-traefik-proxy/). 
+
 ## Deploy Using Helm
 
-Once you have gathered all the necessary configuration options, you can proceed with installing Helm dependencies and deploying the application. In this example, we will use `appcircle` as Helm release name and install the Appcircle server into the `appcircle-ns` namespace.
+Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we will use `appcircle` as Helm release name and install the Appcircle server into the `appcircle-ns` namespace.
 
 - Add the Appcircle Helm repository.
 
