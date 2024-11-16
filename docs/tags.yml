@@ -668,6 +668,11 @@ build:
   description: "Description for cancel submission"
   permalink: /cancel-submission
 
+"captcha":
+  label: "captcha"
+  description: "Description for captcha"
+  permalink: /captcha
+
 carthage:
   label: "carthage"
   description: "Description for carthage"
