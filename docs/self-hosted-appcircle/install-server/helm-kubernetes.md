@@ -21,18 +21,18 @@ For a production deployment, you should have strong working knowledge of Kuberne
 
 ### Domain Name
 
-A domain name that you can create SSL/TLS certificate for a couple of subdomain under it is required for Appcircle server. In this document, we will use `spacetech.com` as an example domain and `spacetech` as an organization name.
+A domain name that you can create SSL/TLS certificate for a couple of subdomain under it is required for Appcircle server. In this document, we will use `appcircle.spacetech.com` as an example domain and `spacetech` as an organization name.
 
 Appcircle uses 6 domain names by default. These domain names are:
 
-1. api.spacetech.com
-2. auth.spacetech.com
-3. dist.spacetech.com
-4. hook.spacetech.com
-5. resource.spacetech.com
-6. store.spacetech.com
-7. my.spacetech.com
-8. redis.spacetech.com
+1. api.appcircle.spacetech.com
+2. auth.appcircle.spacetech.com
+3. dist.appcircle.spacetech.com
+4. hook.appcircle.spacetech.com
+5. resource.appcircle.spacetech.com
+6. store.appcircle.spacetech.com
+7. my.appcircle.spacetech.com
+8. redis.appcircle.spacetech.com
 
 TODO: Maybe add the monitor domain.
 
@@ -269,26 +269,26 @@ helm repo update
 - Use the configured `global.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
 
 ```bash
-helm upgrade --install appcircle appcircle/appcircle-server \
+helm upgrade --install appcircle-server appcircle/appcircle-server \
   --timeout 1200s \
-  -n appcircle-ns --create-namespace \
+  -n appcircle --create-namespace \
   -f global.yaml
 ```
 
-Please note that the release name must be 16 characters or fewer.
+Please note that the release name must be 18 characters or fewer.
 
 The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take between 10 to 15 minutes.
 
 You can use `watch` command on a second terminal on Linux/MacOS systems to watch the pod creation process by running:
 
 ```bash
-watch kubectl get pods -n appcircle-ns
+watch kubectl get pods -n appcircle
 ```
 
 If you want to make sure that all containers are ready to use, you can the `kubectl wait` command on a third terminal window. The `appcircle` in the command is the Helm release name. So if you have changed the release name in the installation process, change the command according to your release name.
 
 ```bash
-kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle --timeout 1200s
+kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle-server -n appcircle --timeout 1200s
 ```
 
 When all the pods are ready, the command will return with success. You are ready to connect to the Appcircle UI and start to discover.
