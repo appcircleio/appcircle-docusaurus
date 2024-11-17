@@ -74,9 +74,13 @@ const YamlGenerator = () => {
   const [imageRepositoryPath, setImageRepositoryPath] = useState(
     "appcircle/docker-registry"
   );
-  const [imageTag, setImageTag] = useState("v3.22.1");
+  //TODO: Update default image tag
+  const [imageTag, setImageTag] = useState("alpha-latest");
   const [appcircleMainDomain, setAppcircleMainDomain] = useState(
     "appcircle.spacetech.com"
+  );
+  const [organizationName, setOrganizationName] = useState(
+    "spacetech"
   );
   const [initialUserEmail, setInitialUserEmail] = useState("admin@example.com");
   const [initialUserPassword, setInitialUserPassword] = useState(
@@ -93,7 +97,7 @@ const YamlGenerator = () => {
 
     const initialOrganizationId = crypto.randomUUID();
     const webeventredisPassword = generateRandomPassword(32);
-    const keycloakAdminPassword = generateRandomPassword(12);
+    const keycloakAdminPassword = generateRandomPassword(18);
     const postgresPassword = generateRandomPassword(32);
     const minioRootPassword = generateRandomPassword(32);
 
@@ -150,7 +154,7 @@ const YamlGenerator = () => {
   ${requiresAuth ? `containerRegistrySecret: '${dockerRegistrySecret}'` : ""}
 auth:
   auth-keycloak:
-    organizationName: spacetech
+    organizationName: ${organizationName}
     initialOrganizationId: ${initialOrganizationId}
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak
@@ -201,6 +205,17 @@ ${formattedStoreRsaPublicKey}`;
     <div className="container">
       <div className="form-group">
         <label>
+          The Organization Name:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={organizationName}
+            onChange={e => setOrganizationName(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
           Appcircle Main Domain:
           <input
             type="text"
@@ -234,7 +249,7 @@ ${formattedStoreRsaPublicKey}`;
       </div>
       <div className="form-group">
         <label>
-          Image Registry Host:
+          Container Image Registry Host:
           <input
             type="text"
             className="input-field input-field-long"
@@ -245,7 +260,7 @@ ${formattedStoreRsaPublicKey}`;
       </div>
       <div className="form-group">
         <label>
-          Image Repository Path:
+          Container Image Repository Path:
           <input
             type="text"
             className="input-field input-field-long"
@@ -256,7 +271,7 @@ ${formattedStoreRsaPublicKey}`;
       </div>
       <div className="form-group">
         <label>
-          Image Tag:
+          Container Image Tag:
           <input
             type="text"
             className="input-field input-field-long"
@@ -267,7 +282,7 @@ ${formattedStoreRsaPublicKey}`;
       </div>
       <div className="form-group">
         <label>
-          Image Registry Requires Auth:
+          Container Image Registry Requires Auth:
           <input
             type="checkbox"
             className="input-checkbox"
@@ -280,7 +295,7 @@ ${formattedStoreRsaPublicKey}`;
         <>
           <div className="form-group">
             <label>
-              Registry Username:
+              Container Image Registry Username:
               <input
                 type="text"
                 className="input-field input-field-long"
@@ -291,7 +306,7 @@ ${formattedStoreRsaPublicKey}`;
           </div>
           <div className="form-group">
             <label>
-              Registry Password:
+              Container Image Registry Password:
               <input
                 type="text"
                 className="input-field input-field-long"

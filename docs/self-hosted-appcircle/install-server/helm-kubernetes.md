@@ -48,27 +48,31 @@ You should configure Appcircle server with a fullchain certificate.
 
 ### Kubernetes cluster
 
-To install the Appcircle server using Helm, a Kubernetes cluster with nodes based on the `x86_64` architecture is required. The cluster must meet the following hardware specifications:
+To install the Appcircle server using Helm, a Kubernetes cluster is required. The cluster must meet the following hardware specifications:
 
 **Minimum hardware requirements for an enterprise installation:**
 
-- TODO: Update 500 GB SSD
+- x86-64 architecture node(s)
 - 8 CPUs
 - 16 GB RAM
+- TODO: Update 500 GB SSD
 
 **Recommended hardware requirements for production environments:**
 
-- TODO: Update 1 TB SSD
+- x86-64 architecture node(s)
 - 32 CPUs
 - 64 GB RAM
+- TODO: Update 1 TB SSD
 
-Currently supported Kubernetes versions:
+TODO: Define a kubernetes version
 
-- @TODO: Define supported Kubernetes versions.
+Kubernetes version must be x.x.x or later.
 
 ### kubectl
 
 Install `kubectl` by following the instructions provided in [the Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/#kubectl). Ensure that the installed version is within one minor release of the version running on your cluster.
+
+The `kubectl` should be configured for the target Kubernetes cluster.
 
 ### Helm
 
@@ -137,9 +141,19 @@ Enabling the SSL passthrough depends on the ingress controller that is used in t
 - @TODO: should be reviewed and tested to see if we support HAProxy-> For HAProxy Ingress Controller, check [the HAProxy documentation](https://www.haproxy.com/documentation/kubernetes-ingress/community/configuration-reference/ingress/#ssl-passthrough).
 - @TODO: should be reviewed and tested to see if we support Traefik-> For Traefik Ingress Controller, check [the Traefik documentation](https://traefik.io/blog/https-on-kubernetes-using-traefik-proxy/).
 
-### Create Configuration File
+:::info
+Enabling the SSL passthrough option doesn't allow all SSL traffic to pass through to the original service by default. It **allows** Ingresses to use SSL passthrough option. 
+:::
+
+### Create a Configuration File
 
 To configure Helm, you can create a `global.yaml` file by specifying your desired settings, which are commonly used across all deployments.
+
+You don't need to change `Container Image Registry Host, Path and Tag` settings if you are not using an external container image registry.
+
+:::info
+For the default container image registry, `europe-west1-docker.pkg.dev/appcircle/docker-registry`, you need to paste content of the `cred.json` file which you should have obtained from the Appcircle into the input box below. You don't need to change the default `_json_key` username. 
+:::
 
 <YamlGenerator />
 
@@ -151,7 +165,7 @@ We will reference this configuration file as `global.yaml` for the rest of this 
 
 Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some points in this file that you need to configure manually.
 
-Open the `global.yaml` with your favorite editor.
+Open the `global.yaml` with your favorite editor like `vi`, `VS Code` or `notepad`.
 
 ```bash
 vi global.yaml
