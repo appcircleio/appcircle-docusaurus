@@ -94,6 +94,7 @@ const YamlGenerator = () => {
     const webeventredisPassword = generateRandomPassword(32);
     const keycloakAdminPassword = generateRandomPassword(12);
     const postgresPassword = generateRandomPassword(32);
+    const minioRootPassword = generateRandomPassword(32);
 
     const indent = "      "; // Set the appropriate indentation
     var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
@@ -174,6 +175,10 @@ webeventredis:
     enabled: true
 keycloak:
   clients:${generateKeycloakClientsYaml()}
+minio:
+  auth:
+    rootUser: admin
+    rootPassword: ${minioRootPassword}
 distribution:
   distribution-testerapi:
     rsaPrivateKey: |

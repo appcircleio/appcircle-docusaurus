@@ -21,7 +21,7 @@ For a production deployment, you should have strong working knowledge of Kuberne
 
 ### Domain Name
 
-A domain name that you can create SSL/TLS certificate for a couple of subdomain under it is required for Appcircle server. In this document, we will use `spacetech.com` as an example domain and `spacetech` as an organization name. 
+A domain name that you can create SSL/TLS certificate for a couple of subdomain under it is required for Appcircle server. In this document, we will use `spacetech.com` as an example domain and `spacetech` as an organization name.
 
 Appcircle uses 6 domain names by default. These domain names are:
 
@@ -36,7 +36,7 @@ Appcircle uses 6 domain names by default. These domain names are:
 
 TODO: Maybe add the monitor domain.
 
-At the end of the deploying the Appcircle server, you will create DNS record according to the ingress objects of the Kubernetes on your DNS service provider. 
+At the end of the deploying the Appcircle server, you will create DNS record according to the ingress objects of the Kubernetes on your DNS service provider.
 
 ### SSL/TLS Certificate
 
@@ -62,9 +62,9 @@ To install the Appcircle server using Helm, a Kubernetes cluster with nodes base
 - 32 CPUs
 - 64 GB RAM
 
-Currently supported Kubernetes versions: 
+Currently supported Kubernetes versions:
 
-- @TODO: Define supported Kubernetes versions. 
+- @TODO: Define supported Kubernetes versions.
 
 ### kubectl
 
@@ -94,7 +94,7 @@ If you are deploying the Appcircle server for testing purposes, the built-in Mon
 
 By default, the Appcircle chart includes an in-cluster MinIO deployment provided by @TODO: change -> `stable/minio`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
 
-For production environments, it is highly recommended to configure an external, production-grade MinIO instance to ensure scalability, high availability, and data durability. 
+For production environments, it is highly recommended to configure an external, production-grade MinIO instance to ensure scalability, high availability, and data durability.
 
 If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
 
@@ -131,11 +131,11 @@ Redis ingress of the Appcircle server needs SSL passthrough so Appcircle runners
 Enabling the SSL passthrough depends on the ingress controller that is used in the Kubernetes cluster. For example:
 
 - For Nginx Ingress Controller, check [the Nginx documentation](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough).
-  -  In a summary, should edit the Nginx controller deployment and add the `--enable-ssl-passthrough` flag to the `args` section.
+
+  - In a summary, should edit the Nginx controller deployment and add the `--enable-ssl-passthrough` flag to the `args` section.
 
 - @TODO: should be reviewed and tested to see if we support HAProxy-> For HAProxy Ingress Controller, check [the HAProxy documentation](https://www.haproxy.com/documentation/kubernetes-ingress/community/configuration-reference/ingress/#ssl-passthrough).
-- @TODO: should be reviewed and tested to see if we support Traefik-> For Traefik Ingress Controller, check [the Traefik documentation](https://traefik.io/blog/https-on-kubernetes-using-traefik-proxy/). 
-
+- @TODO: should be reviewed and tested to see if we support Traefik-> For Traefik Ingress Controller, check [the Traefik documentation](https://traefik.io/blog/https-on-kubernetes-using-traefik-proxy/).
 
 ### Create Configuration File
 
@@ -143,7 +143,7 @@ To configure Helm, you can create a `global.yaml` file by specifying your desire
 
 <YamlGenerator />
 
-Click the `Generate YAML` button to create a ready-to-use configuration file. Once the YAML is generated, copy the content and save it as a file named `global.yaml`. 
+Click the `Generate YAML` button to create a ready-to-use configuration file. Once the YAML is generated, copy the content and save it as a file named `global.yaml`.
 
 We will reference this configuration file as `global.yaml` for the rest of this documentation.
 
@@ -166,7 +166,7 @@ The `global.yaml` configuration file contains `.global.smtp` key to store the SM
 - `auth`: Should be 'true' if the SMTP server requires authentication. False for otherwise.
 - `username`: SMTP username for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
 - `password`: SMTP password for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
-@TODO: deprecate this
+  @TODO: deprecate this
 - `domain`: SMTP server domain name.
 - `host`: Domain or IP address of the SMTP server.
 - `port`: Port number of the SMTP server.
@@ -186,19 +186,19 @@ If you are not using secure connections for SMTP communication, you should set b
 global:
   mail:
     smtp:
-      auth: 'true' 
-      username: 'appcircle-smtp-user'
-      password: 'super-secret-smtp-password'
+      auth: "true"
+      username: "appcircle-smtp-user"
+      password: "super-secret-smtp-password"
       # @TODO: deprecate this
-      domain: 'smtp.spacetech.com'
-      host: 'smtp.spacetech.com'
-      port: '587'
-      from: 'appcircle@spacetech.com'
-      ssl: 'false'
-      tls: 'true'
+      domain: "smtp.spacetech.com"
+      host: "smtp.spacetech.com"
+      port: "587"
+      from: "appcircle@spacetech.com"
+      ssl: "false"
+      tls: "true"
 ```
 
-#### Configure the SSL/TLS Certificates 
+#### Configure the SSL/TLS Certificates
 
 You can follow the steps below to configure the SSL/TLS certificates in your `global.yaml`:
 
@@ -209,7 +209,7 @@ You can follow the steps below to configure the SSL/TLS certificates in your `gl
   - `caCert`: Should be the Certificate Authority public key. Typically the bottom certificate of your fullchain certificate. If you are using a single certificate instead of a full chain certificate, `caCert` should be that single certificate.
 
 :::info
-The `.global` key already exists in your `global.yaml` file. You should just add the `tlsWildcard` key. 
+The `.global` key already exists in your `global.yaml` file. You should just add the `tlsWildcard` key.
 :::
 
 ```yaml
@@ -251,7 +251,7 @@ global:
 
 #### Configure External Stateful Apps
 
-If you are deploying the Appcircle server for production, you should have stateful apps outside of the Kubernetes cluster. You can skip this section if you are deploying the Appcircle server for test environments. 
+If you are deploying the Appcircle server for production, you should have stateful apps outside of the Kubernetes cluster. You can skip this section if you are deploying the Appcircle server for test environments.
 
 @TODO: Fill here.
 
@@ -263,7 +263,7 @@ Once you have gathered all the necessary configuration options, you can proceed 
 
 ```bash
 helm repo add appcircle https://charts.appcircle.io/ && \
-helm repo update 
+helm repo update
 ```
 
 - Use the configured `global.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
@@ -285,7 +285,7 @@ You can use `watch` command on a second terminal on Linux/MacOS systems to watch
 watch kubectl get pods -n appcircle-ns
 ```
 
-If you want to make sure that all containers are ready to use, you can the `kubectl wait` command on a third terminal window. The `appcircle` in the command is the Helm release name. So if you have changed the release name in the installation process, change the command according to your release name. 
+If you want to make sure that all containers are ready to use, you can the `kubectl wait` command on a third terminal window. The `appcircle` in the command is the Helm release name. So if you have changed the release name in the installation process, change the command according to your release name.
 
 ```bash
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle --timeout 1200s
@@ -293,8 +293,7 @@ kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle -
 
 When all the pods are ready, the command will return with success. You are ready to connect to the Appcircle UI and start to discover.
 
-
-## Sign in to Appcircle
+## Create DNS Records
 
 After the Appcircle server installation is finished, you can get the IP addresses of the Appcircle domains and configure the DNS.
 
@@ -312,12 +311,14 @@ appcircle-resource                 nginx   resource.appcircle.spacetech.com     
 appcircle-store-web                nginx   *.store.appcircle.spacetech.com                                192.168.1.245,192.168.1.246,192.168.1.247   80      24m
 appcircle-web-app                  nginx   my.appcircle.spacetech.com                                     192.168.1.245,192.168.1.246,192.168.1.247   80      24m
 appcircle-web-event                nginx   hook.appcircle.spacetech.com                                   192.168.1.245,192.168.1.246,192.168.1.247   80      24m
-appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  192.168.1.245,192.168.1.246,192.168.1.247   80      24m                                                                                                 
+appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  192.168.1.245,192.168.1.246,192.168.1.247   80      24m
 ```
 
 You should configure your DNS records according to your DNS provider. For a best practice, create a `A` record for the `my.appcircle.spacetech.com` and create `CNAME` records for other domains.
 
-You can use the `my` prefixed domain name to access Appcircle dashboard. For example, if you set `global.urls.domainName` to `.appcircle.spacetech.com` then you should use `my.appcircle.spacetech.com` address. 
+## Sign in to Appcircle
+
+You can use the `my` prefixed domain name to access Appcircle dashboard. For example, if you set `global.urls.domainName` to `.appcircle.spacetech.com` then you should use `my.appcircle.spacetech.com` address.
 
 After you see the login page of the Appcircle, you can now use the initial username and password to login to the Appcircle dashboard. You can check the initial username and password from the `global.yaml` file that you have used to install Appcircle server. The values you should look for are under `auth.auth-keycloak.initialUsername` and `auth.auth-keycloak.initialPassword` keys.
 
@@ -327,4 +328,4 @@ After you see the login page of the Appcircle, you can now use the initial usern
 
 This error usually happens when the pods can't resolve some of [the Appcircle server domains](#domain-name).
 
-For the solution, please make sure that the domain name server of the worker nodes of the Kubernetes cluster can resolve the Appcircle server domain names.  
+For the solution, please make sure that the domain name server of the worker nodes of the Kubernetes cluster can resolve the Appcircle server domain names.
