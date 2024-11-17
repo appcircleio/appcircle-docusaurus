@@ -57,14 +57,48 @@ const generateKeycloakClientsYaml = () => {
   return clientYaml;
 };
 
-function generateRandomPassword(length) {
-  const chars =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  let password = "";
-  for (let i = 0; i < length; i++) {
-    password += chars.charAt(Math.floor(Math.random() * chars.length));
+function generateRandomPassword(length, minNumbers = 1, minUppercase = 1) {
+  // Input validation
+  if (length < minNumbers + minUppercase) {
+    throw new Error(
+      "Password length must be greater than or equal to the sum of minimum requirements"
+    );
   }
-  return password;
+
+  const lowercase = "abcdefghijklmnopqrstuvwxyz";
+  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numbers = "0123456789";
+
+  // First, fulfill minimum requirements
+  let password = [];
+
+  // Add required numbers
+  for (let i = 0; i < minNumbers; i++) {
+    password.push(numbers.charAt(Math.floor(Math.random() * numbers.length)));
+  }
+
+  // Add required uppercase letters
+  for (let i = 0; i < minUppercase; i++) {
+    password.push(
+      uppercase.charAt(Math.floor(Math.random() * uppercase.length))
+    );
+  }
+
+  // Fill the rest with any valid character
+  const allChars = lowercase + uppercase + numbers;
+  const remainingLength = length - password.length;
+
+  for (let i = 0; i < remainingLength; i++) {
+    password.push(allChars.charAt(Math.floor(Math.random() * allChars.length)));
+  }
+
+  // Shuffle the password array to make it truly random
+  for (let i = password.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [password[i], password[j]] = [password[j], password[i]];
+  }
+
+  return password.join("");
 }
 
 const YamlGenerator = () => {
@@ -96,10 +130,10 @@ const YamlGenerator = () => {
     const imageRepositoryPathWithRegistry = `${imageRegistry}/${imageRepositoryPath}/`;
 
     const initialOrganizationId = crypto.randomUUID();
-    const webeventredisPassword = generateRandomPassword(32);
-    const keycloakAdminPassword = generateRandomPassword(18);
-    const postgresPassword = generateRandomPassword(32);
-    const minioRootPassword = generateRandomPassword(32);
+    const webeventredisPassword = generateRandomPassword(32, 1, 1);
+    const keycloakAdminPassword = generateRandomPassword(18, 1, 1);
+    const postgresPassword = generateRandomPassword(32, 1, 1);
+    const minioRootPassword = generateRandomPassword(32, 1, 1);
 
     const indent = "      "; // Set the appropriate indentation
     var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
