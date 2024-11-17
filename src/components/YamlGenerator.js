@@ -57,9 +57,17 @@ const generateKeycloakClientsYaml = () => {
   return clientYaml;
 };
 
-function generateRandomPassword(length, minNumbers = 1, minUppercase = 1) {
+function generateRandomPassword(
+  length,
+  minNumbers = 1,
+  minUppercase = 1,
+  minLowercase = 1
+) {
+  // Calculate total minimum requirements
+  const totalMinRequired = minNumbers + minUppercase + minLowercase;
+
   // Input validation
-  if (length < minNumbers + minUppercase) {
+  if (length < totalMinRequired) {
     throw new Error(
       "Password length must be greater than or equal to the sum of minimum requirements"
     );
@@ -84,6 +92,13 @@ function generateRandomPassword(length, minNumbers = 1, minUppercase = 1) {
     );
   }
 
+  // Add required lowercase letters
+  for (let i = 0; i < minLowercase; i++) {
+    password.push(
+      lowercase.charAt(Math.floor(Math.random() * lowercase.length))
+    );
+  }
+
   // Fill the rest with any valid character
   const allChars = lowercase + uppercase + numbers;
   const remainingLength = length - password.length;
@@ -100,6 +115,7 @@ function generateRandomPassword(length, minNumbers = 1, minUppercase = 1) {
 
   return password.join("");
 }
+
 
 const YamlGenerator = () => {
   const [imageRegistryHost, setImageRegistryHost] = useState(
@@ -130,10 +146,10 @@ const YamlGenerator = () => {
     const imageRepositoryPathWithRegistry = `${imageRegistry}/${imageRepositoryPath}/`;
 
     const initialOrganizationId = crypto.randomUUID();
-    const webeventredisPassword = generateRandomPassword(32, 1, 1);
-    const keycloakAdminPassword = generateRandomPassword(18, 1, 1);
-    const postgresPassword = generateRandomPassword(32, 1, 1);
-    const minioRootPassword = generateRandomPassword(32, 1, 1);
+    const webeventredisPassword = generateRandomPassword(32);
+    const keycloakAdminPassword = generateRandomPassword(18);
+    const postgresPassword = generateRandomPassword(32);
+    const minioRootPassword = generateRandomPassword(32);
 
     const indent = "      "; // Set the appropriate indentation
     var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
