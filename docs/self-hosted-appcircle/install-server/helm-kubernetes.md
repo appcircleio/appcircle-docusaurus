@@ -286,6 +286,47 @@ If you are deploying the Appcircle server for production, you should have statef
 
 @TODO: Fill here.
 
+
+#### Adding Trusted CA Certificates to the Appcircle Services
+
+If any services that the Appcircle server needs to connect to, such as your Git provider, use a self-signed SSL/TLS certificate or a certificate issued by an untrusted root CA from your organization, Appcircle will refuse the connection by default.
+
+:::tip
+To avoid potential issues with untrusted certificates, it is best practice to add your organization's CA certificate to Appcircle.
+:::
+
+To add this certificate as trusted, you need to update the `.global.trustedCerts` key in the `global.yaml` file and import the certificates.
+
+:::info
+The `.global` key already exists in your `global.yaml` file. You just need to add the `trustedCerts` key.
+:::
+
+The trusted certificate names must conform to the regex pattern `[-._a-zA-Z0-9]+`. It is recommended to use descriptive names for your certificates, such as `spacetech-root` for the root certificate and `spacetech-intermediate` for the intermediate certificate.
+
+Here's an example of how to update the global.yaml file:
+
+(TODO: Multiple certificate should be tested.)
+
+```yaml
+global:
+  trustedCerts:
+    - name: spacetech-root
+      value: |
+        -----BEGIN CERTIFICATE-----
+        MIIGOTCCBCGgAwIBAgIUU5MNim6S8RDvILFbqSEEFJvqkUkwDQYJKoZIhvcNAQEL
+        ...
+        JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
+        ZmukIMGOIYPWDhsuJA==
+        -----END CERTIFICATE-----
+    - name: spacetech-intermediate
+        -----BEGIN CERTIFICATE-----
+        MIIGOTCCBCGgAwIBAgIUU5MNim6S8RDvILFbqSEEFJvqkUkwDQYJKoZIhvcNAQEL
+        ...
+        JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
+        ZmukIMGOIYPWDhsuJA==
+        -----END CERTIFICATE-----
+```
+
 ## Deploy Using Helm
 
 Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we will use `appcircle` as Helm release name and install the Appcircle server into the `appcircle-ns` namespace.
@@ -352,6 +393,27 @@ You should configure your DNS records according to your DNS provider. For a best
 You can use the `my` prefixed domain name to access Appcircle dashboard. For example, if you set `global.urls.domainName` to `.appcircle.spacetech.com` then you should use `my.appcircle.spacetech.com` address.
 
 After you see the login page of the Appcircle, you can now use the initial username and password to login to the Appcircle dashboard. You can check the initial username and password from the `global.yaml` file that you have used to install Appcircle server. The values you should look for are under `auth.auth-keycloak.initialUsername` and `auth.auth-keycloak.initialPassword` keys.
+
+## Uninstall the Appcircle Server
+
+If you want to uninstall the Appcircle server, you can just remove the Helm release from the Kubernetes cluster.
+
+If you haven't changed the release name and namespace name while following the [Deploy Using Helm](#deploy-using-helm) section, you can run the command below to uninstall the Appcircle server.
+
+```bash
+helm uninstall -n appcircle appcircle-server
+```
+
+## Deleting the Appcircle Server Data
+
+(TODO: Validate the information. Uninstall and install then check if the data still exists.) [Uninstalling the Appcircle Server](#uninstall-the-appcircle-server) doesn't delete the Appcircle server data. If you want to delete all the data of the Appcircle server for a reason, you can simple delete the namespace.
+
+If you haven't changed the namespace name while following the [Deploy Using Helm](#deploy-using-helm) section, you can run the command below to delete the all data of the Appcircle server.
+
+```bash
+kubectl delete namespace appcircle
+```
+
 
 ## Troubleshooting & FAQ
 
