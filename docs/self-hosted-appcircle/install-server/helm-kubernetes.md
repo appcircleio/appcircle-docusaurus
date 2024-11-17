@@ -149,11 +149,28 @@ Enabling the SSL passthrough option doesn't allow all SSL traffic to pass throug
 
 To configure Helm, you can create a `global.yaml` file by specifying your desired settings, which are commonly used across all deployments.
 
-You don't need to change `Container Image Registry Host, Path and Tag` settings if you are not using an external container image registry.
 
-:::info
-For the default container image registry, `europe-west1-docker.pkg.dev/appcircle/docker-registry`, you need to paste content of the `cred.json` file which you should have obtained from the Appcircle into the input box below. You don't need to change the default `_json_key` username. 
+
+:::caution
+Please check the information about the input boxes below. The installation may not complete successfully if the values are incompatible.  
 :::
+
+- `The Organization Name`: Enter your organization's name.
+- `Appcircle Main Domain`: Specify the [domain name](#domain-name) that will host nine subdomains. Ensure the domain is properly configured and can handle subdomain creation as required.
+- `Appcircle Initial User Email`: Provide the admin email address for the Appcircle server. It is recommended to use an email address that exists and can receive emails for password reset purposes.
+- `Appcircle Initial User Password`: Set the password for the initial user. The password must adhere to the Appcircle password policy:
+  - Minimum length of 6 characters.
+  - At least one lowercase letter.
+  - At least one uppercase letter.
+  - At least one numeric digit.
+- `Container Registry Host`: Enter the domain or IP address of your container image registry, such as Harbor or Nexus, if using an external image registry.
+- `Container Image Repository Path`: Specify the path of the container images. This is typically the segment between your registry host and the image name. For example, in the image path `registry.spacetech.com/appcircle-proxy/image:tag`, the repository path is `appcircle-proxy`.
+- `Container Image Tag`: (Consider removing if unnecessary) Specify the version of the Appcircle server, such as `v3.23.1`, `latest`, or `beta-latest`.
+- `Container Image Registry Requires Auth`: Select this option if the container image registry requires authentication.
+- `Container Image Registry Username`: For the default image registry, use `_json_key` as the username.
+- `Container Image Registry Password`: Enter the content of the `cred.json` file, which you must obtain from Appcircle, for the default image registry.
+
+You don't need to change `Container Image Registry Host, Path and Tag` settings if you are not using an external container image registry.
 
 <YamlGenerator />
 
