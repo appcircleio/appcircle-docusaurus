@@ -91,6 +91,7 @@ const YamlGenerator = () => {
     const imageRegistry = `${imageRegistryHost}`;
     const imageRepositoryPathWithRegistry = `${imageRegistry}/${imageRepositoryPath}/`;
 
+    const initialOrganizationId = crypto.randomUUID();
     const webeventredisPassword = generateRandomPassword(32);
     const keycloakAdminPassword = generateRandomPassword(12);
     const postgresPassword = generateRandomPassword(32);
@@ -150,6 +151,7 @@ const YamlGenerator = () => {
 auth:
   auth-keycloak:
     organizationName: spacetech
+    initialOrganizationId: ${initialOrganizationId}
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak
     admin:
