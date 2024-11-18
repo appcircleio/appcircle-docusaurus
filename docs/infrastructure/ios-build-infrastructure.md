@@ -99,7 +99,7 @@ Here are some of the most important packages installed in our iOS build agents u
 | Sdkman             | 5.16.0           | 5.18.2         |
 | Slather            | 2.7.2            | 2.8.0          |
 | Unzip              | 6.00             | 6.00           |
-| Xcodeproj          | 1.22.0           | 1.24.0         |
+| Xcodeproj          | 1.22.0           | 1.27.0         |
 | Yarn               | 1.22.19          | 1.22.22        |
 | Zip                | 3.0              | 3.0            |
 
