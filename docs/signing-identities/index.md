@@ -43,3 +43,19 @@ Keep your Android app signing keys secure by managing your keystores. This part 
 For more information, refer to the following link:
 
 [Android Keystores](/signing-identities/android-keystores)
+
+## Signing Reports
+
+The Signing Reports section contains the list of builds selected for signing in a given time period.
+
+For more information, refer to the following link:
+
+[Android Keystores](/signing-identities/signing-reports)
+
+## Activity Log
+
+You can view Signing Identity module actions such as creating, deleting, and adding Apple Certificates or Android Keystores to Organizations or Sub Organizations in the Activity Log section.
+
+For more information, refer to the following link:
+
+[Android Keystores](/signing-identities/signing-identities-activity-log)

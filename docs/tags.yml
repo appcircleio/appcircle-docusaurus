@@ -2198,10 +2198,10 @@ signing:
   description: "Description for signing"
   permalink: /signing
 
-"signing history":
-  label: "signing history"
-  description: "Description for signing history"
-  permalink: /signing-history
+"signing reports":
+  label: "signing reports"
+  description: "Description for signing reports"
+  permalink: /signing-reports
 
 "signing identities":
   label: "signing identities"
