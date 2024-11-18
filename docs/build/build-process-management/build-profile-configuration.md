@@ -60,7 +60,8 @@ You can download your **Configuration** in YAML format to perform actions like s
 
 - Open the **Configuration** you've created.
 - Locate the download button positioned at the bottom left of the Configuration interface. Click on the download button.
-  <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4738-config3.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-download.png' alt="Download Configuration" />
 
 Your _configuration.yaml_ file will be downloaded to your local system.
 
@@ -78,7 +79,7 @@ You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
   Self-hosted Runners
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4738-config1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-pool.png' alt="Pool Selection" />
 
 #### Build Priority
 
@@ -90,7 +91,7 @@ For instance, if a high-priority build is added to the queue after a low-priorit
 
 This functionality allows for better management of build processes, enabling teams to prioritize critical updates and enhancements efficiently.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4738-config2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-priority.png' alt="Build Priority" />
 
 :::info
 This feature is only available for organizations with Enterprise license.
