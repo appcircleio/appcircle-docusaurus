@@ -70,7 +70,7 @@ Here are some of the most important packages installed in our iOS build agents u
 - For "Appcircle Standard macOS Pool (arm64)" Xcode `14.3.x` or later macOS Sonoma `14.5`
 - For "Appcircle Standard macOS Pool (arm64)" Xcode `14.2.x` or earlier macOS Monterey `12.6`
 
-| Package            | M1 Pool Monterey | M1 Pool Sonoma |
+| Package            | macOS Monterey | macOS Sonoma |
 | ------------------ | ---------------- | -------------- |
 | Bash               | 3.2.57           | 3.2.57         |
 | Bundle             | 2.1.4            | 2.4.19         |

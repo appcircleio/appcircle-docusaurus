@@ -119,7 +119,7 @@ There's one important setting that you should change. If any workflow steps fail
 
 :::caution
 
-If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M1 virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization. Unit tests can work for both pools.
+If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization. Unit tests can work for both pools.
 
 :::
 

@@ -46,7 +46,7 @@ When you select "Appcircle Linux Pool (x86_64)" for Android builds, the followin
 - **JAVA_HOME_21_X64**: -
 
 :::caution
-We're deprecating Intel-based runners and transitioning our customers to Apple silicon (M1)-based build machines.
+We're deprecating Intel-based runners and transitioning our customers to Apple silicon-based (M-series) build machines.
 
 Currently, JDK 17 and 21 are not pre-installed on the "Appcircle Linux Pool (x86_64)", and Intel-based runners are not actively maintained.
 
@@ -96,7 +96,7 @@ Based on: Android 11.0 (R)
 ```
 
 :::caution
-If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M1 virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization.
+If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization.
 :::
 
 ## Android Build Agent Stacks
@@ -105,7 +105,7 @@ There are many pre-installed packages in virtual machines. You can get a full li
 
 Here are some most important packages installed in our Linux and macOS images used for Android builds:
 
-| Package             | Debian Bullseye | M1 Pool Sonoma |  M1 Pool Monterey |
+| Package             | Debian Bullseye | macOS Sonoma |  macOS Monterey |
 | ------------------- | --------------- | -------------- | ----------------- |
 | Apt Package Manager | 2.2.4           | n/A            | n/A               |
 | Bash                | 5.1.4           | 3.2.57         | 3.2.57            |
