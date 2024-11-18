@@ -213,6 +213,8 @@ The maximum number of failed attempts is determined by the value set in this con
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-portal2.png" alt="Captcha Maximum Attempts Display for Enterprise Portal" />
 
+If a user gets restriction due to failed attempts, the recovery time is 1 hour.
+
 :::info
 Please note that Enable Captcha feature is only available for organizations with an Enterprise license.
 :::
