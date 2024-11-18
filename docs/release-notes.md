@@ -16,6 +16,30 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.23.1 - 2024-11-13 Enable Captcha for Enterprise Portal, SSO Improvements, Bug Fixes and more
+
+### 🆕 New Features
+
+- A captcha security method has been added for Enterprise Portal logins, which can be configured to appear after a set number of unsuccessful login attempts, eventually blocking further access. This feature is available to organizations with an enterprise license. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- A logout URL option was added to SSO configuration settings, enabling users to choose between seamless SSO login/logout and fully ending the session, which requires re-authentication on the Identity Provider. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- SAML configurations can no longer be utilized in the “Create From Existing” feature for creating new SSO configurations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- "SAML Service Provider EntityID" can now be updated when creating or updating the SAML configuration. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The documentation URLs linked to the Help buttons have been updated to direct users to the appropriate documentation for SSO and LDAP configurations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Configuration labels within the LDAP Connection settings have been updated for self-hosted users. <AccountBadge/> <SelfHostedBadge/>
+- The priority levels of running builds are now displayed on the Active Processes tab. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The build priority configuration setting is no longer restricted to organizations with an enterprise license. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The default cloud pool names have been updated as follows: The “**Default M1 Pool**” is now labeled as “Appcircle Standard macOS Pool (arm64).” The “**Default Intel Pool**” is now labeled as “Appcircle Linux Pool (x86_64).” <InfrastructureBadge/> <CloudBadge/>
+- The build status information is now displayed in the signing reports section within the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where downloaded .yaml configuration files could not be uploaded to the same or other profiles of the same type, resulting in an error. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the emails and roles of sub-organization users were not displayed in the signing activity log. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Several security issues related to the admin module API were resolved. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.23.0 - 2024-11-04 SSO & LDAP Improvements, Build Priority Configuration, Bug Fixes and more
 
 ### 🆕 New Features
