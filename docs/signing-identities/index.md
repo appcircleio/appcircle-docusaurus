@@ -50,7 +50,7 @@ The Signing Reports section contains the list of builds selected for signing in 
 
 For more information, refer to the following link:
 
-[Android Keystores](/signing-identities/signing-reports)
+[Signing Reports](/signing-identities/signing-reports)
 
 ## Activity Log
 
@@ -58,4 +58,4 @@ You can view Signing Identity module actions such as creating, deleting, and add
 
 For more information, refer to the following link:
 
-[Android Keystores](/signing-identities/signing-identities-activity-log)
+[Activity Log](/signing-identities/signing-identities-activity-log)
