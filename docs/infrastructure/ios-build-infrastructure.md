@@ -11,7 +11,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running.
 
-  - If your selected pool from config is "Appcircle Standard macOS Pool (arm64)", there are two options for virtual machine.
+- If your selected pool from config is "Appcircle Standard macOS Pool (arm64)", there are two options for virtual machine.
   - If you select Xcode 14.3 or later, virtual machine will be macOS Sonoma `14.5`.
   - If you select Xcode 14.2 or earlier, virtual machine will be macOS Monterey `12.6`.
 
