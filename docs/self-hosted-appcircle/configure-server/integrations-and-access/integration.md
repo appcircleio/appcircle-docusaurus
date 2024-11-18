@@ -43,6 +43,7 @@ Explanation of each key
 |ssl | If set to true, use SSL to connect |
 |auth | If set to true, attempt to authenticate the user using the AUTH command. |
 |starttls | If set to true, enables the use of the STARTTLS command |
+|verifyCertificate | true by default. If set to false, disables validation of the SMTP server's certificate. Shouldn't be disabled in production.  |
 
 ## SSO
 
