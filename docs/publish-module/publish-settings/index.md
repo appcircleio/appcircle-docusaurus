@@ -15,17 +15,17 @@ Your configured publish flow will be executed automatically when you enable **Au
 
 You can also select a runner pool from the **SELECT A POOL** dropdown list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-settings.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-publish.png' alt="Publish Pool Selection" />
 
-"Default Intel Pool" and "Default M1 Pool" are Appcircle cloud-hosted pools and only available for the cloud services.
+"Appcircle Linux Pool (x86_64)" and "Appcircle Standard macOS Pool (arm64)" are Appcircle cloud-hosted pools and only available for the cloud services.
 
 :::info
 
 You can use both cloud-hosted pools for the Android publish profiles.
 
-On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Default M1 Pool".
+On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Appcircle Standard macOS Pool (arm64)".
 
-"Default Intel Pool" support is not available for the iOS publish profiles.
+"Appcircle Linux Pool (x86_64)" support is not available for the iOS publish profiles.
 
 :::
 
@@ -49,16 +49,16 @@ You can select a runner pool from the dropdown list to execute the publish flow.
 
 There are two default pools available for cloud services:
 
-- Default Intel Pool
-- Default M1 Pool
+- Appcircle Linux Pool (x86_64)
+- Appcircle Standard macOS Pool (arm64)
 
 :::info
 
 You can use both cloud-hosted pools for the Android publish profiles.
 
-On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Default M1 Pool".
+On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Appcircle Standard macOS Pool (arm64)".
 
-"Default Intel Pool" support is not available for the iOS publish profiles.
+"Appcircle Linux Pool (x86_64)" support is not available for the iOS publish profiles.
 
 :::
 
