@@ -30,7 +30,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::danger
 
-When using the **Authenticate with Netrc** component, you need to specify a token or password in the `$AC_NETRC_PASS` parameter within the component. For security reasons, we recommend using [**Enviroment Variables**](https://docs.appcircle.io/environment-variables/) in steps where you need to specify the token and password.
+When using the **Authenticate with Netrc** component, you need to specify a token or password in the `$AC_NETRC_PASS` parameter within the component. For security reasons, we recommend using [**Enviroment Variables**](/environment-variables) in steps where you need to specify the token and password.
 
 :::
 

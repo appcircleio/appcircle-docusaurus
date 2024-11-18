@@ -18,7 +18,7 @@ Before running the **Detekt** step, you must complete certain prerequisites, as 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) | The **Git Clone** step is necessary to fetch the repository before conducting code checks and must precede the **Detekt** step. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The **Git Clone** step is necessary to fetch the repository before conducting code checks and must precede the **Detekt** step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-detekt_1.png'/>
 
@@ -37,13 +37,13 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::danger
 
-If `$AC_DETEKT_SAVE_REPORT` is set to `true`, place the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step after the **Detekt** step to ensure proper transfer of outputs to the [Download Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.
+If `$AC_DETEKT_SAVE_REPORT` is set to `true`, place the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step after the **Detekt** step to ensure proper transfer of outputs to the [Download Artifacts](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.
 
 :::
 
 ### Output Variables
 
-The output is not stored in any variable. If `AC_DETEKT_SAVE_REPORT` is set to `true`, the file output will be saved in the `$AC_PROJECT_PATH/$AC_MODULE/build/reports` directory (check these variables on the [Appcircle-Specific Environment Variables](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables#ios--android-common-environment-variables) page). If you've added the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step after the **Detekt** step, this output will also be accessible in the [Download Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.
+The output is not stored in any variable. If `AC_DETEKT_SAVE_REPORT` is set to `true`, the file output will be saved in the `$AC_PROJECT_PATH/$AC_MODULE/build/reports` directory (check these variables on the [Appcircle-Specific Environment Variables](/environment-variables/appcircle-specific-environment-variables#ios--android-common-environment-variables) page). If you've added the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step after the **Detekt** step, this output will also be accessible in the [Download Artifacts](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.
 
 ---
 

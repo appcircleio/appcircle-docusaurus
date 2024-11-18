@@ -23,7 +23,7 @@ If you are using an automatic code sign, you can remove this step. Since automat
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | Clone your repository to the runner machine. Use the Install Certificates and Provisiong Profiles step after this step. This step will clone your repository to be able to use provisioning profiles and certificates. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | Clone your repository to the runner machine. Use the Install Certificates and Provisiong Profiles step after this step. This step will clone your repository to be able to use provisioning profiles and certificates. |
 
 :::danger
 

@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Xcodebuild for Testing
 
-This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks like [**BrowserStack**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#browserstack-app-automate---xcui) or [**Testinium**](/workflows/common-workflow-steps/testinium).
+This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks like [**BrowserStack**](/workflows/ios-specific-workflow-steps/browserstack-app-automation) or [**Testinium**](/workflows/common-workflow-steps/testinium).
 
 ### Prerequisites
 
@@ -16,8 +16,8 @@ Before running the **Xcodebuild for Testing** step, you must complete certain pr
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcode Select**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcode-select-version)     | This step selects the Xcode version that is specified. |
-| [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#cocoapods-install)   | This step installs all the dependencies of the pod file. |
+| [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select)     | This step selects the Xcode version that is specified. |
+| [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)   | This step installs all the dependencies of the pod file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2827-testingOrder.png' />
 
@@ -36,9 +36,9 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name                 | Description                                    | Status               |
 |-------------------------------|------------------------------------------------|----------------------|
 | `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step. | Required |
-| `$AC_SCHEME`                 | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration). | Required |
+| `$AC_SCHEME`                 | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example: **`-quiet`** | Optional |
-| `$AC_PROJECT_PATH`               | Specifies the project path. For example: **`./appcircle.xcodeproj`**. This variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration). | Required |
+| `$AC_PROJECT_PATH`               | Specifies the project path. For example: **`./appcircle.xcodeproj`**. This variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_CONFIGURATION_NAME`             | You can build your project with any configuration you want. Specify the configuration as hard-coded. Appcircle will automatically add this configuration to the xcodebuild command. For example; **`Debug`** | Optional |
 | `$AC_COMPILER_INDEX_STORE_ENABLE` | You can disable indexing during the build for a faster build. The default value is **`No`**. | Optional |
 | `$AC_DESTINATION` | This parameter determines for which destination the application will be built and IPA will be generated. The default value is **`generic/platform=iOS`**, which means that it will be built for all iOS devices. | Required |

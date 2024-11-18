@@ -15,20 +15,20 @@ Before running the **SwiftLint** step, you must complete certain prerequisites, 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed, and then SwiftLint will be run. After this step works, the variable `AC_REPOSITORY_DIR` will be created. This variable is the input variable for CocoaPods and SwiftLint. |
-| [**Cocoapods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#cocoapods-install)| This step will install the dependencies in the project before SwiftLint can run. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed, and then SwiftLint will be run. After this step works, the variable `AC_REPOSITORY_DIR` will be created. This variable is the input variable for CocoaPods and SwiftLint. |
+| [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)| This step will install the dependencies in the project before SwiftLint can run. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2613-lint_order.png' />
 
 :::danger
 
-If you are using **CocoaPods**, note that this step is dependent on the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#cocoapods-install) step. Otherwise, the SwiftLint component will **fail**, and the **pipeline will break.**
+If you are using **CocoaPods**, note that this step is dependent on the [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) step. Otherwise, the SwiftLint component will **fail**, and the **pipeline will break.**
 
 :::
 
 :::caution
 
-If you are using **Swift Package Manager (SPM)**, do not use this step. SPM packages will be compiled in other steps that work with **Xcode**, such as [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export).
+If you are using **Swift Package Manager (SPM)**, do not use this step. SPM packages will be compiled in other steps that work with **Xcode**, such as [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices).
 
 If you have SPM in your project and you are using the SwiftLint component in your workflow, the Linter component will give an error because it cannot find the required dependencies.
 

@@ -16,13 +16,13 @@ There are no prerequisites required before using the **Xcode Select** step.
 
 :::danger
 
-Always use this step **before** [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#cocoapods-install) and [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-devices-archive--export). If you have other **Xcode related** steps, such as [**Xcodebuild for iOS Simulators**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-ios-simulator) and [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/#xcodebuild-for-unit-and-ui-tests), **don't forget** to use before them.
+Always use this step **before** [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) and [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices). If you have other **Xcode related** steps, such as [**Xcodebuild for iOS Simulators**](/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator) and [**Xcodebuild for Unit and UI Tests**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test), **don't forget** to use before them.
 
 :::
 
 :::caution
 
-Please **don't forget** to select the **Xcode version** from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration) first.
+Please **don't forget** to select the **Xcode version** from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration) first.
 
 :::
 
@@ -30,7 +30,7 @@ Please **don't forget** to select the **Xcode version** from [Configuration](htt
 
 ### Version Change
 
-- To select an Xcode version, open [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration) in the build profile.
+- To select an Xcode version, open [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration) in the build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_config.png' />
 
@@ -49,7 +49,7 @@ Appcircle provides new versions of Xcode (including beta versions) within 24 hou
 A version other than the Xcode versions on the configuration page should not be entered manually as the Xcode select workflow argument.
 Because the Xcode versions on the configuration page are the versions installed on runners.
 Entering an unavailable Xcode version may cause the build to fail.
-You can review the documentation for detailed information about the Xcode version selection [here](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection).
+You can review the documentation for detailed information about the Xcode version selection [here](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools#select-pool-for-build-profile).
 
 :::
 

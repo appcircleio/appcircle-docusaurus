@@ -12,7 +12,7 @@ The **Azure DevOps Bot for Detekt Report** step analyzes your [Detekt report](ht
 
 :::caution
 
-[Danger](https://danger.systems/) operates on a similar principle, allowing use of the [Danger step](https://docs.appcircle.io/workflows/common-workflow-steps/#code-reviews-with-danger) with platforms such as [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), and [Bitbucket](https://bitbucket.org/product/guides/getting-started/overview#a-brief-overview-of-bitbucket). However, Danger currently does not support Azure DevOps.
+[Danger](https://danger.systems/) operates on a similar principle, allowing use of the [Danger step](/workflows/common-workflow-steps/danger) with platforms such as [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), and [Bitbucket](https://bitbucket.org/product/guides/getting-started/overview#a-brief-overview-of-bitbucket). However, Danger currently does not support Azure DevOps.
 
 For more information, refer to the Appcircle blog post about Danger:
 - [**Danger in CI: Automate Your Mobile Code Reviews**](https://appcircle.io/blog/danger-in-ci-automate-your-mobile-code-reviews).
@@ -25,7 +25,7 @@ Before running the **Azure DevOps Bot for Detekt Report** step, you must complet
 
 | Prerequisite Workflow Step                       | Description                                      |
  |-------------------------------------------------|--------------------------------------------------|
- | [**Detekt**](https://docs.appcircle.io/workflows/android-specific-workflow-steps/#detekt) | In order to generate the [Detekt report](https://detekt.dev/docs/introduction/reporting/), the **Detekt** step must be executed beforehand.  |
+ | [**Detekt**](/workflows/android-specific-workflow-steps/detekt) | In order to generate the [Detekt report](https://detekt.dev/docs/introduction/reporting/), the **Detekt** step must be executed beforehand.  |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_1.png'/>
 

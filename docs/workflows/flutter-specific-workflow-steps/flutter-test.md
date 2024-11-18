@@ -16,8 +16,8 @@ Before running the **Flutter Test** step, you must complete certain prerequisite
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | This step will clone your project through the connected Git provider and create the `$AC_REPOSITORY_DIR` variable. |
-| [**Flutter Install**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-install) | This step will install the [Flutter SDK](https://flutter-ko.dev/development/tools/sdk/releases) release. If the version is not specified, it will install the latest **stable** version. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step will clone your project through the connected Git provider and create the `$AC_REPOSITORY_DIR` variable. |
+| [**Flutter Install**](/workflows/flutter-specific-workflow-steps/flutter-install) | This step will install the [Flutter SDK](https://flutter-ko.dev/development/tools/sdk/releases) release. If the version is not specified, it will install the latest **stable** version.|
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2853-testOrder1.png' />
 
@@ -45,7 +45,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 	       | Description                         |
 |-------------------------------|------------------------------------------------|
-| `AC_TEST_RESULT_PATH`        | This path is created after the test results are reported. If you are using the [**Export Build Artifact**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step, it can be accessed directly from [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). | 
+| `AC_TEST_RESULT_PATH`        | This path is created after the test results are reported. If you are using the [**Export Build Artifact**](/workflows/common-workflow-steps/export-build-artifacts) step, it can be accessed directly from [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). | 
 
 ---
 

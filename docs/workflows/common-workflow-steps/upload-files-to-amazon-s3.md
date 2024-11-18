@@ -43,7 +43,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::info
 
-It is highly recommended to add the keys as [secret environment variables](../../.././environment-variables/managing-variables) instead of typing them here for security purposes.
+It is highly recommended to add the keys as [secret environment variables](/environment-variables/managing-variables) instead of typing them here for security purposes.
 
 :::
 

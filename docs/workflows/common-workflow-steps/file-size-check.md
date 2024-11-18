@@ -14,10 +14,10 @@ The workflow steps that need to be executed before running the **File Size Check
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator) | If your project is an **iOS** project using **Objective-C/Swift** or **React Native**, you should use this step to generate the file before checking the app file size. This step generates the **IPA** file. |
-| [**Flutter Build for iOS**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/#flutter-build-for-ios) | If your project is an **iOS** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates an **IPA** file. |
-| [**Android Build**](https://docs.appcircle.io/workflows/android-specific-workflow-steps#android-build) | If your project is an **Android** project using **Java/Kotlin** or **React Native**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
-| [**Flutter Build for Android**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/#flutter-build-for-android) | If your project is an **Android** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) | If your project is an **iOS** project using **Objective-C/Swift** or **React Native**, you should use this step to generate the file before checking the app file size. This step generates the **IPA** file. |
+| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps/flutter-build-for-ios) | If your project is an **iOS** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates an **IPA** file. |
+| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | If your project is an **Android** project using **Java/Kotlin** or **React Native**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
+| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps/flutter-build-for-android) | If your project is an **Android** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
 
 :::danger
 

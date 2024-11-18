@@ -16,7 +16,7 @@ Before running the **Flutter Build for Android** step, you must complete certain
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | This step fetches the repository that needs to be built from the specified branch. It is essential for initiating the Flutter Android build process. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step fetches the repository that needs to be built from the specified branch. It is essential for initiating the Flutter Android build process. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_1.png'/>
 

@@ -16,13 +16,13 @@ Before running the **App Center iOS Distrubiton** step, you must complete certai
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | This step will build your application in ARM architecture and generate an `IPA` and `dSYM` file. |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) | This step will build your application in ARM architecture and generate an `IPA` and `dSYM` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-center_order.png' />
 
 :::caution
 
-Note that if you do not use this step after the [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export), Appcircle will not find **IPA** and **dSYM** files to distribute to the **App Center**.
+Note that if you do not use this step after the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices), Appcircle will not find **IPA** and **dSYM** files to distribute to the **App Center**.
 
 :::
 

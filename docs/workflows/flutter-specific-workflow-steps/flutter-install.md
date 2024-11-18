@@ -23,11 +23,11 @@ There are no prerequisites required before using the **Flutter Install** step.
 :::caution
 
 These steps depend on Flutter installation and can only be used after the **Flutter Install** step:
-- [**Flutter Build for iOS**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-build-for-ios)
-- [**Flutter Build for Android**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-build-for-android)
-- [**Flutter Analyze**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-analyze)
-- [**Flutter Test**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-test)
-- [**Flutter Build for Web**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps#flutter-build-for-web)
+- [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps/flutter-build-for-ios)
+- [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps/flutter-build-for-android)
+- [**Flutter Analyze**](/workflows/flutter-specific-workflow-steps/flutter-analyze)
+- [**Flutter Test**](/workflows/flutter-specific-workflow-steps/flutter-test)
+- [**Flutter Build for Web**](/workflows/flutter-specific-workflow-steps/flutter-build-for-web)
 
 :::
 
@@ -48,7 +48,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                 | Description                                    | Status 			|
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_SELECTED_FLUTTER_VERSION`| Specifies the Flutter version to install. Defaults to: `stable`. The version you set in the [Configuration](https://docs.appcircle.io/build/building-flutter-applications/#build-configuration-for-flutter-applications) section will override this setting. | Optional |  
+| `$AC_SELECTED_FLUTTER_VERSION`| Specifies the Flutter version to install. Defaults to: `stable`. The version you set in the [Configuration](/build/platform-build-guides/building-flutter-applications#build-configuration-for-flutter-ios-applications) section will override this setting. | Optional |  
 
 :::caution
 
