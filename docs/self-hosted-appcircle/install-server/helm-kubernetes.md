@@ -344,6 +344,28 @@ resources:
     nginx.ingress.kubernetes.io/proxy-body-size: 4096m
 ```
 
+#### Git Providers
+
+With default installation, self-hosted Appcircle comes with the connection options below:
+
+- Bitbucket
+- Azure
+- GitLab
+- Connect via SSH
+- Connect via URL
+
+If you want to enable or disable any of these providers, you can do so by updating your `global.yaml` file.
+
+In the example below, there are enabled git providers comma separated:
+
+```yaml
+web:
+  web-app:
+    selfHostedGitProviders: "bitbucketServer,azureDevopsServer,gitlabSelfHosted,ssh,publicRepository"
+```
+
+You can delete the providers you do not need by removing them from `selfHostedGitProviders` list.
+
 ## Deploy Using Helm
 
 Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we will use `appcircle` as Helm release name and install the Appcircle server into the `appcircle-ns` namespace.
