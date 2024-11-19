@@ -340,7 +340,7 @@ apigateway:
       nginx.ingress.kubernetes.io/proxy-body-size: 1024m
 
 # For build cache uploads
-resources:
+resource:
   ingress:
     annotations: 
       nginx.ingress.kubernetes.io/proxy-body-size: 1024m

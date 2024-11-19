@@ -33,30 +33,6 @@ const formatKeyWithIndentation = (key, indent) => {
     .join("\n");
 };
 
-const generateKeycloakClientsYaml = () => {
-  const clients = [
-    "appcircleWeb",
-    "reportingServer",
-    "licenseServer",
-    "storeServer",
-    "storeWeb",
-    "storeAdminService",
-    "distributionServer",
-    "distributionAdminService",
-    "distributionTesterWeb",
-    "publishServer",
-    "buildServer",
-  ];
-  let clientYaml = "";
-  clients.forEach(client => {
-    clientYaml += `
-      ${toKebabCase(client)}:
-        id: ${toKebabCase(client)}
-        secret: ${crypto.randomUUID()}`;
-  });
-  return clientYaml;
-};
-
 function generateRandomPassword(
   length,
   minNumbers = 1,
@@ -146,10 +122,8 @@ const YamlGenerator = () => {
     const imageRepositoryPathWithRegistry = `${imageRegistry}/${imageRepositoryPath}/`;
 
     const initialOrganizationId = crypto.randomUUID();
-    const webeventredisPassword = generateRandomPassword(32);
     const keycloakAdminPassword = generateRandomPassword(18);
     const postgresPassword = generateRandomPassword(32);
-    const minioRootPassword = generateRandomPassword(32);
 
     const indent = "      "; // Set the appropriate indentation
     var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
@@ -220,21 +194,11 @@ auth:
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-vault
 webeventredis:
-  auth:
-    password: '${webeventredisPassword}'
-  master:
-    preExecCmds: ''
   tls:
-    enabled: false
-  ingress:
-    tls: false
     enabled: true
-keycloak:
-  clients:${generateKeycloakClientsYaml()}
-minio:
-  auth:
-    rootUser: admin
-    rootPassword: ${minioRootPassword}
+  ingress:
+    tls: true
+    enabled: true
 distribution:
   distribution-testerapi:
     rsaPrivateKey: |
