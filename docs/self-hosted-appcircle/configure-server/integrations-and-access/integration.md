@@ -33,18 +33,22 @@ smtpServer:
 
 Explanation of each key
 
-|Key|Explanation|
-|---|-----------|
-|password|Password of the SMTP server|
-|username|Default user name for SMTP.|
-|from|Sender address of the emails |
-|host|The SMTP server to connect to|
-|fromDisplayName |Sender Display Name|
-|port |The SMTP server port to connect|
-|ssl | If set to true, use SSL to connect |
-|auth | If set to true, attempt to authenticate the user using the AUTH command. |
-|starttls | If set to true, enables the use of the STARTTLS command |
-|verifyCertificate | true by default. If set to false, disables validation of the SMTP server's SSL certificate. Shouldn't be disabled in production.  |
+|        Key        |         Explanation         |
+|-------------------|-----------------------------|
+| password          | Password of the SMTP server |
+| username          | Default user name for SMTP |
+| from              | Sender address of the emails |
+| host              | The SMTP server to connect to |
+| fromDisplayName   | Sender Display Name |
+| port              | The SMTP server port to connect |
+| ssl               | If set to `true`, use SSL to connect |
+| auth              | If set to `true`, attempt to authenticate the user using the AUTH command. |
+| starttls          | If set to `true`, enables the use of the STARTTLS command |
+| verifyCertificate | If set to `false`, disables validation of the SMTP server's SSL certificate. The value is `true` by default, shouldn't be disabled in production environments. |
+
+:::info
+The `verifyCertificate` option is available in version `3.23.1` or later.
+:::
 
 ## SSO
 
