@@ -354,9 +354,11 @@ With default installation, self-hosted Appcircle comes with the connection optio
 - Connect via SSH
 - Connect via URL
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers-v2.png' />
+
 If you want to enable or disable any of these providers, you can do so by updating your `global.yaml` file.
 
-In the example below, there are enabled git providers comma separated:
+In the example below, there are enabled git providers list with comma separated:
 
 ```yaml
 web:
@@ -365,6 +367,23 @@ web:
 ```
 
 You can delete the providers you do not need by removing them from `selfHostedGitProviders` list.
+
+#### Customize Enterprise App Store
+
+You can change the Enterprise App Store tab title according to the language selected on the self-hosted Appcircle server.
+
+For example, you can set a title for **TR** and a different title for **EN** language selection on browsers.
+
+```yaml
+store:
+  store-web:
+    extraEnvVars: 
+      - name: TR_STORE_TITLE
+        value: "Uygulama Mağazası"
+      - name: EN_STORE_TITLE
+        value: "App Store"
+```
+
 
 ## Deploy Using Helm
 
