@@ -280,6 +280,7 @@ global:
       -----END CERTIFICATE-----
 ```
 
+TODO: Move to another page
 #### Configure External Stateful Apps
 
 If you are deploying the Appcircle server for production, you should have stateful apps outside of the Kubernetes cluster. You can skip this section if you are deploying the Appcircle server for test environments.
@@ -325,6 +326,22 @@ global:
         JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
         ZmukIMGOIYPWDhsuJA==
         -----END CERTIFICATE-----
+```
+TODO: Move to another page
+#### Configure Max Body Size
+
+In Appcircle, there are scenarios where the client upload size might exceed the default limit of 4096MB for a single request body size. To accommodate larger file uploads or if you wish to adjust this setting according to your needs, you can configure the maximum allowed body size in your `global.yaml` file.
+
+```yaml
+# For APK, IPA, build artifact uploads
+apigateway:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 4096m
+
+# For build cache uploads
+resources:
+  annotations: 
+    nginx.ingress.kubernetes.io/proxy-body-size: 4096m
 ```
 
 ## Deploy Using Helm
