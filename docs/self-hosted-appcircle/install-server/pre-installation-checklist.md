@@ -145,7 +145,8 @@ You can see details in the [DNS Settings](/self-hosted-appcircle/install-server/
 - [ ] Determine if the SMTP server is using `SSL`.
 - [ ] Determine if the SMTP server is using `STARTTLS`.
   - :warning: `SSL` and `STARTTLS` are **not** the same thing.
-- [ ] Determine if the SMTP server requires SSL certificate verification (`verifyCertificate`). :warning Not recommended to disable in production.
+- [ ] Determine if the SMTP server requires SSL certificate verification (`verifyCertificate`).
+  - :warning: Not recommended to disable in production environments. This feature is supported in version `3.23.1` or later.
 - If the SMTP server requires authentication:
   - [ ] Create a user for Appcircle on the SMTP server.
   - [ ] Obtain the password of the Appcircle user on the SMTP server.
