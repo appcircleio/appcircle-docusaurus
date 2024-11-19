@@ -1284,3 +1284,8 @@ status = 301
 from = "/workflows/ios-specific-workflow-steps/tuist"
 to = "/workflows/ios-specific-workflow-steps/tuist-install"
 status = 301
+
+[[redirects]]
+from = "/signing-identities/signing-history"
+to = "/signing-identities/signing-reports"
+status = 301

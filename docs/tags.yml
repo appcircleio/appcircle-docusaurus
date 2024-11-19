@@ -668,6 +668,11 @@ build:
   description: "Description for cancel submission"
   permalink: /cancel-submission
 
+"captcha":
+  label: "captcha"
+  description: "Description for captcha"
+  permalink: /captcha
+
 carthage:
   label: "carthage"
   description: "Description for carthage"
@@ -2198,10 +2203,10 @@ signing:
   description: "Description for signing"
   permalink: /signing
 
-"signing history":
-  label: "signing history"
-  description: "Description for signing history"
-  permalink: /signing-history
+"signing reports":
+  label: "signing reports"
+  description: "Description for signing reports"
+  permalink: /signing-reports
 
 "signing identities":
   label: "signing identities"
