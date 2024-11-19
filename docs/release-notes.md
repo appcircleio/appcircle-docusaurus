@@ -20,7 +20,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### 🆕 New Features
 
-- A captcha security method has been added for Enterprise Portal logins, which can be configured to appear after a set number of unsuccessful login attempts, eventually blocking further access. This feature is available to organizations with an enterprise license. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A [captcha](/enterprise-app-store/portal-settings#enable-captcha) security method has been added for Enterprise Portal logins, which can be configured to appear after a set number of unsuccessful login attempts, eventually blocking further access. This feature is available to organizations with an enterprise license. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
