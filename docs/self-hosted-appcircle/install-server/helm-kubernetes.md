@@ -335,13 +335,15 @@ In Appcircle, there are scenarios where the client upload size might exceed the 
 ```yaml
 # For APK, IPA, build artifact uploads
 apigateway:
-  annotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: 4096m
+  ingress:
+    annotations:
+      nginx.ingress.kubernetes.io/proxy-body-size: 1024m
 
 # For build cache uploads
 resources:
-  annotations: 
-    nginx.ingress.kubernetes.io/proxy-body-size: 4096m
+  ingress:
+    annotations: 
+      nginx.ingress.kubernetes.io/proxy-body-size: 1024m
 ```
 
 #### Git Providers
@@ -382,6 +384,77 @@ store:
         value: "Uygulama Mağazası"
       - name: EN_STORE_TITLE
         value: "App Store"
+```
+
+#### Increase the Replica Counts
+
+With the default Helm values, the Appcircle server services being deployed with one replica. If you want to increase this number for high availability, you can do so by updating your `global.yaml` file:
+
+:::caution
+Some keys might already exists in your `global.yaml` file, make sure to update the existing keys instead of adding new ones.
+:::
+
+```yaml
+agentcache:
+  replicaCount: 3
+auth:
+  auth-keycloak:
+    replicas: 3
+appparser:
+  replicaCount: 3
+build:
+  replicaCount: 3
+distribution:
+  distribution-server:
+    replicaCount: 3
+  distribution-testeradmin:
+    replicaCount: 3
+  distribution-testerapi:
+    replicaCount: 3
+  distribution-testerweb:
+    replicaCount: 3
+  distribution-web:
+    replicaCount: 3
+license:
+  replicaCount: 3
+notification:
+  replicaCount: 3
+otp:
+  replicaCount: 3
+publish:
+  replicaCount: 3
+reporting:
+  replicaCount: 3
+resign:
+  replicaCount: 3
+resource:
+  replicaCount: 3
+schedulemanager:
+  replicaCount: 3
+signingidentity:
+  replicaCount: 3
+store:
+  store-web:
+    replicaCount: 3
+  store-admin:
+    replicaCount: 3
+  store-api:
+    replicaCount: 3
+  store-profile:
+    replicaCount: 3
+  store-report:
+    replicaCount: 3
+storesubmit:
+  replicaCount: 3
+taskserver:
+  replicaCount: 3
+web:
+  web-app:
+    replicaCount: 3
+  web-event:
+    replicaCount: 3
+webhook:
+  replicaCount: 3
 ```
 
 
