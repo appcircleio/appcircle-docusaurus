@@ -418,7 +418,7 @@ webhook:
 
 Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we will use `appcircle-server` as Helm release name and install the Appcircle server into the `appcircle` namespace.
 
-TODO: Not working for now. You should package the helm repository manually, or get it from Appcircle team.
+TODO: The repository is not working for now. You should package the helm repository manually, or get it from Appcircle team. The `helm upgrade --install` commands works with the helm package from a local file.
 - Add the Appcircle Helm repository.
 
 ```bash
