@@ -179,10 +179,10 @@ const YamlGenerator = () => {
 auth:
   auth-keycloak:
     organizationName: ${organizationName}
-    image:
-      repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak
     initialUsername: '${initialUserEmail}'
     initialPassword: '${initialUserPassword}'
+    image:
+      repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak
   server:
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-vault
