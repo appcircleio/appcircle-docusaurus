@@ -1,34 +1,23 @@
+# Account related redirects
 [[redirects]]
-  from = "/workflows/why-to-use-workflows"
-  to = "/workflows"
-  status = 301
+from = "/account/adding-google-play-service-account"
+to = "/account/my-organization/integrations/credentials/adding-google-play-service-account"
+status = 301
 
 [[redirects]]
-  from = "/account/adding-google-play-service-account"
-  to = "/account/my-organization/integrations/credentials/adding-google-play-service-account"
-  status = 301
+from = "/account/adding-huawei-api-key"
+to = "/account/my-organization/integrations/credentials/adding-huawei-api-key"
+status = 301
 
 [[redirects]]
-  from = "/account/adding-huawei-api-key"
-  to = "/account/my-organization/integrations/credentials/adding-huawei-api-key"
-  status = 301
+from = "/account/artifacts"
+to = "/account/my-organization/artifacts"
+status = 301
 
 [[redirects]]
-  from = "/account/artifacts"
-  to = "/account/my-organization/artifacts"
-  status = 301
-
-[[redirects]]
-  from = "/account/ldap-login"
-  to = "/account/my-organization/integrations/authentications"
-  status = 301
-
-[[redirects]]
-  from = "/account/sso/single-sign-on"
-  to = "/account/my-organization/integrations/authentications/sso-authentication"
-  status = 301
-
-# Redirects for new integrations look
+from = "/account/ldap-login"
+to = "/account/my-organization/integrations/authentications"
+status = 301
 
 [[redirects]]
 from = "/account/my-organization/integrations"
@@ -41,18 +30,13 @@ to = "/account/my-organization/security/authentications"
 status = 301
 
 [[redirects]]
-from = "/account/my-organization/integrations/authorization"
-to = "/account/my-organization/security/authorization"
-status = 301
-
-[[redirects]]
-from = "/account/my-organization/integrations/credentials"
-to = "/account/my-organization/security/credentials"
-status = 301
-
-[[redirects]]
 from = "/account/my-organization/integrations/authentications/sso-authentication"
 to = "/account/my-organization/security/authentications/sso-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
+to = "/account/my-organization/security/authentications/store-and-distribution-ldap-authentication"
 status = 301
 
 [[redirects]]
@@ -61,13 +45,8 @@ to = "/account/my-organization/security/authentications/store-and-distribution-s
 status = 301
 
 [[redirects]]
-from = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
-to = "/account/my-organization/security/authentications/store-and-distribution-ldap-authentication"
-status = 301
-
-[[redirects]]
-from = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
-to = "/account/my-organization/security/authentications/store-and-distribution-ldap-authentication"
+from = "/account/my-organization/integrations/authorization"
+to = "/account/my-organization/security/authorization"
 status = 301
 
 [[redirects]]
@@ -83,6 +62,11 @@ status = 301
 [[redirects]]
 from = "/account/my-organization/integrations/authorization/store-sso-authorization"
 to = "/account/my-organization/security/authorization/store-sso-authorization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/credentials"
+to = "/account/my-organization/security/credentials"
 status = 301
 
 [[redirects]]
@@ -116,18 +100,8 @@ to = "/account/my-organization/notifications/email-connection"
 status = 301
 
 [[redirects]]
-from = "/account/my-organization/integrations/notification-integrations/teams-notifications"
-to = "/account/my-organization/notifications/teams-notifications"
-status = 301
-
-[[redirects]]
 from = "/account/my-organization/integrations/notification-integrations/slack"
 to = "/account/my-organization/notifications/slack"
-status = 301
-
-[[redirects]]
-from = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
-to = "/account/my-organization/notifications/slack/slack-notifications"
 status = 301
 
 [[redirects]]
@@ -136,15 +110,386 @@ to = "/account/my-organization/notifications/slack/appcircle-bot-for-slack"
 status = 301
 
 [[redirects]]
+from = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/integrations/notification-integrations/teams-notifications"
+to = "/account/my-organization/notifications/teams-notifications"
+status = 301
+
+[[redirects]]
 from = "/account/my-organization/integrations/notification-integrations/webhooks"
 to = "/account/my-organization/notifications/webhooks"
 status = 301
 
-# Redirects for build-related changes
 [[redirects]]
-  from = "/build/connections"
-  to = "/build/manage-the-connections"
-  status = 301
+from = "/account/sso/auth-openid"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/sso/auth-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/sso/azure-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/sso/okta-openid"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/sso/okta-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/sso/onelogin-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/email-connection"
+to = "/account/my-organization/integrations/notification-integrations/email-connection"
+status = 301
+
+[[redirects]]
+from = "/account/slack/appcircle-bot-for-slack"
+to = "/account/my-organization/integrations/notification-integrations/slack/appcircle-bot-for-slack"
+status = 301
+
+[[redirects]]
+from = "/account/teams-notifications"
+to = "/account/my-organization/integrations/notification-integrations/teams-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/webhooks"
+to = "/account/my-organization/integrations/notification-integrations/webhooks"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/my-details"
+to = "/account/my-account/account-management/my-details"
+status = 301
+
+[[redirects]]
+from = "/account/adding-an-app-store-connect-api-key"
+to = "/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/sso-login/single-sign-on-login"
+to = "/account/my-organization/integrations/authentications/authentication-store-and-distribution"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/active-sessions"
+to = "/account/my-account/account-management/active-sessions"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/authenticator-two-factor-authentication"
+to = "/account/my-account/account-management/authenticator-two-factor-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/change-password"
+to = "/account/my-account/account-management/change-password"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/delete-account"
+to = "/account/my-account/account-management/delete-account"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/federated-identity-linked-login-providers"
+to = "/account/my-account/account-management/federated-identity-linked-login-providers"
+status = 301
+
+[[redirects]]
+from = "/account/sign-up-login"
+to = "/account/my-account/sign-up-login"
+status = 301
+
+[[redirects]]
+from = "/account/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/sso-login/okta-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/auth-openid#sso-mapping"
+to = "/account/my-organization/integrations/authorization#sso-based-authorization-with-group-and-role-mapping"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/single-sign-on"
+to = "/account/my-organization/integrations/authentications/sso-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications-and-communication/teams-notifications"
+to = "/account/my-organization/integrations/notification-integrations/teams-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications-and-communication/email-connection"
+to = "/account/my-organization/integrations/notification-integrations/email-connection"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/api-integrations"
+to = "/account/my-organization/integrations"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/api-integrations/adding-an-app-store-connect-api-key"
+to = "/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/api-integrations/adding-google-play-service-account"
+to = "/account/my-organization/integrations/credentials/adding-google-play-service-account"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/api-integrations/adding-huawei-api-key"
+to = "/account/my-organization/integrations/credentials/adding-huawei-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/api-integrations/adding-microsoft-intune-api-key"
+to = "/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/role-management"
+to = "/account/my-organization/profile-and-team/role-management"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/auth-openid"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/auth-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/azure-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/okta-openid"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/okta-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/onelogin-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications-and-communication"
+to = "/account/my-organization/integrations/notification-integrations"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/webhooks"
+to = "/account/my-organization/integrations/notification-integrations/webhooks"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/ldap-login"
+to = "/account/my-organization/integrations/authentications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/team-activity-log"
+to = "/account/my-organization/profile-and-team/team-activity-log"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
+to = "/account/my-organization/integrations/authentications/sso-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
+to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
+status = 301
+
+# Build related redirects
+
+[[redirects]]
+from = "/best-practices/building-multiple-apps-in-one-profile"
+to = "/building-multiple-apps-in-one-profile"
+status = 301
+
+[[redirects]]
+from = "/build/adding-a-build-profile"
+to = "/build/manage-the-connections/adding-a-build-profile"
+status = 301
+
+[[redirects]]
+from = "/build/adding-a-build-profile/connecting-multiple-instance"
+to = "/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance"
+status = 301
+
+[[redirects]]
+from = "/build/adding-a-build-profile/connecting-to-azure"
+to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-azure"
+status = 301
+
+[[redirects]]
+from = "/build/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository"
+to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository"
+status = 301
+
+[[redirects]]
+from = "/build/adding-a-build-profile/connecting-to-bitbucket"
+to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket"
+status = 301
+
+[[redirects]]
+from = "/build/adding-a-build-profile/connecting-to-github"
+to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-github"
+status = 301
+
+[[redirects]]
+from = "/build/adding-a-build-profile/connecting-to-gitlab"
+to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab"
+status = 301
+
+[[redirects]]
+from = "/build/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+status = 301
+
+[[redirects]]
+from = "/build/adding-a-build-profile/connecting-to-public-repository"
+to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository"
+status = 301
+
+[[redirects]]
+from = "/build/after-a-build"
+to = "/build/post-build-operations/after-a-build"
+status = 301
+
+[[redirects]]
+from = "/build/build-manually-or-with-triggers"
+to = "/build/build-process-management/build-manually-or-with-triggers"
+status = 301
+
+[[redirects]]
+from = "/build/build-profile-branch-operations"
+to = "/build/build-process-management/build-profile-branch-operations"
+status = 301
+
+[[redirects]]
+from = "/build/build-profile-configuration"
+to = "/build/build-process-management/build-profile-configuration"
+status = 301
+
+[[redirects]]
+from = "/build/building-android-applications"
+to = "/build/platform-build-guides/building-android-applications"
+status = 301
+
+[[redirects]]
+from = "/build/building-android-applications/android-signing-for-google-play"
+to = "/build/platform-build-guides/building-android-applications/android-signing-for-google-play"
+status = 301
+
+[[redirects]]
+from = "/build/building-flutter-applications"
+to = "/build/platform-build-guides/building-flutter-applications"
+status = 301
+
+[[redirects]]
+from = "/build/building-flutter-web-applications"
+to = "/build/platform-build-guides/building-flutter-applications/building-flutter-web-applications"
+status = 301
+
+[[redirects]]
+from = "/build/building-ios-applications"
+to = "/build/platform-build-guides/building-ios-applications"
+status = 301
+
+[[redirects]]
+from = "/build/building-ionic-projects-with-custom-scripts"
+to = "/build/platform-build-guides/building-ionic-projects-with-custom-scripts"
+status = 301
+
+[[redirects]]
+from = "/build/building-react-native-applications"
+to = "/build/platform-build-guides/building-react-native-applications"
+status = 301
+
+[[redirects]]
+from = "/build/connections"
+to = "/build/manage-the-connections"
+status = 301
+
+[[redirects]]
+from = "/build/platform-build-guides/building-dotnet-maui-apps-with-custom-scripts"
+to = "/build/platform-build-guides/building-dotnet-maui-apps"
+status = 301
+
+[[redirects]]
+from = "/build/reconnect-change-provider"
+to = "/build/manage-the-connections/reconnect-change-provider#change-git-provider-and-reconnect"
+status = 301
+
+[[redirects]]
+from = "/infrastructure/accessing-repositories-in-internal-networks-firewalls"
+to = "/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls"
+status = 301
+
+[[redirects]]
+from = "/tutorials/how-to-add-a-flutter-app"
+to = "/build/platform-build-guides/building-flutter-applications"
+status = 301
+
+[[redirects]]
+from = "/tutorials/how-to-add-a-react-native-app"
+to = "/build/platform-build-guides/building-react-native-applications"
+status = 301
+
+[[redirects]]
+from = "/tutorials/how-to-add-an-android-app"
+to = "/build/platform-build-guides/building-android-applications"
+status = 301
+
+[[redirects]]
+from = "/tutorials/how-to-add-an-ios-app"
+to = "/build/platform-build-guides/building-ios-applications"
+status = 301
 
 # Redirects for self-hosted Appcircle configuration changes
 [[redirects]]
@@ -228,98 +573,13 @@ status = 301
   status = 301
 
 [[redirects]]
-  from = "/build/building-ios-applications"
-  to = "/build/platform-build-guides/building-ios-applications"
-  status = 301
-
-[[redirects]]
-  from = "/build/build-manually-or-with-triggers"
-  to = "/build/build-process-management/build-manually-or-with-triggers"
-  status = 301
-
-[[redirects]]
-  from = "/build/adding-a-build-profile/connecting-to-private-repository-via-ssh"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh"
-  status = 301
-
-[[redirects]]
-  from = "/infrastructure/accessing-repositories-in-internal-networks-firewalls"
-  to = "/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls"
-  status = 301
-
-[[redirects]]
-  from = "/build/after-a-build"
-  to = "/build/post-build-operations/after-a-build"
-  status = 301
-
-[[redirects]]
-  from = "/build/build-profile-configuration"
-  to = "/build/build-process-management/build-profile-configuration"
-  status = 301
-
-[[redirects]]
   from = "/continuous-testing/running-android-unit-tests"
   to = "/continuous-testing/android-testing/running-android-unit-tests"
   status = 301
 
 [[redirects]]
-  from = "/account/sso/auth-openid"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/sso/auth-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/sso/azure-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/sso/okta-openid"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/sso/okta-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/sso/onelogin-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/build/building-flutter-web-applications"
-  to = "/build/platform-build-guides/building-flutter-applications/building-flutter-web-applications"
-  status = 301
-
-[[redirects]]
-  from = "/build/adding-a-build-profile/connecting-to-bitbucket"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket"
-  status = 301
-
-[[redirects]]
-  from = "/build/adding-a-build-profile/connecting-to-gitlab"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab"
-  status = 301
-
-[[redirects]]
-  from = "/build/adding-a-build-profile/connecting-to-public-repository"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository"
-  status = 301
-
-[[redirects]]
   from = "/continuous-testing/running-ios-unit-and-ui-tests"
   to = "/continuous-testing/ios-testing/running-ios-unit-and-ui-tests"
-  status = 301
-
-[[redirects]]
-  from = "/build/reconnect-change-provider"
-  to = "/build/manage-the-connections/reconnect-change-provider#change-git-provider-and-reconnect"
   status = 301
 
 [[redirects]]
@@ -333,11 +593,6 @@ status = 301
   status = 301
 
 [[redirects]]
-  from = "/account/email-connection"
-  to = "/account/my-organization/integrations/notification-integrations/email-connection"
-  status = 301
-
-[[redirects]]
   from = "/self-hosted-appcircle/configure-server/login-configuration"
   to = "/self-hosted-appcircle/configure-server/integrations-and-access/login-configuration"
   status = 301
@@ -348,33 +603,8 @@ status = 301
   status = 301
 
 [[redirects]]
-  from = "/account/slack/appcircle-bot-for-slack"
-  to = "/account/my-organization/integrations/notification-integrations/slack/appcircle-bot-for-slack"
-  status = 301
-
-[[redirects]]
   from = "/integrations/jira-integration"
   to = "/integrations/integration-guides/jira-integration"
-  status = 301
-
-[[redirects]]
-  from = "/account/teams-notifications"
-  to = "/account/my-organization/integrations/notification-integrations/teams-notifications"
-  status = 301
-
-[[redirects]]
-  from = "/build/adding-a-build-profile/connecting-to-github"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-github"
-  status = 301
-
-[[redirects]]
-  from = "/build/building-react-native-applications"
-  to = "/build/platform-build-guides/building-react-native-applications"
-  status = 301
-
-[[redirects]]
-  from = "/build/adding-a-build-profile/connecting-multiple-instance"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance"
   status = 301
 
 [[redirects]]
@@ -398,38 +628,8 @@ status = 301
   status = 301
 
 [[redirects]]
-  from = "/build/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository"
-  status = 301
-
-[[redirects]]
-  from = "/build/adding-a-build-profile/connecting-to-azure"
-  to = "/build/manage-the-connections/adding-a-build-profile/connecting-to-azure"
-  status = 301
-
-[[redirects]]
-  from = "/account/webhooks"
-  to = "/account/my-organization/integrations/notification-integrations/webhooks"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-account/my-details"
-  to = "/account/my-account/account-management/my-details"
-  status = 301
-
-[[redirects]]
-  from = "/account/adding-an-app-store-connect-api-key"
-  to = "/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key"
-  status = 301
-
-[[redirects]]
   from = "/workflows/android-specific-workflow-steps/build-and-test/android-build"
   to = "/workflows/android-specific-workflow-steps/android-build"
-  status = 301
-
-[[redirects]]
-  from = "/account/sso-login/single-sign-on-login"
-  to = "/account/my-organization/integrations/authentications/authentication-store-and-distribution"
   status = 301
 
 [[redirects]]
@@ -448,11 +648,6 @@ status = 301
   status = 301
 
 [[redirects]]
-  from = "/building-multiple-apps-in-one-profile"
-  to = "/best-practices/building-multiple-apps-in-one-profile"
-  status = 301
-
-[[redirects]]
   from = "/distribute/create-or-select-a-distribution-profile.md"
   to = "/testing-distribution/create-or-select-a-distribution-profile"
   status = 301
@@ -466,86 +661,6 @@ status = 301
   from = "/integrations/custom-script-faq"
   to = "/integrations/working-with-custom-scripts/custom-script-faq"
   status=301
-
-[[redirects]]
-  from = "/build-manually-or-with-triggers"
-  to = "/build/build-manually-or-with-triggers"
-  status = 301
-
-[[redirects]]
-  from = "/adding-a-build-profile/connecting-to-private-repository-via-ssh"
-  to = "/build/adding-a-build-profile/connecting-to-private-repository-via-ssh"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-account/active-sessions"
-  to = "/account/my-account/account-management/active-sessions"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-account/authenticator-two-factor-authentication"
-  to = "/account/my-account/account-management/authenticator-two-factor-authentication"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-account/change-password"
-  to = "/account/my-account/account-management/change-password"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-account/delete-account"
-  to = "/account/my-account/account-management/delete-account"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-account/federated-identity-linked-login-providers"
-  to = "/account/my-account/account-management/federated-identity-linked-login-providers"
-  status = 301
-
-[[redirects]]
-  from = "/account/sign-up-login"
-  to = "/account/my-account/sign-up-login"
-  status = 301
-
-[[redirects]]
-  from = "/account/slack/slack-notifications"
-  to = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
-  status = 301
-
-[[redirects]]
-  from = "/account/sso-login/okta-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/build/build-profile-branch-operations"
-  to = "/build/build-process-management/build-profile-branch-operations"
-  status = 301
-
-[[redirects]]
-  from = "/build/adding-a-build-profile"
-  to = "/build/manage-the-connections/adding-a-build-profile"
-  status = 301
-
-[[redirects]]
-  from = "/build/building-android-applications/android-signing-for-google-play"
-  to = "/build/platform-build-guides/building-android-applications/android-signing-for-google-play"
-  status = 301
-
-[[redirects]]
-  from = "/build/building-android-applications"
-  to = "/build/platform-build-guides/building-android-applications"
-  status = 301
-
-[[redirects]]
-  from = "/build/building-flutter-applications"
-  to = "/build/platform-build-guides/building-flutter-applications"
-  status = 301
-
-[[redirects]]
-  from = "/build/building-ionic-projects-with-custom-scripts"
-  to = "/build/platform-build-guides/building-ionic-projects-with-custom-scripts"
-  status = 301
 
 [[redirects]]
   from = "/continuous-testing/firebase-test-lab-for-android"
@@ -961,26 +1076,6 @@ status = 301
   status = 301
 
 [[redirects]]
-  from = "/tutorials/how-to-add-a-react-native-app"
-  to = "/build/platform-build-guides/building-react-native-applications"
-  status = 301
-  
-[[redirects]]
-  from = "/tutorials/how-to-add-an-ios-app"
-  to = "/build/platform-build-guides/building-ios-applications"
-  status = 301
-
-[[redirects]]
-  from = "/tutorials/how-to-add-a-flutter-app"
-  to = "/build/platform-build-guides/building-flutter-applications"
-  status = 301
-
-[[redirects]]
-  from = "/tutorials/how-to-add-an-android-app"
-  to = "/build/platform-build-guides/building-android-applications"
-  status = 301
-
-[[redirects]]
   from = "/signing-identities/ios-certificates-and-provisioning-profiles"
   to = "/signing-identities"
   status = 301
@@ -1066,21 +1161,6 @@ status = 301
   status = 301
 
 [[redirects]]
-  from = "/build/platform-build-guides/building-dotnet-maui-apps-with-custom-scripts"
-  to = "/build/platform-build-guides/building-dotnet-maui-apps"
-  status = 301
-
-[[redirects]]
-  from = "/build/post-build-operations/after-a-build#android-outputs"
-  to = "/build/post-build-operations/after-a-build#download-artifacts"
-  status = 301
-
-[[redirects]]
-  from = "/build/post-build-operations/after-a-build#ios-outputs"
-  to = "/build/post-build-operations/after-a-build#download-artifacts"
-  status = 301
-
-[[redirects]]
   from = "/enterprise-appstore"
   to = "/enterprise-app-store"
   status = 301
@@ -1088,121 +1168,6 @@ status = 301
 [[redirects]]
   from = "/enterprise-app-store/enterprise-app-store-setup/add-ent-profile"
   to = "/enterprise-app-store/enterprise-app-store-profile"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/auth-openid#sso-mapping"
-  to = "/account/my-organization/integrations/authorization#sso-based-authorization-with-group-and-role-mapping"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/single-sign-on"
-  to = "/account/my-organization/integrations/authentications/sso-authentication"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
-  to = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/notifications-and-communication/teams-notifications"
-  to = "/account/my-organization/integrations/notification-integrations/teams-notifications"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/notifications-and-communication/email-connection"
-  to = "/account/my-organization/integrations/notification-integrations/email-connection"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/api-integrations"
-  to = "/account/my-organization/integrations"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/api-integrations/adding-an-app-store-connect-api-key"
-  to = "/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/api-integrations/adding-google-play-service-account"
-  to = "/account/my-organization/integrations/credentials/adding-google-play-service-account"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/api-integrations/adding-huawei-api-key"
-  to = "/account/my-organization/integrations/credentials/adding-huawei-api-key"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/api-integrations/adding-microsoft-intune-api-key"
-  to = "/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/role-management"
-  to = "/account/my-organization/profile-and-team/role-management"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/auth-openid"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/auth-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/azure-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/okta-openid"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/okta-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/onelogin-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/notifications-and-communication"
-  to = "/account/my-organization/integrations/notification-integrations"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/webhooks"
-  to = "/account/my-organization/integrations/notification-integrations/webhooks"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/ldap-login"
-  to = "/account/my-organization/integrations/authentications"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/team-activity-log"
-  to = "/account/my-organization/profile-and-team/team-activity-log"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/sso-login/single-sign-on-login"
-  to = "/account/my-organization/integrations/authentications/sso-authentication"
-  status = 301
-
-[[redirects]]
-  from = "/account/my-organization/sso-providers-configuration/sso-login/okta-saml"
-  to = "/account/my-organization/integrations/authentications/sso-authentication#4-specific-provider-configuration"
   status = 301
 
 [[redirects]]
@@ -1283,6 +1248,11 @@ status = 301
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/tuist"
 to = "/workflows/ios-specific-workflow-steps/tuist-install"
+status = 301
+
+[[redirects]]
+from = "/workflows/why-to-use-workflows"
+to = "/workflows"
 status = 301
 
 [[redirects]]
