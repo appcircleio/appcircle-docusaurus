@@ -92,9 +92,10 @@ const YamlGenerator = () => {
   const [smtpPort, setSmtpPort] = useState("587");
   const [smtpSsl, setSmtpSsl] = useState("false");
   const [smtpStartTls, setSmtpStartTls] = useState("true");
+  const [smtpEmailsFrom, setSmtpEmailsFrom] = useState("appcircle@spacetech.com");
   const [smtpRequiresAuth, setSmtpRequiresAuth] = useState(true);
-  const [smtpUsername, setSmtpUsername] = useState("true");
-  const [smtpPassword, setSmtpPassword] = useState("true");
+  const [smtpUsername, setSmtpUsername] = useState("smtpUserName");
+  const [smtpPassword, setSmtpPassword] = useState("superSecretSmtpPassword");
   const [imageRegistryHost, setImageRegistryHost] = useState(
     "europe-west1-docker.pkg.dev"
   );
@@ -205,15 +206,15 @@ const YamlGenerator = () => {
     scheme: https
   mail:
     smtp:
-      domain: 'smtp.example.com'
-      host: 'smtp.example.com'
-      port: '587'
-      from: 'appcircle@example.com'
-      ssl: 'false'
-      tls: 'true'
-      auth: 'true'
-      username: 'smtpUsername'
-      password: 'superSecretSMTPPassword'
+      domain: ${smtpHost}
+      host: ${smtpHost}
+      port: ${smtpPort}
+      from: ${smtpEmailsFrom}
+      ssl: ${smtpSsl}
+      tls: ${smtpStartTls}
+      auth: ${smtpRequiresAuth}
+      username: ${smtpUsername}
+      password: ${smtpPassword}
   imageRegistry: ${imageRegistry}
   imageRepositoryPath: ${imageRepositoryPath}
   imageTag: ${imageTag}
@@ -415,6 +416,17 @@ ${formattedStoreRsaPublicKey}`;
             className="input-field input-field-long"
             value={smtpStartTls}
             onChange={e => setSmtpStartTls(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          SMTP Send Emails From:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={smtpEmailsFrom}
+            onChange={e => setSmtpEmailsFrom(e.target.value)}
           />
         </label>
       </div>
