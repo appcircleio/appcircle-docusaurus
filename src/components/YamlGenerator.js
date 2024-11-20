@@ -80,13 +80,6 @@ const generateRandomPassword = (
 };
 
 const YamlGenerator = () => {
-  const [imageRegistryHost, setImageRegistryHost] = useState(
-    "europe-west1-docker.pkg.dev"
-  );
-  const [imageRepositoryPath, setImageRepositoryPath] = useState(
-    "appcircle/docker-registry"
-  );
-  const [imageTag, setImageTag] = useState("alpha-latest");
   const [appcircleMainDomain, setAppcircleMainDomain] = useState(
     "appcircle.spacetech.com"
   );
@@ -95,6 +88,20 @@ const YamlGenerator = () => {
   const [initialUserPassword, setInitialUserPassword] = useState(
     "superSecretAppcirclePassword1234"
   );
+  const [smtpHost, setSmtpHost] = useState("smtp.spacetech.com");
+  const [smtpPort, setSmtpPort] = useState("587");
+  const [smtpSsl, setSmtpSsl] = useState("false");
+  const [smtpStartTls, setSmtpStartTls] = useState("true");
+  const [smtpRequiresAuth, setSmtpRequiresAuth] = useState(true);
+  const [smtpUsername, setSmtpUsername] = useState("true");
+  const [smtpPassword, setSmtpPassword] = useState("true");
+  const [imageRegistryHost, setImageRegistryHost] = useState(
+    "europe-west1-docker.pkg.dev"
+  );
+  const [imageRepositoryPath, setImageRepositoryPath] = useState(
+    "appcircle/docker-registry"
+  );
+  const [imageTag, setImageTag] = useState("alpha-latest");
   const [requiresAuth, setRequiresAuth] = useState(true);
   const [registryUsername, setRegistryUsername] = useState("_json_key");
   const [registryPassword, setRegistryPassword] = useState(
@@ -362,6 +369,87 @@ ${formattedStoreRsaPublicKey}`;
                 className="input-field input-field-long"
                 value={registryPassword}
                 onChange={e => setRegistryPassword(e.target.value)}
+              />
+            </label>
+          </div>
+        </>
+      )}
+      <div className="form-group">
+        <label>
+          SMTP Host:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={smtpHost}
+            onChange={e => setSmtpHost(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          SMTP Port:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={smtpPort}
+            onChange={e => setSmtpPort(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          SMTP SSL/TLS:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={smtpSsl}
+            onChange={e => setSmtpSsl(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          SMTP StartTLS:
+          <input
+            type="text"
+            className="input-field input-field-long"
+            value={smtpStartTls}
+            onChange={e => setSmtpStartTls(e.target.value)}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          SMTP Server Requires Auth:
+          <input
+            type="checkbox"
+            className="input-checkbox"
+            checked={smtpRequiresAuth}
+            onChange={e => setSmtpRequiresAuth(e.target.checked)}
+          />
+        </label>
+      </div>
+      {smtpRequiresAuth && (
+        <>
+          <div className="form-group">
+            <label>
+              SMTP Username:
+              <input
+                type="text"
+                className="input-field input-field-long"
+                value={smtpUsername}
+                onChange={e => setRegistryUsername(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className="form-group">
+            <label>
+              SMTP Password:
+              <input
+                type="text"
+                className="input-field input-field-long"
+                value={smtpPassword}
+                onChange={e => setSmtpPassword(e.target.value)}
               />
             </label>
           </div>
