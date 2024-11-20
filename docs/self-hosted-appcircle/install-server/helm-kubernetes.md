@@ -155,6 +155,8 @@ To configure Helm, you can create a `global.yaml` file by specifying your desire
 Please check the information about the input boxes below. The installation may not complete successfully if the values are incompatible.  
 :::
 
+#### Appcircle General Settings
+
 - `The Organization Name`: Enter your organization's name.
 - `Appcircle Main Domain`: Specify the [domain name](#domain-name) that will host nine subdomains. Ensure the domain is properly configured and can handle subdomain creation as required.
 - `Appcircle Initial User Email`: Provide the admin email address for the Appcircle server. It is recommended to use an email address that exists and can receive emails for password reset purposes.
@@ -163,14 +165,37 @@ Please check the information about the input boxes below. The installation may n
   - At least one lowercase letter.
   - At least one uppercase letter.
   - At least one numeric digit.
+
+---
+
+#### Container Image Registry Settings
+
 - `Container Registry Host`: Enter the domain or IP address of your container image registry, such as Harbor or Nexus, if using an external image registry.
 - `Container Image Repository Path`: Specify the path of the container images. This is typically the segment between your registry host and the image name. For example, in the image path `registry.spacetech.com/appcircle-proxy/image:tag`, the repository path is `appcircle-proxy`.
 - `Container Image Tag`: (Consider removing if unnecessary) Specify the version of the Appcircle server, such as `v3.23.1`, `latest`, or `beta-latest`.
-- `Container Image Registry Requires Auth`: Select this option if the container image registry requires authentication.
+- `Container Image Registry Requires Authentication`: Select this option if the container image registry requires authentication.
 - `Container Image Registry Username`: For the default image registry, use `_json_key` as the username.
 - `Container Image Registry Password`: Enter the content of the `cred.json` file, which you must obtain from Appcircle, for the default image registry.
 
+:::tipbox
 You don't need to change `Container Image Registry Host, Path and Tag` settings if you are not using an external container image registry.
+:::
+
+---
+
+#### SMTP Settings
+
+- `SMTP Host`: Domain or IP address of the SMTP server.
+- `SMTP Port`: Port number of the SMTP server.
+- `SMTP SSL/TLS`: Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
+- `SMTP StartTLS`: Set to 'true' if the SMTP server uses StartTLS protocol for upgrading an unencrypted connection to a secure one, typically on port 587.
+- `SMTP Send Emails From`: Email address that Appcircle will send emails from.
+- `SMTP Server Requires Authentication`: Should be 'true' if the SMTP server requires authentication. False for otherwise.
+- `SMTP Username`: SMTP username for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
+- `SMTP Password`: SMTP password for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
+---
+
+#### Generate the Configuration File
 
 <YamlGenerator />
 
@@ -193,17 +218,6 @@ vi global.yaml
 Appcircle needs an SMTP server to send emails for operations such as user authorization, Testing Distribution, notification emails.
 
 The `global.yaml` configuration file contains `.global.smtp` key to store the SMTP settings that the Appcircle will use.
-
-- `auth`: Should be 'true' if the SMTP server requires authentication. False for otherwise.
-- `username`: SMTP username for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
-- `password`: SMTP password for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
-  @TODO: deprecate this
-- `domain`: SMTP server domain name.
-- `host`: Domain or IP address of the SMTP server.
-- `port`: Port number of the SMTP server.
-- `from`: Email address that Appcircle will send emails from.
-- `ssl`: Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
-- `tls`: Set to 'true' if the SMTP server uses StartTLS protocol for upgrading an unencrypted connection to a secure one, typically on port 587.
 
 :::tip
 For most cases, `ssl` and `tls` can't be 'true' at the same time.
