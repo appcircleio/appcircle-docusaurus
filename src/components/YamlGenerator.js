@@ -340,7 +340,7 @@ ${formattedStoreRsaPublicKey}`;
       </div>
       <div className="form-group">
         <label>
-          Container Image Registry Requires Auth:
+          Container Image Registry Requires Authentication:
           <input
             type="checkbox"
             className="input-checkbox"
@@ -432,7 +432,7 @@ ${formattedStoreRsaPublicKey}`;
       </div>
       <div className="form-group">
         <label>
-          SMTP Server Requires Auth:
+          SMTP Server Requires Authentication:
           <input
             type="checkbox"
             className="input-checkbox"
