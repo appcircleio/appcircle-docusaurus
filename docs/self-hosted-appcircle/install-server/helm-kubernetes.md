@@ -230,7 +230,7 @@ Click the `Generate YAML` button to create a ready-to-use configuration file. On
 
 Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some points in this file that you need to configure manually.
 
-Open the `global.yaml` with your favorite editor like `vi`, `VS Code` or `notepad`.
+If there are any settings you want to configure, open the `global.yaml` with your favorite editor like `vi`, `VS Code` or `notepad` and follow the sections below.
 
 ```bash
 vi global.yaml
@@ -416,8 +416,9 @@ webhook:
 
 ## Deploy Using Helm
 
-Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we will use `appcircle` as Helm release name and install the Appcircle server into the `appcircle-ns` namespace.
+Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we will use `appcircle-server` as Helm release name and install the Appcircle server into the `appcircle` namespace.
 
+TODO: Not working for now. You should package the helm repository manually, or get it from Appcircle team.
 - Add the Appcircle Helm repository.
 
 ```bash
