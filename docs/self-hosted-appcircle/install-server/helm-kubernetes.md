@@ -185,6 +185,8 @@ You don't need to change `Container Image Registry Host, Path and Tag` settings 
 
 #### SMTP Settings
 
+Appcircle needs an SMTP server to send emails for operations such as user authorization, Testing Distribution, notification emails.
+
 - `SMTP Host`: Domain or IP address of the SMTP server.
 - `SMTP Port`: Port number of the SMTP server.
 - `SMTP SSL/TLS`: Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
@@ -193,6 +195,25 @@ You don't need to change `Container Image Registry Host, Path and Tag` settings 
 - `SMTP Server Requires Authentication`: Should be 'true' if the SMTP server requires authentication. False for otherwise.
 - `SMTP Username`: SMTP username for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
 - `SMTP Password`: SMTP password for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
+
+:::tip
+For most cases, `SMTP SSL/TLS` and `SMTP StartTLS` can't be `true` at the same time.
+:::
+
+:::info
+If you are not using secure connections for SMTP communication, you should set both `SMTP SSL/TLS` and `SMTP StartTLS` to 'false'.
+:::
+
+---
+
+#### Configure the SSL/TLS Certificates
+
+With the example configuration, Appcircle configures the ingress objects with SSL/TLS certificates so the client that connect to Appcircle uses HTTPS instead of HTTP.
+
+  - `Appcircle SSL/TLS Certificate File`: Should be the public certificate of the SSL/TLS certificate. It is best practice to use fullchain certificates (including intermediate certificates) instead of single certificates.
+  - `Appcircle SSL/TLS Private Key File`: Should be the private key of the SSL/TLS certificate.
+  - `Appcircle CA Certificate File`: Should be the Certificate Authority public key. Typically the bottom certificate of your fullchain certificate. If you are using a single certificate instead of a full chain certificate, `Appcircle CA Certificate File` should be that single certificate.
+
 ---
 
 #### Generate the Configuration File
@@ -211,87 +232,6 @@ Open the `global.yaml` with your favorite editor like `vi`, `VS Code` or `notepa
 
 ```bash
 vi global.yaml
-```
-
-#### Edit the SMTP Settings
-
-Appcircle needs an SMTP server to send emails for operations such as user authorization, Testing Distribution, notification emails.
-
-The `global.yaml` configuration file contains `.global.smtp` key to store the SMTP settings that the Appcircle will use.
-
-:::tip
-For most cases, `ssl` and `tls` can't be 'true' at the same time.
-:::
-
-:::info
-If you are not using secure connections for SMTP communication, you should set both `ssl` and `tls` to 'false'.
-:::
-
-```yaml
-global:
-  mail:
-    smtp:
-      auth: "true"
-      username: "appcircle-smtp-user"
-      password: "super-secret-smtp-password"
-      # @TODO: deprecate this
-      domain: "smtp.spacetech.com"
-      host: "smtp.spacetech.com"
-      port: "587"
-      from: "appcircle@spacetech.com"
-      ssl: "false"
-      tls: "true"
-```
-
-#### Configure the SSL/TLS Certificates
-
-You can follow the steps below to configure the SSL/TLS certificates in your `global.yaml`:
-
-- Add your fullchain certificate and private key under the `.global.tlsWildcard` key.
-
-  - `cert`: Should be the public certificate of the SSL/TLS certificate.
-  - `key`: Should be the private key of the SSL/TLS certificate.
-  - `caCert`: Should be the Certificate Authority public key. Typically the bottom certificate of your fullchain certificate. If you are using a single certificate instead of a full chain certificate, `caCert` should be that single certificate.
-
-:::info
-The `.global` key already exists in your `global.yaml` file. You should just add the `tlsWildcard` key.
-:::
-
-```yaml
-global:
-  tlsWildcard:
-    cert: |
-      -----BEGIN CERTIFICATE-----
-      MIIE7zCCA9egAwIBAgIRAMuL6km3baPC7pQC2G0FCZ0wDQYJKoZIhvcNAQELBQAw
-      ...
-      lxvhabfGso2n9ppuEAFwMZSdDkhFX6FRvXJAldlpFh4v5Ul1VEjaMHAe/go70NLm
-      uTTH2V/Zq/L6T6Sz+R06ZJywSA==
-      -----END CERTIFICATE-----
-      -----BEGIN CERTIFICATE-----
-      MIIFHTCCAwWgAwIBAgICEAAwDQYJKoZIhvcNAQELBQAwgaMxCzAJBgNVBAYTAlRS
-      ...
-      FiMVxtvuaWheLrKDNpD80TGnizYXFQlmWBGRQSv1juCIx/c3JWElda3AWLf9KomB
-      dFBVrpgXba7IinYmwobBlHk=
-      -----END CERTIFICATE-----
-      -----BEGIN CERTIFICATE-----
-      MIIGOTCCBCGgAwIBAgIUU5MNim6S8RDvILFbqSEEFJvqkUkwDQYJKoZIhvcNAQEL
-      JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
-      ...
-      ZmukIMGOIYPWDhsuJA==
-      -----END CERTIFICATE-----
-    key: |
-      -----BEGIN RSA PRIVATE KEY-----
-      MIIEpAIBAAKCAQEA4MtI/9wqs44tCtf6XgACSzNCxHfoajBRnic+OvCPXpacfFWw
-      ...
-      wMu/IaqM2mIIvQLI90D/ea1JOUrR3m8HK/faGFVz1+I/3GgkoZnYIA==
-      -----END RSA PRIVATE KEY-----
-    caCert: |
-      -----BEGIN CERTIFICATE-----
-      MIIGOTCCBCGgAwIBAgIUU5MNim6S8RDvILFbqSEEFJvqkUkwDQYJKoZIhvcNAQEL
-      JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
-      ...
-      ZmukIMGOIYPWDhsuJA==
-      -----END CERTIFICATE-----
 ```
 
 TODO: Move to another page

@@ -469,7 +469,7 @@ ${formattedStoreRsaPublicKey}`;
       )}
       <div className="form-group">
         <label>
-          SSL/TLS Certificate File:
+          Appcircle SSL/TLS Certificate File:
           <input
             type="file"
             className="input-field"
@@ -480,7 +480,7 @@ ${formattedStoreRsaPublicKey}`;
       </div>
       <div className="form-group">
         <label>
-          SSL/TLS Private Key File:
+          Appcircle SSL/TLS Private Key File:
           <input
             type="file"
             className="input-field"
@@ -491,7 +491,7 @@ ${formattedStoreRsaPublicKey}`;
       </div>
       <div className="form-group">
         <label>
-          CA Certificate File:
+          Appcircle CA Certificate File:
           <input
             type="file"
             className="input-field"
