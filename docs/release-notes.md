@@ -21,6 +21,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### 🆕 New Features
 
 - A [captcha](/enterprise-app-store/portal-settings#enable-captcha) security method has been added for Enterprise Portal logins, which can be configured to appear after a set number of unsuccessful login attempts, eventually blocking further access. This feature is available to organizations with an enterprise license. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- TLS versions can now be configured by self-hosted Appcircle server users for security purposes. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -33,6 +34,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The build priority configuration setting is no longer restricted to organizations with an enterprise license. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The default cloud pool names have been updated as follows: The “**Default M1 Pool**” is now labeled as “Appcircle Standard macOS Pool (arm64).” The “**Default Intel Pool**” is now labeled as “Appcircle Linux Pool (x86_64).” <InfrastructureBadge/> <CloudBadge/>
 - The build status information is now displayed in the [Signing Reports](/signing-identities/signing-reports) section within the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An option was added to the SMTP server configuration in `global.yaml` to allow SSL validation to be disabled for non-production environments. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
