@@ -450,7 +450,7 @@ ${formattedStoreRsaPublicKey}`;
                 type="text"
                 className="input-field input-field-long"
                 value={smtpUsername}
-                onChange={e => setRegistryUsername(e.target.value)}
+                onChange={e => setSmtpUsername(e.target.value)}
               />
             </label>
           </div>
