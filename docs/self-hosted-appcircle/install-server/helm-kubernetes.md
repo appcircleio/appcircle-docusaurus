@@ -510,3 +510,34 @@ kubectl delete namespace appcircle
 This error usually happens when the pods can't resolve some of [the Appcircle server domains](#domain-name).
 
 For the solution, please make sure that the domain name server of the worker nodes of the Kubernetes cluster can resolve the Appcircle server domain names.
+
+### When we deploy the Helm chart, the `appcircle-server-webeventredis-master-0` pod is stuck in `CrashLoopBackOff` state
+
+This error usually happens when you select a non-valid `Appcircle CA Certificate File` while [generating the configuration file](#generate-the-configuration-file). Please make sure that the certificate you choose is the **root** certificate of the full-chain certificate.
+
+:::tip
+
+If you created the SSL/TLS certificate with LetsEncrypt, you should know that the `fullchain.pem` file doesn't include the root CA certificate by default. 
+
+:::
+
+To fix the problem, you can edit the `global.yaml` file and upgrade the Helm chart. 
+
+```bash
+helm upgrade appcircle-server appcircle/appcircle-server \
+  --timeout 1200s \
+  -n appcircle \
+  -f global.yaml
+```
+
+:::caution
+The `stateful` pods won't be recreated from a error state. This is known issue of Kubernetes.
+
+You should delete the pods manually to fix this problem. The new updated pods will be created automatically. You can use the example commands below to delete the pods:
+
+```bash
+kubectl delete pods appcircle-server-webeventredis-master-0 -n appcircle && \
+kubectl delete pods appcircle-server-webeventredis-replicas-0 -n appcircle && \
+kubectl delete pods appcircle-server-webeventredis-replicas-1 -n appcircle
+```
+:::
