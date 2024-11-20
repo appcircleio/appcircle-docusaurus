@@ -41,6 +41,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - An issue was fixed where downloaded .yaml configuration files could not be uploaded to the same or other profiles of the same type, resulting in an error. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the emails and roles of sub-organization users were not displayed in the signing activity log. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Several security issues related to the admin module API were resolved. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the custom domain Enterprise Store URL was not displayed at times in the Safari browser for self-hosted users. <EnterpriseStoreBadge/> <SelfHostedBadge/>
+- An issue was fixed where the claim name for Enterprise Portal SSO configuration was not displayed at times in the Safari browser for self-hosted users. <AccountBadge/> <SelfHostedBadge/>
+- An issue was fixed where some data loss occurred in the configurations during the update of SAML settings for SSO. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.23.0 - 2024-11-04 SSO & LDAP Improvements, Build Priority Configuration, Bug Fixes and more
 
