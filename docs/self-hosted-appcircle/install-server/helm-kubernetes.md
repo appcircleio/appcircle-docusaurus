@@ -149,10 +149,14 @@ Enabling the SSL passthrough option doesn't allow all SSL traffic to pass throug
 
 To configure Helm, you can create a `global.yaml` file by specifying your desired settings, which are commonly used across all deployments.
 
-
+We will reference this configuration file as `global.yaml` for the rest of this documentation.
 
 :::caution
 Please check the information about the input boxes below. The installation may not complete successfully if the values are incompatible.  
+:::
+
+:::info
+In the example values below, we used `spacetech` as an example organization name. You should replace it with your actual organization name or any other value you prefer.
 :::
 
 #### Appcircle General Settings
@@ -221,8 +225,6 @@ With the example configuration, Appcircle configures the ingress objects with SS
 <YamlGenerator />
 
 Click the `Generate YAML` button to create a ready-to-use configuration file. Once the YAML is generated, copy the content and save it as a file named `global.yaml`.
-
-We will reference this configuration file as `global.yaml` for the rest of this documentation.
 
 ### Update the Configuration File
 
