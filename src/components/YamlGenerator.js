@@ -225,7 +225,7 @@ const YamlGenerator = () => {
 ${formattedSslCert}
     key: |
 ${formattedSslKey}
-    ca: |
+    caCert: |
 ${formattedCaCert}
 auth:
   auth-keycloak:
