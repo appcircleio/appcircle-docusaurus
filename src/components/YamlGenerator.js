@@ -179,17 +179,10 @@ const YamlGenerator = () => {
 auth:
   auth-keycloak:
     organizationName: ${organizationName}
-    initialOrganizationId: ${initialOrganizationId}
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-keycloak
-    admin:
-      username: admin
-      password: '${keycloakAdminPassword}'
     initialUsername: '${initialUserEmail}'
     initialPassword: '${initialUserPassword}'
-  auth-postgresql:
-    auth:
-      password: '${postgresPassword}'
   server:
     image:
       repository: ${imageRepositoryPathWithRegistry}appcircle-vault
