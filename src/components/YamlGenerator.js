@@ -1,31 +1,27 @@
-import React, { useState } from "react";
-import forge from "node-forge"; // Importing node-forge for RSA key generation
+import React, { useState, useCallback } from "react";
+import forge from "node-forge";
 
-// Helper function to convert camelCase or PascalCase to kebab-case
+// Existing helper functions remain the same...
 const toKebabCase = str => {
   return str
     .replace(/[A-Z]/g, match => `-${match.toLowerCase()}`)
-    .replace(/^-/, ""); // Remove leading hyphen if any
+    .replace(/^-/, "");
 };
 
 const removeLastNewLine = key => {
   return key.replace(/\n$/, "");
 };
 
-// Helper function to generate RSA key pair
 const generateRsaKeyPair = () => {
-  const { privateKey, publicKey } = forge.rsa.generateKeyPair(2048); // Generate 2048-bit RSA key pair
-
-  const privateKeyPem = forge.pki.privateKeyToPem(privateKey); // Convert private key to PEM format
-  const publicKeyPem = forge.pki.publicKeyToPem(publicKey); // Convert public key to PEM format
-
+  const { privateKey, publicKey } = forge.rsa.generateKeyPair(2048);
+  const privateKeyPem = forge.pki.privateKeyToPem(privateKey);
+  const publicKeyPem = forge.pki.publicKeyToPem(publicKey);
   return {
     rsaPrivateKey: privateKeyPem,
     rsaPublicKey: publicKeyPem,
   };
 };
 
-// Helper function to format RSA keys with indentation
 const formatKeyWithIndentation = (key, indent) => {
   return key
     .split("\n")
@@ -33,16 +29,13 @@ const formatKeyWithIndentation = (key, indent) => {
     .join("\n");
 };
 
-function generateRandomPassword(
+const generateRandomPassword = (
   length,
   minNumbers = 1,
   minUppercase = 1,
   minLowercase = 1
-) {
-  // Calculate total minimum requirements
+) => {
   const totalMinRequired = minNumbers + minUppercase + minLowercase;
-
-  // Input validation
   if (length < totalMinRequired) {
     throw new Error(
       "Password length must be greater than or equal to the sum of minimum requirements"
@@ -53,29 +46,24 @@ function generateRandomPassword(
   const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numbers = "0123456789";
 
-  // First, fulfill minimum requirements
   let password = [];
 
-  // Add required numbers
   for (let i = 0; i < minNumbers; i++) {
     password.push(numbers.charAt(Math.floor(Math.random() * numbers.length)));
   }
 
-  // Add required uppercase letters
   for (let i = 0; i < minUppercase; i++) {
     password.push(
       uppercase.charAt(Math.floor(Math.random() * uppercase.length))
     );
   }
 
-  // Add required lowercase letters
   for (let i = 0; i < minLowercase; i++) {
     password.push(
       lowercase.charAt(Math.floor(Math.random() * lowercase.length))
     );
   }
 
-  // Fill the rest with any valid character
   const allChars = lowercase + uppercase + numbers;
   const remainingLength = length - password.length;
 
@@ -83,15 +71,13 @@ function generateRandomPassword(
     password.push(allChars.charAt(Math.floor(Math.random() * allChars.length)));
   }
 
-  // Shuffle the password array to make it truly random
   for (let i = password.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [password[i], password[j]] = [password[j], password[i]];
   }
 
   return password.join("");
-}
-
+};
 
 const YamlGenerator = () => {
   const [imageRegistryHost, setImageRegistryHost] = useState(
@@ -100,22 +86,63 @@ const YamlGenerator = () => {
   const [imageRepositoryPath, setImageRepositoryPath] = useState(
     "appcircle/docker-registry"
   );
-  //TODO: Update default image tag
   const [imageTag, setImageTag] = useState("alpha-latest");
   const [appcircleMainDomain, setAppcircleMainDomain] = useState(
     "appcircle.spacetech.com"
   );
-  const [organizationName, setOrganizationName] = useState(
-    "spacetech"
-  );
+  const [organizationName, setOrganizationName] = useState("spacetech");
   const [initialUserEmail, setInitialUserEmail] = useState("admin@example.com");
   const [initialUserPassword, setInitialUserPassword] = useState(
     "superSecretAppcirclePassword1234"
   );
   const [requiresAuth, setRequiresAuth] = useState(true);
   const [registryUsername, setRegistryUsername] = useState("_json_key");
-  const [registryPassword, setRegistryPassword] = useState("Content of the cred.json file");
+  const [registryPassword, setRegistryPassword] = useState(
+    "Content of the cred.json file"
+  );
   const [yamlContent, setYamlContent] = useState("");
+
+  // New state for SSL/TLS certificates
+  const [sslCert, setSslCert] = useState("");
+  const [sslKey, setSslKey] = useState("");
+  const [caCert, setCaCert] = useState("");
+
+  const handleFileRead = useCallback((file, setter) => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      setter(e.target.result);
+    };
+    reader.readAsText(file);
+  }, []);
+
+  const handleCertFileChange = useCallback(
+    event => {
+      const file = event.target.files[0];
+      if (file) {
+        handleFileRead(file, setSslCert);
+      }
+    },
+    [handleFileRead]
+  );
+
+  const handleKeyFileChange = useCallback(
+    event => {
+      const file = event.target.files[0];
+      if (file) {
+        handleFileRead(file, setSslKey);
+      }
+    },
+    [handleFileRead]
+  );
+  const handleCaFileChange = useCallback(
+    event => {
+      const file = event.target.files[0];
+      if (file) {
+        handleFileRead(file, setCaCert);
+      }
+    },
+    [handleFileRead]
+  );
 
   const handleGenerate = () => {
     const imageRegistry = `${imageRegistryHost}`;
@@ -125,8 +152,8 @@ const YamlGenerator = () => {
     const keycloakAdminPassword = generateRandomPassword(18);
     const postgresPassword = generateRandomPassword(32);
 
-    const indent = "      "; // Set the appropriate indentation
-    var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
+    const indent = "      ";
+    var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair();
     const formattedDistRsaPrivateKey = formatKeyWithIndentation(
       removeLastNewLine(rsaPrivateKey),
       indent
@@ -136,7 +163,7 @@ const YamlGenerator = () => {
       indent
     );
 
-    var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair(); // Generate RSA keys
+    var { rsaPrivateKey, rsaPublicKey } = generateRsaKeyPair();
     const formattedStoreRsaPrivateKey = formatKeyWithIndentation(
       removeLastNewLine(rsaPrivateKey),
       indent
@@ -147,14 +174,23 @@ const YamlGenerator = () => {
     );
 
     let dockerRegistrySecret = "";
-
     if (requiresAuth) {
       const authString = `${registryUsername}:${registryPassword}`;
       const base64EncodedAuthString = btoa(authString);
       dockerRegistrySecret = `{\"auths\":{\"${imageRegistry}\":{\"auth\": \"${base64EncodedAuthString}\"}}}`;
     }
 
-    // @TODO: all passwords are not included. Make a checklist.
+    // Format SSL/TLS certificates with proper indentation
+    const formattedSslCert = sslCert
+      ? formatKeyWithIndentation(sslCert, indent)
+      : "";
+    const formattedSslKey = sslKey
+      ? formatKeyWithIndentation(sslKey, indent)
+      : "";
+    const formattedCaCert = caCert
+      ? formatKeyWithIndentation(caCert, indent)
+      : "";
+
     const yaml = `global:
   appEnvironment: 'Production'
   urls:
@@ -176,6 +212,13 @@ const YamlGenerator = () => {
   imageTag: ${imageTag}
   ingressClassName: "nginx"
   ${requiresAuth ? `containerRegistrySecret: '${dockerRegistrySecret}'` : ""}
+  tlsWildcard:
+    cert: |
+${formattedSslCert}
+    key: |
+${formattedSslKey}
+    ca: |
+${formattedCaCert}
 auth:
   auth-keycloak:
     organizationName: ${organizationName}
@@ -324,6 +367,39 @@ ${formattedStoreRsaPublicKey}`;
           </div>
         </>
       )}
+      <div className="form-group">
+        <label>
+          SSL/TLS Certificate File:
+          <input
+            type="file"
+            className="input-field"
+            onChange={handleCertFileChange}
+            accept=".crt,.pem"
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          SSL/TLS Private Key File:
+          <input
+            type="file"
+            className="input-field"
+            onChange={handleKeyFileChange}
+            accept=".key,.pem"
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          CA Certificate File:
+          <input
+            type="file"
+            className="input-field"
+            onChange={handleCaFileChange}
+            accept=".crt,.pem"
+          />
+        </label>
+      </div>
       <div className="form-group">
         <button className="generate-btn" onClick={handleGenerate}>
           Generate YAML
