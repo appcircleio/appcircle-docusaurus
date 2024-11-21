@@ -5,7 +5,7 @@ tags: [self-hosted, helm, installation, configuration]
 sidebar_position: 6
 ---
 
-import YamlGenerator from '@site/src/components/YamlGenerator';
+import HelmYamlGenerator from '@site/src/components/HelmYamlGenerator';
 
 ## Overview
 
@@ -222,7 +222,7 @@ With the example configuration, Appcircle configures the ingress objects with SS
 
 #### Generate the Configuration File
 
-<YamlGenerator />
+<HelmYamlGenerator />
 
 Click the `Generate YAML` button to create a ready-to-use configuration file. Once the YAML is generated, copy the content and save it as a file named `global.yaml`.
 

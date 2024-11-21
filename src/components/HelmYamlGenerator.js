@@ -79,7 +79,7 @@ const generateRandomPassword = (
   return password.join("");
 };
 
-const YamlGenerator = () => {
+const HelmYamlGenerator = () => {
   const [appcircleMainDomain, setAppcircleMainDomain] = useState(
     "appcircle.spacetech.com"
   );
@@ -514,4 +514,4 @@ ${formattedStoreRsaPublicKey}`;
   );
 };
 
-export default YamlGenerator;
+export default HelmYamlGenerator;
