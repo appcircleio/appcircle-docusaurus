@@ -185,7 +185,7 @@ In the example values below, we used `spacetech` as an example organization name
 - `Container Image Registry Username`: For the default image registry, use `_json_key` as the username.
 - `Container Image Registry Password`: Enter the content of the `cred.json` file, which you must obtain from Appcircle, for the default image registry.
 
-:::tipbox
+:::tip
 You don't need to change `Container Image Registry Host, Path and Tag` settings if you are not using an external container image registry.
 :::
 
