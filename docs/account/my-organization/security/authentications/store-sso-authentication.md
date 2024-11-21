@@ -215,7 +215,7 @@ Instead of writing all the settings of OpenID, you can download the settings fil
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-auht0-openid-config.png" />
 
-5. Save **OpenID Configuration** as json file.
+5. Save **OpenID Configuration** as `.JSON` file.
 
 #### Step 4: Upload OpenID Configuration to Appcircle
 
@@ -481,13 +481,13 @@ Next, configure the SAML settings in Okta to ensure proper authentication and re
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml-appcircle-metadata.png" />
 
-4. Click on **Show Advanced Settings**
+4. Click on **Show Advanced Settings**.
 
 5. Upload downloaded certificate to Signature Certificate field.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-okta-saml-signing-certificate.png" />
 
-6. Enable **Allow application to initiate Single Logout**
+6. Enable **Allow application to initiate Single Logout**.
 
 7. Copy and paste **Logout Redirect URL** to **Single Logout URL** field. Copy and paste **Service Provider Entity ID** to **SP Issuer**.
 
@@ -512,7 +512,7 @@ Now, upload the SAML metadata XML file to Appcircle to complete the configuratio
 
 3. Ensure that the Redirect and SSO URLs are imported correctly. You can check if the X509 Certificate is imported correctly as well. If you want to enter multiple certificates you can separate them by using a comma between them. Please be aware that you need to remove any new lines or file headers from this edit box. This edit box only accepts a long base64 encoded string.
 
-4. Enable **Want AuthnRequests Signed** in Appcircle
+4. Enable **Want AuthnRequests Signed** in Appcircle.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml-enable-authn-requests-signed.png" />
 
