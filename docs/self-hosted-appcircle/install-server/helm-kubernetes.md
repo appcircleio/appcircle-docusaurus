@@ -346,6 +346,40 @@ store:
         value: "App Store"
 ```
 
+#### User Lookup Decision Strategy
+
+The LDAP (Lightweight Directory Access Protocol) user lookup decision strategy is a crucial aspect of user authentication in applications that utilize LDAP for user management.
+
+When Appcircle receives a user login request from the Enterprise App Store or Testing Distribution, it needs to determine which LDAP configuration to use for the user lookup and authentication process.
+
+In scenarios where a user exists in multiple LDAP configurations, a decision must be made on which configuration to use for authentication.
+
+This documentation provides insights into the LDAP user lookup decision strategy and how it can be configured to handle scenarios where a user has multiple usernames and passwords across different LDAP configurations.
+
+To configure LDAP lookup decision settings, you can edit the `global.yaml` file and add the following settings under `auth`:
+
+```yaml
+auth:
+  auth-keycloak:
+    userLookupDecisionStrategy: decisive
+```
+
+The `userLookupDecisionStrategy` variable can have three options: `affirmative` , `decisive` or `tolerant`.
+
+If you don't define it or it has an unknown value, it is assumed to be `decisive` by default.
+
+- `Affirmative`
+
+When `userLookupDecisionStrategy` is set to "affirmative", the LDAP authentication process will check all LDAP settings, even if the user is found on a particular LDAP configuration. This means that if a user has multiple accounts on different LDAP configurations with different passwords, they will be able to login successfully. The authentication system will search across all LDAP configurations to find a matching username or email and validate the user's password, allowing the user to access the system.
+
+- `Decisive`
+
+On the other hand, when `userLookupDecisionStrategy` is set to "decisive", the LDAP authentication process will check a specific LDAP configuration for the user's username or email. If the authentication system finds the username on a particular LDAP, it will verify the user's password only on that specific LDAP configuration. If the provided password is incorrect, the authentication system will not check other LDAP configurations and will immediately return invalid credentials, denying access to the user.
+
+- `Tolerant`
+
+When `userLookupDecisionStrategy` is set to "tolerant", similar to the "affirmative" strategy, it retrieves the list of LDAP providers where the user is found and checks the password sequentially. If the password is correct, the process ends. If it is incorrect, the search continues until the last LDAP provider. Unlike "affirmative", if an LDAP provider is unreachable or an error occurs, the process continues, and the faulty provider is ignored.
+
 #### Increase the Replica Counts
 
 With the default Helm values, the Appcircle server services being deployed with one replica. If you want to increase this number for high availability, you can do so by updating your `global.yaml` file:
