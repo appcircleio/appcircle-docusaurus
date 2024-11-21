@@ -51,7 +51,7 @@ The `verifyCertificate` option is available in version `3.23.1` or later.
 :::
 
 :::info
-The `fromDisplayName` is used as the email sender name for email notifications. However, when you [share a binary](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#share-binary) using the Testing Distribution module, the profile name will be displayed as the sender, as shown in the example email provided in the linked documentation.
+The `fromDisplayName` is used as the email sender name for email notifications. However, when you [share a binary](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#share-binary) using the Testing Distribution module, the **profile name** will be displayed as the sender, as shown in the example email provided in the linked documentation.
 :::
 
 ## SSO
