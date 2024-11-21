@@ -516,7 +516,7 @@ After the Appcircle server installation is finished, you can get the IP addresse
 You can list the ingresses with `kubectl` to check the IP address of the Appcircle services domains.
 
 ```bash
-kubectl get ingresses -n appcircle-ns
+kubectl get ingresses -n appcircle
 ```
 
 ```bash
