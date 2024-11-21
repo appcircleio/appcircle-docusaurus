@@ -380,6 +380,24 @@ On the other hand, when `userLookupDecisionStrategy` is set to "decisive", the L
 
 When `userLookupDecisionStrategy` is set to "tolerant", similar to the "affirmative" strategy, it retrieves the list of LDAP providers where the user is found and checks the password sequentially. If the password is correct, the process ends. If it is incorrect, the search continues until the last LDAP provider. Unlike "affirmative", if an LDAP provider is unreachable or an error occurs, the process continues, and the faulty provider is ignored.
 
+#### LDAP Brute Force Protection
+
+TODO: Get overview from the [original document](/docs/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore.md).
+
+To configure LDAP brute force protection, you can edit the `global.yaml` file and add the following settings under `auth`:
+
+```yaml
+auth:
+  auth-keycloak:
+    bruteForce:
+      distribution: 
+        maxFailureCount: '5'
+        maxLockDuration: '600'
+      store: 
+        maxFailureCount: '5'
+        maxLockDuration: '600'
+```
+
 #### Increase the Replica Counts
 
 With the default Helm values, the Appcircle server services being deployed with one replica. If you want to increase this number for high availability, you can do so by updating your `global.yaml` file:
