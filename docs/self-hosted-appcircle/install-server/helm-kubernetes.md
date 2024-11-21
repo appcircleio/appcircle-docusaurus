@@ -9,21 +9,21 @@ import HelmYamlGenerator from '@site/src/components/HelmYamlGenerator';
 
 ## Overview
 
-To install Appcircle server on a Kubernetes cluster, use the Appcircle Helm chart. This chart contains all the required components to get started and can scale to large deployments.
+To deploy the Appcircle server on your Kubernetes cluster, utilize the Appcircle Helm chart. This chart encompasses all necessary components for initial setup and supports scalability for larger deployments.
 
 :::caution
-The default Helm chart configuration is not intended for production. The default values create an implementation where all Appcircle services are deployed in the cluster, which is not suitable for production workloads.
+The default configuration of the Helm chart is not designed for production use. By default, all Appcircle services are deployed within the cluster, making it unsuitable for handling production workloads. Stateful apps like databases or object storages should be deployed outside the Helm chart scope.
 :::
 
-For a production deployment, you should have strong working knowledge of Kubernetes. This method of deployment has different management, observability, and concepts than traditional deployments.
+For a production deployment, it is essential to have a robust understanding of Kubernetes. This knowledge ensures that you can effectively manage and troubleshoot the cluster, optimize resource allocation, and maintain security.
 
 ## Prerequisites
 
 ### Domain Name
 
-A domain name that you can create SSL/TLS certificate for a couple of subdomain under it is required for Appcircle server. In this document, we will use `appcircle.spacetech.com` as an example domain and `spacetech` as an organization name.
+A main domain name, for which you can generate SSL/TLS certificates for several subdomains, is required for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an example main domain and `spacetech` as an example organization name.
 
-Appcircle uses 6 domain names by default. These domain names are:
+By default, Appcircle uses eight subdomains. These subdomains are:
 
 1. api.appcircle.spacetech.com
 2. auth.appcircle.spacetech.com
@@ -36,15 +36,15 @@ Appcircle uses 6 domain names by default. These domain names are:
 
 TODO: Maybe add the monitor domain.
 
-At the end of the deploying the Appcircle server, you will create DNS record according to the ingress objects of the Kubernetes on your DNS service provider.
+Upon completing the deployment of the Appcircle server, you will need to create DNS records based on the ingress objects defined in Kubernetes. This should be done through your DNS service provider to ensure proper routing and accessibility.
 
 ### SSL/TLS Certificate
 
-You should deploy the Appcircle server with a SSL/TLS certificate for security reasons.
+Modern technologies and best practices require secure communication to protect data from potential threats and ensure user privacy. Therefore, deploying the Appcircle server with an SSL/TLS certificate is essential.
 
-Create an SSL/TLS certificate that covers all @TODO: Update if required -> nine domain names mentioned in the [Domain Name](#domain-name) section in the alternative subject name extension of the certificate.
+Ensure the certificate covers the main domain and all relevant subdomains outlined in the [domain name](#domain-name) section, safeguarding data integrity and confidentiality.
 
-You should configure Appcircle server with a fullchain certificate.
+Additionally, configure the Appcircle server with a fullchain certificate, which should include the leaf (or app) certificate, intermediate certificates, and the root certificate, establishing a complete and trusted certificate chain.
 
 ### Kubernetes cluster
 
@@ -52,14 +52,14 @@ To install the Appcircle server using Helm, a Kubernetes cluster is required. Th
 
 **Minimum hardware requirements for an enterprise installation:**
 
-- x86-64 architecture node(s)
+- Nodes with x86-64 architecture
 - 8 CPUs
 - 16 GB RAM
 - TODO: Update 500 GB SSD
 
 **Recommended hardware requirements for production environments:**
 
-- x86-64 architecture node(s)
+- Nodes with x86-64 architecture
 - 32 CPUs
 - 64 GB RAM
 - TODO: Update 1 TB SSD
@@ -78,7 +78,13 @@ The `kubectl` should be configured for the target Kubernetes cluster.
 
 Install Helm version 3.11.0 or later by following the instructions in [the Helm documentation](https://helm.sh/docs/intro/install/).
 
-### PostgreSQL
+### Stateful Apps
+
+By default, Appcircle Helm chart will deploy some stateful applications such as databases or object storages to the Kubernetes cluster for testing purposes. It is recommended to deploy these services outside of the Kubernetes cluster for production use. This allows you to have better control over their configuration and management.
+
+If you wish to install these services within the Helm chart scope, you can use the default configuration provided by the Appcircle Helm chart.
+
+#### PostgreSQL
 
 The Appcircle chart, by default, includes an in-cluster PostgreSQL deployment provided by `bitnami/PostgreSQL`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
 
@@ -86,45 +92,43 @@ For a production-ready setup, it is essential to configure an external PostgreSQ
 
 If you are deploying the Appcircle server for testing purposes, you may use the built-in PostgreSQL deployment.
 
-### MongoDB
+#### MongoDB
 
-Similarly, the Appcircle chart includes an in-cluster MongoDB deployment provided by `bitnami/mongodb` by default. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
+By default, the Appcircle chart includes an in-cluster MongoDB deployment provided by `bitnami/mongodb` by default. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
 
 To ensure optimal performance and reliability in a production environment, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB 7.0.
 
 If you are deploying the Appcircle server for testing purposes, the built-in MongoDB deployment can be used.
 
-### MinIO
+#### MinIO
 
 By default, the Appcircle chart includes an in-cluster MinIO deployment provided by @TODO: change -> `stable/minio`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
 
-For production environments, it is highly recommended to configure an external, production-grade MinIO instance to ensure scalability, high availability, and data durability.
+For production environments, it is highly recommended to configure an external, production-grade MinIO instance to ensure scalability, high availability, and data durability. TODO: Add minimum MinIO version.
 
 If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
 
-### Kafka
+#### Kafka
 
 By default, the Appcircle chart includes an in-cluster Kafka deployment provided by `bitnami/kafka`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
 
-For production deployments, you should set up an external, production-ready Kafka cluster to handle high-throughput messaging and ensure proper fault tolerance and scaling.
+For production deployments, you should set up an external, production-ready Kafka cluster to handle high-throughput messaging and ensure proper fault tolerance and scaling. TODO: Add minimum Kafka version.
 
-For testing environments, the built-in Kafka deployment can be used.
+If you are installing the Appcircle for testing purposes, you may use the built-in Kafka deployment.
 
-### HashiCorp Vault
+#### HashiCorp Vault
 
 By default, the Appcircle chart includes an in-cluster HashiCorp Vault deployment provided by `hashicorp/vault`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
 
-For production, you should configure an external, production-grade Vault instance to ensure robust secret management, scalability, and high availability.
+For production, you should configure an external, production-grade Vault instance to ensure robust secret management, scalability, and high availability. TODO: Add minimum HashiCorp Vault version.
 
 If you are deploying the appcircle for testing purposes, the built-in Vault deployment can be used.
 
 ### Kubernetes Ingress Controller
 
-By default, to expose services, Appcircle uses name-based virtual servers that are configured with Ingress objects. For the Ingress objects works, the Kubernetes cluster should have a Ingress Controller.
+By default, Appcircle exposes its services using name-based virtual servers, which are configured through Ingress objects. To ensure these Ingress objects function properly, your Kubernetes cluster must have an Ingress Controller installed and configured.
 
-Appcircle server supports Nginx Ingress Controller by default.
-
-To install Nginx Ingress Controller to the Kubernetes cluster, please check [the Nginx documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
+Appcircle server supports Nginx Ingress Controller by default. To install Nginx Ingress Controller to the Kubernetes cluster, please check [the Nginx Ingress Controller documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
 
 #### Enable SSL Passthrough
 
@@ -142,7 +146,7 @@ Enabling the SSL passthrough depends on the ingress controller that is used in t
 - @TODO: should be reviewed and tested to see if we support Traefik-> For Traefik Ingress Controller, check [the Traefik documentation](https://traefik.io/blog/https-on-kubernetes-using-traefik-proxy/).
 
 :::info
-Enabling the SSL passthrough option doesn't allow all SSL traffic to pass through to the original service by default. It **allows** Ingresses to use SSL passthrough option. 
+Enabling the SSL passthrough option **does not** automatically allow all SSL traffic **from all ingress objects** to pass through to the original service. Instead, it enables Ingress resources to leverage the SSL passthrough feature, allowing encrypted traffic to reach the backend service without being decrypted by the Ingress Controller.
 :::
 
 ### Create a Configuration File
@@ -152,7 +156,7 @@ To configure Helm, you can create a `global.yaml` file by specifying your desire
 We will reference this configuration file as `global.yaml` for the rest of this documentation.
 
 :::caution
-Please check the information about the input boxes below. The installation may not complete successfully if the values are incompatible.  
+Please review the information for the input boxes below. If the values provided are incompatible, the installation may not complete successfully. Ensure that all configurations are correctly entered to avoid potential issues during the setup process.
 :::
 
 :::info
@@ -224,11 +228,11 @@ With the example configuration, Appcircle configures the ingress objects with SS
 
 <HelmYamlGenerator />
 
-Click the `Generate YAML` button to create a ready-to-use configuration file. Once the YAML is generated, copy the content and save it as a file named `global.yaml`.
+Click the `Generate YAML` button to create a pre-configured YAML file. After the YAML is generated, copy its content and save it as a file named `global.yaml` in the directory where you will execute the Helm commands.
 
 ### Update the Configuration File
 
-Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some points in this file that you need to configure manually.
+Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some configurations in this file that you may want to add manually.
 
 If there are any settings you want to configure, open the `global.yaml` with your favorite editor like `vi`, `VS Code` or `notepad` and follow the sections below.
 
@@ -249,10 +253,10 @@ If you are deploying the Appcircle server for production, you should have statef
 If any services that the Appcircle server needs to connect to, such as your Git provider, use a self-signed SSL/TLS certificate or a certificate issued by an untrusted root CA from your organization, Appcircle will refuse the connection by default.
 
 :::tip
-To avoid potential issues with untrusted certificates, it is best practice to add your organization's CA certificate to Appcircle.
+To prevent potential issues with untrusted certificates, it is recommended to add your organization's root certificate from the Certificate Authority (CA) to Appcircle. This ensures that the server can properly validate and trust SSL/TLS certificates issued by your organization’s CA.
 :::
 
-To add this certificate as trusted, you need to update the `.global.trustedCerts` key in the `global.yaml` file and import the certificates.
+To add this certificates as trusted, you need to update the `.global.trustedCerts` key in the `global.yaml` file and import the certificates.
 
 :::info
 The `.global` key already exists in your `global.yaml` file. You just need to add the `trustedCerts` key.
@@ -260,7 +264,7 @@ The `.global` key already exists in your `global.yaml` file. You just need to ad
 
 The trusted certificate names must conform to the regex pattern `[-._a-zA-Z0-9]+`. It is recommended to use descriptive names for your certificates, such as `spacetech-root` for the root certificate and `spacetech-intermediate` for the intermediate certificate.
 
-Here's an example of how to update the global.yaml file:
+Here is an example of how to update the `global.yaml` file:
 
 (TODO: Multiple certificate should be tested.)
 
@@ -289,13 +293,13 @@ TODO: Move to another page
 In Appcircle, there are scenarios where the client upload size might exceed the default limit of 4096MB for a single request body size. To accommodate larger file uploads or if you wish to adjust this setting according to your needs, you can configure the maximum allowed body size in your `global.yaml` file.
 
 ```yaml
-# For APK, IPA, build artifact uploads
+# For APK, IPA, build artifact uploads from browsers and Appcircle runners
 apigateway:
   ingress:
     annotations:
       nginx.ingress.kubernetes.io/proxy-body-size: 1024m
 
-# For build cache uploads
+# For build cache uploads from Appcircle runners
 resource:
   ingress:
     annotations: 
@@ -324,7 +328,7 @@ web:
     selfHostedGitProviders: "bitbucketServer,azureDevopsServer,gitlabSelfHosted,ssh,publicRepository"
 ```
 
-You can delete the providers you do not need by removing them from `selfHostedGitProviders` list.
+You can delete the providers you do not need by removing them from `selfHostedGitProviders` list above.
 
 #### Customize Enterprise App Store
 
