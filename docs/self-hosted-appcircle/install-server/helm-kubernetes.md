@@ -412,6 +412,8 @@ agentcache:
 auth:
   auth-keycloak:
     replicas: 3
+apigateway:
+  replicaCount: 2
 appparser:
   replicaCount: 3
 build:
