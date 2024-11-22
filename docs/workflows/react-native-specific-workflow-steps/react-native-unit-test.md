@@ -44,7 +44,7 @@ This step contains different variables. It needs these variables to work. The ta
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | `$AC_REPOSITORY_DIR`       | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step.                                                                                                                                                                                                                                       | Required |
 | `$AC_OUTPUT_DIR`           | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                                                                                                                                                                             | Required |
-| `$AC_RN_TEST_COMMAND_ARGS` | Specify additional command arguments for running Jest tests. An extra parameter will be added to the end of the command `jest`. You can add extra arguments, such as `--debug --colors`, without affecting the default ones. For more information, see the Jest [CLI options](https://jestjs.io/docs/cli#options). | Optional |
+| `$AC_RN_TEST_COMMAND_ARGS` | Specify additional arguments for running the Jest command. These arguments will be added to the end of the command `jest --coverage --coverageDirectory=coverage --coverageReporters=lcov` which will be used by default. You can add extra arguments, such as `--debug --colors`, without affecting the default ones. For more information, see the Jest [CLI options](https://jestjs.io/docs/cli#options). | Optional |
 
 :::caution
 
@@ -56,15 +56,11 @@ To view the output artifacts on the [**Download Artifacts**](/workflows/common-w
 
 The outputs resulting from the operation of this component are as follows:
 
-| Variable Name         | Description                                                                                                     |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------|
-| `AC_TEST_RESULT_PATH` | The output path for the `junit-report.xml` file. This environment variable can be utilized in subsequent steps. |
+| Variable Name             | Description                                                                                                           |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| `AC_TEST_RESULT_PATH`     | The output path for the `junit-report.xml` file. This environment variable can be utilized in subsequent steps.       |
+| `AC_COVERAGE_RESULT_PATH` | The output path for the `lcov.info` file for coverage. This environment variable can be utilized in subsequent steps. |
 
-:::info Coverage Support
-
-Appcircle does **not** currently support **test coverage** calculation for React Native projects. However, adding this feature is part of our development **roadmap** and will be included in a future update. We will make it available **as soon as** development is completed.
-
-:::
 
 To access the source code of this component, please use the following link:
 
