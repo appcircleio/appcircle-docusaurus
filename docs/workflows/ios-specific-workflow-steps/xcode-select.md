@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Xcode Select (Version)
 
-This step is used to specify the Xcode version to be used during the build process. All available versions of Xcode can be seen in the [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration) tab.
+This step is used to specify the Xcode version to be used during the build process. All available versions of Xcode can be seen in the [Configuration](/build/build-process-management/build-profile-configuration) tab.
 
 ### Prerequisites
 

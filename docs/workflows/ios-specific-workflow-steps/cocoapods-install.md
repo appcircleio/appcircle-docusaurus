@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Cocoapods Install
 
-Runs the [CocoaPods](https://cocoapods.org) install command for dependency management. This step installs all pod dependencies. Appcircle uses the `pod install` command to install pods in the project. This command comes from the CocoaPods tool installed on the system. If a version is not specified for CocoaPods, this step will use the version of [**CocoaPods installed**](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) on the system.
+Runs the [CocoaPods](https://cocoapods.org) install command for dependency management. This step installs all pod dependencies. Appcircle uses the `pod install` command to install pods in the project. This command comes from the CocoaPods tool installed on the system. If a version is not specified for CocoaPods, this step will use the version of [**CocoaPods installed**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) on the system.
 
 ### Prerequisites
 

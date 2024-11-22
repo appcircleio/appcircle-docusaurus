@@ -33,7 +33,7 @@ As an example, **master** and **development** branches were used, but you can ap
 
 Please note that the organizational structure of Appcircle is designed in such a way as to prevent any **security vulnerabilities**. Consequently, exchanging files between organizations or sub-organizations **is not permitted**.
 
-You can find detailed information about the Appcircle organizational structure in the documentation [**here**](https://docs.appcircle.io/account/my-organization).
+You can find detailed information about the Appcircle organizational structure in the documentation [**here**](/account/my-organization).
 
 :::
 

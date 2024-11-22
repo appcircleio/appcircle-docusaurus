@@ -17,7 +17,8 @@ This component supports the following test and coverage formats:
 - [**Cobertura**](https://cobertura.github.io/cobertura)
 - [**lcov.info**](https://lcov-viewer.netlify.app)
 
-For additional details, please refer to the document: [**Generating Test Report**](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
+For additional details, please refer to the document: 
+- [**Generating Test Report**](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
 
 ### Prerequisites
 

@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Flutter Install
 
-This workflow step installs the specified [**Flutter SDK**](https://docs.flutter.dev/get-started/install) to run the [**Flutter CLI**](https://docs.flutter.dev/reference/flutter-cli) for subsequent analysis, build, and test operations. The Flutter version can be specified in [Configuration](https://docs.appcircle.io/build/building-flutter-applications/#build-configuration-for-flutter-applications).
+This workflow step installs the specified [**Flutter SDK**](https://docs.flutter.dev/get-started/install) to run the [**Flutter CLI**](https://docs.flutter.dev/reference/flutter-cli) for subsequent analysis, build, and test operations. The Flutter version can be specified in [Configuration](/build/platform-build-guides/building-flutter-applications#build-configuration-for-flutter-ios-applications)
 
 :::info
 

@@ -38,7 +38,7 @@ Before running the **Cache Push** step, you must complete certain prerequisites,
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) | If the folders to be cached are in the repo directory, the **Git Clone** step must be used before. This step will generate the [`AC_REPOSITORY_DIR`](#input-variables) path. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | If the folders to be cached are in the repo directory, the **Git Clone** step must be used before. This step will generate the [`AC_REPOSITORY_DIR`](#input-variables) path. |
 
 :::danger
 
@@ -66,7 +66,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_CACHE_LABEL`          | User defined cache label to identify one cache from others. Both **Cache Push** and **Cache Pull** steps should have the same value to match. | Required |
 | `$AC_CACHE_INCLUDED_PATHS` | Specifies the files and folders that should be in the cache. Multiple glob patterns can be provided as a colon-separated list. For example; `.gradle:app/build` or `Pods:Podfile.lock`. | Required |
 | `$AC_CACHE_EXCLUDED_PATHS` | Specifies the files and folders that should be ignored from the cache. Multiple glob patterns can be provided as a colon-separated list. For example, `.gradle/*.lock:*.apk`. | Optional |
-| `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone) step. | Optional |
+| `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Optional |
 
 :::tip
 
@@ -76,11 +76,11 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 ### Output Variables
 
-You cannot reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of the build pipeline from '[Download Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) > `ac_cache.zip`'. Also, build logs have some useful information about the cache mechanism and how included and excluded paths are processed. You can see the produced cache file size from the build logs. (The size of the cache file affects upload and download durations.)
+You cannot reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of the build pipeline from '[Download Artifacts](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) > `ac_cache.zip`'. Also, build logs have some useful information about the cache mechanism and how included and excluded paths are processed. You can see the produced cache file size from the build logs. (The size of the cache file affects upload and download durations.)
 
 :::caution
 
-To view the generated artifacts on the [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step is included in the [workflow](/workflows) after this step.
+To view the generated artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in the [workflow](/workflows) after this step.
 
 :::
 

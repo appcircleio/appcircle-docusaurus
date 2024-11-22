@@ -26,7 +26,7 @@ As an example, **master** and **development** branches were used, but you can ap
 
 Please note that the organizational structure of Appcircle is designed in such a way as to prevent any **security vulnerabilities**. Consequently, exchanging files between organizations or sub-organizations **is not permitted**.
 
-You can find detailed information about the Appcircle organizational structure in the documentation [**here**](https://docs.appcircle.io/account/my-organization).
+You can find detailed information about the Appcircle organizational structure in the documentation [**here**](/account/my-organization).
 
 :::
 
@@ -36,7 +36,7 @@ In order to share cache between pipelines, the [**Cache Pull**](/workflows/commo
 
 :::
 
-1. To start, cache the CocoaPods files in the **development** branch, which will later be utilized in the **master** branch. For this purpose, add the [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) step to the workflow after the [**CocoaPods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-install) step.
+1. To start, cache the CocoaPods files in the **development** branch, which will later be utilized in the **master** branch. For this purpose, add the [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) step to the workflow after the [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) step.
 
 	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-cacheDevelop.png' />
 

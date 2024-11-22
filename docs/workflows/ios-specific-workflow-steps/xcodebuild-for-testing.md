@@ -35,7 +35,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                 | Description                                    | Status               |
 |-------------------------------|------------------------------------------------|----------------------|
-| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step. | Required |
+| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps#git-clone) step. | Required |
 | `$AC_SCHEME`                 | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example: **`-quiet`** | Optional |
 | `$AC_PROJECT_PATH`               | Specifies the project path. For example: **`./appcircle.xcodeproj`**. This variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
