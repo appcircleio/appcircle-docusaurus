@@ -101,9 +101,9 @@ Enabling the SSL passthrough option **does not** automatically allow all SSL tra
 
 ### Create a Configuration File
 
-To configure Helm, you can create a `global.yaml` file by specifying your desired settings, which are commonly used across all deployments.
+To configure Helm, you can create a `values.yaml` file by specifying your desired settings, which are commonly used across all deployments.
 
-We will reference this configuration file as `global.yaml` for the rest of this documentation.
+We will reference this configuration file as `values.yaml` for the rest of this documentation.
 
 :::caution
 Please review the information for the input boxes below. If the values provided are incompatible, the installation may not complete successfully. Ensure that all configurations are correctly entered to avoid potential issues during the setup process.
@@ -178,7 +178,11 @@ With the example configuration, Appcircle configures the ingress objects with SS
 
 <HelmYamlGenerator />
 
-Click the `Generate YAML` button to create a pre-configured YAML file. After the YAML is generated, copy its content and save it as a file named `global.yaml` in the directory where you will execute the Helm commands.
+Click the `Generate YAML` button to create a pre-configured YAML file. After the YAML is generated, copy its content and save it as a file named `values.yaml` in the directory where you will execute the Helm commands.
+
+### Update the Configuration File For Production
+
+To ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file to meet production standards and requirements.
 
 ## Deploy Using Helm
 
@@ -192,13 +196,13 @@ helm repo add appcircle https://charts.appcircle.io/ && \
 helm repo update
 ```
 
-- Use the configured `global.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
+- Use the configured `values.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
 
 ```bash
 helm upgrade --install appcircle-server appcircle/appcircle-server \
   --timeout 1200s \
   -n appcircle --create-namespace \
-  -f global.yaml
+  -f values.yaml
 ```
 
 Please note that the release name must be 18 characters or fewer.
@@ -246,7 +250,7 @@ You should configure your DNS records according to your DNS provider. For a best
 
 You can use the `my` prefixed domain name to access Appcircle dashboard. For example, if you set `global.urls.domainName` to `.appcircle.spacetech.com` then you should use `my.appcircle.spacetech.com` address.
 
-After you see the login page of the Appcircle, you can now use the initial username and password to login to the Appcircle dashboard. You can check the initial username and password from the `global.yaml` file that you have used to install Appcircle server. The values you should look for are under `auth.auth-keycloak.initialUsername` and `auth.auth-keycloak.initialPassword` keys.
+After you see the login page of the Appcircle, you can now use the initial username and password to login to the Appcircle dashboard. You can check the initial username and password from the `values.yaml` file that you have used to install Appcircle server. The values you should look for are under `auth.auth-keycloak.initialUsername` and `auth.auth-keycloak.initialPassword` keys.
 
 ## Uninstall the Appcircle Server
 
@@ -318,10 +322,10 @@ If you are deploying the appcircle for testing purposes, the built-in Vault depl
 
 Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some configurations in this file that you may want to add manually.
 
-If there are any settings you want to configure, open the `global.yaml` with your favorite editor like `vi`, `VS Code` or `notepad` and follow the sections below.
+If there are any settings you want to configure, open the `values.yaml` with your favorite editor like `vi`, `VS Code` or `notepad` and follow the sections below.
 
 ```bash
-vi global.yaml
+vi values.yaml
 ```
 
 TODO: Move to another page
@@ -340,15 +344,15 @@ If any services that the Appcircle server needs to connect to, such as your Git 
 To prevent potential issues with untrusted certificates, it is recommended to add your organization's root certificate from the Certificate Authority (CA) to Appcircle. This ensures that the server can properly validate and trust SSL/TLS certificates issued by your organization’s CA.
 :::
 
-To add this certificates as trusted, you need to update the `.global.trustedCerts` key in the `global.yaml` file and import the certificates.
+To add this certificates as trusted, you need to update the `.global.trustedCerts` key in the `values.yaml` file and import the certificates.
 
 :::info
-The `.global` key already exists in your `global.yaml` file. You just need to add the `trustedCerts` key.
+The `.global` key already exists in your `values.yaml` file. You just need to add the `trustedCerts` key.
 :::
 
 The trusted certificate names must conform to the regex pattern `[-._a-zA-Z0-9]+`. It is recommended to use descriptive names for your certificates, such as `spacetech-root` for the root certificate and `spacetech-intermediate` for the intermediate certificate.
 
-Here is an example of how to update the `global.yaml` file:
+Here is an example of how to update the `values.yaml` file:
 
 (TODO: Multiple certificate should be tested.)
 
@@ -374,7 +378,7 @@ global:
 TODO: Move to another page
 ### Configure Max Body Size
 
-In Appcircle, there are scenarios where the client upload size might exceed the default limit of 4096MB for a single request body size. To accommodate larger file uploads or if you wish to adjust this setting according to your needs, you can configure the maximum allowed body size in your `global.yaml` file.
+In Appcircle, there are scenarios where the client upload size might exceed the default limit of 4096MB for a single request body size. To accommodate larger file uploads or if you wish to adjust this setting according to your needs, you can configure the maximum allowed body size in your `values.yaml` file.
 
 ```yaml
 # For APK, IPA, build artifact uploads from browsers and Appcircle runners
@@ -402,7 +406,7 @@ With default installation, self-hosted Appcircle comes with the connection optio
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers-v2.png' />
 
-If you want to enable or disable any of these providers, you can do so by updating your `global.yaml` file.
+If you want to enable or disable any of these providers, you can do so by updating your `values.yaml` file.
 
 In the example below, there are enabled git providers list with comma separated:
 
@@ -440,7 +444,7 @@ In scenarios where a user exists in multiple LDAP configurations, a decision mus
 
 This documentation provides insights into the LDAP user lookup decision strategy and how it can be configured to handle scenarios where a user has multiple usernames and passwords across different LDAP configurations.
 
-To configure LDAP lookup decision settings, you can edit the `global.yaml` file and add the following settings under `auth`:
+To configure LDAP lookup decision settings, you can edit the `values.yaml` file and add the following settings under `auth`:
 
 ```yaml
 auth:
@@ -468,7 +472,7 @@ When `userLookupDecisionStrategy` is set to "tolerant", similar to the "affirmat
 
 TODO: Get overview from the [original document](/docs/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore.md).
 
-To configure LDAP brute force protection, you can edit the `global.yaml` file and add the following settings under `auth`:
+To configure LDAP brute force protection, you can edit the `values.yaml` file and add the following settings under `auth`:
 
 ```yaml
 auth:
@@ -484,10 +488,10 @@ auth:
 
 ### Increase the Replica Counts
 
-With the default Helm values, the Appcircle server services being deployed with one replica. If you want to increase this number for high availability, you can do so by updating your `global.yaml` file:
+With the default Helm values, the Appcircle server services being deployed with one replica. If you want to increase this number for high availability, you can do so by updating your `values.yaml` file:
 
 :::caution
-Some keys might already exists in your `global.yaml` file, make sure to update the existing keys instead of adding new ones.
+Some keys might already exists in your `values.yaml` file, make sure to update the existing keys instead of adding new ones.
 :::
 
 ```yaml
@@ -573,13 +577,13 @@ If you created the SSL/TLS certificate with LetsEncrypt, you should know that th
 
 :::
 
-To fix the problem, you can edit the `global.yaml` file and upgrade the Helm chart. 
+To fix the problem, you can edit the `values.yaml` file and upgrade the Helm chart. 
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle-server \
   --timeout 1200s \
   -n appcircle \
-  -f global.yaml
+  -f values.yaml
 ```
 
 :::caution
