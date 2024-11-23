@@ -9,13 +9,9 @@ import HelmYamlGenerator from '@site/src/components/HelmYamlGenerator';
 
 ## Overview
 
-To deploy the Appcircle server on your Kubernetes cluster, utilize the Appcircle Helm chart. This chart encompasses all necessary components for initial setup and supports scalability for larger deployments.
+To deploy the Appcircle server on your Kubernetes cluster, use the Appcircle Helm chart. This chart includes all the necessary components for the initial setup and can scale to support larger deployments.
 
-:::caution
-The default configuration of the Helm chart is not designed for production use. By default, all Appcircle services are deployed within the cluster, making it unsuitable for handling production workloads. Stateful apps like databases or object storages should be deployed outside the Helm chart scope.
-:::
-
-For a production deployment, it is essential to have a robust understanding of Kubernetes. This knowledge ensures that you can effectively manage and troubleshoot the cluster, optimize resource allocation, and maintain security.
+For a production deployment, a basic understanding of Kubernetes is sufficient. This knowledge will help you effectively manage and troubleshoot the cluster, optimize resource allocation, and maintain security.
 
 ## Prerequisites
 
@@ -78,11 +74,11 @@ The `kubectl` should be configured for the target Kubernetes cluster.
 
 Install Helm version 3.11.0 or later by following the instructions in [the Helm documentation](https://helm.sh/docs/intro/install/).
 
-### Stateful Apps
+### Production Readiness
 
-By default, Appcircle Helm chart will deploy some stateful applications such as databases or object storages to the Kubernetes cluster for testing purposes. It is recommended to deploy these services outside of the Kubernetes cluster for production use. This allows you to have better control over their configuration and management.
+By default, Appcircle Helm chart will deploy all the required services to the Kubernetes cluster for testing purposes. It is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Helm chart. This allows you to have better control over their configuration and management.
 
-If you wish to install these services within the Helm chart scope, you can use the default configuration provided by the Appcircle Helm chart.
+If you wish to deploy these services within the Helm chart scope, you can use the default configuration provided by the Appcircle Helm chart.
 
 #### PostgreSQL
 
