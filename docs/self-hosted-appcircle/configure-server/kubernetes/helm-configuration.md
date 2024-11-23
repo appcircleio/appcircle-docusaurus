@@ -5,7 +5,6 @@ tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 1
 ---
 
-
 ## Production Readiness
 
 By default, Appcircle Helm chart will deploy all the required services to the Kubernetes cluster for testing purposes. It is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Helm chart. This allows you to have better control over their configuration and management.
@@ -69,12 +68,12 @@ vi values.yaml
 ```
 
 TODO: Move to another page
+
 ### Configure External Stateful Apps
 
 If you are deploying the Appcircle server for production, you should have stateful apps outside of the Kubernetes cluster. You can skip this section if you are deploying the Appcircle server for test environments.
 
 @TODO: Fill here.
-
 
 ### Adding Trusted CA Certificates to the Appcircle Services
 
@@ -115,23 +114,31 @@ global:
         ZmukIMGOIYPWDhsuJA==
         -----END CERTIFICATE-----
 ```
+
 TODO: Move to another page
+
 ### Configure Max Body Size
 
-In Appcircle, there are scenarios where the client upload size might exceed the default limit of 4096MB for a single request body size. To accommodate larger file uploads or if you wish to adjust this setting according to your needs, you can configure the maximum allowed body size in your `values.yaml` file.
+In Appcircle, there are scenarios where the client upload size might exceed the default limit of `4096MB` for Nginx Ingress controller for a single request body size. To accommodate larger file uploads or if you wish to adjust this setting according to your needs, you can configure the maximum allowed body size in your `values.yaml` file.
 
 ```yaml
 # For APK, IPA, build artifact uploads from browsers and Appcircle runners
 apigateway:
   ingress:
     annotations:
+      # For Nginx Ingress Controller
       nginx.ingress.kubernetes.io/proxy-body-size: 1024m
+      # For HAProxy Kubernetes Ingress Controller
+      haproxy.ingress.kubernetes.io/body-size: 1024m
 
 # For build cache uploads from Appcircle runners
 resource:
   ingress:
-    annotations: 
+    annotations:
+      # For Nginx Ingress Controller
       nginx.ingress.kubernetes.io/proxy-body-size: 1024m
+      # For HAProxy Kubernetes Ingress Controller
+      haproxy.ingress.kubernetes.io/body-size: 1024m
 ```
 
 ### Git Providers
@@ -167,7 +174,7 @@ For example, you can set a title for **TR** and a different title for **EN** lan
 ```yaml
 store:
   store-web:
-    extraEnvVars: 
+    extraEnvVars:
       - name: TR_STORE_TITLE
         value: "Uygulama Mağazası"
       - name: EN_STORE_TITLE
@@ -218,13 +225,21 @@ To configure LDAP brute force protection, you can edit the `values.yaml` file an
 auth:
   auth-keycloak:
     bruteForce:
-      distribution: 
-        maxFailureCount: '5'
-        maxLockDuration: '600'
-      store: 
-        maxFailureCount: '5'
-        maxLockDuration: '600'
+      distribution:
+        maxFailureCount: "5"
+        maxLockDuration: "600"
+      store:
+        maxFailureCount: "5"
+        maxLockDuration: "600"
 ```
+
+### Custom Enterprise App Store Domain
+
+TODO: Fill the post jobs after enabling the custom store domain.
+
+### Custom Testing Distribution Domain
+
+TODO: Fill the post jobs after enabling the custom store domain.
 
 ### Increase the Replica Counts
 

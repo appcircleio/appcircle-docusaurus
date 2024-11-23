@@ -177,9 +177,9 @@ If you are not using secure connections for SMTP communication, you should set b
 
 With the example configuration, Appcircle configures the ingress objects with SSL/TLS certificates so the client that connect to Appcircle uses HTTPS instead of HTTP.
 
-  - `Appcircle SSL/TLS Certificate File`: Should be the public certificate of the SSL/TLS certificate. It is best practice to use fullchain certificates (including intermediate certificates) instead of single certificates.
-  - `Appcircle SSL/TLS Private Key File`: Should be the private key of the SSL/TLS certificate.
-  - `Appcircle CA Certificate File`: Should be the Certificate Authority public key. Typically the bottom certificate of your fullchain certificate. If you are using a single certificate instead of a full chain certificate, `Appcircle CA Certificate File` should be that single certificate.
+- `Appcircle SSL/TLS Certificate File`: Should be the public certificate of the SSL/TLS certificate. It is best practice to use fullchain certificates (including intermediate certificates) instead of single certificates.
+- `Appcircle SSL/TLS Private Key File`: Should be the private key of the SSL/TLS certificate.
+- `Appcircle CA Certificate File`: Should be the Certificate Authority public key. Typically the bottom certificate of your fullchain certificate. If you are using a single certificate instead of a full chain certificate, `Appcircle CA Certificate File` should be that single certificate.
 
 ---
 
@@ -204,6 +204,7 @@ Refer to the [Configuration Section](/docs/self-hosted-appcircle/configure-serve
 Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we deploy the Appcircle server to a single namespace, using `appcircle` as the namespace and `appcircle-server` as the Helm release name.
 
 TODO: The repository is not working for now. You should package the helm repository manually, or get it from Appcircle team. The `helm upgrade --install` commands works with the helm package from a local file.
+
 - Add the Appcircle Helm repository.
 
 ```bash
@@ -223,8 +224,6 @@ helm upgrade --install appcircle-server appcircle/appcircle-server \
   -n appcircle --create-namespace \
   -f values.yaml
 ```
-
-
 
 The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take between 10 to 15 minutes.
 
@@ -305,11 +304,11 @@ This error usually happens when you select a non-valid `Appcircle CA Certificate
 
 :::tip
 
-If you created the SSL/TLS certificate with LetsEncrypt, you should know that the `fullchain.pem` file doesn't include the root CA certificate by default. 
+If you created the SSL/TLS certificate with LetsEncrypt, you should know that the `fullchain.pem` file doesn't include the root CA certificate by default.
 
 :::
 
-To fix the problem, you can edit the `values.yaml` file and upgrade the Helm chart. 
+To fix the problem, you can edit the `values.yaml` file and upgrade the Helm chart.
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle-server \
@@ -328,5 +327,5 @@ kubectl delete pods appcircle-server-webeventredis-master-0 -n appcircle && \
 kubectl delete pods appcircle-server-webeventredis-replicas-0 -n appcircle && \
 kubectl delete pods appcircle-server-webeventredis-replicas-1 -n appcircle
 ```
-:::
 
+:::
