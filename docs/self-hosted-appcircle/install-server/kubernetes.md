@@ -34,7 +34,7 @@ TODO: Maybe add the monitor domain.
 
 Upon completing the deployment of the Appcircle server, you will need to create DNS records based on the ingress objects defined in Kubernetes. This should be done through your DNS service provider to ensure proper routing and accessibility.
 
-### SSL/TLS Certificate
+### SSL Certificate
 
 Modern technologies and best practices require secure communication to protect data from potential threats and ensure user privacy. Therefore, deploying the Appcircle server with an SSL/TLS certificate is essential.
 
@@ -50,9 +50,13 @@ You can use a **wildcard certificate** to cover the all subdomains, simplifying 
 If you use a domain like `appcircle.spacetech.com`, it will have **two levels of subdomains**. Ensure that both your DNS provider and SSL certificate provider support multi-level subdomains for proper configuration.
 :::
 
+:::tip
+Appcircle supports TLS 1.3, the latest and most secure version of the TLS protocol, ensuring improved performance and stronger encryption for your connections.
+:::
+
 ### Kubernetes cluster
 
-To install the Appcircle server using Helm, a Kubernetes cluster is required. The cluster must meet the following hardware specifications:
+To install the Appcircle server using Helm, a Kubernetes cluster is required. The cluster should meet the following hardware specifications:
 
 **Minimum** hardware requirements for **enterprise installation**:
 
@@ -72,15 +76,13 @@ TODO: Define a kubernetes version
 
 Kubernetes version must be x.x.x or later.
 
-### kubectl
+### Install `kubectl`
 
-Install `kubectl` by following the instructions provided in [the Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/#kubectl). Ensure that the installed version is within one minor release of the version running on your cluster.
+The `kubectl` CLI configured for the target Kubernetes cluster is required.
 
-The `kubectl` should be configured for the target Kubernetes cluster.
+### Install Helm
 
-### Helm
-
-Install Helm version 3.11.0 or later by following the instructions in [the Helm documentation](https://helm.sh/docs/intro/install/).
+Helm version `3.11.0` or later is required for deployment.
 
 ### Kubernetes Ingress Controller
 
@@ -101,7 +103,6 @@ Enabling the SSL passthrough depends on the ingress controller that is used in t
   - In a summary, should edit the Nginx controller deployment and add the `--enable-ssl-passthrough` flag to the `args` section.
 
 - @TODO: should be reviewed and tested to see if we support HAProxy-> For HAProxy Ingress Controller, check [the HAProxy documentation](https://www.haproxy.com/documentation/kubernetes-ingress/community/configuration-reference/ingress/#ssl-passthrough).
-- @TODO: should be reviewed and tested to see if we support Traefik-> For Traefik Ingress Controller, check [the Traefik documentation](https://traefik.io/blog/https-on-kubernetes-using-traefik-proxy/).
 
 :::info
 Enabling the SSL passthrough option **does not** automatically allow all SSL traffic **from all ingress objects** to pass through to the original service. Instead, it enables Ingress resources to leverage the SSL passthrough feature, allowing encrypted traffic to reach the backend service without being decrypted by the Ingress Controller.
@@ -200,7 +201,7 @@ Refer to the [Configuration Section](/docs/self-hosted-appcircle/configure-serve
 
 ## Deploy Using Helm
 
-Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we will use `appcircle-server` as Helm release name and install the Appcircle server into the `appcircle` namespace.
+Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we deploy the Appcircle server to a single namespace, using `appcircle` as the namespace and `appcircle-server` as the Helm release name.
 
 TODO: The repository is not working for now. You should package the helm repository manually, or get it from Appcircle team. The `helm upgrade --install` commands works with the helm package from a local file.
 - Add the Appcircle Helm repository.
@@ -210,7 +211,11 @@ helm repo add appcircle https://charts.appcircle.io/ && \
 helm repo update
 ```
 
-- Use the configured `values.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
+- Use the [configured](#create-a-configuration-file) `values.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
+
+:::caution
+Please note that the release name must be 18 characters or fewer.
+:::
 
 ```bash
 helm upgrade --install appcircle-server appcircle/appcircle-server \
@@ -219,17 +224,17 @@ helm upgrade --install appcircle-server appcircle/appcircle-server \
   -f values.yaml
 ```
 
-Please note that the release name must be 18 characters or fewer.
+
 
 The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take between 10 to 15 minutes.
 
-You can use `watch` command on a second terminal on Linux/MacOS systems to watch the pod creation process by running:
+You can use `watch` command on a second terminal on **Linux/MacOS** terminals to watch the pod creation process by running:
 
 ```bash
 watch kubectl get pods -n appcircle
 ```
 
-If you want to make sure that all containers are ready to use, you can the `kubectl wait` command on a third terminal window. The `appcircle` in the command is the Helm release name. So if you have changed the release name in the installation process, change the command according to your release name.
+If you want to make sure that all containers are ready to use, you can the `kubectl wait` command on another terminal window. The `appcircle` in the command is the Helm release name. So if you have changed the release name in the installation process, change the command according to your release name.
 
 ```bash
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle-server -n appcircle --timeout 1200s

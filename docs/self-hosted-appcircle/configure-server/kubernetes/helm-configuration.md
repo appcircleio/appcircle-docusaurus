@@ -16,7 +16,7 @@ If you wish to deploy these services within the Helm chart scope, you can use th
 
 The Appcircle chart, by default, includes an in-cluster PostgreSQL deployment provided by `bitnami/PostgreSQL`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
 
-For a production-ready setup, it is essential to configure an external PostgreSQL instance. The recommended version is PostgreSQL 16.
+For a production-ready setup, it is essential to configure an external PostgreSQL instance. The recommended version is PostgreSQL `12.x`.
 
 If you are deploying the Appcircle server for testing purposes, you may use the built-in PostgreSQL deployment.
 
@@ -24,7 +24,7 @@ If you are deploying the Appcircle server for testing purposes, you may use the 
 
 By default, the Appcircle chart includes an in-cluster MongoDB deployment provided by `bitnami/mongodb` by default. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
 
-To ensure optimal performance and reliability in a production environment, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB 7.0.
+To ensure optimal performance and reliability in a production environment, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.x`.
 
 If you are deploying the Appcircle server for testing purposes, the built-in MongoDB deployment can be used.
 
@@ -35,6 +35,12 @@ By default, the Appcircle chart includes an in-cluster MinIO deployment provided
 For production environments, it is highly recommended to configure an external, production-grade MinIO instance to ensure scalability, high availability, and data durability. TODO: Add minimum MinIO version.
 
 If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
+
+:::info
+You can use a cloud object storage solution like AWS S3 or Google Cloud Storage instead of deploying MinIO.
+
+TODO: Link or description about how to do it.
+:::
 
 ### Kafka
 
