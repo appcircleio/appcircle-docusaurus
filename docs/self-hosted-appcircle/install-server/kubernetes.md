@@ -17,7 +17,7 @@ For a production deployment, a basic understanding of Kubernetes is sufficient. 
 
 ### Domain Name
 
-A main domain name, for which you can generate SSL/TLS certificates for several subdomains, is required for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an example main domain and `spacetech` as an example organization name.
+A main domain name, which will have subdomains, is required for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an example main domain and `spacetech` as an example organization name.
 
 By default, Appcircle uses eight subdomains. These subdomains are:
 
@@ -38,22 +38,30 @@ Upon completing the deployment of the Appcircle server, you will need to create 
 
 Modern technologies and best practices require secure communication to protect data from potential threats and ensure user privacy. Therefore, deploying the Appcircle server with an SSL/TLS certificate is essential.
 
-Ensure the certificate covers the main domain and all relevant subdomains outlined in the [domain name](#domain-name) section, safeguarding data integrity and confidentiality.
+Ensure the **one certificate** covers **the all subdomains** in the [domain name](#domain-name) section.
 
-Additionally, configure the Appcircle server with a fullchain certificate, which should include the leaf (or app) certificate, intermediate certificates, and the root certificate, establishing a complete and trusted certificate chain.
+Additionally, configure the Appcircle server with a **fullchain certificate**, which should include the leaf (or app) certificate, intermediate certificates, and the root certificate, establishing a complete and trusted certificate chain.
+
+:::tip
+You can use a **wildcard certificate** to cover the all subdomains, simplifying the certificate management process. For example, a wildcard certificate for **`*.appcircle.spacetech.com`** will be enough.
+:::
+
+:::caution
+If you use a domain like `appcircle.spacetech.com`, it will have **two levels of subdomains**. Ensure that both your DNS provider and SSL certificate provider support multi-level subdomains for proper configuration.
+:::
 
 ### Kubernetes cluster
 
 To install the Appcircle server using Helm, a Kubernetes cluster is required. The cluster must meet the following hardware specifications:
 
-**Minimum hardware requirements for an enterprise installation:**
+**Minimum** hardware requirements for **enterprise installation**:
 
 - Nodes with x86-64 architecture
 - 8 CPUs
 - 16 GB RAM
 - TODO: Update 500 GB SSD
 
-**Recommended hardware requirements for production environments:**
+**Recommended** hardware requirements for **enterprise installation**:
 
 - Nodes with x86-64 architecture
 - 32 CPUs
