@@ -1,7 +1,7 @@
 ---
-title: Helm for Kubernetes
-description: Learn how to install and configure self-hosted Appcircle server with Helm to Kubernetes
-tags: [self-hosted, helm, installation, configuration]
+title: Kubernetes
+description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes
+tags: [self-hosted, helm, installation, configuration, kubernetes]
 sidebar_position: 6
 ---
 
