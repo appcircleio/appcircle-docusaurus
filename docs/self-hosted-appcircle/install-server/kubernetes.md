@@ -86,9 +86,13 @@ Helm version `3.11.0` or later is required for deployment.
 
 ### Kubernetes Ingress Controller
 
-By default, Appcircle exposes its services using name-based virtual servers, which are configured through Ingress objects. To ensure these Ingress objects function properly, your Kubernetes cluster must have an Ingress Controller installed and configured.
+By default, Appcircle exposes its services through Ingress objects. To ensure these Ingress objects function properly, your Kubernetes cluster should have an Ingress Controller installed and configured.
 
 Appcircle server supports Nginx Ingress Controller by default. To install Nginx Ingress Controller to the Kubernetes cluster, please check [the Nginx Ingress Controller documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
+
+:::info
+Other Ingress Controllers like HAProxy Ingress Controller or Traefik are also supported by modifying Helm values accordingly.
+:::
 
 #### Enable SSL Passthrough
 
@@ -127,7 +131,7 @@ In the example values below, we used `spacetech` as an example organization name
 - `The Organization Name`: Enter your organization's name.
 - `Appcircle Main Domain`: Specify the [domain name](#domain-name) that will host nine subdomains. Ensure the domain is properly configured and can handle subdomain creation as required.
 - `Appcircle Initial User Email`: Provide the admin email address for the Appcircle server. It is recommended to use an email address that exists and can receive emails for password reset purposes.
-- `Appcircle Initial User Password`: Set the password for the initial user. The password must adhere to the Appcircle password policy:
+- `Appcircle Initial User Password`: Set the password for the initial user. The password should adhere to the Appcircle password policy:
   - Minimum length of 6 characters.
   - At least one lowercase letter.
   - At least one uppercase letter.
@@ -142,7 +146,7 @@ In the example values below, we used `spacetech` as an example organization name
 - `Container Image Tag`: (Consider removing if unnecessary) Specify the version of the Appcircle server, such as `v3.23.1`, `latest`, or `beta-latest`.
 - `Container Image Registry Requires Authentication`: Select this option if the container image registry requires authentication.
 - `Container Image Registry Username`: For the default image registry, use `_json_key` as the username.
-- `Container Image Registry Password`: Enter the content of the `cred.json` file, which you must obtain from Appcircle, for the default image registry.
+- `Container Image Registry Password`: Enter the content of the `cred.json` file, which you should obtain from Appcircle, for the default image registry.
 
 :::tip
 You don't need to change `Container Image Registry Host, Path and Tag` settings if you are not using an external container image registry.
