@@ -128,6 +128,10 @@ Below is an example of a `values.yaml` file that you can use to configure the Ap
 
 Each key has a description of what it should be used for, and you can adjust these settings according to your needs.
 
+:::tip
+You can check the [Create Container Registry Secret](#create-container-registry-secret) section to learn how to create a secret for your container registry.
+:::
+
 ```yaml
 # Global configurations for Appcircle deployment
 global:
@@ -235,6 +239,42 @@ webeventredis:
 ```
 
 ### Update the Configuration File
+
+#### Create Container Registry Secret
+
+In the values yaml, you should specify the container registry secret for pulling images from a container image repository. By default, Appcircle uses its own image registry that you should authenticate with the `cred.json` file. 
+
+:::tip
+If you are using your own container registry, make sure to to write your password into the `registry-password` and update the `registryHost` and `registryUsername` variables accordingly.
+:::
+
+You can create this value by saving the script below and executing it in your terminal:
+
+- Save the `cred.json` file  you got from the Appcircle into a file named `registry-password`.
+
+- Save the script below to a file named `create-registry-secret.sh`.
+
+```bash
+vim create-registry-secret.sh
+```
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+registryHost="europe-west1-docker.pkg.dev"
+registryUsername='_json_key'
+registryPassword=$(cat registry-password)
+authString="$registryUsername:$registryPassword"
+base64EncodedAuthString=$(echo -n "$authString" | base64 -w 0 )
+dockerRegistrySecret="{\"auths\":{\"${registryHost}\":{\"auth\": \"$base64EncodedAuthString\"}}}"
+echo -n \'$dockerRegistrySecret\'
+```
+
+- Run the script and save the output to the `.global.containerRegistrySecret` key in the `values.yaml` file.
+
+```bash
+bash create-registry-secret.sh
+```
 
 #### Production Readiness
 
