@@ -40,17 +40,15 @@ If you want to use a different Java version, please follow [this document](/work
 
 When you select "Appcircle Linux Pool (x86_64)" for Android builds, the following JDK locations are available within the environment variables:
 
-- **JAVA_HOME_8_X64**: `/usr/local/openjdk-8`
-- **JAVA_HOME_11_X64**: `/root/.sdkman/candidates/java/11.0.12-open`
-- **JAVA_HOME_17_X64**: -
-- **JAVA_HOME_21_X64**: -
+- **JAVA_HOME_8_X64**: `/root/.sdkman/candidates/java/8.0.392-zulu`
+- **JAVA_HOME_11_X64**: `/root/.sdkman/candidates/java/11.0.21-zulu`
+- **JAVA_HOME_17_X64**: `/root/.sdkman/candidates/java/17.0.9-zulu`
+- **JAVA_HOME_21_X64**: `/root/.sdkman/candidates/java/21.0.2-zulu`
 
-:::caution
+:::tip
 We're deprecating Intel-based runners and transitioning our customers to Apple silicon-based (M-series) build machines.
 
-Currently, JDK 17 and 21 are not pre-installed on the "Appcircle Linux Pool (x86_64)", and Intel-based runners are not actively maintained.
-
-If your app does not specifically require an Intel-based build machine, we suggest you use "Appcircle Standard macOS Pool (arm64)", since it has much more build capacity and the latest updates.
+Although Intel-based runners are actively maintained, if your app does not specifically require an Intel-based build machine, we suggest using the "Appcircle Standard macOS Pool (arm64)", since it has much more build capacity and the latest updates as well.
 :::
 
 When you select "Appcircle Standard macOS Pool (arm64)" for Android builds, the following JDK locations are available within the environment variables:
