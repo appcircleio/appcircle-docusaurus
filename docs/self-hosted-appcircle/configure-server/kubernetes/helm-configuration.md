@@ -41,7 +41,7 @@ You can use a cloud object storage solution like AWS S3 or Google Cloud Storage 
 TODO: Link or description about how to do it.
 :::
 
-#### HashiCorp Vault
+### HashiCorp Vault
 
 By default, the Appcircle chart includes an in-cluster HashiCorp Vault deployment provided by `hashicorp/vault`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
 
