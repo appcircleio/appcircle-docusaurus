@@ -17,7 +17,7 @@ For a production deployment, a basic understanding of Kubernetes is sufficient. 
 
 ### Domain Name
 
-A main domain name, which will have subdomains, is required for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an example main domain and `spacetech` as an example organization name.
+A main **domain name**, which will have **subdomains**, is required for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an example main domain and `spacetech` as an example organization name.
 
 By default, Appcircle uses eight subdomains. These subdomains are:
 
@@ -32,11 +32,11 @@ By default, Appcircle uses eight subdomains. These subdomains are:
 
 TODO: Maybe add the monitor domain.
 
-Upon completing the deployment of the Appcircle server, you will need to create DNS records based on the ingress objects defined in Kubernetes. This should be done through your DNS service provider to ensure proper routing and accessibility.
+**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the ingress objects defined in Kubernetes. This should be done through your DNS service provider to ensure proper routing and accessibility.
 
 ### SSL Certificate
 
-Modern technologies and best practices require secure communication to protect data from potential threats and ensure user privacy. Therefore, deploying the Appcircle server with an SSL/TLS certificate is essential.
+Modern technologies and best practices require secure communication to protect data from potential threats and ensure user privacy. Therefore, deploying the Appcircle server with an SSL certificate is essential.
 
 Ensure the **one certificate** covers **the all subdomains** in the [domain name](#domain-name) section.
 
@@ -51,7 +51,7 @@ If you use a domain like `appcircle.spacetech.com`, it will have **two levels of
 :::
 
 :::tip
-Appcircle supports TLS 1.3, the latest and most secure version of the TLS protocol, ensuring improved performance and stronger encryption for your connections.
+Appcircle **supports TLS 1.3**, the latest and most secure version of the TLS protocol, ensuring improved performance and stronger encryption for your connections.
 :::
 
 ### Kubernetes cluster
@@ -86,19 +86,17 @@ Helm version `3.11.0` or later is required for deployment.
 
 ### Kubernetes Ingress Controller
 
-By default, Appcircle exposes its services through Ingress objects. To ensure these Ingress objects function properly, your Kubernetes cluster should have an Ingress Controller installed and configured.
+By default, Appcircle exposes its services through **Ingress objects**. To ensure these Ingress objects function properly, your Kubernetes cluster should have **an Ingress Controller** installed and configured.
 
 Appcircle server supports Nginx Ingress Controller by default. To install Nginx Ingress Controller to the Kubernetes cluster, please check [the Nginx Ingress Controller documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
 
 :::info
-Other Ingress Controllers like HAProxy Ingress Controller or Traefik are also supported by modifying Helm values accordingly.
+**Other Ingress Controllers** like HAProxy Ingress Controller are also **supported** by **modifying Helm values** accordingly.
 :::
 
 #### Enable SSL Passthrough
 
-SSL passthrough allows SSL traffic to pass through a load balancer without decrypting it. The SSL/TLS termination is done at the backend server, not at the load balancer.
-
-Redis ingress of the Appcircle server needs SSL passthrough so Appcircle runners can connect to the Redis service that is working on Kubernetes cluster securely.
+**Redis ingress** of the Appcircle server needs **SSL passthrough** so Appcircle **runners** can connect to the Redis service that is working on Kubernetes cluster **securely**.
 
 Enabling the SSL passthrough depends on the ingress controller that is used in the Kubernetes cluster. For example:
 
@@ -116,10 +114,10 @@ Enabling the SSL passthrough option **does not** automatically allow all SSL tra
 
 To configure Helm, you can create a `values.yaml` file by specifying your desired settings, which are commonly used across all deployments.
 
-In the example values below, we used `spacetech` as an example organization name. You should replace it with your actual organization name or any other value you prefer.
+In the example values below, we used `spacetech` as an **example organization name**. You should **replace it** with your actual organization name or any other value you prefer.
 
 :::caution
-Please review the information for the input boxes below. If the values provided are incompatible, the installation may not complete successfully. Ensure that all configurations are correctly entered to avoid potential issues during the setup process.
+Please **review the comments for the `values.yaml`** below. If the values provided are incompatible, the installation may not complete successfully. Ensure that all configurations are correctly entered to avoid potential issues during the setup process.
 :::
 
 ### Example `values.yaml` File
@@ -171,6 +169,7 @@ global:
   imageTag: alpha-latest
   # Container registry authentication secret
   # Contains authentication details for the container registry in JSON format
+  # Check the next section below on how to create this secret
   containerRegistrySecret: '{"auths":{"europe-west1-docker.pkg.dev":{"auth": "X2pzb25fa2V5OkNvbnRlbnQgb2YgdGhlIGNyZWQuanNvbiBmaWxl"}}}'
 
   # Kubernetes ingress controller class
@@ -242,13 +241,13 @@ webeventredis:
 
 #### Create Container Registry Secret
 
-In the values yaml, you should specify the container registry secret for pulling images from a container image repository. By default, Appcircle uses its own image registry that you should authenticate with the `cred.json` file. 
+In the `values.yaml`, you should specify the container **registry secret** for pulling images from a container image repository. **By default**, Appcircle uses its **own image registry** that you should **authenticate with the `cred.json`** file. 
 
 :::tip
 If you are using your own container registry, make sure to to write your password into the `registry-password` and update the `registryHost` and `registryUsername` variables accordingly.
 :::
 
-You can create this value by saving the script below and executing it in your terminal:
+You can create this value by saving the script below and executing it in a **Linux** terminal:
 
 - Save the `cred.json` file  you got from the Appcircle into a file named `registry-password`.
 
@@ -286,7 +285,7 @@ Refer to the [Configuration Section](/docs/self-hosted-appcircle/configure-serve
 
 ## Deploy Using Helm
 
-Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we deploy the Appcircle server to a single namespace, using `appcircle` as the namespace and `appcircle-server` as the Helm release name.
+Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we deploy the Appcircle server to a single namespace, using **`appcircle`** as the **namespace** and **`appcircle-server`** as the Helm **release name**.
 
 TODO: The repository is not working for now. You should package the helm repository manually, or get it from Appcircle team. The `helm upgrade --install` commands works with the helm package from a local file.
 
@@ -300,7 +299,7 @@ helm repo update
 - Use the [configured](#create-a-configuration-file) `values.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
 
 :::caution
-Please note that the release name must be 18 characters or fewer.
+Please note that the **release name should be 18 characters or fewer**.
 :::
 
 ```bash
@@ -310,21 +309,21 @@ helm upgrade --install appcircle-server appcircle/appcircle-server \
   -f values.yaml
 ```
 
-The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take between 10 to 15 minutes.
+The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take up to **10 to 15 minutes**.
 
-You can use `watch` command on a second terminal on **Linux/MacOS** terminals to watch the pod creation process by running:
+You can use **`watch`** command on a second terminal on **Linux/MacOS** terminals to watch the pod creation process by running:
 
 ```bash
 watch kubectl get pods -n appcircle
 ```
 
-If you want to make sure that all containers are ready to use, you can the `kubectl wait` command on another terminal window. The `appcircle` in the command is the Helm release name. So if you have changed the release name in the installation process, change the command according to your release name.
+If you want to make sure that all containers are **ready to use**, you can the **`kubectl wait`** command on another terminal window.
 
 ```bash
-kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle-server -n appcircle --timeout 1200s
+kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle-server -n appcircle --timeout 1200s && echo "Appcircle is ready to use. Happy building! "
 ```
 
-When all the pods are ready, the command will return with success. You are ready to connect to the Appcircle UI and start to discover.
+When all the pods are **ready**, the command will return with success and you will see **"Appcircle is ready to use. Happy building!"** message. Now, you are ready to connect to the Appcircle UI and start to build, test and publish!
 
 ## Create DNS Records
 
@@ -347,13 +346,15 @@ appcircle-web-event                nginx   hook.appcircle.spacetech.com         
 appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  192.168.1.245,192.168.1.246,192.168.1.247   80      24m
 ```
 
-You should configure your DNS records according to your DNS provider. For a best practice, create a `A` record for the `my.appcircle.spacetech.com` and create `CNAME` records for other domains.
+You should configure your DNS records according to your DNS provider. For a best practice, create a **`A`** record for the **`my.appcircle.spacetech.com`** and create **`CNAME`** records for other domains.
 
 ## Sign in to Appcircle
 
-You can use the `my` prefixed domain name to access Appcircle dashboard. For example, if you set `global.urls.domainName` to `.appcircle.spacetech.com` then you should use `my.appcircle.spacetech.com` address.
+You can use the `my` prefixed domain name to access Appcircle dashboard. 
 
-After you see the login page of the Appcircle, you can now use the initial username and password to login to the Appcircle dashboard. You can check the initial username and password from the `values.yaml` file that you have used to install Appcircle server. The values you should look for are under `auth.auth-keycloak.initialUsername` and `auth.auth-keycloak.initialPassword` keys.
+For example, if you set `global.urls.domainName` to `.appcircle.spacetech.com` and deployed the Appcircle server with SSL certificates then you can use `https://my.appcircle.spacetech.com` address to access the Appcircle dashboard.
+
+After you see the login page of the Appcircle, you can now use the **initial username** and **password** to login to the Appcircle dashboard. You can check the initial username and password from the `values.yaml` file that you have used to install Appcircle server. The values you should look for are under `auth.auth-keycloak.initialUsername` and `auth.auth-keycloak.initialPassword` keys.
 
 ## Uninstall the Appcircle Server
 
@@ -365,7 +366,7 @@ If you haven't changed the release name and namespace name while following the [
 helm uninstall -n appcircle appcircle-server
 ```
 
-## Deleting the Appcircle Server Data
+### Deleting the Appcircle Server Data
 
 (TODO: Validate the information. Uninstall and install then check if the data still exists.) [Uninstalling the Appcircle Server](#uninstall-the-appcircle-server) doesn't delete the Appcircle server data. If you want to delete all the data of the Appcircle server for a reason, you can simple delete the namespace.
 
