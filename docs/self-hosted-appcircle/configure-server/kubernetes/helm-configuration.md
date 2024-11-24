@@ -41,14 +41,6 @@ You can use a cloud object storage solution like AWS S3 or Google Cloud Storage 
 TODO: Link or description about how to do it.
 :::
 
-### Kafka
-
-By default, the Appcircle chart includes an in-cluster Kafka deployment provided by `bitnami/kafka`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
-
-For production deployments, you should set up an external, production-ready Kafka cluster to handle high-throughput messaging and ensure proper fault tolerance and scaling. TODO: Add minimum Kafka version.
-
-If you are installing the Appcircle for testing purposes, you may use the built-in Kafka deployment.
-
 #### HashiCorp Vault
 
 By default, the Appcircle chart includes an in-cluster HashiCorp Vault deployment provided by `hashicorp/vault`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
