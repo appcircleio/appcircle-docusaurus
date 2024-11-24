@@ -112,92 +112,133 @@ Enabling the SSL passthrough depends on the ingress controller that is used in t
 Enabling the SSL passthrough option **does not** automatically allow all SSL traffic **from all ingress objects** to pass through to the original service. Instead, it enables Ingress resources to leverage the SSL passthrough feature, allowing encrypted traffic to reach the backend service without being decrypted by the Ingress Controller.
 :::
 
-### Create a Configuration File
+## Create a Configuration File
 
 To configure Helm, you can create a `values.yaml` file by specifying your desired settings, which are commonly used across all deployments.
 
-We will reference this configuration file as `values.yaml` for the rest of this documentation.
+In the example values below, we used `spacetech` as an example organization name. You should replace it with your actual organization name or any other value you prefer.
 
 :::caution
 Please review the information for the input boxes below. If the values provided are incompatible, the installation may not complete successfully. Ensure that all configurations are correctly entered to avoid potential issues during the setup process.
 :::
 
-:::info
-In the example values below, we used `spacetech` as an example organization name. You should replace it with your actual organization name or any other value you prefer.
-:::
+### Example `values.yaml` File
 
-#### Appcircle General Settings
+Below is an example of a `values.yaml` file that you can use to configure the Appcircle Helm chart for your Kubernetes cluster. This configuration includes settings such as domain name, SSL/TLS configurations, and email settings.
 
-- `The Organization Name`: Enter your organization's name.
-- `Appcircle Main Domain`: Specify the [domain name](#domain-name) that will host nine subdomains. Ensure the domain is properly configured and can handle subdomain creation as required.
-- `Appcircle Initial User Email`: Provide the admin email address for the Appcircle server. It is recommended to use an email address that exists and can receive emails for password reset purposes.
-- `Appcircle Initial User Password`: Set the password for the initial user. The password should adhere to the Appcircle password policy:
-  - Minimum length of 6 characters.
-  - At least one lowercase letter.
-  - At least one uppercase letter.
-  - At least one numeric digit.
+Each key has a description of what it should be used for, and you can adjust these settings according to your needs.
 
----
+```yaml
+# Global configurations for Appcircle deployment
+global:
+  # Defines the environment type
+  appEnvironment: "Production"
+  urls:
+    # Main domain configuration - All Appcircle services will be subdomains of this domain
+    domainName: .appcircle.spacetech.com
+    # Protocol to be used for connections
+    scheme: https
 
-#### Container Image Registry Settings
+  # SMTP server configuration for sending emails (auth, notifications, Testing Distribution)
+  mail:
+    smtp:
+      domain: smtp.spacetech.com
+      host: smtp.spacetech.com
+      # Port 587 typically used for StartTLS
+      port: 587
+      # Email address that will be used as sender
+      from: appcircle@spacetech.com
+      # SSL configuration - Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
+      ssl: false
+      # StartTLS configuration - Set to 'true' if the SMTP server uses StartTLS protocol, typically on port 587.
+      tls: true
+      # SMTP authentication settings
+      auth: true
+      username: smtpUserName
+      password: superSecretSmtpPassword
 
-- `Container Registry Host`: Enter the domain or IP address of your container image registry, such as Harbor or Nexus, if using an external image registry.
-- `Container Image Repository Path`: Specify the path of the container images. This is typically the segment between your registry host and the image name. For example, in the image path `registry.spacetech.com/appcircle-proxy/image:tag`, the repository path is `appcircle-proxy`.
-- `Container Image Tag`: (Consider removing if unnecessary) Specify the version of the Appcircle server, such as `v3.23.1`, `latest`, or `beta-latest`.
-- `Container Image Registry Requires Authentication`: Select this option if the container image registry requires authentication.
-- `Container Image Registry Username`: For the default image registry, use `_json_key` as the username.
-- `Container Image Registry Password`: Enter the content of the `cred.json` file, which you should obtain from Appcircle, for the default image registry.
+  # If the K8s cluster access the images from a private container image registry, you can configure it here.
+  # For example, if the url of an image is 'europe-west1-docker.pkg.dev/appcircle/docker-registry/nginx', you can set it as follows:
+  # Container Image Registry host for container images
+  imageRegistry: europe-west1-docker.pkg.dev
+  # Container Image Repository path between registry host and image name
+  imageRepositoryPath: appcircle/docker-registry
+  # Version tag for Appcircle server
+  imageTag: alpha-latest
+  # Container registry authentication secret
+  # Contains authentication details for the container registry in JSON format
+  containerRegistrySecret: '{"auths":{"europe-west1-docker.pkg.dev":{"auth": "X2pzb25fa2V5OkNvbnRlbnQgb2YgdGhlIGNyZWQuanNvbiBmaWxl"}}}'
 
-:::tip
-You don't need to change `Container Image Registry Host, Path and Tag` settings if you are not using an external container image registry.
-:::
+  # Kubernetes ingress controller class
+  ingressClassName: "nginx"
 
----
+  # SSL/TLS certificate configuration for HTTPS
+  tlsWildcard:
+    # Public certificate - Fullchain including leaf (app), intermediate and root SSL certificates
+    cert: |
+      -----BEGIN CERTIFICATE-----
+      MIIFzTCCBLWgAwIBAgISBMLn5uQI6Wmzku14xXUbbIbmMA0GCSqGSIb3DQEBCwUA
+      ...
+      SA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFBjCCAu6gAwIBAgIRAIp9PhPWLzDvI4a9KQdrNPgwDQYJKoZIhvcNAQELBQAw
+      ...
+      uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
+      -----END CERTIFICATE-----
 
-#### SMTP Settings
+    # Private key for the SSL certificate
+    key: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC3wS87baGONXjr
+      ...
+      oUcjMAu/mGJjtn9AS0S7rRa58Q==
+      -----END PRIVATE KEY-----
 
-Appcircle needs an SMTP server to send emails for operations such as user authorization, Testing Distribution, notification emails.
+    # Certificate Authority public key - Typically the bottom certificate of the fullchain SSL certificate
+    caCert: |
+      -----BEGIN CERTIFICATE-----
+      MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw
+      ...
+      emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
+      -----END CERTIFICATE-----
 
-- `SMTP Host`: Domain or IP address of the SMTP server.
-- `SMTP Port`: Port number of the SMTP server.
-- `SMTP SSL/TLS`: Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
-- `SMTP StartTLS`: Set to 'true' if the SMTP server uses StartTLS protocol for upgrading an unencrypted connection to a secure one, typically on port 587.
-- `SMTP Send Emails From`: Email address that Appcircle will send emails from.
-- `SMTP Server Requires Authentication`: Should be 'true' if the SMTP server requires authentication. False for otherwise.
-- `SMTP Username`: SMTP username for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
-- `SMTP Password`: SMTP password for authentication if the `auth` is set to 'true'. You can leave the value empty if the `auth` is false.
+# Authentication configuration
+auth:
+  auth-keycloak:
+    # Organization name for Appcircle server
+    organizationName: spacetech
+    # Initial admin user email for Appcircle server
+    initialUsername: "admin@example.com"
+    # Initial admin password - Should contain: min 6 chars, 1 lowercase, 1 uppercase, 1 number
+    initialPassword: "superSecretAppcirclePassword1234"
+    image:
+      # Appcircle keycloak image repository path
+      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-keycloak
 
-:::tip
-For most cases, `SMTP SSL/TLS` and `SMTP StartTLS` can't be `true` at the same time.
-:::
+# Appcircle vault configuration
+vault:
+  server:
+    image:
+      # Appcircle vault image repository path
+      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault
 
-:::info
-If you are not using secure connections for SMTP communication, you should set both `SMTP SSL/TLS` and `SMTP StartTLS` to 'false'.
-:::
-
----
-
-#### Configure the SSL/TLS Certificates
-
-With the example configuration, Appcircle configures the ingress objects with SSL/TLS certificates so the client that connect to Appcircle uses HTTPS instead of HTTP.
-
-- `Appcircle SSL/TLS Certificate File`: Should be the public certificate of the SSL/TLS certificate. It is best practice to use fullchain certificates (including intermediate certificates) instead of single certificates.
-- `Appcircle SSL/TLS Private Key File`: Should be the private key of the SSL/TLS certificate.
-- `Appcircle CA Certificate File`: Should be the Certificate Authority public key. Typically the bottom certificate of your fullchain certificate. If you are using a single certificate instead of a full chain certificate, `Appcircle CA Certificate File` should be that single certificate.
-
----
-
-#### Generate the Configuration File
-
-<HelmYamlGenerator />
-
-Click the `Generate YAML` button to create a pre-configured YAML file. After the YAML is generated, copy its content and save it as a file named `values.yaml` in the directory where you will execute the Helm commands.
+# Web event Redis configuration
+webeventredis:
+  # Enable TLS for Redis connections
+  tls:
+    enabled: true
+  # Ingress configuration for Redis
+  ingress:
+    enabled: true
+    tls: true
+```
 
 ### Update the Configuration File
 
 #### Production Readiness
 
-To ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file to meet production standards and requirements.
+To ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault and MinIO connection strings.
 
 #### Appcircle Server Helm Chart Configurations
 
