@@ -34,7 +34,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Java Version
 
-Build agents have Java 8, 11, 17 and 21 installed. Java 11 is set as the default version.
+Build agents have Java 8, 11, 17 and 21 installed. Java 17 is set as the default version.
 
 If you want to use a different Java version, please follow [this document](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) for how to do that.
 
@@ -115,7 +115,7 @@ Here are some most important packages installed in our Linux and macOS images us
 | Git LFS             | 2.13.2          | 3.5.1          | 3.2.0             |
 | Gradle              | 4.4.1           | 8.8            | 7.5.1             |
 | Gzip                | 1.10            | 430.100.5      | 353.100.22        |
-| Java                | 17.0.9          | 11.0.21        | 11.0.21           |
+| Java                | 17.0.9          | 17.0.9         | 17.0.9            |
 | Maven               | 3.9.9           | 3.9.7          | 3.8.6             |
 | Node JS             | 18.20.5         | 18.20.3        | 18.19.1           |
 | OpenSSL             | 1.1.1           | 3.3.6          | 2.8.3             |

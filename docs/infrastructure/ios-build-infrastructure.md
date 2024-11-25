@@ -77,7 +77,7 @@ Here are some of the most important packages installed in our iOS build agents u
 | Carthage           | 0.38.0           | 0.39.1         |
 | Curl               | 7.79.1           | 8.6.0          |
 | Homebrew           | 3.6.11           | 4.3.5          |
-| Java (OpenJDK)     | 11.0.21          | 11.0.21        |
+| Java (OpenJDK)     | 17.0.9           | 17.0.9         |
 | Gem                | 3.1.6            | 3.4.19         |
 | Fastlane           | 2.211.0          | 2.220.0        |
 | Git                | 2.38.1           | 2.45.2         |
