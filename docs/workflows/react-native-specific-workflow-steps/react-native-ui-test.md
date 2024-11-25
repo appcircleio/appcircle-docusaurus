@@ -16,7 +16,7 @@ To generate detailed Test Reports. Please visit our [Test Reports Component docu
 
 :::info Java Version
 
-The default Java version in Appcircle's build stacks is **Java 11**. If your project requires a **higher** or **lower** Java version, please see the [**How to Change Java Version**](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) document. On the other hand, you can see all details for build stacks both iOS and Android with this [documentation](/infrastructure).
+The default Java version in Appcircle's build stacks is **Java 17**. If your project requires a **higher** or **lower** Java version, please see the [**How to Change Java Version**](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) document. On the other hand, you can see all details for build stacks both iOS and Android with this [documentation](/infrastructure).
 
 :::
 
