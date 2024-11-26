@@ -189,7 +189,11 @@ global:
       ...
       uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
       -----END CERTIFICATE-----
-
+      -----BEGIN CERTIFICATE-----
+      MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw
+      ...
+      emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
+      -----END CERTIFICATE-----
     # Private key for the SSL certificate
     key: |
       -----BEGIN PRIVATE KEY-----
@@ -197,7 +201,6 @@ global:
       ...
       oUcjMAu/mGJjtn9AS0S7rRa58Q==
       -----END PRIVATE KEY-----
-
     # Certificate Authority public key - Typically the bottom certificate of the fullchain SSL certificate
     caCert: |
       -----BEGIN CERTIFICATE-----
@@ -205,7 +208,6 @@ global:
       ...
       emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
       -----END CERTIFICATE-----
-
 # Authentication configuration
 auth:
   auth-keycloak:
