@@ -245,15 +245,21 @@ webeventredis:
 
 By default, Appcircle uses its own image registry that you should authenticate with the `cred.json` file you got from Appcircle.
 
-You can create this secret for Appcircle image registry by executing the following command:
+You can create this secret on the `appcircle` namespace for Appcircle image registry by executing the following command:
 
 :::tip
 If you are using your own container registry, make sure to update the `server`, `username`, and `password` variables accordingly.
 :::
 
-1. Save the `cred.json` file or your own registry password into a file named `registry-password`.
+1. Create the `appcircle` namespace:
 
-2. Run the following command on your **Linux / MacOS** terminal to create the container registry secret on the Kubernetes cluster:
+```bash
+kubectl create namespace appcircle
+```
+
+2. Save the `cred.json` file or your own registry password into a file named `registry-password`.
+
+3. Run the following command on your **Linux / MacOS** terminal to create the container registry secret on the Kubernetes cluster:
 
 ```bash
 kubectl create secret docker-registry containerregistry \
