@@ -116,12 +116,12 @@ https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews
     Code Reviews with Danger
 </ContentRef>
 
-## Change Java Version
+## Select Java Version
 
-The **Change Java Version** step updates the JDK and Java version to the selected one during the build process.
+The **Select Java Version** step updates the JDK and Java version to the selected one during the build process.
 
-<ContentRef url="/workflows/common-workflow-steps/change-java-version">
-    Change Java Version
+<ContentRef url="/workflows/common-workflow-steps/select-java-version">
+    Select Java Version
 </ContentRef>
 
 ## Custom Scripts

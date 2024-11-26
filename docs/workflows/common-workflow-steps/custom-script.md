@@ -41,13 +41,13 @@ Appcircle currently has `OpenJDK 17` (default), `OpenJDK 8`, `OpenJDK 11` and `O
 
 [Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 17` as default JDK version.
 
-To switch JDK versions, you can now use the dedicated **Change Java Version** component, so there is no need to use **Custom Script** for this task. For further details on this component, refer to the documentation:
+To switch JDK versions, you can now use the dedicated **Select Java Version** component, so there is no need to use **Custom Script** for this task. For further details on this component, refer to the documentation:
 
-- [Change Java Version](/workflows/common-workflow-steps/change-java-version)
+- [Select Java Version](/workflows/common-workflow-steps/select-java-version)
 
 However, if you prefer to update or improve it manually on **Custom Script**, the source code is available here:
 
-- [Change Java Version - Source Code](https://github.com/appcircleio/appcircle-change-java-version-component)
+- [Select Java Version - Source Code](https://github.com/appcircleio/appcircle-select-java-version-component)
 
 ### How to install a new package to the build machine?
 
