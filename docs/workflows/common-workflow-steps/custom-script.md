@@ -37,7 +37,11 @@ Note that the **Script** area works according to the selected language variable.
 
 ### How to change Java version
 
-This feature has been introduced as a component, so there is no need to use **Custom Script** for this task. For more details, see:
+Appcircle currently has `OpenJDK 17` (default), `OpenJDK 8`, `OpenJDK 11` and `OpenJDK 21`.
+
+[Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 17` as default JDK version.
+
+To switch JDK versions, you can now use the dedicated **Change Java Version** component, so there is no need to use **Custom Script** for this task. For further details on this component, refer to the documentation:
 
 - [Change Java Version](/workflows/common-workflow-steps/change-java-version)
 

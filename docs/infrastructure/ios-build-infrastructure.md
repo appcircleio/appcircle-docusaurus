@@ -11,7 +11,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running.
 
-- If your selected pool from config is "Default M1 Pool", there are two options for virtual machine.
+- If your selected pool from config is "Appcircle Standard macOS Pool (arm64)", there are two options for virtual machine.
   - If you select Xcode 14.3 or later, virtual machine will be macOS Sonoma `14.5`.
   - If you select Xcode 14.2 or earlier, virtual machine will be macOS Monterey `12.6`.
 
@@ -33,7 +33,7 @@ Our macOS build agents have Xcode versions 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.
 Xcode `14.3.x` or higher Xcode versions require a Mac running macOS Ventura 13.0 or later.
 :::
 
-The "Default M1 Pool" macOS **Sonoma** (`14.5`) stack has the Xcode versions below:
+The "Appcircle Standard macOS Pool (arm64)" macOS **Sonoma** (`14.5`) stack has the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |
@@ -47,7 +47,7 @@ The "Default M1 Pool" macOS **Sonoma** (`14.5`) stack has the Xcode versions bel
 | 15.0.1 | `15A507` |
 | 14.3.1 | `14E300c` |
 
-The "Default M1 Pool" macOS **Monterey** (`12.6`) stack has the Xcode versions below:
+The "Appcircle Standard macOS Pool (arm64)" macOS **Monterey** (`12.6`) stack has the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |
@@ -67,17 +67,17 @@ There are many pre-installed packages on virtual machines. You can get a full li
 
 Here are some of the most important packages installed in our iOS build agents used for iOS builds:
 
-- For "Default M1 Pool" Xcode `14.3.x` or later macOS Sonoma `14.5`
-- For "Default M1 Pool" Xcode `14.2.x` or earlier macOS Monterey `12.6`
+- For "Appcircle Standard macOS Pool (arm64)" Xcode `14.3.x` or later macOS Sonoma `14.5`
+- For "Appcircle Standard macOS Pool (arm64)" Xcode `14.2.x` or earlier macOS Monterey `12.6`
 
-| Package            | M1 Pool Monterey | M1 Pool Sonoma |
+| Package            | macOS Monterey | macOS Sonoma |
 | ------------------ | ---------------- | -------------- |
 | Bash               | 3.2.57           | 3.2.57         |
 | Bundle             | 2.1.4            | 2.4.19         |
 | Carthage           | 0.38.0           | 0.39.1         |
 | Curl               | 7.79.1           | 8.6.0          |
 | Homebrew           | 3.6.11           | 4.3.5          |
-| Java (OpenJDK)     | 11.0.21          | 11.0.21        |
+| Java (OpenJDK)     | 17.0.9           | 17.0.9         |
 | Gem                | 3.1.6            | 3.4.19         |
 | Fastlane           | 2.211.0          | 2.220.0        |
 | Git                | 2.38.1           | 2.45.2         |
@@ -99,7 +99,7 @@ Here are some of the most important packages installed in our iOS build agents u
 | Sdkman             | 5.16.0           | 5.18.2         |
 | Slather            | 2.7.2            | 2.8.0          |
 | Unzip              | 6.00             | 6.00           |
-| Xcodeproj          | 1.22.0           | 1.24.0         |
+| Xcodeproj          | 1.22.0           | 1.27.0         |
 | Yarn               | 1.22.19          | 1.22.22        |
 | Zip                | 3.0              | 3.0            |
 

@@ -34,7 +34,7 @@ The Enterprise App Store module allows for tailoring the login page to reflect y
 
 ## Portal Settings
 
-The Enterprise Portal Settings allows you to configure your store's authentication and domain settings.
+The Enterprise Portal Settings allows you to configure your store's authentication, along with captcha and domain settings.
 
 ## Enterprise Portal
 
