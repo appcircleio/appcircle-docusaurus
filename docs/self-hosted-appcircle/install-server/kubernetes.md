@@ -243,39 +243,25 @@ webeventredis:
 
 #### Create Container Registry Secret
 
-In the `values.yaml`, you should specify the container **registry secret** for pulling images from a container image repository. **By default**, Appcircle uses its **own image registry** that you should **authenticate with the `cred.json`** file. 
+By default, Appcircle uses its own image registry that you should authenticate with the `cred.json` file you got from Appcircle.
+
+You can create this secret for Appcircle image registry by executing the following command:
 
 :::tip
-If you are using your own container registry, make sure to to write your password into the `registry-password` and update the `registryHost` and `registryUsername` variables accordingly.
+If you are using your own container registry, make sure to update the `server`, `username`, and `password` variables accordingly.
 :::
 
-You can create this value by saving the script below and executing it in a **Linux** terminal:
+1. Save the `cred.json` file or your own registry password into a file named `registry-password`.
 
-- Save the `cred.json` file  you got from the Appcircle into a file named `registry-password`.
-
-- Save the script below to a file named `create-registry-secret.sh`.
+2. Run the following command on your **Linux / MacOS** terminal to create the container registry secret on the Kubernetes cluster:
 
 ```bash
-vim create-registry-secret.sh
+kubectl create secret docker-registry containerregistry \
+  --docker-server='https://europe-west1-docker.pkg.dev/appcircle/docker-registry' \
+  --docker-username='_json_key' \
+  --docker-password="$(cat registry-password)"
 ```
 
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
-registryHost="europe-west1-docker.pkg.dev"
-registryUsername='_json_key'
-registryPassword=$(cat registry-password)
-authString="$registryUsername:$registryPassword"
-base64EncodedAuthString=$(echo -n "$authString" | base64 -w 0 )
-dockerRegistrySecret="{\"auths\":{\"${registryHost}\":{\"auth\": \"$base64EncodedAuthString\"}}}"
-echo -n \'$dockerRegistrySecret\'
-```
-
-- Run the script and save the output to the `.global.containerRegistrySecret` key in the `values.yaml` file.
-
-```bash
-bash create-registry-secret.sh
-```
 
 #### Production Readiness
 
