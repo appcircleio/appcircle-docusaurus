@@ -263,7 +263,7 @@ kubectl create namespace appcircle
 
 ```bash
 kubectl create secret docker-registry containerregistry \
-  --docker-server='https://europe-west1-docker.pkg.dev/appcircle/docker-registry' \
+  --docker-server='europe-west1-docker.pkg.dev' \
   --docker-username='_json_key' \
   --docker-password="$(cat registry-password)"
 ```
