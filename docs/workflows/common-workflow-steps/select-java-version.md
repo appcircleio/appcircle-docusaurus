@@ -52,7 +52,7 @@ If your runner is self-hosted, ensure that the selected Java version is availabl
 
 ## Input Variables
 
-A required parameter for this step is outlined in the table below, along with its description.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-select-java-version-2.0.png' />
 
