@@ -31,7 +31,13 @@ If you are unsure which Java version is required for your Android project, you c
 
 ## Prerequisites
 
-There is no mandatory step for using this component. However, if you have a step that necessitates changing the Java version (particularly build steps), the **Select Java Version** step should run before that step in the [workflow](/workflows).
+There are no prerequisites required before using the **Select Java Version** step.
+
+:::caution
+
+If you have a step that necessitates changing the Java version (e.g., the [**Android Build**](/workflows/android-specific-workflow-steps/android-build) step), the **Select Java Version** step should run before that step in the [workflow](/workflows).
+
+:::
 
 For reference, you can see the workflow sequence in the image below:
 
@@ -70,6 +76,8 @@ This step does not produce any visible output. However, if run successfully, it 
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-select-java-version-component
+
+---
 
 ## FAQ
 
