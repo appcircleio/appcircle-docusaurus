@@ -1370,9 +1370,6 @@ source "tart-cli" "tart" {
   ssh_password = "cicd"
   ssh_username = "appcircle"
   ssh_timeout  = "120s"
-
-  // A (hopefully) temporary workaround for Virtualization.Framework's
-  // installation process not fully finishing in a timely manner
   create_grace_time = "30s"
 }
 
