@@ -268,7 +268,6 @@ kubectl create secret docker-registry containerregistry \
   --docker-password="$(cat registry-password)"
 ```
 
-
 #### Production Readiness
 
 To ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault and MinIO connection strings.
@@ -344,7 +343,7 @@ You should configure your DNS records according to your DNS provider. For a best
 
 ## Sign in to Appcircle
 
-You can use the `my` prefixed domain name to access Appcircle dashboard. 
+You can use the `my` prefixed domain name to access Appcircle dashboard.
 
 For example, if you set `global.urls.domainName` to `.appcircle.spacetech.com` and deployed the Appcircle server with SSL certificates then you can use `https://my.appcircle.spacetech.com` address to access the Appcircle dashboard.
 
