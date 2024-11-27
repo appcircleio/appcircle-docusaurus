@@ -1345,7 +1345,7 @@ curl -L -O https://releases.hashicorp.com/packer/1.11.2/packer_1.11.2_darwin_arm
 unzip packer_1.11.2_darwin_arm64.zip
 ```
 
-- Create a Packer file (e.g., `appcircle-vm.pkr.hcl`) with the following content to configure the VM:
+- Create a Packer file named `appcircle-vm.pkr.hcl` with the following content to configure the Appcircle runner VM:
 
 ```bash
 vim appcircle-vm.pkr.hcl
@@ -1411,7 +1411,7 @@ Please update the values below in the `appcircle-vm.pkr.hcl` file:
 tart get vm01x
 ```
 
-- You can start the VM, connect with SSH and verify the new disk size using the command below:
+- After you start the VM and connect with SSH, please verify the new disk size using the command below:
 
 ```bash
 df -h
