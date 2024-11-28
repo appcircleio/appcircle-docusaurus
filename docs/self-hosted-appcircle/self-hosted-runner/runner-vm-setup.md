@@ -1416,8 +1416,6 @@ df -h
 
 By following these steps, you can increase the disk size of your Appcircle runner VMs. 
 
-Ensure all commands execute successfully and verify the new disk size as needed.
-
 ## Troubleshooting
 
 ### Tart list has runner instance in list but I can not SSH into the runner
