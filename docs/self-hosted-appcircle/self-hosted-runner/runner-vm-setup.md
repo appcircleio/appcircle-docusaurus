@@ -1329,20 +1329,25 @@ If you want to increase the disk size of the Appcircle runner VM, you can follow
 The Appcircle runner VM's default disk size is 200GB. If you need more space, follow the steps below to install Packer and edit the VM configuration.
 
 ### Network Requirements
-To download and install the necessary files, your network should allow access to the following URLs:
+To download and install the necessary files, your network should allow access to the Appcircle CDN URL:
 
-1. Packer for macOS: `https://releases.hashicorp.com/packer`
-2. Packer Checkpoint API: `https://checkpoint-api.hashicorp.com/v1/check/packer`
-4. GitHub API for Packer Plugin Tart: `https://api.github.com/repos/cirruslabs/packer-plugin-tart/git/matching-refs/tags`
-6. Packer Plugin Tart for macOS: `https://github.com/cirruslabs/packer-plugin-tart/releases/download`
+-  `https://cdn.appcircle.io`
 
 ### Increasing the Disk Size Using Packer
 
 - Download and unzip Packer using the following commands:
 
 ```bash
-curl -L -O https://releases.hashicorp.com/packer/1.11.2/packer_1.11.2_darwin_arm64.zip && \
-unzip packer_1.11.2_darwin_arm64.zip
+curl -L -O https://cdn.appcircle.io/self-hosted/runner/packer/1.11.2/packer-darwin-arm64.zip && \
+unzip packer-darwin-arm64.zip
+```
+
+- Download and unzip the Packer Tart plugin:
+
+```bash
+mkdir -p ~/.config/packer/plugins/github.com/cirruslabs/tart && \
+curl -L -O https://cdn.appcircle.io/self-hosted/runner/packer-plugin-tart/1.14.0/packer-plugin-tart-darwin-arm64.zip && \
+unzip packer-plugin-tart-darwin-arm64.zip -d ~/.config/packer/plugins/github.com/cirruslabs/tart
 ```
 
 - Create a Packer file named `appcircle-vm.pkr.hcl` with the following content to configure the Appcircle runner VM:
@@ -1393,25 +1398,17 @@ Please update the values below in the `appcircle-vm.pkr.hcl` file:
 
 :::
 
-- Install the packer dependencies:
-
-```bash
-./packer init appcircle-vm.pkr.hcl
-```
-
 - Build the new VM:
 
 ```bash
 ./packer build appcircle-vm.pkr.hcl
 ```
 
-- Check the new VM configuration using:
+- Start the new VM, connect via SSH, and verify the new disk size with the provided command.
 
-```bash
-tart get vm01x
-```
-
-- After you start the VM and connect with SSH, please verify the new disk size using the command below:
+:::tip
+The command for starting the Appcircle runner VM may vary depending on the Appcircle VM version you are using. For a quick reference, you can check the [configure base runner vm](#configure-base-runner-vms) section.
+:::
 
 ```bash
 df -h
