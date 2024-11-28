@@ -36,12 +36,12 @@ status = 301
 
 [[redirects]]
 from = "/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication"
-to = "/account/my-organization/security/authentications/store-and-distribution-ldap-authentication"
+to = "/account/my-organization/security/authentications/store-ldap-authentication"
 status = 301
 
 [[redirects]]
 from = "/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication"
-to = "/account/my-organization/security/authentications/store-and-distribution-sso-authentication"
+to = "/account/my-organization/security/authentications/store-sso-authentication"
 status = 301
 
 [[redirects]]
@@ -241,7 +241,7 @@ status = 301
 
 [[redirects]]
 from = "/account/my-organization/notifications-and-communication/teams-notifications"
-to = "/account/my-organization/security/notifications/teams-notifications"
+to = "/account/my-organization/notifications/teams-notifications"
 status = 301
 
 [[redirects]]
@@ -382,11 +382,6 @@ to = "/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-
 status = 301
 
 # Build related redirects
-
-[[redirects]]
-from = "/best-practices/building-multiple-apps-in-one-profile"
-to = "/building-multiple-apps-in-one-profile"
-status = 301
 
 [[redirects]]
 from = "/build/adding-a-build-profile"
@@ -605,11 +600,6 @@ from = "/enterprise-app-store/enterprise-store"
 to = "/enterprise-app-store/enterprise-portal"
 status = 301
 
-[[redirects]]
-from = "/enterprise-app-store/enterprise-reports"
-to = "/enterprise-app-store/portal-reports"
-status = 301
-
 # Environment related redirects
 [[redirects]]
 from = "/environment-variables/using-environment-variables-in-android-projects"
@@ -665,26 +655,6 @@ status = 301
 [[redirects]]
 from = "/publish-integrations/android-publish-integrations/send-to-huawei"
 to = "/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery"
-status = 301
-
-[[redirects]]
-from = "/publish-module/send-to-googleplay#deleting-android-publish-profiles"
-to = "/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile"
-status = 301
-
-[[redirects]]
-from = "/publish-integrations/android-publish-integrations/send-to-googleplay#deleting-android-publish-profiles"
-to = "/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile"
-status = 301
-
-[[redirects]]
-from = "/publish-module/send-to-huawei#deleting-huawei-publish-profiles"
-to = "/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile"
-status = 301
-
-[[redirects]]
-from = "/publish-integrations/android-publish-integrations/send-to-huawei#deleting-huawei-publish-profiles"
-to = "/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile"
 status = 301
 
 # Testing-Distribution related redirects
@@ -863,11 +833,6 @@ to = "/workflows/common-workflow-steps/custom-script"
 status = 301
 
 [[redirects]]
-from = "/integrations/working-with-custom-scripts/"
-to = "/workflows"
-status = 301
-
-[[redirects]]
 from = "/integrations/integration-guides/appdome-integration"
 to = "/workflows"
 status = 301
@@ -893,18 +858,8 @@ to = "/workflows/common-workflow-steps/git-clone"
 status = 301
 
 [[redirects]]
-from = "/workflows/android-specific-workflow-steps/wait-for-android-emulator"
-to = "/workflows/android-specific-workflow-steps/build-and-test/wait-for-android-emulator"
-status = 301
-
-[[redirects]]
 from = "/workflows/android-specific-workflow-steps/distribution/android-sign"
 to = "/workflows/android-specific-workflow-steps/android-sign"
-status = 301
-
-[[redirects]]
-from = "/workflows/flutter-specific-workflow-steps/flutter-test"
-to = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-test"
 status = 301
 
 [[redirects]]
@@ -973,11 +928,6 @@ to = "/workflows/android-specific-workflow-steps/app-post-processor"
 status = 301
 
 [[redirects]]
-from = "/workflows/android-specific-workflow-steps/post-processor"
-to = "/workflows/android-specific-workflow-steps/app-post-processor"
-status = 301
-
-[[redirects]]
 from = "/workflows/android-specific-workflow-steps/distribution/app-center-android-distribution"
 to = "/workflows/android-specific-workflow-steps/app-center-android-distribution"
 status = 301
@@ -998,11 +948,6 @@ to = "/workflows/common-workflow-steps/file-size-check"
 status = 301
 
 [[redirects]]
-from = "/workflows/common-workflow-steps/sonarqube"
-to = "/workflows/common-workflow-steps/build-and-test/sonarqube"
-status = 301
-
-[[redirects]]
 from = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-analyze"
 to = "/workflows/flutter-specific-workflow-steps/flutter-analyze"
 status = 301
@@ -1010,11 +955,6 @@ status = 301
 [[redirects]]
 from = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
 to = "/workflows/flutter-specific-workflow-steps/flutter-build-for-web"
-status = 301
-
-[[redirects]]
-from = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-ios"
-to = "/workflows/flutter-specific-workflow-steps/flutter-build-ios"
 status = 301
 
 [[redirects]]
@@ -1033,18 +973,8 @@ to = "/workflows/ios-specific-workflow-steps/appcenter-ios-distribution"
 status = 301
 
 [[redirects]]
-from = "/workflows/ios-specific-workflow-steps/distribution/browserstack-app-automation"
-to = "/workflows/ios-specific-workflow-steps/browserstack-app-automation"
-status = 301
-
-[[redirects]]
 from = "/workflows/ios-specific-workflow-steps/distribution/install-certificates-provisions"
 to = "/workflows/ios-specific-workflow-steps/install-certificates-provisions"
-status = 301
-
-[[redirects]]
-from = "/workflows/android-specific-workflow-steps/increment-build-and-version-number"
-to = "/workflows/android-specific-workflow-steps/build-and-test/increment-build-and-version-number"
 status = 301
 
 [[redirects]]
@@ -1115,16 +1045,6 @@ status = 301
 [[redirects]]
 from = "/workflows/common-workflow-steps/jira-component"
 to = "/workflows/common-workflow-steps/jira-comment"
-status = 301
-
-[[redirects]]
-from = "/workflows/common-workflow-steps/build-and-test/publish-release-notes"
-to = "/workflows/common-workflow-steps/publish-release-notes"
-status = 301
-
-[[redirects]]
-from = "/workflows/android-specific-workflow-steps/build-and-test/android-build"
-to = "/workflows/android-specific-workflow-steps/android-build"
 status = 301
 
 [[redirects]]
