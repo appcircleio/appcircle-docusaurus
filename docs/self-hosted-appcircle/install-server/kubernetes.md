@@ -96,7 +96,7 @@ Appcircle server supports Nginx Ingress Controller by default. To install Nginx 
 
 #### Enable SSL Passthrough
 
-**Redis ingress** of the Appcircle server needs **SSL passthrough** so Appcircle **runners** can connect to the Redis service that is working on Kubernetes cluster **securely**.
+Ingress object named `kvs` of the Appcircle server needs **SSL passthrough** so Appcircle **runners** can connect to the `kvs` service that is working on Kubernetes cluster **securely**.
 
 Enabling the SSL passthrough depends on the ingress controller that is used in the Kubernetes cluster. For example:
 
@@ -155,6 +155,7 @@ global:
       # SMTP authentication settings
       auth: true
       username: smtpUserName
+      # You can create a secret with the password or directly enter the password here.
       password: superSecretSmtpPassword
 
   # If the K8s cluster access the images from a private container image registry, you can configure it here.
@@ -170,6 +171,7 @@ global:
   ingressClassName: "nginx"
 
   # SSL/TLS certificate configuration for HTTPS
+  # You can create a secret with the certificate and key or directly enter them here.
   tlsWildcard:
     # Public certificate - Fullchain including leaf (app), intermediate and root SSL certificates
     cert: |
@@ -210,6 +212,7 @@ auth:
     # Initial admin user email for Appcircle server
     initialUsername: "admin@example.com"
     # Initial admin password - Should contain: min 6 chars, 1 lowercase, 1 uppercase, 1 number
+    # You can create a secret with the password or directly enter the password here
     initialPassword: "superSecretAppcirclePassword1234"
     image:
       # Appcircle keycloak image repository path
@@ -245,7 +248,11 @@ You can create this secret on the `appcircle` namespace for Appcircle image regi
 If you are using your own container registry, make sure to update the `server`, `username`, and `password` variables accordingly.
 :::
 
-1. Create the `appcircle` namespace:
+1. Create the `appcircle` namespace if you haven't already created it:
+
+:::info
+In this documentation, we will deploy all the resources under the `appcircle` namespace. You can change this to any other namespace if you prefer.
+:::
 
 ```bash
 kubectl create namespace appcircle
@@ -261,6 +268,10 @@ kubectl create secret docker-registry containerregistry \
   --docker-username='_json_key' \
   --docker-password="$(cat registry-password)"
 ```
+
+#### Secure Sensitive Data with Kubernetes Secrets
+
+To remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#secrets-for-sensitive-values)
 
 #### Production Readiness
 
