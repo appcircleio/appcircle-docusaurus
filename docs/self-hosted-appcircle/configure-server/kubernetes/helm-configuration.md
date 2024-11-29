@@ -28,7 +28,7 @@ Make sure to replace `appcircle` with your preferred namespace name if necessary
 :::
 
 :::tip
-If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with a leading space character will not be stored in the history. This allows you to create secrets safely without storing sensitive information in the shell history.
+If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with a leading space character will not be stored in the shell history. This allows you to create secrets safely without storing sensitive information in the shell history.
 :::
 
 
@@ -40,9 +40,9 @@ If you are deploying the Appcircle server for testing purposes, you may use the 
 
 For a production-ready setup, it is recommended to configure an external PostgreSQL instance. The recommended version is PostgreSQL `12.x`.
 
-To use a external PostgreSQL database, you follow the steps below:
+To use a external PostgreSQL database, you can follow the steps below:
 
-- Create a secret for the PostgreSQL password. You can choose the secret name and key. But it's recommended to use `releaseName-postgresql-connection` containing a `password` key.
+- Create a secret for the PostgreSQL password. While you can choose your own secret name and key, it is recommended to use the format `${releaseName}-postgresql-connection` with the key `password`.
 
 ```bash
 kubectl create secret generic appcircle-server-postgresql-connection \
@@ -63,17 +63,208 @@ auth:
 
 By default, the Appcircle chart includes an in-cluster MongoDB deployment provided by `bitnami/mongodb` by default.
 
+If you are deploying the Appcircle server for testing purposes, the built-in MongoDB deployment can be used.
+
 For production environments,, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.x`.
 
-If you are deploying the Appcircle server for testing purposes, the built-in MongoDB deployment can be used.
+To use a external MongoDB database, you can follow the steps below:
+
+- Create a secret for the MongoDB connections. While you can choose your own secret name and key, it is recommended to use the format `${releaseName}-mongo-connections` with the multiple keys for each service.
+
+```bash
+kubectl create secret generic appcircle-server-mongo-connections \
+  -n appcircle \
+  --from-literal=agentcache='mongodb://agentcachemongo:agentPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=build='mongodb://buildmongo:buildPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=distribution='mongodb://distributionmongo:distPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=license='mongodb://licensemongo:licensePassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=notification='mongodb://notificationmongo:notificationPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=publish='mongodb://publishmongo:publishPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=reporting='mongodb://reportmongo:reportPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=resign='mongodb://resignmongo:resignPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=resource='mongodb://resourcemongo:resourcePassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=schedulemanager='mongodb://schedulemanagermongo:schedulerPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=signingidentity='mongodb://signingmongo:signingPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=store='mongodb://storemongo:storePassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=storesubmit='mongodb://storesubmitmongo:storeSubmitPassword@192.168.1.244:27017?retryWrites=true' \
+  --from-literal=webhook='mongodb://webhookmongo:webhookPassword@192.168.1.244:27017?retryWrites=true'
+```
+
+- Update the `values.yaml` accordingly.
+
+<details>
+    <summary>Click to view example `values.yaml` file.</summary>
+
+```yaml
+agentcache:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "agentcache"  
+    database: agentCacheStore
+build:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "build"
+    database: buildStore
+distribution:
+  distribution-server:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "distribution"  
+      database: distributionStore
+  distribution-testeradmin:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "distribution"       
+      database: distributionStore
+  distribution-testerapi:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "distribution"
+      database: distributionStore
+  distribution-testerweb:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "distribution"
+        database: distributionStore
+  distribution-web:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "distribution"
+      database: distributionStore
+license:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "license"
+    database: licenseStore
+notification:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "notification"    
+    database: notificationStore
+publish:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "publish" 
+    database: publishStore
+reporting:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "reporting" 
+    database: reportingStore
+resign:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "resign" 
+    database: resignStore
+resource:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "resource" 
+    database: resourceStore
+schedulemanager:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "schedulemanager" 
+    database: scheduleManagerStore
+signingidentity:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "signingidentity" 
+    database: signingIdentityStore
+store:
+  store-web:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "store"   
+      database: enterpriseStore
+  store-admin:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "store"  
+      database: enterpriseStore
+  store-api:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "store"  
+      database: enterpriseStore
+  store-profile:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "store"  
+      database: enterpriseStore
+  store-report:
+    mongodb:
+      external:
+        enabled: true
+        existingConnectionSecret: "appcircle-server-mongo-connections"
+        existingConnectionSecretKey: "store"  
+      database: enterpriseStore
+storesubmit:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "storesubmit" 
+    database: storeSubmitStore
+webhook:
+  mongodb:
+    external:
+      enabled: true
+      existingConnectionSecret: "appcircle-server-mongo-connections"
+      existingConnectionSecretKey: "webhook" 
+    database: webhookStore
+```
+</details>
 
 ### MinIO
 
 By default, the Appcircle chart includes an in-cluster MinIO deployment provided by @TODO: change -> `stable/minio`.
 
-For production environments, it is recommended to configure an external, production-grade MinIO instance to ensure scalability, high availability, and data durability. TODO: Add minimum MinIO version.
-
 If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
+
+For production environments, it is recommended to configure an external MinIO instance. TODO: Add minimum MinIO version.
+
+To use a external MinIO instance, you can follow the steps below:
+
 
 :::info
 You can use a cloud object storage solution like AWS S3 or Google Cloud Storage instead of deploying MinIO.
