@@ -11,8 +11,6 @@ By default, Appcircle Helm chart will deploy all the required services to the Ku
 
 If you wish to deploy these services within the Helm chart scope, you can use the default configuration provided by the Appcircle Helm chart.
 
-Here's a suggestion for your info box about the namespace:
-
 :::info
 The commands below assume you have already created a namespace for Appcircle. If you haven’t yet, you can create and switch to the Appcircle namespace using the following commands:
 
@@ -285,7 +283,7 @@ To use a external MinIO instance, you can follow the steps below:
   - appcircle-local-resource-backup
   - appcircle-local-resource-publish
 
-- Create a secret with the name `{$releaseName}-minio-connection` containing the `accessKey` and `secretKey` keys.
+- Create a secret with the name `${releaseName}-minio-connection` containing the `accessKey` and `secretKey` keys.
 
 ```bash
 kubectl create secret generic appcircle-server-minio-connection \
@@ -319,7 +317,7 @@ For production, it is recommended to configure an external, production-grade Vau
 
 To use a external Vault instance, you can follow the steps below:
 
-- Create a secret with the name `{releaseName}-vault-seal` containing the `token` key.
+- Create a secret with the name `${releaseName}-vault-seal` containing the `token` key.
 
 ```bash
 kubectl create secret generic appcircle-server-vault-seal \
@@ -335,6 +333,50 @@ global:
 vault:
   enabled: false
 ```
+
+## Secrets for Sensitive Values
+
+To manage sensitive information such as the Appcircle initial user password, SMTP password, SSL certificates, and other secrets, it is recommended to use Kubernetes secrets. This ensures that sensitive data is stored securely and can be accessed by applications running within the cluster in a controlled manner.
+
+:::info
+The commands below assume you have already created a namespace for Appcircle. If you haven’t yet, you can create and switch to the Appcircle namespace using the following commands:
+
+```bash
+# Create the namespace
+kubectl create namespace appcircle
+
+# Switch to the newly created namespace
+kubectl config set-context --current --namespace=appcircle
+```
+
+Make sure to replace `appcircle` with your preferred namespace name if necessary.
+:::
+
+You can follow the steps below to create a secret for each sensitive value:
+
+- For Appcircle initial user password:
+  - Create a secret with the name `${releaseName}-auth-keycloak-passwords` containing the `initialPassword` and `adminPassword` keys.
+  ```bash
+  kubectl create secret generic appcircle-server-auth-keycloak-passwords \
+    --from-literal=initialPassword=Test1234 \
+    --from-literal=adminPassword=KeycloakAdminPassword1234
+  ```
+- For SMTP password:
+  - Create a secret with the name `${releaseName}-smtp` containing the `password` key.
+  ```bash
+  kubectl create secret generic appcircle-server-smtp \
+    --from-file=password=/Users/berk/appcircle/helm-values/local-k8s/smtp-password
+  ```
+- For SSL certificate:
+  - Create a secret with the name `appcircle-tls-wildcard` containing the `tls.crt`, `tls.key` and `ca.crt` keys.
+  ```bash
+  kubectl create secret generic appcircle-tls-wildcard \
+    --from-file=tls.crt='/Users/berk/appcircle/helm-values/local-k8s/fullchain.crt' \
+    --from-file=tls.key='/Users/berk/appcircle/helm-values/local-k8s/k8s-deployment.key' \
+    --from-file=ca.crt='/Users/berk/appcircle/helm-values/local-k8s/ca.crt' \
+    --type=kubernetes.io/tls
+  ```
+
 
 ## Update the Configuration File
 
