@@ -165,10 +165,6 @@ global:
   imageRepositoryPath: appcircle/docker-registry
   # Version tag for Appcircle server
   imageTag: alpha-latest
-  # Container registry authentication secret
-  # Contains authentication details for the container registry in JSON format
-  # Check the next section below on how to create this secret
-  containerRegistrySecret: '{"auths":{"europe-west1-docker.pkg.dev":{"auth": "X2pzb25fa2V5OkNvbnRlbnQgb2YgdGhlIGNyZWQuanNvbiBmaWxl"}}}'
 
   # Kubernetes ingress controller class
   ingressClassName: "nginx"

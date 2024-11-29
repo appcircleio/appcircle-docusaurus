@@ -388,13 +388,22 @@ If there are any settings you want to configure, open the `values.yaml` with you
 vi values.yaml
 ```
 
-TODO: Move to another page
+### Storage Class Configuration
 
-### Configure External Stateful Apps
+Appcircle server Helm chart supports configuring a storage class for persistent volume claims (PVCs). If you don't specify any storage class, the PVCs will be created using the default storage class of your Kubernetes cluster. If you want to use a specific storage class, you can specify it in the `values.yaml`.
 
-If you are deploying the Appcircle server for production, you should have stateful apps outside of the Kubernetes cluster. You can skip this section if you are deploying the Appcircle server for test environments.
+For example if you want to use a storage class named `nfs-storage-class`, you can configure the `values.yaml` like in the example below:
 
-@TODO: Fill here.
+TODO: Add storage class details for all apps including Mongo, PostgreSQL, Kafka, redis
+
+```yaml
+global:
+  defaultStorageClass: nfs-storage-class
+vault:
+  server:
+    dataStorage:
+      storageClass: "nfs-client"
+```
 
 ### Adding Trusted CA Certificates to the Appcircle Services
 
