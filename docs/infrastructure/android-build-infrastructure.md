@@ -34,23 +34,21 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Java Version
 
-Build agents have Java 8, 11, 17 and 21 installed. Java 11 is set as the default version.
+Build agents have Java 8, 11, 17 and 21 installed. Java 17 is set as the default version.
 
 If you want to use a different Java version, please follow [this document](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) for how to do that.
 
 When you select "Appcircle Linux Pool (x86_64)" for Android builds, the following JDK locations are available within the environment variables:
 
-- **JAVA_HOME_8_X64**: `/usr/local/openjdk-8`
-- **JAVA_HOME_11_X64**: `/root/.sdkman/candidates/java/11.0.12-open`
-- **JAVA_HOME_17_X64**: -
-- **JAVA_HOME_21_X64**: -
+- **JAVA_HOME_8_X64**: `/root/.sdkman/candidates/java/8.0.392-zulu`
+- **JAVA_HOME_11_X64**: `/root/.sdkman/candidates/java/11.0.21-zulu`
+- **JAVA_HOME_17_X64**: `/root/.sdkman/candidates/java/17.0.9-zulu`
+- **JAVA_HOME_21_X64**: `/root/.sdkman/candidates/java/21.0.2-zulu`
 
-:::caution
+:::tip
 We're deprecating Intel-based runners and transitioning our customers to Apple silicon-based (M-series) build machines.
 
-Currently, JDK 17 and 21 are not pre-installed on the "Appcircle Linux Pool (x86_64)", and Intel-based runners are not actively maintained.
-
-If your app does not specifically require an Intel-based build machine, we suggest you use "Appcircle Standard macOS Pool (arm64)", since it has much more build capacity and the latest updates.
+Although Intel-based runners are actively maintained, if your app does not specifically require an Intel-based build machine, we suggest using the "Appcircle Standard macOS Pool (arm64)", since it has much more build capacity and the latest updates as well.
 :::
 
 When you select "Appcircle Standard macOS Pool (arm64)" for Android builds, the following JDK locations are available within the environment variables:
@@ -116,19 +114,19 @@ Here are some most important packages installed in our Linux and macOS images us
 | Git                 | 2.35.1          | 2.45.2         | 2.38.1            |
 | Git LFS             | 2.13.2          | 3.5.1          | 3.2.0             |
 | Gradle              | 4.4.1           | 8.8            | 7.5.1             |
-| Gzip                | 1.10.4          | 430.100.5      | 353.100.22        |
-| Java                | 11.0.12         | 11.0.21        | 11.0.21           |
-| Maven               | 3.8.6           | 3.9.7          | 3.8.6             |
-| Node JS             | 16.18.1         | 18.20.3        | 18.19.1           |
+| Gzip                | 1.10            | 430.100.5      | 353.100.22        |
+| Java                | 17.0.9          | 17.0.9         | 17.0.9            |
+| Maven               | 3.9.9           | 3.9.7          | 3.8.6             |
+| Node JS             | 18.20.5         | 18.20.3        | 18.19.1           |
 | OpenSSL             | 1.1.1           | 3.3.6          | 2.8.3             |
 | Perl                | 5.32.1          | 5.34.1         | 5.30.3            |
 | Python              | 3.9.2           | 3.12.3         | 3.10.8            |
-| Rake                | 13.0.6          | 13.0.6         | 13.0.1            |
-| Rbenv               | 1.2.0           | 1.2.0          | 1.2.0             |
-| Ruby                | 2.7.5           | 3.2.3          | 2.7.5             |
+| Rake                | 13.2.1          | 13.0.6         | 13.0.1            |
+| Rbenv               | 1.3.0           | 1.2.0          | 1.2.0             |
+| Ruby                | 3.2.3           | 3.2.3          | 2.7.5             |
 | Unzip               | 6.00            | 6.00           | 6.00              |
 | Wget                | 1.21            | 1.24.5         | 1.21              |
-| Yarn                | 1.22.19         | 1.22.22        | 1.22.19           |
+| Yarn                | 1.22.22         | 1.22.22        | 1.22.19           |
 | Zip                 | 3.0             | 3.0            | 3.0               |
 
 ### Using your own computer for build

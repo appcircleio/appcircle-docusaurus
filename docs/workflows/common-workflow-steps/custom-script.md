@@ -39,9 +39,9 @@ Note that the **Script** area works according to the selected language variable.
 
 If you want to change the JAVA version for your Android project, you can achieve this by changing the `JAVA_HOME` environment variable.
 
-Appcircle currently has `OpenJDK 11` (default), `OpenJDK 8`, `OpenJDK 17` and `OpenJDK 21`.
+Appcircle currently has `OpenJDK 17` (default), `OpenJDK 8`, `OpenJDK 11` and `OpenJDK 21`.
 
-[Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 11` as default JDK version.
+[Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 17` as default JDK version.
 
 You can use the below custom script before your build step to change your `JAVA_HOME` environment variable.
 
@@ -83,7 +83,7 @@ You can find more details about the included Java versions on the [Android Build
 
 Changing the `JAVA_HOME` environment variable will be enough for your Android builds, but it won't change the `java` version in the system.
 
-If you're using a tool in the build pipeline that requires another Java version than the default OpenJDK 11, you should also change the system's default Java version using the below commands in the custom script.
+If you're using a tool in the build pipeline that requires another Java version than the default OpenJDK 17, you should also change the system's default Java version using the below commands in the custom script.
 
 ```bash
 source "$SDKMAN_DIR/bin/sdkman-init.sh"

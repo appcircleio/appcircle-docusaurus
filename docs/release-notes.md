@@ -21,6 +21,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### 🆕 New Features
 
 - A [captcha](/enterprise-app-store/portal-settings#enable-captcha) security method has been added for Enterprise Portal logins, which can be configured to appear after a set number of unsuccessful login attempts, eventually blocking further access. This feature is available to organizations with an enterprise license. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- TLS versions can now be configured by self-hosted Appcircle server users for security purposes. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -33,12 +34,16 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The build priority configuration setting is no longer restricted to organizations with an enterprise license. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The default cloud pool names have been updated as follows: The “**Default M1 Pool**” is now labeled as “Appcircle Standard macOS Pool (arm64).” The “**Default Intel Pool**” is now labeled as “Appcircle Linux Pool (x86_64).” <InfrastructureBadge/> <CloudBadge/>
 - The build status information is now displayed in the [Signing Reports](/signing-identities/signing-reports) section within the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An option was added to the SMTP server configuration in `global.yaml` to allow SSL validation to be disabled for non-production environments. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
 - An issue was fixed where downloaded .yaml configuration files could not be uploaded to the same or other profiles of the same type, resulting in an error. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the emails and roles of sub-organization users were not displayed in the signing activity log. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Several security issues related to the admin module API were resolved. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the custom domain Enterprise Store URL was not displayed at times in the Safari browser for self-hosted users. <EnterpriseStoreBadge/> <SelfHostedBadge/>
+- An issue was fixed where the claim name for Enterprise Portal SSO configuration was not displayed at times in the Safari browser for self-hosted users. <AccountBadge/> <SelfHostedBadge/>
+- An issue was fixed where some data loss occurred in the configurations during the update of SAML settings for SSO. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.23.0 - 2024-11-04 SSO & LDAP Improvements, Build Priority Configuration, Bug Fixes and more
 
