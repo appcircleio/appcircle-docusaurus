@@ -74,6 +74,8 @@ For production environments,, it is recommended to set up an external, productio
 
 To use a external MongoDB database, you can follow the steps below:
 
+- Create individual users and passwords for each Appcircle service on the MongoDB instance. Each service should have its own user with distinct credentials to ensure proper access control and security. Below is an example of how to generate a secret with MongoDB connection strings for each service, where each user is assigned specific permissions for its corresponding service.
+
 - Create a secret for the MongoDB connections. While you can choose your own secret name and key, it is recommended to use the format `${releaseName}-mongo-connections` with the multiple keys for each service.
 
 ```bash
@@ -272,6 +274,16 @@ If you are installing the Appcircle for testing purposes, you may use the built-
 For production environments, it is recommended to configure an external MinIO instance. TODO: Add minimum MinIO version.
 
 To use a external MinIO instance, you can follow the steps below:
+
+- Create the following buckets for Appcircle to use on the MinIO instance:
+  - appcircle-local-resource-temp
+  - appcircle-local-resource-build
+  - appcircle-local-resource-distribution
+  - appcircle-local-resource-storesubmit
+  - appcircle-local-resource-store
+  - appcircle-local-resource-agent-cache
+  - appcircle-local-resource-backup
+  - appcircle-local-resource-publish
 
 - Create a secret with the name `{$releaseName}-minio-connection` containing the `accessKey` and `secretKey` keys.
 
