@@ -55,8 +55,14 @@ kubectl create secret generic appcircle-server-postgresql-connection \
 auth:
   auth-keycloak:
     database:
+      hostname: '192.168.1.244'
+      port: '5432'
+      username: 'ackeycloak'
+      database: 'ackeycloak'
       existingSecret: "appcircle-server-postgresql-connection"
       existingSecretKey: "password"
+  auth-postgresql:
+    enabled: false
 ```
 
 ### MongoDB
@@ -252,12 +258,15 @@ webhook:
       existingConnectionSecret: "appcircle-server-mongo-connections"
       existingConnectionSecretKey: "webhook" 
     database: webhookStore
+
+mongodb:
+  enabled: false
 ```
 </details>
 
 ### MinIO
 
-By default, the Appcircle chart includes an in-cluster MinIO deployment provided by @TODO: change -> `stable/minio`.
+By default, the Appcircle chart includes an in-cluster MinIO deployment provided by `bitnami/minio`.
 
 If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
 
@@ -265,6 +274,24 @@ For production environments, it is recommended to configure an external MinIO in
 
 To use a external MinIO instance, you can follow the steps below:
 
+- Create a secret with the name `{$releaseName}-minio-connection` containing the `accessKey` and `secretKey` keys.  
+
+```bash
+kubectl create secret generic appcircle-server-minio-connection \
+  -n appcircle \
+  --from-literal=accessKey='admin' \
+  --from-literal=secretKey='superSecretAdminAccessKey'
+```
+
+- Update the `values.yaml` accordingly.
+
+```yaml
+global:
+  minio:
+    url: "10.33.167.78:9000"
+minio:
+  enabled: false
+```
 
 :::info
 You can use a cloud object storage solution like AWS S3 or Google Cloud Storage instead of deploying MinIO.
