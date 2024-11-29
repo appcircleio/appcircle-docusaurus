@@ -11,27 +11,67 @@ By default, Appcircle Helm chart will deploy all the required services to the Ku
 
 If you wish to deploy these services within the Helm chart scope, you can use the default configuration provided by the Appcircle Helm chart.
 
+Here's a suggestion for your info box about the namespace:
+
+:::info
+The commands below assume you have already created a namespace for Appcircle. If you haven’t yet, you can create and switch to the Appcircle namespace using the following commands:
+
+```bash
+# Create the namespace
+kubectl create namespace appcircle
+
+# Switch to the newly created namespace
+kubectl config set-context --current --namespace=appcircle
+```
+
+Make sure to replace `appcircle` with your preferred namespace name if necessary.
+:::
+
+:::tip
+If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with a leading space character will not be stored in the history. This allows you to create secrets safely without storing sensitive information in the shell history.
+:::
+
+
 ### PostgreSQL
 
-The Appcircle chart, by default, includes an in-cluster PostgreSQL deployment provided by `bitnami/PostgreSQL`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
-
-For a production-ready setup, it is essential to configure an external PostgreSQL instance. The recommended version is PostgreSQL `12.x`.
+The Appcircle chart, by default, includes an in-cluster PostgreSQL deployment provided by `bitnami/PostgreSQL`. 
 
 If you are deploying the Appcircle server for testing purposes, you may use the built-in PostgreSQL deployment.
 
+For a production-ready setup, it is recommended to configure an external PostgreSQL instance. The recommended version is PostgreSQL `12.x`.
+
+To use a external PostgreSQL database, you follow the steps below:
+
+- Create a secret for the PostgreSQL password. You can choose the secret name and key. But it's recommended to use `releaseName-postgresql-connection` containing a `password` key.
+
+```bash
+kubectl create secret generic appcircle-server-postgresql-connection \
+  --from-literal=password=superSecretPostgresqlPassword
+```
+
+- Update the `values.yaml` accordingly.
+
+```yaml
+auth:
+  auth-keycloak:
+    database:
+      existingSecret: "appcircle-server-postgresql-connection"
+      existingSecretKey: "password"
+```
+
 ### MongoDB
 
-By default, the Appcircle chart includes an in-cluster MongoDB deployment provided by `bitnami/mongodb` by default. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
+By default, the Appcircle chart includes an in-cluster MongoDB deployment provided by `bitnami/mongodb` by default.
 
-To ensure optimal performance and reliability in a production environment, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.x`.
+For production environments,, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.x`.
 
 If you are deploying the Appcircle server for testing purposes, the built-in MongoDB deployment can be used.
 
 ### MinIO
 
-By default, the Appcircle chart includes an in-cluster MinIO deployment provided by @TODO: change -> `stable/minio`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
+By default, the Appcircle chart includes an in-cluster MinIO deployment provided by @TODO: change -> `stable/minio`.
 
-For production environments, it is highly recommended to configure an external, production-grade MinIO instance to ensure scalability, high availability, and data durability. TODO: Add minimum MinIO version.
+For production environments, it is recommended to configure an external, production-grade MinIO instance to ensure scalability, high availability, and data durability. TODO: Add minimum MinIO version.
 
 If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
 
@@ -43,9 +83,9 @@ TODO: Link or description about how to do it.
 
 ### HashiCorp Vault
 
-By default, the Appcircle chart includes an in-cluster HashiCorp Vault deployment provided by `hashicorp/vault`. This deployment is intended for testing and evaluation purposes only, and is not recommended for production environments.
+By default, the Appcircle chart includes an in-cluster HashiCorp Vault deployment provided by `hashicorp/vault`.
 
-For production, you should configure an external, production-grade Vault instance to ensure robust secret management, scalability, and high availability. TODO: Add minimum HashiCorp Vault version.
+For production, it is recommended to configure an external, production-grade Vault instance to ensure robust secret management, scalability, and high availability. TODO: Add minimum HashiCorp Vault version.
 
 If you are deploying the appcircle for testing purposes, the built-in Vault deployment can be used.
 
