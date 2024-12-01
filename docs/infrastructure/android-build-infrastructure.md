@@ -36,7 +36,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 Build agents have Java 8, 11, 17 and 21 installed. Java 17 is set as the default version.
 
-If you want to use a different Java version, please follow [this document](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) for how to do that.
+If you want to use a different Java version, please add the [Select Java Version](/workflows/common-workflow-steps/select-java-version) component to your workflow.
 
 When you select "Appcircle Linux Pool (x86_64)" for Android builds, the following JDK locations are available within the environment variables:
 

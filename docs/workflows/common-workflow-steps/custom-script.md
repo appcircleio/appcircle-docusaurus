@@ -35,72 +35,19 @@ Note that the **Script** area works according to the selected language variable.
 
 ## Custom Script FAQ
 
-### How to change JAVA version
-
-If you want to change the JAVA version for your Android project, you can achieve this by changing the `JAVA_HOME` environment variable.
+### How to change Java version
 
 Appcircle currently has `OpenJDK 17` (default), `OpenJDK 8`, `OpenJDK 11` and `OpenJDK 21`.
 
 [Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 17` as default JDK version.
 
-You can use the below custom script before your build step to change your `JAVA_HOME` environment variable.
+To switch JDK versions, you can now use the dedicated [**Select Java Version**](/workflows/common-workflow-steps/select-java-version) component, so there is no need to use **Custom Script** for this task. For further details on this component, refer to the documentation:
 
-```bash
-echo "Default JAVA" $JAVA_HOME
+- [Select Java Version](/workflows/common-workflow-steps/select-java-version)
 
-echo "OpenJDK 8" $JAVA_HOME_8_X64
-echo "OpenJDK 11" $JAVA_HOME_11_X64
-echo "OpenJDK 17" $JAVA_HOME_17_X64
-echo "OpenJDK 21" $JAVA_HOME_21_X64
+However, if you prefer to update or improve it manually on **Custom Script**, the source code is available here:
 
-# Change JAVA_HOME to OPENJDK 17
-echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $AC_ENV_FILE_PATH
-```
-
-Create a custom script like above and put it **above** your [Android Build](/workflows/android-specific-workflow-steps/android-build) step.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow-detail.png" />
-
-:::caution
-
-Please be aware that this custom script affects any step that comes after.
-
-Therefore, you should use this step as a standalone step instead of as part of any custom script.
-
-:::
-
-:::tip
-
-You can find more details about the included Java versions on the [Android Build Infrastructure](/infrastructure/android-build-infrastructure#java-version) page.
-
-:::
-
-:::info
-
-#### Changing System Java Version
-
-Changing the `JAVA_HOME` environment variable will be enough for your Android builds, but it won't change the `java` version in the system.
-
-If you're using a tool in the build pipeline that requires another Java version than the default OpenJDK 17, you should also change the system's default Java version using the below commands in the custom script.
-
-```bash
-source "$SDKMAN_DIR/bin/sdkman-init.sh"
-sdk default java $(basename $JAVA_HOME_17_X64)
-```
-
-After that, you will see the output of `java -version` as below in the build logs.
-
-```txt
-openjdk version "17.0.7" 2023-04-18 LTS
-OpenJDK Runtime Environment Zulu17.42+19-CA (build 17.0.7+7-LTS)
-OpenJDK 64-Bit Server VM Zulu17.42+19-CA (build 17.0.7+7-LTS, mixed mode, sharing)
-```
-
-You can also switch to other pre-installed Java versions using the relevant environment variable as an argument in the `sdk` command. For more details about these environment variables, see the [Android Build Infrastructure](/infrastructure/android-build-infrastructure#java-version) page.
-
-:::
+- [Select Java Version - Source Code](https://github.com/appcircleio/appcircle-select-java-version-component)
 
 ### How to install a new package to the build machine?
 
