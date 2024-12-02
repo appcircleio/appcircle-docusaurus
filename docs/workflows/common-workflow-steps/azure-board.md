@@ -20,13 +20,13 @@ There are no prerequisites required before using the **Azure Boards** step. It d
 
 :::caution
 
-Please note that once the Azure Boards component has run successfully, the status of the relevant article in your Azure Board account will be changed. If the build fails in Appcircle, an incorrect status may appear in your Azure Board account. Make sure you use it in the correct order in Workflow.
+Please note that once the **Azure Boards** component has run successfully, the status of the relevant article in your Azure Board account will be changed. If the build fails in Appcircle, an incorrect status may appear in your Azure Board account. Make sure you use it in the correct order in Workflow.
 
 :::
 
 ### Configuration of Component
 
-To add a comment, the issue ID `AC_AZUREBOARD_WORKITEM` must be supplied to the component. We need to get this issue ID dynamically so that our workflow can work for multiple branches. Appcircle components use environment variables to pass the state. We can add a step just before the Azure Boards component to prepare the necessary environment variables.
+To add a comment, the issue ID `$AC_AZUREBOARD_WORKITEM` must be supplied to the component. We need to get this issue ID dynamically so that our workflow can work for multiple branches. Appcircle components use environment variables to pass the state. We can add a step just before the Azure Boards component to prepare the necessary environment variables.
 
 Let's say you're working on a feature branch called feature/onboarding-1. You may use the below Ruby script to get issue ID 1 from the branch name and use this information with the Azure Boards component. Please see the [**Custom Script step documentation**](/workflows/common-workflow-steps/upload-files-to-amazon-s3) for this implementation.
 

@@ -1,7 +1,7 @@
 ---
 title: SwiftLint
-description: Improve your code with SwiftLint, a tool for identifying programmatic and stylistic errors. Prerequisites include Git Clone and Cocoapods Install.
-tags: [ios, build, test, workflow, step]
+description: Improve your code with SwiftLint, a tool for identifying programmatic and stylistic errors.
+tags: [ios, build, lint, error]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -15,14 +15,14 @@ Before running the **SwiftLint** step, you must complete certain prerequisites, 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed, and then SwiftLint will be run. After this step works, the variable `AC_REPOSITORY_DIR` will be created. This variable is the input variable for CocoaPods and SwiftLint. |
-| [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)| This step will install the dependencies in the project before SwiftLint can run. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step will clone your repository. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. This variable is the required input variable for **SwiftLint**. |
+| [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)| This step will install the dependencies in the project before **SwiftLint** can run. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2613-lint_order.png' />
 
 :::danger
 
-If you are using **CocoaPods**, note that this step is dependent on the [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) step. Otherwise, the SwiftLint component will **fail**, and the **pipeline will break.**
+If you are using **CocoaPods**, note that this step is dependent on the [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) step. Otherwise, the **SwiftLint** component will **fail**, and the **pipeline will break.**
 
 :::
 
@@ -30,7 +30,7 @@ If you are using **CocoaPods**, note that this step is dependent on the [**Cocoa
 
 If you are using **Swift Package Manager (SPM)**, do not use this step. SPM packages will be compiled in other steps that work with **Xcode**, such as [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices).
 
-If you have SPM in your project and you are using the SwiftLint component in your workflow, the Linter component will give an error because it cannot find the required dependencies.
+If you have SPM in your project and you are using the **SwiftLint** component in your workflow, the Linter component will give an error because it cannot find the required dependencies.
 
 :::
 
@@ -56,7 +56,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
-| `AC_LINT_OUTPUT_PATH`        | The path of the SwfitLint results output file. After SwiftLint runs, all results will be written in a .txt file. It can be found in the download artifacts. |
+| `AC_LINT_OUTPUT_PATH`        | The path of the SwiftLint results output file. After **SwiftLint** runs, all results will be written in a `.txt` file. It can be found in the download artifacts. |
 
 ---
 

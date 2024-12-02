@@ -62,17 +62,18 @@ The output(s) resulting from the operation of this component are as follows:
 
 :::caution
 
-To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 
 | Variable Name                          | Description                                                                                                   | Status   |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------- | -------- |
-| `AC_APPDOME_SECURED_IPA_PATH`         | Local path of the secured .ipa file. Available when 'Signing Method' set to `On-Appdome` or `Private-Signing` | Required |
-| `AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH` | TLocal path of the .sh sign script file. Available when `Signing Method` set to `Auto-Dev-Signing`            | Required |
-| `AC_APPDOME_CERTIFICATE_PATH`         | Local path of the Certified Secure Certificate `.pdf` file                                                    | Required |
+| `AC_APPDOME_SECURED_IPA_PATH`         | Local path of the secured `.ipa` file. Available when 'Signing Method' set to `On-Appdome` or `Private-Signing` | Required |
+| `AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH` | TLocal path of the `.sh` sign script file. Available when `Signing Method` set to `Auto-Dev-Signing`.            | Required |
+| `AC_APPDOME_CERTIFICATE_PATH`         | Local path of the Certified Secure Certificate `.pdf` file.                                                   | Required |
 
 ---
 
 To access the source code of this component, please use the following link:
+
 https://github.com/appcircleio/appcircle-ios-appdome-component

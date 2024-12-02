@@ -1,14 +1,14 @@
 ---
 title: Azure Bot for Swiftlint
 description: Integrate Azure DevOps Bot with SwiftLint to analyze and report details under PRs. Automate builds with configured triggers.
-tags: [ios, build, test, workflow, step]
+tags: [ios, azure, bot, swiftlint, workflow, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # Azure Bot for Swiftlint
 
-With the Azure DevOps Bot for Swiftlint integration, you can analyze your [**SwiftLint**](https://github.com/realm/SwiftLint/) and post the report details under the opened PR. You can also modify the PR status.
+With the **Azure DevOps Bot for Swiftlint** integration, you can analyze your [**SwiftLint**](https://github.com/realm/SwiftLint/) and post the report details under the opened PR. You can also modify the PR status.
 
 :::info
 

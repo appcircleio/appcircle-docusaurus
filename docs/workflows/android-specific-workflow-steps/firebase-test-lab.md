@@ -65,6 +65,14 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-android-firebase-workflow.png' />
 
+:::danger Sensitive Variables
+
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+
+:::
+
 | Variable Name             | Description                                        | Status   |
 |---------------------------|----------------------------------------------------|----------|
 | `$AC_FIREBASE_PROJECT_ID` | Specifies the name of the Firebase project created. | Optional |

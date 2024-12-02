@@ -1,7 +1,7 @@
 ---
 title: Xcode Select
-description: Specify Xcode version for your build process with Xcode Select. Always use before CocoaPods Install and Xcodebuild steps.
-tags: [xcode, version, workflow, step]
+description: Specify Xcode version for your build process with Xcode Select.
+tags: [xcode, version, select, workflow, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -59,7 +59,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name        | Description                                                                                                                                           | Status   |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_XCODE_LIST_DIR` | Specifies the directory with the Xcode versions. Xcode versions are located under the /Volumes directory and selected according to the given version. | Required |
+| `$AC_XCODE_LIST_DIR` | Specifies the directory with the Xcode versions. Xcode versions are located under the `/Volumes` directory and selected according to the given version. | Required |
 | `$AC_XCODE_VERSION`  | Specifies the xcode version. This variable comes from Configuration.                                                                                  | Required |
 
 ---

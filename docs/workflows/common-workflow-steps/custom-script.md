@@ -161,7 +161,7 @@ sed -i '' 's/old-value/new-value/g' build.gradle
 
 For each step in the workflow, you can view the input and output variables in the step configuration.
 
-The repository directory is an output of the Git Clone step and its patch can be accessed with the `AC_REPOSITORY_PATH` environment variable by any step added after the Git Clone step. An example is as follows:
+The repository directory is an output of the Git Clone step and its patch can be accessed with the `$AC_REPOSITORY_PATH` environment variable by any step added after the **Git Clone** step. An example is as follows:
 
 ```bash
 cd $AC_REPOSITORY_DIR
@@ -170,7 +170,7 @@ cat README
 
 ### How to a add a file as a downloadable build artifact?
 
-You can add any file to the output directory that contain the build artifacts using the `AC_OUTPUT_DIR` environment variable. An example is as follows:
+You can add any file to the output directory that contain the build artifacts using the `$AC_OUTPUT_DIR` environment variable. An example is as follows:
 
 ```bash
 cd $AC_REPOSITORY_DIR/app/build/reports/

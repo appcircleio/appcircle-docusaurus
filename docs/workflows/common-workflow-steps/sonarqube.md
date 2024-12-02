@@ -18,7 +18,7 @@ Before running the **SonarQube** step, you must complete certain prerequisites, 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | If you intend to retrieve the **SonarQube Scanner** parameters from the `sonar-project.properties` file in your repository, it's essential to employ the **Git Clone** step before the **SonarQube** step. After the **Git Clone** step is completed, it generates the `AC_REPOSITORY_DIR` variable, which is used as input for the **SonarQube** step. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | If you intend to retrieve the **SonarQube Scanner** parameters from the `sonar-project.properties` file in your repository, it's essential to employ the **Git Clone** step before the **SonarQube** step. After the **Git Clone** step is completed, it generates the `$AC_REPOSITORY_DIR` variable, which is used as input for the **SonarQube** step. |
 
 ### Input Variables
 
@@ -39,6 +39,7 @@ Please note that **SonarQube** is a commercial code quality analysis tool. The p
 | `$AC_SONAR_EXTRA_PARAMETERS` | Extra command line parameters. Enter `-X` for debug mode. | Optional |
 
 ### Including Tests
+
 You can also include your unit/UI test results in the **SonarQube** analysis.
 
 :::caution
@@ -48,6 +49,7 @@ If you want to include your test results in the **SonarQube** analysis, always r
 :::
 
 #### iOS Tests
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarTestOrder.png' />
 
 :::danger
@@ -57,6 +59,7 @@ SonarQube accepts `XML` format files to analyse test results. In order to analys
 :::
 
 #### Android Tests
+
 If you intend to send the test result file obtained from the Android unit test output to **SonarQube**, it is necessary to execute the **Android Unit Tests** step before the **SonarQube** step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarTestAndroidOrder.png' />

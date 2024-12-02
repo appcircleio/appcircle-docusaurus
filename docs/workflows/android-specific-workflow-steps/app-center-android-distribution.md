@@ -1,7 +1,7 @@
 ---
 title: App Center Android Distribute
 description: App Center Android Distribute enables developers to distribute their Android applications to testers and stakeholders for testing purposes.
-tags: [android, mobile, distribution]
+tags: [android, mobile, distribution, app center]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -13,6 +13,7 @@ import Screenshot from '@site/src/components/Screenshot';
 The Appcircle **App Center Android Distribute** step allows you to seamlessly distribute your Android applications and mapping files to [App Center](https://appcenter.ms).
 
 :::caution
+
 Please note that you can also distribute your app via Appcircle. Utilizing Appcircle's distribution modules enhances manageability within the platform.
 
 For more details, please refer to the following links:

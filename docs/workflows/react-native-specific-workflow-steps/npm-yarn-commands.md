@@ -1,7 +1,7 @@
 ---
 title: NPM/Yarn Commands
 description: Learn to use NPM/Yarn commands for managing dependencies in your React Native applications. Enhance your app's functionality.
-tags: [react native, mobile, workflow, step]
+tags: [react native, mobile, workflow, step, npm, yarn, commands]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -29,7 +29,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|
 | `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
-| `$AC_NPM_COMMAND_ARGS`        | The NPM command to run. You can add different command parameters directly. The default is: `npm/yarn install` | Optional |
+| `$AC_NPM_COMMAND_ARGS`        | The NPM command to run. You can add different command parameters directly. The default is: `npm/yarn install`. | Optional |
 
 ---
 

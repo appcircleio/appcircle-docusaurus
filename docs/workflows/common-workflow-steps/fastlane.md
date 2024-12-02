@@ -18,7 +18,7 @@ Before running the **Fastlane** step, you must complete certain prerequisites, a
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the Fastlane process. After the clone, Fastlane will be installed. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the Fastlane process. After the clone, Fastlane will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-fastlaneOrder.png' />
@@ -37,8 +37,8 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_FASTLANE_DIR`            | This path is Fastlane's path in the project. By default, it is AC_REPOSITORY_DIR. If your Fastlane file is in a different location in the repo, please change it. | Required |
-| `$AC_FASTLANE_LANE`           | Fastlane lane. For example: `android deploy` or `ios release` | Required |
+| `$AC_FASTLANE_DIR`            | This path is Fastlane's path in the project. By default, it is `$AC_REPOSITORY_DIR`. If your Fastlane file is in a different location in the repo, please change it. | Required |
+| `$AC_FASTLANE_LANE`           | Fastlane lane. For example: `android deploy` or `ios release`. | Required |
 
 ---
 

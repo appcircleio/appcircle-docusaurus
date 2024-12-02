@@ -1,7 +1,7 @@
 ---
 title: Slather
 description: Use Slather to convert Xcode's test results into various formats. Prerequisites include Xcodebuild for Tests and Git Clone.
-tags: [ios, build, test, workflow, step]
+tags: [ios, build, test, unit, ui, testing, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -16,7 +16,7 @@ Before running the **Slather** step, you must complete certain prerequisites, as
 
 | Prerequisite Workflow Step                                                                                                               | Description                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone)                                                    | This step will clone your repository. After this step works, the variable `AC_REPOSITORY_DIR` will be created. This variable is the required input variable for **Slather**. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone)                                                    | This step will clone your repository. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. This variable is the required input variable for **Slather**. |
 | [**Xcodebuild for Unit and UI Tests**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) | This step executes your unit and UI tests, generating a `.xcresult` file. This file serves as the mandatory test result input for **Slather**.                               |
 
 

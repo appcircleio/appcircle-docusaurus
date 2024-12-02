@@ -12,6 +12,8 @@ This step sets up your SSH key in the build machine if you used one to connect y
 
 ### Prerequisites
 
+There are no prerequisites required before using the **Active SSH Private Key** step.
+
 :::caution
 
 If you connect to your repository via SSH, use this step before the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. To securely clone repositories connected via SSH, you must define the SSH key for the relevant build agent.

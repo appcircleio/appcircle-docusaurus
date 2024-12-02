@@ -29,9 +29,9 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3150-deployInput.png' />
 
-:::danger
+:::danger Sensitive Variables
 
-Avoid hard-coding sensitive information like tokens and API keys directly into the step parameters.
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
 We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 

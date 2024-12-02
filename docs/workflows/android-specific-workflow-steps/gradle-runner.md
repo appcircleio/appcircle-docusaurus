@@ -16,7 +16,7 @@ Before running the **Gradle Runner** step, you must complete certain prerequisit
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the **Gradle Runner** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the **Gradle Runner** step. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the **Gradle Runner** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Gradle Runner** step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_1.png'/>
 

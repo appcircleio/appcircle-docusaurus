@@ -1,7 +1,7 @@
 ---
 title: Flutter Build for iOS
 description: Learn to build iOS apps with the Flutter Build for iOS component. Ensure Flutter Install and Git Clone steps are completed first.
-tags: [flutter, build, test, workflow, step]
+tags: [flutter, build, ios]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -29,7 +29,7 @@ Once you have compiled your app for Flutter iOS, the native environment will be 
 
 :::danger
 
-**Keep in mind** that this step is dependent on the Flutter Install step. If Flutter is not installed on the system, it will give a Flutter SDK not found error.
+**Keep in mind** that this step is dependent on the **Flutter Install** step. If Flutter is not installed on the system, it will give a Flutter SDK not found error.
 
 :::
 
@@ -41,7 +41,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                 | Description                                    | Status 			|
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_FLUTTER_PROJECT_PATH`    | This parameter is used as the repository path. This path is created immediately after the Git Clone step. If the Git Clone step is not used, this path cannot be found. | Required|
+| `$AC_FLUTTER_PROJECT_PATH`    | This parameter is used as the repository path. This path is created immediately after the **Git Clone** step. If the **Git Clone** step is not used, this path cannot be found. | Required |
 | `$AC_FLUTTER_BUILD_MODE`      | With this variable, you can add the mode you want to build in the build command. For example: `release`. | Required |
 | `$AC_FLUTTER_BUILD_EXTRA_ARGS`| You can use this parameter if you want to add an extra parameter to the build command line. | Optional |
 

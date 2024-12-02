@@ -11,7 +11,9 @@ import Screenshot from '@site/src/components/Screenshot';
 [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) uploads the cache archive file to a remote location, as we explained in detail in the **Cache Push** step. On the other hand, **Cache Pull** downloads and extracts that archive file in the build pipeline, restoring all files and folders to their original locations.
 
 :::danger
+
 [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) and **Cache Pull** components should work in coordination on the same cache file. Therefore, to download the pushed cache, the **Cache Pull** must have the same cache label as the **Cache Push**.
+
 :::
 
 :::info

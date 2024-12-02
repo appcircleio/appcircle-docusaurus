@@ -1,7 +1,7 @@
 ---
 title: AWS Device Farm and Deploy
 description: AWS Device Farm is an application testing service that enables you to run your tests concurrently on multiple mobile devices to speed up the execution of your tests and generates videos and logs to help you quickly identify issues with your app.
-tags: [android, ios, mobile, testing, aws]
+tags: [android, ios, mobile, testing, aws, device, farm]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -28,7 +28,7 @@ Pay attention to the dependent step on whichever platform you are working on.
 
 | Prerequisite Workflow Step                                                                                                            | Description                                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing)      | The Android Build for UI Testing workflow step is tailored to build your Android test application using Gradle Wrapper (gradlew) for the designated architectures outlined in your project. |
+| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing)      | This step is tailored to build your Android test application using Gradle Wrapper (gradlew) for the designated architectures outlined in your project. |
 | [**Xcodebuild Build for Testing**](/workflows/ios-specific-workflow-steps/xcodebuild-for-testing) | This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks.                                                                    |
 
 #### For iOS

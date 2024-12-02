@@ -1,7 +1,7 @@
 ---
 title: Android Unit Tests
 description: Learn how to use the Android Unit Tests workflow step in Appcircle
-tags: [android, mobile, android, testing]
+tags: [android, mobile, unit, testing]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -18,7 +18,7 @@ Before running the **Android Unit Tests** step, you must complete certain prereq
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the **Android Unit Tests** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Unit Tests** step. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the **Android Unit Tests** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Unit Tests** step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_1.png'/>
 

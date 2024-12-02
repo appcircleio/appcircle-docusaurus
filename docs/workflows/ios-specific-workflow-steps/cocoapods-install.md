@@ -16,7 +16,7 @@ Before running the **Cocoapods Install** step, you must complete certain prerequ
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                              |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_order.png' />
 
@@ -29,12 +29,12 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name           | Description                                                                                                                                                                                                                                                     | Status   |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_PROJECT_PATH`      | Specifies the project path. For example: `./appcircle.xcodeproj`. If you filled in **`Configuration => Project or Workspace`**, this variable comes from [Configuration](/build/build-process-management/build-profile-configuration). | Required |
-| `$AC_REPOSITORY_DIR`    | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step.                                                                                         | Required |
+| `$AC_REPOSITORY_DIR`    | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step.                                                                                         | Required |
 | `$AC_COCOAPODS_VERSION` | Specifies the CocoaPods version. If there is a specific version you want to use, give it here as hardcoded, and the system will automatically install the given version.                                                                                        | Optional |
 
 :::info
 
-Please note that the CocoaPods Install step uses the default system [**CocoaPods version**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks). If you want to use a specific version, please enter it hardcoded in the CocoaPods Version parameter in the step.
+Please note that the **CocoaPods Install** step uses the default system [**CocoaPods version**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks). If you want to use a specific version, please enter it hardcoded in the CocoaPods Version parameter in the step.
 
 :::
 

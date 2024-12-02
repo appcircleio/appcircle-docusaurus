@@ -18,7 +18,7 @@ Before running the **Android Lint** step, you must complete certain prerequisite
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                                                   |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To start the **Android Lint** process, the repository that needs to be built must be fetched from the branch. This generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Lint** step. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To start the **Android Lint** process, the repository that needs to be built must be fetched from the branch. This generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Lint** step. |
 
 :::caution
 
@@ -42,6 +42,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_PROJECT_PATH`   | Specifies the project path. If your project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path.                                                                                                                                                                                                                           | Optional |
 
 :::info
+
 If you have filled in the required variables in the **Configuration** section, you will not need to redefine these variables again on the [**Workflows**](/workflows/). For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/build-profile-configuration) document.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_3.png' alt="Configuration Image" />

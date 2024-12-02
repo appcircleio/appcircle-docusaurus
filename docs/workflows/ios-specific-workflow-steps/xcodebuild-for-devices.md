@@ -28,7 +28,7 @@ Before running the **Xcodebuild for Devices** step, you must complete certain pr
 
 :::danger
 
-This step should always follow steps that may affect Archive and Export, such as Xcode Select and Cocoapods Install.
+This step should always follow steps that may affect Archive and Export, such as **Xcode Select** and **Cocoapods Install**.
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildOrder.png' />
 
 :::
@@ -41,15 +41,15 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                                 | Description                                                                                                                                                                                                                                              | Status   |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_REPOSITORY_DIR`                          | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step.                                                                                  | Required |
+| `$AC_REPOSITORY_DIR`                          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step.                                                                                  | Required |
 | `$AC_OUTPUT_DIR_PATH`                         | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                    | Required |
 | `$AC_SCHEME`                                  | Specifies the project scheme for build. If you filled in **`Configuration => Build Scheme`**, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration).                                   | Required |
-| `$AC_ARCHIVE_FLAGS`                           | Specifies the extra xcodebuild flag. For example: -quiet                                                                                                                                                                                                 |          |
+| `$AC_ARCHIVE_FLAGS`                           | Specifies the extra xcodebuild flag. For example: `-quiet`                                                                                                                                                                                                 |          |
 | `$AC_PROJECT_PATH`                            | Specifies the project path. For example: `./appcircle.xcodeproj`. If you filled in **`Configuration => Project or Workspace`**, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_CERTIFICATES`                            | This variable specifies the path of the certificates to be signed.                                                                                                                                                                                       | Required |
 | `$AC_BUNDLE_IDENTIFIERS`                      | This variable holds the Bundle Identifier of the application to be built.                                                                                                                                                                                | Required |
 | `$AC_PROVISIONING_PROFILES`                   | This variable specifies the path of provisioning profiles to be signed.                                                                                                                                                                                  | Required |
-| `$AC_CONFIGURATION_NAME`                      | You can build your project with any configuration you want. Specify the configuration as hard coded. Appcircle will add automatically this configuration to the xcodebuild command. For example; **`Debug`**                                             | Optional |
+| `$AC_CONFIGURATION_NAME`                      | You can build your project with any configuration you want. Specify the configuration as hard coded. Appcircle will add automatically this configuration to the xcodebuild command. For example; **`Debug`**.                                             | Optional |
 | `$AC_COMPILER_INDEX_STORE_ENABLE`             | You can disable indexing during the build for faster build. Default value is `No`.                                                                                                                                                                       | Optional |
 | `$AC_METHOD_FOR_EXPORT`                       | Describes how Xcode should export the archive. Available options are `auto-detect`, `app-store`, `ad-hoc`, `enterprise`, `development`. The default is `auto-detect`.                                                                                    | Optional |
 | `$AC_TEAMID_FOR_EXPORT`                       | The Developer Portal team to be use for this export. Defaults to the team used to build the archive.                                                                                                                                                     | Optional |
@@ -65,9 +65,9 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name               | Description                                               |
 | --------------------------- | --------------------------------------------------------- |
-| `$AC_ARCHIVE_PATH`          | This is the path created after retrieving the archive.    |
-| `$AC_ARCHIVE_METADATA_PATH` | This is the path created after the metadata is generated. |
-| `$AC_EXPORT_DIR`            | This is the path created when exporting.                  |
+| `AC_ARCHIVE_PATH`          | This is the path created after retrieving the archive.    |
+| `AC_ARCHIVE_METADATA_PATH` | This is the path created after the metadata is generated. |
+| `AC_EXPORT_DIR`            | This is the path created when exporting.                  |
 
 ---
 
@@ -81,19 +81,19 @@ https://github.com/appcircleio/appcircle-ios-build-sign-component
 
 ### Adding Additional Command to Xcodebuild for Devices Step
 
-To address the need to add a new command after completing the `xcodebuild` command in the "Xcodebuild for Devices" step, you can follow the following approach:
+To address the need to add a new command after completing the `xcodebuild` command in the **Xcodebuild for Devices** step, you can follow the following approach:
 
-- Disable "Xcodebuild for Devices" step in your workflow.
-- Add a new "Custom Script" component instead of "Xcodebuild for Devices" step.
+- Disable **Xcodebuild for Devices** step in your workflow.
+- Add a new "Custom Script" component instead of **Xcodebuild for Devices** step.
 - Go to Appcircle github profile and navigate to the [repository](https://github.com/appcircleio/appcircle-ios-build-sign-component).
-- Copy all code lines from the `main.rb` file and paste them into the new "Custom Script" that you just added in your workflow.
-- Change the name as "Custom Xcodebuild for Devices" for this custom script.
+- Copy all code lines from the `main.rb` file and paste them into the new **Custom Script** that you just added in your workflow.
+- Change the name as **Custom Xcodebuild for Devices** for this custom script.
 - Change "Execute With" picker as **Ruby**.
 - In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
 
 :::caution
 
-Before running the script, some variables must be changed, and new variables must be added to the custom script.
+Before running the script, some variables must be changed, and new variables must be added to the **custom script**.
 
 :::
 

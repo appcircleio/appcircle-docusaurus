@@ -59,4 +59,4 @@ Don't forget to use the [**Export Build Artifacts**](/workflows/common-workflow-
 
 To access the source code of this component, please use the following link:
 
-https://github.com/appcircleio/appcircle-flutter-web-build-component
+https://github.com/appcircleio/appcircle-release-notes-component

@@ -17,7 +17,7 @@ Before running the **Convert Xcresult to HTML/XML** step, you must complete cert
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Unit and UI Tests**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) | This step allows you to run unit and UI tests on your project. After this step runs, the related path, `AC_TEST_RESULT_PATH` will be generated automatically. |
+| [**Xcodebuild for Unit and UI Tests**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) | This step allows you to run unit and UI tests on your project. After this step runs, the related path, `$AC_TEST_RESULT_PATH` will be generated automatically. |
 
 :::caution
 
@@ -52,7 +52,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 :::caution
 
-To view the converted test reports on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+To view the converted test reports on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 

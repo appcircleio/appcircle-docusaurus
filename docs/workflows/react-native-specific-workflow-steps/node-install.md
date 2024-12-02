@@ -1,7 +1,7 @@
 ---
 title: Install Node
 description: Ensure the correct Node version for your React Native app with Install Node. A crucial step for building React Native applications.
-tags: [react native, mobile, workflow, step]
+tags: [react native, mobile, workflow, step, node, install, version]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -34,7 +34,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|
-| `$AC_SELECTED_NODE_VERSION`   | This step takes only the **node version** variable. You can specify the version directly in the step if you wish. Or you can get it from build [**Configurations**](/build/platform-build-guides/building-react-native-applications#build-configuration-for-react-native-ios-applications). | Optional |
+| `$AC_SELECTED_NODE_VERSION`   | This step takes only the **Node version** variable. You can specify the version directly in the step if you wish. Or you can get it from build [**Configurations**](/build/platform-build-guides/building-react-native-applications#build-configuration-for-react-native-ios-applications). | Optional |
 
 :::caution
 

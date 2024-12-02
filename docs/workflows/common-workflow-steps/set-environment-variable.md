@@ -1,7 +1,7 @@
 ---
 title: Set Environment Variable
 description: Set Environment Variable step sets environment value for given keys
-tags: [environment, variable]
+tags: [set, environment, variable]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -39,6 +39,12 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | ------------------ | --------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_SETENV_KEYS`  | Specifies the key of the environment variable to be set. This should be a space-separated list of environment variable keys.  | Required |
 | `$AC_SETENV_VALUE` | Specifies the value of the environment variable to set. If this field is left blank, the environment variable will be set to `null`. | Optional |
+
+:::info Output Variables
+
+The **Set Environment Variable** step generates no output variables. Success or failure of this step depends on whether the environment variable is set correctly, allowing subsequent use within the workflow.
+
+:::
 
 ---
 

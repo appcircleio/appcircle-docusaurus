@@ -16,7 +16,6 @@ import Screenshot from '@site/src/components/Screenshot';
 
 Before running the **Carthage** step, you must complete certain prerequisites, as detailed in the table below:
 
-
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step clones your git repo on the runner where the build process will take place so that the necessary workflow operations can be performed. |
@@ -37,10 +36,10 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                                    | Status 			|
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_CARTHAGE_COMMAND`        | Specifies the Carthage command to run. Defaults to `bootstrap`. **Possible values:** `bootstrap`, `update` | Required |
-| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after [Git Clone](/workflows/common-workflow-steps/git-clone).| Optional |
-| `$AC_CARTFILE_PATH`           | Specifies the path where the Cartfile resides. Defaults to the repository directory. **DO NOT** include Cartfile, this is only the path. **This value will be appended** to `$AC_REPOSITORY_DIR`. **Example:** `./` or `./subpath-to-cartfile/` | Optional |
-| `$AC_CARTHAGE_FLAGS`          | Specifies additional flags after the Carthage command. The default value is empty. **For Xcode 12 and above, make sure to include** `--use-xcframeworks` **here**. To shorten the build time, make sure to specify the platform: `--platform iOS`. Example usage: `--platform iOS --use-xcframeworks` | Optional |
+| `$AC_CARTHAGE_COMMAND`        | Specifies the Carthage command to run. Defaults to `bootstrap`. **Possible values:** `bootstrap`, `update`. | Required |
+| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after [**Git Clone**](/workflows/common-workflow-steps/git-clone).| Optional |
+| `$AC_CARTFILE_PATH`           | Specifies the path where the Cartfile resides. Defaults to the repository directory. **DO NOT** include Cartfile, this is only the path. **This value will be appended** to `$AC_REPOSITORY_DIR`. **Example:** `./` or `./subpath-to-cartfile/`. | Optional |
+| `$AC_CARTHAGE_FLAGS`          | Specifies additional flags after the Carthage command. The default value is empty. **For Xcode 12 and above, make sure to include** `--use-xcframeworks` **here**. To shorten the build time, make sure to specify the platform: `--platform iOS`. Example usage: `--platform iOS --use-xcframeworks`. | Optional |
 
 ---
 

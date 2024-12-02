@@ -1,7 +1,7 @@
 ---
 title: Flutter Test
 description: This component allows you to run Flutter unit tests.
-tags: [flutter, build, test, workflow, step]
+tags: [flutter, test, unit]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

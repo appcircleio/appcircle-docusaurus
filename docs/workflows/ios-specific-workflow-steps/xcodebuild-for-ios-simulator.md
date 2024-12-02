@@ -36,12 +36,12 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|
-| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
 | `$AC_OUTPUT_DIR_PATH`        | Specifies the path for outputs for generated artifacts. | Required |
 | `$AC_SCHEME`                 | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_SIMULATOR_ARCH`          | Specifies the CPU architecture for the simulator build. The default variable is **`arm64`**. | Optional |
-| `$AC_SIMULATOR_NAME`         | Destination name of the simulator. Ex. `iPhone 14`. If you set a simulator name, the build will be installed into the given simulator. Please be aware that setting the simulator name invalidates the `AC_SIMULATOR_ARCH` option. | Required |
-| `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example: -quiet | Optional |
+| `$AC_SIMULATOR_NAME`         | Destination name of the simulator. Ex. `iPhone 14`. If you set a simulator name, the build will be installed into the given simulator. Please be aware that setting the simulator name invalidates the `$AC_SIMULATOR_ARCH` option. | Required |
+| `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example: `-quiet`. | Optional |
 | `$AC_PROJECT_PATH`               | Specifies the project path. If you filled in `Config => Xcode Project or Workspace Path` in the Configuration, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). For example: `./appcircle.xcodeproj`. | Required |
 | `$AC_CONFIGURATION_NAME`             | You can build your project with any configuration you want. Specify the configuration as hard coded. Appcircle will automatically add this configuration to the xcodebuild command. For example; **`Debug`**. | Optional |
 | `$AC_COMPILER_INDEX_STORE_ENABLE` | You can disable indexing during the build for a faster build. The default value is **`No`**. | Required |
@@ -58,7 +58,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                                    |
 |-------------------------------|------------------------------------------------|
-| `AC_SIMULATOR_APP_PATH`      | Simulator app path. You can reach the Simulator app from this path, and it will be exported, it can be downloaded from the download artifacts. |
+| `AC_SIMULATOR_APP_PATH`      | Simulator app path. You can reach the simulator app from this path, and it will be exported, it can be downloaded from the **Download Artifacts**. |
 
 ---
 

@@ -38,7 +38,7 @@ Before running the **Cache Push** step, you must complete certain prerequisites,
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | If the folders to be cached are in the repo directory, the **Git Clone** step must be used before. This step will generate the [`AC_REPOSITORY_DIR`](#input-variables) path. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | If the folders to be cached are in the repo directory, the **Git Clone** step must be used before. This step will generate the [`$AC_REPOSITORY_DIR`](#input-variables) path. |
 
 :::danger
 

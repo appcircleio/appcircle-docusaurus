@@ -88,6 +88,12 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$AC_FIREBASE_GROUPS`          | Specifies the Firebase tester groups you want to invite.                                                                                               | Optional |
 | `$AC_FIREBASE_EXTRA_PARAMETERS` | Specifies extra command line parameters. Enter `--debug` for debug mode.                                                                                              | Optional |
 
+:::info Output Variables
+
+The **Firebase App Distribution** step generates no output variables. The step succeeds if the app is distributed successfully; otherwise, it fails.
+
+:::
+
 ---
 
 To access the source code of this component, please use the following link:

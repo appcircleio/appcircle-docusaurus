@@ -1,7 +1,7 @@
 ---
 title: Android Dependency Report
 description: Learn how to use the Android Dependency Report workflow step in Appcircle
-tags: [android, mobile, android, report]
+tags: [android, mobile, dependency, report]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -45,7 +45,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 :::danger
 
-If you wish to review or download the Android Dependencies Report, you can find them directly from [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). To do this, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step follows the **Android Dependency Report** workflow step.
+If you wish to review or download the **Android Dependencies Report**, you can find them directly from [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). To do this, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step follows the **Android Dependency Report** workflow step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_3.png'/>
 

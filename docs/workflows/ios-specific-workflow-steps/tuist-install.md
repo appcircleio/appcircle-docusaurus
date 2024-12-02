@@ -24,11 +24,11 @@ Before running the **Tuist Install** step, you must complete certain prerequisit
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist process. After cloning, the system installs Tuist and creates the `AC_REPOSITORY_DIR` variable.  |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist process. After cloning, the system installs Tuist and creates the `$AC_REPOSITORY_DIR` variable.  |
 
 :::caution Tuist Usage
 
-Appcircle's Tuist Install component generates your project using only the `tuist generate` command. This means that it will automatically generate the `.xcworkspace` and `.xcodeproj` files in the project after the tuist generate command runs. Note that if you use Tuist Install in the Appcircle pipeline and want to generate an **IPA** file, you need the other build steps, such as
+Appcircle's Tuist Install component generates your project using only the `tuist generate` command. This means that it will automatically generate the `.xcworkspace` and `.xcodeproj` files in the project after the tuist generate command runs. Note that if you use **Tuist Install** in the Appcircle pipeline and want to generate an **IPA** file, you need the other build steps, such as
 
 - [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices)
 - [**Xcodebuild for iOS Simulator**](/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator)
@@ -62,7 +62,7 @@ In some projects, the version of Tuist that needs to be installed and used can b
 
 :::caution Tuist Install
 
-Appcircle uses homebrew as [installation method](https://docs.tuist.io/en/guides/quick-start/install-tuist) in Tuist Install step, therefore only compatible versions are supported. For more information, please check this [list](https://github.com/tuist/homebrew-tuist/tree/main/Formula) for compatible versions of Tuist.
+Appcircle uses homebrew as [installation method](https://docs.tuist.io/en/guides/quick-start/install-tuist) in **Tuist Install** step, therefore only compatible versions are supported. For more information, please check this [list](https://github.com/tuist/homebrew-tuist/tree/main/Formula) for compatible versions of Tuist.
 
 For this reason, iOS apps using Tuist versions `1.x` or `2.x` are not supported with Appcircle's Tuist Components.
 
@@ -70,7 +70,7 @@ For this reason, iOS apps using Tuist versions `1.x` or `2.x` are not supported 
 
 | Variable Name            | Description                                                                                                                                                                         | Status   |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
 | `$AC_TUIST_VERSION`      | Specifies the Tuist version. If not specified, the latest version of Tuist will be installed.                                                                                       | Optional |
 
 ---

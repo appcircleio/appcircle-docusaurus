@@ -1,7 +1,7 @@
 ---
 title: Install Certificates and Provisioning Profiles
 description: Learn how to install certificates and provisioning profiles for iOS distribution in Appcircle.
-tags: [build, test, distribute, ios, workflow, step]
+tags: [ios, provision, certificate, install, keychain, profiles, signing]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -56,7 +56,7 @@ The output(s) resulting from the operation of this component are as follows:
 | Variable Name                 | Description                                    | 
 |-------------------------------|------------------------------------------------|
 | `AC_KEYCHAIN_PATH`          | A path is created after the certificate is added to the current runner's keychain. | 
-| `AC_KEYCHAIN_PASSWORD`      | After this certificate is added to the keychain, the password assigned to the keychain | 
+| `AC_KEYCHAIN_PASSWORD`      | After this certificate is added to the keychain, the password assigned to the keychain. |
 
 ---
 

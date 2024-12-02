@@ -1,7 +1,7 @@
 ---
 title: App Center iOS Distribution
 description: Distribute your iOS app to App Center for testing and distribution.
-tags: [build, test, distribute, app center, ios, workflow, step]
+tags: [distribute, app center, ios, workflow, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -60,4 +60,4 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 
 To access the source code of this component, please use the following link:
 
-[https://github.com/appcircleio/appcircle-ios-appcenter-distribute-component](https://github.com/appcircleio/appcircle-ios-appcenter-distribute-component)
+https://github.com/appcircleio/appcircle-ios-appcenter-distribute-component

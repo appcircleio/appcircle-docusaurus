@@ -1,7 +1,7 @@
 ---
 title: Android Build
 description: Learn how to use the Android Build workflow step in Appcircle
-tags: [android, mobile, android, build]
+tags: [android, mobile, android build, build]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -16,7 +16,7 @@ Before running the **Android Build** step, you must complete certain prerequisit
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                                                                                                                  |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | To initiate the Android build process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the Git Clone step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the Android build process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the Git Clone step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_3.png' alt="image2" />
 
