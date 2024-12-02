@@ -2,7 +2,7 @@
 title: CLI Authentication
 description: Learn how to authenticate with the Appcircle CLI
 tags: [authentication, cli token, session token]
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

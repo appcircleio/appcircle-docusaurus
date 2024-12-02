@@ -6,7 +6,6 @@ description: The Publish module in Appcircle allows you to distribute your mobil
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-import ContentRef from '@site/src/components/ContentRef';
 
 # Publish
 

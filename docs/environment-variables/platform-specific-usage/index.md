@@ -20,11 +20,11 @@ tags:
 
 Tailor your build environment with platform-specific environment variables to manage different aspects of iOS and Android builds.
 
-### iOS Builds
+### [iOS Builds](environment-variables/platform-specific-usage/using-environment-variables-in-ios-projects)
 
 Configure environment variables specific to iOS builds to control various settings and behaviors in Xcode, managing aspects like provisioning profiles, code signing, and more.
 
-### Android Builds
+### [Android Builds](environment-variables/platform-specific-usage/using-environment-variables-in-android-projects)
 
 Set up environment variables for Android builds to fine-tune the Gradle build process, SDK versions, and other Android-specific parameters.
 
