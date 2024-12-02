@@ -1082,13 +1082,3 @@ status = 301
 from = "/workflows/why-to-use-workflows"
 to = "/workflows"
 status = 301
-
-[[redirects]]
-from = "/integrations/appdome-integration"
-to = "/workflows/ios-specific-workflow-steps/appdome-build-to-secure-for-ios"
-status = 301
-
-[[redirects]]
-from = "/integrations/jira-integration"
-to = "/workflows/common-workflow-steps/jira-comment"
-status = 301
