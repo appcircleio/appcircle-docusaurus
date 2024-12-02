@@ -30,8 +30,6 @@ By default, Appcircle uses eight subdomains. These subdomains are:
 7. my.appcircle.spacetech.com
 8. redis.appcircle.spacetech.com
 
-TODO: Maybe add the monitor domain.
-
 **Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the ingress objects defined in Kubernetes. This should be done through your DNS service provider to ensure proper routing and accessibility.
 
 ### SSL Certificate
@@ -125,7 +123,7 @@ Below is an example of a `values.yaml` file that you can use to configure the Ap
 Each key has a description of what it should be used for, and you can adjust these settings according to your needs.
 
 :::tip
-You can check the [Create Container Registry Secret](#create-container-registry-secret) section to learn how to create a secret for your container registry.
+The example `values.yaml` below includes only the most commonly used configuration options.
 :::
 
 ```yaml
