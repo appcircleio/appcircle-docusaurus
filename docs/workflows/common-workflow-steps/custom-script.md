@@ -59,72 +59,19 @@ https://github.com/appcircleio/appcircle-custom-script-component
 
 ## FAQ
 
-### How to change JAVA version
+### How to change Java version
 
-If you want to change the JAVA version for your Android project, you can achieve this by changing the `JAVA_HOME` environment variable.
+Appcircle currently has `OpenJDK 17` (default), `OpenJDK 8`, `OpenJDK 11` and `OpenJDK 21`.
 
-Appcircle currently has `OpenJDK 11` (default), `OpenJDK 8`, `OpenJDK 17` and `OpenJDK 21`.
+[Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 17` as default JDK version.
 
-[Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 11` as default JDK version.
+To switch JDK versions, you can now use the dedicated [**Select Java Version**](/workflows/common-workflow-steps/select-java-version) component, so there is no need to use **Custom Script** for this task. For further details on this component, refer to the documentation:
 
-You can use the below custom script before your build step to change your `JAVA_HOME` environment variable.
+- [Select Java Version](/workflows/common-workflow-steps/select-java-version)
 
-```bash
-echo "Default JAVA" $JAVA_HOME
+However, if you prefer to update or improve it manually on **Custom Script**, the source code is available here:
 
-echo "OpenJDK 8" $JAVA_HOME_8_X64
-echo "OpenJDK 11" $JAVA_HOME_11_X64
-echo "OpenJDK 17" $JAVA_HOME_17_X64
-echo "OpenJDK 21" $JAVA_HOME_21_X64
-
-# Change JAVA_HOME to OPENJDK 17
-echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $AC_ENV_FILE_PATH
-```
-
-Create a custom script like above and put it **above** your [Android Build](/workflows/android-specific-workflow-steps/android-build) step.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow-detail.png" />
-
-:::caution
-
-Please be aware that this custom script affects any step that comes after.
-
-Therefore, you should use this step as a standalone step instead of as part of any custom script.
-
-:::
-
-:::tip
-
-You can find more details about the included Java versions on the [Android Build Infrastructure](/infrastructure/android-build-infrastructure#java-version) page.
-
-:::
-
-:::info
-
-#### Changing System Java Version
-
-Changing the `JAVA_HOME` environment variable will be enough for your Android builds, but it won't change the `java` version in the system.
-
-If you're using a tool in the build pipeline that requires another Java version than the default OpenJDK 11, you should also change the system's default Java version using the below commands in the custom script.
-
-```bash
-source "$SDKMAN_DIR/bin/sdkman-init.sh"
-sdk default java $(basename $JAVA_HOME_17_X64)
-```
-
-After that, you will see the output of `java -version` as below in the build logs.
-
-```txt
-openjdk version "17.0.7" 2023-04-18 LTS
-OpenJDK Runtime Environment Zulu17.42+19-CA (build 17.0.7+7-LTS)
-OpenJDK 64-Bit Server VM Zulu17.42+19-CA (build 17.0.7+7-LTS, mixed mode, sharing)
-```
-
-You can also switch to other pre-installed Java versions using the relevant environment variable as an argument in the `sdk` command. For more details about these environment variables, see the [Android Build Infrastructure](/infrastructure/android-build-infrastructure#java-version) page.
-
-:::
+- [Select Java Version - Source Code](https://github.com/appcircleio/appcircle-select-java-version-component)
 
 ### How to install a new package to the build machine?
 
@@ -247,89 +194,171 @@ For instance, you can check the list of environment variables in the build pipel
 sudo -E printenv
 ```
 
-### How can I send a custom Email?
+### How can I send a custom email?
 
-Appcircle provides a ready-to-use email structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary), and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the three modules. If desired, the user can customize this structure by using the custom script below to send their own custom email.
+Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary) and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the two modules. If desired, the user can customize this structure by using the [**Custom Script**](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
+
+The following Bash script is set to use a **Gmail SMTP Server**. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
 
 ```bash
 
+# Set SMTP server 
+CS_HOST="smtp.gmail.com"
+CS_PORT="587"
+CS_ACCOUNT="gmail"
+
+# Make sure to replace CS_EMAIL, CS_USERNAME, and CS_PASSWORD with your account details
+CS_EMAIL="your-email-address@gmail.com"
+CS_USERNAME="your-email-address@gmail.com"
+CS_PASSWORD="your-email-password"
+
+# Set email details
+CS_EMAIL_SUBJECT="Test Email Subject"
+CS_EMAIL_TO="recipient-address@mail.com,recipient-2-address@mail.com"
+# This part will be used for visualization
+CS_EMAIL_FROM="Sender Name <sender-address@gmail.com>"
+CS_EMAIL_BODY="This is the body of the sent email."
+# Set TLS and SSL usage
+CS_USE_TLS="True"
+CS_USE_SSL="False"
+
+# Detect operating system
 os=""
-if uname -a | grep -iq "darwin"
-then
-	os="darwin"
-elif uname -a | grep -iq "linux"
-then
-	os="linux"
+if uname -a | grep -iq "darwin"; then
+    os="darwin"
+elif uname -a | grep -iq "linux"; then
+    os="linux"
 fi
 
-if [ "$os" == "" ]
-then
-	echo "This script expects darwin or linux."
-	exit 1
-elif [ "$os" == "darwin" ] && which brew | grep -c "not found"
-then
-	echo "Can't find brew installation; make brew command visible or install homebrew and try again"
-	exit 1
-elif [ "$os" == "linux" ] && ! dpkg -s apt | grep -c "install ok installed"
-then
-	echo "apt is not installed; install apt and try again"
-	exit 1
-fi
-
-if [ "$os" == "linux" ]
-then
-	sudo apt-get install mailutils
-	sudo apt-get install msmtp
-	sudo apt-get install msmtp-mta
-fi
-
-if [ "$os" == "darwin" ]
-then
-	brew install mailutils
-	brew install msmtp
-	echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
-fi
-
-echo "defaults
+# Create the .msmtprc file with appropriate permissions
+cat <<EOF > ~/.msmtprc
+defaults
 auth on
-tls on" >> ~/.msmtprc
+tls on
+EOF
 
-if [ "$os" == "linux" ]
-then
-	echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
-elif [ "$os" == "darwin" ]
-then
-	{ echo -n "tls_fingerprint " &
-	  msmtp --serverinfo --tls --tls-certcheck=off --host=smtp.gmail.com --port=587 \
-	  | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}" ;
-	} >> ~/.msmtprc
+# Check if OS is supported and install necessary packages
+if [ "$os" == "darwin" ]; then
+    if ! command -v brew > /dev/null 2>&1; then
+        echo "Can't find brew installation; make brew command visible or install homebrew and try again."
+        exit 1
+    fi
+    brew install mailutils
+    brew install msmtp
+    echo "set sendmail=/usr/local/bin/msmtp" | sudo tee -a /etc/mail.rc
+    { echo -n "tls_fingerprint " && msmtp --serverinfo --tls --tls-certcheck=off --host=$CS_HOST --port=$CS_PORT | egrep -o "([0-9A-Za-z]{2}:){31}[0-9A-Za-z]{2}"; } >> ~/.msmtprc
+elif [ "$os" == "linux" ]; then
+    if ! command -v apt > /dev/null 2>&1; then
+        echo "Apt is not installed; install apt and try again."
+        exit 1
+    fi
+    apt-get update
+    apt-get install -y mailutils msmtp msmtp-mta
+    echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> ~/.msmtprc
+else
+    echo "Unsupported OS: $os. Darwin or Linux was expected."
+    exit 1
 fi
 
-echo "logfile ~/.msmtp.log
-account gmail
-host smtp.gmail.com
-port 587
-from $EMAIL_
-user $USERNAME_
-password $PASSWORD_
-account default: gmail" >> ~/.msmtprc
+cat <<EOF >> ~/.msmtprc
+logfile ~/.msmtp.log
+account $CS_ACCOUNT
+host $CS_HOST
+port $CS_PORT
+from $CS_EMAIL
+user $CS_USERNAME
+password $CS_PASSWORD
+account default: $CS_ACCOUNT
+EOF
 
-echo "export MAIL_SERVER = smtp.gmail.com
-export MAIL_PORT = 587
-export MAIL_USE_TLS = True
-export MAIL_USE_SSL = False
-export MAIL_USERNAME = $EMAIL_
-export MAIL_PASSWORD = $PASSWORD_" >> ~/.$(basename $SHELL)rc
+# Restrict permissions for the .msmtprc file to avoid security issues
+chmod 600 ~/.msmtprc
+
+# Cleanup .msmtprc whether script ends with success or failure
+function cleanup {
+  cat /dev/null > ~/.msmtprc
+}
+trap cleanup EXIT
+
+# Send email
+echo "From: $CS_EMAIL_FROM
+To: $CS_EMAIL_TO
+Subject: $CS_EMAIL_SUBJECT
+$CS_EMAIL_BODY" | msmtp --debug --from=$CS_EMAIL -t $CS_EMAIL_TO
 
 ```
 
-:::caution Credentials
+:::info Script Execution
 
-When using your own SMTP server credentials for the three variables below, please use Environment Variables. This prevents sensitive information, such as passwords, from being exposed to unauthorized individuals. For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
+This script is written in `Bash`. When running with **Custom Script**, you need to set the `Execute With` parameter as `Bash`. For more information, please visit the [**Custom Script Input Variables**](/workflows/common-workflow-steps/custom-script#input-variables) documentation section.
 
-- $EMAIL_
-- $USERNAME_
-- $PASSWORD_
+:::
+
+:::note Input Variables
+When using your own SMTP server credentials for the three variables below, using **Environment Variables** is strongly suggested since this prevents sensitive information, such as passwords, from being exposed to unauthorized individuals.
+
+For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
+
+- **$CS_EMAIL**: SMTP Server email address.
+- **$CS_USERNAME**: Sender email address.
+- **$CS_PASSWORD**: Sender email address password.
+
+Otherwise, to send an email, you need to have some information, such as the email subject, sender email, and recipient email. You can use these parameters to:
+
+- **$CS_EMAIL_SUBJECT**: Subject of sending email
+- **$CS_EMAIL_TO**: Recipient email address.
+- **$CS_EMAIL_FROM**: Sender email address.
+- **$CS_EMAIL_BODY**: Content of sending email.
+
+:::
+
+:::tip Recipient Email Address
+
+If you want to send an email to multiple email addresses instead of a single email address, in the `$CS_EMAIL_TO` parameter, it will be enough to write all the addresses to send an email separated by commas. For example, `$CS_EMAIL_TO=example@email.com,example2@email.com`
+
+:::
+
+:::danger Sensitive Informations
+
+Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) for these types of values.
+
+To do this, comment out or remove the sensitive variables such as `$CS_EMAIL`, `$CS_USERNAME`, and `$CS_PASSWORD` defined at the top of the script, and add them as environment variables instead.
+
+For other variables that need to be defined, you can also make use of environment variables.
+
+:::
+
+:::caution Self-hosted Runners
+
+If you're using self-hosted runners and they're not starting to build pipelines with clean states as in Appcircle Cloud, this custom script can be insecure to use since the consecutive pipelines are using the same build environment, and it might have last sent email sensitive configuration in some cases.
+
+In order to send email, the script persists SMTP configuration to the `~/.msmtprc` file. Although the script has a cleanup mechanism that works for success or failure cases, it cannot work on all conditions. For example, the "cancel build" case should be considered. In this case, the `~/.msmtprc` might not be cleaned, and it can be read in the next pipeline.
+
+If you have configured runners similar to the Appcircle Cloud pools and they are wiped off after a build is executed to provide a fresh environment for every build, then there is nothing to consider; it's safe.
+
+:::
+
+:::info Username and Password for Google SMTP Users
+
+When you want to send an email with your Gmail account using **Google's SMTP** server, you must first **authenticate** to the Google SMTP server. For this process, you need to enter your **App Password** in the password field.
+
+In order to generate this password, **2FA authentication** must be turned on in your **Google account**. You can generate and retrieve this password from the **App Passwords** section under **Google Account management**. For detailed information about **App Passwords**, please visit the [**Google App Password**](https://support.google.com/accounts/answer/185833?hl=en) documentation.
+
+:::
+
+:::tip Protocols and SMTP Host
+
+This script uses the TLS protocol for SMTP server usage. Since the **Gmail SMTP** server is used in the script, the required protocols are pulled from **Google's SMTP** server using the `$CS_HOST` parameter. If you are using your own SMTP server, don't forget to change the `$CS_HOST` value here.
+
+On the other hand, to change **TLS or SSL** usage, you can change the protocol by setting the `$CS_USE_TLS` or `$CS_USE_SSL` parameters in the script to `true` or `false`. Note that you need to change the `$CS_PORT` parameter when using **SSL** and **TLS**.
+
+For more information about protocols, please visit the [**Google's TLS and SSL**](https://support.google.com/a/answer/100181) documentation.
+
+:::
+
+:::danger Sender Email and Spoofing
+
+To use an SMTP server, this script first installs the necessary certificates, then authenticates to the server with the required credentials and sends the prepared email content to the recipient's email address. In order to change the sender's email address, the SMTP server must allow it by providing the necessary permissions. Otherwise, SMTP servers will send the email using the authenticated email address to prevent spoofing (impersonating someone else).
 
 :::
 

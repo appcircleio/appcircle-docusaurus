@@ -668,6 +668,11 @@ build:
   description: "Description for cancel submission"
   permalink: /cancel-submission
 
+"captcha":
+  label: "captcha"
+  description: "Description for captcha"
+  permalink: /captcha
+
 carthage:
   label: "carthage"
   description: "Description for carthage"
@@ -1422,6 +1427,21 @@ ip:
   label: "issue tracking"
   description: "Description for issue tracking"
   permalink: /issue-tracking
+
+"java":
+  label: "java"
+  description: "Description for java"
+  permalink: /java
+
+"java version":
+  label: "java version"
+  description: "Description for java version"
+  permalink: /java-version
+
+"jdk":
+  label: "jdk"
+  description: "Description for jdk"
+  permalink: /jdk
 
 "jenkins plugin":
   label: "jenkins plugin"
@@ -2198,10 +2218,10 @@ signing:
   description: "Description for signing"
   permalink: /signing
 
-"signing history":
-  label: "signing history"
-  description: "Description for signing history"
-  permalink: /signing-history
+"signing reports":
+  label: "signing reports"
+  description: "Description for signing reports"
+  permalink: /signing-reports
 
 "signing identities":
   label: "signing identities"

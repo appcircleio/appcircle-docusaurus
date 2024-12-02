@@ -35,7 +35,7 @@ Please note that the log out option is available only if an active authenticatio
 
 :::
 
-::: warning
+:::warning
 
 Please note that to login to the Testing Portal, you must enable cookies in your browser. Cookies help maintain your session and ensure secure access.
 

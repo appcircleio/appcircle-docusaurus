@@ -38,9 +38,9 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 ### Sending the Build Status to the Repository Providers
 
-At the bottom of the config tab, you will the **Set Commit Build Status **option.
+At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-android-build-commit-status.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-status.png' alt="Sending Build Status" />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -154,7 +154,7 @@ Every Android project has a `gradlew` file in the main repository directory. If 
 
 ### How can I change the JDK version for autofill?
 
-Appcircle currently has OpenJDK 11 (default), OpenJDK 8, OpenJDK 17 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can follow the steps [here](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) and add a custom script to your workflow.
+Appcircle currently has OpenJDK 17 (default), OpenJDK 8, OpenJDK 11 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can add the [**Select Java Version**](/workflows/common-workflow-steps/select-java-version) step to your workflow.
 
 But unfortunately, you cannot use custom scripts for autofill operations, which make it easy to fill in configuration details while adding a new build profile.
 
@@ -164,7 +164,7 @@ For the autofill, we have two options to choose from.
 
 You can add the `org.gradle.java.home` entry to the `gradle.properties` file in your Android project.
 
-For example, the below entry can be used to change the default Java version to 17 for the "Default M1 Pool".
+For example, the below entry can be used to change the default Java version to 17 for the "Appcircle Standard macOS Pool (arm64)".
 
 ```properties
 org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu

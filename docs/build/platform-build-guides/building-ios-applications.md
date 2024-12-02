@@ -285,6 +285,21 @@ To resolve this error, follow these steps:
 
 After this operation, the references of the relevant files will be rewritten. 
 
+:::info
+
+After the release of Xcode 16, this issue experienced in older versions was fixed in Ruby's gem library with `1.26.0` or later version of the [**`xcodeproj`**](https://rubygems.org/gems/xcodeproj/versions/1.26.0) library. At Appcircle, we have also applied these updates to our infrastructure and deployed them to our cloud environment.
+
+However, for our customers using self-hosted setups, an image update is required. If you are using Appcircle in a self-hosted environment, the version of the `xcodeproj` library may be **outdated**. To resolve this, either update the runner image or manually increase the version in the build pipeline using a [**Custom Script**](/workflows/common-workflow-steps/custom-script).
+
+You can update the `xcodeproj` library using the following Bash script in your workflow:
+
+```bash
+gem update xcodeproj
+```
+
+For more information about our infrastructure, please visit the [**iOS Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documents.
+
+:::
 
 #### Error: Cycle inside `Application Target Name`; building could produce unreliable results
 
