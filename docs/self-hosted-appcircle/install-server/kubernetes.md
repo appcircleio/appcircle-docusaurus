@@ -269,6 +269,20 @@ kubectl create secret docker-registry containerregistry \
   --docker-password="$(cat registry-password)"
 ```
 
+#### Create Appcircle License Secret
+
+For license authentication, you should create a secret containing your `cred.json` file.
+
+1. Save your `cred.json` file.
+
+2. Run the following command on your **Linux / MacOS** terminal to create a secret with name **`${releaseName}-auth-license`** containing **`credentialJson`** key.
+
+```bash
+kubectl create secret generic appcircle-server-auth-license \
+  -n appcircle \
+  --from-literal=credentialJson=$(cat cred.json | base64)
+```
+
 #### Secure Sensitive Data With Kubernetes Secrets
 
 To remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#secrets-for-sensitive-values)
