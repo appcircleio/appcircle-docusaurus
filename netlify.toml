@@ -155,6 +155,11 @@ to = "/account/my-organization/security/authentications/sso-authentication#4-spe
 status = 301
 
 [[redirects]]
+from = "/account/sso/single-sign-on"
+to = "/account/my-organization/security/authentications/sso-authentication"
+status = 301
+
+[[redirects]]
 from = "/account/email-connection"
 to = "/account/my-organization/notifications/email-connection"
 status = 301
@@ -379,6 +384,12 @@ status = 301
 [[redirects]]
 from = "/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens"
 to = "/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens"
+status = 301
+
+# Best Practice related redirects
+[[redirects]]
+from = "/building-multiple-apps-in-one-profile"
+to = "/best-practices/building-multiple-apps-in-one-profile"
 status = 301
 
 # Build related redirects
@@ -669,7 +680,7 @@ to = "/testing-distribution/testing-portal"
 status = 301
 
 [[redirects]]
-from = "/distribute/create-or-select-a-distribution-profile.md"
+from = "/distribute/create-or-select-a-distribution-profile"
 to = "/testing-distribution/create-or-select-a-distribution-profile"
 status = 301
 
@@ -1070,4 +1081,14 @@ status = 301
 [[redirects]]
 from = "/workflows/why-to-use-workflows"
 to = "/workflows"
+status = 301
+
+[[redirects]]
+from = "/integrations/appdome-integration"
+to = "/workflows/ios-specific-workflow-steps/appdome-build-to-secure-for-ios"
+status = 301
+
+[[redirects]]
+from = "/integrations/jira-integration"
+to = "/workflows/common-workflow-steps/jira-comment"
 status = 301

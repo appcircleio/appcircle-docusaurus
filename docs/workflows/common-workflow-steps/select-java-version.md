@@ -1,7 +1,7 @@
 ---
 title: Select Java Version
 description: Switch the current Java version to the selected one.
-tags: [change, select, java, version, java version, android java, jdk]
+tags: [java, java version, jdk]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
