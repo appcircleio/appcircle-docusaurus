@@ -17,7 +17,7 @@ For a production deployment, a basic understanding of Kubernetes is sufficient. 
 
 ### Domain Name
 
-A main **domain name**, which will have **subdomains**, is required for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an example main domain and `spacetech` as an example organization name.
+A main **domain name**, which will have **subdomains**, is required for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an **example main domain** and `spacetech` as an **example organization name**.
 
 By default, Appcircle uses eight subdomains. These subdomains are:
 
@@ -96,7 +96,7 @@ Appcircle server supports Nginx Ingress Controller by default. To install Nginx 
 
 #### Enable SSL Passthrough
 
-Ingress object named `kvs` of the Appcircle server needs **SSL passthrough** so Appcircle **runners** can connect to the `kvs` service that is working on Kubernetes cluster **securely**.
+The Ingress object named `kvs` for the Appcircle server requires SSL passthrough to allow Appcircle runners to securely connect to the `kvs` service running within the Kubernetes cluster.
 
 Enabling the SSL passthrough depends on the ingress controller that is used in the Kubernetes cluster. For example:
 
