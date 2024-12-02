@@ -244,6 +244,8 @@ You can create this secret on the `appcircle` namespace for Appcircle image regi
 
 :::tip
 If you are using your own container registry, make sure to update the `server`, `username`, and `password` variables accordingly.
+
+If the registry you are using doesn't require any authentication, you can skip this section.
 :::
 
 1. Create the `appcircle` namespace if you haven't already created it:
