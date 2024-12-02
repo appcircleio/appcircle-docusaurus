@@ -9,7 +9,7 @@ import HelmYamlGenerator from '@site/src/components/HelmYamlGenerator';
 
 ## Overview
 
-To deploy the Appcircle server on your Kubernetes cluster, use the Appcircle Helm chart. This chart includes all the necessary components for the initial setup and can scale to support larger deployments.
+To deploy the Appcircle server on a Kubernetes cluster, use the Appcircle Helm chart. This chart includes all the necessary components for the initial setup and can scale to support larger deployments.
 
 For a production deployment, a basic understanding of Kubernetes is sufficient. This knowledge will help you effectively manage and troubleshoot the cluster, optimize resource allocation, and maintain security.
 
