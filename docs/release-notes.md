@@ -633,7 +633,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Within the Publish Module, customers now have the capability to designate their desired app version as a Release Candidate, streamlining the process of identifying and managing versions prior to official release. <CloudBadge/> <SelfHostedBadge/>
 - The "Appcircle Standard macOS Pool (arm64)" and [self-hosted macOS VM image](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/runner-vm-setup/) have been updated to include the latest [Xcode 15.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_3-release-notes) release. <CloudBadge/> <SelfHostedBadge/>
 - The "Appcircle Standard macOS Pool (arm64)" has been transitioned to [macOS Sonoma](https://docs.appcircle.io/infrastructure/ios-build-infrastructure), now featuring the latest Xcode and stack updates. <CloudBadge/> <SelfHostedBadge/>
-- The "Appcircle Standard macOS Pool (arm64)" and the self-hosted runner environment now feature the latest [JDK 21](https://docs.appcircle.io/workflows/common-workflow-steps/custom-script#how-to-change-java-version), along with patch version upgrades for JDK 8, 11, and 17, ensuring compatibility and providing users with access to the most up-to-date Java development environment. <CloudBadge/> <SelfHostedBadge/>
+- The "Appcircle Standard macOS Pool (arm64)" and the self-hosted runner environment now feature the latest [JDK 21](/workflows/common-workflow-steps/select-java-version), along with patch version upgrades for JDK 8, 11, and 17, ensuring compatibility and providing users with access to the most up-to-date Java development environment. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -717,7 +717,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed a bug that makes browser crash while viewing build logs. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that prints the incorrect remaining limit when the license is expired. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that threw an error while renaming the publish profile. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the missing default values for [Appdome Build-2Secure for Android](https://docs.appcircle.io/integrations/appdome-integration) workflow step output. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the missing default values for [Appdome Build-2Secure for Android](/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android) workflow step output. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the [JaCoCo](https://www.eclemma.org/jacoco/) code coverage "NilObject" error by improving the parser algorithm at the [test report](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report) workflow step. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the format of values in the publish flow step settings so that they're more user-friendly instead of "key|value" style. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the value of the `AC_PULL_NUMBER` environment variable in the build pipeline, which should be the merge request `iid` value for the GitLab connection. <CloudBadge/> <SelfHostedBadge/>

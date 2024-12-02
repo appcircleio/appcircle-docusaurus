@@ -93,6 +93,19 @@ Danger runs during your CI process and gives teams the chance to automate common
 https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews
 
 ## [Custom Scripts](/workflows/common-workflow-steps/custom-script)
+<ContentRef url="/workflows/common-workflow-steps/danger">
+    Code Reviews with Danger
+</ContentRef>
+
+## Select Java Version
+
+The **Select Java Version** step updates the JDK and Java version to the selected one during the build process.
+
+<ContentRef url="/workflows/common-workflow-steps/select-java-version">
+    Select Java Version
+</ContentRef>
+
+## Custom Scripts
 
 You can use custom scripts for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the build agent and you can use any functionality of the virtual machine as you need.
 

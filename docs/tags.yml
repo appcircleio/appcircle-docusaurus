@@ -1428,6 +1428,21 @@ ip:
   description: "Description for issue tracking"
   permalink: /issue-tracking
 
+"java":
+  label: "java"
+  description: "Description for java"
+  permalink: /java
+
+"java version":
+  label: "java version"
+  description: "Description for java version"
+  permalink: /java-version
+
+"jdk":
+  label: "jdk"
+  description: "Description for jdk"
+  permalink: /jdk
+
 "jenkins plugin":
   label: "jenkins plugin"
   description: "Description for jenkins plugin"
