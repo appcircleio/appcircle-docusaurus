@@ -92,26 +92,17 @@ Danger runs during your CI process and gives teams the chance to automate common
 
 https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews
 
-## [Custom Scripts](/workflows/common-workflow-steps/custom-script)
-<ContentRef url="/workflows/common-workflow-steps/danger">
-    Code Reviews with Danger
-</ContentRef>
-
-## Select Java Version
+## [Select Java Version](/workflows/common-workflow-steps/select-java-version)
 
 The **Select Java Version** step updates the JDK and Java version to the selected one during the build process.
 
-<ContentRef url="/workflows/common-workflow-steps/select-java-version">
-    Select Java Version
-</ContentRef>
-
-## Custom Scripts
+## [Custom Scripts](/workflows/common-workflow-steps/custom-script)
 
 You can use custom scripts for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the build agent and you can use any functionality of the virtual machine as you need.
 
 ## [Data Theorem Mobile Secure](/workflows/common-workflow-steps/data-theorem-mobile-secure)
 
-This component scans your app using Mobile Secure
+This component scans your app using Mobile Secure.
 
 ## [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts)
 
@@ -123,13 +114,13 @@ This component checks the file size and either warn or fail the workflow.
 
 ## [Firebase App Distribution](/workflows/common-workflow-steps/firebase-app-distribution)
 
-Send your apps to be distributed via Firebase App Distribution
+Send your apps to be distributed via Firebase App Distribution.
 
 https://github.com/appcircleio/appcircle-firebase-dsym-upload-component
 
 ## [Fortify On Demand](/workflows/common-workflow-steps/fod-mobile-assesment)
 
-This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment
+This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment.
 
 ## [FTP Upload](/workflows/common-workflow-steps/ftp-upload)
 
