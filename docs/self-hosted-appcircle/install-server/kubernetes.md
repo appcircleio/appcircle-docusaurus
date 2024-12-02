@@ -267,7 +267,7 @@ kubectl create secret docker-registry containerregistry \
   --docker-password="$(cat registry-password)"
 ```
 
-#### Secure Sensitive Data with Kubernetes Secrets
+#### Secure Sensitive Data With Kubernetes Secrets
 
 To remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#secrets-for-sensitive-values)
 
