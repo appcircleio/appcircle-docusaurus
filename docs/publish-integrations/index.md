@@ -11,7 +11,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Publish Integrations in Appcircle provide a seamless connection between your application builds and the respective app stores for Android and iOS. This powerful feature automates the distribution process, making it easier to manage releases and updates.
 
-## [Common Integrations](/common-publish-integrations)
+## [Common Integrations](/publish-integrations/common-publish-integrations)
 
 Appcircle's Common Integrations facilitate the distribution of your iOS and Android applications to major app stores with minimal effort.
 

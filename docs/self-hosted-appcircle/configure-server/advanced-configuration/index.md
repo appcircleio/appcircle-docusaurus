@@ -18,7 +18,7 @@ tags:
 
 The Advanced Configuration section is designed to provide additional security measures and system optimization options for your self-hosted Appcircle instance. It ensures that your setup is not only tailored to your needs but also secure and efficient.
 
-### [LDAP Brute Force Protection](/self-hosted-appcircle/configure-server/advanced-configuration/ldap-bruteforce)
+### [LDAP Brute Force Protection](/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore)
 
 Protect your system against unauthorized access attempts with LDAP Brute Force Protection. This feature secures your LDAP authentication process against attackers trying multiple password combinations to gain access to your system.
 

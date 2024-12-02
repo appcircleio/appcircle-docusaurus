@@ -23,19 +23,19 @@ Configuring runners within your self-hosted Appcircle setup is essential for cus
 
 Organize your runners into pools to efficiently manage resources and distribute tasks. This section will help you set up and manage pools tailored to different project needs or environments.
 
-## [Managing Runners](/self-hosted-appcircle/self-hosted-runner/manage-runners)
+## [Managing Runners](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-runners)
 
 Get detailed instructions on how to manage individual runners. Learn how to add, remove, and configure runners to balance loads and maintain a seamless CI/CD pipeline.
 
-## [Service Configuration](/self-hosted-appcircle/self-hosted-runner/runner-service)
+## [Service Configuration](/self-hosted-appcircle/self-hosted-runner/configure-runner/runner-service)
 
 Fine-tune your runners by configuring service parameters. Adjust settings for optimal performance and compatibility with your projects.
 
-## [Android Emulators](/self-hosted-appcircle/self-hosted-runner/android-emulator)
+## [Android Emulators](/self-hosted-appcircle/self-hosted-runner/configure-runner/android-emulator)
 
 Set up and manage Android emulators for testing purposes. Ensure your Android apps run smoothly across different versions and resolutions by configuring emulators within your runners.
 
-## [Self-signed Certificates](/self-hosted-appcircle/self-hosted-runner/custom-certificates)
+## [Self-signed Certificates](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates)
 
 Learn how to use self-signed certificates with your runners. This section provides steps to secure your runner communication within your private network.
 

@@ -33,7 +33,7 @@ Register and Manage your Apple Profiles by adding and storing your Apple Profile
 
 Keep your Android app signing keys secure by managing your keystores. This part of the documentation helps you understand keystore creation, management, and usage within your Android build processes.
 
-## [Signing Reports](/signing-reports)
+## [Signing Reports](/signing-identities/signing-reports)
 
 The Signing Reports section contains the list of builds selected for signing in a given time period.
 
