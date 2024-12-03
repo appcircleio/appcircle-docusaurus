@@ -79,7 +79,7 @@ Using SSD storage is highly recommended if stateful applications are installed w
 :::
 
 :::tip
-For storage class details, you can check the [Storage Class Configuration](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#storage-class-configuration) section.
+For storage class details, you can check the [Storage Class Configuration](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#persistent-volume-configuration) section.
 :::
 
 Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain compatibility and support.
@@ -380,7 +380,7 @@ kubectl get secret appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.i
 
 When you deploy the Appcircle server using Helm, a default license is provided. 
 
-To obtain the license you purchased, please share the initial organization ID which is printed after the `helm` deployment command with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#appcircle-license-update) section.
+To obtain the license you purchased, please share the initial organization ID which is printed after the `helm` deployment command with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#appcircle-license) section.
 
 ## Uninstall the Appcircle Server
 
@@ -410,7 +410,7 @@ For the solution, please make sure that the domain name server of the worker nod
 
 ### When we deploy the Helm chart, the `appcircle-server-webeventredis-master-0` pod is stuck in `CrashLoopBackOff` state
 
-This error usually happens when you select a non-valid `Appcircle CA Certificate File` while [generating the configuration file](#generate-the-configuration-file). Please make sure that the certificate you choose is the **root** certificate of the full-chain certificate.
+This error usually happens when you select a non-valid `Appcircle CA Certificate File` while [generating the configuration file](#create-a-configuration-file). Please make sure that the certificate you choose is the **root** certificate of the full-chain certificate.
 
 :::tip
 
