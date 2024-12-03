@@ -685,7 +685,7 @@ To authenticate the Appcircle license, you need to create a secret that contains
 
 1. Save the `cred.json` file to your local system.
 
-2. Run the following command in your **Linux / macOS** terminal to create / update a secret named **`${releaseName}-auth-license`** with the **`credentialJson`** key:
+2. Run the following command in your **Linux/macOS** terminal to create/update a secret named **`${releaseName}-auth-license`** with the **`credentialJson`** key:
 
 ```bash
 kubectl create secret generic appcircle-server-auth-license \
@@ -705,5 +705,5 @@ helm upgrade appcircle-server appcircle/appcircle-server \
 ```
 
 :::info
-The license update might take ~30 minutes to take effect on the **UI** due to caches but it will apply and be ready to use immediately.  
+The license update might take ~30 minutes to take effect on the **UI** due to caches, but it will apply and be ready to use immediately.  
 :::

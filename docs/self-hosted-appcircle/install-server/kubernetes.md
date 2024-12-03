@@ -270,7 +270,7 @@ kubectl create namespace appcircle
 
 2. Save the `cred.json` file or your own registry password into a file named `registry-password`.
 
-3. Run the following command on your **Linux / MacOS** terminal to create the container registry secret on the Kubernetes cluster:
+3. Run the following command on your **Linux/MacOS** terminal to create the container registry secret on the Kubernetes cluster:
 
 ```bash
 kubectl create secret docker-registry containerregistry \
