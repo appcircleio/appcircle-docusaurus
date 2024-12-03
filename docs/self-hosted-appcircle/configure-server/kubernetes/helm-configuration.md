@@ -35,7 +35,7 @@ The Appcircle chart, by default, includes an in-cluster PostgreSQL deployment pr
 
 If you are deploying the Appcircle server for testing purposes, you may use the built-in PostgreSQL deployment.
 
-For a production-ready setup, it is recommended to configure an external PostgreSQL instance. The recommended version is PostgreSQL `12.x`.
+For a production-ready setup, it is recommended to configure an external PostgreSQL instance. The recommended version is PostgreSQL `12.x`, with a disk size of 40GB.
 
 To use a external PostgreSQL database, you can follow the steps below:
 
@@ -68,7 +68,7 @@ By default, the Appcircle chart includes an in-cluster MongoDB deployment provid
 
 If you are deploying the Appcircle server for testing purposes, the built-in MongoDB deployment can be used.
 
-For production environments,, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.x`.
+For production environments, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.x`, with a disk size of 40GB.
 
 To use a external MongoDB database, you can follow the steps below:
 
@@ -269,7 +269,11 @@ By default, the Appcircle chart includes an in-cluster MinIO deployment provided
 
 If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
 
-For production environments, it is recommended to configure an external MinIO instance. TODO: Add minimum MinIO version.
+For production environments, it is recommended to configure an external MinIO instance. The recommended version is MinIO `2024-03-15` or later, with a disk size of 1TB.
+
+:::info
+The recommended disk size for the MinIO instance may vary depending on your usage requirements. It can range from 500GB to 3-4TB.
+:::
 
 To use a external MinIO instance, you can follow the steps below:
 
@@ -313,7 +317,7 @@ By default, the Appcircle chart includes an in-cluster HashiCorp Vault deploymen
 
 If you are deploying the appcircle for testing purposes, the built-in Vault deployment can be used.
 
-For production, it is recommended to configure an external, production-grade Vault instance to ensure robust secret management, scalability, and high availability. TODO: Add minimum HashiCorp Vault version.
+For production environments, it is recommended to configure an external Hashicorp Vault instance. The recommended version is Vault `v1.10.3`, with a disk size of 20GB.
 
 To use a external Vault instance, you can follow the steps below:
 
@@ -424,8 +428,6 @@ The trusted certificate names must conform to the regex pattern `[-._a-zA-Z0-9]+
 
 Here is an example of how to update the `values.yaml` file:
 
-(TODO: Multiple certificate should be tested.)
-
 ```yaml
 global:
   trustedCerts:
@@ -445,8 +447,6 @@ global:
         ZmukIMGOIYPWDhsuJA==
         -----END CERTIFICATE-----
 ```
-
-TODO: Move to another page
 
 ### Configure Max Body Size
 
