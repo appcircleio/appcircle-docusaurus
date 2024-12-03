@@ -580,7 +580,7 @@ When `userLookupDecisionStrategy` is set to "tolerant", similar to the "affirmat
 
 ### LDAP Brute Force Protection
 
-TODO: Get overview from the [original document](/docs/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore.md).
+TODO: Get overview from the [original document](/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore.md).
 
 To configure LDAP brute force protection, you can edit the `values.yaml` file and add the following settings under `auth`:
 
@@ -677,16 +677,33 @@ webhook:
   replicaCount: 3
 ```
 
-## Create Appcircle License Secret
+## Appcircle License
 
-For license authentication, you should create a secret containing your `cred.json` file.
+### Creating a Secret for License Authentication
 
-1. Save your `cred.json` file.
+To authenticate the Appcircle license, you need to create a secret that contains the `cred.json` file you received from Appcircle.
 
-2. Run the following command on your **Linux / MacOS** terminal to create a secret with name **`${releaseName}-auth-license`** containing **`credentialJson`** key.
+1. Save the `cred.json` file to your local system.
+
+2. Run the following command in your **Linux / macOS** terminal to create / update a secret named **`${releaseName}-auth-license`** with the **`credentialJson`** key:
 
 ```bash
 kubectl create secret generic appcircle-server-auth-license \
   -n appcircle \
-  --from-literal=credentialJson=$(cat cred.json | base64)
+  --from-literal=credentialJson=$(cat cred.json | base64) \
+  --save-config --dry-run=client -o yaml | kubectl apply -f -
 ```
+
+### Updating the License
+
+If your organization’s Appcircle server license has been updated and you need to apply the new license, you can upgrade the Appcircle server deployment using Helm:
+
+```bash
+helm upgrade appcircle-server appcircle/appcircle-server \
+  -n appcircle  \
+  -f values.yaml
+```
+
+:::info
+The license update might take ~30 minutes to take effect on the **UI** due to caches but it will apply and be ready to use immediately.  
+:::

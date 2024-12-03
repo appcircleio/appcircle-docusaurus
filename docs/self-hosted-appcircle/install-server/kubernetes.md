@@ -289,7 +289,7 @@ To ensure your deployment is ready for production, follow the guidelines provide
 
 ### Appcircle Server Helm Chart Configurations
 
-Refer to the [Configuration Section](/docs/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#update-the-configuration-file) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
+Refer to the [Configuration Section](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#update-the-configuration-file) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
 
 ## Deploy Using Helm
 
@@ -375,6 +375,12 @@ You can view the initial username and password by checking the `values.yaml` or
 ```bash
 kubectl get secret appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
 ```
+
+### License Configuration
+
+When you deploy the Appcircle server using Helm, a default license is provided. 
+
+To obtain the license you purchased, please share the initial organization ID which is printed after the `helm` deployment command with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#appcircle-license-update) section.
 
 ## Uninstall the Appcircle Server
 
