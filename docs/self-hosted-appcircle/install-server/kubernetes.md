@@ -78,7 +78,6 @@ However, if you opt to use external services for components such as PostgreSQL o
 Using SSD storage is highly recommended if stateful applications are installed within the Appcircle Helm chart scope. SSDs provide faster read/write speeds, improving the performance and responsiveness of your applications.
 :::
 
-
 :::tip
 For storage class details, you can check the [Storage Class Configuration](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#storage-class-configuration) section.
 :::
@@ -245,9 +244,9 @@ webeventredis:
     tls: true
 ```
 
-### Update the Configuration File
+## Pre-Installation Steps
 
-#### Create Container Registry Secret
+### Create Container Registry Secret
 
 By default, Appcircle uses its own image registry that you should authenticate with the `cred.json` file you got from Appcircle.
 
@@ -280,29 +279,15 @@ kubectl create secret docker-registry containerregistry \
   --docker-password="$(cat registry-password)"
 ```
 
-#### Create Appcircle License Secret
-
-For license authentication, you should create a secret containing your `cred.json` file.
-
-1. Save your `cred.json` file.
-
-2. Run the following command on your **Linux / MacOS** terminal to create a secret with name **`${releaseName}-auth-license`** containing **`credentialJson`** key.
-
-```bash
-kubectl create secret generic appcircle-server-auth-license \
-  -n appcircle \
-  --from-literal=credentialJson=$(cat cred.json | base64)
-```
-
-#### Secure Sensitive Data With Kubernetes Secrets
+### Secure Sensitive Data With Kubernetes Secrets
 
 To remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#secrets-for-sensitive-values)
 
-#### Production Readiness
+### Production Readiness
 
 To ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault and MinIO connection strings.
 
-#### Appcircle Server Helm Chart Configurations
+### Appcircle Server Helm Chart Configurations
 
 Refer to the [Configuration Section](/docs/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#update-the-configuration-file) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
 
@@ -348,7 +333,9 @@ kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle-s
 
 When all the pods are **ready**, the command will return with success and you will see **"Appcircle is ready to use. Happy building!"** message. Now, you are ready to connect to the Appcircle UI and start to build, test and publish!
 
-## Create DNS Records
+## Post-installation Steps
+
+### Create DNS Records
 
 After the Appcircle server installation is finished, you can get the IP addresses of the Appcircle domains and configure the DNS.
 
@@ -371,13 +358,23 @@ appcircle-webeventredis            nginx   redis.appcircle.spacetech.com        
 
 You should configure your DNS records according to your DNS provider. For a best practice, create a **`A`** record for the **`my.appcircle.spacetech.com`** and create **`CNAME`** records for other domains.
 
-## Sign in to Appcircle
+### Sign in to Appcircle
 
-You can use the `my` prefixed domain name to access Appcircle dashboard.
+You can use the URL printed after the `helm` deployment command to access Appcircle dashboard.
 
-For example, if you set `global.urls.domainName` to `.appcircle.spacetech.com` and deployed the Appcircle server with SSL certificates then you can use `https://my.appcircle.spacetech.com` address to access the Appcircle dashboard.
+```bash
+You can access the application dashboard at: ↴
 
-After you see the login page of the Appcircle, you can now use the **initial username** and **password** to login to the Appcircle dashboard. You can check the initial username and password from the `values.yaml` file that you have used to install Appcircle server. The values you should look for are under `auth.auth-keycloak.initialUsername` and `auth.auth-keycloak.initialPassword` keys.
+https://my.appcircle.spacetech.com
+```
+
+After you see the login page of the Appcircle, you can now use the **initial username** and **password** to login to the Appcircle dashboard. 
+
+You can view the initial username and password by checking the `values.yaml` or by checking the relevant secret with `kubectl`:
+
+```bash
+kubectl get secret appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
+```
 
 ## Uninstall the Appcircle Server
 
@@ -389,9 +386,7 @@ If you haven't changed the release name and namespace name while following the [
 helm uninstall -n appcircle appcircle-server
 ```
 
-### Deleting the Appcircle Server Data
-
-(TODO: Validate the information. Uninstall and install then check if the data still exists.) [Uninstalling the Appcircle Server](#uninstall-the-appcircle-server) doesn't delete the Appcircle server data. If you want to delete all the data of the Appcircle server for a reason, you can simple delete the namespace.
+Helm uninstall doesn't delete the Appcircle server data stored in the Persistent Volumes. If you want to delete all the data of the Appcircle server, you can simple delete the namespace.
 
 If you haven't changed the namespace name while following the [Deploy Using Helm](#deploy-using-helm) section, you can run the command below to delete the all data of the Appcircle server.
 

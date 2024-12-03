@@ -5,6 +5,57 @@ tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 1
 ---
 
+## Secrets for Sensitive Values
+
+To manage sensitive information such as the Appcircle initial user password, SMTP password, SSL certificates, and other secrets, it is recommended to use Kubernetes secrets. This ensures that sensitive data is stored securely and can be accessed by applications running within the cluster in a controlled manner.
+
+:::info
+The commands below assume you have already created a namespace for Appcircle. If you haven’t yet, you can create and switch to the Appcircle namespace using the following commands:
+
+```bash
+# Create the namespace
+kubectl create namespace appcircle
+
+# Switch to the newly created namespace
+kubectl config set-context --current --namespace=appcircle
+```
+
+Make sure to replace `appcircle` with your preferred namespace name if necessary.
+:::
+
+You can follow the steps below to create a secret for each sensitive value:
+
+#### Appcircle initial user password
+
+- Create a secret with the name `${releaseName}-auth-keycloak-passwords` containing the `initialPassword` and `adminPassword` keys.
+
+```bash
+kubectl create secret generic appcircle-server-auth-keycloak-passwords \
+  --from-literal=initialPassword=Test1234 \
+  --from-literal=adminPassword=KeycloakAdminPassword1234
+```
+
+#### SMTP password
+
+Create a secret with the name `${releaseName}-smtp` containing the `password` key.
+
+```bash
+kubectl create secret generic appcircle-server-smtp \
+  --from-file=password=/Users/berk/appcircle/helm-values/local-k8s/smtp-password
+```
+
+#### SSL certificate
+
+Create a secret with the name `appcircle-tls-wildcard` containing the `tls.crt`, `tls.key` and `ca.crt` keys.
+
+```bash
+kubectl create secret generic appcircle-tls-wildcard \
+  --from-file=tls.crt='/Users/berk/appcircle/helm-values/local-k8s/fullchain.crt' \
+  --from-file=tls.key='/Users/berk/appcircle/helm-values/local-k8s/k8s-deployment.key' \
+  --from-file=ca.crt='/Users/berk/appcircle/helm-values/local-k8s/ca.crt' \
+  --type=kubernetes.io/tls
+```
+
 ## Production Readiness
 
 By default, Appcircle Helm chart will deploy all the required services to the Kubernetes cluster for testing purposes. It is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Helm chart. This allows you to have better control over their configuration and management.
@@ -278,6 +329,7 @@ The recommended disk size for the MinIO instance may vary depending on your usag
 To use a external MinIO instance, you can follow the steps below:
 
 - Create the following buckets for Appcircle to use on the MinIO instance:
+
   - appcircle-local-resource-temp
   - appcircle-local-resource-build
   - appcircle-local-resource-distribution
@@ -338,50 +390,6 @@ vault:
   enabled: false
 ```
 
-## Secrets for Sensitive Values
-
-To manage sensitive information such as the Appcircle initial user password, SMTP password, SSL certificates, and other secrets, it is recommended to use Kubernetes secrets. This ensures that sensitive data is stored securely and can be accessed by applications running within the cluster in a controlled manner.
-
-:::info
-The commands below assume you have already created a namespace for Appcircle. If you haven’t yet, you can create and switch to the Appcircle namespace using the following commands:
-
-```bash
-# Create the namespace
-kubectl create namespace appcircle
-
-# Switch to the newly created namespace
-kubectl config set-context --current --namespace=appcircle
-```
-
-Make sure to replace `appcircle` with your preferred namespace name if necessary.
-:::
-
-You can follow the steps below to create a secret for each sensitive value:
-
-- For Appcircle initial user password:
-  - Create a secret with the name `${releaseName}-auth-keycloak-passwords` containing the `initialPassword` and `adminPassword` keys.
-  ```bash
-  kubectl create secret generic appcircle-server-auth-keycloak-passwords \
-    --from-literal=initialPassword=Test1234 \
-    --from-literal=adminPassword=KeycloakAdminPassword1234
-  ```
-- For SMTP password:
-  - Create a secret with the name `${releaseName}-smtp` containing the `password` key.
-  ```bash
-  kubectl create secret generic appcircle-server-smtp \
-    --from-file=password=/Users/berk/appcircle/helm-values/local-k8s/smtp-password
-  ```
-- For SSL certificate:
-  - Create a secret with the name `appcircle-tls-wildcard` containing the `tls.crt`, `tls.key` and `ca.crt` keys.
-  ```bash
-  kubectl create secret generic appcircle-tls-wildcard \
-    --from-file=tls.crt='/Users/berk/appcircle/helm-values/local-k8s/fullchain.crt' \
-    --from-file=tls.key='/Users/berk/appcircle/helm-values/local-k8s/k8s-deployment.key' \
-    --from-file=ca.crt='/Users/berk/appcircle/helm-values/local-k8s/ca.crt' \
-    --type=kubernetes.io/tls
-  ```
-
-
 ## Update the Configuration File
 
 Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some configurations in this file that you may want to add manually.
@@ -392,22 +400,46 @@ If there are any settings you want to configure, open the `values.yaml` with you
 vi values.yaml
 ```
 
-### Storage Class Configuration
+### Persistent Volume Configuration
 
-Appcircle server Helm chart supports configuring a storage class for persistent volume claims (PVCs). If you don't specify any storage class, the PVCs will be created using the default storage class of your Kubernetes cluster. If you want to use a specific storage class, you can specify it in the `values.yaml`.
+Appcircle server Helm chart supports configuring a storage classes and volume sizes for persistent volume claims (PVCs). If you don't specify any storage class or size, the PVCs will be created using the default storage class of your Kubernetes cluster with default size. If you want to adjust these settings, you can specify them in the `values.yaml`.
 
-For example if you want to use a storage class named `nfs-csi`, you can configure the `values.yaml` like in the example below:
+You can configure the `values.yaml` like in the example below. The storage values given in the example are recommended values for a production usage.
 
 ```yaml
-global:
-  storageClass: nfs-csi
+auth:
+  auth-postgresql:
+    primary:
+      persistence:
+        size: 40Gi
+        storageClass: nfs-client
+mongodb:
+  persistence:
+    size: 3Gi
+    storageClass: nfs-client
+kafka:
+  controller:
+    persistence:
+      size: 8Gi
+      storageClass: nfs-client
+minio:
+  persistence:
+    storageClass: nfs-client
+    size: 1Ti
 vault:
   server:
     dataStorage:
-      storageClass: nfs-csi
-mongodb:
-  persintence:
-    storageClass: nfs-csi
+      size: 20Gi
+      storageClass: nfs-client
+webeventredis:
+  master:
+    persistence:
+      size: 2Gi
+      storageClass: nfs-client
+  replica:
+    persistence:
+      size: 2Gi
+      storageClass: nfs-client
 ```
 
 ### Adding Trusted CA Certificates to the Appcircle Services
@@ -643,4 +675,18 @@ web:
     replicaCount: 3
 webhook:
   replicaCount: 3
+```
+
+## Create Appcircle License Secret
+
+For license authentication, you should create a secret containing your `cred.json` file.
+
+1. Save your `cred.json` file.
+
+2. Run the following command on your **Linux / MacOS** terminal to create a secret with name **`${releaseName}-auth-license`** containing **`credentialJson`** key.
+
+```bash
+kubectl create secret generic appcircle-server-auth-license \
+  -n appcircle \
+  --from-literal=credentialJson=$(cat cred.json | base64)
 ```
