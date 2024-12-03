@@ -56,23 +56,34 @@ Appcircle **supports TLS 1.3**, the latest and most secure version of the TLS pr
 
 To install the Appcircle server using Helm, a Kubernetes cluster is required. The cluster should meet the following hardware specifications:
 
-**Minimum** hardware requirements for **enterprise installation**:
+**Minimum hardware requirements for enterprise installation:**
 
 - Nodes with x86-64 architecture
 - 8 CPUs
 - 16 GB RAM
-- TODO: Update 500 GB SSD
+- 500 GB Disk
 
-**Recommended** hardware requirements for **enterprise installation**:
+**Recommended hardware requirements for enterprise installation:**
 
 - Nodes with x86-64 architecture
 - 32 CPUs
 - 64 GB RAM
-- TODO: Update 1 TB SSD
+- 1 TB Disk
 
-TODO: Define a kubernetes version
+For production environments, if you deploy stateful applications with the Appcircle Helm chart, you will need significant storage capacity, as specified above. You can configure disk resource allocations through Helm values according to your needs.
 
-Kubernetes version must be x.x.x or later.
+However, if you opt to use external services for components such as PostgreSQL or MinIO, the storage requirements for the cluster are significantly reduced to around 50GB.
+
+:::info
+Using SSD storage is highly recommended if stateful applications are installed within the Appcircle Helm chart scope. SSDs provide faster read/write speeds, improving the performance and responsiveness of your applications.
+:::
+
+
+:::tip
+For storage class details, you can check the [Storage Class Configuration](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#storage-class-configuration) section.
+:::
+
+Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain compatibility and support.
 
 ### Install `kubectl`
 
