@@ -392,17 +392,18 @@ vi values.yaml
 
 Appcircle server Helm chart supports configuring a storage class for persistent volume claims (PVCs). If you don't specify any storage class, the PVCs will be created using the default storage class of your Kubernetes cluster. If you want to use a specific storage class, you can specify it in the `values.yaml`.
 
-For example if you want to use a storage class named `nfs-storage-class`, you can configure the `values.yaml` like in the example below:
-
-TODO: Add storage class details for all apps including Mongo, PostgreSQL, Kafka, redis
+For example if you want to use a storage class named `nfs-csi`, you can configure the `values.yaml` like in the example below:
 
 ```yaml
 global:
-  defaultStorageClass: nfs-storage-class
+  storageClass: nfs-csi
 vault:
   server:
     dataStorage:
-      storageClass: "nfs-client"
+      storageClass: nfs-csi
+mongodb:
+  persintence:
+    storageClass: nfs-csi
 ```
 
 ### Adding Trusted CA Certificates to the Appcircle Services
