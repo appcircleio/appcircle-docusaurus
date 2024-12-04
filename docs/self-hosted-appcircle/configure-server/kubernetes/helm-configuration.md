@@ -23,7 +23,11 @@ kubectl config set-context --current --namespace=appcircle
 Make sure to replace `appcircle` with your preferred namespace name if necessary.
 :::
 
-You can follow the steps below to create a secret for each sensitive value:
+You can follow the steps below to create a secret for each sensitive value.
+
+:::tip
+If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with a leading space character will not be stored in the shell history. This allows you to create secrets safely without storing sensitive information in the shell history.
+:::
 
 #### Appcircle initial user password
 
@@ -58,7 +62,7 @@ kubectl create secret generic appcircle-tls-wildcard \
 
 ## Production Readiness
 
-By default, Appcircle Helm chart will deploy all the required services to the Kubernetes cluster for testing purposes. It is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Helm chart. This allows you to have better control over their configuration and management.
+By default, the Appcircle Helm chart will deploy all the required services to the Kubernetes cluster for testing purposes. It is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Helm chart. This allows you to have better control over their configuration and management.
 
 If you wish to deploy these services within the Helm chart scope, you can use the default configuration provided by the Appcircle Helm chart.
 
@@ -76,10 +80,6 @@ kubectl config set-context --current --namespace=appcircle
 Make sure to replace `appcircle` with your preferred namespace name if necessary.
 :::
 
-:::tip
-If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with a leading space character will not be stored in the shell history. This allows you to create secrets safely without storing sensitive information in the shell history.
-:::
-
 ### PostgreSQL
 
 The Appcircle chart, by default, includes an in-cluster PostgreSQL deployment provided by `bitnami/PostgreSQL`.
@@ -88,7 +88,7 @@ If you are deploying the Appcircle server for testing purposes, you may use the 
 
 For a production-ready setup, it is recommended to configure an external PostgreSQL instance. The recommended version is PostgreSQL `12.x`, with a disk size of 40GB.
 
-To use a external PostgreSQL database, you can follow the steps below:
+To use an external PostgreSQL database, you can follow the steps below:
 
 - Create a secret for the PostgreSQL password. While you can choose your own secret name and key, it is recommended to use the format `${releaseName}-postgresql-connection` with the key `password`.
 
@@ -121,7 +121,7 @@ If you are deploying the Appcircle server for testing purposes, the built-in Mon
 
 For production environments, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.x`, with a disk size of 40GB.
 
-To use a external MongoDB database, you can follow the steps below:
+To use an external MongoDB database, you can follow the steps below:
 
 - Create individual users and passwords for each Appcircle service on the MongoDB instance. Each service should have its own user with distinct credentials to ensure proper access control and security. Below is an example of how to generate a secret with MongoDB connection strings for each service, where each user is assigned specific permissions for its corresponding service.
 
@@ -326,7 +326,7 @@ For production environments, it is recommended to configure an external MinIO in
 The recommended disk size for the MinIO instance may vary depending on your usage requirements. It can range from 500GB to 3-4TB.
 :::
 
-To use a external MinIO instance, you can follow the steps below:
+To use an external MinIO instance, you can follow the steps below:
 
 - Create the following buckets for Appcircle to use on the MinIO instance:
 
@@ -357,12 +357,6 @@ minio:
   enabled: false
 ```
 
-:::info
-You can use a cloud object storage solution like AWS S3 or Google Cloud Storage instead of deploying MinIO.
-
-TODO: Link or description about how to do it.
-:::
-
 ### HashiCorp Vault
 
 By default, the Appcircle chart includes an in-cluster HashiCorp Vault deployment provided by `hashicorp/vault`.
@@ -371,7 +365,7 @@ If you are deploying the appcircle for testing purposes, the built-in Vault depl
 
 For production environments, it is recommended to configure an external Hashicorp Vault instance. The recommended version is Vault `v1.10.3`, with a disk size of 20GB.
 
-To use a external Vault instance, you can follow the steps below:
+To use an external Vault instance, you can follow the steps below:
 
 - Create a secret with the name `${releaseName}-vault-seal` containing the `token` key.
 
@@ -394,17 +388,13 @@ vault:
 
 Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some configurations in this file that you may want to add manually.
 
-If there are any settings you want to configure, open the `values.yaml` with your favorite editor like `vi`, `VS Code` or `notepad` and follow the sections below.
-
-```bash
-vi values.yaml
-```
+If there are any settings you want to configure, open the `values.yaml` with your favorite editor and follow the sections below.
 
 ### Persistent Volume Configuration
 
-Appcircle server Helm chart supports configuring a storage classes and volume sizes for persistent volume claims (PVCs). If you don't specify any storage class or size, the PVCs will be created using the default storage class of your Kubernetes cluster with default size. If you want to adjust these settings, you can specify them in the `values.yaml`.
+Appcircle server Helm chart supports configuring storage classes and volume sizes for persistent volume claims (PVCs). If you don't specify any storage class or size, the PVCs will be created using the default storage class of your Kubernetes cluster with the default size. If you want to adjust these settings, you can specify them in the `values.yaml`.
 
-You can configure the `values.yaml` like in the example below. The storage values given in the example are recommended values for a production usage.
+You can configure the `values.yaml` like in the example below. The storage values given in the example are recommended values for production usage.
 
 ```yaml
 auth:
@@ -450,7 +440,7 @@ If any services that the Appcircle server needs to connect to, such as your Git 
 To prevent potential issues with untrusted certificates, it is recommended to add your organization's root certificate from the Certificate Authority (CA) to Appcircle. This ensures that the server can properly validate and trust SSL/TLS certificates issued by your organization’s CA.
 :::
 
-To add this certificates as trusted, you need to update the `.global.trustedCerts` key in the `values.yaml` file and import the certificates.
+To add these certificates as trusted, you need to update the `.global.trustedCerts` key in the `values.yaml` file and import the certificates.
 
 :::info
 The `.global` key already exists in your `values.yaml` file. You just need to add the `trustedCerts` key.
@@ -482,7 +472,7 @@ global:
 
 ### Configure Max Body Size
 
-In Appcircle, there are scenarios where the client upload size might exceed the default limit of `4096MB` for Nginx Ingress controller for a single request body size. To accommodate larger file uploads or if you wish to adjust this setting according to your needs, you can configure the maximum allowed body size in your `values.yaml` file.
+In Appcircle, there are scenarios where the client upload size might exceed the default limit of `4096MB` for the Nginx Ingress controller for a single request body size. To accommodate larger file uploads or if you wish to adjust this setting according to your needs, you can configure the maximum allowed body size in your `values.yaml` file.
 
 ```yaml
 # For APK, IPA, build artifact uploads from browsers and Appcircle runners
@@ -523,7 +513,12 @@ In the example below, there are enabled git providers list with comma separated:
 ```yaml
 web:
   web-app:
-    selfHostedGitProviders: "bitbucketServer,azureDevopsServer,gitlabSelfHosted,ssh,publicRepository"
+    selfHostedGitProviders: 
+    - "bitbucketServer"
+    - "azureDevopsServer"
+    - "gitlabSelfHosted"
+    - "ssh"
+    - "publicRepository"
 ```
 
 You can delete the providers you do not need by removing them from `selfHostedGitProviders` list above.
@@ -580,8 +575,6 @@ When `userLookupDecisionStrategy` is set to "tolerant", similar to the "affirmat
 
 ### LDAP Brute Force Protection
 
-TODO: Get overview from the [original document](/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore.md).
-
 To configure LDAP brute force protection, you can edit the `values.yaml` file and add the following settings under `auth`:
 
 ```yaml
@@ -598,7 +591,7 @@ auth:
 
 ### Custom Enterprise App Store Domain
 
-TODO: Fill the post jobs after enabling the custom store domain.
+To configure a custom domain for the Enterprise App Store of your organization, you can refer to the [Portal Settings](/docs/enterprise-app-store/portal-settings.md#custom-domain) of the Enterprise App Store.
 
 ### Custom Testing Distribution Domain
 

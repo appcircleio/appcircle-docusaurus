@@ -36,12 +36,12 @@ By default, Appcircle uses eight subdomains. These subdomains are:
 
 Modern technologies and best practices require secure communication to protect data from potential threats and ensure user privacy. Therefore, deploying the Appcircle server with an SSL certificate is essential.
 
-Ensure the **one certificate** covers **the all subdomains** in the [domain name](#domain-name) section.
+Ensure the **one certificate** covers **all the subdomains** in the [domain name](#domain-name) section.
 
 Additionally, configure the Appcircle server with a **fullchain certificate**, which should include the leaf (or app) certificate, intermediate certificates, and the root certificate, establishing a complete and trusted certificate chain.
 
 :::tip
-You can use a **wildcard certificate** to cover the all subdomains, simplifying the certificate management process. For example, a wildcard certificate for **`*.appcircle.spacetech.com`** will be enough.
+You can use a **wildcard certificate** to cover all the subdomains, simplifying the certificate management process. For example, a wildcard certificate for **`*.appcircle.spacetech.com`** will be enough.
 :::
 
 :::caution
@@ -118,7 +118,7 @@ Enabling the SSL passthrough option **does not** automatically allow all SSL tra
 
 ## Create a Configuration File
 
-To configure Helm, you can create a `values.yaml` file by specifying your desired settings, which are commonly used across all deployments.
+To configure Helm, you can create a `values.yaml` file by specifying your desired settings, which are commonly used by most users.
 
 In the example values below, we used `spacetech` as an **example organization name**. You should **replace it** with your actual organization name or any other value you prefer.
 
@@ -150,7 +150,7 @@ global:
   # SMTP server configuration for sending emails (auth, notifications, Testing Distribution)
   mail:
     smtp:
-      domain: smtp.spacetech.com
+      # SMTP server host
       host: smtp.spacetech.com
       # Port 587 typically used for StartTLS
       port: 587
@@ -166,8 +166,7 @@ global:
       # You can create a secret with the password or directly enter the password here.
       password: superSecretSmtpPassword
 
-  # If the K8s cluster access the images from a private container image registry, you can configure it here.
-  # For example, if the url of an image is 'europe-west1-docker.pkg.dev/appcircle/docker-registry/nginx', you can set it as follows:
+  # If the K8s cluster access the container images from a private container image registry, you can configure it here.
   # Container Image Registry host for container images
   imageRegistry: europe-west1-docker.pkg.dev
   # Container Image Repository path between registry host and image name
@@ -250,7 +249,7 @@ webeventredis:
 
 By default, Appcircle uses its own image registry that you should authenticate with the `cred.json` file you got from Appcircle.
 
-You can create this secret on the `appcircle` namespace for Appcircle image registry by executing the following command:
+You can create this secret on the `appcircle` namespace for the Appcircle image registry by executing the following command:
 
 :::tip
 If you are using your own container registry, make sure to update the `server`, `username`, and `password` variables accordingly.
@@ -319,19 +318,13 @@ helm upgrade --install appcircle-server appcircle/appcircle-server \
 
 The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take up to **10 to 15 minutes**.
 
-You can use **`watch`** command on a second terminal on **Linux/MacOS** terminals to watch the pod creation process by running:
-
-```bash
-watch kubectl get pods -n appcircle
-```
-
-If you want to make sure that all containers are **ready to use**, you can the **`kubectl wait`** command on another terminal window.
+If you want to make sure that all containers are **ready to use**, you can use the **`kubectl wait`** command in another terminal window.
 
 ```bash
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle-server -n appcircle --timeout 1200s && echo "Appcircle is ready to use. Happy building! "
 ```
 
-When all the pods are **ready**, the command will return with success and you will see **"Appcircle is ready to use. Happy building!"** message. Now, you are ready to connect to the Appcircle UI and start to build, test and publish!
+When all the pods are **ready**, the command will return with success, and you will see **"Appcircle is ready to use. Happy building!"** message. Now, you are ready to connect to the Appcircle UI and start to build, test and, publish!
 
 ## Post-installation Steps
 
@@ -346,21 +339,21 @@ kubectl get ingresses -n appcircle
 ```
 
 ```bash
-NAME                               CLASS   HOSTS                                                          ADDRESS                                     PORTS   AGE
-appcircle-apigateway               nginx   api.appcircle.spacetech.com,auth.appcircle.spacetech.com       192.168.1.245,192.168.1.246,192.168.1.247   80      24m
-appcircle-distribution-testerweb   nginx   dist.appcircle.spacetech.com                                   192.168.1.245,192.168.1.246,192.168.1.247   80      24m
-appcircle-resource                 nginx   resource.appcircle.spacetech.com                               192.168.1.245,192.168.1.246,192.168.1.247   80      24m
-appcircle-store-web                nginx   *.store.appcircle.spacetech.com                                192.168.1.245,192.168.1.246,192.168.1.247   80      24m
-appcircle-web-app                  nginx   my.appcircle.spacetech.com                                     192.168.1.245,192.168.1.246,192.168.1.247   80      24m
-appcircle-web-event                nginx   hook.appcircle.spacetech.com                                   192.168.1.245,192.168.1.246,192.168.1.247   80      24m
-appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  192.168.1.245,192.168.1.246,192.168.1.247   80      24m
+NAME                               CLASS   HOSTS                                                          ADDRESS        PORTS   AGE
+appcircle-apigateway               nginx   api.appcircle.spacetech.com,auth.appcircle.spacetech.com       10.45.140.78   80      24m
+appcircle-distribution-testerweb   nginx   dist.appcircle.spacetech.com                                   10.45.140.78   80      24m
+appcircle-resource                 nginx   resource.appcircle.spacetech.com                               10.45.140.78   80      24m
+appcircle-store-web                nginx   *.store.appcircle.spacetech.com                                10.45.140.78   80      24m
+appcircle-web-app                  nginx   my.appcircle.spacetech.com                                     10.45.140.78   80      24m
+appcircle-web-event                nginx   hook.appcircle.spacetech.com                                   10.45.140.78   80      24m
+appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  10.45.140.78   80      24m
 ```
 
-You should configure your DNS records according to your DNS provider. For a best practice, create a **`A`** record for the **`my.appcircle.spacetech.com`** and create **`CNAME`** records for other domains.
+You should configure your DNS records according to your DNS provider. For a best practice, create an **`A`** record for **`my.appcircle.spacetech.com`** and create **`CNAME`** records for other domains.
 
 ### Sign in to Appcircle
 
-You can use the URL printed after the `helm` deployment command to access Appcircle dashboard.
+You can use the URL printed after the `helm` deployment command to access the Appcircle dashboard.
 
 ```bash
 You can access the application dashboard at: ↴
@@ -370,7 +363,7 @@ https://my.appcircle.spacetech.com
 
 After you see the login page of the Appcircle, you can now use the **initial username** and **password** to login to the Appcircle dashboard. 
 
-You can view the initial username and password by checking the `values.yaml` or by checking the relevant secret with `kubectl`:
+You can view the initial username printed after the `helm` deployment and view the initial password by running the `kubectl` secret command printed after the `helm` deployment:
 
 ```bash
 kubectl get secret appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
@@ -378,9 +371,9 @@ kubectl get secret appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.i
 
 ### License Configuration
 
-When you deploy the Appcircle server using Helm, a default license is provided. 
+When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
 
-To obtain the license you purchased, please share the initial organization ID which is printed after the `helm` deployment command with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#appcircle-license) section.
+To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#appcircle-license) section.
 
 ## Uninstall the Appcircle Server
 
@@ -392,9 +385,9 @@ If you haven't changed the release name and namespace name while following the [
 helm uninstall -n appcircle appcircle-server
 ```
 
-Helm uninstall doesn't delete the Appcircle server data stored in the Persistent Volumes. If you want to delete all the data of the Appcircle server, you can simple delete the namespace.
+Helm uninstall doesn't delete the Appcircle server data stored in the persistent volumes. If you want to delete all the data of the Appcircle server, you can simply delete the namespace.
 
-If you haven't changed the namespace name while following the [Deploy Using Helm](#deploy-using-helm) section, you can run the command below to delete the all data of the Appcircle server.
+If you haven't changed the namespace name while following the [Deploy Using Helm](#deploy-using-helm) section, you can run the command below to delete all data of the Appcircle server.
 
 ```bash
 kubectl delete namespace appcircle
