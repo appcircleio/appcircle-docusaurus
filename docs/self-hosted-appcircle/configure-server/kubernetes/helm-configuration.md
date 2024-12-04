@@ -591,7 +591,7 @@ auth:
 
 ### Custom Enterprise App Store Domain
 
-To configure a custom domain for the Enterprise App Store of your organization, you can refer to the [Portal Settings](/docs/enterprise-app-store/portal-settings.md#custom-domain) of the Enterprise App Store.
+To configure a custom domain for the Enterprise App Store of your organization, you can refer to the [Portal Settings](/docs/enterprise-app-store/portal-settings.md#custom-domain) of the Enterprise App Store documentation.
 
 ### Custom Testing Distribution Domain
 
