@@ -278,17 +278,17 @@ kubectl create secret docker-registry containerregistry \
   --docker-password="$(cat registry-password)"
 ```
 
-### Secure Sensitive Data With Kubernetes Secrets
+### Secure Sensitive Data With Kubernetes Secrets (Optional)
 
-To remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#secrets-for-sensitive-values)
+To optionally remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#secrets-for-sensitive-values)
 
-### Production Readiness
+### Production Readiness (Optional)
 
-To ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault and MinIO connection strings.
+To optionally ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault, and MinIO connection settings.
 
-### Appcircle Server Helm Chart Configurations
+### Appcircle Server Helm Chart Configurations (Optional)
 
-Refer to the [Configuration Section](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#update-the-configuration-file) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
+Optionally, refer to the [Configuration Section](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#update-the-configuration-file) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
 
 ## Deploy Using Helm
 
