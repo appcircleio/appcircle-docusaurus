@@ -361,7 +361,7 @@ You can access the application dashboard at: ↴
 https://my.appcircle.spacetech.com
 ```
 
-After you see the login page of the Appcircle, you can now use the **initial username** and **password** to login to the Appcircle dashboard. 
+After you see the login page of the Appcircle, you can now use the **initial username** and **password** to login to the Appcircle dashboard.
 
 You can view the initial username printed after the `helm` deployment and view the initial password by running the `kubectl` secret command printed after the `helm` deployment:
 

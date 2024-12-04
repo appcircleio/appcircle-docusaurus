@@ -513,12 +513,12 @@ In the example below, there are enabled git providers list with comma separated:
 ```yaml
 web:
   web-app:
-    selfHostedGitProviders: 
-    - "bitbucketServer"
-    - "azureDevopsServer"
-    - "gitlabSelfHosted"
-    - "ssh"
-    - "publicRepository"
+    selfHostedGitProviders:
+      - "bitbucketServer"
+      - "azureDevopsServer"
+      - "gitlabSelfHosted"
+      - "ssh"
+      - "publicRepository"
 ```
 
 You can delete the providers you do not need by removing them from `selfHostedGitProviders` list above.
