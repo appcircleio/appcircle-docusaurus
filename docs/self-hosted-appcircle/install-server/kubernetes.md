@@ -294,12 +294,10 @@ Refer to the [Configuration Section](/self-hosted-appcircle/configure-server/kub
 
 Once you have gathered all the necessary configuration options, you can proceed with getting the Helm repository of the Appcircle and deploying the Appcircle server. In this example, we deploy the Appcircle server to a single namespace, using **`appcircle`** as the **namespace** and **`appcircle-server`** as the Helm **release name**.
 
-TODO: The repository is not working for now. You should package the helm repository manually, or get it from Appcircle team. The `helm upgrade --install` commands works with the helm package from a local file.
-
 - Add the Appcircle Helm repository.
 
 ```bash
-helm repo add appcircle https://charts.appcircle.io/ && \
+helm repo add appcircle https://helm-package.appcircle.io && \
 helm repo update
 ```
 
@@ -310,7 +308,7 @@ Please note that the **release name should be 18 characters or fewer**.
 :::
 
 ```bash
-helm upgrade --install appcircle-server appcircle/appcircle-server \
+helm upgrade --install appcircle-server appcircle/appcircle \
   --timeout 1200s \
   -n appcircle --create-namespace \
   -f values.yaml
