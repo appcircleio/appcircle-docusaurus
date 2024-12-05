@@ -386,8 +386,6 @@ vault:
 
 ## Advanced Configuration
 
-Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some configurations in this file that you may want to add manually.
-
 If there are any settings you want to configure, open the `values.yaml` with your favorite editor and follow the sections below.
 
 ### Persistent Volume Configuration
