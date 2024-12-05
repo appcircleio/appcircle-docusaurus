@@ -113,7 +113,9 @@ Enabling the SSL passthrough depends on the Ingress controller that is used in t
 Enabling the SSL passthrough option **does not** automatically allow all SSL traffic **from all Ingress objects** to pass through to the original service. Instead, it enables Ingress resources to leverage the SSL passthrough feature, allowing encrypted traffic to reach the backend service without being decrypted by the Ingress controller.
 :::
 
-## Create a Configuration File
+## Pre-Installation Steps
+
+### Create a Configuration File
 
 To configure Helm, you can create a `values.yaml` file by specifying your desired settings, which are commonly used by most users.
 
@@ -123,7 +125,7 @@ In the example values below, we used `spacetech` as an **example organization na
 Please **review the comments for the `values.yaml`** below. If the values provided are incompatible, the installation may not complete successfully. Ensure that all configurations are correctly entered to avoid potential issues during the setup process.
 :::
 
-### Example `values.yaml` File
+#### Example `values.yaml` File
 
 Below is an example of a `values.yaml` file that you can use to configure the Appcircle Helm chart for your Kubernetes cluster. This configuration includes settings such as domain name, SSL/TLS configurations, and email settings.
 
@@ -239,8 +241,6 @@ webeventredis:
     enabled: true
     tls: true
 ```
-
-## Pre-Installation Steps
 
 ### Create Container Registry Secret
 
