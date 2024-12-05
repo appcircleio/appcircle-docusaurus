@@ -101,7 +101,7 @@ Appcircle server supports Nginx Ingress controller by default. To install Nginx 
 
 #### Enable SSL Passthrough
 
-The Ingress object named `kvs` for the Appcircle server requires SSL passthrough to allow Appcircle runners to securely connect to the `kvs` service running within the Kubernetes cluster.
+The Ingress object named `kvs` for the Appcircle server, registered as part of [Appcircle domains](#domain-name), requires SSL passthrough to allow Appcircle runners to securely connect to the `kvs` service running within the Kubernetes cluster.
 
 Enabling the SSL passthrough depends on the Ingress controller that is used in the Kubernetes cluster. For example:
 
