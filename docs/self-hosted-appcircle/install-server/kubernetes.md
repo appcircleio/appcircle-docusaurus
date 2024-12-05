@@ -5,8 +5,6 @@ tags: [self-hosted, helm, installation, configuration, kubernetes]
 sidebar_position: 6
 ---
 
-import HelmYamlGenerator from '@site/src/components/HelmYamlGenerator';
-
 ## Overview
 
 To deploy the Appcircle server on a Kubernetes cluster, use the Appcircle Helm chart. This chart includes all the necessary components for the initial setup and can scale to support larger deployments.
