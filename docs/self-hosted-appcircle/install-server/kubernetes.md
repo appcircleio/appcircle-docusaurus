@@ -170,8 +170,6 @@ global:
   imageRegistry: europe-west1-docker.pkg.dev
   # Container Image Repository path between registry host and image name
   imageRepositoryPath: appcircle/docker-registry
-  # Version tag for Appcircle server
-  imageTag: alpha-latest
 
   # Kubernetes Ingress controller class
   ingressClassName: "nginx"
