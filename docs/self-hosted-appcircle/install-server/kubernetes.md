@@ -412,7 +412,7 @@ If you created the SSL/TLS certificate with LetsEncrypt, you should know that th
 To fix the problem, you can edit the `values.yaml` file and upgrade the Helm chart.
 
 ```bash
-helm upgrade appcircle-server appcircle/appcircle-server \
+helm upgrade appcircle-server appcircle/appcircle \
   --timeout 1200s \
   -n appcircle \
   -f values.yaml

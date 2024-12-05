@@ -691,7 +691,7 @@ kubectl create secret generic appcircle-server-auth-license \
 If your organization’s Appcircle server license has been updated and you need to apply the new license, you can upgrade the Appcircle server deployment using Helm:
 
 ```bash
-helm upgrade appcircle-server appcircle/appcircle-server \
+helm upgrade appcircle-server appcircle/appcircle \
   -n appcircle  \
   -f values.yaml
 ```
