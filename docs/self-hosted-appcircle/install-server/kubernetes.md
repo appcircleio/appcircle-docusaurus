@@ -434,3 +434,15 @@ kubectl delete pods appcircle-server-webeventredis-replicas-1 -n appcircle
 ```
 
 :::
+
+### What should we do if the deployment hasn't been completed and timed out?
+
+If the deployment hasn't completed and timed out after `1200` seconds:
+
+- **Low Network Bandwidth or Insufficient Processing Power:** If the timeout occurred due to low network bandwidth or insufficient processing power, you can re-run the Helm deployment command as it is idempotent.
+
+- **Configuration Issues:** If the timeout was caused by a configuration problem, you will need to troubleshoot the issue. Review your configuration settings and logs to identify and resolve any errors before attempting the deployment again.
+
+:::tip
+If you face a timeout due to configuration problems, it is better to re-install Appcircle freshly. Refer to the [Uninstalling Appcircle](#uninstall-the-appcircle-server) section for detailed instructions on how to uninstall and clean up the existing deployment before starting anew.
+:::
