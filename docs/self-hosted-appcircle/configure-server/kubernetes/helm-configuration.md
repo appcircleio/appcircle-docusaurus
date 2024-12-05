@@ -45,7 +45,7 @@ Create a secret with the name `${releaseName}-smtp` containing the `password` ke
 
 ```bash
 kubectl create secret generic appcircle-server-smtp \
-  --from-file=password=/Users/berk/appcircle/helm-values/local-k8s/smtp-password
+  --from-literal=password="superSecretSMTPPassword"
 ```
 
 #### SSL certificate
@@ -54,9 +54,9 @@ Create a secret with the name `appcircle-tls-wildcard` containing the `tls.crt`,
 
 ```bash
 kubectl create secret generic appcircle-tls-wildcard \
-  --from-file=tls.crt='/Users/berk/appcircle/helm-values/local-k8s/fullchain.crt' \
-  --from-file=tls.key='/Users/berk/appcircle/helm-values/local-k8s/k8s-deployment.key' \
-  --from-file=ca.crt='/Users/berk/appcircle/helm-values/local-k8s/ca.crt' \
+  --from-file=tls.crt='fullchain.crt' \
+  --from-file=tls.key='private.key' \
+  --from-file=ca.crt='root.crt' \
   --type=kubernetes.io/tls
 ```
 
