@@ -1,7 +1,7 @@
 ---
 title: Danger
 description: Streamline your code review process with Danger. Automate checks and enforce code standards pre-merge to maintain high-quality software.
-tags: [code review, quality assurance, automaiton, development tools, appcircle, mobile ci/cd]
+tags: [danger, code review, quality assurance, automaiton, development tools, appcircle, mobile ci/cd]
 ---
 
 
@@ -19,17 +19,17 @@ https://appcircle.io/blog/danger-in-ci-automate-your-mobile-code-reviews
 
 :::danger
 
-This tool does not support AzureDevOps. Therefore, if your repository is hosted on AzureDevOps, this tool will not function. Please use the [**Azure Bot for Swiftlint**](/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint)(for iOS) and [**Azure Bot for Detekt Report**](/workflows/android-specific-workflow-steps/azure-bot-for-detekt-report)(for Android)  components instead.
+This tool does not support AzureDevOps. Therefore, if your repository is hosted on AzureDevOps, this tool will not function. Please use the [**Azure Bot for Swiftlint**](/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint)(for iOS) and [**Azure Bot for Detekt Report**](/workflows/android-specific-workflow-steps/azure-bot-for-detekt-report)(for Android) components instead.
 
 :::
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Danger** step vary depending on the platform and are listed below:
+Before running the **Danger** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | The repository needs to be cloned to begin the badge-adding process. After this step, the variable `AC_REPOSITORY_DIR` will be set. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repository needs to be cloned to begin the code review process. After this step, the variable `$AC_REPOSITORY_DIR` will be set. |
 
 :::caution
 
@@ -41,13 +41,13 @@ Note that this component synchronizes with the [**Appcircle Triggers**](/build/b
 
 ### Input Variables
 
-Below is a list of input variables that can be used with this component with a description of each.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3062-dangerInput.png' />
 
-:::danger
+:::danger Sensitive Variables
 
-Avoid hard-coding sensitive information like tokens and API keys directly into the step parameters.
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
 We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
@@ -55,8 +55,8 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 
 | Variable Name                             | Description                                                                                                                                    | Status   |
 |-------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_REPOSITORY_DIR`                      | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
-| `$AC_DANGER_PATH`                         | Specifies path of Dangerfile. This path comes from `AC_REPOSITORY_DIR`. If DangerFile is in main directory of your repository. Do not change.  | Required |
+| `$AC_REPOSITORY_DIR`                      | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_DANGER_PATH`                         | Specifies path of Dangerfile. This path comes from `$AC_REPOSITORY_DIR`. If DangerFile is in main directory of your repository. Do not change.  | Required |
 | `$AC_DANGER_EXTRA_PARAMETERS`             | Extra command line parameters. For Example: enter `--verbose` for verbose mode.                                                                | Optional |
 | `$DANGER_GITHUB_API_TOKEN`                | Github Access Token for the bot user.                                                                                                          | Optional |
 | `$DANGER_GITHUB_HOST`                     | The host that GitHub is running on. For example: `git.corp.com`                                                                                | Optional |
@@ -71,6 +71,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$DANGER_BITBUCKETSERVER_PASSWORD`        | Bitbucket password for the bot user.                                                                                                           | Optional |
 | `$DANGER_BITBUCKETSERVER_HOST`            | The host that Bitbucket is running on. For example: `git.corp.com`                                                                             | Optional |
 
+---
 
 To access the source code of this component, please use the following link:
 

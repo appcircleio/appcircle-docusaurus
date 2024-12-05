@@ -18,18 +18,20 @@ https://appcircle.io/blog/streamline-project-integration-and-test-automation-wit
 
 ### Prerequisites
 
-Before executing the **Repeato Test Runner** workflow step, certain prerequisite workflow steps must be completed:
+Before running the **Repeato Test Runner** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                   | Description                                                                                                                                                                                                                  |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | The repository that needs to be built must be fetched from the branch. Upon completion of the **Git Clone** step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
+| [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | The repository that needs to be built must be fetched from the branch. Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-repeato_1.png'/>
 
 :::danger
+
 If you wish to view the test results on Appcircle's Test Reports page, it is essential to use the [Test Reports](https://github.com/appcircleio/appcircle-test-report-component) step after the **Repeato Test Runner**. Please check out this document for more information: [Generating Test Report](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_2.png'/>
+
 :::
 
 ### Input Variables
@@ -38,9 +40,11 @@ Specific input variables are required for the **Repeato Test Runner** to functio
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-repeato_2.png'/>
 
-:::danger
+:::danger Sensitive Variables
 
-Confidential information must be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Additionally, ensure that the appropriate [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
 :::
 
@@ -54,13 +58,13 @@ Confidential information must be entered as a [secret environment variable](/env
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name              | Description                                              |
 | -------------------------- | -------------------------------------------------------- |
-| `$AC_REPEATO_REPORT`       | Report of Repeato batches that have been executed.       |
-| `$AC_REPEATO_JUNIT_REPORT` | Report of Repeato executed tests in JUnit XML format.    |
-| `$AC_TEST_RESULT_PATH`     | The directory where your JUnit XML report will be saved. |
+| `AC_REPEATO_REPORT`       | Report of Repeato batches that have been executed.       |
+| `AC_REPEATO_JUNIT_REPORT` | Report of Repeato executed tests in JUnit XML format.    |
+| `AC_TEST_RESULT_PATH`     | The directory where your JUnit XML report will be saved. |
 
 ---
 

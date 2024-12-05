@@ -1,7 +1,7 @@
 ---
 title: Fortify on Demand Mobile Assessment
 description: Optimize mobile app security with Fortify on Demand Mobile Assessment. Comprehensive testing for robust, secure mobile applications.
-tags: [mobile, mobile ci/cd, security, integration, ios, android]
+tags: [fortify, demand, mobile ci/cd, security, integration, ios, android]
 ---
 
 
@@ -54,13 +54,13 @@ Before running the **Fortify on Demand Mobile Assessment** step, you must comple
 
 ### Input Variables
 
-Below is a list of input variables that can be used with this component, along with a description of each.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3152-fodInput.png' />
 
-:::danger
+:::danger Sensitive Variables
 
-Avoid hard-coding sensitive information, like tokens and API keys, directly into the step parameters.
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
 We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
@@ -78,6 +78,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$AC_FOD_PLATFORM_TYPE`       | Platform type for this mobile assessment.                                                                 | Required |
 | `$AC_FOD_FILE_PATH`           | Full path of the `IPA` or `APK` file.                                                                     | Required |
 
+---
 
 To access the source code of this component, please use the following link:
 

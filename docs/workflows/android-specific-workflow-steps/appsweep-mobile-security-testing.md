@@ -1,7 +1,7 @@
 ---
 title: AppSweep Mobile Security Testing
 description: Learn how to use the AppSweep Mobile Security Testing workflow step in Appcircle
-tags: [android, mobile, android, security, testing, app sweep]
+tags: [android, mobile, security, testing, appsweep]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -14,39 +14,41 @@ The Appcircle **AppSweep Mobile Security Testing** step allows you to comprehens
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **AppSweep Mobile Security Testing** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **AppSweep Mobile Security Testing** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                               |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The **AppSweep Mobile Security Testing** step requires the repository to be cloned from the Git provider before it can function properly. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The **AppSweep Mobile Security Testing** step requires the repository to be cloned from the Git provider before it can function properly. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appsweep-mobile-security-testing_1.png'/>
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for **AppSweep Mobile Security Testing** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appsweep-mobile-security-testing_2.png'/>
 
-:::danger
-**Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
+:::danger Sensitive Variables
 
-We recommend using [Environment Variables](https://docs.appcircle.io/environment-variables/) groups for such sensitive variables.
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+
 :::
 
 | Variable Name          | Description                                                                                                                                                                                                                                                                                                                                                                                | Status   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
 | `$AC_APPSWEEP_API_KEY` | Specifies the API key of the AppSweep account. You can create an API key in the API Keys section of your project settings on the AppSweep website.                                                                                                                                                                                                                                         | Required |
-| `$AC_APPSWEEP_VARIANT` | Specifies the project variant to be built. This variable can also be set via the build [Configuration](https://docs.appcircle.io/build/build-process-management/build-profile-configuration/). In Android Studio, you can find the available variants for your project. For more information, please refer to this [Android document](https://developer.android.com/build/build-variants). | Required |
+| `$AC_APPSWEEP_VARIANT` | Specifies the project variant to be built. This variable can also be set via the build [Configuration](/build/build-process-management/build-profile-configuration). In Android Studio, you can find the available variants for your project. For more information, please refer to this [Android document](https://developer.android.com/build/build-variants). | Required |
 | `$AC_PROJECT_PATH`     | Specifies the project path. If your project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path.                                                                                                                                                                                               | Optional |
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name      | Description                                                   |
 | ------------------ | ------------------------------------------------------------- |
-| `$AC_APPSWEEP_URL` | A direct link to the scan results is on the AppSweep website. |
+| `AC_APPSWEEP_URL` | A direct link to the scan results is on the AppSweep website. |
 
 ---
 
