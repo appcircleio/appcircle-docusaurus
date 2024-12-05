@@ -24,7 +24,7 @@ Before running the **Android Unit Tests** step, you must complete certain prereq
 
 :::danger
 
-If you wish to view the test results on Appcircle's Test Reports page, it is essential to use the [Test Reports for Android](/workflows/android-specific-workflow-steps/test-reports-for-android) step after the **Android Unit Tests**. Please check out this document for more information: [Generating Test Report](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
+If you wish to view the test results on Appcircle's Test Reports page, it is essential to use the [Test Reports for Android](/workflows/android-specific-workflow-steps/test-reports-for-android) step after the **Android Unit Tests**. Please check out this document for more information: [Generating Test Report](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_2.png'/>
 
@@ -41,7 +41,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_REPOSITORY_DIR` | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated.                                                                                                                                                                                      | Required |
 | `$AC_MODULE`         | This variable specifies the project module to be built. This variable can also be set via the build [Configuration](/build/build-process-management/build-profile-configuration). In Android Studio, you can locate the available modules for your project. For more information, please refer to this [Android document](https://developer.android.com/studio/projects#ApplicationModules). | Required |
 | `$AC_VARIANTS`       | This variable specifies the project variant to be built. This variable can also be set via the build [Configuration](/build/build-process-management/build-profile-configuration). In Android Studio, you can find the available variants for your project. For more information, please refer to this [Android document](https://developer.android.com/build/build-variants).               | Required |
-| `$AC_PROJECT_PATH`   | Specifies the project path. If your project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path. The default value is: `./`                                                                                                                                                                                                | Optional |
+| `$AC_PROJECT_PATH`   | Specifies the project path. If your project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path. The default value is: `./`.                                                                                                                                                                                               | Optional |
 
 ### Output Variables
 

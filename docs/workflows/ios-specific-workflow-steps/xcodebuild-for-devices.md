@@ -44,7 +44,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_REPOSITORY_DIR`                          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step.                                                                                  | Required |
 | `$AC_OUTPUT_DIR_PATH`                         | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                    | Required |
 | `$AC_SCHEME`                                  | Specifies the project scheme for build. If you filled in **`Configuration => Build Scheme`**, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration).                                   | Required |
-| `$AC_ARCHIVE_FLAGS`                           | Specifies the extra xcodebuild flag. For example: `-quiet`                                                                                                                                                                                                 |          |
+| `$AC_ARCHIVE_FLAGS`                           | Specifies the extra xcodebuild flag. For example: `-quiet`.                                                                                                                                                                                                 | Optional |
 | `$AC_PROJECT_PATH`                            | Specifies the project path. For example: `./appcircle.xcodeproj`. If you filled in **`Configuration => Project or Workspace`**, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_CERTIFICATES`                            | This variable specifies the path of the certificates to be signed.                                                                                                                                                                                       | Required |
 | `$AC_BUNDLE_IDENTIFIERS`                      | This variable holds the Bundle Identifier of the application to be built.                                                                                                                                                                                | Required |
@@ -93,7 +93,7 @@ To address the need to add a new command after completing the `xcodebuild` comma
 
 :::caution
 
-Before running the script, some variables must be changed, and new variables must be added to the **custom script**.
+Before running the script, some variables must be changed, and new variables must be added to the **Custom Script**.
 
 :::
 

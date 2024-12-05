@@ -1,7 +1,7 @@
 ---
 title: AppSweep Mobile Security Testing
 description: Learn how to use the AppSweep Mobile Security Testing workflow step in Appcircle
-tags: [android, mobile, android, security, testing, appsweep]
+tags: [android, mobile, security, testing, appsweep]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

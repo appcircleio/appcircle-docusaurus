@@ -68,7 +68,7 @@ To view the output artifacts on the [**Download Artifacts**](/workflows/common-w
 
 | Variable Name                          | Description                                                                                                   | Status   |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------- | -------- |
-| `AC_APPDOME_SECURED_IPA_PATH`         | Local path of the secured `.ipa` file. Available when 'Signing Method' set to `On-Appdome` or `Private-Signing` | Required |
+| `AC_APPDOME_SECURED_IPA_PATH`         | Local path of the secured `.ipa` file. Available when 'Signing Method' set to `On-Appdome` or `Private-Signing`. | Required |
 | `AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH` | TLocal path of the `.sh` sign script file. Available when `Signing Method` set to `Auto-Dev-Signing`.            | Required |
 | `AC_APPDOME_CERTIFICATE_PATH`         | Local path of the Certified Secure Certificate `.pdf` file.                                                   | Required |
 

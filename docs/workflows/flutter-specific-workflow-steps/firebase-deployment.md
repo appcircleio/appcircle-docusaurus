@@ -1,7 +1,7 @@
 ---
 title: Firebase Deployment
 description: Firebase deployment is quick, and secure app launches. Get started with our concise guide to deploying on Firebase efficiently.
-tags: [firebase, mobile, web, distribution]
+tags: [firebase, web, distribution, deployment, web applications]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
