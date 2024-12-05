@@ -35,6 +35,8 @@ Modern technologies and best practices require secure communication to protect d
 
 Ensure the **one certificate** covers **all the subdomains** in the [domain name](#domain-name) section.
 
+Currently, the self-hosted Appcircle does not support the use of password-protected private keys for SSL certificates. The SSL certificate should be in PEM format.
+
 Additionally, configure the Appcircle server with a **fullchain certificate**, which should include the leaf (or app) certificate, intermediate certificates, and the root certificate, establishing a complete and trusted certificate chain.
 
 :::tip
