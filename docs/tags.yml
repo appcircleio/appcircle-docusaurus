@@ -2732,3 +2732,13 @@ xml:
   label: "file-based variables"
   description: "Description for file-based variables"
   permalink: /file-based-variables
+
+"helm":
+  label: "helm"
+  description: "Helm related documentations"
+  permalink: "/helm"
+
+"kubernetes":
+  label: "kubernetes"
+  description: "Kubernetes related documentations"
+  permalink: "/kubernetes"
