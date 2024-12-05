@@ -18,9 +18,9 @@ For now, you shouldn't change the initial user password you defined in the `glob
 
 ### Does Appcircle support LDAP login?
 
-Appcircle supports LDAP login on the Testing Distribution and Enterprise App Store modules.
+Appcircle supports LDAP login on the Testing Distribution and Enterprise App Store modules. For more details about enabling the LDAP, you can head over to the [Enterprise App Store and Testing Distribution LDAP Settings](/account/my-organization/integrations/authentications/ldap-login.md) document.
 
-Appcircle doesn't support LDAP login on the Appcircle dashboard, where you login to create build profiles and other developer-related jobs.
+Appcircle also support LDAP login on the Appcircle dashboard, where you login to create build profiles and other developer-related jobs. For more details about enabling the LDAP, you can head over to the [Appcircle Login with LDAP](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings.md#appcircle-login-with-ldap) document.
 
 ### We can't send mail to outside domains.
 
