@@ -319,7 +319,10 @@ The installation process duration depends on factors such as network speed and t
 If you want to make sure that all containers are **ready to use**, you can use the **`kubectl wait`** command in another terminal window.
 
 ```bash
-kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=appcircle-server -n appcircle --timeout 1200s && echo "Appcircle is ready to use. Happy building! "
+kubectl wait --for=condition=ready pod \
+  -l app.kubernetes.io/instance=appcircle-server \
+  -n appcircle --timeout 1200s && \
+  echo "Appcircle is ready to use. Happy building! "
 ```
 
 When all the pods are **ready**, the command will return with success, and you will see **"Appcircle is ready to use. Happy building!"** message. Now, you are ready to connect to the Appcircle UI and start to build, test and, publish!
