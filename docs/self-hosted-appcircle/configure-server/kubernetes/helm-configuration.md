@@ -593,10 +593,11 @@ auth:
 
 To configure a custom domain for the Enterprise App Store of your organization, you can refer to the [Portal Settings](/docs/enterprise-app-store/portal-settings.md#custom-domain) of the Enterprise App Store documentation.
 
+<!---
 ### Custom Testing Distribution Domain
 
 TODO: Fill the post jobs after enabling the custom store domain.
-
+-->
 ### Increase the Replica Counts
 
 With the default Helm values, the Appcircle server services being deployed with one replica. If you want to increase this number for high availability, you can do so by updating your `values.yaml` file:
