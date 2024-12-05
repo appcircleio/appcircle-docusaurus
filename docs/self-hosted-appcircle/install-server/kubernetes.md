@@ -288,7 +288,7 @@ To optionally ensure your deployment is ready for production, follow the guideli
 
 ### Appcircle Server Helm Chart Configurations (Optional)
 
-Optionally, refer to the [Configuration Section](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#update-the-configuration-file) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
+Optionally, refer to the [Configuration Section](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#advanced-configuration) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
 
 ## Deploy Using Helm
 

@@ -384,7 +384,7 @@ vault:
   enabled: false
 ```
 
-## Update the Configuration File
+## Advanced Configuration
 
 Although the `Generate YAML` button above generates a `yaml` file that you can use when deploying the Appcircle server to Kubernetes, there are some configurations in this file that you may want to add manually.
 
