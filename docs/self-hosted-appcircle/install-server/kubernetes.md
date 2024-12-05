@@ -17,16 +17,15 @@ For a production deployment, a basic understanding of Kubernetes is sufficient. 
 
 A main **domain name**, which will have **subdomains**, is required for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an **example main domain** and `spacetech` as an **example organization name**.
 
-By default, Appcircle uses eight subdomains. These subdomains are:
+By default, Appcircle uses seven subdomains. These subdomains are:
 
 1. api.appcircle.spacetech.com
 2. auth.appcircle.spacetech.com
 3. dist.appcircle.spacetech.com
 4. hook.appcircle.spacetech.com
 5. resource.appcircle.spacetech.com
-6. store.appcircle.spacetech.com
-7. my.appcircle.spacetech.com
-8. redis.appcircle.spacetech.com
+6. my.appcircle.spacetech.com
+7. kvs.appcircle.spacetech.com
 
 **Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the ingress objects defined in Kubernetes. This should be done through your DNS service provider to ensure proper routing and accessibility.
 
