@@ -8,23 +8,28 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Convert Xcresult to HTML/XML
 
-After the [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests) step runs, it generates a `test_result.xcresult` file. In specific cases, this test file must be converted to another format. The **Convert Xcresult to HTML/XML** step is used for converting this test file to `HTML` and `XML` formats.
+After the [**Xcodebuild for Unit and UI Tests**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) step runs, it generates a `test_result.xcresult` file. In specific cases, this test file must be converted to another format. The **Convert Xcresult to HTML/XML** step is used for converting this test file to `HTML` and `XML` formats.
 
 
 ### Prerequisites
+
+Before running the **Convert Xcresult to HTML/XML** step, you must complete certain prerequisites, as detailed in the table below:
+
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Unit and UI Tests**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests) | This step allows you to run unit and UI tests on your project. After this step runs, the related path, `AC_TEST_RESULT_PATH` will be generated automatically. |
+| [**Xcodebuild for Unit and UI Tests**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) | This step allows you to run unit and UI tests on your project. After this step runs, the related path, `$AC_TEST_RESULT_PATH` will be generated automatically. |
 
 :::caution
+
 Please note that if you do not run **Xcodebuild for Unit and UI Tests** before this step, the step will produce an error because there will be no test result file to convert.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertOrder.png' />
 
 ### Input Variables
 
-The parameters required for the operation of this stepper are given below with explanations.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertInput.png' />
 
@@ -39,13 +44,19 @@ The parameters required for the operation of this stepper are given below with e
 
 ### Output Variables
 
+The output(s) resulting from the operation of this component are as follows:
+
 | Variable Name                 | Description                         | 
 |-------------------------------|-------------------------------------|
-| `$AC_CONVERTED_TEST_RESULT_PATH`           | Specifies the path where the converted result is stored. Users can access this path via this variable. Additionally, it will be available for download in the [**Download Artifact**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.  |
+| `AC_CONVERTED_TEST_RESULT_PATH`           | Specifies the path where the converted result is stored. Users can access this path via this variable. Additionally, it will be available for download in the [**Download Artifact**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.  |
 
 :::caution
-To view the converted test reports on the [**Download Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+
+To view the converted test reports on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
+
 :::
+
+---
 
 To access the source code of this component, please use the following link:
 

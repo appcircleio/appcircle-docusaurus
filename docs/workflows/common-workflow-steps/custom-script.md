@@ -12,17 +12,31 @@ import Screenshot from '@site/src/components/Screenshot';
 
 You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
 
+### Prerequisites
+
+There are no prerequisites required before using the **Custom Script** step.
+
 :::tip
+
 Note that you can put the **Custom Script** component anywhere you want in the workflow. This step is used to add different capabilities to the existing workflow.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customScript.png' />
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customInput.png' />
+
+:::danger Sensitive Variables
+
+If you need to use sensitive variable in your script, please do not use these sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+
+:::
 
 | Variable Name | Description                                                                                                                                                                                                         | Status   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -30,10 +44,20 @@ You can find all the parameters required for this step in the table below, with 
 | `Script`      | With the **Script** input variable, you can add the script you want to run and run it directly in the selected language. If you leave this input blank, it will proceed to the next step without taking any action. | Optional |
 
 :::caution
+
 Note that the **Script** area works according to the selected language variable. If you want to run a script in any language, make sure that you select the language correctly.
+
 :::
 
-## Custom Script FAQ
+---
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcircle-custom-script-component
+
+---
+
+## FAQ
 
 ### How to change Java version
 
@@ -84,7 +108,7 @@ sed -i '' 's/old-value/new-value/g' build.gradle
 
 For each step in the workflow, you can view the input and output variables in the step configuration.
 
-The repository directory is an output of the Git Clone step and its patch can be accessed with the `AC_REPOSITORY_PATH` environment variable by any step added after the Git Clone step. An example is as follows:
+The repository directory is an output of the Git Clone step and its patch can be accessed with the `$AC_REPOSITORY_PATH` environment variable by any step added after the **Git Clone** step. An example is as follows:
 
 ```bash
 cd $AC_REPOSITORY_DIR
@@ -93,7 +117,7 @@ cat README
 
 ### How to a add a file as a downloadable build artifact?
 
-You can add any file to the output directory that contain the build artifacts using the `AC_OUTPUT_DIR` environment variable. An example is as follows:
+You can add any file to the output directory that contain the build artifacts using the `$AC_OUTPUT_DIR` environment variable. An example is as follows:
 
 ```bash
 cd $AC_REPOSITORY_DIR/app/build/reports/
@@ -105,7 +129,9 @@ mv lint-results* $AC_OUTPUT_DIR/
 This document provides a sample custom script written in Ruby that can be integrated into your CI/CD pipeline to enforce a minimum test coverage threshold. The script is designed to break the pipeline if the covered test result falls below a specified percentage.
 
 :::danger
-Please note that this custom script must be placed after the [**Test Reports**](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report) step in the workflow.
+
+Please note that this custom script must be placed after the [**Test Reports**](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report) step in the workflow.
+
 :::
 
 ```ruby
@@ -155,10 +181,6 @@ Please feel free to edit the following variables according to your own requireme
 - `min_coverage`: The minimum percentage required for the pipeline to continue without breaking.
 
 :::
-
-To access the source code of this component, please use the following link:
-
-https://github.com/appcircleio/appcircle-custom-script-component/
 
 ### How to use environment variables along with the `sudo` command?
 

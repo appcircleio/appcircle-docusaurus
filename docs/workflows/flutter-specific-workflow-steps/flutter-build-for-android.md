@@ -12,17 +12,17 @@ The **Flutter Build for Android** step automates the generation of Android APK (
 
 ### Prerequisites
 
-Before running the **Flutter Build for Android** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+Before running the **Flutter Build for Android** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | This step fetches the repository that needs to be built from the specified branch. It is essential for initiating the Flutter Android build process. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step fetches the repository that needs to be built from the specified branch. It is essential for initiating the Flutter Android build process. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_1.png'/>
 
 ### Input Variables
 
-Each component requires specific input variables for its operation. The input variables necessary for the **Flutter Build for Android** step are:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_2.png'/>
 
@@ -35,7 +35,7 @@ Each component requires specific input variables for its operation. The input va
 
 :::info
 
-If the required variables are already defined in the **Configuration** section, there is no need to redefine them in the Workflow. For more details, see the [Build Profile Configuration Overview](/build/build-process-management/build-profile-configuration). The details you provide in the configuration will serve as input for the Android Build step. Kindly substitute the example information with your details:
+If the required variables are already defined in the **Configuration** section, there is no need to redefine them in the Workflow. For more details, see the [Build Profile Configuration Overview](/build/build-process-management/build-profile-configuration). The details you provide in the configuration will serve as input for the **Android Build** step. Kindly substitute the example information with your details:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_3.png'/>
 
@@ -43,12 +43,12 @@ If the required variables are already defined in the **Configuration** section, 
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Output Variable           | Description                     |
 |---------------------------|---------------------------------|
-| `$AC_APK_PATH`            | Path of the generated APK file. |        
-| `$AC_AAB_PATH`            | Path of the generated AAB file. |
+| `AC_APK_PATH`            | Path of the generated APK file. |        
+| `AC_AAB_PATH`            | Path of the generated AAB file. |
 
 :::info
 
@@ -61,6 +61,8 @@ The resulting files will be either APK or AAB, based on the `Output Type` select
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-android-flutter-build-component
+
+---
 
 ## FAQ
 

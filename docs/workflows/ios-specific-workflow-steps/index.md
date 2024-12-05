@@ -123,8 +123,7 @@ This step installs [SwiftLint](https://github.com/realm/SwiftLint/) and runs swi
 This component provides detailed reports and insights on the results of iOS app tests conducted.
 
 For detailed information on the usage of **Test Reports for iOS**, please refer to the documentation:
-
-[https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report)
+- [Generating Test Report](/continuous-testing/ios-testing/running-ios-unit-and-ui-tests#generating-test-report)
 
 <ContentRef url="/workflows/ios-specific-workflow-steps/test-reports-for-ios">
     Test Reports for iOS
