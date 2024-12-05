@@ -367,7 +367,8 @@ After you see the login page of the Appcircle, you can now use the **initial use
 You can view the initial username printed after the `helm` deployment and view the initial password by running the `kubectl` secret command printed after the `helm` deployment:
 
 ```bash
-kubectl get secret appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
+kubectl get secret appcircle-server-auth-keycloak-passwords \
+  -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
 ```
 
 ### License Configuration
