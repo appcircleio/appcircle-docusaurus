@@ -352,7 +352,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 ```yaml
 global:
   minio:
-    url: "10.33.167.78:9000"
+    url: "http://10.33.167.78:9000"
 minio:
   enabled: false
 ```
