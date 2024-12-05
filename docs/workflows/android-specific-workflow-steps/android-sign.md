@@ -16,6 +16,16 @@ This step follows the [**Android Build**](/workflows/android-specific-workflow-s
 
 :::
 
+:::caution Debug Variant Signing  
+
+As noted in the [Android Developer documentation](https://developer.android.com/build/build-for-release):
+
+> If the build variant you've selected is a debug build type, then the APK is signed with a debug key and it's ready to install. If you've selected a release variant, then, by default, the APK is unsigned and you must manually [sign the APK](https://developer.android.com/studio/publish/app-signing).
+
+When you build your app using the **debug** variant and select a keystore in [configurations](/build/platform-build-guides/building-android-applications#signing), the **Android Sign** step will replace the default debug signing files and re-sign the app using the specified keystore files.
+
+:::
+
 ### Prerequisites
 
 Before running the **Android Sign** step, you must complete certain prerequisites, as detailed in the table below:
