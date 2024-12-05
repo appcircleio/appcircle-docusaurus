@@ -340,14 +340,14 @@ kubectl get ingresses -n appcircle
 ```
 
 ```bash
-NAME                               CLASS   HOSTS                                                          ADDRESS        PORTS   AGE
-appcircle-apigateway               nginx   api.appcircle.spacetech.com,auth.appcircle.spacetech.com       10.45.140.78   80      24m
-appcircle-distribution-testerweb   nginx   dist.appcircle.spacetech.com                                   10.45.140.78   80      24m
-appcircle-resource                 nginx   resource.appcircle.spacetech.com                               10.45.140.78   80      24m
-appcircle-store-web                nginx   *.store.appcircle.spacetech.com                                10.45.140.78   80      24m
-appcircle-web-app                  nginx   my.appcircle.spacetech.com                                     10.45.140.78   80      24m
-appcircle-web-event                nginx   hook.appcircle.spacetech.com                                   10.45.140.78   80      24m
-appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  10.45.140.78   80      24m
+NAME                               CLASS   HOSTS                                                          ADDRESS        PORTS      AGE
+appcircle-apigateway               nginx   api.appcircle.spacetech.com,auth.appcircle.spacetech.com       10.45.140.78   80,443     24m
+appcircle-distribution-testerweb   nginx   dist.appcircle.spacetech.com                                   10.45.140.78   80,443     24m
+appcircle-resource                 nginx   resource.appcircle.spacetech.com                               10.45.140.78   80,443     24m
+appcircle-store-web                nginx   *.store.appcircle.spacetech.com                                10.45.140.78   80,443     24m
+appcircle-web-app                  nginx   my.appcircle.spacetech.com                                     10.45.140.78   80,443     24m
+appcircle-web-event                nginx   hook.appcircle.spacetech.com                                   10.45.140.78   80,443     24m
+appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  10.45.140.78   80,443     24m
 ```
 
 You should configure your DNS records according to your DNS provider. For a best practice, create an **`A`** record for **`my.appcircle.spacetech.com`** and create **`CNAME`** records for other domains.
