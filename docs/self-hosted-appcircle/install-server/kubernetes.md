@@ -55,14 +55,14 @@ To install the Appcircle server using Helm, a Kubernetes cluster is required. Th
 
 **Minimum hardware requirements for enterprise installation:**
 
-- Nodes with x86-64 architecture
+- Nodes with x86_64 architecture
 - 8 CPUs
 - 16 GB RAM
 - 500 GB Disk
 
 **Recommended hardware requirements for enterprise installation:**
 
-- Nodes with x86-64 architecture
+- Nodes with x86_64 architecture
 - 32 CPUs
 - 64 GB RAM
 - 1 TB Disk
