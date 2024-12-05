@@ -27,7 +27,7 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 6. my.appcircle.spacetech.com
 7. kvs.appcircle.spacetech.com
 
-**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the ingress objects defined in Kubernetes. This should be done through your DNS service provider to ensure proper routing and accessibility.
+**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the Ingress objects defined in Kubernetes. This should be done through your DNS service provider to ensure proper routing and accessibility.
 
 ### SSL Certificate
 
@@ -91,26 +91,26 @@ Helm version `3.11.0` or later is required for deployment.
 
 ### Kubernetes Ingress Controller
 
-By default, Appcircle exposes its services through **Ingress objects**. To ensure these Ingress objects function properly, your Kubernetes cluster should have **an Ingress Controller** installed and configured.
+By default, Appcircle exposes its services through **Ingress objects**. To ensure these Ingress objects function properly, your Kubernetes cluster should have **an Ingress controller** installed and configured.
 
-Appcircle server supports Nginx Ingress Controller by default. To install Nginx Ingress Controller to the Kubernetes cluster, please check [the Nginx Ingress Controller documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
+Appcircle server supports Nginx Ingress controller by default. To install Nginx Ingress controller to the Kubernetes cluster, please check [the Nginx Ingress controller documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
 
 :::info
-**Other Ingress Controllers** like HAProxy Ingress Controller are also **supported** by **modifying Helm values** accordingly.
+**Other Ingress controllers** like HAProxy Ingress controller are also **supported** by **modifying Helm values** accordingly.
 :::
 
 #### Enable SSL Passthrough
 
 The Ingress object named `kvs` for the Appcircle server requires SSL passthrough to allow Appcircle runners to securely connect to the `kvs` service running within the Kubernetes cluster.
 
-Enabling the SSL passthrough depends on the ingress controller that is used in the Kubernetes cluster. For example:
+Enabling the SSL passthrough depends on the Ingress controller that is used in the Kubernetes cluster. For example:
 
-- For Nginx Ingress Controller, you can check [the Nginx documentation](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough).
+- For Nginx Ingress controller, you can check [the Nginx documentation](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough).
 
-- For HAProxy Ingress Controller, you can check [the HAProxy documentation](https://www.haproxy.com/documentation/kubernetes-ingress/community/configuration-reference/ingress/#ssl-passthrough).
+- For HAProxy Ingress controller, you can check [the HAProxy documentation](https://www.haproxy.com/documentation/kubernetes-ingress/community/configuration-reference/ingress/#ssl-passthrough).
 
 :::info
-Enabling the SSL passthrough option **does not** automatically allow all SSL traffic **from all ingress objects** to pass through to the original service. Instead, it enables Ingress resources to leverage the SSL passthrough feature, allowing encrypted traffic to reach the backend service without being decrypted by the Ingress Controller.
+Enabling the SSL passthrough option **does not** automatically allow all SSL traffic **from all Ingress objects** to pass through to the original service. Instead, it enables Ingress resources to leverage the SSL passthrough feature, allowing encrypted traffic to reach the backend service without being decrypted by the Ingress controller.
 :::
 
 ## Create a Configuration File
@@ -171,7 +171,7 @@ global:
   # Version tag for Appcircle server
   imageTag: alpha-latest
 
-  # Kubernetes ingress controller class
+  # Kubernetes Ingress controller class
   ingressClassName: "nginx"
 
   # SSL/TLS certificate configuration for HTTPS
@@ -330,7 +330,7 @@ When all the pods are **ready**, the command will return with success, and you w
 
 After the Appcircle server installation is finished, you can get the IP addresses of the Appcircle domains and configure the DNS.
 
-You can list the ingresses with `kubectl` to check the IP address of the Appcircle services domains.
+You can list the Ingresses with `kubectl` to check the IP address of the Appcircle services domains.
 
 ```bash
 kubectl get ingresses -n appcircle
