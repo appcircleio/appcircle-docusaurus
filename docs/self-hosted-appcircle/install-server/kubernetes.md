@@ -146,7 +146,7 @@ global:
     # Protocol to be used for connections
     scheme: https
 
-  # SMTP server configuration for sending emails (auth, notifications, Testing Distribution)
+  # SMTP server configuration for sending emails (Authentication, Notifications, Testing Distribution)
   mail:
     smtp:
       # SMTP server host
