@@ -303,8 +303,8 @@ helm repo update
 
 - Use the [configured](#create-a-configuration-file) `values.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
 
-:::caution
-Please note that the **release name should be 18 characters or fewer**.
+:::info
+If you need or want to change the release name, please note that it should be 18 characters or fewer.
 :::
 
 ```bash
