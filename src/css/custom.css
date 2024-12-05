@@ -1047,12 +1047,6 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
   display: none !important;
 }
 
-.input-field-long {
-  width: 100%; /* Make the input field take up 100% of its container's width */
-  max-width: 300px; /* Optional: Set a maximum width */
-  padding: 5px; /* Optional: Add some padding for better appearance */
-}
-
 /* Customized Image and screenshots */
 
 img {
