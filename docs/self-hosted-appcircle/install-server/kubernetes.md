@@ -127,7 +127,7 @@ Enabling the SSL passthrough option **does not** automatically allow all SSL tra
 
 ## Pre-Installation Steps
 
-### Create a Configuration File
+### Create Configuration File
 
 To configure Helm, you can create a `values.yaml` file by specifying your desired settings, which are commonly used by most users.
 
@@ -409,6 +409,58 @@ kubectl get secret appcircle-server-auth-keycloak-passwords \
 When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
 
 To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/configure-server/kubernetes-configuration.md#appcircle-license) section.
+
+## Updating Appcircle Server
+
+To update the Appcircle server deployment, follow the steps below:
+
+### Check the Current Version
+
+To check the current version of the Appcircle server, you can use the following `helm list` command:
+
+```bash
+helm list -n appcircle
+```
+
+This will show the currently deployed version of the Appcircle server in the `appcircle` namespace.
+
+```bash
+NAME            	NAMESPACE	REVISION	UPDATED                             	STATUS  	CHART          	APP VERSION
+appcircle-server	appcircle	1       	2024-12-06 11:00:23.509105 +0300 +03	deployed	appcircle-0.1.0	3.21.0
+```
+
+In the example output, we see that Helm chart version `0.1.0` and Appcircle server version `3.21.0` are installed.
+
+To list the available versions of the Appcircle chart, use the following command:
+
+```bash
+helm search repo appcircle --versions | head -n 10
+```
+
+This will display the top 10 available versions of the Appcircle Helm chart that you can upgrade to.
+
+### Upgrade Appcircle Server
+
+To upgrade the Appcircle server, use the following `helm upgrade` command. This will apply the new configuration and update the Appcircle server to the latest version.
+
+```bash
+helm upgrade appcircle-server appcircle/appcircle \
+  --timeout 1200s \
+  -n appcircle \
+  -f values.yaml
+```
+
+:::tip
+You can specify a particular version of the Appcircle Helm chart by adding the `--version` flag. For example, to upgrade to version `0.2.0`, use the following command:
+
+```bash
+helm upgrade appcircle-server appcircle/appcircle \
+  --timeout 1200s \
+  -n appcircle \
+  -f values.yaml \
+  --version 0.2.0
+```
+:::
 
 ## Uninstall the Appcircle Server
 
