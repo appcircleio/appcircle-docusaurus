@@ -441,7 +441,7 @@ This will display the top 10 available versions of the Appcircle Helm chart that
 
 ### Upgrade Appcircle Server
 
-To upgrade the Appcircle server, use the following `helm upgrade` command. This will apply the new configuration and update the Appcircle server to the latest version.
+To upgrade the Appcircle server to the latest version and apply any configuration changes, use the following `helm upgrade` command.
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle \
