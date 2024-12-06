@@ -1,7 +1,7 @@
 ---
 title: AWS Device Farm and Deploy
 description: AWS Device Farm is an application testing service that enables you to run your tests concurrently on multiple mobile devices to speed up the execution of your tests and generates videos and logs to help you quickly identify issues with your app.
-tags: [android, ios, mobile, testing, aws, device, farm]
+tags: [android, ios, mobile, testing, aws, device]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -1,7 +1,7 @@
 ---
 title: Audit Permission Changes
 description: Track and audit permission changes effectively. Ensure security and compliance with our guide on monitoring access rights alterations.
-tags: [audit, permission, changes, workflow, step]
+tags: [audit, permissions, workflow, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

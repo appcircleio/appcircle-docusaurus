@@ -1,7 +1,7 @@
 ---
 title: Xcode Select
 description: Specify Xcode version for your build process with Xcode Select.
-tags: [xcode, version, select, workflow, step]
+tags: [xcode, version, workflow, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
