@@ -16,15 +16,19 @@ The **Upload Files to Amazon S3** step in Appcircle enables direct uploading of 
 
 There are no prerequisites required before using the **Upload Files to Amazon S3** step.
 
+:::info
+
 To begin, add the **Upload Files to Amazon S3** step to the workflow from the [workflow marketplace](/workflows/#workflow-marketplace). You can incorporate it at any point within the workflow and multiple times, as necessary, to upload specific files or folders. For example, you can place it after the build step to deploy the build outputs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/s3-workflow-ios.png' />
 
 Once added, exit the workflow edit mode by saving your changes, and then click on the **Upload Files to Amazon S3** step.
 
+:::
+
 ### Input Variables
 
-Below is a table containing all the parameters required for the **Upload Files to Amazon S3** step, along with detailed descriptions:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/s3-workflow-details.png' />
 
@@ -39,17 +43,17 @@ Below is a table containing all the parameters required for the **Upload Files t
 
 :::info
 
-It is highly recommended to add the keys as [secret environment variables](../../.././environment-variables/managing-variables) instead of typing them here for security purposes.
+It is highly recommended to add the keys as [secret environment variables](/environment-variables/managing-variables) instead of typing them here for security purposes.
 
 :::
 
 ### Output Variables
 
-As the output may vary depending on the task you execute, there is no specific output defined by default.
+The output(s) resulting from the operation of this component are as follows:
 
 | Output Variable         | Description                                                    |
 |-------------------------|----------------------------------------------------------------|
-| `$AC_AWS_UPLOAD_URL`    | Specifies that the files and folders are deployed to a newly created directory as `s3://bucket-name/timestamp` to avoid any conflicts and potential overwrites. |
+| `AC_AWS_UPLOAD_URL`    | Specifies that the files and folders are deployed to a newly created directory as `s3://bucket-name/timestamp` to avoid any conflicts and potential overwrites. |
 
 After saving your settings, the build can be run, and the step will be executed accordingly. Details of the upload operation can be viewed in the build logs:
 

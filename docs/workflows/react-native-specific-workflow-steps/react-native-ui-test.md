@@ -22,7 +22,7 @@ The default Java version in Appcircle's build stacks is **Java 17**. If your pro
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **React Native UI Test** workflow step in both iOS and Android platforms, along with their respective reasons, are listed in the table below.
+Before running the **React Native UI Test** step, you must complete certain prerequisites, as detailed in the table below:
 
 #### For iOS
 
@@ -77,13 +77,13 @@ If any workflow steps fail, Appcircle automatically skips the next steps. Howeve
 
 ### Input Variables
 
-This step contains different variables. It needs these variables to work. The table below gives explanations of these variables.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/uiInputNew.png' />
 
 | Variable Name                | Description                                                                                                                                                                                                                                                                                                                                 | Status   |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step.                                                                                                                                                                 | Required |
+| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps#git-clone) step.                                                                                                                                                                 | Required |
 | `$AC_OUTPUT_DIR`             | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                                                                                                       | Required |
 | `$AC_RN_DETOX_CONFIGURATION` | Specify the detox configuration name to used when building and running the tests.                                                                                                                                                                                                                                                           | Required |
 | `$AC_RN_DETOX_TEST_ARGS`     | Specify the Detox extra arguments to add the test command. The arguments will be executed by appending `detox test --configuration<configname>` to the end of the command. The default value is `--take-screenshots all` For more information, see the Detox test [CLI options](https://wix.github.io/Detox/docs/19.x/api/detox-cli/#test). | Optional |
@@ -140,6 +140,8 @@ The outputs resulting from the operation of this component are as follows:
 | Variable Name         | Description                                                                                                  |
 | --------------------- | ------------------------------------------------------------------------------------------------------------ |
 | `AC_TEST_RESULT_PATH` | The output path for the `e2e-report.xml` file. This environment variable can be utilized in subsequent steps. |
+
+---
 
 To access the source code of this component, please use the following link:
 

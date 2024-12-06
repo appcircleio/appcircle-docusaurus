@@ -14,6 +14,7 @@ The **Android Increment Build and Version Number** step is managed with **Androi
 
 - [**Understanding Android Versioning**](/versioning/android-version)
 
+---
 
 To access the source code of this component, please use the following link:
 

@@ -18,7 +18,7 @@ For additional details, please refer to the document: [**Generating Test Report*
 
 ### Prerequisites
 
-Before executing the **Test Report** workflow step, **one of the** following steps must be run to generate the report:
+Before running the **Test Reports for React Native** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                                           | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -33,7 +33,7 @@ To able to use the **Test Report** component, not necessary to use both test ste
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 | Variable Name             | Description                                                                                                                      | Status   |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -53,6 +53,8 @@ The outputs resulting from the operation of this component are as follows:
 | Variable Name              | Description                            |
 | -------------------------- | -------------------------------------- |
 | `AC_TEST_REPORT_JSON_PATH` | Specifies the path of the JSON report. |
+
+---
 
 To access the source code of this component, please use the following link:
 

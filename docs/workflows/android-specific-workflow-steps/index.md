@@ -91,7 +91,8 @@ This step runs given Gradle task.
 
 This component provides detailed reports and insights on the results of Android app tests conducted.
 For detailed information on the usage of **Test Reports for Android**, please refer to the documentation:
-[https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
+
+- [Generating Test Report](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
 
 ## [Wait for Android Emulator](/workflows/android-specific-workflow-steps/wait-for-android-emulator)
 

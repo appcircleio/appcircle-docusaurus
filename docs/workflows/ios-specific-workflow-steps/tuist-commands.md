@@ -14,12 +14,12 @@ You can seamlessly integrate Tuist Commands into your workflow with Appcircle, m
 
 ### Prerequisites
 
-Before you run the **Tuist Commands** step, you must complete certain prerequisites, as detailed in the table below:
+Before running the **Tuist Commands** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                              | Description                                                                                                                                                                    |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist Commands process. After cloning, it creates the `AC_REPOSITORY_DIR` variable, and the system is able to run the Tuist Commands. |
-| [Tuist Install](/workflows/ios-specific-workflow-steps/tuist-install)   | You need to install the Tuist to start the Tuist Commands process.                                                                                                             |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist Commands process. After cloning, it creates the `$AC_REPOSITORY_DIR` variable, and the system is able to run the **Tuist Commands**. |
+| [**Tuist Install**](/workflows/ios-specific-workflow-steps/tuist-install)   | You need to install the Tuist to start the **Tuist Commands** step.                                                                                                             |
 
 :::caution Tuist Commands
 
@@ -35,15 +35,16 @@ For more information about Tuist CLI Commands, please visit the [**Tuist CLI**](
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4430New-tuistCommandInput.png' />
 
 | Variable Name        | Description                                                                                                                                                                         | Status   |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_TUIST_PATH`     | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
-| `$AC_TUIST_COMMANDS` | Specifies the Tuist Commands to be able to run specific Tuist Commands. For example; `tuist test` or `tuist build`.                                                                     | Required |
+| `$AC_TUIST_PATH`     | Specifies the path to the directory containing the project definition. This path is automatically generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_TUIST_COMMANDS` | Specifies the Tuist commands to be able to run specific Tuist commands. For example; `tuist test` or `tuist build`.                                                                     | Required |
 
+---
 
 To access the source code of this component, please use the following link:
 
