@@ -16,6 +16,10 @@ For a production deployment, a basic understanding of Kubernetes is sufficient. 
 
 Some example commands in this documentation are written for Linux and macOS terminals. You can use the appropriate alternatives for other operating systems.
 
+:::warning
+This Helm chart is currently in public beta. Please use it with caution and report any feedback or problems to help improve the chart.
+:::
+
 ## Prerequisites
 
 ### Domain Name
