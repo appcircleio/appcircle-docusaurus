@@ -29,7 +29,7 @@ In order to keep your config in Appcircle, you need to Navigate through:
 1. Your workflows
 2. Select a workflow
 3. Edit the **Android Sign** workflow
-4. Set V2 Sign to either **true **or **false.**
+4. Set V2 Sign to either **true** or **false**.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-android-v2-sign.png" />
 
