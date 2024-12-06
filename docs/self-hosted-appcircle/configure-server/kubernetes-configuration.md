@@ -15,6 +15,10 @@ By customizing the `values.yaml` file, you can tailor the installation to meet y
 
 Some example commands in this documentation are written for Linux and macOS terminals. You can use the appropriate alternatives for other operating systems.
 
+:::info
+When using the example `values.yaml` files provided in this document, please ensure that you check your own `values.yaml` keys. Do not add keys multiple times; simply update the existing keys with the appropriate values.
+:::
+
 ## Secrets for Sensitive Values
 
 To manage sensitive information such as the Appcircle initial user password, SMTP password, SSL certificates, and other secrets, it is recommended to use Kubernetes secrets. This ensures that sensitive data is stored securely and can be accessed by applications running within the cluster in a controlled manner.
