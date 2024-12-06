@@ -14,6 +14,8 @@ To deploy the Appcircle server on a Kubernetes cluster, use the Appcircle Helm c
 
 For a production deployment, a basic understanding of Kubernetes is sufficient. This knowledge will help you effectively manage and troubleshoot the cluster, optimize resource allocation, and maintain security.
 
+Some example commands in this documentation are written for Linux and macOS terminals. You can use the appropriate alternatives for other operating systems.
+
 ## Prerequisites
 
 ### Domain Name
