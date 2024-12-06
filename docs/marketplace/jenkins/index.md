@@ -13,17 +13,10 @@ sidebar_position: 2
 
 Enhance the power of distributing builds to test groups or releasing beta versions of your apps by using **Appcircle Testing Distribution** and **Appcircle Enterprise App Store** actions.
 
-### Testing Distribution
+### [Testing Distribution](/marketplace/jenkins/testing-distribution)
 
 It is a process distributing test builds to designated test groups or individuals.
 
-<ContentRef url="/marketplace/jenkins/testing-distribution">
-Read more about Testing Distribution
-</ContentRef>
-
-### Enterprise App Store
+### [Enterprise App Store](/marketplace/jenkins/enterprise-app-store)
 
 Your own mobile app store to provide access to in-house apps with a customizable mobile storefront.
-<ContentRef url="/marketplace/jenkins/enterprise-app-store">
-Read more about Enterprise App Store
-</ContentRef>

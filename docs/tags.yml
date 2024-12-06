@@ -18,6 +18,11 @@
   description: "Description for 2FA"
   permalink: /2-fa
 
+"aab":
+  label: "aab"
+  description: "Description for aab"
+  permalink: /aab
+
 access:
   label: "access"
   description: "Description for access"
@@ -253,6 +258,16 @@ api:
   description: "Description for app store version"
   permalink: /app-store-version
 
+"appsweep":
+  label: "appsweep"
+  description: "Description for appsweep"
+  permalink: /appsweep
+
+"appium":
+  label: "appium"
+  description: "Description for appium"
+  permalink: /appium
+
 "app versions":
   label: "app versions"
   description: "Description for app versions"
@@ -338,6 +353,11 @@ approve:
   description: "Description for approve"
   permalink: /approve
 
+"apk":
+  label: "apk"
+  description: "Description for apk"
+  permalink: /apk
+
 apk distribution:
   label: apk distribution
   description: "Description for apk distribution"
@@ -362,6 +382,11 @@ artifacts:
   label: "artifacts"
   description: "Description for artifacts"
   permalink: /artifacts
+
+"audit":
+  label: "audit"
+  description: "Description for audit"
+  permalink: /audit
 
 auth:
   label: "auth"
@@ -637,6 +662,11 @@ build:
   label: "build types and configurations"
   description: "Description for build types and configurations"
   permalink: /build-types-and-configurations
+
+"bundle":
+  label: "bundle"
+  description: "Description for bundle"
+  permalink: /bundle
 
 "cache pull":
   label: "cache pull"
@@ -918,10 +948,20 @@ dependencies:
   description: "Description for dependencies"
   permalink: /dependencies
 
+dependency:
+  label: "dependency"
+  description: "Description for dependency"
+  permalink: /dependency
+
 deploy:
   label: "deploy"
   description: "Description for deploy"
   permalink: /deploy
+
+"deployment":
+  label: "deployment"
+  description: "Description for deployment"
+  permalink: /deployment
 
 detekt:
   label: "detekt"
@@ -947,6 +987,11 @@ development:
   label: "development tools"
   description: "Description for development tools"
   permalink: /development-tools
+
+"device":
+  label: "device"
+  description: "Description for device"
+  permalink: /device
 
 "device test":
   label: "device test"
@@ -1107,6 +1152,11 @@ environment:
   label: "environment variables"
   description: "Description for environment variables"
   permalink: /environment-variables
+
+"espresso":
+  label: "espresso"
+  description: "Description for espresso"
+  permalink: /espresso
 
 export:
   label: "export"
@@ -1297,6 +1347,11 @@ identifiers:
   label: "in-app updates"
   description: "Description for in app updates"
   permalink: /in-app-updates
+
+"increment":
+  label: "increment"
+  description: "Description for increment"
+  permalink: /increment
 
 "insecure registry":
   label: "insecure registry"
@@ -1708,6 +1763,11 @@ notes:
   description: "Description for notes"
   permalink: /notes
 
+node:
+  label: "node"
+  description: "Description for node"
+  permalink: /node
+
 notifications:
   label: "notifications"
   description: "Description for notifications"
@@ -2108,6 +2168,11 @@ schemes:
   description: "Description for schemes"
   permalink: /schemes
 
+"sdk":
+  label: "sdk"
+  description: "Description for sdk"
+  permalink: /sdk
+
 "SDK versions":
   label: "SDK versions"
   description: "Description for SDK versions"
@@ -2272,6 +2337,11 @@ slack:
   label: "slack notifications"
   description: "Description for slack notifications"
   permalink: /slack-notifications
+
+"slather":
+  label: "slather"
+  description: "Description for slather"
+  permalink: /slather
 
 "snyk scan":
   label: "snyk scan"
@@ -2528,6 +2598,11 @@ troubleshooting:
   description: "Description for ui testing"
   permalink: /ui-testing
 
+"unit":
+  label: "unit"
+  description: "Description for unit"
+  permalink: /unit
+
 "unit tests":
   label: "unit tests"
   description: "Description for unit tests"
@@ -2632,6 +2707,11 @@ vm:
   label: "vm"
   description: "Description for vm"
   permalink: /vm
+
+yarn:
+  label: "yarn"
+  description: "Description for yarn"
+  permalink: /yarn
 
 walkthrough:
   label: "walkthrough"

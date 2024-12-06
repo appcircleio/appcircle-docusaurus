@@ -59,7 +59,7 @@ If you have lost your keystore, here are the steps you can take:
 
 The [Google Play Console](https://play.google.com/console/) can't restore a lost signing file, but it does let you reset it. To reset your signing file, follow these steps:
 
-:::INFO
+:::info
 
 Only the account owner on Google Play Console can reset the signing file.
 
