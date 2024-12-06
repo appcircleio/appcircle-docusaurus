@@ -334,7 +334,7 @@ helm repo add appcircle https://helm-package.appcircle.io && \
 helm repo update
 ```
 
-- Use the [configured](#create-a-configuration-file) `values.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
+- Use the [configured](#create-configuration-file) `values.yaml` file to install the Appcircle Helm chart to your Kubernetes cluster.
 
 :::info
 If you need or want to change the release name, please note that it should be 18 characters or fewer.
@@ -490,7 +490,7 @@ For the solution, please make sure that the domain name server of the worker nod
 
 ### When we deploy the Helm chart, the `appcircle-server-webeventredis-master-0` pod is stuck in `CrashLoopBackOff` state
 
-This error usually happens when you select a non-valid `Appcircle CA Certificate File` while [generating the configuration file](#create-a-configuration-file). Please make sure that the certificate you choose is the **root** certificate of the full-chain certificate.
+This error usually happens when you select a non-valid `Appcircle CA Certificate File` while [generating the configuration file](#create-configuration-file). Please make sure that the certificate you choose is the **root** certificate of the full-chain certificate.
 
 :::tip
 
