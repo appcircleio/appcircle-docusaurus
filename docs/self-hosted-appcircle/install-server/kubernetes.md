@@ -5,6 +5,9 @@ tags: [self-hosted, helm, installation, configuration, kubernetes]
 sidebar_position: 6
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Overview
 
 To deploy the Appcircle server on a Kubernetes cluster, use the Appcircle Helm chart. This chart includes all the necessary components for the initial setup and can scale to support larger deployments.
@@ -246,13 +249,7 @@ webeventredis:
 
 By default, Appcircle uses its own image registry that you should authenticate with the `cred.json` file you got from Appcircle.
 
-You can create this secret on the `appcircle` namespace for the Appcircle image registry by executing the following command:
-
-:::tip
-If you are using your own container registry, make sure to update the `server`, `username`, and `password` variables accordingly.
-
-If the registry you are using doesn't require any authentication, you can skip this section.
-:::
+You can create the registry secret on the `appcircle` namespace for pods to successfully pull the images by executing the following sections below:
 
 1. Create the `appcircle` namespace if you haven't already created it:
 
@@ -264,16 +261,48 @@ In this documentation, we will deploy all the resources under the `appcircle` na
 kubectl create namespace appcircle
 ```
 
-2. Save the `cred.json` file or your own registry password into a file named `registry-password`.
+:::info
+If you are using your own container registry, you can follow the `Custom Registry` section below.
 
-3. Run the following command on your **Linux/MacOS** terminal to create the container registry secret on the Kubernetes cluster:
+If the registry you are using doesn't require any authentication, you can skip this section.
+:::
+
+<Tabs groupId="Image Registry">
+
+  <TabItem value="appcircle-registry" label="Appcircle Registry">
+
+2. Save the `cred.json` file.
+
+3. Create the container registry secret:
 
 ```bash
 kubectl create secret docker-registry containerregistry \
+  -n appcircle \
   --docker-server='europe-west1-docker.pkg.dev' \
   --docker-username='_json_key' \
-  --docker-password="$(cat registry-password)"
+  --docker-password="$(cat cred.json)"
 ```
+
+  </TabItem>
+  <TabItem value="custom-registry" label="Custom Registry">
+
+:::tip
+If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with a leading space character will not be stored in the shell history. This allows you to create secrets safely without storing sensitive information in the shell history.
+:::
+
+
+2. Update the `server`, `username`, and `password` fields for your own custom registry and create the container registry secret:
+
+```bash
+kubectl create secret docker-registry containerregistry \
+  -n appcircle \
+  --docker-server='registry.spacetech.com' \
+  --docker-username='yourRegistryUsername' \
+  --docker-password='superSecretRegistryPassword'
+```
+
+  </TabItem>
+</Tabs>
 
 ### Secure Sensitive Data With Kubernetes Secrets (Optional)
 
