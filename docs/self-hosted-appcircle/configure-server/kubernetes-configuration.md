@@ -47,18 +47,22 @@ kubectl create secret generic appcircle-server-auth-keycloak-passwords \
   --from-literal=adminPassword=KeycloakAdminPassword1234
 ```
 
+- Remove the `.auth.auth-keycloak.initialPassword` and `.auth.auth-keycloak.adminPassword` keys from the `values.yaml` file.
+
 #### SMTP password
 
-Create a secret with the name `${releaseName}-smtp` containing the `password` key.
+- Create a secret with the name `${releaseName}-smtp` containing the `password` key.
 
 ```bash
 kubectl create secret generic appcircle-server-smtp \
   --from-literal=password="superSecretSMTPPassword"
 ```
 
+- Remove the `.global.mail.smtp.password` key from the `values.yaml` file.
+
 #### SSL certificate
 
-Create a secret with the name `appcircle-tls-wildcard` containing the `tls.crt`, `tls.key` and `ca.crt` keys.
+- Create a secret with the name `appcircle-tls-wildcard` containing the `tls.crt`, `tls.key` and `ca.crt` keys.
 
 ```bash
 kubectl create secret generic appcircle-tls-wildcard \
@@ -67,6 +71,8 @@ kubectl create secret generic appcircle-tls-wildcard \
   --from-file=ca.crt='root.crt' \
   --type=kubernetes.io/tls
 ```
+
+- Remove the `.global.tlsWildcard` key from the `values.yaml` file.
 
 ## Production Readiness
 
