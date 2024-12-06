@@ -23,6 +23,10 @@ When using the example `values.yaml` files provided in this document, please ens
 
 To manage sensitive information such as the Appcircle initial user password, SMTP password, SSL certificates, and other secrets, it is recommended to use Kubernetes secrets. This ensures that sensitive data is stored securely and can be accessed by applications running within the cluster in a controlled manner.
 
+:::caution
+The configurations for production readiness should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/docs/self-hosted-appcircle/install-server/kubernetes.md#uninstall-the-appcircle-server)** and redeploy it.
+:::
+
 :::info
 The commands below assume you have already created a namespace for Appcircle. If you haven’t yet, you can create and switch to the Appcircle namespace using the following commands:
 
@@ -86,15 +90,16 @@ By default, the Appcircle Helm chart will deploy all the required services to th
 
 If you wish to deploy these services within the Helm chart scope, you can use the default configuration provided by the Appcircle Helm chart.
 
+:::caution
+The configurations for production readiness should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/docs/self-hosted-appcircle/install-server/kubernetes.md#uninstall-the-appcircle-server)** and redeploy it.
+:::
+
 :::info
 The commands below assume you have already created a namespace for Appcircle. If you haven’t yet, you can create and switch to the Appcircle namespace using the following commands:
 
 ```bash
 # Create the namespace
 kubectl create namespace appcircle
-
-# Switch to the newly created namespace
-kubectl config set-context --current --namespace=appcircle
 ```
 
 Make sure to replace `appcircle` with your preferred namespace name if necessary.
@@ -114,6 +119,7 @@ To use an external PostgreSQL database, you can follow the steps below:
 
 ```bash
 kubectl create secret generic appcircle-server-postgresql-connection \
+  -n appcircle \
   --from-literal=password=superSecretPostgresqlPassword
 ```
 
@@ -149,6 +155,7 @@ To use an external MongoDB database, you can follow the steps below:
 
 ```bash
 kubectl create secret generic appcircle-server-mongo-connections \
+  -n appcircle \
   --from-literal=agentcache='mongodb://agentcachemongo:agentPassword@192.168.1.244:27017?retryWrites=true' \
   --from-literal=build='mongodb://buildmongo:buildPassword@192.168.1.244:27017?retryWrites=true' \
   --from-literal=distribution='mongodb://distributionmongo:distPassword@192.168.1.244:27017?retryWrites=true' \
@@ -363,6 +370,7 @@ To use an external MinIO instance, you can follow the steps below:
 
 ```bash
 kubectl create secret generic appcircle-server-minio-connection \
+  -n appcircle \
   --from-literal=accessKey='admin' \
   --from-literal=secretKey='superSecretAdminAccessKey'
 ```
@@ -391,6 +399,7 @@ To use an external Vault instance, you can follow the steps below:
 
 ```bash
 kubectl create secret generic appcircle-server-vault-seal \
+  -n appcircle \
   --from-literal=token=hvs.superSecretVaultKey
 ```
 
@@ -411,6 +420,12 @@ If there are any settings you want to configure, open the `values.yaml` with you
 ### Persistent Volume Configuration
 
 Appcircle server Helm chart supports configuring storage classes and volume sizes for persistent volume claims (PVCs). If you don't specify any storage class or size, the PVCs will be created using the default storage class of your Kubernetes cluster with the default size. If you want to adjust these settings, you can specify them in the `values.yaml`.
+
+:::caution
+The configurations for storage classes should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/docs/self-hosted-appcircle/install-server/kubernetes.md#uninstall-the-appcircle-server)** and redeploy it.
+
+Additionally, some storage classes do not support **expanding volumes**. You should verify the capabilities of your own storage class. If volume expansion is needed, **manual operations**, such as moving data from the old volume to a new one, may be required.
+:::
 
 You can configure the `values.yaml` like in the example below. The storage values given in the example are recommended values for production usage.
 
