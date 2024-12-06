@@ -1,7 +1,7 @@
 ---
 title: Flutter Analyze
 description: This component runs the `flutter analyze` command in your Flutter project.
-tags: [flutter, analyze, build, test, workflow, step]
+tags: [flutter, analysis, build, test, workflow, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

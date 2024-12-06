@@ -1,7 +1,7 @@
 ---
 title: SwiftLint
 description: Improve your code with SwiftLint, a tool for identifying programmatic and stylistic errors.
-tags: [ios, build, lint, error]
+tags: [ios, build, lint]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

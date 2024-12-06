@@ -1,7 +1,7 @@
 ---
 title: Danger
 description: Streamline your code review process with Danger. Automate checks and enforce code standards pre-merge to maintain high-quality software.
-tags: [danger, code review, quality assurance, automaiton, development tools, appcircle, mobile ci/cd]
+tags: [code review, quality assurance, automaiton, development tools, appcircle, mobile ci/cd]
 ---
 
 
