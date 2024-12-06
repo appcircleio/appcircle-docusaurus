@@ -16,17 +16,10 @@ sidebar_position: 2
 
 Enhance the power of distributing builds to test groups or releasing beta versions of your apps by using **Appcircle Testing Distribution** and **Appcircle Enterprise App Store** actions.
 
-### Testing Distribution
+### [Testing Distribution](/marketplace/visual-studio-marketplace/testing-distribution)
 
 It is a process distributing test builds to designated test groups or individuals.
 
-<ContentRef url="/marketplace/visual-studio-marketplace/testing-distribution">
-Read more about Testing Distrbiution
-</ContentRef>
-
-### Appcircle Enterprise Mobile App Store
+### [Appcircle Enterprise Mobile App Store](/marketplace/visual-studio-marketplace/enterprise-app-store)
 
 Your own mobile app store to provide access to in-house apps with a customizable mobile storefront.
-<ContentRef url="/marketplace/visual-studio-marketplace/enterprise-app-store">
-Read more about Enterprise App Store
-</ContentRef>
