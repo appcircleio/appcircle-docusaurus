@@ -6,7 +6,6 @@ description: The Publish module in Appcircle allows you to distribute your mobil
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-import ContentRef from '@site/src/components/ContentRef';
 
 # Publish
 
@@ -41,3 +40,31 @@ Before publishing:
 - **Microsoft Intune**: [Add Microsoft Intune API Credentials](/account/my-organization/security/credentials/adding-microsoft-intune-api-key)
 
 By following these steps, you can ensure a smooth publishing experience for your mobile applications.
+
+## [Creating Publish Profiles](/publish-module/creating-publish-profiles)
+
+After building the application, in order to start the publishing process, you will need to create a Publish profile.
+
+## [Binary Management](/publish-module/binary-management)
+
+Manage your binaries within the Publish module.
+
+## [Publish Flow](/publish-module/publish-flow)
+
+Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery, Microsoft Intune). This flow can be customized according to your specific publishing requirements.
+
+## [Publish Information](/publish-module/publish-information)
+
+The Publish module provides users with several key actions to manage their application versions effectively.
+
+## [Publish Settings](/publish-module/publish-settings)
+
+Manage your profile and publish settings via the Publish Settings.
+
+## [Publish Variables](/publish-module/publish-variables)
+
+The Publish Variables section within the Publish module is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
+
+## [Publish Walkthrough for App Store](/publish-module/publish-walkthrough-for-app-store)
+
+The Publish module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play, and Huawei AppGallery. This module streamlines the complex process of app release.
