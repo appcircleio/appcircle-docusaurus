@@ -18,11 +18,11 @@ This step also verifies whether the app is signed or not. If this step is not in
 
 :::info Debug Variant Signing  
 
-As noted in the [Android Developer documentation](https://developer.android.com/build/build-for-release):
+As noted in the [**Android Developer documentation**](https://developer.android.com/build/build-for-release):
 
 > If the build variant you've selected is a debug build type, then the APK is signed with a debug key and it's ready to install. If you've selected a release variant, then, by default, the APK is unsigned and you must manually [sign the APK](https://developer.android.com/studio/publish/app-signing).
 
-This means that when you build your app with the **debug** variant, the **Android Post Processor** step in Appcircle will recognize the app as already signed, even if you did not sign it in Appcircle or your repository.
+This means that when you build your app with the **debug** variant, the **Android Post Processor** step in Appcircle will recognize the app as already signed, even if it was not signed in Appcircle or your repository.
 
 :::
 
