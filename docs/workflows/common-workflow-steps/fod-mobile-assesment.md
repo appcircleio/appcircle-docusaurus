@@ -1,7 +1,7 @@
 ---
 title: Fortify on Demand Mobile Assessment
 description: Optimize mobile app security with Fortify on Demand Mobile Assessment. Comprehensive testing for robust, secure mobile applications.
-tags: [fortify, demand, mobile ci/cd, security, integration, ios, android]
+tags: [mobile ci/cd, security, integration, ios, android]
 ---
 
 

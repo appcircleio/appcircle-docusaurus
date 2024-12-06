@@ -1,7 +1,7 @@
 ---
 title: Install Certificates and Provisioning Profiles
 description: Learn how to install certificates and provisioning profiles for iOS distribution in Appcircle.
-tags: [ios, provision, certificate, install, keychain, profiles, signing]
+tags: [ios, certificate, install, signing]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -1,7 +1,7 @@
 ---
 title: Set Environment Variable
 description: Set Environment Variable step sets environment value for given keys
-tags: [set, environment, variable]
+tags: [environment, variable]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -1,7 +1,7 @@
 ---
 title: NPM/Yarn Commands
 description: Learn to use NPM/Yarn commands for managing dependencies in your React Native applications. Enhance your app's functionality.
-tags: [react native, mobile, workflow, step, npm, yarn, commands]
+tags: [react native, mobile, workflow, step, yarn]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

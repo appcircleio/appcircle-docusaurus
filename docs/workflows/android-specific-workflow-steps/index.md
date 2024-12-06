@@ -10,7 +10,7 @@ The steps listed below are specific to the Android build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [Android App Post-Processor](/workflows/android-specific-workflow-steps/post-processor)
+## [Android App Post-Processor](/workflows/android-specific-workflow-steps/app-post-processor)
 
 This step performs necessary system operations to identify and process the Android output binary files.
 

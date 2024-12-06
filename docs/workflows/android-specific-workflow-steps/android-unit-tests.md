@@ -1,7 +1,7 @@
 ---
 title: Android Unit Tests
 description: Learn how to use the Android Unit Tests workflow step in Appcircle
-tags: [android, mobile, unit, testing]
+tags: [android, mobile, testing]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
