@@ -250,7 +250,7 @@ Commit Message: $AC_COMMIT_MESSAGE
 
 :::info
 
-If you are using the Self-Hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io.
+If you are using the self-hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io address. For details on how to configure SMTP settings in a self-hosted installation see [Email Integration](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/integration#email).
 
 :::
 
