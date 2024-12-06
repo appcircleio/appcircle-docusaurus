@@ -7,6 +7,7 @@ sidebar_position: 6
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
@@ -478,3 +479,5 @@ If the deployment hasn't completed and timed out after `1200` seconds:
 :::tip
 If you face a timeout due to configuration problems, it is better to re-install Appcircle freshly. Refer to the [Uninstalling Appcircle](#uninstall-the-appcircle-server) section for detailed instructions on how to uninstall and clean up the existing deployment before starting anew.
 :::
+
+<NeedHelp />

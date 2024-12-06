@@ -5,6 +5,8 @@ tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 100
 ---
 
+import NeedHelp from '@site/docs/\_need-help.mdx';
+
 ## Overview
 
 In this section, you will learn how to configure Helm values for Kubernetes installations. These configurations will guide you through setting up various parameters and options to ensure a successful deployment of the Appcircle server. 
@@ -713,3 +715,5 @@ helm upgrade appcircle-server appcircle/appcircle \
 :::info
 The license update might take ~30 minutes to take effect on the **UI** due to caches, but it will apply and be ready to use immediately.  
 :::
+
+<NeedHelp />
