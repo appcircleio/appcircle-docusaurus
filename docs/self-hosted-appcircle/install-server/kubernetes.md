@@ -78,7 +78,7 @@ Using SSD storage is highly recommended if stateful applications are installed w
 :::
 
 :::tip
-For storage class details, you can check the [Storage Class Configuration](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#persistent-volume-configuration) section.
+For storage class details, you can check the [Storage Class Configuration](/self-hosted-appcircle/configure-server/kubernetes-configuration.md#persistent-volume-configuration) section.
 :::
 
 Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain compatibility and support.
@@ -277,15 +277,15 @@ kubectl create secret docker-registry containerregistry \
 
 ### Secure Sensitive Data With Kubernetes Secrets (Optional)
 
-To optionally remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#secrets-for-sensitive-values)
+To optionally remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/self-hosted-appcircle/configure-server/kubernetes-configuration.md#secrets-for-sensitive-values)
 
 ### Production Readiness (Optional)
 
-To optionally ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault, and MinIO connection settings.
+To optionally ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/configure-server/kubernetes-configuration.md#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault, and MinIO connection settings.
 
 ### Appcircle Server Helm Chart Configurations (Optional)
 
-Optionally, refer to the [Configuration Section](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#advanced-configuration) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
+Optionally, refer to the [Configuration Section](/self-hosted-appcircle/configure-server/kubernetes-configuration.md#advanced-configuration) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
 
 ## Deploy Using Helm
 
@@ -372,7 +372,7 @@ kubectl get secret appcircle-server-auth-keycloak-passwords \
 
 When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
 
-To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/configure-server/kubernetes/helm-configuration.md#appcircle-license) section.
+To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/configure-server/kubernetes-configuration.md#appcircle-license) section.
 
 ## Uninstall the Appcircle Server
 
