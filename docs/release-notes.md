@@ -29,6 +29,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 - An update was applied to the build history reports, where some columns were removed or re-ordered, and typographical errors were corrected. <BuildBadge/> <CloudBadge/>
 - The cursor is now automatically focused on the first input field when navigating between modals in the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+- Search functionality for build profiles has been improved to deliver results from all profiles, even in organizations with a large number of build profiles. <BuildBadge/> <CloudBadge/>
+- Enhanced the Signing Identity Activity Log to ensure all signing identity actions are displayed accurately. <SigningIdentitiesBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -36,12 +38,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - An issue was fixed where notifications configured for activities in the Signing Identities module were not functioning properly. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where the build profile configurations for React Native projects had missing settings after being cloned. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where the InitiatedBy column displayed as N/A in build reports for automated or remote build triggers. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where the “Disconnect from Remote Repository” button did not appear in the build profiles on the latest versions of the Safari browser. <BuildBadge/> <CloudBadge/>
-- An issue was fixed related to the search functionality for build profiles in organizations with a large number of build profiles. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the “Disconnect from Remote Repository” button did not appear in the build profiles on the latest versions of the Safari browser. <BuildBadge/> <CloudBadge/> 
 - An issue was fixed where users were unable to download the YAML configuration file from a build profile when navigating to the Versioning tab of the build configuration. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where users were unable to log in to the testing portal via shared public links when using the static authentication method. <DistributionBadge/> <CloudBadge/>
-- An issue was fixed where iOS app icons did not display properly during installation on Apple devices after being downloaded from the Testing Portal. <DistributionBadge/> <CloudBadge/>
-- An issue was fixed where some signing identity actions were not displayed in the Signing Identity Activity Log section. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where iOS app icons did not display properly during installation on Apple devices after being downloaded from the Testing Portal. <DistributionBadge/> <CloudBadge/> 
 - An issue was fixed where the UI failed to display an error message when a duplicate Apple certificate was uploaded in the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where the icons of certain `.APK` binaries were not being displayed properly on the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
 
