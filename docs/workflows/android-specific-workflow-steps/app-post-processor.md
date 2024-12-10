@@ -7,11 +7,22 @@ tags: [android, mobile, post processor]
 import Screenshot from '@site/src/components/Screenshot';
 
 # Android App Post-Processor
+
 This step performs the necessary system operations to identify and process the Android output binary files.
 
 :::warning
 
-This step also verifies whether the app is signed or not. If this step is not included in your Workflow or if it is determined that there is no signed app as a result of this step, __the app cannot be distributed__.
+This step also verifies whether the app is signed or not. If this step is not included in your workflow or if it is determined that there is no signed app as a result of this step, **the app cannot be distributed**.
+
+:::
+
+:::info Debug Variant Signing  
+
+As noted in the [**Android Developer documentation**](https://developer.android.com/build/build-for-release):
+
+> If the build variant you've selected is a debug build type, then the APK is signed with a debug key and it's ready to install. If you've selected a release variant, then, by default, the APK is unsigned and you must manually [sign the APK](https://developer.android.com/studio/publish/app-signing).
+
+This means that when you build your app with the **debug** variant, the **Android Post Processor** step in Appcircle will recognize the app as already signed, even if it was not signed in Appcircle or your repository.
 
 :::
 
@@ -45,7 +56,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                          | Description                                       |
 |----------------------------------------|---------------------------------------------------|
-| `$AC_ANDROID_POST_PROCESS_OUTPUT_PATH` | Specifies the application post process file path. This file specifies the base name for each app and whether it is signed or not. |
+| `AC_ANDROID_POST_PROCESS_OUTPUT_PATH` | Specifies the application post process file path. This file specifies the base name for each app and whether it is signed or not. |
 
 :::info
 
