@@ -46,7 +46,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - An issue was fixed where iOS app icons did not display properly during installation on Apple devices after being downloaded from the Testing Portal. <DistributionBadge/> <CloudBadge/> 
 - An issue where registered testing groups were not visible in the auto-send settings after users logged into their organization or sub-organization has been resolved. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where the UI failed to display an error message when a duplicate Apple certificate was uploaded in the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
-- An issue was fixed where the icons of certain `.APK` binaries were not being displayed properly on the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where the icons of certain `.APK` binaries were not being displayed properly on the Enterprise Portal and the Testing Portal. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 
 ## 3.23.1 - 2024-11-13 Enable Captcha for Enterprise Portal, SSO Improvements, Bug Fixes and more
 
