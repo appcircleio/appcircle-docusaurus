@@ -12,31 +12,19 @@ The steps listed below are common across all build profiles regardless of the ta
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## Activate SSH Key
+## [Activate SSH Key](/workflows/common-workflow-steps/active-ssh-private-key)
 
 This step sets up your SSH key in the build machine if you used one to connect your repository. This allows the build machine to connect to your private repository using your SSH key.
 
-<ContentRef url="/workflows/common-workflow-steps/active-ssh-private-key">
-    Active SSH Private Key
-</ContentRef>
-
-## Appium Server
+## [Appium Server](/workflows/common-workflow-steps/appium-server)
 
 This step installs [Appium Server](https://appium.io/) and starts it.
 
-<ContentRef url="/workflows/common-workflow-steps/appium-server">
-    Appium Server
-</ContentRef>
-
-## Authenticate with Netrc
+## [Authenticate with Netrc](/workflows/common-workflow-steps/authenticate-with-netrc)
 
 The `.netrc` file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file. However, if you want to use the .netrc file with curl, you need to append the `-n` command line parameter. You may also use the `--netrc-optional` parameter if you don't always use the `.netrc` file with curl.
 
-<ContentRef url="/workflows/common-workflow-steps/authenticate-with-netrc">
-    Authenticate with Netrc
-</ContentRef>
-
-## Cache Pull
+## [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull)
 
 Cache push uploads cache archive file to remote location as we explained in detail above. On the other hand cache pull downloads and extracts that archive file in build pipeline. All files and folders are extracted to original locations that came from.
 
@@ -58,11 +46,7 @@ These variables can be adjusted within the **Cache Label** field, as indicated b
 
 Also you can have more than one push and pull pairs in the same build pipeline according to your needs.
 
-<ContentRef url="/workflows/common-workflow-steps/build-cache/cache-pull">
-    Cache Pull
-</ContentRef>
-
-## Cache Push
+## [Cache Push](/workflows/common-workflow-steps/build-cache/cache-push)
 
 Every single build at Appcircle runs in clean state. It means that all files and folders, that are not versioned in git repository, are lost when build pipeline is completed. For example, installed dependencies or build artifacts. If you need to keep those files and folders, you can use Appcircle cache push and pull components.
 
@@ -102,130 +86,70 @@ System automatically cleans unreachable and obsolete cache files periodically. F
 
 :::
 
-<ContentRef url="/workflows/common-workflow-steps/build-cache/cache-push">
-    Cache Push
-</ContentRef>
-
-## Code Reviews with Danger
+## [Code Reviews with Danger](/workflows/common-workflow-steps/danger)
 
 Danger runs during your CI process and gives teams the chance to automate common code review chores. This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your team’s norms. Leaving humans to think about harder problems.
 
 https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews
 
-<ContentRef url="/workflows/common-workflow-steps/danger">
-    Code Reviews with Danger
-</ContentRef>
+## [Select Java Version](/workflows/common-workflow-steps/select-java-version)
 
-## Custom Scripts
+The **Select Java Version** step updates the JDK and Java version to the selected one during the build process.
+
+## [Custom Scripts](/workflows/common-workflow-steps/custom-script)
 
 You can use custom scripts for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the build agent and you can use any functionality of the virtual machine as you need.
 
-<ContentRef url="/workflows/common-workflow-steps/custom-script">
-    Custom Scripts
-</ContentRef>
+## [Data Theorem Mobile Secure](/workflows/common-workflow-steps/data-theorem-mobile-secure)
 
-## Data Theorem Mobile Secure
+This component scans your app using Mobile Secure.
 
-This component scans your app using Mobile Secure
-
-<ContentRef url="/workflows/common-workflow-steps/data-theorem-mobile-secure">
-    Data Theorem Mobile Secure
-</ContentRef>
-
-## Export Build Artifacts
+## [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts)
 
 Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download from the artifacts section of the completed build.
 
-<ContentRef url="/workflows/common-workflow-steps/export-build-artifacts">
-    Export Build Artifacts
-</ContentRef>
-
-## File Size Check
+## [File Size Check](/workflows/common-workflow-steps/file-size-check)
 
 This component checks the file size and either warn or fail the workflow.
 
-<ContentRef url="/workflows/common-workflow-steps/file-size-check">
-    File Size Check
-</ContentRef>
+## [Firebase App Distribution](/workflows/common-workflow-steps/firebase-app-distribution)
 
-## Firebase App Distribution
-
-Send your apps to be distributed via Firebase App Distribution
-
-<ContentRef url="/workflows/common-workflow-steps/firebase-app-distribution">
-    Firebase App Distribution
-</ContentRef>
+Send your apps to be distributed via Firebase App Distribution.
 
 https://github.com/appcircleio/appcircle-firebase-dsym-upload-component
 
-## Fortify On Demand
+## [Fortify On Demand](/workflows/common-workflow-steps/fod-mobile-assesment)
 
-This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment
+This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment.
 
-<ContentRef url="/workflows/common-workflow-steps/fod-mobile-assesment">
-    Fortify On Demand
-</ContentRef>
-
-## FTP Upload
+## [FTP Upload](/workflows/common-workflow-steps/ftp-upload)
 
 This component uploads file or folders to given FTP server.
 
-<ContentRef url="/workflows/common-workflow-steps/ftp-upload">
-    FTP Upload
-</ContentRef>
-
-## Git Clone
+## [Git Clone](/workflows/common-workflow-steps/git-clone)
 
 Clones the Git repository to the build agent with the given arguments.
 
-<ContentRef url="/workflows/common-workflow-steps/git-clone">
-    Git Clone
-</ContentRef>
-
-## Maestro Cloud Upload
+## [Maestro Cloud Upload](/workflows/common-workflow-steps/maestro-cloud-upload)
 
 This component uploasd both your app binary and flows to Maestro Cloud.
 
-<ContentRef url="/workflows/common-workflow-steps/maestro-cloud-upload">
-    Maestro Cloud Upload
-</ContentRef>
-
-## Repeato Mobile Test Automation
+## [Repeato Mobile Test Automation](/workflows/common-workflow-steps/repeato-test-runner)
 
 This component creates and automates UI tests for iOS and Android.
 
-<ContentRef url="/workflows/common-workflow-steps/repeato-test-runner">
-    Repeato Mobile Test Automation
-</ContentRef>
-
-## Release Notes
+## [Release Notes](/workflows/common-workflow-steps/publish-release-notes)
 
 You can use Release Notes component to create release notes during your workflow.
 
-<ContentRef url="/workflows/common-workflow-steps/publish-release-notes">
-    Release Notes
-</ContentRef>
-
-## SonarQube
+## [SonarQube](/workflows/common-workflow-steps/sonarqube)
 
 You can use SonarQube component to check your code quality.
 
-<ContentRef url="/workflows/common-workflow-steps/sonarqube">
-    SonarQube
-</ContentRef>
-
-## Snyk Scan Security
+## [Snyk Scan Security](/workflows/common-workflow-steps/snyk-scan-security)
 
 By utilizing this step, you will be able to test your project dependencies for vulnerabilities during builds and use Snyk to monitor your projects.
 
-<ContentRef url="/workflows/common-workflow-steps/snyk-scan-security">
-    Snyk Scan Security
-</ContentRef>
-
-## Testinium
+## [Testinium](/workflows/common-workflow-steps/testinium)
 
 This component runs your test plans with Testinium.
-
-<ContentRef url="/workflows/common-workflow-steps/testinium">
-    Testinium
-</ContentRef>

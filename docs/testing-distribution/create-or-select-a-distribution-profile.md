@@ -210,12 +210,6 @@ If SSO and LDAP details are not configured for your organization, these authenti
 
 :::
 
-### Device Registration (iOS Only)
-
-You may enable this option to automatically register devices in the Apple Developer Portal and update your Ad Hoc provisioning profiles. You must select App Store Connect API Key, a build profile, and a configuration.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main5.png' />
-
 ### Public Link
 
 You may enable a public link for your distribution. This allows anyone who has the link to access all artifacts of the distribution profile. Additionally, users can now conveniently scan a QR code to retrieve the public link directly. This simplifies the process of accessing and sharing the distribution link, making it more accessible for users on mobile devices or others who prefer quick scanning.

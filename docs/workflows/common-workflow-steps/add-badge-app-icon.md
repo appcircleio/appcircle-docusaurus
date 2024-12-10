@@ -17,11 +17,11 @@ With Appcircle's **Add Badge to Your App Icon** component, you can add badges an
 
 ### Prerequisites
 
-Below is a list of workflow steps that need to be executed before this step, along with their respective reasons.
+Before running the **Add a Badge to Your App Icon** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone) | The repository needs to be cloned to begin the badge-adding process. After this step, the variable `AC_REPOSITORY_DIR` will be set. |
+| [**Git Clone**](/workflows/common-workflow-steps#git-clone) | The repository needs to be cloned to begin the badge-adding process. After this step, the variable `$AC_REPOSITORY_DIR` will be set. |
 
 :::caution
 
@@ -34,7 +34,7 @@ If you are using the [**Increment Build and Version Number**](/versioning/ios-ve
 
 ### Input Variables
 
-Below is a list of input variables that can be used with this component with a description of each.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3061-badgeInput.png' />
 
@@ -61,6 +61,8 @@ To use this component, you must provide the icon path from your project file. He
 
 :::
 
-For the source code of this component, visit:
+---
+
+To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-badge-component

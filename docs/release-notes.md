@@ -16,11 +16,41 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 # Latest Release Notes
 
+## 3.24.0 - 2024-12-06 Publish Priority Configuration, Download Module Reports Through API, Bug Fixes and more
+
+### 🆕 New Features
+
+- Monthly Publish usage can now be monitored separately through the Billing screen in the Organization module. It is no longer combined with monthly Build usage. <AccountBadge/> <SelfHostedBadge/>
+- [The Apple Devices](/signing-identities/apple-profiles#adding-device-to-provision-profile) section under the Provision Profile Action now allows users to easily add device UDIDs to the corresponding provisioning profiles. <SigningIdentitiesBadge/> <CloudBadge/>
+- Publish priorities can now be configured as **High**, **Medium**, or **Low** to manage the start order of queued publish processes accordingly. Available for organizations with Enterprise License. <PublishBadge/> <CloudBadge/>
+- The module reports can now be exported through API calls. <APICLIBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- An update was applied to the build history reports, where some columns were removed or re-ordered, and typographical errors were corrected. <BuildBadge/> <CloudBadge/>
+- The cursor is now automatically focused on the first input field when navigating between modals in the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+- Search functionality for build profiles has been improved to deliver results from all profiles, even in organizations with a large number of build profiles. <BuildBadge/> <CloudBadge/>
+- Enhanced the Signing Identity Activity Log to ensure all signing identity actions are displayed accurately. <SigningIdentitiesBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where multiple LDAP group mappings for organizations were overriding each other instead of being merged during sync execution. <AccountBadge/> <SelfHostedBadge/>
+- An issue was fixed where notifications configured for activities in the Signing Identities module were not functioning properly. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the build profile configurations for React Native projects had missing settings after being cloned. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the InitiatedBy column displayed as N/A in build reports for automated or remote build triggers. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the “Disconnect from Remote Repository” button did not appear in the build profiles on the latest versions of the Safari browser. <BuildBadge/> <CloudBadge/> 
+- An issue was fixed where users were unable to download the YAML configuration file from a build profile when navigating to the Versioning tab of the build configuration. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where users were unable to log in to the testing portal via shared public links when using the static authentication method. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where iOS app icons did not display properly during installation on Apple devices after being downloaded from the Testing Portal. <DistributionBadge/> <CloudBadge/> 
+- An issue was fixed where the UI failed to display an error message when a duplicate Apple certificate was uploaded in the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where the icons of certain `.APK` binaries were not being displayed properly on the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
+
 ## 3.23.1 - 2024-11-13 Enable Captcha for Enterprise Portal, SSO Improvements, Bug Fixes and more
 
 ### 🆕 New Features
 
 - A [captcha](/enterprise-app-store/portal-settings#enable-captcha) security method has been added for Enterprise Portal logins, which can be configured to appear after a set number of unsuccessful login attempts, eventually blocking further access. This feature is available to organizations with an enterprise license. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- TLS versions can now be configured by self-hosted Appcircle server users for security purposes. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -33,12 +63,16 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The build priority configuration setting is no longer restricted to organizations with an enterprise license. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The default cloud pool names have been updated as follows: The “**Default M1 Pool**” is now labeled as “Appcircle Standard macOS Pool (arm64).” The “**Default Intel Pool**” is now labeled as “Appcircle Linux Pool (x86_64).” <InfrastructureBadge/> <CloudBadge/>
 - The build status information is now displayed in the [Signing Reports](/signing-identities/signing-reports) section within the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An option was added to the SMTP server configuration in `global.yaml` to allow SSL validation to be disabled for non-production environments. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
 - An issue was fixed where downloaded .yaml configuration files could not be uploaded to the same or other profiles of the same type, resulting in an error. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the emails and roles of sub-organization users were not displayed in the signing activity log. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Several security issues related to the admin module API were resolved. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the custom domain Enterprise Store URL was not displayed at times in the Safari browser for self-hosted users. <EnterpriseStoreBadge/> <SelfHostedBadge/>
+- An issue was fixed where the claim name for Enterprise Portal SSO configuration was not displayed at times in the Safari browser for self-hosted users. <AccountBadge/> <SelfHostedBadge/>
+- An issue was fixed where some data loss occurred in the configurations during the update of SAML settings for SSO. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.23.0 - 2024-11-04 SSO & LDAP Improvements, Build Priority Configuration, Bug Fixes and more
 
@@ -628,7 +662,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Within the Publish Module, customers now have the capability to designate their desired app version as a Release Candidate, streamlining the process of identifying and managing versions prior to official release. <CloudBadge/> <SelfHostedBadge/>
 - The "Appcircle Standard macOS Pool (arm64)" and [self-hosted macOS VM image](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/runner-vm-setup/) have been updated to include the latest [Xcode 15.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_3-release-notes) release. <CloudBadge/> <SelfHostedBadge/>
 - The "Appcircle Standard macOS Pool (arm64)" has been transitioned to [macOS Sonoma](https://docs.appcircle.io/infrastructure/ios-build-infrastructure), now featuring the latest Xcode and stack updates. <CloudBadge/> <SelfHostedBadge/>
-- The "Appcircle Standard macOS Pool (arm64)" and the self-hosted runner environment now feature the latest [JDK 21](https://docs.appcircle.io/workflows/common-workflow-steps/custom-script#how-to-change-java-version), along with patch version upgrades for JDK 8, 11, and 17, ensuring compatibility and providing users with access to the most up-to-date Java development environment. <CloudBadge/> <SelfHostedBadge/>
+- The "Appcircle Standard macOS Pool (arm64)" and the self-hosted runner environment now feature the latest [JDK 21](/workflows/common-workflow-steps/select-java-version), along with patch version upgrades for JDK 8, 11, and 17, ensuring compatibility and providing users with access to the most up-to-date Java development environment. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -712,7 +746,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed a bug that makes browser crash while viewing build logs. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that prints the incorrect remaining limit when the license is expired. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that threw an error while renaming the publish profile. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the missing default values for [Appdome Build-2Secure for Android](https://docs.appcircle.io/integrations/appdome-integration) workflow step output. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the missing default values for [Appdome Build-2Secure for Android](/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android) workflow step output. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the [JaCoCo](https://www.eclemma.org/jacoco/) code coverage "NilObject" error by improving the parser algorithm at the [test report](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report) workflow step. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the format of values in the publish flow step settings so that they're more user-friendly instead of "key|value" style. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the value of the `AC_PULL_NUMBER` environment variable in the build pipeline, which should be the merge request `iid` value for the GitLab connection. <CloudBadge/> <SelfHostedBadge/>

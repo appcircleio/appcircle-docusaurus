@@ -66,7 +66,7 @@ Enter a URL or 'q' to quit: q
 %
 ```
 
-After the script is complete, the operating system, default Java (`11`), Ruby, and Node.js trust the root certificate.
+After the script is complete, the operating system, default Java (`17`), Ruby, and Node.js trust the root certificate.
 
 :::caution
 Please exit from the current terminal session and start a new one for changes to take effect.

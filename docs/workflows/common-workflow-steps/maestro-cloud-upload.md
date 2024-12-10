@@ -14,7 +14,7 @@ The Appcircle **Maestro Cloud Upload** step enables users to upload their mobile
 
 ## Prerequisites
 
-Before running the **Maestro Cloud Upload** step, certain prerequisites must be completed. These prerequisites, detailed in the table below, vary depending on the platform:
+Before running the **Maestro Cloud Upload** step, you must complete certain prerequisites, as detailed in the table below:
 
 ### For All Platforms
 
@@ -59,13 +59,15 @@ Before running the **Maestro Cloud Upload** step, certain prerequisites must be 
 
 ## Input Variables
 
-The **Maestro Cloud Upload** step requires specific input variables:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_5.png'/>
 
-:::danger
+:::danger Sensitive Variables
 
-Enter confidential information as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, select the appropriate [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) in the [Configuration](/build/build-process-management/build-profile-configuration/).
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
 :::
 
@@ -89,9 +91,11 @@ Enter confidential information as a [secret environment variable](/environment-v
 | `$AC_MAESTRO_PULL_ID`         | The ID of the pull request from which the upload originated.                                            | Optional  |
 | `$AC_MAESTRO_CLI_VERSION`     | The version of the Maestro CLI is to be downloaded in your CI environment. The default value is the `latest` version.  | Optional  |
 
-## Output Variables
+:::info Output Variables
 
-The **Maestro Cloud Upload** step does not produce any output variables. The results are shown in the build log.
+The **Maestro Cloud Upload** step generates no output variables. The results are shown in the build log.
+
+:::
 
 ---
 
