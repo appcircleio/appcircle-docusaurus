@@ -49,7 +49,10 @@ fastlane add_plugin appcircle_testing_distribution
   appcircle_testing_distribution(
     personalAPIToken: "$(AC_PERSONAL_API_TOKEN)",
     profileName: "$(AC_PROFILE_NAME)",
-    createProfileIfNotExists: Boolean,
+    createProfileIfNotExists: "${AC_CREATE_PROFILE_IF_NOT_EXISTS}",
+    profileCreationSettings: {
+      testingGroupNames: "AC_PROFILE_TESTING_GROUPS"
+    },
     appPath: "$(AC_APP_PATH)",
     message: "$(AC_MESSAGE)",
   )
@@ -58,6 +61,8 @@ fastlane add_plugin appcircle_testing_distribution
 - `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
+- `profileCreationSettings`: If `createProfileIfNotExists` is `true` and a new profile being created, the profile will be configured with this settings.
+   - `testingGroupNames`: Uploaded versions will be automatically shared with these testing groups. Example format: `group1, group2, group3`.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
