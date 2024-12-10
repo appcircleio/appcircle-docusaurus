@@ -56,7 +56,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                          | Description                                       |
 |----------------------------------------|---------------------------------------------------|
-| `$AC_ANDROID_POST_PROCESS_OUTPUT_PATH` | Specifies the application post process file path. This file specifies the base name for each app and whether it is signed or not. |
+| `AC_ANDROID_POST_PROCESS_OUTPUT_PATH` | Specifies the application post process file path. This file specifies the base name for each app and whether it is signed or not. |
 
 :::info
 
