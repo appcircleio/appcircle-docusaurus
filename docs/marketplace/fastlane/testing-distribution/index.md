@@ -48,6 +48,7 @@ fastlane add_plugin appcircle_testing_distribution
 ```yml
   appcircle_testing_distribution(
     personalAPIToken: "$(AC_PERSONAL_API_TOKEN)",
+    subOrganizationName: "${AC_SUB_ORGANIZATION_NAME}",
     profileName: "$(AC_PROFILE_NAME)",
     createProfileIfNotExists: Boolean,
     appPath: "$(AC_APP_PATH)",
@@ -56,8 +57,9 @@ fastlane add_plugin appcircle_testing_distribution
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `subOrganizationName` (optional): Required when the Root Organization's `personalAPIToken` is used, and you want to create the profile under a sub-organization. In this case, provide the name of the sub-organization in this field. If you directly used the sub-organization's `personalAPIToken`, this parameter is not needed.
 - `profileName`: Specifies the profile that will be used for uploading the app.
-- `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
+- `createProfileIfNotExists` (optional): Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
@@ -73,6 +75,22 @@ Ensure that this action is added after build steps have been completed.
 :::caution
 If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
 :::
+
+### Distributing to Sub-Organizations
+
+To distribute your app to a sub-organization, you can use one of the following methods:
+
+#### 1. Using the Root Organization's Personal API Token
+
+- Obtain the `personalAPIToken` for the Root Organization. This token is used to authenticate and authorize actions within Appcircle.
+- Specify the `subOrganizationName` parameter in your configuration. This parameter indicates the target sub-organization where the profile will be created and the app will be distributed.
+
+#### 2. Using the Sub-Organization's Personal API Token
+
+- Invite your user to the sub-organization and obtain the `personalAPIToken` for the sub-organization. This token directly authenticates and authorizes actions within the specific sub-organization.
+- Use the sub-organization's `personalAPIToken` in your configuration. 
+
+With this configuration, the profile will be created and the app will be distributed within the sub-organization.
 
 ## References
 
