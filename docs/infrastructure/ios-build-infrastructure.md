@@ -37,7 +37,7 @@ The "Appcircle Standard macOS Pool (arm64)" macOS **Sonoma** (`14.5`) stack has 
 
 | Version | Build |
 | ------- | ----- |
-| 16.2 | `16B5100e` |
+| 16.2 | `16C5031c` |
 | 16.1 | `16B40` |
 | 16.0 | `16A242d` |
 | 15.4 | `15F31d` |
