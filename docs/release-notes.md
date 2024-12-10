@@ -20,30 +20,33 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### 🆕 New Features
 
-- Monthly Publish usage can now be monitored separately through the Billing screen in the Organization module. It is no longer combined with monthly Build usage. <AccountBadge/> <SelfHostedBadge/>
+- Monthly Publish usage can now be monitored separately through the Billing screen in the Organization module. It is no longer combined with monthly Build usage. <AccountBadge/> <CloudBadge/>
 - [The Apple Devices](/signing-identities/apple-profiles#adding-device-to-provision-profile) section under the Provision Profile Action now allows users to easily add device UDIDs to the corresponding provisioning profiles. <SigningIdentitiesBadge/> <CloudBadge/>
 - Publish priorities can now be configured as **High**, **Medium**, or **Low** to manage the start order of queued publish processes accordingly. Available for organizations with Enterprise License. <PublishBadge/> <CloudBadge/>
 - The module reports can now be exported through API calls. <APICLIBadge/> <CloudBadge/>
+- Branch names that exceed the visible length in the branch list are now displayed in full via a tooltip pop-up. <BuildBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - An update was applied to the build history reports, where some columns were removed or re-ordered, and typographical errors were corrected. <BuildBadge/> <CloudBadge/>
 - The cursor is now automatically focused on the first input field when navigating between modals in the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+- Search functionality for build profiles has been improved to deliver results from all profiles, even in organizations with a large number of build profiles. <BuildBadge/> <CloudBadge/>
+- Enhanced the Signing Identity Activity Log to ensure all signing identity actions are displayed accurately. <SigningIdentitiesBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
 - An issue was fixed where multiple LDAP group mappings for organizations were overriding each other instead of being merged during sync execution. <AccountBadge/> <SelfHostedBadge/>
 - An issue was fixed where notifications configured for activities in the Signing Identities module were not functioning properly. <AccountBadge/> <CloudBadge/>
+- An issue where some publish flows were displayed as successful despite containing a failed step has been resolved. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where the build profile configurations for React Native projects had missing settings after being cloned. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where the InitiatedBy column displayed as N/A in build reports for automated or remote build triggers. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where the “Disconnect from Remote Repository” button did not appear in the build profiles on the latest versions of the Safari browser. <BuildBadge/> <CloudBadge/>
-- An issue was fixed related to the search functionality for build profiles in organizations with a large number of build profiles. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the “Disconnect from Remote Repository” button did not appear in the build profiles on the latest versions of the Safari browser. <BuildBadge/> <CloudBadge/> 
 - An issue was fixed where users were unable to download the YAML configuration file from a build profile when navigating to the Versioning tab of the build configuration. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where users were unable to log in to the testing portal via shared public links when using the static authentication method. <DistributionBadge/> <CloudBadge/>
-- An issue was fixed where iOS app icons did not display properly during installation on Apple devices after being downloaded from the Testing Portal. <DistributionBadge/> <CloudBadge/>
-- An issue was fixed where some signing identity actions were not displayed in the Signing Identity Activity Log section. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where iOS app icons did not display properly during installation on Apple devices after being downloaded from the Testing Portal. <DistributionBadge/> <CloudBadge/> 
+- An issue where registered testing groups were not visible in the auto-send settings after users logged into their organization or sub-organization has been resolved. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where the UI failed to display an error message when a duplicate Apple certificate was uploaded in the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
-- An issue was fixed where the icons of certain `.APK` binaries were not being displayed properly on the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where the icons of certain `.APK` binaries were not being displayed properly on the Enterprise Portal and the Testing Portal. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 
 ## 3.23.1 - 2024-11-13 Enable Captcha for Enterprise Portal, SSO Improvements, Bug Fixes and more
 
