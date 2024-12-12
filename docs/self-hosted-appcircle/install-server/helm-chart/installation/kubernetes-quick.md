@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Quick Installation
 description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes for testing purposes
-tags: [self-hosted, helm, installation, configuration, kubernetes, quick]
+tags: [self-hosted, helm, installation, configuration, kubernetes]
 sidebar_position: 6
 ---
 
@@ -93,22 +93,52 @@ helm install appcircle-server appcircle/appcircle \
   -f values.yaml
 ```
 
-## Update the Appcircle Server
+You can watch the Appcircle server installation with any Kubernetes monitoring tool.
 
-**To update** the Appcircle server chart, run the following Helm command.
-
-```bash
-helm upgrade appcircle-server appcircle/appcircle \
-  -n appcircle \
-  -f values.yaml
-```
-
-## Uninstall the Appcircle Server
-
-**To uninstall** the Appcircle server chart, run the following the Helm command.
+To make sure that the Appcircle server is installed successfully, you can run the command below and wait to finish:
 
 ```bash
-helm uninstall appcircle-server -n appcircle
+kubectl wait --for=condition=ready pod \
+  -l app.kubernetes.io/instance=appcircle-server \
+  -n appcircle --timeout 1200s && \
+  echo "Appcircle is ready to use. Happy building! "
 ```
+
+### 6. Add DNS Records
+
+List the Ingresses with `kubectl` to check the IP address of the Appcircle services domains.
+
+```bash
+kubectl get ingresses -n appcircle
+```
+
+According to the example output below, you need to configure your DNS as follows:
+
+```bash
+NAME                               CLASS   HOSTS                                                          ADDRESS        PORTS      AGE
+appcircle-apigateway               nginx   api.appcircle.spacetech.com,auth.appcircle.spacetech.com       10.45.140.78   80,443     24m
+appcircle-distribution-testerweb   nginx   dist.appcircle.spacetech.com                                   10.45.140.78   80,443     24m
+appcircle-resource                 nginx   resource.appcircle.spacetech.com                               10.45.140.78   80,443     24m
+appcircle-store-web                nginx   *.store.appcircle.spacetech.com                                10.45.140.78   80,443     24m
+appcircle-web-app                  nginx   my.appcircle.spacetech.com                                     10.45.140.78   80,443     24m
+appcircle-web-event                nginx   hook.appcircle.spacetech.com                                   10.45.140.78   80,443     24m
+appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  10.45.140.78   80,443     24m
+```
+
+1. **Create an A Record for the `api` domain:**
+   - `api.appcircle.spacetech.com` → **10.45.140.78**
+
+2. **Create CNAME Records for the other domains:**
+   - `auth.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+   - `dist.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+   - `resource.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+   - `*.store.appcircle.spacetech.com` → You can skip this domain and use a [Custom Enterprise App Store Domain](https://docs.appcircle.io/enterprise-app-store/portal-settings#store-domain).
+   - `my.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+   - `hook.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+   - `redis.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+
+### 7. Login to the Appcircle Dashboard
+
+Check the output of the `Helm install` command to see login URL, initial username and command to get random created initial user password.
 
 <NeedHelp />
