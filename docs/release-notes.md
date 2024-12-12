@@ -255,7 +255,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - [Integrations and Connection Management](/account/my-organization/profile-and-team/role-management#integrations-and-connection-managements) roles have been added within the role management with Manager and Viewer roles. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Viewer role has been added for [Organization Management](/account/my-organization/profile-and-team/role-management#organization-management-permissions). <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Hyperlink support has been added to the affected build profiles on the pop-up screen when a user attempts to delete a provisioning profile that is active in a build configuration. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The self-hosted Appcircle server script now includes a new command ([**init**](/self-hosted-appcircle/install-server#initialize-vault)) that should be used after the `export` step once while installing the server, ensuring seamless vault initialization. <InfrastructureBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server script now includes a new command ([**init**](/self-hosted-appcircle/install-server/linux-package/index.md#initialize-vault)) that should be used after the `export` step once while installing the server, ensuring seamless vault initialization. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -725,8 +725,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Members in the same [organization](/account/my-organization) can take ownership of previously added build profiles. <CloudBadge/> <SelfHostedBadge/>
 - The user can now add a new PAT (Personal Access Token) via the [Connections](/build/manage-the-connections#managing-pat-connections) page without creating a new build profile. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can integrate their own authentication and OTP services and use them in conjunction with LDAP configuration on self-hosted installations. <SelfHostedBadge/>
-- The configuration file [global.yaml](../self-hosted-appcircle/install-server/docker#3-configure) now has a validator that helps users configure the settings correctly on export and prevents them from starting the server with broken settings. <SelfHostedBadge/>
-- The [certificate installer](../self-hosted-appcircle/install-server/docker#3-configure) tool now supports extracting proxy server certificates, which enable the runner to connect through a proxy without any SSL certificate error. <SelfHostedBadge/>
+- The configuration file [global.yaml](../self-hosted-appcircle/install-server/linux-package/docker#3-configure) now has a validator that helps users configure the settings correctly on export and prevents them from starting the server with broken settings. <SelfHostedBadge/>
+- The [certificate installer](../self-hosted-appcircle/install-server/linux-package/docker#3-configure) tool now supports extracting proxy server certificates, which enable the runner to connect through a proxy without any SSL certificate error. <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -763,8 +763,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - In the [Azure DevOps Server 2020](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository) version, the trigger was malfunctioning due to the different JSON format received after a merge operation following a PR (Pull Request). It was fixed. <CloudBadge/> <SelfHostedBadge/>
 - The bug that prevents users from [changing their emails](/account/my-account/account-management/my-details) was fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug about [`no_proxy`](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration#2-configure-proxy-for-the-server) environment variables that broke the network connection of the self-hosted Appcircle server. <SelfHostedBadge/>
-- Fixed bug that causes version output to be incorrect when [artifact registry](../self-hosted-appcircle/install-server/docker#using-3rd-party-or-self-hosted-artifact-registry) has port in URL. <SelfHostedBadge/>
-- Fixed corrupted `check` command output in Ubuntu-based Linux [distributions](../self-hosted-appcircle/install-server/docker#supported-linux-distributions). <SelfHostedBadge/>
+- Fixed bug that causes version output to be incorrect when [artifact registry](../self-hosted-appcircle/install-server/linux-package/docker#using-3rd-party-or-self-hosted-artifact-registry) has port in URL. <SelfHostedBadge/>
+- Fixed corrupted `check` command output in Ubuntu-based Linux [distributions](../self-hosted-appcircle/install-server/linux-package/docker#supported-linux-distributions). <SelfHostedBadge/>
 
 ## 3.10.0 - 2023-12-01 - Connections Page, Disconnect Profile and Change Provider
 
@@ -859,7 +859,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Improved suborganization experience in the Enterprise App Store by hiding the "Customize" and "Settings" sections, providing a more focused interface for suborganization administrators. <CloudBadge/> <SelfHostedBadge/>
 - The latest stable version of [Xcode 15.0](../build/platform-build-guides/building-ios-applications) is available on both cloud and self-hosted runners. <SelfHostedBadge/> <CloudBadge/>
 - The self-hosted Appcircle server now supports proxies with a [self-signed certificate.](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration) <SelfHostedBadge/>
-- Users can more easily switch to the self-hosted version of their choice by only [downloading](../self-hosted-appcircle/update#1-download-latest) the server package. <SelfHostedBadge/>
+- Users can more easily switch to the self-hosted version of their choice by only [downloading](../self-hosted-appcircle/install-server/linux-package/update#1-download-latest) the server package. <SelfHostedBadge/>
 - Added the [NTP configuration](../self-hosted-appcircle/self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) helper tool to the self-hosted runner package. <SelfHostedBadge/>
 - Added self-signed certificate management for Node.JS to the [certificate installer](../self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates#adding-certificates) tool. <SelfHostedBadge/>
 - Now you can analyze your [SwiftLint](/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint) and [Detekt](/workflows/android-specific-workflow-steps/) reports and post the report details under the opened PR on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
@@ -992,18 +992,18 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
 - Build trigger screen is improved. <CloudBadge/> <SelfHostedBadge/>
 - [Self-hosted Runer](/self-hosted-appcircle/self-hosted-runner/installation) installation script updated for new Xcode versions and other tools. <SelfHostedBadge/>
-- The default configuration file that contains [Self-hosted Server](../self-hosted-appcircle/install-server/docker) settings is simplified. <SelfHostedBadge/>
-- The [Self-hosted Server](../self-hosted-appcircle/install-server/docker) package has a text file that contains a list of container services. <SelfHostedBadge/>
-- [Self-hosted Server](../self-hosted-appcircle/install-server/docker) Podman support added. <SelfHostedBadge/>
-- [Self-hosted Server](../self-hosted-appcircle/install-server/docker) installation script `version` command updated to fix Podman compatibility. <SelfHostedBadge/>
-- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/docker) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
-- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/docker) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
+- The default configuration file that contains [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/docker) settings is simplified. <SelfHostedBadge/>
+- The [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/docker) package has a text file that contains a list of container services. <SelfHostedBadge/>
+- [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/docker) Podman support added. <SelfHostedBadge/>
+- [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/docker) installation script `version` command updated to fix Podman compatibility. <SelfHostedBadge/>
+- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/docker) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
+- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/docker) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
 - Strict URL check is removed when users try to add Azure repositories. <CloudBadge/> <SelfHostedBadge/>
 - An error that was occurring when you tried to add a sub-org on self-hosted Appcircle is fixed. <SelfHostedBadge/>
-- Some minor cases that were occurring on the [Self-hosted Server](../self-hosted-appcircle/install-server/docker) boot process are fixed. <SelfHostedBadge/>
+- Some minor cases that were occurring on the [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/docker) boot process are fixed. <SelfHostedBadge/>
 
 ## 3.3.2 - 2023-05-10 - Xcode 14.3,FTP Upload
 

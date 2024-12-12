@@ -84,7 +84,7 @@ You should fill out the required fields as per your needs. Please follow the bel
 - We will use the `t3.2xlarge` instance type for our sample configuration since it meets the minimum requirements for the vCPU count.
 
 :::info
-For the details about minimum hardware requirements, you should see the [Hardware Requirements](/self-hosted-appcircle/install-server/docker#hardware-requirements) section.
+For the details about minimum hardware requirements, you should see the [Hardware Requirements](/self-hosted-appcircle/install-server/linux-package/docker#hardware-requirements) section.
 :::
 
 - Select an existing key pair or click on the "Create new key pair" button if you don't have any on the AWS console.
@@ -103,7 +103,7 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 - For storage, you can select a minimum 100-GB disk for a PoC setup or testing purposes.
 
 :::info
-You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](/self-hosted-appcircle/install-server/docker#hardware-requirements) section.
+You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](/self-hosted-appcircle/install-server/linux-package/docker#hardware-requirements) section.
 :::
 
 :::caution
@@ -231,7 +231,7 @@ cd "$HOME/appcircle-server"
 
 :::info
 
-**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](/self-hosted-appcircle/update) the pre-installed package in the instance.
+**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](/self-hosted-appcircle/install-server/linux-package/update) the pre-installed package in the instance.
 
 Also, put the `cred.json` file you received from us into the `appcircle-server` folder.
 
@@ -239,11 +239,11 @@ Please [contact us](https://appcircle.io/support/) to purchase an enterprise lic
 
 :::
 
-Now you're ready to configure the Appcircle server according to your needs. Follow the detailed [configuration](/self-hosted-appcircle/install-server/docker#3-configure) steps.
+Now you're ready to configure the Appcircle server according to your needs. Follow the detailed [configuration](/self-hosted-appcircle/install-server/linux-package/docker#3-configure) steps.
 
-You should also configure the [DNS](/self-hosted-appcircle/install-server/docker#4-dns-settings) settings for your Appcircle server instance. Create `A` and `CNAME` records for your instance.
+You should also configure the [DNS](/self-hosted-appcircle/install-server/linux-package/docker#4-dns-settings) settings for your Appcircle server instance. Create `A` and `CNAME` records for your instance.
 
-After the configuration is done, [initialize the project](/docs/self-hosted-appcircle/install-server/docker.md#5-initialize-vault), [run the server](/self-hosted-appcircle/install-server/docker#6-run-server), and go to the Appcircle server dashboard using the main [domain](/self-hosted-appcircle/install-server/docker#4-dns-settings) you defined.
+After the configuration is done, [initialize the project](/docs/self-hosted-appcircle/install-server/linux-package/docker.md#5-initialize-vault), [run the server](/self-hosted-appcircle/install-server/linux-package/docker#6-run-server), and go to the Appcircle server dashboard using the main [domain](/self-hosted-appcircle/install-server/linux-package/docker#4-dns-settings) you defined.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws22-dashboard.png' />
 
@@ -269,7 +269,7 @@ By default, self-hosted runner package has pre-configured `ASPNETCORE_BASE_API_U
 
 :point_up: You need to change its value with your self-hosted Appcircle server's API URL.
 
-Assuming our sample scenario explained in [configuration](/self-hosted-appcircle/install-server/docker#3-configure), its value should be
+Assuming our sample scenario explained in [configuration](/self-hosted-appcircle/install-server/linux-package/docker#3-configure), its value should be
 
 - `http://api.appcircle.spacetech.com/build/v1`
 

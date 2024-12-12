@@ -42,7 +42,7 @@ If you need to use a proxy on the Appcircle server, you should configure proxy s
 
 If you are using the Nexus registry and are facing a "manifest not found" error, this is an expected case to occur. Nexus proxy has a known bug while pulling multiple container images. You should pull images one by one as a workaround.
 
-To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
+To pull images one by one, you can see the [Pulling Image One By One](../../configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
 ### Where should we download the zip package while we are updating?
 
@@ -50,9 +50,9 @@ Download the zip package of the appcircle server and extract it to the same fold
 
 ### How do I change Docker or Podman's data location?
 
-For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](/self-hosted-appcircle/install-server/docker#change-the-docker-data-location) page.
+For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](/self-hosted-appcircle/install-server/linux-package/docker#change-the-docker-data-location) page.
 
-For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./install-server/podman#change-the-podman-data-location) page.
+For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./podman#change-the-podman-data-location) page.
 
 ### I'm offline on the Appcircle dashboard on my browser.
 
@@ -261,7 +261,7 @@ When the `global.yaml` changes are ready to apply, follow the below steps:
 :::info
 The `reset` step is optional. If you are installing for the first time, which means that you have never run the `up` command and used the system, then you don't need to cleanup anything.
 
-For details, you can see the [reset configuration](./install-server/docker/#reset-configuration) section in the documentation.
+For details, you can see the [reset configuration](./docker#reset-configuration) section in the documentation.
 :::
 
 - Apply the configuration changes.

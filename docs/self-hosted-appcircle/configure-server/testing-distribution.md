@@ -131,4 +131,4 @@ To see the new configuration updates on the Testing Portal, follow the steps bel
 - Navigate to the Appcircle server's `dist` URL in your browser.
   - For example, `https://dist.appcircle.spacetech.com`
 
-You can get more information about `dist` subdomain from the [DNS Settings](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#4-dns-settings) document.
+You can get more information about `dist` subdomain from the [DNS Settings](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/docker#4-dns-settings) document.

@@ -16,7 +16,7 @@ Using proxies on Appcircle containers ensures smooth connectivity to external re
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/docker#3-configure) section in docs and applied example scenario.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/linux-package/docker#3-configure) section in docs and applied example scenario.
 
 Following steps are using example project as project naming, which was told there.
 
@@ -150,7 +150,7 @@ Inside the `helper-tools` directory, there is a bash script file called `no-prox
 
 The `no-proxy.sh` helper tool exists in self-hosted server versions `3.7.1` or later.
 
-If you have an older version installed, please [upgrade](/self-hosted-appcircle/update) your self-hosted server to a newer version. If upgrading is not possible, you should contact us for support.
+If you have an older version installed, please [upgrade](/self-hosted-appcircle/install-server/linux-package/update) your self-hosted server to a newer version. If upgrading is not possible, you should contact us for support.
 
 :::
 

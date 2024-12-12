@@ -313,7 +313,7 @@ storeWeb:
 
 In later steps, other system subdomains will be concatted to main domain. For this reason, `external.mainDomain` in configuration file must always begin with `.` character as prefix.
 
-You can see a list of these subdomains in [here](/self-hosted-appcircle/install-server/podman#4-dns-settings).
+You can see a list of these subdomains in [here](/self-hosted-appcircle/install-server/linux-package/podman#4-dns-settings).
 
 :::
 
@@ -350,7 +350,7 @@ storeWeb:
 For our example, we configured below values:
 
 - `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
-- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](/self-hosted-appcircle/install-server/podman#4-dns-settings) for more details.
+- `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](/self-hosted-appcircle/install-server/linux-package/podman#4-dns-settings) for more details.
 - `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
@@ -370,13 +370,13 @@ Same as in cloud, it must be compatible with Appcircle password policy;
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/podman#6-run-server).
+If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/linux-package/podman#6-run-server).
 
 ```txt
 service "keycloak_migration" didn't completed successfully: exit 1
 ```
 
-In this case, before updating initial password in `global.yaml`, you need to **stop** partially started podman services with below command. See [reset configuration](/self-hosted-appcircle/install-server/podman#reset-configuration) section for more details.
+In this case, before updating initial password in `global.yaml`, you need to **stop** partially started podman services with below command. See [reset configuration](/self-hosted-appcircle/install-server/linux-package/podman#reset-configuration) section for more details.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" reset
@@ -388,7 +388,7 @@ After updating initial password, to activate changes, you need to do fresh expor
 ./ac-self-hosted.sh -n "spacetech" export
 ```
 
-Then, make sure you initialize the [vault](/self-hosted-appcircle/install-server/podman#5-initialize-vault) again.
+Then, make sure you initialize the [vault](/self-hosted-appcircle/install-server/linux-package/podman#5-initialize-vault) again.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" init
@@ -558,7 +558,7 @@ With this network setup, you can run and test both self-hosted Appcircle server 
 
 ### 5. Initialize Vault
 
-Initialize [vault](/self-hosted-appcircle/install-server/podman#vault) before starting the Appcircle server.
+Initialize [vault](/self-hosted-appcircle/install-server/linux-package/podman#vault) before starting the Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" init
@@ -701,7 +701,7 @@ In this case, stop all services with data cleanup.
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
-Then make a new export, initialize the vault and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/podman#reset-configuration) section for more details.
+Then make a new export, initialize the vault and start services. Refer to [reset configuration](/self-hosted-appcircle/install-server/linux-package/podman#reset-configuration) section for more details.
 
 :::
 
@@ -741,7 +741,7 @@ By default, the Appcircle server containers do not start automatically upon rebo
 
 To enable automatic startup of the Appcircle server containers, additional steps are required.
 
-For detailed instructions on configuring the automatic startup of the server containers upon server reboot, please refer to the [Restarting Host](../configure-server/restarting-host) page.
+For detailed instructions on configuring the automatic startup of the server containers upon server reboot, please refer to the [Restarting Host](../../configure-server/restarting-host) page.
 
 :::
 
@@ -819,13 +819,13 @@ It will remove all unused local volumes which is useful for a clean start.
 
 :::
 
-Then go back to your configuration and change settings as done previously at [configure](/self-hosted-appcircle/install-server/podman#3-configure) step.
+Then go back to your configuration and change settings as done previously at [configure](/self-hosted-appcircle/install-server/linux-package/podman#3-configure) step.
 
 When you're ready for a new export, in root directory execute below command again as done previously.
 
 :::info
 
-For our example scenario, root directory is `appcircle-server` as seen [here](/self-hosted-appcircle/install-server/podman#1-download). And project name is "spacetech".
+For our example scenario, root directory is `appcircle-server` as seen [here](/self-hosted-appcircle/install-server/linux-package/podman#1-download). And project name is "spacetech".
 
 :::
 
@@ -835,7 +835,7 @@ For our example scenario, root directory is `appcircle-server` as seen [here](/s
 
 Now you are ready to restart self-hosted appcircle.
 
-Before that, make sure you initialize the [vault](/self-hosted-appcircle/install-server/podman#5-initialize-vault) again.
+Before that, make sure you initialize the [vault](/self-hosted-appcircle/install-server/linux-package/podman#5-initialize-vault) again.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" init
