@@ -2,7 +2,7 @@
 title: Pre-Installation Checklist
 description: Checklist to be followed before installing the self-hosted Appcircle
 tags: [self-hosted, installation, checklist]
-sidebar_position: 2
+sidebar_position: 20
 ---
 
 This page provides a checklist to be followed before installing the self-hosted Appcircle.

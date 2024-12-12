@@ -2,7 +2,7 @@
 title: Docker
 description: Learn how to install Appcircle server on your infrastructure using Docker
 tags: [docker, installation, self-hosted]
-sidebar_position: 3
+sidebar_position: 30
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

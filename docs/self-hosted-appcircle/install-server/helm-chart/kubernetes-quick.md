@@ -1,7 +1,7 @@
 ---
-title: Kubernetes Express Install
-description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes
-tags: [self-hosted, helm, installation, configuration, kubernetes, express]
+title: Kubernetes Quick Install
+description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes for testing purposes
+tags: [self-hosted, helm, installation, configuration, kubernetes, quick]
 sidebar_position: 6
 ---
 

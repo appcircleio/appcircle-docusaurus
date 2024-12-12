@@ -2,7 +2,7 @@
 title: Upgrading Server
 description: Learn how to upgrade self-hosted Appcircle server
 tags: [self-hosted server, update, upgrade]
-sidebar_position: 3
+sidebar_position: 50
 ---
 
 import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_redis-domain-caution.mdx';

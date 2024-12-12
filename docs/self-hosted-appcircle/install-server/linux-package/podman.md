@@ -2,7 +2,7 @@
 title: Podman
 description: Learn how to install and configure self-hosted Appcircle server with Podman
 tags: [self-hosted, podman, installation, configuration]
-sidebar_position: 4
+sidebar_position: 40
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
