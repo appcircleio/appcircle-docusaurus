@@ -5,6 +5,8 @@ tags: [self-hosted, helm, installation, configuration, kubernetes, express]
 sidebar_position: 6
 ---
 
+import NeedHelp from '@site/docs/\_need-help.mdx';
+
 ## Overview
 
 This guide serves as a concise but complete documentation about how to install the Appcircle chart with **default values**. **The default values** for **trial purposes** only and **not recommended** for use in **production environments**.
@@ -108,3 +110,5 @@ helm upgrade appcircle-server appcircle/appcircle \
 ```bash
 helm uninstall appcircle-server -n appcircle
 ```
+
+<NeedHelp />
