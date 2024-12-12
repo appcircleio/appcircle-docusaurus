@@ -25,7 +25,7 @@ This Helm chart is currently in public beta. Please use it with caution and repo
 
 ### Domain Name
 
-A main **domain name**, which will have **subdomains**, is required for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an **example main domain** and `spacetech` as an **example organization name**.
+A main **domain name**, which will have **subdomains**, is **required** for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an **example main domain** and `spacetech` as an **example organization name**.
 
 By default, Appcircle uses seven subdomains. These subdomains are:
 
@@ -41,7 +41,7 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 
 ### SSL Certificate
 
-Modern technologies and best practices require secure communication to protect data from potential threats and ensure user privacy. Therefore, deploying the Appcircle server with an SSL certificate is essential.
+An **SSL certificate** is **required** to deploy the Appcircle server for production environments.
 
 Ensure the **one certificate** covers **all the subdomains** in the [domain name](#domain-name) section.
 
@@ -65,31 +65,14 @@ Appcircle **supports TLS 1.3**, the latest and most secure version of the TLS pr
 
 To install the Appcircle server using Helm, a Kubernetes cluster is required. The cluster should meet the following hardware specifications:
 
-**Minimum hardware requirements for enterprise installation:**
-
-- Nodes with `x86_64` architecture
-- 8 CPUs
-- 16 GB RAM
-- 500 GB Disk
-
 **Recommended hardware requirements for enterprise installation:**
 
 - Nodes with `x86_64` architecture
 - 32 CPUs
 - 64 GB RAM
-- 1 TB Disk
+- 50 GB Disk
 
-For production environments, if you deploy stateful applications with the Appcircle Helm chart, you will need significant storage capacity, as specified above. You can configure disk resource allocations through Helm values according to your needs.
-
-However, if you opt to use external services for components such as PostgreSQL or MinIO, the storage requirements for the cluster are significantly reduced to around 50GB.
-
-:::info
-Using SSD storage is highly recommended if stateful applications are installed within the Appcircle Helm chart scope. SSDs provide faster read/write speeds, improving the performance and responsiveness of your applications.
-:::
-
-:::tip
-For storage class details, you can check the [Storage Class Configuration](/docs/self-hosted-appcircle/install-server/helm-chart/kubernetes-configuration.md#persistent-volume-configuration) section.
-:::
+The 50 GB disk requirement assumes that Appcircle will be configured with external databases (such as PostgreSQL) and object storage (such as MinIO) deployed outside of the Appcircle Helm chart.
 
 Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain compatibility and support.
 
@@ -103,7 +86,7 @@ Helm version `3.11.0` or later is required for deployment.
 
 ### Kubernetes Ingress Controller
 
-By default, Appcircle exposes its services through **Ingress objects**. To ensure these Ingress objects function properly, your Kubernetes cluster should have **an Ingress controller** installed and configured.
+The Kubernetes cluster should have **an Ingress controller** installed and configured since Appcircle exposes its services through **Ingress objects**.
 
 Appcircle server supports Nginx Ingress controller by default. To install Nginx Ingress controller to the Kubernetes cluster, please check [the Nginx Ingress controller documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
 
@@ -113,7 +96,7 @@ Appcircle server supports Nginx Ingress controller by default. To install Nginx 
 
 #### Enable SSL Passthrough
 
-The Ingress object named `kvs` for the Appcircle server, registered as part of [Appcircle domains](#domain-name), requires SSL passthrough to allow Appcircle runners to securely connect to the `kvs` service running within the Kubernetes cluster.
+The Ingress controller **should have `ssl-passthrough` feature enabled**. The Ingress object named `kvs` for the Appcircle server, registered as part of [Appcircle domains](#domain-name), requires SSL passthrough to allow Appcircle runners to securely connect to the `kvs` service running within the Kubernetes cluster.
 
 Enabling the SSL passthrough depends on the Ingress controller that is used in the Kubernetes cluster. For example:
 
@@ -317,11 +300,11 @@ To optionally remove sensitive data from the `values.yaml` file, you can create 
 
 ### Production Readiness (Optional)
 
-To optionally ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/kubernetes-configuration.md#production-readiness) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault, and MinIO connection settings.
+To optionally ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault, and MinIO connection settings.
 
 ### Appcircle Server Helm Chart Configurations (Optional)
 
-Optionally, refer to the [Configuration Section](/self-hosted-appcircle/install-server/helm-chart/kubernetes-configuration.md#advanced-configuration) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
+Optionally, refer to the [Configuration Section](/self-hosted-appcircle/install-server/helm-chart/configuration/advanced-configuration.md) to customize the Appcircle server for various deployment scenarios. This section provides detailed instructions on configuring different aspects of the Appcircle server using the Helm chart.
 
 ## Deploy Using Helm
 
@@ -408,7 +391,7 @@ kubectl get secret appcircle-server-auth-keycloak-passwords \
 
 When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
 
-To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/kubernetes-configuration.md#appcircle-license) section.
+To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/advanced-configuration.md#appcircle-license) section.
 
 ## Updating Appcircle Server
 
