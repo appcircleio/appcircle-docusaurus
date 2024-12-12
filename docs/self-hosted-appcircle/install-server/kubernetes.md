@@ -1,8 +1,8 @@
 ---
 title: Kubernetes
 description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes
-tags: [self-hosted, helm, installation, configuration, kubernetes]
-sidebar_position: 6
+tags: [self-hosted, helm, installation, configuration, kubernetes, production]
+sidebar_position: 7
 ---
 
 import Tabs from '@theme/Tabs';
