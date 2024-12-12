@@ -5,7 +5,7 @@ tags: [self-hosted server, update, upgrade]
 sidebar_position: 3
 ---
 
-import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-server/\_redis-domain-caution.mdx';
+import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_redis-domain-caution.mdx';
 
 # Overview
 
@@ -45,7 +45,7 @@ For example, to find the version for a project named "spacetech", run the follow
 
 #### ✨ Auto-upgrading Server
 
-If you want to update the Appcircle server in an automated way, you can check out the [Auto-upgrading Server](/self-hosted-appcircle/configure-server/auto-updating) documents.
+If you want to update the Appcircle server in an automated way, you can check out the [Auto-upgrading Server](/self-hosted-appcircle/install-server/linux-package/configure-server/auto-updating) documents.
 
 You can effortlessly manage all the commands listed below.
 
@@ -55,7 +55,7 @@ Additionally, you can set up recurring cron jobs (daily or weekly) to automatica
 :::caution
 If you are using the Appcircle DMZ structure and upgrading an Appcircle server, it is critical to also update the Appcircle DMZ server. If you don't, Enterprise App Store and Testing Distribution may not function as expected.
 
-For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz).
+For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz).
 :::
 
 #### Version History
@@ -159,7 +159,7 @@ curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | AC_SERVER_V
 
 Upgrading from older versions to `3.14.0` or later requires MinIO migration, which should be done interactively while upgrading.
 
-In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/configure-server/minio-migration) document.
+In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/install-server/linux-package/configure-server/minio-migration) document.
 
 :::
 
@@ -275,7 +275,7 @@ Upgrade images.
 :::caution
 If you are using a proxy on the server, then you should maintain the proxy variables.
 
-Please head to the [Maintenance of Proxy Variables](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
+Please head to the [Maintenance of Proxy Variables](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
 :::
 
 Then start with below command.

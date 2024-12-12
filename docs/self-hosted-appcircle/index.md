@@ -34,7 +34,7 @@ When we look at self-hosted Appcircle deployment as a whole, we will see below a
 To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/be-3008-appcircle-topology.png). It will open the diagram in new browser tab.
 
 :::tip
-You can see all external network access details on the [Network Access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access) page.
+You can see all external network access details on the [Network Access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access) page.
 :::
 
 ## Appcircle DMZ Architecture
@@ -43,4 +43,4 @@ If you plan to use Appcircle DMZ Architecture, the Appcircle DMZ Architecture fo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-appcircle-dmz-topology.png' />
 
-For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz) document.
+For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) document.

@@ -5,7 +5,7 @@ tags: [self-hosted server, update, upgrade, auto-update, auto-upgrade, crontab]
 sidebar_position: 15
 ---
 
-import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
 
 ## Overview
 
@@ -77,7 +77,7 @@ Crontab is a scheduling utility that enables users to schedule tasks and command
 By utilizing crontab, you can seamlessly automate minor or patch updates for the Appcircle server, ensuring your application remains up-to-date without manual intervention.
 
 :::caution
-If you are updating the Appcircle server with the [Offline Upgrade](/self-hosted-appcircle/configure-server/offline-installation.md#upgrade) method, then you can't use auto-update tool since it requires some network access to download the Appcircle server package and up-to-date container images.
+If you are updating the Appcircle server with the [Offline Upgrade](/self-hosted-appcircle/install-server/linux-package/configure-server/offline-installation.md#upgrade) method, then you can't use auto-update tool since it requires some network access to download the Appcircle server package and up-to-date container images.
 :::
 
 ### Enable Passwordless Sudo

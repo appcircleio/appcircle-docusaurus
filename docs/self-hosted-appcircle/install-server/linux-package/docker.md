@@ -724,7 +724,7 @@ sudo netstat -tulpn | grep LISTEN | grep docker
 
 #### Using 3rd Party or Self-hosted Artifact Registry
 
-If your organization uses another registry (harbor, nexus, etc.), in order to use the Appcircle registry, you can head to the [External Image Registries](/self-hosted-appcircle/configure-server/external-image-registry) document for detailed usage and configuration examples.
+If your organization uses another registry (harbor, nexus, etc.), in order to use the Appcircle registry, you can head to the [External Image Registries](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry) document for detailed usage and configuration examples.
 
 ### :tada: Ready
 

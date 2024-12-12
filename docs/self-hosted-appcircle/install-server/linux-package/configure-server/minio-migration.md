@@ -7,7 +7,7 @@ sidebar_class_name: hidden
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
@@ -175,9 +175,9 @@ Execute the below command to apply configuration changes.
 In order to get container image updates for Appcircle server services, you need to pull them from the remote artifact repository.
 
 :::caution
-If you are updating the Appcircle server with the [Offline Upgrade](/self-hosted-appcircle/configure-server/offline-installation) method, you should `load` the new container images before the MinIO migration.
+If you are updating the Appcircle server with the [Offline Upgrade](/self-hosted-appcircle/install-server/linux-package/configure-server/offline-installation) method, you should `load` the new container images before the MinIO migration.
 
-For more details, please head to the [Offline Upgrade](/self-hosted-appcircle/configure-server/offline-installation#upgrade) documentation and follow the steps before the MinIO migration.
+For more details, please head to the [Offline Upgrade](/self-hosted-appcircle/install-server/linux-package/configure-server/offline-installation#upgrade) documentation and follow the steps before the MinIO migration.
 :::
 
 - Upgrade the container images.
@@ -220,7 +220,7 @@ You can access and review the comprehensive migration logs from this file for fu
 :::caution
 If you are using a proxy on the Appcircle server, then you should update the `no_proxy` variables.
 
-Please follow the [No Proxy for Internal Container Network](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new SNSD MinIO service.
+Please follow the [No Proxy for Internal Container Network](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new SNSD MinIO service.
 :::
 
   </TabItem>

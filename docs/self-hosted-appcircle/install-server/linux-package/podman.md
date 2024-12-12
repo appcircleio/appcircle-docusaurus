@@ -6,11 +6,11 @@ sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-import LingerOption from '@site/docs/self-hosted-appcircle/configure-server/\_linger-option.mdx';
-import SocatConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_socat-configuration.mdx';
-import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_podman-netavark-configuration.mdx';
-import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_firewalld-configuration.mdx';
-import SwapConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_swap-configuration.mdx';
+import LingerOption from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_linger-option.mdx';
+import SocatConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_socat-configuration.mdx';
+import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_podman-netavark-configuration.mdx';
+import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_firewalld-configuration.mdx';
+import SwapConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_swap-configuration.mdx';
 
 # Overview
 
@@ -741,13 +741,13 @@ By default, the Appcircle server containers do not start automatically upon rebo
 
 To enable automatic startup of the Appcircle server containers, additional steps are required.
 
-For detailed instructions on configuring the automatic startup of the server containers upon server reboot, please refer to the [Restarting Host](../../configure-server/restarting-host) page.
+For detailed instructions on configuring the automatic startup of the server containers upon server reboot, please refer to the [Restarting Host](./configure-server/restarting-host) page.
 
 :::
 
 #### Using 3rd Party or Self-hosted Artifact Registry
 
-If your organization uses another registry (harbor, nexus, etc.), in order to use the Appcircle registry, you can head to the [External Image Registries](/self-hosted-appcircle/configure-server/external-image-registry) document for detailed usage and configuration examples.
+If your organization uses another registry (harbor, nexus, etc.), in order to use the Appcircle registry, you can head to the [External Image Registries](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry) document for detailed usage and configuration examples.
 
 ### :tada: Ready
 

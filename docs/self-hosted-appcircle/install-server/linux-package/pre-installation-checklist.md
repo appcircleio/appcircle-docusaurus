@@ -170,9 +170,9 @@ You can see details in the [DNS Settings](/self-hosted-appcircle/install-server/
 
 ### Network Access for Installation
 
-According to the selected Linux distribution and installation method, you need to configure firewall rules (or permissions) for the Appcircle server. All required domains that are used for installation are detailed in the [network access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access) section.
+According to the selected Linux distribution and installation method, you need to configure firewall rules (or permissions) for the Appcircle server. All required domains that are used for installation are detailed in the [network access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access) section.
 
-- [ ] Review the [network access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access#appcircle-server-install-and-update) section and be sure that the listed domains are reachable from the Appcircle server.
+- [ ] Review the [network access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#appcircle-server-install-and-update) section and be sure that the listed domains are reachable from the Appcircle server.
 
 ## Runner Checklist
 
@@ -203,4 +203,4 @@ Port depends on the selected connection method. Default values can be:
 If your git server has a custom port for git servcies, then you should use that port.
 :::
 
-- [ ] Review the [network access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access#appcircle-runner-install-as-ready-to-use-macos-virtual-machine) section and be sure that the listed domains are reachable from the Appcircle runner.
+- [ ] Review the [network access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#appcircle-runner-install-as-ready-to-use-macos-virtual-machine) section and be sure that the listed domains are reachable from the Appcircle runner.

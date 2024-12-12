@@ -67,7 +67,7 @@ You can see the detailed configuration steps [here.](/self-hosted-appcircle/inst
 
 You can utilize the Appcircle server in either HTTP or HTTPS mode, which can be configured in the `global.yaml` settings file.
 
-After following the general configuration steps above, see the SSL configuration details [here.](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration)
+After following the general configuration steps above, see the SSL configuration details [here.](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration)
 
 #### Domain Settings of the Modules
 
@@ -95,7 +95,7 @@ Prior to running the server, it is necessary to pull the images from the Appcirc
 
 If you're planning to use a proxy repository to access the origin repository, it should be defined in the `global.yaml` configuration file.
 
-You can check the required steps on how to define a custom image registry [here.](/self-hosted-appcircle/configure-server/external-image-registry)
+You can check the required steps on how to define a custom image registry [here.](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry)
 
 :::caution
 

@@ -14,14 +14,14 @@ sidebar_position: 12
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
-import LingerOption from '@site/docs/self-hosted-appcircle/configure-server/\_linger-option.mdx';
-import SocatConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_socat-configuration.mdx';
-import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_podman-netavark-configuration.mdx';
-import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_firewalld-configuration.mdx';
-import UFWConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_ufw-configuration.mdx';
-import SwapConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_swap-configuration.mdx';
-import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
+import LingerOption from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_linger-option.mdx';
+import SocatConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_socat-configuration.mdx';
+import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_podman-netavark-configuration.mdx';
+import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_firewalld-configuration.mdx';
+import UFWConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_ufw-configuration.mdx';
+import SwapConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_swap-configuration.mdx';
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
 import Screenshot from '@site/src/components/Screenshot';
 
 ## Overview
@@ -557,7 +557,7 @@ cd .. && rm -rf appcircle-server-dmz
 
 By default, the Appcircle DMZ server will try to send the container logs to the Appcircle server.
 
-You can check the container logs on the Appcircle monitoring page. For more details about checking the logs, you can check the [Monitoring](/self-hosted-appcircle/configure-server/monitoring) page.
+You can check the container logs on the Appcircle monitoring page. For more details about checking the logs, you can check the [Monitoring](/self-hosted-appcircle/install-server/linux-package/configure-server/monitoring) page.
 
 ## Restarting the Appcircle DMZ Server Host
 

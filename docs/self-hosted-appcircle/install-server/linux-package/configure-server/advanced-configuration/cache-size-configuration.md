@@ -5,9 +5,9 @@ tags: [self-hosted, advanced configuration, cache size]
 sidebar_position: 11
 ---
 
-import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
-import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
-import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_restart-appcircle-server.mdx';
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
 
 Appcircle has a limit for cache sizes that can be pushed or pulled on the build workflows.
 

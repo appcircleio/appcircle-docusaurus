@@ -59,7 +59,7 @@ We are assuming that you have installed the Appcircle server with version `3.10.
 
 LDAP brute-force settings can be configured for only **Testing Distribution** and **Enterprise App Store** modules.
 
-[Appcircle login with LDAP](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#appcircle-login-with-ldap) is not supported and is out-of-scope for the brute-force settings.
+[Appcircle login with LDAP](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings#appcircle-login-with-ldap) is not supported and is out-of-scope for the brute-force settings.
 
 :::
 

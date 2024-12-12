@@ -36,13 +36,13 @@ The podman network backend should be `netavark`. You can check the current setti
 podman info | grep -i networkBackend
 ```
 
-If you need to use a proxy on the Appcircle server, you should configure proxy settings according to the [Proxy Configuration](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration) document.
+If you need to use a proxy on the Appcircle server, you should configure proxy settings according to the [Proxy Configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration) document.
 
 ### We are facing "manifest not found" error when we run the `up` command.
 
 If you are using the Nexus registry and are facing a "manifest not found" error, this is an expected case to occur. Nexus proxy has a known bug while pulling multiple container images. You should pull images one by one as a workaround.
 
-To pull images one by one, you can see the [Pulling Image One By One](../../configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
+To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
 ### Where should we download the zip package while we are updating?
 
@@ -145,16 +145,16 @@ Now you can access the Enterprise App Store with the new store domain settings.
 ### How can we change the default sub-domains?
 
 :::caution
-This operation needs **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#reset-configuration)** which deletes all your data like "Build Profiles", "Signing Identities", etc on the Appcircle server.
+This operation needs **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/docker#reset-configuration)** which deletes all your data like "Build Profiles", "Signing Identities", etc on the Appcircle server.
 :::
 
 :::tip
-If you only want to change the URL of the **Testing Distribution** or **Enterprise App Store**, you should follow the [custom domain](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) configuration document to assign a custom domain without resetting the Appcircle server.
+If you only want to change the URL of the **Testing Distribution** or **Enterprise App Store**, you should follow the [custom domain](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#custom-domain) configuration document to assign a custom domain without resetting the Appcircle server.
 :::
 
 You can change the default subdomains as per your needs at the first installation time of the Appcircle server.
 
-If you have already installed the Appcircle server and want to change the subdomains, you must **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/docker#reset-configuration)** the server before applying a new configuration.
+If you have already installed the Appcircle server and want to change the subdomains, you must **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/docker#reset-configuration)** the server before applying a new configuration.
 
 For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com` along with other subdomains, you should follow the steps below:
 
@@ -241,7 +241,7 @@ then the Appcircle dashboard URL will be `my-appcircle.spacetech.com`.
 :::danger
 If you have configured the Appcircle server as HTTPS, as an extra step, it may be required to change the SSL certificates in the `global.yaml` if they are not compatible with your new subdomains.
 
-See the **[SSL configuration](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration)** document for details.
+See the **[SSL configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration)** document for details.
 :::
 
 When the `global.yaml` changes are ready to apply, follow the below steps:
@@ -294,7 +294,7 @@ For more details about configuring the outbound requests, you can refer to the [
 
 ### How can we restrict the TLS versions used by the Appcircle server?
 
-To restrict the TLS versions used by the Appcircle server, you can follow the [Configure TLS Versions](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#configure-tls-versions) section in the **SSL Configuration** documentation.
+To restrict the TLS versions used by the Appcircle server, you can follow the [Configure TLS Versions](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration.md#configure-tls-versions) section in the **SSL Configuration** documentation.
 
 ## Appcircle Runner FAQ
 

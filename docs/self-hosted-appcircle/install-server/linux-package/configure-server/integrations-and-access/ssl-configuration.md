@@ -5,9 +5,9 @@ tags: [self-hosted, ssl, https, certificate, custom domain, enterprise app store
 sidebar_position: 3
 ---
 
-import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/configure-server/\_restart-appcircle-server.mdx';
-import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
-import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_restart-appcircle-server.mdx';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -264,7 +264,7 @@ Although you can create and use dedicated certificates for all subdomains, in ou
 The Appcircle server by default accepts connections over `TLSv1` and above. You can choose which TLS versions to support based on your security requirements. To restrict the TLS versions used by the Appcircle server, you can set the `.nginx.sslProtocols` variable in the `global.yaml` of the project.
 
 :::info
-When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Authentication, and others, including the [Appcircle DMZ Server](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md) if you are using Appcircle in DMZ mode.
+When configuring TLS versions for your Appcircle server, keep in mind that this setting applies to all services, including the Dashboard, Testing Distribution, Enterprise App Store, Authentication, and others, including the [Appcircle DMZ Server](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz.md) if you are using Appcircle in DMZ mode.
 :::
 
 :::info
