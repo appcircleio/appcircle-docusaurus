@@ -1,5 +1,5 @@
 ---
-title: Kubernetes Quick Install
+title: Kubernetes Quick Installation
 description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes for testing purposes
 tags: [self-hosted, helm, installation, configuration, kubernetes, quick]
 sidebar_position: 6
