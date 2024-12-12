@@ -88,7 +88,7 @@ Using SSD storage is highly recommended if stateful applications are installed w
 :::
 
 :::tip
-For storage class details, you can check the [Storage Class Configuration](/self-hosted-appcircle/install-server/helm-chart/kubernetes-configuration.md#persistent-volume-configuration) section.
+For storage class details, you can check the [Storage Class Configuration](/docs/self-hosted-appcircle/install-server/helm-chart/kubernetes-configuration.md#persistent-volume-configuration) section.
 :::
 
 Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain compatibility and support.

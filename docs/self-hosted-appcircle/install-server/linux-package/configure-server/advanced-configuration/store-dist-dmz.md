@@ -616,7 +616,7 @@ ExecStart=/bin/bash /app/appcircle-server-dmz/ac-self-hosted-dmz.sh up
 
 ### How can we change the Appcircle authentication domain on the DMZ server for internet users?
 
-You can use an additional custom domain for Appcircle authentication so that internet users can  access authentication services from the internet without using the internal `auth` [subdomain](/self-hosted-appcircle/install-server/linux-package/docker#4-dns-settings).
+You can use an additional custom domain for Appcircle authentication so that internet users can  access authentication services from the internet without using the internal `auth` [subdomain](/self-hosted-appcircle/install-server/linux-package/installation/docker#4-dns-settings).
 
 :::caution
 The custom domain applies to the Appcircle DMZ server only. When connecting to the Appcircle server located within the private network, you should continue to utilize the default `auth` sudomain for Appcircle authentication services.

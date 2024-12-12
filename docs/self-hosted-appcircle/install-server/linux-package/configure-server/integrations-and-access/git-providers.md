@@ -23,13 +23,13 @@ Following sections will give you more details about removing or adding other git
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/linux-package/docker#3-configure) section in docs, understood configuration made there and scenarios told there.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) section in docs, understood configuration made there and scenarios told there.
 
 :::
 
 :::caution
 
-Current working directory is assumed `appcircle-server` for following steps. See [here](/self-hosted-appcircle/install-server/linux-package/docker#1-download) for installation details.
+Current working directory is assumed `appcircle-server` for following steps. See [here](/self-hosted-appcircle/install-server/linux-package/installation/docker#1-download) for installation details.
 
 :::
 
@@ -39,7 +39,7 @@ Current working directory is assumed `appcircle-server` for following steps. See
 
 - `projects/${YOUR_PROJECT}`
 
-You can see an example project configuration from [here](/self-hosted-appcircle/install-server/linux-package/docker#3-configure).
+You can see an example project configuration from [here](/self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure).
 
 :::
 
@@ -130,7 +130,7 @@ To apply the changes, please follow [Applying Git Provider Changes](#applying-gi
 
 ## Applying Git Provider Changes
 
-You can add or remove git providers at [installation](/self-hosted-appcircle/install-server/linux-package/docker) steps or later when you need. Following sections will explain how to apply changes especially after installation.
+You can add or remove git providers at [installation](/self-hosted-appcircle/install-server/linux-package/installation/docker) steps or later when you need. Following sections will explain how to apply changes especially after installation.
 
 Let's assume we want to disable both "Connect via SSH" and "Connect via URL" options. Then we need to add below section to our `global.yaml`.
 
@@ -159,7 +159,7 @@ If we **don't do** the configuration at installation, then after editing `global
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/linux-package/docker#3-configure) section in docs and applied example scenario.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) section in docs and applied example scenario.
 
 Following steps are using example project as project naming, which was told there.
 

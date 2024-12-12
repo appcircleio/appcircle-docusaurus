@@ -16,7 +16,7 @@ Using proxies on Appcircle containers ensures smooth connectivity to external re
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/linux-package/docker#3-configure) section in docs and applied example scenario.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) section in docs and applied example scenario.
 
 Following steps are using example project as project naming, which was told there.
 

@@ -9,8 +9,8 @@ In this documentation, you will learn how to install a self-hosted App server on
 
 ## Quick Installation for Testing Purposes
 
-To quickly install the self-hosted Appcircle server with default settings for **testing purposes**, follow the [Kubernetes Quick](/self-hosted-appcircle/install-server/helm-chart/kubernetes-quick.md) documentation.
+To quickly install the self-hosted Appcircle server with default settings for **testing purposes**, follow the [Kubernetes Quick](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes-quick.md) documentation.
 
 ## Installation for Production Environment
 
-To install the self-hosted Appcircle server for a production environment, follow the [Kubernetes Production](/self-hosted-appcircle/install-server/helm-chart/kubernetes.md) documentation.
+To install the self-hosted Appcircle server for a production environment, follow the [Kubernetes Production](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md) documentation.

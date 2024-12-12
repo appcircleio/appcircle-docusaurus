@@ -37,7 +37,7 @@ To configure LDAP lookup decision settings, you can follow the steps below.
 
 :::info
 
-We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/linux-package/docker#3-configure) section in docs and applied example scenario.
+We're assuming that previously you reviewed or followed [install self-hosted appcircle](/self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) section in docs and applied example scenario.
 
 Following steps are using example project as project naming, which was told there.
 
@@ -364,7 +364,7 @@ Setting up LDAP Mapping streamlines user management by automating the synchroniz
 :::info
 If the LDAP configuration is incorrect or the LDAP server cannot be accessed for some reason, you can always login with the "initial username" and "initial password" that were configured while installing the server.
 
-See the [configure](/self-hosted-appcircle/install-server/linux-package/docker#3-configure) section in the installation page for the `global.yaml` details.
+See the [configure](/self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) section in the installation page for the `global.yaml` details.
 :::
 
 import NeedHelp from '@site/docs/\_need-help.mdx';

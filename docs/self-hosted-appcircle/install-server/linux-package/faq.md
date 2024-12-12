@@ -50,9 +50,9 @@ Download the zip package of the appcircle server and extract it to the same fold
 
 ### How do I change Docker or Podman's data location?
 
-For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](/self-hosted-appcircle/install-server/linux-package/docker#change-the-docker-data-location) page.
+For more details on changing the location of Docker data, refer to the [Change the Docker Data Location](/self-hosted-appcircle/install-server/linux-package/installation/docker#change-the-docker-data-location) page.
 
-For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./podman#change-the-podman-data-location) page.
+For more details on changing the location of Podman data, refer to the [Change the Podman Data Location](./installation/podman#change-the-podman-data-location) page.
 
 ### I'm offline on the Appcircle dashboard on my browser.
 
@@ -145,7 +145,7 @@ Now you can access the Enterprise App Store with the new store domain settings.
 ### How can we change the default sub-domains?
 
 :::caution
-This operation needs **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/docker#reset-configuration)** which deletes all your data like "Build Profiles", "Signing Identities", etc on the Appcircle server.
+This operation needs **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/docker#reset-configuration)** which deletes all your data like "Build Profiles", "Signing Identities", etc on the Appcircle server.
 :::
 
 :::tip
@@ -154,7 +154,7 @@ If you only want to change the URL of the **Testing Distribution** or **Enterpri
 
 You can change the default subdomains as per your needs at the first installation time of the Appcircle server.
 
-If you have already installed the Appcircle server and want to change the subdomains, you must **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/docker#reset-configuration)** the server before applying a new configuration.
+If you have already installed the Appcircle server and want to change the subdomains, you must **[reset](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/docker#reset-configuration)** the server before applying a new configuration.
 
 For example, to change `my.appcircle.spacetech.com` to `my-appcircle.spacetech.com` along with other subdomains, you should follow the steps below:
 
@@ -261,7 +261,7 @@ When the `global.yaml` changes are ready to apply, follow the below steps:
 :::info
 The `reset` step is optional. If you are installing for the first time, which means that you have never run the `up` command and used the system, then you don't need to cleanup anything.
 
-For details, you can see the [reset configuration](./docker#reset-configuration) section in the documentation.
+For details, you can see the [reset configuration](./installation/docker#reset-configuration) section in the documentation.
 :::
 
 - Apply the configuration changes.
