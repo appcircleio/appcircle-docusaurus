@@ -9,7 +9,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
-This guide serves as a concise but complete documentation about how to install the Appcircle chart with **default values**. **The default values** for **trial purposes** only and **not recommended** for use in **production environments**.
+This guide provides a concise yet comprehensive overview of how to install the Appcircle chart using **default values**. Please note that **default values** are intended for **trial purposes only** and are **not recommended** for use in **production environments**.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ To complete this guide, you must have the following:
 
 ### 1. Add the Appcircle Helm Repository
 
-**Add the Appcircle Helm repository** to configuration of the Helm:
+**Add the Appcircle Helm repository** to the configuration of Helm:
 
 ```bash
 helm repo add appcircle https://helm-package.appcircle.io && \
@@ -42,7 +42,7 @@ kubectl create namespace appcircle
 
 ### 3. Create Registry Secret
 
-**Create a Kubernetes secret** named `containerregistry` to authenticate Appcircle container image registry. You need a `cred.json` file you got from Appcircle with your license to access the container images. 
+**Create a Kubernetes secret** named `containerregistry` to authenticate the Appcircle container image registry. You need a `cred.json` file you got from Appcircle with your license to access the container images. 
 
 If you haven't got your `cred.json` already, you can [contact us](https://appcircle.io/support/).
 
