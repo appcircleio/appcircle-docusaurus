@@ -27,6 +27,10 @@ If you want to revoke a previously generated token, press "Revoke Token" and con
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5035-api3.png' alt="Revoke Personal API Token"/>
 
+:::caution Personal API Token for Sub-Organizations
+To generate a PAT for a sub-organization, you must be added as a **member** of that sub-organization. Users **inherited** from a parent organization cannot generate a PAT. For additional details on [Organization](/account/my-organization/profile-and-team/organization-management#working-with-multiple-organizations) and [Team management](/account/my-organization/profile-and-team/team-management#managing-team-members), refer to the relevant documentation.
+:::
+
 ### Using the Token for API Authentication
 
 For authentication, you need to [generate a session token from the Auth API using the Personal API Token](https://api.appcircle.io/openapi/index.html?urls.primaryName=auth) and add the generated session token value along with an `Authorization` header in all API requests.
