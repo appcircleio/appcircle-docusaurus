@@ -63,24 +63,43 @@ Appcircle **supports TLS 1.3**, the latest and most secure version of the TLS pr
 
 ### Kubernetes cluster
 
-To install the Appcircle server using Helm, a Kubernetes cluster is required. The cluster should meet the following hardware specifications:
+A Kubernetes cluster is required to install the Appcircle server using Helm. The cluster should meet the following hardware specifications:
+
+**Minimum hardware requirements for enterprise installation:**
+
+- Nodes with `x86_64` architecture
+- 8 CPUs
+- 16 GB RAM
+- 500 GB Disk
 
 **Recommended hardware requirements for enterprise installation:**
 
 - Nodes with `x86_64` architecture
 - 32 CPUs
 - 64 GB RAM
-- 50 GB Disk
+- 1 TB Disk
 
-The 50 GB disk requirement assumes that Appcircle will be configured with external databases (such as PostgreSQL) and object storage (such as MinIO) deployed outside of the Appcircle Helm chart.
+For production environments, if you deploy stateful applications with the Appcircle Helm chart, you will need significant storage capacity, as specified above. You can configure disk resource allocations through Helm values according to your needs.
+
+However, if you opt to use external services for components such as PostgreSQL or MinIO, the storage requirements for the cluster are significantly reduced to around 50GB.
+
+:::info
+Using SSD storage is highly recommended if stateful applications are installed within the Appcircle Helm chart scope. SSDs provide faster read/write speeds, improving the performance and responsiveness of your applications.
+:::
+
+:::tip
+For stateful apps that should deployed out of scope this helm chart, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) document.
+
+For storage details, you can check the [Storage Class Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration.md) section.
+:::
 
 Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain compatibility and support.
 
-### Install `kubectl`
+### `kubectl`
 
 The `kubectl` CLI configured for the target Kubernetes cluster is required.
 
-### Install Helm
+### Helm
 
 Helm version `3.11.0` or later is required for deployment.
 
@@ -296,11 +315,11 @@ kubectl create secret docker-registry containerregistry \
 
 ### Secure Sensitive Data With Kubernetes Secrets (Optional)
 
-To optionally remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/self-hosted-appcircle/install-server/helm-chart/kubernetes-configuration.md#secrets-for-sensitive-values)
+To optionally remove sensitive data from the `values.yaml` file, you can create some secrets before you deploy the Appcircle server Helm chart. For more information, you can check the [Secrets for Sensitive Values section.](/docs/self-hosted-appcircle/install-server/helm-chart/configuration/sensitive-configuration.md)
 
 ### Production Readiness (Optional)
 
-To optionally ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) section. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault, and MinIO connection settings.
+To optionally ensure your deployment is ready for production, follow the guidelines provided in the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) document. This section will help you adjust the settings in the `values.yaml` file, such as providing the external PostgreSQL, MongoDB, Vault, and MinIO connection settings.
 
 ### Appcircle Server Helm Chart Configurations (Optional)
 

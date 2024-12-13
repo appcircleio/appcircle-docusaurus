@@ -11,54 +11,6 @@ For advanced configuration options, open the `values.yaml` file with your prefer
 
 Once you have updated the `values.yaml` file, please proceed to the [Upgrade Appcircle Server](/self-hosted-appcircle/install-server/helm-chart/upgrades.md) section to apply the changes.
 
-### Persistent Volume Configuration
-
-Appcircle server Helm chart supports configuring storage classes and volume sizes for persistent volume claims (PVCs). If you don't specify any storage class or size, the PVCs will be created using the default storage class of your Kubernetes cluster with the default size. If you want to adjust these settings, you can specify them in the `values.yaml`.
-
-:::caution
-The configurations for storage classes should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation.md)** and redeploy it.
-
-Additionally, some storage classes do not support **expanding volumes**. You should verify the capabilities of your own storage class. If volume expansion is needed, **manual operations**, such as moving data from the old volume to a new one, may be required.
-:::
-
-You can configure the `values.yaml` like in the example below. The storage values given in the example are recommended values for production usage.
-
-```yaml
-auth:
-  auth-postgresql:
-    primary:
-      persistence:
-        size: 40Gi
-        storageClass: nfs-client
-mongodb:
-  persistence:
-    size: 3Gi
-    storageClass: nfs-client
-kafka:
-  controller:
-    persistence:
-      size: 8Gi
-      storageClass: nfs-client
-minio:
-  persistence:
-    storageClass: nfs-client
-    size: 1Ti
-vault:
-  server:
-    dataStorage:
-      size: 20Gi
-      storageClass: nfs-client
-webeventredis:
-  master:
-    persistence:
-      size: 2Gi
-      storageClass: nfs-client
-  replica:
-    persistence:
-      size: 2Gi
-      storageClass: nfs-client
-```
-
 ### Adding Trusted CA Certificates to the Appcircle Services
 
 If any services that the Appcircle server needs to connect to, such as your Git provider, use a self-signed SSL/TLS certificate or a certificate issued by an untrusted root CA from your organization, Appcircle will refuse the connection by default.
