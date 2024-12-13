@@ -56,3 +56,23 @@ If the deployment hasn't completed and timed out after `1200` seconds:
 :::tip
 If you face a timeout due to configuration problems, it is better to re-install Appcircle freshly. Refer to the [Uninstalling Appcircle](/docs/self-hosted-appcircle/install-server/helm-chart/uninstallation.md) section for detailed instructions on how to uninstall and clean up the existing deployment before starting anew.
 :::
+
+### What should we do if we use an Ingress controller other then Nginx Ingress?
+
+If you are using an ingress controller other than the Nginx Ingress controller, you should add an additional annotation to the `resource` ingress.
+
+By default, Appcircle adds the [`upstream vhost`](https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#custom-nginx-upstream-vhost) annotation. You should add alternative annotation for your ingress controller.
+
+For example, if you are using HAProxy as an Ingress controller, you should add the annotation to the `values.yaml` of the Appcircle Helm chart:
+
+:::caution
+`appcircle-server` below should be the Helm chart release name. In the installation document, we use `appcircle-server` for the release name. You should change it if you changed the release name. 
+:::
+
+```yaml
+resource:
+  ingress:
+    annotations: 
+      haproxy.org/set-host: "appcircle-server-minio:9000"
+```
+

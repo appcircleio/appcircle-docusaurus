@@ -236,6 +236,10 @@ auth:
       # Appcircle keycloak image repository path
       repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-keycloak
 
+# Internal Ingress controller configuration
+ingress-nginx:
+  enabled: false
+
 # Appcircle vault configuration
 vault:
   server:
@@ -382,7 +386,7 @@ appcircle-resource                 nginx   resource.appcircle.spacetech.com     
 appcircle-store-web                nginx   *.store.appcircle.spacetech.com                                10.45.140.78   80,443     24m
 appcircle-web-app                  nginx   my.appcircle.spacetech.com                                     10.45.140.78   80,443     24m
 appcircle-web-event                nginx   hook.appcircle.spacetech.com                                   10.45.140.78   80,443     24m
-appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  10.45.140.78   80,443     24m
+appcircle-webeventredis            nginx   kvs.appcircle.spacetech.com                                    10.45.140.78   80,443     24m
 ```
 
 You should configure your DNS records according to your DNS provider. For a best practice, create an **`A`** record for **`my.appcircle.spacetech.com`** and create **`CNAME`** records for other domains.
