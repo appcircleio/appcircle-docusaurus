@@ -2178,6 +2178,11 @@ schemes:
   description: "Description for SDK versions"
   permalink: /SDK-versions
 
+"search":
+  label: "search"
+  description: "Description for search"
+  permalink: /search
+
 "secure":
   label: "secure"
   description: "Description for secure"
