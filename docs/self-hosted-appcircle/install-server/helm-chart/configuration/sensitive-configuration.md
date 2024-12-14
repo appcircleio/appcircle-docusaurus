@@ -2,7 +2,7 @@
 title: Sensitive Values
 description: Learn how to configure the sensitive values for Appcircle server Helm chart
 tags: [self-hosted, helm, configuration, kubernetes]
-sidebar_position: 100
+sidebar_position: 40
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
@@ -12,7 +12,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 To manage sensitive information such as the Appcircle initial user password, SMTP password, SSL certificates, and other secrets, it is recommended to use Kubernetes secrets. This ensures that sensitive data is stored securely and can be accessed by applications running within the cluster in a controlled manner.
 
 :::caution
-The configurations for production readiness should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation.md)** and redeploy it.
+The configurations for secret values should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation.md)** and redeploy it.
 :::
 
 :::info

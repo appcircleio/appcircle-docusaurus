@@ -1,8 +1,8 @@
 ---
-title: Kubernetes
+title: Kubernetes (Deprecated)
 description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes
 tags: [self-hosted, helm, installation, configuration, kubernetes]
-sidebar_position: 7
+sidebar_position: 30
 ---
 
 import Tabs from '@theme/Tabs';
@@ -79,11 +79,11 @@ Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain
 
 ### `kubectl`
 
-The `kubectl` CLI configured for the target Kubernetes cluster is required.
+The **`kubectl`** CLI configured is **required**.
 
 ### Helm
 
-Helm version `3.11.0` or later is required for deployment.
+**Helm version `3.11.0`** or later is **required**.
 
 ### Kubernetes Ingress Controller
 
@@ -391,12 +391,6 @@ You can view the initial username printed after the `helm` deployment and view t
 kubectl get secret appcircle-server-auth-keycloak-passwords \
   -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
 ```
-
-### License Configuration
-
-When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
-
-To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/advanced-configuration.md#appcircle-license) section.
 
 ## Updating Appcircle Server
 

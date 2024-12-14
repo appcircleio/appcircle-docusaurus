@@ -1,8 +1,8 @@
 ---
-title: Kubernetes Quick Installation
-description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes for testing purposes
+title: Kubernetes
+description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes
 tags: [self-hosted, helm, installation, configuration, kubernetes]
-sidebar_position: 6
+sidebar_position: 20
 ---
 
 import Tabs from '@theme/Tabs';
@@ -108,32 +108,43 @@ Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain
 
 ### 4. `kubectl`
 
+The **`kubectl`** CLI configured is **required**.
+
 ### 5. Helm v3
 
-## Install the Appcircle Server
+**Helm version `3.11.0`** or later is **required**.
 
-### 1. Add the Appcircle Helm Repository
+## Pre-installation Steps
 
-**Add the Appcircle Helm repository** to the configuration of Helm:
+### 1. Create Namespace
 
-```bash
-helm repo add appcircle https://helm-package.appcircle.io && \
-helm repo update
-```
-
-### 2. Create Namespace
-
-**Create a namespace** for the Appcircle server installation.
+**Create a namespace** for the Appcircle server deployment. In this documentation, we will use `appcircle` as the example namespace.
 
 ```bash
 kubectl create namespace appcircle
 ```
 
-### 3. Create Registry Secret
+### 2. Create Container Registry Secret
 
-**Create a Kubernetes secret** named `containerregistry` to authenticate the Appcircle container image registry. You need a `cred.json` file you got from Appcircle with your license to access the container images.
+By default, Appcircle uses its own image registry, which requires authentication with the `cred.json` file provided by Appcircle. 
 
-If you haven't got your `cred.json` already, you can [contact us](https://appcircle.io/support/).
+If you are using your own container image registry to access Appcircle container images, you can either skip authentication if your registry doesn't require it or create a secret for your custom registry.
+
+Follow the steps below to create the registry secret in the `appcircle` namespace for pods to successfully pull images:
+
+:::info
+If you are using your own container registry, follow the `Custom Registry` section below.
+
+If your registry doesn't require authentication, you can skip this section.
+:::
+
+<Tabs groupId="Image Registry">
+
+  <TabItem value="appcircle-registry" label="Appcircle Registry">
+
+- Save the `cred.json` file.
+
+- Create the container registry secret:
 
 ```bash
 kubectl create secret docker-registry containerregistry \
@@ -143,7 +154,39 @@ kubectl create secret docker-registry containerregistry \
   --docker-password="$(cat cred.json)"
 ```
 
-### 4. Create `values.yaml`
+  </TabItem>
+  <TabItem value="custom-registry" label="Custom Registry">
+
+:::tip
+If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with a leading space character will not be stored in the shell history. This allows you to create secrets safely without storing sensitive information in the shell history.
+:::
+
+- Update the `server`, `username`, and `password` fields for your own custom registry and create the container registry secret:
+
+```bash
+kubectl create secret docker-registry containerregistry \
+  -n appcircle \
+  --docker-server='registry.spacetech.com' \
+  --docker-username='yourRegistryUsername' \
+  --docker-password='superSecretRegistryPassword'
+```
+
+  </TabItem>
+</Tabs>
+
+### 3. Ingress Controller
+
+Details will be here.
+
+### 4. Production Readiness
+
+If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
+
+For more information, you can check the [Production Readiness](self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) documentation.
+
+## Installation
+
+### 1. Create `values.yaml`
 
 Below is a minimal `values.yaml` file that you should configure for your deployment.
 
@@ -307,7 +350,20 @@ webeventredis:
   </TabItem>
 </Tabs>
 
-### 5. Install the Appcircle Server
+### 2. Remove Sensitive Information From `values.yaml`
+
+If you want to remove sensitive information such as Appcircle initial user password, SMTP password, SSL certificates, and other secrets from the `values.yaml` for production environments, you can check the [Sensitive Values](self-hosted-appcircle/install-server/helm-chart/configuration/sensitive-configuration.md) documentation.
+
+### 3. Add the Appcircle Helm Repository
+
+**Add the Appcircle Helm repository** to the configuration of Helm:
+
+```bash
+helm repo add appcircle https://helm-package.appcircle.io && \
+helm repo update
+```
+
+### 4. Install the Appcircle Server
 
 **Run the following Helm command** to install the Appcircle server chart.
 
@@ -329,7 +385,9 @@ kubectl wait --for=condition=ready pod \
   echo "Appcircle is ready to use. Happy building! "
 ```
 
-### 6. Add DNS Records
+## Post-installation Steps
+
+### 1. Add DNS Records
 
 List the Ingresses with `kubectl` to check the IP address of the Appcircle services domains.
 
@@ -363,8 +421,15 @@ appcircle-webeventredis            nginx   redis.appcircle.spacetech.com        
    - `hook.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `redis.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
 
-### 7. Login to the Appcircle Dashboard
+### 2. Login to the Appcircle Dashboard
 
 Check the output of the `Helm install` command to see login URL, initial username and command to get random created initial user password.
+
+### 3. Apply the Appcircle License
+
+When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
+
+To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration.md) section.
+
 
 <NeedHelp />

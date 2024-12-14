@@ -251,37 +251,6 @@ webhook:
   replicaCount: 3
 ```
 
-## Appcircle License
-
-### Creating a Secret for License Authentication
-
-To authenticate the Appcircle license, you need to create a secret that contains the `cred.json` file you received from Appcircle.
-
-1. Save the `cred.json` file to your local system.
-
-2. Create/update the secret named **`${releaseName}-auth-license`** with the **`credentialJson`** key:
-
-```bash
-kubectl create secret generic appcircle-server-auth-license \
-  -n appcircle \
-  --from-literal=credentialJson=$(cat cred.json | base64) \
-  --save-config --dry-run=client -o yaml | kubectl apply -f -
-```
-
-### Updating the License
-
-If your organization’s Appcircle server license has been updated and you need to apply the new license, you can upgrade the Appcircle server deployment using Helm:
-
-```bash
-helm upgrade appcircle-server appcircle/appcircle \
-  -n appcircle  \
-  -f values.yaml
-```
-
-:::info
-The license update might take ~30 minutes to take effect on the **UI** due to caches, but it will apply and be ready to use immediately.  
-:::
-
 ## Values Table
 
 User can view all available parameters
