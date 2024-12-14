@@ -5,6 +5,8 @@ tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 50
 ---
 
+import NeedHelp from '@site/docs/\_need-help.mdx';
+
 ## Overview
 
 Appcircle server comes with a default license to let you explore the Appcircle if you have installed it with Helm to a Kubernetes cluster.
@@ -35,3 +37,5 @@ helm upgrade appcircle-server appcircle/appcircle \
   -n appcircle  \
   -f values.yaml
 ```
+
+<NeedHelp />

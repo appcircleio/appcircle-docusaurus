@@ -11,166 +11,6 @@ For advanced configuration options, open the `values.yaml` file with your prefer
 
 Once you have updated the `values.yaml` file, please proceed to the [Upgrade Appcircle Server](/self-hosted-appcircle/install-server/helm-chart/upgrades.md) section to apply the changes.
 
-### Adding Trusted CA Certificates to the Appcircle Services
-
-If any services that the Appcircle server needs to connect to, such as your Git provider, use a self-signed SSL/TLS certificate or a certificate issued by an untrusted root CA from your organization, Appcircle will refuse the connection by default.
-
-:::tip
-To prevent potential issues with untrusted certificates, it is recommended to add your organization's root certificate from the Certificate Authority (CA) to Appcircle. This ensures that the server can properly validate and trust SSL/TLS certificates issued by your organization’s CA.
-:::
-
-To add these certificates as trusted, you need to update the `.global.trustedCerts` key in the `values.yaml` file and import the certificates.
-
-:::info
-The `.global` key already exists in your `values.yaml` file. You just need to add the `trustedCerts` key.
-:::
-
-The trusted certificate names must conform to the regex pattern `[-._a-zA-Z0-9]+`. It is recommended to use descriptive names for your certificates, such as `spacetech-root` for the root certificate and `spacetech-intermediate` for the intermediate certificate.
-
-Here is an example of how to update the `values.yaml` file:
-
-```yaml
-global:
-  trustedCerts:
-    - name: spacetech-root
-      value: |
-        -----BEGIN CERTIFICATE-----
-        MIIGOTCCBCGgAwIBAgIUU5MNim6S8RDvILFbqSEEFJvqkUkwDQYJKoZIhvcNAQEL
-        ...
-        JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
-        ZmukIMGOIYPWDhsuJA==
-        -----END CERTIFICATE-----
-    - name: spacetech-intermediate
-        -----BEGIN CERTIFICATE-----
-        MIIGOTCCBCGgAwIBAgIUU5MNim6S8RDvILFbqSEEFJvqkUkwDQYJKoZIhvcNAQEL
-        ...
-        JBr5DP/2RTmkKFtc53xoSYXQCmg61T8vMycvrdxWX6eAa8VSDszAtl//QFJIrwY8
-        ZmukIMGOIYPWDhsuJA==
-        -----END CERTIFICATE-----
-```
-
-### Configure Max Body Size
-
-In Appcircle, there are scenarios where the client upload size might exceed the default limit of `4096MB` for the Nginx Ingress controller for a single request body size. To accommodate larger file uploads or if you wish to adjust this setting according to your needs, you can configure the maximum allowed body size in your `values.yaml` file.
-
-```yaml
-# For APK, IPA, build artifact uploads from browsers and Appcircle runners
-apigateway:
-  ingress:
-    annotations:
-      # For Nginx Ingress Controller
-      nginx.ingress.kubernetes.io/proxy-body-size: 1024m
-      # For HAProxy Kubernetes Ingress Controller
-      haproxy.ingress.kubernetes.io/body-size: 1024m
-
-# For build cache uploads from Appcircle runners
-resource:
-  ingress:
-    annotations:
-      # For Nginx Ingress Controller
-      nginx.ingress.kubernetes.io/proxy-body-size: 1024m
-      # For HAProxy Kubernetes Ingress Controller
-      haproxy.ingress.kubernetes.io/body-size: 1024m
-```
-
-### Git Providers
-
-With default installation, self-hosted Appcircle comes with the connection options below:
-
-- Bitbucket
-- Azure
-- GitLab
-- Connect via SSH
-- Connect via URL
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers-v2.png' />
-
-If you want to enable or disable any of these providers, you can do so by updating your `values.yaml` file.
-
-In the example below, there are enabled git providers list with comma separated:
-
-```yaml
-web:
-  web-app:
-    selfHostedGitProviders:
-      - "bitbucketServer"
-      - "azureDevopsServer"
-      - "gitlabSelfHosted"
-      - "ssh"
-      - "publicRepository"
-```
-
-You can delete the providers you do not need by removing them from `selfHostedGitProviders` list above.
-
-### Customize Enterprise App Store
-
-You can change the Enterprise App Store tab title according to the language selected on the self-hosted Appcircle server.
-
-For example, you can set a title for **TR** and a different title for **EN** language selection on browsers.
-
-```yaml
-store:
-  store-web:
-    extraEnvVars:
-      - name: TR_STORE_TITLE
-        value: "Uygulama Mağazası"
-      - name: EN_STORE_TITLE
-        value: "App Store"
-```
-
-### User Lookup Decision Strategy
-
-The LDAP (Lightweight Directory Access Protocol) user lookup decision strategy is a crucial aspect of user authentication in applications that utilize LDAP for user management.
-
-When Appcircle receives a user login request from the Enterprise App Store or Testing Distribution, it needs to determine which LDAP configuration to use for the user lookup and authentication process.
-
-In scenarios where a user exists in multiple LDAP configurations, a decision must be made on which configuration to use for authentication.
-
-This documentation provides insights into the LDAP user lookup decision strategy and how it can be configured to handle scenarios where a user has multiple usernames and passwords across different LDAP configurations.
-
-To configure LDAP lookup decision settings, you can edit the `values.yaml` file and add the following settings under `auth`:
-
-```yaml
-auth:
-  auth-keycloak:
-    userLookupDecisionStrategy: decisive
-```
-
-The `userLookupDecisionStrategy` variable can have three options: `affirmative` , `decisive` or `tolerant`.
-
-If you don't define it or it has an unknown value, it is assumed to be `decisive` by default.
-
-- `Affirmative`
-
-When `userLookupDecisionStrategy` is set to "affirmative", the LDAP authentication process will check all LDAP settings, even if the user is found on a particular LDAP configuration. This means that if a user has multiple accounts on different LDAP configurations with different passwords, they will be able to login successfully. The authentication system will search across all LDAP configurations to find a matching username or email and validate the user's password, allowing the user to access the system.
-
-- `Decisive`
-
-On the other hand, when `userLookupDecisionStrategy` is set to "decisive", the LDAP authentication process will check a specific LDAP configuration for the user's username or email. If the authentication system finds the username on a particular LDAP, it will verify the user's password only on that specific LDAP configuration. If the provided password is incorrect, the authentication system will not check other LDAP configurations and will immediately return invalid credentials, denying access to the user.
-
-- `Tolerant`
-
-When `userLookupDecisionStrategy` is set to "tolerant", similar to the "affirmative" strategy, it retrieves the list of LDAP providers where the user is found and checks the password sequentially. If the password is correct, the process ends. If it is incorrect, the search continues until the last LDAP provider. Unlike "affirmative", if an LDAP provider is unreachable or an error occurs, the process continues, and the faulty provider is ignored.
-
-### LDAP Brute Force Protection
-
-To configure LDAP brute force protection, you can edit the `values.yaml` file and add the following settings under `auth`:
-
-```yaml
-auth:
-  auth-keycloak:
-    bruteForce:
-      distribution:
-        maxFailureCount: "5"
-        maxLockDuration: "600"
-      store:
-        maxFailureCount: "5"
-        maxLockDuration: "600"
-```
-
-### Custom Enterprise App Store Domain
-
-To configure a custom domain for the Enterprise App Store of your organization, you can refer to the [Portal Settings](https://docs.appcircle.io/enterprise-app-store/portal-settings#custom-domain) of the Enterprise App Store documentation.
 
 <!---
 ### Custom Testing Distribution Domain
@@ -178,7 +18,7 @@ To configure a custom domain for the Enterprise App Store of your organization, 
 TODO: Fill the post jobs after enabling the custom store domain.
 -->
 
-### Increase the Replica Counts
+## Increase the Replica Counts
 
 With the default Helm values, the Appcircle server services being deployed with one replica. If you want to increase this number for high availability, you can do so by updating your `values.yaml` file:
 
@@ -253,7 +93,7 @@ webhook:
 
 ## Values Table
 
-User can view all available parameters
+Users can view all available parameters of the Appcircle server Helm chart.
 
 ### Parameters
 
@@ -570,9 +410,9 @@ redis:
 | ingress-nginx.defaultBackend.image.pullPolicy                                 | string  | -             |                             |
 | ingress-nginx.defaultBackend.image.digest                                     | string  | -             |                             |
 
-### Auth Parameters
+#### Auth Parameters
 
-User can use with `auth.` prefix in `values.yaml`
+Users can configure `auth.` values in `values.yaml`
 
 ```yaml
 # Example usage:
@@ -651,7 +491,7 @@ auth:
 
 #### Common Module Parameters
 
-User can use with `%MODULE_NAME%.` prefix in `values.yaml`
+Users can set values for `%MODULE_NAME%.` in `values.yaml`.
 
 ```yaml
 # Example usage:

@@ -90,7 +90,7 @@ A **Kubernetes cluster** is **required** to install the Appcircle server using H
 
 For production environments, if you deploy stateful applications with the Appcircle Helm chart, you will need significant storage capacity, as specified above. You can configure disk resource allocations through Helm values according to your needs.
 
-However, if you opt to use external services for components such as PostgreSQL or MinIO, the storage requirements for the cluster are significantly reduced to around 50GB.
+However, if you opt to use external services for components such as PostgreSQL or MinIO, the storage requirements for the cluster are significantly reduced to around 50GB. It is **highly recommended** to deploy stateful apps outside of the Appcircle Helm chart configuration.
 
 :::tip
 For stateful apps that should deployed out of scope this helm chart, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) document.
@@ -108,7 +108,7 @@ Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain
 
 ### 4. `kubectl`
 
-The **`kubectl`** CLI configured is **required**.
+The **`kubectl`** CLI is **required**.
 
 ### 5. Helm v3
 
@@ -116,7 +116,41 @@ The **`kubectl`** CLI configured is **required**.
 
 ## Pre-installation Steps
 
-### 1. Create Namespace
+### 1. Ingress Controller
+
+The Kubernetes cluster should have **an Ingress controller** installed and configured since Appcircle exposes its services through **Ingress objects**.
+
+For **trial** purposes, you can **use** the default **Ingress-Nginx** controller deployed **within the Helm chart** scope. 
+
+For **production** environments, it's recommended to use **your own Ingress controller**.
+
+Appcircle server supportsIngress-Nginx controller by default. To install Ingress-Nginx controller to the Kubernetes cluster, please check [the Ingress-Nginx controller documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
+
+:::info
+**Other Ingress controllers** like HAProxy Ingress controller are also **supported** by **modifying Helm values** accordingly.
+:::
+
+#### Enable SSL Passthrough
+
+You can **skip** this section **if you use the default** Ingress-Nginx controller deployed **within the Helm chart scope**.
+
+Enable **`ssl-passthrough`** feature on your ingress-controller Enabling the SSL passthrough depends on the Ingress controller that is used in the Kubernetes cluster. For example:
+
+- For Nginx Ingress controller, you can check [the Nginx documentation](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough).
+
+- For HAProxy Ingress controller, you can check [the HAProxy documentation](https://www.haproxy.com/documentation/kubernetes-ingress/community/configuration-reference/ingress/#ssl-passthrough).
+
+:::info
+Enabling the SSL passthrough option **does not** automatically allow all SSL traffic **from all Ingress objects** to pass through to the original service. Instead, it enables Ingress resources to leverage the SSL passthrough feature, allowing encrypted traffic to reach the backend service without being decrypted by the Ingress controller.
+:::
+
+### 2. Production Readiness
+
+If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
+
+For more information, you can check the [Production Readiness](self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) documentation.
+
+### 3. Create Namespace
 
 **Create a namespace** for the Appcircle server deployment. In this documentation, we will use `appcircle` as the example namespace.
 
@@ -124,7 +158,7 @@ The **`kubectl`** CLI configured is **required**.
 kubectl create namespace appcircle
 ```
 
-### 2. Create Container Registry Secret
+### 4. Create Container Registry Secret
 
 By default, Appcircle uses its own image registry, which requires authentication with the `cred.json` file provided by Appcircle. 
 
@@ -174,16 +208,6 @@ kubectl create secret docker-registry containerregistry \
   </TabItem>
 </Tabs>
 
-### 3. Ingress Controller
-
-Details will be here.
-
-### 4. Production Readiness
-
-If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
-
-For more information, you can check the [Production Readiness](self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) documentation.
-
 ## Installation
 
 ### 1. Create `values.yaml`
@@ -191,6 +215,12 @@ For more information, you can check the [Production Readiness](self-hosted-appci
 Below is a minimal `values.yaml` file that you should configure for your deployment.
 
 **Please adjust these values** according to your environment requirements and **save your file**.
+
+In the example values below, we used `spacetech` as an **example organization name**. You should **replace it** with your actual organization name or any other value you prefer.
+
+:::caution
+Please **review the comments for the `values.yaml`** below. If the values provided are incompatible, the installation may not complete successfully. Ensure that all configurations are correctly entered to avoid potential issues during the setup process.
+:::
 
 <Tabs groupId="Example Values">
 
@@ -352,7 +382,7 @@ webeventredis:
 
 ### 2. Remove Sensitive Information From `values.yaml`
 
-If you want to remove sensitive information such as Appcircle initial user password, SMTP password, SSL certificates, and other secrets from the `values.yaml` for production environments, you can check the [Sensitive Values](self-hosted-appcircle/install-server/helm-chart/configuration/sensitive-configuration.md) documentation.
+**Remove sensitive information** such as Appcircle initial user password, SMTP password, SSL certificates, and other secrets from the `values.yaml` **for production environments**, by checking the [Sensitive Values](self-hosted-appcircle/install-server/helm-chart/configuration/sensitive-configuration.md) documentation.
 
 ### 3. Add the Appcircle Helm Repository
 
@@ -365,7 +395,9 @@ helm repo update
 
 ### 4. Install the Appcircle Server
 
-**Run the following Helm command** to install the Appcircle server chart.
+**Run the following Helm command** to install the Appcircle server chart. 
+
+In this example, we deploy the Appcircle server to a single namespace, using **`appcircle`** as the **namespace** and **`appcircle-server`** as the Helm **release name**.
 
 ```bash
 helm install appcircle-server appcircle/appcircle \
@@ -374,7 +406,11 @@ helm install appcircle-server appcircle/appcircle \
   -f values.yaml
 ```
 
-You can watch the Appcircle server installation with any Kubernetes monitoring tool.
+:::warning
+If you need or want to change the release name, please note that it should be 18 characters or fewer.
+:::
+
+You can watch the Appcircle server installation with any Kubernetes monitoring tool. The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take up to **10 to 15 minutes**.
 
 To make sure that the Appcircle server is installed successfully, you can run the command below and wait to finish:
 
@@ -423,7 +459,13 @@ appcircle-webeventredis            nginx   redis.appcircle.spacetech.com        
 
 ### 2. Login to the Appcircle Dashboard
 
-Check the output of the `Helm install` command to see login URL, initial username and command to get random created initial user password.
+Check the output of the `Helm install` command to see login URL, initial username and command to get initial user password.
+
+```bash
+You can access the application dashboard at: ↴
+
+https://my.appcircle.spacetech.com
+```
 
 ### 3. Apply the Appcircle License
 
