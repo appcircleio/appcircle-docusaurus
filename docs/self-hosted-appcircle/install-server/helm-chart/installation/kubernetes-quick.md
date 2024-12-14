@@ -63,23 +63,19 @@ Below is a minimal `values.yaml` file that you should configure for your deploym
 ```yaml
 global:
   urls:
-    domainName: .k8s-appcircle.burakberk.com
+    domainName: .appcircle.spacetech.com
   mail:
     smtp:
-      host: 'smtp.yandex.com'
-      username: 'alexismokar@yandex.com'
-      domain: 'smtp.yandex.com'
-      from: 'alexismokar@yandex.com'
-      port: '465'
-      password: 'gfvodgkvewgsnakj'
-      ssl: 'true'
-      tls: 'false'
+      host: 'smtp.spacetech.com'
+      port: '587'
+      from: 'appcircle@yandex.com'
+      username: 'appcircle-smtp-user'
+      password: 'superSecretSmtpPassword'
+      ssl: 'false'
+      tls: 'true'
 auth:
   auth-keycloak:
-     initialUsername: "berk@appcircle.io"
-webeventredis:
-  master:
-    preExecCmds: ''
+     initialUsername: "admin@spacetech.com"
 ```
 
 ### 5. Install the Appcircle Server
