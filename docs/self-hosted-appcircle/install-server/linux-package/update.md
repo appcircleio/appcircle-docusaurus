@@ -63,6 +63,7 @@ For more information about the DMZ structure, you can check the [Appcircle DMZ d
 Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version.
 
 <!-- Version Anchor Links -->
+[3.23.1]: https://docs.appcircle.io/release-notes#3231---2024-11-13-enable-captcha-for-enterprise-portal-sso-improvements-bug-fixes-and-more
 [3.23.0]: https://docs.appcircle.io/release-notes#3230---2024-11-04-sso--ldap-improvements-build-priority-configuration-bug-fixes-and-more
 [3.22.1]: https://docs.appcircle.io/release-notes#3221---2024-10-18-editing-environment-variables-self-hosted-updates-enterprise-portal-login-improvement-bug-fixes-and-more
 [3.22.0]: https://docs.appcircle.io/release-notes#3220---2024-10-04-apple-devices-build-report-improvement-auto-cancel-redundant-pipelines-bug-fixes-and-more
@@ -88,6 +89,8 @@ Below is the version history of the self-hosted Appcircle server. This table hel
         
         | Version   | Release Date |
         |-----------|--------------|
+        |  3.23.2   | 04/12/2024   |
+        | [3.23.1]  | 19/11/2024   |
         | [3.23.0]  |     -        |
         | [3.22.1]  | 23/10/2024   |
         | [3.22.0]  | 11/10/2024   |

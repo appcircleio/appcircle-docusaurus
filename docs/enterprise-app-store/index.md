@@ -24,25 +24,29 @@ If you have more than 100 users and don't want to deal with device enrollment, y
 
 https://developer.apple.com/programs/enterprise/
 
-## Enterprise App Store Profile
+## [Enterprise App Store Profile](/enterprise-app-store/enterprise-app-store-profile)
 
 There are several ways to create an Enterprise App Store Profile. You can either manually upload your IPA or APK files or send them through Appcircle's Distribution, Build, or Publish modules.
 
-## Portal Customization
+## [Portal Customization](/enterprise-app-store/portal-customization)
 
 The Enterprise App Store module allows for tailoring the login page to reflect your organization's branding. You can customize the colors, update the title, and replace the logo to create a seamless and professional experience for your users.
 
-## Portal Settings
+## [Portal Settings](/enterprise-app-store/portal-settings)
 
-The Enterprise Portal Settings allows you to configure your store's authentication and domain settings.
+The Enterprise Portal Settings allows you to configure your store's authentication, along with captcha and domain settings.
 
-## Enterprise Portal
+## [Enterprise Portal](/enterprise-app-store/enterprise-portal)
 
 Enterprise Portal allows you to share your applications via Beta and Live channels.
 
-## Portal Reports
+## [Portal Reports](/enterprise-app-store/enterprise-reports)
 
 You can access reports for your Enterprise App Store from this screen. The reports screen provides the following data through a clear and concise user interface.
+
+## [In-app Updates](/enterprise-app-store/in-app-updates)
+
+In-app updates enable applications to deliver and install updates directly within the app, enhancing user experience by minimizing disruption.
 
 ## Enterprise App Store FAQ
 

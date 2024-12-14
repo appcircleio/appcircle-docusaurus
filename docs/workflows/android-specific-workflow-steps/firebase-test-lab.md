@@ -12,11 +12,11 @@ Appcircle is integrated with the [Firebase Test Lab](https://firebase.google.com
 
 ## Prerequisites
 
-The necessary workflow steps to execute before running the **Firebase Test Lab for Android** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Firebase Test Lab for Android** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Android Build for UI Testing](./android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android application outputs for processing. |
+| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android application outputs for processing. |
 
 In addition to the steps you need to run on Appcircle, there are also adjustments you need to make on the Firebase Test Lab side. These adjustments can be made as follows:
 
@@ -61,9 +61,17 @@ If you want to use the UI Test Build output or the Signed Build output in the Fi
 
 ## Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Android Build for UI Testing** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-android-firebase-workflow.png' />
+
+:::danger Sensitive Variables
+
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+
+:::
 
 | Variable Name             | Description                                        | Status   |
 |---------------------------|----------------------------------------------------|----------|

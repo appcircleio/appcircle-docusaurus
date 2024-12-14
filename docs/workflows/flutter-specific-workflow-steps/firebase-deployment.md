@@ -1,7 +1,7 @@
 ---
 title: Firebase Deployment
 description: Firebase deployment is quick, and secure app launches. Get started with our concise guide to deploying on Firebase efficiently.
-tags: [firebase, mobile, web, distribution]
+tags: [firebase, web, distribution, deployment]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -14,7 +14,7 @@ Deploy web applications effortlessly using Appcircle's Firebase Deployment compo
 
 ### Prerequisites
 
-Before running the **Firebase Deployment** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
+Before running the **Firebase Deployment** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -25,13 +25,13 @@ Before running the **Firebase Deployment** step, certain prerequisites must be c
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3150-deployInput.png' />
 
-:::danger
+:::danger Sensitive Variables
 
-Avoid hard-coding sensitive information like tokens and API keys directly into the step parameters.
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
 We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
@@ -45,6 +45,7 @@ We recommend using [**Environment Variables**](/environment-variables/managing-v
 | `$GOOGLE_APPLICATION_CREDENTIALS`        | Specify the path to your Google Service Account JSON file. Upload this file to your environment group under the name `GOOGLE_APPLICATION_CREDENTIALS`. Choose either a **Firebase token**  or a **Google Service account**. | Optional |
 | `$AC_FIREBASE_EXTRA_PARAMETERS`          | Extra command line parameters. Enter --debug for debug mode. | Optional |
 
+---
 
 To access the source code of this component, please use the following link:
 
