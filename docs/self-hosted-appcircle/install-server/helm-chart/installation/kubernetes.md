@@ -1,5 +1,5 @@
 ---
-title: Kubernetes Production Installation
+title: Kubernetes
 description: Learn how to install and configure self-hosted Appcircle server with Helm chart to Kubernetes
 tags: [self-hosted, helm, installation, configuration, kubernetes]
 sidebar_position: 7
