@@ -17,30 +17,30 @@ tags:
 
 A crucial part of setting up your self-hosted Appcircle environment involves configuring various integrations and access controls. This section provides detailed guides for connecting your Appcircle instance with external services and setting up the necessary access configurations.
 
-### [Git Providers](/self-hosted-appcircle/configure-server/integrations-and-access/git-providers)
+### [Git Providers](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/git-providers)
 
 Connect with popular Git providers like GitHub, GitLab, Bitbucket, etc., to seamlessly integrate your code repositories with your CI/CD pipeline.
 
-### [Integrations](/self-hosted-appcircle/configure-server/integrations-and-access/integration)
+### [Integrations](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration)
 
 Manage additional service integrations to enhance the functionality of your self-hosted instance with tools for monitoring, logging, analytics, and more.
 
-### [SSL Configuration](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration)
+### [SSL Configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration)
 
 Ensure secure communications by configuring SSL, which is vital for protecting your data and maintaining trust with users interacting with your server.
 
-### [Network Access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access)
+### [Network Access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access)
 
 Set up network access rules to define how your server communicates with other networks and services, including firewall settings and access permissions.
 
-### [Login Configuration](/self-hosted-appcircle/configure-server/integrations-and-access/login-configuration)
+### [Login Configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/login-configuration)
 
 Customize login settings for your server to determine how users will authenticate and gain access to the Appcircle platform.
 
-### [Proxy Configuration](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration)
+### [Proxy Configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration)
 
 Configure proxy settings for your server to route traffic through a proxy server, which can be crucial for complying with network policies or enhancing security.
 
-### [LDAP Settings](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings)
+### [LDAP Settings](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings)
 
 Integrate with LDAP (Lightweight Directory Access Protocol) for centralized user management, allowing users to sign in with their enterprise credentials.

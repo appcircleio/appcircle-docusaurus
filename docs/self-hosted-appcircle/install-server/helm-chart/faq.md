@@ -9,13 +9,13 @@ sidebar_position: 60
 
 ### When we try to login to the Appcircle server, we see `too many redirects` error from browser
 
-This error usually happens when the pods can't resolve some of [the Appcircle server domains](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md#domain-name).
+This error usually happens when the pods can't resolve some of [the Appcircle server domains](/docs/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md#1-domain-name).
 
 For the solution, please make sure that the domain name server of the worker nodes of the Kubernetes cluster can resolve the Appcircle server domain names.
 
 ### When we deploy the Helm chart, the `appcircle-server-webeventredis-master-0` pod is stuck in `CrashLoopBackOff` state
 
-This error usually happens when you select a non-valid `Appcircle CA Certificate File` while [generating the configuration file](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md#create-configuration-file). Please make sure that the certificate you choose is the **root** certificate of the full-chain certificate.
+This error usually happens when you select a non-valid `Appcircle CA Certificate File` while [creating the configuration file](/docs/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md#1-create-valuesyaml). Please make sure that the certificate you choose is the **root** certificate of the full-chain certificate.
 
 :::tip
 
