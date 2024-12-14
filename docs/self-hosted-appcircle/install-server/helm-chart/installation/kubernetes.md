@@ -25,19 +25,7 @@ This Helm chart is currently in public beta. Please use it with caution and repo
 
 ### Domain Name
 
-A main **domain name**, which will have **subdomains**, is **required** for the Appcircle server. In this documentation, we will use `appcircle.spacetech.com` as an **example main domain** and `spacetech` as an **example organization name**.
-
-By default, Appcircle uses seven subdomains. These subdomains are:
-
-1. api.appcircle.spacetech.com
-2. auth.appcircle.spacetech.com
-3. dist.appcircle.spacetech.com
-4. hook.appcircle.spacetech.com
-5. resource.appcircle.spacetech.com
-6. my.appcircle.spacetech.com
-7. kvs.appcircle.spacetech.com
-
-**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the Ingress objects defined in Kubernetes. This should be done through your DNS service provider to ensure proper routing and accessibility.
+A main **domain name**, which will have **subdomains**, is **required** for the Appcircle server. 
 
 ### SSL Certificate
 
@@ -49,13 +37,7 @@ Currently, the self-hosted Appcircle does not support the use of password-protec
 
 Additionally, configure the Appcircle server with a **fullchain certificate**, which should include the leaf (or app) certificate, intermediate certificates, and the root certificate, establishing a complete and trusted certificate chain.
 
-:::tip
-You can use a **wildcard certificate** to cover all the subdomains, simplifying the certificate management process. For example, a wildcard certificate for **`*.appcircle.spacetech.com`** will be enough.
-:::
 
-:::caution
-If you use a domain like `appcircle.spacetech.com`, it will have **two levels of subdomains**. Ensure that both your DNS provider and SSL certificate provider support multi-level subdomains for proper configuration.
-:::
 
 :::tip
 Appcircle **supports TLS 1.3**, the latest and most secure version of the TLS protocol, ensuring improved performance and stronger encryption for your connections.
