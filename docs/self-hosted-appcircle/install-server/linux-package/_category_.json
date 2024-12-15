@@ -1,5 +1,5 @@
 {
-  "label": "Linux Package",
+  "label": "Docker/Podman",
   "position": 10,
   "collapsed": true,
   "collapsible": true
