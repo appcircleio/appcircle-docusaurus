@@ -1728,6 +1728,16 @@ monitoring:
   description: "Description for monitoring"
   permalink: /monitoring
 
+"multi-tenant":
+  label: "multi-tenant"
+  description: "Description for multi tenant"
+  permalink: /multi-tenant
+
+"multi-tenancy":
+  label: "multi-tenancy"
+  description: "Description for multi tenancy"
+  permalink: /multi-tenancy
+
 "multi-node minio":
   label: "multi-node minio"
   description: "Description for multi-node minio"
