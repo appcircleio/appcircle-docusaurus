@@ -26,9 +26,9 @@ https://rubygems.org/gems/fastlane-plugin-appcircle_testing_distribution
 
 **Compatible Agents:**
 
-- macOS 14
-- RHEL 9
-- Ubuntu 22.04
+- macOS 14 (arm64)
+- RHEL 9 (x86_64)
+- Ubuntu 22.04 (x86_64)
 
 **Supported Version:**
 

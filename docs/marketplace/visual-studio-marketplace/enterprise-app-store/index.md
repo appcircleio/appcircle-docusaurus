@@ -28,8 +28,8 @@ https://marketplace.visualstudio.com/items?itemName=Appcircle.enterprise-app-sto
 
 **Compatible Agents:**
 
-- macos-14
-- ubuntu-22.04
+- macOS 14 (arm64)
+- Ubuntu 22.04 (x86_64)
 
 :::caution
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
