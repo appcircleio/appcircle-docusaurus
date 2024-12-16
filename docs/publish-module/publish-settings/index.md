@@ -15,7 +15,7 @@ Your configured publish flow will be executed automatically when you enable **Au
 
 You can also select a runner pool from the **SELECT A POOL** dropdown list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-publish.png' alt="Publish Pool Selection" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority3.png' alt="Publish Pool Selection" />
 
 "Appcircle Linux Pool (x86_64)" and "Appcircle Standard macOS Pool (arm64)" are Appcircle cloud-hosted pools and only available for the cloud services.
 
@@ -86,3 +86,21 @@ For detailed information on store connections, follow the links below.
 | Google Play       | [Adding Google Play Service Account](/account/my-organization/security/credentials/adding-google-play-service-account.md)   |
 | Huawei AppGallery | [Adding Huawei API Key](/account/my-organization/security/credentials/adding-huawei-api-key)                                |
 | Microsoft Intune  | [Adding Microsoft Intune API Credentials](/account/my-organization/security/credentials/adding-microsoft-intune-api-key)    |
+
+#### Publish Priority
+
+The publish priority configuration feature includes three levels: Low, Medium, and High.
+
+These priority levels influence the starting order of queued publish processes, ensuring that higher-priority publish processes are initiated first.
+
+For instance, if a high-priority publish is added to the queue after a low-priority publish, the high-priority publish will commence before the low-priority one.
+
+This functionality allows for better management of publish processes, enabling teams to prioritize critical updates and enhancements efficiently.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority1.png' alt="Publish Priority" />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority2.png' alt="Publish Priority Selection" />
+
+:::info
+This feature is only available for organizations with Enterprise license.
+:::
