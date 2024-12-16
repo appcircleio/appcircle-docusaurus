@@ -39,6 +39,14 @@ https://rubygems.org/gems/fastlane-plugin-appcircle_testing_distribution
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
+### User Permission Requirements
+
+To perform operations such as generating a Personal API Token, creating a testing distribution profile, and managing testing groups, your user role must have the necessary permissions in the target organization. For more information about user roles and permissions, please refer to the relevant sections of the Role Management documentation below.
+
+- Access to organization or sub-organization and generating PAT: [Organization Management Permissions](https://docs.appcircle.io/account/my-organization/profile-and-team/role-management#organization-management-permissions).
+- Testing distribution operations and profile management: [Testing Distribution Permissions](https://docs.appcircle.io/account/my-organization/profile-and-team/role-management#testing-distribution-permissions).
+- Testing group management: [Testing Group Permissions](https://docs.appcircle.io/account/my-organization/profile-and-team/role-management#testing-group-permissions).
+
 ### How to Add the Appcircle Distribute Action to Your Pipeline
 
 To use the Appcircle Testing Distribution action, install the plugin and add the following step to your pipeline at the end:
@@ -65,19 +73,6 @@ fastlane add_plugin appcircle_testing_distribution
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
-### Leveraging Environment Variables
-
-Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
-
-:::caution Build Steps Order
-Ensure that this action is added after build steps have been completed.
-
-:::
-
-:::caution
-If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
-:::
-
 ### Distributing to Sub-Organizations
 
 To distribute your app to a sub-organization, you can use one of the following methods:
@@ -93,6 +88,19 @@ To distribute your app to a sub-organization, you can use one of the following m
 - Use the sub-organization's `personalAPIToken` in your configuration. 
 
 With this configuration, the profile will be created and the app will be distributed within the sub-organization.
+
+### Leveraging Environment Variables
+
+Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
+
+:::caution Build Steps Order
+Ensure that this action is added after build steps have been completed.
+
+:::
+
+:::caution
+If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
+:::
 
 ## References
 
