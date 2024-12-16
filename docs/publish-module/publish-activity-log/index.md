@@ -16,7 +16,8 @@ You can view Publish module actions such as Publish Flow and Publish Step statut
 
 Here is the full list of actions that can be monitored:
 
-- Created
+- Profile Created
+- Profile Deleted
 - Publish Step Starting
 - Publish Step Started
 - Publish Step Success
@@ -24,17 +25,29 @@ Here is the full list of actions that can be monitored:
 - Publishing Failed
 - Publishing Stopped
 - Publishing Success
+- Publishing Success Without Artifacts
+- Publishing Restarted
+- Publishing Restart Cancelled
 - Metadata File Deleted
 - Metadata Imported
 - Metadata Updated
 - Metadata Importing
 - Publish Item Archived
-- Publishing Restarted
 - Publish Flow Updated
 - Marked as Release Candidate
+- Unmarked as Release Candidate
 - App Version Uploaded
+- App Version Created
+- App Version Deleted
 - Resign Success
 - Resign Failed
+- Resign Cancelled
+- Release Notes Updated
+- App Info Store Update Failed
+- App Info Store Update Succeeded
+- App Info Store Update Partially Failed
+- App Version Rejected
+- Review Submission Cancelled
 
 :::caution
 
