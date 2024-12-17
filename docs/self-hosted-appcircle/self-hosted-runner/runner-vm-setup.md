@@ -8,6 +8,7 @@ sidebar_class_name: hidden
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
+import HostCaution512GB from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_512GB_host_warning.mdx';
 
 # Self-hosted Runner as MacOS VM Image
 
@@ -149,10 +150,19 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240514.tar.gz
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+<HostCaution512GB/>
+
+```bash
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240918.tar.gz
 ```
 
   </TabItem>
@@ -173,13 +183,21 @@ md5 macOS_240306.tar.gz
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 md5 macOS_240514.tar.gz
 ```
 
   </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+md5 macOS_240918.tar.gz
+```
+
+  </TabItem>
+
 </Tabs>
 
 After a couple of minutes later you should see the output below.
@@ -193,10 +211,17 @@ MD5 (macOS_240306.tar.gz) = 084a9221075ed5453aceba6a3438b134
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 MD5 (macOS_240514.tar.gz) = 8524abc65668a084589e79f214a9b281
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+MD5 (macOS_240918.tar.gz) = aeb6ff4b655b04fa47fb45e2caf09792
 ```
 
   </TabItem>
@@ -215,10 +240,17 @@ mkdir -p $HOME/.tart/vms/macOS_240306
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 mkdir -p $HOME/.tart/vms/macOS_240514
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+mkdir -p $HOME/.tart/vms/macOS_240918
 ```
 
   </TabItem>
@@ -235,10 +267,17 @@ tar -zxf macOS_240306.tar.gz --directory $HOME/.tart/vms/macOS_240306
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 tar -zxf macOS_240514.tar.gz --directory $HOME/.tart/vms/macOS_240514
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+tar -zxf macOS_240918.tar.gz --directory $HOME/.tart/vms/macOS_240918
 ```
 
   </TabItem>
@@ -257,10 +296,17 @@ du -sh $HOME/.tart/vms/macOS_240306
 ```
 
  </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 du -sh $HOME/.tart/vms/macOS_240514
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+du -sh $HOME/.tart/vms/macOS_240918
 ```
 
   </TabItem>
@@ -279,10 +325,17 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
  </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240514.tar.gz
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240918.tar.gz
 ```
 
   </TabItem>
@@ -303,10 +356,17 @@ md5 xcodes_240306.tar.gz
 ```
 
  </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 md5 xcodes_240514.tar.gz
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+md5 xcodes_240918.tar.gz
 ```
 
   </TabItem>
@@ -323,10 +383,17 @@ MD5 (xcodes_240306.tar.gz) = 4df051e11b6c0b8670cd9b82928dfab2
 ```
 
  </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 MD5 (xcodes_240514.tar.gz) = e3edc40c9b6dda91530d8a1f8cf456bc
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+MD5 (xcodes_240918.tar.gz) = bb26c0070bbd1a8ed23fe59b87f0a144
 ```
 
   </TabItem>
@@ -351,10 +418,17 @@ tar -zxf xcodes_240306.tar.gz --directory $HOME/images
 ```
 
  </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 tar -zxf xcodes_240514.tar.gz --directory $HOME/images
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+tar -zxf xcodes_240918.tar.gz --directory $HOME/images
 ```
 
   </TabItem>
@@ -377,12 +451,24 @@ It may take a little to complete. Be patient and wait return of command.
 > - `14.3.x`
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
-**Note:** This macOS VM image contains the same tools as in the `latest` "Default M1 Pool" in Appcircle Cloud.
+**Note:** This macOS VM image is the Sonoma (`14.1`) stack and comes with the Xcode versions below:
 
-It's the same image that's used for the `latest` Sonoma (`14.1`) stack and comes with the Xcode versions below:
+> - `15.4.x`
+> - `15.3.x`
+> - `15.2.x`
+> - `15.1.x`
+> - `15.0.x`
+> - `14.3.x`
 
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+**Note:** This macOS VM image is the Sonoma (`14.5`) stack and comes with the Xcode versions below:
+
+> - `16.1.x`
+> - `16.0.x`
 > - `15.4.x`
 > - `15.3.x`
 > - `15.2.x`
@@ -403,7 +489,7 @@ You can find more information about the build infrastructure in the documents be
 :::caution
 We're constantly bumping the VM macOS version according to Xcode requirements.
 
-So the latest VM image,`macOS_230921` or later, includes Ventura `13.5.2` or Sonoma `14.1` pre-installed and needs at least a Ventura host to run.
+So the latest VM image,`macOS_230921` or later, includes Ventura `13.5.2` or Sonoma `14.x` pre-installed and needs at least a Ventura host to run.
 
 It doesn't support running on older hosts like Monterey, Big Sur, etc.
 
@@ -425,12 +511,23 @@ nohup ./download-runner.sh "240306" &
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "240514" &
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+<HostCaution512GB/>
+
+```bash
+curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
+chmod +x download-runner.sh && \
+nohup ./download-runner.sh "240918" &
 ```
 
   </TabItem>
@@ -501,18 +598,37 @@ tart clone macOS_240306 vm01
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 tart clone macOS_240514 vm01
 ```
 
   </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+tart clone macOS_240918 vm01
+```
+
+  </TabItem>
 </Tabs>
+
+:::tip
+It's not recommended to delete the base image (`macOS_YY0M0D`) as it won't save disk space due to copy-on-write file system on macOS. You can safely re-create `vm01` from the same base image `macOS_YY0M0D` without downloading and extracting again from network if needed.
+:::
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
 
 ### Configure Base Runner VMs
+
+Be cautious when updating the base VMs (`vm01` and `vm02`). Any changes made on these base VMs are persisted and may affect disk usage, keychain, and cache files on the runner VMs created from them.
+
+:::warning
+
+If you're freshly creating the base VMs, you can ignore this warning. However, if you've already registered runners to your Appcircle server and want to make updates to the base VMs, it's highly recommended to [disable the runner](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-runners.md#monitoring-self-hosted-runners) from the Appcircle dashboard to prevent builds from running on the base VMs.
+
+:::
 
 #### Configure Runner 1
 
@@ -532,7 +648,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -542,6 +658,21 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.15.2.dmg:ro \
   --disk=$HOME/images/xcode.15.3.dmg:ro \
   --disk=$HOME/images/xcode.15.4.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.4.dmg:ro \
+  --disk=$HOME/images/xcode.16.0.dmg:ro \
+  --disk=$HOME/images/xcode.16.1.dmg:ro
 ```
 
   </TabItem>
@@ -826,7 +957,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
@@ -836,6 +967,21 @@ screen -d -m tart run vm02 --no-graphics \
   --disk=$HOME/images/xcode.15.2.dmg:ro \
   --disk=$HOME/images/xcode.15.3.dmg:ro \
   --disk=$HOME/images/xcode.15.4.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.4.dmg:ro \
+  --disk=$HOME/images/xcode.16.0.dmg:ro \
+  --disk=$HOME/images/xcode.16.1.dmg:ro
 ```
 
   </TabItem>
@@ -898,10 +1044,18 @@ chmod u+x $HOME/runner1/run.sh
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.4.sh && \
+chmod u+x $HOME/runner1/run.sh
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.5.sh && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -920,10 +1074,18 @@ chmod u+x $HOME/runner2/run.sh
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.4.sh && \
+chmod u+x $HOME/runner2/run.sh
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.5.sh && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
@@ -1066,7 +1228,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -1076,6 +1238,21 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.15.2.dmg:ro \
   --disk=$HOME/images/xcode.15.3.dmg:ro \
   --disk=$HOME/images/xcode.15.4.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.4.dmg:ro \
+  --disk=$HOME/images/xcode.16.0.dmg:ro \
+  --disk=$HOME/images/xcode.16.1.dmg:ro
 ```
 
   </TabItem>
@@ -1105,7 +1282,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240514" label="240514" default>
+  <TabItem value="240514" label="240514">
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
@@ -1115,6 +1292,21 @@ screen -d -m tart run vm02 --no-graphics \
   --disk=$HOME/images/xcode.15.2.dmg:ro \
   --disk=$HOME/images/xcode.15.3.dmg:ro \
   --disk=$HOME/images/xcode.15.4.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="240918" label="240918" default>
+
+```bash
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.14.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.0.dmg:ro \
+  --disk=$HOME/images/xcode.15.1.dmg:ro \
+  --disk=$HOME/images/xcode.15.2.dmg:ro \
+  --disk=$HOME/images/xcode.15.3.dmg:ro \
+  --disk=$HOME/images/xcode.15.4.dmg:ro \
+  --disk=$HOME/images/xcode.16.0.dmg:ro \
+  --disk=$HOME/images/xcode.16.1.dmg:ro
 ```
 
   </TabItem>
@@ -1267,3 +1459,25 @@ Below step in [update base images](#update-base-images) section,
 should be like this in this case.
 
 > 2- Run `vm01` base image. `screen -d -m tart run vm01`
+
+### Deleting Xcode simulator runtimes to create free disk space
+
+Occasionally, you may need to manage disk space on your macOS base VM due to storage constraints or other reasons. One way to free up disk space is by deleting unused Xcode simulator runtimes.
+
+To list the installed Xcode simulator runtimes, run the following command on your base VM:
+
+```bash
+xcrun simctl runtime list 2>/dev/null
+```
+
+If you determine that certain iOS, watchOS, tvOS or visionOS(xrOS) runtimes are not needed, you can delete them to free up disk space:
+
+```bash
+xcrun simctl runtime delete <runtime_id>
+```
+
+:::caution
+Xcode simulator runtimes are essential for testing and debugging iOS, watchOS, and tvOS applications on virtual devices. Deleting a runtime will prevent you from running or debugging an app on that specific device. Other simulators and runtimes will remain unaffected.
+
+Be cautious when deleting Xcode simulator runtimes, as this action is irreversible. Removing a simulator runtime can impact the Xcode build process. For example, if you delete a watchOS runtime, you will no longer be able to build an iOS app that targets the deleted watchOS runtime. Ensure that the runtime you plan to delete is not required for your build pipeline.
+:::

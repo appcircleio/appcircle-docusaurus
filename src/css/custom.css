@@ -258,6 +258,61 @@ html[data-theme="dark"] .content-ref-card p {
   object-fit: contain;
 }
 
+.feature-cards .build-mobile-stack {
+  background: linear-gradient(180deg, #2e5078 0%, #1b3a56 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the top */
+  padding-top: 20px;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.feature-cards .signing-identities-card {
+  background: linear-gradient(180deg, #2e5078 0%, #1b3a56 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the top */
+  padding-top: 20px;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.feature-cards .testing-distribution-card {
+  background: linear-gradient(180deg, #2e5078 0%, #1b3a56 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the top */
+  padding-top: 20px;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.feature-cards .publish-to-stores-card {
+  background: linear-gradient(180deg, #2e5078 0%, #1b3a56 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the top */
+  padding-top: 20px;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.feature-cards .signing-identities-card .feature-card-learn-more.signing {
+  background-color: #FF8114;
+  color: #FFF;
+}
+
+
+
 .feature-cards .self-hosted-runners {
   background: linear-gradient(180deg, #1142A2 0%, #091C84 100%);
   border-radius: 12px;
@@ -292,7 +347,7 @@ html[data-theme="dark"] .content-ref-card p {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 0 3rem;
+  margin: 0 2rem;
   color: #DEDEDE;
   font-size: 15px;
   line-height: 21px;
@@ -343,11 +398,34 @@ html[data-theme="dark"] .content-ref-card p {
 
 
 .feature-card-learn-more {
-  padding: 8px 20px;
-  font-weight: 500;
-  font-size: 16px;
-  border-radius: 40px;
-  margin-top: 8px;
+  margin-top: auto; /* Ensures the button stays at the bottom */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.feature-card-learn-more:hover {
+  text-decoration: none;
+  text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.feature-card-learn-more.build {
+  background-color: #FF8114;
+}
+
+.feature-card-learn-more.publish {
+  background-color: #FF8114;
+}
+
+.feature-card-learn-more.testing {
+  background-color: #FF8114;
+}
+
+.feature-card-learn-more.signing {
+  background-color: #FF8114;
 }
 
 .feature-card-learn-more.eas {
@@ -757,6 +835,8 @@ html[data-theme='dark'] section.navigation-cards a p {
   width:39px;
   height:27px;
   display: block;
+  margin-left: 0 !important;
+
 }
 
 .community a.slack {
@@ -768,6 +848,19 @@ html[data-theme='dark'] section.navigation-cards a p {
   width:32px;
   height:32px;
   display: block;
+  margin-left: 0 !important;
+}
+
+.community a.contact-us {
+  background-color: #D2FFD2;
+  color: #006A00;
+}
+
+.community a.contact-us img {
+  width:32px;
+  height:32px;
+  display: block;
+  margin-left: 0 !important;
 }
 
 .community a.twitter {
@@ -789,12 +882,19 @@ html[data-theme='dark'] section.navigation-cards a p {
   font-family: var(--ifm-heading-font-family);
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1150px) {
   .community {
     display: flex;
     justify-content: stretch;
     flex-direction: column;
     gap: 16px;
+  } 
+
+  .community a {
+    padding: 13px 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -1049,4 +1149,15 @@ html[data-theme="dark"] .module-badge-self-hosted {
   border: 1px solid #805000;
   background: linear-gradient(145deg, #402800, #2b1a00);
   color: #ffd27f;
+}
+
+/* Ensure header links inherit color from the parent header */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Optional: Add underline on hover */
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  text-decoration: underline;
 }

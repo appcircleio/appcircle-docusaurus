@@ -9,12 +9,13 @@ tags:
     enterprise apps,
     app store setup,
     appcircle app store,
-    In-app updates,
+    in-app updates,
   ]
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 import Screenshot from '@site/src/components/Screenshot';
 
 In-app updates enable applications to deliver and install updates directly within the app, enhancing user experience by minimizing disruption.
@@ -29,36 +30,104 @@ In-app updates offer several benefits, including a smoother user experience by e
 
 ## Implementing In-App Updates
 
+### Authentication Methods for Obtaining Appcircle Personal API Token
+
+There are two primary methods to implement authentication and retrieve the Appcircle Personal API token for in-app updates:
+
+1. Using a Custom Backend Endpoint
+2. Using Appcircle Services
+
+#### 1. Using a Custom Backend Endpoint
+
+This method involves creating a secure backend service that handles the authentication process and retrieves the Appcircle Personal API token on behalf of your app. Here's how it works:
+
+1. Your app sends a request to your custom backend endpoint Enterprise App Store profile id with authentication credentials such as email and password.
+2. The backend authenticates with Appcircle using profile-specific app secret and obtains the Personal API token.
+3. The backend returns the token to your app.
+
+Benefits of this approach:
+
+- Enhanced security as sensitive credentials are not stored in the app
+- Centralized management of authentication
+- Ability to implement additional security measures on the backend
+
+**Sample Backend Project:**
+
+https://github.com/appcircleio/in-app-update-backend-sample
+
+#### 2. Using Appcircle Services
+
+This method involves directly using Appcircle's authentication services from within your app. Here's how it works:
+
+1. Your app securely stores the profile-specific secret and profile id.
+2. The app sends the secret along with the profile ID to Appcircle authentication services.
+3. Appcircle validates the credentials and returns the necessary authentication token.
+4. Upon successful authentication, the app receives the Personal API token.
+
+Benefits of this approach:
+
+- Simpler implementation with fewer components
+- Reduced backend maintenance
+- Direct integration with Appcircle services
+
+Both methods have their merits, and the choice depends on your specific security requirements, infrastructure, and development preferences. The custom backend approach offers more control and security, while the direct Appcircle services method provides a more straightforward implementation.
+
 ## Prerequisites for Integration
 
 ### Authentication Requirements
 
-To integrate an in-app update experience, you will need the **Personal Access Token (PAT)**, the **enterprise store prefix**, and the **enterprise store profile ID**.
+To integrate an in-app update experience, you will need the **profile secret**, the **enterprise store prefix**, the **enterprise store url**, and the **enterprise store profile id**.
 
 ### How to Obtain Integrations Parameters
 
-#### Personal Access Token (PAT)
+#### In-app Update Secret
 
-- For details on generating an Appcircle Personal Access Token, please visit the [Generating/Managing Personal API Tokens](/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens).
+Steps to Generate a Profile-Specific Secret:
 
-#### Enterprise Store Prefix
+1- Navigate to your enterprise app store profile.
 
-Navigate to the Enterprise Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
+2- In the top-right corner, click on the Settings icon.
+
+3- Select Generate Secret to create a profile-specific secret.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-in-app-secret.png' />
+
+#### Enterprise Portal Prefix
+
+Navigate to the Enterprise App Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE_4207-Enterprise-Store-Prefix-1.png' />
 
+#### Enterprise Portal URL
+
+Navigate to the Enterprise Store module and settings page to find the **STORE URL** information.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-store-url.png' />
+
 #### Enterprise Store Profile Id
 
-You can obtain your Enterprise Store Profile ID from the URL or by using the @appcircle/cli.
+You can obtain your Enterprise Store Profile ID from the Profile Settings, the URL or by using the @appcircle/cli.
+
+##### Retrieving Profile ID from the Enterprise Store Profile Settings
+
+1. Navigate to your Enterprise App Store Profile.
+
+2. Select the Settings from the top right corner.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile4.png' />
+
+3. Find and copy your Profile ID under the Info tab by clicking the copy button, next to your Profile ID.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4487.png' alt='Copy the Profile ID' />
 
 ##### How to Extract Your Enterprise Store Profile ID from the URL
 
-1. Navigate to your Enterprise Store Profile.
+1. Navigate to your Enterprise App Store Profile.
 2. Check the URL, which should be in this format: **/enterprise-store/profiles/PROFILE_ID**. The PROFILE_ID refers to your specific profile ID.
 
 ##### Retrieving Profile ID Using @appcircle/cli
 
-The upcoming command retrieves the complete list of Enterprise Store Profiles.
+The upcoming command retrieves the complete list of Enterprise App Store Profiles.
 
 ```bash
 appcircle enterprise-app-store profile list
@@ -74,15 +143,21 @@ To fetch app versions and download the binary, you first need to obtain an acces
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' }
 ]}>
 
   <TabItem value="android">
     ```java
+    package com.example.appcircle_sample_android;
+
     import okhttp3.*;
     import com.google.gson.Gson;
     import java.io.IOException;
     import java.util.concurrent.TimeUnit;
     import com.google.gson.annotations.SerializedName;
+
+    import org.json.JSONException;
+    import org.json.JSONObject;
 
     class AuthModel {
         @SerializedName("access_token")
@@ -102,31 +177,40 @@ To fetch app versions and download the binary, you first need to obtain an acces
                 .readTimeout(30, TimeUnit.SECONDS)
                 .build();
 
-        public static AuthModel getAccessToken(String pat) throws IOException {
+        public static AuthModel getAccessToken() throws IOException {
             HttpUrl url = new HttpUrl.Builder()
                     .scheme("https")
-                    .host("auth.appcircle.io")
+                    .host(Environment.STORE_URL)
+                    .addPathSegment("api")
                     .addPathSegment("auth")
-                    .addPathSegment("v2")
                     .addPathSegment("token")
                     .build();
 
-            RequestBody formBody = new FormBody.Builder()
-                    .add("pat", pat)
-                    .add("scope", "openid email profile")
-                    .build();
+            JSONObject jsonBody = new JSONObject();
+            try {
+                jsonBody.put("ProfileId", Environment.PROFILE_ID);
+                jsonBody.put("Secret", Environment.SECRET);
+            } catch (JSONException e) {
+                throw new IOException("Error creating JSON body", e);
+            }
+
+            RequestBody body = RequestBody.create(
+                    MediaType.parse("application/json; charset=utf-8"),
+                    jsonBody.toString()
+            );
 
             Request request = new Request.Builder()
                     .url(url)
-                    .post(formBody)
-                    .addHeader("accept", "application/json")
-                    .addHeader("Content-Type", "application/x-www-form-urlencoded")
+                    .post(body)
+                    .addHeader("Content-Type", "application/json")
+                    .addHeader("Accept", "application/json")
                     .build();
 
             try (Response response = client.newCall(request).execute()) {
                 if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
 
                 String responseBody = response.body().string();
+                System.out.println("Response: " + responseBody);
 
                 Gson gson = new Gson();
                 return gson.fromJson(responseBody, AuthModel.class);
@@ -141,23 +225,28 @@ To fetch app versions and download the binary, you first need to obtain an acces
   <TabItem value="swift">
     ```swift
     extension API {
-        func getAccessToken(pat: String) async throws -> AuthModel {
+        func getAccessToken(secret: String, profileId: String) async throws -> AuthModel {
             var components = URLComponents()
             components.scheme = apiConfig.scheme
             components.host = apiConfig.host
-            components.path = "/auth/v2/token"
+            components.path = "/api/auth/token"
+            
             guard let url = components.url else {
                 throw HTTPError.invalidUrl
             }
+            
             var request = URLRequest(url: url)
-
             request.httpMethod = HTTPMethod.POST.rawValue
-            request.setValue("application/json", forHTTPHeaderField: "accept")
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
-            let parameters = "pat=\(pat)&scope=openid email profile"
-            request.httpBody = parameters.data(using: .utf8)
-
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            
+            let parameters: [String: Any] = [
+                "ProfileId": profileId,
+                "Secret": secret
+            ]
+            
+            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+            
             return try await apiFetcher.request(request: request)
         }
     }
@@ -168,19 +257,24 @@ To fetch app versions and download the binary, you first need to obtain an acces
   <TabItem value="react-native">
     ```js
     import axios from 'axios';
+    import Environment from '../Environment';
 
-    const AC_AUTH_HOSTNAME = 'https://auth.appcircle.io';
+    export const getACToken = async (profileId: string) => {
+      const endpointURL = `${Environment.STORE_URL}/api/auth/token`;
 
-    export const getACToken = async (options: {pat: string}) => {
-      const endpointURL = `${AC_AUTH_HOSTNAME}/auth/v2/token`;
-      console.log(options.pat);
       const response = await axios.post(
         endpointURL,
-        `pat=${encodeURIComponent(options.pat)}&scope=openid email profile`,
+        {
+          ProfileId: profileId,
+          Secret:
+            Platform.OS === 'ios'
+              ? Environment.IOS_STORE_SECRET
+              : Environment.ANDROID_STORE_SECRET,
+        },
         {
           headers: {
+            'Content-Type': 'application/json',
             accept: 'application/json',
-            'content-type': 'application/x-www-form-urlencoded',
           },
         },
       );
@@ -190,11 +284,57 @@ To fetch app versions and download the binary, you first need to obtain an acces
     ```
 
   </TabItem>
+
+  <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using static MAUI_IN_APP.Models.InAppUpdateModel;
+
+namespace MAUI_IN_APP.Helpers;
+
+public static class InAppUpdateHelper {
+
+    private static async Task<string> GetACToken(string profileId)
+      {
+      	var httpClient = new HttpClient();
+      	var endpointUrl = $"{Environment.GetEnvironmentVariable("STORE_URL")}/api/auth/token";
+      	var secret = DeviceInfo.Platform == DevicePlatform.iOS
+      		? Environment.GetEnvironmentVariable("IOS_STORE_SECRET")
+      		: Environment.GetEnvironmentVariable("ANDROID_STORE_SECRET");
+
+      	var requestBody = new
+      	{
+      		ProfileId = profileId,
+      		Secret = secret
+      	};
+
+      	var json = JsonSerializer.Serialize(requestBody);
+      	var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+      	var response = await httpClient.PostAsync(endpointUrl, content);
+      	var responseData = await response.Content.ReadAsStringAsync();
+      	var responseObject = JsonSerializer.Deserialize<TokenResponse>(responseData);
+
+      	  return responseObject.access_token;
+      }
+
+}
+`}
+</CodeBlock>
+</TabItem>
 </Tabs>
 
-###  Initiating Updates
+:::caution
+For Android, omit https and provide only your enterprise store domain, such as appcircle.store.appcircle.io.
+:::
 
-#### Retrieving Available App Versions from Your Enterprise Store
+### Initiating Updates
+
+#### Retrieving Available App Versions from Your Enterprise Portal
 
 Fetch all available versions and compare them with the current version to determine if an update is required.
 
@@ -202,15 +342,21 @@ Fetch all available versions and compare them with the current version to determ
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' }
 ]}>
 
   <TabItem value="android">
     ```java
+    package com.example.appcircle_sample_android;
+
     import okhttp3.Request;
     import okhttp3.OkHttpClient;
     import okhttp3.Response;
     import okhttp3.HttpUrl;
     import com.google.gson.Gson;
+    import com.google.gson.JsonArray;
+    import com.google.gson.JsonObject;
+    import com.google.gson.JsonParser;
     import com.google.gson.reflect.TypeToken;
     import java.io.IOException;
     import java.lang.reflect.Type;
@@ -252,11 +398,12 @@ Fetch all available versions and compare them with the current version to determ
         private final Gson gson = new Gson();
 
         public List<AppVersion> getAppVersions(String accessToken, String profileId) throws IOException {
-            HttpUrl url = HttpUrl.parse(BASE_URL + "/store/v2/profiles/" + profileId + "/app-versions");
+            HttpUrl url = HttpUrl.parse("https://" + Environment.STORE_URL + "/api/app-versions");
 
             if (url == null) {
                 throw new IOException("Invalid URL");
             }
+
             Request request = new Request.Builder()
                     .url(url)
                     .get()
@@ -268,9 +415,15 @@ Fetch all available versions and compare them with the current version to determ
                 if (!response.isSuccessful()) {
                     throw new IOException("Unexpected code " + response);
                 }
+
                 String responseBody = response.body().string();
+                System.out.println("Response: " + responseBody); // For debugging
+
+                JsonObject jsonObject = JsonParser.parseString(responseBody).getAsJsonObject();
+                JsonArray dataArray = jsonObject.getAsJsonArray("data");
+
                 Type listType = new TypeToken<List<AppVersion>>() {}.getType();
-                return gson.fromJson(responseBody, listType);
+                return gson.fromJson(dataArray, listType);
             }
         }
     }
@@ -281,11 +434,11 @@ Fetch all available versions and compare them with the current version to determ
   <TabItem value="swift">
     ```swift
     extension API {
-        func getAppVersions(accessToken: String, profileId: String) async throws -> [AppVersion] {
+        func getAppVersions(accessToken: String) async throws -> [AppVersion] {
             var components = URLComponents()
             components.scheme = apiConfig.scheme
             components.host = apiConfig.host
-            components.path = "/store/v2/profiles/\(profileId)/app-versions"
+            components.path = "/api/app-versions"
             guard let url = components.url else {
                 throw HTTPError.invalidUrl
             }
@@ -303,11 +456,8 @@ Fetch all available versions and compare them with the current version to determ
 
   <TabItem value="react-native">
     ```js
-    export const getAppVersions = async (
-      accessToken: string,
-      profileId: string,
-    ) => {
-      const url = `https://api.appcircle.io/store/v2/profiles/${profileId}/app-versions`;
+    export const getAppVersions = async (accessToken: string) => {
+      const url = `${Environment.STORE_URL}/api/app-versions`;
 
       try {
         const response = await axios.get(url, {
@@ -317,7 +467,7 @@ Fetch all available versions and compare them with the current version to determ
           },
         });
 
-        return response.data;
+        return response.data.data;
       } catch (error) {
         console.error('Failed to get app versions:', error);
       }
@@ -325,6 +475,43 @@ Fetch all available versions and compare them with the current version to determ
     ```
 
   </TabItem>
+    <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using static MAUI_IN_APP.Models.InAppUpdateModel;
+
+namespace MAUI_IN_APP.Helpers;
+
+public static class InAppUpdateHelper {
+
+      private static async Task<List<AppVersion>> GetAppVersions(string accessToken)
+      {
+          var url = $"{Environment.GetEnvironmentVariable("STORE_URL") }/api/app-versions";
+          var options = new JsonSerializerOptions
+          {
+          	PropertyNameCaseInsensitive = true,
+          	DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+          };
+          using (var httpClient = new HttpClient())
+          {
+          	httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("*/*"));
+          	httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+
+          	var response = await httpClient.GetAsync(url);
+          	var jsonResponse = await response.Content.ReadAsStringAsync();
+          	var responseData = JsonSerializer.Deserialize<AppVersionsResponse>(jsonResponse,options);
+          	return responseData.data;
+          }
+      }
+
+}
+`}
+</CodeBlock>
+</TabItem>
 </Tabs>
 
 #### Compare Current Version with Fetched App Versions to Identify Updates
@@ -335,6 +522,7 @@ Compare the current version with the fetched versions to identify the latest rel
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' },
 ]}>
 
   <TabItem value="android">
@@ -419,7 +607,7 @@ Compare the current version with the fetched versions to identify the latest rel
             
             // Compare versions component by component
             for (current, latest) in zip(currentComponents, latestComponents) {
-                // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Store
+                // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Portal
                 if (latest > current && app.publishType != 0) {
                     latestAppVersion = app
                 }
@@ -477,7 +665,7 @@ Compare the current version with the fetched versions to identify the latest rel
           const current = currentComponents[i];
           const latest = latestComponents[i];
 
-          // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Store
+          // You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Portal
           if (latest > current && app.publishType !== 0) {
             latestAppVersion = app;
           }
@@ -489,7 +677,74 @@ Compare the current version with the fetched versions to identify the latest rel
     ```
 
   </TabItem>
+
+  <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using static MAUI_IN_APP.Models.InAppUpdateModel;
+
+namespace MAUI_IN_APP.Helpers;
+
+public static class InAppUpdateHelper {
+
+      /*
+      You can implement your custom update check mechanism within this function.
+      Currently, we convert the version to an integer and compare it with the 'CFBundleShortVersionString'.
+      You may want to check other datas about the app version to write the update control mechanism please check
+      /v2/profiles/{profileId}/app-versions at https://api.appcircle.io/openapi/index.html?urls.primaryName=store
+      */
+      public static AppVersion GetLatestVersion(string currentVersion, List<AppVersion> appVersions)
+      {
+      	AppVersion latestAppVersion = null;
+
+      	// Helper function to convert version string into an array of integers
+      	int[] VersionComponents(string version)
+      	{
+      		return version
+      			.Split('.')
+      			.Select(part => int.TryParse(part, out int num) ? num : (int?)null)
+      			.Where(num => num.HasValue)
+      			.Select(num => num.Value)
+      			.ToArray();
+      	}
+      	var currentComponents = VersionComponents(currentVersion);
+
+      	foreach (var app in appVersions)
+      	{
+      		// Convert versions to arrays of integers
+      		var latestComponents = VersionComponents(app.Version);
+
+      		// Compare versions component by component
+      		for (int i = 0; i < Math.Min(currentComponents.Length, latestComponents.Length); i++)
+      		{
+      			var current = currentComponents[i];
+      			var latest = latestComponents[i];
+
+      			// You can control to update None, Beta or Live publish types you have selected on Appcircle Enterprise Portal
+      			if (latest > current && app.PublishType == (int)PublishType.Live)
+      			{
+      				latestAppVersion = app;
+      				break; // Assuming once we find a valid version, we don't need to check further.
+      			}
+      		}
+      	}
+
+      	return latestAppVersion;
+      }
+
+}
+`}
+</CodeBlock>
+</TabItem>
 </Tabs>
+
+:::caution
+The code above compares major versions. For instance, if the current app version is 1.0 and the latest available version is 1.1, it **won't** be considered an update. However, if the latest available version is 2.0, it will be treated as an update in your enterprise portal. You can configure this logic based on your business requirements.
+:::
 
 #### Updating the App
 
@@ -499,6 +754,7 @@ If a newer version is available, generate the platform-specific download URL and
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' },
 ]}>
 
   <TabItem value="android">
@@ -517,7 +773,7 @@ If a newer version is available, generate the platform-specific download URL and
         @Override
         protected AuthModel doInBackground(String... params) {
             try {
-                AuthModel response = AuthService.getAccessToken(params[0]);
+                AuthModel response = AuthService.getAccessToken();
                 fetchAppVersions(response.getAccessToken(), Environment.PROFILE_ID);
 
                 return response;
@@ -563,16 +819,17 @@ If a newer version is available, generate the platform-specific download URL and
             }
         }).start();
     }
+
     ```
 
   </TabItem>
 
   <TabItem value="swift">
     ```swift
-    func checkForUpdate(pat: String, profileId: String, storeId: String, userEmail: String) async throws -> URL? {
+    func checkForUpdate(secret: String, profileId: String, storeURL: String, userEmail: String) async throws -> URL? {
         do {
-            let authResponse = try await self.authApi.getAccessToken(pat: pat)
-            let appVersions = try await self.api.getAppVersions(accessToken: authResponse.accessToken, profileId: profileId)
+            let authResponse = try await self.authApi.getAccessToken(secret: secret, profileId: profileId)
+            let appVersions = try await self.api.getAppVersions(accessToken: authResponse.accessToken)
             let bundle = Bundle.main
             let currentVersion = bundle.infoDictionary?["CFBundleShortVersionString"] as? String
             guard let currentVersion = currentVersion else {
@@ -585,7 +842,7 @@ If a newer version is available, generate the platform-specific download URL and
                 return nil
             }
             
-            guard let downloadURL  = URL(string: "itms-services://?action=download-manifest&url=https://\(storeId).store.appcircle.io/api/profile/\(profileId)/appVersions/\(availableVersion.id)/download-update/\(authResponse.accessToken)/user/\(userEmail)") else {
+            guard let downloadURL  = URL(string: "itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)/user/\(userEmail)") else {
                 print("Latest Version URL could not created")
                 return nil
             }
@@ -595,7 +852,7 @@ If a newer version is available, generate the platform-specific download URL and
             print(error)
             return nil
         }
-    }    
+    }
     ```
 
   </TabItem>
@@ -603,54 +860,48 @@ If a newer version is available, generate the platform-specific download URL and
   <TabItem value="react-native">
     ```js
     export const checkForUpdate = async (params: {
-      pat: string;
-      storePrefix: string;
       iOSProfileId: string;
       androidProfileId: string;
       currentVersion: string;
       userEmail: string;
     }): Promise<{updateURL: string; version: string} | undefined> => {
       try {
-        const {access_token} = await getACToken({pat: params.pat});
-    
-        const appVersions = await getAppVersions(
-          access_token,
+        const {access_token} = await getACToken(
           Platform.OS === 'ios' ? params.iOSProfileId : params.androidProfileId,
         );
-    
+
+        const appVersions = await getAppVersions(access_token);
+
         const latestVersion = getLatestVersion(params.currentVersion, appVersions);
         if (latestVersion) {
           const downloadUrl = createDownloadUrl(
-            params.storePrefix,
-            Platform.OS === 'ios' ? params.iOSProfileId : params.androidProfileId,
             latestVersion.id,
             access_token,
             params.userEmail,
           );
-    
+
           if (!downloadUrl) {
             console.error('Failed to create download URL');
             return undefined;
           }
-    
+
           return {
             updateURL: downloadUrl,
             version: latestVersion.version,
           };
         }
       } catch (error) {
+        console.log(error.response);
         console.error('Failed to determine if an update is available', error);
       }
     };
 
     const createDownloadUrl = (
-      storeId: string,
-      profileId: string,
       availableVersionId: string,
       accessToken: string,
       email: string,
     ): string | null => {
-      const baseUrl = `https://${storeId}.store.appcircle.io/api/profile/${profileId}/appVersions/${availableVersionId}/download-update/${accessToken}/user/${email}`;
+      const baseUrl = `${Environments.STORE_URL}/api/app-versions/${availableVersionId}/download-version/${accessToken}/user/${email}`;
       const downloadUrl = `itms-services://?action=download-manifest&url=${baseUrl}`;
 
       try {
@@ -663,6 +914,69 @@ If a newer version is available, generate the platform-specific download URL and
     ```
 
   </TabItem>
+  <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using static MAUI_IN_APP.Models.InAppUpdateModel;
+
+namespace MAUI_IN_APP.Helpers;
+
+public static class InAppUpdateHelper {
+
+      public static async Task<UpdateResult> CheckForUpdate(string currentVersion, string userEmail)
+      {
+      	var profileId = DeviceInfo.Platform == DevicePlatform.iOS ?
+      		Environment.GetEnvironmentVariable("IOS_PROFILE_ID") :
+      		Environment.GetEnvironmentVariable("ANDROID_PROFILE_ID");
+      	if (profileId != null)
+      	{
+      		var accessToken = await GetACToken(profileId);
+      		var appVersions = await GetAppVersions(accessToken);
+      		var latestVersion = GetLatestVersion(currentVersion, appVersions);
+      		if (latestVersion != null)
+      		{
+      			var downloadUrl = CreateDownloadUrl(latestVersion.Id,accessToken,userEmail);
+      			if (downloadUrl == null)
+      			{
+      				return null;
+      			}
+
+      			return new UpdateResult
+      			{
+      				DownloadUrl = downloadUrl,
+      				Version = latestVersion.Version
+      			};
+      		}
+      	}
+
+      	return null;
+      }
+
+    public static string CreateDownloadUrl(string availableVersionId, string accessToken, string email)
+      {
+      	var baseUrl = $"{Environment.GetEnvironmentVariable("STORE_URL")}/api/app-versions/{availableVersionId}/download-version/{accessToken}/user/{email}";
+      	var downloadUrl = $"itms-services://?action=download-manifest&url={Uri.EscapeDataString(baseUrl)}";
+      	try
+      	{
+      		// Assuming you have a way to determine the platform
+      		var isIos = DeviceInfo.Platform == DevicePlatform.iOS;
+      		return isIos ? downloadUrl : baseUrl;
+      	}
+      	catch (Exception)
+      	{
+      		Console.WriteLine("Latest Version URL could not be created");
+      		return null;
+      	}
+      }
+
+}
+`}
+</CodeBlock>
+</TabItem>
 </Tabs>
 
 ### How to Prompt an Alert and Install the Latest Release
@@ -673,6 +987,7 @@ After obtaining the download URL for a newer version, display an alert with opti
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
+{ label: 'MAUI', value: 'maui' },
 ]}>
 
   <TabItem value="android">
@@ -687,28 +1002,28 @@ After obtaining the download URL for a newer version, display an alert with opti
         new GetAccessTokenTask().execute(Environment.PAT);
     }
 
-    private void showUpdateDialog(final String storePrefix, final String profileId, final AppVersion appVersion, final String accessToken, final String userEmail) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Update Available")
-                    .setMessage(appVersion.getVersion() + " version is available. Do you want to update?")
-                    .setPositiveButton("Update", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            String baseDownloadURL = "https://%s.store.appcircle.io/api/profile/%s/appVersions/%s/download-update/%s/user/%s";
-                            Uri downloadURL =  Uri.parse(String.format(baseDownloadURL, storePrefix, profileId, appVersion.getId(), accessToken, userEmail));
-                            Intent intent = new Intent(Intent.ACTION_VIEW, downloadURL);
-                            startActivity(intent);
-                        }
-                    })
-                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            // Code to run when "Cancel" is pressed
-                            dialog.dismiss();
-                        }
-                    })
-                    .show();
-        }
+    private void showUpdateDialog(final String storeURL, final String profileId, final AppVersion appVersion, final String accessToken, final String userEmail) {
+        new AlertDialog.Builder(this)
+                .setTitle("Update Available")
+                .setMessage(appVersion.getVersion() + " version is available. Do you want to update?")
+                .setPositiveButton("Update", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String baseDownloadURL = "https://%s/api/app-versions/%s/download-version/%s/user/%s";
+                        Uri downloadURL =  Uri.parse(String.format(baseDownloadURL, storeURL, appVersion.getId(), accessToken, userEmail));
+                        Intent intent = new Intent(Intent.ACTION_VIEW, downloadURL);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Code to run when "Cancel" is pressed
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
     ```
 
   </TabItem>
@@ -729,7 +1044,7 @@ After obtaining the download URL for a newer version, display an alert with opti
                     .onAppear {
                         let updateChecker = UpdateChecker()
                         Task {
-                            if let updateURL = try await updateChecker.checkForUpdate(pat: Configs.pat, profileId: Configs.profileId, storePrefix: Configs.storeId, userEmail: "USER_EMAIL") {
+                            if let updateURL = try await updateChecker.checkForUpdate(secret: Environments.secret, profileId: Environments.profileId, storeURL: Environments.storeURL, userEmail: "USER_EMAIL") {
                                 self.updateURL = updateURL
                                 self.showAlert.toggle()
                             }
@@ -764,10 +1079,8 @@ After obtaining the download URL for a newer version, display an alert with opti
     useEffect(() => {
       const updateControl = async (currentVersion: string) => {
         const updateInfo = await checkForUpdate({
-          pat: Configs.PAT,
-          storePrefix: Configs.storePrefix,
-          iOSProfileId: Configs.PROFILE_ID,
-          androidProfileId: Configs.ANDROID_PROFILE_ID,
+          iOSProfileId: Environment.IOS_PROFILE_ID,
+          androidProfileId: Environment.ANDROID_PROFILE_ID,
           currentVersion,
           userEmail: 'USER_EMAIL',
         });
@@ -779,6 +1092,7 @@ After obtaining the download URL for a newer version, display an alert with opti
               {
                 text: 'Update',
                 onPress: () => {
+                  console.log('updateInfo.updateURL', updateInfo.updateURL);
                   Linking.openURL(updateInfo.updateURL);
                 },
               },
@@ -805,6 +1119,44 @@ After obtaining the download URL for a newer version, display an alert with opti
     ```
 
   </TabItem>
+    <TabItem value="maui">
+  <CodeBlock language="csharp">
+{`
+using MAUI_IN_APP.Helpers;
+
+namespace MAUI_IN_APP;
+
+public partial class MainPage : ContentPage
+{
+public MainPage()
+{
+InitializeComponent();
+}
+protected override async void OnAppearing()
+{
+base.OnAppearing();
+await UpdateControl();
+}
+public async Task UpdateControl()
+{
+var currentVersion = AppInfo.VersionString;
+var updateInfo = await InAppUpdateHelper.CheckForUpdate(currentVersion, "USER_EMAIL");
+
+      	if (updateInfo?.DownloadUrl != null && await Launcher.CanOpenAsync(updateInfo.DownloadUrl))
+      	{
+      		bool result = await DisplayAlert("Update Available",$"{updateInfo.Version} version is available.", "Update","Cancel");
+      		if (result)
+      		{
+      			await Launcher.OpenAsync(updateInfo.DownloadUrl);
+      		}
+      	}
+      }
+
+}
+
+`}
+</CodeBlock>
+</TabItem>
 </Tabs>
 
 :::caution

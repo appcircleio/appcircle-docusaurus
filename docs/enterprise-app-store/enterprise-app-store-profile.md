@@ -54,7 +54,7 @@ The Publish Flow steps can be customized to send the binary to the Enterprise Ap
 
 The above tasks can also be initiated using the Appcircle CLI. The Appcircle CLI documentation should be checked for the command line parameters.
 
-<ContentRef url="/appcircle-api">Appcircle CLI</ContentRef>
+<ContentRef url="/appcircle-api-and-cli">Appcircle CLI</ContentRef>
 
 ## Profile Actions
 
@@ -89,7 +89,25 @@ Profile information can be accessed, and users can be added to grant them access
 
 The Profile ID can be copied from the Info tab by clicking the copy icon located on the right side of the displayed ID.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-profilesettings.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-6.png" />
+
+#### Show on Top
+
+The **Show on Top** feature allows you to prioritize app versions by displaying them at the top of the list in their respective channels within the Enterprise Portal.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-7.png" />
+
+:::caution
+Please note that due to the caching model in the service, updates may take up to 10 minutes to take effect.
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-8.png" />
+
+#### In-App Update Secret
+
+In-app updates enable applications to deliver and install updates directly within the app, enhancing user experience by minimizing disruption.
+
+For more information, please visit [In-App Updates](/enterprise-app-store/in-app-updates) documentation.
 
 ### Manage Access
 
@@ -99,17 +117,16 @@ Multiple users can be added to the Beta and Live channels by pressing the Tab ke
 
 :::important
 
-To configure the Manage Access tab, the authentication method for the Enterprise Store must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Store Settings](/enterprise-app-store/store-settings#store-authentication) documentation.
+To configure the Manage Access tab, the authentication method for the Enterprise Portal must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Portal Settings](/enterprise-app-store/portal-settings#store-authentication) documentation.
 
 :::
 
-
 :::caution
-If a sub-organization is being worked for, visibility will be limited to the apps within that organization. However, if an app is published, it will also be displayed in the showcase of the parent organization on the Enterprise App Store.
+If a sub-organization is being worked for, visibility will be limited to the apps within that organization. However, if an app is published, it will also be displayed in the showcase of the parent organization on the Enterprise Portal.
 
 User permissions within the Enterprise App Store can be managed using **Okta SAML**. By configuring authorization groups through **Okta** and subsequently applying these group names to **Alpha** or **Beta** channels via Appcircle, access will be restricted to only the relevant users.
 
-For further details, please refer to the document: [Okta Managing User Groups](https://docs.appcircle.io/account/my-organization/integrations/authentications/sso-providers-configuration/sso-login/okta-saml#okta-managing-user-groups).
+For further details, please refer to the document: [Okta Managing User Groups](/account/my-organization/security/authorization/store-sso-authorization).
 :::
 
 :::info
@@ -125,7 +142,7 @@ Defined user groups from your provider can be added after configuration.
 
 :::tip 
 
-The logo of the Enterprise App Store profile can also be updated by clicking on the logo icon. Please note that this will not affect the customization of your Enterprise Store login.
+The logo of the Enterprise App Store profile can also be updated by clicking on the logo icon. Please note that this will not affect the customization of your Enterprise Portal login.
 
 :::
 
@@ -142,7 +159,7 @@ The Enterprise App Store module includes two channels: Beta and Live.
 
 Apps can be sent to the Beta or Live channels by hitting the `...` button and then selecting the **Publish** menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-beta1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070.png" />
 
 The channel can be selected, and a summary and release notes for the release can be written. Once the **Publish** button is clicked, the particular binary will be made available to all beta users.
 
@@ -155,7 +172,7 @@ A version can be sent to the Live Channel in two ways:
 - Click the **Publish** button and select **Live** for the channel.
 - Click the ... button for any beta build and select **Go Live** from the menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-golive.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-2.png" />
 
 :::info
 
@@ -165,7 +182,7 @@ Only **one binary version** can be sent to the Live and Beta channels. When anot
 
 :::tip
 
-Any app versions published by sub-organizations to the **Live** or **Beta** channel will be available in the Enterprise Store created by the root organization for users to view and download.
+Any app versions published by sub-organizations to the **Live** or **Beta** channel will be available in the Enterprise Portal created by the root organization for users to view and download.
 
 :::
 
@@ -185,30 +202,7 @@ If two binaries are published to the Beta and Live channels, the profile header 
 
 Any binary can be removed from the Live or Beta channels by selecting the **Unpublish** action from the actions menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-unpublish.png" />
-
-### Notify
-
-An email can be sent to your users by selecting the **Notify** action from the actions menu.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notify2.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notify3.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notify4.png" />
-
-
-An email with the subject and message entered in this form will be sent to your users. The users will be able to download the binary by clicking the link provided in the email.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notifymail.png" />
-
-:::important
-
-To use the Notify feature, the authentication method for the Enterprise Store must be set to either SSO or LDAP. For more information about authentication types, please refer to the [Store Settings](/enterprise-app-store/store-settings#store-authentication) documentation.
-
-Additionally, registered emails must be included in the [Manage Access](/enterprise-app-store/enterprise-app-store-profile#manage-access) settings for your Enterprise App Store profile.
-
-:::
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-3.png" />
 
 ### Share
 
@@ -228,20 +222,20 @@ The above tasks can also be initiated using the Appcircle CLI. Please refer to t
 
 :::
 
-<ContentRef url="/appcircle-api">Appcircle CLI</ContentRef>
+<ContentRef url="/appcircle-api-and-cli">Appcircle CLI</ContentRef>
 
 ### Download
 
 The binary artifact in the Enterprise App Store profile can be downloaded by selecting the Download button from the actions menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-profile5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-4.png" />
 
 
 ### Delete
 
 Binaries in the Enterprise App Store profiles can be deleted by clicking the Delete button in the actions menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-delete.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-5.png" />
 
 :::info
 

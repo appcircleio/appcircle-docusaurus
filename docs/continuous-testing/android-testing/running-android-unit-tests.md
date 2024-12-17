@@ -1,7 +1,7 @@
 ---
 title: Running Unit Tests
 description: Learn how to run unit tests for Android applications in Appcircle
-tags: [unit tests, android, android unit tests, testing, continuous testing]
+tags: [unit tests, android, testing, continuous testing]
 sidebar_position: 2
 ---
 
@@ -119,7 +119,7 @@ There's one important setting that you should change. If any workflow steps fail
 
 :::caution
 
-If you're using UI tests with emulators, you must select an Intel device (**Default Intel Pool**) since M1 virtual machines (**Default M1 Pool**) don't support nested virtualization. Unit tests can work for both pools.
+If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization. Unit tests can work for both pools.
 
 :::
 

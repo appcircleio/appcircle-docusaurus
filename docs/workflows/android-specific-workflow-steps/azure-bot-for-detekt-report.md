@@ -1,7 +1,7 @@
 ---
 title: Azure DevOps Bot for Detekt Report
 description: The Azure DevOps Bot for Detekt Report step analyze your Detekt report and post the report details within the opened pull request in Azure DevOps.
-tags: [azure devops, Detekt-Report, analysis]
+tags: [detekt, report, analysis]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -12,7 +12,7 @@ The **Azure DevOps Bot for Detekt Report** step analyzes your [Detekt report](ht
 
 :::caution
 
-[Danger](https://danger.systems/) operates on a similar principle, allowing use of the [Danger step](https://docs.appcircle.io/workflows/common-workflow-steps/#code-reviews-with-danger) with platforms such as [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), and [Bitbucket](https://bitbucket.org/product/guides/getting-started/overview#a-brief-overview-of-bitbucket). However, Danger currently does not support Azure DevOps.
+[Danger](https://danger.systems/) operates on a similar principle, allowing use of the [Danger step](/workflows/common-workflow-steps/danger) with platforms such as [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), and [Bitbucket](https://bitbucket.org/product/guides/getting-started/overview#a-brief-overview-of-bitbucket). However, Danger currently does not support Azure DevOps.
 
 For more information, refer to the Appcircle blog post about Danger:
 - [**Danger in CI: Automate Your Mobile Code Reviews**](https://appcircle.io/blog/danger-in-ci-automate-your-mobile-code-reviews).
@@ -21,22 +21,25 @@ For more information, refer to the Appcircle blog post about Danger:
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Azure DevOps Bot for Detekt Report** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Azure DevOps Bot for Detekt Report** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                       | Description                                      |
  |-------------------------------------------------|--------------------------------------------------|
- | [Detekt](https://docs.appcircle.io/workflows/android-specific-workflow-steps/#detekt) | In order to generate the [Detekt report](https://detekt.dev/docs/introduction/reporting/), the **Detekt** step must be executed beforehand.  |
+ | [**Detekt**](/workflows/android-specific-workflow-steps/detekt) | In order to generate the [Detekt report](https://detekt.dev/docs/introduction/reporting/), the **Detekt** step must be executed beforehand.  |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_1.png'/>
 
 ### Input Variables
-For each step, specific input variables are required for its operation on your system. The input variables necessary for the **Azure DevOps Bot for Detekt Report** are as follows:
+
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_2.png'/>
 
-:::caution
+:::danger Sensitive Variables
 
-Enter confidential information as [**secret environment variable**](https://docs.appcircle.io/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) and ensure the appropriate [**environment variable group**](https://docs.appcircle.io/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](https://docs.appcircle.io/build/build-profile-configuration/).
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
 
 :::
 

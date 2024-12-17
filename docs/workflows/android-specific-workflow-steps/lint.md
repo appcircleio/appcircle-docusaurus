@@ -14,21 +14,23 @@ This step is used to run Lint Gradle tasks in your project via Appcircle.
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Android Lint** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Android Lint** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                                                   |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | To start the **Android Lint** process, the repository that needs to be built must be fetched from the branch. This generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Lint** step. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To start the **Android Lint** process, the repository that needs to be built must be fetched from the branch. This generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Lint** step. |
 
 :::caution
+
 Please ensure that you insert the **Android Lint** step before using the **Android Build** step.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_1.png' alt="image2" />
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for the **Android Lint** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_2.png' alt="image2" />
 
@@ -40,6 +42,7 @@ For each component, specific input variables are required for its operation on y
 | `$AC_PROJECT_PATH`   | Specifies the project path. If your project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path.                                                                                                                                                                                                                           | Optional |
 
 :::info
+
 If you have filled in the required variables in the **Configuration** section, you will not need to redefine these variables again on the [**Workflows**](/workflows/). For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/build-profile-configuration) document.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_3.png' alt="Configuration Image" />
@@ -51,7 +54,7 @@ If you have filled in the required variables in the **Configuration** section, y
 
 ### Output Variables
 
-The outputs that can result from the operation of this component are listed as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_4.png' alt="image2" />
 
@@ -60,7 +63,9 @@ The outputs that can result from the operation of this component are listed as f
 | `-`           | Lint does not assign the XML/HTML file output to a variable. However, the resulting file from **Lint** appears in the output (`$AC_OUTPUT_DIR`) and report directory (`<gradlew folder path>/$AC_MODULE/build/reports`). |
 
 :::caution
+
 To view the Lint report on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps#export-build-artifacts) step is included in your **Workflow** after this step.
+
 :::
 
 ---

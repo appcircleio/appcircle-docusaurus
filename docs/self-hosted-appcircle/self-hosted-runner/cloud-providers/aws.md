@@ -1,7 +1,7 @@
 ---
 title: Amazon Web Services (AWS)
 description: Learn how to create a self-hosted Appcircle runner instance on Amazon Web Services (AWS).
-tags: [self-hosted, self-hosted runner, cloud providers, aws, amazon web services, EC2]
+tags: [self-hosted, self-hosted runner, cloud providers, amazon web services]
 sidebar_position: 1
 ---
 
@@ -308,13 +308,13 @@ cd "$HOME"
 Download the latest self-hosted runner package.
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.7.0.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.7.2.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.7.0.zip
+unzip -o -u appcircle-runner-osx-arm64-1.7.2.zip
 ```
 
 Change directory into extracted `appcircle-runner` folder for following steps.

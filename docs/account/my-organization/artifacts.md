@@ -2,7 +2,7 @@
 title: Artifacts
 description: Learn how to manage the logs and artifacts of your build profiles in Appcircle
 tags: [account, my organization, artifacts]
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

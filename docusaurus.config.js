@@ -77,18 +77,13 @@ const config = {
             `,
           },
           {
-            to: "/",
-            position: "left",
-            label: "Documentation",
-          },
-          {
             to: "/release-notes",
             position: "left",
             label: "Release Notes",
           },
           {
-            href: "https://blog.appcircle.io",
-            label: "Blog",
+            href: "https://appcircle.io/features",
+            label: "Features",
             position: "right",
           },
           {
@@ -145,7 +140,7 @@ const config = {
               },
               {
                 label: "Appcircle CLI",
-                to: "/appcircle-api",
+                to: "/appcircle-api-and-cli",
               },
               {
                 label: "Release Notes",
@@ -227,6 +222,7 @@ const config = {
           "ruby",
           "groovy",
           "java",
+          "csharp",
           "kotlin",
           "bash",
           "diff",
@@ -242,12 +238,12 @@ const config = {
         appId: "4U9FKQJ034",
         contextualSearch: true,
       },
-      imageZoom: {
-        selector: ".screenshot, .image-narrow",
-        options: {
-          // medium-zoom options
-          margin: 24,
-          scrollOffset: 0,
+      zooming: {
+        selector: ".markdown img",
+        delay: 500,
+        background: {
+          light: "rgb(255, 255, 255)",
+          dark: "#1b1b1d",
         },
       },
     }),
@@ -260,7 +256,7 @@ const config = {
       },
     ],
     "docusaurus-plugin-sass",
-    "plugin-image-zoom",
+    "docusaurus-plugin-zooming",
   ],
 };
 

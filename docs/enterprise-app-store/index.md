@@ -24,25 +24,29 @@ If you have more than 100 users and don't want to deal with device enrollment, y
 
 https://developer.apple.com/programs/enterprise/
 
-## Enterprise App Store Profile
+## [Enterprise App Store Profile](/enterprise-app-store/enterprise-app-store-profile)
 
 There are several ways to create an Enterprise App Store Profile. You can either manually upload your IPA or APK files or send them through Appcircle's Distribution, Build, or Publish modules.
 
-## Store Customization
+## [Portal Customization](/enterprise-app-store/portal-customization)
 
 The Enterprise App Store module allows for tailoring the login page to reflect your organization's branding. You can customize the colors, update the title, and replace the logo to create a seamless and professional experience for your users.
 
-## Store Settings
+## [Portal Settings](/enterprise-app-store/portal-settings)
 
-The Enterprise App Store Settings allows you to configure your store's authentication and domain settings.
+The Enterprise Portal Settings allows you to configure your store's authentication, along with captcha and domain settings.
 
-## Enterprise Store
+## [Enterprise Portal](/enterprise-app-store/enterprise-portal)
 
-Enterprise Store allows you to share your applications via Beta and Live channels.
+Enterprise Portal allows you to share your applications via Beta and Live channels.
 
-## Store Reports
+## [Portal Reports](/enterprise-app-store/enterprise-reports)
 
 You can access reports for your Enterprise App Store from this screen. The reports screen provides the following data through a clear and concise user interface.
+
+## [In-app Updates](/enterprise-app-store/in-app-updates)
+
+In-app updates enable applications to deliver and install updates directly within the app, enhancing user experience by minimizing disruption.
 
 ## Enterprise App Store FAQ
 
@@ -52,44 +56,48 @@ Enterprise App Store is Appcircle's new feature that lets you create your own mo
 
 #### What is the difference between Enterprise App Store and Testing Distribution
 
-The Testing Distribution module is a testing tool that enables the direct distribution of developments to internal test teams, such as QA, iOS, and Android teams. Through this module, you can easily share your internal tests with your test teams. For more information, please visit the [**Testing Distribution**](/testing-distribution) documentations.
+[**Testing Distribution**](/testing-distribution) is a process designed to facilitate the manual testing of new builds by internal or third-party teams, ensuring that each iteration is thoroughly validated before final release. 
 
-The Enterprise App Store, on the other hand, is an internal app distribution platform. With this module, you can create a custom store for your organization and distribute applications used by your employees. The versions hosted here are not test versions; they are the actual application versions that your employees will use. For more information, please visit the [**Enterprise App Store**](/enterprise-app-store) documentations.
+[**Enterprise App Store**](/enterprise-app-store), on the other hand, serves as the final distribution method, offering a secure and branded experience for internal customers. 
+
+Understanding the difference between these two methods is essential for effective internal distribution, ensuring that the right version of your app reaches the right audience at the right time. 
+
+https://appcircle.io/blog/understanding-the-difference-between-testing-distribution-and-enterprise-app-store
 
 #### Can non-Enterprise companies use this feature?
 
 Yes. From small teams to large enteprises, anybody can create their own app store.
 
-#### What kind of apps can I put to my App Store
+#### What kind of apps can I put to my App Portal
 
 As long as they are signed with an Ad Hoc or Enterprise Distribution Certificate, all apps with .ipa or .apk/.aab files can be uploaded.
 
-#### Can we customize our store and how?
+#### Can we customize our portal and how?
 
 Yes. You can customize your logo, primary and secondary color and the main text color.
 
-#### How will users enter my App Store?
+#### How will users enter my App Portal?
 
-Once you go to your store's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter, Developer, and Professional plans. Please [contact us](https://appcircle.io/contact) to request custom domains).
+Once you go to your portal's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter, Developer, and Professional plans. Please [contact us](https://appcircle.io/contact) to request custom domains).
 
 
-#### Can I set an authentication method for accessing the Enterprise App Store?
+#### Can I set an authentication method for accessing the Enterprise Portal?
 
-Yes, you can choose one of the authentication methods provided by Appcircle to authenticate your users and control their access to the store. For more information, please visit the Enterprise App Store [**Store Authentication**](/enterprise-app-store/store-settings#store-authentication) documentations.
+Yes, you can choose one of the authentication methods provided by Appcircle to authenticate your users and control their access to the portal. For more information, please visit the Enterprise App Store [**Store Authentication**](/enterprise-app-store/portal-settings#store-authentication) documentations.
 
 #### Can I send a binary from another CI tool?
 
-Yes, you can use Appcircle API & CLI tools within your current CI tool to directly send the binary and utilize it within the Enterprise App Store. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api) documentations.
+Yes, you can use Appcircle API & CLI tools within your current CI tool to directly send the binary and utilize it within the Enterprise App Store. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api-and-cli) documentations.
 
 #### Is my app store accessible from desktop web?
 
-Yes. Desktop users can access your app store and view the available apps through your store's URL. To install and run an app, you need to open the store from a mobile device. Desktop website will display a QR code next to your store to pen the page from mobile devices easily.
+Yes. Desktop users can access your app portal and view the available apps through your store's URL. To install and run an app, you need to open the store from a mobile device. Desktop website will display a QR code next to your portal to pen the page from mobile devices easily.
 
 #### How can I create an Enterprise Distribution Certificate on iOS?
 
 You have to be enrolled on [Apple Enterprise Developer Program](https://developer.apple.com/programs/enterprise/) ($299/year). You can alternatively use Ad Hoc certificates if you aren'a a member of the Enterprise Developer program (see question below).
 
-#### Can I distribute apps signed with Ad Hoc / App Store Provisioning Profile from my Store?
+#### Can I distribute apps signed with Ad Hoc / App Store Provisioning Profile from my Portal?
 
 You can distribute apps that are signed with an Ad Hoc certificate (iOS). Please note that your users' device identifiers must be added to Apple Developer Portal and should be included in the provisioning profile used in signing the build. Apps signed with App Store certificates can't be distributed.
 

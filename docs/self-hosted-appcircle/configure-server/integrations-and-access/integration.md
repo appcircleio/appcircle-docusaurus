@@ -27,22 +27,32 @@ smtpServer:
   ssl: 'false'
   auth: 'true'
   starttls: 'true'
+  verifyCertificate: 'true'
 
 ```
 
 Explanation of each key
 
-|Key|Explanation|
-|---|-----------|
-|password|Password of the SMTP server|
-|username|Default user name for SMTP.|
-|from|Sender address of the emails |
-|host|The SMTP server to connect to|
-|fromDisplayName |Sender Display Name|
-|port |The SMTP server port to connect|
-|ssl | If set to true, use SSL to connect |
-|auth | If set to true, attempt to authenticate the user using the AUTH command. |
-|starttls | If set to true, enables the use of the STARTTLS command |
+|        Key        |         Explanation         |
+|-------------------|-----------------------------|
+| password          | Password of the SMTP server |
+| username          | Default user name for SMTP |
+| from              | Sender address of the emails |
+| host              | The SMTP server to connect to |
+| fromDisplayName   | Sender Display Name |
+| port              | The SMTP server port to connect |
+| ssl               | If set to `true`, use SSL to connect |
+| auth              | If set to `true`, attempt to authenticate the user using the AUTH command. |
+| starttls          | If set to `true`, enables the use of the STARTTLS command |
+| verifyCertificate | If set to `false`, disables validation of the SMTP server's SSL certificate. The value is `true` by default, shouldn't be disabled in production environments. |
+
+:::info
+The `verifyCertificate` option is available in version `3.23.1` or later.
+:::
+
+:::info
+Email notifications use the `fromDisplayName` as the sender name (or from name). However, when you [share a binary](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#share-binary) using the **Testing Distribution** module, the **profile name** will be displayed as the sender, as shown in the example email provided in the linked documentation.
+:::
 
 ## SSO
 

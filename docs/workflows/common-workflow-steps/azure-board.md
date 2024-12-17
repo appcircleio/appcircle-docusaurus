@@ -1,7 +1,7 @@
 ---
 title: Azure Boards
 description: Manage your software development process with Azure Boards. Track work items' progress throughout the development lifecycle.
-tags: [workflow, build-and-test, azure, boards]
+tags: [workflow, build and test, azure, boards]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -16,15 +16,17 @@ You can use the [Azure Boards Component](https://github.com/appcircleio/appcircl
 
 ### Prerequisites
 
-There is no mandatory sequence for the use of this component. It depends on your business decision which step to use before or after in your workflow.
+There are no prerequisites required before using the **Azure Boards** step. It depends on your business decision which step to use before or after in your workflow.
 
 :::caution
-Please note that once the Azure Boards component has run successfully, the status of the relevant article in your Azure Board account will be changed. If the build fails in Appcircle, an incorrect status may appear in your Azure Board account. Make sure you use it in the correct order in Workflow.
+
+Please note that once the **Azure Boards** component has run successfully, the status of the relevant article in your Azure Board account will be changed. If the build fails in Appcircle, an incorrect status may appear in your Azure Board account. Make sure you use it in the correct order in Workflow.
+
 :::
 
 ### Configuration of Component
 
-To add a comment, the issue ID `AC_AZUREBOARD_WORKITEM` must be supplied to the component. We need to get this issue ID dynamically so that our workflow can work for multiple branches. Appcircle components use environment variables to pass the state. We can add a step just before the Azure Boards component to prepare the necessary environment variables.
+To add a comment, the issue ID `$AC_AZUREBOARD_WORKITEM` must be supplied to the component. We need to get this issue ID dynamically so that our workflow can work for multiple branches. Appcircle components use environment variables to pass the state. We can add a step just before the Azure Boards component to prepare the necessary environment variables.
 
 Let's say you're working on a feature branch called feature/onboarding-1. You may use the below Ruby script to get issue ID 1 from the branch name and use this information with the Azure Boards component. Please see the [**Custom Script step documentation**](/workflows/common-workflow-steps/upload-files-to-amazon-s3) for this implementation.
 
@@ -41,14 +43,16 @@ open(env_var_path, 'a') { |f|
 
 ### Input Variables
 
-There are some necessary parameters for this stepper to work properly. These parameters are given in the table below with their explanations.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureInput.png' />
 
-:::danger
-**Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
+:::danger Sensitive Variables
 
-We recommend using [Environment Variables](/environment-variables/) groups for such sensitive variables.
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+
 :::
 
 | Variable Name                  | Description                                                                                                                                                                                                                                                                                      | Status   |
@@ -65,7 +69,9 @@ We recommend using [Environment Variables](/environment-variables/) groups for s
 | `$AC_AZUREBOARD_TEMPLATE`      | This comment template will be used to post a comment. Variables donated with `$` will be replaced during the build. Please check [this document](https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/update?view=azure-devops-rest-7.0) to learn more about possible updates. | Required |
 
 :::tip
-If you add state names for successful and failed steps (`AC_AZUREBOARD_FAIL_STATE` and `AC_AZUREBOARD_SUCCESS_STATE`), the Azure Boards component will automatically change the status of your issue according to the state of your workflow.
+
+If you add state names for successful and failed steps (`$AC_AZUREBOARD_FAIL_STATE` and `$AC_AZUREBOARD_SUCCESS_STATE`), the Azure Boards component will automatically change the status of your issue according to the state of your workflow.
+
 :::
 
 ### Changing Template
@@ -73,6 +79,8 @@ If you add state names for successful and failed steps (`AC_AZUREBOARD_FAIL_STAT
 Appcircle provides a default template that adds the commit ID, branch name, and a couple of environment variables. When you're adding a comment, you may use HTML. This template can be edited and modified according to the Azure API. You can check [this document](https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/update?view=azure-devops-rest-7.0&tabs=HTTP/) to create your custom comments.
 
 Please check the [Azure Boards Component](https://github.com/appcircleio/appcircle-azure-boards-component/) documentation for more information.
+
+---
 
 To access the source code of this component, please use the following link:
 

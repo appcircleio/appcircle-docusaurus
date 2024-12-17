@@ -4,18 +4,18 @@ description: Overview of role management and permissions in Appcircle
 tags:
   [
     permissions,
-    role-management,
-    build-profiles,
-    environment-variables,
-    signing-identity,
-    distribution-profiles,
-    testing-groups,
-    store-submit,
+    role management,
+    build profiles,
+    environment variables,
+    signing identity,
+    distribution profiles,
+    testing groups,
+    store submit,
     publish,
-    enterprise-app-store,
-    organization-management,
-    billing-management,
-    third-party-connections,
+    enterprise app store,
+    organization management,
+    billing management,
+    third-party connections,
   ]
 sidebar_position: 5
 ---
@@ -112,6 +112,13 @@ The following table details the roles and restrictions for the [**Signing and Id
 | Apple Cerficate Signing Request | List CSR                               | ✅     | ✅       | ✅      |
 | Apple Identifiers               | Add/Delete/Update Apple Identifiers    | ✅     | ✅       | ⛔      |
 | Apple Identifiers               | List Apple Identifiers                 | ✅     | ✅       | ✅      |
+| Apple Device                    | Add Device Manuel                      | ✅     | ✅       | ⛔      |
+| Apple Device                    | Invite User via Email                  | ✅     | ✅       | ⛔      |
+| Apple Device                    | Delete Apple Device                    | ✅     | ✅       | ⛔      |
+| Apple Device                    | Sync from Apple Developer              | ✅     | ✅       | ⛔      |
+| Apple Device                    | Register Devices to Apple Developer    | ✅     | ✅       | ⛔      |
+| Apple Device                    | Adding New Device to Provision         | ✅     | ✅       | ⛔      |
+| Apple Device                    | List Apple Device                      | ✅     | ✅       | ✅      |
 | Apple Profile                   | Add/Delete/Update Apple Profiles       | ✅     | ✅       | ⛔      |
 | Apple Profile                   | List Apple Profiles                    | ✅     | ✅       | ✅      |
 | Keystore                        | Add/Delete/Update Keystores            | ✅     | ✅       | ⛔      |
@@ -146,19 +153,8 @@ The following table details the roles and restrictions for the [**Testing Distri
 | App Version Actions  | Download Binary                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Apple Device         | Add/Delete Apple Device                | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Apple Device         | Register Devices to Apple Developer    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Apple Device         | Adding New Device to Provision         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Apple Device         | Sync from Apple Developer              | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Apple Device         | List Apple Device                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports App Version               | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Report               | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔             | ✅      |
-
-:::info Apple Devices
-
-- **Manager** or **Operator** Testing Distribution permission can get Apple Devices if user has **Manager** Signing Identity permission.
-
-:::
 
 :::caution Authentication Settings
 
@@ -192,12 +188,15 @@ User can resign the binary if this user has **Manager** or **Viewer** Signing Id
 The following table details the roles and restrictions for the [**Testing Groups**](/testing-distribution/testing-groups). Please refer to the related module information and caution notes.  
 
 
-| Testing Groups | Scopes                                  | Owner | Manager | Viewer |
-|----------------|-----------------------------------------|-------|---------|--------|
-| Testing Groups | Add/Delete/Update Testing Group         | ✅     | ✅       | ⛔      |
-| Testing Groups | Add/Delete/Update Testing Group Testers | ✅     | ✅       | ⛔      |
-| Testing Groups | List Testing Groups                     | ✅     | ✅       | ✅      |
-| Testing Groups | List Testing Group Testers              | ✅     | ✅       | ✅      |
+| Testing Groups | Scopes                                    | Owner | Manager | Viewer |
+|----------------|-------------------------------------------|-------|---------|--------|
+| Testing Groups | Add/Delete/Update Testing Group           | ✅     | ✅       | ⛔      |
+| Testing Groups | Add/Delete/Update Testing Group Testers   | ✅     | ✅       | ⛔      |
+| Testing Groups | List Testing Groups                       | ✅     | ✅       | ✅      |
+| Testing Groups | List Testing Group Testers                | ✅     | ✅       | ✅      |
+| Testing Groups | Update LDAP Group Members Synchronization | ✅     | ✅       | ⛔      |
+| Testing Groups | Sync Testing Group From LDAP              | ✅     | ✅       | ⛔      |
+| Testing Groups | List LDAP Groups and Members              | ✅     | ✅       | ✅      |
 
 
 ### Publish Module iOS Permissions
@@ -244,34 +243,32 @@ User can resign the binary if this user has **Manager** or **Viewer** Signing Id
 
 The following table details the roles and restrictions for the [**Publish**](/publish-module) module for Android. Please refer to the related modules information and caution notes.
 
-| Publish                  | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
-|--------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
-| Publish Profiles         | Add/Delete/Update Publish Profile         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Profiles         | List Publish Profiles                     | ✅     | ✅       | ✅        | ✅             | ✅      |
-| App Version              | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| App Version              | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Publish Profile Settings | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Flows            | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ✅             | ✅      |
-| App Store Connect Info   | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Check Release Status     | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Metadata                 | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| Metadata                 | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Mark as RC               | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Resing Binary            | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Release Note             | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| History                  | View/Download History Logs                | ✅     | ✅       | ✅        | ✅             | ✅      |
-| History                  | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Download Binary          | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Cancel Submission        | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Reject Binary            | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Activity Logs            | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish                         | Scopes                                      | Owner | Manager | Operator | Ext. Operator | Viewer |
+|---------------------------------|---------------------------------------------|-------|---------|----------|---------------|--------|
+| Publish Profiles                | Add/Delete/Update Publish Profile           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Profiles                | List Publish Profiles                       | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Version                     | Add/Delete App Version                      | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| App Version                     | List App Versions                           | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Publish Profile Settings        | View/Update Profile Settings                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows                   | Add/Delete/Update Publish Flow Step         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows                   | Download Publish Flow                       | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows                   | Upload Publish Flow                         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows                   | View Publish Flow                           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                         | Start/Restart/Stop Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                         | Start Single Step                           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                         | Update Publish Details                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                         | View Publish Details                        | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Google Play Console Information | List/Update Google Play Console Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Metadata                        | Update Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Metadata                        | View Metadata Details                       | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Mark as RC                      | Marking RC a version                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Resing Binary                   | Resigning Binary                            | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Release Note                    | Update Release Note                         | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| History                         | View/Download History Logs                  | ✅     | ✅       | ✅        | ✅             | ✅      |
+| History                         | List History                                | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Download Binary                 | Download Binary                             | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Reject Binary                   | Reject Binary                               | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Activity Logs                   | List Activity Log Details                   | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 
 ### Publish Environment Variables
@@ -304,6 +301,8 @@ Manage and Upload Apps to Enterprise App Store.
 | App Version          | List App Versions                      | ✅     | ✅       | ✅        | ✅             | ✅      |
 | App Version Actions  | Publish App Version Live/Beta Channels | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | App Version Actions  | Notify Users                           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Create/Delete In-app Update            | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| App Version Actions  | Get In-app Update                      | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Settings             | Update Store Domain                    | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | Update Store Customization             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
 | Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
@@ -325,27 +324,26 @@ The user can create an organization or sub-organization within license limits, a
 
 Also, the user can view self-hosted runners and change configuration.
 
-| Organization Management Sub-modules | Scopes                                  | Owner | Manager | Viewer |
-|-------------------------------------|-----------------------------------------|-------|---------|--------|
-| Organization and Team Management    | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Assign Role for User                    | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | List User                               | ✅     | ✅       | ✅      |
-| Integrations                        | Add/Delete/Update LDAP/SSO Integrations | ✅     | ✅       | ⛔      |
-| Integrations                        | View LDAP/SSO Integrations              | ✅     | ✅       | ✅      |
-| Appcircle Login                     | Create/Delete/Update SSO                | ✅     | ✅       | ⛔      |
-| Appcircle Login                     | List SSO                                | ✅     | ✅       | ✅      |
-| Appcircle Login                     | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
-| Appcircle Login                     | List LDAP                               | ✅     | ✅       | ✅      |
-| PAT                                 | Generate PAT                            | ✅     | ✅       | ⛔      |
-| PAT                                 | View PAT                                | ✅     | ✅       | ✅      |
-| Runner Access Token                 | List Runner Access Token                | ✅     | ⛔       | ⛔      |
-| Runner Access Token                 | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
-| Report                              | View Organziation Report                | ✅     | ✅       | ✅      |
-| Artifacts                           | View Retention Period                   | ✅     | ✅       | ✅      |
-| Artifacts                           | Update Retention Period                 | ✅     | ✅       | ⛔      |
-
+| Organization Management Sub-modules                  | Scopes                                  | Owner | Manager | Viewer |
+| ---------------------------------------------------- | --------------------------------------- | ----- | ------- | ------ |
+| Organization and Team Management                     | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | Assign Role for User                    | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | List User                               | ✅     | ✅       | ✅      |
+| Testing Portal and Enterprise Portal Authentications | Add/Delete/Update LDAP/SSO Integrations | ✅     | ✅       | ⛔      |
+| Testing Portal and Enterprise Portal Authentications | View LDAP/SSO Integrations              | ✅     | ✅       | ✅      |
+| Appcircle Login                                      | Create/Delete/Update SSO                | ✅     | ✅       | ⛔      |
+| Appcircle Login                                      | List SSO                                | ✅     | ✅       | ✅      |
+| Appcircle Login                                      | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
+| Appcircle Login                                      | List LDAP                               | ✅     | ✅       | ✅      |
+| PAT                                                  | Generate PAT                            | ✅     | ✅       | ⛔      |
+| PAT                                                  | View PAT                                | ✅     | ✅       | ✅      |
+| Runner Access Token                                  | List Runner Access Token                | ✅     | ⛔       | ⛔      |
+| Runner Access Token                                  | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
+| Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
+| Artifacts                                            | View Retention Period                   | ✅     | ✅       | ✅      |
+| Artifacts                                            | Update Retention Period                 | ✅     | ✅       | ⛔      |
 
 :::info Organization Management
 
@@ -359,7 +357,7 @@ If you want to assign a role in a sub-organization, please do so within the resp
 
 LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Testing Portal**](/testing-distribution/testing-portal) and [**Enterprise App Store**](/enterprise-app-store).
 
-Please use [**Appcircle Login**](/account/my-organization/integrations/authentications/sso-providers-configuration/onelogin-saml#enable-sso) for **LDAP** and **SSO** integration when logging into Appcircle.
+Please use [**Appcircle Login**](/account/my-organization/security/authentications) for **LDAP** and **SSO** integration when logging into Appcircle.
 
 :::
 
@@ -386,16 +384,16 @@ Connect or disconnect from third-party service providers such as notification to
 
 #### Notification Tools
 
-- [**Slack**](/account/my-organization/integrations/notification-integrations/slack/slack-notifications) 
-- [**Microsoft Teams**](/account/my-organization/integrations/notification-integrations/teams-notifications)
-- [**Email Notifications**](/account/my-organization/integrations/notification-integrations/email-connection) 
+- [**Slack**](/account/my-organization/notifications/slack/slack-notifications) 
+- [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications)
+- [**Email Notifications**](/account/my-organization/notifications/email-connection) 
  
 #### Store Connections
 
-- [**App Store Connect API Keys**](/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key) 
-- [**Google Play Developer API Keys**](/account/my-organization/integrations/credentials/adding-google-play-service-account) 
-- [**Huawei AppGallery Developer API Keys**](/account/my-organization/integrations/credentials/adding-huawei-api-key)
-- [**Microsoft Intune API Keys**](/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key) 
+- [**App Store Connect API Keys**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) 
+- [**Google Play Developer API Keys**](/account/my-organization/security/credentials/adding-google-play-service-account) 
+- [**Huawei AppGallery Developer API Keys**](/account/my-organization/security/credentials/adding-huawei-api-key)
+- [**Microsoft Intune API Keys**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) 
 
 | Integrations and Connections | Scopes                        | Owner | Manager | Viewer |
 |------------------------------|-------------------------------|-------|---------|--------|
