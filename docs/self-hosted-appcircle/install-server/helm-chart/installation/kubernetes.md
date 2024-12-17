@@ -73,15 +73,15 @@ If you use a domain like `appcircle.spacetech.com`, it will have **two levels of
 
 A **Kubernetes cluster** is **required** to install the Appcircle server using Helm.
 
-<details>
-    <summary>Click to view more details about Kubernetes cluster prerequisite.</summary>
-
 **Minimum hardware requirements for enterprise installation:**
 
-- Nodes with `x86_64` architecture
+- Node(s) with `x86_64` architecture
 - 8 CPUs
 - 16 GB RAM
-- 500 GB Disk
+- 50 GB Disk per node
+
+<details>
+    <summary>Click to view more details about Kubernetes cluster prerequisite.</summary>
 
 **Recommended hardware requirements for enterprise installation:**
 
