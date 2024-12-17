@@ -23,10 +23,12 @@ To complete this guide, you must have the following:
 
 A main **domain name**, which will have **subdomains**, is **required** for the Appcircle server.
 
+:::note
+In this documentation, we will use `appcircle.spacetech.com` as an **example main domain** and `spacetech` as an **example organization name**.
+:::
+
 <details>
     <summary>Click to view more details about domain name prerequisite.</summary>
-
-In this documentation, we will use `appcircle.spacetech.com` as an **example main domain** and `spacetech` as an **example organization name**.
 
 By default, Appcircle uses seven subdomains. These subdomains are:
 
