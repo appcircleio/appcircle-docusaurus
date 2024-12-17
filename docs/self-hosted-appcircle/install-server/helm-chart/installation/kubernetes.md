@@ -124,7 +124,7 @@ For **trial** purposes, you can **use** the default **Ingress-Nginx** controller
 
 For **production** environments, it's recommended to use **your own Ingress controller**.
 
-Appcircle server supportsIngress-Nginx controller by default. To install Ingress-Nginx controller to the Kubernetes cluster, please check [the Ingress-Nginx controller documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
+Appcircle server supports Ingress-Nginx controller by default. To install Ingress-Nginx controller to the Kubernetes cluster, please check [the Ingress-Nginx controller documentation](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide).
 
 :::info
 **Other Ingress controllers** like HAProxy Ingress controller are also **supported** by **modifying Helm values** accordingly.
