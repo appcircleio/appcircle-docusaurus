@@ -11,7 +11,9 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
-This guide provides a concise yet comprehensive overview of how to install the Appcircle chart using **default values**. Please note that **default values** are intended for **trial purposes only** and are **not recommended** for use in **production environments**.
+This guide offers a comprehensive overview of installing the Appcircle chart. While the provided **default values** are suitable **for initial trials**, they are not recommended for production environments.
+
+**For production deployments**, it is essential to **review the detailed descriptions** and **optional sections** to ensure a secure and reliable setup. **This document supports both trial and production installations**.
 
 ## Prerequisites
 
@@ -120,7 +122,7 @@ The **`kubectl`** CLI is **required**.
 
 The Kubernetes cluster should have **an Ingress controller** installed and configured since Appcircle exposes its services through **Ingress objects**.
 
-For **trial** purposes, you can **use** the default **Ingress-Nginx** controller deployed **within the Helm chart** scope. 
+For **trial** purposes, you can **use** the default **Ingress-Nginx** controller deployed **within the Helm chart** scope.
 
 For **production** environments, it's recommended to use **your own Ingress controller**.
 
@@ -160,7 +162,7 @@ kubectl create namespace appcircle
 
 ### 4. Create Container Registry Secret
 
-By default, Appcircle uses its own image registry, which requires authentication with the `cred.json` file provided by Appcircle. 
+By default, Appcircle uses its own image registry, which requires authentication with the `cred.json` file provided by Appcircle.
 
 If you are using your own container image registry to access Appcircle container images, you can either skip authentication if your registry doesn't require it or create a secret for your custom registry.
 
@@ -395,7 +397,7 @@ helm repo update
 
 ### 4. Install the Appcircle Server
 
-**Run the following Helm command** to install the Appcircle server chart. 
+**Run the following Helm command** to install the Appcircle server chart.
 
 In this example, we deploy the Appcircle server to a single namespace, using **`appcircle`** as the **namespace** and **`appcircle-server`** as the Helm **release name**.
 
@@ -472,6 +474,5 @@ https://my.appcircle.spacetech.com
 When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
 
 To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration.md) section.
-
 
 <NeedHelp />
