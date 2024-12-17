@@ -36,6 +36,10 @@ If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with 
 
 - Create a secret with the name `${releaseName}-auth-keycloak-passwords` containing the `initialPassword` and `adminPassword` keys.
 
+:::info
+In the example, **`appcircle-server`** is used as the **release name**. Make sure to replace it with your actual release name if it's different.
+:::
+
 ```bash
 kubectl create secret generic appcircle-server-auth-keycloak-passwords \
   --from-literal=initialPassword=Test1234 \
@@ -49,6 +53,10 @@ kubectl create secret generic appcircle-server-auth-keycloak-passwords \
 
 - Create a secret with the name `${releaseName}-smtp` containing the `password` key.
 
+:::info
+In the example, **`appcircle-server`** is used as the **release name**. Make sure to replace it with your actual release name if it's different.
+:::
+
 ```bash
 kubectl create secret generic appcircle-server-smtp \
   --from-literal=password="superSecretSMTPPassword" \
@@ -60,6 +68,10 @@ kubectl create secret generic appcircle-server-smtp \
 #### SSL certificate
 
 - Create a secret with the name `appcircle-tls-wildcard` containing the `tls.crt`, `tls.key` and `ca.crt` keys.
+
+:::caution
+The name **`appcircle-tls-wildcard`** is **reserved** and **cannot be changed**.
+:::
 
 ```bash
 kubectl create secret generic appcircle-tls-wildcard \
