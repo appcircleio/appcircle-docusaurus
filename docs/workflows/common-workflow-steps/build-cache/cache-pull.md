@@ -61,7 +61,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::caution  
 
-The build token ID generated when the build starts expires after 3 hours. If the **Cache Push** step begins more than 3 hours after the build starts, caching cannot be completed, and you may encounter a `404 error` from the **Cache Pull** step in the subsequent build.  
+The build token ID generated when the build starts expires after **3 hours**. If the **Cache Push** step begins more than 3 hours after the build starts, caching cannot be completed, and you may encounter a `404 error` from the **Cache Pull** step in the subsequent build.  
 
 :::
 
