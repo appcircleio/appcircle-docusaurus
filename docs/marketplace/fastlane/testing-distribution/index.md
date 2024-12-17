@@ -22,7 +22,7 @@ The Appcircle Testing Distribution plugin allows users to upload their apps and 
 You can discover more about this action and install it from:
 https://rubygems.org/gems/fastlane-plugin-appcircle_testing_distribution
 
-## System Requirements
+### System Requirements
 
 **Compatible Agents:**
 
@@ -57,19 +57,19 @@ fastlane add_plugin appcircle_testing_distribution
 
 ```yml
   appcircle_testing_distribution(
-    personalAPIToken: "$(AC_PERSONAL_API_TOKEN)",
-    subOrganizationName: "${AC_SUB_ORGANIZATION_NAME}",
-    profileName: "$(AC_PROFILE_NAME)",
-    createProfileIfNotExists: Boolean,
-    appPath: "$(AC_APP_PATH)",
-    message: "$(AC_MESSAGE)",
+    personalAPIToken: ENV["AC_ACCESS_TOKEN"],
+    subOrganizationName: ENV["AC_SUB_ORGANIZATION_NAME"],
+    profileName: ENV["AC_PROFILE_NAME"],
+    createProfileIfNotExists: ENV["AC_CREATE_PROFILE_IF_NOT_EXISTS"],
+    appPath: ENV["AC_APP_PATH"],
+    message: ENV["AC_MESSAGE"]
   )
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this plugin.
 - `subOrganizationName` (optional): Required when the Root Organization's `personalAPIToken` is used, and you want to create the profile under a sub-organization. In this case, provide the name of the sub-organization in this field. If you directly used the sub-organization's `personalAPIToken`, this parameter is not needed.
 - `profileName`: Specifies the profile that will be used for uploading the app.
-- `createProfileIfNotExists` (optional): Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
+- `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
@@ -91,11 +91,15 @@ With this configuration, the profile will be created and the app will be distrib
 
 ### Leveraging Environment Variables
 
-Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
+Utilize environment variables seamlessly by substituting the parameters with `ENV["VARIABLE_NAME"]` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
+
+:::caution
+Be aware about environment variables. Even if you don't specify a value in the `Fastfile`, _Fastlane_ may pick up the value from the environment variables. 
+For example, if you didn't include `personalAPIToken` in the plugin declaration in `Fastfile`, but you have an environment variable named `AC_ACCESS_TOKEN`, plugin will use that value. To completely remove a variable from the configuration, ensure it is also removed from the environment variables.
+:::
 
 :::caution Build Steps Order
 Ensure that this action is added after build steps have been completed.
-
 :::
 
 :::caution
