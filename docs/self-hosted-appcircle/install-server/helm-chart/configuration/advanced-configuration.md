@@ -28,67 +28,67 @@ Some keys might already exists in your `values.yaml` file, make sure to update t
 
 ```yaml
 agentcache:
-  replicaCount: 3
+  replicaCount: 2
 auth:
   auth-keycloak:
-    replicas: 3
+    replicas: 2
 apigateway:
   replicaCount: 2
 appparser:
-  replicaCount: 3
+  replicaCount: 2
 build:
-  replicaCount: 3
+  replicaCount: 2
 distribution:
   distribution-server:
-    replicaCount: 3
+    replicaCount: 2
   distribution-testeradmin:
-    replicaCount: 3
+    replicaCount: 2
   distribution-testerapi:
-    replicaCount: 3
+    replicaCount: 2
   distribution-testerweb:
-    replicaCount: 3
+    replicaCount: 2
   distribution-web:
-    replicaCount: 3
+    replicaCount: 2
 license:
-  replicaCount: 3
+  replicaCount: 2
 notification:
-  replicaCount: 3
+  replicaCount: 2
 otp:
-  replicaCount: 3
+  replicaCount: 2
 publish:
-  replicaCount: 3
+  replicaCount: 2
 reporting:
-  replicaCount: 3
+  replicaCount: 2
 resign:
-  replicaCount: 3
+  replicaCount: 2
 resource:
-  replicaCount: 3
+  replicaCount: 2
 schedulemanager:
-  replicaCount: 3
+  replicaCount: 2
 signingidentity:
-  replicaCount: 3
+  replicaCount: 2
 store:
   store-web:
-    replicaCount: 3
+    replicaCount: 2
   store-admin:
-    replicaCount: 3
+    replicaCount: 2
   store-api:
-    replicaCount: 3
+    replicaCount: 2
   store-profile:
-    replicaCount: 3
+    replicaCount: 2
   store-report:
-    replicaCount: 3
+    replicaCount: 2
 storesubmit:
-  replicaCount: 3
+  replicaCount: 2
 taskserver:
-  replicaCount: 3
+  replicaCount: 2
 web:
   web-app:
-    replicaCount: 3
+    replicaCount: 2
   web-event:
-    replicaCount: 3
+    replicaCount: 2
 webhook:
-  replicaCount: 3
+  replicaCount: 2
 ```
 
 ## Values Table
