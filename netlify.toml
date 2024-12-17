@@ -1082,3 +1082,149 @@ status = 301
 from = "/workflows/why-to-use-workflows"
 to = "/workflows"
 status = 301
+
+## Self-hosted redirects after Helm update
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/integrations-and-access/git-providers"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/git-providers"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/advanced-configuration/index"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/index"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/advanced-configuration/appcircle-cli"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/appcircle-cli"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/advanced-configuration/cache-size-configuration"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/cache-size-configuration"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/ldap-brutefore"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/auto-updating"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/auto-updating"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/enterprise-store"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/enterprise-store"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/external-image-registry"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/index"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/index"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/integrations-and-access/index"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/index"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/integrations-and-access/integration"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/integrations-and-access/login-configuration"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/login-configuration"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/integrations-and-access/network-access"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/minio-migration"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/minio-migration"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/monitoring"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/monitoring"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/offline-installation"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/offline-installation"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/restarting-host"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/restarting-host"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/configure-server/testing-distribution"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/testing-distribution"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/faq"
+to = "/self-hosted-appcircle/install-server/linux-package/faq"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/install-server/cloud-providers/aws"
+to = "/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/aws"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/install-server/cloud-providers/index"
+to = "/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/index"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/install-server/docker"
+to = "/self-hosted-appcircle/install-server/linux-package/installation/docker"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/install-server/podman"
+to = "/self-hosted-appcircle/install-server/linux-package/installation/podman"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/install-server/pre-installation-checklist"
+to = "/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/update"
+to = "/self-hosted-appcircle/install-server/linux-package/update"
+status = 301
