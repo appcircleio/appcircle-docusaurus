@@ -513,6 +513,11 @@ bitbucket:
   description: "Description for bitbucket self-hosted"
   permalink: /bitbucket-self-hosted
 
+"billing":
+  label: "billing"
+  description: "Description for billing"
+  permalink: /billing
+
 boards:
   label: "boards"
   description: "Description for boards"
@@ -2178,6 +2183,11 @@ schemes:
   description: "Description for SDK versions"
   permalink: /SDK-versions
 
+"search":
+  label: "search"
+  description: "Description for search"
+  permalink: /search
+
 "secure":
   label: "secure"
   description: "Description for secure"
@@ -2632,6 +2642,11 @@ upload:
   label: "upload file"
   description: "Description for upload file"
   permalink: /upload-file
+
+"usage":
+  label: "usage"
+  description: "Description for usage"
+  permalink: /usage
 
 "user management":
   label: "user management"
