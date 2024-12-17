@@ -59,6 +59,12 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_CACHE_LABEL`          | User defined cache label to identify one cache from others. Both [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) and **Cache Pull** steps should have the same value to match. | Required |
 | `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Optional |
 
+:::caution  
+
+The build token ID generated when the build starts expires after 3 hours. If the **Cache Push** step begins more than 3 hours after the build starts, caching cannot be completed, and you may encounter a `404 error` from the **Cache Pull** step in the subsequent build.  
+
+:::
+
 ---
 
 To access the source code of this component, please use the following link:
