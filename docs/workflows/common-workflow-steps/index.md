@@ -16,6 +16,10 @@ You can find the full list of available workflow steps in our [workflow marketpl
 
 This step sets up your SSH key in the build machine if you used one to connect your repository. This allows the build machine to connect to your private repository using your SSH key.
 
+## [Add a Badge to Your App Icon](/workflows/common-workflow-steps/add-badge-app-icon)
+
+With Appcircle's **Add Badge to Your App Icon** component, you can add badges and version information to your app icon, which you can also customize. This helps testers easily identify the version they are testing directly on the application icon.
+
 ## [Appium Server](/workflows/common-workflow-steps/appium-server)
 
 This step installs [Appium Server](https://appium.io/) and starts it.
@@ -24,81 +28,27 @@ This step installs [Appium Server](https://appium.io/) and starts it.
 
 The `.netrc` file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file. However, if you want to use the .netrc file with curl, you need to append the `-n` command line parameter. You may also use the `--netrc-optional` parameter if you don't always use the `.netrc` file with curl.
 
-## [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull)
+## [AWS Device Farm and Deploy](/workflows/common-workflow-steps/aws-device-farm-and-deploy)
 
-Cache push uploads cache archive file to remote location as we explained in detail above. On the other hand cache pull downloads and extracts that archive file in build pipeline. All files and folders are extracted to original locations that came from.
-
-:::danger
-
-Cache push and pull components should work in coordination on the same cache file. For this reason in order to download the pushed cache, cache pull must have the same cache label used in cache push.
-
-:::
-
-:::info
-
-In the event that you need to utilize the cached folder in an alternate branch or a separate project, you have the capability to modify the values of `$AC_GIT_BRANCH` or `$AC_BUILD_PROFILE_ID`.
-
-These variables can be adjusted within the **Cache Label** field, as indicated by the red highlight in the accompanying image. Simply replace them with the branch or project ID that corresponds to your intended usage.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/cache-01.png' />
-
-:::
-
-Also you can have more than one push and pull pairs in the same build pipeline according to your needs.
+**AWS Device Farm** is an application testing service that enables you to run your tests concurrently on multiple mobile devices to speed up the execution of your tests and generates videos and logs to help you quickly identify issues with your app.
 
 ## [Cache Push](/workflows/common-workflow-steps/build-cache/cache-push)
 
-Every single build at Appcircle runs in clean state. It means that all files and folders, that are not versioned in git repository, are lost when build pipeline is completed. For example, installed dependencies or build artifacts. If you need to keep those files and folders, you can use Appcircle cache push and pull components.
+Learn to streamline your workflows by pushing data to cache with our easy-to-follow cache-push tutorial. Ideal for improving build performance.
 
-With cache you can persist any resource that are ignored from Git. So you can transfer files and folders between build pipelines. Sometimes it may speed up your build or it may help if you have reliability issues with the original download location for dependencies. But keep in mind that the cache is uploaded to or downloaded from remote location. It may help you in some cases, but it's not a guaranteed way of speeding up builds. You should try and see the actual results for your project.
+## [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull)
 
-:::info
+Discover the essentials of cache retrieval in our cache-pull guide. Speed up your build processes by mastering the art of efficiently pulling cached data.
 
-Using **Cache Pull/Push** steps, particularly when employing repository management software like [Sonatype Nexus Repository](https://www.sonatype.com/products/sonatype-nexus-repository), may not always yield the desired efficiency in reducing build time.
+## [Custom Script](/workflows/common-workflow-steps/custom-script)
 
-:::
-
-The cache is stored as a single archive file. Cache push and pull components work in coordination on the same cache file defined with a label. With custom labelling you can have different chunks of caches and you can share some caches between branches. Cache labelling helps you organize your caches.
-
-When you drag and drop cache push component to your workflow, it comes with pre-defined values according to your project type. For example, for android projects it comes with pre-defined gradle cache paths which should be useful for most Android apps.
-
-If you need more paths to cache or need to change paths according to your project, you can customize included and excluded paths as you wish. All path updates will be reflected to archived cache file on your next build.
-
-Cache push uses a pattern in order to select files and folders. Although the pattern is not a regexp, it's closer to a shell glob. For example, `~/Library/Caches/CocoaPods` will select "Cocoapods" folder from home as a whole. Or for an android project you can cache home ".gradle" folder with `~/.gradle` include path and exclude all ".lock" files from there with `~/.gradle/**/*.lock` exclude path. Patterns, that can be used in included and excluded paths, is explained in detail [here](https://github.com/appcircleio/appcircle-cache-push-component#included--excluded-paths).
-
-:::danger
-
-Keep in mind that included paths and cache push step's workflow order are closely related with each other. For example, if you include a path from repository and you place cache push step before git clone step, cache push won't find that path since it's not git cloned yet. Although that's not a fatal error for cache push, it will inform you about unreachable paths on build logs. You can review and resolve those kinds of issues from build logs.
-
-:::
-
-You can not reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of build pipeline from "Download Artifacts > ac_cache.zip". Also build logs have some useful information about cache mechanism with how included and excluded paths are processed. You can see produced cache file size from build logs. (Size of cache file affects upload and download durations.)
-
-:::danger
-
-You can not delete specific cache file from UI but if you have a problem with cache file and need a fresh one, you can change your cache label to a new one to go on with clean cache.
-
-:::
-
-:::info
-
-System automatically cleans unreachable and obsolete cache files periodically. For this reason, it's not guaranteed to reach a previously used cache file by using previous cache label in build. Also it’s a good idea to build your workflow in a way that your build won’t fail if the cache can’t be accessed.
-
-:::
+You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
 
 ## [Code Reviews with Danger](/workflows/common-workflow-steps/danger)
 
-Danger runs during your CI process and gives teams the chance to automate common code review chores. This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your team’s norms. Leaving humans to think about harder problems.
+**Danger** runs during your CI process and gives teams the chance to automate common code review chores. This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your team’s norms. Leaving humans to think about harder problems.
 
 https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews
-
-## [Select Java Version](/workflows/common-workflow-steps/select-java-version)
-
-The **Select Java Version** step updates the JDK and Java version to the selected one during the build process.
-
-## [Custom Scripts](/workflows/common-workflow-steps/custom-script)
-
-You can use custom scripts for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the build agent and you can use any functionality of the virtual machine as you need.
 
 ## [Data Theorem Mobile Secure](/workflows/common-workflow-steps/data-theorem-mobile-secure)
 
@@ -107,6 +57,12 @@ This component scans your app using Mobile Secure.
 ## [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts)
 
 Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download from the artifacts section of the completed build.
+
+## [Fastlane](/workflows/common-workflow-steps/fastlane)
+
+Appcircle supports **Fastlane** for build automation as a supplementary feature to Appcircle's own build automation.
+
+With Appcircle, you can automate your build and signing processes with the flexible workflow structure, and you can also use Fastlane as a workflow step within the build workflows.
 
 ## [File Size Check](/workflows/common-workflow-steps/file-size-check)
 
@@ -132,7 +88,7 @@ Clones the Git repository to the build agent with the given arguments.
 
 ## [Maestro Cloud Upload](/workflows/common-workflow-steps/maestro-cloud-upload)
 
-This component uploasd both your app binary and flows to Maestro Cloud.
+This component uploads both your app binary and flows to Maestro Cloud.
 
 ## [Repeato Mobile Test Automation](/workflows/common-workflow-steps/repeato-test-runner)
 
@@ -140,16 +96,36 @@ This component creates and automates UI tests for iOS and Android.
 
 ## [Release Notes](/workflows/common-workflow-steps/publish-release-notes)
 
-You can use Release Notes component to create release notes during your workflow.
+You can use **Release Notes** component to create release notes during your workflow.
 
-## [SonarQube](/workflows/common-workflow-steps/sonarqube)
+## [Repeato Test Runner](/workflows/common-workflow-steps/repeato-test-runner)
 
-You can use SonarQube component to check your code quality.
+**Repeato** is a test automation platform designed for mobile applications. It enables developers to create, manage, and execute automated tests for mobile apps across different platforms and devices. Repeato supports various testing frameworks and provides features for test script creation, test execution, result analysis, and reporting. It helps streamline the testing process, improve test coverage, and enhance the overall quality of mobile applications.
+
+## [Saucectl Run](/workflows/common-workflow-steps/saucectl-run)
+
+The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs. saucectl performs the underlying business logic to access the tests in your existing framework, runs them in the Sauce Labs Cloud, then securely transmits the test assets to the Sauce Labs platform, where you can review, share, and evaluate your test outcomes at scale.
+
+## [Select Java Version](/workflows/common-workflow-steps/select-java-version)
+
+The **Select Java Version** step updates the JDK and Java version to the selected one during the build process.
+
+## [Set Environment Variable](/workflows/common-workflow-steps/set-environment-variable)
+
+The **Set Environment Variable** step enables the setting of environment values for specified keys. Although creating environment variables via the Environment Variables page is typically recommended, this step provides flexibility to modify environment variables directly within the build workflow when necessary.
 
 ## [Snyk Scan Security](/workflows/common-workflow-steps/snyk-scan-security)
 
-By utilizing this step, you will be able to test your project dependencies for vulnerabilities during builds and use Snyk to monitor your projects.
+By utilizing this step, you will be able to test your project dependencies for vulnerabilities during builds and use **Snyk** to monitor your projects.
+
+## [SonarQube](/workflows/common-workflow-steps/sonarqube)
+
+You can use **SonarQube** component to check your code quality.
 
 ## [Testinium](/workflows/common-workflow-steps/testinium)
 
-This component runs your test plans with Testinium.
+This component runs your test plans with **Testinium**.
+
+## [Upload Files to Amazon S3](/workflows/common-workflow-steps/upload-files-to-amazon-s3)
+
+The **Upload Files to Amazon S3** step in Appcircle enables direct uploading of any file or folder to the designated Amazon S3 bucket during the build process.
