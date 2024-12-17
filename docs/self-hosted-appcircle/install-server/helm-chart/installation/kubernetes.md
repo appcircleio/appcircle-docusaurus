@@ -80,6 +80,10 @@ A **Kubernetes cluster** is **required** to install the Appcircle server using H
 - 16 GB RAM
 - 50 GB Disk per node
 
+:::tip
+The required storage size for the Appcircle server depends significantly on the size of the artifacts (APK, IPA, cache).
+:::
+
 <details>
     <summary>Click to view more details about Kubernetes cluster prerequisite.</summary>
 
