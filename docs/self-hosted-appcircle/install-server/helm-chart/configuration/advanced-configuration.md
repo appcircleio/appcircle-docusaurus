@@ -11,12 +11,44 @@ For advanced configuration options, open the `values.yaml` file with your prefer
 
 Once you have updated the `values.yaml` file, please proceed to the [Upgrade Appcircle Server](/self-hosted-appcircle/install-server/helm-chart/upgrades.md) section to apply the changes.
 
+## Custom Testing Distribution Domain
 
-<!---
-### Custom Testing Distribution Domain
+To configure a custom domain for the Appcircle Testing Distribution, update your `values.yaml` file with the custom domain settings. Below is an example configuration for a custom Testing Distribution domain usage:
 
-TODO: Fill the post jobs after enabling the custom store domain.
--->
+```yaml
+global:  
+  distribution:
+    distribution-testerweb:
+      url: https://dist.spacetech.com
+distribution:
+  distribution-testerweb:
+    ingress:
+      extraHosts: 
+      - name: dist.spacetech.com
+        path: /
+      extraTls:
+      - secretName: k8s-dist-spacetech-com-tls
+        hosts:
+          - dist.spacetech.com
+```
+
+:::caution
+The emails related to the Testing Distribution will now include the new domain in the links. Please note that old links associated with the previous domain will no longer work.
+:::
+
+After updating the `values.yaml` file, create a TLS secret for the custom domain using the following command:
+
+:::info
+- The certificate (`cert`) should be in **PEM format** and it's recommended to include the leaf (app), intermediate, and root (CA) certificates to form a **full-chain** certificate.
+- The private key (`key`) **should not be password-protected**.
+:::
+
+```bash
+kubectl create secret tls k8s-dist-spacetech-com-tls \
+--cert=fullchain.crt \
+--key=private.key
+```
+
 
 ## Increase the Replica Counts
 
