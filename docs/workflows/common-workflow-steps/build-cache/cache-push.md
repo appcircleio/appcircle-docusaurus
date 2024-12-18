@@ -20,7 +20,7 @@ When you drag and drop the **Cache Push** component into your [workflow](/workfl
 
 :::caution  
 
-The build token ID generated when the build starts expires after **3 hours**. If the **Cache Push** step begins more than 3 hours after the build starts, caching cannot be completed, and you may encounter a `404 error` from the **Cache Pull** step in the subsequent build.  
+The build token ID, which is generated when the build starts, expires after **3 hours**. If the **Cache Push** step begins more than **3 hours** after the build’s start, caching cannot be completed. As a result, you may encounter a `404 error` during the **Cache Push** step in subsequent builds.  
 
 :::
 
