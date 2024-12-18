@@ -449,7 +449,7 @@ appcircle-resource                 nginx   resource.appcircle.spacetech.com     
 appcircle-store-web                nginx   *.store.appcircle.spacetech.com                                10.45.140.78   80,443     24m
 appcircle-web-app                  nginx   my.appcircle.spacetech.com                                     10.45.140.78   80,443     24m
 appcircle-web-event                nginx   hook.appcircle.spacetech.com                                   10.45.140.78   80,443     24m
-appcircle-webeventredis            nginx   redis.appcircle.spacetech.com                                  10.45.140.78   80,443     24m
+appcircle-webeventredis            nginx   kvs.appcircle.spacetech.com                                  10.45.140.78   80,443     24m
 ```
 
 1. **Create an A Record for the `api` domain:**
@@ -463,7 +463,7 @@ appcircle-webeventredis            nginx   redis.appcircle.spacetech.com        
    - `*.store.appcircle.spacetech.com` → You can skip this domain and use a [Custom Enterprise App Store Domain](https://docs.appcircle.io/enterprise-app-store/portal-settings#store-domain).
    - `my.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `hook.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
-   - `redis.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+   - `kvs.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
 
 ### 2. Login to the Appcircle Dashboard
 
