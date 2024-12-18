@@ -12,8 +12,6 @@ import AppcircleLicenseRequirement from '@site/docs/self-hosted-appcircle/instal
 import ConnectingRunners from '@site/docs/self-hosted-appcircle/install-server/cloud-providers/\_connecting-runners.mdx';
 import ConfigureServer from '@site/docs/self-hosted-appcircle/install-server/cloud-providers/\_configure-server.mdx';
 
-
-docs/self-hosted-appcircle/
 ## Overview
 
 An Appcircle server Amazon Machine Image (AMI) is a pre-configured template used to create virtual servers, known as instances, in the Amazon Web Services (AWS) environment.
