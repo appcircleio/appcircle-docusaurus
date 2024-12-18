@@ -47,7 +47,7 @@ To perform operations such as generating a Personal API Token, creating a testin
 - Testing distribution operations and profile management: [Testing Distribution Permissions](https://docs.appcircle.io/account/my-organization/profile-and-team/role-management#testing-distribution-permissions).
 - Testing group management: [Testing Group Permissions](https://docs.appcircle.io/account/my-organization/profile-and-team/role-management#testing-group-permissions).
 
-### How to Add the Appcircle Distribute Action to Your Pipeline
+### How to Add the Appcircle Testing Distribution Action to Your Pipeline
 
 To use the Appcircle Testing Distribution action, install the plugin and add the following step to your pipeline at the end:
 
@@ -112,14 +112,29 @@ To distribute your app to a sub-organization, you can use one of the following m
 
 With this configuration, the profile will be created and the app will be distributed within the sub-organization.
 
+### CLI Usage
+
+Recommended method of using the action is adding it to the `Fastfile` as described [above](https://docs.appcircle.io/marketplace/fastlane/testing-distribution#how-to-add-the-appcircle-distribute-action-to-your-pipeline).
+
+If you prefer to use it from the terminal, you can execute the following command and enter the inputs interactively:
+
+```bash
+fastlane run appcircle_testing_distribution
+```
+
+To pass parameters with the command, you can use the `:symbol` format. For example:
+
+```bash
+fastlane run appcircle_testing_distribution parameter1:"value1" parameter2:"value2"
+```
+
+:::caution IMPORTANT NOTE
+The CLI only supports primitive types such as integers, floats, booleans, and strings. Arrays can be passed as a comma-separated string (e.g., `parameter:"value1,value2,value3"`). Hashes are not currently supported, so to use parameters like `profileCreationSettings`, it is recommended to add the action to the `Fastfile` as described.
+:::
+
 ### Leveraging Environment Variables
 
 Utilize environment variables seamlessly by substituting the parameters with `ENV["VARIABLE_NAME"]` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
-
-:::caution
-Be aware about environment variables. Even if you don't specify a value in the `Fastfile`, _Fastlane_ may pick up the value from the environment variables.
-For example, if you didn't include `personalAPIToken` in the plugin declaration in `Fastfile`, but you have an environment variable named `AC_PERSONAL_API_TOKEN`, plugin will use that value. To completely remove a variable from the configuration, ensure it is also removed from the environment variables.
-:::
 
 ## References
 
