@@ -470,9 +470,21 @@ appcircle-webeventredis            nginx   redis.appcircle.spacetech.com        
 Check the output of the `Helm install` command to see login URL, initial username and command to get initial user password.
 
 ```bash
-You can access the application dashboard at: ↴
+Self-Hosted Configuration:
 
-https://my.appcircle.spacetech.com
+- Initial Organization Id : 8c23e250-4aa8-4ef6-888b-9514695aa1c7
+- Initial User            : admin@spacetech.com
+- Retrieve the initial user password by executing the following command:↴
+    
+    kubectl get secret -n appcircle appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
+
+You can access the application dashboard at:↴
+
+   https://my.appcircle.spacetech.com
+
+
+Support:
+For any issues or questions, please contact the system administrator or check the application documentation.
 ```
 
 ### 3. Apply the Appcircle License
