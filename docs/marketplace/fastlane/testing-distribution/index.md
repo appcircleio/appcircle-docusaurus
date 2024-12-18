@@ -55,7 +55,7 @@ To use the Appcircle Testing Distribution action, install the plugin and add the
 fastlane add_plugin appcircle_testing_distribution
 ```
 
-```yml
+```ruby
   appcircle_testing_distribution(
     personalAPIToken: ENV["AC_ACCESS_TOKEN"],
     subOrganizationName: ENV["AC_SUB_ORGANIZATION_NAME"],

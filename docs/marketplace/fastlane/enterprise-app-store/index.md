@@ -49,7 +49,7 @@ fastlane add_plugin appcircle_enterprise_app_store
 
 After adding the plugin to your project, configure your Fastfile as follows:
 
-```yml
+```ruby
   lane :distribute_app_store do
     appcircle_enterprise_app_store(
       personalAPIToken: "$(AC_PERSONAL_API_TOKEN)",
