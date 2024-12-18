@@ -257,7 +257,7 @@ global:
       # StartTLS configuration - Set to 'true' if the SMTP server uses StartTLS protocol, typically on port 587.
       tls: "true"
       # SMTP authentication settings
-      auth: true
+      auth: "true"
       username: "appcircle-smtp-user"
       password: "superSecretSmtpPassword"
 
@@ -295,11 +295,11 @@ global:
       # Email address that will be used as sender
       from: appcircle@spacetech.com
       # SSL configuration - Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
-      ssl: false
+      ssl: "false"
       # StartTLS configuration - Set to 'true' if the SMTP server uses StartTLS protocol, typically on port 587.
-      tls: true
+      tls: "true"
       # SMTP authentication settings
-      auth: true
+      auth: "true"
       username: smtpUserName
       # You can create a secret with the password or directly enter the password here.
       password: superSecretSmtpPassword
