@@ -61,6 +61,11 @@ fastlane add_plugin appcircle_testing_distribution
     subOrganizationName: ENV["AC_SUB_ORGANIZATION_NAME"],
     profileName: ENV["AC_PROFILE_NAME"],
     createProfileIfNotExists: ENV["AC_CREATE_PROFILE_IF_NOT_EXISTS"],
+    profileCreationSettings: {
+      authType: ENV["AC_PROFILE_AUTH_TYPE"],
+      username: ENV["AC_PROFILE_USERNAME"],
+      password: ENV["AC_PROFILE_PASSWORD"],
+    },
     appPath: ENV["AC_APP_PATH"],
     message: ENV["AC_MESSAGE"]
   )
@@ -70,8 +75,16 @@ fastlane add_plugin appcircle_testing_distribution
 - `subOrganizationName` (optional): Required when the Root Organization's `personalAPIToken` is used, and you want to create the profile under a sub-organization. In this case, provide the name of the sub-organization in this field. If you directly used the sub-organization's `personalAPIToken`, this parameter is not needed.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
+- `profileCreationSettings` (optional): If `createProfileIfNotExists` is `true` and a new profile being created, the profile will be configured with these settings.
+  - `authType`: Authentication type of the profile. `none`: None, `static`: Static Username and Password, `ldap`: LDAP Login, `sso`: SSO Login.
+  - `username`: The username for the profile if authentication type set to `static` (Static Username and Password).
+  - `password`: The password for the profile if authentication type set to `static` (Static Username and Password).
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
+
+:::tip
+Profile creation settings are only used when a new profile is created. If you need to update these settings, please go to the [profile settings](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#settings) in the Appcircle dashboard.
+:::
 
 ### Distributing to Sub-Organizations
 
@@ -85,7 +98,7 @@ To distribute your app to a sub-organization, you can use one of the following m
 #### 2. Using the Sub-Organization's Personal API Token
 
 - Invite your user to the sub-organization and obtain the `personalAPIToken` for the sub-organization. This token directly authenticates and authorizes actions within the specific sub-organization.
-- Use the sub-organization's `personalAPIToken` in your configuration. 
+- Use the sub-organization's `personalAPIToken` in your configuration.
 
 With this configuration, the profile will be created and the app will be distributed within the sub-organization.
 
