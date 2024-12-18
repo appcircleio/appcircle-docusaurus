@@ -65,6 +65,7 @@ fastlane add_plugin appcircle_testing_distribution
       authType: ENV["AC_PROFILE_AUTH_TYPE"],
       username: ENV["AC_PROFILE_USERNAME"],
       password: ENV["AC_PROFILE_PASSWORD"],
+      testingGroupNames: ENV["AC_PROFILE_TESTING_GROUP_NAMES"]
     },
     appPath: ENV["AC_APP_PATH"],
     message: ENV["AC_MESSAGE"]
@@ -79,6 +80,7 @@ fastlane add_plugin appcircle_testing_distribution
   - `authType`: Authentication type of the profile. `none`: None, `static`: Static Username and Password, `ldap`: LDAP Login, `sso`: SSO Login.
   - `username`: The username for the profile if authentication type set to `static` (Static Username and Password).
   - `password`: The password for the profile if authentication type set to `static` (Static Username and Password).
+  - `testingGroupNames`: Uploaded versions will be automatically shared with these testing groups. Example format: `group1, group2, group3`.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
@@ -107,7 +109,7 @@ With this configuration, the profile will be created and the app will be distrib
 Utilize environment variables seamlessly by substituting the parameters with `ENV["VARIABLE_NAME"]` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
 
 :::caution
-Be aware about environment variables. Even if you don't specify a value in the `Fastfile`, _Fastlane_ may pick up the value from the environment variables. 
+Be aware about environment variables. Even if you don't specify a value in the `Fastfile`, _Fastlane_ may pick up the value from the environment variables.
 For example, if you didn't include `personalAPIToken` in the plugin declaration in `Fastfile`, but you have an environment variable named `AC_PERSONAL_API_TOKEN`, plugin will use that value. To completely remove a variable from the configuration, ensure it is also removed from the environment variables.
 :::
 
