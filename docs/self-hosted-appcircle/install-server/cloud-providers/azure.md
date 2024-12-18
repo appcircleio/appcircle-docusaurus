@@ -22,7 +22,7 @@ Think of it as a snapshot of a server that includes the operating system, necess
 
 This documentation provides step-by-step instructions for configuring and setting up Appcircle Server on Microsoft Azure. Follow these guidelines to ensure a successful deployment.
 
-## Pre-requirements
+## Prerequisites
 
 ### Appcircle Requirements
 
