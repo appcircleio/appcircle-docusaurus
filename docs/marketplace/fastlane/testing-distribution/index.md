@@ -88,6 +88,14 @@ fastlane add_plugin appcircle_testing_distribution
 Profile creation settings are only used when a new profile is created. If you need to update these settings, please go to the [profile settings](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#settings) in the Appcircle dashboard.
 :::
 
+:::caution Build Steps Order
+Ensure that this action is added after build steps have been completed.
+:::
+
+:::caution
+If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
+:::
+
 ### Distributing to Sub-Organizations
 
 To distribute your app to a sub-organization, you can use one of the following methods:
@@ -111,14 +119,6 @@ Utilize environment variables seamlessly by substituting the parameters with `EN
 :::caution
 Be aware about environment variables. Even if you don't specify a value in the `Fastfile`, _Fastlane_ may pick up the value from the environment variables.
 For example, if you didn't include `personalAPIToken` in the plugin declaration in `Fastfile`, but you have an environment variable named `AC_PERSONAL_API_TOKEN`, plugin will use that value. To completely remove a variable from the configuration, ensure it is also removed from the environment variables.
-:::
-
-:::caution Build Steps Order
-Ensure that this action is added after build steps have been completed.
-:::
-
-:::caution
-If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
 :::
 
 ## References
