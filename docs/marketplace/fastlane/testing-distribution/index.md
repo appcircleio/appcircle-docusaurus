@@ -57,7 +57,7 @@ fastlane add_plugin appcircle_testing_distribution
 
 ```ruby
   appcircle_testing_distribution(
-    personalAPIToken: ENV["AC_ACCESS_TOKEN"],
+    personalAPIToken: ENV["AC_PERSONAL_API_TOKEN"],
     subOrganizationName: ENV["AC_SUB_ORGANIZATION_NAME"],
     profileName: ENV["AC_PROFILE_NAME"],
     createProfileIfNotExists: ENV["AC_CREATE_PROFILE_IF_NOT_EXISTS"],
@@ -95,7 +95,7 @@ Utilize environment variables seamlessly by substituting the parameters with `EN
 
 :::caution
 Be aware about environment variables. Even if you don't specify a value in the `Fastfile`, _Fastlane_ may pick up the value from the environment variables. 
-For example, if you didn't include `personalAPIToken` in the plugin declaration in `Fastfile`, but you have an environment variable named `AC_ACCESS_TOKEN`, plugin will use that value. To completely remove a variable from the configuration, ensure it is also removed from the environment variables.
+For example, if you didn't include `personalAPIToken` in the plugin declaration in `Fastfile`, but you have an environment variable named `AC_PERSONAL_API_TOKEN`, plugin will use that value. To completely remove a variable from the configuration, ensure it is also removed from the environment variables.
 :::
 
 :::caution Build Steps Order
