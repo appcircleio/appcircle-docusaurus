@@ -77,7 +77,7 @@ The name **`appcircle-tls-wildcard`** is **reserved** and **cannot be changed**.
 kubectl create secret generic appcircle-tls-wildcard \
   --from-file=tls.crt='fullchain.crt' \
   --from-file=tls.key='private.key' \
-  --from-file=ca.crt='root.crt' \
+  --from-file=ca.crt='root-ca.crt' \
   --type=kubernetes.io/tls \
   -n appcircle
 ```
