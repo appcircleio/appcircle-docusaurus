@@ -43,11 +43,11 @@ Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-h
 
 To perform operations such as generating a Personal API Token, creating a testing distribution profile, and managing testing groups, your user role must have the necessary permissions in the target organization. For more information about user roles and permissions, please refer to the relevant sections of the Role Management documentation below.
 
-- Access to organization or sub-organization and generating PAT: [Organization Management Permissions](https://docs.appcircle.io/account/my-organization/profile-and-team/role-management#organization-management-permissions).
-- Testing distribution operations and profile management: [Testing Distribution Permissions](https://docs.appcircle.io/account/my-organization/profile-and-team/role-management#testing-distribution-permissions).
-- Testing group management: [Testing Group Permissions](https://docs.appcircle.io/account/my-organization/profile-and-team/role-management#testing-group-permissions).
+- Access to organization or sub-organization and generating PAT: [Organization Management Permissions](/account/my-organization/profile-and-team/role-management#organization-management-permissions).
+- Testing distribution operations and profile management: [Testing Distribution Permissions](/account/my-organization/profile-and-team/role-management#testing-distribution-permissions).
+- Testing group management: [Testing Group Permissions](/account/my-organization/profile-and-team/role-management#testing-group-permissions).
 
-### How to Add the Appcircle Testing Distribution Action to Your Pipeline
+### How to Add the Appcircle Distribute Action to Your Pipeline
 
 To use the Appcircle Testing Distribution action, install the plugin and add the following step to your pipeline at the end:
 
@@ -114,7 +114,7 @@ With this configuration, the profile will be created and the app will be distrib
 
 ### CLI Usage
 
-Recommended method of using the action is adding it to the `Fastfile` as described [above](https://docs.appcircle.io/marketplace/fastlane/testing-distribution#how-to-add-the-appcircle-distribute-action-to-your-pipeline).
+Recommended method of using the action is adding it to the `Fastfile` as described [above](#how-to-add-the-appcircle-distribute-action-to-your-pipeline).
 
 If you prefer to use it from the terminal, you can execute the following command and enter the inputs interactively:
 
