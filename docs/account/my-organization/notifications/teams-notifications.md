@@ -80,7 +80,7 @@ If your Microsoft Teams notifications are not delivered while using the self-hos
 
 **1.** Proxy Requirement
 
-If you are using a proxy to connect to the internet on the host, the proxy must also be enabled for the Appcircle services too, that is, in the containers. You can refer to the [**Proxy Configuration**](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration.md) documentation to see how to configure proxy for the self-hosted Appcircle server.
+If you are using a proxy to connect to the internet on the host, the proxy must also be enabled for the Appcircle services too, that is, in the containers. You can refer to the [**Proxy Configuration**](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration.md) documentation to see how to configure proxy for the self-hosted Appcircle server.
 
 **2.** Network Access
 
@@ -88,6 +88,6 @@ The Appcircle server may not have network access to the Microsoft Teams webhook 
 
 **3.** Untrusted SSL Certificate
 
-When the Appcircle server sends a request to the webhook URL through the proxy, it might encounter an error due to the untrusted SSL certificate of the proxy. In this case, you should refer to the [**Connecting External Services**](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration.md#external-services) section in the self-hosted Appcircle documents to see how to trust your self-signed certificates.
+When the Appcircle server sends a request to the webhook URL through the proxy, it might encounter an error due to the untrusted SSL certificate of the proxy. In this case, you should refer to the [**Connecting External Services**](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration.md#external-services) section in the self-hosted Appcircle documents to see how to trust your self-signed certificates.
 
 <NeedHelp />
