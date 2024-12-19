@@ -13,6 +13,9 @@ tags:
 sidebar_position: 1
 ---
 
+<!-- ATTENTION: Documentation at rubydoc (or README in the repository)
+has table of contents that references to the titles in this document. -->
+
 # Setting Up Appcircle Testing Distribution Plugin
 
 The Appcircle Testing Distribution plugin allows users to upload their apps and start distribution to test groups or individuals.
