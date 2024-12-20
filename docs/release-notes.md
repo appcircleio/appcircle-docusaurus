@@ -20,6 +20,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### 🆕 New Features
 
+- We are thrilled to introduce our enhanced Helm documentation for deploying Appcircle server on [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes). This new [architecture](/self-hosted-appcircle#appcircle-distributed-architecture) supports high availability, fault tolerance, and scalability, ensuring robust performance for production environments. <InfrastructureBadge/> <SelfHostedBadge/>
 - Build and Testing Distribution profiles can now be viewed in both list and profile card formats, based on the selected view type. <BuildBadge/> <DistributionBadge/> <CloudBadge/>
 - App versions uploaded to the Testing Portal can now be filtered by their branch. <DistributionBadge/> <CloudBadge/>
 - Authentication settings can now be configured through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
