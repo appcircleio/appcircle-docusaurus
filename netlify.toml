@@ -1130,13 +1130,13 @@ to = "/self-hosted-appcircle/install-server/linux-package/configure-server/exter
 status = 301
 
 [[redirects]]
-from = "/self-hosted-appcircle/configure-server/index"
-to = "/self-hosted-appcircle/install-server/linux-package/configure-server/index"
+from = "/self-hosted-appcircle/configure-server"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server"
 status = 301
 
 [[redirects]]
-from = "/self-hosted-appcircle/configure-server/integrations-and-access/index"
-to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/index"
+from = "/self-hosted-appcircle/configure-server/integrations-and-access"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access"
 status = 301
 
 [[redirects]]
@@ -1205,8 +1205,8 @@ to = "/self-hosted-appcircle/install-server/linux-package/installation/cloud-pro
 status = 301
 
 [[redirects]]
-from = "/self-hosted-appcircle/install-server/cloud-providers/index"
-to = "/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/index"
+from = "/self-hosted-appcircle/install-server/cloud-providers"
+to = "/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers"
 status = 301
 
 [[redirects]]
