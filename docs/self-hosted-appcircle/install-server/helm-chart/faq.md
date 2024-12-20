@@ -1,11 +1,9 @@
 ---
-title: Troubleshooting & FAQ for Appcircle Server and Runner
-description: Troubleshooting and FAQ for Appcircle server and runner
+title: Troubleshooting & FAQ
+description: Troubleshooting and FAQ
 tags: [troubleshooting, faq, self-hosted, kubernetes]
 sidebar_position: 60
 ---
-
-## Troubleshooting & FAQ
 
 ### When we try to login to the Appcircle server, we see `too many redirects` error from browser
 
