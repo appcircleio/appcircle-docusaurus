@@ -220,7 +220,7 @@ You can access and review the comprehensive migration logs from this file for fu
 :::caution
 If you are using a proxy on the Appcircle server, then you should update the `no_proxy` variables.
 
-Please follow the [No Proxy for Internal Container Network](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration.md#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new SNSD MinIO service.
+Please follow the [No Proxy for Internal Container Network](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration#edit-no_proxy-for-internal-container-network) to update your proxy configuration for the new SNSD MinIO service.
 :::
 
   </TabItem>

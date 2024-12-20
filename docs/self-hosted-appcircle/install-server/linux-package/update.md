@@ -278,7 +278,7 @@ Upgrade images.
 :::caution
 If you are using a proxy on the server, then you should maintain the proxy variables.
 
-Please head to the [Maintenance of Proxy Variables](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration.md#maintenance-of-no_proxy-variables) for more details.
+Please head to the [Maintenance of Proxy Variables](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration#maintenance-of-no_proxy-variables) for more details.
 :::
 
 Then start with below command.

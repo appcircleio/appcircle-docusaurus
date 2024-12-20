@@ -294,4 +294,4 @@ For more details about configuring the outbound requests, you can refer to the [
 
 ### How can we restrict the TLS versions used by the Appcircle server?
 
-To restrict the TLS versions used by the Appcircle server, you can follow the [Configure TLS Versions](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration.md#configure-tls-versions) section in the **SSL Configuration** documentation.
+To restrict the TLS versions used by the Appcircle server, you can follow the [Configure TLS Versions](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#configure-tls-versions) section in the **SSL Configuration** documentation.
