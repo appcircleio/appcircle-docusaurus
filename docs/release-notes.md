@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.25.0 - 2024-12-19 Fastlane Plugin Updates, List View Type for Build and Testing Distribution, Bug Fixes and more
+## 3.25.0 - 2024-12-19 Appcircle Deployment on Kubernetes, List View Type for Build and Testing Distribution, Bug Fixes and more
 
 ### 🆕 New Features
 
