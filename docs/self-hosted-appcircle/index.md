@@ -49,7 +49,7 @@ For more information about the Appcircle DMZ architecture, you can check the [En
 
 In addition to the standalone and DMZ architectures, you can deploy Appcircle using the Helm chart for Kubernetes environments. This method allows for greater scalability and management flexibility.
 
-For detailed instructions on installing and configuring Appcircle using the Helm chart, refer to the [Appcircle Helm Chart Documentation](/docs/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md). This documentation includes steps for setting up Helm, configuring `values.yaml`, and deploying the Appcircle server.
+For detailed instructions on installing and configuring Appcircle using the Helm chart, refer to the [Appcircle Helm Chart Documentation](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md). This documentation includes steps for setting up Helm, configuring `values.yaml`, and deploying the Appcircle server.
 
 ### Advantages
 

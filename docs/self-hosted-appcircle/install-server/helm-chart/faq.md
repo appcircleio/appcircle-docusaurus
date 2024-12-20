@@ -9,13 +9,13 @@ sidebar_position: 60
 
 ### When we try to login to the Appcircle server, we see `too many redirects` error from browser
 
-This error usually happens when the pods can't resolve some of [the Appcircle server domains](/docs/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md#1-domain-name).
+This error usually happens when the pods can't resolve some of [the Appcircle server domains](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md#1-domain-name).
 
 For the solution, please make sure that the domain name server of the worker nodes of the Kubernetes cluster can resolve the Appcircle server domain names.
 
 ### When we deploy the Helm chart, the `appcircle-server-webeventredis-master-0` pod is stuck in `CrashLoopBackOff` state
 
-This error usually happens when you select a non-valid `Appcircle CA Certificate File` while [creating the configuration file](/docs/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md#1-create-valuesyaml). Please make sure that the certificate you choose is the **root** certificate of the full-chain certificate.
+This error usually happens when you select a non-valid `Appcircle CA Certificate File` while [creating the configuration file](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md#1-create-valuesyaml). Please make sure that the certificate you choose is the **root** certificate of the full-chain certificate.
 
 :::tip
 
@@ -54,7 +54,7 @@ If the deployment hasn't completed and timed out after `1200` seconds:
 - **Configuration Issues:** If the timeout was caused by a configuration problem, you will need to troubleshoot the issue. Review your configuration settings and logs to identify and resolve any errors before attempting the deployment again.
 
 :::tip
-If you face a timeout due to configuration problems, it is better to re-install Appcircle freshly. Refer to the [Uninstalling Appcircle](/docs/self-hosted-appcircle/install-server/helm-chart/uninstallation.md) section for detailed instructions on how to uninstall and clean up the existing deployment before starting anew.
+If you face a timeout due to configuration problems, it is better to re-install Appcircle freshly. Refer to the [Uninstalling Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation.md) section for detailed instructions on how to uninstall and clean up the existing deployment before starting anew.
 :::
 
 ### What should we do if we use an Ingress controller other then Nginx Ingress?
