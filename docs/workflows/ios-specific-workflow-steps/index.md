@@ -14,10 +14,6 @@ You can find the full list of available workflow steps in our [workflow marketpl
 
 Distribute IPA and dSYM files to [App Center](https://appcenter.ms/). You need enter your token, owner, app and group names to distribute your binaries.
 
-## [Audit Permission Changes](/workflows/ios-specific-workflow-steps/audit-permission-change)
-
-This component captures and compares permission changes in your iOS projects.
-
 ## [Appdome Build-2Secure for iOS](/workflows/ios-specific-workflow-steps/appdome-build-to-secure-for-ios)
 
 Appdome Build-2Secure is a comprehensive automated solution that seamlessly integrates advanced security features, adaptive protections, code-signing, and certification processes into mobile applications, enhancing security without the need for manual coding or code analysis.
@@ -25,6 +21,14 @@ Appdome Build-2Secure is a comprehensive automated solution that seamlessly inte
 For detailed information on the benefits Appdome Build-2Secure adds to your mobile app, refer to the blog post:
 
 [https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integration](https://appcircle.io/blog/elevate-your-mobile-app-security-with-appdome-integration)
+
+## [Audit Permission Changes](/workflows/ios-specific-workflow-steps/audit-permission-change)
+
+This component captures and compares permission changes in your iOS projects.
+
+## [Azure Bot for SwiftLint](/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint)
+
+This step integrates Azure Bot with SwiftLint to provide feedback on code quality.
 
 ## [BrowserStack App Automate - XCUI](/workflows/ios-specific-workflow-steps/browserstack-app-automation)
 
@@ -34,9 +38,21 @@ Run your XCUI tests on BrowserStack App Automate. You need to add **Xcodebuild B
 
 Runs the Carthage bootstrap/update command for dependency management.
 
+## [CocoaPods Deintegrate](/workflows/ios-specific-workflow-steps/cocoapods-deintegrate)
+
+This step runs the `pod deintegrate` command to remove CocoaPods from the project.
+
 ## [Cocoapods Install](/workflows/ios-specific-workflow-steps/cocoapods-install)
 
 Runs the Cocoapods install command for dependency management.
+
+## [Convert Xcresult to HTML/XML](/workflows/ios-specific-workflow-steps/convert-xcresult-to-xml-html)
+
+This step converts Xcresult files to HTML or XML format.
+
+## [Firebase Upload dSYM](/workflows/ios-specific-workflow-steps/firebase-upload-dsym)
+
+Upload your debug symbols to Firebase Crashlytics
 
 ## [Install Certificates and Profiles](/workflows/ios-specific-workflow-steps/install-certificates-provisions)
 
@@ -46,21 +62,9 @@ This step installs the selected certificates and the provisioning profile for th
 
 This step increments the build number and version number of the iOS project.
 
-## [CocoaPods Deintegrate](/workflows/ios-specific-workflow-steps/cocoapods-deintegrate)
-
-This step runs the `pod deintegrate` command to remove CocoaPods from the project.
-
-## [Convert Xcresult to HTML/XML](/workflows/ios-specific-workflow-steps/convert-xcresult-to-xml-html)
-
-This step converts Xcresult files to HTML or XML format.
-
 ## [Slather](/workflows/ios-specific-workflow-steps/slather)
 
 This step converts Xcode's test results to different formats by using [Slather](https://github.com/SlatherOrg/slather/). This workflow must be run **after** [Xcodebuild for Unit and UI Tests](#xcodebuild-for-unit-and-ui-tests) step.
-
-## [Azure Bot for SwiftLint](/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint)
-
-This step integrates Azure Bot with SwiftLint to provide feedback on code quality.
 
 ## [SwiftLint](/workflows/ios-specific-workflow-steps/swiftlint)
 
@@ -73,13 +77,13 @@ This component provides detailed reports and insights on the results of iOS app 
 For detailed information on the usage of **Test Reports for iOS**, please refer to the documentation:
 - [Generating Test Report](/continuous-testing/ios-testing/running-ios-unit-and-ui-tests#generating-test-report)
 
-## [Tuist Install](/workflows/ios-specific-workflow-steps/tuist-install)
-
-This step installs [Tuist](https://tuist.io/) and runs `tuist generate` with given options.
-
 ## [Tuist Commands](/workflows/ios-specific-workflow-steps/tuist-commands)
 
 This step runs specific [Tuist Commands](https://docs.tuist.io/en/cli/auth) such as `tuist build` or `tuist test`.
+
+## [Tuist Install](/workflows/ios-specific-workflow-steps/tuist-install)
+
+This step installs [Tuist](https://tuist.io/) and runs `tuist generate` with given options.
 
 ## [Xcode Select (Version)](/workflows/ios-specific-workflow-steps/xcode-select)
 
@@ -95,10 +99,6 @@ Entering an unavailable Xcode version may cause the build to fail.
 
 You can review the documentation for detailed information about the Xcode version selection [here](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection).
 :::
-
-## [Firebase Upload dSYM](/workflows/ios-specific-workflow-steps/firebase-upload-dsym)
-
-Upload your debug symbols to Firebase Crashlytics
 
 ## [Xcodebuild for Devices (Archive & Export)](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices)
 

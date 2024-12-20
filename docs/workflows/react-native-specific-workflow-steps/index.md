@@ -18,7 +18,7 @@ Release a React Native update to [App Center](https://appcenter.ms/) CodePush. Y
 
 React Native applications commonly depend on certain Node modules. This workflow step makes sure that you have the required Node version installed in the build agent to build your React Native application.
 
-## [npm/Yarn Commands](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)
+## [NPM/Yarn Commands](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)
 
 You may want to use npm or Yarn package manager to install specific dependencies for your React Native applications. The package manager commands you enter are executed in this workflow step.
 

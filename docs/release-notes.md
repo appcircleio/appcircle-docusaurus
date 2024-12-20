@@ -20,9 +20,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- Monthly Publish usage can now be monitored separately through the Billing screen in the Organization module. It is no longer combined with monthly Build usage. <AccountBadge/> <CloudBadge/>
+- Monthly Publish usage can now be monitored separately through the [Billing](/account/my-organization/billing) screen in the Organization module. It is no longer combined with monthly Build usage. <AccountBadge/> <CloudBadge/>
 - [The Apple Devices](/signing-identities/apple-profiles#adding-device-to-provision-profile) section under the Provision Profile Action now allows users to easily add device UDIDs to the corresponding provisioning profiles. <SigningIdentitiesBadge/> <CloudBadge/>
-- Publish priorities can now be configured as **High**, **Medium**, or **Low** to manage the start order of queued publish processes accordingly. Available for organizations with Enterprise License. <PublishBadge/> <CloudBadge/>
+- [Publish priorities](/publish-module/publish-settings#publish-priority) can now be configured as **High**, **Medium**, or **Low** to manage the start order of queued publish processes accordingly. Available for organizations with Enterprise License. <PublishBadge/> <CloudBadge/>
 - The module reports can now be exported through API calls. <APICLIBadge/> <CloudBadge/>
 - Branch names that exceed the visible length in the branch list are now displayed in full via a tooltip pop-up. <BuildBadge/> <CloudBadge/>
 

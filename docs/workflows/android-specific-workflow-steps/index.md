@@ -10,13 +10,9 @@ The steps listed below are specific to the Android build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [Android App Post-Processor](/workflows/android-specific-workflow-steps/app-post-processor)
+## [Android Build for UI Testing](/workflows/android-specific-workflow-steps/android-build-for-ui-testing)
 
-This step performs necessary system operations to identify and process the Android output binary files.
-
-## [Android Increment Build and Version Number](/workflows/android-specific-workflow-steps/increment-build-and-version-number)
-
-This step increments the version code and version name in the Android project.
+Builds your test applications with gradlew. Runs `./gradlew clean ${module}:assembleAndroidTest`.
 
 ## [Android Build](/workflows/android-specific-workflow-steps/android-build)
 
@@ -28,17 +24,9 @@ If you are using Gradle 4.3 and above in your project, you can just use the `--s
 
 :::
 
-## [Android Build for UI Testing](/workflows/android-specific-workflow-steps/android-build-for-ui-testing)
-
-Builds your test applications with gradlew. Runs `./gradlew clean ${module}:assembleAndroidTest`.
-
 ## [Android Dependency Report](/workflows/android-specific-workflow-steps/android-dependency-report)
 
 This step visualizes the whole dependency tree for every [configuration](https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:what-are-dependency-configurations) available in the project.
-
-## [Android Lint](/workflows/android-specific-workflow-steps/lint)
-
-This step runs lint Gradle tasks on the source files of the project.
 
 ## [Android Sign](/workflows/android-specific-workflow-steps/android-sign)
 
@@ -51,6 +39,10 @@ This step runs the unit tests of the project.
 ## [App Center Android Distribution](/workflows/android-specific-workflow-steps/app-center-android-distribution)
 
 Distribute APK, AAB, and mapping files to [App Center](https://appcenter.ms/). You need to enter your token, owner, app, and group names to distribute your binaries.
+
+## [Android App Post-Processor](/workflows/android-specific-workflow-steps/app-post-processor)
+
+This step performs necessary system operations to identify and process the Android output binary files.
 
 ## [Appdome Build-2Secure for Android](/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android)
 
@@ -86,6 +78,14 @@ This step runs your Android tests on Firebase Test Lab.
 ## [Gradle Runner](/workflows/android-specific-workflow-steps/gradle-runner)
 
 This step runs given Gradle task.
+
+## [Android Increment Build and Version Number](/workflows/android-specific-workflow-steps/increment-build-and-version-number)
+
+This step increments the version code and version name in the Android project.
+
+## [Android Lint](/workflows/android-specific-workflow-steps/lint)
+
+This step runs lint Gradle tasks on the source files of the project.
 
 ## [Test Reports for Android](/workflows/android-specific-workflow-steps/test-reports-for-android)
 
