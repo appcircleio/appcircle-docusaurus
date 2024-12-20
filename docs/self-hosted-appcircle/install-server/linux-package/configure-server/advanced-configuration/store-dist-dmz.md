@@ -589,7 +589,7 @@ When using Podman, you will need to create a systemd unit service to enable the 
 
 We have a dedicated section where we explain how to create the systemd file for Appcircle DMZ server services to start automatically when the host reboots.
 
-You can follow the [Restarting Host](../restarting-host.md) document but there are two things to watch out on the "Restarting Host" document.
+You can follow the [Restarting Host](../restarting-host) document but there are two things to watch out on the "Restarting Host" document.
 
 You will see the `ExecStart` line in the systemd service file like in the example below:
 

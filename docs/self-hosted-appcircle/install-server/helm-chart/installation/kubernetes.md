@@ -101,9 +101,9 @@ For production environments, if you deploy stateful applications with the Appcir
 However, if you opt to use external services for components such as PostgreSQL or MinIO, the storage requirements for the cluster are significantly reduced to around 50GB. It is **highly recommended** to deploy stateful apps outside of the Appcircle Helm chart configuration.
 
 :::tip
-For stateful apps that should deployed out of scope this helm chart, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) document.
+For stateful apps that should deployed out of scope this helm chart, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) document.
 
-For storage details, you can check the [Storage Class Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration.md) section.
+For storage details, you can check the [Storage Class Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration) section.
 :::
 
 :::info
@@ -156,7 +156,7 @@ Enabling the SSL passthrough option **does not** automatically allow all SSL tra
 
 If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
 
-For more information, you can check the [Production Readiness](self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness.md) documentation.
+For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
 
 ### 3. Create Namespace
 
@@ -390,7 +390,7 @@ webeventredis:
 
 ### 2. Remove Sensitive Information From `values.yaml`
 
-**Remove sensitive information** such as Appcircle initial user password, SMTP password, SSL certificates, and other secrets from the `values.yaml` **for production environments**, by checking the [Sensitive Values](self-hosted-appcircle/install-server/helm-chart/configuration/sensitive-configuration.md) documentation.
+**Remove sensitive information** such as Appcircle initial user password, SMTP password, SSL certificates, and other secrets from the `values.yaml` **for production environments**, by checking the [Sensitive Values](/self-hosted-appcircle/install-server/helm-chart/configuration/sensitive-configuration) documentation.
 
 ### 3. Add the Appcircle Helm Repository
 
@@ -491,6 +491,6 @@ For any issues or questions, please contact the system administrator or check th
 
 When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
 
-To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration.md) section.
+To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration) section.
 
 <NeedHelp />

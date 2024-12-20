@@ -18,6 +18,5 @@ Leverage the power of cloud computing within your Appcircle builds by integratin
 
 ## Amazon Web Services (AWS)
 
-[Deneme](/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/aws.md)
 
 Enhance your building and testing capabilities by integrating Amazon Web Services (AWS) into your workflow. Follow the step-by-step guide to set up AWS with your Appcircle environment for improved performance and flexibility.

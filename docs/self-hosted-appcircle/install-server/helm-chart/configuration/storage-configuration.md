@@ -12,7 +12,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 Appcircle server Helm chart supports configuring storage classes and volume sizes for persistent volume claims (PVCs). If you don't specify any storage class or size, the PVCs will be created using the default storage class of your Kubernetes cluster with the default size. If you want to adjust these settings, you can specify them in the `values.yaml`.
 
 :::caution
-The configurations for storage classes should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation.md)** and redeploy it.
+The configurations for storage classes should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation)** and redeploy it.
 :::
 
 :::tip

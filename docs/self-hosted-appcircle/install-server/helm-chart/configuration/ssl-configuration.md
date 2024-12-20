@@ -14,7 +14,7 @@ This guide provides detailed instructions for configuring an SSL certificate for
 By default, the Helm chart is configured for HTTP without an SSL certificate. If you use Appcircle with HTTP, you need to open port 6379 on the ingress controller for Redis the connection.
 
 :::caution
-Appcircle must be installed with HTTPS from the initial installation. If you initially installed Appcircle with HTTP, you will need to [uninstall](/self-hosted-appcircle/install-server/helm-chart/uninstallation.md) it and then reinstall it with HTTPS.
+Appcircle must be installed with HTTPS from the initial installation. If you initially installed Appcircle with HTTP, you will need to [uninstall](/self-hosted-appcircle/install-server/helm-chart/uninstallation) it and then reinstall it with HTTPS.
 :::
 
 ## SSL Certificate Configuration

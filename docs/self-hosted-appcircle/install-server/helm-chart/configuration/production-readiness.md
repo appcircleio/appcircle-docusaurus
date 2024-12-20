@@ -12,7 +12,7 @@ By default, the Appcircle Helm chart will deploy all the required services to th
 If you wish to deploy these services within the Helm chart scope, you can use the default configuration provided by the Appcircle Helm chart.
 
 :::caution
-The configurations for production readiness should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation.md)** and redeploy it.
+The configurations for production readiness should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation)** and redeploy it.
 :::
 
 :::info

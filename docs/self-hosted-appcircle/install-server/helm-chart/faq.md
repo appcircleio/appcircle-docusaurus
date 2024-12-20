@@ -54,7 +54,7 @@ If the deployment hasn't completed and timed out after `1200` seconds:
 - **Configuration Issues:** If the timeout was caused by a configuration problem, you will need to troubleshoot the issue. Review your configuration settings and logs to identify and resolve any errors before attempting the deployment again.
 
 :::tip
-If you face a timeout due to configuration problems, it is better to re-install Appcircle freshly. Refer to the [Uninstalling Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation.md) section for detailed instructions on how to uninstall and clean up the existing deployment before starting anew.
+If you face a timeout due to configuration problems, it is better to re-install Appcircle freshly. Refer to the [Uninstalling Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation) section for detailed instructions on how to uninstall and clean up the existing deployment before starting anew.
 :::
 
 ### What should we do if we use an Ingress controller other then Nginx Ingress?

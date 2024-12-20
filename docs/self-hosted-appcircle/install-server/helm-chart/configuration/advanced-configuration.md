@@ -9,7 +9,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 For advanced configuration options, open the `values.yaml` file with your preferred text editor and modify the settings as needed.
 
-Once you have updated the `values.yaml` file, please proceed to the [Upgrade Appcircle Server](/self-hosted-appcircle/install-server/helm-chart/upgrades.md) section to apply the changes.
+Once you have updated the `values.yaml` file, please proceed to the [Upgrade Appcircle Server](/self-hosted-appcircle/install-server/helm-chart/upgrades) section to apply the changes.
 
 ## Custom Testing Distribution Domain
 
