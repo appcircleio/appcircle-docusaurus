@@ -5,6 +5,8 @@ tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 90
 ---
 
+import NeedHelp from '@site/docs/\_need-help.mdx';
+
 ## Overview
 
 This guide provides detailed instructions for configuring an SSL certificate for HTTPS connections in the Appcircle Helm chart. 
@@ -20,7 +22,7 @@ Appcircle must be installed with HTTPS from the initial installation. If you ini
 You have two options for configuring SSL certificates:
 
 1. **Trial Purposes**: Define the SSL certificate directly in the `values.yaml` by following [this section](#define-the-ssl-certificate-in-valuesyaml).
-2. **Production**: Create a Kubernetes secret for better security and manageability by following [this section](#create-the-tls-secret)
+2. **Production**: Create a Kubernetes secret for better security and manageability by following [this section](#create-the-tls-secret).
 
 ### Define the SSL Certificate in `values.yaml`
 
@@ -107,7 +109,7 @@ The name **`appcircle-tls-wildcard`** is **reserved** and **cannot be changed**.
 kubectl create secret generic appcircle-tls-wildcard \
   --from-file=tls.crt='fullchain.crt' \
   --from-file=tls.key='private.key' \
-  --from-file=ca.crt='root.crt' \
+  --from-file=ca.crt='root-ca.crt' \
   --type=kubernetes.io/tls \
   -n appcircle
 ```
@@ -143,5 +145,6 @@ kubectl rollout restart statefulset/appcircle-server-webeventredis-replicas -n a
 
 ## Final Steps
 
-1. Ensure port 6379 is open on the ingress controller if using HTTP.
-2. Verify the SSL configuration by accessing the Appcircle server over HTTPS.
+Verify the SSL configuration by accessing the Appcircle server over HTTPS.
+
+<NeedHelp />
