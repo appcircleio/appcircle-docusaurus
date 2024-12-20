@@ -2,7 +2,7 @@
 title: Upgrading Runner
 description: Learn how to upgrade self-hosted runner in Appcircle
 tags: [self-hosted runner, update, upgrade]
-sidebar_position: 3
+sidebar_position: 30
 ---
 
 import Tabs from '@theme/Tabs';

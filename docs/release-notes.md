@@ -7,7 +7,7 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-server/\_redis-domain-caution.mdx';
+import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_redis-domain-caution.mdx';
 
 <!-- Note to contributors: You can use the following badges to indicate the availability of the feature for modules.-->
 
@@ -153,7 +153,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The LDAP role mapping configuration page now supports role search functionality. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A warning message display was added for Inherited Sub-organization users during Personal Access Token generation. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The SSO creation screen has been updated to ensure that the switch buttons reflect the actual backend status (on) after an SSO is created, preventing confusion for users. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- `Tolerant` user [lookup decision strategy](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#editing-user-lookup-decision-strategy) has been added to the LDAP settings for self-hosted configurations. <AccountBadge/> <SelfHostedBadge/>
+- `Tolerant` user [lookup decision strategy](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings#editing-user-lookup-decision-strategy) has been added to the LDAP settings for self-hosted configurations. <AccountBadge/> <SelfHostedBadge/>
 - Store submit events were removed from the notification settings for Slack, MS Teams, and Email. Additionally, the module names within the configurations were updated. <IntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Build Profile Search feature has been enhanced through integration with our backend systems. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Builds that have completed with a successful output but contain a failed step will now be displayed with a warning status in the build lists and build profile cards. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -280,7 +280,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The issue where metadata updates could not be made for app versions marked as Release Candidate (RC) has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The issue where the system did not automatically select an active and suitable pool from the company's self-hosted options when no pool was selected during the publish process has been fixed. <BuildBadge/> <PublishBadge/> <SelfHostedBadge/>
 - The issue where the Redis connection was throwing a readonly error for replica write on self-hosted Appcircle servers has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
-- The issue with incorrect URLs in short links has been fixed, allowing seamless sharing of short URLs using the Copy Shortlink feature in the self-hosted server [Monitoring](self-hosted-appcircle/configure-server/monitoring#accessing-to-grafana-web-ui) UI. <InfrastructureBadge/> <SelfHostedBadge/>
+- The issue with incorrect URLs in short links has been fixed, allowing seamless sharing of short URLs using the Copy Shortlink feature in the self-hosted server [Monitoring](self-hosted-appcircle/install-server/linux-package/configure-server/monitoring#accessing-to-grafana-web-ui) UI. <InfrastructureBadge/> <SelfHostedBadge/>
 - The issue that caused runner IP addresses to appear as 127.0.0.1 in the build logs and runner details on the self-hosted Appcircle server has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
 - The issue that created a broken system configuration file during the installation of the self-hosted Appcircle server using the Podman container engine has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
 
@@ -292,7 +292,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - [Integrations and Connection Management](/account/my-organization/profile-and-team/role-management#integrations-and-connection-managements) roles have been added within the role management with Manager and Viewer roles. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Viewer role has been added for [Organization Management](/account/my-organization/profile-and-team/role-management#organization-management-permissions). <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Hyperlink support has been added to the affected build profiles on the pop-up screen when a user attempts to delete a provisioning profile that is active in a build configuration. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The self-hosted Appcircle server script now includes a new command ([**init**](/self-hosted-appcircle/install-server#initialize-vault)) that should be used after the `export` step once while installing the server, ensuring seamless vault initialization. <InfrastructureBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server script now includes a new command ([**init**](/self-hosted-appcircle/install-server/linux-package/index.md#initialize-vault)) that should be used after the `export` step once while installing the server, ensuring seamless vault initialization. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -302,7 +302,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - UI Improvements have been made for Enterprise App Store and Publish modules regarding overall texting and profile cards. <PublishBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The profile IDs of Enterprise App Store and Testing Distribution profiles can now be copied from their settings section. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The notify button will no longer be disabled if the user has static authentication; instead, a warning message will be shown. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The self-hosted Appcircle server configuration file validator now checks the integrity of  [Enterprise App Store](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain) and [Testing Distribution](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#custom-domain-1) ports defined in `global.yaml`. <InfrastructureBadge/> <SelfHostedBadge/>
+- The self-hosted Appcircle server configuration file validator now checks the integrity of  [Enterprise App Store](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration.md#custom-domain) and [Testing Distribution](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration.md#custom-domain-1) ports defined in `global.yaml`. <InfrastructureBadge/> <SelfHostedBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has [Xcode 16.0 Beta 5](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes) installed on runners. Since this is a beta release, please test your workflows extensively. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
@@ -365,7 +365,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 ### 🆕 New Features
 
 - The store status of Release Candidates in the Publish profiles can now be manually checked using [Check Release Status](/publish-module/publish-information/check-release-status) feature. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The self-hosted Appcircle server now supports a new [DMZ architecture](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz), allowing you to separate [Enterprise App Store](/enterprise-app-store) and [Testing Distribution](/testing-distribution) modules from the core and install them in a DMZ [(Demilitarized Zone)](https://en.wikipedia.org/wiki/DMZ_(computing)). This securely exposes these external-facing modules to internet users. <SelfHostedBadge/>
+- The self-hosted Appcircle server now supports a new [DMZ architecture](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz), allowing you to separate [Enterprise App Store](/enterprise-app-store) and [Testing Distribution](/testing-distribution) modules from the core and install them in a DMZ [(Demilitarized Zone)](https://en.wikipedia.org/wiki/DMZ_(computing)). This securely exposes these external-facing modules to internet users. <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -468,7 +468,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 - You can now monitor [Resign Binary](https://docs.appcircle.io/publish-module/publish-information/resign-binary) activities in Publish Activity Logs. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - We have added minimum and maximum e-mail format validations for the [Get Approval via E-mail](https://docs.appcircle.io/publish-integrations/common-publish-integrations/get-approval-via-email) Publish Flow step. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The [auto-update](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) helper tool has been improved to detect the upgrade in a more efficient way, which reduces the network payload and speeds up the process. <SelfHostedBadge/>
+- The [auto-update](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/auto-updating) helper tool has been improved to detect the upgrade in a more efficient way, which reduces the network payload and speeds up the process. <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -483,9 +483,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 ### 🆕 New Features
 
-- Users can now automate [Group](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#managing-ldap-groups-and-mappings) and [Role](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#ldap-role-mapping) Management using LDAP Authentication for Appcircle Login in Self-Hosted environments. <SelfHostedBadge/>
+- Users can now automate [Group](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings#managing-ldap-groups-and-mappings) and [Role](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings#ldap-role-mapping) Management using LDAP Authentication for Appcircle Login in Self-Hosted environments. <SelfHostedBadge/>
 - We have introduced the [Team Activity Log](https://docs.appcircle.io/account/my-organization/profile-and-team/team-activity-log) feature within the Organization settings. This feature enables users to monitor team management actions within their organization if they are the organization owner or have the Organization Management role. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The self-hosted Appcircle server now has a new configuration at `global.yaml` that helps you [enable or disable](https://docs.appcircle.io/self-hosted-appcircle/configure-server/monitoring#disable-the-monitoring-services) the log monitoring feature on demand. <SelfHostedBadge/>
+- The self-hosted Appcircle server now has a new configuration at `global.yaml` that helps you [enable or disable](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/monitoring#disable-the-monitoring-services) the log monitoring feature on demand. <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -514,7 +514,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - Fixed the incorrect versioning of the [Gradle Runner](https://docs.appcircle.io/workflows/android-specific-workflow-steps/gradle-runner) step, which was breaking current workflows because of incompatible changes. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Testinium](https://docs.appcircle.io/workflows/common-workflow-steps/testinium) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Maestro Cloud Upload](https://docs.appcircle.io/workflows/common-workflow-steps/maestro-cloud-upload) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug that caused the [no-proxy](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration#edit-no_proxy-for-internal-container-network) helper tool to throw an error when the CIDR notation was used in the `no_proxy` environment variable. <SelfHostedBadge/>
+- Fixed a bug that caused the [no-proxy](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration#edit-no_proxy-for-internal-container-network) helper tool to throw an error when the CIDR notation was used in the `no_proxy` environment variable. <SelfHostedBadge/>
 - Fixed a bug that prevented the self-hosted Appcircle server logging service from being healthy when a proxy is used for network access. <SelfHostedBadge/>
 - Fixed a bug that causes the wrong self-hosted server package to [download](https://docs.appcircle.io/self-hosted-appcircle/update#1-download-latest) when a specific version is preferred instead of the latest. <SelfHostedBadge/>
 
@@ -524,7 +524,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 
 - The [Resign Binary](/publish-module/publish-information/resign-binary) feature is now available for both iOS and Android applications within the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Users can now upload application screenshots and update [Metadata Information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information) within the Publish module, including promotional text and descriptions, via Appcircle, without the need for the App Store Connect interface. <CloudBadge/> <SelfHostedBadge/> <PublishBadge/>
-<!-- - LDAP Mapping is now supported in Appcircle, allowing seamless synchronization of user groups and roles from your LDAP directory to your Appcircle environment. This integration streamlines user management and enhances security by aligning your Appcircle roles with your organizational structures. For a detailed setup guide, visit our [LDAP Mapping documentation](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#ldap-mapping) -->
+<!-- - LDAP Mapping is now supported in Appcircle, allowing seamless synchronization of user groups and roles from your LDAP directory to your Appcircle environment. This integration streamlines user management and enhances security by aligning your Appcircle roles with your organizational structures. For a detailed setup guide, visit our [LDAP Mapping documentation](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings#ldap-mapping) -->
 - Within the Publish profile card, App Store Status will be displayed for Enterprise users, while Flow Status will be observed for non-enterprise users. Similarly, in the app version view, Enterprise users will have access to both Flow and App Store Status, whereas non-Enterprise users will only see Flow Status displayed. <CloudBadge/> <SelfHostedBadge/> <PublishBadge/>
 - A new component named "Update Metadata on App Store" has been integrated to the Publish Steps section, facilitating the display of metadata information. <CloudBadge/> <SelfHostedBadge/> <PublishIntegrationsBadge/>
 - On the Metadata Information page, metadata for profiles designated as Release Candidates is retrieved directly from the store. For more information, refer to the [Metadata Information](/publish-module/publish-information/meta-data-information) documentation. <CloudBadge/> <SelfHostedBadge/> <PublishBadge/>
@@ -533,7 +533,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/configure-serve
 - The [Signing Identities](/signing-identities) module features are now accessible via the command-line interface. Learn more. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <SigningIdentitiesBadge/>
 - You can now manage [Testing Groups](testing-distribution/testing-groups) within the [Distribution](/testing-distribution) module via the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
 - Users can configure [Distribution](/testing-distribution) settings to [automatically send builds to testers](/testing-distribution/create-or-select-a-distribution-profile#manual-binary-upload) using the command-line interface. <CloudBadge/> <SelfHostedBadge/> <APICLIBadge/> <DistributionBadge/>
-- The "Appcircle Standard macOS Pool (arm64)" and "macOS VM image" now include [Xcode 15.4](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release candidate. <CloudBadge/> <SelfHostedBadge/>
+- The "Default M1 pool" and "macOS VM image" now include [Xcode 15.4](https://docs.appcircle.io/infrastructure/ios-build-infrastructure#available-xcode-versions) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release candidate. <CloudBadge/> <SelfHostedBadge/>
 - This release introduces [a log viewing and delivery system](https://docs.appcircle.io/self-hosted-appcircle/configure-server/monitoring) for the self-hosted Appcircle server. <SelfHostedBadge/>
 - Self-hosted customers can now [download](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server package seamlessly and [update](https://docs.appcircle.io/self-hosted-appcircle/configure-server/auto-updating) the Appcircle server fully automated. <SelfHostedBadge/>
 
@@ -612,14 +612,14 @@ To ensure the App Store status remains current, the following conditions must be
 - Branches are now filtered based on their status, enabling users to easily identify and navigate through branches based on their current state. <CloudBadge/> <SelfHostedBadge/>
 - Users now have the capability to be redirected to their desired locations upon clicking on [Okta applications](/account/my-organization/security/authentications), enhancing navigation efficiency and user experience within the system. <CloudBadge/> <SelfHostedBadge/>
 - When a build is [manually initiated](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#manual-build), the system retrieves information about the user from the initiating organization. Conversely, if the build is [not initiated manually](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#automatic-build), it displays the details of the user who made the commit, ensuring accurate attribution of actions within the system. <CloudBadge/> <SelfHostedBadge/>
-- The self-hosted Appcircle server now supports using a custom domain for the [Testing Distribution Portal](/testing-distribution/testing-portal). Follow the instructions in the [Testing Distribution](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#testing-distribution) section of the SSL configuration. <SelfHostedBadge/>
+- The self-hosted Appcircle server now supports using a custom domain for the [Testing Distribution Portal](/testing-distribution/testing-portal). Follow the instructions in the [Testing Distribution](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#testing-distribution) section of the SSL configuration. <SelfHostedBadge/>
 - The self-hosted Appcircle server now adopts single-node single drive MinIO instead of multi-node single drive MinIO in the default configuration, which decreases disk consumption significantly. <SelfHostedBadge/>
 
 :::caution
 /account/my-organization/notifications/email-connection
 Upgrading from older versions to `v3.14.0` or later, requires MinIO migration that should be done interactively while upgrading.
 
-In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/configure-server/minio-migration) document.
+In order to migrate to single-node single drive MinIO configuration or stay with the deprecated multi-node single drive MinIO configuration, **you must follow the instructions** that are defined in the [MinIO Migration](/self-hosted-appcircle/install-server/linux-package/configure-server/minio-migration) document.
 
 :::
 
@@ -627,7 +627,7 @@ In order to migrate to single-node single drive MinIO configuration or stay with
 
 Fresh self-hosted server installations do not require any manual intervention for the MinIO configuration.
 
-The single-node single drive [MinIO configuration](/self-hosted-appcircle/configure-server/minio-migration) is applied by default on fresh installations.
+The single-node single drive [MinIO configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/minio-migration) is applied by default on fresh installations.
 
 :::
 
@@ -705,7 +705,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - [Share with Testers](testing-distribution/create-or-select-a-distribution-profile#share-your-application-with-the-test-groups-manually) in Testing Distribution now has a new toggle option that enables you to display only the shared app version instead of all app versions. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle Notifications now has improvements on [Slack](https://docs.appcircle.io/account/slack/slack-notifications), [Microsoft Teams](https://docs.appcircle.io/account/teams-notifications), [Email](https://docs.appcircle.io/account/email-connection), and [Webhook](https://docs.appcircle.io/account/webhooks) channels that allows you to share release notes, build logs, and test reports via notifications. <CloudBadge/> <SelfHostedBadge/>
 - The Store Submit module has been deprecated and it will be replaced by the brand-new [Publish](https://docs.appcircle.io/publish-module) module. You should transfer your apps to the [Publish](https://docs.appcircle.io/publish-module) module in order to submit your apps to the stores. <CloudBadge/> <SelfHostedBadge/>
-- The Appcircle CLI has undergone a complete revision to make it compatible with the latest Appcircle API. Now it also supports self-hosted Appcircle servers. You can see all the recent changes made in the [changelog](https://github.com/appcircleio/appcircle-cli/blob/main/CHANGELOG.md) and follow [configuration instructions](https://docs.appcircle.io/self-hosted-appcircle/configure-server/appcircle-cli) to use the CLI with a self-hosted Appcircle server. <CloudBadge/> <SelfHostedBadge/>
+- The Appcircle CLI has undergone a complete revision to make it compatible with the latest Appcircle API. Now it also supports self-hosted Appcircle servers. You can see all the recent changes made in the [changelog](https://github.com/appcircleio/appcircle-cli/blob/main/CHANGELOG.md) and follow [configuration instructions](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/appcircle-cli) to use the CLI with a self-hosted Appcircle server. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -762,8 +762,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Members in the same [organization](/account/my-organization) can take ownership of previously added build profiles. <CloudBadge/> <SelfHostedBadge/>
 - The user can now add a new PAT (Personal Access Token) via the [Connections](/build/manage-the-connections#managing-pat-connections) page without creating a new build profile. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can integrate their own authentication and OTP services and use them in conjunction with LDAP configuration on self-hosted installations. <SelfHostedBadge/>
-- The configuration file [global.yaml](../self-hosted-appcircle/install-server/docker#3-configure) now has a validator that helps users configure the settings correctly on export and prevents them from starting the server with broken settings. <SelfHostedBadge/>
-- The [certificate installer](../self-hosted-appcircle/install-server/docker#3-configure) tool now supports extracting proxy server certificates, which enable the runner to connect through a proxy without any SSL certificate error. <SelfHostedBadge/>
+- The configuration file [global.yaml](../self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) now has a validator that helps users configure the settings correctly on export and prevents them from starting the server with broken settings. <SelfHostedBadge/>
+- The [certificate installer](../self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) tool now supports extracting proxy server certificates, which enable the runner to connect through a proxy without any SSL certificate error. <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -774,7 +774,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - The "Appcircle Standard macOS Pool (arm64)" has [Xcode 15.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_2-release-notes) beta-1 installed on runners. Since this is a beta release, please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
 - The LDAP configuration section in settings has a help button that redirects to the relevant documentation page for configuration details. <SelfHostedBadge/>
 - A new type of role **Operator** has been added to the build profile roles that can also trigger builds. <CloudBadge/> <SelfHostedBadge/>
-- You can change the [Enterprise App Store](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration#enterprise-app-store) settings (domain, etc.) after installation without any `reset` action. <SelfHostedBadge/>
+- You can change the [Enterprise App Store](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#enterprise-app-store) settings (domain, etc.) after installation without any `reset` action. <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
@@ -799,9 +799,9 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed the errors thrown while using the [Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket) connection in build profiles. <CloudBadge/> <SelfHostedBadge/>
 - In the [Azure DevOps Server 2020](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository) version, the trigger was malfunctioning due to the different JSON format received after a merge operation following a PR (Pull Request). It was fixed. <CloudBadge/> <SelfHostedBadge/>
 - The bug that prevents users from [changing their emails](/account/my-account/account-management/my-details) was fixed. <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug about [`no_proxy`](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration#2-configure-proxy-for-the-server) environment variables that broke the network connection of the self-hosted Appcircle server. <SelfHostedBadge/>
-- Fixed bug that causes version output to be incorrect when [artifact registry](../self-hosted-appcircle/install-server/docker#using-3rd-party-or-self-hosted-artifact-registry) has port in URL. <SelfHostedBadge/>
-- Fixed corrupted `check` command output in Ubuntu-based Linux [distributions](../self-hosted-appcircle/install-server/docker#supported-linux-distributions). <SelfHostedBadge/>
+- Fixed a bug about [`no_proxy`](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration#2-configure-proxy-for-the-server) environment variables that broke the network connection of the self-hosted Appcircle server. <SelfHostedBadge/>
+- Fixed bug that causes version output to be incorrect when [artifact registry](../self-hosted-appcircle/install-server/linux-package/installation/docker#using-3rd-party-or-self-hosted-artifact-registry) has port in URL. <SelfHostedBadge/>
+- Fixed corrupted `check` command output in Ubuntu-based Linux [distributions](../self-hosted-appcircle/install-server/linux-package/installation/docker#supported-linux-distributions). <SelfHostedBadge/>
 
 ## 3.10.0 - 2023-12-01 - Connections Page, Disconnect Profile and Change Provider
 
@@ -819,7 +819,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - The URL format validation used when adding Git provider [instances](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance) has been removed for self-hosted environments. <SelfHostedBadge/>
 - The [Testinium](/workflows/common-workflow-steps/#testinium) workflow component parses result summary and outputs in seperate environment variables. <CloudBadge/> <SelfHostedBadge/>
 - A user-friendly format has been introduced in the [testing distribution](/testing-distribution/create-or-select-a-distribution-profile) emails. <CloudBadge/> <SelfHostedBadge/>
-- [Brute-force protection](/self-hosted-appcircle/configure-server/advanced-configuration/ldap-brutefore) and the ability to configure it have been added when logging into the Enterprise App Store and Testing Distribution via the LDAP method in self-hosted use. <SelfHostedBadge/>
+- [Brute-force protection](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/ldap-brutefore) and the ability to configure it have been added when logging into the Enterprise App Store and Testing Distribution via the LDAP method in self-hosted use. <SelfHostedBadge/>
 - The caching mechanism used when choosing between Testing Distribution [authentication](/testing-distribution/create-or-select-a-distribution-profile#authentication) options has been disabled for the sake of quick response. <CloudBadge/> <SelfHostedBadge/>
 - You can no longer add or build Smartface projects to Appcircle. Smartface support has been removed. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle no longer supports purchases via Appsumo, and there is no Appsumo featured license supported on Appcircle. <CloudBadge/>
@@ -842,13 +842,13 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 
 ### 🆕 New Feature
 
-- "Self-hosted Settings" has been introduced on the admin page for self-hosted Appcircle server. It includes [LDAP Login](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings#appcircle-login-with-ldap) for configuring LDAP user authentication and [Login Settings](/self-hosted-appcircle/configure-server/integrations-and-access/login-configuration#login-settings) for other login configuration options. <SelfHostedBadge/>
+- "Self-hosted Settings" has been introduced on the admin page for self-hosted Appcircle server. It includes [LDAP Login](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings#appcircle-login-with-ldap) for configuring LDAP user authentication and [Login Settings](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/login-configuration#login-settings) for other login configuration options. <SelfHostedBadge/>
 - Users are now allowed to manage their connections to private repositories after connecting their profiles. <CloudBadge/> <SelfHostedBadge/>
 - Now users are able to download the [environment variables](/environment-variables/managing-variables#download-environment-variables) in JSON format. <CloudBadge/> <SelfHostedBadge/>
 - Added a new environment variable called [AC_TRIGGER_REASON](/environment-variables/appcircle-specific-environment-variables#ios--android-common-environment-variables) that specifies the trigger that causes the build to start. <CloudBadge/> <SelfHostedBadge/>
 - The "Appcircle Standard macOS Pool (arm64)" runners have [Xcode 15.1 beta-1](../build/platform-build-guides/building-ios-applications) installed. As this is a beta release, please test your workflows thoroughly. <CloudBadge/> <SelfHostedBadge/>
 - A new filter has been added for filtering reports. Users will now be able to filter by organization and sub organization. <CloudBadge/> <SelfHostedBadge/>
-- New commands `download` and `load` were introduced to the self-hosted Appcircle server in order to support [offline installation and upgrade](../self-hosted-appcircle/configure-server/offline-installation) scenarios. <SelfHostedBadge/>
+- New commands `download` and `load` were introduced to the self-hosted Appcircle server in order to support [offline installation and upgrade](../self-hosted-appcircle/install-server/linux-package/configure-server/offline-installation) scenarios. <SelfHostedBadge/>
 - The self-hosted Appcircle server now supports Secure LDAP, aka LDAPS, that encrypts the authentication process for enhanced security. <SelfHostedBadge/>
 
 ### :muscle: Improvement
@@ -862,7 +862,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Previously, you could only select one profile for test deployment. Now you can select [multiple profiles in the distribution](/build/build-process-management/build-profile-configuration#distribution-configuration) profile settings. <CloudBadge/> <SelfHostedBadge/>
 - Removed the obsolete icon from the Commit ID redirect link in the build profile details. <CloudBadge/> <SelfHostedBadge/>
 - The cache size was bumped to 4 GB while using the [cache push](/workflows/common-workflow-steps/#cache-push) in the build pipeline. <SelfHostedBadge/>
-- We made improvements to the self-hosted server [SSL configuration](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration) for enhanced security. <SelfHostedBadge/>
+- We made improvements to the self-hosted server [SSL configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration) for enhanced security. <SelfHostedBadge/>
 - The [Testinium](/workflows/common-workflow-steps/#testinium) workflow step has the latest improvements from customer feedback and enhanced stability. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
@@ -895,8 +895,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Fixed the case that users belonging to more than one organization on [Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) could not bind repository. <CloudBadge/> <SelfHostedBadge/>
 - Improved suborganization experience in the Enterprise App Store by hiding the "Customize" and "Settings" sections, providing a more focused interface for suborganization administrators. <CloudBadge/> <SelfHostedBadge/>
 - The latest stable version of [Xcode 15.0](../build/platform-build-guides/building-ios-applications) is available on both cloud and self-hosted runners. <SelfHostedBadge/> <CloudBadge/>
-- The self-hosted Appcircle server now supports proxies with a [self-signed certificate.](/self-hosted-appcircle/configure-server/integrations-and-access/proxy-configuration) <SelfHostedBadge/>
-- Users can more easily switch to the self-hosted version of their choice by only [downloading](../self-hosted-appcircle/update#1-download-latest) the server package. <SelfHostedBadge/>
+- The self-hosted Appcircle server now supports proxies with a [self-signed certificate.](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration) <SelfHostedBadge/>
+- Users can more easily switch to the self-hosted version of their choice by only [downloading](../self-hosted-appcircle/install-server/linux-package/update#1-download-latest) the server package. <SelfHostedBadge/>
 - Added the [NTP configuration](../self-hosted-appcircle/self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) helper tool to the self-hosted runner package. <SelfHostedBadge/>
 - Added self-signed certificate management for Node.JS to the [certificate installer](../self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates#adding-certificates) tool. <SelfHostedBadge/>
 - Now you can analyze your [SwiftLint](/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint) and [Detekt](/workflows/android-specific-workflow-steps/) reports and post the report details under the opened PR on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
@@ -954,7 +954,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Now you can connect repositories from [Azure DevOps Services](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) and Azure DevOps Server for your builds. <CloudBadge/> <SelfHostedBadge/>
 - Added support for using [webhook](/account/my-organization/notifications/webhooks) with OAuth 2.0 and the Personal Access Token on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
 - The quick add feature has been added to the new project screen for both Azure DevOps Services and Azure DevOps Server. <CloudBadge/> <SelfHostedBadge/>
-- LDAP, user lookup decision strategy can be configured in global.yaml. See [LDAP settings](/self-hosted-appcircle/configure-server/integrations-and-access/ldap-settings) for details. <SelfHostedBadge/>
+- LDAP, user lookup decision strategy can be configured in global.yaml. See [LDAP settings](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings) for details. <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -1029,18 +1029,18 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
 - Build trigger screen is improved. <CloudBadge/> <SelfHostedBadge/>
 - [Self-hosted Runer](/self-hosted-appcircle/self-hosted-runner/installation) installation script updated for new Xcode versions and other tools. <SelfHostedBadge/>
-- The default configuration file that contains [Self-hosted Server](../self-hosted-appcircle/install-server/docker) settings is simplified. <SelfHostedBadge/>
-- The [Self-hosted Server](../self-hosted-appcircle/install-server/docker) package has a text file that contains a list of container services. <SelfHostedBadge/>
-- [Self-hosted Server](../self-hosted-appcircle/install-server/docker) Podman support added. <SelfHostedBadge/>
-- [Self-hosted Server](../self-hosted-appcircle/install-server/docker) installation script `version` command updated to fix Podman compatibility. <SelfHostedBadge/>
-- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/docker) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
-- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/docker) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
+- The default configuration file that contains [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/installation/docker) settings is simplified. <SelfHostedBadge/>
+- The [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/installation/docker) package has a text file that contains a list of container services. <SelfHostedBadge/>
+- [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/installation/docker) Podman support added. <SelfHostedBadge/>
+- [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/installation/docker) installation script `version` command updated to fix Podman compatibility. <SelfHostedBadge/>
+- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/installation/docker) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
+- New script added [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/installation/docker) installation package. This script allows users to add and trust their custom self-signed certificates. <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
 - Strict URL check is removed when users try to add Azure repositories. <CloudBadge/> <SelfHostedBadge/>
 - An error that was occurring when you tried to add a sub-org on self-hosted Appcircle is fixed. <SelfHostedBadge/>
-- Some minor cases that were occurring on the [Self-hosted Server](../self-hosted-appcircle/install-server/docker) boot process are fixed. <SelfHostedBadge/>
+- Some minor cases that were occurring on the [Self-hosted Server](../self-hosted-appcircle/install-server/linux-package/installation/docker) boot process are fixed. <SelfHostedBadge/>
 
 ## 3.3.2 - 2023-05-10 - Xcode 14.3,FTP Upload
 
@@ -1144,7 +1144,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🆕 New Feature
 
 - [AppSweep Mobile Security Testing](/workflows/android-specific-workflow-steps/#appsweep-mobile-security-testing) component added. <CloudBadge/> <SelfHostedBadge/>
-- [Self-signed certificate](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration) support added for Testing Distribution. <SelfHostedBadge/>
+- [Self-signed certificate](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration) support added for Testing Distribution. <SelfHostedBadge/>
 - [Enterprise App Store](/enterprise-app-store/portal-customization) is now available in German and Turkish languages in addition to English. To switch to your preferred language, simply navigate to the language settings on your store homepage and select either German or Turkish. <CloudBadge/> <SelfHostedBadge/>
 - [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=store) are added to directly download IPA or APK files from Enterprise App Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
 
@@ -1170,8 +1170,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 ### 🆕 New Feature
 
 - [Multiple LDAP](/enterprise-app-store/portal-settings#ldap-login) support added for Enterprise App Store. <CloudBadge/> <SelfHostedBadge/>
-- [Self-signed certificate](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration) support added for Appcircle server. <SelfHostedBadge/>
-- [Self-signed certificate](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration) support added for external services such as Git providers (GitLab, Bitbucket etc.) <SelfHostedBadge/>
+- [Self-signed certificate](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration) support added for Appcircle server. <SelfHostedBadge/>
+- [Self-signed certificate](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration) support added for external services such as Git providers (GitLab, Bitbucket etc.) <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
