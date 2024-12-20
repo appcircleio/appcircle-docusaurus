@@ -1090,8 +1090,8 @@ to = "/self-hosted-appcircle/install-server/linux-package/configure-server/integ
 status = 301
 
 [[redirects]]
-from = "/self-hosted-appcircle/configure-server/advanced-configuration/index"
-to = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/index"
+from = "/self-hosted-appcircle/configure-server/advanced-configuration"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration"
 status = 301
 
 [[redirects]]
