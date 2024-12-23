@@ -17,7 +17,25 @@ helm upgrade appcircle-server appcircle/appcircle \
 ```
 
 :::tip
-You can specify a **particular version** of the Appcircle Helm chart by adding the `--version` flag. For example, to upgrade **Helm chart version** to **`0.2.0`**, use the following command:
+You can specify a **particular version** of the Appcircle Helm chart by adding the `--version` flag. 
+
+For instance, to upgrade **Appcircle Helm chart** to **specific version** and view the Appcircle server Helm chart versions that are available:
+
+- Check the list of available versions.
+
+```bash
+helm search repo appcircle
+```
+
+- The output should look like the following:
+
+```bash
+NAME               	CHART VERSION	APP VERSION	DESCRIPTION                
+appcircle/appcircle	0.1.0        	3.23.2     	A Helm chart for Kubernetes
+appcircle/appcircle	0.2.0        	3.23.3     	A Helm chart for Kubernetes
+```
+
+- Update the Appcircle Helm chart version to `0.2.0`.
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle \
