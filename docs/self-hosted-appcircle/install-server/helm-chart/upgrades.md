@@ -32,7 +32,7 @@ helm search repo appcircle
 ```bash
 NAME               	CHART VERSION	APP VERSION	DESCRIPTION                
 appcircle/appcircle	0.1.0        	3.23.2     	A Helm chart for Kubernetes
-appcircle/appcircle	0.2.0        	3.23.3     	A Helm chart for Kubernetes
+appcircle/appcircle	0.2.0        	3.25.0     	A Helm chart for Kubernetes
 ```
 
 - Update the Appcircle Helm chart version to `0.2.0`.
