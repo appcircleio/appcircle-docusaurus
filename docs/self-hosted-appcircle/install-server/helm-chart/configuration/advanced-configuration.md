@@ -125,13 +125,13 @@ webhook:
 
 ## Values Table
 
-To deploy the Appcircle server with customized parameters, refer to the basic values.yaml configuration table below.
+To deploy the Appcircle server with customized parameters, refer to the basic `values.yaml` configuration table below.
 
 ### Parameters
 
 | Parameter                                                     | Description                                                               | Default Value                 |
 | ------------------------------------------------------------- | ------------------------------------------------------------------------- | ----------------------------- |
-| `global.appEnvironment`                                       | Specifies the application environment (e.g., Development, Production).    | 'Development'                 |
+| `global.appEnvironment`                                       | Specifies the application environment (e.g., Development, Production).    | 'Production'                 |
 | `global.imageRegistry`                                        | The Docker registry where container images are stored.                    | 'europe-west1-docker.pkg.dev' |
 | `global.imageRepositoryPath`                                  | The path within the Docker registry for the application's images.         | 'appcircle/docker-registry'   |
 | `global.imageTag`                                             | The specific tag of the Docker image to use.                              | 'v3.23.2'                     |
