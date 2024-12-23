@@ -7,7 +7,21 @@ sidebar_position: 30
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-To **upgrade** the Appcircle server to the **latest** version and apply any configuration changes, use the following `helm upgrade` command. 
+To **upgrade** the Appcircle server to the **latest** version and apply any configuration changes, you can follow the sections below.
+
+- Check the installed Helm chart and Appcircle server version.
+
+```bash
+helm list -n appcircle
+```
+
+- Update the Appcircle Helm chart repository. 
+
+```bash
+helm repo update
+```
+
+- Update the Appcircle server.
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle \
