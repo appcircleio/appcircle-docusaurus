@@ -237,8 +237,8 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `kafka.listeners.interbroker.protocol`                        | Protocol used for Kafka inter-broker communication.                       | 'PLAINTEXT'                   |
 | `kafka.metrics.kafka.enabled`                                 | Enables Kafka metrics.                                                    | false                         |
 | `kafka.metrics.jmx.enabled`                                   | Enables JMX metrics for Kafka.                                            | false                         |
-| `kafka.zookeeper.auth.enabled`                                | Enables authentication for Zookeeper.                                     | false                         |
-| `kafka.zookeeper.metrics.enabled`                             | Enables metrics for Zookeeper.                                            | false                         |
+| `kafka.zookeeper.auth.enabled`                                | Enables authentication for ZooKeeper.                                     | false                         |
+| `kafka.zookeeper.metrics.enabled`                             | Enables metrics for ZooKeeper.                                            | false                         |
 | `kafka.client.protocol`                                       | Protocol used by Kafka clients.                                           | 'PLAINTEXT'                   |
 | `kafka.extraConfig`                                           | Additional configuration file for Kafka.                                  | -                             |
 | `webeventredis.enabled`                                       | Enables Web Event Redis.                                                  | true                          |
