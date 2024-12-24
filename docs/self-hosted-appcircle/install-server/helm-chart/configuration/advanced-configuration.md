@@ -131,11 +131,11 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 
 | Parameter                                                     | Description                                                               | Default Value                 |
 | ------------------------------------------------------------- | ------------------------------------------------------------------------- | ----------------------------- |
-| `global.appEnvironment`                                       | Specifies the application environment (e.g., Development, Production).    | 'Production'                 |
+| `global.appEnvironment`                                       | Specifies the application environment (e.g., Development, Production).    | 'Production'                  |
 | `global.imageRegistry`                                        | The Docker registry where container images are stored.                    | 'europe-west1-docker.pkg.dev' |
 | `global.imageRepositoryPath`                                  | The path within the Docker registry for the application's images.         | 'appcircle/docker-registry'   |
 | `global.imageTag`                                             | The specific tag of the Docker image to use.                              | 'v3.23.2'                     |
-| `global.imagePullSecrets`                                     | Secrets used to authenticate with private Docker registries.              | [ 'containerregistry' ]       |
+| `global.imagePullSecrets`                                     | Secrets used to authenticate with private container registries.           | [ 'containerregistry' ]       |
 | `global.ingressClassName`                                     | Specifies the ingress class name used for all application ingresses.      | 'appcircle'                   |
 | `global.defaultStorageClass`                                  | The default storage class used for persistent volumes in the application. | -                             |
 | `global.urls.domainName`                                      | The domain name used for the application (e.g., .example.com).            | -                             |
@@ -157,7 +157,7 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `global.mail.smtp.port`                                       | Port number for the SMTP server.                                          | -                             |
 | `global.mail.smtp.password`                                   | Password for the SMTP account.                                            | -                             |
 | `global.mail.smtp.ssl`                                        | Whether SSL is enabled for SMTP.                                          | 'false'                       |
-| `global.mail.smtp.auth`                                       | Whether Authentication is enabled for SMTP.                               | 'true'                        |
+| `global.mail.smtp.auth`                                       | Whether authentication is enabled for SMTP.                               | 'true'                        |
 | `global.mail.smtp.starttls`                                   | Whether STARTTLS is enabled for SMTP.                                     | 'true'                        |
 | `global.distribution.distribution-testerweb.url`              | The external URL for the distribution tester web module.                  | -                             |
 | `global.tlsWildcard.cert`                                     | The wildcard TLS certificate.                                             | -                             |
