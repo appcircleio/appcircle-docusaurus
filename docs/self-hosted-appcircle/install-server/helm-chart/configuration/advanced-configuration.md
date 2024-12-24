@@ -241,16 +241,16 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `kafka.zookeeper.metrics.enabled`                             | Enables metrics for ZooKeeper.                                            | false                         |
 | `kafka.client.protocol`                                       | Protocol used by Kafka clients.                                           | 'PLAINTEXT'                   |
 | `kafka.extraConfig`                                           | Additional configuration file for Kafka.                                  | -                             |
-| `webeventredis.enabled`                                       | Enables Web Event Redis.                                                  | true                          |
-| `webeventredis.tls.enabled`                                   | Enables TLS for Web Event Redis.                                          | false                         |
-| `webeventredis.tls.existingSecret`                            | References an existing TLS secret for Web Event Redis.                    | 'appcircle-tls-wildcard'      |
+| `webeventredis.enabled`                                       | Enables WebEventRedis.                                                  | true                          |
+| `webeventredis.tls.enabled`                                   | Enables TLS for WebEventRedis.                                          | false                         |
+| `webeventredis.tls.existingSecret`                            | References an existing TLS secret for WebEventRedis.                    | 'appcircle-tls-wildcard'      |
 | `webeventredis.tls.certCAFilename`                            | Filename for the CA certificate in TLS.                                   | 'ca.crt'                      |
 | `webeventredis.tls.certFilename`                              | Filename for the server certificate in TLS.                               | 'tls.crt'                     |
 | `webeventredis.tls.certKeyFilename`                           | Filename for the private key in TLS.                                      | 'tls.key'                     |
-| `webeventredis.ingress.enabled`                               | Enables ingress for Web Event Redis.                                      | false                         |
-| `webeventredis.ingress.tls`                                   | Enables TLS for Web Event Redis ingress.                                  | false                         |
-| `webeventredis.ingress.ingressClassName`                      | Specifies the ingress class name for Web Event Redis.                     | `appcircle`                   |
-| `webeventredis.ingress.annotations`                           | Annotations for Web Event Redis ingress.                                  | -                             |
+| `webeventredis.ingress.enabled`                               | Enables ingress for WebEventRedis.                                      | false                         |
+| `webeventredis.ingress.tls`                                   | Enables TLS for WebEventRedis ingress.                                  | false                         |
+| `webeventredis.ingress.ingressClassName`                      | Specifies the ingress class name for WebEventRedis.                     | `appcircle`                   |
+| `webeventredis.ingress.annotations`                           | Annotations for WebEventRedis ingress.                                  | -                             |
 | `minio.enabled`                                               | Enables MinIO.                                                            | true                          |
 | `minio.mode`                                                  | MinIO mode (standalone, distributed, etc.).                               | 'standalone'                  |
 | `minio.persistence.enabled`                                   | Enables persistence for MinIO.                                            | true                          |
