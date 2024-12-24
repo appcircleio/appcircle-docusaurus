@@ -255,9 +255,9 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `minio.mode`                                                  | MinIO mode (standalone, distributed, etc.).                               | 'standalone'                  |
 | `minio.persistence.enabled`                                   | Enables persistence for MinIO.                                            | true                          |
 | `minio.persistence.size`                                      | Size of persistence storage for MinIO.                                    | '8Gi'                         |
-| `mongodb.enabled`                                             | Enables MongodB.                                                          | true                          |
-| `mongodb.persistence.enabled`                                 | Enables persistence for MongodB.                                          | true                          |
-| `mongodb.persistence.size`                                    | Size of persistence storage for MongodB.                                  | '5Gi'                         |
+| `mongodb.enabled`                                             | Enables MongoDB.                                                          | true                          |
+| `mongodb.persistence.enabled`                                 | Enables persistence for MongoDB.                                          | true                          |
+| `mongodb.persistence.size`                                    | Size of persistence storage for MongoDB.                                  | '5Gi'                         |
 | `ingress-nginx.enabled`                                       | Specifies whether ingress-nginx is enabled.                               | true                          |
 | `ingress-nginx.controller.ingressClassResource.name`          | Name of the IngressClass resource.                                        | appcircle                     |
 | `ingress-nginx.controller.ingressClassResource.enabled`       | Specifies whether the IngressClass resource is enabled.                   | true                          |
