@@ -164,9 +164,9 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `global.tlsWildcard.caCert`                                   | The Certificate Authority (CA) for the wildcard certificate.              | -                             |
 | `global.tlsWildcard.key`                                      | The private key for the wildcard certificate.                             | -                             |
 | `global.trustedCerts`                                         | List of trusted certificates.                                             | []                            |
-| `global.minio.url`                                            | External Minio URL.                                                       | -                             |
-| `global.minio.region`                                         | The region for Minio.                                                     | `local`                       |
-| `global.minio.bucketPrefix`                                   | Prefix for Minio buckets.                                                 | `appcircle-local-resource-`   |
+| `global.minio.url`                                            | External MinIO URL.                                                       | -                             |
+| `global.minio.region`                                         | The region for MinIO.                                                     | `local`                       |
+| `global.minio.bucketPrefix`                                   | Prefix for MinIO buckets.                                                 | `appcircle-local-resource-`   |
 | `global.containerRegistrySecret`                              | Secret used for accessing the container registry.                         | -                             |
 | `global.redis.enabled`                                        | Whether a common Redis instance is enabled for all modules.               | `false`                       |
 | `global.redis.everyModule`                                    | Whether separate Redis instances are enabled for each module.             | `true`                        |
@@ -251,10 +251,10 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `webeventredis.ingress.tls`                                   | Enables TLS for Web Event Redis ingress.                                  | false                         |
 | `webeventredis.ingress.ingressClassName`                      | Specifies the ingress class name for Web Event Redis.                     | `appcircle`                   |
 | `webeventredis.ingress.annotations`                           | Annotations for Web Event Redis ingress.                                  | -                             |
-| `minio.enabled`                                               | Enables Minio.                                                            | true                          |
-| `minio.mode`                                                  | Minio mode (standalone, distributed, etc.).                               | 'standalone'                  |
-| `minio.persistence.enabled`                                   | Enables persistence for Minio.                                            | true                          |
-| `minio.persistence.size`                                      | Size of persistence storage for Minio.                                    | '8Gi'                         |
+| `minio.enabled`                                               | Enables MinIO.                                                            | true                          |
+| `minio.mode`                                                  | MinIO mode (standalone, distributed, etc.).                               | 'standalone'                  |
+| `minio.persistence.enabled`                                   | Enables persistence for MinIO.                                            | true                          |
+| `minio.persistence.size`                                      | Size of persistence storage for MinIO.                                    | '8Gi'                         |
 | `mongodb.enabled`                                             | Enables MongodB.                                                          | true                          |
 | `mongodb.persistence.enabled`                                 | Enables persistence for MongodB.                                          | true                          |
 | `mongodb.persistence.size`                                    | Size of persistence storage for MongodB.                                  | '5Gi'                         |
