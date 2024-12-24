@@ -508,7 +508,7 @@ By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STRE
 
 Assuming our sample scenario explained above, these values should be:
 
-- `redis.appcircle.spacetech.com:6379,ssl=false`
+- `kvs.appcircle.spacetech.com:6379,ssl=false`
 - `http://api.appcircle.spacetech.com/build/v1`
 
 for our example configuration.
@@ -516,7 +516,7 @@ for our example configuration.
 :::info
 If your Appcircle server is running with `HTTPS`, then Redis and API URL should be like this:
 
-- `redis.appcircle.spacetech.com:443,ssl=true`
+- `kvs.appcircle.spacetech.com:443,ssl=true`
 - `https://api.appcircle.spacetech.com/build/v1`
 
 :::
