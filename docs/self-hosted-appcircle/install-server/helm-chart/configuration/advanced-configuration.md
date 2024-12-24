@@ -218,10 +218,10 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `auth.auth-keycloak.initialPassword`                          | Initial password for the default user.                                    | -                             |
 | `auth.auth-keycloak.initialUsername`                          | Initial username for the default user.                                    | 'admin@myappcircle.io'        |
 | `auth.auth-keycloak.organizationName`                         | Initial organization name in Keycloak.                                    | 'myappcircle'                 |
-| `auth.auth-keycloak.recaptcha.maxFailures`                    | Maximum failed attempts before requiring a Recaptcha.                     | '4'                           |
-| `auth.auth-keycloak.recaptcha.requirement`                    | Recaptcha requirement level (e.g., DISABLED, OPTIONAL, REQUIRED).         | 'DISABLED'                    |
-| `auth.auth-keycloak.recaptcha.secret`                         | Secret key for Recaptcha integration.                                     | -                             |
-| `auth.auth-keycloak.recaptcha.siteKey`                        | Site key for Recaptcha integration.                                       | -                             |
+| `auth.auth-keycloak.recaptcha.maxFailures`                    | Maximum failed attempts before requiring a reCAPTCHA.                     | '4'                           |
+| `auth.auth-keycloak.recaptcha.requirement`                    | reCAPTCHA requirement level (e.g., DISABLED, OPTIONAL, REQUIRED).         | 'DISABLED'                    |
+| `auth.auth-keycloak.recaptcha.secret`                         | Secret key for reCAPTCHA integration.                                     | -                             |
+| `auth.auth-keycloak.recaptcha.siteKey`                        | Site key for reCAPTCHA integration.                                       | -                             |
 | `auth.auth-keycloak.userLookupDecisionStrategy`               | Strategy for user lookup decisions in Keycloak.                           | -                             |
 | `auth.auth-postgresql.architecture`                           | Defines the architecture of PostgreSQL (e.g., standalone, replication).   | standalone                    |
 | `auth.auth-postgresql.enabled`                                | Enables PostgreSQL for Keycloak.                                          | true                          |
