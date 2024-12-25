@@ -128,7 +128,9 @@ The **`kubectl`** CLI is **required**.
 
 The Kubernetes cluster should have **an Ingress controller** installed and configured since Appcircle exposes its services through **Ingress objects**.
 
-For **trial** purposes, you can **use** the default **Ingress-Nginx** controller deployed **within the Helm chart** scope.
+For **trial** purposes, you can **use** the default **Ingress-Nginx** controller deployed **within the Helm chart** scope and skip this section.
+
+You can check the default Ingress-Nginx controller values and configure as your needs by checking the [Ingress Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ingress-configuration.md#appcircle-default-ingress-nginx-configuration) documentation.
 
 For **production** environments, it's recommended to use **your own Ingress controller**.
 
@@ -151,6 +153,12 @@ Enable **`ssl-passthrough`** feature on your ingress-controller Enabling the SSL
 :::info
 Enabling the SSL passthrough option **does not** automatically allow all SSL traffic **from all Ingress objects** to pass through to the original service. Instead, it enables Ingress resources to leverage the SSL passthrough feature, allowing encrypted traffic to reach the backend service without being decrypted by the Ingress controller.
 :::
+
+#### Ingress Configurations
+
+You can **skip** this section **if you use the default** Ingress-Nginx controller deployed **within the Helm chart scope**.
+
+Configure the Appcircle ingresses for production usage. For more details, please check the [Ingress Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ingress-configuration.md#configuring-ingress-annotations) documentation.
 
 ### 2. Production Readiness
 
