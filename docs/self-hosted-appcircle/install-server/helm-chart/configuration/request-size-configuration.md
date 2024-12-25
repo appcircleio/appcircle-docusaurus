@@ -6,6 +6,7 @@ sidebar_position: 60
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
 
 ## Overview
 
@@ -30,5 +31,7 @@ resource:
       # For HAProxy Kubernetes Ingress Controller
       haproxy.ingress.kubernetes.io/body-size: 1024m
 ```
+
+<ApplyHelmConfigurationChanges />
 
 <NeedHelp />

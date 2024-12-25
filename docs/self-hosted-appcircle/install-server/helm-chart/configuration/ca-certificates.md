@@ -6,6 +6,7 @@ sidebar_position: 50
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
 
 ## Adding Trusted CA Certificates to the Appcircle Services
 
@@ -44,5 +45,7 @@ global:
         ZmukIMGOIYPWDhsuJA==
         -----END CERTIFICATE-----
 ```
+
+<ApplyHelmConfigurationChanges />
 
 <NeedHelp />

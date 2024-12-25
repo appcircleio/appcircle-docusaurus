@@ -6,6 +6,7 @@ sidebar_position: 100
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
 
 For advanced configuration options, open the `values.yaml` file with your preferred text editor and modify the settings as needed.
 
@@ -122,6 +123,10 @@ web:
 webhook:
   replicaCount: 2
 ```
+
+## Applying Configuration Changes
+
+<ApplyHelmConfigurationChanges />
 
 ## Values Table
 
