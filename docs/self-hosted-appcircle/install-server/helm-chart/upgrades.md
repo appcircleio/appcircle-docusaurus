@@ -36,6 +36,28 @@ helm upgrade appcircle-server appcircle/appcircle \
 
 By following these steps, you can ensure that your Appcircle server is updated to the latest version with all the latest features.
 
+## Version History
+
+Below is the version history of the self-hosted Appcircle server and the Helm chart. This table helps you track the latest updates and releases since your current version.
+
+<!-- Version Anchor Links -->
+
+[3.23.1]: https://docs.appcircle.io/release-notes#3231---2024-11-13-enable-captcha-for-enterprise-portal-sso-improvements-bug-fixes-and-more
+
+<details>
+    <summary>Click to view version history.</summary>
+
+        Since the cloud and self-hosted versions are released asynchronously, the release dates listed in the table may differ from those on the **[Release Notes](https://docs.appcircle.io/release-notes)** page.
+
+        | Appcircle Server Version | Helm Chart Version | Release Date |
+        | ------------------------ | ------------------ | ------------ |
+        | 3.23.2                   | 0.1.1              | 23/12/2024   |
+        | 3.23.2                   | 0.1.0              | 20/12/2024   |
+
+</details>
+
+
+
 ## Updating to a Specific Version
 
 You can specify a **specific version** of the Appcircle Helm chart by adding the `--version` flag to the Helm upgrade command.
@@ -80,15 +102,15 @@ If your Helm chart is not updating to the latest version, it could be due to sev
 
 2. **Clear the Local Cache:** Sometimes, clearing the local cache can help in fetching the latest charts.
 
-  - For Linux, delete `$HOME/.cache/helm` directory.
-    ```sh
-      rm -rf "$HOME/.cache/helm"
-    ```
-  - For MacOS, delete `$HOME/Library/Caches/helm` directory.
-    ```sh
-      rm -rf "$HOME/Library/Caches/helm"
-    ```
-  - For Windows, delete `%TEMP%\helm` folder.
+- For Linux, delete `$HOME/.cache/helm` directory.
+  ```sh
+  rm -rf "$HOME/.cache/helm"
+  ```
+- For MacOS, delete `$HOME/Library/Caches/helm` directory.
+  ```sh
+  rm -rf "$HOME/Library/Caches/helm"
+  ```
+- For Windows, delete `%TEMP%\helm` folder.
 
 3. **Re-add the Repository:** If the update doesn't resolve the issue, try removing and re-adding the repository:
 
