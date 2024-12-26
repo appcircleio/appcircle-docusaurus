@@ -1,5 +1,5 @@
 ---
-title: Enterprise App Store Customization
+title: Customize Enterprise App Store
 description: Customize the Enterprise App Store on self-hosted installations
 tags: [enterprise app store, customize, self-hosted]
 sidebar_position: 14
