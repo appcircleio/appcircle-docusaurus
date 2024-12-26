@@ -16,6 +16,7 @@ This component supports the following test and coverage formats:
 - [**JaCoCo**](https://www.jacoco.org)
 - [**Cobertura**](https://cobertura.github.io/cobertura)
 - [**lcov.info**](https://lcov-viewer.netlify.app)
+- [**Cucumber**](https://cucumber.io/)
 
 For additional details, please refer to the document: 
 - [**Generating Test Report**](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report)
