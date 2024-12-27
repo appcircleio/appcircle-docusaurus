@@ -152,3 +152,103 @@ If adding two **Android Build** steps makes the build process too lengthy, you c
     4. **Convert AAB to APK:** This step will convert the generated AAB into an APK.
 
 These steps will ensure that both an AAB and an APK are generated during your build process.
+
+
+### How do I manage Android dependencies with Artifactory repository manager?
+
+Integrating an Artifactory repository manager into your Android build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using **Nexus Repository Manager** as an example in conjunction with the Appcircle **Android Build** workflow step.
+
+#### Example: Configuring Nexus Repository Manager for Android Builds
+
+#### 1. **Set Up Nexus Repository**
+
+- Ensure your Nexus Repository Manager is properly installed and configured. For hosted installations, follow the [official Nexus documentation](https://help.sonatype.com/repomanager3) to set up your Maven or Gradle repositories.  
+- Create a hosted Maven repository (or any repository format compatible with your project). Name the repository, for example, `android-repo`.
+
+#### 2. **Publish Dependencies to Nexus**
+
+- Add your dependency artifacts to the Nexus repository.  
+
+Example of deploying a dependency with Gradle:  
+
+**Example-1:**  
+
+```gradle
+
+repositories {
+    maven {
+        url 'https://your-nexus-url/repository/android-repo/'
+    }
+    google()
+    mavenCentral()
+}
+
+```
+
+**Example-2:**
+
+```gradle
+   publishing {
+       publications {
+           mavenJava(MavenPublication) {
+               groupId = 'com.example.library'
+               artifactId = 'my-library'
+               version = '1.0.0'
+
+               from components.java
+           }
+       }
+       repositories {
+           maven {
+               url = 'https://your-nexus-url/repository/android-repo/'
+               credentials {
+                   username = "your-username"
+                   password = "your-password"
+               }
+           }
+       }
+   }
+```
+
+#### 3. Integrate Nexus into Your Android Project
+
+- In your Android project’s build.gradle (or settings.gradle if using Gradle Version Catalog), configure Nexus as a repository.
+
+**Example configuration:**
+
+```gradle
+
+   repositories {
+       maven {
+           url 'https://your-nexus-url/repository/android-repo/'
+           credentials {
+               username = "your-username"
+               password = "your-password"
+           }
+       }
+       google()
+       mavenCentral()
+   }
+
+```
+
+   Replace `your-nexus-url`, `your-username`, and `your-password` (if you are authorizing via project) with your actual Nexus credentials and repository URL.
+
+#### 4. **Add Dependencies to Your Project**
+
+- Reference dependencies hosted in Nexus just as you would for any other Maven repository.
+
+**Example:**
+   
+```gradle
+
+   dependencies {
+       implementation 'com.example.library:my-library:1.0.0'
+   }
+
+```
+
+#### 5. **Run the Build Workflow**
+
+- Trigger your build through Appcircle. The workflow will fetch dependencies from the Nexus repository as configured and compile the project with them.
+- Logs will show dependency resolution status to confirm successful integration with Nexus.

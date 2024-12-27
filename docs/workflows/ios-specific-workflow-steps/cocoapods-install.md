@@ -54,18 +54,28 @@ https://github.com/appcircleio/appcircle-cocoapods-component
 
 ## FAQ
 
-### How to configure CocoaPods file for Private Repositories?
+### How do I manage iOS dependencies with Artifactıry repository manager?
 
-If you are using an artifactory like Nexus, the CocoaPods file must be configured so that Appcircle can access the dependencies in this artifactory during the CI pipeline.
+Integrating an Artifactory repository manager into your iOS build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using **Nexus Repository Manager** as an example in conjunction with the Appcircle **CocoaPods Install** workflow step. Please ensure your Nexus Repository Manager is properly installed and configured. For more information, please visit the [official Nexus documentation](https://help.sonatype.com/repomanager3).
 
-For this, the `source url` value of the `Pods` file in the project must be replaced with the relevant artifactory.
+:::caution Authentication Requirements
+
+If you are using this kind of artifactory and need to authorize the repository it contains, you can do this with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a Custom Script and adding the credentials to the .gitcredentials file.
+
+:::
+
+For more information about Nexus integration with CocoaPods, please visit the [Nexus CocoaPods documentations](https://help.sonatype.com/en/cocoapods-repositories.html).
+
+#### Example 1: How can I fetch the all dependencies from Nexus with CocoaPods?
+
+In the **CocoaPods Install** step, in order to pull dependencies from Nexus or another artifactory, you need to make some changes in the Pods file. For this, the `source url` value of the `Pods` file in the project must be replaced with the relevant artifactory. A short example is shown in the following bash script.
 
 ```bash
 
 platform :ios, '13.0'
 target 'MyApp' do
 
-  use_frameworks!
+use_frameworks!
   source 'https://nexus.example.com/repository/cocoapods-specs.git'
 
   pod 'AFNetworking', '~> 4.0'
@@ -81,6 +91,8 @@ end
 
 ```
 
+#### Example 2: How can I fetch the all dependencies from different repositories?
+
 If you want to fetch a dependency from a source other than this artifactory, you can set up your `Pod` file as shown below. This `Pod` file will pull any pods that are explicitly referenced from the specified URL, while all other dependencies will be retrieved directly from the default `source URL`.
 
 ```bash
@@ -88,7 +100,7 @@ If you want to fetch a dependency from a source other than this artifactory, you
 platform :ios, '13.0'
 target 'MyApp' do
 
-  use_frameworks!
+use_frameworks!
   source 'https://nexus.example.com/repository/cocoapods-specs.git'
 
   pod 'AFNetworking', '~> 4.0'
@@ -105,3 +117,8 @@ end
 .
 
 ```
+
+After these changes;
+
+- Trigger your build through Appcircle. The workflow will fetch dependencies from the Nexus repository as configured and compile the project with them.
+- Logs will show dependency resolution status to confirm successful integration with Nexus.
