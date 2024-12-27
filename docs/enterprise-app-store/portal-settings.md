@@ -1,7 +1,7 @@
 ---
 title: Portal Settings
 description: Learn how to configure your enterprise app store profile in Appcircle
-tags: [store settings, enterprise app store, authentication, custom domain, sso, ldap, static login, saml, openid, two-factor authentication]
+tags: [store settings, enterprise app store, captcha, authentication, custom domain, sso, ldap, static login, saml, openid, two-factor authentication]
 sidebar_position: 3
 ---
 
@@ -24,7 +24,7 @@ SSO and LDAP login is only available for Enterprise accounts. Only the Organizat
 
 Enterprise Portal authentication can be set to 'none,' allowing users to log in automatically without entering credentials.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4456.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-none.png" alt="None Authentication Type for Enterprise Portal" />
 
 Please note that this authentication method will also affect the shared links and QR codes for app versions across all Enterprise Store profiles.
 
@@ -32,13 +32,13 @@ Please note that this authentication method will also affect the shared links an
 
 You can set a different username and password for live and beta apps. The usernames of the live and beta section must be different.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4456-2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-static.png" alt="Static Authentication Type for Enterprise Portal" />
 
 ### SSO Login
 
-You may also use SSO for your Enterprise Portal. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please follow [Store Authentications](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication) documentation.
+You may also use SSO for your Enterprise Portal. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please follow [Store Authentications](/account/my-organization/security/authentications/store-sso-authentication) documentation.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-3.png' />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-sso.png" alt="SSO Authentication Type for Enterprise Portal" />
 
 :::info
 
@@ -50,16 +50,16 @@ If you're configuring SAML Provider, you must set `https://auth.appcircle.io/aut
 
 You can follow the below documents to connect your identity providers. If your Identity Provider is not on the list, you can follow any OpenID or SAML integration guide from the below list to find out the parameters.
 
-- [Auth0 OpenID](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication#4-specific-provider-configuration)
-- [Auth0 SAML](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication#4-specific-provider-configuration)
-- [Azure AD SAML](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication#4-specific-provider-configuration)
-- [Okta OpenID](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication#4-specific-provider-configuration)
-- [Okta SAML](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication#4-specific-provider-configuration)
-- [OneLogin SAML](/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication#4-specific-provider-configuration)
+- [Auth0 OpenID](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [Auth0 SAML](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [Azure AD SAML](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [Okta OpenID](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [Okta SAML](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
+- [OneLogin SAML](/account/my-organization/security/authentications/store-sso-authentication#4-specific-provider-configuration)
 
 Please check the below document to learn more about SSO integration.
 
-<ContentRef url="/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication">
+<ContentRef url="/account/my-organization/security/authentications/store-sso-authentication">
   Single Sign-On
 </ContentRef>
 
@@ -67,7 +67,7 @@ Please check the below document to learn more about SSO integration.
 
 In order to create an LDAP login, first click the **Activate** link next to the LDAP login. If you select **Enable LDAP Login**, your previous login options will be disabled and LDAP login will be enabled. Click the **Details** link and then click the **Create** link. Appcircle supports multiple LDAP providers. You can add multiple LDAP servers with different settings.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-4.png' />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-ldap.png" alt="LDAP Authentication Type for Enterprise Portal" />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-6.png' />
 
@@ -148,7 +148,7 @@ You can customize your store prefix which will be reflected in your Enterprise P
 
 The URL can be copied by clicking the copy icon next to it.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-9.png' />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-prefix.png" alt="Store Prefix Settings for Enterprise Portal" />
 
 ### Custom Domain
 
@@ -175,7 +175,7 @@ The below screenshot shows an example configuration screen from Cloudflare.
 
 After creating the DNS settings, type your custom domain name, select your certificate, and update the configuration. DNS changes can take time to propagate. You may have to wait a few minutes or hours to see the redirect.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4456-5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-domain.png" alt="Custom Domain Settings for Enterprise Portal" />
 
 :::caution
 
@@ -185,3 +185,36 @@ Only the main organization has the privilege to Set up, Configure and Customize 
 :::
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4082-enterprisesub.png" />
+
+## Enable Captcha
+
+The captcha configuration in the Enterprise App Store module is designed to enhance login security for the Enterprise Portal. It provides flexibility for administrators to control how and when captcha is enforced, as well as to set restrictions on failed login attempts.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-captcha.png" alt="Captcha Settings for Enterprise Portal" />
+
+#### Captcha Enable/Disable Toggle
+
+- **Disabled**: The captcha system remains inactive regardless of the number of failed login attempts.
+- **Enabled**: The captcha system enforces additional security based on two specific settings available in the user interface.
+
+#### When Captcha Will Be Shown
+
+Defines the threshold of failed login attempts after which captcha is displayed to users.
+
+The default setting is 3. However, it can be set to 0 to always enable captcha, requiring users to solve it on every login attempt.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-portal1.png" alt="Captcha Display for Enterprise Portal" />
+
+#### Restrict Failed Attempts
+
+Limits the number of login attempts a user can make after which the system blocks further attempts.
+
+The maximum number of failed attempts is determined by the value set in this configuration. This value must be greater than 1.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-portal2.png" alt="Captcha Maximum Attempts Display for Enterprise Portal" />
+
+If a user gets restriction due to failed attempts, the recovery time is 1 hour.
+
+:::info
+Please note that Enable Captcha feature is only available for organizations with an Enterprise license.
+:::

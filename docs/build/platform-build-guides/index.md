@@ -4,11 +4,11 @@ description: Find detailed instructions on building applications for various pla
 tags:
   [
     platform build guides,
-    iOS build,
-    Android build,
+    ios build,
+    android build,
     React Native build,
-    Flutter build,
-    Ionic build,
+    flutter build,
+    ionic build,
     .NET MAUI build,
     MAUI build,
     app development,
@@ -21,47 +21,33 @@ tags:
 
 Find detailed instructions on building applications for various platforms using Appcircle:
 
-### Building iOS Applications
+### [Building iOS Applications](/build/platform-build-guides/building-ios-applications)
 
 Comprehensive guide for setting up iOS app builds, from provisioning to distribution.
 
-<ContentRef url="/build/platform-build-guides/building-ios-applications"> Building iOS Applications </ContentRef>
-
-### Building Android Applications
+### [Building Android Applications](/build/platform-build-guides/building-android-applications)
 
 Step-by-step instructions on how to configure and optimize the Android build process.
 
-<ContentRef url="/build/platform-build-guides/building-android-applications"> Building Android Applications </ContentRef>
-
-### Building React Native Applications
+### [Building React Native Applications](/build/platform-build-guides/building-react-native-applications)
 
 Tailored guidance for building React Native apps, covering both iOS and Android builds.
 
-<ContentRef url="/build/platform-build-guides/building-react-native-applications"> Building React Native Applications </ContentRef>
-
-### Building Flutter Applications
+### [Building Flutter Applications](/build/platform-build-guides/building-flutter-applications)
 
 Everything you need to know to build Flutter applications for multiple platforms.
 
-<ContentRef url="/build/platform-build-guides/building-flutter-applications"> Building Flutter Applications </ContentRef>
-
-### Building Ionic Projects with Custom Scripts
+### [Building Ionic Projects with Custom Scripts](/build/platform-build-guides/building-ionic-projects-with-custom-scripts)
 
 Learn how to use custom scripts to build and customize Ionic projects for any requirements.
 
-<ContentRef url="/build/platform-build-guides/building-ionic-projects-with-custom-scripts"> Building Ionic Projects with Custom Scripts </ContentRef>
-
-### Building .NET MAUI Apps
+### [Building .NET MAUI Apps](/build/platform-build-guides/building-dotnet-maui-apps)
 
 Learn how to use custom scripts to build and customize .NET MAUI apps on Appcircle.
 
-<ContentRef url="/build/platform-build-guides/building-dotnet-maui-apps">Building .NET MAUI Apps</ContentRef>
-
-### Building Xamarin Apps
+### [Building Xamarin Apps](/build/platform-build-guides/building-xamarin-apps)
 
 Learn how to use custom scripts to build and customize Xamarin apps on Appcircle.
-
-<ContentRef url="/build/platform-build-guides/building-xamarin-apps">Building Xamarin Apps</ContentRef>
 
 ## FAQ
 

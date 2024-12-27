@@ -199,22 +199,16 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main4.png' />
 
-To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
+To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Security screen and press the "Connect" button next to SSO Login or LDAP Login under the "Authentications" section.
 
-<ContentRef url="/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication">SSO Login</ContentRef>
-<ContentRef url="/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication">LDAP Login</ContentRef>
+<ContentRef url="/account/my-organization/security/authentications/distribution-sso-authentication">SSO Login</ContentRef>
+<ContentRef url="/account/my-organization/security/authentications/distribution-ldap-authentication">LDAP Login</ContentRef>
 
 :::info
 
 If SSO and LDAP details are not configured for your organization, these authentication methods will not be visible in the Distribution Profile settings.
 
 :::
-
-### Device Registration (iOS Only)
-
-You may enable this option to automatically register devices in the Apple Developer Portal and update your Ad Hoc provisioning profiles. You must select App Store Connect API Key, a build profile, and a configuration.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main5.png' />
 
 ### Public Link
 
@@ -250,7 +244,7 @@ Commit Message: $AC_COMMIT_MESSAGE
 
 :::info
 
-If you are using the Self-Hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io.
+If you are using the self-hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io address. For details on how to configure SMTP settings in a self-hosted installation see [Email Integration](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/integration#email).
 
 :::
 

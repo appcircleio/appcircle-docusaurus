@@ -10,7 +10,7 @@ tags:
     binary distribution,
     ipa distribution,
     apk distribution,
-    github-marketplace,
+    github marketplace,
   ]
 sidebar_position: 2
 ---
@@ -21,8 +21,8 @@ The Appcircle Enterprise App Store action allows users to publish their apps to 
 
 **Compatible Agents:**
 
-- macos-14 (arm64)
-- Ubuntu-22.04
+- macOS 14 (arm64)
+- Ubuntu 22.04 (x86_64)
 
 :::caution
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
@@ -31,7 +31,7 @@ Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-h
 ### Discover Action
 
 You can discover more about this action and install it from:
-https://github.com/marketplace/actions/appcircle-enterprise-store
+https://github.com/marketplace/actions/appcircle-enterprise-app-store
 
 ### How to Add the Appcircle Enterprise App Store Action to Your Pipeline
 

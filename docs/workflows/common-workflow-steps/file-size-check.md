@@ -14,13 +14,15 @@ The workflow steps that need to be executed before running the **File Size Check
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Devices**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator) | If your project is an **iOS** project using **Objective-C/Swift** or **React Native**, you should use this step to generate the file before checking the app file size. This step generates the **IPA** file. |
-| [**Flutter Build for iOS**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/#flutter-build-for-ios) | If your project is an **iOS** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates an **IPA** file. |
-| [**Android Build**](https://docs.appcircle.io/workflows/android-specific-workflow-steps#android-build) | If your project is an **Android** project using **Java/Kotlin** or **React Native**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
-| [**Flutter Build for Android**](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/#flutter-build-for-android) | If your project is an **Android** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) | If your project is an **iOS** project using **Objective-C/Swift** or **React Native**, you should use this step to generate the file before checking the app file size. This step generates the **IPA** file. |
+| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps/flutter-build-for-ios) | If your project is an **iOS** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates an **IPA** file. |
+| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | If your project is an **Android** project using **Java/Kotlin** or **React Native**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
+| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps/flutter-build-for-android) | If your project is an **Android** project using **Flutter**, you should use this step to generate the file before checking the app file size. This step generates **APK** or **AAB** files. |
 
 :::danger
+
 If you use a different build step than the ones mentioned above to generate the app, then the **File Size Check** step depends on this particular step.
+
 :::
 
 #### For iOS
@@ -30,6 +32,11 @@ If you use a different build step than the ones mentioned above to generate the 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_order_android.png' />
 
 ### Input Variables
+
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+
+:::note
+
 When you enter this component detail, you need to specify the **File Size** and **Check Action**. The file size parameter here represents the **maximum allowable** size of the **IPA**, **APK** or **AAB** file. If the archived application size exceeds this size, the pipeline will be **broken** or **warned** according to the **fail** or **warn** option you specify in the check action parameter.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_action.png' />
@@ -38,7 +45,7 @@ If you select **warn**, this is how it will appear in your build list:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_warn.png' />
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+:::
 
 | Variable Name                    | Description                                    | Status                    |
 |----------------------------------|------------------------------------------------|--------------------------|
@@ -47,8 +54,12 @@ You can find all the parameters required for this step in the table below, with 
 | `$AC_ANALYZER_FILESIZE_ACTION`   |  Specifies whether to issue a warning or fail the workflow if the threshold limit is exceeded. The options are **warn** and **fail**, with the default being **fail**. | Optional |
 
 :::caution
+
 Note that this step only controls the size of the application generated according to the size variable you specify. 
+
 :::
+
+---
 
 To access the source code of this component, please use the following link:
 
