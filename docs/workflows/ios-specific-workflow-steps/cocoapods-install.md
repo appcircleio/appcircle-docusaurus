@@ -54,6 +54,62 @@ https://github.com/appcircleio/appcircle-cocoapods-component
 
 ## FAQ
 
+### How to configure CocoaPods file for Private Repositories?
+
+If you are using an artifactory like Nexus, the CocoaPods file must be configured so that Appcircle can access the dependencies in this artifactory during the CI pipeline.
+
+For this, the `source url` value of the `Pods` file in the project must be replaced with the relevant artifactory.
+
+```bash
+
+platform :ios, '13.0'
+target 'MyApp' do
+
+  use_frameworks!
+  source 'https://nexus.example.com/repository/cocoapods-specs.git'
+
+  pod 'AFNetworking', '~> 4.0'
+  pod 'Alamofire', '~> 5.4'
+
+end
+
+.
+.
+.
+.
+.
+
+```
+
+If you want to fetch a dependency from a source other than this artifactory, you can set up your `Pod` file as shown below. This `Pod` file will pull any pods that are explicitly referenced from the specified URL, while all other dependencies will be retrieved directly from the default `source URL`.
+
+```bash
+
+platform :ios, '13.0'
+target 'MyApp' do
+
+  use_frameworks!
+  source 'https://nexus.example.com/repository/cocoapods-specs.git'
+
+  pod 'AFNetworking', '~> 4.0'
+  pod 'Alamofire', '~> 5.4'
+
+  pod 'MyPrivatePod', :git => 'https://git.mycompany.com/MyPrivatePod.git', :branch => 'main'
+
+end
+
+.
+.
+.
+.
+.
+
+```
+
+---
+
+## FAQ
+
 ### How do I manage iOS dependencies with Artifactıry repository manager?
 
 Integrating an Artifactory repository manager into your iOS build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using **Nexus Repository Manager** as an example in conjunction with the Appcircle **CocoaPods Install** workflow step. Please ensure your Nexus Repository Manager is properly installed and configured. For more information, please visit the [official Nexus documentation](https://help.sonatype.com/repomanager3).
