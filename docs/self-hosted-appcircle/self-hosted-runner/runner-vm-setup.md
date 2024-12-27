@@ -622,14 +622,14 @@ In docker terminology, `vm01` and `vm02` will be our docker images. We will conf
 
 ### Configure Runner VM Resources
 
-You can adjust the resource limits for Runner VMs based on your needs.
+You can adjust the resource limits for runner VMs based on your needs.
 
 :::info
 By default, our runner images are configured with an 8GB memory limit and 4 CPU cores.
 :::
 
 :::caution
-Total allocated resources (memory, cpu) for all VMs combined, should not exceed host machine's physical capacity for optimal performance.
+Total allocated resources (memory, CPU) for all VMs combined, should not exceed host machine's physical capacity for optimal performance.
 :::
 
 #### Set Memory Limits
@@ -671,6 +671,7 @@ To configure the number of CPU cores for a VM, run the following command:
 
 :::tip
 To check the total number of CPU cores on your system, use the following command:
+
 ```bash
 sysctl -n hw.ncpu
 ```
