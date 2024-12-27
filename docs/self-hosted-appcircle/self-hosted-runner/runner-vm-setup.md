@@ -620,6 +620,86 @@ It's not recommended to delete the base image (`macOS_YY0M0D`) as it won't save 
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
 
+### Configure Runner VM Resources
+
+You can adjust the resource limits for runner VMs based on your needs.
+
+:::info
+By default, our runner images are configured with an 8GB memory limit and 4 CPU cores.
+:::
+
+:::caution
+Total allocated resources (memory, CPU) for all VMs combined, should not exceed host machine's physical capacity for optimal performance.
+:::
+
+#### Set Memory Limits
+
+To configure the memory limit for a VM, run the following command:
+
+   ```bash
+   tart set <vm_name> --memory <size_in_mb>
+   ```
+
+   Replace `vm_name` with your VM's name and `size_in_mb` with the desired memory size in MB. E.g.,
+   > `tart set vm01 --memory 8192` (8GB)
+
+   > `tart set vm01 --memory 16384` (16GB)
+
+:::tip
+Example configurations:
+
+| Host Memory Size | Runner Memory Config. |
+|------------------|-----------------------|
+| 8GB              | 1 x VM with 8GB       |
+| 16GB             | 2 x VM with 8GB       |
+| 16GB             | 1 x VM with 16GB      |
+| 32GB             | 2 x VM with 16GB      |
+:::
+
+#### Set CPU Limits
+
+To configure the number of CPU cores for a VM, run the following command:
+
+   ```bash
+   tart set <vm_name> --cpu <count>
+   ```
+
+   Replace `vm_name` with your VM's name and `count` with the desired number of CPU cores. E.g.,
+   > `tart set vm01 --cpu 4`
+
+   > `tart set vm01 --cpu 8`
+
+:::tip
+To check the total number of CPU cores on your system, use the following command:
+
+```bash
+sysctl -n hw.ncpu
+```
+
+If you have an 8 core CPU according to the command output, you can run 2 VMs and allocate half of the cores to each one, which means 4 cores per VM. Or you can run a single VM using all 8 cores.
+
+Example configurations:
+
+| Host CPU Cores | Runner CPU Config.   |
+|----------------|----------------------|
+| 8              | 2 x VM with 4 Cores  |
+| 8              | 1 x VM with 8 Cores  |
+
+:::
+
+#### Backing Up and Restoring VM Configuration
+
+When recreating VMs or upgrading to a new image, it's important to preserve your custom settings.
+
+1. Before making changes, backup your base VM's configuration file at `~/.tart/vms/<vm_name>/config.json`.
+
+2. After recreating or upgrading the VM, you can either:
+   - Restore the entire configuration:
+     ```bash
+     cp /path/to/your/backup/config.json ~/.tart/vms/<vm_name>/config.json
+     ```
+   - Or, manually set the values again using the `tart set` commands.
+
 ### Configure Base Runner VMs
 
 Be cautious when updating the base VMs (`vm01` and `vm02`). Any changes made on these base VMs are persisted and may affect disk usage, keychain, and cache files on the runner VMs created from them.
