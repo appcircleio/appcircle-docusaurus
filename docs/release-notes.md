@@ -26,6 +26,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Authentication settings can now be configured through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
 - Testing groups for the auto-send feature can now be configured through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
 - A new method has been added to sub-organization distributions through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin. Versions can now be distributed using the Root Organization’s PAT and the sub-organization’s name when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest (final) release of the [Xcode 16.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_2-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
