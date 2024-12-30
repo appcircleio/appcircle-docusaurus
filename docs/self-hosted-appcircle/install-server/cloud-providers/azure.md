@@ -68,7 +68,7 @@ After you meet all the requirements discussed above, you can follow the steps be
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-2-create-vm-button.png' />
 
-You should fill out the required fields as per your needs. Please follow the below steps for a sample instance configuration.
+You should fill out the required fields as per your needs. Please follow the steps below for a sample instance configuration.
 
 - Select the Subscription and Resource group for your needs.
 
@@ -82,7 +82,7 @@ You should fill out the required fields as per your needs. Please follow the bel
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-4-create-vm-2-see-all-images.png' />
 
-- Search for "Appcircle" in the "Marketplace" tab and click on the "Select" button for the server image and select "Gen2".
+- Search for "Appcircle" in the "Marketplace" tab and click on the "Select" button for the server image and select "Plan BYOL - x64 Gen2".
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-5-create-vm-3-select-appcircle-image.png' />
 
@@ -100,6 +100,8 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-6-create-vm-authentication.png' />
 
+- Click "Next: Disks >"
+
 - From the Disks menu, configure the OS disk size. By default, the image comes with 100 GiB of disk space. You can increase that size for your needs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-7-create-vm-disks.png' />
@@ -108,11 +110,13 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](/self-hosted-appcircle/install-server/docker#hardware-requirements) section.
 :::
 
+- Click "Next: Networking >"
+
 - We will use the default Virtual network that Azure provides. You can customize the network according to your needs, such as limiting incoming traffic to known IP addresses for SSH connections.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-8-create-vm-network.png' />
 
-Now you're ready to click on the **Review + create** & **Create** button to create the virtual machine with the configuration you made.
+Now you're ready to create the virtual machine with the configuration you made. Click on the **Review + create**, then click **Create** on the next page.
 
 After the deployment is completed, you can click **Go to resource** button or head to the **Virtual machines** service to see the deployed instance.
 
@@ -151,7 +155,7 @@ The default user for the Appcircle server image is `ubuntu` if you have followed
 
 So, let's assume that your instance IP address is `34.205.139.17` and your private SSH key path is `/home/spacetech/.ssh/id_rsa`.
 
-You can connect to the instance using the below command on macOS or Linux.
+You can connect to the instance using the command below on macOS or Linux.
 
 ```bash
 ssh -i "/home/spacetech/.ssh/id_rsa" ubuntu@34.205.139.17
@@ -190,7 +194,48 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 
 ## Connecting Runners
 
-<ConnectingRunners />
+When you complete installation successfully by following the above steps, you're ready for your first build. :tada:
+
+But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply the related the guidelines [here](/self-hosted-appcircle/self-hosted-runner/installation).
+
+:::tip  
+You can install the Appcircle runner on another Azure VM by ensuring the VM size meets the runner's requirements. Check the Appcircle runner installation page for detailed requirements. 
+:::
+
+The self-hosted runner section in the documents has all the details about runners and their configuration.
+
+:::::caution
+
+By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STREAM_ENDPOINT` and `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
+
+- `webeventredis.appcircle.io:6379,ssl=true`
+- `https://api.appcircle.io/build/v1`
+
+:point_up: You need to change these values with your self-hosted Appcircle server's Redis and API URL.
+
+Assuming our sample scenario explained above, these values should be:
+
+- `redis.appcircle.spacetech.com:6379,ssl=false`
+- `http://api.appcircle.spacetech.com/build/v1`
+
+for our example configuration.
+
+:::info
+If your Appcircle server is running with `HTTPS`, then Redis and API URL should be like this:
+
+- `redis.appcircle.spacetech.com:443,ssl=true`
+- `https://api.appcircle.spacetech.com/build/v1`
+
+:::
+
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.
+
+Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
+
+:::::
+Considering system performance, it will be good to install self-hosted runners on other machines. A self-hosted Appcircle server should run on a dedicated machine itself.
+
+You can install any number of runners according to your needs and connect them to a self-hosted Appcircle server.
 
 <NeedHelp />
 
