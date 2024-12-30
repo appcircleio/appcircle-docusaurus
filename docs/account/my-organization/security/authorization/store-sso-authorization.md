@@ -241,8 +241,7 @@ This section provides a brief summary of the configuration steps.
  
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-refresh-application-data.png' />
 
-#### Define Group Claim in Appcircle
-
+#### Step 2. Define Group Claim in Appcircle
 
 1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
 2. Select the **Manage** on the **Enterprise Portal SSO Login**.
@@ -256,6 +255,20 @@ This section provides a brief summary of the configuration steps.
 4. Enter the **Claim Name (OpenID)/Attribute Name (SAML)** as ``groups``.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-org-id-claim.png' />
+
+#### Step 3: Update SSO Scope Configuration
+
+1. Navigate to the **Organization > Security > Authentications** section on your dashboard.  
+2. Select the **Manage** option under the **Enterprise Portal SSO Login**.  
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
+
+3. Select **Manage Authentication** and click the **Edit** button.  
+4. Add the **groups** to the **Default Scope** field.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-openid-groups.png' /> 
+
+5. Click the **Save** button.
 
 </details>
 

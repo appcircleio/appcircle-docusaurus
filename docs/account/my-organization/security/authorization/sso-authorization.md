@@ -497,6 +497,20 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-group-role-claim-name.png' />
 
+#### Step 5: Update SSO Scope Configuration
+
+1. Navigate to the **Organization > Security > Authentications** section on your dashboard.  
+2. Select the **Manage** option under the **Appcircle SSO Login**.  
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
+
+3. Select **Manage Authentication** and click the **Edit** button.
+4. Add the **groups** to the **Default Scope** field.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-openid-groups.png' /> 
+
+5. Click the **Save** button.
+
 </details>
 
 <details>
