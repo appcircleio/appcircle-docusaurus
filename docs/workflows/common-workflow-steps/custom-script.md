@@ -396,3 +396,63 @@ This script generates a timestamped log file (e.g., `ac-log-2024-10-01-14-55.txt
 Ensure that the **Custom Script** step runs after the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step to capture the full log.
 
 :::
+
+### How can I print the status of workflow steps with detailed information?
+
+If you want to track or share the status of your workflow or individual steps during a build, you can use the following environment variables:  
+
+- **`$AC_BUILD_STATUS`**: Displays the overall status of the workflow.
+- **`$AC_BUILD_STEP_STATUS`**: Displays detailed information about each executed step.  
+
+However, the output of `$AC_BUILD_STEP_STATUS` is in raw JSON format, which may not be easy to read directly. To make it more readable, you can use the following Ruby script to format and print the information in a user-friendly way:
+
+```ruby
+require 'json'
+
+puts "AC_BUILD_STATUS: #{ENV['AC_BUILD_STATUS']}"
+# Read the environment variable
+json_data = ENV['AC_BUILD_STEPS_STATUS']
+
+begin
+  # Parse and beautify the JSON
+  parsed_data = JSON.parse(json_data)
+  pretty_json = JSON.pretty_generate(parsed_data)
+  
+  # Output the formatted JSON
+  puts "AC_BUILD_STEPS_STATUS:"
+  puts pretty_json
+rescue JSON::ParserError => e
+  puts "Failed to parse JSON: #{e.message}"
+end
+```
+
+If you add a **Custom Script** step with the code above after the **Git Clone** step in the **Default Workflow**, the script will generate an output similar to this:
+
+```json
+AC_BUILD_STATUS: Success
+AC_BUILD_STEPS_STATUS:
+[
+  {
+    "StepName": "Activate SSH Private Key",
+    "BuildStatus": "Success",
+    "Duration": 0.133102,
+    "StartDate": "2024-12-30T16:48:47.919386Z",
+    "FinishDate": "2024-12-30T16:48:48.052488Z"
+  },
+  {
+    "StepName": "Git Clone",
+    "BuildStatus": "Success",
+    "Duration": 1.90708,
+    "StartDate": "2024-12-30T16:48:48.186532Z",
+    "FinishDate": "2024-12-30T16:48:50.093612Z"
+  }
+]
+```
+
+:::warning 
+
+Steps that are disabled in the workflow will not appear in the above output.
+
+:::
+
+Simply include this script in your workflow to better understand and monitor the status of your workflow steps.
