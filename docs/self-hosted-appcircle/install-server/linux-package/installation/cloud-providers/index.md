@@ -18,3 +18,7 @@ Leverage the power of cloud computing within your Appcircle builds by integratin
 ## [Amazon Web Services (AWS)](/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/aws)
 
 Enhance your building and testing capabilities by integrating Amazon Web Services (AWS) into your workflow. Follow the step-by-step guide to set up AWS with your Appcircle environment for improved performance and flexibility.
+
+## [Microsoft Azure Porta](/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/azure)
+
+Expand your Appcircle build capabilities by integrating with Microsoft Azure. Follow the detailed instructions to connect your Appcircle environment with Azure and access to Azure's extensive cloud services.

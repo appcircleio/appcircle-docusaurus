@@ -2,14 +2,14 @@
 title: Microsoft Azure Integration
 description: Learn how to create an Appcircle server instance on Microsoft Azure
 tags:
-  [self-hosted, appcircle server, microsoft azure, azure cloud, instance, image]
+  [self-hosted, appcircle server, microsoft azure, azure cloud]
 sidebar_position: 1
 sidebar_label: Microsoft Azure
 ---
 
-import AppcircleLicenseRequirement from '@site/docs/self-hosted-appcircle/install-server/cloud-providers/\_license-requirement.mdx';
-import ConnectingRunners from '@site/docs/self-hosted-appcircle/install-server/cloud-providers/\_connecting-runners.mdx';
-import ConfigureServer from '@site/docs/self-hosted-appcircle/install-server/cloud-providers/\_configure-server.mdx';
+import AppcircleLicenseRequirement from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation//cloud-providers/\_license-requirement.mdx';
+import ConnectingRunners from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/\_connecting-runners.mdx';
+import ConfigureServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/\_configure-server.mdx';
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
@@ -89,7 +89,7 @@ You should fill out the required fields as per your needs. Please follow the ste
 - We will use the `Standart_B4ms` size for our sample configuration since it meets the minimum requirements for the vCPU count and memory size.
 
 :::info
-For the details about minimum hardware requirements, you should see the [Hardware Requirements](/self-hosted-appcircle/install-server/docker#hardware-requirements) section.
+For the details about minimum hardware requirements, you should see the [Hardware Requirements](/self-hosted-appcircle/install-server/linux-package/installation/docker#hardware-requirements) section.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-11-machine-type.png' />
@@ -107,7 +107,7 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-7-create-vm-disks.png' />
 
 :::info
-You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](/self-hosted-appcircle/install-server/docker#hardware-requirements) section.
+You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](/self-hosted-appcircle/install-server/linux-package/installation/docker#hardware-requirements) section.
 :::
 
 - Click "Next: Networking >"
