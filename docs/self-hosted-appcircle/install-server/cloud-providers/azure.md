@@ -16,7 +16,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
-An Appcircle server image is a pre-configured template used to create virtual server, known as "virtual machines", in the Microsoft Azure environment.
+An Appcircle server image is a pre-configured template used to a create virtual server, known as "virtual machines", in the Microsoft Azure environment.
 
 Think of it as a snapshot of a server that includes the operating system, necessary tools, applications, and any additional services needed to run the Appcircle server.
 
@@ -44,11 +44,11 @@ You should be familiar with virtual machine creation, networking, security group
 
 ##### 1. Networking and Security Configuration
 
-You might need to configure networking aspects such as Virtual networks, subnets, route tables, and security groups to properly integrate the instance within the network environment and manage access controls.
+You might need to configure networking aspects such as virtual networks, subnets, route tables, and security groups to properly integrate the instance within the network environment and manage access controls.
 
 ##### 2. SSH Key Pairs for Secure Access
 
-You need an SSH key pair to access to the server that you will create securely.
+You need an SSH key pair to access the server that you will create securely.
 
 ##### 3. Linux System Configuration
 
@@ -58,7 +58,7 @@ Basic familiarity with Linux system configurations and commands is essential sin
 
 After you meet all the requirements discussed above, you can follow the steps below to create an Appcircle server from the server image.
 
-- Log in to the Microsoft Azure with your account.
+- Log in to Microsoft Azure with your account.
 
 - Head to the Virtual machines menu to create a virtual machine.
 
@@ -72,7 +72,7 @@ You should fill out the required fields as per your needs. Please follow the bel
 
 - Select the Subscription and Resource group for your needs.
 
-- Enter an virtual machine name in the "Instance details" field. For example, "My-Appcircle-Server".
+- Enter a virtual machine name in the "Instance details" field. For example, "My-Appcircle-Server".
 
 - Choose which region you want the server to be in.
 
@@ -94,13 +94,13 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-11-machine-type.png' />
 
-- We highly recommend changing the Username to `ubuntu`.
+- We highly recommend changing the username to `ubuntu`.
 
-- Select an existing key pair or click on the "Generate new key pair" button if you don't have any on the Azure. In the sample configuration, we will use an existing key stored in Azure by selecting from the dropdown menu.
+- Select an existing key pair or click on the "Generate new key pair" button if you don't have any on Azure. In the sample configuration, we will use an existing key stored in Azure by selecting from the dropdown menu.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-6-create-vm-authentication.png' />
 
-- From the Disks menu, configure the OS disk size. By default, the image comes with 100GiB disk space. You can increase that size for your needs.
+- From the Disks menu, configure the OS disk size. By default, the image comes with 100 GiB of disk space. You can increase that size for your needs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-7-create-vm-disks.png' />
 
@@ -108,29 +108,29 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](/self-hosted-appcircle/install-server/docker#hardware-requirements) section.
 :::
 
-- We will use default Virtual network that Azure provides. You can customize the network according to your needs, such as limiting incoming traffic to known IP addresses for SSH connections.
+- We will use the default Virtual network that Azure provides. You can customize the network according to your needs, such as limiting incoming traffic to known IP addresses for SSH connections.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-8-create-vm-network.png' />
 
 Now you're ready to click on the **Review + create** & **Create** button to create the virtual machine with the configuration you made.
 
-After the deployment is completed, you can click **Go to resource** button, or head to the **Virtual machines** service to see the deployed instance.
+After the deployment is completed, you can click **Go to resource** button or head to the **Virtual machines** service to see the deployed instance.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-9-create-vm-successful.png' />
 
 :::tip
-By default, `80`, `443` and `22` ports are allowed on the firewall.
+By default, `80`, `443`, and `22` ports are allowed on the firewall.
 
-If you want send `ping` requests to the instance for health check purposes, you should add a inbound port rule with the protocol "ICMPv4" from the networking tab of the virtual machine.
+If you want to send `ping` requests to the instance for health check purposes, you should add an inbound port rule with the protocol "ICMPv4" from the networking tab of the virtual machine.
 :::
 
 ## Configuring the Appcircle Server Instance
 
 ### Connect via SSH
 
-After you have successfully created an Virtual machine from the Appcircle server image, you can follow the steps below to configure it.
+After you have successfully created a virtual machine from the Appcircle server image, you can follow the steps below to configure it.
 
-- Get the IP address of the instance from Virtual machines dashboard.
+- Get the IP address of the instance from the virtual machines dashboard.
 
 - Locate the SSH key pair, especially the private key, that you've created or used while configuring the virtual machine.
 
@@ -160,10 +160,10 @@ ssh -i "/home/spacetech/.ssh/id_rsa" ubuntu@34.205.139.17
 :::
 
 :::tip
-When you "Create new key pair" while creating the instance from Appcircle server image, the downloaded private key might cause a permission error when you try to connect to the instance. For instance;
+When you "Create new key pair" while creating the instance from the Appcircle server image, the downloaded private key might cause a permission error when you try to connect to the instance. For instance;
 
 > ... Permissions 0644 for 'MyCICDSSHKey.pem' are too open.
-> It is required that zour private key files are NOT accessible by others.
+> It is required that your private key files are NOT accessible by others.
 > This private key will be ignored. ...
 
 In this case, you need to change the permissions of the private key using the below command before connecting.
@@ -172,7 +172,7 @@ In this case, you need to change the permissions of the private key using the be
 chmod 600 "/path/to/your/private/key"
 ```
 
-It will be a one-time-operation that should be done once per private key.
+It will be a one-time operation that should be done once per private key.
 
 :::
 
