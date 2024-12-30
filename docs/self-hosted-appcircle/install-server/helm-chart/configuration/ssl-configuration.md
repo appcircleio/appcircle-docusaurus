@@ -25,6 +25,10 @@ You have two options for configuring SSL certificates:
 1. **Trial Purposes**: Define the SSL certificate directly in the `values.yaml` by following [this section](#define-the-ssl-certificate-in-valuesyaml).
 2. **Production**: Create a Kubernetes secret for better security and manageability by following [this section](#create-the-tls-secret).
 
+:::info
+When configuring Appcircle with HTTPS, you have the option to use self-signed or untrusted root certificates. However, if you choose to do so, it is essential to add the certificate or the root CA certificate to the trusted certificates. Failure to do this may result in connection errors. For detailed instructions about adding trusted CA certificates, refer to the [Adding Trusted CA Certificates](/self-hosted-appcircle/install-server/helm-chart/configuration/ca-certificates.md) documentation.
+:::
+
 ### Define the SSL Certificate in `values.yaml`
 
 To configure the SSL certificate, update your `values.yaml` file with the following settings:
