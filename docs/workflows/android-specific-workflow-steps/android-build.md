@@ -156,7 +156,7 @@ These steps will ensure that both an AAB and an APK are generated during your bu
 
 ### How do I manage Android dependencies with artifactory repository manager?
 
-Integrating an Artifactory repository manager into your Android build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using **Nexus Repository Manager** as an example in conjunction with the Appcircle **Android Build** workflow step.
+Integrating an Artifactory repository manager into your Android build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using [**Nexus Repository Manager**](https://www.sonatype.com/products/sonatype-nexus-repository) as an example in conjunction with the Appcircle **Android Build** workflow step.
 
 #### 1. Set up Nexus repository
 
