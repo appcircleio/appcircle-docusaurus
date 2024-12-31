@@ -426,6 +426,14 @@ rescue JSON::ParserError => e
 end
 ```
 
+:::warning  
+
+To ensure your script works even if one of the steps in the workflow fails (and you want to capture the failed status as well), enable the **"Always run this step even if the previous steps fail"** option.  
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-custom-script-faq-2.png" />  
+
+:::
+
 If you add a **Custom Script** step with the code above after the **Git Clone** step in the **Default Workflow**, the script will generate an output similar to this:
 
 ```json
@@ -449,7 +457,7 @@ AC_BUILD_STEPS_STATUS:
 ]
 ```
 
-:::warning 
+:::info 
 
 Steps that are disabled in the workflow will not appear in the above output.
 
