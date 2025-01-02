@@ -54,7 +54,7 @@ https://github.com/appcircleio/appcircle-cocoapods-component
 
 ## FAQ
 
-### How do I manage iOS dependencies with Artifactıry repository manager?
+### How do I manage iOS dependencies with artifactory repository manager?
 
 Integrating an Artifactory repository manager into your iOS build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using **Nexus Repository Manager** as an example in conjunction with the Appcircle **CocoaPods Install** workflow step. Please ensure your Nexus Repository Manager is properly installed and configured. For more information, please visit the [official Nexus documentation](https://help.sonatype.com/repomanager3).
 
@@ -68,7 +68,7 @@ For more information about Nexus integration with CocoaPods, please visit the [N
 
 #### Example 1: How can I fetch the all dependencies from Nexus with CocoaPods?
 
-In the **CocoaPods Install** step, in order to pull dependencies from Nexus or another artifactory, you need to make some changes in the Pods file. For this, the `source url` value of the `Pods` file in the project must be replaced with the relevant artifactory. A short example is shown in the following bash script.
+In the **CocoaPods Install** step, in order to pull dependencies from Nexus or another artifactory, you need to make some changes in the `Pods` file. For this, the `source url` value of the `Pods` file in the project must be replaced with the relevant artifactory. A short example is shown in the following bash script.
 
 ```bash
 
