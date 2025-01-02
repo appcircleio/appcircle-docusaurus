@@ -22,7 +22,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - We are thrilled to introduce our enhanced Helm documentation for deploying Appcircle server on [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes). This new [architecture](/self-hosted-appcircle#appcircle-distributed-architecture) supports high availability, fault tolerance, and scalability, ensuring robust performance for production environments. <InfrastructureBadge/> <SelfHostedBadge/>
 - Build and Testing Distribution profiles can now be viewed in both list and profile card formats, based on the selected view type. <BuildBadge/> <DistributionBadge/> <CloudBadge/>
-- App versions uploaded to the Testing Portal can now be filtered by their branch. <DistributionBadge/> <CloudBadge/>
+- App versions uploaded to the Testing Portal can now be [filtered](/testing-distribution/testing-portal#search-by-branch) by their branch and binary list can be [sorted](/testing-distribution/testing-portal#sort-binaries-by-version--date) by app version or the upload date. <DistributionBadge/> <CloudBadge/>
 - Authentication settings can now be configured through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
 - Testing groups for the auto-send feature can now be configured through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
 - A new method has been added to sub-organization distributions through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin. Versions can now be distributed using the Root Organization’s PAT and the sub-organization’s name when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
@@ -30,28 +30,46 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :muscle: Improvements
 
+- The billing page will now display a warning for licenses set to expire within a week and an error for licenses that have already expired. <AccountBadge/> <CloudBadge/>
 - Screenshot previews have been enhanced to allow zooming for a better view of the metadata in the Publish module. <PublishBadge/> <CloudBadge/>
 - The build logs of a binary deployed to the Publish module can now be accessed from the Build History tab, even if the build artifact has been deleted in the Build module. <PublishBadge/> <CloudBadge/>
 - The binary details can now be viewed from the action menu of a selected binary within the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
 - The usage of Testing Distribution for the license is now based on the application download count from the Testing Portal, rather than the number of emails shared via Testing Distribution. <DistributionBadge/> <CloudBadge/>
+- The redirection of Testing Distribution email URLs was improved for use in external browsers. <DistributionBadge/> <CloudBadge/>
 - The Apple Devices option has been made visible for Apple Profiles without registered devices, with a relevant warning displayed when the option is selected by users. <SigningIdentitiesBadge/> <CloudBadge/>
 - The application logo is now displayed when installing an application via the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
-- The manual upload endpoints of the Publish, Testing Distribution, and Enterprise App Store modules have been enhanced to provide a better experience for large file uploads. <CloudBadge/>
+- The manual upload endpoints of the Testing Distribution, Publish and Enterprise App Store modules have been enhanced to provide a better experience for large file uploads. <CloudBadge/>
 - Notification updates have been made for various modules across all channels have been made, resolving discrepancies between notifications for different channel types. <AccountBadge/> <CloudBadge/>
+- The dashboard page will now display a Publish Count card in place of the second Testing Distribution Count card. <AccountBadge/> <CloudBadge/>
+- App versions marked as live or beta-published now cannot be deleted by users without unpublishing them first. <EnterpriseStoreBadge/> <CloudBadge/>
+- Starter Edition license users can no longer access Captcha settings within the Enterprise App Store settings. <EnterpriseStoreBadge/> <CloudBadge/>
+- The Enterprise App Store Reports will now list all binaries for the organization within the binary filter, regardless of the selected date filter. <EnterpriseStoreBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
 - An issue was fixed where, in some cases, screenshots were being duplicated after using the Update Metadata workflow in the Publish module. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where some self-hosted users were unable to resign a binary within the Publish module. <PublishBadge/> <SelfHostedBadge/>
 - An issue was fixed where the iOS certificate and provisioning profile could not be uploaded directly through the build configuration. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where cache pull and cache push workflows did not function correctly for some self-hosted users. <BuildIntegrationsBadge/> <SelfHostedBadge/>
 - A new environment variable, `ASPNETCORE_MAX_JAVA_MEMORY_SIZE`, has been created to address the issue where 4000M of heap memory was required in Java for locating the APK logo. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where the naming rules for build configurations were not consistent between manual creation and YAML upload. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the Azure DevOps pull request merge commit message was missing due to a webhook event parsing bug in Appcircle. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where iOS certificates in use within build profiles could not be forcefully deleted by users. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where, when a synced API key was deleted, devices not registered under another API key within the organization were incorrectly listed as unregistered devices. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue related to icon parsing for APK files has been fixed. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where the “Import from LDAP” option was disabled for the first row entry of testing groups, despite having the relevant configuration in place. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where app versions shared via public links were not appearing at the top of the list in the Testing Portal. <DistributionBadge/> <CloudBadge/>
+- A fix was applied for reverse proxy login form error occurring in certain self-hosted environments. <DistributionBadge/> <SelfHostedBadge/>
+- An issue was fixed where some self-hosted users were unable to download iOS binaries from the Testing Portal after logging in with static authentication. <DistributionBadge/> <SelfHostedBadge/>
 - An issue was fixed where data could not be retrieved when attempting to download reports through the API without specifying a date range. <APICLIBadge/> <CloudBadge/>
 - An issue was fixed where the Enterprise App Store report filters did not display the required data correctly. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed where .ipa binaries without icons could not be downloaded. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where the binary list order on the Enterprise Portal was altered when specific binaries were selected. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where selecting certain filters removed app version graphs in the Enterprise App Store reports. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where the Manage Access settings were accessible to Enterprise App Store profiles without an authentication method. <EnterpriseStoreBadge/> <CloudBadge/>
 - The incorrect user group retrieval strategy values causing LDAP user login issues have been updated. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where users were unable to disconnect their email settings from the notification settings. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the license terms on the dashboard displayed incorrect dates for the license status. <AccountBadge/> <CloudBadge/>
 
 ## 3.24.0 - 2024-12-06 Publish Priority Configuration, Download Module Reports Through API, Bug Fixes and more
 
