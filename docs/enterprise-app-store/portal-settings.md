@@ -167,6 +167,24 @@ Open your DNS provider's website and add a CNAME with the below details
 
 **Destination:** _**store-domain.appcircle.io**_
 
+:::info
+For self-hosted users with a Kubernetes deployment, it is essential to configure DNS records appropriately for your environment.
+
+- Retrieve the ingress objects:
+
+    ```bash
+    kubectl get ingress -n appcircle
+    ```
+
+- Examine the `ADDRESS` column:
+  - If internal IP addresses are listed for the ingress objects:
+    - For internal-only access to Appcircle, use these IP addresses as the destination for `A` records.
+    - For internet access to Appcircle, use the public IP addresses of these nodes as the destination for `A` records.
+  - If `CNAME` records are listed for the ingress objects:
+    - Use the `CNAME` as the destination for `CNAME` records.
+
+:::
+
 The below screenshot shows an example configuration screen from Cloudflare.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/entstore-cname.png' />

@@ -6,6 +6,7 @@ sidebar_position: 40
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
 
 ## Secrets for Sensitive Values
 
@@ -83,5 +84,9 @@ kubectl create secret generic appcircle-tls-wildcard \
 ```
 
 - Remove the `.global.tlsWildcard` key from the `values.yaml` file if it exists.
+
+#### Apply Configuration Changes
+
+<ApplyHelmConfigurationChanges />
 
 <NeedHelp />

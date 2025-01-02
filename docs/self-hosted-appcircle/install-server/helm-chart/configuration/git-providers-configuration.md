@@ -7,6 +7,7 @@ sidebar_position: 70
 
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
 
 ## Overview
 
@@ -40,6 +41,8 @@ web:
 ```
 
 You can delete the providers you do not need by removing them from `selfHostedGitProviders` list above.
+
+<ApplyHelmConfigurationChanges />
 
 For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket) page.
 

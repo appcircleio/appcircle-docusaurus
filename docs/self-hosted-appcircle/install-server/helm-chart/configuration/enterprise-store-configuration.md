@@ -7,6 +7,7 @@ sidebar_position: 70
 
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
 
 ## Overview
 
@@ -33,5 +34,7 @@ store:
       - name: EN_STORE_TITLE
         value: "App Store"
 ```
+
+<ApplyHelmConfigurationChanges />
 
 <NeedHelp />
