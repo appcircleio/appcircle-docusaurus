@@ -22,16 +22,14 @@ Default Configurations in `values.yaml` of the Appcircle server Helm chart:
 ingress-nginx:
   controller:
     config: 
-      proxy-body-size: "4096m"
-      proxy-connect-timeout: "600"
-      proxy-read-timeout: "600"
-      client-header-timeout: "180"
-      client-body-timeout: "180"
-      proxy-send-timeout: "180"
-      upstream-keepalive-timeout: "75"
-      proxy-buffer-size: "128k"
-      proxy-buffers-number: "4"
-      proxy-busy-buffers-size: "128k"
+      proxy-body-size: '4096m'
+      client-body-buffer-size: '128k'
+      proxy-connect-timeout: '600'
+      proxy-send-timeout: '600'
+      proxy-read-timeout: '600'
+      proxy-buffer-size: '128k'
+      proxy-buffers-number: '4'
+      proxy-busy-buffers-size: '128k'
 ```
 
 You can change the default values of the Ingress controller that is installed with the Appcircle Helm chart as your needs dictate.
@@ -57,6 +55,7 @@ apigateway:
       nginx.ingress.kubernetes.io/proxy-buffers-number: "4"
       nginx.ingress.kubernetes.io/proxy-busy-buffers-size: "128k"
       nginx.ingress.kubernetes.io/proxy-body-size: "4096m"
+      nginx.ingress.kubernetes.io/client-body-buffer-size: "128k"
 
 # For build cache uploads from Appcircle runners
 resource:
@@ -70,6 +69,7 @@ resource:
       nginx.ingress.kubernetes.io/proxy-buffers-number: "4"
       nginx.ingress.kubernetes.io/proxy-busy-buffers-size: "128k"
       nginx.ingress.kubernetes.io/proxy-body-size: "4096m"
+      nginx.ingress.kubernetes.io/client-body-buffer-size: "128k"
 ```
 
 :::tip
