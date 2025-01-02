@@ -401,10 +401,16 @@ Ensure that the **Custom Script** step runs after the [**Export Build Artifacts*
 
 If you want to track or share the status of your workflow or individual steps during a build, you can use the following environment variables:  
 
-- **`$AC_BUILD_STATUS`**: Displays the overall status of the workflow.
-- **`$AC_BUILD_STEP_STATUS`**: Displays detailed information about each executed step.  
+- **`$AC_BUILD_STATUS`**: Displays the running status of the workflow so far.
+- **`$AC_BUILD_STEPS_STATUS`**: Displays detailed information about each executed step.  
 
-However, the output of `$AC_BUILD_STEP_STATUS` is in raw JSON format, which may not be easy to read directly. To make it more readable, you can use the following Ruby script to format and print the information in a user-friendly way:
+:::caution
+
+The runtime version must be **1.8.0 or later** to use the above two environment variables.
+
+:::
+
+However, the output of `$AC_BUILD_STEPS_STATUS` is in raw JSON format, which may not be easy to read directly. To make it more readable, you can use the following Ruby script to format and print the information in a user-friendly way:
 
 ```ruby
 require 'json'
@@ -426,6 +432,12 @@ rescue JSON::ParserError => e
 end
 ```
 
+:::info
+
+The script above is written in Ruby. To execute it, select `Ruby` as the `Execute with` option in the **Custom Script** step.
+
+:::
+
 :::warning  
 
 To ensure your script works even if one of the steps in the workflow fails (and you want to capture the failed status as well), enable the **"Always run this step even if the previous steps fail"** option.  
@@ -434,7 +446,7 @@ To ensure your script works even if one of the steps in the workflow fails (and 
 
 :::
 
-If you add a **Custom Script** step with the code above after the **Git Clone** step in the **Default Workflow**, the script will generate an output similar to this:
+If you add a **Custom Script** step with the code above after the **Git Clone** step in your workflow, the script will generate an output similar to this:
 
 ```json
 AC_BUILD_STATUS: Success
