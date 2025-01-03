@@ -13,7 +13,6 @@ import ConfigureServer from '@site/docs/self-hosted-appcircle/install-server/lin
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-
 ## Overview
 
 An Appcircle server image is a pre-configured template used to a create virtual server, known as "virtual machines", in the Microsoft Azure environment.
@@ -187,7 +186,6 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 
 :::
 
-
 ### Configure Server
 
 <ConfigureServer />
@@ -199,7 +197,7 @@ When you complete installation successfully by following the above steps, you're
 But in order to run build pipelines, you need to install and connect self-hosted runners. We have a dedicated section for the installation and configuration of self-hosted runners. Follow and apply the related the guidelines [here](/self-hosted-appcircle/self-hosted-runner/installation).
 
 :::tip  
-You can install the Appcircle runner on another Azure VM by ensuring the VM size meets the runner's requirements. Check the Appcircle runner installation page for detailed requirements. 
+You can install the Appcircle runner on another Azure VM by ensuring the VM size meets the runner's requirements. Check the Appcircle runner installation page for detailed requirements.
 :::
 
 The self-hosted runner section in the documents has all the details about runners and their configuration.
