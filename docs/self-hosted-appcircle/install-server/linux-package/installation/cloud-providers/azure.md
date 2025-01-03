@@ -1,5 +1,5 @@
 ---
-title: Microsoft Azure Integration
+title: Install Appcircle on Microsoft Azure
 description: Learn how to create an Appcircle server instance on Microsoft Azure
 tags:
   [self-hosted, appcircle server, microsoft azure]

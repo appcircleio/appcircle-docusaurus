@@ -1,5 +1,5 @@
 ---
-title: Amazon Web Services (AWS) Integration
+title: Install Appcircle on Amazon Web Services (AWS)
 description: Learn how to create an Appcircle server instance on Amazon Web Services (AWS)
 tags: [self-hosted, appcircle server, aws, amazon web services]
 sidebar_position: 1
