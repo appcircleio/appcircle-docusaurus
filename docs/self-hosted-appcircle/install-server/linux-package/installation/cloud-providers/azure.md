@@ -2,7 +2,7 @@
 title: Microsoft Azure Integration
 description: Learn how to create an Appcircle server instance on Microsoft Azure
 tags:
-  [self-hosted, appcircle server, microsoft azure, azure cloud]
+  [self-hosted, appcircle server, microsoft azure]
 sidebar_position: 1
 sidebar_label: Microsoft Azure
 ---

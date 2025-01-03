@@ -2862,8 +2862,3 @@ xml:
   label: "microsoft azure"
   description: "Microsoft Azure related documentations"
   permalink: "/microsoft-azure"
-
-"azure cloud":
-  label: "azure cloud"
-  description: "Azure Cloud related documentations"
-  permalink: "/azure-cloud"
