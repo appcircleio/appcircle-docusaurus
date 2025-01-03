@@ -8,7 +8,6 @@ sidebar_label: Microsoft Azure
 ---
 
 import AppcircleLicenseRequirement from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation//cloud-providers/\_license-requirement.mdx';
-import ConnectingRunners from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/\_connecting-runners.mdx';
 import ConfigureServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/\_configure-server.mdx';
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
