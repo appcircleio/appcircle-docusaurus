@@ -273,6 +273,22 @@ After sending your application to testing groups, you can track the actions of t
 
 ## Binary Actions
 
+### Binary Details
+
+1. Select the binary.
+
+You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
+
+2. Click the... button and select **Binary Details**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios14.png' />
+
+3. This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5184-binary.png' alt="Binary Details" />
+
 ### Send your application to Enterprise App Store
 
 You can send your application from your Testing Distribution profile to an Enterprise App Store profile by following these steps:
@@ -323,22 +339,6 @@ Re-sign History allows you to view the re-sign process logs for your app version
 The binary file in the Testing Distribution profile can be downloaded by selecting the Download button from the actions menu.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/TD-Binary-Download.png' />
-
-### Binary Details
-
-1. Select the binary.
-
-You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
-
-2. Click the... button and select **Binary Details**
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios14.png' />
-
-3. This window will show basic information about your binary.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios15.png' />
 
 ### Delete Multiple Testing Distribution App Versions
 
