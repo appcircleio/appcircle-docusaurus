@@ -33,7 +33,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The billing page will now display a warning for licenses set to expire within a week and an error for licenses that have already expired. <AccountBadge/> <CloudBadge/>
 - Screenshot previews have been enhanced to allow zooming for a better view of the metadata in the Publish module. <PublishBadge/> <CloudBadge/>
 - The build logs of a binary deployed to the Publish module can now be accessed from the Build History tab, even if the build artifact has been deleted in the Build module. <PublishBadge/> <CloudBadge/>
-- The binary details can now be viewed from the action menu of a selected binary within the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
+- The [Binary Details](/testing-distribution/create-or-select-a-distribution-profile#binary-details) option within the Testing Distribution module has been improved to include build and extended provisioning profile and certificate information <DistributionBadge/> <CloudBadge/>
 - The usage of Testing Distribution for the license is now based on the application download count from the Testing Portal, rather than the number of emails shared via Testing Distribution. <DistributionBadge/> <CloudBadge/>
 - The redirection of Testing Distribution email URLs was improved for use in external browsers. <DistributionBadge/> <CloudBadge/>
 - The Apple Devices option has been made visible for Apple Profiles without registered devices, with a relevant warning displayed when the option is selected by users. <SigningIdentitiesBadge/> <CloudBadge/>
