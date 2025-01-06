@@ -48,28 +48,28 @@ apigateway:
   ingress:
     annotations:
       # For Ingres-Nginx Controller
+      nginx.ingress.kubernetes.io/proxy-body-size: "4096m"
+      nginx.ingress.kubernetes.io/client-body-buffer-size: "128k"
       nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
+      nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
       nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "180"
       nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
       nginx.ingress.kubernetes.io/proxy-buffers-number: "4"
       nginx.ingress.kubernetes.io/proxy-busy-buffers-size: "128k"
-      nginx.ingress.kubernetes.io/proxy-body-size: "4096m"
-      nginx.ingress.kubernetes.io/client-body-buffer-size: "128k"
 
 # For build cache uploads from Appcircle runners
 resource:
   ingress:
     annotations:
       # For Ingres-Nginx Controller
+      nginx.ingress.kubernetes.io/proxy-body-size: "4096m"
+      nginx.ingress.kubernetes.io/client-body-buffer-size: "128k"
       nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
+      nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
       nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "180"
       nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
       nginx.ingress.kubernetes.io/proxy-buffers-number: "4"
       nginx.ingress.kubernetes.io/proxy-busy-buffers-size: "128k"
-      nginx.ingress.kubernetes.io/proxy-body-size: "4096m"
-      nginx.ingress.kubernetes.io/client-body-buffer-size: "128k"
 ```
 
 :::tip
