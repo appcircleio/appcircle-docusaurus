@@ -281,7 +281,7 @@ You can either select the files from the list or upload binaries by clicking the
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
 
-2. Click the... button and select **Binary Details**
+2. Click the **...** button and select **Binary Details**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios14.png' />
 
