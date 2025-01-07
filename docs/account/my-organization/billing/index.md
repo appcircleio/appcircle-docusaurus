@@ -15,12 +15,12 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Billing section allows you to monitor your usage summary, including builds, publishes, team members, and other module usages. You can also view your license plan and renewal date of your account.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4868-billings.png' alt="Billing" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5185-billing.png' alt="Billing" />
 
 ## Usage Summary
 
 - **Builds** : Number of builds initiated from the build module in a single billing cycle.
-- **Testing Distribution** : Number of emails sent for app sharing from The Testing Distribution module in a single billing cycle.
+- **Testing Distribution** : Number of app downloads from the Testing Portal in a single billing cycle.
 - **Publishes** : Number of publishes initiated from the Publish module in a single billing cycle.
 - **Enterprise App Store** : Number of app downloads from the Enterprise App Store in a single billing cycle.
 - **Team Members** : Number of team members allowed in a single organization.
