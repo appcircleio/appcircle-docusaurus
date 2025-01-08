@@ -1214,12 +1214,12 @@ public class InAppUpdateModel
 
 :::caution Created Download URL
 
-The scripts provided above for each platform generate a **Download URL** required to upload a new version. This URL also includes a `userEmail` parameter. While this parameter is optional, if the `userEmail` information will not be used, the `/user/userEmail` section at the end of the URL should be removed, and the URL should be generated using only the token.
+The scripts provided above for each platform generate a **Download URL** required to upload a new version. This URL also includes a `userEmail` parameter. While this parameter is optional, if the `userEmail` information will not be used, the `/user/{userEmail}` section at the end of the URL should be removed, and the URL should be generated using only the token.
 
 For example;
 
-- **Swift**: **`itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)`**
-- **Android**: **`https://%s/api/app-versions/%s/download-version/%s`**
+- **iOS-Swift**: **`itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)`**
+- **Android-Java/Kotlin**: **`https://%s/api/app-versions/%s/download-version/%s`**
 - **React Native**: **`${Environments.STORE_URL}/api/app-versions/${availableVersionId}/download-version/${accessToken}`**
 - **MAUI**: **`${Environment.GetEnvironmentVariable("STORE_URL")}/api/app-versions/{availableVersionId}/download-version/{accessToken}`**
 
