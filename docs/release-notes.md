@@ -41,6 +41,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The manual upload endpoints of the Testing Distribution, Publish and Enterprise App Store modules have been enhanced to provide a better experience for large file uploads. <CloudBadge/>
 - Notification updates have been made for various modules across all channels have been made, resolving discrepancies between notifications for different channel types. <AccountBadge/> <CloudBadge/>
 - The dashboard page will now display a Publish Count card in place of the second Testing Distribution Count card. <AccountBadge/> <CloudBadge/>
+- My Details section has been removed from the Account page. <AccountBadge/> <CloudBadge/>
 - App versions marked as live or beta-published now cannot be deleted by users without unpublishing them first. <EnterpriseStoreBadge/> <CloudBadge/>
 - Starter Edition license users can no longer access Captcha settings within the Enterprise App Store settings. <EnterpriseStoreBadge/> <CloudBadge/>
 - The Enterprise App Store Reports will now list all binaries for the organization within the binary filter, regardless of the selected date filter. <EnterpriseStoreBadge/> <CloudBadge/>
