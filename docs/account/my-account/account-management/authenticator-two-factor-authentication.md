@@ -2,7 +2,7 @@
 title: Two-Factor Authentication Setup
 description: Learn how to set up two-factor authentication in Appcircle
 tags: [account, account management, two-factor authentication, 2FA, authenticator]
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -8,10 +8,6 @@ tags: [account, settings, security, personal details, password, two-factor authe
 
 In the Account Management section, you have comprehensive control over your account's security and personal information settings.
 
-## [Personal Details](/account/my-account/account-management/my-details)
-
-Update your contact information and other personal details to keep your account up-to- date.
-
 ## [Change Password](/account/my-account/account-management/change-password)
 
 Secure your account by regularly updating your password through this option.
@@ -27,6 +23,10 @@ Manage your federated identities by linking or unlinking single sign-on provider
 ## [Active Sessions](/account/my-account/account-management/active-sessions)
 
 View and manage all active sessions to understand where your account is currently logged in.
+
+## [Authentication Logs](/account/my-account/account-management/authentication-logs)
+
+View authentication logs to monitor user logins within your organization.
 
 ## [Delete Account](/account/my-account/account-management/delete-account)
 
