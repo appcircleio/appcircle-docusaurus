@@ -5,6 +5,7 @@ tags: [cache push, optimization, storage, dependencies, cache structure]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import CacheTokenIdCaution from '@site/docs/workflows/common-workflow-steps/build-cache/\_cache-token-id-expiration-time-caution.mdx';
 
 # Cache Push
 
@@ -18,13 +19,7 @@ The cache is stored as a single archive file. **Cache Push** and [**Cache Pull**
 
 When you drag and drop the **Cache Push** component into your [workflow](/workflows), it comes with pre-defined values according to your project type. For example, in the case of Android projects, it comes with pre-defined [Gradle cache](https://docs.gradle.org/current/userguide/build_cache.html) paths, which should prove useful for most Android apps.
 
-:::caution
-
-The build token ID, generated at the start of the build, expires after **3 hours**. If the **Cache Pull** or **Cache Push** step starts beyond this time, caching will fail.
-
-This may lead to a `404 Error` in the **Cache Pull** step during the next build if the **Cache Push** step is not completed successfully.
-
-:::
+<CacheTokenIdCaution />
 
 If you need more paths to cache or need to change paths according to your project, you can customize [included](#input-variables) and [excluded](#input-variables) paths as you wish. All path updates will be reflected in the archived cache file on your next build.
 
