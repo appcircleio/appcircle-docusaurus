@@ -72,7 +72,7 @@ openssl pkcs12 -in cert.p12 -nocerts -out key.pem
 :::
 
 :::info
-When configuring Appcircle with HTTPS, you have the option to use self-signed or untrusted root certificates. However, if you choose to do so, it is essential to add the certificate or the root CA certificate to the trusted certificates. Failure to do this may result in connection errors. For detailed instructions about adding trusted CA certificates, refer to the [Adding Trusted CA Certificates](#external-services) section.
+When configuring Appcircle with HTTPS, you have the option to use self-signed or untrusted root certificates. However, if you choose to do so, it is essential to add the certificate or the root CA certificate to the trusted certificates. Failure to do this may result in connection errors. For detailed instructions about adding trusted CA certificates, refer to the [External Services](#external-services) section.
 :::
 
 ## Configure HTTPS
