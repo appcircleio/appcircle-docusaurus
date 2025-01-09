@@ -1,5 +1,5 @@
 ---
-title: Amazon Web Services (AWS) Integration
+title: Install Appcircle on Amazon Web Services (AWS)
 description: Learn how to create an Appcircle server instance on Amazon Web Services (AWS)
 tags: [self-hosted, appcircle server, aws, amazon web services]
 sidebar_position: 1
@@ -8,6 +8,7 @@ sidebar_label: Amazon Web Services (AWS)
 
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import ConfigureServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/\_configure-server.mdx';
 
 ## Overview
 
@@ -210,42 +211,7 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 
 ### Configure Server
 
-After you successfully connect to the Appcircle instance, the first thing you should do is start a system update. Although the Appcircle AMI is up-to-date, it is recommended that you perform security updates again.
-
-```bash
-sudo apt update && \
-sudo apt upgrade
-```
-
-The Appcircle server directory is located in the `$HOME` directory as the `appcircle-server` folder.
-
-```bash
-ls -l "$HOME"
-```
-
-Change the current working directory to that folder.
-
-```bash
-cd "$HOME/appcircle-server"
-```
-
-:::info
-
-**If you are a licensed user**, please [contact us](https://appcircle.io/support/) to get the licensed Appcircle zip package. You should [upgrade](/self-hosted-appcircle/install-server/linux-package/update) the pre-installed package in the instance.
-
-Also, put the `cred.json` file you received from us into the `appcircle-server` folder.
-
-Please [contact us](https://appcircle.io/support/) to purchase an enterprise license if you don't have one.
-
-:::
-
-Now you're ready to configure the Appcircle server according to your needs. Follow the detailed [configuration](/self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) steps.
-
-You should also configure the [DNS](/self-hosted-appcircle/install-server/linux-package/installation/docker#4-dns-settings) settings for your Appcircle server instance. Create `A` and `CNAME` records for your instance.
-
-After the configuration is done, [initialize the project](/self-hosted-appcircle/install-server/linux-package/installation/docker#5-initialize-vault), [run the server](/self-hosted-appcircle/install-server/linux-package/installation/docker#6-run-server), and go to the Appcircle server dashboard using the main [domain](/self-hosted-appcircle/install-server/linux-package/installation/docker#4-dns-settings) you defined.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws22-dashboard.png' />
+<ConfigureServer />
 
 ## Connecting Runners
 

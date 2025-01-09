@@ -31,7 +31,6 @@ For more information on the inputs of the steps and how the variables in the fol
 | AC_GIT_URL               | Git URL of the repository.                                                                         |
 | AC_GIT_COMMIT            | The Git commit that is built.                                                                      |
 | AC_COMMIT_MESSAGE        | Commit message.                                                                                    |
-| AC_COMMIT_AUTHOR_EMAIL   | The email of the author of the commit.                                                             |
 | AC_COMMIT_AUTHOR_NAME    | The name of the author of the commit.                                                              |
 | AC_COMMIT_AUTHOR_EMAIL   | Email address of the commit author.                                                                |
 | AC_COMMIT_SUBJECT	       | Subject or title of the commit message.                                                            |

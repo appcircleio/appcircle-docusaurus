@@ -16,23 +16,21 @@ The Publish History section is a record of all the publishing actions that have 
 
 The Resign History section is a record of all the resign actions that have been performed within the Publish module for a specific app version.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub4.png' />
-
 ## Overview
 
 Once you select the History section you can access both the Publish History and the Resign History.
 
 You can access the Publish History to gain insight into the sequence of events for each published version. It is an invaluable tool for auditing, troubleshooting, and understanding the timeline of version deployments.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub5.png' />
+Build History will provide the original build logs from the build profile that was distributed to the selected publish profile.
 
 You can also access the Resign History for an app version by navigating to it's tab to monitor the resign actions for that specific version.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub9.png' />
 
 ### Accessing Publish History
 
 To view the Publish History, navigate to the History section in the Publish module. Once History is selected, The Publish History tab will be displayed by default. This section lists all versions of the app along with the dates and times their publishing actions started.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history3.png' alt="Publish History" />
 
 ### Viewing Logs
 
@@ -67,6 +65,18 @@ Upon selecting a specific version, you will be presented with a detailed log. Th
 
 The Publish History is a key feature that provides transparency and traceability in the application deployment process. By regularly reviewing this section, you can ensure that your publish actions are performing as expected and maintain a high level of quality control over your release management process.
 
+### Accessing Build History
+
+To view the Build History, go to the History section for an app version in the Publish module, and then navigate to the Build History tab.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history2.png' alt="Publish Build History"/>
+
+This displays the build logs of the selected binary, initiated in the original build profile before being distributed to the publish profile.
+
+:::info
+Please note that to access the build logs from this tab, the selected binary must be automatically distributed from a build profile.
+:::
+
 ### Accessing Resign History
 
 To view the Resign History, navigate to the History section in the Publish module, then simply select the Resign History tab.
@@ -75,9 +85,9 @@ To view the Resign History, navigate to the History section in the Publish modul
 
 Each signing process will be listed for that binary. If you click on the displayed resign action , you can get more details about the process by seeing the logs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history4.png' alt="Publish Resign History" />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub10.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history5.png' alt="Publish Resign History Logs" />
 
 :::info
 
