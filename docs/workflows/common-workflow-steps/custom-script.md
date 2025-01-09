@@ -406,7 +406,7 @@ If you want to track or share the status of your workflow or individual steps du
 
 :::caution
 
-The runtime version must be **1.8.0 or later** to use the above two environment variables.
+The **runner** version must be **1.8.0 or later** to use the above two environment variables.
 
 :::
 
