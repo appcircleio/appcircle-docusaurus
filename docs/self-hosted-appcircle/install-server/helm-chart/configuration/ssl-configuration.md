@@ -18,14 +18,20 @@ By default, the Helm chart is configured for HTTP without an SSL certificate. If
 Appcircle must be installed with HTTPS from the initial installation. If you initially installed Appcircle with HTTP, you will need to [uninstall](/self-hosted-appcircle/install-server/helm-chart/uninstallation) it and then reinstall it with HTTPS.
 :::
 
-## SSL Certificate Configuration
-
 You have two options for configuring SSL certificates:
 
 1. **Trial Purposes**: Define the SSL certificate directly in the `values.yaml` by following [this section](#define-the-ssl-certificate-in-valuesyaml).
-2. **Production**: Create a Kubernetes secret for better security and manageability by following [this section](#create-the-tls-secret).
+2. **Production**: Create a Kubernetes secret for better security and manageability by following [this section](#define-the-ssl-certificate-in-secrets).
 
-### Define the SSL Certificate in `values.yaml`
+:::info
+When configuring Appcircle with HTTPS, you have the option to use self-signed or untrusted root certificates. However, if you choose to do so, it is essential to add the certificate or the root CA certificate to the trusted certificates. Failure to do this may result in connection errors. For detailed instructions about adding trusted CA certificates, refer to the [Adding Trusted CA Certificates](/self-hosted-appcircle/install-server/helm-chart/configuration/ca-certificates) documentation.
+:::
+
+## Define the SSL Certificate in `values.yaml`
+
+### Initial SSL Configuration
+
+#### Update the `values.yaml`
 
 To configure the SSL certificate, update your `values.yaml` file with the following settings:
 
@@ -65,9 +71,19 @@ global:
       ...
       emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
       -----END CERTIFICATE-----
+
+# Web event Redis configuration
+webeventredis:
+  # Enable TLS for Redis connections
+  tls:
+    enabled: true
+  # Ingress configuration for Redis
+  ingress:
+    enabled: true
+    tls: true
 ```
 
-#### Update the Certificate in `values.yaml`
+### Updating the Certificate
 
 To update the SSL certificate used on Appcircle server, perform the following steps to update the Helm chart and restart the required services:
 
@@ -92,7 +108,30 @@ kubectl rollout restart statefulset/appcircle-server-webeventredis-master -n app
 kubectl rollout restart statefulset/appcircle-server-webeventredis-replicas -n appcircle
 ```
 
-### Create the TLS Secret
+## Define the SSL Certificate in Secrets
+
+### Initial SSL Configuration
+
+#### Updating the `values.yaml`
+
+To configure the SSL certificate, update your `values.yaml` file with the following settings:
+
+```yaml
+global:
+  urls:
+    scheme: https
+# Web event Redis configuration
+webeventredis:
+  # Enable TLS for Redis connections
+  tls:
+    enabled: true
+  # Ingress configuration for Redis
+  ingress:
+    enabled: true
+    tls: true
+```
+
+#### Create the Secret
 
 Create a secret with the name `appcircle-tls-wildcard` containing the `tls.crt`, `tls.key` and `ca.crt` keys.
 
@@ -115,9 +154,9 @@ kubectl create secret generic appcircle-tls-wildcard \
   -n appcircle
 ```
 
-#### Update the Certificate in Secret
+### Updating the Certificate
 
-To update an existing SSL certificate, use the following commands
+To update an existing SSL certificate, use the following commands.
 
 1. Update the secret with the new certificate.
 

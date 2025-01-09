@@ -6,6 +6,7 @@ sidebar_position: 80
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
 
 ## Overview
 
@@ -71,6 +72,8 @@ auth:
         maxLockDuration: "600"
 ```
 
+<ApplyHelmConfigurationChanges />
+
 ## User Lookup Decision Settings
 
 The LDAP (Lightweight Directory Access Protocol) user lookup decision strategy is a crucial aspect of user authentication in applications that utilize LDAP for user management.
@@ -92,6 +95,8 @@ auth:
 ```
 
 If you don't define it or it has an unknown value, it is assumed to be `decisive` by default.
+
+<ApplyHelmConfigurationChanges />
 
 #### Affirmative
 

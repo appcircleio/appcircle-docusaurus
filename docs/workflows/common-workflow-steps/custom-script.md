@@ -396,3 +396,83 @@ This script generates a timestamped log file (e.g., `ac-log-2024-10-01-14-55.txt
 Ensure that the **Custom Script** step runs after the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step to capture the full log.
 
 :::
+
+### How can I print the status of workflow steps with detailed information?
+
+If you want to track or share the status of your workflow or individual steps during a build, you can use the following environment variables:  
+
+- **`$AC_BUILD_STATUS`**: Displays the running status of the workflow so far.
+- **`$AC_BUILD_STEPS_STATUS`**: Displays detailed information about each executed step.  
+
+:::caution
+
+The **runner** version must be **1.8.0 or later** to use the above two environment variables.
+
+:::
+
+However, the output of `$AC_BUILD_STEPS_STATUS` is in raw JSON format, which may not be easy to read directly. To make it more readable, you can use the following Ruby script to format and print the information in a user-friendly way:
+
+```ruby
+require 'json'
+
+puts "AC_BUILD_STATUS: #{ENV['AC_BUILD_STATUS']}"
+# Read the environment variable
+json_data = ENV['AC_BUILD_STEPS_STATUS']
+
+begin
+  # Parse and beautify the JSON
+  parsed_data = JSON.parse(json_data)
+  pretty_json = JSON.pretty_generate(parsed_data)
+  
+  # Output the formatted JSON
+  puts "AC_BUILD_STEPS_STATUS:"
+  puts pretty_json
+rescue JSON::ParserError => e
+  puts "Failed to parse JSON: #{e.message}"
+end
+```
+
+:::info
+
+The script above is written in Ruby. To execute it, select `Ruby` as the `Execute with` option in the **Custom Script** step.
+
+:::
+
+:::warning  
+
+To ensure your script works even if one of the steps in the workflow fails (and you want to capture the failed status as well), enable the **"Always run this step even if the previous steps fail"** option.  
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-custom-script-faq-2.png" />  
+
+:::
+
+If you add a **Custom Script** step with the code above after the **Git Clone** step in your workflow, the script will generate an output similar to this:
+
+```json
+AC_BUILD_STATUS: Success
+AC_BUILD_STEPS_STATUS:
+[
+  {
+    "StepName": "Activate SSH Private Key",
+    "BuildStatus": "Success",
+    "Duration": 0.133102,
+    "StartDate": "2024-12-30T16:48:47.919386Z",
+    "FinishDate": "2024-12-30T16:48:48.052488Z"
+  },
+  {
+    "StepName": "Git Clone",
+    "BuildStatus": "Success",
+    "Duration": 1.90708,
+    "StartDate": "2024-12-30T16:48:48.186532Z",
+    "FinishDate": "2024-12-30T16:48:50.093612Z"
+  }
+]
+```
+
+:::info 
+
+Steps that are disabled in the workflow will not appear in the above output.
+
+:::
+
+Simply include this script in your workflow to better understand and monitor the status of your workflow steps.

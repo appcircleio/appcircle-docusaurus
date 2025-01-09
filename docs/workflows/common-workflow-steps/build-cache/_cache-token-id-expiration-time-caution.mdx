@@ -1,0 +1,7 @@
+:::caution
+
+The build token ID, generated at the start of the build, expires after **3 hours**. If the **Cache Pull** or **Cache Push** step starts beyond this time, caching will fail.
+
+This may lead to a `404 Error` in the **Cache Pull** step during the next build if the **Cache Push** step is not completed successfully.
+
+:::

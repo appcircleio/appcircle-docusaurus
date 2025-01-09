@@ -49,7 +49,7 @@ auth:
         storageClass: nfs-client
 mongodb:
   persistence:
-    size: 3Gi
+    size: 30Gi
     storageClass: nfs-client
 kafka:
   controller:

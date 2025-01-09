@@ -28,6 +28,10 @@ kubectl create secret generic appcircle-server-auth-license \
   --save-config --dry-run=client -o yaml | kubectl apply -f -
 ```
 
+:::info
+Creating a Secret for license should be done once. Other license updates do not require repeating this step.
+:::
+
 ### Updating the License
 
 If your organization’s Appcircle server license has been updated and you need to apply the new license, you can upgrade the Appcircle server deployment using Helm:
