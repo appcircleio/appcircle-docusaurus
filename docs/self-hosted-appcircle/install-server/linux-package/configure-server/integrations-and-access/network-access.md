@@ -286,34 +286,34 @@ If you’re using CocoaPods and if your `Podfile` is using another spec reposito
 
 ### Testing Distribution
 
-Firebase:
+#### Firebase:
 
 - firebaseappdistribution.googleapis.com
 
-App Center:
+#### App Center:
 
 - api.appcenter.ms
 - file.appcenter.ms
 
-### Store Submit
+### Store Submit (Publish)
 
-Google Play
+**Disclaimer:** The URLs provided below were last verified on 09/01/2024, and are subject to change by the respective services. Please consult the official documentation of stores for most up-to-date information.
+
+#### Google Play
 
 - `www.googleapis.com`
+- `androidpublisher.googleapis.com`
 
-Huawei AppGallery
+#### Huawei AppGallery
 
 - connect-api.cloud.huawei.com
-- developer.huawei.com
-- developerfile7.hicloud.com
+- nsp-appgallery-agcfs-dre.obs.eu-de.otc.t-systems.com
 
 :::caution
-
-Please be aware that the subdomain above (`developerfile7`) may change in the future, and it is dynamically returned by the `https://connect-api.cloud.huawei.com` endpoint.
-
+Please be aware that the URL above starting with `nsp-appgallery`, may change in the future. It is dynamically returned by the `https://connect-api.cloud.huawei.com` endpoint.
 :::
 
-App Store
+#### App Store
 
 - contentdelivery.itunes.apple.com
 - api.appstoreconnect.apple.com
