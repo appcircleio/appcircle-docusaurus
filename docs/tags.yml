@@ -2857,3 +2857,8 @@ xml:
   label: "kubernetes"
   description: "Kubernetes related documentations"
   permalink: "/kubernetes"
+
+"microsoft azure":
+  label: "microsoft azure"
+  description: "Microsoft Azure related documentations"
+  permalink: "/microsoft-azure"
