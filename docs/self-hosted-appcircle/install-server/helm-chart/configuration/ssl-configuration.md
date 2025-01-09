@@ -1,13 +1,14 @@
 ---
-title: SSL Configuration
+title: Helm SSL Configuration
 description: Learn how to configure SSL certificate for HTTPS connections
 tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 90
+sidebar_label: SSL Configuration
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-## Overview
+# Overview
 
 This guide provides detailed instructions for configuring an SSL certificate for HTTPS connections in the Appcircle Helm chart. 
 
