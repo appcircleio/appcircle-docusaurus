@@ -128,7 +128,9 @@ The **`kubectl`** CLI is **required**.
 
 The Kubernetes cluster should have **an Ingress controller** installed and configured since Appcircle exposes its services through **Ingress objects**.
 
-For **trial** purposes, you can **use** the default **Ingress-Nginx** controller deployed **within the Helm chart** scope.
+For **trial** purposes, you can **use** the default **Ingress-Nginx** controller deployed **within the Helm chart** scope and skip this section.
+
+You can check the default Ingress-Nginx controller values and configure as your needs by checking the [Ingress Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ingress-configuration.md#appcircle-default-ingress-nginx-configuration) documentation.
 
 For **production** environments, it's recommended to use **your own Ingress controller**.
 
@@ -151,6 +153,12 @@ Enable **`ssl-passthrough`** feature on your ingress-controller Enabling the SSL
 :::info
 Enabling the SSL passthrough option **does not** automatically allow all SSL traffic **from all Ingress objects** to pass through to the original service. Instead, it enables Ingress resources to leverage the SSL passthrough feature, allowing encrypted traffic to reach the backend service without being decrypted by the Ingress controller.
 :::
+
+#### Ingress Configurations
+
+You can **skip** this section **if you use the default** Ingress-Nginx controller deployed **within the Helm chart scope**.
+
+Configure the Appcircle ingresses for production usage. For more details, please check the [Ingress Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ingress-configuration.md#configuring-ingress-annotations) documentation.
 
 ### 2. Production Readiness
 
@@ -487,7 +495,51 @@ Support:
 For any issues or questions, please contact the system administrator or check the application documentation.
 ```
 
-### 3. Apply the Appcircle License
+### 3. Connecting Runners
+
+When you complete installation successfully by following above steps, you're ready for your first build. :tada:
+
+But in order to run build pipelines, you need to install and connect self-hosted runners. We have dedicated section for installation and configuration of self-hosted runners.
+
+Follow and apply related guidelines in [here](/self-hosted-appcircle/self-hosted-runner/installation).
+
+Self-hosted runner section in docs, has all details about runners and their configuration.
+
+:::::caution
+
+By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STREAM_ENDPOINT` and `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
+
+- `webeventredis.appcircle.io:6379,ssl=true`
+- `https://api.appcircle.io/build/v1`
+
+:point_up: You need to change these values with your self-hosted Appcircle server's Redis and API URL.
+
+Assuming our sample scenario explained above, these values should be:
+
+- `kvs.appcircle.spacetech.com:6379,ssl=false`
+- `http://api.appcircle.spacetech.com/build/v1`
+
+for our example configuration.
+
+:::info
+If your Appcircle server is running with `HTTPS`, then Redis and API URL should be like this:
+
+- `kvs.appcircle.spacetech.com:443,ssl=true`
+- `https://api.appcircle.spacetech.com/build/v1`
+
+:::
+
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.
+
+Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
+
+:::::
+
+Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted Appcircle server should run on a dedicated machine itself.
+
+You can install any number of runners regarding to your needs and connect them to self-hosted Appcircle server.
+
+### 4. Apply the Appcircle License
 
 When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
 
