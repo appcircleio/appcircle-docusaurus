@@ -38,6 +38,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The build logs of a binary deployed to the Publish module can now be accessed from the [Build History](/publish-module/publish-information/history#accessing-build-history) tab, even if the build artifact has been deleted in the Build module. <PublishBadge/> <CloudBadge/>
 - The usage of Testing Distribution for the license is now based on the application download count from the Testing Portal, rather than the number of emails shared via Testing Distribution. <DistributionBadge/> <CloudBadge/>
 - The redirection of Testing Distribution email URLs was improved for use in external browsers. <DistributionBadge/> <CloudBadge/>
+- HTML codes can no longer be injected into tester messages when sending applications to the testing portal due to security concerns. <DistributionBadge/> <CloudBadge/>
 - The Apple Devices option has been made visible for Apple Profiles without registered devices, with a relevant warning displayed when the option is selected by users. <SigningIdentitiesBadge/> <CloudBadge/>
 - The application logo is now displayed when installing an application via the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
 - The manual upload endpoints of the Testing Distribution, Publish and Enterprise App Store modules have been enhanced to provide a better experience for large file uploads. <CloudBadge/>
