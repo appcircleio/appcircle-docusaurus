@@ -23,10 +23,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - We are thrilled to introduce our enhanced Helm documentation for deploying Appcircle server on [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes). This new [architecture](/self-hosted-appcircle#appcircle-distributed-architecture) supports high availability, fault tolerance, and scalability, ensuring robust performance for production environments. <InfrastructureBadge/> <SelfHostedBadge/>
 - Build and Testing Distribution profiles can now be viewed in both list and profile card formats, based on the selected view type. <BuildBadge/> <DistributionBadge/> <CloudBadge/>
 - App versions uploaded to the Testing Portal can now be [filtered](/testing-distribution/testing-portal#search-by-branch) by their branch and binary list can be [sorted](/testing-distribution/testing-portal#sort-binaries-by-version--date) by app version or the upload date. <DistributionBadge/> <CloudBadge/>
-- Authentication settings can now be configured through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
-- Testing groups for the auto-send feature can now be configured through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
-- A new method has been added to sub-organization distributions through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin. Versions can now be distributed using the Root Organization’s PAT and the sub-organization’s name when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/>
+- Authentication settings can now be configured through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/> 
+- Testing groups for the auto-send feature can now be configured through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/> 
+- A new method has been added to sub-organization distributions through the [Fastlane Marketplace Testing Distribution](/marketplace/fastlane/testing-distribution) plugin. Versions can now be distributed using the Root Organization’s PAT and the sub-organization’s name when creating new testing profiles. <BestPracticesBadge/> <CloudBadge/> 
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest (final) release of the [Xcode 16.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_2-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- `AC_BUILD_BRANCH_ID` [reserved environment variable](/environment-variables/appcircle-specific-environment-variables#ios--android-common-environment-variables) has been added to display a unique ID for each branch. <EnvironmentVariablesBadge/> <CloudBadge/>
+- Existing messages for testers can now be edited by users to be updated for each binary on the testing portal side. <DistributionBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
@@ -41,6 +43,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The manual upload endpoints of the Testing Distribution, Publish and Enterprise App Store modules have been enhanced to provide a better experience for large file uploads. <CloudBadge/>
 - Notification updates have been made for various modules across all channels have been made, resolving discrepancies between notifications for different channel types. <AccountBadge/> <CloudBadge/>
 - The dashboard page will now display a Publish Count card in place of the second Testing Distribution Count card. <AccountBadge/> <CloudBadge/>
+- The Appcircle theme can now be easily changed from the bottom status bar’s right corner. <AccountBadge/> <CloudBadge/>
 - My Details section has been removed from the Account page. <AccountBadge/> <CloudBadge/>
 - App versions marked as live or beta-published now cannot be deleted by users without unpublishing them first. <EnterpriseStoreBadge/> <CloudBadge/>
 - Starter Edition license users can no longer access Captcha settings within the Enterprise App Store settings. <EnterpriseStoreBadge/> <CloudBadge/>
@@ -51,11 +54,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - An issue was fixed where, in some cases, screenshots were being duplicated after using the Update Metadata workflow in the Publish module. <PublishBadge/> <CloudBadge/>
 <!-- - An issue was fixed where some self-hosted users were unable to resign a binary within the Publish module. <PublishBadge/> <SelfHostedBadge/> -->
+<!-- - An issue causing errors for self-hosted users when running “Add for Review” on the App Store within their publish flow has been fixed. <PublishBadge/> <SelfHostedBadge/> -->
+<!-- - An issue was fixed for self hosted users when retrieving and attempting to update incorrect App Store app information (previously, the already deployed app was retrieved). The correct app in the “Ready for Submission” state is now retrieved and updated. <PublishBadge/> <SelfHostedBadge/> -->
 - An issue was fixed where the iOS certificate and provisioning profile could not be uploaded directly through the build configuration. <BuildBadge/> <CloudBadge/>
 <!-- - An issue was fixed where cache pull and cache push workflows did not function correctly for some self-hosted users. <BuildIntegrationsBadge/> <SelfHostedBadge/> -->
 - A new environment variable, `ASPNETCORE_MAX_JAVA_MEMORY_SIZE`, has been created to address the issue where 4000M of heap memory was required in Java for locating the APK logo. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where the naming rules for build configurations were not consistent between manual creation and YAML upload. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where the Azure DevOps pull request merge commit message was missing due to a webhook event parsing bug in Appcircle. <BuildBadge/> <CloudBadge/>
+- An issue preventing users from saving updated signing settings on certain build profiles has been fixed. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where iOS certificates in use within build profiles could not be forcefully deleted by users. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where, when a synced API key was deleted, devices not registered under another API key within the organization were incorrectly listed as unregistered devices. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue related to icon parsing for APK files has been fixed. <DistributionBadge/> <CloudBadge/>
@@ -72,6 +78,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The incorrect user group retrieval strategy values causing LDAP user login issues have been updated. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where users were unable to disconnect their email settings from the notification settings. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where the license terms on the dashboard displayed incorrect dates for the license status. <AccountBadge/> <CloudBadge/>
+<!-- - An issue where the sync interval for LDAP Mapping was not correctly displayed in the UI upon page load or reload has been fixed. <AccountBadge/> <SelfHostedBadge/> -->
 
 ## 3.24.0 - 2024-12-06 Publish Priority Configuration, Download Module Reports Through API, Bug Fixes and more
 
