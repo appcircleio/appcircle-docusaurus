@@ -628,7 +628,7 @@ nohup ./download-runner.sh "240918" &
   <TabItem value="241227" label="241227" default>
 
 ```bash
-curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "241227" &
 ```
