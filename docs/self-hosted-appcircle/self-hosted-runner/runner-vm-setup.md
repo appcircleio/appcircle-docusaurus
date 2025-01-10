@@ -1692,7 +1692,7 @@ So, most probably, your macOS host sleeps when there is no UI interaction, and a
 
 To do that, please configure your power settings on the host machine.
 
-You can re-check the [Configure Power Settings](#3-configure-power-settings) title for power management on the host.
+You can re-check the [Configure Power Settings](#4-configure-power-settings) title for power management on the host.
 
 ### I want to make some configurations to macOS base image but need desktop UI for them
 
