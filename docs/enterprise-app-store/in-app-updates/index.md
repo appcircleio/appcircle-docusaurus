@@ -1220,7 +1220,8 @@ For example;
 
 - **iOS-Swift**: **`itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)`**
 - **Android-Java/Kotlin**: **`https://%s/api/app-versions/%s/download-version/%s`**
-- **React Native**: **`${Environments.STORE_URL}/api/app-versions/${availableVersionId}/download-version/${accessToken}`**
+- **React Native Android**: **`${Environments.STORE_URL}/api/app-versions/${availableVersionId}/download-version/${accessToken}`**
+- **React Native iOS**: **`itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)`**
 - **MAUI**: **`${Environment.GetEnvironmentVariable("STORE_URL")}/api/app-versions/{availableVersionId}/download-version/{accessToken}`**
 
 :::
