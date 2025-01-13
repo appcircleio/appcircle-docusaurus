@@ -9,73 +9,97 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
 
-This guide provides a comprehensive walkthrough for migrating your self-hosted Appcircle instance from a Docker environment to a Kubernetes cluster. It assumes you have a working Docker deployment of Appcircle and a Kubernetes cluster ready for deployment.
+## Overview
 
-In this migration guide, the "bastion host" refers to a machine that has network access to both your existing standalone Appcircle server (running on Docker) and your Kubernetes cluster. It serves as a central point for executing commands on the Docker host, saving the backup data, and then interacting with the Kubernetes cluster to deploy and configure the new Appcircle instance. You'll copy configuration files and database backups from the Docker host to this bastion host, and then use this host to apply the configuration and data to the Kubernetes cluster.
+This guide provides a step-by-step walkthrough for migrating your self-hosted **Appcircle** instance from a standalone Docker environment to a Kubernetes cluster. It assumes that you already have:
 
-:::caution
-This migration process involves downtime. Plan accordingly and back up all crucial data before proceeding. Ensure you understand the implications of each step. Test the migration in a staging environment first if possible.
-:::
+1. A fully operational Docker deployment of Appcircle server.
+2. A Kubernetes cluster ready for deployment.
+
+In this guide, the **bastion host** refers to a machine with network access to both:
+
+- The existing Appcircle server.
+- The Kubernetes cluster.
+
+The bastion host serves as a central point for executing commands, transferring backup data, and applying configurations. During the migration process, you will:
+
+- Copy configuration files and database backups from the Docker host to the bastion host.
+- Use the bastion host to deploy and configure the new Appcircle instance in the Kubernetes cluster.
+
+:::caution Downtime Alert  
+This migration process involves downtime. To minimize disruption, **plan accordingly** and:
+
+- Back up all crucial data before starting the migration.
+- Thoroughly review each step and ensure you understand its implications.
+- Test the migration process in a staging or non-production environment if possible.
+- Notify users about the expected downtime and migration schedule.  
+  :::
 
 ## Pre-Migration
 
-### 1. Backup Standalone Appcircle Server
+### Standalone Appcircle Server Steps
 
-This section outlines the necessary steps to prepare for the migration. You will back up crucial data from your existing Docker-based Appcircle installation and set up your Kubernetes environment for the new deployment.
+This section outlines the essential steps to back up data from your existing Standalone Appcircle server installation and prepare your Kubernetes environment for the migration.
 
-This involves creating a central directory on a bastion host, backing up configuration files and databases, and preparing your Kubernetes cluster.
+You will:
 
-:::tip
-Before proceeding, it is **highly recommended** to create a full backup of your Appcircle server. This provides an extra layer of safety in case anything goes wrong during the migration. This might involve creating a snapshot of the Docker VM or using a backup tool specific to your setup.
-:::
+- Create a directory on the **bastion host** to store backups.
+- Backup configuration files, secrets, and database credentials from the Standalone Appcircle server host.
 
-- **Create a Migration Directory:** On your **bastion host**, create a directory to store backup files:
-    ```bash
-    mkdir appcircle-k8s-migration && cd appcircle-k8s-migration
-    ```
+:::tip Recommended Backup Strategy  
+Before starting, create a full backup of your Appcircle server. Options include:
 
-- **Backup Appcircle Data (Docker):** On your **standalone Appcircle server**, execute the following commands and copy the output to your bastion host:
+- Creating a VM snapshot of the Docker host.
+- Using a backup tool specific to your infrastructure.
+- Ensuring configuration files and database dumps are included in your backups.  
+  :::
 
-  <SpacetechExampleInfo/>
+#### 1. Create a Migration Directory
 
-  - **Global Configuration:** Save the content to a file named `global.yaml` on the bastion host.
+On your **bastion host**, create a directory to store all migration files:
+
+```bash
+mkdir appcircle-k8s-migration && cd appcircle-k8s-migration
+```
+
+#### 2. Backup Appcircle Configuration Data
+
+On the **standalone Appcircle server**, execute the following commands to back up the necessary files. Transfer the outputs to the migration directory on the bastion host.
+
+- **Appcircle Server Directory**
+  Change directory to the `appcircle-server`.
   ```bash
-  cd appcircle-server && \
+  cd appcircle-server
+  ```
+  <SpacetechExampleInfo/>
+- **Global Configuration**  
+  Print the `global.yaml` file and save it on the bastion host:
+
+  ```bash
   cat projects/spacetech/global.yaml
   ```
 
-  - **User Secrets:** Save the content to a file named `user-secret.yaml` on the bastion host.
+- **User Secrets**  
+  Decode and print the `user-secret.yaml` file and save it on the bastion host:
 
   ```bash
   cat projects/spacetech/user-secret | base64 -d
   ```
 
-  - **Generated Secrets:** Save the content to a file named `generated-secret.yaml` on the bastion host.
+- **Generated Secrets**  
+  Print the `generated-secret.yaml` file and save it on the bastion host:
 
   ```bash
   cat projects/spacetech/generated-secret.yaml
   ```
 
-  - **Credentials (if using Google Artifact Registry):**
-
+- **Cred Json**  
+  Print the `cred.json` file and save it on the bastion host:
   ```bash
   cat cred.json
   ```
 
-### 2. Deploy the Appcircle Server to the Kubernetes
-
-Please follow the [Kubernetes](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes) documentation for detailed Appcircle server installation documents.
-
-There are some points that you should pay attention:
-
-- If the standalone Appcircle server is running `HTTP` instead of `HTTPS`, you should configure the Helm chart configuration for `HTTP`.
-- Check the standalone Appcircle disk usage. The stateful apps such as MinIO, MongoDB etc should have at least that much data.
-
-### 3. Make Sure the Standalone Appcircle Server Is Running
-
-Make sure that the Appcircle server is up and running without any problem.
-
-### 4. Check the Data Size on the Standalone Appcircle Server
+#### 3. Check the Data Size on the Standalone Appcircle Server
 
 - Get the volume sizes:
 
@@ -107,7 +131,79 @@ echo "$APPCIRCLE_DISK_USAGE" | grep "posgresqlData"
 echo "$APPCIRCLE_DISK_USAGE" | grep "vault_data"
 ```
 
-- Adjust the Helm `values.yaml` according to standalone Appcircle server data sizes. For more detailed information, please check [Storage Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration.md)
+You will use that values while configuring the `values.yaml` of the Appcircle server Helm chart.
+
+#### 4. Make Sure the Standalone Appcircle Server Is Running
+
+Before proceeding with the migration, verify that the standalone Appcircle server is operational and healthy. This ensures you can create accurate backups without issues.
+
+Additionally:
+
+- There should be no running builds on the Appcircle during the migration.
+- Prevent external requests while keeping the server healthy by stopping the Nginx service.
+
+To achieve that, you can follow the steps below:
+
+1. **Login to the standalone Appcircle server.**
+
+2. **Change directory to the `appcircle-server`.**
+
+   ```bash
+   cd appcircle-server
+   ```
+
+3. **Change directory to the `export` directory of the project.**
+   <SpacetechExampleInfo/>
+
+   ```bash
+   cd projects/spacetech/export
+   ```
+
+4. **Stop the Nginx service.**
+   ```bash
+   docker compose stop nginx
+   ```
+
+### Kubernetes Appcircle Server Steps
+
+This section outlines the steps and considerations for deploying the Appcircle server to a Kubernetes cluster. Ensure you review the [Key Considerations](#2-key-considerations) below before proceeding.
+
+#### 1. Prepare for Helm Chart Installation
+
+After reviewing the key considerations, follow the [Appcircle Server Kubernetes Installation Guide](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes) for detailed Appcircle server Helm chart deployment instructions.
+
+#### 2. Key Considerations
+
+- **Stateful Applications**  
+  This guide assumes you are migrating from a standalone Appcircle server to a Kubernetes cluster with stateful applications (e.g., PostgreSQL, MinIO, MongoDB, Vault) managed by the Appcircle Helm chart.
+
+  - If you choose to manage stateful apps **outside the Helm chart's scope**, modify the commands and configurations accordingly.
+  - Refer to the [Production Readiness](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) page for additional guidance.
+
+- **Protocol Configuration (HTTP/HTTPS)**  
+  Match the protocol used by your standalone Appcircle server:
+
+  - If the standalone server is using `HTTPS`, configure the Helm chart for `HTTPS`.
+  - If the server is running on `HTTP`, adjust the Helm chart configuration for `HTTP`.
+
+- **Storage Allocation**  
+  Update your Helm chart's `values.yaml` file with storage sizes based on the data extracted in the [Check the Data Size](#3-check-the-data-size-on-the-standalone-appcircle-server) section.
+
+  - Refer to the [Storage Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration) page for detailed instructions.
+
+- **Prepare `values.yaml` for Migration**  
+  Make the following adjustments to your `values.yaml` file **before deploying the Helm chart**:
+
+  ```yaml
+  auth:
+    auth-keycloak:
+      replicas: 0
+  mongodb:
+    resourcesPreset: "large"
+  ```
+
+  - Setting `auth-keycloak.replicas` to `0` disables Keycloak authentication during migration to prevent conflicts.
+  - Setting `resourcesPreset` to `"large"` ensures MongoDB has sufficient resources for handling large datasets.
 
 ## Migrate the Data
 
@@ -241,11 +337,13 @@ kubectl create secret generic appcircle-server-minio-connection \
 #### Standalone Appcircle Server
 
 1. **Locate PostgreSQL Container:**: Find the PostgreSQL container name.
+
    ```bash
    docker ps | grep postgres
    ```
 
 2. **Dump Database:**
+
    ```bash
    docker exec <postgres_container_name> pg_dump -U <db_user> -h localhost -p 5432 -F c -b -v -f pgdump.backup <db_name>
    ```
@@ -260,21 +358,25 @@ kubectl create secret generic appcircle-server-minio-connection \
 1. **Copy the PostgreSQL Data to Bastion Host**: Copy the dumped PostgreSQL data from the Appcircle server to the bastion host.
 
 2. **Get PostgreSQL Password:**
+
    ```bash
    kubectl get secret -n appcircle appcircle-server-auth-postgresql -ojsonpath='{.data.password}' | base64 -d
    ```
 
 3. **Get the PostgreSQL pod name:**
+
    ```bash
    kubectl get pods -n appcircle | grep postgres
    ```
 
 4. **Start Port Forwarding:**
+
    ```bash
    kubectl port-forward appcircle-server-auth-postgresql-0 5432:5432 -n appcircle
    ```
 
 5. **Install PostgreSQL tools:**
+
    ```bash
    brew install postgresql
    ```
@@ -291,6 +393,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 <SpacetechExampleInfo/>
 
 1. **Expose MongoDB Port:** Add a port mapping (e.g., 36300:36300) to your `docker-compose.yml` for the `mongo_1` service and restart.
+
    ```bash
    vim projects/spacetech/export/compose.yaml
    ```
@@ -303,59 +406,69 @@ kubectl create secret generic appcircle-server-minio-connection \
        - "36300:36300"
    ```
 
-3. **Change directory to appcircle-server.**
+2. **Change directory to appcircle-server.**
 
-4. **Get the MongoDB connection string:**
+3. **Get the MongoDB connection string:**
+
    ```bash
    cat projects/spacetech/export/publish/default.env | grep "CUSTOMCONNSTR_PUBLISH_DB_CONNECTION_STRING"
    ```
 
-5. **Install `mongosh` tool.** To install `mongosh` to your Appcircle server, please check the [official MongoDB documentation](https://www.mongodb.com/docs/mongodb-shell/install/). 
+4. **Install `mongosh` tool.** To install `mongosh` to your Appcircle server, please check the [official MongoDB documentation](https://www.mongodb.com/docs/mongodb-shell/install/).
 
-6. **Open Mongo Shell to the standalone Appcircle server:**
+5. **Open Mongo Shell to the standalone Appcircle server:**
+
    ```bash
    mongosh --host 127.0.0.1 --port 36300
    ```
 
-7. **Switch to the `admin` db:**
+6. **Switch to the `admin` db:**
+
    ```mongosh
    use admin
    ```
 
-8. **Create a user to dump the DB:**
+7. **Create a user to dump the DB:**
+
    ```mongosh
    db.createUser({user: "backup",pwd: "backup",roles: [{ role: "root", db: "admin"}]})
    ```
 
-9. **Get the MongoDB container names:**
+8. **Get the MongoDB container names:**
+
    ```bash
    docker ps | grep mongo_1
    ```
 
-10. **Dump the MongoDB:**
-   ```bash
-   docker exec -it spacetech-mongo_1-1 mongodump --uri="mongodb://backup:backup@mongo_1:36300,mongo_2:36301,mongo_3:36302/?replicaSet=rs&authSource=admin" --gzip --archive=/mongo-backup.gz
-   ```
+9. **Dump the MongoDB:**
+
+```bash
+docker exec -it spacetech-mongo_1-1 mongodump --uri="mongodb://backup:backup@mongo_1:36300,mongo_2:36301,mongo_3:36302/?replicaSet=rs&authSource=admin" --gzip --archive=/mongo-backup.gz
+```
 
 11. **Copy the dumped DB file from out of the container to the host machine:**
-   ```bash
-   docker cp spacetech-mongo_1-1:/mongo-backup.gz .
-   ```
+
+```bash
+docker cp spacetech-mongo_1-1:/mongo-backup.gz .
+```
 
 #### Bastion Host
 
 1. **Copy the file from the standalone Appcircle server to the bastion host:**
+
    ```bash
    scp rhel8:/home/berk/ac-script-self-hosted/projects/spacetech/export/mongo-backup.gz .
    ```
 
 2. **Install mongo tools:**
-    ```bash
-    brew tap mongodb/brew
-    brew install mongodb-database-tools
-    ```
+
+   ```bash
+   brew tap mongodb/brew
+   brew install mongodb-database-tools
+   ```
 
 3. **Get the MongoDB root password of the K8s installation:**
+
    ```bash
    kubectl get secret -n appcircle appcircle-server-mongodb -o jsonpath='{.data.mongodb-root-password}' | base64 -d
    ```
@@ -378,9 +491,9 @@ kubectl create secret generic appcircle-server-minio-connection \
 2. **Change directory to appcircle-server.**
 
 3. **Expose MinIO Port:** Ensure MinIO's port 9000 is accessible. You might need to publish the port in your `docker-compose.yml`.
-    ```bash
-    docker ps | grep snsd
-    ```
+   ```bash
+   docker ps | grep snsd
+   ```
 
 <SpacetechExampleInfo/>
 
@@ -394,92 +507,96 @@ kubectl create secret generic appcircle-server-minio-connection \
 1. **Login to the bastion.**
 
 2. **Install the `mc` tool:**
-    ```bash
-    brew install minio-mc
-    ```
+
+   ```bash
+   brew install minio-mc
+   ```
 
 3. **Get the Kubernetes MinIO access and secret keys.**
 
-    ```bash
-    kubectl get secret -n appcircle appcircle-server-minio-connection -ojsonpath='{.data.accessKey}' | base64 -d && \
-    echo && \
-    kubectl get secret -n appcircle appcircle-server-minio-connection -ojsonpath='{.data.secretKey}' | base64 -d
-    ```
+   ```bash
+   kubectl get secret -n appcircle appcircle-server-minio-connection -ojsonpath='{.data.accessKey}' | base64 -d && \
+   echo && \
+   kubectl get secret -n appcircle appcircle-server-minio-connection -ojsonpath='{.data.secretKey}' | base64 -d
+   ```
 
 4. **Get the MinIO service name.**
 
-    ```bash
-    kubectl get services -n appcircle | grep minio
-    ```
+   ```bash
+   kubectl get services -n appcircle | grep minio
+   ```
 
 5. **Change MinIO service to NodePort for temporary.**
 
-    :::info
-    We recommend opening the MinIO service to the external network temporarily instead of using `kubectl port-forward` since we had problems while migrating large files over `kubectl`.
+   :::info
+   We recommend opening the MinIO service to the external network temporarily instead of using `kubectl port-forward` since we had problems while migrating large files over `kubectl`.
 
-    Note that this doesn't make the MinIO data public as long as you keep the MinIO password a secret.
-    :::
+   Note that this doesn't make the MinIO data public as long as you keep the MinIO password a secret.
+   :::
 
-    ```bash
-    kubectl patch service appcircle-server-minio -n appcircle --type='json' -p='[{"op": "replace", "path": "/spec/type", "value": "NodePort"}, {"op": "add", "path": "/spec/ports/0/nodePort", "value": 30534}, {"op": "add", "path": "/spec/ports/1/nodePort", "value": 32761}]'
-    ```
+   ```bash
+   kubectl patch service appcircle-server-minio -n appcircle --type='json' -p='[{"op": "replace", "path": "/spec/type", "value": "NodePort"}, {"op": "add", "path": "/spec/ports/0/nodePort", "value": 30534}, {"op": "add", "path": "/spec/ports/1/nodePort", "value": 32761}]'
+   ```
 
 6. **Install `rclone` tool.**
 
-    :::info
-    We recommended using `rclone` tool instead of `mc`.
-    :::
+   :::info
+   We recommended using `rclone` tool instead of `mc`.
+   :::
 
-    ```bash
-    brew install rclone
-    ```
+   ```bash
+   brew install rclone
+   ```
 
 7. **Add Rclone config for standalone server.**
-    ```bash
-    rclone config
-    ```
 
-    ```rclone
-    n
-    Storage > 4
-    provider > 7
-    env_auth > false
-    access_key_id
-    secret_access_key
-    Region to connect > empty
-    endpoint > http://192.168.1.220:9040
-    location_constraint> empty
-    acl> empty
-    server_side_encryption> empty
-    sse_kms_key_id> empty
-    Edit advanced config? (y/n) > n
-    ```
+   ```bash
+   rclone config
+   ```
+
+   ```rclone
+   n
+   Storage > 4
+   provider > 7
+   env_auth > false
+   access_key_id
+   secret_access_key
+   Region to connect > empty
+   endpoint > http://192.168.1.220:9040
+   location_constraint> empty
+   acl> empty
+   server_side_encryption> empty
+   sse_kms_key_id> empty
+   Edit advanced config? (y/n) > n
+   ```
+
 8. **Add Rclone config for K8s server.**
-    ```bash
-    rclone config
-    ```
 
-    ```rclone
-    n
-    Storage > 4
-    provider > 7
-    env_auth > false
-    access_key_id
-    secret_access_key
-    Region to connect > empty
-    endpoint > http://192.168.1.110:30534
-    location_constraint> empty
-    acl> empty
-    server_side_encryption> empty
-    sse_kms_key_id> empty
-    Edit advanced config? (y/n) > n
-    ```
+   ```bash
+   rclone config
+   ```
+
+   ```rclone
+   n
+   Storage > 4
+   provider > 7
+   env_auth > false
+   access_key_id
+   secret_access_key
+   Region to connect > empty
+   endpoint > http://192.168.1.110:30534
+   location_constraint> empty
+   acl> empty
+   server_side_encryption> empty
+   sse_kms_key_id> empty
+   Edit advanced config? (y/n) > n
+   ```
+
 9. **Start copying files.**
 
-    ```bash
-    rclone copy --progress --checksum --update ac-standalone: ac-k8s:
-    ```
-
+   ```bash
+   rclone copy --progress --checksum --update ac-standalone: ac-k8s:
+   ```
 
 ### 5. Vault Backup & Restore
 
@@ -490,49 +607,55 @@ kubectl create secret generic appcircle-server-minio-connection \
 2. **Change directory to appcircle-server.**
 
 3. **Create a file named `migrate.hcl`.**
-    ```bash
-    cat > migrate.hcl <<'EOL'
-    storage_source "file" {
-    path = "/vault/data/"
-    }
 
-    storage_destination "file" {
-    path = "/vault/target/"
-    }
+   ```bash
+   cat > migrate.hcl <<'EOL'
+   storage_source "file" {
+   path = "/vault/data/"
+   }
 
-    cluster_addr="http://127.0.0.1:8201"
-    EOL
-    ```
+   storage_destination "file" {
+   path = "/vault/target/"
+   }
+
+   cluster_addr="http://127.0.0.1:8201"
+   EOL
+   ```
 
 4. **Get the Vault container name.**
-    ```bash
-    docker ps | grep vault
-    ```
+
+   ```bash
+   docker ps | grep vault
+   ```
 
 5. **Copy the file into the container.**
-    ```bash
-    docker cp migrate.hcl spacetech-vault-1:/vault/
-    ```
+
+   ```bash
+   docker cp migrate.hcl spacetech-vault-1:/vault/
+   ```
 
 6. **Migrate the the Vault data to the target directory.**
-    ```bash
-    docker exec -it spacetech-vault-1 vault operator migrate --config=/vault/migrate.hcl
-    ```
+
+   ```bash
+   docker exec -it spacetech-vault-1 vault operator migrate --config=/vault/migrate.hcl
+   ```
 
 7. **Make a tarball with of the data.**
-    ```bash
-    docker exec -it spacetech-vault-1 sh -c "cd /vault && tar -czpvf  vaultd.tar.gz -C /vault/target/ ."
-    ```
+
+   ```bash
+   docker exec -it spacetech-vault-1 sh -c "cd /vault && tar -czpvf  vaultd.tar.gz -C /vault/target/ ."
+   ```
 
 8. **Copy the tarball from the container to the host machine.**
-    ```bash
-    docker cp spacetech-vault-1:/vault/vaultd.tar.gz .
-    ```
+
+   ```bash
+   docker cp spacetech-vault-1:/vault/vaultd.tar.gz .
+   ```
 
 9. **Get the full path of the copied tarball.**
-    ```bash
-    realpath vaultd.tar.gz
-    ```
+   ```bash
+   realpath vaultd.tar.gz
+   ```
 
 <SpacetechExampleInfo/>
 
@@ -544,50 +667,59 @@ kubectl create secret generic appcircle-server-minio-connection \
 #### Bastion Host
 
 1. **Copy the vault data tar ball to the local.**
-    ```bash
-    scp rhel8:/home/berk/ac-script-self-hosted/vaultd.tar.gz .
-    ```
+
+   ```bash
+   scp rhel8:/home/berk/ac-script-self-hosted/vaultd.tar.gz .
+   ```
 
 2. **Get the Vault statefulset name.**
-    ```bash
-    kubectl get statefulsets -n appcircle | grep vault
-    ```
+
+   ```bash
+   kubectl get statefulsets -n appcircle | grep vault
+   ```
 
 3. **Edit the vault `statefulset` for safe operations.**
-    ```bash
-    kubectl patch statefulset -n appcircle appcircle-server-vault -p '{"spec": {"template": {"spec":{"containers":[{"name":"vault","command": ["sh", "-c", "tail -f /dev/null" ], "args": null, "readinessProbe": null, "lifecycle": null  }]}}}}'
-    ```
+
+   ```bash
+   kubectl patch statefulset -n appcircle appcircle-server-vault -p '{"spec": {"template": {"spec":{"containers":[{"name":"vault","command": ["sh", "-c", "tail -f /dev/null" ], "args": null, "readinessProbe": null, "lifecycle": null  }]}}}}'
+   ```
 
 4. **Delete the pod for it to be re-created.**
-    ```bash
-    kubectl delete pod appcircle-server-vault-0 -n appcircle
-    ```
+
+   ```bash
+   kubectl delete pod appcircle-server-vault-0 -n appcircle
+   ```
 
 5. **Copy the vault data to the target pod.**
-    ```bash
-    kubectl cp "./vaultd.tar.gz" "appcircle-server-vault-0:/vault/data/vaultd.tar.gz" -n appcircle
-    ```
+
+   ```bash
+   kubectl cp "./vaultd.tar.gz" "appcircle-server-vault-0:/vault/data/vaultd.tar.gz" -n appcircle
+   ```
 
 6. **Open shell in the vault container.**
-    ```bash
-    kubectl exec -it appcircle-server-vault-0 -- bash
-    ```
+
+   ```bash
+   kubectl exec -it appcircle-server-vault-0 -- bash
+   ```
 
 7. **Run the following commands in the shell.**
-    ```bash
-    cd /vault/data 
-    tar -xzvf vaultd.tar.gz -C .
-    /usr/local/bin/docker-entrypoint.sh vault server -config=/vault/config/extraconfig-from-values.hcl
-    ```
+
+   ```bash
+   cd /vault/data
+   tar -xzvf vaultd.tar.gz -C .
+   /usr/local/bin/docker-entrypoint.sh vault server -config=/vault/config/extraconfig-from-values.hcl
+   ```
 
 8. **Don't close the upper terminal until the process finishes.**
 
 9. **Open a new terminal in the vault container.**
-    ```bash
-    kubectl exec -it appcircle-server-vault-0 -- bash
-    ```
+
+   ```bash
+   kubectl exec -it appcircle-server-vault-0 -- bash
+   ```
 
 10. **Unseal the vault with the saved keys from the steps above.**
+
     ```bash
     vault operator unseal dnaDMnwLuRni******M0EPJ2gAlyeHmOAy
     vault operator unseal FRTs/BO606ty******1nm9pJssLZjqVULR
@@ -595,6 +727,7 @@ kubectl create secret generic appcircle-server-minio-connection \
     ```
 
 11. **Delete the vault data tar ball**
+
     ```bash
     rm /vault/data/vaultd.tar.gz
     ```
@@ -614,12 +747,13 @@ kubectl create secret generic appcircle-server-minio-connection \
 2. Remove the `resourcesPreset` from the `values.yaml`.
 
 3. Upgrade the Helm release.
-    ```bash
-    helm upgrade --install appcircle-server appcircle/appcircle \
-      --timeout 1200s \
-      -n appcircle \
-      -f values.yaml
-    ```
+
+   ```bash
+   helm upgrade --install appcircle-server appcircle/appcircle \
+     --timeout 1200s \
+     -n appcircle \
+     -f values.yaml
+   ```
 
 4. **Verification:** After the Kubernetes deployment completes, thoroughly test all Appcircle functionalities.
 
