@@ -604,7 +604,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 13. **Edit the secret with old unseal keys.**
     ```bash
     kubectl patch secret appcircle-server-vault-seal -n appcircle \
-    --patch='{"stringData": { "token": "hvs.U5LLy********F2bOy", "unseal_keys": "dnaDMnwLuRni******M0EPJ2gAlyeHmOAy FRTs/BO606ty******1nm9pJssLZjqVULR f35t4MU6gojw******/bH92wR9t6MzzIYc" }}'
+    --patch='{"stringData": { "token": "*hvs*.U5LLy********F2bOy", "unseal_keys": "dnaDMnwLuRni******M0EPJ2gAlyeHmOAy FRTs/BO606ty******1nm9pJssLZjqVULR f35t4MU6gojw******/bH92wR9t6MzzIYc" }}'
     ```
 
 ## Post-Migration Steps
