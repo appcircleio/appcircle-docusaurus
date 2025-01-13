@@ -341,7 +341,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 1. **Copy the file from the standalone Appcircle server to the bastion host:**
    ```bash
-   scp rhel8:/home/berk/ac-script-self-hosted/projects/burakberk/export/mongo-backup.gz .
+   scp rhel8:/home/berk/ac-script-self-hosted/projects/spacetech/export/mongo-backup.gz .
    ```
 
 2. **Install mongo tools:**
@@ -502,22 +502,22 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 5. **Copy the file into the container.**
     ```bash
-    docker cp migrate.hcl burakberk-vault-1:/vault/
+    docker cp migrate.hcl spacetech-vault-1:/vault/
     ```
 
 6. **Migrate the the Vault data to the target directory.**
     ```bash
-    docker exec -it burakberk-vault-1 vault operator migrate --config=/vault/migrate.hcl
+    docker exec -it spacetech-vault-1 vault operator migrate --config=/vault/migrate.hcl
     ```
 
 7. **Make a tarball with of the data.**
     ```bash
-    docker exec -it burakberk-vault-1 sh -c "cd /vault && tar -czpvf  vaultd.tar.gz -C /vault/target/ ."
+    docker exec -it spacetech-vault-1 sh -c "cd /vault && tar -czpvf  vaultd.tar.gz -C /vault/target/ ."
     ```
 
 8. **Copy the tarball from the container to the host machine.**
     ```bash
-    docker cp burakberk-vault-1:/vault/vaultd.tar.gz .
+    docker cp spacetech-vault-1:/vault/vaultd.tar.gz .
     ```
 
 9. **Get the full path of the copied tarball.**
@@ -527,7 +527,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 10. **Get the unseal and root keys and save, you will use for unsealing the vault.**
     ```bash
-    grep -A 7 "vault" projects/burakberk/generated-secret.yaml
+    grep -A 7 "vault" projects/spacetech/generated-secret.yaml
     ```
 
 #### Bastion Host
@@ -593,7 +593,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 13. **Edit the secret with old unseal keys.**
     ```bash
     kubectl patch secret appcircle-server-vault-seal -n appcircle \
-    --patch='{"stringData": { "token": "hvs.U5LLyGSD*****BF2bOy", "unseal_keys": "dnaDMnwLuRni******M0EPJ2gAlyeHmOAy FRTs/BO606ty******1nm9pJssLZjqVULR f35t4MU6gojw******/bH92wR9t6MzzIYc" }}'
+    --patch='{"stringData": { "token": "hvs.U5LLy********F2bOy", "unseal_keys": "dnaDMnwLuRni******M0EPJ2gAlyeHmOAy FRTs/BO606ty******1nm9pJssLZjqVULR f35t4MU6gojw******/bH92wR9t6MzzIYc" }}'
     ```
 
 ## Post-Migration Steps
