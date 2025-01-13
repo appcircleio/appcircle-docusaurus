@@ -7,6 +7,7 @@ sidebar_position: 95
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
 
 This guide provides a comprehensive walkthrough for migrating your self-hosted Appcircle instance from a Docker environment to a Kubernetes cluster. It assumes you have a working Docker deployment of Appcircle and a Kubernetes cluster ready for deployment.
 
@@ -29,30 +30,30 @@ Before proceeding, it is **highly recommended** to create a full backup of your 
 :::
 
 - **Create a Migration Directory:** On your **bastion host**, create a directory to store backup files:
+    ```bash
+    mkdir appcircle-k8s-migration && cd appcircle-k8s-migration
+    ```
 
-```bash
-mkdir appcircle-k8s-migration && cd appcircle-k8s-migration
-```
+- **Backup Appcircle Data (Docker):** On your **standalone Appcircle server**, execute the following commands and copy the output to your bastion host:
 
-- **Backup Appcircle Data (Docker):** On your standalone Appcircle server, execute the following commands and copy the output to your bastion host:
+  <SpacetechExampleInfo/>
 
   - **Global Configuration:** Save the content to a file named `global.yaml` on the bastion host.
-
   ```bash
-  cd appcircle-server
-  cat projects/<your-project-name>/global.yaml
+  cd appcircle-server && \
+  cat projects/spacetech/global.yaml
   ```
 
   - **User Secrets:** Save the content to a file named `user-secret.yaml` on the bastion host.
 
   ```bash
-  cat projects/<your-project-name>/user-secret | base64 -d
+  cat projects/spacetech/user-secret | base64 -d
   ```
 
   - **Generated Secrets:** Save the content to a file named `generated-secret.yaml` on the bastion host.
 
   ```bash
-  cat projects/<your-project-name>/generated-secret.yaml
+  cat projects/spacetech/generated-secret.yaml
   ```
 
   - **Credentials (if using Google Artifact Registry):**
@@ -63,7 +64,7 @@ mkdir appcircle-k8s-migration && cd appcircle-k8s-migration
 
 ### 2. Deploy the Appcircle Server to the Kubernetes
 
-Please follow the [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes.md) documentation for detailed Appcircle server installation documents.
+Please follow the [Kubernetes](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes) documentation for detailed Appcircle server installation documents.
 
 There are some points that you should pay attention:
 
@@ -287,6 +288,8 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 #### Standalone Appcircle Server
 
+<SpacetechExampleInfo/>
+
 1. **Expose MongoDB Port:** Add a port mapping (e.g., 36300:36300) to your `docker-compose.yml` for the `mongo_1` service and restart.
    ```bash
    vim projects/spacetech/export/compose.yaml
@@ -300,39 +303,41 @@ kubectl create secret generic appcircle-server-minio-connection \
        - "36300:36300"
    ```
 
-2. **Get the MongoDB connection string:**
+3. **Change directory to appcircle-server.**
+
+4. **Get the MongoDB connection string:**
    ```bash
    cat projects/spacetech/export/publish/default.env | grep "CUSTOMCONNSTR_PUBLISH_DB_CONNECTION_STRING"
    ```
 
-3. **Install `mongosh` tool.** To install `mongosh` to your Appcircle server, please check the [official MongoDB documentation](https://www.mongodb.com/docs/mongodb-shell/install/). 
+5. **Install `mongosh` tool.** To install `mongosh` to your Appcircle server, please check the [official MongoDB documentation](https://www.mongodb.com/docs/mongodb-shell/install/). 
 
-4. **Open Mongo Shell to the standalone Appcircle server:**
+6. **Open Mongo Shell to the standalone Appcircle server:**
    ```bash
    mongosh --host 127.0.0.1 --port 36300
    ```
 
-5. **Switch to the `admin` db:**
+7. **Switch to the `admin` db:**
    ```mongosh
    use admin
    ```
 
-6. **Create a user to dump the DB:**
+8. **Create a user to dump the DB:**
    ```mongosh
    db.createUser({user: "backup",pwd: "backup",roles: [{ role: "root", db: "admin"}]})
    ```
 
-7. **Get the MongoDB container names:**
+9. **Get the MongoDB container names:**
    ```bash
    docker ps | grep mongo_1
    ```
 
-8. **Dump the MongoDB:**
+10. **Dump the MongoDB:**
    ```bash
    docker exec -it spacetech-mongo_1-1 mongodump --uri="mongodb://backup:backup@mongo_1:36300,mongo_2:36301,mongo_3:36302/?replicaSet=rs&authSource=admin" --gzip --archive=/mongo-backup.gz
    ```
 
-9. **Copy the dumped DB file from out of the container to the host machine:**
+11. **Copy the dumped DB file from out of the container to the host machine:**
    ```bash
    docker cp spacetech-mongo_1-1:/mongo-backup.gz .
    ```
@@ -370,12 +375,16 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 1. **Login to the standalone Appcircle server.**
 
-2. **Expose MinIO Port:** Ensure MinIO's port 9000 is accessible. You might need to publish the port in your `docker-compose.yml`.
+2. **Change directory to appcircle-server.**
+
+3. **Expose MinIO Port:** Ensure MinIO's port 9000 is accessible. You might need to publish the port in your `docker-compose.yml`.
     ```bash
     docker ps | grep snsd
     ```
 
-3. **Get MinIO credentials:** Retrieve the access key and secret key from your MinIO configuration.
+<SpacetechExampleInfo/>
+
+4. **Get MinIO credentials:** Retrieve the access key and secret key from your MinIO configuration.
    ```bash
    cat projects/spacetech/export/minio/access.env
    ```
@@ -524,6 +533,8 @@ kubectl create secret generic appcircle-server-minio-connection \
     ```bash
     realpath vaultd.tar.gz
     ```
+
+<SpacetechExampleInfo/>
 
 10. **Get the unseal and root keys and save, you will use for unsealing the vault.**
     ```bash
