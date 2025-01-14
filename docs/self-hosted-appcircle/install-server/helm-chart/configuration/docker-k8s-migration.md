@@ -355,7 +355,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 1. **Copy the PostgreSQL Data to Bastion Host**: Copy the dumped PostgreSQL data from the Appcircle server to the bastion host.
    ```bash
-   scp rhel8:/home/berk/ac-script-self-hosted/projects/spacetech/export/mongo-backup.gz .
+   scp standalone-appcircle-server/app/appcircle-server/projects/spacetech/export/mongo-backup.gz .
    ```
 
 2. **Get PostgreSQL Password:**
@@ -456,7 +456,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 1. **Copy the file from the standalone Appcircle server to the bastion host:**
 
    ```bash
-   scp rhel8:/home/berk/ac-script-self-hosted/projects/spacetech/export/mongo-backup.gz .
+   scp standalone-appcircle-server/app/appcircle-server/projects/spacetech/export/mongo-backup.gz .
    ```
 
 2. **Install MongoDB Database Tools:** 
@@ -668,7 +668,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 1. **Copy the vault data tar ball to the bastion host.**
    ```bash
-   scp rhel8:/home/berk/ac-script-self-hosted/vaultd.tar.gz .
+   scp standalone-appcircle-server/app/appcircle-server/vaultd.tar.gz .
    ```
 
 2. **Get the Vault statefulset name.**
