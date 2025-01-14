@@ -16,15 +16,18 @@ This guide provides a step-by-step walkthrough for migrating your self-hosted **
 1. A fully operational Docker deployment of Appcircle server.
 2. A Kubernetes cluster ready for deployment.
 
-In this guide, the **bastion host** refers to a machine with network access to both:
+In this guide, the **standalone Appcircle server** refers to the machine that hosts the Appcircle server with Docker.
 
-- The existing Appcircle server.
+Also the **bastion host** refers to a machine with network access to both:
+
+- The existing standalone Appcircle server.
 - The Kubernetes cluster.
 
 The bastion host serves as a central point for executing commands, transferring backup data, and applying configurations. During the migration process, you will:
 
 - Copy configuration files and database backups from the Docker host to the bastion host.
 - Use the bastion host to deploy and configure the new Appcircle instance in the Kubernetes cluster.
+
 
 :::caution Downtime Alert  
 This migration process involves downtime. To minimize disruption, **plan accordingly** and:
@@ -605,9 +608,11 @@ kubectl create secret generic appcircle-server-minio-connection \
 1. **Login to the standalone Appcircle server.**
 
 2. **Change directory to appcircle-server.**
+    ```bash
+    cd appcircle-server
+    ```
 
 3. **Create a file named `migrate.hcl`.**
-
    ```bash
    cat > migrate.hcl <<'EOL'
    storage_source "file" {
@@ -623,31 +628,26 @@ kubectl create secret generic appcircle-server-minio-connection \
    ```
 
 4. **Get the Vault container name.**
-
    ```bash
    docker ps | grep vault
    ```
 
-5. **Copy the file into the container.**
-
+5. **Copy the migration file to the Vault container.**
    ```bash
    docker cp migrate.hcl spacetech-vault-1:/vault/
    ```
 
 6. **Migrate the the Vault data to the target directory.**
-
    ```bash
    docker exec -it spacetech-vault-1 vault operator migrate --config=/vault/migrate.hcl
    ```
 
-7. **Make a tarball with of the data.**
-
+7. **Create a tarball of the Vault data.**
    ```bash
    docker exec -it spacetech-vault-1 sh -c "cd /vault && tar -czpvf  vaultd.tar.gz -C /vault/target/ ."
    ```
 
-8. **Copy the tarball from the container to the host machine.**
-
+8. **Copy the tarball to the host machine.**
    ```bash
    docker cp spacetech-vault-1:/vault/vaultd.tar.gz .
    ```
@@ -666,44 +666,37 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 #### Bastion Host
 
-1. **Copy the vault data tar ball to the local.**
-
+1. **Copy the vault data tar ball to the bastion host.**
    ```bash
    scp rhel8:/home/berk/ac-script-self-hosted/vaultd.tar.gz .
    ```
 
 2. **Get the Vault statefulset name.**
-
    ```bash
    kubectl get statefulsets -n appcircle | grep vault
    ```
 
 3. **Edit the vault `statefulset` for safe operations.**
-
    ```bash
    kubectl patch statefulset -n appcircle appcircle-server-vault -p '{"spec": {"template": {"spec":{"containers":[{"name":"vault","command": ["sh", "-c", "tail -f /dev/null" ], "args": null, "readinessProbe": null, "lifecycle": null  }]}}}}'
    ```
 
 4. **Delete the pod for it to be re-created.**
-
    ```bash
    kubectl delete pod appcircle-server-vault-0 -n appcircle
    ```
 
 5. **Copy the vault data to the target pod.**
-
    ```bash
    kubectl cp "./vaultd.tar.gz" "appcircle-server-vault-0:/vault/data/vaultd.tar.gz" -n appcircle
    ```
 
 6. **Open shell in the vault container.**
-
    ```bash
    kubectl exec -it appcircle-server-vault-0 -- bash
    ```
 
 7. **Run the following commands in the shell.**
-
    ```bash
    cd /vault/data
    tar -xzvf vaultd.tar.gz -C .
@@ -713,13 +706,11 @@ kubectl create secret generic appcircle-server-minio-connection \
 8. **Don't close the upper terminal until the process finishes.**
 
 9. **Open a new terminal in the vault container.**
-
    ```bash
    kubectl exec -it appcircle-server-vault-0 -- bash
    ```
 
 10. **Unseal the vault with the saved keys from the steps above.**
-
     ```bash
     vault operator unseal dnaDMnwLuRni******M0EPJ2gAlyeHmOAy
     vault operator unseal FRTs/BO606ty******1nm9pJssLZjqVULR
@@ -727,7 +718,6 @@ kubectl create secret generic appcircle-server-minio-connection \
     ```
 
 11. **Delete the vault data tar ball**
-
     ```bash
     rm /vault/data/vaultd.tar.gz
     ```
@@ -740,21 +730,51 @@ kubectl create secret generic appcircle-server-minio-connection \
     --patch='{"stringData": { "token": "*hvs*.U5LLy********F2bOy", "unseal_keys": "dnaDMnwLuRni******M0EPJ2gAlyeHmOAy FRTs/BO606ty******1nm9pJssLZjqVULR f35t4MU6gojw******/bH92wR9t6MzzIYc" }}'
     ```
 
-## Post-Migration Steps
+## Post-Migration Steps  
 
-1. Remove the `replicas: 0` from the `values.yaml`.
+After completing the migration, follow these steps to finalize and verify the setup:  
 
-2. Remove the `resourcesPreset` from the `values.yaml`.
+### 1. Update the `values.yaml`
 
-3. Upgrade the Helm release.
+- **Remove Keycloak Replica Override:**  
+  Delete the `replicas: 0` setting under `auth-keycloak`.  
 
-   ```bash
-   helm upgrade --install appcircle-server appcircle/appcircle \
-     --timeout 1200s \
-     -n appcircle \
-     -f values.yaml
-   ```
+- **Remove MongoDB Resource Preset:**  
+  Delete the `resourcesPreset` setting under `mongodb` if you don't need.
 
-4. **Verification:** After the Kubernetes deployment completes, thoroughly test all Appcircle functionalities.
+### 2. Upgrade the Helm Release
+Apply the updated `values.yaml` configuration to the Appcircle server Helm chart:  
 
-5. **Clean Up:** Once the migration is successful and verified, remove the old Docker containers and data.
+```bash
+helm upgrade --install appcircle-server appcircle/appcircle \
+  --timeout 1200s \
+  -n appcircle \
+  -f values.yaml
+```
+
+### 3. Update DNS Records
+
+- **Shift DNS to the New Cluster:**  
+  Update the DNS records to point to the new Appcircle Kubernetes cluster.
+
+- **Redis Subdomain Change:**  
+  Replace the `redis` subdomain from the standalone server (e.g., `redis.appcircle.spacetech.com`) with the `kvs` subdomain for Kubernetes (e.g., `kvs.appcircle.spacetech.com`).  
+
+- **Reference:**  
+  For detailed instructions, see the [DNS Records Section](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes#1-add-dns-records).
+
+### 4. Verification
+
+- Test the following functionalities and ensure all data and features are operational post-migration.  
+  - **Builds**  
+  - **Publish**
+  - **Enterprise App Store**  
+  - **Testing Distribution**
+  - **LDAP / SSO Settings**
+
+### 5. Clean Up
+
+Once the migration has been confirmed as successful:  
+
+- Remove old Docker containers from the standalone Appcircle server.  
+- Delete any residual data no longer needed.
