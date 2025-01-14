@@ -35,7 +35,7 @@ This migration process involves downtime. To minimize disruption, **plan accordi
 - Notify users about the expected downtime and migration schedule.  
   :::
 
-## Pre-Migration
+## Pre-Migration Steps
 
 ### Standalone Appcircle Server Steps
 
@@ -101,35 +101,30 @@ On the **standalone Appcircle server**, execute the following commands to back u
 
 #### 3. Check the Data Size on the Standalone Appcircle Server
 
-- Get the volume sizes:
+- **Get the volume sizes:**
+    ```bash
+    export APPCIRCLE_DISK_USAGE=$(docker system df -v)
+    ```
 
-```bash
-export APPCIRCLE_DISK_USAGE=$(docker system df -v)
-```
+- **Check the MinIO data size:**
+    ```bash
+    echo "$APPCIRCLE_DISK_USAGE" | grep "snsd_data"
+    ```
 
-- Check the MinIO data size:
+- **Check the MongoDB data size:**
+    ```bash
+    echo "$APPCIRCLE_DISK_USAGE" | grep "mongo_data"
+    ```
 
-```bash
-echo "$APPCIRCLE_DISK_USAGE" | grep "snsd_data"
-```
+- **Check the PostgreSQL data size:**
+    ```bash
+    echo "$APPCIRCLE_DISK_USAGE" | grep "posgresqlData"
+    ```
 
-- Check the MongoDB data size:
-
-```bash
-echo "$APPCIRCLE_DISK_USAGE" | grep "mongo_data"
-```
-
-- Check the PostgreSQL data size:
-
-```bash
-echo "$APPCIRCLE_DISK_USAGE" | grep "posgresqlData"
-```
-
-- Check the Vault data size:
-
-```bash
-echo "$APPCIRCLE_DISK_USAGE" | grep "vault_data"
-```
+- **Check the Vault data size:**
+    ```bash
+    echo "$APPCIRCLE_DISK_USAGE" | grep "vault_data"
+    ```
 
 You will use that values while configuring the `values.yaml` of the Appcircle server Helm chart.
 
@@ -212,7 +207,7 @@ After reviewing the key considerations, follow the [Appcircle Server Kubernetes 
 This section details the creation of Kubernetes secrets required for Appcircle to function correctly. These secrets store sensitive information such as passwords, and certificates, securely injecting them into your Appcircle deployment.
 
 :::tip
-Ensure you have [gathered all necessary data](#pre-migration-backup-and-preparation) before proceeding.
+Ensure you have [gathered all necessary data](#2-backup-appcircle-configuration-data) before proceeding.
 
 Some secret data, such as database passwords and Keycloak client secrets, used in the Kubernetes secrets creation below should match the data extracted from the backups of the standalone server. Ensure consistency between the backed-up values and the values used in the Kubernetes secrets to prevent connectivity and authentication issues.
 :::
@@ -271,7 +266,7 @@ kubectl create secret generic appcircle-server-smtp \
   --from-file=password=<path-to-smtp-password-file>
 ```
 
-- **Keycloak Clients Secret:** Create the Keycloak client secrets.
+- **Keycloak Clients Secret:**
 
 :::caution
 The client secret values used below should match the data extracted from the `generated-secret.yaml` backup of your standalone Appcircle server. You can check the `.keycloak.clients` key on the `generated-secret.yaml` file. Using incorrect values will prevent Appcircle from functioning correctly.
@@ -317,10 +312,10 @@ kubectl create secret generic appcircle-tls-wildcard \
   --type=kubernetes.io/tls
 ```
 
-- **MinIO Connection Secret:** Extract the `secretKey` from `generated-secret.yaml`.
+- **MinIO Connection Secret:**
 
 :::caution
-The MinIO keys used below should match the data extracted from the `generated-secret.yaml` backup of your standalone Appcircle server. You can check the `.keycloak.password` key for the `adminPassword` and `.keycloak.initialPassword` for the `initialPassword` on the `generated-secret.yaml` file. Using incorrect values will prevent Appcircle from functioning correctly.
+The MinIO keys used below should match the data extracted from the `generated-secret.yaml` backup of your standalone Appcircle server. You can check the `.minio.secretKey` key  on the `generated-secret.yaml` file for the `accessKey` and `root-password` in the example command below. Using incorrect values will prevent Appcircle from functioning correctly.
 :::
 
 ```bash
@@ -336,19 +331,19 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 #### Standalone Appcircle Server
 
-1. **Locate PostgreSQL Container:**: Find the PostgreSQL container name.
+1. **Locate PostgreSQL Container:** Find the PostgreSQL container name.
 
    ```bash
    docker ps | grep postgres
    ```
 
-2. **Dump Database:**
+2. **Dump Database:** Save the database data to a file.
 
    ```bash
-   docker exec <postgres_container_name> pg_dump -U <db_user> -h localhost -p 5432 -F c -b -v -f pgdump.backup <db_name>
+   docker exec <postgres_container_name> pg_dump -U keycloak -h localhost -p 5432 -F c -b -v -f pgdump.backup keycloak
    ```
 
-3. **Copy Dump:**
+3. **Copy Dump:** Copy the file from container to Appcircle server host.
    ```bash
    docker cp <postgres_container_name>:/pgdump.backup ~/appcircle-k8s-migration/
    ```
@@ -356,34 +351,33 @@ kubectl create secret generic appcircle-server-minio-connection \
 #### Bastion Host
 
 1. **Copy the PostgreSQL Data to Bastion Host**: Copy the dumped PostgreSQL data from the Appcircle server to the bastion host.
+   ```bash
+   scp rhel8:/home/berk/ac-script-self-hosted/projects/spacetech/export/mongo-backup.gz .
+   ```
 
 2. **Get PostgreSQL Password:**
-
    ```bash
    kubectl get secret -n appcircle appcircle-server-auth-postgresql -ojsonpath='{.data.password}' | base64 -d
    ```
 
 3. **Get the PostgreSQL pod name:**
-
    ```bash
    kubectl get pods -n appcircle | grep postgres
    ```
 
-4. **Start Port Forwarding:**
-
-   ```bash
-   kubectl port-forward appcircle-server-auth-postgresql-0 5432:5432 -n appcircle
-   ```
-
-5. **Install PostgreSQL tools:**
-
+4. **Install PostgreSQL tools:**
    ```bash
    brew install postgresql
    ```
 
-6. **Restore Database:**
+5. **Start Port Forwarding:**
    ```bash
-   pg_restore -h localhost -p 5432 -U <db_user> -d <db_name> ~/appcircle-k8s-migration/pgdump.backup
+   kubectl port-forward appcircle-server-auth-postgresql-0 5432:5432 -n appcircle
+   ```
+
+6. **Restore the Database:**
+   ```bash
+   pg_restore -h localhost -p 5432 -U keycloak -d keycloak ~/appcircle-k8s-migration/pgdump.backup
    ```
 
 ### 3. MongoDB Backup & Restore
@@ -392,65 +386,67 @@ kubectl create secret generic appcircle-server-minio-connection \
 
 <SpacetechExampleInfo/>
 
-1. **Expose MongoDB Port:** Add a port mapping (e.g., 36300:36300) to your `docker-compose.yml` for the `mongo_1` service and restart.
+1. **Change directory to appcircle-server.**
+    ```bash
+    cd appcircle-server
+    ```
 
-   ```bash
-   vim projects/spacetech/export/compose.yaml
-   ```
+2. **Expose MongoDB Port:** Add a port mapping (e.g., 36300:36300) to your `docker-compose.yml` for the `mongo_1` service and restart.
+    - Edit the `compose.yaml` file.  
+    ```bash
+    vim projects/spacetech/export/compose.yaml
+    ```
+    - Add `ports` key to the `mongo_1` service.
+    ```yaml
+    services:
+    mongo_1:
+      image: europe-west1-docker.pkg.dev/appcircle/docker-registry/mongo:v3.25.0
+      ports:
+        - "36300:36300"
+    ```
+    - Restart the services.
+    ```bash
+    ./ac-self-hosted -n spacetech up
+    ```
 
-   ```yaml
-   services:
-   mongo_1:
-     image: europe-west1-docker.pkg.dev/appcircle/docker-registry/mongo:v3.25.0
-     ports:
-       - "36300:36300"
-   ```
+3. **Install `mongosh` tool.** 
 
-2. **Change directory to appcircle-server.**
+    To install `mongosh` to your Appcircle server, please check the [official MongoDB documentation](https://www.mongodb.com/docs/mongodb-shell/install/).
 
-3. **Get the MongoDB connection string:**
+4. **Open Mongo Shell to the standalone Appcircle server:**
+    ```bash
+    mongosh --host 127.0.0.1 --port 36300
+    ```
 
-   ```bash
-   cat projects/spacetech/export/publish/default.env | grep "CUSTOMCONNSTR_PUBLISH_DB_CONNECTION_STRING"
-   ```
+5. **Switch to the `admin` db:**
+    ```mongosh
+    use admin
+    ```
 
-4. **Install `mongosh` tool.** To install `mongosh` to your Appcircle server, please check the [official MongoDB documentation](https://www.mongodb.com/docs/mongodb-shell/install/).
+6. **Create a user to dump the DB:**
+    ```mongosh
+    db.createUser({user: "backup",pwd: "backup",roles: [{ role: "root", db: "admin"}]})
+    ```
 
-5. **Open Mongo Shell to the standalone Appcircle server:**
+7. **Get the MongoDB container name:**
+    ```bash
+    docker ps | grep mongo_1
+    ```
 
-   ```bash
-   mongosh --host 127.0.0.1 --port 36300
-   ```
-
-6. **Switch to the `admin` db:**
-
-   ```mongosh
-   use admin
-   ```
-
-7. **Create a user to dump the DB:**
-
-   ```mongosh
-   db.createUser({user: "backup",pwd: "backup",roles: [{ role: "root", db: "admin"}]})
-   ```
-
-8. **Get the MongoDB container names:**
-
-   ```bash
-   docker ps | grep mongo_1
-   ```
+8. **Get the MongoDB connection string:**
+    ```bash
+    cat projects/spacetech/export/publish/default.env | grep "CUSTOMCONNSTR_PUBLISH_DB_CONNECTION_STRING"
+    ```
 
 9. **Dump the MongoDB:**
-
-```bash
-docker exec -it spacetech-mongo_1-1 mongodump --uri="mongodb://backup:backup@mongo_1:36300,mongo_2:36301,mongo_3:36302/?replicaSet=rs&authSource=admin" --gzip --archive=/mongo-backup.gz
-```
+    ```bash
+    docker exec -it spacetech-mongo_1-1 mongodump --uri="mongodb://backup:backup@mongo_1:36300,mongo_2:36301,mongo_3:36302/?replicaSet=rs&authSource=admin" --gzip --archive=/mongo-backup.gz
+    ```
 
 11. **Copy the dumped DB file from out of the container to the host machine:**
-
-```bash
-docker cp spacetech-mongo_1-1:/mongo-backup.gz .
-```
+    ```bash
+    docker cp spacetech-mongo_1-1:/mongo-backup.gz .
+    ```
 
 #### Bastion Host
 
@@ -460,15 +456,11 @@ docker cp spacetech-mongo_1-1:/mongo-backup.gz .
    scp rhel8:/home/berk/ac-script-self-hosted/projects/spacetech/export/mongo-backup.gz .
    ```
 
-2. **Install mongo tools:**
-
-   ```bash
-   brew tap mongodb/brew
-   brew install mongodb-database-tools
-   ```
+2. **Install MongoDB Database Tools:** 
+    
+    To install MongoDB Database Tools, please check the [official MongoDB documentation](https://www.mongodb.com/docs/database-tools/installation/installation/#installation).
 
 3. **Get the MongoDB root password of the K8s installation:**
-
    ```bash
    kubectl get secret -n appcircle appcircle-server-mongodb -o jsonpath='{.data.mongodb-root-password}' | base64 -d
    ```
@@ -479,7 +471,7 @@ docker cp spacetech-mongo_1-1:/mongo-backup.gz .
    ```
 5. **Restore the dumped MongoDB:**
    ```bash
-   mongorestore --uri="mongodb://root:cgmITFkJuT@localhost:27017/?authSource=admin" --gzip --archive=./mongo-backup.gz
+   mongorestore --uri="mongodb://root:<mongodb-root-password>@localhost:27017/?authSource=admin" --gzip --archive=./mongo-backup.gz
    ```
 
 ### 4. MinIO Mirror
@@ -489,28 +481,25 @@ docker cp spacetech-mongo_1-1:/mongo-backup.gz .
 1. **Login to the standalone Appcircle server.**
 
 2. **Change directory to appcircle-server.**
+    ```bash
+    cd appcircle-server
+    ```
 
 3. **Expose MinIO Port:** Ensure MinIO's port 9000 is accessible. You might need to publish the port in your `docker-compose.yml`.
-   ```bash
-   docker ps | grep snsd
-   ```
+    ```bash
+    docker ps | grep snsd
+    ```
 
 <SpacetechExampleInfo/>
 
 4. **Get MinIO credentials:** Retrieve the access key and secret key from your MinIO configuration.
-   ```bash
-   cat projects/spacetech/export/minio/access.env
-   ```
+    ```bash
+    cat projects/spacetech/export/minio/access.env
+    ```
 
 #### Bastion Host
 
 1. **Login to the bastion.**
-
-2. **Install the `mc` tool:**
-
-   ```bash
-   brew install minio-mc
-   ```
 
 3. **Get the Kubernetes MinIO access and secret keys.**
 
@@ -528,69 +517,80 @@ docker cp spacetech-mongo_1-1:/mongo-backup.gz .
 
 5. **Change MinIO service to NodePort for temporary.**
 
-   :::info
-   We recommend opening the MinIO service to the external network temporarily instead of using `kubectl port-forward` since we had problems while migrating large files over `kubectl`.
+    :::info
+    We recommend opening the MinIO service to the external network temporarily instead of using `kubectl port-forward` since you might have problems while transferring large files over port forwarding of the `kubectl`.
 
-   Note that this doesn't make the MinIO data public as long as you keep the MinIO password a secret.
-   :::
+    Note that this doesn't make the MinIO data public as long as you keep the MinIO password secret.
+    :::
 
-   ```bash
-   kubectl patch service appcircle-server-minio -n appcircle --type='json' -p='[{"op": "replace", "path": "/spec/type", "value": "NodePort"}, {"op": "add", "path": "/spec/ports/0/nodePort", "value": 30534}, {"op": "add", "path": "/spec/ports/1/nodePort", "value": 32761}]'
-   ```
+    ```bash
+    kubectl patch service appcircle-server-minio -n appcircle --type='json' -p='[{"op": "replace", "path": "/spec/type", "value": "NodePort"}, {"op": "add", "path": "/spec/ports/0/nodePort", "value": 30534}, {"op": "add", "path": "/spec/ports/1/nodePort", "value": 32761}]'
+    ```
 
 6. **Install `rclone` tool.**
 
-   :::info
-   We recommended using `rclone` tool instead of `mc`.
-   :::
+    :::info
+    We recommended using `rclone` tool instead of `mc`.
+    :::
 
-   ```bash
-   brew install rclone
-   ```
+    
+    To install `rclone`, please check the [official rclone documentation](https://rclone.org/install/).
 
-7. **Add Rclone config for standalone server.**
+7. **Add Rclone Configuration for Standalone Server**
 
-   ```bash
-   rclone config
-   ```
+    To configure Rclone for the standalone Appcircle server, follow these steps:  
 
-   ```rclone
-   n
-   Storage > 4
-   provider > 7
-   env_auth > false
-   access_key_id
-   secret_access_key
-   Region to connect > empty
-   endpoint > http://192.168.1.220:9040
-   location_constraint> empty
-   acl> empty
-   server_side_encryption> empty
-   sse_kms_key_id> empty
-   Edit advanced config? (y/n) > n
-   ```
+    - Start the Rclone configuration process:  
+      ```bash  
+      rclone config  
+      ```  
 
-8. **Add Rclone config for K8s server.**
+   - Use the following inputs during the configuration process:  
 
-   ```bash
-   rclone config
-   ```
+      ```plaintext  
+      n                                # Create a new remote  
+      name> ac-standalone              # Provide a descriptive name for the remote  
+      Storage> 4                       # Select "Amazon S3 Compliant Storage Provider" (4)  
+      provider> 7                      # Select "Minio Object Storage" (7)
+      env_auth> "false"                # Set environment authentication to "false"  
+      access_key_id> <access_key>      # Enter the standalone Appcircle server's access key  
+      secret_access_key> <secret_key>  # Enter the standalone Appcircle server's secret access key  
+      region>                          # Leave this empty  
+      endpoint>                        # Provide the standalone Appcircle server's IP and MinIO port. Example: http://192.168.1.220:9040
+      location_constraint:             # Leave this empty  
+      acl:                             # Leave this empty  
+      server_side_encryption:          # Leave this empty  
+      sse_kms_key_id:                  # Leave this empty  
+      Edit advanced config? (y/n): n   # Skip advanced configuration  
+      ```  
 
-   ```rclone
-   n
-   Storage > 4
-   provider > 7
-   env_auth > false
-   access_key_id
-   secret_access_key
-   Region to connect > empty
-   endpoint > http://192.168.1.110:30534
-   location_constraint> empty
-   acl> empty
-   server_side_encryption> empty
-   sse_kms_key_id> empty
-   Edit advanced config? (y/n) > n
-   ```
+8. **Add Rclone config for Kubernetes Appcircle server.**
+
+    To configure `rclone` for the Kubernetes Appcircle server, follow these steps:  
+
+    - Start the `rclone` configuration process:  
+      ```bash  
+      rclone config  
+      ```  
+
+   - Use the following inputs during the configuration process:  
+
+      ```plaintext  
+      n                                # Create a new remote  
+      name> ac-k8s                     # Provide a descriptive name for the remote  
+      Storage> 4                       # Select "Amazon S3 Compliant Storage Provider" (4)  
+      provider> 7                      # Select "Minio Object Storage" (7)
+      env_auth> "false"                # Set environment authentication to "false"  
+      access_key_id> <access_key>      # Enter the standalone Appcircle server's access key  
+      secret_access_key> <secret_key>  # Enter the standalone Appcircle server's secret access key  
+      region>                          # Leave this empty  
+      endpoint>                        # Provide the standalone Appcircle server's IP and MinIO port. Example: http://192.168.1.220:9040
+      location_constraint:             # Leave this empty  
+      acl:                             # Leave this empty  
+      server_side_encryption:          # Leave this empty  
+      sse_kms_key_id:                  # Leave this empty  
+      Edit advanced config? (y/n): n   # Skip advanced configuration  
+      ```  
 
 9. **Start copying files.**
 
