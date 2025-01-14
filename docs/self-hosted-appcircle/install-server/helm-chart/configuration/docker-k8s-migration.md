@@ -199,6 +199,8 @@ After reviewing the key considerations, follow the [Appcircle Server Kubernetes 
   auth:
     auth-keycloak:
       replicas: 0
+      organizationName: spacetech
+      initialOrganizationId: a0c5c671-35a7-47a9-a32d-eaf4edac574a
   mongodb:
     resourcesPreset: "large"
   ```
