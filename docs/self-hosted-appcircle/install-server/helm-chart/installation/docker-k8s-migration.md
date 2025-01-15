@@ -37,6 +37,36 @@ This migration process involves downtime. To minimize disruption, **plan accordi
 - Notify users about the expected downtime and migration schedule.  
   :::
 
+
+## Prerequisites
+
+To complete this guide, you must have the following:
+
+### 1. Domain Name
+
+A main **domain name**, which will have **subdomains**, is **required** for the Appcircle server. Since the standalone Appcircle server already has a configured domain name, you should retain the same domain name when migrating to the Kubernetes cluster.
+
+:::note
+In this documentation, we will use `appcircle.spacetech.com` as an **example main domain** and `spacetech` as an **example organization name**.
+:::
+
+<details>
+    <summary>Click to view more details about domain name prerequisite.</summary>
+
+By default, Appcircle uses seven subdomains. These subdomains are:
+
+1. api.appcircle.spacetech.com
+2. auth.appcircle.spacetech.com
+3. dist.appcircle.spacetech.com
+4. hook.appcircle.spacetech.com
+5. resource.appcircle.spacetech.com
+6. my.appcircle.spacetech.com
+7. redis.appcircle.spacetech.com
+
+**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the Ingress objects created in Kubernetes.
+
+</details>
+
 ## Pre-Migration Steps
 
 ### Standalone Appcircle Server Steps
