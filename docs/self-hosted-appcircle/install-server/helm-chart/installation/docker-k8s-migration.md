@@ -8,6 +8,8 @@ sidebar_position: 30
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
+import Screenshot from '@site/src/components/Screenshot';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
@@ -15,6 +17,7 @@ This guide provides a step-by-step walkthrough for migrating your self-hosted **
 
 1. A fully operational Docker deployment of Appcircle server.
 2. A Kubernetes cluster ready for deployment.
+3. A bastion host.
 
 In this guide, the **standalone Appcircle server** refers to the machine that hosts the Appcircle server with Docker.
 
@@ -28,7 +31,7 @@ The bastion host serves as a central point for executing commands, transferring 
 - Copy configuration files and database backups from the Docker host to the bastion host.
 - Use the bastion host to deploy and configure the new Appcircle instance in the Kubernetes cluster.
 
-:::caution Downtime Alert  
+:::caution Downtime Caution  
 This migration process involves downtime. To minimize disruption, **plan accordingly** and:
 
 - Back up all crucial data before starting the migration.
@@ -36,7 +39,6 @@ This migration process involves downtime. To minimize disruption, **plan accordi
 - Test the migration process in a staging or non-production environment if possible.
 - Notify users about the expected downtime and migration schedule.  
   :::
-
 
 ## Prerequisites
 
@@ -147,6 +149,21 @@ The **`kubectl`** CLI is **required**.
 
 **Helm version `3.11.0`** or later is **required**.
 
+### 6. Bastion Host
+
+The bastion host should meet the following requirements to facilitate the migration from the standalone Appcircle server to the Kubernetes Appcircle server:
+
+- **SSH Access**: The bastion host must have SSH access to the standalone Appcircle server.
+  
+- **Kubernetes Access**: The bastion host must be able to access the Kubernetes cluster for deploying the Helm chart and performing other tasks.
+
+- **Hardware Requirements**:
+  - 2 CPUs
+  - 4 GB RAM
+  - Sufficient disk space for migration tasks. The disk space requirement will depend on the total size of the **PostgreSQL**, **MongoDB**, and **Vault** data of the standalone Appcircle server. You can easily see the data size of the standalone Appcircle server by checking [this section](#3-check-the-data-size-on-the-standalone-appcircle-server). 
+  - **MinIO disk space** is not a concern, as the data is directly copied between the source and target servers without being stored on the bastion host.
+
+Ensure the bastion host has enough storage to temporarily hold any necessary migration files, but do not expect it to store the data long-term.
 
 ## Pre-installation Steps
 
@@ -250,7 +267,6 @@ kubectl create secret docker-registry containerregistry \
   </TabItem>
 </Tabs>
 
-
 ### 5. Standalone Appcircle Server Steps
 
 This section outlines the essential steps to back up data from your existing Standalone Appcircle server installation and prepare your Kubernetes environment for the migration.
@@ -294,7 +310,7 @@ On the **standalone Appcircle server**, execute the following commands to back u
   ```
 
 - **User Secrets:**
-  Decode and print the `user-secret.yaml` file and save it on the bastion host:
+  Decode and print the `user-secret` file and save it on the bastion host:
 
   ```bash
   cat projects/spacetech/user-secret | base64 -d
@@ -324,61 +340,70 @@ On the **standalone Appcircle server**, execute the following commands to back u
 - **Check the MinIO data size:**
 
   ```bash
-  echo "$APPCIRCLE_DISK_USAGE" | grep "snsd_data"
+  echo "$APPCIRCLE_DISK_USAGE" | grep "spacetech_snsd_data"
   ```
 
 - **Check the MongoDB data size:**
 
   ```bash
-  echo "$APPCIRCLE_DISK_USAGE" | grep "mongo_data"
+  echo "$APPCIRCLE_DISK_USAGE" | grep "spacetech_mongo_data"
   ```
 
 - **Check the PostgreSQL data size:**
 
   ```bash
-  echo "$APPCIRCLE_DISK_USAGE" | grep "posgresqlData"
+  echo "$APPCIRCLE_DISK_USAGE" | grep "spacetech_posgresqlData"
   ```
 
 - **Check the Vault data size:**
   ```bash
-  echo "$APPCIRCLE_DISK_USAGE" | grep "vault_data"
+  echo "$APPCIRCLE_DISK_USAGE" | grep "spacetech_vault_data"
   ```
 
 You will use those values while configuring the `values.yaml` of the Appcircle server Helm chart.
-
 
 #### 4. Make Sure the Standalone Appcircle Server Is Running
 
 Before proceeding with the migration, verify that the standalone Appcircle server is operational and healthy. This ensures you can create accurate backups without issues.
 
-Additionally:
+- **Log in to the standalone Appcircle server:**
 
-- There should be no running builds on the Appcircle during the migration.
-- Prevent external requests while keeping the server healthy by stopping the Nginx service.
-
-To achieve that, you can follow the steps below:
-
-1. **Log in to the standalone Appcircle server:**
-
-2. **Change directory to the `appcircle-server`:**
+- **Change directory to the `appcircle-server`:**
 
    ```bash
    cd appcircle-server
    ```
 
-3. **Check the health status of the standalone Appcircle server:**
+- **Check the health status of the standalone Appcircle server:**
    <SpacetechExampleInfo/>
+
    ```bash
    ./ac-self-hosted.sh -n spacetech check
    ```
 
-4. **Change directory to the `export` directory of the project:**
+#### 5. Update the Standalone Appcircle Server to the Latest Version
 
+Before migrating to Kubernetes Appcircle server, please [update the standalone Appcircle server](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/update) to the latest version.
+
+#### 6. Stop the Standalone Appcircle Server Requests.
+
+For the migration, there should be no running builds on the Appcircle during the migration. Also prevent external requests while keeping the server healthy by stopping the Nginx service.
+
+- **Log in to the standalone Appcircle server:**
+
+- **Change directory to the `appcircle-server`:**
+
+   ```bash
+   cd appcircle-server
+   ```
+
+- **Change directory to the `export` directory of the project:**
+   <SpacetechExampleInfo/>
    ```bash
    cd projects/spacetech/export
    ```
 
-5. **Stop the Nginx service:**
+- **Stop the Nginx service:**
    ```bash
    docker compose stop nginx
    ```
@@ -411,6 +436,7 @@ global:
     # Main domain configuration - All Appcircle services will be subdomains of this domain
     domainName: .appcircle.spacetech.com
   # SMTP server configuration for sending emails (Authentication, Notifications, Testing Distribution)
+  # Use the same SMTP settings as specified in the `global.yaml` file of the standalone Appcircle server.
   mail:
     smtp:
       # SMTP server host
@@ -418,14 +444,14 @@ global:
       # SMTP Server port, 587 typically used for StartTLS
       port: "587"
       # Email address that will be used as sender
-      from: "appcircle@yandex.com"
+      from: "admin@spacetech.com"
       # SSL configuration - Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
       ssl: "false"
       # StartTLS configuration - Set to 'true' if the SMTP server uses StartTLS protocol, typically on port 587.
       tls: "true"
       # SMTP authentication settings
       auth: "true"
-      username: "appcircle-smtp-user"
+      username: "smtpUserName"
       password: "superSecretSmtpPassword"
 
 # Authentication configuration
@@ -453,6 +479,7 @@ global:
     scheme: https
 
   # SMTP server configuration for sending emails (Authentication, Notifications, Testing Distribution)
+  # Use the same SMTP settings as specified in the `global.yaml` file of the standalone Appcircle server.
   mail:
     smtp:
       # SMTP server host
@@ -460,7 +487,7 @@ global:
       # SMTP Server port, 587 typically used for StartTLS
       port: 587
       # Email address that will be used as sender
-      from: appcircle@spacetech.com
+      from: admin@spacetech.com
       # SSL configuration - Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
       ssl: "false"
       # StartTLS configuration - Set to 'true' if the SMTP server uses StartTLS protocol, typically on port 587.
@@ -561,31 +588,86 @@ webeventredis:
 
 ### 3. Prepare `values.yaml` for Migration
 
-**Make the following adjustments** to your `values.yaml` file **before deploying the Helm chart**.
+**Update your `values.yaml` file** with the following configurations before deploying the Helm chart to ensure a smooth migration process.
 
-#### Storage Updates
+---
 
-After [checking the data size](#3-check-the-data-size-on-the-standalone-appcircle-server) on the standalone Appcircle server, ensure that you adjust the storage size accordingly. The configured storage must meet or exceed the data size requirements to support the migration and ongoing usage of the Appcircle server.
+#### **Storage Updates**
 
-For detailed instructions on configuring storage sizes in the `values.yaml`, refer to the [storage configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration) page.
+After [checking the data size](#3-check-the-data-size-on-the-standalone-appcircle-server) on the standalone Appcircle server, configure the storage sizes in `values.yaml` to meet or exceed your current data size requirements. Adequate storage is essential for a successful migration and seamless operation of the Appcircle server.
 
-#### General Updates
+For detailed instructions, refer to the [storage configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration) page.
 
-Please check the `values.yaml` below and configure your `values.yaml` according to this. 
+---
 
+#### **Keycloak Updates**
+
+Ensure the `organizationName` and `initialOrganizationId` in the `values.yaml` file match those in the standalone Appcircle server.
+
+To locate these values:
+1. Go to the standalone Appcircle server dashboard.
+2. Switch to the root organization.
+3. Open the developer tools and switch to the "Network" tab.
+4. Navigate to your **Organization** page to retrieve the details.
+5. You can directly see the organization name in the UI.
+6. For the organization ID, filter the `userinfo` request.
+7. In the response, check for `currentOrganizationId`.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4705-organization-page.png' />
+
+Here’s an example configuration for `values.yaml`:
 ```yaml
 auth:
-   auth-keycloak:
-   replicas: 0
-   organizationName: spacetech
-   initialOrganizationId: a0c5c671-35a7-47a9-a32d-eaf4edac574a
-mongodb:
-   resourcesPreset: "large"
+  auth-keycloak:
+    replicas: 0
+    organizationName: spacetech
+    initialOrganizationId: fb**************a7
 ```
 
-- Setting `auth-keycloak.replicas` to `0` disables Keycloak authentication during migration to prevent conflicts.
-- Setting `resourcesPreset` to `"large"` ensures MongoDB has sufficient resources for handling large datasets.
+:::note
+`auth-keycloak.replicas: 0`** disables Keycloak during the migration to avoid authentication conflicts.
+:::
+---
 
+#### **MongoDB Updates**
+
+Set the resources preset to `"large"` for the migration phase to provide MongoDB with sufficient resources for handling larger datasets.
+
+Example configuration:
+```yaml
+mongodb:
+  resourcesPreset: "large"
+```
+
+---
+
+#### **KVS Subdomain**
+
+The `redis` subdomain used on the standalone Appcircle server has been updated to `kvs` in the Helm configuration for the Kubernetes deployment.
+
+##### If you want to update to the `kvs` subdomain:
+
+- **No changes are needed in the `values.yaml`** file.
+- Add the **`kvs` DNS record** for the new subdomain.
+- Update the **Appcircle runner configurations** to point to the new `kvs` subdomain.
+
+##### If you prefer to keep the `redis` subdomain (recommended):
+
+- Add the following configuration to the `values.yaml` file:
+  
+  ```yaml
+  global:
+    urls:
+      webEventRedis:
+        subdomain: redis
+  ```
+
+- **No new DNS record is required**.
+- **Appcircle runners do not need to be updated**.
+
+#### **Additional Updates**
+
+Review the `global.yaml` file from your standalone Appcircle server for any custom configurations. Compare these settings with the Appcircle Helm chart documentation and apply them in your `values.yaml` if supported. This ensures consistency and avoids potential issues during migration.  
 
 ### 4. Add the Appcircle Helm Repository
 
@@ -604,7 +686,6 @@ In this example, we deploy the Appcircle server to a single namespace, using **`
 
 ```bash
 helm install appcircle-server appcircle/appcircle \
-  --timeout 1200s \
   -n appcircle \
   -f values.yaml
 ```
@@ -613,18 +694,16 @@ helm install appcircle-server appcircle/appcircle \
 If you need or want to change the release name, please note that it should be 18 characters or fewer.
 :::
 
-You can watch the Appcircle server installation with any Kubernetes monitoring tool. The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take up to **10 to 15 minutes**.
+:::caution Important Note on Helm Installation Timeout
 
-To make sure that the Appcircle server is installed successfully, you can run the command below and wait to finish:
+Since we disabled a a module before the migration, **Helm will likely wait for the module to be installed** before reporting the installation as successful. This will cause the installation to **timeout**. 
 
-```bash
-kubectl wait --for=condition=ready pod \
-  -l app.kubernetes.io/instance=appcircle-server \
-  -n appcircle --timeout 1200s && \
-  echo "Appcircle is ready to use. Happy building! "
-```
+**Don't worry**, this is expected behavior. After completing the data migration steps, we will complete the Helm installation by re-enabling the job, allowing the installation to finalize successfully.
+:::
 
-## Migrate the Data
+You can watch the Appcircle server installation using any Kubernetes monitoring tool. The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take up to **10 to 15 minutes**.
+
+## Migrating the Data
 
 ### 1. Create Kubernetes Secrets
 
@@ -635,60 +714,6 @@ Ensure you have [gathered all necessary data](#2-backup-appcircle-configuration-
 
 Some secret data, such as database passwords and Keycloak client secrets, used in the Kubernetes secrets creation below should match the data extracted from the backups of the standalone server. Ensure consistency between the backed-up values and the values used in the Kubernetes secrets to prevent connectivity and authentication issues.
 :::
-
-- **Kubernetes Namespace:** Create a namespace for Appcircle in your Kubernetes cluster:
-
-  ```bash
-  kubectl create namespace appcircle
-  ```
-
-- **Container Registry Secret:** Create the container registry secret for the Appcircle artifact registry:
-
-:::info
-If you are using your own container registry, follow the `Custom Registry` section below.
-
-If your registry doesn't require authentication, you can skip this section.
-:::
-
-<Tabs groupId="Image Registry">
-
-  <TabItem value="appcircle-registry" label="Appcircle Registry">
-
-- Save the `cred.json` file.
-
-- Create the container registry secret:
-
-```bash
-kubectl create secret docker-registry containerregistry \
-  -n appcircle \
-  --docker-server='europe-west1-docker.pkg.dev' \
-  --docker-username='_json_key' \
-  --docker-password="$(cat cred.json)"
-```
-
-  </TabItem>
-  <TabItem value="custom-registry" label="Custom Registry">
-
-- Update the `server`, `username`, and `password` fields for your own custom registry and create the container registry secret:
-
-```bash
-kubectl create secret docker-registry containerregistry \
-  -n appcircle \
-  --docker-server='registry.spacetech.com' \
-  --docker-username='yourRegistryUsername' \
-  --docker-password='superSecretRegistryPassword'
-```
-
-  </TabItem>
-</Tabs>
-
-- **SMTP Password Secret:** Create the SMTP server password if the SMTP server that the Appcircle server will use requires authentication.
-
-```bash
-kubectl create secret generic appcircle-server-smtp \
-  -n appcircle \
-  --from-file=password=<path-to-smtp-password-file>
-```
 
 - **Keycloak Clients Secret:**
 
@@ -724,18 +749,6 @@ kubectl create secret generic appcircle-server-auth-keycloak-passwords \
   --from-literal=initialPassword=<initial-password> \
   --from-literal=adminPassword=<admin-password>
 ```
-
-- **SSL Certificate Secret:** If you are using the Appcircle with HTTPS, create a secret for SSL certificates.
-
-```bash
-kubectl create secret generic appcircle-tls-wildcard \
-  -n appcircle \
-  --from-file=tls.crt=<path-to-tls.crt> \
-  --from-file=tls.key=<path-to-tls.key> \
-  --from-file=ca.crt=<path-to-ca.crt> \
-  --type=kubernetes.io/tls
-```
-
 - **MinIO Connection Secret:**
 
 :::caution
@@ -1189,11 +1202,11 @@ kubectl create secret generic appcircle-server-minio-connection \
     --patch='{"stringData": { "token": "*hvs*.U5LLy********F2bOy", "unseal_keys": "dnaDMnwLuRni******M0EPJ2gAlyeHmOAy FRTs/BO606ty******1nm9pJssLZjqVULR f35t4MU6gojw******/bH92wR9t6MzzIYc" }}'
     ```
 
-## Post-Migration Steps
-
-After completing the migration, follow these steps to finalize and verify the setup:
+## Post-installation Steps
 
 ### 1. Update the `values.yaml`
+
+After the migration is completed, you need to enable the Keycloak module.
 
 - **Remove Keycloak Replica Override:**  
   Delete the `replicas: 0` setting under `auth-keycloak`.
@@ -1212,18 +1225,104 @@ helm upgrade --install appcircle-server appcircle/appcircle \
   -f values.yaml
 ```
 
-### 3. Update DNS Records
+### 3. Update the DNS Records
 
-- **Shift DNS to the New Cluster:**  
-  Update the DNS records to point to the new Appcircle Kubernetes cluster.
+List the Ingresses with `kubectl` to check the IP address of the Appcircle services domains.
 
-- **Redis Subdomain Change:**  
-  Replace the `redis` subdomain from the standalone server (e.g., `redis.appcircle.spacetech.com`) with the `kvs` subdomain for Kubernetes (e.g., `kvs.appcircle.spacetech.com`).
+```bash
+kubectl get ingresses -n appcircle
+```
 
-- **Reference:**  
-  For detailed instructions, see the [DNS Records Section](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes#1-add-dns-records).
+According to the example output below, you need to configure your DNS as follows:
 
-### 4. Verification
+```bash
+NAME                               CLASS   HOSTS                                                          ADDRESS        PORTS      AGE
+appcircle-apigateway               nginx   api.appcircle.spacetech.com,auth.appcircle.spacetech.com       10.45.140.78   80,443     24m
+appcircle-distribution-testerweb   nginx   dist.appcircle.spacetech.com                                   10.45.140.78   80,443     24m
+appcircle-resource                 nginx   resource.appcircle.spacetech.com                               10.45.140.78   80,443     24m
+appcircle-store-web                nginx   *.store.appcircle.spacetech.com                                10.45.140.78   80,443     24m
+appcircle-web-app                  nginx   my.appcircle.spacetech.com                                     10.45.140.78   80,443     24m
+appcircle-web-event                nginx   hook.appcircle.spacetech.com                                   10.45.140.78   80,443     24m
+appcircle-webeventredis            nginx   kvs.appcircle.spacetech.com                                    10.45.140.78   80,443     24m
+```
+
+Since you already have the DNS records for the standalone Appcircle server, all you need to do is update the DNS records to the new addresses of the Ingress objects of the Kubernetes Appcircle server.
+
+### 4. Login to the Appcircle Dashboard
+
+Check the output of the `helm install` command to see login URL, initial username and command to get initial user password.
+
+```bash
+Self-Hosted Configuration:
+
+- Initial Organization Id : 8c23e250-4aa8-4ef6-888b-9514695aa1c7
+- Initial User            : admin@spacetech.com
+- Retrieve the initial user password by executing the following command:↴
+    
+    kubectl get secret -n appcircle appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
+
+You can access the application dashboard at:↴
+
+   https://my.appcircle.spacetech.com
+
+
+Support:
+For any issues or questions, please contact the system administrator or check the application documentation.
+```
+
+### 5. Connecting Runners
+
+When you complete installation successfully by following above steps, you're ready for your first build. :tada:
+
+But in order to run build pipelines, you need to install and connect self-hosted runners. After completing the migration, make sure to verify that your existing self-hosted runners are properly connected to the new Kubernetes Appcircle server. You might need to update their configurations to point to the new server endpoints.
+
+We have dedicated section for installation and configuration of self-hosted runners.
+
+Follow and apply related guidelines in [here](/self-hosted-appcircle/self-hosted-runner/installation).
+
+Self-hosted runner section in docs, has all details about runners and their configuration.
+
+:::::caution
+
+By default, self-hosted runner package has pre-configured `ASPNETCORE_REDIS_STREAM_ENDPOINT` and `ASPNETCORE_BASE_API_URL` for Appcircle-hosted cloud.
+
+- `webeventredis.appcircle.io:6379,ssl=true`
+- `https://api.appcircle.io/build/v1`
+
+:point_up: You need to change these values with your self-hosted Appcircle server's Redis and API URL.
+
+Assuming our sample scenario explained above, these values should be:
+
+- `kvs.appcircle.spacetech.com:6379,ssl=false`
+- `http://api.appcircle.spacetech.com/build/v1`
+
+for our example configuration.
+
+:::info
+If your Appcircle server is running with `HTTPS`, then Redis and API URL should be like this:
+
+- `kvs.appcircle.spacetech.com:443,ssl=true`
+- `https://api.appcircle.spacetech.com/build/v1`
+
+:::
+
+:reminder_ribbon: After [download](/self-hosted-appcircle/self-hosted-runner/installation#1-download), open `appsettings.json` with a text editor and change the `ASPNETCORE_REDIS_STREAM_ENDPOINT` and the `ASPNETCORE_BASE_API_URL` values according to your configuration.
+
+Please note that, you should do this before [register](/self-hosted-appcircle/self-hosted-runner/installation#2-register).
+
+:::::
+
+Considering system performance, it will be good to install self-hosted runners to other machines. Self-hosted Appcircle server should run on a dedicated machine itself.
+
+You can install any number of runners regarding to your needs and connect them to self-hosted Appcircle server.
+
+### 6. Apply the Appcircle License
+
+When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
+
+To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration) section.
+
+### 7. Verification
 
 - Test the following functionalities and ensure all data and features are operational post-migration.
   - **Builds**
@@ -1232,9 +1331,11 @@ helm upgrade --install appcircle-server appcircle/appcircle \
   - **Testing Distribution**
   - **LDAP / SSO Settings**
 
-### 5. Clean Up
+### 8. Clean Up
 
 Once the migration has been confirmed as successful:
 
 - Remove old Docker containers from the standalone Appcircle server.
 - Delete any residual data no longer needed.
+
+<NeedHelp />
