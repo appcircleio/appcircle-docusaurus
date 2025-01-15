@@ -560,7 +560,18 @@ webeventredis:
 **Remove sensitive information** such as Appcircle initial user password, SMTP password, SSL certificates, and other secrets from the `values.yaml` **for production environments**, by checking the [Sensitive Values](/self-hosted-appcircle/install-server/helm-chart/configuration/sensitive-configuration) documentation.
 
 ### 3. Prepare `values.yaml` for Migration
-**Make the following adjustments** to your `values.yaml` file **before deploying the Helm chart**:
+
+**Make the following adjustments** to your `values.yaml` file **before deploying the Helm chart**.
+
+#### Storage Updates
+
+After [checking the data size](#3-check-the-data-size-on-the-standalone-appcircle-server) on the standalone Appcircle server, ensure that you adjust the storage size accordingly. The configured storage must meet or exceed the data size requirements to support the migration and ongoing usage of the Appcircle server.
+
+For detailed instructions on configuring storage sizes in the `values.yaml`, refer to the [storage configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration) page.
+
+#### General Updates
+
+Please check the `values.yaml` below and configure your `values.yaml` according to this. 
 
 ```yaml
 auth:
