@@ -94,6 +94,57 @@ If you use a domain like `appcircle.spacetech.com`, it will have **two levels of
 
 </details>
 
+### 3. Kubernetes Cluster
+
+A **Kubernetes cluster** is **required** to install the Appcircle server using Helm.
+
+**Minimum hardware requirements for enterprise installation:**
+
+- Node(s) with `x86_64` architecture
+- 8 CPUs
+- 16 GB RAM
+- 50 GB Disk per node
+
+:::tip
+The required storage size for the Appcircle server depends significantly on the size of the artifacts (APK, IPA, cache).
+:::
+
+<details>
+    <summary>Click to view more details about Kubernetes cluster prerequisite.</summary>
+
+**Recommended hardware requirements for enterprise installation:**
+
+- Nodes with `x86_64` architecture
+- 32 CPUs
+- 64 GB RAM
+- 1 TB Disk
+
+For production environments, if you deploy stateful applications with the Appcircle Helm chart, you will need significant storage capacity, as specified above. You can configure disk resource allocations through Helm values according to your needs.
+
+However, if you opt to use external services for components such as PostgreSQL or MinIO, the storage requirements for the cluster are significantly reduced to around 50GB. It is **highly recommended** to deploy stateful apps outside of the Appcircle Helm chart configuration.
+
+:::tip
+For stateful apps that should deployed out of scope this helm chart, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) document.
+
+For storage details, you can check the [Storage Class Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration) section.
+:::
+
+:::info
+Using SSD storage is highly recommended if stateful applications are installed within the Appcircle Helm chart scope. SSDs provide faster read/write speeds, improving the performance and responsiveness of your applications.
+:::
+
+Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain compatibility and support.
+
+</details>
+
+### 4. `kubectl`
+
+The **`kubectl`** CLI is **required**.
+
+### 5. Helm v3
+
+**Helm version `3.11.0`** or later is **required**.
+
 ## Pre-Migration Steps
 
 ### Standalone Appcircle Server Steps
