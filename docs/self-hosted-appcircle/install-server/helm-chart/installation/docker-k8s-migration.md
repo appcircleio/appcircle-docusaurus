@@ -67,6 +67,33 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 
 </details>
 
+### 2. SSL Certificate
+
+An **SSL certificate** is **required** to deploy the Appcircle server for **production** environments.
+
+You **can skip** SSL certificate if you are deploying Appcircle server **for trial purposes**.
+
+<details>
+    <summary>Click to view more details about SSL certificate prerequisite.</summary>
+
+- The SSL certificate private key shouldn't be password protected.
+
+- The SSL certificate should be in PEM format.
+
+- Ensure the **one certificate** covers **all the subdomains** in the [domain name](#1-domain-name) section.
+
+- Make sure to configure the Appcircle server with a **fullchain certificate**, which should include the leaf (or app) certificate, intermediate certificates, and the root certificate.
+
+:::tip
+You can use a **wildcard certificate** to cover all the subdomains, simplifying the certificate management process. For example, a wildcard certificate for **`*.appcircle.spacetech.com`** will be enough.
+:::
+
+:::caution
+If you use a domain like `appcircle.spacetech.com`, it will have **two levels of subdomains**. Ensure that both your DNS provider and SSL certificate provider support multi-level subdomains for proper configuration.
+:::
+
+</details>
+
 ## Pre-Migration Steps
 
 ### Standalone Appcircle Server Steps
