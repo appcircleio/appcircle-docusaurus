@@ -2,7 +2,7 @@
 title: Docker to Kubernetes Migration
 description: Learn how to migrate from standalone Appcircle server to Kubernetes Appcircle server.
 tags: [self-hosted, helm, configuration, kubernetes, migration]
-sidebar_position: 95
+sidebar_position: 30
 ---
 
 import Tabs from '@theme/Tabs';
