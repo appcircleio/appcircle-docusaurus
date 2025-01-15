@@ -40,6 +40,8 @@ This migration process involves downtime. To minimize disruption, **plan accordi
 - Notify users about the expected downtime and migration schedule.  
   :::
 
+:::
+
 ## Prerequisites
 
 To complete this guide, you must have the following:
@@ -1325,7 +1327,7 @@ To obtain the license you purchased, please share the initial organization ID, w
 ### 7. Verification
 
 - Test the following functionalities and ensure all data and features are operational post-migration.
-  - **Builds**
+  - **Build**
   - **Publish**
   - **Enterprise App Store**
   - **Testing Distribution**
