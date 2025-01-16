@@ -37,8 +37,7 @@ This migration process involves downtime. To minimize disruption, **plan accordi
 - Back up all crucial data before starting the migration.
 - Thoroughly review each step and ensure you understand its implications.
 - Test the migration process in a staging or non-production environment if possible.
-- Notify users about the expected downtime and migration schedule.  
-  :::
+- Notify users about the expected downtime and migration schedule.
 
 :::
 
@@ -156,13 +155,12 @@ The **`kubectl`** CLI is **required**.
 The bastion host should meet the following requirements to facilitate the migration from the standalone Appcircle server to the Kubernetes Appcircle server:
 
 - **SSH Access**: The bastion host must have SSH access to the standalone Appcircle server.
-  
 - **Kubernetes Access**: The bastion host must be able to access the Kubernetes cluster for deploying the Helm chart and performing other tasks.
 
 - **Hardware Requirements**:
   - 2 CPUs
   - 4 GB RAM
-  - Sufficient disk space for migration tasks. The disk space requirement will depend on the total size of the **PostgreSQL**, **MongoDB**, and **Vault** data of the standalone Appcircle server. You can easily see the data size of the standalone Appcircle server by checking [this section](#3-check-the-data-size-on-the-standalone-appcircle-server). 
+  - Sufficient disk space for migration tasks. The disk space requirement will depend on the total size of the **PostgreSQL**, **MongoDB**, and **Vault** data of the standalone Appcircle server. You can easily see the data size of the standalone Appcircle server by checking [this section](#3-check-the-data-size-on-the-standalone-appcircle-server).
   - **MinIO disk space** is not a concern, as the data is directly copied between the source and target servers without being stored on the bastion host.
 
 Ensure the bastion host has enough storage to temporarily hold any necessary migration files, but do not expect it to store the data long-term.
@@ -372,16 +370,16 @@ Before proceeding with the migration, verify that the standalone Appcircle serve
 
 - **Change directory to the `appcircle-server`:**
 
-   ```bash
-   cd appcircle-server
-   ```
+  ```bash
+  cd appcircle-server
+  ```
 
 - **Check the health status of the standalone Appcircle server:**
-   <SpacetechExampleInfo/>
+  <SpacetechExampleInfo/>
 
-   ```bash
-   ./ac-self-hosted.sh -n spacetech check
-   ```
+  ```bash
+  ./ac-self-hosted.sh -n spacetech check
+  ```
 
 #### 5. Update the Standalone Appcircle Server to the Latest Version
 
@@ -395,20 +393,21 @@ For the migration, there should be no running builds on the Appcircle during the
 
 - **Change directory to the `appcircle-server`:**
 
-   ```bash
-   cd appcircle-server
-   ```
+  ```bash
+  cd appcircle-server
+  ```
 
 - **Change directory to the `export` directory of the project:**
-   <SpacetechExampleInfo/>
-   ```bash
-   cd projects/spacetech/export
-   ```
+  <SpacetechExampleInfo/>
+
+  ```bash
+  cd projects/spacetech/export
+  ```
 
 - **Stop the Nginx service:**
-   ```bash
-   docker compose stop nginx
-   ```
+  ```bash
+  docker compose stop nginx
+  ```
 
 ## Installation
 
@@ -607,6 +606,7 @@ For detailed instructions, refer to the [storage configuration](/self-hosted-app
 Ensure the `organizationName` and `initialOrganizationId` in the `values.yaml` file match those in the standalone Appcircle server.
 
 To locate these values:
+
 1. Go to the standalone Appcircle server dashboard.
 2. Switch to the root organization.
 3. Open the developer tools and switch to the "Network" tab.
@@ -618,6 +618,7 @@ To locate these values:
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4705-organization-page.png' />
 
 Here’s an example configuration for `values.yaml`:
+
 ```yaml
 auth:
   auth-keycloak:
@@ -627,8 +628,9 @@ auth:
 ```
 
 :::note
-`auth-keycloak.replicas: 0`** disables Keycloak during the migration to avoid authentication conflicts.
+`auth-keycloak.replicas: 0`\*\* disables Keycloak during the migration to avoid authentication conflicts.
 :::
+
 ---
 
 #### **MongoDB Updates**
@@ -636,6 +638,7 @@ auth:
 Set the resources preset to `"large"` for the migration phase to provide MongoDB with sufficient resources for handling larger datasets.
 
 Example configuration:
+
 ```yaml
 mongodb:
   resourcesPreset: "large"
@@ -656,7 +659,7 @@ The `redis` subdomain used on the standalone Appcircle server has been updated t
 ##### If you prefer to keep the `redis` subdomain (recommended):
 
 - Add the following configuration to the `values.yaml` file:
-  
+
   ```yaml
   global:
     urls:
@@ -669,7 +672,7 @@ The `redis` subdomain used on the standalone Appcircle server has been updated t
 
 #### **Additional Updates**
 
-Review the `global.yaml` file from your standalone Appcircle server for any custom configurations. Compare these settings with the Appcircle Helm chart documentation and apply them in your `values.yaml` if supported. This ensures consistency and avoids potential issues during migration.  
+Review the `global.yaml` file from your standalone Appcircle server for any custom configurations. Compare these settings with the Appcircle Helm chart documentation and apply them in your `values.yaml` if supported. This ensures consistency and avoids potential issues during migration.
 
 ### 4. Add the Appcircle Helm Repository
 
@@ -698,7 +701,7 @@ If you need or want to change the release name, please note that it should be 18
 
 :::caution Important Note on Helm Installation Timeout
 
-Since we disabled a a module before the migration, **Helm will likely wait for the module to be installed** before reporting the installation as successful. This will cause the installation to **timeout**. 
+Since we disabled a a module before the migration, **Helm will likely wait for the module to be installed** before reporting the installation as successful. This will cause the installation to **timeout**.
 
 **Don't worry**, this is expected behavior. After completing the data migration steps, we will complete the Helm installation by re-enabling the job, allowing the installation to finalize successfully.
 :::
@@ -751,6 +754,7 @@ kubectl create secret generic appcircle-server-auth-keycloak-passwords \
   --from-literal=initialPassword=<initial-password> \
   --from-literal=adminPassword=<admin-password>
 ```
+
 - **MinIO Connection Secret:**
 
 :::caution
@@ -1260,7 +1264,7 @@ Self-Hosted Configuration:
 - Initial Organization Id : 8c23e250-4aa8-4ef6-888b-9514695aa1c7
 - Initial User            : admin@spacetech.com
 - Retrieve the initial user password by executing the following command:↴
-    
+
     kubectl get secret -n appcircle appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
 
 You can access the application dashboard at:↴
