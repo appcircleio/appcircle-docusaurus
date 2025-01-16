@@ -41,6 +41,14 @@ This migration process involves downtime. To minimize disruption, **plan accordi
 
 :::
 
+:::info
+In this documentation, we will migrate from a **standalone Appcircle server** to a **Kubernetes-based Appcircle server** using the **internal stateful applications** (PostgreSQL, MongoDB, MinIO, Vault) provided by the Appcircle Helm chart.  
+
+If you choose to use **external stateful services**, you will need to adapt certain migration commands to fit your **custom environment**. Specific commands requiring modifications for external deployments are highlighted in the relevant sections of this documentation.
+
+In the case of using **external stateful services**, the **bastion host requirements** should be adjusted to meet your **specific setup**. For example, the **storage** and **access requirements** for the external databases and services will need to be accounted for during the migration. Please ensure that your **bastion host** is configured with appropriate resources and network access to support these **external services**.
+:::
+
 ## Prerequisites
 
 To complete this guide, you must have the following:
@@ -223,7 +231,7 @@ If you are deploying the Appcircle server for a production environment, it is re
 
 For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
 
-### 5. Standalone Appcircle Server Steps
+### 3. Standalone Appcircle Server Steps
 
 This section outlines the essential steps to back up data from your existing Standalone Appcircle server installation and prepare your Kubernetes environment for the migration.
 
@@ -245,7 +253,7 @@ Before starting, create a full backup of your Appcircle server. Options include:
 On your **bastion host**, create a directory to store all migration files:
 
 ```bash
-mkdir appcircle-k8s-migration && cd appcircle-k8s-migration
+mkdir appcircle-k8s-migration
 ```
 
 #### 2. Backup Appcircle Configuration Data
@@ -851,37 +859,48 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
 
 #### Bastion Host
 
-1. **Copy the PostgreSQL Data to Bastion Host**: Copy the dumped PostgreSQL data from the Appcircle server to the bastion host.
+1. **Log in to the bastion host.**
+
+2. **Change directory to the temporary directory that was created for storing the standalone Appcircle server files:**
+   ```bash
+   cd appcircle-k8s-migration
+   ```
+
+3. **Copy the PostgreSQL Data to Bastion Host**: Copy the dumped PostgreSQL data from the Appcircle server to the bastion host.
 
    ```bash
    scp standalone-appcircle-server/app/appcircle-server/projects/spacetech/export/mongo-backup.gz .
    ```
 
-2. **Get PostgreSQL Password:**
+:::info
+If you have used an **external PostgreSQL service** instead of the one provided with the Appcircle Helm chart, please adjust the commands below for your **specific use-case**.
+:::
+
+4. **Get PostgreSQL Password:**
 
    ```bash
    kubectl get secret -n appcircle appcircle-server-auth-postgresql -ojsonpath='{.data.password}' | base64 -d
    ```
 
-3. **Get the PostgreSQL pod name:**
+5. **Get the PostgreSQL pod name:**
 
    ```bash
    kubectl get pods -n appcircle | grep postgres
    ```
 
-4. **Install PostgreSQL tools:**
+6. **Install PostgreSQL tools:**
 
    ```bash
    brew install postgresql
    ```
 
-5. **Start Port Forwarding:**
+7. **Start Port Forwarding:**
 
    ```bash
    kubectl port-forward appcircle-server-auth-postgresql-0 5432:5432 -n appcircle
    ```
 
-6. **Restore the Database:**
+8. **Restore the Database:**
    ```bash
    pg_restore -h localhost -p 5432 -U keycloak -d keycloak ~/appcircle-k8s-migration/pgdump.backup
    ```
@@ -969,27 +988,39 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
 
 #### Bastion Host
 
-1. **Copy the file from the standalone Appcircle server to the bastion host:**
+1. **Log in to the bastion host.**
+
+2. **Change directory to the temporary directory that was created for storing the standalone Appcircle server files:**
+
+   ```bash
+   cd appcircle-k8s-migration
+   ```
+
+3. **Copy the file from the standalone Appcircle server to the bastion host:**
 
    ```bash
    scp standalone-appcircle-server/app/appcircle-server/projects/spacetech/export/mongo-backup.gz .
    ```
 
-2. **Install MongoDB Database Tools:**
+:::info
+If you have used an **external MongoDB service** instead of the one provided with the Appcircle Helm chart, please adjust the commands below for your **specific use-case**.
+:::
+
+4. **Install MongoDB Database Tools:**
 
    To install MongoDB Database Tools, please check the [official MongoDB documentation](https://www.mongodb.com/docs/database-tools/installation/installation/#installation).
 
-3. **Get the MongoDB root password of the K8s installation:**
+5. **Get the MongoDB root password of the K8s installation:**
 
    ```bash
    kubectl get secret -n appcircle appcircle-server-mongodb -o jsonpath='{.data.mongodb-root-password}' | base64 -d
    ```
 
-4. **Start port forwarding:**
+6. **Start port forwarding:**
    ```bash
    kubectl port-forward appcircle-server-mongodb-0 27017:27017 -n appcircle
    ```
-5. **Restore the dumped MongoDB:**
+7. **Restore the dumped MongoDB:**
    ```bash
    mongorestore --uri="mongodb://root:<mongodb-root-password>@localhost:27017/?authSource=admin" --gzip --archive=./mongo-backup.gz
    ```
@@ -1020,9 +1051,19 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
 
 #### Bastion Host
 
-1. **Log in to the bastion:**
+1. **Log in to the bastion host.**
 
-2. **Get the Kubernetes MinIO access and secret keys:**
+2. **Change directory to the temporary directory that was created for storing the standalone Appcircle server files:**
+
+   ```bash
+   cd appcircle-k8s-migration
+   ```
+
+:::info
+If you have used an **external MinIO service** instead of the one provided with the Appcircle Helm chart, please adjust the commands below for your **specific use-case**.
+:::
+
+3. **Get the Kubernetes MinIO access and secret keys:**
 
    ```bash
    kubectl get secret -n appcircle appcircle-server-minio-connection -ojsonpath='{.data.accessKey}' | base64 -d && \
@@ -1030,13 +1071,13 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
    kubectl get secret -n appcircle appcircle-server-minio-connection -ojsonpath='{.data.secretKey}' | base64 -d
    ```
 
-3. **Get the MinIO service name:**
+4. **Get the MinIO service name:**
 
    ```bash
    kubectl get services -n appcircle | grep minio
    ```
 
-4. **Change MinIO service to NodePort for temporary:**
+5. **Change MinIO service to NodePort for temporary:**
 
    :::info
    We recommend opening the MinIO service to the external network temporarily instead of using `kubectl port-forward` since you might have problems while transferring large files over port forwarding of the `kubectl`.
@@ -1048,7 +1089,7 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
    kubectl patch service appcircle-server-minio -n appcircle --type='json' -p='[{"op": "replace", "path": "/spec/type", "value": "NodePort"}, {"op": "add", "path": "/spec/ports/0/nodePort", "value": 30534}, {"op": "add", "path": "/spec/ports/1/nodePort", "value": 32761}]'
    ```
 
-5. **Install `rclone` tool:**
+6. **Install `rclone` tool:**
 
    :::info
    We recommended using `rclone` tool instead of `mc`.
@@ -1056,7 +1097,7 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
 
    To install `rclone`, please check the [official rclone documentation](https://rclone.org/install/).
 
-6. **Add Rclone Configuration for Standalone Server:**
+7. **Add Rclone Configuration for Standalone Server:**
 
    To configure Rclone for the standalone Appcircle server, follow these steps:
 
@@ -1085,7 +1126,7 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
      Edit advanced config? (y/n): n   # Skip advanced configuration
      ```
 
-7. **Add Rclone config for Kubernetes Appcircle server:**
+8. **Add Rclone config for Kubernetes Appcircle server:**
 
    To configure `rclone` for the Kubernetes Appcircle server, follow these steps:
 
@@ -1114,7 +1155,7 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
      Edit advanced config? (y/n): n   # Skip advanced configuration
      ```
 
-8. **Start copying files:**
+9. **Start copying files:**
 
    ```bash
    rclone copy --progress --checksum --update ac-standalone: ac-k8s:
@@ -1192,43 +1233,55 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
 
 #### Bastion Host
 
-1. **Copy the vault data tar ball to the bastion host:**
+1. **Log in to the bastion host.**
+
+2. **Change directory to the temporary directory that was created for storing the standalone Appcircle server files:**
+
+   ```bash
+   cd appcircle-k8s-migration
+   ```
+
+3. **Copy the vault data tar ball to the bastion host:**
 
    ```bash
    scp standalone-appcircle-server/app/appcircle-server/vaultd.tar.gz .
    ```
 
-2. **Get the Vault statefulset name:**
+:::info
+If you have used an **external Vault service** instead of the one provided with the Appcircle Helm chart, please adjust the commands below for your **specific use-case**.
+:::
+
+4. **Get the Vault statefulset name:**
 
    ```bash
    kubectl get statefulsets -n appcircle | grep vault
    ```
 
-3. **Edit the vault `statefulset` for safe operations:**
+4. **Edit the vault `statefulset` for safe operations:**
 
    ```bash
    kubectl patch statefulset -n appcircle appcircle-server-vault -p '{"spec": {"template": {"spec":{"containers":[{"name":"vault","command": ["sh", "-c", "tail -f /dev/null" ], "args": null, "readinessProbe": null, "lifecycle": null  }]}}}}'
    ```
 
-4. **Delete the pod for it to be re-created:**
+5. **Delete the pod for it to be re-created:**
 
    ```bash
    kubectl delete pod appcircle-server-vault-0 -n appcircle
    ```
 
-5. **Copy the vault data to the target pod:**
+6. **Copy the vault data to the target pod:**
 
    ```bash
    kubectl cp "./vaultd.tar.gz" "appcircle-server-vault-0:/vault/data/vaultd.tar.gz" -n appcircle
    ```
 
-6. **Open shell in the vault container:**
+7. **Open shell in the vault container:**
 
    ```bash
    kubectl exec -it appcircle-server-vault-0 -- bash
    ```
 
-7. **Run the following commands in the shell:**
+8. **Run the following commands in the shell:**
 
    ```bash
    cd /vault/data
@@ -1236,15 +1289,15 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
    /usr/local/bin/docker-entrypoint.sh vault server -config=/vault/config/extraconfig-from-values.hcl
    ```
 
-8. **Don't close the upper terminal until the process finishes:**
+9. **Don't close the upper terminal until the process finishes:**
 
-9. **Open a new terminal in the vault container:**
+10. **Open a new terminal in the vault container:**
 
    ```bash
    kubectl exec -it appcircle-server-vault-0 -- bash
    ```
 
-10. **Unseal the vault with the saved keys from the steps above:**
+11. **Unseal the vault with the saved keys from the steps above:**
 
     ```bash
     vault operator unseal dnaDMnwLuRni******M0EPJ2gAlyeHmOAy
@@ -1252,15 +1305,15 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
     vault operator unseal f35t4MU6gojw******/bH92wR9t6MzzIYc
     ```
 
-11. **Delete the vault data tar ball:**
+12. **Delete the vault data tar ball:**
 
     ```bash
     rm /vault/data/vaultd.tar.gz
     ```
 
-12. **Exit from the first and second vault terminal:**
+13. **Exit from the first and second vault terminal:**
 
-13. **Edit the secret with old unseal keys:**
+14. **Edit the secret with old unseal keys:**
     ```bash
     kubectl patch secret appcircle-server-vault-seal -n appcircle \
     --patch='{"stringData": { "token": "*hvs*.U5LLy********F2bOy", "unseal_keys": "dnaDMnwLuRni******M0EPJ2gAlyeHmOAy FRTs/BO606ty******1nm9pJssLZjqVULR f35t4MU6gojw******/bH92wR9t6MzzIYc" }}'
