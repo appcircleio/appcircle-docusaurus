@@ -223,64 +223,6 @@ If you are deploying the Appcircle server for a production environment, it is re
 
 For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
 
-### 3. Create Namespace
-
-**Create a namespace** for the Appcircle server deployment. In this documentation, we will use `appcircle` as the example namespace.
-
-```bash
-kubectl create namespace appcircle
-```
-
-### 4. Create Container Registry Secret
-
-By default, Appcircle uses its own image registry, which requires authentication with the `cred.json` file provided by Appcircle.
-
-If you are using your own container image registry to access Appcircle container images, you can either skip authentication if your registry doesn't require it or create a secret for your custom registry.
-
-Follow the steps below to create the registry secret in the `appcircle` namespace for pods to successfully pull images:
-
-:::info
-If you are using your own container registry, follow the `Custom Registry` section below.
-
-If your registry doesn't require authentication, you can skip this section.
-:::
-
-<Tabs groupId="Image Registry">
-
-  <TabItem value="appcircle-registry" label="Appcircle Registry">
-
-- Save the `cred.json` file.
-
-- Create the container registry secret:
-
-```bash
-kubectl create secret docker-registry containerregistry \
-  -n appcircle \
-  --docker-server='europe-west1-docker.pkg.dev' \
-  --docker-username='_json_key' \
-  --docker-password="$(cat cred.json)"
-```
-
-  </TabItem>
-  <TabItem value="custom-registry" label="Custom Registry">
-
-:::tip
-If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with a leading space character will not be stored in the shell history. This allows you to create secrets safely without storing sensitive information in the shell history.
-:::
-
-- Update the `server`, `username`, and `password` fields for your own custom registry and create the container registry secret:
-
-```bash
-kubectl create secret docker-registry containerregistry \
-  -n appcircle \
-  --docker-server='registry.spacetech.com' \
-  --docker-username='yourRegistryUsername' \
-  --docker-password='superSecretRegistryPassword'
-```
-
-  </TabItem>
-</Tabs>
-
 ### 5. Standalone Appcircle Server Steps
 
 This section outlines the essential steps to back up data from your existing Standalone Appcircle server installation and prepare your Kubernetes environment for the migration.
@@ -370,7 +312,7 @@ On the **standalone Appcircle server**, execute the following commands to back u
 - **Check the MongoDB data size:**
 
   ```bash
-  echo "$APPCIRCLE_DISK_USAGE" | grep "spacetech_mongo_data"
+  echo "$APPCIRCLE_DISK_USAGE" | grep "spacetech_mongo_data1"
   ```
 
 - **Check the PostgreSQL data size:**
@@ -625,6 +567,14 @@ For detailed instructions, refer to the [storage configuration](/self-hosted-app
 
 ---
 
+#### **SSL Updates**
+
+The SSL configuration of the Appcircle server Helm chart should match the SSL configuration used by the standalone Appcircle server.
+
+- If the standalone server is using HTTPS, configure the Helm chart for HTTPS.
+   - For more information about the SSL configuration, please check the [SSL configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ssl-configuration) page.
+- If the server is running on HTTP, adjust the Helm chart configuration for HTTP.
+
 #### **Keycloak Updates**
 
 Ensure the `organizationName` and `initialOrganizationId` in the `values.yaml` file match those in the standalone Appcircle server.
@@ -744,55 +694,139 @@ Ensure you have [gathered all necessary data](#2-backup-appcircle-configuration-
 Some secret data, such as database passwords and Keycloak client secrets, used in the Kubernetes secrets creation below should match the data extracted from the backups of the standalone server. Ensure consistency between the backed-up values and the values used in the Kubernetes secrets to prevent connectivity and authentication issues.
 :::
 
+- **Create a namespace:** 
+
+   For the Appcircle server deployment. In this documentation, we will use `appcircle` as the example namespace.
+
+   ```bash
+   kubectl create namespace appcircle
+   ```
+
+---
+
+- **Create Container Registry Secret:**
+
+   By default, Appcircle uses its own image registry, which requires authentication with the `cred.json` file provided by Appcircle.
+
+   If you are using your own container image registry to access Appcircle container images, you can either skip authentication if your registry doesn't require it or create a secret for your custom registry.
+
+   Follow the steps below to create the registry secret in the `appcircle` namespace for pods to successfully pull images:
+
+   :::info
+   If you are using your own container registry, follow the `Custom Registry` section below.
+
+   If your registry doesn't require authentication, you can skip this section.
+   :::
+
+   <Tabs groupId="Image Registry">
+
+   <TabItem value="appcircle-registry" label="Appcircle Registry">
+
+   - Save the `cred.json` file.
+
+   - Create the container registry secret:
+
+   ```bash
+   kubectl create secret docker-registry containerregistry \
+   -n appcircle \
+   --docker-server='europe-west1-docker.pkg.dev' \
+   --docker-username='_json_key' \
+   --docker-password="$(cat cred.json)"
+   ```
+
+   </TabItem>
+   <TabItem value="custom-registry" label="Custom Registry">
+
+   :::tip
+   If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with a leading space character will not be stored in the shell history. This allows you to create secrets safely without storing sensitive information in the shell history.
+   :::
+
+   - Update the `server`, `username`, and `password` fields for your own custom registry and create the container registry secret:
+
+   ```bash
+   kubectl create secret docker-registry containerregistry \
+   -n appcircle \
+   --docker-server='registry.spacetech.com' \
+   --docker-username='yourRegistryUsername' \
+   --docker-password='superSecretRegistryPassword'
+   ```
+
+   </TabItem>
+   </Tabs>
+
+---
+
 - **Keycloak Clients Secret:**
 
-:::caution
-The client secret values used below should match the data extracted from the `generated-secret.yaml` backup of your standalone Appcircle server. You can check the `.keycloak.clients` key in the `generated-secret.yaml` file. Using incorrect values will prevent Appcircle from functioning correctly.
-:::
+   Create a secret with the name `${releaseName}-auth-keycloak-clients-secret` containing the relevant secret keys.
 
-```bash
-kubectl create secret generic appcircle-server-auth-keycloak-clients-secret \
-  -n appcircle \
-  --from-literal=appcircleWeb='dc589939-******-87b57fc1a1c7' \
-  --from-literal=buildServer='307f6946-******-9d7743294f6a' \
-  --from-literal=distributionAdminService='a286d519-******-227dec040f53' \
-  --from-literal=distributionTesterWeb='7cc0c02a-******-5e7139d63f3c' \
-  --from-literal=licenseServer='e198b11a-******-1ac96174d6f7' \
-  --from-literal=publishServer='7965798e-******-0b4e8af8afed' \
-  --from-literal=reportingServer='88e3abfd-******-afd2e2a1263f' \
-  --from-literal=storeAdminService='f263f48f-******-588c9f55b4e3' \
-  --from-literal=storeServer='08839b8d-******-aff4ecb63703' \
-  --from-literal=storeWeb='9f6a406e-******-a88c17d7c2f6' \
-  --from-literal=distributionServer='7cc0c02a-******-5e7139d63f3c'
-```
+   :::info
+   In the example, **`appcircle-server`** is used as the **release name**. Make sure to replace it with your actual release name if it's different.
+   :::
+
+   :::caution
+   The client secret values used below should match the data extracted from the `generated-secret.yaml` backup of your standalone Appcircle server. You can check the `.keycloak.clients` key in the `generated-secret.yaml` file. Using incorrect values will prevent Appcircle from functioning correctly.
+   :::
+
+
+   ```bash
+   kubectl create secret generic appcircle-server-auth-keycloak-clients-secret \
+   -n appcircle \
+   --from-literal=appcircleWeb='dc589939-******-87b57fc1a1c7' \
+   --from-literal=buildServer='307f6946-******-9d7743294f6a' \
+   --from-literal=distributionAdminService='a286d519-******-227dec040f53' \
+   --from-literal=distributionTesterWeb='7cc0c02a-******-5e7139d63f3c' \
+   --from-literal=licenseServer='e198b11a-******-1ac96174d6f7' \
+   --from-literal=publishServer='7965798e-******-0b4e8af8afed' \
+   --from-literal=reportingServer='88e3abfd-******-afd2e2a1263f' \
+   --from-literal=storeAdminService='f263f48f-******-588c9f55b4e3' \
+   --from-literal=storeServer='08839b8d-******-aff4ecb63703' \
+   --from-literal=storeWeb='9f6a406e-******-a88c17d7c2f6' \
+   --from-literal=distributionServer='7cc0c02a-******-5e7139d63f3c'
+   ```
+
+---
 
 - **Keycloak Passwords Secret:**
+   Create a secret with the name `${releaseName}-auth-keycloak-passwords` containing the relevant secret keys.
 
-:::caution
-The Keycloak password values used below should match the data extracted from the `generated-secret.yaml` backup of your standalone Appcircle server. You can check the `.keycloak.password` key for the `adminPassword` and `.keycloak.initialPassword` for the `initialPassword` in the `generated-secret.yaml` file. Using incorrect values will prevent Appcircle from functioning correctly.
-:::
+   :::info
+   In the example, **`appcircle-server`** is used as the **release name**. Make sure to replace it with your actual release name if it's different.
+   :::
 
-```bash
-kubectl create secret generic appcircle-server-auth-keycloak-passwords \
-  -n appcircle \
-  --from-literal=initialPassword=<initial-password> \
-  --from-literal=adminPassword=<admin-password>
-```
+   :::caution
+   The Keycloak password values used below should match the data extracted from the `generated-secret.yaml` backup of your standalone Appcircle server. You can check the `.keycloak.password` key for the `adminPassword` and `.keycloak.initialPassword` for the `initialPassword` in the `generated-secret.yaml` file. Using incorrect values will prevent Appcircle from functioning correctly.
+   :::
+
+   ```bash
+   kubectl create secret generic appcircle-server-auth-keycloak-passwords \
+   -n appcircle \
+   --from-literal=initialPassword=<initial-password> \
+   --from-literal=adminPassword=<admin-password>
+   ```
+
+---
 
 - **MinIO Connection Secret:**
 
-:::caution
-The MinIO keys used below should match the data extracted from the `generated-secret.yaml` backup of your standalone Appcircle server. You can check the `.minio.secretKey` key in the `generated-secret.yaml` file for the `accessKey` and `root-password` in the example command below. Using incorrect values will prevent Appcircle from functioning correctly.
-:::
+   Create a secret with the name `${releaseName}-minio-connection` containing the relevant secret keys.
 
-```bash
-kubectl create secret generic appcircle-server-minio-connection \
-  -n appcircle \
-  --from-literal=accessKey=admin \
-  --from-literal=secretKey=<your-minio-secret-key> \
-  --from-literal=root-user=admin \
-  --from-literal=root-password=<your-minio-root-password>
-```
+   :::info
+   In the example, **`appcircle-server`** is used as the **release name**. Make sure to replace it with your actual release name if it's different.
+   :::
+
+   :::caution
+   The MinIO keys used below should match the data extracted from the `generated-secret.yaml` backup of your standalone Appcircle server. You can check the `.minio.secretKey` key in the `generated-secret.yaml` file for the `accessKey` and `root-password` in the example command below. Using incorrect values will prevent Appcircle from functioning correctly.
+   :::
+
+   ```bash
+   kubectl create secret generic appcircle-server-minio-connection \
+   -n appcircle \
+   --from-literal=accessKey=admin \
+   --from-literal=secretKey=<your-minio-secret-key> \
+   --from-literal=root-user=admin \
+   --from-literal=root-password=<your-minio-root-password>
+   ```
 
 ### 2. PostgreSQL Backup & Restore
 
