@@ -355,9 +355,38 @@ Before proceeding with the migration, verify that the standalone Appcircle serve
   ./ac-self-hosted.sh -n spacetech check
   ```
 
-#### 5. Update the Standalone Appcircle Server to the Latest Version
+#### 5. Check the Standalone Appcircle Server Version
 
-Before migrating to Kubernetes Appcircle server, please [update the standalone Appcircle server](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/update) to the latest version.
+Before the migration, you should check the version of the Appcircle server and take the following actions:
+
+- **Check the latest standalone Appcircle server version:**
+   
+   Please check the standalone Appcircle server [version history](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/update#version-history) to learn the latest version.
+
+- **Log in to the standalone Appcircle server:**
+
+- **Change directory to the `appcircle-server`:**
+
+  ```bash
+  cd appcircle-server
+  ```
+
+- **Check the Appcircle server version:**
+
+  <SpacetechExampleInfo/>
+
+  ```bash
+  ./ac-self-hosted.sh -n spacetech version
+  ```
+   - If the version of the standalone Appcircle server is the latest:
+      - You can proceed with using the latest Appcircle Helm chart.
+      
+   - If the Appcircle server version is greater than or equal to `3.23.2`:
+      - You may opt to install a Helm chart version that corresponds to your specific standalone Appcircle server version.
+      - Please check the [version history of the Helm chart](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/upgrades#version-history) and use the latest Helm chart version for that version.
+
+   - If the Appcircle server version is earlier than `3.23.2`:
+      - Update the standalone Appcircle server to at least version `3.23.2` prior to initiating the migration.
 
 #### 6. Stop the Standalone Appcircle Server Requests.
 
@@ -676,6 +705,17 @@ helm install appcircle-server appcircle/appcircle \
   -n appcircle \
   -f values.yaml
 ```
+
+:::tip
+To install specific version of the Appcircle Helm chart, you can use the example command below:
+
+```bash
+helm install appcircle-server appcircle/appcircle \
+  -n appcircle \
+  -f values.yaml
+  --version 0.1.1
+```
+:::
 
 :::warning
 If you need or want to change the release name, please note that it should be 18 characters or fewer.
