@@ -142,28 +142,39 @@ Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain
 
 </details>
 
-### 4. `kubectl`
-
-The **`kubectl`** CLI is **required**.
-
-### 5. Helm v3
-
-**Helm version `3.11.0`** or later is **required**.
-
-### 6. Bastion Host
+### 4. Bastion Host
 
 The bastion host should meet the following requirements to facilitate the migration from the standalone Appcircle server to the Kubernetes Appcircle server:
 
-- **SSH Access**: The bastion host must have SSH access to the standalone Appcircle server.
-- **Kubernetes Access**: The bastion host must be able to access the Kubernetes cluster for deploying the Helm chart and performing other tasks.
-
-- **Hardware Requirements**:
+#### Hardware Requirements
   - 2 CPUs
   - 4 GB RAM
   - Sufficient disk space for migration tasks. The disk space requirement will depend on the total size of the **PostgreSQL**, **MongoDB**, and **Vault** data of the standalone Appcircle server. You can easily see the data size of the standalone Appcircle server by checking [this section](#3-check-the-data-size-on-the-standalone-appcircle-server).
   - **MinIO disk space** is not a concern, as the data is directly copied between the source and target servers without being stored on the bastion host.
 
+:::info
 Ensure the bastion host has enough storage to temporarily hold any necessary migration files, but do not expect it to store the data long-term.
+:::
+
+#### Software Requirements  
+- **Operating System**: The bastion host should be a Linux machine. You can use any popular/mainstream Linux distribution such as Ubuntu, Debian, Red Hat, CentOS, etc.  
+- **Required Tools**:  
+  - `kubectl`: For managing Kubernetes clusters.  
+  - `helm`: For deploying and managing Helm charts.  
+  - `ssh`: For connecting to the standalone Appcircle server.  
+  - Any other tools or dependencies needed for specific migration steps will be detailed in those steps.  
+
+- **Network Configuration**: Ensure the bastion host can reach both the standalone Appcircle server and the Kubernetes cluster over the required network ports.  
+
+- **Resource Accesses**: The user on the bastion host must have:  
+  - **Standalone Appcircle server access**: The bastion host should have SSH access to the standalone Appcircle server.
+  - **Kubernetes Access**: The bastion host should be able to access the Kubernetes cluster API with `kubectl` for deploying Appcircle server.
+
+- **Tools**: The tools below are required for the migration:  
+   - `kubectl`  
+   - `helm`  
+   - Additional tools needed for specific steps will be mentioned in their respective sections. Please follow the instructions in each step to ensure you have the necessary tools installed and ready to use.
+
 
 ## Pre-installation Steps
 
@@ -340,7 +351,7 @@ On the **standalone Appcircle server**, execute the following commands to back u
 - **Check the MinIO data size:**
 
   ```bash
-  echo "$APPCIRCLE_DISK_USAGE" | grep "spacetech_snsd_data"
+  echo "$APPCIRCLE_DISK_USAGE" | grep "spacetech_minio_snsd_data"
   ```
 
 - **Check the MongoDB data size:**
