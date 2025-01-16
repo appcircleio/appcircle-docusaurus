@@ -147,34 +147,37 @@ Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain
 The bastion host should meet the following requirements to facilitate the migration from the standalone Appcircle server to the Kubernetes Appcircle server:
 
 #### Hardware Requirements
-  - 2 CPUs
-  - 4 GB RAM
-  - Sufficient disk space for migration tasks. The disk space requirement will depend on the total size of the **PostgreSQL**, **MongoDB**, and **Vault** data of the standalone Appcircle server. You can easily see the data size of the standalone Appcircle server by checking [this section](#3-check-the-data-size-on-the-standalone-appcircle-server).
-  - **MinIO disk space** is not a concern, as the data is directly copied between the source and target servers without being stored on the bastion host.
+
+- 2 CPUs
+- 4 GB RAM
+- Sufficient disk space for migration tasks. The disk space requirement will depend on the total size of the **PostgreSQL**, **MongoDB**, and **Vault** data of the standalone Appcircle server. You can easily see the data size of the standalone Appcircle server by checking [this section](#3-check-the-data-size-on-the-standalone-appcircle-server).
+- **MinIO disk space** is not a concern, as the data is directly copied between the source and target servers without being stored on the bastion host.
 
 :::info
 Ensure the bastion host has enough storage to temporarily hold any necessary migration files, but do not expect it to store the data long-term.
 :::
 
-#### Software Requirements  
-- **Operating System**: The bastion host should be a Linux machine. You can use any popular/mainstream Linux distribution such as Ubuntu, Debian, Red Hat, CentOS, etc.  
-- **Required Tools**:  
-  - `kubectl`: For managing Kubernetes clusters.  
-  - `helm`: For deploying and managing Helm charts.  
-  - `ssh`: For connecting to the standalone Appcircle server.  
-  - Any other tools or dependencies needed for specific migration steps will be detailed in those steps.  
+#### Software Requirements
 
-- **Network Configuration**: Ensure the bastion host can reach both the standalone Appcircle server and the Kubernetes cluster over the required network ports.  
+- **Operating System**: The bastion host should be a Linux machine. You can use any popular/mainstream Linux distribution such as Ubuntu, Debian, Red Hat, CentOS, etc.
+- **Required Tools**:
 
-- **Resource Accesses**: The user on the bastion host must have:  
+  - `kubectl`: For managing Kubernetes clusters.
+  - `helm`: For deploying and managing Helm charts.
+  - `ssh`: For connecting to the standalone Appcircle server.
+  - Any other tools or dependencies needed for specific migration steps will be detailed in those steps.
+
+- **Network Configuration**: Ensure the bastion host can reach both the standalone Appcircle server and the Kubernetes cluster over the required network ports.
+
+- **Resource Accesses**: The user on the bastion host must have:
+
   - **Standalone Appcircle server access**: The bastion host should have SSH access to the standalone Appcircle server.
   - **Kubernetes Access**: The bastion host should be able to access the Kubernetes cluster API with `kubectl` for deploying Appcircle server.
 
-- **Tools**: The tools below are required for the migration:  
-   - `kubectl`  
-   - `helm`  
-   - Additional tools needed for specific steps will be mentioned in their respective sections. Please follow the instructions in each step to ensure you have the necessary tools installed and ready to use.
-
+- **Tools**: The tools below are required for the migration:
+  - `kubectl`
+  - `helm`
+  - Additional tools needed for specific steps will be mentioned in their respective sections. Please follow the instructions in each step to ensure you have the necessary tools installed and ready to use.
 
 ## Pre-installation Steps
 
@@ -341,6 +344,16 @@ On the **standalone Appcircle server**, execute the following commands to back u
   ```
 
 #### 3. Check the Data Size on the Standalone Appcircle Server
+
+- **Log in to the standalone Appcircle server:**
+
+- **Change directory to the `appcircle-server`:**
+
+  ```bash
+  cd appcircle-server
+  ```
+
+<SpacetechExampleInfo/>
 
 - **Get the volume sizes:**
 
