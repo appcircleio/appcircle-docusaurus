@@ -12,6 +12,9 @@ tags:
 sidebar_position: 1
 ---
 
+<!-- ATTENTION: Documentation at README of this extension's repository
+has table of contents that references to the titles in this document. -->
+
 The Appcircle distribute extension allows users to upload their apps and start distribution to test groups or individuals.
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -21,18 +24,14 @@ import Screenshot from '@site/src/components/Screenshot';
 You can discover more about this extension and install it by:
 https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
-## System Requirements
+### System Requirements
 
 **Compatible Agents:**
 
 - macOS 14 (arm64)
 - Ubuntu 22.04 (x86_64)
 
-:::caution
-Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
-:::
-
-### How to Add the Appcircle Testing Distribution Action to Your Pipeline
+### How to Add the Appcircle Testing Distribution Task to Your Pipeline
 
 To install the Appcircle Testing Distribution Task Extension, follow these steps:
 
@@ -53,17 +52,26 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 - task: AppcircleTestingDistribution@0
   inputs:
     personalAPIToken: $(AC_PROFLE_API_TOKEN)
+    authEndpoint: $(AC_AUTH_ENDPOINT)
+    apiEndpoint: $(AC_API_ENDPOINT)
     profileName: $(AC_PROFILE_NAME)
     createProfileIfNotExists: $(CREATE_PROFILE_IF_NOT_EXISTS)
     appPath: $(APP_PATH)
     message: $(MESSAGE)
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this extension.
+- `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. Defaults to https://auth.appcircle.io.
+- `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. Defaults to https://api.appcircle.io.
 - `profileName`: Specifies the profile that will be used for uploading the app.
-- `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
+- `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
-- `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
+- `message` (optional): Your message to testers, ensuring they receive important updates and information regarding the application.
+
+### Using with Appcircle Self-Hosted
+#### Self-signed Certificates
+**Note:** Adding custom certificates is not currently supported in this extension.
+If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent(cloud or self-hosted) that runs the pipeline must trust your Appcircle server's certificates.
 
 ### Leveraging Environment Variables
 
