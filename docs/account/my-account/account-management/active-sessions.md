@@ -2,7 +2,7 @@
 title: Active Sessions
 description: Learn how to manage your active sessions in Appcircle
 tags: [account, account management, active sessions]
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
