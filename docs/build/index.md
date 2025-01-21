@@ -13,6 +13,10 @@ The Build module in Appcircle streamlines your Continuous Integration and Contin
 
 Follow our start guide to build your iOS and Android apps in the cloud.
 
+## [Environment Variables](/build/build-environment-variables)
+
+Environment variables let you extend your build configuration. There are several read-only Appcircle variables and you can add your own variables to export during the build process and use in custom build scripts.
+
 ## [Connections](/build/manage-the-connections)
 
 Set up integrations with version control systems to sync your repositories, allowing for automated builds and deployments.
