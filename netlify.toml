@@ -515,6 +515,21 @@ to = "/build/manage-the-connections/accessing-repositories-in-internal-networks-
 status = 301
 
 [[redirects]]
+from = "/build/build-process-management/build-profile-configuration"
+to = "/build/build-process-management"
+status = 301
+
+[[redirects]]
+from = "/build/post-build-operations"
+to = "/build/build-process-management"
+status = 301
+
+[[redirects]]
+from = "/build/post-build-operations/after-a-build"
+to = "/build/build-process-management"
+status = 301
+
+[[redirects]]
 from = "/tutorials/how-to-add-a-flutter-app"
 to = "/build/platform-build-guides/building-flutter-applications"
 status = 301

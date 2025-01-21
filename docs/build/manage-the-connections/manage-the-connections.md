@@ -116,7 +116,7 @@ Changing a PAT value will affect all the build profiles shown here.
 :::tip
 While editing PAT connections, you can also write the PAT value using environment variables.
 
-You can review [Using Environment Variables For SSH And PAT (Personal Access Token) Connections](/environment-variables/managing-variables#using-environment-variables-for-ssh-and-pat-personal-access-token-connections-of-the-git-provider) page for details.
+You can review [Using Environment Variables For SSH And PAT (Personal Access Token) Connections](/build/build-environment-variables#using-environment-variables-for-ssh-and-pat-personal-access-token-connections-of-the-git-provider) page for details.
 :::
 
 ### Deleting PAT Connections

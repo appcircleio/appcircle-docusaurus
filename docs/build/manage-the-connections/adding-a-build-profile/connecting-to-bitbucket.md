@@ -25,7 +25,7 @@ When you successfully authorize your account, the following screen will appear t
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-bitbucket-gitlab.png' />
 
-After the connection is successful, you can [view your newly created profile](/build/manage-the-connections/adding-a-build-profile/#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](/build/build-process-management#profile-listing) and start building!
 
 ## Connecting to Bitbucket Self Hosted Repository
 

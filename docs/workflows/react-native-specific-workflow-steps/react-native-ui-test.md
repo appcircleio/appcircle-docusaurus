@@ -52,7 +52,7 @@ If your **CocoaPods** dependencies are **embedded** in the project, you do not n
 
 :::danger React Native UI Test for Android
 
-For Appcircle **Cloud**, you need to use **Appcircle Linux Pool (x86_64)** to run your UI tests on the Android platform. Since **Appcircle Standard macOS Pool (arm64)** is based on **Apple Silicon's virtualization** technology, it does not support running Android emulators. If your organization has **self-hosted pools**, you can choose and use any pool that has bare-metal machines or VMs that support nested virtualization. For more information, please follow the [**Build Configuration**](/build/build-process-management/build-profile-configuration) and [**Android Build Infrastructure**](/infrastructure/android-build-infrastructure) documentations.
+For Appcircle **Cloud**, you need to use **Appcircle Linux Pool (x86_64)** to run your UI tests on the Android platform. Since **Appcircle Standard macOS Pool (arm64)** is based on **Apple Silicon's virtualization** technology, it does not support running Android emulators. If your organization has **self-hosted pools**, you can choose and use any pool that has bare-metal machines or VMs that support nested virtualization. For more information, please follow the [**Build Configuration**](/build/build-process-management#profile-configuration) and [**Android Build Infrastructure**](/infrastructure/android-build-infrastructure) documentations.
 
 :::
 

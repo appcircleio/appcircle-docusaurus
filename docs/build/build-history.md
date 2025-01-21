@@ -22,4 +22,4 @@ You can filter the report pages according to the organization.
 In the filtering options, you can only view and select the organization and sub-organization you belong to.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-history-new.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-history.png' />

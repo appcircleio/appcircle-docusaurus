@@ -73,12 +73,6 @@ You can also use[ appcircle-cli](/appcircle-api-and-cli) to trigger your builds 
 
 To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-workflow-trigger-showcase.png' />
-
-The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](#wildcard-reference) for branch names to trigger builds.
-
-You also need to select a workflow for each trigger and the build will be run with that trigger for the specified branch. You can build the same branch with different workflows (e.g. production or development) or you can use the same workflow for multiple branches (e.g. multiple feature branches built with the develop workflow).
-
 #### Auto build on every push
 
 Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
