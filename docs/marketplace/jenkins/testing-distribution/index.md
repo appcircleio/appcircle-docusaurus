@@ -15,6 +15,8 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
+# Setting Up Appcircle Testing Distribution Plugin
+
 The Appcircle Testing Distribution plugin allows users to upload their apps and start distribution to test groups or individuals.
 
 ### Discover Plugin
@@ -37,46 +39,69 @@ https://plugins.jenkins.io/appcircle-testing-distribution/
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
-### Install Appcircle Testing Distribution Plugin
+## Install the Appcircle Testing Distribution Plugin
 
 Go to your Jenkins dashboard and navigate to Manage Jenkins > Manage Plugins. Then, search for "Appcircle Testing Distribution" in the available plugins section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sp-158-installation_steps.png' />
 
-### Add Plugin in Build Steps
+## Plugin Usage
+
+There are two primary ways to use this Jenkins plugin: from the user interface in freestyle projects and from a script in pipeline projects.
+
+### Using the Plugin in Freestyle Projects
+
+#### Adding the Plugin to Build Steps
 
 Go to your configuration page of the project add a build step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-175_jenkins_build_step.png' />
 
-### Configure Plugin
+#### Configuring the Plugin
 
 After adding the plugin to your build steps, ensure that you provide all required inputs.
 Additionally, remember to place the plugin after your build steps as you will need to specify the build path later on.
 
+:::info
+For the "App Path" field, full path to the package should be provided. For example: `<your-jenkins-home>/workspace/<project-name>/build/MyProject.ipa`.
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-205_td_usage.png' />
 
-### Adding the Plugin to Your Pipeline
+### Using the Plugin in Pipeline Projects
+
+#### Adding the Plugin to a Pipeline Script
 
 ```Groovy
-   stage('Publish') {
-      environment {
-         AC_PAT = credentials('AC_PAT')
-      }
-       steps {
-          appcircleTestingDistribution personalAPIToken: AC_PAT,
-                  profileName: 'PROFILE_NAME',
-                  createProfileIfNotExists: false,
-                  appPath: 'APP_PATH',
-                  message: 'MESSAGE'
-       }
-   }
+stage('Publish') {
+    environment {
+        AC_PAT = credentials('AC_PAT')
+    }
+    script {
+        def pathToApp = "${env.WORKSPACE}/build/outputs/apk/release/app-release.apk"
+
+        appcircleTestingDistribution (
+            personalAPIToken: AC_PAT,
+            profileName: 'MyProfile',
+            createProfileIfNotExists: false,
+            appPath: pathToApp,
+            message: 'New version 1.2.3'
+        )
+    }
+}
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
-- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
+- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile. You can define the path using `def` as shown in the example script above, or pass it using `withEnv`. For instance:
+    ```
+    steps {
+        withEnv(["APP_PATH=${env.WORKSPACE}/build/MyProject.ipa"]) {    
+            appcircleTestingDistribution (
+                ...
+                appPath: env.APP_PATH,
+    ```
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
 :::caution Build Steps Order
