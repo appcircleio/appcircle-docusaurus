@@ -2,7 +2,7 @@
 title: Two-Factor Authentication Setup
 description: Learn how to set up two-factor authentication in Appcircle
 tags: [account, account management, two-factor authentication, 2FA, authenticator]
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -24,15 +24,15 @@ You can use any other authenticator service which supports generation of SHA1 OT
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (220).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5181-authenticator.png' />
 
 However, if you use another Authenticator service and you can't scan the QR code, you can also select **Unable to scan? **field and fill the information accordingly.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (221).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5181-authenticator1.png' />
 
 After the code is successfully entered, assign it a friendly name and click on **Save.**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-authenticator.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5181-authenticator2.png' />
 
 The newly created OTP will be under effect the next time you login. Your current login session will not be terminated(you will not be logged out).
 
