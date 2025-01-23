@@ -51,13 +51,13 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 ```yaml
 - task: AppcircleTestingDistribution@0
   inputs:
-    personalAPIToken: $(AC_PROFLE_API_TOKEN)
+    personalAPIToken: $(AC_PROFILE_API_TOKEN)
     authEndpoint: $(AC_AUTH_ENDPOINT)
     apiEndpoint: $(AC_API_ENDPOINT)
     profileName: $(AC_PROFILE_NAME)
-    createProfileIfNotExists: $(CREATE_PROFILE_IF_NOT_EXISTS)
-    appPath: $(APP_PATH)
-    message: $(MESSAGE)
+    createProfileIfNotExists: $(AC_CREATE_PROFILE_IF_NOT_EXISTS)
+    appPath: $(AC_APP_PATH)
+    message: $(AC_MESSAGE)
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this extension.
@@ -69,9 +69,12 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 - `message` (optional): Your message to testers, ensuring they receive important updates and information regarding the application.
 
 ### Using with Appcircle Self-Hosted
+
 #### Self-signed Certificates
-**Note:** Adding custom certificates is not currently supported in this extension.
-If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent(cloud or self-hosted) that runs the pipeline must trust your Appcircle server's certificates.
+
+::: caution
+Adding custom certificates is **not** currently supported in this extension. If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent that runs the pipeline must trust your Appcircle server's certificates.
+:::
 
 ### Leveraging Environment Variables
 
