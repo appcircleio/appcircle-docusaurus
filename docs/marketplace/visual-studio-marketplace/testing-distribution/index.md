@@ -28,7 +28,11 @@ https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
 ### System Requirements
 
-The extension can be used on cloud and self-hosted Azure DevOps installations. Supported Azure DevOps Server versions are: `2020`, `2022`.
+**Compatible Azure DevOps Versions:**
+
+- Azure DevOps Services (cloud)
+- Azure DevOps Server 2020 (on-premises)
+- Azure DevOps Server 2022 (on-premises)
 
 **Compatible Agents:**
 
