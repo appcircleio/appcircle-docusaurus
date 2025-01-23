@@ -203,7 +203,6 @@ Please navigate to:
 
 :::
 After confirmation of the webhook is created and connection is set and healthy through the Appcircle Build Profile, and the confirmation of the webhook is set and works as expected in a specific Git Provider. Then Git actions such as pushing a code block, which should activate a webhook event, and then should trigger the Appcircle build sequence automatically.
-After confirmation of the webhook is created and connection is set and healthy through the Appcircle Build Profile, and the confirmation of the webhook is set and works as expected in a specific Git Provider. Then Git Actions such as pushing a code block, which should activate a webhook event, and then should trigger the Appcircle Build Sequence automatically.
 
 ### How to enable triggers for AWS CodeCommit repositories?
 
