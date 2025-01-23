@@ -57,6 +57,20 @@ You can review the documentation for detailed information about the Xcode versio
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5421-xcodeSelectInput.png' />
+
+:::info Manually Xcode Version Change
+
+In addition to the version change method described above, you can also change the Xcode version **manually**. For this, you can **hard-code** the desired Xcode version into the `$AC_XCODE_VERSION` parameter. For example: `15.1`
+
+:::caution Available Xcode Versions
+
+Please note, if the version you hard-coded is not available on the runner where the build will run, the build **will not** start. The Xcode list in the [**Build Configuration**](/build/platform-build-guides/building-ios-applications#build-configuration) always lists the **available** Xcode versions.
+
+For more information, please visit our [**iOS Build Stacks**](/infrastructure/ios-build-infrastructure#available-xcode-versions) documentation.
+
+:::
+
 | Variable Name        | Description                                                                                                                                           | Status   |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_XCODE_LIST_DIR` | Specifies the directory with the Xcode versions. Xcode versions are located under the `/Volumes` directory and selected according to the given version. | Required |
