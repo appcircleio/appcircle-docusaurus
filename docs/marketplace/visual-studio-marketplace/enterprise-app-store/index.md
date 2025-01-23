@@ -53,23 +53,23 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 - task: AppcircleEnterpriseStore@0
   inputs:
     personalAPIToken: $(AC_PERSONAL_API_TOKEN)
-    appPath: $(APP_PATH)
-    summary: $(SUMMARY)
-    releaseNotes: $(RELEASE_NOTES)
-    publishType: $(PUBLISH_TYPE)
+    appPath: $(AC_APP_PATH)
+    summary: $(AC_SUMMARY)
+    releaseNotes: $(AC_RELEASE_NOTES)
+    publishType: $(AC_PUBLISH_TYPE)
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is utilized to
-  authenticate and secure access to Appcircle services, ensuring that only
-  authorized users can perform actions within the platform.
+- `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this extension.
+- `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. Defaults to https://auth.appcircle.io.
+- `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. Defaults to https://api.appcircle.io.
 - `appPath`: Indicates the file path to the application that will be uploaded to
-  Appcircle Enterprise App Store Profile.
+  Appcircle Enterprise App Store.
 - `releaseNote`: Contains the details of changes, updates, and improvements made
   in the current version of the app being published.
 - `Summary`: Used to provide a brief overview of the version of the app that is
   about to be published.
 - `publishType`: Specifies the publishing status as either none, beta, or live,
-  and must be assigned the values "None", "Beta", or "Live" accordingly.
+  and must be assigned the values "0", "1", or "2" accordingly.
 
 ### Leveraging Environment Variables
 
