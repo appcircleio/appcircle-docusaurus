@@ -94,7 +94,8 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
   
   **When Enterprise App Store task is a separate pipeline:**
   Assuming you have published a build artifact in your build pipeline using `PublishBuildArtifacts` task, you can get the artifact using `DownloadBuildArtifacts` task into a specified directory and use it in the Enterprise App Store pipeline. For example:
-  - `$(Build.ArtifactStagingDirectory)/app.ipa` or `$(Build.ArtifactStagingDirectory)/app.apk`
+  - `$(Build.ArtifactStagingDirectory)/app.ipa`
+  - or `$(Build.ArtifactStagingDirectory)/app.apk`
   
   Make sure the path points to a valid application package file.
 
@@ -114,8 +115,10 @@ If two workflows start simultaneously, the last workflow to reach the publish st
 
 #### Self-signed Certificates
 
+Adding custom certificates is **not** currently supported in this extension. 
+
 :::caution
-Adding custom certificates is **not** currently supported in this extension. If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent that runs the pipeline must trust your Appcircle server's certificates.
+If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent that runs the pipeline must trust your Appcircle server's certificates.
 :::
 
 ### Leveraging Environment Variables
