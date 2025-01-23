@@ -48,7 +48,7 @@ Both cloud and self-hosted agents are supported.
 
 Refer to our comprehensive [Enterprise App Store Docs](/enterprise-app-store) for detailed information about: Enterprise App Store profiles, portal customization, portal settings, enterprise portal, portal reports, in-app updates and more.
 
-### How to Install the Appcircle Enterprise App Store Task in Your Pipeline
+### How to Add the Appcircle Enterprise App Store Task in Your Pipeline
 
 #### 1. Get a Personal API Token
 
@@ -83,19 +83,23 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this extension.
-- `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. Defaults to `https://auth.appcircle.io`.
-- `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. Defaults to `https://api.appcircle.io`.
-- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Enterprise App Store. Using absolute paths is recommended with the help of predefined environment variables in Azure DevOps. The path can be specified in two ways:
+- `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`auth.appcircle.io`).
+- `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`api.appcircle.io`).
+- `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Enterprise App Store. The path can be specified in two ways:
 
   **When Build and Enterprise App Store tasks are in the same pipeline:**
   Assuming you are using Enterprise App Store task after a build step, you can use the output directory of the build step. For example:
-  - For iOS: `$(Build.SourcesDirectory)/output/app.ipa`
-  - For Android: `$(Build.SourcesDirectory)/app/build/outputs/apk/release/app-release.apk`
+  - iOS:
+    - `$(Build.SourcesDirectory)/output/app.ipa` or
+    - `./output/app.ipa`
+  - Android:
+    - `$(Build.SourcesDirectory)/app/build/outputs/apk/release/app-release.apk` or
+    - `./app/build/outputs/apk/release/app-release.apk`
   
   **When Enterprise App Store task is a separate pipeline:**
   Assuming you have published a build artifact in your build pipeline using `PublishBuildArtifacts` task, you can get the artifact using `DownloadBuildArtifacts` task into a specified directory and use it in the Enterprise App Store pipeline. For example:
   - `$(Build.ArtifactStagingDirectory)/app.ipa`
-  - or `$(Build.ArtifactStagingDirectory)/app.apk`
+  - `$(Build.ArtifactStagingDirectory)/app.apk`
   
   Make sure the path points to a valid application package file.
 

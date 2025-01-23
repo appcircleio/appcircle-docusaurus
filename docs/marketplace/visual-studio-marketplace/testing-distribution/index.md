@@ -81,21 +81,25 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this extension.
-- `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. Defaults to `https://auth.appcircle.io`.
-- `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. Defaults to `https://api.appcircle.io`.
+- `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`auth.appcircle.io`).
+- `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`api.appcircle.io`).
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
-- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile. Using absolute paths is recommended with the help of predefined environment variables in Azure DevOps. The path can be specified in two ways:
+- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile. The path can be specified in two ways:
 
   **When Build and Testing Distribution tasks are in the same pipeline:**
   Assuming you are using Testing Distribution task after a build step, you can use the output directory of the build step. For example:
-  - For iOS: `$(Build.SourcesDirectory)/output/app.ipa`
-  - For Android: `$(Build.SourcesDirectory)/app/build/outputs/apk/release/app-release.apk`
+  - iOS
+    - `$(Build.SourcesDirectory)/output/app.ipa` or
+    - `./output/app.ipa`
+  - Android
+    - `$(Build.SourcesDirectory)/app/build/outputs/apk/release/app-release.apk` or
+    - `./app/build/outputs/apk/release/app-release.apk`
   
   **When Testing Distribution task is a separate pipeline:**
   Assuming you have published a build artifact in your build pipeline using `PublishBuildArtifacts` task, you can get the artifact using `DownloadBuildArtifacts` task into a specified directory and use it in the distribution pipeline. For example:
   - `$(Build.ArtifactStagingDirectory)/app.ipa`
-  - or `$(Build.ArtifactStagingDirectory)/app.apk`
+  - `$(Build.ArtifactStagingDirectory)/app.apk`
   
   Make sure the path points to a valid application package file.
 
