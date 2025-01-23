@@ -51,11 +51,11 @@ You can follow the [Generating and Managing Personal API Tokens](https://docs.ap
 
 #### 2. Add Task to Your Pipeline
 
-To install the Appcircle Testing Distribution Task Extension, follow these steps:
+To install the Appcircle Testing Distribution Extension, follow these steps:
 
-1. Go to your pipeline, click "Edit" button on the top right corner
+1. Go to your pipeline, click "Edit" button on the top right corner.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/testing-distribution-azure-pipeline-edit.png' />
-2. Search for the “Appcircle Testing Distribution" task extension within your `YAML` file.
+2. Search for the “Appcircle Testing Distribution" task within your `YAML` file.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution.png' />
 3. Fill out the necessary input fields and click the **Add** button.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution_task_detail.png' />
@@ -93,7 +93,16 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
   - `$(Build.ArtifactStagingDirectory)/app.ipa` or `$(Build.ArtifactStagingDirectory)/app.apk`
   
   Make sure the path points to a valid application package file.
+
 - `message` (optional): Your message to testers, ensuring they receive important updates and information regarding the application.
+
+:::caution Build Steps Order
+Ensure that this action is added after build steps have been completed.
+:::
+
+:::caution
+If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
+:::
 
 ### Using with Appcircle Self-Hosted
 
@@ -106,14 +115,6 @@ Adding custom certificates is **not** currently supported in this extension. If 
 ### Leveraging Environment Variables
 
 Utilize environment variables seamlessly by substituting the parameters with $(VARIABLE_NAME) in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
-
-:::caution Build Steps Order
-Ensure that this action is added after build steps have been completed.
-:::
-
-:::caution
-If multiple workflows start simultaneously, the order in which versions are shared in the Testing Distribution is determined by the execution order of the publish step. The version that completes its build and triggers the publish plugin first will be shared first, followed by the others in sequence.
-:::
 
 ## References
 
