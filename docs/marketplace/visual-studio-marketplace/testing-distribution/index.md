@@ -28,7 +28,7 @@ https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
 ### System Requirements
 
-The extension can be used on cloud and self-hosted Azure DevOps installations. Supported Azure DevOps Server versions are `2020` and `2022`.
+The extension can be used on cloud and self-hosted Azure DevOps installations. Supported Azure DevOps Server versions are: `2020`, `2022`.
 
 **Compatible Agents:**
 
@@ -36,6 +36,10 @@ Both cloud and self-hosted agents are supported.
 
 - macOS 14 (arm64)
 - Ubuntu 22.04 (x86_64)
+
+### Prepare Testing Distribution
+
+Refer to our comprehensive [Testing Distribution Docs](/testing-distribution) for detailed information about: Distribution profiles, Testing groups, Binary re-signing, Testing portal, Reporting and more.
 
 ### How to Add the Appcircle Testing Distribution Task to Your Pipeline
 
@@ -56,11 +60,7 @@ To install the Appcircle Testing Distribution Task Extension, follow these steps
 3. Fill out the necessary input fields and click the **Add** button.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-242_azure_testing_distribution_task_detail.png' />
 
-   3.1. You can learn more about getting your personal api token [here](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens).
-
-   3.2. Find out how to create a distribution profile [here](/testing-distribution/create-or-select-a-distribution-profile)
-
-#### 3. Usage
+#### 3. Configure the Task
 
 After filling out the required fields, the `AppcircleTestingDistribution@0` task will appear in your pipeline steps as shown below:
 
@@ -83,14 +83,14 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 - `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile. Using absolute paths is recommended with the help of predefined environment variables in Azure DevOps. The path can be specified in two ways:
 
-  **When build and distribution are in the same pipeline:**
-  Assuming you are using Testing Distribution task after a build step, you can use the output directory of the build step, for example:
+  **When build and distribution steps are in the same pipeline:**
+  Assuming you are using Testing Distribution task after a build step, you can use the output directory of the build step. For example:
   - For iOS: `$(Build.SourcesDirectory)/output/app.ipa`
   - For Android: `$(Build.SourcesDirectory)/app/build/outputs/apk/release/app-release.apk`
   
   **When distribution is a separate pipeline:**
-  Assuming you have published a build artifact in your build pipeline using `PublishBuildArtifacts` task, you can get the artifact using `DownloadBuildArtifacts` task into a specified directory and use it in the distribution pipeline.
-  - For example: `$(Build.ArtifactStagingDirectory)/app.ipa` or `$(Build.ArtifactStagingDirectory)/app.apk`
+  Assuming you have published a build artifact in your build pipeline using `PublishBuildArtifacts` task, you can get the artifact using `DownloadBuildArtifacts` task into a specified directory and use it in the distribution pipeline. For example:
+  - `$(Build.ArtifactStagingDirectory)/app.ipa` or `$(Build.ArtifactStagingDirectory)/app.apk`
   
   Make sure the path points to a valid application package file.
 - `message` (optional): Your message to testers, ensuring they receive important updates and information regarding the application.
@@ -102,18 +102,6 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 ::: caution
 Adding custom certificates is **not** currently supported in this extension. If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent that runs the pipeline must trust your Appcircle server's certificates.
 :::
-
-### Testing Distribution Integration
-
-Refer to our comprehensive [Testing Distribution Docs](/testing-distribution) for detailed information about: Distribution profiles, Testing groups, Binary re-signing, Testing portal, Reporting and more.
-
-<!-- ### Enterprise App Store Integration
-
-When using the Enterprise App Store plugin, refer to our comprehensive [Enterprise App Store Guide](/enterprise-appstore/overview) for detailed information about:
-- Setting release notes
-- Creating summaries
-- Configuring publish types
-- Managing app visibility and distribution -->
 
 ### Leveraging Environment Variables
 
