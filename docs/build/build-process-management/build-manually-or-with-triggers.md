@@ -164,15 +164,15 @@ You can specify branch names or tags with an asterisk wildcard to automate build
 
 ## FAQ
 
-### How can I check my triggers is working in my Appcircle Build Profiles?
+### How can I check my triggers is working in my Appcircle build profiles?
 
-First of all, it should be ensured that the build profile triggers are set for the desired branches and actions. Please check the trigger settings from the [**Managing Triggers for Builds**](/build/build-process-management/build-manually-or-with-triggers#managing-triggers-for-builds) section in documentation.
+First of all, you should be ensured that the build profile triggers are set for the desired branches and actions. Please check the trigger settings from the [**Managing Triggers for Builds**](/build/build-process-management/build-manually-or-with-triggers#managing-triggers-for-builds) section in documentation.
 
-To properly work with Triggers, webhooks in the repositories are used by Appcircle. Also should be ensured that repository has webhook access to Appcircle. In order for webhooks to be connected, Git Provider connection needs to be set proper while creating a Build Profile.
+Appcircle is triggered via Git provider's webhooks. To properly work with triggers, webhooks in the repositories are used by Appcircle. Also should be ensured that repository has webhook access to Appcircle. In order for webhooks to be connected, Git provider connection needs to be set proper while creating a build profile.
 
-Certain Git Actions to the repositories, such as push, merge, pull request, tag push, etc., activate a specified event with the repositories webhooks. It is a necessity to ensure that the desired event is actually triggered by the action in Git Provider's repository. 
+Certain Git actions to the repositories, such as push, merge, pull request, tag push, etc., activate a specified event with the repositories webhooks. It is a necessity to ensure that the desired event is actually triggered by the action in Git provider's repository. 
 
-To ensure webhooks are set and working, the webhook histories may be reviewed within the Git providers. Lets have a check with Git Providers down below. The steps in the Git Provider's Documentations can be followed to access the webhook event history.
+To ensure webhooks are set and working, the webhook histories may be reviewed within the Git providers. Lets have a check with Git providers down below. The steps in the Git provider's documentations can be followed to access the webhook event history.
 
 - [**GitHub Webhook Deliveries**](https://docs.github.com/en/webhooks/testing-and-troubleshooting-webhooks/viewing-webhook-deliveries#about-webhook-deliveries)
 
@@ -202,7 +202,8 @@ Please navigate to:
 **Bitbucket -> Repository -> Repository Settings -> Webhooks**
 
 :::
-After confirmation of the webhook is created and connection is set and healthy through the Appcircle Build Profile, and the confirmation of the webhook is set and works as expected in a specific Git Provider. Then Git actions such as pushing a code block, which should activate a webhook event, and then should trigger the Appcircle build sequence automatically.
+
+After confirmation of the webhook is created and connection is set and healthy through the Appcircle build profile, and the confirmation of the webhook is set and works as expected in a specific Git provider. Then Git actions such as pushing a code block, which should activate a webhook event, then the webhook event should activate the trigger and the Appcircle build sequence automatically.
 
 ### How to enable triggers for AWS CodeCommit repositories?
 
