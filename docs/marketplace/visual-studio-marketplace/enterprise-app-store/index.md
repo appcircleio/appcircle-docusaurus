@@ -35,6 +35,14 @@ https://marketplace.visualstudio.com/items?itemName=Appcircle.enterprise-app-sto
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
 :::
 
+<!-- ### Enterprise App Store Integration
+
+When using the Enterprise App Store plugin, refer to our comprehensive [Enterprise App Store Guide](/enterprise-appstore/overview) for detailed information about:
+- Setting release notes
+- Creating summaries
+- Configuring publish types
+- Managing app visibility and distribution -->
+
 ### How to Install the Appcircle Enterprise App Store Task in Your Pipeline
 
 In order to install Appcircle Enterprise App Store task extension, follow these steps;
@@ -53,10 +61,10 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 - task: AppcircleEnterpriseStore@0
   inputs:
     personalAPIToken: $(AC_PERSONAL_API_TOKEN)
-    appPath: $(APP_PATH)
-    summary: $(SUMMARY)
-    releaseNotes: $(RELEASE_NOTES)
-    publishType: $(PUBLISH_TYPE)
+    appPath: $(AC_APP_PATH)
+    summary: $(AC_SUMMARY)
+    releaseNotes: $(AC_RELEASE_NOTES)
+    publishType: $(AC_PUBLISH_TYPE)
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token is utilized to
