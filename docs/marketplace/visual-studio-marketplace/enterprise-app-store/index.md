@@ -15,6 +15,9 @@ tags:
 sidebar_position: 2
 ---
 
+<!-- ATTENTION: Documentation at README of this extension's repository
+has table of contents that references to the titles in this document. -->
+
 Appcircle Enterprise App Store serves as your private mobile app store, allowing access to in-house apps through a customizable mobile storefront. The Appcircle Enterprise App Store extension enables you to upload your app to your personalized app store within Appcircle.
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -24,16 +27,12 @@ import Screenshot from '@site/src/components/Screenshot';
 You can discover more about this extension and install it by:
 https://marketplace.visualstudio.com/items?itemName=Appcircle.enterprise-app-store
 
-## System Requirements
+### System Requirements
 
 **Compatible Agents:**
 
 - macOS 14 (arm64)
 - Ubuntu 22.04 (x86_64)
-
-:::caution
-Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.
-:::
 
 ### How to Install the Appcircle Enterprise App Store Task in Your Pipeline
 
@@ -70,6 +69,14 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
   about to be published.
 - `publishType`: Specifies the publishing status as either none, beta, or live,
   and must be assigned the values "None", "Beta", or "Live" accordingly.
+
+### Using with Appcircle Self-Hosted
+
+#### Self-signed Certificates
+
+::: caution
+Adding custom certificates is **not** currently supported in this extension. If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent that runs the pipeline must trust your Appcircle server's certificates.
+:::
 
 ### Leveraging Environment Variables
 
