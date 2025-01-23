@@ -68,3 +68,19 @@ The output(s) resulting from the operation of this component are as follows:
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-git-clone-component
+
+---
+
+## FAQ
+
+### How can I solve network problems?
+
+Users utilizing a self-hosted Git provider need to grant network access to use Appcircle. Access to private repositories can be achieved by whitelisting Appcircle’s IP addresses. If the upload speed of the provider is restricted, Appcircle may take longer than expected to clone the repository.
+
+Appcircle runners have an approximate internet speed of 10 Gbps. If your Git provider imposes a maximum upload speed limit, the **Git Clone** step in Appcircle will be restricted by this limit and **cannot** exceed it. As a result, the **Git Clone** step may take significantly longer to complete.
+
+For detailed information, please visit our [**Accessing Repositories Within Internal Networks**](/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls).
+
+### How can I check unexpected connection errors?
+
+When repository access is granted for self-hosted Git providers, Appcircle directly attempts to clone the repository from the provider. If the upload speed limit set for your Git provider is too low, the **Git Clone** step will take a significantly longer time. Due to the prolonged download process, the Git provider may eventually reset the connection, resulting in an unexpected disconnection. To avoid such errors during unexpectedly long **Git Clone** steps, please check and adjust your upload speed limits.
