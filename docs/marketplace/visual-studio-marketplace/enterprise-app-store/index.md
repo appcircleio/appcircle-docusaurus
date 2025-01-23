@@ -69,7 +69,7 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 - `Summary`: Used to provide a brief overview of the version of the app that is
   about to be published.
 - `publishType`: Specifies the publishing status as either none, beta, or live,
-  and must be assigned the values "0", "1", or "2" accordingly.
+  and must be assigned the values "None", "Beta", or "Live" accordingly.
 
 ### Leveraging Environment Variables
 
