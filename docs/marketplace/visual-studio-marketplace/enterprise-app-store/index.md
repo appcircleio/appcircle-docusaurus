@@ -83,13 +83,13 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 - `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. Defaults to https://api.appcircle.io.
 - `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Enterprise App Store. Using absolute paths is recommended with the help of predefined environment variables in Azure DevOps. The path can be specified in two ways:
 
-  **When build and distribution steps are in the same pipeline:**
-  Assuming you are using Testing Distribution task after a build step, you can use the output directory of the build step. For example:
+  **When Build and Enterprise App Store tasks are in the same pipeline:**
+  Assuming you are using Enterprise App Store task after a build step, you can use the output directory of the build step. For example:
   - For iOS: `$(Build.SourcesDirectory)/output/app.ipa`
   - For Android: `$(Build.SourcesDirectory)/app/build/outputs/apk/release/app-release.apk`
   
-  **When distribution is a separate pipeline:**
-  Assuming you have published a build artifact in your build pipeline using `PublishBuildArtifacts` task, you can get the artifact using `DownloadBuildArtifacts` task into a specified directory and use it in the distribution pipeline. For example:
+  **When Enterprise App Store task is a separate pipeline:**
+  Assuming you have published a build artifact in your build pipeline using `PublishBuildArtifacts` task, you can get the artifact using `DownloadBuildArtifacts` task into a specified directory and use it in the Enterprise App Store pipeline. For example:
   - `$(Build.ArtifactStagingDirectory)/app.ipa` or `$(Build.ArtifactStagingDirectory)/app.apk`
   
   Make sure the path points to a valid application package file.

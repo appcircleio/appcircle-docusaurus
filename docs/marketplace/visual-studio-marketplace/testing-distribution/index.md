@@ -83,12 +83,12 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 - `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile. Using absolute paths is recommended with the help of predefined environment variables in Azure DevOps. The path can be specified in two ways:
 
-  **When build and distribution steps are in the same pipeline:**
+  **When Build and Testing Distribution tasks are in the same pipeline:**
   Assuming you are using Testing Distribution task after a build step, you can use the output directory of the build step. For example:
   - For iOS: `$(Build.SourcesDirectory)/output/app.ipa`
   - For Android: `$(Build.SourcesDirectory)/app/build/outputs/apk/release/app-release.apk`
   
-  **When distribution is a separate pipeline:**
+  **When Testing Distribution task is a separate pipeline:**
   Assuming you have published a build artifact in your build pipeline using `PublishBuildArtifacts` task, you can get the artifact using `DownloadBuildArtifacts` task into a specified directory and use it in the distribution pipeline. For example:
   - `$(Build.ArtifactStagingDirectory)/app.ipa` or `$(Build.ArtifactStagingDirectory)/app.apk`
   
