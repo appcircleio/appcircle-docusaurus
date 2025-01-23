@@ -79,8 +79,8 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this extension.
-- `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. Defaults to https://auth.appcircle.io.
-- `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. Defaults to https://api.appcircle.io.
+- `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. Defaults to `https://auth.appcircle.io`.
+- `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. Defaults to `https://api.appcircle.io`.
 - `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Enterprise App Store. Using absolute paths is recommended with the help of predefined environment variables in Azure DevOps. The path can be specified in two ways:
 
   **When Build and Enterprise App Store tasks are in the same pipeline:**
@@ -110,7 +110,7 @@ If two workflows start simultaneously, the last workflow to reach the publish st
 
 #### Self-signed Certificates
 
-::: caution
+:::caution
 Adding custom certificates is **not** currently supported in this extension. If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent that runs the pipeline must trust your Appcircle server's certificates.
 :::
 
