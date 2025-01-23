@@ -21,17 +21,31 @@ import Screenshot from '@site/src/components/Screenshot';
 
 ### Discover Extension
 
-You can discover more about this extension and install it by:
+Before installing the extension, ensure you have the necessary permissions in your Azure DevOps organization. If you don't have permission to add extensions, you'll need to request approval from your organization administrator.
+
+You can discover more about this extension and install it from here:
 https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
 ### System Requirements
 
+The extension can be used on cloud and self-hosted Azure DevOps installations. Supported Azure DevOps Server versions are `2020` and `2022`.
+
 **Compatible Agents:**
+
+Both cloud and self-hosted agents are supported.
 
 - macOS 14 (arm64)
 - Ubuntu 22.04 (x86_64)
 
 ### How to Add the Appcircle Testing Distribution Task to Your Pipeline
+
+#### 1. Get a Personal API Token
+
+For this extension to authenticate to your Appcircle, you need to create a Personal API Token, and use it in your task configuration.
+
+You can follow the [Generating and Managing Personal API Tokens](https://docs.appcircle.io/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens) page to create a PAT.
+
+#### 2. Add Task to Your Pipeline
 
 To install the Appcircle Testing Distribution Task Extension, follow these steps:
 
@@ -46,18 +60,20 @@ To install the Appcircle Testing Distribution Task Extension, follow these steps
 
    3.2. Find out how to create a distribution profile [here](/testing-distribution/create-or-select-a-distribution-profile)
 
+#### 3. Usage
+
 After filling out the required fields, the `AppcircleTestingDistribution@0` task will appear in your pipeline steps as shown below:
 
 ```yaml
 - task: AppcircleTestingDistribution@0
   inputs:
-    personalAPIToken: $(AC_PROFLE_API_TOKEN)
+    personalAPIToken: $(AC_PROFILE_API_TOKEN)
     authEndpoint: $(AC_AUTH_ENDPOINT)
     apiEndpoint: $(AC_API_ENDPOINT)
     profileName: $(AC_PROFILE_NAME)
-    createProfileIfNotExists: $(CREATE_PROFILE_IF_NOT_EXISTS)
-    appPath: $(APP_PATH)
-    message: $(MESSAGE)
+    createProfileIfNotExists: $(AC_CREATE_PROFILE_IF_NOT_EXISTS)
+    appPath: $(AC_APP_PATH)
+    message: $(AC_MESSAGE)
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this extension.
@@ -65,13 +81,39 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 - `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. Defaults to https://api.appcircle.io.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
-- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
+- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile. Using absolute paths is recommended with the help of predefined environment variables in Azure DevOps. The path can be specified in two ways:
+
+  **When build and distribution are in the same pipeline:**
+  Assuming you are using Testing Distribution task after a build step, you can use the output directory of the build step, for example:
+  - For iOS: `$(Build.SourcesDirectory)/output/app.ipa`
+  - For Android: `$(Build.SourcesDirectory)/app/build/outputs/apk/release/app-release.apk`
+  
+  **When distribution is a separate pipeline:**
+  Assuming you have published a build artifact in your build pipeline using `PublishBuildArtifacts` task, you can get the artifact using `DownloadBuildArtifacts` task into a specified directory and use it in the distribution pipeline.
+  - For example: `$(Build.ArtifactStagingDirectory)/app.ipa` or `$(Build.ArtifactStagingDirectory)/app.apk`
+  
+  Make sure the path points to a valid application package file.
 - `message` (optional): Your message to testers, ensuring they receive important updates and information regarding the application.
 
 ### Using with Appcircle Self-Hosted
+
 #### Self-signed Certificates
-**Note:** Adding custom certificates is not currently supported in this extension.
-If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent(cloud or self-hosted) that runs the pipeline must trust your Appcircle server's certificates.
+
+::: caution
+Adding custom certificates is **not** currently supported in this extension. If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent that runs the pipeline must trust your Appcircle server's certificates.
+:::
+
+### Testing Distribution Integration
+
+Refer to our comprehensive [Testing Distribution Docs](/testing-distribution) for detailed information about: Distribution profiles, Testing groups, Binary re-signing, Testing portal, Reporting and more.
+
+<!-- ### Enterprise App Store Integration
+
+When using the Enterprise App Store plugin, refer to our comprehensive [Enterprise App Store Guide](/enterprise-appstore/overview) for detailed information about:
+- Setting release notes
+- Creating summaries
+- Configuring publish types
+- Managing app visibility and distribution -->
 
 ### Leveraging Environment Variables
 
