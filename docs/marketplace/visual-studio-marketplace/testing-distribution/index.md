@@ -127,7 +127,7 @@ If multiple workflows start simultaneously, the order in which versions are shar
 
 #### Self-signed Certificates
 
-Adding custom certificates is **not** currently supported in this extension. 
+Adding custom certificates is **not** currently supported in this extension.
 
 :::caution
 If your self-hosted Appcircle server has self-signed certificates, the Azure DevOps agent that runs the pipeline must trust your Appcircle server's certificates.
@@ -135,7 +135,7 @@ If your self-hosted Appcircle server has self-signed certificates, the Azure Dev
 
 ### Leveraging Environment Variables
 
-Utilize environment variables seamlessly by substituting the parameters with $(VARIABLE_NAME) in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
+Utilize environment variables seamlessly by substituting the parameters with `$(VARIABLE_NAME)` in your task inputs. The extension automatically retrieves values from the specified environment variables within your pipeline.
 
 ## References
 
