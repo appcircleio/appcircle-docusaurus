@@ -51,7 +51,9 @@ Before installing the extension, ensure you have the necessary permissions in yo
 
 For details on how to install the extension, visit the Azure [extension installation](https://learn.microsoft.com/en-us/azure/devops/marketplace/install-extension) guide.
 
-**Note:** When visiting the installation guide, ensure you select the correct version of Azure DevOps from the dropdown menu at the top of the page. The available options include "Azure DevOps Services" and "Azure DevOps Server 2022" etc.
+:::tip
+When visiting the installation guide, ensure you select the correct version of Azure DevOps from the dropdown menu at the top of the page. The available options include "Azure DevOps Services" and "Azure DevOps Server 2022" etc.
+:::
 
 You can find the marketplace page for the Appcircle Enterprise App Store extension here:
 https://marketplace.visualstudio.com/items?itemName=Appcircle.enterprise-app-store
