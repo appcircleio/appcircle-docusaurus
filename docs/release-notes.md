@@ -27,7 +27,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Enterprise App Store reports can now be sorted by app versions. Please note that due to changes in the filter structure of app versions, existing app versions added prior to this update will no longer be visible in Enterprise App Store reports. <ReportsBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 - Added custom `api` and `auth` endpoint options to [Azure DevOps Testing Distribution Extension](/marketplace/visual-studio-marketplace/testing-distribution) to allow usage with self-hosted Appcircle installations. <APICLIBadge/> <SelfHostedBadge/>
 - Removed `.zip(.xcarchive)` from allowed file types of [Azure DevOps Testing Distribution Extension](/marketplace/visual-studio-marketplace/testing-distribution). <APICLIBadge/> <SelfHostedBadge/>
-- Added custom `api` and `auth` endpoint options to [Azure DevOps Enterprise App Store Extension](/visual-studio-marketplace/enterprise-app-store) to allow usage with self-hosted Appcircle installations. <APICLIBadge/> <SelfHostedBadge/>
+- Added custom `api` and `auth` endpoint options to [Azure DevOps Enterprise App Store Extension](/marketplace/visual-studio-marketplace/enterprise-app-store) to allow usage with self-hosted Appcircle installations. <APICLIBadge/> <SelfHostedBadge/>
 - Android application bundle (`.aab`) files are now supported to publish at Enterprise App Store with [Azure DevOps Enterprise App Store Extension](/marketplace/visual-studio-marketplace/enterprise-app-store). <APICLIBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
