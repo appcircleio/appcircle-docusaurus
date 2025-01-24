@@ -46,14 +46,14 @@ Before installing the extension, ensure you have the necessary permissions in yo
 
 #### Installation
 
+You can discover more about this extension and install it from here:
+https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
+
 For details on how to install the extension, visit the Azure [extension installation](https://learn.microsoft.com/en-us/azure/devops/marketplace/install-extension) guide.
 
 :::tip
 When visiting the installation guide, ensure you select the correct version of Azure DevOps from the dropdown menu at the top of the page. The available options include "Azure DevOps Services" and "Azure DevOps Server 2022" etc.
 :::
-
-You can find the marketplace page for the Appcircle Testing Distribution extension here:
-https://marketplace.visualstudio.com/items?itemName=Appcircle.build-release-task
 
 ### How to Add the Appcircle Testing Distribution Task into Your Pipeline
 
