@@ -113,7 +113,7 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
   
   Make sure the path points to a valid application package file.
 
-- `releaseNote`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
+- `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
 - `summary`: Used to provide a brief overview of the version of the app that is about to be published.
 - `publishType`: Specifies the publishing status as either none, beta, or live, and must be assigned the values "None", "Beta", or "Live" accordingly.
 
