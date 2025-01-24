@@ -18,8 +18,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ## 3.25.1 - 2025-01-24 App Version Filter for Enterprise App Store Reports, Bitbucket permission Enhancements, Improvements and more
 
-### 🆕 New Features
-
 ### :muscle: Improvements
 
 - The character limit has been increased for the Key ID configuration in the App Store API Key settings on the UI. <SigningIdentitiesBadge/> <CloudBadge/>
