@@ -1,8 +1,8 @@
 ---
-title: Manual and Automatic Builds
+title: Triggers
 description: Learn how to build manually or automatically with webhooks and triggers in Appcircle
 tags: [build, build process management, manual build, automatic build, triggers, webhooks]
-sidebar_position: 10
+sidebar_position: 7
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -24,6 +24,18 @@ As the name states, your build profile will not build your application until you
 For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](#trigger-priorities).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-push-trigger.png' />
+
+## Triggers configuration
+
+To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-trigger.png' />
+
+The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](/build/build-process-management/build-manually-or-with-triggers#wildcard-reference) for branch names to trigger builds.
+
+You also need to select a workflow for each trigger and the build will be run with that trigger for the specified branch. You can build the same branch with different workflows (e.g. production or development) or you can use the same workflow for multiple branches (e.g. multiple feature branches built with the develop workflow).
+
+For further information regarding triggers, please refer to the [Manual and Automatic Builds](/build/build-process-management/build-manually-or-with-triggers) documentation.
 
 ## Automatic Build
 

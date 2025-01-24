@@ -2,7 +2,7 @@
 title: Branch Management
 description: Learn how to manage branches in Appcircle
 tags: [build, build profile, branch management]
-sidebar_position: 3
+sidebar_position: 8
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
