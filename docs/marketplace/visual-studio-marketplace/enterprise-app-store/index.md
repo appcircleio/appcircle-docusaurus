@@ -15,19 +15,12 @@ tags:
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 <!-- ATTENTION: Documentation at README of this extension's repository
 has table of contents that references to the titles in this document. -->
 
 Appcircle Enterprise App Store serves as your private mobile app store, allowing access to in-house apps through a customizable mobile storefront. The Appcircle Enterprise App Store extension enables you to upload your app to your personalized app store within Appcircle.
-
-import Screenshot from '@site/src/components/Screenshot';
-
-### Discover Extension
-
-Before installing the extension, ensure you have the necessary permissions in your Azure DevOps organization. If you don't have permission to add extensions, you'll need to request approval from your organization administrator.
-
-You can discover more about this extension and install it from here:
-https://marketplace.visualstudio.com/items?itemName=Appcircle.enterprise-app-store
 
 ### System Requirements
 
@@ -44,11 +37,26 @@ Both cloud and self-hosted agents are supported.
 - macOS 14 (arm64)
 - Ubuntu 22.04 (x86_64)
 
-### Prepare Enterprise App Store
+### Setup Appcircle Enterprise App Store
 
 Refer to our comprehensive [Enterprise App Store Docs](/enterprise-app-store) for detailed information about: Enterprise App Store profiles, portal customization, portal settings, enterprise portal, portal reports, in-app updates and more.
 
-### How to Add the Appcircle Enterprise App Store Task in Your Pipeline
+### How to Get the Appcircle Enterprise App Store Extension
+
+#### Permissions
+
+Before installing the extension, ensure you have the necessary permissions in your Azure DevOps organization. If you don't have permission to add extensions, you'll need to [request approval](https://learn.microsoft.com/en-us/azure/devops/marketplace/request-extensions) from your organization administrator.
+
+#### Installation
+
+For details on how to install the extension, visit the Azure [extension installation](https://learn.microsoft.com/en-us/azure/devops/marketplace/install-extension) guide.
+
+**Note:** When visiting the installation guide, ensure you select the correct version of Azure DevOps from the dropdown menu at the top of the page. The available options include "Azure DevOps Services" and "Azure DevOps Server 2022" etc.
+
+You can find the marketplace page for the Appcircle Enterprise App Store extension here:
+https://marketplace.visualstudio.com/items?itemName=Appcircle.enterprise-app-store
+
+### How to Add the Appcircle Enterprise App Store Task into Your Pipeline
 
 #### 1. Get a Personal API Token
 
