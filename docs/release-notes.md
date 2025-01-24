@@ -16,6 +16,34 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.25.1 - 2025-01-24 App Version Filter for Enterprise App Store Reports, Bitbucket permission Enhancements, Improvements and more
+
+### :muscle: Improvements
+
+- Various improvements have been made to the SSO login flow, including the addition of a cancel button for the account linking step and text corrections in other areas. <AccountBadge/> <CloudBadge/>
+- Federated Identity section has been removed from the Account page. <AccountBadge/> <CloudBadge/>
+- Improvements were made to the required default permissions for OAuth, self-hosted, and PAT Bitbucket repository connections. <BuildBadge/> <CloudBadge/>
+- The character limit has been increased for the Key ID configuration in the App Store API Key settings on the UI. <SigningIdentitiesBadge/> <CloudBadge/>
+- Enterprise App Store reports can now be sorted by app versions. Please note that due to changes in the filter structure of app versions, existing app versions added prior to this update will no longer be visible in Enterprise App Store reports. <ReportsBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where newly added users to an organization were unable to view the Git connection created with a Personal Access Token (PAT) after it was added. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where sub-organizations received an error message if an existing SSO configuration was present for the root organization. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the ‘Add for Review on App Store’ Publish Flow step failed due to the .IPA artifact name containing spaces, parentheses, or special characters. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where publish flows with long names blocked the process timer on the Publish Log screen. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where special characters in binary names affected file uploads and downloads across all modules. <APICLIBadge/> <CloudBadge/>
+- An issue was fixed where certain configuration profiles created through YAML uploads could not be cloned. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where uploaded iOS provisioning profiles were displayed as having no matching iOS certificate in build configurations. <BuildBadge/> <CloudBadge/>
+- A UI issue was fixed where saved environment variable names momentarily shrank after navigating to them from the dashboard. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where app versions on the Testing Portal were incorrectly sorted for specific version numbers. <DistributionBadge/> <CloudBadge/>
+- Issues were fixed on the Testing Portal’s shared app list, where memory usage caused crashing problems. Additionally, incorrect icons and app version names were corrected for some profiles. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where deleting an existing SSO configuration for the Testing Distribution module in an organization led to authentication settings being reset with no method selected. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where saved testing groups were not displayed properly in the ‘Share with Testers’ step when there were more than 10 testing groups. <DistributionBadge/> <CloudBadge/>
+- The names of deleted apps can now be viewed in enterprise app store reports, as archived data previously displayed missing profile names. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where customized Enterprise App Store portal logos were not displayed on Safari browser tabs. <ReportsBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where incorrect password entries did not display an error message during iOS certificate uploads within the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+
 ## 3.25.0 - 2024-12-19 Appcircle Deployment on Kubernetes, List View Type for Build and Testing Distribution, Improvements and more
 
 ### 🆕 New Features
