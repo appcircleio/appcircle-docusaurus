@@ -164,7 +164,7 @@ You can specify branch names or tags with an asterisk wildcard to automate build
 
 ## FAQ
 
-### How can I check my triggers is working in my Appcircle build profiles?
+### Why is my Appcircle trigger not working and how can I fix it?
 
 First of all, you should be ensured that the build profile triggers are set for the desired branches and actions. Please check the trigger settings from the [**Managing Triggers for Builds**](/build/build-process-management/build-manually-or-with-triggers#managing-triggers-for-builds) section in documentation.
 
@@ -172,25 +172,15 @@ Appcircle is triggered via Git provider's webhooks. To properly work with trigge
 
 Certain Git actions to the repositories, such as push, merge, pull request, tag push, etc., activate a specified event with the repositories webhooks. It is a necessity to ensure that the desired event is actually triggered by the action in Git provider's repository. 
 
+If webhooks are disabled by many usages or connection based errors, using test events may re-enable webhooks via Git providers.
+
 To ensure webhooks are set and working, the webhook histories may be reviewed within the Git providers. Lets have a check with Git providers down below. The steps in the Git provider's documentations can be followed to access the webhook event history.
 
 - [**GitHub Webhook Deliveries**](https://docs.github.com/en/webhooks/testing-and-troubleshooting-webhooks/viewing-webhook-deliveries#about-webhook-deliveries)
 
 - [**GitLab Webhook Request History**](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#view-webhook-request-history)
 
-:::caution GitLab Webhook Request History
-
-Gitlab provides users a `webhook test event`, however Appcircle does **not initiates** a build sequence with webhook test events in GitLab. 
-
-:::
-
 - [**Azure DevOps Services Webhook History**](https://learn.microsoft.com/en-us/azure/devops/service-hooks/services/webhooks?view=azure-devops)
-
-:::info Azure DevOps Webhook Event History
-
-In this Azure DevOps webhooks document, reaching service hooks is enough for checking **webhook histories**.
-
-:::
 
 - [**Bitbucket Webhook Documentations**](https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks)
 
@@ -199,11 +189,12 @@ In this Azure DevOps webhooks document, reaching service hooks is enough for che
 A document detailing the history of webhooks is **not provided** by the **Bitbucket**. However, webhook histories can be observed by navigating to the webhook section within the repository.
 
 Please navigate to:
-**Bitbucket -> Repository -> Repository Settings -> Webhooks**
+**Bitbucket -> Repository -> Repository Settings -> Webhooks -> View Requests**
+View Requests has to be enabled before requests to be seen.
 
 :::
 
-After confirmation of the webhook is created and connection is set and healthy through the Appcircle build profile, and the confirmation of the webhook is set and works as expected in a specific Git provider. Then Git actions such as pushing a code block, which should activate a webhook event, then the webhook event should activate the trigger and the Appcircle build sequence automatically.
+After confirmation of the webhook is created and connection is set and healthy through the Appcircle build profile, and the confirmation of the webhook is set and works as expected in a specific Git provider. Then Git actions such as pushing a code block, which should activate a webhook event, then the webhook event should activate the trigger and the Appcircle build automatically.
 
 ### How to enable triggers for AWS CodeCommit repositories?
 
