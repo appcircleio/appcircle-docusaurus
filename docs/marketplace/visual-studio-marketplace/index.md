@@ -20,6 +20,6 @@ Enhance the power of distributing builds to test groups or releasing beta versio
 
 It is a process distributing test builds to designated test groups or individuals.
 
-### [Appcircle Enterprise Mobile App Store](/marketplace/visual-studio-marketplace/enterprise-app-store)
+### [Enterprise App Store](/marketplace/visual-studio-marketplace/enterprise-app-store)
 
 Your own mobile app store to provide access to in-house apps with a customizable mobile storefront.
