@@ -16,16 +16,15 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.26.0 - 2025-01-24
+## 3.25.1 - 2025-01-24 App Version Filter for Enterprise App Store Reports, Bitbucket permission Enhancements, Improvements and more
 
 ### 🆕 New Features
-
-- Enterprise App Store reports can now be sorted by app versions. <ReportsBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - The character limit has been increased for the Key ID configuration in the App Store API Key settings on the UI. <SigningIdentitiesBadge/> <CloudBadge/>
-- Security enhancements have been implemented at various points in Appcircle. <APICLIBadge/> <CloudBadge/>
+- Enterprise App Store reports can now be sorted by app versions. <ReportsBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- Improvements were made to the required default permissions for OAuth, self-hosted, and PAT Bitbucket repository connections. <BuildBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
