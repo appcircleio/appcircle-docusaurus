@@ -189,7 +189,8 @@ To ensure webhooks are set and working, the webhook histories may be reviewed wi
 A document detailing the history of webhooks is not provided by Bitbucket. However, webhook histories can be observed by navigating to the webhook section within the repository.
 
 Please navigate to:
-Bitbucket -> Repository -> Repository Settings -> Webhooks -> View Requests
+**Bitbucket -> Repository -> Repository Settings -> Webhooks -> View Requests**
+
 View Requests has to be enabled before requests can be seen.
 
 :::
