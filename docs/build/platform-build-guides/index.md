@@ -55,7 +55,7 @@ Learn how to use custom scripts to build and customize Xamarin apps on Appcircle
 
 There may be a bunch of reasons for a build to fail.
 
-The best way to learn the reason is to check the build logs. See [**Working With Build Logs**](/build/build-process-management#working-with-build-logs) section for details on this.
+The best way to learn the reason is to check the build logs. See [**Working With Build Logs**](/build/build-process-management/binary-actions#working-with-build-logs) section for details on this.
 
 Build logs will display everything that happened in each workflow step in detail and let you examine what went wrong during the build.
 

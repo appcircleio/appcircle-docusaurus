@@ -53,7 +53,7 @@ Public connection refers to the HTTP(s) connection by Git Providers. SSH links i
 
 :::
 
-After the connection is successful, you can [view your newly created profile](/build/build-process-management#profile-listing) and start building!
+After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
 :::info
 

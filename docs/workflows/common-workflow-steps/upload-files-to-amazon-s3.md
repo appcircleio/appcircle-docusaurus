@@ -18,7 +18,7 @@ There are no prerequisites required before using the **Upload Files to Amazon S3
 
 :::info
 
-To begin, add the **Upload Files to Amazon S3** step to the workflow from the [workflow marketplace](/build/build-process-management#workflow-marketplace). You can incorporate it at any point within the workflow and multiple times, as necessary, to upload specific files or folders. For example, you can place it after the build step to deploy the build outputs.
+To begin, add the **Upload Files to Amazon S3** step to the workflow from the [workflow marketplace](/build/build-process-management/build-workflows#workflow-marketplace). You can incorporate it at any point within the workflow and multiple times, as necessary, to upload specific files or folders. For example, you can place it after the build step to deploy the build outputs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/s3-workflow-ios.png' />
 

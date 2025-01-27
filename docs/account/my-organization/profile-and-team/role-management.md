@@ -127,7 +127,7 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 :::info Signing and Identities
 
-**Manager** and **Viewer** Signing Identity permissions can use signing identities in [**Build profile configuration**](/build/build-process-management#environment-variables-configuration).
+**Manager** and **Viewer** Signing Identity permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/configurations#environment-variables-configuration).
 
 :::
 

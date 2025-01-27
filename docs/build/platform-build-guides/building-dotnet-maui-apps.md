@@ -55,7 +55,7 @@ Keep in mind that, in order to use iOS Signing Identities in the build pipeline,
 
 :::
 
-**4.** In the [build profile configuration](/build/build-process-management#profile-configuration), open the **Config** tab and edit the settings below.
+**4.** In the [build profile configuration](/build/build-process-management/configurations#profile-configuration), open the **Config** tab and edit the settings below.
 
 - **XCODE VERSION**: Select the Xcode version that's compatible with your app. For instance, `15.4.x`. You can take a look at the table [here](https://github.com/dotnet/maui/wiki/Release-Versions) for the compatible Xcode versions.
 - **XCODE PROJECT OR WORKSPACE PATH**: Enter the project or workspace file name. For instance, `Calculator.xcodeproj`.
@@ -75,7 +75,7 @@ Intel-based runners are not supported or documented as of now, and you might nee
 
 :::
 
-**5.** In the [build profile configuration](/build/build-process-management#profile-configuration), open the **Signing** tab and **add provisioning profile** by selecting from the list of Signing Identities.
+**5.** In the [build profile configuration](/build/build-process-management/configurations#profile-configuration), open the **Signing** tab and **add provisioning profile** by selecting from the list of Signing Identities.
 
 :::caution
 
@@ -135,10 +135,10 @@ The custom script has some **variables that should be changed or customized** fo
 - **`dotnetVersion`**: You can select a .NET SDK version that's compatible with your project or solution. See [here](https://github.com/dotnet/maui/wiki/Release-Versions) for details.
 - **`framework`**: You should select a target framework that the app will be built for, considering your project requirements and .NET SDK version. See [here](https://learn.microsoft.com/en-us/dotnet/standard/frameworks) for details.
 - **`project`**: It should be the path to the project file for your app. `$AC_REPOSITORY_DIR` is a [reserved environment variable](/environment-variables/appcircle-specific-environment-variables) that should not be changed since it has the repository path value. You can change the rest of the path to customize it for your project structure.
-- **`appleCertificate`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [build profile configuration](/build/build-process-management#profile-configuration) **Signing** tab.
-- **`appleProfile`**: It should be the name of the selected provisioning profile at the [build profile configuration](/build/build-process-management#profile-configuration) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
+- **`appleCertificate`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [build profile configuration](/build/build-process-management/configurations#profile-configuration) **Signing** tab.
+- **`appleProfile`**: It should be the name of the selected provisioning profile at the [build profile configuration](/build/build-process-management/configurations#profile-configuration) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
 
-When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/build-process-management#download-artifacts).
+When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
 #### References
 
@@ -183,7 +183,7 @@ Keep in mind that, in order to use Android Signing Identities in the build pipel
 
 :::
 
-**5.** In the [build profile configuration](/build/build-process-management#profile-configuration), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
+**5.** In the [build profile configuration](/build/build-process-management/configurations#profile-configuration), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
 
 **6.** In your [workflow](/workflows), use the below **Custom Script** as a replacement of the default **Android Build** step.
 
@@ -276,7 +276,7 @@ The custom script has some **variables that should be changed or customized** fo
 - **`project`**: It should be the path to the project file for your app. `$AC_REPOSITORY_DIR` is a [reserved environment variable](/environment-variables/appcircle-specific-environment-variables) that should not be changed since it has the repository path value. You can change the rest of the path to customize it for your project structure.
 - **`packageFormat`**: A semi-colon delimited property that indicates if you want to package the app as an APK file or AAB. Set to either `aab` or `apk` to generate only one format.
 
-When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/build-process-management#download-artifacts).
+When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
 :::info
 
@@ -286,7 +286,7 @@ You can also use the **Signing Identities** from Appcircle when you are signing 
 
 Keep in mind that, if you sign your app with the `dotnet publish`, you will not need the **Android Sign** step in your workflow. So, you should disable it or remove it from your workflow.
 
-Also, change the output directory (`-o|--output`) to `$AC_OUTPUT_DIR` to send the signed artifacts directly to the [build artifacts](/build/build-process-management#download-artifacts).
+Also, change the output directory (`-o|--output`) to `$AC_OUTPUT_DIR` to send the signed artifacts directly to the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
 :::
 

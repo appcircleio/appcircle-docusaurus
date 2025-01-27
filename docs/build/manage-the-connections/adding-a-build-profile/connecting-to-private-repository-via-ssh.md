@@ -75,7 +75,7 @@ Then, enter your relevant information to connect to the private repository:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ssh-connection-2.png' />
 
-After the connection is successful, you can [view your newly created profile](/build/build-process-management#profile-listing) and start building!
+After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
 :::info
 

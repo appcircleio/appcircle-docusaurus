@@ -516,17 +516,17 @@ status = 301
 
 [[redirects]]
 from = "/build/build-process-management/build-profile-configuration"
-to = "/build/build-process-management"
+to = "/build/build-process-management/configurations"
 status = 301
 
 [[redirects]]
 from = "/build/post-build-operations"
-to = "/build/build-process-management"
+to = "/build/build-process-management/binary-actions"
 status = 301
 
 [[redirects]]
 from = "/build/post-build-operations/after-a-build"
-to = "/build/build-process-management"
+to = "/build/build-process-management/binary-actions"
 status = 301
 
 [[redirects]]
@@ -820,7 +820,7 @@ status = 301
 
 [[redirects]]
 from = "/integrations/workflow-marketplace"
-to = "/workflows/#workflow-marketplace"
+to = "/build/build-process-management/build-workflows"
 status = 301
 
 [[redirects]]
