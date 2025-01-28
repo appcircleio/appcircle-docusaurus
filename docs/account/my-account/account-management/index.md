@@ -16,10 +16,6 @@ Secure your account by regularly updating your password through this option.
 
 Enhance account security by setting up two-factor authentication, adding an extra layer of protection.
 
-## [Federated Identity Management](/account/my-account/account-management/federated-identity-linked-login-providers)
-
-Manage your federated identities by linking or unlinking single sign-on providers.
-
 ## [Active Sessions](/account/my-account/account-management/active-sessions)
 
 View and manage all active sessions to understand where your account is currently logged in.

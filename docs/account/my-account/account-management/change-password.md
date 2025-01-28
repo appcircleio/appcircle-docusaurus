@@ -17,4 +17,4 @@ If you signed up using an identity provider, you need to leave the current passw
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-change-password.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-pass.png' />
