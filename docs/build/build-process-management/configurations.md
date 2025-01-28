@@ -5,6 +5,10 @@ tags: [build, build profile, configuration]
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Profile Configuration
 
 Configuring a build profile has some basic steps that need to be completed before starting a build.
@@ -66,7 +70,7 @@ Your _configuration.yaml_ file will be downloaded to your local system.
 If you intend to copy the configuration to use on the same **Build Profile** page, consider using the [**Clone Configuration**](#clone-configuration) step as a quicker alternative.
 :::
 
-### Project details configuration
+### Configuration Details
 
 Every build profile needs to know project details regardless of the project being iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle if you click on **Autofill** button.
 
@@ -76,7 +80,20 @@ You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
   Self-hosted Runners
 </ContentRef>
 
+<Tabs
+defaultValue="ios"
+values={[
+{ label: 'iOS', value: 'ios' },
+{ label: 'Android', value: 'android' },
+]}
+>
+  <TabItem value="ios">
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-pool.png' alt="Pool Selection" />
+  </TabItem>
+  <TabItem value="android">
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidconfig.png' />
+  </TabItem>
+</Tabs>
 
 #### Build Priority
 
@@ -100,15 +117,36 @@ Both iOS and Android applications need to be digitally signed by their developer
 
 iOS certificates and Android keystores can be generated within Appcircle or pre-obtained certificates can be uploaded. iOS provisioning profiles need to be obtained from Apple Developer account and uploaded to Appcircle.
 
+<Tabs
+defaultValue="ios"
+values={[
+{ label: 'iOS', value: 'ios' },
+{ label: 'Android', value: 'android' },
+]}
+>
+  <TabItem value="ios">
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png' />
+  </TabItem>
+  <TabItem value="android">
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidsign.png' />
+  </TabItem>
+</Tabs>
 
-You can either upload your iOS certificate and iOS provisioning profile or Android Keystore from here or within the [Signing Identities](/signing-identities) module.
+:::info
+Please note that the [Automatic Code Signing](/signing-identities/apple-profiles#automatic-signing) option is only available for iOS projects.
+:::
+
+You can either upload your iOS [certificate](/signing-identities/apple-certificates) and iOS [provisioning profile](/signing-identities/apple-profiles) or [Android Keystore](/signing-identities/android-keystores) from here or within the [Signing Identities](/signing-identities) module.
 
 ### Distribution configuration
 
 Distribution is a critical step when it comes to testing your app on real devices. You may need multiple testers and testing groups to download, install, test your app, and make sure it works on different devices and operating system versions.
 
-Distribution configuration allows you to set which testing groups will receive your application after the build is complete. You can manually submit your binary to testers, or Appcircle can do it for you.
+You can also use other toggles on there to automatically distribute your app to the Enterprise App Store , Publish or Store Submit modules.
+
+#### Send to Testing Distribution
+
+Distribution configuration allows you to set which testing groups will receive your application after the build is complete. You can manually submit your binary to [Testing Distribution](/testing-distribution) profiles, or Appcircle can do it for you.
 
 In this window, you can select one or more of the previously created distribution profiles or create a new one. You can use the "Manage Distribution Profiles" button above to quickly manage distribution profiles.
 
@@ -118,14 +156,25 @@ Finally, check "Automatically Distribute to Testers" if you want your build to b
 
 You can also use other toggles on there to automatically distribute your app to the Enterprise App Store or Store Submit modules.
 
+#### Send to Publish
+
+Enabling "Automatically Distribute to Publish" will display the available [Publish](/publish-module) profiles for distribution.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-publish.png' />
+
+Simply select your relevant Publish profile, and Appcircle will automatically send your builds to the selected Publish profiles.
+
 #### Send to Enterprise App Store
 
 - Navigate to the configuration, then go to the Distribution tab, and ensure that **Automatically Distribute to Enterprise App Store** is enabled.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-build.png' />
 
-- Whenever a new **signed** build is created, it will be sent to the Enterprise App Store.
+- Whenever a new **signed** build is created, it will be sent to the [Enterprise App Store](/enterprise-app-store).
+
+:::info
 - APK or IPA files can also be manually sent by clicking the **...** button and selecting Distribute Binary.
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-binary.png' />
 
@@ -134,6 +183,8 @@ You can also use other toggles on there to automatically distribute your app to 
 You can set custom rules to manage the versioning of your app. You can increase both the build number and version number according to the rules you set.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-versioning.png' />
+
+For more information please refer to the [Versioning](/versioning) documentation.
 
 ### Environment variables configuration
 

@@ -44,6 +44,12 @@ The branch will be moved to the top with a pinned indicator. You can unpin the b
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/branch-operation-pin-pinned.png' />
 
+### Manually Fetching Branch and Commits
+
+By clicking the refresh button next to the Branch List title, you can manually start a fetching process that will update your commits and branches from the remote repository.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-fetch.png' />
+
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
 <NeedHelp />

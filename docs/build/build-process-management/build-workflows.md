@@ -69,7 +69,7 @@ You can also reorder steps so that they will be executed in the order you specif
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/08-08-WF_Reorder.gif' />
 
-### Editing Workflow Settings
+### Editing Workflow Step Settings
 
 Each workflow step has its own set of configuration options, which can be set by clicking on the step in the workflow screen.
 
@@ -77,13 +77,21 @@ The first three items are common for all steps and they are set individually for
 
 - **Step Execution Active:** To enable/disable the step execution without removing it from the workflow
 
+- **Always run this step even if the previous step fails:**  If this option is enabled, getting a failed result on a previous workflow step will not directly terminate the build process so this specific workflow step can run.
+
 - **Continue with the next step even if this step fails:** If a step is optional or its result should not cause a build error, you can select this option to continue the workflow if this particular step fails. In default workflows, this option is `on` for specific steps. And since this step is active, the build status will appear as "Warning" when other steps in the build are successful. Detailed explanation about this state is given in the [Build Warning Status](#build-warning-status) section.
 
-- **Workflow Step Version:** You can select a specific version of a step with which to execute your build. If you select a version with an asterisk (\*), you will receive the minor updates to the workflow step automatically. The major versions may include added or removed input fields and manual version selection is required for major version updates.;
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-fail.png' />
+
+- **Workflow Step Version:** You can select a specific version of a step with which to execute your build. If you select a version with an asterisk (\*), you will receive the minor updates to the workflow step automatically. The major versions may include added or removed input fields and manual version selection is required for major version updates.
 
 The items in the "Inputs" section are specific to that step. The reserved environment variables are assigned to these fields by default and the values of these variables are set in the build configuration.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (187).png' />
+
+:::info
+Please note that the Workflow Step Version is managed by Appcircle. Native steps that are being used have their own versions.
+:::
 
 #### Build Warning Status
 

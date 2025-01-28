@@ -1,5 +1,5 @@
 ---
-title: Building iOS Applications
+title: iOS Applications
 description: Building iOS applications may be complex and confusing. Appcircle will help you smooth the process and doesn't require any additional configuration files from you.
 tags: [build, platform build guides, ios, faq]
 sidebar_position: 1
@@ -8,7 +8,7 @@ sidebar_position: 1
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Building iOS Applications
+# iOS Applications
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/3ZorIciD7-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

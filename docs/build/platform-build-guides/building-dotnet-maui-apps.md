@@ -1,11 +1,11 @@
 ---
-title: Building .NET MAUI Apps
+title: .NET MAUI Applications
 description: Learn how to build a .NET MAUI app on Appcircle
 tags: [build, platform build guides, MAUI, .NET MAUI, custom scripts]
 sidebar_position: 10
 ---
 
-# Building .NET MAUI Apps
+# .NET MAUI Apps
 
 This guide gives necessary information about the steps that should be followed to successfully build and publish a [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui) app with Appcircle.
 

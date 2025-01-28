@@ -1,5 +1,5 @@
 ---
-title: Building Flutter Web Applications
+title: Flutter Web Applications
 description: You can build your Flutter web applications in Appcircle.
 tags: [flutter, web, flutter web, flutter web build]
 sidebar_position: 8
@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Building Flutter Web Applications
+# Flutter Web Applications
 
 If your app supports Flutter Web, you can also build the Flutter web app along with the [Flutter iOS or Android build](/build/platform-build-guides/building-flutter-applications).
 

@@ -1,11 +1,11 @@
 ---
-title: Building Xamarin Apps
+title: Xamarin Applications
 description: Learn how to build a Xamarin app on Appcircle
 tags: [build, platform build guides, .net, xamarin, custom scripts]
 sidebar_position: 10
 ---
 
-# Building Xamarin Apps
+# Xamarin Apps
 
 This guide gives necessary information about the steps that should be followed to successfully build and publish a [Xamarin](https://dotnet.microsoft.com/en-us/apps/xamarin) app with Appcircle.
 

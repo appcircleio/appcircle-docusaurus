@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-# Building Android Applications
+# Android Applications
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/-6CpaE1FW7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
