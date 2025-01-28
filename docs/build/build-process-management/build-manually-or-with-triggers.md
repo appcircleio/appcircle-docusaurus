@@ -177,25 +177,25 @@ If webhooks are disabled by many usages or connection-based errors, using test e
 To ensure webhooks are set and working, the webhook histories may be reviewed within the Git providers. Let's have a check with Git providers down below. The steps in the Git provider's documentation can be followed to access the webhook event history.
 
 - [**GitHub Webhook Deliveries**](https://docs.github.com/en/webhooks/testing-and-troubleshooting-webhooks/viewing-webhook-deliveries#about-webhook-deliveries)
-
 - [**GitLab Webhook Request History**](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#view-webhook-request-history)
-
 - [**Azure DevOps Services Webhook History**](https://learn.microsoft.com/en-us/azure/devops/service-hooks/services/webhooks?view=azure-devops)
-
 - [**Bitbucket Webhook Documentations**](https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks)
 
 :::info Bitbucket Webhook Event History
 
-A document detailing the history of webhooks is not provided by Bitbucket. However, webhook histories can be observed by navigating to the webhook section within the repository.
+A document detailing the history of webhooks is not provided by Bitbucket. To access the webhook history please navigate to:
 
-Please navigate to:
 **Bitbucket -> Repository -> Repository Settings -> Webhooks -> View Requests**
 
 View Requests has to be enabled before requests can be seen.
 
 :::
 
-After confirmation of the webhook is created and the connection is set and healthy through the Appcircle build profile, and the confirmation of the webhook is set and works as expected in a specific Git provider. Then Git actions such as pushing a code block, which should activate a webhook event, and then the webhook event should activate the trigger and the Appcircle build automatically.
+Once the webhook is created and confirmed to be properly set up and healthy in the Appcircle build profile, and it is verified to work correctly with the specific Git provider, the process works as follows:
+
+- A Git action, such as pushing a code block, triggers a webhook event.
+- This webhook event activates the trigger in Appcircle.
+- Appcircle then automatically starts the build process.
 
 ### How to enable triggers for AWS CodeCommit repositories?
 
