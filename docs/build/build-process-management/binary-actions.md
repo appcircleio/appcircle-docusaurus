@@ -31,13 +31,13 @@ Each time a build is completed by Appcircle, all artifacts produced after the bu
 
 :::caution Output Artifacts
 
-## For Android
+#### For Android
 
 If your Android application has multiple product flavors, Appcircle will create a build for each flavor of your application and let you distribute them at once. A common usage to multi-flavor applications can be free and paid versions of the same application.
 
 When you build and distribute an application with multiple flavors, and `.apk` file will be created for each flavor. On our [**testing portal**](/testing-distribution/testing-portal), your testers will be able to download each `.apk` file separately and test it on their devices.
 
-## For iOS
+#### For iOS
 
 iOS applications can be downloaded or distributed as IPA file format if you configure signing identities and sign the application during the build process.
 

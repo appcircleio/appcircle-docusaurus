@@ -11,7 +11,7 @@ The Build module in Appcircle streamlines your Continuous Integration and Contin
 
 ## [Build Profiles](/build/build-process-management)
 
-Follow our start guide to build your iOS and Android apps in the cloud.
+Follow our start guide to build your iOS and Android apps in the cloud. This guide will walk you through creating a build profile, managing profiles, branches, configurations and triggers and more.
 
 ## [Environment Variables](/build/build-environment-variables)
 

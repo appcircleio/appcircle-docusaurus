@@ -37,7 +37,7 @@ To rename/delete a current workflow, press the "Edit" button at the top of the w
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-workflow4.png' />
 
-You can use the "Clone" option to create a new workflow based on the currently available ones. You can [select different workflows for different build scenarios](/build/build-process-management/build-manually-or-with-triggers) (e.g. separate workflows for production and development).
+You can use the "Clone" option to create a new workflow based on the currently available ones. You can select different workflows for different build scenarios (e.g. separate workflows for production and development).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-workflow5.png' />
 
@@ -45,7 +45,7 @@ You can use the "Clone" option to create a new workflow based on the currently a
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE5278-workflow6.png" />
 
-Appcircle will build your application with the steps defined in the workflow. Steps will be executed in order from the top to the bottom.
+Appcircle will build your application with the steps defined in the [workflow](/workflows). Steps will be executed in order from the top to the bottom.
 
 You can customize each step for specific configurations with your application structure. Step parameters can be modified, outputs of each step can be used in another step and step versions can be selected accordingly.
 
