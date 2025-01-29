@@ -2,7 +2,7 @@
 title: Delete Account
 description: Learn how to delete your account in Appcircle
 tags: [account, account management, delete account]
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 Accounts can only be deleted by the owner. 
 
 - Please log in to your account navigate to **My Account**. 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-delete-account.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-delete.png' />
 
 
 - Click **Delete Account** link and confirm the dialog.
