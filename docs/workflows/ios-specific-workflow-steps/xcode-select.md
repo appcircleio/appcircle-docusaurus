@@ -50,7 +50,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5421-xcodeSelectInput.png' />
 
-:::info Manually Xcode Version Change
+:::info Manually Xcode Version Change (Not Recommended)
 
 In addition to the version change method described above, you can also change the Xcode version **manually**. For this, you can **hard-code** the desired Xcode version into the `$AC_XCODE_VERSION` parameter. For example: `15.1`.
 
