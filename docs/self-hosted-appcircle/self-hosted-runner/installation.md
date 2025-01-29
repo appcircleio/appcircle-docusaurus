@@ -102,13 +102,13 @@ Download the latest self-hosted runner package.
   <TabItem value="osx-arm64" label="macOS arm64" default>
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.7.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.8.0.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.7.2.zip
+unzip -o -u appcircle-runner-osx-arm64-1.8.0.zip
 ```
 
   </TabItem>
@@ -116,13 +116,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.7.2.zip
   <TabItem value="osx-x64" label="macOS x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.7.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.8.0.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-x64-1.7.2.zip
+unzip -o -u appcircle-runner-osx-x64-1.8.0.zip
 ```
 
   </TabItem>
@@ -130,13 +130,13 @@ unzip -o -u appcircle-runner-osx-x64-1.7.2.zip
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.7.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.8.0.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-linux-x64-1.7.2.zip
+unzip -o -u appcircle-runner-linux-x64-1.8.0.zip
 ```
 
   </TabItem>

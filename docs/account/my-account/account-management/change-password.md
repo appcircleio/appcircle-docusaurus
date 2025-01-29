@@ -2,7 +2,7 @@
 title: Change Password
 description: Learn how to change your password in Appcircle
 tags: [account, account management, change password]
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
