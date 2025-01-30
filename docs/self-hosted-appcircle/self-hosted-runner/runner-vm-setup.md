@@ -561,6 +561,20 @@ It may take a little to complete. Be patient and wait return of command.
 > - `15.0.x`
 > - `14.3.x`
 
+:::caution
+
+This stack has the `beta` version of Xcode that was included at the time the macOS image was built.
+
+So, if you need to publish iOS apps to the App Store, you should upgrade to the **next** stack that has the latest GA versions of Xcode `16.x.x`.
+
+Otherwise, you might get the error below when you try to publish iOS apps to App Store.
+
+> _... Unsupported SDK or Xcode version. Your app was built with an SDK or version of Xcode that isn't supported. Although you can use beta versions of SDKs and Xcode to build and upload apps to App Store Connect, you need to use the latest Release Candidates (RC) for SDKs and Xcode to submit the app. ..._
+
+If you're currently not ready for Xcode `16.x.x` migration, you can go on using the previous stack until you migrate your iOS apps to newer Xcode versions.
+
+:::
+
   </TabItem>
   <TabItem value="241227" label="241227" default>
 
