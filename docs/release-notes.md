@@ -29,6 +29,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Removed `.zip(.xcarchive)` from allowed file types of [Azure DevOps Testing Distribution Extension](/marketplace/visual-studio-marketplace/testing-distribution). <APICLIBadge/> <SelfHostedBadge/>
 - Added custom `api` and `auth` endpoint options to [Azure DevOps Enterprise App Store Extension](/marketplace/visual-studio-marketplace/enterprise-app-store) to allow usage with self-hosted Appcircle installations. <APICLIBadge/> <SelfHostedBadge/>
 - Android application bundle (`.aab`) files are now supported to publish at Enterprise App Store with [Azure DevOps Enterprise App Store Extension](/marketplace/visual-studio-marketplace/enterprise-app-store). <APICLIBadge/> <SelfHostedBadge/>
+- Reserved environment variables can now be used in metadata within the Publish module, though not all reserved environment variables may be available. <PublishBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -40,6 +41,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where certain configuration profiles created through YAML uploads could not be cloned. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where uploaded iOS provisioning profiles were displayed as having no matching iOS certificate in build configurations. <BuildBadge/> <CloudBadge/>
 - A UI issue was fixed where saved environment variable names momentarily shrank after navigating to them from the dashboard. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where some build configuration profiles could not be downloaded as YAML files. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where app versions on the Testing Portal were incorrectly sorted for specific version numbers. <DistributionBadge/> <CloudBadge/>
 - Issues were fixed on the Testing Portal’s shared app list, where memory usage caused crashing problems. Additionally, incorrect icons and app version names were corrected for some profiles. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where deleting an existing SSO configuration for the Testing Distribution module in an organization led to authentication settings being reset with no method selected. <DistributionBadge/> <CloudBadge/>
