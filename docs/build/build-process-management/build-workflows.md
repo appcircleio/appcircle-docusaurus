@@ -5,8 +5,6 @@ tags: [build, build profile, workflows]
 sidebar_position: 3
 ---
 
-## Workflows configuration
-
 A workflow is a ladder of steps taken to build your applications.
 
 Each step has a different purpose and the workflow can be customized by modifying step parameters and inputs, running custom scripts, or re-ordering steps.
@@ -25,7 +23,7 @@ To access the workflow editor for a build profile, click the Workflows button in
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-workflow1.png' alt="workflow overview"/>
 
-The workflow list will be displayed. To view the [Workflow Steps](#workflow-steps) of a workflow, click on it from the workflow list.
+The workflow list will be displayed. To view the Workflow Steps of a workflow, click on it from the workflow list.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-workflow2.png' />
 
@@ -69,7 +67,7 @@ You can also reorder steps so that they will be executed in the order you specif
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/08-08-WF_Reorder.gif' />
 
-### Editing Workflow Step Settings
+### Editing Workflow Steps
 
 Each workflow step has its own set of configuration options, which can be set by clicking on the step in the workflow screen.
 
@@ -79,7 +77,7 @@ The first three items are common for all steps and they are set individually for
 
 - **Always run this step even if the previous step fails:**  If this option is enabled, getting a failed result on a previous workflow step will not directly terminate the build process so this specific workflow step can run.
 
-- **Continue with the next step even if this step fails:** If a step is optional or its result should not cause a build error, you can select this option to continue the workflow if this particular step fails. In default workflows, this option is `on` for specific steps. And since this step is active, the build status will appear as "Warning" when other steps in the build are successful. Detailed explanation about this state is given in the [Build Warning Status](#build-warning-status) section.
+- **Continue with the next step even if this step fails:** If a step is optional or its result should not cause a build error, you can select this option to continue the workflow if this particular step fails. In default workflows, this option is `on` for specific steps. And since this step is active, the build status will appear as "Warning" when other steps in the build are successful.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-fail.png' />
 
@@ -92,8 +90,6 @@ The items in the "Inputs" section are specific to that step. The reserved enviro
 :::info
 Please note that the Workflow Step Version is managed by Appcircle. Native steps that are being used have their own versions.
 :::
-
-#### Build Warning Status
 
 When we start a build, if we have activated the "Continue with the next step even if this step fails" setting for a component we use in the workflow and this step fails during the build, Appcircle will show the build status as "Warning" if the build is completed successfully for other steps.
 
@@ -112,3 +108,5 @@ We are starting a build, and we see that it fails in the pipeline.
 And the build status will now appear as "Warning".
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-4.png' />
+
+For more information regarding build statuses, please refer to [manual build](/build/build-process-management/manual-builds#build-statuses) documentation.

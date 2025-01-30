@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Xcode Select (Version)
 
-This step is used to specify the Xcode version to be used during the build process. All available versions of Xcode can be seen in the [Configuration](/build/build-process-management/configurations#profile-configuration) tab.
+This step is used to specify the Xcode version to be used during the build process. All available versions of Xcode can be seen in the [Configuration](/build/build-process-management/configurations#build-configuration) tab.
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ Always use this step **before** [**CocoaPods Install**](/workflows/ios-specific-
 
 :::caution
 
-Please **don't forget** to select the **Xcode version** from [Configuration](/build/build-process-management/configurations#profile-configuration) first.
+Please **don't forget** to select the **Xcode version** from [Configuration](/build/build-process-management/configurations#build-configuration) first.
 
 :::
 
@@ -30,7 +30,7 @@ Please **don't forget** to select the **Xcode version** from [Configuration](/bu
 
 ### Version Change
 
-- To select an Xcode version, open [Configuration](/build/build-process-management/configurations#profile-configuration) in the build profile.
+- To select an Xcode version, open [Configuration](/build/build-process-management/configurations#build-configuration) in the build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_config.png' />
 

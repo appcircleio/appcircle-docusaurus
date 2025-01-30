@@ -7,19 +7,11 @@ sidebar_position: 4
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Build Manually or Automatically with Webhooks and Triggers
-
 There are multiple ways to trigger a build in Appcircle. You can run builds manually or automate the build process with various triggers.
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/zxxax79KD9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Manual Build
-
-As the name states, your build profile will not build your application until you tell it to. You can browse branches in your Git repository and select any commit from any branch you need to build. To initiate a manual build, just press the **Start Build** button.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-inside.png' />
-
-### Workflows for Manual Builds
+## Workflows for Manual Builds
 
 For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](#trigger-priorities).
 
@@ -34,8 +26,6 @@ To set up or manage the build triggers, click the Triggers button in the context
 The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](/build/build-process-management/build-manually-or-with-triggers#wildcard-reference) for branch names to trigger builds.
 
 You also need to select a workflow for each trigger and the build will be run with that trigger for the specified branch. You can build the same branch with different workflows (e.g. production or development) or you can use the same workflow for multiple branches (e.g. multiple feature branches built with the develop workflow).
-
-For further information regarding triggers, please refer to the [Manual and Automatic Builds](/build/build-process-management/build-manually-or-with-triggers) documentation.
 
 ## Automatic Build
 
@@ -55,7 +45,7 @@ For repositories connected through SSH, you can set up triggers with webhooks in
 
 When you connect a repository through SSH or through a public URL, the Webhook URL option will be enabled in the context menu of the build profile, accessible from the top of the profile details.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-webhook-url.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-webhooks.png' />
 
 If the git provider is detected, a compatible URL will be displayed automatically. If not, you will be first prompted to select the provider to display the webhook URL.
 
@@ -85,7 +75,7 @@ You can also use[ appcircle-cli](/appcircle-api-and-cli) to trigger your builds 
 
 To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
 
-#### Auto build on every push
+### Auto build on every push
 
 Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
 
@@ -93,7 +83,7 @@ Appcircle will start building your application whenever you push a commit to you
 
 You must choose both workflow and a configuration when you're setting up a trigger.
 
-#### Auto build pull/merge requests
+### Auto build pull/merge requests
 
 Appcircle will start building your application whenever you initiate a pull request or merge request from the source branch(es) to the target branch.
 
@@ -116,13 +106,13 @@ Appcircle will only run the trigger for PR creation or PR updates.
 
 :::
 
-#### Triggering different workflows at the same time
+### Triggering different workflows at the same time
 
 Now you will be able to trigger different workflows in the same source branch and target branch on Appcircle at once. As soon as the trigger is triggered, Appcircle will start running all the triggered triggers in the build queue, starting from the first place in the established trigger queue.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-pr-mr-trigger-multiple.png' />
 
-#### Selective auto build with specific tags
+### Selective auto build with specific tags
 
 Appcircle will start building your application with the selected workflow whenever you perform a push with certain tags to your Git repository. Your project will be built automatically only if the push has the tags you specify or you can specify a wildcard tag to build all tagged pushes.
 

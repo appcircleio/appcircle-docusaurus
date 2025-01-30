@@ -25,13 +25,11 @@ You may create **Distribution** configuration to send your app to public stores 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config2.png' alt="Build Config New" />
 
-You can also create a configuration profile by uploading a saved YAML file. Please refer to [Download Configuration](/build/build-process-management/configurations#download-configuration) section to find out more about how to obtain the configuration YAML file.
+You can also create a configuration profile by uploading a saved YAML file.
 
 - You may change the name of the configuration or delete the ones you don't need. To do that, click on the edit button shown and three dot on the configuration you want to edit/delete.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config5.png' alt="Build config edit" />
-
-### Clone Configuration
 
 If you have a configuration that you use constantly or want to quickly copy a configuration, you can use the "Configuration Clone" feature.
 
@@ -57,8 +55,6 @@ The naming here is created by adding "\_copy_1" to the end of the main configura
 Although the system gives a unique name for the copied configuration by default, you can give this configuration a new name using "Rename".
 :::
 
-### Download Configuration
-
 You can download your **Configuration** in YAML format to perform actions like sharing the settings you've configured or creating a duplicate on another **Build Profile** page. Follow these steps to download your **Configuration**:
 
 - Open the **Configuration** you've created.
@@ -69,7 +65,11 @@ You can download your **Configuration** in YAML format to perform actions like s
 Your _configuration.yaml_ file will be downloaded to your local system.
 
 :::tip
-If you intend to copy the configuration to use on the same **Build Profile** page, consider using the [**Clone Configuration**](#clone-configuration) step as a quicker alternative.
+If you intend to copy the configuration to use on the same **Build Profile** page, consider using the **Clone Configuration** step as a quicker alternative.
+:::
+
+:::caution
+The downloaded YAML file is specific to the project type and can only be used for configuring the same type of project. For example, a YAML file generated for an iOS Swift project cannot be applied to an Android React Native project. Ensure that you use the correct YAML file for seamless configuration.
 :::
 
 ### Config Details
