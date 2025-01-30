@@ -12,19 +12,13 @@ New to Appcircle Build module? Follow our quick start guide to build your iOS an
 
 The Build Module allows you to streamline and automate your mobile app build flows.
 
-:::info
-
-The Build Module is the first step to automate your CI/CD processes via Appcircle.
-
-:::
-
 ## [Profile Creation](/build/build-process-management/profile-creation)
 
-Learn how to create and list build profiles on Appcircle.
+Discover how to create and manage build profiles in Appcircle. This section guides you through the process of setting up new build profiles and listing existing ones, ensuring a streamlined workflow for your development and deployment needs.
 
 ## [Configurations](/build/build-process-management/configurations)
 
-Configuring a build profile has some basic steps that need to be completed before starting a build.
+Before initiating a build, certain essential steps must be completed to properly configure a build profile. This section outlines the fundamental configurations required to ensure a seamless build process.
 
 ## [Workflows](/build/build-process-management/build-workflows)
 
@@ -38,11 +32,11 @@ Builds can be triggered with various triggers such as every push to the reposito
 
 ## [Manual Builds](/build/build-process-management/manual-builds)
 
-Learn how to start manual builds with your build profile on Appcircle.
+Learn how to initiate manual builds using your build profile in Appcircle. This section provides step-by-step guidance on triggering builds manually to streamline your development workflow.
 
 ## [Binary Actions](/build/build-process-management/binary-actions)
 
-Learn how to use various binary actions after completing your builds on Appcircle.
+Explore the different binary actions available in Appcircle after completing your builds. This section guides you through utilizing these actions to manage, distribute, and optimize your build artifacts efficiently.
 
 ## [Branch Management](/build/build-process-management/build-profile-branch-operations)
 

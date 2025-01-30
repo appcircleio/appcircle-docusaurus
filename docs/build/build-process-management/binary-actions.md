@@ -77,9 +77,7 @@ To do that, simply navigate to the Builds tab and select the builds, then click 
 
 :::tip
 
-Build Deletion feature is only available at Pro or above plans.
-
-To get more info, see our Pricing: [https://appcircle.io/pricing/](https://appcircle.io/pricing/)
+Build Deletion feature is only available for organizations with Enterprise license.
 
 :::
 

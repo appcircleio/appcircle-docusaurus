@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Profile Configuration
+## Build Configuration
 
 Configuring a build profile has some basic steps that need to be completed before starting a build.
 
@@ -24,6 +24,8 @@ You may create **Distribution** configuration to send your app to public stores 
 - Click on **New** button to create your first configuration.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config2.png' alt="Build Config New" />
+
+You can also create a configuration profile by uploading a saved YAML file. Please refer to [Download Configuration](/build/build-process-management/configurations#download-configuration) section to find out more about how to obtain the configuration YAML file.
 
 - You may change the name of the configuration or delete the ones you don't need. To do that, click on the edit button shown and three dot on the configuration you want to edit/delete.
 
@@ -70,7 +72,7 @@ Your _configuration.yaml_ file will be downloaded to your local system.
 If you intend to copy the configuration to use on the same **Build Profile** page, consider using the [**Clone Configuration**](#clone-configuration) step as a quicker alternative.
 :::
 
-### Configuration Details
+### Config Details
 
 Every build profile needs to know project details regardless of the project being iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle if you click on **Autofill** button.
 
@@ -140,9 +142,9 @@ You can either upload your iOS [certificate](/signing-identities/apple-certifica
 
 ### Distribution configuration
 
-Distribution is a critical step when it comes to testing your app on real devices. You may need multiple testers and testing groups to download, install, test your app, and make sure it works on different devices and operating system versions.
+Set up automated distribution for your builds by configuring distribution settings in Appcircle. This feature allows you to automatically send completed builds to selected modules, including Testing Distribution, Publish, or the Enterprise Store, ensuring a seamless deployment process.
 
-You can also use other toggles on there to automatically distribute your app to the Enterprise App Store , Publish or Store Submit modules.
+Simply, enable the toggle of the module that you need and select the required profiles.
 
 #### Send to Testing Distribution
 
@@ -154,15 +156,13 @@ Finally, check "Automatically Distribute to Testers" if you want your build to b
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1.png' />
 
-You can also use other toggles on there to automatically distribute your app to the Enterprise App Store or Store Submit modules.
-
 #### Send to Publish
 
 Enabling "Automatically Distribute to Publish" will display the available [Publish](/publish-module) profiles for distribution.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-publish.png' />
 
-Simply select your relevant Publish profile, and Appcircle will automatically send your builds to the selected Publish profiles.
+Simply select your relevant Publish profiles, and Appcircle will automatically send your builds to the selected Publish profiles.
 
 #### Send to Enterprise App Store
 
@@ -171,12 +171,6 @@ Simply select your relevant Publish profile, and Appcircle will automatically se
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-build.png' />
 
 - Whenever a new **signed** build is created, it will be sent to the [Enterprise App Store](/enterprise-app-store).
-
-:::info
-- APK or IPA files can also be manually sent by clicking the **...** button and selecting Distribute Binary.
-:::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-binary.png' />
 
 ### Versioning configuration
 
@@ -192,4 +186,4 @@ You can define variables and secrets to be incorporated during the build in the 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
-For more information regarding creating environment variables for build profiles, please refer to the related [documentation](/build/build-environment-variables).
+For more information regarding creating environment variables for build profiles, please refer to the related [Environment Variables](/build/build-environment-variables) documentation.
