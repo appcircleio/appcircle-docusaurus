@@ -5,7 +5,7 @@ tags: [build, platform build guides, MAUI, .NET MAUI, custom scripts]
 sidebar_position: 10
 ---
 
-# .NET MAUI Apps
+# .NET MAUI Applications
 
 This guide gives necessary information about the steps that should be followed to successfully build and publish a [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui) app with Appcircle.
 
@@ -136,7 +136,7 @@ The custom script has some **variables that should be changed or customized** fo
 - **`framework`**: You should select a target framework that the app will be built for, considering your project requirements and .NET SDK version. See [here](https://learn.microsoft.com/en-us/dotnet/standard/frameworks) for details.
 - **`project`**: It should be the path to the project file for your app. `$AC_REPOSITORY_DIR` is a [reserved environment variable](/environment-variables/appcircle-specific-environment-variables) that should not be changed since it has the repository path value. You can change the rest of the path to customize it for your project structure.
 - **`appleCertificate`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [build profile configuration](/build/build-process-management/configurations#config-details) **Signing** tab.
-- **`appleProfile`**: It should be the name of the selected provisioning profile at the [build profile configuration](/build/build-process-management/configurations#build-configuration) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
+- **`appleProfile`**: It should be the name of the selected provisioning profile at the [build profile configuration](/build/build-process-management/configurations) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
 
 When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
@@ -183,7 +183,7 @@ Keep in mind that, in order to use Android Signing Identities in the build pipel
 
 :::
 
-**5.** In the [build profile configuration](/build/build-process-management/configurations#build-configuration), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
+**5.** In the [build profile configuration](/build/build-process-management/configurations), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
 
 **6.** In your [workflow](/workflows), use the below **Custom Script** as a replacement of the default **Android Build** step.
 

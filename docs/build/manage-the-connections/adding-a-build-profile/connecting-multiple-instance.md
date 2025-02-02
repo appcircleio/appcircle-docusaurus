@@ -28,11 +28,11 @@ See below steps for an example case from Azure DevOps.
 
 First of all, we select the relevant Git provider from the add new repository screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-repo.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
 Then click on the "Connect to an Azure DevOps Server" button in the window that opens.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-repo-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
 
 In the next window, fill in the relevant fields and click on the "Connect" button.
 

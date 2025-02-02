@@ -126,7 +126,7 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build. Select the branch from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-start-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidbuild1.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 

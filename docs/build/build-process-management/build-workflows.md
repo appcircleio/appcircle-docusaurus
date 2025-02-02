@@ -51,7 +51,7 @@ You can customize each step for specific configurations with your application st
 
 Appcircle's powerful Workflow Editor has a built-in Workflow Marketplace that allows you to select and insert an unlimited amount of steps to your workflow.
 
-You can find the full list of available workflow steps in our workflow marketplace at:;
+You can find the full list of available workflow steps in our workflow marketplace at:
 
 [https://www.appcircle.io/integrations/](https://www.appcircle.io/integrations/)
 
@@ -73,7 +73,7 @@ Each workflow step has its own set of configuration options, which can be set by
 
 The first three items are common for all steps and they are set individually for each step:
 
-- **Step Execution Active:** To enable/disable the step execution without removing it from the workflow
+- **Step Execution Active:** To enable/disable the step execution without removing it from the workflow.
 
 - **Always run this step even if the previous step fails:**  If this option is enabled, getting a failed result on a previous workflow step will not directly terminate the build process so this specific workflow step can run.
 
@@ -107,6 +107,6 @@ We are starting a build, and we see that it fails in the pipeline.
 
 And the build status will now appear as "Warning".
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/status-warning-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-warning2.png' />
 
 For more information regarding build statuses, please refer to [manual build](/build/build-process-management/manual-builds#build-statuses) documentation.

@@ -5,7 +5,7 @@ tags: [build, platform build guides, .net, xamarin, custom scripts]
 sidebar_position: 10
 ---
 
-# Xamarin Apps
+# Xamarin Applications
 
 This guide gives necessary information about the steps that should be followed to successfully build and publish a [Xamarin](https://dotnet.microsoft.com/en-us/apps/xamarin) app with Appcircle.
 
@@ -150,8 +150,8 @@ The custom script has some **variables that should be changed or customized** fo
 - **`XAMARIN_IOS_SDK_DOWNLOAD_URL`**: The download link for the Xamarin iOS SDK version you want to install. Copy the link for the version from [here](https://github.com/xamarin/xamarin-macios/blob/main/DOWNLOADS.md).
 - **`PROJECT_ROOT_DIR`**: The location of your `<YourProject>.sln` file. Your Git repository is typically saved within the `$AC_REPOSITORY_DIR` inside the runner. However, your .sln file may be located in a subdirectory of this folder. Please specify this. For instance, `$AC_REPOSITORY_DIR/src`
 - **`IOS_PROJECT_DIR`**: The location of the `<YOUR_IOS_PROJECT>.csproj` file is required for performing iOS-specific builds. In this script, it is `AppcircleXamarin.iOS/AppcircleXamarin.iOS.csproj`.
-- **`APPLE_CERTIFICATE_NAME`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [Build Profile Configuration](/build/build-process-management/configurations#build-configuration) **Signing** tab.
-- **`APPLE_PROFILE_NAME`**: It should be the name of the selected provisioning profile at the [Build Profile Configuration](/build/build-process-management/configurations#build-configuration) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
+- **`APPLE_CERTIFICATE_NAME`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [Build Profile Configuration](/build/build-process-management/configurations) **Signing** tab.
+- **`APPLE_PROFILE_NAME`**: It should be the name of the selected provisioning profile at the [Build Profile Configuration](/build/build-process-management/configurations) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
 
 When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
@@ -188,7 +188,7 @@ Keep in mind that, in order to use Android Signing Identities in the build pipel
 
 :::
 
-**5.** In the [Build Profile Configuration](/build/build-process-management/configurations#build-configuration), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
+**5.** In the [Build Profile Configuration](/build/build-process-management/configurations), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
 
 **6.** In your [workflow](/workflows), use the below **Custom Script** as a replacement of the default **Android Build** step. Remove the **Android App Post-Processor** and **Increment Build and Version Number** steps from your workflow.
 

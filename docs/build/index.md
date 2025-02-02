@@ -27,4 +27,4 @@ Find detailed instructions for building applications across various platforms in
 
 ## [Build History](/build/build-history)
 
-Build History Report contains the list of build sessions initiated in a given time period.
+The Build History Report provides a comprehensive list of build sessions initiated within a selected time period. Users can filter their search based on date and organization for more precise tracking. Additionally, the report can be exported in CSV format for further analysis and record-keeping.

@@ -13,7 +13,7 @@ The Connections page is a feature where we can check and edit the connections of
 
 On this page, you can view **OAuth** and **PAT** (Personal Access Token) connections.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connections-all-main-new.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-con1.png' />
 
 :::info
 If you have not previously connected to a Git provider on Appcircle, i.e., created a profile and not connected a repository, you will not see any connection on this page.

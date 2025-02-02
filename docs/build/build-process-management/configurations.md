@@ -9,13 +9,13 @@ import Screenshot from '@site/src/components/Screenshot';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Build Configuration
+# Build Configuration
 
 Configuring a build profile has some basic steps that need to be completed before starting a build.
 
 ### Creating a configuration
 
-You may create **Distribution** configuration to send your app to public stores or create **Testing** configuration to send your app to testers. Configurations allow you to set different certificates, distribution channels that can be used with different workflows.
+You may create a configuration profile that allows you to set different certificates, distribution channels that can be used with different workflows.
 
 - Click on **Configurations** to create configurations for different scenarios.
 
@@ -150,7 +150,7 @@ Simply, enable the toggle of the module that you need and select the required pr
 
 Distribution configuration allows you to set which testing groups will receive your application after the build is complete. You can manually submit your binary to [Testing Distribution](/testing-distribution) profiles, or Appcircle can do it for you.
 
-In this window, you can select one or more of the previously created distribution profiles or create a new one. You can use the "Manage Distribution Profiles" button above to quickly manage distribution profiles.
+In this window, you can select one or more of the previously created distribution profiles. You can use the "Manage Distribution Profiles" button above to quickly manage distribution profiles.
 
 Finally, check "Automatically Distribute to Testers" if you want your build to be automatically distributed to the selected testers or testing groups.
 
@@ -164,6 +164,8 @@ Enabling "Automatically Distribute to Publish" will display the available [Publi
 
 Simply select your relevant Publish profiles, and Appcircle will automatically send your builds to the selected Publish profiles.
 
+Please note that the Publish profiles should be created within the Publish module prior to configuring the distribution settings in the build profile.
+
 #### Send to Enterprise App Store
 
 - Navigate to the configuration, then go to the Distribution tab, and ensure that **Automatically Distribute to Enterprise App Store** is enabled.
@@ -171,6 +173,10 @@ Simply select your relevant Publish profiles, and Appcircle will automatically s
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-build.png' />
 
 - Whenever a new **signed** build is created, it will be sent to the [Enterprise App Store](/enterprise-app-store).
+
+:::info
+If you are building a binary for the first time or newly distributing it to the Enterprise App Store, a new Enterprise App Store profile will be created automatically. If there is an existing Enterprise App Store profile for your build, it will be directed to that profile.
+:::
 
 ### Versioning configuration
 

@@ -18,7 +18,7 @@ With Appcircle, you can manage your entire Flutter build workflows both for mobi
 
 Flutter Web Build is available as a workflow step in the workflow marketplace. Just configure your project as you would for iOS or Android and add the Flutter Build for Web step anywhere after the Flutter Install step to include a web build in the workflow.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-web-build-workflow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-flutter.png' />
 
 If you want to build your Flutter project only for the web, you can [add a Flutter Android project in the standard way](/build/platform-build-guides/building-flutter-applications), save your project configuration once, and then remove all the Android-related steps from the build workflow.
 
@@ -44,7 +44,7 @@ Once your build is configured, it can be built [manually or automatically in the
 
 After a build, you can download the web build output manually [from the build artifact list](/build/platform-build-guides/building-flutter-applications#starting-a-flutter-build-and-after-a-build) as the `web.zip` file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-flutter-web-artifact-download.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-flutter2.png' />
 
 :::info
 

@@ -5,7 +5,7 @@ tags: [build, platform build guides, ionic, custom scripts]
 sidebar_position: 9
 ---
 
-# Building Ionic Projects with Custom Scripts
+# Ionic Projects with Custom Scripts
 
 Appcircle provides Ionic projects through custom scripts.
 

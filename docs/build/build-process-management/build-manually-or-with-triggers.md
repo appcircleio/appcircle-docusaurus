@@ -11,13 +11,13 @@ There are multiple ways to trigger a build in Appcircle. You can run builds manu
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/zxxax79KD9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Workflows for Manual Builds
+## Triggers for Manual Builds
 
 For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](#trigger-priorities).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-push-trigger.png' />
 
-## Triggers configuration
+## Triggers Configuration
 
 To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
 
@@ -36,7 +36,7 @@ Builds can be triggered with various triggers such as every push to the reposito
 
 There are two options to set up webhooks for automatic builds:
 
-- You can [authorize the Appcircle app](/build/manage-the-connections/adding-a-build-profile#connect-your-repository) for GitHub, Bitbucket, or GitLab repositories for direct integration. The triggers will be available for use immediately. (You can skip the next part about the webhook setup.)
+- You can [authorize the Appcircle app](/build/manage-the-connections/adding-a-build-profile) for GitHub, Bitbucket, or GitLab repositories for direct integration. The triggers will be available for use immediately. (You can skip the next part about the webhook setup.)
 - For the repository connections through SSH, you can add the specific webhook for that build profile manually to the compatible git provider. This enables the git provider to send a POST request to Appcircle for the selected events, which you can then use for triggers.
 
 ### Setting Up Manual Webhooks for SSH and Public Repositories

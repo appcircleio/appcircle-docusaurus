@@ -15,11 +15,11 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 If you authorize Appcircle to access your repositories on BitBucket, you can select the repository that you want to connect in the next screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/main-connection.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
 After you click on **Bitbucket**, the following screen will appear. This will let you choose between selecting a repository which you are already authorized Appcircle to do or ask your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/main-connection-bt.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect3.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
@@ -39,7 +39,7 @@ Bitbucket's version must be **7.14** or higher.
 
 First, select **Bitbucket** then **Connect to a Bitbucket Server** through the menu:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/bt-connect-self.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect3.png' />
 
 Fill the relevant information about your Bitbucket self-hosted module. If you are not sure what those are, contact your system administrator.
 

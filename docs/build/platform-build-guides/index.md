@@ -41,11 +41,11 @@ Everything you need to know to build Flutter applications for multiple platforms
 
 Learn how to use custom scripts to build and customize Ionic projects for any requirements.
 
-### [.NET MAUI Apps](/build/platform-build-guides/building-dotnet-maui-apps)
+### [.NET MAUI Applications](/build/platform-build-guides/building-dotnet-maui-apps)
 
 Learn how to use custom scripts to build and customize .NET MAUI apps on Appcircle.
 
-### [Xamarin Apps](/build/platform-build-guides/building-xamarin-apps)
+### [Xamarin Applications](/build/platform-build-guides/building-xamarin-apps)
 
 Learn how to use custom scripts to build and customize Xamarin apps on Appcircle.
 

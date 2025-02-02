@@ -57,7 +57,7 @@ For more information on creating repository connections, please refer to the [co
 
 To test drive Appcircle, you can find various sample projects in the [Appcircle GitHub page](https://github.com/appcircleio?q=sample) or you can just press on the **Quick start using the sample repository** button to populate the repository with a compatible project based on the selected framework.
 
-For detailed instructions on connecting to each repository, refer to the [Connection Guides](/build/manage-the-connections/adding-a-build-profile#connect-your-repository).
+For detailed instructions on connecting to each repository, refer to the [Connection Guides](/build/manage-the-connections/adding-a-build-profile).
 
 Once the repository connection is established, the build profile will be created successfully. Appcircle will then pull your branches, commits, and other information from your repository. You can now use the build profile to manage and deploy your projects.
 

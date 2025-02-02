@@ -7,7 +7,7 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
-## Connect your repository
+# Connect your repository
 
 You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, You can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible git providers such as Azure DevOps and AWS CodeCommit. ([Please refer here for more information on AWS CodeCommit connections.](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh#how-to-connect-to-aws-codecommit-repositories-through-ssh-1))
 
@@ -15,7 +15,7 @@ You can also connect to your Self Hosted Bitbucket and GitLab account directly w
 
 If you authorize Appcircle to connect to your Github, BitBucket, or GitLab account, you can auto-build your project with hooks, get build statuses and the full list of commits. If you connect to a repository through SSH or through a public URL, you need to [set up webhooks manually](/build/build-process-management/build-manually-or-with-triggers#setting-up-manual-webhooks-for-ssh-and-public-repositories).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-connection.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
 When the "Autofill" toggle is activated on the **Select Repository** popup, Appcircle will try to create a default configuration using the selected repository and fill in the necessary fields.
 
@@ -24,16 +24,6 @@ When the "Autofill" toggle is activated on the **Select Repository** popup, Appc
 :::caution
 When you have exceeded the build limit of your plan, Appcircle will not be able to **Autofill** your build profile, although you activated the toggle.
 :::
-
-### Delete a Build Profile
-
-In order to delete a build, simply click on the Three Dot and click delete.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-delete-box.png' />
-
-After the prompt, the profile will be deleted.
-
-In order to free up storage in your organization, you should also remove the other references pointing to the artifact. In example, if you have the same artifact on the testing distribution, you should also delete those artifacts as well.
 
 ## FAQ
 

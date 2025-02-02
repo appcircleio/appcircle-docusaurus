@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 You can see the connection details by clicking the **"Connection Settings"** button in the build profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connections-new-main.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management1.png' />
 
 Different types of connections have different connection details in the connection settings.
 
@@ -19,7 +19,7 @@ Different types of connections have different connection details in the connecti
 
 For an OAuth connection, the details will be **"Provider"**, **"Token Owner"**, **"Code"**, **"Expire Access Token Date"**, **"Expire Refresh Token Date"**, **"Refresh Token"**, and **"Token"**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-last-1n.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management2.png' />
 
 ### PAT Connection
 
@@ -37,7 +37,7 @@ You only need to make sure that the modified token has the required authorizatio
 
 You can disconnect the build profile from the Git provider by using the **Disconnect** button below.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/disconnect-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management3.png' />
 
 When you click on the "Disconnect" button, Appcircle will bring up a warning dialog box for confirmation.
 
@@ -49,7 +49,7 @@ When we open a disconnected build profile, Appcircle will bring us a popup to qu
 
 If you do not want to connect again at that moment, you can do it later by clicking the "Reconnect" button next to the "Connection Settings".
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/reconnect-button.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management5.png' />
 
 :::info
 If you disconnect a build profile, only that build profile is disconnected from the Git provider.
@@ -67,13 +67,13 @@ Appcircle allows changing the Git provider while reconnecting a profile that has
 
 For example, assume that a build profile was previously connected to GitLab and then its Git repository had been moved to GitHub. In this case, you can select the new Git provider for that build profile by clicking the "Reconnect" button next to "Connection Settings".
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/reconnect-button.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management5.png' />
 
 Appcircle will display the Git providers and "Connect via SSH" connection options in a selectable list.
 
 Here you can select the Git provider you want to change or the "Connect via SSH" method regardless of the Git provider.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/change-provider.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management4.png' />
 
 Once the connection operations are completed, the Git provider redirects to the Appcircle build profile with the repository selection window.
 
@@ -129,7 +129,7 @@ In addition, the user who wants to take ownership of the connection must also ha
 
 When the process is completed successfully, you can click on the **Connection Settings** button again to see the changed ownership of the build profile connection. In the window that's opened, there won't be a **Change Owner** button because you are now the profile owner.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/owner-changed.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management6.png' />
 
 ## Managing OAuth Connections
 
@@ -137,7 +137,7 @@ When the process is completed successfully, you can click on the **Connection Se
 
 **Revoke Token** revokes the token of the Git provider on the Appcircle side. On the Git provider side, the token is still active and available. Appcircle cannot revoke the token from the provider.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connections-oauth-revoke-new.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-con1.png' />
 
 A revoked connection disconnects all build profiles connected to the respective Git provider. In this case, Appcircle shows a clear warning message. Here, you can see all the affected profiles.
 

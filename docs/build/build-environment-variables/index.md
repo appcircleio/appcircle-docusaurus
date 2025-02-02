@@ -103,7 +103,7 @@ As seen in the example above;
 
 :::
 
-### Using environment variable groups in builds
+#### Using environment variable groups in builds
 
 Environment variable groups can be used in builds to extend the workflow and add additional actions to workflow steps.
 
@@ -115,7 +115,7 @@ Then in workflows, you can specify the environment variable for use.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
 
-### Creating environment variables on the fly
+#### Creating environment variables on the fly
 
 If you want to create environment variables on the fly, you should write those environment variables to a special file called `AC_ENV_FILE_PATH`. For example, if we want to create a build number based on a timestamp and use it in the next steps we can use the following custom script.
 
@@ -125,7 +125,7 @@ If you want to create environment variables on the fly, you should write those e
 
 Any step after this custom script can access the `$BUILD_NUMBER` environment variable.
 
-### Using Environment Variables For SSH And PAT (Personal Access Token) Connections of the Git Provider
+#### Using Environment Variables For SSH And PAT (Personal Access Token) Connections of the Git Provider
 
 You can use personal access tokens or SSH private keys from the environment variables according to your needs by defining them once.
 

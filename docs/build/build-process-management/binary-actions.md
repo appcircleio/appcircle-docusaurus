@@ -21,9 +21,13 @@ Please note that AAB files will not be distributed automatically since they cann
 
 :::
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-dist.png' />
+
 ## View Build Logs
 
 This feature allows the relevant build logs to be reviewed in the Appcircle log window. The logs can be examined step by step separately.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-log.png' />
 
 ## Download Artifacts
 
@@ -49,7 +53,7 @@ If you disable signing or don't use any signing identities, iOS output will be a
 
 In addition to allowing the review of logs, Appcircle also permits the downloading of these logs in .txt file format, enabling the logs to be downloaded and used in a single file.
 
-## Working with build logs
+#### Working with build logs
 
 Build logs help you to observe and understand exactly what happened during a build. You can see build logs as they happen while a build is in process or you can view logs of a build after the build is completed.
 
@@ -67,13 +71,13 @@ You can use build logs to debug your builds in case you get any errors. Addition
 
 You can also download build logs in plain text format in case you would like to investigate them on your own or share with your team.
 
-## Delete Specific Builds
+#### Delete Specific Builds
 
 If you want to free up space from your Artifact Storage, you can delete older build profiles which are cluttering your space.
 
 To do that, simply navigate to the Builds tab and select the builds, then click on the Delete icon
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-delete-specific.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-delete5.png' />
 
 :::info
 
@@ -86,8 +90,6 @@ Build Deletion feature is only available for organizations with Enterprise licen
 ### Artifact Storage is Full
 
 Older builds and/or testing distributions will use almost all of your storage. If your artifact storage is full, you can free up some of the old artifacts.
-
-#### [Refer here to delete a build profile](/build/manage-the-connections/adding-a-build-profile#delete-a-build-profile)
 
 #### [Refer here to delete specific builds from your build profile](/build/build-process-management/binary-actions#delete-specific-builds)
 
