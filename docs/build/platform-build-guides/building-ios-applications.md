@@ -1,5 +1,5 @@
 ---
-title: Building iOS Applications
+title: iOS Applications
 description: Building iOS applications may be complex and confusing. Appcircle will help you smooth the process and doesn't require any additional configuration files from you.
 tags: [build, platform build guides, ios, faq]
 sidebar_position: 1
@@ -8,7 +8,7 @@ sidebar_position: 1
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Building iOS Applications
+# iOS Applications
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/3ZorIciD7-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -92,8 +92,6 @@ You can visit the following page for details on build triggers:
   Build Manually or Automatically with Webhooks and Triggers
 </ContentRef>
 
-###
-
 ### Signing
 
 The next step on build configuration is Signing. Here, please select the provisioning profile you added at [Apple Certificates & Provisioning Profiles](/signing-identities) page.
@@ -164,7 +162,7 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild1.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
@@ -188,7 +186,7 @@ Your build will be distributed automatically if you had set up auto build earlie
 
 <ContentRef url="/build/post-build-operations/after-a-build">After a Build</ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-distribute-artifacts.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild2.png' />
 
 ## FAQ
 

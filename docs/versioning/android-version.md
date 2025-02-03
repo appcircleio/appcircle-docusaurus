@@ -1,8 +1,8 @@
 ---
-title: Understanding Android Versioning
+title: Android Versioning
 description: Learn how to manage version code and version name in Android projects with Appcircle
 tags: [android, versioning, version code, version name]
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

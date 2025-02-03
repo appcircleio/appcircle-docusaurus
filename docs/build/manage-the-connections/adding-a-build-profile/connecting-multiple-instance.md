@@ -8,8 +8,6 @@ sidebar_position: 7
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-### Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure DevOps)
-
 Multiple connection features have been introduced for connections made with PAT (Personnel Access Token) on Bitbucket, Azure DevOps, or GitLab. Thus, it is possible to add Bitbucket, Azure DevOps, or GitLab servers located in different environments by a single user.
 
 For example, the same user can connect to two different instances, such as dev1.azure.companyname.com and dev2.azure.companyname.com.
@@ -28,11 +26,11 @@ See below steps for an example case from Azure DevOps.
 
 First of all, we select the relevant Git provider from the add new repository screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-repo.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
 Then click on the "Connect to an Azure DevOps Server" button in the window that opens.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-repo-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
 
 In the next window, fill in the relevant fields and click on the "Connect" button.
 

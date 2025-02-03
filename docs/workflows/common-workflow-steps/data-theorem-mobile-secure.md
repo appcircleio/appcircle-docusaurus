@@ -59,7 +59,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
-We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
 
 :::
 

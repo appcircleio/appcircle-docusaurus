@@ -67,15 +67,15 @@ Two files will be created as `appcircle-ssh.pub` (Public key) and `appcircle-ssh
 
 You can then run the `cat ./appcircle-ssh` command and enter its output to Appcircle and run the `cat ./appcircle-ssh.pub` command and enter its output to the SSH keys section of the Git provider.
 
-Select **Connect via SSH **through the connection selection
+Select **Connect via SSH** through the connection selection
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/main-connection-via-ssh2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
 Then, enter your relevant information to connect to the private repository:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ssh-connection-2.png' />
 
-After the connection is successful, you can [view your newly created profile](/build/manage-the-connections/adding-a-build-profile/#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
 :::info
 

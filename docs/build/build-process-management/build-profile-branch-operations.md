@@ -2,7 +2,7 @@
 title: Branch Management
 description: Learn how to manage branches in Appcircle
 tags: [build, build profile, branch management]
-sidebar_position: 3
+sidebar_position: 8
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -43,6 +43,12 @@ If you are using a branch frequently such as develop or master, you can pin it t
 The branch will be moved to the top with a pinned indicator. You can unpin the branch by pressing pin button again.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/branch-operation-pin-pinned.png' />
+
+### Manually Fetching Branch and Commits
+
+By clicking the refresh button next to the Branch List title, you can manually start a fetching process that will update your commits and branches from the remote repository.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-fetch.png' />
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

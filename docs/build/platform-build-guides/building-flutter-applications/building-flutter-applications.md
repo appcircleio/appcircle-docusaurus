@@ -1,5 +1,5 @@
 ---
-title: Building Flutter Mobile Applications
+title: Flutter Mobile Applications
 description: You can build your Flutter applications in Appcircle for iOS or Android platforms.
 tags: [build, platform build guides, flutter]
 sidebar_position: 7
@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Building Flutter Mobile Applications
+# Flutter Mobile Applications
 
 You can build your Flutter applications in Appcircle for iOS or Android platforms.
 
@@ -154,7 +154,7 @@ You can also set the preferred Flutter version on config screen. If you don't se
 
 You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild1.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 

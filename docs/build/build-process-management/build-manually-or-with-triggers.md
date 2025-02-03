@@ -1,29 +1,31 @@
 ---
-title: Manual and Automatic Builds
+title: Triggers
 description: Learn how to build manually or automatically with webhooks and triggers in Appcircle
 tags: [build, build process management, manual build, automatic build, triggers, webhooks]
-sidebar_position: 10
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-
-# Build Manually or Automatically with Webhooks and Triggers
 
 There are multiple ways to trigger a build in Appcircle. You can run builds manually or automate the build process with various triggers.
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/zxxax79KD9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Manual Build
-
-As the name states, your build profile will not build your application until you tell it to. You can browse branches in your Git repository and select any commit from any branch you need to build. To initiate a manual build, just press the **Start Build** button.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/adding-a-build-profile-inside.png' />
-
-### Workflows for Manual Builds
+## Triggers for Manual Builds
 
 For the manual builds, the currently available push triggers apply and if no trigger is configured, the following trigger is provided by default under the [push triggers](#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](#trigger-priorities).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-push-trigger.png' />
+
+## Triggers Configuration
+
+To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-trigger.png' />
+
+The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](/build/build-process-management/build-manually-or-with-triggers#wildcard-reference) for branch names to trigger builds.
+
+You also need to select a workflow for each trigger and the build will be run with that trigger for the specified branch. You can build the same branch with different workflows (e.g. production or development) or you can use the same workflow for multiple branches (e.g. multiple feature branches built with the develop workflow).
 
 ## Automatic Build
 
@@ -34,7 +36,7 @@ Builds can be triggered with various triggers such as every push to the reposito
 
 There are two options to set up webhooks for automatic builds:
 
-- You can [authorize the Appcircle app](/build/manage-the-connections/adding-a-build-profile#connect-your-repository) for GitHub, Bitbucket, or GitLab repositories for direct integration. The triggers will be available for use immediately. (You can skip the next part about the webhook setup.)
+- You can [authorize the Appcircle app](/build/manage-the-connections/adding-a-build-profile) for GitHub, Bitbucket, or GitLab repositories for direct integration. The triggers will be available for use immediately. (You can skip the next part about the webhook setup.)
 - For the repository connections through SSH, you can add the specific webhook for that build profile manually to the compatible git provider. This enables the git provider to send a POST request to Appcircle for the selected events, which you can then use for triggers.
 
 ### Setting Up Manual Webhooks for SSH and Public Repositories
@@ -43,7 +45,7 @@ For repositories connected through SSH, you can set up triggers with webhooks in
 
 When you connect a repository through SSH or through a public URL, the Webhook URL option will be enabled in the context menu of the build profile, accessible from the top of the profile details.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-webhook-url.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-webhooks.png' />
 
 If the git provider is detected, a compatible URL will be displayed automatically. If not, you will be first prompted to select the provider to display the webhook URL.
 
@@ -73,13 +75,7 @@ You can also use[ appcircle-cli](/appcircle-api-and-cli) to trigger your builds 
 
 To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-workflow-trigger-showcase.png' />
-
-The triggers are set up at the profile level and you can specify individual branch names or [utilize wildcards](#wildcard-reference) for branch names to trigger builds.
-
-You also need to select a workflow for each trigger and the build will be run with that trigger for the specified branch. You can build the same branch with different workflows (e.g. production or development) or you can use the same workflow for multiple branches (e.g. multiple feature branches built with the develop workflow).
-
-#### Auto build on every push
+### Auto build on every push
 
 Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
 
@@ -87,7 +83,7 @@ Appcircle will start building your application whenever you push a commit to you
 
 You must choose both workflow and a configuration when you're setting up a trigger.
 
-#### Auto build pull/merge requests
+### Auto build pull/merge requests
 
 Appcircle will start building your application whenever you initiate a pull request or merge request from the source branch(es) to the target branch.
 
@@ -110,13 +106,13 @@ Appcircle will only run the trigger for PR creation or PR updates.
 
 :::
 
-#### Triggering different workflows at the same time
+### Triggering different workflows at the same time
 
 Now you will be able to trigger different workflows in the same source branch and target branch on Appcircle at once. As soon as the trigger is triggered, Appcircle will start running all the triggered triggers in the build queue, starting from the first place in the established trigger queue.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-pr-mr-trigger-multiple.png' />
 
-#### Selective auto build with specific tags
+### Selective auto build with specific tags
 
 Appcircle will start building your application with the selected workflow whenever you perform a push with certain tags to your Git repository. Your project will be built automatically only if the push has the tags you specify or you can specify a wildcard tag to build all tagged pushes.
 
@@ -161,6 +157,41 @@ You can specify branch names or tags with an asterisk wildcard to automate build
 | `*-fix-*`     | Build if it `-fix-` is present anywhere in the name   |
 | `fix-*-build` | Build if it starts with `fix-` and ends with `-build` |
 | `*`           | Build everything                                      |
+
+## FAQ
+
+### Why is my Appcircle trigger not working and how can I fix it?
+
+First of all, you should be ensured that the build profile triggers are set for the desired branches and actions. Please check the trigger settings from the [**Managing Triggers for Builds**](/build/build-process-management/build-manually-or-with-triggers#managing-triggers-for-builds) section in the documentation.
+
+Appcircle is triggered via the Git provider's webhooks. To properly work with triggers, webhooks in the repositories are used by Appcircle. Also, it should be ensured that the repository has webhook access to Appcircle. In order for webhooks to be connected, the Git provider connection needs to be set properly while creating a build profile.
+
+Certain Git actions to the repositories, such as push, merge, pull request, tag push, etc., activate a specified event with the repositories webhooks. It is a necessity to ensure that the desired event is actually triggered by the action in the Git provider's repository.
+
+If webhooks are disabled by many usages or connection-based errors, using test events may re-enable webhooks via Git providers.
+
+To ensure webhooks are set and working, the webhook histories may be reviewed within the Git providers. Let's have a check with Git providers down below. The steps in the Git provider's documentation can be followed to access the webhook event history.
+
+- [**GitHub Webhook Deliveries**](https://docs.github.com/en/webhooks/testing-and-troubleshooting-webhooks/viewing-webhook-deliveries#about-webhook-deliveries)
+- [**GitLab Webhook Request History**](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#view-webhook-request-history)
+- [**Azure DevOps Services Webhook History**](https://learn.microsoft.com/en-us/azure/devops/service-hooks/services/webhooks?view=azure-devops)
+- [**Bitbucket Webhook Documentations**](https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks)
+
+:::info Bitbucket Webhook Event History
+
+A document detailing the history of webhooks is not provided by Bitbucket. To access the webhook history please navigate to:
+
+**Bitbucket -> Repository -> Repository Settings -> Webhooks -> View Requests**
+
+View Requests has to be enabled before requests can be seen.
+
+:::
+
+Once the webhook is created and confirmed to be properly set up and healthy in the Appcircle build profile, and it is verified to work correctly with the specific Git provider, the process works as follows:
+
+- A Git action, such as pushing a code block, triggers a webhook event.
+- This webhook event activates the trigger in Appcircle.
+- Appcircle then automatically starts the build process.
 
 ### How to enable triggers for AWS CodeCommit repositories?
 

@@ -10,8 +10,6 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Connecting to Azure DevOps
 
-## Connecting to Azure DevOps Services Cloud
-
 ### Requirements
 
 You must enable third-party application access via OAuth. To do that, you can follow the steps:
@@ -29,17 +27,17 @@ If you don't enable third-party application access via the Oauth setting, you ca
 
 If you authorize Appcircle to access your repositories on Azure DevOps, you can select the repository that you want to connect in the next screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-connect-main.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
 After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or ask your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-connection-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-bitbucket-gitlab.png' />
 
-After the connection is successful, you can [view your newly created profile](/build/manage-the-connections/adding-a-build-profile/#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
 ## Connecting to Azure DevOps Server Repository
 
@@ -55,7 +53,7 @@ Azure DevOps Server version must be **Azure DevOps Server 2020** or higher.
 
 First, select **Azure** and then **Connect to an Azure DevOps Server** through the menu:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-con-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
 
 Fill in the relevant information about your Azure DevOps Server. If you are not sure what those are, contact your system administrator.
 

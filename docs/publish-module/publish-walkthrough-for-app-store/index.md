@@ -206,7 +206,7 @@ You can deploy your binary file to the Publish module from the Build module auto
 
 :::info Upload via Build Module
 
-To upload a binary from the Build module, please refer to the [**Distribution Configuration**](/build/build-process-management/build-profile-configuration#distribution-configuration) and [**Post-Build Operations**](/build/post-build-operations/after-a-build) documents for step-by-step instructions.
+To upload a binary from the Build module, please refer to the [**Distribution Configuration**](/build/build-process-management/configurations#distribution-configuration) and [**Post-Build Operations**](/build/build-process-management#binary-actions) documents for step-by-step instructions.
 
 :::
 

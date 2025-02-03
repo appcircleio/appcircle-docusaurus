@@ -21,31 +21,31 @@ tags:
 
 Find detailed instructions on building applications for various platforms using Appcircle:
 
-### [Building iOS Applications](/build/platform-build-guides/building-ios-applications)
+### [iOS Applications](/build/platform-build-guides/building-ios-applications)
 
 Comprehensive guide for setting up iOS app builds, from provisioning to distribution.
 
-### [Building Android Applications](/build/platform-build-guides/building-android-applications)
+### [Android Applications](/build/platform-build-guides/building-android-applications)
 
 Step-by-step instructions on how to configure and optimize the Android build process.
 
-### [Building React Native Applications](/build/platform-build-guides/building-react-native-applications)
+### [React Native Applications](/build/platform-build-guides/building-react-native-applications)
 
 Tailored guidance for building React Native apps, covering both iOS and Android builds.
 
-### [Building Flutter Applications](/build/platform-build-guides/building-flutter-applications)
+### [Flutter Applications](/build/platform-build-guides/building-flutter-applications)
 
 Everything you need to know to build Flutter applications for multiple platforms.
 
-### [Building Ionic Projects with Custom Scripts](/build/platform-build-guides/building-ionic-projects-with-custom-scripts)
+### [Ionic Projects](/build/platform-build-guides/building-ionic-projects-with-custom-scripts)
 
 Learn how to use custom scripts to build and customize Ionic projects for any requirements.
 
-### [Building .NET MAUI Apps](/build/platform-build-guides/building-dotnet-maui-apps)
+### [.NET MAUI Applications](/build/platform-build-guides/building-dotnet-maui-apps)
 
 Learn how to use custom scripts to build and customize .NET MAUI apps on Appcircle.
 
-### [Building Xamarin Apps](/build/platform-build-guides/building-xamarin-apps)
+### [Xamarin Applications](/build/platform-build-guides/building-xamarin-apps)
 
 Learn how to use custom scripts to build and customize Xamarin apps on Appcircle.
 
@@ -55,7 +55,7 @@ Learn how to use custom scripts to build and customize Xamarin apps on Appcircle
 
 There may be a bunch of reasons for a build to fail.
 
-The best way to learn the reason is to check the build logs. See [**Working With Build Logs**](/build/post-build-operations/after-a-build#working-with-build-logs) section for details on this.
+The best way to learn the reason is to check the build logs. See [**Working With Build Logs**](/build/build-process-management/binary-actions#working-with-build-logs) section for details on this.
 
 Build logs will display everything that happened in each workflow step in detail and let you examine what went wrong during the build.
 

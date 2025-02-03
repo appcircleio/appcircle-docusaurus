@@ -1,5 +1,5 @@
 ---
-title: Building React Native Applications
+title: React Native Applications
 description: You can build your React Native applications in Appcircle for iOS or Android platforms.
 tags: [build, platform build guides, react native, faq]
 sidebar_position: 3
@@ -8,7 +8,7 @@ sidebar_position: 3
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Building React Native Applications
+# React Native Applications
 
 You can build your React Native applications in Appcircle for iOS or Android platforms.
 

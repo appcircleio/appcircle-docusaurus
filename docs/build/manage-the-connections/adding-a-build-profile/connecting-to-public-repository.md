@@ -35,11 +35,11 @@ When you enter the profile after the build, the following screen will appear. Cl
 
 :::tip
 
-Clicking **Quick start using the sample repository **will also connect the relevant sample project with public connection.
+Clicking **Quick start using the sample repository** will also connect the relevant sample project with public connection.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/main-connection.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
 After you click on **Connect via URL**, the following screen will appear and let you enter an URI
 
@@ -53,7 +53,7 @@ Public connection refers to the HTTP(s) connection by Git Providers. SSH links i
 
 :::
 
-After the connection is successful, you can [view your newly created profile](/build/manage-the-connections/adding-a-build-profile/#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
 :::info
 

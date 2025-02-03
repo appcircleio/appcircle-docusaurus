@@ -1,8 +1,8 @@
 ---
-title: Understanding iOS Versioning
+title: iOS Versioning
 description: Learn how to manage versioning for iOS applications in Appcircle
 tags: [versioning, ios]
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

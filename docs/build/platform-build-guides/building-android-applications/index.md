@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-# Building Android Applications
+# Android Applications
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/-6CpaE1FW7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -126,7 +126,7 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build. Select the branch from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-start-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidbuild1.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
@@ -174,7 +174,7 @@ You can get the JDK home paths for each build pool from [Android's build infrast
 
 #### 2. Change `JAVA_HOME` using environment variables
 
-You can use the [environment variables](/environment-variables/managing-variables) to enable the JDK version your project requires.
+You can use the [environment variables](/build/build-environment-variables) to enable the JDK version your project requires.
 
 For example, you can take the following steps to change the default Java version to 17.
 
@@ -224,7 +224,7 @@ If you're using DexGuard, you may need to above modifications to your DexGuard c
 
 ### I received a google-services.json Error but I don't want to push this file to the repository
 
-Secret files such as the google-services.json can be added as a [secret environment variable](/environment-variables/managing-variables#adding-files-as-environment-variables) and then [selected in the build configuration](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+Secret files such as the google-services.json can be added as a [secret environment variable](/build/build-environment-variables#adding-files-as-environment-variables) and then [selected in the build configuration](/build/build-process-management/configurations#environment-variables-configuration).
 
 Then, you can add a custom script step before the Android build step and move the file to the expected path during the build with a code like the following (where the secret environment variable is named as `GOOGLE_SERVICES_JSON`) :
 
