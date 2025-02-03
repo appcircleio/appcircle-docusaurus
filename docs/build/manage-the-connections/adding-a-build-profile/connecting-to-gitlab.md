@@ -10,8 +10,6 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Connecting to GitLab
 
-## Connecting to gitlab.com
-
 If you authorize Appcircle to access your repositories on GitLab, you can select the repository that you want to connect in the next screen.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />

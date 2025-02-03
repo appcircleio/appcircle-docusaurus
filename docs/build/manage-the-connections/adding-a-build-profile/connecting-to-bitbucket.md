@@ -11,8 +11,6 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 # Connecting to Bitbucket
 
-## Connecting to bitbucket.com
-
 If you authorize Appcircle to access your repositories on BitBucket, you can select the repository that you want to connect in the next screen.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />

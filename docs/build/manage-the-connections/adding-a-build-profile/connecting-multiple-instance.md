@@ -8,8 +8,6 @@ sidebar_position: 7
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-### Multiple Instances Using Git Providers (Bitbucket, GitLab, Azure DevOps)
-
 Multiple connection features have been introduced for connections made with PAT (Personnel Access Token) on Bitbucket, Azure DevOps, or GitLab. Thus, it is possible to add Bitbucket, Azure DevOps, or GitLab servers located in different environments by a single user.
 
 For example, the same user can connect to two different instances, such as dev1.azure.companyname.com and dev2.azure.companyname.com.

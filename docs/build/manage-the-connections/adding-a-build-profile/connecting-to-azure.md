@@ -10,8 +10,6 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Connecting to Azure DevOps
 
-## Connecting to Azure DevOps Services Cloud
-
 ### Requirements
 
 You must enable third-party application access via OAuth. To do that, you can follow the steps:
