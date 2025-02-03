@@ -12,7 +12,6 @@ Current headlines and the actions you can complete are listed below:
 
 - [Change Password](/account/my-account/account-management/change-password)
 - [Authenticator (Two Factor Authentication)](/account/my-account/account-management/authenticator-two-factor-authentication)
-- [Federated Identity (Linked Login Providers)](/account/my-account/account-management/federated-identity-linked-login-providers)
 - [Active Sessions](/account/my-account/account-management/active-sessions)
 - [Authentication Logs](/account/my-account/account-management/authentication-logs)
 - [Delete Account](/account/my-account/account-management/delete-account)
