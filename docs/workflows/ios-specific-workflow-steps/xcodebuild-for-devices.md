@@ -170,3 +170,21 @@ end
 ```
 
 Now, the `run_command_simple()` function will execute your customized `xcodebuild` command.
+
+### How can I resolve OpenSSL signing error? (Only Self-Hosted Users)
+
+All tools running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the tools used on runners is OpenSSL. In Appcircle Cloud environments, OpenSSL 3.3.6 version on macOS Sonoma and OpenSSL 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documentations.
+
+Since Appcircle does not have direct access to self-hosted environments, some user-side work on runners may update the default versions. If you have updated your OpenSSL version to a version above 3.3.6 for any reason in your Self-Hosted environments, you will encounter an error like below. 
+
+```
+`parse_certificate': Error outputting keys and certificates (RuntimeError)
+C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:355:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
+Could not find certificate from <stdin>
+Error: Error outputting keys and certificates
+C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:355:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
+```
+
+The reason for this error is that the encryption algorithm in the new versions of OpenSSL has been changed. When you encounter this error, it is necessary to check the OpenSSL versions on the runners that received the error and downgrade to version 3.3.6 if there is a version difference. 
+
+For more information about versions of OpenSSL, please visit the [**OpenSSL**](https://docs.openssl.org/master/man1/openssl-pkcs12/#notes) documentations.
