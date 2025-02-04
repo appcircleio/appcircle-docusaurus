@@ -171,11 +171,11 @@ end
 
 Now, the `run_command_simple()` function will execute your customized `xcodebuild` command.
 
-### How can I resolve OpenSSL signing error?
+### How can I resolve the OpenSSL signing error?
 
-All tools running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the tools used on runners is **LibreSSL**. In Appcircle Cloud environments, **LibreSSL** 3.3.6 version on macOS Sonoma and **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documentations.
+All tools running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the tools used on runners is **LibreSSL**. In Appcircle Cloud environments, the **LibreSSL** 3.3.6 version on macOS Sonoma and the **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documentations.
 
-Although **LibreSSL** and **OpenSSL** are alternatives to each other, there are differences between them. **LibreSSL** comes by default with macOS machines and is managed by **Apple**. For this reason, since Appcircle does not have direct access to self-hosted environments, some user-side work on runners can replace **LibreSSL** with **OpenSSL** or update their versions. If **OpenSSL** is used instead of **LibreSSL** for any reason in your self-hosted environments, you will get an **error** like below.
+Although **LibreSSL** and **OpenSSL** are alternatives to each other, there are differences between them. **LibreSSL** comes by default with macOS machines and is managed by **Apple**. For this reason, since Appcircle does not have direct access to self-hosted environments, some user-side work on runners can replace **LibreSSL** with **OpenSSL** or update their versions. If **OpenSSL** is used instead of **LibreSSL** for any reason in your self-hosted environments, you will get an **error** like the one below.
 
 :::info Cloud Customers
 
