@@ -173,9 +173,9 @@ Now, the `run_command_simple()` function will execute your customized `xcodebuil
 
 ### How can I resolve OpenSSL signing error? (Only Self-Hosted Users)
 
-All tools running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the tools used on runners is OpenSSL. In Appcircle Cloud environments, OpenSSL 3.3.6 version on macOS Sonoma and OpenSSL 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documentations.
+All tools running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the tools used on runners is **LibreSSL**. In Appcircle Cloud environments, **LibreSSL** 3.3.6 version on macOS Sonoma and **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documentations.
 
-Since Appcircle does not have direct access to self-hosted environments, some user-side work on runners may update the default versions. If you have updated your OpenSSL version to a version above 3.3.6 for any reason in your Self-Hosted environments, you will encounter an error like below. 
+Although **LibreSSL** and **OpenSSL** are alternatives to each other, there are differences between them. **LibreSSL** comes by default with macOS machines and is managed by **Apple**. For this reason, since Appcircle does not have direct access to self-hosted environments, some user-side work on runners can replace **LibreSSL** with **OpenSSL** or update their versions. If **OpenSSL** is used instead of **LibreSSL** for any reason in your self-hosted environments, you will get an **error** like below.
 
 ```
 `parse_certificate': Error outputting keys and certificates (RuntimeError)
@@ -185,6 +185,6 @@ Error: Error outputting keys and certificates
 C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:355:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
 ```
 
-The reason for this error is that the encryption algorithm in the new versions of OpenSSL has been changed. When you encounter this error, it is necessary to check the OpenSSL versions on the runners that received the error and downgrade to version 3.3.6 if there is a version difference. 
+The reason for this **error** is that the **encryption algorithm** in the new versions of **OpenSSL** has been changed. In **OpenSSL** versions **3 and above**, the algorithm named **RC2** is marked as **legacy**. When you encounter this error, you need to change the **OpenSSL** tool on the runners receiving the error to **LibreSSL**. 
 
-For more information about versions of OpenSSL, please visit the [**OpenSSL**](https://docs.openssl.org/master/man1/openssl-pkcs12/#notes) documentations.
+For more information about **legacy algorithms**, please visit the [**OpenSSL**](https://docs.openssl.org/3.0/man7/OSSL_PROVIDER-legacy/) documentations.
