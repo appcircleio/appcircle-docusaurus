@@ -25,6 +25,30 @@ When you successfully authorize your account, the following screen will appear t
 
 After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
+## Connecting to Bitbucket Cloud Repository
+
+To connect to a Bitbucket Cloud repository using either OAuth or Personal Access Token,
+
+- OAuth Connection
+
+Clicking on Get Repositories from Bitbucket Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+
+- PAT (Personal Access Token) Connection or Bitbucket App Password
+
+Clicking on Connect to a Bitbucket server, which can be selected to connect to self-hosted and PAT connections, will require a token or password. Generating an app password or a PAT for Appcircle will require a list of permissions down below.
+
+### Permissions List
+
+The following table details the permissions that Appcircle requires from Bitbucket. 
+
+| Scopes                      | Description                                |
+|-----------------------------|--------------------------------------------|
+| Account - Email             |Provides access to view the user's primary email address.  |
+| Project - Read              |Provides access to view the projects the user has access to view. Read access (repository) to all the repositories in the projects is also granted.|
+| Repository - Read           |Provides access to view all the repositories the user has access to view, including the source code, Issues, and Wiki. This does not include pull requests.|
+| Pull Request - Read         |Provides access to view and list pull requests on the repositories the user has access to view. This permission (scope) also allows the user to create and resolve tasks.|
+| Webhooks - Read&Write       |Required for webhook operations. For Appcircle triggers to work.|
+
 ## Connecting to Bitbucket Self Hosted Repository
 
 Overall process is similar with private repository connection through SSH, but Appcircle allows to directly connect through Bitbucket Self Hosted URL.
