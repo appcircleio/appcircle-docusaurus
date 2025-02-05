@@ -82,6 +82,10 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 
 If the **standalone Appcircle server** is already using **HTTPS**, you **should provide an SSL certificate** for the Appcircle server Kubernetes deployment.
 
+:::tip
+You can reuse the SSL certificates from your standalone Appcircle server for the Kubernetes deployment.  These certificates can be found in your standalone server's `global.yaml` or `user-secret` file. This will ensure consistency and avoid the need to generate new certificates.
+:::
+
 If the **standalone Appcircle server** uses **HTTP**, you can **skip configuring an SSL certificate**.
 
 <details>
@@ -181,11 +185,6 @@ Ensure the bastion host has enough storage to temporarily hold any necessary mig
 
   - **Standalone Appcircle server access**: The bastion host should have SSH access to the standalone Appcircle server.
   - **Kubernetes Access**: The bastion host should be able to access the Kubernetes cluster API with `kubectl` for deploying Appcircle server.
-
-- **Tools**: The tools below are required for the migration:
-  - `kubectl`
-  - `helm`
-  - Additional tools needed for specific steps will be mentioned in their respective sections. Please follow the instructions in each step to ensure you have the necessary tools installed and ready to use.
 
 ## Pre-installation Steps
 
@@ -693,64 +692,8 @@ The `redis` subdomain used on the standalone Appcircle server has been updated t
 
 Review the `global.yaml` file from your standalone Appcircle server for any custom configurations. Compare these settings with the Appcircle Helm chart documentation and apply them in your `values.yaml` if supported. This ensures consistency and avoids potential issues during migration.
 
-### 4. Add the Appcircle Helm Repository
 
-**Add the Appcircle Helm repository** to the configuration of Helm:
-
-```bash
-helm repo add appcircle https://helm-package.appcircle.io && \
-helm repo update
-```
-
-### 5. Install the Appcircle Server
-
-**Run the following Helm command** to install the Appcircle server chart.
-
-In this example, we deploy the Appcircle server to a single namespace, using **`appcircle`** as the **namespace** and **`appcircle-server`** as the Helm **release name**.
-
-```bash
-helm install appcircle-server appcircle/appcircle \
-  -n appcircle \
-  -f values.yaml
-```
-
-:::tip
-To install specific version of the Appcircle Helm chart, you can use the example command below:
-
-```bash
-helm install appcircle-server appcircle/appcircle \
-  -n appcircle \
-  -f values.yaml
-  --version 0.1.1
-```
-:::
-
-:::warning
-If you need or want to change the release name, please note that it should be 18 characters or fewer.
-:::
-
-:::caution Important Note on Helm Installation Timeout
-
-Since we disabled a a module before the migration, **Helm will likely wait for the module to be installed** before reporting the installation as successful. This will cause the installation to **timeout**.
-
-**Don't worry**, this is expected behavior. After completing the data migration steps, we will complete the Helm installation by re-enabling the job, allowing the installation to finalize successfully.
-:::
-
-You can watch the Appcircle server installation using any Kubernetes monitoring tool. The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes.
-
-To make sure that the stateful apps are ready for migration, you can run the command below and wait for `The databases are ready for migration steps.` output.
-
-```bash
-kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=auth-postgresql' --timeout=300s && \
-kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=mongodb' --timeout=300s && \
-kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=minio' --timeout=300s && \
-kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=vault' --timeout=300s && \
-echo "The databases are ready for migration steps."
-```
-
-## Migrating the Data
-
-### 1. Create Kubernetes Secrets
+### 4. Create Kubernetes Secrets
 
 This section details the creation of Kubernetes secrets required for Appcircle to function correctly. These secrets store sensitive information such as passwords and certificates, securely injecting them into your Appcircle deployment.
 
@@ -894,7 +837,64 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
    --from-literal=root-password=<your-minio-root-password>
    ```
 
-### 2. PostgreSQL Backup & Restore
+### 5. Add the Appcircle Helm Repository
+
+**Add the Appcircle Helm repository** to the configuration of Helm:
+
+```bash
+helm repo add appcircle https://helm-package.appcircle.io && \
+helm repo update
+```
+
+### 6. Install the Appcircle Server
+
+**Run the following Helm command** to install the Appcircle server chart.
+
+In this example, we deploy the Appcircle server to a single namespace, using **`appcircle`** as the **namespace** and **`appcircle-server`** as the Helm **release name**.
+
+```bash
+helm install appcircle-server appcircle/appcircle \
+  -n appcircle \
+  -f values.yaml
+```
+
+:::tip
+To install specific version of the Appcircle Helm chart, you can use the example command below:
+
+```bash
+helm install appcircle-server appcircle/appcircle \
+  -n appcircle \
+  -f values.yaml
+  --version 0.1.1
+```
+:::
+
+:::warning
+If you need or want to change the release name, please note that it should be 18 characters or fewer.
+:::
+
+:::caution Important Note on Helm Installation Timeout
+
+Since we disabled a a module before the migration, **Helm will likely wait for the module to be installed** before reporting the installation as successful. This will cause the installation to **timeout**.
+
+**Don't worry**, this is expected behavior. After completing the data migration steps, we will complete the Helm installation by re-enabling the job, allowing the installation to finalize successfully.
+:::
+
+You can watch the Appcircle server installation using any Kubernetes monitoring tool. The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes.
+
+To make sure that the stateful apps are ready for migration, you can run the command below and wait for `The databases are ready for migration steps.` output.
+
+```bash
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=auth-postgresql' --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=mongodb' --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=minio' --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=vault' --timeout=300s && \
+echo "The databases are ready for migration steps."
+```
+
+## Migrating the Data
+
+### 1. PostgreSQL Backup & Restore
 
 #### Standalone Appcircle Server
 
@@ -967,7 +967,7 @@ If you have used an **external PostgreSQL service** instead of the one provided 
    pg_restore -h localhost -p 5432 -U keycloak -d keycloak ~/appcircle-k8s-migration/pgdump.backup
    ```
 
-### 3. MongoDB Backup & Restore
+### 2. MongoDB Backup & Restore
 
 #### Standalone Appcircle Server
 
@@ -1089,7 +1089,7 @@ If you have used an **external PostgreSQL service** instead of the one provided 
    mongorestore --uri="mongodb://root:<mongodb-root-password>@localhost:27017/?authSource=admin" --gzip --archive=./mongo-backup.gz
    ```
 
-### 4. MinIO Mirror
+### 3. MinIO Mirror
 
 #### Standalone Appcircle Server
 
@@ -1218,7 +1218,7 @@ If you have used an **external MinIO service** instead of the one provided with 
    rclone copy --progress --checksum --update ac-standalone: ac-k8s:
    ```
 
-### 5. Vault Backup & Restore
+### 4. Vault Backup & Restore
 
 #### Standalone Server Steps
 
