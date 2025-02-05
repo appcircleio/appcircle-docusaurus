@@ -386,7 +386,7 @@ Before the migration, you should check the version of the Appcircle server and t
       - Please check the [version history of the Helm chart](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/upgrades#version-history) and use the latest Helm chart version for that version.
 
    - If the Appcircle server version is earlier than `3.23.2`:
-      - Update the standalone Appcircle server to at least version `3.23.2` prior to initiating the migration.
+      - [Update the standalone Appcircle server](/self-hosted-appcircle/install-server/linux-package/update.md) to at least version `3.23.2` prior to initiating the migration.
 
 #### 6. Stop the Standalone Appcircle Server Requests.
 
@@ -438,6 +438,7 @@ Please **review the comments for the `values.yaml`** below. If the values provid
 global:
   urls:
     # Main domain configuration - All Appcircle services will be subdomains of this domain
+    # Use the same domain as specified in the `global.yaml` file of the standalone Appcircle server.
     domainName: .appcircle.spacetech.com
   # SMTP server configuration for sending emails (Authentication, Notifications, Testing Distribution)
   # Use the same SMTP settings as specified in the `global.yaml` file of the standalone Appcircle server.
@@ -463,6 +464,8 @@ auth:
   auth-keycloak:
     # Initial admin user email for Appcircle server
     initialUsername: "admin@spacetech.com"
+signingidentity:
+  vaultServicePrefix: signing
 ```
 
 </details>
@@ -478,8 +481,10 @@ auth:
 global:
   urls:
     # Main domain configuration - All Appcircle services will be subdomains of this domain
+    # Use the same domain as specified in the `global.yaml` file of the standalone Appcircle server.
     domainName: .appcircle.spacetech.com
     # Protocol to be used for connections
+    # Use the same scheme settings as specified in the `global.yaml` file of the standalone Appcircle server.
     scheme: https
 
   # SMTP server configuration for sending emails (Authentication, Notifications, Testing Distribution)
@@ -579,6 +584,9 @@ webeventredis:
   ingress:
     enabled: true
     tls: true
+
+signingidentity:
+  vaultServicePrefix: signing
 ```
 
 </details>
@@ -728,7 +736,17 @@ Since we disabled a a module before the migration, **Helm will likely wait for t
 **Don't worry**, this is expected behavior. After completing the data migration steps, we will complete the Helm installation by re-enabling the job, allowing the installation to finalize successfully.
 :::
 
-You can watch the Appcircle server installation using any Kubernetes monitoring tool. The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take up to **10 to 15 minutes**.
+You can watch the Appcircle server installation using any Kubernetes monitoring tool. The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes.
+
+To make sure that the stateful apps are ready for migration, you can run the command below and wait for `The databases are ready for migration steps.` output.
+
+```bash
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=auth-postgresql' --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=mongodb' --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=minio' --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=vault' --timeout=300s && \
+echo "The databases are ready for migration steps."
+```
 
 ## Migrating the Data
 
@@ -908,10 +926,6 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
 
 3. **Copy the PostgreSQL Data to Bastion Host**: Copy the dumped PostgreSQL data from the Appcircle server to the bastion host.
 
-   ```bash
-   scp standalone-appcircle-server/app/appcircle-server/projects/spacetech/export/mongo-backup.gz .
-   ```
-
 :::info
 If you have used an **external PostgreSQL service** instead of the one provided with the Appcircle Helm chart, please adjust the commands below for your **specific use-case**.
 :::
@@ -928,11 +942,19 @@ If you have used an **external PostgreSQL service** instead of the one provided 
    kubectl get pods -n appcircle | grep postgres
    ```
 
-6. **Install PostgreSQL tools:**
+6. **Install PostgreSQL client tools:**
+
+   To install PostgreSQL client tools, please check the [official PostgreSQL documentation](https://www.postgresql.org/download/).
+
+   :::info
+   Instead of installing the latest `postgresql-client-*` version, please install the `postgresql-client-14` package.
+
+   An example command should be like the one below:
 
    ```bash
-   brew install postgresql
+   sudo apt install postgresql-client-14
    ```
+   :::
 
 7. **Start Port Forwarding:**
 
@@ -975,10 +997,11 @@ If you have used an **external PostgreSQL service** instead of the one provided 
        - "36300:36300"
    ```
 
-   - Restart the services.
+   - Restart the `mongo_1` service.
 
    ```bash
-   ./ac-self-hosted -n spacetech up
+   cd projects/aselsan2/export/ && \
+   docker compose up mongo_1 --no-deps --force-recreate -d
    ```
 
 3. **Install the `mongosh` tool.**
@@ -1003,25 +1026,30 @@ If you have used an **external PostgreSQL service** instead of the one provided 
    db.createUser({user: "backup",pwd: "backup",roles: [{ role: "root", db: "admin"}]})
    ```
 
-7. **Get the MongoDB container name:**
+7. **Exit from the Mongo Shell:**
+
+   ```mongosh
+   exit
+   ```
+
+8. **Get the MongoDB container name:**
 
    ```bash
    docker ps | grep mongo_1
    ```
 
-8. **Get the MongoDB connection string:**
+9. **Get the MongoDB connection string:**
 
    ```bash
    cat projects/spacetech/export/publish/default.env | grep "CUSTOMCONNSTR_PUBLISH_DB_CONNECTION_STRING"
    ```
 
 9. **Dump the MongoDB:**
-
    ```bash
    docker exec -it spacetech-mongo_1-1 mongodump --uri="mongodb://backup:backup@mongo_1:36300,mongo_2:36301,mongo_3:36302/?replicaSet=rs&authSource=admin" --gzip --archive=/mongo-backup.gz
    ```
 
-10. **Copy the dumped DB file from out of the container to the host machine:**
+9. **Copy the dumped DB file from out of the container to the host machine:**
     ```bash
     docker cp spacetech-mongo_1-1:/mongo-backup.gz .
     ```
@@ -1038,13 +1066,9 @@ If you have used an **external PostgreSQL service** instead of the one provided 
 
 3. **Copy the file from the standalone Appcircle server to the bastion host:**
 
-   ```bash
-   scp standalone-appcircle-server/app/appcircle-server/projects/spacetech/export/mongo-backup.gz .
-   ```
-
-:::info
-If you have used an **external MongoDB service** instead of the one provided with the Appcircle Helm chart, please adjust the commands below for your **specific use-case**.
-:::
+   :::info
+   If you have used an **external MongoDB service** instead of the one provided with the Appcircle Helm chart, please adjust the commands below for your **specific use-case**.
+   :::
 
 4. **Install MongoDB Database Tools:**
 
@@ -1117,16 +1141,9 @@ If you have used an **external MinIO service** instead of the one provided with 
    kubectl get services -n appcircle | grep minio
    ```
 
-5. **Change MinIO service to NodePort for temporary:**
-
-   :::info
-   We recommend opening the MinIO service to the external network temporarily instead of using `kubectl port-forward` since you might have problems while transferring large files over port forwarding of the `kubectl`.
-
-   Note that this doesn't make the MinIO data public as long as you keep the MinIO password secret.
-   :::
-
+6. **Start port forwarding:**
    ```bash
-   kubectl patch service appcircle-server-minio -n appcircle --type='json' -p='[{"op": "replace", "path": "/spec/type", "value": "NodePort"}, {"op": "add", "path": "/spec/ports/0/nodePort", "value": 30534}, {"op": "add", "path": "/spec/ports/1/nodePort", "value": 32761}]'
+   kubectl port-forward service/appcircle-server-minio 9000:9000 -n appcircle
    ```
 
 6. **Install `rclone` tool:**
@@ -1187,7 +1204,7 @@ If you have used an **external MinIO service** instead of the one provided with 
      access_key_id> <access_key>      # Enter the standalone Appcircle server's access key
      secret_access_key> <secret_key>  # Enter the standalone Appcircle server's secret access key
      region>                          # Leave this empty
-     endpoint>                        # Provide the standalone Appcircle server's IP and MinIO port. Example: http://192.168.1.220:9040
+     endpoint>                        # Provide the standalone Appcircle server's IP and MinIO port. Example: http://127.0.0.1:9000
      location_constraint:             # Leave this empty
      acl:                             # Leave this empty
      server_side_encryption:          # Leave this empty
@@ -1282,10 +1299,6 @@ If you have used an **external MinIO service** instead of the one provided with 
    ```
 
 3. **Copy the vault data tar ball to the bastion host:**
-
-   ```bash
-   scp standalone-appcircle-server/app/appcircle-server/vaultd.tar.gz .
-   ```
 
 :::info
 If you have used an **external Vault service** instead of the one provided with the Appcircle Helm chart, please adjust the commands below for your **specific use-case**.
@@ -1382,7 +1395,15 @@ helm upgrade --install appcircle-server appcircle/appcircle \
   -f values.yaml
 ```
 
-### 3. Update the DNS Records
+### 3. Restart All the Deployments
+
+Restart all the Appcircle server deployments to make sure every service is restarting with the up-to-date configurations.
+
+```bash
+kubectl rollout restart deployment -n appcircle
+```
+
+### 4. Update the DNS Records
 
 List the Ingresses with `kubectl` to check the IP address of the Appcircle services domains.
 
@@ -1405,7 +1426,7 @@ appcircle-webeventredis            nginx   kvs.appcircle.spacetech.com          
 
 Since you already have the DNS records for the standalone Appcircle server, all you need to do is update the DNS records to the new addresses of the Ingress objects of the Kubernetes Appcircle server.
 
-### 4. Login to the Appcircle Dashboard
+### 5. Login to the Appcircle Dashboard
 
 Check the output of the `helm install` command to see login URL, initial username and command to get initial user password.
 
@@ -1427,7 +1448,7 @@ Support:
 For any issues or questions, please contact the system administrator or check the application documentation.
 ```
 
-### 5. Connecting Runners
+### 6. Connecting Runners
 
 When you complete installation successfully by following above steps, you're ready for your first build. :tada:
 
@@ -1473,13 +1494,13 @@ Considering system performance, it will be good to install self-hosted runners t
 
 You can install any number of runners regarding to your needs and connect them to self-hosted Appcircle server.
 
-### 6. Apply the Appcircle License
+### 7. Apply the Appcircle License
 
 When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
 
 To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration) section.
 
-### 7. Verification
+### 8. Verification
 
 - Test the following functionalities and ensure all data and features are operational post-migration.
   - **Build**
@@ -1488,7 +1509,7 @@ To obtain the license you purchased, please share the initial organization ID, w
   - **Testing Distribution**
   - **LDAP / SSO Settings**
 
-### 8. Clean Up
+### 9. Clean Up
 
 Once the migration has been confirmed as successful:
 
