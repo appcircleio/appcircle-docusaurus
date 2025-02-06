@@ -1480,6 +1480,12 @@ Restart all the Appcircle server deployments to make sure every service is resta
 kubectl rollout restart deployment -n appcircle
 ```
 
+Delete the Vault pod to trigger its recreation with the updated configuration.
+
+```bash
+kubectl delete pod appcircle-server-vault-0 -n appcircle
+```
+
 ### 4. Update the DNS Records
 
 List the Ingresses with `kubectl` to check the IP address of the Appcircle services domains.
