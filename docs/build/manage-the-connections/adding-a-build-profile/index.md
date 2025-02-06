@@ -25,6 +25,16 @@ When the "Autofill" toggle is activated on the **Select Repository** popup, Appc
 When you have exceeded the build limit of your plan, Appcircle will not be able to **Autofill** your build profile, although you activated the toggle.
 :::
 
+You can refer to the links below for a detailed explanation on connecting a repository from GitHub, GitLab, Azure, and other platforms:
+
+* [Connecting to GitHub](/build/manage-the-connections/adding-a-build-profile/connecting-to-github)
+* [Connecting to GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab)
+* [Connecting to Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket)
+* [Connecting to Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure)
+* [Connecting to Public Repository](/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository)
+* [Connecting to Private Repository via SSH](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh)
+* [Connecting to Multiple Instances](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance)
+
 ## FAQ
 
 ## Repository Connection Issues
