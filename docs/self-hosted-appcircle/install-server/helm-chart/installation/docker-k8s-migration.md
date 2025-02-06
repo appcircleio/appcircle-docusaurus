@@ -904,10 +904,10 @@ You can watch the Appcircle server installation using any Kubernetes monitoring 
 To make sure that the stateful apps are ready for migration, you can run the command below and wait for `The databases are ready for migration steps.` output.
 
 ```bash
-kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=auth-postgresql' --timeout=300s && \
-kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=mongodb' --timeout=300s && \
-kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=minio' --timeout=300s && \
-kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=vault' --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=auth-postgresql' -n appcircle --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=mongodb' -n appcircle --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=minio' -n appcircle --timeout=300s && \
+kubectl wait --for=condition=Ready pod -l 'app.kubernetes.io/name=vault' -n appcircle --timeout=300s && \
 echo "The databases are ready for migration steps."
 ```
 
