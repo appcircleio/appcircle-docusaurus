@@ -1067,6 +1067,12 @@ If you have used an **external PostgreSQL service** instead of the one provided 
 
 6. **Create a user to dump the DB:**
 
+   :::info
+   The backup user `backup` with password `backup` created for dumping the MongoDB database on the standalone Appcircle server will be migrated to the target Kubernetes environment.  
+
+   **It is strongly recommended to either delete this user after the migration is complete or change its password to a strong, unique one.**  Leaving this user with the default password poses a significant security risk.
+   :::
+
    ```mongosh
    db.createUser({user: "backup",pwd: "backup",roles: [{ role: "root", db: "admin"}]})
    ```
