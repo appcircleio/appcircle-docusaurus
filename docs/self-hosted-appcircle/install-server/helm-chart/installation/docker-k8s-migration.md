@@ -1103,7 +1103,7 @@ If you have used an **external PostgreSQL service** instead of the one provided 
 
 11. **Copy the dumped DB file from out of the container to the host machine:**
     ```bash
-    docker cp spacetech-mongo_1-1:/mongo-backup.gz .
+    docker cp spacetech-mongo_1-1:/mongo-backup.gz ~/appcircle-k8s-migration/
     ```
 
 #### Bastion Host
@@ -1222,8 +1222,8 @@ If you have used an **external MinIO service** instead of the one provided with 
      ```plaintext
      n                                # Create a new remote
      name> ac-standalone              # Provide a descriptive name for the remote
-     Storage> 4                       # Select "Amazon S3 Compliant Storage Provider" (4)
-     provider> 7                      # Select "Minio Object Storage" (7)
+     Storage> 4   (might change)      # Select "Amazon S3 Compliant Storage Provider" (4)
+     provider> 7  (might change)      # Select "MinIO Object Storage" (7)
      env_auth> "false"                # Set environment authentication to "false"
      access_key_id> <access_key>      # Enter the standalone Appcircle server's access key
      secret_access_key> <secret_key>  # Enter the standalone Appcircle server's secret access key
@@ -1251,13 +1251,13 @@ If you have used an **external MinIO service** instead of the one provided with 
      ```plaintext
      n                                # Create a new remote
      name> ac-k8s                     # Provide a descriptive name for the remote
-     Storage> 4                       # Select "Amazon S3 Compliant Storage Provider" (4)
-     provider> 7                      # Select "Minio Object Storage" (7)
+     Storage> 4  (might change)       # Select "Amazon S3 Compliant Storage Provider" (4)
+     provider> 7 (might change)       # Select "MinIO Object Storage" (7)
      env_auth> "false"                # Set environment authentication to "false"
-     access_key_id> <access_key>      # Enter the standalone Appcircle server's access key
-     secret_access_key> <secret_key>  # Enter the standalone Appcircle server's secret access key
+     access_key_id> <access_key>      # Enter the K8s Appcircle server MinIO access key
+     secret_access_key> <secret_key>  # Enter the K8s Appcircle server MinIO secret access key
      region>                          # Leave this empty
-     endpoint>                        # Provide the standalone Appcircle server's IP and MinIO port. Example: http://127.0.0.1:9000
+     endpoint>                        # Provide the K8s Appcircle server MinIO IP and MinIO port. Example: http://127.0.0.1:9000
      location_constraint:             # Leave this empty
      acl:                             # Leave this empty
      server_side_encryption:          # Leave this empty
@@ -1277,10 +1277,10 @@ If you have used an **external MinIO service** instead of the one provided with 
 
 1. **Log in to the standalone Appcircle server:**
 
-2. **Change directory to appcircle-server:**
+2. **Change directory to the migration directory:**
 
    ```bash
-   cd appcircle-server
+   cd appcircle-k8s-migration
    ```
 
 3. **Create a file named `migrate.hcl`:**
@@ -1326,7 +1326,7 @@ If you have used an **external MinIO service** instead of the one provided with 
 8. **Copy the tarball to the host machine:**
 
    ```bash
-   docker cp spacetech-vault-1:/vault/vaultd.tar.gz .
+   docker cp spacetech-vault-1:/vault/vaultd.tar.gz ~/appcircle-k8s-migration/
    ```
 
 9. **Get the full path of the copied tarball:**
@@ -1335,6 +1335,12 @@ If you have used an **external MinIO service** instead of the one provided with 
    ```
 
 <SpacetechExampleInfo/>
+
+9. **Change directory to the Appcircle server:**
+
+   ```bash
+   cd appcircle-server
+   ```
 
 10. **Get the unseal and root keys and save, you will use for unsealing the vault:**
     ```bash
@@ -1384,7 +1390,7 @@ If you have used an **external Vault service** instead of the one provided with 
 8. **Open shell in the vault container:**
 
    ```bash
-   kubectl exec -it appcircle-server-vault-0 -- bash
+   kubectl exec -it appcircle-server-vault-0 -n appcircle -- bash
    ```
 
 9. **Run the following commands in the shell:**
@@ -1434,8 +1440,26 @@ After the migration is completed, you need to enable the Keycloak module.
 - **Remove Keycloak Replica Override:**  
   Delete the `replicas: 0` setting under `auth-keycloak`.
 
-- **Remove MongoDB Resource Preset:**  
-  Delete the `resourcesPreset` setting under `mongodb` if you don't need it.
+- **Adjust MongoDB Resource Preset:**
+
+  - **MongoDB Resource Preset:** You can adjust the resource allocation for your MongoDB deployment based on your needs.  Here are some example `resourcesPreset` values you can use in your `values.yaml` file:
+
+  | Size      | CPU Requests | CPU Limits | Memory Requests | Memory Limits | Ephemeral Storage Requests | Ephemeral Storage Limits |
+  |-----------|--------------|------------|-----------------|---------------|---------------------------|--------------------------|
+  | nano      | 100m         | 150m       | 128Mi           | 192Mi         | 50Mi                       | 2Gi                       |
+  | micro     | 250m         | 375m       | 256Mi           | 384Mi         | 50Mi                       | 2Gi                       |
+  | small     | 500m         | 750m       | 512Mi           | 768Mi         | 50Mi                       | 2Gi                       |
+  | medium    | 500m         | 750m       | 1024Mi          | 1536Mi        | 50Mi                       | 2Gi                       |
+  | large     | 1.0          | 1.5        | 2048Mi          | 3072Mi        | 50Mi                       | 2Gi                       |
+  | xlarge    | 1.0          | 3.0        | 3072Mi          | 6144Mi        | 50Mi                       | 2Gi                       |
+  | 2xlarge   | 2.0          | 6.0        | 6144Mi          | 12288Mi       | 50Mi                       | 2Gi                       |
+
+  For example, to set a "medium" resource preset, add the following to your `values.yaml` file under the `mongodb` section:
+
+  ```yaml
+  mongodb:
+    resourcesPreset: "medium"
+  ```
 
 ### 2. Upgrade the Helm Release
 
