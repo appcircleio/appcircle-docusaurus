@@ -49,6 +49,14 @@ If you choose to use **external stateful services**, you will need to adapt cert
 In the case of using **external stateful services**, the **bastion host requirements** should be adjusted to meet your **specific setup**. For example, the **storage** and **access requirements** for the external databases and services will need to be accounted for during the migration. Please ensure that your **bastion host** is configured with appropriate resources and network access to support these **external services**.
 :::
 
+:::warning Don't make any changes on the configuration files while migration 
+**Do not change any configurations** on your standalone Appcircle server or on the K8s configuration file during the migration process. 
+
+Any changes made before the successful migration to Kubernetes are unsupported and may lead to data loss or unexpected behavior. 
+
+If you need to modify configurations such as SMTP settings, wait until the migration is complete and then use the relevant configuration documentation to make the changes on the Kubernetes-based Appcircle server.
+:::
+
 ## Prerequisites
 
 To complete this guide, you must have the following:
