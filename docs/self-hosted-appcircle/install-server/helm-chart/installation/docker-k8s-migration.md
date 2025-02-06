@@ -947,7 +947,13 @@ echo "The databases are ready for migration steps."
    docker exec <postgres_container_name> pg_dump -U keycloak -h localhost -p 5432 -F c -b -v -f pgdump.backup keycloak
    ```
 
-3. **Copy Dump:** Copy the file from container to Appcircle server host.
+3. **Create a directory to save dumped files.**
+
+   ```bash
+   mkdir ~/appcircle-k8s-migration/
+   ```
+
+4. **Copy Dump:** Copy the file from container to Appcircle server host.
    ```bash
    docker cp <postgres_container_name>:/pgdump.backup ~/appcircle-k8s-migration/
    ```
