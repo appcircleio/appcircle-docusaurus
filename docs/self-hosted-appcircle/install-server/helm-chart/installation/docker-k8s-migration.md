@@ -387,7 +387,21 @@ Before the migration, you should check the version of the Appcircle server and t
    - If the Appcircle server version is earlier than `3.23.2`:
       - [Update the standalone Appcircle server](/self-hosted-appcircle/install-server/linux-package/update.md) to at least version `3.23.2` prior to initiating the migration.
 
-#### 6. Stop the Standalone Appcircle Server Requests.
+#### 6. Find the Organization Name
+
+To migrate the Appcircle server data, you should find the name of the current organization. 
+
+To find the organization name:
+
+1. Go to the standalone Appcircle server dashboard.
+2. Switch to the root organization.
+3. Navigate to your **Organization** page to retrieve the details.
+4. You can directly see the organization name in the UI.
+5. Save the organization name to use on the next steps.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4705-organization-name.png' />
+
+#### 7. Stop the Standalone Appcircle Server Requests.
 
 For the migration, there should be no running builds on the Appcircle during the migration. Also prevent external requests while keeping the server healthy by stopping the Nginx service.
 
@@ -623,17 +637,22 @@ The SSL configuration of the Appcircle server Helm chart should match the SSL co
 
 Ensure the `organizationName` and `initialOrganizationId` in the `values.yaml` file match those in the standalone Appcircle server.
 
-To locate these values:
+To locate the `initialOrganizationId`:
 
-1. Go to the standalone Appcircle server dashboard.
-2. Switch to the root organization.
-3. Open the developer tools and switch to the "Network" tab.
-4. Navigate to your **Organization** page to retrieve the details.
-5. You can directly see the organization name in the UI.
-6. For the organization ID, filter the `userinfo` request.
-7. In the response, check for `currentOrganizationId`.
+1. Login to the **bastion host**.
+2. Change directory to the location where you have saved the backup files.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4705-organization-page.png' />
+```bash
+cd appcircle-k8s-migration
+```
+
+3. Check the `initialOrganizationId` value.
+
+```bash
+grep 'initialOrganizationId' generated-secret.yaml
+```
+
+4. Also get the organization name you have checked from the [step above](#6-find-the-organization-name). 
 
 Here’s an example configuration for `values.yaml`:
 
