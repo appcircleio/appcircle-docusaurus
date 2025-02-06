@@ -13,13 +13,11 @@ A Build profile can be created by following these steps:
 
 ## Creating a Profile
 
-A Build profile can be created by following these steps:
-
-Click on the **Add New** button located at the middle of the screen. If you already have an existing profile displayed on the build profile list, this button will be at the top right corner.
+Click on the **Add New** button located in the middle of the screen. If you already have an existing profile displayed on the build profile list, this button will be in the top right corner.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build1.png' alt="Build Profile Creation" />
 
-Provide a unique name for the build profile and choose a target Operating System (OS) which can be Android or iOS.
+Provide a unique name for the build profile and choose a target operating system (OS), which can be Android or iOS.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build2.png' alt="Build Profile Naming" />
 
@@ -50,12 +48,12 @@ Choose from the available repository connection options to link your project sou
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build3.png' alt="Repository connection" />
 
 :::info
-If you have not previously connected to a Git provider on Appcircle, i.e., created a profile and not connected a repository, you will not see any connection on this page.
+If you have not previously connected to a Git provider on Appcircle, i.e., created a profile but have not connected a repository, you will not see any connection on this page.
 
 For more information on creating repository connections, please refer to the [connections](/build/manage-the-connections) guide.
 :::
 
-To test drive Appcircle, you can find various sample projects in the [Appcircle GitHub page](https://github.com/appcircleio?q=sample) or you can just press on the **Quick start using the sample repository** button to populate the repository with a compatible project based on the selected framework.
+To test drive Appcircle, you can find various sample projects on the [Appcircle GitHub page](https://github.com/appcircleio?q=sample) or you can just press the **Quick Start Using the Sample Repository** button to populate the repository with a compatible project based on the selected framework.
 
 For detailed instructions on connecting to each repository, refer to the [Connection Guides](/build/manage-the-connections/adding-a-build-profile).
 
@@ -84,11 +82,11 @@ values={[
 
 ## Connection Settings
 
-After connecting build profile to a Git provider, we can see the **"Connection Settings"** button in the build profile details.
+After connecting a build profile to a Git provider, we can see the **"Connection Settings"** button in the build profile details.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-connection1.png' />
 
-You can click on the "Connection Settings" button under the build profile name and URL to see the detailed information about the connection. (PAT, oAuth)
+You can click on the "Connection Settings" button under the build profile name and URL to see detailed information about the connection. (PAT, OAuth)
 
 ### OAuth
 
@@ -101,5 +99,5 @@ You can click on the "Connection Settings" button under the build profile name a
 :::caution
 If you added your repository via **multiple instances** using PAT (Personal Access Token), the "Connection Settings" will look different.
 
-You can review the [**Connecting Multiple Instances**](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance#connection-settings-for-multiple-instances) page for using "Connection Settings" on multiple instances.
+You can review the [**Connecting Multiple Instances**](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance#connection-settings-for-multiple-instances) page to learn how to use "Connection Settings" for multiple instances.
 :::

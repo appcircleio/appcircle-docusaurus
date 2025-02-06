@@ -21,11 +21,11 @@ If you have not previously connected to a Git provider on Appcircle, i.e., creat
 
 ## Connection Guides
 
-You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, You can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible git providers such as Azure DevOps and AWS CodeCommit.
+You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, you can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible Git providers such as Azure DevOps and AWS CodeCommit.
 
 ## Connection Management
 
-You can connect GitHub, GitLab, Bitbucket, Azure remote repositories. Different types of connections have different connection details in the connection settings.
+You can connect GitHub, GitLab, Bitbucket and Azure remote repositories. Different types of connections have different connection details in the connection settings.
 
 ## Accessing Internal Networks
 

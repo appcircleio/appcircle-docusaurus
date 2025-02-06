@@ -28,7 +28,7 @@ First, we need to set up a build configuration. Select the configuration from th
 
 ### Private Modules
 
-If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
+If your project uses private modules, don't forget to add the necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
 <ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
@@ -101,7 +101,7 @@ You can define variables and secrets to be incorporated during the build in the 
 Please see the following page for more information about environment variables:
 
 <ContentRef url="/environment-variables">
-  Why to Use Environment Variables and Secrets?
+  Why Use Environment Variables and Secrets?
 </ContentRef>
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-env-variables.png' />
@@ -110,7 +110,7 @@ Please click on the Save button and close this modal.
 
 ### Workflow Editor
 
-You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use workflow editor.
+You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use the workflow editor.
 
 :::info
 
@@ -128,15 +128,15 @@ You are now ready to start your first build. Select the branch from the left sid
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidbuild1.png' />
 
-Select a configuration, workflow, commit id and click on **Start Build button**
+Select a configuration, workflow, commit ID and click on **Start Build button**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-build-modal.png' />
 
-Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
+Appcircle will start building your application. The build log window will open, and you can follow the build process in real time.
 
 :::info
 
-You can safely close the build log window, it won't affect the status of your build. You can come back and click on the build to track the status of your build.
+You can safely close the build log window; it won't affect the status of your build. You can come back and click on the build to track the status of your build.
 
 :::
 
@@ -150,7 +150,7 @@ Your build will be distributed automatically if you had set up Auto Distribute e
 
 ### chmod: cannot access './gradlew': No such file or directory
 
-Every Android project has a `gradlew` file in the main repository directory. If the Android Build step can't find this file, you need to edit your workflow, find the Android Build Step and edit the `PROJECT PATH`. If your `gradlew` file is in the `android` folder, you need to write, `./android` in the edit box.
+Every Android project has a `gradlew` file in the main repository directory. If the Android Build step can't find this file, you need to edit your workflow, find the Android Build Step, and edit the `PROJECT PATH`. If your `gradlew` file is in the `android` folder, you need to write, `./android` in the edit box.
 
 ### How can I change the JDK version for autofill?
 
@@ -197,11 +197,11 @@ You can get the JDK home paths for each build pool from [Android's build infrast
         > Could not GET 'https://jcenter.bintray.com/com/google/protobuf/protobuf-java-util/3.09.0/protobuf-java-util-3.09.0.pom'. Received status code 502 from server: Bad Gateway
 ```
 
-You may experience gradle build errors if your project uses Bintray resources. Since JFrog has shutdown Bintray on May 1, 2021. You should update your gradle file and move to Maven Central. Replace `jcenter()` with `mavenCentral()` in all your `build.gradle` files. Please be aware that some of your dependencies may not exist on Maven.
+You may experience Gradle build errors if your project uses Bintray resources. Since JFrog has shut down Bintray on May 1, 2021. You should update your Gradle file and move to Maven Central. Replace `jcenter()` with `mavenCentral()` in all your `build.gradle` files. Please be aware that some of your dependencies may not exist on Maven.
 
 ### Gradle build daemon disappeared unexpectedly
 
-If you receive a Gradle error similar to the following, it can happen due to 2 reasons
+If you receive a Gradle error similar to the following, it can happen due to 2 reasons:
 
 ```
 org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
@@ -220,7 +220,7 @@ java.lang.RuntimeException: java.lang.OutOfMemoryError: Java heap space
 - Problem with UTF-8 characters in your project or environment variable. Please edit your **gradle.properties** file and add `-Dfile.encoding=UTF-8` argument to `org.gradle.jvmargs` section.
 - You have edited **gradle.properties** and put some arguments to the `org.gradle.jvmargs` section. When you modify default JVM arguments, it resets the default `MaxMetaspaceSize` property. You should always add `-XX:MaxMetaspaceSize=256m` to this section to prevent unlimited memory allocation.
 
-If you're using DexGuard, you may need to above modifications to your DexGuard configuration as well.
+If you're using DexGuard, you may need to make the above modifications to your DexGuard configuration as well.
 
 ### I received a google-services.json Error but I don't want to push this file to the repository
 
@@ -238,7 +238,7 @@ mv $GOOGLE_SERVICES_JSON $AC_REPOSITORY_DIR/app
 
 You may want to build unsigned Android applications. The most common mistake done with this is Appcircle users usually forget to disable the Sign Application step in the workflow.;
 
-If you do not select a keystore in the build configuration, you need to disable the Sign Application step or your build will fail.
+If you do not select a keystore in the build configuration, you need to disable the Sign Application step, or your build will fail.
 
 #### Keystore was tampered with or password was incorrect
 

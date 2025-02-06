@@ -7,15 +7,15 @@ tags:
 
 # Build Module Overview
 
-The Build module in Appcircle streamlines your Continuous Integration and Continuous Deployment (CI/CD) workflows for mobile app development. It covers everything from code integration to managing your build profiles and post-build artifacts.
+The Build Module in Appcircle streamlines your Continuous Integration and Continuous Deployment (CI/CD) workflows for mobile app development. It covers everything from code integration to managing your build profiles and post-build artifacts.
 
 ## [Build Profiles](/build/build-process-management)
 
-Follow our start guide to build your iOS and Android apps in the cloud. This guide will walk you through creating a build profile, managing profiles, branches, configurations and triggers and more.
+Follow our getting started guide to build your iOS and Android apps in the cloud. This guide will walk you through creating a build profile, managing profiles, branches, configurations, triggers, and more.
 
 ## [Environment Variables](/build/build-environment-variables)
 
-Environment variables let you extend your build configuration. There are several read-only Appcircle variables and you can add your own variables to export during the build process and use in custom build scripts.
+Environment variables let you extend your build configuration. There are several read-only Appcircle variables, and you can add your own variables to export and use during the build process in custom build scripts.
 
 ## [Connections](/build/manage-the-connections)
 
@@ -23,7 +23,7 @@ Set up integrations with version control systems to sync your repositories, allo
 
 ## [Platform Build Guides](/build/platform-build-guides)
 
-Find detailed instructions for building applications across various platforms including iOS, Android, React Native, Flutter, and Ionic.
+Find detailed instructions for building applications across various platforms, including iOS, Android, React Native, Flutter, and Ionic.
 
 ## [Build History](/build/build-history)
 

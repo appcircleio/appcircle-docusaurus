@@ -7,13 +7,13 @@ sidebar_position: 6
 
 # Binary Actions
 
-With Appcircle's post-build actions, you can easily distribute your binary file manually, access artifacts and examine build logs.
+With Appcircle's post-build actions, you can easily distribute your binary file manually, access artifacts, and examine build logs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-action.png' />
 
 ## Distribute Binary
 
-The Distribute Binary feature sends the binary file to the relevant module based on the Distribution settings in the selected configuration.
+The Distribute Binary feature sends the binary file to the relevant module based on the distribution settings in the selected configuration.
 
 :::caution
 
@@ -37,7 +37,7 @@ Each time a build is completed by Appcircle, all artifacts produced after the bu
 
 #### For Android
 
-If your Android application has multiple product flavors, Appcircle will create a build for each flavor of your application and let you distribute them at once. A common usage to multi-flavor applications can be free and paid versions of the same application.
+If your Android application has multiple product flavors, Appcircle will create a build for each flavor of your application and let you distribute them at once. A common usage of multi-flavor applications can be free and paid versions of the same application.
 
 When you build and distribute an application with multiple flavors, and `.apk` file will be created for each flavor. On our [**testing portal**](/testing-distribution/testing-portal), your testers will be able to download each `.apk` file separately and test it on their devices.
 
@@ -45,7 +45,7 @@ When you build and distribute an application with multiple flavors, and `.apk` f
 
 iOS applications can be downloaded or distributed as IPA file format if you configure signing identities and sign the application during the build process.
 
-If you disable signing or don't use any signing identities, iOS output will be an `.xarchive` file.
+If you disable signing or don't use any signing identities, iOS output will be a `.xarchive` file.
 
 :::
 
@@ -55,7 +55,7 @@ In addition to allowing the review of logs, Appcircle also permits the downloadi
 
 #### Working with build logs
 
-Build logs help you to observe and understand exactly what happened during a build. You can see build logs as they happen while a build is in process or you can view logs of a build after the build is completed.
+Build logs help you to observe and understand exactly what happened during a build. You can see build logs as they happen while a build is in process, or you can view logs of a build after the build is completed.
 
 :::info
 
@@ -73,15 +73,15 @@ You can also download build logs in plain text format in case you would like to 
 
 #### Delete Specific Builds
 
-If you want to free up space from your Artifact Storage, you can delete older build profiles which are cluttering your space.
+If you want to free up space from your Artifact Storage, you can delete older build profiles that are cluttering your space.
 
-To do that, simply navigate to the Builds tab and select the builds, then click on the Delete icon
+To do that, simply navigate to the Builds tab and select the builds, then click on the Delete icon.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-delete5.png' />
 
 :::info
 
-Build Deletion feature is only available for organizations with Enterprise license.
+The build deletion feature is only available for organizations with an enterprise license.
 
 :::
 
@@ -97,7 +97,7 @@ Older builds and/or testing distributions will use almost all of your storage. I
 
 #### [Refer here to delete a Publish Profile](/publish-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile)
 
-In order for storage to be freed up, you should also remove the other references pointing to the artifact. In example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds respectively.
+In order for storage to be freed up, you should also remove the other references pointing to the artifact. For example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds, respectively.
 
 :::caution
 

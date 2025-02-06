@@ -9,7 +9,7 @@ sidebar_position: 10
 
 This guide gives necessary information about the steps that should be followed to successfully build and publish a [Xamarin](https://dotnet.microsoft.com/en-us/apps/xamarin) app with Appcircle.
 
-It's an introduction to the basic steps such as build, code signing, and app publishing. Although these steps are minimum requirements for a mobile app build pipeline, you should go on with other sections of the Appcircle documentation for numerous advanced CI/CD features.
+It's an introduction to the basic steps such as building, code signing, and app publishing. Although these steps are minimum requirements for a mobile app build pipeline, you should go on with other sections of the Appcircle documentation for numerous advanced CI/CD features.
 
 If you don't have a Xamarin app already or want to follow the steps quickly for a fast evaluation, you can use the [sample app](https://github.com/appcircleio/appcircle-sample-xamarin) repository. To simulate a Xamarin repository, it will be good to clone the app folder and add it as a repository to your own Git provider.
 
@@ -138,10 +138,10 @@ msbuild $IOS_PROJECT_DIR /t:Build /p:Configuration=Release /p:Platform=iPhone /p
 The custom script above does the following operations in order to build a Xamarin iOS app:
 
 - Install [Mono](https://www.mono-project.com/)
-- Install .NET SDK
-- Install Xamarin iOS SDK
-- Build the project with dependencies
-- Publish the app for deployment
+- Install .NET SDK.
+- Install Xamarin iOS SDK.
+- Build the project with dependencies.
+- Publish the app for deployment.
 
 The custom script has some **variables that should be changed or customized** for your pipeline.
 

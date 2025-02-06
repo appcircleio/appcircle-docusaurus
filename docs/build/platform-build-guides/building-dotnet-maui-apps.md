@@ -9,7 +9,7 @@ sidebar_position: 10
 
 This guide gives necessary information about the steps that should be followed to successfully build and publish a [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui) app with Appcircle.
 
-It's an introduction to the basic steps such as build, code signing, and app publishing. Although these steps are minimum requirements for a mobile app build pipeline, you should go on with other sections of the Appcircle documentation for numerous advanced CI/CD features.
+It's an introduction to the basic steps such as building, code signing, and app publishing. Although these steps are minimum requirements for a mobile app build pipeline, you should go on with other sections of the Appcircle documentation for numerous advanced CI/CD features.
 
 If you don't have a .NET MAUI app already or want to follow the steps quickly for a fast evaluation, you can use the [sample app](https://github.com/dotnet/maui-samples/tree/main/8.0/Apps/Calculator) Calculator from the `dotnet/maui-samples` repository. To simulate a .NET MAUI repository, it will be good to clone the app folder and add it as a repository to your own Git provider.
 
@@ -83,7 +83,7 @@ Currently, **Automatic Code Signing** is not supported for iOS .NET MAUI builds.
 
 :::
 
-**6.** In your [workflow](/workflows), use the below custom script as a replacement of the default **Xcodebuild for Devices** step.
+**6.** In your [workflow](/workflows), use the below custom script as a replacement for the default **Xcodebuild for Devices** step.
 
 :::info
 
@@ -125,10 +125,10 @@ $dotnet publish $project -p:TargetFrameworks=$framework \
 
 The custom script above does the following operations in order to build a .NET MAUI iOS app:
 
-- Install .NET SDK
-- Install `maui-ios` workload
-- Build the project with dependencies
-- Publish the app for deployment
+- Install .NET SDK.
+- Install `maui-ios` workload.
+- Build the project with dependencies.
+- Publish the app for deployment.
 
 The custom script has some **variables that should be changed or customized** for your pipeline.
 

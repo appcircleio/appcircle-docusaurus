@@ -15,12 +15,12 @@ import ContentRef from '@site/src/components/ContentRef';
 You must enable third-party application access via OAuth. To do that, you can follow the steps:
 
 - Go to https://dev.azure.com
-- Click to Organization setting from the left sidebar.
-- Go to your policies settings below security.
-- Enable Third-Party application access via OAuth.
+- Click on the Organization setting from the left sidebar.
+- Go to your policy settings below security.
+- Enable third-party application access via OAuth.
 
 :::caution
-If you don't enable third-party application access via the Oauth setting, you can't authorize Appcircle.
+If you don't enable third-party application access via the OAuth setting, you can't authorize Appcircle.
 :::
 
 ### Configuration Azure DevOps Services Setting on Appcircle
@@ -29,7 +29,7 @@ If you authorize Appcircle to access your repositories on Azure DevOps, you can 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
-After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or ask your consent about authorizing more repositories.
+After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or asking your consent about authorizing more repositories.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
 
@@ -67,7 +67,7 @@ Fill in the relevant information about your Azure DevOps Server. If you are not 
 
   - For example: `https://azure.spacetech.com`
 
-- **Owner Username**: Use the collection name on the Azure Devops Server. You can see collections on the left-hand side when you open your Azure Devops Server home page.
+- **Owner Username**: Use the collection name on the Azure DevOps Server. You can see collections on the left-hand side when you open your Azure DevOps Server home page.
 
   - For example: `DefaultCollection`
 
@@ -78,7 +78,7 @@ Fill in the relevant information about your Azure DevOps Server. If you are not 
 
 ### Azure Devops Server That Is Upgraded From a TFS Server
 
-If your Azure Devops Server is upgraded from a TFS server, you should identify your Azure Devops Server URL.
+If your Azure DevOps Server is upgraded from a TFS server, you should identify your Azure DevOps Server URL.
 
 - Copy a repository clone URL for any git repository.
 - Check if your URL has an unexpected **path** in the URL.

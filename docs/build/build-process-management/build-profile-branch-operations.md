@@ -36,11 +36,11 @@ The available filter options are:
 
 ### Pinning Branches to the Top for Faster Access
 
-If you are using a branch frequently such as develop or master, you can pin it to the top. To pin a branch, click on pin icon next to the branch name.
+If you are using a branch frequently, such as develop or master, you can pin it to the top. To pin a branch, click on the pin icon next to the branch name.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/branch-operation-pin-unpinned.png' />
 
-The branch will be moved to the top with a pinned indicator. You can unpin the branch by pressing pin button again.
+The branch will be moved to the top with a pinned indicator. You can unpin the branch by pressing the pin button again.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/branch-operation-pin-pinned.png' />
 

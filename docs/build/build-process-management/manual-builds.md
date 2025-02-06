@@ -33,7 +33,7 @@ To initiate a build in Appcircle, follow these steps:
 
 By following these steps, you can efficiently manage and monitor your builds in Appcircle.
 
-For more detailed information on builds with different type of projects, please refer to the [Platform Build Guides](/build/platform-build-guides) documentation.
+For more detailed information on builds with different types of projects, please refer to the [Platform Build Guides](/build/platform-build-guides) documentation.
 
 #### Build Statuses
 

@@ -11,23 +11,23 @@ import TabItem from '@theme/TabItem';
 
 # Build Configuration
 
-Configuring a build profile has some basic steps that need to be completed before starting a build.
+Configuring a build profile requires completing some basic steps before starting a build.
 
 ### Creating a configuration
 
-You may create a configuration profile that allows you to set different certificates, distribution channels that can be used with different workflows.
+You may create a configuration profile that allows you to set different certificates and distribution channels that can be used with different workflows.
 
 - Click on **Configurations** to create configurations for different scenarios.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config1.png' alt="Build Config Creation"/>
 
-- Click on **New** button to create your first configuration.
+- Click on the **New** button to create your first configuration.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config2.png' alt="Build Config New" />
 
 You can also create a configuration profile by uploading a saved YAML file.
 
-- You may change the name of the configuration or delete the ones you don't need. To do that, click on the edit button shown and three dot on the configuration you want to edit/delete.
+- You may change the name of the configuration or delete the ones you don't need. To do that, click on the edit button shown and the three dots on the configuration you want to edit/delete.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config5.png' alt="Build config edit" />
 
@@ -35,20 +35,20 @@ If you have a configuration that you use constantly or want to quickly copy a co
 
 The configuration clone feature will speed up your projects where you use many configurations.
 
-First of all, we open the configuration process by clicking the edit button.
+First, open the configuration process by clicking the edit button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config5.png' alt="Build config edit" />
 
-Then click on the three dots next to the configuration we want to copy, and click on the "Clone" button in the mini window that opens.
+Then click on the three dots next to the configuration you want to copy and click the "Clone" button in the mini window that opens.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config3.png' alt="build config clone" />
 
-And another one is created identical to the configuration we want to clone.
+Another one is created identical to the configuration you want to clone.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config4.png' alt="created build config clone" />
 
 :::info
-The naming here is created by adding "\_copy_1" to the end of the main configuration name. For each configuration to be copied from now on, the name will be incremented to be unique.
+The name here is created by adding "\_copy_1" to the end of the main configuration name. For each configuration copied from now on, the name will be incremented to remain unique.
 :::
 
 :::tip
@@ -74,7 +74,7 @@ The downloaded YAML file is specific to the project type and can only be used fo
 
 ### Config Details
 
-Every build profile needs to know project details regardless of the project being iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle if you click on **Autofill** button.
+Every build profile needs to know project details regardless of whether the project is an iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle if you click on **Autofill** button.
 
 You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
 
@@ -99,13 +99,13 @@ values={[
 
 #### Build Priority
 
-The build priority configuration feature includes three levels: Low, Medium, and High.
+The build priority configuration feature has three levels: Low, Medium, and High.
 
-These priority levels influence the starting order of queued builds, ensuring that higher-priority builds are initiated first.
+These priority levels determine the order in which queued builds start, ensuring that higher-priority builds are initiated first.
 
-For instance, if a high-priority build is added to the queue after a low-priority build, the high-priority build will commence before the low-priority one.
+For example, if a high-priority build is added to the queue after a low-priority build, the high-priority build will start before the low-priority one.
 
-This functionality allows for better management of build processes, enabling teams to prioritize critical updates and enhancements efficiently.
+This feature allows for better management of build processes, enabling teams to prioritize critical updates and improvements efficiently.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-priority.png' alt="Build Priority" />
 
@@ -117,7 +117,7 @@ This feature is only available for organizations with Enterprise license.
 
 Both iOS and Android applications need to be digitally signed by their developers in order to be able to be installed on real devices or submitted to app stores.
 
-iOS certificates and Android keystores can be generated within Appcircle or pre-obtained certificates can be uploaded. iOS provisioning profiles need to be obtained from Apple Developer account and uploaded to Appcircle.
+iOS certificates and Android keystores can be generated within Appcircle, or pre-obtained certificates can be uploaded. iOS provisioning profiles need to be obtained from the Apple Developer account and uploaded to Appcircle.
 
 <Tabs
 defaultValue="ios"
@@ -144,7 +144,7 @@ You can either upload your iOS [certificate](/signing-identities/apple-certifica
 
 Set up automated distribution for your builds by configuring distribution settings in Appcircle. This feature allows you to automatically send completed builds to selected modules, including Testing Distribution, Publish, or the Enterprise Store, ensuring a seamless deployment process.
 
-Simply, enable the toggle of the module that you need and select the required profiles.
+Simply enable the toggle of the module that you need and select the required profiles.
 
 #### Send to Testing Distribution
 
@@ -162,9 +162,9 @@ Enabling "Automatically Distribute to Publish" will display the available [Publi
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-publish.png' />
 
-Simply select your relevant Publish profiles, and Appcircle will automatically send your builds to the selected Publish profiles.
+Simply select your relevant publish profiles, and Appcircle will automatically send your builds to the selected publish profiles.
 
-Please note that the Publish profiles should be created within the Publish module prior to configuring the distribution settings in the build profile.
+Please note that the publish profiles should be created within the publish module prior to configuring the distribution settings in the build profile.
 
 #### Send to Enterprise App Store
 
@@ -175,7 +175,7 @@ Please note that the Publish profiles should be created within the Publish modul
 - Whenever a new **signed** build is created, it will be sent to the [Enterprise App Store](/enterprise-app-store).
 
 :::info
-If you are building a binary for the first time or newly distributing it to the Enterprise App Store, a new Enterprise App Store profile will be created automatically. If there is an existing Enterprise App Store profile for your build, it will be directed to that profile.
+If you are building a binary for the first time or distributing it to the Enterprise App Store for the first time, a new Enterprise App Store profile will be created automatically. If there is an existing Enterprise App Store profile for your build, it will be directed to the existing profile.
 :::
 
 ### Versioning configuration

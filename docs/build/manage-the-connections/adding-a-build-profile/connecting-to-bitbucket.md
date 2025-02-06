@@ -11,11 +11,11 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 # Connecting to Bitbucket
 
-If you authorize Appcircle to access your repositories on BitBucket, you can select the repository that you want to connect in the next screen.
+If you authorize Appcircle to access your repositories on Bitbucket, you can select the repository that you want to connect in the next screen.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
-After you click on **Bitbucket**, the following screen will appear. This will let you choose between selecting a repository which you are already authorized Appcircle to do or ask your consent about authorizing more repositories.
+After you click on **Bitbucket**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect3.png' />
 
@@ -51,7 +51,7 @@ The following table details the OAuth permissions required for Appcircle to conn
 
 ## Connecting to Bitbucket Self Hosted Repository
 
-Overall process is similar with private repository connection through SSH, but Appcircle allows to directly connect through Bitbucket Self Hosted URL.
+The overall process is similar with a private repository connection through SSH, but Appcircle allows you to directly connect through the Bitbucket Self-Hosted URL.
 
 :::caution
 
@@ -63,7 +63,7 @@ First, select **Bitbucket** then **Connect to a Bitbucket Server** through the m
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect3.png' />
 
-Fill the relevant information about your Bitbucket self-hosted module. If you are not sure what those are, contact your system administrator.
+Fill in the relevant information about your Bitbucket self-hosted module. If you are not sure what those are, contact your system administrator.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/bt-self-hosted-detail.png' />
 
@@ -71,11 +71,11 @@ Fill the relevant information about your Bitbucket self-hosted module. If you ar
 
 ### Connection Notice
 
-For Appcircle to connect to the Self Hosted Bitbucket Instance, your connection must be reachable over the internet.
+For Appcircle to connect to the self-hosted Bitbucket instance, your connection must be reachable over the internet.
 
 :::
 
-Is your self-hosted Bitbucket instance under enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
+Is your self-hosted Bitbucket instance under an enterprise firewall? Learn which IP addresses and ports Appcircle uses to function under the whitelist documentation:
 
 <ContentRef url="/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls">
   Accessing Repositories in Internal Networks (Firewalls)
@@ -99,7 +99,7 @@ Bitbucket doesn't allow scoped repository permissions like GitHub. Therefore the
 
 :::
 
-You may create access token to specific project or a repository which can help you to restrict the access level of the token.
+You may create an access token for a specific project or a repository, which can help you to restrict the access level of the token.
 
 ### Create HTTP access tokens for projects or repositories
 

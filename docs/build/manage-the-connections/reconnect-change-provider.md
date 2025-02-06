@@ -96,7 +96,7 @@ You can select one of the listed options and switch to that one without consider
 :::
 
 :::info
-While changing the Git provider, your previous builds, tests, configurations, workflows, triggers and branch list will not be deleted.
+While changing the Git provider, your previous builds, tests, configurations, workflows, triggers, and branch list will not be deleted.
 :::
 
 ## Change Owner
@@ -205,7 +205,7 @@ In Azure DevOps Server connections, the **Owner Username** field on Appcircle co
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connection-success-pat.png' />
 
-Now you're ready to use the added PAT connection in your build profiles. While making a new connection, you can see the PAT connection in the available connections list after selecting Git provider.
+Now you're ready to use the added PAT connection in your build profiles. While making a new connection, you can see the PAT connection in the available connections list after selecting the Git provider.
 
 ### Editing PAT Connections
 
@@ -244,9 +244,9 @@ Upon clicking the **Delete** button, Appcircle will prompt you to enter the name
 :::warning
 If you have an existing Build profile that would be affected by the deletion of the PAT Connection, Appcircle will display a warning message listing the affected builds.
 
-You will need to disconnect them before you can delete the PAT Connection.
+You will need to disconnect them before you can delete the PAT connection.
 
-For more information about disconnecting a Build profile please refer to the related [documentation](/build/manage-the-connections/reconnect-change-provider#disconnect-build-profile).
+For more information about disconnecting a build profile please refer to the related [documentation](/build/manage-the-connections/reconnect-change-provider#disconnect-build-profile).
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3112-deletepat3.png' />

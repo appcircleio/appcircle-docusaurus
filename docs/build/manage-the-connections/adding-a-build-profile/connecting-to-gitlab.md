@@ -14,7 +14,7 @@ If you authorize Appcircle to access your repositories on GitLab, you can select
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
-After you click on **GitLab**, the following screen will appear. This will let you choose between selecting a repository which you are already authorized Appcircle to do or ask your consent about authorizing more repositories.
+After you click on **GitLab**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect2.png' />
 
@@ -26,7 +26,7 @@ After the connection is successful, you can [view your newly created profile](/b
 
 ## Connecting to GitLab Self Hosted Repository
 
-Overall process is similar with private repository connection through SSH, but Appcircle allows to directly connect through GitLab Self Hosted URL.
+The overall process is similar to a private repository connection through SSH, but Appcircle allows you to directly connect through GitLab Self Hosted URL.
 
 :::caution
 
@@ -93,7 +93,7 @@ GitLab has two kinds of token at their Self Hosted instance:
 - [Personal Access Token](https://docs.gitlab.com/ee/security/token_overview.html#personal-access-tokens)
 - [Project Access Token](https://docs.gitlab.com/ee/security/token_overview.html#project-access-tokens)
 
-Both works to connect your repository through Appcircle. That being said, **Project Access Token **is used to authorize a single project(repository) and **Personal Access Token **is used to authorize every repository the user has access to.
+Both works to connect your repository through Appcircle. That being said, **Project Access Token** is used to authorize a single project(repository) and **Personal Access Token** is used to authorize every repository the user has access to.
 
 :::info
 
@@ -138,7 +138,7 @@ For detailed instructions on how to install custom public certificates and confi
 Alternatively, you can choose to disable SSL verification for your AppCircle server's webhook connection in GitLab. While this means that GitLab will not attempt to validate the certificate, it is important to note that webhooks will still be sent over an encrypted HTTPS connection but in an insecure way.
 
 :::caution
-This approach can create security vulnerabilities such as man-in-the middle attacks.
+This approach can create security vulnerabilities such as man-in-the-middle (MITM) attacks.
 :::
 
 Take the following steps to disable the SSL verification of the webhook:
@@ -147,7 +147,7 @@ Take the following steps to disable the SSL verification of the webhook:
 2. Open the webhook settings of that Git repository.
 3. Click on the **Edit** button next to the webhook.
 4. Scroll down to see the **SSL verification** setting.
-5. De-select the **Enable SSL verification** checkbox.
+5. Deselect the **Enable SSL verification** checkbox.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2983-disable-ssl-verification.png' />
 

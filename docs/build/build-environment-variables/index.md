@@ -56,7 +56,7 @@ When you upload a file as an environment variable, file name is not preserved. T
 
 You can download and view environment variables in **JSON** format. For this, you can use the "Download" button by clicking on the three dots next to one of the variable groups under "Build > Environment Variables > Variable Groups".
 
-In the downloaded file content, you will see a structure as **key-value** pairs.
+In the downloaded file content, you will see a structure with **key-value** pairs.
 
 Here you can view text and file-based variables. However, only the name of the environment variables you added as a file will appear. The related file will not be downloaded.
 

@@ -9,11 +9,11 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Connecting to Public Repository
 
-Since public repositories doesn't require any authentication or connection, the actions that can be taken with public repositories are limited. You will only have read only access towards the specified repository. Only use public repositories if you plan to use the profile for:
+Since public repositories don't require any authentication or connection, the actions that can be taken with public repositories are limited. You will only have read-only access to the specified repository. Only use public repositories if you plan to use the profile for:
 
 - Testing & Previewing Appcircle
 - Benchmarking build times to see how fast we are 🚀
-- Not planning to use the profile for long term
+- Not planning to use the profile for the long term.
 
 #### Using a Git Provider?
 
@@ -35,17 +35,17 @@ When you enter the profile after the build, the following screen will appear. Cl
 
 :::tip
 
-Clicking **Quick start using the sample repository** will also connect the relevant sample project with public connection.
+Clicking **Quick start using the sample repository** will also connect the relevant sample project with a public connection.
 
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
-After you click on **Connect via URL**, the following screen will appear and let you enter an URI
+After you click on **Connect via URL**, the following screen will appear and let you enter an URI.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connect-via-url.png' />
 
-Enter the URL of your repository, or continue with sample project if you plan to preview Appcircle.
+Enter the URL of your repository, or continue with the sample project if you plan to preview Appcircle.
 
 :::tip
 

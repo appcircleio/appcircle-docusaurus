@@ -8,7 +8,7 @@ tags:
   ]
 ---
 
-New to Appcircle Build module? Follow our quick start guide to build your iOS and Android apps in the cloud.
+New to the Appcircle Build module? Follow our quick-start guide to build your iOS and Android apps in the cloud.
 
 The Build Module allows you to streamline and automate your mobile app build flows.
 
@@ -22,13 +22,13 @@ Before initiating a build, certain essential steps must be completed to properly
 
 ## [Workflows](/build/build-process-management/build-workflows)
 
-A workflow is a ladder of steps taken to build your applications.
+A workflow is a sequence of steps taken to build your applications.
 
-Each step has a different purpose and the workflow can be customized by modifying step parameters and inputs, running custom scripts, or re-ordering steps.
+Each step has a different purpose, and it can be customized by modifying step parameters and inputs, running custom scripts, or reordering steps.
 
 ## [Triggers](/build/build-process-management/build-manually-or-with-triggers)
 
-Builds can be triggered with various triggers such as every push to the repository, pull/merge requests, or tagged pushes.
+Builds can be triggered with various triggers, such as every push to the repository, pull/merge requests, or tagged pushes.
 
 ## [Manual Builds](/build/build-process-management/manual-builds)
 
@@ -40,4 +40,4 @@ Explore the different binary actions available in Appcircle after completing you
 
 ## [Branch Management](/build/build-process-management/build-profile-branch-operations)
 
-When you connect to a repository, all branches of that repository will be displayed with the last 100 commits. Appcircle provides a number of features for easy management of branches.
+When you connect to a repository, all branches of that repository will be displayed with the last 100 commits. Appcircle provides several features for easy management of branches.
