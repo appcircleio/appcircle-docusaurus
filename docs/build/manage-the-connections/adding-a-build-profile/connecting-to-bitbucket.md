@@ -41,13 +41,13 @@ Clicking on Connect to a Bitbucket server, which can be selected to connect to s
 
 The following table details the permissions that Appcircle requires from Bitbucket. 
 
-| Scopes                      | Description                                |
-|-----------------------------|--------------------------------------------|
-| Account - Email             |Provides access to view the user's primary email address.  |
-| Project - Read              |Provides access to view the projects the user has access to view. Read access (repository) to all the repositories in the projects is also granted.|
-| Repository - Read           |Provides access to view all the repositories the user has access to view, including the source code, Issues, and Wiki. This does not include pull requests.|
-| Pull Request - Read         |Provides access to view and list pull requests on the repositories the user has access to view. This permission (scope) also allows the user to create and resolve tasks.|
-| Webhooks - Read&Write       |Required for webhook operations. For Appcircle triggers to work.|
+| Scope                      | Permission   | Description                                |
+|----------------------------|--------------|--------------------------------------------|
+| Account         | Email        |Provides access to view the user's primary email address.  |
+| Project          | Read         |Provides access to view the projects the user has access to view. Read access (repository) to all the repositories in the projects is also granted.|
+| Repository      | Read         |Provides access to view all the repositories the user has access to view, including the source code, Issues, and Wiki. This does not include pull requests.|
+| Pull Request     | Read         |Provides access to view and list pull requests on the repositories the user has access to view. This permission (scope) also allows the user to create and resolve tasks.|
+| Webhooks    | Read & Write |Required for webhook operations. For Appcircle triggers to work.|
 
 ## Connecting to Bitbucket Self Hosted Repository
 
