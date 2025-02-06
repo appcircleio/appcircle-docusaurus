@@ -22,6 +22,7 @@ If the repositories cannot be exposed to the public internet in general, the fol
 - 162.19.204.13
 - 77.92.96.46
 - 77.92.124.2/27
+- 77.92.102.192/28
 
 :::caution
 

@@ -398,6 +398,11 @@ authentication:
   description: 'Description for authentication'
   permalink: /authentication
 
+authentication logs:
+  label: "authentication logs"
+  description: "Description for authentication logs"
+  permalink: /authentication-logs
+
 authenticator:
   label: 'authenticator'
   description: 'Description for authenticator'

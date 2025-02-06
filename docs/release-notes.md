@@ -16,6 +16,40 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.25.1 - 2025-01-24 App Version Filter for Enterprise App Store Reports, Bitbucket permission Enhancements, Improvements and more
+
+### :muscle: Improvements
+
+- Various improvements have been made to the SSO login flow, including the addition of a cancel button for the account linking step and text corrections in other areas. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Federated Identity section has been removed from the [Account](/account/my-account) page. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improvements were made to the required default permissions for OAuth, self-hosted, and PAT Bitbucket repository connections. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The character limit has been increased for the Key ID configuration in the App Store API Key settings on the UI. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Enterprise App Store reports](/enterprise-app-store/enterprise-reports) can now be sorted by app versions. Please note that due to changes in the filter structure of app versions, existing app versions added prior to this update will no longer be visible in Enterprise App Store reports. <ReportsBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Added custom `api` and `auth` endpoint options to [Azure DevOps Testing Distribution Extension](/marketplace/visual-studio-marketplace/testing-distribution) to allow usage with self-hosted Appcircle installations. <APICLIBadge/> <SelfHostedBadge/>
+- Removed `.zip(.xcarchive)` from allowed file types of [Azure DevOps Testing Distribution Extension](/marketplace/visual-studio-marketplace/testing-distribution). <APICLIBadge/> <SelfHostedBadge/>
+- Added custom `api` and `auth` endpoint options to [Azure DevOps Enterprise App Store Extension](/marketplace/visual-studio-marketplace/enterprise-app-store) to allow usage with self-hosted Appcircle installations. <APICLIBadge/> <SelfHostedBadge/>
+- Android application bundle (`.aab`) files are now supported to publish at Enterprise App Store with [Azure DevOps Enterprise App Store Extension](/marketplace/visual-studio-marketplace/enterprise-app-store). <APICLIBadge/> <SelfHostedBadge/>
+- Reserved environment variables can now be used in metadata within the Publish module, though not all reserved environment variables may be available. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where newly added users to an organization were unable to view the Git connection created with a Personal Access Token (PAT) after it was added. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where sub-organizations received an error message if an existing SSO configuration was present for the root organization. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the ‘Add for Review on App Store’ Publish Flow step failed due to the .IPA artifact name containing spaces, parentheses, or special characters. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where publish flows with long names blocked the process timer on the Publish Log screen. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where special characters in binary names affected file uploads and downloads across all modules. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where certain configuration profiles created through YAML uploads could not be cloned. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where uploaded iOS provisioning profiles were displayed as having no matching iOS certificate in build configurations. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A UI issue was fixed where saved environment variable names momentarily shrank after navigating to them from the dashboard. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where some build configuration profiles could not be downloaded as YAML files. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where app versions on the Testing Portal were incorrectly sorted for specific version numbers. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Issues were fixed on the Testing Portal’s shared app list, where memory usage caused crashing problems. Additionally, incorrect icons and app version names were corrected for some profiles. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where deleting an existing SSO configuration for the Testing Distribution module in an organization led to authentication settings being reset with no method selected. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where saved testing groups were not displayed properly in the ‘Share with Testers’ step when there were more than 10 testing groups. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The names of deleted apps can now be viewed in enterprise app store reports, as archived data previously displayed missing profile names. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where customized Enterprise App Store portal logos were not displayed on Safari browser tabs. <ReportsBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where incorrect password entries did not display an error message during iOS certificate uploads within the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.25.0 - 2024-12-19 Appcircle Deployment on Kubernetes, List View Type for Build and Testing Distribution, Improvements and more
 
 ### 🆕 New Features
@@ -63,6 +97,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where the naming rules for build configurations were not consistent between manual creation and YAML upload. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the Azure DevOps pull request merge commit message was missing due to a webhook event parsing bug in Appcircle. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue preventing users from saving updated signing settings on certain build profiles has been fixed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where deleted configuration and workflow profiles, which had already been saved in trigger settings, caused problems that were preventing the updating and deleting of existing triggers. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where configurations, such as the Xcode version and project paths, were being reset for iOS Flutter and React Native build profiles. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where long commit labels were causing problems with Bitbucket repositories. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where iOS certificates in use within build profiles could not be forcefully deleted by users. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where, when a synced API key was deleted, devices not registered under another API key within the organization were incorrectly listed as unregistered devices. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue related to icon parsing for APK files has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -76,6 +113,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where the binary list order on the Enterprise Portal was altered when specific binaries were selected. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where selecting certain filters removed app version graphs in the Enterprise App Store reports. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the Manage Access settings were accessible to Enterprise App Store profiles without an authentication method. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where certain types of characters in passwords were being rewritten, leading to unsuccessful login attempts on iOS devices for LDAP logins within the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
 - The incorrect user group retrieval strategy values causing LDAP user login issues have been updated. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where users were unable to disconnect their email settings from the notification settings. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the license terms on the dashboard displayed incorrect dates for the license status. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -863,7 +901,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - The command line parameter order has been changed to fetch provisioning profiles for signing first, which fixes the broken auto-sign feature in the [Xcodebuild for Devices](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) workflow step. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the errors thrown while using the [Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket) connection in build profiles. <CloudBadge/> <SelfHostedBadge/>
 - In the [Azure DevOps Server 2020](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure#connecting-to-azure-devops-server-repository) version, the trigger was malfunctioning due to the different JSON format received after a merge operation following a PR (Pull Request). It was fixed. <CloudBadge/> <SelfHostedBadge/>
-- The bug that prevents users from [changing their emails](/account/my-account/account-management/my-details) was fixed. <CloudBadge/> <SelfHostedBadge/>
+- The bug that prevents users from changing their emails was fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug about [`no_proxy`](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration#2-configure-proxy-for-the-server) environment variables that broke the network connection of the self-hosted Appcircle server. <SelfHostedBadge/>
 - Fixed bug that causes version output to be incorrect when [artifact registry](../self-hosted-appcircle/install-server/linux-package/installation/docker#using-3rd-party-or-self-hosted-artifact-registry) has port in URL. <SelfHostedBadge/>
 - Fixed corrupted `check` command output in Ubuntu-based Linux [distributions](../self-hosted-appcircle/install-server/linux-package/installation/docker#supported-linux-distributions). <SelfHostedBadge/>
