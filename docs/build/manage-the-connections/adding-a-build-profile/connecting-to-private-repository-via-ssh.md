@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 ### Using Direct SSH Key
 
-If you use a private repository using an SSH Key, you need to have an SSH key pair ready and enter your private key to Appcircle so Appcircle can access your repository.
+If you use a private repository using an SSH Key, you need to have an SSH key pair ready and enter your private key into Appcircle so Appcircle can access your repository.
 
 :::caution
 
@@ -24,9 +24,9 @@ For the SSH key field in the repository connection, the private key is required.
 
 :::caution
 
-If you are using Azure Devops Server as a git provider, its version must be 2022 or later.
+If you are using Azure DevOps Server as a Git provider, its version must be 2022 or later.
 
-Azure Devops Server 2020 and older versions are not supported due to reduced security.
+Azure DevOps Server 2020 and older versions are not supported due to reduced security.
 
 :::
 
@@ -63,19 +63,19 @@ SSH keys generated should not contain a password. If ssh-keygen prompts you for 
 
 :::
 
-Two files will be created as `appcircle-ssh.pub` (Public key) and `appcircle-ssh` (Private key)
+Two files will be created as `appcircle-ssh.pub` (Public key) and `appcircle-ssh` (Private key).
 
 You can then run the `cat ./appcircle-ssh` command and enter its output to Appcircle and run the `cat ./appcircle-ssh.pub` command and enter its output to the SSH keys section of the Git provider.
 
-Select **Connect via SSH **through the connection selection
+Select **Connect via SSH** through the connection selection.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/main-connection-via-ssh2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
 Then, enter your relevant information to connect to the private repository:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ssh-connection-2.png' />
 
-After the connection is successful, you can [view your newly created profile](/build/manage-the-connections/adding-a-build-profile/#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
 :::info
 
@@ -114,7 +114,7 @@ AWS CodeCommit requires the creation of a dedicated user for repository connecti
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2.png' />
 
-- Once you login with the newly generated user and copy the repository URL in SSH format, you will receive URL as follows: `ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/MyDemoRepo`
+- Once you log in with the newly generated user and copy the repository URL in SSH format, you will receive the URL as follows: `ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/MyDemoRepo`
 - For the SSH connection to be initialized, you need to add the public key to your URL to have it in the following format, which then can be entered in Appcircle to be used in SSH connections.`ssh://Your-SSH-Key-ID@git-codecommit.us-east-2.amazonaws.com/v1/repos/MyDemoRepo`
 
 ## FAQ
@@ -129,8 +129,8 @@ Using multiple SSH keys is not recommended. Instead, you should create a single 
 
 If you want to use multiple SSH keys, you need to complete the below steps:
 
-- Add your SSH key(s) as environment variable group as a file.
-- Select that environment group on your config screen
+- Add your SSH key(s) as an environment variable group as a file.
+- Select that environment group on your config screen.
 - Use the below custom script to add that key.
 - Each key name should be unique. Appcircle's Activate SSH component uses `appcircle_ssh` as a key name.
 
@@ -176,7 +176,7 @@ Please refer to [this guide for creating a user for SSH connections](https://doc
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2.png' />
 
-- Once you login with the newly generated user and copy the repository URL in SSH format, you will receive URL as follows: `ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/MyDemoRepo`
+- Once you log in with the newly generated user and copy the repository URL in SSH format, you will receive the URL as follows: `ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/MyDemoRepo`
 - For the SSH connection to be initialized, you need to add the public key to your URL to have it in the following format, which then can be entered in Appcircle to be used in SSH connections.`ssh://Your-SSH-Key-ID@git-codecommit.us-east-2.amazonaws.com/v1/repos/MyDemoRepo`
 
 import NeedHelp from '@site/docs/\_need-help.mdx';

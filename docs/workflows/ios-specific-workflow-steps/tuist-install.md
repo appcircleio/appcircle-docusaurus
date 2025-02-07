@@ -42,7 +42,7 @@ For more iOS specific workflow steps, please visit the [**iOS Integration**](/wo
 
 :::danger
 
-In Tuist integrated projects, there will be cases where `.xcworkspace` and `.xcodeproj` files will be created after the `tuist generate` command. For this reason, the **auto fill** feature in the **build configuration** may not work as expected. For more information about build configurations, please visit the [**Build Configurations**](/build/build-process-management/build-profile-configuration) documentation.
+In Tuist integrated projects, there will be cases where `.xcworkspace` and `.xcodeproj` files will be created after the `tuist generate` command. For this reason, the **auto fill** feature in the **build configuration** may not work as expected. For more information about build configurations, please visit the [**Build Configurations**](/build/build-process-management/configurations) documentation.
 
 :::
 
