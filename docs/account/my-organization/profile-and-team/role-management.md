@@ -95,7 +95,7 @@ The following table details the roles and restrictions for the [**Environment Va
 
 :::info
 
-**Manager**, **Operator** and **Viewer** Environment Variable permissions can use variable groups in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+**Manager**, **Operator** and **Viewer** Environment Variable permissions can use variable groups in [**Build profile configuration**](/build/build-environment-variables).
 
 :::
 
@@ -127,7 +127,7 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 :::info Signing and Identities
 
-**Manager** and **Viewer** Signing Identity permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+**Manager** and **Viewer** Signing Identity permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/configurations#environment-variables-configuration).
 
 :::
 
