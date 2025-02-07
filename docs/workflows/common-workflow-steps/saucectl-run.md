@@ -146,4 +146,4 @@ For each component, specific input variables are required for its operation on y
 
 The artifacts generated from the **Saucectl Run** step are saved in the directory specified by **Sauce Labs Download Directory** (`AC_SL_DOWNLOAD_DIR`). You can control the format of these outputs using the **Sauce Labs Download Match** (`AC_SL_DOWNLOAD_MATCH`) parameter and determine when they are downloaded using the **Sauce Labs When to Download Artifacts** (`AC_SL_WHEN_ARTIFACT_DOWNLOAD`) parameter.
 
-To access all saved artifacts, go to the [Download Artifacts](/build/post-build-operations/after-a-build#download-artifacts) section in Appcircle at the end of the build log.
+To access all saved artifacts, go to the [Download Artifacts](/build/build-process-management/binary-actions#download-artifacts) section in Appcircle at the end of the build log.

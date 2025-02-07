@@ -164,7 +164,7 @@ You can see details in the [DNS Settings](/self-hosted-appcircle/install-server/
 - If you are using GitLab, Azure DevOps, Bitbucket:
   - [ ] Create an Appcircle user. Give it permissions for the repositories.
   - [ ] Create a personal access token that has sufficient permissions.
-    - For details like token permissions, check the [connect your repository](/build/manage-the-connections/adding-a-build-profile#connect-your-repository) section.
+    - For details like token permissions, check the [connect your repository](/build/manage-the-connections/adding-a-build-profile) section.
 - If you are using any other git server:
   - [ ] Create a public-private SSH key pair.
   - [ ] Configure your Appcircle git user's public SSH keys and upload the public SSH key you created.
