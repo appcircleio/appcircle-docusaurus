@@ -40,7 +40,7 @@ Ensure that the bundle ID matches the current profile and that the version or bu
 
 ### Upload via Build Module
 
-Binaries can also be uploaded via the Build module. For more information, please visit the [Build Configuration](/build/build-process-management/build-profile-configuration#distribution-configuration) and [Build Actions](/build/post-build-operations/after-a-build) documentations.
+Binaries can also be uploaded via the Build module. For more information, please visit the [Build Configuration](/build/build-process-management/configurations#distribution-configuration) and [Build Actions](/build/build-process-management#binary-actions) documentations.
 
 ### Upload via Testing Distribution Module
 
