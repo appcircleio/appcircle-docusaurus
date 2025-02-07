@@ -38,6 +38,6 @@ Learn how to initiate manual builds using your build profile in Appcircle. This 
 
 Explore the different binary actions available in Appcircle after completing your builds. This section guides you through utilizing these actions to manage, distribute, and optimize your build artifacts efficiently.
 
-## [Branch Management](/build/build-process-management/build-profile-branch-operations)
+## [Branch Operations](/build/build-process-management/build-profile-branch-operations)
 
 When you connect to a repository, all branches of that repository will be displayed with the last 100 commits. Appcircle provides several features for easy management of branches.

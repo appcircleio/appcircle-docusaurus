@@ -2,7 +2,7 @@
 title: Manual Builds
 description: Learn how to start manual builds on Appcircle
 tags: [build, manual build]
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Starting a Manual Build

@@ -2,7 +2,7 @@
 title: Triggers
 description: Learn how to build manually or automatically with webhooks and triggers in Appcircle
 tags: [build, build process management, manual build, automatic build, triggers, webhooks]
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

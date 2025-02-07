@@ -2,7 +2,7 @@
 title: Configurations
 description: Learn how to create and manage Build Profile configurations on Appcircle
 tags: [build, build profile, configuration]
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

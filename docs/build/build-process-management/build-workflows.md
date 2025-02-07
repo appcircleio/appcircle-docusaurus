@@ -2,7 +2,7 @@
 title: Workflows
 description: Learn how to create and manage Build Profile workflows on Appcircle
 tags: [build, build profile, workflows]
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 A workflow is a ladder of steps taken to build your applications.

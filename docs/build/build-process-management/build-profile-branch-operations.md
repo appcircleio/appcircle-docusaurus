@@ -1,13 +1,13 @@
 ---
-title: Branch Management
+title: Branch Operations
 description: Learn how to manage branches in Appcircle
 tags: [build, build profile, branch management]
-sidebar_position: 8
+sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Build Profile Branch Management
+# Build Profile Branch Operations
 
 When you connect to a repository, all branches of that repository will be displayed with the last 100 commits. Appcircle provides a number of features for easy management of branches.
 
