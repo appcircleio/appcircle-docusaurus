@@ -637,6 +637,11 @@ from = "/environment-variables/using-environment-variables-in-ios-projects"
 to = "/environment-variables/platform-specific-usage/using-environment-variables-in-ios-projects"
 status = 301
 
+[[redirects]]
+from = "/environment-variables/managing-variables"
+to = "/build/build-environment-variables"
+status = 301
+
 # Publish related redirects
 [[redirects]]
 from = "/store"
