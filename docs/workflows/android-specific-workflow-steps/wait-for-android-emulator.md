@@ -14,7 +14,7 @@ For additional details, please refer to the [**Emulator**](/infrastructure/andro
 
 :::danger
 
-Ensure that you select the **Appcircle Linux Pool (x86_64)** in the Configuration tab, as the **Wait for Android Emulator** step will not function in the **Appcircle Standard macOS Pool (arm64)**. Please refer to [this documentation](/build/build-process-management/build-profile-configuration/#project-details-configuration) for selecting a pool in Configuration.
+Ensure that you select the **Appcircle Linux Pool (x86_64)** in the Configuration tab, as the **Wait for Android Emulator** step will not function in the **Appcircle Standard macOS Pool (arm64)**. Please refer to [this documentation](/build/build-process-management/configurations#config-details) for selecting a pool in Configuration.
 
 :::
 
