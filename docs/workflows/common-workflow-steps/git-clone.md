@@ -73,9 +73,7 @@ https://github.com/appcircleio/appcircle-git-clone-component
 
 ## FAQ
 
-### How can I solve unexpected network problems?
-
-Users utilizing a self-hosted Git provider need to grant network access to use Appcircle. Access to private repositories can be achieved by whitelisting Appcircle’s IP addresses. If the upload speed of the provider is restricted, Appcircle may take longer than expected to clone the repository.
+### How can I solve unexpected `Operation timed out` problem?
 
 If there is a limiting upload limit on your Git provider, you will see an error like below in the **Git Clone** step.
 
@@ -87,14 +85,16 @@ fatal: early EOF
 fatal: fetch-pack: invalid index-pack output
 ```
 
+Users utilizing a self-hosted Git provider need to grant network access to use Appcircle. Access to private repositories can be achieved by whitelisting Appcircle’s IP addresses. If the upload speed of the provider is restricted, Appcircle may take longer than expected to clone the repository.
+
 Appcircle runners have an approximate internet speed of 10 Gbps. If your Git provider imposes a maximum upload speed limit, the **Git Clone** step in Appcircle will be restricted by this limit and **cannot** exceed it. As a result, the **Git Clone** step may take significantly longer to complete.
 
 For detailed information, please visit our [**Accessing Repositories Within Internal Networks**](/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls) documentation.
 
-### How can I check source unexpected connection errors?
+#### How can I check source of the "unexpected disconnect" error?
 
 When repository access is granted for self-hosted Git providers, Appcircle directly attempts to clone the repository from the provider. If the upload speed limit set for your Git provider is too low, the **Git Clone** step will take a significantly longer time. Due to the prolonged download process, the Git provider may eventually reset the connection, resulting in an unexpected disconnection. To avoid such errors during unexpectedly long **Git Clone** steps, these titles can be checked.
 
 - Checking the upload limit defined for the Git provider.
 - If Appcircle is used through a firewall, you can check the rules set for that firewall.
-- If there is no problem with your Firewall and Git provider speed limits, you can contact the security teams and check whether there is a problem in terms of security.
+- If there is no problem with your firewall and Git provider speed limits, you can contact the security teams and check whether there is a problem in terms of security.
