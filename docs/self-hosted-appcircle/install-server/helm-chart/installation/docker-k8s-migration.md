@@ -49,7 +49,7 @@ If you choose to use **external stateful services**, you will need to adapt cert
 In the case of using **external stateful services**, the **bastion host requirements** should be adjusted to meet your **specific setup**. For example, the **storage** and **access requirements** for the external databases and services will need to be accounted for during the migration. Please ensure that your **bastion host** is configured with appropriate resources and network access to support these **external services**.
 :::
 
-:::warning Don't make any changes on the configuration files while migration 
+:::warning Don't make any changes on the configuration files while migrating
 **Do not change any configurations** on your standalone Appcircle server or on the K8s configuration file during the migration process. 
 
 Any changes made before the successful migration to Kubernetes are unsupported and may lead to data loss or unexpected behavior. 
@@ -1076,9 +1076,9 @@ If you have used an **external PostgreSQL service** instead of the one provided 
 6. **Create a user to dump the DB:**
 
    :::info
-   The backup user `backup` with password `backup` created for dumping the MongoDB database on the standalone Appcircle server will be migrated to the target Kubernetes environment.  
+   The backup user `backup` with a password `backup` created for dumping the MongoDB database on the standalone Appcircle server will be migrated to the target Kubernetes environment.  
 
-   **It is strongly recommended to either delete this user after the migration is complete or change its password to a strong, unique one.**  Leaving this user with the default password poses a significant security risk.
+   **It is strongly recommended to either delete this user after the migration is complete or change its password to a strong, unique one.** Leaving this user with the default password poses a significant security risk.
    :::
 
    ```mongosh
