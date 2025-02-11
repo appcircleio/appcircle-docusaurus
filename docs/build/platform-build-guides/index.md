@@ -37,9 +37,9 @@ Tailored guidance for building React Native apps, covering both iOS and Android 
 
 Everything you need to know to build Flutter applications for multiple platforms.
 
-### [Ionic Projects](/build/platform-build-guides/building-ionic-projects-with-custom-scripts)
+### [Ionic Applications](/build/platform-build-guides/building-ionic-projects-with-custom-scripts)
 
-Learn how to use custom scripts to build and customize Ionic projects for any requirements.
+Learn how to use custom scripts to build and customize Ionic applications for any requirements.
 
 ### [.NET MAUI Applications](/build/platform-build-guides/building-dotnet-maui-apps)
 
