@@ -2,7 +2,7 @@
 title: .NET MAUI Applications
 description: Learn how to build a .NET MAUI app on Appcircle
 tags: [build, platform build guides, MAUI, .NET MAUI, custom scripts]
-sidebar_position: 10
+sidebar_position: 9
 ---
 
 # .NET MAUI Applications
