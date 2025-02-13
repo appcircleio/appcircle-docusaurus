@@ -16,6 +16,32 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.25.2 - 2025-02-13 Artifact Storage Limit Insights, Enhanced User Experience, Streamlined Workflows & Stability Improvements and more
+
+### :muscle: Improvements
+
+- Artifact storage limits can now be viewed on the billing page for your organization. <AccountBadge/> <CloudBadge/>
+- The onboarding screen will no longer be displayed to newly signed-up users with an Enterprise license. <AccountBadge/> <CloudBadge/>
+- Error and warning messages have been improved across various modules for cases of expired licenses and full usage limits. <AccountBadge/> <CloudBadge/>
+- When signing up to Appcircle via an organization invite, users will no longer generate a starter organization under their username. <AccountBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where email addresses in a specific format could not be removed from organizations. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where users were unable to delete their starter-level organization despite being members of an enterprise-level organization. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the Publish History screen could not be scrolled down when containing more data than the user could view. <PublishBadge/> <CloudBadge/>
+- The description of the ‘Creating a Publish Profile’ step for Android profiles has been improved for better clarity. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where users were redirected to the Registered Devices tab of the Apple Devices section upon refreshing the page, despite having selected other tabs. <SigningIdentitiesBadge/> <CloudBadge/>
+- Development type has been added for registering a new provisioning profile within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where the highlighting blue background for newly manually uploaded provisioning profiles did not appear for fetched profiles from App Store Connect. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where the preview screen in the Enterprise App Store customization section did not display the correct colors for the store title. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where distributing a binary from Testing Distribution to the Enterprise App Store for duplicated app versions did not display an error message. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where some Publish, Testing Distribution, and Enterprise App Store profile icons were not displayed properly. <CloudBadge/>
+- An issue was fixed where deleted configuration and workflow profiles saved in trigger settings were not being removed. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where some test reports were not displayed properly within the Build module. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where some build configuration profiles could not be downloaded as YAML files. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where iOS workflow test report components caused a CORS error. <BuildBadge/> <CloudBadge/>
+
 ## 3.25.1 - 2025-01-24 App Version Filter for Enterprise App Store Reports, Bitbucket permission Enhancements, Improvements and more
 
 ### :muscle: Improvements
@@ -41,13 +67,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where certain configuration profiles created through YAML uploads could not be cloned. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where uploaded iOS provisioning profiles were displayed as having no matching iOS certificate in build configurations. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A UI issue was fixed where saved environment variable names momentarily shrank after navigating to them from the dashboard. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where some build configuration profiles could not be downloaded as YAML files. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where app versions on the Testing Portal were incorrectly sorted for specific version numbers. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Issues were fixed on the Testing Portal’s shared app list, where memory usage caused crashing problems. Additionally, incorrect icons and app version names were corrected for some profiles. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where deleting an existing SSO configuration for the Testing Distribution module in an organization led to authentication settings being reset with no method selected. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where saved testing groups were not displayed properly in the ‘Share with Testers’ step when there were more than 10 testing groups. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The names of deleted apps can now be viewed in enterprise app store reports, as archived data previously displayed missing profile names. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where customized Enterprise App Store portal logos were not displayed on Safari browser tabs. <ReportsBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where some users were unable to download binaries on the Enterprise Portal after their license limits were renewed. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where the Enterprise Portal’s store title color did not change after being customized within the Enterprise App Store module. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed where incorrect password entries did not display an error message during iOS certificate uploads within the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.25.0 - 2024-12-19 Appcircle Deployment on Kubernetes, List View Type for Build and Testing Distribution, Improvements and more
