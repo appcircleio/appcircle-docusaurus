@@ -40,7 +40,7 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 6. my.appcircle.spacetech.com
 7. kvs.appcircle.spacetech.com
 
-**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the Ingress objects created in Kubernetes.
+**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the routes created in Openshift.
 
 </details>
 
@@ -110,7 +110,7 @@ For storage details, you can check the [Storage Class Configuration](/self-hoste
 Using SSD storage is highly recommended if stateful applications are installed within the Appcircle Helm chart scope. SSDs provide faster read/write speeds, improving the performance and responsiveness of your applications.
 :::
 
-Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain compatibility and support.
+Additionally, ensure that your OpenShift cluster is running version 4.12 or later to maintain compatibility and support.
 
 </details>
 
@@ -118,11 +118,7 @@ Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain
 
 The **`oc`** Openshift CLI is **required**.
 
-### 2. `kubectl`
-
-The **`kubectl`** CLI is **required**.
-
-### 3. Helm v3
+### 2. Helm v3
 
 **Helm version `3.11.0`** or later is **required**.
 
@@ -135,28 +131,20 @@ If you are deploying the Appcircle server for a production environment, it is re
 
 For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
 
-### 2. Configure `kubectl` with `oc`
+### 2. Configure `oc` CLI
 
-If the current context of your `kubectl` is already set to the OpenShift platform where Appcircle will be installed, you may skip this step.
-
-To set the current context of your kubectl using oc:
+Log in to your OpenShift cluster using the `oc` CLI. If you are already logged in and have set the correct project, you may skip this step.
 
 ```bash
 oc login -u ${username} ${OPENSHIFT_API_URL}
 ```
 
-To verify the current context of your kubectl:
+### 3. Create Project
+
+**Create a project** for the Appcircle server deployment. In this documentation, we will use `appcircle` as the example project.
 
 ```bash
-kubectl config current-context
-```
-
-### 3. Create Namespace
-
-**Create a namespace** for the Appcircle server deployment. In this documentation, we will use `appcircle` as the example namespace.
-
-```bash
-kubectl create namespace appcircle
+oc new-project appcircle
 ```
 
 ### 4. Create Container Registry Secret
@@ -165,7 +153,7 @@ By default, Appcircle uses its own image registry, which requires authentication
 
 If you are using your own container image registry to access Appcircle container images, you can either skip authentication if your registry doesn't require it or create a secret for your custom registry.
 
-Follow the steps below to create the registry secret in the `appcircle` namespace for pods to successfully pull images:
+Follow the steps below to create the registry secret in the `appcircle` project for pods to successfully pull images:
 
 :::info
 If you are using your own container registry, follow the `Custom Registry` section below.
@@ -182,7 +170,7 @@ If your registry doesn't require authentication, you can skip this section.
 - Create the container registry secret:
 
 ```bash
-kubectl create secret docker-registry containerregistry \
+oc create secret docker-registry containerregistry \
   -n appcircle \
   --docker-server='europe-west1-docker.pkg.dev' \
   --docker-username='_json_key' \
@@ -199,7 +187,7 @@ If the `HISTCONTROL` environment variable is set to `ignoreboth`, commands with 
 - Update the `server`, `username`, and `password` fields for your own custom registry and create the container registry secret:
 
 ```bash
-kubectl create secret docker-registry containerregistry \
+oc create secret docker-registry containerregistry \
   -n appcircle \
   --docker-server='registry.spacetech.com' \
   --docker-username='yourRegistryUsername' \
@@ -246,7 +234,7 @@ global:
       # SMTP Server port, 587 typically used for StartTLS
       port: "587"
       # Email address that will be used as sender
-      from: "appcircle@yandex.com"
+      from: "appcircle@spacetech.com"
       # SSL configuration - Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
       ssl: "false"
       # StartTLS configuration - Set to 'true' if the SMTP server uses StartTLS protocol, typically on port 587.
@@ -290,20 +278,20 @@ global:
   mail:
     smtp:
       # SMTP server host
-      host: smtp.spacetech.com
+      host: "smtp.spacetech.com"
       # SMTP Server port, 587 typically used for StartTLS
-      port: 587
+      port: "587"
       # Email address that will be used as sender
-      from: appcircle@spacetech.com
+      from: "appcircle@spacetech.com"
       # SSL configuration - Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
       ssl: "false"
       # StartTLS configuration - Set to 'true' if the SMTP server uses StartTLS protocol, typically on port 587.
       tls: "true"
       # SMTP authentication settings
       auth: "true"
-      username: smtpUserName
+      username: "smtpUserName"
       # You can create a secret with the password or directly enter the password here.
-      password: superSecretSmtpPassword
+      password: "superSecretSmtpPassword"
 
   # If the K8s cluster access the container images from a private container image registry, you can configure it here.
   # Container Image Registry host for container images
@@ -311,8 +299,6 @@ global:
   # Container Image Repository path between registry host and image name
   imageRepositoryPath: appcircle/docker-registry
 
-  # Kubernetes Ingress controller class
-  ingressClassName: "nginx"
 
   # SSL/TLS certificate configuration for HTTPS
   # You can create a secret with the certificate and key or directly enter them here.
@@ -378,10 +364,6 @@ webeventredis:
   # Enable TLS for Redis connections
   tls:
     enabled: true
-  # Ingress configuration for Redis
-  ingress:
-    enabled: true
-    tls: true
 ```
 
 </details>
@@ -406,7 +388,7 @@ helm repo update
 
 **Run the following Helm command** to install the Appcircle server chart.
 
-In this example, we deploy the Appcircle server to a single namespace, using **`appcircle`** as the **namespace** and **`appcircle-server`** as the Helm **release name**.
+In this example, we deploy the Appcircle server to a single project, using **`appcircle`** as the **project name** and **`appcircle-server`** as the Helm **release name**.
 
 ```bash
 helm install appcircle-server appcircle/appcircle \
@@ -419,12 +401,12 @@ helm install appcircle-server appcircle/appcircle \
 If you need or want to change the release name, please note that it should be 18 characters or fewer.
 :::
 
-You can watch the Appcircle server installation with any OpenShift monitoring tool. The installation process duration depends on factors such as network speed and the processing power of your Kubernetes nodes. Typically, the installation may take up to **10 to 15 minutes**.
+You can watch the Appcircle server installation with any OpenShift monitoring tool. The installation process duration depends on factors such as network speed and the processing power of your cluster nodes. Typically, the installation may take up to **10 to 15 minutes**.
 
 To make sure that the Appcircle server is installed successfully, you can run the command below and wait to finish:
 
 ```bash
-kubectl wait --for=condition=ready pod \
+oc wait --for=condition=ready pod \
   -l app.kubernetes.io/instance=appcircle-server \
   -n appcircle --timeout 1200s && \
   echo "Appcircle is ready to use. Happy building! "
@@ -434,10 +416,10 @@ kubectl wait --for=condition=ready pod \
 
 ### 1. Add DNS Records
 
-List the services with `kubectl` to check the IP address of the OpenShift default router
+List the services with `oc` to check the IP address of the OpenShift default router
 
 ```bash
-kubectl get svc -n openshift-ingress
+oc get svc -n openshift-ingress
 ```
 
 According to the example output below, you need to configure your DNS as follows:
@@ -471,7 +453,7 @@ Self-Hosted Configuration:
 - Initial User            : admin@spacetech.com
 - Retrieve the initial user password by executing the following command:↴
     
-    kubectl get secret -n appcircle appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
+    oc get secret -n appcircle appcircle-server-auth-keycloak-passwords -ojsonpath='{.data.initialPassword}' | base64 --decode ; echo
 
 You can access the application dashboard at:↴
 
