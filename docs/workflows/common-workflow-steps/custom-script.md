@@ -34,7 +34,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 If you need to use sensitive variable in your script, please do not use these sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
-We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
 
 :::
 
@@ -184,7 +184,7 @@ Please feel free to edit the following variables according to your own requireme
 
 ### How to use environment variables along with the `sudo` command?
 
-Both user-created and Appcircle-reserved [environment variables](/environment-variables/managing-variables) can be used within a custom script with any required command. But, by default, commands that are triggered with `sudo` will not reach them since the user scope is changed.
+Both user-created and Appcircle-reserved [environment variables](/build/build-environment-variables#adding-key-and-text-based-value-pairs) can be used within a custom script with any required command. But, by default, commands that are triggered with `sudo` will not reach them since the user scope is changed.
 
 In order to use all user environment variables with `sudo`, you should add the `-E` argument to the `sudo` command. The `-E` (preserve environment) option indicates to the security policy that the user wishes to preserve their existing environment variables.
 
@@ -297,7 +297,7 @@ This script is written in `Bash`. When running with **Custom Script**, you need 
 :::note Input Variables
 When using your own SMTP server credentials for the three variables below, using **Environment Variables** is strongly suggested since this prevents sensitive information, such as passwords, from being exposed to unauthorized individuals.
 
-For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
+For more detailed information, please refer to the [**Environment Variables**](/build/build-environment-variables) documentation.
 
 - **$CS_EMAIL**: SMTP Server email address.
 - **$CS_USERNAME**: Sender email address.
@@ -320,7 +320,7 @@ If you want to send an email to multiple email addresses instead of a single ema
 
 :::danger Sensitive Informations
 
-Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) for these types of values.
+Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/build/build-environment-variables#adding-key-and-text-based-value-pairs) for these types of values.
 
 To do this, comment out or remove the sensitive variables such as `$CS_EMAIL`, `$CS_USERNAME`, and `$CS_PASSWORD` defined at the top of the script, and add them as environment variables instead.
 
@@ -372,7 +372,7 @@ Here is an example using Dropbox's [file-upload](https://www.dropbox.com/develop
 :::danger
 
 Ensure sensitive data, like access tokens, are defined as private environment variables. Learn more:
-- [Adding key and text-based value pairs](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs)
+- [Adding key and text-based value pairs](/build/build-environment-variables#adding-key-and-text-based-value-pairs)
 
 :::
 
