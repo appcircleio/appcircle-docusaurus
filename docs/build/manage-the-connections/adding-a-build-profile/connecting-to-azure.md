@@ -55,19 +55,19 @@ Clicking on Connect to a Azure DevOps server, which can be selected to connect t
 |------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Identity         | Read              | Allows reading identity information, such as users and groups within the organization                                                                                      |
 | Code             | Read , Status     | Provides read access to repositories, enabling applications to fetch and view source code. Allows applications to post and update build or commit statuses in repositories.|
-| Notifications    | Read              | Grants read-only access to notification subscriptions.                                                                                                                     |
+| Notifications    | Read              | Grants read-only access to notification settings.                                                                                                                          |
 
 ### OAuth Permissions for Azure DevOps Integration
 
 The following table details the OAuth permissions required for Appcircle to connect with Azure DevOps. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with Azure DevOps via OAuth. 
 
-| Scope            | Permission        | Description                                                                                                                                                                |
-|------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Code             | Read , Status     | Provides read access to repositories, enabling applications to fetch and view source code. Allows applications to post and update build or commit statuses in repositories.|
-| PR threads       | Read              | Enables access to pull request comments and discussions (threads), including reading and posting messages.                                                                 |
-| Service Endpoints| Read , Query      | In addition to reading and querying service endpoints, this permission allows creating, updating, and deleting them.                                                       |
-| Project and team | Read              | Provides read access to project and team-related information, such as project details and team memberships.                                                                |
-| Notifications    | Read              | Grants full access to notification subscriptions, including creating, modifying, and deleting them.                                                                        |
+| Scope            | Permission        | Description                                                                                                                                                                            |
+|------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Code             | Read , Status     | Provides read access to repositories, enabling applications to fetch and view source code. Allows applications to post and update build or commit statuses in repositories.            |
+| PR threads       | Full              | Enables access to pull request comments and discussions (threads), including reading and posting messages.                                                                             |
+| Service Endpoints| Read , Query      | Grants read, query access to service endpoints. Allows listing external service integrations and retrieving details of existing connections, but does not permit creating or modifying.|
+| Project and team | Read              | Provides read access to project and team-related information, such as project details and team memberships.                                                                            |
+| Notifications    | Read              | Grants read-only access to notification settings.                                                                                                                                      |
 
 ## Connecting to Azure DevOps Server Repository
 
