@@ -39,6 +39,32 @@ When you successfully authorize your account, the following screen will appear t
 
 After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
+## Connecting to Azure DevOps Cloud Repository
+
+To connect to a Azure DevOps Cloud repository using either OAuth or Personal Access Token,
+
+- OAuth Connection
+
+Clicking on Get Repositories from Azure DevOps Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+
+- PAT (Personal Access Token) Connection
+
+Clicking on Connect to a Azure DevOps server, which can be selected to connect to self-hosted and PAT connections, will require a token. Generating a PAT for Appcircle will require a list of permissions down below.
+
+### OAuth Permissions for Azure DevOps Integration
+
+The following table details the OAuth permissions required for Appcircle to connect with Azure DevOps. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with Azure DevOps via OAuth. 
+
+| Scope            | Permission        | Description                                                                                                                                                                |
+|------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Identity         | Read              | Allows reading identity information, such as users and groups within the organization                                                                                      |
+| Work Items       | Read&Write        | Grants permission to create, update, and manage work items within Azure DevOps.                                                                                            |
+| Code             | Read,Status       | Provides read access to repositories, enabling applications to fetch and view source code. Allows applications to post and update build or commit statuses in repositories.|
+| PR threads       |                   | Enables access to pull request comments and discussions (threads), including reading and posting messages.                                                                 |
+| Service Endpoints| Read,Query&Manage | In addition to reading and querying service endpoints, this permission allows creating, updating, and deleting them.                                                       |
+| Project and team | Read              | Provides read access to project and team-related information, such as project details and team memberships.                                                                |
+| Notifications    | Read,Write&Manage | Grants full access to notification subscriptions, including creating, modifying, and deleting them.                                                                        |
+
 ## Connecting to Azure DevOps Server Repository
 
 The overall process is similar to a private repository connection through SSH, but Appcircle allows you to directly connect through the Azure DevOps Server URL.
