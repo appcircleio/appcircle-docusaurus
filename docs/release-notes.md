@@ -16,7 +16,11 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.25.2 - 2025-02-13 Artifact Storage Limit Insights, Enhanced User Experience, Streamlined Workflows & Stability Improvements and more
+## 3.26.0 - 2025-02-13 OpenShift Support, Artifact Storage Limit Insights, Streamlined Workflows & Stability Improvements and more
+
+### 🆕 New Features
+
+- We are thrilled to introduce our OpenShift [installation guide](/self-hosted-appcircle/install-server/helm-chart/installation/openshift) and support for deploying a self-hosted Appcircle server on [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift). You can install Appcircle [distributed architecture](/self-hosted-appcircle#appcircle-distributed-architecture) on [Red Hat OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift) application platform, which supports high availability, fault tolerance, and scalability, ensuring robust performance for production environments. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
