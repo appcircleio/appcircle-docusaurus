@@ -2878,6 +2878,11 @@ xml:
   description: "Kubernetes related documentations"
   permalink: "/kubernetes"
 
+"openshift":
+  label: "openshift"
+  description: "OpenShift related documentations"
+  permalink: "/openshift"
+
 "microsoft azure":
   label: "microsoft azure"
   description: "Microsoft Azure related documentations"
