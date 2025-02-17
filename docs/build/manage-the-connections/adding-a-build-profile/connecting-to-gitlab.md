@@ -24,6 +24,30 @@ When you successfully authorize your account, the following screen will appear t
 
 After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
+## Connecting to GitLab Cloud Repository
+
+To connect to a GitLab Cloud repository using either OAuth or Personal Access Token,
+
+- OAuth Connection
+
+Clicking on Get Repositories from GitLab Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+
+- PAT (Personal Access Token) Connection
+
+Clicking on Connect to a GitLab server, which can be selected to connect to self-hosted and PAT connections, will require a token. Generating a PAT for Appcircle will require a list of permissions down below.
+
+### OAuth Permissions for GitLab Integration
+
+The following table details the OAuth permissions required for Appcircle to connect with GitLab. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with GitLab via OAuth. 
+
+| Scope            | Description                                                                                                                                                                                                  |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| api              | Grants complete read and write access to the scoped project API, including the container registry, the dependency proxy, and the package registry.                                                           |
+| read_api         | Grants read access to the scoped project API, including the package registry.                                                                                                                                |
+| read_user        | Grants read-only access to the authenticated user’s profile through the /user API endpoint, which includes username, public email, and full name. Also grants access to read-only API endpoints under /users.|
+| read_repository  | Grants read-only access to repositories on private projects using Git-over-HTTP (not using the API).                                                                                                         |
+| email            | Grants read-only access to the user’s primary email address using OpenID Connect.                                                                                                                            |
+
 ## Connecting to GitLab Self Hosted Repository
 
 The overall process is similar to a private repository connection through SSH, but Appcircle allows you to directly connect through GitLab Self Hosted URL.
