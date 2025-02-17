@@ -34,6 +34,31 @@ When you successfully authorize your repository or repositories, the following s
 
 After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
+## Connecting to GitHub Cloud Repository
+
+To connect to a GitHub Cloud repository using either OAuth or Personal Access Token,
+
+- OAuth Connection
+
+Clicking on Get Repositories from GitHub Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+
+- PAT (Personal Access Token) Connection
+
+Clicking on Connect to a GitHub server, which can be selected to connect to self-hosted and PAT connections, will require a token. Generating a PAT for Appcircle will require a list of permissions down below.
+
+### OAuth Permissions for GitHub Integration
+
+The following table details the OAuth permissions required for Appcircle to connect with GitHub. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with GitHub via OAuth. 
+
+| Scope                | Permission   | Description                                                                                                                                                                                   |
+|----------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Checks               | Read & Write | Grants the ability to manage check suites and check runs. This includes creating, updating, and retrieving check statuses.                                                                    |
+| Commit statuses      | Read & Write | Allows read and write access to commit statuses. This enables an application to create, update, and retrieve statuses for specific commits.                                                   |
+| Contents             | Read         | Read-only access to a repository's contents, including files, commits, branches, and directories. This scope allows an application to fetch and display repository data without modifications.|
+| Metadata (Mandatory) | Read         | Grants read access to repository metadata, such as repository names, descriptions, and other settings. This scope is essential for accessing basic repository information.                    |
+| Pull requests        | Read & Write | Allows read and write access to pull requests and related comments.                                                                                                                           |
+| Webhooks             | Read & Write | Provides the ability to manage repository webhooks. This includes creating, updating, listing, and deleting webhooks                                                                          |
+
 ## FAQ
 
 ### Unable to grant access to a GitHub organization
