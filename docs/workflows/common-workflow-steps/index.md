@@ -124,7 +124,15 @@ You can use **SonarQube** component to check your code quality.
 
 ## [Testinium](/workflows/common-workflow-steps/testinium)
 
-This component runs your test plans with **Testinium**.
+The **Testinium** step allows users to upload their mobile applications to **Testinium** and run a test plan.
+
+## [Testinium](/workflows/common-workflow-steps/testinium-upload-app)
+
+The **Testinium Upload App** step enables uploading mobile applications to the **Testinium** platform for automated testing directly from Appcircle.
+
+## [Testinium Run Test Plan](/workflows/common-workflow-steps/testinium-run-test-plan)
+
+The **Testinium Run Test Plan** step allows users to run automated tests on their mobile applications using **Testinium** directly from the Appcircle.
 
 ## [Upload Files to Amazon S3](/workflows/common-workflow-steps/upload-files-to-amazon-s3)
 
