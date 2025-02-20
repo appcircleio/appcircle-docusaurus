@@ -152,3 +152,72 @@ If adding two **Android Build** steps makes the build process too lengthy, you c
     4. **Convert AAB to APK:** This step will convert the generated AAB into an APK.
 
 These steps will ensure that both an AAB and an APK are generated during your build process.
+
+
+### How do I manage Android dependencies with artifactory repository manager?
+
+Integrating an Artifactory repository manager into your Android build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using [**Nexus Repository Manager**](https://www.sonatype.com/products/sonatype-nexus-repository) as an example in conjunction with the Appcircle **Android Build** workflow step.
+
+:::caution Configure Nexus Repository Authentication
+
+If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a [**Custom Script**](/workflows/common-workflow-steps/custom-script). If Custom Script is used, you can use the bash scirpt given below.
+
+For more information, please visit the [**Nexus Authentication documentations**](https://help.sonatype.com/en/cocoapods-repositories.html).
+
+```bash
+$cat ~/.netrc
+machine https://nexus.example.com/repository/cocoapods-specs.git
+login admin
+password admin123
+```
+
+:::
+
+#### 1. Set up Nexus repository
+
+- Ensure your Nexus Repository Manager is properly installed and configured. For hosted installations, follow the [official Nexus documentation](https://help.sonatype.com/repomanager3) to set up your Maven or Gradle repositories.  
+- Create a hosted Maven repository (or any repository format compatible with your project). Name the repository, for example, `android-repo`.
+
+#### 2. Integrate Nexus into the Android project
+
+In your Android project’s build.gradle (or settings.gradle if using Gradle Version Catalog), configure Nexus as a repository.
+
+:::danger HTTPS Protocol
+
+When configuring Sonatype Nexus, you should pay attention to the `https` protocol. Nexus **does not support** **`http`** protocol. Therefore, the source URL must be in `https` protocol.
+
+:::
+
+Example of deploying a dependency with Gradle:  
+
+```gradle
+repositories {
+    maven {
+        url 'https://your-nexus-url/repository/android-repo/'
+    }
+}
+```
+
+If the URL requires authentication for access, you can configure it as shown below:
+
+```gradle
+repositories {
+    maven {
+        url 'https://your-nexus-url/repository/android-repo/'
+        credentials {
+            username = "your-username"
+            password = "your-password"
+        }
+    }
+}
+```
+
+To update your Gradle distribution URL with a Nexus repository, modify your `gradle-wrapper.properties` file and replace the `distributionUrl` value with the Nexus repository URL. Below is an example:  
+
+```gradle
+distributionUrl=https://your-nexus-url/repository/gradle-distributions/gradle-8.8-bin.zip
+```
+
+#### 3. Run the build workflow
+
+Trigger your build through Appcircle. The workflow will fetch dependencies from the Nexus repository as configured and compile the project with them. Logs will show dependency resolution status to confirm successful integration with Nexus.
