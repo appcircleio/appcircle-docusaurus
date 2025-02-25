@@ -35,6 +35,8 @@ Also by clicking on the edit button next to your testing group name from the lis
 
 When re-sharing the app with users who have previously unsubscribed, you can seamlessly re-engage them.
 
+Click on the **Share with Testers** button from the distribution profile. Then, simply add the users who have unsubscribed to the recipients.
+
 This action automatically removes them from the unsubscribed list, allowing them to receive emails once again.
 
 A prominent orange warning message confirms the successful re-subscription process, ensuring a seamless experience.
