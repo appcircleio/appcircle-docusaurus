@@ -14,19 +14,9 @@ sidebar_position: 12
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-<<<<<<< HEAD:docs/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz.md
-import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/configure-server/\_spacetech-example-info.mdx';
-import DmzHttpsRequirement from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-dmz-https-requirement.mdx';
-import PortRedirection from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-dmz-port-redirection.mdx';
-import LingerOption from '@site/docs/self-hosted-appcircle/configure-server/\_linger-option.mdx';
-import SocatConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_socat-configuration.mdx';
-import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_podman-netavark-configuration.mdx';
-import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_firewalld-configuration.mdx';
-import UFWConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_ufw-configuration.mdx';
-import SwapConfiguration from '@site/docs/self-hosted-appcircle/configure-server/\_swap-configuration.mdx';
-import DowntimeCaution from '@site/docs/self-hosted-appcircle/configure-server/\_appcircle-server-downtime-caution.mdx';
-=======
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
+import DmzHttpsRequirement from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-dmz-https-requirement.mdx';
+import PortRedirection from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-dmz-port-redirection.mdx';
 import LingerOption from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_linger-option.mdx';
 import SocatConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_socat-configuration.mdx';
 import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_podman-netavark-configuration.mdx';
@@ -34,7 +24,6 @@ import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/install-ser
 import UFWConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_ufw-configuration.mdx';
 import SwapConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_swap-configuration.mdx';
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
->>>>>>> feature/BE-4085:docs/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz.md
 import Screenshot from '@site/src/components/Screenshot';
 
 ## Overview
