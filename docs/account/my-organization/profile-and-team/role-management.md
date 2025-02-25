@@ -4,18 +4,18 @@ description: Overview of role management and permissions in Appcircle
 tags:
   [
     permissions,
-    role-management,
-    build-profiles,
-    environment-variables,
-    signing-identity,
-    distribution-profiles,
-    testing-groups,
-    store-submit,
+    role management,
+    build profiles,
+    environment variables,
+    signing identity,
+    distribution profiles,
+    testing groups,
+    store submit,
     publish,
-    enterprise-app-store,
-    organization-management,
-    billing-management,
-    third-party-connections,
+    enterprise app store,
+    organization management,
+    billing management,
+    third-party connections,
   ]
 sidebar_position: 5
 ---
@@ -95,7 +95,7 @@ The following table details the roles and restrictions for the [**Environment Va
 
 :::info
 
-**Manager**, **Operator** and **Viewer** Environment Variable permissions can use variable groups in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+**Manager**, **Operator** and **Viewer** Environment Variable permissions can use variable groups in [**Build profile configuration**](/build/build-environment-variables).
 
 :::
 
@@ -127,7 +127,7 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 :::info Signing and Identities
 
-**Manager** and **Viewer** Signing Identity permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+**Manager** and **Viewer** Signing Identity permissions can use signing identities in [**Build profile configuration**](/build/build-process-management/configurations#environment-variables-configuration).
 
 :::
 
@@ -324,27 +324,26 @@ The user can create an organization or sub-organization within license limits, a
 
 Also, the user can view self-hosted runners and change configuration.
 
-| Organization Management Sub-modules | Scopes                                  | Owner | Manager | Viewer |
-|-------------------------------------|-----------------------------------------|-------|---------|--------|
-| Organization and Team Management    | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | Assign Role for User                    | ✅     | ✅       | ⛔      |
-| Organization and Team Management    | List User                               | ✅     | ✅       | ✅      |
-| Integrations                        | Add/Delete/Update LDAP/SSO Integrations | ✅     | ✅       | ⛔      |
-| Integrations                        | View LDAP/SSO Integrations              | ✅     | ✅       | ✅      |
-| Appcircle Login                     | Create/Delete/Update SSO                | ✅     | ✅       | ⛔      |
-| Appcircle Login                     | List SSO                                | ✅     | ✅       | ✅      |
-| Appcircle Login                     | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
-| Appcircle Login                     | List LDAP                               | ✅     | ✅       | ✅      |
-| PAT                                 | Generate PAT                            | ✅     | ✅       | ⛔      |
-| PAT                                 | View PAT                                | ✅     | ✅       | ✅      |
-| Runner Access Token                 | List Runner Access Token                | ✅     | ⛔       | ⛔      |
-| Runner Access Token                 | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
-| Report                              | View Organziation Report                | ✅     | ✅       | ✅      |
-| Artifacts                           | View Retention Period                   | ✅     | ✅       | ✅      |
-| Artifacts                           | Update Retention Period                 | ✅     | ✅       | ⛔      |
-
+| Organization Management Sub-modules                  | Scopes                                  | Owner | Manager | Viewer |
+| ---------------------------------------------------- | --------------------------------------- | ----- | ------- | ------ |
+| Organization and Team Management                     | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | Assign Role for User                    | ✅     | ✅       | ⛔      |
+| Organization and Team Management                     | List User                               | ✅     | ✅       | ✅      |
+| Testing Portal and Enterprise Portal Authentications | Add/Delete/Update LDAP/SSO Integrations | ✅     | ✅       | ⛔      |
+| Testing Portal and Enterprise Portal Authentications | View LDAP/SSO Integrations              | ✅     | ✅       | ✅      |
+| Appcircle Login                                      | Create/Delete/Update SSO                | ✅     | ✅       | ⛔      |
+| Appcircle Login                                      | List SSO                                | ✅     | ✅       | ✅      |
+| Appcircle Login                                      | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
+| Appcircle Login                                      | List LDAP                               | ✅     | ✅       | ✅      |
+| PAT                                                  | Generate PAT                            | ✅     | ✅       | ⛔      |
+| PAT                                                  | View PAT                                | ✅     | ✅       | ✅      |
+| Runner Access Token                                  | List Runner Access Token                | ✅     | ⛔       | ⛔      |
+| Runner Access Token                                  | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
+| Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
+| Artifacts                                            | View Retention Period                   | ✅     | ✅       | ✅      |
+| Artifacts                                            | Update Retention Period                 | ✅     | ✅       | ⛔      |
 
 :::info Organization Management
 
@@ -358,7 +357,7 @@ If you want to assign a role in a sub-organization, please do so within the resp
 
 LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Testing Portal**](/testing-distribution/testing-portal) and [**Enterprise App Store**](/enterprise-app-store).
 
-Please use [**Appcircle Login**](/account/my-organization/integrations/authentications) for **LDAP** and **SSO** integration when logging into Appcircle.
+Please use [**Appcircle Login**](/account/my-organization/security/authentications) for **LDAP** and **SSO** integration when logging into Appcircle.
 
 :::
 
@@ -385,16 +384,16 @@ Connect or disconnect from third-party service providers such as notification to
 
 #### Notification Tools
 
-- [**Slack**](/account/my-organization/integrations/notification-integrations/slack/slack-notifications) 
-- [**Microsoft Teams**](/account/my-organization/integrations/notification-integrations/teams-notifications)
-- [**Email Notifications**](/account/my-organization/integrations/notification-integrations/email-connection) 
+- [**Slack**](/account/my-organization/notifications/slack/slack-notifications) 
+- [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications)
+- [**Email Notifications**](/account/my-organization/notifications/email-connection) 
  
 #### Store Connections
 
-- [**App Store Connect API Keys**](/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key) 
-- [**Google Play Developer API Keys**](/account/my-organization/integrations/credentials/adding-google-play-service-account) 
-- [**Huawei AppGallery Developer API Keys**](/account/my-organization/integrations/credentials/adding-huawei-api-key)
-- [**Microsoft Intune API Keys**](/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key) 
+- [**App Store Connect API Keys**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) 
+- [**Google Play Developer API Keys**](/account/my-organization/security/credentials/adding-google-play-service-account) 
+- [**Huawei AppGallery Developer API Keys**](/account/my-organization/security/credentials/adding-huawei-api-key)
+- [**Microsoft Intune API Keys**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) 
 
 | Integrations and Connections | Scopes                        | Owner | Manager | Viewer |
 |------------------------------|-------------------------------|-------|---------|--------|

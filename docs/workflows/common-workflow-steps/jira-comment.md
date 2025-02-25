@@ -16,7 +16,7 @@ By adding Appcircle's [**Jira Comment**](https://github.com/appcircleio/appcircl
 
 ## Prerequisites
 
-There is no mandatory sequence for the use of this component. It depends on your business decision which step to use before or after in your workflow.
+There are no prerequisites required before using the **Jira Comment** step.
 
 :::caution
 
@@ -66,13 +66,15 @@ If you're utilizing [API version 2](https://developer.atlassian.com/cloud/jira/p
 
 ## Input Variables
 
-There are some necessary parameters for this stepper to work properly. These parameters are given in the table below with their descriptions.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3199-jiraInput.png' />
 
-:::danger
+:::danger Sensitive Variables
 
-Confidential information should be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [configuration](/build/build-process-management/build-profile-configuration/).
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
 
 :::
 
@@ -98,7 +100,7 @@ The required inputs for authorization vary based on the type of Jira instance (O
 | `$AC_JIRA_EMAIL`              | The email associated with your Jira account. This field is required for using API tokens instead of PAT.         | Optional |
 | `$AC_JIRA_TOKEN`              | User's API Token. If this value is fill, the Jira e-mail field must be filled. Only Jira Cloud users can use API Token. You can create token from [here](https://id.atlassian.com/manage-profile/security/api-tokens) | Optional |
 | `$AC_JIRA_PAT`              | Specify the Personal Access Token for Jira authentication. Only Jira On-Prem users can use PAT.  | Optional |
-| `$AC_JIRA_ISSUE`              | The ID or key of the issue. Refer to the [documentation](https://docs.appcircle.io/integrations/jira-integration) for instructions on extracting this information from branch names or commit messages. | Required |
+| `$AC_JIRA_ISSUE`              | The ID or key of the issue. Refer to this [header](/workflows/common-workflow-steps/jira-comment#configuration-of-jira-comment) for instructions on extracting this information from branch names or commit messages. | Required |
 | `$AC_JIRA_FAIL_TRANSITION`    | Transition ID or name for the failed step. Optionally change the status of your issue if the previous state fails. Ensure that the `Always run this step even if the previous steps fail` switch is enabled for this feature to work.  | Optional |
 | `$AC_JIRA_SUCCESS_TRANSITION` | Transition ID or name for the successful step. Optionally change the status of your issue if the previous state succeeds.                                                    | Optional |
 | `$AC_JIRA_TEMPLATE_V2`           | The comment template used to post a comment if [Jira REST API Version 2](#jira-rest-api-version-reference) is selected. Variables prefixed with `$` will be replaced during the build process. Refer to [this header](#changing-template) to modify the template. | Required |

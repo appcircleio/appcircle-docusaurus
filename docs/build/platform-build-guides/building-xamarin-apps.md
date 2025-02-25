@@ -1,15 +1,15 @@
 ---
-title: Building Xamarin Apps
+title: Xamarin Applications
 description: Learn how to build a Xamarin app on Appcircle
-tags: [build, platform build guides, .NET, Xamarin, custom scripts]
+tags: [build, platform build guides, .net, xamarin, custom scripts]
 sidebar_position: 10
 ---
 
-# Building Xamarin Apps
+# Xamarin Applications
 
 This guide gives necessary information about the steps that should be followed to successfully build and publish a [Xamarin](https://dotnet.microsoft.com/en-us/apps/xamarin) app with Appcircle.
 
-It's an introduction to the basic steps such as build, code signing, and app publishing. Although these steps are minimum requirements for a mobile app build pipeline, you should go on with other sections of the Appcircle documentation for numerous advanced CI/CD features.
+It's an introduction to the basic steps such as building, code signing, and app publishing. Although these steps are minimum requirements for a mobile app build pipeline, you should go on with other sections of the Appcircle documentation for numerous advanced CI/CD features.
 
 If you don't have a Xamarin app already or want to follow the steps quickly for a fast evaluation, you can use the [sample app](https://github.com/appcircleio/appcircle-sample-xamarin) repository. To simulate a Xamarin repository, it will be good to clone the app folder and add it as a repository to your own Git provider.
 
@@ -53,7 +53,7 @@ Keep in mind that, in order to use iOS Signing Identities in the build pipeline,
 
 :::
 
-**4.** In the [Build Profile Configuration](/build/build-process-management/build-profile-configuration), open the **Config** tab and edit the settings below.
+**4.** In the [Build Profile Configuration](/build/build-process-management/configurations), open the **Config** tab and edit the settings below.
 
 - **XCODE VERSION**: Select the Xcode version that's compatible with your app. For instance, `14.3.x`.
 - **XCODE PROJECT OR WORKSPACE PATH**: The custom script we will use does not require a valid Xcode project path. If you haven't exported your Xamarin project to Xcode yet, you can provide a temporary path. For instance, `temp.xcodeproj`.
@@ -67,13 +67,13 @@ Keep in mind that, in order to switch to the selected Xcode version in the build
 
 :::caution
 
-The selected pool in the **SELECT A POOL** list should be the `Default M1 Pool` for the Appcircle Cloud or a pool that has **`arm64`** macOS runners for the self-hosted Appcircle.
+The selected pool in the **SELECT A POOL** list should be the `Appcircle Standard macOS Pool (arm64)` for the Appcircle Cloud or a pool that has **`arm64`** macOS runners for the self-hosted Appcircle.
 
 Intel-based runners are not supported or documented as of now, and you might need extra customizations done in the custom scripts.
 
 :::
 
-**5.** In the [Build Profile Configuration](/build/build-process-management/build-profile-configuration), open the **Signing** tab and **add provisioning profile** by selecting from the list of Signing Identities.
+**5.** In the [Build Profile Configuration](/build/build-process-management/configurations#config-details), open the **Signing** tab and **add provisioning profile** by selecting from the list of Signing Identities.
 
 :::caution
 
@@ -138,10 +138,10 @@ msbuild $IOS_PROJECT_DIR /t:Build /p:Configuration=Release /p:Platform=iPhone /p
 The custom script above does the following operations in order to build a Xamarin iOS app:
 
 - Install [Mono](https://www.mono-project.com/)
-- Install .NET SDK
-- Install Xamarin iOS SDK
-- Build the project with dependencies
-- Publish the app for deployment
+- Install .NET SDK.
+- Install Xamarin iOS SDK.
+- Build the project with dependencies.
+- Publish the app for deployment.
 
 The custom script has some **variables that should be changed or customized** for your pipeline.
 
@@ -150,10 +150,10 @@ The custom script has some **variables that should be changed or customized** fo
 - **`XAMARIN_IOS_SDK_DOWNLOAD_URL`**: The download link for the Xamarin iOS SDK version you want to install. Copy the link for the version from [here](https://github.com/xamarin/xamarin-macios/blob/main/DOWNLOADS.md).
 - **`PROJECT_ROOT_DIR`**: The location of your `<YourProject>.sln` file. Your Git repository is typically saved within the `$AC_REPOSITORY_DIR` inside the runner. However, your .sln file may be located in a subdirectory of this folder. Please specify this. For instance, `$AC_REPOSITORY_DIR/src`
 - **`IOS_PROJECT_DIR`**: The location of the `<YOUR_IOS_PROJECT>.csproj` file is required for performing iOS-specific builds. In this script, it is `AppcircleXamarin.iOS/AppcircleXamarin.iOS.csproj`.
-- **`APPLE_CERTIFICATE_NAME`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [Build Profile Configuration](/build/build-process-management/build-profile-configuration) **Signing** tab.
-- **`APPLE_PROFILE_NAME`**: It should be the name of the selected provisioning profile at the [Build Profile Configuration](/build/build-process-management/build-profile-configuration) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
+- **`APPLE_CERTIFICATE_NAME`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [Build Profile Configuration](/build/build-process-management/configurations) **Signing** tab.
+- **`APPLE_PROFILE_NAME`**: It should be the name of the selected provisioning profile at the [Build Profile Configuration](/build/build-process-management/configurations) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
 
-When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/post-build-operations/after-a-build#download-artifacts).
+When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
 
 ### Xamarin Build for Android
@@ -188,7 +188,7 @@ Keep in mind that, in order to use Android Signing Identities in the build pipel
 
 :::
 
-**5.** In the [Build Profile Configuration](/build/build-process-management/build-profile-configuration), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
+**5.** In the [Build Profile Configuration](/build/build-process-management/configurations), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
 
 **6.** In your [workflow](/workflows), use the below **Custom Script** as a replacement of the default **Android Build** step. Remove the **Android App Post-Processor** and **Increment Build and Version Number** steps from your workflow.
 
@@ -292,7 +292,7 @@ The custom script has some **variables that should be changed or customized** fo
 - **`ANDROID_PROJECT_DIR`**: The location of the `<YOUR_IOS_PROJECT>.csproj` file is required for performing iOS-specific builds. In this script, it is `AppcircleXamarin.Android/AppcircleXamarin.Android.csproj`.
 - **`ANDROID_PACKAGE_FORMAT`**: Please specify the type of your application package. It can be either `apk` or `aab`.
 
-When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/post-build-operations/after-a-build#download-artifacts).
+When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
 
 ### Next Steps

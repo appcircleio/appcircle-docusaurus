@@ -17,15 +17,15 @@ Please note that you can also distribute your app via Appcircle. Utilizing Appci
 
 For more details, please refer to the following links:
 
-- [Appcircle Testing Distribution](/testing-distribution/)
-- [Appcircle Enterprise App Store](/enterprise-app-store/)
-- [Appcircle Publish](/publish-module/)
+- [**Appcircle Testing Distribution**](/testing-distribution/)
+- [**Appcircle Enterprise App Store**](/enterprise-app-store/)
+- [**Appcircle Publish**](/publish-module/)
 
 :::
 
 ### Prerequisites
 
-Below are the workflow steps required before running the **Firebase App Distribution** step, listed with their reasons. Prerequisites vary by platform:
+Before running the **Firebase App Distribution** step, you must complete certain prerequisites, as detailed in the table below:
 
 #### For Android (Java / Kotlin and React Native) 
 
@@ -64,13 +64,15 @@ Below are the workflow steps required before running the **Firebase App Distribu
 
 ### Input Variables
 
-For each component, specific input variables are required for its operation on your system. The input variables necessary for **Firebase App Distribution** are as follows:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_5.png'/>
 
-:::danger
+:::danger Sensitive Variables
 
-Confidential information should be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
 
 :::
 
@@ -86,9 +88,11 @@ Confidential information should be entered as a [secret environment variable](/e
 | `$AC_FIREBASE_GROUPS`          | Specifies the Firebase tester groups you want to invite.                                                                                               | Optional |
 | `$AC_FIREBASE_EXTRA_PARAMETERS` | Specifies extra command line parameters. Enter `--debug` for debug mode.                                                                                              | Optional |
 
-### Output Variables
+:::info Output Variables
 
 The **Firebase App Distribution** step generates no output variables. The step succeeds if the app is distributed successfully; otherwise, it fails.
+
+:::
 
 ---
 

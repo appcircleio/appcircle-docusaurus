@@ -18,7 +18,7 @@ Before uploading a binary to the store, please make sure that an application lis
 
 You also need to have an AppGallery Connect API and its key as a JSON file. Please refer to the following document for more information on creating your API key.
 
-<ContentRef url="/account/my-organization/integrations/credentials/adding-huawei-api-key">
+<ContentRef url="/account/my-organization/security/credentials/adding-huawei-api-key">
   Adding Huawei AppGallery API Key
 </ContentRef>
 

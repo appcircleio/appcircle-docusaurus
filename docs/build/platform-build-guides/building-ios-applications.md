@@ -1,5 +1,5 @@
 ---
-title: Building iOS Applications
+title: iOS Applications
 description: Building iOS applications may be complex and confusing. Appcircle will help you smooth the process and doesn't require any additional configuration files from you.
 tags: [build, platform build guides, ios, faq]
 sidebar_position: 1
@@ -8,7 +8,7 @@ sidebar_position: 1
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Building iOS Applications
+# iOS Applications
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/3ZorIciD7-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -48,7 +48,7 @@ Please don't forget to add additional scheme files to your version control.
 
 ### Private Modules
 
-If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
+If your project uses private modules, don't forget to add the necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
 <ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
@@ -58,7 +58,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 #### Selecting the Xcode Version and Switching to the Xcode Beta
 
-Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in Build Configuration window.
+Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in the Build Configuration window.
 
 The list of currently available Xcode versions can be found in the following document: [iOS Build Infrastructure](/infrastructure/ios-build-infrastructure)
 
@@ -92,8 +92,6 @@ You can visit the following page for details on build triggers:
   Build Manually or Automatically with Webhooks and Triggers
 </ContentRef>
 
-###
-
 ### Signing
 
 The next step on build configuration is Signing. Here, please select the provisioning profile you added at [Apple Certificates & Provisioning Profiles](/signing-identities) page.
@@ -108,7 +106,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 ### Distribution
 
-The next step on build configuration is Distribution. You can create a new distribution profile at this screen or select a previous profile you created earlier. You can also enable auto deployment features if you need to.
+The next step on build configuration is Distribution. You can create a new distribution profile on this screen or select a previous profile you created earlier. You can also enable auto deployment features if you need to.
 
 <ContentRef url="/distribute/create-or-select-a-distribution-profile">
   Create a Distribution Profile and Sharing with Testers
@@ -132,14 +130,14 @@ The versioning tab will allow you to change the build or version number during t
 
 The final step on build configuration is Environment Variables.
 
-Appcircle Build module is simple and powerful. You can get your builds instantly just with a few clicks, advanced management of builds is also possible with the environment variables and workflows.
+Appcircle Build module is simple and powerful. You can get your builds instantly just with a few clicks; advanced management of builds is also possible with the environment variables and workflows.
 
 You can define variables and secrets to be incorporated during the build in the Environment Variables submodule so that you don't need to store certain keys and configurations within the repository.
 
 Please see the following page for more information about environment variables:
 
 <ContentRef url="/environment-variables">
-  Why to Use Environment Variables and Secrets?
+  Why Use Environment Variables and Secrets?
 </ContentRef>
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
@@ -148,11 +146,11 @@ Please click on the Save button and close this modal.
 
 ### Workflow Editor
 
-You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use workflow editor.
+You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use the workflow editor.
 
 :::info
 
-Any custom operation during the build can be executed through the Custom Script step in the workflow
+Any custom operation during the build can be executed through the Custom Script step in the workflow.
 
 :::
 
@@ -162,19 +160,19 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 ### Start Build
 
-You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
+You are now ready to start your first build. Select the branch from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild1.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build-modal.png' />
 
-Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
+Appcircle will start building your application. The build log window will open, and you can follow build process in real time.
 
 :::info
 
-You can safely close the build log window, it won't affect the status of your build. You can come back and click on the build to track the status of your build.
+You can safely close the build log window; it won't affect the status of your build. You can come back and click on the build to track the status of your build.
 
 :::
 
@@ -188,18 +186,18 @@ Your build will be distributed automatically if you had set up auto build earlie
 
 <ContentRef url="/build/post-build-operations/after-a-build">After a Build</ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-distribute-artifacts.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild2.png' />
 
 ## FAQ
 
 ### Xcode Scheme Errors
 
-Your iOS application project needs to have a shared scheme in order to be built outside Xcode. Xcode doesn't share schemes by default so you will have to do it manually.
+Your iOS application project needs to have a shared scheme in order to be built outside Xcode. Xcode doesn't share schemes by default, so you will have to do it manually.
 
 1. On Xcode, select **Product** > **Scheme** > **Manage Schemes**
 2. Select **Shared** for your `xcproject` or `xcworkspace`
-3. Scheme container needs to be set to the corresponding Xcode project or workspace
-4. Please do not forget to add your `.xcscheme` file to version control so it will be uploaded to your Git repository
+3. The scheme container needs to be set to the corresponding Xcode project or workspace.
+4. Please do not forget to add your `.xcscheme` file to version control so it will be uploaded to your Git repository.
 
 ### Cocoapods Errors Due to Missing xcworkspace
 
@@ -207,7 +205,7 @@ If you receive a pod error similar to the following, this usually indicates that
 
 `error: .../_appcircle_temp/Repository/Obj-C/Pods/Target Support Files/Pods-AEPSampleAppObjC/Pods-AEPSampleAppObjC.release.xcconfig: unable to open file (in target "AEPSampleAppObjC" in project "AEPSampleAppObjC") (in target 'AEPSampleAppObjC' from project 'AEPSampleAppObjC')`
 
-If a pod is used, the xcworkspace must be pushed to the repository and it must be selected in the build configuration for a successful build.
+If a pod is used, the xcworkspace must be pushed to the repository, and it must be selected in the build configuration for a successful build.
 
 If you don't want to push the xcworkspace to the repository, you can alternatively enter the xcworkspace path manually in the build configuration. In this case, the xcworkspace will be generated by the Cocapods workflow component.
 
@@ -219,7 +217,7 @@ If you don't set the version of Cocoapods in your Cocoapods Install step, Appcir
 
 After the release of Xcode 15, some notable known issues have surfaced. One of them is the `DT_TOOLCHAIN_DIR cannot be used to evaluate` error.
 
-When encountering this error, you will see the following log durint the Xcodebuild for Devices step;
+When encountering this error, you will see the following log during the Xcode build for Devices step;
 
 ```
 DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_DIR instead (in target 'One of Project Target Name' from project 'Pods')
@@ -285,6 +283,21 @@ To resolve this error, follow these steps:
 
 After this operation, the references of the relevant files will be rewritten. 
 
+:::info
+
+After the release of Xcode 16, this issue experienced in older versions was fixed in Ruby's gem library with `1.26.0` or later version of the [**`xcodeproj`**](https://rubygems.org/gems/xcodeproj/versions/1.26.0) library. At Appcircle, we have also applied these updates to our infrastructure and deployed them to our cloud environment.
+
+However, for our customers using self-hosted setups, an image update is required. If you are using Appcircle in a self-hosted environment, the version of the `xcodeproj` library may be **outdated**. To resolve this, either update the runner image or manually increase the version in the build pipeline using a [**Custom Script**](/workflows/common-workflow-steps/custom-script).
+
+You can update the `xcodeproj` library using the following Bash script in your workflow:
+
+```bash
+gem update xcodeproj
+```
+
+For more information about our infrastructure, please visit the [**iOS Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documents.
+
+:::
 
 #### Error: Cycle inside `Application Target Name`; building could produce unreliable results
 
@@ -334,7 +347,7 @@ post_install do |installer|
     end
 end
 ```
-2. Skip signing pod bundles
+2. Skip signing pod bundles.
 
 ```ruby
 post_install do |installer|
@@ -352,7 +365,7 @@ end
 ```
 ### iOS Minimum Deployment Target Error
 
-Following the release of new Xcode and iOS versions, projects containing pods or targets below certain iOS versions may experience simulator-related errors due to unsupported older iOS versions.
+Following the release of new Xcode, and iOS versions, projects containing pods or targets below certain iOS versions may experience simulator-related errors due to unsupported older iOS versions.
 
 During the 'Xcodebuild for Devices' step, you may encounter an error similar to this:
 

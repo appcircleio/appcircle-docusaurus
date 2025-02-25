@@ -69,7 +69,7 @@ To register, upload or fetch your Apple Profiles, select **Apple Profiles** from
 
 **Prerequisite**: To register a new provision profile in your Apple Developer Account, you need to add an App Store Connect API Key. Visit the link below for instructions.
 
-<ContentRef url="/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
+<ContentRef url="/account/my-organization/security/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
 With Appcircle's register provisionn feature, you can easily create a new provision profile on the Apple Developer portal using the App ID of your choice. 
 
@@ -97,7 +97,7 @@ If you have selected Ad-hoc or Development as distribution method, you need to s
 
 **Prerequisite**: To list all the signing identities saved in your Apple Developer Account, you need to add an App Store Connect API Key. Visit the link below for instructions.
 
-<ContentRef url="/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
+<ContentRef url="/account/my-organization/security/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
 When you go to add a new Provisioning Profile, you'll see the option **Get Provisioning Profiles from App Store Connect**. Select it to see the list of identities fetched from Apple.
 
@@ -176,6 +176,46 @@ You **cannot** renew **manually uploaded provisioning**.
 :::info Renewed Profiles
 
 If a provision profile is used in a Build Profile, it will continue to be used with the renewed version after the profile is renewed.
+
+:::
+
+### Adding Device to Provision Profile
+
+With Appcircle’s Apple Profiles feature, you can easily add the UDIDs of your test devices to the corresponding provisioning profile.
+
+To manage devices and view the current device list, click the **Profile Action** button and navigate to the **Apple Devices** section.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-deviceAction.png' />
+
+When you click the **Apple Devices** action, you will see a list of devices currently included in the **selected** provisioning profile. In the modal that opens, you can update this list by clicking the **Manage Devices** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-manageDeviceModal.png' />
+
+After clicking the Manage Devices button, you will see two different lists.
+
+The **Existing Devices** list displays the device **UDIDs** currently included in the **selected** provisioning profile. You can remove a device from the provisioning profile by unchecking its checkbox in this list.
+
+Below this, there is the **Non-Existing Devices** list. This list shows the devices that are **registered** in your **Apple Developer Portal** account but are not **included** in the provisioning profile. To add a new device **UDID** to the provisioning profile, select the desired device from this list and proceed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-deviceAddRemove.png' />
+
+:::caution Minimum Device Count
+
+According to **Apple’s Developer Portal** rules, a provisioning profile must include at least **one** device. Therefore, you cannot **remove** all devices from a provisioning profile.
+
+:::
+
+After selecting the devices, you will see a final **Preview** screen. This screen displays the updated device list that will be included in the provisioning profile. You can update the devices in the provisioning profile by clicking the **Update Profile** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-addDevicePreview.png' />
+
+When the profile update is successfully completed, the updated version of the selected provisioning profile will be displayed in the Apple Profiles list.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-updatedList.png' />
+
+:::info Updated Provision Profile
+
+When a provisioning profile is updated, Appcircle replaces the old profile with a new one under a different name. The new name includes the update date and time.
 
 :::
 

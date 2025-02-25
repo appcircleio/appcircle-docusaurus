@@ -40,7 +40,7 @@ Ensure that the bundle ID matches the current profile and that the version or bu
 
 ### Upload via Build Module
 
-Binaries can also be uploaded via the Build module. For more information, please visit the [Build Configuration](/build/build-process-management/build-profile-configuration#distribution-configuration) and [Build Actions](/build/post-build-operations/after-a-build) documentations.
+Binaries can also be uploaded via the Build module. For more information, please visit the [Build Configuration](/build/build-process-management/configurations#distribution-configuration) and [Build Actions](/build/build-process-management#binary-actions) documentations.
 
 ### Upload via Testing Distribution Module
 
@@ -126,7 +126,7 @@ If a sub-organization is being worked for, visibility will be limited to the app
 
 User permissions within the Enterprise App Store can be managed using **Okta SAML**. By configuring authorization groups through **Okta** and subsequently applying these group names to **Alpha** or **Beta** channels via Appcircle, access will be restricted to only the relevant users.
 
-For further details, please refer to the document: [Okta Managing User Groups](/account/my-organization/integrations/authorization/store-sso-authorization).
+For further details, please refer to the document: [Okta Managing User Groups](/account/my-organization/security/authorization/store-sso-authorization).
 :::
 
 :::info

@@ -1,7 +1,7 @@
 ---
 title: Audit Permission Changes
 description: Track and audit permission changes effectively. Ensure security and compliance with our guide on monitoring access rights alterations.
-tags: [cocoapods, install, workflow, step]
+tags: [audit, permissions, workflow, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -18,7 +18,7 @@ Before running the **Audit Permission Changes** step, you must complete certain 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Audit Permission Changes process. After cloning, the system installs CocoaPods. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the **Audit Permission Changes** step. After cloning, the system installs CocoaPods. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionOrder.png' />
 
@@ -32,16 +32,17 @@ The **Audit Permission Changes** component will automatically break the pipeline
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionInput.png' />
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|
 | `$AC_REFERENCE_BRANCH`        | Specifies the reference branch to check permissions. | Required |
-| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
 | `$AC_PROJECT_PATH`            | Specifies the project path. For example: `./appcircle.xcodeproj` | Required |
 
+---
 
 To access the source code of this component, please use the following link:
 

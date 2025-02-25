@@ -1,4 +1,9 @@
-.NET MAUI:
+".net":
+  label: ".net"
+  description: "Description for .net"
+  permalink: /net
+
+".NET MAUI":
   label: ".NET MAUI"
   description: "Description for .NET MAUI"
   permalink: /net-maui
@@ -12,6 +17,11 @@
   label: "2FA"
   description: "Description for 2FA"
   permalink: /2-fa
+
+"aab":
+  label: "aab"
+  description: "Description for aab"
+  permalink: /aab
 
 access:
   label: "access"
@@ -143,6 +153,11 @@ android:
   description: "Description for android publish integrations"
   permalink: /android-publish-integrations
 
+"android test":
+  label: "android test"
+  description: "Description for android test"
+  permalink: /android-test
+
 api:
   label: "api"
   description: "Description for api"
@@ -243,6 +258,16 @@ api:
   description: "Description for app store version"
   permalink: /app-store-version
 
+"appsweep":
+  label: "appsweep"
+  description: "Description for appsweep"
+  permalink: /appsweep
+
+"appium":
+  label: "appium"
+  description: "Description for appium"
+  permalink: /appium
+
 "app versions":
   label: "app versions"
   description: "Description for app versions"
@@ -328,6 +353,11 @@ approve:
   description: "Description for approve"
   permalink: /approve
 
+"apk":
+  label: "apk"
+  description: "Description for apk"
+  permalink: /apk
+
 apk distribution:
   label: apk distribution
   description: "Description for apk distribution"
@@ -353,6 +383,11 @@ artifacts:
   description: "Description for artifacts"
   permalink: /artifacts
 
+"audit":
+  label: "audit"
+  description: "Description for audit"
+  permalink: /audit
+
 auth:
   label: "auth"
   description: "Description for auth"
@@ -362,6 +397,11 @@ authentication:
   label: "authentication"
   description: "Description for authentication"
   permalink: /authentication
+
+authentication logs:
+  label: "authentication logs"
+  description: "Description for authentication logs"
+  permalink: /authentication-logs
 
 authenticator:
   label: "authenticator"
@@ -453,6 +493,11 @@ binaries:
   description: "Description for binaries"
   permalink: /binaries
 
+"binary actions":
+  label: "binary actions"
+  description: "Description for binary actions"
+  permalink: /binary-actions
+
 "binary distribution":
   label: "binary distribution"
   description: "Description for binary distribution"
@@ -477,6 +522,11 @@ bitbucket:
   label: "bitbucket self-hosted"
   description: "Description for bitbucket self-hosted"
   permalink: /bitbucket-self-hosted
+
+"billing":
+  label: "billing"
+  description: "Description for billing"
+  permalink: /billing
 
 boards:
   label: "boards"
@@ -558,6 +608,11 @@ build:
   description: "Description for build profile configuration"
   permalink: /build-profile-configuration
 
+"build profile management":
+  label: "build profile management"
+  description: "Description for build profile management"
+  permalink: /build-profile-management
+
 "build sessions":
   label: "build sessions"
   description: "Description for build sessions"
@@ -628,6 +683,11 @@ build:
   description: "Description for build types and configurations"
   permalink: /build-types-and-configurations
 
+"bundle":
+  label: "bundle"
+  description: "Description for bundle"
+  permalink: /bundle
+
 "cache pull":
   label: "cache pull"
   description: "Description for cache pull"
@@ -657,6 +717,11 @@ build:
   label: "cancel submission"
   description: "Description for cancel submission"
   permalink: /cancel-submission
+
+"captcha":
+  label: "captcha"
+  description: "Description for captcha"
+  permalink: /captcha
 
 carthage:
   label: "carthage"
@@ -903,15 +968,30 @@ dependencies:
   description: "Description for dependencies"
   permalink: /dependencies
 
+dependency:
+  label: "dependency"
+  description: "Description for dependency"
+  permalink: /dependency
+
 deploy:
   label: "deploy"
   description: "Description for deploy"
   permalink: /deploy
 
+"deployment":
+  label: "deployment"
+  description: "Description for deployment"
+  permalink: /deployment
+
 detekt:
   label: "detekt"
   description: "Description for detekt"
   permalink: /detekt
+
+detox:
+  label: "detox"
+  description: "Description for detox"
+  permalink: /detox
 
 "detekt report":
   label: "detekt report"
@@ -927,6 +1007,11 @@ development:
   label: "development tools"
   description: "Description for development tools"
   permalink: /development-tools
+
+"device":
+  label: "device"
+  description: "Description for device"
+  permalink: /device
 
 "device test":
   label: "device test"
@@ -1038,6 +1123,16 @@ enterprise:
   description: "Description for enterprise profile"
   permalink: /enterprise-profile
 
+"enterprise portal":
+  label: "enterprise portal"
+  description: "Description for enterprise portal"
+  permalink: /enterprise-portal
+
+"enterprise portal setup":
+  label: "enterprise portal setup"
+  description: "Description for enterprise portal setup"
+  permalink: /enterprise-portal-setup
+
 "enterprise store":
   label: "enterprise store"
   description: "Description for enterprise store"
@@ -1077,6 +1172,11 @@ environment:
   label: "environment variables"
   description: "Description for environment variables"
   permalink: /environment-variables
+
+"espresso":
+  label: "espresso"
+  description: "Description for espresso"
+  permalink: /espresso
 
 export:
   label: "export"
@@ -1268,6 +1368,11 @@ identifiers:
   description: "Description for in app updates"
   permalink: /in-app-updates
 
+"increment":
+  label: "increment"
+  description: "Description for increment"
+  permalink: /increment
+
 "insecure registry":
   label: "insecure registry"
   description: "Description for insecure registry"
@@ -1398,10 +1503,30 @@ ip:
   description: "Description for issue tracking"
   permalink: /issue-tracking
 
+"java":
+  label: "java"
+  description: "Description for java"
+  permalink: /java
+
+"java version":
+  label: "java version"
+  description: "Description for java version"
+  permalink: /java-version
+
+"jdk":
+  label: "jdk"
+  description: "Description for jdk"
+  permalink: /jdk
+
 "jenkins plugin":
   label: "jenkins plugin"
   description: "Description for jenkins plugin"
   permalink: /jenkins-plugin
+
+"jest":
+  label: "jest"
+  description: "Description for jest"
+  permalink: /jest
 
 "jira":
   label: "jira"
@@ -1538,17 +1663,20 @@ management:
   description: "Description for manual builds"
   permalink: /manual-builds
 
-marathon:
+"marathon":
   label: "marathon"
+  description: "Description for marathon"
+  permalink: /marathon
 
 "mark as rc":
   label: "mark as rc"
   description: "Description for mark as rc"
   permalink: /mark-as-rc
 
-marketplace:
+"marketplace":
   label: "marketplace"
   description: "Description for marketplace"
+  permalink: /marketplace
 
 MAUI:
   label: "MAUI"
@@ -1654,6 +1782,11 @@ notes:
   label: "notes"
   description: "Description for notes"
   permalink: /notes
+
+node:
+  label: "node"
+  description: "Description for node"
+  permalink: /node
 
 notifications:
   label: "notifications"
@@ -2055,10 +2188,20 @@ schemes:
   description: "Description for schemes"
   permalink: /schemes
 
+"sdk":
+  label: "sdk"
+  description: "Description for sdk"
+  permalink: /sdk
+
 "SDK versions":
   label: "SDK versions"
   description: "Description for SDK versions"
   permalink: /SDK-versions
+
+"search":
+  label: "search"
+  description: "Description for search"
+  permalink: /search
 
 "secure":
   label: "secure"
@@ -2165,10 +2308,10 @@ signing:
   description: "Description for signing"
   permalink: /signing
 
-"signing history":
-  label: "signing history"
-  description: "Description for signing history"
-  permalink: /signing-history
+"signing reports":
+  label: "signing reports"
+  description: "Description for signing reports"
+  permalink: /signing-reports
 
 "signing identities":
   label: "signing identities"
@@ -2219,6 +2362,11 @@ slack:
   label: "slack notifications"
   description: "Description for slack notifications"
   permalink: /slack-notifications
+
+"slather":
+  label: "slather"
+  description: "Description for slather"
+  permalink: /slather
 
 "snyk scan":
   label: "snyk scan"
@@ -2425,6 +2573,21 @@ token:
   description: "Description for token"
   permalink: /token
 
+tuist:
+  label: "tuist"
+  description: "Description for tuist"
+  permalink: /tuist
+
+tuist command:
+  label: "tuist command"
+  description: "Description for tuist command"
+  permalink: /tuist-command
+
+tuist install:
+  label: "tuist install"
+  description: "Description for tuist install"
+  permalink: /tuist-install
+
 tracking:
   label: "tracking"
   description: "Description for tracking"
@@ -2445,7 +2608,7 @@ troubleshooting:
   description: "Description for troubleshooting"
   permalink: /troubleshooting
 
-"UI tests":
+"ui tests":
   label: "UI tests"
   description: "Description for UI tests"
   permalink: /ui-tests
@@ -2459,6 +2622,11 @@ troubleshooting:
   label: "ui testing"
   description: "Description for ui testing"
   permalink: /ui-testing
+
+"unit":
+  label: "unit"
+  description: "Description for unit"
+  permalink: /unit
 
 "unit tests":
   label: "unit tests"
@@ -2489,6 +2657,11 @@ upload:
   label: "upload file"
   description: "Description for upload file"
   permalink: /upload-file
+
+"usage":
+  label: "usage"
+  description: "Description for usage"
+  permalink: /usage
 
 "user management":
   label: "user management"
@@ -2565,6 +2738,11 @@ vm:
   description: "Description for vm"
   permalink: /vm
 
+yarn:
+  label: "yarn"
+  description: "Description for yarn"
+  permalink: /yarn
+
 walkthrough:
   label: "walkthrough"
   description: "Description for walkthrough"
@@ -2615,10 +2793,20 @@ webhook:
   description: "Description for webhook secret"
   permalink: /webhook-secret
 
-workflow:
+"workflow":
   label: "workflow"
   description: "Description for workflow"
   permalink: /workflow
+
+"workflows":
+  label: "workflows"
+  description: "Description for workflows"
+  permalink: /workflows
+
+"xamarin":
+  label: "xamarin"
+  description: "Description for xamarin"
+  permalink: /xamarin
 
 xcode:
   label: "xcode"
@@ -2679,3 +2867,23 @@ xml:
   label: "file-based variables"
   description: "Description for file-based variables"
   permalink: /file-based-variables
+
+"helm":
+  label: "helm"
+  description: "Helm related documentations"
+  permalink: "/helm"
+
+"kubernetes":
+  label: "kubernetes"
+  description: "Kubernetes related documentations"
+  permalink: "/kubernetes"
+
+"openshift":
+  label: "openshift"
+  description: "OpenShift related documentations"
+  permalink: "/openshift"
+
+"microsoft azure":
+  label: "microsoft azure"
+  description: "Microsoft Azure related documentations"
+  permalink: "/microsoft-azure"
