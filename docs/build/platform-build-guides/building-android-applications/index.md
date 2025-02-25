@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-# Building Android Applications
+# Android Applications
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/-6CpaE1FW7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -28,7 +28,7 @@ First, we need to set up a build configuration. Select the configuration from th
 
 ### Private Modules
 
-If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
+If your project uses private modules, don't forget to add the necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
 <ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
@@ -38,9 +38,9 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 ### Sending the Build Status to the Repository Providers
 
-At the bottom of the config tab, you will the **Set Commit Build Status **option.
+At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-android-build-commit-status.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-status.png' alt="Sending Build Status" />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -101,7 +101,7 @@ You can define variables and secrets to be incorporated during the build in the 
 Please see the following page for more information about environment variables:
 
 <ContentRef url="/environment-variables">
-  Why to Use Environment Variables and Secrets?
+  Why Use Environment Variables and Secrets?
 </ContentRef>
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-env-variables.png' />
@@ -110,7 +110,7 @@ Please click on the Save button and close this modal.
 
 ### Workflow Editor
 
-You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use workflow editor.
+You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use the workflow editor.
 
 :::info
 
@@ -126,17 +126,17 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build. Select the branch from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-start-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidbuild1.png' />
 
-Select a configuration, workflow, commit id and click on **Start Build button**
+Select a configuration, workflow, commit ID and click on **Start Build button**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-build-modal.png' />
 
-Appcircle will start building your application. Build log window will open and you can follow build process in realtime.
+Appcircle will start building your application. The build log window will open, and you can follow the build process in real time.
 
 :::info
 
-You can safely close the build log window, it won't affect the status of your build. You can come back and click on the build to track the status of your build.
+You can safely close the build log window; it won't affect the status of your build. You can come back and click on the build to track the status of your build.
 
 :::
 
@@ -150,11 +150,11 @@ Your build will be distributed automatically if you had set up Auto Distribute e
 
 ### chmod: cannot access './gradlew': No such file or directory
 
-Every Android project has a `gradlew` file in the main repository directory. If the Android Build step can't find this file, you need to edit your workflow, find the Android Build Step and edit the `PROJECT PATH`. If your `gradlew` file is in the `android` folder, you need to write, `./android` in the edit box.
+Every Android project has a `gradlew` file in the main repository directory. If the Android Build step can't find this file, you need to edit your workflow, find the Android Build Step, and edit the `PROJECT PATH`. If your `gradlew` file is in the `android` folder, you need to write, `./android` in the edit box.
 
 ### How can I change the JDK version for autofill?
 
-Appcircle currently has OpenJDK 11 (default), OpenJDK 8, OpenJDK 17 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can follow the steps [here](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) and add a custom script to your workflow.
+Appcircle currently has OpenJDK 17 (default), OpenJDK 8, OpenJDK 11 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can add the [**Select Java Version**](/workflows/common-workflow-steps/select-java-version) step to your workflow.
 
 But unfortunately, you cannot use custom scripts for autofill operations, which make it easy to fill in configuration details while adding a new build profile.
 
@@ -164,7 +164,7 @@ For the autofill, we have two options to choose from.
 
 You can add the `org.gradle.java.home` entry to the `gradle.properties` file in your Android project.
 
-For example, the below entry can be used to change the default Java version to 17 for the "Default M1 Pool".
+For example, the below entry can be used to change the default Java version to 17 for the "Appcircle Standard macOS Pool (arm64)".
 
 ```properties
 org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu
@@ -174,7 +174,7 @@ You can get the JDK home paths for each build pool from [Android's build infrast
 
 #### 2. Change `JAVA_HOME` using environment variables
 
-You can use the [environment variables](/environment-variables/managing-variables) to enable the JDK version your project requires.
+You can use the [environment variables](/build/build-environment-variables) to enable the JDK version your project requires.
 
 For example, you can take the following steps to change the default Java version to 17.
 
@@ -197,11 +197,11 @@ You can get the JDK home paths for each build pool from [Android's build infrast
         > Could not GET 'https://jcenter.bintray.com/com/google/protobuf/protobuf-java-util/3.09.0/protobuf-java-util-3.09.0.pom'. Received status code 502 from server: Bad Gateway
 ```
 
-You may experience gradle build errors if your project uses Bintray resources. Since JFrog has shutdown Bintray on May 1, 2021. You should update your gradle file and move to Maven Central. Replace `jcenter()` with `mavenCentral()` in all your `build.gradle` files. Please be aware that some of your dependencies may not exist on Maven.
+You may experience Gradle build errors if your project uses Bintray resources. Since JFrog has shut down Bintray on May 1, 2021. You should update your Gradle file and move to Maven Central. Replace `jcenter()` with `mavenCentral()` in all your `build.gradle` files. Please be aware that some of your dependencies may not exist on Maven.
 
 ### Gradle build daemon disappeared unexpectedly
 
-If you receive a Gradle error similar to the following, it can happen due to 2 reasons
+If you receive a Gradle error similar to the following, it can happen due to 2 reasons:
 
 ```
 org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
@@ -220,11 +220,11 @@ java.lang.RuntimeException: java.lang.OutOfMemoryError: Java heap space
 - Problem with UTF-8 characters in your project or environment variable. Please edit your **gradle.properties** file and add `-Dfile.encoding=UTF-8` argument to `org.gradle.jvmargs` section.
 - You have edited **gradle.properties** and put some arguments to the `org.gradle.jvmargs` section. When you modify default JVM arguments, it resets the default `MaxMetaspaceSize` property. You should always add `-XX:MaxMetaspaceSize=256m` to this section to prevent unlimited memory allocation.
 
-If you're using DexGuard, you may need to above modifications to your DexGuard configuration as well.
+If you're using DexGuard, you may need to make the above modifications to your DexGuard configuration as well.
 
 ### I received a google-services.json Error but I don't want to push this file to the repository
 
-Secret files such as the google-services.json can be added as a [secret environment variable](/environment-variables/managing-variables#adding-files-as-environment-variables) and then [selected in the build configuration](/build/build-process-management/build-profile-configuration#environment-variables-configuration).
+Secret files such as the google-services.json can be added as a [secret environment variable](/build/build-environment-variables#adding-files-as-environment-variables) and then [selected in the build configuration](/build/build-process-management/configurations#environment-variables-configuration).
 
 Then, you can add a custom script step before the Android build step and move the file to the expected path during the build with a code like the following (where the secret environment variable is named as `GOOGLE_SERVICES_JSON`) :
 
@@ -238,7 +238,7 @@ mv $GOOGLE_SERVICES_JSON $AC_REPOSITORY_DIR/app
 
 You may want to build unsigned Android applications. The most common mistake done with this is Appcircle users usually forget to disable the Sign Application step in the workflow.;
 
-If you do not select a keystore in the build configuration, you need to disable the Sign Application step or your build will fail.
+If you do not select a keystore in the build configuration, you need to disable the Sign Application step, or your build will fail.
 
 #### Keystore was tampered with or password was incorrect
 

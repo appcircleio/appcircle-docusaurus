@@ -4,11 +4,11 @@ sidebar_label: Testing Distribution
 description: Enhance powerful plugin to distribute your builds to appcircle
 tags:
   [
-    testing-distribution,
+    testing distribution,
     ipa distribution,
     apk distribution,
     binary distribution,
-    jenkins-plugin,
+    jenkins plugin,
   ]
 sidebar_position: 1
 ---
@@ -26,7 +26,8 @@ https://plugins.jenkins.io/appcircle-testing-distribution/
 
 **Compatible Agents:**
 
-- macOS 14.2, 14.5
+- macOS 14 (arm64)
+<!-- - Ubuntu 22.04 (x86_64) -->
 
 **Supported Version:**
 

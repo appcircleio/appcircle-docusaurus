@@ -34,20 +34,18 @@ To create rich release notes, the Release Notes component should be included in 
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, along with detailed descriptions.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-input.png' />
 
 | Variable Name                | Description                                                                                                                                                                                                                   | Status   |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_RELEASE_NOTES_PATH`     | Specifies the path of the release notes. You can override the `AC_RELEASE_NOTES_PATH` environment variable or provide its full path, e.g., `./release-notes.txt`. If the path is empty, release notes will be auto-generated. | Optional |
+| `$AC_RELEASE_NOTES_PATH`     | Specifies the path of the release notes. You can override the `$AC_RELEASE_NOTES_PATH` environment variable or provide its full path, e.g., `./release-notes.txt`. If the path is empty, release notes will be auto-generated. | Optional |
 | `$AC_RELEASE_NOTES_TEMPLATE` | This variable is an ERB template. You can enrich the contents of your release notes with environment variables or Ruby snippets.                                                                                              | Optional |
 
 ### Output Variables
 
-| Variable Name | Description                                                                                                                                                                                                                               |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ` `           | This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). |
+This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-output.png' />
 
@@ -61,4 +59,4 @@ Don't forget to use the [**Export Build Artifacts**](/workflows/common-workflow-
 
 To access the source code of this component, please use the following link:
 
-https://github.com/appcircleio/appcircle-flutter-web-build-component
+https://github.com/appcircleio/appcircle-release-notes-component

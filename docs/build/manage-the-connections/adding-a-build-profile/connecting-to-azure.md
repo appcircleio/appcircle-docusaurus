@@ -1,7 +1,7 @@
 ---
 title: Connecting to Azure DevOps
 description: Learn how to connect to Azure DevOps in Appcircle
-tags: [build profile, connection, azure devops]
+tags: [build profile, connection]
 sidebar_position: 4
 ---
 
@@ -10,36 +10,64 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Connecting to Azure DevOps
 
-## Connecting to Azure DevOps Services Cloud
-
 ### Requirements
 
 You must enable third-party application access via OAuth. To do that, you can follow the steps:
 
 - Go to https://dev.azure.com
-- Click to Organization setting from the left sidebar.
-- Go to your policies settings below security.
-- Enable Third-Party application access via OAuth.
+- Click on the Organization setting from the left sidebar.
+- Go to your policy settings below security.
+- Enable third-party application access via OAuth.
 
 :::caution
-If you don't enable third-party application access via the Oauth setting, you can't authorize Appcircle.
+If you don't enable third-party application access via the OAuth setting, you can't authorize Appcircle.
 :::
 
 ### Configuration Azure DevOps Services Setting on Appcircle
 
 If you authorize Appcircle to access your repositories on Azure DevOps, you can select the repository that you want to connect in the next screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-connect-main.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
-After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or ask your consent about authorizing more repositories.
+After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-connection-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-bitbucket-gitlab.png' />
 
-After the connection is successful, you can [view your newly created profile](/build/manage-the-connections/adding-a-build-profile/#view-the-newly-created-build-profile) and start building!
+After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
+
+## Connecting to Azure DevOps Cloud Repository
+
+To connect to a Azure DevOps Cloud repository using either OAuth or Personal Access Token,
+
+- OAuth Connection
+
+Clicking on Get Repositories from Azure DevOps Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+
+- PAT (Personal Access Token) Connection
+
+Clicking on Connect to a Azure DevOps server, which can be selected to connect to self-hosted and PAT connections, will require a token. Generating a PAT for Appcircle will require a list of permissions down below.
+
+| Scope            | Permission        | Description                                                                                                                                                                |
+|------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Identity         | Read              | Allows reading identity information, such as users and groups within the organization                                                                                      |
+| Code             | Read , Status     | Provides read access to repositories, enabling applications to fetch and view source code. Allows applications to post and update build or commit statuses in repositories.|
+| Notifications    | Read              | Grants read-only access to notification settings.                                                                                                                          |
+
+### OAuth Permissions for Azure DevOps Integration
+
+The following table details the OAuth permissions required for Appcircle to connect with Azure DevOps. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with Azure DevOps via OAuth. 
+
+| Scope            | Permission        | Description                                                                                                                                                                            |
+|------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Code             | Read , Status     | Provides read access to repositories, enabling applications to fetch and view source code. Allows applications to post and update build or commit statuses in repositories.            |
+| PR threads       | Full              | Enables access to pull request comments and discussions (threads), including reading and posting messages.                                                                             |
+| Service Endpoints| Read , Query      | Grants read, query access to service endpoints. Allows listing external service integrations and retrieving details of existing connections, but does not permit creating or modifying.|
+| Project and team | Read              | Provides read access to project and team-related information, such as project details and team memberships.                                                                            |
+| Notifications    | Read              | Grants read-only access to notification settings.                                                                                                                                      |
 
 ## Connecting to Azure DevOps Server Repository
 
@@ -55,7 +83,7 @@ Azure DevOps Server version must be **Azure DevOps Server 2020** or higher.
 
 First, select **Azure** and then **Connect to an Azure DevOps Server** through the menu:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-con-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
 
 Fill in the relevant information about your Azure DevOps Server. If you are not sure what those are, contact your system administrator.
 
@@ -69,7 +97,7 @@ Fill in the relevant information about your Azure DevOps Server. If you are not 
 
   - For example: `https://azure.spacetech.com`
 
-- **Owner Username**: Use the collection name on the Azure Devops Server. You can see collections on the left-hand side when you open your Azure Devops Server home page.
+- **Owner Username**: Use the collection name on the Azure DevOps Server. You can see collections on the left-hand side when you open your Azure DevOps Server home page.
 
   - For example: `DefaultCollection`
 
@@ -80,7 +108,7 @@ Fill in the relevant information about your Azure DevOps Server. If you are not 
 
 ### Azure Devops Server That Is Upgraded From a TFS Server
 
-If your Azure Devops Server is upgraded from a TFS server, you should identify your Azure Devops Server URL.
+If your Azure DevOps Server is upgraded from a TFS server, you should identify your Azure DevOps Server URL.
 
 - Copy a repository clone URL for any git repository.
 - Check if your URL has an unexpected **path** in the URL.

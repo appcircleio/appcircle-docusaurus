@@ -1,15 +1,15 @@
 ---
-title: Building .NET MAUI Apps
+title: .NET MAUI Applications
 description: Learn how to build a .NET MAUI app on Appcircle
 tags: [build, platform build guides, MAUI, .NET MAUI, custom scripts]
-sidebar_position: 10
+sidebar_position: 9
 ---
 
-# Building .NET MAUI Apps
+# .NET MAUI Applications
 
 This guide gives necessary information about the steps that should be followed to successfully build and publish a [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui) app with Appcircle.
 
-It's an introduction to the basic steps such as build, code signing, and app publishing. Although these steps are minimum requirements for a mobile app build pipeline, you should go on with other sections of the Appcircle documentation for numerous advanced CI/CD features.
+It's an introduction to the basic steps such as building, code signing, and app publishing. Although these steps are minimum requirements for a mobile app build pipeline, you should go on with other sections of the Appcircle documentation for numerous advanced CI/CD features.
 
 If you don't have a .NET MAUI app already or want to follow the steps quickly for a fast evaluation, you can use the [sample app](https://github.com/dotnet/maui-samples/tree/main/8.0/Apps/Calculator) Calculator from the `dotnet/maui-samples` repository. To simulate a .NET MAUI repository, it will be good to clone the app folder and add it as a repository to your own Git provider.
 
@@ -55,7 +55,7 @@ Keep in mind that, in order to use iOS Signing Identities in the build pipeline,
 
 :::
 
-**4.** In the [build profile configuration](/build/build-process-management/build-profile-configuration), open the **Config** tab and edit the settings below.
+**4.** In the [build profile configuration](/build/build-process-management/configurations#config-details), open the **Config** tab and edit the settings below.
 
 - **XCODE VERSION**: Select the Xcode version that's compatible with your app. For instance, `15.4.x`. You can take a look at the table [here](https://github.com/dotnet/maui/wiki/Release-Versions) for the compatible Xcode versions.
 - **XCODE PROJECT OR WORKSPACE PATH**: Enter the project or workspace file name. For instance, `Calculator.xcodeproj`.
@@ -69,13 +69,13 @@ Keep in mind that, in order to switch to the selected Xcode version in the build
 
 :::caution
 
-The selected pool in the **SELECT A POOL** list should be the `Default M1 Pool` for the Appcircle Cloud or a pool that has **`arm64`** macOS runners for the self-hosted Appcircle.
+The selected pool in the **SELECT A POOL** list should be the `Appcircle Standard macOS Pool (arm64)` for the Appcircle Cloud or a pool that has **`arm64`** macOS runners for the self-hosted Appcircle.
 
 Intel-based runners are not supported or documented as of now, and you might need extra customizations done in the custom scripts.
 
 :::
 
-**5.** In the [build profile configuration](/build/build-process-management/build-profile-configuration), open the **Signing** tab and **add provisioning profile** by selecting from the list of Signing Identities.
+**5.** In the [build profile configuration](/build/build-process-management/configurations#config-details), open the **Signing** tab and **add provisioning profile** by selecting from the list of Signing Identities.
 
 :::caution
 
@@ -83,7 +83,7 @@ Currently, **Automatic Code Signing** is not supported for iOS .NET MAUI builds.
 
 :::
 
-**6.** In your [workflow](/workflows), use the below custom script as a replacement of the default **Xcodebuild for Devices** step.
+**6.** In your [workflow](/workflows), use the below custom script as a replacement for the default **Xcodebuild for Devices** step.
 
 :::info
 
@@ -125,20 +125,20 @@ $dotnet publish $project -p:TargetFrameworks=$framework \
 
 The custom script above does the following operations in order to build a .NET MAUI iOS app:
 
-- Install .NET SDK
-- Install `maui-ios` workload
-- Build the project with dependencies
-- Publish the app for deployment
+- Install .NET SDK.
+- Install `maui-ios` workload.
+- Build the project with dependencies.
+- Publish the app for deployment.
 
 The custom script has some **variables that should be changed or customized** for your pipeline.
 
 - **`dotnetVersion`**: You can select a .NET SDK version that's compatible with your project or solution. See [here](https://github.com/dotnet/maui/wiki/Release-Versions) for details.
 - **`framework`**: You should select a target framework that the app will be built for, considering your project requirements and .NET SDK version. See [here](https://learn.microsoft.com/en-us/dotnet/standard/frameworks) for details.
 - **`project`**: It should be the path to the project file for your app. `$AC_REPOSITORY_DIR` is a [reserved environment variable](/environment-variables/appcircle-specific-environment-variables) that should not be changed since it has the repository path value. You can change the rest of the path to customize it for your project structure.
-- **`appleCertificate`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [build profile configuration](/build/build-process-management/build-profile-configuration) **Signing** tab.
-- **`appleProfile`**: It should be the name of the selected provisioning profile at the [build profile configuration](/build/build-process-management/build-profile-configuration) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
+- **`appleCertificate`**: You should use the certificate name as seen on the [Apple Certificates](/signing-identities/apple-certificates) list. It should also be compatible with the selected provisioning profile that you have selected from the  [build profile configuration](/build/build-process-management/configurations#config-details) **Signing** tab.
+- **`appleProfile`**: It should be the name of the selected provisioning profile at the [build profile configuration](/build/build-process-management/configurations) **Signing** tab. You can also see the name on the [Apple Profiles](/signing-identities/apple-profiles) list.
 
-When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/post-build-operations/after-a-build#download-artifacts).
+When the build pipeline is completed successfully, you will see the signed `.ipa` in the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
 #### References
 
@@ -183,7 +183,7 @@ Keep in mind that, in order to use Android Signing Identities in the build pipel
 
 :::
 
-**5.** In the [build profile configuration](/build/build-process-management/build-profile-configuration), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
+**5.** In the [build profile configuration](/build/build-process-management/configurations), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
 
 **6.** In your [workflow](/workflows), use the below **Custom Script** as a replacement of the default **Android Build** step.
 
@@ -276,7 +276,7 @@ The custom script has some **variables that should be changed or customized** fo
 - **`project`**: It should be the path to the project file for your app. `$AC_REPOSITORY_DIR` is a [reserved environment variable](/environment-variables/appcircle-specific-environment-variables) that should not be changed since it has the repository path value. You can change the rest of the path to customize it for your project structure.
 - **`packageFormat`**: A semi-colon delimited property that indicates if you want to package the app as an APK file or AAB. Set to either `aab` or `apk` to generate only one format.
 
-When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/post-build-operations/after-a-build#download-artifacts).
+When the build pipeline is completed successfully, you will see the signed `.apk` or `.aab` in the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
 :::info
 
@@ -286,7 +286,7 @@ You can also use the **Signing Identities** from Appcircle when you are signing 
 
 Keep in mind that, if you sign your app with the `dotnet publish`, you will not need the **Android Sign** step in your workflow. So, you should disable it or remove it from your workflow.
 
-Also, change the output directory (`-o|--output`) to `$AC_OUTPUT_DIR` to send the signed artifacts directly to the [build artifacts](/build/post-build-operations/after-a-build#download-artifacts).
+Also, change the output directory (`-o|--output`) to `$AC_OUTPUT_DIR` to send the signed artifacts directly to the [build artifacts](/build/build-process-management/binary-actions#download-artifacts).
 
 :::
 

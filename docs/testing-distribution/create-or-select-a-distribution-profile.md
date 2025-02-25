@@ -199,22 +199,16 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main4.png' />
 
-To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
+To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Security screen and press the "Connect" button next to SSO Login or LDAP Login under the "Authentications" section.
 
-<ContentRef url="/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication">SSO Login</ContentRef>
-<ContentRef url="/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication">LDAP Login</ContentRef>
+<ContentRef url="/account/my-organization/security/authentications/distribution-sso-authentication">SSO Login</ContentRef>
+<ContentRef url="/account/my-organization/security/authentications/distribution-ldap-authentication">LDAP Login</ContentRef>
 
 :::info
 
 If SSO and LDAP details are not configured for your organization, these authentication methods will not be visible in the Distribution Profile settings.
 
 :::
-
-### Device Registration (iOS Only)
-
-You may enable this option to automatically register devices in the Apple Developer Portal and update your Ad Hoc provisioning profiles. You must select App Store Connect API Key, a build profile, and a configuration.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main5.png' />
 
 ### Public Link
 
@@ -250,7 +244,7 @@ Commit Message: $AC_COMMIT_MESSAGE
 
 :::info
 
-If you are using the Self-Hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io.
+If you are using the self-hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io address. For details on how to configure SMTP settings in a self-hosted installation see [Email Integration](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/integration#email).
 
 :::
 
@@ -278,6 +272,22 @@ After sending your application to testing groups, you can track the actions of t
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main15.png' />
 
 ## Binary Actions
+
+### Binary Details
+
+1. Select the binary.
+
+You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
+
+2. Click the **...** button and select **Binary Details**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios14.png' />
+
+3. This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5184-binary.png' alt="Binary Details" />
 
 ### Send your application to Enterprise App Store
 
@@ -329,22 +339,6 @@ Re-sign History allows you to view the re-sign process logs for your app version
 The binary file in the Testing Distribution profile can be downloaded by selecting the Download button from the actions menu.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/TD-Binary-Download.png' />
-
-### Binary Details
-
-1. Select the binary.
-
-You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
-
-2. Click the... button and select **Binary Details**
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios14.png' />
-
-3. This window will show basic information about your binary.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios15.png' />
 
 ### Delete Multiple Testing Distribution App Versions
 

@@ -1,7 +1,7 @@
 ---
 title: Snyk Scan Security
 description: The Snyk Security Scan step enables developers to seamlessly incorporate vulnerability scanning into their CI/CD workflows.
-tags: [snyk-scan, security, mobile]
+tags: [snyk scan, security, mobile]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -14,7 +14,7 @@ The **Snyk Security Scan** step integrates directly into Appcircle’s CI/CD wor
 
 ### Prerequisites
 
-Before running the **Snyk Scan Security** step, certain prerequisites must be completed. These prerequisites, detailed in the table below:
+Before running the **Snyk Scan Security** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
@@ -24,13 +24,15 @@ Before running the **Snyk Scan Security** step, certain prerequisites must be co
 
 ### Input Variables
 
-Each component requires specific input variables for its operation. The input variables necessary for the **Snyk Scan Security** step are:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-snyk-scan-cloud-upload_2.png'/>
 
-:::danger
+:::danger Sensitive Variables
 
-Enter confidential information as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, select the appropriate [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) in the [Configuration](/build/build-process-management/build-profile-configuration/).
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
 
 :::
 
@@ -49,12 +51,12 @@ Enter confidential information as a [secret environment variable](/environment-v
 
 ### Output Variables
 
-The outputs resulting from the operation of this component are as follows:
+The output(s) resulting from the operation of this component are as follows:
 
 | Output Variable                | Description                                                                                                              |
 |--------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| `$AC_SNYK_REPORT`              | The [Snyk report](https://docs.snyk.io/manage-risk/reporting/) file containing the results of executed tests.            |
-| `$AC_SNYK_MONITOR_EXPLORE_LINK`| The [link to explore and monitor](https://docs.snyk.io/snyk-cli/commands/monitor) the project's security status on Snyk. |
+| `AC_SNYK_REPORT`              | The [Snyk report](https://docs.snyk.io/manage-risk/reporting/) file containing the results of executed tests.            |
+| `AC_SNYK_MONITOR_EXPLORE_LINK`| The [link to explore and monitor](https://docs.snyk.io/snyk-cli/commands/monitor) the project's security status on Snyk. |
 
 ---
 

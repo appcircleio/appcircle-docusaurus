@@ -34,7 +34,7 @@ When we look at self-hosted Appcircle deployment as a whole, we will see below a
 To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/be-3008-appcircle-topology.png). It will open the diagram in new browser tab.
 
 :::tip
-You can see all external network access details on the [Network Access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access) page.
+You can see all external network access details on the [Network Access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access) page.
 :::
 
 ## Appcircle DMZ Architecture
@@ -43,4 +43,23 @@ If you plan to use Appcircle DMZ Architecture, the Appcircle DMZ Architecture fo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-appcircle-dmz-topology.png' />
 
-For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz) document.
+For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) document.
+
+## Appcircle Distributed Architecture
+
+In addition to the standalone and DMZ architectures, you can deploy Appcircle using the Helm chart for Kubernetes environments. This method allows for greater scalability and management flexibility.
+
+For detailed instructions on installing and configuring Appcircle using the Helm chart, refer to the [Appcircle Helm Chart Documentation](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes). This documentation includes steps for setting up Helm, configuring `values.yaml`, and deploying the Appcircle server.
+
+### Advantages
+
+- **High Availability:** Deploying on Kubernetes ensures high availability through automated failover and load balancing.
+- **Scalability:** Supports high traffic and large-scale applications with horizontal scaling based on load, ensuring optimal performance.
+- **Fault Tolerance:** Kubernetes can handle node failures and automatically reschedule workloads to maintain application uptime.
+- **Scalability:** Easily scale your deployment by adding or removing nodes in the Kubernetes cluster.
+
+### Disadvantages
+
+- **Complexity:** Requires familiarity with Kubernetes and Helm, which can be complex to learn and manage.
+- **Resource Requirements:** May require more resources compared to a single-node deployment, including more compute power and storage.
+- **Operational Overhead:** Maintaining and monitoring a Kubernetes cluster can add operational overhead.

@@ -6,7 +6,7 @@ tags:
   [
     concepts,
     app store,
-    internal-testing,
+    internal testing,
     beta testing,
     binary distribution,
     ipa distribution,
@@ -30,7 +30,8 @@ The Appcircle Enterprise App Store plugin enables users to publish their apps to
 
 **Compatible Agents:**
 
-- macOS 14.2, 14.5
+- macOS 14 (arm64)
+<!-- - Ubuntu 22.04 (x86_64) -->
 
 **Supported Version:**
 

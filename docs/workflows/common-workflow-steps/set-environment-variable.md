@@ -1,7 +1,7 @@
 ---
 title: Set Environment Variable
 description: Set Environment Variable step sets environment value for given keys
-tags: [set, environment, variable]
+tags: [environment, variable]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 The **Set Environment Variable** step enables the setting of environment values for specified keys. Although creating environment variables via the [Environment Variables](/environment-variables/) page is typically recommended, this step provides flexibility to modify environment variables directly within the build workflow when necessary.
 ### Prerequisites
 
-There is no prerequisites step before the **Set Environment Variable** step. It can be implemented at any point within the workflow as necessary.
+There are no prerequisites required before using the **Set Environment Variable** step. It can be implemented at any point within the workflow as necessary.
 
 :::danger
 
@@ -23,12 +23,15 @@ Please note that you must use the **Set Environment Variable** step before the s
 
 ### Input Variables
 
-Each component requires specific input variables for operation. For the **Set Environment Variable** step, the necessary input variables are:
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/set-environment-variable_2.png'/>
 
-:::danger
+:::danger Sensitive Variables
 
-Confidential information should be entered as a [secret environment variable](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs). Also, ensure that the [environment variable group](/environment-variables/managing-variables#using-environment-variable-groups-in-builds) is selected in the [Configuration](/build/build-process-management/build-profile-configuration/).
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
 
 :::
 
@@ -37,9 +40,11 @@ Confidential information should be entered as a [secret environment variable](/e
 | `$AC_SETENV_KEYS`  | Specifies the key of the environment variable to be set. This should be a space-separated list of environment variable keys.  | Required |
 | `$AC_SETENV_VALUE` | Specifies the value of the environment variable to set. If this field is left blank, the environment variable will be set to `null`. | Optional |
 
-### Output Variables
+:::info Output Variables
 
 The **Set Environment Variable** step generates no output variables. Success or failure of this step depends on whether the environment variable is set correctly, allowing subsequent use within the workflow.
+
+:::
 
 ---
 

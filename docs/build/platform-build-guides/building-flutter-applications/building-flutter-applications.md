@@ -1,5 +1,5 @@
 ---
-title: Building Flutter Mobile Applications
+title: Flutter Mobile Applications
 description: You can build your Flutter applications in Appcircle for iOS or Android platforms.
 tags: [build, platform build guides, flutter]
 sidebar_position: 7
@@ -10,7 +10,7 @@ import ContentRef from '@site/src/components/ContentRef';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Building Flutter Mobile Applications
+# Flutter Mobile Applications
 
 You can build your Flutter applications in Appcircle for iOS or Android platforms.
 
@@ -34,7 +34,7 @@ Build configuration options are very similar to native iOS or Android applicatio
 
 ### Private Modules
 
-If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
+If your project uses private modules, don't forget to add the necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
 <ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
@@ -60,13 +60,13 @@ First, we need to set up a build configuration. Select the configuration from th
 
 ### Build Configuration for Flutter Web applications
 
-Flutter Web apps are built alongside with iOS or Android Flutter apps. For more information please refer to the following guide:
+Flutter Web apps are built alongside iOS or Android Flutter apps. For more information, please refer to the following guide:
 
 <ContentRef url="/build/platform-build-guides/building-flutter-applications/building-flutter-web-applications">Building Flutter Web Applications</ContentRef>
 
 ### Sending the Build Status to the Repository Providers
 
-At the bottom of the config tab, you will the **Set Commit Build Status **option.
+At the bottom of the config tab, you will see the **Set Commit Build Status **option.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/create-flutter-build-commit-status.png' />
 
@@ -129,7 +129,7 @@ The final tab is to add environment variables to the build. For advanced use cas
 Please refer to the following document for more information on environment variables:
 
 <ContentRef url="/environment-variables">
-  Why to Use Environment Variables and Secrets?
+  Why Use Environment Variables and Secrets?
 </ContentRef>
 
 ### Build Workflows for Flutter Applications
@@ -148,15 +148,15 @@ To change the Flutter version, open the Flutter Install workflow step from the w
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-flutter-select-version-workflow.png" />
 
-You can also set the preferred Flutter version on config screen. If you don't set any version, `stable` version will be used.
+You can also set the preferred Flutter version on the config screen. If you don't set any version, `stable` version will be used.
 
 ### Starting a Flutter Build and After a Build
 
-You are now ready to start your first build. Select the branach from the left side and click on the **Start Build** button.
+You are now ready to start your first build. Select the branch from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild1.png' />
 
-Select a configuration, workflow, commit id and click on **Start Build button**
+Select a configuration, workflow, and commit ID and click on **Start Build button**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build-modal.png' />
 
@@ -191,7 +191,7 @@ brew install dart
 
 ### Flutter release mode binaries do not work on the Android emulator
 
-To run a Flutter release mode APK in an emulator, please make sure that the emulator runs with the `x86_64` ABI type and the app are configured accordingly. Emulators with `x86` ABI type are not supported by Flutter . (Please refer to the following GitHub issue on the Flutter repository for more information: [https://github.com/flutter/flutter/issues/28432](https://github.com/flutter/flutter/issues/28432))
+To run a Flutter release mode APK in an emulator, please make sure that the emulator runs with the `x86_64` ABI type and the app is configured accordingly. Emulators with `x86` ABI type are not supported by Flutter . (Please refer to the following GitHub issue on the Flutter repository for more information: [https://github.com/flutter/flutter/issues/28432](https://github.com/flutter/flutter/issues/28432))
 
 ### No pubspec.yaml file found error
 
@@ -201,7 +201,7 @@ For reference, please refer to the [Android Flutter Build](https://github.com/ap
 
 ### File not found error
 
-You may get an error like below when you're building an Android project.
+You may get an error like the one below when you're building an Android project.
 
 ```
 lib/src/core/dependency/myservice.dart:12:8: Error: Error when reading ‘lib/src/data/repositories/CustomerRepository.dart’: No such file or directory
@@ -245,15 +245,15 @@ You have either:
 
 **Suggested resolution**
 
-- Option 1 (recommended): Run `pod update Amplify AWSPluginsCore AmplifyPlugins` from the ios dir. This will update the pods that are used by the amplify flutter packages.
-- Option 2: Delete the `Podfile.lock` (in the ios dir) and rebuild. A new Podfile.lock will be generated. Please note, this may cause other non amplify related dependencies to be updated as well.
-- Option 3: Run pod update from the ios dir. This should update your `Podfile.lock` file. Please note, this may cause other non amplify related dependencies to be updated as well.
+- Option 1 (recommended): Run `pod update Amplify AWSPluginsCore AmplifyPlugins` from the iOS dir. This will update the pods that are used by the amplify flutter packages.
+- Option 2: Delete the `Podfile.lock` (in the iOS dir) and rebuild. A new Podfile.lock will be generated. Please note, this may cause other non amplify related dependencies to be updated as well.
+- Option 3: Run pod update from the iOS dir. This should update your `Podfile.lock` file. Please note, this may cause other non amplify related dependencies to be updated as well.
 
 ### Cocoapods Error
 
 `Signing for "MyPod" requires a development team. Select a development team in the Signing & Capabilities editor`
 
-If you are using Xcode 14 and your Flutter version is less than 3.3, your build may fail with above message. You should modify your Podfile according to below snippet. Flutter 3.3 fixes this bug. [Related Flutter Issue](https://github.com/flutter/flutter/issues/111757)
+If you are using Xcode 14 and your Flutter version is less than 3.3, your build may fail with the above message. You should modify your Podfile according to the below snippet. Flutter 3.3 fixes this bug. [Related Flutter Issue](https://github.com/flutter/flutter/issues/111757)
 
 ```ruby
 post_install do |installer|

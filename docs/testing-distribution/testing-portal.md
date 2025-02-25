@@ -27,11 +27,22 @@ The accounts used in the testing portal are completely independent from Appcircl
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portalentry.png" />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-mobilex.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-mobile1.png" alt="Mobile Login"/>
 
 :::info
 
 Please note that the log out option is available only if an active authentication method is present in your testing distribution profile.
+
+:::
+
+:::warning
+
+Please note that to login to the Testing Portal, you must enable cookies in your browser. Cookies help maintain your session and ensure secure access.
+
+Refer to your browser's settings to enable cookies:
+
+**Chrome**: Settings > Privacy and security > Cookies.
+**Safari**: Preferences > Privacy.
 
 :::
 
@@ -47,11 +58,11 @@ For installing Android apps, you may need to grant the web browser "install apps
 
 :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-main.png" alt="Testing Portal Main Page" />
 
 The Testing Portal will also display the size and the certificate type of each app version. For more information on certificate types, please visit the [Signing Identities](/signing-identities) section.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-size.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-size.png" alt="Testing Portal Binary Size" />
 
 :::tip
 
@@ -91,9 +102,25 @@ If the detected language is not supported, the default language will be English.
 
 The search bar can be used to filter the available app version list by *app names**, **app versions**, **release notes**, and **build numbers**. 
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-search.png" alt="Testing Portal Search Bar"/>
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-mobile2.png" alt="Mobile Search" />
+
+### Search By Branch
+
+The Testing Portal will provide a dropdown menu containing the source branches of the listed binaries, allowing users to quickly search for the required branch for a clearer display.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-branch.png" alt="Filter by Branch" />
+
+:::tip
+If the branch filter is not visible, it may be because the binary was uploaded manually to the Testing Distribution module instead of being sent via the Build module.
+:::
+
+### Sort Binaries by Version & Date
+
+The listed binaries on the Testing Portal can be sorted by version or the date they were shared, based on user preferences. This can be toggled using the Date and Version buttons located above the binary list.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-sort.png" alt="Sort by Date or Version" />
 
 ## Navigating Between Shared App Profiles
 

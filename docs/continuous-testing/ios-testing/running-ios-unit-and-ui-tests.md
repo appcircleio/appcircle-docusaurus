@@ -1,7 +1,7 @@
 ---
 title: Running Unit & UI Tests
 description: Easily run Unit and UI tests for your iOS applications during builds. Improve app quality with Appcircle's testing features.
-tags: [ios, mobile, testing, unit-test, ui-test]
+tags: [ios, mobile, testing, unit test, ui test]
 sidebar_position: 1
 ---
 
