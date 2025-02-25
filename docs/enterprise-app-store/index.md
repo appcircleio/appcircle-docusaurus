@@ -78,7 +78,7 @@ Yes. You can customize your logo, primary and secondary color and the main text 
 
 #### How will users enter my App Portal?
 
-Once you go to your portal's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter, Developer, and Professional plans. Please [contact us](https://appcircle.io/contact) to request custom domains).
+Once you go to your portal's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter plans. Please [contact us](https://appcircle.io/contact) to request custom domains).
 
 
 #### Can I set an authentication method for accessing the Enterprise Portal?
