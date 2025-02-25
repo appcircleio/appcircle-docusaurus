@@ -237,8 +237,7 @@ sudo ufw status verbose
 
 <DmzHttpsRequirement/>
 
-Due to this requirement, it is mandatory for the Appcircle DMZ server to be configured with `HTTPS`. For detailed instructions on configuring custom domains and `HTTPS` for the Enterprise App Store and Testing Distribution, please refer to the [SSL Configuration Guide](/self-hosted-appcircle/configure-server/integrations-and-access/ssl-configuration). This guide will help you set up the necessary configurations in your Appcircle server's `global.yaml` file.
-
+Due to this requirement, it is mandatory for the Appcircle DMZ server to be configured with `HTTPS`. For detailed instructions on configuring custom domains and `HTTPS` for the Enterprise App Store and Testing Distribution, please refer to the [SSL Configuration Guide](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration). This guide will help you set up the necessary configurations in your Appcircle server's `global.yaml` file.
 
 ### DNS Entries
 
