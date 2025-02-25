@@ -233,7 +233,7 @@ sudo ufw status verbose
 <PortRedirection/>
 :::
 
-### Appcircle DMZ Server HTTPS Requirement
+### HTTPS Requirement
 
 <DmzHttpsRequirement/>
 
