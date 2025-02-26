@@ -87,7 +87,7 @@ After selecting the distribution method, the relevant App ID is selected for whi
 
 :::info
 
-The certificates will be retrieved from your Apple Developer Account.
+The certificates that need to be selected when registering a profile are listed by retrieving certificates from your **Apple Developer** account. The certificates listed here are **not** related to the ones uploaded to **Appcircle**.
 
 :::
 
