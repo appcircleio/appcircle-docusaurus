@@ -85,6 +85,12 @@ In order to register a profile, some parameters are needed.
 
 After selecting the distribution method, the relevant App ID is selected for which Bundle ID will be created. Then you need to select which certificate you want to create with.
 
+:::info
+
+The certificates that need to be selected when registering a profile are listed by retrieving certificates from your **Apple Developer** account. The certificates listed here are **not** related to the ones uploaded to **Appcircle**.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerProfileDetails.png' />
 
 #### Device Registration

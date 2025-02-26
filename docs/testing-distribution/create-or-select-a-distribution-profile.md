@@ -328,7 +328,7 @@ You must have already created the designated Publish profile within the Publish 
 
 Resigning is the process of modifying an existing binary with a new signing certificate or keystore, which is required when an application needs to be published under a different developer account or when updating an existing application. It involves removing the original signature and replacing it with a new one.
 
-For more information please visit the Re-sign Binary documentation.
+For more information please visit the [Re-sign Binary](/testing-distribution/resigning-binaries) documentation.
 
 ### Re-sign History
 
