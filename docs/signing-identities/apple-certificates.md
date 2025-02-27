@@ -101,3 +101,15 @@ If your password contains special characters such as `$` and `#`, your workflow 
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/02-08-CertificateList.png' />
+
+### Deleting a Certificate
+
+To delete an Apple Certificate, click the ... button and select the **Delete** option.
+
+:::info
+
+Certificates deleted on **Appcircle** will only be removed from **Appcircle** and will not affect those on **Apple Developer** account.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-AppleCertificate-delete.png' />
