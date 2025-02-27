@@ -9,7 +9,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 The **Publish Variables** section within the Publish module is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-variables.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5631-Appcircle-be-5631.png' />
 
 To use these defined variables, it will be necessary to select them from the [Publish Settings](/publish-module/publish-settings/).
 
