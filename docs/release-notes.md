@@ -32,13 +32,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🐞 Fixes
 
-- An issue was fixed where the two-factor authentication option could not be disabled in the LDAP authentication settings. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where some users experienced an error when uploading the Apple Enterprise API Key in the security section. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where some users were unable to disable the two-factor authentication option in the Testing Portal LDAP settings. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where users could not generate a Personal Access Token without having the Manager role for the Organization module. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where changes to the App Store version release date could not be saved within metadata details. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where some users could see both Android and iOS binaries on the Testing Portal when using iPad devices. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where some users were unable to resign binaries in the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
-- An issue was fixed where some users were unable to disable the two-factor authentication option in the Testing Portal LDAP settings. <DistributionBadge/> <CloudBadge/>
 
 ## 3.26.0 - 2025-02-13 OpenShift Support, Artifact Storage Limit Insights, Streamlined Workflows & Stability Improvements and more
 
