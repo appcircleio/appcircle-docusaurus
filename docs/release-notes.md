@@ -20,12 +20,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
+- The Distribute to Track publish flow step has been added for Android Publish, allowing users to distribute their binaries to the distribution track on Google Play Console. <PublishBadge/> <CloudBadge/>
+- The Auto Send for Review option has been added to the following publish flow steps: Distribute to Track, Send to Google Play, Update Metadata, and Update App Information. <PublishBadge/> <CloudBadge/>
 - A toggle option has been added to enable or disable LDAP in the LDAP authentication settings for Appcircle, Enterprise Portal, and Testing Portal. <AccountBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
-- The Distribute to Track publish flow step has been added for Android Publish, allowing users to distribute their binaries to the distribution track on Google Play Console. <PublishBadge/> <CloudBadge/>
-- The Auto Send for Review option has been added to the following publish flow steps: Distribute to Track, Send to Google Play, Update Metadata, and Update App Information. <PublishBadge/> <CloudBadge/>
 - The Identity Provider Entity ID field has been added to the SAML-type SSO configurations. <AccountBadge/> <CloudBadge/>
 - Build reports will now display the self-hosted runner name, configuration profile, and workflow profile in the build list. <BuildBadge/> <CloudBadge/>
 - An option has been added to disconnect active LDAP import settings for Testing Groups. <DistributionBadge/> <CloudBadge/>
