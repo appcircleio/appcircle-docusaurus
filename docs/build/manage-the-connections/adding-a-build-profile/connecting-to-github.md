@@ -42,10 +42,6 @@ To connect to a GitHub Cloud repository using either OAuth or Personal Access To
 
 Clicking on Get Repositories from GitHub Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
 
-- PAT (Personal Access Token) Connection
-
-Clicking on Connect to a GitHub server, which can be selected to connect to self-hosted and PAT connections, will require a token. Generating a PAT for Appcircle will require a list of permissions down below.
-
 ### OAuth Permissions for GitHub Integration
 
 The following table details the OAuth permissions required for Appcircle to connect with GitHub. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with GitHub via OAuth. 
