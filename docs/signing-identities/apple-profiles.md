@@ -151,6 +151,12 @@ If you attempt to delete a Provisioning Profile that is saved in a build configu
 
 You also have the option to force delete it without changing the configurations.
 
+:::info
+
+Profiles deleted on **Appcircle** will only be removed from **Appcircle** and will not affect those on **Apple Developer** account.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete2.png' />
 
 :::caution
