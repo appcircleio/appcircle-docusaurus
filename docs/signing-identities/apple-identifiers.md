@@ -75,4 +75,4 @@ BundleIDs deleted on **Appcircle** will only be removed from **Appcircle** and w
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-AppleIdentifiers-delete2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-Apple-Identifiers-Delete-Annotated.png' />

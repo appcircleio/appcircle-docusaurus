@@ -112,4 +112,4 @@ Certificates deleted on **Appcircle** will only be removed from **Appcircle** an
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-AppleCertificate-delete.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-AppleCertificates-Delete-Annotated2.png' />
