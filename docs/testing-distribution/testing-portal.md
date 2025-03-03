@@ -145,12 +145,12 @@ For more information about authentication methods, please refer to the [Using Au
 
 :::info
 **Profile Visibility:**
-- If public link access is enabled for a profile, it will be visible and accessible from other profiles within the same organization in the testing portal, regardless of whether it has been shared via email.
+- If distribution link access is enabled for a profile, it will be visible and accessible from other profiles within the same organization in the testing portal, regardless of whether it has been shared via email.
 - The visibility is based on the profile the user is currently logged into, and is not influenced by the type of authentication used.
-- If a user gains access to the Testing Portal through a shared public link, they will not be able to navigate to profiles with public link access disabled unless those profiles have been shared with their email.
+- If a user gains access to the Testing Portal through a shared distribution link, they will not be able to navigate to profiles with distribution link access disabled unless those profiles have been shared with their email.
 :::
 
-For more information about using public links, please visit the [using public link for distribution](/testing-distribution/create-or-select-a-distribution-profile#public-link) documentation.
+For more information about using distribution links, please visit the [using distribution link](/testing-distribution/create-or-select-a-distribution-profile#distribution-link) documentation.
 
 ## Profile Information
 
