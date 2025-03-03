@@ -62,7 +62,7 @@ For LDAP configuration and mapping, please refer to the [LDAP](/account/my-organ
 
    **Note**: The Testing Group must not contain any members. If it does, attempting to import from LDAP will result in an error.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-import.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5678-import.png' />
 
 3. **Select LDAP Configuration**:
     - Choose the LDAP configuration from the dropdown menu.
@@ -96,11 +96,23 @@ Testing Groups that use the LDAP sync feature will be marked with a tag displayi
 
 :::caution
 
-It is not possible to add or remove members of Testing Group after establishing a link to LDAP Group.
+It is not possible to add or remove members of Testing Group on UI manually after establishing a link to LDAP Group.
 
 However, the testing group can still be renamed, duplicated and deleted.
 
 :::
+
+#### Disable LDAP Import Settings
+
+Users can disable LDAP import settings for an LDAP-imported Testing Group by clicking the ‘Disable LDAP Import Settings’ button in the top right corner. 
+
+Note that this option is only available for Testing Groups that have already imported their members via LDAP settings. 
+
+After disabling the settings, existing members will remain, and users can manually add or remove members as needed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5678-import2.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5678-import3.png' />
 
 ## FAQ
 
