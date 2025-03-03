@@ -1,15 +1,15 @@
 ---
 title: Testinium Run Test Plan
-description: Testinium Run Test Plan step allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle.
-tags: [testinium, plan, run, test]
+description: The Testinium Run Test Plan step allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle.
+tags: [testinium, plan, run, test, mobile, automation, app automate]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import SensitiveVariablesDanger from '@site/docs/workflows/\_sensitive-variables-danger.mdx';
 
-# Testinium
+# Testinium Run Test Plan
 
-The **Testinium Run Test Plan** step integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, allowing for automated testing of mobile applications directly within the Appcircle environment. This step enables developers to execute test plan, analyze test outcomes, and verify the quality of their mobile apps before deployment
+The **Testinium Run Test Plan** step integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, allowing for automated testing of mobile applications directly within the Appcircle environment. This step enables developers to execute the test plan, analyze test outcomes, and verify the quality of their mobile apps before deployment.
 
 ### Prerequisites
 
@@ -43,7 +43,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_TESTINIUM_COMPANY_ID`  | Specifies the Testinium company ID. This ID must be obtained from the Testinium platform.                   | Required |
 | `$AC_TESTINIUM_MAX_FAIL_PERCENTAGE` | Specifies the maximum failure percentage limit to interrupt the workflow. It must be in the range 1-100.   | Optional |
 | `$AC_TESTINIUM_TIMEOUT`     | Specifies the Testinium plan timeout in minutes.                                                            | Required |
-| `$AC_TESTINIUM_MAX_API_RETRY_COUNT` | Specifies the maximum repetition in case of Testinium platform congestion or API errors.            | Required |
+| `$AC_TESTINIUM_MAX_API_RETRY_COUNT` | Specifies the maximum retry in case of Testinium platform congestion or API errors.            | Required |
 
 ### Output Variables
 

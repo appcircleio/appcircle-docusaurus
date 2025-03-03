@@ -126,7 +126,7 @@ You can use **SonarQube** component to check your code quality.
 
 The **Testinium** step allows users to upload their mobile applications to **Testinium** and run a test plan.
 
-## [Testinium](/workflows/common-workflow-steps/testinium-upload-app)
+## [Testinium Upload App](/workflows/common-workflow-steps/testinium-upload-app)
 
 The **Testinium Upload App** step enables uploading mobile applications to the **Testinium** platform for automated testing directly from Appcircle.
 

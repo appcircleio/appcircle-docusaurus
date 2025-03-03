@@ -1,13 +1,13 @@
 ---
 title: Testinium Upload App
 description: The Testinium Upload App step enables uploading mobile applications to the Testinium platform for automated testing directly from Appcircle.
-tags: [testinium, app, upload, test]
+tags: [testinium, app, upload, test, mobile, app automate, automation]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import SensitiveVariablesDanger from '@site/docs/workflows/\_sensitive-variables-danger.mdx';
 
-# Testinium
+# Testinium Upload App
 
 The **Testinium Upload App** step integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, allowing developers to upload mobile applications seamlessly to Testinium. This step serves as a prerequisite for executing test plans, enabling efficient and automated testing directly within the Appcircle environment.
 
@@ -66,7 +66,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name               | Description                                                                                                 | Status   |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_TESTINIUM_APP_PATH`    | Specifies the full file path of the build output, such as `$AC_EXPORT_DIR/Myapp.ipa` for iOS or `$AC_APK_PATH` for Android.           | Required |
+| `$AC_TESTINIUM_APP_PATH`    | Specifies the full file path of the build output, such as `$AC_OUTPUT_DIR/MyApp.ipa` for iOS or `$AC_APK_PATH` for Android.           | Required |
 | `$AC_TESTINIUM_USERNAME`    | Specifies the Testinium username used for logging in.                                                       | Required |
 | `$AC_TESTINIUM_PASSWORD`    | Specifies the Testinium password used for logging in.                                                       | Required |
 | `$AC_TESTINIUM_PROJECT_ID`  | Specifies the Testinium project ID. This ID must be obtained from the Testinium platform.                   | Required |
