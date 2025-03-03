@@ -28,7 +28,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - The Identity Provider Entity ID field has been added to the SAML-type SSO configurations. <AccountBadge/> <CloudBadge/>
 - Build reports will now display the self-hosted runner name, configuration profile, and workflow profile in the build list. <BuildBadge/> <CloudBadge/>
-- An option has been added to disconnect active LDAP import settings for Testing Groups. <DistributionBadge/> <CloudBadge/>
+- An option has been added to [disable](/testing-distribution/testing-groups#disable-ldap-import-settings) active LDAP import settings for Testing Groups. <DistributionBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
