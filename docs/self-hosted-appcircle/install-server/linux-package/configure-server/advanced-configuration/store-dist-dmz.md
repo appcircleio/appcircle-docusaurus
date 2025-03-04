@@ -254,6 +254,8 @@ cd appcircle-server
 export PATH=$PATH:$(pwd)/deps/bin
 ```
 
+---
+
 - Check if your Enterprise App Store custom domain is enabled.
 
 ```bash
@@ -296,6 +298,8 @@ store.appcircle.spacetech.com
 
 </Tabs>
 
+---
+
 - Check if your Testing Distribution custom domain is enabled.
 
 ```bash
@@ -336,7 +340,60 @@ dist.appcircle.spacetech.com
 
   </TabItem>
 
+
 </Tabs>
+
+---
+
+- Check if your DMZ Authentication custom domain is enabled.
+
+```bash
+yq '.keycloak.dmzCustomDomain.enabled' ./projects/spacetech/export/.global.yaml
+```
+
+<Tabs>
+  
+  <TabItem value="custom-dmz-auth-domain-enabled" label="Auth DMZ Custom Domain Enabled" default>
+
+- Check the Appcircle DMZ auth custom domain.
+
+```bash
+yq '.keycloak.dmzCustomDomain.domain' ./projects/spacetech/export/.global.yaml
+```
+
+:::tip
+
+You can change the Appcircle authentication domain for the users access from the internet and make it different from the internal domain using a custom domain. See the [FAQ](#how-can-we-change-the-appcircle-authentication-domain-on-the-dmz-server-for-internet-users) below for details.
+
+:::
+
+Output:
+
+```
+auth-appcircle.spacetech.com
+```
+
+  </TabItem>
+
+  <TabItem value="custom-dmz-auth-domain-disabled" label="Auth DMZ Custom Domain Disabled" default>
+
+- Check the Appcircle DMZ default auth domain.
+
+```bash
+yq '.keycloak.external.domain' ./projects/spacetech/export/.global.yaml
+```
+
+Output:
+
+```
+auth.appcircle.spacetech.com
+```
+
+  </TabItem>
+
+</Tabs>
+
+---
 
 - Check the authentication domain of the Appcircle server.
 
@@ -350,6 +407,8 @@ Output:
 auth.appcircle.spacetech.com
 ```
 
+---
+
 - Check the API domain of the Appcircle server.
 
 ```bash
@@ -362,13 +421,27 @@ Output:
 api.appcircle.spacetech.com
 ```
 
+---
+
+- Check the API domain of the Appcircle server.
+
+```bash
+yq '.grafana.external.domain' ./projects/spacetech/export/.global.yaml
+```
+
+Output:
+
+```
+api.appcircle.spacetech.com
+```
+
 According to the sample outputs above, the needed domains that clients accessing via the internet should know are as follows:
 
 - `store.spacetech.com`: Custom Enterprise App Store domain.
 - `dist.spacetech.com`: Custom Testing Distribution domain.
-- `auth.appcircle.spacetech.com`: Appcircle authentication domain.
+- `auth-appcircle.spacetech.com`: Appcircle authentication domain.
 
-Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication and API domains.
+Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication, API and monitoring domains.
 
 These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration.
 
@@ -376,15 +449,10 @@ According to the sample outputs above, the needed domains that Appcircle DMZ ser
 
 - `api.appcircle.spacetech.com`: Appcircle API domain.
 - `auth.appcircle.spacetech.com`: Appcircle authentication domain.
+- `monitor.appcircle.spacetech.com`: Appcircle monitoring domain.
 
 :::caution
 There is a common domain here. Be aware that the `auth` subdomain that the clients that will access from the internet and the Appcircle DMZ server will connect to should mean two different things.
-:::
-
-:::tip
-
-You can change the Appcircle authentication domain for the users access from the internet and make it different from the internal domain using a custom domain. See the [FAQ](#how-can-we-change-the-appcircle-authentication-domain-on-the-dmz-server-for-internet-users) below for details.
-
 :::
 
 ## Creating the Appcircle DMZ Server Configuration
@@ -658,12 +726,108 @@ If `keycloak` does not exist, then you can add it to the `global.yaml` file of y
 
 :::
 
+
+:::info  
+
+The authentication domain must always operate over HTTPS to ensure secure communication. Providing `.keycloak.dmzCustomDomain.publicKey` and `.keycloak.dmzCustomDomain.privateKey` is optional. You may define a custom SSL certificate specifically for the DMZ custom domain or rely on the existing certificate configured under `.nginx.sslCertificate`, as long as it also covers the DMZ custom domain.  
+
+:::  
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
 ```yaml
 keycloak:
   dmzCustomDomain:
     enabled: true
-    domain: auth-ac.spacetech.com
+    domain: auth-appcircle.spacetech.com
+    port: 443
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+      ...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+      ...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+      ...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+      ...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
 ```
+
+:::caution
+The `keycloak.dmzCustomDomain.port` must be `443` for Docker.
+:::
+
+</TabItem>
+
+<TabItem value="podman">
+
+```yaml
+keycloak:
+  dmzCustomDomain:
+    enabled: true
+    domain: auth-appcircle.spacetech.com
+    port: 8443
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+      ...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+      ...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+      ...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+      ...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
+```
+
+:::caution
+The `keycloak.dmzCustomDomain.port` must be `8443` for Podman.
+
+Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/linux-package/installation/podman#overcoming-privileged-port-limitations) on the host, you will connect to the custom authentication domain with the `TCP/443` port.
+:::
+
+</TabItem>
+
+</Tabs>
 
 - **[Upgrade](#upgrading-appcircle-dmz-and-appcircle-server)** the Appcircle server and DMZ server for changes to be applied.
 
