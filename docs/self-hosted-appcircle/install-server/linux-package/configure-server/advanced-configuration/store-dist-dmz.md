@@ -353,9 +353,9 @@ yq '.keycloak.dmzCustomDomain.enabled' ./projects/spacetech/export/.global.yaml
 
 <Tabs>
   
-  <TabItem value="custom-dmz-auth-domain-enabled" label="Auth DMZ Custom Domain Enabled" default>
+  <TabItem value="custom-dmz-auth-domain-enabled" label="Authentication DMZ Custom Domain Enabled" default>
 
-- Check the Appcircle DMZ auth custom domain.
+- Check the Appcircle DMZ authentication custom domain.
 
 ```bash
 yq '.keycloak.dmzCustomDomain.domain' ./projects/spacetech/export/.global.yaml
@@ -375,9 +375,9 @@ auth-appcircle.spacetech.com
 
   </TabItem>
 
-  <TabItem value="custom-dmz-auth-domain-disabled" label="Auth DMZ Custom Domain Disabled" default>
+  <TabItem value="custom-dmz-auth-domain-disabled" label="Authentication DMZ Custom Domain Disabled" default>
 
-- Check the Appcircle DMZ default auth domain.
+- Check the Appcircle DMZ default authentication domain.
 
 ```bash
 yq '.keycloak.external.domain' ./projects/spacetech/export/.global.yaml
