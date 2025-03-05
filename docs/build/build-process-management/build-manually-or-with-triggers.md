@@ -198,6 +198,26 @@ Once the webhook is created and confirmed to be properly set up and healthy in t
 - This webhook event activates the trigger in Appcircle.
 - Appcircle then automatically starts the build process.
 
+### Why did my tag trigger starts a build with a different branch?
+
+When you create a tag, it is applied to a specific commit, not a branch. If the tagged commit exists in multiple branches, the system does not have explicit branch information linked to the tag. Therefore, when the tag trigger starts a build, it may select any branch that contains the tagged commit, leading to seemingly random behavior.
+
+#### How does the tag trigger behave in different Git providers?
+
+Based on testing, the tag trigger behaves as follows:
+
+- GitHub: Randomly selects a branch containing the tagged commit and starts the build.
+
+- GitLab: Randomly selects a branch containing the tagged commit and starts the build.
+
+- Azure DevOps: Randomly selects a branch containing the tagged commit and starts the build.
+
+- Bitbucket: Randomly selects a branch containing the tagged commit and starts the build.
+
+#### Can I control which branch the tag trigger starts from?
+
+No, because the tag is applied to a commit rather than a branch, the build system does not retain branch-specific information for tags. However, a workaround to control this behavior is to push an empty commit to the desired branch and then apply the tag to this new commit. This ensures that the tag trigger starts from the intended branch.
+
 ### How to enable triggers for AWS CodeCommit repositories?
 
 Appcircle supports AWS CodeCommit triggers through an Amazon SNS topic.
