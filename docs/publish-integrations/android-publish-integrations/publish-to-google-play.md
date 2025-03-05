@@ -33,7 +33,7 @@ If you are using [Publish Variables](/publish-module/publish-settings#publish-va
 
 The parameters required for this step to work as expected are listed below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-publish-google-play-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5649-info3.png'/>
 
 | Variable Name        | Description                                                                                                      | Status    |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------- | --------- |
