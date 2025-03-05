@@ -172,9 +172,9 @@ When you send an invitation to a user, the invitation will be listed in the **In
 
 :::caution Edge Browser for Real Devices
 
-Appcircle temporarily installs an verified profile on the device in order to get the UDID of the device via email. Thanks to this profile, the UDID value of the relevant device is saved in your Appcircle account.
+Appcircle temporarily installs a verified profile on the device in order to get the UDID of the device via email. Thanks to this profile, the UDID value of the relevant device is saved in your Appcircle account.
 
-Apple does **not** directly and officially support **Edge Browser**. Therefore, if you are using **Edge Browser**, this feature will **not** work as **expected**. Please use **Safari** for this.
+Apple does **not** directly and officially support **Edge Browser**. Therefore, if you are using **Edge Browser**, this feature will **not** work as **expected**. Please use **Safari** instead.
 
 :::
 
