@@ -829,6 +829,12 @@ Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-
 
 </Tabs>
 
+:::caution
+If you enable the **DMZ custom domain** and configure **Single Sign-On (SSO)**, you must add the DMZ custom domain to your SSO provider's list of authorized redirect URLs.
+
+Without this update, authentication requests from the DMZ domain will be blocked, causing SSO login failures due to unrecognized redirect URIs.
+:::
+
 - **[Upgrade](#upgrading-appcircle-dmz-and-appcircle-server)** the Appcircle server and DMZ server for changes to be applied.
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
