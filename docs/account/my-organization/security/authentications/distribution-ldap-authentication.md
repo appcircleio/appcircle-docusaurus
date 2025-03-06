@@ -36,7 +36,7 @@ Please refer the [**Create From Existing LDAP Configuration**](/account/my-organ
 
 - Fill in the details of your LDAP Configurations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap2.png' />
 
 - The Connect button will switch to the Manage button once a configuration is created.
 
@@ -50,7 +50,7 @@ Please refer the [**Create From Existing LDAP Configuration**](/account/my-organ
   Providers are entities responsible for retrieving user information from LDAP servers.
   Specifying the order allows you to prioritize certain providers over others, ensuring efficient user lookup operations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login-order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap3.png' />
 
 :::info
 
@@ -104,7 +104,11 @@ Existing LDAP configurations will be listed on the screen. Select one and click 
 
 - On the Create LDAP Configuration screen, fill in the **Name** and **Credential** fields (all other values are prefilled). Adjust any fields as needed, then click **Save**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap2.png' />
+
+:::info
+The LDAP authentication configuration for Testing Portal can be enabled or disabled by clicking the “Activate LDAP” toggle.
+:::
 
 ## Deleting LDAP Login
 

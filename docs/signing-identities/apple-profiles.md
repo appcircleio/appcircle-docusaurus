@@ -85,6 +85,12 @@ In order to register a profile, some parameters are needed.
 
 After selecting the distribution method, the relevant App ID is selected for which Bundle ID will be created. Then you need to select which certificate you want to create with.
 
+:::info
+
+The certificates that need to be selected when registering a profile are listed by retrieving certificates from your **Apple Developer** account. The certificates listed here are **not** related to the ones uploaded to **Appcircle**.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerProfileDetails.png' />
 
 #### Device Registration
@@ -144,6 +150,12 @@ You can delete a single Provisioning Profile or multiple ones by selecting the c
 If you attempt to delete a Provisioning Profile that is saved in a build configuration of an active Build Profile, a warning message will appear. This message will allow you to view the affected build profiles and navigate to their configuration screens to make necessary changes.
 
 You also have the option to force delete it without changing the configurations.
+
+:::info
+
+Profiles deleted on **Appcircle** will only be removed from **Appcircle** and will not affect those on **Apple Developer** account.
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete2.png' />
 

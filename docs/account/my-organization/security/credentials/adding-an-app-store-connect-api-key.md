@@ -31,9 +31,9 @@ Once the team is correct, select **Users and Access** from the menu:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/app-store-connect-logged-in-selected-low (1).jpg' />
 
-After navigating to **Users and Access**, you will see 4 tabs next to the title. Select the **Keys** tab. Then make sure that **App Store Connect API** is selected from the list on the left.
+After navigating to **Users and Access**, you will see 4 tabs next to the title. Select the **Integrations** tab. Then make sure that **App Store Connect API** is selected from the list on the left.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/api-keys-tab-low (1).jpg' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5630-AppStoreConnect-keys.png' />
 
 ## Generating a New Key
 
