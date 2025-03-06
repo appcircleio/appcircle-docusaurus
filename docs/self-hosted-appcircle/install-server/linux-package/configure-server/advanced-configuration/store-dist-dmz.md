@@ -15,6 +15,8 @@ sidebar_position: 12
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
+import DmzHttpsRequirement from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-dmz-https-requirement.mdx';
+import PortRedirection from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-dmz-port-redirection.mdx';
 import LingerOption from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_linger-option.mdx';
 import SocatConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_socat-configuration.mdx';
 import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_podman-netavark-configuration.mdx';
@@ -41,6 +43,10 @@ In this document:
 - We will call the "Appcircle DMZ server" to the server, which is located in the DMZ and host the Appcircle Enterprise App Store and Testing Distribution services.
 
 - We will call the "Appcircle server" to the server, which is located in the private network and host the Appcircle core services.
+
+:::info
+The Appcircle DMZ server does not serve any content on port `80`. For more information on the use of `HTTP` port `80` by the Appcircle DMZ server, please refer to the [Firewall Configuration](#firewall-configuration).
+:::
 
 :::info
 When you convert to the DMZ architecture, both the Enterprise App Store and the Testing Distribution will be transferred to the Appcircle DMZ server. We currently do not support using only one of them in the Appcircle DMZ server.
@@ -162,6 +168,16 @@ You can install these dependencies from your package repository depending on you
 
 </Tabs>
 
+#### SELinux
+
+You must use the same SELinux mode on the Appcircle server and the Appcircle DMZ server.
+
+You can check the SELinux mode with the command below.
+
+```bash
+getenforce
+```
+
 ### Firewall Configuration
 
 <Tabs>
@@ -175,13 +191,6 @@ If you are using `Firewalld`, you need to open the ports below according to your
 ```bash
 sudo firewall-cmd --add-port=80/tcp --permanent
 sudo firewall-cmd --add-port=443/tcp --permanent
-sudo firewall-cmd --reload
-```
-
-- If you plan to run the Appcircle DMZ server with HTTP:
-
-```bash
-sudo firewall-cmd --add-port=80/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
@@ -220,15 +229,15 @@ sudo ufw status verbose
 
 </Tabs>
 
-#### SELinux
+:::info
+<PortRedirection/>
+:::
 
-You must use the same SELinux mode on the Appcircle server and the Appcircle DMZ server.
+### HTTPS Requirement
 
-You can check the SELinux mode with the command below.
+<DmzHttpsRequirement/>
 
-```bash
-getenforce
-```
+Due to this requirement, it is mandatory for the Appcircle DMZ server to be configured with `HTTPS`. For detailed instructions on configuring custom domains and `HTTPS` for the Enterprise App Store and Testing Distribution, please refer to the [SSL Configuration Guide](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration). This guide will help you set up the necessary configurations in your Appcircle server's `global.yaml` file.
 
 ### DNS Entries
 
