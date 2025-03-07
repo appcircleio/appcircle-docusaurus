@@ -25,7 +25,7 @@ Authentication method can be configured from the [store settings](/enterprise-ap
 
 :::
 
-::: warning
+:::warning
 
 Please note that to login to the Enterprise Portal, you must enable cookies in your browser. Cookies help maintain your session and ensure secure access.
 
