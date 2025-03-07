@@ -404,11 +404,22 @@ auth.appcircle.spacetech.com
 
 ---
 
-According to the sample outputs above, the needed domains that clients accessing via the internet should know are as follows:
+According to the sample outputs above, **when all the custom domains are enabled**, the domains that clients accessing via the internet should use are as follows
 
 - `store.spacetech.com`: Custom Enterprise App Store domain.
 - `dist.spacetech.com`: Custom Testing Distribution domain.
-- `auth-appcircle.spacetech.com`: Appcircle authentication domain.
+- `auth-appcircle.spacetech.com`: Authentication custom domain.
+
+According to the sample outputs above, **when all the custom domains are disabled**, the default domains that clients should use are:
+
+- `store.appcircle.spacetech.com`: Default Enterprise App Store domain.
+- `dist.appcircle.spacetech.com`: Default Testing Distribution domain.
+- `auth.appcircle.spacetech.com`: Default authentication domain.
+
+:::tip
+It's perfectly acceptable for **some custom domains to be enabled while others are disabled**.  
+For example, you might have a custom domain for the Enterprise App Store but use the default domain for Testing Distribution or DMZ Authentication.  
+:::
 
 ---
 
