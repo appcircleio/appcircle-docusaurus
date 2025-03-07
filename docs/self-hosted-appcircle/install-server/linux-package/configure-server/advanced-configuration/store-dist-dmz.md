@@ -717,7 +717,7 @@ Follow the steps below to make relevant configurations on the Appcircle server.
 
 :::info
 
-This feature is supported for Appcircle server version `3.22.0` or later.
+This feature is supported for Appcircle server version `3.26.1` or later.
 
 :::
 
