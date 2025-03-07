@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Xcode Select (Version)
 
-This step is used to specify the Xcode version to be used during the build process. All available versions of Xcode can be seen in the [Configuration](/build/build-process-management/build-profile-configuration) tab.
+This step is used to specify the Xcode version to be used during the build process. All available versions of Xcode can be seen in the [Configuration](/build/build-process-management/configurations) tab.
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ Always use this step **before** [**CocoaPods Install**](/workflows/ios-specific-
 
 :::caution
 
-Please **don't forget** to select the **Xcode version** from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration) first.
+Please **don't forget** to select the **Xcode version** from [Configuration](/build/build-process-management/configurations) first.
 
 :::
 
@@ -30,7 +30,7 @@ Please **don't forget** to select the **Xcode version** from [Configuration](/bu
 
 ### Version Change
 
-- To select an Xcode version, open [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration) in the build profile.
+- To select an Xcode version, open [Configuration](/build/build-process-management/configurations) in the build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_config.png' />
 
@@ -44,18 +44,21 @@ Appcircle provides new versions of Xcode (including beta versions) within 24 hou
 
 :::
 
-:::caution Pool-Based Xcode Version Selection
+:::info Manually Xcode Version Change (Not Recommended)
 
-A version other than the Xcode versions on the configuration page should not be entered manually as the Xcode select workflow argument.
-Because the Xcode versions on the configuration page are the versions installed on runners.
-Entering an unavailable Xcode version may cause the build to fail.
-You can review the documentation for detailed information about the Xcode version selection [here](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools#select-pool-for-build-profile).
+In addition to the version change method described above, you can also change the Xcode version **manually**. For this, you can **hard-code** the desired Xcode version into the `$AC_XCODE_VERSION` parameter, which serves as the input for the **Xcode Select** step. For example: `15.1`.
+
+Please note that, if the version you hard-coded is not available on the runner where the build will run, the build **will not** start. The [**Build Configuration**](/build/platform-build-guides/building-ios-applications#build-configuration) always lists the **available** Xcode versions.
+
+For more information, please visit our [**iOS Build Stacks**](/infrastructure/ios-build-infrastructure#available-xcode-versions) documentation.
 
 :::
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5421-xcodeSelectInput.png' />
 
 | Variable Name        | Description                                                                                                                                           | Status   |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

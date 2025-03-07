@@ -493,6 +493,11 @@ binaries:
   description: "Description for binaries"
   permalink: /binaries
 
+"binary actions":
+  label: "binary actions"
+  description: "Description for binary actions"
+  permalink: /binary-actions
+
 "binary distribution":
   label: "binary distribution"
   description: "Description for binary distribution"
@@ -602,6 +607,11 @@ build:
   label: "build profile configuration"
   description: "Description for build profile configuration"
   permalink: /build-profile-configuration
+
+"build profile management":
+  label: "build profile management"
+  description: "Description for build profile management"
+  permalink: /build-profile-management
 
 "build sessions":
   label: "build sessions"
@@ -2783,10 +2793,15 @@ webhook:
   description: "Description for webhook secret"
   permalink: /webhook-secret
 
-workflow:
+"workflow":
   label: "workflow"
   description: "Description for workflow"
   permalink: /workflow
+
+"workflows":
+  label: "workflows"
+  description: "Description for workflows"
+  permalink: /workflows
 
 "xamarin":
   label: "xamarin"
@@ -2862,6 +2877,11 @@ xml:
   label: "kubernetes"
   description: "Kubernetes related documentations"
   permalink: "/kubernetes"
+
+"openshift":
+  label: "openshift"
+  description: "OpenShift related documentations"
+  permalink: "/openshift"
 
 "microsoft azure":
   label: "microsoft azure"

@@ -16,6 +16,59 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.26.1 - 2025-02-28 Distribute to Track Update for Android Publish Flow , SAML SSO Enhancement, Improvements and more
+
+### 🆕 New Features
+
+- The Distribute to Track publish flow step has been added for Android Publish, allowing users to distribute their binaries to the distribution track on Google Play Console. <PublishBadge/> <CloudBadge/>
+- The [Auto Send for Review](/publish-module/publish-information/google-play-information#auto-send-for-review) option has been added to the following publish flow steps: Distribute to Track, Send to Google Play, Update Metadata, and Update App Information. <PublishBadge/> <CloudBadge/>
+- A toggle option has been added to enable or disable LDAP in the LDAP authentication settings for Appcircle, Enterprise Portal, and Testing Portal. <AccountBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- The Identity Provider Entity ID field has been added to the SAML-type SSO configurations. <AccountBadge/> <CloudBadge/>
+- Build reports will now display the self-hosted runner name, configuration profile, and workflow profile in the build list. <BuildBadge/> <CloudBadge/>
+- An option has been added to [disable](/testing-distribution/testing-groups#disable-ldap-import-settings) active LDAP import settings for Testing Groups. <DistributionBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where some users experienced an error when uploading the Apple Enterprise API Key in the security section. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where some users were unable to disable the two-factor authentication option in the Testing Portal LDAP settings. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where users could not generate a Personal Access Token without having the Manager role for the Organization module. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where changes to the App Store version release date could not be saved within metadata details. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where some users could see both Android and iOS binaries on the Testing Portal when using iPad devices. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where some users were unable to resign binaries in the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
+
+## 3.26.0 - 2025-02-13 OpenShift Support, Artifact Storage Limit Insights, Streamlined Workflows & Stability Improvements and more
+
+### 🆕 New Features
+
+- We are thrilled to introduce our OpenShift [installation guide](/self-hosted-appcircle/install-server/helm-chart/installation/openshift) and support for deploying a self-hosted Appcircle server on [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift). You can install Appcircle [distributed architecture](/self-hosted-appcircle#appcircle-distributed-architecture) on [Red Hat OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift) application platform, which supports high availability, fault tolerance, and scalability, ensuring robust performance for production environments. <InfrastructureBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- Artifact storage limits can now be viewed on the billing page for your organization. <AccountBadge/> <CloudBadge/>
+- The onboarding screen will no longer be displayed to newly signed-up users with an Enterprise license. <AccountBadge/> <CloudBadge/>
+- Error and warning messages have been improved across various modules for cases of expired licenses and full usage limits. <AccountBadge/> <CloudBadge/>
+- When signing up to Appcircle via an organization invite, users will no longer generate a starter organization under their username. <AccountBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where email addresses in a specific format could not be removed from organizations. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where users were unable to delete their starter-level organization despite being members of an enterprise-level organization. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the Publish History screen could not be scrolled down when containing more data than the user could view. <PublishBadge/> <CloudBadge/>
+- The description of the ‘Creating a Publish Profile’ step for Android profiles has been improved for better clarity. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where users were redirected to the Registered Devices tab of the Apple Devices section upon refreshing the page, despite having selected other tabs. <SigningIdentitiesBadge/> <CloudBadge/>
+- Development type has been added for registering a new provisioning profile within the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where the highlighting blue background for newly manually uploaded provisioning profiles did not appear for fetched profiles from App Store Connect. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where the preview screen in the Enterprise App Store customization section did not display the correct colors for the store title. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where distributing a binary from Testing Distribution to the Enterprise App Store for duplicated app versions did not display an error message. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where some Publish, Testing Distribution, and Enterprise App Store profile icons were not displayed properly. <CloudBadge/>
+- An issue was fixed where deleted configuration and workflow profiles saved in trigger settings were not being removed. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where some test reports were not displayed properly within the Build module. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where some build configuration profiles could not be downloaded as YAML files. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where iOS workflow test report components caused a CORS error. <BuildBadge/> <CloudBadge/>
+
 ## 3.25.1 - 2025-01-24 App Version Filter for Enterprise App Store Reports, Bitbucket permission Enhancements, Improvements and more
 
 ### :muscle: Improvements
@@ -41,13 +94,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where certain configuration profiles created through YAML uploads could not be cloned. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where uploaded iOS provisioning profiles were displayed as having no matching iOS certificate in build configurations. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A UI issue was fixed where saved environment variable names momentarily shrank after navigating to them from the dashboard. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where some build configuration profiles could not be downloaded as YAML files. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where app versions on the Testing Portal were incorrectly sorted for specific version numbers. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Issues were fixed on the Testing Portal’s shared app list, where memory usage caused crashing problems. Additionally, incorrect icons and app version names were corrected for some profiles. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where deleting an existing SSO configuration for the Testing Distribution module in an organization led to authentication settings being reset with no method selected. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where saved testing groups were not displayed properly in the ‘Share with Testers’ step when there were more than 10 testing groups. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The names of deleted apps can now be viewed in enterprise app store reports, as archived data previously displayed missing profile names. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where customized Enterprise App Store portal logos were not displayed on Safari browser tabs. <ReportsBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where some users were unable to download binaries on the Enterprise Portal after their license limits were renewed. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where the Enterprise Portal’s store title color did not change after being customized within the Enterprise App Store module. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed where incorrect password entries did not display an error message during iOS certificate uploads within the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.25.0 - 2024-12-19 Appcircle Deployment on Kubernetes, List View Type for Build and Testing Distribution, Improvements and more
@@ -104,7 +158,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where, when a synced API key was deleted, devices not registered under another API key within the organization were incorrectly listed as unregistered devices. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue related to icon parsing for APK files has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the “Import from LDAP” option was disabled for the first row entry of testing groups, despite having the relevant configuration in place. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where app versions shared via public links were not appearing at the top of the list in the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where app versions shared via distribution links were not appearing at the top of the list in the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A fix was applied for reverse proxy login form error occurring in certain self-hosted environments. <DistributionBadge/> <SelfHostedBadge/>
 - An issue was fixed where some self-hosted users were unable to download iOS binaries from the Testing Portal after logging in with static authentication. <DistributionBadge/> <SelfHostedBadge/>
 - An issue was fixed where data could not be retrieved when attempting to download reports through the API without specifying a date range. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -145,7 +199,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where the InitiatedBy column displayed as N/A in build reports for automated or remote build triggers. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the “Disconnect from Remote Repository” button did not appear in the build profiles on the latest versions of the Safari browser. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where users were unable to download the YAML configuration file from a build profile when navigating to the Versioning tab of the build configuration. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where users were unable to log in to the testing portal via shared public links when using the static authentication method. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where users were unable to log in to the testing portal via shared distribution links when using the static authentication method. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where iOS app icons did not display properly during installation on Apple devices after being downloaded from the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue where registered testing groups were not visible in the auto-send settings after users logged into their organization or sub-organization has been resolved. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the UI failed to display an error message when a duplicate Apple certificate was uploaded in the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -185,7 +239,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - Existing SSO & LDAP settings can now be duplicated when creating a new SSO or LDAP configuration. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [Build priorities](build/build-process-management/build-profile-configuration#project-details-configuration) can now be configured as **High**, **Medium**, or **Low** to manage the start order of queued builds accordingly. Available for organizations with Enterprise License. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Build priorities](/build/build-process-management/configurations#build-priority) can now be configured as **High**, **Medium**, or **Low** to manage the start order of queued builds accordingly. Available for organizations with Enterprise License. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -675,7 +729,7 @@ To ensure the App Store status remains current, the following conditions must be
 
 ### 🆕 New Features
 
-- [The public link](testing-distribution/create-or-select-a-distribution-profile#public-link) in the distribution settings has been transformed into a QR code to simplify access and sharing. <CloudBadge/> <SelfHostedBadge/>
+- [The distribution link](testing-distribution/create-or-select-a-distribution-profile#distribution-link) in the distribution settings has been transformed into a QR code to simplify access and sharing. <CloudBadge/> <SelfHostedBadge/>
 - Users can now filter the app version list on [the testing portal](testing-distribution/testing-portal) by app name, version, release notes, or build number for enhanced navigation and search capabilities. <CloudBadge/> <SelfHostedBadge/>
 - The system now automatically converts uploaded or built AAB files to a universal format. It also discreetly saves the newly created APK file with the second app's resource id. <CloudBadge/> <SelfHostedBadge/>
 - A new command, ["build active-list"](https://docs.appcircle.io/appcircle-api-and-cli/) has been added, allowing users to view active builds in the queue directly from their command line interface. <CloudBadge/> <SelfHostedBadge/>
@@ -711,7 +765,7 @@ To ensure the App Store status remains current, the following conditions must be
 - You can now update the default release note of the app version provided by the Build Module. This will be sent as the "What to Test" area in [TestFlight](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/sent-to-testflight). <CloudBadge/> <SelfHostedBadge/>
 - Submit Store redirects have been eliminated from the site. <CloudBadge/> <SelfHostedBadge/>
 - Incorporated a "Type" field into the data table within the [Environment Variable](https://docs.appcircle.io/environment-variables) sections, offering additional context regarding the type of each variable. <CloudBadge/> <SelfHostedBadge/>
-- [PAT (Personal Access Token) connections](https://docs.appcircle.io/build/manage-the-connections/#managing-pat-connections) listed on the build connection page are now deletable, providing users with the flexibility to manage their connections more efficiently. <CloudBadge/> <SelfHostedBadge/>
+- [PAT (Personal Access Token) connections](/build/manage-the-connections/reconnect-change-provider#managing-pat-connections) listed on the build connection page are now deletable, providing users with the flexibility to manage their connections more efficiently. <CloudBadge/> <SelfHostedBadge/>
 - Branches are now filtered based on their status, enabling users to easily identify and navigate through branches based on their current state. <CloudBadge/> <SelfHostedBadge/>
 - Users now have the capability to be redirected to their desired locations upon clicking on [Okta applications](/account/my-organization/security/authentications), enhancing navigation efficiency and user experience within the system. <CloudBadge/> <SelfHostedBadge/>
 - When a build is [manually initiated](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#manual-build), the system retrieves information about the user from the initiating organization. Conversely, if the build is [not initiated manually](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers#automatic-build), it displays the details of the user who made the commit, ensuring accurate attribution of actions within the system. <CloudBadge/> <SelfHostedBadge/>
@@ -863,7 +917,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 - A new module called [Publish](/publish-module) is introduced in beta, which helps manage App Store, Google Play, and Huawei AppGallery deployments with more efficiency. You can now modify publishing flows, add custom scripts, and control flow logic. <CloudBadge/> <SelfHostedBadge/>
 - Members in the same [organization](/account/my-organization) can take ownership of previously added build profiles. <CloudBadge/> <SelfHostedBadge/>
-- The user can now add a new PAT (Personal Access Token) via the [Connections](/build/manage-the-connections#managing-pat-connections) page without creating a new build profile. <CloudBadge/> <SelfHostedBadge/>
+- The user can now add a new PAT (Personal Access Token) via the [Connections](/build/manage-the-connections/reconnect-change-provider#managing-pat-connections) page without creating a new build profile. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can integrate their own authentication and OTP services and use them in conjunction with LDAP configuration on self-hosted installations. <SelfHostedBadge/>
 - The configuration file [global.yaml](../self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) now has a validator that helps users configure the settings correctly on export and prevents them from starting the server with broken settings. <SelfHostedBadge/>
 - The [certificate installer](../self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) tool now supports extracting proxy server certificates, which enable the runner to connect through a proxy without any SSL certificate error. <SelfHostedBadge/>
@@ -885,11 +939,11 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - Fixed an issue that caused the user to completely restrict their own [privileges](/account/my-organization/profile-and-team/team-management) when alone in an organization. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the case where the build pipeline was executed on a non-selected wrong pool, which was affecting the Appcircle Linux Pool (x86_64) and the Appcircle Standard macOS Pool (arm64). <CloudBadge/>
 - Fixed an issue that was affecting the first-time [connections to the GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab) provider. <CloudBadge/> <SelfHostedBadge/>
-- The bug was fixed in the re-creation of a connection that had been disconnected and had its [token revoked](/build/manage-the-connections#revoke-oauth-connections). <CloudBadge/> <SelfHostedBadge/>
+- The bug was fixed in the re-creation of a connection that had been disconnected and had its [token revoked](/build/manage-the-connections/reconnect-change-provider#revoke-oauth-connections). <CloudBadge/> <SelfHostedBadge/>
 - Fixed a redirect issue when the user tried to connect to any Git provider without an active connection. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue with the [Unit and UI test](/continuous-testing/ios-testing/running-ios-unit-and-ui-tests) screenshots in the test reports. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue that occurred in the branch list and commits after [changing the git provider](/build/manage-the-connections/reconnect-change-provider#change-git-provider-and-reconnect) connection at the build profile. <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue that caused environment variables to be created with the same name in the same [environment variable](/environment-variables/managing-variables) group on the API. <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue that caused environment variables to be created with the same name in the same [environment variable](/build/build-environment-variables) group on the API. <CloudBadge/> <SelfHostedBadge/>
 - An error that occurred after closing the repository list while trying to change the Git provider of a build profile connected to a repository has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue that caused the [invited user](/account/my-organization/profile-and-team/team-management) not to be redirected to the sign up page if they were not registered. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the authentication logs section was not visible. <CloudBadge/>
@@ -917,7 +971,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 ### :muscle: Improvement
 
-- Now builds that result in a [warning](/workflows/#build-warning-status) will also appear as a warning in the branch list. <CloudBadge/> <SelfHostedBadge/>
+- Now builds that result in a warning will also appear as a warning in the branch list. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle builds can now be displayed as “Appcircle/BuildProfileId” in pipelines on Git providers. <CloudBadge/> <SelfHostedBadge/>
 - The URL format validation used when adding Git provider [instances](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance) has been removed for self-hosted environments. <SelfHostedBadge/>
 - The [Testinium](/workflows/common-workflow-steps/#testinium) workflow component parses result summary and outputs in seperate environment variables. <CloudBadge/> <SelfHostedBadge/>
@@ -932,14 +986,14 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 - The loader did not appear when loading the [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile) page, the confusion caused by this has been fixed by adding the loader. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug when adding profiles using the [SSH connection](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh) method. <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug during the [configuration cloning](/build/build-process-management/build-profile-configuration#clone-configuration) process. <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug during the configuration cloning process. <CloudBadge/> <SelfHostedBadge/>
 - Page redirection issues were occurring on plan upgrade, this problem has been fixed. <CloudBadge/>
 - Fixed an issue with the [Xcodebuild for Devices](../build/platform-build-guides/building-ios-applications) workflow step getting stuck in the build pipeline until timing out in some cases. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue that caused a build to be started in Appcircle when one of the _Approve_, _Approve with Recommendations_, _Wait for Author_, or _Reject_ activities was selected on pull requests when using the [Azure DevOps](/build/build-process-management/build-manually-or-with-triggers#managing-triggers-for-builds) Git provider. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that prevented screenshots from being displayed as a result of the [Unit and UI Tests](/continuous-testing/ios-testing/running-ios-unit-and-ui-tests) in the test results section. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the issue that caused multiple builds to be launched when only one trigger was set on Appcircle and a trigger was triggered. <CloudBadge/> <SelfHostedBadge/>
 - The incorrect "Configuration" information in the [e-mail notification](/account/my-organization/notifications/email-connection) sent as a result of the build in simultaneous build triggers has been corrected. <CloudBadge/> <SelfHostedBadge/>
-- When the [Environment Variables](/environment-variables/managing-variables) file was created from scratch and values were entered and downloaded, the downloaded file appeared empty. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
+- When the [Environment Variables](/build/build-environment-variables) file was created from scratch and values were entered and downloaded, the downloaded file appeared empty. This error has been fixed. <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.9.0 - 2023-11-01 - LDAP Support for User Authentication, Change the PAT by Build Profile, Download Environment Variables
 
@@ -947,7 +1001,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 - "Self-hosted Settings" has been introduced on the admin page for self-hosted Appcircle server. It includes [LDAP Login](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings#appcircle-login-with-ldap) for configuring LDAP user authentication and [Login Settings](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/login-configuration#login-settings) for other login configuration options. <SelfHostedBadge/>
 - Users are now allowed to manage their connections to private repositories after connecting their profiles. <CloudBadge/> <SelfHostedBadge/>
-- Now users are able to download the [environment variables](/environment-variables/managing-variables#download-environment-variables) in JSON format. <CloudBadge/> <SelfHostedBadge/>
+- Now users are able to download the [environment variables](/build/build-environment-variables) in JSON format. <CloudBadge/> <SelfHostedBadge/>
 - Added a new environment variable called [AC_TRIGGER_REASON](/environment-variables/appcircle-specific-environment-variables#ios--android-common-environment-variables) that specifies the trigger that causes the build to start. <CloudBadge/> <SelfHostedBadge/>
 - The "Appcircle Standard macOS Pool (arm64)" runners have [Xcode 15.1 beta-1](../build/platform-build-guides/building-ios-applications) installed. As this is a beta release, please test your workflows thoroughly. <CloudBadge/> <SelfHostedBadge/>
 - A new filter has been added for filtering reports. Users will now be able to filter by organization and sub organization. <CloudBadge/> <SelfHostedBadge/>
@@ -960,9 +1014,9 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - Improvements have been made to the [email notification](/account/my-organization/notifications/email-connection) format for build events. <CloudBadge/> <SelfHostedBadge/>
 - The "Appcircle Standard macOS Pool (arm64)" has the latest stable [Xcode 15.0.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_0_1-release-notes) update available on runners. <CloudBadge/> <SelfHostedBadge/>
 - We now support Azure DevOps Server 2020 connection while adding a [build profile](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure). <CloudBadge/> <SelfHostedBadge/>
-- The [public link](/testing-distribution/create-or-select-a-distribution-profile#public-link) in the test deployment area will now be available regardless of authentication type. <CloudBadge/> <SelfHostedBadge/>
+- The [distribution link](/testing-distribution/create-or-select-a-distribution-profile#distribution-link) in the test deployment area will now be available regardless of authentication type. <CloudBadge/> <SelfHostedBadge/>
 - A bug that prevented failed builds from sending notifications to the MS Teams application has been fixed. <CloudBadge/> <SelfHostedBadge/>
-- Previously, you could only select one profile for test deployment. Now you can select [multiple profiles in the distribution](/build/build-process-management/build-profile-configuration#distribution-configuration) profile settings. <CloudBadge/> <SelfHostedBadge/>
+- Previously, you could only select one profile for test deployment. Now you can select [multiple profiles in the distribution](/build/build-process-management/configurations#distribution-configuration) profile settings. <CloudBadge/> <SelfHostedBadge/>
 - Removed the obsolete icon from the Commit ID redirect link in the build profile details. <CloudBadge/> <SelfHostedBadge/>
 - The cache size was bumped to 4 GB while using the [cache push](/workflows/common-workflow-steps/#cache-push) in the build pipeline. <SelfHostedBadge/>
 - We made improvements to the self-hosted server [SSL configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration) for enhanced security. <SelfHostedBadge/>
@@ -989,12 +1043,12 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 - The user can add [multiple instances](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance) of the Git providers and select any of them to connect to. So the user can bind and build the repositories. <CloudBadge/> <SelfHostedBadge/>
 - The [Xcode version](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools/#pool-based-xcode-version-selection) list of runners is integrated into the custom pool selection. It can be displayed dynamically in the build configuration, and the user can choose which Xcode version to build with. <CloudBadge/> <SelfHostedBadge/>
-- You can now quickly [copy a configuration](/build/build-process-management/build-profile-configuration#clone-configuration) and create a new one from that configuration. <CloudBadge/> <SelfHostedBadge/>
+- You can now quickly copy a configuration and create a new one from that configuration. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
 - Waiting times in Queue Waiting Reports are now shown in minutes instead of seconds. <SelfHostedBadge/>
-- If the user selects any step that has the "Continue with the next step even if this step fails" option and gets a failure during the build on that step, this build's status is displayed as [Warning](/workflows/#build-warning-status). <CloudBadge/> <SelfHostedBadge/>
+- If the user selects any step that has the "Continue with the next step even if this step fails" option and gets a failure during the build on that step, this build's status is displayed as Warning. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the case that users belonging to more than one organization on [Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) could not bind repository. <CloudBadge/> <SelfHostedBadge/>
 - Improved suborganization experience in the Enterprise App Store by hiding the "Customize" and "Settings" sections, providing a more focused interface for suborganization administrators. <CloudBadge/> <SelfHostedBadge/>
 - The latest stable version of [Xcode 15.0](../build/platform-build-guides/building-ios-applications) is available on both cloud and self-hosted runners. <SelfHostedBadge/> <CloudBadge/>
@@ -1035,14 +1089,14 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 - Removed profile names will now appear as "Deleted" in corporate store reports. <CloudBadge/> <SelfHostedBadge/>
 - The active build section now shows the email address that started the build, not the email address of the user who created the profile. <CloudBadge/> <SelfHostedBadge/>
-- If there is a space character in the [variable group](/environment-variables/managing-variables#using-environment-variables-for-ssh-and-pat-personal-access-token-connections-of-the-git-provider) name, it can be used within double quotes while connecting the repository. <CloudBadge/> <SelfHostedBadge/>
+- If there is a space character in the [variable group](/build/build-environment-variables) name, it can be used within double quotes while connecting the repository. <CloudBadge/> <SelfHostedBadge/>
   - `$"Variable Group:Key"`
-- Self-hosted enterprise customers can download the [configurations](/build/build-process-management/build-profile-configuration) of previous builds with the `.yaml` extension in "Build Details" section of the admin panel. <SelfHostedBadge/>
+- Self-hosted enterprise customers can download the [configurations](/build/build-process-management/configurations) of previous builds with the `.yaml` extension in "Build Details" section of the admin panel. <SelfHostedBadge/>
 - Unsubscribe and resubscribe features are enabled for email notifications, distribution, and the enterprise app store. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
-- The confusion regarding the use of Turkish characters when creating [workflows](/workflows) and [configurations](/build/build-process-management/build-profile-configuration) has been resolved. Turkish characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
+- The confusion regarding the use of Turkish characters when creating [workflows](/workflows) and [configurations](/build/build-process-management/configurations) has been resolved. Turkish characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
 - The error in [permission management](/account/my-organization) in the environment variables section has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The problem with the build transaction texts above the branch name in the "Branch" section being mixed up has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The error in permission management in the [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile) section has been fixed. <CloudBadge/> <SelfHostedBadge/>
@@ -1741,7 +1795,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 
 ### ; 📑 Documentation
 
-- Added [FAQ section](/build/post-build-operations/after-a-build#artifact-storage-is-full) of how to delete old artifacts.
+- Added [FAQ section](/build/build-process-management/binary-actions#artifact-storage-is-full) of how to delete old artifacts.
 - Improved [Sending the build status to repository providers](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) section for better CI/CD pipeline tracking.
 
 ## 2.3.0 - 2021-06-28 - Xcode Version Updates
