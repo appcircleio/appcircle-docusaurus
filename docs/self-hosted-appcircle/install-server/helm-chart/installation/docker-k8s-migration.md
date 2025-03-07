@@ -838,6 +838,21 @@ Some secret data, such as database passwords and Keycloak client secrets, used i
   --from-literal=distributionServer='7cc0c02a-******-5e7139d63f3c'
   ```
 
+  Add required labels and annotations.
+
+  :::info
+  If you have changed the default namespace (`appcircle`) or the default release name (`appcircle-server`), 
+  :::
+
+  ```bash
+  kubectl label secret -n appcircle appcircle-server-auth-keycloak-clients-secret \
+    -n appcircle app.kubernetes.io/managed-by=Helm && \
+  kubectl annotate secret -n appcircle appcircle-server-auth-keycloak-clients-secret \
+    -n appcircle \
+    meta.helm.sh/release-name=appcircle-server \
+    meta.helm.sh/release-namespace=appcircle
+  ```
+
 ---
 
 - **Keycloak Passwords Secret:**
