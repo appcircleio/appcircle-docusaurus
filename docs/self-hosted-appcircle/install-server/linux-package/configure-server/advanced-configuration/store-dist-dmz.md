@@ -404,6 +404,19 @@ auth.appcircle.spacetech.com
 
 ---
 
+According to the sample outputs above, the needed domains that clients accessing via the internet should know are as follows:
+
+- `store.spacetech.com`: Custom Enterprise App Store domain.
+- `dist.spacetech.com`: Custom Testing Distribution domain.
+- `auth-appcircle.spacetech.com`: Appcircle authentication domain.
+
+---
+
+Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication, API and monitoring domains.
+
+These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration.
+
+
 - Check the authentication domain of the Appcircle server.
 
 ```bash
@@ -432,7 +445,7 @@ api.appcircle.spacetech.com
 
 ---
 
-- Check the API domain of the Appcircle server.
+- Check the monitoring domain of the Appcircle server.
 
 ```bash
 yq '.grafana.external.domain' ./projects/spacetech/export/.global.yaml
@@ -441,18 +454,8 @@ yq '.grafana.external.domain' ./projects/spacetech/export/.global.yaml
 Output:
 
 ```
-api.appcircle.spacetech.com
+monitor.appcircle.spacetech.com
 ```
-
-According to the sample outputs above, the needed domains that clients accessing via the internet should know are as follows:
-
-- `store.spacetech.com`: Custom Enterprise App Store domain.
-- `dist.spacetech.com`: Custom Testing Distribution domain.
-- `auth-appcircle.spacetech.com`: Appcircle authentication domain.
-
-Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication, API and monitoring domains.
-
-These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration.
 
 According to the sample outputs above, the needed domains that Appcircle DMZ server should know are as follows:
 
