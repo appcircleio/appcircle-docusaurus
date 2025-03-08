@@ -1038,6 +1038,11 @@ distribution:
   description: "Description for distribution profiles"
   permalink: /distribution-profiles
 
+track:
+  label: "track"
+  description: "Description for track"
+  permalink: /track
+
 dmz:
   label: "dmz"
   description: "Description for dmz"
