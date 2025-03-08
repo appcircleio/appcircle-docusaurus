@@ -349,7 +349,6 @@ dist.appcircle.spacetech.com
 
   </TabItem>
 
-
 </Tabs>
 
 ---
@@ -417,7 +416,8 @@ According to the sample outputs above, **when all the custom domains are disable
 - `auth.appcircle.spacetech.com`: DMZ default authentication domain.
 
 :::tip
-It's perfectly acceptable for **some custom domains to be enabled while others are disabled**.  
+It's perfectly acceptable for **some custom domains to be enabled while others are disabled**.
+
 For example, you might have a custom domain for the Enterprise App Store but use the default domain for Testing Distribution or DMZ Authentication.  
 :::
 
@@ -426,7 +426,6 @@ For example, you might have a custom domain for the Enterprise App Store but use
 Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication, API and monitoring domains.
 
 These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration.
-
 
 - Check the authentication domain of the Appcircle server.
 
@@ -748,7 +747,6 @@ Please keep in mind that the `keycloak` key might already exist in your `global.
 If `keycloak` does not exist, then you can add it to the `global.yaml` file of your project.
 
 :::
-
 
 :::info  
 
