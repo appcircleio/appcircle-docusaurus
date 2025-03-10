@@ -64,7 +64,6 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - An issue was fixed where the Update Metadata publish step caused errors if no existing version was available on App Store Connect. <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where some users could see both Android and iOS binaries on the Testing Portal when using iPad devices. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where some users were unable to resign binaries in the Testing Distribution module. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where a new provisioning profile could not be added if it did not exist on the Apple Developer account. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the App Store Connect option was visible for Enterprise-type Apple API keys during the provisioning profile creation step in the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue in the Nginx configuration was fixed where `proxy_redirect` entries were duplicated when a custom authentication domain was enabled on the **Appcircle DMZ server**. <InfrastructureBadge/> <SelfHostedBadge/>
 - A duplicate volume mount issue in the Nginx service of the Appcircle DMZ server has been resolved. <InfrastructureBadge/> <SelfHostedBadge/>
