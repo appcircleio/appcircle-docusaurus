@@ -194,6 +194,8 @@ oc create secret docker-registry containerregistry \
   --docker-password='superSecretRegistryPassword'
 ```
 
+See [External Image Registry](/self-hosted-appcircle/install-server/helm-chart/configuration/external-image-registry) page for more details.
+
   </TabItem>
 </Tabs>
 

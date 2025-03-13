@@ -1,7 +1,7 @@
 ---
 title: External Image Registries
 description: Learn how to configure external image registries in Appcircle
-tags: [self-hosted, external image registry, registry, quay, mirror images, insecure registry, pull images one by one]
+tags: [self-hosted, external image registry, registry, quay, mirror images, insecure registry]
 sidebar_position: 110
 ---
 
@@ -18,13 +18,13 @@ These services act as intermediaries, facilitating seamless image retrieval, cac
 
 ## Appcircle Registry Configuration
 
-For the Appcircle server to work with your own container image registry, you should add an additional setting to the `values.yaml` file of your deployment.
+For the Appcircle server to work with your own container image registry, you should add additional settings to the `values.yaml` file of your deployment.
 
 :::info
 
-In this documentation, we will use `registry.spacetech.com` as an __example registry domain__, spacetech as an __example organization name__ and `appcircle` as __example namespace name__.
+In this documentation, we will use `registry.spacetech.com` as __example registry domain__, `spacetech` as __example organization name__ and `appcircle` as __example namespace name__.
 
-To see name and namespace of your existing helm deployments, you can use the command below.
+To see name and namespace of your existing helm deployment, you can use the command below.
 
 ```bash
 helm list --all-namespaces
@@ -32,13 +32,13 @@ helm list --all-namespaces
 
 :::
 
-- Find the `imageRegistry` and `imageRepositoryPath` keys in your `values.yaml`. If they don't exist, you should add them.
+- Add or find the `imageRegistry` and `imageRepositoryPath` keys in your `values.yaml`. They should be set as follows:
 
 ```yaml
   # Container Image Registry host for container images
   imageRegistry: registry.spacetech.com:8083
   # Container Image Repository path between registry host and image name
-  imageRepositoryPath: appcircle/docker-registry
+  imageRepositoryPath: appcircle
 ```
 
 - Then create a secret with credentials for the external registry.
@@ -51,7 +51,7 @@ oc create secret docker-registry containerregistry \
   --docker-password='superSecretRegistryPassword'
 ```
 
-- To apply changes, run the command below.
+- If Appcircle is already installed, you can test the registry connection using the command below. It will try to pull the all required images from the external registry and result with images already exists message, since the application version is not changed.
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle \
@@ -65,22 +65,89 @@ Red Hat Quay provides a robust container registry solution that integrates well 
 
 - Create a new organization in Quay (e.g., appcircle)
 
-- Create a robot account for authentication:
+- Create an Application Token in your organization. This will be used for mirroring of images to the Quay registry.
+
+  - Go to your organization → Application Tokens → Create Application Token
+  - Name it (e.g., appcircle_mirroring)
+  - Click to the title of the token to see the token value
+  - Choose your preferred authentication method and save the shown command including token.
+
+- After mirroring the repositories, create a robot account for pull operation:
 
   - Go to your organization → Robot Accounts → Create Robot Account
-  - Name it (e.g., appcircle-puller)
+  - Name it (e.g., appcircle_puller)
   - Grant appropriate permissions (typically read access)
   - Save the credentials securely and use them while creating the `containerregistry` secret. See the [Appcircle Registry Configuration](#appcircle-registry-configuration) section for more details.
 
-## Using Quay Repository Mirroring
+## Mirroring Images 
 
-You can create mirror images in Quay and sync them with Appcircle registry. See detailed instructions in the [Quay Repository Mirroring documentation](https://docs.redhat.com/en/documentation/red_hat_quay/3/html/manage_red_hat_quay/repo-mirroring-in-red-hat-quay).
+### Retrieving the Image List
 
-<!-- TODO: Add script to create mirror images automatically using Quay API. -->
+List of images given below, image versions may vary depending on the Helm chart version.
 
-## Mirroring Images Manually
+:::tip
+You can also use the following command to get up-to-date image list required during `helm install`:
 
-<!--  You can mirror Appcircle container images from the Google Artifact Registry to your local registry.
+```bash
+helm template appcircle appcircle/appcircle -f values.yaml | grep image: | sed 's/\s*image:\s*//; s/"//g' | sort -u
+```
+:::
+
+<details>
+    <summary>Click to view list of images.</summary>
+
+```
+europe-west1-docker.pkg.dev/appcircle/docker-registry/agentcacheservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-keycloak:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/appparserserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/buildserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/cert-utils-operator:v1.3.12
+europe-west1-docker.pkg.dev/appcircle/docker-registry/dashboardserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/distributionserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/disttesterweb:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/kafkab:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/keycloakversioning:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/kube-rbac-proxy:v0.11.0
+europe-west1-docker.pkg.dev/appcircle/docker-registry/licenseserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/minio/miniob:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/mongodb:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/notificationserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/otpservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/postgresqlb:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/privateapigateway:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/publishserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/redisb:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/reportserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/resignservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/resourceserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/schedulemanagerservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/signingidentityserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeadminservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeapiservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeprofileservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storereportservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storesubmitserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeweb:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/taskserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/testeradminservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/testerapiservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/toolbox:1.5.0
+europe-west1-docker.pkg.dev/appcircle/docker-registry/uiserver:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/webhookservice:latest
+```
+
+</details>
+
+### Using Quay Repository Mirroring
+
+You can create mirror repositories in Quay and sync them with Appcircle registry. See detailed instructions in the [Quay Repository Mirroring documentation](https://docs.redhat.com/en/documentation/red_hat_quay/3/html/manage_red_hat_quay/repo-mirroring-in-red-hat-quay).
+
+<!-- TODO: Add script to create mirror images automatically using Quay API and image list. -->
+
+### Manual Mirroring with Script
+
+You can mirror Appcircle container images from the Google Artifact Registry to your local registry.
 
 Since there are many images to mirror, you can use a bash script to mirror the images instead of pulling, re-tagging, and pushing them back to your local registry.
 
@@ -112,19 +179,13 @@ cat cred.json | podman login -u _json_key --password-stdin  europe-west1-docker.
 
 You should see the "Login Succeeded" message after the command execution.
 
-You can find all container images in the `docker-images.txt` file, which is in the Appcircle server package.
+You can find all container images in the [Retrieving the Image List](#retrieving-the-image-list) section.
 
-- Create the `docker-images.txt` file and copy the following image names into it.
+- Create a `appcircle-images.txt` file and paste the image list into it.
 
 ```bash
-vi docker-images.txt
+vi appcircle-images.txt
 ```
-
-```bash
-
-```
-
-```bash
 
 - Create a bash script to mirror the container images.
 
@@ -169,7 +230,7 @@ while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
     else
         echo "Failed to pull image: $IMAGE_NAME"
     fi
-done < docker-images.txt
+done < appcircle-images.txt
 ```
 
   </TabItem>
@@ -208,7 +269,7 @@ while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
     else
         echo "Failed to pull image: $IMAGE_NAME"
     fi
-done < docker-images.txt
+done < appcircle-images.txt
 ```
 
   </TabItem>
@@ -248,13 +309,43 @@ If your registry is not using HTTPS, you may get an error during the Docker/Podm
 
 You need to add your registry as an insecure registry. Please check the [Insecure Registry](#insecure-registry) section to configure an HTTP registry.
 
-::: -->
+:::
 
 ## Insecure Registry
 
-To use a registry with HTTP, you need to introduce your registry to both container engines (Docker, Podman) and orchestration tools (Kubernetes, OpenShift) as an insecure registry.
+To use a registry with HTTP, you need to introduce your registry to orchestration tools (Kubernetes, OpenShift) as an insecure registry.
 
-### 1. Insecure Registry for Docker and Podman
+:::caution
+If you are going to use [Manual Mirroring](#manual-mirroring-with-script), you should also configure your Docker/Podman to use the registry as an insecure registry.
+:::
+
+### 1. Insecure Registry for Kubernetes and OpenShift
+
+By default, Kubernetes and OpenShift require HTTPS connections to image registries. To use a registry over HTTP, you must configure it as an insecure registry.
+
+Edit the cluster's image configuration:
+
+```bash
+oc edit image.config cluster
+```
+
+Add your registry address to the `insecureRegistries` section:
+
+```yaml
+...
+spec:
+...
+  registrySources:
+    insecureRegistries:
+    - registry.spacetech.com:8083"
+...
+```
+
+Save the file and exit. The configuration will be applied automatically without requiring a restart.
+
+:::info If your registry uses a non-standard port, you must specify it in the configuration as shown in the example above. :::
+
+### 2. Insecure Registry for Docker and Podman
 
 <Tabs>
   <TabItem value="docker" label="Docker" default>
@@ -321,25 +412,3 @@ If your registry runs on a port other than `80`, you must specify it in the `reg
 </Tabs>
 
 Now you can connect to your registry with HTTP without any errors.
-
-### 2. Insecure Registry for Kubernetes and OpenShift
-
-Edit the `image.config` file to add your insecure registry.
-
-```bash
-oc edit image.config cluster
-```
-
-Add your registry address to the `insecureRegistries` section as shown below.
-
-```yaml
-...
-spec:
-...
-  registrySources:
-    insecureRegistries:
-    - registry.spacetech.com:8083"
-...
-```
-
-Then save file and exit.
