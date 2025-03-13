@@ -63,6 +63,8 @@ For more information about the DMZ structure, you can check the [Appcircle DMZ d
 Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version.
 
 <!-- Version Anchor Links -->
+[3.26.1]: https://docs.appcircle.io/release-notes#3261---2025-02-28-distribute-to-track-update-for-android-publish-flow--saml-sso-enhancement-improvements-and-more
+[3.26.0]: https://docs.appcircle.io/release-notes#3260---2025-02-13-openshift-support-artifact-storage-limit-insights-streamlined-workflows--stability-improvements-and-more
 [3.25.1]: https://docs.appcircle.io/release-notes#3251---2025-01-24-app-version-filter-for-enterprise-app-store-reports-bitbucket-permission-enhancements-improvements-and-more
 [3.25.0]: https://docs.appcircle.io/release-notes#3250---2024-12-19-appcircle-deployment-on-kubernetes-list-view-type-for-build-and-testing-distribution-improvements-and-more
 [3.24.0]: https://docs.appcircle.io/release-notes#3240---2024-12-06-publish-priority-configuration-download-module-reports-through-api-bug-fixes-and-more
@@ -92,6 +94,8 @@ Below is the version history of the self-hosted Appcircle server. This table hel
         
         | Version   | Release Date |
         |-----------|--------------|
+        | [3.26.1]  | 10/03/2025   |
+        | [3.26.0]  |     -        |
         | [3.25.1]  | 30/01/2025   |
         | [3.25.0]  | 13/01/2025   |
         | [3.24.0]  |     -        |
