@@ -28,6 +28,12 @@ When you need to distribute an iOS application to different environments (like Q
 - **Field**: [`CFBundleDisplayName`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundledisplayname)
 - **Description**: The user-visible name for the bundle, used by Siri and visible on the iOS Home screen.
 
+:::caution CAUTION
+
+Please note that if the bundle does not have a CFBundleDisplayName, changing the display name during resigning will not work.
+
+:::
+
 #### Version
 
 - **Field**: [`CFBundleShortVersionString`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring)

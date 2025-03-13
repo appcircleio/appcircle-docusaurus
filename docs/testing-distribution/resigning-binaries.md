@@ -34,6 +34,13 @@ This form will show the following details of the original binary.
 
 CFBundleDisplayName: The user-visible name for the bundle, used by Siri and visible on the iOS Home screen.
 
+:::caution CAUTION
+
+Please note that if the bundle does not have a CFBundleDisplayName, changing the display name during resigning will not work.
+
+:::
+
+
 **Version**
 
 CFBundleShortVersionString: The release or version number of the bundle.
