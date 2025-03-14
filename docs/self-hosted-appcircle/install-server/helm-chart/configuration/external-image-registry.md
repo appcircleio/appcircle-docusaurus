@@ -58,7 +58,7 @@ helm list --all-namespaces
 :::
 
 :::caution
-If your registry uses a non-standard port, you must specify it in the configuration as shown in the examples below as `8083`.
+If your registry uses a non-standard port (anything other than 443 for HTTPS or 80 for HTTP), you must specify it in the configuration as shown in the examples below with port `8083`.
 :::
 
 
@@ -215,5 +215,5 @@ registrySources:
 Save the file and exit. The configuration will be applied automatically without requiring a restart.
 
 :::caution
-If your registry uses a non-standard port, you must specify it in the configuration as shown in the example above as `8083`.
+If your registry uses a non-standard port (anything other than 80 for HTTP), you must specify it in the configuration as shown in the example above with port `8083`.
 :::
