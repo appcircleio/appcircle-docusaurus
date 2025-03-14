@@ -337,13 +337,15 @@ spec:
 ...
   registrySources:
     insecureRegistries:
-    - registry.spacetech.com:8083"
+    - registry.spacetech.com:8083
 ...
 ```
 
 Save the file and exit. The configuration will be applied automatically without requiring a restart.
 
-:::info If your registry uses a non-standard port, you must specify it in the configuration as shown in the example above. :::
+:::info 
+If your registry uses a non-standard port, you must specify it in the configuration as shown in the example above. 
+:::
 
 ### 2. Insecure Registry for Docker and Podman
 
