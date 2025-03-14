@@ -16,11 +16,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.26.2 - 2025-03-14  Domain Verification, License Limit Notifications, Signing Identity Enhancements, Improvements and more
+## 3.26.2 - 2025-03-14 License Limit Notifications, Signing Identity Enhancements, Improvements and more
 
 ### 🆕 New Features
 
-- [Domains](enterprise-app-store/portal-settings#custom-domain) can now be verified for Appcircle organizations. This feature helps resolve issues where email addresses of B2B guest users without mailboxes cannot be verified. <AccountBadge/> <CloudBadge/>
 - In the Publish module, when a binary is rejected with a message, users will now receive a notification containing the reject message. Additionally, a new notification type has been added to the [Notification section](account/my-organization/notifications) specifically for these reject notifications. <PublishBadge/> <CloudBadge/>
 - A separate tab system has been added for Android and iOS apps in the [Testing Portal](testing-distribution/testing-portal) for devices with unknown OS, such as desktops. If the detected OS is Linux, the default tab will be set to Android.  <DistributionBadge/> <CloudBadge/>
 
