@@ -1,7 +1,15 @@
 ---
 title: External Image Registries
 description: Learn how to configure external image registries in Appcircle
-tags: [self-hosted, external image registry, registry, quay, mirror images, insecure registry]
+tags:
+  [
+    self-hosted,
+    external image registry,
+    registry,
+    quay,
+    mirror images,
+    insecure registry,
+  ]
 sidebar_position: 110
 ---
 
@@ -16,12 +24,30 @@ These external repositories serve as integral components, offering users differe
 
 These services act as intermediaries, facilitating seamless image retrieval, caching frequently accessed images, and providing enhanced security measures for image distribution.
 
+## Quay Configuration
+
+Red Hat Quay provides a robust container registry solution that integrates well with Kubernetes and OpenShift environments. To configure Quay as your proxy registry, follow these steps:
+
+- Enable Proxy Cache feature by following one of these docs: [Project Quay Proxy Cache](https://docs.projectquay.io/config_quay.html#config-fields-proxy-cache), or [Redhat Quay Proxy Cache](https://docs.redhat.com/en/documentation/red_hat_quay/3.13/html/use_red_hat_quay/quay-as-cache-proxy#red-hat-quay-proxy-cache-procedure).
+
+- Create a new organization in Quay (e.g., named `appcircle`).
+
+- Go to the organization settings and configure Proxy Cache section:
+  - Set _Remote Registry_ as `europe-west1-docker.pkg.dev/appcircle/docker-registry`.
+  - Set _Remote Registry username_ as `_json_key`.
+  - Copy the content of your `cred.json` and paste into _Remote Registry password_ field.
+  - Save the configuration.
+
+- Configuration page should look like this:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-5592-quay-proxy-cache.png' />
+
 ## Appcircle Registry Configuration
 
 For the Appcircle server to work with your own container image registry, you should add additional settings to the `values.yaml` file of your deployment.
 
 :::info
-In this documentation, we will use `registry.spacetech.com` as an __example registry domain__, `spacetech` as an __example organization name__ and `appcircle` as an __example namespace name__.
+In this documentation, we will use `registry.spacetech.com` as an **example registry domain**, `spacetech` as an **example organization name** and `appcircle` as an **example namespace name**.
 
 To see name and namespace of your existing Helm deployment, you can use the command below.
 
@@ -31,16 +57,21 @@ helm list --all-namespaces
 
 :::
 
+:::caution
+If your registry uses a non-standard port, you must specify it in the configuration as shown in the examples below.
+:::
+
+
 - Add or find the `imageRegistry` and `imageRepositoryPath` keys in your `values.yaml` file. They should be set as follows:
 
 ```yaml
-  # Container Image Registry host for container images
-  imageRegistry: registry.spacetech.com:8083
-  # Container Image Repository path between registry host and image name
-  imageRepositoryPath: appcircle
+# Container Image Registry host for container images
+imageRegistry: registry.spacetech.com:8083
+# Container Image Repository path between registry host and image name (for Quay it is the organization name)
+imageRepositoryPath: appcircle
 ```
 
-- Then create a secret with credentials for the external registry.
+- Create a secret with credentials for the external registry.
 
 <Tabs>
 
@@ -70,7 +101,10 @@ oc create secret docker-registry containerregistry \
 
 </Tabs>
 
-- If Appcircle is already installed, you can test the registry connection using the command below. It will try to pull the all required images from the external registry and result with images already exists message, since the application version is not changed.
+Configuration is completed, you can continue to the installation using the external registry.
+
+:::tip
+If Appcircle is already installed, you can test the registry connection using the command below. It will try to pull the all required images from the external registry and result with images already exists message, since the application version is not changed.
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle \
@@ -78,31 +112,15 @@ helm upgrade appcircle-server appcircle/appcircle \
   -f values.yaml
 ```
 
-## Quay Configuration
-
-Red Hat Quay provides a robust container registry solution that integrates well with Kubernetes and OpenShift environments. To configure Quay as your proxy registry, follow these steps:
-
-- Create a new organization in Quay (e.g., `appcircle`)
-
-- Create an Application Token in your organization. This will be used for mirroring images to the Quay registry.
-
-  - Go to your organization → Application Tokens → Create Application Token
-  - Name the token (e.g., `appcircle_mirroring`)
-  - Click to the title of the token to see the token value
-  - Choose your preferred authentication method and save the shown command including token.
-
-- After mirroring the repositories, create a robot account for pull operation:
-
-  - Go to your organization → Robot Accounts → Create Robot Account
-  - Name the robot (e.g., `appcircle_puller`)
-  - Select all repositories under `appcircle` organization, and grant appropriate permissions (typically read access)
-  - Save the credentials securely, and they will be used while creating the `containerregistry` secret. See the [Appcircle Registry Configuration](#appcircle-registry-configuration) section for more details.
+:::
 
 ## Mirroring Images
 
+If a proxy registry with pull-through cache ability is not available in your setup, you can mirror images manually with your preferred method using the following image list.
+
 ### Retrieving the Image List
 
-List of container images given below, image versions may vary depending on the Helm chart version.
+List of the all container images given below, image versions may vary depending on the Helm chart version.
 
 <details>
     <summary>Click to view the image list.</summary>
@@ -157,185 +175,7 @@ helm template appcircle appcircle/appcircle -f values.yaml | grep image: | sed '
 
 :::
 
-### Using Quay Repository Mirroring
-
-You can create mirror repositories in Quay and sync with Appcircle registry. See detailed instructions in the [Quay Repository Mirroring documentation](https://docs.redhat.com/en/documentation/red_hat_quay/3/html/manage_red_hat_quay/repo-mirroring-in-red-hat-quay). Mirrors can be automated using tag filters and scheduled sync intervals.
-
-<!-- TODO: Add script to create mirror images automatically using Quay API and image list. -->
-
-### Manual Mirroring with Script
-
-You can mirror Appcircle container images from the Google Artifact Registry to your local registry.
-
-Since there are many images to mirror, you can use a bash script to mirror the images instead of pulling, re-tagging, and pushing them back to your local registry.
-
-To mirror images automatically, you can follow the steps below:
-
-As a **pre-requirement**, you need to be authenticated to the Google Artifact Registry.
-
-- You should already have a `cred.json` file, which you should have taken from us.
-
-To authenticate with your container engine, run the command below:
-
-<Tabs>
-  <TabItem value="docker" label="Docker" default>
-
-```bash
-cat cred.json | docker login -u _json_key --password-stdin  europe-west1-docker.pkg.dev/appcircle/docker-registry
-```
-
-  </TabItem>
-
-  <TabItem value="podman" label="Podman">
-
-```bash
-cat cred.json | podman login -u _json_key --password-stdin  europe-west1-docker.pkg.dev/appcircle/docker-registry
-```
-
-  </TabItem>
-</Tabs>
-
-You should see the "Login Succeeded" message after the command execution.
-
-- Create an `appcircle-images.txt` file and paste the image list into it. You can find the list of container images in the [Retrieving the Image List](#retrieving-the-image-list) section.
-
-```bash
-vi appcircle-images.txt
-```
-
-- Create a bash script to mirror the container images.
-
-```bash
-vi mirror-images.sh
-```
-
-- Copy and paste the following code into the bash script:
-
-<Tabs>
-  <TabItem value="docker" label="Docker" default>
-
-```bash
-#!/bin/bash
-
-# Set the source registry URL
-SRC_REGISTRY_URL="europe-west1-docker.pkg.dev/appcircle/docker-registry"
-
-# Set the destination registry URL
-DEST_REGISTRY_URL="registry.spacetech.com:8083/appcircle"
-
-# Loop through each line of the file and pull, tag, and push the Docker image
-while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
-    if [[ ${IMAGE_NAME:0:1} == "#" ]]; then
-        continue
-    fi
-    echo "Pulling image: $IMAGE_NAME"
-    docker pull $IMAGE_NAME
-    if [ $? -eq 0 ]; then
-        echo "Image pulled successfully: $IMAGE_NAME"
-        # Replace source registry URL  with the new registry URL
-        IMAGE_TAG="${IMAGE_NAME/$SRC_REGISTRY_URL/$DEST_REGISTRY_URL}"
-        # Tag the image with the destination registry URL and repository name
-        docker tag $IMAGE_NAME $IMAGE_TAG
-        # Push the tagged image to the destination registry
-        docker push $IMAGE_TAG
-        if [ $? -eq 0 ]; then
-            echo "Image pushed successfully: $IMAGE_NAME"
-        else
-            echo "Failed to push image: $IMAGE_NAME"
-        fi
-    else
-        echo "Failed to pull image: $IMAGE_NAME"
-    fi
-done < appcircle-images.txt
-```
-
-  </TabItem>
-
-  <TabItem value="podman" label="Podman">
-
-```bash
-#!/bin/bash
-
-# Set the source registry URL
-SRC_REGISTRY_URL="europe-west1-docker.pkg.dev/appcircle/docker-registry"
-
-# Set the destination registry URL
-DEST_REGISTRY_URL="registry.spacetech.com:8083/appcircle"
-
-# Loop through each line of the file and pull, tag, and push the Docker image
-while read -r IMAGE_NAME || [ -n "$IMAGE_NAME" ]; do
-    if [[ ${IMAGE_NAME:0:1} == "#" ]]; then
-        continue
-    fi
-    echo "Pulling image: $IMAGE_NAME"
-    podman pull $IMAGE_NAME
-    if [ $? -eq 0 ]; then
-        echo "Image pulled successfully: $IMAGE_NAME"
-        # Replace source registry URL  with the new registry URL
-        IMAGE_TAG="${IMAGE_NAME/$SRC_REGISTRY_URL/$DEST_REGISTRY_URL}"
-        # Tag the image with the destination registry URL and repository name
-        podman tag $IMAGE_NAME $IMAGE_TAG
-        # Push the tagged image to the destination registry
-        podman push $IMAGE_TAG
-        if [ $? -eq 0 ]; then
-            echo "Image pushed successfully: $IMAGE_NAME"
-        else
-            echo "Failed to push image: $IMAGE_NAME"
-        fi
-    else
-        echo "Failed to pull image: $IMAGE_NAME"
-    fi
-done < appcircle-images.txt
-```
-
-  </TabItem>
-</Tabs>
-
-:::caution
-The sample value for **`DEST_REGISTRY_URL`** in the script above must be changed with your container image registry.
-
-To find your destination registry URL, please head to your external image registry and check for pull/push command.
-
-For example, if you're using
-
-- `registry.spacetech.com:8083/appcircle/imagename:latest`
-
-template for pull/push, the destination registry URL (**`DEST_REGISTRY_URL`**) should be
-
-- `registry.spacetech.com:8083/appcircle`
-
-Keep in mind that the destination image registry url **must not** end with `/`.
-:::
-
-- Make the `mirror-images.sh` script file executable.
-
-```bash
-chmod +x mirror-images.sh
-```
-
-- Run the script to mirror all the container images.
-
-```bash
-./mirror-images.sh
-```
-
-:::info
-
-If your registry is not using HTTPS, you may get an error during the Docker/Podman push step.
-
-You need to add your registry as an insecure registry. Please check the [Insecure Registry](#insecure-registry) section to configure an HTTP registry.
-
-:::
-
 ## Insecure Registry
-
-To use a registry with HTTP, you need to introduce your registry to orchestration tools (Kubernetes, OpenShift) as an insecure registry.
-
-:::caution
-If you are going to use [Manual Mirroring](#manual-mirroring-with-script), you should also configure your Docker/Podman to use the registry as an insecure registry.
-:::
-
-### 1. Insecure Registry for Kubernetes and OpenShift
 
 By default, Kubernetes and OpenShift require HTTPS connections to image registries. To use a registry over HTTP, you must configure it as an insecure registry.
 
@@ -367,82 +207,13 @@ Add your registry address to the `insecureRegistries` section:
 ...
 spec:
 ...
-  registrySources:
-    insecureRegistries:
+registrySources:
+  insecureRegistries:
     - registry.spacetech.com:8083
-...
 ```
 
 Save the file and exit. The configuration will be applied automatically without requiring a restart.
 
-:::info
+:::caution
 If your registry uses a non-standard port, you must specify it in the configuration as shown in the example above.
 :::
-
-### 2. Insecure Registry for Docker and Podman
-
-<Tabs>
-  <TabItem value="docker" label="Docker" default>
-
-By default, Docker tries to connect to the server with HTTPS and from the `443` port.
-
-If your registry is running over HTTP, then you should define your registry as an **insecure registry** in the Docker daemon.
-
-Edit the `daemon.json` file, whose default location is `/etc/docker/daemon.json`.
-
-```bash
-sudo vi /etc/docker/daemon.json
-```
-
-If the `daemon.json` file does not exist, you should create it. Assuming there are no other settings in the file, it should have the following contents:
-
-```json
-{
-  "insecure-registries": ["registry.spacetech.com:8083"]
-}
-```
-
-:::info
-If you don't specify the port number in the `daemon.json` above, Docker will try to use the default HTTP port, which is `80`.
-
-If your registry runs on a port other than `80`, you must specify it in the `daemon.json` file, like in the example above.
-:::
-
-Restart the Docker daemon for the changes to take effect.
-
-```bash
-sudo systemctl restart docker
-```
-
-  </TabItem>
-
-  <TabItem value="podman" label="Podman">
-
-By default, Podman tries to connect to the server with HTTPS and from the `443` port.
-
-If your registry is running over HTTP, then you should define your registry as an **insecure registry** in the Podman configuration.
-
-Edit the `registries.conf` file, whose default location is `/etc/containers/registries.conf`.
-
-```bash
-sudo vi /etc/containers/registries.conf
-```
-
-Copy the template content below, change the `location` to your registry URL, and paste it at the bottom of the `registries.conf` file.
-
-```conf
-[[registry]]
-location = "registry.spacetech.com:8083"
-insecure = true
-```
-
-:::info
-If you don't specify the port number in the `registries.conf` above, Podman will try to use the default HTTP port, which is `80`.
-
-If your registry runs on a port other than `80`, you must specify it in the `registries.conf` file, like in the example above.
-:::
-
-  </TabItem>
-</Tabs>
-
-Now you can connect to your registry with HTTP without any errors.
