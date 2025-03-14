@@ -16,6 +16,37 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.26.2 - 2025-03-14 License Limit Notifications, Signing Identity Enhancements, Improvements and more
+
+### 🆕 New Features
+
+- In the Publish module, when a binary is rejected with a message, users will now receive a notification containing the reject message. Additionally, a new notification type has been added to the [Notification section](account/my-organization/notifications) specifically for these reject notifications. <PublishBadge/> <CloudBadge/>
+- A separate tab system has been added for Android and iOS apps in the [Testing Portal](testing-distribution/testing-portal) for devices with unknown OS, such as desktops. If the detected OS is Linux, the default tab will be set to Android.  <DistributionBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+<!-- - An additional column for Profile Name has been added to the Admin Panel. <SelfHostedBadge/> -->
+- Starter organizations can be deleted by users with an enterprise organization, except when SSO is enabled. In such cases, the starter organization cannot be deleted. After confirmation, the organization is deleted, the session is terminated, and the user is redirected to sign in via SSO. <AccountBadge/> <CloudBadge/>
+- Notifications are now sent when license limits are reached, with state management preventing duplicate alerts. <AccountBadge/> <CloudBadge/>
+- Android submission logs are now added to the [Publish Activity Log](publish-module/publish-activity-log), including release submissions, status updates, and successfully completed transactions. <PublishBadge/> <CloudBadge/>
+- A new option has been added to [Apple Devices](signing-identities/apple-devices) for users to view both active and inactive devices together. <SigningIdentitiesBadge/> <CloudBadge/>
+- Performance improvements have been made to the commands used for uploading iOS and Android application binaries in Publish, Enterprise App Store, and Testing Distribution. <APICLIBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where the In-House provisioning profile type was not available when using an Enterprise API key for registration. This option is now properly provided only for the Enterprise API key, while "Ad-hoc" and "App Store Connect" remain available for the App Store Connect API key. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where registering a new profile would not work properly if no provisioning profile existed on Apple Developer. The UI now correctly handles the case when no profile is available. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where the provision type was incorrectly displayed when adding a development provision in the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where the Enterprise API Key was not filtered when creating a Publish profile from App Store Connect. It is now properly filtered as it doesn't support TestFlight or App Store Connect options. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where restarting the Android Publish Flow before retrieving metadata details would result in a timeout error. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where a failed publish step after a successful one with custom UI blocked the display of the successful step's UI. The button now correctly updates to end the live process and show the successful step's UI. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where the 'Get help with build errors' link in the Build Log section was not working. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where [connections](build/manage-the-connections) (Azure, Bitbucket, GitLab, GitHub) were removed from the original organization after deleting a second root organization. The connections now remain intact in the original organization. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where [sharing an app version link](enterprise-app-store/enterprise-app-store-profile#share) for an Enterprise App Store configured with 'none' auth type would redirect users to the app version list instead of directly to the installation step. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed in the Testing Distribution module where the [resign](testing-distribution/resigning-binaries) feature detected an empty target, preventing the binary from being resigned. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where the IdP-initiated SSO flow would not work if the alias contained capital letters. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where retrieving an access token from Swagger would return a load fail error. <CloudBadge/>
+
 ## 3.26.1 - 2025-02-28 Distribute to Track Update for Android Publish Flow , SAML SSO Enhancement, Improvements and more
 
 ### 🚨 Announcements
