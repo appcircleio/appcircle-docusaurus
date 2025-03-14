@@ -2,7 +2,7 @@
 title: Helm Advanced Configuration
 description: Learn how to fully configure the Appcircle server Helm chart
 tags: [self-hosted, helm, configuration, kubernetes]
-sidebar_position: 100
+sidebar_position: 110
 sidebar_label: Advanced Configuration
 ---
 

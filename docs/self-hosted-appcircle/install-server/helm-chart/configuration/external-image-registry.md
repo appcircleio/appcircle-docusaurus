@@ -10,7 +10,7 @@ tags:
     mirror images,
     insecure registry,
   ]
-sidebar_position: 110
+sidebar_position: 100
 ---
 
 import Tabs from '@theme/Tabs';
