@@ -44,6 +44,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where [connections](build/manage-the-connections) (Azure, Bitbucket, Gitlab, GitHub) were removed from the original organization after deleting a second root organization. The connections now remain intact in the original organization. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where [sharing an app version link](enterprise-app-store/enterprise-app-store-profile#share) for an Enterprise App Store configured with 'none' auth type would redirect users to the app version list instead of directly to the installation step. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed in the Testing Distribution module where the [resign](testing-distribution/resigning-binaries) feature detected an empty target, preventing the binary from being resigned. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where the IdP-initiated SSO flow would not work if the alias contained capital letters. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where retrieving an access token from Swagger would return a load fail error. <CloudBadge/>
 
 ## 3.26.1 - 2025-02-28 Distribute to Track Update for Android Publish Flow , SAML SSO Enhancement, Improvements and more
