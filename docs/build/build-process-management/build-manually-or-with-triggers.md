@@ -198,6 +198,12 @@ Once the webhook is created and confirmed to be properly set up and healthy in t
 - This webhook event activates the trigger in Appcircle.
 - Appcircle then automatically starts the build process.
 
+### Why does my tag trigger start a build on a different branch?
+
+When you create a tag, it is applied to a specific commit, not a branch. The system does not have explicit branch information linked to the tag. Therefore, when the tag trigger starts a build in Appcircle, it may select any branch that contains the tagged commit, leading to seemingly random behavior.
+
+To control this behavior, push an empty commit to the desired branch and then apply the tag to this new commit. This ensures that the tag trigger starts from the intended branch.
+
 ### How to enable triggers for AWS CodeCommit repositories?
 
 Appcircle supports AWS CodeCommit triggers through an Amazon SNS topic.
