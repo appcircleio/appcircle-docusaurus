@@ -41,7 +41,7 @@ You can obtain your developer certificates and provisioning profiles from the Ap
 
 ### Creating an Apple Certificate
 
-With Appcircle’s advanced Signing Identity module, you can easily generate certificates without logging into your Apple Developer account and securely store these certificates in P12 format within Appcircle.
+With Appcircle’s advanced Signing Identity module, you can easily generate certificates without logging into your Apple Developer account and securely store these certificates in  `.P12` format within the Appcircle.
 
 - To do this, navigate to the Apple Certificates section within the Signing Identity module. Then, using the Add New button, you can create a certificate.
 
@@ -51,7 +51,7 @@ With Appcircle’s advanced Signing Identity module, you can easily generate cer
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-addCertModal.png' />
 
-- Appcircle **requires** an **App Store Connect API Key** associated with your account to create a certificate. If the API Key is **not** added to your Appcircle organization, you **cannot** proceed with the certificate creation process. For more information about the **App Store Connect API Key**, please refer to [this documentation](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key).
+- Appcircle **requires** an **App Store Connect API Key** associated with your account to create a certificate. If the API Key is **not** added to your Appcircle organization, you **cannot** proceed with the certificate creation process. For more information, please refer to the [**App Store Connect API Key**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-addCertAPIKeySelect.png' />
 
@@ -79,7 +79,7 @@ Adding a password during `P12` export is completely **optional**. If you do **no
 
 If you want to create a certificate by selecting an existing `CSR` file in Appcircle, you can proceed by using the **Select Certificate Signing Request from List** option.
 
-When you select this option, all your existing `CSR` files in Appcircle will be listed, and you will be prompted to choose one. After selecting the relevant `CSR` file, you need to choose the type of certificate you wish to produce. Then, you can **optionally** specify a password or use the **Auto Generate Password** feature to have one generated automatically.
+When this option is selected, all existing `CSR` files in Appcircle will be listed, prompting you to choose one. After selecting the relevant `CSR` file, the desired certificate type must be chosen. **Optionally**, a password can be specified, or the **Auto Generate Password** feature can be used to generate one automatically.
 
 :::caution Generating Password
 
@@ -99,7 +99,7 @@ By correctly filling in the required parameters such as **name**, **email**, and
 
 :::caution Generating CSR File
 
-It is **important** that the information provided here is **accurate**. If any **errors** exist in these details, **Apple may not** permit the certificate generation process.
+It is **important** that the information provided is **accurate**. Any errors in these details may **prevent** Apple from allowing the certificate generation process.
 
 :::
 
