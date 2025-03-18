@@ -66,4 +66,4 @@ After configuring the domain verification, you can enable the Auto Verify Featur
 
 - **Record already exists**: If an old verification record exists, remove it before adding the new one.
 
-- **Invalid characters in domain name**: Avoid using special characters such as !!!!, *, ş, .. as seen in incorrect domain entries.
+- **Invalid characters in domain name**: Avoid using special characters in domain entries.

@@ -1028,6 +1028,11 @@ distribution:
   description: "Description for distribution"
   permalink: /distribution
 
+domain:
+  label: "domain"
+  description: "Description for domain"
+  permalink: /domain
+
 "distribution profile":
   label: "distribution profile"
   description: "Description for distribution profile"
@@ -2702,6 +2707,11 @@ variables:
   label: "variables"
   description: "Description for variables"
   permalink: /variables
+
+verify:
+  label: "verify"
+  description: "Description for verify"
+  permalink: /verify
 
 version:
   label: "version"
