@@ -16,12 +16,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.26.2 - 2025-03-14 License Limit Notifications, Signing Identity Enhancements, Improvements and more
+## 3.26.2 - 2025-03-14 Generate And Download Certificate from Appstore, Domain Verification, License Limit Notifications, Improvements and more
 
 ### 🆕 New Features
 
 - In the Publish module, when a binary is rejected with a message, users will now receive a notification containing the reject message. Additionally, a new notification type has been added to the [Notification section](account/my-organization/notifications) specifically for these reject notifications. <PublishBadge/> <CloudBadge/>
 - A separate tab system has been added for Android and iOS apps in the [Testing Portal](testing-distribution/testing-portal) for devices with unknown OS, such as desktops. If the detected OS is Linux, the default tab will be set to Android.  <DistributionBadge/> <CloudBadge/>
+- App Store certificates can now be [generated](/signing-identities/apple-certificates#creating-an-apple-certificate) with password encryption and downloaded within the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+- Users can now verify their domains for Appcircle organizations within the Security section of the Organization module by using [Domain Verification](/account/my-organization/security/domain-verification). This allows inviting members who do not have inboxes for verifying email addresses as part of the organization joining process. <AccountBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
@@ -40,6 +42,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where the Enterprise API Key was not filtered when creating a Publish profile from App Store Connect. It is now properly filtered as it doesn't support TestFlight or App Store Connect options. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where restarting the Android Publish Flow before retrieving metadata details would result in a timeout error. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where a failed publish step after a successful one with custom UI blocked the display of the successful step's UI. The button now correctly updates to end the live process and show the successful step's UI. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where the Display Name of the Resign property did not update after the resign process was completed. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where the 'Get help with build errors' link in the Build Log section was not working. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where [connections](build/manage-the-connections) (Azure, Bitbucket, GitLab, GitHub) were removed from the original organization after deleting a second root organization. The connections now remain intact in the original organization. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where [sharing an app version link](enterprise-app-store/enterprise-app-store-profile#share) for an Enterprise App Store configured with 'none' auth type would redirect users to the app version list instead of directly to the installation step. <EnterpriseStoreBadge/> <CloudBadge/>
