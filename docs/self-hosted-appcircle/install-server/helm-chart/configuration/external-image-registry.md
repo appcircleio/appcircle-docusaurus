@@ -62,13 +62,16 @@ If your registry uses a non-standard port (anything other than 443 for HTTPS or 
 :::
 
 
-- Add or find the `imageRegistry` and `imageRepositoryPath` keys in your `values.yaml` file. They should be set as follows:
+- Add or find the `imageRegistry` and `imageRepositoryPath` keys under `global` mapping in your `values.yaml` file. They should be set as follows:
 
 ```yaml
-# Container Image Registry host for container images
-imageRegistry: registry.spacetech.com:8083
-# Container Image Repository path between registry host and image name (for Quay it is the organization name)
-imageRepositoryPath: appcircle
+global:
+...
+  # Container Image Registry host for container images
+  imageRegistry: registry.spacetech.com:8083
+  # Container Image Repository path between registry host and image name (for Quay it is the organization name)
+  imageRepositoryPath: appcircle
+...
 ```
 
 - Create a secret with credentials for the external registry.
@@ -207,8 +210,8 @@ Add your registry address to the `insecureRegistries` section:
 ...
 spec:
 ...
-registrySources:
-  insecureRegistries:
+  registrySources:
+    insecureRegistries:
     - registry.spacetech.com:8083
 ```
 
