@@ -21,7 +21,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - In the Publish module, when a binary is rejected with a message, users will now receive a notification containing the reject message. Additionally, a new notification type has been added to the [Notification section](account/my-organization/notifications) specifically for these reject notifications. <PublishBadge/> <CloudBadge/>
-- A separate tab system has been added for Android and iOS apps in the [Testing Portal](testing-distribution/testing-portal) for devices with unknown OS, such as desktops. If the detected OS is Linux, the default tab will be set to Android.  <DistributionBadge/> <CloudBadge/>
+- A separate tab system has been added for Android and iOS apps in the [Testing Portal](/testing-distribution/testing-portal#filter-by-os) for devices with unknown OS, such as desktops. If the detected OS is Linux, the default tab will be set to Android.  <DistributionBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
