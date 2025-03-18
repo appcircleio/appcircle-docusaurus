@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.26.2 - 2025-03-14 Generate And Download Certificate from Appstore, Domain Verification, License Limit Notifications, Signing Identity Enhancements, Improvements and more
+## 3.26.2 - 2025-03-14 Generate And Download Certificate from Appstore, Domain Verification, License Limit Notifications, Improvements and more
 
 ### 🆕 New Features
 

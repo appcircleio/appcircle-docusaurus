@@ -60,7 +60,7 @@ After configuring the domain verification, you can enable the Auto Verify Featur
 
 - If an invalid domain is entered, the verification process will not proceed.
 
-### FAQ
+### Troubleshooting
 
 - **DNS record value does not match expected value**: Ensure that the exact value provided by the system is entered in the DNS settings.
 
