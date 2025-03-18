@@ -16,14 +16,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.26.2 - 2025-03-14 Generate And Download Certificate from Appstore, Domain Verification, License Limit Notifications, Improvements and more
+## 3.26.2 - 2025-03-14 Generate And Download Certificate from Appstore, License Limit Notifications, Signing Identity Improvements and more
 
 ### 🆕 New Features
 
 - In the Publish module, when a binary is rejected with a message, users will now receive a notification containing the reject message. Additionally, a new notification type has been added to the [Notification section](account/my-organization/notifications) specifically for these reject notifications. <PublishBadge/> <CloudBadge/>
 - A separate tab system has been added for Android and iOS apps in the [Testing Portal](testing-distribution/testing-portal) for devices with unknown OS, such as desktops. If the detected OS is Linux, the default tab will be set to Android.  <DistributionBadge/> <CloudBadge/>
 - App Store certificates can now be [generated](/signing-identities/apple-certificates#creating-an-apple-certificate) with password encryption and downloaded within the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/>
-- Users can now verify their domains for Appcircle organizations within the Security section of the Organization module by using [Domain Verification](/account/my-organization/security/domain-verification). This allows inviting members who do not have inboxes for verifying email addresses as part of the organization joining process. <AccountBadge/> <CloudBadge/>
+<!-- - Users can now verify their domains for Appcircle organizations within the Security section of the Organization module by using [Domain Verification](/account/my-organization/security/domain-verification). This allows inviting members who do not have inboxes for verifying email addresses as part of the organization joining process. <AccountBadge/> <CloudBadge/> --> 
 
 ### :muscle: Improvements
 
