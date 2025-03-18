@@ -325,7 +325,7 @@ The user can create an organization or sub-organization within license limits, a
 Also, the user can view self-hosted runners and change configuration.
 
 | Organization Management Sub-modules                  | Scopes                                  | Owner | Manager | Viewer |
-| ---------------------------------------------------- | --------------------------------------- | ----- | ------- | ------ |
+|------------------------------------------------------|-----------------------------------------| ----- | ------- | ------ |
 | Organization and Team Management                     | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
 | Organization and Team Management                     | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
 | Organization and Team Management                     | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
@@ -344,6 +344,11 @@ Also, the user can view self-hosted runners and change configuration.
 | Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
 | Artifacts                                            | View Retention Period                   | ✅     | ✅       | ✅      |
 | Artifacts                                            | Update Retention Period                 | ✅     | ✅       | ⛔      |
+| Domain Verification                                  | View Domain List                        | ✅     | ✅       | ✅     |
+| Domain Verification                                  | View Domain Verification Details        | ✅     | ✅       | ⛔      |
+| Domain Verification                                  | Add New Domain Verification             | ✅     | ✅       | ⛔      |
+| Domain Verification                                  | Verify a Domain                         | ✅     | ✅       | ⛔      |
+| Domain Verification                                  | Remove Domain Verification              | ✅     | ✅       | ⛔      |
 
 :::info Organization Management
 

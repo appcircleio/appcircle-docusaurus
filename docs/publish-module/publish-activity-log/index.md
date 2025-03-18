@@ -28,6 +28,8 @@ Here is the full list of actions that can be monitored:
 - Publishing Success Without Artifacts
 - Publishing Restarted
 - Publishing Restart Cancelled
+- Play Store Release Updated
+- Play Store Release Update Failed
 - Metadata File Deleted
 - Metadata Imported
 - Metadata Updated
