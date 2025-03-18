@@ -98,23 +98,6 @@ If the detected language is not supported, the default language will be English.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-language.png" />
 
-### Filter by OS
-
-The Testing Portal includes an OS Filter that enables users to switch between different OS-specific builds easily. This feature helps users manage and navigate their iOS and Android releases efficiently. These tabs will be available when the Testing Portal is accessed through a desktop or a laptop device.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter.png" />
-
-#### Filter Options
-
-The filter consists of three tabs:
-- **All**: Displays both iOS and Android builds together.
-- **iOS**: Shows only iOS builds.
-- **Android**: Displays only Android builds.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter4.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter3.png" />
-
 ## Search Binary
 
 The search bar can be used to filter the available app version list by *app names**, **app versions**, **release notes**, and **build numbers**. 
@@ -132,6 +115,23 @@ The Testing Portal will provide a dropdown menu containing the source branches o
 :::tip
 If the branch filter is not visible, it may be because the binary was uploaded manually to the Testing Distribution module instead of being sent via the Build module.
 :::
+
+### Filter by OS
+
+The Testing Portal includes an OS Filter that enables users to switch between different OS-specific binaries easily. This feature helps users manage and navigate their iOS and Android releases efficiently. These tabs will be available when the Testing Portal is accessed through a desktop or a laptop device.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter.png" />
+
+#### Filter Options
+
+The filter consists of three tabs:
+- **All**: Displays both iOS and Android binaries together.
+- **iOS**: Shows only iOS binaries.
+- **Android**: Displays only Android binaries.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter4.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter3.png" />
 
 ### Sort Binaries by Version & Date
 
