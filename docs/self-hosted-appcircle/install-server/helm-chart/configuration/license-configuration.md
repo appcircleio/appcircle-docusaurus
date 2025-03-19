@@ -42,12 +42,28 @@ Create a secret that contains the `cred.json` file you received from Appcircle t
 
 2. Create/update the secret named **`${releaseName}-auth-license`** with the **`credentialJson`** key:
 
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
+
 ```bash
 kubectl create secret generic appcircle-server-auth-license \
   -n appcircle \
-  --from-literal=credentialJson=$(cat cred.json | base64) \
+  --from-literal=credentialJson="$(cat cred.json | base64)" \
   --save-config --dry-run=client -o yaml | kubectl apply -f -
 ```
+
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc create secret generic appcircle-server-auth-license \
+  -n appcircle \
+  --from-literal=credentialJson="$(cat cred.json | base64)" \
+  --save-config --dry-run=client -o yaml | oc apply -f -
+```
+
+  </TabItem>
+</Tabs>
 
 :::info
 Creating a Secret for license should be done once. Other license updates do not require repeating this step.
