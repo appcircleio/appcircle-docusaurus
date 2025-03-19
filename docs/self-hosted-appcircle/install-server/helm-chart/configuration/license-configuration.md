@@ -23,14 +23,18 @@ The initial organization ID is printed alongside the Helm output during installa
   <TabItem value="kubernetes" label="Kubernetes" default>
 
 ```bash
-kubectl get secret appcircle-server-auth-keycloak -n appcircle -o jsonpath="{.data.initialOrganizationId}" | base64 --decode
+kubectl get secret appcircle-server-auth-keycloak \
+  -n appcircle \
+  -o jsonpath="{.data.initialOrganizationId}" | base64 --decode
 ```
 
   </TabItem>
   <TabItem value="openshift" label="Openshift">
 
 ```bash
-oc get secret appcircle-server-auth-keycloak -n appcircle -o jsonpath="{.data.initialOrganizationId}" | base64 --decode
+oc get secret appcircle-server-auth-keycloak \
+  -n appcircle \
+  -o jsonpath="{.data.initialOrganizationId}" | base64 --decode
 ```
 
   </TabItem>
