@@ -13,6 +13,27 @@ Appcircle server comes with a default license to let you explore the Appcircle i
 
 If you have purchased a license from the Appcircle, you can follow this documentation to apply your license.
 
+### Retrieving the Initial Organization ID
+
+The initial organization ID is printed alongside the Helm output during installation. If you miss the initial output or need to retrieve the organization ID later, use the following the command:
+
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
+
+```bash
+kubectl get secret appcircle-server-auth-keycloak -n appcircle -o jsonpath="{.data.initialOrganizationId}" | base64 --decode
+```
+
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc get secret appcircle-server-auth-keycloak -n appcircle -o jsonpath="{.data.initialOrganizationId}" | base64 --decode
+```
+
+  </TabItem>
+</Tabs>
+
 ### Creating a Secret for License Authentication
 
 Create a secret that contains the `cred.json` file you received from Appcircle to authenticate the Appcircle license.
