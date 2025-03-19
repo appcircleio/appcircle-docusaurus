@@ -48,11 +48,11 @@ The following table details the OAuth permissions required for Appcircle to conn
 
 | Scope                | Permission   | Description                                                                                                                                                                                   |
 |----------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Checks               | Read & Write | Grants the ability to manage check suites and check runs. This includes creating, updating, and retrieving check statuses.                                                                    |
+| Checks               | Read         | Allows the application to retrieve details about check suites and check runs.                                                                                                                 |
 | Commit statuses      | Read & Write | Allows read and write access to commit statuses. This enables an application to create, update, and retrieve statuses for specific commits.                                                   |
 | Contents             | Read         | Read-only access to a repository's contents, including files, commits, branches, and directories. This scope allows an application to fetch and display repository data without modifications.|
 | Metadata (Mandatory) | Read         | Grants read access to repository metadata, such as repository names, descriptions, and other settings. This scope is essential for accessing basic repository information.                    |
-| Pull requests        | Read & Write | Allows read and write access to pull requests and related comments.                                                                                                                           |
+| Pull requests        | Read         | Allows read access to pull requests and related comments.                                                                                                                                     |
 | Webhooks             | Read & Write | Provides the ability to manage repository webhooks. This includes creating, updating, listing, and deleting webhooks                                                                          |
 
 ## FAQ
