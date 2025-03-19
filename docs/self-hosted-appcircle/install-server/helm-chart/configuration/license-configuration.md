@@ -54,7 +54,7 @@ Create a secret that contains the `cred.json` file you received from Appcircle t
 ```bash
 kubectl create secret generic appcircle-server-auth-license \
   -n appcircle \
-  --from-literal=credentialJson="$(cat cred.json | base64)" \
+  --from-literal=credentialJson="$(cat cred.json | base64 -w0)" \
   --save-config --dry-run=client -o yaml | kubectl apply -f -
 ```
 
@@ -64,7 +64,7 @@ kubectl create secret generic appcircle-server-auth-license \
 ```bash
 oc create secret generic appcircle-server-auth-license \
   -n appcircle \
-  --from-literal=credentialJson="$(cat cred.json | base64)" \
+  --from-literal=credentialJson="$(cat cred.json | base64 -w0)" \
   --save-config --dry-run=client -o yaml | oc apply -f -
 ```
 
