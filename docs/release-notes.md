@@ -31,7 +31,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Starter organizations can be deleted by users with an enterprise organization, except when SSO is enabled. In such cases, the starter organization cannot be deleted. After confirmation, the organization is deleted, the session is terminated, and the user is redirected to sign in via SSO. <AccountBadge/> <CloudBadge/>
 - Notifications are now sent when license limits are reached, with state management preventing duplicate alerts. <AccountBadge/> <CloudBadge/>
 - Android submission logs are now added to the [Publish Activity Log](publish-module/publish-activity-log), including release submissions, status updates, and successfully completed transactions. <PublishBadge/> <CloudBadge/>
+- Permission requests have been updated for [GitHub OAuth](/build/manage-the-connections/adding-a-build-profile/connecting-to-github#oauth-permissions-for-github-integration) repository connections in Build Profiles within Appcircle. <BuildBadge/> <CloudBadge/>
 - A new option has been added to [Apple Devices](signing-identities/apple-devices) for users to view both active and inactive devices together. <SigningIdentitiesBadge/> <CloudBadge/>
+- An improved preview screen has been added to the Apple Provision Profile Addition screen, allowing users to view Apple devices and certificates before proceeding. <SigningIdentitiesBadge/> <CloudBadge/>
+- Users will now have the option to be redirected to the CSR creation screen during Apple certificate creation if no existing CSR is available. <SigningIdentitiesBadge/> <CloudBadge/>
 - Performance improvements have been made to the commands used for uploading iOS and Android application binaries in Publish, Enterprise App Store, and Testing Distribution. <APICLIBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
@@ -92,6 +95,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - An issue was fixed where some users experienced an error when uploading the Apple Enterprise API Key in the security section. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where some users were unable to disable the two-factor authentication option in the Testing Portal LDAP settings. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where users could not generate a Personal Access Token without having the Manager role for the Organization module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the system displayed duplicate error messages when registering an invalid API key. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where changes to the App Store version release date could not be saved within metadata details. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where ‘Package ID’ was displayed as ‘Bundle ID’ for Android binaries in the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the calendar option for the Apple Version Release Date was unreadable in the White Appcircle Theme. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
