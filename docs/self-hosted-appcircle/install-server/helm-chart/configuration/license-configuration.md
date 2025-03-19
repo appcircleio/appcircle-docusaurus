@@ -6,6 +6,8 @@ sidebar_position: 50
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Overview
 
