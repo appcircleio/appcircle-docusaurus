@@ -365,9 +365,6 @@ auth:
     # Initial admin password - Should contain: min 6 chars, 1 lowercase, 1 uppercase, 1 number
     # You can create a secret with the password or directly enter the password here
     initialPassword: "superSecretAppcirclePassword1234"
-    image:
-      # Appcircle keycloak image repository path
-      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-keycloak
 
 # Internal Ingress controller configuration
 ingress-nginx:
@@ -379,6 +376,15 @@ vault:
     image:
       # Appcircle vault image repository path
       repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault
+
+cert-utils-operator:
+  image:
+    # Container image repository for the cert-utils-operator
+    repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/cert-utils-operator
+  kube_rbac_proxy:
+    image:
+      # Container image repository for the kube-rbac-proxy
+      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/kube-rbac-proxy
 
 # Web event Redis configuration
 webeventredis:

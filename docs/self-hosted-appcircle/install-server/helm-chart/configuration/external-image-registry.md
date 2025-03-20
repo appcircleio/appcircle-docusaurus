@@ -62,7 +62,11 @@ If your registry uses a non-standard port (anything other than 443 for HTTPS or 
 :::
 
 
-- Add or find the `imageRegistry` and `imageRepositoryPath` keys under `global` mapping in your `values.yaml` file. They should be set as follows:
+- Add or find the `imageRegistry` and `imageRepositoryPath` keys under `global` mapping in your `values.yaml` file.
+
+- Additionally, you need to configure `cert-utils-operator` and `kube_rbac_proxy` images separately due to Helm restrictions that prevent automatic inheritance from the global registry settings.
+
+Your configuration should be set as follows:
 
 ```yaml
 global:
@@ -71,8 +75,22 @@ global:
   imageRegistry: registry.spacetech.com:8083
   # Container Image Repository path between registry host and image name (for Quay it is the organization name)
   imageRepositoryPath: appcircle
+
+...
+
+cert-utils-operator:
+  image:
+    # Container image repository for the cert-utils-operator
+    repository: registry.spacetech.com:8083/appcircle/cert-utils-operator
+  kube_rbac_proxy:
+    image:
+      # Container image repository for the kube-rbac-proxy
+      repository: registry.spacetech.com:8083/appcircle/kube-rbac-proxy
+
 ...
 ```
+
+Be careful with the indentation and the structure of the `values.yaml` file.
 
 - Create a secret with credentials for the external registry.
 
