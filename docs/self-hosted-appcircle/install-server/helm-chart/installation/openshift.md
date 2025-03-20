@@ -452,7 +452,7 @@ router-default   LoadBalancer  10.217.4.108   10.45.140.78  80/TCP,443/TCP,1936/
 
 ### 2. Login to the Appcircle Dashboard
 
-Check the output of the `Helm install` command to see login URL, initial username and command to get initial user password.
+Check the output of the `helm install` command to see login URL, initial username and command to get initial user password.
 
 ```bash
 Self-Hosted Configuration:

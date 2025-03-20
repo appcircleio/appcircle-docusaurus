@@ -481,7 +481,7 @@ appcircle-webeventredis            nginx   kvs.appcircle.spacetech.com          
 
 ### 2. Login to the Appcircle Dashboard
 
-Check the output of the `Helm install` command to see login URL, initial username and command to get initial user password.
+Check the output of the `helm install` command to see login URL, initial username and command to get initial user password.
 
 ```bash
 Self-Hosted Configuration:
