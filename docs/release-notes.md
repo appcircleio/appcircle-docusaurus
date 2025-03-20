@@ -20,18 +20,18 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- In the Publish module, when a binary is rejected with a message, users will now receive a notification containing the reject message. Additionally, a new notification type has been added to the [Notification section](account/my-organization/notifications) specifically for these reject notifications. <PublishBadge/> <CloudBadge/>
-- A separate tab system has been added for Android and iOS apps in the [Testing Portal](testing-distribution/testing-portal) for devices with unknown OS, such as desktops. If the detected OS is Linux, the default tab will be set to Android.  <DistributionBadge/> <CloudBadge/>
 - App Store certificates can now be [generated](/signing-identities/apple-certificates#creating-an-apple-certificate) with password encryption and downloaded within the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/>
 - Users can now verify their domains for Appcircle organizations within the Security section of the Organization module by using [Domain Verification](/account/my-organization/security/domain-verification). This allows inviting members who do not have inboxes for verifying email addresses as part of the organization joining process. <AccountBadge/> <CloudBadge/>
+- In the Publish module, when a binary is rejected with a message, users will now receive a notification containing the reject message. Additionally, a new notification type has been added to the [Notification section](account/my-organization/notifications) specifically for these reject notifications. <PublishBadge/> <CloudBadge/>
+- A separate tab system has been added for Android and iOS apps in the [Testing Portal](testing-distribution/testing-portal) for devices with unknown OS, such as desktops. If the detected OS is Linux, the default tab will be set to Android.  <DistributionBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 <!-- - An additional column for Profile Name has been added to the Admin Panel. <SelfHostedBadge/> -->
-- Starter organizations can be deleted by users with an enterprise organization, except when SSO is enabled. In such cases, the starter organization cannot be deleted. After confirmation, the organization is deleted, the session is terminated, and the user is redirected to sign in via SSO. <AccountBadge/> <CloudBadge/>
 - Notifications are now sent when license limits are reached, with state management preventing duplicate alerts. <AccountBadge/> <CloudBadge/>
-- Android submission logs are now added to the [Publish Activity Log](publish-module/publish-activity-log), including release submissions, status updates, and successfully completed transactions. <PublishBadge/> <CloudBadge/>
+- Starter organizations can be deleted by users with an enterprise organization, except when SSO is enabled. In such cases, the starter organization cannot be deleted. After confirmation, the organization is deleted, the session is terminated, and the user is redirected to sign in via SSO. <AccountBadge/> <CloudBadge/>
 - Permission requests have been updated for [GitHub OAuth](/build/manage-the-connections/adding-a-build-profile/connecting-to-github#oauth-permissions-for-github-integration) repository connections in Build Profiles within Appcircle. <BuildBadge/> <CloudBadge/>
+- Android submission logs are now added to the [Publish Activity Log](publish-module/publish-activity-log), including release submissions, status updates, and successfully completed transactions. <PublishBadge/> <CloudBadge/>
 - A new option has been added to [Apple Devices](signing-identities/apple-devices) for users to view both active and inactive devices together. <SigningIdentitiesBadge/> <CloudBadge/>
 - An improved preview screen has been added to the Apple Provision Profile Addition screen, allowing users to view Apple devices and certificates before proceeding. <SigningIdentitiesBadge/> <CloudBadge/>
 - Users will now have the option to be redirected to the CSR creation screen during Apple certificate creation if no existing CSR is available. <SigningIdentitiesBadge/> <CloudBadge/>
