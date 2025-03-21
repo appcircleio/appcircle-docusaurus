@@ -16,7 +16,7 @@ This process involves adding a DNS record to the domain's configuration and veri
 
 **1.** Navigate to the Domain Verification section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify8.png' />
 
 **2.** Enter the domain name to be verified. The domain name must be in a valid format (e.g., example.com).
 
