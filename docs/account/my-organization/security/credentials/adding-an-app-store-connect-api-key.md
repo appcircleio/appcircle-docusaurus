@@ -77,13 +77,13 @@ Adding a key to Appcircle is pretty easy. **Go to your organization** by either 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-admin-low.jpg' />
 
-On the Organization screen, select **Add New **on **App Store Connect API Keys **list item**:**
+On the Organization screen, select **Add New** on **App Store Connect API Keys **list item**:**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-organization-low.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api1.png' />
 
 On the form, upload the **.p8** key file downloaded from App Store Connect:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (93).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api2.png' />
 
 Fill in the rest of the form. You can find the **Key ID** and **Issuer ID** from App Store Connect Panel here:
 
@@ -95,4 +95,32 @@ Copy and paste them to the form in Appcircle, give it a name, and save.
 
 You can add multiple keys. We'll ask you which key to use while downloading a certificate.
 
+:::
+
+### Enterprise API Key Option for App Store Connect
+
+The App Store Connect Enterprise API Key is a crucial component for managing Apple Enterprise accounts within Appcircle. This API key allows seamless integration with App Store Connect, enabling automated provisioning, certificate management, and distribution processes for enterprise applications.
+
+#### Prerequisites
+
+Before using the App Store Connect Enterprise API Key, ensure that:
+- You have an Apple Developer Enterprise Program account.
+- You have Admin or Account Holder privileges in App Store Connect.
+- Your App Store Connect account supports API access.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api3.png' />
+
+### Adding the API Key to Appcircle
+
+Once the API key is generated, it must be added to Appcircle:
+
+1.	Navigate to the Organization module in Appcircle.
+2.	Click **Add New** next to the App Store Connect API Keys section under Credentials area.
+3.	Upload the downloaded .p8 file.
+4.	Enter the Key ID and Issuer ID obtained from App Store Connect.
+5.	Select the Enterprise API Key option for enterprise account integration.
+6.	Click Save to complete the setup.
+
+:::info
+Please note that the registered Enterprise API Key cannot be used within the Publish module because the Apple Enterprise Program does not provide TestFlight or App Store Connect services.
 :::
