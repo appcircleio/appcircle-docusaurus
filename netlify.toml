@@ -1248,3 +1248,8 @@ status = 301
 from = "/self-hosted-appcircle/update"
 to = "/self-hosted-appcircle/install-server/linux-package/update"
 status = 301
+
+[[redirects]]
+from = "docs/workflows/common-workflow-steps/testinium"
+to = "docs/workflows/common-workflow-steps/testinium-steps/testinium"
+status = 301
