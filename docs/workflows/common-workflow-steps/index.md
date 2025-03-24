@@ -122,7 +122,7 @@ By utilizing this step, you will be able to test your project dependencies for v
 
 You can use **SonarQube** component to check your code quality.
 
-## [Testinium](/workflows/common-workflow-steps/testinium)
+## [Testinium](/workflows/common-workflow-steps/testinium-steps/testinium)
 
 This component runs your test plans with **Testinium**.
 

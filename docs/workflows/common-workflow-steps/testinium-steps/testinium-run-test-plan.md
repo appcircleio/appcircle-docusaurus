@@ -20,11 +20,11 @@ Before running the **Testinium Run Test Plan** step, you must complete certain p
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-upload-app) | Required to upload your application to Testinium before executing test plans with the **Testinium Run Test Plan** step. |
+| [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app) | Required to upload your application to Testinium before executing test plans with the **Testinium Run Test Plan** step. |
 
 :::tip
 
-After using the [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-upload-app) step once, you can add multiple **Testinium Run Test Plan** steps to the workflow for each test plan.
+After using the [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app) step once, you can add multiple **Testinium Run Test Plan** steps to the workflow for each test plan.
 
 :::
 

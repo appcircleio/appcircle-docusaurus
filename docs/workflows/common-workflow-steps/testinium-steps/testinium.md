@@ -13,7 +13,7 @@ The **Testinium** step integrates the [Testinium](https://testinium.com/) testin
 
 :::tip
 
-If you're using Testinium as enterprise or need to run multiple test plans for the same app, use the [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-upload-app) step followed by multiple [**Testinium Run Test Plan**](/workflows/common-workflow-steps/testinium-run-test-plan) steps instead of the **Testinium** step. This allows you to execute multiple test plans separately within the workflow.
+If you're using Testinium as enterprise or need to run multiple test plans for the same app, use the [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app) step followed by multiple [**Testinium Run Test Plan**](/workflows/common-workflow-steps/testinium-steps/testinium-run-test-plan) steps instead of the **Testinium** step. This allows you to execute multiple test plans separately within the workflow.
 
 :::
 
