@@ -64,7 +64,7 @@ If your registry uses a non-standard port (anything other than 443 for HTTPS or 
 
 - Add or find the `imageRegistry` and `imageRepositoryPath` keys under `global` mapping in your `values.yaml` file.
 
-- Additionally, you need to configure `cert-utils-operator` and `kube_rbac_proxy` images separately due to Helm restrictions that prevent automatic inheritance from the global registry settings.
+- Additionally, you need to configure `appcircle-vault`, `cert-utils-operator` and `kube_rbac_proxy` images separately due to Helm restrictions that prevent automatic inheritance from the global registry settings.
 
 Your configuration should be set as follows:
 
@@ -77,6 +77,13 @@ global:
   imageRepositoryPath: appcircle
 
 ...
+
+# Appcircle vault configuration
+vault:
+  server:
+    image:
+      # Appcircle vault image repository path
+      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault
 
 cert-utils-operator:
   image:
