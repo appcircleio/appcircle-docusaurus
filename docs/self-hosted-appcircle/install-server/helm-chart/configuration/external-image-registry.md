@@ -228,24 +228,32 @@ spec:
     - registry.spacetech.com:8083
 ```
 
-Save the file and exit. The Machine Config Operator will apply the changes and reboot the nodes. Wait until the nodes are up and running. You can check the status of the nodes with the following command:
+Save the file and exit. The Machine Config Operator will apply the changes and reboot the nodes. Wait until the nodes are up and running.
+
+:::info
+
+- You can check the status of the nodes with the following command:
 
 ```bash
 oc get nodes
 ```
 
-You can check the status of configuration update with the following command:
+Nodes should be in the `Ready` state.
+
+- And you can check the status of configuration update with the command below:
 
 ```bash
 oc get mcp
 ```
 
-Update is done when the state fields look like this:
+Update is done successfully when the state fields look like this:
 
 ```bash
 ... UPDATED   UPDATING   DEGRADED ...
 ... True      False      False    ...
 ```
+
+:::
 
 :::caution
 If your registry uses a non-standard port (anything other than 80 for HTTP), you must specify it in the configuration as shown in the example above with port `8083`.
