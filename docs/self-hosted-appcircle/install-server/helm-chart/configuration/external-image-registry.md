@@ -83,7 +83,7 @@ vault:
   server:
     image:
       # Appcircle vault image repository path
-      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault
+      repository: registry.spacetech.com:8083/appcircle/appcircle-vault
 
 cert-utils-operator:
   image:
