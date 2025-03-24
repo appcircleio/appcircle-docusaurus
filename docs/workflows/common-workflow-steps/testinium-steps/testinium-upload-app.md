@@ -20,7 +20,7 @@ Before running the **Testinium Upload App** step, you must complete certain prer
 
 :::info
 
-After uploading the application, you should use the [**Testinium Run Test Plan**](/workflows/common-workflow-steps/testinium-steps/testinium-run-test-plan) step to run the test plan and view the test report. If you prefer to perform both operations within the same step, use the [**Testinium**](/workflows/common-workflow-steps/testinium-steps/testinium-steps/testinium) step instead.
+After uploading the application, you should use the [**Testinium Run Test Plan**](/workflows/common-workflow-steps/testinium-steps/testinium-run-test-plan) step to run the test plan and view the test report. If you prefer to perform both operations within the same step, use the [**Testinium**](/workflows/common-workflow-steps/testinium-steps/testinium) step instead.
 
 :::
 
