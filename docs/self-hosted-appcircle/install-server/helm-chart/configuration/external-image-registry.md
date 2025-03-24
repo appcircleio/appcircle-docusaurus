@@ -200,27 +200,15 @@ helm template appcircle appcircle/appcircle -f values.yaml | grep image: | sed '
 
 By default, Kubernetes and OpenShift require HTTPS connections to image registries. To use a registry over HTTP, you must configure it as an insecure registry.
 
+### Kubernetes
+
+### OpenShift
+
 Edit the cluster's image configuration:
-
-<Tabs>
-
-  <TabItem value="kubernetes" label="Kubernetes" default>
-
-```bash
-kubectl edit image.config cluster
-```
-
-  </TabItem>
-
-  <TabItem value="openshift" label="Openshift">
 
 ```bash
 oc edit image.config cluster
 ```
-
-  </TabItem>
-
-</Tabs>
 
 Add your registry address to the `insecureRegistries` section:
 
@@ -233,7 +221,24 @@ spec:
     - registry.spacetech.com:8083
 ```
 
-Save the file and exit. The configuration will be applied automatically without requiring a restart.
+Save the file and exit. The Machine Config Operator will apply the changes and reboot the nodes. Wait until the nodes are up and running. You can check the status of the nodes with the following command:
+
+```bash
+oc get nodes
+```
+
+You can check the status of configuration update with the following command:
+
+```bash
+oc get mcp
+```
+
+Update is done when the state fields look like this:
+
+```bash
+... UPDATED   UPDATING   DEGRADED ...
+... True      False      False    ...
+```
 
 :::caution
 If your registry uses a non-standard port (anything other than 80 for HTTP), you must specify it in the configuration as shown in the example above with port `8083`.
