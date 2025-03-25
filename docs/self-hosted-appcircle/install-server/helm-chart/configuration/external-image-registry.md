@@ -110,7 +110,8 @@ kubectl create secret docker-registry containerregistry \
   -n appcircle \
   --docker-server='registry.spacetech.com:8083' \
   --docker-username='yourRegistryUsername' \
-  --docker-password='superSecretRegistryPassword'
+  --docker-password='superSecretRegistryPassword'\
+  --dry-run=client -o yaml | kubectl apply -f -
 ```
 
   </TabItem>
@@ -122,7 +123,8 @@ oc create secret docker-registry containerregistry \
   -n appcircle \
   --docker-server='registry.spacetech.com:8083' \
   --docker-username='yourRegistryUsername' \
-  --docker-password='superSecretRegistryPassword'
+  --docker-password='superSecretRegistryPassword' \
+  --dry-run=client -o yaml | oc apply -f -
 ```
 
   </TabItem>
