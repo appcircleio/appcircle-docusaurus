@@ -314,8 +314,6 @@ By default, the Appcircle chart includes an in-cluster HashiCorp Vault deploymen
 
 For testing purposes, the built-in Vault deployment can be used. In this setup, the storage is kept in Kubernetes. If the Kubernetes cluster has multiple nodes, it should be configured to guarantee that all Vault replicas reach the same storage for consistency.
 
-Appcircle K8s and OKD test environments are currently using this setup.
-
 #### Production Environments
 
 For production environments, it is recommended to configure an external HashiCorp Vault instance instead of using the built-in deployment. There are two approaches for this:
