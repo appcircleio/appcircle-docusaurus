@@ -211,6 +211,58 @@ By default, Kubernetes and OpenShift require HTTPS connections to image registri
 
 ### Kubernetes
 
+Setting up a private container registry for Kubernetes clusters requires different approaches depending on the container runtime and Kubernetes distribution. While Docker was previously the default runtime, Kubernetes has transitioned to `containerd` and other CRI-compliant runtimes, which require different configurations.
+
+#### Challenges with Kubernetes Distributions
+
+Different Kubernetes distributions use various container runtimes, each requiring unique configurations:
+
+- **General Kubernetes with Docker runtimes**: Might require configuring Docker daemon, but some managed distributions restrict access to this file..
+- **General Kubernetes nodes with `containerd` runtimes**: Might require modifying `/etc/containerd/config.toml`, but some managed distributions restrict access to this file.
+- **Managed Kubernetes (GKE, EKS, AKS, Rancher, K3s, etc.)**: Configuration methods depend on the specific provider or service. For instance, managed Kubernetes services may restrict node-level configurations and instead use IAM-based authentication with cloud artifact registries. For self-managed services like Rancher or K3s, the configuration will vary, so it's important to consult the official documentation for each.
+
+Because of these variations, it's important to consult the specific Kubernetes distribution’s documentation when configuring private registries.
+
+:::warning Recommendation: Use a HTTPS-based Registries
+Instead of configuring insecure HTTP registries, we strongly recommend using **HTTPS-based** artifact registries.
+
+Using an HTTPS registry eliminates the need for complex `containerd`, `docker` or K8s related configurations and improves security.
+:::
+
+#### Sample K3s Configuration
+
+For K3s clusters, the registry must be configured on each node using the `registries.yaml` file. The more detailed steps are located on [the official documentation](https://docs.k3s.io/installation/private-registry#without-tls).
+
+1. Create the `registries.yaml` file on all nodes:
+
+```sh
+sudo vi /etc/rancher/k3s/registries.yaml
+```
+
+2. Add the private registry configuration:
+
+```yaml
+mirrors:
+  quay.appcircle.io:8083:
+    endpoint:
+      - "http://quay.appcircle.io:8083"
+configs:
+  "quay.appcircle.io:8083":
+    auth:
+      username: "appcircle"
+      password: "password"
+```
+
+3. Restart K3s to apply changes:
+```sh
+sudo systemctl restart k3s  # For control-plane nodes
+sudo systemctl restart k3s-agent  # For worker nodes
+```
+
+After configuring the registry on all nodes, Kubernetes will be able to pull images without requiring a separate Kubernetes secret. 
+
+For instructions on changing the image repository in your Helm `values.yaml`, refer to the [Appcircle registry configuration](#appcircle-registry-configuration).
+
 ### OpenShift
 
 Edit the cluster's image configuration:
