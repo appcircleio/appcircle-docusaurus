@@ -7,15 +7,61 @@ sidebar_position: 2
 
 ## 1. Introduction
 
-In Appcircle, authorization for SSO users is managed by mapping user roles and groups from your identity provider (IdP) to specific module permissions within Appcircle. This ensures seamless Role-Based Access Control (RBAC) across the platform.  
-Before configuring SSO-based authorization, you must first complete the SSO integration setup. You can refer to the [SSO Integration Documentation](/account/my-organization/security/authentications/sso-authentication) for detailed instructions on how to configure SSO with your chosen provider, such as Keycloak, Azure AD, Okta, or Auth0.  
-Once SSO integration is complete, you can configure authorization by mapping IdP roles and groups to Appcircle module permissions.
+In Appcircle, authorization for SSO users can be managed by mapping user groups and roles from your identity provider (IdP) to specific module permissions and organizations within Appcircle. This ensures seamless Role-Based Access Control (RBAC) across the platform.
+
+Before configuring SSO-based authorization, you must first complete the SSO integration setup. You can refer to the [SSO Integration Documentation](/account/my-organization/security/authentications/sso-authentication) for detailed instructions on how to configure SSO with your chosen provider, such as Azure AD, Okta, or Auth0.
+Once SSO integration is complete, you can configure authorization by mapping IdP groups and roles to Appcircle organizations and module permissions.  
 
 ### Prerequisites
 
--   SSO integration with your chosen identity provider (Auth0, Azure AD, Okta, OneLogin, Keycloak).
--   Knowledge of groups and roles in your IdP that you want to map to Appcircle permissions.
+-   SSO integration with your chosen identity provider (Auth0, Azure AD, Okta, OneLogin).
+-   Knowledge of groups and roles in your IdP that you want to map to Appcircle organizations and permissions.
 -   Administrative access to Appcircle and your IdP.
+
+### Overview of Configuring SSO Authorization
+
+In Appcircle, user access is managed through organizations and organization-specific roles. You can add users to any organization and assign them roles in that organization.
+
+With SSO Authorization, you map your IdP (Identity Provider) groups to the corresponding Appcircle organizations, so any user in a particular IdP group automatically becomes a member of the matching organization in Appcircle. This means you no longer need to manually manage user organization membership and role assignments, as the process is handled through your IdP’s group memberships. Then, you must also map your IdP groups or roles (depending on your IdP configuration) to Appcircle roles to manage each user’s permissions.
+
+#### Example Setup
+
+Suppose you have the following structure in Appcircle:
+
+- **Root Organization**
+  - **Sub Organization1**
+  - **Sub Organization2**
+#### 1. Create Corresponding IdP Groups
+
+Create matching groups in your IdP for each of your Appcircle organizations:
+
+- **IdP group for Root Organization** → _Root Organization_
+- **IdP group for Sub Organization1** → _Sub Organization1_
+- **IdP group for Sub Organization2** → _Sub Organization2_
+
+Any user who is a member of the IdP group mapped to _Root Organization_ will automatically be added to _Root Organization_ in Appcircle, and likewise for your sub-organizations.
+#### 2. Define Role Mappings
+
+For each group-organization pairing, you must configure role mapping to manage user permissions in that organization. For example, you might set up role mappings like this:
+
+- **IdP group “Owners”** → _Owner_ role in Appcircle
+- **IdP group “Managers”** → _Build Profile Manager, Testing Distribution Manager etc._ role in Appcircle
+- **IdP group “Viewers”** → _Build Profile Viewer_ role in Appcircle
+
+You would create separate spesific IdP groups for each organization. For example:
+
+- **IdP group "AC-SubOrg1-Owners"** → _Owner_ role in _Sub Organization1_
+- **IdP group "AC-SubOrg1-Managers"** → _Testing Distribution Manager_ role in _Sub Organization1_
+
+By assigning a role mapping for every group-organization mapping, you ensure that users automatically receive the appropriate permissions as soon as they are placed in the relevant IdP group.
+
+#### Additional Notes
+
+- You must configure a group-to-organization mapping for each organization (root and sub organizations).
+- You must define role mappings for each group-organization pairing. If no role mapping exists, users will not have any permissions in organization.
+- User organization memberships and permissions are synchronized on every SSO login.
+- If your mapping configuration is incorrect, Appcircle ensures at least one Owner remains in the organization by ignoring the faulty mapping.
+- You do not need to invite users manually if SSO Authorization is enabled.
 
 ## 2. General Configuration Steps
 
@@ -47,16 +93,22 @@ Follow **3. Specific Provider Configuration** section to complete this steps.
 
 ### Group and Role Mapping Configuration
 
+:::info
+
+You can refer to the [Overview of Configuring SSO Authorization](#overview-of-configuring-sso-authorization) for a better understanding of group and role mapping.
+
+:::
+
 1. Enter the name of the SSO group and select the corresponding Appcircle organization you want to map. Ensure the group name is correct.
 
 2. Click Add to map the SSO group to an Appcircle organization. This will automatically link users from the SSO group to the selected organization in Appcircle.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-group-mapping.png' /> 
 
-3. You can define role mappings for each group mapping. Click the **Configure** button to set up role mappings.
+3. You must define role mappings for each group mapping. Click the **Configure** button to set up role mappings.
 4. Enter the role name and select the corresponding Appcircle roles you want to map. Ensure the role name is correct.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-role-mapping.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-role-mapping_v2.png' /> 
 
 5. Finally, enable SSO Authorization with the **Enable SSO Authorization** toggle.
 
@@ -296,29 +348,9 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-new-group.png' />
 
-#### Step 2. Create Roles in Microsoft Entra ID
+5. Create the groups for map to Appcircle organizations and roles as needed.
 
-1. Navigate to the **Manage > App registrations** section from left menu.
-2. Select **All applications** to view a list of all your applications and locate your application.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-app-registrations.png' />
-
-3. Navigate to the **Manage > App Roles** section from left menu.
-4. Click the **Create app role**. Create a new app role as shown in the image below.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-create-app-roles.png' />
-
-5. Navigate to the **Manage > API permissions** section from left menu.
-6. Click the **Add Permissions**. 
-7. Select the **My APIs** and click on your application name.  
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-api-permissions1.png' />
-
-8. Select **permissions** and click on **Add permissions**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-api-permissions2.png' />
-
-#### Step 3. Assign user, group and roles to application in Microsoft Entra ID
+#### Step 2. Assign user and group to application in Microsoft Entra ID
 
 1. Navigate to the **Azure Services > Microsoft Entra ID**.
 2. Navigate to the **Manage > Enterprise applications** section from left menu. 
@@ -337,11 +369,11 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-assign-users-groups2.png' />
 
-6. Select users, groups and role. This process can be repeated as needed.
+6. Select users and groups. This process can be repeated as needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-assign-users-groups3.png' />
 
-#### Step 4. Define Group and Role Attributes & Claims in Microsoft Entra ID
+#### Step 3. Define Group Attribute & Claim in Microsoft Entra ID
 
 1. Navigate to the **Manage > Single sign-on** section from left menu. 
 2. Click **Edit** in **Attributes & Claims** section.
@@ -355,14 +387,7 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-attributes2.png' />
 
-7. Click **Add new claim**. 
-8. Enter name as **roles** 
-9. Select **user.assignedroles** as source attribute. 
-10. Then click on **Save**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-attributes3.png' />
-
-#### Step 5. Define Group and Role Attribute names in Appcircle
+#### Step 4. Define Group and Role Attribute names in Appcircle
 
 1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
 2. Select the **Manage** on the **Appcircle SSO Login**.
@@ -373,7 +398,9 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
 
-4. Enter **Group Attribute Name** as ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups`` and **Role Attribute Name** as ``roles``.
+4. Enter **Group Attribute Name** as ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups`` and **Role Attribute Name** as ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups``.
+
+We use EntraID groups to manage user groups and roles. Both are sent to Appcircle in one claim. If needed, you can set up a more advanced configuration with a separate claim for roles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-ac-group-role-attribute-name.png' />
 
@@ -390,7 +417,7 @@ exports.onExecutePostLogin = async (event, api) => {
 #### Step 1. Create Groups and Define Group Claim
 
 1. Navigate to the **Directory > Groups** section in the Okta Dashboard
-2. Create the groups as needed.
+2. Create the groups for map to Appcircle organizations and roles. In this guide, we’ll use Okta groups to manage user groups and roles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-groups.png' />
 
@@ -409,76 +436,8 @@ exports.onExecutePostLogin = async (event, api) => {
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-groups-claim.png' />
 
-#### Step 2. Create and Set Role Attribute to User
-
-The roles will be stored in user attributes.
-
-1. Navigate to the **Directory > Profile Editor** section from left navigation menu.
-2. Select the **User (default)** from profile list.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-profile-editor.png' />
-
-3. Click **Add Attribute**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute1.png' />
-
-4. Add a new user attribute with the following attributes.
-- Data type: Choose "String Array"
-- Display name: Enter "Roles"
-- Variable name: Enter "roles"
-- User permission: Choose "Read-Write"
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute2.png' />
-
-5. Navigate to the **Directory > Profile Editor** section from left navigation menu.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-profile-editor.png' />
-
-6. Select the application-specific user profile named **"Your Okta Application Name" User** from the profile list.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor.png' />
-
-7. Click **Add Atribute** and add new attribute with the following configuration. Then click **Save**.
-- Data type: Choose "String Array"
-- Display name: Enter "Roles"
-- Variable name: Enter "roles"
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor-add-attribute.png' />
-
-8. Click **Mappings** and switch to **Okta User to "Your Application Name"** tab. Define a mapping between the user roles attribute and the application user roles attribute as shown in the image below.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-map-roles-attribute.png' />
-
-9. Navigate to the **Directory > People** section from left navigation menu.
-10. Select a user from the list.
-11. Navigate to the **Profile** tab. 
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-edit-user-attribute1.png' />
-
-12. Click **Edit** and update the user's role attribute. For example, set it to 'Manager'.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-edit-user-attribute2.png' />
-
-#### Step 3. Define the Role Claim
-
-1. Navigate to the **Security > API > Authorization Servers** section from left navigation menu.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-security-api.png' />
-
-2. Click **default**
-3. Navigate to the **Claims** tab. 
-4. Add new claim as the following configuration.
-- Name: Enter "Roles"
-- Include in token type: Select "ID Token" and "Always"
-- Value type: Select "Expression"
-- Value: Enter "user.roles"
-- Disable claim: Select "false"
-- Include in: Select "Any scope"
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-add-roles-claim.png' />
-
-5. Navigate to the **Applications > Applications** section from left navigation menu.
-6. Click **Refresh Application Data**.
+9. Navigate to the **Applications > Applications** section from left navigation menu.
+10. Click **Refresh Application Data**.
  
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-refresh-application-data.png' />
 
@@ -493,7 +452,9 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
 
-4. Enter **Group Attribute Name** as ``groups`` and **Role Attribute Name** as ``roles``.
+4. Enter **Group Attribute Name** as ``groups`` and **Role Attribute Name** as ``groups``.
+
+We use Okta groups to manage user groups and roles. Both are sent to Appcircle in one claim. If needed, you can set up a more advanced configuration with a separate claim for roles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-group-role-claim-name.png' />
 
@@ -518,7 +479,7 @@ The roles will be stored in user attributes.
 
 #### Step 1. Create Groups and Assign to the Application
 
-1. Navigate to the **Directory > Groups** section in the Okta Dashboard. Create the groups as needed.
+1. Navigate to the **Directory > Groups** section in the Okta Dashboard. Create the groups for map to Appcircle organizations and roles. In this guide, we’ll use Okta groups to manage user groups and roles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-groups.png' />
 
@@ -533,56 +494,6 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-assign-groups-to-application.png' />
 
-#### Step 2. Create and Set Role Attribute to User
-
-The roles will be stored in user attributes.
-
-1. Navigate to the **Directory > Profile Editor** section from left navigation menu.
-2. Select the **User (default)** from profile list.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-profile-editor.png' />
-
-3. Click **Add Attribute**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute1.png' />
-
-4. Add a new user attribute with the following configuration.
-- Data type: Choose "String Array"
-- Display name: Enter "Roles"
-- Variable name: Enter "roles"
-- User permission: Choose "Read-Write"
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-create-user-attribute2.png' />
-
-5. Navigate to the **Directory > Profile Editor** section from left navigation menu.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-profile-editor.png' />
-
-6. Select the application-specific user profile named **"Your Okta Application Name" User** from the profile list.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor.png' />
-
-7. Click **Add Atribute** and add new attribute with the following configuration. Then click **Save**.
-- Data type: Choose "String Array"
-- Display name: Enter "Roles"
-- Variable name: Enter "roles"
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-app-profile-editor-add-attribute.png' />
-
-8. Click **Mappings** and switch to **Okta User to "Your Application Name"** tab. Define a mapping between the user roles attribute and the application user roles attribute as shown in the image below.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-map-roles-attribute.png' />
-
-9. Navigate to the **Directory > People** section from left navigation menu.
-10. Select a user from the list.
-11. Navigate to the **Profile** tab. 
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-edit-user-attribute1.png' />
-
-12. Click **Edit** and update the user's role attribute. For example, set it to 'Manager'.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-edit-user-attribute2.png' />
-
 #### Step 3. Define Group and Role Attributes
 
 1. Navigate to the **Applications > Applications** section.
@@ -591,35 +502,31 @@ The roles will be stored in user attributes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-application-edit-saml.png' />
 
-4. Enter the Group and Role Attribute statement as following configuration.
+4. Enter the Group Attribute statement as following configuration.
 
-Add attribute statement as below
-- Name: Enter "roles"
-- Name format: Select "Basic"
-- Value: Enter "user.roles"
-
-Add group attribute statement as below
 - Name: Enter "groups"
 - Name format: Select "Basic"
 - Filter: Select "Matches regex"
 - Filter Value: Enter ".*"
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-add-saml-statement.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-add-saml-statement-v2.png' />
 
 #### Step 4. Define Group and Role Claim in Appcircle
 
 1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
 2. Select the **Manage** on the **Appcircle SSO Login**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' />
 
 3. Select the **Manage Authorization**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' />
 
-4. Enter **Group Attribute Name** as ``groups`` and **Role Attribute Name** as ``roles``.
+4. Enter **Group Attribute Name** as ``groups`` and **Role Attribute Name** as ``groups``.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-saml-ac-group-role-attribute-name.png' />
+We use Okta groups to manage user groups and roles. Both are sent to Appcircle in one claim. If needed, you can set up a more advanced configuration with a separate claim for roles.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-saml-ac-group-role-attribute-name-v2.png' />
 
 </details> 
 
@@ -627,7 +534,7 @@ Add group attribute statement as below
 
 ## 4. Testing and Verification
 
-After configuring SSO Mapping, it is important to test the integration to ensure that users have the correct permissions based on their roles and groups. This section covers how to test the integration.
+After configuring SSO Mapping, it is important to test the integration to ensure that users have the correct permissions based on their groups and roles. This section covers how to test the integration.
 
 When a user logs into Appcircle, their organization membership and roles are updated according to the configured Group and Role Mapping.
 
