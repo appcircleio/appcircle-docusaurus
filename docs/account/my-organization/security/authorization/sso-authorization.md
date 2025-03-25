@@ -441,7 +441,7 @@ We use EntraID groups to manage user groups and roles. Both are sent to Appcircl
  
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-refresh-application-data.png' />
 
-#### Step 4. Define Group and Role Claim in Appcircle
+#### Step 2. Define Group and Role Claim in Appcircle
 
 1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
 2. Select the **Manage** on the **Appcircle SSO Login**.
@@ -458,7 +458,7 @@ We use Okta groups to manage user groups and roles. Both are sent to Appcircle i
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-oidc-group-role-claim-name.png' />
 
-#### Step 5: Update SSO Scope Configuration
+#### Step 3: Update SSO Scope Configuration
 
 1. Navigate to the **Organization > Security > Authentications** section on your dashboard.  
 2. Select the **Manage** option under the **Appcircle SSO Login**.  
@@ -494,7 +494,7 @@ We use Okta groups to manage user groups and roles. Both are sent to Appcircle i
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-assign-groups-to-application.png' />
 
-#### Step 3. Define Group and Role Attributes
+#### Step 2. Define Group and Role Attributes
 
 1. Navigate to the **Applications > Applications** section.
 2. Select your application from the list and navigate to the **General** tab.
@@ -511,7 +511,7 @@ We use Okta groups to manage user groups and roles. Both are sent to Appcircle i
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-add-saml-statement-v2.png' />
 
-#### Step 4. Define Group and Role Claim in Appcircle
+#### Step 3. Define Group and Role Claim in Appcircle
 
 1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
 2. Select the **Manage** on the **Appcircle SSO Login**
