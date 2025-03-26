@@ -1,7 +1,7 @@
 ---
 title: Skipping Domain Verification  
 description: Configure Appcircle server to bypass domain verification when adding domains to an organization.  
-tags: [security, domain, verification]  
+tags: [security, domain]  
 sidebar_position: 30  
 ---
 
@@ -47,7 +47,7 @@ To enable or disable domain verification skipping, follow these steps:
    Locate the `keycloak` entry in the configuration file. Add or update the `domainVerification` key with the following settings, depending on your preference.
 
    :::caution  
-   If the `keycloak` entry already exists in your `values.yaml` file, ensure you update the existing key instead of creating a new one.  
+   If the `keycloak` entry already exists in your `global.yaml` file, ensure you update the existing key instead of creating a new one.  
    :::
 
    ```yaml
