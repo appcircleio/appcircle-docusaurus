@@ -20,8 +20,8 @@ Domain verification is **enabled by default** and cannot be modified for **Appci
 For **self-hosted installations**, domain verification is **configurable**. By default, it is **disabled**, allowing domains to be added as trusted without requiring TXT DNS records. Organizations can modify this setting based on their security and compliance requirements.  
 
 For detailed configuration options, refer to the following pages:  
-- [Configure Domain Verification on Docker/Podman Based Appcircle Servers](/docs/self-hosted-appcircle/install-server/linux-package/configure-server/domain-verification.md)  
-- [Configure Domain Verification on Helm Based Appcircle Servers](/docs/self-hosted-appcircle/install-server/helm-chart/configuration/domain-verification.md)
+- [Configure Domain Verification on Docker/Podman Based Appcircle Servers](/self-hosted-appcircle/install-server/linux-package/configure-server/domain-verification.md)  
+- [Configure Domain Verification on Helm Based Appcircle Servers](/self-hosted-appcircle/install-server/helm-chart/configuration/domain-verification.md)
 :::
 
 ### Steps to Verify a Domain
