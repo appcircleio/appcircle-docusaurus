@@ -100,6 +100,12 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 
 - We highly recommend changing the username to `ubuntu`.
 
+:::warning  
+We strongly recommend using the default username `ubuntu` for the Appcircle server setup. The image and associated documentation are configured with the username `ubuntu`. If you choose to change the username, please be aware that additional steps are required **after the image is created**.
+
+For more details, refer to the [Configuring](#configure-server) section below.
+:::
+
 - Select an existing key pair or click on the "Generate new key pair" button if you don't have any on Azure. In the sample configuration, we will use an existing key stored in Azure by selecting from the dropdown menu.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-6-create-vm-authentication.png' />
@@ -192,6 +198,29 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 :::
 
 ### Configure Server
+
+After successfully connecting to your Appcircle server, you can begin the configuration process.
+
+:::warning
+Follow these steps to adjust the configuration:
+
+1. Create a directory for the Appcircle server:
+   ```bash
+   sudo mkdir /app
+   ```
+
+2. Move the `appcircle-server` directory to the new location:
+   ```bash
+   sudo mv /home/ubuntu/appcircle-server /app/
+   ```
+
+3. Update the ownership of the directory:
+   ```bash
+   sudo chown -R $USER:$USER /app
+   ```
+
+For all subsequent configuration steps, please note that the `appcircle-server` directory will be located at `/app/appcircle-server`.  
+:::
 
 <ConfigureServer />
 
