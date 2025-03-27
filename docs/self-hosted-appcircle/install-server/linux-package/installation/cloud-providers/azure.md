@@ -201,10 +201,10 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 
 After successfully connecting to your Appcircle server, you can begin the configuration process.
 
-:::warning
-Follow these steps to adjust the configuration:
+:::warning  
+If you have changed the username of the VM during its creation, these are the additional steps you need to follow:
 
-1. Create a directory for the Appcircle server:
+1. Create a directory at your desired location for the Appcircle server:
    ```bash
    sudo mkdir /app
    ```
@@ -219,7 +219,7 @@ Follow these steps to adjust the configuration:
    sudo chown -R $USER:$USER /app
    ```
 
-For all subsequent configuration steps, please note that the `appcircle-server` directory will be located at `/app/appcircle-server`.  
+For all subsequent configuration steps, please note that the `appcircle-server` directory will be located at your new location.  
 :::
 
 <ConfigureServer />
