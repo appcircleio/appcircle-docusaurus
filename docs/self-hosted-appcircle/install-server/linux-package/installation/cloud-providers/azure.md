@@ -76,6 +76,8 @@ You should fill out the required fields as per your needs. Please follow the ste
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-3-create-vm-1.png' />
 
+- Select the "Standard" option as the security type. Appcircle server currently only support the "Standard" option, and other security types are not planned for the short term.
+
 - In order to select the Appcircle server image, click on the "See all images" button and search for the Appcircle server image.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-4-create-vm-2-see-all-images.png' />
