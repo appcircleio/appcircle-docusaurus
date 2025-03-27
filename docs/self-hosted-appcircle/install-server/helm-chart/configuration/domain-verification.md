@@ -12,7 +12,7 @@ import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/inst
 
 ## Overview
 
-This document explains how to configure your Appcircle server to bypass domain verification when adding domains as trusted for Appcircle organizations. By skipping the domain verification process, domains will be automatically marked as verified without the need for TXT records.
+This document explains how to configure your Appcircle server's domain verification option when adding domains as trusted for Appcircle organizations. By skipping the domain verification process, domains will be automatically marked as verified without the need for TXT records.
 
 Please note, this page does not cover the domain verification feature itself. For more detailed information on domain verification, please refer to the [Domain Verification Documentation](/account/my-organization/security/domain-verification/index.md).
 
