@@ -138,7 +138,17 @@ After you have configured LDAP, you can use **Test Connection** and **Test Authe
 
 ### Two-factor Authentication
 
-To further protect your logins, you may add Two-factor Authentication(2FA) to your LDAP integration. Appcircle supports both email and SMS 2FA authentication.
+To further protect your logins, you may add Two-factor Authentication(2FA) to your LDAP integration.
+
+:::note
+**Cloud** Appcircle supports **only email** 2FA method, while the self-hosted Appcircle installation using **Docker/Podman** supports both **email** and **SMS** 2FA methods.
+
+Similar to the cloud, the self-hosted Appcircle installation using the **Helm chart** also **does not support SMS** 2FA method for now.
+:::
+
+:::info
+The SMS 2FA method on Docker/Podman-based self-hosted Appcircle requires a custom integration with your SMS service. Please [contact us](https://appcircle.io/contact) for further details.
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-8.png' />
 
