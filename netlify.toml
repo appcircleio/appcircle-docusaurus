@@ -166,7 +166,12 @@ status = 301
 
 [[redirects]]
 from = "/account/slack/appcircle-bot-for-slack"
-to = "/account/my-organization/notifications/slack/appcircle-bot-for-slack"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack-notifications"
 status = 301
 
 [[redirects]]
