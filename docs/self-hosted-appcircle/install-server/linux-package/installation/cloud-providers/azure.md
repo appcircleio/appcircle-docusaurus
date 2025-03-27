@@ -82,6 +82,12 @@ You should fill out the required fields as per your needs. Please follow the ste
 
 - Search for "Appcircle" in the "Marketplace" tab and click on the "Select" button for the server image and select "Plan BYOL - x64 Gen2".
 
+:::info  
+If you don’t require additional features such as Secure Boot or TPM, you can select either the **Gen1** or **Gen2** image for the Appcircle server. Both options are acceptable. However, please note that you cannot change the generation after the VM is created. 
+
+For a detailed comparison between Gen1 and Gen2, visit the [Microsoft documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/generation-2).  
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-5-create-vm-3-select-appcircle-image.png' />
 
 - We will use the `Standart_B4ms` size for our sample configuration since it meets the minimum requirements for the vCPU count and memory size.
