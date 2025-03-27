@@ -1265,7 +1265,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - [Data Theorem Mobile Secure](/workflows/common-workflow-steps/#data-theorem-mobile-secure) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - [App Center CodePush](/workflows/react-native-specific-workflow-steps/#app-center-codepush) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - Latest five build status added to build profile. <CloudBadge/> <SelfHostedBadge/>
-- [Slack Bot](/account/my-organization/notifications/slack/appcircle-bot-for-slack) added. <CloudBadge/>
+- Slack Bot added. <CloudBadge/>
 
 ### :muscle: Improvement
 
