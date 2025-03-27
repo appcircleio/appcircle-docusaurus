@@ -49,7 +49,7 @@ For more information about the Appcircle DMZ architecture, you can check the [En
 
 In addition to the standalone and DMZ architectures, you can deploy Appcircle using the Helm chart for Kubernetes/OpenShift environments. This method allows for greater scalability and management flexibility.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/topoloji-real-final-BE-5525.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-5525-k8s-ocp-arch-diagram.png' />
 
 For detailed instructions on installing and configuring Appcircle using the Helm chart, refer to the relevant Helm chart installation documentation for [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes) or [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift). These documentation pages include steps for setting up Helm, configuring `values.yaml`, and deploying the Appcircle server.
 
