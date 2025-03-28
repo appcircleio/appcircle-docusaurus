@@ -15,7 +15,7 @@ Current headlines are listed below:
 - [Adding CA Certificates](/self-hosted-appcircle/install-server/helm-chart/configuration/ca-certificates)
 - [License Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration)
 - [Ingress Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ingress-configuration)
-- [Enterprise App Store Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/enterprise-store-configuration)
+- [Enterprise App Store Customization](/self-hosted-appcircle/install-server/helm-chart/configuration/enterprise-store-configuration)
 - [Git Providers Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/git-providers-configuration)
 - [LDAP Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ldap-configuration)
 - [SSL Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ssl-configuration)
