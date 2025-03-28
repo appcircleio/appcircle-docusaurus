@@ -107,9 +107,9 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 - We highly recommend changing the username to `ubuntu`.
 
 :::warning  
-We strongly recommend using the default username `ubuntu` for the Appcircle server setup. The image and associated documentation are configured with the username `ubuntu`. If you choose to change the username, please be aware that additional steps are required **after the image is created**.
+We strongly recommend using the default username `ubuntu` for the Appcircle server setup since the VM image and its associated documentation are configured with the username `ubuntu`.
 
-For more details, refer to the [Configuring](#configure-server) section below.
+If you choose to change the username, please be aware that **[additional steps](#custom-username)** are required **after the image is created**.
 :::
 
 - Select an existing key pair or click on the "Generate new key pair" button if you don't have any on Azure. In the sample configuration, we will use an existing key stored in Azure by selecting from the dropdown menu.
