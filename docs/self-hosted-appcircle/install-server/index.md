@@ -1,7 +1,7 @@
 ---
 title: Server Setup
-description: Overview of the steps required to setup the self-hosted servers Appcircle on your infrastructure.
-tags: [self-hosted, helm-chart, docker, podman, server-setup]
+description: Overview of the steps required to setup the self-hosted Appcircle server on your infrastructure.
+tags: [self-hosted, helm, docker, podman, server-setup]
 sidebar_position: 1
 ---
 
@@ -9,7 +9,7 @@ Setting up the server involves deploying the application using containerized env
 
 Current headlines are listed below:
 
-- [Docker-Podman](/self-hosted-appcircle/install-server/linux-package)
+- [Docker/Podman](/self-hosted-appcircle/install-server/linux-package)
 - [Helm Chart](/self-hosted-appcircle/install-server/helm-chart)
 
 In order to see the details, check the submenu of this documentation page.

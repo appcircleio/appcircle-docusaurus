@@ -2888,11 +2888,6 @@ xml:
   description: "Helm related documentations"
   permalink: "/helm"
 
-"helm-chart":
-  label: "helm chart"
-  description: "Helm chart related documentations"
-  permalink: "/helm-chart"
-
 "server-setup":
   label: "server setup"
   description: "Server setup related documentations"

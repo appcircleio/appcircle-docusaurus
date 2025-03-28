@@ -1,7 +1,7 @@
 ---
 title: Configuration
 description: Overview of the steps required to configure the self-hosted Appcircle on your infrastructure by Kubernetes or Openshift.
-tags: [self-hosted, helm-chart, configuration]
+tags: [self-hosted, helm, configuration]
 sidebar_position: 2
 ---
 

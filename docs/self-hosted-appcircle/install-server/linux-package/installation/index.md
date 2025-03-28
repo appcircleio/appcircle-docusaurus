@@ -1,7 +1,7 @@
 ---
 title: Installation (Docker/Podman)
 description: Overview of the steps required to setup the self-hosted servers Appcircle on your infrastructure.
-tags: [self-hosted, helm-chart, docker, podman, server-setup]
+tags: [self-hosted, helm, docker, podman, server-setup]
 sidebar_position: 1
 ---
 
