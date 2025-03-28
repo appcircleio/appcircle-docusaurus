@@ -1,8 +1,18 @@
 ---
 title: Helm Chart
-description: TODO
-tags: []
-sidebar_position: 1
+description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure.
+tags: [self-hosted, helm-chart, installation, configuration]
+sidebar_position: 2
 ---
 
-TODO
+Helm is a package manager for Kubernetes that simplifies the deployment and management of applications using predefined templates called charts. A Helm Chart bundles Kubernetes resources, configurations, and dependencies into a reusable package, making it easier to deploy, upgrade, and manage applications consistently across different environments.
+
+Current headlines are listed below:
+
+- [Installation](/self-hosted-appcircle/install-server/helm-chart/installation)
+- [Upgrades](/self-hosted-appcircle/install-server/helm-chart/upgrades)
+- [Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration)
+- [Uninstallation](/self-hosted-appcircle/install-server/helm-chart/uninstallation)
+- [Troubleshooting & FAQ](/account/my-account/account-management/faq)
+
+In order to see the details, check the submenu of this documentation page.
