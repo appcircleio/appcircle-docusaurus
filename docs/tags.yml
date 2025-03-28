@@ -2568,6 +2568,21 @@ testinium:
   description: "Description for testinium"
   permalink: /testinium
 
+plan:
+  label: "plan"
+  description: "Description for plan"
+  permalink: /plan
+
+run:
+  label: "run"
+  description: "Description for run"
+  permalink: /run
+
+app upload:
+  label: "app upload"
+  description: "Description for app upload"
+  permalink: /app-upload
+
 "text-based variables":
   label: "text-based variables"
   description: "Description for text-based variables"
