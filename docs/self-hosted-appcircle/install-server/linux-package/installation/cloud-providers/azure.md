@@ -166,14 +166,14 @@ After you have successfully created a virtual machine from the Appcircle server 
 The `ssh` command below is for macOS and Linux. The other commands are the same after you connect to the instance.
 :::
 
-Using **private key** and **IP address**, you can connect to the instance with SSH as seen below.
+Using the **private key** and **IP address**, you can connect to the instance with SSH as seen below.
 
 ```bash
 ssh -i "/path/to/your/private/key" ubuntu@ip-address-of-the-instance
 ```
 
 :::info
-The default user for the Appcircle server image is `ubuntu` if you have followed the [Creating Virtual Machine](#creating-an-appcircle-server-from-the-server-image) section above.
+The **default user** for the Appcircle server image is **`ubuntu`** if you have followed the [Creating Virtual Machine](#creating-an-appcircle-server-from-the-server-image) section above. If you used a custom username while creating the VM, please use that user for the following steps.
 
 So, let's assume that your instance IP address is `34.205.139.17` and your private SSH key path is `/home/spacetech/.ssh/id_rsa`.
 
