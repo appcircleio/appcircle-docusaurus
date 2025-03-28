@@ -1,7 +1,7 @@
 ---
 title: Adding CA Certificates
 description: Learn how to configure CA license for the Appcircle Self Hosted server
-tags: [self-hosted, helm, configuration, kubernetes]
+tags: [self-hosted, helm, configuration, kubernetes, openshift]
 sidebar_position: 50
 ---
 
