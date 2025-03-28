@@ -89,9 +89,9 @@ The Appcircle server currently **only supports the "Standard" option** as a secu
 - Search for "Appcircle" in the "Marketplace" tab and click on the "Select" button for the server image and select "Plan BYOL - x64 Gen2".
 
 :::info  
-If you don’t require additional features such as Secure Boot or TPM, you can select either the **Gen1** or **Gen2** image for the Appcircle server. Both options are acceptable. However, please note that you cannot change the generation after the VM is created. 
+Although we recommend selecting the **Gen2** image for the Appcircle server by default, if you don’t need any additional features such as Secure Boot or TPM, you can also select the **Gen1** image, and it will be compatible. Both options can be used for the Appcircle server.
 
-For a detailed comparison between Gen1 and Gen2, visit the [Microsoft documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/generation-2).  
+However, please note that you cannot change the generation after the VM is created. For a detailed comparison between Gen1 and Gen2, visit the [Microsoft documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/generation-2).  
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-5-create-vm-3-select-appcircle-image.png' />
