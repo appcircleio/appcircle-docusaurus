@@ -13,6 +13,6 @@ Current headlines are listed below:
 - [Upgrades](/self-hosted-appcircle/install-server/helm-chart/upgrades)
 - [Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration)
 - [Uninstallation](/self-hosted-appcircle/install-server/helm-chart/uninstallation)
-- [Troubleshooting & FAQ](/account/my-account/account-management/faq)
+- [Troubleshooting & FAQ](/self-hosted-appcircle/install-server/helm-chart/faq)
 
 In order to see the details, check the submenu of this documentation page.
