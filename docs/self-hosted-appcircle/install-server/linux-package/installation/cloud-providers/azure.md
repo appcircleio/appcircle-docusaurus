@@ -140,6 +140,12 @@ By default, `80`, `443`, and `22` ports are allowed on the firewall.
 If you want to send `ping` requests to the instance for health check purposes, you should add an inbound port rule with the protocol "ICMPv4" from the networking tab of the virtual machine.
 :::
 
+:::info
+If you plan to use the Appcircle server over HTTP, please note that TCP port `6379` is required for proper functionality.
+
+Depending on your deployment, ensure that TCP port `6379` is open for inbound traffic.
+:::
+
 ## Configuring the Appcircle Server Instance
 
 ### Connect via SSH
