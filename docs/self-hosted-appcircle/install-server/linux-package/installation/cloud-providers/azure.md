@@ -235,7 +235,19 @@ sudo mv /home/ubuntu/appcircle-server /app/
 sudo chown -R $USER:$USER /app
 ```
 
-Keep in mind that, for all subsequent configuration steps, the `appcircle-server` directory will be located at your new location instead of the default `$HOME` directory.
+4. Add the current user to the `docker` group for the Docker runtime.
+
+```bash
+sudo usermod -a -G docker $USER
+```
+
+5. In order to activate group change, log out and re-login to the instance using an SSH connection or run the command below to go on with the current terminal session.
+
+```bash
+sudo chown $USER /var/run/docker.sock
+```
+
+Keep in mind that, **for all subsequent configuration steps**, the `appcircle-server` directory will be located at your new location, for instance `/app`, instead of the default `$HOME` directory.
 :::
 
 <ConfigureServer />
