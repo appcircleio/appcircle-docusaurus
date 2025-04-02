@@ -1,6 +1,6 @@
 ---
 title: Helm Chart
-description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure.
+description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure using Helm.
 tags: [self-hosted, helm, installation, configuration]
 sidebar_position: 2
 ---
