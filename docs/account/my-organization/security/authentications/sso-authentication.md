@@ -303,7 +303,7 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
+4. You will be redirected to the your identity provider login screen. Enter your credentials.
 5. After successful authentication, you will be redirected back to Appcircle.
 6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
 
@@ -409,7 +409,7 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
+4. You will be redirected to the your identity provider login screen. Enter your credentials.
 5. After successful authentication, you will be redirected back to Appcircle.
 6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
 
@@ -524,7 +524,7 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
+4. You will be redirected to the your identity provider login screen. Enter your credentials.
 5. After successful authentication, you will be redirected back to Appcircle.
 6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
 
@@ -617,7 +617,7 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
+4. You will be redirected to the your identity provider login screen. Enter your credentials.
 
 5. After successful authentication, you will be redirected back to Appcircle.
 
@@ -667,13 +667,22 @@ Next, configure the SAML settings in Okta to ensure proper authentication and re
 
 **Example URL:** `https://auth.appcircle.io/auth/realms/appcircle/broker/identity-mySAML/endpoint`
 
-3. For the **Audience URI (SP Entity ID)** field, copy and paste **Service Provider Entity ID** from Appcircle.
+2. For the **Audience URI (SP Entity ID)** field, copy and paste **Service Provider Entity ID** from Appcircle.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml-appcircle-metadata.png" />
 
 **Example URL:** `https://auth.appcircle.io/auth/realms/appcircle`
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/oktasamlsettings2.png" />
+
+3. (Optional) You can configure the Default Relay State for IdP-initiated SSO login.
+
+Set the value to:
+```
+rd=https://my.appcircle.io/sso/your_sso_alias
+```
+
+Make sure to replace your_sso_alias with the correct SSO alias.
 
 4. Select **EmailAddress** for the Name ID format.
 
@@ -739,7 +748,7 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
+4. You will be redirected to the your identity provider login screen. Enter your credentials.
 5. After successful authentication, you will be redirected back to Appcircle.
 6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
 
@@ -755,6 +764,12 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 <Screenshot url="https://cdn.appcircle.io/docs/assets/empty-appcircle-dashboard.png" />
 
 If the test is successful, your integration is complete, and you can start using Okta (SAML) as your identity provider for Appcircle.
+
+#### Step 5: IdP Inititated SSO login
+
+If you want to use Idp initiated SSO flow, you must configure this on Okta.
+
+Navigate to Application
 
 </details>
 
@@ -823,7 +838,7 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-alias.png" />
 
-4. You will be redirected to the Auth0 login screen. Enter your Auth0 credentials.
+4. You will be redirected to the your identity provider login screen. Enter your credentials.
 5. After successful authentication, you will be redirected back to Appcircle.
 6. If a user with your email already exists, you will be prompted to confirm account linking. Confirm account linking and verify it via the email sent to your registered email address.
 
