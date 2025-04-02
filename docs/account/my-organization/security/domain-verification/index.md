@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Domain Verification
 
-Domain verification is a security process used to confirm ownership or control over a specific domain. Domain verification can currently be used to automatically verify user email addresses and accept pending invitations when users log in via SSO with an email that belongs to a verified domain. This is especially useful in cases where users don't have access to their email inbox or are unable to complete email-based verification.
+Domain verification is a security process used to confirm ownership or control over a specific domain. It can currently be used to automatically verify user email addresses and accept pending invitations when users log in via SSO with an email that belongs to a verified domain. This is especially useful in cases where users don't have access to their email inbox or are unable to complete email-based verification.
 
 Appcircle supports domain verification through DNS records, allowing you to confirm ownership of your domain by adding a specific DNS TXT record to your DNS provider. 
 
