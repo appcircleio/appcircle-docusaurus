@@ -632,6 +632,11 @@ to = "/enterprise-app-store/portal-settings"
 status = 301
 
 [[redirects]]
+from = "/enterprise-app-store/enterprise-app-store-profile#share"
+to = "/enterprise-app-store/enterprise-app-store-profile#links"
+status = 301
+
+[[redirects]]
 from = "/enterprise-app-store/enterprise-store"
 to = "/enterprise-app-store/enterprise-portal"
 status = 301
