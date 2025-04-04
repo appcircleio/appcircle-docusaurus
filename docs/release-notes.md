@@ -16,6 +16,30 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.27.0 - 2025-04-04 Metadata Approval, Import Testing Group Members via CSV, Notification Improvements and more
+
+### 🆕 New Features
+
+- The ‘Metadata Approval’ Publish step can now be used for iOS and Android binaries, allowing email addresses of approvers to be added. Metadata updates for app versions can then be approved or rejected by the designated approvers. <PublishBadge/> <CloudBadge/>
+- A “[Publish as Unlisted](/enterprise-app-store/enterprise-app-store-profile#publish-as-unlisted)” toggle option has been added to the Enterprise App Store profile’s publish-to-store process. When enabled, the app will be published without appearing in the Enterprise Portal and will only be accessible via Live or Beta channel links. <EnterpriseStoreBadge/> <CloudBadge/>
+- A [CSV Import option](/testing-distribution/testing-groups#importing-testing-group-members-via-csv) has been added to Testing Groups, allowing users to add tester email addresses by uploading a CSV file. <DistributionBadge/> <CloudBadge/>
+- The user email list of an organization can now be exported as a CSV file. <AccountBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- A Cancel button has been added to the Active Processes section at the bottom for Resign Binary operations. <PublishBadge/> <DistributionBadge/> <CloudBadge/>
+- Notification and error messages throughout Appcircle modules can now be viewed separately under the Notifications tab. They can also be deleted using a newly added delete confirmation prompt. <AccountBadge/> <CloudBadge/>
+- Various text and UI improvements have been made to the Domain Verification feature. <AccountBadge/> <CloudBadge/>
+- A warning message will now be displayed in Build Configurations, Workflows, and Triggers if any changes are made and the user attempts to close the relevant window without saving. <BuildBadge/> <CloudBadge/>
+- The warning message for reaching the download limit has been improved in the Testing Portal’s mobile view. <DistributionBadge/> <CloudBadge/>
+- The Share button has been removed from the app action list within the Enterprise App Store. Instead, users can now obtain the Beta or Live channel links from the profile settings’ “[Links](/enterprise-app-store/enterprise-app-store-profile#links)” section. <EnterpriseStoreBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where users were able to edit user permissions even when SSO Authorization was enabled. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where certain URLs did not redirect the receiving user to the exact location if they were not already signed in, affecting pages such as profiles and specific configurations. <CloudBadge/>
+- An issue was fixed with various Help button links throughout Appcircle, and new links have been added to multiple areas, including the Enterprise App Store and Signing Identity modules. <CloudBadge/>
+
 ## 3.26.2 - 2025-03-14 Generate And Download Certificate from Appstore, Domain Verification, License Limit Notifications, Improvements and more
 
 ### 🆕 New Features
@@ -51,7 +75,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where the Display Name of the Resign property did not update after the resign process was completed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the 'Get help with build errors' link in the Build Log section was not working. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where [connections](build/manage-the-connections) (Azure, Bitbucket, GitLab, GitHub) were removed from the original organization after deleting a second root organization. The connections now remain intact in the original organization. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where [sharing an app version link](enterprise-app-store/enterprise-app-store-profile#share) for an Enterprise App Store configured with 'none' auth type would redirect users to the app version list instead of directly to the installation step. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where [sharing an app version link](enterprise-app-store/enterprise-app-store-profile#links) for an Enterprise App Store configured with 'none' auth type would redirect users to the app version list instead of directly to the installation step. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed in the Testing Distribution module where the [resign](testing-distribution/resigning-binaries) feature detected an empty target, preventing the binary from being resigned. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the IdP-initiated SSO flow would not work if the alias contained capital letters. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where retrieving an access token from Swagger would return a load fail error. <CloudBadge/>
