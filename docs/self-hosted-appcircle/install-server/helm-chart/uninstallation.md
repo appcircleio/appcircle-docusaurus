@@ -17,7 +17,7 @@ helm uninstall -n appcircle appcircle-server
 
 Helm uninstall doesn't delete the Appcircle server data stored in the persistent volumes. If you want to delete all the data of the Appcircle server, you can simply delete the Kubernetes namespace or the Openshift project.
 
-</Tabs>
+<Tabs>
   <TabItem value="kubernetes" label="Kubernetes">
 
 If you haven't changed the namespace name while following the [Deploy Using Helm](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes#4-install-the-appcircle-server) section, you can run the command below to delete all data of the Appcircle server.
