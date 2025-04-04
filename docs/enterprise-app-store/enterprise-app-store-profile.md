@@ -148,6 +148,25 @@ The logo of the Enterprise App Store profile can also be updated by clicking on 
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-logo5.png" />
 
+### Links
+
+The Enterprise App Store allows users to publish app versions to either the Beta or Live channels. 
+
+Once published, these versions can be accessed via direct links or QR codes, facilitating easy distribution and installation.
+
+To retrieve the direct links or QR codes for published app versions, follow these steps:
+
+- In the selected app profile, go to the Settings section.
+- Click on the Links tab to view the available Beta and Live channel links.
+- If the app version is published to either the Beta or Live channels, the corresponding direct link and QR code will be displayed.
+- Click the Copy button next to the link to copy it for sharing. Alternatively, you can use the QR code image to access via mobile devices.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent8.png" />
+
+:::info
+If no app versions are published to either channel, the links and QR codes will not be available.
+:::
+
 ## Binary Actions
 
 ### Publish
@@ -159,20 +178,20 @@ The Enterprise App Store module includes two channels: Beta and Live.
 
 Apps can be sent to the Beta or Live channels by hitting the `...` button and then selecting the **Publish** menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent1.png" />
 
 The channel can be selected, and a summary and release notes for the release can be written. Once the **Publish** button is clicked, the particular binary will be made available to all beta users.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-beta2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent4.png" />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-beta3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent9.png" />
 
 A version can be sent to the Live Channel in two ways:
 
 - Click the **Publish** button and select **Live** for the channel.
 - Click the ... button for any beta build and select **Go Live** from the menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent6.png" />
 
 :::info
 
@@ -198,44 +217,44 @@ If two binaries are published to the Beta and Live channels, the profile header 
 
 :::
 
+#### Publish as Unlisted
+
+The **‘Publish as Unlisted’** feature allows users to provide direct access to an app version in the Enterprise Portal without listing it with the other published app versions. This ensures that the app version is accessible only via a direct link, without appearing in the general app list.
+
+When publishing an app version to either Beta or Live channels, you can enable the ‘Publish as Unlisted’ toggle.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent5.png" />
+
+If enabled, the app version will not be displayed in the Enterprise Portal App List.
+
+You can access the app version only through a direct link, which can be obtained from the Profile Settings > [Links](/enterprise-app-store/enterprise-app-store-profile#links) section.
+
+Other applications published in the Enterprise Portal will not be visible to users accessing via this unlisted link. You can always use the main Enterprise Portal link which is located within the [Portal settings](/enterprise-app-store/portal-settings#store-domain), in order to access the rest of the app list.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent0.png" />
+
+:::info Authentication Method
+•	The authentication process for accessing an Unlisted app remains the same as the Enterprise Portal’s configured [authentication](/enterprise-app-store/portal-settings#store-authentication) settings.
+:::
+
 #### Unpublish
 
 Any binary can be removed from the Live or Beta channels by selecting the **Unpublish** action from the actions menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-3.png" />
-
-### Share
-
-If you want to share the link to a specific version without sending an email, you can select the **Share** menu from the actions.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-share1.png" />
-
-:::caution
-
-The Enterprise App Store share feature does not permit public sharing. It only facilitates access to the specific app version and adheres to all authentication rules.
-
-:::
-
-:::info
-
-The above tasks can also be initiated using the Appcircle CLI. Please refer to the Appcircle CLI documentation for the command line parameters.
-
-:::
-
-<ContentRef url="/appcircle-api-and-cli">Appcircle CLI</ContentRef>
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent7.png" />
 
 ### Download
 
 The binary artifact in the Enterprise App Store profile can be downloaded by selecting the Download button from the actions menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-4.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent2.png" />
 
 
 ### Delete
 
 Binaries in the Enterprise App Store profiles can be deleted by clicking the Delete button in the actions menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent3.png" />
 
 :::info
 
