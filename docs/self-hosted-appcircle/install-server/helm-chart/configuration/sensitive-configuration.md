@@ -7,6 +7,8 @@ sidebar_position: 40
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Secrets for Sensitive Values
 

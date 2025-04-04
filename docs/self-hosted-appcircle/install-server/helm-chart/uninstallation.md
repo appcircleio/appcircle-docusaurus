@@ -6,6 +6,8 @@ sidebar_position: 50
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 If you want to uninstall the Appcircle server, you can just remove the Helm release from the Kubernetes cluster.
 
