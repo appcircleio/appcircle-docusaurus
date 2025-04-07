@@ -12,7 +12,7 @@ Domain verification is a security process used to confirm ownership or control o
 
 Appcircle supports domain verification through DNS records, allowing you to confirm ownership of your domain by adding a specific DNS TXT record to your DNS provider. 
 
-:::info Which Domain Should be Verified?
+:::info Identifying the Domain to Verify
 
 You should verify the domain name of the SSO user’s email address.
 For example, if the user's email is `user@example.com`, then you should verify `example.com`.
