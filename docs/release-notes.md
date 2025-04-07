@@ -31,8 +31,11 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Notification and error messages throughout Appcircle modules can now be viewed separately under the Notifications tab. They can also be deleted using a newly added delete confirmation prompt. <AccountBadge/> <CloudBadge/>
 - Various text and UI improvements have been made to the Domain Verification feature. <AccountBadge/> <CloudBadge/>
 - A warning message will now be displayed in Build Configurations, Workflows, and Triggers if any changes are made and the user attempts to close the relevant window without saving. <BuildBadge/> <CloudBadge/>
+- Users can now access the Pull Request (PR) description during the build process by using the $AC_GIT_PR_DESCRIPTION environment variable. <EnvironmentVariablesBadge/> <CloudBadge/>
+- Performance optimizations have been made for the build branch search feature and the app version search in Testing Distribution. <BuildBadge/> <DistributionBadge/> <CloudBadge/>
 - The warning message for reaching the download limit has been improved in the Testing Portal’s mobile view. <DistributionBadge/> <CloudBadge/>
 - The Share button has been removed from the app action list within the Enterprise App Store. Instead, users can now obtain the Beta or Live channel links from the profile settings’ “[Links](/enterprise-app-store/enterprise-app-store-profile#links)” section. <EnterpriseStoreBadge/> <CloudBadge/>
+- Several UI and text improvements have been made to the Enterprise App Store module within Appcircle, as well as to the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
