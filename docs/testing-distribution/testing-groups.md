@@ -130,12 +130,7 @@ Also, after adding the users by CSV, you can still add or remove the tester emai
 
 **Example format:**
 
-```yaml
-Email
-tester1@example.com
-tester2@example.com
-tester3@example.com
-```
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5939-ss5.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing7.png' />
 
