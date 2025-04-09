@@ -119,6 +119,15 @@ To switch between organizations or sub organizations, follow these steps:
 
 By following these steps, you can seamlessly navigate between different organizations within your account.
 
+:::caution Avoid Using Multiple Organizations in the Same Browser
+
+  Using two different organizations in separate tabs or windows of the **same browser** is not recommended. Doing so may lead to unexpected behavior, session conflicts, or errors.
+
+  If you need to access multiple organizations simultaneously, please use **different browsers** to keep sessions isolated.
+
+:::
+
+
 ### Leaving or Deleting an Organization
 
 To leave or delete an organization, press the organization operations button on the top-right (three-dots menu) and select the related operation.

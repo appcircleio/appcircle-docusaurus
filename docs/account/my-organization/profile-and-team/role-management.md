@@ -389,8 +389,8 @@ Connect or disconnect from third-party service providers such as notification to
 
 #### Notification Tools
 
-- [**Slack**](/account/my-organization/notifications/slack/slack-notifications) 
-- [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications)
+- [**Slack Notifications**](/account/my-organization/notifications/slack-notifications) 
+- [**Microsoft Teams Notifications**](/account/my-organization/notifications/teams-notifications)
 - [**Email Notifications**](/account/my-organization/notifications/email-connection) 
  
 #### Store Connections

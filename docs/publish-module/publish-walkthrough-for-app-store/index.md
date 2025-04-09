@@ -178,7 +178,7 @@ With the Appcircle Publish module, you can manage your entire release process fr
 
 ### Setting Up Notifications
 
-- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
+- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-notificationInteg.png' />
 

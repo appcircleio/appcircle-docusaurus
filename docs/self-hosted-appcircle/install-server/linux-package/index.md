@@ -1,6 +1,6 @@
 ---
 title: Install the Self-Hosted Appcircle Server
-description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure.
+description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure using Linux.
 tags: [self-hosted, server, installation]
 sidebar_position: 1
 ---

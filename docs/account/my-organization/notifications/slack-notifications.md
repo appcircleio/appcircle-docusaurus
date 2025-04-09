@@ -3,7 +3,7 @@ title: Slack Notifications
 description: Set up Slack notifications for major events in Appcircle. Enhance your team's communication with module-based alerts.
 tags:
   [notifications, communication, slack, slack notifications, slack integration]
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
