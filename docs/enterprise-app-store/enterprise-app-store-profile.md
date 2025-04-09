@@ -182,9 +182,9 @@ Apps can be sent to the Beta or Live channels by hitting the `...` button and th
 
 The channel can be selected, and a summary and release notes for the release can be written. Once the **Publish** button is clicked, the particular binary will be made available to all beta users.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent4.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss2.png" />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent9.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss3.png" />
 
 A version can be sent to the Live Channel in two ways:
 
@@ -223,7 +223,7 @@ The **‘Publish as Unlisted’** feature allows users to provide direct access 
 
 When publishing an app version to either Beta or Live channels, you can enable the ‘Publish as Unlisted’ toggle.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss1.png" />
 
 If enabled, the app version will not be displayed in the Enterprise Portal App List.
 
@@ -235,6 +235,12 @@ Other applications published in the Enterprise Portal will not be visible to use
 
 :::info Authentication Method
 •	The authentication process for accessing an Unlisted app remains the same as the Enterprise Portal’s configured [authentication](/enterprise-app-store/portal-settings#store-authentication) settings.
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss6.png" />
+
+:::tip
+App versions that were published to the Beta or Live channels as unlisted will display an **'Unlisted'** tag in the app version list within the Enterprise App Store profile.
 :::
 
 #### Unpublish
