@@ -12,7 +12,7 @@ The Metadata Approval step is used to get email-based approval before publishing
 
 This step is useful in team environments where metadata needs to be validated manually before release.
 
---screenshot--
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish2.png'/>
 
 When this step runs in your workflow, Appcircle sends a unique approval email to the recipients defined in the step inputs. The email contains a secure link to a dedicated Metadata Approval Panel, which allows recipients to:
 
@@ -20,13 +20,11 @@ When this step runs in your workflow, Appcircle sends a unique approval email to
 - Approve or reject the metadata
 - Provide feedback in case of rejection
 
---screenshot--
-
 💡 The Metadata Approval Panel is only accessible via the link in the email and is not listed in the Appcircle dashboard.
 
 ### Input Variables
 
---screenshot--
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish3.png'/>
 
 | Field                        | Description                                                                                                                                      |
 |-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,15 +32,20 @@ When this step runs in your workflow, Appcircle sends a unique approval email to
 | **Optional Emails to Approve**   | Additional email addresses that can optionally approve. Their approvals contribute to the total approval count. <br />Example: `support@appcircle.io, team@appcircle.io` |
 | **Minimum Required Approval Count** | The minimum number of total approvals (required + optional) needed for the step to be considered successful. <br />Example: `2`                      |
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish7.png'/>
+
 ### Approval Process
 1. Emails are sent to the recipients with a private link to the approval panel.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish1.png'/>
+
 2. Recipients click the link and are directed to the Metadata Approval Panel.
 3. If the user is not logged in, they are redirected to the login screen first and then returned to the panel.
 4. Users can either:
 - ✅ Approve the metadata
 - ❌ Reject the metadata and provide a Rejection Message
 
---screenshot--
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish5.png'/>
 
 :::info Successful Approval
 The step is marked as successful if:
@@ -50,7 +53,7 @@ The step is marked as successful if:
 - The minimum required approval count is satisfied.
   :::
 
---screenshot--
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish6.png'/>
 
 :::warning
 Please note that after a Metadata gets the approval, you will not be able to edit it anymore.
@@ -61,7 +64,7 @@ Please note that after a Metadata gets the approval, you will not be able to edi
 - This message is included in the step logs for an easy review.
 - The app version will also be tagged with `metadata rejected` in the Appcircle dashboard.
 
---screenshot--
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish4.png'/>
 
 ### Output Variables
 
