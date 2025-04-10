@@ -86,3 +86,56 @@ The iOS Publish filter options will only display the available statuses from the
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter3.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter4.png' />
+
+## FAQ
+
+### How can I get a binary from another organization for use in the Publish Module ?
+
+Let’s assume there are two organizations: Organization A and Organization B.
+In Organization A, we have a build profile that generates an IPA/APK.
+In Organization B, we have a Publish profile that we want to send the binary to.
+
+In Organization A's build profile workflow, after the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Publish profile in Organization B. In order to do this, we need Appcircle CLI, so this code snippet sets up the necessary information and sends binary with parameters.
+
+```bash
+#Bash script
+sudo npm install -g @appcircle/cli
+appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+appcircle publish profile version upload \
+  --platform <string>        Platform (ios/android)
+  --publishProfileId "$ORG_B_PUBLISH_PROFILE_ID" \
+  --app "$AC_OUTPUT_DIR"/*.apk
+  --markAsRc <boolean>       Mark binary as release candidate automatically. [OPTIONAL] (default: false)
+  --summary <string>         Release Notes (To add a release note to the app version, you need to mark the version as a release candidate.) [OPTIONAL]
+  #if ipa is required change it to *.ipa
+```
+
+The key point here is that we need two essential parameters to make this work.
+- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B 
+- `ORG_B_PUBLISH_PROFILE_ID` => Publish Profile ID from Organization B
+
+For collecting PAT, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+
+Publish Profile ID is simply logging in to the organization B, selecting the desired Publish Profile, and dividing the URL.
+For example, let's assume this is the URL after selecting the Publish Profile.
+`https://my.appcircle.io/publish/android/123456f-7d89-4545-5454-123456789abc`
+
+Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
+
+`$AC_OUTPUT_DIR` is an automatically generated environment variable. [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/)
+
+After collecting the essential parameters, they have to be set in the [Environment Variables](/environment-variables/) as 
+ORG_B_PERSONAL_API_TOKEN,
+ORG_B_PUBLISH_PROFILE_ID
+
+:::danger
+
+PAT is an important security variable; PAT shouldn't be added directly into Custom Script. Environment variable use is highly advised.
+
+:::
+
+:::caution
+
+Set the environment variable group to be used in the Organization A build profile configurations.
+
+:::
