@@ -43,6 +43,55 @@ Optimize your application management with detailed reports. Utilize the App Shar
 
 ## FAQ
 
+### How can I get a binary from another organization for use in the Testing Distribution module?
+
+Let’s assume there are two organizations: Organization A and Organization B.
+In Organization A, we have a build profile that generates an IPA/APK.
+In Organization B, we have a testing distribution profile that we want to send the binary to.
+
+In Organization A's build profile workflow, after the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Testing Distribution profile in Organization B. In order to do this, we need Appcircle CLI, so this code snippet sets up the necessary information and sends binary with parameters.
+
+```bash
+#Bash script
+sudo npm install -g @appcircle/cli
+appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+appcircle testing-distribution upload \
+  --distProfileId "$ORG_B_TEST_DIST_PROFILE_ID" \
+  --message "Release Notes" \
+  --app "$AC_OUTPUT_DIR"/*.apk
+  #if ipa is required change it to *.ipa
+```
+
+The key point here is that we need two essential parameters to make this work.
+- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B 
+- `ORG_B_TEST_DIST_PROFILE_ID` => Testing Distribution Profile ID from Organization B
+
+For collecting PAT, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+
+Testing Distribution Profile ID is simply logging in to the organization B, selecting the desired testing distribution profile, and dividing the URL.
+For example, let's assume this is the URL after selecting the Testing Distribution Profile.
+`https://my.appcircle.io/distribute/detail/123456f-7d89-4545-5454-123456789abc`
+
+Then the testing distribution profile ID is => `123456f-7d89-4545-5454-123456789abc`
+
+`$AC_OUTPUT_DIR` is an automatically generated environment variable. [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/)
+
+After collecting the essential parameters, they have to be set in the [Environment Variables](/environment-variables/) as 
+ORG_B_PERSONAL_API_TOKEN,
+ORG_B_TEST_DIST_PROFILE_ID
+
+:::danger
+
+PAT is an important security variable; PAT shouldn't be added directly into Custom Script. Environment variable use is highly advised.
+
+:::
+
+:::caution
+
+Set the environment variable group to be used in the Organization A build profile configurations.
+
+:::
+
 ### No files or multiple files were received from autodistribute;
 
 A successful distribution depends on a correctly signed binary. Please check if the [signing configuration](/build/build-process-management/configurations#signing-configuration) is correct.
