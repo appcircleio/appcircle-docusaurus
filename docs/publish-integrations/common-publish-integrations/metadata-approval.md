@@ -8,7 +8,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Metadata Approval
 
-The Metadata Approval step is used to get email-based approval before publishing your app's metadata. This ensures that designated users can review and either approve or reject the App Store metadata before proceeding with the publishing step.
+The Metadata Approval step is used to get email-based approval before publishing your app's metadata. This ensures that designated users can review and either approve or reject the App Store, Google Play, Microsoft Intune and Huawei AppGallary metadata before proceeding with the publishing step.
 
 This step is useful in team environments where metadata needs to be validated manually before release.
 
@@ -20,7 +20,9 @@ When this step runs in your workflow, Appcircle sends a unique approval email to
 - Approve or reject the metadata
 - Provide feedback in case of rejection
 
-💡 The Metadata Approval Panel is only accessible via the link in the email and is not listed in the Appcircle dashboard.
+:::info Metadata Approval Panel
+Access to the Metadata Approval Panel is **exclusively** available via the link sent in the approval email; it is **not** accessible through the standard Publish module UI.
+:::
 
 ### Input Variables
 
@@ -34,7 +36,15 @@ When this step runs in your workflow, Appcircle sends a unique approval email to
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish7.png'/>
 
-### Approval Process
+:::caution Minimum Approval Count
+If the Minimum Required Approval Count cannot be achieved, the step will fail.
+
+For example, if the Minimum Required Approval Count is set to 3 and there are a total of 3 users, all recipients will need to approve the metadata. 
+
+Please note that required approval email users take priority in this case, as all of them must approve—even if the minimum requirement is already met by optional users.
+:::
+
+## Approval Process
 1. Emails are sent to the recipients with a private link to the approval panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish1.png'/>
@@ -55,14 +65,24 @@ The step is marked as successful if:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish6.png'/>
 
-:::warning
-Please note that after a Metadata gets the approval, you will not be able to edit it anymore.
+:::warning Metadata Update Lock/Unlock Rules
+Please note that in order to make any updates within Metadata Details, certain rules must be met. While the Publish Flow is running, Metadata Details are locked and no changes are permitted. Please pay close attention to the business rules outlined below.
+
+**Metadata will be locked when:**
+- the **Metadata Approval** step starts, is in progress, or is completed
+- the **Update Metadata on App Store Connect/Google Play Console** step starts
+
+**Metadata will be unlocked when:**
+- the **Metadata Approval** step completes with a status of `Failed` or `Stopped`
+- the **Update Metadata on App Store Connect/Google Play Console** step completes with a status of `Success`, `Failed`, or `Stopped`
+- the Publish Flow completes
 :::
 
-#### Rejection Feedback
+### Rejection Feedback
+
 - When a rejection occurs, the rejecting user is asked to provide a Rejection Message.
 - This message is included in the step logs for an easy review.
-- The app version will also be tagged with `metadata rejected` in the Appcircle dashboard.
+- The app version will also be tagged with `metadata rejected` in the Publish profile dashboard.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish4.png'/>
 
