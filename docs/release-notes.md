@@ -20,7 +20,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- The ‘Metadata Approval’ Publish step can now be used for iOS and Android binaries, allowing email addresses of approvers to be added. Metadata updates for app versions can then be approved or rejected by the designated approvers. <PublishBadge/> <CloudBadge/>
+- The ‘[Metadata Approval](/publish-integrations/common-publish-integrations/metadata-approval)’ Publish step can now be used for iOS and Android binaries, allowing email addresses of approvers to be added. Metadata updates for app versions can then be approved or rejected by the designated approvers. <PublishBadge/> <CloudBadge/>
 - A “[Publish as Unlisted](/enterprise-app-store/enterprise-app-store-profile#publish-as-unlisted)” toggle option has been added to the Enterprise App Store profile’s publish-to-store process. When enabled, the app will be published without appearing in the Enterprise Portal and will only be accessible via Live or Beta channel links. <EnterpriseStoreBadge/> <CloudBadge/>
 - A [CSV Import option](/testing-distribution/testing-groups#importing-testing-group-members-via-csv) has been added to Testing Groups, allowing users to add tester email addresses by uploading a CSV file. <DistributionBadge/> <CloudBadge/>
 - The user email list of an organization can now be exported as a CSV file. <AccountBadge/> <CloudBadge/>
