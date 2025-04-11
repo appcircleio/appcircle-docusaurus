@@ -8,6 +8,8 @@ tags: [publish module, binary management]
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import PATDanger from '@site/docs/testing-distribution/\_orgAtoB-send-binary-danger.mdx';
+import EnvGroupSetterCaution from '@site/docs/testing-distribution/\_orgAtoB-send-binary-caution.mdx';
 
 Appcircle supports publishing the application to the stores without using the Build module. To add an application version manually, you need to add a publish profile beforehand and then **Open** its details.
 
@@ -101,17 +103,16 @@ In Organization A's build profile workflow, after the [Export Build Artifacts](/
 #Bash script
 sudo npm install -g @appcircle/cli
 appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+#if ipa or aab is required change it to *.ipa or *.aab
+#--platform "ios" "android"
+#--markAsRc true/false Mark binary as release candidate automatically. [OPTIONAL] (default: false)
+#--summary "Release Notes" -> Release Notes (To add a release note to the app version, you need to mark the version as a release candidate.) [OPTIONAL]
 appcircle publish profile version upload \
   --platform <string> \
   --publishProfileId "$ORG_B_PUBLISH_PROFILE_ID" \
   --app "$AC_OUTPUT_DIR"/*.apk \
   --markAsRc <boolean> \
   --summary <string>
-
-#if ipa is required change it to *.ipa
-#--platform "ios" "android"
-#--markAsRc true/false Mark binary as release candidate automatically. [OPTIONAL] (default: false)
-#--summary "string" -> Release Notes (To add a release note to the app version, you need to mark the version as a release candidate.) [OPTIONAL]
 ```
 
 :::caution
@@ -122,12 +123,12 @@ Keep in mind that uploading a binary to existing Publish profile will require ne
 
 The key point here is that we need two essential parameters to make this work.
 - `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B 
-- `ORG_B_PUBLISH_PROFILE_ID` => Publish Profile ID from Organization B
+- `ORG_B_PUBLISH_PROFILE_ID` => Publish profile ID from Organization B
 
 To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
 
-Publish Profile ID is simply logging in to the organization B, selecting the desired Publish Profile, and dividing the URL.
-For example, let's assume this is the URL after selecting the Publish Profile.
+Publish profile ID is simply logging in to the organization B, selecting the desired Publish profile, and dividing the URL.
+For example, let's assume this is the URL after selecting the Publish profile.
 `https://my.appcircle.io/publish/android/123456f-7d89-4545-5454-123456789abc`
 
 Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
@@ -138,14 +139,6 @@ After collecting the essential parameters, they have to be set in the [Environme
 ORG_B_PERSONAL_API_TOKEN,
 ORG_B_PUBLISH_PROFILE_ID
 
-:::danger
+<PATDanger />
 
-PAT is an important security variable; PAT shouldn't be added directly into Custom Script. Environment variable use is highly advised.
-
-:::
-
-:::caution
-
-Set the environment variable group to be used in the Organization A build profile configurations.
-
-:::
+<EnvGroupSetterCaution />

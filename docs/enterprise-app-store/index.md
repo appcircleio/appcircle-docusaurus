@@ -5,6 +5,8 @@ tags: [enterprise app store, in-house distribution, enterprise distribution, faq
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import PATDanger from '@site/docs/testing-distribution/\_orgAtoB-send-binary-danger.mdx';
+import EnvGroupSetterCaution from '@site/docs/testing-distribution/\_orgAtoB-send-binary-caution.mdx';
 
 # Enterprise App Store
 
@@ -123,10 +125,10 @@ In Organization A's build profile workflow, after the [Export Build Artifacts](/
 #Bash script
 sudo npm install -g @appcircle/cli
 appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+#if ipa or aab is required change it to *.ipa or *.aab
 appcircle enterprise-app-store version upload-for-profile \
   --entProfileId "$ORG_B_ENT_APP_STORE_PROFILE_ID" \
   --app "$AC_OUTPUT_DIR"/*.apk
-  #if ipa is required change it to *.ipa
 ```
 
 #### Upload binary with non-existing Enterprise App Store profile
@@ -135,9 +137,9 @@ appcircle enterprise-app-store version upload-for-profile \
 #Bash script
 sudo npm install -g @appcircle/cli
 appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+#if ipa or aab is required change it to *.ipa or *.aab
 appcircle enterprise-app-store version upload-without-profile \
   --app "$AC_OUTPUT_DIR"/*.apk
-  #if ipa is required change it to *.ipa
 ```
 
 This will also generate a new Enterprise App Store profile and application will be sent into this profile.
@@ -166,14 +168,6 @@ After collecting the essential parameters, they have to be set in the [Environme
 ORG_B_PERSONAL_API_TOKEN,
 ORG_B_ENT_APP_STORE_PROFILE_ID
 
-:::danger
+<PATDanger />
 
-PAT is an important security variable; PAT shouldn't be added directly into Custom Script. Environment variable use is highly advised.
-
-:::
-
-:::caution
-
-Set the environment variable group to be used in the Organization A build profile configurations.
-
-:::
+<EnvGroupSetterCaution />
