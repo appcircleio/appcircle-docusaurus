@@ -115,9 +115,9 @@ Let’s assume there are two organizations: Organization A and Organization B.
 In Organization A, we have a build profile that generates an IPA/APK.
 In Organization B, we have a Enterprise App Store profile that we want to send the binary to.
 
-In Organization A's build profile workflow, after the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Enterprise App Store profile in Organization B. In order to do this, we need Appcircle CLI, so this code snippet sets up the necessary information and sends binary with parameters.
+In Organization A's build profile workflow, after the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Enterprise App Store profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
 
-#### Upload binary for an already existing Enterprise App Store Profile
+#### Upload binary for an already existing Enterprise App Store profile
 
 ```bash
 #Bash script
@@ -129,7 +129,7 @@ appcircle enterprise-app-store version upload-for-profile \
   #if ipa is required change it to *.ipa
 ```
 
-#### Upload binary with non-existing Enterprise App Store Profile
+#### Upload binary with non-existing Enterprise App Store profile
 
 ```bash
 #Bash script
@@ -140,21 +140,21 @@ appcircle enterprise-app-store version upload-without-profile \
   #if ipa is required change it to *.ipa
 ```
 
-This will also generate a new Enterprise App Store Profile and application will be sent into this profile.
+This will also generate a new Enterprise App Store profile and application will be sent into this profile.
 
 :::caution
 
-Keep in mind that uploading a binary to existing Enterprise App Store profile will require newer version code.
+Keep in mind that uploading a binary to existing Enterprise App Store profile will require newer version code of the Application.
 
 :::
 
 The key point here is that we need two essential parameters to make this work.
 - `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B 
-- `ORG_B_ENT_APP_STORE_PROFILE_ID` => Enterprise App Store Profile ID from Organization B
+- `ORG_B_ENT_APP_STORE_PROFILE_ID` => Enterprise App Store profile ID from Organization B
 
-For collecting PAT, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
 
-Enterprise App Store Profile ID is simply logging in to the organization B, selecting the desired Enterprise App Store Profile, and dividing the URL.
+You can get Enterprise App Store profile ID by logging into Organization B, selecting the desired Enterprise App Store profile, and copying it from the URL.
 For example, let's assume this is the URL after selecting the Enterprise App Store Profile.
 `https://my.appcircle.io/enterprise-store/profiles/123456f-7d89-4545-5454-123456789abc`
 

@@ -49,7 +49,7 @@ Let’s assume there are two organizations: Organization A and Organization B.
 In Organization A, we have a build profile that generates an IPA/APK.
 In Organization B, we have a testing distribution profile that we want to send the binary to.
 
-In Organization A's build profile workflow, after the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Testing Distribution profile in Organization B. In order to do this, we need Appcircle CLI, so this code snippet sets up the necessary information and sends binary with parameters.
+In Organization A's build profile workflow, after the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Testing Distribution profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
 
 ```bash
 #Bash script
@@ -66,7 +66,7 @@ The key point here is that we need two essential parameters to make this work.
 - `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B 
 - `ORG_B_TEST_DIST_PROFILE_ID` => Testing Distribution Profile ID from Organization B
 
-For collecting PAT, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
 
 Testing Distribution Profile ID is simply logging in to the organization B, selecting the desired testing distribution profile, and dividing the URL.
 For example, let's assume this is the URL after selecting the Testing Distribution Profile.

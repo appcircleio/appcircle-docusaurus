@@ -95,7 +95,7 @@ Let’s assume there are two organizations: Organization A and Organization B.
 In Organization A, we have a build profile that generates an IPA/APK.
 In Organization B, we have a Publish profile that we want to send the binary to.
 
-In Organization A's build profile workflow, after the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Publish profile in Organization B. In order to do this, we need Appcircle CLI, so this code snippet sets up the necessary information and sends binary with parameters.
+In Organization A's build profile workflow, after the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Publish profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
 
 ```bash
 #Bash script
@@ -114,11 +114,17 @@ appcircle publish profile version upload \
 #--summary "string" -> Release Notes (To add a release note to the app version, you need to mark the version as a release candidate.) [OPTIONAL]
 ```
 
+:::caution
+
+Keep in mind that uploading a binary to existing Publish profile will require newer version code of the Application.
+
+:::
+
 The key point here is that we need two essential parameters to make this work.
 - `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B 
 - `ORG_B_PUBLISH_PROFILE_ID` => Publish Profile ID from Organization B
 
-For collecting PAT, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
 
 Publish Profile ID is simply logging in to the organization B, selecting the desired Publish Profile, and dividing the URL.
 For example, let's assume this is the URL after selecting the Publish Profile.
