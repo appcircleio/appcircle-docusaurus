@@ -20,11 +20,17 @@ When this step runs in your workflow, Appcircle sends a unique approval email to
 - Approve or reject the metadata
 - Provide feedback in case of rejection
 
-:::info Metadata Approval Panel
+:::caution Metadata Approval Panel
+
 Access to the Metadata Approval Panel is **exclusively** available via the link sent in the approval email; it is **not** accessible through the standard Publish module UI.
+
 :::
 
+
+
 ### Input Variables
+
+The parameters required for this step to work as expected are listed below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish3.png'/>
 
@@ -44,48 +50,68 @@ For example, if the Minimum Required Approval Count is set to 3 and there are a 
 Please note that required approval email users take priority in this case, as all of them must approve—even if the minimum requirement is already met by optional users.
 :::
 
-## Approval Process
+## Approval or Rejection Process
+
+### Approval
+
+To approve a metadata, follow the steps below:
+
 1. Emails are sent to the recipients with a private link to the approval panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish1.png'/>
 
 2. Recipients click the link and are directed to the Metadata Approval Panel.
 3. If the user is not logged in, they are redirected to the login screen first and then returned to the panel.
-4. Users can either:
-- ✅ Approve the metadata
-- ❌ Reject the metadata and provide a Rejection Message
+4. The user can approve the metadata by clicking the **Approve** button in the panel that opens.
+
+:::caution Metadata Approval Panel
+
+Please note that all of the data displayed in the metadata approval panel is **read‑only**. No values can be changed within this panel.
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish5.png'/>
 
 :::info Successful Approval
-The step is marked as successful if:
+
+**The step is marked as successful if:**
+
 - All required email addresses approve the metadata.
 - The minimum required approval count is satisfied.
-  :::
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish6.png'/>
 
-:::warning Metadata Update Lock/Unlock Rules
-Please note that in order to make any updates within Metadata Details, certain rules must be met. While the Publish Flow is running, Metadata Details are locked and no changes are permitted. Please pay close attention to the business rules outlined below.
+:::warning Lock/Unlock Rules for Metadata Update 
+
+Please note that in order to make any updates within [**Metadata Details**](/publish-module/publish-information/meta-data-information), certain rules must be met. While the Publish Flow is running, Metadata Details are locked and no changes are permitted. Please pay close attention to the business rules outlined below.
 
 **Metadata will be locked when:**
 - the **Metadata Approval** step starts, is in progress, or is completed
-- the **Update Metadata on App Store Connect/Google Play Console** step starts
+- the **[Update Metadata on App Store Connect](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect)/Google Play Console** step starts
 
 **Metadata will be unlocked when:**
 - the **Metadata Approval** step completes with a status of `Failed` or `Stopped`
-- the **Update Metadata on App Store Connect/Google Play Console** step completes with a status of `Success`, `Failed`, or `Stopped`
+- the **[Update Metadata on App Store Connect](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect)/Google Play Console** step completes with a status of `Success`, `Failed`, or `Stopped`
 - the Publish Flow completes
+
 :::
 
-### Rejection Feedback
+### Rejection
 
-- When a rejection occurs, the rejecting user is asked to provide a Rejection Message.
-- This message is included in the step logs for an easy review.
-- The app version will also be tagged with `metadata rejected` in the Publish profile dashboard.
+When a user wants to reject a metadata, they can reject by clicking the **Reject** button on the metadata approval panel that opens. 
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish5.png'/>
+
+**When a rejection occurs;**
+
+- The rejecting user is asked to provide a **Rejection Message**.
+- This message is included in the **step logs** for an easy review.
+- The app version will also be tagged with `Metadata Rejected` in the Publish profile dashboard.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish4.png'/>
 
-### Output Variables
+## Output Variables
 
 **Metadata Approval** step does not produce any output, but the success or failure of the step depends on the approvals or rejections received from the sent emails. This outcome affects the subsequent steps in the [Publish flow](/publish-module/publish-flow).
