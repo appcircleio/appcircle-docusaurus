@@ -27,11 +27,11 @@ Access to the Metadata Approval Panel is **exclusively** available via the link 
 
 ### Prerequisites
 
-This step is one of the dependent steps. Below is a table of the dependent steps with their descriptions.
+This step is one of the dependent steps. The table below lists the dependent steps with their descriptions.
 
 | Prerequisite Workflow Step                                                                                                                  | Description                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**Update Metadata on Microsoft Intune**](/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune) | TThis step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information#microsoft-intune-metadata-information) page to the corresponding sections on Microsoft Intune. Ensure the [**Microsoft Intune API Key**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) is added to Appcircle and selected. |
+| [**Update Metadata on Microsoft Intune**](/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune) | This step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information#microsoft-intune-metadata-information) page to the corresponding sections on Microsoft Intune. Ensure the [**Microsoft Intune API Key**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) is added to Appcircle and selected. |
 | [**Update Metadata on App Store Connect**](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect) | This step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information#ios-metadata-information) page to the corresponding sections on App Store Connect. Ensure the [**App Store Connect API Key**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) is added to Appcircle and selected. |
 
 
