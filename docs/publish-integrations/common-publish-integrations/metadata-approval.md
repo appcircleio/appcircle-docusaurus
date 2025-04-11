@@ -34,9 +34,14 @@ This step is one of the dependent steps. The table below lists the dependent ste
 | [**Update Metadata on Microsoft Intune**](/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune) | This step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information#microsoft-intune-metadata-information) page to the corresponding sections on Microsoft Intune. Ensure the [**Microsoft Intune API Key**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) is added to Appcircle and selected. |
 | [**Update Metadata on App Store Connect**](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect) | This step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information#ios-metadata-information) page to the corresponding sections on App Store Connect. Ensure the [**App Store Connect API Key**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) is added to Appcircle and selected. |
 
+:::caution Prerequisites
+
+Please note that the **Metadata Approval** step **must** be used before the steps listed in the table above. 
+
+Running **Metadata Approval** step after your updated metadata has been applied in your developer accounts may **cause unexpected errors** in your publish flows.
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-metadataApprovalNew1.png'/>
-
 
 ### Input Variables
 
