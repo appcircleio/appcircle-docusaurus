@@ -12,8 +12,6 @@ The Metadata Approval step is used to get email-based approval before publishing
 
 This step is useful in team environments where metadata needs to be validated manually before release.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish2.png'/>
-
 When this step runs in your workflow, Appcircle sends a unique approval email to the recipients defined in the step inputs. The email contains a secure link to a dedicated Metadata Approval Panel, which allows recipients to:
 
 - View the metadata details
@@ -26,6 +24,18 @@ Access to the Metadata Approval Panel is **exclusively** available via the link 
 
 :::
 
+
+### Prerequisites
+
+This step is one of the dependent steps. Below is a table of the dependent steps with their descriptions.
+
+| Prerequisite Workflow Step                                                                                                                  | Description                                                                                                                                                                                                                                                    |
+|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [**Update Metadata on Microsoft Intune**](/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune) | TThis step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information#microsoft-intune-metadata-information) page to the corresponding sections on Microsoft Intune. Ensure the [**Microsoft Intune API Key**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) is added to Appcircle and selected. |
+| [**Update Metadata on App Store Connect**](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect) | This step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information#ios-metadata-information) page to the corresponding sections on App Store Connect. Ensure the [**App Store Connect API Key**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) is added to Appcircle and selected. |
+
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-metadataApprovalNew1.png'/>
 
 
 ### Input Variables
