@@ -105,8 +105,8 @@ appcircle publish profile version upload \
   --platform <string> \
   --publishProfileId "$ORG_B_PUBLISH_PROFILE_ID" \
   --app "$AC_OUTPUT_DIR"/*.apk \
-  --markAsRc <boolean> \   
-  --summary <string> 
+  --markAsRc <boolean> \
+  --summary <string>
 
 #if ipa is required change it to *.ipa
 #--platform "ios" "android"
