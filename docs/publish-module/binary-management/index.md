@@ -102,12 +102,16 @@ In Organization A's build profile workflow, after the [Export Build Artifacts](/
 sudo npm install -g @appcircle/cli
 appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
 appcircle publish profile version upload \
-  --platform <string>    \   #Platform (ios/android)
+  --platform <string> \
   --publishProfileId "$ORG_B_PUBLISH_PROFILE_ID" \
   --app "$AC_OUTPUT_DIR"/*.apk \
-  --markAsRc <boolean>   \   #Mark binary as release candidate automatically. [OPTIONAL] (default: false)
-  --summary <string>         #Release Notes (To add a release note to the app version, you need to mark the version as a release candidate.) [OPTIONAL]
-  #if ipa is required change it to *.ipa
+  --markAsRc <boolean> \   
+  --summary <string> 
+
+#if ipa is required change it to *.ipa
+#--platform "ios" "android"
+#--markAsRc true/false Mark binary as release candidate automatically. [OPTIONAL] (default: false)
+#--summary "string" -> Release Notes (To add a release note to the app version, you need to mark the version as a release candidate.) [OPTIONAL]
 ```
 
 The key point here is that we need two essential parameters to make this work.
