@@ -40,7 +40,7 @@ In this case, you should verify `yourdomain.onmicrosoft.com` in Microsoft's DNS 
 
 **3.** Copy the provided DNS record and add it to your DNS provider as a TXT record, using the specified name (host) and value (data).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5962-ss2.png' />
 
 **4.** Click Verify to check if the record has been propagated.
 
@@ -48,7 +48,7 @@ In this case, you should verify `yourdomain.onmicrosoft.com` in Microsoft's DNS 
 
 **5.** If the verification fails, retry after some time as DNS propagation may take time.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5962-ss3.png' />
 
 :::info
 Appcircle will periodically check the DNS record to ensure it still exists and remains accurate.
@@ -57,8 +57,15 @@ Users must have administrative access to their domain’s DNS settings to comple
 
 Please note that unauthorized changes to DNS records may result in domain verification failure.
 
-Each domain can be verified by only one organization, but an organization can verify multiple domains.
+Each domain can be verified by multiple organizations, and also an organization can verify multiple domains.
 :::
+
+:::tip Verifying a Domain on Multiple Organizations
+A unique hostname is provided by Appcircle for each organization and domain. As long as the correct DNS record is present in the DNS provider settings, the domain can be verified for multiple organizations.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5962-ss1.png' />
+
 
 #### Validation Rules
 
