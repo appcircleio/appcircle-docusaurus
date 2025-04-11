@@ -23,7 +23,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The Domain Verification feature can now be used for the same domain across multiple organizations. <AccountBadge/> <CloudBadge/>
 - Validation has been added for enabling SSO authorization to ensure that the configuration includes existing SSO groups, roles, and an enabled SSO authentication. <AccountBadge/> <CloudBadge/>
 - The **Upload Certificate Signing Request** option has been removed from the **Create an Apple Certificate** process. <SigningIdentitiesBadge/> <CloudBadge/>
-- A Help button has been added, and the Upload button is now disabled while a CSV file is being uploaded, as part of the Import from CSV feature in Testing Groups. <DistributionBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -32,10 +31,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where the metadata approval email did not redirect users to the correct organization if they were logged in to a different one. <PublishBadge/> <CloudBadge/>
 - Typos have been fixed in various descriptions across multiple Publish steps. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where `.p12` files created from Apple certificates were missing the private key, resulting in Xcode build errors due to the key not being added to the keychain. <SigningIdentitiesBadge/> <CloudBadge/>
-- An issue was fixed where some users encountered errors while removing connections from **Bitbucket** repositories. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where users could not remove PAT connections from Sub-Organizations. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the selected branch became deselected after switching to a different build profile and then navigating back to the original profile. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where case sensitivity in the Manage Access tab of the Enterprise App Store profile settings caused problems with access management for some users. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed where the Update button was not visible on some macOS browsers in the Enterprise App Store Customization area. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed where switching OS tabs while uploading an app version caused UI issues on Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
+- A Missing Help button has been added, and the Upload button is now disabled while a CSV file is being uploaded, as part of the Import from CSV feature in Testing Groups. <DistributionBadge/> <CloudBadge/>
 
 ## 3.27.0 - 2025-04-04 Metadata Approval, Import Testing Group Members via CSV, Notification Improvements and more
 
