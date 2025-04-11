@@ -36,3 +36,7 @@ Learn how to update your app's metadata on Microsoft Intune to improve visibilit
 Everything you need to know about sending your app to the Appcircle's Enterprise App Store can be found here. We cover the necessary preparations, and submission details.
 
 Appcircle's integration tools are designed to simplify and automate the publishing process, allowing you to focus on developing great apps while we handle the distribution.
+
+## [Metadata Approval](/publish-integrations/common-publish-integrations/metadata-approval)
+
+The Metadata Approval step is used to get email-based approval before publishing your app's metadata. This ensures that designated users can review and either approve or reject the App Store, Google Play, Microsoft Intune and Huawei AppGallary metadata before proceeding with the publishing step.
