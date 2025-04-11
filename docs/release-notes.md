@@ -16,6 +16,27 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.27.1 - 2025-04-11 Metadata Approval and Domain Verification Improvements, Bug Fixes and more
+
+### :muscle: Improvements
+
+- The Domain Verification feature can now be used for the same domain across multiple organizations. <AccountBadge/> <CloudBadge/>
+- Validation has been added for enabling SSO authorization to ensure that the configuration includes existing SSO groups, roles, and an enabled SSO authentication. <AccountBadge/> <CloudBadge/>
+- The **Upload Certificate Signing Request** option has been removed from the **Create an Apple Certificate** process. <SigningIdentitiesBadge/> <CloudBadge/>
+- A Help button has been added, and the Upload button is now disabled while a CSV file is being uploaded, as part of the Import from CSV feature in Testing Groups. <DistributionBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- Various issues have been resolved on the metadata information screen for Publish Profiles, where users were sometimes unable to see uploaded images or upload screenshots. <PublishBadge/> <CloudBadge/>
+- An issue where metadata information could still be edited during the metadata approval process has been fixed. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where the metadata approval email did not redirect users to the correct organization if they were logged in to a different one. <PublishBadge/> <CloudBadge/>
+- Typos have been fixed in various descriptions across multiple Publish steps. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where `.p12` files created from Apple certificates were missing the private key, resulting in Xcode build errors due to the key not being added to the keychain. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where some users encountered errors while removing connections from **Bitbucket** repositories. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where case sensitivity in the Manage Access tab of the Enterprise App Store profile settings caused problems with access management for some users. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where the Update button was not visible on some macOS browsers in the Enterprise App Store Customization area. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where switching OS tabs while uploading an app version caused UI issues on Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
+
 ## 3.27.0 - 2025-04-04 Metadata Approval, Import Testing Group Members via CSV, Notification Improvements and more
 
 ### 🆕 New Features
@@ -40,6 +61,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🐞 Fixes
 
 - An issue was fixed where users were able to edit user permissions even when SSO Authorization was enabled. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where informative text was not displayed when deleting an SSO Group. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where certain URLs did not redirect the receiving user to the exact location if they were not already signed in, affecting pages such as profiles and specific configurations. <CloudBadge/>
 - An issue was fixed with various Help button links throughout Appcircle, and new links have been added to multiple areas, including the Enterprise App Store and Signing Identity modules. <CloudBadge/>
 
