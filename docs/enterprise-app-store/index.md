@@ -116,7 +116,7 @@ Let’s assume there are two organizations: Organization A and Organization B.
 In Organization A, we have a build profile that generates an IPA/APK.
 In Organization B, we have a Enterprise App Store profile that we want to send the binary to.
 
-In Organization A's build profile workflow, after the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Enterprise App Store profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
+In Organization A's build profile workflow, just before the [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts/) step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Enterprise App Store profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
 
 #### Upload binary for an already existing Enterprise App Store profile
 
