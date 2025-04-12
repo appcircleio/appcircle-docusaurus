@@ -140,8 +140,8 @@ To generate Personal API Token, follow this documentation [API authentication](/
 
 To obtain the Publish profile ID, follow the steps below: 
 1. Log in to organization B.
-2. Go to publish module.
-3. Select the desired publish profile
+2. Go to Publish module.
+3. Select the desired Publish profile
 4. Copy it from the URL. `https://my.appcircle.io/publish/android/123456f-7d89-4545-5454-123456789abc`
 5. Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
 
