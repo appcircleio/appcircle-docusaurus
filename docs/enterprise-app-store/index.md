@@ -160,11 +160,13 @@ To obtain the Enterprise App Store profile ID, follow the steps below:
 2. Go to Enterprise App Store module.
 3. Select the desired Enterprise App Store profile
 4. Copy it from the URL. `https://my.appcircle.io/enterprise-store/profiles/123456f-7d89-4545-5454-123456789abc`
-5. Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
+5. Then the Enterprise App Store profile ID is => `123456f-7d89-4545-5454-123456789abc`
 
 After collecting the essential parameters, they have to be set in the [Environment Variables](/environment-variables/) as 
-ORG_B_PERSONAL_API_TOKEN,
-ORG_B_ENT_APP_STORE_PROFILE_ID
+
+`ORG_B_PERSONAL_API_TOKEN`
+
+`ORG_B_ENT_APP_STORE_PROFILE_ID`
 
 <PatDanger />
 

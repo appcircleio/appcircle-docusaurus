@@ -118,7 +118,7 @@ appcircle publish profile version upload \
 - --platform "ios" or "android" **[REQUIRED]** Specifies the platform for the binary.
 - --markAsRc true/false  **[OPTIONAL]** Marks the binary as a release candidate automatically. (Default: `false`)
 - --summary "Release Notes" **[OPTIONAL]** Adds release notes to the app version.  
-  Note: To include release notes, the version must first be marked as a release candidate.  
+  **Note**: To include release notes, the version must first be [marked as a release candidate](/publish-module/publish-information/marking-release-candidates).
 
 :::
 
@@ -146,8 +146,10 @@ To obtain the Publish profile ID, follow the steps below:
 5. Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
 
 After collecting the essential parameters, they have to be set in the [Environment Variables](/environment-variables/) as 
-ORG_B_PERSONAL_API_TOKEN,
-ORG_B_PUBLISH_PROFILE_ID
+
+`ORG_B_PERSONAL_API_TOKEN`
+
+`ORG_B_PUBLISH_PROFILE_ID`
 
 <PatDanger />
 
