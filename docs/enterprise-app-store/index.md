@@ -137,7 +137,8 @@ appcircle enterprise-app-store version upload-for-profile \
 #Bash script
 sudo npm install -g @appcircle/cli
 appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
-#if ipa or aab is required change it to *.ipa or *.aab
+#if ipa or aab is required change it to *.ipa or *.aab 
+#in the --app "$AC_OUTPUT_DIR"/*.apk code line down below
 appcircle enterprise-app-store version upload-without-profile \
   --app "$AC_OUTPUT_DIR"/*.apk
 ```
