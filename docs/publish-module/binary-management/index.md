@@ -8,8 +8,7 @@ tags: [publish module, binary management]
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
-import PATDanger from '@site/docs/testing-distribution/\_orgAtoB-send-binary-danger.mdx';
-import EnvGroupSetterCaution from '@site/docs/testing-distribution/\_orgAtoB-send-binary-caution.mdx';
+import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
 
 Appcircle supports publishing the application to the stores without using the Build module. To add an application version manually, you need to add a publish profile beforehand and then **Open** its details.
 
@@ -103,10 +102,8 @@ In Organization A's build profile workflow, after the [Export Build Artifacts](/
 #Bash script
 sudo npm install -g @appcircle/cli
 appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
-#if ipa or aab is required change it to *.ipa or *.aab
-#--platform "ios" "android"
-#--markAsRc true/false Mark binary as release candidate automatically. [OPTIONAL] (default: false)
-#--summary "Release Notes" -> Release Notes (To add a release note to the app version, you need to mark the version as a release candidate.) [OPTIONAL]
+#if ipa or aab is required change it to *.ipa or *.aab 
+#in the --app "$AC_OUTPUT_DIR"/*.apk code line down below
 appcircle publish profile version upload \
   --platform <string> \
   --publishProfileId "$ORG_B_PUBLISH_PROFILE_ID" \
@@ -114,6 +111,14 @@ appcircle publish profile version upload \
   --markAsRc <boolean> \
   --summary <string>
 ```
+
+:::info
+
+- --platform "ios" or "android" [REQUIRED]
+- --markAsRc true/false Mark binary as release candidate automatically. [OPTIONAL] (default: false)
+- --summary "Release Notes" -> Release Notes (To add a release note to the app version, you need to mark the version as a release candidate.) [OPTIONAL]
+
+:::
 
 :::caution
 
@@ -139,6 +144,10 @@ After collecting the essential parameters, they have to be set in the [Environme
 ORG_B_PERSONAL_API_TOKEN,
 ORG_B_PUBLISH_PROFILE_ID
 
-<PATDanger />
+<PatDanger />
 
-<EnvGroupSetterCaution />
+:::caution
+
+Set the environment variable group to be used in the Organization A build profile configurations.
+
+:::

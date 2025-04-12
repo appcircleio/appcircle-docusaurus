@@ -5,8 +5,7 @@ tags: [enterprise app store, in-house distribution, enterprise distribution, faq
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
-import PATDanger from '@site/docs/testing-distribution/\_orgAtoB-send-binary-danger.mdx';
-import EnvGroupSetterCaution from '@site/docs/testing-distribution/\_orgAtoB-send-binary-caution.mdx';
+import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
 
 # Enterprise App Store
 
@@ -125,7 +124,8 @@ In Organization A's build profile workflow, after the [Export Build Artifacts](/
 #Bash script
 sudo npm install -g @appcircle/cli
 appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
-#if ipa or aab is required change it to *.ipa or *.aab
+#if ipa or aab is required change it to *.ipa or *.aab 
+#in the --app "$AC_OUTPUT_DIR"/*.apk code line down below
 appcircle enterprise-app-store version upload-for-profile \
   --entProfileId "$ORG_B_ENT_APP_STORE_PROFILE_ID" \
   --app "$AC_OUTPUT_DIR"/*.apk
@@ -168,6 +168,10 @@ After collecting the essential parameters, they have to be set in the [Environme
 ORG_B_PERSONAL_API_TOKEN,
 ORG_B_ENT_APP_STORE_PROFILE_ID
 
-<PATDanger />
+<PatDanger />
 
-<EnvGroupSetterCaution />
+:::caution
+
+Set the environment variable group to be used in the Organization A build profile configurations.
+
+:::
