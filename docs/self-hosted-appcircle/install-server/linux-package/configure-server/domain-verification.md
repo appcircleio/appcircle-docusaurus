@@ -1,8 +1,8 @@
 ---
-title: Configure Domain Verification
-description: Configure the Appcircle server to bypass domain verification when adding domains to an organization or verify them using DNS records.
-tags: [security, domain, verify]  
-sidebar_position: 30  
+title: Domain Verification
+description: Configure the Appcircle server to bypass domain verification when adding domains to an organization or verify them using DNS records on Docker/Podman architecture.
+tags: [security, domain, verify]
+sidebar_position: 30
 ---
 
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_spacetech-example-info.mdx';  
@@ -48,7 +48,7 @@ To enable or disable domain verification, follow these steps:
    ```yaml
    keycloak:
      domainVerification:
-       enabled: false
+       enabled: true
    ```
 
    :::note  

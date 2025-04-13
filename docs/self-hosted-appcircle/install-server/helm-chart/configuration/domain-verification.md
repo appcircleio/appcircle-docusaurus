@@ -1,7 +1,7 @@
 ---
-title: Skipping Domain Verification  
-description: Configure Appcircle server to bypass domain verification when adding domains to an organization.  
-tags: [security, domain]  
+title: Domain Verification
+description: Configure the Appcircle server to bypass domain verification when adding domains to an organization or verify them using DNS records on Kubernetes/OpenShift architecture.
+tags: [security, domain, verify]
 sidebar_position: 95
 ---
 
@@ -14,41 +14,37 @@ import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/inst
 
 This document explains how to configure your Appcircle server's domain verification option when adding domains as trusted for Appcircle organizations. By skipping the domain verification process, domains will be automatically marked as verified without the need for TXT records.
 
-Please note, this page does not cover the domain verification feature itself. For more detailed information on domain verification, please refer to the [Domain Verification Documentation](/account/my-organization/security/domain-verification/index.md).
+Please note, this page does not cover the domain verification feature itself. For more detailed information on domain verification, please refer to the [Domain Verification](/account/my-organization/security/domain-verification) documentation.
 
-By default, domain verification is disabled on the Appcircle server, meaning domains are automatically considered verified without the need to add a TXT record to your DNS configuration. 
-However, if you change this option, Appcircle will require the addition of a TXT record to validate the domain.
+By default, domain verification is **disabled** on the Appcircle server, meaning domains are automatically considered verified without the need to add a TXT record to your DNS configuration. However, if you change this option, Appcircle will require the addition of a TXT record to validate the domain.
 
 ## Configuring the Appcircle Server Chart
 
-To enable or disable domain verification skipping, follow these steps to configure the Helm chart.
+To enable or disable domain verification, follow these steps:
 
-1. **Edit the `values.yaml` of Appcircle Server Helm Chart**  
-   Open the `values.yaml` file in a text editor.
+1. Open the `values.yaml` file in a text editor.
 
    ```bash
    vi values.yaml
    ```
 
-2. **Modify the Keycloak Domain Verification Settings**  
-   Locate the `auth` entry in the configuration file. Add or update the `domainVerification` key with the following settings, depending on your preference.
+2. Locate the `auth` entry in the configuration file. Add or update the `domainVerification` key with the following settings, depending on your preference.
 
    :::caution  
-   If the `keycloak` entry already exists in your `values.yaml` file, ensure you update the existing key instead of creating a new one.  
+   If the `auth-keycloak` entry already exists in your `values.yaml` file, ensure you update the existing key instead of creating a new one.  
    :::
 
    ```yaml
    auth:
-      auth-keycloak:
-         domainVerification:
-            enabled: true
+     auth-keycloak:
+       domainVerification:
+         enabled: true
    ```
 
    :::note  
-   - **`enabled: true`**: Requires the addition of a TXT record for domain verification.  
-   - **`enabled: false`**: Skips TXT record verification, and the domain is automatically considered verified.  
+   - **`enabled`**: If this variable is set to `true`, it requires the addition of a TXT record for domain verification. If you want to skip TXT record verification and make the domain automatically considered as verified, then this variable should be set to `false`.
    :::
 
-3. **Upgrade the Appcircle server release with new `values.yaml`**
+3. Upgrade the Appcircle server release with new `values.yaml` settings.
 
    <ApplyHelmConfigurationChanges />
