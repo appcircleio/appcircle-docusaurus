@@ -84,10 +84,9 @@ appcircle testing-distribution upload \
 ```
 
 The key point here is that we need two essential parameters to make this work.
-- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B 
-- `ORG_B_TEST_DIST_PROFILE_ID` => Testing Distribution profile ID from Organization B
-
-`$AC_OUTPUT_DIR` is an automatically generated environment variable. [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/)
+- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
+- `ORG_B_TEST_DIST_PROFILE_ID` => Testing Distribution profile ID from Organization B.
+- `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
 
 To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
 
@@ -98,11 +97,9 @@ To obtain the Testing Distribution profile ID, follow the steps below:
 4. Copy it from the URL. `https://my.appcircle.io/distribute/detail/123456f-7d89-4545-5454-123456789abc`
 5. Then the Testing Distribution profile ID is => `123456f-7d89-4545-5454-123456789abc`
 
-After collecting the essential parameters, they have to be set in the [Environment Variables](/environment-variables/) as 
-
-`ORG_B_PERSONAL_API_TOKEN`
-
-`ORG_B_TEST_DIST_PROFILE_ID`
+After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
+- `ORG_B_PERSONAL_API_TOKEN`
+- `ORG_B_TEST_DIST_PROFILE_ID`
 
 <PatDanger />
 
