@@ -113,7 +113,13 @@ For more information, please visit [In-App Updates](/enterprise-app-store/in-app
 
 Multiple users can be added to the Beta and Live channels by pressing the Tab key.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-notify1.png" />
+Defined user groups from your provider can also be added after configuration.
+
+:::info
+Email entries are not case-sensitive; however, group names are case-sensitive.
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5950-ss.png" />
 
 :::important
 
@@ -135,18 +141,6 @@ If Beta Channel Access is not configured, versions marked for the Beta channel w
 If Live Channel Access is not configured, versions marked for the Live channel will be visible to everyone by default.
 
 :::
-
-Defined user groups from your provider can be added after configuration.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/2812-entstore-okta-group-new.png" />
-
-:::tip 
-
-The logo of the Enterprise App Store profile can also be updated by clicking on the logo icon. Please note that this will not affect the customization of your Enterprise Portal login.
-
-:::
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-logo5.png" />
 
 ### Links
 
