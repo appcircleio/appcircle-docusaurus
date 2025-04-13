@@ -64,20 +64,6 @@ The Testing Portal will also display the size and the certificate type of each a
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter5.png" alt="Testing Portal Binary Size" />
 
-:::tip
-
-The Testing Portal includes a toggle feature that allows users to switch between two display modes for the app version's upload time.
-
-By default, the Testing Portal displays the time for the selected app version as a relative time (e.g., "2 hours ago").
-
-To view the exact date and time of the upload, simply click on the relative time display. The display will switch to show the exact date and time (e.g., "July 4, 2024 AT 10:30 AM").
-
-:::
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates1.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates2.png" />
-
 :::info
 If your app version has an enterprise-type certificate, the Testing Portal will display a guidance message on how to proceed with the installation on your device.
 :::
