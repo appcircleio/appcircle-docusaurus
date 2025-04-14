@@ -60,6 +60,12 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in the Build Configuration window.
 
+:::caution
+
+It is recommended that the same Xcode version used during development be used for building to avoid potential compatibility issues.
+
+:::
+
 The list of currently available Xcode versions can be found in the following document: [iOS Build Infrastructure](/infrastructure/ios-build-infrastructure)
 
 By default, the most recent stable version of Xcode is selected. If available, you can also switch to the most recent Xcode beta at the top of the list.

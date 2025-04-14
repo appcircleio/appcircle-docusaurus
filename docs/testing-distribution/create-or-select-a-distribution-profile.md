@@ -210,15 +210,15 @@ If SSO and LDAP details are not configured for your organization, these authenti
 
 :::
 
-### Public Link
+### Distribution Link
 
-You may enable a public link for your distribution. This allows anyone who has the link to access all artifacts of the distribution profile. Additionally, users can now conveniently scan a QR code to retrieve the public link directly. This simplifies the process of accessing and sharing the distribution link, making it more accessible for users on mobile devices or others who prefer quick scanning.
+You may enable a link for your distribution. This allows anyone who has the link to access all artifacts of the distribution profile. Additionally, users can now conveniently scan a QR code to retrieve the distribution link directly. This simplifies the process of accessing and sharing the distribution link, making it more accessible for users on mobile devices or others who prefer quick scanning.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5684-link.png' />
 
 :::info
 
-The Tester Portal that you will have access via the Public Link, will have the same authentication method that you have set from the authentication settings.
+The Tester Portal that you will have access via the Distribution Link, will have the same authentication method that you have set from the authentication settings.
 
 :::
 
@@ -328,7 +328,7 @@ You must have already created the designated Publish profile within the Publish 
 
 Resigning is the process of modifying an existing binary with a new signing certificate or keystore, which is required when an application needs to be published under a different developer account or when updating an existing application. It involves removing the original signature and replacing it with a new one.
 
-For more information please visit the Re-sign Binary documentation.
+For more information please visit the [Re-sign Binary](/testing-distribution/resigning-binaries) documentation.
 
 ### Re-sign History
 
