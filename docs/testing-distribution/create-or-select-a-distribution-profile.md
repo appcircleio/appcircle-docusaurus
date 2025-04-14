@@ -7,6 +7,8 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
+import EnvGroupSetCaution from '@site/docs/\_env-group-set-on-config-caution.mdx';
 
 To share builds with testers, distribution profiles should be created and testing groups assigned to these profiles.
 
@@ -363,19 +365,60 @@ After clicking `Delete` , type in the version name in the prompt.
 
 ## FAQ
 
-#### Can I set an authentication method for accessing the Testing Portal?
+### Can I set an authentication method for accessing the Testing Portal?
 
 Yes, you can choose one of the authentication methods provided by Appcircle to authenticate your users and control their access to the store. For more information, please visit the Testing Distribution [**Authentication**](/testing-distribution/create-or-select-a-distribution-profile#authentication) documentations.
 
-#### Can I send a binary from another CI tool?
+### Can I send a binary from another CI tool?
 
 Yes, you can use Appcircle **API & CLI** tools within your current CI tool to directly send the binary and utilize it within the Testing Distribution. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api-and-cli) documentations.
 
 
-#### What does email/month mean? How is the number calculated?
+### What does email/month mean? How is the number calculated?
 
 An email is calculated every time an app is shared via email from our servers. So every send email adds to email count.
 
-#### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
+### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
 
 Thanks to the modular structure of Appcircle, all modules can be used independently. Accordingly, you can also request a special plan only for Testing Distribution. Please [contact us](https://appcircle.io/contact) for detailed information.
+
+### How can I get a binary from another organization to use in the Testing Distribution module?
+
+Let’s assume there are two organizations: Organization A and Organization B.
+In Organization A, we have a build profile that generates an IPA, APK, or AAB.
+In Organization B, we have a testing distribution profile that we want to send the binary to.
+
+In Organization A's build profile workflow, after the build step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Testing Distribution profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
+
+```bash
+#Bash script
+sudo npm install -g @appcircle/cli
+appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+# If an IPA or AAB is required, change *.apk to *.ipa or *.aab
+appcircle testing-distribution upload \
+  --distProfileId "$ORG_B_TEST_DIST_PROFILE_ID" \
+  --message "Release Notes" \
+  --app "$AC_OUTPUT_DIR"/*.apk
+```
+
+The key point here is that we need two essential parameters to make this work.
+- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
+- `ORG_B_TEST_DIST_PROFILE_ID` => Testing Distribution profile ID from Organization B.
+- `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
+
+To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+
+To obtain the Testing Distribution profile ID, follow the steps below: 
+1. Log in to organization B.
+2. Go to Testing Distribution module.
+3. Select the desired Testing Distribution profile
+4. Copy it from the URL. `https://my.appcircle.io/distribute/detail/123456f-7d89-4545-5454-123456789abc`
+5. Then the Testing Distribution profile ID is => `123456f-7d89-4545-5454-123456789abc`
+
+After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
+- `ORG_B_PERSONAL_API_TOKEN`
+- `ORG_B_TEST_DIST_PROFILE_ID`
+
+<PatDanger />
+
+<EnvGroupSetCaution />
