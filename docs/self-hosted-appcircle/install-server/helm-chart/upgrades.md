@@ -51,12 +51,11 @@ Below is the version history of the self-hosted Appcircle server and the Helm ch
 
         | Appcircle Server Version | Helm Chart Version | Release Date |
         | ------------------------ | ------------------ | ------------ |
+        | 3.25.1                   | 0.2.8              | 05/02/2025   |
         | 3.23.2                   | 0.1.1              | 23/12/2024   |
         | 3.23.2                   | 0.1.0              | 20/12/2024   |
 
 </details>
-
-
 
 ## Updating to a Specific Version
 
@@ -64,25 +63,36 @@ You can specify a **specific version** of the Appcircle Helm chart by adding the
 
 For instance, to upgrade the **Appcircle Helm chart** to a **specific version** and view the Appcircle server Helm chart versions that are available:
 
-1. Check the list of available versions.
+**1.** Check the list of available versions.
 
 ```bash
-helm search repo appcircle
+helm search repo appcircle/appcircle -l
 ```
 
 The output should look like the following:
 
-```bash
-NAME               	CHART VERSION	APP VERSION	DESCRIPTION
-appcircle/appcircle	0.1.0        	3.23.2     	A Helm chart for Kubernetes
-appcircle/appcircle	0.2.0        	3.25.0     	A Helm chart for Kubernetes
+```txt
+NAME                    CHART VERSION   APP VERSION     DESCRIPTION
+appcircle/appcircle     0.2.8           3.25.1          A Helm chart for Kubernetes
+appcircle/appcircle     0.1.1           3.23.2          A Helm chart for Kubernetes
+appcircle/appcircle     0.1.0           3.23.2          A Helm chart for Kubernetes
 ```
 
-2. Update the Appcircle Helm chart to a specific version.
+:::caution
+
+### OpenShift Support
+
+`0.2.x` and older versions are deprecated. They are not getting maintenance updates, and they do not support [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift) installation.
+
+We strongly recommend you use `0.3.x` or later versions, which are actively maintained and have new features like supporting installation on [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift).
+
+:::
+
+**2.** Update the Appcircle Helm chart to a specific version.
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle \
-  --version 0.2.0 \
+  --version 0.2.8 \
   --timeout 1200s \
   -n appcircle \
   -f values.yaml
