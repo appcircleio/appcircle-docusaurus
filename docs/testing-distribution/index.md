@@ -6,8 +6,6 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
-import EnvGroupSetCaution from '@site/docs/\_env-group-set-on-config-caution.mdx';
 
 In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
 
@@ -63,44 +61,3 @@ On some distributed apps, the **Access Denied** error can be bypassed by one of 
 - Launching the distribution link on a different browser and Incognito Mode
 - Clearing the browser cache if the link is pasted to a browser instead of in-line browser on mail applications
 - If there is an authorization configuration on Distribution, clearing the authorization temporarily
-
-### How can I get a binary from another organization to use in the Testing Distribution module?
-
-Let’s assume there are two organizations: Organization A and Organization B.
-In Organization A, we have a build profile that generates an IPA, APK, or AAB.
-In Organization B, we have a testing distribution profile that we want to send the binary to.
-
-In Organization A's build profile workflow, after the build step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Testing Distribution profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
-
-```bash
-#Bash script
-sudo npm install -g @appcircle/cli
-appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
-# If an IPA or AAB is required, change *.apk to *.ipa or *.aab
-appcircle testing-distribution upload \
-  --distProfileId "$ORG_B_TEST_DIST_PROFILE_ID" \
-  --message "Release Notes" \
-  --app "$AC_OUTPUT_DIR"/*.apk
-```
-
-The key point here is that we need two essential parameters to make this work.
-- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
-- `ORG_B_TEST_DIST_PROFILE_ID` => Testing Distribution profile ID from Organization B.
-- `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
-
-To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
-
-To obtain the Testing Distribution profile ID, follow the steps below: 
-1. Log in to organization B.
-2. Go to Testing Distribution module.
-3. Select the desired Testing Distribution profile
-4. Copy it from the URL. `https://my.appcircle.io/distribute/detail/123456f-7d89-4545-5454-123456789abc`
-5. Then the Testing Distribution profile ID is => `123456f-7d89-4545-5454-123456789abc`
-
-After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
-- `ORG_B_PERSONAL_API_TOKEN`
-- `ORG_B_TEST_DIST_PROFILE_ID`
-
-<PatDanger />
-
-<EnvGroupSetCaution />
