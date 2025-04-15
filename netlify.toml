@@ -101,17 +101,42 @@ status = 301
 
 [[redirects]]
 from = "/account/my-organization/integrations/notification-integrations/slack"
-to = "/account/my-organization/notifications/slack"
+to = "/account/my-organization/notifications/slack-notifications"
 status = 301
 
 [[redirects]]
 from = "/account/my-organization/integrations/notification-integrations/slack/appcircle-bot-for-slack"
-to = "/account/my-organization/notifications/slack/appcircle-bot-for-slack"
+to = "/account/my-organization/notifications/slack-notifications"
 status = 301
 
 [[redirects]]
 from = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
-to = "/account/my-organization/notifications/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/slack/appcircle-bot-for-slack"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/slack/appcircle-bot-for-slack"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/slack"
+to = "/account/my-organization/notifications/slack-notifications"
 status = 301
 
 [[redirects]]
@@ -162,11 +187,6 @@ status = 301
 [[redirects]]
 from = "/account/email-connection"
 to = "/account/my-organization/notifications/email-connection"
-status = 301
-
-[[redirects]]
-from = "/account/slack/appcircle-bot-for-slack"
-to = "/account/my-organization/notifications/slack/appcircle-bot-for-slack"
 status = 301
 
 [[redirects]]
@@ -225,11 +245,6 @@ to = "/account/my-account/sign-up-login"
 status = 301
 
 [[redirects]]
-from = "/account/slack/slack-notifications"
-to = "/account/my-organization/notifications/slack/slack-notifications"
-status = 301
-
-[[redirects]]
 from = "/account/sso-login/okta-saml"
 to = "/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration"
 status = 301
@@ -237,11 +252,6 @@ status = 301
 [[redirects]]
 from = "/account/my-organization/sso-providers-configuration/single-sign-on"
 to = "/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration"
-status = 301
-
-[[redirects]]
-from = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
-to = "/account/my-organization/notifications/slack/slack-notifications"
 status = 301
 
 [[redirects]]
@@ -619,6 +629,11 @@ status = 301
 [[redirects]]
 from = "/enterprise-app-store/store-settings"
 to = "/enterprise-app-store/portal-settings"
+status = 301
+
+[[redirects]]
+from = "/enterprise-app-store/enterprise-app-store-profile#share"
+to = "/enterprise-app-store/enterprise-app-store-profile#links"
 status = 301
 
 [[redirects]]
