@@ -69,6 +69,14 @@ The following table details the OAuth permissions required for Appcircle to conn
 | Project and team | Read              | Provides read access to project and team-related information, such as project details and team memberships.                                                                            |
 | Notifications    | Read              | Grants read-only access to notification settings.                                                                                                                                      |
 
+:::important Third-party application access via OAuth
+To successfully connect your Azure DevOps Cloud Repository with an Appcircle Build Profile, the “**Third-party application access via OAuth**” policy must be enabled in your Azure DevOps organization settings.
+
+This setting allows Appcircle to authenticate and interact with your repositories securely. If this policy is turned off, Appcircle will be unable to establish a connection, and repository integration will fail.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6017-azure.png' />
+
 ## Connecting to Azure DevOps Server Repository
 
 The overall process is similar to a private repository connection through SSH, but Appcircle allows you to directly connect through the Azure DevOps Server URL.
