@@ -51,10 +51,6 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 The `$AC_BADGE_CORNER_SHIFT` has a default starting value. If this value is increased too much (e.g., beyond 80% of the image size), the badge may shift too far toward the bottom-left and become partially or completely invisible.
 
-|Corner Shift 5|Corner Shift 50|
-|--------|------|
-|![Corner Shift 5](https://cdn.appcircle.io/docs/assets/BE5892-shift5.png)|![Corner Shift 50](https://cdn.appcircle.io/docs/assets/BE5892-shift50.png)|
-
 :::
 
 :::info
