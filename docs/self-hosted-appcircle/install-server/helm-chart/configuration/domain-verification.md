@@ -48,3 +48,9 @@ To enable or disable domain verification, follow these steps:
 3. Upgrade the Appcircle server release with new `values.yaml` settings.
 
    <ApplyHelmConfigurationChanges />
+
+3. Restart the Keycloak stateful set to apply new changes.
+
+   ```bash
+   kubectl rollout restart statefulset appcircle-server-auth-keycloak -n appcircle
+   ```
