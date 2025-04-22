@@ -170,3 +170,40 @@ end
 ```
 
 Now, the `run_command_simple()` function will execute your customized `xcodebuild` command.
+
+### How can I resolve the `Outputting Keys and Certificates` signing error?
+
+Since Appcircle does not have direct access to self-hosted environments, the default versions installed on runners may also have user-generated updates. This error is caused by using **OpenSSL** by default instead of **LibreSSL**. If **OpenSSL** is used instead of **LibreSSL** for any reason in your self-hosted environments, you will get an **error** like the one below.
+
+```
+`parse_certificate': Error outputting keys and certificates (RuntimeError)
+C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:355:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
+Could not find certificate from <stdin>
+Error: Error outputting keys and certificates
+C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:355:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
+```
+
+:::info Cloud Customers
+
+All packages running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the packages used on runners is **LibreSSL**. In Appcircle Cloud environments, the **LibreSSL** 3.3.6 version on macOS Sonoma and the **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documentation.
+
+However, issues may still occur depending on how the environment is used. If you are working in the cloud environment and the [**Custom Scripts**](/workflows/common-workflow-steps/custom-script) you use can **change** or **update** the packages in our environments. If cloud users encounter such **signing errors**, it is recommended to check the **Custom Scripts** used. You can use the example `bash` script below.
+
+```bash
+export PATH="/usr/bin:$PATH"
+
+```
+
+Appcircle's macOS environments use `LibreSSL` by default. If this default value is changed in any way, the global path must be updated with the script above and `LibreSSL` must be set as default again. Otherwise, the system will try to find and sign `OpenSSL` first while the system is running, so if there is a depricated method, it may cause an error during signing.
+
+**Note:** Please note, the example script given above should be run before the **Xcodebuild for Devices** step. Otherwise you may keep getting errors during signing.
+
+:::
+
+Although **LibreSSL** and **OpenSSL** are alternatives to each other, there are differences between them. **LibreSSL** comes by default with macOS machines and is managed by **Apple**. For this reason, since Appcircle does not have direct access to self-hosted environments, some user-side work on runners can replace **LibreSSL** with **OpenSSL** or update their versions.
+
+The reason for this **error** is that the **encryption algorithm** in the new versions of **OpenSSL** has been changed. In **OpenSSL** versions **3 and above**, the algorithm named **RC2** is marked as **legacy**. When you encounter this error, you need to change the **OpenSSL** package on the runners receiving the error to **LibreSSL**. 
+
+The **RC2 algorithm** is just one example. There are other algorithms and ciphers that **OpenSSL** has deprecated. Users may encounter other errors with certificates containing other algorithms, such as **SHA1**. This depends on the encryption algorithm of the certificate the user is using.
+
+For more information about **legacy algorithms**, please visit the [**OpenSSL**](https://docs.openssl.org/3.0/man7/OSSL_PROVIDER-legacy/) documentation.
