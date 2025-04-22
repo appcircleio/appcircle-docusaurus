@@ -7,7 +7,6 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
-
 In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-start.png' />
@@ -45,9 +44,9 @@ Optimize your application management with detailed reports. Utilize the App Shar
 
 ### No files or multiple files were received from autodistribute;
 
-A successful distribution depends on a correctly signed binary. Please check if the [signing configuration](/build/build-process-management/build-profile-configuration#signing-configuration) is correct.
+A successful distribution depends on a correctly signed binary. Please check if the [signing configuration](/build/build-process-management/configurations#signing-configuration) is correct.
 
-You can also check the list of the [generated build artifacts](/build/post-build-operations/after-a-build) to confirm the output. In Android, you can also check the `ac_post_process_output.json` file in the build artifacts to see if the APKs are signed or not.
+You can also check the list of the [generated build artifacts](/build/build-process-management#binary-actions) to confirm the output. In Android, you can also check the `ac_post_process_output.json` file in the build artifacts to see if the APKs are signed or not.
 
 In Android, please also check if gradle sign is being used for the selected build variant. If gradle sign works alongside with Appcircle signing, you will receive multiple APKs.
 

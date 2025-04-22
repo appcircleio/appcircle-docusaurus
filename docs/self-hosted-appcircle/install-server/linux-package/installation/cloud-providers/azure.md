@@ -76,11 +76,23 @@ You should fill out the required fields as per your needs. Please follow the ste
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-3-create-vm-1.png' />
 
+- Select the "Standard" option as the security type.
+
+:::note
+The Appcircle server currently **only supports the "Standard" option** as a security type, and other security types are not planned for the short term.
+:::
+
 - In order to select the Appcircle server image, click on the "See all images" button and search for the Appcircle server image.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-4-create-vm-2-see-all-images.png' />
 
 - Search for "Appcircle" in the "Marketplace" tab and click on the "Select" button for the server image and select "Plan BYOL - x64 Gen2".
+
+:::info  
+Although we recommend selecting the **Gen2** image for the Appcircle server by default, if you don’t need any additional features such as Secure Boot or TPM, you can also select the **Gen1** image, and it will be compatible. Both options can be used for the Appcircle server.
+
+However, please note that you cannot change the generation after the VM is created. For a detailed comparison between Gen1 and Gen2, visit the [Microsoft documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/generation-2).  
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-5-create-vm-3-select-appcircle-image.png' />
 
@@ -93,6 +105,12 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-11-machine-type.png' />
 
 - We highly recommend changing the username to `ubuntu`.
+
+:::warning  
+We strongly recommend using the default username `ubuntu` for the Appcircle server setup since the VM image and its associated documentation are configured with the username `ubuntu`.
+
+If you choose to change the username, please be aware that **[additional steps](#custom-username)** are required **after the image is created**.
+:::
 
 - Select an existing key pair or click on the "Generate new key pair" button if you don't have any on Azure. In the sample configuration, we will use an existing key stored in Azure by selecting from the dropdown menu.
 
@@ -126,6 +144,12 @@ By default, `80`, `443`, and `22` ports are allowed on the firewall.
 If you want to send `ping` requests to the instance for health check purposes, you should add an inbound port rule with the protocol "ICMPv4" from the networking tab of the virtual machine.
 :::
 
+:::info
+If you plan to use the Appcircle server over HTTP, please note that TCP port `6379` is required for proper functionality.
+
+Depending on your deployment, ensure that TCP port `6379` is open for inbound traffic.
+:::
+
 ## Configuring the Appcircle Server Instance
 
 ### Connect via SSH
@@ -142,14 +166,14 @@ After you have successfully created a virtual machine from the Appcircle server 
 The `ssh` command below is for macOS and Linux. The other commands are the same after you connect to the instance.
 :::
 
-Using **private key** and **IP address**, you can connect to the instance with SSH as seen below.
+Using the **private key** and **IP address**, you can connect to the instance with SSH as seen below.
 
 ```bash
 ssh -i "/path/to/your/private/key" ubuntu@ip-address-of-the-instance
 ```
 
 :::info
-The default user for the Appcircle server image is `ubuntu` if you have followed the [Creating Virtual Machine](#creating-an-appcircle-server-from-the-server-image) section above.
+The **default user** for the Appcircle server image is **`ubuntu`** if you have followed the [Creating Virtual Machine](#creating-an-appcircle-server-from-the-server-image) section above. If you used a custom username while creating the VM, please use that user for the following steps.
 
 So, let's assume that your instance IP address is `34.205.139.17` and your private SSH key path is `/home/spacetech/.ssh/id_rsa`.
 
@@ -186,6 +210,45 @@ The SSH command may ask you to add this server to the list of known hosts. You s
 :::
 
 ### Configure Server
+
+:::warning
+
+#### Custom Username
+
+If you have changed the username of the VM during its creation instead of using the default one in the document (`ubuntu`), these are the additional steps you need to follow before server configuration:
+
+1. Create a directory at your desired location for the Appcircle server. For instance, `/app`.
+
+```bash
+sudo mkdir /app
+```
+
+2. Move the `appcircle-server` directory to the new location.
+
+```bash
+sudo mv /home/ubuntu/appcircle-server /app/
+```
+
+3. Update the ownership of the directory with current the `$USER`.
+
+```bash
+sudo chown -R $USER:$USER /app
+```
+
+4. Add the current user to the `docker` group for the Docker runtime.
+
+```bash
+sudo usermod -a -G docker $USER
+```
+
+5. In order to activate group change, log out and re-login to the instance using an SSH connection or run the command below to go on with the current terminal session.
+
+```bash
+sudo chown $USER /var/run/docker.sock
+```
+
+Keep in mind that, **for all subsequent configuration steps**, the `appcircle-server` directory will be located at your new location, for instance `/app`, instead of the default `$HOME` directory.
+:::
 
 <ConfigureServer />
 

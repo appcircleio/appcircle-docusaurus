@@ -48,4 +48,17 @@ You can find Android specific steps in the Publish Flow under the headings below
 - Ensures your app release meets all necessary requirements and obtains approval from Google Play.
 - Automatically verifies the status of your app, reducing the need for manual monitoring.
 
+## [Distribute to Track](/publish-integrations/android-publish-integrations/distribute-to-track)
+
+- Allows you to seamlessly release your apps to different testing or production tracks.
+- This functionality ensures that new versions are rolled out in a controlled manner, enabling better testing, feedback collection, and staged releases.
+- By leveraging different tracks, developers can ensure better app stability, collect valuable user feedback, and optimize the rollout process before reaching a wider audience.
+
+## [Update Metadata on Google Play Console](/publish-integrations/android-publish-integrations/update-metadata-on-google-play)
+
+- Automatically updates your app’s metadata and screenshots on the Google Play Console as part of your release pipeline.
+- Ensures consistency across app listings by syncing the latest metadata and visual assets.
+- Saves time and minimizes human error by eliminating the need for manual metadata updates.
+
+
 Appcircle's integration tools are designed to simplify and automate the publishing process, allowing you to focus on developing great apps while we handle the distribution.

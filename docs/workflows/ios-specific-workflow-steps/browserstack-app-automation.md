@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # BrowserStack App Automate (XCUI)
 
-Run your [**XCUI**](https://developer.apple.com/documentation/xctest/user_interface_tests) tests on [**BrowserStack**](https://www.browserstack.com) App Automate. This step allows you to send test IPA's to the **BrowserStack** dashboard and run your test on it.
+Run your [**XCUI**](https://developer.apple.com/documentation/xctest) tests on [**BrowserStack**](https://www.browserstack.com) App Automate. This step allows you to send test IPA's to the **BrowserStack** dashboard and run your test on it.
 
 ### Prerequisites
 
@@ -37,7 +37,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
-We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
 
 :::
 
