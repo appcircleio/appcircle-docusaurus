@@ -5,6 +5,9 @@ tags: [security, domain, verify]
 sidebar_position: 95
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_spacetech-example-info.mdx';  
 import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_restart-appcircle-server.mdx';  
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_appcircle-server-downtime-caution.mdx';  
@@ -49,8 +52,21 @@ To enable or disable domain verification, follow these steps:
 
    <ApplyHelmConfigurationChanges />
 
-3. Restart the Keycloak stateful set to apply new changes.
+4. Restart the Keycloak stateful set to apply new changes.
 
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
    ```bash
    kubectl rollout restart statefulset appcircle-server-auth-keycloak -n appcircle
    ```
+  </TabItem>
+  <TabItem value="openshift" label="OpenShift">
+   ```bash
+   oc rollout restart statefulset appcircle-server-auth-keycloak -n appcircle
+   ```
+  </TabItem>
+</Tabs>
+
+:::caution
+Restarting the Keycloak stateful set affects active sessions and causes a redirection to the login page for the end-users to log in again. After re-login, the users can go on with their operations as usual from where they left off.
+:::
