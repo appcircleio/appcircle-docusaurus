@@ -1,30 +1,36 @@
 ---
 title: Azure Bot for Swiftlint
 description: Integrate Azure DevOps Bot with SwiftLint to analyze and report details under PRs. Automate builds with configured triggers.
-tags: [ios, build, test, workflow, step]
+tags: [ios, azure, workflow, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # Azure Bot for Swiftlint
 
-With the Azure DevOps Bot for Swiftlint integration, you can analyze your [**SwiftLint**](https://github.com/realm/SwiftLint/) and post the report details under the opened PR. You can also modify the PR status.
+With the **Azure DevOps Bot for Swiftlint** integration, you can analyze your [**SwiftLint**](https://github.com/realm/SwiftLint/) and post the report details under the opened PR. You can also modify the PR status.
 
 :::info
+
 This component will work in builds that are automatically triggered by a configured trigger. To achieve this, you need to open a PR and set up the trigger. Further information for **Trigger Build**, please follow the [documantation](/build/build-process-management/build-manually-or-with-triggers/).
+
 :::
 
 :::caution
+
 If there are warnings or errors in the SwiftLint report, this workflow step will fail and stop the build.
+
 :::
 
 :::danger
+
 For this component to work, a PR must be opened, and a trigger must be set up based on this PR. If the build is triggered manually, the component will not function.
+
 :::
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **Swiftlint** workflow step, along with their respective reasons, are listed in the table below.
+Before running the **Azure Bot for Swiftlint** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
@@ -34,14 +40,16 @@ The workflow steps that need to be executed before running the **Swiftlint** wor
 
 ### Input Variables
 
-This component needs some parameters to operate. You can find the required parameters and their detailed descriptions in the list below.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotInput.png' />
 
-:::danger
-**Do not hard-code sensitive variables, such as tokens and API keys, directly to the parameters in the step.**
+:::danger Sensitive Variables
 
-We recommend using [Environment Variables](/environment-variables/) groups for such sensitive variables.
+Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
+
 :::
 
 | Variable Name                            | Description                         | Status           |
@@ -54,6 +62,8 @@ We recommend using [Environment Variables](/environment-variables/) groups for s
 | `$AC_AZURE_API_KEY`             | Specifies the API key for Azure DevOps. Refer to [this document](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) for details on how to obtain it. | Required |
 | `$AC_DOMAIN_NAME`               | Specifies the domain name of Appcircle. The default value is `my.appcircle.io`, which is the domain for Appcircle Cloud. | Required |
 | `$AC_AZURE_API_VERSION`               | Specifies the version of the Azure API, for example: `7.1`. Refer to the [REST API versioning](https://learn.microsoft.com/en-us/azure/devops/integrate/concepts/rest-api-versioning) document for more information. | Required |
+
+---
 
 To access the source code of this component, please use the following link:
 

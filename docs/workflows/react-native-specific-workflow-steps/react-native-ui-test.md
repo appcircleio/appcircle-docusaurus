@@ -1,7 +1,7 @@
 ---
 title: React Native UI Test
 description: Learn how to run UI tests with Detox for your React Native projects easily with Appcircle, ensuring high-quality code and improved app performance.
-tags: [react native, mobile, workflow, step, ui, test, ui test, detox]
+tags: [react native, mobile, workflow, step, test, ui test, detox]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -16,13 +16,13 @@ To generate detailed Test Reports. Please visit our [Test Reports Component docu
 
 :::info Java Version
 
-The default Java version in Appcircle's build stacks is **Java 11**. If your project requires a **higher** or **lower** Java version, please see the [**How to Change Java Version**](/workflows/common-workflow-steps/custom-script#how-to-change-java-version) document. On the other hand, you can see all details for build stacks both iOS and Android with this [documentation](/infrastructure).
+The default Java version in Appcircle's build stacks is **Java 17**. If your project requires a **higher** or **lower** Java version, please use the [**Select Java Version**](/workflows/common-workflow-steps/select-java-version) component. On the other hand, you can see all details for build stacks both iOS and Android with this [documentation](/infrastructure).
 
 :::
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running the **React Native UI Test** workflow step in both iOS and Android platforms, along with their respective reasons, are listed in the table below.
+Before running the **React Native UI Test** step, you must complete certain prerequisites, as detailed in the table below:
 
 #### For iOS
 
@@ -52,7 +52,7 @@ If your **CocoaPods** dependencies are **embedded** in the project, you do not n
 
 :::danger React Native UI Test for Android
 
-For Appcircle **Cloud**, you need to use **Intel Pool** to run your UI tests on the Android platform. Since **M1 Pool** is based on **Apple Silicon's virtualization** technology, it does not support running Android emulators. If your organization has **self-hosted pools**, you can choose and use any pool that has bare-metal machines or VMs that support nested virtualization. For more information, please follow the [**Build Configuration**](/build/build-process-management/build-profile-configuration) and [**Android Build Infrastructure**](/infrastructure/android-build-infrastructure) documentations.
+For Appcircle **Cloud**, you need to use **Appcircle Linux Pool (x86_64)** to run your UI tests on the Android platform. Since **Appcircle Standard macOS Pool (arm64)** is based on **Apple Silicon's virtualization** technology, it does not support running Android emulators. If your organization has **self-hosted pools**, you can choose and use any pool that has bare-metal machines or VMs that support nested virtualization. For more information, please follow the [**Build Configuration**](/build/build-process-management/configurations) and [**Android Build Infrastructure**](/infrastructure/android-build-infrastructure) documentations.
 
 :::
 
@@ -77,13 +77,13 @@ If any workflow steps fail, Appcircle automatically skips the next steps. Howeve
 
 ### Input Variables
 
-This step contains different variables. It needs these variables to work. The table below gives explanations of these variables.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/uiInputNew.png' />
 
 | Variable Name                | Description                                                                                                                                                                                                                                                                                                                                 | Status   |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step.                                                                                                                                                                 | Required |
+| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps#git-clone) step.                                                                                                                                                                 | Required |
 | `$AC_OUTPUT_DIR`             | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                                                                                                       | Required |
 | `$AC_RN_DETOX_CONFIGURATION` | Specify the detox configuration name to used when building and running the tests.                                                                                                                                                                                                                                                           | Required |
 | `$AC_RN_DETOX_TEST_ARGS`     | Specify the Detox extra arguments to add the test command. The arguments will be executed by appending `detox test --configuration<configname>` to the end of the command. The default value is `--take-screenshots all` For more information, see the Detox test [CLI options](https://wix.github.io/Detox/docs/19.x/api/detox-cli/#test). | Optional |
@@ -140,6 +140,8 @@ The outputs resulting from the operation of this component are as follows:
 | Variable Name         | Description                                                                                                  |
 | --------------------- | ------------------------------------------------------------------------------------------------------------ |
 | `AC_TEST_RESULT_PATH` | The output path for the `e2e-report.xml` file. This environment variable can be utilized in subsequent steps. |
+
+---
 
 To access the source code of this component, please use the following link:
 

@@ -1,7 +1,7 @@
 ---
 title: Resign Binary
 description: Learn how to resign your iOS application binaries within Appcircle to change provisioning profiles or app entitlements.
-tags: [iOS, resigning, provisioning profiles, entitlements, faq]
+tags: [ios, resigning, provisioning profiles, entitlements, faq]
 sidebar_position: 6
 ---
 
@@ -27,6 +27,12 @@ When you need to distribute an iOS application to different environments (like Q
 
 - **Field**: [`CFBundleDisplayName`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundledisplayname)
 - **Description**: The user-visible name for the bundle, used by Siri and visible on the iOS Home screen.
+
+:::caution Changing Display Name
+
+Please note that if the project `info.plist` file does **not** have a `CFBundleDisplayName` parameter, changing the display name during resigning will **not** work.
+
+:::
 
 #### Version
 

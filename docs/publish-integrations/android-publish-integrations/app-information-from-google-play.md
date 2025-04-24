@@ -26,7 +26,7 @@ To run the **App Information from Google Play** step, you need to have previousl
 
 You also need to have a Google Service Account and its key as a JSON file. Please refer to the following document for more information about service accounts:
 
-<ContentRef url="/account/my-organization/integrations/credentials/adding-google-play-service-account">
+<ContentRef url="/account/my-organization/security/credentials/adding-google-play-service-account">
   Adding Google Play Service Accounts
 </ContentRef>
 

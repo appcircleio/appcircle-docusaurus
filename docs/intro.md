@@ -22,7 +22,7 @@ Build.<br/>Test.<br/>Distribute.
 </h5>
 <p>Make better, safer mobile app releases with Appcircle.</p>
 </div>
-<div className="intro-image"><img src="https://cdn.appcircle.io/docs/assets/docs-intro-header.png" /></div>
+<div className="intro-image"><img src="https://cdn.appcircle.io/docs/assets/docs-intro-header.png" alt="Intro Header" /></div>
 </div>
 
 <section class="intro-cards">
@@ -112,7 +112,7 @@ Build.<br/>Test.<br/>Distribute.
 </div>
 
       <div class="enterprise-app-store">
-            <div className="feature-card-image"><img src="https://cdn.appcircle.io/docs/assets/feature-card-eas.png" /></div>
+            <div className="feature-card-image"><img src="https://cdn.appcircle.io/docs/assets/feature-card-eas.png" alt="Feature Card" /></div>
             <div className="feature-card-info">
                   <h4>Create your own app store.</h4>
                   <p>Some apps are not meant to be on App Stores. That’s why we’re introducing Enterprise App Store. A way for you to distribute your internal apps.</p>
@@ -123,7 +123,7 @@ Build.<br/>Test.<br/>Distribute.
                   </a>
       </div>
       <div class="self-hosted-runners">
-            <div className="feature-card-image"><img src="https://cdn.appcircle.io/docs/assets/feature-card-self-hosted-runners.png" /></div>
+            <div className="feature-card-image"><img src="https://cdn.appcircle.io/docs/assets/feature-card-self-hosted-runners.png" alt="Feature Card Self Hosted" /></div>
             <div className="feature-card-info">
                   <h4>Self-Hosted Appcircle</h4>
                   <p>Want to use your own build machines? Just install our runner scripts to the machines you want to use for your iOS / Android builds.</p>
@@ -140,11 +140,11 @@ Build.<br/>Test.<br/>Distribute.
 
 <section class="community">
 <a class="slack" href="https://slack.appcircle.io">
-<img src="https://cdn.appcircle.io/docs/assets/slack-logo.png" />
+<img src="https://cdn.appcircle.io/docs/assets/slack-logo.png" alt="Slack Logo" />
 <span>Slack Community</span>
 </a>
 <a class="videos" href="https://www.youtube.com/c/Appcircle">
-<img src="https://cdn.appcircle.io/docs/assets/youtube-logo.png" />
+<img src="https://cdn.appcircle.io/docs/assets/youtube-logo.png" alt="Youtube Logo" />
 <span>How-To Videos</span>
 </a>
 
@@ -156,7 +156,7 @@ Build.<br/>Test.<br/>Distribute.
 </a>
 
 <a class="contact-us" href="https://appcircle.io/contact">
-<img src="https://cdn.appcircle.io/docs/assets/contact-us-logo.png" />
+<img src="https://cdn.appcircle.io/docs/assets/contact-us-logo.png" alt="Contact Us Logo" />
 <span>Contact Us</span>
 </a>
 

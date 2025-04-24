@@ -1,0 +1,11 @@
+To apply configuration changes to the Appcircle server installation, update the Helm release with the new configuration using the following command:
+
+:::info
+The namespace, release name, and Helm repository name in the example command below are written for the example installation document. If you have changed these values while installing the Appcircle server, adjust the values if required. 
+:::
+
+```bash
+helm upgrade appcircle-server appcircle/appcircle \
+  -n appcircle \
+  -f values.yaml
+```

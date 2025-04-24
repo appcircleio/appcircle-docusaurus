@@ -4,11 +4,11 @@ sidebar_label: Testing Distribution
 description: Enhance powerful action to distribute your builds to appcircle
 tags:
   [
-    testing-distribution,
+    testing distribution,
     ipa distribution,
     apk distribution,
     binary distribution,
-    github-marketplace,
+    github marketplace,
   ]
 sidebar_position: 1
 ---
@@ -24,8 +24,8 @@ https://github.com/marketplace/actions/appcircle-testing-distribution
 
 **Compatible Agents:**
 
-- macos-14 (arm64)
-- Ubuntu-22.04
+- macOS 14 (arm64)
+- Ubuntu 22.04 (x86_64)
 
 :::caution
 Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-hosted** support will be available in future releases.

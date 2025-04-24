@@ -1,7 +1,7 @@
 ---
 title: Overview & Concepts
 description: Overview of self-hosted Appcircle and related concepts
-tags: [self-hosted, overview, concepts]
+tags: [self-hosted, overview, concepts, kubernetes, openshift, helm, docker, podman]
 sidebar_position: 1
 ---
 
@@ -23,7 +23,7 @@ See [pricing](https://appcircle.io/pricing) and feature comparison table for det
 
 :::
 
-## Appcircle Standalone Architecture
+## Docker/Podman Standalone Architecture
 
 We generally recommend a standalone approach by deploying a single node environment for the Appcircle server to reduce the complexity a little further.
 
@@ -34,13 +34,33 @@ When we look at self-hosted Appcircle deployment as a whole, we will see below a
 To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/be-3008-appcircle-topology.png). It will open the diagram in new browser tab.
 
 :::tip
-You can see all external network access details on the [Network Access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access) page.
+You can see all external network access details on the [Network Access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access) page.
 :::
 
-## Appcircle DMZ Architecture
+## Docker/Podman Architecture With DMZ Support
 
-If you plan to use Appcircle DMZ Architecture, the Appcircle DMZ Architecture follows this deployment structure:
+If you plan to use the Enterprise App Store and Testing Distribution modules isolated from the internal network in which these modules are only exposed to the external networks, you can use Docker/Podman Architecture in DMZ formation.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-appcircle-dmz-topology.png' />
 
-For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/configure-server/advanced-configuration/store-dist-dmz) document.
+For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) document.
+
+## Kubernetes/OpenShift Architecture Using Helm Chart
+
+In addition to the standalone and DMZ architectures, you can deploy Appcircle using the Helm chart for Kubernetes/OpenShift environments. This method allows for greater scalability and management flexibility.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-5525-k8s-ocp-arch-diagram.png' />
+
+For detailed instructions on installing and configuring Appcircle using the Helm chart, refer to the relevant Helm chart installation documentation for [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes) or [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift). These documentation pages include steps for setting up Helm, configuring `values.yaml`, and deploying the Appcircle server.
+
+### Advantages
+
+- **High Availability:** Deploying on Kubernetes/OpenShift ensures high availability through automated failover and load balancing.
+- **Scalability:** Supports high traffic and large-scale applications with horizontal scaling based on load, ensuring optimal performance. Easily scale your deployment by adding or removing nodes in the Kubernetes/OpenShift cluster.
+- **Fault Tolerance:** Kubernetes/OpenShift can handle node failures and automatically reschedule workloads to maintain application uptime.
+
+### Disadvantages
+
+- **Complexity:** Requires familiarity with Kubernetes/OpenShift and Helm, which can be complex to learn and manage.
+- **Resource Requirements:** May require more resources compared to a single-node deployment, including more compute power and storage.
+- **Operational Overhead:** Maintaining and monitoring a Kubernetes/OpenShift cluster can add operational overhead.

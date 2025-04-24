@@ -19,11 +19,13 @@ Below are the prerequisite steps necessary for this operation, accompanied by th
 
 To send an app from Appcircle to Microsoft Intune, you need to register an application with the Microsoft Identity Platform and provide this application's credentials.
 
-<ContentRef url="/account/my-organization/integrations/credentials/adding-microsoft-intune-api-key">
+<ContentRef url="/account/my-organization/security/credentials/adding-microsoft-intune-api-key">
   Adding Microsoft Intune API Credentials
 </ContentRef>
 
-After completing the integration with Microsoft Intune, go to [Publishing Settings](/publish-module/publish-settings). In the [Store Credential](/publish-module/publish-settings#store-credentials) section, select the Microsoft Intune Credential you integrated, from the drop-down list.
+After completing the integration with Microsoft Intune, go to [Publishing Settings](/publish-module/publish-settings). In the [Store Credential](/publish-module/publish-settings#store-credentials) section, select the Microsoft Intune Credential you integrated, from the drop-down list. Then, click on the **Save** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5766-Publish-intune-settings2.png' />  
 
 ### Input Variables
 

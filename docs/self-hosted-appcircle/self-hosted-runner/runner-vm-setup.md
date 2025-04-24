@@ -76,7 +76,21 @@ Create VMs root folder in tart home.
 mkdir $HOME/.tart/vms
 ```
 
-### 3. Configure Power Settings
+### 3. Install Pigz
+
+Pigz is an acronym for **P**arallel **I**mplementation of **GZ**ip, which is a fully functional replacement for `gzip` that helps us compress and extract files faster and more stably.
+
+```bash
+brew install pigz
+```
+
+When installation complete, test:
+
+```bash
+pigz --version
+```
+
+### 4. Configure Power Settings
 
 Configuring power settings on macOS to prevent the system from entering sleep mode is vital when deploying it as an Appcircle runner.
 
@@ -93,7 +107,7 @@ sudo pmset -a disksleep 0
 sudo pmset -a displaysleep 0
 ```
 
-### 4. Configure Power Failure Settings
+### 5. Configure Power Failure Settings
 
 Power failure settings allow a Mac to restart automatically after a power outage or failure. Activating this on a Mac ensures the host comes back online automatically if power is lost, avoiding downtime.
 
@@ -157,18 +171,27 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
-
-<HostCaution512GB/>
+  <TabItem value="240918" label="240918">
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_240918.tar.gz
 ```
 
   </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_241227.tar.gz
+```
+
+  </TabItem>
 </Tabs>
 
+:::tip
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
+:::
+
+<HostCaution512GB/>
 
 ---
 
@@ -190,14 +213,20 @@ md5 macOS_240514.tar.gz
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 md5 macOS_240918.tar.gz
 ```
 
   </TabItem>
+  <TabItem value="241227" label="241227" default>
 
+```bash
+md5 macOS_241227.tar.gz
+```
+
+  </TabItem>
 </Tabs>
 
 After a couple of minutes later you should see the output below.
@@ -218,10 +247,17 @@ MD5 (macOS_240514.tar.gz) = 8524abc65668a084589e79f214a9b281
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 MD5 (macOS_240918.tar.gz) = aeb6ff4b655b04fa47fb45e2caf09792
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+MD5 (macOS_241227.tar.gz) = 505d3bd11088c193fd9b828cbcf95df0
 ```
 
   </TabItem>
@@ -247,10 +283,17 @@ mkdir -p $HOME/.tart/vms/macOS_240514
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 mkdir -p $HOME/.tart/vms/macOS_240918
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+mkdir -p $HOME/.tart/vms/macOS_241227
 ```
 
   </TabItem>
@@ -274,10 +317,17 @@ tar -zxf macOS_240514.tar.gz --directory $HOME/.tart/vms/macOS_240514
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 tar -zxf macOS_240918.tar.gz --directory $HOME/.tart/vms/macOS_240918
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+pigz -cvdp 4 macOS_241227.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_241227
 ```
 
   </TabItem>
@@ -303,10 +353,17 @@ du -sh $HOME/.tart/vms/macOS_240514
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 du -sh $HOME/.tart/vms/macOS_240918
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+du -sh $HOME/.tart/vms/macOS_241227
 ```
 
   </TabItem>
@@ -332,10 +389,17 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_240918.tar.gz
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_241227.tar.gz
 ```
 
   </TabItem>
@@ -363,10 +427,17 @@ md5 xcodes_240514.tar.gz
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 md5 xcodes_240918.tar.gz
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+md5 xcodes_241227.tar.gz
 ```
 
   </TabItem>
@@ -390,10 +461,17 @@ MD5 (xcodes_240514.tar.gz) = e3edc40c9b6dda91530d8a1f8cf456bc
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 MD5 (xcodes_240918.tar.gz) = bb26c0070bbd1a8ed23fe59b87f0a144
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+MD5 (xcodes_241227.tar.gz) = ee312f6077b9a09a5563d57e50bf53f8
 ```
 
   </TabItem>
@@ -425,10 +503,17 @@ tar -zxf xcodes_240514.tar.gz --directory $HOME/images
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 tar -zxf xcodes_240918.tar.gz --directory $HOME/images
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+pigz -cvdp 4 xcodes_241227.tar.gz | tar xvf - --directory $HOME/images
 ```
 
   </TabItem>
@@ -463,7 +548,7 @@ It may take a little to complete. Be patient and wait return of command.
 > - `14.3.x`
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 **Note:** This macOS VM image is the Sonoma (`14.5`) stack and comes with the Xcode versions below:
 
@@ -475,6 +560,31 @@ It may take a little to complete. Be patient and wait return of command.
 > - `15.1.x`
 > - `15.0.x`
 > - `14.3.x`
+
+:::caution
+
+This stack has the `beta` version of Xcode that was included at the time the macOS image was built.
+
+So, if you need to publish iOS apps to the App Store, you should upgrade to the **next** stack that has the latest GA versions of Xcode `16.x.x`.
+
+Otherwise, you might get the error below when you try to publish iOS apps to App Store.
+
+> _... Unsupported SDK or Xcode version. Your app was built with an SDK or version of Xcode that isn't supported. Although you can use beta versions of SDKs and Xcode to build and upload apps to App Store Connect, you need to use the latest Release Candidates (RC) for SDKs and Xcode to submit the app. ..._
+
+If you're currently not ready for Xcode `16.x.x` migration, you can go on using the previous stack until you migrate your iOS apps to newer Xcode versions.
+
+:::
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+**Note:** This macOS VM image is the Sonoma (`14.5`) stack and comes with the Xcode versions below:
+
+| Version | Build |
+| ------- | ----- |
+| 16.2 | `16C5032a` |
+| 16.1 | `16B40` |
+| 16.0 | `16A242d` |
 
   </TabItem>
 </Tabs>
@@ -522,12 +632,19 @@ nohup ./download-runner.sh "240514" &
   </TabItem>
   <TabItem value="240918" label="240918" default>
 
-<HostCaution512GB/>
-
 ```bash
 curl -fsSL -O https://cdn.appcircle.io/self-hosted/download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "240918" &
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+chmod +x download-runner.sh && \
+nohup ./download-runner.sh "241227" &
 ```
 
   </TabItem>
@@ -536,6 +653,8 @@ nohup ./download-runner.sh "240918" &
 :::tip
 If you face any errors while downloading the files, please delete the corrupted file and re-run the command block above.
 :::
+
+<HostCaution512GB/>
 
 It may take some time to complete with respect to your network speed. You can see and follow the logs with the command below.
 
@@ -605,10 +724,17 @@ tart clone macOS_240514 vm01
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 tart clone macOS_240918 vm01
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+tart clone macOS_241227 vm01
 ```
 
   </TabItem>
@@ -620,13 +746,93 @@ It's not recommended to delete the base image (`macOS_YY0M0D`) as it won't save 
 
 In docker terminology, `vm01` and `vm02` will be our docker images. We will configure them separately, persist our changes and then create containers to execute build pipelines. On every build, fresh containers will be used for both runners.
 
+### Configure Runner VM Resources
+
+You can adjust the resource limits for runner VMs based on your needs.
+
+:::info
+By default, our runner images are configured with an 8GB memory limit and 4 CPU cores.
+:::
+
+:::caution
+Total allocated resources (memory, CPU) for all VMs combined, should not exceed host machine's physical capacity for optimal performance.
+:::
+
+#### Set Memory Limits
+
+To configure the memory limit for a VM, run the following command:
+
+   ```bash
+   tart set <vm_name> --memory <size_in_mb>
+   ```
+
+   Replace `vm_name` with your VM's name and `size_in_mb` with the desired memory size in MB. E.g.,
+   > `tart set vm01 --memory 8192` (8GB)
+
+   > `tart set vm01 --memory 16384` (16GB)
+
+:::tip
+Example configurations:
+
+| Host Memory Size | Runner Memory Config. |
+|------------------|-----------------------|
+| 8GB              | 1 x VM with 8GB       |
+| 16GB             | 2 x VM with 8GB       |
+| 16GB             | 1 x VM with 16GB      |
+| 32GB             | 2 x VM with 16GB      |
+:::
+
+#### Set CPU Limits
+
+To configure the number of CPU cores for a VM, run the following command:
+
+   ```bash
+   tart set <vm_name> --cpu <count>
+   ```
+
+   Replace `vm_name` with your VM's name and `count` with the desired number of CPU cores. E.g.,
+   > `tart set vm01 --cpu 4`
+
+   > `tart set vm01 --cpu 8`
+
+:::tip
+To check the total number of CPU cores on your system, use the following command:
+
+```bash
+sysctl -n hw.ncpu
+```
+
+If you have an 8 core CPU according to the command output, you can run 2 VMs and allocate half of the cores to each one, which means 4 cores per VM. Or you can run a single VM using all 8 cores.
+
+Example configurations:
+
+| Host CPU Cores | Runner CPU Config.   |
+|----------------|----------------------|
+| 8              | 2 x VM with 4 Cores  |
+| 8              | 1 x VM with 8 Cores  |
+
+:::
+
+#### Backing Up and Restoring VM Configuration
+
+When recreating VMs or upgrading to a new image, it's important to preserve your custom settings.
+
+1. Before making changes, backup your base VM's configuration file at `~/.tart/vms/<vm_name>/config.json`.
+
+2. After recreating or upgrading the VM, you can either:
+   - Restore the entire configuration:
+     ```bash
+     cp /path/to/your/backup/config.json ~/.tart/vms/<vm_name>/config.json
+     ```
+   - Or, manually set the values again using the `tart set` commands.
+
 ### Configure Base Runner VMs
 
 Be cautious when updating the base VMs (`vm01` and `vm02`). Any changes made on these base VMs are persisted and may affect disk usage, keychain, and cache files on the runner VMs created from them.
 
 :::warning
 
-If you're freshly creating the base VMs, you can ignore this warning. However, if you've already registered runners to your Appcircle server and want to make updates to the base VMs, it's highly recommended to [disable the runner](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-runners.md#monitoring-self-hosted-runners) from the Appcircle dashboard to prevent builds from running on the base VMs.
+If you're freshly creating the base VMs, you can ignore this warning. However, if you've already registered runners to your Appcircle server and want to make updates to the base VMs, it's highly recommended to [disable the runner](/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-runners#monitoring-self-hosted-runners) from the Appcircle dashboard to prevent builds from running on the base VMs.
 
 :::
 
@@ -661,7 +867,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -670,9 +876,19 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.15.1.dmg:ro \
   --disk=$HOME/images/xcode.15.2.dmg:ro \
   --disk=$HOME/images/xcode.15.3.dmg:ro \
-  --disk=$HOME/images/xcode.15.4.dmg:ro \
+  --disk=$HOME/images/xcode.15.4.dmg:ro \
   --disk=$HOME/images/xcode.16.0.dmg:ro \
   --disk=$HOME/images/xcode.16.1.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.16.0.dmg:ro \
+  --disk=$HOME/images/xcode.16.1.dmg:ro \
+  --disk=$HOME/images/xcode.16.2.dmg:ro
 ```
 
   </TabItem>
@@ -970,7 +1186,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
@@ -982,6 +1198,16 @@ screen -d -m tart run vm02 --no-graphics \
   --disk=$HOME/images/xcode.15.4.dmg:ro \
   --disk=$HOME/images/xcode.16.0.dmg:ro \
   --disk=$HOME/images/xcode.16.1.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.16.0.dmg:ro \
+  --disk=$HOME/images/xcode.16.1.dmg:ro \
+  --disk=$HOME/images/xcode.16.2.dmg:ro
 ```
 
   </TabItem>
@@ -1052,10 +1278,18 @@ chmod u+x $HOME/runner1/run.sh
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.5.sh && \
+chmod u+x $HOME/runner1/run.sh
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.6.sh && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -1082,10 +1316,18 @@ chmod u+x $HOME/runner2/run.sh
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.5.sh && \
+chmod u+x $HOME/runner2/run.sh
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.6.sh && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
@@ -1241,7 +1483,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -1253,6 +1495,16 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.15.4.dmg:ro \
   --disk=$HOME/images/xcode.16.0.dmg:ro \
   --disk=$HOME/images/xcode.16.1.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.16.0.dmg:ro \
+  --disk=$HOME/images/xcode.16.1.dmg:ro \
+  --disk=$HOME/images/xcode.16.2.dmg:ro
 ```
 
   </TabItem>
@@ -1295,7 +1547,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="240918" label="240918" default>
+  <TabItem value="240918" label="240918">
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
@@ -1307,6 +1559,16 @@ screen -d -m tart run vm02 --no-graphics \
   --disk=$HOME/images/xcode.15.4.dmg:ro \
   --disk=$HOME/images/xcode.16.0.dmg:ro \
   --disk=$HOME/images/xcode.16.1.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="241227" label="241227" default>
+
+```bash
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.16.0.dmg:ro \
+  --disk=$HOME/images/xcode.16.1.dmg:ro \
+  --disk=$HOME/images/xcode.16.2.dmg:ro
 ```
 
   </TabItem>
@@ -1444,7 +1706,7 @@ So, most probably, your macOS host sleeps when there is no UI interaction, and a
 
 To do that, please configure your power settings on the host machine.
 
-You can re-check the [Configure Power Settings](#3-configure-power-settings) title for power management on the host.
+You can re-check the [Configure Power Settings](#4-configure-power-settings) title for power management on the host.
 
 ### I want to make some configurations to macOS base image but need desktop UI for them
 
