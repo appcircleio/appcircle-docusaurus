@@ -44,7 +44,7 @@ In the **Registered Devices** section of Apple Devices, you can view the devices
 
 :::caution Registered Devices
 
-In order to list your registered devices, the App Store Connect API key must be added to Appcircle. Please follow the related [document](/account/my-organization/integrations/credentials/adding-an-app-store-connect-api-key) to add App Store Connect API key.
+In order to list your registered devices, the App Store Connect API key must be added to Appcircle. Please follow the related [document](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) to add App Store Connect API key.
 
 :::
 
@@ -169,6 +169,14 @@ When you send an invitation to a user, the invitation will be listed in the **In
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-pending.png' />
 
 ### Adding Device by Email
+
+:::caution Edge Browser for Real Devices
+
+Appcircle temporarily installs a verified profile on the device in order to get the UDID of the device via email. Thanks to this profile, the UDID value of the relevant device is saved in your Appcircle account.
+
+Apple does **not** directly and officially support **Edge Browser**. Therefore, if you are using **Edge Browser**, this feature will **not** work as **expected**. Please use **Safari** instead.
+
+:::
 
 - When the link in the e-mail invitation is clicked, you will see a screen like below.
 

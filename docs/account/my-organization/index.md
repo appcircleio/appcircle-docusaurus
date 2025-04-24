@@ -29,7 +29,8 @@ The "My Organization" section is your central hub for managing everything relate
 Current headlines and the actions you can complete are listed below:
 
 - [**Profile and Team**](/account/my-organization/profile-and-team)
-- [**Integrations**](/account/my-organization/integrations)
+- [**Security**](/account/my-organization/security)
+- [**Notifications**](/account/my-organization/notifications)
 - [**Artifacts**](/account/my-organization/artifacts)
 - [**Team Activity Log**](/account/my-organization/profile-and-team/team-activity-log)
 

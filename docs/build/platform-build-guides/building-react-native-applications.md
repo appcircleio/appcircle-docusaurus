@@ -1,5 +1,5 @@
 ---
-title: Building React Native Applications
+title: React Native Applications
 description: You can build your React Native applications in Appcircle for iOS or Android platforms.
 tags: [build, platform build guides, react native, faq]
 sidebar_position: 3
@@ -8,7 +8,7 @@ sidebar_position: 3
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-# Building React Native Applications
+# React Native Applications
 
 You can build your React Native applications in Appcircle for iOS or Android platforms.
 
@@ -32,11 +32,11 @@ Once your build profile is created, click on it and connect your Git repository.
 
 ### Build Configuration for React Native Applications
 
-Build configuration options are very similar to native iOS or Android applications. You can select configuration details, build triggers, signing identities and distribution options.
+Build configuration options are very similar to native iOS or Android applications. You can select configuration details, build triggers, signing identities, and distribution options.
 
 ### Private Modules
 
-If your project uses private modules, don't forget the add necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
+If your project uses private modules, don't forget to add the necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
 <ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
@@ -74,7 +74,7 @@ First, we need to set up a build configuration. Select the configuration from th
 
 ### Sending the Build Status to the Repository Providers
 
-At the bottom of the config tab, you will the **Set Commit Build Status **option.
+At the bottom of the config tab, you will see the **Set Commit Build Status **option.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-ios-build-commit-status.png' />
 
@@ -86,7 +86,7 @@ When this option is enabled, the build status for that commit is shared with the
 
 ### Build Triggers
 
-Triggers, is common for both iOS and Android.
+Triggers is common for both iOS and Android.
 
 Appcircle allows you to trigger builds manually or automatically using build triggers.
 
@@ -154,9 +154,9 @@ To learn more about Appcircle's Workflow editor, see the corresponding page belo
 
 ### Starting a React Native Build and After a Build
 
-To start your first build, just press the start build button – the play button under the actions columns (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in realtime.
+To start your first build, just press the start build button – the play button under the actions columns (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in real time.
 
-Once your build is complete, you can now download the binary file or deploy it to Testing Distribution manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at anytime.
+Once your build is complete, you can now download the binary file or deploy it to Testing Distribution manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at any time.
 
 <ContentRef url="/build/post-build-operations/after-a-build">After a Build</ContentRef>
 
@@ -164,7 +164,7 @@ Once your build is complete, you can now download the binary file or deploy it t
 
 ### ERR_OSSL_EVP_UNSUPPORTED
 
-If you receive an error similar to the following, it’s likely that your application or a module you’re using is attempting to use an algorithm or key size which is no longer allowed by default with OpenSSL 3.0.
+If you receive an error similar to the following, it’s likely that your application or a module you’re using is attempting to use an algorithm or key size that is no longer allowed by default with OpenSSL 3.0.
 
 ```
  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
@@ -180,7 +180,7 @@ You can either add the command-line option, `--openssl-legacy-provider` to your 
 If you face problems during NPM/Yarn install steps on Appcircle but not on your local machine, you should confirm the following steps:
 
 - [x] Make sure that your packages support the node version you use.
-- [x] Make sure that the file interactions that is done on `preinstall` and/or `postinstall` scrips are suitable to be executed on a different machine
+- [x] Make sure that the file interactions that is done on `preinstall` and/or `postinstall` scrips are suitable to be executed on a different machine.
 
 #### Queries to registry.yarnpkg.com return a `404/500/...`
 
@@ -192,7 +192,7 @@ On the other hand, yarn modern (2.x) has stability improvements that can fix the
 
 Upgrading to the latest versions is critical to a fast and stable yarn experience. So, if you're getting these kinds of errors in your build pipeline, we recommend upgrading your yarn version.
 
-You can see the steps to do upgrade in the following section. 👇
+You can see the steps to do the upgrade in the following section. 👇
 
 #### Upgrading From Yarn 1 to Yarn 2 in Pipeline
 
@@ -206,7 +206,7 @@ yarn --version
 yarn config set -H enableImmutableInstalls false
 ```
 
-When you run the pipeline again with an up-to-date workflow, you should see the upgraded yarn version in your build logs.
+When you run the pipeline again with an up-to-date workflow, you should see the upgraded Yarn version in your build logs.
 
 ### Disable Flipper SDK on iOS
 
@@ -225,7 +225,7 @@ Example Podfile modification:
 
 :::tip
 
-Appcircle uses the lts(Long Term Support) node version by default.
+Appcircle uses the LTS (Long Term Support) node version by default.
 
 :::
 

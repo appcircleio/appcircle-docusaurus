@@ -7,6 +7,8 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
+import EnvGroupSetCaution from '@site/docs/\_env-group-set-on-config-caution.mdx';
 
 To share builds with testers, distribution profiles should be created and testing groups assigned to these profiles.
 
@@ -199,10 +201,10 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main4.png' />
 
-To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Integrations screen and press the "Connect" button next to SSO Login or LDAP Login under the "Connections" section.
+To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Security screen and press the "Connect" button next to SSO Login or LDAP Login under the "Authentications" section.
 
-<ContentRef url="/account/my-organization/integrations/authentications/store-and-distribution-sso-authentication">SSO Login</ContentRef>
-<ContentRef url="/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication">LDAP Login</ContentRef>
+<ContentRef url="/account/my-organization/security/authentications/distribution-sso-authentication">SSO Login</ContentRef>
+<ContentRef url="/account/my-organization/security/authentications/distribution-ldap-authentication">LDAP Login</ContentRef>
 
 :::info
 
@@ -210,21 +212,15 @@ If SSO and LDAP details are not configured for your organization, these authenti
 
 :::
 
-### Device Registration (iOS Only)
+### Distribution Link
 
-You may enable this option to automatically register devices in the Apple Developer Portal and update your Ad Hoc provisioning profiles. You must select App Store Connect API Key, a build profile, and a configuration.
+You may enable a link for your distribution. This allows anyone who has the link to access all artifacts of the distribution profile. Additionally, users can now conveniently scan a QR code to retrieve the distribution link directly. This simplifies the process of accessing and sharing the distribution link, making it more accessible for users on mobile devices or others who prefer quick scanning.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main5.png' />
-
-### Public Link
-
-You may enable a public link for your distribution. This allows anyone who has the link to access all artifacts of the distribution profile. Additionally, users can now conveniently scan a QR code to retrieve the public link directly. This simplifies the process of accessing and sharing the distribution link, making it more accessible for users on mobile devices or others who prefer quick scanning.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5684-link.png' />
 
 :::info
 
-The Tester Portal that you will have access via the Public Link, will have the same authentication method that you have set from the authentication settings.
+The Tester Portal that you will have access via the Distribution Link, will have the same authentication method that you have set from the authentication settings.
 
 :::
 
@@ -250,7 +246,7 @@ Commit Message: $AC_COMMIT_MESSAGE
 
 :::info
 
-If you are using the Self-Hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io.
+If you are using the self-hosted version of Appcircle, you can configure it to use your own business domain for distribution emails instead of the default noreply@appcircle.io address. For details on how to configure SMTP settings in a self-hosted installation see [Email Integration](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/integration#email).
 
 :::
 
@@ -278,6 +274,22 @@ After sending your application to testing groups, you can track the actions of t
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main15.png' />
 
 ## Binary Actions
+
+### Binary Details
+
+1. Select the binary.
+
+You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
+
+2. Click the **...** button and select **Binary Details**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios14.png' />
+
+3. This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5184-binary.png' alt="Binary Details" />
 
 ### Send your application to Enterprise App Store
 
@@ -318,7 +330,7 @@ You must have already created the designated Publish profile within the Publish 
 
 Resigning is the process of modifying an existing binary with a new signing certificate or keystore, which is required when an application needs to be published under a different developer account or when updating an existing application. It involves removing the original signature and replacing it with a new one.
 
-For more information please visit the Re-sign Binary documentation.
+For more information please visit the [Re-sign Binary](/testing-distribution/resigning-binaries) documentation.
 
 ### Re-sign History
 
@@ -329,22 +341,6 @@ Re-sign History allows you to view the re-sign process logs for your app version
 The binary file in the Testing Distribution profile can be downloaded by selecting the Download button from the actions menu.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/TD-Binary-Download.png' />
-
-### Binary Details
-
-1. Select the binary.
-
-You can either select the files from the list or upload binaries by clicking the **Upload New Version** button at the bottom.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios9.png' />
-
-2. Click the... button and select **Binary Details**
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios14.png' />
-
-3. This window will show basic information about your binary.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-ios15.png' />
 
 ### Delete Multiple Testing Distribution App Versions
 
@@ -369,19 +365,60 @@ After clicking `Delete` , type in the version name in the prompt.
 
 ## FAQ
 
-#### Can I set an authentication method for accessing the Testing Portal?
+### Can I set an authentication method for accessing the Testing Portal?
 
 Yes, you can choose one of the authentication methods provided by Appcircle to authenticate your users and control their access to the store. For more information, please visit the Testing Distribution [**Authentication**](/testing-distribution/create-or-select-a-distribution-profile#authentication) documentations.
 
-#### Can I send a binary from another CI tool?
+### Can I send a binary from another CI tool?
 
 Yes, you can use Appcircle **API & CLI** tools within your current CI tool to directly send the binary and utilize it within the Testing Distribution. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api-and-cli) documentations.
 
 
-#### What does email/month mean? How is the number calculated?
+### What does email/month mean? How is the number calculated?
 
 An email is calculated every time an app is shared via email from our servers. So every send email adds to email count.
 
-#### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
+### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
 
 Thanks to the modular structure of Appcircle, all modules can be used independently. Accordingly, you can also request a special plan only for Testing Distribution. Please [contact us](https://appcircle.io/contact) for detailed information.
+
+### How can I get a binary from another organization to use in the Testing Distribution module?
+
+Let’s assume there are two organizations: Organization A and Organization B.
+In Organization A, we have a build profile that generates an IPA, APK, or AAB.
+In Organization B, we have a testing distribution profile that we want to send the binary to.
+
+In Organization A's build profile workflow, after the build step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Testing Distribution profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
+
+```bash
+#Bash script
+sudo npm install -g @appcircle/cli
+appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+# If an IPA or AAB is required, change *.apk to *.ipa or *.aab
+appcircle testing-distribution upload \
+  --distProfileId "$ORG_B_TEST_DIST_PROFILE_ID" \
+  --message "Release Notes" \
+  --app "$AC_OUTPUT_DIR"/*.apk
+```
+
+The key point here is that we need two essential parameters to make this work.
+- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
+- `ORG_B_TEST_DIST_PROFILE_ID` => Testing Distribution profile ID from Organization B.
+- `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
+
+To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+
+To obtain the Testing Distribution profile ID, follow the steps below: 
+1. Log in to organization B.
+2. Go to Testing Distribution module.
+3. Select the desired Testing Distribution profile
+4. Copy it from the URL. `https://my.appcircle.io/distribute/detail/123456f-7d89-4545-5454-123456789abc`
+5. Then the Testing Distribution profile ID is => `123456f-7d89-4545-5454-123456789abc`
+
+After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
+- `ORG_B_PERSONAL_API_TOKEN`
+- `ORG_B_TEST_DIST_PROFILE_ID`
+
+<PatDanger />
+
+<EnvGroupSetCaution />

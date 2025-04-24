@@ -9,7 +9,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 The **Publish Variables** section within the Publish module is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-variables.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5631-Publish-Variables-annotated.png' />
 
 To use these defined variables, it will be necessary to select them from the [Publish Settings](/publish-module/publish-settings/).
 
@@ -84,6 +84,7 @@ There are some reserved variables that are automatically defined by Appcircle an
 | AC_PUBLISH_PROFILE_NAME             | Specifies the Appcircle profile name who started the publish process.                                                                                                                                        |
 | AC_PUBLISH_STEP_NAME                | Name of the publish flow step being run.                                                                                                                                                                     |
 | AC_PUBLISH_WORKFLOW_NAME            | Name of the publish workflow being run.                                                                                                                                                                      |
+| AC_PUBLISH_STEPS_STATUS             | Provides detailed information about the status of the publish steps executed so far. Steps that are disabled will not appear in this environment variable. The JSON output for executed steps includes the following fields: <br />- **StepName**: The name of the executed step. <br />- **StepId**: The unique ID of the executed step. <br />- **StepStatus**: The status of the step. Possible values: `Success`, `Warning`, `Failed`, `NotStarted`, or `Stopped`. <br />- **Duration**: The time taken to complete the step, represented in seconds (e.g., `0.0000000`). <br />- **StartDate**: The start time of the step, formatted as an ISO 8601 timestamp (e.g., `2024-12-13T15:45:59.6426984Z`). <br />- **FinishDate**: The completion time of the step, also formatted as an ISO 8601 timestamp (e.g., `2024-12-13T15:45:59.6426984Z`). <br /> For additional details and instructions on how to format this output for readability, refer to the [**How can I print the status of publish steps with detailed information?**](/publish-integrations/common-publish-integrations/custom-script#how-can-i-print-the-status-of-publish-steps-with-detailed-information) documentation. |
 | AC_APP_FILE_URL                     | URL of the app file being published.                                                                                                                                                                         |
 | AC_APP_FILE_NAME                    | Name of the app file being published (with file extension).                                                                                                                                                  |
 | AC_STACK_TYPE                       | The type of software stack used during the publishing process, such as Xcode, Gradle, etc.                                                                                                                   |
@@ -180,51 +181,44 @@ User can use `AC_RELEASE_NOTES` environment variable, if the `apk`, `aab` or `ip
 
 ## FAQ
 
-### How is environment variable exchange done between steps?
+### How to change environment variable and exchange it between steps?
 
 In the Appcircle Publish module, the steps within a Publish flow operate independently. This means that each step is executed in a separate, clean runner environment. This feature allows steps to run independently and individually. Therefore, to exchange environment variables between steps, the modified ENV value needs to be saved as an output variable.
 
 Below is an example of how this can be done. Once an ENV variable is modified in a step and saved to the output direction, it will become accessible in another step.
 
-- For first step
+- For the first step. Suppose we create a release note using the [**Publish Release Note Component**](/workflows/common-workflow-steps/publish-release-notes) during the build process. We then want to modify and use this release note during the Publish process.
 
-```ruby
+```bash
 
-def set_env_variable(key, value)
-    open(ENV['AC_ENV_FILE_PATH'], 'a') do |f|
-      f.puts "#{key}=#{value}"
-    end
-    ENV[key] = value # New value added to new ENV
-end
+# Take AC_RELEASE_NOTES value
+ac_build_release_notes="$AC_RELEASE_NOTES"
 
-# First, get the $AC_BUILD_RELEASE_NOTES value 
-ac_build_release_notes = ENV['AC_RELEASE_NOTES']
-
-# Check the value nil or not
-if ac_build_release_notes.nil?
-  puts "Hata: $AC_RELEASE_NOTES değişkeni tanımlanmamış veya boş."
+# Check the variable if it is null
+if [ -z "$ac_build_release_notes" ]; then
+  echo "Error: AC_RELEASE_NOTES variable was not determined or it is null."
+  exit 1
 else
-  # Before
-  puts "Before: #{ac_build_release_notes}"
+  # Print current value
+  echo "Before: $ac_build_release_notes"
 
-  ac_build_release_notes = "Release note değiştirildi"
+  # Change release note value
+  ac_build_release_notes="Release note changed\n New Release note prepared"
 
-  # After
-  puts "Changed: #{ac_build_release_notes}"
+  # Print changed value
+  echo -e "Changed: $ac_build_release_notes"
 
-  # Save the updated valur to new ENV value
-  set_env_variable('$AC_OUTPUT_DIR/STORE_NOTES.env', ac_build_release_notes)
-
-  # Print the new value.
-  puts "Sonrası store notes: #{ENV['STORE_NOTES']}"
-end
+  # Write new env value AC_CHANGED_RELEASE_NOTES to .env file in output direction
+  echo -e "AC_CHANGED_RELEASE_NOTES=\"${ac_build_release_notes}\"" >> $AC_OUTPUT_DIR/AC_OUTPUT.env
+fi
 
 ```
 
-- For second step
+- For the second step: We can now access this environment variable directly in another step.
 
-```ruby
+```bash
 
-puts "After value changed in other step: #{ENV['$AC_OUTPUT_DIR/STORE_NOTES.env']}"
+echo "Print Changed Release Note Variable"
+echo $AC_CHANGED_RELEASE_NOTES
 
 ```

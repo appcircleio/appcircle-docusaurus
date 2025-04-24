@@ -11,41 +11,45 @@ import Screenshot from '@site/src/components/Screenshot';
 This step builds your application for iOS devices in ARM architecture, which is required for the [**Sharing With Testers**](/testing-distribution/create-or-select-a-distribution-profile) feature or any other means of iOS distribution.
 
 :::info
+
 This step is the archive and export step. When the step is completed, the `.ipa` file of the application is generated.
+
 :::
 
 ### Prerequisites
 
-The workflow steps that need to be executed before running this step, along with their respective reasons, are listed in the table below.
+Before running the **Xcodebuild for Devices** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Require Workflow Step                                                                                      | Description                                                                                                                                                                         |
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](https://docs.appcircle.io/workflows/common-workflow-steps/#git-clone)                      | The repository that needs to be built must be fetched from the Git provider. **Xcodebuild for Devices** should be used after this step.                                             |
-| [**Cocoapods Install**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#cocoapods-install) | This step installs all pod dependencies for project. **Xcodebuild for Devices** should be used after this step. If you use SPM (Swift Package Manager), it is not necessary to use. |
-| [**Xcode Select**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#xcode-select-version)   | In this step, select the Xcode version to build. **Xcodebuild for Devices** should be used after this step.                                                                         |
+| [**Git Clone**](/workflows/common-workflow-steps/git-clone)                      | The repository that needs to be built must be fetched from the Git provider. **Xcodebuild for Devices** should be used after this step.                                             |
+| [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select)   | In this step, select the Xcode version to build. **Xcodebuild for Devices** should be used after this step.                                                                         |
+| [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) | This step installs all pod dependencies for project. **Xcodebuild for Devices** should be used after this step. If you use SPM (Swift Package Manager), it is not necessary to use. |
 
 :::danger
-This step should always follow steps that may affect Archive and Export, such as Xcode Select and Cocoapods Install.
+
+This step should always follow steps that may affect Archive and Export, such as **Xcode Select** and **Cocoapods Install**.
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildOrder.png' />
+
 :::
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildInput.png' />
 
 | Variable Name                                 | Description                                                                                                                                                                                                                                              | Status   |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_REPOSITORY_DIR`                          | Specifies the cloned repository directory. This path will be generated after the [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps#git-clone) step.                                                                                  | Required |
+| `$AC_REPOSITORY_DIR`                          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step.                                                                                  | Required |
 | `$AC_OUTPUT_DIR_PATH`                         | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                    | Required |
-| `$AC_SCHEME`                                  | Specifies the project scheme for build. If you filled in **`Configuration => Build Scheme`**, this variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration).                                   | Required |
-| `$AC_ARCHIVE_FLAGS`                           | Specifies the extra xcodebuild flag. For example: -quiet                                                                                                                                                                                                 |          |
-| `$AC_PROJECT_PATH`                            | Specifies the project path. For example: `./appcircle.xcodeproj`. If you filled in **`Configuration => Project or Workspace`**, this variable comes from [Configuration](https://docs.appcircle.io/build/building-ios-applications#build-configuration). | Required |
+| `$AC_SCHEME`                                  | Specifies the project scheme for build. If you filled in **`Configuration => Build Scheme`**, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration).                                   | Required |
+| `$AC_ARCHIVE_FLAGS`                           | Specifies the extra xcodebuild flag. For example: `-quiet`.                                                                                                                                                                                                 | Optional |
+| `$AC_PROJECT_PATH`                            | Specifies the project path. For example: `./appcircle.xcodeproj`. If you filled in **`Configuration => Project or Workspace`**, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_CERTIFICATES`                            | This variable specifies the path of the certificates to be signed.                                                                                                                                                                                       | Required |
 | `$AC_BUNDLE_IDENTIFIERS`                      | This variable holds the Bundle Identifier of the application to be built.                                                                                                                                                                                | Required |
 | `$AC_PROVISIONING_PROFILES`                   | This variable specifies the path of provisioning profiles to be signed.                                                                                                                                                                                  | Required |
-| `$AC_CONFIGURATION_NAME`                      | You can build your project with any configuration you want. Specify the configuration as hard coded. Appcircle will add automatically this configuration to the xcodebuild command. For example; **`Debug`**                                             | Optional |
+| `$AC_CONFIGURATION_NAME`                      | You can build your project with any configuration you want. Specify the configuration as hard coded. Appcircle will add automatically this configuration to the xcodebuild command. For example; **`Debug`**.                                             | Optional |
 | `$AC_COMPILER_INDEX_STORE_ENABLE`             | You can disable indexing during the build for faster build. Default value is `No`.                                                                                                                                                                       | Optional |
 | `$AC_METHOD_FOR_EXPORT`                       | Describes how Xcode should export the archive. Available options are `auto-detect`, `app-store`, `ad-hoc`, `enterprise`, `development`. The default is `auto-detect`.                                                                                    | Optional |
 | `$AC_TEAMID_FOR_EXPORT`                       | The Developer Portal team to be use for this export. Defaults to the team used to build the archive.                                                                                                                                                     | Optional |
@@ -57,32 +61,40 @@ You can find all the parameters required for this step in the table below, with 
 
 ### Output Variables
 
+The output(s) resulting from the operation of this component are as follows:
+
 | Variable Name               | Description                                               |
 | --------------------------- | --------------------------------------------------------- |
-| `$AC_ARCHIVE_PATH`          | This is the path created after retrieving the archive.    |
-| `$AC_ARCHIVE_METADATA_PATH` | This is the path created after the metadata is generated. |
-| `$AC_EXPORT_DIR`            | This is the path created when exporting.                  |
+| `AC_ARCHIVE_PATH`          | This is the path created after retrieving the archive.    |
+| `AC_ARCHIVE_METADATA_PATH` | This is the path created after the metadata is generated. |
+| `AC_EXPORT_DIR`            | This is the path created when exporting.                  |
+
+---
 
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-ios-build-sign-component
 
+---
+
 ## FAQ
 
 ### Adding Additional Command to Xcodebuild for Devices Step
 
-To address the need to add a new command after completing the `xcodebuild` command in the "Xcodebuild for Devices" step, you can follow the following approach:
+To address the need to add a new command after completing the `xcodebuild` command in the **Xcodebuild for Devices** step, you can follow the following approach:
 
-- Disable "Xcodebuild for Devices" step in your workflow.
-- Add a new "Custom Script" component instead of "Xcodebuild for Devices" step.
+- Disable **Xcodebuild for Devices** step in your workflow.
+- Add a new "Custom Script" component instead of **Xcodebuild for Devices** step.
 - Go to Appcircle github profile and navigate to the [repository](https://github.com/appcircleio/appcircle-ios-build-sign-component).
-- Copy all code lines from the `main.rb` file and paste them into the new "Custom Script" that you just added in your workflow.
-- Change the name as "Custom Xcodebuild for Devices" for this custom script.
+- Copy all code lines from the `main.rb` file and paste them into the new **Custom Script** that you just added in your workflow.
+- Change the name as **Custom Xcodebuild for Devices** for this custom script.
 - Change "Execute With" picker as **Ruby**.
 - In the Ruby code, you can add the required codes to the end of the `xcodebuild` command.
 
 :::caution
-Before running the script, some variables must be changed, and new variables must be added to the custom script.
+
+Before running the script, some variables must be changed, and new variables must be added to the **Custom Script**.
+
 :::
 
 First, the `output_path` global variable should be changed like below in global variables.
@@ -111,7 +123,9 @@ $compiler_index_store_enable = AC_COMPILER_INDEX_STORE_ENABLE
 ```
 
 :::caution
+
 You should find the line with `compiler_index_store_enable` and replace it with the above statement.
+
 :::
 
 After these variables were set. There is an `archive()` function in the Ruby code. First, find the function in the code.
@@ -156,3 +170,40 @@ end
 ```
 
 Now, the `run_command_simple()` function will execute your customized `xcodebuild` command.
+
+### How can I resolve the `Outputting Keys and Certificates` signing error?
+
+Since Appcircle does not have direct access to self-hosted environments, the default versions installed on runners may also have user-generated updates. This error is caused by using **OpenSSL** by default instead of **LibreSSL**. If **OpenSSL** is used instead of **LibreSSL** for any reason in your self-hosted environments, you will get an **error** like the one below.
+
+```
+`parse_certificate': Error outputting keys and certificates (RuntimeError)
+C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:355:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
+Could not find certificate from <stdin>
+Error: Error outputting keys and certificates
+C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:355:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
+```
+
+:::info Cloud Customers
+
+All packages running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the packages used on runners is **LibreSSL**. In Appcircle Cloud environments, the **LibreSSL** 3.3.6 version on macOS Sonoma and the **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documentation.
+
+However, issues may still occur depending on how the environment is used. If you are working in the cloud environment and the [**Custom Scripts**](/workflows/common-workflow-steps/custom-script) you use can **change** or **update** the packages in our environments. If cloud users encounter such **signing errors**, it is recommended to check the **Custom Scripts** used. You can use the example `bash` script below.
+
+```bash
+export PATH="/usr/bin:$PATH"
+
+```
+
+Appcircle's macOS environments use `LibreSSL` by default. If this default value is changed in any way, the global path must be updated with the script above and `LibreSSL` must be set as default again. Otherwise, the system will try to find and sign `OpenSSL` first while the system is running, so if there is a depricated method, it may cause an error during signing.
+
+**Note:** Please note, the example script given above should be run before the **Xcodebuild for Devices** step. Otherwise you may keep getting errors during signing.
+
+:::
+
+Although **LibreSSL** and **OpenSSL** are alternatives to each other, there are differences between them. **LibreSSL** comes by default with macOS machines and is managed by **Apple**. For this reason, since Appcircle does not have direct access to self-hosted environments, some user-side work on runners can replace **LibreSSL** with **OpenSSL** or update their versions.
+
+The reason for this **error** is that the **encryption algorithm** in the new versions of **OpenSSL** has been changed. In **OpenSSL** versions **3 and above**, the algorithm named **RC2** is marked as **legacy**. When you encounter this error, you need to change the **OpenSSL** package on the runners receiving the error to **LibreSSL**. 
+
+The **RC2 algorithm** is just one example. There are other algorithms and ciphers that **OpenSSL** has deprecated. Users may encounter other errors with certificates containing other algorithms, such as **SHA1**. This depends on the encryption algorithm of the certificate the user is using.
+
+For more information about **legacy algorithms**, please visit the [**OpenSSL**](https://docs.openssl.org/3.0/man7/OSSL_PROVIDER-legacy/) documentation.

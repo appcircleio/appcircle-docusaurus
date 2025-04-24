@@ -1,25 +1,43 @@
 ---
-title: Build Process Management
+title: Build Profile
 description: Learn how to manage your build processes effectively with Appcircle. Optimize your build configurations, manage branches, and automate your build pipeline for efficient app development.
 tags:
   [
-    build process management,
     build profiles,
-    branch management,
-    manual builds,
-    automatic builds,
-    app development,
-    app deployment,
-    appcircle build process,
+    build profile management
   ]
 ---
 
-# Build Profile Management
+New to the Appcircle Build module? Follow our quick-start guide to build your iOS and Android apps in the cloud.
 
-Master the management of your build profiles in Appcircle with the following features:
+The Build Module allows you to streamline and automate your mobile app build flows.
 
-- **Profile Configuration**: Set up and manage the configurations for your build profiles. This involves specifying the settings that control the build process for each app version.
+## [Profile Creation](/build/build-process-management/profile-creation)
 
-- **Branch Management**: Organize and handle different code branches within your repository. This section allows you to manage which branches are built and when.
+Discover how to create and manage build profiles in Appcircle. This section guides you through the process of setting up new build profiles and listing existing ones, ensuring a streamlined workflow for your development and deployment needs.
 
-- **Manual and Automatic Builds**: Control how and when your builds are triggered. Opt for manual builds for greater control, or set up automatic builds to streamline your development pipeline whenever changes are pushed to your branches.
+## [Configurations](/build/build-process-management/configurations)
+
+Before initiating a build, certain essential steps must be completed to properly configure a build profile. This section outlines the fundamental configurations required to ensure a seamless build process.
+
+## [Workflows](/build/build-process-management/build-workflows)
+
+A workflow is a sequence of steps taken to build your applications.
+
+Each step has a different purpose, and it can be customized by modifying step parameters and inputs, running custom scripts, or reordering steps.
+
+## [Triggers](/build/build-process-management/build-manually-or-with-triggers)
+
+Builds can be triggered with various triggers, such as every push to the repository, pull/merge requests, or tagged pushes.
+
+## [Manual Builds](/build/build-process-management/manual-builds)
+
+Learn how to initiate manual builds using your build profile in Appcircle. This section provides step-by-step guidance on triggering builds manually to streamline your development workflow.
+
+## [Binary Actions](/build/build-process-management/binary-actions)
+
+Explore the different binary actions available in Appcircle after completing your builds. This section guides you through utilizing these actions to manage, distribute, and optimize your build artifacts efficiently.
+
+## [Branch Operations](/build/build-process-management/build-profile-branch-operations)
+
+When you connect to a repository, all branches of that repository will be displayed with the last 100 commits. Appcircle provides several features for easy management of branches.

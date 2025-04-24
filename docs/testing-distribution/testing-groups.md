@@ -15,25 +15,27 @@ The testing groups feature allows for the definition of various groups for diffe
 
 You can list, add, edit and manage your groups and testers from this module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/06-10-TestingGroups.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing1.png' />
 
 Click on the orange + button to create a new testing group. You can name groups according to your needs, such as "Alpha," "Beta," and so on. After typing the name of the new testing group, press enter to create it.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/06-11a-NewTestingGroup.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing2.png' />
 
 After a new testing group is created, tester email addresses can be added to the group. The input box at the top of the page should be used to enter the email address, and pressing enter will add it.
 
 A list of your testers will now be displayed. Testers can be selected and deleted as needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/06-11-EditTestingEmails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing3.png' />
 
 Also by clicking on the edit button next to your testing group name from the list, you can rename, duplicate or delete your testing group if you need to.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/06-12-EditTestingGroup.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing4.png' />
 
 ### Managing Unsubscribed Users
 
 When re-sharing the app with users who have previously unsubscribed, you can seamlessly re-engage them.
+
+Click on the **Share with Testers** button from the distribution profile. Then, simply add the users who have unsubscribed to the recipients.
 
 This action automatically removes them from the unsubscribed list, allowing them to receive emails once again.
 
@@ -49,18 +51,18 @@ If a user who has previously unsubscribed is included in a test group, they will
 
 If you have a LDAP Mapping in place for your users, you can import them into your Testing Group profile.
 
-For LDAP configuration and mapping, please refer to the [LDAP](/account/my-organization/integrations/authentications/store-and-distribution-ldap-authentication) documentation.
+For LDAP configuration and mapping, please refer to the [LDAP](/account/my-organization/security/authentications/distribution-ldap-authentication) documentation.
 
 1. **Create or Select a Testing Group**:  
    Either create a new Testing Group in Appcircle or select an existing one.
 
 2. **Import Group Members from LDAP**:
     - Click on the three dots in the top-right corner.
-    - Select the **Import From LDAP** option.
+    - Select the **Start Sync with LDAP** option.
 
    **Note**: The Testing Group must not contain any members. If it does, attempting to import from LDAP will result in an error.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-import.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing5.png' />
 
 3. **Select LDAP Configuration**:
     - Choose the LDAP configuration from the dropdown menu.
@@ -94,10 +96,52 @@ Testing Groups that use the LDAP sync feature will be marked with a tag displayi
 
 :::caution
 
-It is not possible to add or remove members of Testing Group after establishing a link to LDAP Group.
+It is not possible to add or remove members of Testing Group on UI manually after establishing a link to LDAP Group.
 
 However, the testing group can still be renamed, duplicated and deleted.
 
+:::
+
+#### Disable LDAP Import Settings
+
+Users can disable LDAP import settings for an LDAP-imported Testing Group by clicking the ‘Remove Sync with LDAP’ button in the top right corner. 
+
+Note that this option is only available for Testing Groups that have already imported their members via LDAP settings. 
+
+After disabling the settings, existing members will remain, and users can manually add or remove members as needed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing0.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5678-import3.png' />
+
+## Importing Testing Group Members via CSV
+
+You can add your testers quickly and efficiently by using Import from CSV option. The Testing Group profile does not need to be empty in order to use this feature.
+
+Also, after adding the users by CSV, you can still add or remove the tester emails as you see fit. The duplicated email addresses will be handled by Appcircle automatically.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing6.png' />
+
+- Click on the three-dot menu (•••) of the desired testing group.
+
+- Select **Import from CSV** from the dropdown menu.
+
+- Ensure the CSV file contains a column labeled Email. Each tester's email address should be listed under this column.
+
+**Example format:**
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5939-ss5.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing7.png' />
+
+- Upload the CSV file.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing8.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing9.png' />
+
+:::info
+Importing a CSV file does not delete existing testers unless manually removed from the profile.
 :::
 
 ## FAQ
