@@ -298,7 +298,7 @@ For more details about configuring the outbound requests, you can refer to the [
 
 ### What should be done after upgrading the hardware resources (CPU & memory) of the Appcircle server?
 
-When you upgrade the hardware resources (CPU & memory) of the Appcircle server, it's important to update the resource limits accordingly.
+When you upgrade the hardware resources (CPU & memory) of the Appcircle server, it's important to update the **resource limits** accordingly.
 
 Appcircle sets these limitations with the `export` command and configures CPU and memory limits for the services. If you don't run the `export` command again after updating the CPU and memory of the Appcircle host machine, the Appcircle services will continue to use the old resource limits.
 
