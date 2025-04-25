@@ -18,21 +18,37 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ## 3.27.1 - 2025-04-11 Metadata Approval and Domain Verification Improvements, Bug Fixes and more
 
+### 🆕 New Features
+
+- Binary Tags can now be configured from the Testing Distribution and Enterprise Portal profile settings to be displayed on the Testing and Enterprise Portals. The data for these tags is provided by the Build module. These tags help testers identify the context, source, and purpose of each app version. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+
 ### :muscle: Improvements
 
 - The Domain Verification feature can now be used for the same domain across multiple organizations. <AccountBadge/> <CloudBadge/>
 - Validation has been added for enabling SSO authorization to ensure that the configuration includes existing SSO groups, roles, and an enabled SSO authentication. <AccountBadge/> <CloudBadge/>
+- A warning message will now be displayed instead of redirecting to the login screen if the user enters their SSO alias incorrectly. <AccountBadge/> <CloudBadge/>
+- Users are now able to upload binaries up to 3 GB (previously 2 GB) across various modules. <AccountBadge/> <CloudBadge/>
+- The Publish module will now correctly display Timeout and Cancel statuses in applicable scenarios. The Publish timeout limit will align with the Build timeout limit, which can be found in the Billing area. <PublishBadge/> <CloudBadge/>
 - The **Upload Certificate Signing Request** option has been removed from the **Create an Apple Certificate** process. <SigningIdentitiesBadge/> <CloudBadge/>
+- Support has been added for downloading build logs using the `commitId` and `buildId` parameters, with optional path support. <APICLIBadge/> <CloudBadge/>
+- Outdated commit IDs can now be used to start builds when connected to remote repositories. <BuildBadge/> <CloudBadge/>
+- The error message displayed when attempting to save a trigger setting with an invalid configuration or workflow has been improved. <BuildBadge/> <CloudBadge/>
+- The Testing Distribution profile cards will now display the upload dates of the iOS and Android app versions. <DistributionBadge/> <CloudBadge/>
+- Performance improvements have been made to the Testing Distribution module for sending app versions to a large number of email addresses. <DistributionBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
+- An issue was fixed where registered LDAP Groups could not be fetched on sub-organizations for syncing with Testing Groups. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where SSO login via alias redirected users incorrectly in certain scenarios. <AccountBadge/> <CloudBadge/>
 - Various issues have been resolved on the metadata information screen for Publish Profiles, where users were sometimes unable to see uploaded images or upload screenshots. <PublishBadge/> <CloudBadge/>
 - An issue where metadata information could still be edited during the metadata approval process has been fixed. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where the metadata approval email did not redirect users to the correct organization if they were logged in to a different one. <PublishBadge/> <CloudBadge/>
 - Typos have been fixed in various descriptions across multiple Publish steps. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where `.p12` files created from Apple certificates were missing the private key, resulting in Xcode build errors due to the key not being added to the keychain. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where accepted invitations were not updating the pending status in the Apple Devices section. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where users could not remove PAT connections from Sub-Organizations. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where the selected branch became deselected after switching to a different build profile and then navigating back to the original profile. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where, in some cases, the saved export method for the Automatic Code Signing option was changing incorrectly. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where case sensitivity in the Manage Access tab of the Enterprise App Store profile settings caused problems with access management for some users. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed where the Update button was not visible on some macOS browsers in the Enterprise App Store Customization area. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed where switching OS tabs while uploading an app version caused UI issues on Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
