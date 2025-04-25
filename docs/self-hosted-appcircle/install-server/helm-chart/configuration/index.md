@@ -19,6 +19,7 @@ Current headlines are listed below:
 - [Git Providers Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/git-providers-configuration)
 - [LDAP Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ldap-configuration)
 - [SSL Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ssl-configuration)
+- [Domain Verification](/self-hosted-appcircle/install-server/helm-chart/configuration/domain-verification)
 - [Advanced Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/advanced-configuration)
 
 In order to see the details, check the submenu of this documentation page.
