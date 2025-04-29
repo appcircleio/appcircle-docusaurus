@@ -813,6 +813,10 @@ Example configurations:
 
 :::
 
+:::caution
+Mac devices that have M-series chips (Apple silicon) have two types of CPU cores that you should take into consideration when you configure CPU for the VMs. See the FAQ below for details.
+:::
+
 #### Backing Up and Restoring VM Configuration
 
 When recreating VMs or upgrading to a new image, it's important to preserve your custom settings.
@@ -1743,3 +1747,34 @@ Xcode simulator runtimes are essential for testing and debugging iOS, watchOS, a
 
 Be cautious when deleting Xcode simulator runtimes, as this action is irreversible. Removing a simulator runtime can impact the Xcode build process. For example, if you delete a watchOS runtime, you will no longer be able to build an iOS app that targets the deleted watchOS runtime. Ensure that the runtime you plan to delete is not required for your build pipeline.
 :::
+
+### Why do I have different build durations in the pipeline, especially when they run concurrently on the same Mac host?
+
+As we mentioned earlier in the documentation, you can add more than one runner on the same Mac host and run build pipelines concurrently. You can configure their [CPU](#set-cpu-limits) and [memory](#set-memory-limits) resources as your needs and make different types of runner pools for different workloads.
+
+Mac devices that have M-series chips (Apple silicon) have two types of CPU cores: E (efficiency) cores and P (performance) cores. For instance, an M1 Mac mini device has 4 E cores and 4 P cores.
+
+You can see the number of cores and its distribution on your host using the command below:
+
+```bash
+system_profiler SPHardwareDataType
+```
+
+E (efficiency) cores are energy-efficient but slower cores that are significantly different than P (performance) cores. Apps cannot decide directly which cores they will be run on. For this reason, we cannot assign specific cores to our workload while configuring the macOS VM.
+
+Under macOS lightweight virtualization, virtual machines (VMs) are allocated a number of virtual CPU cores, all of which are the same type. So, the virtual CPU cores in macOS VMs do not differentiate between the high-performance and high-efficiency cores of the host CPU. Instead, macOS VMs automatically alternate between these types of cores depending on the workload being executed within the virtual machines.
+
+You can have two VMs running, and one can use all the performance cores and the other can use all the efficiency cores if the second workload is not CPU intensive. Or, they can share performance cores if both are CPU intensive, which results in some amount of workload being handled using efficiency cores for both of them, which will lead us to a 2x-3x slower build pipeline when they run concurrently.
+
+:::tip
+You can analyze the CPU consumption grouped by CPU clusters by running the command below on the macOS host.
+
+```bash
+sudo powermetrics -s cpu_power
+```
+
+:::
+
+For this reason, if you need your build pipelines to be at peak performance in all conditions and do not want to see fluctuation in build pipeline durations, you should consider using one VM per one Mac device (host), especially for CPU-intensive CI workloads.
+
+Using concurrency on the same Mac device (host) by configuring more than one VM will cause fluctuation in build pipeline durations. When one VM is idle, there will not be a significant degradation. But when both are in the "running" state, you can see significant divergence.
