@@ -814,7 +814,7 @@ Example configurations:
 :::
 
 :::caution
-Mac devices that have M-series chips (Apple silicon) have two types of CPU cores that you should take into consideration when you configure CPU for the VMs. See the FAQ below for details.
+Mac devices that have M-series chips (Apple silicon) have two types of CPU cores that you should take into consideration when you configure CPU for the VMs. See the [FAQ](#why-do-i-have-different-build-durations-in-the-pipeline-especially-when-they-run-concurrently-on-the-same-mac-host) below for details.
 :::
 
 #### Backing Up and Restoring VM Configuration
