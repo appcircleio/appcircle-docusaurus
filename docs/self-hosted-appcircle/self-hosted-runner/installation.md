@@ -84,7 +84,7 @@ From now on, you will follow same installation steps seen below as other environ
 
 #### macOS VM
 
-Appcircle provides ready-to-use macOS VM image especially for enterprise installations. It can be run on macOS Ventura or Sonoma `arm64` host.
+Appcircle provides a ready-to-use macOS VM image, especially for enterprise installations. It can be run on macOS Ventura, Sonoma, or Sequoia `arm64` host.
 
 See details in [here](./runner-vm-setup).
 
