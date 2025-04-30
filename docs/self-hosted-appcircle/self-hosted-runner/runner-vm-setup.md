@@ -1778,3 +1778,15 @@ sudo powermetrics -s cpu_power
 For this reason, if you need your build pipelines to be at peak performance in all conditions and do not want to see fluctuation in build pipeline durations, you should consider using one VM per one Mac device (host), especially for CPU-intensive CI workloads.
 
 Using concurrency on the same Mac device (host) by configuring more than one VM will cause fluctuation in build pipeline durations. When one VM is idle, there will not be a significant degradation. But when both are in the "running" state, you can see significant divergence.
+
+:::tip
+
+#### Build Cache
+
+When you hit the hardware barriers and try to find a way to improve build pipeline duration with existing runner configuration, you can consider using **[Build Cache](/workflows/common-workflow-steps/build-cache/cache-push)**.
+
+Using **[build cache](/workflows/common-workflow-steps/build-cache/cache-push)** can optimize resource usage by reducing repetitive build tasks and reducing demand on CPU, memory, and bandwidth, which can result in significant performance improvement depending on your build workflow.
+
+You can specifically cache the build and test outputs to minimize how much work is done in subsequent builds, which is expected to make the build pipeline more efficient, especially in repositories with frequent updates.
+
+:::
