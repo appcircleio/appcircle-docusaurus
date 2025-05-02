@@ -813,6 +813,10 @@ Example configurations:
 
 :::
 
+:::caution
+Mac devices that have M-series chips (Apple silicon) have two types of CPU cores that you should take into consideration when you configure CPU for the VMs. See the [FAQ](#why-do-i-have-different-build-durations-in-the-pipeline-especially-when-they-run-concurrently-on-the-same-mac-host) below for details.
+:::
+
 #### Backing Up and Restoring VM Configuration
 
 When recreating VMs or upgrading to a new image, it's important to preserve your custom settings.
@@ -1742,4 +1746,47 @@ xcrun simctl runtime delete <runtime_id>
 Xcode simulator runtimes are essential for testing and debugging iOS, watchOS, and tvOS applications on virtual devices. Deleting a runtime will prevent you from running or debugging an app on that specific device. Other simulators and runtimes will remain unaffected.
 
 Be cautious when deleting Xcode simulator runtimes, as this action is irreversible. Removing a simulator runtime can impact the Xcode build process. For example, if you delete a watchOS runtime, you will no longer be able to build an iOS app that targets the deleted watchOS runtime. Ensure that the runtime you plan to delete is not required for your build pipeline.
+:::
+
+### Why do I have different build durations in the pipeline, especially when they run concurrently on the same Mac host?
+
+As we mentioned earlier in the documentation, you can add more than one runner on the same Mac host and run build pipelines concurrently. You can configure their [CPU](#set-cpu-limits) and [memory](#set-memory-limits) resources as your needs and make different types of runner pools for different workloads.
+
+Mac devices that have M-series chips (Apple silicon) have two types of CPU cores: E (efficiency) cores and P (performance) cores. For instance, an M1 Mac mini device has 4 E cores and 4 P cores.
+
+You can see the number of cores and its distribution on your host using the command below:
+
+```bash
+system_profiler SPHardwareDataType
+```
+
+E (efficiency) cores are energy-efficient but slower cores that are significantly different than P (performance) cores. Apps cannot decide directly which cores they will be run on. For this reason, we cannot assign specific cores to our workload while configuring the macOS VM.
+
+Under macOS lightweight virtualization, virtual machines (VMs) are allocated a number of virtual CPU cores, all of which are the same type. So, the virtual CPU cores in macOS VMs do not differentiate between the high-performance and high-efficiency cores of the host CPU. Instead, macOS VMs automatically alternate between these types of cores depending on the workload being executed within the virtual machines.
+
+You can have two VMs running, and one can use all the performance cores and the other can use all the efficiency cores if the second workload is not CPU intensive. Or, they can share performance cores if both are CPU intensive, which results in some amount of workload being handled using efficiency cores for both of them, which will lead us to a 2x-3x slower build pipeline when they run concurrently.
+
+:::tip
+You can analyze the CPU consumption grouped by CPU clusters by running the command below on the macOS host.
+
+```bash
+sudo powermetrics -s cpu_power
+```
+
+:::
+
+For this reason, if you need your build pipelines to be at peak performance in all conditions and do not want to see fluctuation in build pipeline durations, you should consider using one VM per one Mac device (host), especially for CPU-intensive CI workloads.
+
+Using concurrency on the same Mac device (host) by configuring more than one VM will cause fluctuation in build pipeline durations. When one VM is idle, there will not be a significant degradation. But when both are in the "running" state, you can see significant divergence.
+
+:::tip
+
+#### Build Cache
+
+When you hit the hardware barriers and try to find a way to improve build pipeline duration with existing runner configuration, you can consider using **[Build Cache](/workflows/common-workflow-steps/build-cache/cache-push)**.
+
+Using **[build cache](/workflows/common-workflow-steps/build-cache/cache-push)** can optimize resource usage by reducing repetitive build tasks and reducing demand on CPU, memory, and bandwidth, which can result in significant performance improvement depending on your build workflow.
+
+You can specifically cache the build and test outputs to minimize how much work is done in subsequent builds, which is expected to make the build pipeline more efficient, especially in repositories with frequent updates.
+
 :::
