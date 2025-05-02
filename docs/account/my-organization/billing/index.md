@@ -27,7 +27,7 @@ The Billing section allows you to monitor your usage summary, including builds, 
 - **Sub Organizations** : Number of Sub-Organizations allowed.
 - **Artifact Storage** : Total storage size for all the build and distribution artifacts across the platform.
 - **Build Concurrency** : Number of builds that can run simultaneously.
-- **Build Time Limit** : Number of minutes allowed per build before it is automatically cancelled with a timeout status.
+- **Build Time Limit** : Number of minutes allowed per build and publish before it is automatically cancelled with a timeout status.
 
 :::info Usage Count
 Please note that the module usage counts displayed here, such as builds, testing distribution, and publishes, represent the combined totals for the organization and its sub-organizations.
@@ -49,4 +49,4 @@ The Billing page for a Sub-Organization displays the same summary metrics as the
 The usage counts shown on this page reflect only the usage of the Sub-Organization. To view overall usage against limits, please refer to the Billing page of the root organization.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5909-billing2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss1.png'/>

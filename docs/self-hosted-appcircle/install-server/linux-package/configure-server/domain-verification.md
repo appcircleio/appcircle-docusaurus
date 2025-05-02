@@ -1,5 +1,6 @@
 ---
-title: Domain Verification
+title: Domain Verification for Linux Package Installation
+sidebar_label: Domain Verification
 description: Configure the Appcircle server to bypass domain verification when adding domains to an organization or verify them using DNS records on Docker/Podman architecture.
 tags: [security, domain, verify]
 sidebar_position: 30
@@ -9,7 +10,7 @@ import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-serve
 import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_restart-appcircle-server.mdx';  
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_appcircle-server-downtime-caution.mdx';  
 
-## Overview
+# Domain Verification
 
 This document explains how to configure your Appcircle server's domain verification option when adding domains as trusted for Appcircle organizations. By skipping the domain verification process, domains will be automatically marked as verified without the need for TXT records.
 
