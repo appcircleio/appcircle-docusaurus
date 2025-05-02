@@ -24,7 +24,7 @@ Appcircle currently does not publish release notes to TestFlight, as TestFlight 
 
 There are no prerequisites required before using the **Publish Release Notes** step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-edit.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-flow.png' />
 
 :::danger
 
@@ -36,7 +36,7 @@ To create rich release notes, the Release Notes component should be included in 
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-input.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-inputs.png' />
 
 | Variable Name                | Description                                                                                                                                                                                                                   | Status   |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
