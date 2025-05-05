@@ -13,7 +13,7 @@ The Publish module is a powerful feature in Appcircle that allows you to distrib
 
 :::info Runner Usage
 
-Appcircle's Publish module needs a **runner** while running. The runner dependency of each step in [**Publish Flows**](/publish-module/publish-flow) is specified in the relevant step documentation. For runner dependencies, please check the documentation of the related steps.
+Appcircle's Publish module requires a **runner** to operate. The runner dependency of each step in the [**Publish Flows**](/publish-module/publish-flow) is specified in the relevant step's documentation. For detailed information on runner dependencies, please refer to the documentation of the relevant steps.
 
 :::
 
