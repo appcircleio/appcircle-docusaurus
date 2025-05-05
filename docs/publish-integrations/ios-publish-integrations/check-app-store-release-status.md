@@ -6,7 +6,7 @@ sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-import NoRunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Check App Store Release Status
 
