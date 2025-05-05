@@ -14,7 +14,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
-An Appcircle server image is a pre-configured template used to a create virtual server, known as "virtual machines", in the Microsoft Azure environment.
+An Appcircle server image is a pre-configured template used to a create virtual server, known as "virtual machines", in the [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/appcircleinc1727251401364.acserverv0?tab=Overview) environment.
 
 Think of it as a snapshot of a server that includes the operating system, necessary tools, applications, and any additional services needed to run the Appcircle server.
 

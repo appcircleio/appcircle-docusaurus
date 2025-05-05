@@ -12,7 +12,7 @@ import ConfigureServer from '@site/docs/self-hosted-appcircle/install-server/lin
 
 ## Overview
 
-An Appcircle server Amazon Machine Image (AMI) is a pre-configured template used to create virtual servers, known as instances, in the Amazon Web Services (AWS) environment.
+An Appcircle server Amazon Machine Image (AMI) is a pre-configured template used to create virtual servers, known as instances, in the [Amazon Web Services (AWS)](https://aws.amazon.com/marketplace/seller-profile?id=seller-qo4qliw4g7f6k) environment.
 
 Think of it as a snapshot of a server that includes the operating system, necessary tools, applications, and any additional services needed to run the Appcircle server.
 
