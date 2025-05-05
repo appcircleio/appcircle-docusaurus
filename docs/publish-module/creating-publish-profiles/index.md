@@ -74,6 +74,14 @@ An exclamation mark appears next to the binary that does not match the main Bund
 
 Another option to create a profile is to import it. With this feature, a Publish profile is created with your existing app profile information on App Store Connect.
 
+:::caution Apple Enterprise API Key
+
+The **Create from App Store Connect** feature needs the **Apple API** key to create a profile. However, since the **Apple Enterprise Program** does not have any **TestFlight** or **App Store Connect** features, **Apple Enterprise API Keys** are **not** listed anywhere in the **Publish module**.
+
+If an **Apple Enterprise API** key has been added in your organization, this key **cannot** be used in the Publish Module. For more information, please visit the **Enterprise API Key Credential** [documentation](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#enterprise-api-key-option-for-app-store-connect).
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-importAppList1.png' />
 
 Profiles on App Store Connect are listed with API key connection. In this list, the profile is imported by selecting either multiple or single profiles.
