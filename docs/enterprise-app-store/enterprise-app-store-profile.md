@@ -133,7 +133,7 @@ Binary tags can be managed through the Enterprise App Store Profile Settings und
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss5.png' />
 
 Once tags are saved in the profile settings:
-- Tags will automatically appear next to the app version on the Enterprise Portal after being distributed.
+- Tags will automatically appear next to the app version on the Enterprise Portal after being published to a channel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss10.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss11.png' />
