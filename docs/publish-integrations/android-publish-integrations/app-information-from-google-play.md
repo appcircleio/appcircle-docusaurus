@@ -7,10 +7,13 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # App Information from Google Play
 
 The **App Information from Google Play** step checks the status of the app releases in the [Google Play Console](https://play.google.com/console). This allows you to monitor the progress of your app.
+
+<NoRunnerUsage />
 
 :::tip
 

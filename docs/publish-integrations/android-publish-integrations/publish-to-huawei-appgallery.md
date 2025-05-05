@@ -7,10 +7,13 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Publish to Huawei AppGallery
 
 Appcircle supports sending [APK](https://developer.huawei.com/consumer/en/doc/app/agc-help-releaseapkrpk-0000001106463276) and [AAB](https://developer.huawei.com/consumer/en/doc/app/agc-help-releasebundle-0000001100316672) binaries to [Huawei AppGallery](https://appgallery.huawei.com/) through the Publish module.
+
+<RunnerUsage />
 
 ### Prerequisites
 

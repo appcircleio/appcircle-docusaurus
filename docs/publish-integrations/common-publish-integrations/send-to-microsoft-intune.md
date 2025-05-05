@@ -6,10 +6,13 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Publish to Microsoft Intune
 
 This step enables you to submit your line of business apps to the [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune).
+
+<RunnerUsage />
 
 ### Prerequisites
 
