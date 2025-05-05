@@ -76,9 +76,9 @@ Another option to create a profile is to import it. With this feature, a Publish
 
 :::caution Apple Enterprise API Key
 
-The **Create from App Store Connect** feature needs the **Apple API** key to create a profile. However, since the **Apple Enterprise Program** does not have any **TestFlight** or **App Store Connect** features, **Apple Enterprise API Keys** are **not** listed anywhere in the **Publish module**.
+The **Create from App Store Connect** feature requires an **Apple API** key to create a profile. However, since the **Apple Enterprise Program** does not include **TestFlight** or **App Store Connect** features, **Apple Enterprise API Keys** are **not** listed anywhere in the **Publish module**.
 
-If an **Apple Enterprise API** key has been added in your organization, this key **cannot** be used in the Publish Module. For more information, please visit the **Enterprise API Key Credential** [documentation](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#enterprise-api-key-option-for-app-store-connect).
+If an **Apple Enterprise API** key has been added in your organization, it **cannot** be used in the Publish Module. For more information, please visit the [**Enterprise API Key Credential**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#enterprise-api-key-option-for-app-store-connect) documentation.
 
 :::
 
