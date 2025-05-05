@@ -37,7 +37,7 @@ After uploading the application, you should use the [**Testinium Run Test Plan**
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates a `IPA` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium-upload-app_2.png'/>
 
@@ -54,7 +54,7 @@ After uploading the application, you should use the [**Testinium Run Test Plan**
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in `ARM` architecture and generates an `IPA` file. |
 | [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium-upload-app_4.png'/>
@@ -72,11 +72,11 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_TESTINIUM_APP_PATH`    | Specifies the full file path of the build output, such as `$AC_OUTPUT_DIR/MyApp.ipa` for iOS or `$AC_APK_PATH` for Android.           | Required |
 | `$AC_TESTINIUM_USERNAME`    | Specifies the Testinium username used for logging in.                                                       | Required |
 | `$AC_TESTINIUM_PASSWORD`    | Specifies the Testinium password used for logging in.                                                       | Required |
-| `$AC_TESTINIUM_ENTERPRISE_BASE_URL` | The base URL for Testinium enterprise. This is required if you are using Testinium enterprise. Only for Testinium cloud users, this input is not mandatory. | Optional |
+| `$AC_TESTINIUM_ENTERPRISE_BASE_URL` | The base URL for Testinium enterprise. This is required if you are using Testinium enterprise. Only for Testinium cloud users is this input not mandatory. | Optional |
 | `$AC_TESTINIUM_PROJECT_ID`  | Specifies the Testinium project ID. This ID must be obtained from the Testinium platform.                   | Required |
 | `$AC_TESTINIUM_COMPANY_ID`  | Specifies the Testinium company ID. This ID must be obtained from the Testinium platform.                   | Required |
 | `$AC_TESTINIUM_TIMEOUT`     | Specifies the Testinium plan timeout in minutes.                                                            | Required |
-| `$AC_TESTINIUM_MAX_API_RETRY_COUNT` | Specifies the maximum repetition in case of Testinium platform congestion or API errors.            | Required |
+| `$AC_TESTINIUM_MAX_API_RETRY_COUNT` | Specifies the maximum retry in case of Testinium platform congestion or API errors.            | Required |
 
 ### Output Variables
 
@@ -86,8 +86,8 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                     | Description                                                                     |
 | --------------------------------- | ------------------------------------------------------------------------------- | 
-| `AC_TESTINIUM_UPLOADED_APP_ID`    | The unique identifier for the application uploaded to Testinium. This ID is used to select the uploaded application on **Testinium Run Test Plan** step. |
-| `AC_TESTINIUM_APP_OS`             | The operating system of the uploaded application, either `iOS` or `Android`. This helps to run the test plan according to the platform OS in **Testinium Run Test Plan** step. |
+| `AC_TESTINIUM_UPLOADED_APP_ID`    | The unique identifier for the application was uploaded to Testinium. This ID is used to select the uploaded application on the **Testinium Run Test Plan** step. |
+| `AC_TESTINIUM_APP_OS`             | The operating system of the uploaded application, either `iOS` or `Android`. This helps to run the test plan according to the platform OS in the **Testinium Run Test Plan** step. |
 
 ---
 

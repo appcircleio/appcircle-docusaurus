@@ -43,12 +43,12 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_TESTINIUM_USERNAME`    | Specifies the Testinium username used for logging in.                                                       | Required |
 | `$AC_TESTINIUM_PASSWORD`    | Specifies the Testinium password used for logging in.                                                       | Required |
 | `$AC_TESTINIUM_PLAN_ID`     | Specifies the Testinium plan ID. This ID must be obtained from the Testinium platform.                      | Required |
-| `$AC_TESTINIUM_ENTERPRISE_BASE_URL` | The base URL for Testinium enterprise. This is required if you are using Testinium enterprise. Only for Testinium cloud users, this input is not mandatory. | Optional |
+| `$AC_TESTINIUM_ENTERPRISE_BASE_URL` | The base URL for Testinium enterprise. This is required if you are using Testinium enterprise.  Only for Testinium cloud users is this input not mandatory. | Optional |
 | `$AC_TESTINIUM_COMPANY_ID`  | Specifies the Testinium company ID. This ID must be obtained from the Testinium platform.                   | Required |
 | `$AC_TESTINIUM_MAX_FAIL_PERCENTAGE` | Specifies the maximum failure percentage limit to interrupt the workflow. It must be in the range `0`-`100`. Selecting `0` means failures will not interrupt the workflow. | Optional |
 | `$AC_TESTINIUM_TIMEOUT`     | Specifies the Testinium plan timeout in minutes.                                                            | Required |
 | `$AC_TESTINIUM_MAX_API_RETRY_COUNT` | Specifies the maximum retry in case of Testinium platform congestion or API errors.            | Required |
-| `$AC_TESTINIUM_UPLOADED_APP_ID` | The unique identifier for the application uploaded to Testinium. This ID is generated after the **Testinium App Upload** step.  | Required |
+| `$AC_TESTINIUM_UPLOADED_APP_ID` | The unique identifier for the application was uploaded to Testinium. This ID is generated after the **Testinium App Upload** step.  | Required |
 | `$AC_TESTINIUM_APP_OS` | The operating system of the uploaded application, either `iOS` or `Android`. This value is determined after the **Testinium App Upload** step.  | Required |
 
 ### Output Variables
