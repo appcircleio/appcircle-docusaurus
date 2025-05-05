@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # BrowserStack App Automate (XCUI)
 
-Run your [**XCUI**](https://developer.apple.com/documentation/xctest/user_interface_tests) tests on [**BrowserStack**](https://www.browserstack.com) App Automate. This step allows you to send test IPA's to the **BrowserStack** dashboard and run your test on it.
+Run your [**XCUI**](https://developer.apple.com/documentation/xctest) tests on [**BrowserStack**](https://www.browserstack.com) App Automate. This step allows you to send test IPA's to the **BrowserStack** dashboard and run your test on it.
 
 ### Prerequisites
 

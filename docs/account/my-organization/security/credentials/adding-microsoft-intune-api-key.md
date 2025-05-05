@@ -37,5 +37,5 @@ Appcircle utilizes [Microsoft Graph APIs to publish apps in Microsoft Intune](ht
 - DeviceManagementApps.Read.All
 - DeviceManagementApps.ReadWrite.All
 
-You can find detailed information about granting permissions [here](https://learn.microsoft.com/en-us/entra/identity-platform/howto-call-a-web-api-with-curl?tabs=dotnet6&pivots=no-api#add-application-permissions-to-allow-access-to-a-web-api).
+Ensure that the permissions being granted are Application permissions rather than Delegated permissions. You can find detailed information about granting permissions [here](https://learn.microsoft.com/en-us/entra/identity-platform/howto-call-a-web-api-with-curl?tabs=dotnet6&pivots=no-api#add-application-permissions-to-allow-access-to-a-web-api).
 :::
