@@ -6,10 +6,13 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Send to TestFlight
 
 This step enables you to upload the selected application package to [**TestFlight**](https://developer.apple.com/testflight/).
+
+<RunnerUsage />
 
 :::note
 Note: If you attempt to upload a version that already exists on **TestFlight**, this step will prompt you to update the **version** or **build number**.

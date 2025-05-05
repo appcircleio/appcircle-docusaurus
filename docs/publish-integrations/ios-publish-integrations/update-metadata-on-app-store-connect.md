@@ -6,10 +6,13 @@ sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Update Metadata on App Store Connect
 
 This step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information) page to the corresponding sections on App Store Connect. When this step executes, you can see the detailed updated metadata information with localization.
+
+<RunnerUsage />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3741-previewMetadata.png' />
 
