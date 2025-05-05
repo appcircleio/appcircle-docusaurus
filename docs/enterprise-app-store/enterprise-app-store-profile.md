@@ -98,32 +98,7 @@ The Profile ID can be copied from the Info tab by clicking the copy icon located
 
 The Binary Tags feature allows you to label your application binaries with meaningful metadata, which is displayed on the Enterprise Portal for easy identification by users.
 
-These tags help users understand the context, origin, and purpose of each build, such as commit ID, configuration, or workflow name.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss4.png' />
-
-Binary tags can be managed through the Enterprise App Store Profile Settings under the Info tab:
-1.	Navigate to Enterprise App Store → Profiles.
-2.	Select the relevant profile.
-3.	Click the Settings icon.
-4.	Under the Info tab, locate the Binary Tags section.
-5.	Enter or select tags in the “Add a new tag” input field.
-6.	Click Save to apply changes.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss5.png' />
-
-Once tags are saved in the profile settings:
-- Tags will automatically appear next to the app version on the Enterprise Portal after being distributed.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss7.png' />
-
-:::info Build Module Dependency
-This section appears only if the binary is distributed to the Enterprise App Store profile from the Build Module.
-
-Uploaded binaries without metadata from a build module won’t show the selected tags on the Enterprise Portal.
-:::
-
-Available tags:
+These tags help testers understand each binary's origin, purpose, and how it was triggered. The available tags are:
 - Commit ID
 - Commit Hash
 - Commit Message
@@ -136,6 +111,32 @@ Available tags:
 - Build Profile ID
 - Workflow Name
 - Configuration Name
+
+:::info Build Module Dependency
+
+This section appears only if the binary is distributed to the Enterprise App Store profile from the Build Module.
+
+Uploaded binaries without metadata from a build module won’t show the selected tags on the Enterprise Portal.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss4.png' />
+
+Binary tags can be managed through the Enterprise App Store Profile Settings under the Info tab:
+1. Navigate to **Enterprise App Store** module.
+2. Select the relevant profile.
+3. Click the **Settings** icon.
+4. Under the **Info** tab, locate the **Binary Tags** section.
+5. Use the “Add a new tag” field to enter or select tags.
+6. Click **Save** to apply changes.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss5.png' />
+
+Once tags are saved in the profile settings:
+- Tags will automatically appear next to the app version on the Enterprise Portal after being published to a channel.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss10.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss11.png' />
 
 #### Show on Top
 
