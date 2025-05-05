@@ -22,6 +22,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - Binary Tags can now be configured from the [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#binary-tags) and [Enterprise Portal](/enterprise-app-store/enterprise-app-store-profile#binary-tags) profile settings to be displayed on the Testing and Enterprise Portals. The data for these tags is provided by the Build module. These tags help testers identify the context, source, and purpose of each app version. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 - Support has been added for downloading build logs using the `commitId` and `buildId` parameters, with optional path support. <APICLIBadge/> <CloudBadge/>
+- The **Select Java Version** step, commonly used in Android projects, has been added to the default workflows. <BuildIntegrationsBadge/> <CloudBadge/>
+- The **Release Notes** component is now enriched with build Git metadata by default and added to the Default Workflow for all platforms. <BuildIntegrationsBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
@@ -29,6 +31,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Validation has been added for enabling SSO authorization to ensure that the configuration includes existing SSO groups, roles, and an enabled SSO authentication. <AccountBadge/> <CloudBadge/>
 - A warning message will now be displayed instead of redirecting to the login screen if the user enters their SSO alias incorrectly. <AccountBadge/> <CloudBadge/>
 - Users are now able to upload binaries up to 3 GB (previously 2 GB) across various modules. <AccountBadge/> <CloudBadge/>
+- Improvements have been made to the display and calculation of usage numbers across various modules within the Billing page. <AccountBadge/> <CloudBadge/>
 - The Publish module will now correctly display Timeout and Cancel statuses in applicable scenarios. The Publish timeout limit will align with the Build timeout limit, which can be found in the Billing area. <PublishBadge/> <CloudBadge/>
 - The **Upload Certificate Signing Request** option has been removed from the **Create an Apple Certificate** process. <SigningIdentitiesBadge/> <CloudBadge/>
 - Outdated commit IDs can now be used to start builds when connected to remote repositories. <BuildBadge/> <CloudBadge/>

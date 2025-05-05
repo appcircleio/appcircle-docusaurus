@@ -5,6 +5,7 @@ tags: [publish, metadata, approve]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Metadata Approval
 
@@ -17,6 +18,8 @@ When this step runs in your workflow, Appcircle sends a unique approval email to
 - View the metadata details
 - Approve or reject the metadata
 - Provide feedback in case of rejection
+
+<NoRunnerUsage />
 
 :::caution Metadata Approval Panel
 

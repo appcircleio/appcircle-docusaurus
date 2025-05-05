@@ -6,11 +6,13 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Update Metadata on Microsoft Intune
 
 This step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information#microsoft-intune-metadata-information) page to the corresponding sections on Microsoft Intune.
 
+<NoRunnerUsage />
 
 ### Prerequisites
 

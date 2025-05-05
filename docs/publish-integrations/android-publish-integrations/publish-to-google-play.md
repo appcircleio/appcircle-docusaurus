@@ -7,6 +7,7 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Publish to Google Play
 
@@ -14,6 +15,8 @@ Appcircle supports sending APK and AAB binaries to [Google Play](https://play.go
 
 Google Play no longer supports APK submission; however, Appcircle retains the APK submission feature for exceptional cases. For more details about APK submission, please refer to this document:
 > [Google Play requires new apps to be published with the Android App Bundle starting August 2021.](https://android-developers.googleblog.com/2021/06/the-future-of-android-app-bundles-is.html)
+
+<RunnerUsage />
 
 ## Prerequisites
 
