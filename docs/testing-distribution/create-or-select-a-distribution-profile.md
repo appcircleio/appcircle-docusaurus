@@ -203,12 +203,12 @@ Uploaded binaries without metadata from a build module won’t show the selected
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss2.png' />
 
 Binary tags can be managed through the Testing Distribution Profile Settings under the Info tab:
-1.	Navigate to **Testing Distribution** module.
-2.	Select the relevant distribution profile.
-3.	Click the **Settings** icon.
-4.	Under the **Info** tab, locate the **Binary Tags** section.
-5.	Use the “Add a new tag” field to enter or select tags.
-6.	Click **Save** to apply changes.
+1. Navigate to **Testing Distribution** module.
+2. Select the relevant distribution profile.
+3. Click the **Settings** icon.
+4. Under the **Info** tab, locate the **Binary Tags** section.
+5. Use the “Add a new tag” field to enter or select tags.
+6. Click **Save** to apply changes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss9.png' />
 
