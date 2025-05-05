@@ -6,10 +6,13 @@ sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Update Metadata on Google Play Console
 
 This step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information) page to the corresponding sections on Google Play Console.
+
+<RunnerUsage />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5968-google1.png' />
 
