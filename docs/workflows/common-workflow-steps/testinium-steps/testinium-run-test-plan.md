@@ -2,6 +2,7 @@
 title: Testinium Run Test Plan
 description: The Testinium Run Test Plan step allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle.
 tags: [testinium, plan, run, test, mobile, automation, app automate]
+sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

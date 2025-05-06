@@ -2,6 +2,7 @@
 title: Testinium
 description: The Testinium step allows users to upload their mobile applications to Testinium and run a test plan.
 tags: [testinium, app upload, run, test, plan]
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

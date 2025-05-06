@@ -2,6 +2,7 @@
 title: Testinium Upload App
 description: The Testinium Upload App step enables uploading mobile applications to the Testinium platform for automated testing directly from Appcircle.
 tags: [testinium, app upload, test, mobile, app automate, automation]
+sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -122,9 +122,17 @@ By utilizing this step, you will be able to test your project dependencies for v
 
 You can use **SonarQube** component to check your code quality.
 
+## [Testinium Upload App](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app)
+
+The **Testinium Upload App** step uploads mobile apps from Appcircle to Testinium, supporting both cloud and enterprise environments.
+
+## [Testinium Run Test Plan](/workflows/common-workflow-steps/testinium-steps/testinium-run-test-plan)
+
+The **Testinium Run Test Plan** step allows you to run automated tests on your mobile applications directly from Appcircle, whether using Testinium cloud or enterprise setup.
+
 ## [Testinium](/workflows/common-workflow-steps/testinium-steps/testinium)
 
-This component runs your test plans with **Testinium**.
+The **Testinium** step allows users to upload their mobile applications to **Testinium** and run a test plan for Testinium cloud users.
 
 ## [Upload Files to Amazon S3](/workflows/common-workflow-steps/upload-files-to-amazon-s3)
 
