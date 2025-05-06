@@ -158,7 +158,7 @@ The Info tab allows you to enter the publisher information for your distributed 
 
 You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-6099-info.png' />
 
 Once you click the save button, the information you have provided will be displayed on the Tester Portal.
 
@@ -178,32 +178,7 @@ You can find out more about the login methods in the [using authentication for d
 
 The Binary Tags feature allows you to label your application binaries with meaningful metadata, which is displayed on the Testing Portal for easy identification by testers. 
 
-These tags help testers understand the context, origin, and purpose of each build, such as commit ID, configuration, or workflow name.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss2.png' />
-
-Binary tags can be managed through the Testing Distribution Profile Settings under the Info tab:
-1.	Navigate to Testing Distribution → Distribution Profiles.
-2.	Select the relevant profile.
-3.	Click the Settings icon.
-4.	Under the Info tab, locate the Binary Tags section.
-5.	Enter or select tags in the “Add a new tag” input field.
-6.	Click Save to apply changes.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss3.png' />
-
-Once tags are saved in the profile settings:
-- Tags will automatically appear next to the app version on the Testing Portal after being distributed.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss6.png' />
-
-:::info Build Module Dependency
-This section appears only if the binary is distributed to the Testing Distribution profile from the Build Module. 
-
-Uploaded binaries without metadata from a build module won’t show the selected tags on the Testing Portal.
-:::
-
-Available tags:
+These tags help testers understand each binary's origin, purpose, and how it was triggered. The available tags are:
 - Commit ID
 - Commit Hash
 - Commit Message
@@ -216,6 +191,31 @@ Available tags:
 - Build Profile ID
 - Workflow Name
 - Configuration Name
+
+:::info Build Module Dependency
+
+This section appears only if the binary is distributed to the Testing Distribution profile from the Build Module. 
+
+Uploaded binaries without metadata from a build module won’t show the selected tags on the Testing Portal.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss2.png' />
+
+Binary tags can be managed through the Testing Distribution Profile Settings under the Info tab:
+1. Navigate to **Testing Distribution** module.
+2. Select the relevant distribution profile.
+3. Click the **Settings** icon.
+4. Under the **Info** tab, locate the **Binary Tags** section.
+5. Use the “Add a new tag” field to enter or select tags.
+6. Click **Save** to apply changes.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss9.png' />
+
+Once tags are saved in the profile settings:
+- Tags will automatically appear next to the app version on the Testing Portal after being distributed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss8.png' />
 
 This visibility allows testers to filter and select the appropriate version for testing based on context.
 
