@@ -477,26 +477,22 @@ Steps that are disabled in the workflow will not appear in the above output.
 
 Simply include this script in your workflow to better understand and monitor the status of your workflow steps.
 
-### How to generate the build log URL in the build time?
+### How to generate the build log URL during the build time?
 
-When a build is triggered in Appcircle, the build log starts to generate. If the user needs access to the build log URL, they can retrieve two different output links by adding the Bash script below to the relevant workflow.
-Please note that the links required to access the **build in progress log URL** and the **completed buildlog URL** are different, so they should be used according to specific needs.
-The link for the ongoing build can be accessed while the build is still running, whereas the completed build log URL becomes available only after the build has finished.
+When a build is triggered in Appcircle, the build log starts to generate. If you need access to the build log URL, you can retrieve two different output links by adding the Bash script below to the relevant workflow.
 
-#### Requirements 
+:::warning Log URL Changes After Build is Finished
 
-No specific action is required for these variables, except that the base_url may need to be updated if the user is using a self-hosted Appcircle instance.
-The related build profile can be used simply by adding a custom script.
-Assignments are made using automatically with [**Reserved Variables**](/environment-variables/appcircle-specific-environment-variables).
+Please note that the links for the **in-progress** and the **completed** build logs are different, so be sure to use them according to your specific needs.
 
-`build_id=$AC_QUEUE_ID`
+No specific action is required for these variables, except that the base URL (`base_url`) may need to be updated if you are using a self-hosted Appcircle.
 
-`profile_id=$AC_BUILD_PROFILE_ID`
+In the script only base_url may need to be updated if you are using self-hosted Appcircle.
 
-`commit_id=$AC_COMMIT_ID`
+:::
 
-`base_url="https://my.appcircle.io/build/detail"`
-
+The related build profile can be used simply by adding the Custom Script in Bash.
+Assignments are made automatically using environment variables defined by the system, which are represented by values starting with `$`. These variables are explained in detail in the [**Reserved Variables**](/environment-variables/appcircle-specific-environment-variables) section.
 
 ```bash
 build_id=$AC_QUEUE_ID
@@ -505,12 +501,10 @@ commit_id=$AC_COMMIT_ID
 
 base_url="https://my.appcircle.io/build/detail"
 
-echo "Continuing workflow build log URL link"
-url="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&scope=build&buildId=fakeID${build_id}"
-echo "$url"
+in_progress_url="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&scope=build&buildId=fakeID${build_id}"
+echo "In-Progress Build Log URL: $in_progress_url"
 
-echo "Workflow completed URL link"
-url="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&buildId=${build_id}&scope=build&method=get"
-echo "$url"
+completed_url="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&buildId=${build_id}&scope=build&method=get"
+echo "Completed Build Log URL: $completed_url"
 
 ```
