@@ -501,10 +501,23 @@ commit_id=$AC_COMMIT_ID
 
 base_url="https://my.appcircle.io/build/detail"
 
-in_progress_url="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&scope=build&buildId=fakeID${build_id}"
-echo "In-Progress Build Log URL: $in_progress_url"
+AC_IN_PROGRESS_BUILD_LOG_URL="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&scope=build&buildId=fakeID${build_id}"
+echo "In-Progress Build Log URL: $AC_IN_PROGRESS_BUILD_LOG_URL"
 
-completed_url="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&buildId=${build_id}&scope=build&method=get"
-echo "Completed Build Log URL: $completed_url"
+AC_COMPLETED_BUILD_LOG_URL="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&buildId=${build_id}&scope=build&method=get"
+echo "Completed Build Log URL: $AC_COMPLETED_BUILD_LOG_URL"
+
+```
+
+:::info
+
+Please note that, If you want to use these URL variables in another workflow step, you need to include this code block down below to make them accessible beyond the current step. Otherwise, they won't be reachable from other workflow steps.
+
+:::
+
+```bash
+
+echo "AC_COMPLETED_BUILD_LOG_URL=$AC_COMPLETED_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
+echo "AC_IN_PROGRESS_BUILD_LOG_URL=$AC_IN_PROGRESS_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
 
 ```
