@@ -9,7 +9,7 @@ sidebar_position: 1
 
 This section explains how to create and manage a CodePush profile in Appcircle to enable over-the-air (OTA) updates for your React Native projects. A properly configured profile allows you to connect your CodePush deployments with your Appcircle workflows, manage versioning, and control release behaviors through a user-friendly interface. Follow the steps below to get started.
 
-// Empty CodePush Ekranı gelecek
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-codePushEmptyState.png' />
 
 ## Creating CodePush Profile
 
@@ -27,7 +27,9 @@ To ensure better manageability of your updates, we recommend creating two separa
 
 :::
 
-// Add New ve profil kart ss gelecek
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-codePushAddNew.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-profileCard.png' />
 
 ## Profile Actions
 
@@ -37,7 +39,7 @@ By clicking the three dots on the profile card, you can:
 - Pin the profile
 - Delete the existing profile
 
-// Profil 3 nokta ss gelecek
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-profileActions.png' />
 
 :::caution Changing Profile Name
 
@@ -54,14 +56,14 @@ This section provides an overview of how to manage your existing CodePush profil
 
 Deployment channels allow you to categorize and manage your CodePush releases, enabling different update strategies such as `Staging` and `Production` deployments.
 
-//Deployment channels ss gelecek
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-deploymentChannels.png' />
 
 ### Adding new Deployment Channel
 
 - To add a new deployment channel, click on the `+` button 
 
-// add channel ss
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-addNewDeploy.png' />
 
 - Provide a unique channel name in the opened modal, and save your configuration.
 
-// give name channel ss
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-channelName.png' />

@@ -99,6 +99,12 @@ appcircle-code-push release-react <MyAppName> ios -d <DeploymentChannelName> --t
 
 Replace `MyAppName` with your app name, `<DeploymentChannelName>` with the name of your deployment channel, and `<BinaryVersion>` with the version of the binary that this update targets.
 
+:::caution Target Binary Version
+
+When sending a CodePush release, you must specify the binary version that the release targets. The Appcircle CodePush SDK determines the binary version based on the `version` field in `Info.plist` (for iOS) or `build.gradle` (for Android). The version specified in `package.json` is not considered by the SDK.
+
+:::
+
 The table below summarizes the parameters used in this `release-react` command:
 
 | Parameter                | Description                                                                                |
