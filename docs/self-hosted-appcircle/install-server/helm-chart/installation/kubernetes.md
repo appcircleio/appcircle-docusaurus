@@ -543,6 +543,6 @@ You can install any number of runners regarding to your needs and connect them t
 
 When you deploy the Appcircle server using Helm, a default license is provided. You can explore the Appcircle with the default license.
 
-To obtain the license you purchased, please share the initial organization ID, which is printed after the `helm` deployment command, with the Appcircle team and follow the detailed instructions available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration) section.
+To obtain the license you purchased, you need to share your initial organization ID with the Appcircle Team. The initial organization ID is printed after the `helm` deployment command during installation, or can be retrieved later with a command. Detailed instructions are available in the [Appcircle License Update](/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration) section.
 
 <NeedHelp />

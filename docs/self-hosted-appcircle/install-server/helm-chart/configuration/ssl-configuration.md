@@ -1,12 +1,14 @@
 ---
 title: Helm SSL Configuration
 description: Learn how to configure SSL certificate for HTTPS connections
-tags: [self-hosted, helm, configuration, kubernetes]
+tags: [self-hosted, helm, configuration, kubernetes, openshift]
 sidebar_position: 90
 sidebar_label: SSL Configuration
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Overview
 
@@ -21,7 +23,7 @@ Appcircle must be installed with HTTPS from the initial installation. If you ini
 You have two options for configuring SSL certificates:
 
 1. **Trial Purposes**: Define the SSL certificate directly in the `values.yaml` by following [this section](#define-the-ssl-certificate-in-valuesyaml).
-2. **Production**: Create a Kubernetes secret for better security and manageability by following [this section](#define-the-ssl-certificate-in-secrets).
+2. **Production**: Create a Kubernetes/Openshift secret for better security and manageability by following [this section](#define-the-ssl-certificate-in-secrets).
 
 :::info
 When configuring Appcircle with HTTPS, you have the option to use self-signed or untrusted root certificates. However, if you choose to do so, it is essential to add the certificate or the root CA certificate to the trusted certificates. Failure to do this may result in connection errors. For detailed instructions about adding trusted CA certificates, refer to the [Adding Trusted CA Certificates](/self-hosted-appcircle/install-server/helm-chart/configuration/ca-certificates) documentation.
@@ -97,16 +99,43 @@ helm upgrade appcircle-server appcircle/appcircle -n appcircle -f values.yaml
 
 3. To restart the Redis service after updating the SSL certificate, you need to first filter and find the names of the stateful sets, as the names might change according to the release name. Use the following command to get the stateful sets:
 
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
+
 ```bash
 kubectl get statefulset -n appcircle | grep webeventredis
 ````
 
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc get statefulset -n appcircle | grep webeventredis
+````
+
+  </TabItem>
+</Tabs>
+
 4. Restart the Redis StatefulSets to apply the changes:
+
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
 
 ```bash
 kubectl rollout restart statefulset/appcircle-server-webeventredis-master -n appcircle
 kubectl rollout restart statefulset/appcircle-server-webeventredis-replicas -n appcircle
 ```
+
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc rollout restart statefulset/appcircle-server-webeventredis-master -n appcircle
+oc rollout restart statefulset/appcircle-server-webeventredis-replicas -n appcircle
+```
+
+  </TabItem>
+</Tabs>
 
 ## Define the SSL Certificate in Secrets
 
@@ -145,6 +174,9 @@ The private key (`key`) should not be password-protected.
 The name **`appcircle-tls-wildcard`** is **reserved** and **cannot be changed**.
 :::
 
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
+
 ```bash
 kubectl create secret generic appcircle-tls-wildcard \
   --from-file=tls.crt='fullchain.crt' \
@@ -154,11 +186,29 @@ kubectl create secret generic appcircle-tls-wildcard \
   -n appcircle
 ```
 
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc create secret generic appcircle-tls-wildcard \
+  --from-file=tls.crt='fullchain.crt' \
+  --from-file=tls.key='private.key' \
+  --from-file=ca.crt='root-ca.crt' \
+  --type=kubernetes.io/tls \
+  -n appcircle
+```
+
+  </TabItem>
+</Tabs>
+
 ### Updating the Certificate
 
 To update an existing SSL certificate, use the following commands.
 
 1. Update the secret with the new certificate.
+
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
 
 ```bash
 kubectl create secret generic appcircle-tls-wildcard \
@@ -170,18 +220,61 @@ kubectl create secret generic appcircle-tls-wildcard \
   --save-config --dry-run=client -o yaml | kubectl apply -f -
 ```
 
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc create secret generic appcircle-tls-wildcard \
+  -n appcircle \
+  --from-file=tls.crt='fullchain.crt' \
+  --from-file=tls.key='private.key' \
+  --from-file=ca.crt='root-ca.crt' \
+  --type=kubernetes.io/tls \
+  --save-config --dry-run=client -o yaml | oc apply -f -
+```
+
+  </TabItem>
+</Tabs>
+
 2. To restart the Redis service after updating the SSL certificate, you need to first filter and find the names of the stateful sets, as the names might change according to the release name. Use the following command to get the stateful sets:
+
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
 
 ```bash
 kubectl get statefulset -n appcircle | grep webeventredis
 ````
 
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc get statefulset -n appcircle | grep webeventredis
+````
+
+  </TabItem>
+</Tabs>
+
 3. Restart the Redis StatefulSets to apply the changes:
+
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
 
 ```bash
 kubectl rollout restart statefulset/appcircle-server-webeventredis-master -n appcircle
 kubectl rollout restart statefulset/appcircle-server-webeventredis-replicas -n appcircle
 ```
+
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc rollout restart statefulset/appcircle-server-webeventredis-master -n appcircle
+oc rollout restart statefulset/appcircle-server-webeventredis-replicas -n appcircle
+```
+
+  </TabItem>
+</Tabs>
 
 ## Final Steps
 

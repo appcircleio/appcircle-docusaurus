@@ -1,7 +1,7 @@
 ---
 title: Enterprise App Store Customization
 description: Learn how to configure Enterprise App Store
-tags: [self-hosted, helm, configuration, kubernetes]
+tags: [self-hosted, helm, configuration, kubernetes, openshift]
 sidebar_position: 70
 ---
 

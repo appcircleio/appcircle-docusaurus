@@ -1,15 +1,17 @@
 ---
 title: Storage Configuration
 description: Learn how to configure the storage details of Appcircle server Helm chart for production environments
-tags: [self-hosted, helm, configuration, kubernetes]
+tags: [self-hosted, helm, configuration, kubernetes, openshift]
 sidebar_position: 30
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ### Persistent Volume Configuration
 
-Appcircle server Helm chart supports configuring storage classes and volume sizes for persistent volume claims (PVCs). If you don't specify any storage class or size, the PVCs will be created using the default storage class of your Kubernetes cluster with the default size. If you want to adjust these settings, you can specify them in the `values.yaml`.
+Appcircle server Helm chart supports configuring storage classes and volume sizes for persistent volume claims (PVCs). If you don't specify any storage class or size, the PVCs will be created using the default storage class of your Kubernetes/Openshift cluster with the default size. If you want to adjust these settings, you can specify them in the `values.yaml`.
 
 :::caution
 The configurations for storage classes should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation)** and redeploy it.
@@ -17,6 +19,9 @@ The configurations for storage classes should be **done before the first deploym
 
 :::tip
 You can check your **default storage class** by running the following command and check the output:
+
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
 
 ```bash
 kubectl get storageclass
@@ -30,7 +35,27 @@ NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE
 local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  59d
 ```
 
-If the Kubernetes cluster you are deploying Appcircle server **doesn't have a default** storage class, you can **set** the storage class from `values.yaml`.   
+If the Kubernetes cluster you are deploying Appcircle server **doesn't have a default** storage class, you can **set** the storage class from `values.yaml`.
+
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc get storageclass
+```
+
+According to the sample output below, there is a `default` storage class.
+
+```output
+oc get storageclass
+NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  59d
+```
+
+If the Openshift cluster you are deploying Appcircle server **doesn't have a default** storage class, you can **set** the storage class from `values.yaml`.
+
+  </TabItem>
+</Tabs>
 
 :::
 
@@ -75,5 +100,28 @@ webeventredis:
       size: 2Gi
       storageClass: nfs-client
 ```
+
+:::info
+`nfs-client` is a custom storage class name. You can replace it with a storage class available in your cluster
+:::
+
+You can check the updated storage configuration by running the following command:
+
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
+
+```bash
+kubectl get pvc -n appcircle
+```
+
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc get pvc -n appcircle
+```
+
+  </TabItem>
+</Tabs>
 
 <NeedHelp />
