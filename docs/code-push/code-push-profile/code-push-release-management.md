@@ -55,20 +55,39 @@ In this section, you can perform actions such as details, disabling, or enabling
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionActions.png' />
 
-### Version Details
+All version actions are detailed below.
+
+### Details
 This option allows you to view the all informations and configuration details of a specific CodePush release.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionDetails.png' />
+
+  - **Released on:** Displays the exact date and time when this release was created.
+  - **Channel:** Indicates the deployment channel (e.g., Staging or Production) to which this release belongs.
+  - **Release Method:** Shows whether the release was uploaded manually, promoted from another channel, or generated automatically by the Build Module.
+  - **Target Version:** Specifies the binary version of the app that this release is compatible with.
+  - **Size:** The file size of the update bundle, giving users an idea of the download footprint.
+  - **Mandatory:** States whether this update must be installed immediately by users or can be skipped.
+  - **Status:** Reflects the current state of the release (Enabled or Disabled).
+  - **Rollout:** Indicates the percentage of devices that will receive this release based on rollout settings.
+  - **Description:** A short summary of the changes or improvements included in this release.
 
 ### Promote
 Use this action to promote a release from one deployment channel to another, such as from Staging to Production.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-promote.png' />
 
+  - **Released Version:** Displays the exact version identifier of the release you are promoting.
+  - **Released on:** Shows the original date and time when this release was first created.
+  - **Promote To:** Specifies the target deployment channel (e.g., Production) where the release will be promoted.
+  - **Description:** A brief note explaining the purpose of this promotion or summarizing the changes included in the release.
+
 ### Rollback
 This action reverts your app to the previous stable CodePush version in case of issues with the latest update. It also allows you to rollback to any specific version if desired.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-rollback.png' />
+
+
 
 ### Settings
 Allows you to modify release configurations such as rollout percentage or mark the release as mandatory.

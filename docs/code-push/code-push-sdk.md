@@ -63,7 +63,9 @@ This configuration ensures that your app checks for updates when it starts, and 
 
 To ensure that your app receives the correct updates, you must configure the appropriate deployment key in your project. Each deployment channel created in Appcircle has a unique key, which must be specified in your CodePush configuration. This allows your app to connect to the correct environment, such as staging or production.
 
-To ensure that apps can properly receive updates, the `Server URL` and `Deployment Key` must be correctly added to the native code of your project. Instructions on how to add these configurations for both iOS and Android platforms are provided below.
+To ensure that apps can properly receive updates, the `Server URL` and `Deployment Key` must be correctly added to the native code of your project. For more information about, please visit the [**Deployment Keys**](/code-push/code-push-profile/code-push-release-management#deployment-keys) documentation.
+
+Instructions on how to add these configurations for both iOS and Android platforms are provided below.
 
 
 <Tabs defaultValue="react-native-ios" values={[

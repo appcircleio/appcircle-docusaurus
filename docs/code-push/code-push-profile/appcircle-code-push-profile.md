@@ -58,6 +58,18 @@ Deployment channels allow you to categorize and manage your CodePush releases, e
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-deploymentChannels.png' />
 
+
+### Deployment Channel Actions
+
+This section explains how to rename and delete existing deployment channels and view their release history for better control over your update workflow.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-channelActions.png' />
+
+By clicking the three dots on the channels, you can:
+
+- Rename the channel
+- Delete the existing channel
+
 ### Adding new Deployment Channel
 
 - To add a new deployment channel, click on the `+` button 
