@@ -476,3 +476,38 @@ Steps that are disabled in the workflow will not appear in the above output.
 :::
 
 Simply include this script in your workflow to better understand and monitor the status of your workflow steps.
+
+### How to generate the build log URL during the build time?
+
+When a build is triggered in Appcircle, the build log starts to generate. If you need access to the build log URL, you can retrieve two different output links by adding the Bash script below to the relevant workflow.
+
+:::warning Log URL Changes After Build is Finished
+
+Please note that the links for the **in-progress** and the **completed** build logs are different, so be sure to use them according to your specific needs.
+
+No specific action is required for these variables, except that the base URL (`base_url`) may need to be updated if you are using a self-hosted Appcircle.
+
+In the script only base_url may need to be updated if you are using self-hosted Appcircle.
+
+:::
+
+The related build profile can be used simply by adding the Custom Script in Bash.
+Assignments are made automatically using environment variables defined by the system, which are represented by values starting with `$`. These variables are explained in detail in the [**Reserved Variables**](/environment-variables/appcircle-specific-environment-variables) section.
+
+```bash
+build_id=$AC_QUEUE_ID
+profile_id=$AC_BUILD_PROFILE_ID
+commit_id=$AC_COMMIT_ID
+
+base_url="https://my.appcircle.io/build/detail"
+
+AC_IN_PROGRESS_BUILD_LOG_URL="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&scope=build&buildId=fakeID${build_id}"
+echo "In-Progress Build Log URL: $AC_IN_PROGRESS_BUILD_LOG_URL"
+
+AC_COMPLETED_BUILD_LOG_URL="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&buildId=${build_id}&scope=build&method=get"
+echo "Completed Build Log URL: $AC_COMPLETED_BUILD_LOG_URL"
+
+# To use these URL variables in later steps within the same workflow, add them to ENV_FILE_PATH as shown below; otherwise, they will not be accessible.
+echo "AC_COMPLETED_BUILD_LOG_URL=$AC_COMPLETED_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
+echo "AC_IN_PROGRESS_BUILD_LOG_URL=$AC_IN_PROGRESS_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
+```
