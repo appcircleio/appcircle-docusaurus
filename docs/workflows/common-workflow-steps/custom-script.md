@@ -507,7 +507,7 @@ echo "In-Progress Build Log URL: $AC_IN_PROGRESS_BUILD_LOG_URL"
 AC_COMPLETED_BUILD_LOG_URL="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&buildId=${build_id}&scope=build&method=get"
 echo "Completed Build Log URL: $AC_COMPLETED_BUILD_LOG_URL"
 
-#If you want to use these URL variables in another workflow step, you need to include this code block down below to make them accessible beyond the current step. Otherwise, they won't be reachable from other workflow steps.
+# To use these URL variables in later steps within the same workflow, add them to ENV_FILE_PATH as shown below; otherwise, they will not be accessible.
 echo "AC_COMPLETED_BUILD_LOG_URL=$AC_COMPLETED_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
 echo "AC_IN_PROGRESS_BUILD_LOG_URL=$AC_IN_PROGRESS_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
 ```
