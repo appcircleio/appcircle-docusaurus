@@ -16,6 +16,27 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.27.2 - 2025-05-09 Upload Option for Variable Groups, Build Enhancements, Improvements and more
+
+### 🆕 New Features
+
+- Downloaded Variable Group JSON files can now be uploaded to existing or newly created variable groups for easier transmission. Alternatively, users can create their own JSON files and upload them, provided they follow the correct format. <BuildBadge/> <PublishBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- The search functionality for the Testing Distribution module has been improved by integrating a server-side component, enhancing performance and scalability. <DistributionBadge/> <CloudBadge/>
+- The Upload button has been moved to the upper section of the app version list for improved visibility on Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
+- A sidebar summary card has been added, displaying the organization name, license plan, and license expiry date along with a quick access link to Billing page for Enterprise licensed organizations. <AccountBadge/> <CloudBadge/>
+- The Last Commit ID display has been updated to Last Commit Hash within the Build module. <BuildBadge/> <CloudBadge/>
+- The latest Android and iOS OS versions have been added to the Send to Microsoft Intune settings within the Publish Step. <PublishBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where having only an Enterprise-type API key caused UI issues in the Publish module. <PublishBadge/> <CloudBadge/>
+- Typographical errors have been corrected in various areas of the Signing Identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where using former commit hashes on new builds caused a UI problem. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where some users experienced problems during fetching operations on build profiles when connected to a Bitbucket repository. <BuildBadge/> <CloudBadge/>
+
 ## 3.27.1 - 2025-04-11 Metadata Approval and Domain Verification Improvements, Bug Fixes and more
 
 ### 🆕 New Features
