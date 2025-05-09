@@ -7,6 +7,7 @@ tags: [custom scripts, build, test, workflow, step]
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Screenshot from '@site/src/components/Screenshot';
+import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
 
 # Custom Script
 
@@ -511,3 +512,75 @@ echo "Completed Build Log URL: $AC_COMPLETED_BUILD_LOG_URL"
 echo "AC_COMPLETED_BUILD_LOG_URL=$AC_COMPLETED_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
 echo "AC_IN_PROGRESS_BUILD_LOG_URL=$AC_IN_PROGRESS_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
 ```
+
+### How do you store and use Custom Scripts in a Git repository for Custom Script steps??
+
+If you are looking for a modular way to manage your Appcircle CI custom scripts, you can host your script files in a Git repository and pull them dynamically into the build environment. This approach helps keep your workflow clean and allows centralized version control for your custom scripts.
+
+This section explains how to clone a private Git repository and execute a specific script file from it using the Custom Script step.
+
+To use this approach, you must first convert your script into a Git repository. This means placing your .sh file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure Repos).
+
+:::caution
+
+It is recommended to create a blank repository specifically for the desired custom script as a .sh file.
+
+:::
+
+:::info Required Permissions
+
+To successfully clone a repository, your personal access token (PAT) must have read access to the repository.
+
+Write or admin permissions are not required for this use case.
+
+:::
+
+<PatDanger />
+
+```bash
+#Bash script
+set -e
+
+# Use environment variables for sensitive data like $PROVIDER_PAT
+REPO_URL="https://[Username]:$PROVIDER_PAT@[git-provider].[selfhosted].io/[Username]/[ExampleRepo.git]"
+# Example URL
+# REPO_URL="https://george:$PROVIDER_PAT@github.io/george/ExampleRepo.git"
+FOLDER_NAME=$(basename "$REPO_URL" .git)
+
+echo "Cloning the repository..."
+git clone "$REPO_URL"
+
+# Navigate into the repository
+cd "$FOLDER_NAME" || { echo "Failed to enter the directory."; exit 1; }
+
+# Optional: Checkout to a specific branch
+git checkout main 
+
+# Find and execute the script under cloned file of repository
+if [ -f "./Example.sh" ]; then
+    chmod +x ./Example.sh
+    ./Example.sh
+else
+    echo "Example.sh not found."
+    exit 1
+fi
+
+```
+
+:::tip Advantages of Git-Based Custom Script Management
+
+Using a Git repository to manage your custom scripts provides several key advantages:
+
+Reusability: The same script repository can be used across multiple workflows and build profiles without duplication.
+
+Traceability: Every change to the script is version-controlled and can be audited or rolled back via Git history.
+
+Collaboration: Multiple team members can contribute and review changes through pull requests.
+
+CI/CD Compatibility: Changes in scripts are automatically reflected in builds without needing to manually update workflows.
+
+Branching Support: Different versions of scripts can be maintained using Git branches and referenced independently.
+
+This approach significantly improves scalability, maintainability, and consistency in teams managing multiple CI pipelines.
+
+:::
