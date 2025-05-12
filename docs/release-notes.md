@@ -20,7 +20,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- Downloaded Variable Group JSON files can now be uploaded to existing or newly created variable groups for easier transmission. Alternatively, users can create their own JSON files and upload them, provided they follow the correct format. <BuildBadge/> <PublishBadge/> <CloudBadge/>
+- Downloaded Variable Group JSON files can now be [uploaded](/build/build-environment-variables#uploading-environment-variables) to existing or newly created variable groups for easier transmission. Alternatively, users can create their own JSON files and upload them, provided they follow the correct format. <BuildBadge/> <PublishBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
