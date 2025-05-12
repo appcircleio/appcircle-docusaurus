@@ -525,7 +525,7 @@ If you are using public repository, you dont need to obtain an access token. In 
 
 :::
 
-To use this approach, you must first convert your bash or ruby script into a Git repository. This means placing your bash or ruby file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure Repos).
+To use this approach, you must first convert your bash or ruby script into a Git repository. This means placing your bash or ruby file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure repos).
 
 :::caution
 
@@ -593,9 +593,9 @@ For example, a typical GitHub URL would look like:
 REPO_URL=`"https://george:$PROVIDER_PAT@github.com/george/ExampleRepo.git"`
 If you are using GitLab, Bitbucket, or Azure DevOps, make sure to adapt the domain and path structure accordingly. Refer to your Git provider’s documentation for the correct clone URL format.
 
-- Github -> `REPO_URL="https://$GITHUB_PAT@github.com/[user]/[examplerepo.git]"`
+- GitHub -> `REPO_URL="https://$GITHUB_PAT@github.com/[user]/[examplerepo.git]"`
 
-- Gitlab -> `REPO_URL="https://[username]:$GITLAB_PAT@gitlab.com/[group]/[examplerepo.git]"`
+- GitLab -> `REPO_URL="https://[username]:$GITLAB_PAT@gitlab.com/[group]/[examplerepo.git]"`
 
 - Azure -> `REPO_URL="https://[username]:$AZURE_PAT@dev.azure.com/[username]/[exampleproje]/_git/[examplerepo]"`
 
