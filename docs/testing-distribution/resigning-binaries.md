@@ -7,10 +7,13 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Re-signing
 
 Re-signing is the process of modifying an existing binary with a new signing certificate or keystore, required when an application needs to be published under a different developer account or when updating an existing application. This process involves removing the original signature and replacing it with a new one.
+
+<RunnerUsage />
 
 ## Re-signing iOS Binaries
 
