@@ -555,9 +555,6 @@ FOLDER_NAME=$(basename "$REPO_URL" .git)
 TARGET_BRANCH="main"
 TARGET_SCRIPT="Example.sh"  # or "Example.rb"
 
-# Extract folder name from the repository URL
-FOLDER_NAME=$(basename "$REPO_URL" .git)
-
 echo "Cloning the repository..."
 git clone "$REPO_URL"
 
