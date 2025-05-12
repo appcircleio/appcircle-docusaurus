@@ -553,7 +553,7 @@ set -e
 CS_REPO_URL="https://[Username]:$PROVIDER_PAT@[git-provider]/[Username]/[ExampleRepo.git]"
 CS_FOLDER_NAME=$(basename "$CS_REPO_URL" .git)
 CS_GIT_BRANCH="main"
-CS_SCRIPTFILE="Example.sh"  # or "Example.rb"
+CS_SCRIPT_FILE="example.sh"  # or "example.rb"
 
 echo "Cloning the repository..."
 git clone "$CS_REPO_URL"
@@ -579,7 +579,7 @@ if [ -f "./$CS_SCRIPT_FILE" ]; then
         abort
     fi
 else
-    echo "$CS_SCRIPT_FILE not found."
+    echo "Script not found."
     abort
 fi
 
@@ -593,11 +593,19 @@ If you are using GitLab, Bitbucket, or Azure DevOps, make sure to adapt the doma
 
 - GitHub -> `https://$GITHUB_PAT@github.com/[user]/[examplerepo.git]`
 
-- GitLab -> `https://[username]:$GITLAB_PAT@gitlab.com/[group]/[examplerepo.git]`
+- GitLab Cloud -> `https://[username]:$GITLAB_PAT@gitlab.com/[group]/[examplerepo.git]`
 
-- Azure -> `https://[username]:$AZURE_PAT@dev.azure.com/[username]/[exampleproje]/_git/[examplerepo]`
+- GitLab Self-hosted -> `https://[username]:$GITLAB_PAT@gitlab.com/[username]/[examplerepo.git]`
 
-- Bitbucket -> `https://x-token-auth:$BITBUCKET_PAT@bitbucket.org/[group]/[examplerepo.git]`
+- Azure Cloud -> `https://[username]:$AZURE_PAT@azuredevops.selfhosted.com/[collection]/[exampleproject]/_git/[examplerepo]`
+
+- Azure Self-hosted -> `https://[username]:$AZURE_PAT@dev.azure.com/[username]/[exampleproject]/_git/[examplerepo]`
+
+- Bitbucket Cloud -> `https://x-token-auth:$BITBUCKET_PAT@bitbucket.org/[group]/[examplerepo.git]`
+
+Cloning with Bitbucket Self-hosted requires a `user access token`; `repository access token` are not valid with Git operations such as cloning.
+
+- Bitbucket Self-hosted -> `https://[username]:$BITBUCKET_PAT@bitbucket.selfhosted.io/scm/~[username]/[examplerepo.git]`
 
 :::
 
