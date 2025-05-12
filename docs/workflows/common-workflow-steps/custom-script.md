@@ -519,23 +519,23 @@ If you are looking for a modular way to manage your Appcircle CI custom scripts,
 
 This section explains how to clone a private Git repository and execute a specific script file from it using the Custom Script step.
 
-:::info 
+:::info
 
-If you are using public repository, you dont need to obtain an access token. In this case just use the git clone command in the script down below.
+If you are using public repository, you don't need to obtain an access token. In this case, use the Git URL without the authentication command in the script below.
 
 :::
 
-To use this approach, you must first convert your bash or ruby script into a Git repository. This means placing your bash or ruby file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure repos).
+To use this approach, you must first convert your Bash or Ruby script into a Git repository. This means placing your Bash or Ruby file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure).
 
 :::caution
 
-It is recommended to create a repository specifically for the desired custom script as a bash or ruby file.  
+It is recommended to create a repository specifically for the desired custom script as a Bash or Ruby file.
 
 :::
 
 :::info Required Permissions
 
-To successfully clone a repository, your personal access token (PAT) must have at least read access to the repository.  
+To successfully clone a repository, your personal access token (PAT) must have at least read access to the repository.
 
 Write or admin permissions are not required for this use case.
 
@@ -549,57 +549,55 @@ set -e
 
 # Use environment variables for sensitive data like $PROVIDER_PAT
 # Example URL
-# REPO_URL="https://george:$PROVIDER_PAT@github.io/george/ExampleRepo.git"
-REPO_URL="https://[Username]:$PROVIDER_PAT@[git-provider]/[Username]/[ExampleRepo.git]"
-FOLDER_NAME=$(basename "$REPO_URL" .git)
-TARGET_BRANCH="main"
-TARGET_SCRIPT="Example.sh"  # or "Example.rb"
+# REPO_URL="https://george:$PROVIDER_PAT@github.com/george/ExampleRepo.git"
+CS_REPO_URL="https://[Username]:$PROVIDER_PAT@[git-provider]/[Username]/[ExampleRepo.git]"
+CS_FOLDER_NAME=$(basename "$CS_REPO_URL" .git)
+CS_GIT_BRANCH="main"
+CS_SCRIPTFILE="Example.sh"  # or "Example.rb"
 
 echo "Cloning the repository..."
-git clone "$REPO_URL"
+git clone "$CS_REPO_URL"
 
 # Navigate into the cloned repository
-cd "$FOLDER_NAME" || { echo "Failed to enter the directory."; exit 1; }
+cd "$CS_FOLDER_NAME" || { echo "Failed to enter the directory."; exit 1; }
 
 # Checkout to target branch
-git checkout "$TARGET_BRANCH"
+git checkout "$CS_GIT_BRANCH"
 
 # Execute the specified script file
-if [ -f "./$TARGET_SCRIPT" ]; then
-    chmod +x "./$TARGET_SCRIPT"
+if [ -f "./$CS_SCRIPT_FILE" ]; then
+    chmod +x "./$CS_SCRIPT_FILE"
 
     # If Bash script, run directly
-    if [[ "$TARGET_SCRIPT" == *.sh ]]; then
-        ./"$TARGET_SCRIPT"
+    if [[ "$CS_SCRIPT_FILE" == *.sh ]]; then
+        ./"$CS_SCRIPT_FILE"
     # If Ruby script, run with interpreter
-    elif [[ "$TARGET_SCRIPT" == *.rb ]]; then
-        ruby "$TARGET_SCRIPT"
+    elif [[ "$CS_SCRIPT_FILE" == *.rb ]]; then
+        ruby "$CS_SCRIPT_FILE"
     else
-        echo "Unsupported script type: $TARGET_SCRIPT"
-        exit 1
+        echo "Unsupported script type: $CS_SCRIPT_FILE"
+        abort
     fi
 else
-    echo "$TARGET_SCRIPT not found."
-    exit 1
+    echo "$CS_SCRIPT_FILE not found."
+    abort
 fi
 
 ```
 
 :::info Repository URL Format
 
-The format of the REPO_URL may vary depending on the Git provider you are using.
+The format of the `CS_REPO_URL` may vary depending on the Git provider you are using.
 
-For example, a typical GitHub URL would look like:
-REPO_URL=`"https://george:$PROVIDER_PAT@github.com/george/ExampleRepo.git"`
 If you are using GitLab, Bitbucket, or Azure DevOps, make sure to adapt the domain and path structure accordingly. Refer to your Git provider’s documentation for the correct clone URL format.
 
-- GitHub -> `REPO_URL="https://$GITHUB_PAT@github.com/[user]/[examplerepo.git]"`
+- GitHub -> `https://$GITHUB_PAT@github.com/[user]/[examplerepo.git]`
 
-- GitLab -> `REPO_URL="https://[username]:$GITLAB_PAT@gitlab.com/[group]/[examplerepo.git]"`
+- GitLab -> `https://[username]:$GITLAB_PAT@gitlab.com/[group]/[examplerepo.git]`
 
-- Azure -> `REPO_URL="https://[username]:$AZURE_PAT@dev.azure.com/[username]/[exampleproje]/_git/[examplerepo]"`
+- Azure -> `https://[username]:$AZURE_PAT@dev.azure.com/[username]/[exampleproje]/_git/[examplerepo]`
 
-- Bitbucket -> `REPO_URL="https://x-token-auth:$BITBUCKET_PAT@bitbucket.org/[group]/[examplerepo.git]"`
+- Bitbucket -> `https://x-token-auth:$BITBUCKET_PAT@bitbucket.org/[group]/[examplerepo.git]`
 
 :::
 
