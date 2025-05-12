@@ -6,12 +6,15 @@ sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Resign Binary
 
 The **Resign Binary** feature in Appcircle allows you to resign both iOS and Android application binaries. For iOS applications, you can use new provisioning profiles or modify the app's entitlements, which is useful for adjusting the app’s capabilities or updating its distribution settings without requiring a new build. For Android applications, you can resign your binaries with a new keystore, allowing you to update the app's signing credentials crucial for app distribution and updates.
 
 This feature streamlines the process of updating app distribution and security settings, ensuring that your applications can be quickly adapted to meet changing requirements or distribution strategies.
+
+<RunnerUsage />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub8.png' />
 
