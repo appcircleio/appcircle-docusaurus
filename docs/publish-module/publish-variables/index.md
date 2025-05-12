@@ -189,6 +189,12 @@ Below is an example of how this can be done. Once an ENV variable is modified in
 
 - For the first step. Suppose we create a release note using the [**Publish Release Note Component**](/workflows/common-workflow-steps/publish-release-notes) during the build process. We then want to modify and use this release note during the Publish process.
 
+:::caution
+
+Predefined Publish Variables can also be modified using this method; however, once the flow is completed, they will revert to their originally defined default values.
+
+:::
+
 ```bash
 
 # Take AC_RELEASE_NOTES value
