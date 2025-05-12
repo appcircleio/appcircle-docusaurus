@@ -549,7 +549,7 @@ set -e
 
 # Use environment variables for sensitive data like $PROVIDER_PAT
 # Example URL
-# REPO_URL="https://george:$PROVIDER_PAT@github.com/george/ExampleRepo.git"
+# CS_REPO_URL="https://george:$PROVIDER_PAT@github.com/george/ExampleRepo.git"
 CS_REPO_URL="https://[Username]:$PROVIDER_PAT@[git-provider]/[Username]/[ExampleRepo.git]"
 CS_FOLDER_NAME=$(basename "$CS_REPO_URL" .git)
 CS_GIT_BRANCH="main"
