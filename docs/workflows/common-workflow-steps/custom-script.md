@@ -513,23 +513,29 @@ echo "AC_COMPLETED_BUILD_LOG_URL=$AC_COMPLETED_BUILD_LOG_URL" >> $AC_ENV_FILE_PA
 echo "AC_IN_PROGRESS_BUILD_LOG_URL=$AC_IN_PROGRESS_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
 ```
 
-### How do you store and use Custom Scripts in a Git repository for Custom Script steps??
+### How do I store and re-use scripts from a Git repository for Custom Script steps?
 
 If you are looking for a modular way to manage your Appcircle CI custom scripts, you can host your script files in a Git repository and pull them dynamically into the build environment. This approach helps keep your workflow clean and allows centralized version control for your custom scripts.
 
 This section explains how to clone a private Git repository and execute a specific script file from it using the Custom Script step.
 
-To use this approach, you must first convert your script into a Git repository. This means placing your .sh file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure Repos).
+:::info 
+
+If you are using public repository, you dont need to obtain an access token. In this case just use the git clone command in the script down below.
+
+:::
+
+To use this approach, you must first convert your bash or ruby script into a Git repository. This means placing your bash or ruby file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure Repos).
 
 :::caution
 
-It is recommended to create a blank repository specifically for the desired custom script as a .sh file.
+It is recommended to create a repository specifically for the desired custom script as a bash or ruby file.  
 
 :::
 
 :::info Required Permissions
 
-To successfully clone a repository, your personal access token (PAT) must have read access to the repository.
+To successfully clone a repository, your personal access token (PAT) must have at least read access to the repository.  
 
 Write or admin permissions are not required for this use case.
 
@@ -542,30 +548,63 @@ Write or admin permissions are not required for this use case.
 set -e
 
 # Use environment variables for sensitive data like $PROVIDER_PAT
-REPO_URL="https://[Username]:$PROVIDER_PAT@[git-provider].[selfhosted].io/[Username]/[ExampleRepo.git]"
 # Example URL
 # REPO_URL="https://george:$PROVIDER_PAT@github.io/george/ExampleRepo.git"
+REPO_URL="https://[Username]:$PROVIDER_PAT@[git-provider]/[Username]/[ExampleRepo.git]"
+FOLDER_NAME=$(basename "$REPO_URL" .git)
+TARGET_BRANCH="main"
+TARGET_SCRIPT="Example.sh"  # or "Example.rb"
+
+# Extract folder name from the repository URL
 FOLDER_NAME=$(basename "$REPO_URL" .git)
 
 echo "Cloning the repository..."
 git clone "$REPO_URL"
 
-# Navigate into the repository
+# Navigate into the cloned repository
 cd "$FOLDER_NAME" || { echo "Failed to enter the directory."; exit 1; }
 
-# Optional: Checkout to a specific branch
-git checkout main 
+# Checkout to target branch
+git checkout "$TARGET_BRANCH"
 
-# Find and execute the script under cloned file of repository
-if [ -f "./Example.sh" ]; then
-    chmod +x ./Example.sh
-    ./Example.sh
+# Execute the specified script file
+if [ -f "./$TARGET_SCRIPT" ]; then
+    chmod +x "./$TARGET_SCRIPT"
+
+    # If Bash script, run directly
+    if [[ "$TARGET_SCRIPT" == *.sh ]]; then
+        ./"$TARGET_SCRIPT"
+    # If Ruby script, run with interpreter
+    elif [[ "$TARGET_SCRIPT" == *.rb ]]; then
+        ruby "$TARGET_SCRIPT"
+    else
+        echo "Unsupported script type: $TARGET_SCRIPT"
+        exit 1
+    fi
 else
-    echo "Example.sh not found."
+    echo "$TARGET_SCRIPT not found."
     exit 1
 fi
 
 ```
+
+:::info Repository URL Format
+
+The format of the REPO_URL may vary depending on the Git provider you are using.
+
+For example, a typical GitHub URL would look like:
+REPO_URL="https://george:$PROVIDER_PAT@github.com/george/ExampleRepo.git"
+If you are using GitLab, Bitbucket, or Azure DevOps, make sure to adapt the domain and path structure accordingly. Refer to your Git provider’s documentation for the correct clone URL format.
+
+- Github -> REPO_URL="https://$GITHUB_PAT@github.com/[user]/[examplerepo.git]"
+
+- Gitlab -> REPO_URL="https://[username]:$GITLAB_PAT@gitlab.com/[group]/[examplerepo.git]"
+
+- Azure -> REPO_URL="https://[username]:$AZURE_PAT@dev.azure.com/[username]/[exampleproje]/_git/[examplerepo]"
+
+- Bitbucket -> REPO_URL="https://x-token-auth:$BITBUCKET_PAT@bitbucket.org/[group]/[examplerepo.git]"
+
+:::
 
 :::tip Advantages of Git-Based Custom Script Management
 
