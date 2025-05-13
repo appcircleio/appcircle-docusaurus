@@ -599,13 +599,26 @@ If you are using GitLab, Bitbucket, or Azure DevOps, make sure to adapt the doma
 
 - Azure Cloud -> `https://[username]:$AZURE_PAT@azuredevops.selfhosted.com/[collection]/[exampleproject]/_git/[examplerepo]`
 
-- Azure Self-hosted -> `https://[username]:$AZURE_PAT@dev.azure.com/[username]/[exampleproject]/_git/[examplerepo]`
+- Azure Self-hosted
+
+If you're using a self-hosted Azure DevOps instance, update your Git clone logic as follows:
+
+Replace the standard 
+- git clone "$CS_REPO_URL" line with the command below.
+This approach ensures compatibility with Azure DevOps authentication requirements.
+
+```bash
+
+export HEADER_VALUE=$(echo -n "Authorization: Basic "$(printf ":%s" "$SELF_HOSTED_AZURE_PAT" | base64))
+git --config-env=http.extraheader=HEADER_VALUE clone https://azuredevops.selfhosted.com/[collection]/[exampleproject]/_git/[examplerepo]
+
+```
 
 - Bitbucket Cloud -> `https://x-token-auth:$BITBUCKET_PAT@bitbucket.org/[group]/[examplerepo.git]`
 
-Cloning with Bitbucket Self-hosted requires a `user access token`; `repository access token` are not valid with Git operations such as cloning.
-
 - Bitbucket Self-hosted -> `https://[username]:$BITBUCKET_PAT@bitbucket.selfhosted.io/scm/~[username]/[examplerepo.git]`
+
+Cloning with Bitbucket Self-hosted requires a `user access token`; `repository access token` are not valid with Git operations such as cloning.
 
 :::
 
