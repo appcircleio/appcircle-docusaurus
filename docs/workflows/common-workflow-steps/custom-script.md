@@ -595,7 +595,7 @@ If you are using GitLab, Bitbucket, or Azure DevOps, make sure to adapt the doma
 
 - GitLab Cloud -> `https://[username]:$GITLAB_PAT@gitlab.com/[group]/[examplerepo.git]`
 
-- GitLab Self-hosted -> `https://[username]:$GITLAB_PAT@gitlab.com/[username]/[examplerepo.git]`
+- GitLab Self-hosted -> `https://[username]:$SELF_HOSTED_GITLAB_PAT@gitlab.com/[username]/[examplerepo.git]`
 
 - Azure Cloud -> `https://[username]:$AZURE_PAT@azuredevops.selfhosted.com/[collection]/[exampleproject]/_git/[examplerepo]`
 
@@ -616,7 +616,7 @@ git --config-env=http.extraheader=HEADER_VALUE clone https://azuredevops.selfhos
 
 - Bitbucket Cloud -> `https://x-token-auth:$BITBUCKET_PAT@bitbucket.org/[group]/[examplerepo.git]`
 
-- Bitbucket Self-hosted -> `https://[username]:$BITBUCKET_PAT@bitbucket.selfhosted.io/scm/~[username]/[examplerepo.git]`
+- Bitbucket Self-hosted -> `https://[username]:$SELF_HOSTED_BITBUCKET_PAT@bitbucket.selfhosted.io/scm/~[username]/[examplerepo.git]`
 
 Cloning with Bitbucket Self-hosted requires a `user access token`; `repository access token` are not valid with Git operations such as cloning.
 
