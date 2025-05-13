@@ -53,6 +53,72 @@ Please note that Publish Variables can only be used within the Publish module.
 
 :::
 
+### Downloading environment variables
+
+You can download and view environment variables in **JSON** format. For this, you can use the "Download" button by clicking on the three dots next to one of the variable groups under "Publish > Publish Variables > Variable Groups".
+
+In the downloaded file content, you will see a structure with **key-value** pairs.
+
+In addition, if the value part of the environment variable is set to hidden during the text-based environment variable addition process, the "isSecret" value will be `true` and the key, along with the value **will not** be listed in the downloaded file. The same rule is valid for file type variables. If it is not hidden, this value will be `false`, and the value will be visible.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6155-variable4.png' />
+
+:::info
+An example of publish variable downloaded as a JSON file:
+
+```json
+[
+  {
+    "key": "API_URL",
+    "value": "https://api.example.com",
+    "isSecret": false,
+    "isFile": false,
+    "id": "API_URL"
+  }
+]
+```
+
+As seen in the example above;
+
+- if the **isSecret** value is `false`, it has visible value
+- if the **isSecret** value is `true` or **isFile** value is `true` , the key and the value will not be downloaded.
+  :::
+
+### Uploading environment variables
+
+The Upload feature allows users to bulk-import environment variables into any existing Variable Group (e.g., Staging, Prod, or Dev) within the Publish > Publish Variables > Variable Groups section.
+
+This feature streamlines the process of configuring variables by enabling users to upload a predefined JSON file instead of manually entering each variable.
+
+The uploadable file must be a `.json` file with an array of variable objects. Each variable object must include the following fields:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6155-variable5.png' />
+
+```json
+[
+{
+"key": "API_URL",
+"value": "https://api.example.com",
+"isSecret": false,
+"isFile": false,
+"id": "API_URL"
+},
+{
+"key": "API_KEY",
+"value": "12345-abcde-67890-fghij",
+"isSecret": true,
+"isFile": false,
+"id": "API_KEY"
+}
+]
+```
+
+:::warning
+-	File type variables (isFile: `true`) cannot be uploaded using JSON. These must be added manually via the UI.
+-	The Download feature does not include secret values or file contents for security reasons.
+-	You can edit your own JSON files to update variables in a group. However, duplicated keys are not allowed.
+:::
+
 ## Reserved Variables
 
 There are some reserved variables that are automatically defined by Appcircle and can be used in the publish flow.
@@ -188,6 +254,12 @@ In the Appcircle Publish module, the steps within a Publish flow operate indepen
 Below is an example of how this can be done. Once an ENV variable is modified in a step and saved to the output direction, it will become accessible in another step.
 
 - For the first step. Suppose we create a release note using the [**Publish Release Note Component**](/workflows/common-workflow-steps/publish-release-notes) during the build process. We then want to modify and use this release note during the Publish process.
+
+:::caution
+
+Predefined Publish Variables can also be modified using this method; however, once the flow is completed, they will revert to their originally defined default values.
+
+:::
 
 ```bash
 
