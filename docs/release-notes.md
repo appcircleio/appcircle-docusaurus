@@ -21,6 +21,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - Downloaded Variable Group JSON files can now be [uploaded](/build/build-environment-variables#uploading-environment-variables) to existing or newly created variable groups for easier transmission. Alternatively, users can create their own JSON files and upload them, provided they follow the correct format. <BuildBadge/> <PublishBadge/> <CloudBadge/>
+- The Binary Details sections of the [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#binary-details) and [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#binary-details) profiles will now display build metadata details, including trigger type, workflow name, source branch and more. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
