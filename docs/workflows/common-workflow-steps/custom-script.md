@@ -539,88 +539,57 @@ To successfully clone a repository, your personal access token (PAT) must have a
 
 Write or admin permissions are not required for this use case.
 
+Note: Bitbucket requires a user-level personal access token for Git operations such as cloning. Repository-level access tokens are not supported for Git over HTTPS and will result in authentication errors if used.
+
 :::
 
 <PatDanger />
 
 ```bash
+
 #Bash script
 set -e
 
-# Use environment variables for sensitive data like $PROVIDER_PAT
-# Example URL
-# CS_REPO_URL="https://george:$PROVIDER_PAT@github.com/george/ExampleRepo.git"
-CS_REPO_URL="https://[Username]:$PROVIDER_PAT@[git-provider]/[Username]/[ExampleRepo.git]"
-CS_FOLDER_NAME=$(basename "$CS_REPO_URL" .git)
-CS_GIT_BRANCH="main"
-CS_SCRIPT_FILE="example.sh"  # or "example.rb"
+# Repository details
+CS_REPO_CLONE_URL="https://example.org/exampleuser/examplerepo.git"
+CS_USERNAME="$YOUR_USERNAME"
+CS_PAT="$YOUR_PAT"
+CS_GIT_BRANCH="main" # or desired branch name 
+CS_SCRIPT_FILE="test.sh"  # or "Example.rb"
 
+# Create Authorization header using Base64 encoding
+AUTH_STRING="$CS_USERNAME:$CS_PAT"
+ENCODED_AUTH=$(printf "%s" "$AUTH_STRING" | base64)
+HEADER_VALUE="Authorization: Basic $ENCODED_AUTH"
+
+# Clone the repository using the Authorization header
 echo "Cloning the repository..."
-git clone "$CS_REPO_URL"
+git -c http.extraheader="$HEADER_VALUE" clone "$CS_REPO_CLONE_URL"
 
 # Navigate into the cloned repository
+CS_FOLDER_NAME=$(basename "$CS_REPO_CLONE_URL" .git)
 cd "$CS_FOLDER_NAME" || { echo "Failed to enter the directory."; exit 1; }
 
-# Checkout to target branch
+# Switch to the target branch
 git checkout "$CS_GIT_BRANCH"
 
-# Execute the specified script file
+# Run the script file if it exists
 if [ -f "./$CS_SCRIPT_FILE" ]; then
     chmod +x "./$CS_SCRIPT_FILE"
-
-    # If Bash script, run directly
     if [[ "$CS_SCRIPT_FILE" == *.sh ]]; then
         ./"$CS_SCRIPT_FILE"
-    # If Ruby script, run with interpreter
     elif [[ "$CS_SCRIPT_FILE" == *.rb ]]; then
         ruby "$CS_SCRIPT_FILE"
     else
         echo "Unsupported script type: $CS_SCRIPT_FILE"
-        abort
+        exit 1
     fi
 else
-    echo "Script not found."
-    abort
+    echo "Script file not found."
+    exit 1
 fi
 
 ```
-
-:::info Repository URL Format
-
-The format of the `CS_REPO_URL` may vary depending on the Git provider you are using.
-
-If you are using GitLab, Bitbucket, or Azure DevOps, make sure to adapt the domain and path structure accordingly. Refer to your Git provider’s documentation for the correct clone URL format.
-
-- GitHub -> `https://$GITHUB_PAT@github.com/[user]/[examplerepo.git]`
-
-- GitLab Cloud -> `https://[username]:$GITLAB_PAT@gitlab.com/[group]/[examplerepo.git]`
-
-- GitLab Self-hosted -> `https://[username]:$SELF_HOSTED_GITLAB_PAT@gitlab.com/[username]/[examplerepo.git]`
-
-- Azure Cloud -> `https://[username]:$AZURE_PAT@azuredevops.selfhosted.com/[collection]/[exampleproject]/_git/[examplerepo]`
-
-- Azure Self-hosted
-
-If you're using a self-hosted Azure DevOps instance, update your Git clone logic as follows:
-
-Replace the standard 
-- git clone "$CS_REPO_URL" line with the command below.
-This approach ensures compatibility with Azure DevOps authentication requirements.
-
-```bash
-
-export HEADER_VALUE=$(echo -n "Authorization: Basic "$(printf ":%s" "$SELF_HOSTED_AZURE_PAT" | base64))
-git --config-env=http.extraheader=HEADER_VALUE clone https://azuredevops.selfhosted.com/[collection]/[exampleproject]/_git/[examplerepo]
-
-```
-
-- Bitbucket Cloud -> `https://x-token-auth:$BITBUCKET_PAT@bitbucket.org/[group]/[examplerepo.git]`
-
-- Bitbucket Self-hosted -> `https://[username]:$SELF_HOSTED_BITBUCKET_PAT@bitbucket.selfhosted.io/scm/~[username]/[examplerepo.git]`
-
-Cloning with Bitbucket Self-hosted requires a `user access token`; `repository access token` are not valid with Git operations such as cloning.
-
-:::
 
 :::tip Advantages of Git-Based Custom Script Management
 
@@ -637,5 +606,17 @@ CI/CD Compatibility: Changes in scripts are automatically reflected in builds wi
 Branching Support: Different versions of scripts can be maintained using Git branches and referenced independently.
 
 This approach significantly improves scalability, maintainability, and consistency in teams managing multiple CI pipelines.
+
+:::
+
+:::caution
+
+If you are seeing the following error in the build log, please ensure that both the username and the personal access token (PAT) are set correctly. This error is returned by the Git provider when authentication fails due to an incorrect or missing username or PAT:
+
+```bash
+
+fatal: could not read Username for Git provider
+
+```
 
 :::
