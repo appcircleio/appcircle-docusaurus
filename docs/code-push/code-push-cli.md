@@ -117,5 +117,3 @@ The table below summarizes the parameters used in this `release-react` command:
 | `--mandatory`            | Marks the update as mandatory; users will be forced to update immediately.                 |
 | `--disabled`             | Disables the release so it won’t be delivered to any devices.                              |
 | `--description`          | A short note describing the content of the release.                                        |
-
-

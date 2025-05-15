@@ -2922,3 +2922,38 @@ xml:
   label: "microsoft azure"
   description: "Microsoft Azure related documentations"
   permalink: "/microsoft-azure"
+
+"appcircle codepush cli":
+  label: "appcircle codepush cli"
+  description: "appcircle codepush cli related documentations"
+  permalink: "/appcircle-codepush-cli"
+
+"appcircle codepush":
+  label: "appcircle codepush"
+  description: "appcircle codepush related documentations"
+  permalink: "/appcircle-codepush"
+
+"codepush cli":
+  label: "codepush cli"
+  description: "codepush cli related documentations"
+  permalink: "/codepush-cli"
+
+"deployments":
+  label: "deployments"
+  description: "deployments related documentations"
+  permalink: "/deployments"
+
+"command line":
+  label: "command line"
+  description: "command line related documentations"
+  permalink: "/command-line"
+
+"codepush":
+  label: "codepush"
+  description: "codepush related documentations"
+  permalink: "/codepush"
+
+"ci":
+  label: "ci"
+  description: "ci related documentations"
+  permalink: "/ci"
