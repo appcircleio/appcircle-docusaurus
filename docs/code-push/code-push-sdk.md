@@ -1,5 +1,5 @@
 ---
-title: Appcircle CodePush SDK
+title: CodePush SDK
 description: Learn how to integrate Appcircle CodePush SDK to React Native projects.
 tags: [appcircle codepush, sdk, codepush, react native]
 sidebar_position: 2
@@ -8,7 +8,7 @@ sidebar_position: 2
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Appcircle CodePush SDK
+# CodePush SDK
 
 This section provides comprehensive guidance on how to integrate the Appcircle CodePush SDK into your React Native project, enabling seamless over-the-air (OTA) updates that improve user experience by delivering updates without requiring users to download a new version from the app store.
 
@@ -81,7 +81,7 @@ For Appcircle Cloud, the **ServerURL** is `https://my.appcircle.io/codepush`.
 
 
 
-### SDK Integration in Project
+### SDK Integration and Basic Usage
 
 After installing the SDK, you need to import and configure it within your React Native project. Below is a basic example of how to use the Appcircle CodePush SDK:
 

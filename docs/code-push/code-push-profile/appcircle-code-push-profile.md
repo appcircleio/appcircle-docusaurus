@@ -5,7 +5,7 @@ tags: [appcircle codepush, profile, codepush]
 sidebar_position: 1
 ---
 
-# Apcircle CodePush Profile
+# CodePush Profile
 
 This section explains how to create and manage a CodePush profile in Appcircle to enable over-the-air (OTA) updates for your React Native projects. A properly configured profile allows you to connect your CodePush deployments with your Appcircle workflows, manage versioning, and control release behaviors through a user-friendly interface. Follow the steps below to get started.
 

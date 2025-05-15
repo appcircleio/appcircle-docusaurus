@@ -1,12 +1,12 @@
 ---
-title: Appcircle CodePush CLI
+title: CodePush CLI
 description: Learn how to use Appcircle CodePush CLI and manage your deployments via command line.
 tags: [appcircle codepush cli, cli, codepush cli, deployments, command line]
 sidebar_position: 3
 ---
 
 
-# Appcircle CodePush CLI
+# CodePush CLI
 
 The Appcircle CodePush CLI enables developers to interact with the CodePush service directly from the command line. With this tool, you can create and manage releases, assign deployments, and monitor rollout progress without needing to access the Appcircle UI. This section provides detailed instructions and examples for using the CLI effectively in your update workflows.
 
