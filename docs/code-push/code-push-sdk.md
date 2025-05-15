@@ -18,13 +18,14 @@ https://www.npmjs.com/package/@appcircle/react-native-code-push
 
 To start using the Appcircle CodePush feature, the first step is to integrate the [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push) into your project. You can do this by installing the SDK directly via npm or by adding the dependency to your `package.json` file.
 
-Using commandline to install SDK. Please run this command in project root direction.
+To install the SDK using the command line, run the following command in the root directory of your project.
 
 ```bash
 npm i @appcircle/react-native-code-push
 ```
 
-Usign `package.json` file to add SDK. Please add SDK to dependencies section in `package.json`.
+Usign `package.json` file to add the SDK: 
+Add the SDK to dependencies section in your `package.json` file.
 
 ```json package.json
 "dependencies": {
@@ -39,9 +40,9 @@ Usign `package.json` file to add SDK. Please add SDK to dependencies section in 
 ## CodePush Configurations in Project
 
 
-To ensure that your app receives the correct updates, you must configure the appropriate deployment key in your project. Each deployment channel created in Appcircle has a unique key, which must be specified in your CodePush configuration. This allows your app to connect to the correct environment, such as staging or production.
+To ensure that your app receives the correct updates, you must configure the appropriate deployment key in your project. Each deployment channel created in Appcircle has a unique key, which must be specified in your CodePush configuration. This allows your app to connect to the correct environment, such as `Staging` or `Production`.
 
-To ensure that apps can properly receive updates, the `Server URL` and `Deployment Key` must be correctly added to the native code of your project. For more information about, please visit the [**Deployment Keys**](/code-push/code-push-profile/code-push-release-management#deployment-keys) documentation.
+To ensure that apps can properly receive updates, the `Server URL` and `Deployment Key` must be correctly added to the native code of your project. For more information, please visit the [**Deployment Keys**](/code-push/code-push-profile/code-push-release-management#deployment-keys) documentation.
 
 Instructions on how to add these configurations for both iOS and Android platforms are provided below.
 
@@ -80,70 +81,17 @@ For Appcircle Cloud, the **ServerURL** is `https://my.appcircle.io/codepush`.
 
 #### Plugin Installation and Configuration for React Native 0.60 version and above (Android)
 
-1. In your android/settings.gradle file, make the following additions at the end of the file:
+1. In your `android/settings.gradle` file, make the following additions at the end of the file:
 
 ```java
 include ':app', ':appcircle_react-native-code-push'
 project(':appcircle_react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/@appcircle/react-native-code-push/android/app')
-```
-
-2. In your android/app/build.gradle file, add the codepush.gradle file as an additional build task definition to the end of the file:
-
-```java
-apply from: "../../node_modules/@appcircle/react-native-code-push/android/codepush.gradle"
-```
-
-3. Update the MainApplication file to use CodePush via the following changes:
-
-For React Native 0.73 and above: update the MainApplication.kt
-
-```java
-// 1. Import the plugin class.
-import com.microsoft.codepush.react.CodePush
-
-class MainApplication : Application(), ReactApplication {
-
-override val reactNativeHost: ReactNativeHost =
-    object : DefaultReactNativeHost(this) {
-        ...
-
-        // 2. Override the getJSBundleFile method in order to let
-        // the CodePush runtime determine where to get the JS
-        // bundle location from on each app start
-        override fun getJSBundleFile(): String {
-            return CodePush.getJSBundleFile() 
-        }
-    };
-}
-```
-
-For React Native 0.72 and below: update the MainApplication.java
-
-```java
-// 1. Import the plugin class.
-import com.microsoft.codepush.react.CodePush;
-
-public class MainApplication extends Application implements ReactApplication {
-
-    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-        ...
-
-        // 2. Override the getJSBundleFile method in order to let
-        // the CodePush runtime determine where to get the JS
-        // bundle location from on each app start
-        @Override
-        protected String getJSBundleFile() {
-            return CodePush.getJSBundleFile();
-        }
-    };
-}
-```
 
 :::danger 
 
-React Native CodePush won't support new Architecture. In order to use this plugin on React Native versions starting from 0.76 you will need to opt out from new architecture. React Native CodePush support for new architecture is in progress.
+React Native CodePush does not currently support the new Architecture. In order to use this plugin on React Native versions starting from 0.76 you will need to opt out from the new Architecture. React Native CodePush support for the new Architecture is in progress.
 
-Update the android/gradle.properties file opt out the new Architecture.
+Update the `android/gradle.properties` file opt out the new Architecture.
 
 ```java
 newArchEnabled=false
@@ -203,7 +151,7 @@ let MyApp: () => React$Node = () => {
 MyApp = codePush(codePushOptions)(MyApp);
 ```
 
-Alternatively, if you want fine-grained control over when the check happens (like a button press or timer interval), you can call `CodePush.sync()` at any time with your desired `SyncOptions`, and optionally turn off CodePush's automatic checking by specifying a manual `checkFrequency`:
+Alternatively, if you want fine-grained control over when the check occurs (such as a button press or timer interval), you can call `CodePush.sync()` at any time with your desired `SyncOptions`. You can also disable CodePush’s automatic checking by setting the `checkFrequency` to manual.
 
 ```javascript
 let codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };

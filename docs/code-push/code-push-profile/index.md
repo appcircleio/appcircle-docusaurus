@@ -8,7 +8,7 @@ sidebar_position: 1
 
 # Appcircle CodePush Profile
 
-This section provides an overview of how to manage your CodePush profile within Appcircle, including creating, configuring, and maintaining deployments for React Native applications.
+This section provides an overview of how to manage your CodePush profile within Appcircle, including how to create, configure, and maintain deployments for React Native applications.
 
 
 ## [CodePush Profile Management](/code-push/code-push-profile/appcircle-code-push-profile)

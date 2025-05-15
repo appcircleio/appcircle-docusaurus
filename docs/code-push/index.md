@@ -22,7 +22,7 @@ To start using CodePush in your React Native project, you first need to create a
 
 ## [Appcircle CodePush SDK](/code-push/code-push-sdk)
 
-The Appcircle CodePush SDK is required to integrate CodePush functionality into your React Native application and handle update processes on the client side.
+The Appcircle CodePush SDK is required to integrate CodePush functionality into your React Native application and to handle update processes on the client side.
 
 ## [Appcircle CodePush CLI](/code-push/code-push-cli)
 

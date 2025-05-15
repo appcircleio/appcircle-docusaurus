@@ -7,7 +7,7 @@ sidebar_position: 3
 
 # CodePush Release Management
 
-This section describes how to manage and distribute CodePush updates through Appcircle, covering versioning, release strategies, and common practices for efficient update delivery.
+This section describes how to manage and distribute CodePush updates through Appcircle, including versioning, release strategies, and common practices for efficient update delivery.
 
 
 ## Deployment Keys
@@ -28,15 +28,15 @@ To use this feature, you need to upload the bundle file you created as a `.zip` 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-newReleaseDetails.png' />
 
-- **App Version:** This field specifies which app version the update is targeted for. Make sure it matches the version defined in your project settings.
+- **App Version:** Specifies which app version the update is targeted for. Make sure it matches the version defined in your project settings.
 - **Release Note:** A description of the changes or improvements included in this release. This helps users and team members understand what the update contains.
-- **Mandatory Update:** If enabled, users will be forced to install the update immediately upon launch.
-- **Disable:** Disables the current release, making it unavailable to users even if it was previously deployed.
-- **Rollout Percentage:** Defines what percentage of users will receive the update initially, allowing for gradual rollout and safer deployments.
+- **Mandatory Update:** When enabled, users are required to install the update immediately upon app launch.
+- **Disable:** Disables the current release, making it unavailable to users, even if it was previously deployed.
+- **Rollout Percentage:** Defines what percentage of users who will receive the update initially. This allows for a gradual rollout and safer deployments.
 
 ## Managing Versions
 
-The version management section allows you to view, compare previous CodePush releases for better control and organization of your update history. All fiels are being explained below in version list.
+The version management section allows you to view and compare previous CodePush releases for better control and organization of your update history. All fields in the version list are explained below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionList.png' />
 
@@ -51,14 +51,14 @@ The version management section allows you to view, compare previous CodePush rel
 
 ## Version Actions
 
-In this section, you can perform actions such as details, disabling, or enabling a specific CodePush version to manage your release lifecycle more effectively.
+In this section, you can perform actions such as viewing details, disabling, or enabling a specific CodePush version to manage your release lifecycle more effectively.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionActions.png' />
 
 All version actions are detailed below.
 
 ### Details
-This option allows you to view the all informations and configuration details of a specific CodePush release.
+This option allows you to view all the information and configuration details of a specific CodePush release.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionDetails.png' />
 
@@ -83,7 +83,7 @@ Use this action to promote a release from one deployment channel to another, suc
   - **Description:** A brief note explaining the purpose of this promotion or summarizing the changes included in the release.
 
 ### Rollback
-This action reverts your app to the previous stable CodePush version in case of issues with the latest update. It also allows you to rollback to any specific version if desired.
+This action reverts your app to the previous stable CodePush version in case of issues with the latest update. You can also roll back to any specific version if needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-rollback.png' />
 
@@ -103,9 +103,9 @@ Allows you to modify release configurations such as rollout percentage or mark t
 
 The **Mandatory**, **Disable**, and **Rollout Percentage** parameters in the Settings section are applied in real time. This means that any changes you make will be immediately reflected across all user devices.
 
-For example, when a version is released, some users may download it. If you later disable the version, users who haven't updated yet will no longer see this release.
+For example, when a version is released, some users may download it. If you disable the version later, users who haven't received the update yet will no longer see this release.
 
-Similarly, if an update was initially published as optional but later marked as **Mandatory**, all users who haven't updated yet will be forced to install the new version.
+Similarly, if an update was initially published as optional but later marked as **Mandatory**, all users who haven't received the update yet will be required to install the new version.
 
 :::
 
@@ -113,7 +113,7 @@ Similarly, if an update was initially published as optional but later marked as 
 
 The rollout percentage distributes updates randomly across devices based on the specified percentage. It is not possible to determine exactly which devices will receive the update.
 
-For example, if you release an update with a 70% rollout percentage, 7 out of 10 devices with the app installed will receive the update at random. The remaining 3 devices will not see the update.
+For example, if you release an update with a 70% rollout percentage, 7 out of 10 devices with the app installed will receive the update at random. The remaining 3 devices will not get the update.
 
 :::
 
