@@ -139,6 +139,17 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
+:::danger 
+
+React Native CodePush won't support new Architecture. In order to use this plugin on React Native versions starting from 0.76 you will need to opt out from new architecture. React Native CodePush support for new architecture is in progress.
+
+Update the android/gradle.properties file opt out the new Architecture.
+
+```java
+newArchEnabled=false
+```
+
+:::
 
 ### SDK Integration and Basic Usage
 
