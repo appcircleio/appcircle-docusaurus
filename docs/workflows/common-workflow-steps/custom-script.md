@@ -523,7 +523,7 @@ The following Bash script has been tested on multiple Git providers using person
 
 :::info
 
-If you are using a public repository, you do not need to obtain an access token. In this case, you can use the git clone command directly in your script without including any authentication.
+If you are using a public repository, you do not need to obtain an access token. In this case, you can use the Git clone command directly in your script without including any authentication.
 
 :::
 
@@ -586,7 +586,7 @@ ENCODED_AUTH=$(printf "%s" "$AUTH_STRING" | base64)
 HEADER_VALUE="Authorization: Basic $ENCODED_AUTH"
 
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-CS_ROOT_FOLDER="ROOT_FOLDER_$TIMESTAMP"
+CS_ROOT_FOLDER="Cloned_Script_$TIMESTAMP"
 mkdir -p "$CS_ROOT_FOLDER"
 cd "$CS_ROOT_FOLDER"
 
