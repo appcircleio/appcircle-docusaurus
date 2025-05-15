@@ -513,7 +513,7 @@ echo "AC_COMPLETED_BUILD_LOG_URL=$AC_COMPLETED_BUILD_LOG_URL" >> $AC_ENV_FILE_PA
 echo "AC_IN_PROGRESS_BUILD_LOG_URL=$AC_IN_PROGRESS_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
 ```
 
-### How do I store and re-use customer scripts from a Git repository?
+### How do I store and re-use custom scripts from a Git repository?
 
 If you are looking for a modular way to manage your Appcircle CI custom scripts, you can host your script files in a Git repository and pull them dynamically into the build environment. This approach helps keep your workflow clean and allows centralized version control for your custom scripts.
 
