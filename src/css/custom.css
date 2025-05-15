@@ -1003,6 +1003,10 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
   background-image: url(../../static/img/sidebar/versioning.svg);
 }
 
+.section-title.codepush > div >a::before {
+  background-image: url(../../static/img/sidebar/codepush.svg);
+}
+
 .section-title.infrastructure > div >a::before {
   background-image: url(../../static/img/sidebar/infrastructure.svg);
 }

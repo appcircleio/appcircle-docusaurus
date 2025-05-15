@@ -210,6 +210,35 @@ If no app versions are published to either channel, the links and QR codes will 
 
 ## Binary Actions
 
+### Binary Details
+
+This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary3.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary8.png' />
+
+#### Build Metadata Details
+
+The following metadata is displayed in the Binary Details section of a Enterprise App Store Profile only when the binary is generated via the Build Module, either through automatic or manual triggers, and subsequently distributed using Auto Distribution to the Enterprise App Store module.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary2.png' />
+
+- **Trigger Type**: Indicates what initiated the build. Possible values include:
+
+1. Pull Request: The build was triggered by the creation or update of a pull request.
+2. User: A build was manually triggered by a user.
+3. Commit: A new commit triggered the build automatically.
+4. Tag: The build was initiated when a new Git tag was pushed to the repository.
+
+- **Branch Name**: The source branch used during the build process.
+- **Target Branch**: Typically used in pull request or merge-based triggers, this is the destination branch for the pull request or merge target.
+- **Git Tag**: If the trigger type is Tag, this field shows the tag that initiated the build.
+- **Triggered Internal User**: Displays the email address of the internal user who triggered the build or the user responsible for the action.
+- **Workflow Name**: The name of the workflow profile name executed during the build process (e.g., Default Push Workflow).
+- **Config Name**: Indicates the configuration profile name used within the selected workflow (e.g., Default Configuration).
+
+
 ### Publish
 
 The Enterprise App Store module includes two channels: Beta and Live.
@@ -219,7 +248,7 @@ The Enterprise App Store module includes two channels: Beta and Live.
 
 Apps can be sent to the Beta or Live channels by hitting the `...` button and then selecting the **Publish** menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent1.png" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary9.png' />
 
 The channel can be selected, and a summary and release notes for the release can be written. Once the **Publish** button is clicked, the particular binary will be made available to all beta users.
 
@@ -232,7 +261,7 @@ A version can be sent to the Live Channel in two ways:
 - Click the **Publish** button and select **Live** for the channel.
 - Click the ... button for any beta build and select **Go Live** from the menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent6.png" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary4.png' />
 
 :::info
 
@@ -288,20 +317,19 @@ App versions that were published to the Beta or Live channels as unlisted will d
 
 Any binary can be removed from the Live or Beta channels by selecting the **Unpublish** action from the actions menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent7.png" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary5.png' />
 
 ### Download
 
 The binary artifact in the Enterprise App Store profile can be downloaded by selecting the Download button from the actions menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent2.png" />
-
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary6.png' />
 
 ### Delete
 
 Binaries in the Enterprise App Store profiles can be deleted by clicking the Delete button in the actions menu.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5857-ent3.png" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary7.png' />
 
 :::info
 
