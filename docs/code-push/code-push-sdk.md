@@ -24,7 +24,7 @@ To install the SDK using the command line, run the following command in the root
 npm i @appcircle/react-native-code-push
 ```
 
-Usign `package.json` file to add the SDK: 
+Using `package.json` file to add the SDK: 
 Add the SDK to dependencies section in your `package.json` file.
 
 ```json package.json
@@ -86,6 +86,59 @@ For Appcircle Cloud, the **ServerURL** is `https://my.appcircle.io/codepush`.
 ```java
 include ':app', ':appcircle_react-native-code-push'
 project(':appcircle_react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/@appcircle/react-native-code-push/android/app')
+```
+
+2. In your android/app/build.gradle file, add the `codepush.gradle` file as an additional build task definition to the end of the file:
+
+```java
+apply from: "../../node_modules/@appcircle/react-native-code-push/android/codepush.gradle"
+```
+
+3. Update the MainApplication file to use CodePush via the following changes:
+
+For React Native 0.73 and above: update the `MainApplication.kt`.
+
+```java
+// 1. Import the plugin class.
+import com.microsoft.codepush.react.CodePush
+
+class MainApplication : Application(), ReactApplication {
+
+override val reactNativeHost: ReactNativeHost =
+    object : DefaultReactNativeHost(this) {
+        ...
+
+        // 2. Override the getJSBundleFile method in order to let
+        // the CodePush runtime determine where to get the JS
+        // bundle location from on each app start
+        override fun getJSBundleFile(): String {
+            return CodePush.getJSBundleFile() 
+        }
+    };
+}
+```
+
+For React Native 0.72 and below: update the `MainApplication.java`.
+
+```java
+// 1. Import the plugin class.
+import com.microsoft.codepush.react.CodePush;
+
+public class MainApplication extends Application implements ReactApplication {
+
+    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+        ...
+
+        // 2. Override the getJSBundleFile method in order to let
+        // the CodePush runtime determine where to get the JS
+        // bundle location from on each app start
+        @Override
+        protected String getJSBundleFile() {
+            return CodePush.getJSBundleFile();
+        }
+    };
+}
+```
 
 :::danger 
 
