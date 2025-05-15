@@ -513,15 +513,17 @@ echo "AC_COMPLETED_BUILD_LOG_URL=$AC_COMPLETED_BUILD_LOG_URL" >> $AC_ENV_FILE_PA
 echo "AC_IN_PROGRESS_BUILD_LOG_URL=$AC_IN_PROGRESS_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
 ```
 
-### How do I store and re-use scripts from a Git repository for Custom Script steps?
+### How do I store and re-use customer scripts from a Git repository?
 
 If you are looking for a modular way to manage your Appcircle CI custom scripts, you can host your script files in a Git repository and pull them dynamically into the build environment. This approach helps keep your workflow clean and allows centralized version control for your custom scripts.
 
 This section explains how to clone a private Git repository and execute a specific script file from it using the Custom Script step.
 
+The following Bash script has been tested on multiple Git providers using personal access tokens (PAT) for authentication.
+
 :::info
 
-If you are using public repository, you don't need to obtain an access token. In this case, use the Git URL without the authentication command in the script below.
+If you are using a public repository, you do not need to obtain an access token. In this case, you can use the git clone command directly in your script without including any authentication.
 
 :::
 
@@ -533,63 +535,19 @@ It is recommended to create a repository specifically for the desired custom scr
 
 :::
 
-:::info Required Permissions
+:::warning Required Permissions
 
 To successfully clone a repository, your personal access token (PAT) must have at least read access to the repository.
 
 Write or admin permissions are not required for this use case.
 
+Note: When creating a personal access token with GitLab, the token must have at least Reporter access level.
+
 Note: Bitbucket requires a user-level personal access token for Git operations such as cloning. Repository-level access tokens are not supported for Git over HTTPS and will result in authentication errors if used.
 
 :::
 
-<PatDanger />
-
-```bash
-
-#Bash script
-set -e
-
-# Repository details
-CS_REPO_CLONE_URL="https://example.org/exampleuser/examplerepo.git"
-CS_USERNAME="$YOUR_USERNAME"
-CS_PAT="$YOUR_PAT"
-CS_GIT_BRANCH="main" # or desired branch name 
-CS_SCRIPT_FILE="test.sh"  # or "Example.rb"
-
-# Create Authorization header using Base64 encoding
-AUTH_STRING="$CS_USERNAME:$CS_PAT"
-ENCODED_AUTH=$(printf "%s" "$AUTH_STRING" | base64)
-HEADER_VALUE="Authorization: Basic $ENCODED_AUTH"
-
-# Clone the repository using the Authorization header
-echo "Cloning the repository..."
-git -c http.extraheader="$HEADER_VALUE" clone "$CS_REPO_CLONE_URL"
-
-# Navigate into the cloned repository
-CS_FOLDER_NAME=$(basename "$CS_REPO_CLONE_URL" .git)
-cd "$CS_FOLDER_NAME" || { echo "Failed to enter the directory."; exit 1; }
-
-# Switch to the target branch
-git checkout "$CS_GIT_BRANCH"
-
-# Run the script file if it exists
-if [ -f "./$CS_SCRIPT_FILE" ]; then
-    chmod +x "./$CS_SCRIPT_FILE"
-    if [[ "$CS_SCRIPT_FILE" == *.sh ]]; then
-        ./"$CS_SCRIPT_FILE"
-    elif [[ "$CS_SCRIPT_FILE" == *.rb ]]; then
-        ruby "$CS_SCRIPT_FILE"
-    else
-        echo "Unsupported script type: $CS_SCRIPT_FILE"
-        exit 1
-    fi
-else
-    echo "Script file not found."
-    exit 1
-fi
-
-```
+This script demonstrates how to fetch a Bash script from a private GitHub Cloud repository as an example. Adjustments are required when using a different Git provider or executing Ruby code.
 
 :::tip Advantages of Git-Based Custom Script Management
 
@@ -608,6 +566,62 @@ Branching Support: Different versions of scripts can be maintained using Git bra
 This approach significantly improves scalability, maintainability, and consistency in teams managing multiple CI pipelines.
 
 :::
+
+<PatDanger />
+
+```bash
+#! /bin/bash
+set -e
+
+# Git clone URL
+CS_GIT_CLONE_URL="https://example.org/exampleuser/examplerepo.git"
+CS_GIT_USERNAME="$YOUR_GIT_USERNAME"
+CS_GIT_PAT="$YOUR_GIT_PAT"
+CS_GIT_BRANCH="main" # or desired branch name 
+CS_GIT_SCRIPT_FILE="test.sh"  # or "Example.rb"
+
+# Create authorization header using Base64 encoding
+AUTH_STRING="$CS_GIT_USERNAME:$CS_GIT_PAT"
+ENCODED_AUTH=$(printf "%s" "$AUTH_STRING" | base64)
+HEADER_VALUE="Authorization: Basic $ENCODED_AUTH"
+
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+CS_ROOT_FOLDER="ROOT_FOLDER_$TIMESTAMP"
+mkdir -p "$CS_ROOT_FOLDER"
+cd "$CS_ROOT_FOLDER"
+
+# Clone the repository using the authorization header
+echo "Cloning the repository..."
+git -c http.extraheader="$HEADER_VALUE" clone "$CS_GIT_CLONE_URL"
+
+# Navigate into the cloned repository
+CS_FOLDER_NAME=$(basename "$CS_GIT_CLONE_URL" .git)
+cd "$CS_FOLDER_NAME" || { echo "Failed to enter the directory."; exit 0; }
+
+# Switch to the target branch
+git checkout "$CS_GIT_BRANCH"
+
+# Run the script file if it exists
+if [ ! -f "./$CS_GIT_SCRIPT_FILE" ]; then
+    echo "Script file not found: $CS_GIT_SCRIPT_FILE"
+    exit 1
+fi
+
+case "$CS_GIT_SCRIPT_FILE" in
+  *.sh)
+    chmod +x "./$CS_GIT_SCRIPT_FILE"
+    ./"$CS_GIT_SCRIPT_FILE"
+    ;;
+  *.rb)
+    ruby "$CS_GIT_SCRIPT_FILE"
+    ;;
+  *)
+    echo "Unsupported script type: $CS_GIT_SCRIPT_FILE"
+    exit 1
+    ;;
+esac
+
+```
 
 :::caution
 
