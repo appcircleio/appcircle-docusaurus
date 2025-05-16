@@ -30,6 +30,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - A sidebar summary card has been added, displaying the organization name, license plan, and license expiry date along with a quick access link to Billing page for Enterprise licensed organizations. <AccountBadge/> <CloudBadge/>
 - The Last Commit ID display has been updated to Last Commit Hash within the Build module. <BuildBadge/> <CloudBadge/>
 - The latest Android and iOS OS versions have been added to the Send to Microsoft Intune settings within the Publish Step. <PublishBadge/> <CloudBadge/>
+- Support has been added for executing custom scripts from Git repositories in the Custom Script step, enhancing reusability and version control. <BuildIntegrationsBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
