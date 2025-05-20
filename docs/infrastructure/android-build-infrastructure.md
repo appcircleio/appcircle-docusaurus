@@ -107,7 +107,7 @@ Here are some most important packages installed in our Linux and macOS images us
 | ------------------- | --------------- | -------------- | ----------------- | ---|
 | Apt Package Manager | 2.2.4           | n/A            | n/A               | n/A |
 | Bash                | 5.1.4           | 3.2.57         | 3.2.57            | 3.2.57 |
-| GNU Binutils        | 2.35.2          | 2.42           | 2.39              | n/A |
+| GNU Binutils        | 2.35.2          | n/A           | n/A              | n/A |
 | Bzip2               | 1.0.8           | n/A            | n/A               | n/A |
 | Curl                | 7.74.0          | 8.6.0          | 7.79.1            | 8.7.1 |
 | GCC                 | 10.2.1          | 16.0.0         | 14.0.0            | 17.0.0  |
