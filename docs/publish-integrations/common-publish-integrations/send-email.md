@@ -39,6 +39,10 @@ To be able to send email in your publish flow, you need to configure the fields 
 | **Email Provider Account**| Email provider configuration key (e.g., `gmail`).                                                                                                              |
 | **Email Content**         | Body content of the email. Plain text or HTML. Environment variables can be used.                                                                              |
 
+:::tip Email Provider Account
+Please note that this area is optional, if you are not sure about your provider, the default value (gmail) can be used.
+:::
+
 ### Example Configuration (Gmail)
 
 | Field                    | Value                                                                 |
@@ -66,7 +70,6 @@ First, you need to define the environment variables. To do this, go to the Publi
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email6.png' />
 
-
 For more information, please refer to the [Publish Variables](/publish-module/publish-variables) documentation.
 
 ### Selecting Environment Variables
@@ -81,13 +84,13 @@ You can now use the defined environment variables in your email settings, includ
 
 ```text
 Subject:
-Build $AC_BUILD_NUMBER for $AC_PROJECT_NAME is Ready
+$AC_EMAIL_TITLE
 
 Email Content:
 Hi team,
 
-A new build for $AC_PROJECT_NAME (Build #$AC_BUILD_NUMBER) has been successfully published.
+A new package for $AC_PROJECT_NAME has been successfully published.
 
 Best,
-Appcircle CI/CD
+Appcircle Team
 ```
