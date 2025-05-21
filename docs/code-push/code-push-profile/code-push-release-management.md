@@ -1,11 +1,11 @@
 ---
-title: CodePush Release Management
+title: CodePush Release
 description: Learn how to create Appcircle CodePush profile
 tags: [appcircle codepush, profile, codepush]
 sidebar_position: 3
 ---
 
-# CodePush Release Management
+# CodePush Release
 
 This section describes how to manage and distribute CodePush updates through Appcircle, including versioning, release strategies, and common practices for efficient update delivery.
 
