@@ -1,5 +1,5 @@
 ---
-title: CodePush Profile Management
+title: CodePush Profile
 description: Learn how to create Appcircle CodePush profile
 tags: [appcircle codepush, profile, codepush]
 sidebar_position: 1
