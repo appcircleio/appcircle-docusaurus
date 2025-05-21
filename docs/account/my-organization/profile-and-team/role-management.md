@@ -99,6 +99,20 @@ The following table details the roles and restrictions for the [**Environment Va
 
 :::
 
+### CodePush Permissions
+
+The following table details the roles and restrictions for the [**CodePush**](/code-push). Please refer to the related module information and caution notes.
+
+
+| CodePush           | Scopes                              | Owner | Manager | Operator | Viewer |
+|--------------------|-------------------------------------|-------|---------|----------|--------|
+| CodePush Profile   | Add/Delete/Update                   | ✅     | ✅       | ⛔        | ⛔      |
+| Deployment Channel | Add/Delete/Update                   | ✅     | ✅       | ⛔        | ⛔      |
+| Release            | Release Version/Rollback            | ✅     | ✅       | ✅        | ⛔      |
+| Deployment Keys    | List/Copy                           | ✅     | ✅       | ✅        | ⛔      |
+| Release Version    | List                                | ✅     | ✅       | ✅        | ✅      |
+| Release Version    | Promote/Settings Update/Download    | ✅     | ✅       | ✅        | ⛔      |
+
 ### Signing and Identity Permissions
 
 The following table details the roles and restrictions for the [**Signing and Identity**](/signing-identities) module. Please refer to the related module information and caution notes. 
@@ -337,8 +351,6 @@ Also, the user can view self-hosted runners and change configuration.
 | Appcircle Login                                      | List SSO                                | ✅     | ✅       | ✅      |
 | Appcircle Login                                      | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
 | Appcircle Login                                      | List LDAP                               | ✅     | ✅       | ✅      |
-| PAT                                                  | Generate PAT                            | ✅     | ✅       | ⛔      |
-| PAT                                                  | View PAT                                | ✅     | ✅       | ✅      |
 | Runner Access Token                                  | List Runner Access Token                | ✅     | ⛔       | ⛔      |
 | Runner Access Token                                  | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
 | Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
@@ -349,6 +361,7 @@ Also, the user can view self-hosted runners and change configuration.
 | Domain Verification                                  | Add New Domain Verification             | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | Verify a Domain                         | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | Remove Domain Verification              | ✅     | ✅       | ⛔      |
+| Export Users                                         | Export User List                        | ✅     | ✅       | ⛔      |
 
 :::info Organization Management
 
