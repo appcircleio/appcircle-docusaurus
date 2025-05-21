@@ -99,6 +99,20 @@ The following table details the roles and restrictions for the [**Environment Va
 
 :::
 
+### CodePush Permissions
+
+The following table details the roles and restrictions for the [**CodePush**](/code-push). Please refer to the related module information and caution notes.
+
+
+| CodePush           | Scopes                              | Owner | Manager | Operator | Viewer |
+|--------------------|-------------------------------------|-------|---------|----------|--------|
+| CodePush Profile   | Add/Delete/Update                   | ✅     | ✅       | ⛔        | ⛔      |
+| Deployment Channel | Add/Delete/Update                   | ✅     | ✅       | ⛔        | ⛔      |
+| Release            | Release Version/Rollback            | ✅     | ✅       | ✅        | ⛔      |
+| Deployment Keys    | List/Copy                           | ✅     | ✅       | ✅        | ⛔      |
+| Release Version    | List                                | ✅     | ✅       | ✅        | ✅      |
+| Release Version    | Promote/Settings Update/Download    | ✅     | ✅       | ✅        | ⛔      |
+
 ### Signing and Identity Permissions
 
 The following table details the roles and restrictions for the [**Signing and Identity**](/signing-identities) module. Please refer to the related module information and caution notes. 
