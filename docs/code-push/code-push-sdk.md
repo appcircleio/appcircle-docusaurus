@@ -79,7 +79,50 @@ For Appcircle Cloud, the **ServerURL** is `https://my.appcircle.io/codepush`.
 
 </Tabs>
 
-#### Plugin Installation and Configuration for React Native 0.60 version and above (Android)
+
+#### SDK Installation and Configuration for React Native 0.60 version and above (iOS)
+
+Follow the installation steps below to use the CodePush SDK in your iOS applications.
+
+1. Run `cd ios && pod install && cd ..` to install all the necessary **CocoaPods** dependencies.​
+
+2. Open up the AppDelegate.m file, and add an import statement for the CodePush headers:
+
+```swift
+#import <CodePush/CodePush.h>
+
+```
+
+3. Find the following line of code, which sets the source URL for bridge for production releases:
+
+```swift
+return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+
+```
+
+4. Replace it with this line:
+
+```swift
+return [CodePush bundleURL];
+
+```
+
+This change configures your app to always load the most recent version of your app's JS bundle. On the first launch, this will correspond to the file that was compiled with the app. However, after an update has been pushed via CodePush, this will return the location of the most recently installed update.
+
+Your sourceURLForBridge method should look like this:
+
+```swift
+- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
+{
+  #if DEBUG
+    return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index"];
+  #else
+    return [CodePush bundleURL];
+  #endif
+}
+```
+
+#### SDK Installation and Configuration for React Native 0.60 version and above (Android)
 
 1. In your `android/settings.gradle` file, make the following additions at the end of the file:
 
