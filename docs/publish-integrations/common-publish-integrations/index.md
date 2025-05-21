@@ -40,3 +40,6 @@ Appcircle's integration tools are designed to simplify and automate the publishi
 ## [Metadata Approval](/publish-integrations/common-publish-integrations/metadata-approval)
 
 The Metadata Approval step is used to get email-based approval before publishing your app's metadata. This ensures that designated users can review and either approve or reject the App Store, Google Play, Microsoft Intune and Huawei AppGallary metadata before proceeding with the publishing step.
+
+## [Send Email](/publish-integrations/common-publish-integrations/send-email)
+The **Send Email** step allows you to send customized email notifications during your Appcircle Publish Flow for both iOS and Android builds. This can be used to alert stakeholders, notify of publish statuses, or provide deployment-related information.

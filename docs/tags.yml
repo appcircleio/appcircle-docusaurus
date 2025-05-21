@@ -2957,3 +2957,8 @@ xml:
   label: "ci"
   description: "ci related documentations"
   permalink: "/ci"
+
+"send email":
+  label: "send email"
+  description: "send email related documentations"
+  permalink: "/send-email"
