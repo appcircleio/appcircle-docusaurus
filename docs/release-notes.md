@@ -16,6 +16,26 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.28.0 - 2025-05-21
+
+### 🆕 New Features
+
+- The “**Hide Certificate Details**” toggle can now be enabled from the Enterprise App Store profile settings to hide certificate details when app versions are published to the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- The use of environment variables within the metadata detail fields, such as phone and email, in the publish module is now supported. <PublishBadge/> <CloudBadge/>
+- The id key has been removed from the downloaded environment variable JSON file to simplify the structure and prevent potential conflicts during re-import or reuse. <EnvironmentVariablesBadge/> <CloudBadge/>
+- “Expired” and “Exists” tags have been added to Apple provisioning profiles to improve visibility during import operations. <SigningIdentitiesBadge/> <CloudBadge/>
+- An “Available” label is now shown for certificates already registered in Appcircle during provisioning profile registration. <SigningIdentitiesBadge/> <CloudBadge/>
+- A new UI warning is now displayed when too many requests are sent within a short time frame. <CloudBadge/>
+- Webhook notification channels now support events related to the Publish module. <AccountBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where the Custom Domain option could not be enabled by cloud users in the Enterprise App Store settings. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where branches deleted from the repository were not removed from the list until the screen was refreshed. <BuildBadge/> <CloudBadge/>
+
 ## 3.27.2 - 2025-05-09 Upload Option for Variable Groups, Build Enhancements, Improvements and more
 
 ### 🆕 New Features
@@ -26,7 +46,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :muscle: Improvements
 
 - The search functionality for the Testing Distribution module has been improved by integrating a server-side component, enhancing performance and scalability. <DistributionBadge/> <CloudBadge/>
-- The Upload button has been moved to the upper section of the app version list for improved visibility on Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
+- The Upload button has been moved to the upper section of the app version list for improved visibility on Testing Distribution profiles. <DistributionBadge/> <EnvironmentVariablesBadge/>
 - A sidebar summary card has been added, displaying the organization name, license plan, and license expiry date along with a quick access link to Billing page for Enterprise licensed organizations. <AccountBadge/> <CloudBadge/>
 - The Last Commit ID display has been updated to Last Commit Hash within the Build module. <BuildBadge/> <CloudBadge/>
 - The latest Android and iOS OS versions have been added to the Send to Microsoft Intune settings within the Publish Step. <PublishBadge/> <CloudBadge/>
