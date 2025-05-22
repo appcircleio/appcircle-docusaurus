@@ -28,6 +28,20 @@ In this case, you should verify `yourdomain.onmicrosoft.com` in Microsoft's DNS 
 
 :::
 
+:::info  
+#### **Default Behavior & Configuration**  
+
+Domain verification is **enabled by default** and cannot be modified for **Appcircle Cloud** deployments.  
+
+For **self-hosted installations**, domain verification is **configurable**. By default, it is **disabled**, allowing domains to be added as trusted without requiring TXT DNS records. Organizations can modify this setting based on their security and compliance requirements.  
+
+For detailed configuration options, refer to the following pages:
+
+- [Configuration on Docker/Podman Architecture](/self-hosted-appcircle/install-server/linux-package/configure-server/domain-verification)
+- [Configuration on Kubernetes/OpenShift Architecture](/self-hosted-appcircle/install-server/helm-chart/configuration/domain-verification)
+
+:::
+
 ### Steps to Verify a Domain
 
 **1.** Navigate to the My Organization > Security > Domain Verification section.

@@ -158,7 +158,7 @@ The Info tab allows you to enter the publisher information for your distributed 
 
 You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-6099-info.png' />
 
 Once you click the save button, the information you have provided will be displayed on the Tester Portal.
 
@@ -173,6 +173,51 @@ It will also display the Login Method for the Testing Distribution Profile.
 In the example image, the profile has static authentication method, so it is displayed as Static Login.
 
 You can find out more about the login methods in the [using authentication for distribution](/testing-distribution/create-or-select-a-distribution-profile#authentication) section.
+
+#### Binary Tags
+
+The Binary Tags feature allows you to label your application binaries with meaningful metadata, which is displayed on the Testing Portal for easy identification by testers. 
+
+These tags help testers understand each binary's origin, purpose, and how it was triggered. The available tags are:
+- Commit ID
+- Commit Hash
+- Commit Message
+- Commit Author
+- Git Source Branch
+- Trigger Reason
+- Git Target Branch
+- Git Tag
+- Trigger User
+- Build Profile ID
+- Workflow Name
+- Configuration Name
+
+:::info Build Module Dependency
+
+This section appears only if the binary is distributed to the Testing Distribution profile from the Build Module. 
+
+Uploaded binaries without metadata from a build module won’t show the selected tags on the Testing Portal.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss2.png' />
+
+Binary tags can be managed through the Testing Distribution Profile Settings under the Info tab:
+1. Navigate to **Testing Distribution** module.
+2. Select the relevant distribution profile.
+3. Click the **Settings** icon.
+4. Under the **Info** tab, locate the **Binary Tags** section.
+5. Use the “Add a new tag” field to enter or select tags.
+6. Click **Save** to apply changes.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss9.png' />
+
+Once tags are saved in the profile settings:
+- Tags will automatically appear next to the app version on the Testing Portal after being distributed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss8.png' />
+
+This visibility allows testers to filter and select the appropriate version for testing based on context.
 
 ### Auto Send
 
@@ -290,6 +335,26 @@ You can either select the files from the list or upload binaries by clicking the
 3. This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5184-binary.png' alt="Binary Details" />
+
+#### Build Metadata Details
+
+The following metadata is displayed in the Binary Details section of a Testing Distribution Profile only when the binary is generated via the Build Module, either through automatic or manual triggers, and subsequently distributed using Auto Distribution to the Testing Distribution module.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary.png' />
+
+- **Trigger Type**: Indicates what initiated the build. Possible values include:
+
+1. Pull Request: The build was triggered by the creation or update of a pull request.
+2. User: A build was manually triggered by a user.
+3. Commit: A new commit triggered the build automatically.
+4. Tag: The build was initiated when a new Git tag was pushed to the repository.
+
+- **Branch Name**: The source branch used during the build process.
+- **Target Branch**: Typically used in pull request or merge-based triggers, this is the destination branch for the pull request or merge target.
+- **Git Tag**: If the trigger type is Tag, this field shows the tag that initiated the build.
+- **Triggered Internal User**: Displays the email address of the internal user who triggered the build or the user responsible for the action.
+- **Workflow Name**: The name of the workflow profile name executed during the build process (e.g., Default Push Workflow).
+- **Config Name**: Indicates the configuration profile name used within the selected workflow (e.g., Default Configuration).
 
 ### Send your application to Enterprise App Store
 

@@ -65,7 +65,7 @@ First, select **Bitbucket** then **Connect to a Bitbucket Server** through the m
 
 Fill in the relevant information about your Bitbucket self-hosted module. If you are not sure what those are, contact your system administrator.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/bt-self-hosted-detail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4940-bitbucket2.png' />
 
 :::caution
 
@@ -87,6 +87,8 @@ Bitbucket has **Personal Access Token** to authorize the user. Relevant guide:
 
 https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4940-bitbucket.png' />
+
 :::info
 
 Appcircle needs admin permission to function properly. The admin permission is needed to create relevant WebHooks automatically.
@@ -99,17 +101,9 @@ Bitbucket doesn't allow scoped repository permissions like GitHub. Therefore the
 
 :::
 
-You may create an access token for a specific project or a repository, which can help you to restrict the access level of the token.
-
-### Create HTTP access tokens for projects or repositories
-
-HTTP access tokens can be created for teams to grant permissions at the project or repository level rather than for specific users.
-
-To create an HTTP access token for a project or repository (requires project or repository admin permissions):
-
-- From either the Project or Repository settings, select HTTP access tokens.
-- Select Create token.
-- Set the token name, permissions, and expiry.
+:::warning Personal Access Token
+When connecting to a Bitbucket Server, use a **Personal HTTP Access Token** instead of a HTTP access token for projects or repositories. Not using a Personal Access Token may lead to failures in build and fetch operations on Appcircle.
+:::
 
 ### Check Token
 

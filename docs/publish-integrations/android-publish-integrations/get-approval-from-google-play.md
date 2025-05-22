@@ -7,10 +7,13 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Get Approval From Google Play
 
 The **Get Approval From Google Play** step ensures that your app release is approved by checking its status on the [Google Play Console](https://play.google.com/console). This allows you to monitor the progress of your submission and take any necessary actions to address any issues or concerns that may arise during the review process.
+
+<NoRunnerUsage />
 
 ## Prerequisites
 

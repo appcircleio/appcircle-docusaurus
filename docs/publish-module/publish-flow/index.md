@@ -12,6 +12,12 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery, Microsoft Intune). This flow can be customized according to your specific publishing requirements.
 
+:::caution Runner Usage
+
+Appcircle's Publish module requires a **runner** to operate. The runner dependency of each step in the **Publish Flows** is specified in the relevant step's documentation. For detailed information on runner dependencies, please refer to the documentation of the relevant steps.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-button.png' />
 
 When you click on the **Publish Flow** button, the list of steps included in the publish flow will appear.
