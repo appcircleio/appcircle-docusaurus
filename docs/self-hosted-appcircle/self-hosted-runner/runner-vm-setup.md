@@ -8,7 +8,7 @@ sidebar_class_name: hidden
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
-import HostCaution512GB from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_512GB_host_warning.mdx';
+import HostRequirements from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_host-warning.mdx';
 
 # Self-hosted Runner as MacOS VM Image
 
@@ -198,7 +198,7 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 If you encounter network interruption, just run the same command again. It should continue download for remaining part. It will result in saving both time and bandwidth.
 :::
 
-<HostCaution512GB/>
+<HostRequirements/>
 
 ---
 
@@ -678,22 +678,6 @@ You can find more information about the build infrastructure in the documents be
 - [iOS Build Infrastructure](/infrastructure/ios-build-infrastructure)
 - [Android Build Infrastructure](/infrastructure/android-build-infrastructure)
 
-:::caution
-We're constantly bumping the VM macOS version according to Xcode requirements.
-
-Below is the table of required **host** versions for currently supported macOS VMs:
-
-| Version | Guest macOS | Host macOS |
-| ------- | ----------- | ---------- |
-| `250512` | Sequoia `15.4.1` | Sequoia or later |
-| `241227` | Sonoma `14.5` | Ventura or later |
-| `240918` | Sonoma `14.5` | Ventura or later |
-| `240514` | Sonoma `14.1` | Ventura or later |
-| `240306` | Sonoma `14.1` | Ventura or later |
-
-If you don't need the latest Xcode and you want to run an older version of the macOS VM image that supports running on an older host, contact us through our support channels.
-:::
-
 ### Download the macOS VM and Xcode Images Automatically
 
 To download and extract the Appcircle runner VM and Xcode images in the background automatically, you can run the command below.
@@ -751,7 +735,7 @@ nohup ./download-runner.sh "250512" &
 If you face any errors while downloading the files, please delete the corrupted file and re-run the command block above.
 :::
 
-<HostCaution512GB/>
+<HostRequirements/>
 
 It may take some time to complete with respect to your network speed. You can see and follow the logs with the command below.
 
