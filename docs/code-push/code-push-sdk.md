@@ -49,7 +49,7 @@ Instructions on how to add these configurations for both iOS and Android platfor
 :::info Server URL
 
 If you are using a self‑hosted version of Appcircle, use the **ServerURL** value defined for your self‑hosted instance.  
-For Appcircle Cloud, the **ServerURL** is `https://my.appcircle.io/codepush`.
+For Appcircle Cloud, the **ServerURL** is `https://api.appcircle.io/codepush`.
 
 :::
 
@@ -61,7 +61,7 @@ For Appcircle Cloud, the **ServerURL** is `https://my.appcircle.io/codepush`.
   <TabItem value="react-native-ios">
     ```swift
     <key>CodePushServerURL</key>
-        <string>https://my.appcircle.io/codepush</string>
+        <string>https://api.appcircle.io/codepush</string>
 
     <key>CodePushDeploymentKey</key>
         <string>YOUR_DEPLOYMENT_KEY</string>  
@@ -71,7 +71,7 @@ For Appcircle Cloud, the **ServerURL** is `https://my.appcircle.io/codepush`.
   <TabItem value="react-native-android">
   
     ```java
-    <string moduleConfig="true" name="CodePushServerUrl">https://my.appcircle.io/codepush</string>
+    <string moduleConfig="true" name="CodePushServerUrl">https://api.appcircle.io/codepush</string>
 
     <string moduleConfig="true" name="CodePushDeploymentKey">YOUR_DEPLOYMENT_KEY</string>
     ```
