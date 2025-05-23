@@ -39,7 +39,6 @@ Add the SDK to dependencies section in your `package.json` file.
 
 ## CodePush Configurations in Project
 
-
 To ensure that your app receives the correct updates, you must configure the appropriate deployment key in your project. Each deployment channel created in Appcircle has a unique key, which must be specified in your CodePush configuration. This allows your app to connect to the correct environment, such as `Staging` or `Production`.
 
 To ensure that apps can properly receive updates, the `Server URL` and `Deployment Key` must be correctly added to the native code of your project. For more information, please visit the [**Deployment Keys**](/code-push/code-push-profile/code-push-release-management#deployment-keys) documentation.
@@ -78,7 +77,6 @@ For Appcircle Cloud, the **ServerURL** is `https://api.appcircle.io/codepush`.
   </TabItem>
 
 </Tabs>
-
 
 #### SDK Installation and Configuration for React Native 0.60 version and above (iOS)
 
@@ -260,6 +258,5 @@ class MyApp extends Component {
 
 MyApp = codePush(codePushOptions)(MyApp);
 ```
-
 
 This configuration ensures that your app checks for updates when it starts, and installs them on the next app restart. You can customize the behavior further using CodePush options based on your needs.

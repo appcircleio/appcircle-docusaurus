@@ -1,5 +1,6 @@
 ---
-title: CodePush Profile
+title: Appcircle CodePush Profile
+sidebar_label: CodePush Profile
 description: Learn how to create Appcircle CodePush profile
 tags: [appcircle codepush, profile, codepush]
 sidebar_position: 1
@@ -47,7 +48,6 @@ Remember, the name given to the profile is used as the **App Name** parameter du
 
 :::
 
-
 ## Profile Management
 
 This section provides an overview of how to manage your existing CodePush profiles in Appcircle.
@@ -57,7 +57,6 @@ This section provides an overview of how to manage your existing CodePush profil
 Deployment channels allow you to categorize and manage your CodePush releases, enabling different update strategies such as `Staging` and `Production` deployments.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-deploymentChannels.png' />
-
 
 ### Deployment Channel Actions
 
