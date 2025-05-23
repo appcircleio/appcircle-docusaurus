@@ -92,7 +92,27 @@ Profile information can be accessed, and users can be added to grant them access
 
 The Profile ID can be copied from the Info tab by clicking the copy icon located on the right side of the displayed ID.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6066-ss8.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6223-toggle5.png" />
+
+#### Show on Top
+
+The **Show on Top** feature allows you to prioritize app versions by displaying them at the top of the list in their respective channels within the Enterprise Portal.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6223-toggle2.png" />
+
+:::caution
+Please note that due to the caching model in the service, updates may take up to 10 minutes to take effect.
+:::
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-8.png" />
+
+#### Hide Certificate Details
+
+Enabling the Hide Certificate Details toggle in the Enterprise App Store profile settings will hide the certificate information associated with the iOS and Android app versions on the Enterprise Portal. This helps maintain confidentiality by preventing end users from viewing the certificate used to sign the application binaries. 
+
+This setting applies across all listed versions under the selected profile.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6223-toggle3.png" />
 
 #### Binary Tags
 
@@ -120,7 +140,7 @@ Uploaded binaries without metadata from a build module won’t show the selected
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6223-toggle4.png' />
 
 Binary tags can be managed through the Enterprise App Store Profile Settings under the Info tab:
 1. Navigate to **Enterprise App Store** module.
@@ -130,25 +150,13 @@ Binary tags can be managed through the Enterprise App Store Profile Settings und
 5. Use the “Add a new tag” field to enter or select tags.
 6. Click **Save** to apply changes.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6223-toggle1.png' />
 
 Once tags are saved in the profile settings:
 - Tags will automatically appear next to the app version on the Enterprise Portal after being published to a channel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss10.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss11.png' />
-
-#### Show on Top
-
-The **Show on Top** feature allows you to prioritize app versions by displaying them at the top of the list in their respective channels within the Enterprise Portal.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6066-ss9.png" />
-
-:::caution
-Please note that due to the caching model in the service, updates may take up to 10 minutes to take effect.
-:::
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4070-8.png" />
 
 #### In-App Update Secret
 
@@ -206,6 +214,10 @@ To retrieve the direct links or QR codes for published app versions, follow thes
 
 :::info
 If no app versions are published to either channel, the links and QR codes will not be available.
+:::
+
+:::warning Link Usage
+Always use the original share link from EAS → Profile → Settings, as sharing the redirected URL may prevent users from accessing the required app version if the published version is later changed or removed.
 :::
 
 ## Binary Actions
