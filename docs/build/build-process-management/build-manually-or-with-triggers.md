@@ -139,9 +139,9 @@ You can enable automatic cancellation of redundant builds when a new workflow ru
 
 To enable this feature:
 
-1. Go to the Build Profile and select Configurations.
-2. Scroll down and activate Auto Cancel Redundant Pipeline.
-3. Click Save Changes.
+1. Go to the build profile and select configurations.
+2. Scroll down and activate auto cancel redundant pipeline.
+3. Click save changes.
 
 The Auto-Cancel Redundant Pipeline (ACRP) mechanism works based on four key parameters:
 - Configuration
@@ -153,7 +153,7 @@ If a new build is triggered with the same values for all these parameters, any p
 
 :::info
 
-Builds that are manually triggered are not affects ongoing or queued builds; the auto-cancel mechanism does not apply to them.
+Builds that are **manually started** do not affect ongoing or queued builds; the auto-cancel mechanism does not apply to manually started builds.
 
 :::
 
