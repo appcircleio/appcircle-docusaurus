@@ -133,19 +133,23 @@ If your merge request comment includes `[retry]`, your workflow will be retried.
 
 ### Auto Cancel Redundant Pipeline
 
-You can set pending or running builds to cancel automatically when a workflow for new changes runs on the same configuration, workflow, branch, and trigger type. You can enable this in the project settings:
+<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline.png' />
 
-1. On the build profile, select configurations.
-2. Activate auto cancel redundant pipeline down below.
-3. Select Save changes.
+You can enable automatic cancellation of redundant builds when a new workflow run is triggered with the same configuration, workflow, branch, and trigger type. This helps avoid waiting for outdated builds to complete.
 
-The auto-cancel redundant pipeline (ACRP) mechanism in Appcircle operates based on four key parameters:
+To enable this feature:
+
+1. Go to the Build Profile and select Configurations.
+2. Scroll down and activate Auto Cancel Redundant Pipeline.
+3. Click Save Changes.
+
+The Auto-Cancel Redundant Pipeline (ACRP) mechanism works based on four key parameters:
 - Configuration
 - Workflow
 - Branch
-- Trigger
+- Trigger type
 
-If the configuration, workflow, branch, and trigger type are all the same, the system cancels with exact same previous queued or running builds. This ensures that you don’t have to wait for outdated builds to finish.
+If a new build is triggered with the same values for all these parameters, any previously queued or running build is automatically cancelled.
 
 :::info
 
