@@ -1,5 +1,6 @@
 ---
-title: Testinium
+title: Testinium Steps
+sidebar_label: Testinium
 description: Testinium steps integrate Appcircle with Testinium for uploading apps and running automated tests on the cloud or enterprise environments.
 tags: [testinium, plan, run, app upload, test, mobile, automation, app automate]
 ---

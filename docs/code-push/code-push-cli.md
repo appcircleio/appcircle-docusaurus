@@ -5,13 +5,11 @@ tags: [appcircle codepush cli, cli, codepush cli, deployments, command line]
 sidebar_position: 3
 ---
 
-
 # CodePush CLI
 
 The Appcircle CodePush CLI enables developers to interact with the CodePush service directly from the command line. With this tool, you can create and manage releases, assign deployments, and monitor rollout progress without needing to access the Appcircle UI. This section provides detailed instructions and examples for using the CLI effectively in your update workflows.
 
 https://www.npmjs.com/package/@appcircle/codepush-cli
-
 
 ## Installing
 
@@ -24,7 +22,6 @@ npm i -g @appcircle/codepush-cli
 ```
 
 Once installed, you can run `appcircle-code-push --help` to see the list of available commands.
-
 
 ## Login
 
@@ -64,7 +61,6 @@ In addition, all necessary parameters for aplication can be found in table below
 | `appcircle-code-push app list`     | Displays a list of all CodePush apps associated with your account. |
 | `appcircle-code-push app transfer` | Transfers ownership of an app to another user or organization.     |
 
-
 ### Adding a Deployment Channel in Appcircle
 
 Deployment channels help organize and separate your release flows; this section explains how to add a new channel using the CLI so you can manage environments like staging and production effectively.
@@ -75,7 +71,6 @@ Use the following command to create a new deployment channel:
 appcircle-code-push deployment add <App-Name> <Deployment-Name>
 ```
 Replace `<App-Name>` and `<Deployment-Name>` with a unique names for your app and deployment channel.
-
 
 In addition, all necessary parameters for aplication can be found in table below;
 

@@ -39,7 +39,6 @@ Add the SDK to dependencies section in your `package.json` file.
 
 ## CodePush Configurations in Project
 
-
 To ensure that your app receives the correct updates, you must configure the appropriate deployment key in your project. Each deployment channel created in Appcircle has a unique key, which must be specified in your CodePush configuration. This allows your app to connect to the correct environment, such as `Staging` or `Production`.
 
 To ensure that apps can properly receive updates, the `Server URL` and `Deployment Key` must be correctly added to the native code of your project. For more information, please visit the [**Deployment Keys**](/code-push/code-push-profile/code-push-release-management#deployment-keys) documentation.
@@ -78,7 +77,6 @@ For Appcircle Cloud, the **ServerURL** is `https://api.appcircle.io/codepush`.
   </TabItem>
 
 </Tabs>
-
 
 #### SDK Installation and Configuration for React Native 0.60 version and above (iOS)
 
@@ -122,7 +120,7 @@ Your sourceURLForBridge method should look like this:
 }
 ```
 
-#### SDK Installation and Configuration for React Native 0.60 version and above (Android)
+#### SDK Installation and Configuration for React Native 0.74 version and above (Android)
 
 1. In your `android/settings.gradle` file, make the following additions at the end of the file:
 
@@ -139,11 +137,12 @@ apply from: "../../node_modules/@appcircle/react-native-code-push/android/codepu
 
 3. Update the MainApplication file to use CodePush via the following changes:
 
-For React Native 0.73 and above: update the `MainApplication.kt`.
+Update the `MainApplication.kt`.
 
 ```java
 // 1. Import the plugin class.
 import com.microsoft.codepush.react.CodePush
+
 
 class MainApplication : Application(), ReactApplication {
 
@@ -161,31 +160,9 @@ override val reactNativeHost: ReactNativeHost =
 }
 ```
 
-For React Native 0.72 and below: update the `MainApplication.java`.
-
-```java
-// 1. Import the plugin class.
-import com.microsoft.codepush.react.CodePush;
-
-public class MainApplication extends Application implements ReactApplication {
-
-    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-        ...
-
-        // 2. Override the getJSBundleFile method in order to let
-        // the CodePush runtime determine where to get the JS
-        // bundle location from on each app start
-        @Override
-        protected String getJSBundleFile() {
-            return CodePush.getJSBundleFile();
-        }
-    };
-}
-```
-
 :::danger 
 
-React Native CodePush does not currently support the new Architecture. In order to use this plugin on React Native versions starting from 0.76 you will need to opt out from the new Architecture. React Native CodePush support for the new Architecture is in progress.
+Appcircle CodePush does not currently support the new Architecture on Android. In order to use this plugin on React Native versions starting from 0.74 you will need to opt out from the new Architecture. React Native CodePush support for the new Architecture is in progress.
 
 Update the `android/gradle.properties` file opt out the new Architecture.
 
@@ -194,6 +171,14 @@ newArchEnabled=false
 ```
 
 :::
+
+#### SDK Installation and Configuration for React Native 0.73 version and below (Android)
+
+If you are using React Native version 0.73 or earlier, you need to use the Microsoft CodePush SDK to enable Appcircle CodePush functionality.
+To integrate it into your application, please follow the official documentation:
+https://github.com/microsoft/react-native-code-push
+
+Make sure to add the **Appcircle Server URL** and **Deployment Key** correctly in your **strings.xml** file.
 
 ### SDK Integration and Basic Usage
 
@@ -273,6 +258,5 @@ class MyApp extends Component {
 
 MyApp = codePush(codePushOptions)(MyApp);
 ```
-
 
 This configuration ensures that your app checks for updates when it starts, and installs them on the next app restart. You can customize the behavior further using CodePush options based on your needs.
