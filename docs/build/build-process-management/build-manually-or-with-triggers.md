@@ -131,6 +131,21 @@ If your commit message includes `[skip ci]` or `[ci skip]`, your workflow will b
 
 If your merge request comment includes `[retry]`, your workflow will be retried.
 
+### Auto Cancel Redundant Pipeline
+
+The auto-cancel redundant pipeline (ACRP) mechanism in Appcircle operates based on four key parameters: 
+- Configuration
+- Workflow
+- Branch
+- Trigger
+If the configuration, workflow, branch, and trigger type are all the same, the system cancels any previous queued or running builds. This ensures that you don’t have to wait for outdated builds to finish.
+
+:::info 
+
+Builds that are manually triggered are not affects ongoing or queued builds; the auto-cancel mechanism does not apply to them.
+
+:::
+
 ## Further Automatic Build Subjects
 
 ### Trigger Priorities
