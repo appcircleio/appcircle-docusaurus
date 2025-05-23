@@ -1,6 +1,6 @@
 ---
 title: CodePush Release
-description: Learn how to create Appcircle CodePush profile
+description: Learn how to manage a release with Appcircle CodePush
 tags: [appcircle codepush, profile, codepush]
 sidebar_position: 3
 ---
@@ -8,7 +8,6 @@ sidebar_position: 3
 # CodePush Release
 
 This section describes how to manage and distribute CodePush updates through Appcircle, including versioning, release strategies, and common practices for efficient update delivery.
-
 
 ## Deployment Keys
 
@@ -48,7 +47,6 @@ The version management section allows you to view and compare previous CodePush 
 - **Rollout%:** The percentage of users to whom the release has been deployed.
 - **Date:** The timestamp of when the release was uploaded.
 
-
 ## Version Actions
 
 In this section, you can perform actions such as viewing details, disabling, or enabling a specific CodePush version to manage your release lifecycle more effectively.
@@ -87,8 +85,6 @@ This action reverts your app to the previous stable CodePush version in case of 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-rollback.png' />
 
-
-
 ### Settings
 Allows you to modify release configurations such as rollout percentage or mark the release as mandatory.
 
@@ -121,5 +117,3 @@ For example, if you release an update with a 70% rollout percentage, 7 out of 10
 Use this option to download the `.zip` bundle file associated with a specific CodePush release.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-downloadBundle.png' />
-
-

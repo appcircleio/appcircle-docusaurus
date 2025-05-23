@@ -9,7 +9,6 @@ sidebar_position: 1
 
 Appcircle CodePush is a module that enables seamless over-the-air updates for React Native applications. This document explains how to configure and use the CodePush profile within Appcircle step by step.
 
-
 :::caution Appcircle CodePush
 
 The Appcircle CodePush feature is specifically designed for **React Native** projects. Other mobile technologies in the ecosystem **are not** supported. This feature **should only be used** in **React Native** projects.

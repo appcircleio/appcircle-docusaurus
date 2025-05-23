@@ -1,6 +1,6 @@
 ---
 title: CodePush via Build Module
-description: Learn how to integrate Appcircle CodePush SDK.
+description: Learn how to work with Appcircle CodePush SDK on build module.
 tags: [appcircle codepush, build, ci, build module]
 sidebar_position: 4
 ---
@@ -8,7 +8,6 @@ sidebar_position: 4
 # CodePush via Build Module
 
 This section explains how to configure and use Appcircle's Build Module to automatically upload CodePush updates as part of your CI/CD pipeline.
-
 
 ## Using Build Module for CodePush
 
