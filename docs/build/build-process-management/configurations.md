@@ -115,8 +115,10 @@ This feature is only available for organizations with Enterprise license.
 
 #### ACRP - Auto Cancel Redundant Pipeline
 
-You can use **Auto Cancel Redundant Pipeline** to automatically terminate runs on the same branch, improving CI/CD efficiency and reducing unnecessary resource usage.
-For further details [Auto Cancel Redundant Pipeline](/build/build-process-management/build-manually-or-with-triggers)
+When enabled, this feature automatically cancels any previously running build that matches the same configuration, workflow, branch, and trigger type, if a new run is triggered.
+This helps prevent unnecessary resource usage and reduces queue time by skipping outdated pipeline runs.
+
+For further details, see [Auto Cancel Redundant Pipeline](/build/build-process-management/build-manually-or-with-triggers).
 
 ### Signing configuration
 
