@@ -637,9 +637,9 @@ fatal: could not read Username for Git provider
 
 ### How can I start another workflow within on-going build process?
 
-In Appcircle, you can start a new build from a custom script step within an ongoing workflow. This is especially useful when you want to chain workflows or initiate secondary build processes programmatically.
+In Appcircle, you can start a new build from a Custom Script step within an ongoing workflow. This is especially useful when you want to chain workflows or initiate secondary build processes programmatically.
 
-In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information with parameters.
+To do this, you need the [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), The following script sets up the required parameters and starts the build.
 
 <PatDanger />
 
@@ -664,23 +664,23 @@ appcircle build start \
 To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
 
 To obtain the build profile ID and the branch ID, follow the steps below:
-1. Log in to the organization.
-2. Go to build module.
-3. Select the desired build profile
-4. Select the desired branch
-5. Copy it from the URL. `https://my.appcircle.io/build/detail/123456f-7d89-4545-5454-123456789abc/f1dc50d6-89aa-4f86-9e91-ec2859d747a3`
-6. Then the build profile ID is => `123456f-7d89-4545-5454-123456789abc`
-7. Finally the branch ID is => `fedcba98-89aa-4f86-9e91-ec2859d747a3`
+1. Log in to your Appcircle organization.
+2. Go to the build module.
+3. Select the desired build profile and branch
+5. Copy them from the URL. `https://my.appcircle.io/build/detail/123456f-7d89-4545-5454-123456789abc/f1dc50d6-89aa-4f86-9e91-ec2859d747a3`
+ - Build Profile ID: `123456f-7d89-4545-5454-123456789abc`
+ - Branch ID: `f1dc50d6-89aa-4f86-9e91-ec2859d747a3`
 
 To obtain the configuration ID, follow the steps below: 
-1. Select the desired build profile
-2. Select the desired branch
-3. Open a build log you have already built with desired configuration.
-4. Configuration ID should be visible in the build log such as, Configuration Id: `<uuid>`
+1. Go to the build profile and select the desired branch
+2. Open a previously executed build log with desired configuration.
+3. Look for a line like: Configuration Id: `<uuid>`
 
-Workflow ID is also obtainable by `echo $AC_WORKFLOW_ID` which is a [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/), Or just simply use `--workflow "WorkflowName"`, but keep in mind that the danger section down below.
+You can obtain the workflow ID in two ways, But keep in mind that the danger section down below.
+- Print it with: `echo $AC_WORKFLOW_ID` [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/)
+- Or use `--workflow "WorkflowName"` as an alternative.
 
-If a specific commit is needed, you can set the commitHash parameter using the commit's hash obtained from your Git provider.
+If a specific commit is required, you can pass the --commitHash parameter using the commit hash from your Git provider.
 
 :::danger
 
