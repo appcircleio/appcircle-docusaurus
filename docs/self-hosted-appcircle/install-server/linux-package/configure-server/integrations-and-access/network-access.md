@@ -216,13 +216,26 @@ storage.googleapis.com/storage/v1/b/appcircle-dev-common
 
 ## Appcircle Server Runtime
 
-Although Appcircle runners are responsible for the submission of iOS apps to the App Store, the server also has some features that need access to the App Store Connect API, like runners.
+### Store Sumbit (Publish)
 
-For example, get devices from the App Store, get certificates or provisioning profiles, verify the uploaded certificates, etc.
+Although Appcircle runners are responsible for the submission of the apps to the mobile application stores, the server also has some features that need access to the application store APIs, like runners.
 
-So, you should enable the below API access on the server for those features:
+For example, verify uploaded API keys, get devices from the App Store, get certificates or provisioning profiles, verify the uploaded certificates, etc.
 
-- api.appstoreconnect.apple.com
+So, you should enable the below API access on the server for each store you want to publish your apps.
+
+#### Google Play Store
+
+- `oauth2.googleapis.com`
+- `androidpublisher.googleapis.com`
+
+#### Huawei AppGallery
+
+- `connect-api.cloud.huawei.com`
+
+#### App Store
+
+- `api.appstoreconnect.apple.com`
 
 ## Appcircle Runner Runtime
 
@@ -299,7 +312,7 @@ If you’re using CocoaPods and if your `Podfile` is using another spec reposito
 
 **Disclaimer:** The URLs provided below were last verified on 09/01/2024, and are subject to change by the respective services. Please consult official documentation of the stores for the most up-to-date information.
 
-#### Google Play
+#### Google Play Store
 
 - `www.googleapis.com`
 - `androidpublisher.googleapis.com`
