@@ -1,7 +1,7 @@
 ---
 title: LDAP Configuration
 description: Learn how to configure LDAP configuration
-tags: [self-hosted, helm, configuration, kubernetes]
+tags: [self-hosted, helm, configuration, kubernetes, openshift]
 sidebar_position: 80
 ---
 

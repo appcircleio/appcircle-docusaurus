@@ -1,13 +1,15 @@
 ---
 title: Helm Advanced Configuration
 description: Learn how to fully configure the Appcircle server Helm chart
-tags: [self-hosted, helm, configuration, kubernetes]
+tags: [self-hosted, helm, configuration, kubernetes, openhift]
 sidebar_position: 100
 sidebar_label: Advanced Configuration
 ---
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 For advanced configuration options, open the `values.yaml` file with your preferred text editor and modify the settings as needed.
 
@@ -46,11 +48,26 @@ After updating the `values.yaml` file, create a TLS secret for the custom domain
 - The private key (`key`) **should not be password-protected**.
   :::
 
+<Tabs>
+  <TabItem value="kubernetes" label="Kubernetes" default>
+
 ```bash
 kubectl create secret tls k8s-dist-spacetech-com-tls \
 --cert=fullchain.crt \
 --key=private.key
 ```
+
+  </TabItem>
+  <TabItem value="openshift" label="Openshift">
+
+```bash
+oc create secret tls k8s-dist-spacetech-com-tls \
+--cert=fullchain.crt \
+--key=private.key
+```
+
+  </TabItem>
+</Tabs>
 
 ## Increase the Replica Counts
 
