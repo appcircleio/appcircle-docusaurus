@@ -6,10 +6,13 @@ sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Check App Store Release Status
 
 With Appcircle's **Check App Store Release Status** component, you can obtain status information for your published application, bind this step to a condition based on the status, and check and run your flow accordingly.
+
+<NoRunnerUsage />
 
 ### Prerequisites
 

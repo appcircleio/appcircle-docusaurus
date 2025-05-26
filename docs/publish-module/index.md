@@ -11,6 +11,12 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Publish module is a powerful feature in Appcircle that allows you to distribute your mobile applications to the App Store, Google Play, Huawei AppGallery and Microsoft Intune. It provides a streamlined process for sending your apps directly to the stores or to TestFlight for beta testing.
 
+:::caution Runner Usage
+
+Appcircle's Publish module requires a **runner** to operate. The runner dependency of each step in the [**Publish Flows**](/publish-module/publish-flow) is specified in the relevant step's documentation. For detailed information on runner dependencies, please refer to the documentation of the relevant steps.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-main.png' />
 
 ## Getting Started

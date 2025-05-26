@@ -63,30 +63,33 @@ For more information about the DMZ structure, you can check the [Appcircle DMZ d
 Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version.
 
 <!-- Version Anchor Links -->
-[3.26.2]: https://docs.appcircle.io/release-notes#3262---2025-03-14-generate-and-download-certificate-from-appstore-domain-verification-license-limit-notifications-improvements-and-more
-[3.26.1]: https://docs.appcircle.io/release-notes#3261---2025-02-28-distribute-to-track-update-for-android-publish-flow--saml-sso-enhancement-improvements-and-more
-[3.26.0]: https://docs.appcircle.io/release-notes#3260---2025-02-13-openshift-support-artifact-storage-limit-insights-streamlined-workflows--stability-improvements-and-more
-[3.25.1]: https://docs.appcircle.io/release-notes#3251---2025-01-24-app-version-filter-for-enterprise-app-store-reports-bitbucket-permission-enhancements-improvements-and-more
-[3.25.0]: https://docs.appcircle.io/release-notes#3250---2024-12-19-appcircle-deployment-on-kubernetes-list-view-type-for-build-and-testing-distribution-improvements-and-more
-[3.24.0]: https://docs.appcircle.io/release-notes#3240---2024-12-06-publish-priority-configuration-download-module-reports-through-api-bug-fixes-and-more
-[3.23.1]: https://docs.appcircle.io/release-notes#3231---2024-11-13-enable-captcha-for-enterprise-portal-sso-improvements-bug-fixes-and-more
-[3.23.0]: https://docs.appcircle.io/release-notes#3230---2024-11-04-sso--ldap-improvements-build-priority-configuration-bug-fixes-and-more
-[3.22.1]: https://docs.appcircle.io/release-notes#3221---2024-10-18-editing-environment-variables-self-hosted-updates-enterprise-portal-login-improvement-bug-fixes-and-more
-[3.22.0]: https://docs.appcircle.io/release-notes#3220---2024-10-04-apple-devices-build-report-improvement-auto-cancel-redundant-pipelines-bug-fixes-and-more
-[3.21.0]: https://docs.appcircle.io/release-notes#3210---2024-09-12-publish-log-monitoring-sso-mapping-and-enterprise-app-store-improvements-xcode-160-bug-fixes-and-more
-[3.20.5]: https://docs.appcircle.io/release-notes#3205---2024-09-02-android-publish-improvements-in-app-updates-and-more
-[3.20.4]: https://docs.appcircle.io/release-notes#3204---2024-08-20-role-management-updates-testing-distribution--enterprise-app-store-improvements-xcode-161-beta-1-bug-fixes-and-more
-[3.20.1]: https://docs.appcircle.io/release-notes#3201---2024-08-05---role-management-updates-enterprise-app-store-and-publish-improvements-xcode-160-beta-5-bug-fixes-and-more
-[3.20.0]: https://docs.appcircle.io/release-notes#3200---2024-07-29---role-management-updates-testing-distribution-and-publish-improvements-xcode-160-beta-4-bug-fixes-and-more
-[3.19.1]: https://docs.appcircle.io/release-notes#3191---2024-07-04---publish-and-signing-identity-module-improvements-xcode-160-beta-3-bug-fixes-and-more
-[3.19.0]: https://docs.appcircle.io/release-notes#3190---2024-06-27---publish-apps-to-microsoft-intune-app-store-connect-integration-publish-and-signing-identity-enhancements-xcode-160-beta-2-bug-fixes-and-more
-[3.18.0]: https://docs.appcircle.io/release-notes#3180---2024-05-31---build-enhancements-appcircle-cli-v220-publish-improvements-and-more
-[3.17.1]: https://docs.appcircle.io/release-notes#3171---2024-05-23---publish-activity-log-enhancement-send-to-microsoft-intune-publish-module-bug-fixes
-[3.17.0]: https://docs.appcircle.io/release-notes#3170---2024-05-17---ldap-mapping-improvements-publish-module-bug-fixes-and-more
-[3.16.0]: https://docs.appcircle.io/release-notes#3160---2024-05-10---new-features-in-publish-module-resigning-binary-xcode-154-and-more
-[3.15.0]: https://docs.appcircle.io/release-notes#3150---2024-04-24---aab-to-apk-improved-testing-distribution-publish-event-enhancement
-[3.14.0]: https://docs.appcircle.io/release-notes#3140---2024-04-04---improved-workflow-editor-publish-module-enhancement-deprecated-store-submit-module
-[3.13.0]: https://docs.appcircle.io/release-notes#3130---2024-03-04---improved-publish-module-xcode-153-build-infrastructure-updates
+[3.27.2]: https://docs.appcircle.io/release-notes#3-27-2
+[3.27.1]: https://docs.appcircle.io/release-notes#3-27-1
+[3.27.0]: https://docs.appcircle.io/release-notes#3-27-0
+[3.26.2]: https://docs.appcircle.io/release-notes#3-26-2
+[3.26.1]: https://docs.appcircle.io/release-notes#3-26-1
+[3.26.0]: https://docs.appcircle.io/release-notes#3-26-0
+[3.25.1]: https://docs.appcircle.io/release-notes#3-25-1
+[3.25.0]: https://docs.appcircle.io/release-notes#3-25-0
+[3.24.0]: https://docs.appcircle.io/release-notes#3-24-0
+[3.23.1]: https://docs.appcircle.io/release-notes#3-23-1
+[3.23.0]: https://docs.appcircle.io/release-notes#3-23-0
+[3.22.1]: https://docs.appcircle.io/release-notes#3-22-1
+[3.22.0]: https://docs.appcircle.io/release-notes#3-22-0
+[3.21.0]: https://docs.appcircle.io/release-notes#3-21-0
+[3.20.5]: https://docs.appcircle.io/release-notes#3-20-5
+[3.20.4]: https://docs.appcircle.io/release-notes#3-20-4
+[3.20.1]: https://docs.appcircle.io/release-notes#3-20-1
+[3.20.0]: https://docs.appcircle.io/release-notes#3-20-0
+[3.19.1]: https://docs.appcircle.io/release-notes#3-19-1
+[3.19.0]: https://docs.appcircle.io/release-notes#3-19-0
+[3.18.0]: https://docs.appcircle.io/release-notes#3-18-0
+[3.17.1]: https://docs.appcircle.io/release-notes#3-17-1
+[3.17.0]: https://docs.appcircle.io/release-notes#3-17-0
+[3.16.0]: https://docs.appcircle.io/release-notes#3-16-0
+[3.15.0]: https://docs.appcircle.io/release-notes#3-15-0
+[3.14.0]: https://docs.appcircle.io/release-notes#3-14-0
+[3.13.0]: https://docs.appcircle.io/release-notes#3-13-0
 
 <details>
     <summary>Click to view version history.</summary>
@@ -95,6 +98,10 @@ Below is the version history of the self-hosted Appcircle server. This table hel
         
         | Version   | Release Date |
         |-----------|--------------|
+        |  3.27.3   | 21/05/2025   |
+        | [3.27.2]  | 12/05/2025   |
+        | [3.27.1]  |     -        |
+        | [3.27.0]  |     -        |
         | [3.26.2]  | 27/03/2025   |
         | [3.26.1]  | 10/03/2025   |
         | [3.26.0]  |     -        |

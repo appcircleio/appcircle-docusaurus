@@ -42,7 +42,7 @@ Below is the version history of the self-hosted Appcircle server and the Helm ch
 
 <!-- Version Anchor Links -->
 
-[3.23.1]: https://docs.appcircle.io/release-notes#3231---2024-11-13-enable-captcha-for-enterprise-portal-sso-improvements-bug-fixes-and-more
+[3.23.1]: https://docs.appcircle.io/release-notes#3-23-1
 
 <details>
     <summary>Click to view version history.</summary>
