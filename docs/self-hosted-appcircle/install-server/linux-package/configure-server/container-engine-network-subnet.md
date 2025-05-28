@@ -38,7 +38,7 @@ To configure the network subnets of the containers of the Appcircle server, foll
     vi ./projects/spacetech/global.yaml
     ```
 
-4. Create or update the `networkSettings` entry in the configuration file.
+4. Create or update the `networkSettings` entry in the `global.yaml` configuration file.
 
     :::caution  
     If the `networkSettings` entry already exists in your `global.yaml` file, ensure you update the existing key instead of creating a new one.
@@ -79,7 +79,7 @@ To configure the network subnets of the containers of the DMZ server, follow the
     vi ./projects/spacetech/global.yaml
     ```
 
-4. Create or update the `networkSettings` entry in the configuration file.
+4. Create or update the `networkSettings` entry in the `global.yaml` configuration file.
 
     :::caution  
     If the `dmzNetworkSettings` entry already exists in your `global.yaml` file, ensure you update the existing key instead of creating a new one.
