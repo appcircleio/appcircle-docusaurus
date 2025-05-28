@@ -42,7 +42,7 @@ Red Hat Quay provides a robust container registry solution that integrates well 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-5592-quay-proxy-cache.png' />
 
-## Appcircle Registry Configuration
+## Registry Configuration
 
 For the Appcircle server to work with your own container image registry, you should add additional settings to the `values.yaml` file of your deployment.
 
@@ -60,7 +60,6 @@ helm list --all-namespaces
 :::caution
 If your registry uses a non-standard port (anything other than 443 for HTTPS or 80 for HTTP), you must specify it in the configuration as shown in the examples below with port `8083`.
 :::
-
 
 - Add or find the `imageRegistry` and `imageRepositoryPath` keys under `global` mapping in your `values.yaml` file.
 
@@ -110,7 +109,7 @@ kubectl create secret docker-registry containerregistry \
   -n appcircle \
   --docker-server='registry.spacetech.com:8083' \
   --docker-username='yourRegistryUsername' \
-  --docker-password='superSecretRegistryPassword'\
+  --docker-password='superSecretRegistryPassword' \
   --dry-run=client -o yaml | kubectl apply -f -
 ```
 
@@ -217,13 +216,16 @@ Setting up a private container registry for Kubernetes clusters requires differe
 
 Different Kubernetes distributions use various container runtimes, each requiring unique configurations:
 
-- **General Kubernetes with Docker runtimes**: Might require configuring Docker daemon, but some managed distributions restrict access to this file..
+- **General Kubernetes with Docker runtimes**: Might require configuring the Docker daemon, but some managed distributions restrict access to this file.
 - **General Kubernetes nodes with `containerd` runtimes**: Might require modifying `/etc/containerd/config.toml`, but some managed distributions restrict access to this file.
 - **Managed Kubernetes (GKE, EKS, AKS, Rancher, K3s, etc.)**: Configuration methods depend on the specific provider or service. For instance, managed Kubernetes services may restrict node-level configurations and instead use IAM-based authentication with cloud artifact registries. For self-managed services like Rancher or K3s, the configuration will vary, so it's important to consult the official documentation for each.
 
-Because of these variations, it's important to consult the specific Kubernetes distribution’s documentation when configuring private registries.
+Because of these variations, it's important to consult the specific Kubernetes distribution’s documentation when configuring **insecure** private registries.
 
-:::warning Recommendation: Use a HTTPS-based Registries
+:::tip
+
+##### Use HTTPS-based registries
+
 Instead of configuring insecure HTTP registries, we strongly recommend using **HTTPS-based** artifact registries.
 
 Using an HTTPS registry eliminates the need for complex `containerd`, `docker` or K8s related configurations and improves security.
@@ -231,7 +233,7 @@ Using an HTTPS registry eliminates the need for complex `containerd`, `docker` o
 
 #### Sample K3s Configuration
 
-For K3s clusters, the registry must be configured on each node using the `registries.yaml` file. The more detailed steps are located on [the official documentation](https://docs.k3s.io/installation/private-registry#without-tls).
+For K3s clusters, the registry must be configured on each node using the `registries.yaml` file. The more detailed steps are located in the [official documentation](https://docs.k3s.io/installation/private-registry#without-tls).
 
 1. Create the `registries.yaml` file on all nodes:
 
@@ -254,14 +256,15 @@ configs:
 ```
 
 3. Restart K3s to apply changes:
+
 ```sh
-sudo systemctl restart k3s  # For control-plane nodes
-sudo systemctl restart k3s-agent  # For worker nodes
+sudo systemctl restart k3s  # for control-plane nodes
+sudo systemctl restart k3s-agent  # for worker nodes
 ```
 
-After configuring the registry on all nodes, Kubernetes will be able to pull images without requiring a separate Kubernetes secret. 
+After configuring the registry on all nodes, Kubernetes will be able to pull images without requiring a separate Kubernetes secret.
 
-For instructions on changing the image repository in your Helm `values.yaml`, refer to the [Appcircle registry configuration](#appcircle-registry-configuration).
+For instructions on changing the image repository in your Helm `values.yaml`, refer to the [registry configuration](#registry-configuration).
 
 ### OpenShift
 
