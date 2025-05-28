@@ -84,25 +84,25 @@ These steps are common across all build profiles regardless of the target OS and
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [iOS Integration](/workflows/ios-specific-workflow-steps)
+## [iOS Specific Workflow Steps](/workflows/ios-specific-workflow-steps)
 
 These steps are specific to the iOS build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [Android Integration](/workflows/android-specific-workflow-steps)
+## [Android Specific Workflow Steps](/workflows/android-specific-workflow-steps)
 
 These steps are specific to the Android build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [React Native Integration](/workflows/react-native-specific-workflow-steps)
+## [React Native Specific Workflow Steps](/workflows/react-native-specific-workflow-steps)
 
 These steps are specific to the React Native build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [Flutter Integration](/workflows/flutter-specific-workflow-steps)
+## [Flutter Specific Workflow Steps](/workflows/flutter-specific-workflow-steps)
 
 These steps are specific to the Flutter build profiles.
 

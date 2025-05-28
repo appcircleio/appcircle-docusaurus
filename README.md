@@ -121,6 +121,20 @@ tag:
 
 Please note that tags are case-sensitive. For example, 'Build' and 'build' are considered different tags.
 
+## Breadcrumb Positioning
+
+When creating collapsible sub-headers in the documentation, ensure that each collapsible section includes an `index.md` file. Missing `index.md` files can result in breadcrumb positioning errors detected by Semrush.
+
+![Example](https://cdn.appcircle.io/docs/assets/BE5197-readme.png)
+
+```yaml
+/docs/
+├── category/
+│   ├── index.md  ✅ (Required for proper breadcrumb structure)
+│   ├── subpage-1.md
+│   ├── subpage-2.md
+```
+
 ## Contribution Guidelines
 
 1. Fork the repository and create a new branch for your document.

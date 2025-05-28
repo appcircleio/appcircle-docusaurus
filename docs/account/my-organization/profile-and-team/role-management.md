@@ -99,6 +99,20 @@ The following table details the roles and restrictions for the [**Environment Va
 
 :::
 
+### CodePush Permissions
+
+The following table details the roles and restrictions for the [**CodePush**](/code-push). Please refer to the related module information and caution notes.
+
+
+| CodePush           | Scopes                              | Owner | Manager | Operator | Viewer |
+|--------------------|-------------------------------------|-------|---------|----------|--------|
+| CodePush Profile   | Add/Delete/Update                   | ✅     | ✅       | ⛔        | ⛔      |
+| Deployment Channel | Add/Delete/Update                   | ✅     | ✅       | ⛔        | ⛔      |
+| Release            | Release Version/Rollback            | ✅     | ✅       | ✅        | ⛔      |
+| Deployment Keys    | List/Copy                           | ✅     | ✅       | ✅        | ⛔      |
+| Release Version    | List                                | ✅     | ✅       | ✅        | ✅      |
+| Release Version    | Promote/Settings Update/Download    | ✅     | ✅       | ✅        | ⛔      |
+
 ### Signing and Identity Permissions
 
 The following table details the roles and restrictions for the [**Signing and Identity**](/signing-identities) module. Please refer to the related module information and caution notes. 
@@ -325,7 +339,7 @@ The user can create an organization or sub-organization within license limits, a
 Also, the user can view self-hosted runners and change configuration.
 
 | Organization Management Sub-modules                  | Scopes                                  | Owner | Manager | Viewer |
-| ---------------------------------------------------- | --------------------------------------- | ----- | ------- | ------ |
+|------------------------------------------------------|-----------------------------------------| ----- | ------- | ------ |
 | Organization and Team Management                     | Create/Delete/Update Organization       | ✅     | ✅       | ⛔      |
 | Organization and Team Management                     | Create/Delete/Update Sub-Organization   | ✅     | ✅       | ⛔      |
 | Organization and Team Management                     | Add/Delete/Update User                  | ✅     | ✅       | ⛔      |
@@ -337,13 +351,17 @@ Also, the user can view self-hosted runners and change configuration.
 | Appcircle Login                                      | List SSO                                | ✅     | ✅       | ✅      |
 | Appcircle Login                                      | Add/Delete/Update LDAP                  | ✅     | ✅       | ⛔      |
 | Appcircle Login                                      | List LDAP                               | ✅     | ✅       | ✅      |
-| PAT                                                  | Generate PAT                            | ✅     | ✅       | ⛔      |
-| PAT                                                  | View PAT                                | ✅     | ✅       | ✅      |
 | Runner Access Token                                  | List Runner Access Token                | ✅     | ⛔       | ⛔      |
 | Runner Access Token                                  | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
 | Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
 | Artifacts                                            | View Retention Period                   | ✅     | ✅       | ✅      |
 | Artifacts                                            | Update Retention Period                 | ✅     | ✅       | ⛔      |
+| Domain Verification                                  | View Domain List                        | ✅     | ✅       | ✅     |
+| Domain Verification                                  | View Domain Verification Details        | ✅     | ✅       | ⛔      |
+| Domain Verification                                  | Add New Domain Verification             | ✅     | ✅       | ⛔      |
+| Domain Verification                                  | Verify a Domain                         | ✅     | ✅       | ⛔      |
+| Domain Verification                                  | Remove Domain Verification              | ✅     | ✅       | ⛔      |
+| Export Users                                         | Export User List                        | ✅     | ✅       | ⛔      |
 
 :::info Organization Management
 
@@ -384,8 +402,8 @@ Connect or disconnect from third-party service providers such as notification to
 
 #### Notification Tools
 
-- [**Slack**](/account/my-organization/notifications/slack/slack-notifications) 
-- [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications)
+- [**Slack Notifications**](/account/my-organization/notifications/slack-notifications) 
+- [**Microsoft Teams Notifications**](/account/my-organization/notifications/teams-notifications)
 - [**Email Notifications**](/account/my-organization/notifications/email-connection) 
  
 #### Store Connections

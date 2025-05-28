@@ -36,7 +36,6 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 
 :::
 
-
 | Variable Name                 | Description                                    | Status           |
 |-------------------------------|------------------------------------------------|------------------|
 | `$AC_APPCENTER_TOKEN`         | App Center API Token. | Required |

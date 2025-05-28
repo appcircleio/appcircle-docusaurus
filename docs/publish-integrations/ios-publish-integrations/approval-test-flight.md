@@ -6,10 +6,13 @@ sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Get Approval from TestFlight
 
 This step allows you to check the status of your application after sending it to [**TestFlight**](https://developer.apple.com/testflight/). It is a **scheduled job** and periodically checks the status of the relevant version on TestFlight. Informs you of the version status in internal, external, or both test groups.
+
+<NoRunnerUsage />
 
 :::info
 After this step, once the application is uploaded to **TestFlight**, it will successfully terminate or fail the step according to the selected status. There are four different options for this:

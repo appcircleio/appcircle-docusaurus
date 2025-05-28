@@ -7,6 +7,8 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
+import EnvGroupSetCaution from '@site/docs/\_env-group-set-on-config-caution.mdx';
 
 To share builds with testers, distribution profiles should be created and testing groups assigned to these profiles.
 
@@ -156,7 +158,7 @@ The Info tab allows you to enter the publisher information for your distributed 
 
 You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-6099-info.png' />
 
 Once you click the save button, the information you have provided will be displayed on the Tester Portal.
 
@@ -171,6 +173,51 @@ It will also display the Login Method for the Testing Distribution Profile.
 In the example image, the profile has static authentication method, so it is displayed as Static Login.
 
 You can find out more about the login methods in the [using authentication for distribution](/testing-distribution/create-or-select-a-distribution-profile#authentication) section.
+
+#### Binary Tags
+
+The Binary Tags feature allows you to label your application binaries with meaningful metadata, which is displayed on the Testing Portal for easy identification by testers. 
+
+These tags help testers understand each binary's origin, purpose, and how it was triggered. The available tags are:
+- Commit ID
+- Commit Hash
+- Commit Message
+- Commit Author
+- Git Source Branch
+- Trigger Reason
+- Git Target Branch
+- Git Tag
+- Trigger User
+- Build Profile ID
+- Workflow Name
+- Configuration Name
+
+:::info Build Module Dependency
+
+This section appears only if the binary is distributed to the Testing Distribution profile from the Build Module. 
+
+Uploaded binaries without metadata from a build module won’t show the selected tags on the Testing Portal.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6066-ss2.png' />
+
+Binary tags can be managed through the Testing Distribution Profile Settings under the Info tab:
+1. Navigate to **Testing Distribution** module.
+2. Select the relevant distribution profile.
+3. Click the **Settings** icon.
+4. Under the **Info** tab, locate the **Binary Tags** section.
+5. Use the “Add a new tag” field to enter or select tags.
+6. Click **Save** to apply changes.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss9.png' />
+
+Once tags are saved in the profile settings:
+- Tags will automatically appear next to the app version on the Testing Portal after being distributed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6099-ss8.png' />
+
+This visibility allows testers to filter and select the appropriate version for testing based on context.
 
 ### Auto Send
 
@@ -289,6 +336,26 @@ You can either select the files from the list or upload binaries by clicking the
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5184-binary.png' alt="Binary Details" />
 
+#### Build Metadata Details
+
+The following metadata is displayed in the Binary Details section of a Testing Distribution Profile only when the binary is generated via the Build Module, either through automatic or manual triggers, and subsequently distributed using Auto Distribution to the Testing Distribution module.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary.png' />
+
+- **Trigger Type**: Indicates what initiated the build. Possible values include:
+
+1. Pull Request: The build was triggered by the creation or update of a pull request.
+2. User: A build was manually triggered by a user.
+3. Commit: A new commit triggered the build automatically.
+4. Tag: The build was initiated when a new Git tag was pushed to the repository.
+
+- **Branch Name**: The source branch used during the build process.
+- **Target Branch**: Typically used in pull request or merge-based triggers, this is the destination branch for the pull request or merge target.
+- **Git Tag**: If the trigger type is Tag, this field shows the tag that initiated the build.
+- **Triggered Internal User**: Displays the email address of the internal user who triggered the build or the user responsible for the action.
+- **Workflow Name**: The name of the workflow profile name executed during the build process (e.g., Default Push Workflow).
+- **Config Name**: Indicates the configuration profile name used within the selected workflow (e.g., Default Configuration).
+
 ### Send your application to Enterprise App Store
 
 You can send your application from your Testing Distribution profile to an Enterprise App Store profile by following these steps:
@@ -363,19 +430,60 @@ After clicking `Delete` , type in the version name in the prompt.
 
 ## FAQ
 
-#### Can I set an authentication method for accessing the Testing Portal?
+### Can I set an authentication method for accessing the Testing Portal?
 
 Yes, you can choose one of the authentication methods provided by Appcircle to authenticate your users and control their access to the store. For more information, please visit the Testing Distribution [**Authentication**](/testing-distribution/create-or-select-a-distribution-profile#authentication) documentations.
 
-#### Can I send a binary from another CI tool?
+### Can I send a binary from another CI tool?
 
 Yes, you can use Appcircle **API & CLI** tools within your current CI tool to directly send the binary and utilize it within the Testing Distribution. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api-and-cli) documentations.
 
 
-#### What does email/month mean? How is the number calculated?
+### What does email/month mean? How is the number calculated?
 
 An email is calculated every time an app is shared via email from our servers. So every send email adds to email count.
 
-#### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
+### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
 
 Thanks to the modular structure of Appcircle, all modules can be used independently. Accordingly, you can also request a special plan only for Testing Distribution. Please [contact us](https://appcircle.io/contact) for detailed information.
+
+### How can I get a binary from another organization to use in the Testing Distribution module?
+
+Let’s assume there are two organizations: Organization A and Organization B.
+In Organization A, we have a build profile that generates an IPA, APK, or AAB.
+In Organization B, we have a testing distribution profile that we want to send the binary to.
+
+In Organization A's build profile workflow, after the build step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Testing Distribution profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
+
+```bash
+#Bash script
+sudo npm install -g @appcircle/cli
+appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+# If an IPA or AAB is required, change *.apk to *.ipa or *.aab
+appcircle testing-distribution upload \
+  --distProfileId "$ORG_B_TEST_DIST_PROFILE_ID" \
+  --message "Release Notes" \
+  --app "$AC_OUTPUT_DIR"/*.apk
+```
+
+The key point here is that we need two essential parameters to make this work.
+- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
+- `ORG_B_TEST_DIST_PROFILE_ID` => Testing Distribution profile ID from Organization B.
+- `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
+
+To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+
+To obtain the Testing Distribution profile ID, follow the steps below: 
+1. Log in to organization B.
+2. Go to Testing Distribution module.
+3. Select the desired Testing Distribution profile
+4. Copy it from the URL. `https://my.appcircle.io/distribute/detail/123456f-7d89-4545-5454-123456789abc`
+5. Then the Testing Distribution profile ID is => `123456f-7d89-4545-5454-123456789abc`
+
+After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
+- `ORG_B_PERSONAL_API_TOKEN`
+- `ORG_B_TEST_DIST_PROFILE_ID`
+
+<PatDanger />
+
+<EnvGroupSetCaution />

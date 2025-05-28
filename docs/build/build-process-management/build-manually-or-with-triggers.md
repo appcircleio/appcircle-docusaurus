@@ -131,6 +131,35 @@ If your commit message includes `[skip ci]` or `[ci skip]`, your workflow will b
 
 If your merge request comment includes `[retry]`, your workflow will be retried.
 
+### Auto Cancel Redundant Pipeline
+
+When enabled, this feature automatically cancels any previously running build that matches the same build configuration, build workflow, build trigger and branch if a new run is triggered.
+This helps prevent unnecessary resource usage and reduces queue time by skipping outdated pipeline runs.
+
+To enable this feature:
+
+1. Go to the `Build Profiles` and select `Configurations`.
+2. Scroll down and activate `Auto Cancel Redundant Pipeline`.
+3. Click `Save` changes.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline.png' />
+
+The Auto-Cancel Redundant Pipeline mechanism works based on four key parameters:
+- Build Configuration
+- Build Workflow
+- Build Trigger
+- Git Branch
+
+If a new build is triggered with the same values for all these parameters, any previously queued or running build is automatically cancelled.
+
+:::warning Manual Builds Bypass Auto Cancel Redundant Pipeline
+
+Builds that are **manually started** do not affect ongoing or queued builds; the auto-cancel mechanism does not apply to manually started builds.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline-canceled-builds-v3.png' />
+
 ## Further Automatic Build Subjects
 
 ### Trigger Priorities
@@ -197,6 +226,12 @@ Once the webhook is created and confirmed to be properly set up and healthy in t
 - A Git action, such as pushing a code block, triggers a webhook event.
 - This webhook event activates the trigger in Appcircle.
 - Appcircle then automatically starts the build process.
+
+### Why does my tag trigger start a build on a different branch?
+
+When you create a tag, it is applied to a specific commit, not a branch. The system does not have explicit branch information linked to the tag. Therefore, when the tag trigger starts a build in Appcircle, it may select any branch that contains the tagged commit, leading to seemingly random behavior.
+
+To control this behavior, push an empty commit to the desired branch and then apply the tag to this new commit. This ensures that the tag trigger starts from the intended branch.
 
 ### How to enable triggers for AWS CodeCommit repositories?
 
