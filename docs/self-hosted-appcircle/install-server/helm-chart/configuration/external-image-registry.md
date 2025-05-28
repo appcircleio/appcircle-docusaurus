@@ -255,16 +255,23 @@ configs:
       password: "superSecretRegistryPassword"
 ```
 
-3. Restart K3s to apply changes:
+3. Restart K3s to apply changes per its type:
+
+- For control-plane nodes;
 
 ```sh
-sudo systemctl restart k3s  # for control-plane nodes
-sudo systemctl restart k3s-agent  # for worker nodes
+sudo systemctl restart k3s
+```
+
+- For worker nodes;
+
+```sh
+sudo systemctl restart k3s-agent
 ```
 
 After configuring the registry on all nodes, Kubernetes will be able to pull images without requiring a separate Kubernetes secret.
 
-For instructions on changing the image repository in your Helm `values.yaml`, refer to the [registry configuration](#appcircle-configuration).
+For instructions on changing the image repository in your Helm `values.yaml`, refer to the [Appcircle configuration](#appcircle-configuration) section. Keep in mind that you can skip creating a secret with credentials step since it's already been done above for each node.
 
 ### OpenShift
 
