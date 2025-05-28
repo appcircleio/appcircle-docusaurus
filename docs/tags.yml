@@ -1058,6 +1058,11 @@ docker:
   description: "Description for docker"
   permalink: /docker
 
+network:
+  label: "network"
+  description: "Description for network"
+  permalink: /network
+
 documentation:
   label: "documentation"
   description: "Description for documentation"
