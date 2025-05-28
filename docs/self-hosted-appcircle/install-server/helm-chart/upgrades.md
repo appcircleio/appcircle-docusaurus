@@ -40,9 +40,12 @@ By following these steps, you can ensure that your Appcircle server is updated t
 
 Below is the version history of the self-hosted Appcircle server and the Helm chart. This table helps you track the latest updates and releases since your current version.
 
-<!-- Version Anchor Links -->
+:::tip
 
-[3.23.1]: https://docs.appcircle.io/release-notes#3-23-1
+To keep the below table brief, we are adding only versions for Helm chart upgrades along with the bundled Appcircle server version.
+
+You can also check Docker/Podman architecture [version history](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/update#version-history) to see all released self-hosted versions.
+:::
 
 <details>
     <summary>Click to view version history.</summary>
@@ -51,6 +54,7 @@ Below is the version history of the self-hosted Appcircle server and the Helm ch
 
         | Appcircle Server Version | Helm Chart Version | Release Date |
         | ------------------------ | ------------------ | ------------ |
+        | 3.27.3                   | 0.3.19             | 28/05/2025   |
         | 3.25.1                   | 0.2.8              | 05/02/2025   |
         | 3.23.2                   | 0.1.1              | 23/12/2024   |
         | 3.23.2                   | 0.1.0              | 20/12/2024   |
