@@ -245,7 +245,7 @@ sudo vi /etc/rancher/k3s/registries.yaml
 
 ```yaml
 mirrors:
-  quay.appcircle.io:8083:
+  registry.spacetech.com:8083:
     endpoint:
       - "http://registry.spacetech.com:8083"
 configs:
