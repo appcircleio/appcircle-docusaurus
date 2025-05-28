@@ -42,7 +42,7 @@ Red Hat Quay provides a robust container registry solution that integrates well 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-5592-quay-proxy-cache.png' />
 
-## Registry Configuration
+## Appcircle Configuration
 
 For the Appcircle server to work with your own container image registry, you should add additional settings to the `values.yaml` file of your deployment.
 
@@ -247,12 +247,12 @@ sudo vi /etc/rancher/k3s/registries.yaml
 mirrors:
   quay.appcircle.io:8083:
     endpoint:
-      - "http://quay.appcircle.io:8083"
+      - "http://registry.spacetech.com:8083"
 configs:
-  "quay.appcircle.io:8083":
+  "registry.spacetech.com:8083":
     auth:
-      username: "appcircle"
-      password: "password"
+      username: "yourRegistryUsername"
+      password: "superSecretRegistryPassword"
 ```
 
 3. Restart K3s to apply changes:
@@ -264,7 +264,7 @@ sudo systemctl restart k3s-agent  # for worker nodes
 
 After configuring the registry on all nodes, Kubernetes will be able to pull images without requiring a separate Kubernetes secret.
 
-For instructions on changing the image repository in your Helm `values.yaml`, refer to the [registry configuration](#registry-configuration).
+For instructions on changing the image repository in your Helm `values.yaml`, refer to the [registry configuration](#appcircle-configuration).
 
 ### OpenShift
 
