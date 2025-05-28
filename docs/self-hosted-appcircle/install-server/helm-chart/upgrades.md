@@ -77,8 +77,9 @@ The output should look like the following:
 
 ```txt
 NAME                    CHART VERSION   APP VERSION     DESCRIPTION
-appcircle/appcircle     0.2.8           3.25.1          A Helm chart for Kubernetes
-appcircle/appcircle     0.1.1           3.23.2          A Helm chart for Kubernetes
+appcircle/appcircle     0.3.19          3.27.3          Official Appcircle Chart | Enterprise-Grade Ful...
+appcircle/appcircle     0.2.8           3.25.1          A Helm chart for Kubernetes                       
+appcircle/appcircle     0.1.1           3.23.2          A Helm chart for Kubernetes                       
 appcircle/appcircle     0.1.0           3.23.2          A Helm chart for Kubernetes
 ```
 
