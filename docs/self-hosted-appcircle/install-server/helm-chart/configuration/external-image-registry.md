@@ -1,6 +1,6 @@
 ---
 title: External Image Registries
-description: Learn how to configure external image registries in Appcircle
+description: Learn how to configure external image registries for Appcircle server when installing using a Helm chart
 tags:
   [
     self-hosted,
@@ -16,9 +16,9 @@ sidebar_position: 100
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Overview
+# Overview
 
-In the Appcircle's orchestrated application ecosystem, users have the flexibility to access container images through various external image registries.
+In Appcircle's orchestrated application ecosystem, users have the flexibility to access container images through various external image registries.
 
 These external repositories serve as integral components, offering users different avenues to retrieve and manage container images based on their preferences and infrastructure requirements.
 
@@ -28,17 +28,17 @@ These services act as intermediaries, facilitating seamless image retrieval, cac
 
 Red Hat Quay provides a robust container registry solution that integrates well with Kubernetes and OpenShift environments. To configure Quay as your proxy registry, follow these steps:
 
-- Enable Proxy Cache feature by following one of these docs: [Project Quay Proxy Cache](https://docs.projectquay.io/config_quay.html#config-fields-proxy-cache), or [Redhat Quay Proxy Cache](https://docs.redhat.com/en/documentation/red_hat_quay/3.13/html/use_red_hat_quay/quay-as-cache-proxy#red-hat-quay-proxy-cache-procedure).
+- Enable the proxy cache feature by following one of these docs: [Project Quay Proxy Cache](https://docs.projectquay.io/config_quay.html#config-fields-proxy-cache), or [Red Hat Quay Proxy Cache](https://docs.redhat.com/en/documentation/red_hat_quay/3.13/html/use_red_hat_quay/quay-as-cache-proxy#red-hat-quay-proxy-cache-procedure).
 
 - Create a new organization in Quay (e.g., named `appcircle`).
 
-- Go to the organization settings and configure Proxy Cache section:
-  - Set _Remote Registry_ as `europe-west1-docker.pkg.dev/appcircle/docker-registry`.
-  - Set _Remote Registry username_ as `_json_key`.
-  - Copy the content of your `cred.json` and paste into _Remote Registry password_ field.
+- Go to the organization settings and configure **Proxy Cache** section:
+  - Set **Remote Registry** as `europe-west1-docker.pkg.dev/appcircle/docker-registry`.
+  - Set **Remote Registry Username** as `_json_key`.
+  - Copy the content of your `cred.json` and paste into **Remote Registry Password** field.
   - Save the configuration.
 
-- Configuration page should look like this:
+In the end, the configuration page should look like this:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-5592-quay-proxy-cache.png' />
 
@@ -63,16 +63,16 @@ If your registry uses a non-standard port (anything other than 443 for HTTPS or 
 
 - Add or find the `imageRegistry` and `imageRepositoryPath` keys under `global` mapping in your `values.yaml` file.
 
-- Additionally, you need to configure `appcircle-vault`, `cert-utils-operator` and `kube_rbac_proxy` images separately due to Helm restrictions that prevent automatic inheritance from the global registry settings.
+- Additionally, you need to configure `vault`, `cert-utils-operator`, and `kube_rbac_proxy` images separately due to Helm restrictions that prevent automatic inheritance from the global registry settings.
 
 Your configuration should be set as follows:
 
 ```yaml
 global:
 ...
-  # Container Image Registry host for container images
+  # Container image registry host for container images
   imageRegistry: registry.spacetech.com:8083
-  # Container Image Repository path between registry host and image name (for Quay it is the organization name)
+  # Container image repository path between registry host and image name (for Quay it is the organization name)
   imageRepositoryPath: appcircle
 
 ...
@@ -86,11 +86,11 @@ vault:
 
 cert-utils-operator:
   image:
-    # Container image repository for the cert-utils-operator
+    # Container image repository path for the cert-utils-operator
     repository: registry.spacetech.com:8083/appcircle/cert-utils-operator
   kube_rbac_proxy:
     image:
-      # Container image repository for the kube-rbac-proxy
+      # Container image repository path for the kube-rbac-proxy
       repository: registry.spacetech.com:8083/appcircle/kube-rbac-proxy
 
 ...
@@ -98,7 +98,7 @@ cert-utils-operator:
 
 Be careful with the indentation and the structure of the `values.yaml` file.
 
-- Create a secret with credentials for the external registry.
+- Create a secret with credentials for the external container image registry.
 
 <Tabs>
 
@@ -130,16 +130,18 @@ oc create secret docker-registry containerregistry \
 
 </Tabs>
 
-Configuration is completed, you can continue to the installation using the external registry.
+Configuration is completed; now you can continue to the installation using the external container image registry.
 
 :::tip
-If Appcircle is already installed, you can test the registry connection using the command below. It will try to pull the all required images from the external registry and result with images already exists message, since the application version is not changed.
+If the Appcircle server is already installed, you can test the container image registry connection using the command below.
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle \
   -n appcircle \
   -f values.yaml
 ```
+
+It will try to pull all the required images from the external registry and result in an images already exist message, since the application version is not changed.
 
 :::
 

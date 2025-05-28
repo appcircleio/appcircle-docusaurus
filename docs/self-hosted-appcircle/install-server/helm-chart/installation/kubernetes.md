@@ -221,6 +221,8 @@ kubectl create secret docker-registry containerregistry \
   --docker-password='superSecretRegistryPassword'
 ```
 
+See [External Image Registries](/self-hosted-appcircle/install-server/helm-chart/configuration/external-image-registry) page for more details.
+
   </TabItem>
 </Tabs>
 
@@ -379,11 +381,11 @@ vault:
 
 cert-utils-operator:
   image:
-    # Container image repository for the cert-utils-operator
+    # Container image repository path for the cert-utils-operator
     repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/cert-utils-operator
   kube_rbac_proxy:
     image:
-      # Container image repository for the kube-rbac-proxy
+      # Container image repository path for the kube-rbac-proxy
       repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/kube-rbac-proxy
 
 # Web event Redis configuration
