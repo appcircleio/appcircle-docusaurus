@@ -45,6 +45,13 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_BADGE_VERSION`              | The version or build number to display at the bottom of the badge. | Optional |
 | `$AC_BADGE_BGCOLOR`             | You can specify a full color name (e.g., `orange`), hex codes (e.g., `#FFA500`), or RGB values (e.g., `rgb(255,165,0)`). | Optional |
 | `$AC_BADGE_TEXTCOLOR`           | You can specify a full color name (e.g., `white`), hex codes (e.g., `#FFFFFF`), or RGB values (e.g., `rgb(255,255,255)`). | Optional |
+| `$AC_BADGE_CORNER_SHIFT`           | This value determines how far the top‑right badge is shifted toward the bottom‑left, expressed as a percentage of the image’s dimensions. The default value is `5`. | Optional |
+
+:::warning Badge Corner Shift
+
+The `$AC_BADGE_CORNER_SHIFT` has a default starting value. If this value is increased too much (e.g., beyond 80% of the image size), the badge may shift too far toward the bottom-left and become partially or completely invisible.
+
+:::
 
 :::info
 

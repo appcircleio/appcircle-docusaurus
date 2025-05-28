@@ -58,25 +58,11 @@ For installing Android apps, you may need to grant the web browser "install apps
 
 :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-main.png" alt="Testing Portal Main Page" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter.png" />
 
 The Testing Portal will also display the size and the certificate type of each app version. For more information on certificate types, please visit the [Signing Identities](/signing-identities) section.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-size.png" alt="Testing Portal Binary Size" />
-
-:::tip
-
-The Testing Portal includes a toggle feature that allows users to switch between two display modes for the app version's upload time.
-
-By default, the Testing Portal displays the time for the selected app version as a relative time (e.g., "2 hours ago").
-
-To view the exact date and time of the upload, simply click on the relative time display. The display will switch to show the exact date and time (e.g., "July 4, 2024 AT 10:30 AM").
-
-:::
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates1.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter5.png" alt="Testing Portal Binary Size" />
 
 :::info
 If your app version has an enterprise-type certificate, the Testing Portal will display a guidance message on how to proceed with the installation on your device.
@@ -115,6 +101,23 @@ The Testing Portal will provide a dropdown menu containing the source branches o
 :::tip
 If the branch filter is not visible, it may be because the binary was uploaded manually to the Testing Distribution module instead of being sent via the Build module.
 :::
+
+### Filter by OS
+
+The Testing Portal includes an OS Filter that enables users to switch between different OS-specific binaries easily. This feature helps users manage and navigate their iOS and Android releases efficiently. These tabs will be available when the Testing Portal is accessed through a desktop or a laptop device.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter.png" />
+
+#### Filter Options
+
+The filter consists of three tabs:
+- **All**: Displays both iOS and Android binaries together.
+- **iOS**: Shows only iOS binaries.
+- **Android**: Displays only Android binaries.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter4.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter3.png" />
 
 ### Sort Binaries by Version & Date
 

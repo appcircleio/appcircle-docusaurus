@@ -7,10 +7,13 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Re-signing
 
 Re-signing is the process of modifying an existing binary with a new signing certificate or keystore, required when an application needs to be published under a different developer account or when updating an existing application. This process involves removing the original signature and replacing it with a new one.
+
+<RunnerUsage />
 
 ## Re-signing iOS Binaries
 
@@ -33,6 +36,12 @@ This form will show the following details of the original binary.
 **Display Name**
 
 CFBundleDisplayName: The user-visible name for the bundle, used by Siri and visible on the iOS Home screen.
+
+:::caution Changing Display Name
+
+Please note that if the project `info.plist` file does **not** have a `CFBundleDisplayName` parameter, changing the display name during resigning will **not** work.
+
+:::
 
 **Version**
 
