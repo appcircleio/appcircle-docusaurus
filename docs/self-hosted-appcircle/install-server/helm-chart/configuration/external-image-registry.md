@@ -15,6 +15,7 @@ sidebar_position: 100
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 # Overview
 
@@ -383,3 +384,5 @@ When the update is done successfully, the state fields look like this:
 ```
 
 :::
+
+<NeedHelp />
