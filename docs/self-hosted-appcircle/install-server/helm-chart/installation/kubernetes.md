@@ -301,7 +301,7 @@ global:
       # SMTP server host
       host: smtp.spacetech.com
       # SMTP Server port, 587 typically used for StartTLS
-      port: 587
+      port: "587"
       # Email address that will be used as sender
       from: appcircle@spacetech.com
       # SSL configuration - Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
