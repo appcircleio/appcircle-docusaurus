@@ -100,7 +100,7 @@ Be careful with the indentation and the structure of the `values.yaml` file.
 
 - Create a secret with credentials for the external container image registry.
 
-<Tabs>
+<Tabs groupId="kubernetes-selection">
 
   <TabItem value="kubernetes" label="Kubernetes" default>
 
@@ -151,50 +151,107 @@ If a proxy registry with pull-through cache ability is not available in your set
 
 ### Retrieving the Image List
 
-List of the all container images given below, image versions may vary depending on the Helm chart version.
+A list of all container images is given below; image versions may vary depending on the Helm chart version.
 
 <details>
     <summary>Click to view the image list.</summary>
+
+:::tip
+
+The below container image list is based on the **`latest`** Helm chart version. See others in the [version history](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/upgrades#version-history) page.
+
+:::
+
+    <Tabs groupId="kubernetes-selection">
+
+  <TabItem value="kubernetes" label="Kubernetes" default>
+
+```txt
+europe-west1-docker.pkg.dev/appcircle/docker-registry/agentcacheservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-keycloak:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/appparserserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/buildserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/dashboardserver:1.8.92-beta1196
+europe-west1-docker.pkg.dev/appcircle/docker-registry/distributionserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/disttesterweb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/kafkab:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/keycloakversioning:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/licenseserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/minio/miniob:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/mongodb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/notificationserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/otpservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/postgresqlb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/privateapigateway:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/publishserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/redisb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/reportserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/resignservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/resourceserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/schedulemanagerservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/signingidentityserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeadminservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeapiservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeprofileservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storereportservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storesubmitserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeweb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/taskserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/testeradminservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/testerapiservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/toolbox:1.5.1
+europe-west1-docker.pkg.dev/appcircle/docker-registry/uiserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/webhookservice:v3.27.3
 ```
-europe-west1-docker.pkg.dev/appcircle/docker-registry/agentcacheservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-keycloak:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/appparserserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/buildserver:latest
+
+  </TabItem>
+
+  <TabItem value="openshift" label="Openshift">
+
+```txt
+europe-west1-docker.pkg.dev/appcircle/docker-registry/agentcacheservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-keycloak:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/appparserserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/buildserver:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/cert-utils-operator:v1.3.12
-europe-west1-docker.pkg.dev/appcircle/docker-registry/dashboardserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/distributionserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/disttesterweb:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/kafkab:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/keycloakversioning:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/dashboardserver:1.8.92-beta1196
+europe-west1-docker.pkg.dev/appcircle/docker-registry/distributionserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/disttesterweb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/kafkab:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/keycloakversioning:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/kube-rbac-proxy:v0.11.0
-europe-west1-docker.pkg.dev/appcircle/docker-registry/licenseserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/minio/miniob:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/mongodb:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/notificationserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/otpservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/postgresqlb:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/privateapigateway:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/publishserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/redisb:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/reportserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/resignservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/resourceserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/schedulemanagerservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/signingidentityserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/storeadminservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/storeapiservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/storeprofileservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/storereportservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/storesubmitserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/storeweb:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/taskserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/testeradminservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/testerapiservice:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/toolbox:1.5.0
-europe-west1-docker.pkg.dev/appcircle/docker-registry/uiserver:latest
-europe-west1-docker.pkg.dev/appcircle/docker-registry/webhookservice:latest
+europe-west1-docker.pkg.dev/appcircle/docker-registry/licenseserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/minio/miniob:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/mongodb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/notificationserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/otpservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/postgresqlb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/privateapigateway:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/publishserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/redisb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/reportserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/resignservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/resourceserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/schedulemanagerservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/signingidentityserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeadminservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeapiservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeprofileservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storereportservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storesubmitserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/storeweb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/taskserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/testeradminservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/testerapiservice:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/toolbox:1.5.1
+europe-west1-docker.pkg.dev/appcircle/docker-registry/uiserver:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/webhookservice:v3.27.3
 ```
+
+  </TabItem>
+  </Tabs>
 </details>
 
 :::tip
