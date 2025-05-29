@@ -58,7 +58,7 @@ If you are using the Appcircle DMZ structure and upgrading an Appcircle server, 
 For more information about the DMZ structure, you can check the [Appcircle DMZ documentation](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz).
 :::
 
-#### Version History
+### Version History
 
 Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version.
 

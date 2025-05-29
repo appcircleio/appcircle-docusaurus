@@ -113,6 +113,13 @@ This feature allows for better management of build processes, enabling teams to 
 This feature is only available for organizations with Enterprise license.
 :::
 
+#### ACRP - Auto Cancel Redundant Pipeline
+
+When enabled, this feature automatically cancels any previously running build that matches the same configuration, workflow, branch, and trigger type, if a new run is triggered.
+This helps prevent unnecessary resource usage and reduces queue time by skipping outdated pipeline runs.
+
+For further details, see [Auto Cancel Redundant Pipeline](/build/build-process-management/build-manually-or-with-triggers).
+
 ### Signing configuration
 
 Both iOS and Android applications need to be digitally signed by their developers in order to be able to be installed on real devices or submitted to app stores.
