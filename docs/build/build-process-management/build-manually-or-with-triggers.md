@@ -131,6 +131,35 @@ If your commit message includes `[skip ci]` or `[ci skip]`, your workflow will b
 
 If your merge request comment includes `[retry]`, your workflow will be retried.
 
+### Auto Cancel Redundant Pipeline
+
+When enabled, this feature automatically cancels any previously running build that matches the same build configuration, build workflow, build trigger and branch if a new run is triggered.
+This helps prevent unnecessary resource usage and reduces queue time by skipping outdated pipeline runs.
+
+To enable this feature:
+
+1. Go to the `Build Profiles` and select `Configurations`.
+2. Scroll down and activate `Auto Cancel Redundant Pipeline`.
+3. Click `Save` changes.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline.png' />
+
+The Auto-Cancel Redundant Pipeline mechanism works based on four key parameters:
+- Build Configuration
+- Build Workflow
+- Build Trigger
+- Git Branch
+
+If a new build is triggered with the same values for all these parameters, any previously queued or running build is automatically cancelled.
+
+:::warning Manual Builds Bypass Auto Cancel Redundant Pipeline
+
+Builds that are **manually started** do not affect ongoing or queued builds; the auto-cancel mechanism does not apply to manually started builds.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline-canceled-builds-v3.png' />
+
 ## Further Automatic Build Subjects
 
 ### Trigger Priorities

@@ -2918,6 +2918,11 @@ xml:
   description: "OpenShift related documentations"
   permalink: "/openshift"
 
+quay:
+  label: "quay"
+  description: "Quay registry related documentations"
+  permalink: /quay
+
 "microsoft azure":
   label: "microsoft azure"
   description: "Microsoft Azure related documentations"
