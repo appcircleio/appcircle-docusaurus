@@ -78,16 +78,23 @@ For Appcircle Cloud, the **ServerURL** is `https://api.appcircle.io/codepush`.
 
 </Tabs>
 
-#### SDK Installation and Configuration for React Native 0.76 version and above
+### SDK Installation and Configuration
 
-:::tip For React Native 0.75 version and below
+The SDK installation and configuration steps for iOS and Android are detailed below.
 
-If you are using React Native version 0.75 or earlier, you need to use the Microsoft CodePush SDK to enable Appcircle CodePush functionality. To integrate it into your application, please follow the official documentation:
+#### Compatible React Native Versions
 
-https://github.com/microsoft/react-native-code-push
+**Appcircle CodePush SDK** supports React Native **0.76+** and **the new architecture**.
 
-Make sure to add the Appcircle Server URL and Deployment Key correctly in your strings.xml file.
+If you are using React Native version 0.75 or earlier, you need to use the Microsoft CodePush SDK to enable Appcircle CodePush functionality. 
 
+| React Native Version(s)                    | SDK                                 |
+|--------------------------------------------|-------------------------------------|
+| Below 0.76 | Use [**Microsoft SDK**](https://github.com/microsoft/react-native-code-push)| 
+| 0.76 and above | Use [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push) |
+
+:::caution If Using Microsoft SDK
+If you are using Microsoft SDK, make sure to add the **Appcircle Server URL** and **Deployment Key** correctly in your strings.xml file.
 :::
 
 #### For iOS
@@ -149,6 +156,10 @@ apply from: "../../node_modules/@appcircle/react-native-code-push/android/codepu
 
 3. Update the MainApplication file to use CodePush via the following changes:
 
+:::caution If New Architecture Is Enabled
+This `MainApplication.kt` may not work properly if you are using the new architecture.
+:::
+
 Update the `MainApplication.kt`.
 
 ```java
@@ -172,7 +183,7 @@ override val reactNativeHost: ReactNativeHost =
 }
 ```
 
-### SDK Integration and Basic Usage
+### SDK Basic Example Usage
 
 After installing the SDK, you need to import and configure it within your React Native project. Below is a basic example of how to use the Appcircle CodePush SDK:
 
