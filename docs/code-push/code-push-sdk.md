@@ -78,7 +78,19 @@ For Appcircle Cloud, the **ServerURL** is `https://api.appcircle.io/codepush`.
 
 </Tabs>
 
-#### SDK Installation and Configuration for React Native 0.60 version and above (iOS)
+#### SDK Installation and Configuration for React Native 0.76 version and above
+
+:::tip For React Native 0.75 version and below
+
+If you are using React Native version 0.75 or earlier, you need to use the Microsoft CodePush SDK to enable Appcircle CodePush functionality. To integrate it into your application, please follow the official documentation:
+
+https://github.com/microsoft/react-native-code-push
+
+Make sure to add the Appcircle Server URL and Deployment Key correctly in your strings.xml file.
+
+:::
+
+#### For iOS
 
 Follow the installation steps below to use the CodePush SDK in your iOS applications.
 
@@ -120,7 +132,7 @@ Your sourceURLForBridge method should look like this:
 }
 ```
 
-#### SDK Installation and Configuration for React Native 0.74 version and above (Android)
+#### For Android
 
 1. In your `android/settings.gradle` file, make the following additions at the end of the file:
 
@@ -159,14 +171,6 @@ override val reactNativeHost: ReactNativeHost =
     };
 }
 ```
-
-#### SDK Installation and Configuration for React Native 0.75 version and below (Android)
-
-If you are using React Native version 0.75 or earlier, you need to use the Microsoft CodePush SDK to enable Appcircle CodePush functionality.
-To integrate it into your application, please follow the official documentation:
-https://github.com/microsoft/react-native-code-push
-
-Make sure to add the **Appcircle Server URL** and **Deployment Key** correctly in your **strings.xml** file.
 
 ### SDK Integration and Basic Usage
 
