@@ -159,7 +159,9 @@ apply from: "../../node_modules/@appcircle/react-native-code-push/android/codepu
 3. Update the MainApplication file to use CodePush via the following changes:
 
 :::caution If New Architecture Is Enabled
+
 This `MainApplication.kt` may not work properly if you are using the new architecture.
+
 :::
 
 Update the `MainApplication.kt`.
