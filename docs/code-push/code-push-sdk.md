@@ -94,7 +94,9 @@ If you are using React Native version **0.75 or earlier**, you need to use the *
 | 0.76 and above | Use [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push) |
 
 :::caution If Using Microsoft SDK
+
 If you are using Microsoft SDK, make sure to add the **Appcircle Server URL** and **Deployment Key** correctly in your `info.plist` and `strings.xml` file. For detailed information, please navigate to the [**React Native Project Configuration**](/code-push/code-push-sdk#react-native-project-integration) section.
+
 :::
 
 #### For iOS
