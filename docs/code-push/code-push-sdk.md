@@ -80,13 +80,13 @@ For Appcircle Cloud, the **ServerURL** is `https://api.appcircle.io/codepush`.
 
 ### SDK Installation and Configuration
 
-The SDK installation and configuration steps for iOS and Android are detailed below.
+The SDK installation and configuration steps for `iOS` and `Android` are detailed below.
 
 #### Compatible React Native Versions
 
 **Appcircle CodePush SDK** supports React Native **0.76+** and **the new architecture**.
 
-If you are using React Native version 0.75 or earlier, you need to use the Microsoft CodePush SDK to enable Appcircle CodePush functionality. 
+If you are using React Native version **0.75 or earlier**, you need to use the **Microsoft CodePush SDK** to enable Appcircle CodePush functionality. 
 
 | React Native Version(s)                    | SDK                                 |
 |--------------------------------------------|-------------------------------------|
@@ -94,7 +94,7 @@ If you are using React Native version 0.75 or earlier, you need to use the Micro
 | 0.76 and above | Use [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push) |
 
 :::caution If Using Microsoft SDK
-If you are using Microsoft SDK, make sure to add the **Appcircle Server URL** and **Deployment Key** correctly in your strings.xml file.
+If you are using Microsoft SDK, make sure to add the **Appcircle Server URL** and **Deployment Key** correctly in your `info.plist` and `strings.xml` file. For detailed information, please navigate to the [**React Native Project Configuration**](/code-push/code-push-sdk#react-native-project-integration) section.
 :::
 
 #### For iOS
