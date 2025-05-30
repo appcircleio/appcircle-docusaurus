@@ -32,11 +32,11 @@ The Publish module in Appcircle is a versatile tool that simplifies the app rele
 
 Before you can start using the Publish module, there are several key prerequisites to address:
 
-### App Store Integration
+### Creating an App Store Connect API Key
 
-The most important requirement before getting started is an Apple Developer account and an API key generated for that account. For detailed instructions on generating an App Store Connect API key, please refer to Apple's documentation as follows:
+The most important requirement before getting started is an Apple Developer account and an API key generated for that account. For detailed instructions on generating an App Store Connect API key, please refer to this section in our documentation as follows:
 
-https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api
+https://docs.appcircle.io/account/my-organization/security/credentials/adding-an-app-store-connect-api-key
 
 :::caution App Store Connect Integration Permissions
 
@@ -74,7 +74,7 @@ Before starting the release process, it's essential to prepare all necessary app
 
 :::info Binary
 
-The binary file can be uploaded to the Publish module either manually or through the Build module. For more detailed instructions, please refer to the [**Upload Binary**](/publish-module/publish-walkthrough-for-app-store#uploading-a-binary) section.
+The binary file can be uploaded to the Publish module either manually, through the Build module, or through the Testing Distribution module. For more detailed instructions, please refer to the [**Upload Binary**](/publish-module/publish-walkthrough-for-app-store#uploading-a-binary) section.
 
 :::
 
@@ -114,7 +114,7 @@ To use this profile creation method, you must have an API key integration in pla
 
 :::
 
-### Select an App Store API Key
+### Selecting an App Store API Key
 
 Once the required integrations are set up, you can access these platforms from your profile within the Publish module. To initiate a release process, you need to select the credentials for the related store from the Settings screen under the Publish Profile.
 
@@ -124,7 +124,7 @@ Once the required integrations are set up, you can access these platforms from y
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishSettingDetail.png' />
 
-### Update App Store Connect Information
+### Updating App Store Connect Information
 
 - Within the Publish module, you can update and review your app's information directly. This includes updating app name, subtitle, categories, and other store-related information such as privacy URLs, primary languages, etc. Please visit the [**App Store Connect Information**](/publish-module/publish-information/app-information) documentation for detailed information.
 
@@ -132,7 +132,13 @@ Once the required integrations are set up, you can access these platforms from y
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-appInfoDetails.png' />
 
+### Updating TestFlight Beta Information
 
+- Within the Publish module, you can update and review your TestFlight Beta information directly. This includes editing the description, feedback email, beta app review details, and other store-related information such as privacy URLs, etc.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-testFlightBetaButton.png' />  
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-testFlightBetaDetails.png' />  
 
 ### Publish Flow Customization
 
@@ -159,7 +165,7 @@ Publish flows are used to automate multiple tasks and introduce automation check
 
 ### Publish Flow Samples
 
-The Publish module is designed to cater to a wide range of needs, making it suitable for both enterprise-level companies and individual developers. Here are a few examples of custom flows you might create:
+The Publish module is designed to cater to a wide range of needs, making it suitable for both enterprise-level companies and individual developers. Here is an example of a custom flow you might create:
 
 #### Beta Testing and Release Flow
 
@@ -169,6 +175,7 @@ With the Appcircle Publish module, you can manage your entire release process fr
 - [**Get Approval via Email**](/publish-integrations/common-publish-integrations/get-approval-via-email): After the version comparison is completed, an approval email is sent to the Release Manager to decide whether or not to proceed with the release process. This email informs the Release Manager about the release that is set to go to Beta Test. If the Release Manager sees no issues, they can click the Approve link within the email to move the process forward.
 - [**Send to TestFlight**](/publish-integrations/ios-publish-integrations/sent-to-testflight): With this step, the binary is uploaded to TestFlight.
 - [**Get Approval from TestFlight**](/publish-integrations/ios-publish-integrations/approval-test-flight): This step is presented with a UI that includes test information for the app you sent to TestFlight for beta testing. Here, you can either send the binary to a selected test group immediately or obtain approval from testers to confirm that the binary is issue-free. If the step succeeds under the selected conditions, it will proceed accordingly.
+- [**Metadata Approval**](/publish-integrations/common-publish-integrations/metadata-approval): This step sends an approval email to the Release Manager before updating the metadata on App Store Connect. The Release Manager can click the approval link in the email to proceed. If there are no issues, they can approve the metadata. If there is a problem, they can reject it with an appropriate rejection message.
 - [**Update Metadata on App Store Connect**](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect): This step will assist you in updating metadata. It comes with a custom UI that displays previews of the metadata to be uploaded, allowing you to update metadata in the app stores for this new release. With support for localization and screenshots, you can manage metadata updates without the need for direct access the app store listing management interfaces.
 - [**Get Approval via Email**](/publish-integrations/common-publish-integrations/get-approval-via-email): After receiving approval from TestFlight and uploading the metadata, you can send an approval email to the Release Manager to review the Beta Test and the updated metadata. If everything is in order, the Release Manager can approve the process, allowing the flow to continue and submit the version for release.
 - [**Submit for Review on App Store**](/publish-integrations/ios-publish-integrations/add-for-review-on-app-store): After receiving the final approval from the Release Manager, the binary file and the updated metadata are sent to the final step of the release process: app review. This step directly submits the version for review in the store.
@@ -180,7 +187,7 @@ With the Appcircle Publish module, you can manage your entire release process fr
 
 - Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-notificationInteg.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-notificationInteg.png' />  
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-notiIntegDetail.png' />
 
@@ -200,17 +207,27 @@ You can upload your binary file directly to the Publish module using the manual 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-manuelUpload1.png' />
 
-#### Upload via Build Module
+#### Uploading via Build Module
 
 You can deploy your binary file to the Publish module from the Build module automatically. This method automates the binary deployment process, ensuring that your binary is transferred directly from the Build pipeline to the Publish module, ready for release. It simplifies the flows and reduces the risk of manual errors.
 
-:::info Upload via Build Module
+:::info Uploading via Build Module
 
 To upload a binary from the Build module, please refer to the [**Distribution Configuration**](/build/build-process-management/configurations#distribution-configuration) and [**Post-Build Operations**](/build/build-process-management#binary-actions) documents for step-by-step instructions.
 
 :::
 
-#### Upload using CLI & API
+#### Uploading via Testing Distribution Module
+
+You can manually deploy your binary file to the Publish module from the Testing Distribution module.
+
+:::info Uploading via Testing Distribution Module
+
+To upload a binary from the Testing Distribution module, please refer to the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#send-your-application-to-publish) document for step-by-step instructions.
+
+:::
+
+#### Uploading using CLI & API
 
 If you have your own CI environment, you can use the Appcircle API & CLI to upload binaries to the related publish Profile.
 
@@ -218,8 +235,15 @@ If you have your own CI environment, you can use the Appcircle API & CLI to uplo
 
 To get more information, please refer to our [**API & CLI**](/appcircle-api-and-cli) documentation.
 
+### Setting Binary as Release Candidate
 
-### Update Metadata
+- Designate the current build as the Release Candidate, signaling that it is ready for final testing and potential release. You can refer to the [**Marking as Release Candidate**](/publish-module/publish-information/marking-release-candidates) document for detailed information.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-markRc.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rcTag.png' />
+
+### Updating Metadata
 
 - Within the Publish module, you can manage your app's metadata directly. This includes updating app descriptions, keywords, and other store-related information. Please visit the [**Metadata Details**](/publish-module/publish-information/meta-data-information) documentation for more information.
 
@@ -229,16 +253,10 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadataDetails.png' />
 
+- After updating your app's metadata, use the [**Metadata Approval**](/publish-integrations/common-publish-integrations/metadata-approval)
+step to get approval before submitting the metadata to App Store Connect.
 
-### Set Binary as Release Candidate
-
-- Designate the current build as the Release Candidate, signaling that it is ready for final testing and potential release. You can refer to the [**Marking as Release Candidate**](/publish-module/publish-information/marking-release-candidates) document for detailed information.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-markRc.png' />
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rcTag.png' />
-
-### Execute the Flow
+### Executing the Flow
 
 - Once the flow is selected, you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the selectd app stores.
 
@@ -246,7 +264,7 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishLog.png' />
 
-### Manage Release Status
+### Managing Release Status
 
 After initiating a release, the Publish module provides tools to monitor and manage the process:
 
@@ -290,7 +308,7 @@ When using the Publish module, it's essential to know how to troubleshoot potent
 
 While the Publish module is designed for reliability, you may occasionally encounter issues due to various reasons. Here are some common problems and their solutions:
 
-- **Failed Submissions**: Submissions can fail for various reasons. One common issue is a conflicting version number—if the version you're trying to submit already exists on the store, you'll need to increment the version number. Another issue could be an invalid binary, which might occur if the app doesn’t meet store requirements, have a technical issıes or if there are missing assets. Always check the error logs for specific details, correct any issues, and attempt the submission again.
+- **Failed Submissions**: Submissions can fail for various reasons. One common issue is a conflicting version number—if the version you're trying to submit already exists on the store, you'll need to increment the version number. Another issue could be an invalid binary, which might occur if the app doesn’t meet store requirements, have technical issues or if there are missing assets. Always check the error logs for specific details, correct any issues, and attempt the submission again.
 
 - **Integration Errors**: Integration errors often stem from misconfigured store connections. If the API connection fails, it could be due to incorrect credentials or an expired API token. Additionally, ensure that the account you are using has the necessary permissions to perform actions like submitting apps or updating metadata. Double-check all API keys, tokens, and permissions to resolve these issues.
 
@@ -304,6 +322,12 @@ To update your app's metadata, navigate to the Publish module, select the releva
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadata.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadataDetails.png' />
+
+#### How do I send my app's metadata for review before publishing?
+If you would like to get email-based approval before publishing your app's metadata, you can add the [**Metadata
+Approval**](publish-integrations/common-publish-integrations/metadata-approval) step in your workflow. When this step runs in your workflow, Appcircle sends a unique approval email to the recipients defined in the step inputs where thet can view
+the metadata details, approve or reject metadata, and provide
+feedback in case of rejection.
 
 #### Is it possible to automate notifications for team members during the release process?
 
