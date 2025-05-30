@@ -325,7 +325,7 @@ To update your app's metadata, navigate to the Publish module, select the releva
 
 #### How do I send my app's metadata for review before publishing?
 If you would like to get email-based approval before publishing your app's metadata, you can add the [**Metadata
-Approval**](publish-integrations/common-publish-integrations/metadata-approval) step in your workflow. When this step runs in your workflow, Appcircle sends a unique approval email to the recipients defined in the step inputs where thet can view
+Approval**](/publish-integrations/common-publish-integrations/metadata-approval) step in your workflow. When this step runs in your workflow, Appcircle sends a unique approval email to the recipients defined in the step inputs where thet can view
 the metadata details, approve or reject metadata, and provide
 feedback in case of rejection.
 
