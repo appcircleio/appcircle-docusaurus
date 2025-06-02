@@ -296,25 +296,31 @@ If container logs are not visible in the Grafana UI, this may be caused by eithe
 </Tabs>
 
 
-3. If the logging service is running but container logs are still not visible in Grafana UI, this may indicate insufficient permissions. To resolve this:
+3. If the logging service is running but container logs are still not visible in Grafana UI, this may indicate insufficient permissions especially for the non-root user. To resolve this:
 
-   1. Add the user to the necessary system groups:
-   ```bash
-   sudo usermod -aG adm $USER
-   sudo usermod -aG systemd-journal $USER
-   ```
+    1. Check the groups of the user.
 
-   2. Stop the Appcircle server:
-   ```bash
-   ./ac-self-hosted.sh -n $projectName down
-   ```
+    ```bash
+    groups $USER
+    ```
 
-   3. Terminate the current user session:
-   ```bash
-   loginctl terminate-user $USER
-   ```
+    2. Add the user to the necessary system groups if the user is not in the `adm` or `systemd-journal` groups.
+    ```bash
+    sudo usermod -aG adm $USER
+    sudo usermod -aG systemd-journal $USER
+    ```
 
-   4. Start the Appcircle server:
-   ```bash
-   ./ac-self-hosted.sh -n $projectName up
-   ```
+    3. Stop the Appcircle server:
+    ```bash
+    ./ac-self-hosted.sh -n $projectName down
+    ```
+
+    4. Terminate the current user session:
+    ```bash
+    loginctl terminate-user $USER
+    ```
+
+    5. Start the Appcircle server:
+    ```bash
+    ./ac-self-hosted.sh -n $projectName up
+    ```
