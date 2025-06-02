@@ -98,6 +98,10 @@ To configure the network subnets of the containers of the DMZ server, follow the
     The `subnet` will be used to configure the network subnets of the Appcircle DMZ server containers.
     :::
 
+    :::info Additional Information
+    Although the Appcircle Server and Appcircle DMZ Server have the same subnet configuration as the sample above, they are not required to have the same subnet values or to be configured to custom subnet both.
+    :::
+
 5. After saving the configuration changes, restart the Appcircle server and Appcircle DMZ server with the new settings.
 
     :::info
