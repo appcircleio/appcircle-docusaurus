@@ -108,5 +108,34 @@ To configure the network subnets of the containers of the DMZ server, follow the
     For more information about updating the Appcircle server and Appcircle DMZ server, please refer to the [Upgrading Appcircle DMZ and Appcircle Server](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz.md#upgrading-appcircle-dmz-and-appcircle-server) document.
     :::
 
+## Disabling Custom Subnet Configuration
+
+To allow Docker or Podman to automatically manage subnet configurations for your Appcircle server and/or Appcircle DMZ server containers, you can disable the custom subnet settings.
+
+To disable custom subnet configuration:
+
+1. Follow the steps in either:
+   - [Configuring the Subnets for Appcircle Server](#configuring-the-subnets-for-appcircle-server)
+   - [Configuring the Subnets for Appcircle DMZ Server](#configuring-the-subnets-for-appcircle-dmz-server)
+
+2. Set the `enabled` parameter to `false` or delete the `networkSettings` or `dmzNetworkSettings` entry in the appropriate configuration section:
+
+    - For Appcircle Server:
+
+      ```yaml
+      networkSettings:
+        enabled: false
+      ```
+
+    - For Appcircle DMZ Server:
+
+      ```yaml
+      dmzNetworkSettings:
+        enabled: false
+      ```
+
+3. After saving the configuration changes, restart the Appcircle server and/or Appcircle DMZ server to apply the new settings by following the steps in the [Configuring the Subnets for Appcircle Server](#configuring-the-subnets-for-appcircle-server) or [Configuring the Subnets for Appcircle DMZ Server](#configuring-the-subnets-for-appcircle-dmz-server) section.
+
+
 
 <NeedHelp />
