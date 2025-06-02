@@ -216,7 +216,7 @@ storage.googleapis.com/storage/v1/b/appcircle-dev-common
 
 ## Appcircle Server Runtime
 
-### Store Sumbit (Publish)
+### Publish
 
 Although Appcircle runners are responsible for the submission of the apps to the mobile application stores, the server also has some features that need access to the application store APIs, like runners.
 
@@ -239,7 +239,7 @@ So, you should enable the below API access on the server for each store you want
 
 ## Appcircle Runner Runtime
 
-This section addresses the utilization of external resources during the build, publish, store submit, and other processes on the Appcircle runner.
+This section addresses the utilization of external resources during the build, publish, and other processes on the Appcircle runner.
 
 ### Appcircle Server
 
@@ -308,7 +308,7 @@ If you’re using CocoaPods and if your `Podfile` is using another spec reposito
 - api.appcenter.ms
 - file.appcenter.ms
 
-### Store Submit (Publish)
+### Publish
 
 **Disclaimer:** The URLs provided below were last verified on 09/01/2024, and are subject to change by the respective services. Please consult official documentation of the stores for the most up-to-date information.
 
