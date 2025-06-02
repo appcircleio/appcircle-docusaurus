@@ -3,7 +3,7 @@ title: Configure Container Engine Network Subnet
 sidebar_label: Configure Container Engine Network Subnet
 description: Configure the Appcircle server to use a specific network subnets for the containers.
 tags: [docker, podman, self-hosted, network, subnet]
-sidebar_position: 50
+sidebar_position: 40
 ---
 
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_spacetech-example-info.mdx';  
@@ -14,7 +14,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
-This document explains how to configure your Appcircle server's network subnets of the containers if the existing subnets are conflicting with other networks or not suitable for the you use case.
+This document explains how to configure your Appcircle server's and Appcircle DMZ server's network subnets of the containers if the existing subnets are conflicting with other networks or not suitable for the you use case.
 
 :::info
 This feature is included in the Appcircle Server package version **`3.28.0` or later**.
