@@ -9,6 +9,7 @@ sidebar_position: 50
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_spacetech-example-info.mdx';  
 import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_restart-appcircle-server.mdx';  
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_appcircle-server-downtime-caution.mdx';  
+import DowntimeCautionDMZ from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_appcircle-server-downtime-caution-dmz.mdx';  
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
@@ -53,7 +54,7 @@ To configure the network subnets of the containers of the Appcircle server, foll
       subnet: 10.0.0.0/16
     ```
     :::tip
-    The `subnet` will be used to configure the network subnets of the containers.
+    The `subnet` will be used to configure the network subnets of the Appcircle server containers.
     :::
 
 5. After saving the configuration changes, restart your Appcircle server to apply the new settings.
@@ -64,7 +65,7 @@ To configure the network subnets of the containers of the Appcircle server, foll
 
 To configure the network subnets of the containers of the DMZ server, follow these steps:
 
-<DowntimeCaution />
+<DowntimeCautionDMZ />
 
 1. Log in to your Appcircle server via SSH or a remote connection.
 
@@ -82,7 +83,7 @@ To configure the network subnets of the containers of the DMZ server, follow the
     vi ./projects/spacetech/global.yaml
     ```
 
-4. Create or update the `networkSettings` entry in the `global.yaml` configuration file.
+4. Create or update the `dmzNetworkSettings` entry in the `global.yaml` configuration file.
 
     :::caution  
     If the `dmzNetworkSettings` entry already exists in your `global.yaml` file, ensure you update the existing key instead of creating a new one.
@@ -94,7 +95,7 @@ To configure the network subnets of the containers of the DMZ server, follow the
       subnet: 10.0.0.0/16
     ```
     :::tip
-    The `subnet` will be used to configure the network subnets of the containers.
+    The `subnet` will be used to configure the network subnets of the Appcircle DMZ server containers.
     :::
 
 5. After saving the configuration changes, restart your Appcircle server to apply the new settings.
