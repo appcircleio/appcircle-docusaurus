@@ -98,8 +98,11 @@ To configure the network subnets of the containers of the DMZ server, follow the
     The `subnet` will be used to configure the network subnets of the Appcircle DMZ server containers.
     :::
 
-5. After saving the configuration changes, restart your Appcircle server to apply the new settings.
+5. After saving the configuration changes, restart the Appcircle server and Appcircle DMZ server with the new settings.
 
-   <RestartAppcircleServer />
+    :::info
+    For more information about updating the Appcircle server and Appcircle DMZ server, please refer to the [Upgrading Appcircle DMZ and Appcircle Server](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz.md#upgrading-appcircle-dmz-and-appcircle-server) document.
+    :::
+
 
 <NeedHelp />
