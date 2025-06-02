@@ -13,8 +13,11 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
-
 This document explains how to configure your Appcircle server's network subnets of the containers if the existing subnets are conflicting with other networks or not suitable for the you use case.
+
+:::info
+This feature is included in the Appcircle Server package version **`3.28.0` or later**.
+:::
 
 ## Configuring the Subnets for Appcircle Server
 
