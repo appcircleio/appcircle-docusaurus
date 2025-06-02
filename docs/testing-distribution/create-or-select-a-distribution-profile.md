@@ -299,7 +299,7 @@ If you are using the self-hosted version of Appcircle, you can configure it to u
 
 The Distribution Profile name will be displayed as the sender name in the email address that testers will receive.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-mail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss1.png' />
 
 :::tip
 
