@@ -52,6 +52,10 @@ Discover the process for enabling automatic updates on your Appcircle server, en
 
 Learn how to configure your Appcircle server's domain verification option when adding domains as trusted for Appcircle organizations.
 
+## [Container Engine Network Subnet](/self-hosted-appcircle/install-server/linux-package/configure-server/container-engine-network-subnet)
+
+Learn how to configure the network subnets of the container engine for the Appcircle server.
+
 ## [Monitoring](/self-hosted-appcircle/install-server/linux-package/configure-server/monitoring)
 
 Learn how to monitor your Appcircle server through the Grafana web interface, enabling you to oversee server performance remotely without the need to access the Appcircle server console directly.
