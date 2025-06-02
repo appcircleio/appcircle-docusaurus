@@ -51,7 +51,7 @@ To configure the network subnets of the containers of the Appcircle server, foll
     ```yaml
     networkSettings:
       enabled: true
-      subnet: 10.0.0.0/16
+      networkSubnet: 10.0.0.0/16
     ```
     :::tip
     The `subnet` will be used to configure the network subnets of the Appcircle server containers.
@@ -92,7 +92,7 @@ To configure the network subnets of the containers of the DMZ server, follow the
     ```yaml
     dmzNetworkSettings:
       enabled: true
-      subnet: 10.0.0.0/16
+      networkSubnet: 10.0.0.0/16
     ```
     :::tip
     The `subnet` will be used to configure the network subnets of the Appcircle DMZ server containers.
