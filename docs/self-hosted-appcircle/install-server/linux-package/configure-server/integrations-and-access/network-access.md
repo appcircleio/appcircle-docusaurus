@@ -303,11 +303,6 @@ If you’re using CocoaPods and if your `Podfile` is using another spec reposito
 
 - firebaseappdistribution.googleapis.com
 
-#### App Center:
-
-- api.appcenter.ms
-- file.appcenter.ms
-
 ### Publish
 
 **Disclaimer:** The URLs provided below were last verified on 09/01/2024, and are subject to change by the respective services. Please consult official documentation of the stores for the most up-to-date information.
