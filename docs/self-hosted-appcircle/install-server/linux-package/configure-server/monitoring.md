@@ -9,6 +9,8 @@ import Screenshot from '@site/src/components/Screenshot';
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
 import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_restart-appcircle-server.mdx';
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Overview
 
@@ -266,3 +268,53 @@ To query case-insensitive "error" logs for all containers using the Grafana Expl
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-4085-all-containers-error-logs.png' />
 
 If you face any error on the Appcircle, you can effectively search for logs containing the term "error" across all services by performing these steps.
+
+### Troubleshooting Missing Container Logs in Grafana UI
+
+If container logs are not visible in the Grafana UI, this may be caused by either the Appcircle logging service not running or insufficient user permissions. Follow these steps to resolve the issue:
+
+1. Start the Appcircle server.  
+
+2. Verify the Appcircle logging service status:
+
+  :::info
+  After you start the Appcircle server, `appcircle-logging` service will be running with the `active` status.
+  :::
+
+<Tabs groupId="user">
+  <TabItem value="non-root" label="Non-Root User">
+  ```bash
+  systemctl --user status appcircle-logging
+  ```
+  </TabItem>
+
+  <TabItem value="root" label="Root User" default>
+  ```bash
+  systemctl status appcircle-logging
+  ```
+  </TabItem>
+</Tabs>
+
+
+3. If the logging service is running but container logs are still not visible in Grafana UI, this may indicate insufficient permissions. To resolve this:
+
+   1. Add the user to the necessary system groups:
+   ```bash
+   sudo usermod -aG adm $USER
+   sudo usermod -aG systemd-journal $USER
+   ```
+
+   2. Stop the Appcircle server:
+   ```bash
+   ./ac-self-hosted.sh -n $projectName down
+   ```
+
+   3. Terminate the current user session:
+   ```bash
+   loginctl terminate-user $USER
+   ```
+
+   4. Start the Appcircle server:
+   ```bash
+   ./ac-self-hosted.sh -n $projectName up
+   ```
