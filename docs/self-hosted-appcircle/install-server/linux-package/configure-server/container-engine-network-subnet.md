@@ -9,7 +9,7 @@ sidebar_position: 50
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_spacetech-example-info.mdx';  
 import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_restart-appcircle-server.mdx';  
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_appcircle-server-downtime-caution.mdx';  
-
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
@@ -97,3 +97,5 @@ To configure the network subnets of the containers of the DMZ server, follow the
 5. After saving the configuration changes, restart your Appcircle server to apply the new settings.
 
    <RestartAppcircleServer />
+
+<NeedHelp />
