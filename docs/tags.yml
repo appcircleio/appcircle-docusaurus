@@ -1063,6 +1063,11 @@ network:
   description: "Description for network"
   permalink: /network
 
+subnet:
+  label: "subnet"
+  description: "Description for subnet"
+  permalink: /subnet
+
 documentation:
   label: "documentation"
   description: "Description for documentation"
