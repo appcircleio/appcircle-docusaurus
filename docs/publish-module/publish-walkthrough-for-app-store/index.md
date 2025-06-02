@@ -134,7 +134,7 @@ Once the required integrations are set up, you can access these platforms from y
 
 ### Updating TestFlight Beta Information
 
-- Within the Publish module, you can update and review your TestFlight Beta information directly. This includes editing the description, feedback email, beta app review details, and other store-related information such as privacy URLs, etc.
+- Within the Publish module, you can update and review your **TestFlight Beta Information** directly. This includes editing the description, feedback email, beta app review details, and other store-related information such as privacy URLs, etc.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-testFlightBetaButton.png' />  
 
@@ -219,7 +219,7 @@ To upload a binary from the Build module, please refer to the [**Distribution Co
 
 #### Uploading via Testing Distribution Module
 
-You can manually deploy your binary file to the Publish module from the Testing Distribution module.
+You can manually send your binary file to the Publish module from the Testing Distribution module.
 
 :::info Uploading via Testing Distribution Module
 
