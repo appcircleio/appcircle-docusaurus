@@ -216,7 +216,7 @@ storage.googleapis.com/storage/v1/b/appcircle-dev-common
 
 ## Appcircle Server Runtime
 
-### Publish
+### Store APIs
 
 Although Appcircle runners are responsible for the submission of the apps to the mobile application stores, the server also has some features that need access to the application store APIs, like runners.
 
@@ -251,9 +251,9 @@ Be aware that the URLs below should be the URLs of the self-hosted Appcircle ser
 Below are the sample URLs that show the required subdomains compatible with the sample configuration in the installation documents.
 :::
 
-- api.appcircle.spacetech.com
-- resource.appcircle.spacetech.com
-- redis.appcircle.spacetech.com
+- `api.appcircle.spacetech.com`
+- `resource.appcircle.spacetech.com`
+- `redis.appcircle.spacetech.com`
 
 Appcircle runners connect to the self-hosted Appcircle server over the ports below:
 
@@ -270,38 +270,39 @@ If your self-hosted server is configured as HTTP:
 
 Appcircle’s workflow components are hosted on GitHub and they're `git` cloned while running the pipeline.
 
-- github.com/appcircleio/
+- `github.com/appcircleio/`
 
 Some of the dependencies such as `CocoaPods` and `Fastlane` use Ruby Gems.
 
-- rubygems.org
+- `rubygems.org`
+- `index.rubygems.org`
 
 The Gradle wrapper needs access to the below URL to download Gradle.
 
-- services.gradle.org
+- `services.gradle.org`
 
 Android Build Tools need access to the following URLs to download new build tools and NDKs:
 
-- dl-ssl.google.com/android/repository
-- dl.google.com/android/repository
+- `dl-ssl.google.com/android/repository`
+- `dl.google.com/android/repository`
 
 All the maven repositories inside `build.gradle` must be added to the allow-list.
 
 For example;
 
-- maven.google.com
-- repo.maven.apache.org/maven2
+- `maven.google.com`
+- `repo.maven.apache.org/maven`2`
 
 If you’re using CocoaPods and if your `Podfile` is using another spec repository, they also must be allowed.
 
-- cdn.cocoapods.org
-- github.com/CocoaPods/Specs
+- `cdn.cocoapods.org`
+- `github.com/CocoaPods/Specs`
 
 ### Testing Distribution
 
 #### Firebase:
 
-- firebaseappdistribution.googleapis.com
+- `firebaseappdistribution.googleapis.com`
 
 ### Publish
 
@@ -314,8 +315,8 @@ If you’re using CocoaPods and if your `Podfile` is using another spec reposito
 
 #### Huawei AppGallery
 
-- connect-api.cloud.huawei.com
-- nsp-appgallery-agcfs-dre.obs.eu-de.otc.t-systems.com
+- `connect-api.cloud.huawei.com`
+- `nsp-appgallery-agcfs-dre.obs.eu-de.otc.t-systems.com`
 
 :::caution
 Please be aware that the URL above starting with `nsp-appgallery`, may change in the future. It is dynamically returned by the `https://connect-api.cloud.huawei.com` endpoint.
@@ -323,9 +324,9 @@ Please be aware that the URL above starting with `nsp-appgallery`, may change in
 
 #### App Store
 
-- contentdelivery.itunes.apple.com
-- api.appstoreconnect.apple.com
-- appstoreconnect.apple.com
+- `contentdelivery.itunes.apple.com`
+- `api.appstoreconnect.apple.com`
+- `appstoreconnect.apple.com`
 
 :::caution
 The Apple App Store connects to several endpoints during upload. It is important to allow access to all of them.
@@ -449,9 +450,9 @@ Be aware that the URLs below should be the URLs of the self-hosted Appcircle ser
 Below are the sample URLs that show the required subdomains compatible with the sample configuration in the installation documents.
 :::
 
-- api.appcircle.spacetech.com
-- auth.appcircle.spacetech.com
-- monitor.appcircle.spacetech.com
+- `api.appcircle.spacetech.com`
+- `auth.appcircle.spacetech.com`
+- `monitor.appcircle.spacetech.com`
 
 Appcircle DMZ server connect to the self-hosted Appcircle server over the ports below:
 
