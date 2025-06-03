@@ -305,7 +305,7 @@ If you’re using CocoaPods and if your `Podfile` is using another spec reposito
 
 ### Publish
 
-**Disclaimer:** The URLs provided below were last verified on 09/01/2024, and are subject to change by the respective services. Please consult official documentation of the stores for the most up-to-date information.
+**Disclaimer:** The URLs provided below were last verified on 3 June 2025, and are subject to change by the respective services. Please consult official documentation of the stores for the most up-to-date information.
 
 #### Google Play Store
 
@@ -325,44 +325,36 @@ Please be aware that the URL above starting with `nsp-appgallery`, may change in
 
 - contentdelivery.itunes.apple.com
 - api.appstoreconnect.apple.com
+- appstoreconnect.apple.com
 
 :::caution
-The Apple App Store connects to several endpoints during upload.
+The Apple App Store connects to several endpoints during upload. It is important to allow access to all of them.
 
 Those endpoints are documented at [here](https://help.apple.com/itc/transporteruserguide/en.lproj/static.html). The endpoints may change in the future.
 :::
 
-| **Server**                                     | **IP Address** | **TCP Port** | **UDP Port** |
-| ---------------------------------------------- | -------------- | ------------ | ------------ |
-| [vgr501.apple.com](http://vgr501.apple.com/)   | 17.110.248.141 | 33001        | 33001-33500  |
-| [vgr502.apple.com](http://vgr502.apple.com/)   | 17.110.248.142 | 33001        | 33001-33500  |
-| [vgr503.apple.com](http://vgr503.apple.com/)   | 17.110.248.143 | 33001        | 33001-33500  |
-| [vgr504.apple.com](http://vgr504.apple.com/)   | 17.110.248.144 | 33001        | 33001-33500  |
-| [vgr505.apple.com](http://vgr505.apple.com/)   | 17.110.248.145 | 33001        | 33001-33500  |
-| [vgr506.apple.com](http://vgr506.apple.com/)   | 17.110.248.146 | 33001        | 33001-33500  |
-| [vgr507.apple.com](http://vgr507.apple.com/)   | 17.110.248.147 | 33001        | 33001-33500  |
-| [vgr508.apple.com](http://vgr508.apple.com/)   | 17.110.248.148 | 33001        | 33001-33500  |
-| [vgr701.apple.com](http://vgr701.apple.com/)   | 17.133.233.141 | 33001        | 33001-33500  |
-| [vgr702.apple.com](http://vgr702.apple.com/)   | 17.133.233.142 | 33001        | 33001-33500  |
-| [vgr703.apple.com](http://vgr703.apple.com/)   | 17.133.233.143 | 33001        | 33001-33500  |
-| [vgr704.apple.com](http://vgr704.apple.com/)   | 17.133.233.144 | 33001        | 33001-33500  |
-| [vgr705.apple.com](http://vgr705.apple.com/)   | 17.133.233.145 | 33001        | 33001-33500  |
-| [vgr706.apple.com](http://vgr706.apple.com/)   | 17.133.233.146 | 33001        | 33001-33500  |
-| [vgr707.apple.com](http://vgr707.apple.com/)   | 17.133.233.147 | 33001        | 33001-33500  |
-| [vgr708.apple.com](http://vgr708.apple.com/)   | 17.133.233.148 | 33001        | 33001-33500  |
-| [vgr0901.apple.com](http://vgr0901.apple.com/) | 17.57.20.141   | 33001        | 33001-33500  |
-| [vgr0902.apple.com](http://vgr0902.apple.com/) | 17.57.20.142   | 33001        | 33001-33500  |
-| [vgr0903.apple.com](http://vgr0903.apple.com/) | 17.57.20.143   | 33001        | 33001-33500  |
-| [vgr0904.apple.com](http://vgr0904.apple.com/) | 17.57.20.144   | 33001        | 33001-33500  |
-| [vgr0905.apple.com](http://vgr0905.apple.com/) | 17.57.20.145   | 33001        | 33001-33500  |
-| [vgr0906.apple.com](http://vgr0906.apple.com/) | 17.57.20.146   | 33001        | 33001-33500  |
-| [vgr0907.apple.com](http://vgr0907.apple.com/) | 17.57.20.147   | 33001        | 33001-33500  |
-| [vgr0908.apple.com](http://vgr0908.apple.com/) | 17.57.20.148   | 33001        | 33001-33500  |
+| **Server**                              | **TCP Port** |
+| --------------------------------------- | ------------ |
+| contentdelivery.itunes.apple.com        | 443          |
+| idmsa.apple.com                         | 443          |
+| northamerica-1.object-storage.apple.com | 443          |
+| store-037.blobstore.apple.com           | 443          |
+| store-036.blobstore.apple.com           | 443          |
+| store-035.blobstore.apple.com           | 443          |
+| store-033.blobstore.apple.com           | 443          |
+| store-032.blobstore.apple.com           | 443          |
+| store-030.blobstore.apple.com           | 443          |
+| store-028.blobstore.apple.com           | 443          |
+| store-026.blobstore.apple.com           | 443          |
+| store-025.blobstore.apple.com           | 443          |
+| store-004.blobstore.apple.com           | 443          |
+| transporter.amp.apple.com               | 443          |
+
+<!-- "Upcoming Expansion for Uploads" row didn't included in this table since it doesn't have domain name, only stated as IP ranges. -->
 
 ## Appcircle DMZ Server Install & Update
 
 Below you can find the network access details required when installing or upgrading a self-hosted Appcircle DMZ server.
-
 
 <Tabs>
   
