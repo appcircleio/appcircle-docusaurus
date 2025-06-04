@@ -316,10 +316,12 @@ If you’re using CocoaPods and if your `Podfile` is using another spec reposito
 #### Huawei AppGallery
 
 - `connect-api.cloud.huawei.com`
-- `nsp-appgallery-agcfs-dre.obs.eu-de.otc.t-systems.com`
+- `nsp-appgallery-agcfs-dre.obs.eu-de.otc.t-systems.com` (dynamic)
 
 :::caution
-Please be aware that the URL above starting with `nsp-appgallery`, may change in the future. It is dynamically returned by the `https://connect-api.cloud.huawei.com` endpoint.
+The second domain starting with `nsp-appgallery-`, may vary depending on your region. It is dynamically returned by the AppGallery Connect API.
+
+To determine the exact URL used in your case, monitor your network traffic during the publishing process.
 :::
 
 #### App Store
