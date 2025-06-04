@@ -363,6 +363,8 @@ It's possible to use a custom domain for the Enterprise App Store. In this case 
 
 Most likely, our custom domain won't be covered by main domain certificate. So we may need to create new public certificate and private key pair for the custom domain.
 
+Even if the main domain certificate covers the custom domain, you still need to explicitly configure the store’s custom domain certificate under `storeWeb.customDomain`. Because, when the store custom domain is enabled, the HTTPS certificate defined in the `storeWeb.customDomain` section is used for the Enterprise App Store instead of the certificate defined in `nginx.sslCertificate`.
+
 Custom domain HTTPS settings are similar to main domain conceptually. After enabling HTTPS for main domain, it won't be hard to enable HTTPS for Enterprise App Store custom domain.
 
 Let's assume we want to use `apps.spacetech.com` as custom domain for our sample scenario.
