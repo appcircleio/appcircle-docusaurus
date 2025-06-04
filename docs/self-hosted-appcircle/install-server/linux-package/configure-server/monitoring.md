@@ -248,7 +248,6 @@ The container logs are also sent to the `systemd` journal. So the log entries ca
 
 :::
 
-
 ## FAQ
 
 ### Filtering "Error" Logs for All Containers
@@ -269,12 +268,11 @@ To query case-insensitive "error" logs for all containers using the Grafana Expl
 
 If you face any error on the Appcircle, you can effectively search for logs containing the term "error" across all services by performing these steps.
 
-### Troubleshooting Missing Container Logs in Grafana UI
+### Missing Container Logs in Grafana UI
 
 If container logs are not visible in the Grafana UI, this may be caused by either the Appcircle logging service not running or insufficient user permissions. Follow these steps to resolve the issue:
 
-
-1. Login to the Appcircle server with SSH.
+1. Log in to the Appcircle server with SSH.
 
 2. Go to the Appcircle server directory.
 
@@ -310,8 +308,7 @@ If container logs are not visible in the Grafana UI, this may be caused by eithe
   </TabItem>
 </Tabs>
 
-
-5. If the logging service is running but container logs are still not visible in Grafana UI, this may indicate insufficient permissions especially for the non-root user. To resolve this:
+5. If the logging service is running but container logs are still not visible in the Grafana UI, this may indicate insufficient permissions, especially for the non-root user. To resolve this:
 
     1. Check the groups of the user who runs the Appcircle server.
 
@@ -320,9 +317,9 @@ If container logs are not visible in the Grafana UI, this may be caused by eithe
     ```
 
     2. Add the user to the necessary system groups if the user is not in the `adm` or `systemd-journal` groups.
-    
+
     :::info
-    The users belong to these groups can access the journal logs or system logs without root privileges.
+    The users who belong to these groups can access the journal logs or system logs without root privileges.
     :::
 
     ```bash
@@ -331,8 +328,6 @@ If container logs are not visible in the Grafana UI, this may be caused by eithe
     ```bash
     sudo usermod -aG systemd-journal $USER
     ```
-
-
 
     3. Stop the Appcircle server:
     ```bash
