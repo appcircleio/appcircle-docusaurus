@@ -18,18 +18,18 @@ https://www.npmjs.com/package/@appcircle/react-native-code-push
 
 To start using the Appcircle CodePush feature, the first step is to integrate the [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push) into your project. You can do this by installing the SDK directly via npm or by adding the dependency to your `package.json` file.
 
-To install the SDK using the command line, run the following command in the root directory of your project.
+1. To install the SDK using the command line, run the following command in the root directory of your project.
 
 ```bash
-npm i @appcircle/react-native-code-push
+npm i @appcircle/react-native-code-push@0.0.2-alpha.5
 ```
 
-Using `package.json` file to add the SDK: 
+2. Using `package.json` file to add the SDK: 
 Add the SDK to dependencies section in your `package.json` file.
 
 ```json package.json
 "dependencies": {
-    "@appcircle/react-native-code-push": "0.0.2-alpha.3",
+    "@appcircle/react-native-code-push": "0.0.2-alpha.5",
     
     //Other Dependencies here
 }
@@ -78,7 +78,28 @@ For Appcircle Cloud, the **ServerURL** is `https://api.appcircle.io/codepush`.
 
 </Tabs>
 
-#### SDK Installation and Configuration for React Native 0.60 version and above (iOS)
+### SDK Installation and Configuration
+
+The SDK installation and configuration steps for `iOS` and `Android` are detailed below.
+
+#### Compatible React Native Versions
+
+**Appcircle CodePush SDK** supports React Native **0.76+** and **the new architecture**.
+
+If you are using React Native version **0.75 or earlier**, you need to use the **Microsoft CodePush SDK** to enable Appcircle CodePush functionality. 
+
+| React Native Version(s)                    | SDK                                 |
+|--------------------------------------------|-------------------------------------|
+| Below 0.76 | Use [**Microsoft SDK**](https://github.com/microsoft/react-native-code-push)| 
+| 0.76 and above | Use [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push) |
+
+:::caution If Using Microsoft SDK
+
+If you are using Microsoft SDK, make sure to add the **Appcircle Server URL** and **Deployment Key** correctly in your `info.plist` and `strings.xml` file. For detailed information, please navigate to the [**React Native Project Configuration**](/code-push/code-push-sdk#react-native-project-integration) section.
+
+:::
+
+#### For iOS
 
 Follow the installation steps below to use the CodePush SDK in your iOS applications.
 
@@ -120,7 +141,7 @@ Your sourceURLForBridge method should look like this:
 }
 ```
 
-#### SDK Installation and Configuration for React Native 0.74 version and above (Android)
+#### For Android
 
 1. In your `android/settings.gradle` file, make the following additions at the end of the file:
 
@@ -136,6 +157,12 @@ apply from: "../../node_modules/@appcircle/react-native-code-push/android/codepu
 ```
 
 3. Update the MainApplication file to use CodePush via the following changes:
+
+:::caution If New Architecture Is Enabled
+
+This `MainApplication.kt` may not work properly if you are using the new architecture.
+
+:::
 
 Update the `MainApplication.kt`.
 
@@ -160,27 +187,7 @@ override val reactNativeHost: ReactNativeHost =
 }
 ```
 
-:::danger 
-
-Appcircle CodePush does not currently support the new Architecture on Android. In order to use this plugin on React Native versions starting from 0.74 you will need to opt out from the new Architecture. React Native CodePush support for the new Architecture is in progress.
-
-Update the `android/gradle.properties` file opt out the new Architecture.
-
-```java
-newArchEnabled=false
-```
-
-:::
-
-#### SDK Installation and Configuration for React Native 0.73 version and below (Android)
-
-If you are using React Native version 0.73 or earlier, you need to use the Microsoft CodePush SDK to enable Appcircle CodePush functionality.
-To integrate it into your application, please follow the official documentation:
-https://github.com/microsoft/react-native-code-push
-
-Make sure to add the **Appcircle Server URL** and **Deployment Key** correctly in your **strings.xml** file.
-
-### SDK Integration and Basic Usage
+### SDK Basic Example Usage
 
 After installing the SDK, you need to import and configure it within your React Native project. Below is a basic example of how to use the Appcircle CodePush SDK:
 
@@ -260,3 +267,47 @@ MyApp = codePush(codePushOptions)(MyApp);
 ```
 
 This configuration ensures that your app checks for updates when it starts, and installs them on the next app restart. You can customize the behavior further using CodePush options based on your needs.
+
+## FAQ
+
+### How to Use CodePush with New Architecture on Android?
+
+[**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push) supports the new architecture on Android for React Native versions 0.76 and above.
+
+If you are having trouble using CodePush with new architecture in your Android app, you can update
+your `MainApplication.kt` file as follows:
+
+```kotlin
+// 1. import UnstableReactNativeAPI
+import com.facebook.react.common.annotations.UnstableReactNativeAPI 
+
+@OptIn(UnstableReactNativeAPI::class)  // 2. add this line here
+class MainApplication : Application(), ReactApplication {
+
+...
+
+// 3. replace these lines
+override val reactHost: ReactHost
+        get() = getDefaultReactHost(applicationContext, reactNativeHost)
+
+// with the following lines
+    override val reactHost: ReactHost
+        get() = getDefaultReactHost(
+            applicationContext,
+            PackageList(this).packages.apply {
+                // Packages that cannot be autolinked yet can be added manually here, for example:
+                // add(MyReactNativePackage())
+            },
+            jsMainModulePath = "index",
+            jsBundleAssetPath = "index.android.bundle",
+            jsBundleFilePath = CodePush.getJSBundleFile(),
+            isHermesEnabled = BuildConfig.IS_HERMES_ENABLED,
+            useDevSupport = BuildConfig.DEBUG,
+        )
+```
+
+### How to Fix `A JS bundle file named "null" could not be found within the downloaded contents` Error on Android?
+
+If you are using [**Microsoft CodePush SDK**](https://github.com/microsoft/react-native-code-push)  with the new architecture enabled, you may encounter this error when attempting to push OTA updates. If that happens, you can follow [**these instructions**](https://github.com/microsoft/react-native-code-push/issues/2083#issuecomment-1411745157) to resolve it. 
+
+Alternatively, you can use the [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push), which supports the new architecture for React Native 0.76 and above.
