@@ -96,6 +96,7 @@ You must add this component **after** running your tests so that it can parse te
 - [**JaCoCo**](https://www.jacoco.org)
 - [**Cobertura**](https://cobertura.github.io/cobertura)
 - [**lcov.info**](https://lcov-viewer.netlify.app)
+- [**Cucumber**](https://cucumber.io/)
 
 You must configure the **Test Report Component** and enter the path of code coverage and test results paths. For example, if you run your tests with an emulator, your files will be generated in the following folders.
 
