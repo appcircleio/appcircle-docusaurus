@@ -209,6 +209,12 @@ minio:
 storeWeb:
   external:
     subdomain: store-appcircle
+webEventRedis:
+  external:
+    subdomain: redis-appcircle
+grafana:
+  external:
+    subdomain: monitor-appcircle
 ```
 
 :::caution
