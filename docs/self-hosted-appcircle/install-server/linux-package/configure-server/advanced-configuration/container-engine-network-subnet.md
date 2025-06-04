@@ -6,10 +6,10 @@ tags: [docker, podman, self-hosted, network, subnet]
 sidebar_position: 40
 ---
 
-import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_spacetech-example-info.mdx';  
-import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_restart-appcircle-server.mdx';  
-import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_appcircle-server-downtime-caution.mdx';  
-import DowntimeCautionDMZ from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_appcircle-server-downtime-caution-dmz.mdx';  
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';  
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_restart-appcircle-server.mdx';  
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';  
+import DowntimeCautionDMZ from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution-dmz.mdx';  
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
@@ -36,27 +36,27 @@ To configure the network subnet of the containers of the Appcircle server, follo
 
 3. Open the `global.yaml` file in a text editor.
 
-    <SpacetechExampleInfo />
+   <SpacetechExampleInfo />
 
-    ```bash
-    vi ./projects/spacetech/global.yaml
-    ```
+   ```bash
+   vi ./projects/spacetech/global.yaml
+   ```
 
 4. Create or update the `networkSettings` entry in the `global.yaml` configuration file.
 
-    :::caution  
-    If the `networkSettings` entry already exists in your `global.yaml` file, ensure you update the existing key instead of creating a new one.
-    :::
+   :::caution  
+   If the `networkSettings` entry already exists in your `global.yaml` file, ensure you update the existing key instead of creating a new one.
+   :::
 
-    ```yaml
-    networkSettings:
-      enabled: true
-      networkSubnet: 10.0.0.0/16
-    ```
+   ```yaml
+   networkSettings:
+     enabled: true
+     networkSubnet: 10.0.0.0/16
+   ```
 
-    :::tip
-    The `subnet` will be used to configure the network subnet of the Appcircle server containers.
-    :::
+   :::tip
+   The `subnet` will be used to configure the network subnet of the Appcircle server containers.
+   :::
 
 5. After saving the configuration changes, restart your Appcircle server to apply the new settings.
 
@@ -78,37 +78,96 @@ To configure the network subnet of the containers of the DMZ server, follow thes
 
 3. Open the `global.yaml` file in a text editor.
 
-    <SpacetechExampleInfo />
+   <SpacetechExampleInfo />
 
-    ```bash
-    vi ./projects/spacetech/global.yaml
-    ```
+   ```bash
+   vi ./projects/spacetech/global.yaml
+   ```
 
 4. Create or update the `dmzNetworkSettings` entry in the `global.yaml` configuration file.
 
-    :::caution  
-    If the `dmzNetworkSettings` entry already exists in your `global.yaml` file, ensure you update the existing key instead of creating a new one.
-    :::
+   :::caution  
+   If the `dmzNetworkSettings` entry already exists in your `global.yaml` file, ensure you update the existing key instead of creating a new one.
+   :::
 
-    ```yaml
-    dmzNetworkSettings:
-      enabled: true
-      networkSubnet: 10.0.0.0/16
+   ```yaml
+   dmzNetworkSettings:
+     enabled: true
+     networkSubnet: 10.0.0.0/16
+   ```
+
+   :::tip
+   The `networkSubnet` will be used to configure the network subnet of the Appcircle DMZ server containers.
+   :::
+
+   :::info
+   Although the Appcircle server and Appcircle DMZ server have the same subnet configuration as the sample above, they are not required to have the same subnet values or to be configured to custom subnet both.
+   :::
+
+5. Apply the new configuration changes.
+
+   ```bash
+   ./ac-self-hosted.sh -n spacetech export --dmz
+   ```
+
+6. Compress the Appcircle DMZ server directory into a tarball.
+
+   ```bash
+   tar -czf dmz.tar.gz -C projects/spacetech/export/dmz/ .
+   ```
+
+7. Transfer the `dmz.tar.gz` file to the Appcircle DMZ server with a file transfer protocol like `scp` or `ftp`.
+
+8. Log in to your Appcircle DMZ server via SSH or a remote connection.
+
+9. Change to the directory containing the Appcircle DMZ server configuration.
+
+   ```bash
+   cd appcircle-server-dmz
+   ```
+
+10. Stop the Appcircle DMZ server.
+
+    ```bash
+    ./ac-self-hosted-dmz.sh down
     ```
 
-    :::tip
-    The `subnet` will be used to configure the network subnet of the Appcircle DMZ server containers.
-    :::
+11. Delete the old Appcircle DMZ server directory.
 
-    :::info
-    Although the Appcircle server and Appcircle DMZ server have the same subnet configuration as the sample above, they are not required to have the same subnet values or to be configured to custom subnet both.
-    :::
+    ```bash
+    cd .. && rm -rf appcircle-dmz-server
+    ```
 
-5. After saving the configuration changes, restart the Appcircle server and Appcircle DMZ server with the new settings.
+12. Extract the `dmz.tar.gz` file into a new Appcircle DMZ server directory.
 
-    :::info
-    For more information about updating the Appcircle server and Appcircle DMZ server, please refer to the [Upgrading Appcircle DMZ and Appcircle Server](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz.md#upgrading-appcircle-dmz-and-appcircle-server) document.
-    :::
+    ```bash
+    mkdir -p appcircle-server-dmz && \
+    tar -xzf dmz.tar.gz -C appcircle-server-dmz
+    ```
+
+13. Change directory into the new directory.
+
+    ```bash
+    cd appcircle-server-dmz
+    ```
+
+14. Reconfigure the Appcircle DMZ server.
+
+    ```bash
+    ./ac-self-hosted-dmz.sh -i
+    ```
+
+15. Start the Appcircle DMZ server.
+
+    ```bash
+    ./ac-self-hosted-dmz.sh up
+    ```
+
+16. Check the Appcircle DMZ server status.
+
+    ```bash
+    ./ac-self-hosted-dmz.sh check
+    ```
 
 ## Disabling Custom Subnet Configuration
 
@@ -117,24 +176,25 @@ To allow Docker or Podman to automatically manage subnet configurations for your
 To disable custom subnet configuration:
 
 1. Follow the steps in either:
+
    - [Configuring the Subnet for Appcircle Server](#configuring-the-subnet-for-appcircle-server)
    - [Configuring the Subnet for Appcircle DMZ Server](#configuring-the-subnet-for-appcircle-dmz-server)
 
 2. Set the `enabled` parameter to `false` or delete the `networkSettings` or `dmzNetworkSettings` entry in the appropriate configuration section:
 
-    - For the Appcircle server:
+   - For the Appcircle server:
 
-      ```yaml
-      networkSettings:
-        enabled: false
-      ```
+     ```yaml
+     networkSettings:
+       enabled: false
+     ```
 
-    - For the Appcircle DMZ server:
+   - For the Appcircle DMZ server:
 
-      ```yaml
-      dmzNetworkSettings:
-        enabled: false
-      ```
+     ```yaml
+     dmzNetworkSettings:
+       enabled: false
+     ```
 
 3. After saving the configuration changes, restart the Appcircle server and/or Appcircle DMZ server to apply the new settings by following the steps in the [Configuring the Subnet for Appcircle Server](#configuring-the-subnet-for-appcircle-server) or [Configuring the Subnet for Appcircle DMZ Server](#configuring-the-subnet-for-appcircle-dmz-server) section.
 
