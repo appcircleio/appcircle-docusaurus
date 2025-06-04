@@ -237,6 +237,13 @@ So, you should enable the below API access on the server for each store you want
 
 - `api.appstoreconnect.apple.com`
 
+:::info
+If you are using an Enterprise API Key as detailed in the [App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation, ensure that network access is also permitted to the following address:
+
+- `api.enterprise.developer.apple.com`
+
+:::
+
 ## Appcircle Runner Runtime
 
 This section addresses the utilization of external resources during the build, publish, and other processes on the Appcircle runner.
@@ -329,6 +336,13 @@ To determine the exact URL used in your case, monitor your network traffic durin
 - `contentdelivery.itunes.apple.com`
 - `api.appstoreconnect.apple.com`
 - `appstoreconnect.apple.com`
+
+:::info
+If you are using an Enterprise API Key as detailed in the [App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation, ensure that network access is also permitted to the following address:
+
+- `api.enterprise.developer.apple.com`
+
+:::
 
 :::caution
 The Apple App Store connects to several endpoints during upload. It is important to allow access to all of them.
