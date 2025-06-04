@@ -46,6 +46,12 @@ You can use the Appcircle Testing Distribution or the Enterprise App Store modul
 
 There is no need for device registration, but Apple requires the binary to be protected and not open for public download, so you can use the enrollment feature of the Appcircle Testing Distribution to protect the app distribution.
 
+:::caution Apple Enterprise Signing
+
+If you are **not** enrolled in the **Apple Enterprise Program**, you **cannot** create an **Enterprise** certificate. This limitation is **not** caused by **Appcircle**. Appcircle only provides signing and distribution features and **cannot** be used as an **enterprise signing service**.
+
+:::
+
 :::info
 
 For app builds, signing identities are not mandatory. For example, you can use unsigned apps to run on the simulator or on third-party platforms that resign your app, such as AWS Device Farm.
