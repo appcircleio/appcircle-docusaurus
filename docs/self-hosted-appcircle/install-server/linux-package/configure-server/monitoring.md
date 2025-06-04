@@ -273,13 +273,28 @@ If you face any error on the Appcircle, you can effectively search for logs cont
 
 If container logs are not visible in the Grafana UI, this may be caused by either the Appcircle logging service not running or insufficient user permissions. Follow these steps to resolve the issue:
 
-1. Start the Appcircle server.  
 
-2. Verify the Appcircle logging service status:
+1. Login to the Appcircle server with SSH.
 
-  :::info
-  After you start the Appcircle server, `appcircle-logging` service will be running with the `active` status.
-  :::
+2. Go to the Appcircle server directory.
+
+    ```bash
+    cd appcircle-server
+    ```
+
+3. Start the Appcircle server.
+
+    <SpacetechExampleInfo />
+
+    ```bash
+    ./ac-self-hosted.sh -n spacetech up
+    ```
+
+4. Verify the Appcircle logging service status:
+
+    :::info
+    After you start the Appcircle server, `appcircle-logging` service will be running with the `active` status.
+    :::
 
 <Tabs groupId="user">
   <TabItem value="non-root" label="Non-Root User">
@@ -296,23 +311,32 @@ If container logs are not visible in the Grafana UI, this may be caused by eithe
 </Tabs>
 
 
-3. If the logging service is running but container logs are still not visible in Grafana UI, this may indicate insufficient permissions especially for the non-root user. To resolve this:
+5. If the logging service is running but container logs are still not visible in Grafana UI, this may indicate insufficient permissions especially for the non-root user. To resolve this:
 
-    1. Check the groups of the user.
+    1. Check the groups of the user who runs the Appcircle server.
 
     ```bash
     groups $USER
     ```
 
     2. Add the user to the necessary system groups if the user is not in the `adm` or `systemd-journal` groups.
+    
+    :::info
+    The users belong to these groups can access the journal logs or system logs without root privileges.
+    :::
+
     ```bash
     sudo usermod -aG adm $USER
+    ```
+    ```bash
     sudo usermod -aG systemd-journal $USER
     ```
 
+
+
     3. Stop the Appcircle server:
     ```bash
-    ./ac-self-hosted.sh -n $projectName down
+    ./ac-self-hosted.sh -n spacetech down
     ```
 
     4. Terminate the current user session:
@@ -322,5 +346,5 @@ If container logs are not visible in the Grafana UI, this may be caused by eithe
 
     5. Start the Appcircle server:
     ```bash
-    ./ac-self-hosted.sh -n $projectName up
+    ./ac-self-hosted.sh -n spacetech up
     ```
