@@ -55,7 +55,7 @@ To configure the network subnet of the containers of the Appcircle server, follo
    ```
 
    :::tip
-   The `subnet` will be used to configure the network subnet of the Appcircle server containers.
+   The `networkSubnet` will be used to configure the network subnet of the Appcircle server containers.
    :::
 
 5. After saving the configuration changes, restart your Appcircle server to apply the new settings.
