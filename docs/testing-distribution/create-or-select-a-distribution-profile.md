@@ -12,6 +12,12 @@ import EnvGroupSetCaution from '@site/docs/\_env-group-set-on-config-caution.mdx
 
 To share builds with testers, distribution profiles should be created and testing groups assigned to these profiles.
 
+:::caution Signing Binary
+
+Appcircle's Testing Distribution module allows you to distribute your application without the need for any external tools. However, the way your app is signed remains your responsibility and depends on your own workflows; therefore, if you are not enrolled in the Apple Enterprise Program, Appcircle will not provide an enterprise signing service.
+
+:::
+
 ## Creating a Profile
 
 Select the Testing Distribution from the left and click on the Add New button. Give a name to your distribution profile.
