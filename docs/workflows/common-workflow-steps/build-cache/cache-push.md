@@ -11,11 +11,35 @@ import CacheTokenIdCaution from '@site/docs/workflows/common-workflow-steps/buil
 
 Every single build at Appcircle runs in a clean state. It means that all files and folders that are not versioned in the Git repository are lost when the build pipeline is completed. For example, install dependencies or build artifacts. If you need to keep those files and folders, you can use the Appcircle **Cache Push** and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) components.
 
+:::danger Minimum Version Requirement
+
+Please ensure you are using version **`1.0.4` or later** of the Cache Push component. Earlier versions are no longer compatible with Appcircle.
+
+To make sure you always get the latest updates, it is recommended to use the latest wildcard version (e.g., `1.0.*`):
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6067-cachelimitversion.png' />
+
+:::
+
 With cache, you can persist any resource that is ignored by Git. So you can transfer files and folders between build pipelines. Sometimes it may speed up your build, or it may help if you have reliability issues with the original download location for dependencies. But keep in mind that the cache is uploaded to or downloaded from a remote location. It may help you in some cases, but **it's not a guaranteed way to speed up builds**. You should try and see the actual results of your project.
 
 The cache is stored as a single archive file. **Cache Push** and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) components work in coordination on the same cache file defined with a label. Cache labeling helps you organize your caches. With custom labeling, you can have different chunks of caches, and you can share some caches between branches or build profiles. For further information, please check out the following documentation:
 - [How to Share Files Between Pipelines](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-pipelines)
 - [How to Share Files Between Build Profiles](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles)
+
+:::warning Cache Storage Limits
+
+Cache Push component enforces cache storage limits based on license tiers:
+
+- **Starter**: 5 GB
+- **Developer**: 10 GB
+- **Professional**: 20 GB
+- **Enterprise**: 30 GB
+- **Self-hosted**: Customizable (see [documentation](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/cache-size-configuration))
+
+These limits apply per build. Exceeding the limit will result in a failed cache upload.
+
+:::
 
 When you drag and drop the **Cache Push** component into your [workflow](/workflows), it comes with pre-defined values according to your project type. For example, in the case of Android projects, it comes with pre-defined [Gradle cache](https://docs.gradle.org/current/userguide/build_cache.html) paths, which should prove useful for most Android apps.
 

@@ -46,6 +46,12 @@ You can use the Appcircle Testing Distribution or the Enterprise App Store modul
 
 There is no need for device registration, but Apple requires the binary to be protected and not open for public download, so you can use the enrollment feature of the Appcircle Testing Distribution to protect the app distribution.
 
+:::caution Apple Enterprise Signing
+
+If you are **not** enrolled in the **Apple Enterprise Program**, you **cannot** create an **Enterprise** certificate. This limitation is **not** caused by **Appcircle**. Appcircle only provides signing and distribution features and **cannot** be used as an **enterprise signing service**.
+
+:::
+
 :::info
 
 For app builds, signing identities are not mandatory. For example, you can use unsigned apps to run on the simulator or on third-party platforms that resign your app, such as AWS Device Farm.
@@ -84,6 +90,12 @@ The provision profile you register via Appcircle is simultaneously registered on
 In order to register a profile, some parameters are needed. 
 
 After selecting the distribution method, the relevant App ID is selected for which Bundle ID will be created. Then you need to select which certificate you want to create with.
+
+:::info
+
+The certificates that need to be selected when registering a profile are listed by retrieving certificates from your **Apple Developer** account. The certificates listed here are **not** related to the ones uploaded to **Appcircle**.
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerProfileDetails.png' />
 
@@ -144,6 +156,12 @@ You can delete a single Provisioning Profile or multiple ones by selecting the c
 If you attempt to delete a Provisioning Profile that is saved in a build configuration of an active Build Profile, a warning message will appear. This message will allow you to view the affected build profiles and navigate to their configuration screens to make necessary changes.
 
 You also have the option to force delete it without changing the configurations.
+
+:::info
+
+Profiles deleted on **Appcircle** will only be removed from **Appcircle** and will not affect those on **Apple Developer** account.
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete2.png' />
 

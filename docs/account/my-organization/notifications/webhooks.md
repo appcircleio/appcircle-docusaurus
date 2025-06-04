@@ -13,7 +13,7 @@ tags:
     webhook editing,
     webhook deleting,
   ]
-sidebar_position: 6
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

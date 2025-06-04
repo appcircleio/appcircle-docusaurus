@@ -9,6 +9,8 @@ import Screenshot from '@site/src/components/Screenshot';
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
 import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_restart-appcircle-server.mdx';
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Overview
 
@@ -245,3 +247,99 @@ You can always access the container logs from container engine (`docker` or `pod
 The container logs are also sent to the `systemd` journal. So the log entries can be retrieved using the `journalctl` command through the journal API. For more information, see the [`journald` logging driver](https://docs.docker.com/config/containers/logging/journald/) page.
 
 :::
+
+## FAQ
+
+### Filtering "Error" Logs for All Containers
+
+To query case-insensitive "error" logs for all containers using the Grafana Explore menu, follow these steps:
+
+- **Select the `service_name` Label:** In the query builder, ensure the `service_name` label is selected to filter logs by service name.
+
+- **Use the Matches Regex Operator (`=~`):** Instead of using the equals operator (`=`), choose the matches regex operator (`=~`). This allows for more flexible pattern matching.
+
+- **Set the Target to `.+`:** In the regex field, enter `.+` to match any service name, effectively including all containers in the query.
+
+- **Add a "Line Contains Case Insensitive" Filter:** Add a filter for log lines that contain the term "error" in a case-insensitive manner by entering `error` in the search field.
+
+- **Enable the "Unique Labels" Toggle:** Enable the "Unique labels" toggle to display which service each log entry originates from, providing clearer insight into your log data.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-4085-all-containers-error-logs.png' />
+
+If you face any error on the Appcircle, you can effectively search for logs containing the term "error" across all services by performing these steps.
+
+### Missing Container Logs in Grafana UI
+
+If container logs are not visible in the Grafana UI, this may be caused by either the Appcircle logging service not running or insufficient user permissions. Follow these steps to resolve the issue:
+
+1. Log in to the Appcircle server with SSH.
+
+2. Go to the Appcircle server directory.
+
+    ```bash
+    cd appcircle-server
+    ```
+
+3. Start the Appcircle server.
+
+    <SpacetechExampleInfo />
+
+    ```bash
+    ./ac-self-hosted.sh -n spacetech up
+    ```
+
+4. Verify the Appcircle logging service status:
+
+    :::info
+    After you start the Appcircle server, `appcircle-logging` service will be running with the `active` status.
+    :::
+
+<Tabs groupId="user">
+  <TabItem value="non-root" label="Non-Root User">
+  ```bash
+  systemctl --user status appcircle-logging
+  ```
+  </TabItem>
+
+  <TabItem value="root" label="Root User" default>
+  ```bash
+  systemctl status appcircle-logging
+  ```
+  </TabItem>
+</Tabs>
+
+5. If the logging service is running but container logs are still not visible in the Grafana UI, this may indicate insufficient permissions, especially for the non-root user. To resolve this:
+
+    1. Check the groups of the user who runs the Appcircle server.
+
+    ```bash
+    groups $USER
+    ```
+
+    2. Add the user to the necessary system groups if the user is not in the `adm` or `systemd-journal` groups.
+
+    :::info
+    The users who belong to these groups can access the journal logs or system logs without root privileges.
+    :::
+
+    ```bash
+    sudo usermod -aG adm $USER
+    ```
+    ```bash
+    sudo usermod -aG systemd-journal $USER
+    ```
+
+    3. Stop the Appcircle server:
+    ```bash
+    ./ac-self-hosted.sh -n spacetech down
+    ```
+
+    4. Terminate the current user session:
+    ```bash
+    loginctl terminate-user $USER
+    ```
+
+    5. Start the Appcircle server:
+    ```bash
+    ./ac-self-hosted.sh -n spacetech up
+    ```

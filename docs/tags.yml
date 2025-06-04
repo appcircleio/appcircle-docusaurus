@@ -398,6 +398,11 @@ authentication:
   description: "Description for authentication"
   permalink: /authentication
 
+authentication logs:
+  label: "authentication logs"
+  description: "Description for authentication logs"
+  permalink: /authentication-logs
+
 authenticator:
   label: "authenticator"
   description: "Description for authenticator"
@@ -487,6 +492,11 @@ binaries:
   label: "binaries"
   description: "Description for binaries"
   permalink: /binaries
+
+"binary actions":
+  label: "binary actions"
+  description: "Description for binary actions"
+  permalink: /binary-actions
 
 "binary distribution":
   label: "binary distribution"
@@ -597,6 +607,11 @@ build:
   label: "build profile configuration"
   description: "Description for build profile configuration"
   permalink: /build-profile-configuration
+
+"build profile management":
+  label: "build profile management"
+  description: "Description for build profile management"
+  permalink: /build-profile-management
 
 "build sessions":
   label: "build sessions"
@@ -1013,6 +1028,11 @@ distribution:
   description: "Description for distribution"
   permalink: /distribution
 
+domain:
+  label: "domain"
+  description: "Description for domain"
+  permalink: /domain
+
 "distribution profile":
   label: "distribution profile"
   description: "Description for distribution profile"
@@ -1023,6 +1043,11 @@ distribution:
   description: "Description for distribution profiles"
   permalink: /distribution-profiles
 
+track:
+  label: "track"
+  description: "Description for track"
+  permalink: /track
+
 dmz:
   label: "dmz"
   description: "Description for dmz"
@@ -1032,6 +1057,16 @@ docker:
   label: "docker"
   description: "Description for docker"
   permalink: /docker
+
+network:
+  label: "network"
+  description: "Description for network"
+  permalink: /network
+
+subnet:
+  label: "subnet"
+  description: "Description for subnet"
+  permalink: /subnet
 
 documentation:
   label: "documentation"
@@ -2543,6 +2578,21 @@ testinium:
   description: "Description for testinium"
   permalink: /testinium
 
+plan:
+  label: "plan"
+  description: "Description for plan"
+  permalink: /plan
+
+run:
+  label: "run"
+  description: "Description for run"
+  permalink: /run
+
+app upload:
+  label: "app upload"
+  description: "Description for app upload"
+  permalink: /app-upload
+
 "text-based variables":
   label: "text-based variables"
   description: "Description for text-based variables"
@@ -2683,6 +2733,11 @@ variables:
   description: "Description for variables"
   permalink: /variables
 
+verify:
+  label: "verify"
+  description: "Description for verify"
+  permalink: /verify
+
 version:
   label: "version"
   description: "Description for version"
@@ -2778,10 +2833,15 @@ webhook:
   description: "Description for webhook secret"
   permalink: /webhook-secret
 
-workflow:
+"workflow":
   label: "workflow"
   description: "Description for workflow"
   permalink: /workflow
+
+"workflows":
+  label: "workflows"
+  description: "Description for workflows"
+  permalink: /workflows
 
 "xamarin":
   label: "xamarin"
@@ -2853,12 +2913,67 @@ xml:
   description: "Helm related documentations"
   permalink: "/helm"
 
+"server-setup":
+  label: "server setup"
+  description: "Server setup related documentations"
+  permalink: "/server-setup"
+
 "kubernetes":
   label: "kubernetes"
   description: "Kubernetes related documentations"
   permalink: "/kubernetes"
 
+"openshift":
+  label: "openshift"
+  description: "OpenShift related documentations"
+  permalink: "/openshift"
+
+quay:
+  label: "quay"
+  description: "Quay registry related documentations"
+  permalink: /quay
+
 "microsoft azure":
   label: "microsoft azure"
   description: "Microsoft Azure related documentations"
   permalink: "/microsoft-azure"
+
+"appcircle codepush cli":
+  label: "appcircle codepush cli"
+  description: "appcircle codepush cli related documentations"
+  permalink: "/appcircle-codepush-cli"
+
+"appcircle codepush":
+  label: "appcircle codepush"
+  description: "appcircle codepush related documentations"
+  permalink: "/appcircle-codepush"
+
+"codepush cli":
+  label: "codepush cli"
+  description: "codepush cli related documentations"
+  permalink: "/codepush-cli"
+
+"deployments":
+  label: "deployments"
+  description: "deployments related documentations"
+  permalink: "/deployments"
+
+"command line":
+  label: "command line"
+  description: "command line related documentations"
+  permalink: "/command-line"
+
+"codepush":
+  label: "codepush"
+  description: "codepush related documentations"
+  permalink: "/codepush"
+
+"ci":
+  label: "ci"
+  description: "ci related documentations"
+  permalink: "/ci"
+
+"send email":
+  label: "send email"
+  description: "send email related documentations"
+  permalink: "/send-email"

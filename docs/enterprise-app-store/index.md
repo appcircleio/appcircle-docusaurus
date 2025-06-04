@@ -22,6 +22,12 @@ Although iOS apps can be signed with Ad-Hoc provisioning profiles for in-house d
 
 If you have more than 100 users and don't want to deal with device enrollment, you need to use sign your apps with Enterprise Certificate. Please check the Apple's Enterprise program for more information.
 
+:::caution Signing Binary
+
+Appcircle's Enterprise App Store module allows you to distribute your application without the need for any external tools. However, the way your app is signed remains your responsibility and depends on your own workflows; therefore, if you are not enrolled in the Apple Enterprise Program, Appcircle will not provide an enterprise signing service.
+
+:::
+
 https://developer.apple.com/programs/enterprise/
 
 ## [Enterprise App Store Profile](/enterprise-app-store/enterprise-app-store-profile)
@@ -78,7 +84,7 @@ Yes. You can customize your logo, primary and secondary color and the main text 
 
 #### How will users enter my App Portal?
 
-Once you go to your portal's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter, Developer, and Professional plans. Please [contact us](https://appcircle.io/contact) to request custom domains).
+Once you go to your portal's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter plans. Please [contact us](https://appcircle.io/contact) to request custom domains).
 
 
 #### Can I set an authentication method for accessing the Enterprise Portal?

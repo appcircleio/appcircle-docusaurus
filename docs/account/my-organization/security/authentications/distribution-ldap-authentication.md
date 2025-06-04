@@ -15,6 +15,16 @@ Whether you're new to LDAP or looking to streamline your authentication process,
 To get started, simply navigate to the **Security** page within our platform and click on the "Add New" button next to LDAP Login under the **Authentications** section.
 From there, you'll be guided through the process of creating LDAP configurations, including filling in the necessary details and enabling Two Factor Authentication (2FA) for added security.
 
+:::note
+**Cloud** Appcircle supports **only email** 2FA method, while the self-hosted Appcircle installation using **Docker/Podman** supports both **email** and **SMS** 2FA methods.
+
+Similar to the cloud, the self-hosted Appcircle installation using the **Helm chart** also **does not support SMS** 2FA method for now.
+:::
+
+:::info
+The SMS 2FA method on Docker/Podman-based self-hosted Appcircle requires a custom integration with your SMS service. Please [contact us](https://appcircle.io/contact) for further details.
+:::
+
 Once set up, LDAP Login allows you to control access to distributed links and adjust distribution authorization through the Distribution Profiles.
 This means you can tailor access permissions according to your organization's specific needs.
 
@@ -36,7 +46,7 @@ Please refer the [**Create From Existing LDAP Configuration**](/account/my-organ
 
 - Fill in the details of your LDAP Configurations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap2.png' />
 
 - The Connect button will switch to the Manage button once a configuration is created.
 
@@ -50,7 +60,7 @@ Please refer the [**Create From Existing LDAP Configuration**](/account/my-organ
   Providers are entities responsible for retrieving user information from LDAP servers.
   Specifying the order allows you to prioritize certain providers over others, ensuring efficient user lookup operations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login-order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap3.png' />
 
 :::info
 
@@ -104,7 +114,11 @@ Existing LDAP configurations will be listed on the screen. Select one and click 
 
 - On the Create LDAP Configuration screen, fill in the **Name** and **Credential** fields (all other values are prefilled). Adjust any fields as needed, then click **Save**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap2.png' />
+
+:::info
+The LDAP authentication configuration for Testing Portal can be enabled or disabled by clicking the “Activate LDAP” toggle.
+:::
 
 ## Deleting LDAP Login
 

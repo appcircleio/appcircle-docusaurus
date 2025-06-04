@@ -490,25 +490,29 @@ Next, configure the SAML settings in Okta to ensure proper authentication and re
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/distribution-sso-okta-saml-entity-id.png" />
 
-3. Download **Signing Certificate** from Appcircle.
+3. Select **EmailAddress** for the Name ID format.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-okta-saml-name-id-format-distribute.png" />
+
+4. Download **Signing Certificate** from Appcircle.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml-appcircle-metadata.png" />
 
-4. Click on **Show Advanced Settings**
+5. Click on **Show Advanced Settings**
 
-5. Upload downloaded certificate to Signature Certificate field.
+6. Upload downloaded certificate to Signature Certificate field.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-okta-saml-signing-certificate.png" />
 
-6. Enable **Allow application to initiate Single Logout**.
+7. Enable **Allow application to initiate Single Logout**.
 
-7. Copy and paste **Logout Redirect URL** to **Single Logout URL** field. Copy and paste **Service Provider Entity ID** to **SP Issuer**.
+8. Copy and paste **Logout Redirect URL** to **Single Logout URL** field. Copy and paste **Service Provider Entity ID** to **SP Issuer**.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml-appcircle-metadata.png" />
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-okta-saml-signing-certificate.png" />
 
-8. Instead of manually configuring all SAML settings in Appcircle, you can download the SAML metadata XML file from Okta:
+9. Instead of manually configuring all SAML settings in Appcircle, you can download the SAML metadata XML file from Okta:
 
 Click the **Copy** button next to the Metadata URL and open it in another tab to download the XML file.
 

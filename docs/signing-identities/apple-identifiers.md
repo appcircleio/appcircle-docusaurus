@@ -65,4 +65,14 @@ In the Edit screen, you can see all the capabilitiy it has in BundleID and you c
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-editModal.png' />
 
+## Delete BundleID
 
+To delete a BundleID, click the ... button and select the **Delete** option.
+
+:::info
+
+BundleIDs deleted on **Appcircle** will only be removed from **Appcircle** and will not affect those on **Apple Developer** account.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-Apple-Identifiers-Delete-Annotated.png' />

@@ -7,6 +7,7 @@ tags: [custom scripts, build, test, workflow, step]
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Screenshot from '@site/src/components/Screenshot';
+import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
 
 # Custom Script
 
@@ -34,7 +35,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 If you need to use sensitive variable in your script, please do not use these sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
-We recommend using [**Environment Variables**](/environment-variables/managing-variables) groups for such sensitive variables.
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
 
 :::
 
@@ -184,7 +185,7 @@ Please feel free to edit the following variables according to your own requireme
 
 ### How to use environment variables along with the `sudo` command?
 
-Both user-created and Appcircle-reserved [environment variables](/environment-variables/managing-variables) can be used within a custom script with any required command. But, by default, commands that are triggered with `sudo` will not reach them since the user scope is changed.
+Both user-created and Appcircle-reserved [environment variables](/build/build-environment-variables#adding-key-and-text-based-value-pairs) can be used within a custom script with any required command. But, by default, commands that are triggered with `sudo` will not reach them since the user scope is changed.
 
 In order to use all user environment variables with `sudo`, you should add the `-E` argument to the `sudo` command. The `-E` (preserve environment) option indicates to the security policy that the user wishes to preserve their existing environment variables.
 
@@ -297,7 +298,7 @@ This script is written in `Bash`. When running with **Custom Script**, you need 
 :::note Input Variables
 When using your own SMTP server credentials for the three variables below, using **Environment Variables** is strongly suggested since this prevents sensitive information, such as passwords, from being exposed to unauthorized individuals.
 
-For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
+For more detailed information, please refer to the [**Environment Variables**](/build/build-environment-variables) documentation.
 
 - **$CS_EMAIL**: SMTP Server email address.
 - **$CS_USERNAME**: Sender email address.
@@ -320,7 +321,7 @@ If you want to send an email to multiple email addresses instead of a single ema
 
 :::danger Sensitive Informations
 
-Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) for these types of values.
+Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/build/build-environment-variables#adding-key-and-text-based-value-pairs) for these types of values.
 
 To do this, comment out or remove the sensitive variables such as `$CS_EMAIL`, `$CS_USERNAME`, and `$CS_PASSWORD` defined at the top of the script, and add them as environment variables instead.
 
@@ -372,7 +373,7 @@ Here is an example using Dropbox's [file-upload](https://www.dropbox.com/develop
 :::danger
 
 Ensure sensitive data, like access tokens, are defined as private environment variables. Learn more:
-- [Adding key and text-based value pairs](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs)
+- [Adding key and text-based value pairs](/build/build-environment-variables#adding-key-and-text-based-value-pairs)
 
 :::
 
@@ -476,3 +477,160 @@ Steps that are disabled in the workflow will not appear in the above output.
 :::
 
 Simply include this script in your workflow to better understand and monitor the status of your workflow steps.
+
+### How to generate the build log URL during the build time?
+
+When a build is triggered in Appcircle, the build log starts to generate. If you need access to the build log URL, you can retrieve two different output links by adding the Bash script below to the relevant workflow.
+
+:::warning Log URL Changes After Build is Finished
+
+Please note that the links for the **in-progress** and the **completed** build logs are different, so be sure to use them according to your specific needs.
+
+No specific action is required for these variables, except that the base URL (`base_url`) may need to be updated if you are using a self-hosted Appcircle.
+
+In the script only base_url may need to be updated if you are using self-hosted Appcircle.
+
+:::
+
+The related build profile can be used simply by adding the Custom Script in Bash.
+Assignments are made automatically using environment variables defined by the system, which are represented by values starting with `$`. These variables are explained in detail in the [**Reserved Variables**](/environment-variables/appcircle-specific-environment-variables) section.
+
+```bash
+build_id=$AC_QUEUE_ID
+profile_id=$AC_BUILD_PROFILE_ID
+commit_id=$AC_COMMIT_ID
+
+base_url="https://my.appcircle.io/build/detail"
+
+AC_IN_PROGRESS_BUILD_LOG_URL="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&scope=build&buildId=fakeID${build_id}"
+echo "In-Progress Build Log URL: $AC_IN_PROGRESS_BUILD_LOG_URL"
+
+AC_COMPLETED_BUILD_LOG_URL="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&buildId=${build_id}&scope=build&method=get"
+echo "Completed Build Log URL: $AC_COMPLETED_BUILD_LOG_URL"
+
+# To use these URL variables in later steps within the same workflow, add them to ENV_FILE_PATH as shown below; otherwise, they will not be accessible.
+echo "AC_COMPLETED_BUILD_LOG_URL=$AC_COMPLETED_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
+echo "AC_IN_PROGRESS_BUILD_LOG_URL=$AC_IN_PROGRESS_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
+```
+
+### How do I store and re-use custom scripts from a Git repository?
+
+If you are looking for a modular way to manage your Appcircle CI custom scripts, you can host your script files in a Git repository and pull them dynamically into the build environment. This approach helps keep your workflow clean and allows centralized version control for your custom scripts.
+
+This section explains how to clone a private Git repository and execute a specific script file from it using the Custom Script step.
+
+The following Bash script has been tested on multiple Git providers using personal access tokens (PAT) for authentication.
+
+:::info
+
+If you are using a public repository, you do not need to obtain an access token. In this case, you can use the Git clone command directly in your script without including any authentication.
+
+:::
+
+To use this approach, you must first convert your Bash or Ruby script into a Git repository. This means placing your Bash or Ruby file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure).
+
+:::caution
+
+It is recommended to create a repository specifically for the desired custom script as a Bash or Ruby file.
+
+:::
+
+:::warning Required Permissions
+
+To successfully clone a repository, your personal access token (PAT) must have at least read access to the repository.
+
+Write or admin permissions are not required for this use case.
+
+Note: When creating a personal access token with GitLab, the token must have at least Reporter access level.
+
+Note: Bitbucket requires a user-level personal access token for Git operations such as cloning. Repository-level access tokens are not supported for Git over HTTPS and will result in authentication errors if used.
+
+:::
+
+This script demonstrates how to fetch a Bash script from a private GitHub Cloud repository as an example. Adjustments are required when using a different Git provider or executing Ruby code.
+
+:::tip Advantages of Git-Based Custom Script Management
+
+Using a Git repository to manage your custom scripts provides several key advantages:
+
+Reusability: The same script repository can be used across multiple workflows and build profiles without duplication.
+
+Traceability: Every change to the script is version-controlled and can be audited or rolled back via Git history.
+
+Collaboration: Multiple team members can contribute and review changes through pull requests.
+
+CI/CD Compatibility: Changes in scripts are automatically reflected in builds without needing to manually update workflows.
+
+Branching Support: Different versions of scripts can be maintained using Git branches and referenced independently.
+
+This approach significantly improves scalability, maintainability, and consistency in teams managing multiple CI pipelines.
+
+:::
+
+<PatDanger />
+
+```bash
+#! /bin/bash
+set -e
+
+# Git clone URL
+CS_GIT_CLONE_URL="https://example.org/exampleuser/examplerepo.git"
+CS_GIT_USERNAME="$YOUR_GIT_USERNAME"
+CS_GIT_PAT="$YOUR_GIT_PAT"
+CS_GIT_BRANCH="main" # or desired branch name 
+CS_GIT_SCRIPT_FILE="test.sh"  # or "Example.rb"
+
+# Create authorization header using Base64 encoding
+AUTH_STRING="$CS_GIT_USERNAME:$CS_GIT_PAT"
+ENCODED_AUTH=$(printf "%s" "$AUTH_STRING" | base64)
+HEADER_VALUE="Authorization: Basic $ENCODED_AUTH"
+
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+CS_ROOT_FOLDER="Cloned_Script_$TIMESTAMP"
+mkdir -p "$CS_ROOT_FOLDER"
+cd "$CS_ROOT_FOLDER"
+
+# Clone the repository using the authorization header
+echo "Cloning the repository..."
+git -c http.extraheader="$HEADER_VALUE" clone "$CS_GIT_CLONE_URL"
+
+# Navigate into the cloned repository
+CS_FOLDER_NAME=$(basename "$CS_GIT_CLONE_URL" .git)
+cd "$CS_FOLDER_NAME" || { echo "Failed to enter the directory."; exit 0; }
+
+# Switch to the target branch
+git checkout "$CS_GIT_BRANCH"
+
+# Run the script file if it exists
+if [ ! -f "./$CS_GIT_SCRIPT_FILE" ]; then
+    echo "Script file not found: $CS_GIT_SCRIPT_FILE"
+    exit 1
+fi
+
+case "$CS_GIT_SCRIPT_FILE" in
+  *.sh)
+    chmod +x "./$CS_GIT_SCRIPT_FILE"
+    ./"$CS_GIT_SCRIPT_FILE"
+    ;;
+  *.rb)
+    ruby "$CS_GIT_SCRIPT_FILE"
+    ;;
+  *)
+    echo "Unsupported script type: $CS_GIT_SCRIPT_FILE"
+    exit 1
+    ;;
+esac
+
+```
+
+:::caution
+
+If you are seeing the following error in the build log, please ensure that both the username and the personal access token (PAT) are set correctly. This error is returned by the Git provider when authentication fails due to an incorrect or missing username or PAT:
+
+```bash
+
+fatal: could not read Username for Git provider
+
+```
+
+:::
