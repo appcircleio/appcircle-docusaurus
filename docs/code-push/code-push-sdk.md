@@ -21,7 +21,7 @@ To start using the Appcircle CodePush feature, the first step is to integrate th
 1. To install the SDK using the command line, run the following command in the root directory of your project.
 
 ```bash
-npm i @appcircle/react-native-code-push@0.0.2-alpha.5
+npm i @appcircle/react-native-code-push
 ```
 
 2. Using `package.json` file to add the SDK: 
@@ -29,7 +29,7 @@ Add the SDK to dependencies section in your `package.json` file.
 
 ```json package.json
 "dependencies": {
-    "@appcircle/react-native-code-push": "0.0.2-alpha.5",
+    "@appcircle/react-native-code-push": "0.0.2",
     
     //Other Dependencies here
 }
