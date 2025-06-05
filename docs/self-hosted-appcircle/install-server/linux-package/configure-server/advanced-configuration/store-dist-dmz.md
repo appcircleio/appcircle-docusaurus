@@ -9,7 +9,7 @@ tags:
     enterprise app store,
     testing distribution,
   ]
-sidebar_position: 12
+sidebar_position: 50
 ---
 
 import Tabs from '@theme/Tabs';

@@ -29,19 +29,28 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :muscle: Improvements
 
 - The use of environment variables within the metadata detail fields, such as phone and email, in the publish module is now supported. <PublishBadge/> <CloudBadge/>
+- The store status change option has been added to the notifications list. Users can now be automatically notified when the store status changes for a version within the publish module. <PublishBadge/> <CloudBadge/>
+- The reserved Publish environment variable `AC_PUBLISH_WORKFLOW_NAME` has been updated to `AC_PUBLISH_FLOW_NAME`. <PublishBadge/> <CloudBadge/>
 - The id key has been removed from the downloaded environment variable JSON file to simplify the structure and prevent potential conflicts during re-import or reuse. <EnvironmentVariablesBadge/> <CloudBadge/>
 - “Expired” and “Exists” tags have been added to Apple provisioning profiles to improve visibility during registering operations. <SigningIdentitiesBadge/> <CloudBadge/>
 - An “Available” label is now shown for certificates already registered in Appcircle during provisioning profile registration. <SigningIdentitiesBadge/> <CloudBadge/>
-- Webhook notification channels now support events related to the Publish module. <AccountBadge/> <CloudBadge/>
-- The store status change option has been added to the notifications list. Users can now be automatically notified when the store status changes for a version within the publish module. <PublishBadge/> <CloudBadge/>
 - Binary search by name, bundle ID, and version is now supported within the Enterprise Portal. Additionally, versions can be sorted by version number and upload date. <EnterpriseStoreBadge/> <CloudBadge/>
 - A new UI warning is now displayed when too many requests are sent within a short time frame. <CloudBadge/>
+- Help link buttons have been added across various module components where they were previously missing. <CloudBadge/>
+- Webhook notification channels now support events related to the Publish module. <AccountBadge/> <CloudBadge/>
+- Improved the sorting of organization and sub-organization lists by applying alphabetical and numeric order where applicable. <AccountBadge/> <CloudBadge/>
+- A name field has been added allowing users to assign a custom name to their webhook notification integration settings. <AccountBadge/> <CloudBadge/>
+- Various typos have been corrected and text improvements have been made in the webhook notification integration settings. <AccountBadge/> <CloudBadge/>
+- An exit icon has been added to the “Leave Organization” button to replace the previous delete icon. <AccountBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
 - An issue was fixed where the Custom Domain option could not be enabled by cloud users in the Enterprise App Store settings. <EnterpriseStoreBadge/> <CloudBadge/>
+- Fixed an issue where users accessing Enterprise App Store profiles via direct channel links could not view the release notes of the binaries. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed where branches deleted from the repository were not removed from the list until the screen was refreshed. <BuildBadge/> <CloudBadge/>
 - An issue has been fixed where the “Select All” button was not functioning for the build item list within the Build module. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where refreshing the branch list caused the selected branch to be deselected. <BuildBadge/> <CloudBadge/>
+- Fixed an issue where users who were members of only a single sub-organization experienced problems related to license scope. <AccountBadge/> <CloudBadge/>
 
 ## 3.27.2 - 2025-05-09 Upload Option for Variable Groups, Build Enhancements, Improvements and more
 

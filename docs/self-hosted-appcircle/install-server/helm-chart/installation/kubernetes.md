@@ -221,6 +221,8 @@ kubectl create secret docker-registry containerregistry \
   --docker-password='superSecretRegistryPassword'
 ```
 
+See [External Image Registries](/self-hosted-appcircle/install-server/helm-chart/configuration/external-image-registry) page for more details.
+
   </TabItem>
 </Tabs>
 
@@ -299,7 +301,7 @@ global:
       # SMTP server host
       host: smtp.spacetech.com
       # SMTP Server port, 587 typically used for StartTLS
-      port: 587
+      port: "587"
       # Email address that will be used as sender
       from: appcircle@spacetech.com
       # SSL configuration - Set to 'true' if the SMTP server uses SSL/TLS protocol for secure communication, typically on port 465.
@@ -365,9 +367,6 @@ auth:
     # Initial admin password - Should contain: min 6 chars, 1 lowercase, 1 uppercase, 1 number
     # You can create a secret with the password or directly enter the password here
     initialPassword: "superSecretAppcirclePassword1234"
-    image:
-      # Appcircle keycloak image repository path
-      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-keycloak
 
 # Internal Ingress controller configuration
 ingress-nginx:
@@ -379,6 +378,15 @@ vault:
     image:
       # Appcircle vault image repository path
       repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault
+
+cert-utils-operator:
+  image:
+    # Container image repository path for the cert-utils-operator
+    repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/cert-utils-operator
+  kube_rbac_proxy:
+    image:
+      # Container image repository path for the kube-rbac-proxy
+      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/kube-rbac-proxy
 
 # Web event Redis configuration
 webeventredis:
@@ -475,7 +483,7 @@ appcircle-webeventredis            nginx   kvs.appcircle.spacetech.com          
 
 ### 2. Login to the Appcircle Dashboard
 
-Check the output of the `Helm install` command to see login URL, initial username and command to get initial user password.
+Check the output of the `helm install` command to see login URL, initial username and command to get initial user password.
 
 ```bash
 Self-Hosted Configuration:
