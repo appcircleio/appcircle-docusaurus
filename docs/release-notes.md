@@ -29,14 +29,15 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :muscle: Improvements
 
 - The use of environment variables within the metadata detail fields, such as phone and email, in the publish module is now supported. <PublishBadge/> <CloudBadge/>
+- The store status change option has been added to the notifications list. Users can now be automatically notified when the store status changes for a version within the publish module. <PublishBadge/> <CloudBadge/>
+- The reserved Publish environment variable `AC_PUBLISH_WORKFLOW_NAME` has been updated to `AC_PUBLISH_FLOW_NAME`. <PublishBadge/> <CloudBadge/>
 - The id key has been removed from the downloaded environment variable JSON file to simplify the structure and prevent potential conflicts during re-import or reuse. <EnvironmentVariablesBadge/> <CloudBadge/>
 - “Expired” and “Exists” tags have been added to Apple provisioning profiles to improve visibility during registering operations. <SigningIdentitiesBadge/> <CloudBadge/>
 - An “Available” label is now shown for certificates already registered in Appcircle during provisioning profile registration. <SigningIdentitiesBadge/> <CloudBadge/>
-- Webhook notification channels now support events related to the Publish module. <AccountBadge/> <CloudBadge/>
-- The store status change option has been added to the notifications list. Users can now be automatically notified when the store status changes for a version within the publish module. <PublishBadge/> <CloudBadge/>
 - Binary search by name, bundle ID, and version is now supported within the Enterprise Portal. Additionally, versions can be sorted by version number and upload date. <EnterpriseStoreBadge/> <CloudBadge/>
 - A new UI warning is now displayed when too many requests are sent within a short time frame. <CloudBadge/>
 - Help link buttons have been added across various module components where they were previously missing. <CloudBadge/>
+- Webhook notification channels now support events related to the Publish module. <AccountBadge/> <CloudBadge/>
 - Improved the sorting of organization and sub-organization lists by applying alphabetical and numeric order where applicable. <AccountBadge/> <CloudBadge/>
 - A name field has been added allowing users to assign a custom name to their webhook notification integration settings. <AccountBadge/> <CloudBadge/>
 - Various typos have been corrected and text improvements have been made in the webhook notification integration settings. <AccountBadge/> <CloudBadge/>
