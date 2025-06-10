@@ -30,7 +30,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - The use of environment variables within the metadata detail fields, such as phone and email, in the publish module is now supported. <PublishBadge/> <CloudBadge/>
 - The store status change option has been added to the notifications list. Users can now be automatically notified when the store status changes for a version within the publish module. <PublishBadge/> <CloudBadge/>
-- The reserved Publish environment variable `AC_PUBLISH_WORKFLOW_NAME` has been updated to `AC_PUBLISH_FLOW_NAME`. <PublishBadge/> <CloudBadge/>
 - The id key has been removed from the downloaded environment variable JSON file to simplify the structure and prevent potential conflicts during re-import or reuse. <EnvironmentVariablesBadge/> <CloudBadge/>
 - “Expired” and “Exists” tags have been added to Apple provisioning profiles to improve visibility during registering operations. <SigningIdentitiesBadge/> <CloudBadge/>
 - An “Available” label is now shown for certificates already registered in Appcircle during provisioning profile registration. <SigningIdentitiesBadge/> <CloudBadge/>
@@ -51,6 +50,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where the “Select All” button was not functioning for the build item list within the Build module. <BuildBadge/> <CloudBadge/>
 - An issue has been fixed where refreshing the branch list caused the selected branch to be deselected. <BuildBadge/> <CloudBadge/>
 - Fixed an issue where users who were members of only a single sub-organization experienced problems related to license scope. <AccountBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- The reserved Publish environment variable `AC_PUBLISH_WORKFLOW_NAME` has been renamed to `AC_PUBLISH_FLOW_NAME`, and its value will now be set to “Default Publish Flow” instead of the step name. <PublishBadge/> <CloudBadge/>
 
 ## 3.27.2 - 2025-05-09 Upload Option for Variable Groups, Build Enhancements, Improvements and more
 
