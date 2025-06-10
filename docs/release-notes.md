@@ -53,7 +53,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :warning: Breaking Changes
 
-- The reserved Publish environment variable `AC_PUBLISH_WORKFLOW_NAME` has been renamed to `AC_PUBLISH_FLOW_NAME`, and its value will now be set to “Default Publish Flow” instead of the step name. <PublishBadge/> <CloudBadge/>
+- The reserved Publish environment variable `AC_PUBLISH_WORKFLOW_NAME` has been renamed to `AC_PUBLISH_FLOW_NAME`, and its value will now be set to “Default Publish Flow” instead of the step name. <PublishBadge/> <EnvironmentVariablesBadge/> <CloudBadge/>
 
 ## 3.27.2 - 2025-05-09 Upload Option for Variable Groups, Build Enhancements, Improvements and more
 
