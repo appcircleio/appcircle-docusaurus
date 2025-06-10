@@ -7,22 +7,37 @@ tags: [custom scripts, build, test, workflow, step]
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Screenshot from '@site/src/components/Screenshot';
+import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
 
 # Custom Script
 
 You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
 
+### Prerequisites
+
+There are no prerequisites required before using the **Custom Script** step.
+
 :::tip
+
 Note that you can put the **Custom Script** component anywhere you want in the workflow. This step is used to add different capabilities to the existing workflow.
+
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customScript.png' />
 
 ### Input Variables
 
-You can find all the parameters required for this step in the table below, with their descriptions in detail.
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customInput.png' />
+
+:::danger Sensitive Variables
+
+If you need to use sensitive variable in your script, please do not use these sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
+
+We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
+
+:::
 
 | Variable Name | Description                                                                                                                                                                                                         | Status   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -30,77 +45,34 @@ You can find all the parameters required for this step in the table below, with 
 | `Script`      | With the **Script** input variable, you can add the script you want to run and run it directly in the selected language. If you leave this input blank, it will proceed to the next step without taking any action. | Optional |
 
 :::caution
+
 Note that the **Script** area works according to the selected language variable. If you want to run a script in any language, make sure that you select the language correctly.
-:::
-
-## Custom Script FAQ
-
-### How to change JAVA version
-
-If you want to change the JAVA version for your Android project, you can achieve this by changing the `JAVA_HOME` environment variable.
-
-Appcircle currently has `OpenJDK 11` (default), `OpenJDK 8`, `OpenJDK 17` and `OpenJDK 21`.
-
-[Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 11` as default JDK version.
-
-You can use the below custom script before your build step to change your `JAVA_HOME` environment variable.
-
-```bash
-echo "Default JAVA" $JAVA_HOME
-
-echo "OpenJDK 8" $JAVA_HOME_8_X64
-echo "OpenJDK 11" $JAVA_HOME_11_X64
-echo "OpenJDK 17" $JAVA_HOME_17_X64
-echo "OpenJDK 21" $JAVA_HOME_21_X64
-
-# Change JAVA_HOME to OPENJDK 17
-echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $AC_ENV_FILE_PATH
-```
-
-Create a custom script like above and put it **above** your [Android Build](/workflows/android-specific-workflow-steps/android-build) step.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-android-change-java-workflow-detail.png" />
-
-:::caution
-
-Please be aware that this custom script affects any step that comes after.
-
-Therefore, you should use this step as a standalone step instead of as part of any custom script.
 
 :::
 
-:::tip
+---
 
-You can find more details about the included Java versions on the [Android Build Infrastructure](/infrastructure/android-build-infrastructure#java-version) page.
+To access the source code of this component, please use the following link:
 
-:::
+https://github.com/appcircleio/appcircle-custom-script-component
 
-:::info
+---
 
-#### Changing System Java Version
+## FAQ
 
-Changing the `JAVA_HOME` environment variable will be enough for your Android builds, but it won't change the `java` version in the system.
+### How to change Java version
 
-If you're using a tool in the build pipeline that requires another Java version than the default OpenJDK 11, you should also change the system's default Java version using the below commands in the custom script.
+Appcircle currently has `OpenJDK 17` (default), `OpenJDK 8`, `OpenJDK 11` and `OpenJDK 21`.
 
-```bash
-source "$SDKMAN_DIR/bin/sdkman-init.sh"
-sdk default java $(basename $JAVA_HOME_17_X64)
-```
+[Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 17` as default JDK version.
 
-After that, you will see the output of `java -version` as below in the build logs.
+To switch JDK versions, you can now use the dedicated [**Select Java Version**](/workflows/common-workflow-steps/select-java-version) component, so there is no need to use **Custom Script** for this task. For further details on this component, refer to the documentation:
 
-```txt
-openjdk version "17.0.7" 2023-04-18 LTS
-OpenJDK Runtime Environment Zulu17.42+19-CA (build 17.0.7+7-LTS)
-OpenJDK 64-Bit Server VM Zulu17.42+19-CA (build 17.0.7+7-LTS, mixed mode, sharing)
-```
+- [Select Java Version](/workflows/common-workflow-steps/select-java-version)
 
-You can also switch to other pre-installed Java versions using the relevant environment variable as an argument in the `sdk` command. For more details about these environment variables, see the [Android Build Infrastructure](/infrastructure/android-build-infrastructure#java-version) page.
+However, if you prefer to update or improve it manually on **Custom Script**, the source code is available here:
 
-:::
+- [Select Java Version - Source Code](https://github.com/appcircleio/appcircle-select-java-version-component)
 
 ### How to install a new package to the build machine?
 
@@ -137,7 +109,7 @@ sed -i '' 's/old-value/new-value/g' build.gradle
 
 For each step in the workflow, you can view the input and output variables in the step configuration.
 
-The repository directory is an output of the Git Clone step and its patch can be accessed with the `AC_REPOSITORY_PATH` environment variable by any step added after the Git Clone step. An example is as follows:
+The repository directory is an output of the Git Clone step and its patch can be accessed with the `$AC_REPOSITORY_PATH` environment variable by any step added after the **Git Clone** step. An example is as follows:
 
 ```bash
 cd $AC_REPOSITORY_DIR
@@ -146,7 +118,7 @@ cat README
 
 ### How to a add a file as a downloadable build artifact?
 
-You can add any file to the output directory that contain the build artifacts using the `AC_OUTPUT_DIR` environment variable. An example is as follows:
+You can add any file to the output directory that contain the build artifacts using the `$AC_OUTPUT_DIR` environment variable. An example is as follows:
 
 ```bash
 cd $AC_REPOSITORY_DIR/app/build/reports/
@@ -158,7 +130,9 @@ mv lint-results* $AC_OUTPUT_DIR/
 This document provides a sample custom script written in Ruby that can be integrated into your CI/CD pipeline to enforce a minimum test coverage threshold. The script is designed to break the pipeline if the covered test result falls below a specified percentage.
 
 :::danger
-Please note that this custom script must be placed after the [**Test Reports**](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report) step in the workflow.
+
+Please note that this custom script must be placed after the [**Test Reports**](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report) step in the workflow.
+
 :::
 
 ```ruby
@@ -209,13 +183,9 @@ Please feel free to edit the following variables according to your own requireme
 
 :::
 
-To access the source code of this component, please use the following link:
-
-https://github.com/appcircleio/appcircle-custom-script-component/
-
 ### How to use environment variables along with the `sudo` command?
 
-Both user-created and Appcircle-reserved [environment variables](/environment-variables/managing-variables) can be used within a custom script with any required command. But, by default, commands that are triggered with `sudo` will not reach them since the user scope is changed.
+Both user-created and Appcircle-reserved [environment variables](/build/build-environment-variables#adding-key-and-text-based-value-pairs) can be used within a custom script with any required command. But, by default, commands that are triggered with `sudo` will not reach them since the user scope is changed.
 
 In order to use all user environment variables with `sudo`, you should add the `-E` argument to the `sudo` command. The `-E` (preserve environment) option indicates to the security policy that the user wishes to preserve their existing environment variables.
 
@@ -328,7 +298,7 @@ This script is written in `Bash`. When running with **Custom Script**, you need 
 :::note Input Variables
 When using your own SMTP server credentials for the three variables below, using **Environment Variables** is strongly suggested since this prevents sensitive information, such as passwords, from being exposed to unauthorized individuals.
 
-For more detailed information, please refer to the [**Environment Variables**](/environment-variables/managing-variables) documentation.
+For more detailed information, please refer to the [**Environment Variables**](/build/build-environment-variables) documentation.
 
 - **$CS_EMAIL**: SMTP Server email address.
 - **$CS_USERNAME**: Sender email address.
@@ -351,7 +321,7 @@ If you want to send an email to multiple email addresses instead of a single ema
 
 :::danger Sensitive Informations
 
-Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs) for these types of values.
+Since the variables mentioned above, which need to be provided by the user, contain **sensitive** information like **passwords**, please use [**Environment Variables**](/build/build-environment-variables#adding-key-and-text-based-value-pairs) for these types of values.
 
 To do this, comment out or remove the sensitive variables such as `$CS_EMAIL`, `$CS_USERNAME`, and `$CS_PASSWORD` defined at the top of the script, and add them as environment variables instead.
 
@@ -403,7 +373,7 @@ Here is an example using Dropbox's [file-upload](https://www.dropbox.com/develop
 :::danger
 
 Ensure sensitive data, like access tokens, are defined as private environment variables. Learn more:
-- [Adding key and text-based value pairs](/environment-variables/managing-variables#adding-key-and-text-based-value-pairs)
+- [Adding key and text-based value pairs](/build/build-environment-variables#adding-key-and-text-based-value-pairs)
 
 :::
 
@@ -425,5 +395,242 @@ This script generates a timestamped log file (e.g., `ac-log-2024-10-01-14-55.txt
 :::caution
 
 Ensure that the **Custom Script** step runs after the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step to capture the full log.
+
+:::
+
+### How can I print the status of workflow steps with detailed information?
+
+If you want to track or share the status of your workflow or individual steps during a build, you can use the following environment variables:  
+
+- **`$AC_BUILD_STATUS`**: Displays the running status of the workflow so far.
+- **`$AC_BUILD_STEPS_STATUS`**: Displays detailed information about each executed step.  
+
+:::caution
+
+The **runner** version must be **1.8.0 or later** to use the above two environment variables.
+
+:::
+
+However, the output of `$AC_BUILD_STEPS_STATUS` is in raw JSON format, which may not be easy to read directly. To make it more readable, you can use the following Ruby script to format and print the information in a user-friendly way:
+
+```ruby
+require 'json'
+
+puts "AC_BUILD_STATUS: #{ENV['AC_BUILD_STATUS']}"
+# Read the environment variable
+json_data = ENV['AC_BUILD_STEPS_STATUS']
+
+begin
+  # Parse and beautify the JSON
+  parsed_data = JSON.parse(json_data)
+  pretty_json = JSON.pretty_generate(parsed_data)
+  
+  # Output the formatted JSON
+  puts "AC_BUILD_STEPS_STATUS:"
+  puts pretty_json
+rescue JSON::ParserError => e
+  puts "Failed to parse JSON: #{e.message}"
+end
+```
+
+:::info
+
+The script above is written in Ruby. To execute it, select `Ruby` as the `Execute with` option in the **Custom Script** step.
+
+:::
+
+:::warning  
+
+To ensure your script works even if one of the steps in the workflow fails (and you want to capture the failed status as well), enable the **"Always run this step even if the previous steps fail"** option.  
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-custom-script-faq-2.png" />  
+
+:::
+
+If you add a **Custom Script** step with the code above after the **Git Clone** step in your workflow, the script will generate an output similar to this:
+
+```json
+AC_BUILD_STATUS: Success
+AC_BUILD_STEPS_STATUS:
+[
+  {
+    "StepName": "Activate SSH Private Key",
+    "BuildStatus": "Success",
+    "Duration": 0.133102,
+    "StartDate": "2024-12-30T16:48:47.919386Z",
+    "FinishDate": "2024-12-30T16:48:48.052488Z"
+  },
+  {
+    "StepName": "Git Clone",
+    "BuildStatus": "Success",
+    "Duration": 1.90708,
+    "StartDate": "2024-12-30T16:48:48.186532Z",
+    "FinishDate": "2024-12-30T16:48:50.093612Z"
+  }
+]
+```
+
+:::info 
+
+Steps that are disabled in the workflow will not appear in the above output.
+
+:::
+
+Simply include this script in your workflow to better understand and monitor the status of your workflow steps.
+
+### How to generate the build log URL during the build time?
+
+When a build is triggered in Appcircle, the build log starts to generate. If you need access to the build log URL, you can retrieve two different output links by adding the Bash script below to the relevant workflow.
+
+:::warning Log URL Changes After Build is Finished
+
+Please note that the links for the **in-progress** and the **completed** build logs are different, so be sure to use them according to your specific needs.
+
+No specific action is required for these variables, except that the base URL (`base_url`) may need to be updated if you are using a self-hosted Appcircle.
+
+In the script only base_url may need to be updated if you are using self-hosted Appcircle.
+
+:::
+
+The related build profile can be used simply by adding the Custom Script in Bash.
+Assignments are made automatically using environment variables defined by the system, which are represented by values starting with `$`. These variables are explained in detail in the [**Reserved Variables**](/environment-variables/appcircle-specific-environment-variables) section.
+
+```bash
+build_id=$AC_QUEUE_ID
+profile_id=$AC_BUILD_PROFILE_ID
+commit_id=$AC_COMMIT_ID
+
+base_url="https://my.appcircle.io/build/detail"
+
+AC_IN_PROGRESS_BUILD_LOG_URL="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&scope=build&buildId=fakeID${build_id}"
+echo "In-Progress Build Log URL: $AC_IN_PROGRESS_BUILD_LOG_URL"
+
+AC_COMPLETED_BUILD_LOG_URL="${base_url}/${profile_id}?modal=/build/modal/Logs&profileId=${profile_id}&commitId=${commit_id}&buildId=${build_id}&scope=build&method=get"
+echo "Completed Build Log URL: $AC_COMPLETED_BUILD_LOG_URL"
+
+# To use these URL variables in later steps within the same workflow, add them to ENV_FILE_PATH as shown below; otherwise, they will not be accessible.
+echo "AC_COMPLETED_BUILD_LOG_URL=$AC_COMPLETED_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
+echo "AC_IN_PROGRESS_BUILD_LOG_URL=$AC_IN_PROGRESS_BUILD_LOG_URL" >> $AC_ENV_FILE_PATH
+```
+
+### How do I store and re-use custom scripts from a Git repository?
+
+If you are looking for a modular way to manage your Appcircle CI custom scripts, you can host your script files in a Git repository and pull them dynamically into the build environment. This approach helps keep your workflow clean and allows centralized version control for your custom scripts.
+
+This section explains how to clone a private Git repository and execute a specific script file from it using the Custom Script step.
+
+The following Bash script has been tested on multiple Git providers using personal access tokens (PAT) for authentication.
+
+:::info
+
+If you are using a public repository, you do not need to obtain an access token. In this case, you can use the Git clone command directly in your script without including any authentication.
+
+:::
+
+To use this approach, you must first convert your Bash or Ruby script into a Git repository. This means placing your Bash or Ruby file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure).
+
+:::caution
+
+It is recommended to create a repository specifically for the desired custom script as a Bash or Ruby file.
+
+:::
+
+:::warning Required Permissions
+
+To successfully clone a repository, your personal access token (PAT) must have at least read access to the repository.
+
+Write or admin permissions are not required for this use case.
+
+Note: When creating a personal access token with GitLab, the token must have at least Reporter access level.
+
+Note: Bitbucket requires a user-level personal access token for Git operations such as cloning. Repository-level access tokens are not supported for Git over HTTPS and will result in authentication errors if used.
+
+:::
+
+This script demonstrates how to fetch a Bash script from a private GitHub Cloud repository as an example. Adjustments are required when using a different Git provider or executing Ruby code.
+
+:::tip Advantages of Git-Based Custom Script Management
+
+Using a Git repository to manage your custom scripts provides several key advantages:
+
+Reusability: The same script repository can be used across multiple workflows and build profiles without duplication.
+
+Traceability: Every change to the script is version-controlled and can be audited or rolled back via Git history.
+
+Collaboration: Multiple team members can contribute and review changes through pull requests.
+
+CI/CD Compatibility: Changes in scripts are automatically reflected in builds without needing to manually update workflows.
+
+Branching Support: Different versions of scripts can be maintained using Git branches and referenced independently.
+
+This approach significantly improves scalability, maintainability, and consistency in teams managing multiple CI pipelines.
+
+:::
+
+<PatDanger />
+
+```bash
+#! /bin/bash
+set -e
+
+# Git clone URL
+CS_GIT_CLONE_URL="https://example.org/exampleuser/examplerepo.git"
+CS_GIT_USERNAME="$YOUR_GIT_USERNAME"
+CS_GIT_PAT="$YOUR_GIT_PAT"
+CS_GIT_BRANCH="main" # or desired branch name 
+CS_GIT_SCRIPT_FILE="test.sh"  # or "Example.rb"
+
+# Create authorization header using Base64 encoding
+AUTH_STRING="$CS_GIT_USERNAME:$CS_GIT_PAT"
+ENCODED_AUTH=$(printf "%s" "$AUTH_STRING" | base64)
+HEADER_VALUE="Authorization: Basic $ENCODED_AUTH"
+
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+CS_ROOT_FOLDER="Cloned_Script_$TIMESTAMP"
+mkdir -p "$CS_ROOT_FOLDER"
+cd "$CS_ROOT_FOLDER"
+
+# Clone the repository using the authorization header
+echo "Cloning the repository..."
+git -c http.extraheader="$HEADER_VALUE" clone "$CS_GIT_CLONE_URL"
+
+# Navigate into the cloned repository
+CS_FOLDER_NAME=$(basename "$CS_GIT_CLONE_URL" .git)
+cd "$CS_FOLDER_NAME" || { echo "Failed to enter the directory."; exit 0; }
+
+# Switch to the target branch
+git checkout "$CS_GIT_BRANCH"
+
+# Run the script file if it exists
+if [ ! -f "./$CS_GIT_SCRIPT_FILE" ]; then
+    echo "Script file not found: $CS_GIT_SCRIPT_FILE"
+    exit 1
+fi
+
+case "$CS_GIT_SCRIPT_FILE" in
+  *.sh)
+    chmod +x "./$CS_GIT_SCRIPT_FILE"
+    ./"$CS_GIT_SCRIPT_FILE"
+    ;;
+  *.rb)
+    ruby "$CS_GIT_SCRIPT_FILE"
+    ;;
+  *)
+    echo "Unsupported script type: $CS_GIT_SCRIPT_FILE"
+    exit 1
+    ;;
+esac
+
+```
+
+:::caution
+
+If you are seeing the following error in the build log, please ensure that both the username and the personal access token (PAT) are set correctly. This error is returned by the Git provider when authentication fails due to an incorrect or missing username or PAT:
+
+```bash
+
+fatal: could not read Username for Git provider
+
+```
 
 :::

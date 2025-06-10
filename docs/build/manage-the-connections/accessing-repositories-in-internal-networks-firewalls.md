@@ -22,6 +22,7 @@ If the repositories cannot be exposed to the public internet in general, the fol
 - 162.19.204.13
 - 77.92.96.46
 - 77.92.124.2/27
+- 77.92.102.192/28
 
 :::caution
 
@@ -31,4 +32,4 @@ For example, 77.92.124.2/27 means all IP addresses between 77.92.124.1 and 77.92
 
 :::
 
-You can then [connect to the repository](/build/manage-the-connections/adding-a-build-profile#connect-your-repository) with your favorite Git provider.
+You can then [connect to the repository](/build/manage-the-connections/adding-a-build-profile) with your favorite Git provider.

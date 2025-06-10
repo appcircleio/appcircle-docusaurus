@@ -19,11 +19,11 @@ tags:
 
 Select the optimal build stack for your iOS or Android applications to ensure compatibility and performance.
 
-## iOS Build Stacks
+## [iOS Build Stacks](/infrastructure/ios-build-infrastructure)
 
 Choose from a variety of iOS build stacks compatible with different versions of Xcode, Swift, and the iOS SDK to match your project's requirements.
 
-## Android Build Stacks
+## [Android Build Stacks](/infrastructure/android-build-infrastructure)
 
 For Android projects, select a build stack that aligns with your needs for specific versions of the Android SDK, Gradle, and other build tools.
 

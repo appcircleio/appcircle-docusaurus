@@ -8,11 +8,11 @@ tags: [best practices, app development, app deployment, appcircle]
 
 Enhance your experience with Appcircle by following our recommended best practices for app development and deployment.
 
-## Building Multiple Apps in One Profile
+## [Building Multiple Apps in One Profile](/best-practices/building-multiple-apps-in-one-profile)
 
 Learn how to configure a single Appcircle profile to build multiple apps efficiently. This guide will help you set up your projects to streamline the build process across different applications.
 
-## Appcircle Onboarding
+## [Appcircle Onboarding](/best-practices/onboarding)
 
 Get started with Appcircle the right way by following our onboarding best practices. This section provides tips and steps to ensure you make the most of Appcircle from the beginning.
 

@@ -12,21 +12,29 @@ import Screenshot from '@site/src/components/Screenshot';
 With the build cache structure provided by Appcircle, cache files can be shared between different [**Build Profiles**](/build/manage-the-connections/adding-a-build-profile/). This sharing of files enables the faster generation of packages in different Build Profiles, reducing build time. Below is a simple, step-by-step example of how you can achieve this.
 
 :::info
+
 This simple example will use our [**CocoaPods**](https://cocoapods.org/) files in different build profiles. If you intend to use a cache other than dependencies, please refer to the documentation for the [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) component.
+
 :::
 
 :::caution
+
 To share cache between Build Profiles, the [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) component must be added to the related pipeline.
+
 :::
 
 :::caution
+
 As an example, **master** and **development** branches were used, but you can apply the same operations to different branches.
+
 :::
 
 :::danger
+
 Please note that the organizational structure of Appcircle is designed in such a way as to prevent any **security vulnerabilities**. Consequently, exchanging files between organizations or sub-organizations **is not permitted**.
 
-You can find detailed information about the Appcircle organizational structure in the documentation [**here**](https://docs.appcircle.io/account/my-organization).
+You can find detailed information about the Appcircle organizational structure in the documentation [**here**](/account/my-organization).
+
 :::
 
 1. Firstly, the caching of CocoaPods files is initiated in the **`Appcircle Team`** build profile. These files will subsequently be utilized in the **`Appcircle Team 2`** build profile. To accomplish this, the [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) step should be incorporated into the workflow after the **CocoaPods Install** step in the initial build profile.
@@ -50,5 +58,7 @@ You can find detailed information about the Appcircle organizational structure i
 	<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-buildCacheSuccess.png' />
 
 :::danger
+
 When sharing cache files between **Build Profiles**, please make sure that you spell your build profile ID and branch names correctly and use the [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push) and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) steps correctly in each profile. 
+
 :::

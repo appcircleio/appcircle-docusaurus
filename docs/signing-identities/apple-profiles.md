@@ -46,6 +46,12 @@ You can use the Appcircle Testing Distribution or the Enterprise App Store modul
 
 There is no need for device registration, but Apple requires the binary to be protected and not open for public download, so you can use the enrollment feature of the Appcircle Testing Distribution to protect the app distribution.
 
+:::caution Apple Enterprise Signing
+
+If you are **not** enrolled in the **Apple Enterprise Program**, you **cannot** create an **Enterprise** certificate. This limitation is **not** caused by **Appcircle**. Appcircle only provides signing and distribution features and **cannot** be used as an **enterprise signing service**.
+
+:::
+
 :::info
 
 For app builds, signing identities are not mandatory. For example, you can use unsigned apps to run on the simulator or on third-party platforms that resign your app, such as AWS Device Farm.
@@ -84,6 +90,12 @@ The provision profile you register via Appcircle is simultaneously registered on
 In order to register a profile, some parameters are needed. 
 
 After selecting the distribution method, the relevant App ID is selected for which Bundle ID will be created. Then you need to select which certificate you want to create with.
+
+:::info
+
+The certificates that need to be selected when registering a profile are listed by retrieving certificates from your **Apple Developer** account. The certificates listed here are **not** related to the ones uploaded to **Appcircle**.
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerProfileDetails.png' />
 
@@ -145,6 +157,12 @@ If you attempt to delete a Provisioning Profile that is saved in a build configu
 
 You also have the option to force delete it without changing the configurations.
 
+:::info
+
+Profiles deleted on **Appcircle** will only be removed from **Appcircle** and will not affect those on **Apple Developer** account.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete2.png' />
 
 :::caution
@@ -176,6 +194,46 @@ You **cannot** renew **manually uploaded provisioning**.
 :::info Renewed Profiles
 
 If a provision profile is used in a Build Profile, it will continue to be used with the renewed version after the profile is renewed.
+
+:::
+
+### Adding Device to Provision Profile
+
+With Appcircle’s Apple Profiles feature, you can easily add the UDIDs of your test devices to the corresponding provisioning profile.
+
+To manage devices and view the current device list, click the **Profile Action** button and navigate to the **Apple Devices** section.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-deviceAction.png' />
+
+When you click the **Apple Devices** action, you will see a list of devices currently included in the **selected** provisioning profile. In the modal that opens, you can update this list by clicking the **Manage Devices** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-manageDeviceModal.png' />
+
+After clicking the Manage Devices button, you will see two different lists.
+
+The **Existing Devices** list displays the device **UDIDs** currently included in the **selected** provisioning profile. You can remove a device from the provisioning profile by unchecking its checkbox in this list.
+
+Below this, there is the **Non-Existing Devices** list. This list shows the devices that are **registered** in your **Apple Developer Portal** account but are not **included** in the provisioning profile. To add a new device **UDID** to the provisioning profile, select the desired device from this list and proceed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-deviceAddRemove.png' />
+
+:::caution Minimum Device Count
+
+According to **Apple’s Developer Portal** rules, a provisioning profile must include at least **one** device. Therefore, you cannot **remove** all devices from a provisioning profile.
+
+:::
+
+After selecting the devices, you will see a final **Preview** screen. This screen displays the updated device list that will be included in the provisioning profile. You can update the devices in the provisioning profile by clicking the **Update Profile** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-addDevicePreview.png' />
+
+When the profile update is successfully completed, the updated version of the selected provisioning profile will be displayed in the Apple Profiles list.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-updatedList.png' />
+
+:::info Updated Provision Profile
+
+When a provisioning profile is updated, Appcircle replaces the old profile with a new one under a different name. The new name includes the update date and time.
 
 :::
 

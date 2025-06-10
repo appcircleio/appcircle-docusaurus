@@ -6,6 +6,7 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Get Approval via Email
 
@@ -16,6 +17,8 @@ The **Get Approval via Email** step allows you to get approval from the email ad
 Based on your business requirements, you can designate certain email addresses to require approval, specify others as optional approvers, or set a minimum number of approvals needed from the provided email addresses.
 
 If some optional users reject the request but there is still a chance to achieve the minimum approval count, the step will remain in `Waiting` status, awaiting responses from other users. For instance, if you set the minimum approval count to 3, and out of 10 users, only one is required, the step can still succeed. Even if 7 optional users reject, approval can still be obtained from the remaining 3 users. However, if 8 optional users reject, the step will fail, as it will no longer be possible to meet the minimum requirement of 3 approvals.
+
+<NoRunnerUsage />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email-1.png'/>
 

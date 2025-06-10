@@ -197,6 +197,10 @@ Once you confirm the account linking, an email will be sent to your registered e
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-confirmlink.png" />
 
+:::info
+Manual email verification can be bypassed by enabling domain verification. For more information, refer to the [Domain Verification Documentation](/account/my-organization/security/domain-verification).
+:::
+
 </details>
 
 <details>
@@ -867,7 +871,7 @@ This section provides a list of common issues that users might encounter during 
 - **Invalid Client ID/Secret:** Verify that the Client ID and Secret are correctly entered in Appcircle’s SSO settings. Regenerate these values in Auth0 if needed.
 - **Logs Don't Show Successful Login Event:** If the user successfully logs in with the identity provider, but the Appcircle logs do not show a successful login event, check the SAML Authentication Assertion returned by the IdP or analyze the HTTP trace for any discrepancies in Appcircle.
 - **Misconfigured Scopes:** Ensure that the scopes requested in Appcircle match those defined in Auth0. Mismatches can lead to login failures.
-
+- **Error Response Handling:** If Auth0 returns an error response, Appcircle may display a generic "500 Error: Oops, An Error Occurred. Invalid username or password." This issue often arises when users input incorrect details, such as entering an organization they are not a member of.
 </details>
 
 <details>
@@ -879,6 +883,7 @@ This section provides a list of common issues that users might encounter during 
 - **SAML Assertion Issues:** Use tools like a SAML debugger to check the contents of the SAML assertion for correct format and expected values before entering them into Appcircle.
 - **IdP Login Page Doesn't Display:** If the IdP login page fails to display, ensure the correct SSO URL is being used in Appcircle and that the binding method (HTTP-POST or HTTP-Redirect) is properly configured.
 - **Certificate Issues:** Ensure the SAML certificate in Auth0 is valid and correctly configured. Invalid certificates can prevent proper authentication in Appcircle.
+- **Error Response Handling:** If Auth0 returns an error response, Appcircle may display a generic "500 Error: Oops, An Error Occurred. Invalid username or password." This issue often arises when users input incorrect details, such as entering an organization they are not a member of.
 
 </details>
 

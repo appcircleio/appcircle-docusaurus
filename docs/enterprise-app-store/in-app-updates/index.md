@@ -325,6 +325,64 @@ public static class InAppUpdateHelper {
 }
 `}
 </CodeBlock>
+<CodeBlock language="csharp">
+{`
+namespace MAUI_IN_APP.Models;
+
+public class InAppUpdateModel
+{
+    public class UpdateResult
+    {
+        public string DownloadUrl { get; set; }
+        public string Version { get; set; }
+    }
+    public class TokenResponse
+    {
+        public string access_token { get; set; }
+    }
+    public class AppVersion
+    {
+        public string Id { get; set; }
+        public string ProfileId { get; set; }
+        public string AppResourceReferenceId { get; set; }
+        public string AppIconResourceReferenceId { get; set; }
+        public string Name { get; set; }
+        public string UniqueName { get; set; }
+        public string SignedCertName { get; set; }
+        public string Version { get; set; }
+        public string VersionCode { get; set; }
+        public int PublishType { get; set; }
+        public DateTime? PublishDate { get; set; }
+        public string PublishDateStr { get; set; }
+        public int PlatformType { get; set; }
+        public string FileName { get; set; }
+        public long FileSize { get; set; }
+        public int DownloadCount { get; set; }
+        public string Summary { get; set; }
+        public string ReleaseNotes { get; set; }
+        public DateTime? LatestNotificationDate { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public string BuildId { get; set; }
+        public string AppIconUrl { get; set; }
+        public bool IsDownloadLimitExceeded { get; set; }
+        public int OrganizationDownloadCount { get; set; }
+        public int OrganizationDownloadLimit { get; set; }
+    }
+    public class AppVersionsResponse
+    {
+        public List<AppVersion> data { get; set; }
+    }
+
+    public enum PublishType
+    {
+        NotPublished = 0,
+        Beta,
+        Live,
+    }
+}
+`}
+</CodeBlock>
 </TabItem>
 </Tabs>
 
@@ -508,6 +566,64 @@ public static class InAppUpdateHelper {
           }
       }
 
+}
+`}
+</CodeBlock>
+<CodeBlock language="csharp">
+{`
+namespace MAUI_IN_APP.Models;
+
+public class InAppUpdateModel
+{
+    public class UpdateResult
+    {
+        public string DownloadUrl { get; set; }
+        public string Version { get; set; }
+    }
+    public class TokenResponse
+    {
+        public string access_token { get; set; }
+    }
+    public class AppVersion
+    {
+        public string Id { get; set; }
+        public string ProfileId { get; set; }
+        public string AppResourceReferenceId { get; set; }
+        public string AppIconResourceReferenceId { get; set; }
+        public string Name { get; set; }
+        public string UniqueName { get; set; }
+        public string SignedCertName { get; set; }
+        public string Version { get; set; }
+        public string VersionCode { get; set; }
+        public int PublishType { get; set; }
+        public DateTime? PublishDate { get; set; }
+        public string PublishDateStr { get; set; }
+        public int PlatformType { get; set; }
+        public string FileName { get; set; }
+        public long FileSize { get; set; }
+        public int DownloadCount { get; set; }
+        public string Summary { get; set; }
+        public string ReleaseNotes { get; set; }
+        public DateTime? LatestNotificationDate { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public string BuildId { get; set; }
+        public string AppIconUrl { get; set; }
+        public bool IsDownloadLimitExceeded { get; set; }
+        public int OrganizationDownloadCount { get; set; }
+        public int OrganizationDownloadLimit { get; set; }
+    }
+    public class AppVersionsResponse
+    {
+        public List<AppVersion> data { get; set; }
+    }
+
+    public enum PublishType
+    {
+        NotPublished = 0,
+        Beta,
+        Live,
+    }
 }
 `}
 </CodeBlock>
@@ -736,6 +852,64 @@ public static class InAppUpdateHelper {
       	return latestAppVersion;
       }
 
+}
+`}
+</CodeBlock>
+<CodeBlock language="csharp">
+{`
+namespace MAUI_IN_APP.Models;
+
+public class InAppUpdateModel
+{
+    public class UpdateResult
+    {
+        public string DownloadUrl { get; set; }
+        public string Version { get; set; }
+    }
+    public class TokenResponse
+    {
+        public string access_token { get; set; }
+    }
+    public class AppVersion
+    {
+        public string Id { get; set; }
+        public string ProfileId { get; set; }
+        public string AppResourceReferenceId { get; set; }
+        public string AppIconResourceReferenceId { get; set; }
+        public string Name { get; set; }
+        public string UniqueName { get; set; }
+        public string SignedCertName { get; set; }
+        public string Version { get; set; }
+        public string VersionCode { get; set; }
+        public int PublishType { get; set; }
+        public DateTime? PublishDate { get; set; }
+        public string PublishDateStr { get; set; }
+        public int PlatformType { get; set; }
+        public string FileName { get; set; }
+        public long FileSize { get; set; }
+        public int DownloadCount { get; set; }
+        public string Summary { get; set; }
+        public string ReleaseNotes { get; set; }
+        public DateTime? LatestNotificationDate { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public string BuildId { get; set; }
+        public string AppIconUrl { get; set; }
+        public bool IsDownloadLimitExceeded { get; set; }
+        public int OrganizationDownloadCount { get; set; }
+        public int OrganizationDownloadLimit { get; set; }
+    }
+    public class AppVersionsResponse
+    {
+        public List<AppVersion> data { get; set; }
+    }
+
+    public enum PublishType
+    {
+        NotPublished = 0,
+        Beta,
+        Live,
+    }
 }
 `}
 </CodeBlock>
@@ -976,12 +1150,101 @@ public static class InAppUpdateHelper {
 }
 `}
 </CodeBlock>
+<CodeBlock language="csharp">
+{`
+namespace MAUI_IN_APP.Models;
+
+public class InAppUpdateModel
+{
+    public class UpdateResult
+    {
+        public string DownloadUrl { get; set; }
+        public string Version { get; set; }
+    }
+    public class TokenResponse
+    {
+        public string access_token { get; set; }
+    }
+    public class AppVersion
+    {
+        public string Id { get; set; }
+        public string ProfileId { get; set; }
+        public string AppResourceReferenceId { get; set; }
+        public string AppIconResourceReferenceId { get; set; }
+        public string Name { get; set; }
+        public string UniqueName { get; set; }
+        public string SignedCertName { get; set; }
+        public string Version { get; set; }
+        public string VersionCode { get; set; }
+        public int PublishType { get; set; }
+        public DateTime? PublishDate { get; set; }
+        public string PublishDateStr { get; set; }
+        public int PlatformType { get; set; }
+        public string FileName { get; set; }
+        public long FileSize { get; set; }
+        public int DownloadCount { get; set; }
+        public string Summary { get; set; }
+        public string ReleaseNotes { get; set; }
+        public DateTime? LatestNotificationDate { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public string BuildId { get; set; }
+        public string AppIconUrl { get; set; }
+        public bool IsDownloadLimitExceeded { get; set; }
+        public int OrganizationDownloadCount { get; set; }
+        public int OrganizationDownloadLimit { get; set; }
+    }
+    public class AppVersionsResponse
+    {
+        public List<AppVersion> data { get; set; }
+    }
+
+    public enum PublishType
+    {
+        NotPublished = 0,
+        Beta,
+        Live,
+    }
+}
+`}
+</CodeBlock>
 </TabItem>
 </Tabs>
+
+
+:::caution Created Download URL
+
+The scripts provided above for each platform generate a **Download URL** required to upload a new version. This URL also includes a `userEmail` parameter. While this parameter is optional, if the `userEmail` information will not be used, the `/user/{userEmail}` section at the end of the URL should be removed, and the URL should be generated using only the token.
+
+For example;
+
+- **iOS-Swift**: **`itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)`**
+- **Android-Java/Kotlin**: **`https://%s/api/app-versions/%s/download-version/%s`**
+- **React Native Android**: **`${Environments.STORE_URL}/api/app-versions/${availableVersionId}/download-version/${accessToken}`**
+- **React Native iOS**: **`itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)`**
+- **MAUI**: **`${Environment.GetEnvironmentVariable("STORE_URL")}/api/app-versions/{availableVersionId}/download-version/{accessToken}`**
+
+:::
+
+:::caution User Email and Enterprise App Store Report
+
+Please note that the user email parameter is used for the reporting feature of the Enterprise App Store module. If the user email parameter is not provided, the **User** field in the report will appear as **`No Name`**.
+
+For more detailed information about Enterprise App Store Reporting, please visit [**Enterprise Portal Reports documentation**](/enterprise-app-store/enterprise-reports).
+
+:::
 
 ### How to Prompt an Alert and Install the Latest Release
 
 After obtaining the download URL for a newer version, display an alert with options to update or cancel. Customize the alert based on your requirements, such as omitting the cancel button for mandatory updates.
+
+:::danger Simulators
+
+Apple and Android simulators do not support installing applications from any app store. One of the main reasons for this limitation is the architectural differences between simulators and physical devices. Therefore, to use Appcircle’s in-app update feature, please use a physical device.
+
+Please note that this feature **will not work** even if a simulator is used for testing during the development phase. **This functionality is exclusively supported on physical devices**.
+
+:::
 
 <Tabs defaultValue="swift" values={[
 { label: 'Swift', value: 'swift' },
@@ -1160,4 +1423,13 @@ var updateInfo = await InAppUpdateHelper.CheckForUpdate(currentVersion, "USER_EM
 </Tabs>
 
 :::caution
+
 With API Level 29 and above, the in-app update experience must be managed by allowing users to download and manually install the update due to increased security restrictions.
+
+:::
+
+### Mandatory Update
+
+The Appcircle Enterprise App Store module does not provide a direct mandatory update feature. To enforce users to update the application, you can customize the scripts provided in the [**How to Prompt an Alert and Install the Latest Release**](/enterprise-app-store/in-app-updates#how-to-prompt-an-alert-and-install-the-latest-release) section according to your requirements, allowing you to implement a force update mechanism.
+
+For instance, if the new release includes a major update and you want to make it mandatory, you can modify the update alert shown in the application by removing the cancel button or closing the application if the update is not performed. This approach ensures that the update becomes mandatory for users.

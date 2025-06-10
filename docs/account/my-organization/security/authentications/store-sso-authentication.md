@@ -477,25 +477,29 @@ Next, configure the SAML settings in Okta to ensure proper authentication and re
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/store-sso-okta-saml-entity-id.png" />
 
-3. Download **Signing Certificate** from Appcircle.
+3. Select **EmailAddress** for the Name ID format.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/sso-okta-saml-name-id-format-store.png" />
+
+4. Download **Signing Certificate** from Appcircle.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml-appcircle-metadata.png" />
 
-4. Click on **Show Advanced Settings**.
+5. Click on **Show Advanced Settings**.
 
-5. Upload downloaded certificate to Signature Certificate field.
+6. Upload downloaded certificate to Signature Certificate field.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-okta-saml-signing-certificate.png" />
 
-6. Enable **Allow application to initiate Single Logout**.
+7. Enable **Allow application to initiate Single Logout**.
 
-7. Copy and paste **Logout Redirect URL** to **Single Logout URL** field. Copy and paste **Service Provider Entity ID** to **SP Issuer**.
+8. Copy and paste **Logout Redirect URL** to **Single Logout URL** field. Copy and paste **Service Provider Entity ID** to **SP Issuer**.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-saml-appcircle-metadata.png" />
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-okta-saml-signing-certificate.png" />
 
-8. Instead of manually configuring all SAML settings in Appcircle, you can download the SAML metadata XML file from Okta:
+9. Instead of manually configuring all SAML settings in Appcircle, you can download the SAML metadata XML file from Okta:
 
 Click the **Copy** button next to the Metadata URL and open it in another tab to download the XML file.
 
@@ -545,6 +549,7 @@ This section provides a list of common issues that users might encounter during 
 - **Invalid Client ID/Secret:** Verify that the Client ID and Secret are correctly entered in Appcircle’s SSO settings. Regenerate these values in Auth0 if needed.
 - **Logs Don't Show Successful Login Event:** If the user successfully logs in with the identity provider, but the Appcircle logs do not show a successful login event, check the SAML Authentication Assertion returned by the IdP or analyze the HTTP trace for any discrepancies in Appcircle.
 - **Misconfigured Scopes:** Ensure that the scopes requested in Appcircle match those defined in Auth0. Mismatches can lead to login failures.
+- **Error Response Handling:** If Auth0 returns an error response, Appcircle may display a generic "500 Error: Oops, An Error Occurred. Invalid username or password." This issue often arises when users input incorrect details, such as entering an organization they are not a member of.
 
 </details>
 
@@ -557,6 +562,7 @@ This section provides a list of common issues that users might encounter during 
 - **SAML Assertion Issues:** Use tools like a SAML debugger to check the contents of the SAML assertion for correct format and expected values before entering them into Appcircle.
 - **IdP Login Page Doesn't Display:** If the IdP login page fails to display, ensure the correct SSO URL is being used in Appcircle and that the binding method (HTTP-POST or HTTP-Redirect) is properly configured.
 - **Certificate Issues:** Ensure the SAML certificate in Auth0 is valid and correctly configured. Invalid certificates can prevent proper authentication in Appcircle.
+- **Error Response Handling:** If Auth0 returns an error response, Appcircle may display a generic "500 Error: Oops, An Error Occurred. Invalid username or password." This issue often arises when users input incorrect details, such as entering an organization they are not a member of.
 
 </details>
 

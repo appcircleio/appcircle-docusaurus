@@ -8,7 +8,7 @@ tags: [unit tests, firebase test lab, android apps, quality assurance]
 
 Ensure the quality and stability of your Android applications with a robust testing strategy.
 
-## Running Unit Tests
+## [Running Unit Tests](/continuous-testing/android-testing/running-android-unit-tests)
 
 Execute unit tests to validate the individual units of source code, helping you to identify and fix issues early in the development process. Unit tests are crucial for maintaining code quality and ensuring that each component behaves as expected.
 
