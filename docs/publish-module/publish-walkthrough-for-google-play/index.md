@@ -30,7 +30,7 @@ The Publish module in Appcircle is a versatile tool that simplifies the app rele
 
 Before you can start using the Publish module, there are several key prerequisites to address:
 
-### Creating and Adding a Google Play Developer API Key.
+### Creating and Adding a Google Play Developer API Key
 
 The most important requirement before getting started is a Google Play Console account and an API key generated for that account.
 For detailed instructions on generating a Google Play Console API key, please refer to the Appcircle documentation below:
@@ -39,7 +39,7 @@ For detailed instructions on generating a Google Play Console API key, please re
 
 Once the Google API Key file is successfully integrated, you can proceed to the next step.
 
-:::caution The JSON file is not recoverable.
+:::caution The JSON file is not recoverable
 
 The Google API key JSON file can only be downloaded once and cannot be retrieved later from Google Play Console or Appcircle. **Make sure to store it securely right after downloading.**
 
@@ -55,7 +55,7 @@ The binary file can be uploaded to the Publish module either manually or through
 
 :::
 
-- Gather all required metadata for your app for the targeted store(s), such as:
+- Gather all required metadata for your app for the Google Play Console, such as:
 
     - Application name
     - Description
@@ -73,9 +73,9 @@ The binary file can be uploaded to the Publish module either manually or through
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishStartCreate2.png' />
 
-:::tip Setup Publish Profile
+:::tip Creating a Publish Profile
 
-If you haven't set up a Publish profile in Appcircle before, follow the detailed [**setup Publish profile guide**](/publish-module/creating-publish-profiles) provided in the Appcircle documentation to ensure everything is ready for publishing.
+If you haven't set up a Publish profile in Appcircle before, follow the detailed [**Creating a Publish profile guide**](/publish-module/creating-publish-profiles) provided in the Appcircle documentation to ensure everything is ready for publishing.
 
 :::
 
@@ -109,11 +109,11 @@ If you choose to create the profile manually, you must select the required Googl
 
 ### Customizing the Publish Flow
 
-Publish flows are used to automate multiple tasks and introduce automation checkpoints for application deployments to stores. You can manage flows within the Publish module as outlined below:
+Publish flow are used to automate multiple tasks and introduce automation checkpoints for application deployments to stores. You can manage flows within the Publish module as outlined below:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
 
-- **Update the existing publish flow**: Update the flow from the `Publish Flows` section. 
+- **Update the existing publish flow**: Update the flow from the `Publish Flow` section. 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manageFlowDetails.png' />
 
@@ -138,12 +138,13 @@ Here is a sample publishing flow for an Android app, including track selection a
 - [**App Information from Google Play**](/publish-integrations/android-publish-integrations/app-information-from-google-play): The App Information from Google Play step checks the status of the app releases in the Google Play Console. This allows you to monitor the progress of your app.
 - [**Send to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play): With this step, the binary is uploaded to the desired Google Play Console Track.
 You can select one of the following options:
-1. Track Options:
+
    - Internal track
    - Alpha track
    - Beta track
    - Production track
    - Custom track (a user-defined track for specific testing or release scenarios outside the standard tracks)
+
 - [**The Distribute to Track**](/publish-integrations/android-publish-integrations/distribute-to-track): This step enables automated deployment of Android applications to specific tracks within the Google Play Console. This functionality allows developers to manage releases efficiently, targeting different user groups such as internal testers, beta users, or the general public.
 - [**Get Approval via Email**](/publish-integrations/common-publish-integrations/get-approval-via-email): The Get Approval via Email step allows you to get approval from the email addresses entered as input in the step before moving on to the next steps in Publish.
 
@@ -229,7 +230,7 @@ After initiating a release, the Publish module provides tools to monitor and man
 
 #### Release Dashboard 
 
-View the real-time status of your release.
+View the real time status of your release.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-monitorRelease.png' />
 
@@ -264,13 +265,15 @@ Google Play rejects the upload with an error like
 
 If you’ve lost your original keystore and Play App Signing is enabled, you can request a new upload key. Otherwise, you must use the original keystore or publish the app under a new package name.
 
+For more information, please refer to the [**What to do if I lost my key store**](/signing-identities/android-keystores#what-to-do-if-i-lost-my-keystore-signing-file) document.
+
 #### Can I re-sign an Android binary with a different keystore?
 
 Yes. The Resign Binary step allows you to re-sign your APK or AAB using a different keystore. This is useful when distributing the same build under a different signing identity. The Publish module fully supports Android binary re-signing.
 
 For more information, please refer to the [**Resign binary**](/publish-module/publish-information/resign-binary) document.
 
-#### Can I publish an Android app to different release tracks?
+#### How to Distribute an Android App to Different Release Tracks (Alpha, Beta, Production) on Google Play?
 
 Yes. By setting the `Distribute to track` step, you can upload your application to a specific track, such as Internal, Beta, or Production. This allows you to manage multiple release flows and target different user groups within the same pipeline.
 
@@ -278,18 +281,18 @@ For more information, please refer to the [**Distribute to Track**](/publish-int
 
 #### How can I control the rollout percentage when distributing to a Google Play track?
 
-In the `Distribute to track` step, if you set AC_RELEASE_STATUS to partial, a rollout percentage slider becomes available. Use it to define what percentage of users should receive the update initially (e.g., 10%). This lets you perform phased rollouts and monitor stability before doing a full release.
+In the `Distribute to track` step, if you set `AC_RELEASE_STATUS` to partial, a rollout percentage slider becomes available. Use it to define what percentage of users should receive the update initially (e.g., 10%). This lets you perform phased rollouts and monitor stability before doing a full release.
 
 #### How do I update my app's metadata?
 
-To update your app's metadata, navigate to the Publish module, select the relevant profile, click the Actions button for the binary, and go to Metadata details. You can now update the metadata fields, such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
+To update your app's metadata, navigate to the Publish module, select the relevant profile, click the `Actions` button for the binary, and go to Metadata details. You can now update the metadata fields, such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadataDetails.png' />
 
 #### Is it possible to automate notifications for team members during the release process?
 
-Yes, it is possible. The Publish module allows you to set up automated notifications for your team members at various stages of the release process. You can configure notifications to be sent via email or integrate with collaboration tools like Slack or Microsoft Teams, ensuring that everyone involved is kept up to date on the release status.
+Yes, it is possible. The Publish module allows you to set up automated notifications for your team members at various stages of the release process. You can configure notifications to be sent via email or integrate with collaboration tools like `Slack` or `Microsoft Teams`, ensuring that everyone involved is kept up to date on the release status.
 
 For more information, please refer to the [**Notification Integrations**](/account/my-organization/notifications) document.
 
