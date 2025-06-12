@@ -1,6 +1,6 @@
 ---
 title: Publish Walkthrough for Google Play Console
-description: Learn how to use Publish module in Appcircle
+description: Learn how to use the Publish module in Appcircle.
 tags: [publish, google play console, android, metadata, walkthrough, android app release]
 ---
 
@@ -30,20 +30,20 @@ The Publish module in Appcircle is a versatile tool that simplifies the app rele
 
 Before you can start using the Publish module, there are several key prerequisites to address:
 
-### Creating and Adding Google Play Developer API key.
+### Creating and Adding a Google Play Developer API Key.
 
 The most important requirement before getting started is a Google Play Console account and an API key generated for that account.
 For detailed instructions on generating a Google Play Console API key, please refer to the Appcircle documentation below:
 
-- [**Creating and Adding Google Play Developer API key to Appcircle**](/account/my-organization/security/credentials/adding-google-play-service-account)
+- [**Creating and Adding a Google Play Developer API Key to Appcircle**](/account/my-organization/security/credentials/adding-google-play-service-account)
 
 Once the Google API Key file is successfully integrated, you can proceed to the next step.
 
-:::caution The JSON File Is Not Recoverable  
+:::caution The JSON file is not recoverable.
 
-The Google API key JSON file can only be downloaded once and cannot be retrieved later from Google Play Console or Appcircle. **Make sure to store it securely right after downloading.**  
+The Google API key JSON file can only be downloaded once and cannot be retrieved later from Google Play Console or Appcircle. **Make sure to store it securely right after downloading.**
 
-:::  
+:::
 
 ### Binary and Metadata Preparation
 
@@ -51,7 +51,7 @@ Before starting the release process, it's essential to prepare all necessary app
 
 :::info Binary Upload Methods
 
-The binary file can be uploaded to the Publish module either manually or through the Build or Testing Distribution modules. For more detailed instructions, please refer to the [**Upload Binary**](/publish-module/publish-walkthrough-for-google-play#uploading-a-binary) section.  
+The binary file can be uploaded to the Publish module either manually or through the Build or Testing Distribution modules. For more detailed instructions, please refer to the [**Upload Binary**](/publish-module/publish-walkthrough-for-google-play#uploading-a-binary) section.
 
 :::
 
@@ -79,23 +79,23 @@ If you haven't set up a Publish profile in Appcircle before, follow the detailed
 
 :::
 
-- There are two different ways to create a Publish Profile. One option is to create the profile manually, and the other is to retrieve an existing profile from Google Play Console. For detailed information please visit the [**Creating Publish Profile**](/publish-module/creating-publish-profiles) documentation.
+- There are two different ways to create a publish profile. One option is to create the profile manually, and the other is to retrieve an existing profile from Google Play Console. For detailed information, please visit the [**Creating Publish Profile**](/publish-module/creating-publish-profiles) documentation.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-profileCreateModal.png' />
 
 :::info Create from Google Play Console
 
-To use this profile creation method, you must have a Google Play API key integration. And, the package name defined in the Publish profile must exactly match the package name registered in your Google Play Console. Please refer to the detailed documentation for [**Create from Google Play Console**](/publish-module/creating-publish-profiles#create-from-google-play-console) and [**API integration**](/account/my-organization/security/credentials/adding-google-play-service-account).  
+To use this profile creation method, you must have a Google Play API key integration. And the package name defined in the publish profile must exactly match the package name registered in your Google Play Console. Please refer to the detailed documentation for [**Create from Google Play Console**](/publish-module/creating-publish-profiles#create-from-google-play-console) and [**API integration**](/account/my-organization/security/credentials/adding-google-play-service-account).  
 
 :::
 
-### Selecting a Google Play Developer API Key 
+### Selecting a Google Play Developer API Key
 
 If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish module. To initiate the release process, select the credentials for the relevant store from the Settings screen under the selected Publish profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSetting.png' />
 
-- All available integrations will be shown in the Settings screen. Here, you should select the Google Play Developer API key that you want to link to release your app.  
+- All available integrations will be shown in the Settings screen. Here, you should select the Google Play Developer API key that you want to link to release your app.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSettingDetail.png' />
 
@@ -113,13 +113,13 @@ Publish flows are used to automate multiple tasks and introduce automation check
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
 
-- **Update the existing Publish flow**: Update the flow from the `Publish Flows` section. 
+- **Update the existing publish flow**: Update the flow from the `Publish Flows` section. 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manageFlowDetails.png' />
 
-- You can choose from predefined steps or create a custom steps based on your specific needs.
+- You can choose from predefined steps or create custom steps based on your specific needs.
 
-You can drag and drop steps into your Publish flow. Any unwanted Publish flow steps can be removed or deactivated.
+You can drag and drop steps into your publish flow. Any unwanted Publish flow steps can be removed or deactivated.
 You can also reorder steps so that they will be executed in the order you specify.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-dragDropFlow.png' />
@@ -136,7 +136,7 @@ You can also reorder steps so that they will be executed in the order you specif
 Here is a sample publishing flow for an Android app, including track selection and deployment steps.
 
 - [**App Information from Google Play**](/publish-integrations/android-publish-integrations/app-information-from-google-play): The App Information from Google Play step checks the status of the app releases in the Google Play Console. This allows you to monitor the progress of your app.
-- [**Send to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play): With this step, the binary is uploaded to desired Google Play Console Track.
+- [**Send to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play): With this step, the binary is uploaded to the desired Google Play Console Track.
 You can select one of the following options:
 1. Track Options:
    - Internal track
@@ -144,7 +144,7 @@ You can select one of the following options:
    - Beta track
    - Production track
    - Custom track (a user-defined track for specific testing or release scenarios outside the standard tracks)
-- [**The Distribute to Track**](/publish-integrations/android-publish-integrations/distribute-to-track): This step enables automated deployment of Android applications to specific tracks within the Google Play Console. This functionality allows developers to manage releases efficiently, targeting different user groups such as internal testers, beta users, or the general public.  
+- [**The Distribute to Track**](/publish-integrations/android-publish-integrations/distribute-to-track): This step enables automated deployment of Android applications to specific tracks within the Google Play Console. This functionality allows developers to manage releases efficiently, targeting different user groups such as internal testers, beta users, or the general public.
 - [**Get Approval via Email**](/publish-integrations/common-publish-integrations/get-approval-via-email): The Get Approval via Email step allows you to get approval from the email addresses entered as input in the step before moving on to the next steps in Publish.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-betaReleaseFlow.png' />
@@ -159,7 +159,7 @@ You can select one of the following options:
 
 ## Managing Releases
 
-Effective release management is crucial for ensuring the success of your app updates. The Publish module provides you with the tools to monitor, control, and optimize the release process. You can track the status of your releases in real-time, manage approvals, and address any issues that arise during the process. Also, the Publish module offers customizable flows to provide more detailed management of the release process.  
+Effective release management is crucial for ensuring the success of your app updates. The Publish module provides you with the tools to monitor, control, and optimize the release process. You can track the status of your releases in real time, manage approvals, and address any issues that arise during the process. Also, the Publish module offers customizable flows to provide more detailed management of the release process.
 
 Additionally, you have full control over your app's distribution. By leveraging these features, you can maintain a smooth and efficient release cycle, minimizing disruptions and maximizing the impact of your updates.
 
@@ -175,23 +175,23 @@ You can upload your binary file directly to the Publish module using the manual 
 
 #### Upload via Build Module 
 
-You can automatically deploy your binary file to the Publish module directly from the Build module. This method streamlines the binary deployment process by transferring your binary immediately after the Build pipeline completes, making it ready for release. It simplifies the flows and reduces the risk of manual errors.
+You can automatically deploy your binary file to the Publish module directly from the Build module. This method streamlines the binary deployment process by transferring your binary immediately after the build pipeline completes, making it ready for release. It simplifies the flows and reduces the risk of manual errors.
 
 :::info Upload via Build Module
 
-To upload a binary from the Build module, please refer to the [**Distribution Configuration**](/build/build-process-management/configurations#distribution-configuration) document for auto upload, or the [**Post-Build Operations**](/build/build-process-management#binary-actions) document for manual upload.
+To upload a binary from the Build module, please refer to the [**Distribution Configuration**](/build/build-process-management/configurations#distribution-configuration) document for auto upload or the [**Post-Build Operations**](/build/build-process-management#binary-actions) document for manual upload.
 
 :::
 
 #### Upload via Testing Distribution
 
-You can send your application from a Testing Distribution profile to a designated Publish profile. For detailed steps, see [**Upload via Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#send-your-application-to-publish) documentation.
+You can send your application from a testing distribution profile to a designated publish profile. For detailed steps, see the [**Upload via Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#send-your-application-to-publish) documentation.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main12.png" />
 
 #### Upload via Appcircle CLI & API 
 
-If you have your own CI environment, or need to integrate Appcircle into a specific process or job, you can use the Appcircle API & CLI to upload binaries to the related publish Profile.
+If you have your own CI environment or need to integrate Appcircle into a specific process or job, you can use the Appcircle API & CLI to upload binaries to the related publish profile.
 
 - **Other CI/CD Tools**: You can integrate the Publish module with CI/CD tools like Jenkins and GitHub Actions to automate your build and release pipeline. With the Appcircle [**API & CLI**](/appcircle-api-and-cli), you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient deployment process, reducing manual intervention and the risk of errors. You can check out [**Appcircle Marketplace**](/marketplace) for more integrations.
 
@@ -207,7 +207,7 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 ### Updating Metadata
 
-- Within the Publish module, you can manage your app's metadata directly. This includes updating app's metadata, including video, descriptions, and app name. Please visit the [**Metadata Details**](/publish-module/publish-information/meta-data-information#android-metadata-information) documentation for more information.
+- Within the Publish module, you can manage your app's metadata directly. This includes updating the app's metadata, including video, descriptions, and app name. Please visit the [**Metadata Details**](/publish-module/publish-information/meta-data-information#android-metadata-information) documentation for more information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata.png' />
 
@@ -217,7 +217,7 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 ### Starting the Flow
 
-- You can start the publish flow manually with clicking on the `Publish Details`, you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the Google Play Console.
+- You can start the publish flow manually by clicking on the `Publish Details` or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the Google Play Console.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-startPublish.png' />
 
@@ -235,7 +235,7 @@ View the real-time status of your release.
 
 #### Rejecting a Binary 
 
-- The binary can be rejected to be excluded from the publish process, and the rejection reason is displayed as a tag on binary
+- The binary can be rejected to be excluded from the publish process, and the rejection reason is displayed as a tag on the binary.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rejection.png' />
 
@@ -247,7 +247,7 @@ View the real-time status of your release.
 
 The Publish module provides comprehensive auditing and reporting features that give you full visibility into your release process.
 
-- **Activity Log**: The Activity Log keeps a detailed record of every action taken during the release process, including who performed each action and when it occurred. This log is invaluable for tracking changes, identifying issues, and ensuring accountability within your team.
+- **Activity Log**: The activity log keeps a detailed record of every action taken during the release process, including who performed each action and when it occurred. This log is invaluable for tracking changes, identifying issues, and ensuring accountability within your team.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-logActivity2.png' />
 
@@ -259,7 +259,7 @@ When using the Publish module, it's essential to know how to troubleshoot potent
 
 #### What happens if I upload an APK/AAB signed with a different keystore?
 
-Google Play rejects the upload with an error like:
+Google Play rejects the upload with an error like
 "Upload failed. You uploaded an APK or Android App Bundle that is signed with a different certificate."
 
 If you’ve lost your original keystore and Play App Signing is enabled, you can request a new upload key. Otherwise, you must use the original keystore or publish the app under a new package name.
@@ -272,17 +272,17 @@ For more information, please refer to the [**Resign binary**](/publish-module/pu
 
 #### Can I publish an Android app to different release tracks?
 
-Yes. By setting the `Distribute to track` step, you can upload your application to a specific track such as Internal, Beta, or Production. This allows you to manage multiple release flows and target different user groups within the same pipeline.
+Yes. By setting the `Distribute to track` step, you can upload your application to a specific track, such as Internal, Beta, or Production. This allows you to manage multiple release flows and target different user groups within the same pipeline.
 
-For more information, please refer to the [**Distribute to track**](/publish-integrations/android-publish-integrations/distribute-to-track) document.
+For more information, please refer to the [**Distribute to Track**](/publish-integrations/android-publish-integrations/distribute-to-track) document.
 
 #### How can I control the rollout percentage when distributing to a Google Play track?
 
-In the `Distribute to track` step, if you set AC_RELEASE_STATUS to partial, a rollout percentage slider becomes available. Use it to define what percentage of users should receive the update initially (e.g., 10%). This lets you perform phased rollouts and monitor stability before doing a full release.
+In the `Distribute to track` step, if you set AC_RELEASE_STATUS to partial, a rollout percentage slider becomes available. Use it to define what percentage of users should receive the update initially (e.g., 10%). This lets you perform phased rollouts and monitor stability before doing a full release.
 
 #### How do I update my app's metadata?
 
-To update your app's metadata, navigate to the Publish module, select the relevant profile, click the Actions button for the binary, and go to Metadata details. You can now update the metadata fields such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
+To update your app's metadata, navigate to the Publish module, select the relevant profile, click the Actions button for the binary, and go to Metadata details. You can now update the metadata fields, such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadataDetails.png' />
@@ -295,7 +295,7 @@ For more information, please refer to the [**Notification Integrations**](/accou
 
 #### Can I use the Publish Module with other CI tools?
 
-Yes, you can use other CI tools to upload a binary to the Publish module. By utilizing Appcircle [**API & CLI**](/appcircle-api-and-cli) within your chosen CI tool, you can directly send the binary to the relevant profile and manage the Publish process. 
+Yes, you can use other CI tools to upload a binary to the Publish module. By utilizing Appcircle [**API & CLI**](/appcircle-api-and-cli) within your chosen CI tool, you can directly send the binary to the relevant profile and manage the publish process. 
 
 Additionally, you can check our existing integrations in the [**Appcircle Marketplace**](/marketplace) documentation for integration alternatives for the **Appcircle API and CLI**.
 
@@ -317,7 +317,7 @@ To create a custom flow, navigate to the Publish module and select the "Publish 
 
 #### Why can't I edit the Publish Flow?
 
-The Publish Module is an **enterprise-level** solution, so only users with an **Appcircle Enterprise Licence** have access to all of its features. Users with other licences have limited access to the module. To get more information for Enterprise Licence please [**contact us**](https://appcircle.io/contact) directly.
+The Publish Module is an **enterprise-level** solution, so only users with an **Appcircle Enterprise License** have access to all of its features. Users with other licenses have limited access to the module. To get more information about the Enterprise License, please [**contact us**](https://appcircle.io/contact) directly.
 
 #### How can I roll back to a previous version if needed?
 
@@ -329,6 +329,6 @@ If you need additional help with the Publish module, the following resources are
 
 - **Appcircle Support**: Contact [**Appcircle Slack support**](https://slack.appcircle.io/) for personalized assistance with your specific issues. 
 
-- **Technical Documentation**: Refer to the Appcircle user documentation for detailed guides and troubleshooting tips for Publish Module.
+- **Technical Documentation**: Refer to the Appcircle user documentation for detailed guides and troubleshooting tips for the publish module.
 
 - **Commercial Details**: The Publish module is an **enterprise-level** solution; therefore, for commercial details, please [**contact us**](https://appcircle.io/contact) directly.
