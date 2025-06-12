@@ -257,6 +257,29 @@ When using the Publish module, it's essential to know how to troubleshoot potent
 
 ### Frequently Asked Questions About the Publish Module
 
+#### What happens if I upload an APK/AAB signed with a different keystore?
+
+Google Play rejects the upload with an error like:
+"Upload failed. You uploaded an APK or Android App Bundle that is signed with a different certificate."
+
+If you’ve lost your original keystore and Play App Signing is enabled, you can request a new upload key. Otherwise, you must use the original keystore or publish the app under a new package name.
+
+#### Can I re-sign an Android binary with a different keystore?
+
+Yes. The Resign Binary step allows you to re-sign your APK or AAB using a different keystore. This is useful when distributing the same build under a different signing identity. The Publish module fully supports Android binary re-signing.
+
+For more information, please refer to the [**Resign binary**](/publish-module/publish-information/resign-binary) document.
+
+#### Can I publish an Android app to different release tracks?
+
+Yes. By setting the `Distribute to track` step, you can upload your application to a specific track such as Internal, Beta, or Production. This allows you to manage multiple release flows and target different user groups within the same pipeline.
+
+For more information, please refer to the [**Distribute to track**](/publish-integrations/android-publish-integrations/distribute-to-track) document.
+
+#### How can I control the rollout percentage when distributing to a Google Play track?
+
+In the `Distribute to track` step, if you set AC_RELEASE_STATUS to partial, a rollout percentage slider becomes available. Use it to define what percentage of users should receive the update initially (e.g., 10%). This lets you perform phased rollouts and monitor stability before doing a full release.
+
 #### How do I update my app's metadata?
 
 To update your app's metadata, navigate to the Publish module, select the relevant profile, click the Actions button for the binary, and go to Metadata details. You can now update the metadata fields such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
