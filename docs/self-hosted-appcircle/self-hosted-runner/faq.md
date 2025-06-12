@@ -23,6 +23,18 @@ You should configure NTP server settings in the runner VMs. For updating base ru
 
 For details on configuring NTP settings, you can refer to the [NTP Configuration](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) section and follow the steps.
 
+### We are facing a "timeout" error on builds.
+
+Especially if you're using external sources as dependencies that require access to certain URLs, you may encounter a timeout issue due to network restrictions.
+
+To verify whether your Appcircle runner can access the URL, you can run the command below. Make sure to replace the example Appcircle URL with your own.
+
+```bash
+curl -I https://api.appcircle.spacetech.com
+```
+
+If you receive an "Operation timed out" error, it indicates that the Appcircle runner is unable to access the URL due to network restrictions. In that case, you’ll need to allow Appcircle runners to access the URL.
+
 ### We can't register Appcircle runner to the server.
 
 First, you should check if your Appcircle runner can access the Appcircle server. You can run the command below to test this. You should change the example Appcircle URL for yourself.
