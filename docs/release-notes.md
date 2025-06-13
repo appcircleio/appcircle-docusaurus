@@ -16,6 +16,22 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.28.1 - 2025-06-13 
+
+### 🆕 New Features
+
+- Notification support has been added for CodePush actions across Email, Microsoft Teams, and Slack channels. <AccountBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/>
+- Improved the error message returned when a specified deployment cannot be found during the appcircle-code-push release-react command. The message now clearly indicates that the deployment does not exist, replacing the previous generic “INTERNAL_ERROR” response. <BuildBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- Fixed an issue where attempting to create a new provisioning profile with both In-House and App Store Connect types caused an error in the API. <PublishBadge/> <CloudBadge/>
+- Fixed an issue where, with Auto Publish enabled, receiving an app with a different version resulted in a new app being created on Intune instead of updating the app previously selected with “Mark as RC.” <PublishBadge/> <CloudBadge/>
+
 ## 3.28.0 - 2025-05-21 CodePush Integration, Send Email Publish Step, Improvements and more
 
 ### 🆕 New Features
