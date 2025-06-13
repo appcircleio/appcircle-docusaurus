@@ -367,13 +367,13 @@ Even if the main domain certificate covers the custom domain, you still need to 
 
 Custom domain settings are available for both HTTP and HTTPS configurations.
 
+Let's assume we want to use `apps.spacetech.com` as custom domain for our sample scenario.
+
 #### HTTPS Configuration
 
 Custom domain HTTPS settings are similar to main domain conceptually. After enabling HTTPS for main domain, it won't be hard to enable HTTPS for Enterprise App Store custom domain.
 
-Let's assume we want to use `apps.spacetech.com` as custom domain for our sample scenario.
-
-`global.yaml` section should be like this for this case.
+Configure `storeWeb` section in your `global.yaml` as follows:
 
 <Tabs
 defaultValue="docker"
@@ -491,6 +491,8 @@ For now, self-hosted Appcircle does not support usage of password protected priv
 #### HTTP Configuration
 
 If you want to use HTTP for your Enterprise App Store custom domain, you can configure it by setting `enabledTls` to `false` and using the appropriate HTTP port.
+
+Configure `storeWeb` section in your `global.yaml` as follows:
 
 <Tabs
 defaultValue="docker"
