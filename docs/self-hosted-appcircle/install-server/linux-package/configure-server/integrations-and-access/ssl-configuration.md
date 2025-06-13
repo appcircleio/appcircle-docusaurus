@@ -365,6 +365,10 @@ Most likely, our custom domain won't be covered by main domain certificate. So w
 
 Even if the main domain certificate covers the custom domain, you still need to explicitly configure the store’s custom domain certificate under `storeWeb.customDomain`. Because, when the store custom domain is enabled, the HTTPS certificate defined in the `storeWeb.customDomain` section is used for the Enterprise App Store instead of the certificate defined in `nginx.sslCertificate`.
 
+Custom domain settings are available for both HTTP and HTTPS configurations.
+
+#### HTTPS Configuration
+
 Custom domain HTTPS settings are similar to main domain conceptually. After enabling HTTPS for main domain, it won't be hard to enable HTTPS for Enterprise App Store custom domain.
 
 Let's assume we want to use `apps.spacetech.com` as custom domain for our sample scenario.
@@ -482,6 +486,62 @@ You should use the full certificate chain for `publicKey` similar to main domain
 
 For now, self-hosted Appcircle does not support usage of password protected private keys for Enterprise App Store custom domains.
 
+:::
+
+#### HTTP Configuration
+
+If you want to use HTTP for your Enterprise App Store custom domain, you can configure it by setting `enabledTls` to `false` and using the appropriate HTTP port.
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
+```yaml
+storeWeb:
+  customDomain:
+    enabled: true
+    domain: apps.spacetech.com
+    port: 80
+    enabledTls: false
+    # No publicKey or privateKey
+```
+
+:::caution
+The `storeWeb.customDomain.port` must be `80` when using HTTP with Docker.
+:::
+
+</TabItem>
+
+<TabItem value="podman">
+
+```yaml
+storeWeb:
+  customDomain:
+    enabled: true
+    domain: apps.spacetech.com
+    port: 8080
+    enabledTls: false
+    # No publicKey or privateKey
+```
+
+:::caution
+The `storeWeb.customDomain.port` must be `8080` when using HTTP with Podman.
+
+Since we forward the `TCP/80` to the `TCP/8080` port with [Socat](/self-hosted-appcircle/install-server/linux-package/installation/podman#overcoming-privileged-port-limitations) on the host, you will connect to the Enterprise App Store with the `TCP/80` port.
+:::
+
+</TabItem>
+
+</Tabs>
+
+:::caution
+When `enabledTls` is set to `false`, no certificate configuration is needed or used. Connections will be unencrypted and HTTP only.
 :::
 
 ## Testing Distribution
