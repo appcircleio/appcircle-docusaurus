@@ -31,7 +31,7 @@ If you authorize Appcircle to access your repositories on Azure DevOps, you can 
 
 After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure2.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
@@ -43,13 +43,20 @@ After the connection is successful, you can [view your newly created profile](/b
 
 To connect to a Azure DevOps Cloud repository using either OAuth or Personal Access Token,
 
-- OAuth Connection
+- **OAuth2 Connection**  
+  Click **Get Repositories from Azure DevOps (OAuth2)** to authenticate Appcircle using your Azure DevOps account credentials. This will grant Appcircle access to your repositories through the authorized scope.
 
-Clicking on Get Repositories from Azure DevOps Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+- **Personal Access Token (User)**  
+  Use your Azure DevOps username and [Personal Access Token (PAT)](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops) to connect manually. Required fields:
 
-- PAT (Personal Access Token) Connection
+  - Connection Name
+  - Azure DevOps Server URL (e.g., `https://dev.azure.com`)
+  - Collection Name (e.g., `DefaultCollection`)
+  - Personal Access Token
 
-Clicking on Connect to a Azure DevOps server, which can be selected to connect to self-hosted and PAT connections, will require a token. Generating a PAT for Appcircle will require a list of permissions down below.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure3.png' />
+
+Required permissions are listed below:
 
 | Scope            | Permission        | Description                                                                                                                                                                |
 |------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -89,28 +96,26 @@ TFS is not compatible with Azure DevOps Server on Appcircle.
 Azure DevOps Server version must be **Azure DevOps Server 2020** or higher.
 :::
 
-First, select **Azure** and then **Connect to an Azure DevOps Server** through the menu:
+First, select **Azure** and then **Personal Access Token (User)** under **Create a new Azure Devops Connection** through the menu:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure2.png' />
 
 Fill in the relevant information about your Azure DevOps Server. If you are not sure what those are, contact your system administrator.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-con-5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure.png' />
 
-- **Connection Name**: Appcircle allows multiple instance connections. Here, you can give the connection a name so you can group the connections together.
+- **Connection Name**: Give a name to this connection for easier identification in your list of integrations.
+- **Azure DevOps Server URL**: Provide the base URL of your Azure DevOps Server (e.g., `https://azuredevops.mycompany.com`).
+- **Collection Name**: Specify the name of the collection on your Azure DevOps Server (e.g., `DefaultCollection`).
+- **Personal Access Token**: Enter the token generated in your Azure DevOps Server profile settings for Git access.
 
-  - For example: `InternalAzure`
+Required permissions are listed below:
 
-- **Azure DevOps Server URL**: Use the server URL without a path. If the server has a custom port, it should be appended to the URL using `:` in front of the port.
-
-  - For example: `https://azure.spacetech.com`
-
-- **Owner Username**: Use the collection name on the Azure DevOps Server. You can see collections on the left-hand side when you open your Azure DevOps Server home page.
-
-  - For example: `DefaultCollection`
-
-- **Personal Access Token**: Use the personal access token that you created earlier and that has enough permissions.
-  - For example: `54rdrkce6wa4d22kf75lhmq4hosgx7iy7h76cc62y77oguombnnq`
+| Scope            | Permission        | Description                                                                                                                                                                |
+|------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Identity         | Read              | Allows reading identity information, such as users and groups within the organization                                                                                      |
+| Code             | Read , Status     | Provides read access to repositories, enabling applications to fetch and view source code. Allows applications to post and update build or commit statuses in repositories.|
+| Notifications    | Read              | Grants read-only access to notification settings.                                                                                                                          |
 
 :::caution
 

@@ -13,7 +13,9 @@ The Connections page is a feature where we can check and edit the connections of
 
 On this page, you can view **OAuth** and **PAT** (Personal Access Token) connections.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-con1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-connections.png' />
+
+The tags next to the connections on your list display the connection type — whether it’s Cloud, Self-Hosted, and whether it uses an HTTP Token or a Personal Access Token.
 
 :::info
 If you have not previously connected to a Git provider on Appcircle, i.e., created a profile and not connected a repository, you will not see any connection on this page.

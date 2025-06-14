@@ -17,7 +17,7 @@ If you authorize Appcircle to access your repositories on Bitbucket, you can sel
 
 After you click on **Bitbucket**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bitbucket.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
@@ -27,15 +27,25 @@ After the connection is successful, you can [view your newly created profile](/b
 
 ## Connecting to Bitbucket Cloud Repository
 
-To connect to a Bitbucket Cloud repository using either OAuth or Personal Access Token,
+To connect to a Bitbucket Cloud repository, you can choose from the following connection types:
 
-- OAuth Connection
+- **OAuth2 Connection**  
+Click **Get Repositories from Bitbucket Cloud (OAuth2)** to authorize Appcircle using your Bitbucket Cloud credentials. This provides secure and seamless integration.
 
-Clicking on Get Repositories from Bitbucket Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+- **App Password - User**  
+  Choose this to authenticate using your Bitbucket username and an [App Password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/). You will need to provide:
 
-- PAT (Personal Access Token) Connection or Bitbucket App Password
+    - Connection Name
+    - Bitbucket Server URL (e.g., `https://bitbucket.org`)
+    - Username
+    - Personal Access Token (App Password)
 
-Clicking on Connect to a Bitbucket server, which can be selected to connect to self-hosted and PAT connections, will require a token or password. Generating an app password or a PAT for Appcircle will require a list of permissions down below.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bit.png' />
+
+- **Access Tokens - Repo**  
+  Use a repository-specific token for limited-scope access to individual repositories.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bit2.png' />
 
 ### OAuth Permissions for Bitbucket Integration
 
@@ -47,11 +57,11 @@ The following table details the OAuth permissions required for Appcircle to conn
 | Project      | Read         | Provides access to view the projects the user has access to view. Read access (repository) to all the repositories in the projects is also granted.                       |
 | Repository   | Read         | Provides access to view all the repositories the user has access to view, including the source code, Issues, and Wiki. This does not include pull requests.               |
 | Pull Request | Read         | Provides access to view and list pull requests on the repositories the user has access to view. This permission (scope) also allows the user to create and resolve tasks. |
-| Webhooks     | Read & Write | Required for webhook operations. For Appcircle triggers to work.                                                                                                          |
+| Webhooks     | Read & Write | Needed for enabling Appcircle triggers through webhook operations.                                                                                                        |
 
-## Connecting to Bitbucket Self Hosted Repository
+## Connecting to Bitbucket Server (Self-Hosted) Repository
 
-The overall process is similar with a private repository connection through SSH, but Appcircle allows you to directly connect through the Bitbucket Self-Hosted URL.
+The overall process is similar with a private repository connection through SSH, but Appcircle allows connections to self-hosted Bitbucket servers via HTTP Access Tokens.
 
 :::caution
 
@@ -59,13 +69,21 @@ Bitbucket's version must be **7.14** or higher.
 
 :::
 
-First, select **Bitbucket** then **Connect to a Bitbucket Server** through the menu:
+1. Select **Bitbucket** > **HTTP Access Token - User** or **HTTP Access Token - Repo** based on your token type.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bitbucket.png' />
 
-Fill in the relevant information about your Bitbucket self-hosted module. If you are not sure what those are, contact your system administrator.
+2. Fill in the connection form with:
+  - Connection Name
+  - Bitbucket Server URL
+  - Username
+  - Personal Access Token
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4940-bitbucket2.png' />
+If you are not sure what those are, contact your system administrator.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bit3.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bit4.png' />
 
 :::caution
 
