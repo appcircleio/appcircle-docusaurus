@@ -16,7 +16,7 @@ If you authorize Appcircle to access your repositories on GitLab, you can select
 
 After you click on **GitLab**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-lab.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
@@ -26,15 +26,20 @@ After the connection is successful, you can [view your newly created profile](/b
 
 ## Connecting to GitLab Cloud Repository
 
-To connect to a GitLab Cloud repository using either OAuth or Personal Access Token,
+Appcircle allows connecting to GitLab Cloud repositories using two different authentication methods:
 
-- OAuth Connection
+- **OAuth2 Connection**  
+  Click **Get Repositories from GitLab Cloud (OAuth2)** to authorize Appcircle via your GitLab account. You will be redirected to GitLab to approve repository access.
 
-Clicking on Get Repositories from GitLab Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+- **Personal Access Token (User-Level)**  
+  Use this method to manually connect using a GitLab Personal Access Token (PAT). You will be required to fill out:
 
-- PAT (Personal Access Token) Connection
+    - Connection Name
+    - GitLab Server URL (e.g., `https://gitlab.com`)
+    - Username
+    - Personal Access Token
 
-Clicking on Connect to a GitLab server, which can be selected to connect to self-hosted and PAT connections, will require a token. Generating a PAT for Appcircle will require a list of permissions down below.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-lab2.png' />
 
 ### OAuth Permissions for GitLab Integration
 
@@ -56,13 +61,20 @@ GitLab's version must be **13.12.9** or higher.
 
 :::
 
-First, select **GitLab** and then **Connect to a Self-Managed GitLab Instance** through the menu:
+First, select **GitLab** and then **Personal Access Token (User-Level)** under **Create a New Gitlab Server Connection** through the menu:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-lab.png' />
 
-Fill the relevant information about your GitLab self-hosted module. If you are not sure what those are, contact your system administrator.
+To connect to a self-hosted GitLab instance, use the following fields when selecting the **Personal Access Token (User)** option:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/gitlab-self-detail.png' />
+- **Connection Name**: A custom name to identify this connection.
+- **GitLab Server URL**: Your GitLab instance URL (e.g., `https://gitlab.company.com`)
+- **Username**: The GitLab username of the account owning the token.
+- **Personal Access Token**: The token generated in your GitLab profile for API or repository access.
+
+If you are not sure what those are, contact your system administrator.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-lab3.png' />
 
 :::caution
 
