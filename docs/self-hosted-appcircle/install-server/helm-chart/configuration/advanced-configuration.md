@@ -127,12 +127,12 @@ webhook:
 
 ## Configure Toleration and Node Selector
 
-To run Appcircle server on specific nodes, you can configure toleration and node selector for the Appcircle server services. By default, the Helm chart doesn't configure toleration and node selector.
+To run the Appcircle server on specific nodes, you can configure tolerations and node selectors for the Appcircle server services. By default, the Helm chart does not configure any tolerations or node selectors.
 
-To configure toleration and node selector, you can see the sample `values.yaml` file below:
+To configure tolerations and node selectors, refer to the sample `values.yaml` file below:
 
 :::info
-The node selector labels and toleration in the `values.yaml` file below are just examples. You can configure them as you need.
+The node selector labels and tolerations in the `values.yaml` file below are examples. You can configure them according to your specific requirements.
 :::
 
 :::caution
