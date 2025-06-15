@@ -19,9 +19,13 @@ You must enable third-party application access via OAuth. To do that, you can fo
 - Go to your policy settings below security.
 - Enable third-party application access via OAuth.
 
-:::caution
-If you don't enable third-party application access via the OAuth setting, you can't authorize Appcircle.
+:::important Third-party application access via OAuth
+To successfully connect your Azure DevOps Cloud Repository with an Appcircle Build Profile, the “**Third-party application access via OAuth**” policy must be enabled in your Azure DevOps organization settings.
+
+This setting allows Appcircle to authenticate and interact with your repositories securely. If this policy is turned off, Appcircle will be unable to establish a connection, and repository integration will fail.
 :::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6017-azure.png' />
 
 ### Configuration Azure DevOps Services Setting on Appcircle
 
@@ -56,15 +60,7 @@ To connect to a Azure DevOps Cloud repository using either OAuth or Personal Acc
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure3.png' />
 
-Required permissions are listed below:
-
-| Scope            | Permission        | Description                                                                                                                                                                |
-|------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Identity         | Read              | Allows reading identity information, such as users and groups within the organization                                                                                      |
-| Code             | Read , Status     | Provides read access to repositories, enabling applications to fetch and view source code. Allows applications to post and update build or commit statuses in repositories.|
-| Notifications    | Read              | Grants read-only access to notification settings.                                                                                                                          |
-
-### OAuth Permissions for Azure DevOps Integration
+### OAuth2 Permissions for Azure DevOps Integration
 
 The following table details the OAuth permissions required for Appcircle to connect with Azure DevOps. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with Azure DevOps via OAuth. 
 
@@ -75,14 +71,6 @@ The following table details the OAuth permissions required for Appcircle to conn
 | Service Endpoints| Read , Query      | Grants read, query access to service endpoints. Allows listing external service integrations and retrieving details of existing connections, but does not permit creating or modifying.|
 | Project and team | Read              | Provides read access to project and team-related information, such as project details and team memberships.                                                                            |
 | Notifications    | Read              | Grants read-only access to notification settings.                                                                                                                                      |
-
-:::important Third-party application access via OAuth
-To successfully connect your Azure DevOps Cloud Repository with an Appcircle Build Profile, the “**Third-party application access via OAuth**” policy must be enabled in your Azure DevOps organization settings.
-
-This setting allows Appcircle to authenticate and interact with your repositories securely. If this policy is turned off, Appcircle will be unable to establish a connection, and repository integration will fail.
-:::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6017-azure.png' />
 
 ## Connecting to Azure DevOps Server Repository
 
@@ -117,9 +105,9 @@ Required permissions are listed below:
 | Code             | Read , Status     | Provides read access to repositories, enabling applications to fetch and view source code. Allows applications to post and update build or commit statuses in repositories.|
 | Notifications    | Read              | Grants read-only access to notification settings.                                                                                                                          |
 
-:::caution
-
 ### Azure Devops Server That Is Upgraded From a TFS Server
+
+:::caution
 
 If your Azure DevOps Server is upgraded from a TFS server, you should identify your Azure DevOps Server URL.
 
@@ -134,9 +122,7 @@ If your Azure DevOps Server is upgraded from a TFS server, you should identify y
 
 :::
 
-:::caution
-
-### Connection Notice
+:::caution Connection Notice
 
 For Appcircle to connect to the Azure DevOps Server instance, your connection must be reachable over the network.
 
@@ -150,17 +136,9 @@ Accessing Repositories in Internal Networks (Firewalls)
 
 ### Token Creation
 
-Azure DevOps Server has one kind of token at their self-hosted instance:
+- [Personal Access Token Azure DevOps Documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
 
-- [Personal Access Token](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
-
-That being said, **Personal Access Token** is used to authorize every repository the user has access to.
-
-:::info
-
-Appcircle needs admin permission to function properly. The admin permission is needed to create relevant WebHooks automatically.
-
-:::
+Personal Access Token from user works to connect your repository through Appcircle. That being said, **Personal Access Token** is used to authorize every repository the user has access to.
 
 ### Check Token
 

@@ -18,7 +18,7 @@ In such a case, only the selected repositories will be listed. To be able to vie
 
 :::info
 
-For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. GitHub App is a more secure and newer way implemented by GitHub for external apps to communicate within GitHub in a better fashion.
+For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. GitHub App is a more secure and newer way that implemented by GitHub uses OAuth2 for external apps to communicate within GitHub in a better fashion.
 
 :::
 
@@ -42,10 +42,10 @@ To connect to a GitHub Cloud repository using GitHub App (Oauth2),
 
 From the GitHub connection screen, you can:
 
-- **Get Repositories from GitHub App (OAuth2)**  
+- **GitHub App Cloud**  
   Authenticate and authorize Appcircle to access your GitHub repositories using GitHub App OAuth2 integration. This is the recommended and default method.
 
-- **Missing a repository? Grant access from GitHub**  
+- **Can't find a repository? Grant access from GitHub**  
   If you don’t see a specific repository listed, click this option to be redirected to GitHub where you can adjust the repository access permissions granted to the Appcircle GitHub App.
 
 ### OAuth Permissions for GitHub Integration

@@ -41,9 +41,9 @@ Appcircle allows connecting to GitLab Cloud repositories using two different aut
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-lab2.png' />
 
-### OAuth Permissions for GitLab Integration
+### OAuth2 and Personal Access Token Permissions for GitLab Integration
 
-The following table details the OAuth permissions required for Appcircle to connect with GitLab. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with GitLab via OAuth. 
+The following table details the OAuth permissions required for Appcircle to connect with GitLab. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with GitLab via OAuth2 and Personal Access Token. 
 
 | Scope            | Description                                                                                                                                                                                                  |
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -106,9 +106,7 @@ then, for default server configuration, the `api` domain should be
 
 :::
 
-:::caution
-
-### Connection Notice
+:::caution Connection Notice
 
 For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the network.
 
@@ -122,18 +120,9 @@ Is your self-hosted GitLab instance under enterprise firewall? Learn which IP ad
 
 ### Token Creation
 
-GitLab has two kinds of token at their Self Hosted instance:
+- [Personal Access Token GitLab Documentation](https://docs.gitlab.com/ee/security/token_overview.html#personal-access-tokens)
 
-- [Personal Access Token](https://docs.gitlab.com/ee/security/token_overview.html#personal-access-tokens)
-- [Project Access Token](https://docs.gitlab.com/ee/security/token_overview.html#project-access-tokens)
-
-Both works to connect your repository through Appcircle. That being said, **Project Access Token** is used to authorize a single project(repository) and **Personal Access Token** is used to authorize every repository the user has access to.
-
-:::info
-
-Appcircle needs admin permission to function properly. The admin permission is needed to create relevant WebHooks automatically.
-
-:::
+Personal Access Token from user works to connect your repository through Appcircle. That being said, **Personal Access Token** is used to authorize every repository the user has access to.
 
 ### Check Token
 
