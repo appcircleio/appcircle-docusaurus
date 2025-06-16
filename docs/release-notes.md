@@ -20,12 +20,11 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :muscle: Improvements
 
-- Repository-based access support has been added for both Bitbucket Self-Hosted and Bitbucket Cloud. <BuildBadge/> <CloudBadge/>
-- UI improvements have been made to the connection list, where the used provider and connection type—such as Personal Access Token (User-Level)(Cloud)-are now displayed as tags next to the saved PAT connections. <BuildBadge/> <CloudBadge/>
-- Notification support has been added for CodePush actions across Email, Microsoft Teams, and Slack channels. <AccountBadge/> <CloudBadge/>
+- [Repository-based](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket#connecting-to-bitbucket-cloud-repository) access support has been added for build profiles to be used with both Bitbucket Self-Hosted and Bitbucket Cloud. <BuildBadge/> <CloudBadge/>
+- UI improvements have been made to the [connection](/build/manage-the-connections) list, where the used provider and connection type—such as Personal Access Token (User-Level)(Cloud)-are now displayed as tags next to the saved PAT connections. <BuildBadge/> <CloudBadge/>
+- [Export as CSV](/testing-distribution/testing-groups#exporting-testing-group-members-as-csv) option has been added for Testing Groups to extract the tester email list as a CSV file for easier sharing and external management. <DistributionBadge/> <CloudBadge/>
 - Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/>
 - UTF-8 characters are now supported when naming a provisioning profile during its creation. <SigningIdentitiesBadge/> <CloudBadge/>
-- Improved the error message returned when a specified deployment cannot be found during the appcircle-code-push release-react command. The message now clearly indicates that the deployment does not exist, replacing the previous generic “INTERNAL_ERROR” response. <BuildBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
