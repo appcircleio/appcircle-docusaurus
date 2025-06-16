@@ -80,6 +80,12 @@ Store credentials are the connection details for the stores that you will publis
 
 For detailed information on store connections, follow the links below.
 
+:::caution Apple Enterprise API Key
+
+The Apple Enterprise Program is intended solely for in‑house distribution within an organization. Consequently, an Apple Enterprise API Key cannot be used in the Publish module because the Enterprise Program **does not** provide any **App Store Connect** or **TestFlight** infrastructure.
+
+:::
+
 | Store             | Connection                                                                                                                  |
 | ----------------- |-----------------------------------------------------------------------------------------------------------------------------|
 | App Store         | [Adding an App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key.md) |

@@ -123,6 +123,12 @@ storeWeb:
     domain: store.spacetech.com
 ```
 
+:::caution
+If the certificate of the custom store domain is not defined in the `global.yaml` file, the Enterprise App Store will listen on HTTP by default. It will not use the server-wide certificate defined in `.nginx.sslCertificate` for the Enterprise App Store.
+
+To enable HTTPS for the Enterprise App Store, you must provide `.storeWeb.customDomain.publicKey` and `.storeWeb.customDomain.privateKey` values. For details, refer to the [SSL Configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#custom-domain) docs.
+:::
+
 - Apply configuration changes.
 
 ```bash
@@ -209,6 +215,12 @@ minio:
 storeWeb:
   external:
     subdomain: store-appcircle
+webEventRedis:
+  external:
+    subdomain: redis-appcircle
+grafana:
+  external:
+    subdomain: monitor-appcircle
 ```
 
 :::caution

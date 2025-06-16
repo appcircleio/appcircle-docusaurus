@@ -10,9 +10,9 @@ The steps listed below are specific to the React Native build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [App Center CodePush](/workflows/react-native-specific-workflow-steps/app-center-code-push)
+## [Appcircle CodePush](/workflows/react-native-specific-workflow-steps/appcircle-codepush)
 
-Release a React Native update to [App Center](https://appcenter.ms/) CodePush. You need enter your token, owner, app name to distribute your updates.
+Release a React Native update to [Appcircle CodePush](/code-push). You need enter your token, app name and deployment channel to distribute your updates.
 
 ## [Install Node](/workflows/react-native-specific-workflow-steps/node-install)
 

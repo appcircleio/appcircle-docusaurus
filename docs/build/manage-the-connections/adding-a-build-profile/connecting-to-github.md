@@ -18,7 +18,7 @@ In such a case, only the selected repositories will be listed. To be able to vie
 
 :::info
 
-For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. GitHub App is a more secure and newer way implemented by GitHub for external apps to communicate within GitHub in a better fashion.
+For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. GitHub App is a more secure and newer way that implemented by GitHub uses OAuth2 for external apps to communicate within GitHub in a better fashion.
 
 :::
 
@@ -26,7 +26,7 @@ For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. Git
 
 After you click on **GitHub**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/github-main.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-github1.png' />
 
 When you successfully authorize your repository or repositories, the following screen will appear to let you select one for connection:
 
@@ -36,11 +36,17 @@ After the connection is successful, you can [view your newly created profile](/b
 
 ## Connecting to GitHub Cloud Repository
 
-To connect to a GitHub Cloud repository using either OAuth or Personal Access Token,
+To connect to a GitHub Cloud repository using GitHub App (Oauth2),
 
-- OAuth Connection
+### Connection Options
 
-Clicking on Get Repositories from GitHub Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+From the GitHub connection screen, you can:
+
+- **GitHub App Cloud**  
+  Authenticate and authorize Appcircle to access your GitHub repositories using GitHub App OAuth2 integration. This is the recommended and default method.
+
+- **Can't find a repository? Grant access from GitHub**  
+  If you don’t see a specific repository listed, click this option to be redirected to GitHub where you can adjust the repository access permissions granted to the Appcircle GitHub App.
 
 ### OAuth Permissions for GitHub Integration
 
