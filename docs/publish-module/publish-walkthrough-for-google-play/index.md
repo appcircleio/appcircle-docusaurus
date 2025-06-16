@@ -1,6 +1,6 @@
 ---
 title: Publish Walkthrough for Google Play Console
-description: Learn how to use the Publish module in Appcircle.
+description: Learn how to automate app publishing to Google Play Console using the Publish module.
 tags: [publish, google play console, android, metadata, walkthrough, android app release]
 ---
 
@@ -76,7 +76,7 @@ If you haven't create a Publish profile in Appcircle before, follow the detailed
 
 :::info Create from Google Play Console
 
-To use this profile creation method, you must have a Google Play API key integration. And the package name defined in the Publish profile must exactly match the package name registered in your Google Play Console. Please refer to the detailed documentation for [**Create from Google Play Console**](/publish-module/creating-publish-profiles#create-from-google-play-console) and [**API integration**](/account/my-organization/security/credentials/adding-google-play-service-account).  
+To use this profile creation method, you must have a Google Play API key integration. And the package name defined in the Publish profile must exactly match the package name registered in your Google Play Console. Please refer to the detailed documentation for [**Create from Google Play Console**](/publish-module/creating-publish-profiles#create-from-google-play-console) and [**API integration**](/account/my-organization/security/credentials/adding-google-play-service-account).
 
 :::
 
@@ -104,15 +104,15 @@ Publish flow are used to automate multiple tasks and introduce automation checkp
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
 
-- **Update the Publish Flow**: Update the flow based on your needs in the `Publish Flow` section. 
+- **Update the Publish Flow**: Update the flow based on your needs in the `Publish Flow` section.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manageFlowDetails.png' />
 
 :::info 
 
-You can back up your current Publish flow by clicking the `Download YAML` button at the bottom. You can also upload your Publish flow as a YAML file.
+You can back up your current Publish flow by clicking the `Download YAML` button at the bottom. You can also upload your Publish flow as a YAML file using the `Replace Flow` button at the top right.
 
 :::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manageFlowDetails.png' />
 
 - You can choose predefined steps or create custom steps based on your specific needs.
 
@@ -120,7 +120,6 @@ You can drag and drop steps into your Publish flow. Any unwanted Publish flow st
 You can also reorder steps so that they will be executed in the order you specify.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-dragDropFlow.png' />
-
 
 - **Configure Flow Steps**: Fill in all required inputs for each step in the flow with the necessary information according to your requirements.
 
@@ -274,7 +273,7 @@ Re-signing an Android binary with a different keystore may cause installation or
 
 For more information, please refer to the [**Resign binary**](/publish-module/publish-information/resign-binary) document.
 
-#### How to distribute an Android app to different release rracks (Alpha, Beta, Production) on Google Play?
+#### How to distribute an Android app to different release tracks (Alpha, Beta, Production, etc.) on Google Play?
 
 By configuring the `Distribute to track` step, you can upload your application to a specific track such as Internal, Alpha, Beta, or Production. This enables you to manage multiple release flows and target different user groups within the same pipeline.
 
