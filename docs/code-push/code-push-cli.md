@@ -102,13 +102,22 @@ When sending a CodePush release, you must specify the binary version that the re
 
 The table below summarizes the parameters used in this `release-react` command:
 
-| Parameter                | Description                                                                                |
-|--------------------------|--------------------------------------------------------------------------------------------|
-| `MyAppName`              | The name of the app you registered via CodePush CLI.                                       |
-| `ios` or `android`       | The target platform (`ios` or `android`).                                                  |
-| `-d <DeploymentChannel>` | The deployment channel to which the update will be released.                               |
-| `--targetBinaryVersion`  | The binary version of the app that this CodePush release is compatible with (e.g `1.0.0`). |
-| `--rollout`              | The percentage of users that will receive the update (e.g., `50` for 50%).                 |
-| `--mandatory`            | Marks the update as mandatory; users will be forced to update immediately.                 |
-| `--disabled`             | Disables the release so it won’t be delivered to any devices.                              |
-| `--description`          | A short note describing the content of the release.                                        |
+| Parameter                | Description                                                                                                   |
+|--------------------------|---------------------------------------------------------------------------------------------------------------|
+| `MyAppName`              | The name of the app you registered via CodePush CLI.                                                          |
+| `ios` or `android`       | The target platform (`ios` or `android`).                                                                     |
+| `-d <DeploymentChannel>` | The deployment channel to which the update will be released.                                                  |
+| `--targetBinaryVersion`  | The binary version of the app that this CodePush release is compatible with (e.g `1.0.0`).                    |
+| `--rollout`              | The percentage of users that will receive the update (e.g., `50` for 50%).                                    |
+| `--mandatory`            | Marks the update as mandatory; users will be forced to update immediately.                                    |
+| `--disabled`             | Disables the release so it won’t be delivered to any devices.                                                 |
+| `--description`          | A short note describing the content of the release.                                                           |
+| `--privateKeyPath`       | Relative path to the private `.pem` key used to sign the release so that devices can verify its authenticity. |
+
+
+### Releasing Signed CodePush Version
+
+With the Appcircle CodePush signing feature, you can safely deliver CodePush releases to every device running your application. The signing mechanism ensures that updates are ignored if the public and private keys do not match, preventing users from installing unverified bundles. 
+
+For full details and usage instructions, please refer to the CodePush Code Signing [documentation.](/code-push/code-push-code-signing)
+
