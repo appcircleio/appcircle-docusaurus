@@ -114,6 +114,24 @@ After disabling the settings, existing members will remain, and users can manual
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5678-import3.png' />
 
+## Exporting Testing Group Members as CSV
+
+You can export the list of testers in a Testing Group as a CSV file for record-keeping, reporting, or bulk operations outside the Appcircle.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/fe1694-export.png' />
+
+Steps to Export Testers as CSV:
+
+1.	Navigate to Testing Distribution > Testing Groups from the sidebar.
+2.	Select the desired Testing Group (e.g., My Testers) from the list.
+3.	Click the three-dot menu (⋮) located on the top-right of the selected group panel.
+4.	From the dropdown menu, click Export as CSV.
+5.	The CSV file will automatically download to your browser’s default download location.
+
+:::tip
+If you need to export multiple groups, repeat the process for each group individually. You can use the exported CSV file to import your testing group members for a different Appcircle Organization.
+:::
+
 ## Importing Testing Group Members via CSV
 
 You can add your testers quickly and efficiently by using Import from CSV option. The Testing Group profile does not need to be empty in order to use this feature.

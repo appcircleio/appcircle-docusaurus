@@ -50,3 +50,24 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 | `$AC_CODE_PUSH_DESCRIPTION`           | This parameter provides an optional changelog for the deployment.                                                                                                                                                                                                                                 | Optional |
 | `$AC_CODE_PUSH_ROLLOUT_PERCENTAGE`    | This parameter specifies the percentage of users (as an integer between 1 and 100) that should be eligible to receive this update.                                                                                                                                                                | Optional |
 | `$AC_CODE_PUSH_EXTRA_ARGUMENTS`       | Extra command line arguments for Appcircle CodePush CLI command. For example, add `--debug` for verbose logs.                                                                                                                                                                                     | Optional |
+
+
+### CodePush Code Signing
+
+With the **Appcircle CodePush** step, you can also publish a **signed CodePush release**. The required actions are outlined below, step by step.
+
+- First, create a group in the **Environment Variables** sub‑section under the **Build** module, and upload your `.pem` file into that group. For more information, please visit the Environment Variable [documentation](/environment-variables).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6352-envPem.png' />
+
+:::caution Environment Variables
+
+In order to use the **Environment Variable** group you created in the relevant profile, you need to select this group from the build configuration. For more detailed information, please refer to the Build Configuration [documentation](/build/build-process-management/configurations#environment-variables-configuration).
+
+:::
+
+- Next, in the **Appcircle CodePush** step, use the **Extra Arguments** input to pass the `--privateKeyPath <YOUR_ENV_KEY>` parameter and reference the environment variable you created.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6352-inputPem.png' />
+
+Once these steps are completed, running the **Appcircle CodePush** step will automatically sign the generated CodePush release with your provided `.pem` file and publish it.
