@@ -6,6 +6,7 @@ tags: [publish, google play console, android, metadata, walkthrough, android app
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Why Use the Publish Module: Features and Benefits
 
@@ -13,7 +14,7 @@ The Publish module in Appcircle is a powerful tool designed for managing the rel
 
 - **Centralized Release Management**: Monitor, manage, and audit releases from a single platform, making the release process more efficient and organized.
 - **Automate Releases**: Automate the submission of applications to multiple stores, reducing the manual workload and minimizing the risk of errors.
-- **Flexibility in Publishing**: Appcircle provides the flexibility to publish your applications to various platforms, including app stores and internal app distribution systems. This ensures that your app reaches the right audience through the most suitable channels.
+- **Flexibility in Publishing**: Appcircle provides the flexibility to publish your applications to various platforms, including app stores and internal app distribution systems. This ensures that your applications reaches the right audience through the most suitable channels.
 - **Isolation from Complex Interactions**: Eliminate the need for direct interaction with individual app stores like the Apple App Store, Google Play Console, and Huawei AppGallery. Appcircle acts as a central hub, isolating you from the complexities and variances of each store’s submission processes. 
 
 By using the Publish module, you can ensure a smooth, reliable, and scalable release process for your mobile applications, enhancing the overall efficiency and effectiveness of your app release strategy. 
@@ -91,7 +92,7 @@ To use this profile creation method, you must have a Google Play API key integra
 
 ### Selecting a Google Play Developer API Key
 
-If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish module. To initiate the release process, select the credentials for the relevant store from the Settings screen under the selected Publish profile.
+If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish module after the profile is created. To initiate the release process, select the credentials for the relevant store from the Settings screen under the selected Publish profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSetting.png' />
 
@@ -101,7 +102,7 @@ If you choose to create the profile manually, you must select the required Googl
 
 ### Updating Google Play Console App Information
 
-- Within the Publish module, you can update and review your app's information directly. This includes updating email address, phone number, website URL, primary languages, Please visit the [**Google Play Console Information**](/publish-module/publish-information/google-play-information) documentation for detailed information.
+- Within the Publish module, you can update and review your app's information directly. This includes updating email address, phone number, website URL, primary languages, and auto-send for review options. Please visit the [**Google Play Console Information**](/publish-module/publish-information/google-play-information) documentation for detailed information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-appInfoButton.png' />
 
@@ -113,11 +114,11 @@ Publish flow are used to automate multiple tasks and introduce automation checkp
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
 
-- **Update the existing publish flow**: Update the flow from the `Publish Flow` section. 
+- **Update the Publish Flow**: Update the flow based on your needs in the `Publish Flow` section. 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manageFlowDetails.png' />
 
-- You can choose from predefined steps or create custom steps based on your specific needs.
+- You can choose predefined steps or create custom steps based on your specific needs.
 
 You can drag and drop steps into your Publish flow. Any unwanted Publish flow steps can be removed or deactivated.
 You can also reorder steps so that they will be executed in the order you specify.
@@ -133,7 +134,7 @@ You can also reorder steps so that they will be executed in the order you specif
 
 ### Publish Flow Sample
 
-Here is a sample publishing flow for an Android app, including track selection and deployment steps.
+Here is a sample Publish flow for an Android app, including track selection and deployment steps.
 
 - [**Custom Script**](/publish-integrations/common-publish-integrations/custom-script): You can use the Custom Script steps to add extra functionalities in your Publish flow. Appcircle will execute the commands specified in your custom scripts, allowing you to perform custom actions. These scripts will run on the runner, giving you access to all the capabilities of the Publish environment.
 - [**Get Approval via Email**](/publish-integrations/common-publish-integrations/get-approval-via-email): The Get Approval via Email step allows you to get approval from the email addresses entered as input in the step before moving on to the next steps in Publish.
@@ -208,7 +209,7 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 ### Updating Metadata
 
-- Within the Publish module, you can manage your app's metadata directly. This includes updating the app's metadata, including video, descriptions, and app name. Please visit the [**Metadata Details**](/publish-module/publish-information/meta-data-information#android-metadata-information) documentation for more information.
+- Within the Publish module, you can directly manage your app’s metadata. This includes editing the screenshots, video, app name, and descriptions. Please visit the [**Metadata Details**](/publish-module/publish-information/meta-data-information#android-metadata-information) documentation for more information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata.png' />
 
@@ -279,9 +280,9 @@ Re-signing an Android binary with a different keystore may cause installation or
 
 For more information, please refer to the [**Resign binary**](/publish-module/publish-information/resign-binary) document.
 
-#### How to Distribute an Android App to Different Release Tracks (Alpha, Beta, Production) on Google Play?
+#### How to distribute an Android app to different release rracks (Alpha, Beta, Production) on Google Play?
 
-Yes. By setting the `Distribute to track` step, you can upload your application to a specific track, such as Internal, Beta, or Production. This allows you to manage multiple release flow and target different user groups within the same pipeline.
+By configuring the `Distribute to track` step, you can upload your application to a specific track such as Internal, Alpha, Beta, or Production. This enables you to manage multiple release flows and target different user groups within the same pipeline.
 
 For more information, please refer to the [**Distribute to Track**](/publish-integrations/android-publish-integrations/distribute-to-track) document.
 
@@ -289,9 +290,22 @@ For more information, please refer to the [**Distribute to Track**](/publish-int
 
 In the `Distribute to track` step, if you set `AC_RELEASE_STATUS` to partial, a rollout percentage slider becomes available. Use it to define what percentage of users should receive the update initially (e.g., 10%). This lets you perform phased rollouts and monitor stability before doing a full release.
 
+:::warning
+
+Keep in mind that, once a rollout has started, the percentage can only be increased. It cannot be reduced. If you need to stop the release, you must halt the rollout entirely and upload a new release.
+
+:::
+
 #### How do I update my app's metadata?
 
-To update your app's metadata, navigate to the Publish module, select the relevant profile, click the `Actions` button for the binary, and go to Metadata details. You can now update the metadata fields, such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
+To update your app's metadata, navigate to the Publish module, select the relevant profile, click the `Actions` button for the binary, and go to `Metadata details`. You can now update the metadata fields, such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
+
+:::caution
+
+You must also complete the metadata submission process on Google Play Console to ensure the changes take effect.
+For more details, refer to the [**Update Metadata on Google Play Console**](/publish-integrations/android-publish-integrations/update-metadata-on-google-play).
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadataDetails.png' />
@@ -318,9 +332,9 @@ For more information, please refer to the [**Role Management**](/account/my-orga
 
 Yes, the Publish module allows you to manage multiple Play Store accounts within a single interface. You can set up and integrate different accounts, such as Apple App Store, Google Play, and Huawei AppGallery, and then select the appropriate account during the release process. This flexibility ensures that you can handle releases across multiple platforms efficiently.
 
-#### How do I create a custom flow in the Publish Module?
+#### How do I customize my Publish flow in the Publish Module?
 
-To create a custom flow, navigate to the Publish module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allow you to tailor the release process to fit your specific needs.
+To customize a flow, navigate to the Publish module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allow you to tailor the release process to fit your specific needs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
 
@@ -330,13 +344,23 @@ The Publish Module is an **enterprise-level** solution, so only users with an **
 
 #### How can I roll back to a previous version if needed?
 
-If you need to roll back to a previous version, you can do so by selecting the desired version from your release history within the Publish module. This process involves re-uploading the previous binary and metadata, then executing a flow to re-release that version. Rolling back ensures that you can quickly address any issues with the current release without significant downtime.
+Google Play does not support directly rolling back to a previously published version. However, you can functionally roll back by re-releasing the previous binary using a higher `version code`.
+
+To do this in Appcircle, go to the Publish module, select the previous version from your release history, and `Resign` the binary that you want to re-release.
+
+For more information, please refer to the [**Resign binary**](/publish-module/publish-information/resign-binary).
+
+:::warning 
+
+Make sure to increment the `version code`; otherwise, Google Play will reject the upload.
+
+:::
 
 ### Further Support and Resources
 
 If you need additional help with the Publish module, the following resources are available:
 
-- **Appcircle Support**: Contact [**Appcircle Slack support**](https://slack.appcircle.io/) for personalized assistance with your specific issues. 
+<NeedHelp />
 
 - **Technical Documentation**: Refer to the Appcircle user documentation for detailed guides and troubleshooting tips for the Publish module.
 
