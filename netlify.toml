@@ -1270,6 +1270,6 @@ to = "/workflows/common-workflow-steps/testinium-steps/testinium"
 status = 301
 
 [[redirects]]
-from = "/workflows/react-native-specific-workflow-steps/#app-center-codepush"
+from = "/workflows/react-native-specific-workflow-steps#app-center-codepush"
 to = "/workflows/react-native-specific-workflow-steps/appcircle-codepush"
 status = 301
