@@ -2,7 +2,7 @@
 title: CodePush CLI
 description: Learn how to use Appcircle CodePush CLI and manage your deployments via command line.
 tags: [appcircle codepush cli, cli, codepush cli, deployments, command line]
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # CodePush CLI
