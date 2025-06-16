@@ -16,21 +16,24 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.28.1 - 2025-06-13 
-
-### 🆕 New Features
-
-- Notification support has been added for CodePush actions across Email, Microsoft Teams, and Slack channels. <AccountBadge/> <CloudBadge/>
+## 3.28.1 - 2025-06-16 New Bitbucket Repository Connection Types, UI Enhancements, Improvements and more
 
 ### :muscle: Improvements
 
+- Repository-based access support has been added for both Bitbucket Self-Hosted and Bitbucket Cloud. <BuildBadge/> <CloudBadge/>
+- UI improvements have been made to the connection list, where the used provider and connection type—such as Personal Access Token (User-Level)(Cloud)-are now displayed as tags next to the saved PAT connections. <BuildBadge/> <CloudBadge/>
+- Notification support has been added for CodePush actions across Email, Microsoft Teams, and Slack channels. <AccountBadge/> <CloudBadge/>
 - Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/>
+- UTF-8 characters are now supported when naming a provisioning profile during its creation. <SigningIdentitiesBadge/> <CloudBadge/>
 - Improved the error message returned when a specified deployment cannot be found during the appcircle-code-push release-react command. The message now clearly indicates that the deployment does not exist, replacing the previous generic “INTERNAL_ERROR” response. <BuildBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
-- Fixed an issue where attempting to create a new provisioning profile with both In-House and App Store Connect types caused an error in the API. <PublishBadge/> <CloudBadge/>
-- Fixed an issue where, with Auto Publish enabled, receiving an app with a different version resulted in a new app being created on Intune instead of updating the app previously selected with “Mark as RC.” <PublishBadge/> <CloudBadge/>
+- An issue was fixed where an error was thrown by the API when attempting to create a new provisioning profile with both In-House and App Store Connect types. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where, with Auto Publish enabled, receiving an app with a different version resulted in a new app being created on Intune instead of updating the app previously marked as RC. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where UI inconsistencies were encountered after redirection when a different organization was accessed while viewing a CodePush app page. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where app icons were not displayed on the email sending screen of the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where the help button for the Resign Binary feature was redirecting users to an invalid link within the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
 
 ## 3.28.0 - 2025-05-21 CodePush Integration, Send Email Publish Step, Improvements and more
 
