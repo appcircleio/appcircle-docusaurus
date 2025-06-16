@@ -2,7 +2,7 @@
 title: CodePush CLI
 description: Learn how to use Appcircle CodePush CLI and manage your deployments via command line.
 tags: [appcircle codepush cli, cli, codepush cli, deployments, command line]
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # CodePush CLI
@@ -102,16 +102,17 @@ When sending a CodePush release, you must specify the binary version that the re
 
 The table below summarizes the parameters used in this `release-react` command:
 
-| Parameter                | Description                                                                                |
-|--------------------------|--------------------------------------------------------------------------------------------|
-| `MyAppName`              | The name of the app you registered via CodePush CLI.                                       |
-| `ios` or `android`       | The target platform (`ios` or `android`).                                                  |
-| `-d <DeploymentChannel>` | The deployment channel to which the update will be released.                               |
-| `--targetBinaryVersion`  | The binary version of the app that this CodePush release is compatible with (e.g `1.0.0`). |
-| `--rollout`              | The percentage of users that will receive the update (e.g., `50` for 50%).                 |
-| `--mandatory`            | Marks the update as mandatory; users will be forced to update immediately.                 |
-| `--disabled`             | Disables the release so it won’t be delivered to any devices.                              |
-| `--description`          | A short note describing the content of the release.                                        |
+| Parameter                | Description                                                                                                   |
+|--------------------------|---------------------------------------------------------------------------------------------------------------|
+| `MyAppName`              | The name of the app you registered via CodePush CLI.                                                          |
+| `ios` or `android`       | The target platform (`ios` or `android`).                                                                     |
+| `-d <DeploymentChannel>` | The deployment channel to which the update will be released.                                                  |
+| `--targetBinaryVersion`  | The binary version of the app that this CodePush release is compatible with (e.g `1.0.0`).                    |
+| `--rollout`              | The percentage of users that will receive the update (e.g., `50` for 50%).                                    |
+| `--mandatory`            | Marks the update as mandatory; users will be forced to update immediately.                                    |
+| `--disabled`             | Disables the release so it won’t be delivered to any devices.                                                 |
+| `--description`          | A short note describing the content of the release.                                                           |
+| `--privateKeyPath`       | Relative path to the private `.pem` key used to sign the release so that devices can verify its authenticity. |
 
 
 ### Releasing Signed CodePush Version

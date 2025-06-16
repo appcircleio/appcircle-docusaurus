@@ -2,7 +2,7 @@
 title: CodePush Code Signing
 description: Learn how to sign your application with Appcircle CodePush feature for React Native projects.
 tags: [appcircle codepush, signing, codepush, react native]
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import Tabs from '@theme/Tabs';
