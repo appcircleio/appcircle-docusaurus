@@ -46,9 +46,9 @@ The Google API key JSON file can only be downloaded once and cannot be retrieved
 
 :::
 
-### Binary and Metadata Preparation
+### Binary Preparation
 
-Before starting the release process, it's essential to prepare all necessary app metadata and binary files. This preparation ensures a smooth and efficient publishing experience.
+Before starting the release process, make sure your AAB or APK binary is properly signed with the correct keystore. Proper signing is required for Google Play to accept the build and ensures a smooth publishing experience.
 
 :::info Binary Upload Methods
 
@@ -56,27 +56,17 @@ The binary file can be uploaded to the Publish module either manually or through
 
 :::
 
-- Gather all required metadata for your app for the Google Play Console, such as:
-
-    - Application name
-    - Description
-    - App icons and screenshots
-    - Privacy policy URL
-    - Contact information
-
-- Having this information prepared in advance will streamline the publishing process.
-
 ## Publish Setup Process
 
 ### Creating a Publish Profile 
 
-- Your Publish profile should be correctly set up within the Appcircle platform. This includes having a configured profile with the necessary app builds (binary files) available for release. To set up a profile, click the **Add New** button on the top right.
+- Your Publish profile should be correctly set up within the Appcircle platform. The package name defined in the Publish profile must exactly match the package name registered in your Google Play Console. To create a profile, click the **Add New** button on the top right.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishStartCreate2.png' />
 
 :::tip Creating a Publish Profile
 
-If you haven't set up a Publish profile in Appcircle before, follow the detailed [**Creating a Publish profile guide**](/publish-module/creating-publish-profiles) provided in the Appcircle documentation to ensure everything is ready for publishing.
+If you haven't create a Publish profile in Appcircle before, follow the detailed [**Creating a Publish profile guide**](/publish-module/creating-publish-profiles) provided in the Appcircle documentation to ensure everything is ready for publishing.
 
 :::
 
@@ -92,11 +82,11 @@ To use this profile creation method, you must have a Google Play API key integra
 
 ### Selecting a Google Play Developer API Key
 
-If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish module after the profile is created. To initiate the release process, select the credentials for the relevant store from the Settings screen under the selected Publish profile.
+If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish module after the profile is created. To initiate the release process, select the credentials for the relevant store from the `Settings` screen under the selected Publish profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSetting.png' />
 
-- All available integrations will be shown in the Settings screen. Here, you should select the Google Play Developer API key that you want to link to release your app.
+- All available integrations will be shown in the `Settings` screen. Here, you should select the Google Play Developer API key that you want to link to release your app.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSettingDetail.png' />
 
@@ -116,6 +106,12 @@ Publish flow are used to automate multiple tasks and introduce automation checkp
 
 - **Update the Publish Flow**: Update the flow based on your needs in the `Publish Flow` section. 
 
+:::info 
+
+You can back up your current Publish flow by clicking the `Download YAML` button at the bottom. You can also upload your Publish flow as a YAML file.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manageFlowDetails.png' />
 
 - You can choose predefined steps or create custom steps based on your specific needs.
@@ -130,7 +126,7 @@ You can also reorder steps so that they will be executed in the order you specif
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-configureStep.png' />
 
-- **Save**: Once the flow is configured, you can save and then activate it for use in the deployment process.
+- **Save**: Once the flow is configured, you can save it for use in the deployment process.
 
 ### Publish Flow Sample
 
@@ -162,8 +158,6 @@ You can select one of the following options:
 ## Managing Releases
 
 Effective release management is crucial for ensuring the success of your app updates. The Publish module provides you with the tools to monitor, control, and optimize the release process. You can track the status of your releases in real time, manage approvals, and address any issues that arise during the process. Also, the Publish module offers customizable flow to provide more detailed management of the release process.
-
-Additionally, you have full control over your app's distribution. By leveraging these features, you can maintain a smooth and efficient release cycle, minimizing disruptions and maximizing the impact of your updates.
 
 ### Uploading a Binary 
 
@@ -270,11 +264,11 @@ For more information, please refer to the [**What to do if I lost my key store**
 
 #### Can I re-sign an Android binary with a different keystore?
 
-Yes. The Resign Binary step allows you to re-sign your APK or AAB using a different keystore. This is useful when distributing the same build under a different signing identity. The Publish module fully supports Android binary re-signing.
+Yes. The Resign Binary step allows you to re-sign your APK or AAB using a different keystore. This is useful when distributing the same build under a different signing identity. Make sure to use a trusted and correct keystore when re-signing your binary. The Publish module fully supports Android binary re-signing.
 
 :::caution
 
-Re-signing an Android binary with a different keystore may cause installation or update issues. Android does not allow an app signed with one key to be updated with another. If a different keystore is used, the app must be uninstalled first, which results in loss of user data. Also, changing the signing key is not allowed on Google Play after the first release, unless you're using Play App Signing with an approved key change process.
+Re-signing an Android binary with a different keystore may cause installation or update issues. Android does not allow an app signed with one keystore file to be updated with another. If a different keystore is used incorrectly, the application may fail to install or update, and you may encounter a "Package not found" error. Also, changing the signing key is not allowed on Google Play Console after the first release, unless you're using Play App Signing with an approved key change process.
 
 :::
 
@@ -334,7 +328,7 @@ Yes, the Publish module allows you to manage multiple Play Store accounts within
 
 #### How do I customize my Publish flow in the Publish Module?
 
-To customize a flow, navigate to the Publish module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allow you to tailor the release process to fit your specific needs.
+To customize a flow (available only with an **enterprise plan**), navigate to the Publish module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allow you to tailor the release process to fit your specific needs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
 
