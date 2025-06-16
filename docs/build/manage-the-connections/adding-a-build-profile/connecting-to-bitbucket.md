@@ -17,7 +17,7 @@ If you authorize Appcircle to access your repositories on Bitbucket, you can sel
 
 After you click on **Bitbucket**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bitbucket.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket1.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
@@ -40,12 +40,12 @@ Click **Get Repositories from Bitbucket Cloud (OAuth2)** to authorize Appcircle 
     - Username
     - App Password
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bit.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket2.png' />
 
 - **Access Tokens - Repo**  
   Use a repository-specific token for limited-scope access to individual repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bit2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket3.png' />
 
 ### OAuth2, App Password and Access Token Permissions for Bitbucket Cloud Integration
 
@@ -71,7 +71,7 @@ Bitbucket's version must be **7.14** or higher.
 
 1. Select **Bitbucket** > **HTTP Access Token - User** or **HTTP Access Token - Repo** based on your token type.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bitbucket.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket1.png' />
 
 2. Fill in the connection form with:
   - Connection Name
@@ -81,9 +81,9 @@ Bitbucket's version must be **7.14** or higher.
 
 If you are not sure what those are, contact your system administrator.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bit3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket4.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bit4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket5.png' />
 
 :::info
 

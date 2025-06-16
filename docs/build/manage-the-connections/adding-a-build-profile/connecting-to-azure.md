@@ -35,7 +35,7 @@ If you authorize Appcircle to access your repositories on Azure DevOps, you can 
 
 After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-githubimage.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
@@ -58,7 +58,7 @@ To connect to a Azure DevOps Cloud repository using either OAuth or Personal Acc
   - Collection Name (e.g., `DefaultCollection`)
   - Personal Access Token
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure4.png' />
 
 ### OAuth2 Permissions for Azure DevOps Integration
 
@@ -86,11 +86,11 @@ Azure DevOps Server version must be **Azure DevOps Server 2020** or higher.
 
 First, select **Azure** and then **Personal Access Token (User)** under **Create a new Azure Devops Connection** through the menu:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-githubimage.png' />
 
 Fill in the relevant information about your Azure DevOps Server. If you are not sure what those are, contact your system administrator.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure5.png' />
 
 - **Connection Name**: Give a name to this connection for easier identification in your list of integrations.
 - **Azure DevOps Server URL**: Provide the base URL of your Azure DevOps Server (e.g., `https://azuredevops.mycompany.com`).
@@ -138,7 +138,7 @@ Accessing Repositories in Internal Networks (Firewalls)
 
 - [Personal Access Token Azure DevOps Documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
 
-Personal Access Token from user works to connect your repository through Appcircle. That being said, **Personal Access Token** is used to authorize every repository the user has access to.
+A user’s **Personal Access Token** enables connection to their repository through Appcircle. It is used to authorize access to all repositories the user can access.
 
 ### Check Token
 

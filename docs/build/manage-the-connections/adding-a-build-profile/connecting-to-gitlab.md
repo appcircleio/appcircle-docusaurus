@@ -16,7 +16,7 @@ If you authorize Appcircle to access your repositories on GitLab, you can select
 
 After you click on **GitLab**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-lab.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-gitlab5.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
@@ -39,7 +39,7 @@ Appcircle allows connecting to GitLab Cloud repositories using two different aut
     - Username
     - Personal Access Token
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-lab2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-gitlab6.png' />
 
 ### OAuth2 and Personal Access Token Permissions for GitLab Integration
 
@@ -63,7 +63,7 @@ GitLab's version must be **13.12.9** or higher.
 
 First, select **GitLab** and then **Personal Access Token (User-Level)** under **Create a New Gitlab Server Connection** through the menu:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-lab.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-gitlab5.png' />
 
 To connect to a self-hosted GitLab instance, use the following fields when selecting the **Personal Access Token (User)** option:
 
@@ -74,7 +74,7 @@ To connect to a self-hosted GitLab instance, use the following fields when selec
 
 If you are not sure what those are, contact your system administrator.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-lab3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-gitlab7.png' />
 
 :::caution
 

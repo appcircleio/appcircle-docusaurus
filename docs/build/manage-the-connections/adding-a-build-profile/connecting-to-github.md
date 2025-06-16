@@ -26,7 +26,7 @@ For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. Git
 
 After you click on **GitHub**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/github-main.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-github1.png' />
 
 When you successfully authorize your repository or repositories, the following screen will appear to let you select one for connection:
 
