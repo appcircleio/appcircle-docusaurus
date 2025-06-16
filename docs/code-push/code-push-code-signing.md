@@ -58,7 +58,19 @@ After generating the private and public keys locally, you must make a few config
 
 </Tabs>
 
+
 ### Signing CodePush Release
 
+To create a signed CodePush release, you must first generate a build from your codebase with the public key already embedded. The resulting `.ipa` and `.apk` artifacts now contain the public key, enabling them to identify properly signed CodePush releases and safely apply OTA updates.
 
 
+Once your binary is configured with the public key, you can publish a **signed** CodePush release through the **Appcircle CodePush CLI**:
+
+```bash
+appcircle-code-push release-react <YOUR_APP_PROFILE_NAME> <platform> -d <DEPLOYMENT_CHANNEL_NAME> --privateKeyPath <YOUR_PRIVATE_KEY_PATH>
+```
+
+Replace `<YOUR_APP_PROFILE_NAME>` with the CodePush Profile name shown in the Appcircle dashboard, update the `-d` flag as needed (e.g., *Staging*). The `--privateKeyPath` flag must reference the **same private key** you used to generate the public key embedded in the app; the CLI will sign the bundle before uploading it to Appcircle.
+
+
+For a full list of commands and advanced options, see the Appcircle CodePush CLI [documentation.](/code-push/code-push-cli).

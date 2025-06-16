@@ -112,3 +112,11 @@ The table below summarizes the parameters used in this `release-react` command:
 | `--mandatory`            | Marks the update as mandatory; users will be forced to update immediately.                 |
 | `--disabled`             | Disables the release so it won’t be delivered to any devices.                              |
 | `--description`          | A short note describing the content of the release.                                        |
+
+
+### Releasing Signed CodePush Version
+
+With the Appcircle CodePush signing feature, you can safely deliver CodePush releases to every device running your application. The signing mechanism ensures that updates are ignored if the public and private keys do not match, preventing users from installing unverified bundles. 
+
+For full details and usage instructions, please refer to the CodePush Code Signing [documentation.](/code-push/code-push-code-signing)
+
