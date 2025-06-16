@@ -78,6 +78,12 @@ For Appcircle Cloud, the **ServerURL** is `https://api.appcircle.io/codepush`.
 
 </Tabs>
 
+#### Enabling CodePush Code Signing
+
+To leverage Appcircle's CodePush Code Signing capability for release validation, you must integrate the public key you generated locally into your project configuration. Using this key pair, the Appcircle CodePush SDK verifies the signature of each incoming release against the key embedded in the app and decides whether the update can be applied. If verification fails, the update is blocked and will not be installed by the device. 
+
+For complete setup instructions, refer to the CodePush Code Signing [documentation.](/code-push/code-push-code-signing)
+
 ### SDK Installation and Configuration
 
 The SDK installation and configuration steps for `iOS` and `Android` are detailed below.

@@ -16,6 +16,24 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.28.1 - 2025-06-16 New Bitbucket Repository Connection Types, UI Enhancements, Improvements and more
+
+### :muscle: Improvements
+
+- [Repository-based](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket#connecting-to-bitbucket-cloud-repository) access support has been added for build profiles to be used with both Bitbucket Self-Hosted and Bitbucket Cloud. <BuildBadge/> <CloudBadge/>
+- UI improvements have been made to the [connection](/build/manage-the-connections) list, where the used provider and connection type—such as Personal Access Token (User-Level)(Cloud)-are now displayed as tags next to the saved PAT connections. <BuildBadge/> <CloudBadge/>
+- [Export as CSV](/testing-distribution/testing-groups#exporting-testing-group-members-as-csv) option has been added for Testing Groups to extract the tester email list as a CSV file for easier sharing and external management. <DistributionBadge/> <CloudBadge/>
+- Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/>
+- UTF-8 characters are now supported when naming a provisioning profile during its creation. <SigningIdentitiesBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where an error was thrown by the API when attempting to create a new provisioning profile with both In-House and App Store Connect types. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where, with Auto Publish enabled, receiving an app with a different version resulted in a new app being created on Intune instead of updating the app previously marked as RC. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where UI inconsistencies were encountered after redirection when a different organization was accessed while viewing a CodePush app page. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where app icons were not displayed on the email sending screen of the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where the help button for the Resign Binary feature was redirecting users to an invalid link within the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
+
 ## 3.28.0 - 2025-05-21 CodePush Integration, Send Email Publish Step, Improvements and more
 
 ### 🆕 New Features
@@ -1394,7 +1412,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 ### 🆕 New Feature
 
 - [Data Theorem Mobile Secure](/workflows/common-workflow-steps/#data-theorem-mobile-secure) workflow step added. <CloudBadge/> <SelfHostedBadge/>
-- [App Center CodePush](/workflows/react-native-specific-workflow-steps/#app-center-codepush) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center CodePush](/workflows/react-native-specific-workflow-steps/appcircle-codepush) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - Latest five build status added to build profile. <CloudBadge/> <SelfHostedBadge/>
 - Slack Bot added. <CloudBadge/>
 
@@ -1422,8 +1440,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 - [Resigning](/testing-distribution/resigning-binaries) iOS and Android binaries added to Test Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can create [sub organizations](/account/my-organization) to manage their users. <CloudBadge/> <SelfHostedBadge/>
-- [App Center iOS Distribution](/workflows/ios-specific-workflow-steps/#app-center-ios-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
-- [App Center Android Distribution](/workflows/android-specific-workflow-steps/#app-center-android-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center iOS Distribution](/workflows/ios-specific-workflow-steps#app-center-ios-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center Android Distribution](/workflows/android-specific-workflow-steps#app-center-android-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
