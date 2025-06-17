@@ -317,3 +317,7 @@ override val reactHost: ReactHost
 If you are using [**Microsoft CodePush SDK**](https://github.com/microsoft/react-native-code-push)  with the new architecture enabled, you may encounter this error when attempting to push OTA updates. If that happens, you can follow [**these instructions**](https://github.com/microsoft/react-native-code-push/issues/2083#issuecomment-1411745157) to resolve it. 
 
 Alternatively, you can use the [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push), which supports the new architecture for React Native 0.76 and above.
+
+### Does Appcircle CodePush support Expo projects?
+
+No, Appcircle CodePush currently supports only bare React Native projects. Managed Expo apps are not supported at this time.
