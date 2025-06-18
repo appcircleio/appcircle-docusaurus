@@ -5,7 +5,7 @@ tags: [self-hosted, helm, configuration]
 sidebar_position: 2
 ---
 
-Helm charts support extensive customization through values files (values.yaml) or direct CLI overrides. Users can modify environment-specific settings, resource limits, and integrations without altering the chart structure.
+Appcircle Server Helm chart support extensive customization through values files for production configurations.
 
 Current headlines are listed below:
 
