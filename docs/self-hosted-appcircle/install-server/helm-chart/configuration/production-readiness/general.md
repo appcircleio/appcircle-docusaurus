@@ -1,5 +1,5 @@
 ---
-title: Production Readiness
+title: General Configuration
 description: Learn how to configure the Appcircle server Helm chart for production environments
 tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 20
