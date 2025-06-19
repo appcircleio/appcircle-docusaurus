@@ -176,6 +176,20 @@ In the example image, the profile has static authentication method, so it is dis
 
 You can find out more about the login methods in the [using authentication for distribution](/testing-distribution/create-or-select-a-distribution-profile#authentication) section.
 
+#### Bundle/Package Identifier Validation
+
+You can enforce identifier validation to ensure consistency and prevent mismatches between uploaded binaries and profile settings:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-validate2.png' />
+
+- **Bundle Validation for iOS**: When enabled, this option restricts uploads to only those iOS binaries that exactly match the bundle identifier specified in the profile. This ensures that only binaries from the intended iOS application are accepted.
+
+- **Package Validation for Android**: When enabled, this option restricts uploads to only those Android binaries that exactly match the package identifier specified in the profile. This ensures that only binaries from the intended Android application are accepted.
+
+When either validation is active, binaries with mismatching identifiers will be rejected during upload.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-validate.png' />
+
 #### Binary Tags
 
 The Binary Tags feature allows you to label your application binaries with meaningful metadata, which is displayed on the Testing Portal for easy identification by testers. 
