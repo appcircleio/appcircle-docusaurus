@@ -29,7 +29,7 @@ To use this feature, you need to upload the bundle file you created as a `.zip` 
 
 - **App Version:** Specifies which app version the update is targeted for. Make sure it matches the version defined in your project settings.
 - **Release Note:** A description of the changes or improvements included in this release. This helps users and team members understand what the update contains.
-- **Diff Package:** When enabled, users will download only the changed files instead of the full package, reducing update size and speeding up installation.
+- **Package Diff:** When enabled, users will download only the changed files instead of the full package, reducing update size and speeding up installation.
 - **Mandatory Update:** When enabled, users are required to install the update immediately upon app launch.
 - **Disable:** Disables the current release, making it unavailable to users, even if it was previously deployed.
 - **Rollout Percentage:** Defines what percentage of users who will receive the update initially. This allows for a gradual rollout and safer deployments.
