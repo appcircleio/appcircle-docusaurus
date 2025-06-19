@@ -113,6 +113,7 @@ The table below summarizes the parameters used in this `release-react` command:
 | `--disabled`             | Disables the release so it won’t be delivered to any devices.                                                 |
 | `--description`          | A short note describing the content of the release.                                                           |
 | `--privateKeyPath`       | Relative path to the private `.pem` key used to sign the release so that devices can verify its authenticity. |
+| `--diffEnabled`          | Enables package diff so users will download only the changed files instead of the full package.
 
 
 ### Releasing Signed CodePush Version
