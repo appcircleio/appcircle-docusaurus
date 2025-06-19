@@ -2913,6 +2913,21 @@ xml:
   description: "Helm related documentations"
   permalink: "/helm"
 
+"gcp":
+  label: "gcp"
+  description: "GCP related documentations"
+  permalink: "/gcp"
+
+"cloud-storage":
+  label: "cloud-storage"
+  description: "Cloud storage related documentations"
+  permalink: "/cloud-storage"
+
+"object-storage":
+  label: "object-storage"
+  description: "Object storage related documentations"
+  permalink: "/object-storage"
+
 "server-setup":
   label: "server setup"
   description: "Server setup related documentations"
