@@ -2913,6 +2913,11 @@ xml:
   description: "Helm related documentations"
   permalink: "/helm"
 
+"s3":
+  label: "s3"
+  description: "S3 related documentations"
+  permalink: "/s3"
+
 "gcp":
   label: "gcp"
   description: "GCP related documentations"
