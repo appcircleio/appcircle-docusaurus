@@ -192,7 +192,7 @@ cat << 'EOF' > appcircle-s3-policy.json
                 "s3:PutObject",
                 "s3:GetObject",
                 "s3:DeleteObject",
-                "s3:ListBucket",
+                "s3:ListBucket"
             ],
             "Resource": [
                 "arn:aws:s3:::${BUCKET_PREFIX}-temp",
@@ -233,13 +233,15 @@ aws iam attach-user-policy \
     --policy-arn arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):policy/${IAM_USER}-s3-policy
 ```
 
+### 5. Create Access Keys for the IAM User
+
 - **Create access keys** for the IAM user to be used by Appcircle Server.
 
 ```bash
 aws iam create-access-key --user-name ${IAM_USER}
 ```
 
-**Save the output** from the access key creation command. It will look like this:
+- **Save the output** from the access key creation command. It will look like this:
 
 ```json
 {
@@ -257,7 +259,7 @@ aws iam create-access-key --user-name ${IAM_USER}
 **Save the AccessKeyId and SecretAccessKey securely**. You'll need these credentials in the next step to create the Kubernetes secret.
 :::
 
-### 5. Create Kubernetes Secret
+## Create Kubernetes Secret
 
 **Create a Kubernetes secret** with the AWS credentials to be used by Appcircle Server.
 
@@ -268,8 +270,8 @@ aws iam create-access-key --user-name ${IAM_USER}
 ```bash
 kubectl create secret generic appcircle-server-minio-connection \
   -n appcircle \
-  --from-literal=accessKey=${ACCESS_KEY_ID}  \
-  --from-literal=secretKey=${SECRET_ACCESS_KEY}
+  --from-literal=accessKey=<ACCESS_KEY_ID> \
+  --from-literal=secretKey=<SECRET_ACCESS_KEY>
 ```
 
   </TabItem>
@@ -286,12 +288,12 @@ oc create secret generic appcircle-server-minio-connection \
 </Tabs>
 
 :::caution
-- Replace `${ACCESS_KEY_ID}` and `${SECRET_ACCESS_KEY}` with the actual access key ID and secret access key from step 4
-- Replace `appcircle` with the actual namespace/project where Appcircle Server will be installed
-- **Do not replace** the `appcircle-server-minio-connection` secret name as it's required by the Helm chart
+- Replace `${ACCESS_KEY_ID}` and `${SECRET_ACCESS_KEY}` with the actual access key ID and secret access key from the [Create IAM User and Policy](#4-create-iam-user-and-policy) step.
+- Replace `appcircle` with the actual namespace/project where Appcircle Server will be installed.
+- **Do not replace** the `appcircle-server-minio-connection` secret name as it's required by the Helm chart.
 :::
 
-### 6. Configure Helm Values
+## Configure Helm Values
 
 **Configure your `values.yaml` file** to use AWS S3 instead of MinIO.
 
