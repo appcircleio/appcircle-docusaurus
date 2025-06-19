@@ -7,7 +7,7 @@ tags:
     aws,
     minio
   ]
-sidebar_position: 105
+sidebar_position: 40
 ---
 
 import Tabs from '@theme/Tabs';
