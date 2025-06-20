@@ -51,6 +51,12 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 | `$AC_CODE_PUSH_ROLLOUT_PERCENTAGE`    | This parameter specifies the percentage of users (as an integer between 1 and 100) that should be eligible to receive this update.                                                                                                                                                                | Optional |
 | `$AC_CODE_PUSH_EXTRA_ARGUMENTS`       | Extra command line arguments for Appcircle CodePush CLI command. For example, add `--debug` for verbose logs.                                                                                                                                                                                     | Optional |
 
+:::tip Package Diff
+
+You can add `--diffEnabled` flag to `$AC_CODE_PUSH_EXTRA_ARGUMENTS` to enable package diff feature to make users download only the changed files instead of the full package.
+
+:::
+
 
 ### CodePush Code Signing
 
