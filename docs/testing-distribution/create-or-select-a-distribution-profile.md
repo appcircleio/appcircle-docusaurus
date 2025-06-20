@@ -186,6 +186,14 @@ You can enforce identifier validation to ensure consistency and prevent mismatch
 
 - **Package Validation for Android**: When enabled, this option restricts uploads to only those Android binaries that exactly match the package identifier specified in the profile. This ensures that only binaries from the intended Android application are accepted.
 
+:::caution Binary comes from Build Module
+
+When you want to send a binary to a Testing Distribution profile with `Bundle/Package` validation via Build module, Appcircle allows this profile to be selected in the build configuration, but if the identifier of the binary from the build module **does not match** the one specified in the **Testing Distribution** profile, you will get an **error**.
+
+For more detailed information about automatic distribution, please visit the Distribution Configuration [documentation](/build/build-process-management/configurations#distribution-configuration).
+
+:::
+
 When either validation is active, binaries with mismatching identifiers will be rejected during upload.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-validate.png' />
