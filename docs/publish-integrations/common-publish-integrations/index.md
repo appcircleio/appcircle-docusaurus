@@ -37,6 +37,12 @@ Everything you need to know about sending your app to the Appcircle's Enterprise
 
 Appcircle's integration tools are designed to simplify and automate the publishing process, allowing you to focus on developing great apps while we handle the distribution.
 
+## [Send to Testing Distribution](/publish-integrations/common-publish-integrations/send-to-testing-distribution)
+
+With Appcircle's Publish module, you can submit your application to external stores such as App Store, Google Play, Huawei AppGallery or Microsoft Intune, as well as to Appcircle's Testing Distribution module.
+
+Testing Distribution module allows you to distribute your application without the need for any external tools.
+
 ## [Metadata Approval](/publish-integrations/common-publish-integrations/metadata-approval)
 
 The Metadata Approval step is used to get email-based approval before publishing your app's metadata. This ensures that designated users can review and either approve or reject the App Store, Google Play, Microsoft Intune and Huawei AppGallary metadata before proceeding with the publishing step.
