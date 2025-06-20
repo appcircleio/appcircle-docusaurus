@@ -20,7 +20,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- Root organization credentials, such as App Store Connect and Google Play Developer API keys, can now be shared with sub-organizations. <AccountBadge/>
+- Root organization credentials, such as App Store Connect and Google Play Developer API keys, can now be shared with sub-organizations. <AccountBadge/> <CloudBadge/>
 - The “Hide from profile list on Testing” toggle can now be used in Testing Distribution profile settings to prevent the selected profile from appearing in the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
