@@ -161,6 +161,14 @@ In this window, you can select one or more of the previously created distributio
 
 Finally, check "Automatically Distribute to Testers" if you want your build to be automatically distributed to the selected testers or testing groups.
 
+:::caution Binary comes from Build Module
+
+If the `Bundle/Package` validation option is turned on in the **Testing Distribution** profile you want to automatic distribution and the bundle or package of the binary to be submitted does not match the one specified in this profile, you will get an error during submission. Appcircle does not prevent the profile from being selected. Please make sure that the bundle/package identifier of the binary you want to submit matches the one in the **Testing Distribution** profile.
+
+For more detailed information about identifier validation, please visit the **Bundle/Package validation** [documentation](/testing-distribution/create-or-select-a-distribution-profile#bundlepackage-identifier-validation).
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1.png' />
 
 #### Send to Publish
