@@ -74,6 +74,14 @@ In order to use the **Environment Variable** group you created in the relevant p
 
 - Next, in the **Appcircle CodePush** step, use the **Extra Arguments** input to pass the `--privateKeyPath <YOUR_ENV_KEY>` parameter and reference the environment variable you created.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6352-inputPem.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-codeSignStep.png' />
 
 Once these steps are completed, running the **Appcircle CodePush** step will automatically sign the generated CodePush release with your provided `.pem` file and publish it.
+
+### Package Diff
+
+With the **Package Diff** feature, users download only the changed files instead of the full package. When **Package Diff** is enabled, updates from any older version to a new one include only the modified files, reducing update size and speeding up delivery.
+
+ - In the **Appcircle CodePush** step, use the **Extra Arguments** input to pass the `--diffEnabled` parameter.
+
+ <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-packageDiffNew.png' />

@@ -25,7 +25,7 @@ With the Appcircle CodePush **Upload New Release** feature, you can manually rel
 
 To use this feature, you need to upload the bundle file you created as a `.zip` archive. Below you can find a detailed explanation of the required inputs for the Upload Release feature.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-newReleaseDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-newReleaseDetails.png' />  
 
 - **App Version:** Specifies which app version the update is targeted for. Make sure it matches the version defined in your project settings.
 - **Release Note:** A description of the changes or improvements included in this release. This helps users and team members understand what the update contains.
