@@ -34,7 +34,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - When the “Show only shared version to the tester” option is enabled, testers will be restricted from using the search bar and accessing other shared Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
 - Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/>
 - UTF-8 characters are now supported when naming a provisioning profile during its creation. <SigningIdentitiesBadge/> <CloudBadge/>
-- The Send to Testing Distribution Publish step has been added, allowing users to directly send their apps from a Publish Profile to a selected Testing Distribution profile. <PublishBadge/> <CloudBadge/>
+- The [Send to Testing Distribution](/publish-integrations/common-publish-integrations/send-to-testing-distribution) Publish step has been added, allowing users to directly send their apps from a Publish Profile to a selected Testing Distribution profile. <PublishBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
