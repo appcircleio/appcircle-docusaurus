@@ -21,7 +21,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - Root organization credentials, such as App Store Connect and Google Play Developer API keys, can now be shared with sub-organizations. <AccountBadge/> <CloudBadge/>
-- The “Hide from profile list on Testing” toggle can now be used in Testing Distribution profile settings to prevent the selected profile from appearing in the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/>
+- The [“Hide from profile list on Testing”](/testing-distribution/create-or-select-a-distribution-profile#hide-from-profile-list) toggle can now be used in Testing Distribution profile settings to prevent the selected profile from appearing in the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/>
+- [Bundle and Package Validation](/testing-distribution/create-or-select-a-distribution-profile#bundlepackage-identifier-validation) toggles can now be used to specify a bundle ID (for iOS) or package ID (for Android). When enabled, any app with a different bundle or package ID will be blocked from being uploaded to the Testing Distribution profile. <DistributionBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
@@ -30,8 +31,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Notification support has been added for CodePush actions across Email, Microsoft Teams, and Slack channels. <BuildBadge/> <CloudBadge/>
 - Improved the error message returned when a specified deployment cannot be found during the appcircle-code-push release-react command. The message now clearly indicates that the deployment does not exist, replacing the previous generic “INTERNAL_ERROR” response. <BuildBadge/> <CloudBadge/>
 - [Export as CSV](/testing-distribution/testing-groups#exporting-testing-group-members-as-csv) option has been added for Testing Groups to extract the tester email list as a CSV file for easier sharing and external management. <DistributionBadge/> <CloudBadge/>
-- The “Show only shared version to the tester” option can now be used in the Auto Send Configuration within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/>
-- When the “Show only shared version to the tester” option is enabled, testers will be restricted from using the search bar and accessing other shared Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
+- The [“Show only shared version to the tester”](/testing-distribution/create-or-select-a-distribution-profile#show-only-the-shared-version-to-the-tester) option can now be used in the Auto Send Configuration within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/>
+- When the [“Show only shared version to the tester”](/testing-distribution/create-or-select-a-distribution-profile#show-only-the-shared-version-to-the-tester) option is enabled, testers will be restricted from using the search bar and accessing other shared Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
 - Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/>
 - UTF-8 characters are now supported when naming a provisioning profile during its creation. <SigningIdentitiesBadge/> <CloudBadge/>
 - The [Send to Testing Distribution](/publish-integrations/common-publish-integrations/send-to-testing-distribution) Publish step has been added, allowing users to directly send their apps from a Publish Profile to a selected Testing Distribution profile. <PublishBadge/> <CloudBadge/>
