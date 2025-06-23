@@ -176,11 +176,20 @@ In the example image, the profile has static authentication method, so it is dis
 
 You can find out more about the login methods in the [using authentication for distribution](/testing-distribution/create-or-select-a-distribution-profile#authentication) section.
 
+#### Hide From Profile List
+
+The Hide from Profile List toggle allows you to exclude a Testing Distribution Profile and its associated binaries from appearing in the shared profile list on the Testing Portal. This is useful for limiting visibility of internal or early-stage builds while still enabling targeted distribution.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-ss1.png' />
+
+- When enabled, the profile will not be displayed in the shared list visible to testers browsing the portal.
+- However, testers who received a direct email invitation to the profile will still be able to access and download the binary.
+
 #### Bundle/Package Identifier Validation
 
 You can enforce identifier validation to ensure consistency and prevent mismatches between uploaded binaries and profile settings:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-validate2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-ss4.png' />
 
 - **Bundle Validation for iOS**: When enabled, this option restricts uploads to only those iOS binaries that exactly match the bundle identifier specified in the profile. This ensures that only binaries from the intended iOS application are accepted.
 
@@ -196,7 +205,7 @@ For more detailed information about automatic distribution, please visit the Dis
 
 When either validation is active, binaries with mismatching identifiers will be rejected during upload.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-validate.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-ss2.png' />
 
 #### Binary Tags
 
@@ -255,9 +264,20 @@ Under the Auto Send tab in the settings, you can see the testing groups you have
 
 The first section allows you to share the deployed binaries automatically with the selected groups. They will receive a link to download the specific version on their mobile devices.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-ss5.png' />
 
 Your application will be sent to the related testing groups as soon as your build is complete, or when a package is manually uploaded or deployed via CLI.
+
+
+#### Show Only the Shared Version to the Tester
+
+When the “Show Only the Shared Version to Tester” toggle is enabled, receiving-end testers will only be able to access the most recently uploaded binary version within the Testing Portal, provided that the Auto-Send feature is enabled.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-ss3.png' />
+
+:::info
+When this option is enabled, testers will not have access to the search bar or shared testing distribution profiles within the Testing Portal, as they will only receive the latest shared version.
+:::
 
 ### Authentication
 
