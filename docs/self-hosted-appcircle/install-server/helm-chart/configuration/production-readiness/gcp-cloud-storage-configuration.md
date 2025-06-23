@@ -90,7 +90,7 @@ In this documentation, we will use `spacetech` as an **example organization name
 # Set your organization name and GCP project details
 ORG_NAME="spacetech" # Replace with your organization name
 PROJECT_ID="my-gcp-project" # Replace with your actual GCP project ID
-BUCKET_PREFIX="appcircle-${ORG_NAME}"
+BUCKET_PREFIX="appcircle-${ORG_NAME}-" # Make sure to add a hyphen at the end of the bucket prefix
 LOCATION="us-east1" # Replace with your preferred GCP region
 SERVICE_ACCOUNT_NAME="appcircle-server"
 ```
@@ -125,14 +125,14 @@ Run the following commands to create all required buckets:
 
 ```bash
 # Create all required buckets
-gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}-temp/
-gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}-build/
-gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}-distribution/
-gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}-storesubmit/
-gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}-store/
-gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}-agent-cache/
-gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}-backup/
-gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}-publish/
+gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}temp/
+gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}build/
+gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}distribution/
+gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}storesubmit/
+gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}store/
+gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}agent-cache/
+gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}backup/
+gsutil mb -l ${LOCATION} gs://${BUCKET_PREFIX}publish/
 ```
 
 :::info
@@ -182,8 +182,8 @@ gsutil cors set appcircle-gcs-policy.json gs://${BUCKET_PREFIX}-temp
 
 ```bash
 gcloud iam service-accounts create ${SERVICE_ACCOUNT_NAME} \
-  --description="AppCircle GCS access service account" \
-  --display-name="AppCircle Server"
+  --description="Appcircle GCS access service account" \
+  --display-name="Appcircle Server"
 ```
 
 - **Create a custom role** with granular access for better security:
@@ -247,6 +247,190 @@ gcloud iam service-accounts keys create appcircle-sa-key.json \
 
 **Save the `appcircle-sa-key.json` file securely**. This file contains the credentials that Appcircle Server will use to access the GCS buckets.
 
+### 6. Optional: Create CDN for Google Storage Buckets
+
+**Create a CDN for the GCS buckets** to improve performance and reduce latency.
+
+- Create a backend bucket for the required buckets:
+
+```bash
+gcloud compute backend-buckets create ${BUCKET_PREFIX}distribution-bucket \
+    --gcs-bucket-name=${BUCKET_PREFIX}distribution \
+    --enable-cdn \
+    --cache-mode=FORCE_CACHE_ALL \
+    --project=$PROJECT_ID
+
+gcloud compute backend-buckets create ${BUCKET_PREFIX}build-bucket \
+    --gcs-bucket-name=${BUCKET_PREFIX}build \
+    --enable-cdn \
+    --cache-mode=FORCE_CACHE_ALL \
+    --project=$PROJECT_ID
+
+gcloud compute backend-buckets create ${BUCKET_PREFIX}publish-bucket \
+    --gcs-bucket-name=${BUCKET_PREFIX}publish \
+    --enable-cdn \
+    --cache-mode=FORCE_CACHE_ALL \
+    --project=$PROJECT_ID
+
+gcloud compute backend-buckets create ${BUCKET_PREFIX}store-bucket \
+    --gcs-bucket-name=${BUCKET_PREFIX}store \
+    --enable-cdn \
+    --cache-mode=FORCE_CACHE_ALL \
+    --project=$PROJECT_ID
+
+gcloud compute backend-buckets create ${BUCKET_PREFIX}storesubmit-bucket \
+    --gcs-bucket-name=${BUCKET_PREFIX}storesubmit \
+    --enable-cdn \
+    --cache-mode=FORCE_CACHE_ALL \
+    --project=$PROJECT_ID
+```
+- Create a URL signing key:
+
+```bash
+head -c 16 /dev/random | base64 | tr +/ -_ > url-signing-key.txt
+```
+
+- Add a signed URL key to the backend buckets:
+
+```bash
+gcloud compute backend-buckets add-signed-url-key ${BUCKET_PREFIX}distribution-bucket \
+    --key-name=appcircle-sign-key \
+    --key-file=url-signing-key.txt \
+    --project=$PROJECT_ID
+
+gcloud compute backend-buckets add-signed-url-key ${BUCKET_PREFIX}build-bucket \
+    --key-name=appcircle-sign-key \
+    --key-file=url-signing-key.txt \
+    --project=$PROJECT_ID
+
+gcloud compute backend-buckets add-signed-url-key ${BUCKET_PREFIX}publish-bucket \
+    --key-name=appcircle-sign-key \
+    --key-file=url-signing-key.txt \
+    --project=$PROJECT_ID
+    
+gcloud compute backend-buckets add-signed-url-key ${BUCKET_PREFIX}store-bucket \
+    --key-name=appcircle-sign-key \
+    --key-file=url-signing-key.txt \
+    --project=$PROJECT_ID
+
+gcloud compute backend-buckets add-signed-url-key ${BUCKET_PREFIX}storesubmit-bucket \
+    --key-name=appcircle-sign-key \
+    --key-file=url-signing-key.txt \
+    --project=$PROJECT_ID
+```
+
+- For an HTTPS load balancer, create an SSL certificate resource
+
+```bash
+gcloud compute ssl-certificates create appcircle-cdn-ssl-cert \
+    --certificate=<path-to-your-certificate> \
+    --private-key=<path-to-your-private-key> \
+    --global
+```
+
+- Reserve a global static external IP address for the load balancer:
+
+```bash
+gcloud compute addresses create appcircle-cdn-ip \
+    --network-tier=PREMIUM \
+    --ip-version=IPV4 \
+    --global
+```
+
+- Create a URL map for the backend buckets:
+
+```bash
+gcloud compute url-maps create appcircle-cdn-url-map \
+  --default-backend-bucket=${BUCKET_PREFIX}build-bucket \
+  --global
+```
+
+- Create a target HTTP proxy for the URL map:
+
+```bash
+gcloud compute target-https-proxies create appcircle-https-lb-proxy \
+  --ssl-certificates=appcircle-cdn-ssl-cert \
+  --url-map=appcircle-cdn-url-map
+```
+
+- Create a global forwarding rule for the target HTTP proxy:
+
+```bash
+gcloud compute forwarding-rules create appcircle-cdn-forwarding-rule \
+  --address=appcircle-cdn-ip \
+  --global \
+  --target-https-proxy=appcircle-https-lb-proxy \
+  --ports=443 \
+  --load-balancing-scheme=EXTERNAL \
+  --network-tier=PREMIUM \
+  --project=$PROJECT_ID
+```
+
+- Add additional URL maps for the backend buckets:
+
+```bash
+gcloud compute url-maps add-path-matcher appcircle-cdn-url-map \
+  --path-matcher-name=appcircle-distribution-matcher \
+  --new-hosts=appcircle-distribution-cdn.spacetech.com \
+  --default-backend-bucket=${BUCKET_PREFIX}distribution-bucket \
+  --project=$PROJECT_ID
+
+gcloud compute url-maps add-path-matcher appcircle-cdn-url-map \
+  --path-matcher-name=appcircle-publish-matcher \
+  --new-hosts=appcircle-publish-cdn.spacetech.com \
+  --default-backend-bucket=${BUCKET_PREFIX}publish-bucket \
+  --project=$PROJECT_ID
+
+gcloud compute url-maps add-path-matcher appcircle-cdn-url-map \
+  --path-matcher-name=appcircle-store-matcher \
+  --new-hosts=appcircle-store-cdn.spacetech.com \
+  --default-backend-bucket=${BUCKET_PREFIX}store-bucket \
+  --project=$PROJECT_ID
+
+gcloud compute url-maps add-path-matcher appcircle-cdn-url-map \
+  --path-matcher-name=appcircle-storesubmit-matcher \
+  --new-hosts=appcircle-storesubmit-cdn.spacetech.com \
+  --default-backend-bucket=${BUCKET_PREFIX}storesubmit-bucket \
+  --project=$PROJECT_ID
+```
+
+- Get the project number:
+
+```bash
+PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='get(projectNumber)')
+```
+
+- Assign the `roles/storage.objectViewer` to the LoadBalancer service account to make it able to access the private GCS buckets:
+
+```bash
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}distribution \
+  --member=serviceAccount:service-${PROJECT_NUMBER}@cloud-cdn-fill.iam.gserviceaccount.com \
+  --role=roles/storage.objectViewer
+
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}build \
+  --member=serviceAccount:service-${PROJECT_NUMBER}@cloud-cdn-fill.iam.gserviceaccount.com \
+  --role=roles/storage.objectViewer
+
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}publish \
+  --member=serviceAccount:service-${PROJECT_NUMBER}@cloud-cdn-fill.iam.gserviceaccount.com \
+  --role=roles/storage.objectViewer
+
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}store \
+  --member=serviceAccount:service-${PROJECT_NUMBER}@cloud-cdn-fill.iam.gserviceaccount.com \
+  --role=roles/storage.objectViewer
+
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}storesubmit \
+  --member=serviceAccount:service-${PROJECT_NUMBER}@cloud-cdn-fill.iam.gserviceaccount.com \
+  --role=roles/storage.objectViewer
+```
+
+- Create a Kubernetes secret to hold the CDN URL sign key:
+
+```bash
+kubectl create secret generic appcircle-cdn-url-sign-key -n appcircle \
+  --from-literal='url-sign-key-name=appcircle-sign-key' \
+  --from-literal="url-sign-key=$(cat url-signing-key.txt)"
+```
 
 ## Create Kubernetes Secret
 
@@ -261,7 +445,7 @@ gcloud iam service-accounts keys create appcircle-sa-key.json \
 ENCODED_CREDENTIALS=$(cat appcircle-sa-key.json | base64 -w 0)
 
 # Create the Kubernetes secret
-kubectl create secret generic gcs-credentials \
+kubectl create secret generic appcircle-gcs-credentials \
   -n appcircle \
   --from-literal=gcs-credentials-base64="${ENCODED_CREDENTIALS}"
 ```
@@ -294,26 +478,55 @@ oc create secret generic appcircle-gcs-credentials \
 
 Add or update the following configuration to your `values.yaml` file:
 
+<Tabs groupId="CloudCDNEnabled">
+
+  <TabItem value="true" label="Cloud CDN Enabled">
+
 ```yaml
 global:
   minio:
-    url: https://storage.googleapis.com # Replace with your GCS endpoint
+    url: https://storage.googleapis.com # Do not replace this value
     region: "us-east1" # Replace with your GCP region
     useHttp: "false" # Set to "false" if you're using HTTPS GCS endpoint
     bucketPrefix: "appcircle-spacetech-" # Replace with your bucket prefix
 resource:
   s3:
     clientProvider: "GCLOUD" # Set to "GCLOUD" to use GCP Cloud Storage
-    cdnProvider: ""
+    cdnProvider: "GCLOUD" # Set to "GCLOUD" to use GCP Cloud Storage
+    urlSignKeySecretName: "appcircle-cdn-url-sign-key" # Reference to the secret created above
+    googleCredentialsSecretName: "appcircle-gcs-credentials" # Reference to the secret created above
+    cdnMapping: "Build=https://appcircle-build-cdn.spacetech.com,Distribution=https://appcircle-distribution-cdn.spacetech.com,Storesubmit=https://appcircle-storesubmit-cdn.spacetech.com,Store=https://appcircle-store-cdn.spacetech.com,Publish=https://appcircle-publish-cdn.spacetech.com" # Replace with your CDN mapping
+minio:
+  enabled: false
+```
+  </TabItem>
+  <TabItem value="false" label="Cloud CDN Disabled">
+
+```yaml
+global:
+  minio:
+    url: https://storage.googleapis.com # Do not replace this value
+    region: "us-east1" # Replace with your GCP region
+    useHttp: "false" # Set to "false" if you're using HTTPS GCS endpoint
+    bucketPrefix: "appcircle-spacetech-" # Replace with your bucket prefix
+resource:
+  s3:
+    clientProvider: "GCLOUD" # Set to "GCLOUD" to use GCP Cloud Storage
+    cdnProvider: "" # Set to "" to disable CDN
     googleCredentialsSecretName: appcircle-gcs-credentials # Reference to the secret created above
 minio:
   enabled: false # Disable internal MinIO deployment
 ```
 
+  </TabItem>
+</Tabs>
+
 :::caution
 - Do not change the `https://storage.googleapis.com` value. It is set to the default GCS endpoint.
-- Replace `us-east1` with your GCP region
-- Replace `appcircle-spacetech-` with your actual bucket prefix
+- Replace `us-east1` with your GCP region.
+  - Run `echo $LOCATION` to get your GCP region from the variables defined in the previous steps.
+- Replace `appcircle-spacetech-` with your actual bucket prefix.
+  - Run `echo $BUCKET_PREFIX` to get your bucket prefix from the variables defined in the previous steps.
 - Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production)
 - Ensure `googleCredentialsSecretName` matches the secret name created in the previous step
 :::
