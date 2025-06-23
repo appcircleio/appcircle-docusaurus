@@ -73,9 +73,9 @@ After generating the key, download the key file by pressing Download API Key nex
 
 ## Linking Appcircle with App Store Connect
 
-Adding a key to Appcircle is pretty easy. **Go to your organization** by either selecting the bottom left button from the toolbar, or picking it from the menu:
+Adding a key to Appcircle is pretty easy. **Go to your organization** by selecting the bottom left button from the toolbar:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-admin-low.jpg' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss1.png' />
 
 On the Organization screen, select **Add New** on **App Store Connect API Keys **list item**:**
 
@@ -124,3 +124,39 @@ Once the API key is generated, it must be added to Appcircle:
 :::info
 Please note that the registered Enterprise API Key cannot be used within the Publish module because the Apple Enterprise Program does not provide TestFlight or App Store Connect services.
 :::
+
+## Sharing App Store Connect Credentials
+
+Root Organization users have the ability to share their saved credentials with Sub-Organization users. This feature helps streamline credential management across distributed teams and multiple organizational units.
+
+#### How to Share Credentials
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss2.png' />
+
+**1.**	Navigate to the Credentials Section
+Go to My Organization > Security > Credentials.
+
+**2.** Open Manage Panel
+Click the respective credential type (e.g., App Store Connect API Keys) to view your saved credentials.
+
+**3.** Select the Credential
+Click the Share icon under the Actions column for the credential you want to share.
+
+**4.** Configure Sharing Settings
+In the Share Credentials panel:
+- Enter or confirm the Settings Name.
+- Toggle Share with all sub-organizations if you want to make the credential available to all sub-organizations automatically.
+- Alternatively, manually select specific sub-organizations that should have access by checking the boxes under Sub-Organizations.
+
+**5.** Save Sharing Configuration
+Once your selections are made, click Share to apply.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss3.png' />
+
+Shared credentials will be visible and usable in the selected Sub-Organizations as if they were their own.
+
+:::info
+Sub-Organizations cannot edit or delete credentials shared by the Root Organization.
+:::
+
+The shared credentials by the Root Organization will be marked with Root Tag on the Sub Organization's credential list. 
