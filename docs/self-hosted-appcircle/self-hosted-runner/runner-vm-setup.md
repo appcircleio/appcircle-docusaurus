@@ -590,14 +590,14 @@ MD5 (xcodes_241227.tar.gz) = ee312f6077b9a09a5563d57e50bf53f8
   <TabItem value="250512" label="250512">
 
 ```bash
-MD5 (xcodes_250512.tar.gz) = c8c5da9518ff97f32211589adb1aaba3
+MD5 (xcodes_250512.tar.gz) = 8c66b7f20c64fc3e8f987d95aa31c50d
 ```
 
   </TabItem>
   <TabItem value="250603" label="250603" default>
 
 ```bash
-MD5 (xcodes_250603.tar.gz) = 4283efd8aa7e72d1fd5b1911b8d0db2e
+MD5 (xcodes_250603.tar.gz) = 1d65383129a0bcc650be506c4c1b827a
 ```
 
   </TabItem>
