@@ -143,7 +143,7 @@ Once the required integrations are set up, you can access these platforms from y
 
 ### Customizing the Publish Flow
 
-Publish flow is used to automate multiple tasks and introduce automation checkpointsfor application deployments to stores. You can create and manage flows within the Publish module as outlined below:
+Publish flow is used to automate multiple tasks and introduce automation checkpoints for application publishing to stores. You can create and manage flows within the Publish module as outlined below:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-flows.png' />
 
@@ -166,7 +166,7 @@ You can back up your current Publish flow by clicking the `Download YAML` button
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-configureStep.png' />
 
-- **Save**: Once the flow is configured, you can save it for use in the deployment process.
+- **Save**: Once the flow is configured, you can save it for use in the publish process.
 
 
 
@@ -192,7 +192,7 @@ With the Appcircle Publish module, you can manage your entire release process fr
 
 ### Setting Up Notifications
 
-- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
+- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful publishing or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-notificationInteg.png' />  
 
@@ -216,7 +216,7 @@ You can upload your binary file directly to the Publish module using the manual 
 
 #### Uploading via Build Module
 
-You can deploy your binary file to the Publish module from the Build module automatically. This method automates the binary deployment process, ensuring that your binary is transferred directly from the Build pipeline to the Publish module, ready for release. It simplifies the flows and reduces the risk of manual errors.
+You can deploy your binary file to the Publish module from the Build module automatically. This method automates the binary publish process, ensuring that your binary is transferred directly from the Build pipeline to the Publish module, ready for release. It simplifies the flows and reduces the risk of manual errors.
 
 :::info Uploading via Build Module
 
@@ -240,7 +240,7 @@ To upload a binary from the Testing Distribution module, please refer to the [**
 
 If you have your own CI environment, you can use the Appcircle API & CLI to upload binaries to the related publish Profile.
 
-- **Other CI/CD Tools**: You can integrate the Publish module with continuous integration/continuous deployment (CI/CD) tools like Jenkins and GitHub Actions to automate your build and release pipeline. With the Appcircle [**API & CLI**](/appcircle-api-and-cli), you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient deployment process, reducing manual intervention and the risk of errors. You can check out [**Appcircle Marketplace**](/marketplace) for more integrations.
+- **Other CI/CD Tools**: You can integrate the Publish module with continuous integration/continuous deployment (CI/CD) tools like Jenkins and GitHub Actions to automate your build and release pipeline. With the Appcircle [**API & CLI**](/appcircle-api-and-cli), you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient publish process, reducing manual intervention and the risk of errors. You can check out [**Appcircle Marketplace**](/marketplace) for more integrations.
 
 To get more information, please refer to our [**API & CLI**](/appcircle-api-and-cli) documentation.
 
