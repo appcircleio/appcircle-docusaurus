@@ -428,8 +428,8 @@ gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}storesubmit \
 
 ```bash
 kubectl create secret generic appcircle-cdn-url-sign-key -n appcircle \
-  --from-literal='url-sign-key-name=appcircle-sign-key' \
-  --from-literal="url-sign-key=$(cat url-signing-key.txt)"
+  --from-literal='cdn-url-sign-key-name=appcircle-sign-key' \
+  --from-literal="cdn-url-sign-key=$(cat url-signing-key.txt)"
 ```
 
 ## Create Kubernetes Secret

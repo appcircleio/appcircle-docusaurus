@@ -101,7 +101,7 @@ In this documentation, we will use `spacetech` as an **example organization name
 ```bash
 # Set your organization name and region
 ORG_NAME="spacetech" # Replace with your organization name
-BUCKET_PREFIX="appcircle-${ORG_NAME}"
+BUCKET_PREFIX="appcircle-${ORG_NAME}-"
 REGION="us-east-1" # Replace with your preferred AWS region
 IAM_USER="appcircle-server"
 ```
@@ -113,27 +113,27 @@ IAM_USER="appcircle-server"
 
 Appcircle server requires the following S3 buckets for different purposes:
 
-- **`${BUCKET_PREFIX}-temp`**: Temporary files and uploads
-- **`${BUCKET_PREFIX}-build`**: Build artifacts and logs
-- **`${BUCKET_PREFIX}-distribution`**: Testing Distribution files
-- **`${BUCKET_PREFIX}-storesubmit`**: Appcircle Store Submit files
-- **`${BUCKET_PREFIX}-store`**: Enterprise App Store files
-- **`${BUCKET_PREFIX}-agent-cache`**: Appcircle Runner cache files
-- **`${BUCKET_PREFIX}-backup`**: Backup files
-- **`${BUCKET_PREFIX}-publish`**: Published mobile app binaries
+- **`${BUCKET_PREFIX}temp`**: Temporary files and uploads
+- **`${BUCKET_PREFIX}build`**: Build artifacts and logs
+- **`${BUCKET_PREFIX}distribution`**: Testing Distribution files
+- **`${BUCKET_PREFIX}storesubmit`**: Appcircle Store Submit files
+- **`${BUCKET_PREFIX}store`**: Enterprise App Store files
+- **`${BUCKET_PREFIX}agent-cache`**: Appcircle Runner cache files
+- **`${BUCKET_PREFIX}backup`**: Backup files
+- **`${BUCKET_PREFIX}publish`**: Published mobile app binaries
 
 Run the following commands to create all required buckets:
 
 ```bash
 # Create all required buckets
-aws s3 mb s3://${BUCKET_PREFIX}-temp --region ${REGION}
-aws s3 mb s3://${BUCKET_PREFIX}-build --region ${REGION}
-aws s3 mb s3://${BUCKET_PREFIX}-distribution --region ${REGION}
-aws s3 mb s3://${BUCKET_PREFIX}-storesubmit --region ${REGION}
-aws s3 mb s3://${BUCKET_PREFIX}-store --region ${REGION}
-aws s3 mb s3://${BUCKET_PREFIX}-agent-cache --region ${REGION}
-aws s3 mb s3://${BUCKET_PREFIX}-backup --region ${REGION}
-aws s3 mb s3://${BUCKET_PREFIX}-publish --region ${REGION}
+aws s3 mb s3://${BUCKET_PREFIX}temp --region ${REGION}
+aws s3 mb s3://${BUCKET_PREFIX}build --region ${REGION}
+aws s3 mb s3://${BUCKET_PREFIX}distribution --region ${REGION}
+aws s3 mb s3://${BUCKET_PREFIX}storesubmit --region ${REGION}
+aws s3 mb s3://${BUCKET_PREFIX}store --region ${REGION}
+aws s3 mb s3://${BUCKET_PREFIX}agent-cache --region ${REGION}
+aws s3 mb s3://${BUCKET_PREFIX}backup --region ${REGION}
+aws s3 mb s3://${BUCKET_PREFIX}publish --region ${REGION}
 ```
 
 :::info
@@ -150,7 +150,7 @@ Replace the `https://my.appcircle.spacetech.com` with your actual Appcircle Serv
 
 ```bash
 aws s3api put-bucket-cors \
-    --bucket ${BUCKET_PREFIX}-temp \
+    --bucket ${BUCKET_PREFIX}temp \
     --region ${REGION} \
     --cors-configuration '{
         "CORSRules": [
@@ -182,7 +182,7 @@ aws iam create-user --user-name ${IAM_USER}
 - **Create an IAM policy** that grants the necessary S3 permissions. Run the following command to create a policy file:
 
 ```bash
-cat << 'EOF' > appcircle-s3-policy.json
+cat << EOF > appcircle-s3-policy.json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -195,22 +195,22 @@ cat << 'EOF' > appcircle-s3-policy.json
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::${BUCKET_PREFIX}-temp",
-                "arn:aws:s3:::${BUCKET_PREFIX}-temp/*",
-                "arn:aws:s3:::${BUCKET_PREFIX}-build",
-                "arn:aws:s3:::${BUCKET_PREFIX}-build/*",
-                "arn:aws:s3:::${BUCKET_PREFIX}-distribution",
-                "arn:aws:s3:::${BUCKET_PREFIX}-distribution/*",
-                "arn:aws:s3:::${BUCKET_PREFIX}-storesubmit",
-                "arn:aws:s3:::${BUCKET_PREFIX}-storesubmit/*",
-                "arn:aws:s3:::${BUCKET_PREFIX}-store",
-                "arn:aws:s3:::${BUCKET_PREFIX}-store/*",
-                "arn:aws:s3:::${BUCKET_PREFIX}-agent-cache",
-                "arn:aws:s3:::${BUCKET_PREFIX}-agent-cache/*",
-                "arn:aws:s3:::${BUCKET_PREFIX}-backup",
-                "arn:aws:s3:::${BUCKET_PREFIX}-backup/*",
-                "arn:aws:s3:::${BUCKET_PREFIX}-publish",
-                "arn:aws:s3:::${BUCKET_PREFIX}-publish/*"
+                "arn:aws:s3:::${BUCKET_PREFIX}temp",
+                "arn:aws:s3:::${BUCKET_PREFIX}temp/*",
+                "arn:aws:s3:::${BUCKET_PREFIX}build",
+                "arn:aws:s3:::${BUCKET_PREFIX}build/*",
+                "arn:aws:s3:::${BUCKET_PREFIX}distribution",
+                "arn:aws:s3:::${BUCKET_PREFIX}distribution/*",
+                "arn:aws:s3:::${BUCKET_PREFIX}storesubmit",
+                "arn:aws:s3:::${BUCKET_PREFIX}storesubmit/*",
+                "arn:aws:s3:::${BUCKET_PREFIX}store",
+                "arn:aws:s3:::${BUCKET_PREFIX}store/*",
+                "arn:aws:s3:::${BUCKET_PREFIX}agent-cache",
+                "arn:aws:s3:::${BUCKET_PREFIX}agent-cache/*",
+                "arn:aws:s3:::${BUCKET_PREFIX}backup",
+                "arn:aws:s3:::${BUCKET_PREFIX}backup/*",
+                "arn:aws:s3:::${BUCKET_PREFIX}publish",
+                "arn:aws:s3:::${BUCKET_PREFIX}publish/*"
             ]
         }
     ]
@@ -259,6 +259,243 @@ aws iam create-access-key --user-name ${IAM_USER}
 **Save the AccessKeyId and SecretAccessKey securely**. You'll need these credentials in the next step to create the Kubernetes secret.
 :::
 
+### 6. Optional: Create CloudFront CDN for AWS S3 Buckets
+
+:::info
+**What is CloudFront?**
+CloudFront is AWS's Content Delivery Network (CDN) service that improves performance by caching your S3 content at edge locations worldwide. This reduces latency and improves download speeds for your users.
+
+**Do you need CloudFront?**
+- **For small teams or internal use**: Basic S3 configuration is sufficient
+- **For production environments with global users**: CloudFront provides better performance
+- **For high-traffic applications**: CloudFront reduces S3 costs and improves reliability
+:::
+
+```bash
+openssl genrsa -out private_key.pem 2048
+```
+
+- Create public key for the CDN URL signing key.
+
+```bash
+openssl rsa -in private_key.pem -pubout -out public_key.pem
+```
+
+- Single line public key for the CDN URL signing key:
+
+```bash
+SINGLE_LINE_PUBLIC_KEY=$(awk '{printf "%s\\n", $0}' public_key.pem)
+```
+
+- Create public key configuration for the CDN URL signing key:
+
+```bash
+cat << EOF > public-key-config.json
+{
+    "CallerReference": "appcircle-cdn-sign-key",
+    "Name": "appcircle-cdn-sign-key",
+    "EncodedKey": "${SINGLE_LINE_PUBLIC_KEY}",
+    "Comment": "appcircle cdn sign key"
+}
+EOF
+```
+
+- Create the public key:
+
+```bash
+aws cloudfront create-public-key \
+    --public-key-config file://public-key-config.json
+```
+
+- Create key group configuration for the CDN URL signing key:
+
+```bash
+cat << EOF > key-group.json
+{
+  "Name": "appcircle-cdn-key-group",
+  "Items": ["<Public Key ID From Previous Step>"]
+}
+EOF
+```
+
+- Convert the multi-line private key to a single line:
+
+```bash
+SINGLE_LINE_PRIVATE_KEY=$(cat private_key.pem | tr -d '\n')
+```
+- Create a secret for CDN URL signing key:
+
+```bash
+kubectl create secret generic appcircle-cdn-url-sign-key -n appcircle \
+  --from-literal='cdn-url-sign-key-name=<Public Key ID From Previous Step>' \
+  --from-literal="cdn-url-sign-key=${SINGLE_LINE_PRIVATE_KEY}"
+```
+
+- Create key group for the CDN URL signing key.
+
+```bash
+aws cloudfront create-key-group --key-group-config file://key-group.json
+```
+
+- Import SSL certificates for the CloudFront CDN domains.
+
+:::caution
+Do not replace the `us-east-1` region with your actual region. AWS requires the SSL certificate to be in the `us-east-1` region to be used with CloudFront.
+:::
+
+```bash
+aws acm import-certificate --certificate fileb://cert.pem --certificate-chain fileb://fullchain.pem --private-key fileb://privkey.pem --region us-east-1
+```
+
+- Create a origin access control configuration for the S3 buckets:
+
+```bash
+cat << EOF > appcircle-oac-config.json
+{
+  "Name": "Appcircle-S3-OAC",
+  "Description": "OAC for Appcircle S3 buckets",
+  "SigningBehavior": "always",
+  "SigningProtocol": "sigv4",
+  "OriginAccessControlOriginType": "s3"
+}
+EOF
+```
+
+- Create the origin access control:
+
+```bash
+aws cloudfront create-origin-access-control \
+  --origin-access-control-config file://appcircle-oac-config.json
+```
+
+- Create a CloudFront distribution configuration file:
+
+```bash
+cat << EOF > cloudfront-config.json
+{
+  "CallerReference": "appcircle-distribution-bucket-cdn",
+  "Comment": "Appcircle Distribution Bucket CDN",
+  "Aliases": {
+    "Quantity": 1,
+    "Items": [
+      "appcircle-distribution-cdn.spacetech.com"
+    ]
+  },
+  "ViewerCertificate": {
+    "ACMCertificateArn": "<ACM Certificate ARN From Previous Step>",
+    "SSLSupportMethod": "sni-only",
+    "MinimumProtocolVersion": "TLSv1.2_2021",
+    "CertificateSource": "acm"
+  },
+  "Enabled": true,
+  "Origins": {
+    "Items": [
+      {
+        "Id": "S3Origin",
+        "DomainName": "appcircle-spacetech-distribution.s3.eu-central-1.amazonaws.com",
+        "OriginAccessControlId": "<Origin Access Control ID From Previous Step>",
+        "S3OriginConfig": {
+          "OriginAccessIdentity": ""
+        }
+      }
+    ],
+    "Quantity": 1
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "S3Origin",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "TrustedKeyGroups": {
+      "Enabled": true,
+      "Quantity": 1,
+      "Items": [
+        "<Key Group ID From Previous Step>"
+      ]
+    },
+    "AllowedMethods": {
+      "Quantity": 2,
+      "Items": [
+        "GET",
+        "HEAD"
+      ],
+      "CachedMethods": {
+        "Quantity": 2,
+        "Items": [
+          "GET",
+          "HEAD"
+        ]
+      }
+    },
+    "ForwardedValues": {
+      "QueryString": false,
+      "Cookies": {
+        "Forward": "none"
+      }
+    },
+    "MinTTL": 0,
+    "DefaultTTL": 86400,
+    "MaxTTL": 31536000
+  }
+}
+EOF
+```
+
+:::caution
+- Replace `<ACM Certificate ARN From Previous Step>` with the actual ACM certificate ARN from the previous step.
+- Replace `<Origin Access Control ID From Previous Step>` with the actual origin access control ID from the previous step.
+- Replace `<Key Group ID From Previous Step>` with the actual key group ID from the previous step.
+- Replace `appcircle-spacetech-distribution.s3.eu-central-1.amazonaws.com` with your actual S3 bucket domain.
+- Replace `appcircle-distribution-cdn.spacetech.com` with your actual CDN domain.
+:::
+
+- Create the CloudFront distribution:
+
+```bash
+aws cloudfront create-distribution --distribution-config file://cloudfront-config.json
+```
+
+- Create a DNS record on your domain provider to point to the CloudFront distribution.
+
+- Create bucket policy for the S3 buckets:
+
+```bash
+cat << EOF > distribution-bucket-policy.json
+{
+  "Version": "2008-10-17",
+  "Id": "PolicyForCloudFrontPrivateContent",
+  "Statement": [
+      {
+          "Sid": "AllowCloudFrontServicePrincipal",
+          "Effect": "Allow",
+          "Principal": {
+              "Service": "cloudfront.amazonaws.com"
+          },
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::${BUCKET_PREFIX}distribution/*",
+          "Condition": {
+              "StringEquals": {
+                "AWS:SourceArn": "<CloudFront Distribution ARN From Previous Step>"
+              }
+          }
+      }
+  ]
+}
+EOF
+```
+
+:::caution
+- Replace `<CloudFront Distribution ARN>` with your actual CloudFront distribution ARN.
+:::
+
+- Apply the bucket policy to the S3 buckets:
+
+```bash
+aws s3api put-bucket-policy \
+  --bucket ${BUCKET_PREFIX}distribution \
+  --policy file://distribution-bucket-policy.json
+```
+
+- Repeat the same process for the other S3 buckets.
+
 ## Create Kubernetes Secret
 
 **Create a Kubernetes secret** with the AWS credentials to be used by Appcircle Server.
@@ -299,12 +536,17 @@ oc create secret generic appcircle-server-minio-connection \
 
 Add the following configuration to your `values.yaml` file:
 
+<Tabs groupId="cdn-enabled">
+
+  <TabItem value="true" label="AWS CloudFront CDN Disabled">
+
 ```yaml
 global:
   minio:
     url: https://s3.us-east-1.amazonaws.com # Replace with your AWS S3 endpoint
     region: "us-east-1" # Replace with your AWS region
     useHttp: "false" # Set to "false" if you're using HTTPS S3 endpoint
+    bucketPrefix: "appcircle-spacetech-"
 resource:
   s3:
     clientProvider: "AWS" # Set to "AWS" to use AWS S3
@@ -317,7 +559,49 @@ minio:
 - Replace `https://s3.us-east-1.amazonaws.com` with your [AWS S3 endpoint](https://docs.aws.amazon.com/general/latest/gr/s3.html)
 - Replace `us-east-1` with your AWS region
 - Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production)
+- Replace `appcircle-spacetech-` with your actual bucket prefix
 :::
+
+  </TabItem>
+
+  <TabItem value="false" label="AWS CloudFront CDN Enabled">
+
+```yaml
+global:
+  minio:
+    url: https://s3.us-east-1.amazonaws.com # Replace with your AWS S3 endpoint
+    region: "us-east-1" # Replace with your AWS region
+    useHttp: "false" # Set to "false" if you're using HTTPS S3 endpoint
+    bucketPrefix: "appcircle-spacetech-"
+resource:
+  s3:
+    clientProvider: "AWS" # Set to "AWS" to use AWS S3
+    cdnProvider: "AWS" # Set to "AWS" to use AWS CloudFront CDN
+    urlSignKeySecretName: "appcircle-cdn-url-sign-key" # Set to the secret name of the CDN URL signing key
+    cdnMapping: "Build=https://appcircle-build-cdn.spacetech.com,Distribution=https://appcircle-distribution-cdn.spacetech.com,Storesubmit=https://appcircle-storesubmit-cdn.spacetech.com,Store=https://appcircle-store-cdn.spacetech.com,Publish=https://appcircle-publish-cdn.spacetech.com" # Replace with your CDN mapping
+    urlSignPolicy: "{'Statement':[{'Resource':'%RESOURCE%','Condition':{'DateGreaterThan': {'AWS:EpochTime': %START_TIME%},'DateLessThan':{'AWS:EpochTime':%END_TIME%}}}]}" # You don't need to change this value if there are no specific requirements.
+minio:
+  enabled: false # Disable internal MinIO deployment  
+```
+
+:::caution
+- Replace `https://s3.us-east-1.amazonaws.com` with your [AWS S3 endpoint](https://docs.aws.amazon.com/general/latest/gr/s3.html)
+- Replace `us-east-1` with your AWS region
+- Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production)
+- Replace `appcircle-spacetech-` with your actual bucket prefix
+- Replace `appcircle-build-cdn.spacetech.com` with your actual `build` bucket CDN domain
+- Replace `appcircle-distribution-cdn.spacetech.com` with your actual `distribution` bucket CDN domain
+- Replace `appcircle-storesubmit-cdn.spacetech.com` with your actual `storesubmit` bucket CDN domain
+- Replace `appcircle-store-cdn.spacetech.com` with your actual `store` bucket CDN domain
+- Replace `appcircle-publish-cdn.spacetech.com` with your actual `publish` bucket CDN domain
+:::
+
+  </TabItem>
+</Tabs>
+
+
+
+
 
 ## Next Steps
 
