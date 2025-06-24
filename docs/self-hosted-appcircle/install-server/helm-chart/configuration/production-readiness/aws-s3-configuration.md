@@ -28,6 +28,90 @@ This guide will walk you through the process of configuring AWS S3 as your objec
 AWS S3 configuration requires a **fresh installation** of Appcircle Server. If you have an existing installation with data, migration from MinIO to AWS S3 is **not supported**. You can only configure AWS S3 during the initial installation or if you have no existing data to preserve.
 :::
 
+## Configuration Overview
+
+### What You'll Learn
+
+This guide covers two main scenarios:
+
+1. **Basic S3 Setup** (Steps 1-5): Essential for all S3 configurations
+2. **CloudFront CDN Setup** (Step 6): Optional for performance and security
+
+### Configuration Flow
+
+```mermaid
+graph TD
+    A[Start] --> B[Set Environment Variables]
+    B --> C[Create S3 Buckets]
+    C --> D[Configure CORS]
+    D --> E[Create IAM User & Policy]
+    E --> F[Create Access Keys]
+    F --> G{Need CloudFront?}
+    G -->|No| H[Create Kubernetes Secret]
+    G -->|Yes| I[Setup CloudFront CDN]
+    I --> H
+    H --> J[Configure Helm Values]
+    J --> K[Install Appcircle Server]
+    
+    style G fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#bbf,stroke:#333,stroke-width:2px
+```
+
+### When to Use CloudFront CDN?
+
+Use this decision tree to determine if you need CloudFront:
+
+```
+Do you need CloudFront CDN?
+├── Small team (< 10 users) → Basic S3 only
+├── Internal/development use → Basic S3 only
+├── Production with global users → CloudFront recommended
+├── High-traffic applications → CloudFront recommended
+├── Security requirements (signed URLs) → CloudFront required
+└── Cost optimization needed → CloudFront recommended
+```
+
+**CloudFront Benefits:**
+- **Performance**: 50-80% faster content delivery
+- **Cost**: Reduced S3 data transfer costs
+- **Security**: Signed URLs, geographic restrictions
+- **Scalability**: Handles traffic spikes automatically
+
+**Basic S3 Benefits:**
+- **Simplicity**: Easier to set up and maintain
+- **Cost**: Lower initial setup costs
+- **Flexibility**: Direct S3 access for debugging
+
+:::tip
+**Recommendation**: Start with basic S3 setup. You can always add CloudFront later without reinstalling Appcircle Server.
+:::
+
+:::tip
+**Decision Tree:**
+- **Skip this section** if you're setting up for development/testing or have a small or medium team.
+  - You can always enable CloudFront later without reinstalling Appcircle Server.
+  - **Skip to**: [Create Kubernetes Secret](#create-kubernetes-secret)
+- **Follow this guide** if you need production-grade performance to serve your users globally.
+  - **Continue to**: Step 7.1 below
+:::
+
+### Time Estimates
+
+- **Basic S3 Setup**: 30-45 minutes
+- **CloudFront Setup**: Additional 60-90 minutes
+- **Total with CloudFront**: 1.5-2 hours
+
+### Prerequisites Checklist
+
+Before starting, ensure you have:
+
+- [ ] AWS account with appropriate permissions
+- [ ] AWS CLI v2.x installed and configured
+- [ ] kubectl/oc CLI configured for your cluster
+- [ ] Domain name (for CloudFront custom domains)
+- [ ] SSL certificates (for CloudFront custom domains)
+- [ ] Basic understanding of AWS S3 and IAM concepts
+
 ## Prerequisites
 
 To complete this guide, you must have the following:
@@ -259,37 +343,113 @@ aws iam create-access-key --user-name ${IAM_USER}
 **Save the AccessKeyId and SecretAccessKey securely**. You'll need these credentials in the next step to create the Kubernetes secret.
 :::
 
-### 6. Optional: Create CloudFront CDN for AWS S3 Buckets
+### 6. Validate Basic S3 Configuration
 
-:::info
+Before proceeding to CloudFront setup (optional) or Kubernetes secret creation, verify your basic S3 configuration:
+
+```bash
+# 1. Verify all buckets were created successfully
+echo "Checking S3 buckets..."
+aws s3 ls | grep ${BUCKET_PREFIX}
+
+# 2. Verify CORS configuration on temp bucket
+echo "Checking CORS configuration..."
+aws s3api get-bucket-cors --bucket ${BUCKET_PREFIX}temp
+
+# 3. Verify IAM user exists
+echo "Checking IAM user..."
+aws iam get-user --user-name ${IAM_USER}
+
+# 4. Verify IAM policy is attached
+echo "Checking IAM policy attachment..."
+aws iam list-attached-user-policies --user-name ${IAM_USER}
+
+# 5. Test S3 access with your credentials
+echo "Testing S3 access..."
+aws s3 ls s3://${BUCKET_PREFIX}temp --profile default
+```
+
+**Expected Output:**
+- All 8 buckets should be listed
+- CORS configuration should show your Appcircle Server URL
+- IAM user should exist and have the policy attached
+- S3 access test should succeed
+
+:::caution
+**If any step fails:**
+1. Check your AWS CLI configuration: `aws configure list`
+2. Verify your AWS permissions
+3. Ensure environment variables are set correctly
+4. Check for typos in bucket names or IAM user names
+:::
+
+:::success
+**Basic S3 configuration is complete!** You can now proceed to:
+- **CloudFront setup** (optional, for performance)
+- **Kubernetes secret creation** (required for Appcircle Server)
+:::
+
+### 7. Optional: Create CloudFront CDN for AWS S3 Buckets
+
 **What is CloudFront?**
 CloudFront is AWS's Content Delivery Network (CDN) service that improves performance by caching your S3 content at edge locations worldwide. This reduces latency and improves download speeds for your users.
 
-**Do you need CloudFront?**
-- **For small teams or internal use**: Basic S3 configuration is sufficient
-- **For production environments with global users**: CloudFront provides better performance
-- **For high-traffic applications**: CloudFront reduces S3 costs and improves reliability
+**When do you need CloudFront?**
+- **Small or medium teams/internal use**: Basic S3 configuration is sufficient
+- **Large teams with global users**: CloudFront improves performance significantly
+- **High-traffic applications**: Reduces S3 costs and improves user experience
+
+
+:::tip
+**Decision Tree:**
+- **Skip this section** if you're setting up for development/testing or have a small or medium team.
+  - You can always enable CloudFront later without reinstalling Appcircle Server.
+  - **Skip to**: [Create Kubernetes Secret](#create-kubernetes-secret)
+- **Follow this guide** if you need production-grade performance to serve your users globally.
+  - **Continue to**: Step 7.1 below
 :::
 
+**Create a CloudFront distribution** for the S3 buckets to improve performance and reduce latency.
+
+:::info
+**Flexibility Note**: You can achieve the same results with other tools (AWS Console, Terraform, CloudFormation, etc.) as long as you create the same infrastructure components described in this documentation. You can also add additional configurations (security policies, monitoring, etc.) as long as you don't break the core requirements:
+- All required S3 buckets must exist with correct names
+- IAM user must have the specified S3 permissions
+- CORS must be configured for the `temp` bucket
+- CloudFront must be configured to serve the S3 buckets
+- S3 bucket policies must be updated to allow CloudFront access
+- CloudFront public-private key pair must be created and configured
+- SSL certificate should be managed or imported for the CloudFront distribution
+- DNS must be configured to point to the CloudFront distribution
+- Kubernetes secret must contain the correct credentials for the CloudFront public-private key pair
+- Helm values must include the specified CDN configuration for the Appcircle Server
+:::
+
+#### Step 7.1: Generate SSL Keys for URL Signing
+
+CloudFront uses signed URLs to secure access to your content. You need to generate a key pair for this.
+
 ```bash
+# Generate a private key (keep this secure!)
 openssl genrsa -out private_key.pem 2048
-```
 
-- Create public key for the CDN URL signing key.
-
-```bash
+# Generate the corresponding public key
 openssl rsa -in private_key.pem -pubout -out public_key.pem
-```
 
-- Single line public key for the CDN URL signing key:
-
-```bash
+# Convert the public key to single-line format (required by AWS)
 SINGLE_LINE_PUBLIC_KEY=$(awk '{printf "%s\\n", $0}' public_key.pem)
 ```
 
-- Create public key configuration for the CDN URL signing key:
+:::caution
+**Security Note**: Keep your `private_key.pem` file secure. Anyone with this key can create valid signed URLs for your content.
+:::
+
+#### Step 7.2: Create CloudFront Public Key
+
+Create a public key in CloudFront that will be used to verify signed URLs.
 
 ```bash
+# Create the public key configuration
 cat << EOF > public-key-config.json
 {
     "CallerReference": "appcircle-cdn-sign-key",
@@ -298,58 +458,79 @@ cat << EOF > public-key-config.json
     "Comment": "appcircle cdn sign key"
 }
 EOF
+
+# Create the public key in CloudFront
+aws cloudfront create-public-key --public-key-config file://public-key-config.json
 ```
 
-- Create the public key:
+**Save the Public Key ID** from the output - you'll need it in the next steps.
+
+#### Step 7.3: Create CloudFront Key Group
+
+A key group allows you to manage multiple public keys together.
 
 ```bash
-aws cloudfront create-public-key \
-    --public-key-config file://public-key-config.json
-```
-
-- Create key group configuration for the CDN URL signing key:
-
-```bash
+# Create key group configuration
 cat << EOF > key-group.json
 {
   "Name": "appcircle-cdn-key-group",
   "Items": ["<Public Key ID From Previous Step>"]
 }
 EOF
-```
 
-- Convert the multi-line private key to a single line:
-
-```bash
-SINGLE_LINE_PRIVATE_KEY=$(cat private_key.pem | tr -d '\n')
-```
-- Create a secret for CDN URL signing key:
-
-```bash
-kubectl create secret generic appcircle-cdn-url-sign-key -n appcircle \
-  --from-literal='cdn-url-sign-key-name=<Public Key ID From Previous Step>' \
-  --from-literal="cdn-url-sign-key=${SINGLE_LINE_PRIVATE_KEY}"
-```
-
-- Create key group for the CDN URL signing key.
-
-```bash
+# Create the key group
 aws cloudfront create-key-group --key-group-config file://key-group.json
 ```
 
-- Import SSL certificates for the CloudFront CDN domains.
+**Save the Key Group ID** from the output.
+
+#### Step 7.4: Store Private Key in Kubernetes
+
+The private key needs to be available to your Appcircle Server for creating signed URLs.
+
+```bash
+# Convert private key to single line
+SINGLE_LINE_PRIVATE_KEY=$(cat private_key.pem | tr -d '\n')
+
+# Create Kubernetes secret with the private key
+kubectl create secret generic appcircle-cdn-url-sign-key -n appcircle \
+  --from-literal='cdn-url-sign-key-name=<Public Key ID From Step 7.2>' \
+  --from-literal="cdn-url-sign-key=${SINGLE_LINE_PRIVATE_KEY}"
+```
 
 :::caution
-Do not replace the `us-east-1` region with your actual region. AWS requires the SSL certificate to be in the `us-east-1` region to be used with CloudFront.
+Replace `<Public Key ID From Step 7.2>` with the actual Public Key ID you saved earlier.
+:::
+
+#### Step 7.5: Import SSL Certificate (Required for Custom Domains)
+
+If you want to use custom domains (like `cdn.yourcompany.com`), you need an SSL certificate.
+
+:::caution
+**Important**: CloudFront requires SSL certificates to be in the `us-east-1` region, regardless of where your S3 buckets are located.
 :::
 
 ```bash
-aws acm import-certificate --certificate fileb://cert.pem --certificate-chain fileb://fullchain.pem --private-key fileb://privkey.pem --region us-east-1
+# Import your SSL certificate to us-east-1 region
+aws acm import-certificate \
+  --certificate fileb://cert.pem \
+  --certificate-chain fileb://fullchain.pem \
+  --private-key fileb://privkey.pem \
+  --region us-east-1
 ```
 
-- Create a origin access control configuration for the S3 buckets:
+**Save the Certificate ARN** from the output.
+
+:::note
+**Don't have SSL certificates?** You can skip custom domains and use CloudFront's default domain (like `d1234567890.cloudfront.net`).
+:::
+
+#### Step 7.6: Create Origin Access Control
+
+Origin Access Control (OAC) secures the connection between CloudFront and your S3 buckets.
 
 ```bash
+# Create OAC configuration
 cat << EOF > appcircle-oac-config.json
 {
   "Name": "Appcircle-S3-OAC",
@@ -359,30 +540,52 @@ cat << EOF > appcircle-oac-config.json
   "OriginAccessControlOriginType": "s3"
 }
 EOF
-```
 
-- Create the origin access control:
-
-```bash
+# Create the origin access control
 aws cloudfront create-origin-access-control \
   --origin-access-control-config file://appcircle-oac-config.json
 ```
 
-- Create a CloudFront distribution configuration file:
+**Save the Origin Access Control ID** from the output.
 
+#### Step 7.7: Create CloudFront Distribution
+
+This is the main CloudFront distribution that will serve your S3 content.
+
+**Bucket List for CloudFront Setup:**
+- `${BUCKET_PREFIX}distribution` - Testing Distribution files
+- `${BUCKET_PREFIX}store` - Enterprise App Store files
+- `${BUCKET_PREFIX}build` - Build artifacts and logs
+- `${BUCKET_PREFIX}storesubmit` - Appcircle Store Submit files
+- `${BUCKET_PREFIX}publish` - Published mobile app binaries
+
+**For each bucket you want to serve via CloudFront, follow these steps:**
+
+1. **Set the bucket variable:**
 ```bash
-cat << EOF > cloudfront-config.json
+# Choose one of these buckets:
+BUCKET=${BUCKET_PREFIX}distribution  # For distribution files
+# BUCKET=${BUCKET_PREFIX}store       # For store files
+# BUCKET=${BUCKET_PREFIX}build       # For build artifacts
+# BUCKET=${BUCKET_PREFIX}storesubmit # For store submit files
+# BUCKET=${BUCKET_PREFIX}publish     # For published binaries
+```
+
+2. **Create CloudFront distribution configuration for the selected bucket:**
+```bash
+# Create CloudFront distribution configuration
+cat << EOF > cloudfront-config-${BUCKET#${BUCKET_PREFIX}}.json
 {
-  "CallerReference": "appcircle-distribution-bucket-cdn",
-  "Comment": "Appcircle Distribution Bucket CDN",
+  "CallerReference": "appcircle-${BUCKET#${BUCKET_PREFIX}}-bucket-cdn",
+  "Comment": "Appcircle ${BUCKET#${BUCKET_PREFIX}} Bucket CDN",
   "Aliases": {
     "Quantity": 1,
     "Items": [
-      "appcircle-distribution-cdn.spacetech.com"
+      "appcircle-${BUCKET#${BUCKET_PREFIX}}-cdn.spacetech.com"
     ]
   },
   "ViewerCertificate": {
-    "ACMCertificateArn": "<ACM Certificate ARN From Previous Step>",
+    "ACMCertificateArn": "<ACM Certificate ARN From Step 7.5>",
     "SSLSupportMethod": "sni-only",
     "MinimumProtocolVersion": "TLSv1.2_2021",
     "CertificateSource": "acm"
@@ -392,8 +595,8 @@ cat << EOF > cloudfront-config.json
     "Items": [
       {
         "Id": "S3Origin",
-        "DomainName": "appcircle-spacetech-distribution.s3.eu-central-1.amazonaws.com",
-        "OriginAccessControlId": "<Origin Access Control ID From Previous Step>",
+        "DomainName": "${BUCKET}.s3.${REGION}.amazonaws.com",
+        "OriginAccessControlId": "<Origin Access Control ID From Step 7.6>",
         "S3OriginConfig": {
           "OriginAccessIdentity": ""
         }
@@ -408,7 +611,7 @@ cat << EOF > cloudfront-config.json
       "Enabled": true,
       "Quantity": 1,
       "Items": [
-        "<Key Group ID From Previous Step>"
+        "<Key Group ID From Step 7.3>"
       ]
     },
     "AllowedMethods": {
@@ -439,26 +642,49 @@ cat << EOF > cloudfront-config.json
 EOF
 ```
 
-:::caution
-- Replace `<ACM Certificate ARN From Previous Step>` with the actual ACM certificate ARN from the previous step.
-- Replace `<Origin Access Control ID From Previous Step>` with the actual origin access control ID from the previous step.
-- Replace `<Key Group ID From Previous Step>` with the actual key group ID from the previous step.
-- Replace `appcircle-spacetech-distribution.s3.eu-central-1.amazonaws.com` with your actual S3 bucket domain.
-- Replace `appcircle-distribution-cdn.spacetech.com` with your actual CDN domain.
-:::
-
-- Create the CloudFront distribution:
-
+3. **Create the CloudFront distribution:**
 ```bash
-aws cloudfront create-distribution --distribution-config file://cloudfront-config.json
+# Create the CloudFront distribution
+aws cloudfront create-distribution --distribution-config file://cloudfront-config-${BUCKET#${BUCKET_PREFIX}}.json
 ```
 
-- Create a DNS record on your domain provider to point to the CloudFront distribution.
+4. **Save the CloudFront Distribution ARN** from the output.
 
-- Create bucket policy for the S3 buckets:
+5. **Repeat for other buckets** by changing the `BUCKET` variable and running steps 2-4 again.
 
+:::tip
+**Save all Distribution ARNs**: You'll need each CloudFront Distribution ARN for the bucket policy updates in the next step.
+:::
+
+:::caution
+**Replace these placeholders** with your actual values:
+- `<ACM Certificate ARN From Step 7.5>` - Your SSL certificate ARN
+- `<Origin Access Control ID From Step 7.6>` - Your OAC ID
+- `<Key Group ID From Step 7.3>` - Your key group ID
+- `appcircle-${BUCKET#${BUCKET_PREFIX}}-cdn.spacetech.com` - Your desired CDN domain for each bucket
+- `${BUCKET}.s3.${REGION}.amazonaws.com` - Your S3 bucket domain (automatically generated)
+:::
+
+#### Step 7.8: Update S3 Bucket Policy
+
+Allow CloudFront to access your S3 buckets securely.
+
+**For each bucket that has a CloudFront distribution, update the bucket policy:**
+
+1. **Set the bucket variable:**
 ```bash
-cat << EOF > distribution-bucket-policy.json
+# Choose the bucket you want to update:
+BUCKET=${BUCKET_PREFIX}distribution  # For distribution files
+# BUCKET=${BUCKET_PREFIX}store       # For store files
+# BUCKET=${BUCKET_PREFIX}build       # For build artifacts
+# BUCKET=${BUCKET_PREFIX}storesubmit # For store submit files
+# BUCKET=${BUCKET_PREFIX}publish     # For published binaries
+```
+
+2. **Create bucket policy for CloudFront access:**
+```bash
+# Create bucket policy for CloudFront access
+cat << EOF > ${BUCKET#${BUCKET_PREFIX}}-bucket-policy.json
 {
   "Version": "2008-10-17",
   "Id": "PolicyForCloudFrontPrivateContent",
@@ -470,10 +696,10 @@ cat << EOF > distribution-bucket-policy.json
               "Service": "cloudfront.amazonaws.com"
           },
           "Action": "s3:GetObject",
-          "Resource": "arn:aws:s3:::${BUCKET_PREFIX}distribution/*",
+          "Resource": "arn:aws:s3:::${BUCKET}/*",
           "Condition": {
               "StringEquals": {
-                "AWS:SourceArn": "<CloudFront Distribution ARN From Previous Step>"
+                "AWS:SourceArn": "<CloudFront Distribution ARN From Step 7.7>"
               }
           }
       }
@@ -482,19 +708,65 @@ cat << EOF > distribution-bucket-policy.json
 EOF
 ```
 
-:::caution
-- Replace `<CloudFront Distribution ARN>` with your actual CloudFront distribution ARN.
-:::
-
-- Apply the bucket policy to the S3 buckets:
-
+3. **Apply the bucket policy:**
 ```bash
+# Apply the bucket policy
 aws s3api put-bucket-policy \
-  --bucket ${BUCKET_PREFIX}distribution \
-  --policy file://distribution-bucket-policy.json
+  --bucket ${BUCKET} \
+  --policy file://${BUCKET#${BUCKET_PREFIX}}-bucket-policy.json
 ```
 
-- Repeat the same process for the other S3 buckets.
+4. **Repeat for other buckets** by changing the `BUCKET` variable and running steps 2-3 again.
+
+:::caution
+Replace `<CloudFront Distribution ARN From Step 7.7>` with the actual CloudFront distribution ARN for each specific bucket.
+:::
+
+#### Step 7.9: Configure DNS
+
+Point your custom domains to the CloudFront distributions.
+
+**For each CloudFront distribution you created, configure DNS:**
+
+1. **Set the bucket variable:**
+```bash
+# Choose the bucket you want to configure DNS for:
+BUCKET_TYPE=distribution  # For distribution files
+# BUCKET_TYPE=store       # For store files
+# BUCKET_TYPE=build       # For build artifacts
+# BUCKET_TYPE=storesubmit # For store submit files
+# BUCKET_TYPE=publish     # For published binaries
+```
+
+2. **Get your CloudFront domain name:**
+```bash
+# Get your CloudFront domain name
+aws cloudfront get-distribution --id <DISTRIBUTION_ID> --query 'Distribution.DomainName' --output text
+```
+
+3. **Create DNS records in your domain provider:**
+   - **Name**: `appcircle-${BUCKET_TYPE}-cdn.spacetech.com`
+   - **Type**: CNAME
+   - **Value**: `<CloudFront Domain Name>`
+
+4. **Repeat for other buckets** by changing the `BUCKET_TYPE` variable and running steps 2-3 again.
+
+:::caution
+**Important**: 
+- Replace the placeholder Distribution IDs in the script with your actual CloudFront Distribution IDs from Step 7.7
+- Create the CNAME records in your DNS provider (Route 53, Cloudflare, etc.)
+- DNS propagation can take up to 48 hours, but usually happens within minutes
+:::
+
+#### Step 7.10: Verify CloudFront Setup
+
+Test that your CloudFront distributions are working correctly.
+
+**For each CloudFront distribution you created, verify the setup:**
+
+```bash
+aws cloudfront get-distribution --id <DISTRIBUTION_ID> --query 'Distribution.Status'
+```
 
 ## Create Kubernetes Secret
 
@@ -616,5 +888,38 @@ After completing the AWS S3 configuration:
 3. **Verify the configuration** by checking that Appcircle Server can access the S3 buckets after installation
 
 <NeedHelp />
+
+### Enabling CloudFront Later
+
+If you initially set up Appcircle Server with basic S3 configuration, you can **enable CloudFront later** without reinstalling:
+
+1. **Follow the CloudFront setup steps above** (Steps 7.1-7.10)
+2. **Update your Helm values** to include CloudFront configuration
+3. **Upgrade your Helm deployment** with the new values
+
+:::tip
+**No downtime required**: You can enable CloudFront without stopping your Appcircle Server.
+:::
+
+#### Validation Commands
+
+Run these commands to verify your CloudFront setup:
+
+```bash
+# 1. Verify CloudFront distribution status
+aws cloudfront get-distribution --id <DISTRIBUTION_ID> --query 'Distribution.Status'
+
+# 2. Check if distribution is enabled
+aws cloudfront get-distribution --id <DISTRIBUTION_ID> --query 'Distribution.DistributionConfig.Enabled'
+
+# 3. Verify origin configuration
+aws cloudfront get-distribution --id <DISTRIBUTION_ID> --query 'Distribution.DistributionConfig.Origins.Items[0]'
+
+# 4. Check S3 bucket policy
+aws s3api get-bucket-policy --bucket ${BUCKET_PREFIX}distribution
+
+# 5. Verify Kubernetes secret exists
+kubectl get secret appcircle-cdn-url-sign-key -n appcircle
+```
 
 
