@@ -18,99 +18,17 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 This guide provides comprehensive instructions for configuring AWS S3 as your object storage backend for the Appcircle server. While the default Helm chart deployment includes MinIO as an in-cluster object storage solution, **production environments** benefit from using a more robust and scalable solution like AWS S3.
 
+### What This Guide Covers
+
 This guide will walk you through the process of configuring AWS S3 as your object storage backend for the Appcircle server. To use AWS S3 with Appcircle Server, you need to:
 
-- Set up the necessary AWS credentials and permissions.
-- Create the required AWS S3 buckets.
-- Configure the Appcircle server to use AWS S3.
+- **Set up AWS infrastructure**: S3 buckets, IAM users, and permissions
+- **Configure Appcircle Server**: Update Helm values to use S3
+- **Optional CDN setup**: CloudFront for performance optimization
 
 :::caution
 AWS S3 configuration requires a **fresh installation** of Appcircle Server. If you have an existing installation with data, migration from MinIO to AWS S3 is **not supported**. You can only configure AWS S3 during the initial installation or if you have no existing data to preserve.
 :::
-
-## Configuration Overview
-
-### What You'll Learn
-
-This guide covers two main scenarios:
-
-1. **Basic S3 Setup** (Steps 1-5): Essential for all S3 configurations
-2. **CloudFront CDN Setup** (Step 6): Optional for performance and security
-
-### Configuration Flow
-
-```mermaid
-graph TD
-    A[Start] --> B[Set Environment Variables]
-    B --> C[Create S3 Buckets]
-    C --> D[Configure CORS]
-    D --> E[Create IAM User & Policy]
-    E --> F[Create Access Keys]
-    F --> G{Need CloudFront?}
-    G -->|No| H[Create Kubernetes Secret]
-    G -->|Yes| I[Setup CloudFront CDN]
-    I --> H
-    H --> J[Configure Helm Values]
-    J --> K[Install Appcircle Server]
-    
-    style G fill:#f9f,stroke:#333,stroke-width:2px
-    style I fill:#bbf,stroke:#333,stroke-width:2px
-```
-
-### When to Use CloudFront CDN?
-
-Use this decision tree to determine if you need CloudFront:
-
-```
-Do you need CloudFront CDN?
-├── Small team (< 10 users) → Basic S3 only
-├── Internal/development use → Basic S3 only
-├── Production with global users → CloudFront recommended
-├── High-traffic applications → CloudFront recommended
-├── Security requirements (signed URLs) → CloudFront required
-└── Cost optimization needed → CloudFront recommended
-```
-
-**CloudFront Benefits:**
-- **Performance**: 50-80% faster content delivery
-- **Cost**: Reduced S3 data transfer costs
-- **Security**: Signed URLs, geographic restrictions
-- **Scalability**: Handles traffic spikes automatically
-
-**Basic S3 Benefits:**
-- **Simplicity**: Easier to set up and maintain
-- **Cost**: Lower initial setup costs
-- **Flexibility**: Direct S3 access for debugging
-
-:::tip
-**Recommendation**: Start with basic S3 setup. You can always add CloudFront later without reinstalling Appcircle Server.
-:::
-
-:::tip
-**Decision Tree:**
-- **Skip this section** if you're setting up for development/testing or have a small or medium team.
-  - You can always enable CloudFront later without reinstalling Appcircle Server.
-  - **Skip to**: [Create Kubernetes Secret](#create-kubernetes-secret)
-- **Follow this guide** if you need production-grade performance to serve your users globally.
-  - **Continue to**: Step 7.1 below
-:::
-
-### Time Estimates
-
-- **Basic S3 Setup**: 30-45 minutes
-- **CloudFront Setup**: Additional 60-90 minutes
-- **Total with CloudFront**: 1.5-2 hours
-
-### Prerequisites Checklist
-
-Before starting, ensure you have:
-
-- [ ] AWS account with appropriate permissions
-- [ ] AWS CLI v2.x installed and configured
-- [ ] kubectl/oc CLI configured for your cluster
-- [ ] Domain name (for CloudFront custom domains)
-- [ ] SSL certificates (for CloudFront custom domains)
-- [ ] Basic understanding of AWS S3 and IAM concepts
 
 ## Prerequisites
 
@@ -128,6 +46,7 @@ You need the following AWS permissions to complete this configuration:
 - **S3 permissions**: Create buckets, configure CORS, manage bucket policies
 - **IAM permissions**: Create users, policies, and access keys
 - **STS permissions**: Get caller identity (for policy attachment)
+- **CloudFront permissions**: Create distributions, manage origins, and configure caching
 
 If you're working in a restricted environment, ensure you have the necessary permissions before proceeding.
 
@@ -164,13 +83,19 @@ export AWS_DEFAULT_REGION="us-east-1"
 
 **`kubectl`** (for Kubernetes) or **`oc`** (for OpenShift) CLI is **required** and must be configured to access your cluster.
 
+:::info
+This guide assumes you have administrative access to your AWS account and Kubernetes/OpenShift cluster. If you're working in a restricted environment, ensure you have the necessary permissions before proceeding.
+:::
+
 ### 4. Basic Understanding
 
 Basic understanding of **AWS IAM**, **S3**, and **Kubernetes/OpenShift** concepts is recommended.
 
-:::info
-This guide assumes you have administrative access to your AWS account and Kubernetes/OpenShift cluster. If you're working in a restricted environment, ensure you have the necessary permissions before proceeding.
-:::
+### 5. Optional: Domain and SSL Certificates
+
+For CloudFront CDN setup (optional), you'll need:
+- **Domain name**: For custom CDN domains
+- **SSL certificates**: For HTTPS access to your CDN
 
 ## Configuration Steps
 
@@ -197,7 +122,7 @@ IAM_USER="appcircle-server"
 
 Appcircle server requires the following S3 buckets for different purposes:
 
-- **`${BUCKET_PREFIX}temp`**: Temporary files and uploads
+- **`${BUCKET_PREFIX}temp`**: Temporary files and uploads (requires CORS configuration)
 - **`${BUCKET_PREFIX}build`**: Build artifacts and logs
 - **`${BUCKET_PREFIX}distribution`**: Testing Distribution files
 - **`${BUCKET_PREFIX}storesubmit`**: Appcircle Store Submit files
@@ -206,10 +131,14 @@ Appcircle server requires the following S3 buckets for different purposes:
 - **`${BUCKET_PREFIX}backup`**: Backup files
 - **`${BUCKET_PREFIX}publish`**: Published mobile app binaries
 
-Run the following commands to create all required buckets:
+:::tip
+**Bucket Naming**: Bucket names must be globally unique across all AWS accounts. Using your organization name as a prefix ensures uniqueness.
+:::
+
+**Create all required buckets:**
 
 ```bash
-# Create all required buckets
+# Create buckets one by one
 aws s3 mb s3://${BUCKET_PREFIX}temp --region ${REGION}
 aws s3 mb s3://${BUCKET_PREFIX}build --region ${REGION}
 aws s3 mb s3://${BUCKET_PREFIX}distribution --region ${REGION}
@@ -229,8 +158,10 @@ The bucket names use your organization name to ensure global uniqueness, as AWS 
 **Configure CORS settings** for the `temp` bucket to allow cross-origin requests from your Appcircle Server web UI.
 
 :::caution
-Replace the `https://my.appcircle.spacetech.com` with your actual Appcircle Server web UI URL.
+Replace the `https://my.appcircle.spacetech.com` with the web UI URL that you will use to access the Appcircle Server. For example, if you are using `.appcircle.spacetech.com` as the domain in the Helm `values.yaml` file, the web UI URL will be `https://my.appcircle.spacetech.com`.
 :::
+
+**Configure CORS for the temp bucket:**
 
 ```bash
 aws s3api put-bucket-cors \
@@ -257,13 +188,13 @@ aws s3api put-bucket-cors \
 
 ### 4. Create IAM User and Policy
 
-- **Create an IAM user** with appropriate permissions to access the S3 buckets.
+**Create an IAM user with minimal permissions** to access the S3 buckets securely.
 
 ```bash
 aws iam create-user --user-name ${IAM_USER}
 ```
 
-- **Create an IAM policy** that grants the necessary S3 permissions. Run the following command to create a policy file:
+**Create an IAM policy** that grants the necessary S3 permissions:
 
 ```bash
 cat << EOF > appcircle-s3-policy.json
@@ -302,45 +233,46 @@ cat << EOF > appcircle-s3-policy.json
 EOF
 ```
 
-- **Create the IAM policy** for the IAM user.
+**Create the IAM policy:**
 ```bash
 aws iam create-policy \
-    --policy-name ${IAM_USER}-s3-policy \
-    --policy-document file://appcircle-s3-policy.json
+  --policy-name ${IAM_USER}-s3-policy \
+  --policy-document file://appcircle-s3-policy.json
 ```
 
-- **Attach the policy to the IAM user**.
+**Get your AWS account ID:**
+```bash
+ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+```
 
+**Attach the policy to the IAM user:**
 ```bash
 aws iam attach-user-policy \
-    --user-name ${IAM_USER} \
-    --policy-arn arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):policy/${IAM_USER}-s3-policy
+  --user-name ${IAM_USER} \
+  --policy-arn arn:aws:iam::${ACCOUNT_ID}:policy/${IAM_USER}-s3-policy
 ```
 
 ### 5. Create Access Keys for the IAM User
 
-- **Create access keys** for the IAM user to be used by Appcircle Server.
+**Create access keys** for the IAM user to be used by Appcircle Server.
+
+**Security Best Practices:**
+- **Store securely**: Save credentials in a secure location
+- **Never commit to code**: Don't add credentials to version control
+- **Use environment variables**: Set credentials as environment variables
+- **Rotate regularly**: Change access keys every 90 days
+
+**Create access keys:**
 
 ```bash
-aws iam create-access-key --user-name ${IAM_USER}
+ACCESS_KEY_OUTPUT=$(aws iam create-access-key --user-name ${IAM_USER})
+ACCESS_KEY_ID=$(echo "$ACCESS_KEY_OUTPUT" | jq -r '.AccessKey.AccessKeyId')
+SECRET_ACCESS_KEY=$(echo "$ACCESS_KEY_OUTPUT" | jq -r '.AccessKey.SecretAccessKey')
 ```
 
-- **Save the output** from the access key creation command. It will look like this:
-
-```json
-{
-    "AccessKey": {
-        "UserName": "appcircle-server",
-        "AccessKeyId": "AKIAXXXXXXXXXXXXXXXX",
-        "Status": "Active",
-        "SecretAccessKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-        "CreateDate": "2025-XX-XX"
-    }
-}
-```
 
 :::warning
-**Save the AccessKeyId and SecretAccessKey securely**. You'll need these credentials in the next step to create the Kubernetes secret.
+**CRITICAL: Save the AccessKeyId and SecretAccessKey securely**. You'll need these credentials in the next step to create the Kubernetes secret.
 :::
 
 ### 6. Validate Basic S3 Configuration
@@ -363,59 +295,35 @@ aws iam get-user --user-name ${IAM_USER}
 # 4. Verify IAM policy is attached
 echo "Checking IAM policy attachment..."
 aws iam list-attached-user-policies --user-name ${IAM_USER}
-
-# 5. Test S3 access with your credentials
-echo "Testing S3 access..."
-aws s3 ls s3://${BUCKET_PREFIX}temp --profile default
 ```
 
 **Expected Output:**
 - All 8 buckets should be listed
 - CORS configuration should show your Appcircle Server URL
 - IAM user should exist and have the policy attached
-- S3 access test should succeed
-
-:::caution
-**If any step fails:**
-1. Check your AWS CLI configuration: `aws configure list`
-2. Verify your AWS permissions
-3. Ensure environment variables are set correctly
-4. Check for typos in bucket names or IAM user names
-:::
-
-:::success
-**Basic S3 configuration is complete!** You can now proceed to:
-- **CloudFront setup** (optional, for performance)
-- **Kubernetes secret creation** (required for Appcircle Server)
-:::
 
 ### 7. Optional: Create CloudFront CDN for AWS S3 Buckets
 
 **What is CloudFront?**
 CloudFront is AWS's Content Delivery Network (CDN) service that improves performance by caching your S3 content at edge locations worldwide. This reduces latency and improves download speeds for your users.
 
-**When do you need CloudFront?**
+**Do you need CloudFront?**
 - **Small or medium teams/internal use**: Basic S3 configuration is sufficient
 - **Large teams with global users**: CloudFront improves performance significantly
-- **High-traffic applications**: Reduces S3 costs and improves user experience
-
 
 :::tip
 **Decision Tree:**
+- **Follow this guide** if you need production-grade performance to serve your users globally.
+  - **Continue to**: Step 7.1 below
 - **Skip this section** if you're setting up for development/testing or have a small or medium team.
   - You can always enable CloudFront later without reinstalling Appcircle Server.
   - **Skip to**: [Create Kubernetes Secret](#create-kubernetes-secret)
-- **Follow this guide** if you need production-grade performance to serve your users globally.
-  - **Continue to**: Step 7.1 below
 :::
 
-**Create a CloudFront distribution** for the S3 buckets to improve performance and reduce latency.
+This guide will walk you through the process of creating a CloudFront distribution for your S3 buckets with the `aws` CLI.
 
 :::info
 **Flexibility Note**: You can achieve the same results with other tools (AWS Console, Terraform, CloudFormation, etc.) as long as you create the same infrastructure components described in this documentation. You can also add additional configurations (security policies, monitoring, etc.) as long as you don't break the core requirements:
-- All required S3 buckets must exist with correct names
-- IAM user must have the specified S3 permissions
-- CORS must be configured for the `temp` bucket
 - CloudFront must be configured to serve the S3 buckets
 - S3 bucket policies must be updated to allow CloudFront access
 - CloudFront public-private key pair must be created and configured
@@ -502,7 +410,7 @@ kubectl create secret generic appcircle-cdn-url-sign-key -n appcircle \
 Replace `<Public Key ID From Step 7.2>` with the actual Public Key ID you saved earlier.
 :::
 
-#### Step 7.5: Import SSL Certificate (Required for Custom Domains)
+#### Step 7.5: Import SSL Certificate
 
 If you want to use custom domains (like `cdn.yourcompany.com`), you need an SSL certificate.
 
@@ -520,10 +428,6 @@ aws acm import-certificate \
 ```
 
 **Save the Certificate ARN** from the output.
-
-:::note
-**Don't have SSL certificates?** You can skip custom domains and use CloudFront's default domain (like `d1234567890.cloudfront.net`).
-:::
 
 #### Step 7.6: Create Origin Access Control
 
@@ -779,8 +683,8 @@ aws cloudfront get-distribution --id <DISTRIBUTION_ID> --query 'Distribution.Sta
 ```bash
 kubectl create secret generic appcircle-server-minio-connection \
   -n appcircle \
-  --from-literal=accessKey=<ACCESS_KEY_ID> \
-  --from-literal=secretKey=<SECRET_ACCESS_KEY>
+  --from-literal=accessKey=${ACCESS_KEY_ID} \
+  --from-literal=secretKey=${SECRET_ACCESS_KEY}
 ```
 
   </TabItem>
@@ -789,18 +693,12 @@ kubectl create secret generic appcircle-server-minio-connection \
 ```bash
 oc create secret generic appcircle-server-minio-connection \
   -n appcircle \
-  --from-literal=accessKey=${ACCESS_KEY_ID}  \
+  --from-literal=accessKey=${ACCESS_KEY_ID} \
   --from-literal=secretKey=${SECRET_ACCESS_KEY}
 ```
 
   </TabItem>
 </Tabs>
-
-:::caution
-- Replace `${ACCESS_KEY_ID}` and `${SECRET_ACCESS_KEY}` with the actual access key ID and secret access key from the [Create IAM User and Policy](#4-create-iam-user-and-policy) step.
-- Replace `appcircle` with the actual namespace/project where Appcircle Server will be installed.
-- **Do not replace** the `appcircle-server-minio-connection` secret name as it's required by the Helm chart.
-:::
 
 ## Configure Helm Values
 
@@ -871,10 +769,6 @@ minio:
   </TabItem>
 </Tabs>
 
-
-
-
-
 ## Next Steps
 
 After completing the AWS S3 configuration:
@@ -888,38 +782,5 @@ After completing the AWS S3 configuration:
 3. **Verify the configuration** by checking that Appcircle Server can access the S3 buckets after installation
 
 <NeedHelp />
-
-### Enabling CloudFront Later
-
-If you initially set up Appcircle Server with basic S3 configuration, you can **enable CloudFront later** without reinstalling:
-
-1. **Follow the CloudFront setup steps above** (Steps 7.1-7.10)
-2. **Update your Helm values** to include CloudFront configuration
-3. **Upgrade your Helm deployment** with the new values
-
-:::tip
-**No downtime required**: You can enable CloudFront without stopping your Appcircle Server.
-:::
-
-#### Validation Commands
-
-Run these commands to verify your CloudFront setup:
-
-```bash
-# 1. Verify CloudFront distribution status
-aws cloudfront get-distribution --id <DISTRIBUTION_ID> --query 'Distribution.Status'
-
-# 2. Check if distribution is enabled
-aws cloudfront get-distribution --id <DISTRIBUTION_ID> --query 'Distribution.DistributionConfig.Enabled'
-
-# 3. Verify origin configuration
-aws cloudfront get-distribution --id <DISTRIBUTION_ID> --query 'Distribution.DistributionConfig.Origins.Items[0]'
-
-# 4. Check S3 bucket policy
-aws s3api get-bucket-policy --bucket ${BUCKET_PREFIX}distribution
-
-# 5. Verify Kubernetes secret exists
-kubectl get secret appcircle-cdn-url-sign-key -n appcircle
-```
 
 
