@@ -72,6 +72,8 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Runner Access Token | Create/Delete Runner Access Token          | ✅     | ⛔       | ⛔        | ⛔      |
 | Runner Access Token | List Runner Access Token                   | ✅     | ⛔       | ⛔        | ⛔      |
 | Report              | List Build Reports                         | ✅     | ✅       | ✅        | ✅      |
+| Webhook             | View Webhook URL, Webhook Key              | ✅     | ✅       | ✅        | ✅      |
+| Webhook             | Generate Webhook Key                       | ✅     | ✅       | ⛔        | ⛔      |
 
 
 :::caution Distribution Binary and Runner Details

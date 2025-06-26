@@ -65,8 +65,8 @@ If the Git provider is detected, a compatible URL will be displayed automaticall
 - Copy the Webhook URL:
 The generated Public Repository Webhook URL will appear based on your selection. Copy this URL and paste it into your repository’s webhook settings.
 
-- Generate a New Webhook Key (Optional):
-If needed, you can generate a new webhook key to refresh or reset the endpoint’s security token.
+- Generate a New Webhook Key:
+You can generate a new webhook key to refresh or reset the endpoint’s security token.
 
 **4.**	Paste the Webhook URL in your Git repository:
 
@@ -75,7 +75,7 @@ For example, in **GitHub**:
 - Click Settings > Webhooks > Add webhook.
 - Paste the URL into the Payload URL field.
 - Choose application/json as the content type.
-- Paste the Webhook Key if required.
+- Paste the Webhook Key.
 - Select the appropriate events (e.g., push or tag creation).
 - Save the webhook.
 
