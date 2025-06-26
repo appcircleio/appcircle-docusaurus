@@ -421,6 +421,8 @@ It's perfectly acceptable for **some custom domains to be enabled while others a
 For example, you might have a custom domain for the Enterprise App Store but use the default domain for Testing Distribution or DMZ Authentication.  
 :::
 
+There is an optional domain name if you want to use the Appcircle server [CodePush feature](/code-push/index.md) in the Appcircle DMZ server. You will configure this CodePush domain name in the Appcircle server `global.yaml` file in the next sections. If you don't want to use the CodePush feature, you can skip the CodePush domain name configuration.
+
 ---
 
 Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication, API and monitoring domains.
@@ -504,6 +506,115 @@ cd appcircle-server
 ```bash
 ./ac-self-hosted.sh -n spacetech down
 ```
+
+- If you want to use the [CodePush feature](/code-push/index.md) in the Appcircle DMZ server, you need to configure the CodePush domain name and it's SSL certificate in the Appcircle server `global.yaml` file.
+
+<details>
+    <summary>Click to see how to configure the CodePush feature in the Appcircle DMZ server</summary>
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="podman">
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add or update the `codepushProxy` key as below.
+
+```yaml
+codepushProxy:
+  enabled: true # Set to true to enable the CodePush feature on the Appcircle DMZ server
+  external:
+    port: 8443 # Set to 8443 to use the CodePush feature with HTTPS
+    scheme: https # Set to https to use the CodePush feature with HTTPS
+    domain: codepush.spacetech.com # Set the CodePush domain name as you want
+    publicKey: | # Set the SSL certificate public key for the CodePush domain
+      -----BEGIN CERTIFICATE-----
+      MIIDqjCCAzCgAwIBAgISBiQ+pg7gN4ODAcGcxqy6+ZvtMAoGCCqGSM49BAMDMDIx
+      ...
+      RxFkhGCZddnB9p9x1p+ZJurRu13naXmHPpq+j3X1
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIEVzCCAj+gAwIBAgIRALBXPpFzlydw27SHyzpFKzgwDQYJKoZIhvcNAQELBQAw
+      ...
+      Ig46v9mFmBvyH04=
+      -----END CERTIFICATE-----
+    privateKey: | # Set the SSL certificate private key for the CodePush domain
+      -----BEGIN PRIVATE KEY-----
+      ...
+      bSo6Ae6pgnQsFYyDGHQxHUwiNT7yXW0fel+k+yEHhXeLcDs40cPzr5c=
+      -----END PRIVATE KEY-----
+```
+
+:::caution
+The `codepushProxy.external.port` must be `8443` and `codepushProxy.external.scheme` must be `https` to use the CodePush feature in the Appcircle DMZ server with HTTPS.
+
+Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/linux-package/installation/podman#overcoming-privileged-port-limitations) on the host, you will connect to the CodePush with the `TCP/443` port as usual from the internet.
+:::
+
+</TabItem>
+
+<TabItem value="docker">
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add or update the `codepushProxy` key as below.
+
+```yaml
+codepushProxy:
+  enabled: true # Set to true to enable the CodePush feature on the Appcircle DMZ server
+  external:
+    port: 443 # Set to 443 to use the CodePush feature with HTTPS
+    scheme: https # Set to https to use the CodePush feature with HTTPS
+    domain: codepush.spacetech.com # Set the CodePush domain name as you want
+    publicKey: | # Set the SSL certificate public key for the CodePush domain
+      -----BEGIN CERTIFICATE-----
+      MIIDqjCCAzCgAwIBAgISBiQ+pg7gN4ODAcGcxqy6+ZvtMAoGCCqGSM49BAMDMDIx
+      ...
+      RxFkhGCZddnB9p9x1p+ZJurRu13naXmHPpq+j3X1
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIEVzCCAj+gAwIBAgIRALBXPpFzlydw27SHyzpFKzgwDQYJKoZIhvcNAQELBQAw
+      ...
+      Ig46v9mFmBvyH04=
+      -----END CERTIFICATE-----
+    privateKey: | # Set the SSL certificate private key for the CodePush domain
+      -----BEGIN PRIVATE KEY-----
+      ...
+      bSo6Ae6pgnQsFYyDGHQxHUwiNT7yXW0fel+k+yEHhXeLcDs40cPzr5c=
+      -----END PRIVATE KEY-----
+```
+
+:::caution
+The `codepushProxy.external.port` must be `443` and `codepushProxy.external.scheme` must be `https` to use the CodePush feature in the Appcircle DMZ server with HTTPS.
+:::
+
+
+</TabItem>
+
+</Tabs>
+
+- After you have configured the CodePush feature on the Appcircle DMZ server with a new domain name, you need to update the `CodePushServerUrl` in the [CodePush SDK configuration](/code-push/code-push-sdk#codepush-configurations-in-project) of your mobile application.
+
+  - For example, if you have configured the CodePush feature on the Appcircle DMZ server with the `codepush.spacetech.com` domain name, you need to update the `CodePushServerUrl` in the [CodePush SDK configuration](/code-push/code-push-sdk#codepush-configurations-in-project) of your mobile application to `https://codepush.spacetech.com` from the default `https://api.appcircle.spacetech.com/codepush` URL.
+
+  :::caution
+  Please make sure to remove the `/codepush` path from the `CodePushServerUrl`.
+
+</details>
 
 - Create the new configuration files for the Appcircle DMZ and the Appcircle server.
 
