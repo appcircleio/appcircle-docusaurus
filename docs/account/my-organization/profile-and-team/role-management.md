@@ -54,6 +54,8 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Build Profile       | List Build Profiles                        | ✅     | ✅       | ✅        | ✅      |
 | Build Profile       | Build List                                 | ✅     | ✅       | ✅        | ✅      |
 | Repository          | Connect/Disconnect Repository              | ✅     | ✅       | ⛔        | ⛔      |
+| Webhook             | View Webhook URL, Webhook Key              | ✅     | ✅       | ✅        | ✅      |
+| Webhook             | Generate Webhook Key                       | ✅     | ✅       | ⛔        | ⛔      |
 | Configuration       | Add/Delete/Update Build Configuration      | ✅     | ✅       | ⛔        | ⛔      |
 | Configuration       | View Build Configuration                   | ✅     | ✅       | ✅        | ✅      |
 | Workflow            | Add/Delete/Update Workflows                | ✅     | ✅       | ⛔        | ⛔      |
@@ -72,9 +74,6 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Runner Access Token | Create/Delete Runner Access Token          | ✅     | ⛔       | ⛔        | ⛔      |
 | Runner Access Token | List Runner Access Token                   | ✅     | ⛔       | ⛔        | ⛔      |
 | Report              | List Build Reports                         | ✅     | ✅       | ✅        | ✅      |
-| Webhook             | View Webhook URL, Webhook Key              | ✅     | ✅       | ✅        | ✅      |
-| Webhook             | Generate Webhook Key                       | ✅     | ✅       | ⛔        | ⛔      |
-
 
 :::caution Distribution Binary and Runner Details
 
