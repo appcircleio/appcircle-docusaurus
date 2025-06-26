@@ -8,15 +8,16 @@ tags: [publish module, benefits, key features, walkthrough, app store connect, a
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
-## Why to Use the Publish Module: Features and Benefits
+## Why Use the Publish Module: Features and Benefits
 
 The Publish module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play, and Huawei AppGallery. This module streamlines the complex process of app release, enabling users to:
 
 - **Centralized Release Management**: Monitor, manage, and audit releases from a single platform, making the release process more efficient and organized.
-- **Automate Releases**: Automate the submission of apps to multiple stores, reducing the manual workload and minimizing the risk of errors.
-- **Flexibility in Publishing**: Appcircle provides the flexibility to publish your applications to various platforms, including app stores and internal app distribution systems. This ensures that your app reaches the right audience through the most suitable channels.
-- **Isolation from Complex Interactions**: Eliminate the need for direct interaction with individual app stores like the App Store, Google Play, and Huawei AppGallery. Appcircle acts as a central hub, isolating you from the complexities and variances of each store’s submission processes. 
+- **Automate Releases**: Automate the submission of applications to multiple stores, reducing the manual workload and minimizing the risk of errors.
+- **Flexibility in Publishing**: Appcircle provides the flexibility to publish your applications to various platforms, including app stores and internal app distribution systems. This ensures that your application reaches the right audience through the most suitable channels.
+- **Isolation from Complex Interactions**: Eliminate the need for direct interaction with individual app stores like the App Store, Google Play Console, and Huawei AppGallery. Appcircle acts as a central hub, isolating you from the complexities and variances of each store’s submission processes. 
 
 By using the Publish module, you can ensure a smooth, reliable, and scalable release process for your mobile applications, enhancing the overall efficiency and effectiveness of your app release strategy. 
 
@@ -92,17 +93,17 @@ The binary file can be uploaded to the Publish module either manually, through t
 
 ## Publish Setup Process
 
-- Your mobile app should be correctly set up within the Appcircle platform. This includes having a configured project with the necessary app builds (binary files) available for release. To set up a profile, click the **Add New** button on the top right.
+### Creating a Publish Profile
+
+- Your Publish profile should be correctly set up within the Appcircle platform. This includes having a configured project with the necessary app builds (binary files) available for release. To set up a profile, click the **Add New** button on the top right.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishStartCreate.png' />
 
-:::tip Set Up Project
+:::tip Creating a Publish Profile
 
-If you haven't set up a project in Appcircle before, follow the detailed [**setup guide**](/publish-module/creating-publish-profiles) provided in the Appcircle documentation to ensure everything is ready for publishing.
+If you haven't create a Publish profile in Appcircle before, follow the detailed [**Creating a Publish profile guide**](/publish-module/creating-publish-profiles) provided in the Appcircle documentation to ensure everything is ready for publishing.
 
 :::
-
-### Creating a Publish Profile
 
 - There are two different ways to create a Publish Profile. One option is to create the profile manually, and the other is to retrieve an existing profile from App Store Connect. For detailed information please visit the [**Creating Publish Profile**](/publish-module/creating-publish-profiles) documentation.
 
@@ -116,11 +117,11 @@ To use this profile creation method, you must have an API key integration in pla
 
 ### Selecting an App Store API Key
 
-Once the required integrations are set up, you can access these platforms from your profile within the Publish module. To initiate a release process, you need to select the credentials for the related store from the Settings screen under the Publish Profile.
+Once the required integrations are set up, you can access these platforms from your profile within the Publish module. To initiate a release process, you need to select the credentials for the related store from the `Settings` screen under the Publish profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishSetting.png' />
 
-- All available integrations will be shown in the Settings screen.
+- All available integrations will be shown in the `Settings` screen.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishSettingDetail.png' />
 
@@ -140,15 +141,21 @@ Once the required integrations are set up, you can access these platforms from y
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-testFlightBetaDetails.png' />  
 
-### Publish Flow Customization
+### Customizing the Publish Flow
 
-Publish flows are used to automate multiple tasks and introduce automation checkpointsfor application deployments to stores. You can create and manage flows within the Publish module as outlined below:
+Publish flow is used to automate multiple tasks and introduce automation checkpoints for application publishing to stores. You can create and manage flows within the Publish module as outlined below:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-flows.png' />
 
-- **Create a New Flow**: Start by creating a new flow from the "Publish Flows" section. 
+- **Update the Publish Flow**: Update the flow based on your needs in the `Publish Flow` section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-manageFlowDetails.png' />
+
+:::info 
+
+You can back up your current Publish flow by clicking the `Download YAML` button at the bottom. You can also upload your Publish flow as a YAML file using the `Replace Flow` button at the top right.
+
+:::
 
 - You can choose from predefined flows or create a custom flow based on your specific needs.
 
@@ -159,11 +166,11 @@ Publish flows are used to automate multiple tasks and introduce automation check
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-configureStep.png' />
 
-- **Save and Activate**: Once the flow is configured, you can save and activate it for use in the deployment process.
+- **Save**: Once the flow is configured, you can save it for use in the publish process.
 
 
 
-### Publish Flow Samples
+### Publish Flow Sample
 
 The Publish module is designed to cater to a wide range of needs, making it suitable for both enterprise-level companies and individual developers. Here is an example of a custom flow you might create:
 
@@ -185,7 +192,7 @@ With the Appcircle Publish module, you can manage your entire release process fr
 
 ### Setting Up Notifications
 
-- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
+- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful publishing or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-notificationInteg.png' />  
 
@@ -193,13 +200,13 @@ With the Appcircle Publish module, you can manage your entire release process fr
 
 ## Managing Releases
 
-Effective release management is crucial for ensuring the success of your app updates. The Publish module provides you with the tools to monitor, control, and optimize the release process. You can track the status of your releases in real-time, manage approvals, and address any issues that arise during the process. Also, the Publish Module offers customizable flows to provide more detailed management of the release process.
+Effective release management is crucial for ensuring the success of your app updates. The Publish module provides you with the tools to monitor, control, and optimize the release process. You can track the status of your releases in real-time, manage approvals, and address any issues that arise during the process. Also, the Publish module offers customizable flows to provide more detailed management of the release process.
 
 Additionally, the module allows you to roll back to previous versions if needed, ensuring that you have full control over your app's distribution. By leveraging these features, you can maintain a smooth and efficient release cycle, minimizing disruptions and maximizing the impact of your updates.
 
 ### Uploading a Binary
 
-Easily upload your binary file to the Publish module, either manually or via the Build module, to begin the release process.
+Easily upload your binary file to the Publish module **manually**, via the **Build** or **Testing Distribution** modules, or through **Appcircle CLI and API** to begin the release process.
 
 #### Manual Binary Upload
 
@@ -209,7 +216,7 @@ You can upload your binary file directly to the Publish module using the manual 
 
 #### Uploading via Build Module
 
-You can deploy your binary file to the Publish module from the Build module automatically. This method automates the binary deployment process, ensuring that your binary is transferred directly from the Build pipeline to the Publish module, ready for release. It simplifies the flows and reduces the risk of manual errors.
+You can deploy your binary file to the Publish module from the Build module automatically. This method automates the binary publish process, ensuring that your binary is transferred directly from the Build pipeline to the Publish module, ready for release. It simplifies the flows and reduces the risk of manual errors.
 
 :::info Uploading via Build Module
 
@@ -219,7 +226,9 @@ To upload a binary from the Build module, please refer to the [**Distribution Co
 
 #### Uploading via Testing Distribution Module
 
-You can manually send your binary file to the Publish module from the Testing Distribution module.
+You can send your binary file to the Publish module from the Testing Distribution module.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main12.png" />
 
 :::info Uploading via Testing Distribution Module
 
@@ -227,15 +236,15 @@ To upload a binary from the Testing Distribution module, please refer to the [**
 
 :::
 
-#### Uploading using CLI & API
+#### Upload via Appcircle CLI & API
 
 If you have your own CI environment, you can use the Appcircle API & CLI to upload binaries to the related publish Profile.
 
-- **Other CI/CD Tools**: You can integrate the Publish module with continuous integration/continuous deployment (CI/CD) tools like Jenkins and GitHub Actions to automate your build and release pipeline. With the Appcircle [**API & CLI**](/appcircle-api-and-cli), you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient deployment process, reducing manual intervention and the risk of errors. You can check out [**Appcircle Marketplace**](/marketplace) for more integrations.
+- **Other CI/CD Tools**: You can integrate the Publish module with continuous integration/continuous deployment (CI/CD) tools like Jenkins and GitHub Actions to automate your build and release pipeline. With the Appcircle [**API & CLI**](/appcircle-api-and-cli), you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient publish process, reducing manual intervention and the risk of errors. You can check out [**Appcircle Marketplace**](/marketplace) for more integrations.
 
 To get more information, please refer to our [**API & CLI**](/appcircle-api-and-cli) documentation.
 
-### Setting Binary as Release Candidate
+### Marking Binary as Release Candidate
 
 - Designate the current build as the Release Candidate, signaling that it is ready for final testing and potential release. You can refer to the [**Marking as Release Candidate**](/publish-module/publish-information/marking-release-candidates) document for detailed information.
 
@@ -256,9 +265,9 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 - After updating your app's metadata, use the [**Metadata Approval**](/publish-integrations/common-publish-integrations/metadata-approval)
 step to get approval before submitting the metadata to App Store Connect.
 
-### Executing the Flow
+### Starting the Flow
 
-- Once the flow is selected, you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the selectd app stores.
+- You can start the Publish flow manually by clicking on the `Publish Details` or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the selected app stores.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-startPublish.png' />
 
@@ -282,7 +291,9 @@ If needed, you can rollback to a previous version of your app or pause a release
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-subCancel.png' />
 
-- Additionally, the binary can be rejected to be excluded from the publish process, and the rejection reason is displayed as a tag on binary
+#### Rejecting a Binary
+
+- The binary can be rejected to be excluded from the publish process, and the rejection reason is displayed as a tag on binary
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejection.png' />
 
@@ -363,15 +374,15 @@ For more information, please refer to the [**Role Management**](/account/my-orga
 
 Yes, the Publish module allows you to manage multiple app store accounts within a single interface. You can set up and integrate different accounts, such as Apple App Store, Google Play, and Huawei AppGallery, and then select the appropriate account during the release process. This flexibility ensures that you can handle releases across multiple platforms efficiently.
 
-#### How do I create a custom flow in the Publish module?
+#### How do I create a custom flow in the Publish Module?
 
-To create a custom flow, navigate to the Publish module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flows allow you to tailor the release process to fit your specific needs.
+To create a custom flow, navigate to the Publish module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allows you to tailor the release process to fit your specific needs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-flows.png' />
 
 #### Why can't I edit the Publish Flow?
 
-The Publish Module is an **enterprise-level** solution, so only users with an **Appcircle Enterprise Licence** have access to all of its features. Users with other licences have limited access to the module. To get more information for Enterprise Licence please [**contact us**](https://appcircle.io/contact) directly.
+The Publish module is an **enterprise-level** solution, so only users with an **Appcircle Enterprise Licence** have access to all of its features. Users with other licences have limited access to the module. To get more information for Enterprise Licence please [**contact us**](https://appcircle.io/contact) directly.
 
 #### How can I roll back to a previous version if needed?
 
@@ -381,9 +392,9 @@ If you need to roll back to a previous version, you can do so by selecting the d
 
 If you need additional help with the Publish module, the following resources are available:
 
-- **Appcircle Support**: Contact [**Appcircle Slack support**](https://slack.appcircle.io/) for personalized assistance with your specific issues. 
+<NeedHelp />
 
-- **Technical Documentation**: Refer to the Appcircle user documentation for detailed guides and troubleshooting tips for Publish Module.
+- **Technical Documentation**: Refer to the Appcircle user documentation for detailed guides and troubleshooting tips for the Publish module.
 
 - **Commercial Details**: The Publish module is an **enterprise-level** solution; therefore, for commercial details, please [**contact us**](https://appcircle.io/contact) directly.
 

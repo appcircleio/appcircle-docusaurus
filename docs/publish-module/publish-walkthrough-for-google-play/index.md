@@ -100,7 +100,7 @@ If you choose to create the profile manually, you must select the required Googl
 
 ### Customizing the Publish Flow
 
-Publish flow are used to automate multiple tasks and introduce automation checkpoints for application deployments to stores. You can manage flow within the Publish module as outlined below:
+Publish flow is used to automate multiple tasks and introduce automation checkpoints for application deployments to stores. You can manage flow within the Publish module as outlined below:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
 
@@ -192,7 +192,7 @@ If you have your own CI environment or need to integrate Appcircle into a specif
 
 To get more information, please refer to our [**API & CLI**](/appcircle-api-and-cli) documentation.
 
-#### Marking Binary as Release Candidate
+### Marking Binary as Release Candidate
 
 - Designate the current build as the Release Candidate, signaling that it is ready for potential release. You can refer to the [**Marking as Release Candidate**](/publish-module/publish-information/marking-release-candidates) document for detailed information.
 
@@ -327,7 +327,7 @@ Yes, the Publish module allows you to manage multiple Play Store accounts within
 
 #### How do I customize my Publish flow in the Publish Module?
 
-To customize a flow (available only with an **enterprise plan**), navigate to the Publish module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allow you to tailor the release process to fit your specific needs.
+To customize a flow (available only with an **enterprise plan**), navigate to the Publish module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allows you to tailor the release process to fit your specific needs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
 
