@@ -47,13 +47,37 @@ When you connect a repository through SSH or through a public URL, the Webhook U
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-webhooks.png' />
 
-If the Git provider is detected, a compatible URL will be displayed automatically. If not, you will be first prompted to select the provider to display the webhook URL.
-
 You can copy this URL and paste it in the related section in the git provider repository settings with the copy button.
 
-You can also regenerate the URL to invalidate/revoke the previous one with the refresh button.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6019-ss1.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-webhook-url-menu.png' />
+To manually configure a webhook:
+
+**1.**	Go to your build profile.
+
+**2.**	Click the Settings (gear icon) and select Repository Webhook URL.
+
+**3.**	In the Repository Webhook URL popup:
+
+- Select a Git Provider:
+If the Git provider is detected, a compatible URL will be displayed automatically. If not, choose your Git provider (e.g., GitHub, GitLab, Bitbucket) from the dropdown list.
+
+- Copy the Webhook URL:
+The generated Public Repository Webhook URL will appear based on your selection. Copy this URL and paste it into your repository’s webhook settings.
+
+- Generate a New Webhook Key (Optional):
+If needed, you can generate a new webhook key to refresh or reset the endpoint’s security token.
+
+**4.**	Paste the Webhook URL in your Git repository:
+
+For example, in **GitHub**:
+- Go to your repository.
+- Click Settings > Webhooks > Add webhook.
+- Paste the URL into the Payload URL field.
+- Choose application/json as the content type.
+- Paste the Webhook Key if required.
+- Select the appropriate events (e.g., push or tag creation).
+- Save the webhook.
 
 Please refer to the following guides to set up webhooks in various git providers:
 
