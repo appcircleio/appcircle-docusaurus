@@ -55,37 +55,129 @@ To manually configure a webhook:
 
 **1.**	Go to your build profile.
 
-**2.**	Click the Settings (gear icon) and select Repository Webhook URL.
+**2.**	Click the Webhook icon and select Repository Webhook URL.
 
 **3.**	In the Repository Webhook URL popup:
 
-- Select a Git Provider:
+- **Select a Git Provider**:
 If the Git provider is detected, a compatible URL will be displayed automatically. If not, choose your Git provider (e.g., GitHub, GitLab, Bitbucket) from the dropdown list.
 
-- Copy the Webhook URL:
-The generated Public Repository Webhook URL will appear based on your selection. Copy this URL and paste it into your repository’s webhook settings.
+- **Copy the Webhook URL**:
+The generated Repository Webhook URL will appear based on your Git Provider. Copy this URL and paste it into your repository’s webhook settings.
 
-- Generate a New Webhook Key:
+The URL Format:
+```bash
+https://api.appcircle.io/build/v1/callback/webhooks/{GIT_PROVIDER}/{YOUR_ORGANIZATION_ID}
+```
+
+- **Generate a Webhook Key**:
 You can generate a new webhook key to refresh or reset the endpoint’s security token.
 
-**4.**	Paste the Webhook URL in your Git repository:
+**4.**	Paste the Webhook URL in your Git repository.
 
-For example, in **GitHub**:
+Please refer to the following guides to set up webhooks in various git providers:
+
+#### GitHub
+
 - Go to your repository.
-- Click Settings > Webhooks > Add webhook.
-- Paste the URL into the Payload URL field.
-- Choose application/json as the content type.
+- Click **Settings** > **Webhooks** > **Add webhook**.
+- Paste the URL into the **Payload URL** field.
+- Choose `application/json` as the content type.
 - Paste the Webhook Key.
 - Select the appropriate events (e.g., push or tag creation).
 - Save the webhook.
 
-Please refer to the following guides to set up webhooks in various git providers:
+You can enable/disable the necessary event scopes for the webhook according to your needs.
 
-- GitHub: [https://docs.github.com/en/developers/webhooks-and-events/webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks)
-- Bitbucket: [https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/](https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/)
-- GitLab: [https://docs.gitlab.com/ee/user/project/integrations/webhooks.html](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
-- AWS CodeCommit: [https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify.html](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify.html)
-- Azure DevOps: [https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops](https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops)
+| Event                    | Description                                              |
+|--------------------------|----------------------------------------------------------|
+| `pushes`                 | Triggered when code is pushed to a branch.               |
+| `branch or tag creation` | Triggered when a branch or tag is created.               |
+| `branch or tag deletion` | Triggered when a branch or tag is deleted.               |
+| `pull requests`          | Triggered on PR open, update, merge, or close.           |
+| `issue_comment`          | Triggered when a comment is added to an issue.           |
+
+[https://docs.github.com/en/developers/webhooks-and-events/webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks)
+
+#### GitLab
+
+To create a webhook for GitLab:
+- Open your GitLab project. 
+- Go to **Settings** > **Webhooks**.
+- In the URL field, paste the Webhook URL from Appcircle.
+- Set the following options:
+- Trigger: Enable necessary events
+- Secret Token: Paste the Webhook Key from Appcircle
+- Click Add Webhook.
+
+| Event                  | Description                                                |
+|------------------------|------------------------------------------------------------|
+| `Push events`          | Triggered when code is pushed to a branch.                 |
+| `Tag push events`      | Triggered when a tag is created or deleted.                |
+| `Merge request events` | Triggered when a merge request is created or updated.      |
+| `Pipeline events`      | Triggered when a pipeline status changes.                  |
+
+[https://docs.gitlab.com/ee/user/project/integrations/webhooks.html](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
+
+#### Bitbucket (Cloud)
+
+To create a manual webhook for Bitbucket Cloud:
+- Go to your Bitbucket repository.
+- Navigate to **Repository settings** > **Webhooks**.
+- Click Add webhook.
+- URL: Use the generated Webhook URL from Appcircle.
+- Triggers: Enable required events.
+- Paste the webhook key from Appcircle into the secret/token field.
+- Click Save.
+
+[https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/](https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/)
+
+#### Bitbucket (Self Hosted)
+
+To set up a webhook for self-hosted Bitbucket (Bitbucket Server or Bitbucket Data Center):
+- Go to your repository in the self-hosted Bitbucket interface.
+- Navigate to **Repository settings** > **Webhooks**.
+- Click Create webhook.
+- URL: Copy the Webhook URL from the Appcircle Manual Webhook setup screen.
+- Events: Select required events
+- Add the Webhook Key from Appcircle in the request header as X-Hub-Signature or similar.
+
+| Event                         | Description                                               |
+|-------------------------------|-----------------------------------------------------------|
+| `repo:push`                   | Triggered when code is pushed to the repository.          |
+| `repo:updated`                | Triggered when code is updated in the repository.         |
+| `pullrequest:created`         | Triggered when a pull request is created.                 |
+| `pullrequest:updated`         | Triggered when a pull request is updated.                 |
+| `pullrequest:merged`          | Triggered when a pull request is merged.                  |
+
+#### Azure DevOps
+
+To create a webhook for Azure Repos:
+- Go to your Azure DevOps project.
+- Navigate to **Project Settings** > **Service Hooks**.
+- Click + Create Subscription.
+- Choose Web Hooks as the service.
+- Select your repository.
+- Select required trigger events.
+- On the “Action” step, enter:
+
+• URL: The Webhook URL from Appcircle
+
+• HTTP Headers: Add a header such as X-Appcircle-Webhook-Key: `YOUR_WEBHOOK_KEY`
+
+- Finish the setup by clicking Finish.
+
+| Event                    | Description                                                  |
+|--------------------------|--------------------------------------------------------------|
+| `Code pushed`            | Triggered when code is pushed to a repository.               |
+| `Pull request created`   | Triggered when a PR is created.                              |
+| `Pull request updated`   | Triggered on PR updates (e.g., new commits).                 |
+| `Pull request merged`    | Triggered when a PR is completed.                            |
+| `Work item updated`      | Triggered when a work item is edited.                        |
+| `Build completed`        | Triggered when a build finishes (requires pipeline setup).   |
+
+[https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops](https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops)
+
 
 In essence, you need to find the Webhooks section under the repository settings and paste the payload URL. You can then select the relevant events for the triggers, some examples of which are branch/tag creation/removal, pull requests, and pushes.
 
