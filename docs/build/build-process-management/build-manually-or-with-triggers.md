@@ -71,7 +71,7 @@ https://api.appcircle.io/build/v1/callback/webhooks/{GIT_PROVIDER}/{YOUR_ORGANIZ
 ```
 
 - **Generate a Webhook Key**:
-You can generate a new webhook key to refresh or reset the endpoint’s security token.
+You can generate a new webhook key/secret to refresh or reset the endpoint’s security token.
 
 **4.**	Paste the Webhook URL in your Git repository.
 
@@ -83,7 +83,7 @@ Please refer to the following guides to set up webhooks in various git providers
 - Click **Settings** > **Webhooks** > **Add webhook**.
 - Paste the URL into the **Payload URL** field.
 - Choose `application/json` as the content type.
-- Paste the Webhook Key.
+- Paste the Webhook Key/Secret.
 - Select the appropriate events (e.g., push or tag creation).
 - Save the webhook.
 
@@ -140,7 +140,7 @@ To set up a webhook for self-hosted Bitbucket (Bitbucket Server or Bitbucket Dat
 - Click Create webhook.
 - URL: Copy the Webhook URL from the Appcircle Manual Webhook setup screen.
 - Events: Select required events
-- Add the Webhook Key from Appcircle in the request header as X-Hub-Signature or similar.
+- Add the Webhook Key/Secret from Appcircle in the request header as X-Hub-Signature or similar.
 
 | Event                         | Description                                               |
 |-------------------------------|-----------------------------------------------------------|
