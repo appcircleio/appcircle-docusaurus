@@ -40,7 +40,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/>
 - UTF-8 characters are now supported when naming a provisioning profile during its creation. <SigningIdentitiesBadge/> <CloudBadge/>
 - The [Send to Testing Distribution](/publish-integrations/common-publish-integrations/send-to-testing-distribution) Publish step has been added, allowing users to directly send their apps from a Publish Profile to a selected Testing Distribution profile. <PublishBadge/> <CloudBadge/>
-- Support has been added for using human-readable names instead of UUIDs across all [CLI](https://github.com/appcircleio/appcircle-cli/releases/tag/v2.7.0) parameters. Also, the `-o` json output formatting has been fixed. <APICLIBadge/> <CloudBadge/>
+- Support has been added for using human-readable names instead of UUIDs across all [CLI](https://github.com/appcircleio/appcircle-cli/releases/tag/v2.7.0) parameters, and the `-o` JSON output formatting has been fixed. <APICLIBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -53,6 +53,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - A texture issue on the Testing Portal has been fixed. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where Android binary icons were not displayed on the Testing Portal login screen for Testing Distribution profiles that did not include iOS binaries. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where navigating to a sub-organization from the Organization module resulted in incorrect access error messages. <AccountBadge/> <CloudBadge/>
+- The `NOT_AUTHORIZED` error that occurred while publishing apps to the App Store using Xcode 16.0-16.2 versions on macOS Sequoia runners was fixed. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The `error XA5300: The Android SDK directory could not be found` issue that occurred while building MAUI Android apps on macOS Sequoia runners was fixed. <InfrastructureBadge/> <CloudBadge/>
 
 ## 3.28.0 - 2025-05-21 CodePush Integration, Send Email Publish Step, Improvements and more
 

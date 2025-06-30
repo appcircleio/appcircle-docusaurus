@@ -41,7 +41,7 @@ There are two options to set up webhooks for automatic builds:
 
 ## Setting up Manual Webhooks Based on Repository Connection Type
 
-Depending on how your Git provider is connected to Appcircle, webhook setup may be handled automatically or require manual configuration.
+Depending on how your Git provider is connected to Appcircle, the webhook setup may be handled automatically or may require manual configuration.
 
 ### Setting Up Manual Webhooks for SSH and Public Repositories
 
@@ -80,7 +80,7 @@ https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATI
 **4.**	Paste the Webhook URL in your Git repository.
 
 :::info
-The **The Selected Git Provider** option on the **Webhook Configuration** screen is only available for repositories connected via **SSH** or **Public URL**.  
+**The Selected Git Provider** option on the **Webhook Configuration** screen is only available for repositories connected via **SSH** or **Public URL**.  
 
 If your repository is connected using GitHub, GitLab, Bitbucket or Azure Devops App integrations, this selection will not appear since webhooks are automatically managed.
 :::
@@ -156,7 +156,7 @@ To manually configure a webhook for an Azure DevOps repository:
 6. Paste your Webhook Key/Secret to HTTP Headers.
 `X-Appcircle-Webhook-Key: {YOUR_WEBHOOK_KEY}`
 
-This ensures proper webhook communication for all supported Git repository configurations.
+This ensures proper webhook communication across all supported Git repository configurations.
 
 Please refer to the following guides to set up webhooks in various git providers:
 
