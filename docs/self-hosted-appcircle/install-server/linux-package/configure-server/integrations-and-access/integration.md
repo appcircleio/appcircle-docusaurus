@@ -14,7 +14,56 @@ There are mainly two integrations to be filled by the user
 
 ## Email
 
-Please edit `global.yaml` file and change SMTP settings according to your mail server. Check the below example for configuration options
+Appcircle provides two methods to configure SMTP settings.
+
+### Configure via Dashboard (recommended)
+
+Starting from the version `3.28.1`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset.
+
+:::caution
+To access the SMTP configuration page, you must be logged in as the **Admin** user.
+:::
+
+- To reach "SMTP Configuration" navigate to "Admin > Self-Hosted Settings" page using the left menus.
+
+- And press the "Manage" button next to "SMTP Configuration".
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-manage.png' />
+
+- You will see the SMTP configuration page.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-detail.png' />
+
+- Fill in the SMTP settings according to your mail server. See the details below for configuration options:
+
+| Settings | Description | Example |
+|----------|-------------|---------|
+| FROM | The default email address used in the "From" field for outgoing emails. | noreply@acme.com |
+| FROM DISPLAY NAME | The display name that appears alongside the default from address in outgoing emails. | Acme Inc |
+| HOST | The hostname or IP address of the SMTP server. | email-smtp.acme.com |
+| DOMAIN (optional) | The domain used for authenticating with the SMTP server (often applicable for Exchange or custom SMTP services). | email-smtp.acme.com |
+| PORT | The port number to connect to on the SMTP server (typically 25, 465, or 587). | 587 |
+| Use SSL | Specifies whether SSL encryption should be used for the SMTP connection. | Off |
+| Start TLS | Determines whether to enable STARTTLS, which upgrades a plain connection to a secure one. | On |
+| Validate Server Cert | Specifies whether the SMTP server's SSL certificate should be validated. It is recommended to keep this as true for security purposes. | On |
+| Auth | Indicates whether SMTP authentication is required. Set to true if both UserName and Password are necessary. | On |
+| USERNAME | The username for SMTP server authentication. | your_username |
+| PASSWORD | The password for authenticating with the SMTP server. | your_password |
+| TO (optional) | The default email address used in the "To" field for outgoing emails. | mobile-team@acme.com | 
+
+- Click the "Test Connection" button to verify that the connection to your SMTP server is successful. If the test fails, check your settings and try again.
+
+- If your settings are correct, click the "Save" button to apply the settings.
+
+<!-- Cautions: Static Config in Use, Shared Across Organizations -->
+
+:::info
+Email notifications use the "FROM DISPLAY NAME" as the sender name (or from name). However, when you [share a binary](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#share-binary) using the **Testing Distribution** module, the **profile name** will be displayed as the sender, as shown in the example email provided in the linked documentation.
+:::
+
+### Configure via `global.yaml`
+
+If you prefer to configure SMTP via `global.yaml` for initial installation; you can edit the `global.yaml` file and change SMTP settings according to your mail server. See the example below for configuration options:
 
 ```yaml
 smtpServer:
@@ -28,10 +77,13 @@ smtpServer:
   auth: 'true'
   starttls: 'true'
   verifyCertificate: 'true'
-
 ```
 
-Explanation of each key
+:::tip
+Even if you initially configure SMTP using `global.yaml`, you can still use the Appcircle Dashboard for subsequent updates.
+:::
+
+Explanation of each key:
 
 |        Key        |         Explanation         |
 |-------------------|-----------------------------|
