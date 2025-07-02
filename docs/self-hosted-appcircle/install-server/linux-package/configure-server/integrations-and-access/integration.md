@@ -53,6 +53,8 @@ To access the SMTP configuration page, you must be logged in as the **Admin** us
 
 - Click the "Test Connection" button to verify that the connection to your SMTP server is successful. If the test fails, check your settings and try again.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-test.png' />
+
 - If your settings are correct, click the "Save" button to apply the settings.
 
 <!-- Cautions: Static Config in Use, Shared Across Organizations -->
