@@ -27,13 +27,15 @@ For details on configuring NTP settings, you can refer to the [NTP Configuration
 
 Especially if you're using external sources as dependencies that require access to certain URLs, you may encounter connection issues due to network restrictions.
 
-To verify whether your Appcircle runner can access the URL, you can run the command below. Make sure to replace the example Appcircle URL with the URL you faced network problems with while running the build (e.g. `rubygems.org`).
+To verify whether your Appcircle runner can access the URL, you can run the command below and check the output. Make sure to replace the example RubyGems URL below with the URL you faced network problems with while running the build.
 
 ```bash
-curl -v https://api.appcircle.spacetech.com
+curl -v https://rubygems.org
 ```
 
-If you receive an "operation timed out", "connection timeout", "connection reset", or "403 forbidden" error, it indicates that the Appcircle runner is unable to access the URL due to network restrictions. In that case, you’ll need to allow Appcircle runners to access the URL. You can check the required URLs for Appcircle Runners [here](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#appcircle-runner-runtime).
+If you receive an "operation timed out", "connection timeout", "connection reset", or "403 forbidden" error, it indicates that the Appcircle runner is unable to access the URL due to network restrictions. In that case, you'll need to allow Appcircle runners to access the URL. 
+
+You can find the list of commonly required URLs for Appcircle runners [here](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#appcircle-runner-runtime). Please note that the specific URL the Appcircle runner is unable to access may not be included in this list.
 
 ### We can't register Appcircle runner to the server.
 
