@@ -58,14 +58,12 @@ You can download and view environment variables in **JSON** format. For this, yo
 
 In the downloaded file content, you will see a structure with **key-value** pairs.
 
-Here you can view text and file-based variables. However, only the name of the environment variables you added as a file will appear. The related file will not be downloaded.
+In addition, if the value part of the environment variable is set to hidden during the text-based environment variable addition process, the "isSecret" value will be `true` and the key, along with the value **will not** be listed in the downloaded file. The same rule is valid for file type variables. If it is not hidden, this value will be `false`, and the value will be visible.
 
-In addition, if the value part of the environment variable is set to hidden during the text-based environment variable addition process, the "isSecret" value will be `true` and the value will be empty in the downloaded file. If it is not hidden, this value will be `false`, and the value will be visible completely.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6155-variable1.png' />
 
 :::info
-An example of environment variables downloaded as a JSON file:
+An example of environment variable downloaded as a JSON file:
 
 ```json
 [
@@ -73,34 +71,51 @@ An example of environment variables downloaded as a JSON file:
     "key": "API_URL",
     "value": "https://api.example.com",
     "isSecret": false,
+    "isFile": false,
     "id": "API_URL"
-  },
-  {
-    "anahtar": "API_KEY",
-    "value": "",
-    "isSecret": true,
-    "id": "API_KEY"
-  },
-  {
-    "key": "API_SECRET",
-    "value": "",
-    "isSecret": true,
-    "id": "API_SECRET"
-  },
-  {
-    "key": "myFile",
-    "value": "mykeys.json",
-    "isSecret": false,
-    "id": "myFile"
   }
 ]
 ```
 
 As seen in the example above;
 
-- if the **isSecret** value is `true`, the value is empty
 - if the **isSecret** value is `false`, it has visible value
+- if the **isSecret** value is `true` or **isFile** value is `true` , the key and the value will not be downloaded.
+:::
 
+### Uploading environment variables
+
+The Upload feature allows users to bulk-import environment variables into any existing Variable Group (e.g., Staging, Prod, or Dev) within the Build > Environment Variables section.
+
+This feature streamlines the process of configuring variables by enabling users to upload a predefined JSON file instead of manually entering each variable.
+
+The uploadable file must be a `.json` file with an array of variable objects. Each variable object must include the following fields:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6155-variable2.png' />
+
+```json
+[
+{
+"key": "API_URL",
+"value": "https://api.example.com",
+"isSecret": false,
+"isFile": false,
+"id": "API_URL"
+},
+{
+"key": "API_KEY",
+"value": "12345-abcde-67890-fghij",
+"isSecret": true,
+"isFile": false,
+"id": "API_KEY"
+}
+]
+```
+
+:::warning
+-	File type variables (isFile: `true`) cannot be uploaded using JSON. These must be added manually via the UI.
+-	The Download feature does not include secret values or file contents for security reasons.
+-	You can edit your own JSON files to update variables in a group. However, duplicated keys are not allowed.
 :::
 
 #### Using environment variable groups in builds
