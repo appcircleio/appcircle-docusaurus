@@ -261,7 +261,7 @@ aws iam attach-user-policy \
 Create access keys for the IAM user to be used by Appcircle Server:
 
 ```bash
-ACCESS_KEY_OUTPUT=$(aws iam create-access-key --user-name ${IAM_USER} --output yaml)
+ACCESS_KEY_OUTPUT=$(aws iam create-access-key --user-name ${IAM_USER})
 ACCESS_KEY_ID=$(echo "$ACCESS_KEY_OUTPUT" | jq -r '.AccessKey.AccessKeyId')
 SECRET_ACCESS_KEY=$(echo "$ACCESS_KEY_OUTPUT" | jq -r '.AccessKey.SecretAccessKey')
 ```

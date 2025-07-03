@@ -16,8 +16,15 @@ import NeedHelp from '@site/docs/_need-help.mdx';
 
 ## Overview
 
-This guide provides comprehensive instructions for configuring Google Cloud Storage (GCS) as your object storage backend for the Appcircle server. While the default Helm chart deployment includes MinIO as an in-cluster object storage solution, **production environments** benefit from using a more robust and scalable solution like Google Cloud Storage.
+This guide provides comprehensive instructions for configuring **Google Cloud Storage (GCS)** as your object storage backend for the Appcircle server. While the default Helm chart deployment includes MinIO as an in-cluster object storage solution, **production environments** benefit from using a more robust and scalable solution like GCP Cloud Storage.
 
+### What This Guide Covers
+
+This guide will walk you through the process of configuring GCP Cloud Storage as your object storage backend for the Appcircle server. To use GCP Cloud Storage with Appcircle Server, you need to:
+
+- **Set up GCP infrastructure**: GCS buckets, IAM service accounts, and permissions
+- **Configure Appcircle Server**: Update Helm values to use GCS
+- **Optional CDN setup**: Google Cloud CDN for performance optimization
 
 :::caution
 GCP Cloud Storage configuration requires a **fresh installation** of Appcircle Server. If you have an existing installation with data, migration from MinIO to GCP Cloud Storage is **not supported**. You can only configure GCP Cloud Storage during the initial installation or if you have no existing data to preserve.
@@ -52,6 +59,11 @@ The **Google Cloud SDK** is **required** and must be **[installed](https://cloud
     <summary>Click to view more details about Google Cloud SDK configuration.</summary>
 
 To configure Google Cloud SDK, you need:
+
+- **Project ID** for your GCP project
+- **Service account credentials** for authentication
+
+You can configure Google Cloud SDK using:
 ```bash
 gcloud init
 ```
@@ -68,13 +80,19 @@ export GOOGLE_APPLICATION_CREDENTIALS="path/to/service-account-key.json"
 
 **`kubectl`** (for Kubernetes) or **`oc`** (for OpenShift) CLI is **required** and must be configured to access your cluster.
 
+:::info
+This guide assumes you have administrative access to your GCP project and Kubernetes/OpenShift cluster. If you're working in a restricted environment, ensure you have the necessary permissions before proceeding.
+:::
+
 ### 4. Basic Understanding
 
 Basic understanding of **GCP IAM**, **Cloud Storage**, and **Kubernetes/OpenShift** concepts is recommended.
 
-:::info
-This guide assumes you have administrative access to your GCP project and Kubernetes/OpenShift cluster. If you're working in a restricted environment, ensure you have the necessary permissions before proceeding.
-:::
+### 5. Optional: Domain and SSL Certificates
+
+For Google Cloud CDN setup (optional), you'll need:
+- **Domain name**: For custom CDN domains
+- **SSL certificates**: For HTTPS access to your CDN
 
 ## Configuration Steps
 
@@ -112,16 +130,20 @@ SERVICE_ACCOUNT_NAME="appcircle-server"
 
 Appcircle server requires the following GCS buckets for different purposes:
 
-- **`${BUCKET_PREFIX}-temp`**: Temporary files and uploads
-- **`${BUCKET_PREFIX}-build`**: Build artifacts and logs
-- **`${BUCKET_PREFIX}-distribution`**: Testing Distribution files
-- **`${BUCKET_PREFIX}-storesubmit`**: Appcircle Store Submit files
-- **`${BUCKET_PREFIX}-store`**: Enterprise App Store files
-- **`${BUCKET_PREFIX}-agent-cache`**: Appcircle Runner cache files
-- **`${BUCKET_PREFIX}-backup`**: Backup files
-- **`${BUCKET_PREFIX}-publish`**: Published mobile app binaries
+- **`${BUCKET_PREFIX}temp`**: Temporary files and uploads (requires CORS configuration)
+- **`${BUCKET_PREFIX}build`**: Build artifacts and logs
+- **`${BUCKET_PREFIX}distribution`**: Testing Distribution files
+- **`${BUCKET_PREFIX}storesubmit`**: Appcircle Store Submit files
+- **`${BUCKET_PREFIX}store`**: Enterprise App Store files
+- **`${BUCKET_PREFIX}agent-cache`**: Appcircle Runner cache files
+- **`${BUCKET_PREFIX}backup`**: Backup files
+- **`${BUCKET_PREFIX}publish`**: Published mobile app binaries
 
-Run the following commands to create all required buckets:
+:::tip
+**Bucket Naming**: Bucket names must be globally unique across all GCP projects. Using your organization name as a prefix ensures uniqueness.
+:::
+
+**Create all required buckets:**
 
 ```bash
 # Create all required buckets
@@ -165,7 +187,7 @@ EOF
 - Apply the CORS configuration:
 
 ```bash
-gsutil cors set appcircle-gcs-policy.json gs://${BUCKET_PREFIX}-temp
+gsutil cors set appcircle-gcs-policy.json gs://${BUCKET_PREFIX}temp
 ```
 
 :::tip
@@ -176,7 +198,7 @@ gsutil cors set appcircle-gcs-policy.json gs://${BUCKET_PREFIX}-temp
 
 ### 4. Create Service Account and Permissions
 
-**Create a service account** with appropriate permissions for Appcircle Server to access the GCS buckets.
+**Create a service account with minimal permissions** to make the Appcircle Server able to access the GCS buckets.
 
 - **Create a service account** for Appcircle Server to access the GCS buckets.
 
@@ -197,44 +219,42 @@ gcloud iam roles create AppcircleGCSRole \
   --stage=GA
 ```
 
-**Bind the role to the service account** for each bucket:
+**Bind the role to the service account for each bucket:**
 
 ```bash
 # Bind permissions to each bucket
-gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}-temp \
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}temp \
   --member="serviceAccount:${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="projects/${PROJECT_ID}/roles/AppcircleGCSRole"
 
-gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}-build \
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}build \
   --member="serviceAccount:${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="projects/${PROJECT_ID}/roles/AppcircleGCSRole"
 
-gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}-distribution \
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}distribution \
   --member="serviceAccount:${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="projects/${PROJECT_ID}/roles/AppcircleGCSRole"
 
-gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}-storesubmit \
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}storesubmit \
   --member="serviceAccount:${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="projects/${PROJECT_ID}/roles/AppcircleGCSRole"
 
-gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}-store \
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}store \
   --member="serviceAccount:${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="projects/${PROJECT_ID}/roles/AppcircleGCSRole"
 
-gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}-agent-cache \
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}agent-cache \
   --member="serviceAccount:${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="projects/${PROJECT_ID}/roles/AppcircleGCSRole"
 
-gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}-backup \
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}backup \
   --member="serviceAccount:${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="projects/${PROJECT_ID}/roles/AppcircleGCSRole"
 
-gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}-publish \
+gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}publish \
   --member="serviceAccount:${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="projects/${PROJECT_ID}/roles/AppcircleGCSRole"
 ```
-
-
 
 ### 5. Generate Service Account Credentials
 
@@ -245,13 +265,39 @@ gcloud iam service-accounts keys create appcircle-sa-key.json \
   --iam-account=${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com
 ```
 
-**Save the `appcircle-sa-key.json` file securely**. This file contains the credentials that Appcircle Server will use to access the GCS buckets.
+:::warning
+**CRITICAL: Save the service account key file (`appcircle-sa-key.json`) securely.** You'll need these credentials in the next step to create the Kubernetes secret.
+:::
 
 ### 6. Optional: Create CDN for Google Storage Buckets
 
-**Create a CDN for the GCS buckets** to improve performance and reduce latency.
+Google Cloud CDN can improve performance by caching your GCS content at edge locations worldwide. This reduces latency and improves download speeds for your users.
 
-- Create a backend bucket for the required buckets:
+:::tip
+**Decision Tree:**
+- **Follow this guide** if you need production-grade performance to serve your users globally.
+  - **Continue to**: Step 6.1 below
+- **Skip this section** if you're setting up for development/testing or have a small or medium team.
+  - You can always enable Google Cloud CDN later without reinstalling Appcircle Server.
+  - **Skip to**: [Create Kubernetes Secret](#create-kubernetes-secret)
+:::
+
+This guide will walk you through the process of creating a CDN for your GCS buckets with the `gcloud` CLI.
+
+:::info
+**Flexibility Note**: You can achieve the same results with other tools (GCP Console, Terraform, etc.) as long as you create the same infrastructure components described in this documentation. You can also add additional configurations (security policies, monitoring, etc.) as long as you don't break the core requirements:
+- CDN must be configured to serve the GCS buckets
+- GCS bucket policies must be updated to allow CDN access
+- URL signing key must be created and configured
+- SSL certificate should be managed or imported for the CDN
+- DNS must be configured to point to the CDN endpoint
+- Kubernetes secret must contain the correct credentials for the URL signing key
+- Helm values must include the specified CDN configuration for the Appcircle Server
+:::
+
+#### Step 6.1: Create Backend Buckets and Enable CDN
+
+**For each bucket you want to serve via CDN, create a backend bucket and enable CDN:**
 
 ```bash
 gcloud compute backend-buckets create ${BUCKET_PREFIX}distribution-bucket \
@@ -284,13 +330,14 @@ gcloud compute backend-buckets create ${BUCKET_PREFIX}storesubmit-bucket \
     --cache-mode=FORCE_CACHE_ALL \
     --project=$PROJECT_ID
 ```
-- Create a URL signing key:
+
+#### Step 6.2: Create URL Signing Key
 
 ```bash
 head -c 16 /dev/random | base64 | tr +/ -_ > url-signing-key.txt
 ```
 
-- Add a signed URL key to the backend buckets:
+#### Step 6.3: Add Signed URL Key to Backend Buckets
 
 ```bash
 gcloud compute backend-buckets add-signed-url-key ${BUCKET_PREFIX}distribution-bucket \
@@ -319,7 +366,9 @@ gcloud compute backend-buckets add-signed-url-key ${BUCKET_PREFIX}storesubmit-bu
     --project=$PROJECT_ID
 ```
 
-- For an HTTPS load balancer, create an SSL certificate resource
+#### Step 6.4: Import SSL Certificate
+
+If you want to use custom domains (like `cdn.yourcompany.com`), you need an SSL certificate.
 
 ```bash
 gcloud compute ssl-certificates create appcircle-cdn-ssl-cert \
@@ -328,7 +377,7 @@ gcloud compute ssl-certificates create appcircle-cdn-ssl-cert \
     --global
 ```
 
-- Reserve a global static external IP address for the load balancer:
+#### Step 6.5: Reserve a Global Static External IP Address
 
 ```bash
 gcloud compute addresses create appcircle-cdn-ip \
@@ -337,7 +386,7 @@ gcloud compute addresses create appcircle-cdn-ip \
     --global
 ```
 
-- Create a URL map for the backend buckets:
+#### Step 6.6: Create URL Map for Backend Buckets
 
 ```bash
 gcloud compute url-maps create appcircle-cdn-url-map \
@@ -345,7 +394,7 @@ gcloud compute url-maps create appcircle-cdn-url-map \
   --global
 ```
 
-- Create a target HTTP proxy for the URL map:
+#### Step 6.7: Create Target HTTPS Proxy for the URL Map
 
 ```bash
 gcloud compute target-https-proxies create appcircle-https-lb-proxy \
@@ -353,7 +402,7 @@ gcloud compute target-https-proxies create appcircle-https-lb-proxy \
   --url-map=appcircle-cdn-url-map
 ```
 
-- Create a global forwarding rule for the target HTTP proxy:
+#### Step 6.8: Create Global Forwarding Rule for the Target HTTPS Proxy
 
 ```bash
 gcloud compute forwarding-rules create appcircle-cdn-forwarding-rule \
@@ -366,7 +415,7 @@ gcloud compute forwarding-rules create appcircle-cdn-forwarding-rule \
   --project=$PROJECT_ID
 ```
 
-- Add additional URL maps for the backend buckets:
+#### Step 6.9: Add Additional URL Maps for Backend Buckets
 
 ```bash
 gcloud compute url-maps add-path-matcher appcircle-cdn-url-map \
@@ -393,6 +442,8 @@ gcloud compute url-maps add-path-matcher appcircle-cdn-url-map \
   --default-backend-bucket=${BUCKET_PREFIX}storesubmit-bucket \
   --project=$PROJECT_ID
 ```
+
+#### Step 6.10: Grant CDN Service Account Access to Buckets
 
 - Get the project number:
 
@@ -424,7 +475,7 @@ gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}storesubmit \
   --role=roles/storage.objectViewer
 ```
 
-- Create a Kubernetes secret to hold the CDN URL sign key:
+#### Step 6.11: Create Kubernetes Secret for CDN URL Sign Key
 
 ```bash
 kubectl create secret generic appcircle-cdn-url-sign-key -n appcircle \
