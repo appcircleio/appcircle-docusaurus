@@ -23,17 +23,17 @@ You should configure NTP server settings in the runner VMs. For updating base ru
 
 For details on configuring NTP settings, you can refer to the [NTP Configuration](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) section and follow the steps.
 
-### We are facing a "timeout" error on builds.
+### We are facing a "connection timeout" / "connection reset" / "403 forbidden" error on builds.
 
-Especially if you're using external sources as dependencies that require access to certain URLs, you may encounter a timeout issue due to network restrictions.
+Especially if you're using external sources as dependencies that require access to certain URLs, you may encounter connection issues due to network restrictions.
 
-To verify whether your Appcircle runner can access the URL, you can run the command below. Make sure to replace the example Appcircle URL with your own.
+To verify whether your Appcircle runner can access the URL, you can run the command below. Make sure to replace the example Appcircle URL with the URL you faced network problems with while running the build (e.g. `rubygems.org`).
 
 ```bash
-curl -I https://api.appcircle.spacetech.com
+curl -v https://api.appcircle.spacetech.com
 ```
 
-If you receive an "Operation timed out" error, it indicates that the Appcircle runner is unable to access the URL due to network restrictions. In that case, you’ll need to allow Appcircle runners to access the URL.
+If you receive an "operation timed out", "connection timeout", "connection reset", or "403 forbidden" error, it indicates that the Appcircle runner is unable to access the URL due to network restrictions. In that case, you’ll need to allow Appcircle runners to access the URL. You can check the required URLs for Appcircle Runners [here](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#appcircle-runner-runtime).
 
 ### We can't register Appcircle runner to the server.
 
