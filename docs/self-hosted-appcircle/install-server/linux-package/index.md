@@ -75,7 +75,7 @@ You need to set a main domain for the Appcircle server. Also, you should decide 
 
 #### SMTP Settings for Email Notifications
 
-To utilize email services such as registration or testing distribution notifications, it is necessary to define SMTP settings in the `global.yaml` configuration file.
+To utilize email services such as registration or testing distribution notifications, it is necessary to define SMTP settings in the Dashboard (recommended) or `global.yaml` configuration file.
 
 #### Initial Username and Password
 
