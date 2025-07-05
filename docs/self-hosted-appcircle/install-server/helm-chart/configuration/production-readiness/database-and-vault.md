@@ -1,5 +1,5 @@
 ---
-title: General Configuration
+title: Database and Vault Configurations
 description: Learn how to configure the Appcircle server Helm chart for production environments
 tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 20
