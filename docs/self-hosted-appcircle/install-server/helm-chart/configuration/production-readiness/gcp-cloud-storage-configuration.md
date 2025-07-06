@@ -280,7 +280,7 @@ Google Cloud CDN can improve performance by caching your GCS content at edge loc
   - **Continue to**: Step 6.1 below
 - **Skip this section** if you're setting up for development/testing or have a small or medium team.
   - You can always enable Google Cloud CDN later without reinstalling Appcircle Server.
-  - **Skip to**: [Create Kubernetes Secret](#create-kubernetes-secret)
+  - **Skip to**: [Create Kubernetes Secret](#create-kubernetesopenshift-secret-for-gcp-credentials)
 :::
 
 This guide will walk you through the process of creating a CDN for your GCS buckets with the `gcloud` CLI.

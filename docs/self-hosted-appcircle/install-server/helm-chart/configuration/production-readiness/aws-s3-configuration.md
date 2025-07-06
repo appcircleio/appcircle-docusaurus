@@ -309,7 +309,7 @@ CloudFront is AWS's Content Delivery Network (CDN) service that improves perform
   - **Continue to**: Step 7.1 below
 - **Skip this section** if you're setting up for development/testing or have a small or medium team.
   - You can always enable CloudFront later without reinstalling Appcircle Server.
-  - **Skip to**: [Create Kubernetes Secret](#create-kubernetes-secret)
+  - **Skip to**: [Create Kubernetes Secret](#create-kubernetesopenshift-secret-for-access-keys)
 :::
 
 This guide will walk you through the process of creating a CloudFront distribution for your S3 buckets with the `aws` CLI.
