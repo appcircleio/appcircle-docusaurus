@@ -333,11 +333,15 @@ gcloud compute backend-buckets create ${BUCKET_PREFIX}storesubmit-bucket \
 
 #### Step 6.2: Create URL Signing Key
 
+**Create a URL signing key** to sign the URLs of the GCS buckets.
+
 ```bash
 head -c 16 /dev/random | base64 | tr +/ -_ > url-signing-key.txt
 ```
 
 #### Step 6.3: Add Signed URL Key to Backend Buckets
+
+**Add the URL signing key to the backend buckets.**
 
 ```bash
 gcloud compute backend-buckets add-signed-url-key ${BUCKET_PREFIX}distribution-bucket \
@@ -368,7 +372,11 @@ gcloud compute backend-buckets add-signed-url-key ${BUCKET_PREFIX}storesubmit-bu
 
 #### Step 6.4: Import SSL Certificate
 
-If you want to use custom domains (like `cdn.yourcompany.com`), you need an SSL certificate.
+**If you want to use custom domains (like `cdn.yourcompany.com`), you need an SSL certificate.**
+
+:::info
+You can skip this step if you already have an SSL certificate in your GCP project.
+:::
 
 ```bash
 gcloud compute ssl-certificates create appcircle-cdn-ssl-cert \
@@ -379,6 +387,8 @@ gcloud compute ssl-certificates create appcircle-cdn-ssl-cert \
 
 #### Step 6.5: Reserve a Global Static External IP Address
 
+**Reserve a global static external IP address** to use as the CDN endpoint.
+
 ```bash
 gcloud compute addresses create appcircle-cdn-ip \
     --network-tier=PREMIUM \
@@ -388,6 +398,8 @@ gcloud compute addresses create appcircle-cdn-ip \
 
 #### Step 6.6: Create URL Map for Backend Buckets
 
+**Create a URL map** for the backend buckets.
+
 ```bash
 gcloud compute url-maps create appcircle-cdn-url-map \
   --default-backend-bucket=${BUCKET_PREFIX}build-bucket \
@@ -396,6 +408,8 @@ gcloud compute url-maps create appcircle-cdn-url-map \
 
 #### Step 6.7: Create Target HTTPS Proxy for the URL Map
 
+**Create a target HTTPS proxy** for the URL map.
+
 ```bash
 gcloud compute target-https-proxies create appcircle-https-lb-proxy \
   --ssl-certificates=appcircle-cdn-ssl-cert \
@@ -403,6 +417,8 @@ gcloud compute target-https-proxies create appcircle-https-lb-proxy \
 ```
 
 #### Step 6.8: Create Global Forwarding Rule for the Target HTTPS Proxy
+
+**Create a global forwarding rule** for the target HTTPS proxy.
 
 ```bash
 gcloud compute forwarding-rules create appcircle-cdn-forwarding-rule \
@@ -416,6 +432,8 @@ gcloud compute forwarding-rules create appcircle-cdn-forwarding-rule \
 ```
 
 #### Step 6.9: Add Additional URL Maps for Backend Buckets
+
+**Add additional URL maps** for the backend buckets.
 
 ```bash
 gcloud compute url-maps add-path-matcher appcircle-cdn-url-map \
@@ -445,13 +463,13 @@ gcloud compute url-maps add-path-matcher appcircle-cdn-url-map \
 
 #### Step 6.10: Grant CDN Service Account Access to Buckets
 
-- Get the project number:
+**Grant CDN service account access to the buckets.**
 
 ```bash
 PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='get(projectNumber)')
 ```
 
-- Assign the `roles/storage.objectViewer` to the LoadBalancer service account to make it able to access the private GCS buckets:
+**Assign the `roles/storage.objectViewer` to the LoadBalancer service account to make it able to access the private GCS buckets:**
 
 ```bash
 gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}distribution \
@@ -476,6 +494,8 @@ gcloud storage buckets add-iam-policy-binding gs://${BUCKET_PREFIX}storesubmit \
 ```
 
 #### Step 6.11: Create Kubernetes Secret for CDN URL Sign Key
+
+**Create a Kubernetes secret** for the URL signing key.
 
 ```bash
 kubectl create secret generic appcircle-cdn-url-sign-key -n appcircle \
