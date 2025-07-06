@@ -5,7 +5,8 @@ tags:
   [
     self-hosted,
     gcp,
-    cloud-storage
+    cloud-storage,
+    object-storage,
   ]
 sidebar_position: 60
 ---

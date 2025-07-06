@@ -3,7 +3,7 @@ title: S3-Compatible Object Storage Configuration
 description: Learn how to configure any S3-compatible object storage (MinIO, Wasabi, Backblaze B2, DigitalOcean Spaces, Cloudflare R2, etc.) for Appcircle Server using the Helm chart
 sidebar_position: 40
 tags:
-  [self-hosted, object-storage]
+  [self-hosted, object-storage, s3]
 ---
 
 import Tabs from '@theme/Tabs';

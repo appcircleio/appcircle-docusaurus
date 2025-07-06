@@ -5,7 +5,8 @@ tags:
   [
     self-hosted,
     aws,
-    s3
+    s3,
+    object-storage
 ]
 sidebar_position: 50
 ---
