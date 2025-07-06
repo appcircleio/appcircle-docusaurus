@@ -25,10 +25,11 @@ With the Appcircle CodePush **Upload New Release** feature, you can manually rel
 
 To use this feature, you need to upload the bundle file you created as a `.zip` archive. Below you can find a detailed explanation of the required inputs for the Upload Release feature.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-newReleaseDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-newReleaseDetails.png' />  
 
 - **App Version:** Specifies which app version the update is targeted for. Make sure it matches the version defined in your project settings.
 - **Release Note:** A description of the changes or improvements included in this release. This helps users and team members understand what the update contains.
+- **Package Diff:** When enabled, users will download only the changed files instead of the full package, reducing update size and speeding up installation.
 - **Mandatory Update:** When enabled, users are required to install the update immediately upon app launch.
 - **Disable:** Disables the current release, making it unavailable to users, even if it was previously deployed.
 - **Rollout Percentage:** Defines what percentage of users who will receive the update initially. This allows for a gradual rollout and safer deployments.
@@ -73,11 +74,12 @@ This option allows you to view all the information and configuration details of 
 ### Promote
 Use this action to promote a release from one deployment channel to another, such as from Staging to Production.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-promote.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-promote.png' />  
 
   - **Released Version:** Displays the exact version identifier of the release you are promoting.
   - **Released on:** Shows the original date and time when this release was first created.
   - **Promote To:** Specifies the target deployment channel (e.g., Production) where the release will be promoted.
+  - **Package Diff:** When enabled, users will download only the changed files instead of the full package.
   - **Description:** A brief note explaining the purpose of this promotion or summarizing the changes included in the release.
 
 ### Rollback
@@ -88,16 +90,17 @@ This action reverts your app to the previous stable CodePush version in case of 
 ### Settings
 Allows you to modify release configurations such as rollout percentage or mark the release as mandatory.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-settingsNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-Settings.png' />  
 
 - **Description:** A brief note summarizing what this specific version includes. Useful for internal tracking and user communication.
+- **Package Diff:** Ensures users download only the modified files instead of the full package, reducing update size and speeding up delivery.
 - **Mandatory:** Indicates whether this version must be installed immediately by users or can be deferred.
 - **Enable or Disable Version:** Allows you to control the availability of a version by toggling it on or off.
 - **Rollout Percentage:** Lets you define what proportion of users will receive the update, enabling staged rollouts to monitor stability.
 
 :::caution Setting Fields
 
-The **Mandatory**, **Disable**, and **Rollout Percentage** parameters in the Settings section are applied in real time. This means that any changes you make will be immediately reflected across all user devices.
+The **Package Diff**, **Mandatory**, **Disable**, and **Rollout Percentage** parameters in the Settings section are applied in real time. This means that any changes you make will be immediately reflected across all user devices.
 
 For example, when a version is released, some users may download it. If you disable the version later, users who haven't received the update yet will no longer see this release.
 

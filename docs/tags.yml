@@ -2997,3 +2997,8 @@ quay:
   label: "send email"
   description: "send email related documentations"
   permalink: "/send-email"
+
+"android app release":
+  label: "android app release"
+  description: "android app release related documentations"
+  permalink: "/android-app-release"
