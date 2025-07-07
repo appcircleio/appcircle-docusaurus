@@ -59,6 +59,14 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_ICLOUD_CONTAINER_ENVIRONMENT_FOR_EXPORT` | For non-App Store exports, if the app is using CloudKit, this configures the "com.apple.developer.icloud-container-environment" entitlement. Available options `Development` and `Production`.                                                           | Optional |
 | `$AC_DELETE_ARCHIVE`                          | Delete `build.xcarchive` file after creating ipa file.                                                                                                                                                                                                   | Optional |
 
+:::info Local SPM (Swift Package Manager)
+
+If SPM dependencies are kept locally in your project and are already installed, the Xcodebuild for Devices step may fail during the build while resolving the dependencies. For this reason, you can use the `-skipPackagePluginValidation` parameter in the `$AC_ARCHIVE_FLAGS` input to prevent reloading dependencies that are already installed in the project.
+
+**Note**: This may be a security risk if they are not from trusted sources.
+
+:::
+
 ### Output Variables
 
 The output(s) resulting from the operation of this component are as follows:
