@@ -61,7 +61,9 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::info Local SPM (Swift Package Manager)
 
+If SPM dependencies are kept locally in your project, if they are already installed in the project, the Xcodebuild for Devices step may fail during build while resolving the dependencies. For this reason, you can use the `-skipPackagePluginValidation` parameter in the `$AC_ARCHIVE_FLAGS` input to prevent reloading dependencies that are already installed in the project.
 
+**Note**: This may be a security risk if they are not from trusted sources.
 
 :::
 
