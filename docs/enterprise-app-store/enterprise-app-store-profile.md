@@ -59,6 +59,12 @@ The above tasks can also be initiated using the Appcircle CLI. The Appcircle CLI
 
 <ContentRef url="/appcircle-api-and-cli">Appcircle CLI</ContentRef>
 
+### Upload via Appcircle Marketplace
+
+You can also upload binaries from other CI tools using ready-to-use plugins.
+
+<ContentRef url="/marketplace">Appcircle Marketplace</ContentRef>
+
 ## Profile Actions
 
 Several key actions are available within the Enterprise App Store to manage and interact with profiles efficiently. The descriptions of the available profile actions are provided below:
