@@ -217,6 +217,14 @@ LDAP configuration with an order value of `1` will be used before LDAP configura
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-9.png' />
 
+:::warning LDAP Connection Timeout
+When the LDAP server is unreachable, login attempts by admin users not linked to LDAP may experience a delay. 
+
+The authentication process will wait for the LDAP connection to time out before proceeding, after which the login will be successful. By default, this timeout is set to 2 minutes but can be adjusted in the LDAP configuration settings.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6160-timeout.png' />
+
 ### Remove User From LDAP Server
 
 If the user is deleted via LDAP, users coming from LDAP or previously connected users cannot log in to the system. And users who are logged in are automatically logged out.

@@ -25,6 +25,42 @@ Huawei AppGallery API Key is required to upload your binary to Huawei AppGallery
 
 Your account key is ready. To add a key, go to [My Organization](/account/my-organization) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Huawei AppGallery API Keys" item under the Credentials section.
 
+## Sharing Huawei AppGallery Credentials
+
+Root Organization users have the ability to share their saved credentials with Sub-Organization users. This feature helps streamline credential management across distributed teams and multiple organizational units.
+
+#### How to Share Credentials
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss6.png' />
+
+**1.**	Navigate to the Credentials Section
+Go to My Organization > Security > Credentials.
+
+**2.** Open Manage Panel
+Click the respective credential type (e.g., App Store Connect API Keys) to view your saved credentials.
+
+**3.** Select the Credential
+Click the Share icon under the Actions column for the credential you want to share.
+
+**4.** Configure Sharing Settings
+In the Share Credentials panel:
+- Enter or confirm the Settings Name.
+- Toggle Share with all sub-organizations if you want to make the credential available to all sub-organizations automatically.
+- Alternatively, manually select specific sub-organizations that should have access by checking the boxes under Sub-Organizations.
+
+**5.** Save Sharing Configuration
+Once your selections are made, click Share to apply.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss7.png' />
+
+Shared credentials will be visible and usable in the selected Sub-Organizations as if they were their own.
+
+:::info
+Sub-Organizations cannot edit or delete credentials shared by the Root Organization.
+:::
+
+The shared credentials by the Root Organization will be marked with Root Tag on the Sub Organization's credential list.
+
 ## FAQ
 
 ### Why am I getting the error **[AppGalleryConnectFileService]distContryList is empty and usage route site is not China?**

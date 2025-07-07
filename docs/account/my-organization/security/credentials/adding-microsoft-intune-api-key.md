@@ -37,5 +37,41 @@ Appcircle utilizes [Microsoft Graph APIs to publish apps in Microsoft Intune](ht
 - DeviceManagementApps.Read.All
 - DeviceManagementApps.ReadWrite.All
 
-You can find detailed information about granting permissions [here](https://learn.microsoft.com/en-us/entra/identity-platform/howto-call-a-web-api-with-curl?tabs=dotnet6&pivots=no-api#add-application-permissions-to-allow-access-to-a-web-api).
+Ensure that the permissions being granted are Application permissions rather than Delegated permissions. You can find detailed information about granting permissions [here](https://learn.microsoft.com/en-us/entra/identity-platform/howto-call-a-web-api-with-curl?tabs=dotnet6&pivots=no-api#add-application-permissions-to-allow-access-to-a-web-api).
 :::
+
+## Sharing Microsoft Intune Credentials
+
+Root Organization users have the ability to share their saved credentials with Sub-Organization users. This feature helps streamline credential management across distributed teams and multiple organizational units.
+
+#### How to Share Credentials
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss8.png' />
+
+**1.**	Navigate to the Credentials Section
+Go to My Organization > Security > Credentials.
+
+**2.** Open Manage Panel
+Click the respective credential type (e.g., App Store Connect API Keys) to view your saved credentials.
+
+**3.** Select the Credential
+Click the Share icon under the Actions column for the credential you want to share.
+
+**4.** Configure Sharing Settings
+In the Share Credentials panel:
+- Enter or confirm the Settings Name.
+- Toggle Share with all sub-organizations if you want to make the credential available to all sub-organizations automatically.
+- Alternatively, manually select specific sub-organizations that should have access by checking the boxes under Sub-Organizations.
+
+**5.** Save Sharing Configuration
+Once your selections are made, click Share to apply.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss9.png' />
+
+Shared credentials will be visible and usable in the selected Sub-Organizations as if they were their own.
+
+:::info
+Sub-Organizations cannot edit or delete credentials shared by the Root Organization.
+:::
+
+The shared credentials by the Root Organization will be marked with Root Tag on the Sub Organization's credential list. 

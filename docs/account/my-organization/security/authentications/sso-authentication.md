@@ -197,6 +197,10 @@ Once you confirm the account linking, an email will be sent to your registered e
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/sso-confirmlink.png" />
 
+:::info
+Manual email verification can be bypassed by enabling domain verification. For more information, refer to the [Domain Verification Documentation](/account/my-organization/security/domain-verification).
+:::
+
 </details>
 
 <details>

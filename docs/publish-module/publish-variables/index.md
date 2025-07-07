@@ -53,9 +53,85 @@ Please note that Publish Variables can only be used within the Publish module.
 
 :::
 
+### Downloading environment variables
+
+You can download and view environment variables in **JSON** format. For this, you can use the "Download" button by clicking on the three dots next to one of the variable groups under "Publish > Publish Variables > Variable Groups".
+
+In the downloaded file content, you will see a structure with **key-value** pairs.
+
+In addition, if the value part of the environment variable is set to hidden during the text-based environment variable addition process, the "isSecret" value will be `true` and the key, along with the value **will not** be listed in the downloaded file. The same rule is valid for file type variables. If it is not hidden, this value will be `false`, and the value will be visible.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6155-variable4.png' />
+
+:::info
+An example of publish variable downloaded as a JSON file:
+
+```json
+[
+  {
+    "key": "API_URL",
+    "value": "https://api.example.com",
+    "isSecret": false,
+    "isFile": false,
+    "id": "API_URL"
+  }
+]
+```
+
+As seen in the example above;
+
+- if the **isSecret** value is `false`, it has visible value
+- if the **isSecret** value is `true` or **isFile** value is `true` , the key and the value will not be downloaded.
+  :::
+
+### Uploading environment variables
+
+The Upload feature allows users to bulk-import environment variables into any existing Variable Group (e.g., Staging, Prod, or Dev) within the Publish > Publish Variables > Variable Groups section.
+
+This feature streamlines the process of configuring variables by enabling users to upload a predefined JSON file instead of manually entering each variable.
+
+The uploadable file must be a `.json` file with an array of variable objects. Each variable object must include the following fields:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6155-variable5.png' />
+
+```json
+[
+{
+"key": "API_URL",
+"value": "https://api.example.com",
+"isSecret": false,
+"isFile": false,
+"id": "API_URL"
+},
+{
+"key": "API_KEY",
+"value": "12345-abcde-67890-fghij",
+"isSecret": true,
+"isFile": false,
+"id": "API_KEY"
+}
+]
+```
+
+:::warning
+-	File type variables (isFile: `true`) cannot be uploaded using JSON. These must be added manually via the UI.
+-	The Download feature does not include secret values or file contents for security reasons.
+-	You can edit your own JSON files to update variables in a group. However, duplicated keys are not allowed.
+:::
+
 ## Reserved Variables
 
 There are some reserved variables that are automatically defined by Appcircle and can be used in the publish flow.
+
+:::tip Additional Environment Variables Reference
+
+This documentation also includes additional output environment variables from publish flow steps that may be useful to users.
+
+For any input or output variables not listed here, please refer to the "Input Variables" or "Output Variables" sections on each publish flow step’s [documentation](/publish-integrations).
+
+If there is an environment variable you believe should be included here, please [contact us here](https://appcircle.io/support/).
+
+:::
 
 ### Common Publish Reserved Variables
 
@@ -83,11 +159,11 @@ There are some reserved variables that are automatically defined by Appcircle an
 | AC_MODULE_NAME                      | Name of the module in the process (e.g., `Publish`).                                                                                                                                                         |
 | AC_PUBLISH_PROFILE_NAME             | Specifies the Appcircle profile name who started the publish process.                                                                                                                                        |
 | AC_PUBLISH_STEP_NAME                | Name of the publish flow step being run.                                                                                                                                                                     |
-| AC_PUBLISH_WORKFLOW_NAME            | Name of the publish workflow being run.                                                                                                                                                                      |
+| AC_PUBLISH_FLOW_NAME                | Name of the publish workflow being run.                                                                                                                                                                      |
 | AC_PUBLISH_STEPS_STATUS             | Provides detailed information about the status of the publish steps executed so far. Steps that are disabled will not appear in this environment variable. The JSON output for executed steps includes the following fields: <br />- **StepName**: The name of the executed step. <br />- **StepId**: The unique ID of the executed step. <br />- **StepStatus**: The status of the step. Possible values: `Success`, `Warning`, `Failed`, `NotStarted`, or `Stopped`. <br />- **Duration**: The time taken to complete the step, represented in seconds (e.g., `0.0000000`). <br />- **StartDate**: The start time of the step, formatted as an ISO 8601 timestamp (e.g., `2024-12-13T15:45:59.6426984Z`). <br />- **FinishDate**: The completion time of the step, also formatted as an ISO 8601 timestamp (e.g., `2024-12-13T15:45:59.6426984Z`). <br /> For additional details and instructions on how to format this output for readability, refer to the [**How can I print the status of publish steps with detailed information?**](/publish-integrations/common-publish-integrations/custom-script#how-can-i-print-the-status-of-publish-steps-with-detailed-information) documentation. |
 | AC_APP_FILE_URL                     | URL of the app file being published.                                                                                                                                                                         |
 | AC_APP_FILE_NAME                    | Name of the app file being published (with file extension).                                                                                                                                                  |
-| AC_STACK_TYPE                       | The type of software stack used during the publishing process, such as Xcode, Gradle, etc.                                                                                                                   |
+| AC_STACK_TYPE                       | The type of software stack used during the publishing process, such as Xcode, Gradle, etc. Please follow the necessary mapping values below:  <br />- **App Store = 12** <br />- **TestFlight = 10** <br />- **Alpha = 0** <br />- **Beta = 1** <br />- **Production = 2** <br />- **Internal = 3**                                                                                           |
 | AC_AUTHORIZATION                    | (Removed, redundant)                                                                                                                                                                                         |
 | AC_PURPOSE                          | The intended purpose of the app, detailing its functionality or target audience.                                                                                                                             |
 | AC_PUBLISH_ENVIRONMENT_VARIABLE_IDS | A list of environment variable identifiers used during the app publishing process, ensuring that the correct configuration is applied.                                                                       |
@@ -188,6 +264,12 @@ In the Appcircle Publish module, the steps within a Publish flow operate indepen
 Below is an example of how this can be done. Once an ENV variable is modified in a step and saved to the output direction, it will become accessible in another step.
 
 - For the first step. Suppose we create a release note using the [**Publish Release Note Component**](/workflows/common-workflow-steps/publish-release-notes) during the build process. We then want to modify and use this release note during the Publish process.
+
+:::caution
+
+Predefined Publish Variables can also be modified using this method; however, once the flow is completed, they will revert to their originally defined default values.
+
+:::
 
 ```bash
 

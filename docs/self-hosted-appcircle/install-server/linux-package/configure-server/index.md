@@ -48,6 +48,10 @@ Set up your private App Store for enterprise app distribution, providing a secur
 
 Discover the process for enabling automatic updates on your Appcircle server, ensuring your system remains up-to-date with the latest features and security enhancements.
 
+## [Domain Verification](/self-hosted-appcircle/install-server/linux-package/configure-server/domain-verification)
+
+Learn how to configure your Appcircle server's domain verification option when adding domains as trusted for Appcircle organizations.
+
 ## [Monitoring](/self-hosted-appcircle/install-server/linux-package/configure-server/monitoring)
 
 Learn how to monitor your Appcircle server through the Grafana web interface, enabling you to oversee server performance remotely without the need to access the Appcircle server console directly.

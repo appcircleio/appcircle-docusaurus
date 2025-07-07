@@ -7,7 +7,6 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
-
 In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-start.png' />

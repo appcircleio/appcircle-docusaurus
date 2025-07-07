@@ -27,7 +27,7 @@ The accounts used in the testing portal are completely independent from Appcircl
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portalentry.png" />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-mobile1.png" alt="Mobile Login"/>
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal1.png" alt="Mobile Login"/>
 
 :::info
 
@@ -58,25 +58,11 @@ For installing Android apps, you may need to grant the web browser "install apps
 
 :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal2.png" />
 
 The Testing Portal will also display the size and the certificate type of each app version. For more information on certificate types, please visit the [Signing Identities](/signing-identities) section.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter5.png" alt="Testing Portal Binary Size" />
-
-:::tip
-
-The Testing Portal includes a toggle feature that allows users to switch between two display modes for the app version's upload time.
-
-By default, the Testing Portal displays the time for the selected app version as a relative time (e.g., "2 hours ago").
-
-To view the exact date and time of the upload, simply click on the relative time display. The display will switch to show the exact date and time (e.g., "July 4, 2024 AT 10:30 AM").
-
-:::
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates1.png" />
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-dates2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal3.png" alt="Testing Portal Binary Size" />
 
 :::info
 If your app version has an enterprise-type certificate, the Testing Portal will display a guidance message on how to proceed with the installation on your device.
@@ -102,15 +88,13 @@ If the detected language is not supported, the default language will be English.
 
 The search bar can be used to filter the available app version list by *app names**, **app versions**, **release notes**, and **build numbers**. 
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-search.png" alt="Testing Portal Search Bar"/>
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-mobile2.png" alt="Mobile Search" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal4.png" alt="Mobile Search" />
 
 ### Search By Branch
 
 The Testing Portal will provide a dropdown menu containing the source branches of the listed binaries, allowing users to quickly search for the required branch for a clearer display.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-branch.png" alt="Filter by Branch" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal5.png" alt="Filter by Branch" />
 
 :::tip
 If the branch filter is not visible, it may be because the binary was uploaded manually to the Testing Distribution module instead of being sent via the Build module.
@@ -120,7 +104,7 @@ If the branch filter is not visible, it may be because the binary was uploaded m
 
 The Testing Portal includes an OS Filter that enables users to switch between different OS-specific binaries easily. This feature helps users manage and navigate their iOS and Android releases efficiently. These tabs will be available when the Testing Portal is accessed through a desktop or a laptop device.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal6.png" />
 
 #### Filter Options
 
@@ -129,21 +113,21 @@ The filter consists of three tabs:
 - **iOS**: Shows only iOS binaries.
 - **Android**: Displays only Android binaries.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter4.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal7.png" />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5785-filter3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal8.png" />
 
 ### Sort Binaries by Version & Date
 
 The listed binaries on the Testing Portal can be sorted by version or the date they were shared, based on user preferences. This can be toggled using the Date and Version buttons located above the binary list.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5183-sort.png" alt="Sort by Date or Version" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal9.png" alt="Sort by Date or Version" />
 
 ## Navigating Between Shared App Profiles
 
 Users can view other distributed app versions from different testing distribution profiles by selecting the menu icon in the top left corner.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4071-portal4.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-portal10.png" />
 
 The Shared App Profiles section allows testers to view other testing distribution profiles that have a shared app version associated with their email address.
 

@@ -1058,6 +1058,16 @@ docker:
   description: "Description for docker"
   permalink: /docker
 
+network:
+  label: "network"
+  description: "Description for network"
+  permalink: /network
+
+subnet:
+  label: "subnet"
+  description: "Description for subnet"
+  permalink: /subnet
+
 documentation:
   label: "documentation"
   description: "Description for documentation"
@@ -2568,6 +2578,21 @@ testinium:
   description: "Description for testinium"
   permalink: /testinium
 
+plan:
+  label: "plan"
+  description: "Description for plan"
+  permalink: /plan
+
+run:
+  label: "run"
+  description: "Description for run"
+  permalink: /run
+
+app upload:
+  label: "app upload"
+  description: "Description for app upload"
+  permalink: /app-upload
+
 "text-based variables":
   label: "text-based variables"
   description: "Description for text-based variables"
@@ -2888,6 +2913,11 @@ xml:
   description: "Helm related documentations"
   permalink: "/helm"
 
+"server-setup":
+  label: "server setup"
+  description: "Server setup related documentations"
+  permalink: "/server-setup"
+
 "kubernetes":
   label: "kubernetes"
   description: "Kubernetes related documentations"
@@ -2898,7 +2928,57 @@ xml:
   description: "OpenShift related documentations"
   permalink: "/openshift"
 
+quay:
+  label: "quay"
+  description: "Quay registry related documentations"
+  permalink: /quay
+
 "microsoft azure":
   label: "microsoft azure"
   description: "Microsoft Azure related documentations"
   permalink: "/microsoft-azure"
+
+"appcircle codepush cli":
+  label: "appcircle codepush cli"
+  description: "appcircle codepush cli related documentations"
+  permalink: "/appcircle-codepush-cli"
+
+"appcircle codepush":
+  label: "appcircle codepush"
+  description: "appcircle codepush related documentations"
+  permalink: "/appcircle-codepush"
+
+"codepush cli":
+  label: "codepush cli"
+  description: "codepush cli related documentations"
+  permalink: "/codepush-cli"
+
+"deployments":
+  label: "deployments"
+  description: "deployments related documentations"
+  permalink: "/deployments"
+
+"command line":
+  label: "command line"
+  description: "command line related documentations"
+  permalink: "/command-line"
+
+"codepush":
+  label: "codepush"
+  description: "codepush related documentations"
+  permalink: "/codepush"
+
+"ci":
+  label: "ci"
+  description: "ci related documentations"
+  permalink: "/ci"
+
+"send email":
+  label: "send email"
+  description: "send email related documentations"
+  permalink: "/send-email"
+
+"android app release":
+  label: "android app release"
+  description: "android app release related documentations"
+  permalink: "/android-app-release"
