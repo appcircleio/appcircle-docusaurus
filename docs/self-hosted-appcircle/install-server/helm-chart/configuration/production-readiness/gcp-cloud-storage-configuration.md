@@ -14,10 +14,13 @@ sidebar_position: 60
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NeedHelp from '@site/docs/_need-help.mdx';
+import S3MinimumVersionCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution.mdx';
 
 ## Overview
 
 This guide provides comprehensive instructions for configuring **Google Cloud Storage (GCS)** as your object storage backend for the Appcircle Server. While the default Helm chart deployment includes MinIO as an in-cluster object storage solution, **production environments** benefit from using a more robust and scalable solution like GCP Cloud Storage.
+
+<S3MinimumVersionCaution />
 
 ### What This Guide Covers
 

@@ -9,6 +9,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import S3MinimumVersionCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution.mdx';
 
 ## Overview
 
@@ -22,6 +23,7 @@ For production environments, it is recommended to configure an external MinIO or
 The recommended disk size for the MinIO instance may vary depending on your usage requirements. It can range from 100GB to 3-4TB.
 :::
 
+<S3MinimumVersionCaution />
 
 ### What This Guide Covers
 
