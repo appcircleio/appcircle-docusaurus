@@ -59,7 +59,7 @@ The above tasks can also be initiated using the Appcircle CLI. The Appcircle CLI
 
 <ContentRef url="/appcircle-api-and-cli">Appcircle CLI</ContentRef>
 
-### Upload Using Appcircle Marketplace
+### Upload via Appcircle Marketplace
 
 You can also upload binaries from other CI tools using ready-to-use plugins.
 
