@@ -310,9 +310,11 @@ minio:
 
 By default, the Appcircle chart includes an in-cluster HashiCorp Vault deployment provided by `hashicorp/vault`.
 
-#### Test Environments
+#### Test (or Trial) Environments
 
-For testing purposes, the built-in Vault deployment can be used. In this setup, the storage is kept in Kubernetes. If the Kubernetes cluster has multiple nodes, it should be configured to guarantee that all Vault replicas reach the same storage for consistency.
+For testing purposes, the built-in Vault deployment can be used. In this setup, the storage is kept in Kubernetes.
+
+If the Kubernetes cluster has multiple nodes, it should be configured to guarantee that all Vault replicas reach the same storage for consistency.
 
 #### Production Environments
 
@@ -346,7 +348,7 @@ vault:
 
 As an alternative to using an external Vault service, you can configure Vault to use an external database such as MSSQL for storage while keeping the Vault instance inside Kubernetes.
 
-You can find more storage configurations on the official HashiCorp documentation: [HashiCorp Vault Database Capabilities](https://developer.hashicorp.com/vault/docs/secrets/databases#database-capabilities).
+You can find more storage configurations on the official HashiCorp documentation: [HashiCorp Vault Database Capabilities](https://developer.hashicorp.com/vault/docs/v1.10.x/secrets/databases#database-capabilities).
 
 To use MSSQL as the storage backend:
 
@@ -387,7 +389,7 @@ vault:
 #### Choosing the Right Setup
 
 - If you have an **existing Vault service**, configure Appcircle to connect to it (**recommended for production**).
-- If you prefer **running Vault inside Kubernetes** but want persistent storage, use **MSSQL as the storage backend**.
-- For testing environments, the built-in Vault deployment **can be used but is not recommended for production workloads**.
+- If you prefer **running Vault inside Kubernetes** but want persistent storage, use an **external data store (e.g., MSSQL)** as the storage backend.
+- For testing (or trial) purposes, the built-in Vault deployment **can be used but is not recommended for production workloads**. Also, it should be configured to guarantee that all Vault replicas reach the same storage for consistency when the cluster has multiple nodes.
 
 <NeedHelp />
