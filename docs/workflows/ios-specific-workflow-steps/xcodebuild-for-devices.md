@@ -59,6 +59,12 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_ICLOUD_CONTAINER_ENVIRONMENT_FOR_EXPORT` | For non-App Store exports, if the app is using CloudKit, this configures the "com.apple.developer.icloud-container-environment" entitlement. Available options `Development` and `Production`.                                                           | Optional |
 | `$AC_DELETE_ARCHIVE`                          | Delete `build.xcarchive` file after creating ipa file.                                                                                                                                                                                                   | Optional |
 
+:::info Local SPM (Swift Package Manager)
+
+
+
+:::
+
 ### Output Variables
 
 The output(s) resulting from the operation of this component are as follows:
