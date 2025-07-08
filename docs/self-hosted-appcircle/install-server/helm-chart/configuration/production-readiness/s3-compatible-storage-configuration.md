@@ -240,7 +240,7 @@ global:
     bucketPrefix: "appcircle-spacetech-"
 resource:
   s3:
-    clientProvider: "S3" # Use "S3" for generic S3-compatible providers
+    clientProvider: "AWS" # Use "AWS" for AWS S3-compatible providers
 minio:
   enabled: false # Disable the internal MinIO server if you are using an external MinIO server
 ```
