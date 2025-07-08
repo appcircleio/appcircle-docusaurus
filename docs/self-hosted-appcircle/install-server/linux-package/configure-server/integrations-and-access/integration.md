@@ -16,17 +16,21 @@ There are mainly two integrations to be filled by the user
 
 Appcircle provides two methods to configure SMTP settings.
 
+:::info
+`spacetech` is an example organization name used in the example values below. It should be replaced with your own organization name.
+:::
+
 ### Configure via Dashboard (recommended)
 
 Starting from the version `3.28.1`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset.
 
 :::caution
-To access the SMTP configuration page, you must be logged in as the **Admin** user.
+The "SMTP Configuration" page is located under the **Admin** menu. This menu is only visible when you are logged in as the **Initial User** (the user defined in the `global.yaml`/`values.yaml` file).
 :::
 
-- To reach "SMTP Configuration" navigate to "Admin > Self-Hosted Settings" page using the left menus.
+- To reach the "SMTP Configuration" section, navigate to the "Admin > Self-Hosted Settings" page using the left menus.
 
-- And press the "Manage" button next to "SMTP Configuration".
+- Press the "Manage" button next to "SMTP Configuration".
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-manage.png' />
 
@@ -38,10 +42,9 @@ To access the SMTP configuration page, you must be logged in as the **Admin** us
 
 | Settings | Description | Example |
 |----------|-------------|---------|
-| FROM | The default email address used in the "From" field for outgoing emails. | noreply@acme.com |
-| FROM DISPLAY NAME | The display name that appears alongside the default from address in outgoing emails. | Acme Inc |
-| HOST | The hostname or IP address of the SMTP server. | email-smtp.acme.com |
-| DOMAIN (optional) | The domain used for authenticating with the SMTP server (often applicable for Exchange or custom SMTP services). | email-smtp.acme.com |
+| FROM | The default email address used in the "From" field for outgoing emails. | noreply@spacetech.com |
+| FROM DISPLAY NAME | The display name that appears alongside the default from address in outgoing emails. | Spacetech |
+| HOST | The hostname or IP address of the SMTP server. | email-smtp.spacetech.com |
 | PORT | The port number to connect to on the SMTP server (typically 25, 465, or 587). | 587 |
 | Use SSL | Specifies whether SSL encryption should be used for the SMTP connection. | Off |
 | Start TLS | Determines whether to enable STARTTLS, which upgrades a plain connection to a secure one. | On |
@@ -49,7 +52,7 @@ To access the SMTP configuration page, you must be logged in as the **Admin** us
 | Auth | Indicates whether SMTP authentication is required. Set to true if both UserName and Password are necessary. | On |
 | USERNAME | The username for SMTP server authentication. | your_username |
 | PASSWORD | The password for authenticating with the SMTP server. | your_password |
-| TO (optional) | The default email address used in the "To" field for outgoing emails. | mobile-team@acme.com | 
+| TO (optional) | The email address that will receive the test email when you use the "Test Connection" button. This address is only used for testing SMTP connectivity and does not affect regular outgoing emails. | mobile-team@spacetech.com | 
 
 - Click the "Test Connection" button to verify that the connection to your SMTP server is successful. If the test fails, check your settings and try again.
 
@@ -71,9 +74,9 @@ If you prefer to configure SMTP via `global.yaml` for initial installation; you 
 smtpServer:
   password: your_password
   user: your_username
-  from: noreply@acme.com
-  host: email-smtp.acme.com
-  fromDisplayName: Acme Inc
+  from: noreply@spacetech.com
+  host: email-smtp.spacetech.com
+  fromDisplayName: Spacetech
   port: '587'
   ssl: 'false'
   auth: 'true'
