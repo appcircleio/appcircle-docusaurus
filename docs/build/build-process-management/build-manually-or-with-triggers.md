@@ -71,7 +71,7 @@ To manually configure a webhook:
 
 The URL Format:
 ```bash
-https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATION_ID}/custom/{INTEGRATION_ID}/V7
+https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATION_ID}/custom/{INTEGRATION_ID}/V
 ```
 
 - **Generate a Webhook Key**:
@@ -84,6 +84,30 @@ https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATI
 
 If your repository is connected using GitHub, GitLab, Bitbucket or Azure Devops App integrations, this selection will not appear since webhooks are automatically managed.
 :::
+
+:::caution Azure Devops Connections
+Azure Devops has slightly different steps to configure a manual webhook.
+To manually configure a webhook for an Azure DevOps repository:
+
+1. Connect your Azure DevOps repository to Appcircle and create a build profile.
+2. In Azure DevOps, navigate to:
+   `Project Settings → Service Hooks → + Create Subscription`
+3. Choose Web Hooks as the service.
+4. Select your repository and choose the required trigger events (e.g., code push, pull request).
+5. In the “Action” step, paste the webhook URL.
+6. Paste your Webhook Key/Secret to HTTP Headers.
+   `X-Appcircle-Webhook-Key: {YOUR_WEBHOOK_KEY}`
+:::
+
+#### Binding Existing Manual Webhooks to Other Build Profiles
+
+When a manual webhook (SSH/Public URL/Read-only PAT) is already configured for a repository, additional build profiles that are connected to the same repository can reuse this existing webhook configuration.
+
+- When opening the Webhooks section of a build profile, if a manual webhook is already detected for the repository, a prompt will appear asking if you would like to bind the build profile to the existing webhook.
+- Selected Git Provider, Webhook URL, and the existing Webhook Key/Secret will be displayed as partially masked.
+- Users can directly click the Bind button to link the build profile to the existing webhook.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6529-hook.png' />
 
 ### Webhook Setup for App-Connected and PAT-Based Repository Connections
 
@@ -122,6 +146,10 @@ To set up a manual webhook for a read-only PAT:
     - `APPCIRCLE_API_URL`: Use `api.appcircle.io` for cloud, or your custom server address.
     - `APPCIRCLE_BUILD_PROFILE_ID`: The ID of your Appcircle build profile.
 
+:::warning PAT Role
+In order to create a webhook, the created PAT must have at least the role of **Maintainer**.
+:::
+
 #### Bitbucket App Connection
 
 When using the Bitbucket App integration, Appcircle automatically creates the webhook—no further action is needed.
@@ -145,16 +173,7 @@ To manually configure a webhook for a Bitbucket Server repository using a read-o
 
 #### Azure Devops - PAT Connection
 
-To manually configure a webhook for an Azure DevOps repository:
-
-1. Connect your Azure DevOps repository to Appcircle and create a build profile.
-2. In Azure DevOps, navigate to:
-   `Project Settings → Service Hooks → + Create Subscription`
-3. Choose Web Hooks as the service.
-4. Select your repository and choose the required trigger events (e.g., code push, pull request).
-5. In the “Action” step, paste the webhook URL.
-6. Paste your Webhook Key/Secret to HTTP Headers.
-`X-Appcircle-Webhook-Key: {YOUR_WEBHOOK_KEY}`
+When using the Azure Devops PAT Integration, Appcircle automatically creates the webhook—no further action is needed.
 
 This ensures proper webhook communication across all supported Git repository configurations.
 
