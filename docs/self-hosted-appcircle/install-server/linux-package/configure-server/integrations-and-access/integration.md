@@ -40,7 +40,7 @@ The "SMTP Configuration" page is located under the **Admin** menu. This menu is 
 - You will see the SMTP configuration page.
 
 <Screenshot 
-  url="https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-detail-3.png"
+  url="https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-detail-4.png"
   alt="SMTP Configuration Details"
 />
 
