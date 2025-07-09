@@ -1,5 +1,6 @@
 ---
-title: External Image Registries
+title: External Image Registries for Helm Chart
+sidebar_label: External Image Registries
 description: Learn how to configure external image registries for Appcircle server when installing using a Helm chart
 tags:
   [
