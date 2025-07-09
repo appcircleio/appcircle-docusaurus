@@ -237,7 +237,7 @@ global:
     url: "https://your-s3-endpoint.com" # e.g., https://s3.wasabisys.com
     region: "us-east-1" # Use the region of the buckets
     useHttp: "false" # Set to "true" if the S3 endpoint uses HTTP instead of HTTPS
-    bucketPrefix: "appcircle-spacetech-"
+    bucketPrefix: "appcircle-spacetech-" # Replace with your actual bucket prefix
 resource:
   s3:
     clientProvider: "AWS" # Use "AWS" for AWS S3-compatible providers
