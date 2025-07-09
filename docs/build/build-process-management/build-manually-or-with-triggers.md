@@ -146,6 +146,10 @@ To set up a manual webhook for a read-only PAT:
     - `APPCIRCLE_API_URL`: Use `api.appcircle.io` for cloud, or your custom server address.
     - `APPCIRCLE_BUILD_PROFILE_ID`: The ID of your Appcircle build profile.
 
+:::warning PAT Role
+In order to create a webhook, the created PAT must have at least the role of **Maintainer**.
+:::
+
 #### Bitbucket App Connection
 
 When using the Bitbucket App integration, Appcircle automatically creates the webhook—no further action is needed.
