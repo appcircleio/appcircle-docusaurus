@@ -16,6 +16,29 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.28.2 - 2025-07-09 GitHub Enterprise Support, Manual Webhook Enhancements, Bug Fixes and more
+
+### 🆕 New Features
+
+- Support for the GitHub Enterprise connection type has been added to allow build profiles to connect to repositories using a Fine-Grained Personal Access Token. <BuildBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- The [bind](/build/build-process-management/build-manually-or-with-triggers#binding-existing-manual-webhooks-to-other-build-profiles) option can now be used by build profiles to reuse existing manual webhooks for accessing the same repository across other build profiles. <BuildBadge/> <CloudBadge/>
+- Branch names that exactly match the search input are now displayed at the top of the search results within the build profile. <BuildBadge/> <CloudBadge/>
+- The warning message on form validations has been improved for cases where the text input is too long. <CloudBadge/>
+- The app version icon will now be displayed in the binary information option within the publish profiles. <PublishBadge/> <CloudBadge/>
+- The username option has been removed from the Bitbucket repository PAT-type connection settings. <BuildBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue has been fixed where, on some occasions, the webhook URL was being updated during the configuration phase. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where an existing manual webhook used by a build profile was not detected by other build profiles connected to the same repository. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where, on some occasions, clicking the webhook icon on the build profile caused disruptions in the webhook connection. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where refreshing the browser page caused UI problems on the iOS tab of the testing distribution profiles. <DistributionBadge/> <CloudBadge/>
+- Various UI issues related to testing distribution module that were experienced on Firefox browsers have been fixed. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where the current organization was being reset after login for users with inherited access to sub-organizations. <AccountBadge/> <CloudBadge/>
+
 ## 3.28.1 - 2025-06-16 New Bitbucket Repository Connection Types, UI Enhancements, Improvements and more
 
 ### 🆕 New Features
@@ -37,6 +60,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - [Export as CSV](/testing-distribution/testing-groups#exporting-testing-group-members-as-csv) option has been added for Testing Groups to extract the tester email list as a CSV file for easier sharing and external management. <DistributionBadge/> <CloudBadge/>
 - The “Show only shared version to the tester” option can now be used in the Auto Send Configuration within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/>
 - When the “Show only shared version to the tester” option is enabled, testers will be restricted from using the search bar and accessing other shared Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
+- Improvements have been made to the Testing Portal mobile view, where app details are now shown within the app list when selected, instead of opening at the top of the screen. <DistributionBadge/> <CloudBadge/>
 - Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/>
 - UTF-8 characters are now supported when naming a provisioning profile during its creation. <SigningIdentitiesBadge/> <CloudBadge/>
 - The [Send to Testing Distribution](/publish-integrations/common-publish-integrations/send-to-testing-distribution) Publish step has been added, allowing users to directly send their apps from a Publish Profile to a selected Testing Distribution profile. <PublishBadge/> <CloudBadge/>
@@ -55,6 +79,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where navigating to a sub-organization from the Organization module resulted in incorrect access error messages. <AccountBadge/> <CloudBadge/>
 - The `NOT_AUTHORIZED` error that occurred while publishing apps to the App Store using Xcode 16.0-16.2 versions on macOS Sequoia runners was fixed. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The `error XA5300: The Android SDK directory could not be found` issue that occurred while building MAUI Android apps on macOS Sequoia runners was fixed. <InfrastructureBadge/> <CloudBadge/>
+- Fixed an issue in the Git Clone step where branch names containing special characters (e.g., (, )) caused shell syntax errors. Branch names are now properly wrapped in quotes to ensure safe execution. <BuildIntegrationsBadge/> <CloudBadge/>
 
 ## 3.28.0 - 2025-05-21 CodePush Integration, Send Email Publish Step, Improvements and more
 

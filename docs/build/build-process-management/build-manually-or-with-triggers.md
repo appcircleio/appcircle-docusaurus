@@ -109,9 +109,9 @@ When a manual webhook (SSH/Public URL/Read-only PAT) is already configured for a
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6529-hook.png' />
 
-### Webhook Setup for App-Connected and PAT-Based Repository Connections
+### Webhook Setup for OAuth and PAT-Based Repository Connections
 
-When a repository is connected to Appcircle via a Git provider integration (such as GitHub App, GitLab App, or Bitbucket App) or using a Personal Access Token (PAT), the behavior of webhook creation varies depending on the type of integration and the permission level of the token.
+When a repository is connected to Appcircle via OAuth connection (such as GitHub, GitLab, or Bitbucket) or using a Personal Access Token (PAT), the behavior of webhook creation varies depending on the type of integration and the permission level of the token.
 
 In some cases, Appcircle handles webhook setup automatically, while in others—particularly when using read-only access—manual configuration may be required to enable trigger-based builds.
 
@@ -119,15 +119,15 @@ In some cases, Appcircle handles webhook setup automatically, while in others—
 
 Below is a breakdown of how webhooks are managed for each supported Git provider based on the connection method.
 
-#### GitHub App Connection
+#### GitHub OAuth Connection
 
-When your repository is connected using the GitHub App, webhooks are created automatically. No manual configuration is needed.
+When your repository is connected using the GitHub OAuth connection, webhooks are created automatically. No manual configuration is needed.
 
-#### GitLab App Connection
+#### GitLab OAuth Connection
 
-Webhooks are also automatically created when connecting via the GitLab App.
+Webhooks are also automatically created when connecting via the GitLab OAuth connection.
 
-#### GitLab Server - PAT Connection
+#### GitLab Cloud/Server - PAT Connection
 
 The behavior differs depending on the PAT’s permission level:
 
@@ -150,9 +150,9 @@ To set up a manual webhook for a read-only PAT:
 In order to create a webhook, the created PAT must have at least the role of **Maintainer**.
 :::
 
-#### Bitbucket App Connection
+#### Bitbucket OAuth Connection
 
-When using the Bitbucket App integration, Appcircle automatically creates the webhook—no further action is needed.
+When using the Bitbucket OAuth connection, Appcircle automatically creates the webhook—no further action is needed.
 
 #### Bitbucket Server - PAT Connection
 
