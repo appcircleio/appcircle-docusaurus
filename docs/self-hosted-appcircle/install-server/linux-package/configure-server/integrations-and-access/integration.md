@@ -32,11 +32,17 @@ The "SMTP Configuration" page is located under the **Admin** menu. This menu is 
 
 - Press the "Manage" button next to "SMTP Configuration".
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-manage-2.png' />
+<Screenshot 
+  url="https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-manage-3.png"
+  alt="SMTP Configuration Manage Button"
+/>
 
 - You will see the SMTP configuration page.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-detail-2.png' />
+<Screenshot 
+  url="https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-detail-3.png"
+  alt="SMTP Configuration Details"
+/>
 
 - Fill in the SMTP settings according to your mail server. See the details below for configuration options:
 
@@ -56,7 +62,10 @@ The "SMTP Configuration" page is located under the **Admin** menu. This menu is 
 
 - Click the "Test Connection" button to verify that the connection to your SMTP server is successful. If the test fails, check your settings and try again.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-test-2.png' />
+<Screenshot 
+  url="https://cdn.appcircle.io/docs/assets/be-6465-smtp-configuration-test-3.png"
+  alt="SMTP Configuration Test Connection Button"
+/>
 
 - If your settings are correct, click the "Save" button to apply the settings.
 
