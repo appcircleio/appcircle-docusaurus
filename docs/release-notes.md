@@ -39,6 +39,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Various UI issues related to testing distribution module that were experienced on Firefox browsers have been fixed. <DistributionBadge/> <CloudBadge/>
 - An issue has been fixed where the current organization was being reset after login for users with inherited access to sub-organizations. <AccountBadge/> <CloudBadge/>
 
+### :warning: Breaking Changes
+
+- Sharing Enterprise API Keys across organizations caused type changes and auth errors. This fix is not backward compatible. Please delete and add again affected keys.
+
 ## 3.28.1 - 2025-06-16 New Bitbucket Repository Connection Types, UI Enhancements, Improvements and more
 
 ### 🆕 New Features
