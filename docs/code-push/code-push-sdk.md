@@ -29,7 +29,7 @@ Add the SDK to dependencies section in your `package.json` file.
 
 ```json package.json
 "dependencies": {
-    "@appcircle/react-native-code-push": "0.0.2",
+    "@appcircle/react-native-code-push": "0.0.3",
     
     //Other Dependencies here
 }
