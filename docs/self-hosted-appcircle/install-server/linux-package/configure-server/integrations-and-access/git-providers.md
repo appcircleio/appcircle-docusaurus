@@ -1,21 +1,26 @@
 ---
 title: Git Providers
 description: Configure git providers in self-hosted Appcircle
-tags: [self-hosted, git providers, configuration]
+tags: [self-hosted, git providers, configuration, gitlab, azure, bitbucket, github]
 sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NeedHelp from '@site/docs/\_need-help.mdx';
 
 With default installation, self-hosted Appcircle comes with the connection options below:
 
 - Bitbucket
 - Azure
 - GitLab
+- GitHub
 - Connect via SSH
 - Connect via URL
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-git-providers-v2.png' />
+<Screenshot
+  url="https://cdn.appcircle.io/docs/assets/BE-6543-git-providers.png"
+  alt="Select the Git provider for the source code of your app"
+/>
 
 But you're not limited with these options. You can configure the git providers and use them within your self-hosted Appcircle server, same as in cloud.
 
@@ -58,9 +63,9 @@ If you want to re-enable "Bitbucket" again, you can set the `enabled` to `true`.
 
 For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket) page.
 
-To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
-## Connect to Azure Devops Server
+## Connect to Azure DevOps Server
 
 To disable the "Azure" option, add the below configuration to `global.yaml`.
 
@@ -75,7 +80,7 @@ If you want to re-enable "Azure" again, you can set the `enabled` to `true`.
 
 For more details about "Azure" usage, see related docs in the [Connecting to Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) page.
 
-To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
 ## Connect to Self-Managed GitLab
 
@@ -92,7 +97,28 @@ If you want to re-enable "GitLab" again, you can set the `enabled` to `true`.
 
 For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab) page.
 
-To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
+
+## Connect to GitHub Enterprise Server
+
+To disable the "GitHub" option, add the below configuration to `global.yaml`.
+
+```yaml
+build:
+  oauths:
+    githubEnterpriseServer:
+      enabled: false
+```
+
+If you want to re-enable "GitHub" again, you can set the `enabled` to `true`.
+
+For more details about "GitHub" usage, see related docs in the [Connecting to GitHub](/build/manage-the-connections/adding-a-build-profile/connecting-to-github) page.
+
+To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
+
+:::info
+GitHub Enterprise Server option is available in version `3.28.2` or later.
+:::
 
 ## Connect via SSH
 
@@ -185,4 +211,9 @@ Following steps are using example project as project naming, which was told ther
 
 On complete, refresh your browser and login to Appcircle with your account. You should see that "Connect via SSH" and "Connect via URL" option is disabled on the connection page. :tada:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2031-ssh-url-disabled-v2.png' />
+<Screenshot
+  url="https://cdn.appcircle.io/docs/assets/BE-6543-ssh-url-disabled.png"
+  alt="Applying Git provider changes (sample)"
+/>
+
+<NeedHelp />
