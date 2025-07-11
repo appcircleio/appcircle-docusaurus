@@ -283,6 +283,11 @@ appcircle:
   description: "Description for appcircle app store"
   permalink: /appcircle-app-store
 
+"appcircle assistant":
+  label: "appcircle assistant"
+  description: "Description for appcircle assistant"
+  permalink: /appcircle-assistant
+
 "appcircle bot":
   label: "appcircle bot"
   description: "Description for appcircle bot"

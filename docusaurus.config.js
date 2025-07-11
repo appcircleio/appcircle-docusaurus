@@ -157,8 +157,8 @@ const config = {
                 href: "https://www.youtube.com/appcircle",
               },
               {
-                label: "Slack",
-                href: "https://slack.appcircle.io/",
+                label: "Appcircle Assistant",
+                href: "https://chatgpt.com/g/g-686e31aa891481919ef3603325b15ae0-appcircle-assistant",
               },
               {
                 label: "Customer Stories",
