@@ -22,7 +22,7 @@ Appcircle provides two methods to configure SMTP settings.
 
 ### Configure via Dashboard (recommended)
 
-Starting from the version `3.28.1`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset.
+Starting from the version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset.
 
 :::caution
 The "SMTP Configuration" page is located under the **Admin** menu. This menu is only visible when you are logged in as the **Initial User** (the user defined in the `global.yaml`/`values.yaml` file).
