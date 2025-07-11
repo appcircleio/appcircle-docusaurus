@@ -12,6 +12,17 @@ If you want to distribute your in-house applications to your users, you can use 
 
 Appcircle's Enterprise App Store helps you to set up your own store and have full control over deployment and access management.
 
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/DBvSavKA5Oo?si=1lIBadgf_B25whAE" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
 ### Prerequisites
 
 In order for your users to download IPA or APK files, those files must be signed with proper certificates or Keystore files.
