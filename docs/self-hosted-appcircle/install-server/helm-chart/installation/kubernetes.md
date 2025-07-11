@@ -405,7 +405,7 @@ webeventredis:
 </Tabs>
 
 :::caution
-Starting from the version `3.28.1`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset. To use this method: 
+Starting from the server version `3.28.1`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset. To use this method:
 
 1. Exclude the `global.mail` part from the `values.yaml` file.
 2. Configure SMTP settings on the Appcircle Dashboard after installation.

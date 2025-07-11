@@ -415,6 +415,7 @@ As described in the previous section, SMTP settings can now be configured direct
 
 1. Remove the `smtpServer.password` part from the `secret.yaml` file in the next steps here. Therefore, it will not be included in the `user-secret` file that you will generate, and won't effect the Appcircle server configuration.
 2. Configure SMTP settings on the Dashboard after installation. See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+
 :::
 
 First create your `secret.yaml` configuration as plain text like below.
