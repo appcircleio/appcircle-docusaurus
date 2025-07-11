@@ -20,7 +20,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- Support for the GitHub Enterprise connection type has been added to allow build profiles to connect to repositories using a Fine-Grained Personal Access Token. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Support for the [GitHub Enterprise](build/manage-the-connections/adding-a-build-profile/connecting-to-github) connection type has been added to allow build profiles to connect to repositories using a Fine-Grained Personal Access Token. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Introduced dynamic [SMTP configuration](self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#email) for self-hosted environments, including live updates to mail server settings, and test email functionality. <AccountBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
