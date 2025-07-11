@@ -135,7 +135,7 @@ If you want to re-enable "Connect via SSH" again, you can set the `enabled` to `
 
 For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh) page.
 
-To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
 ## Connect via URL
 
@@ -152,7 +152,7 @@ If you want to re-enable "Connect via URL" again, you can set the `enabled` to `
 
 For more details about "Connect via URL" usage, see related docs in the [Connect via URL](/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository) page.
 
-To apply the changes, please follow [Applying Git Provider Changes](#applying-git-provider-changes)
+To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
 ## Applying Git Provider Changes
 
