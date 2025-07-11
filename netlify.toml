@@ -1273,3 +1273,8 @@ status = 301
 from = "/workflows/react-native-specific-workflow-steps#app-center-codepush"
 to = "/workflows/react-native-specific-workflow-steps/appcircle-codepush"
 status = 301
+
+[[redirects]]
+from = "/account/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
