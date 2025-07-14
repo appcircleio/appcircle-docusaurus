@@ -303,15 +303,15 @@ If SSO and LDAP details are not configured for your organization, these authenti
 
 #### Hide Shared Application List
 
-You can restrict access to the shared application list within the Testing Portal by enabling the Hide Shared Application List toggle under the Authentication tab of a Testing Distribution Profile.
+You can restrict access to the shared application list within the Testing Portal by enabling the **Hide Shared Application List** toggle under the **Authentication** tab of a Testing Distribution Profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6472-hide2.png' />
 
-When enabled:
+**When enabled:**
 
-- The Shared Application List will be hidden for users accessing the Testing Portal.
-- This restriction applies regardless of the selected authentication type (None, SSO Login, LDAP Login, or Static Username and Password).
-- Testers will only see the application(s) associated with the specific distribution profile and will not be able to browse shared releases from other profiles.
+- The **Shared Application List** will be **hidden** for users accessing the Testing Portal.
+- This restriction **applies** regardless of the **selected authentication type** (None, SSO Login, LDAP Login, or Static Username and Password).
+- Testers will **only** see the application(s) associated with the specific distribution profile and will **not** be able to browse shared releases from other profiles.
 
 ### Distribution Link
 
