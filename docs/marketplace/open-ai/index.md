@@ -25,9 +25,7 @@ Getting started with the Appcircle Assistant is simple. Just follow these steps:
 1. Log in to your [ChatGPT account](https://chatgpt.com/).
 2. In the left-hand menu, click **GPTs**.
 3. Use the search bar to type **Appcircle Assistant**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6548-chatGPTInstructions.png'/>  
+    <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6548-chatGPTInstructions.png'/>  
 
 4. Click on it to open and start your conversation with the **Appcircle Assistant**.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6548-assistantScreen2.png'/>
+    <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6548-assistantScreen2.png'/>
