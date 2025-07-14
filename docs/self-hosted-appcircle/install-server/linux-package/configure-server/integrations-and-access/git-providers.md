@@ -22,9 +22,9 @@ With default installation, self-hosted Appcircle comes with the connection optio
   alt="Select the Git provider for the source code of your app"
 />
 
-But you're not limited with these options. You can configure the git providers and use them within your self-hosted Appcircle server, same as in cloud.
+You can configure the Git providers and use them within your self-hosted Appcircle server, the same as in the cloud.
 
-Following sections will give you more details about removing or adding other git providers.
+The following sections will give you more details about how to enable or disable Git providers according to your requirements in your hosted environment.
 
 :::info
 
@@ -48,69 +48,97 @@ You can see an example project configuration from [here](/self-hosted-appcircle/
 
 :::
 
-## Connect to Bitbucket Server
+## Connect to Bitbucket
 
 To disable the "Bitbucket" option, add the below configuration to `global.yaml`.
 
 ```yaml
 build:
   oauths:
+    bitbucket:
+      enabled: false
     bitbucketServer:
       enabled: false
 ```
 
 If you want to re-enable "Bitbucket" again, you can set the `enabled` to `true`.
 
+You can configure only the self-hosted or cloud "Bitbucket" options using the relevant sections.
+
+- The `bitbucket` section is used to manage **Bitbucket (Cloud)**.
+- The `bitbucketServer` section is used to manage **Bitbucket Server**.
+
 For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket) page.
 
 To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
-## Connect to Azure DevOps Server
+## Connect to Azure DevOps
 
-To disable the "Azure" option, add the below configuration to `global.yaml`.
+To disable the "Azure DevOps" option, add the below configuration to `global.yaml`.
 
 ```yaml
 build:
   oauths:
+    azureDevopsServices:
+      enabled: false
     azureDevopsServer:
       enabled: false
 ```
 
-If you want to re-enable "Azure" again, you can set the `enabled` to `true`.
+If you want to re-enable "Azure DevOps" again, you can set the `enabled` to `true`.
 
-For more details about "Azure" usage, see related docs in the [Connecting to Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) page.
+You can configure only the self-hosted or cloud "Azure DevOps" options using the relevant sections.
+
+- The `azureDevopsServices` section is used to manage **Azure DevOps Services (Cloud)**.
+- The `azureDevopsServer` section is used to manage **Azure DevOps Server**.
+
+For more details about "Azure DevOps" usage, see related docs in the [Connecting to Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) page.
 
 To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
-## Connect to Self-Managed GitLab
+## Connect to GitLab
 
 To disable the "GitLab" option, add the below configuration to `global.yaml`.
 
 ```yaml
 build:
   oauths:
+    gitlab:
+      enabled: false
     gitlabSelfHosted:
       enabled: false
 ```
 
 If you want to re-enable "GitLab" again, you can set the `enabled` to `true`.
 
+You can configure only the self-hosted or cloud "GitLab" options using the relevant sections.
+
+- The `gitlab` section is used to manage **GitLab (Cloud)**.
+- The `gitlabSelfHosted` section is used to manage **GitLab Self-Managed**.
+
 For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab) page.
 
 To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
-## Connect to GitHub Enterprise Server
+## Connect to GitHub
 
 To disable the "GitHub" option, add the below configuration to `global.yaml`.
 
 ```yaml
 build:
   oauths:
+    githubApp:
+      enabled: false
     githubEnterpriseServer:
       enabled: false
 ```
 
 If you want to re-enable "GitHub" again, you can set the `enabled` to `true`.
+
+You can configure only the self-hosted or cloud "GitHub" options using the relevant sections.
+
+- The `githubApp` section is used to manage **GitHub (Cloud)**.
+- The `githubEnterpriseServer` section is used to manage **GitHub Enterprise Server**.
 
 For more details about "GitHub" usage, see related docs in the [Connecting to GitHub](/build/manage-the-connections/adding-a-build-profile/connecting-to-github) page.
 
