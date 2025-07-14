@@ -7,6 +7,7 @@ sidebar_position: 3
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import CustomEasSsoCaution from '@site/docs/self-hosted-appcircle/install-server/\_custom-td-domain-sso-caution.mdx';
 
 Portal settings allow you to configure your authentication and domain settings.
 
@@ -204,6 +205,8 @@ The below screenshot shows an example configuration screen from Cloudflare.
 After creating the DNS settings, type your custom domain name, select your certificate, and update the configuration. DNS changes can take time to propagate. You may have to wait a few minutes or hours to see the redirect.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-domain.png" alt="Custom Domain Settings for Enterprise Portal" />
+
+<CustomEasSsoCaution />
 
 :::caution
 

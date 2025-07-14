@@ -24,6 +24,7 @@ import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/install-ser
 import UFWConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_ufw-configuration.mdx';
 import SwapConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_swap-configuration.mdx';
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
+import CustomAuthSSOCaution from '@site/docs/self-hosted-appcircle/install-server/\_custom-auth-domain-sso-caution.mdx';
 import Screenshot from '@site/src/components/Screenshot';
 
 ## Overview
@@ -855,6 +856,8 @@ If you enable the **DMZ custom domain** and configure **Single Sign-On (SSO)**, 
 
 Without this update, authentication requests from the DMZ domain will be blocked, causing SSO login failures due to unrecognized redirect URIs.
 :::
+
+<CustomAuthSSOCaution />
 
 - **[Upgrade](#upgrading-appcircle-dmz-and-appcircle-server)** the Appcircle server and DMZ server for changes to be applied.
 
