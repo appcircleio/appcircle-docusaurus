@@ -8,6 +8,7 @@ sidebar_position: 3
 import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_restart-appcircle-server.mdx';
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
 import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
+import CustomEasSsoCaution from '@site/docs/self-hosted-appcircle/install-server/\_custom-eas-domain-sso-caution.mdx';import CustomTdSsoCaution from '@site/docs/self-hosted-appcircle/install-server/\_custom-td-domain-sso-caution.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -361,6 +362,8 @@ For this reason, you can only use `store.appcircle.spacetech.com` for all your n
 
 It's possible to use a custom domain for the Enterprise App Store. In this case we need to make extra configuration for our custom domain.
 
+<CustomEasSsoCaution />
+
 Most likely, our custom domain won't be covered by main domain certificate. So we may need to create new public certificate and private key pair for the custom domain.
 
 Even if the main domain certificate covers the custom domain, you still need to explicitly configure the store’s custom domain certificate under `storeWeb.customDomain`. Because, when the store custom domain is enabled, the HTTPS certificate defined in the `storeWeb.customDomain` section is used for the Enterprise App Store instead of the certificate defined in `nginx.sslCertificate`.
@@ -565,6 +568,8 @@ It's possible to use a custom domain for the Testing Distribution. In this case,
 :::caution
 Please be aware that, after you change the Testing Distribution domain or the SSL settings, the links in the **emails that were sent to the testers with the previous domain and previous SSL settings will be invalid.**
 :::
+
+<CustomTdSsoCaution />
 
 Most likely, our custom domain won't be covered by the main domain certificate. In this case, we need to create a new public certificate and private key pair for the custom domain.
 
