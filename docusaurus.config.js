@@ -170,8 +170,8 @@ const config = {
             title: "Find Us",
             items: [
               {
-                label: "Slack",
-                href: "https://join.slack.com/t/appcircleio/signup",
+                label: "Appcircle Assistant",
+                href: "https://chatgpt.com/g/g-686e31aa891481919ef3603325b15ae0-appcircle-assistant",
               },
               {
                 label: "Twitter",

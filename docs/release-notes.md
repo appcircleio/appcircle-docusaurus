@@ -22,6 +22,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - Support for the [GitHub Enterprise](build/manage-the-connections/adding-a-build-profile/connecting-to-github) connection type has been added to allow build profiles to connect to repositories using a Fine-Grained Personal Access Token. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Introduced dynamic [SMTP configuration](self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#email) for self-hosted environments, including live updates to mail server settings, and test email functionality. <AccountBadge/> <SelfHostedBadge/>
+- Introduced the [Appcircle Assistant GPT](/marketplace/open-ai), a custom AI assistant that provides answers about Appcircle, including step-by-step instructions and troubleshooting support. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -57,7 +58,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Root organization credentials, such as [App Store Connect](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#sharing-app-store-connect-credentials) and [Google Play Developer](/account/my-organization/security/credentials/adding-google-play-service-account#sharing-google-play-developer-credentials) API keys, can now be shared with sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The [“Hide from profile list on Testing”](/testing-distribution/create-or-select-a-distribution-profile#hide-from-profile-list) toggle can now be used in Testing Distribution profile settings to prevent the selected profile from appearing in the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Bundle and Package Validation](/testing-distribution/create-or-select-a-distribution-profile#bundlepackage-identifier-validation) toggles can now be used to specify a bundle ID (for iOS) or package ID (for Android). When enabled, any app with a different bundle or package ID will be blocked from being uploaded to the Testing Distribution profile. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The “Hide Shared Application List” toggle can now be used under the Authentication tab in Testing Distribution profile settings to restrict access to the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [“Hide Shared Application List”](/testing-distribution/create-or-select-a-distribution-profile#hide-shared-application-list) toggle can now be used under the Authentication tab in Testing Distribution profile settings to restrict access to the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
