@@ -76,6 +76,8 @@ kubectl create secret generic appcircle-server-smtp \
 
 :::tip
 Even if you initially configure SMTP using Kubernetes secrets, you can still use the Appcircle Dashboard for subsequent updates.
+
+But **keep in mind that** beforehand you should remove the relevant settings from the server configuration effectively, which requires you to apply configuration changes.
 :::
 
 #### SSL certificate
