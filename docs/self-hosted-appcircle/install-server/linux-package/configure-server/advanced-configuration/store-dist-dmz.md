@@ -520,6 +520,10 @@ cd appcircle-server
 <details>
     <summary>Click to see how to configure the CodePush feature in the Appcircle DMZ server.</summary>
 
+:::note
+CodePush DMZ server configuration requires Appcircle server `3.28.2` or later.
+:::
+
 <Tabs
 defaultValue="docker"
 groupId="container-engine"
@@ -609,7 +613,6 @@ codepushProxy:
 :::caution
 The `codepushProxy.external.port` must be `443` and `codepushProxy.external.scheme` must be `https` to use the CodePush feature in the Appcircle DMZ server with HTTPS.
 :::
-
 
 </TabItem>
 
