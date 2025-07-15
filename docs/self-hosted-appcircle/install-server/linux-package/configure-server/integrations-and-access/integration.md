@@ -54,11 +54,11 @@ The "SMTP Configuration" page is located under the **Admin** menu. This menu is 
 | PORT | The port number to connect to on the SMTP server (typically 25, 465, or 587). | 587 |
 | Use SSL | Specifies whether SSL encryption should be used for the SMTP connection. | Off |
 | Start TLS | Determines whether to enable STARTTLS, which upgrades a plain connection to a secure one. | On |
-| Validate Server Cert | Specifies whether the SMTP server's SSL certificate should be validated. It is recommended to keep this as true for security purposes. | On |
-| Auth | Indicates whether SMTP authentication is required. Set to true if both UserName and Password are necessary. | On |
+| Validate Server Cert | Specifies whether the SMTP server's SSL certificate should be validated. It is recommended to keep this as turned on for security purposes. | On |
+| Auth | Indicates whether SMTP authentication is required. It should be turned on if both username and password are necessary for the SMTP server authentication. | On |
 | USERNAME | The username for SMTP server authentication. | your_username |
 | PASSWORD | The password for authenticating with the SMTP server. | your_password |
-| TO (optional) | The email address that will receive the test email when you use the "Test Connection" button. This address is only used for testing SMTP connectivity and does not affect regular outgoing emails. | mobile-team@spacetech.com | 
+| TO (optional) | The email address that will receive the test email when you use the "Test Connection" button. This address is only used for testing SMTP connectivity and does not affect regular outgoing emails. | mobile-team@spacetech.com |
 
 - Click the "Test Connection" button to verify that the connection to your SMTP server is successful. If the test fails, check your settings and try again.
 
