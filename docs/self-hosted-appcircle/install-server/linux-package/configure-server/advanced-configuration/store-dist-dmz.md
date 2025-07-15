@@ -421,7 +421,15 @@ It's perfectly acceptable for **some custom domains to be enabled while others a
 For example, you might have a custom domain for the Enterprise App Store but use the default domain for Testing Distribution or DMZ Authentication.  
 :::
 
-There is an optional domain name if you want to use the Appcircle server [CodePush feature](/code-push/index.md) in the Appcircle DMZ server. You will configure this CodePush domain name in the Appcircle server `global.yaml` file in the next sections. If you don't want to use the CodePush feature, you can skip the CodePush domain name configuration.
+:::info
+
+#### CodePush (optional)
+
+There is an optional domain name if you want to use the Appcircle server [CodePush](/code-push/) feature in the Appcircle DMZ server. You will configure this domain name in the Appcircle server `global.yaml` file in the following sections.
+
+If you don't want to use the [CodePush](/code-push/) feature, you can skip the CodePush domain name configuration.
+
+:::
 
 ---
 
