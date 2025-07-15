@@ -283,6 +283,11 @@ appcircle:
   description: "Description for appcircle app store"
   permalink: /appcircle-app-store
 
+"appcircle assistant":
+  label: "appcircle assistant"
+  description: "Description for appcircle assistant"
+  permalink: /appcircle-assistant
+
 "appcircle bot":
   label: "appcircle bot"
   description: "Description for appcircle bot"
@@ -1337,6 +1342,11 @@ gitlab:
   label: "google play service account"
   description: "Description for google play service account"
   permalink: /google-play-service-account
+
+gpt:
+  label: "gpt"
+  description: "Description for gpt"
+  permalink: /gpt
 
 gradle:
   label: "gradle"
@@ -2912,6 +2922,11 @@ xml:
   label: "helm"
   description: "Helm related documentations"
   permalink: "/helm"
+
+"help":
+  label: "help"
+  description: "Help related documentations"
+  permalink: "/help"
 
 "server-setup":
   label: "server setup"

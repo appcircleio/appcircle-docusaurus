@@ -16,73 +16,121 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.28.2 - 2025-07-09 GitHub Enterprise Support, Manual Webhook Enhancements, SMTP Configuration, Bug Fixes and more
+
+### 🆕 New Features
+
+- Support for the [GitHub Enterprise](build/manage-the-connections/adding-a-build-profile/connecting-to-github) connection type has been added to allow build profiles to connect to repositories using a Fine-Grained Personal Access Token. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Introduced dynamic [SMTP configuration](self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#email) for self-hosted environments, including live updates to mail server settings, and test email functionality. <AccountBadge/> <SelfHostedBadge/>
+- Introduced the [Appcircle Assistant GPT](/marketplace/open-ai), a custom AI assistant that provides answers about Appcircle, including step-by-step instructions and troubleshooting support. <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- The [bind](/build/build-process-management/build-manually-or-with-triggers#binding-existing-manual-webhooks-to-other-build-profiles) option can now be used by build profiles to reuse existing manual webhooks for accessing the same repository across other build profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Branch names that exactly match the search input are now displayed at the top of the search results within the build profile. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The warning message on form validations has been improved for cases where the text input is too long. <CloudBadge/> <SelfHostedBadge/>
+- The app version icon will now be displayed in the binary information option within the publish profiles. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The username option has been removed from the Bitbucket repository PAT-type connection settings. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Upgraded NGINX dependency to `1.29.0` to ensure up-to-date security and stability in self-hosted environments. <InfrastructureBadge/> <SelfHostedBadge/>
+- Upgraded PostgreSQL to `14.18` for standalone (Docker/Podman) deployments to ensure latest security and stability improvements. <InfrastructureBadge/> <SelfHostedBadge/>
+- Added support for customizing container engine network subnets to avoid conflicts with existing network subnets in standalone self-hosted Appcircle installations. <InfrastructureBadge/> <SelfHostedBadge/>
+- Upgraded NGINX to an unprivileged image, enabling it to run without root and enhancing security by adhering to the principle of least privilege on self-hosted Appcircle Servers. <InfrastructureBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- An issue has been fixed where, on some occasions, the webhook URL was being updated during the configuration phase. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where an existing manual webhook used by a build profile was not detected by other build profiles connected to the same repository. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where, on some occasions, clicking the webhook icon on the build profile caused disruptions in the webhook connection. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where refreshing the browser page caused UI problems on the iOS tab of the testing distribution profiles. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Various UI issues related to testing distribution module that were experienced on Firefox browsers have been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the current organization was being reset after login for users with inherited access to sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where using an HTTP proxy alongside service replicas in standalone self-hosted Appcircle Server deployments could lead to network connectivity problems. <InfrastructureBadge/> <SelfHostedBadge/>
+- An issue has been fixed where new branches did not appear in the Appcircle branch list if webhooks were disabled in Azure DevOps 2020 repositories. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :warning: Breaking Changes
+
+- We’ve resolved an issue where sharing an Enterprise API Key with another organization would change the key type, leading to authentication errors during API requests. This fix is not backward compatible. If you have shared an Enterprise API Key across organizations, please delete and add again only those shared keys to ensure everything works properly. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.28.1 - 2025-06-16 New Bitbucket Repository Connection Types, UI Enhancements, Improvements and more
 
 ### 🆕 New Features
 
-- Root organization credentials, such as [App Store Connect](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#sharing-app-store-connect-credentials) and [Google Play Developer](/account/my-organization/security/credentials/adding-google-play-service-account#sharing-google-play-developer-credentials) API keys, can now be shared with sub-organizations. <AccountBadge/> <CloudBadge/>
-- The [“Hide from profile list on Testing”](/testing-distribution/create-or-select-a-distribution-profile#hide-from-profile-list) toggle can now be used in Testing Distribution profile settings to prevent the selected profile from appearing in the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/>
-- [Bundle and Package Validation](/testing-distribution/create-or-select-a-distribution-profile#bundlepackage-identifier-validation) toggles can now be used to specify a bundle ID (for iOS) or package ID (for Android). When enabled, any app with a different bundle or package ID will be blocked from being uploaded to the Testing Distribution profile. <DistributionBadge/> <CloudBadge/>
+- Root organization credentials, such as [App Store Connect](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#sharing-app-store-connect-credentials) and [Google Play Developer](/account/my-organization/security/credentials/adding-google-play-service-account#sharing-google-play-developer-credentials) API keys, can now be shared with sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [“Hide from profile list on Testing”](/testing-distribution/create-or-select-a-distribution-profile#hide-from-profile-list) toggle can now be used in Testing Distribution profile settings to prevent the selected profile from appearing in the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Bundle and Package Validation](/testing-distribution/create-or-select-a-distribution-profile#bundlepackage-identifier-validation) toggles can now be used to specify a bundle ID (for iOS) or package ID (for Android). When enabled, any app with a different bundle or package ID will be blocked from being uploaded to the Testing Distribution profile. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [“Hide Shared Application List”](/testing-distribution/create-or-select-a-distribution-profile#hide-shared-application-list) toggle can now be used under the Authentication tab in Testing Distribution profile settings to restrict access to the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
-- [Repository-based](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket#connecting-to-bitbucket-cloud-repository) access support has been added for build profiles to be used with both Bitbucket Self-Hosted and Bitbucket Cloud. <BuildBadge/> <CloudBadge/>
-- UI improvements have been made to the [connection](/build/manage-the-connections) list, where the used provider and connection type such as Personal Access Token (User)(Cloud) are now displayed as tags next to the saved PAT connections. <BuildBadge/> <CloudBadge/>
-- Notification support has been added for CodePush actions across Email, Microsoft Teams, and Slack channels. <BuildBadge/> <CloudBadge/>
-- Improved the error message returned when a specified deployment cannot be found during the appcircle-code-push release-react command. The message now clearly indicates that the deployment does not exist, replacing the previous generic “INTERNAL_ERROR” response. <BuildBadge/> <CloudBadge/>
-- [Export as CSV](/testing-distribution/testing-groups#exporting-testing-group-members-as-csv) option has been added for Testing Groups to extract the tester email list as a CSV file for easier sharing and external management. <DistributionBadge/> <CloudBadge/>
-- The “Show only shared version to the tester” option can now be used in the Auto Send Configuration within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/>
-- When the “Show only shared version to the tester” option is enabled, testers will be restricted from using the search bar and accessing other shared Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
-- Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/>
-- UTF-8 characters are now supported when naming a provisioning profile during its creation. <SigningIdentitiesBadge/> <CloudBadge/>
-- The [Send to Testing Distribution](/publish-integrations/common-publish-integrations/send-to-testing-distribution) Publish step has been added, allowing users to directly send their apps from a Publish Profile to a selected Testing Distribution profile. <PublishBadge/> <CloudBadge/>
+- Webhook distribution to profiles in Appcircle is now handled through a single repository-level webhook registration, streamlining integration across associated profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A Webhook Key Generation option has been added to the [manual webhook creation](/build/build-process-management/build-manually-or-with-triggers#setting-up-manual-webhooks-based-on-repository-connection-type) screen for build profiles with public and SSH repositories. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Repository-based](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket#connecting-to-bitbucket-cloud-repository) access support has been added for build profiles to be used with both Bitbucket Self-Hosted and Bitbucket Cloud. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- UI improvements have been made to the [connection](/build/manage-the-connections) list, where the used provider and connection type such as Personal Access Token (User)(Cloud) are now displayed as tags next to the saved PAT connections. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Notification support has been added for CodePush actions across Email, Microsoft Teams, and Slack channels. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improved the error message returned when a specified deployment cannot be found during the appcircle-code-push release-react command. The message now clearly indicates that the deployment does not exist, replacing the previous generic “INTERNAL_ERROR” response. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The date and time information will now be displayed alongside the latest commit message when starting builds. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Export as CSV](/testing-distribution/testing-groups#exporting-testing-group-members-as-csv) option has been added for Testing Groups to extract the tester email list as a CSV file for easier sharing and external management. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The “Show only shared version to the tester” option can now be used in the Auto Send Configuration within the Testing Distribution profile settings. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When the “Show only shared version to the tester” option is enabled, testers will be restricted from using the search bar and accessing other shared Testing Distribution profiles. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improvements have been made to the Testing Portal mobile view, where app details are now shown within the app list when selected, instead of opening at the top of the screen. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Platform selection (iOS and macOS) has been added to the Apple Bundle Identifier creation settings. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- UTF-8 characters are now supported when naming a provisioning profile during its creation. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Send to Testing Distribution](/publish-integrations/common-publish-integrations/send-to-testing-distribution) Publish step has been added, allowing users to directly send their apps from a Publish Profile to a selected Testing Distribution profile. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Support has been added for using human-readable names instead of UUIDs across all [CLI](https://github.com/appcircleio/appcircle-cli/releases/tag/v2.7.0) parameters, and the `-o` JSON output formatting has been fixed. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
-- An issue was fixed where an error was thrown by the API when attempting to create a new provisioning profile with both In-House and App Store Connect types. <PublishBadge/> <CloudBadge/>
-- An issue was fixed where, with Auto Publish enabled, receiving an app with a different version resulted in a new app being created on Intune instead of updating the app previously marked as RC. <PublishBadge/> <CloudBadge/>
-- An issue was fixed where UI inconsistencies were encountered after redirection when a different organization was accessed while viewing a CodePush app page. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where app icons were not displayed on the email sending screen of the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
-- An issue was fixed where the help button for the Resign Binary feature was redirecting users to an invalid link within the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where an error was thrown by the API when attempting to create a new provisioning profile with both In-House and App Store Connect types. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where, with Auto Publish enabled, receiving an app with a different version resulted in a new app being created on Intune instead of updating the app previously marked as RC. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A UI description issue for Android binary information on Publish Profiles has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where UI inconsistencies were encountered after redirection when a different organization was accessed while viewing a CodePush app page. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where app icons were not displayed on the email sending screen of the Testing Distribution module. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the help button for the Resign Binary feature was redirecting users to an invalid link within the Testing Distribution module. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A texture issue on the Testing Portal has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where Android binary icons were not displayed on the Testing Portal login screen for Testing Distribution profiles that did not include iOS binaries. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where navigating to a sub-organization from the Organization module resulted in incorrect access error messages. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The `NOT_AUTHORIZED` error that occurred while publishing apps to the App Store using Xcode 16.0-16.2 versions on macOS Sequoia runners was fixed. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/> 
+- The `error XA5300: The Android SDK directory could not be found` issue that occurred while building MAUI Android apps on macOS Sequoia runners was fixed. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue in the Git Clone step where branch names containing special characters (e.g., (, )) caused shell syntax errors. Branch names are now properly wrapped in quotes to ensure safe execution. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.28.0 - 2025-05-21 CodePush Integration, Send Email Publish Step, Improvements and more
 
 ### 🆕 New Features
 
-- [CodePush](/code-push) has now been fully integrated with Appcircle, enabling over-the-air (OTA) updates with granular rollout control, rollback safety, and precise version targeting, thereby enhancing release agility and improving the user experience. <BuildBadge/> <CloudBadge/>
-- The new Appcircle CodePush workflow step has been introduced to automate build-time deployment: selects the deployment, bundles the JavaScript assets, and uploads the package to the Appcircle CodePush server. <BuildIntegrationsBadge/> <CloudBadge/>
-- The [Send Email](/publish-integrations/common-publish-integrations/send-email) publish step has been added to the Publish Flow options to send customized email notifications during your Appcircle Publish Flow for both iOS and Android publishes. This can be used to alert stakeholders, notify of publish statuses, or provide deployment-related information. <PublishBadge/> <CloudBadge/>
-- The [Hide Certificate Details](/enterprise-app-store/enterprise-app-store-profile#hide-certificate-details) toggle can now be enabled from the Enterprise App Store profile settings to hide certificate details when app versions are published to the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
-- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest GA release of the [Xcode 16.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- [CodePush](/code-push) has now been fully integrated with Appcircle, enabling over-the-air (OTA) updates with granular rollout control, rollback safety, and precise version targeting, thereby enhancing release agility and improving the user experience. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/> 
+- The new Appcircle CodePush workflow step has been introduced to automate build-time deployment: selects the deployment, bundles the JavaScript assets, and uploads the package to the Appcircle CodePush server. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Send Email](/publish-integrations/common-publish-integrations/send-email) publish step has been added to the Publish Flow options to send customized email notifications during your Appcircle Publish Flow for both iOS and Android publishes. This can be used to alert stakeholders, notify of publish statuses, or provide deployment-related information. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Hide Certificate Details](/enterprise-app-store/enterprise-app-store-profile#hide-certificate-details) toggle can now be enabled from the Enterprise App Store profile settings to hide certificate details when app versions are published to the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest GA release of the [Xcode 16.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
-- The use of environment variables within the metadata detail fields, such as phone and email, in the publish module is now supported. <PublishBadge/> <CloudBadge/>
-- The store status change option has been added to the notifications list. Users can now be automatically notified when the store status changes for a version within the publish module. <PublishBadge/> <CloudBadge/>
-- The id key has been removed from the downloaded environment variable JSON file to simplify the structure and prevent potential conflicts during re-import or reuse. <EnvironmentVariablesBadge/> <CloudBadge/>
-- “Expired” and “Exists” tags have been added to Apple provisioning profiles to improve visibility during registering operations. <SigningIdentitiesBadge/> <CloudBadge/>
-- An “Available” label is now shown for certificates already registered in Appcircle during provisioning profile registration. <SigningIdentitiesBadge/> <CloudBadge/>
-- Binary search by name, bundle ID, and version is now supported within the Enterprise Portal. Additionally, versions can be sorted by version number and upload date. <EnterpriseStoreBadge/> <CloudBadge/>
-- A new UI warning is now displayed when too many requests are sent within a short time frame. <CloudBadge/>
-- Help link buttons have been added across various module components where they were previously missing. <CloudBadge/>
-- Webhook notification channels now support events related to the Publish module. <AccountBadge/> <CloudBadge/>
-- Improved the sorting of organization and sub-organization lists by applying alphabetical and numeric order where applicable. <AccountBadge/> <CloudBadge/>
-- A name field has been added allowing users to assign a custom name to their webhook notification integration settings. <AccountBadge/> <CloudBadge/>
-- Various typos have been corrected and text improvements have been made in the webhook notification integration settings. <AccountBadge/> <CloudBadge/>
-- An exit icon has been added to the “Leave Organization” button to replace the previous delete icon. <AccountBadge/> <CloudBadge/>
+- The use of environment variables within the metadata detail fields, such as phone and email, in the publish module is now supported. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The store status change option has been added to the notifications list. Users can now be automatically notified when the store status changes for a version within the publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The id key has been removed from the downloaded environment variable JSON file to simplify the structure and prevent potential conflicts during re-import or reuse. <EnvironmentVariablesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- “Expired” and “Exists” tags have been added to Apple provisioning profiles to improve visibility during registering operations. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An “Available” label is now shown for certificates already registered in Appcircle during provisioning profile registration. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Binary search by name, bundle ID, and version is now supported within the Enterprise Portal. Additionally, versions can be sorted by version number and upload date. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new UI warning is now displayed when too many requests are sent within a short time frame. <CloudBadge/> <SelfHostedBadge/>
+- Help link buttons have been added across various module components where they were previously missing. <CloudBadge/> <SelfHostedBadge/>
+- Webhook notification channels now support events related to the Publish module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improved the sorting of organization and sub-organization lists by applying alphabetical and numeric order where applicable. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A name field has been added allowing users to assign a custom name to their webhook notification integration settings. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Various typos have been corrected and text improvements have been made in the webhook notification integration settings. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An exit icon has been added to the “Leave Organization” button to replace the previous delete icon. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
-- An issue was fixed where the Custom Domain option could not be enabled by cloud users in the Enterprise App Store settings. <EnterpriseStoreBadge/> <CloudBadge/>
-- Fixed an issue where users accessing Enterprise App Store profiles via direct channel links could not view the release notes of the binaries. <EnterpriseStoreBadge/> <CloudBadge/>
-- An issue was fixed where branches deleted from the repository were not removed from the list until the screen was refreshed. <BuildBadge/> <CloudBadge/>
-- An issue has been fixed where the “Select All” button was not functioning for the build item list within the Build module. <BuildBadge/> <CloudBadge/>
-- An issue has been fixed where refreshing the branch list caused the selected branch to be deselected. <BuildBadge/> <CloudBadge/>
-- Fixed an issue where users who were members of only a single sub-organization experienced problems related to license scope. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the Custom Domain option could not be enabled by cloud users in the Enterprise App Store settings. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where users accessing Enterprise App Store profiles via direct channel links could not view the release notes of the binaries. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where branches deleted from the repository were not removed from the list until the screen was refreshed. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the “Select All” button was not functioning for the build item list within the Build module. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where refreshing the branch list caused the selected branch to be deselected. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue where users who were members of only a single sub-organization experienced problems related to license scope. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :warning: Breaking Changes
 
-- The reserved Publish environment variable `AC_PUBLISH_WORKFLOW_NAME` has been renamed to `AC_PUBLISH_FLOW_NAME`, and its value will now be set to “Default Publish Flow” instead of the step name. <PublishBadge/> <EnvironmentVariablesBadge/> <CloudBadge/>
+- The reserved Publish environment variable `AC_PUBLISH_WORKFLOW_NAME` has been renamed to `AC_PUBLISH_FLOW_NAME`, and its value will now be set to “Default Publish Flow” instead of the step name. <PublishBadge/> <EnvironmentVariablesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.27.2 - 2025-05-09 Upload Option for Variable Groups, Build Enhancements, Improvements and more
 
@@ -191,7 +239,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Information regarding LDAP SMS 2FA support has been added for both Cloud and Self-hosted Appcircle servers. <SelfHostedBadge/>
 - Notifications are now sent when license limits are reached, with state management preventing duplicate alerts. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Starter organizations can be deleted by users with an enterprise organization, except when SSO is enabled. In such cases, the starter organization cannot be deleted. After confirmation, the organization is deleted, the session is terminated, and the user is redirected to sign in via SSO. <AccountBadge/> <CloudBadge/>
-- Permission requests have been updated for [GitHub OAuth](/build/manage-the-connections/adding-a-build-profile/connecting-to-github#oauth-permissions-for-github-integration) repository connections in Build Profiles within Appcircle. <BuildBadge/> <CloudBadge/>
+- Permission requests have been updated for [GitHub OAuth](/build/manage-the-connections/adding-a-build-profile/connecting-to-github#oauth2-and-personal-access-token-permissions-for-github-integration) repository connections in Build Profiles within Appcircle. <BuildBadge/> <CloudBadge/>
 - Android submission logs are now added to the [Publish Activity Log](publish-module/publish-activity-log), including release submissions, status updates, and successfully completed transactions. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new option has been added to [Apple Devices](signing-identities/apple-devices) for users to view both active and inactive devices together. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An improved preview screen has been added to the Apple Provision Profile Addition screen, allowing users to view Apple devices and certificates before proceeding. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -1060,7 +1108,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 - Permission (role) naming has been changed in [advanced role management](/account/my-organization/profile-and-team/team-management#advanced-role-management). Also, there are some new roles added for better scope management in your organization. <CloudBadge/> <SelfHostedBadge/>
 - [Share with Testers](testing-distribution/create-or-select-a-distribution-profile#share-your-application-with-the-test-groups-manually) in Testing Distribution now has a new toggle option that enables you to display only the shared app version instead of all app versions. <CloudBadge/> <SelfHostedBadge/>
-- Appcircle Notifications now has improvements on [Slack](https://docs.appcircle.io/account/slack/slack-notifications), [Microsoft Teams](https://docs.appcircle.io/account/teams-notifications), [Email](https://docs.appcircle.io/account/email-connection), and [Webhook](https://docs.appcircle.io/account/webhooks) channels that allows you to share release notes, build logs, and test reports via notifications. <CloudBadge/> <SelfHostedBadge/>
+- Appcircle Notifications now has improvements on [Slack](/account/my-organization/notifications/slack-notifications), [Microsoft Teams](https://docs.appcircle.io/account/teams-notifications), [Email](https://docs.appcircle.io/account/email-connection), and [Webhook](https://docs.appcircle.io/account/webhooks) channels that allows you to share release notes, build logs, and test reports via notifications. <CloudBadge/> <SelfHostedBadge/>
 - The Store Submit module has been deprecated and it will be replaced by the brand-new [Publish](https://docs.appcircle.io/publish-module) module. You should transfer your apps to the [Publish](https://docs.appcircle.io/publish-module) module in order to submit your apps to the stores. <CloudBadge/> <SelfHostedBadge/>
 - The Appcircle CLI has undergone a complete revision to make it compatible with the latest Appcircle API. Now it also supports self-hosted Appcircle servers. You can see all the recent changes made in the [changelog](https://github.com/appcircleio/appcircle-cli/blob/main/CHANGELOG.md) and follow [configuration instructions](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/appcircle-cli) to use the CLI with a self-hosted Appcircle server. <CloudBadge/> <SelfHostedBadge/>
 

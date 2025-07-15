@@ -310,13 +310,23 @@ minio:
 
 By default, the Appcircle chart includes an in-cluster HashiCorp Vault deployment provided by `hashicorp/vault`.
 
-If you are deploying the appcircle for testing purposes, the built-in Vault deployment can be used.
+#### Test (or Trial) Environments
 
-For production environments, it is recommended to configure an external Hashicorp Vault instance. The recommended version is Vault `v1.10.3`, with a disk size of 20GB.
+For testing purposes, the built-in Vault deployment can be used. In this setup, the storage is kept in Kubernetes.
 
-To use an external Vault instance, you can follow the steps below:
+If the Kubernetes cluster has multiple nodes, it should be configured to guarantee that all Vault replicas reach the same storage for consistency.
 
-- Create a secret with the name `${releaseName}-vault-seal` containing the `token` key.
+#### Production Environments
+
+For production environments, it is recommended to configure an external HashiCorp Vault instance instead of using the built-in deployment. There are two approaches for this:
+
+##### External Vault Service
+
+In this setup, Appcircle connects to an externally managed Vault service. Vault operates independently from Kubernetes, ensuring better availability and scalability. The recommended Vault version is `v1.10.3` with a disk size of at least 20GB.
+
+To use an external Vault instance, follow these steps:
+
+- Create a Kubernetes secret with the name `${releaseName}-vault-seal` containing the Vault access token:
 
 ```bash
 kubectl create secret generic appcircle-server-vault-seal \
@@ -324,7 +334,7 @@ kubectl create secret generic appcircle-server-vault-seal \
   --from-literal=token=hvs.superSecretVaultKey
 ```
 
-- Update the `values.yaml` accordingly.
+- Update the `values.yaml` file accordingly:
 
 ```yaml
 global:
@@ -333,5 +343,53 @@ global:
 vault:
   enabled: false
 ```
+
+##### External Data Store (e.g., MSSQL)
+
+As an alternative to using an external Vault service, you can configure Vault to use an external database such as MSSQL for storage while keeping the Vault instance inside Kubernetes.
+
+You can find more storage configurations on the official HashiCorp documentation: [HashiCorp Vault Database Capabilities](https://developer.hashicorp.com/vault/docs/v1.10.x/secrets/databases#database-capabilities).
+
+To use MSSQL as the storage backend:
+
+- Ensure that your MSSQL database is accessible and properly configured.
+
+- Update the `values.yaml` file to configure Vault with MSSQL as the backend:
+
+```yaml
+# Third party charts
+vault:
+  server:
+    standalone:
+      config: |
+        ui = true
+
+        listener "tcp" {
+          tls_disable = 1
+          address = "[::]:8200"
+          cluster_address = "[::]:8201"
+        }
+
+        storage "mssql" {
+          server = "10.10.117.67"
+          port = 1433
+          username = "sqlserveruser"
+          password = "supersecretpassword"
+          database = "appcircle-vault"
+          table = "vault"
+          appname = "vault"
+          schema = "dbo"
+          connectionTimeout = 30
+          logLevel = 0
+        }
+    dataStorage:
+      enabled: false
+```
+
+#### Choosing the Right Setup
+
+- If you have an **existing Vault service**, configure Appcircle to connect to it (**recommended for production**).
+- If you prefer **running Vault inside Kubernetes** but want persistent storage, use an **external data store (e.g., MSSQL)** as the storage backend.
+- For testing (or trial) purposes, the built-in Vault deployment **can be used but is not recommended for production workloads**. Also, it should be configured to guarantee that all Vault replicas reach the same storage for consistency when the cluster has multiple nodes.
 
 <NeedHelp />
