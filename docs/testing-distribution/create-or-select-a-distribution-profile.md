@@ -288,7 +288,7 @@ Under the Authentication tab in the settings, you can select a preferred authent
 - **SSO Login**: SSO login for all testers (Enterprise accounts only)
 - **LDAP Login**: LDAP login for all testers (Enterprise accounts only)
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6472-hide.png' />
 
 To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Security screen and press the "Connect" button next to SSO Login or LDAP Login under the "Authentications" section.
 
@@ -300,6 +300,18 @@ To add your SSO and LDAP details, go to [My Organization](/account/my-organizati
 If SSO and LDAP details are not configured for your organization, these authentication methods will not be visible in the Distribution Profile settings.
 
 :::
+
+#### Hide Shared Application List
+
+You can restrict access to the shared application list within the Testing Portal by enabling the **Hide Shared Application List** toggle under the **Authentication** tab of a Testing Distribution Profile.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6472-hide2.png' />
+
+**When enabled:**
+
+- The **Shared Application List** will be **hidden** for users accessing the Testing Portal.
+- This restriction **applies** regardless of the **selected authentication type** (None, SSO Login, LDAP Login, or Static Username and Password).
+- Testers will **only** see the application(s) associated with the specific distribution profile and will **not** be able to browse shared releases from other profiles.
 
 ### Distribution Link
 
