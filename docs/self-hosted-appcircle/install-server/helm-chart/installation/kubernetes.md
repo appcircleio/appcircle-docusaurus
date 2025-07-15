@@ -404,6 +404,15 @@ webeventredis:
   </TabItem>
 </Tabs>
 
+:::caution
+Starting from the server version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset. To use this method:
+
+1. Exclude the `global.mail` part from the `values.yaml` file.
+2. Configure SMTP settings on the Appcircle Dashboard after installation.
+
+See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+:::
+
 ### 2. Remove Sensitive Information From `values.yaml`
 
 **Remove sensitive information** such as Appcircle initial user password, SMTP password, SSL certificates, and other secrets from the `values.yaml` **for production environments**, by checking the [Sensitive Values](/self-hosted-appcircle/install-server/helm-chart/configuration/sensitive-configuration) documentation.
