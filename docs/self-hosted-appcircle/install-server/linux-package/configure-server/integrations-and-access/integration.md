@@ -69,15 +69,17 @@ The "SMTP Configuration" page is located under the **Admin** menu. This menu is 
 
 - If your settings are correct, click the "Save" button to apply the settings.
 
-<!-- Cautions: Static Config in Use, Shared Across Organizations -->
-
 :::info
-Email notifications use the "FROM DISPLAY NAME" as the sender name (or from name). However, when you [share a binary](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#share-binary) using the **Testing Distribution** module, the **profile name** will be displayed as the sender, as shown in the example email provided in the linked documentation.
+Email notifications use the "FROM DISPLAY NAME" as the sender name (or from name).
+
+However, when you [share a binary](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#share-binary) using the **Testing Distribution** module, the **profile name** will be displayed as the sender, as shown in the example email provided in the linked documentation.
 :::
 
 ### Configure via `global.yaml`
 
-If you prefer to configure SMTP via `global.yaml` for initial installation; you can edit the `global.yaml` file and change SMTP settings according to your mail server. See the example below for configuration options:
+If you prefer to configure the SMTP settings via `global.yaml` for initial installation, you can edit the `global.yaml` file and change SMTP settings according to your mail server.
+
+See the example below for configuration options:
 
 ```yaml
 smtpServer:
@@ -95,6 +97,8 @@ smtpServer:
 
 :::tip
 Even if you initially configure SMTP using `global.yaml`, you can still use the Appcircle Dashboard for subsequent updates.
+
+But **keep in mind that** beforehand you should remove the relevant settings from the `global.yaml` effectively, which requires you to apply configuration changes and restart the Appcircle server. Otherwise, the settings that came from the static config will be non-editable in the Appcircle Dashboard "SMTP configuration" form.
 :::
 
 Explanation of each key:
@@ -117,7 +121,9 @@ The `verifyCertificate` option is available in version `3.23.1` or later.
 :::
 
 :::info
-Email notifications use the `fromDisplayName` as the sender name (or from name). However, when you [share a binary](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#share-binary) using the **Testing Distribution** module, the **profile name** will be displayed as the sender, as shown in the example email provided in the linked documentation.
+Email notifications use the `fromDisplayName` as the sender name (or from name).
+
+However, when you [share a binary](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#share-binary) using the **Testing Distribution** module, the **profile name** will be displayed as the sender, as shown in the example email provided in the linked documentation.
 :::
 
 ## SSO
