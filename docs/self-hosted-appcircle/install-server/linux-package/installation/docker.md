@@ -797,14 +797,22 @@ Its response should be something like below.
 `WARNING:Services are not started. Project name is spacetech`
 
 :::caution
-
 Some configuration changes may require data cleanup with extra steps which means data loss if you use Appcircle server for some time.
 
 For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.*` settings requires docker volume prune which results with data cleanup.
 
-**Note:** Starting from version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard without a server reset or data cleanup. Even if you used the `global.yaml` file for initial configuration of `smtpServer`, you can update your SMTP configuration on the Dashboard at any time. See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
-
 So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
+:::
+
+:::tip
+#### SMTP Configuration
+
+Starting from version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard without a server reset or data cleanup.
+
+This is the recommended method if you do not have any specific reason to do it in the `global.yaml`.
+
+See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+:::
 
 To begin reconfiguration with data cleanup (for settings like `external.scheme`), use below command while stopping Appcircle server.
 
@@ -813,8 +821,6 @@ To begin reconfiguration with data cleanup (for settings like `external.scheme`)
 ```
 
 It will remove all unused local volumes which is useful for a clean start.
-
-:::
 
 Then go back to your configuration and change settings as done previously at [configure](/self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) step.
 
