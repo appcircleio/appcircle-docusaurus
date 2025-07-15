@@ -63,10 +63,10 @@ build:
 
 If you want to re-enable "Bitbucket" again, you can set the `enabled` to `true`.
 
-You can configure only the self-hosted or cloud "Bitbucket" options using the relevant sections.
+You can configure only the self-hosted or cloud "Bitbucket" options using the relevant keys.
 
-- The `bitbucket` section is used to manage **Bitbucket (Cloud)**.
-- The `bitbucketServer` section is used to manage **Bitbucket Server**.
+- The `bitbucket` key is used to manage **Bitbucket (Cloud)**.
+- The `bitbucketServer` key is used to manage **Bitbucket Server**.
 
 For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket) page.
 
@@ -87,10 +87,10 @@ build:
 
 If you want to re-enable "Azure DevOps" again, you can set the `enabled` to `true`.
 
-You can configure only the self-hosted or cloud "Azure DevOps" options using the relevant sections.
+You can configure only the self-hosted or cloud "Azure DevOps" options using the relevant keys.
 
-- The `azureDevopsServices` section is used to manage **Azure DevOps Services (Cloud)**.
-- The `azureDevopsServer` section is used to manage **Azure DevOps Server**.
+- The `azureDevopsServices` key is used to manage **Azure DevOps Services (Cloud)**.
+- The `azureDevopsServer` key is used to manage **Azure DevOps Server**.
 
 For more details about "Azure DevOps" usage, see related docs in the [Connecting to Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) page.
 
@@ -111,10 +111,10 @@ build:
 
 If you want to re-enable "GitLab" again, you can set the `enabled` to `true`.
 
-You can configure only the self-hosted or cloud "GitLab" options using the relevant sections.
+You can configure only the self-hosted or cloud "GitLab" options using the relevant keys.
 
-- The `gitlab` section is used to manage **GitLab (Cloud)**.
-- The `gitlabSelfHosted` section is used to manage **GitLab Self-Managed**.
+- The `gitlab` key is used to manage **GitLab (Cloud)**.
+- The `gitlabSelfHosted` key is used to manage **GitLab Self-Managed**.
 
 For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab) page.
 
@@ -135,10 +135,10 @@ build:
 
 If you want to re-enable "GitHub" again, you can set the `enabled` to `true`.
 
-You can configure only the self-hosted or cloud "GitHub" options using the relevant sections.
+You can configure only the self-hosted or cloud "GitHub" options using the relevant keys.
 
-- The `githubApp` section is used to manage **GitHub (Cloud)**.
-- The `githubEnterpriseServer` section is used to manage **GitHub Enterprise Server**.
+- The `githubApp` key is used to manage **GitHub (Cloud)**.
+- The `githubEnterpriseServer` key is used to manage **GitHub Enterprise Server**.
 
 For more details about "GitHub" usage, see related docs in the [Connecting to GitHub](/build/manage-the-connections/adding-a-build-profile/connecting-to-github) page.
 
@@ -186,7 +186,7 @@ To apply the changes, please follow the [Applying Git Provider Changes](#applyin
 
 You can add or remove git providers at [installation](/self-hosted-appcircle/install-server/linux-package/installation/docker) steps or later when you need. Following sections will explain how to apply changes especially after installation.
 
-Let's assume we want to disable both "Connect via SSH" and "Connect via URL" options. Then we need to add below section to our `global.yaml`.
+Let's assume we want to disable both "Connect via SSH" and "Connect via URL" options. Then we need to add below configuration to our `global.yaml`.
 
 ```yaml
 build:
@@ -199,11 +199,11 @@ build:
 
 :::caution
 
-You should have only one `build.oauths` section in your `global.yaml` file.
+You should have only one `build.oauths` key in your `global.yaml` file.
 
-Keep in mind that if you have multiple `build.oauths` sections in `global.yaml`, then the last one will be used in the Appcircle server runtime.
+Keep in mind that if you have multiple `build.oauths` keys in `global.yaml`, then the last one will be used in the Appcircle server runtime.
 
-Be careful while configuring different connection options at the same time. Union them under one `build.oauths` section in the `global.yaml`.
+Be careful while configuring different connection options at the same time. Union them under one `build.oauths` key in the `global.yaml`.
 
 :::
 
