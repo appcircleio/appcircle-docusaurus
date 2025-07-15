@@ -515,10 +515,10 @@ cd appcircle-server
 ./ac-self-hosted.sh -n spacetech down
 ```
 
-- If you want to use the [CodePush feature](/code-push/index.md) in the Appcircle DMZ server, you need to configure the CodePush domain name and it's SSL certificate in the Appcircle server `global.yaml` file.
+- (optional) If you want to use the [CodePush](/code-push/) feature in the Appcircle DMZ server, you need to configure the CodePush domain name and its SSL certificate in the Appcircle server `global.yaml` file.
 
 <details>
-    <summary>Click to see how to configure the CodePush feature in the Appcircle DMZ server</summary>
+    <summary>Click to see how to configure the CodePush feature in the Appcircle DMZ server.</summary>
 
 <Tabs
 defaultValue="docker"
