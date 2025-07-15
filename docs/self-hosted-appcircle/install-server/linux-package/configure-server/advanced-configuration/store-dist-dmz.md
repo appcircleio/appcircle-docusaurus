@@ -566,7 +566,7 @@ codepushProxy:
 :::caution
 The `codepushProxy.external.port` must be `8443` and `codepushProxy.external.scheme` must be `https` to use the CodePush feature in the Appcircle DMZ server with HTTPS.
 
-Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/linux-package/installation/podman#overcoming-privileged-port-limitations) on the host, you will connect to the CodePush with the `TCP/443` port as usual from the internet.
+Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/podman#overcoming-privileged-port-limitations) on the host, you will connect to the CodePush with the `TCP/443` port as usual from the internet.
 :::
 
 </TabItem>
@@ -615,9 +615,9 @@ The `codepushProxy.external.port` must be `443` and `codepushProxy.external.sche
 
 </Tabs>
 
-- After you have configured the CodePush feature on the Appcircle DMZ server with a new domain name, you need to update the `CodePushServerUrl` in the [CodePush SDK configuration](/code-push/code-push-sdk#codepush-configurations-in-project) of your mobile application.
+- After you have configured the CodePush feature on the Appcircle DMZ server with a new domain name, you need to update the `CodePushServerUrl` in the [CodePush SDK configuration](https://docs.appcircle.io/code-push/code-push-sdk#codepush-configurations-in-project) of your mobile application.
 
-  - For example, if you have configured the CodePush feature on the Appcircle DMZ server with the `codepush.spacetech.com` domain name, you need to update the `CodePushServerUrl` in the [CodePush SDK configuration](/code-push/code-push-sdk#codepush-configurations-in-project) of your mobile application to `https://codepush.spacetech.com` from the default `https://api.appcircle.spacetech.com/codepush` URL.
+  - For example, if you have configured the CodePush feature on the Appcircle DMZ server with the `codepush.spacetech.com` domain name, you need to update the `CodePushServerUrl` in the [CodePush SDK configuration](https://docs.appcircle.io/code-push/code-push-sdk#codepush-configurations-in-project) of your mobile application to `https://codepush.spacetech.com` from the default `https://api.appcircle.spacetech.com/codepush` URL.
 
   :::caution
   Please make sure to remove the `/codepush` path from the `CodePushServerUrl`.
