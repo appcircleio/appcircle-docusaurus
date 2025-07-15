@@ -619,8 +619,9 @@ The `codepushProxy.external.port` must be `443` and `codepushProxy.external.sche
 
   - For example, if you have configured the CodePush feature on the Appcircle DMZ server with the `codepush.spacetech.com` domain name, you need to update the `CodePushServerUrl` in the [CodePush SDK configuration](https://docs.appcircle.io/code-push/code-push-sdk#codepush-configurations-in-project) of your mobile application to `https://codepush.spacetech.com` from the default `https://api.appcircle.spacetech.com/codepush` URL.
 
-  :::caution
-  Please make sure to remove the `/codepush` path from the `CodePushServerUrl`.
+:::caution
+Please make sure to remove the `/codepush` path from the `CodePushServerUrl`.
+:::
 
 </details>
 
