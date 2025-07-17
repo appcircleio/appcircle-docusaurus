@@ -410,7 +410,9 @@ Starting from the server version `3.28.2`, SMTP settings can be configured and u
 1. Exclude the `global.mail` part from the `values.yaml` file.
 2. Configure SMTP settings on the Appcircle Dashboard after installation.
 
-See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+See the [email integration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) document for more information about the SMTP configuration.
+
+See the [version history](/self-hosted-appcircle/install-server/helm-chart/upgrades#version-history) to find out the minimum required Helm chart version for the server.
 :::
 
 ### 2. Remove Sensitive Information From `values.yaml`
