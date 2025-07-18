@@ -54,23 +54,23 @@ With the **Display Name** parameter, you can change the visible name of the bina
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-dipslayName.png' />
 
-#### Update Build Number
+#### Update Build Number and Version Code
 
-With the **Update Build Number** feature, you can automatically increment the build number of the uploaded binary during the auto re-sign process using the specified offset value. When this feature is enabled, a new build number will be generated based on the given offset before the re-signing begins, and the binary will be signed with this updated build number.
+With the **Update Build Number(iOS)** and **Update Version Code(Android)** features, you can automatically increment the build number/version code of the uploaded binary during the auto re-sign process using the specified offset value. When this feature is enabled, a new build number/version code will be generated based on the given offset before the re-signing begins, and the binary will be signed with this updated build number/version code.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-updateBuildNumber.png' />
 
-- **Build Number Source**: The defined base build number will be used for versioning during the re-signing process. **Uploaded Binary** is only available option for now.
-- **Build Number Offset**: The offset value is a number to be added or subtracted from the **build number source**.
+- **Build Number/Version Code Source**: The defined base build number will be used for versioning during the re-signing process. **Uploaded Binary** is only available option for now.
+- **Build Number/Version Code Offset**: The offset value is a number to be added or subtracted from the **build number source**.
 
-#### Update Version Number
+#### Update Version Number and Version Name
 
-With the **Update Version Number** feature, you can automatically increment the version number of the uploaded binary during the auto re-sign process using the specified offset value. When this feature is enabled, a new version number will be generated before the re-signing begins, based on the selected increment strategy and offset, and the binary will be signed with this updated version number.
+With the **Update Version Number(iOS)** and **Update Version Name(Android)** features, you can automatically increment the version number/version name of the uploaded binary during the auto re-sign process using the specified offset value. When this feature is enabled, a new version number/version name will be generated before the re-signing begins, based on the selected increment strategy and offset, and the binary will be signed with this updated version number/version name.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-updateVersionNumber.png' />
 
-- **Version Number Source**: The defined base version number will be used for versioning during the re-signing process. **Uploaded Binary** is only available option for now.
-- **Version Number Offset**: The offset value is a number to be added or subtracted from the **version number source**.
+- **Version Number/Version Name Source**: The defined base version number will be used for versioning during the re-signing process. **Uploaded Binary** is only available option for now.
+- **Version Number/Version Name Offset**: The offset value is a number to be added or subtracted from the **version number source**.
 - **Increment Strategy**: You can increase the `major`, `minor`, or `patch` value of the version number.
 
 ## For iOS
