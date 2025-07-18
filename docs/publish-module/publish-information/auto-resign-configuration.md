@@ -151,3 +151,15 @@ In order for Appcircle to initiate the auto re-sign process, a selected keystore
 For more information, please visit the [Signing Identity Module](/signing-identities) and [Android Keystores](/signing-identities/android-keystores) documentations.
 
 :::
+
+#### Keystores
+
+The **Keystores** section is where you manage the signing credentials required for Android re-signing. To successfully perform the auto re-sign process, Appcircle needs access to a valid keystore. You must upload the keystore file, provide the necessary alias, and enter the key and store passwords within the **Android Keystores** section of the **Signing Identity** module. The re-signing will be executed using the selected keystore credentials.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-keystores.png' />
+
+#### Convert AAB To APK
+
+The **Convert AAB to APK** option allows you to automatically convert an Android App Bundle (AAB) file into an APK during the re-signing process. This is especially useful when your distribution channel requires an `APK` instead of an `AAB`. When enabled, Appcircle will handle the conversion and signing of the resulting APK seamlessly.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-convert.png' />
