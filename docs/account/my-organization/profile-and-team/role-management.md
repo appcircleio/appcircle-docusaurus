@@ -218,34 +218,38 @@ The following table details the roles and restrictions for the [**Testing Groups
 
 The following table details the roles and restrictions for the [**Publish**](/publish-module) module for iOS. Please refer to the related module information and caution notes.
 
-| Publish                  | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
-|--------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
-| Publish Profiles         | Add/Delete/Update Publish Profile         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Profiles         | List Publish Profiles                     | ✅     | ✅       | ✅        | ✅             | ✅      |
-| App Version              | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| App Version              | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Publish Profile Settings | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Flows            | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ✅             | ✅      |
-| App Store Connect Info   | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Check Release Status     | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Metadata                 | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| Metadata                 | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Mark as RC               | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Resing Binary            | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Release Note             | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| History                  | View/Download History Logs                | ✅     | ✅       | ✅        | ✅             | ✅      |
-| History                  | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Download Binary          | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Cancel Submission        | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Reject Binary            | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Activity Logs            | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish                    | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
+|----------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
+| Publish Profiles           | Add/Delete/Update Publish Profile         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Profiles           | List Publish Profiles                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Version                | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| App Version                | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Profile Settings           | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows              | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows              | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows              | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows              | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                    | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                    | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                    | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                    | View Publish Details                      | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Store Connect Info     | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| TestFlight Beta Info       | List/Update TestFlight Beta Information   | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Auto Re-sign Configuration | List/Update Auto Re-sign Configuration    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Check Release Status       | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Metadata                   | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Metadata                   | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Mark as RC                 | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Binary Information         | List Binary Information                   | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Binary Comparison          | List Binary Comparison                    | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Resing Binary              | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Release Note               | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| History                    | View/Download History Logs                | ✅     | ✅       | ✅        | ✅             | ✅      |
+| History                    | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Download Binary            | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Cancel Submission          | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Reject Binary              | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Activity Logs              | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::caution Resign Binary
 
@@ -264,7 +268,7 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Publish Profiles                | List Publish Profiles                       | ✅     | ✅       | ✅        | ✅             | ✅      |
 | App Version                     | Add/Delete App Version                      | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | App Version                     | List App Versions                           | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Publish Profile Settings        | View/Update Profile Settings                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Profile Settings                | View/Update Profile Settings                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows                   | Add/Delete/Update Publish Flow Step         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows                   | Download Publish Flow                       | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish Flows                   | Upload Publish Flow                         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
@@ -274,9 +278,12 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Publish                         | Update Publish Details                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                         | View Publish Details                        | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Google Play Console Information | List/Update Google Play Console Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Auto Re-sign Configuration      | List/Update Auto Re-sign Configuration      | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Metadata                        | Update Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | Metadata                        | View Metadata Details                       | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Mark as RC                      | Marking RC a version                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Binary Information              | List Binary Information                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Binary Comparison               | List Binary Comparison                      | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Resing Binary                   | Resigning Binary                            | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Release Note                    | Update Release Note                         | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | History                         | View/Download History Logs                  | ✅     | ✅       | ✅        | ✅             | ✅      |

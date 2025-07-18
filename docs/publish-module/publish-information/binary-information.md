@@ -101,3 +101,18 @@ Entitlements are key-value pairs that define various permissions and features yo
 Remember, the binary information reflects the build details at the time of its creation and is crucial for troubleshooting and validating app versions.
 
 Ensure to review the binary information for each build to confirm that the correct details are included before proceeding with the publish flow. This information is essential for ensuring that the app is correctly configured and ready for submission to the app stores.
+
+
+## Binary Comparison
+
+In the top-right corner of the Binary Information screen, you can use the **Compare** button to compare the current binary with another one of your choice. This comparison will highlight the differences between the two binaries with color-coded indicators for easy identification.
+
+
+:::caution Build Details Comparison
+
+A binary generated through the Appcircle Build Module is displayed along with its associated build details. **However**, if the compared binary has been **manually** uploaded to Appcircle, those build details **will not be available** for comparison.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-binaryComp.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-binaryCompDetails.png' />
