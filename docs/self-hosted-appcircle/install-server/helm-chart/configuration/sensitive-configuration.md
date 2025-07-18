@@ -55,7 +55,9 @@ kubectl create secret generic appcircle-server-auth-keycloak-passwords \
 :::caution
 Starting from the server version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset.
 
-See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+See the [email integration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) document for more information about the SMTP configuration.
+
+See the [version history](/self-hosted-appcircle/install-server/helm-chart/upgrades#version-history) to find out the minimum required Helm chart version for the server.
 :::
 
 If you prefer to configure SMTP via Kubernetes secrets during initial deployment:
