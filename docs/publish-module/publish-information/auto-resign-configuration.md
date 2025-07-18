@@ -84,6 +84,13 @@ Appcircle Publish profiles can accept binaries with different bundle identifiers
 > ⚠️ Note: Release flows cannot be initiated with a binary whose bundle identifier differs from that of the profile. For more information, please visit the Binary Management [documentation.](/publish-module/binary-management).
 
 
+:::cauiton Multiple Target Binary
+
+If the binary to be re-signed has multiple targets, each target **must be registered** in your **Apple Developer** portal. Otherwise, you **may encounter errors** during the re-signing process.
+
+:::
+
+
 ### Signing
 
 Appcircle requires a Signing Strategy and the necessary certificate to successfully perform the auto re-sign process. The re-signing begins using the selected signing strategy and the associated certificate.
