@@ -1,8 +1,8 @@
 ---
 title: Production Readiness
-description: Overview of the steps required to configure the self-hosted Appcircle on your infrastructure by Kubernetes or Openshift.
+description: Overview of the production readiness configurations for the Appcircle Server Helm chart.
 tags: [self-hosted, helm, configuration]
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 Appcircle Server Helm chart support extensive customization through values files for production configurations.
