@@ -10,50 +10,77 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 # Connecting to GitHub
 
-If you authorize Appcircle to access your repositories on GitHub, you can select the repository that you want to connect in the next screen.
-
-If you are a part of an organization, you can also connect your organization's repositories too. To grant Appcircle permission to access the repositories of an organization, you need to have the necessary privileges at the organization level. For GitHub, you have to provide selective access to specific repositories.
-
-In such a case, only the selected repositories will be listed. To be able to view other repositories, you must grant access for them under the Applications section in the account/organization settings screen on GitHub. You can directly access this screen by clicking on the **Missing a repository? Grant access from GitHub**.
+If you authorize Appcircle to access your repositories on GitHub, you can select the repository that you want to connect in the next screen. Only the selected repositories will be listed.
 
 :::info
 
-For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. GitHub App is a more secure and newer way implemented by GitHub for external apps to communicate within GitHub in a better fashion.
+If you are a part of an organization, you can also connect your organization's repositories too. To grant Appcircle permission to access the repositories of an organization, you need to have the necessary privileges at the organization level. For GitHub, you have to provide selective access to specific repositories.
+
+:::
+
+:::info
+
+For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. GitHub App is a more secure and newer way that implemented by GitHub uses OAuth2 for external apps to communicate within GitHub in a better fashion.
 
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
 
-After you click on **GitHub**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
+After you click on **GitHub**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/github-main.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-github1.png' />
 
 When you successfully authorize your repository or repositories, the following screen will appear to let you select one for connection:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-github.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-connect-repository-github.png' />
 
 After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 
 ## Connecting to GitHub Cloud Repository
 
-To connect to a GitHub Cloud repository using either OAuth or Personal Access Token,
+To connect to a GitHub cloud repository, you can use two different authentication methods:
 
-- OAuth Connection
+- **GitHub App Cloud**  
+  Authenticate and authorize Appcircle to access your GitHub repositories using GitHub App OAuth2 integration. This is the recommended and default method.
 
-Clicking on Get Repositories from GitHub Cloud for the first time will require application access to Appcircle, and this access will require these permissions in order to work properly.
+- **GitHub Cloud**  
+  Use this method to manually connect using a GitHub Fine-Grained Personal Access Token (PAT). You will be required to fill out:
 
-### OAuth Permissions for GitHub Integration
+  - Connection Name
+  - GitHub Server URL (e.g., `https://github.com`)
+  - GitHub Username
+  - Fine-Grained Personal Access Token
 
-The following table details the OAuth permissions required for Appcircle to connect with GitHub. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with GitHub via OAuth. 
+### OAuth2 and Personal Access Token Permissions for GitHub Integration
+
+The following table details the OAuth2 and fine-grained personal access token permissions required for Appcircle to connect with GitHub. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with GitHub via OAuth2 and Personal Access Token. 
 
 | Scope                | Permission   | Description                                                                                                                                                                                   |
 |----------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Checks               | Read         | Allows the application to retrieve details about check suites and check runs.                                                                                                                 |
 | Commit statuses      | Read & Write | Allows read and write access to commit statuses. This enables an application to create, update, and retrieve statuses for specific commits.                                                   |
 | Contents             | Read         | Read-only access to a repository's contents, including files, commits, branches, and directories. This scope allows an application to fetch and display repository data without modifications.|
 | Metadata (Mandatory) | Read         | Grants read access to repository metadata, such as repository names, descriptions, and other settings. This scope is essential for accessing basic repository information.                    |
 | Pull requests        | Read         | Allows read access to pull requests and related comments.                                                                                                                                     |
 | Webhooks             | Read & Write | Provides the ability to manage repository webhooks. This includes creating, updating, listing, and deleting webhooks                                                                          |
+
+## Connecting to GitHub Enterprise Repository
+
+The overall process is similar to a private repository connection through cloud personal access token, but Appcircle allows you to directly connect through GitHub Enterprise self-hosted URL.
+
+First, select **GitHub** and then **GitHub Enterprise** under **Create a New GitHub Enterprise Connection** through the menu:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-githubenterprise1.png' />
+
+To connect to a self-hosted GitHub Enterprise instance, use the following fields when selecting the **GitHub Enterprise** option:
+
+- **Connection Name**: A custom name to identify this connection.
+- **GitHub Server URL**: Your GitHub instance URL (e.g., `https://github.company.com`)
+- **Username**: The GitHub username of the account owning the token.
+- **Personal Access Token**: The fine-grained token generated in your GitHub profile for API or repository access.
+
+If you are not sure what those are, contact your system administrator.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-githubenterprise2.png' />
 
 ## FAQ
 

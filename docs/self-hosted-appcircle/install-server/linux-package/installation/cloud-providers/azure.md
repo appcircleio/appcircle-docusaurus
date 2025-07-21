@@ -84,7 +84,7 @@ The Appcircle server currently **only supports the "Standard" option** as a secu
 
 - In order to select the Appcircle server image, click on the "See all images" button and search for the Appcircle server image.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-4-create-vm-2-see-all-images.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-6050-create-vm-2-see-all-images-2.png' />
 
 - Search for "Appcircle" in the "Marketplace" tab and click on the "Select" button for the server image and select "Plan BYOL - x64 Gen2".
 
@@ -96,13 +96,16 @@ However, please note that you cannot change the generation after the VM is creat
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-5-create-vm-3-select-appcircle-image.png' />
 
-- We will use the `Standart_B4ms` size for our sample configuration since it meets the minimum requirements for the vCPU count and memory size.
+- We will use the `Standart_D4s_v4` size for our sample configuration since it meets the minimum requirements for the vCPU count and memory size.
+  
+  - Use the dropdown menu to view the recommended instance types for this image.  
+  - To choose a different configuration, click on **"See all sizes"** to browse all available instance types.  
 
 :::info
 For the details about minimum hardware requirements, you should see the [Hardware Requirements](/self-hosted-appcircle/install-server/linux-package/installation/docker#hardware-requirements) section.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-11-machine-type.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-6050-machine-type-2.png' />
 
 - We highly recommend changing the username to `ubuntu`.
 

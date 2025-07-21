@@ -6,6 +6,7 @@ sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Send to Enterprise App Store
 
@@ -13,6 +14,7 @@ With Appcircle's Publish module, you can submit your application to external sto
 
 Enterprise App Store offers a store structure that you can use and customise for internal application distribution. For detailed information, please see the [**Enterprise App Store document**](/enterprise-app-store).
 
+<NoRunnerUsage />
 
 ### Prerequisites
 

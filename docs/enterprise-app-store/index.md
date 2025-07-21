@@ -12,6 +12,17 @@ If you want to distribute your in-house applications to your users, you can use 
 
 Appcircle's Enterprise App Store helps you to set up your own store and have full control over deployment and access management.
 
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/DBvSavKA5Oo?si=1lIBadgf_B25whAE" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
 ### Prerequisites
 
 In order for your users to download IPA or APK files, those files must be signed with proper certificates or Keystore files.
@@ -21,6 +32,12 @@ Android apps can be signed with any Keystore if the user's device allows install
 Although iOS apps can be signed with Ad-Hoc provisioning profiles for in-house distribution, this type of distribution is limited to 100 devices per year. Once you hit that limit, you need to wait a year to reset your device limit. You also need to add the UUID of your users' device to Apple's Developer website. Therefore, Ad-Hoc distribution is intended for internal developer team members.
 
 If you have more than 100 users and don't want to deal with device enrollment, you need to use sign your apps with Enterprise Certificate. Please check the Apple's Enterprise program for more information.
+
+:::caution Signing Binary
+
+Appcircle's Enterprise App Store module allows you to distribute your application without the need for any external tools. However, the way your app is signed remains your responsibility and depends on your own workflows; therefore, if you are not enrolled in the Apple Enterprise Program, Appcircle will not provide an enterprise signing service.
+
+:::
 
 https://developer.apple.com/programs/enterprise/
 

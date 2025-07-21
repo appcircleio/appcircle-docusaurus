@@ -216,17 +216,37 @@ storage.googleapis.com/storage/v1/b/appcircle-dev-common
 
 ## Appcircle Server Runtime
 
-Although Appcircle runners are responsible for the submission of iOS apps to the App Store, the server also has some features that need access to the App Store Connect API, like runners.
+### Store APIs
 
-For example, get devices from the App Store, get certificates or provisioning profiles, verify the uploaded certificates, etc.
+Although Appcircle runners are responsible for the submission of the apps to the mobile application stores, the server also has some features that need access to the application store APIs, like runners.
 
-So, you should enable the below API access on the server for those features:
+For example, verify uploaded API keys, get devices from the App Store, get certificates or provisioning profiles, verify the uploaded certificates, etc.
 
-- api.appstoreconnect.apple.com
+So, you should enable the below API access on the server for each store you want to publish your apps.
+
+#### Google Play Store
+
+- `oauth2.googleapis.com`
+- `androidpublisher.googleapis.com`
+
+#### Huawei AppGallery
+
+- `connect-api.cloud.huawei.com`
+
+#### App Store
+
+- `api.appstoreconnect.apple.com`
+
+:::info
+If you are using an Enterprise API Key as detailed in the [App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation, ensure that network access is also permitted to the following address:
+
+- `api.enterprise.developer.apple.com`
+
+:::
 
 ## Appcircle Runner Runtime
 
-This section addresses the utilization of external resources during the build, publish, store submit, and other processes on the Appcircle runner.
+This section addresses the utilization of external resources during the build, publish, and other processes on the Appcircle runner.
 
 ### Appcircle Server
 
@@ -238,9 +258,9 @@ Be aware that the URLs below should be the URLs of the self-hosted Appcircle ser
 Below are the sample URLs that show the required subdomains compatible with the sample configuration in the installation documents.
 :::
 
-- api.appcircle.spacetech.com
-- resource.appcircle.spacetech.com
-- redis.appcircle.spacetech.com
+- `api.appcircle.spacetech.com`
+- `resource.appcircle.spacetech.com`
+- `redis.appcircle.spacetech.com`
 
 Appcircle runners connect to the self-hosted Appcircle server over the ports below:
 
@@ -257,104 +277,101 @@ If your self-hosted server is configured as HTTP:
 
 Appcircle’s workflow components are hosted on GitHub and they're `git` cloned while running the pipeline.
 
-- github.com/appcircleio/
+- `github.com/appcircleio/`
 
 Some of the dependencies such as `CocoaPods` and `Fastlane` use Ruby Gems.
 
-- rubygems.org
+- `rubygems.org`
+- `index.rubygems.org`
 
 The Gradle wrapper needs access to the below URL to download Gradle.
 
-- services.gradle.org
+- `services.gradle.org`
 
 Android Build Tools need access to the following URLs to download new build tools and NDKs:
 
-- dl-ssl.google.com/android/repository
-- dl.google.com/android/repository
+- `dl-ssl.google.com/android/repository`
+- `dl.google.com/android/repository`
 
 All the maven repositories inside `build.gradle` must be added to the allow-list.
 
 For example;
 
-- maven.google.com
-- repo.maven.apache.org/maven2
+- `maven.google.com`
+- `repo.maven.apache.org/maven`2`
 
 If you’re using CocoaPods and if your `Podfile` is using another spec repository, they also must be allowed.
 
-- cdn.cocoapods.org
-- github.com/CocoaPods/Specs
+- `cdn.cocoapods.org`
+- `github.com/CocoaPods/Specs`
 
 ### Testing Distribution
 
-Firebase:
+#### Firebase:
 
-- firebaseappdistribution.googleapis.com
+- `firebaseappdistribution.googleapis.com`
 
-App Center:
+### Publish
 
-- api.appcenter.ms
-- file.appcenter.ms
+**Disclaimer:** The URLs provided below were last verified on 3 June 2025, and are subject to change by the respective services. Please consult official documentation of the stores for the most up-to-date information.
 
-### Store Submit
-
-Google Play
+#### Google Play Store
 
 - `www.googleapis.com`
+- `androidpublisher.googleapis.com`
 
-Huawei AppGallery
+#### Huawei AppGallery
 
-- connect-api.cloud.huawei.com
-- developer.huawei.com
-- developerfile7.hicloud.com
+- `connect-api.cloud.huawei.com`
+- `nsp-appgallery-agcfs-dre.obs.eu-de.otc.t-systems.com` (dynamic)
 
 :::caution
+The second domain starting with `nsp-appgallery-`, may vary depending on your region. It is dynamically returned by the AppGallery Connect API.
 
-Please be aware that the subdomain above (`developerfile7`) may change in the future, and it is dynamically returned by the `https://connect-api.cloud.huawei.com` endpoint.
+To determine the exact URL used in your case, monitor your network traffic during the publishing process.
+:::
+
+#### App Store
+
+- `contentdelivery.itunes.apple.com`
+- `api.appstoreconnect.apple.com`
+- `appstoreconnect.apple.com`
+
+:::info
+If you are using an Enterprise API Key as detailed in the [App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation, ensure that network access is also permitted to the following address:
+
+- `api.enterprise.developer.apple.com`
 
 :::
 
-App Store
-
-- contentdelivery.itunes.apple.com
-- api.appstoreconnect.apple.com
-
 :::caution
-The Apple App Store connects to several endpoints during upload.
+The Apple App Store connects to several endpoints during upload. It is important to allow access to all of them.
 
 Those endpoints are documented at [here](https://help.apple.com/itc/transporteruserguide/en.lproj/static.html). The endpoints may change in the future.
 :::
 
-| **Server**                                     | **IP Address** | **TCP Port** | **UDP Port** |
-| ---------------------------------------------- | -------------- | ------------ | ------------ |
-| [vgr501.apple.com](http://vgr501.apple.com/)   | 17.110.248.141 | 33001        | 33001-33500  |
-| [vgr502.apple.com](http://vgr502.apple.com/)   | 17.110.248.142 | 33001        | 33001-33500  |
-| [vgr503.apple.com](http://vgr503.apple.com/)   | 17.110.248.143 | 33001        | 33001-33500  |
-| [vgr504.apple.com](http://vgr504.apple.com/)   | 17.110.248.144 | 33001        | 33001-33500  |
-| [vgr505.apple.com](http://vgr505.apple.com/)   | 17.110.248.145 | 33001        | 33001-33500  |
-| [vgr506.apple.com](http://vgr506.apple.com/)   | 17.110.248.146 | 33001        | 33001-33500  |
-| [vgr507.apple.com](http://vgr507.apple.com/)   | 17.110.248.147 | 33001        | 33001-33500  |
-| [vgr508.apple.com](http://vgr508.apple.com/)   | 17.110.248.148 | 33001        | 33001-33500  |
-| [vgr701.apple.com](http://vgr701.apple.com/)   | 17.133.233.141 | 33001        | 33001-33500  |
-| [vgr702.apple.com](http://vgr702.apple.com/)   | 17.133.233.142 | 33001        | 33001-33500  |
-| [vgr703.apple.com](http://vgr703.apple.com/)   | 17.133.233.143 | 33001        | 33001-33500  |
-| [vgr704.apple.com](http://vgr704.apple.com/)   | 17.133.233.144 | 33001        | 33001-33500  |
-| [vgr705.apple.com](http://vgr705.apple.com/)   | 17.133.233.145 | 33001        | 33001-33500  |
-| [vgr706.apple.com](http://vgr706.apple.com/)   | 17.133.233.146 | 33001        | 33001-33500  |
-| [vgr707.apple.com](http://vgr707.apple.com/)   | 17.133.233.147 | 33001        | 33001-33500  |
-| [vgr708.apple.com](http://vgr708.apple.com/)   | 17.133.233.148 | 33001        | 33001-33500  |
-| [vgr0901.apple.com](http://vgr0901.apple.com/) | 17.57.20.141   | 33001        | 33001-33500  |
-| [vgr0902.apple.com](http://vgr0902.apple.com/) | 17.57.20.142   | 33001        | 33001-33500  |
-| [vgr0903.apple.com](http://vgr0903.apple.com/) | 17.57.20.143   | 33001        | 33001-33500  |
-| [vgr0904.apple.com](http://vgr0904.apple.com/) | 17.57.20.144   | 33001        | 33001-33500  |
-| [vgr0905.apple.com](http://vgr0905.apple.com/) | 17.57.20.145   | 33001        | 33001-33500  |
-| [vgr0906.apple.com](http://vgr0906.apple.com/) | 17.57.20.146   | 33001        | 33001-33500  |
-| [vgr0907.apple.com](http://vgr0907.apple.com/) | 17.57.20.147   | 33001        | 33001-33500  |
-| [vgr0908.apple.com](http://vgr0908.apple.com/) | 17.57.20.148   | 33001        | 33001-33500  |
+| **Server**                              | **TCP Port** |
+| --------------------------------------- | ------------ |
+| contentdelivery.itunes.apple.com        | 443          |
+| idmsa.apple.com                         | 443          |
+| northamerica-1.object-storage.apple.com | 443          |
+| store-037.blobstore.apple.com           | 443          |
+| store-036.blobstore.apple.com           | 443          |
+| store-035.blobstore.apple.com           | 443          |
+| store-033.blobstore.apple.com           | 443          |
+| store-032.blobstore.apple.com           | 443          |
+| store-030.blobstore.apple.com           | 443          |
+| store-028.blobstore.apple.com           | 443          |
+| store-026.blobstore.apple.com           | 443          |
+| store-025.blobstore.apple.com           | 443          |
+| store-004.blobstore.apple.com           | 443          |
+| transporter.amp.apple.com               | 443          |
+
+<!-- "Upcoming Expansion for Uploads" row didn't included in this table since it doesn't have domain name, only stated as IP ranges. -->
 
 ## Appcircle DMZ Server Install & Update
 
 Below you can find the network access details required when installing or upgrading a self-hosted Appcircle DMZ server.
-
 
 <Tabs>
   
@@ -449,9 +466,9 @@ Be aware that the URLs below should be the URLs of the self-hosted Appcircle ser
 Below are the sample URLs that show the required subdomains compatible with the sample configuration in the installation documents.
 :::
 
-- api.appcircle.spacetech.com
-- auth.appcircle.spacetech.com
-- monitor.appcircle.spacetech.com
+- `api.appcircle.spacetech.com`
+- `auth.appcircle.spacetech.com`
+- `monitor.appcircle.spacetech.com`
 
 Appcircle DMZ server connect to the self-hosted Appcircle server over the ports below:
 

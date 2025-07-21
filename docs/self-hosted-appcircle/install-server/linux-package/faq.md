@@ -6,6 +6,10 @@ sidebar_position: 80
 sidebar_label: Troubleshooting & FAQ
 ---
 
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_restart-appcircle-server.mdx';
+
 # Overview
 
 This section is designed to help you quickly find answers to common questions and provide you with a better understanding of Appcircle server and runner.
@@ -18,9 +22,9 @@ For now, you shouldn't change the initial user password you defined in the `glob
 
 ### Does Appcircle support LDAP login?
 
-Appcircle supports LDAP login on the Testing Distribution and Enterprise App Store modules.
+Appcircle supports LDAP login on the Testing Distribution and Enterprise App Store modules. For more details about enabling the LDAP, you can head over to the [Enterprise App Store](/account/my-organization/security/authentications/store-ldap-authentication) and [Testing Distribution](/account/my-organization/security/authentications/distribution-ldap-authentication) LDAP settings documents.
 
-Appcircle doesn't support LDAP login on the Appcircle dashboard, where you login to create build profiles and other developer-related jobs.
+Appcircle also supports LDAP login on the Appcircle dashboard, where you log in to create build profiles and other developer-related jobs. For more details about enabling LDAP on the Appcircle dashboard, you can head over to the [Appcircle Login with LDAP](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings) document.
 
 ### We can't send mail to outside domains.
 
@@ -119,6 +123,12 @@ storeWeb:
     domain: store.spacetech.com
 ```
 
+:::caution
+If the certificate of the custom store domain is not defined in the `global.yaml` file, the Enterprise App Store will listen on HTTP by default. It will not use the server-wide certificate defined in `.nginx.sslCertificate` for the Enterprise App Store.
+
+To enable HTTPS for the Enterprise App Store, you must provide `.storeWeb.customDomain.publicKey` and `.storeWeb.customDomain.privateKey` values. For details, refer to the [SSL Configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#custom-domain) docs.
+:::
+
 - Apply configuration changes.
 
 ```bash
@@ -205,6 +215,12 @@ minio:
 storeWeb:
   external:
     subdomain: store-appcircle
+webEventRedis:
+  external:
+    subdomain: redis-appcircle
+grafana:
+  external:
+    subdomain: monitor-appcircle
 ```
 
 :::caution
@@ -291,6 +307,28 @@ The first thing you should check is **PAT** permissions.
 If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
 
 For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
+
+### What should be done after upgrading the hardware resources (CPU & memory) of the Appcircle server?
+
+When you upgrade the hardware resources (CPU & memory) of the Appcircle server, it's important to update the **resource limits** accordingly.
+
+Appcircle sets these limitations with the `export` command and configures CPU and memory limits for the services. If you don't run the `export` command again after updating the CPU and memory of the Appcircle host machine, the Appcircle services will continue to use the old resource limits.
+
+To ensure the new resource limits are applied, follow these steps:
+
+<DowntimeCaution />
+
+- Log in to the Appcircle server with SSH or a remote connection.
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+<SpacetechExampleInfo/>
+
+<RestartAppcircleServer />
 
 ### How can we restrict the TLS versions used by the Appcircle server?
 

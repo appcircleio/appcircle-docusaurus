@@ -95,11 +95,16 @@ For the details about minimum hardware requirements, you should see the [Hardwar
 - For the network settings:
   - We will use the default VPC created on the form.
   - Allow HTTP and HTTPS traffic from the internet.
-    - This is required for accessing the Appcircle server dashboard.
-  - You can restrict the SSH connection by specifying the source IP addresses.
+    - This is **required** for accessing the Appcircle server dashboard.
+  - Allow SSH traffic.
     - **SSH is also required** to access the server from the command line.
+    - You can restrict the SSH connection by specifying the source IP addresses.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws15-network.png' />
+:::tip
+If you want to also send `ping` requests to the instance for health check purposes, you can also add another rule with the type "All ICMP-IPv4" while editing the inbound rules of the security group after the instance and security group are created.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-5974-network.png' />
 
 - For storage, you can select a minimum 100-GB disk for a PoC setup or testing purposes.
 
@@ -129,23 +134,6 @@ You can head to the EC2 **Instances** page to see if your server is up and runni
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws18-instance-running.png' />
 
-**To enable SSH access,** head to the security group settings of your instance. It's required for later configuration steps.
-
-For our sample server instance above, select "My Appcircle Server" instance and click on the "Security" tab.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws19-ssh1.png' />
-
-Edit the inbound rules to enable SSH access to your Appcircle server instance.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws20-ssh2.png' />
-
-Add an SSH rule for the IP addresses you want, and click on the "Save Rules" button to activate the settings.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-2503-aws21-ssh3.png' />
-
-:::tip
-If you want to also send `ping` requests to the instance for health check purposes, you should also add another rule with the type "All ICMP-IPv4" while editing the inbound rules.
-:::
 
 ## Configuring the Appcircle Server Instance
 

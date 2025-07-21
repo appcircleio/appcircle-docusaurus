@@ -2,6 +2,7 @@
 title: App Center CodePush
 description: Effortlessly update apps with App Center Code Push. Learn quick, reliable code deployment without app store delays.
 tags: [react native, mobile, workflow, step, code push, app center]
+unlisted: true
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -35,7 +36,6 @@ Please do not use sensitive variables such as **Username**, **Password**, **API 
 We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
 
 :::
-
 
 | Variable Name                 | Description                                    | Status           |
 |-------------------------------|------------------------------------------------|------------------|
