@@ -43,10 +43,7 @@ To complete this guide, you must have the following:
 
 - An S3-compatible object storage provider (MinIO, Wasabi, Backblaze B2, DigitalOcean Spaces, Cloudflare R2, etc.)
 - Access to the provider's management console or CLI
-- The Helm chart [installed](https://helm.sh/docs/intro/install/) and [configured](https://helm.sh/docs/intro/quickstart/) for your Kubernetes cluster
 - Basic understanding of object storage, access keys, and Kubernetes
-
-
 
 ## Configuration Steps
 
