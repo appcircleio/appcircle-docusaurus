@@ -167,10 +167,10 @@ The bucket names use your organization name to ensure global uniqueness, as GCS 
 
 ### 3. Configure CORS Settings
 
-**Configure CORS settings** for the `temp` bucket to allow cross-origin requests from your Appcircle server web UI.
+**Configure CORS settings** for the `temp` bucket to allow cross-origin requests from your Appcircle server dashboard.
 
 :::caution
-Replace `my.appcircle.spacetech.com` with your actual Appcircle server web UI domain.
+Replace the `https://my.appcircle.spacetech.com` with the dashboard URL that you will use to access the Appcircle server. For example, if you are using `.appcircle.spacetech.com` as the domain in the Helm `values.yaml` file, the dashboard URL will be `https://my.appcircle.spacetech.com`.
 :::
 
 - Create a CORS configuration file:

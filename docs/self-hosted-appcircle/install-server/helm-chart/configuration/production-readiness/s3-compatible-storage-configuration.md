@@ -91,12 +91,12 @@ Restrict permissions to only the required buckets for better security.
 
 ### 3. CORS Configuration
 
-**Configure CORS settings** for the `temp` bucket to allow cross-origin requests from your Appcircle server web UI.
+**Configure CORS settings** for the `temp` bucket to allow cross-origin requests from your Appcircle server dashboard.
 
 - Here is a sample CORS configuration for the `temp` bucket that is compatible with AWS CLI:
 
 :::caution
-Make sure to replace the `https://my.appcircle.spacetech.com` with the web UI URL that you will use to access the Appcircle server. For example, if you are using `.appcircle.spacetech.com` as the domain in the Helm `values.yaml` file, the web UI URL will be `https://my.appcircle.spacetech.com`.
+Make sure to replace the `https://my.appcircle.spacetech.com` with the dashboard URL that you will use to access the Appcircle server. For example, if you are using `.appcircle.spacetech.com` as the domain in the Helm `values.yaml` file, the dashboard URL will be `https://my.appcircle.spacetech.com`.
 :::
 
 ```bash
@@ -117,9 +117,9 @@ Refer to your provider's documentation for how to apply CORS settings.
 
 :::tip
 - The CORS configuration is only required for the `temp` bucket
-- **Make sure** that the clients are allowed to access the `temp` bucket over network. The clients (Appcircle users with the web UI) use the `temp` bucket to upload/download files.
+- **Make sure** that the clients are allowed to access the `temp` bucket over network. The clients (Appcircle users with the dashboard) use the `temp` bucket to upload/download files.
 - Other buckets don't require CORS configuration as they are accessed server-side
-- If you will use the Appcircle server web UI with HTTP instead of HTTPS, replace `https://` with `http://` in the origin
+- If you will use the Appcircle server dashboard with HTTP instead of HTTPS, replace `https://` with `http://` in the origin
 :::
 
 

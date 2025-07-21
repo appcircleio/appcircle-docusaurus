@@ -163,10 +163,10 @@ The bucket names use your organization name to ensure global uniqueness, as AWS 
 
 ### 3. Configure CORS Settings
 
-**Configure CORS settings** for the `temp` bucket to allow cross-origin requests from your Appcircle server web UI.
+**Configure CORS settings** for the `temp` bucket to allow cross-origin requests from your Appcircle server dashboard.
 
 :::caution
-Replace the `https://my.appcircle.spacetech.com` with the web UI URL that you will use to access the Appcircle server. For example, if you are using `.appcircle.spacetech.com` as the domain in the Helm `values.yaml` file, the web UI URL will be `https://my.appcircle.spacetech.com`.
+Replace the `https://my.appcircle.spacetech.com` with the dashboard URL that you will use to access the Appcircle server. For example, if you are using `.appcircle.spacetech.com` as the domain in the Helm `values.yaml` file, the dashboard URL will be `https://my.appcircle.spacetech.com`.
 :::
 
 **Configure CORS for the temp bucket:**
@@ -191,7 +191,7 @@ aws s3api put-bucket-cors \
 :::tip
 - The CORS configuration is only required for the `temp` bucket
 - Other buckets don't require CORS configuration as they are accessed server-side
-- If you're using the Appcircle server web UI with HTTP instead of HTTPS, replace `https://` with `http://` in the AllowedOrigins
+- If you're using the Appcircle server dashboard with HTTP instead of HTTPS, replace `https://` with `http://` in the AllowedOrigins
 :::
 
 ### 4. Create IAM User and Policy
