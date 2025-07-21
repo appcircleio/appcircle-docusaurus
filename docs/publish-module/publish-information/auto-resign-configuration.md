@@ -37,8 +37,8 @@ If the configuration is **not defined correctly**, the re-signing flow **may fai
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-autoResignConfig.png' />
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-autoResignConfigAndro.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-settings1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-settings2.png' />
 
 
 ### Versioning
