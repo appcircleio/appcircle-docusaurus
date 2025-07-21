@@ -10,6 +10,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import S3MinimumVersionCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution.mdx';
+import S3MigrationCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-migration-caution.mdx';
 
 ## Overview
 
@@ -20,7 +21,7 @@ By default, the Appcircle chart includes an in-cluster MinIO deployment provided
 For production environments, it is recommended to configure an external MinIO or S3-compatible object storage instance. The recommended MinIO version is `2024-03-15` or later, with a disk size of 1TB.
 
 :::info
-The recommended disk size for the MinIO instance may vary depending on your usage requirements. It can range from 100GB to 3-4TB.
+The recommended disk size for the object storage may vary depending on your usage requirements. It can range from 100GB to 3-4TB.
 :::
 
 <S3MinimumVersionCaution />
@@ -36,6 +37,8 @@ This guide will walk you through the process of configuring an S3-compatible obj
 :::info
 This guide is for any S3-compatible provider. For [AWS S3](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/aws-s3-configuration) or [GCP Cloud Storage](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/gcp-cloud-storage-configuration), see their dedicated guides.
 :::
+
+<S3MigrationCaution />
 
 ## Prerequisites
 

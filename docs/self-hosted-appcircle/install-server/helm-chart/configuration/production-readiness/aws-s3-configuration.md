@@ -15,6 +15,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import S3MinimumVersionCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution.mdx';
+import S3MigrationCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-migration-caution.mdx';
 
 ## Overview
 
@@ -30,9 +31,7 @@ This guide will walk you through the process of configuring AWS S3 as your objec
 - **Configure Appcircle server**: Update Helm values to use S3
 - **Optional CDN setup**: CloudFront for performance optimization
 
-:::caution
-AWS S3 configuration requires a **fresh installation** of Appcircle server. If you have an existing installation with data, migration from MinIO to AWS S3 is **not supported**. You can only configure AWS S3 during the initial installation or if you have no existing data to preserve.
-:::
+<S3MigrationCaution />
 
 ## Prerequisites
 

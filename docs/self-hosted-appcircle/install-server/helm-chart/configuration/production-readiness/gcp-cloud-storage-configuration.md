@@ -15,6 +15,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NeedHelp from '@site/docs/_need-help.mdx';
 import S3MinimumVersionCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution.mdx';
+import S3MigrationCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-migration-caution.mdx';
 
 ## Overview
 
@@ -30,9 +31,7 @@ This guide will walk you through the process of configuring GCP Cloud Storage as
 - **Configure Appcircle server**: Update Helm values to use GCS
 - **Optional CDN setup**: Google Cloud CDN for performance optimization
 
-:::caution
-GCP Cloud Storage configuration requires a **fresh installation** of Appcircle server. If you have an existing installation with data, migration from MinIO to GCP Cloud Storage is **not supported**. You can only configure GCP Cloud Storage during the initial installation or if you have no existing data to preserve.
-:::
+<S3MigrationCaution />
 
 ## Prerequisites
 
