@@ -7,7 +7,7 @@ sidebar_position: 3
 
 # Auto Re-sign
 
-The **Auto Re-sign** feature in Appcircle’s Publish module allows users to automatically re-sign their iOS`(.ipa)` and Android`(APK/AAB)` applications with a different keystore or provisioning profile and certificate before distribution.
+The **Auto Re-sign** feature in Appcircle’s Publish module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
 
 ## Enabling Auto Re-sign
 
@@ -60,7 +60,7 @@ With the **Update Build Number(iOS)** and **Update Version Code(Android)** featu
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-updateBuildNumber.png' />
 
-- **Build Number/Version Code Source**: The defined base build number will be used for versioning during the re-signing process. **Uploaded Binary** is only available option for now.
+- **Build Number/Version Code Source**: The defined base build number will be used for versioning during the re-signing process. **Uploaded Binary** is the only available option for now.
 - **Build Number/Version Code Offset**: The offset value is a number to be added or subtracted from the **build number source**.
 
 #### Update Version Number and Version Name
@@ -69,7 +69,7 @@ With the **Update Version Number(iOS)** and **Update Version Name(Android)** fea
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-updateVersionNumber.png' />
 
-- **Version Number/Version Name Source**: The defined base version number will be used for versioning during the re-signing process. **Uploaded Binary** is only available option for now.
+- **Version Number/Version Name Source**: The defined base version number will be used for versioning during the re-signing process. **Uploaded Binary** is the only available option for now.
 - **Version Number/Version Name Offset**: The offset value is a number to be added or subtracted from the **version number source**.
 - **Increment Strategy**: You can increase the `major`, `minor`, or `patch` value of the version number.
 
@@ -77,14 +77,14 @@ With the **Update Version Number(iOS)** and **Update Version Name(Android)** fea
 
 The functionality and configuration steps of **Appcircle’s Auto Re-sign** feature for the iOS platform are explained step-by-step below.
 
-### Bundle Idetifier Management
+### Bundle Identifier Management
 
 Appcircle Publish profiles can accept binaries with different bundle identifiers. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different bundle identifier is uploaded, it is re-signed according to the bundle identifier of the profile. The bundle identifier of the resulting re-signed binary is updated to match the one associated with the profile. 
 
 > ⚠️ Note: Release flows cannot be initiated with a binary whose bundle identifier differs from that of the profile. For more information, please visit the Binary Management [documentation.](/publish-module/binary-management).
 
 
-:::cauiton Multiple Target Binary
+:::caution Multiple Target Binary
 
 If the binary to be re-signed has multiple targets, each target **must be registered** in your **Apple Developer** portal. Otherwise, you **may encounter errors** during the re-signing process.
 
@@ -93,7 +93,7 @@ If the binary to be re-signed has multiple targets, each target **must be regist
 
 ### Signing
 
-Appcircle requires a Signing Strategy and the necessary certificate to successfully perform the auto re-sign process. The re-signing begins using the selected signing strategy and the associated certificate.
+Appcircle requires a valid keystore to successfully perform the auto re-sign process. The re-signing begins using the associated keystore.
 
 :::caution Apple Certificates
 

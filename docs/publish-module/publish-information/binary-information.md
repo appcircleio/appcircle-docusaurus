@@ -105,12 +105,11 @@ Ensure to review the binary information for each build to confirm that the corre
 
 ## Binary Comparison
 
-In the top-right corner of the Binary Information screen, you can use the **Compare** button to compare the current binary with another one of your choice. This comparison will highlight the differences between the two binaries with color-coded indicators for easy identification.
-
+In the top-right corner of the Binary Information screen, you can click the **Compare** button to compare the current binary with another of your choice. The comparison highlights differences between the two binaries using color-coded indicators for easy identification.
 
 :::caution Build Details Comparison
 
-A binary generated through the Appcircle Build Module is displayed along with its associated build details. **However**, if the compared binary has been **manually** uploaded to Appcircle, those build details **will not be available** for comparison.
+Binaries generated through the Appcircle Build Module include associated build details. **However**, if the compared binary was **manually** uploaded to Appcircle, those details **will not be available** for comparison.
 
 :::
 
