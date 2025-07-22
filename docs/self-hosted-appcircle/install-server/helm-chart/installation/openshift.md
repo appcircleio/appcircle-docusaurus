@@ -40,7 +40,7 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 6. my.appcircle.spacetech.com
 7. kvs.appcircle.spacetech.com
 
-**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the routes created in Openshift.
+**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the routes created in OpenShift.
 
 </details>
 
@@ -116,7 +116,7 @@ Additionally, ensure that your OpenShift cluster is running version 4.12 or late
 
 ### 1. `oc`
 
-The **`oc`** Openshift CLI is **required**.
+The **`oc`** OpenShift CLI is **required**.
 
 ### 2. Helm v3
 

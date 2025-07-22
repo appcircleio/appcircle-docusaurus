@@ -1,6 +1,6 @@
 ---
 title: Configuration
-description: Overview of the steps required to configure the self-hosted Appcircle on your infrastructure by Kubernetes or Openshift.
+description: Overview of the steps required to configure the self-hosted Appcircle on your infrastructure by Kubernetes or OpenShift.
 tags: [self-hosted, helm, configuration]
 sidebar_position: 2
 ---
