@@ -3016,3 +3016,13 @@ quay:
   label: "android app release"
   description: "android app release related documentations"
   permalink: "/android-app-release"
+
+"auto":
+  label: "auto"
+  description: "auto related documentations"
+  permalink: "/auto"
+
+"re-sign":
+  label: "re-sign"
+  description: "re-sign related documentations"
+  permalink: "/re-sign"
