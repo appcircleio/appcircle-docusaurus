@@ -133,7 +133,7 @@ SERVICE_ACCOUNT_NAME="appcircle-server"
 
 Appcircle server requires the following GCS buckets for different purposes:
 
-- **`${BUCKET_PREFIX}temp`**: Temporary files and uploads (requires CORS configuration)
+- **`${BUCKET_PREFIX}temp`**: Temporary files and uploads (requires CORS configuration for direct uploads/downloads from the client browsers)
 - **`${BUCKET_PREFIX}build`**: Build artifacts and logs
 - **`${BUCKET_PREFIX}distribution`**: Testing Distribution files
 - **`${BUCKET_PREFIX}storesubmit`**: Appcircle Store Submit files
@@ -194,9 +194,9 @@ gsutil cors set appcircle-gcs-policy.json gs://${BUCKET_PREFIX}temp
 ```
 
 :::tip
-- The CORS configuration is only required for the `temp` bucket
-- Other buckets don't require CORS configuration as they are accessed server-side
-- If you're using HTTP instead of HTTPS, replace `https://` with `http://` in the origin
+- The CORS configuration is only required for the `temp` bucket.
+- Other buckets don't require CORS configuration, as they are accessed server-side.
+- If you're using HTTP instead of HTTPS, replace `https://` with `http://` in the **`origin`**.
 :::
 
 ### 4. Create Service Account and Permissions
@@ -277,12 +277,10 @@ gcloud iam service-accounts keys create appcircle-sa-key.json \
 Google Cloud CDN can improve performance by caching your GCS content at edge locations worldwide. This reduces latency and improves download speeds for your users.
 
 :::tip
-**Decision Tree:**
 - **Follow this guide** if you need production-grade performance to serve your users globally.
-  - **Continue to**: Step 6.1 below
 - **Skip this section** if you're setting up for development/testing or have a small or medium team.
-  - You can always enable Google Cloud CDN later without reinstalling Appcircle server.
-  - **Skip to**: [Create Kubernetes Secret](#create-kubernetesopenshift-secret-for-gcp-credentials)
+  - You can always enable Google Cloud CDN later without reinstalling the Appcircle server.
+    - **Skip to** the [Create Kubernetes Secret](#create-kubernetesopenshift-secret-for-gcp-credentials) step if you do not need CDN configuration.
 :::
 
 This guide will walk you through the process of creating a CDN for your GCS buckets with the `gcloud` CLI.
