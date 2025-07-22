@@ -22,11 +22,17 @@ One important point to note is that the `capacitor-cordova-android-plugins` fold
 
 :::
 
-You can then add the custom scripts before the build steps and run the build normally.
+You can then add the custom scripts right before the build steps and run the build normally.
+
+:::warning "npm/Yarn Commands" step
+
+Make sure the "npm/Yarn Commands" step is included in your workflow before the build steps. It doesn’t need to be placed immediately before, but it must come earlier in the sequence.
+
+:::
 
 ### Android Custom Script for Ionic Builds
 
-For Android, add the following script before the "Android Build" step.
+For Android, add the following custom script **immediately before** the "Android Build" step.
 
 ```bash
 set -e
@@ -54,7 +60,7 @@ This ensures web assets, plugin installations, and config updates are fully sync
 
 ### iOS Custom Script for Ionic Builds
 
-For iOS, add the following script before the "Xcodebuild for Devices" step.
+For iOS, add the following custom script **immediately before** the "Xcodebuild for Devices" step.
 
 ```bash
 set -e
