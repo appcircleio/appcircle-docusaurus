@@ -612,8 +612,8 @@ minio:
   - Run `echo $LOCATION` to get your GCP region from the variables defined in the previous steps.
 - Replace `appcircle-spacetech-` with your actual bucket prefix.
   - Run `echo $BUCKET_PREFIX` to get your bucket prefix from the variables defined in the previous steps.
-- Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production)
-- Ensure `googleCredentialsSecretName` matches the secret name created in the previous step
+- Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production).
+- Ensure `googleCredentialsSecretName` matches the secret name created in the previous step.
 :::
 
 ## Next Steps
