@@ -655,7 +655,7 @@ kubectl create secret generic appcircle-server-minio-connection \
 oc new-project appcircle
 ```
 
-**Create a OpenShift secret** named `<helm-release-name>-minio-connection` with your S3-compatible access and secret keys:
+- **Create an OpenShift secret** named `<helm-release-name>-minio-connection` with your S3-compatible access and secret keys:
 
 ```bash
 oc create secret generic appcircle-server-minio-connection \
