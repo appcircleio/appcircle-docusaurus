@@ -18,7 +18,7 @@ This guide provides comprehensive instructions for configuring **any S3-compatib
 
 By default, the Appcircle chart includes an in-cluster MinIO deployment provided by `bitnami/minio`. If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
 
-For production environments, it is recommended to configure an external MinIO or S3-compatible object storage instance. The recommended MinIO version is `2024-03-15` or later, with a disk size of 1TB.
+For production environments, it is recommended to configure an external MinIO or S3-compatible object storage instance. If you prefer to use an external MinIO service, the recommended MinIO version is `2024-03-15` or later, with a disk size of at least 100GB.
 
 :::info
 The recommended disk size for the object storage may vary depending on your usage requirements. It can range from 100GB to 3-4TB.
