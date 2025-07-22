@@ -27,6 +27,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - Character limit validation has been added to the connection setup fields for all Git provider options. <BuildBadge/> <CloudBadge/>
 - Descriptions were added for versioning tab configurations within the Build Profile settings. <BuildBadge/> <CloudBadge/>
+- The app icon will now be updated for Publish profiles if the marked release candidate version has a different icon. <PublishBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -47,7 +48,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The [bind](/build/build-process-management/build-manually-or-with-triggers#binding-existing-manual-webhooks-to-other-build-profiles) option can now be used by build profiles to reuse existing manual webhooks for accessing the same repository across other build profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Branch names that exactly match the search input are now displayed at the top of the search results within the build profile. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The warning message on form validations has been improved for cases where the text input is too long. <CloudBadge/> <SelfHostedBadge/>
-- The app icon will now be updated for Publish profiles if the marked release candidate version has a different icon. <PublishBadge/> <CloudBadge/>
 - The app version icon will now be displayed in the binary information option within the publish profiles. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The username option has been removed from the Bitbucket repository PAT-type connection settings. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Upgraded NGINX dependency to `1.29.0` to ensure up-to-date security and stability in self-hosted environments. <InfrastructureBadge/> <SelfHostedBadge/>
