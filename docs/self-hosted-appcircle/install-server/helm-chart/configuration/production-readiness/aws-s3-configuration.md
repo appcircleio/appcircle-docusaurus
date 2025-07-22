@@ -668,7 +668,7 @@ oc create secret generic appcircle-server-minio-connection \
 </Tabs>
 
 :::caution
-- Replace `appcircle` with your actual namespace if different.
+- Replace `appcircle` with your actual namespace or project if different.
 - Replace `<YOUR_ACCESS_KEY>` and `<YOUR_SECRET_KEY>` with your actual access and secret keys.
 - Replace `appcircle-server-minio-connection` with `<helm-release-name>-minio-connection`. Appcircle documentation uses `appcircle-server` as the release name.
 :::
@@ -755,5 +755,3 @@ After completing the AWS S3 configuration:
 3. **Verify the configuration** by checking that Appcircle server can access the S3 buckets after installation
 
 <NeedHelp />
-
-

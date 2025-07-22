@@ -537,7 +537,7 @@ kubectl create secret generic appcircle-gcs-credentials \
 oc new-project appcircle
 ```
 
-- **Create a OpenShift secret** named `<helm-release-name>-gcs-credentials` with the GCP credentials to be used by Appcircle server.
+- **Create an OpenShift secret** named `<helm-release-name>-gcs-credentials` with the GCP credentials to be used by Appcircle server.
 
 ```bash
 # Convert the service account key to base64
@@ -553,9 +553,9 @@ oc create secret generic appcircle-gcs-credentials \
 </Tabs>
 
 :::caution
-- Replace `appcircle` with the actual namespace/project where Appcircle server will be installed
-- Ensure the `appcircle-sa-key.json` file is in your current directory
-- The secret name `appcircle-gcs-credentials` will be referenced in the Helm configuration
+- Replace `appcircle` with your actual namespace or project if different.
+- Ensure the `appcircle-sa-key.json` file is in your current directory.
+- The secret name `appcircle-gcs-credentials` will be referenced in the Helm configuration.
 :::
 
 ## Configure Helm Values
