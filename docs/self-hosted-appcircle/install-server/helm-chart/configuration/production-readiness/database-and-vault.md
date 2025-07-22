@@ -71,7 +71,9 @@ For production environments, it is recommended to set up an external, production
 :::info
 The Appcircle server supports MongoDB versions between `4.2` and `8.0`.
 
-Later versions of the Appcircle server may deprecate `4.x` versions, so it will be better to choose a recent version of MongoDB to prevent future migration efforts.
+Later versions of the Appcircle server may deprecate `4.x` versions and might remove support for MongoDB EOL (end-of-life) [releases](https://www.mongodb.com/docs/manual/release-notes/). 
+
+For this reason, it will be better to choose a recent stable version of MongoDB instead of an EOL release, which can prevent future migration efforts as much as possible.
 :::
 
 To use an external MongoDB database, you can follow the steps below:
