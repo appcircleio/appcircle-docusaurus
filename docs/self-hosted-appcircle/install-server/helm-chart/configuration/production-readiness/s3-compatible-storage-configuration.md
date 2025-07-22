@@ -119,7 +119,7 @@ Refer to your provider's documentation for how to apply CORS settings.
 - The CORS configuration is only required for the `temp` bucket.
 - **Make sure** that the clients are allowed to access the `temp` bucket over network. The clients (Appcircle users with the dashboard) use the `temp` bucket to upload/download files.
 - Other buckets don't require CORS configuration, as they are accessed server-side.
-- If you will use the Appcircle server dashboard with HTTP instead of HTTPS, replace `https://` with `http://` in the origin.
+- If you will use the Appcircle server dashboard with HTTP instead of HTTPS, replace `https://` with `http://` in the **`AllowedOrigins`**.
 :::
 
 :::info

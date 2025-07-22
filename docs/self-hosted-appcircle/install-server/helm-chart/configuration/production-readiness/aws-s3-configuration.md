@@ -129,7 +129,7 @@ IAM_USER="appcircle-server"
 
 Appcircle server requires the following S3 buckets for different purposes:
 
-- **`${BUCKET_PREFIX}temp`**: Temporary files and uploads (requires CORS configuration)
+- **`${BUCKET_PREFIX}temp`**: Temporary files and uploads (requires CORS configuration for direct uploads/downloads from the client browsers)
 - **`${BUCKET_PREFIX}build`**: Build artifacts and logs
 - **`${BUCKET_PREFIX}distribution`**: Testing Distribution files
 - **`${BUCKET_PREFIX}storesubmit`**: Appcircle Store Submit files
@@ -168,7 +168,7 @@ The bucket names use your organization name to ensure global uniqueness, as AWS 
 Replace the `https://my.appcircle.spacetech.com` with the dashboard URL that you will use to access the Appcircle server. For example, if you are using `.appcircle.spacetech.com` as the domain in the Helm `values.yaml` file, the dashboard URL will be `https://my.appcircle.spacetech.com`.
 :::
 
-**Configure CORS for the temp bucket:**
+**Configure CORS for the `temp` bucket:**
 
 ```bash
 aws s3api put-bucket-cors \
@@ -188,9 +188,9 @@ aws s3api put-bucket-cors \
 ```
 
 :::tip
-- The CORS configuration is only required for the `temp` bucket
-- Other buckets don't require CORS configuration as they are accessed server-side
-- If you're using the Appcircle server dashboard with HTTP instead of HTTPS, replace `https://` with `http://` in the AllowedOrigins
+- The CORS configuration is only required for the `temp` bucket.
+- Other buckets don't require CORS configuration, as they are accessed server-side.
+- If you're using the Appcircle server dashboard with HTTP instead of HTTPS, replace `https://` with `http://` in the **`AllowedOrigins`**.
 :::
 
 ### 4. Create IAM User and Policy
