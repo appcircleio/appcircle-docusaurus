@@ -2942,6 +2942,7 @@ xml:
   label: "object-storage"
   description: "Object storage related documentations"
   permalink: "/object-storage"
+
 "help":
   label: "help"
   description: "Help related documentations"

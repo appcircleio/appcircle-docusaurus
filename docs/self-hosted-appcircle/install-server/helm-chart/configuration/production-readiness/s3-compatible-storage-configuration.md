@@ -3,7 +3,7 @@ title: S3-Compatible Object Storage Configuration
 description: Learn how to configure any S3-compatible object storage (MinIO, Wasabi, Backblaze B2, DigitalOcean Spaces, Cloudflare R2, etc.) for Appcircle server using the Helm chart
 sidebar_position: 40
 tags:
-  [self-hosted, object-storage, s3]
+  [self-hosted, object-storage, s3, minio]
 ---
 
 import Tabs from '@theme/Tabs';
@@ -116,12 +116,11 @@ export CORS='{
 Refer to your provider's documentation for how to apply CORS settings.
 
 :::tip
-- The CORS configuration is only required for the `temp` bucket
+- The CORS configuration is only required for the `temp` bucket.
 - **Make sure** that the clients are allowed to access the `temp` bucket over network. The clients (Appcircle users with the dashboard) use the `temp` bucket to upload/download files.
-- Other buckets don't require CORS configuration as they are accessed server-side
-- If you will use the Appcircle server dashboard with HTTP instead of HTTPS, replace `https://` with `http://` in the origin
+- Other buckets don't require CORS configuration, as they are accessed server-side.
+- If you will use the Appcircle server dashboard with HTTP instead of HTTPS, replace `https://` with `http://` in the origin.
 :::
-
 
 :::info
 
@@ -263,6 +262,6 @@ After completing the S3-compatible storage configuration:
   - For Kubernetes: [Kubernetes Installation](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes)
   - For OpenShift: [OpenShift Installation](/self-hosted-appcircle/install-server/helm-chart/installation/openshift)
 2. **Continue with the installation process** using your configured `values.yaml` file
-3. **Verify the configuration** by checking that Appcircle server can access the buckets after installation
+3. **Verify the configuration** by checking that the Appcircle server can access the buckets after installation.
 
 <NeedHelp /> 
