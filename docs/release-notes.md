@@ -16,6 +16,24 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.28.3 - 2025-07-21 Auto Re-sign for Publish, UI Improvements and more
+
+### 🆕 New Features
+
+- The [Auto Re-sign](/publish-module/publish-information/auto-resign-configuration) feature has been added in Appcircle’s Publish module allows users to automatically re-sign their iOS (.ipa) and Android (.apk/.aab) applications with a different keystore, provisioning profile, or certificate before distribution. <PublishBadge/> <CloudBadge/>
+- The [Binary comparison](/publish-module/publish-information/binary-information#binary-comparison) feature has been added to highlight differences between two binaries using color-coded indicators for easy identification. <PublishBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Character limit validation has been added to the connection setup fields for all Git provider options. <BuildBadge/> <CloudBadge/>
+- Descriptions were added for versioning tab configurations within the Build Profile settings. <BuildBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where the variable name was not displayed in some notifications when the action was shown. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the updated release note on the Testing Distribution profile did not appear on the screen until the browser was refreshed. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where newly created Testing Distribution profiles had UI issues when attempting to distribute binaries to testers. <DistributionBadge/> <CloudBadge/>
+
 ## 3.28.2 - 2025-07-09 GitHub Enterprise Support, Manual Webhook Enhancements, SMTP Configuration, Bug Fixes and more
 
 ### 🆕 New Features
@@ -23,17 +41,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Support for the [GitHub Enterprise](build/manage-the-connections/adding-a-build-profile/connecting-to-github) connection type has been added to allow build profiles to connect to repositories using a Fine-Grained Personal Access Token. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Introduced dynamic [SMTP configuration](self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#email) for self-hosted environments, including live updates to mail server settings, and test email functionality. <AccountBadge/> <SelfHostedBadge/>
 - Introduced the [Appcircle Assistant GPT](/marketplace/open-ai), a custom AI assistant that provides answers about Appcircle, including step-by-step instructions and troubleshooting support. <CloudBadge/> <SelfHostedBadge/>
-- The [Auto Re-sign](/publish-module/publish-information/auto-resign-configuration) feature has been added in Appcircle’s Publish module allows users to automatically re-sign their iOS (.ipa) and Android (.apk/.aab) applications with a different keystore, provisioning profile, or certificate before distribution. <PublishBadge/> <CloudBadge/>
-- The [Binary comparison](/publish-module/publish-information/binary-information#binary-comparison) feature has been added to highlight differences between two binaries using color-coded indicators for easy identification. <PublishBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - The [bind](/build/build-process-management/build-manually-or-with-triggers#binding-existing-manual-webhooks-to-other-build-profiles) option can now be used by build profiles to reuse existing manual webhooks for accessing the same repository across other build profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Branch names that exactly match the search input are now displayed at the top of the search results within the build profile. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Character limit validation has been added to the connection setup fields for all Git provider options. <BuildBadge/> <CloudBadge/>
 - The warning message on form validations has been improved for cases where the text input is too long. <CloudBadge/> <SelfHostedBadge/>
-- The app version icon will now be displayed in the binary information option within the publish profiles. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The app icon will now be updated for Publish profiles if the marked release candidate version has a different icon. <PublishBadge/> <CloudBadge/>
+- The app version icon will now be displayed in the binary information option within the publish profiles. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The username option has been removed from the Bitbucket repository PAT-type connection settings. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Upgraded NGINX dependency to `1.29.0` to ensure up-to-date security and stability in self-hosted environments. <InfrastructureBadge/> <SelfHostedBadge/>
 - Upgraded PostgreSQL to `14.18` for standalone (Docker/Podman) deployments to ensure latest security and stability improvements. <InfrastructureBadge/> <SelfHostedBadge/>
@@ -47,12 +62,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where, on some occasions, clicking the webhook icon on the build profile caused disruptions in the webhook connection. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where refreshing the browser page caused UI problems on the iOS tab of the testing distribution profiles. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Various UI issues related to testing distribution module that were experienced on Firefox browsers have been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where the updated release note on the Testing Distribution profile did not appear on the screen until the browser was refreshed. <DistributionBadge/> <CloudBadge/>
 - An issue has been fixed where the current organization was being reset after login for users with inherited access to sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where using an HTTP proxy alongside service replicas in standalone self-hosted Appcircle Server deployments could lead to network connectivity problems. <InfrastructureBadge/> <SelfHostedBadge/>
 - An issue has been fixed where new branches did not appear in the Appcircle branch list if webhooks were disabled in Azure DevOps 2020 repositories. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where the variable name was not displayed in some notifications when the action was shown. <AccountBadge/> <CloudBadge/>
-- An issue has been fixed where the Metadata Approval Publish Step settings were not accepting subdomain-type email addresses. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where the Metadata Approval Publish Step settings were not accepting subdomain-type email addresses. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :warning: Breaking Changes
 
