@@ -306,12 +306,10 @@ aws iam list-attached-user-policies --user-name ${IAM_USER}
 CloudFront is AWS's Content Delivery Network (CDN) service that improves performance by caching your S3 content at edge locations worldwide. This reduces latency and improves download speeds for your users.
 
 :::tip
-**Decision Tree:**
 - **Follow this guide** if you need production-grade performance to serve your users globally.
-  - **Continue to**: Step 7.1 below
 - **Skip this section** if you're setting up for development/testing or have a small or medium team.
-  - You can always enable CloudFront later without reinstalling Appcircle server.
-  - **Skip to**: [Create Kubernetes Secret](#create-kubernetesopenshift-secret-for-access-keys)
+  - You can always enable CloudFront later without reinstalling the Appcircle server.
+    - **Skip to** the [Create Kubernetes Secret](#create-kubernetesopenshift-secret-for-access-keys) step if you do not need CDN configuration.
 :::
 
 This guide will walk you through the process of creating a CloudFront distribution for your S3 buckets with the `aws` CLI.
