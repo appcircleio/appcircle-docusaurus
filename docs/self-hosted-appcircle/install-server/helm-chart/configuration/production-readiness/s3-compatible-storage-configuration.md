@@ -259,9 +259,11 @@ minio:
 After completing the S3-compatible storage configuration:
 
 1. **Return to the main installation guide**:
-  - For Kubernetes: [Kubernetes Installation](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes)
-  - For OpenShift: [OpenShift Installation](/self-hosted-appcircle/install-server/helm-chart/installation/openshift)
+   - For Kubernetes: [Kubernetes Installation](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes)
+   - For OpenShift: [OpenShift Installation](/self-hosted-appcircle/install-server/helm-chart/installation/openshift)
+
 2. **Continue with the installation process** using your configured `values.yaml` file
+
 3. **Verify the configuration** by checking that the Appcircle server can access the buckets after installation.
 
 <NeedHelp /> 
