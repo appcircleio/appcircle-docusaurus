@@ -1,5 +1,5 @@
 ---
-title: Production Readiness
+title: Database and Vault Configurations
 description: Learn how to configure the Appcircle server Helm chart for production environments
 tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 20
@@ -261,50 +261,6 @@ mongodb:
 ```
 
 </details>
-
-### MinIO
-
-By default, the Appcircle chart includes an in-cluster MinIO deployment provided by `bitnami/minio`.
-
-If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
-
-For production environments, it is recommended to configure an external MinIO instance. The recommended version is MinIO `2024-03-15` or later, with a disk size of 1TB.
-
-:::info
-The recommended disk size for the MinIO instance may vary depending on your usage requirements. It can range from 500GB to 3-4TB.
-:::
-
-To use an external MinIO instance, you can follow the steps below:
-
-- Create the following buckets for Appcircle to use on the MinIO instance:
-
-  - appcircle-local-resource-temp
-  - appcircle-local-resource-build
-  - appcircle-local-resource-distribution
-  - appcircle-local-resource-storesubmit
-  - appcircle-local-resource-store
-  - appcircle-local-resource-agent-cache
-  - appcircle-local-resource-backup
-  - appcircle-local-resource-publish
-
-- Create a secret with the name `${releaseName}-minio-connection` containing the `accessKey` and `secretKey` keys.
-
-```bash
-kubectl create secret generic appcircle-server-minio-connection \
-  -n appcircle \
-  --from-literal=accessKey='admin' \
-  --from-literal=secretKey='superSecretAdminAccessKey'
-```
-
-- Update the `values.yaml` accordingly.
-
-```yaml
-global:
-  minio:
-    url: "http://10.33.167.78:9000"
-minio:
-  enabled: false
-```
 
 ### HashiCorp Vault
 

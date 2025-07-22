@@ -124,14 +124,7 @@ The **`oc`** Openshift CLI is **required**.
 
 ## Pre-installation Steps
 
-
-### 1. Production Readiness
-
-If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
-
-For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
-
-### 2. Configure `oc` CLI
+### 1. Configure `oc` CLI
 
 Log in to your OpenShift cluster using the `oc` CLI. If you are already logged in and have set the correct project, you may skip this step.
 
@@ -139,7 +132,7 @@ Log in to your OpenShift cluster using the `oc` CLI. If you are already logged i
 oc login -u ${username} ${OPENSHIFT_API_URL}
 ```
 
-### 3. Create Project
+### 2. Create Project
 
 **Create a project** for the Appcircle server deployment. In this documentation, we will use `appcircle` as the example project.
 
@@ -147,7 +140,7 @@ oc login -u ${username} ${OPENSHIFT_API_URL}
 oc new-project appcircle
 ```
 
-### 4. Create Container Registry Secret
+### 3. Create Container Registry Secret
 
 By default, Appcircle uses its own image registry, which requires authentication with the `cred.json` file provided by Appcircle.
 
@@ -375,6 +368,12 @@ webeventredis:
 ```
 
 </details>
+
+#### Production Readiness Configuration
+
+If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
+
+For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
 
   </TabItem>
 </Tabs>
