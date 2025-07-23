@@ -1,5 +1,5 @@
 ---
-title: Production Readiness
+title: Database and Vault Configurations
 description: Learn how to configure the Appcircle server Helm chart for production environments
 tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 20
@@ -66,7 +66,15 @@ By default, the Appcircle chart includes an in-cluster MongoDB deployment provid
 
 If you are deploying the Appcircle server for testing purposes, the built-in MongoDB deployment can be used.
 
-For production environments, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.x`, with a disk size of 40GB.
+For production environments, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.2` or later, with a disk size of 40GB.
+
+:::info
+The Appcircle server supports MongoDB versions between `4.2` and `8.0`.
+
+Later versions of the Appcircle server may deprecate `4.x` versions and might remove support for MongoDB EOL (end-of-life) [releases](https://www.mongodb.com/docs/manual/release-notes/).
+
+For this reason, it will be better to choose a recent stable version of MongoDB instead of an EOL release, which can prevent future migration efforts as much as possible.
+:::
 
 To use an external MongoDB database, you can follow the steps below:
 
@@ -261,50 +269,6 @@ mongodb:
 ```
 
 </details>
-
-### MinIO
-
-By default, the Appcircle chart includes an in-cluster MinIO deployment provided by `bitnami/minio`.
-
-If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
-
-For production environments, it is recommended to configure an external MinIO instance. The recommended version is MinIO `2024-03-15` or later, with a disk size of 1TB.
-
-:::info
-The recommended disk size for the MinIO instance may vary depending on your usage requirements. It can range from 500GB to 3-4TB.
-:::
-
-To use an external MinIO instance, you can follow the steps below:
-
-- Create the following buckets for Appcircle to use on the MinIO instance:
-
-  - appcircle-local-resource-temp
-  - appcircle-local-resource-build
-  - appcircle-local-resource-distribution
-  - appcircle-local-resource-storesubmit
-  - appcircle-local-resource-store
-  - appcircle-local-resource-agent-cache
-  - appcircle-local-resource-backup
-  - appcircle-local-resource-publish
-
-- Create a secret with the name `${releaseName}-minio-connection` containing the `accessKey` and `secretKey` keys.
-
-```bash
-kubectl create secret generic appcircle-server-minio-connection \
-  -n appcircle \
-  --from-literal=accessKey='admin' \
-  --from-literal=secretKey='superSecretAdminAccessKey'
-```
-
-- Update the `values.yaml` accordingly.
-
-```yaml
-global:
-  minio:
-    url: "http://10.33.167.78:9000"
-minio:
-  enabled: false
-```
 
 ### HashiCorp Vault
 
