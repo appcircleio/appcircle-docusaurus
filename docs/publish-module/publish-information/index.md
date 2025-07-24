@@ -26,6 +26,10 @@ With the Check Release Status function, you can instantly update the status info
 
 This option provides an in-depth view of the selected version's publish process. Users can review the steps taken, configurations used, and outcomes of the publish sequence. It's an essential resource for understanding the specific details of a version's journey through the publish workflow.
 
+## [Auto Re-sign](/publish-module/publish-information/auto-resign-configuration)
+
+The **Auto Re-sign** feature in Appcircle’s Publish module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
+
 ## [Google Play Console Information](/publish-module/publish-information/google-play-information)
 
 For Android binaries, by using Appcircle's Google Play Console Information feature, you can update the required information for binary submission.

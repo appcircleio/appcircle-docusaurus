@@ -2923,6 +2923,26 @@ xml:
   description: "Helm related documentations"
   permalink: "/helm"
 
+"s3":
+  label: "s3"
+  description: "S3 related documentations"
+  permalink: "/s3"
+
+"gcp":
+  label: "gcp"
+  description: "GCP related documentations"
+  permalink: "/gcp"
+
+"cloud-storage":
+  label: "cloud-storage"
+  description: "Cloud storage related documentations"
+  permalink: "/cloud-storage"
+
+"object-storage":
+  label: "object-storage"
+  description: "Object storage related documentations"
+  permalink: "/object-storage"
+
 "help":
   label: "help"
   description: "Help related documentations"
@@ -2997,3 +3017,13 @@ quay:
   label: "android app release"
   description: "android app release related documentations"
   permalink: "/android-app-release"
+
+"auto":
+  label: "auto"
+  description: "auto related documentations"
+  permalink: "/auto"
+
+"re-sign":
+  label: "re-sign"
+  description: "re-sign related documentations"
+  permalink: "/re-sign"
