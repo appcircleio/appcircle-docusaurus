@@ -44,6 +44,10 @@ Discover the essentials of cache retrieval in our cache-pull guide. Speed up you
 
 You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
 
+## [Custom Script from Git](/workflows/common-workflow-steps/custom-script-from-git)
+
+You can use **Custom Script from Git** to clone and run your own scripts directly from a Git repository as part of your Appcircle build. This step supports authenticated cloning (via username and PAT).
+
 ## [Code Reviews with Danger](/workflows/common-workflow-steps/danger)
 
 **Danger** runs during your CI process and gives teams the chance to automate common code review chores. This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your team’s norms. Leaving humans to think about harder problems.

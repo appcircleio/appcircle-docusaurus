@@ -11,9 +11,15 @@ import SensitiveVariablesDanger from '@site/docs/\_sensitive-variables-danger.md
 
 # Custom Script from Git
 
-You can use **Custom Script from Git** to clone and run your own scripts directly from a Git repository as part of your Appcircle build. This step supports authenticated cloning (via username and PAT), checks out the specified branch, and executes the chosen script file with any extra parameters you provide.
+You can use **Custom Script from Git** to clone and run your own scripts directly from a Git repository as part of your Appcircle build. This step supports authenticated cloning (via username and PAT).
 
 Before execution, the step will clone (or reuse) your repository, check out the specified branch, and execute the script based on its file extension (postfix).
+
+:::caution
+
+Keep in mind that the script file has to be under the repository root folder in order to work with the component.
+
+:::
 
 :::info
 
