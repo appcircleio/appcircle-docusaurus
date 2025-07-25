@@ -14,14 +14,14 @@ sidebar_position: 50
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NeedHelp from '@site/docs/\_need-help.mdx';
-import S3MinimumVersionCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution.mdx';
+import S3MinimumVersionCaution040 from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution-040.mdx';
 import S3MigrationCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-migration-caution.mdx';
 
 ## Overview
 
 This guide provides comprehensive instructions for configuring AWS S3 as your object storage backend for the Appcircle server. While the default Helm chart deployment includes MinIO as an in-cluster object storage solution, **production environments** benefit from using a more robust and scalable solution like AWS S3.
 
-<S3MinimumVersionCaution />
+<S3MinimumVersionCaution040 />
 
 ### What This Guide Covers
 
