@@ -1328,6 +1328,11 @@ gitlab:
   description: "Description for gitlab"
   permalink: /gitlab
 
+"git scripts":
+  label: "git scripts"
+  description: "Description for git scripts"
+  permalink: /git scripts
+
 "google play":
   label: "google play"
   description: "Description for google play"
@@ -2152,6 +2157,11 @@ restart:
   label: "restart"
   description: "Description for restart"
   permalink: /restart
+
+reuse:
+  label: "reuse"
+  description: "Description for reuse"
+  permalink: /reuse
 
 review:
   label: "review"
