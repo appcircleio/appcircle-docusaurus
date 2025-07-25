@@ -12,6 +12,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 import S3MinimumVersionCaution0320 from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution-0320.mdx';
 import S3MigrationCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-migration-caution.mdx';
 import S3MixedContentCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-mixed-content-caution.mdx';
+import S3MinimumVersionForHttpCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-for-http-caution.mdx';
 
 ## Overview
 
@@ -256,6 +257,8 @@ minio:
 :::
 
 <S3MixedContentCaution />
+
+<S3MinimumVersionForHttpCaution />
 
 ## Next Steps
 
