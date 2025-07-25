@@ -28,12 +28,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Character limit validation has been added to the connection setup fields for all Git provider options. <BuildBadge/> <CloudBadge/>
 - Descriptions were added for versioning tab configurations within the Build Profile settings. <BuildBadge/> <CloudBadge/>
 - The app icon will now be updated for Publish profiles if the marked release candidate version has a different icon. <PublishBadge/> <CloudBadge/>
+- Auto Re-sign related actions were added to the Publish activity logs. <PublishBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
 - An issue was fixed where the variable name was not displayed in some notifications when the action was shown. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where the updated release note on the Testing Distribution profile did not appear on the screen until the browser was refreshed. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where newly created Testing Distribution profiles had UI issues when attempting to distribute binaries to testers. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where Publish profiles with an existing release candidate–marked app version caused a UI issue when a second release candidate binary was uploaded with Auto Re-sign and Auto Publish enabled. <PublishBadge/> <CloudBadge/>
 
 ## 3.28.2 - 2025-07-09 GitHub Enterprise Support, Manual Webhook Enhancements, SMTP Configuration, Bug Fixes and more
 
