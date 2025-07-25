@@ -11,6 +11,7 @@ import TabItem from '@theme/TabItem';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import S3MinimumVersionCaution0320 from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution-0320.mdx';
 import S3MigrationCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-migration-caution.mdx';
+import S3MixedContentCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-mixed-content-caution.mdx';
 
 ## Overview
 
@@ -248,11 +249,13 @@ minio:
 
 </Tabs>
 
-:::caution
+:::info
 - Set `useHttp` to `true` only if your S3 or MinIO endpoint does not support HTTPS (not recommended for production).
 - Check your provider's documentation for the correct endpoint URL and region.
 - Replace `appcircle-spacetech-` with your actual bucket prefix.
 :::
+
+<S3MixedContentCaution />
 
 ## Next Steps
 
