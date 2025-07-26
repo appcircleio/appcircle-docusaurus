@@ -98,7 +98,15 @@ This guide assumes you have administrative access to your AWS account and Kubern
 
 Basic understanding of **AWS IAM**, **S3**, and **Kubernetes/OpenShift** concepts is recommended.
 
-### 5. Optional: Domain and SSL Certificates
+### 5. Virtual-hosted Style S3 Endpoint
+
+The Appcircle server does not support path-style S3 endpoint model. Your S3 endpoints should be virtual-hosted style which can be accessible using relevant DNS subdomains.
+
+:::info
+Refer [here](https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/) or to the [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html) documentation to see the differences between S3 endpoint styles and configure your S3 endpoints if necessary.
+:::
+
+### 6. Optional: Domain and SSL Certificates
 
 For CloudFront CDN setup (optional), you'll need:
 - **Domain name**: For custom CDN domains
