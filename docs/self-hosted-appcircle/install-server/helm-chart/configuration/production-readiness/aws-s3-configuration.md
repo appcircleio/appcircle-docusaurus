@@ -689,7 +689,7 @@ global:
   minio:
     url: https://s3.us-east-1.amazonaws.com # Replace with your AWS S3 endpoint
     region: "us-east-1" # Replace with your AWS region
-    useHttp: "false" # Set to "false" if you're using HTTPS S3 endpoint
+    useHttp: "false" # Set to "false" since we need to use HTTPS for the AWS S3 endpoint
     bucketPrefix: "appcircle-spacetech-"
 resource:
   s3:
@@ -701,7 +701,6 @@ minio:
 :::caution
 - Replace `https://s3.us-east-1.amazonaws.com` with your [AWS S3 endpoint](https://docs.aws.amazon.com/general/latest/gr/s3.html).
 - Replace `us-east-1` with your AWS region.
-- Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production).
 - Replace `appcircle-spacetech-` with your actual bucket prefix. If you haven't terminated the terminal session, you can run `echo $BUCKET_PREFIX` to get the bucket prefix.
 :::
 
@@ -714,7 +713,7 @@ global:
   minio:
     url: https://s3.us-east-1.amazonaws.com # Replace with your AWS S3 endpoint
     region: "us-east-1" # Replace with your AWS region
-    useHttp: "false" # Set to "false" if you're using HTTPS S3 endpoint
+    useHttp: "false" # Set to "false" since we need to use HTTPS for the AWS S3 endpoint
     bucketPrefix: "appcircle-spacetech-"
 resource:
   s3:
@@ -730,7 +729,6 @@ minio:
 :::caution
 - Replace `https://s3.us-east-1.amazonaws.com` with your [AWS S3 endpoint](https://docs.aws.amazon.com/general/latest/gr/s3.html).
 - Replace `us-east-1` with your AWS region.
-- Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production).
 - Replace `appcircle-spacetech-` with your actual bucket prefix. If you haven't terminated the terminal session, you can run `echo $BUCKET_PREFIX` to get the bucket prefix.
 - Replace `appcircle-build-cdn.spacetech.com` with your actual `build` bucket CDN domain
 - Replace `appcircle-distribution-cdn.spacetech.com` with your actual `distribution` bucket CDN domain
