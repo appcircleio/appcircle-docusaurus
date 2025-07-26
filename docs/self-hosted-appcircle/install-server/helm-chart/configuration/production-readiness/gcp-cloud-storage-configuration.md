@@ -573,7 +573,7 @@ global:
   minio:
     url: https://storage.googleapis.com # Do not replace this value
     region: "us-east1" # Replace with your GCP region
-    useHttp: "false" # Set to "false" if you're using HTTPS GCS endpoint
+    useHttp: "false" # Set to "false" since the GCS endpoint is HTTPS
     bucketPrefix: "appcircle-spacetech-" # Replace with your bucket prefix
 resource:
   s3:
@@ -593,7 +593,7 @@ global:
   minio:
     url: https://storage.googleapis.com # Do not replace this value
     region: "us-east1" # Replace with your GCP region
-    useHttp: "false" # Set to "false" if you're using HTTPS GCS endpoint
+    useHttp: "false" # Set to "false" since the GCS endpoint is HTTPS
     bucketPrefix: "appcircle-spacetech-" # Replace with your bucket prefix
 resource:
   s3:
@@ -612,7 +612,6 @@ minio:
   - Run `echo $LOCATION` to get your GCP region from the variables defined in the previous steps.
 - Replace `appcircle-spacetech-` with your actual bucket prefix.
   - Run `echo $BUCKET_PREFIX` to get your bucket prefix from the variables defined in the previous steps.
-- Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production).
 - Ensure `googleCredentialsSecretName` matches the secret name created in the previous step.
 :::
 
