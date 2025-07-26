@@ -51,7 +51,9 @@ To complete this guide, you must have the following:
 - Basic understanding of object storage, access keys, and Kubernetes
 
 :::caution
-The Appcircle server does not support the path-style S3 endpoint model. Your S3 endpoints should be virtual-hosted style, which can be accessible using relevant DNS subdomains.
+Keep in mind that if you will use an AWS S3-compatible provider, the `resource.s3.clientProvider` [setting](#5-configure-appcircle-server-to-use-s3-compatible-storage) used for the `AWS` option has limited support for the S3 endpoint styles.
+
+The Appcircle server does not support the path-style S3 endpoint model. So, your S3 endpoints should be virtual-hosted style, which can be accessible using relevant DNS subdomains.
 
 Refer [here](https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/) to see the differences between two styles and configure your S3 endpoints if necessary.
 :::
