@@ -14,14 +14,14 @@ sidebar_position: 50
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NeedHelp from '@site/docs/\_need-help.mdx';
-import S3MinimumVersionCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution.mdx';
+import S3MinimumVersionCaution040 from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution-040.mdx';
 import S3MigrationCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-migration-caution.mdx';
 
 ## Overview
 
 This guide provides comprehensive instructions for configuring AWS S3 as your object storage backend for the Appcircle server. While the default Helm chart deployment includes MinIO as an in-cluster object storage solution, **production environments** benefit from using a more robust and scalable solution like AWS S3.
 
-<S3MinimumVersionCaution />
+<S3MinimumVersionCaution040 />
 
 ### What This Guide Covers
 
@@ -98,7 +98,15 @@ This guide assumes you have administrative access to your AWS account and Kubern
 
 Basic understanding of **AWS IAM**, **S3**, and **Kubernetes/OpenShift** concepts is recommended.
 
-### 5. Optional: Domain and SSL Certificates
+### 5. Virtual-hosted Style S3 Endpoint
+
+The Appcircle server does not support the path-style S3 endpoint model. Your S3 endpoints should be virtual-hosted style, which can be accessible using relevant DNS subdomains.
+
+:::info
+Refer [here](https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/) or to the [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html) documentation to see the differences between S3 endpoint styles and configure your S3 endpoints if necessary.
+:::
+
+### 6. Optional: Domain and SSL Certificates
 
 For CloudFront CDN setup (optional), you'll need:
 - **Domain name**: For custom CDN domains
@@ -689,7 +697,7 @@ global:
   minio:
     url: https://s3.us-east-1.amazonaws.com # Replace with your AWS S3 endpoint
     region: "us-east-1" # Replace with your AWS region
-    useHttp: "false" # Set to "false" if you're using HTTPS S3 endpoint
+    useHttp: "false" # Set to "false" since we need to use HTTPS for the AWS S3 endpoint
     bucketPrefix: "appcircle-spacetech-"
 resource:
   s3:
@@ -701,7 +709,6 @@ minio:
 :::caution
 - Replace `https://s3.us-east-1.amazonaws.com` with your [AWS S3 endpoint](https://docs.aws.amazon.com/general/latest/gr/s3.html).
 - Replace `us-east-1` with your AWS region.
-- Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production).
 - Replace `appcircle-spacetech-` with your actual bucket prefix. If you haven't terminated the terminal session, you can run `echo $BUCKET_PREFIX` to get the bucket prefix.
 :::
 
@@ -714,7 +721,7 @@ global:
   minio:
     url: https://s3.us-east-1.amazonaws.com # Replace with your AWS S3 endpoint
     region: "us-east-1" # Replace with your AWS region
-    useHttp: "false" # Set to "false" if you're using HTTPS S3 endpoint
+    useHttp: "false" # Set to "false" since we need to use HTTPS for the AWS S3 endpoint
     bucketPrefix: "appcircle-spacetech-"
 resource:
   s3:
@@ -730,7 +737,6 @@ minio:
 :::caution
 - Replace `https://s3.us-east-1.amazonaws.com` with your [AWS S3 endpoint](https://docs.aws.amazon.com/general/latest/gr/s3.html).
 - Replace `us-east-1` with your AWS region.
-- Set `useHttp` to `true` only if you're using HTTP instead of HTTPS (not recommended for production).
 - Replace `appcircle-spacetech-` with your actual bucket prefix. If you haven't terminated the terminal session, you can run `echo $BUCKET_PREFIX` to get the bucket prefix.
 - Replace `appcircle-build-cdn.spacetech.com` with your actual `build` bucket CDN domain
 - Replace `appcircle-distribution-cdn.spacetech.com` with your actual `distribution` bucket CDN domain

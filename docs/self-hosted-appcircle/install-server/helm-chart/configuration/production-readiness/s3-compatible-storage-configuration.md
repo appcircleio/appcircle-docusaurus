@@ -9,8 +9,10 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NeedHelp from '@site/docs/\_need-help.mdx';
-import S3MinimumVersionCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution.mdx';
+import S3MinimumVersionCaution0320 from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-caution-0320.mdx';
 import S3MigrationCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-migration-caution.mdx';
+import S3MixedContentCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-mixed-content-caution.mdx';
+import S3MinimumVersionForHttpCaution from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_s3-minimum-version-for-http-caution.mdx';
 
 ## Overview
 
@@ -24,7 +26,7 @@ For production environments, it is recommended to configure an external MinIO or
 The recommended disk size for the object storage may vary depending on your usage requirements. It can range from 100GB to 3-4TB.
 :::
 
-<S3MinimumVersionCaution />
+<S3MinimumVersionCaution0320 />
 
 ### What This Guide Covers
 
@@ -47,6 +49,14 @@ To complete this guide, you must have the following:
 - An S3-compatible object storage provider (MinIO, Wasabi, Backblaze B2, DigitalOcean Spaces, Cloudflare R2, etc.)
 - Access to the provider's management console or CLI
 - Basic understanding of object storage, access keys, and Kubernetes
+
+:::caution
+Keep in mind that if you will use an AWS S3-compatible provider, the `resource.s3.clientProvider` [setting](#5-configure-appcircle-server-to-use-s3-compatible-storage) used for the `AWS` option has limited support for the S3 endpoint styles.
+
+The Appcircle server does not support the path-style S3 endpoint model. So, your S3 endpoints should be virtual-hosted style, which can be accessible using relevant DNS subdomains.
+
+Refer [here](https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/) to see the differences between two styles and configure your S3 endpoints if necessary.
+:::
 
 ## Configuration Steps
 
@@ -248,11 +258,15 @@ minio:
 
 </Tabs>
 
-:::caution
+:::info
 - Set `useHttp` to `true` only if your S3 or MinIO endpoint does not support HTTPS (not recommended for production).
 - Check your provider's documentation for the correct endpoint URL and region.
 - Replace `appcircle-spacetech-` with your actual bucket prefix.
 :::
+
+<S3MixedContentCaution />
+
+<S3MinimumVersionForHttpCaution />
 
 ## Next Steps
 
