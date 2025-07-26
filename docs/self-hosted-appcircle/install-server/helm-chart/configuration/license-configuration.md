@@ -25,8 +25,7 @@ The initial organization ID is printed alongside the Helm output during installa
 ```bash
 kubectl get secret appcircle-server-auth-keycloak \
   -n appcircle \
-  -o jsonpath="{.data.initialOrganizationId}" | base64 --decode \
-  echo
+  -o jsonpath="{.data.initialOrganizationId}" | base64 --decode && echo
 ```
 
   </TabItem>
@@ -35,8 +34,7 @@ kubectl get secret appcircle-server-auth-keycloak \
 ```bash
 oc get secret appcircle-server-auth-keycloak \
   -n appcircle \
-  -o jsonpath="{.data.initialOrganizationId}" | base64 --decode \
-  echo
+  -o jsonpath="{.data.initialOrganizationId}" | base64 --decode && echo
 ```
 
   </TabItem>
