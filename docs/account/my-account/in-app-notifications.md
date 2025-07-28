@@ -12,7 +12,7 @@ In-app notifications in Appcircle keep you informed about important actions with
 
 Next to the notifications icon, you can see the current number of notifications and unread notifications, displayed as **unread / total**.
 
-**SCREENSHOT **
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6670-notifications.png'/>  
 
 ## In-app Notifications Actions
 
@@ -22,28 +22,27 @@ By clicking on the icons next to the in-app notification, you can:
 - Copy the notification text
 - Delete the notification
 
-**SCREENSHOT **
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6670-notifications-actions2.png' />  
 
 If the notification indicates an error, you can also:
 
 - Copy the trace ID
 
-**SCREENSHOT **
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6670-notifications-trace-id.png'/>  
 
 ## Filtering In-app Notifications
 
 You can filter in-app notifications by date, module (Build, Signing Identities, etc.), type (Success, Info, Warning, Error), and organization by clicking the filter icon and selecting your filtering method.
 
-**SCREENSHOT **
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6670-notifications-filter.png'/>  
 
 You can add multiple filters and remove them by clicking the × icon next to each one.
 
-**SCREENSHOT **
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6670-notifications-multiple-filters.png'/>  
 
 ## Clearing In-app Notifications
 
 You can clear all notifications by clicking **Clear All**. If a filter is active when you click **Clear All**, only the filtered notifications will be deleted.
 
-**SCREENSHOT **
-
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6670-notifications-clear-all2.png'/>  
 
