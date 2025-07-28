@@ -17,6 +17,10 @@ You can change how your store looks using the **[Customize](/enterprise-app-stor
 
 For self-hosted specific settings, you should follow the documentation below.
 
+## Custom Domain
+
+To configure a custom domain for your Enterprise App Store, follow the instructions on the [Enterprise App Store settings page](/docs/enterprise-app-store/portal-settings.md#custom-domain).
+
 ## Tab Title Localization
 
 You can change the Enterprise App Store tab title according to the language selected on the self-hosted Appcircle server.
