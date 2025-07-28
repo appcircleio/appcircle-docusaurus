@@ -144,7 +144,7 @@ cd appcircle-server
 - Apply up-to-date server configuration.
 
 ```bash
-./ac-self-hosted.sh -n "spacetech" up
+./ac-self-hosted.sh -n "spacetech" export
 ```
 
 :::
