@@ -8,6 +8,7 @@ sidebar_position: 50
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import SampleReleaseNameInfo from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_sample-release-name-info.mdx';
 
 ## Overview
 
@@ -18,6 +19,8 @@ If you have purchased a license from Appcircle, you can follow this documentatio
 ### Retrieving the Initial Organization ID
 
 The initial organization ID is printed alongside the Helm output during installation. If you miss the initial output or need to retrieve the organization ID later, use the following command:
+
+<SampleReleaseNameInfo />
 
 <Tabs groupId="Platform">
   <TabItem value="kubernetes" label="Kubernetes" default>
