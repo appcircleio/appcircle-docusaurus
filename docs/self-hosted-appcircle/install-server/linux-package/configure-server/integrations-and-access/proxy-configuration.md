@@ -128,8 +128,25 @@ Otherwise, you won't succeed in the following steps.
 Don't forget to change `user`, `password`, proxy `host`, proxy `port`, and `no_proxy` settings for your needs while copying from above.
 :::
 
-:::caution
-Currently we do not support proxies that requires to install it's own certificate.
+:::tip
+If your proxy server has its own self-signed certificate, you should add it to the Appcircle server configuration file (`global.yaml`) in order to make it trusted for the Appcircle services.
+
+Since the proxy usage is also considered to be an external service, you should follow the **[external services](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#external-services)** document for the relevant settings.
+
+Keep in mind that, after you configure the Appcircle server, you should apply the configuration changes using the following steps.
+
+- Go to the `appcircle-server` folder.
+
+```bash
+cd appcircle-server
+```
+
+- Apply up-to-date server configuration.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
 :::
 
 ### Edit `no_proxy` for Internal Container Network
