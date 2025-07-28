@@ -16,24 +16,40 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.28.3 - 2025-07-21 Auto Re-sign for Publish, UI Improvements and more
+## 3.28.3 - 2025-07-21 Auto Re-sign for Publish, New Notification Window, UI Improvements and more
 
 ### 🆕 New Features
 
 - The [Auto Re-sign](/publish-module/publish-information/auto-resign-configuration) feature has been added in Appcircle’s Publish module allows users to automatically re-sign their iOS (.ipa) and Android (.apk/.aab) applications with a different keystore, provisioning profile, or certificate before distribution. <PublishBadge/> <CloudBadge/>
 - The [Binary comparison](/publish-module/publish-information/binary-information#binary-comparison) feature has been added to highlight differences between two binaries using color-coded indicators for easy identification. <PublishBadge/> <CloudBadge/>
+- Introduced a redesigned Notification Center that provides advanced filtering options by Module, Date, Type, and Organization. The new interface allows users to easily track the total number of notifications and clear them in bulk for better management and visibility. <AccountBadge/> <CloudBadge/>
+- Users can now manually delete caches from build workflows to optimize storage usage. Artifact storage remains unaffected when clearing Cache Pull/Cache Push data. <BuildBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - Character limit validation has been added to the connection setup fields for all Git provider options. <BuildBadge/> <CloudBadge/>
 - Descriptions were added for versioning tab configurations within the Build Profile settings. <BuildBadge/> <CloudBadge/>
 - The app icon will now be updated for Publish profiles if the marked release candidate version has a different icon. <PublishBadge/> <CloudBadge/>
+- Auto Re-sign related actions were added to the Publish activity logs. <PublishBadge/> <CloudBadge/>
+- Auto Re-sign credentials have been moved to the Auto Re-sign configuration, allowing the use of different credentials independent from the profile settings. <PublishBadge/> <CloudBadge/>
+- Added character count validation under all input fields with character limits, including metadata input variables, to provide real-time feedback and prevent invalid entries. <PublishBadge/> <CloudBadge/>
+- Added export functionality for reports and activity logs in the Signing Identity module to improve accessibility and auditing. <SigningIdentitiesBadge/> <CloudBadge/>
+- Added new notification actions for manual cache clearing operations, including support for Teams, Slack, Email, and Webhook notifications. <IntegrationsBadge/> <CloudBadge/>
+- Added the ability to select the base build number and version code for Auto Re-sign from App Store, TestFlight, and Play Console by choosing a source for each. <PublishBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
 - An issue was fixed where the variable name was not displayed in some notifications when the action was shown. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where the updated release note on the Testing Distribution profile did not appear on the screen until the browser was refreshed. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where newly created Testing Distribution profiles had UI issues when attempting to distribute binaries to testers. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where Publish profiles with an existing release candidate–marked app version caused a UI issue when a second release candidate binary was uploaded with Auto Re-sign and Auto Publish enabled. <PublishBadge/> <CloudBadge/>
+- An issue was fixed in the Publish and Resign modules where the Version fields could not be cleared properly, causing values to reappear and lock after multiple deletion attempts. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where deleting binaries via checkbox did not revert the delete button back to the file upload state, forcing users to refresh the window. <PublishBadge/> <CloudBadge/>
+- An issue was fixed in the Publish module where the Change button remained active after a file was selected, now properly disabling to prevent accidental re-selection. <PublishBadge/> <CloudBadge/>
+- An issue was fixed in Workflows where cloned workflows were not following the expected copy naming pattern, ensuring consistent naming behavior across modules. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where builds triggered by Git tags showed the commit author instead of the tag author as the trigger user. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where CodePush profiles could not be deleted successfully. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where navigating to the Security page in a starter organization incorrectly displayed a Plan Limit Exceeded error. <AccountBadge/> <CloudBadge/>
 
 ## 3.28.2 - 2025-07-09 GitHub Enterprise Support, Manual Webhook Enhancements, SMTP Configuration, Bug Fixes and more
 
