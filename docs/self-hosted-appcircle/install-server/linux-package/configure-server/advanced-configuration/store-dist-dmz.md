@@ -9,12 +9,14 @@ tags:
     enterprise app store,
     testing distribution,
   ]
-sidebar_position: 12
+sidebar_position: 50
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
+import DmzHttpsRequirement from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-dmz-https-requirement.mdx';
+import PortRedirection from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-dmz-port-redirection.mdx';
 import LingerOption from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_linger-option.mdx';
 import SocatConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_socat-configuration.mdx';
 import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_podman-netavark-configuration.mdx';
@@ -32,7 +34,7 @@ This is particularly useful when users need to access Testing Distribution and E
 
 The Testing Distribution module and Enterprise App Store module hosted on the Appcircle DMZ server can be accessed by users from the internet, ensuring they have secure access to these critical features while keeping sensitive business data within your private network. This setup provides a balance between security and productivity in an organization's IT environment.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-dmz-detailed-diagram.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-5590-dmz-detailed-diagram.png' />
 
 We assume that you have already set up an Appcircle server successfully. This document will guide you through creating Appcircle DMZ server and Appcircle server configurations.
 
@@ -41,6 +43,10 @@ In this document:
 - We will call the "Appcircle DMZ server" to the server, which is located in the DMZ and host the Appcircle Enterprise App Store and Testing Distribution services.
 
 - We will call the "Appcircle server" to the server, which is located in the private network and host the Appcircle core services.
+
+:::info
+The Appcircle DMZ server does not serve any content on port `80`. For more information on the use of `HTTP` port `80` by the Appcircle DMZ server, please refer to the [Firewall Configuration](#firewall-configuration).
+:::
 
 :::info
 When you convert to the DMZ architecture, both the Enterprise App Store and the Testing Distribution will be transferred to the Appcircle DMZ server. We currently do not support using only one of them in the Appcircle DMZ server.
@@ -162,6 +168,16 @@ You can install these dependencies from your package repository depending on you
 
 </Tabs>
 
+#### SELinux
+
+You must use the same SELinux mode on the Appcircle server and the Appcircle DMZ server.
+
+You can check the SELinux mode with the command below.
+
+```bash
+getenforce
+```
+
 ### Firewall Configuration
 
 <Tabs>
@@ -175,13 +191,6 @@ If you are using `Firewalld`, you need to open the ports below according to your
 ```bash
 sudo firewall-cmd --add-port=80/tcp --permanent
 sudo firewall-cmd --add-port=443/tcp --permanent
-sudo firewall-cmd --reload
-```
-
-- If you plan to run the Appcircle DMZ server with HTTP:
-
-```bash
-sudo firewall-cmd --add-port=80/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
@@ -220,15 +229,15 @@ sudo ufw status verbose
 
 </Tabs>
 
-#### SELinux
+:::info
+<PortRedirection/>
+:::
 
-You must use the same SELinux mode on the Appcircle server and the Appcircle DMZ server.
+### HTTPS Requirement
 
-You can check the SELinux mode with the command below.
+<DmzHttpsRequirement/>
 
-```bash
-getenforce
-```
+Due to this requirement, it is mandatory for the Appcircle DMZ server to be configured with `HTTPS`. For detailed instructions on configuring custom domains and `HTTPS` for the Enterprise App Store and Testing Distribution, please refer to the [SSL Configuration Guide](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration). This guide will help you set up the necessary configurations in your Appcircle server's `global.yaml` file.
 
 ### DNS Entries
 
@@ -253,6 +262,8 @@ cd appcircle-server
 ```bash
 export PATH=$PATH:$(pwd)/deps/bin
 ```
+
+---
 
 - Check if your Enterprise App Store custom domain is enabled.
 
@@ -296,6 +307,8 @@ store.appcircle.spacetech.com
 
 </Tabs>
 
+---
+
 - Check if your Testing Distribution custom domain is enabled.
 
 ```bash
@@ -338,6 +351,92 @@ dist.appcircle.spacetech.com
 
 </Tabs>
 
+---
+
+- Check if your DMZ Authentication custom domain is enabled.
+
+```bash
+yq '.keycloak.dmzCustomDomain.enabled' ./projects/spacetech/export/.global.yaml
+```
+
+<Tabs>
+  
+  <TabItem value="custom-dmz-auth-domain-enabled" label="Authentication DMZ Custom Domain Enabled" default>
+
+- Check the Appcircle DMZ authentication custom domain.
+
+```bash
+yq '.keycloak.dmzCustomDomain.domain' ./projects/spacetech/export/.global.yaml
+```
+
+:::tip
+
+You can change the Appcircle authentication domain for the users access from the internet and make it different from the internal domain using a custom domain. See the [FAQ](#how-can-we-change-the-appcircle-authentication-domain-on-the-dmz-server-for-internet-users) below for details.
+
+:::
+
+Output:
+
+```
+auth-appcircle.spacetech.com
+```
+
+  </TabItem>
+
+  <TabItem value="custom-dmz-auth-domain-disabled" label="Authentication DMZ Custom Domain Disabled" default>
+
+- Check the Appcircle DMZ default authentication domain.
+
+```bash
+yq '.keycloak.external.domain' ./projects/spacetech/export/.global.yaml
+```
+
+Output:
+
+```
+auth.appcircle.spacetech.com
+```
+
+  </TabItem>
+
+</Tabs>
+
+---
+
+According to the sample outputs above, **when all the custom domains are enabled**, the domains that clients accessing via the internet should use are as follows:
+
+- `store.spacetech.com`: Enterprise App Store custom domain.
+- `dist.spacetech.com`: Testing Distribution custom domain.
+- `auth-appcircle.spacetech.com`: DMZ Authentication custom domain.
+
+According to the sample outputs above, **when all the custom domains are disabled**, the default domains that clients should use are:
+
+- `store.appcircle.spacetech.com`: Enterprise App Store default domain.
+- `dist.appcircle.spacetech.com`: Testing Distribution default domain.
+- `auth.appcircle.spacetech.com`: DMZ default authentication domain.
+
+:::tip
+It's perfectly acceptable for **some custom domains to be enabled while others are disabled**.
+
+For example, you might have a custom domain for the Enterprise App Store but use the default domain for Testing Distribution or DMZ Authentication.  
+:::
+
+:::info
+
+#### CodePush (optional)
+
+There is an optional domain name if you want to use the Appcircle server [CodePush](/code-push/) feature in the Appcircle DMZ server. You will configure this domain name in the Appcircle server `global.yaml` file in the following sections.
+
+If you don't want to use the [CodePush](/code-push/) feature, you can skip the CodePush domain name configuration.
+
+:::
+
+---
+
+Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication, API and monitoring domains.
+
+These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration.
+
 - Check the authentication domain of the Appcircle server.
 
 ```bash
@@ -349,6 +448,8 @@ Output:
 ```
 auth.appcircle.spacetech.com
 ```
+
+---
 
 - Check the API domain of the Appcircle server.
 
@@ -362,29 +463,28 @@ Output:
 api.appcircle.spacetech.com
 ```
 
-According to the sample outputs above, the needed domains that clients accessing via the internet should know are as follows:
+---
 
-- `store.spacetech.com`: Custom Enterprise App Store domain.
-- `dist.spacetech.com`: Custom Testing Distribution domain.
-- `auth.appcircle.spacetech.com`: Appcircle authentication domain.
+- Check the monitoring domain of the Appcircle server.
 
-Also the Appcircle DMZ server should be resolving some of the Appcircle server domains such as authentication and API domains.
+```bash
+yq '.grafana.external.domain' ./projects/spacetech/export/.global.yaml
+```
 
-These domains should be resolved to the Appcircle server IP. The domains may vary according to the Appcircle server configuration.
+Output:
+
+```
+monitor.appcircle.spacetech.com
+```
 
 According to the sample outputs above, the needed domains that Appcircle DMZ server should know are as follows:
 
 - `api.appcircle.spacetech.com`: Appcircle API domain.
 - `auth.appcircle.spacetech.com`: Appcircle authentication domain.
+- `monitor.appcircle.spacetech.com`: Appcircle monitoring domain.
 
 :::caution
 There is a common domain here. Be aware that the `auth` subdomain that the clients that will access from the internet and the Appcircle DMZ server will connect to should mean two different things.
-:::
-
-:::tip
-
-You can change the Appcircle authentication domain for the users access from the internet and make it different from the internal domain using a custom domain. See the [FAQ](#how-can-we-change-the-appcircle-authentication-domain-on-the-dmz-server-for-internet-users) below for details.
-
 :::
 
 ## Creating the Appcircle DMZ Server Configuration
@@ -414,6 +514,119 @@ cd appcircle-server
 ```bash
 ./ac-self-hosted.sh -n spacetech down
 ```
+
+- (optional) If you want to use the [CodePush](/code-push/) feature in the Appcircle DMZ server, you need to configure the CodePush domain name and its SSL certificate in the Appcircle server `global.yaml` file.
+
+<details>
+    <summary>Click to see how to configure the CodePush feature in the Appcircle DMZ server.</summary>
+
+:::note
+CodePush DMZ server configuration requires Appcircle server `3.28.2` or later.
+:::
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="podman">
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add or update the `codepushProxy` key as below.
+
+```yaml
+codepushProxy:
+  enabled: true # Set to true to enable the CodePush feature on the Appcircle DMZ server
+  external:
+    port: 8443 # Set to 8443 to use the CodePush feature with HTTPS
+    scheme: https # Set to https to use the CodePush feature with HTTPS
+    domain: codepush.spacetech.com # Set the CodePush domain name as you want
+    publicKey: | # Set the SSL certificate public key for the CodePush domain
+      -----BEGIN CERTIFICATE-----
+      MIIDqjCCAzCgAwIBAgISBiQ+pg7gN4ODAcGcxqy6+ZvtMAoGCCqGSM49BAMDMDIx
+      ...
+      RxFkhGCZddnB9p9x1p+ZJurRu13naXmHPpq+j3X1
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIEVzCCAj+gAwIBAgIRALBXPpFzlydw27SHyzpFKzgwDQYJKoZIhvcNAQELBQAw
+      ...
+      Ig46v9mFmBvyH04=
+      -----END CERTIFICATE-----
+    privateKey: | # Set the SSL certificate private key for the CodePush domain
+      -----BEGIN PRIVATE KEY-----
+      ...
+      bSo6Ae6pgnQsFYyDGHQxHUwiNT7yXW0fel+k+yEHhXeLcDs40cPzr5c=
+      -----END PRIVATE KEY-----
+```
+
+:::caution
+The `codepushProxy.external.port` must be `8443` and `codepushProxy.external.scheme` must be `https` to use the CodePush feature in the Appcircle DMZ server with HTTPS.
+
+Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/podman#overcoming-privileged-port-limitations) on the host, you will connect to the CodePush with the `TCP/443` port as usual from the internet.
+:::
+
+</TabItem>
+
+<TabItem value="docker">
+
+- Edit the `global.yaml` file of your project.
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add or update the `codepushProxy` key as below.
+
+```yaml
+codepushProxy:
+  enabled: true # Set to true to enable the CodePush feature on the Appcircle DMZ server
+  external:
+    port: 443 # Set to 443 to use the CodePush feature with HTTPS
+    scheme: https # Set to https to use the CodePush feature with HTTPS
+    domain: codepush.spacetech.com # Set the CodePush domain name as you want
+    publicKey: | # Set the SSL certificate public key for the CodePush domain
+      -----BEGIN CERTIFICATE-----
+      MIIDqjCCAzCgAwIBAgISBiQ+pg7gN4ODAcGcxqy6+ZvtMAoGCCqGSM49BAMDMDIx
+      ...
+      RxFkhGCZddnB9p9x1p+ZJurRu13naXmHPpq+j3X1
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIEVzCCAj+gAwIBAgIRALBXPpFzlydw27SHyzpFKzgwDQYJKoZIhvcNAQELBQAw
+      ...
+      Ig46v9mFmBvyH04=
+      -----END CERTIFICATE-----
+    privateKey: | # Set the SSL certificate private key for the CodePush domain
+      -----BEGIN PRIVATE KEY-----
+      ...
+      bSo6Ae6pgnQsFYyDGHQxHUwiNT7yXW0fel+k+yEHhXeLcDs40cPzr5c=
+      -----END PRIVATE KEY-----
+```
+
+:::caution
+The `codepushProxy.external.port` must be `443` and `codepushProxy.external.scheme` must be `https` to use the CodePush feature in the Appcircle DMZ server with HTTPS.
+:::
+
+</TabItem>
+
+</Tabs>
+
+- After you have configured the CodePush feature on the Appcircle DMZ server with a new domain name, you need to update the `CodePushServerUrl` in the [CodePush SDK configuration](https://docs.appcircle.io/code-push/code-push-sdk#codepush-configurations-in-project) of your mobile application.
+
+  - For example, if you have configured the CodePush feature on the Appcircle DMZ server with the `codepush.spacetech.com` domain name, you need to update the `CodePushServerUrl` in the [CodePush SDK configuration](https://docs.appcircle.io/code-push/code-push-sdk#codepush-configurations-in-project) of your mobile application to `https://codepush.spacetech.com` from the default `https://api.appcircle.spacetech.com/codepush` URL.
+
+:::caution
+Please make sure to remove the `/codepush` path from the `CodePushServerUrl`.
+:::
+
+</details>
 
 - Create the new configuration files for the Appcircle DMZ and the Appcircle server.
 
@@ -626,7 +839,7 @@ Follow the steps below to make relevant configurations on the Appcircle server.
 
 :::info
 
-This feature is supported for Appcircle server version `3.22.0` or later.
+This feature is supported for Appcircle server version `3.26.1` or later.
 
 :::
 
@@ -658,12 +871,113 @@ If `keycloak` does not exist, then you can add it to the `global.yaml` file of y
 
 :::
 
+:::info  
+
+The authentication domain must always operate over HTTPS to ensure secure communication. Providing `.keycloak.dmzCustomDomain.publicKey` and `.keycloak.dmzCustomDomain.privateKey` is optional. You may define a custom SSL certificate specifically for the DMZ custom domain or rely on the existing certificate configured under `.nginx.sslCertificate`, as long as it also covers the DMZ custom domain.  
+
+:::  
+
+<Tabs
+defaultValue="docker"
+groupId="container-engine"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Podman', value: 'podman'},
+]}>
+
+<TabItem value="docker">
+
 ```yaml
 keycloak:
   dmzCustomDomain:
     enabled: true
-    domain: auth-ac.spacetech.com
+    domain: auth-appcircle.spacetech.com
+    port: 443
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+      ...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+      ...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+      ...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+      ...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
 ```
+
+:::caution
+The `keycloak.dmzCustomDomain.port` must be `443` for Docker.
+:::
+
+</TabItem>
+
+<TabItem value="podman">
+
+```yaml
+keycloak:
+  dmzCustomDomain:
+    enabled: true
+    domain: auth-appcircle.spacetech.com
+    port: 8443
+    publicKey: |
+      -----BEGIN CERTIFICATE-----
+      MIIFOjCCBCKgAwIBAgISBAqWQRxIkc0kW2OZsPY2qH4dMA0GCSqGSIb3DQEBCwUA
+      MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+      ...
+      fLDoKQyylhH5aZgQvRWmvGjAvMCaU4me6rfq7ExudsrImuHZuxv0+mL1OvHsJA==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+      TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+      ...
+      nLRbwHOoq7hHwg==
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+      MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+      ...
+      Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+      -----END CERTIFICATE-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDL0BJ4P5hBrjIf
+      uDOL6OsB3AvdwTIwCTfpaJOSRi1ZXbxVGXv2f429gqQ4WADxRnLIsmcZtbAyrubO
+      ...
+      LUBOU4QRP9V6qpS0TrLmIoM=
+      -----END PRIVATE KEY-----
+```
+
+:::caution
+The `keycloak.dmzCustomDomain.port` must be `8443` for Podman.
+
+Since we forward the `TCP/443` to the `TCP/8443` port with [Socat](/self-hosted-appcircle/install-server/linux-package/installation/podman#overcoming-privileged-port-limitations) on the host, you will connect to the custom authentication domain with the `TCP/443` port.
+:::
+
+</TabItem>
+
+</Tabs>
+
+:::caution
+If you enable the **DMZ custom domain** and configure **Single Sign-On (SSO)**, you must add the DMZ custom domain to your SSO provider's list of authorized redirect URLs.
+
+Without this update, authentication requests from the DMZ domain will be blocked, causing SSO login failures due to unrecognized redirect URIs.
+:::
 
 - **[Upgrade](#upgrading-appcircle-dmz-and-appcircle-server)** the Appcircle server and DMZ server for changes to be applied.
 

@@ -275,6 +275,8 @@ If you want a secret used from `global.yaml`, then it should not be in `user-sec
 
 :::
 
+#### Configuring `global.yaml`
+
 `global.yaml` has some initial and example values preset when it's generated.
 
 ```yaml
@@ -285,7 +287,7 @@ external:
   scheme: http
   mainDomain: ".example.com"
 
-smtpServer:
+smtpServer: # Optional
   user:
   from:
   host:
@@ -323,7 +325,7 @@ external:
   scheme: http
   mainDomain: ".appcircle.spacetech.com"
 
-smtpServer:
+smtpServer: # Optional
   user: o***y*****@v******.net
   from: o***y*****@v******.net
   host: smtp.v******.net
@@ -347,9 +349,15 @@ For our example, we configured below values:
 
 - `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
 - `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](/self-hosted-appcircle/install-server/linux-package/installation/docker#4-dns-settings) for more details.
-- `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
+- `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. Recommended methods will be explained in the next section. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
+
+:::caution
+Starting from the version `3.28.2`, SMTP settings can be configured directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings. To use this method, you can remove the `smtpServer` part from your `global.yaml` file, and configure SMTP settings on the Dashboard after installation.
+
+See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+:::
 
 :::caution
 
@@ -398,9 +406,19 @@ Now you can run services again. It should complete without any error.
 
 :::
 
-As seen in above items, we choose to set some secrets in `user-secret` file. So we need to take additional steps to complete configuration. If you set them as plain text in `global.yaml` then you don't need to take `user-secret` steps.
+#### Configuring Secrets
 
-First create your secret yaml configuration as plain text like below.
+As seen in previous section, we left some secrets out of the `global.yaml` to set them in `user-secret` file. So we need to take additional steps to complete configuration. If you set them as plain text in `global.yaml` then you don't need to take `user-secret` steps.
+
+:::caution
+As described in the previous section, SMTP settings can now be configured directly from the Appcircle Dashboard. With this method SMTP password will be stored as an encrypted secret which is secure unlike a plain text or `base64` encoding. To use this method:
+
+1. Remove the `smtpServer.password` part from the `secret.yaml` file in the next steps here. Therefore, it will not be included in the `user-secret` file that you will generate, and won't effect the Appcircle server configuration.
+2. Configure SMTP settings on the Dashboard after installation. See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+
+:::
+
+First create your `secret.yaml` configuration as plain text like below.
 
 ```yaml
 smtpServer:
@@ -779,22 +797,30 @@ Its response should be something like below.
 `WARNING:Services are not started. Project name is spacetech`
 
 :::caution
-
 Some configuration changes may require data cleanup with extra steps which means data loss if you use Appcircle server for some time.
 
 For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.*` settings requires docker volume prune which results with data cleanup.
 
 So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
+:::
 
-To begin reconfiguration with data cleanup, use below command while stopping Appcircle server.
+:::tip
+#### SMTP Configuration
+
+Starting from version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard without a server reset or data cleanup.
+
+This is the recommended method if you do not have any specific reason to do it in the `global.yaml`.
+
+See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+:::
+
+To begin reconfiguration with data cleanup (for settings like `external.scheme`), use below command while stopping Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
 It will remove all unused local volumes which is useful for a clean start.
-
-:::
 
 Then go back to your configuration and change settings as done previously at [configure](/self-hosted-appcircle/install-server/linux-package/installation/docker#3-configure) step.
 

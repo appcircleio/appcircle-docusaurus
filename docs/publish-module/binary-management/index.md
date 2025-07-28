@@ -8,6 +8,9 @@ tags: [publish module, binary management]
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
+import EnvGroupSetCaution from '@site/docs/\_env-group-set-on-config-caution.mdx';
+import NewerVersionCodeCaution from '@site/docs/\_newer-version-code-caution.mdx';
 
 Appcircle supports publishing the application to the stores without using the Build module. To add an application version manually, you need to add a publish profile beforehand and then **Open** its details.
 
@@ -86,3 +89,65 @@ The iOS Publish filter options will only display the available statuses from the
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter3.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter4.png' />
+
+## FAQ
+
+### How can I get a binary from another organization to use in the Publish Module ?
+
+Let’s assume there are two organizations: Organization A and Organization B.
+In Organization A, we have a build profile that generates an IPA, APK, or AAB.
+In Organization B, we have a Publish profile that we want to send the binary to.
+
+In Organization A's build profile workflow, after the build step, we can add a [Custom Script](/workflows/common-workflow-steps/custom-script/) step that includes the code snippet below to transfer the binary generated in Organization A to the Publish profile in Organization B. In order to do this, we need [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), so this code snippet sets up the necessary information and sends binary with parameters.
+
+```bash
+#Bash script
+sudo npm install -g @appcircle/cli
+appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+# If an IPA or AAB is required, change *.apk to *.ipa or *.aab
+appcircle publish profile version upload \
+  --platform <string> \
+  --publishProfileId "$ORG_B_PUBLISH_PROFILE_ID" \
+  --app "$AC_OUTPUT_DIR"/*.apk \
+  --markAsRc <boolean> \
+  --summary <string>
+```
+
+:::info
+
+- --platform "ios" or "android" **[REQUIRED]** Specifies the platform for the binary.
+- --markAsRc true/false  **[OPTIONAL]** Marks the binary as a release candidate automatically. (Default: `false`)
+- --summary "Release Notes" **[OPTIONAL]** Adds release notes to the app version.  
+  **Note**: To include release notes, the version must first be [marked as a release candidate](/publish-module/publish-information/marking-release-candidates).
+
+:::
+
+:::caution
+
+Ensure that, uploading a binary to a Publish profile will require exact same **Package Name** or **Bundle ID**
+
+:::
+
+<NewerVersionCodeCaution />
+
+The key point here is that we need two essential parameters to make this work.
+- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
+- `ORG_B_PUBLISH_PROFILE_ID` => Publish profile ID from Organization B.
+- `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
+
+To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+
+To obtain the Publish profile ID, follow the steps below: 
+1. Log in to organization B.
+2. Go to Publish module.
+3. Select the desired Publish profile
+4. Copy it from the URL. `https://my.appcircle.io/publish/android/123456f-7d89-4545-5454-123456789abc`
+5. Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
+
+After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
+- `ORG_B_PERSONAL_API_TOKEN`
+- `ORG_B_PUBLISH_PROFILE_ID`
+
+<PatDanger />
+
+<EnvGroupSetCaution />

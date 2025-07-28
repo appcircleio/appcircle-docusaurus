@@ -12,7 +12,5 @@ Current headlines and the actions you can complete are listed below:
 
 - [**Email Notifications**](/account/my-organization/notifications/email-connection)
 - [**Microsoft Teams Notifications**](/account/my-organization/notifications/teams-notifications)
-- [**Slack**](/account/my-organization/notifications/slack)
+- [**Slack Notifications**](/account/my-organization/notifications/slack-notifications)
 - [**Webhook Configurations**](/account/my-organization/notifications/webhooks)
-
-Current headlines and the actions you can complete are listed below:

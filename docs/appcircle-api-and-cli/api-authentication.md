@@ -31,6 +31,24 @@ If you want to revoke a previously generated token, press "Revoke Token" and con
 To generate a PAT for a sub-organization, you must be added as a **member** of that sub-organization. Users **inherited** from a parent organization cannot generate a PAT. For additional details on [Organization](/account/my-organization/profile-and-team/organization-management#working-with-multiple-organizations) and [Team management](/account/my-organization/profile-and-team/team-management#managing-team-members), refer to the relevant documentation.
 :::
 
+:::info
+PATs are only accessible within the organization where they were generated. However, a PAT created in the Root organization can also be used for sub-organizations.
+
+You can pass the `subOrganization` parameter when obtaining an access token using a Root PAT.
+:::
+
+```bash
+curl -X 'POST' \
+  'https://auth.appcircle.io/auth/v2/token' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'pat=$pat' \
+  -d 'scope=openid,profile,email'
+  -d 'subOrganization={orgId}"
+```
+
+Please ensure that the endpoint you are using is v2.
+
 ### Using the Token for API Authentication
 
 For authentication, you need to [generate a session token from the Auth API using the Personal API Token](https://api.appcircle.io/openapi/index.html?urls.primaryName=auth) and add the generated session token value along with an `Authorization` header in all API requests.

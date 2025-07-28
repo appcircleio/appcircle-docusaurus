@@ -16,13 +16,40 @@ If you authorize Appcircle to access your repositories on GitLab, you can select
 
 After you click on **GitLab**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle or asking your consent about authorizing more repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-gitlab5.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-bitbucket-gitlab.png' />
 
 After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
+
+## Connecting to GitLab Cloud Repository
+
+Appcircle allows connecting to GitLab Cloud repositories using two different authentication methods:
+
+- **OAuth2 Connection**  
+  Click **Get Repositories from GitLab Cloud (OAuth2)** to authorize Appcircle via your GitLab account. You will be redirected to GitLab to approve repository access.
+
+- **Personal Access Token (User-Level)**  
+  Use this method to manually connect using a GitLab Personal Access Token (PAT). You will be required to fill out:
+
+    - Connection Name
+    - GitLab Server URL (e.g., `https://gitlab.com`)
+    - Username
+    - Personal Access Token
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-gitlab6.png' />
+
+### OAuth2 and Personal Access Token Permissions for GitLab Integration
+
+The following table details the OAuth permissions required for Appcircle to connect with GitLab. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with GitLab via OAuth2 and Personal Access Token. 
+
+| Scope            | Description                                                                                                                                                                                                  |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| api              | Grants complete read and write access to the scoped project API, including the container registry, the dependency proxy, and the package registry.                                                           |
+| read_api         | Grants read access to the scoped project API, including the package registry.                                                                                                                                |
+| read_repository  | Grants read-only access to repositories on private projects using Git-over-HTTP.                                                                                                                             |
 
 ## Connecting to GitLab Self Hosted Repository
 
@@ -34,13 +61,20 @@ GitLab's version must be **13.12.9** or higher.
 
 :::
 
-First, select **GitLab** and then **Connect to a Self-Managed GitLab Instance** through the menu:
+First, select **GitLab** and then **Personal Access Token (User-Level)** under **Create a New Gitlab Server Connection** through the menu:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-gitlab5.png' />
 
-Fill the relevant information about your GitLab self-hosted module. If you are not sure what those are, contact your system administrator.
+To connect to a self-hosted GitLab instance, use the following fields when selecting the **Personal Access Token (User)** option:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/gitlab-self-detail.png' />
+- **Connection Name**: A custom name to identify this connection.
+- **GitLab Server URL**: Your GitLab instance URL (e.g., `https://gitlab.company.com`)
+- **Username**: The GitLab username of the account owning the token.
+- **Personal Access Token**: The token generated in your GitLab profile for API or repository access.
+
+If you are not sure what those are, contact your system administrator.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-gitlab7.png' />
 
 :::caution
 
@@ -72,9 +106,7 @@ then, for default server configuration, the `api` domain should be
 
 :::
 
-:::caution
-
-### Connection Notice
+:::caution Connection Notice
 
 For Appcircle to connect to the Self Hosted GitLab Instance, your connection must be reachable over the network.
 
@@ -88,18 +120,9 @@ Is your self-hosted GitLab instance under enterprise firewall? Learn which IP ad
 
 ### Token Creation
 
-GitLab has two kinds of token at their Self Hosted instance:
+- [Personal Access Token GitLab Documentation](https://docs.gitlab.com/ee/security/token_overview.html#personal-access-tokens)
 
-- [Personal Access Token](https://docs.gitlab.com/ee/security/token_overview.html#personal-access-tokens)
-- [Project Access Token](https://docs.gitlab.com/ee/security/token_overview.html#project-access-tokens)
-
-Both works to connect your repository through Appcircle. That being said, **Project Access Token** is used to authorize a single project(repository) and **Personal Access Token** is used to authorize every repository the user has access to.
-
-:::info
-
-Appcircle needs admin permission to function properly. The admin permission is needed to create relevant WebHooks automatically.
-
-:::
+Personal Access Token from user works to connect your repository through Appcircle. That being said, **Personal Access Token** is used to authorize every repository the user has access to.
 
 ### Check Token
 

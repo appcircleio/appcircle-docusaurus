@@ -6,10 +6,13 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # App Information from App Store
 
 This step enables you to view app version information from both [**TestFlight**](https://developer.apple.com/testflight/) and the [**App Store**](https://developer.apple.com/documentation/appstoreconnectapi/app_store) on a single screen, including the version you intend to submit. Upon running this step, it displays the latest version information from TestFlight and the App Store as follows:
+
+<NoRunnerUsage />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2917-infoDetail.png' />
 

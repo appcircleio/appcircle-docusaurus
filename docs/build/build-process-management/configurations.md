@@ -113,6 +113,13 @@ This feature allows for better management of build processes, enabling teams to 
 This feature is only available for organizations with Enterprise license.
 :::
 
+#### ACRP - Auto Cancel Redundant Pipeline
+
+When enabled, this feature automatically cancels any previously running build that matches the same configuration, workflow, branch, and trigger type, if a new run is triggered.
+This helps prevent unnecessary resource usage and reduces queue time by skipping outdated pipeline runs.
+
+For further details, see [Auto Cancel Redundant Pipeline](/build/build-process-management/build-manually-or-with-triggers).
+
 ### Signing configuration
 
 Both iOS and Android applications need to be digitally signed by their developers in order to be able to be installed on real devices or submitted to app stores.
@@ -153,6 +160,14 @@ Distribution configuration allows you to set which testing groups will receive y
 In this window, you can select one or more of the previously created distribution profiles. You can use the "Manage Distribution Profiles" button above to quickly manage distribution profiles.
 
 Finally, check "Automatically Distribute to Testers" if you want your build to be automatically distributed to the selected testers or testing groups.
+
+:::caution Binary comes from Build Module
+
+If the `Bundle/Package` validation option is turned on in the **Testing Distribution** profile you want to automatic distribution and the bundle or package of the binary to be submitted does not match the one specified in this profile, you will get an error during submission. Appcircle does not prevent the profile from being selected. Please make sure that the bundle/package identifier of the binary you want to submit matches the one in the **Testing Distribution** profile.
+
+For more detailed information about identifier validation, please visit the **Bundle/Package validation** [documentation](/testing-distribution/create-or-select-a-distribution-profile#bundlepackage-identifier-validation).
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1.png' />
 

@@ -1,5 +1,5 @@
 ---
-title: Production Readiness
+title: Database and Vault Configurations
 description: Learn how to configure the Appcircle server Helm chart for production environments
 tags: [self-hosted, helm, configuration, kubernetes]
 sidebar_position: 20
@@ -66,7 +66,15 @@ By default, the Appcircle chart includes an in-cluster MongoDB deployment provid
 
 If you are deploying the Appcircle server for testing purposes, the built-in MongoDB deployment can be used.
 
-For production environments, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.x`, with a disk size of 40GB.
+For production environments, it is recommended to set up an external, production-grade MongoDB instance. The recommended version is MongoDB `4.2` or later, with a disk size of 40GB.
+
+:::info
+The Appcircle server supports MongoDB versions between `4.2` and `8.0`.
+
+Later versions of the Appcircle server may deprecate `4.x` versions and might remove support for MongoDB EOL (end-of-life) [releases](https://www.mongodb.com/docs/manual/release-notes/).
+
+For this reason, it will be better to choose a recent stable version of MongoDB instead of an EOL release, which can prevent future migration efforts as much as possible.
+:::
 
 To use an external MongoDB database, you can follow the steps below:
 
@@ -262,61 +270,27 @@ mongodb:
 
 </details>
 
-### MinIO
-
-By default, the Appcircle chart includes an in-cluster MinIO deployment provided by `bitnami/minio`.
-
-If you are installing the Appcircle for testing purposes, you may use the built-in MinIO deployment.
-
-For production environments, it is recommended to configure an external MinIO instance. The recommended version is MinIO `2024-03-15` or later, with a disk size of 1TB.
-
-:::info
-The recommended disk size for the MinIO instance may vary depending on your usage requirements. It can range from 500GB to 3-4TB.
-:::
-
-To use an external MinIO instance, you can follow the steps below:
-
-- Create the following buckets for Appcircle to use on the MinIO instance:
-
-  - appcircle-local-resource-temp
-  - appcircle-local-resource-build
-  - appcircle-local-resource-distribution
-  - appcircle-local-resource-storesubmit
-  - appcircle-local-resource-store
-  - appcircle-local-resource-agent-cache
-  - appcircle-local-resource-backup
-  - appcircle-local-resource-publish
-
-- Create a secret with the name `${releaseName}-minio-connection` containing the `accessKey` and `secretKey` keys.
-
-```bash
-kubectl create secret generic appcircle-server-minio-connection \
-  -n appcircle \
-  --from-literal=accessKey='admin' \
-  --from-literal=secretKey='superSecretAdminAccessKey'
-```
-
-- Update the `values.yaml` accordingly.
-
-```yaml
-global:
-  minio:
-    url: "http://10.33.167.78:9000"
-minio:
-  enabled: false
-```
-
 ### HashiCorp Vault
 
 By default, the Appcircle chart includes an in-cluster HashiCorp Vault deployment provided by `hashicorp/vault`.
 
-If you are deploying the appcircle for testing purposes, the built-in Vault deployment can be used.
+#### Test (or Trial) Environments
 
-For production environments, it is recommended to configure an external Hashicorp Vault instance. The recommended version is Vault `v1.10.3`, with a disk size of 20GB.
+For testing purposes, the built-in Vault deployment can be used. In this setup, the storage is kept in Kubernetes.
 
-To use an external Vault instance, you can follow the steps below:
+If the Kubernetes cluster has multiple nodes, it should be configured to guarantee that all Vault replicas reach the same storage for consistency.
 
-- Create a secret with the name `${releaseName}-vault-seal` containing the `token` key.
+#### Production Environments
+
+For production environments, it is recommended to configure an external HashiCorp Vault instance instead of using the built-in deployment. There are two approaches for this:
+
+##### External Vault Service
+
+In this setup, Appcircle connects to an externally managed Vault service. Vault operates independently from Kubernetes, ensuring better availability and scalability. The recommended Vault version is `v1.10.3` with a disk size of at least 20GB.
+
+To use an external Vault instance, follow these steps:
+
+- Create a Kubernetes secret with the name `${releaseName}-vault-seal` containing the Vault access token:
 
 ```bash
 kubectl create secret generic appcircle-server-vault-seal \
@@ -324,7 +298,7 @@ kubectl create secret generic appcircle-server-vault-seal \
   --from-literal=token=hvs.superSecretVaultKey
 ```
 
-- Update the `values.yaml` accordingly.
+- Update the `values.yaml` file accordingly:
 
 ```yaml
 global:
@@ -333,5 +307,53 @@ global:
 vault:
   enabled: false
 ```
+
+##### External Data Store (e.g., MSSQL)
+
+As an alternative to using an external Vault service, you can configure Vault to use an external database such as MSSQL for storage while keeping the Vault instance inside Kubernetes.
+
+You can find more storage configurations on the official HashiCorp documentation: [HashiCorp Vault Database Capabilities](https://developer.hashicorp.com/vault/docs/v1.10.x/secrets/databases#database-capabilities).
+
+To use MSSQL as the storage backend:
+
+- Ensure that your MSSQL database is accessible and properly configured.
+
+- Update the `values.yaml` file to configure Vault with MSSQL as the backend:
+
+```yaml
+# Third party charts
+vault:
+  server:
+    standalone:
+      config: |
+        ui = true
+
+        listener "tcp" {
+          tls_disable = 1
+          address = "[::]:8200"
+          cluster_address = "[::]:8201"
+        }
+
+        storage "mssql" {
+          server = "10.10.117.67"
+          port = 1433
+          username = "sqlserveruser"
+          password = "supersecretpassword"
+          database = "appcircle-vault"
+          table = "vault"
+          appname = "vault"
+          schema = "dbo"
+          connectionTimeout = 30
+          logLevel = 0
+        }
+    dataStorage:
+      enabled: false
+```
+
+#### Choosing the Right Setup
+
+- If you have an **existing Vault service**, configure Appcircle to connect to it (**recommended for production**).
+- If you prefer **running Vault inside Kubernetes** but want persistent storage, use an **external data store (e.g., MSSQL)** as the storage backend.
+- For testing (or trial) purposes, the built-in Vault deployment **can be used but is not recommended for production workloads**. Also, it should be configured to guarantee that all Vault replicas reach the same storage for consistency when the cluster has multiple nodes.
 
 <NeedHelp />
