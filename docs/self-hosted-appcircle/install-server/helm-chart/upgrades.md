@@ -54,7 +54,7 @@ You can also check Docker/Podman architecture [version history](https://docs.app
 
         | Appcircle Server Version | Helm Chart Version | Release Date |
         | ------------------------ | ------------------ | ------------ |
-        | 3.27.3                   | 0.3.20             | 25/07/2025   |
+        | 3.27.3                   | 0.3.20             | 28/07/2025   |
         | 3.27.3                   | 0.3.19             | 28/05/2025   |
         | 3.25.1                   | 0.2.8              | 05/02/2025   |
         | 3.23.2                   | 0.1.1              | 23/12/2024   |
