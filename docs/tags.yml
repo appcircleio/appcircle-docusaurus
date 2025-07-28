@@ -1393,6 +1393,11 @@ identifiers:
   description: "Description for identifiers"
   permalink: /identifiers
 
+"in-app notifications":
+  label: "in-app notifications"
+  description: "Description for in-app notifications"
+  permalink: /in-app-notifications
+
 "in-app updates":
   label: "in-app updates"
   description: "Description for in app updates"
