@@ -75,7 +75,7 @@ With the **Update Version Number(iOS)** and **Update Version Name(Android)** fea
 
 - **Version Number/Version Name Source**: The defined base version number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, **Google Play** and **Uploaded Binary** are available options
     - **App Store**: The version number will be calculated by referencing the latest live version available on the **Apple App Store**.
-    - **TestFlight**: The version number will be determined by referencing the latest version available on **TestFlight**.
+    - **TestFlight**: The version number will be determined based on the latest version available on **TestFlight**.
     - **Google Play(Android)**: The version name will be set by referencing the latest live version on **Google Play Console**.
     - **Uploaded Binary**: The version number or version name will be calculated based on the most recently **uploaded binary** to Appcircle.
 - **Version Number/Version Name Offset**: The offset value is a number to be added or subtracted from the **version number source**.
