@@ -3032,3 +3032,8 @@ quay:
   label: "re-sign"
   description: "re-sign related documentations"
   permalink: "/re-sign"
+
+"license":
+  label: "license"
+  description: "Self-hosted Appcircle server license configuration related documentations"
+  permalink: "/license"

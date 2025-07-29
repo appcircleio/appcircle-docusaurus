@@ -370,6 +370,8 @@ Also, the user can view self-hosted runners and change configuration.
 | Domain Verification                                  | Verify a Domain                         | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | Remove Domain Verification              | ✅     | ✅       | ⛔      |
 | Export Users                                         | Export User List                        | ✅     | ✅       | ⛔      |
+| API Keys                                             | View API Keys List                      | ✅     | ✅       | ✅       |
+| API Keys                                             | Manage/Delete API Keys                  | ✅     | ✅       | ⛔      |
 
 :::info Organization Management
 
