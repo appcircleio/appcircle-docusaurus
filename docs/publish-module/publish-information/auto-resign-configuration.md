@@ -60,7 +60,7 @@ With the **Update Build Number(iOS)** and **Update Version Code(Android)** featu
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-updateBuildNumber.png' />
 
-- **Build Number/Version Code Source**: The defined base build number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, **Google Play** and **Uploaded Binary** are available options
+- **Build Number/Version Code Source**: The defined base build number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, **Google Play**, and **Uploaded Binary** are available options.
     - **App Store**: The build number will be calculated based on the latest live version available on the **Apple App Store**.
     - **TestFlight**: The build number will be determined by referencing the latest version available on **TestFlight**.
     - **Google Play(Android)**: The version code will be set by referencing the latest live version on **Google Play Console**.
