@@ -123,7 +123,7 @@ For more information, please visit the [Signing Identity Module](/signing-identi
 
 #### App Store Credential
 
-Appcircle’s Auto Re-sign feature requires an **App Store Connect** credential. Therefore, selecting a credential is mandatory for both versioning and signing processes. This credential is used to download the necessary signing assets and, if versioning is configured to use App Store data, to retrieve version-related information directly from the store.
+Appcircle’s Auto Re-sign feature requires an **App Store Connect** credential. Therefore, selecting a credential is mandatory for both versioning and signing processes. This credential is used to download the necessary signing assets and retrieve version-related information when versioning is configured to use App Store data.
 
 For more information, please visit the **App Store Connect API Key** [documentation](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key).
 
