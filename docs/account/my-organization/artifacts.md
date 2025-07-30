@@ -47,7 +47,7 @@ Clearing the cache only removes temporary build data. It does not affect build a
 
 :::info Permission Required
 
-Only users with **Manager** or **Owner** roles in the organization can use the Clean Build Caches feature. For more information, please refer to the [Role Management](/account/my-organization/profile-and-team/role-management#organization-management-permissions) documentation.
+Only users with **Manager** or **Owner** roles in the build can use the Clean Build Caches feature. For more information, please refer to the [Role Management](/account/my-organization/profile-and-team/role-management#build-permissions) documentation.
 
 :::
 
@@ -64,7 +64,23 @@ The build cache limit shown on the screen is determined by your subscription pla
 :::
 
 For more detailed information on how to use **Cache Pull** and **Cache Push** in Appcircle builds, please refer to the following documentation:
-- [Cache Pull](https://docs.appcircle.io/workflows/common-workflow-steps/build-cache/cache-pull)
-- [Cache Push](https://docs.appcircle.io/workflows/common-workflow-steps/build-cache/cache-push)
+- [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull)
+- [Cache Push](/workflows/common-workflow-steps/build-cache/cache-push)
 
 Regularly clearing your build cache can help maintain a healthy and efficient build environment.
+
+## FAQ
+
+### Why am I seeing a "cache limit exceeded" error even though my cache usage is not full?
+
+Even if your sub-organization has not used the entire cache limit, other sub-organizations or the main organization may have. The cache limit is shared across the entire organization.
+
+To view the full cache usage and identify which part of the organization is consuming the cache, please visit the **main organization**.
+
+#### Example:
+
+- Your sub-organization may show low usage:
+    <Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-artifacts_6.png' />
+
+- But the main organization may show that the overall limit has been reached:
+    <Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-artifacts_7.png' />

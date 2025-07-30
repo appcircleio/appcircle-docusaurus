@@ -66,6 +66,8 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Build Actions       | Delete Commit Artifacts                    | ✅     | ✅       | ⛔        | ⛔      |
 | Build Actions       | Download Artifacts                         | ✅     | ✅       | ✅        | ✅      |
 | Build Actions       | Distribution Binary                        | ✅     | ✅       | ✅        | ⛔      |
+| Build Actions       | View Build Cache Size Usage                | ✅     | ✅       | ✅        | ✅      |
+| Build Actions       | Clear Build Caches                         | ✅     | ✅       | ⛔        | ⛔      |
 | Test Results        | List Test Results                          | ✅     | ✅       | ✅        | ✅      |
 | Connection          | Add/Delete/Update Connections (User Based) | ✅     | ✅       | ✅        | ✅      |
 | Connection          | List Connection (User Based)               | ✅     | ✅       | ✅        | ✅      |
@@ -364,8 +366,6 @@ Also, the user can view self-hosted runners and change configuration.
 | Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
 | Artifacts                                            | View Retention Period                   | ✅     | ✅       | ✅      |
 | Artifacts                                            | Update Retention Period                 | ✅     | ✅       | ⛔      |
-| Artifacts                                            | View Build Cache Size Usage             | ✅     | ✅       | ✅      |
-| Artifacts                                            | Clear Build Caches                      | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | View Domain List                        | ✅     | ✅       | ✅     |
 | Domain Verification                                  | View Domain Verification Details        | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | Add New Domain Verification             | ✅     | ✅       | ⛔      |
