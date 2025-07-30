@@ -18,7 +18,7 @@ The **Artifacts** section allows you to manage the logs, build outputs, and cach
 Build logs and artifacts are deleted based on a retention period, which depends on your plan:
 
 - Starter accounts can't manage the retention period. After **30** days, logs and artifacts will be automatically deleted.
-- Enterprise plan organization users can manage the retention period. They can set **30**, **60**, **90**, **180** or **365** days for a retention period. Enterprise plans can also choose **never delete** option and manage their artifacts manually.
+- Enterprise plan organization users can manage the retention period. They can set **30**, **60**, **90**, **180**, or **365** days for a retention period. Enterprise plans can also choose the **never delete** option and manage their artifacts manually.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-artifacts_1.png' />
 
@@ -33,6 +33,15 @@ Only build and distribution artifacts are deleted in this section. Artifacts of 
 The Artifacts section also allows you to manually clear cached files created during the build process. This helps resolve unexpected caching issues or reduce storage usage.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-artifacts_2.png' />
+
+:::caution Cache Deletion Scope
+
+Clearing caches from a main organization also removes all associated caches from its sub-organizations.
+
+If you only want to remove caches for a specific sub-organization, make sure to perform the action within that sub-organization.
+This helps prevent unintended data removal across related organizations.
+
+:::
 
 Clearing the cache only removes temporary build data. It does not affect build artifacts, logs, or published applications.
 
