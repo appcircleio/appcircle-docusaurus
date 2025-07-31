@@ -75,17 +75,41 @@ fastlane add_plugin appcircle_testing_distribution
   )
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this plugin.
+**Parameter Details:**
+
+- `personalAPIToken` (required): The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this plugin. This token must be generated from your Appcircle account with appropriate permissions.
+
 - `subOrganizationName` (optional): Required when the Root Organization's `personalAPIToken` is used, and you want to create the profile under a sub-organization. In this case, provide the name of the sub-organization in this field. If you directly used the sub-organization's `personalAPIToken`, this parameter is not needed.
-- `profileName`: Specifies the profile that will be used for uploading the app.
-- `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
-- `profileCreationSettings` (optional): If `createProfileIfNotExists` is `true` and a new profile being created, the profile will be configured with these settings.
-  - `authType`: Authentication type of the profile. `none`: None, `static`: Static Username and Password, `ldap`: LDAP Login, `sso`: SSO Login.
-  - `username`: The username for the profile if authentication type set to `static` (Static Username and Password).
-  - `password`: The password for the profile if authentication type set to `static` (Static Username and Password).
-  - `testingGroupNames`: Uploaded versions will be automatically shared with these testing groups. Example format: `group1, group2, group3`.
-- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
-- `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
+
+- `profileName` (required): Specifies the profile that will be used for uploading the app. This should be a descriptive name for your testing distribution profile (e.g., "iOS Beta Testing", "Android Release Testing").
+
+- `createProfileIfNotExists` (optional, boolean): Ensures that a testing distribution profile is automatically created if it does not already exist. Accepts `true` or `false` values. If the profile name already exists, the app will be uploaded to that existing profile instead.
+
+- `profileCreationSettings` (optional, hash): If `createProfileIfNotExists` is `true` and a new profile is being created, the profile will be configured with these settings.
+  - `authType` (string): Authentication type of the profile. Available options:
+    - `none`: No authentication required
+    - `static`: Static Username and Password authentication
+    - `ldap`: LDAP Login authentication
+    - `sso`: SSO Login authentication
+  - `username` (string): The username for the profile if authentication type is set to `static` (Static Username and Password).
+  - `password` (string): The password for the profile if authentication type is set to `static` (Static Username and Password).
+  - `testingGroupNames` (string): Uploaded versions will be automatically shared with these testing groups. Example format: `"group1, group2, group3"` or `"QA Team, Beta Testers"`.
+
+- `appPath` (required): Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile. The path can be specified in two ways:
+
+  **When Build and Testing Distribution tasks are in the same pipeline:**
+  Assuming you are using Testing Distribution action after a build step, you can use the output directory of the build step. For example:
+  - iOS: `"./output/app.ipa"` or `"$(pwd)/output/app.ipa"`
+  - Android: `"./app/build/outputs/apk/release/app-release.apk"` or `"$(pwd)/app/build/outputs/apk/release/app-release.apk"`
+
+  **When Testing Distribution task is a separate pipeline:**
+  Assuming you have published a build artifact in your build pipeline, you can get the artifact and use it in the distribution pipeline. For example:
+  - `"./artifacts/app.ipa"`
+  - `"./artifacts/app.apk"`
+
+  Make sure the path points to a valid application package file (`.ipa` for iOS, `.apk` for Android).
+
+- `message` (optional, string): Your message to testers, ensuring they receive important updates and information regarding the application. This message will be displayed to testers when they download the app (e.g., "New features added", "Bug fixes included", "Please test the new login flow").
 
 :::tip
 Profile creation settings are only used when a new profile is created. If you need to update these settings, please go to the [profile settings](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#settings) in the Appcircle dashboard.
