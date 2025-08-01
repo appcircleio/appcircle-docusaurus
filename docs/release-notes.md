@@ -36,6 +36,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Added export functionality for reports and activity logs in the Signing Identity module to improve accessibility and auditing. <SigningIdentitiesBadge/> <CloudBadge/>
 - Added new notification actions for manual cache clearing operations, including support for Teams, Slack, Email, and Webhook notifications. <IntegrationsBadge/> <CloudBadge/>
 - Added the ability to select the base build number and version code for Auto Re-sign from App Store, TestFlight, and Play Console by choosing a source for each. <PublishBadge/> <CloudBadge/>
+- Added an Information tab to the Auto Re-sign settings to display key app details for Android and iOS. <PublishBadge/> <CloudBadge/>
+- Added support for selecting Enterprise API Keys in the Auto Re-sign configuration to enable re-signing apps with in-house certificates. <PublishBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -50,6 +52,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where builds triggered by Git tags showed the commit author instead of the tag author as the trigger user. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where CodePush profiles could not be deleted successfully. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where navigating to the Security page in a starter organization incorrectly displayed a Plan Limit Exceeded error. <AccountBadge/> <CloudBadge/>
+- An issue was fixed in Build Configuration where the Load More button in the Environment Variables list failed to fetch additional items. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the last commit hash was not being retrieved correctly in some cases. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where AAB files were not being signed correctly when using Auto Re-sign, which could cause problems during distribution or installation. <PublishBadge/> <CloudBadge/>
 
 ## 3.28.2 - 2025-07-09 GitHub Enterprise Support, Manual Webhook Enhancements, SMTP Configuration, Bug Fixes and more
 
