@@ -548,6 +548,11 @@ browserstack:
   description: "Description for browserstack"
   permalink: /browserstack
 
+lambdatest:
+  label: "lambdatest"
+  description: "Description for LambdaTest"
+  permalink: /lambdatest
+
 "brute-force":
   label: "brute-force"
   description: "Description for brute-force"
