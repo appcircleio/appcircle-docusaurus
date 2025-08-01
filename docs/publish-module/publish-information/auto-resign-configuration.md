@@ -135,15 +135,21 @@ The **Signing Strategy** defines how Appcircle selects the provisioning profile 
 
 For more information about these signing strategies, please visit the Apple Profiles [documentation](/signing-identities/apple-profiles).
 
+:::caution Enterprise API Key and In-house Signing
+
+The Auto Re-sign feature also supports **In-house** signing. You can perform this by selecting an **Enterprise API Key**. However, please note that only In-house signing is allowed with an Enterprise Key—attempting to use it with any other signing method will result in an error.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6679-signingMethodNew.png' />
 
-#### Re-create Provision Profile
+#### Create a New Provision Profile
 
-If the **Re-create Provision Profile** option is enabled, Appcircle generates a valid provisioning profile for signing using the Apple API Key selected in the profile settings and your Apple Developer account. If this option is disabled, Appcircle matches an existing valid provisioning profile from your Apple Developer portal for the signing process.
+If the **Create a New Provision Profile** option is enabled, Appcircle generates a valid provisioning profile for signing using the Apple API Key selected in the profile settings and your Apple Developer account. If this option is disabled, Appcircle matches an existing valid provisioning profile from your Apple Developer portal for the signing process.
 
-:::caution Re-create Provision Profile
+:::caution Create a New Provision Profile
 
-If you **do not** want to re-create the provisioning profile for signing, Appcircle will attempt to match a valid provisioning profile and use it for the signing process. Please note that if the matched provisioning profile is close to its expiration date, the re-signed binary may fail to function once the profile expires.
+If you **do not** want to create the provisioning profile for signing, Appcircle will attempt to match a valid provisioning profile and use it for the signing process. When this option is disabled and a matching provisioning profile cannot be found, a new provisioning profile will be automatically created.
 
 :::
 
@@ -155,6 +161,12 @@ If you **do not** want to re-create the provisioning profile for signing, Appcir
 In addition to the selected signing strategy, Appcircle requires a corresponding certificate to perform the auto re-sign process. Therefore, make sure that your certificates are uploaded under the **Apple Certificate** section in the **Appcircle Signing Identity module**. The re-signing process will begin using the certificate you have selected.
 
 For more information, please visit the [Signing Identity Module](/signing-identities) and [Apple Certificates](/signing-identities/apple-certificates) documentations.
+
+:::Enterprise API Key and In-house signing
+
+If you want to perform **In-house** signing using an **Enterprise API** Key, make sure that a compatible signing certificate is selected. Otherwise, Appcircle will not be able to verify the certificate and the signing process will fail.
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6679-certsNew.png' />
 
