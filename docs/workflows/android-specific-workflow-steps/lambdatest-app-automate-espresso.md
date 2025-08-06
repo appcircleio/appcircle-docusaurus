@@ -35,9 +35,9 @@ This step includes several input variable(s) required for proper execution. See 
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_LT_USERNAME`         | LambdaTest account username. Required to authenticate API requests.                                                                                                                                                        | Required |
 | `$AC_LT_ACCESS_KEY`       | LambdaTest account access key. Required to authenticate API requests.                                                                                                                                                      | Required |
-| `$AC_LT_APK_PATH`            | Path to the **APK** file to upload to LambdaTest. Auto-filled by prior Android build step.                                                                                                                                 | Required |
-| `$AC_LT_TEST_APK_PATH`       | Path to the **test APK** file to upload to LambdaTest. Auto-filled by prior Android build step.                                                                                                                            | Required |
-| `$AC_LT_PAYLOAD`          | JSON string that defines test configuration. App/Test APK URLs are auto-inserted. Refer to [LambdaTest API](https://www.lambdatest.com/support/docs/espresso-testing/#execute-your-first-test) documantation for payload structure. | Optional |
+| `$AC_LT_APK_PATH`            | Path to the `APK` file to upload to LambdaTest. Auto-filled by prior Android build step.                                                                                                                                 | Required |
+| `$AC_LT_TEST_APK_PATH`       | Path to the test `APK` file to upload to LambdaTest. Auto-filled by prior **Android Build** step.                                                                                                                            | Required |
+| `$AC_LT_PAYLOAD`          | JSON string that defines test configuration. App/Test `APK` URLs are auto-inserted. Refer to [LambdaTest API](https://www.lambdatest.com/support/docs/espresso-testing/#execute-your-first-test) documantation for payload structure. | Optional |
 | `$AC_LT_TIMEOUT`          | Timeout value in seconds for test execution. Default is `600`.                                                                                                                                                             | Required |
 
 ### Output Variables
@@ -46,7 +46,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name             | Description                           |
 | ------------------------- | ------------------------------------- |
-| `$AC_LT_TEST_RESULT_PATH` | Path to save test results. Must be writable. Defaults to a directory under `AC_OUTPUT_DIR`.                    |
+| `$AC_LT_TEST_RESULT_PATH` | Path to save test results. Must be writable. Defaults to a directory under `$AC_OUTPUT_DIR`.                    |
 
 ---
 
