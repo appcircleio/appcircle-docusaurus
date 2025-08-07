@@ -62,7 +62,7 @@ SUB_ORGANIZATION_ID=your_orgID # sub_org
 
 echo "Retrieving access token for API key: $API_KEY_NAME"
 
-response=$(curl --location 'https://dev-auth.appcircle.io/auth/v1/api-key/token' \
+response=$(curl --location 'https://auth.appcircle.io/auth/v1/api-key/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'name='"$API_KEY_NAME"'' \
 --data-urlencode 'secret='"$API_KEY_SECRET"'' \
@@ -72,6 +72,7 @@ ACCESS_TOKEN=$(echo "$response" | jq -r '.access_token')
 
 echo "Access token retrieved: $ACCESS_TOKEN"
 ```
+
 :::tip
 An access token for a sub-organization can be created using an API key generated within the root organization, provided that the role settings include access to these sub-organizations.
 :::
