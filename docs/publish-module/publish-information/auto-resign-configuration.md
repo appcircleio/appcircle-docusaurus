@@ -60,7 +60,11 @@ With the **Update Build Number(iOS)** and **Update Version Code(Android)** featu
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-updateBuildNumber.png' />
 
-- **Build Number/Version Code Source**: The defined base build number will be used for versioning during the re-signing process. **Uploaded Binary** is the only available option for now.
+- **Build Number/Version Code Source**: The defined base build number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, **Google Play**, and **Uploaded Binary** are available options.
+    - **App Store**: The build number will be calculated based on the latest live version available on the **Apple App Store**.
+    - **TestFlight**: The build number will be determined by referencing the latest version available on **TestFlight**.
+    - **Google Play (Android)**: The version code will be set by referencing the latest live version on **Google Play Console**.
+    - **Uploaded Binary**: The build number or version code will be calculated from the **most recent binary** uploaded to Appcircle.
 - **Build Number/Version Code Offset**: The offset value is a number to be added or subtracted from the **build number source**.
 
 #### Update Version Number and Version Name
@@ -69,9 +73,22 @@ With the **Update Version Number(iOS)** and **Update Version Name(Android)** fea
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-updateVersionNumber.png' />
 
-- **Version Number/Version Name Source**: The defined base version number will be used for versioning during the re-signing process. **Uploaded Binary** is the only available option for now.
+- **Version Number/Version Name Source**: The defined base version number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, **Google Play** and **Uploaded Binary** are available options
+    - **App Store**: The version number will be calculated by referencing the latest live version available on the **Apple App Store**.
+    - **TestFlight**: The version number will be determined based on the latest version available on **TestFlight**.
+    - **Google Play(Android)**: The version name will be set by referencing the latest live version on **Google Play Console**.
+    - **Uploaded Binary**: The version number or version name will be calculated based on the most recently **uploaded binary** to Appcircle.
 - **Version Number/Version Name Offset**: The offset value is a number to be added or subtracted from the **version number source**.
 - **Increment Strategy**: You can increase the `major`, `minor`, or `patch` value of the version number.
+
+
+:::caution Version Number/Name and Build Number/Version Code
+
+Within the Auto Re-sign feature configuration, if any store-based option is selected for versioning, it is mandatory to select an appropriate API key to retrieve the version information. If you do not want to perform versioning using the store, please select the **Uploaded Binary** option instead.
+
+For more information, please visit the **Credentials** [documentation.](/account/my-organization/security/credentials)
+
+:::
 
 ## For iOS
 
@@ -104,25 +121,39 @@ For more information, please visit the [Signing Identity Module](/signing-identi
 :::
 
 
-#### Signing Strategy
+#### App Store Credential
+
+Appcircle’s Auto Re-sign feature requires an **App Store Connect** credential. Therefore, selecting a credential is mandatory for both versioning and signing processes. This credential is used to download the necessary signing assets and retrieve version-related information when versioning is configured to use App Store data.
+
+For more information, please visit the **App Store Connect API Key** [documentation](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6679-apiKeySelection.png' />
+
+#### Signing Method
 
 The **Signing Strategy** defines how Appcircle selects the provisioning profile during the re-signing process. This strategy determines whether Appcircle should use an existing provisioning profile. Selecting the appropriate signing strategy ensures compatibility with your target distribution method and proper signing of your binary.
 
 For more information about these signing strategies, please visit the Apple Profiles [documentation](/signing-identities/apple-profiles).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-signingStrategy.png' />
+:::caution Enterprise API Key and In-house Signing
 
-#### Re-create Provision Profile
-
-If the **Re-create Provision Profile** option is enabled, Appcircle generates a valid provisioning profile for signing using the Apple API Key selected in the profile settings and your Apple Developer account. If this option is disabled, Appcircle matches an existing valid provisioning profile from your Apple Developer portal for the signing process.
-
-:::caution Re-create Provision Profile
-
-If you **do not** want to re-create the provisioning profile for signing, Appcircle will attempt to match a valid provisioning profile and use it for the signing process. Please note that if the matched provisioning profile is close to its expiration date, the re-signed binary may fail to function once the profile expires.
+The Auto Re-sign feature also supports **In-house** signing. You can perform this by selecting an **Enterprise API Key**. However, please note that only In-house signing is allowed with an Enterprise Key—attempting to use it with any other signing method will result in an error.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-recreateProvision.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6679-signingMethodNew.png' />
+
+#### Create a New Provision Profile
+
+If the **Create a New Provision Profile** option is enabled, Appcircle generates a valid provisioning profile for signing using the Apple API Key selected in the profile settings and your Apple Developer account. If this option is disabled, Appcircle matches an existing valid provisioning profile from your Apple Developer portal for the signing process.
+
+:::caution Create a New Provision Profile
+
+If you **do not** want to create the provisioning profile for signing, Appcircle will attempt to match a valid provisioning profile and use it for the signing process. When this option is disabled and a matching provisioning profile cannot be found, a new provisioning profile will be automatically created.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6679-recreateProv.png' />
 
 
 #### Certificates
@@ -131,7 +162,13 @@ In addition to the selected signing strategy, Appcircle requires a corresponding
 
 For more information, please visit the [Signing Identity Module](/signing-identities) and [Apple Certificates](/signing-identities/apple-certificates) documentations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-certs.png' />
+:::Enterprise API Key and In-house signing
+
+If you want to perform **In-house** signing using an **Enterprise API** Key, make sure that a compatible signing certificate is selected. Otherwise, Appcircle will not be able to verify the certificate and the signing process will fail.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6679-certsNew.png' />
 
 
 
@@ -159,14 +196,21 @@ For more information, please visit the [Signing Identity Module](/signing-identi
 
 :::
 
+
+#### Google Play Console Credential
+
+A **Google Play Console** credential is only required if versioning is configured to use store-based data. When versioning is set to retrieve version information from the Google Play Console, an API key must be provided to access live version details during the re-signing process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6679-androApiKey.png' />
+
 #### Keystores
 
 The **Keystores** section is where you manage the signing credentials required for Android re-signing. To successfully perform the auto re-sign process, Appcircle needs access to a valid keystore. You must upload the keystore file, provide the necessary alias, and enter the key and store passwords within the **Android Keystores** section of the **Signing Identity** module. The re-signing will be executed using the selected keystore credentials.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-keystores.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6679-keystore.png' />
 
 #### Convert AAB To APK
 
 The **Convert AAB to APK** option allows you to automatically convert an Android App Bundle (AAB) file into an APK during the re-signing process. This is especially useful when your distribution channel requires an `APK` instead of an `AAB`. When enabled, Appcircle will handle the conversion and signing of the resulting APK seamlessly.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-convert.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6679-convert.png' />
