@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.29.0 - 2025-08-07 API Keys, Webhook Improvements, Bug Fixes and more
+## 3.29.0 - 2025-08-08 API Keys, Webhook Improvements, Bug Fixes and more
 
 ### 🆕 New Features
 
