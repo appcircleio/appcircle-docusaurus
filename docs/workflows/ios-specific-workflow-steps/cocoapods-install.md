@@ -62,7 +62,7 @@ Integrating an Artifactory repository manager into your iOS build process is a r
 
 Sonatype Sonatype Nexus only supports **CocoaPods** for iOS. There is no support for [**Carthage**](https://github.com/Carthage/Carthage) and [**SPM (Swfit Package Manager)**](https://www.swift.org/documentation/package-manager/).
 
-For more information about supported frameworks, please visit [**Sonatype Sonatype Nexus Repository documentation**](https://help.sonatype.com/en/sonatype-Sonatype Nexus-repository.html).
+For more information about supported frameworks, please visit [**Sonatype Sonatype Nexus Repository documentation**](https://help.sonatype.com/en/formats.html).
 
 :::
 
@@ -70,7 +70,7 @@ For more information about supported frameworks, please visit [**Sonatype Sonaty
 
 If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Sonatype Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a [**Custom Script**](/workflows/common-workflow-steps/custom-script). If Custom Script is used, you can use the bash script given below.
 
-For more information, please visit the [**Sonatype Nexus Authentication documentations**](https://help.sonatype.com/en/cocoapods-repositories.html).
+For more information, please visit the [**Sonatype Nexus Authentication documentations**](https://help.sonatype.com/en/cocoapods-repositories.html#configure-nexus-repository-authentication).
 
 ```bash
 $cat ~/.netrc
@@ -90,17 +90,18 @@ In the **CocoaPods Install** step, in order to pull dependencies from Sonatype N
 For detailed server-side configuration steps, you can refer to [Appcircle’s Sonatype Nexus configuration guide](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry#sonatype-nexus-configuration).
 
 
-:::danger HTTPS Protocol
-
-When configuring Sonatype Sonatype Nexus, you should pay attention to the `https` protocol. Sonatype Nexus **does not support** **`http`** protocol. Therefore, the source URL must be in `https` protocol.
-
-:::
+<NexusHttpsProtocol />
 
 :::info SSL Configuration
 
-If you are using a Self-Signed https protocol, this certificate must be secure. If the certificate is not secure, some action should be taken. 
+If you are using a self-signed SSL certificate, ensure that curl can work with it properly. Since the CocoaPods client uses the curl command to download Pod files from Nexus Repository, you can configure curl by adding the --insecure option to the .curlrc file in your home directory. If the file does not exist, simply create it. Example:
 
-For detailed information, please visit the [**Sonatype Nexus SSL Configuration documentations**](https://help.sonatype.com/en/cocoapods-repositories.html).
+```bash
+$cat ~/.curlrc
+--insecure
+```
+
+For detailed information, please visit the [**Sonatype Nexus SSL Configuration documentations**](https://help.sonatype.com/en/cocoapods-repositories.html#configure-ssl).
 
 :::
 
