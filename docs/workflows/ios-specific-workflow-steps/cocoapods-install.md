@@ -5,6 +5,7 @@ tags: [cocoapods, install, workflow, step]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NexusHttpsProtocol from '@site/docs/\_nexus-https-protocol.mdx';
 
 # Cocoapods Install
 
