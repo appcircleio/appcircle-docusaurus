@@ -56,7 +56,7 @@ https://github.com/appcircleio/appcircle-cocoapods-component
 
 ### How do I manage iOS dependencies with artifactory repository manager?
 
-Integrating an Artifactory repository manager into your iOS build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using **Sonatype Nexus Repository Manager** as an example in conjunction with the Appcircle **CocoaPods Install** workflow step. Please ensure your Sonatype Nexus Repository Manager is properly installed and configured. For more information, please visit the [official Sonatype Sonatype Nexus documentation](https://help.sonatype.com/repomanager3).
+Integrating an Artifactory repository manager into your iOS build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using **Sonatype Nexus Repository Manager** as an example in conjunction with the Appcircle **CocoaPods Install** workflow step. Please ensure your Sonatype Nexus Repository Manager is properly installed and configured. For more information, please visit the [official Sonatype Nexus documentation](https://help.sonatype.com/repomanager3).
 
 :::info Supported Frameworks
 
@@ -68,7 +68,7 @@ For more information about supported frameworks, please visit [**Sonatype Sonaty
 
 :::caution Configure Sonatype Nexus Repository Authentication
 
-If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Sonatype Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a [**Custom Script**](/workflows/common-workflow-steps/custom-script). If Custom Script is used, you can use the bash scirpt given below.
+If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Sonatype Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a [**Custom Script**](/workflows/common-workflow-steps/custom-script). If Custom Script is used, you can use the bash script given below.
 
 For more information, please visit the [**Sonatype Nexus Authentication documentations**](https://help.sonatype.com/en/cocoapods-repositories.html).
 
@@ -86,6 +86,9 @@ For more information about Sonatype Nexus integration with CocoaPods, please vis
 #### Example 1: How can I fetch the all dependencies from Sonatype Nexus with CocoaPods?
 
 In the **CocoaPods Install** step, in order to pull dependencies from Sonatype Nexus or another artifactory, you need to make some changes in the `Pods` file. For this, the `source url` value of the `Pods` file in the project must be replaced with the relevant artifactory. A short example is shown in the following bash script.
+
+For detailed server-side configuration steps, you can refer to [Appcircle’s Sonatype Nexus configuration guide](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry#sonatype-nexus-configuration).
+
 
 :::danger HTTPS Protocol
 

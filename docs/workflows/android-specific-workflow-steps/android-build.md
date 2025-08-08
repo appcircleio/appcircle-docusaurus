@@ -5,6 +5,7 @@ tags: [android, mobile, android build, build]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NexusHttpsProtocol from '@site/docs/\_nexus-https-protocol.mdx';
 
 # Android Build
 
@@ -158,20 +159,8 @@ These steps will ensure that both an AAB and an APK are generated during your bu
 
 Integrating an Artifactory repository manager into your Android build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using [**Nexus Repository Manager**](https://www.sonatype.com/products/sonatype-nexus-repository) as an example in conjunction with the Appcircle **Android Build** workflow step.
 
-:::caution Configure Nexus Repository Authentication
+For detailed instructions on integrating Nexus Repository Manager with Appcircle, see our [Sonatype Nexus Configuration guide](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry#sonatype-nexus-configuration).
 
-If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a [**Custom Script**](/workflows/common-workflow-steps/custom-script). If Custom Script is used, you can use the bash scirpt given below.
-
-For more information, please visit the [**Nexus Authentication documentations**](https://help.sonatype.com/en/cocoapods-repositories.html).
-
-```bash
-$cat ~/.netrc
-machine https://nexus.example.com/repository/cocoapods-specs.git
-login admin
-password admin123
-```
-
-:::
 
 #### 1. Set up Nexus repository
 
@@ -182,13 +171,12 @@ password admin123
 
 In your Android project’s build.gradle (or settings.gradle if using Gradle Version Catalog), configure Nexus as a repository.
 
-:::danger HTTPS Protocol
+<NexusHttpsProtocol />
 
-When configuring Sonatype Nexus, you should pay attention to the `https` protocol. Nexus **does not support** **`http`** protocol. Therefore, the source URL must be in `https` protocol.
+To fetch dependencies from a Nexus repository, add the following configuration to your Gradle file.
+You can place this block in either the project-level or module-level `build.gradle` file, depending on your project structure.
 
-:::
-
-Example of deploying a dependency with Gradle:  
+If all modules in your project will use the same artifacts, it is recommended to place it in the project-level file:
 
 ```gradle
 repositories {
