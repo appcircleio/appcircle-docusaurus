@@ -76,6 +76,8 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Runner Access Token | Create/Delete Runner Access Token          | ✅     | ⛔       | ⛔        | ⛔      |
 | Runner Access Token | List Runner Access Token                   | ✅     | ⛔       | ⛔        | ⛔      |
 | Report              | List Build Reports                         | ✅     | ✅       | ✅        | ✅      |
+| Build Cache         | View Build Cache Usage                     | ✅     | ✅       | ✅        | ✅      |
+| Build Cache         | Delete Build Cache                         | ✅     | ✅       | ⛔        | ⛔      |
 
 :::caution Distribution Binary and Runner Details
 
