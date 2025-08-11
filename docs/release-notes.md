@@ -16,6 +16,32 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.0 - 2025-08-08 API Keys, Webhook Improvements, Bug Fixes and more
+
+### 🆕 New Features
+
+- [API keys](/account/my-organization/security/api-keys) can now be used for accessing and utilizing the Appcircle API. These tokens are generated and scoped to align with organizational requirements and specific role scopes. API Keys can be created and managed from Organization's module Security section. <AccountBadge/> <CloudBadge/>
+- The binary comparison feature introduced in the Publish module can now also be used within the Testing Distribution and Enterprise App Store modules. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Builds triggered in sub-organizations are now displayed in the root organization’s active processes section, with the sub-organization name also shown. Navigation to the sub-organization where the build is taking place is enabled by clicking on the running build. <BuildBadge/> <CloudBadge/>
+- Filtered notifications in the notification center are now displayed in the same location as the rest of the notifications, instead of opening on the left side. <AccountBadge/> <CloudBadge/>
+- Date formats throughout Appcircle have been updated to be displayed in the MM-DD-YYYY format. <AccountBadge/> <CloudBadge/>
+- The clear notifications option will now delete only filtered notifications when filters are selected in the notification center. <AccountBadge/> <CloudBadge/>
+- Owner members of sub-organizations are now displayed in the organization’s team management list for users without the organization management role scope, to provide better clarity. <AccountBadge/> <CloudBadge/>
+- Changed the organization selection behavior so that updates made on one device or session are not reflected on other devices or sessions, ensuring each session operates independently. <AccountBadge/> <CloudBadge/>
+- Setting descriptions have been improved within the auto re-sign configuration options. <PublishBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where the actual commit/tag author was not shown in the active processes and build history sections when a build was triggered via tags by another user. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where character limit rules were not enforced when editing existing connection PAT settings. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the actual trigger user was not displayed in the build logs when a build was triggered via tags by another user. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where some users were unable to trigger builds by tags on SSH-connected profiles when using GitHub. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where concurrent builds could use an incorrect Xcode version due to the shared configuration being evaluated at execution time instead of trigger time. The selected Xcode version at the time of triggering is now reliably used for each build. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the verify option in domain verification caused incorrect access error messages. <AccountBadge/> <CloudBadge/>
+
 ## 3.28.3 - 2025-07-21 Auto Re-sign for Publish, New Notification Window, UI Improvements and more
 
 ### 🆕 New Features
