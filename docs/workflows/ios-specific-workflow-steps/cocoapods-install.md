@@ -95,7 +95,7 @@ For detailed server-side configuration steps, you can refer to [Appcircle’s So
 
 :::info SSL Configuration
 
-If you are using a self-signed SSL certificate, ensure that curl can work with it properly. Since the CocoaPods client uses the curl command to download Pod files from Nexus Repository, you can configure curl by adding the --insecure option to the .curlrc file in your home directory. If the file does not exist, simply create it. Example:
+If you are using a self-signed SSL certificate, ensure that curl can work with it properly. Since the CocoaPods client uses the curl command to download Pod files from Nexus Repository, you can configure curl by adding the `--insecure` option to the .curlrc file in your home directory. If the file does not exist, simply create it. Example:
 
 ```bash
 $cat ~/.curlrc
