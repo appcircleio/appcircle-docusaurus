@@ -13,6 +13,8 @@ You can use **Custom Script from Git** to clone and run your own scripts directl
 
 Before execution, the step will clone (or reuse) your repository, check out the specified branch, and execute the script based on its file extension (postfix).
 
+If the `AC_SCRIPT_FILENAME` value includes a relative path (for example, `folder/test.sh`), the script will be located and executed from that path within the repository structure.
+
 :::info
 
 The step inspects your script file’s postfix (its extension—`.sh`, `.py`, `.rb`, `.pl`, `.js`, `.java`) to choose the execution path. It must match exactly.
@@ -70,15 +72,15 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6419-csfromgitinput.png' />
 
 
-| Variable Name                  | Description                                                                                                                                                                                 | Status   |
-|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_SCRIPT_FILENAME`          | Specifies the exact name of the script file to execute within the Git repository (e.g., `test.sh`, `code.rb`, `repositorySubfolder/python.py`).                                             | Required |
-| `$AC_SCRIPT_EXTRA_PARAMETERS`  | Additional parameters to pass to the script (comma "," separated; if a parameter has an empty character, define it with " "; e.g. `param1,param2,"string with spaces",param3`).             | Optional |
-| `$AC_SCRIPT_REPO_DIR`          | If the Git repository has already been cloned in a previous step of the same workflow, set the Repository Directory Output here. This input is required if `Git Clone URL` is not provided. | Optional |
-| `$AC_SCRIPT_REPO_CLONE_URL`    | Git repository clone URL (https). Required if the Repository Directory Output is not provided. (e.g. https://exampleGit.exampleRepo.git)                                                    | Optional |
-| `$AC_SCRIPT_GIT_USERNAME`      | Git provider username for authentication. **Required** if the repository directory output is not provided and the Git clone URL points to a private repository.                             | Optional |
-| `$AC_SCRIPT_GIT_PAT`           | Git provider personal access token for authentication. **Required** if the repository directory output is not provided and the Git clone URL points to a private repository.                | Optional |
-| `$AC_SCRIPT_GIT_BRANCH`        | Name of the branch to check out from the script repository. If not specified, the repository's default branch will be used.                                                                 | Optional |
+| Variable Name                  | Description                                                                                                                                                                                            | Status   |
+|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| `$AC_SCRIPT_FILENAME`          | Specifies the exact name of the script file to execute within the Git repository (e.g., test.sh, code.rb or relative_path/python.py).                                                                  | Required |
+| `$AC_SCRIPT_EXTRA_PARAMETERS`  | Additional parameters to pass to the script (comma "," separated; if a parameter has an empty character, define it with " "; e.g. param1,param2,"param3 with spaces",param4).                          | Optional |
+| `$AC_SCRIPT_REPO_DIR`          | If the Git repository has already been cloned in a previous step of the same workflow, set the Repository Directory Output here. This input is required if `AC_SCRIPT_REPO_CLONE_URL` is not provided. | Optional |
+| `$AC_SCRIPT_REPO_CLONE_URL`    | Git repository clone URL. Required if the Repository Directory Output is not provided. (e.g. https://exampleGit.exampleRepo.git). This input is required if `AC_SCRIPT_REPO_DIR` is not provided.      | Optional |
+| `$AC_SCRIPT_GIT_USERNAME`      | Git provider username for authentication. This is required if the AC_SCRIPT_REPO_DIR input is not provided and the Git repository is private.                                                          | Optional |
+| `$AC_SCRIPT_GIT_PAT`           | Git provider personal access token for authentication. This is required if the AC_SCRIPT_REPO_DIR input is not provided and the Git repository is private.                                             | Optional |
+| `$AC_SCRIPT_GIT_BRANCH`        | Name of the branch to check out from the script repository. If not specified, the repository's default branch will be used.                                                                            | Optional |
 
 ### Output Variables
 
