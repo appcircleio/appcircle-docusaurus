@@ -548,6 +548,11 @@ browserstack:
   description: "Description for browserstack"
   permalink: /browserstack
 
+lambdatest:
+  label: "lambdatest"
+  description: "Description for LambdaTest"
+  permalink: /lambdatest
+
 "brute-force":
   label: "brute-force"
   description: "Description for brute-force"
@@ -1397,6 +1402,11 @@ identifiers:
   label: "identifiers"
   description: "Description for identifiers"
   permalink: /identifiers
+
+"in-app notifications":
+  label: "in-app notifications"
+  description: "Description for in-app notifications"
+  permalink: /in-app-notifications
 
 "in-app updates":
   label: "in-app updates"
@@ -3037,3 +3047,8 @@ quay:
   label: "re-sign"
   description: "re-sign related documentations"
   permalink: "/re-sign"
+
+"license":
+  label: "license"
+  description: "Self-hosted Appcircle server license configuration related documentations"
+  permalink: "/license"

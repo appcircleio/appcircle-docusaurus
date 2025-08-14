@@ -66,6 +66,8 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Build Actions       | Delete Commit Artifacts                    | ✅     | ✅       | ⛔        | ⛔      |
 | Build Actions       | Download Artifacts                         | ✅     | ✅       | ✅        | ✅      |
 | Build Actions       | Distribution Binary                        | ✅     | ✅       | ✅        | ⛔      |
+| Build Actions       | View Build Cache Size Usage                | ✅     | ✅       | ✅        | ✅      |
+| Build Actions       | Clear Build Caches                         | ✅     | ✅       | ⛔        | ⛔      |
 | Test Results        | List Test Results                          | ✅     | ✅       | ✅        | ✅      |
 | Connection          | Add/Delete/Update Connections (User Based) | ✅     | ✅       | ✅        | ✅      |
 | Connection          | List Connection (User Based)               | ✅     | ✅       | ✅        | ✅      |
@@ -74,6 +76,8 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Runner Access Token | Create/Delete Runner Access Token          | ✅     | ⛔       | ⛔        | ⛔      |
 | Runner Access Token | List Runner Access Token                   | ✅     | ⛔       | ⛔        | ⛔      |
 | Report              | List Build Reports                         | ✅     | ✅       | ✅        | ✅      |
+| Build Cache         | View Build Cache Usage                     | ✅     | ✅       | ✅        | ✅      |
+| Build Cache         | Delete Build Cache                         | ✅     | ✅       | ⛔        | ⛔      |
 
 :::caution Distribution Binary and Runner Details
 
@@ -370,6 +374,8 @@ Also, the user can view self-hosted runners and change configuration.
 | Domain Verification                                  | Verify a Domain                         | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | Remove Domain Verification              | ✅     | ✅       | ⛔      |
 | Export Users                                         | Export User List                        | ✅     | ✅       | ⛔      |
+| API Keys                                             | View API Keys List                      | ✅     | ✅       | ✅       |
+| API Keys                                             | Manage/Delete API Keys                  | ✅     | ✅       | ⛔      |
 
 :::info Organization Management
 
