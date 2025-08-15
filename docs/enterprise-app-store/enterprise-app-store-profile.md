@@ -228,19 +228,19 @@ Always use the original share link from EAS → Profile → Settings, as sharing
 
 ## Binary Actions
 
-### Binary Details
+### Binary Information
 
 This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas1.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas8.png' />
 
 #### Build Metadata Details
 
 The following metadata is displayed in the Binary Details section of a Enterprise App Store Profile only when the binary is generated via the Build Module, either through automatic or manual triggers, and subsequently distributed using Auto Distribution to the Enterprise App Store module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas4.png' />
 
 - **Trigger Type**: Indicates what initiated the build. Possible values include:
 
@@ -256,6 +256,18 @@ The following metadata is displayed in the Binary Details section of a Enterpris
 - **Workflow Name**: The name of the workflow profile name executed during the build process (e.g., Default Push Workflow).
 - **Config Name**: Indicates the configuration profile name used within the selected workflow (e.g., Default Configuration).
 
+#### Binary Comparison
+
+In the top-right corner of the Binary Information screen, you can click the **Compare** button to compare the current binary with another of your choice. The comparison highlights differences between the two binaries using color-coded indicators for easy identification.
+
+:::caution Build Details Comparison
+
+Binaries generated through the Appcircle Build Module include associated build details. **However**, if the compared binary was **manually** uploaded to Appcircle, those details **will not be available** for comparison.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas3.png' />
 
 ### Publish
 
@@ -266,7 +278,7 @@ The Enterprise App Store module includes two channels: Beta and Live.
 
 Apps can be sent to the Beta or Live channels by hitting the `...` button and then selecting the **Publish** menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas5.png' />
 
 The channel can be selected, and a summary and release notes for the release can be written. Once the **Publish** button is clicked, the particular binary will be made available to all beta users.
 
@@ -279,7 +291,7 @@ A version can be sent to the Live Channel in two ways:
 - Click the **Publish** button and select **Live** for the channel.
 - Click the ... button for any beta build and select **Go Live** from the menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas10.png' />
 
 :::info
 
@@ -335,19 +347,19 @@ App versions that were published to the Beta or Live channels as unlisted will d
 
 Any binary can be removed from the Live or Beta channels by selecting the **Unpublish** action from the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas9.png' />
 
 ### Download
 
 The binary artifact in the Enterprise App Store profile can be downloaded by selecting the Download button from the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas6.png' />
 
 ### Delete
 
 Binaries in the Enterprise App Store profiles can be deleted by clicking the Delete button in the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas7.png' />
 
 :::info
 

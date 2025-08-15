@@ -376,25 +376,25 @@ After sending your application to testing groups, you can track the actions of t
 
 ## Binary Actions
 
-### Binary Details
+### Binary Information
 
 1. Select the binary.
 
 You can select the files from the list.
 
-2. Click the **...** button and select **Binary Details**
+2. Click the **...** button and select **Binary Information**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist11.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td4.png' />
 
 3. This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist12.png' alt="Binary Details" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td9.png' />
 
 #### Build Metadata Details
 
-The following metadata is displayed in the Binary Details section of a Testing Distribution Profile only when the binary is generated via the Build Module, either through automatic or manual triggers, and subsequently distributed using Auto Distribution to the Testing Distribution module.
+The following metadata is displayed in the Binary Information section of a Testing Distribution Profile only when the binary is generated via the Build Module, either through automatic or manual triggers, and subsequently distributed using Auto Distribution to the Testing Distribution module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td10.png' />
 
 - **Trigger Type**: Indicates what initiated the build. Possible values include:
 
@@ -410,6 +410,19 @@ The following metadata is displayed in the Binary Details section of a Testing D
 - **Workflow Name**: The name of the workflow profile name executed during the build process (e.g., Default Push Workflow).
 - **Config Name**: Indicates the configuration profile name used within the selected workflow (e.g., Default Configuration).
 
+#### Binary Comparison
+
+In the top-right corner of the Binary Information screen, you can click the **Compare** button to compare the current binary with another of your choice. The comparison highlights differences between the two binaries using color-coded indicators for easy identification.
+
+:::caution Build Details Comparison
+
+Binaries generated through the Appcircle Build Module include associated build details. **However**, if the compared binary was **manually** uploaded to Appcircle, those details **will not be available** for comparison.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td3.png' />
+
 ### Send your application to Enterprise App Store
 
 You can send your application from your Testing Distribution profile to an Enterprise App Store profile by following these steps:
@@ -418,7 +431,7 @@ You can send your application from your Testing Distribution profile to an Enter
 - Click **Send to Enterprise App Store**.
 - Click **Send**.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-dist13.png" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td5.png' />
 
 :::info
 
@@ -435,7 +448,7 @@ You can send your application from your Testing Distribution profile to a design
 - Choose your Publish profile from the list.
 - Click **Send**.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-dist14.png" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td6.png' />
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-dist15.png" />
 
@@ -459,7 +472,7 @@ Re-sign History allows you to view the re-sign process logs for your app version
 
 The binary file in the Testing Distribution profile can be downloaded by selecting the Download button from the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist16.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td7.png' />
 
 ### Delete Multiple Testing Distribution App Versions
 
@@ -477,7 +490,7 @@ On edit mode, you will be able to select multiple entries. Select the versions y
 
 As an alternative method to bulk deleting versions, you can delete a single version by selecting the three-dot menu next to the app version and then clicking **delete** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist19.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td8.png' />
 
 After clicking `Delete` , type in the version name in the prompt.
 
