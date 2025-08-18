@@ -82,6 +82,9 @@ To securely log out and clear your stored authentication credentials from the CL
 appcircle logout
 ```
 
+The logout command clears your stored authentication token locally. This is a local operation that doesn't make any API calls to the server.
+
+
 ### Authentication Behavior
 
 The Appcircle CLI maintains a single active session and prevents multiple concurrent logins to ensure security and avoid credential conflicts.
@@ -89,6 +92,7 @@ The Appcircle CLI maintains a single active session and prevents multiple concur
 
 - If you're already logged in and try to login again, you'll see a "You are already logged in" message
 - You must logout first before logging in with different credentials
+- If you try to logout when you're not logged in, you'll see a "You are not logged in" message
 
 ### Interactive Mode
 
@@ -100,7 +104,6 @@ In interactive mode (`appcircle -i`), authentication options are grouped under "
      - **API Key**
      - **Personal Access Token (PAT)**
 
-### Examples
 
 ```bash
 # Login with Personal Access Token
