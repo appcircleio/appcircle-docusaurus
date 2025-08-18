@@ -36,7 +36,7 @@ The Appcircle CLI supports two authentication methods:
 1. **Personal Access Token (PAT)** - Recommended for individual users
 2. **API Key** - Suitable for organization-level access
 
-### Login with Personal Access Token
+### Login with Personal Access Token (PAT)
 
 To authenticate using a Personal Access Token:
 
