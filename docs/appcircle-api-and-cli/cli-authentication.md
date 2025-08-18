@@ -118,4 +118,4 @@ appcircle logout
 
 ### Environment Variable
 
-After successful authentication, the CLI stores your access token locally. You can also manually set the `AC_ACCESS_TOKEN` environment variable if needed for other tools or scripts.
+After successful authentication, the CLI stores your access token locally. You can also manually set the `AC_ACCESS_TOKEN` or `AC_API_KEY_TOKEN` environment variable if needed for other tools or scripts.
