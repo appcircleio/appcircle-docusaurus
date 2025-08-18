@@ -84,6 +84,9 @@ appcircle logout
 
 ### Authentication Behavior
 
+The Appcircle CLI maintains a single active session and prevents multiple concurrent logins to ensure security and avoid credential conflicts.
+
+
 - If you're already logged in and try to login again, you'll see a "You are already logged in" message
 - You must logout first before logging in with different credentials
 
