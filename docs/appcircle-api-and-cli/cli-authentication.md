@@ -54,6 +54,8 @@ For generating Personal API Token, please refer to [API Authentication](/appcirc
 
 ### Login with API Key
 
+API Keys provide organization-level authentication, ideal for automated systems and shared environments. Unlike PATs tied to individual users, API Keys belong to the organization and remain valid regardless of user account changes.
+
 To authenticate using an API Key:
 
 ```bash
