@@ -64,6 +64,12 @@ For organization-specific access, you can also specify the organization ID:
 appcircle login api-key --name "my-api-key" --secret "my-secret" --organization-id "org-123"
 ```
 
+:::tip
+
+For creating and managing API keys, please refer to [API Keys](/account/my-organization/security/api-keys).
+
+:::
+
 ### Logout
 
 To log out and clear your stored authentication token:
