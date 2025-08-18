@@ -38,6 +38,8 @@ The Appcircle CLI supports two authentication methods:
 
 ### Login with Personal Access Token (PAT)
 
+Personal Access Tokens provide a secure way to authenticate with Appcircle CLI without exposing your account credentials. 
+
 To authenticate using a Personal Access Token:
 
 ```bash
