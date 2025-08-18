@@ -48,7 +48,7 @@ appcircle login pat --token "your-personal-access-token-here"
 
 :::tip
 
-For generating Personal API Token, please refer to [API Authentication.](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens)
+For generating Personal API Token, please refer to [API Authentication](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens) documentation.
 
 :::
 
