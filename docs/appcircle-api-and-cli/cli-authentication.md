@@ -76,7 +76,7 @@ For creating and managing API keys, please refer to [API Keys](/account/my-organ
 
 ### Logout
 
-To log out and clear your stored authentication token:
+To securely log out and clear your stored authentication credentials from the CLI, please use following command:
 
 ```bash
 appcircle logout
