@@ -82,7 +82,11 @@ To securely log out and clear your stored authentication credentials from the CL
 appcircle logout
 ```
 
-The logout command clears your stored authentication token locally. This is a local operation that doesn't make any API calls to the server.
+:::info
+
+The `logout` command clears your stored authentication token locally. This is a local operation that doesn't make any API calls to the server.
+
+:::
 
 
 ### Authentication Behavior
