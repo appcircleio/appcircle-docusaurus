@@ -16,34 +16,45 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.1 - 2025-08-15 Custom Script from Git Component, Account Module Improvements and IAM Upgrade
+
+### 🆕 New Features
+
+- The [Custom Script from Git component](/workflows/common-workflow-steps/custom-script#how-do-i-store-and-re-use-custom-scripts-from-a-git-repository) now lets you pull and run your scripts directly from any Git repository. Supported script types: Bash (`.sh`), Ruby (`.rb`), Python (`.py`), Perl (`.pl`), Node.js (`.js`), and Java (`.java`). <BuildIntegrationsBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Upgraded IAM to the latest version to enhance security and reliability. <AccountBadge/> <CloudBadge/>
+- Improved the Account page UI and added a remote disconnect option. <AccountBadge/> <CloudBadge/>
+
 ## 3.29.0 - 2025-08-08 API Keys, Webhook Improvements, Bug Fixes and more
 
 ### 🆕 New Features
 
-- [API keys](/account/my-organization/security/api-keys) can now be used for accessing and utilizing the Appcircle API. These tokens are generated and scoped to align with organizational requirements and specific role scopes. API Keys can be created and managed from Organization's module Security section. <AccountBadge/> <CloudBadge/>
-- The binary comparison feature introduced in the Publish module can now also be used within the [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#binary-comparison) and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#binary-comparison) modules. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/>
+- [API keys](/account/my-organization/security/api-keys) can now be used for accessing and utilizing the Appcircle API. These tokens are generated and scoped to align with organizational requirements and specific role scopes. API Keys can be created and managed from Organization's module Security section. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The binary comparison feature introduced in the Publish module can now also be used within the [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#binary-comparison) and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#binary-comparison) modules. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
-- Builds triggered in sub-organizations are now displayed in the root organization’s active processes section, with the sub-organization name also shown. Navigation to the sub-organization where the build is taking place is enabled by clicking on the running build. <BuildBadge/> <CloudBadge/>
-- Webhook secret handling was improved when connecting to Git providers. <BuildBadge/> <CloudBadge/>
-- Filtered notifications in the notification center are now displayed in the same location as the rest of the notifications, instead of opening on the left side. <AccountBadge/> <CloudBadge/>
-- Date formats throughout Appcircle have been updated to be displayed in the MM-DD-YYYY format. <AccountBadge/> <CloudBadge/>
-- The clear notifications option will now delete only filtered notifications when filters are selected in the notification center. <AccountBadge/> <CloudBadge/>
-- Owner members of sub-organizations are now displayed in the organization’s team management list for users without the organization management role scope, to provide better clarity. <AccountBadge/> <CloudBadge/>
-- Changed the organization selection behavior so that updates made on one device or session are not reflected on other devices or sessions, ensuring each session operates independently. <AccountBadge/> <CloudBadge/>
-- Setting descriptions have been improved within the auto re-sign configuration options. <PublishBadge/> <CloudBadge/>
-- Download options and paths can now be configured before the build starts using new flags for artifacts, logs, and custom directories, providing full control over build outputs. <APICLIBadge/> <CloudBadge/>
+- Builds triggered in sub-organizations are now displayed in the root organization’s active processes section, with the sub-organization name also shown. Navigation to the sub-organization where the build is taking place is enabled by clicking on the running build. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Webhook secret handling was improved when connecting to Git providers. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Filtered notifications in the notification center are now displayed in the same location as the rest of the notifications, instead of opening on the left side. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Date formats throughout Appcircle have been updated to be displayed in the MM-DD-YYYY format. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The clear notifications option will now delete only filtered notifications when filters are selected in the notification center. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Owner members of sub-organizations are now displayed in the organization’s team management list for users without the organization management role scope, to provide better clarity. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Changed the organization selection behavior so that updates made on one device or session are not reflected on other devices or sessions, ensuring each session operates independently. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Setting descriptions have been improved within the auto re-sign configuration options. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Download options and paths can now be configured before the build starts using new flags for artifacts, logs, and custom directories, providing full control over build outputs. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
-- An issue was fixed where the actual commit/tag author was not shown in the active processes and build history sections when a build was triggered via tags by another user. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where repositories with the same name caused incorrect build triggers within Appcircle. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where character limit rules were not enforced when editing existing connection PAT settings. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where the actual trigger user was not displayed in the build logs when a build was triggered via tags by another user. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where some users were unable to trigger builds by tags on SSH-connected profiles when using GitHub. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where concurrent builds could use an incorrect Xcode version due to the shared configuration being evaluated at execution time instead of trigger time. The selected Xcode version at the time of triggering is now reliably used for each build. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where the verify option in domain verification caused incorrect access error messages. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the actual commit/tag author was not shown in the active processes and build history sections when a build was triggered via tags by another user. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where repositories with the same name caused incorrect build triggers within Appcircle. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where character limit rules were not enforced when editing existing connection PAT settings. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the actual trigger user was not displayed in the build logs when a build was triggered via tags by another user. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where some users were unable to trigger builds by tags on SSH-connected profiles when using GitHub. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where concurrent builds could use an incorrect Xcode version due to the shared configuration being evaluated at execution time instead of trigger time. The selected Xcode version at the time of triggering is now reliably used for each build. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the verify option in domain verification caused incorrect access error messages. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.28.3 - 2025-07-21 Auto Re-sign for Publish, New Notification Window, UI Improvements and more
 
@@ -610,7 +621,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - API request checks for Enterprise and Testing Portal logins were improved to display more accurate responses for security reasons. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where branches deleted from Azure repositories were not being removed from the Appcircle build profile. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Security improvements have been made regarding cookies, including enhanced attributes, stronger encryption, and support for updated TLS versions. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A bug that prevented configuring the Keycloak user decision strategy for self-hosted Appcircle server users has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- A bug that prevented configuring the IAM user decision strategy for self-hosted Appcircle server users has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
 - An issue with LDAP authentication in the testing portal, effecting some users, has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.22.0 - 2024-10-04 Apple Devices, Build Report Improvement, Auto Cancel Redundant Pipelines, Bug Fixes and more

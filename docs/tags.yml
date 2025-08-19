@@ -3052,3 +3052,8 @@ quay:
   label: "license"
   description: "Self-hosted Appcircle server license configuration related documentations"
   permalink: "/license"
+
+"device activity":
+  label: "device activity"
+  description: "device activity related documentations"
+  permalink: "/device-activity"

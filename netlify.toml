@@ -1278,3 +1278,23 @@ status = 301
 from = "/account/slack/slack-notifications"
 to = "/account/my-organization/notifications/slack-notifications"
 status = 301
+
+[[redirects]]
+from = "/account/my-account/account-management/change-password"
+to = "/account/my-account/account-management/signing-in"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/account-management/authenticator-two-factor-authentication"
+to = "/account/my-account/account-management/signing-in"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/account-management/active-sessions"
+to = "/account/my-account/account-management/device-activity"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/account-management/authentication-logs"
+to = "/account/my-account/account-management/device-activity"
+status = 301
