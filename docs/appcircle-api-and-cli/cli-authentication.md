@@ -109,20 +109,6 @@ In interactive mode (`appcircle -i`), authentication options are grouped under "
      - **Personal Access Token (PAT)**
 
 
-```bash
-# Login with Personal Access Token
-appcircle login pat --token "your-personal-access-token-here"
-
-# Login with API Key
-appcircle login api-key --name "my-api-key" --secret "my-secret"
-
-# Login with API Key and specific organization
-appcircle login api-key --name "my-api-key" --secret "my-secret" --organization-id "org-123"
-
-# Logout from your current session
-appcircle logout
-```
-
 ### Environment Variable
 
 After successful authentication, the CLI stores your access token locally. You can also manually set the `AC_ACCESS_TOKEN` or `AC_API_KEY_TOKEN` environment variable if needed for other tools or scripts.
