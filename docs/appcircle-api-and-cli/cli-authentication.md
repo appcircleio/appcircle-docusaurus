@@ -29,20 +29,86 @@ You can find more information and the open source code of the CLI on GitHub as f
 
 https://github.com/appcircleio/appcircle-cli
 
-### Using the Personal API Token for CLI Authentication
+### Authentication Methods
 
-For authentication, you need to generate a session token from the [Appcircle CLI](https://github.com/appcircleio/appcircle-cli#appcircle-command-line-interface) using the Personal API Token and add the generated session token value as an environment variable.
+The Appcircle CLI supports two authentication methods:
+
+1. **Personal Access Token (PAT)** - Recommended for individual users
+2. **API Key** - Suitable for organization-level access
+
+### Login with Personal Access Token (PAT)
+
+Personal Access Tokens provide a secure way to authenticate with Appcircle CLI without exposing your account credentials. 
+
+To authenticate using a Personal Access Token:
+
+```bash
+appcircle login pat --token "your-personal-access-token-here"
+```
 
 :::tip
 
-For generating Personal API Token, please refer to [API Authentication.](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens)
+For generating Personal API Token, please refer to [API Authentication](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens) documentation.
 
 :::
 
-Using the Appcircle CLI, create a full access API token using the following command with the Personal API Token specified as "pat":
+### Login with API Key
+
+API Keys provide organization-level authentication, ideal for automated systems and shared environments. Unlike PATs tied to individual users, API Keys belong to the organization and remain valid regardless of user account changes.
+
+To authenticate using an API Key:
 
 ```bash
-appcircle login ${pat}
+appcircle login api-key --name "my-api-key" --secret "my-secret"
 ```
 
-Then copy the result and set it as the `AC_ACCESS_TOKEN` environment variable.
+For organization-specific access, you can also specify the organization ID:
+
+```bash
+appcircle login api-key --name "my-api-key" --secret "my-secret" --organization-id "org-123"
+```
+
+:::tip
+
+For creating and managing API keys, please refer to [API Keys](/account/my-organization/security/api-keys).
+
+:::
+
+### Logout
+
+To securely log out and clear your stored authentication credentials from the CLI, please use following command:
+
+```bash
+appcircle logout
+```
+
+:::info
+
+The `logout` command clears your stored authentication token locally. This is a local operation that doesn't make any API calls to the server.
+
+:::
+
+
+### Authentication Behavior
+
+The Appcircle CLI maintains a single active session and prevents multiple concurrent logins to ensure security and avoid credential conflicts.
+
+
+- If you're already logged in and try to login again, you'll see a "You are already logged in" message
+- You must logout first before logging in with different credentials
+- If you try to logout when you're not logged in, you'll see a "You are not logged in" message
+
+### Interactive Mode
+
+In interactive mode (`appcircle -i`), authentication options are grouped under "Authentication (Login/Logout)" menu:
+
+1. Select "Authentication (Login/Logout)" from the main menu
+2. Choose "Login" or "Logout" from the submenu
+   - When choosing **Login**, you can authenticate using:
+     - **API Key**
+     - **Personal Access Token (PAT)**
+
+
+### Environment Variable
+
+After successful authentication, the CLI stores your access token locally. You can also manually set the `AC_ACCESS_TOKEN` or `AC_API_KEY_TOKEN` environment variable if needed for other tools or scripts.

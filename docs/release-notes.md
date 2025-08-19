@@ -16,6 +16,17 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.1 - 2025-08-15 Custom Script from Git Component, Account Module Improvements and IAM Upgrade
+
+### 🆕 New Features
+
+- The [Custom Script from Git component](/workflows/common-workflow-steps/custom-script#how-do-i-store-and-re-use-custom-scripts-from-a-git-repository) now lets you pull and run your scripts directly from any Git repository. Supported script types: Bash (`.sh`), Ruby (`.rb`), Python (`.py`), Perl (`.pl`), Node.js (`.js`), and Java (`.java`). <BuildIntegrationsBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Upgraded IAM to the latest version to enhance security and reliability. <AccountBadge/> <CloudBadge/>
+- Improved the Account page UI and added a remote disconnect option. <AccountBadge/> <CloudBadge/>
+
 ## 3.29.0 - 2025-08-08 API Keys, Webhook Improvements, Bug Fixes and more
 
 ### 🆕 New Features
@@ -610,7 +621,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - API request checks for Enterprise and Testing Portal logins were improved to display more accurate responses for security reasons. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where branches deleted from Azure repositories were not being removed from the Appcircle build profile. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Security improvements have been made regarding cookies, including enhanced attributes, stronger encryption, and support for updated TLS versions. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A bug that prevented configuring the Keycloak user decision strategy for self-hosted Appcircle server users has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
+- A bug that prevented configuring the IAM user decision strategy for self-hosted Appcircle server users has been fixed. <InfrastructureBadge/> <SelfHostedBadge/>
 - An issue with LDAP authentication in the testing portal, effecting some users, has been fixed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.22.0 - 2024-10-04 Apple Devices, Build Report Improvement, Auto Cancel Redundant Pipelines, Bug Fixes and more
