@@ -131,7 +131,7 @@ For more information, please visit the **App Store Connect API Key** [documentat
 
 #### Signing Method
 
-The **Signing Strategy** defines how Appcircle selects the provisioning profile during the re-signing process. This strategy determines whether Appcircle should use an existing provisioning profile. Selecting the appropriate signing strategy ensures compatibility with your target distribution method and proper signing of your binary.
+The **Signing Method** defines how Appcircle selects the provisioning profile during the re-signing process. This strategy determines whether Appcircle should use an existing provisioning profile. Selecting the appropriate signing strategy ensures compatibility with your target distribution method and proper signing of your binary.
 
 For more information about these signing strategies, please visit the Apple Profiles [documentation](/signing-identities/apple-profiles).
 
@@ -162,7 +162,7 @@ In addition to the selected signing strategy, Appcircle requires a corresponding
 
 For more information, please visit the [Signing Identity Module](/signing-identities) and [Apple Certificates](/signing-identities/apple-certificates) documentations.
 
-:::Enterprise API Key and In-house signing
+:::caution Enterprise API Key and In-house signing
 
 If you want to perform **In-house** signing using an **Enterprise API** Key, make sure that a compatible signing certificate is selected. Otherwise, Appcircle will not be able to verify the certificate and the signing process will fail.
 
