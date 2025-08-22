@@ -1,5 +1,5 @@
 ---
-title: Resign Binary
+title: Re-sign Binary
 description: Learn how to resign your iOS application binaries within Appcircle to change provisioning profiles or app entitlements.
 tags: [ios, resigning, provisioning profiles, entitlements, faq]
 sidebar_position: 6
@@ -8,9 +8,9 @@ sidebar_position: 6
 import Screenshot from '@site/src/components/Screenshot';
 import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
-# Resign Binary
+# Re-sign Binary
 
-The **Resign Binary** feature in Appcircle allows you to resign both iOS and Android application binaries. For iOS applications, you can use new provisioning profiles or modify the app's entitlements, which is useful for adjusting the app’s capabilities or updating its distribution settings without requiring a new build. For Android applications, you can resign your binaries with a new keystore, allowing you to update the app's signing credentials crucial for app distribution and updates.
+The **Re-sign Binary** feature in Appcircle allows you to re-sign both iOS and Android application binaries. For iOS applications, you can use new provisioning profiles or modify the app's entitlements, which is useful for adjusting the app’s capabilities or updating its distribution settings without requiring a new build. For Android applications, you can re-sign your binaries with a new keystore, allowing you to update the app's signing credentials crucial for app distribution and updates.
 
 This feature streamlines the process of updating app distribution and security settings, ensuring that your applications can be quickly adapted to meet changing requirements or distribution strategies.
 
@@ -18,9 +18,9 @@ This feature streamlines the process of updating app distribution and security s
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub8.png' />
 
-## Resign iOS Binary
+## Re-sign iOS Binary
 
-When you need to distribute an iOS application to different environments (like QA, staging, or production) or need to change the app’s entitlements, the **Resign Binary** feature simplifies this process. You can resign an app binary with a new provisioning profile that matches the intended distribution certificate.
+When you need to distribute an iOS application to different environments (like QA, staging, or production) or need to change the app’s entitlements, the **Re-sign Binary** feature simplifies this process. You can resign an app binary with a new provisioning profile that matches the intended distribution certificate.
 
 ### Fields and Options
 
@@ -64,7 +64,7 @@ Please note that if the project `info.plist` file does **not** have a `CFBundleD
 - **Description**: Original Bundle ID.
 
 :::caution BundleID
-Please note that changing the **BundleID** is allowed while the related version is being resigned in the **Publish module**. However, you **cannot start** a publish operation unless it matches the Bundle ID defined for the [Publish Profile](/publish-module/creating-publish-profiles#create-profile-manually).
+Please note that changing the **BundleID** is allowed while the related version is being re-signed in the **Publish module**. However, you **cannot start** a publish operation unless it matches the Bundle ID defined for the [Publish Profile](/publish-module/creating-publish-profiles#create-profile-manually).
 :::
 
 #### Provisioning Profiles
@@ -73,29 +73,29 @@ Please note that changing the **BundleID** is allowed while the related version 
 
 ### Edit Entitlements
 
-With the entitlement editing feature of the Resign Binary feature in the Publish module of Appcircle. If you want, you can change your existing entitlements or add or remove them.
+With the entitlement editing feature of the Re-sign Binary feature in the Publish module of Appcircle. If you want, you can change your existing entitlements or add or remove them.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-entitlementEdit.png' />
 
 #### Changing Existing Entitlement or Add/Remove Option
 
-When you click the Edit button on the Resign Binary screen, a new page will open for Entitlement editing. In this page, you can update, delete or add a new entitlement to your existing entitlements.
+When you click the Edit button on the Re-sign Binary screen, a new page will open for Entitlement editing. In this page, you can update, delete or add a new entitlement to your existing entitlements.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-editDetails.png' />
 
 :::danger Entitlement Change
 
-If you want to change, add or remove Entitlement. The **Provision Profile** and **Bundle Identifier** you will resign **must contain** the **entitlements** you want to change. If the **Bundle ID** or **Provision Profile** does not contain or support these changes, the resign operation may **fail**.
+If you want to change, add or remove Entitlement. The **Provision Profile** and **Bundle Identifier** you will re-sign **must contain** the **entitlements** you want to change. If the **Bundle ID** or **Provision Profile** does not contain or support these changes, the re-sign operation may **fail**.
 
 :::
 
 ### Resigning Process
 
-To resign a binary, follow these steps:
+To re-sign a binary, follow these steps:
 
 1. **Select the Version**: Choose the version of your app you wish to resign from the **Version List** in the Publish module.
-2. **Configure Resigning Options**: Navigate to the **Resign Binary** action and configure the necessary fields such as the provisioning profile, entitlements, and other settings.
-3. **Sign the Binary**: After configuring, click the **Sign** button to resign the binary. This process will create a new package with the updated provisioning profile and entitlements.
+2. **Configure Re-signing Options**: Navigate to the **Re-sign Binary** action and configure the necessary fields such as the provisioning profile, entitlements, and other settings.
+3. **Sign the Binary**: After configuring, click the **Sign** button to re-sign the binary. This process will create a new package with the updated provisioning profile and entitlements.
 
 ### Post-Resignation
 
@@ -107,39 +107,39 @@ The newly created package can then be distributed or tested according to your pu
 
 This feature streamlines the application update process by allowing for quick adjustments to the app's configurations, significantly reducing the time and resources needed for separate build cycles.
 
-## Resign Android Binary
+## Re-sign Android Binary
 
-Resigning an Android binary allows you to apply a new keystore to your application after the initial build. This is useful for updating the signing configuration or switching to a different keystore as needed without needing to rebuild the app.
+Re-signing an Android binary allows you to apply a new keystore to your application after the initial build. This is useful for updating the signing configuration or switching to a different keystore as needed without needing to rebuild the app.
 
 ### Fields and Options
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-resign-android-option.png' />
 
-- **Package ID**: This is the unique identifier for your Android application, also known as the application ID. It usually follows the format `com.example.myapp` and should not be changed during the resigning process.
+- **Package ID**: This is the unique identifier for your Android application, also known as the application ID. It usually follows the format `com.example.myapp` and should not be changed during the re-signing process.
 
 :::caution Package ID
 Please note that changing the **Package ID** is not allowed while the related version is being re-signed in the **Publish module**. If you need to change the **Package ID value** of your package, please use the **Re-sign Binary** feature in [Testing Distribution](/testing-distribution/resigning-binaries).
 :::
 
-- **Version Name**: This field represents the human-readable version of your app, such as `1.2.3`. It is used for display purposes and can be adjusted if necessary during the resigning process.
+- **Version Name**: This field represents the human-readable version of your app, such as `1.2.3`. It is used for display purposes and can be adjusted if necessary during the re-signing process.
 
 - **Version Code**: The version code is a numerical value that represents the version of your app. Unlike the version name, this is used by the Android system to prevent or allow installations over existing ones. This should be incremented or adjusted according to your versioning strategy.
 
-- **Keystores**: This dropdown allows you to select a keystore to resign your binary. A keystore contains one or more keys. You must select the keystore that contains the appropriate key for signing your application. The keystore used for resigning must match the requirements of the platform where the app will be distributed.
+- **Keystores**: This dropdown allows you to select a keystore to re-sign your binary. A keystore contains one or more keys. You must select the keystore that contains the appropriate key for signing your application. The keystore used for re-signing must match the requirements of the platform where the app will be distributed.
 
-### Resigning Process
+### Re-signing Process
 
 When you opt to resign an Android binary:
 
-1. **Package ID**: This is your Android application's unique identifier and cannot be changed during the resigning process.
+1. **Package ID**: This is your Android application's unique identifier and cannot be changed during the re-signing process.
 2. **Version Name & Code**: Adjust the version name and code if necessary. This helps in maintaining versioning integrity across different release channels.
-3. **Keystores**: Select the keystore you wish to use for resigning the binary. This could be a newly added keystore or one previously used in other projects.
+3. **Keystores**: Select the keystore you wish to use for re-signing the binary. This could be a newly added keystore or one previously used in other projects.
 
-After configuring the necessary options, click the **Sign** button to start the resigning process.
+After configuring the necessary options, click the **Sign** button to start the re-signing process.
 
 ### Post-Resignation
 
-Once the binary has been resigned, it will create a new package with the updated signing configurations. The newly resigned binary will appear in your version list marked with the new version code if updated during the process.
+Once the binary has been re-signed, it will create a new package with the updated signing configurations. The newly re-signed binary will appear in your version list marked with the new version code if updated during the process.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-android-after-resign.png' />
 

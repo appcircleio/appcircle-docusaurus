@@ -160,20 +160,21 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 The following table details the roles and restrictions for the [**Testing Distribution**](/testing-distribution) module. Please refer to the related module information and caution notes. 
 
-| Testing Distribution | Scopes                                 | Owner | Manager | Operator | Ext. Operator | Viewer |
-|----------------------|----------------------------------------|-------|---------|----------|---------------|--------|
-| Distribution Profile | Add/Delete/Update Distribution Profile | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Distribution Profile | Setting Update Distribution Profile    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Distribution Profile | List Distribution Profiles             | ✅     | ✅       | ✅        | ✅             | ✅      |
-| App Version          | Add/Delete/Update App Version          | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| App Version Actions  | Send to Testers                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| App Version Actions  | Send to Enterprise App Store           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| App Version Actions  | Send to Publish                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| App Version Actions  | Download Binary                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
-| Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Report               | List Reports App Version               | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Report               | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Testing Distribution       | Scopes                                 | Owner | Manager | Operator | Ext. Operator | Viewer |
+|----------------------------|----------------------------------------|-------|---------|----------|-------------|--------|
+| Distribution Profile       | Add/Delete/Update Distribution Profile | ✅     | ✅       | ⛔        | ⛔           | ⛔      |
+| Distribution Profile       | Setting Update Distribution Profile    | ✅     | ✅       | ⛔        | ⛔           | ⛔      |
+| Distribution Profile       | List Distribution Profiles             | ✅     | ✅       | ✅        | ✅           | ✅      |
+| App Version                | Add/Delete/Update App Version          | ✅     | ✅       | ✅        | ✅           | ⛔      |
+| App Version Actions        | Send to Testers                        | ✅     | ✅       | ✅        | ✅           | ⛔      |
+| App Version Actions        | Send to Enterprise App Store           | ✅     | ✅       | ✅        | ⛔           | ⛔      |
+| App Version Actions        | Send to Publish                        | ✅     | ✅       | ✅        | ⛔           | ⛔      |
+| App Version Actions        | Download Binary                        | ✅     | ✅       | ✅        | ✅           | ⛔      |
+| Settings                   | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔           | ⛔      |
+| Settings                   | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔           | ✅      |
+| Auto Re-sign Configuration | List/Update Auto Re-sign Configuration | ✅     | ✅       | ⛔        | ⛔           | ⛔      |
+| Report                     | List Reports App Version               | ✅     | ✅       | ✅        | ⛔           | ✅      |
+| Report                     | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔           | ✅      |
 
 :::caution Authentication Settings
 
@@ -230,9 +231,9 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | App Version                | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Profile Settings           | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows              | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows              | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows              | Download Publish Flow                     | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows              | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows              | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows              | View Publish Flow                         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish                    | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                    | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                    | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
@@ -274,9 +275,9 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | App Version                     | List App Versions                           | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Profile Settings                | View/Update Profile Settings                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows                   | Add/Delete/Update Publish Flow Step         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows                   | Download Publish Flow                       | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows                   | Download Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows                   | Upload Publish Flow                         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows                   | View Publish Flow                           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows                   | View Publish Flow                           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish                         | Start/Restart/Stop Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                         | Start Single Step                           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                         | Update Publish Details                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
