@@ -147,6 +147,16 @@ You can also see the matching application ID and expiration date of the profiles
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-upload2.png' />
 
+:::info Apple Profile Expiration Notifications
+
+You will be notified when a provisioning profile is about to expire. You can see the expiration notification in the [in-app notification window](/account/my-account/in-app-notifications) and optionally enable expiration [notifications](/account/my-organization/notifications) for Email, Slack, Microsoft Teams, etc.
+
+**Standard Schedule**: Profiles already in the system 30+ days before expiration receive notifications at 30, 15, 7, 3, 1 days before expiration, plus expiring today.
+
+**Late Upload**: Profiles uploaded with less than 30 days remaining before expiration get notifications starting from upload day, then continuing with the next applicable intervals from the standard schedule.
+
+:::
+
 ### Deleting Provisioning Profiles
 
 You can delete a single Provisioning Profile or multiple ones by selecting the checkboxes next to the provisioning profiles. You can also select the checkbox at the top of the list to select all available ones. Once you select the checkboxes for the files you need, a delete button will appear at the top right corner.
