@@ -197,6 +197,16 @@ If a provision profile is used in a Build Profile, it will continue to be used w
 
 :::
 
+:::info Apple Profile Expiration Notifications
+
+You will be notified when a provisioning profile is about to expire. You can see the expiration notification in the [in-app notification window](/account/my-account/in-app-notifications) and optionally enable expiration [notifications](/account/my-organization/notifications) for Email, Slack, Microsoft Teams, etc.
+
+**Standard Schedule**: Profiles already in the system 30+ days before expiration receive notifications at 30, 15, 7, 3, 1 days before expiration, plus expiring today.
+
+**Late Upload**: Profiles uploaded with less than 30 days remaining before expiration get notifications starting from upload day, then continuing with the next applicable intervals from the standard schedule.
+
+:::
+
 ### Adding Device to Provision Profile
 
 With Appcircle’s Apple Profiles feature, you can easily add the UDIDs of your test devices to the corresponding provisioning profile.
