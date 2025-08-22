@@ -125,9 +125,15 @@ In addition to manual resigning, the **Testing Distribution** module supports **
 
 The **Auto Re-sign** feature allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
 
-You can find the **Auto Re-sign Configurations** option near the **Settings** menu of your distribution profile by clicking **...**.
+You can enable the **Auto Re-sign** feature by navigating to Settings option and enabling Auto-resign toggle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-sign1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-1.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-2.png' />
+
+Once it's enabled, you will need to configure the Auto Re-sign feature for iOS and Android. **Auto Re-sign Configurations** options can be found by clicking **...**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-1.png' />
 
 ### iOS Auto Re-sign Configurations
 
@@ -139,15 +145,15 @@ For iOS, you can configure:
 If `CFBundleDisplayName` is not present in the `info.plist`, changing the display name will not take effect.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-sign2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-3.png' />
 
 - **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-sign3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-4.png' />
 
 - **Signing**: Choose provisioning profiles and entitlements required for re-signing.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-sign4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-5.png' />
 
 #### App Store Connect Credential
 
@@ -181,11 +187,11 @@ For Android, you can configure:
 
 - **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-sign5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-6.png' />
 
 - **Signing**: Select the keystore for signing your `.APK` or `.AAB` files.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-sign6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-7.png' />
 
 #### Keystores
 
