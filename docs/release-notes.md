@@ -20,32 +20,33 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- The Auto Re-sign feature was added to the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
+- The [Auto Re-sign](/testing-distribution/resigning-binaries#auto-re-sign) feature was added to the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
 - The yearly license renewal option was introduced, allowing users to use their module usage limits on a yearly instead of a monthly basis. <AccountBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
-- An update was made for Publish iOS and Publish Android operator roles, and access to Publish Flow settings was removed for them. <AccountBadge/> <PublishBadge/> <CloudBadge/>
+- An update was made for [Publish iOS](/account/my-organization/profile-and-team/role-management#publish-module-ios-permissions) and [Publish Android](/account/my-organization/profile-and-team/role-management#publish-module-android-permissions) operator roles, and access to Publish Flow settings was removed for them. <AccountBadge/> <PublishBadge/> <CloudBadge/>
 - The “Create from existing SSO settings” option was disabled for SAML-type SSO configurations. <AccountBadge/> <CloudBadge/>
+- The exact renewal time is now shown next to the expiry date on the billing page. <AccountBadge/> <CloudBadge/>
+- Auto Re-sign operations will now be specifically mentioned as Auto Re-sign within notifications sent via Email, Teams, and Slack. <AccountBadge/> <CloudBadge/>
 - The Get Approval via Email publish step was improved to be identical to the Metadata Approval publish step, where users are now directed to a separate approval window within Appcircle instead of deciding within the received email. <PublishBadge/> <CloudBadge/>
 - Displayed certificates in Auto Re-sign options will now be shown according to the selected signing method. <PublishBadge/> <CloudBadge/>
-- The exact renewal time is now shown next to the expiry date on the billing page. <AccountBadge/> <CloudBadge/>
 - Users can now directly navigate to the relevant build logs by clicking on the build status within the build history. <BuildBadge/> <CloudBadge/>
-- Auto Re-sign operations will now be specifically mentioned as Auto Re-sign within notifications sent via Email, Teams, and Slack. <AccountBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
-- An issue was fixed where deleting the SSO configuration for Testing Distribution profiles caused UI issues on the Testing Distribution authentication settings. <DistributionBadge/> <CloudBadge/>
 - Some inconsistencies between the descriptions of different SSO configuration types were fixed. <AccountBadge/> <CloudBadge/>
-- An issue was fixed where, on certain error messages, the information link did not redirect the user to the relevant documentation. <BuildBadge/> <CloudBadge/>
 - Incorrect font and date format within the API Key creation settings were fixed. <AccountBadge/> <CloudBadge/>
-- An issue was fixed where using the ESC button on the “Share with Testers” step in Testing Distribution profiles caused UI issues. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where the “Leave Organization” confirmation button was displayed as “Delete” instead of “Leave.” <AccountBadge/> <CloudBadge/>
+- An issue was fixed where users were able to create a sub-organization with a duplicated name. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where certain uploaded binaries were displayed with an incorrect icon on Publish profiles. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where, on certain error messages, the information link did not redirect the user to the relevant documentation. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where workflow and configuration names containing the ‘_’ character were being duplicated with an incorrect name. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where refreshing certain branches took too long. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where users were able to create a sub-organization with a duplicated name. <AccountBadge/> <CloudBadge/>
+- An issue where build logs displayed an incorrect Xcode version when a specific version was selected in the build configurations has been fixed. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where deleting the SSO configuration for Testing Distribution profiles caused UI issues on the Testing Distribution authentication settings. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where using the ESC button on the “Share with Testers” step in Testing Distribution profiles caused UI issues. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where expiration notifications for Apple profiles, certificates and Android keystores were sent simultaneously instead of periodically. <SigningIdentitiesBadge/> <CloudBadge/>
-- An issue was fixed where certain uploaded binaries were displayed with an incorrect icon on Publish profiles. <PublishBadge/> <CloudBadge/>
 
 ## 3.29.1 - 2025-08-15 Custom Script from Git Component, Account Module Improvements and IAM Upgrade
 
