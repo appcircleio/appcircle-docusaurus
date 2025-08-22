@@ -137,6 +137,16 @@ If your password contains special characters such as `$` and `#`, your workflow 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/02-08-CertificateList.png' />
 
+:::info Apple Certificate Expiration Notifications
+
+You will be notified when an Apple Certificate is about to expire. You can see the expiration notification in the [in-app notification window](/account/my-account/in-app-notifications) and optionally enable expiration [notifications](/account/my-organization/notifications) for Email, Slack, Microsoft Teams, etc.
+
+**Standard Schedule**: Certificates already in the system 30+ days before expiration receive notifications at 30, 15, 7, 3, 1 days before expiration, plus expiring today.
+
+**Late Upload**: Certificates uploaded with less than 30 days remaining before expiration get notifications starting from upload day, then continuing with the next applicable intervals from the standard schedule.
+
+:::
+
 ### Deleting a Certificate
 
 To delete an Apple Certificate, click the ... button and select the **Delete** option.
